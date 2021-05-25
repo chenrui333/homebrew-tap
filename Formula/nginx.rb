@@ -10,9 +10,9 @@ class Nginx < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles"
-    sha256 "0c70950aa5eb51b432ecd5bc9f5d13cb9b4e583b946b8068b1250fe7205831e6" => :catalina
-    sha256 "de38ebc4e7e3196289215508f30de98458fdfa3da752d516916dcff676115b75" => :mojave
-    sha256 "aa42ffce60ab7b3b330fe997634d34b88ef4ecd5e3b3a3195854ae2731ad321b" => :high_sierra
+    sha256 cellar: :any_skip_relocation, catalina: sha256 "0c70950aa5eb51b432ecd5bc9f5d13cb9b4e583b946b8068b1250fe7205831e6"
+    sha256 cellar: :any_skip_relocation, mojave: sha256 "de38ebc4e7e3196289215508f30de98458fdfa3da752d516916dcff676115b75"
+    sha256 cellar: :any_skip_relocation, high_sierra: sha256 "aa42ffce60ab7b3b330fe997634d34b88ef4ecd5e3b3a3195854ae2731ad321b"
   end
 
   depends_on "openssl@1.1"
