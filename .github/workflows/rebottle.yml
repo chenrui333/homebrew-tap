@@ -45,6 +45,7 @@ jobs:
 
       - name: Build bottles via test-bot
         run: |
+          mkdir -p "$BOTTLES_DIR"
           brew test-bot --only-formulae \
                         --skip-dependents \
                         --only-json-tab \
