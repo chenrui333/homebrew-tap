@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -65,7 +65,7 @@ jobs:
     needs: bottle
 
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:master
+      image: ghcr.io/homebrew/ubuntu22.04:master@sha256:3812ffd9b728ce3d96a2a362ef33bed420d1dc73c7d96c93a8f8d2d4f10e6281
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
       GH_REPO: ${{github.repository}}
