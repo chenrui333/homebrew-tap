@@ -50,14 +50,6 @@ jobs:
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Post-build steps
-        if: always()
-        uses: Homebrew/actions/post-build@master
-        with:
-          # runner: ${{ matrix.os }} # this seems very homebrew-core specific
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-          logs-directory: ${{ env.BOTTLES_DIR }}/logs
-
   upload:
     permissions:
       # issues: write # for Homebrew/actions/post-comment # we dont do issue comment in here
