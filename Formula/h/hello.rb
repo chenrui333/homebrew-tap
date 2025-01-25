@@ -4,6 +4,7 @@ class Hello < Formula
   url "https://ftp.gnu.org/gnu/hello/hello-2.12.1.tar.gz"
   sha256 "8d99142afd92576f30b0cd7cb42a8dc6809998bc5d607d88761f512e26c7db20"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/chenrui333/homebrew-tap/releases/download/hello-2.12.1"
