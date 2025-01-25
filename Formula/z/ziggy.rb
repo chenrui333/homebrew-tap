@@ -30,6 +30,7 @@ class Ziggy < Formula
     ]
 
     args << "-Dcpu=#{cpu}" if build.bottle?
+
     system "zig", "build", *args
   end
 
