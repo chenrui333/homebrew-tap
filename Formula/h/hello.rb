@@ -8,10 +8,10 @@ class Hello < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fde27ecd514ed05608167d92c9637ae160b5f61ac2e8ef7016570ee85efb84a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41e76f821523eba33893c934a3948703723d2903663731ea79b5af4aceede782"
-    sha256 cellar: :any_skip_relocation, ventura:       "c7b33da8268b818bb4b87a021cdc0b6a5882718547aabf7ee899eaed73aefc4f"
-    sha256                               x86_64_linux:  "317ef881395e6bed73d1cee0cf3368bd7bd8d1ebaca9a5f0f5183bc5fda6860f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c74d64c261b96e420941288d5544d61b09ea7ecc57ee2a8407e8a33b29ee1af8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "637b1501231f7b87fc57c702c1d71b2d05164497c97234009c759d29215b8e12"
+    sha256 cellar: :any_skip_relocation, ventura:       "06c3f733cf558c777668187e474ca623a9f78a676b9dc01937bdfb3eb3fb6cef"
+    sha256                               x86_64_linux:  "f7ef8c930676eb016c3dfca282b827def727f4753e794d31e89aa68f356ee859"
   end
 
   def install
