@@ -21,7 +21,6 @@ class Wallust < Formula
     bash_completion.install "completions/wallust.bash" => "wallust"
     zsh_completion.install "completions/_wallust"
     fish_completion.install "completions/wallust.fish"
-
     man1.install Dir["man/*.1"]
     man5.install "man/wallust.5"
   end
