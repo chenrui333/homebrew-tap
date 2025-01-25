@@ -7,11 +7,12 @@ class Tun2proxy < Formula
   head "https://github.com/tun2proxy/tun2proxy.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/tun2proxy-0.6.6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a1b4d27852a5df141956a636328c677f3a146ee3512ef548596a11c1dc3b84a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b63fec299923cd02be0c23d4c6a4348e0ac086dc0e53d2e5ca8c4247f9cf1ce5"
-    sha256 cellar: :any_skip_relocation, ventura:       "f54b08f737b0930c1efdd915a10fa07842fd721282fd313fc5772f9d4005aec8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99cd652463cccdc140d08d009b4a7ba496a5909a70bd5a0a62f5292a9d310414"
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca9ba1dbcb659f2b7a469be79fa75c933c0c72f00189abe540197fe78be49289"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62e6d40aa874d20c9d118fa11f23ec6a98c0562accec2e2ad328181e53280d7f"
+    sha256 cellar: :any_skip_relocation, ventura:       "24861e302e90e4a8c1b2138674ddfe1e0691f96cb185eef6e51fdf6811e75cb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e108ae33a79f84138a53075f418aedd613dea27a67ce8fbb421344866f6fbf79"
   end
 
   depends_on "rust" => :build
