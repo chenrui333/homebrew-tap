@@ -6,6 +6,14 @@ class Projectable < Formula
   license "MIT"
   head "https://github.com/dzfrias/projectable.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/projectable-1.3.0"
+    sha256 cellar: :any,                 arm64_sequoia: "6e414bd1b64dcee555169a517a81d10c03647751ef38494ebc1d793a556c5789"
+    sha256 cellar: :any,                 arm64_sonoma:  "386962093ccc0171bd80c611bdafd8a853a8459d7a8f3bfdefa2bb0602b4f855"
+    sha256 cellar: :any,                 ventura:       "b1c41e0b8c894ac21a89e022d1d1bef623a8651a004fe3b7d6a863d0a286cd45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "766553bfb69df3f669521bdcde28b0fdd3171801cd5356e119fe30c277303824"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
