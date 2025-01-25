@@ -6,6 +6,14 @@ class Ziggy < Formula
   sha256 "a290ac25b95f99164ef695e034b0a79056f0f3e4eb961e6ba3fe61fc8edd1afb"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/ziggy-0.0.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b36bb8ee903bda218bba788dd6eebf242c674bddcff373913b8eb1bcf14e1ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41ed2c4818615339914327a3c778e42b3a8b5625af2cfec1d84f9da169be1e6f"
+    sha256 cellar: :any_skip_relocation, ventura:       "49f3d03e4334cc962801026019b0a8278cddba66cceb2bf40bf1291581e15a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10fe33f4b85f12d9301df234096ca5ce5a4f7dc13c86d5532d24d6f4f0b0413b"
+  end
+
   depends_on "zig" => :build
 
   def install
