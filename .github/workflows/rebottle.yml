@@ -94,6 +94,8 @@ jobs:
       - name: Setup git
         id: git-user-config
         uses: Homebrew/actions/git-user-config@master
+        with:
+          username: BrewTestBot
 
       # TODO: build provenance setup
       # - name: Set up commit signing
