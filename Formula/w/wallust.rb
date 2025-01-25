@@ -6,11 +6,12 @@ class Wallust < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/wallust-3.1.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c9960c902496fc28ebff13ff550f02fede43e4d4f2848052db941203edd77fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63f596f6b39952a45beacb10c73e4a724529ec84473093ab085f0f1da6fc3dd9"
-    sha256 cellar: :any_skip_relocation, ventura:       "66fe3445b8c4406e2e347829656a59c5dff6a6e0e7b21aa710547fced1fb236f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "698fca8acc79ae44e89a3e112d0d01fc57e78fd949b31c44b2ac1670981ab9c0"
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc2ee0b2e715d8290fa13413686fa76d67ebf75b23bd4447957d4a27218d8b66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d73ade2ee8696d7f10880d02c97aa7cbb89aebd55b67530c3a296c3ab01ca47"
+    sha256 cellar: :any_skip_relocation, ventura:       "1bc75cf6a289f179f845f973a984f3a05abe70d38b837d7c489f5fc4d1ecd2ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19e8746d52ae2e6634466908debc276956562aafd10156b3f4f5e9c8044c02f6"
   end
 
   depends_on "rust" => :build
