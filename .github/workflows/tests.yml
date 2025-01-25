@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-13, macos-14, macos-15]
+        os: [ubuntu-22.04, macos-13, macos-14, macos-15]
 
     runs-on: ${{ matrix.os }}
 
@@ -44,6 +44,9 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
+
+      - run: brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/chenrui333/tap"
+        if: github.event_name == 'pull_request'
 
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
