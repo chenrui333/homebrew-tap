@@ -1,0 +1,126 @@
+name: Dispatch Re-bottle
+
+on:
+  workflow_dispatch:
+    inputs:
+      formula:
+        description: "Formula name to build new bottles for"
+        required: true
+
+concurrency: rebottle-${{ github.event.inputs.formula }}
+
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
+env:
+  HOMEBREW_DEVELOPER: 1
+  HOMEBREW_GITHUB_ACTIONS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_FROM_API: 1
+  HOMEBREW_NO_BUILD_ERROR_ISSUES: 1
+
+jobs:
+  bottle:
+    permissions:
+      contents: read
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, macos-13, macos-14, macos-15] # build for all platforms
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Build bottles via test-bot
+        run: |
+          brew test-bot --only-formulae \
+                        --skip-dependents \
+                        --only-json-tab \
+                        --skip-online-checks \
+                        ${{ github.event.inputs.formula }}
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Post-build steps
+        if: always()
+        uses: Homebrew/actions/post-build@master
+        with:
+          # runner: ${{ matrix.os }} # this seems very homebrew-core specific
+          bottles-directory: ${{ env.BOTTLES_DIR }}
+          logs-directory: ${{ env.BOTTLES_DIR }}/logs
+
+  upload:
+    permissions:
+      # issues: write # for Homebrew/actions/post-comment # we dont do issue comment in here
+      contents: write # for Homebrew/actions/git-try-push
+      packages: write # for brew pr-upload
+      pull-requests: write
+      attestations: write # for actions/attest-build-provenance
+      id-token: write # for actions/attest-build-provenance
+
+    runs-on: ubuntu-latest
+    needs: bottle
+
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    env:
+      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
+      GH_REPO: ${{github.repository}}
+      GH_NO_UPDATE_NOTIFIER: 1
+      GH_PROMPT_DISABLED: 1
+      BOTTLE_BRANCH: ${{github.actor}}/dispatch/${{inputs.formula}}/${{github.run_id}}
+      BOTTLES_DIR: ${{ github.workspace }}/bottles
+
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Download bottles from GitHub Actions
+        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
+        with:
+          pattern: bottles_*
+          path: ${{ env.BOTTLES_DIR }}
+          merge-multiple: true
+
+      - name: Setup git
+        id: git-user-config
+        uses: Homebrew/actions/git-user-config@master
+
+      # TODO: build provenance setup
+      # - name: Set up commit signing
+      #   uses: Homebrew/actions/setup-commit-signing@master
+      #   with:
+      #     signing_key: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY }}
+
+      # - name: Generate build provenance
+      #   uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb # v2.1.0
+      #   with:
+      #     subject-path: ${{ env.BOTTLES_DIR }}/*.tar.gz
+
+      - name: Checkout branch for bottle commit
+        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
+        run: git checkout -b "$BOTTLE_BRANCH" origin/main # the tap is using main branch
+
+      - name: Upload bottles to GitHub Packages
+        id: upload
+        env:
+          HOMEBREW_GITHUB_PACKAGES_USER: chenrui333
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+          # HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
+          BREWTESTBOT_NAME_EMAIL: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" # see https://github.com/actions/checkout?tab=readme-ov-file#push-a-commit-using-the-built-in-token
+          HOMEBREW_CORE_PATH: ${{steps.set-up-homebrew.outputs.repository-path}}
+        working-directory: ${{ env.BOTTLES_DIR }}
+        run: |
+          brew pr-upload --verbose --committer="$BREWTESTBOT_NAME_EMAIL" --root-url="https://ghcr.io/v2/chenrui333/tap" --debug
+          echo "title=$(git -C "$HOMEBREW_CORE_PATH" log -1 --format='%s' "$BOTTLE_BRANCH")" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$(git -C "$HOMEBREW_CORE_PATH" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
