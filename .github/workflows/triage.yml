@@ -1,0 +1,39 @@
+name: Triage tasks
+
+on:
+  pull_request_target:
+
+concurrency:
+  group: "triage-${{ github.event.number }}"
+  cancel-in-progress: true
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+      statuses: write
+    steps:
+      - name: Label pull request
+        uses: Homebrew/actions/label-pull-requests@master
+        with:
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          def: |
+            - label: new formula
+              status: added
+              path: Formula/.+
+              allow_any_match: true
+
+            - label: linux-only
+              path: Formula/.+
+              content: depends_on :linux
+
+            - label: macos-only
+              path: Formula/.+
+              content: depends_on :macos
+
+            - label: autobump
+              path: \.github/autobump\.txt
+              allow_any_match: true
