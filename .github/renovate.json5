@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "config:recommended",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests",
+    ":configMigration",
+    ":pinDevDependencies"
+  ],
+  commitMessageSuffix: ' in {{packageFile}}',
+  automerge: true,
+  automergeStrategy: 'rebase',
+  baseBranches: [
+    'main',
+  ],
+  platformAutomerge: true,
+  labels: [
+    'dependencies',
+  ],
+  vulnerabilityAlerts: {
+    enabled: true,
+    labels: [
+      'security',
+    ],
+  },
+}
