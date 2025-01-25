@@ -7,11 +7,11 @@ class Hello < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/hello-2.12.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0db12a13adbad7018abfbcf46196d2e6b5868c7cf202fda4b15c99226213a266"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9af912d03c2df4d3d4dc2a2d8c3f4949376df384b62f2aba7c5274c96a99ad87"
-    sha256 cellar: :any_skip_relocation, ventura:       "e28334920a797a5c7aff2a86f0dcf10b56bae30d3220fe86f47e95c5cf68c2a7"
-    sha256                               x86_64_linux:  "e1eb39d36eeadb4d58b2d665a87de726ab628cdf27a0e6aeba7b84063daa95f1"
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fde27ecd514ed05608167d92c9637ae160b5f61ac2e8ef7016570ee85efb84a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41e76f821523eba33893c934a3948703723d2903663731ea79b5af4aceede782"
+    sha256 cellar: :any_skip_relocation, ventura:       "c7b33da8268b818bb4b87a021cdc0b6a5882718547aabf7ee899eaed73aefc4f"
+    sha256                               x86_64_linux:  "317ef881395e6bed73d1cee0cf3368bd7bd8d1ebaca9a5f0f5183bc5fda6860f"
   end
 
   def install
