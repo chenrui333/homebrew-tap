@@ -7,11 +7,12 @@ class Projectable < Formula
   head "https://github.com/dzfrias/projectable.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/projectable-1.3.0"
-    sha256 cellar: :any,                 arm64_sequoia: "6e414bd1b64dcee555169a517a81d10c03647751ef38494ebc1d793a556c5789"
-    sha256 cellar: :any,                 arm64_sonoma:  "386962093ccc0171bd80c611bdafd8a853a8459d7a8f3bfdefa2bb0602b4f855"
-    sha256 cellar: :any,                 ventura:       "b1c41e0b8c894ac21a89e022d1d1bef623a8651a004fe3b7d6a863d0a286cd45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "766553bfb69df3f669521bdcde28b0fdd3171801cd5356e119fe30c277303824"
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "715d53ebbbf72262e7d1c94239a521853deac49e026b4bd8075eebc906f5f9f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f41f17422af969aade1b112c29f3154c5fba8976dcfb2961690a86a039e1af7"
+    sha256 cellar: :any,                 ventura:       "737d27c08055916144f720b9b94ea9929bc1cdb5ae1acf6ee8c61464cd52e73e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a6d4cace3cf6ccf6a6383ccbde929d4612970b6280765085d7916e6011ac4d"
   end
 
   depends_on "pkgconf" => :build
