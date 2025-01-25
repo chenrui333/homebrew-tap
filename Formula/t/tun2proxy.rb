@@ -22,7 +22,6 @@ class Tun2proxy < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tun2proxy-bin --version")
-
     output = shell_output("#{bin}/tun2proxy-bin --proxy socks5://127.0.0.1:1080 --tun utun4 2>&1")
     assert_match "Operation not permitted (os error 1)", output
   end
