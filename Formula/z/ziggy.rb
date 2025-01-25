@@ -7,11 +7,12 @@ class Ziggy < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/chenrui333/homebrew-tap/releases/download/ziggy-0.0.2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b36bb8ee903bda218bba788dd6eebf242c674bddcff373913b8eb1bcf14e1ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41ed2c4818615339914327a3c778e42b3a8b5625af2cfec1d84f9da169be1e6f"
-    sha256 cellar: :any_skip_relocation, ventura:       "49f3d03e4334cc962801026019b0a8278cddba66cceb2bf40bf1291581e15a1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10fe33f4b85f12d9301df234096ca5ce5a4f7dc13c86d5532d24d6f4f0b0413b"
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62c2e72282e734099cd2dc46c8112b2695d7d376887d794a4e7ec2e0c9d0e02b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea2e3b4ab04e82853d4610c649b2ec218ccb580760f33f4cd99f6eab8e9f54fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "52f793a55d774bfa5ec0e52b95de0f8b8a0890a7d8e0708a7a8ee0c6e44a6a96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca0e0760f1619754bc5517cb4c6559b3c89ad4fd930e1e7722988715d81f7cd4"
   end
 
   depends_on "zig" => :build
