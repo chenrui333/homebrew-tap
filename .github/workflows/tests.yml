@@ -45,7 +45,7 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae
+      - run: brew test-bot --only-formulae --skip-dependents --root-url=https://ghcr.io/v2/chenrui333/tap
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
