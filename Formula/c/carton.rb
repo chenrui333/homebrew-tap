@@ -8,6 +8,7 @@ class Carton < Formula
   depends_on xcode: ["14.3", :build]
 
   uses_from_macos "swift" => :build
+  uses_from_macos "curl"
 
   def install
     args = if OS.mac?
