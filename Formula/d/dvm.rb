@@ -20,6 +20,12 @@ class Dvm < Formula
     depends_on "openssl@3"
   end
 
+  # version patch, upstream pr ref, https://github.com/justjavac/dvm/pull/214
+  patch do
+    url "https://github.com/justjavac/dvm/commit/1c9b1f4e5106f4907dfeafe80cbf6be709ae01a2.patch?full_index=1"
+    sha256 "b2c69414c91e9ad9b42fe507434b2b75c0a4b20ee28364bb82151316b9841cfd"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
 
@@ -30,11 +36,11 @@ class Dvm < Formula
     ENV["HOME"] = testpath
 
     assert_match <<~EOS, shell_output("#{bin}/dvm info")
-      dvm 1.9.0
+      dvm #{version}
       deno -
       dvm root #{testpath}/.dvm
     EOS
 
-    system bin/"dvm", "--version"
+    assert_match version.to_s, shell_output("#{bin}/dvm --version")
   end
 end
