@@ -7,6 +7,14 @@ class RpdsPy < Formula
   sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "0f86d31cedc8345b9e8984125d639bdc383bb2c07b603543cb29002aeb02a3e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e19956398889b02e613ea5452c14e2f5a1509d6f800bfd7f5155212ab7d26d2"
+    sha256 cellar: :any,                 ventura:       "ec2529c8696e722a332ccfd4ef0434d5dfae3509ce66e38ab6925c0c472587e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716ac3ea4c4469cf5c6790a256170a00961e8cbadea38d80e7b551ccdccf3632"
+  end
+
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "rust" => :build
