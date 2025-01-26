@@ -1,0 +1,5 @@
+{
+  "rpds-py": {
+    "extra_packages": ["maturin", "setuptools-rust"]
+  }
+}
