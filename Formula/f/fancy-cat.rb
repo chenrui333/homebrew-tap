@@ -5,6 +5,14 @@ class FancyCat < Formula
   sha256 "8d07869f94eb6105a52684e13f67f3d844ea1bc54183dfeee20eb4f8f51524ce"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "4a1648d9aa856b25eb37b98740ca257edced12b3ebe520c9f92c8a754ca7d22d"
+    sha256 cellar: :any,                 arm64_sonoma:  "1854747203941a5c29c1aacf7716fcd2da1c4c07e6297e8d4a3d4e15e4ecf6fe"
+    sha256 cellar: :any,                 ventura:       "3eae0e344024c866a340368ddfdb4f04eafb429f7b8ab22af39754234e08f846"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c745b33cf5192f3fa7745a790e976e6671df1ffde3bad2418d84145c41143bf0"
+  end
+
   depends_on "zig" => :build
   depends_on "mupdf"
 
