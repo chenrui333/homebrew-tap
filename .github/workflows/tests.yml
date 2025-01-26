@@ -18,7 +18,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, macos-13, macos-14, macos-15]
+        os:
+          - ubuntu-22.04
+          - macos-13 # intel runner
+          - macos-14 # arm runner
+          - macos-15 # arm runner
 
     runs-on: ${{ matrix.os }}
 
