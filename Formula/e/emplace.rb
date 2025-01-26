@@ -6,6 +6,14 @@ class Emplace < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/tversteeg/emplace.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cafcbe921b780e56a3c60245c919c0756a06088c08b871eaeba7d66ce5fbfd00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "997b22993ed02ec5d12ebdda8b5b2ab05050eb4d8879c70735a918ffdbeaa0e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "07440dfd76804a78bf12acabf6a6ebc0e005b2e776ada28450f066c4edc55aac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b89d713e7d3bd9e007611612826f6382963bce4efdc7cbbce1e4f588ec89c2e"
+  end
+
   depends_on "rust" => :build
 
   # time crate patch for rust 1.80+, upstream pr ref, https://github.com/tversteeg/emplace/pull/397
