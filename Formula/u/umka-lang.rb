@@ -29,5 +29,18 @@ class UmkaLang < Formula
     EOS
 
     assert_match "Hello Umka!", shell_output("#{bin}/umka #{testpath}/hello.um")
+
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include <umka_api.h>
+
+      int main(void) {
+          printf("Umka version: %s\\n", umkaGetVersion());
+          return 0;
+      }
+    C
+
+    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lumka", "-o", "test"
+    system "./test"
   end
 end
