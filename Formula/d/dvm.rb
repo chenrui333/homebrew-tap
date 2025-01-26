@@ -5,7 +5,12 @@ class Dvm < Formula
   sha256 "3b9bb668c6bdac67c201c7de823c9737d302687a8bae98cab881b24c59207a4e"
   license "MIT"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
