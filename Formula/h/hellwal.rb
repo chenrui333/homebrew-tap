@@ -5,6 +5,13 @@ class Hellwal < Formula
   sha256 "eff95d7a0403fc06d57917e4b4d4dbf897a6f0300104592cf95be7b54c83bc90"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7786e5c8a24200904076d515081efeca8bc338ca72292be70bf338a6a572430"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "811455e39e7617a6d0f22121694cd6af5b29f4ec9ddfaee8f531fb160946c56b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f6e2bbaa3ee2a2d163b7f70f808c984780e4c9c83ebdee96cc669d813e5536b"
+  end
+
   depends_on macos: :sonoma # failed on ventura
 
   patch :DATA
