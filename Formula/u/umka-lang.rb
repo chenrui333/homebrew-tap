@@ -6,6 +6,14 @@ class UmkaLang < Formula
   license "BSD-2-Clause"
   head "https://github.com/vtereshkov/umka-lang.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "da12c3692921210b7278127746ab56a024eead8d23593105ce268dfa55a912c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fc954a7257256dd1352a9db09f4a674cdff35e35628d823af37edf8c1f8ba35"
+    sha256 cellar: :any,                 ventura:       "0b3f9a6fd922e0a360eb8a2a6be55036608b04b3f75594622ed75fa390d2cebc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb177b6a8fc6fb5a9f990070c117b4ad0b2e271036859d4b448ac54dd0ddffc2"
+  end
+
   # fix dynlib, https://github.com/vtereshkov/umka-lang/pull/482
   patch do
     url "https://github.com/vtereshkov/umka-lang/commit/90fa58ba5a99b8e29a14a22b8fe594c4325bed47.patch?full_index=1"
