@@ -6,6 +6,14 @@ class Jetzig < Formula
   sha256 "3f9769e0305d6b7a1fe520ca94b2681a80a8e0c7c934d347afa7bb4016aa17b9"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43ed827ff2f657008c9875e092a6dbba17f70f6dbe3f46198fc8d423a16db0d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26cec0873860299750b3e74b089d8e077c799c333864b1d95eabc33340807a4a"
+    sha256 cellar: :any_skip_relocation, ventura:       "b09a2f82fdf933ede5fe9b63be5ffef139fee986be284c16ff291aa9bae039ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b99b85e144cabce5e97db2a0d97ad430e9530a15b003da19db44e89eba64f20b"
+  end
+
   depends_on "zig" => :build
 
   def install
