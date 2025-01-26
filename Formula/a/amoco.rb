@@ -7,6 +7,14 @@ class Amoco < Formula
   sha256 "5c741d7f7dacd886a10d9439a6593c07a8277847e3427a38d31f48cf0d51ab75"
   license "GPL-2.0-or-later" # TODO: need to upstream it
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "572d3bf8fc55f1f3d0cf4b17fe6f5e71d0cc8da3b3cc3db3cbed0af82b2be807"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e6d653258d3a41052aaf2ea1cb19b3fa9c63c08803cd21090db83af5fb5da9"
+    sha256 cellar: :any_skip_relocation, ventura:       "31782e0b2236560ecb424c9288fef23c61e2d6ff85ef8dd49431011ce2e9a281"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38b55a56f43a00db6aa671a88034da0a8530fe24c1d44ee1786b68cb73ee4ccf"
+  end
+
   depends_on "python@3.13" => :build
   depends_on "python@3.13"
 
