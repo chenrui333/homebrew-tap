@@ -1,0 +1,60 @@
+name: Bump formulae on schedule or request
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/autobump.yml
+  workflow_dispatch:
+    inputs:
+      formulae:
+        description: Custom list of formulae to livecheck and bump if outdated
+        required: false
+  schedule:
+    - cron: "15 */2 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  autobump:
+    if: github.repository_owner == 'Homebrew'
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    env:
+      GNUPGHOME: /tmp/gnupghome
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          core: false
+          cask: false
+          test-bot: false
+
+      - name: Configure Git user
+        uses: Homebrew/actions/git-user-config@master
+        with:
+          username: BrewTestBot
+
+      # - name: Set up commit signing
+      #   uses: Homebrew/actions/setup-commit-signing@master
+      #   with:
+      #     signing_key: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY }}
+
+      - name: Get list of autobump formulae
+        id: autobump
+        run: |
+          autobump_list=$(brew tap-info chenrui333/homebrew-tap --json | \
+            jq -c -r '.[0]["formula_names"] | join(" ")')
+          echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
+
+      - name: Bump formulae
+        uses: Homebrew/actions/bump-packages@master
+        continue-on-error: true
+        with:
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          formulae: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
+          fork: false
