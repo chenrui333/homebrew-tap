@@ -24,6 +24,9 @@ class Lola < Formula
     args << "-Dcpu=#{cpu}" if build.bottle?
 
     system "zig", "build", *args
+
+    # remove non-executable files in bin dir
+    rm bin/"lola.wasm"
   end
 
   test do
