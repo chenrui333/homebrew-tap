@@ -26,7 +26,34 @@ brew install --cask <tool>
 ### Formulae
 
 <!-- FORMULAE-LIST-START -->
-- ``
+- `amoco`
+- `blush`
+- `carton`
+- `codstts`
+- `dvm`
+- `emplace`
+- `fancy-cat`
+- `hello`
+- `hellwal`
+- `jetzig`
+- `keyhunter`
+- `lola`
+- `libdivide`
+- `omnictl`
+- `otto`
+- `oxbuild`
+- `projectable`
+- `rails-new`
+- `rpds-py`
+- `rslocal`
+- `seamstress`
+- `sig`
+- `termtunnel`
+- `tun2proxy`
+- `umka-lang`
+- `wallust`
+- `ziggy`
+- `zlint`
 <!-- FORMULAE-LIST-END -->
 
 ## Known Issues
