@@ -13,6 +13,35 @@ brew install <tool>
 brew install --cask <tool>
 ```
 
+## package list
+
+### Formulae
+
+- `amoco`
+- `blush`
+- `carton`
+- `codstts`
+- `dvm`
+- `emplace`
+- `fancy-cat`
+- `hello`
+- `hellwal`
+- `jetzig`
+- `libdivide`
+- `omnictl`
+- `otto`
+- `projectable`
+- `rails-new`
+- `rpds-py`
+- `seamstress`
+- `sig`
+- `termtunnel`
+- `tun2proxy`
+- `umka-lang`
+- `wallust`
+- `zigg`
+
+
 ## Known Issues
 
 ### Package creation for personal accounts
