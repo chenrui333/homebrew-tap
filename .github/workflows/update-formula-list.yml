@@ -16,6 +16,9 @@ jobs:
 
       - run: brew update
 
+      - name: Tap the repo
+        run: brew tap chenrui333/tap
+
       - name: Run update-list script
         run:  .github/scripts/update-list.sh
 
