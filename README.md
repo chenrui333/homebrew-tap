@@ -1,5 +1,13 @@
 # homebrew-tap
 
+This tap is setup for several reasons:
+
+- Formulae cannot be included into core for license (`BSL` for example), notability or stable release reasons
+- The tap is also well suited to test the upstream patches, as it is using same formula build/test process as homebrew-core.
+- Better alias support
+
+Issues and PRs are welcome!
+
 ## Installation
 
 ```bash
