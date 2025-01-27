@@ -19,12 +19,7 @@ permissions:
 
 jobs:
   autobump:
-    if: github.repository_owner == 'Homebrew'
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/homebrew/ubuntu22.04:master@sha256:3812ffd9b728ce3d96a2a362ef33bed420d1dc73c7d96c93a8f8d2d4f10e6281
-    env:
-      GNUPGHOME: /tmp/gnupghome
+    runs-on: macos-latest
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
