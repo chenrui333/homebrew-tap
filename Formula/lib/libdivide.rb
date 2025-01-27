@@ -6,6 +6,14 @@ class Libdivide < Formula
   license any_of: ["Zlib", "BSL-1.0"]
   head "https://github.com/ridiculousfish/libdivide.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b090bb73ec50e350fc80914988eae8107a1c6d246a0cf56cad3077211e16588"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f9650bd5b4cdd208c42f3e867f028bc8d19c2ed7825da690fbb5d48376d1948"
+    sha256 cellar: :any_skip_relocation, ventura:       "c878934c1a1ea10ded62353c8a5180a5b4fae17d251121289bfba23777ca85b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c9c76ddc3ac1e68b45ddb1dff01aec3f3da7821bf5868b3d15bf7a1deaf51a2"
+  end
+
   depends_on "cmake" => :build
 
   def install
