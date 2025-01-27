@@ -1,8 +1,8 @@
 class Projectable < Formula
   desc "TUI file manager built for projects"
   homepage "https://dzfrias.dev/blog/projectable"
-  url "https://github.com/dzfrias/projectable/archive/refs/tags/1.3.0.tar.gz"
-  sha256 "fe1c0edf9f14f2cd9cfef7e9af921f3e4b307b5c518a7b79f96563d6269a1e72"
+  url "https://github.com/dzfrias/projectable/archive/refs/tags/1.3.2.tar.gz"
+  sha256 "8677aa186b50e28ae1addaa9178b65de9e07b3fcd54056fd92464b49c9f71312"
   license "MIT"
   head "https://github.com/dzfrias/projectable.git", branch: "main"
 
