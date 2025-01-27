@@ -81,4 +81,4 @@ jobs:
       - name: Label the PR with 'pr-pull'
         run: gh pr edit "$PR" --add-label 'pr-pull' --repo "$GITHUB_REPOSITORY"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
