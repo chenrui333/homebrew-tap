@@ -33,19 +33,19 @@ class Libdivide < Formula
       #include "libdivide.h"
       #include <assert.h>
 
-      int sum_of_quotients(const int *numers, size_t count, int d) {
+      int sum_of_quotients(const int *numbers, size_t count, int d) {
         int result = 0;
         struct libdivide_s32_t fast_d = libdivide_s32_gen(d);
         for (size_t i = 0; i < count; i++)
-          result += libdivide_s32_do(numers[i], &fast_d);
+          result += libdivide_s32_do(numbers[i], &fast_d);
         return result;
       }
 
       int main(void) {
-        const int numers[] = {2, 4, 6, 8, 10};
-        size_t count = sizeof(numers) / sizeof(int);
+        const int numbers[] = {2, 4, 6, 8, 10};
+        size_t count = sizeof(numbers) / sizeof(int);
         int d = 2;
-        int result = sum_of_quotients(numers, count, d);
+        int result = sum_of_quotients(numbers, count, d);
         assert(result == 15);
         return 0;
       }
