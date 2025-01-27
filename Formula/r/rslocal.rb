@@ -21,12 +21,11 @@ class Rslocal < Formula
   end
 
   test do
-    # .config/rslocal/config.ini
     (testpath/".config/rslocal/config.ini").write <<~EOS
       endpoint = "http://localhost:8422"
       token = "rslocald_abc321"
     EOS
-    # system bin/"rslocal", "http", "8000"
+
     output = shell_output("#{bin}/rslocal http 8000 2>&1", 1)
     assert_match "tcp connect error: Connection refused", output
 
