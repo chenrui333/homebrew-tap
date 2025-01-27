@@ -3,7 +3,7 @@ class Omnictl < Formula
   homepage "https://omni.siderolabs.com/"
   url "https://github.com/siderolabs/omni/archive/refs/tags/v0.45.1.tar.gz"
   sha256 "8e352a7970cf36bcbf9c632a639b4a3c097a72d9e94ff9462ca1cc0de0a04b6c"
-  license "BSL-1.1"
+  # license "BSL-1.1"
   head "https://github.com/siderolabs/omni.git", branch: "main"
 
   depends_on "go" => :build
