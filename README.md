@@ -26,6 +26,9 @@ brew install --cask <tool>
 ### Formulae
 
 <!-- FORMULAE-LIST-START -->
+<details>
+<summary>Formula List</summary>
+
 - `amoco`
 - `blush`
 - `carton`
@@ -54,6 +57,8 @@ brew install --cask <tool>
 - `wallust`
 - `ziggy`
 - `zlint`
+
+</details>
 <!-- FORMULAE-LIST-END -->
 
 ## Known Issues

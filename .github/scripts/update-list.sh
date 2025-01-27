@@ -10,7 +10,12 @@ FORMULAE="$(
 # 2. Build the lines we want to insert, including bullet points
 cat <<EOF > .tmp-formulae-list
 <!-- FORMULAE-LIST-START -->
+<details>
+<summary>Formula List</summary>
+
 $(echo "$FORMULAE" | sed 's/^/- `/; s/$/`/')
+
+</details>
 <!-- FORMULAE-LIST-END -->
 EOF
 
