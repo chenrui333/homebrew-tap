@@ -25,6 +25,7 @@ brew install --cask <tool>
 
 ### Formulae
 
+<!-- FORMULAE-LIST-START -->
 - `amoco`
 - `blush`
 - `carton`
@@ -48,7 +49,7 @@ brew install --cask <tool>
 - `umka-lang`
 - `wallust`
 - `zigg`
-
+<!-- FORMULAE-LIST-END -->
 
 ## Known Issues
 
