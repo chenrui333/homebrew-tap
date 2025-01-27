@@ -8,10 +8,10 @@ class Libdivide < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b090bb73ec50e350fc80914988eae8107a1c6d246a0cf56cad3077211e16588"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f9650bd5b4cdd208c42f3e867f028bc8d19c2ed7825da690fbb5d48376d1948"
-    sha256 cellar: :any_skip_relocation, ventura:       "c878934c1a1ea10ded62353c8a5180a5b4fae17d251121289bfba23777ca85b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c9c76ddc3ac1e68b45ddb1dff01aec3f3da7821bf5868b3d15bf7a1deaf51a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffea4910f7eb49c0df9d5b567a6c1923ee218e1676216caf98608e33d55507b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d51f987325923def362f7469e1dfb59505a9cd4ac10fc3002ae5a9538512754d"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a6c0c352d1e58c3bc7f72a378ee73e84361d9c8a50e4ef304aec6b4ccd3e8df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57ac2f5016adfea40feb2e91c28a347d4919802770bbd2e56ade8d1275f9dcf8"
   end
 
   depends_on "cmake" => :build
