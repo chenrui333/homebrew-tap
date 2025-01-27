@@ -36,7 +36,7 @@ class Zlint < Formula
     ZIG
 
     output = shell_output("#{bin}/zlint #{testpath}/valid.zig 2>&1")
-    assert_match "Found \e[33m0\e[39m errors and \e[33m0\e[39m warnings across \e[33m1\e[39m files in \e[33m1ms\e[39m", output
+    assert_match "Found \e[33m0\e[39m errors and \e[33m0\e[39m warnings", output
 
     assert_match version.to_s, shell_output("#{bin}/zlint --version")
   end
