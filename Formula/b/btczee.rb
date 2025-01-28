@@ -6,6 +6,14 @@ class Btczee < Formula
   sha256 "6cc91885b492fdff6e4832ce2838a8b523847f9f1a9d9fd17a8b8f6301ba32ba"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f22fb8c18aaf164b87c77336c5cdebdf93407c4c8c6b65f07226083ecec12268"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9b8e2edcc1703887eafe3b7d092d3b1e6bf49c43600274d2fed8d358d5aca5e"
+    sha256 cellar: :any_skip_relocation, ventura:       "0c4d747d85bfb2512813ed0fccec4c67f5348c8c7c6ad93d13e516b41070bd93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a43193f9d51b82e0bbe95e541a4f53960b65339548945482e116bf9c3ed9e4b"
+  end
+
   depends_on "zig" => :build
 
   # patch sha for libxev, httpz
