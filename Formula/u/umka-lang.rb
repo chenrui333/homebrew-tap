@@ -1,8 +1,8 @@
 class UmkaLang < Formula
   desc "Statically typed embeddable scripting language"
   homepage "https://github.com/vtereshkov/umka-lang"
-  url "https://github.com/vtereshkov/umka-lang/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "d5f4071f142ecb8859663e41654594b9d53fddfc0f60f9e9dd0fedda9f921b99"
+  url "https://github.com/vtereshkov/umka-lang/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "9ea56cc32e1556989b81cd3db5d0ae533ac3af708ec5c742c36628d6310b52c4"
   license "BSD-2-Clause"
   head "https://github.com/vtereshkov/umka-lang.git", branch: "master"
 
@@ -14,19 +14,8 @@ class UmkaLang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb177b6a8fc6fb5a9f990070c117b4ad0b2e271036859d4b448ac54dd0ddffc2"
   end
 
-  # fix dynlib, https://github.com/vtereshkov/umka-lang/pull/482
-  patch do
-    url "https://github.com/vtereshkov/umka-lang/commit/90fa58ba5a99b8e29a14a22b8fe594c4325bed47.patch?full_index=1"
-    sha256 "607953aa7be3fa5f3c0985a65ccb24d32804f8e486c0dad724db2ba3fd197cbe"
-  end
-
   def install
-    system "make", "all"
-    bin.install "build/umka"
-    # include libraries
-    lib.install "build/libumka.a"
-    lib.install "build/#{shared_library("libumka")}"
-    include.install Dir["build/include/*"]
+    system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
