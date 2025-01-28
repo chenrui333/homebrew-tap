@@ -8,10 +8,10 @@ class UmkaLang < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "da12c3692921210b7278127746ab56a024eead8d23593105ce268dfa55a912c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fc954a7257256dd1352a9db09f4a674cdff35e35628d823af37edf8c1f8ba35"
-    sha256 cellar: :any,                 ventura:       "0b3f9a6fd922e0a360eb8a2a6be55036608b04b3f75594622ed75fa390d2cebc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb177b6a8fc6fb5a9f990070c117b4ad0b2e271036859d4b448ac54dd0ddffc2"
+    sha256 cellar: :any,                 arm64_sequoia: "dcdd0492860e986ed68945509bdef8c31cdf5a149e3a0c6d1a318fb83af19d95"
+    sha256 cellar: :any,                 arm64_sonoma:  "58f4271a9c0f5b504b3d34f5568c08db43cda00b31bd6a1f8f66a77f49831cc7"
+    sha256 cellar: :any,                 ventura:       "47d260c87915e39c80c2099ad4f1e14d5dc71fc4d502323e478d0de203808618"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "621b0abd4c3cb576a226dce8f04c5482f4d0da33ec50fbeb77d1d58bbafec140"
   end
 
   def install
