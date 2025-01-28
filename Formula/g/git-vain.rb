@@ -6,6 +6,12 @@ class GitVain < Formula
   sha256 "e8caad399e02cbee57a019d6d939142130e9fa85af881ea83cf9f865dcd29f57"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_sequoia: "fc88d0dcb4e3f7ae3627d0ab6aaa36c57ef4b385e57a112574f0f96384e0b909"
+    sha256 cellar: :any, arm64_sonoma:  "c142f7e8044e069f0ca793d9593e6ed87e52cecdc998072735247565acb10887"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "zig" => :build
   depends_on arch: :arm64 # rpath issue for intel build
