@@ -2,7 +2,7 @@ class Resinator < Formula
   desc "Windows resource-definition script (.rc) to resource file (.res) compiler"
   homepage "https://github.com/squeek502/resinator"
   url "https://github.com/squeek502/resinator/archive/2b0a8449bbafb3f1bc18f290dc605b2100301b2e.tar.gz"
-  version "0.1.0" # 2b0a8449bbafb3f1bc18f290dc605b2100301b2e is prior to v0.1.0 tag, f933361aaa8fc9e7e0f4cf9a3c3afb8a834a0b0c
+  version "0.1.0" # 2b0a844 is prior to v0.1.0 tag, f933361
   sha256 "676d20dc2ae9f706e332e6b243390ca920a77c82803f3515c872806489aef9e1"
   license "0BSD"
 
