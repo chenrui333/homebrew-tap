@@ -8,7 +8,9 @@ class GitVain < Formula
 
   depends_on "pkgconf" => :build
   depends_on "zig" => :build
+  depends_on arch: :arm64 # rpath issue for intel build
   depends_on "libgit2"
+  depends_on :macos # linux build is crashing, see https://github.com/chenrui333/homebrew-tap/pull/62/#issuecomment-2617948916
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
@@ -31,7 +33,7 @@ class GitVain < Formula
   test do
     system "git", "init"
     system "git", "commit", "--allow-empty", "-m", "test"
-    assert_match("found", shell_output("#{bin}/git-vain 2>&1")) if OS.mac? # fails on linux
+    assert_match("found", shell_output("#{bin}/git-vain 2>&1"))
 
     commit_sha = shell_output("git rev-parse HEAD").chomp
     output = shell_output("#{bin}/git-vain #{commit_sha} 2>&1")
