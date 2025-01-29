@@ -24,6 +24,9 @@ class Bytebox < Formula
 
     args << "-Dcpu=#{cpu}" if build.bottle?
     system "zig", "build", *args
+
+    # remove non-executables in bin dir
+    rm Dir[bin/"*.wasm"] # files are add-one.wasm, mandelbrot.wasm, fibonacci.wasm, memtest.wasm
   end
 
   test do
