@@ -32,11 +32,13 @@ brew install --cask <tool>
 - `amoco`
 - `blush`
 - `btczee`
+- `bytebox`
 - `carton`
 - `codstts`
 - `dvm`
 - `emplace`
 - `fancy-cat`
+- `fex`
 - `flow`
 - `git-vain`
 - `glsl-analyzer`
@@ -63,6 +65,8 @@ brew install --cask <tool>
 - `tun2proxy`
 - `umka-lang`
 - `wallust`
+- `zig@0.11`
+- `zig@0.12`
 - `ziggy`
 - `zigscient`
 - `zlint`
