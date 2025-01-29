@@ -9,6 +9,14 @@ class ZigAT011 < Formula
     skip "versioned formula"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "b10a8a3deadab825aefa41ab283f0d18a6146786047499899ad8a6282737934d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7e298ca1e2b3ab1d2ec0345d39bcc4cbcaf6aac758b0c9cce0c1be51b9f4c0e"
+    sha256 cellar: :any,                 ventura:       "3e413f57aadd777e7d85620d6ed8b19905bad7b0e59a39a755e10393a06eccdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8cc9558cc39f3bef4476172245b5921d9fcb3c87f16f5f580ead41aa49e7db"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
