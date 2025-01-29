@@ -37,6 +37,7 @@ brew install --cask <tool>
 - `dvm`
 - `emplace`
 - `fancy-cat`
+- `flow`
 - `git-vain`
 - `glsl-analyzer`
 - `hello`
@@ -45,6 +46,7 @@ brew install --cask <tool>
 - `keyhunter`
 - `lola`
 - `libdivide`
+- `minisign`
 - `omnictl`
 - `otto`
 - `oxbuild`
@@ -56,11 +58,13 @@ brew install --cask <tool>
 - `rslocal`
 - `seamstress`
 - `sig`
+- `simdjzon`
 - `termtunnel`
 - `tun2proxy`
 - `umka-lang`
 - `wallust`
 - `ziggy`
+- `zigscient`
 - `zlint`
 - `zware`
 
