@@ -5,6 +5,14 @@ class Minisign < Formula
   sha256 "796dce1376f9bcb1a19ece729c075c47054364355fe0c0c1ebe5104d508c7db0"
   license "ISC"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "f12c8feffdf9709660d263c3f5504014d8624d3bf22ffb31ce36c6b6b0a52a23"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ce25d0354ba986b6f8862440d8be83caff4d552d57499551f275fa3429a2d9a"
+    sha256 cellar: :any,                 ventura:       "29cd2658c5f30c04f48683dc2cba3e77f9a55606c766f249192805d65e3a841c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b033fcf9d9dd1514960a6fe3f9caa34d71cf120ac183f65c6b550da6049a8b1"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "zig" => :build
   depends_on "libsodium"
