@@ -5,6 +5,12 @@ class Simdjzon < Formula
   sha256 "91e1bb7fe972898aa1c9ac6c5577ccfa8a5c64066ed7dcfc8345dca1a5f4a28b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e253c193f79b9efb48b46019cdc65f9a8cb2c317ff4e9143c2306fad870e456f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "721bdd5b7b52d0314c6f2544ae5538f10ca311f1951fe86394c6d27784d0cdea"
+  end
+
   depends_on "zig" => :build
   depends_on arch: :arm64 # builds for arm64 only for now
 
