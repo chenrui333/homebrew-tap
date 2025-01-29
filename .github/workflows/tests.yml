@@ -79,7 +79,20 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ success() && github.event_name == 'pull_request' }}
     steps:
+      - name: Check if PR has 'in progress' label
+        id: check-label
+        run: |
+          LABELS=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name')
+          if echo "$LABELS" | grep -q "^in progress$"; then
+            echo "skip_label=true" >> "$GITHUB_ENV"
+          else
+            echo "skip_label=false" >> "$GITHUB_ENV"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
       - name: Label the PR with 'pr-pull'
+        if: env.skip_label == 'false'
         run: gh pr edit "$PR" --add-label 'pr-pull' --repo "$GITHUB_REPOSITORY"
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
