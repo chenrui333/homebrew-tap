@@ -8,10 +8,11 @@ class Minisign < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "f12c8feffdf9709660d263c3f5504014d8624d3bf22ffb31ce36c6b6b0a52a23"
-    sha256 cellar: :any,                 arm64_sonoma:  "9ce25d0354ba986b6f8862440d8be83caff4d552d57499551f275fa3429a2d9a"
-    sha256 cellar: :any,                 ventura:       "29cd2658c5f30c04f48683dc2cba3e77f9a55606c766f249192805d65e3a841c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b033fcf9d9dd1514960a6fe3f9caa34d71cf120ac183f65c6b550da6049a8b1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3dbebd26aa1f3113a1c98a63064ed34f0b258e8677f9502c0fe32e0f8348da6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2844fece27f65c9c7881607976c3934b595c5374a7299e31a81ef762cd187d90"
+    sha256 cellar: :any,                 ventura:       "57d7433388ad458a67c6b6df6482ba5255e48988e2320632126e48ae9bf5f177"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd19b03dbbbbfe84a52488b26e8a39d16b07b019161ad945570f6c005470e70a"
   end
 
   depends_on "pkgconf" => :build
