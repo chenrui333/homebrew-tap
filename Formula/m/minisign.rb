@@ -1,9 +1,9 @@
 class Minisign < Formula
   desc "Tool to sign files and verify digital signatures"
   homepage "https://github.com/jedisct1/minisign"
-  url "https://github.com/jedisct1/minisign/archive/41306e3e42400321944b4119c49c219f44ea07ff.tar.gz"
+  url "https://github.com/jedisct1/minisign/archive/d5a2f02bc077f1b83597f0d441d1b98598ee7e2a.tar.gz"
   version "0.12"
-  sha256 "683fb5c29895765f78f742d9aa3e4aa685960bb12193184b7a78adcb63c9771e"
+  sha256 "21c272f5a9b6dae9c08226111d6c97acb691c9f09f9f9dc0b73240ff74cb03ea"
   license "ISC"
 
   bottle do
@@ -18,12 +18,6 @@ class Minisign < Formula
   depends_on "pkgconf" => :build
   depends_on "zig" => :build
   depends_on "libsodium"
-
-  # linuxbrew library/include paths patch, upstream pr ref, https://github.com/jedisct1/minisign/pull/156
-  patch do
-    url "https://github.com/jedisct1/minisign/commit/b3c3e628b957b26d01a837bb44e6c2b82f05b0c4.patch?full_index=1"
-    sha256 "a978c6805cbe13cf89960578e021c9311e9c0fb3e4d91de532ad9aaa4e0133d9"
-  end
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
