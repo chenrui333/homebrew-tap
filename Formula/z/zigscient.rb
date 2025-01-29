@@ -5,6 +5,14 @@ class Zigscient < Formula
   sha256 "5b387fd76e912f501003eaa7cc0699256ac53cfbbb5110ea99f678f9d8c85c8e"
   license "ISC"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66ea5f9271f2e5e196936b47557e45ef687a7a42257b0cecb0366732d3d49abc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eb58eb49a3992f0fce52657f01ba7808fc53199690228efadceb88702ac2860"
+    sha256 cellar: :any_skip_relocation, ventura:       "14961fef3b718a7cf53c7ab0e954d3bd2a700bad60086354cdda78129b9422d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eca1a4d3501bdc026833e1fcf319f1ad83b205c0dd4c4afb013e8e2d3914444b"
+  end
+
   depends_on "zig" => :build
 
   def install
