@@ -18,7 +18,11 @@ class Minisign < Formula
   depends_on "zig" => :build
   depends_on "libsodium"
 
-  patch :DATA
+  # linuxbrew library/include paths patch, upstream pr ref, https://github.com/jedisct1/minisign/pull/156
+  patch do
+    url "https://github.com/jedisct1/minisign/commit/b3c3e628b957b26d01a837bb44e6c2b82f05b0c4.patch?full_index=1"
+    sha256 "a978c6805cbe13cf89960578e021c9311e9c0fb3e4d91de532ad9aaa4e0133d9"
+  end
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
@@ -63,23 +67,3 @@ class Minisign < Formula
                           "-p", testpath/"public.key"
   end
 end
-
-__END__
-diff --git a/build.zig b/build.zig
-index b8898bc..3dbca75 100644
---- a/build.zig
-+++ b/build.zig
-@@ -61,6 +61,13 @@ pub fn build(b: *std.Build) !void {
-         }
-         minisign.addSystemIncludePath(.{ .cwd_relative = "/opt/homebrew/include" });
-         minisign.addSystemIncludePath(.{ .cwd_relative = "/usr/local/include" });
-+
-+        // add linuxbrew library/include paths
-+        if (target.result.os.tag == .linux) {
-+            minisign.addIncludePath(.{ .cwd_relative = "/home/linuxbrew/.linuxbrew/include" });
-+            minisign.addLibraryPath(.{ .cwd_relative = "/home/linuxbrew/.linuxbrew/lib" });
-+        }
-+
-         for ([_][]const u8{ "/opt/homebrew/lib", "/usr/local/lib" }) |path| {
-             std.fs.accessAbsolute(path, .{}) catch continue;
-             minisign.addLibraryPath(.{ .cwd_relative = path });
