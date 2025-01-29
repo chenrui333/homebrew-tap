@@ -31,11 +31,14 @@ brew install --cask <tool>
 
 - `amoco`
 - `blush`
+- `btczee`
 - `carton`
 - `codstts`
 - `dvm`
 - `emplace`
 - `fancy-cat`
+- `git-vain`
+- `glsl-analyzer`
 - `hello`
 - `hellwal`
 - `jetzig`
@@ -45,8 +48,10 @@ brew install --cask <tool>
 - `omnictl`
 - `otto`
 - `oxbuild`
+- `poop`
 - `projectable`
 - `rails-new`
+- `resinator`
 - `rpds-py`
 - `rslocal`
 - `seamstress`
@@ -57,6 +62,7 @@ brew install --cask <tool>
 - `wallust`
 - `ziggy`
 - `zlint`
+- `zware`
 
 </details>
 <!-- FORMULAE-LIST-END -->
