@@ -6,6 +6,14 @@ class Bytebox < Formula
   sha256 "ed8aba1339abf3cafb9fb923731b8a9edefad366623be45877677457a166d7aa"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ab35c42fbf80f3af7509c6ada34e53f3148d25e5962d2dbed4ebdf71dc2e6ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bd0f7ae57d3b63dda71f09f3ad38d6b558a9b4f7d3607b4ee317710cf61eb60"
+    sha256 cellar: :any_skip_relocation, ventura:       "f058bf91d6666b5a0ef1e3487bfbbdc96a72b3c94929b0d0e8f245cac7e50435"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f29f120ddbfbde9e6c139fd550c94c18ac5c9e8af0d58938b2fedc7453e82c3"
+  end
+
   depends_on "zig" => :build
   depends_on "wabt" => :test
 
