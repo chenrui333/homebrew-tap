@@ -18,6 +18,8 @@ class Minisign < Formula
   depends_on "zig" => :build
   depends_on "libsodium"
 
+  patch :DATA
+
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
@@ -61,3 +63,23 @@ class Minisign < Formula
                           "-p", testpath/"public.key"
   end
 end
+
+__END__
+diff --git a/build.zig b/build.zig
+index b8898bc..3dbca75 100644
+--- a/build.zig
++++ b/build.zig
+@@ -61,6 +61,13 @@ pub fn build(b: *std.Build) !void {
+         }
+         minisign.addSystemIncludePath(.{ .cwd_relative = "/opt/homebrew/include" });
+         minisign.addSystemIncludePath(.{ .cwd_relative = "/usr/local/include" });
++
++        // add linuxbrew library/include paths
++        if (target.result.os.tag == .linux) {
++            minisign.addIncludePath(.{ .cwd_relative = "/home/linuxbrew/.linuxbrew/include" });
++            minisign.addLibraryPath(.{ .cwd_relative = "/home/linuxbrew/.linuxbrew/lib" });
++        }
++
+         for ([_][]const u8{ "/opt/homebrew/lib", "/usr/local/lib" }) |path| {
+             std.fs.accessAbsolute(path, .{}) catch continue;
+             minisign.addLibraryPath(.{ .cwd_relative = path });
