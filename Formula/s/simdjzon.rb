@@ -6,6 +6,7 @@ class Simdjzon < Formula
   license "Apache-2.0"
 
   depends_on "zig" => :build
+  depends_on arch: :arm64 # builds for arm64 only for now
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
