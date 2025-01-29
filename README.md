@@ -63,7 +63,6 @@ brew install --cask <tool>
 - `simdjzon`
 - `termtunnel`
 - `tun2proxy`
-- `umka-lang`
 - `wallust`
 - `zig@0.11`
 - `zig@0.12`
