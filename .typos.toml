@@ -3,5 +3,9 @@
 [default]
 locale = "en"
 
+[default.extend-words]
+sur = "sur" # for big sur
+Sur = "Sur"
+
 [type.ruby.extend-words]
 fo = "fo" # for resinator.rb
