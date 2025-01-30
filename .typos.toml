@@ -6,6 +6,7 @@ locale = "en"
 [default.extend-words]
 sur = "sur" # for big sur
 Sur = "Sur"
+ratatui = "ratatui"
 
 [type.ruby.extend-words]
 fo = "fo" # for resinator.rb
