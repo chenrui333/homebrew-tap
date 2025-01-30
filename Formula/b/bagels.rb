@@ -8,6 +8,7 @@ class Bagels < Formula
   license "GPL-3.0-or-later"
 
   depends_on "libyaml"
+  depends_on "numpy"
   depends_on "python@3.13"
 
   resource "aiohappyeyeballs" do
@@ -118,11 +119,6 @@ class Bagels < Formula
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/d6/be/504b89a5e9ca731cd47487e91c469064f8ae5af93b7259758dcfc2b9c848/multidict-6.1.0.tar.gz"
     sha256 "22ae2ebf9b0c69d206c003e2f6a914ea33f0a932d4aa16f236afc049d9958f4a"
-  end
-
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/ec/d0/c12ddfd3a02274be06ffc71f3efc6d0e457b0409c4481596881e748cb264/numpy-2.2.2.tar.gz"
-    sha256 "ed6906f61834d687738d25988ae117683705636936cc605be0bb208b23df4d8f"
   end
 
   resource "packaging" do

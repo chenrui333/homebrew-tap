@@ -1,4 +1,7 @@
 {
+  "bagels": {
+    "exclude_packages": ["numpy"]
+  },
   "rpds-py": {
     "extra_packages": ["maturin", "setuptools-rust"]
   }
