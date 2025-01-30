@@ -1,13 +1,14 @@
 class TerraformIamPolicyValidator < Formula
   include Language::Python::Virtualenv
 
-  desc "CLI to validates AWS IAM Policies in a Terraform template against AWS IAM best practices"
+  desc "CLI to validate AWS IAM policies in Terraform templates for best practices"
   homepage "https://github.com/awslabs/terraform-iam-policy-validator"
   url "https://files.pythonhosted.org/packages/13/7b/4fba4bbee1931df373f456a34994a1f089059ac13bac5ade29e1ae143956/tf_policy_validator-0.0.8.tar.gz"
   sha256 "f43359ee0478f10e7b27a3fb7282c284304615cc6f06fd5aa3aa631edbe4811a"
   license "MIT-0"
   head "https://github.com/awslabs/terraform-iam-policy-validator.git", branch: "main"
 
+  depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "boto3" do
