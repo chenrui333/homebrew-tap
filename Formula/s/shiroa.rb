@@ -5,6 +5,11 @@ class Shiroa < Formula
   sha256 "0f91d352b6807f531e3913c2bb61c61a03b03a54ea8482d5c807ca7d9b32b826"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "87c6a57393e2517108621b4e595f036659996fe1110d535071cfbf6f8e3e0b54"
