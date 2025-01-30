@@ -6,6 +6,14 @@ class Tfsort < Formula
   license "Apache-2.0"
   head "https://github.com/AlexNabokikh/tfsort.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc0d600c40219d37582fede11a08d6640e721f71ee8bc277bd2ba59f3c722d34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67acde0d52cf19d347c1e8fdaf3d4b8c8f579ec08f5142efea629f558b2cb101"
+    sha256 cellar: :any_skip_relocation, ventura:       "f1a497a4a233f29dbc7fdd1a3bb5372b31f6054cec7f82566faa214e262ed466"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5c1ba8667adb309e50f6dc50b42ba5a61f78976684ae8aec590ccaea7510274"
+  end
+
   depends_on "go" => :build
 
   def install
