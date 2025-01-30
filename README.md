@@ -29,7 +29,9 @@ brew install --cask <tool>
 <details>
 <summary>Formula List</summary>
 
+- `alacritty`
 - `amoco`
+- `asciinema`
 - `blush`
 - `btczee`
 - `bytebox`
@@ -40,15 +42,19 @@ brew install --cask <tool>
 - `fancy-cat`
 - `fex`
 - `flow`
+- `fortitude`
 - `git-vain`
 - `glsl-analyzer`
+- `goboscript`
 - `hello`
 - `hellwal`
 - `jetzig`
 - `keyhunter`
+- `koji`
 - `lola`
 - `libdivide`
 - `minisign`
+- `mitex`
 - `omnictl`
 - `otto`
 - `oxbuild`
@@ -59,6 +65,7 @@ brew install --cask <tool>
 - `resinator`
 - `rpds-py`
 - `rslocal`
+- `satty`
 - `seamstress`
 - `sig`
 - `simdjzon`
