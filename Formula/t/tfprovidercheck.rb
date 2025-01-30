@@ -35,10 +35,10 @@ class Tfprovidercheck < Formula
 
     # Only google provider and azurerm provider are allowed
     (testpath/".tfprovidercheck.yaml").write <<~YAML
-    providers:
-      - name: registry.terraform.io/hashicorp/google
-        version: ">= 4.0.0"
-      - name: registry.terraform.io/hashicorp/azurerm
+      providers:
+        - name: registry.terraform.io/hashicorp/google
+          version: ">= 4.0.0"
+        - name: registry.terraform.io/hashicorp/azurerm
     YAML
 
     system "tofu", "init"
