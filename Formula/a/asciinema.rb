@@ -3,7 +3,7 @@ class Asciinema < Formula
   homepage "https://asciinema.org/"
   url "https://github.com/asciinema/asciinema/archive/refs/tags/v3.0.0-rc.3.tar.gz"
   sha256 "3e7402589eac1a704951e3c48d769f5d007c52630f17ec895dfad6676e4ba6b9"
-  license "GPL-3.0-or-later"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
