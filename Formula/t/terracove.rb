@@ -6,6 +6,14 @@ class Terracove < Formula
   license "MIT"
   head "https://github.com/ElementTech/terracove.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d7273e1a473065d6d90771a6d8a13305760c79e3e55e7ad7c64af2f71ff3b35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ba0c2bf5b99fe81ffcb71476ad5853c3b9548d1faa16bbe656481508bb5ecbc"
+    sha256 cellar: :any_skip_relocation, ventura:       "921d2ee496fd586ea8797878e2c72ba70a3c7f610f69fd244c486b31175928d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b91fc58598410ed3100ff8250c431e934e8443afba9b81f3c8fa34b23d2e478"
+  end
+
   depends_on "go" => :build
 
   def install
