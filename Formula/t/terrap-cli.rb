@@ -6,6 +6,14 @@ class TerrapCli < Formula
   license "Apache-2.0"
   head "https://github.com/sirrend/terrap-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82f14006cf8b2d2a703f8e1f0a3a62379c9dff7dc6d5d601a338098685641cbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b22d0e0353f4ed9e336c607dc0afc2c12cb31fc1f31953a6fe3f58db4b8aace"
+    sha256 cellar: :any_skip_relocation, ventura:       "2d9544381fa49fb64c79e5d49e9391dda4b049dbd3b7ca9653e57fbd85ca8442"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e543f08cddcc2efb753dee35210ca8d39100a9986c5ad51c332fc51a32d4950"
+  end
+
   depends_on "go" => :build
 
   def install
