@@ -5,6 +5,14 @@ class Shiroa < Formula
   sha256 "0f91d352b6807f531e3913c2bb61c61a03b03a54ea8482d5c807ca7d9b32b826"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87c6a57393e2517108621b4e595f036659996fe1110d535071cfbf6f8e3e0b54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c75cb7056a102eb05d0cc07cca5f40e02e30d612c6d049ce2a675d46cc51cc9"
+    sha256 cellar: :any_skip_relocation, ventura:       "bfddb0f8bc3fa212c80c7397dd38de01839ad78c79265b7dc381cc23ddab09b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92c74d1f1a08e998a9b30c65490a364443efbb5e59f1acb0d15f0bd614fbf8c8"
+  end
+
   depends_on "rust" => :build
 
   resource "artifacts" do
