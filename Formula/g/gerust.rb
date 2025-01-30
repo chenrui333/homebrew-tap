@@ -5,6 +5,14 @@ class Gerust < Formula
   sha256 "a6ed76805d5f8d2212761eab18623d35dad12276a72dcc51e8860132b9923ca9"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "25b1bc9bc55b2a05af162eab440beac5ac3befc62e6ac7c41934f8f7e85581e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "7de5d9baa32407a3d31a20ed2a60d0324a9867b752ed34af5b92fc34f57ede7d"
+    sha256 cellar: :any,                 ventura:       "86e300fb7ac40493d61ac01ac3630a2b936f0dcf51bcf20327742b902ead3791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7008e273346784f93a34ed47cf647d3d6a848661037aa522ae5134f8e415ac9"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
