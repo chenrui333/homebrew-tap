@@ -5,6 +5,14 @@ class Koji < Formula
   sha256 "648b9d47de121895a79e3d963f5fc6e781d82a1531eeec6b3aa91db5951e058a"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "7e7ba7c5ce312902c0f979f19a839facd176a48d948e8147b42ea1a6e4836aed"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba38e5032f24ce160ba1279cb35685ce4f6ee493b7fe33b8151af8d4d8ced537"
+    sha256 cellar: :any,                 ventura:       "11b0c6b81f67cb8ee3d675e6a83d56403c7ba2cf55708df6d503c4e7b828336c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d045e74d175e1d922d4e6cb2c448475ac087aa305ff0c19fe4296897a2c9d4a"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
