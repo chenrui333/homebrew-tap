@@ -5,7 +5,12 @@ class PublicOllamaFinder < Formula
   sha256 "47ad4656d0301ea6980030bb3e734ab56412f17b30e0150abf5501915e786b22"
   license "MIT"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
