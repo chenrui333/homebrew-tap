@@ -10,6 +10,14 @@ class Mitex < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cee75e8bd5abc217ace2223c28fbdd4ce893957646ace1dc079217067c54bf7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc877355fa90fc2451f0307aea43df091816169ac826e9c0afef28a3cdbfad2f"
+    sha256 cellar: :any_skip_relocation, ventura:       "7c52e1ef7c1065c0046e291d96d2900594b75243939f3439ffe6c81396f6f792"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec5daed2578b21fc0f88b6d5cbf2cb9e429b4f2ca95f181df63a651e1cea646"
+  end
+
   depends_on "rust" => :build
 
   # from `.gitmodules`
