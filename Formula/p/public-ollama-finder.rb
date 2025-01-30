@@ -5,6 +5,14 @@ class PublicOllamaFinder < Formula
   sha256 "47ad4656d0301ea6980030bb3e734ab56412f17b30e0150abf5501915e786b22"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5db7d0a4bd3a8126efd89faac4e154e4f443a788ba1ade514b08d6e0ecb87a45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81e5ed97cc688081c39a981df7259f7aa9f24d546233377631a9047590bb03de"
+    sha256 cellar: :any_skip_relocation, ventura:       "9022ec627463ad6cf94fc96e622201eddc464093e5d38ac3fe66b3ba0aac0488"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0268a56552883e85c536bfe86cbd4cd0a1811bf3fbcff40f13fa3c08d0fa9ca1"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
