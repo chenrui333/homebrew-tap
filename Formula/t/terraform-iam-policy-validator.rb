@@ -8,6 +8,14 @@ class TerraformIamPolicyValidator < Formula
   license "MIT-0"
   head "https://github.com/awslabs/terraform-iam-policy-validator.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "8b217c9010613ada7e9d02267b1b46788eb21b278cc47364648269c580c44370"
+    sha256 cellar: :any,                 arm64_sonoma:  "78b9e7cedd583b11bfc5b9091517caecc5166844da10fe82ee7c35af04a32f56"
+    sha256 cellar: :any,                 ventura:       "f2d5aace6b8f73cdf904fe7b91a83d82b39c2de3d7e7025242f379d9b47e3fc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44b6954a3625ffbfb7983b5b4a6c6fe7b95510a12d8899057c5ada277ad13842"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
