@@ -32,6 +32,7 @@ brew install --cask <tool>
 - `alacritty`
 - `amoco`
 - `asciinema`
+- `blueutil-tui`
 - `blush`
 - `btczee`
 - `bytebox`
@@ -77,6 +78,16 @@ brew install --cask <tool>
 - `terracove`
 - `terraform-cleaner`
 - `terraform-diff`
+- `terraform-iam-policy-validator`
+- `terraform`
+- `terrap-cli`
+- `terratag`
+- `tf-summarize`
+- `tfprovidercheck`
+- `tfreveal`
+- `tfsort`
+- `tftarget`
+- `tftree`
 - `tun2proxy`
 - `wallust`
 - `zig@0.11`
