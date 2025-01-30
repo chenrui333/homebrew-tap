@@ -9,6 +9,7 @@ class BlueutilTui < Formula
 
   depends_on "blueutil"
   depends_on :macos # blueutil is macOS-only
+  depends_on macos: :sonoma # skip ventura support for now
   depends_on "python@3.13"
 
   resource "linkify-it-py" do
