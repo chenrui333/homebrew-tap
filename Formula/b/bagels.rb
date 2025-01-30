@@ -7,6 +7,7 @@ class Bagels < Formula
   sha256 "e487d9562c10ddc056d42db81dae07bfe92837e78f6ef07046f202a385263520"
   license "GPL-3.0-or-later"
 
+  depends_on "rust" => :build # for pydantic_core
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "python@3.13"
