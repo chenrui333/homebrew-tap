@@ -7,6 +7,12 @@ class BlueutilTui < Formula
   sha256 "220782afaf25c51c71cf6ba2d4b7a830148ff4ec772c3755620570c5d402a697"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "546f4b14acb633b103764c793d7aa388fb3575b453a8650d1b34f82ca927dd36"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ab49743bddfb2cbe10ddc188176d254e4ed2cf860077e6b3d56979910bdc151"
+  end
+
   depends_on "blueutil"
   depends_on :macos # blueutil is macOS-only
   depends_on macos: :sonoma # skip ventura support for now
