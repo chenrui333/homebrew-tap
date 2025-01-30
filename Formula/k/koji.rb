@@ -5,15 +5,22 @@ class Koji < Formula
   sha256 "648b9d47de121895a79e3d963f5fc6e781d82a1531eeec6b3aa91db5951e058a"
   license "MIT"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"koji", "completions")
   end
 
   test do
+    require "utils/linkage"
+
     assert_match version.to_s, shell_output("#{bin}/koji --version")
 
     require "pty"
@@ -47,6 +54,14 @@ class Koji < Formula
       rescue Errno::EIO
         # GNU/Linux raises EIO when read is done on closed pty
       end
+    end
+
+    [
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+    ].each do |library|
+      assert Utils.binary_linked_to_library?(bin/"koji", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end
 end
