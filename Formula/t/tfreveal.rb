@@ -6,6 +6,14 @@ class Tfreveal < Formula
   license "MIT"
   head "https://github.com/breml/tfreveal.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f796f528b963022849e26d3580bee3b2dd30c35a3e2667dd1dc681d5b245adfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ead5e6bd914141a882ba3e712cdf7d3fabf3e6c97765a4e45f961548d2a9dda"
+    sha256 cellar: :any_skip_relocation, ventura:       "d874ab163e8fe032a5ced17e80df1fb2a1d1afc515662f39c4db9b79223ecafb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cc99c05370b2e1a94642a802d681675ed414a4a0ee52b3df4ebacf005d4b57a"
+  end
+
   depends_on "go" => :build
 
   def install
