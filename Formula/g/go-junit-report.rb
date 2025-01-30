@@ -6,6 +6,14 @@ class GoJunitReport < Formula
   license "MIT"
   head "https://github.com/jstemmer/go-junit-report.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b8c7b77ca162d9744e9bbd491ddd30b0d32068f63b86f4d1247aea0cfcc1607"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b9668b573f0050d6af9324fb94c99cedff0cb10b491a7c8dd7a32fd77f682f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c44fb83cd5afc627e775b226bd1a34faefd2bee1d369bd46bfbdf5f0621521d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec3aa4837fc94782a27f7295b39b949a7c1539a841adf9f8cc1b89c72add3257"
+  end
+
   depends_on "go" => [:build, :test]
 
   def install
