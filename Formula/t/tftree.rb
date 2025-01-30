@@ -6,6 +6,14 @@ class Tftree < Formula
   license "Apache-2.0"
   head "https://github.com/busser/tftree.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "518e84f35d42cfb6d0f668d01e628a64bbb95340c0ffb41b4dd8852f91aa707b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38d3814f7abd5120bea3dceb4661dfa27f62833c9b95adf924b2f6102fbfbd18"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c34c3a315df3bc69090e669b9837ee759a6ba751c16ac5afa6edb18a150c895"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "674935227c58461c4d9a5094c0ed20f30bbafdd99626b0b781b75099194057ca"
+  end
+
   depends_on "go" => :build
   depends_on "opentofu" => :test
 
