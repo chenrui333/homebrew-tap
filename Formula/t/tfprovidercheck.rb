@@ -6,6 +6,14 @@ class Tfprovidercheck < Formula
   license "MIT"
   head "https://github.com/suzuki-shunsuke/tfprovidercheck.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72650c0a3942ea77cb2e53c9a0e5325c6877584a20a6aea65d62c8b80ef92af0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "051f192f67d72094957d0852acfe2e924f95295210e86af8c5c199abe7c3e382"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ae4842c5f069564e94a54cc9135439a0992d1dfa4b520105750eec1c45c1e3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c33ce4af544c6fec831d610d917b73e661e23d8d8d7363b7e2a833f4b4234706"
+  end
+
   depends_on "go" => :build
   depends_on "opentofu" => :test
 
