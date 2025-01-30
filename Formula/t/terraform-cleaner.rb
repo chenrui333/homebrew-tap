@@ -6,6 +6,14 @@ class TerraformCleaner < Formula
   license "MIT"
   head "https://github.com/sylwit/terraform-cleaner.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fc3085d16e7c68b5cdfb0234af758e82bd0a43a87ae787b0d7c8564b400a663"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37f78830295fcdebb8913882f5261e1d1b9ad4c1c378aa60e30a7980068d0420"
+    sha256 cellar: :any_skip_relocation, ventura:       "be6a273e545cd2511f93a774844ff5783a20e30d830e52d85d0f09c285e6eca3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed8122e8c98e02ff771eb920a90b7c8b5fc75c9f834b82118d109214902de08"
+  end
+
   depends_on "go" => [:build, :test]
 
   def install
