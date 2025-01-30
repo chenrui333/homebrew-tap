@@ -17,6 +17,9 @@ class PublicOllamaFinder < Formula
   end
 
   test do
+    # No such device or address (os error 6)
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     (testpath/"ip-ranges.txt").write "192.168.1.0/24"
 
     pipe_output("#{bin}/public-ollama-finder", "y", 0)
