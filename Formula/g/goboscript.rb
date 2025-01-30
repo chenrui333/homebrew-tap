@@ -5,6 +5,14 @@ class Goboscript < Formula
   sha256 "dec707a4fac62668458e6c401fe189aec69099901a16bd08a36e246cd488f1a3"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bdca032ce9012f761c898d230a03b78072c5282754437a5e458eda422cdb5df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c522493d94f39f9a302d643404cc0d87a1bc1949ded1c850d1bf591a2a0dc142"
+    sha256 cellar: :any_skip_relocation, ventura:       "8752ee27a17ac8a51bf27601a165c55069a04386cf7f622968a0a188f77bb361"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e7661902f7efe5bc4057ef055035ebdbd7070d051467f7cfcb7c7151aa21ce6"
+  end
+
   depends_on "rust" => :build
 
   def install
