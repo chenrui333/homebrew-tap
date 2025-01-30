@@ -43,12 +43,15 @@ brew install --cask <tool>
 - `fex`
 - `flow`
 - `fortitude`
+- `gerust`
 - `git-vain`
 - `glsl-analyzer`
+- `go-junit-report`
 - `goboscript`
 - `hello`
 - `hellwal`
 - `jetzig`
+- `junit2html`
 - `keyhunter`
 - `koji`
 - `lola`
@@ -67,9 +70,11 @@ brew install --cask <tool>
 - `rslocal`
 - `satty`
 - `seamstress`
+- `shiroa`
 - `sig`
 - `simdjzon`
 - `termtunnel`
+- `terracove`
 - `tun2proxy`
 - `wallust`
 - `zig@0.11`
