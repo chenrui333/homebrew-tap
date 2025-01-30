@@ -11,8 +11,17 @@ class Satty < Formula
   depends_on "fontconfig"
   depends_on "gdk-pixbuf"
   depends_on "glib"
+  depends_on "gtk4"
   depends_on "libadwaita"
   depends_on "libepoxy"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "freetype"
+    depends_on "gettext"
+    depends_on "graphene"
+    depends_on "harfbuzz"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
