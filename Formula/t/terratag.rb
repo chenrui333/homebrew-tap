@@ -6,6 +6,14 @@ class Terratag < Formula
   license "MPL-2.0"
   head "https://github.com/env0/terratag.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfe06e52b82c3678f64ce179f0a3d6a3997d98b408597fc1567f26efda8e1970"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80bc57d68008a8d0da99d1487b179809c749b24dc16296fbdf873232c939cf88"
+    sha256 cellar: :any_skip_relocation, ventura:       "b36375531e0e42995955f4fcc51b52a92f503c25afa71d7047ab555ebe11a235"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b71f54cdb75a2a73874d95d3774799254383ed41dd5758da18998c0dd1377acb"
+  end
+
   depends_on "go" => :build
 
   def install
