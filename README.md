@@ -76,6 +76,7 @@ brew install --cask <tool>
 - `termtunnel`
 - `terracove`
 - `terraform-cleaner`
+- `terraform-diff`
 - `tun2proxy`
 - `wallust`
 - `zig@0.11`
