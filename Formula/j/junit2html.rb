@@ -15,7 +15,7 @@ class Junit2html < Formula
   end
 
   depends_on "go" => [:build, :test]
-  depends_on "go-junit-report" => :test
+  depends_on "go-junit-report" => :test # this is from the same tap
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
