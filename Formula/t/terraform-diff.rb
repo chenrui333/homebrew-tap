@@ -7,6 +7,14 @@ class TerraformDiff < Formula
   license "Apache-2.0"
   head "https://github.com/contentful-labs/terraform-diff.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a214ec7d848d7a2d2fa0f517fb8731cf3402647dd28dcbac997b5ab60e58e6cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d00c9f08b4c0739e56a64403d4f78b7b53818d701106df40e1f14df28669716"
+    sha256 cellar: :any_skip_relocation, ventura:       "719e8ffb7971d5a81615da22e25c71e63b0097affc2a0102494e653f78288b0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "913efb8bee3baa2442e4e0bf9dfe4d9a4183ee00416c6f735326e8e180c7d46d"
+  end
+
   depends_on "go" => :build
 
   def install
