@@ -9,6 +9,8 @@ class Gerust < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
+  uses_from_macos "zlib"
+
   def install
     ENV["OPENSSL_NO_VENDOR"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
