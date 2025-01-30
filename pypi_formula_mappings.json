@@ -1,5 +1,8 @@
 {
   "rpds-py": {
     "extra_packages": ["maturin", "setuptools-rust"]
+  },
+  "terraform-iam-policy-validator": {
+    "package_name": "tf-policy-validato"
   }
 }
