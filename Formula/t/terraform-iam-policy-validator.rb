@@ -85,7 +85,8 @@ class TerraformIamPolicyValidator < Formula
       }
     JSON
 
-    output = shell_output("#{bin}/tf-policy-validator validate --config default.yaml --template-path tf.json --region us-east-1 2>&1", 1)
+    output = shell_output("#{bin}/tf-policy-validator validate " \
+                          "--config default.yaml --template-path tf.json --region us-east-1 2>&1", 1)
     assert_match "No IAM policies defined", output
   end
 end
