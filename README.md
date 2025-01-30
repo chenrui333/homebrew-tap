@@ -54,6 +54,7 @@ brew install --cask <tool>
 - `oxbuild`
 - `poop`
 - `projectable`
+- `public-ollama-finder`
 - `rails-new`
 - `resinator`
 - `rpds-py`
