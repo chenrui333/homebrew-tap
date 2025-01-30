@@ -5,6 +5,14 @@ class Fortitude < Formula
   sha256 "e16b1411b32bd9ff95e1ec989e6bee7fc81bd78be10da864b18454a599631e03"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e00b3614b17f8a9bcff81e117c174defc6fdac240599d9c75d49ba5463227c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5a5aa331f15583416f4af47c6aba33c2dd076e252027a7c44e3e124bf52f9bc"
+    sha256 cellar: :any_skip_relocation, ventura:       "c972bc580a18054387965d7cc9061363456eb97c2f6089ff2c4378ec6c0a7953"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d85bb790364e7fedec53734a90bc748c89ed94170ad2b6b7bdbb64b57a2534a"
+  end
+
   depends_on "rust" => :build
 
   def install
