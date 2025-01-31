@@ -7,6 +7,14 @@ class Balcony < Formula
   sha256 "ffb393afd91f0976d806fcbcbe41cb9e34cb69409242ff6a0b86c8bd1acf5c87"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "074f9d1053986da5b18c991c0f835c097832bccaf285a76489e445aac23592a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "43884d200112c1bc56d8a9e28cda7bb483ecc72a9e61c93b79d0c7576abe7894"
+    sha256 cellar: :any,                 ventura:       "605ebcb57a4ca396dcb9ca78e6ef7a1e519a8dffbaa81da61ce4f17332e7268e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a83ab39655c777e18138982e7cb60a17401f830667559aa3c8dd75b2ddae4004"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
