@@ -6,6 +6,14 @@ class CfTerraforming < Formula
   license "MPL-2.0"
   head "https://github.com/cloudflare/cf-terraforming.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fb87cc1aead5b6ac35bcc74b34e990714da04b60b8ea63b8926281a08db2eb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72e0156a7e9be50d85723da28510d900117409e2b3d617048a0a474bb9f382f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "8ed1ce7161f333f72464c6e2e9211c1273e5a980d6b9f753d298007b2ddbf879"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fe57430fea19ce9efca3e998ed53fe2814d6c480f6b0783ba5e91f3fdcbac2b"
+  end
+
   depends_on "go" => :build
 
   def install
