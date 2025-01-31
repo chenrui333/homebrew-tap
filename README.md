@@ -99,8 +99,11 @@ brew install --cask <tool>
 - `tfsort`
 - `tftarget`
 - `tftree`
+- `tpm`
+- `travelgrunt`
 - `tun2proxy`
 - `wallust`
+- `yor`
 - `zero`
 - `zig@0.11`
 - `zig@0.12`
