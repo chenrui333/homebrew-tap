@@ -38,6 +38,9 @@ brew install --cask <tool>
 - `btczee`
 - `bytebox`
 - `carton`
+- `cf-terraforming`
+- `cf-vault`
+- `cfnctl`
 - `codstts`
 - `dvm`
 - `emplace`
