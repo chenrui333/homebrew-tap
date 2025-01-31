@@ -33,6 +33,7 @@ brew install --cask <tool>
 - `alacritty`
 - `amoco`
 - `asciinema`
+- `balcony`
 - `blueutil-tui`
 - `blush`
 - `btczee`
@@ -53,6 +54,8 @@ brew install --cask <tool>
 - `glsl-analyzer`
 - `go-junit-report`
 - `goboscript`
+- `hcledit`
+- `hclgrep`
 - `hello`
 - `hellwal`
 - `jetzig`
