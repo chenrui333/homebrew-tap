@@ -15,7 +15,6 @@ class Amoco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38b55a56f43a00db6aa671a88034da0a8530fe24c1d44ee1786b68cb73ee4ccf"
   end
 
-  depends_on "python@3.13" => :build
   depends_on "python@3.13"
 
   resource "click" do
