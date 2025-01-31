@@ -6,6 +6,14 @@ class Cfnctl < Formula
   license "Apache-2.0"
   head "https://github.com/rogerwelin/cfnctl.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5511eb9fba78329a56363f5013c9a52ed1289dcab7bfd4e382d263567ab62f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d863a5d001213308d12517d81ce31439783f4b61b50bed5718d0957e5ee9770"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed504c3ef9cb8a3eaa0ad0e6df8869eb3141dd8de83bf354b55184e7fb71cce5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cd40a3fb91a6171a3ff08c23ae9c9c17e8474c707dccd0e0242b2d68815f781"
+  end
+
   depends_on "go" => :build
 
   def install
