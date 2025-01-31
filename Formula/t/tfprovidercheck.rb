@@ -50,7 +50,8 @@ class Tfprovidercheck < Formula
     YAML
 
     system "tofu", "init"
-    output = shell_output("tofu version -json | #{bin}/tfprovidercheck 2>&1", 1)
+    json_output = shell_output("tofu version -json")
+    output = pipe_output("#{bin}/tfprovidercheck 2>&1", json_output, 1)
     assert_match "Terraform Provider is disallowed", output
   end
 end
