@@ -29,6 +29,7 @@ brew install --cask <tool>
 <details>
 <summary>Formula List</summary>
 
+- `aiac`
 - `alacritty`
 - `amoco`
 - `asciinema`
@@ -90,6 +91,7 @@ brew install --cask <tool>
 - `tftree`
 - `tun2proxy`
 - `wallust`
+- `zero`
 - `zig@0.11`
 - `zig@0.12`
 - `ziggy`
