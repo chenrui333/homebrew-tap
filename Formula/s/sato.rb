@@ -6,6 +6,14 @@ class Sato < Formula
   license "Apache-2.0"
   head "https://github.com/JamesWoolfenden/sato.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e961d969e74e97dd8822f0cfb54b74aadd50da3c0e79e57ad2df4eeda6870f03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d8d3c86bf01cbd9e3ebcfabf355597c6bce2d3642d76a90c3347e72997a0938"
+    sha256 cellar: :any_skip_relocation, ventura:       "91d617e821178a3cfb69d2c74716c362dd7cf51cbf8ba620cfa219579fe1b301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f64f083ccb2d230aee1240cab8b4562d256be84c1820b1f16a85f5fba3d5e021"
+  end
+
   depends_on "go" => :build
 
   def install
