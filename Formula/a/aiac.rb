@@ -6,6 +6,14 @@ class Aiac < Formula
   license "Apache-2.0"
   head "https://github.com/gofireflyio/aiac.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e491fbfa86013efd005352c93c1280dd568693179d7aeeb187c7fea7ea44790b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd5111308ae6925aa821ea6cf48d8824f87bba160b1d4403165ddfc8bab953fa"
+    sha256 cellar: :any_skip_relocation, ventura:       "d12042e3f28612d4f077c72dc3e487879b34ef80a80f3f1f70ec622cc7c5d306"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53df1c4ab3ad4cb1327a2d61603bc6f213dae090e54b9f740fdf44379c51ddf9"
+  end
+
   depends_on "go" => :build
 
   def install
