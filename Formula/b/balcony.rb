@@ -7,6 +7,7 @@ class Balcony < Formula
   sha256 "ffb393afd91f0976d806fcbcbe41cb9e34cb69409242ff6a0b86c8bd1acf5c87"
   license "Apache-2.0"
 
+  depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "aws-jmespath-utils" do
