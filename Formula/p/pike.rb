@@ -6,6 +6,14 @@ class Pike < Formula
   license "Apache-2.0"
   head "https://github.com/jamesWoolfenden/pike.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7db58cd767a737a4280166dc240b56a3cde88edf06a186a4f54c5c5226cda40e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "681f46afa8b5992652bbf03cb80169919639280cd1d454e476a9d610ac7fb8a3"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f884761d00932eb3c084ed4415b8647ebcce9a2705693ff2494fa19148e6dae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b88ae739b1ed02a925ade0d4327bb891e781a9b90acc4be67a899186203dd389"
+  end
+
   depends_on "go" => :build
 
   def install
