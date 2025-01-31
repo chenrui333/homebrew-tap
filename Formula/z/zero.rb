@@ -6,6 +6,14 @@ class Zero < Formula
   license "MIT"
   head "https://github.com/yarlson/zero.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32183758e7fbf7b04ae2b51fe7f602af04c92cdfd5673ffce5da7b450f401730"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "289895442480949ca8cc47709e164773e1e2cfd56d3c7d8df22c0b8054506a63"
+    sha256 cellar: :any_skip_relocation, ventura:       "7160398fb07dc3243926f688c717186ca64707cc6ba82d13775b6fb316d59137"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db801f1991e5e278cc4462cd824147902b6fa3d303a0e5b6fdffc5e27f2a6762"
+  end
+
   depends_on "go" => :build
 
   def install
