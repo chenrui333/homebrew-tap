@@ -54,6 +54,7 @@ brew install --cask <tool>
 - `glsl-analyzer`
 - `go-junit-report`
 - `goboscript`
+- `hcldump`
 - `hcledit`
 - `hclgrep`
 - `hello`
@@ -69,6 +70,8 @@ brew install --cask <tool>
 - `omnictl`
 - `otto`
 - `oxbuild`
+- `pike`
+- `pluralith`
 - `poop`
 - `projectable`
 - `public-ollama-finder`
@@ -76,6 +79,7 @@ brew install --cask <tool>
 - `resinator`
 - `rpds-py`
 - `rslocal`
+- `sato`
 - `satty`
 - `seamstress`
 - `shiroa`
