@@ -4,7 +4,7 @@ class Hcledit < Formula
   url "https://github.com/minamijoyo/hcledit/archive/refs/tags/v0.2.15.tar.gz"
   sha256 "70275f7651162863d7c9f2a96f034e434fff7d028d03b9adbc57e0247a37d6d1"
   license "MIT"
-  head "https://github.com/minamijoyo/hcledit.git", branch: "main"
+  head "https://github.com/minamijoyo/hcledit.git", branch: "master"
 
   depends_on "go" => :build
 
