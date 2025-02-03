@@ -8,10 +8,10 @@ class CfTerraforming < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fb87cc1aead5b6ac35bcc74b34e990714da04b60b8ea63b8926281a08db2eb0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72e0156a7e9be50d85723da28510d900117409e2b3d617048a0a474bb9f382f2"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ed1ce7161f333f72464c6e2e9211c1273e5a980d6b9f753d298007b2ddbf879"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fe57430fea19ce9efca3e998ed53fe2814d6c480f6b0783ba5e91f3fdcbac2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e8f03ddb1ab0124f8d5b5309ed94069e7cbd5630384e11214290946ab3b595"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "117acdae075f69d444b396b5c53a050fd92f8fddf97fd473838a86534514a9a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "640bffca47271f47c56bca4bdf94bbef3e81ce34a1c3eb574701f43193973b8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "241cc201c758cd2131eb22266c222e7189807339a374343e07048140d03b4d4e"
   end
 
   depends_on "go" => :build
