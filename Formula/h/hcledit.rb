@@ -8,10 +8,10 @@ class Hcledit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dde7937e2293cadd9a4b87b8ca1c92d5e856056ca2f4f0e6c40230983071809"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64c8c310f6247c76ac1f1d4c8fa53c22b57f2686c1bb707d59409d836a7c7ee4"
-    sha256 cellar: :any_skip_relocation, ventura:       "35fc4426f92293b5aa9e43b4fb374efe6a081ecf3b027c314c056bef16d3a548"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e53d63c6ef70956d05c14b77b8e99dd623c1e4b286fa9e245afe5db7dffe51e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "092d63829aa7a5ca6d8a562c60aa70cec14c5f7e8e7831fc6898195d420663da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b57ffadb9b5e227000d995399da0822c816718c9a9ef99deea06797f3dc3136a"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd3c37ca124c4f161c0c22dc287b533ce374bfec552f4aa7930adf64cdfde0ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d899f9bf01b7252b104d6c0b7416024c064534410119e1ad024e38a4a4925486"
   end
 
   depends_on "go" => :build
