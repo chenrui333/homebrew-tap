@@ -47,7 +47,7 @@ brew install --cask <tool>
 - `emplace`
 - `fancy-cat`
 - `fex`
-- `flow`
+- `flow-editor`
 - `fortitude`
 - `gerust`
 - `git-vain`
