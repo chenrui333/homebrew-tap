@@ -1,4 +1,4 @@
-class Flow < Formula
+class FlowEditor < Formula
   desc "Programmer's text editor"
   homepage "https://github.com/neurocyte/flow"
   url "https://github.com/neurocyte/flow/archive/refs/tags/v0.3.0.tar.gz"
