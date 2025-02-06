@@ -5,6 +5,11 @@ class Alacritty < Formula
   sha256 "aa4479c99547c0b6860760b5b704865f629ffe1f1ec374153c2cd84e53ce5412"
   license any_of: ["Apache-2.0", "MIT"]
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c416b19bee072e30da1a2e9224c976b82e5434f656ba3f8ae3f68326f894aef"
