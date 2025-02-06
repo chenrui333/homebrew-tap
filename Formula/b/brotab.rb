@@ -7,6 +7,14 @@ class Brotab < Formula
   sha256 "2c307f2b13089bc560733df19ca546f3ac0c6613d69bd239b18f7ae164c18d55"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5035ce71e91e226ae76803936a361e809f02e6e36b38871521ee8512a457fcc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff8aa7d20ed912acf3a519baf5fbb59d4fff48db6a366c42761200bea6b5cdf6"
+    sha256 cellar: :any_skip_relocation, ventura:       "271aa25ce2f3a57e0fb8a8e7401a6e0dbd06a754dfe9303e4f326357371ce1ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ffc168f88e76958731c2ff723f7d393e9d915e437a7d4fda1add8b5cccb897d"
+  end
+
   depends_on "python@3.13"
 
   resource "certifi" do
