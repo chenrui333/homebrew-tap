@@ -6,6 +6,14 @@ class Flowgger < Formula
   license "ISC"
   head "https://github.com/awslabs/flowgger.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "e0af914d3fc758c871e7e00af9fe8b8c5db4691c1be6cfc2c02e46f67a47aad6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b126cfb6e44872b7e480e00418e9bbab4790d75ed5b3153402776d697e056e00"
+    sha256 cellar: :any,                 ventura:       "1ba756ca381b69a1e320faee3068be33c02bfa55fc86caa8adc77f1d8c55bd30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1898e8b1d02d1b5b7f544b584b27727526649f605efa2006bbbcbaed048a825"
+  end
+
   depends_on "capnp" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
