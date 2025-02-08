@@ -32,10 +32,13 @@ brew install --cask <tool>
 - `aiac`
 - `alacritty`
 - `amoco`
+- `aoc-cli`
+- `apkeep`
 - `asciinema`
 - `balcony`
 - `blueutil-tui`
 - `blush`
+- `brotab`
 - `btczee`
 - `bytebox`
 - `carton`
@@ -45,9 +48,11 @@ brew install --cask <tool>
 - `codstts`
 - `dvm`
 - `emplace`
+- `envtpl`
 - `fancy-cat`
 - `fex`
 - `flow-editor`
+- `flowgger`
 - `fortitude`
 - `gerust`
 - `git-vain`
@@ -81,6 +86,10 @@ brew install --cask <tool>
 - `rslocal`
 - `sato`
 - `satty`
+- `sdl_image`
+- `sdl_mixer`
+- `sdl_net`
+- `sdl_ttf`
 - `seamstress`
 - `shiroa`
 - `sig`
