@@ -5,6 +5,14 @@ class SdlImage < Formula
   sha256 "0b90722984561004de84847744d566809dbb9daf732a9e503b91a1b5a84e5699"
   license "Zlib"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "e6c702a19aaeae824a224c6957aa4d5cc63a1a016132ce48c920f784dbcbbe29"
+    sha256 cellar: :any,                 arm64_sonoma:  "d44206eeb9ed4c04df8fa539b4fa97a9aa04f3a2cae426eaf4879a6c84cd7365"
+    sha256 cellar: :any,                 ventura:       "7cd08fad087733918d9ea691342bdddc25c23547476b72a6620b7bc9f8ffa4f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8a6315643672a1df0cbafe4222e45545c1cd26d956b635b38216aad4b220eda"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
