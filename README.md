@@ -84,6 +84,7 @@ brew install --cask <tool>
 - `resinator`
 - `rpds-py`
 - `rslocal`
+- `rustfilt`
 - `sato`
 - `satty`
 - `sdl_image`
