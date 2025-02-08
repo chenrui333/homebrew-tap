@@ -32,18 +32,14 @@ class SdlMixer < Formula
 
     inreplace "SDL_mixer.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system "./autogen.sh" if build.head?
-
     args = %W[
-      --prefix=#{prefix}
-      --disable-dependency-tracking
       --enable-music-ogg
       --enable-music-flac
       --disable-music-ogg-shared
       --disable-music-mod-shared
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
