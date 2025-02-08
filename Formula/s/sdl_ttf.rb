@@ -29,7 +29,7 @@ class SdlTtf < Formula
     inreplace "SDL_ttf.pc.in", "@prefix@", HOMEBREW_PREFIX
 
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args, "--disable-sdltest"
+    system "./configure", "--disable-sdltest", *std_configure_args
     system "make", "install"
   end
 end
