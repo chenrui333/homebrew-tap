@@ -5,6 +5,14 @@ class Grcov < Formula
   sha256 "8793ab77e640785602c6e7bb8289f3dabe5440937208154fa567d2036cfb3bbe"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "756aa8a188b90d39a730b53b47fdae37905a35a9f84a5224f3625c8574d5f945"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "986b89a8928cf97cf759b8f3aad3a375769469a09fa54a2ddd03384e026a4d24"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a4b71fe582892a2fdd3863b9a0aa5ac9a71dec10a5ca72cad92c52a1bda9eee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5c2be860761cb85f837cfc039ccea6fa7cb4237cc2d6f0d6e87c9b3752aa61e"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
