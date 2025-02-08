@@ -5,14 +5,6 @@ class SdlMixer < Formula
   sha256 "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
   license "Zlib"
 
-  head do
-    url "https://github.com/libsdl-org/SDL_mixer.git", branch: "SDL-1.2"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
   depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "libmikmod"
@@ -27,6 +19,9 @@ class SdlMixer < Formula
   end
 
   def install
+    # Workaround for newer Clang
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     inreplace "SDL_mixer.pc.in", "@prefix@", HOMEBREW_PREFIX
 
     system "./autogen.sh" if build.head?
