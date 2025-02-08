@@ -5,8 +5,13 @@ class MdbookLinkcheck < Formula
   sha256 "3194243acf12383bd328a9440ab1ae304e9ba244d3bd7f85f1c23b0745c4847a"
   license "MIT"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "mdbook"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
