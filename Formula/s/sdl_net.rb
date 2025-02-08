@@ -17,10 +17,7 @@ class SdlNet < Formula
   depends_on "sdl12-compat"
 
   def install
-    system "./autogen.sh" if build.head?
-
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--disable-sdltest"
+    system "./configure", "--disable-sdltest", *std_configure_args
     system "make", "install"
   end
 end
