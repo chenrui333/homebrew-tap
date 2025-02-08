@@ -3,7 +3,7 @@ class Rustfilt < Formula
   homepage "https://github.com/luser/rustfilt"
   url "https://github.com/luser/rustfilt/archive/refs/tags/0.2.1.tar.gz"
   sha256 "f09bb822c8b22c4c89bf63cc64f8f85a053e1850a70cad4b7308e00871527496"
-  license "MIT"
+  license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
