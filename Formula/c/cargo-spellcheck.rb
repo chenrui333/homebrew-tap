@@ -6,6 +6,14 @@ class CargoSpellcheck < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/drahnr/cargo-spellcheck.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60508f0187c8035db3f244defb684084ce71bf82b938eb33430a05f03edbc678"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "165b5fbe46448f0f9a518c61d56d3c1c704358458e97324af5d7206cea09d2e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "4dad5c2f22ede6be6366e10e8ff2d02cec1c8184f1fa859262d423e9ce04335f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd0ccd60b35eb8e5084b95efeda02871900d081174c97185a92e4cc4ca2866e7"
+  end
+
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
