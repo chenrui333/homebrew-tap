@@ -5,6 +5,14 @@ class SdlMixer < Formula
   sha256 "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
   license "Zlib"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "275c8cb391aee2df3485a71ad6a548556d7b8b36e67990e99a17c06a92bcc68f"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a8238ea96341faa72a345ae7a2fc36c2126ac6e354b995ec70a496d0e9c5778"
+    sha256 cellar: :any,                 ventura:       "7ac23ffb3ce5703d7109f60e4ceb2660b95cbad136431952682f569be7c07c11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e284106de4b98bb7ee9a54e2ded32c4c92db520c4b358fd8cbb261b86b1b891"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "flac"
   depends_on "libmikmod"
