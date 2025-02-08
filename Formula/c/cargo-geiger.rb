@@ -5,6 +5,14 @@ class CargoGeiger < Formula
   sha256 "6ddc447b0b8a46ee2b303897fbe2d416df794942cd23984c44b0ee69c4675bad"
   license any_of: ["Apache-2.0", "MIT"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "7dec3849127d9812fc861d29479c1a3a2a5d93a134e3201d61483605d415a661"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8f7dfc6c8c507de725fe6f566e42f353bbb39a17de41e0f37228e44d2fe982f"
+    sha256 cellar: :any,                 ventura:       "02fc0004a18da17115e4b1541fb03ada775949af70b29d0698e12e09eba962d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25feae9a085bc3bb14db936a0f924c4cb05c6a76e7633a7b3b0c029ee07e71d0"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
