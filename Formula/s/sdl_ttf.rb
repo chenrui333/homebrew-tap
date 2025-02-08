@@ -1,6 +1,7 @@
 class SdlTtf < Formula
   desc "Library for using TrueType fonts in SDL applications"
   homepage "https://github.com/libsdl-org/SDL_ttf"
+  license "Zlib"
 
   stable do
     url "https://www.libsdl.org/projects/SDL_ttf/release/SDL_ttf-2.0.11.tar.gz"
@@ -12,14 +13,6 @@ class SdlTtf < Formula
       url "https://gist.githubusercontent.com/tomyun/a8d2193b6e18218217c4/raw/8292c48e751c6a9939db89553d01445d801420dd/sdl_ttf-fix-1433.diff"
       sha256 "4c2e38bb764a23bc48ae917b3abf60afa0dc67f8700e7682901bf9b03c15be5f"
     end
-  end
-
-  head do
-    url "https://github.com/libsdl-org/SDL_ttf.git", branch: "SDL-1.2"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
   end
 
   depends_on "pkgconf" => :build
