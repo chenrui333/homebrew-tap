@@ -5,6 +5,14 @@ class SdlTtf < Formula
   sha256 "724cd895ecf4da319a3ef164892b72078bd92632a5d812111261cde248ebcdb7"
   license "Zlib"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "80f35b9f7f08bb554baf5b1b52e6f2051e03bdfeab4dcf911a6754ea92af32fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "ead83ae3af0259d1e3d7adbd3f4da0e75eb9abd5db2982fdaa591f78940ee747"
+    sha256 cellar: :any,                 ventura:       "98fd86e383c9b47b1ae397a92c5b1d5c5baae809e0328648e239a9f72ea28155"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f3182d853fe5bf1ffc1d52bdc636da77420db2c1b09f0f3ab80808fa903db78"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "sdl12-compat"
