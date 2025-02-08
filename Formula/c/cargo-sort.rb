@@ -7,10 +7,10 @@ class CargoSort < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffa2c3f24f51e2cbbe9252d660d9381b15c2f102abf6b8681a5f9b3aef8d9f56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d56199c86b62148751469c35712a13e7b6bf4d5fcbe02e43bc18e2be9169d33"
-    sha256 cellar: :any_skip_relocation, ventura:       "a34cccd68e8b3beb9388db7867696aadcad1dec5797d07c52a3a3f8c36d049d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52da039473c9f9337d627198789c084c1c5b1f36f86393db14af603ba32709c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86e60017617b5ffee2e959043038aa84a596e1a20b73545f155df5e811641b4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af3c4e1e68462ab584b968f07f41c26e4ffa895844c49a191634190f07fb1a53"
+    sha256 cellar: :any_skip_relocation, ventura:       "19070bb8f48e29945567da784fd5618893d5fab607ee3820a2999e3252d77554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29047e5a6c0e6a34acf649c3309201ccc2921ae57459e3d9393785b047ae7a27"
   end
 
   depends_on "rust" => :build
