@@ -1,3 +1,4 @@
+# framework: cobra
 class TerrapCli < Formula
   desc "CLI tool that scans your infrastructure and identifies any required changes"
   homepage "https://github.com/sirrend/terrap-cli"
