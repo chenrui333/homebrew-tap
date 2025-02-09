@@ -1,3 +1,4 @@
+# framework: cobra
 class CfTerraforming < Formula
   desc "CLI to facilitate terraforming your existing Cloudflare resources"
   homepage "https://github.com/cloudflare/cf-terraforming"
