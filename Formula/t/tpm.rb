@@ -1,3 +1,4 @@
+# framework: cobra
 class Tpm < Formula
   desc "Package manager for Terraform providers"
   homepage "https://github.com/Madh93/tpm"
