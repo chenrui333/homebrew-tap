@@ -1,3 +1,4 @@
+# framework: cobra
 class CfVault < Formula
   desc "Manage your Cloudflare credentials, securely"
   homepage "https://github.com/jacobbednarz/cf-vault"
