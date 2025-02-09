@@ -41,6 +41,10 @@ brew install --cask <tool>
 - `brotab`
 - `btczee`
 - `bytebox`
+- `cargo-geiger`
+- `cargo-readme`
+- `cargo-sort`
+- `cargo-spellcheck`
 - `carton`
 - `cf-terraforming`
 - `cf-vault`
@@ -59,6 +63,7 @@ brew install --cask <tool>
 - `glsl-analyzer`
 - `go-junit-report`
 - `goboscript`
+- `grcov`
 - `hcldump`
 - `hcledit`
 - `hclgrep`
@@ -70,6 +75,7 @@ brew install --cask <tool>
 - `koji`
 - `lola`
 - `libdivide`
+- `mdbook-linkcheck`
 - `minisign`
 - `mitex`
 - `omnictl`
@@ -112,6 +118,7 @@ brew install --cask <tool>
 - `tpm`
 - `travelgrunt`
 - `tun2proxy`
+- `twiggy`
 - `wallust`
 - `yor`
 - `zero`
