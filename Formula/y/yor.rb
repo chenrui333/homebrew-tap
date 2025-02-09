@@ -1,3 +1,4 @@
+# framework: urfave/cli
 class Yor < Formula
   desc "Extensible auto-tagger for your IaC files"
   homepage "https://yor.io/"
