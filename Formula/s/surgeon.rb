@@ -1,3 +1,4 @@
+# framework: cobra
 class Surgeon < Formula
   desc "Surgically modify a fork"
   homepage "https://github.com/bketelsen/surgeon"
