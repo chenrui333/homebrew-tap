@@ -1,3 +1,4 @@
+# framework: cobra
 class Giq < Formula
   desc "Git CLI with AI-powered commit messages and insights"
   homepage "https://github.com/doganarif/giq"
