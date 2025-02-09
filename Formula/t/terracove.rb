@@ -1,3 +1,4 @@
+# framework: cobra
 class Terracove < Formula
   desc "Recursively test a directory tree for Terraform diffs and coverage"
   homepage "https://github.com/ElementTech/terracove"
