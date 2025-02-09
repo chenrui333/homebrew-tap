@@ -59,6 +59,7 @@ brew install --cask <tool>
 - `flowgger`
 - `fortitude`
 - `gerust`
+- `giq`
 - `git-vain`
 - `glsl-analyzer`
 - `go-junit-report`
@@ -82,6 +83,7 @@ brew install --cask <tool>
 - `otto`
 - `oxbuild`
 - `pike`
+- `pipeform`
 - `pluralith`
 - `poop`
 - `projectable`
@@ -119,6 +121,7 @@ brew install --cask <tool>
 - `tpm`
 - `travelgrunt`
 - `tun2proxy`
+- `tuono`
 - `twiggy`
 - `wallust`
 - `yor`
