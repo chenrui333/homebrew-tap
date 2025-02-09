@@ -101,6 +101,7 @@ brew install --cask <tool>
 - `shiroa`
 - `sig`
 - `simdjzon`
+- `surgeon`
 - `termtunnel`
 - `terracove`
 - `terraform-cleaner`
