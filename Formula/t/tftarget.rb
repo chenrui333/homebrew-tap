@@ -1,3 +1,4 @@
+# framework: cobra
 class Tftarget < Formula
   desc "Interactivity select resource to ( plan | apply | destroy ) with target option"
   homepage "https://github.com/future-architect/tftarget"
