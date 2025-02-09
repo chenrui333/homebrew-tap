@@ -1,3 +1,4 @@
+# framework: cobra
 class Pluralith < Formula
   desc "Tool for Terraform state visualisation and automated generation of infra docs"
   homepage "https://www.pluralith.com/"
