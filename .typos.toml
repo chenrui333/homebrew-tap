@@ -11,7 +11,7 @@ yor = "yor"
 
 [files]
 extend-exclude = [
-  "./Formula/c/cargo-spellcheck.rb"
+  "Formula/c/cargo-spellcheck.rb"
 ]
 
 [type.ruby.extend-words]
