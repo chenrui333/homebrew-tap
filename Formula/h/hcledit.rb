@@ -1,3 +1,4 @@
+# framework: cobra
 class Hcledit < Formula
   desc "Command-line editor for HCL"
   homepage "https://github.com/minamijoyo/hcledit"
