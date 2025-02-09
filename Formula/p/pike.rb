@@ -1,3 +1,4 @@
+# framework: urfave/cli
 class Pike < Formula
   desc "Tool for determining the permissions or policy required for IAC code"
   homepage "https://github.com/jamesWoolfenden/pike"
