@@ -1,3 +1,4 @@
+# framework: urfave/cli
 class Tfreveal < Formula
   desc "CLI to show Terraform plan with all the secret (sensitive) values revealed"
   homepage "https://github.com/breml/tfreveal"
