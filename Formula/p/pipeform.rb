@@ -1,3 +1,4 @@
+# framework: bubbletea
 class Pipeform < Formula
   desc "Terraform runtime TUI"
   homepage "https://github.com/magodo/pipeform"
