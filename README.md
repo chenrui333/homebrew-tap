@@ -74,6 +74,7 @@ brew install --cask <tool>
 - `junit2html`
 - `keyhunter`
 - `koji`
+- `llmdog`
 - `lola`
 - `libdivide`
 - `mdbook-linkcheck`
