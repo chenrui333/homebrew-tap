@@ -1,3 +1,4 @@
+# framework: urfave/cli
 class Cfnctl < Formula
   desc "Brings the Terraform cli experience to AWS Cloudformation"
   homepage "https://github.com/rogerwelin/cfnctl"
