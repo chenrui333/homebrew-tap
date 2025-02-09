@@ -1,3 +1,4 @@
+# framework: urfave/cli
 class Sato < Formula
   desc "Tool to convert ARM or CFN into Terraform"
   homepage "https://github.com/JamesWoolfenden/sato"
