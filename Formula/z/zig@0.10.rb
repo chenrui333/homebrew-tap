@@ -73,3 +73,111 @@ index e5e80b4..1da6892 100644
      exe.sanitize_thread = sanitize_thread;
      exe.build_id = b.option(bool, "build-id", "Include a build id note") orelse false;
      exe.install();
+diff --git a/src/link/MachO/Dylib.zig b/src/link/MachO/Dylib.zig
+index 1c1842a..41813aa 100644
+--- a/src/link/MachO/Dylib.zig
++++ b/src/link/MachO/Dylib.zig
+@@ -9,12 +9,14 @@ const macho = std.macho;
+ const math = std.math;
+ const mem = std.mem;
+ const fat = @import("fat.zig");
++const tapi = @import("../tapi.zig");
+ 
+ const Allocator = mem.Allocator;
+ const CrossTarget = std.zig.CrossTarget;
+-const LibStub = @import("../tapi.zig").LibStub;
++const LibStub = tapi.LibStub;
+ const LoadCommandIterator = macho.LoadCommandIterator;
+ const MachO = @import("../MachO.zig");
++const Tbd = tapi.Tbd;
+ 
+ id: ?Id = null,
+ weak: bool = false,
+@@ -245,7 +247,8 @@ const TargetMatcher = struct {
+             .allocator = allocator,
+             .target = target,
+         };
+-        try self.target_strings.append(allocator, try targetToAppleString(allocator, target));
++        const apple_string = try targetToAppleString(allocator, target);
++        try self.target_strings.append(allocator, apple_string);
+ 
+         const abi = target.abi orelse .none;
+         if (abi == .simulator) {
+@@ -268,22 +271,29 @@ const TargetMatcher = struct {
+         self.target_strings.deinit(self.allocator);
+     }
+ 
+-    fn targetToAppleString(allocator: Allocator, target: CrossTarget) ![]const u8 {
+-        const cpu_arch = switch (target.cpu_arch.?) {
++    inline fn cpuArchToAppleString(cpu_arch: std.Target.Cpu.Arch) []const u8 {
++        return switch (cpu_arch) {
+             .aarch64 => "arm64",
+             .x86_64 => "x86_64",
+             else => unreachable,
+         };
+-        const os_tag = @tagName(target.os_tag.?);
+-        const target_abi = target.abi orelse .none;
+-        const abi: ?[]const u8 = switch (target_abi) {
++    }
++
++    inline fn abiToAppleString(abi: std.Target.Abi) ?[]const u8 {
++        return switch (abi) {
+             .none => null,
+             .simulator => "simulator",
+             .macabi => "maccatalyst",
+             else => unreachable,
+         };
+-        if (abi) |x| {
+-            return std.fmt.allocPrint(allocator, "{s}-{s}-{s}", .{ cpu_arch, os_tag, x });
++    }
++
++    fn targetToAppleString(allocator: Allocator, target: CrossTarget) ![]const u8 {
++        const cpu_arch = cpuArchToAppleString(target.cpu_arch.?);
++        const os_tag = @tagName(target.os_tag.?);
++        const target_abi = abiToAppleString(target.abi orelse .none);
++        if (target_abi) |abi| {
++            return std.fmt.allocPrint(allocator, "{s}-{s}-{s}", .{ cpu_arch, os_tag, abi });
+         }
+         return std.fmt.allocPrint(allocator, "{s}-{s}", .{ cpu_arch, os_tag });
+     }
+@@ -303,7 +313,26 @@ const TargetMatcher = struct {
+     }
+ 
+     fn matchesArch(self: TargetMatcher, archs: []const []const u8) bool {
+-        return hasValue(archs, @tagName(self.target.cpu_arch.?));
++        return hasValue(archs, cpuArchToAppleString(self.target.cpu_arch.?));
++    }
++
++    fn matchesTargetTbd(self: TargetMatcher, tbd: Tbd) !bool {
++        var arena = std.heap.ArenaAllocator.init(self.allocator);
++        defer arena.deinit();
++
++        const targets = switch (tbd) {
++            .v3 => |v3| blk: {
++                var targets = std.ArrayList([]const u8).init(arena.allocator());
++                for (v3.archs) |arch| {
++                    const target = try std.fmt.allocPrint(arena.allocator(), "{s}-{s}", .{ arch, v3.platform });
++                    try targets.append(target);
++                }
++                break :blk targets.items;
++            },
++            .v4 => |v4| v4.targets,
++        };
++
++        return self.matchesTarget(targets);
+     }
+ };
+ 
+@@ -346,11 +375,7 @@ pub fn parseFromStub(
+     defer matcher.deinit();
+ 
+     for (lib_stub.inner) |elem, stub_index| {
+-        const is_match = switch (elem) {
+-            .v3 => |stub| matcher.matchesArch(stub.archs),
+-            .v4 => |stub| matcher.matchesTarget(stub.targets),
+-        };
+-        if (!is_match) continue;
++        if (!(try matcher.matchesTargetTbd(elem))) continue;
+ 
+         if (stub_index > 0) {
+             // TODO I thought that we could switch on presence of `parent-umbrella` map;
