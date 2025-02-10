@@ -5,6 +5,14 @@ class YewFmt < Formula
   sha256 "32e441e809d22387c469995deb5fc91cbbaf354e9d32031c5cb91c5aa427cf43"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51dfc90ef317a24062342d6e0baa7f3691352a28932638bb5efbf808bcdffb29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbc1d8205b8356e05b9614881567ba921a12113c7e2b64ea4e2bc5e69908f8ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "31bf343d31d5b7208a743c1741b1b1d928613c44ca69c77945dd9da974d524da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "720265ece629fc8d0ef8cdbbb065d7d9f9fd4df107c13df767669cc3d85bc4f0"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
