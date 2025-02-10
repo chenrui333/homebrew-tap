@@ -6,6 +6,14 @@ class Togomak < Formula
   license "MPL-2.0"
   head "https://github.com/srevinsaju/togomak.git", branch: "v2"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "feb7fde8d9089d423b6a3272599008554a15a2c87301b58f605bc1cc884d1a00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "877150628d064064de0776153ec788d6c18edf4b7902f1c3ae4d5a788f66ff81"
+    sha256 cellar: :any_skip_relocation, ventura:       "930c554a4c13ec0b44d7823b7eb587b62d58e895947a82efff1bafc14fa8d554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb558a40993ae07392ae402cd3abcee22be3140693c8d7c4362e4789eb675ec5"
+  end
+
   depends_on "go" => :build
 
   def install
