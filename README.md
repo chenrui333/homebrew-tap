@@ -83,6 +83,7 @@ brew install --cask <tool>
 - `mdbook-linkcheck`
 - `minisign`
 - `mitex`
+- `ohy`
 - `omnictl`
 - `otto`
 - `oxbuild`
@@ -123,6 +124,7 @@ brew install --cask <tool>
 - `tftarget`
 - `tftree`
 - `threatcl`
+- `togomak`
 - `tpm`
 - `travelgrunt`
 - `tun2proxy`
