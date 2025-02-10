@@ -6,6 +6,14 @@ class Gommit < Formula
   license "Apache-2.0"
   head "https://github.com/antham/gommit.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a8832435785a644aef8c977720ac03ed3421ea85338d69980e0330282fe2c22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c672bead76a8562e3bb29e2610b5307301872a7f9a5b7524d87f3bc450c0f41"
+    sha256 cellar: :any_skip_relocation, ventura:       "f1df69a4de5945049945916f5eaa288d37112d75555d2a4648cfc5c76d47a3f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "257fabc10c9b0b307ee2be817e795be6abc945cdbc89ac4f2ffaffda41af7cbf"
+  end
+
   depends_on "go" => :build
 
   def install
