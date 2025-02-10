@@ -5,6 +5,14 @@ class Comrak < Formula
   sha256 "64dc51f2adbf3761548d9f3ab608de874db14d723e8ca6f9fbd88ebf3bff3046"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20280c0e53d1f43cf1bde0688c43c9316ce55329d0fb235a724f5873b78e7d45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df92daa5f6cc70e5afb9020242917dc70dba9b7a592f598b2d591f851102d3a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "a829a5b2b92ef7dd5a221b0a48d7a8ac8f6f96ca9adb2e090859817ba83b8242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "476e0dfab223413f933038370379b92cd5511724d1a1c682920ea7d64ef51033"
+  end
+
   depends_on "rust" => :build
 
   def install
