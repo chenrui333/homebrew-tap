@@ -8,6 +8,7 @@ sur = "sur" # for big sur
 Sur = "Sur"
 ratatui = "ratatui"
 yor = "yor"
+Hashi = "Hashi"
 
 [files]
 extend-exclude = [
