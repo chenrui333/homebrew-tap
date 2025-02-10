@@ -64,10 +64,13 @@ brew install --cask <tool>
 - `glsl-analyzer`
 - `go-junit-report`
 - `goboscript`
+- `gofakeit`
+- `gommit`
 - `grcov`
 - `hcldump`
 - `hcledit`
 - `hclgrep`
+- `hclq`
 - `hello`
 - `hellwal`
 - `jetzig`
@@ -119,6 +122,7 @@ brew install --cask <tool>
 - `tfsort`
 - `tftarget`
 - `tftree`
+- `threatcl`
 - `tpm`
 - `travelgrunt`
 - `tun2proxy`
