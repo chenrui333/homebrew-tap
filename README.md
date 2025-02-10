@@ -50,6 +50,7 @@ brew install --cask <tool>
 - `cf-vault`
 - `cfnctl`
 - `codstts`
+- `comrak`
 - `dvm`
 - `emplace`
 - `envtpl`
