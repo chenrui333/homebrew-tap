@@ -22,9 +22,12 @@ class Ohy < Formula
   depends_on "rust" => :build
 
   on_linux do
+    depends_on "cairo"
+    depends_on "gdk-pixbuf"
     depends_on "glib"
     depends_on "gtk+3"
     depends_on "libsoup"
+    depends_on "openssl@3"
     depends_on "webkitgtk"
   end
 
