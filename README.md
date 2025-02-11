@@ -48,9 +48,7 @@ brew install --cask <tool>
 - `carton`
 - `cf-terraforming`
 - `cf-vault`
-- `cfnctl`
 - `codstts`
-- `comrak`
 - `dvm`
 - `emplace`
 - `envtpl`
@@ -69,7 +67,6 @@ brew install --cask <tool>
 - `gommit`
 - `grcov`
 - `hcldump`
-- `hcledit`
 - `hclgrep`
 - `hclq`
 - `hello`
