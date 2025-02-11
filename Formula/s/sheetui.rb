@@ -14,6 +14,14 @@ class Sheetui < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5af212a73fdaa67fbfbfd8106db7c8c6dece6bd7a4b04a3c3fab22bdc8f1e5f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0436c656973e5cb875bf21ee64c281d343e0c0c42222d293218a23a03893b331"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed2336de1b05022f0377cdf422b17a6a25743b42ff8044fdf829dee845143bdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59bf3dd661d329e266dfe194e3c5e0c615493e41e1aeb45e48ff91977f6ad245"
+  end
+
   depends_on "rust" => :build
 
   def install
