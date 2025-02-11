@@ -1,4 +1,5 @@
 {
+  "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "tf-summarize": "homebrew/core",
