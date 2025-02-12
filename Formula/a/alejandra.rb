@@ -6,6 +6,14 @@ class Alejandra < Formula
   sha256 "35a56a8619e79fccd10fe64176afaa291c6539dc3be1136bc9e72639523fbc0e"
   license "Unlicense"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b679c34fb3e5daaa0769eeba9f40d8b6ff972b1f1be8f02985ba0fabadf89b24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1049226c148efddf862fd4aba5e7f4bbef7720ade08d7d8ffc18dfa37f45d44a"
+    sha256 cellar: :any_skip_relocation, ventura:       "4cfa926d1622e058b72c3e887024e1bc08b590da77f4ffa2052c80ab6a0f9f9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc382b0b98b52ebceea6f5c8ca5fb4cca89808a85405bc9be1b1a08a4dd1de23"
+  end
+
   depends_on "rust" => :build
 
   def install
