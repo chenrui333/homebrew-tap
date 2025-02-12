@@ -113,6 +113,7 @@ brew install --cask <tool>
 - `simdjzon`
 - `soft-serve`
 - `surgeon`
+- `tclint`
 - `termtunnel`
 - `terracove`
 - `terraform-diff`
@@ -133,7 +134,6 @@ brew install --cask <tool>
 - `twiggy`
 - `wallust`
 - `yew-fmt`
-- `yor`
 - `zero`
 - `zig@0.11`
 - `zig@0.12`
