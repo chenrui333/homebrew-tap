@@ -29,6 +29,7 @@ brew install --cask <tool>
 <details>
 <summary>Formula List</summary>
 
+- `ai-context`
 - `aiac`
 - `alacritty`
 - `amoco`
@@ -48,7 +49,9 @@ brew install --cask <tool>
 - `carton`
 - `cf-terraforming`
 - `cf-vault`
+- `cloudlens`
 - `codstts`
+- `dbee`
 - `dvm`
 - `emplace`
 - `envtpl`
@@ -75,8 +78,10 @@ brew install --cask <tool>
 - `junit2html`
 - `keyhunter`
 - `koji`
+- `lazyjj`
 - `llmdog`
 - `lola`
+- `lib-x`
 - `libdivide`
 - `mdbook-linkcheck`
 - `minisign`
@@ -103,9 +108,11 @@ brew install --cask <tool>
 - `sdl_net`
 - `sdl_ttf`
 - `seamstress`
+- `sheetui`
 - `shiroa`
 - `sig`
 - `simdjzon`
+- `soft-serve`
 - `surgeon`
 - `termtunnel`
 - `terracove`
