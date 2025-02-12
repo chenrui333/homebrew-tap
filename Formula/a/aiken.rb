@@ -6,6 +6,14 @@ class Aiken < Formula
   sha256 "6cdac84064dec84bbbc630b8e3c4d4f3686a390ecacb16615b9d5be745f00c9a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3dd5f2c76a9dfb453d3f745c97b3d0f4a7d9a6c8bef804ae9ad151206058b9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02233f6056c98b862bd5455d0e5a77354488b635eecd994fd88ce2c7d9e7b8d7"
+    sha256 cellar: :any_skip_relocation, ventura:       "167a3080631a932919ccc92bb66114200f17b12e23b150a3d97d1ef3493ac887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43113b981a33800c08cd464c2ede9244e418cc93a498fcd0c59d12c690c3a6f2"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
