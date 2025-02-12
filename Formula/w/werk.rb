@@ -10,6 +10,14 @@ class Werk < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11f9a9d25e3f4d516db8dec3bf4b8d8453991f78b67a2dd4d6752d5320e8d3c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b76651f29117b591a2c463ba680eb5db13c9d1321207eba7f86fc981ff3b3f6f"
+    sha256 cellar: :any_skip_relocation, ventura:       "b6a8cfd7c439ea95952b33b351c2c64643f6503b8b0435418f9df40d93d7ec0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba6e9319564ede81fe0f189a1e63b1f352dcf68fa2657125cc49a18e58567d24"
+  end
+
   depends_on "rust" => :build
 
   patch :DATA
