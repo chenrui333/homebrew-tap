@@ -7,5 +7,6 @@
   "tf-summarize": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
   "threatcl": "homebrew/core",
-  "umka-lang": "homebrew/core"
+  "umka-lang": "homebrew/core",
+  "yor": "homebrew/core"
 }
