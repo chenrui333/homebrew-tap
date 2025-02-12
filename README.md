@@ -78,7 +78,6 @@ brew install --cask <tool>
 - `junit2html`
 - `keyhunter`
 - `koji`
-- `lazyjj`
 - `llmdog`
 - `lola`
 - `lib-x`
@@ -125,7 +124,6 @@ brew install --cask <tool>
 - `tfsort`
 - `tftarget`
 - `tftree`
-- `threatcl`
 - `tickrs`
 - `togomak`
 - `tpm`
