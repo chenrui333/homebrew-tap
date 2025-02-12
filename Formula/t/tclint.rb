@@ -7,6 +7,14 @@ class Tclint < Formula
   sha256 "f247d36262848d7d29ec772f6b23bb2e2400dee643db4b28c7670e2bb1d00eb6"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af52246e1167b78a999685b4a9c138196a91881e6d979b9a509e92cd755ae83b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32ceb31ad1a14d94a8c5af1968bb8779b8498808dad6eff6b62a32b3bc4a9df9"
+    sha256 cellar: :any_skip_relocation, ventura:       "f4116b90bc66ea5d23b7fe47a293e48328f8c87c6c7d58fe93fe7a4c8383d6f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed8841f375ba2763c524bb2baf1df0d20249c390b866e80e61bfa23f962d390"
+  end
+
   depends_on "python@3.13"
 
   resource "attrs" do
