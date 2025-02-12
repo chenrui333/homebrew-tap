@@ -133,6 +133,7 @@ brew install --cask <tool>
 - `tuono`
 - `twiggy`
 - `wallust`
+- `werk`
 - `yew-fmt`
 - `zero`
 - `zig@0.11`
