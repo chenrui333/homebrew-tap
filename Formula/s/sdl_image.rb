@@ -5,6 +5,10 @@ class SdlImage < Formula
   sha256 "0b90722984561004de84847744d566809dbb9daf732a9e503b91a1b5a84e5699"
   license "Zlib"
 
+  livecheck do
+    skip "legacy version"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any,                 arm64_sequoia: "e6c702a19aaeae824a224c6957aa4d5cc63a1a016132ce48c920f784dbcbbe29"
