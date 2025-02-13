@@ -49,8 +49,10 @@ brew install --cask <tool>
 - `bacon-ls`
 - `balcony`
 - `blade-formatter`
+- `blue`
 - `blueutil-tui`
 - `blush`
+- `brighterscript-formatter`
 - `brotab`
 - `btczee`
 - `bytebox`
