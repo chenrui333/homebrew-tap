@@ -7,6 +7,14 @@ class Darker < Formula
   sha256 "a6e6a682c0604e76fe9aec7650e96a944f517563c69b28fcc076db9d957d98ea"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c33b5774640461e6f45fc4a04ada9dc66dc4d83c917e11fcc70484f420450ec0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a85d42bb11bbada23a619c05216d162bd43cb795b2b8acdc32ecb49881a10b4"
+    sha256 cellar: :any_skip_relocation, ventura:       "01788acae2a86e7817a3b5221182c69454ee7f372c92335b6e3b7390d3e564fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9afa3cf019bce4e337635ba8b77f5517e6fb66cc4bba37d0137768b87e5df92"
+  end
+
   depends_on "python@3.13"
 
   resource "black" do
