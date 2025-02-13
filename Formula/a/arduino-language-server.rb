@@ -8,6 +8,8 @@ class ArduinoLanguageServer < Formula
   depends_on "go" => :build
   depends_on "arduino-cli"
 
+  uses_from_macos "llvm"
+
   def install
     ldflags = %W[
       -s -w
