@@ -17,7 +17,9 @@ class Envtpl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/envtpl"
+    # https://goreleaser.com/customization/builds/go/
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/envtpl"
   end
 
   test do
