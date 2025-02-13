@@ -6,6 +6,14 @@ class GoimportsReviser < Formula
   license "MIT"
   head "https://github.com/incu6us/goimports-reviser.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbc56f8e8ea4b958bc5d60691f06e1cde18d1e1ee519368f728ed4b5738b4d4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc740016f123bf85366a3403467206c2e865fef6087e4ddffb5dbed605a303aa"
+    sha256 cellar: :any_skip_relocation, ventura:       "228c6ef10b34753073fef28c21ddb556a4ce3da050e9c5c749f1a47d3fc0729f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "226a17aff041080725e844f6e6ab6ce890ae0e25f71ffd93593b993099fd291f"
+  end
+
   depends_on "go" => :build
 
   def install
