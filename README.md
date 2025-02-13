@@ -31,12 +31,24 @@ brew install --cask <tool>
 
 - `ai-context`
 - `aiac`
+- `aiken`
 - `alacritty`
+- `alejandra`
 - `amoco`
 - `aoc-cli`
 - `apkeep`
+- `arduino-language-server`
 - `asciinema`
+- `asm-lsp`
+- `asmfmt`
+- `astro-language-server`
+- `autoflake`
+- `autotools-language-server`
+- `awk-language-server`
+- `azure-pipelines-language-server`
+- `bacon-ls`
 - `balcony`
+- `blade-formatter`
 - `blueutil-tui`
 - `blush`
 - `brotab`
