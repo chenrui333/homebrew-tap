@@ -5,6 +5,14 @@ class AstroLanguageServer < Formula
   sha256 "c7d463c40c488c0315056cda65c50299db3cb57bb155a6429d32f184688529db"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7211db9215573ddc42b0210d1d1d8d825df388816a8c9801e69c66ac0ab8bcf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06b589700e8ae5b3dcced1429b9f3930b77204640ab8e699dc2e3c02bf9ccf1a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e7e18fbdd9a5aee4ec3d30df975ad5c8873a68160adc1c6493a494fe9207bf25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a13fe15da302e9cbe0641070a200d1bd765b14c84a35d6627e559b9fdd51ffe"
+  end
+
   depends_on "node"
 
   def install
