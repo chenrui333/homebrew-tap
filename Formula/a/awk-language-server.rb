@@ -5,6 +5,14 @@ class AwkLanguageServer < Formula
   sha256 "254c12fefe25453846313318fcd5f7b00dcef46568bb02c065a65248a77d3e11"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_sequoia: "6c776ef4f0b9ddebb1124be27c879baf20d388b7caac6664dc96feb5c41c254b"
+    sha256                               arm64_sonoma:  "84d80d9e0f3befc847dda468209c83e91586b13c5c47205aefb895b9291784c2"
+    sha256                               ventura:       "9d75a56c81ecaef0e0ee16d8d01d15223e838568a5a56c3f8296f8d56bc116b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b23fd47665feaca5a7a5e950a9d995d84f6f309b9c8b637f3e6542329dbf35e"
+  end
+
   depends_on "node"
 
   def install
