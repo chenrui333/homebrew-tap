@@ -5,6 +5,10 @@ class SdlMixer < Formula
   sha256 "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
   license "Zlib"
 
+  livecheck do
+    skip "legacy version"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any,                 arm64_sequoia: "275c8cb391aee2df3485a71ad6a548556d7b8b36e67990e99a17c06a92bcc68f"
