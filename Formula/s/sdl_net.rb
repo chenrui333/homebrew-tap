@@ -5,6 +5,10 @@ class SdlNet < Formula
   sha256 "5f4a7a8bb884f793c278ac3f3713be41980c5eedccecff0260411347714facb4"
   license "Zlib"
 
+  livecheck do
+    skip "legacy version"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any,                 arm64_sequoia: "6290cb3a2ab8ca9379e43443250c7f323f286804eac389b5d1decca81d22c2b3"
