@@ -5,6 +5,14 @@ class Duster < Formula
   sha256 "ba1a0c3e52004d134615ee1134fbc0c6b33f57b23bf1befdbbfe7cd03ba76625"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d52e02ebe0d1e07d87091a1fb5d98a527e74c2d631a220ca32c3837013508d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "527e18da6acb932142282bdd0225e8d241c42111ba4d7e9895a96cab6045ab85"
+    sha256 cellar: :any_skip_relocation, ventura:       "edd4e0dca67386c9fdf652bb0744d4b8661375c25b7deb8735fd581242aba96a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84b90e4dee542e4f8aa44969f5a3d68f468c40641cb228a9cf7e3d20bfc6e02e"
+  end
+
   depends_on "php"
 
   def install
