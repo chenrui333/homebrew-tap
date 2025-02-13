@@ -7,6 +7,14 @@ class Jupytext < Formula
   sha256 "fc4e97f0890e22062c4ef10313c7ca960b07b3767246a1fef7585888cc2afe5d"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "d259d03e2f48f32955c0a605027bda5951f9439750e7b7da0af7b1f8f807040c"
+    sha256 cellar: :any,                 arm64_sonoma:  "c1ae27c33d19dad24a527c8fcec04c66975db1f2b32632eff09b84e7c5f2579d"
+    sha256 cellar: :any,                 ventura:       "5e74b3f22b81afc38e6276efe3ebb6b76545d6f005842b3c67eb3e6f36a86483"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "482a81d9157d5d7c0d36e0c994e6b555556627529a674585b6a94638cf881a63"
+  end
+
   depends_on "rust" => :build # for rpds-py
   depends_on "libyaml"
   depends_on "python@3.13"
