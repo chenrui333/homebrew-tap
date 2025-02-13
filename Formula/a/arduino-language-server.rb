@@ -5,6 +5,14 @@ class ArduinoLanguageServer < Formula
   sha256 "54ec93596e53b2c90e723de83f8a9994147d5d019e71a189eae06e45320ef151"
   license "AGPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e01b40a127156167a0e03cb9bf278a2a5ad10e0db721e944484f2a3a6b74688"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "602a81aa7bdf0d29609b7bbcf4ae98bbf67db13452e08f104613268667aa5f7f"
+    sha256 cellar: :any_skip_relocation, ventura:       "cc128f1da2feb4fb67ac4132d2f58c3b5625e8362f5dcec561827b51fe9cc9a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8299ea652817fe528f8840592087b112e999b244b3cf0e3aa199ffdb90d8ee9b"
+  end
+
   depends_on "go" => :build
   depends_on "arduino-cli"
 
