@@ -5,6 +5,10 @@ class SdlTtf < Formula
   sha256 "724cd895ecf4da319a3ef164892b72078bd92632a5d812111261cde248ebcdb7"
   license "Zlib"
 
+  livecheck do
+    skip "legacy version"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any,                 arm64_sequoia: "80f35b9f7f08bb554baf5b1b52e6f2051e03bdfeab4dcf911a6754ea92af32fe"
