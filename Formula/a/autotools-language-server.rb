@@ -7,6 +7,14 @@ class AutotoolsLanguageServer < Formula
   sha256 "dea1dcfb6fc62a225371cd8e090953a368d12b23760037d6814d0dc48575afdf"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "7cbe299888817b45cd2acb0c60c186e91ebae3a7eb1594f14458b0e995124eff"
+    sha256 cellar: :any,                 arm64_sonoma:  "3552f897727e341c9779fa7e24ba90776356d0646ada31f9658efee5599bae4a"
+    sha256 cellar: :any,                 ventura:       "cc807708621373c3526bdd64106c3dd1b219ccaed6959a1abd6304999f93a81b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57d3f7a35c024685f7827be483d0c73aea4200e8036827ae1fcc5db9371e96e1"
+  end
+
   depends_on "rust" => :build # for rpds-py
   depends_on "python@3.13"
 
