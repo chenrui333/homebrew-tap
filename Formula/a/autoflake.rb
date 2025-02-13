@@ -7,6 +7,14 @@ class Autoflake < Formula
   sha256 "c98b75dc5b0a86459c4f01a1d32ac7eb4338ec4317a4469515ff1e687ecd909e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa580164bc7f251a77a0113873b8f6cf53d6e16d4ce639778ca9023b39968b0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9e1315e69e97d7ef06b2f7308f1ded722aa8a51a6f27dff28f9def998d85b57"
+    sha256 cellar: :any_skip_relocation, ventura:       "70d1b2b0c56770df24cf746e5dc06fd1dff6993ae490bf13a360a5ff6130ea3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9baad05efcc1b028d1bc73645214c32ceaa7e2c9529b6e13b99e7e04dc27c96"
+  end
+
   depends_on "python@3.13"
 
   resource "pyflakes" do
