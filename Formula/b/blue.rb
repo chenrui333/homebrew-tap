@@ -79,8 +79,12 @@ class Blue < Formula
           print( "Hello, World!" )
     PYTHON
 
-    output = shell_output("#{bin}/blue test.py 2>&1")
-    assert_match "1 file reformatted", output
+    assert_match <<~EOS, shell_output("#{bin}/blue test.py 2>&1")
+      reformatted test.py
+
+      All done! ✨ 🍰 ✨
+      1 file reformatted.
+    EOS
 
     expected_content = <<~PYTHON
       def foo():
