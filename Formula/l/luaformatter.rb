@@ -7,6 +7,14 @@ class Luaformatter < Formula
   license "Apache-2.0"
   head "https://github.com/Koihik/LuaFormatter.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e3af9166259de713eea2fe893af1569e856e47b92a3326f08b5ee1dbf62e651"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fab0596fc1240d3f0913a233365a79bca960d43781f2726c2eac5b3d362d565e"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d133aca7d7261a079428d8679c477d66f3efbd38ad9f8fb72b43d382a896fbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "343d3e2c37d34fed41cee112308fe21c580593240de9ad32f05b5e4df791a39a"
+  end
+
   depends_on "cmake" => :build
 
   def install
