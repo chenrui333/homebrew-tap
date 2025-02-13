@@ -18,7 +18,13 @@ class AsmLsp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/asm-lsp version")
-    assert_match "Global config directories", shell_output("#{bin}/asm-lsp info")
+
+    expected = if OS.mac?
+      "Global config directories"
+    else
+      "Global config directory"
+    end
+    assert_match expected, shell_output("#{bin}/asm-lsp info")
 
     output = shell_output("#{bin}/asm-lsp gen-config 2>&1", 101)
     assert_match "not a terminal", output
