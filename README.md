@@ -99,6 +99,8 @@ brew install --cask <tool>
 - `hellwal`
 - `jetzig`
 - `junit2html`
+- `jupytext`
+- `kcl`
 - `keyhunter`
 - `koji`
 - `llmdog`
