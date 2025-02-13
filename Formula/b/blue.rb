@@ -7,6 +7,14 @@ class Blue < Formula
   sha256 "76b4f26884a8425042356601d80773db6e0e14bebaa7a59d7c54bf8cef2e2af5"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75a8e3498d2e1c4cc637927e29a1eadec623363d5029a846a8ecba71d9fb5b17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6d8b18766eb78a06a9ab91607cd39129e2ffb05cad4332c59765fd1c7994a01"
+    sha256 cellar: :any_skip_relocation, ventura:       "f6e5d964ad64e7beeb498f3680d1c3c2b6a384ef6db8e382c1f3933892897937"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cebd2e18fd1a500100994cbbed8692c0a7119812b19f6a96631a74da50484e6"
+  end
+
   depends_on "python@3.13"
 
   resource "black" do
