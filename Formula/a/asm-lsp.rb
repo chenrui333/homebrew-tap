@@ -5,7 +5,12 @@ class AsmLsp < Formula
   sha256 "4755848aa7d88856be7e40d0930990b95b46c4593a53db3809d3ba7214d9d16d"
   license "BSD-2-Clause"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "asm-lsp")
