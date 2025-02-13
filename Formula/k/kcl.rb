@@ -6,6 +6,14 @@ class Kcl < Formula
   license "Apache-2.0"
   head "https://github.com/kcl-lang/cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "620e38ee0fc211100dc7a7fcc789ed9e5a976018e7215881a02dab04e5312f0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bef349d53c605a02db7a81f440c4bbe39b6fb53ee8f825365a4688ec5aa80b04"
+    sha256 cellar: :any_skip_relocation, ventura:       "3de95c6c7c7b0d349ea725983e21dd5bbfe7e4d0accb0e3ad9850649d1d8f6c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b0d5e2c65ab4ef3a93bdd85bbe7c280d029a4fa801a0d31b01c91bf2327809c"
+  end
+
   depends_on "go" => :build
 
   def install
