@@ -5,6 +5,14 @@ class Nocc < Formula
   sha256 "075cb42bdd00e07b62879ada30ece3aaf860ca46203a033a0f9da344fd43eb59"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4c0ba684ab9fa0732a3b1ebbc617f32c8d69e34409cd9482420fe3b2b1d7ba0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e602fe35ba14a56b67298cd50a5a92292d751abf6bbfc61f16cd0e8e2423516e"
+    sha256 cellar: :any_skip_relocation, ventura:       "3916cdb160dad2af0f70eb2c04fbeb0e5f204d8e536f5c0ba9eece95fedb3cbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c968a34766949685e4b9251a17cba3962e98cacf029c71291da623e1cc439ec"
+  end
+
   depends_on "go" => :build
 
   def install
