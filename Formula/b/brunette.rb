@@ -7,6 +7,14 @@ class Brunette < Formula
   sha256 "e7d0766d3a4b0d18bf0f8830b4bc98a4af4ebcccf89c3b145fc92f9d4727d79b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d921d24290d26355f3911f05a136b4f3b6ea6d82a41e061c5fb26bca27d6dfa7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ed2215a2f16f300ad644e30c24d47f7632bfa7176da07e7dbb4fc5f81809c2d"
+    sha256 cellar: :any_skip_relocation, ventura:       "d5448343597914db515196c982b8e47fa94c54e012681323aeb91c4f31250e5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf30f28ac8d5476f2f0315746b1d993b7e03cb2fd3ce95b26c7607b3c50e935b"
+  end
+
   depends_on "python@3.13"
 
   resource "black" do
