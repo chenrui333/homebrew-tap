@@ -6,6 +6,14 @@ class Cueimports < Formula
   license "MIT"
   head "https://github.com/asdine/cueimports.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69ff95f54588692b98fedeb0d9fcd5f733ac3fd4bfee67989c717947535c04f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55f2c6c773be144dc99816940036a5a580dc3ea0bbbb6200d77f536657f2fcab"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e79d92713bd94ad0d3eacaaaab20933f9930ebeb9a901d93cc6c7558f9289b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06ecdcc65cd2b9338b0678718764790e48039c5f17a838de6b07aceaf932a672"
+  end
+
   depends_on "go" => :build
 
   def install
