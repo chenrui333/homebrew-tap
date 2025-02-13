@@ -2,6 +2,7 @@
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
   "hcledit": "homebrew/core",
+  "jupytext": "homebrew/core",
   "lazyjj": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "tf-summarize": "homebrew/core",
