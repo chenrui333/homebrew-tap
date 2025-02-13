@@ -8,10 +8,10 @@ class BaconLs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91dc8a3f3cd5addd65a801c58b868d85cc8de298594563a3b475e9de91b35f29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da746058ce09b540d709533c390fc50d4e0bbec34e2df485cc3020981366700d"
-    sha256 cellar: :any_skip_relocation, ventura:       "b80329abbc4dfeadf028c79de44e4395cf862b58f65393dd3fbd569d1ae77d56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea5be7eb9754de173e7ff952bcb4e6b86b0416ddfe4e70d5ed22b8767554b279"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae72523e4bd75a023aef060f811877a220dac9c825d77de707424acea66738a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68ffc7c00352043db506f31f5fa55db40242751eedc86745dd8e2dc436d86bf7"
+    sha256 cellar: :any_skip_relocation, ventura:       "8fa810d889cd4d10d786ca107cd172003473c3be61d27f870936bd2846a80ae9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "920cd01dc100196ddf26399453d5db2b9f60e337a6c2b56e16735e29086eff66"
   end
 
   depends_on "rust" => :build
