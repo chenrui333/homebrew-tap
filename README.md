@@ -125,6 +125,8 @@ brew install --cask <tool>
 - `pyink`
 - `pyment`
 - `rails-new`
+- `reformat-gherkin`
+- `remark-cli`
 - `resinator`
 - `rpds-py`
 - `rslocal`
@@ -155,6 +157,7 @@ brew install --cask <tool>
 - `tftarget`
 - `tftree`
 - `tickrs`
+- `tlint`
 - `togomak`
 - `tpm`
 - `travelgrunt`
@@ -162,9 +165,10 @@ brew install --cask <tool>
 - `tuono`
 - `twiggy`
 - `usort`
+- `vsg`
 - `wallust`
 - `werk`
-- `yamlfix`
+- `xmlformatter`
 - `yew-fmt`
 - `zero`
 - `zig@0.11`
