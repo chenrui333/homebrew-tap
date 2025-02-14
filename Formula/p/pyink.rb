@@ -8,6 +8,15 @@ class Pyink < Formula
   license "MIT"
   head "https://github.com/google/pyink.git", branch: "pyink"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69bb88d779fe23c40681d0d900c972535744d1011816cd491060db7ef522989b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e348bf59a3082c53dec2884ce5e30e1ac2b8e52200ce2e4aa3c3d3ff08af40ac"
+    sha256 cellar: :any_skip_relocation, ventura:       "58b5072738d19db5e9af418c0e957c59cbe19c8bdda3fc805705e256d3315d3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67a7e53ca643572a0822e5ddd81004b6b2c5bc48b5f5df509bf2632bfd49faeb"
+  end
+
   depends_on "python@3.13"
 
   resource "black" do
