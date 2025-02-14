@@ -108,6 +108,8 @@ brew install --cask <tool>
 - `lib-x`
 - `libdivide`
 - `mdbook-linkcheck`
+- `mdsf`
+- `mdslw`
 - `minisign`
 - `mitex`
 - `nocc`
