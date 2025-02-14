@@ -7,6 +7,14 @@ class Vsg < Formula
   sha256 "cd394fa6feebe7aa704a41aed9c743baf701d60807f73d191717dcfa188d240c"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "335d50822fb948522c1e2154a5c683b3ba1c5fc06c6c7a4681a0c03e673384ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "406c7b4150d881576dcc8b1b247c715a0ef48363004d09406312c4c729281b0e"
+    sha256 cellar: :any,                 ventura:       "1f08f3235b330c3d582b549c8bfbf6a2aa1e0ee92ed306db4389faeeaf52c875"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4212a84ba577f6531253b87b2437fbf52678ef01ff3df2ac520be5e898a0b38"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
