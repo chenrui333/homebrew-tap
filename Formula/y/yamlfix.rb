@@ -7,6 +7,14 @@ class Yamlfix < Formula
   sha256 "81d7220b62798d1dda580e1574b3d3d6926701ae8cd79588c4e0b33f2e345d85"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "b6e291c94435449fb661cadbc622fd9939cefa3910a3e5a6034eacd8aa8d677c"
+    sha256 cellar: :any,                 arm64_sonoma:  "a00d9295740ad8cc7004249771909a8588313700fcd0e40dd5271314cb4d4c18"
+    sha256 cellar: :any,                 ventura:       "42fbd2e42f44691011a5bcc5390326886fa9f89ff5675f781c8e26f462d88018"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d1007d3ae9b756ad436b685dad738c0ad2cfc938f134f13ee25379a2b76e76c"
+  end
+
   depends_on "rust" => :build # for pydantic_core
   depends_on "python@3.13"
 
