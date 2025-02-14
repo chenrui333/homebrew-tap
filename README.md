@@ -46,7 +46,6 @@ brew install --cask <tool>
 - `autotools-language-server`
 - `awk-language-server`
 - `azure-pipelines-language-server`
-- `bacon-ls`
 - `balcony`
 - `blade-formatter`
 - `blue`
