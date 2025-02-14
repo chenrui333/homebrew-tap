@@ -5,6 +5,7 @@
   "hcledit": "homebrew/core",
   "jupytext": "homebrew/core",
   "lazyjj": "homebrew/core",
+  "rustywind": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "tf-summarize": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
