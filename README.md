@@ -122,11 +122,14 @@ brew install --cask <tool>
 - `poop`
 - `projectable`
 - `public-ollama-finder`
+- `pyink`
+- `pyment`
 - `rails-new`
 - `resinator`
 - `rpds-py`
 - `rslocal`
 - `rustfilt`
+- `rustywind`
 - `sato`
 - `satty`
 - `sdl_image`
@@ -139,6 +142,7 @@ brew install --cask <tool>
 - `sig`
 - `simdjzon`
 - `soft-serve`
+- `sql-formatter`
 - `surgeon`
 - `tclint`
 - `termtunnel`
