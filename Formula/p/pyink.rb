@@ -6,6 +6,7 @@ class Pyink < Formula
   url "https://files.pythonhosted.org/packages/d1/a1/e5e28626fca4266a94c2e1c9264fbf915b9e83e94f52e965190e48fd0cbf/pyink-24.10.1.tar.gz"
   sha256 "5ec4339aa4953f796e88d90bcac3e3472161e4c36dbde203d80f5f76721ac718"
   license "MIT"
+  head "https://github.com/google/pyink.git", branch: "pyink"
 
   depends_on "python@3.13"
 
