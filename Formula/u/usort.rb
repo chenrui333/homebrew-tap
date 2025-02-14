@@ -8,6 +8,14 @@ class Usort < Formula
   license "MIT"
   head "https://github.com/facebook/usort.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "18c91297a910edcd1dd685b5a5d037d9a48c47ad67cfebcf646bcf6a72f427d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "19c5a053f648e7a5be66a5a9618ab331b6c1c0f805660fe6db820e3b8f87103b"
+    sha256 cellar: :any,                 ventura:       "faad9a1a0d21c426e4d85821db26cc74b165d4ad5a20178c7e28008232d48943"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b7bbbdaf749602857b0d78d85fed29588fe88be63269eb61a5e57ab778a6db"
+  end
+
   depends_on "rust" => :build # for libcst
   depends_on "libyaml"
   depends_on "python@3.13"
