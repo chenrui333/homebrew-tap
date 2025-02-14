@@ -7,6 +7,14 @@ class ReformatGherkin < Formula
   sha256 "a25e89fac3b632a7db7a3f217f4bfdc0f9cf4d8333d3ae9a830b0270beba6f3b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "c0c125f367ef3acca4896ee4c45e290628df9592fb34dc235d2593d4d6caf230"
+    sha256 cellar: :any,                 arm64_sonoma:  "11fb9b3cff1c5676f93594ee60f557e802a3b52c5a9a5c03da1e7f527a0339c0"
+    sha256 cellar: :any,                 ventura:       "87cc944f9f92b734838de0ae331481dfcb43c25d058bae6a700244716fe828c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a2fd19e5cee4ba7da83c52056b3beb96eadf30eaf4819dfcb324e1ebe205331"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
