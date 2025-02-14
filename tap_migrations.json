@@ -12,5 +12,6 @@
   "tfprovidercheck": "homebrew/core",
   "threatcl": "homebrew/core",
   "umka-lang": "homebrew/core",
+  "yamlfix": "homebrew/core",
   "yor": "homebrew/core"
 }
