@@ -37,7 +37,7 @@ class BaconLs < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/bacon-ls") do |stdin, stdout, _|
+    Open3.popen3(bin/"bacon-ls") do |stdin, stdout, _|
       stdin.write "Content-Length: #{init_json.bytesize}\r\n\r\n#{init_json}"
       stdin.close
 
