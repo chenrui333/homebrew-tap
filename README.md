@@ -129,7 +129,6 @@ brew install --cask <tool>
 - `rpds-py`
 - `rslocal`
 - `rustfilt`
-- `rustywind`
 - `sato`
 - `satty`
 - `sdl_image`
@@ -142,7 +141,6 @@ brew install --cask <tool>
 - `sig`
 - `simdjzon`
 - `soft-serve`
-- `sql-formatter`
 - `surgeon`
 - `tclint`
 - `termtunnel`
@@ -163,8 +161,10 @@ brew install --cask <tool>
 - `tun2proxy`
 - `tuono`
 - `twiggy`
+- `usort`
 - `wallust`
 - `werk`
+- `yamlfix`
 - `yew-fmt`
 - `zero`
 - `zig@0.11`
