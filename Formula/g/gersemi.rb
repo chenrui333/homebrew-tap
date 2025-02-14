@@ -9,10 +9,10 @@ class Gersemi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "07555e42fe02a01a250fcad7867a1512d8db979df81b1bc56b44a2c851182a13"
-    sha256 cellar: :any,                 arm64_sonoma:  "b3fc4e3f82ad5d88f8a3deabfc57737ae73d3626916d6cf1e7be6fd0269092fb"
-    sha256 cellar: :any,                 ventura:       "7200016b9e7a2ade21670a336ab2a26b6820425fb488a343545fcf0a736dafce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb42ca8aedf67baf1caebd1343dc899eedb160d76dae93b9d028e8a65dba50c1"
+    sha256 cellar: :any,                 arm64_sequoia: "d012a96c904567c278f275d86b453d4017265230296a1649531ff3f8173ee6a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "0488ecf4d9cbf0f6b8c47b37aaffb93488f641d60cfd9006867b5cdc0dc40182"
+    sha256 cellar: :any,                 ventura:       "f71b37ce42c83bf905776a1a093517c25f2174d9d5e5f46e4ae8ee3cfd22c75f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16c351c0a686ed99a89bd15cac22d456f3214bb6392219c488965b0b212191bc"
   end
 
   depends_on "libyaml"
