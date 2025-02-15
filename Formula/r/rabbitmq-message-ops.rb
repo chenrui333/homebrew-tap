@@ -6,6 +6,14 @@ class RabbitmqMessageOps < Formula
   license "MIT"
   head "https://github.com/happening-oss/rabbitmq-message-ops.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0bb10977dfb31f3b237c6e20e12eefd59dbe881ff2b5cc365bedfb04ba908b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f09b170a188eecc886de62d4dfe545a1d55b0623f10f8adcaa13df499f47c18c"
+    sha256 cellar: :any_skip_relocation, ventura:       "478c8508c21890286d6aa96f873b6c23ba995d949463ed74aacdd2c8b7ff3617"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1274ac5761f7b29fec38164eaffb0a836bd55759b7f66cef05014ccc1e3aed"
+  end
+
   depends_on "go" => :build
 
   def install
