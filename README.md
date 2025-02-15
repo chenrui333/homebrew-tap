@@ -98,14 +98,17 @@ brew install --cask <tool>
 - `hellwal`
 - `jetzig`
 - `junit2html`
+- `kaluma-cli`
 - `kcl`
 - `keyhunter`
 - `koji`
 - `llmdog`
+- `llmpeg`
 - `lola`
 - `luaformatter`
 - `lib-x`
 - `libdivide`
+- `md2pdf`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
@@ -116,6 +119,7 @@ brew install --cask <tool>
 - `omnictl`
 - `otto`
 - `oxbuild`
+- `pgdog`
 - `pike`
 - `pipeform`
 - `pluralith`
@@ -124,6 +128,8 @@ brew install --cask <tool>
 - `public-ollama-finder`
 - `pyink`
 - `pyment`
+- `r2md`
+- `rabbitmq-message-ops`
 - `rails-new`
 - `reformat-gherkin`
 - `remark-cli`
