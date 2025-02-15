@@ -10,6 +10,14 @@ class Llmpeg < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "340e618d948834af6a0d1ffbc9b15cb1fad4cab215f5a95179759e13d54d78f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "191ec8ab2165c7a8c62db593620d5cd0255f1fc38eb1415d7ccc5cd30b631bd9"
+    sha256 cellar: :any_skip_relocation, ventura:       "2d238f93f30f1737fdcc6c91ed185d462b6b30595d8ad74f38a57d80677decf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb50ccdd29255c5928b164204194674d4c4d12aa2e270e875f15748101798aa2"
+  end
+
   def install
     bin.install "llmpeg"
   end
