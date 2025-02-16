@@ -1,7 +1,7 @@
 # framework: cobra
 class Gowall < Formula
-  desc "Fetch GitHub user information and show like neofetch"
-  homepage "https://github.com/Achno/gowall"
+  desc "Tool to convert a Wallpaper's color scheme / palette"
+  homepage "https://achno.github.io/gowall-docs/"
   url "https://github.com/Achno/gowall/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "31992b7895211310301ca169bcc98305a1971221aa5d718033be3a45512ca9a4"
   license "MIT"
