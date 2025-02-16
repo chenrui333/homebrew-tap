@@ -73,6 +73,7 @@ brew install --cask <tool>
 - `duster`
 - `dvm`
 - `emplace`
+- `enola`
 - `envtpl`
 - `fancy-cat`
 - `fex`
@@ -82,14 +83,17 @@ brew install --cask <tool>
 - `fortitude`
 - `gersemi`
 - `gerust`
+- `ghfetch`
 - `giq`
 - `git-vain`
+- `gitman`
 - `glsl-analyzer`
 - `go-junit-report`
 - `goboscript`
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
+- `gowall`
 - `grcov`
 - `hcldump`
 - `hclgrep`
@@ -97,6 +101,7 @@ brew install --cask <tool>
 - `hello`
 - `hellwal`
 - `jetzig`
+- `jsrepo`
 - `junit2html`
 - `kaluma-cli`
 - `kcl`
@@ -177,6 +182,7 @@ brew install --cask <tool>
 - `werk`
 - `xmlformatter`
 - `yew-fmt`
+- `yuque-dl`
 - `zero`
 - `zig@0.11`
 - `zig@0.12`
