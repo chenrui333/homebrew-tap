@@ -1,10 +1,11 @@
 class Werk < Formula
   desc "Simplistic command runner and build system"
   homepage "https://github.com/simonask/werk"
-  url "https://github.com/simonask/werk/archive/7e565556b33b8b9eb4bfbb62495bfb97263e1480.tar.gz"
+  url "https://github.com/simonask/werk/archive/0e713512b1a45d94439a4de5064579af8a53607e.tar.gz"
   version "0.1.0"
-  sha256 "812a417b2f86fc9d09ece394eb400fab53b5a1431f5613a8f9693d20a39cf449"
+  sha256 "a592ba4abf6bc64dbe801d96061cf28612358ced8b6db8a2c08d3b54ecb13583"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   livecheck do
     skip "no tagged releases"
