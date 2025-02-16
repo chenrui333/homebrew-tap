@@ -6,6 +6,14 @@ class Oxen < Formula
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bce2c5c5698abbbcaa5f68c512ed63c4c52476925c33fb5d54dc8aebf36ef32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "226b071802021653bf20f68cfab6b4d504d2e3ad9cbc3ffcc96a605a2da95b16"
+    sha256 cellar: :any_skip_relocation, ventura:       "6167c8f14be31d13e0bc0c414297a9289911cb2d8a18c0be02ae61e7a2a5c81c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5008e756f2fb438e52e92a2447da3a731c57418b74f505106ecd5c6a39d6cac"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
