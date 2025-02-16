@@ -25,10 +25,10 @@ class Enola < Formula
     # Fails in Linux CI with `/dev/tty: no such device or address`
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    Open3.popen3("#{bin}/enola --site GitHub brewtest") do |stdin, stdout, _, wait_thr|
+    Open3.popen3("#{bin}/enola --site GitHub brewtest") do |stdin, stdout, _, w|
       stdin.close
       sleep 1
-      Process.kill("TERM", wait_thr.pid)
+      Process.kill("TERM", w.pid)
       output = stdout.read
       assert_match "No items", output
     end
