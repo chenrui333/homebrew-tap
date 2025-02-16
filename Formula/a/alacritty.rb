@@ -12,10 +12,10 @@ class Alacritty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c416b19bee072e30da1a2e9224c976b82e5434f656ba3f8ae3f68326f894aef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b757fc738c35ef31b03f8f921c1cb3379ef0786d631731a84d9ef71d1b31885c"
-    sha256 cellar: :any_skip_relocation, ventura:       "14aaaf3ff042680531d69122ef1190ceacaea3180402b86b882267187fbfe374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff1dbb74aeeb9865f0a8194e34aeb6d9b141fc9c06866a846d3aa2f0ea45afc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3506ced68adeb18bbe13af0f8439e794ec7a11f8c130902041b6a8939ee6efa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f305843fb583c756fdf54dd3b105732e572e701faf221d7f6ec7d0fce84e39d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fd3745a056b88410c91018f6759c2f4dc262b90ec4452d9d10844c5688f4d1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc62edb141c618655fa13b630fbfccc220daafa02abd64f80f64e37d1d0cfa9"
   end
 
   depends_on "pkgconf" => :build
