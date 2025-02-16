@@ -4,6 +4,7 @@
   "comrak": "homebrew/core",
   "hcledit": "homebrew/core",
   "jupytext": "homebrew/core",
+  "koji": "homebrew/core",
   "lazyjj": "homebrew/core",
   "rustywind": "homebrew/core",
   "sql-formatter": "homebrew/core",
