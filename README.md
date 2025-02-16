@@ -101,13 +101,13 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
-- `koji`
 - `llmdog`
 - `llmpeg`
 - `lola`
 - `luaformatter`
 - `lib-x`
 - `libdivide`
+- `mamediff`
 - `md2pdf`
 - `mdbook-linkcheck`
 - `mdsf`
@@ -119,6 +119,7 @@ brew install --cask <tool>
 - `omnictl`
 - `otto`
 - `oxbuild`
+- `oxen`
 - `pgdog`
 - `pike`
 - `pipeform`
