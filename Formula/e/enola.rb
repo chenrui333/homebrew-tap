@@ -7,6 +7,14 @@ class Enola < Formula
   license "MIT"
   head "https://github.com/TheYahya/enola.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23382c32502d3d9ee50f94fdffd0122a2317b284d56a3b126b488460a725921a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf73baccb70013d30365abeba638735d47f7bd53f4cf8f6fffb6bf75169b4f42"
+    sha256 cellar: :any_skip_relocation, ventura:       "9042ae5adb7990a0cdacb335b96502a3f975f5e2f40c3759c3f5fd626d60745f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "051c8cba44f3a7866970fc9bbb2045ecd5490226b0588cc8be216b111a1d979b"
+  end
+
   depends_on "go" => :build
 
   def install
