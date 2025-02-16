@@ -7,6 +7,14 @@ class Ghfetch < Formula
   license "MIT"
   head "https://github.com/orangekame3/ghfetch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b93296bd439faab021d03290a9c866488ff21262da42de66cc979d8a6024ba2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "461d3a8a47a88366c0b437938a0a3adeaf54c406d79fe1f8d2f78f65d2813b53"
+    sha256 cellar: :any_skip_relocation, ventura:       "3aa68fdd9475008ea5e6fac84b095f89c07e8ea1a499e8b4c43a2abeead515d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8dfd9538f2a3d58e3d53063bbaa041a8f4b136fee56d82357ddafde113a2c27"
+  end
+
   depends_on "go" => :build
 
   def install
