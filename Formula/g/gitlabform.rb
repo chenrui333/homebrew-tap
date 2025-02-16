@@ -7,6 +7,14 @@ class Gitlabform < Formula
   sha256 "f41ba2be8d54269b7f353ec9cdea20c9ed1e79a43fc6fdd8c87cc0b91e83ac47"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8621cf23df770fc4fff5f78f6f51d132acc24f052b6c71368d7698418a3e034a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e3ba9ad85c784fb163c9108b4968086a35f1cd4b19f6ba79ae0cf9a5193dc49"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe5bc3ecc40754499e3ed6cde42907d874bf3b0d25ea9a6f6013fc5375a4d692"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19598edb4d195243fdaa57643b7f4d06b0e0086f73733f908f5b6a837b6885b8"
+  end
+
   depends_on "python@3.13"
 
   resource "anyio" do
