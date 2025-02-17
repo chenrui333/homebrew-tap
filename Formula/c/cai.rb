@@ -7,7 +7,14 @@ class Cai < Formula
   license "ISC"
   head "https://github.com/ad-si/cai.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
