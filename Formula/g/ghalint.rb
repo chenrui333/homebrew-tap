@@ -6,6 +6,14 @@ class Ghalint < Formula
   license "MIT"
   head "https://github.com/suzuki-shunsuke/ghalint.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e380478f528bee2702103f19d614380eceeffc85777a6181e6217409f396742"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31be4fed25ed5653666abaeab312090ff6cf01f0f80bd410ef3cb31ff025370e"
+    sha256 cellar: :any_skip_relocation, ventura:       "357119dfa76b0fbcc26dde13f35523b263cba564f785e478301bf96fc23f5e95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "730ba3e9411c0d2c5393f78b6de9cc533e065932416fae8058ea11cf2ee2cbea"
+  end
+
   depends_on "go" => :build
 
   def install
