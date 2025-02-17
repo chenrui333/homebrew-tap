@@ -6,6 +6,14 @@ class Sloctl < Formula
   license "MPL-2.0"
   head "https://github.com/nobl9/sloctl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81b79a9a1154763d74e6e60453919d0ce6bfacc504fe60571fc6b9a9b6a16269"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aea09503e898ec8acafc3dd5eb8b43f6ee3fdc9df19d3be2bdbc8faef82f3426"
+    sha256 cellar: :any_skip_relocation, ventura:       "df5b3781f09b6e5df72a4d0b42824a156386a408e207d7330c649ed633644448"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9519d156828f47208a2a9b41037a06169b5516838e061a4682629866de51ec36"
+  end
+
   depends_on "go" => :build
 
   def install
