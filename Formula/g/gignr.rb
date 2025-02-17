@@ -6,6 +6,14 @@ class Gignr < Formula
   license "MIT"
   head "https://github.com/jasonuc/gignr.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4db2a955aec8414dc9f5f227c6594c733248334c3cc1d46a5916adef64fde5fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8be4d6a3a79c0f1deec71f80dc2b1dc4b10e51217130fec52674841cbddd9950"
+    sha256 cellar: :any_skip_relocation, ventura:       "c4b464e6f8a3dff4632f7c5ccd94553456f6a64cb664f483c81d2c0a63f10606"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dcba412a2f8e91b69618146847904e2cdd7e981e37ecae795bee61f171a0cd8"
+  end
+
   depends_on "go" => :build
 
   def install
