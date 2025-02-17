@@ -5,6 +5,14 @@ class AddonsLinter < Formula
   sha256 "6d527d417a89529d88650000984183945aacd8e2cb937795fe33aa887b7897c3"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ffb2db8937cae57efeed4410e8f2be546e99b42979ba88d1a8c05096e5781bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c047690b5e4c8769a81565251fc7b35ec7fbb102a8ae43d577d25c29e39b686f"
+    sha256 cellar: :any_skip_relocation, ventura:       "05636896a02f9218b2de69acf9c3b39a964f9bf39c46524d668c1f2d0072401d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b118a9ff3ebce3a583a134657a6b862b35a0a7cccf345355a68f63581f1faa5"
+  end
+
   depends_on "node"
 
   def install
