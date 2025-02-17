@@ -226,7 +226,7 @@ index 46e5f48..6f925be 100644
 +package_info = {
 +    "name": "ez_yaml",
 +    "version": "1.2.0",
-+    "description": "Straighforward wrapper around Ruamel Yaml",
++    "description": "Straightforward wrapper around Ruamel Yaml",
 +    "url": "https://github.com/jeff-hykin/ez_yaml",
 +    "author": "Jeff Hykin",
 +    "author_email": "jeff.hykin@gmail.com",
