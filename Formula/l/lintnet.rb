@@ -7,6 +7,14 @@ class Lintnet < Formula
   license "MIT"
   head "https://github.com/lintnet/lintnet.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c724aa9197106b0d3d9ffb875da2741471c197986741d4e6a5e1c641ab2a87a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bc648a3c1e6577c41dd19f42ff18aba6b05ce5ec9ba29083552b10fc77856f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "96692e4d4e7da60d63a1f7fec39965d18556c9e3d82e8f6c8720cb0bbdb2603f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6a77d7270dab7a91bec84322574d54246060db4fce61ce8316cd8fba679f55a"
+  end
+
   depends_on "go" => :build
 
   # fix version typo
