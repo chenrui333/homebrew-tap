@@ -70,6 +70,7 @@ brew install --cask <tool>
 - `cueimports`
 - `darker`
 - `dbee`
+- `dockerfilegraph`
 - `duster`
 - `dvm`
 - `emplace`
@@ -84,6 +85,7 @@ brew install --cask <tool>
 - `gersemi`
 - `gerust`
 - `ghfetch`
+- `gignr`
 - `giq`
 - `git-vain`
 - `gitlabform`
@@ -94,7 +96,6 @@ brew install --cask <tool>
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
-- `gowall`
 - `grcov`
 - `hcldump`
 - `hclgrep`
@@ -107,6 +108,7 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
+- `lintnet`
 - `llmdog`
 - `llmpeg`
 - `lola`
@@ -126,6 +128,7 @@ brew install --cask <tool>
 - `otto`
 - `oxbuild`
 - `oxen`
+- `pdfsyntax`
 - `pgdog`
 - `pike`
 - `pipeform`
