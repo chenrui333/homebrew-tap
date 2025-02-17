@@ -2,6 +2,7 @@
   "bacon-ls": "homebrew/core",
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
+  "gowall": "homebrew/core",
   "hcledit": "homebrew/core",
   "jupytext": "homebrew/core",
   "koji": "homebrew/core",
