@@ -1,7 +1,7 @@
 class Pdfsyntax < Formula
   include Language::Python::Virtualenv
 
-  desc "Python library & tool to inspect and transform the internal structure of PDF files"
+  desc "Python library & tool to inspect and modify PDF internals"
   homepage "https://pdfsyntax.dev/"
   url "https://files.pythonhosted.org/packages/9d/69/cffe73e00c3e9548f8b5c61429a423857fa05f92b0f44ffeb2bfc85dd0cb/pdfsyntax-0.1.4.tar.gz"
   sha256 "6969b60ba1214325b35d2a176310078b13ac01aed81643d1160f6fa93e19a114"
