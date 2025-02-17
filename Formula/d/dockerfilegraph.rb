@@ -7,6 +7,14 @@ class Dockerfilegraph < Formula
   license "MIT"
   head "https://github.com/patrickhoefler/dockerfilegraph.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0b0ec845b9eec1c871c6a2614d6d1de7f2ed18f70f81a69d1e65874d8d1404a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1134d713fa9648aab13dab95eba8fb374f00f3f2f24c7799d9f56a49b9a022"
+    sha256 cellar: :any_skip_relocation, ventura:       "cbca71387c8734fad061e6ee6a9c59280c100bb81e6fa9924233a0e6082025ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae89f25e0fed813fd64cf41570cdfc3d969b37c32a2969543027c8baa0fa574b"
+  end
+
   depends_on "go" => :build
   depends_on "graphviz"
 
