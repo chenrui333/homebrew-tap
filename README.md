@@ -103,7 +103,6 @@ brew install --cask <tool>
 - `hello`
 - `hellwal`
 - `jetzig`
-- `jsrepo`
 - `junit2html`
 - `kaluma-cli`
 - `kcl`
@@ -116,7 +115,6 @@ brew install --cask <tool>
 - `lib-x`
 - `libdivide`
 - `mamediff`
-- `md2pdf`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
