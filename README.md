@@ -86,6 +86,7 @@ brew install --cask <tool>
 - `ghfetch`
 - `giq`
 - `git-vain`
+- `gitlabform`
 - `gitman`
 - `glsl-analyzer`
 - `go-junit-report`
