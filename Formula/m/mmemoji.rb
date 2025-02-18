@@ -7,6 +7,14 @@ class Mmemoji < Formula
   sha256 "767db07a08f44dc3aae4989d1046a820d89fc49be643402879bf813ca3af4e8f"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32f2909aa8c82e932b1f48af336fc184f4cc7d4e8f68ccf5e6c3f8f94fb33097"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65d16f7291a64bab151f198a0e82e655ceb328108f42309667153e2e3f029bc3"
+    sha256 cellar: :any_skip_relocation, ventura:       "d9cd04f7bcab5c716f9c99868934e2a3e1002c71005c4511c1c90bdf84487c49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "291852cc559d40ecd40cd50b2ec27f52aeb62bc384711861bb246e484437f5fb"
+  end
+
   depends_on "python@3.13"
 
   resource "certifi" do
