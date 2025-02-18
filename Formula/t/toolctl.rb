@@ -6,6 +6,14 @@ class Toolctl < Formula
   license "MIT"
   head "https://github.com/toolctl/toolctl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef3b87da6e13be94a5b94733428fa26fa4122063441c6cc59fe9483f26dfd490"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2965baf23070f7c4cface4480773018bccddca4d57b49fe3489ffe6be6f9cfb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "5bfc2d78c4c1b517e8b71b10ffdb613ccf0f623b1d93e5d0c3b02e933d9e07a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee6ec9aa8247061363b68b8d0b7583cc35da3ff0f1c3c9433cafc81e579c731c"
+  end
+
   depends_on "go" => :build
 
   def install
