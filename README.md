@@ -6,7 +6,9 @@ This tap is setup for several reasons:
 - The tap is also well suited to test the upstream patches, as it is using same formula build/test process as homebrew-core.
 - Better alias support
 
-Issues and PRs are welcome!
+## Contributing
+
+Issues and PRs are welcome! Whether you’ve found a bug, have a feature request, or want to contribute code, please feel free to open an issue or submit a pull request. Your contributions help improve this tap for everyone.
 
 ## Installation
 
