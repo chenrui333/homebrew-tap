@@ -5,6 +5,14 @@ class MermaidCli < Formula
   sha256 "5a46e845cd6cd05ac9ba5172acdadbe3daa878d8af4a15213b374fa5de96f0de"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "1f1b29d26a1ba6c82f3499788d8e906b9847376c5e9fed1c2d67a9b3c969b00b"
+    sha256 cellar: :any,                 arm64_sonoma:  "eef488faa75116e31252da98265578b653b5798b3803646d364dca060a37046a"
+    sha256 cellar: :any,                 ventura:       "14c018e154f2c3d687bac21fe01f680d7d5e7a031acc2afacc81420188492776"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5b6c57106eaa831132a0afba0174fa18faa061f48b5d0ada5061b0492c9a767"
+  end
+
   depends_on "node"
 
   def install
