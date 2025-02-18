@@ -68,6 +68,7 @@ brew install --cask <tool>
 - `cargo-sort`
 - `cargo-spellcheck`
 - `carton`
+- `castor`
 - `cf-terraforming`
 - `cf-vault`
 - `cloudlens`
@@ -142,6 +143,7 @@ brew install --cask <tool>
 - `nocc`
 - `nvrs`
 - `ohy`
+- `omekasy`
 - `omnictl`
 - `optivorbis`
 - `otto`
