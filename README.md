@@ -29,6 +29,7 @@ brew install --cask <tool>
 <details>
 <summary>Formula List</summary>
 
+- `addons-linter`
 - `ai-context`
 - `aiac`
 - `aiken`
@@ -46,17 +47,20 @@ brew install --cask <tool>
 - `autotools-language-server`
 - `awk-language-server`
 - `azure-pipelines-language-server`
+- `backport`
 - `balcony`
 - `blade-formatter`
 - `blue`
 - `blueutil-tui`
 - `blush`
 - `box`
+- `bpmnlint`
 - `brighterscript-formatter`
 - `brotab`
 - `brunette`
 - `btczee`
 - `bytebox`
+- `cai`
 - `cargo-geiger`
 - `cargo-readme`
 - `cargo-sort`
@@ -65,11 +69,14 @@ brew install --cask <tool>
 - `cf-terraforming`
 - `cf-vault`
 - `cloudlens`
+- `cmdx`
 - `codstts`
+- `cohctl`
 - `crlfmt`
 - `cueimports`
 - `darker`
 - `dbee`
+- `dela`
 - `dockerfilegraph`
 - `duster`
 - `dvm`
@@ -84,6 +91,7 @@ brew install --cask <tool>
 - `fortitude`
 - `gersemi`
 - `gerust`
+- `ghalint`
 - `ghfetch`
 - `gignr`
 - `giq`
@@ -102,6 +110,8 @@ brew install --cask <tool>
 - `hclq`
 - `hello`
 - `hellwal`
+- `hf`
+- `ip2d`
 - `jetzig`
 - `junit2html`
 - `kaluma-cli`
@@ -118,14 +128,17 @@ brew install --cask <tool>
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
+- `mfa`
 - `minisign`
 - `mitex`
 - `nocc`
 - `ohy`
 - `omnictl`
+- `optivorbis`
 - `otto`
 - `oxbuild`
 - `oxen`
+- `pdfly`
 - `pdfsyntax`
 - `pgdog`
 - `pike`
@@ -152,11 +165,13 @@ brew install --cask <tool>
 - `sdl_net`
 - `sdl_ttf`
 - `seamstress`
+- `secco`
 - `sheetui`
 - `shiroa`
 - `sig`
 - `simdjzon`
-- `soft-serve`
+- `sloctl`
+- `spok`
 - `surgeon`
 - `tclint`
 - `termtunnel`
@@ -166,6 +181,8 @@ brew install --cask <tool>
 - `terraform`
 - `terrap-cli`
 - `terratag`
+- `tfcmt`
+- `tfmv`
 - `tfreveal`
 - `tfsort`
 - `tftarget`
