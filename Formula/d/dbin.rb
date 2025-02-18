@@ -4,8 +4,10 @@ class Dbin < Formula
   homepage "https://github.com/xplshn/dbin"
   url "https://github.com/xplshn/dbin/archive/refs/tags/0.9.tar.gz"
   sha256 "d363fb2ea4182386f2c95c1db5838f64c6ed6457b51706250c08017f295f3c69"
-  license any_of: ["ISC", "RABRMS"]
-  head "https://github.com/xplshn/dbin.git", branch: "main"
+  # RABRMS is not a valid SPDX-License-Identifier
+  # license any_of: ["ISC", "RABRMS"]
+  license "ISC"
+  head "https://github.com/xplshn/dbin.git", branch: "master"
 
   depends_on "go" => :build
 
