@@ -7,6 +7,14 @@ class Nvrs < Formula
   license "MIT"
   head "https://github.com/adamperkowski/nvrs.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7356c072b0de41068392423abb90cf7b50e260a73bcae978a840eacf37196b49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4b62ee6401d20826969511d7de18cb743e676b732b12e6dc861c8a8c0137596"
+    sha256 cellar: :any_skip_relocation, ventura:       "798f7f6e957343f05fce7ac713c7d9c3d44d89b173174e15e2beee5ff803b28e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c27f8df9625f6cde38d3d920d6ff1ac9d66da88352e034db36f299654a91836"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
