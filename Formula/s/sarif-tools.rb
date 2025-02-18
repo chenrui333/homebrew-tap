@@ -7,6 +7,14 @@ class SarifTools < Formula
   sha256 "2be0a7624f9b155ab984c99dc6375e18877790adc70eb2d2f164c7e4e47e6c33"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "5e690d96f889344c255d84dd5edbf8c2bb680218f57a316f80145e43bd13ddb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "721709058155d2b06e3b1469d2470a563539abb5d31a8d3b3cc950ba63f2bed8"
+    sha256 cellar: :any,                 ventura:       "3cff60849d309fe7f159e4054951885aa705944d69a39d19babe1dda0b5eff29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c83afe3260a3e8b0aed90dfd8b83e5c8211f80a1003e39f292a4c0148d0590f8"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
