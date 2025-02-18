@@ -7,6 +7,14 @@ class Cocainate < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/AppleGamer22/cocainate.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91c81a350c430224019d60681b169ef98fbe8401ecfca9e7562be77e6e2580f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d484ca4d926579b48281c4a6674237d77c95a08fb7037b4c5d5bb84479cbc027"
+    sha256 cellar: :any_skip_relocation, ventura:       "dfa23a0c3c4fb8c1cd19ea33ac52b1a8da7845edc0df2b07d104032482030650"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3827812184a94d8c4c2c26476d2a8c2e4b1d660e99629b3870102252d42baab"
+  end
+
   depends_on "go" => :build
 
   def install
