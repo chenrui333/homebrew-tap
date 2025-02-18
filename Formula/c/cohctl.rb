@@ -7,6 +7,14 @@ class Cohctl < Formula
   license "UPL-1.0"
   head "https://github.com/oracle/coherence-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b7e50df157aac6e8375dc8b394fbc9f76ef7245bc1a399afb444ec0b7c211ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6445546a9c211a50b409ce17ff41abbe35bc0f81892b91909e3e6a395fa746d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "a0774f041f86d424988e9ac343a3115210ba52f0e68eb1f3922693a766e0c846"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34ffa7978d6efa5ceda8918628f8429b63b7e6f6ca1ccf05ead17e128002c636"
+  end
+
   depends_on "go" => :build
 
   def install
