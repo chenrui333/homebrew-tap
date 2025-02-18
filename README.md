@@ -77,6 +77,7 @@ brew install --cask <tool>
 - `cueimports`
 - `darker`
 - `dbee`
+- `dbin`
 - `dela`
 - `dockerfilegraph`
 - `duster`
@@ -126,6 +127,7 @@ brew install --cask <tool>
 - `luaformatter`
 - `lib-x`
 - `libdivide`
+- `mail-deduplicate`
 - `mamediff`
 - `mdbook-linkcheck`
 - `mdsf`
