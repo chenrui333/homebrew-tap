@@ -5,6 +5,14 @@ class Castor < Formula
   sha256 "5fc23c0d8f9d30e3d8f990ce3a9241db9bb83e01c7ebcea08c539524dc9dfbeb"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b81524e8f0c78acfe9e51c57ac98f19f2447d11812ea567b0a3f078c06c77ac7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea6b193acf0ce3fce0151b3bc8cf7514ff3e130800e9ec49182c6f673639d288"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c837d742dc1668c758b3ef573575413c807bdd866a55d787af9117d5d35c6aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20690dce1476565ad064aeb3be3057acccea673ae783497e12a3aef23947a50b"
+  end
+
   depends_on "composer" => :build
   depends_on "php"
 
