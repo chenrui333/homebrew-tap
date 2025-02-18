@@ -9,6 +9,7 @@
   "koji": "homebrew/core",
   "lazyjj": "homebrew/core",
   "md2pdf": "homebrew/core",
+  "nak": "homebrew/core",
   "pdfly": "homebrew/core",
   "rustywind": "homebrew/core",
   "soft-serve": "homebrew/core",
