@@ -9,10 +9,10 @@ class Cai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5b517d494253346580da00c7f4d07e4d4ee6458195b60fdfb70f69b857e19c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "591f68053de5f77972d579b33017e32e9e58a9fc6eff88b7f023ad499b4a21ae"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd316b641a0231c22fa2f9de69e74cd76bec324564b285136668d6cda8a4734a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d17530b699de505002bea9c2789f1608fa368ffcc29ce853c7f6cadb50316673"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fe494367c8ded0d473c4ecea89172aa8af6c70a59d793f250789d504ae93b45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d02eaae04f5967142ee8a8b0909da352ab631b96705255ec36dae658de8f42c1"
+    sha256 cellar: :any_skip_relocation, ventura:       "6c13c0e47d691af082be4c5074b181aa7019a853cdbe1c422b11b69b0b039093"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd68e18b595c4694df156b3c9fc8f0e287f07aa363ac0a486b7876441f43a918"
   end
 
   depends_on "pkgconf" => :build
