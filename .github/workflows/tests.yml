@@ -57,6 +57,7 @@ jobs:
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
+        continue-on-error: true # ignore `brew doctor` failure, https://github.com/chenrui333/homebrew-tap/issues/301
 
       # skip due to the license check
       # - run: brew test-bot --only-tap-syntax
