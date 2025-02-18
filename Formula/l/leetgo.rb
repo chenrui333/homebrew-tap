@@ -7,6 +7,14 @@ class Leetgo < Formula
   license "MIT"
   head "https://github.com/j178/leetgo.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61fd888f4a37b044755b3f6133290a768840d53333352f33c7b26a72fedce97e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ddd598ebabe53ea248f96ec717d57f3d88b392898eb955679c535a323505f58"
+    sha256 cellar: :any_skip_relocation, ventura:       "732f73df656c002760bfdf88dd21c8ec2954d85214b2ce742336299e44fa480c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0582299253932afab88de4ca80c8ce687273a791ae19e87a02550e5b6936f374"
+  end
+
   depends_on "go" => :build
 
   def install
