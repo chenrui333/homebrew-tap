@@ -1,6 +1,6 @@
 # framework: clap
 class Omekasy < Formula
-  desc "Converts alphanumeric characters in your input to various styles defined in Unicode"
+  desc "Converts alphanumeric input to various Unicode styles"
   homepage "https://github.com/ikanago/omekasy"
   url "https://github.com/ikanago/omekasy/archive/refs/tags/v1.3.1.tar.gz"
   sha256 "c887cf7c35dd2f82df823e1e74cde496967e0ff3bfecb4b87560fb4fb18d36f9"
