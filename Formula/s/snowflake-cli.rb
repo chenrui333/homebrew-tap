@@ -7,6 +7,14 @@ class SnowflakeCli < Formula
   sha256 "a982340690acf314a68764c12681cd58426afba9f8bc9fcf95a56a0a4f7ee9b2"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "9f6e2f59d2c6c3b25c57946fdd864cc6a4f6b8ae8e820416d526548bd944302f"
+    sha256 cellar: :any,                 arm64_sonoma:  "91a51259d0b0e3ba54d00dc4bc8a5b63142723bc9886ed2e594893ff0ccfa345"
+    sha256 cellar: :any,                 ventura:       "62e88372b90acefebfc045824c96ffc3b79a67b850d27db0883c6e40a02c82a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "790e3d21787bdf24b6cc94ace85eacb185d0b44e881a1a675d275463451757a5"
+  end
+
   depends_on "rust" => :build # for pydantic-core
   depends_on "certifi"
   depends_on "cryptography"
