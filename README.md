@@ -130,10 +130,13 @@ brew install --cask <tool>
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
+- `mermaid-cli`
 - `mfa`
 - `minisign`
 - `mitex`
+- `mmemoji`
 - `nocc`
+- `nvrs`
 - `ohy`
 - `omnictl`
 - `optivorbis`
@@ -146,6 +149,7 @@ brew install --cask <tool>
 - `pipeform`
 - `pluralith`
 - `poop`
+- `precompress`
 - `prefligit`
 - `projectable`
 - `public-ollama-finder`
@@ -160,6 +164,7 @@ brew install --cask <tool>
 - `rpds-py`
 - `rslocal`
 - `rustfilt`
+- `sarif-tools`
 - `sato`
 - `satty`
 - `sdl_image`
@@ -170,6 +175,7 @@ brew install --cask <tool>
 - `secco`
 - `sheetui`
 - `shiroa`
+- `shopify-cli`
 - `sig`
 - `simdjzon`
 - `sloctl`
