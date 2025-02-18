@@ -1,8 +1,8 @@
 class Gitman < Formula
   desc "TUI for creating and managing git repositories"
   homepage "https://github.com/pyrod3v/gitman"
-  url "https://github.com/pyrod3v/gitman/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "78aa15341cf1e8666f7e58f6d9813a8bd29e570d1e4c2eb516d88fb28ef20fb7"
+  url "https://github.com/pyrod3v/gitman/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "52525be583585adf0d07d735db753cffd036258acab91190a27d64b358092314"
   license "Apache-2.0"
   head "https://github.com/pyrod3v/gitman.git", branch: "main"
 
