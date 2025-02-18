@@ -6,6 +6,14 @@ class Spok < Formula
   license "Apache-2.0"
   head "https://github.com/FollowTheProcess/spok.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e33888c40f84e96fa4f61d7aad5c786ad4e89880b4c6d2307378fed9c6e76d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5f12451b580d522ba405b6f65d3b728d3fe97339e069fce73c51374b3ecff64"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d5af81b036a99ae83a0969f91501cd984f9adf9e44f2a38bdae52fe0bb71c02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a6a2f1fd38e37e627f265e1adcddc1a95e53c3e8532d65db92253e04915f9fb"
+  end
+
   depends_on "go" => :build
 
   def install
