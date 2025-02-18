@@ -7,7 +7,12 @@ class Nvrs < Formula
   license "MIT"
   head "https://github.com/adamperkowski/nvrs.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", "--features", "nvrs_cli", *std_cargo_args
