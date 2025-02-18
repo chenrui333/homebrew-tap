@@ -2,6 +2,9 @@
   "rpds-py": {
     "extra_packages": ["maturin", "setuptools-rust"]
   },
+  "sarif-tools": {
+    "exclude_packages": ["numpy", "pillow"]
+  },
   "terraform-iam-policy-validator": {
     "package_name": "tf-policy-validato"
   }
