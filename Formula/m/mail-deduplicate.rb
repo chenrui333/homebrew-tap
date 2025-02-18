@@ -7,6 +7,14 @@ class MailDeduplicate < Formula
   sha256 "48b9c955045838c342cb5c5f57ca1a8456e6d597a72464237a86d6aff8d3ad42"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "870544507e8cd03138e653dfa0e1801aab60c8891de2362bb76a6b1409177674"
+    sha256 cellar: :any,                 arm64_sonoma:  "c108fc1b35f860ee712e9c589362fcfac61830737cafb5fafe2b6b6058983b95"
+    sha256 cellar: :any,                 ventura:       "b298aa0fc06974f23087fcd969a4acaa4544a4eaaeee56d9dc6ec551bfc4d1a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5c93cbb03e19209d0d42eb045dfd958b1f8be3867148e859d9a1bd776231ba7"
+  end
+
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.13"
