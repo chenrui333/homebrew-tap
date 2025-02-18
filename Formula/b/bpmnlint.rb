@@ -7,10 +7,10 @@ class Bpmnlint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b53322e6d8b3b3dd99746609c6bcf876824c2da0f3d47373a67eef716ac83f34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e2f950d68306fef6571a72c324b47df7090d5f650616b04578898caf2defb4"
-    sha256 cellar: :any_skip_relocation, ventura:       "68f09a58722a1e5e84c6e0ab01e6e37af4cd077a8510c037e42c7da683d352b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df64c0f9a6d27a00dd6ea450df4bfe777aa0781a41519fd5c54b7dfec5903749"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "794658aa3af311167663d13a40ad101d119cbe7c4625b4e2ce9e3c452bf7dc45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28505a56febb6a9837ebdfe408eb3962e6edcd80a190248373808c00e8f43887"
+    sha256 cellar: :any_skip_relocation, ventura:       "763377fcc30d3202ffa7e86a69903fd0096b8a54f526914c13e6c3f78f0abdcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ca14fe13b77ddebf34a4105b3fc87eb8410b037a4eaae0a90aaab85dbe9416c"
   end
 
   depends_on "node"
