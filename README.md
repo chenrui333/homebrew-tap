@@ -70,6 +70,7 @@ brew install --cask <tool>
 - `cf-vault`
 - `cloudlens`
 - `cmdx`
+- `cocainate`
 - `codstts`
 - `cohctl`
 - `crlfmt`
@@ -117,6 +118,7 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
+- `leetgo`
 - `lintnet`
 - `llmdog`
 - `llmpeg`
@@ -138,13 +140,13 @@ brew install --cask <tool>
 - `otto`
 - `oxbuild`
 - `oxen`
-- `pdfly`
 - `pdfsyntax`
 - `pgdog`
 - `pike`
 - `pipeform`
 - `pluralith`
 - `poop`
+- `prefligit`
 - `projectable`
 - `public-ollama-finder`
 - `pyink`
@@ -190,6 +192,7 @@ brew install --cask <tool>
 - `tickrs`
 - `tlint`
 - `togomak`
+- `toolctl`
 - `tpm`
 - `travelgrunt`
 - `tun2proxy`
