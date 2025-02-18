@@ -10,6 +10,7 @@
   "lazyjj": "homebrew/core",
   "md2pdf": "homebrew/core",
   "rustywind": "homebrew/core",
+  "soft-serve": "homebrew/core",
   "sql-formatter": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "tf-summarize": "homebrew/core",
