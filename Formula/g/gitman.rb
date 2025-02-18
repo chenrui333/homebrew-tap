@@ -8,10 +8,10 @@ class Gitman < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27fcff2b6080b93465ac715c6e16bc003740db6f45d1985be5776d5682c2b601"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9513aac425d8987466e77bed4407b0f25b474f79cf5687296cc9b1c837474f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "219acb8e09d9bf734e61acac25a5c3834332ca733b44f0d9f1a15ccad1abc657"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5e5481b5f31509ce0adff296d609b6d8f8044447d810cdb2c8401aab61649c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "043af19cb9ec7319f08e46ad7b72c58bfb13530e957092612592eb714eb42046"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcdfc6370d6c957aa4de2fdf60cb36573f6b92b551d025c4a340c4a40d7fdcec"
+    sha256 cellar: :any_skip_relocation, ventura:       "8676ca6390bfd9f2e062580b8de2463a31ba0619961ffaacf56be0013630bce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3f4e8a03038ecc30ef6443a1abb666d5ffd5724a97a75f9ca1879a325561752"
   end
 
   depends_on "go" => :build
