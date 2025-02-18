@@ -18,6 +18,14 @@ class Castor < Formula
       exec php "#{libexec}/bin/castor" "$@"
     EOS
     chmod 0755, bin/"castor"
+
+    # remove non-native watcher
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
+
+    (libexec/"tools/watcher/bin").children.each do |file|
+      rm(file) if file.basename.to_s != "watcher-#{os}-#{arch}"
+    end
   end
 
   test do
