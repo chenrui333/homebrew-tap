@@ -15,6 +15,7 @@ class Tclint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed8841f375ba2763c524bb2baf1df0d20249c390b866e80e61bfa23f962d390"
   end
 
+  depends_on "rust" => :build # for rpds-py
   depends_on "python@3.13"
 
   resource "attrs" do
