@@ -7,10 +7,11 @@ class Await < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "344eaa819cd80b38efb874962a7c2fef4afee5e4e942e9408aadb32eb3f962cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00e90c8fe612176435217a4842bffa01a8dd470e300b90b159af185fa7e47915"
-    sha256 cellar: :any_skip_relocation, ventura:       "be686dcefbe3659551fa5a321a154ed1c29d2030cb6d5975a8a8bbafb306c77e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45f6fc1691f05b5c906c17c189f2ab60e59792a2e84e676a1022341ab33cd4e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea6f636e6e06e299d37a7b1464e98171920eac7fa8437fa495675efb603b0e5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac253af762ea5eef45086421d0c9525d15caa72f2b22d0f592758bd1605bd328"
+    sha256 cellar: :any_skip_relocation, ventura:       "85aa5162669862ce6e22ded2860fc0ca1c03073431dfe62e63e857b63c81c10c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fcb9caf72f9fb89cde6a3fe093451faadb98871c59042082531bf026204e5f6"
   end
 
   def install
