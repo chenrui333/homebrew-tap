@@ -2,8 +2,8 @@
 class Dbin < Formula
   desc "CLI tool to produce MD context files from many sources"
   homepage "https://github.com/xplshn/dbin"
-  url "https://github.com/xplshn/dbin/archive/refs/tags/0.9.tar.gz"
-  sha256 "d363fb2ea4182386f2c95c1db5838f64c6ed6457b51706250c08017f295f3c69"
+  url "https://github.com/xplshn/dbin/archive/refs/tags/1.0.tar.gz"
+  sha256 "c1e5925af2521d34bd70e6e61eb100db99da80adf0cc495b0c90263841127719"
   # RABRMS is not a valid SPDX-License-Identifier
   # license any_of: ["ISC", "RABRMS"]
   license "ISC"
@@ -24,7 +24,7 @@ class Dbin < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dbin --version 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/dbin --version")
 
     output = shell_output("#{bin}/dbin del bed 2>&1")
     assert_match "Failed to retrieve full name for 'bed#'", output
