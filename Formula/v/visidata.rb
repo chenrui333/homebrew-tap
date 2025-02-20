@@ -9,10 +9,11 @@ class Visidata < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "333287b61ffec3c6bfb9565dfc463ef8ffaaa72c20c502e158778bde22e78d10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecd913ad668351c59df43722d1564ccd99ce917f8355cbeaebd8b2994c969ccd"
-    sha256 cellar: :any_skip_relocation, ventura:       "61bc0120f770c110f86b1150dbece65838e14507b56fe6c9366f1c43dd4c438a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849b2be61a3b9396e9d82d7a4cc353a4e02bab537a0ce24c37d6584d4d13d212"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ad7b29e969d26059b32fb92243859ceb869a85a31bd1ac4e7cbad137bb9d752"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d90ea68b09b7f82eac01b796eb78e5a9001ae6e77ec9c968201dafc453e9b1b"
+    sha256 cellar: :any_skip_relocation, ventura:       "061eac8c856f6fd10c84c511cd94c82bead640d6b3f81d987a9b7c6f73dc31be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "263b674979d5437dec605a8604b9e2cbf92edea7bfc04767aacf502d887d1588"
   end
 
   depends_on "python@3.13"
