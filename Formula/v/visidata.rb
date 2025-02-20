@@ -7,6 +7,14 @@ class Visidata < Formula
   sha256 "8c4484158f0851e4887e595542bd65bdd991de9c20652b442b3fd9742ce8b031"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "333287b61ffec3c6bfb9565dfc463ef8ffaaa72c20c502e158778bde22e78d10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecd913ad668351c59df43722d1564ccd99ce917f8355cbeaebd8b2994c969ccd"
+    sha256 cellar: :any_skip_relocation, ventura:       "61bc0120f770c110f86b1150dbece65838e14507b56fe6c9366f1c43dd4c438a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849b2be61a3b9396e9d82d7a4cc353a4e02bab537a0ce24c37d6584d4d13d212"
+  end
+
   depends_on "python@3.13"
 
   resource "importlib-metadata" do
