@@ -39,6 +39,8 @@ class Visidata < Formula
 
   def install
     virtualenv_install_with_resources
+
+    man1.install "visidata/man/visidata.1", "visidata/man/vd.1"
   end
 
   test do
