@@ -19,6 +19,10 @@ class Await < Formula
 
     system ENV.cc, "await.c", "-o", "await", "-lpthread"
     bin.install "await"
+
+    bash_completion.install "autocompletions/await.bash" => "await"
+    zsh_completion.install "autocompletions/await.zsh" => "_await"
+    fish_completion.install "autocompletions/await.fish"
   end
 
   test do
