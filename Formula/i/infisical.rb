@@ -10,6 +10,14 @@ class Infisical < Formula
     regex(%r{^infisical-cli/v?(\d+(?:\.\d+)+)$}i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f982449d2714acef10d8867a05e78e99183464db137e148e3a6b5a40840ff251"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f0ba4cb92911ca965d48e091a7bbd528e447e365648e816c4c12d573b297d98"
+    sha256 cellar: :any_skip_relocation, ventura:       "49b84ce94681526dbd221b7a8f6df0240351fbe444df9e532966f543f7c80a0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37adb9137ed44a27725da9bd1507df5d43b864a6a6db6b61e889db79cde4f71d"
+  end
+
   depends_on "go"
 
   def install
