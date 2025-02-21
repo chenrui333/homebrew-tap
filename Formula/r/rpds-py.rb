@@ -9,10 +9,10 @@ class RpdsPy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "0f86d31cedc8345b9e8984125d639bdc383bb2c07b603543cb29002aeb02a3e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e19956398889b02e613ea5452c14e2f5a1509d6f800bfd7f5155212ab7d26d2"
-    sha256 cellar: :any,                 ventura:       "ec2529c8696e722a332ccfd4ef0434d5dfae3509ce66e38ab6925c0c472587e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "716ac3ea4c4469cf5c6790a256170a00961e8cbadea38d80e7b551ccdccf3632"
+    sha256 cellar: :any,                 arm64_sequoia: "7cbd99ddd5c94a0d554d22a9cbc32656e2d4277ca63d4cbcc478688581ca0e33"
+    sha256 cellar: :any,                 arm64_sonoma:  "9debb52bcc51cc6bb9700ef22bc960678a9db8198d0c4ee271c9f3dba724a1cc"
+    sha256 cellar: :any,                 ventura:       "ae5e9ffae7ab019e75c25b6104490fd9e42cd6c4d453fadfee65f1fa37a3f946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f18ea5f82d301dc05a31d5612d0227af49c2dccf6b7aba3db86674a58bc5f84"
   end
 
   depends_on "python@3.12" => [:build, :test]
