@@ -47,6 +47,7 @@ brew install --cask <tool>
 - `astro-language-server`
 - `autoflake`
 - `autotools-language-server`
+- `await`
 - `awk-language-server`
 - `azure-pipelines-language-server`
 - `backport`
@@ -110,6 +111,7 @@ brew install --cask <tool>
 - `goimports-reviser`
 - `gommit`
 - `grcov`
+- `gtree`
 - `hcldump`
 - `hclgrep`
 - `hclq`
@@ -139,6 +141,7 @@ brew install --cask <tool>
 - `mfa`
 - `minisign`
 - `mitex`
+- `mln`
 - `mmemoji`
 - `nocc`
 - `nvrs`
@@ -153,6 +156,7 @@ brew install --cask <tool>
 - `pgdog`
 - `pike`
 - `pipeform`
+- `pls`
 - `pluralith`
 - `poop`
 - `precompress`
