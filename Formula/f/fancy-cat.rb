@@ -7,10 +7,10 @@ class FancyCat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "4a1648d9aa856b25eb37b98740ca257edced12b3ebe520c9f92c8a754ca7d22d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1854747203941a5c29c1aacf7716fcd2da1c4c07e6297e8d4a3d4e15e4ecf6fe"
-    sha256 cellar: :any,                 ventura:       "3eae0e344024c866a340368ddfdb4f04eafb429f7b8ab22af39754234e08f846"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c745b33cf5192f3fa7745a790e976e6671df1ffde3bad2418d84145c41143bf0"
+    sha256 cellar: :any,                 arm64_sequoia: "8d06f8b70d4681ceeeaa7ba800032f1c586860f861a146a4ea2763babb9e582a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e38b667ce208c0c6e3ba57ca2543ae0fd33526d42d8a8197c3f63825f4a38cc4"
+    sha256 cellar: :any,                 ventura:       "9ca1bd72a9593396ae967e147e9c39beed6be0f9dff9410cc3a0c2a3874f8116"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e65938a24e7328a725e1c80b513af12aa9ce04cab6be9b011d6ff647e8e35447"
   end
 
   depends_on "zig" => :build
