@@ -3,8 +3,8 @@ class BlueutilTui < Formula
 
   desc "TUI for Mac to interact with bluetooth devices via blueutil"
   homepage "https://github.com/pypa/abi3audit"
-  url "https://files.pythonhosted.org/packages/43/66/8e310de347cf3c36866dfc549001b104b7b85fd76ea307eed635a8648f8a/blueutil_tui-0.2.0.tar.gz"
-  sha256 "220782afaf25c51c71cf6ba2d4b7a830148ff4ec772c3755620570c5d402a697"
+  url "https://files.pythonhosted.org/packages/02/f7/d3c82dd2f51cf4588e2a8364f4d0bc27a3f5c7e472c02d215cc309410afd/blueutil_tui-0.2.1.tar.gz"
+  sha256 "491eb3aa33649a9b2aaa1f1a141b3e08fb459dc6c365ace12dfc643ca4187f4b"
   license "MIT"
 
   bottle do
@@ -54,8 +54,8 @@ class BlueutilTui < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/1f/b6/59b1de04bb4dca0f21ed7ba0b19309ed7f3f5de4396edf20cc2855e53085/textual-1.0.0.tar.gz"
-    sha256 "bec9fe63547c1c552569d1b75d309038b7d456c03f86dfa3706ddb099b151399"
+    url "https://files.pythonhosted.org/packages/86/ae/dfa6423fa0ecfc514eebf148e3464bc332648ec7f096fb4d50abe54b24d5/textual-2.1.0.tar.gz"
+    sha256 "0b1d45cbe351ccd68bfeefd22defa33a59811436089de048bab9fb8b4657bd87"
   end
 
   resource "typing-extensions" do
