@@ -20,6 +20,7 @@
   "tfprovidercheck": "homebrew/core",
   "threatcl": "homebrew/core",
   "umka-lang": "homebrew/core",
+  "visidata": "homebrew/core",
   "yamlfix": "homebrew/core",
   "yor": "homebrew/core"
 }
