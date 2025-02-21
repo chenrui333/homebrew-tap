@@ -3,8 +3,8 @@ class RpdsPy < Formula
 
   desc "Python bindings to Rust's persistent data structures"
   homepage "https://rpds.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/01/80/cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfd/rpds_py-0.22.3.tar.gz"
-  sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
+  url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
+  sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
   license "MIT"
 
   bottle do
@@ -19,9 +19,15 @@ class RpdsPy < Formula
   depends_on "python@3.13" => [:build, :test]
   depends_on "rust" => :build
 
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
+  end
+
   resource "maturin" do
-    url "https://files.pythonhosted.org/packages/9a/08/ccb0f917722a35ab0d758be9bb5edaf645c3a3d6170061f10d396ecd273f/maturin-1.8.1.tar.gz"
-    sha256 "49cd964aabf59f8b0a6969f9860d2cdf194ac331529caae14c884f5659568857"
+    url "https://files.pythonhosted.org/packages/e0/8f/6978427ce3f72b189012e1731d1d2d27b3151caa741666c905320e0a3662/maturin-1.8.2.tar.gz"
+    sha256 "e31abc70f6f93285d6e63d2f4459c079c94c259dd757370482d2d4ceb9ec1fa0"
   end
 
   resource "semantic-version" do
@@ -37,12 +43,6 @@ class RpdsPy < Formula
   resource "setuptools-rust" do
     url "https://files.pythonhosted.org/packages/d3/6b/99a1588d826ceb108694ba00f78bc6afda10ed5d72d550ae8f256af1f7b4/setuptools_rust-1.10.2.tar.gz"
     sha256 "5d73e7eee5f87a6417285b617c97088a7c20d1a70fcea60e3bdc94ff567c29dc"
-  end
-
-  def pythons
-    deps.map(&:to_formula)
-        .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
