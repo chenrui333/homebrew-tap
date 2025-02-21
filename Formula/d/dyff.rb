@@ -6,6 +6,14 @@ class Dyff < Formula
   license "MIT"
   head "https://github.com/homeport/dyff.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a90059bd63996bb1d8a67657f88a9211cf251cac4d26a4b68982cf2ce843c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89bd76ad90b6700168161a175d63dfdfd0a20c8a4fc29d1ea28cbcd5486e5bb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "a8770365b0611f53e20704c4273c0d95b246b3b43c75e7acb72b04490a040f31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff91b89d4a686a0d150a076f14eba5e35932af3510c816315ed2682470c6d465"
+  end
+
   depends_on "go" => :build
 
   def install
