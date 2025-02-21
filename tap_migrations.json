@@ -4,6 +4,7 @@
   "comrak": "homebrew/core",
   "gowall": "homebrew/core",
   "hcledit": "homebrew/core",
+  "infisical": "homebrew/core",
   "jsrepo": "homebrew/core",
   "jupytext": "homebrew/core",
   "koji": "homebrew/core",
