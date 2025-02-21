@@ -7,10 +7,10 @@ class R2md < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b077247c6074ec75bb8a8581a535fe8cd04eb2cc2137cc566247336a580b9e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18747b39173e7b58b7ba0ac3a5807d63182e7ccfbd28bdd422137f1fc1194ee7"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5bb7fd474c838d68c787abbfb89ca5e986bd4903842b336cd8dbcad8709170f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf4ff20d68b9cc7763ff4f787a925881bd0bb1c66eb79682fdecfcf1ab5e126c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f72fe8677904c528ec03a7154d0e80e5ccbd22699cdb05ba22a26830e0fb28bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34e4fa8b2ee5a7081c6734620bc4af3b4789b0890329d9be65b7faa877c08620"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ffbf959861bb9a3d0309220d89bdb33614c9f6eb5c366214777b8bf313070db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28d5a6d2a5ab15b6896a92675aa8901ec23dae0698c2226073fa64f4542b76a5"
   end
 
   depends_on "pkgconf" => :build
