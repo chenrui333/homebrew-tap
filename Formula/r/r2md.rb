@@ -1,8 +1,8 @@
 class R2md < Formula
   desc "Entire codebase to single markdown or pdf file"
   homepage "https://github.com/skirdey-inflection/r2md"
-  url "https://static.crates.io/crates/r2md/r2md-0.4.3.crate"
-  sha256 "30ee2003522b6e5dde293d55f1f19be68fe70031d1019114b4d9a802befec10a"
+  url "https://static.crates.io/crates/r2md/r2md-0.4.4.crate"
+  sha256 "a825301857fbc1d40b98910a1b71c08798ebf752ec0dec34b2e726199b448f92"
   license "Apache-2.0"
 
   bottle do
