@@ -3,8 +3,8 @@ class Tclint < Formula
 
   desc "EDA-centric utility for linting and analyzing Tcl code"
   homepage "https://github.com/nmoroze/tclint"
-  url "https://files.pythonhosted.org/packages/d5/1c/6d0431425a27881d053477179042f1298e0737b46c4a99b6ee8f453406aa/tclint-0.5.1.tar.gz"
-  sha256 "3ab2547e317eea1b87b3619c99e8c81a5e5e8bc2e2c4e85fce596d1052c35c8f"
+  url "https://files.pythonhosted.org/packages/b9/71/d60b71752a4aeed2af36b5b164ccefcaac33c7d4cc36ffba1991cfdafe2a/tclint-0.5.2.tar.gz"
+  sha256 "0df13fe5e4a9b6a94d3e710f29fcc901082370263ab7e7e86927d18b6bdd45b2"
   license "MIT"
 
   bottle do
@@ -74,8 +74,8 @@ class Tclint < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/01/80/cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfd/rpds_py-0.22.3.tar.gz"
-    sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
+    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
+    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
   end
 
   resource "schema" do
