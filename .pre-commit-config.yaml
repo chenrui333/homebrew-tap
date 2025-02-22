@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: brew-style-fix
+        name: Brew style fix for Homebrew formula
+        entry: brew style --fix
+        language: system
+        files: \.rb$
