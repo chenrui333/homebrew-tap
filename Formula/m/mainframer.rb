@@ -28,13 +28,18 @@ class Mainframer < Formula
         compression: 1
     YAML
 
-    # The authenticity of host 'localhost (::1)' can't be established.
-    # ED25519 key fingerprint is SHA256:E56kyK/Xd5a9l+Eyga/H71/63HFpdEeaxJ/pWsA49b8.
-    # This key is not known by any other names.
-    # Are you sure you want to continue connecting (yes/no/[fingerprint])? Killing child processes...
-    return if OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    # # The authenticity of host 'localhost (::1)' can't be established.
+    # # ED25519 key fingerprint is SHA256:E56kyK/Xd5a9l+Eyga/H71/63HFpdEeaxJ/pWsA49b8.
+    # # This key is not known by any other names.
+    # # Are you sure you want to continue connecting (yes/no/[fingerprint])? Killing child processes...
+    # return if OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output = shell_output("#{bin}/mainframer echo 'Hello, world!' 2>&1", 1)
+    output = if OS.mac?
+      pipe_output("#{bin}/mainframer echo 'Hello, world!' 2>&1", "yes\n", 1)
+    else
+      shell_output("#{bin}/mainframer echo 'Hello, world!' 2>&1", 1)
+    end
+
     expected = if OS.mac?
       "rsync stderr 'ssh: connect to host localhost port 22"
     else
