@@ -49,6 +49,7 @@ brew install --cask <tool>
 - `autotools-language-server`
 - `await`
 - `awk-language-server`
+- `awless`
 - `azure-pipelines-language-server`
 - `backport`
 - `balcony`
@@ -56,6 +57,7 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
+- `bombardier`
 - `box`
 - `bpmnlint`
 - `brighterscript-formatter`
@@ -92,6 +94,7 @@ brew install --cask <tool>
 - `fancy-cat`
 - `fex`
 - `fixjson`
+- `fkill-cli`
 - `flow-editor`
 - `flowgger`
 - `fortitude`
@@ -112,6 +115,7 @@ brew install --cask <tool>
 - `gommit`
 - `grcov`
 - `gtree`
+- `hasha-cli`
 - `hcldump`
 - `hclgrep`
 - `hclq`
@@ -144,6 +148,8 @@ brew install --cask <tool>
 - `mln`
 - `mmemoji`
 - `nocc`
+- `np`
+- `npkill`
 - `nvrs`
 - `ohy`
 - `omekasy`
@@ -208,6 +214,7 @@ brew install --cask <tool>
 - `tickrs`
 - `tlint`
 - `togomak`
+- `token-cli`
 - `toolctl`
 - `tpm`
 - `travelgrunt`
