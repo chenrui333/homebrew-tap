@@ -5,6 +5,14 @@ class Np < Formula
   sha256 "e89644fe0a2100f468f3159f402256fa4392cd5782f28fa174b42e5fd46d30ee"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd623cc71229ca214bf10643913d74cd57188760f7ddedddaee41a27e121fad7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "294773fe50cdf7580ef1d77ce8473348c7fff6081b59e5ee6b09a7e7a6761f76"
+    sha256 cellar: :any_skip_relocation, ventura:       "915f117befcb03aef69035f3caa8b501a5e242b407479f1fed684f42cc2dc2d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8bd127759dac7895e9b169483620a69cc55b29d1525a98ea177da256b85862"
+  end
+
   depends_on "node"
 
   def install
