@@ -11,6 +11,14 @@ class TokenCli < Formula
     skip "No new releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed3e76a647fdf58d87935299f206b7178881e6e6a838f323796dadf8a5e6aaab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2ac16d9e20038837914ea1f1d05b72b758b29c6cde3ea2758e6f84cd5c62a86"
+    sha256 cellar: :any_skip_relocation, ventura:       "b32137c2a57074b0e731c46ceddfc042969c741e94302e72ea5e9004f08ab208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4e553403b2c939c8b37e30ddc7d5d1df25bbb976df810cc10a2c3d6953093da"
+  end
+
   depends_on "go" => :build
 
   def install
