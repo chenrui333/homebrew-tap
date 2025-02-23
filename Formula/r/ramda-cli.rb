@@ -9,6 +9,14 @@ class RamdaCli < Formula
     skip "no new releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f17824b4405090b59b1a0bffeaddc391bfc7f20c86b88af2dbe3d29031afff4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "913c6a1c81f98a2e8f0f77b3d873b9c2061590f424058acffc18bc34ec931981"
+    sha256 cellar: :any_skip_relocation, ventura:       "74d3a7ecee96de24cd8d90e5c89d31a9d7a89cb2efbbdbd82f6ce62cd0fec36a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a84e9750e66fcd257afc9aeeaab422e27f377ccb95ffa2f509844300d12d79d3"
+  end
+
   depends_on "node"
 
   def install
