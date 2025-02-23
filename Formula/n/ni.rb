@@ -5,6 +5,14 @@ class Ni < Formula
   sha256 "90b7dfb524cfa3c3400cc0c6870a4ce16000e74ed279b5de2a10050444565a9b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1427be3c7d9098d7ec41d9a37c525500fb611718d68bd4c2711e71433a6d74d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24ce07aaa68a25ed036bf19d02fe9129ca8aee301281969309e61b7ad6a4edba"
+    sha256 cellar: :any_skip_relocation, ventura:       "a96a1cf46e3df0a8df53a01be508bacf693dd0e8195486769f20f72206842a55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cece2020f7914c81a45ca9847aa3ab60a5cbbbb323415ec5e0faa6bd24450171"
+  end
+
   depends_on "node"
 
   def install
