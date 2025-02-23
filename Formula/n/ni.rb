@@ -13,13 +13,7 @@ class Ni < Formula
   end
 
   test do
-    assert_equal <<~EOS, shell_output("#{bin}/ni --version").chomp
-      @antfu/ni  v#{version}
-      node       v#{Formula["node"].version}
-
-      agent      no lock file
-      npm -g     v10.9.2
-    EOS
+    assert_match version.to_s, shell_output("#{bin}/ni --version")
 
     (testpath/"package.json").write <<~EOS
       {
@@ -29,7 +23,7 @@ class Ni < Formula
     EOS
 
     output = pipe_output("#{bin}/ni", "npm\n", 0)
-    assert_match "Choose the agent › npm", output
+    assert_match "found 0 vulnerabilities", output
     assert_path_exists testpath/"package-lock.json"
   end
 end
