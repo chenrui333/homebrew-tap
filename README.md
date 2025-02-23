@@ -57,7 +57,6 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
-- `bombardier`
 - `box`
 - `bpmnlint`
 - `brighterscript-formatter`
@@ -92,6 +91,7 @@ brew install --cask <tool>
 - `emplace`
 - `enola`
 - `envtpl`
+- `evans`
 - `fancy-cat`
 - `ferret`
 - `fex`
@@ -162,6 +162,7 @@ brew install --cask <tool>
 - `oxbuild`
 - `oxen`
 - `pdfsyntax`
+- `percollate`
 - `pgdog`
 - `pike`
 - `pipeform`
