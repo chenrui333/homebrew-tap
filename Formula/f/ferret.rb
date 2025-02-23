@@ -6,6 +6,14 @@ class Ferret < Formula
   license "Apache-2.0"
   head "https://github.com/MontFerret/ferret.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf6878d25aa613f045e1f8546c39322a1c96b1b01e40c0f2962417c639520c1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4438d2a6f6e8eea6649be794eada2a05569502d5935e1c97d1fa204a5bc5c14"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb1a3042c7824f510921c17fe7b7abdf767730bdc7852bac8b7a8f8f441c285b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30f050c30450c8032d0e05a14592fcbf15653c8ad5bf32509549bfe6bfad7a86"
+  end
+
   depends_on "go" => :build
 
   def install
