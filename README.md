@@ -88,10 +88,12 @@ brew install --cask <tool>
 - `dockerfilegraph`
 - `duster`
 - `dvm`
+- `emoj`
 - `emplace`
 - `enola`
 - `envtpl`
 - `fancy-cat`
+- `ferret`
 - `fex`
 - `fixjson`
 - `fkill-cli`
@@ -147,6 +149,7 @@ brew install --cask <tool>
 - `mitex`
 - `mln`
 - `mmemoji`
+- `ni`
 - `nocc`
 - `np`
 - `npkill`
@@ -162,6 +165,7 @@ brew install --cask <tool>
 - `pgdog`
 - `pike`
 - `pipeform`
+- `plandex`
 - `pls`
 - `pluralith`
 - `poop`
@@ -174,6 +178,7 @@ brew install --cask <tool>
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
+- `ramda-cli`
 - `reformat-gherkin`
 - `remark-cli`
 - `resinator`
@@ -222,11 +227,13 @@ brew install --cask <tool>
 - `tuono`
 - `twiggy`
 - `usort`
+- `vercel-serve`
 - `vsg`
 - `wallust`
 - `werk`
 - `xmlformatter`
 - `yew-fmt`
+- `yosay`
 - `yuque-dl`
 - `zero`
 - `zig@0.11`
