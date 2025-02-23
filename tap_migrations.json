@@ -1,5 +1,6 @@
 {
   "bacon-ls": "homebrew/core",
+  "bombardier": "homebrew/core",
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
   "dyff": "homebrew/core",
