@@ -78,11 +78,13 @@ brew install --cask <tool>
 - `cocainate`
 - `codstts`
 - `cohctl`
+- `container2wasm`
 - `crlfmt`
 - `cueimports`
 - `darker`
 - `dbee`
 - `dbin`
+- `dblab`
 - `dela`
 - `dockerfilegraph`
 - `duster`
@@ -95,6 +97,7 @@ brew install --cask <tool>
 - `fancy-cat`
 - `ferret`
 - `fex`
+- `fiona`
 - `fixjson`
 - `fkill-cli`
 - `flow-editor`
@@ -106,6 +109,7 @@ brew install --cask <tool>
 - `ghfetch`
 - `gignr`
 - `giq`
+- `git-chglog`
 - `git-vain`
 - `gitlabform`
 - `gitman`
@@ -117,6 +121,7 @@ brew install --cask <tool>
 - `gommit`
 - `grcov`
 - `gtree`
+- `gtts`
 - `hasha-cli`
 - `hcldump`
 - `hclgrep`
@@ -124,8 +129,11 @@ brew install --cask <tool>
 - `hello`
 - `hellwal`
 - `hf`
+- `horusec`
+- `hostctl`
 - `ip2d`
 - `jetzig`
+- `jira-cli`
 - `junit2html`
 - `kaluma-cli`
 - `kcl`
@@ -176,13 +184,17 @@ brew install --cask <tool>
 - `public-ollama-finder`
 - `pyink`
 - `pyment`
+- `qnm`
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
 - `ramda-cli`
+- `rasterio`
 - `reformat-gherkin`
+- `refurb`
 - `remark-cli`
 - `resinator`
+- `revanced-cli`
 - `rpds-py`
 - `rslocal`
 - `rustfilt`
@@ -217,6 +229,7 @@ brew install --cask <tool>
 - `tfsort`
 - `tftarget`
 - `tftree`
+- `tgpt`
 - `tickrs`
 - `tlint`
 - `togomak`
@@ -228,6 +241,7 @@ brew install --cask <tool>
 - `tuono`
 - `twiggy`
 - `usort`
+- `venom`
 - `vercel-serve`
 - `vsg`
 - `wallust`
