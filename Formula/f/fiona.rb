@@ -7,6 +7,14 @@ class Fiona < Formula
   sha256 "b00ae357669460c6491caba29c2022ff0acfcbde86a95361ea8ff5cd14a86b68"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "6555e910f92735acd2dfa81c032b730026a8eb17c18a1280f418394faaab60ff"
+    sha256 cellar: :any,                 arm64_sonoma:  "4809c8422d732737a17fd2e8dc0aa9d9855dfd84335361100797e8db4c9af4f5"
+    sha256 cellar: :any,                 ventura:       "a54badb5c157e2a5fb04a5b0d330f5bb3812c8ff99550461097607548f9f52fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "079d4a617d4053a8b0b6a63126ad74b5aaa726d2f6111f6692484e3ec0c734f4"
+  end
+
   depends_on "certifi"
   depends_on "gdal"
   depends_on "python@3.13"
