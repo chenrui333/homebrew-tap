@@ -1,4 +1,7 @@
 {
+  "gtts": {
+    "exclude_packages": ["certifi"]
+  },
   "rpds-py": {
     "extra_packages": ["maturin", "setuptools-rust"]
   },
