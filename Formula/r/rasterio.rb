@@ -7,6 +7,14 @@ class Rasterio < Formula
   sha256 "201f05dbc7c4739dacb2c78a1cf4e09c0b7265b0a4d16ccbd1753ce4f2af350a"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "855e7bc48c7f0b6d41c38b5cf00a9c8d7441dd9760572d5a5c84bd8324ba794a"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd25d440634ae008b6e228cea5447329a627f03958ab8d9fe11982dd29603552"
+    sha256 cellar: :any,                 ventura:       "2807738ab590d3eb79ec3c596e1a5e46f8b83cbefb7b04a09fd155b76740f78e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f174ac556ba46b3be3c8976d5ef893a55fe3bde39a4e43f4dbba3268463b4ef"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
