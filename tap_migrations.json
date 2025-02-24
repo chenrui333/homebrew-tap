@@ -21,6 +21,7 @@
   "terraform-cleaner": "homebrew/core",
   "tf-summarize": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
+  "tgpt": "homebrew/core",
   "threatcl": "homebrew/core",
   "umka-lang": "homebrew/core",
   "visidata": "homebrew/core",
