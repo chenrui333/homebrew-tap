@@ -6,6 +6,14 @@ class GitChglog < Formula
   license "MIT"
   head "https://github.com/git-chglog/git-chglog.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "120a4055ec7ac1d4ef2edadb19fc787b495c1bbaf3eeec3fcef84b32caf7c4fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "738120d037bd58d018531576ba36fd072c8946723d9b456636799fa0c97d4db5"
+    sha256 cellar: :any_skip_relocation, ventura:       "0093d7414ff8210b537b8aaf3bc41a67405d54f730b027361290b697d9c7b1e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "564542690498756148e45b6e3b5509dc1fd327770634e63a88f0b708db2c1691"
+  end
+
   depends_on "go" => :build
 
   def install
