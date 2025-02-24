@@ -7,6 +7,14 @@ class Refurb < Formula
   sha256 "8a8f1e7c131ef7dc460cbecbeaf536f5eb0ecb657c099d7823941f0e65b1cfe1"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8094845b33c974078a7093f955312be6158477e41f8f3c025c66a15ee0092d37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b785ee6af5d6462e74ae1d407cfaaf85053dd18c06ac3e0a2ac48494b3febb5"
+    sha256 cellar: :any_skip_relocation, ventura:       "dbfd871be23291162caf966931ff042aa2de16b605d17d9823330ae58ffa9a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cefdb60d42e1302df8084f771385f1c5a703782da0cdba39b13c9644aeef542"
+  end
+
   depends_on "python@3.13"
 
   resource "mypy" do
