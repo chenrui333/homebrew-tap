@@ -5,6 +5,9 @@
   "sarif-tools": {
     "exclude_packages": ["numpy", "pillow"]
   },
+  "chenrui333/tap/pg-activity": {
+    "package_name": "pg_activity[psycopg]"
+  },
   "terraform-iam-policy-validator": {
     "package_name": "tf-policy-validato"
   }
