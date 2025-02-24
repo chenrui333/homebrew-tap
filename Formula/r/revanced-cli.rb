@@ -5,6 +5,14 @@ class RevancedCli < Formula
   sha256 "2b1c5d303c9b181120bb63b4c28cc50ccb33203cf8947add390d900f9fe7f2d8"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04f5c7934aeaf0d12cec69a5b1e58bdd573aa60d824b24930e6c94eab68c1b4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "308c8edc7ec3baea133c362b398b11548f93273fd958223e8d19302cc10e0759"
+    sha256 cellar: :any_skip_relocation, ventura:       "b1e9643c91647aa1290bee4c52043b7fd7f1bdd9f4cf099646d06eba616771a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e192f5b75885f485d37e1f8cff2aeaa435314b9e8e87c55200b0a48d1d5bbdb2"
+  end
+
   depends_on "openjdk"
 
   def install
