@@ -7,6 +7,14 @@ class Gtts < Formula
   sha256 "f5737b585f6442f677dbe8773424fd50697c75bdf3e36443585e30a8d48c1884"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a8e06da1e94af039cc170df598bf99e9e9979139679369750918a242c5190de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edb026e561c10323c7880114e8f7a4ac1de57995b51d984ccd3ddd15394aeb6b"
+    sha256 cellar: :any_skip_relocation, ventura:       "f74792d517d185e98b84afcaa51309ec147836485600d8df7b134fdab5a41bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c144f1a1f78fcee03f483e9a17fb11cecf5b7e02c77b615cdd6053c3ca401e14"
+  end
+
   depends_on "certifi"
   depends_on "python@3.13"
 
