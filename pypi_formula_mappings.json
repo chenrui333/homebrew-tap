@@ -2,6 +2,9 @@
   "gtts": {
     "exclude_packages": ["certifi"]
   },
+  "rasterio": {
+    "exclude_packages": ["certifi", "numpy"]
+  },
   "rpds-py": {
     "extra_packages": ["maturin", "setuptools-rust"]
   },
