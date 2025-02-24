@@ -133,7 +133,6 @@ brew install --cask <tool>
 - `hostctl`
 - `ip2d`
 - `jetzig`
-- `jira-cli`
 - `junit2html`
 - `kaluma-cli`
 - `kcl`
@@ -229,7 +228,6 @@ brew install --cask <tool>
 - `tfsort`
 - `tftarget`
 - `tftree`
-- `tgpt`
 - `tickrs`
 - `tlint`
 - `togomak`
