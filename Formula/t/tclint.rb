@@ -9,10 +9,10 @@ class Tclint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "cdfcc863a4ec0e899a5058f4004c6f8d1ebb8331acfd802e11c2477bfea6e784"
-    sha256 cellar: :any,                 arm64_sonoma:  "05ea9b275a16edd5936b27566768c57ce9e144ee1feb065c614118e4e8ace41e"
-    sha256 cellar: :any,                 ventura:       "95f453bbc6888dca710bde07b11c2794327417083aadc42db770c7ca37fcb8db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99186e0f4377ed4de2704e875423356da8ce980ca959b1c31a2343c08608bfaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b588a4d8396cedf758288397245f1625e651f585c9bb0d46221c69a92846203"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fc0f51aae47cdbeeabfac420ca267311099010e0aabd86c894031b3b7e75d4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "c01d40145b5712659feb9e45444da5b2a49063d734016fc3335b4dfa497a3263"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ef33ace7ddd0ea3d9d3a1a50257772879a7be25b0045fae494f4f04f4e0f02"
   end
 
   depends_on "rust" => :build # for rpds-py
