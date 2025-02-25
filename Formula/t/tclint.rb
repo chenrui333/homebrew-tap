@@ -3,8 +3,8 @@ class Tclint < Formula
 
   desc "EDA-centric utility for linting and analyzing Tcl code"
   homepage "https://github.com/nmoroze/tclint"
-  url "https://files.pythonhosted.org/packages/b9/71/d60b71752a4aeed2af36b5b164ccefcaac33c7d4cc36ffba1991cfdafe2a/tclint-0.5.2.tar.gz"
-  sha256 "0df13fe5e4a9b6a94d3e710f29fcc901082370263ab7e7e86927d18b6bdd45b2"
+  url "https://files.pythonhosted.org/packages/30/54/30d5aaa1a0181a15512cffd86213ae361aa4da3d8cce93df47b74ea35ed8/tclint-0.5.3.tar.gz"
+  sha256 "9da20ea9574aefc0fec35e99584bf3621ee5faeb44af799553c090d9642e131e"
   license "MIT"
 
   bottle do
@@ -38,16 +38,6 @@ class Tclint < Formula
     sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
   end
 
-  resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/38/2e/03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deec/jsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
-  end
-
-  resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/10/db/58f950c996c793472e336ff3655b13fbcf1e3b359dcf52dcf3ed3b52c352/jsonschema_specifications-2024.10.1.tar.gz"
-    sha256 "0f38b83639958ce1152d02a7f062902c41c8fd20d558b0c34344292d417ae272"
-  end
-
   resource "lsprotocol" do
     url "https://files.pythonhosted.org/packages/9d/f6/6e80484ec078d0b50699ceb1833597b792a6c695f90c645fbaf54b947e6f/lsprotocol-2023.0.1.tar.gz"
     sha256 "cc5c15130d2403c18b734304339e51242d3018a05c4f7d0f198ad6e0cd21861d"
@@ -66,16 +56,6 @@ class Tclint < Formula
   resource "pygls" do
     url "https://files.pythonhosted.org/packages/86/b9/41d173dad9eaa9db9c785a85671fc3d68961f08d67706dc2e79011e10b5c/pygls-1.3.1.tar.gz"
     sha256 "140edceefa0da0e9b3c533547c892a42a7d2fd9217ae848c330c53d266a55018"
-  end
-
-  resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
-    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
   end
 
   resource "schema" do
