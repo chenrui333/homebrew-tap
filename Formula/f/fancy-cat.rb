@@ -1,8 +1,8 @@
 class FancyCat < Formula
   desc "PDF reader for terminal emulators using the Kitty image protocol"
   homepage "https://github.com/freref/fancy-cat"
-  url "https://github.com/freref/fancy-cat/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "60f92cd08da6ed845b81edca75f376bf312b26e5420b7a244b275845b6f38af8"
+  url "https://github.com/freref/fancy-cat/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "82a881c04af2422a79a34c91f65064be7a65ef246df42d540273b1266b131ef1"
   license "MIT"
 
   bottle do
