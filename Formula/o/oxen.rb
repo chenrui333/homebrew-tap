@@ -8,10 +8,10 @@ class Oxen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "778fef049b5366fc8d9c0da39ef88b16aad66a6116f4053ceb4e7d5344fbf527"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72c25be8e1e2444d2985a3a4b8e996dfadbcd39c9bd675c476bd1769975965be"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef0751a062f793b21afbc61da555f048a3db21c427661be7c5026f49bf67ce3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f19ac8d78f4dcd577e19b53a9ac00dc40f6b6f84f83f65c973562ee2ce0538eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ef906cd867f6d373a0100e487df76a5c9fc3b8860966880070f839209d0d4ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f4c66014ebe3bfe510527bdacb0fda1aed7495749622eb7625c3c35c668620b"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad202686e22e0bc9be11fa6631d723f3d989a4ae7a6057547caa9311f21ad810"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0395e7765e874c5eec23b543696fe7b82bfc960efac12ef06943fd38b22f7410"
   end
 
   depends_on "pkgconf" => :build
