@@ -94,7 +94,6 @@ brew install --cask <tool>
 - `enola`
 - `envtpl`
 - `evans`
-- `fancy-cat`
 - `ferret`
 - `fex`
 - `fiona`
