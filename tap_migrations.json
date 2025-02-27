@@ -4,6 +4,7 @@
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
   "dyff": "homebrew/core",
+  "fancy-cat": "homebrew/core",
   "gowall": "homebrew/core",
   "hcledit": "homebrew/core",
   "infisical": "homebrew/core",
