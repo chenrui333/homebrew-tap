@@ -26,7 +26,8 @@ class Playerctl < Formula
     assert_match version.to_s, shell_output("#{bin}/playerctl --version")
 
     output = shell_output("#{bin}/playerctl status 2>&1", 1)
-    assert_match "Cannot autolaunch D-Bus without X11", output
+    # error as `Could not connect to players: Cannot autolaunch D-Bus without X11 $DISPLAY` on macos sequoia
+    assert_match "Could not connect to players", output
   end
 end
 
