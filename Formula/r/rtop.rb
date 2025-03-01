@@ -11,6 +11,14 @@ class Rtop < Formula
     skip "no recent releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3622c0f9ede688f65abb11ee96e23c0385751eeebbb40a6747595dafa655d87e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faa2a84a54bf18192281a6cae1187551cd64d47f1d98f9bb4643b99f32dc0f12"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b4da2d0b4df993925142a10b2be6cabf253f1428604f681f84dab59c5f6fe1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1a1da80d1b277711a4e3d9c4fa6bc5d97c442f4cb05d414b1438dbdab33442b"
+  end
+
   depends_on "go" => :build
 
   patch :DATA
