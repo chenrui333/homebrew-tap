@@ -5,6 +5,14 @@ class NestCli < Formula
   sha256 "c1d24094ead26b0a00cc952e049ffbd2a6d9914da9df0d73ee464b2e03ba2415"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a86b4780ccace42a17049dbd169d772d08ed98874748b507e85ebac2eea1f7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2fe88cb30ab9b474201a7c1f90a7d40176ebdd50199a882ab5c61dc67fd78f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "2c62b5ad9b53911cc7dc32b6d10e76d7d3ecba56aa036fdf5c2fe30a004bab09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d0c91d5a8fae5bf8bbc39a59c49a91e38b863380c46b2bfb23985d6fa09a1a"
+  end
+
   depends_on "node"
 
   def install
