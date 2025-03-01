@@ -5,6 +5,14 @@ class Playerctl < Formula
   sha256 "75957ad5071956f563542c7557af16a57e40b4a7f66bc9b6373d022ec5eef548"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_sequoia: "3bc5b8843f47a4b9517736dc6afad3c2ed725f504ed37a9802f1a75504eeb6c1"
+    sha256 cellar: :any, arm64_sonoma:  "705566ce3324ebbb5d6e222870aa7b1ab6c89791aaebd1539c4841ba964a5344"
+    sha256 cellar: :any, ventura:       "c164e90f1fa996873ec930b036f7ba7ec60da88faf6df286b38c524765e873d6"
+    sha256               x86_64_linux:  "8a4452fde91c17b09038390f3c96d41871b9d5e27552ec27997942a49ced81a3"
+  end
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
