@@ -24,6 +24,8 @@ class Pingu < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pingu --version")
 
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     # /o/h/L/T/c/homebrew-tap (pingu) > pingu -c 1 github.com
     # PING github.com (140.82.112.4) type `Ctrl-C` to abort
     #  ...        .     ...   ..    ..     .........            seq=0 32bytes from 140.82.112.4: ttl=49 time=23.611ms
