@@ -1,0 +1,28 @@
+class FastXmlParser < Formula
+  desc "Validate XML, Parse XML and Build XML rapidly"
+  homepage "https://naturalintelligence.github.io/fast-xml-parser/"
+  url "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-5.0.8.tgz"
+  sha256 "f6aa5152a73ef045a0011e5b5b53cbfa80000ca2fa61d20d4617c0e9da4e855a"
+  license "MIT"
+
+  depends_on "node"
+
+  def install
+    system "npm", "install", *std_npm_args
+    bin.install_symlink Dir["#{libexec}/bin/*"]
+  end
+
+  test do
+    # create an empty package.json to avoid runtime failure
+    (testpath/"package.json").write "{}"
+
+    (testpath/"test.xml").write <<~XML
+      <root>
+        <child>value</child>
+      </root>
+    XML
+
+    output = shell_output("#{bin}/fxparser test.xml")
+    assert_equal "value", JSON.parse(output)["root"]["child"]
+  end
+end
