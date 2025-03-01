@@ -111,6 +111,7 @@ brew install --cask <tool>
 - `git-vain`
 - `gitlabform`
 - `gitman`
+- `glom`
 - `glsl-analyzer`
 - `go-junit-report`
 - `goboscript`
@@ -118,6 +119,7 @@ brew install --cask <tool>
 - `goimports-reviser`
 - `gommit`
 - `grcov`
+- `grmon`
 - `gtree`
 - `gtts`
 - `hasha-cli`
@@ -135,7 +137,6 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
-- `kirimase`
 - `leetgo`
 - `lintnet`
 - `llmdog`
