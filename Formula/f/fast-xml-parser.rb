@@ -22,6 +22,7 @@ class FastXmlParser < Formula
 
   test do
     # create an empty package.json to avoid runtime failure
+    # code refs, https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/src/cli/cli.js#L13-L14
     (testpath/"package.json").write "{}"
 
     (testpath/"test.xml").write <<~XML
