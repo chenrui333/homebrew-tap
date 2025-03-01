@@ -5,6 +5,14 @@ class Knip < Formula
   sha256 "4de00a2c3295db4f0abaf898716b73a23c8fb17e903878752f43d19dc06598c6"
   license "ISC"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be7c0f311067bde2a37a126871c0196b85747c58ca4512b58b3d306c65a5f4bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "441f6b60675fea325f2c5e3aaa88b35aaa6c2330022d48d22713f702eed4bf6e"
+    sha256 cellar: :any_skip_relocation, ventura:       "bc0ad04fa869e2a7a8ff20e785735094e4550e6c887b4d28a7749be98850f08d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5c5b7abbc38fc46e270654fc43513398e18400a49f398bb5802a3c2a252e7b"
+  end
+
   depends_on "node"
 
   def install
