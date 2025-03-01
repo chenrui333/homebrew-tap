@@ -1,6 +1,6 @@
 class CargoGeiger < Formula
   desc "Detects usage of unsafe Rust in a Rust crate and its dependencies"
-  homepage "https://github.com/rust-secure-code/cargo-geiger"
+  homepage "https://github.com/geiger-rs/cargo-geiger"
   url "https://github.com/geiger-rs/cargo-geiger/archive/refs/tags/cargo-geiger@v0.11.7.tar.gz"
   sha256 "6ddc447b0b8a46ee2b303897fbe2d416df794942cd23984c44b0ee69c4675bad"
   license any_of: ["Apache-2.0", "MIT"]
