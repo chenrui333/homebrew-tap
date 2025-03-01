@@ -17,11 +17,15 @@ class Projectable < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
+  depends_on "libgit2"
+  depends_on "libssh2"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   def install
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
+    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
@@ -30,6 +34,8 @@ class Projectable < Formula
   end
 
   test do
+    require "utils/linkage"
+
     system bin/"prj", "--version"
 
     # Fails in Linux CI with "No such device or address (os error 6)"
@@ -43,6 +49,16 @@ class Projectable < Formula
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
+    end
+
+    [
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+    ].each do |library|
+      assert Utils.binary_linked_to_library?(bin/"prj", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end
 end
