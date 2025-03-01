@@ -8,10 +8,11 @@ class Projectable < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "bd608c3d1993358998134b7c00269484f4f3f3a1f9bc82e70b063e387d7079d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bffba5e84d807a3e88041c675c4e8d74bc79126479f437d09b9ccd83959c195"
-    sha256 cellar: :any,                 ventura:       "f6f4b4be2bc1668dfcb66a4d46f70465ef5657f94d502a06e6bb282aa96a520e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55b6ea3a1483368ef7d2c93c2595cfc596d2ec0492514a190843542821443965"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "87abbe736e8eb659f23106320031ac62c99d52cd4503704533d10a34df9e53b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a1900dc08da1b6e06064649b1bd70c859c82f7ca72a96f991e3823646caab4e1"
+    sha256 cellar: :any,                 ventura:       "3a0dc21c30496092425cb791e3512d7de24879287d7232aec4b790c750a4d07c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb6306f8d78cf9d7728266c472ac15588a74a6b7e619a58cbbdcd715c27d9acb"
   end
 
   depends_on "pkgconf" => :build
