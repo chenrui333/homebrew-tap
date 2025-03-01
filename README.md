@@ -70,7 +70,6 @@ brew install --cask <tool>
 - `cargo-spellcheck`
 - `carton`
 - `castor`
-- `cf-terraforming`
 - `cf-vault`
 - `cloudlens`
 - `cmdx`
