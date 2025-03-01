@@ -11,6 +11,14 @@ class Pingu < Formula
     skip "no recent releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "079a41615d904f1f769ce58a8b7167f668a84945c0077fe66c98539ce74af9f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91ff823d4d7b16072d9829889fcf52abc38a7b3b3da2557eeeb197dbd4c4c98e"
+    sha256 cellar: :any_skip_relocation, ventura:       "bca0a8991a92667bac794b46bfbeb58cc14df528fa820754cd4c309ce06f84c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cedbde3e8ee005e1d18811562dc39a8c73d06c649a74599ecb628bd4f956f65"
+  end
+
   depends_on "go" => :build
 
   # update `golang.org/x/net`
