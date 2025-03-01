@@ -13,6 +13,7 @@ Hashi = "Hashi"
 [files]
 extend-exclude = [
   "Formula/c/cargo-spellcheck.rb",
+  "Formula/m/mitex.rb", # for `main.typ`
   "patches/flexiblas/3.4.5.patch",
 ]
 
