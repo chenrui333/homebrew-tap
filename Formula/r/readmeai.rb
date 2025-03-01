@@ -7,6 +7,14 @@ class Readmeai < Formula
   sha256 "ae56dac1407a599b8821f14ff8e5b20996b22820b3327fab671807e1142fd1b4"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "aa86dcc7849f71f6983543fe7d023bdb4de8f2ca7e0873743f5de0c17ccbb9b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e2c0ff9805c7c67c01deaadc28f4839571ebb1655a66653067b584cba40e2ca"
+    sha256 cellar: :any,                 ventura:       "12b1f7b6504980ef737fb8e060476522d4d5a955aa02f5e1ecdf576da0a12c2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd822b9e2a83bf3201effeb3e234d4e201580638f61626e609d27e8496c39e33"
+  end
+
   depends_on "rust" => :build # for pydantic-core
   depends_on "libyaml"
   depends_on "python@3.13"
