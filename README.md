@@ -92,6 +92,7 @@ brew install --cask <tool>
 - `enola`
 - `envtpl`
 - `evans`
+- `fast-xml-parser`
 - `ferret`
 - `fex`
 - `fiona`
@@ -134,6 +135,7 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
+- `kirimase`
 - `leetgo`
 - `lintnet`
 - `llmdog`
