@@ -58,7 +58,6 @@ brew install --cask <tool>
 - `blueutil-tui`
 - `blush`
 - `box`
-- `bpmnlint`
 - `brighterscript-formatter`
 - `brotab`
 - `brunette`
