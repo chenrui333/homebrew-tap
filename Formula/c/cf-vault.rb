@@ -4,7 +4,7 @@ class CfVault < Formula
   homepage "https://github.com/jacobbednarz/cf-vault"
   url "https://github.com/jacobbednarz/cf-vault/archive/refs/tags/0.0.18.tar.gz"
   sha256 "cdb8eddfec7a153e2e75f42e8246f3f266ff3c566a5784f8d22b0a6b8f48c779"
-  license "MPL-2.0"
+  license "MIT"
   head "https://github.com/jacobbednarz/cf-vault.git", branch: "master"
 
   bottle do
