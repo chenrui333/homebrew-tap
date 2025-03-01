@@ -6,6 +6,14 @@ class Trdsql < Formula
   license "MIT"
   head "https://github.com/noborus/trdsql.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a01fffc25e9e94010bfff489abb72a911eb3a4edb28010e12174f6c1e13d1d35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5733be591b84e14fc953162c99ab034b48742bb5827119e1479e3a934a15178c"
+    sha256 cellar: :any_skip_relocation, ventura:       "67062e0174af21e1d22b5dce4a0254f2f98a9e32756ee9d3f3fe4ce0f7b6cee0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e1827a50783039e5789f8fe1cef8c10169a764b74a4218bfbf910974d4bc884"
+  end
+
   depends_on "go" => :build
 
   def install
