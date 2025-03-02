@@ -9,10 +9,11 @@ class Amoco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "572d3bf8fc55f1f3d0cf4b17fe6f5e71d0cc8da3b3cc3db3cbed0af82b2be807"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e6d653258d3a41052aaf2ea1cb19b3fa9c63c08803cd21090db83af5fb5da9"
-    sha256 cellar: :any_skip_relocation, ventura:       "31782e0b2236560ecb424c9288fef23c61e2d6ff85ef8dd49431011ce2e9a281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38b55a56f43a00db6aa671a88034da0a8530fe24c1d44ee1786b68cb73ee4ccf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e099f669d16a02f6985ffafccb71cd721be9bb0a04a55264362177633e13f105"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6662fc57360a2b77b6cb051fd73627047011f8312a9fffe8392082b2098d099d"
+    sha256 cellar: :any_skip_relocation, ventura:       "0440b59283e92784415c4eaadddf634bd330c4cbcd4d68dd2dbfede94dc17af3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1959f6c3fbe2cd03ca555fa873f014e6fbdd96325a24f3bbbfe221276e9cec3"
   end
 
   depends_on "python@3.13"
