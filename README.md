@@ -137,6 +137,7 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
+- `knip`
 - `leetgo`
 - `lintnet`
 - `llmdog`
@@ -156,6 +157,8 @@ brew install --cask <tool>
 - `mitex`
 - `mln`
 - `mmemoji`
+- `mob`
+- `nest-cli`
 - `ni`
 - `nocc`
 - `np`
@@ -172,12 +175,15 @@ brew install --cask <tool>
 - `percollate`
 - `pgdog`
 - `pike`
+- `pingu`
 - `pipeform`
 - `plandex`
+- `playerctl`
 - `pls`
 - `pluralith`
 - `poop`
 - `precompress`
+- `preevy`
 - `prefligit`
 - `projectable`
 - `public-ollama-finder`
@@ -189,6 +195,7 @@ brew install --cask <tool>
 - `rails-new`
 - `ramda-cli`
 - `rasterio`
+- `readmeai`
 - `reformat-gherkin`
 - `refurb`
 - `remark-cli`
@@ -196,6 +203,7 @@ brew install --cask <tool>
 - `revanced-cli`
 - `rpds-py`
 - `rslocal`
+- `rtop`
 - `rustfilt`
 - `sarif-tools`
 - `sato`
@@ -235,6 +243,7 @@ brew install --cask <tool>
 - `toolctl`
 - `tpm`
 - `travelgrunt`
+- `trdsql`
 - `tun2proxy`
 - `tuono`
 - `twiggy`
@@ -247,6 +256,7 @@ brew install --cask <tool>
 - `xmlformatter`
 - `yew-fmt`
 - `yosay`
+- `ytt`
 - `yuque-dl`
 - `zero`
 - `zig@0.11`
