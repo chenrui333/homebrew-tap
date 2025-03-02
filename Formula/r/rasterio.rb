@@ -9,10 +9,11 @@ class Rasterio < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "855e7bc48c7f0b6d41c38b5cf00a9c8d7441dd9760572d5a5c84bd8324ba794a"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd25d440634ae008b6e228cea5447329a627f03958ab8d9fe11982dd29603552"
-    sha256 cellar: :any,                 ventura:       "2807738ab590d3eb79ec3c596e1a5e46f8b83cbefb7b04a09fd155b76740f78e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f174ac556ba46b3be3c8976d5ef893a55fe3bde39a4e43f4dbba3268463b4ef"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "10def5030ce5102f3438c806a74871dd646d7f25e75584ed45dc56839bea9435"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cdc2b8d322190c4d8d469e7129104cb0708ab2cdc60ce1a96ac8a90a12adb80"
+    sha256 cellar: :any,                 ventura:       "da00430342aa1c239d24d1dc509fe80432302eb85a62e482495507affc436669"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dafc957ebf49a5d08975a382b6b84f8470102a747a3af825cbc08eaf9251c912"
   end
 
   depends_on "cmake" => :build
