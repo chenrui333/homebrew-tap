@@ -243,7 +243,6 @@ brew install --cask <tool>
 - `toolctl`
 - `tpm`
 - `travelgrunt`
-- `trdsql`
 - `tun2proxy`
 - `tuono`
 - `twiggy`
@@ -256,7 +255,6 @@ brew install --cask <tool>
 - `xmlformatter`
 - `yew-fmt`
 - `yosay`
-- `ytt`
 - `yuque-dl`
 - `zero`
 - `zig@0.11`
