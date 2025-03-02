@@ -7,6 +7,14 @@ class Fsociety < Formula
   sha256 "ad49051ac04521b595926591a4cb865cce94f81cf7de18ae6cfe4b336ab00a93"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "126e51a1e83c8fb973ee23e559fc90fd195b33ba40d432470990e9f003380bcb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9e81f95c209e72c518d50e65972f750f62d31f51dbdf01e884012190469febe"
+    sha256 cellar: :any_skip_relocation, ventura:       "7cce4e99e034da264ea86e5e5d76cb65187c0096d02bd03e5baf710deb9312da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6463de247908f5428bf68331c70793d6bfd9ab3818230b17f87aba31e0c1a1a"
+  end
+
   depends_on "python@3.13"
 
   resource "certifi" do
