@@ -2,8 +2,8 @@
 class Llmdog < Formula
   desc "Prepare files and directories for LLM consumption"
   homepage "https://github.com/doganarif/llmdog"
-  url "https://github.com/doganarif/LLMDog/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "aa1b6770ca0e853cd426a23c2f1381e328796debab37d00f64a9a96b055cc589"
+  url "https://github.com/doganarif/LLMDog/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "32adc9485e80cfd6c91c1215cf797c760f3edc31c5e97d6263ce2685399eb75a"
   license "MIT"
   head "https://github.com/doganarif/llmdog.git", branch: "main"
 
