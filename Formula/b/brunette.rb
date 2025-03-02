@@ -9,10 +9,11 @@ class Brunette < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d921d24290d26355f3911f05a136b4f3b6ea6d82a41e061c5fb26bca27d6dfa7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ed2215a2f16f300ad644e30c24d47f7632bfa7176da07e7dbb4fc5f81809c2d"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5448343597914db515196c982b8e47fa94c54e012681323aeb91c4f31250e5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf30f28ac8d5476f2f0315746b1d993b7e03cb2fd3ce95b26c7607b3c50e935b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddcd367e6eadfa0b5c965464813f07331c511a78d961712c305ba94dd3af5ec3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a02e2d269c6e7b276423531f1225b220eae17f1ecd05285a06c4c58469d898cf"
+    sha256 cellar: :any_skip_relocation, ventura:       "10e907cced2dcc61a179c547ed5d47b48d951146a88fc6b1c8e5f15383b4b5f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e3fbdde53b4427c31a3809e98b6e9701afc68a0059b97488b85151807af8bac"
   end
 
   depends_on "python@3.13"
