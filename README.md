@@ -101,6 +101,7 @@ brew install --cask <tool>
 - `flow-editor`
 - `flowgger`
 - `fortitude`
+- `fsociety`
 - `gersemi`
 - `gerust`
 - `ghalint`
@@ -168,9 +169,12 @@ brew install --cask <tool>
 - `omekasy`
 - `omnictl`
 - `optivorbis`
+- `org-formation`
 - `otto`
+- `ov`
 - `oxbuild`
 - `oxen`
+- `papis`
 - `pdfsyntax`
 - `percollate`
 - `pgdog`
@@ -189,11 +193,13 @@ brew install --cask <tool>
 - `public-ollama-finder`
 - `pyink`
 - `pyment`
+- `pyp`
 - `qnm`
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
 - `ramda-cli`
+- `rang`
 - `rasterio`
 - `readmeai`
 - `reformat-gherkin`
@@ -208,6 +214,7 @@ brew install --cask <tool>
 - `sarif-tools`
 - `sato`
 - `satty`
+- `saw`
 - `sdl_image`
 - `sdl_mixer`
 - `sdl_net`
@@ -221,6 +228,8 @@ brew install --cask <tool>
 - `simdjzon`
 - `sloctl`
 - `spok`
+- `statoscope`
+- `sttr`
 - `surgeon`
 - `tclint`
 - `termtunnel`
