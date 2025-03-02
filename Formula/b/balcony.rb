@@ -245,15 +245,17 @@ class Balcony < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"balcony", "--show-completion")
   end
 
   test do
-    ENV["AWS_DEFAULT_REGION"] = "us-west-2"
+    ENV["AWS_REGION"] = "us-east-1"
 
     output = shell_output("#{bin}/balcony info")
     assert_match <<~EOS, output
       Current Profile:
-          AWS Region: us-west-2
+          AWS Region: us-east-1
           AWS Profile: default
     EOS
   end
