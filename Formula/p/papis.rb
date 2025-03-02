@@ -7,6 +7,14 @@ class Papis < Formula
   sha256 "1970e549d8931d560b283bdc883a744f1634afbf23bad8eb244dfa967f66ba78"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "efe2defd9396c18b5e6c08f86acf2c32776ad511d2acf481a3a5a654c6d11789"
+    sha256 cellar: :any,                 arm64_sonoma:  "d627fe970eb10c8dc03750a95c44e6825d98b10c0ec37bf44b5de565e4feabcf"
+    sha256 cellar: :any,                 ventura:       "1f56d7a074b8ed1884c9ed06f11b75b74c6963aec37e8ce967b12bb0f420bce6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35ed302677d371d64f3e06ec25e445895b9714df731546a65eb0ea18f039c1dc"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
