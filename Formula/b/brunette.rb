@@ -67,6 +67,8 @@ class Brunette < Formula
     (buildpath/"requirements-dev.txt").write ""
 
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"brunette", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
