@@ -2,7 +2,7 @@ class Mmemoji < Formula
   include Language::Python::Virtualenv
 
   desc "Custom Emoji manager command-line for Mattermost"
-  homepage "https://github.com/bdcht/amoco"
+  homepage "https://github.com/maxbrunet/mmemoji"
   url "https://files.pythonhosted.org/packages/07/bd/26a107eb89de7b272f04b486b35564582a909d2c02c50c6e6e10ff8b23a0/mmemoji-0.6.0.tar.gz"
   sha256 "767db07a08f44dc3aae4989d1046a820d89fc49be643402879bf813ca3af4e8f"
   license "GPL-3.0-or-later"
@@ -74,6 +74,8 @@ class Mmemoji < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"mmemoji", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
