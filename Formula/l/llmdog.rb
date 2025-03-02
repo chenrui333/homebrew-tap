@@ -9,10 +9,10 @@ class Llmdog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e2a23352cf7b1233797f2d57baad9ea407b7a89bb70f4a9f47ab1118b36bff0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdaf86589210c41a912c21de2ba068d9eec285b22dbc6a5d263cac74b446239b"
-    sha256 cellar: :any_skip_relocation, ventura:       "139c2355f841377ae5ca2d443d810b4d27724fb49f403599039b981a5cd401cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cc1605dc5e09f03d5a77cc42752c7f42b0d9adfa99600e609af95b277ddf5eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1703a24ee1acee247f0c197399e37817715059353f92f9dce17d91113d9303ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c4f6f87df88ef35b636a9367b88c8261f8c112a279235faf30b0caf1657a11"
+    sha256 cellar: :any_skip_relocation, ventura:       "2707be955ba3567dbad7525895489c7b6c18263075c394c98c74508722747769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1acfe018a595db7d4fcd3d182b68ceb25e7524074a3138eed1af57eba9195ad9"
   end
 
   depends_on "go" => :build
