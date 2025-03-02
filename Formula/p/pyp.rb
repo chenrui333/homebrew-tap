@@ -7,6 +7,14 @@ class Pyp < Formula
   sha256 "97c78f8fd6d4550bf67bb5001a4c5c1fa58184d9bd8256abac3e240fa38aa05c"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9096db6fe924b85b313efe7294261e7178e6785822bf940a13fcd5a10f2f4fc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a4c14d6893527f92c9822ec1350a19d84b9523f1a74ad635f444515895bdda"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed93f9425d3032ede19a48f13ad59d2177fb9e39d12c954f12a750049b3b85d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "003725a544558684dee1cdd930f08ab833527b5904a83aaa5473e5e59a081dfa"
+  end
+
   depends_on "python@3.13"
 
   def install
