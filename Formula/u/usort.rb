@@ -10,10 +10,11 @@ class Usort < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "18c91297a910edcd1dd685b5a5d037d9a48c47ad67cfebcf646bcf6a72f427d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "19c5a053f648e7a5be66a5a9618ab331b6c1c0f805660fe6db820e3b8f87103b"
-    sha256 cellar: :any,                 ventura:       "faad9a1a0d21c426e4d85821db26cc74b165d4ad5a20178c7e28008232d48943"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3b7bbbdaf749602857b0d78d85fed29588fe88be63269eb61a5e57ab778a6db"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "dd4249dff3547d64ce6d70413bf82bc40b706215def83cce5ce24bb1ae926a58"
+    sha256 cellar: :any,                 arm64_sonoma:  "31ba2e49fb5572dabf06e2a30812aace6e59435ecae6642bce036e029d27022b"
+    sha256 cellar: :any,                 ventura:       "ad3c8c4a43b01c0e329898e028abd64598d9d3bb55eb02c21682e28a54d5e8c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe0fdc1e23cab45bcdc2ec8334a6bacc7c3bbc1b8556e630afbc7bf805e1a92f"
   end
 
   depends_on "rust" => :build # for libcst
