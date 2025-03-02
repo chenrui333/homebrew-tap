@@ -7,10 +7,10 @@ class Box < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ad825d2e8082624d848b81702d3eb8cee53a9b8ef32cdc91a6d1753a580b08f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "236c582157b8fbef65cae694f647b9da8fd4bd3d1412a6bc6fd20b836108d778"
-    sha256 cellar: :any_skip_relocation, ventura:       "36107b451deacff66cdacdb11daf41472848d6f53323a9bf3fb656c0479361d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a590c0ef7b024db7176e66e071636472d5c1f729ee79367a62f989e54ae0029"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be8981a47a1e2c29f0cdd24f0c2aa664adf6ab044685a1d2bf55583dfa905ccf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b76ce6f96ebd852b6815a7dcd7b32cea29b3a0dcd0a5ab819ce2a987d75fbdbc"
+    sha256 cellar: :any_skip_relocation, ventura:       "acbc34c987114755b148eb8a7df13c9bccca0e112b3e047ae7dd0af41ffb0a62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "deb862b2413f57067b5b8b6e26c9f0445b832c094e3c6c803b0d883471f6d844"
   end
 
   depends_on "php"
