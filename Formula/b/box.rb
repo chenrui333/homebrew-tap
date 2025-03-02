@@ -1,8 +1,8 @@
 class Box < Formula
   desc "Fast, zero config application bundler with PHARs"
   homepage "https://box-project.github.io/box/"
-  url "https://github.com/box-project/box/releases/download/4.6.4/box.phar"
-  sha256 "4e52b19d9e74cd503d128c2b0e29b1b3361e96fbf17a48faeee120cb1e865161"
+  url "https://github.com/box-project/box/releases/download/4.6.5/box.phar"
+  sha256 "bb7c252839fde99bbad8a0573fb1fbe7aabe659e093917f16ef685def1161d19"
   license "MIT"
 
   bottle do
