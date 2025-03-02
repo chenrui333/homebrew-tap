@@ -9,10 +9,11 @@ class Fiona < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "6555e910f92735acd2dfa81c032b730026a8eb17c18a1280f418394faaab60ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "4809c8422d732737a17fd2e8dc0aa9d9855dfd84335361100797e8db4c9af4f5"
-    sha256 cellar: :any,                 ventura:       "a54badb5c157e2a5fb04a5b0d330f5bb3812c8ff99550461097607548f9f52fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "079d4a617d4053a8b0b6a63126ad74b5aaa726d2f6111f6692484e3ec0c734f4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "15873e32810b2f08214782af44d53539a61cbd72031767036dbef007e2781f80"
+    sha256 cellar: :any,                 arm64_sonoma:  "83ff209c2d43c8d703106b72434d281e724d36822c1e1427cf9278df717b16d2"
+    sha256 cellar: :any,                 ventura:       "72d2eb225960fca8d501fe53d002b798cb406adb336bbe9ad5231cdf79a71ecc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "737ad9124084a114c8c932fbe5b020b853094164e291e180d7361b6f3bbc7877"
   end
 
   depends_on "certifi"
