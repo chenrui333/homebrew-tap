@@ -10,11 +10,11 @@ class Pyink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69bb88d779fe23c40681d0d900c972535744d1011816cd491060db7ef522989b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e348bf59a3082c53dec2884ce5e30e1ac2b8e52200ce2e4aa3c3d3ff08af40ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "58b5072738d19db5e9af418c0e957c59cbe19c8bdda3fc805705e256d3315d3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67a7e53ca643572a0822e5ddd81004b6b2c5bc48b5f5df509bf2632bfd49faeb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a3070d43519adbc4c6a96ff44ef903e7316b68928d02d5276d2665cef90b6bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5b52f43541939b5c8a65ab1a321fde52402bdbc17bca6fac6127148af0b3f93"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea66a77d779471461fec5b165367ed22ff67749f17ab7396a1a64c0e6513d876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f3df5203136e8769ce9632bf414084c784dca4c0f65b18dc789078200d37b2"
   end
 
   depends_on "python@3.13"
