@@ -1,10 +1,15 @@
 class Kt < Formula
   desc "Kafka command-line tool that likes JSON"
   homepage "https://github.com/fgeller/kt"
-  url "https://github.com/fgeller/kt/archive/refs/tags/v13.1.0.tar.gz"
-  sha256 "20cffe44f0f126ee42c634427cc3cdb6705e33dd4de3647a8c4a84ccec1d25f3"
+  url "https://github.com/fgeller/kt/archive/refs/tags/v13.1.1.tar.gz"
+  sha256 "75031bd1d63b08b4f3d8e4b59eb1c9157d21d69f483bb1355933dc09f50f888d"
   license "MIT"
   head "https://github.com/fgeller/kt.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -25,6 +30,6 @@ class Kt < Formula
     assert_match version.to_s, shell_output("#{bin}/kt --version")
 
     output = shell_output("#{bin}/kt produce -topic greetings 2>&1", 1)
-    assert_match "Failed to open broker connection", output
+    assert_match "failed to find leader for given topic", output
   end
 end
