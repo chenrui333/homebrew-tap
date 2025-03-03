@@ -136,9 +136,11 @@ brew install --cask <tool>
 - `jetzig`
 - `junit2html`
 - `kaluma-cli`
+- `kapp`
 - `kcl`
 - `keyhunter`
 - `knip`
+- `kt`
 - `leetgo`
 - `lintnet`
 - `llmdog`
@@ -222,6 +224,7 @@ brew install --cask <tool>
 - `seamstress`
 - `secco`
 - `sheetui`
+- `sherif`
 - `shiroa`
 - `shopify-cli`
 - `sig`
@@ -229,7 +232,6 @@ brew install --cask <tool>
 - `sloctl`
 - `spok`
 - `statoscope`
-- `sttr`
 - `surgeon`
 - `tclint`
 - `termtunnel`
