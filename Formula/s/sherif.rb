@@ -5,6 +5,14 @@ class Sherif < Formula
   sha256 "1b849dd72327556b9507ee9a8c6005d7653127fb0f907e069f588c40c48db971"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "765a87449c89e48388840fac09a268c0aa038807f198a3c8df843a72f573fafa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d993a60d3f3558c3755ff3106fc75c9e2508dd39ec50af5911d29e3dfe4a80db"
+    sha256 cellar: :any_skip_relocation, ventura:       "97b1ebd18639c2b3df89575a91037ccb7e49deaf459eab973510d4d28ffb47e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddfc0a341788c163bc9c4823c19c8e0d8cea88efd8291bfcebeb822abd7f47f2"
+  end
+
   depends_on "node"
 
   def install
