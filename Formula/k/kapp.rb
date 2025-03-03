@@ -6,6 +6,14 @@ class Kapp < Formula
   license "Apache-2.0"
   head "https://github.com/carvel-dev/kapp.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2ccb285fdfd7d84fb965b3b338cd0a43eebefc478f1c800038997d0edbcd2e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a706f84f55da252784b0a8087a50c0faf5c0b287cdaeb21d9c25c928f13a6899"
+    sha256 cellar: :any_skip_relocation, ventura:       "bdd6912c56f2b280ee335041d50b94b259a603e2617dfcf4cf85537afb492c99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc53c371f041c1e103873de900cf673651c5957439c95db5529c39507b0e66d9"
+  end
+
   depends_on "go" => :build
 
   def install
