@@ -14,6 +14,7 @@ Hashi = "Hashi"
 extend-exclude = [
   "Formula/c/cargo-spellcheck.rb",
   "Formula/m/mitex.rb", # for `main.typ`
+  "Formula/s/sherif.rb", # for `sherif`
   "patches/flexiblas/3.4.5.patch",
 ]
 
