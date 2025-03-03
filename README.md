@@ -172,7 +172,6 @@ brew install --cask <tool>
 - `omnictl`
 - `optivorbis`
 - `otto`
-- `ov`
 - `oxbuild`
 - `oxen`
 - `papis`
