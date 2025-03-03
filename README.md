@@ -87,6 +87,7 @@ brew install --cask <tool>
 - `dockerfilegraph`
 - `duster`
 - `dvm`
+- `eas-cli`
 - `emoj`
 - `emplace`
 - `enola`
@@ -135,6 +136,7 @@ brew install --cask <tool>
 - `ip2d`
 - `jetzig`
 - `junit2html`
+- `kafkactl`
 - `kaluma-cli`
 - `kapp`
 - `kcl`
@@ -171,7 +173,6 @@ brew install --cask <tool>
 - `omekasy`
 - `omnictl`
 - `optivorbis`
-- `org-formation`
 - `otto`
 - `ov`
 - `oxbuild`
