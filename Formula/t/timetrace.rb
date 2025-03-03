@@ -6,6 +6,14 @@ class Timetrace < Formula
   license "Apache-2.0"
   head "https://github.com/dominikbraun/timetrace.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4423f15766f9c7e37a1c52105159888a1ab7e32775c7499ca64642b24c9bb496"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e2037b663d2620fc6c79edced4aaa445b993ff82131b4e4efe72b782576efd5"
+    sha256 cellar: :any_skip_relocation, ventura:       "cba028bf16959201d099ae93bd61b8f7a282efb865d9360c5d47808d2dfd6bf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e85f5a0713f7c144ffd7a83d62e7a5116ffec8d899fec1dff96cde75c5b4e6d5"
+  end
+
   depends_on "go" => :build
 
   def install
