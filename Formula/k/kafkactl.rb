@@ -6,6 +6,14 @@ class Kafkactl < Formula
   license "Apache-2.0"
   head "https://github.com/deviceinsight/kafkactl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60871e4eb06da13a2408c3d285cdabc2c8c16499dd99131d00cdbaff16b79903"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec5bc541a19d46f8d8dc66abe9f1ad795001b6d5a17a3c1ec3472646bc6b62ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "e402c40ab065b485fbaf294d32d26393bff805bb14631bc70326da9c90e63d89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7a8b2bb1523f85ccd70b9a184cf0b9670a4130fdeb2de45d88679fc3f7f065f"
+  end
+
   depends_on "go" => :build
 
   def install
