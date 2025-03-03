@@ -24,6 +24,7 @@
   "snowflake-cli": "homebrew/core",
   "soft-serve": "homebrew/core",
   "sql-formatter": "homebrew/core",
+  "sttr": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "tf-summarize": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
