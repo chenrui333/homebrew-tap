@@ -6,6 +6,14 @@ class Typioca < Formula
   license "MIT"
   head "https://github.com/bloznelis/typioca.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00a8e1dbde4769d5fb80685f217b638ad8aa706e4a984f78731d2541920376e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdb2c308dec9a278bf95a68e59ca983bcbe0c36a74d28d4f773329a2943dcd59"
+    sha256 cellar: :any_skip_relocation, ventura:       "211d7cca63118f93422131cba47070ad37ba6c6a6b818ffaf2e9c8a84bc3bee3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a9e3c58d54a4ddfbb78dbf8dcdf7264cc70ba3ee05788038bab444e1c0948f4"
+  end
+
   depends_on "go" => :build
 
   def install
