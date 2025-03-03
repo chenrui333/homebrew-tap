@@ -1,5 +1,5 @@
 class Kafkactl < Formula
-  desc "Firefox Reader View as a command-line tool"
+  desc "CLI for managing Apache Kafka"
   homepage "https://deviceinsight.github.io/kafkactl/"
   url "https://github.com/deviceinsight/kafkactl/archive/refs/tags/v5.5.0.tar.gz"
   sha256 "d8611f0ac3c091216e5cfff21ae1cc6de2fe0d72bdc0f0a47b7a1b0507a6b157"
