@@ -14,6 +14,7 @@
   "jira-cli": "homebrew/core",
   "jsrepo": "homebrew/core",
   "jupytext": "homebrew/core",
+  "kapp": "homebrew/core",
   "kirimase": "homebrew/core",
   "koji": "homebrew/core",
   "lazyjj": "homebrew/core",
