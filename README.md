@@ -249,7 +249,6 @@ brew install --cask <tool>
 - `tickrs`
 - `timetrace`
 - `tlint`
-- `tml`
 - `togomak`
 - `token-cli`
 - `toolctl`
