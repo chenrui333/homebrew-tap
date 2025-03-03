@@ -138,7 +138,6 @@ brew install --cask <tool>
 - `junit2html`
 - `kafkactl`
 - `kaluma-cli`
-- `kapp`
 - `kcl`
 - `keyhunter`
 - `knip`
