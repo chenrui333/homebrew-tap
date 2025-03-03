@@ -22,6 +22,7 @@
   "md2pdf": "homebrew/core",
   "nak": "homebrew/core",
   "org-formation": "homebrew/core",
+  "ov": "homebrew/core",
   "pdfly": "homebrew/core",
   "rustywind": "homebrew/core",
   "snowflake-cli": "homebrew/core",
