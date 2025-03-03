@@ -136,7 +136,6 @@ brew install --cask <tool>
 - `ip2d`
 - `jetzig`
 - `junit2html`
-- `kafkactl`
 - `kaluma-cli`
 - `kcl`
 - `keyhunter`
@@ -248,7 +247,9 @@ brew install --cask <tool>
 - `tftarget`
 - `tftree`
 - `tickrs`
+- `timetrace`
 - `tlint`
+- `tml`
 - `togomak`
 - `token-cli`
 - `toolctl`
@@ -257,6 +258,7 @@ brew install --cask <tool>
 - `tun2proxy`
 - `tuono`
 - `twiggy`
+- `typioca`
 - `usort`
 - `venom`
 - `vercel-serve`
