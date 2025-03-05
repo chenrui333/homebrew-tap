@@ -13,6 +13,9 @@ class Foy < Formula
   end
 
   test do
+    # see test failure in https://github.com/chenrui333/homebrew-tap/pull/485#issuecomment-2701902017
+    ENV.prepend_path "NODE_PATH", libexec/"lib/node_modules"
+
     (testpath/"package.json").write <<~JSON
       {
         "name": "test",
