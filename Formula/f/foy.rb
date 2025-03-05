@@ -5,6 +5,14 @@ class Foy < Formula
   sha256 "e5332890ed1e7eb770d2bd39795db8b12e39b08e303eb6da15feb2b719776ea2"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e95c44aea42e4144b898b0ed2f2d8dd2f2491ce2260eaee1173bc0923d6eda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b990d7d29ec7bda2eafcadb30d2ed834c896f0dc882d6393745390fe28c707a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "abdc4da801af762a0791b8314e32082a09d3e24d73cd7ea56339eb8bc4effc3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "440988ee8a0cee42fb6f25cec6bb9934ae79a36d9d565bb7d8ae55b7fabb8ecd"
+  end
+
   depends_on "node"
 
   def install
