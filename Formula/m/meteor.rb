@@ -7,6 +7,14 @@ class Meteor < Formula
   license "MIT"
   head "https://github.com/stefanlogue/meteor.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "965766862731902288b2e41746fc88d8cc76a0a1c91b8896bcd6764e9a555802"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48a95c35504345a0d87ca90cfb68d2f7676cca7e673291692c1d154635b1c1a1"
+    sha256 cellar: :any_skip_relocation, ventura:       "52dfc4d80ecd76c81bed593c397a6cbc71b36a8423c62890f00b694d448f65f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f6e76beef089f86ea5c39198d609742c0f51221fc6cf540992c25d56496c19d"
+  end
+
   depends_on "go" => :build
 
   def install
