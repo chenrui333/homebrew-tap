@@ -6,6 +6,14 @@ class Abc < Formula
   license "Apache-2.0"
   head "https://github.com/appbaseio/abc.git", branch: "dev"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36e4b0e0c043d2f7b795c1e30f21073f5191764d10349556421d0b443616118c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73c0293b45a3122d2d4c59107e106e539f7a69c6a2708abe714cde9588698d6d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f243d347c9c940586061513c539a30e95294af598b2aea2b5209a2a8783dc70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ae3730cebbbe1066830b8bc6300200a262261f487c50dae93f231e7c682ddd"
+  end
+
   depends_on "go" => :build
 
   def install
