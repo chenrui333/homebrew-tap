@@ -260,7 +260,6 @@ brew install --cask <tool>
 - `tun2proxy`
 - `tuono`
 - `twiggy`
-- `typioca`
 - `usort`
 - `venom`
 - `vercel-serve`
