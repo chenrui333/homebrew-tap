@@ -7,6 +7,14 @@ class Mnamer < Formula
   sha256 "c3905b7fc03e07b5b22d92f29ce9c80cc2c2788cebe35e2297fe9f3a4ce7fbf3"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "319a2eacfadbb4d396bc1c48b4bf6aa3a1cc32fb69109e0f64165467cbe28218"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecbc0d99957eaf0ffd67b7d8540947c4a09ebfd3544c5e4bd8ad73c9d72d8971"
+    sha256 cellar: :any_skip_relocation, ventura:       "afa98ef7825e95d947220b42a7c829d375a8af716df13f87301bd488c5d9e9bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5528eac87bf2dc78ed494d9121c735344c242727f088859f74a844eab0012ef8"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "python@3.13"
