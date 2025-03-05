@@ -70,6 +70,7 @@ brew install --cask <tool>
 - `cargo-spellcheck`
 - `carton`
 - `castor`
+- `certok`
 - `cf-vault`
 - `cloudlens`
 - `cmdx`
@@ -101,7 +102,7 @@ brew install --cask <tool>
 - `fkill-cli`
 - `flow-editor`
 - `flowgger`
-- `fortitude`
+- `fortran-linter`
 - `fsociety`
 - `gersemi`
 - `gerust`
@@ -134,7 +135,9 @@ brew install --cask <tool>
 - `horusec`
 - `hostctl`
 - `ip2d`
+- `jaggr`
 - `jetzig`
+- `jplot`
 - `junit2html`
 - `kaluma-cli`
 - `kcl`
@@ -239,6 +242,7 @@ brew install --cask <tool>
 - `terraform`
 - `terrap-cli`
 - `terratag`
+- `tetrigo`
 - `tfcmt`
 - `tfmv`
 - `tfreveal`
