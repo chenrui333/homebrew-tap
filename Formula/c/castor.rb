@@ -1,8 +1,8 @@
 class Castor < Formula
   desc "DX-oriented task runner and command launcher built in PHP"
   homepage "https://castor.jolicode.com/"
-  url "https://github.com/jolicode/castor/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "5fc23c0d8f9d30e3d8f990ce3a9241db9bb83e01c7ebcea08c539524dc9dfbeb"
+  url "https://github.com/jolicode/castor/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "686455e5f33aa3af4d8f4fddd37e99b9cc2e5335ed1ff57279123b8dd98e176b"
   license "MIT"
 
   bottle do
