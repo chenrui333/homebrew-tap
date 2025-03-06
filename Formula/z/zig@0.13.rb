@@ -10,6 +10,14 @@ class ZigAT013 < Formula
     regex(/href=.*?zig[._-]v?(0\.13(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "bbea388227acb30d0806e1becafd1dc725d1d69f62a5c583636d9b7c7b1b0432"
+    sha256 cellar: :any,                 arm64_sonoma:  "27c0769b1879727a949fedc3462f89ce1691121fdeecce5f70c00fde4ee0b60a"
+    sha256 cellar: :any,                 ventura:       "5310c1d3312865c428a4de1793f56c59a5992981df0befdf269c84806f6a71e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db2be3b77402bd7a78097ac80eafc1d6610820b278bfabd90edb081a5ba96cb"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
