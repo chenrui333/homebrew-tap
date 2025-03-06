@@ -31,6 +31,7 @@ brew install --cask <tool>
 <details>
 <summary>Formula List</summary>
 
+- `abc`
 - `addons-linter`
 - `ai-context`
 - `aiac`
@@ -92,6 +93,7 @@ brew install --cask <tool>
 - `emoj`
 - `emplace`
 - `enola`
+- `enry`
 - `envtpl`
 - `evans`
 - `fast-xml-parser`
@@ -103,8 +105,8 @@ brew install --cask <tool>
 - `flow-editor`
 - `flowgger`
 - `fortran-linter`
+- `foy`
 - `fsociety`
-- `gersemi`
 - `gerust`
 - `ghalint`
 - `ghfetch`
@@ -121,6 +123,7 @@ brew install --cask <tool>
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
+- `goodls`
 - `grcov`
 - `grmon`
 - `gtree`
@@ -134,6 +137,7 @@ brew install --cask <tool>
 - `hf`
 - `horusec`
 - `hostctl`
+- `infraspec`
 - `ip2d`
 - `jaggr`
 - `jetzig`
@@ -158,11 +162,13 @@ brew install --cask <tool>
 - `mdsf`
 - `mdslw`
 - `mermaid-cli`
+- `meteor`
 - `mfa`
 - `minisign`
 - `mitex`
 - `mln`
 - `mmemoji`
+- `mnamer`
 - `mob`
 - `nest-cli`
 - `ni`
@@ -174,6 +180,7 @@ brew install --cask <tool>
 - `omekasy`
 - `omnictl`
 - `optivorbis`
+- `otel-cli`
 - `otto`
 - `oxbuild`
 - `oxen`
@@ -263,6 +270,7 @@ brew install --cask <tool>
 - `usort`
 - `venom`
 - `vercel-serve`
+- `vitepress`
 - `vsg`
 - `wallust`
 - `werk`
@@ -270,6 +278,7 @@ brew install --cask <tool>
 - `yew-fmt`
 - `yosay`
 - `yuque-dl`
+- `go-zzz`
 - `zero`
 - `zig@0.11`
 - `zig@0.12`
