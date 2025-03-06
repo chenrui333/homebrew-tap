@@ -6,6 +6,14 @@ class Goodls < Formula
   license "MIT"
   head "https://github.com/tanaikech/goodls.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d2b37461601ffd925c00841abbace3b283343c693e648554518ccd986b6cee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8d0e25e45b120d9ca7657897e252626d02951de4e794ce62adae0f37b8b596"
+    sha256 cellar: :any_skip_relocation, ventura:       "c55a86ccba3a00da6438cd4233c4398115882355dd5d9e854e2b3b790c31d7d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "534a370c7a72e7b9c5d5423c4893340e78843a98724ea471407c926920218ed5"
+  end
+
   depends_on "go" => :build
 
   def install
