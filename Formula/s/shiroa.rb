@@ -22,7 +22,7 @@ class Shiroa < Formula
 
   resource "artifacts" do
     url "https://github.com/Myriad-Dreamin/typst.git",
-        revision: "2ff6c6ca91bfce6a89c3fac1905ebc427df156b0" # branch assets-book-v0.2.0-2
+        revision: "537c02e51c02973b3f82a81fab45c80a45840f71" # branch shiroa-v0.3.0
   end
 
   def install
