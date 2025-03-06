@@ -12,10 +12,10 @@ class Shiroa < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87c6a57393e2517108621b4e595f036659996fe1110d535071cfbf6f8e3e0b54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c75cb7056a102eb05d0cc07cca5f40e02e30d612c6d049ce2a675d46cc51cc9"
-    sha256 cellar: :any_skip_relocation, ventura:       "bfddb0f8bc3fa212c80c7397dd38de01839ad78c79265b7dc381cc23ddab09b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92c74d1f1a08e998a9b30c65490a364443efbb5e59f1acb0d15f0bd614fbf8c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bb34a5faed03acaeeac7b12a51631e0ed9177b9a256c82f42c86ea67370d4a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4e4b3b8fbea516e3cbb1ba0b36ee6e2ac370a6bc0b2d98fbdef5dbe3428e7f8"
+    sha256 cellar: :any_skip_relocation, ventura:       "71472b5ae79b38a724e320ab5d676f4d1e4e578044eed460925faf1a94e00cfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aadbfc39644788e819e8b81a32a6be21f58c0525b1dc81e64766b11b7ed6da0e"
   end
 
   depends_on "rust" => :build
