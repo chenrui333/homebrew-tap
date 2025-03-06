@@ -1,8 +1,8 @@
 class Shiroa < Formula
   desc "Tool for creating modern online books in pure typst"
   homepage "https://myriad-dreamin.github.io/shiroa/"
-  url "https://github.com/Myriad-Dreamin/shiroa/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "0f91d352b6807f531e3913c2bb61c61a03b03a54ea8482d5c807ca7d9b32b826"
+  url "https://github.com/Myriad-Dreamin/shiroa/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "724f5247fb40e9adedae133c0ce103a7b2ab91fa97e704d6bea544ce63559488"
   license "Apache-2.0"
 
   livecheck do
