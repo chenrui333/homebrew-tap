@@ -6,6 +6,14 @@ class Humioctl < Formula
   license "Apache-2.0"
   head "https://github.com/humio/cli.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d1bb56270649a93ad29c4dc9e5b30b3a26bf090d29fc9c5ccaa69ccd81f4858"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "606663ce89be233560e9429261ad24e5e5b2d27703ad4fe7e4ae53c68103ee9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a2b3ced21ba65c39ceb0b8b44c049a3477cbfaecc9b0661c3f0e10db3c674d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a0c102fad4c6a570ddd9eb17959201dd6213749c577c7f3adc4faee2bce5de"
+  end
+
   depends_on "go" => :build
 
   def install
