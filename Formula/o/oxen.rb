@@ -14,6 +14,7 @@ class Oxen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0395e7765e874c5eec23b543696fe7b82bfc960efac12ef06943fd38b22f7410"
   end
 
+  depends_on "cmake" => :build # for libz-ng-sys
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
