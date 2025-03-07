@@ -6,6 +6,14 @@ class Sgpt < Formula
   license "Apache-2.0"
   head "https://github.com/tbckr/sgpt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e90ea0450e0b21e19d8d2df62d23e653eefca5d8e546d5111bd8ccc05b010c8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08f31c397b695477b8e1fecbd39dd034cef0d3b90ddcaa56a25b9b7c2d688aaa"
+    sha256 cellar: :any_skip_relocation, ventura:       "084cf389332d3e3e494f0c508dae45f3af4101375adaaca28df9b4cebe469219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cbae36f67cc53e828943ccbe1e5e3224e088fd76852010f871f3e8299962690"
+  end
+
   depends_on "go" => :build
 
   def install
