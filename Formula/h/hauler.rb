@@ -6,6 +6,14 @@ class Hauler < Formula
   license "Apache-2.0"
   head "https://github.com/hauler-dev/hauler.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5374357a17b7473ae83be8cbc61f886a5cbf662a34cb2d61e42465e54759436e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe730ef11fc3ba5b03ce69a87174ae2a0ba93f4557d702a54aeae0103809b4a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "97cdc11538f19aec1904df57241ea63bcba101ec5b4d1ccedc3c1b6c7d4d9448"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e4547ead52f0c3078cff08e417a3fdf0852223b53ea0f32bc243a92f9b1f25b"
+  end
+
   depends_on "go" => :build
 
   def install
