@@ -6,6 +6,14 @@ class Netfetch < Formula
   license "MIT"
   head "https://github.com/deggja/netfetch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f4bed5e625834553d378dee1446013e570aeff8faac8d8d170a23392acdc5ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90d2ea13a8137aa64adc121f8c263476c6e81ea4bb8e32031cf96ba2dd496264"
+    sha256 cellar: :any_skip_relocation, ventura:       "8640d3fc847a13d9dece85a6f1e4dab2a54bac7adb8f4b784a5ce7aaaf4d7b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "150f0d1ca86b81724a67f0db50bb121efa9c389399a19799179efc5d3c696465"
+  end
+
   depends_on "go" => :build
 
   def install
