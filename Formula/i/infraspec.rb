@@ -2,8 +2,8 @@
 class Infraspec < Formula
   desc "Tool for running infrastructure tests written in pure Gherkin syntax"
   homepage "https://github.com/robmorgan/infraspec"
-  url "https://github.com/robmorgan/infraspec/archive/refs/tags/v0.0.3.tar.gz"
-  sha256 "66735ec5a36f0839104111b92cf19a71f880004082b5d70bcc5c401a5ef88188"
+  url "https://github.com/robmorgan/infraspec/archive/refs/tags/v0.0.4.tar.gz"
+  sha256 "4218acf668c060633184d4b7519be7bc49ee233ef5abd4378f2eb4cf223e1ff5"
   # license "Fair"
   head "https://github.com/robmorgan/infraspec.git", branch: "main"
 
