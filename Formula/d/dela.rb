@@ -27,11 +27,9 @@ class Dela < Formula
       \t@echo "Hello, World!"
     EOS
 
-    assert_equal <<~EOS, shell_output("#{bin}/dela list")
-      Available tasks:
-
-      From #{testpath}/Makefile:
-        • all - Hello, World!
+    assert_equal <<~EOS.strip, shell_output("#{bin}/dela list").strip
+      Tasks from #{testpath}/Makefile:
+        • all (make) - Hello, World!
     EOS
   end
 end
