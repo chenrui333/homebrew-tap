@@ -129,6 +129,7 @@ brew install --cask <tool>
 - `gtree`
 - `gtts`
 - `hasha-cli`
+- `hauler`
 - `hcldump`
 - `hclgrep`
 - `hclq`
@@ -171,8 +172,10 @@ brew install --cask <tool>
 - `mnamer`
 - `mob`
 - `nest-cli`
+- `nhost`
 - `ni`
 - `nocc`
+- `nom`
 - `np`
 - `npkill`
 - `nvrs`
@@ -231,6 +234,7 @@ brew install --cask <tool>
 - `sdl_ttf`
 - `seamstress`
 - `secco`
+- `sgpt`
 - `sheetui`
 - `sherif`
 - `shiroa`
@@ -246,6 +250,7 @@ brew install --cask <tool>
 - `terracove`
 - `terraform-diff`
 - `terraform-iam-policy-validator`
+- `terraform-module-versions`
 - `terraform`
 - `terrap-cli`
 - `terratag`
@@ -282,6 +287,7 @@ brew install --cask <tool>
 - `zero`
 - `zig@0.11`
 - `zig@0.12`
+- `zig@0.13`
 - `ziggy`
 - `zigscient`
 - `zlint`
