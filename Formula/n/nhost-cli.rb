@@ -6,14 +6,6 @@ class NhostCli < Formula
   license "MIT"
   head "https://github.com/nhost/cli.git", branch: "main"
 
-  bottle do
-    root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "623795eefa59061d552ba67b331a6307a0358d2fe8dcee02aed8479003156d2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c834b0408b5f03e793d1faf6ffb3f09ad6f948d4353024ad7266254e4077fcc"
-    sha256 cellar: :any_skip_relocation, ventura:       "0841a06a7d01a77011f0b9cafaa734481f176bf290a9811a33076dfc46b1d5ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70c5371e02c3af69d4da62cc72e823dd71ace85cbcfff4193bbc8e2d4027e7f7"
-  end
-
   depends_on "go" => :build
 
   def install
