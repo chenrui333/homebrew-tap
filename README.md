@@ -38,6 +38,7 @@ brew install --cask <tool>
 - `aiken`
 - `alacritty`
 - `alejandra`
+- `algolia`
 - `amoco`
 - `aoc-cli`
 - `apkeep`
@@ -175,7 +176,6 @@ brew install --cask <tool>
 - `nhost`
 - `ni`
 - `nocc`
-- `nom`
 - `np`
 - `npkill`
 - `nvrs`
