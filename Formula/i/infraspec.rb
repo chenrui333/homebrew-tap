@@ -4,7 +4,7 @@ class Infraspec < Formula
   homepage "https://github.com/robmorgan/infraspec"
   url "https://github.com/robmorgan/infraspec/archive/refs/tags/v0.0.4.tar.gz"
   sha256 "4218acf668c060633184d4b7519be7bc49ee233ef5abd4378f2eb4cf223e1ff5"
-  # license "Fair"
+  # license "Fair" # license question, https://github.com/robmorgan/infraspec/issues/4
   head "https://github.com/robmorgan/infraspec.git", branch: "main"
 
   bottle do
@@ -18,7 +18,7 @@ class Infraspec < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd"
   end
 
   test do
@@ -31,7 +31,7 @@ class Infraspec < Formula
           When I check the server status
           Then the server should be running
     EOS
-    output = shell_output("#{bin}/infraspec test.feature")
-    assert_match "Test execution completed", output
+    output = shell_output("#{bin}/infraspec test.feature").gsub(/\e\[[;\d]*m/, "")
+    assert_match "You can implement step definitions for undefined steps with these snippets", output
   end
 end
