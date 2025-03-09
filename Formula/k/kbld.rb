@@ -6,6 +6,14 @@ class Kbld < Formula
   license "Apache-2.0"
   head "https://github.com/carvel-dev/kbld.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b67e9bd84707498511753ee887cc735225c96ec08bd1dd70bffe24a2443d6094"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e49a89720374103a99764319f7f556cde50e79cf4213ea9aca2673fef8ed554a"
+    sha256 cellar: :any_skip_relocation, ventura:       "25bc7a1422b0b00e79ababc7b70854bb18749df308431d90a4194187d3e7c1e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3d0c30f96a09b3709dc93326300c7006ae95f0545d0ec7267b5621294400c92"
+  end
+
   depends_on "go" => :build
 
   def install
