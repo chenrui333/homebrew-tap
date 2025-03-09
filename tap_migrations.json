@@ -6,6 +6,7 @@
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
   "dyff": "homebrew/core",
+  "evans": "homebrew/core",
   "fancy-cat": "homebrew/core",
   "fortitude": "homebrew/core",
   "gersemi": "homebrew/core",
