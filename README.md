@@ -96,7 +96,6 @@ brew install --cask <tool>
 - `enola`
 - `enry`
 - `envtpl`
-- `evans`
 - `fast-xml-parser`
 - `ferret`
 - `fex`
