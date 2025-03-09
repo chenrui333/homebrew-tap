@@ -33,11 +33,9 @@ class Zigscient < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/zls --version")
-    zis_version = Formula["zig"].version.to_s
-    assert_match zis_version, shell_output("#{bin}/zls --compiler-version")
+    assert_match version.to_s, shell_output("#{bin}/zigscient --version")
 
-    output = shell_output("#{bin}/zls --show-config-path 2>&1")
-    assert_match "No config file zls.json found", output
+    output = shell_output("#{bin}/zigscient --show-config-path 2>&1")
+    assert_match "path to the local configuration folder will be printed instead", output
   end
 end
