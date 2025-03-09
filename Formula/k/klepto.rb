@@ -6,6 +6,14 @@ class Klepto < Formula
   license "MIT"
   head "https://github.com/hellofresh/klepto.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a844368515b23446e7a2b339c3996250027d72282547a218a6da51582c50f89e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d53e68043cd19ec1b69a9fe5f89a6b7d6543dc537af955ecb69bf74687ca2a2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "b7f5a9b9674c85a5d8ccf5976effaf47eff0f12f36aeee02b44cf91a41633071"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6537cb1d80f4d1c660d8e710003d8360d2ad7865768c5bc329740af80ae8e6a1"
+  end
+
   depends_on "go" => :build
 
   def install
