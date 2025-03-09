@@ -117,6 +117,7 @@ brew install --cask <tool>
 - `git-vain`
 - `gitlabform`
 - `gitman`
+- `gitmux`
 - `glom`
 - `glsl-analyzer`
 - `go-junit-report`
@@ -139,9 +140,12 @@ brew install --cask <tool>
 - `hf`
 - `horusec`
 - `hostctl`
+- `humioctl`
 - `infraspec`
 - `ip2d`
+- `ips`
 - `jaggr`
+- `jcli`
 - `jetzig`
 - `jplot`
 - `junit2html`
@@ -149,8 +153,10 @@ brew install --cask <tool>
 - `kcl`
 - `keyhunter`
 - `knip`
+- `kpt`
 - `kt`
 - `leetgo`
+- `leveldb-cli`
 - `lintnet`
 - `llmdog`
 - `llmpeg`
@@ -160,6 +166,7 @@ brew install --cask <tool>
 - `libdivide`
 - `mail-deduplicate`
 - `mamediff`
+- `matcha`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
@@ -173,6 +180,7 @@ brew install --cask <tool>
 - `mnamer`
 - `mob`
 - `nest-cli`
+- `netfetch`
 - `nhost`
 - `ni`
 - `nocc`
@@ -219,6 +227,7 @@ brew install --cask <tool>
 - `refurb`
 - `remark-cli`
 - `resinator`
+- `restish`
 - `revanced-cli`
 - `rpds-py`
 - `rslocal`
@@ -242,10 +251,12 @@ brew install --cask <tool>
 - `sig`
 - `simdjzon`
 - `sloctl`
+- `speedtest`
 - `spok`
 - `statoscope`
 - `surgeon`
 - `tclint`
+- `tenderly`
 - `termtunnel`
 - `terracove`
 - `terraform-diff`
