@@ -6,6 +6,14 @@ class Markpdf < Formula
   license "Apache-2.0"
   head "https://github.com/ajaxray/markpdf.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2a4417a11d87a93e1881a8f15117cd89601a623f2ec58816b311470c570f467"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "356d4b0ea18601a782746eab7e8a5a1fa4825a94d315d581b174fcd62a6fc1b0"
+    sha256 cellar: :any_skip_relocation, ventura:       "80eddc3f07c339ef453cca45027c2df7703af26a66bc8e71f260f9a3dde72e72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd16545942e2b8950006a639a2940a6998a690a2c0c3f5b904a33121d0c59f5"
+  end
+
   depends_on "go" => :build
 
   def install
