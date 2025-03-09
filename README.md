@@ -227,7 +227,6 @@ brew install --cask <tool>
 - `refurb`
 - `remark-cli`
 - `resinator`
-- `restish`
 - `revanced-cli`
 - `rpds-py`
 - `rslocal`
