@@ -27,6 +27,7 @@
   "org-formation": "homebrew/core",
   "ov": "homebrew/core",
   "pdfly": "homebrew/core",
+  "restish": "homebrew/core",
   "rustywind": "homebrew/core",
   "snowflake-cli": "homebrew/core",
   "soft-serve": "homebrew/core",
