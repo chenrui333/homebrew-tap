@@ -6,6 +6,14 @@ class Protodot < Formula
   license "Apache-2.0"
   head "https://github.com/seamia/protodot.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a631d15ef0ac44bdb069967b0eb35ff2501cc439550e9869b629e97d92d06f6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb1d1eb6c5f64c4074c4b0e35d3332569728a79c01f6eb9b5ce7f08c0beefd62"
+    sha256 cellar: :any_skip_relocation, ventura:       "e5b514baa8a4b7d5120e4c95ba4a68e69b37ae8599a75ece930b1c7e0acac047"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23a421162f71d5b9c581d87f4572eab35729291e6be3337ac5a818ef3df8900b"
+  end
+
   depends_on "go" => :build
   depends_on "graphviz"
 
