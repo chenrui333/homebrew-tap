@@ -6,6 +6,14 @@ class QuicsshRs < Formula
   license "MIT"
   head "https://github.com/oowl/quicssh-rs.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa78c85e190567d925be3891c725f4ac0f6785b6241c18350ca30d31eeea214c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6993f02cdb1ad724096826baef61426943418d5bd3a98fc8eb837bc859decf88"
+    sha256 cellar: :any_skip_relocation, ventura:       "e5d1b33bc170d4a97738e386a4ee8ead401739902f7bed07c3292206601dbd2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aee3e87ada694937fc86f8b1ea3679c25144d128bfa5fa9a929b380ab5a59c7"
+  end
+
   depends_on "rust" => :build
 
   def install
