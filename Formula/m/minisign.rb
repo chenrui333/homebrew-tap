@@ -5,6 +5,7 @@ class Minisign < Formula
   version "0.12"
   sha256 "21c272f5a9b6dae9c08226111d6c97acb691c9f09f9f9dc0b73240ff74cb03ea"
   license "ISC"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
