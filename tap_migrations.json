@@ -14,6 +14,7 @@
   "hcledit": "homebrew/core",
   "hishtory": "homebrew/core",
   "infisical": "homebrew/core",
+  "jenkins-cli": "homebrew/core",
   "jira-cli": "homebrew/core",
   "jsrepo": "homebrew/core",
   "jupytext": "homebrew/core",
