@@ -1,10 +1,11 @@
 class Ziggy < Formula
   desc "Data serialization language for expressing clear API messages, config files"
   homepage "https://github.com/kristoff-it/ziggy"
-  url "https://github.com/kristoff-it/ziggy/archive/d762d0054bc84bf7e7f456cb5e22d5d749178505.tar.gz" # for zig 0.13.0
+  url "https://github.com/kristoff-it/ziggy/archive/af41bdb5b1d64404c2ec7eb1d9de01083c0d2596.tar.gz" # for zig 0.14.0
   version "0.0.2" # version after upstream's tag 0.0.1
-  sha256 "a290ac25b95f99164ef695e034b0a79056f0f3e4eb961e6ba3fe61fc8edd1afb"
+  sha256 "cb0e1933f3d62f1a3807736a5de6508d60e1e672733fa0cd597a79f2b95b0aa6"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
