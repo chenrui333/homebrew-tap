@@ -20,6 +20,7 @@
   "jupytext": "homebrew/core",
   "kafkactl": "homebrew/core",
   "kapp": "homebrew/core",
+  "kbld": "homebrew/core",
   "kirimase": "homebrew/core",
   "koji": "homebrew/core",
   "lazyjj": "homebrew/core",
