@@ -1,10 +1,11 @@
 class Jetzig < Formula
   desc "Web framework written in Zig"
   homepage "https://github.com/jetzig-framework/jetzig"
-  url "https://github.com/jetzig-framework/jetzig/archive/3b30ab4625d41cfe3add39797950d188680396b9.tar.gz" # for zig 0.13.0
+  url "https://github.com/jetzig-framework/jetzig/archive/492ac4a9993adc7de7e9f2568fa9add6381e403f.tar.gz" # for zig 0.14.0
   version "0.0.1" # fake version number
-  sha256 "3f9769e0305d6b7a1fe520ca94b2681a80a8e0c7c934d347afa7bb4016aa17b9"
+  sha256 "924604bbb5ae8c305812e067846e6bbfbaf7ac7ca32e5cef818a51796c0a3d13"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
