@@ -1,8 +1,8 @@
 class CargoSpellcheck < Formula
   desc "Checks rust documentation for spelling and grammar mistakes"
   homepage "https://github.com/drahnr/cargo-spellcheck"
-  url "https://github.com/drahnr/cargo-spellcheck/archive/refs/tags/v0.15.2.tar.gz"
-  sha256 "8dadcc8f0ce102c6c179a1b7dbfa0c5e2ea135c557899707603ab62bba72f71a"
+  url "https://github.com/drahnr/cargo-spellcheck/archive/refs/tags/v0.15.4.tar.gz"
+  sha256 "04f22f2f3448ac73d36790f2551a63948e09090a7756a82640d778d769b49eb3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/drahnr/cargo-spellcheck.git", branch: "master"
 
