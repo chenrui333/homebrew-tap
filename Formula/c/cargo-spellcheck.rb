@@ -8,10 +8,10 @@ class CargoSpellcheck < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80cb73e7f3ac8642ed2ca9597c49c803ceb7f6b7b4bb891157b21118cef5004e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2be54c5f36d186f14cc5a5bc54bea7e8aafe477706e1b30189e65796967e6308"
-    sha256 cellar: :any_skip_relocation, ventura:       "c56f6662bd68cbe7928308a4d887bd05c21a9bfc5894a4cbfee2c88c5ff2d893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82dfc847976da783ad3f86568b09a31cc18c60319a4281e7496ad35e57be5835"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0794365de2edf764d4c18fdb191be3e272f967d08e9f79749193b6a461705318"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeef901bb73d9262d4ef59c7fcbe56e696ab42a27bf67970fb7c7081a168dd65"
+    sha256 cellar: :any_skip_relocation, ventura:       "02b32f38f4f8f8d601af41a4a9665ee99f2be8e22b9851d9826fb878df67d0a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5215c4e6d5db988f9587338a9bc0e5c838eed3e26c3e199ae6dff073f316673b"
   end
 
   depends_on "llvm" => :build
