@@ -18,12 +18,19 @@ class Surgeon < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = %W[
+      -s -w
+      -X github.com/bketelsen/surgeon/cmd.version=#{version}
+      -X github.com/bketelsen/surgeon/cmd.commit=#{tap.user}
+    ]
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"surgeon", "completion")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/surgeon --version")
+
     system bin/"surgeon", "init"
     assert_match "description: Modify URLS", (testpath/".surgeon.yaml").read
   end
