@@ -9,10 +9,10 @@ class Jetzig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43ed827ff2f657008c9875e092a6dbba17f70f6dbe3f46198fc8d423a16db0d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26cec0873860299750b3e74b089d8e077c799c333864b1d95eabc33340807a4a"
-    sha256 cellar: :any_skip_relocation, ventura:       "b09a2f82fdf933ede5fe9b63be5ffef139fee986be284c16ff291aa9bae039ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b99b85e144cabce5e97db2a0d97ad430e9530a15b003da19db44e89eba64f20b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2281363f3df8ddaa80619ec0f6e1b5dfef89bc07e7e0e4f1b86c8d0317c7e284"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d3ba1dec0d178d5d6102f30056383a14a216b32c23c7c81bed2d9a081f18cbb"
+    sha256 cellar: :any_skip_relocation, ventura:       "28158e24d44810c78b2d2459a9f083922cd4c39b643372859a81dd0b8e7caca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4651ded8b65c79b4db6057010bd5e375ed0d098b0a8d108e2a641d37e58319c0"
   end
 
   depends_on "zig" => :build
