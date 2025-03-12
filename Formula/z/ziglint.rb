@@ -5,6 +5,14 @@ class Ziglint < Formula
   sha256 "95294e81e5a02ecae0c55d851a14cfe9cc687fc50a439f797ac0ad1cc9e19c27"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84c033ef566c149d5c900fc95979d54560fc9fd8ef39b474d5aa75412659468f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a13dc725b6f187ece808af874c80ead5f55dfdb6dae8bff9e11ab6d084b8693"
+    sha256 cellar: :any_skip_relocation, ventura:       "29692d1c17610a4a995bfdb7264e3866b6bb5fee210a98cf925b5f1fce42ee41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd153b7cf5da067a951b332b8e348268063aa7e664ad1935ccf848c38aa7a218"
+  end
+
   depends_on "zig" => :build
 
   def install
