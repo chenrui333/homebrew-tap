@@ -7,6 +7,13 @@ class Tfmcp < Formula
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
   depends_on "rust" => :build
+  depends_on "opentofu" => :test
+
+  # opentofu support, PR: https://github.com/nwiizo/tfmcp/pull/3
+  patch do
+    url "https://github.com/nwiizo/tfmcp/commit/9e27ef3a70337da8eae56644ea8c2db833a4fba5.patch?full_index=1"
+    sha256 "89b08ff3f08a8a5733b4b1c39b119eee1ed1c20aaf35319ae60570e7b73066b6"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -14,6 +21,8 @@ class Tfmcp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tfmcp --version")
+
+    ENV["TERRAFORM_BINARY_NAME"] = "tofu"
 
     output = shell_output("#{bin}/tfmcp analyze 2>&1")
     assert_match "Terraform analysis complete", output
