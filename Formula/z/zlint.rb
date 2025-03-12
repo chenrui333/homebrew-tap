@@ -1,8 +1,8 @@
 class Zlint < Formula
   desc "Linter for the Zig programming language"
   homepage "https://github.com/DonIsaac/zlint"
-  url "https://github.com/DonIsaac/zlint/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "d8f5e1a6a5eaa6896d3a5586ea7182473590165640e859f9542c8b3efcadc67a"
+  url "https://github.com/DonIsaac/zlint/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "6df7c67c62c1edbc799406d636980e2e942879056148eb85480af5576653f7a3"
   license "MIT"
 
   bottle do
