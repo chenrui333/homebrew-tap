@@ -1,8 +1,8 @@
 class Terratag < Formula
   desc "CLI to automate tagging for AWS, Azure & GCP resources in Terraform"
   homepage "https://www.terratag.io/"
-  url "https://github.com/env0/terratag/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "57101a2a4ad55bb5d992eb2bef54f56ac9efba926c3bac5d7728351e4975ff27"
+  url "https://github.com/env0/terratag/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "4b39ffcbb6b844d6894a3168060de6b672efde45a94b24b1d7e7874de4c45107"
   license "MPL-2.0"
   head "https://github.com/env0/terratag.git", branch: "master"
 
