@@ -1,8 +1,8 @@
 class Hellwal < Formula
   desc "Pywal-like color palette generator, but faster and in C"
   homepage "https://github.com/danihek/hellwal"
-  url "https://github.com/danihek/hellwal/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "eff95d7a0403fc06d57917e4b4d4dbf897a6f0300104592cf95be7b54c83bc90"
+  url "https://github.com/danihek/hellwal/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "2b841d03fe057e30cd1200283361f5ca2f0320aaf2ae7828ace3ce6721633ea8"
   license "MIT"
 
   bottle do
