@@ -6,6 +6,14 @@ class Jl < Formula
   license "ISC"
   head "https://github.com/koenbollen/jl.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53f75a39ed32c695ae593fbb228907458d332a9d6df2e768cf98fbe6915a0f47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "815aa0d62961e707e566951dc2fd93da7dbd5acb50f0e17f4b3070d17298808e"
+    sha256 cellar: :any_skip_relocation, ventura:       "e22cc2a9970ac3852f566f631615ca9284baaca2fb3a93e36a0b0482b9898fb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "217403b334a63ab92dd06cf0d6e026f6f0b3a18e87d2ad5050021f5b1f62b315"
+  end
+
   depends_on "go" => :build
 
   def install
