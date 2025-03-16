@@ -6,6 +6,14 @@ class Decompose < Formula
   license "MIT"
   head "https://github.com/s0rg/decompose.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f56d06ba58b28b572b3c8fc83da86622229cf21d179b2230837f0bdaaa62817"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06f2f1b05bc96781a44246bdca8137f1a948d316dc0af3bc463c2b4a64d913f8"
+    sha256 cellar: :any_skip_relocation, ventura:       "6583b82f217fbf56ed8075bc8156d0b0ba43eb5fcba3c45016d695708ed4df8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "675074fa1e512bb4d926cb61fb288ada14d6770a8cb59cf32e3bc0e22b251898"
+  end
+
   depends_on "go" => :build
 
   def install
