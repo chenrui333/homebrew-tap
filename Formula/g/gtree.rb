@@ -8,10 +8,10 @@ class Gtree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20c6c1d7572e93222cfc90f2a6df3cb21e2617751b2bb91367e5273ba8dfe71b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16d69d4b5c6243be2437d96eb3b4d7a0f59be1b1f5413b2fab6bccec70335083"
-    sha256 cellar: :any_skip_relocation, ventura:       "184cddcc9551ec2e4dbd7e49ba7ad1df8fc946b688f3416448d5c8ec838bd17e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "172256924ac960dcc512b0aa5979e1359c7799ddc30373ae3fc054bb45afe50a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8daceee7e48b9040202c28af765ed8ef7c8c8ad4ffec2d7d4c5a069dd2f0ae3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6ac0c7f82f30574ee9c70102ba914efcc82bb4ca9d6bfabcc4d60955ca68e09"
+    sha256 cellar: :any_skip_relocation, ventura:       "14bddd0ddf4260f844704b5173d14d45ecfee28ce02d13880efe4e24e921f11c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e51791b693de279522b849948b744a3a30ba26f7c94ab0b27f277c30c00cdc"
   end
 
   depends_on "go" => :build
