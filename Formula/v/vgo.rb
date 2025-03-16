@@ -15,6 +15,11 @@ class Vgo < Formula
   end
 
   test do
-    assert_match "Failed to build the vgo tool", shell_output("#{bin}/vgo build 2>&1")
+    expected = if OS.mac?
+      "Failed to build the vgo tool"
+    else
+      "┃ ✔ Built vgo\n┃ ✔ Installed vgo"
+    end
+    assert_match expected, shell_output("#{bin}/vgo build 2>&1")
   end
 end
