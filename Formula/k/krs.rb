@@ -10,6 +10,14 @@ class Krs < Formula
     skip "no recent releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a81eedf0cd627688f557975f663644d95da74ed051d3daa09a2779c4fdd213af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "822f12d525a589421f15d5113c516abb394aa00e22caa8bb56a9a1e1e52cb0ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "f31317374deba491b108c69f874955416c1195ad20daa20d42333b987d54d1ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68401c7c33380e5e0116b72b23ad6ab7b0ac154025ea1d2009d79b7870e99033"
+  end
+
   depends_on "go" => :build
 
   patch :DATA
