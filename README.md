@@ -86,6 +86,7 @@ brew install --cask <tool>
 - `dbee`
 - `dbin`
 - `dblab`
+- `decompose`
 - `dela`
 - `docker-debug`
 - `dockerfilegraph`
@@ -108,6 +109,7 @@ brew install --cask <tool>
 - `fortran-linter`
 - `foy`
 - `fsociety`
+- `gemini-cli`
 - `gerust`
 - `ghalint`
 - `ghfetch`
@@ -131,6 +133,7 @@ brew install --cask <tool>
 - `grmon`
 - `gtree`
 - `gtts`
+- `gut`
 - `hasha-cli`
 - `hauler`
 - `hcldump`
@@ -148,14 +151,18 @@ brew install --cask <tool>
 - `jaggr`
 - `jetzig`
 - `jplot`
+- `jsonl-graph`
 - `junit2html`
 - `kaluma-cli`
+- `kbst`
 - `kcl`
 - `keyhunter`
 - `klepto`
 - `knip`
 - `kpt`
 - `kt`
+- `kube-role-gen`
+- `kubeseal-convert`
 - `leetgo`
 - `leveldb-cli`
 - `lintnet`
@@ -182,8 +189,10 @@ brew install --cask <tool>
 - `mmemoji`
 - `mnamer`
 - `mob`
+- `narr`
 - `nest-cli`
 - `netfetch`
+- `ngtop`
 - `nhost`
 - `ni`
 - `nocc`
@@ -194,6 +203,7 @@ brew install --cask <tool>
 - `omekasy`
 - `omnictl`
 - `optivorbis`
+- `osmar`
 - `otto`
 - `oxbuild`
 - `oxen`
@@ -243,6 +253,7 @@ brew install --cask <tool>
 - `sato`
 - `satty`
 - `saw`
+- `scholar`
 - `sdl_image`
 - `sdl_mixer`
 - `sdl_net`
@@ -254,11 +265,13 @@ brew install --cask <tool>
 - `sherif`
 - `shiroa`
 - `shopify-cli`
+- `shuttle`
 - `sig`
 - `simdjzon`
 - `sloctl`
 - `speedtest`
 - `spok`
+- `spotifydl`
 - `statoscope`
 - `surgeon`
 - `tclint`
@@ -296,8 +309,10 @@ brew install --cask <tool>
 - `vitepress`
 - `vsg`
 - `wallust`
+- `wedl`
 - `werk`
 - `xmlformatter`
+- `yeetfile`
 - `yew-fmt`
 - `yosay`
 - `yuque-dl`
