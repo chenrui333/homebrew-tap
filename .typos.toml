@@ -10,6 +10,7 @@ Sur = "Sur"
 ratatui = "ratatui"
 yor = "yor"
 Hashi = "Hashi"
+aks = "aks"
 
 [files]
 extend-exclude = [
