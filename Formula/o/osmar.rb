@@ -6,6 +6,14 @@ class Osmar < Formula
   license "MIT"
   head "https://github.com/codesoap/osmar.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82271fdbb9dba11ce2370772919e7eafca51b5f4eca8ad2bc83f21848a258116"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17286bf68e44b34f3a8ada4b6c85bbd5ee0b94e2dc3572faac01fdc5abff7aa7"
+    sha256 cellar: :any_skip_relocation, ventura:       "f9d5874e9fbbbe6ad965dc9fae2f8e69f68a3e94f5d5f2d6dc24e3c7be50294c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bcf2ea4b001c224fdfb0906c0c1079951c766c0e9cff11e12f15c7ca28cc2d2"
+  end
+
   depends_on "go" => :build
 
   def install
