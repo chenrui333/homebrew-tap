@@ -6,6 +6,14 @@ class Scrt < Formula
   license "Apache-2.0"
   head "https://github.com/loderunner/scrt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f15ff0de532e8d76120c86c18a5250f37365818613bfc418fb0af105cc5f9f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dba88e41b6091032fdf79f42eb439c98bc19bf91fa27ea7c2db33ded7e0003e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6f8764dbe8bcd1d7b958f040d6710a4406e8447a930dca8a986267e3219c4f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1eb6a8698e92a116649508d799f2a87f0d821cda8ab7fac413bd4c8cb2b5488b"
+  end
+
   depends_on "go" => :build
 
   def install
