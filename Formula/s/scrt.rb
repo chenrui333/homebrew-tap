@@ -11,7 +11,8 @@ class Scrt < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin/"scrt", "completion")
+    # upstream bug report, https://github.com/loderunner/scrt/issues/1048
+    # generate_completions_from_executable(bin/"scrt", "completion")
   end
 
   test do
