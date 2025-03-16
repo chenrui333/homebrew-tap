@@ -273,6 +273,7 @@ brew install --cask <tool>
 - `terratag`
 - `tetrigo`
 - `tfcmt`
+- `tfmcp`
 - `tfmv`
 - `tfreveal`
 - `tfsort`
@@ -306,8 +307,8 @@ brew install --cask <tool>
 - `zig@0.12`
 - `zig@0.13`
 - `ziggy`
+- `ziglint`
 - `zigscient`
-- `zlint`
 - `zware`
 
 </details>
