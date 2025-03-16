@@ -7,10 +7,10 @@ class Goboscript < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ef2981d2b7bc01637f69ca5ff9835818f6954d4044db0ecc35f92548d10d211"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec3381bc6a799db32282efa44e08b3b9c235b41491aab1c4f92eb2f68e534321"
-    sha256 cellar: :any_skip_relocation, ventura:       "ad68ec5be18fb1813553107f8ec718ed24d9d88d225fc87a29d6058360c61da5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3382aeed8caedafefd8282f8223ec889bc4138a4d8b72573dd6582ff4e2bf63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d34918ff0577c7cbaaf91602621d5915d8771bd429eb14bf45a3cb547cc888f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4250a44406801ff3e04e0e05e07b522e9ccd855118ca771725595e0cc973af84"
+    sha256 cellar: :any_skip_relocation, ventura:       "b48055107da2111fd734574e3b5b5ae454a98addb59307fdf775d9a70cd034ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48ff41e3586e420cb39eb574e850d1ca6196ab3f9307a489e9eb75ddc2eb993d"
   end
 
   depends_on "rust" => :build
