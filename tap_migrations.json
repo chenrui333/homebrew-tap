@@ -34,6 +34,7 @@
   "pdfly": "homebrew/core",
   "restish": "homebrew/core",
   "rustywind": "homebrew/core",
+  "shuttle": "homebrew/core",
   "snowflake-cli": "homebrew/core",
   "soft-serve": "homebrew/core",
   "sql-formatter": "homebrew/core",
