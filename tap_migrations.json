@@ -5,6 +5,7 @@
   "cf-terraforming": "homebrew/core",
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
+  "decompose": "homebrew/core",
   "dyff": "homebrew/core",
   "evans": "homebrew/core",
   "fancy-cat": "homebrew/core",
