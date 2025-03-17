@@ -43,6 +43,7 @@
   "sql-formatter": "homebrew/core",
   "sttr": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
+  "terraform-iam-policy-validator": "homebrew/core",
   "tf-summarize": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
   "tgpt": "homebrew/core",
