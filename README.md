@@ -101,7 +101,6 @@ brew install --cask <tool>
 - `fast-xml-parser`
 - `ferret`
 - `fex`
-- `fiona`
 - `fixjson`
 - `fkill-cli`
 - `flow-editor`
@@ -239,7 +238,6 @@ brew install --cask <tool>
 - `rails-new`
 - `ramda-cli`
 - `rang`
-- `rasterio`
 - `readmeai`
 - `reformat-gherkin`
 - `refurb`
@@ -280,7 +278,6 @@ brew install --cask <tool>
 - `termtunnel`
 - `terracove`
 - `terraform-diff`
-- `terraform-iam-policy-validator`
 - `terraform-module-versions`
 - `terraform`
 - `terrap-cli`
