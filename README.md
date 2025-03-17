@@ -86,13 +86,13 @@ brew install --cask <tool>
 - `dbee`
 - `dbin`
 - `dblab`
-- `decompose`
 - `dela`
 - `docker-debug`
 - `dockerfilegraph`
 - `duster`
 - `dvm`
 - `eas-cli`
+- `elastop`
 - `emoj`
 - `emplace`
 - `enola`
@@ -131,9 +131,7 @@ brew install --cask <tool>
 - `gowebly`
 - `grcov`
 - `grmon`
-- `gtree`
 - `gtts`
-- `gut`
 - `hasha-cli`
 - `hauler`
 - `hcldump`
@@ -150,6 +148,7 @@ brew install --cask <tool>
 - `ips`
 - `jaggr`
 - `jetzig`
+- `jl`
 - `jplot`
 - `jsonl-graph`
 - `junit2html`
@@ -160,9 +159,11 @@ brew install --cask <tool>
 - `klepto`
 - `knip`
 - `kpt`
+- `krs`
 - `kt`
 - `kube-role-gen`
 - `kubeseal-convert`
+- `kwt`
 - `leetgo`
 - `leveldb-cli`
 - `lintnet`
@@ -254,6 +255,7 @@ brew install --cask <tool>
 - `satty`
 - `saw`
 - `scholar`
+- `scrt`
 - `sdl_image`
 - `sdl_mixer`
 - `sdl_net`
@@ -265,7 +267,6 @@ brew install --cask <tool>
 - `sherif`
 - `shiroa`
 - `shopify-cli`
-- `shuttle`
 - `sig`
 - `simdjzon`
 - `sloctl`
@@ -306,12 +307,14 @@ brew install --cask <tool>
 - `usort`
 - `venom`
 - `vercel-serve`
+- `vgo`
 - `vitepress`
 - `vsg`
 - `wallust`
 - `wedl`
 - `werk`
 - `xmlformatter`
+- `yajsv`
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
