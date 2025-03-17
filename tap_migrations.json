@@ -35,6 +35,7 @@
   "otel-cli": "homebrew/core",
   "ov": "homebrew/core",
   "pdfly": "homebrew/core",
+  "rasterio": "homebrew/core",
   "restish": "homebrew/core",
   "rustywind": "homebrew/core",
   "shuttle": "homebrew/core",
