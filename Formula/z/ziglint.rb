@@ -7,10 +7,10 @@ class Ziglint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84c033ef566c149d5c900fc95979d54560fc9fd8ef39b474d5aa75412659468f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a13dc725b6f187ece808af874c80ead5f55dfdb6dae8bff9e11ab6d084b8693"
-    sha256 cellar: :any_skip_relocation, ventura:       "29692d1c17610a4a995bfdb7264e3866b6bb5fee210a98cf925b5f1fce42ee41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd153b7cf5da067a951b332b8e348268063aa7e664ad1935ccf848c38aa7a218"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c933a66854994cf4c3689b2b8a86266a3ca42adb119a78c72564255fa83f56f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "994afbf6197b1a9a24bb1af4be30554dd0a0daca347c13c649bfc9c1fe07e8f1"
+    sha256 cellar: :any_skip_relocation, ventura:       "f0812ddea9596357cd9502e4edd7193d34570b8a14b7a2a4314476c2ed352885"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fc2d952fac16da15a9f7576502c0e685b564d6caff84a99c9c3fcced97b4f64"
   end
 
   depends_on "zig" => :build
