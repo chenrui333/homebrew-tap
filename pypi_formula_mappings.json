@@ -1,7 +1,4 @@
 {
-  "fiona": {
-    "exclude_packages": ["certifi"]
-  },
   "gtts": {
     "exclude_packages": ["certifi"]
   },
