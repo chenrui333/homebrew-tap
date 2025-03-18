@@ -23,7 +23,7 @@ class Nvrs < Formula
   end
 
   def install
-    system "cargo", "install", "--features", "nvrs_cli", *std_cargo_args
+    system "cargo", "install", "--features", "cli", *std_cargo_args
 
     pkgshare.install "nvrs.toml"
   end
