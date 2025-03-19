@@ -6,6 +6,14 @@ class CargoCareful < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/RalfJung/cargo-careful.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fa9932b6c6e88216c7636ccd919682af38d5f01372a1522d7ea2b3b0ca65f02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e584488213701a6aae7751fcb84edbfe6026cebdc0cd4a948664f191477f1aa0"
+    sha256 cellar: :any_skip_relocation, ventura:       "de84b7003cb68256073cdef002adc3315dbfed3a56788f4779118da3b4997515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "137bd3a98eadb83d2245b913c5db7cccd29ebdb3b8c88acab2b07f4ed2f13f78"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
