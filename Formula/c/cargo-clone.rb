@@ -9,7 +9,10 @@ class CargoClone < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
+
   depends_on "openssl@3"
+
+  uses_from_macos "zlib"
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
