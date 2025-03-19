@@ -30,6 +30,13 @@ class Plandex < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/plandex version")
-    system bin/"plandex"
+
+    # now it has annoying
+    # # ? 👋 Hey there!
+    # # It looks like this is your first time using Plandex on this computer.
+    # # What would you like to do?
+    # # > Start a trial on Plandex Cloud
+    # #   Sign in, accept an invite, or create an account
+    # system bin/"plandex"
   end
 end
