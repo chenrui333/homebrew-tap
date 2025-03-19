@@ -7,10 +7,10 @@ class ArduinoLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e01b40a127156167a0e03cb9bf278a2a5ad10e0db721e944484f2a3a6b74688"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "602a81aa7bdf0d29609b7bbcf4ae98bbf67db13452e08f104613268667aa5f7f"
-    sha256 cellar: :any_skip_relocation, ventura:       "cc128f1da2feb4fb67ac4132d2f58c3b5625e8362f5dcec561827b51fe9cc9a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8299ea652817fe528f8840592087b112e999b244b3cf0e3aa199ffdb90d8ee9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f743df00f2edcb75ccf0b8a12c4c0f7c9977baf0087890f67900ef0f47812ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d7791f1e16080544785e24d386d01d610321e5570fe746c177389bf16f00a4d"
+    sha256 cellar: :any_skip_relocation, ventura:       "d73089b01ad3c4ff7b759305134e67169e1220b643b496a5168f5ac6b05b2cff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4049503cae389a620d76a254fddeae366617086440dc2563a83ca6dd6965ac8e"
   end
 
   depends_on "go" => :build
