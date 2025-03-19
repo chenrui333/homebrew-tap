@@ -69,7 +69,6 @@ brew install --cask <tool>
 - `cargo-geiger`
 - `cargo-readme`
 - `cargo-sort`
-- `cargo-spellcheck`
 - `carton`
 - `castor`
 - `certok`
