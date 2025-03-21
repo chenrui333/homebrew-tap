@@ -1,8 +1,8 @@
 class Duster < Formula
   desc "Automatic configuration for Laravel apps"
   homepage "https://github.com/tighten/duster"
-  url "https://github.com/tighten/duster/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "ba1a0c3e52004d134615ee1134fbc0c6b33f57b23bf1befdbbfe7cd03ba76625"
+  url "https://github.com/tighten/duster/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "c912d7e241dfcf144504b72f6bbb4a27e535693bdde6ecefcf84dc68acaf88e6"
   license "MIT"
 
   bottle do
