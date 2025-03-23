@@ -8,10 +8,10 @@ class Aiken < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d46fd9318eda9a109995fda79a5510e0959ff8a16540988f3f6d8c56cf56700"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c1b89317ca95069e7890b934f880eaeaf564218692c4b4941c23efd003606eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "74fea5ef0a73441b1afba8bfdf24ca4664ec3efd867538a27b92cfc1fe05e9a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "801d90093c7416ad00166268505ccc0105c42c0ab72129f1e2ce55e91fa838a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd6c9e37b067ef48443cf075983e46b33677057d18208b3ec3f119741b409f99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fd9f4bd4d3c00d83ca793d10147eab13e88f4049f1396f8520ebcc9b3bd01f4"
+    sha256 cellar: :any_skip_relocation, ventura:       "88d6d55df42d4d84b715b2412c9e9a7d3c211279a9d988b720ec824e49340929"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a15a1d7af9b2c8c54fa9fc34331903a0115e9fa1082d8157260155336bad11f"
   end
 
   depends_on "pkgconf" => :build
