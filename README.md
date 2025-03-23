@@ -66,6 +66,8 @@ brew install --cask <tool>
 - `btczee`
 - `bytebox`
 - `cai`
+- `cargo-careful`
+- `cargo-clone`
 - `cargo-geiger`
 - `cargo-readme`
 - `cargo-sort`
