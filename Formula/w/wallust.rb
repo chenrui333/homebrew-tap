@@ -7,10 +7,10 @@ class Wallust < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ceca5e303286b5fc4a6e05faeafa736dabf8d10621b5ad8ef0d128eae613e69"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b638e07805af726f5a3d916ddcbad464d120c7c791d5a2111f953bf8bfe0177"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb5b55a06bc868e3d42dc6bbdcedb0fd106aa0af51e46a4a1aa6dd2670981ff6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "523bada40275c6616013cc400041885212a323e0525da3521e235f54ed1ac2e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da8fbe9efc49207f7d9cc9fc477d00d37a5423ea988778c4911ca51fd748119b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0c245490897144c92fdec09669be92196c5253c502795f4ce5f9f3fb250fa67"
+    sha256 cellar: :any_skip_relocation, ventura:       "4be42ef780dbcbcff59adc50755fe9c922d506cec1476f8c99cb27d134a5d27a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d19e5e90dcb6894cfd609c2eb402109a988629bc8fdeab11ae9cd3c9bb4ebda5"
   end
 
   depends_on "rust" => :build
