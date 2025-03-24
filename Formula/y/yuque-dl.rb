@@ -1,8 +1,8 @@
 class YuqueDl < Formula
   desc "Knowledge base downloader for Yuque"
   homepage "https://github.com/gxr404/yuque-dl"
-  url "https://registry.npmjs.org/yuque-dl/-/yuque-dl-1.0.75.tgz"
-  sha256 "39d00f2bb4c8aada7dda61b0f799186fb025c025f5aaacf4551024617ade56f8"
+  url "https://registry.npmjs.org/yuque-dl/-/yuque-dl-1.0.77.tgz"
+  sha256 "4a4b1223c6e48658aa003ac32b64b7b70e93724de7da1fb9b0de9eb7a6ed312e"
   license "ISC"
 
   bottle do
