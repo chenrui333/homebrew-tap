@@ -1,8 +1,8 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https://www.oxen.ai/"
-  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "159048700d1e21846279516d67763353d3dec8b4a79b88a4e1aa5a657ff69522"
+  url "https://github.com/Oxen-AI/Oxen/archive/refs/tags/v0.32.0.tar.gz"
+  sha256 "fda9b5bbb63a5835b0acce16feb75b86b375c3c29b8b333d5e4f414d686e8dea"
   license "Apache-2.0"
   head "https://github.com/Oxen-AI/Oxen.git", branch: "main"
 
