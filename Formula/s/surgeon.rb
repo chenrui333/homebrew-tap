@@ -2,8 +2,8 @@
 class Surgeon < Formula
   desc "Surgically modify a fork"
   homepage "https://github.com/bketelsen/surgeon"
-  url "https://github.com/bketelsen/surgeon/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "4a0160ee72ce49a7df0b9a82bb482e389e6ce720aff293ab48580ce6e732866e"
+  url "https://github.com/bketelsen/surgeon/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "64a900dad872094350f1db07ceb8c01809cd4c554f9150ad95a6dbaaa04a4df1"
   license "MIT"
   head "https://github.com/bketelsen/surgeon.git", branch: "main"
 
