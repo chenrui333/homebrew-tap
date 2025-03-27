@@ -8,10 +8,10 @@ class Humioctl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d1bb56270649a93ad29c4dc9e5b30b3a26bf090d29fc9c5ccaa69ccd81f4858"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "606663ce89be233560e9429261ad24e5e5b2d27703ad4fe7e4ae53c68103ee9d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a2b3ced21ba65c39ceb0b8b44c049a3477cbfaecc9b0661c3f0e10db3c674d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a0c102fad4c6a570ddd9eb17959201dd6213749c577c7f3adc4faee2bce5de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96a948708a0291bb8267177d22757576098c519455ad89a24107fa62d516c329"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faefdc17181858ccf4ffbdf9cfc5bfe80b1540665a73323908b434fd6fd1582d"
+    sha256 cellar: :any_skip_relocation, ventura:       "cdce80c291a0db2a6f9312fa26059184ec10554f6d64cf1ffd839361b8c312d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16d966496637b66b19a98eaa8831d60d825410ee8c04bdad78f688ca59c2b11f"
   end
 
   depends_on "go" => :build
