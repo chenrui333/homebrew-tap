@@ -7,10 +7,10 @@ class Dela < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8365093902e3c09f558f15ba7901166eccabdb376677dc7fb51cb74b12c670aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9ff1e6a7316c440032b319e1ab5dadb8cc87027619a1d5c4b0db71d38811f1e"
-    sha256 cellar: :any_skip_relocation, ventura:       "740a2778d6a29e4c072072ea0fff85b297d39bd71bc019e2f5b84ea18e429ff4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d86afa09a1da6ff8b773421f7b00f245df7b2a5a3258169532b56b2b799f9af0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36a9f2cc5bbc4a94f4d5ee0063acbda0a20599006e9de27af79a6b7321c521ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83a671c62d78b0964cfc7fd49bad410dc426eee44d0b0eb7e43d14aadf688056"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fe7f832abd2711278e0ffe86133e6638efda9cdf332b461fb7d3642503b2ea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb3f68a5fb1a4023e64e139f98266c7e432d580e96feefcbf836f0b53d80bbcd"
   end
 
   depends_on "rust" => :build
