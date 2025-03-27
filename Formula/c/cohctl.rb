@@ -2,8 +2,8 @@
 class Cohctl < Formula
   desc "CLI for Coherence clusters"
   homepage "https://followtheprocess.github.io/spok/"
-  url "https://github.com/oracle/coherence-cli/archive/refs/tags/1.8.0.tar.gz"
-  sha256 "7f97ce53919aace43d0b115746f48fef6ab6381bc77c7b6b1fa24c449c11ae2b"
+  url "https://github.com/oracle/coherence-cli/archive/refs/tags/1.9.0.tar.gz"
+  sha256 "4e976e029407e7e3e6e99335aa18a4e7eaa105ff118ca0c28e054f0ea3799519"
   license "UPL-1.0"
   head "https://github.com/oracle/coherence-cli.git", branch: "main"
 
