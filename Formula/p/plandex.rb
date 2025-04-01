@@ -1,8 +1,8 @@
 class Plandex < Formula
   desc "AI driven development in your terminal. Designed for large, real-world tasks"
   homepage "https://plandex.ai/"
-  url "https://github.com/plandex-ai/plandex/archive/refs/tags/cli/v2.0.3.tar.gz"
-  sha256 "4cfe702cf4728528ffae935f6220a698f9168cedec907523dd33676a1cb6bd38"
+  url "https://github.com/plandex-ai/plandex/archive/refs/tags/cli/v2.0.4.tar.gz"
+  sha256 "f063f7fb62664bd0aea7851082a816b47fe11a605cad5505253766dd27e3c1e0"
   license "MIT"
   head "https://github.com/plandex-ai/plandex.git", branch: "main"
 
