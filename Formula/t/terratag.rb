@@ -8,10 +8,10 @@ class Terratag < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25bbe81c76bf5272ea22f3a61d70ddf1fdb16974c98113d91498b7abdcd4203c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84911509d579939aad197d50454cf518f41e57188730e81ebc708e8a7ab0aa69"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ddaafa26fa7cd98b5ce96af804b92dfe32c4c0132055577f1b2c6559902f60f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fa8ad7ab638c330135dc503335c3e2225688c724a87efeac845b8e707218ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d0e360df1a57f5430c9931e4d2808fee25c708231069f92c55bdf2e7f5f80aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f86755413a2514491d0bdbb39add0e56274ae0ddcbfe5d085dd7c986f909d06"
+    sha256 cellar: :any_skip_relocation, ventura:       "bca85da128e5c2231d3ec750fb46f6577638aa232a9a6f8842f1af06c587ed2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f16df22beb2468375eae8f65da3d63cce0c049d8f18239179ae0ef777fd60190"
   end
 
   depends_on "go" => :build
