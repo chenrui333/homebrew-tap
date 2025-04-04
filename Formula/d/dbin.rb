@@ -11,10 +11,10 @@ class Dbin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69cb8add34a17699983a1298d937acd5586e5148acde830668f73f0fa470d45d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0e02b9d9180ae9a54b32f4faddaabd59417d1cedb467b4bf0833dfcc7495791"
-    sha256 cellar: :any_skip_relocation, ventura:       "2f453936165d91171eddb7f75fc11dcf039930d29adf8820596f0ee95d01393d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77beef1d845c79247b5aa92f5d2181c360e06e2470ebfe5112d568dceac232a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d74ffbe2b29a8157733e569bedf0093a48c6d2eb831fe8bd0f2ff8f77d464448"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28e1844aca4237ef3e5a3c909f9f0d460b8df8185b0cc5409a6b93ebf0bc2555"
+    sha256 cellar: :any_skip_relocation, ventura:       "e70c5ee9457e675f4aebb8c5cf6d6796d9a51134efabf48f40c02b8f06feb8fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22aa7f528324dfb6ac06da6a31bed40bed5913729dd1580205c199ff8bc0d4fe"
   end
 
   depends_on "go" => :build
