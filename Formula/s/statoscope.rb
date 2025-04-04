@@ -7,10 +7,10 @@ class Statoscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "741a9ac2d23fcfc2c2974c18786bf8d8b8dc4f8858199fd7419b41c97fce6d12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "782e374131d9ab9fd4b47d57d130d339f1e1ca32c0bd9e6e765293598ea55876"
-    sha256 cellar: :any_skip_relocation, ventura:       "148a58ba1f0a8f18c208eee21ac852e332e92e5a109e044536e5de535e839899"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21bab26f6394c5fb2dcc8922d8b02078c3163102bf00dd5169c22e2b13960412"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "403004da59144ecb57c1d5fb3ab86ac971d1dfe0f37e56fc87cba32e2cd99254"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85ab71aeb11ff6ea895b95a97a04d75711ec0f9da043779330512458c45c518d"
+    sha256 cellar: :any_skip_relocation, ventura:       "a190f9b0847046c8753bc297118bbe7ab52d517510ab968b01f33a162e1a1392"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2db2d09981fe09d7174d38e49ba98d7064f2fa0596d9214786d1a92e228f9dd"
   end
 
   depends_on "node"
