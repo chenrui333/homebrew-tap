@@ -1,8 +1,8 @@
 class Statoscope < Formula
   desc "Toolkit to analyze and validate webpack bundle"
   homepage "https://github.com/statoscope/statoscope"
-  url "https://registry.npmjs.org/@statoscope/cli/-/cli-5.28.3.tgz"
-  sha256 "a20f4c7eab2bb0acb89f4fdcc1642951592fed7b630ae4fb49cadfe514630348"
+  url "https://registry.npmjs.org/@statoscope/cli/-/cli-5.29.0.tgz"
+  sha256 "6d6752a54d855018ad22b367efd4dccf9654c9a43bcc4afa7451cd42fa3277ce"
   license "MIT"
 
   bottle do
