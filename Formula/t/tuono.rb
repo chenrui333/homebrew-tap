@@ -8,10 +8,10 @@ class Tuono < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3dbf5fb5ceccd4ef1c1ccddb1d4f7f625ee3b8e2a91abd564bebf1148f9ad890"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b19843d292513630746235d4d02692afc6755db933c6a62bea1f0d17b1ea905"
-    sha256 cellar: :any_skip_relocation, ventura:       "97b5caaaaacd845620026b90a56ba8438be8359d1e6f7b6a96fc574d9edf634c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa238bf13c979d0d828f0651e9b265da3179591eac6ac59b912539df2e5cabc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98e2abc15c40bf368b8f21e1fa7bca92b89f79f9173c6797b5a402358ddca026"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fc396a6538386b73a38a2f63831027d65211bd1ba97abcc8cebb8f3c7e9e4ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "881293742a12ec54466aec8c453eab18fcd63ecfa8ac3e94d204c9ebdaf6cf77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0e58e35df6b06bcda4211621798907ab162e443ad514f269c26a8613edc1814"
   end
 
   depends_on "pkgconf" => :build
