@@ -8,10 +8,10 @@ class Tfmv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "305d13ef58ccf81b689bad6aa93a2131585c7ee764e3fb9d75ed8d0ea6d95474"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91656f66fc964d331991e0583bf49a688149984e609a3945f6fe26aab9a469a1"
-    sha256 cellar: :any_skip_relocation, ventura:       "a4ec09d8507c5391c59904181bbe81ff02501941eb267e005e9e07eb2eae6fea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dec929e2000a36030ea94055b880f5bd5805222431665756990ddf386bf2694e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a14a82ecd6d172d8605cb9099756eef6d30610e4d504ccfc12bded10a0e6e09a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f22e9756773839821a5c6236b27d33f45d325d2d3a0d56d908aaecfde18dcd1"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d86b6b1546fa9ceefb7f47dd202da9db96f9f3fdc48fe8fc94d6b8c4efb76c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24be4113175a6a54e63f386897fe5272fe86aa26af269254ee7155be71a6d35"
   end
 
   depends_on "go" => :build
