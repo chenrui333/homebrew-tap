@@ -17,6 +17,8 @@ class Surgeon < Formula
 
   depends_on "go" => :build
 
+  patch :DATA
+
   def install
     ldflags = %W[
       -s -w
@@ -35,3 +37,21 @@ class Surgeon < Formula
     assert_match "description: Modify URLS", (testpath/".surgeon.yaml").read
   end
 end
+
+__END__
+diff --git a/cmd/root.go b/cmd/root.go
+index 97345c9..e049855 100644
+--- a/cmd/root.go
++++ b/cmd/root.go
+@@ -60,6 +60,11 @@ var rootCmd = &cobra.Command{
+ 		return config
+ 	},
+ 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
++		// Skip configuration loading for the `completion` command
++		if cmd.Name() == "completion" || cmd.Parent() != nil && cmd.Parent().Name() == "completion" {
++			return
++		}
++
+ 		if cfgFile != "" {
+ 			cmd.GlobalConfig().SetConfigFile(cfgFile) // Use config file from the flag if set
+ 		} else {
