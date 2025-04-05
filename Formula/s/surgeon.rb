@@ -2,8 +2,8 @@
 class Surgeon < Formula
   desc "Surgically modify a fork"
   homepage "https://github.com/bketelsen/surgeon"
-  url "https://github.com/bketelsen/surgeon/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "4a0160ee72ce49a7df0b9a82bb482e389e6ce720aff293ab48580ce6e732866e"
+  url "https://github.com/bketelsen/surgeon/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "34a35906c584414954bb98d4502436e571b2625c6ff0fcd65579d952a770863f"
   license "MIT"
   head "https://github.com/bketelsen/surgeon.git", branch: "main"
 
@@ -16,6 +16,8 @@ class Surgeon < Formula
   end
 
   depends_on "go" => :build
+
+  patch :DATA
 
   def install
     ldflags = %W[
@@ -35,3 +37,21 @@ class Surgeon < Formula
     assert_match "description: Modify URLS", (testpath/".surgeon.yaml").read
   end
 end
+
+__END__
+diff --git a/cmd/root.go b/cmd/root.go
+index 97345c9..e049855 100644
+--- a/cmd/root.go
++++ b/cmd/root.go
+@@ -60,6 +60,11 @@ var rootCmd = &cobra.Command{
+ 		return config
+ 	},
+ 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
++		// Skip configuration loading for the `completion` command
++		if cmd.Name() == "completion" || cmd.Parent() != nil && cmd.Parent().Name() == "completion" {
++			return
++		}
++
+ 		if cfgFile != "" {
+ 			cmd.GlobalConfig().SetConfigFile(cfgFile) // Use config file from the flag if set
+ 		} else {
