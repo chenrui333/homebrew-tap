@@ -1,8 +1,8 @@
 class Zero < Formula
   desc "ZeroSSL Certificate Manager - Automated SSL/TLS certificate management"
   homepage "https://github.com/yarlson/zero"
-  url "https://github.com/yarlson/zero/archive/refs/tags/1.0.1.tar.gz"
-  sha256 "f38e0d126b0bcce46ab649d18472715d0f2bf236b279b34ec581a3ac27360f4a"
+  url "https://github.com/yarlson/zero/archive/refs/tags/1.1.0.tar.gz"
+  sha256 "eae1b4cee2b971d7dca445fe2a65df7b7c30958e505374632e27cfdd23377e4f"
   license "MIT"
   head "https://github.com/yarlson/zero.git", branch: "main"
 
