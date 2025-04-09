@@ -15,7 +15,12 @@ class Mdslw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d408ef91a48faf8b70f154f81f0c8fa1d5db139c64192d2cb2af1e44281cb97"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
