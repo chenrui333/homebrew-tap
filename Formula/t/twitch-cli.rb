@@ -1,8 +1,8 @@
 class TwitchCli < Formula
   desc "CLI to make developing on Twitch easier"
   homepage "https://github.com/twitchdev/twitch-cli"
-  url "https://github.com/twitchdev/twitch-cli/archive/refs/tags/v1.1.24.tar.gz"
-  sha256 "8f796e1413b5b9f6d159cbdf5296acb22851822c024f6545acd707a71219a239"
+  url "https://github.com/twitchdev/twitch-cli/archive/refs/tags/v1.1.25.tar.gz"
+  sha256 "63d13cd54b64e17237650d7aaadb1453fe28565f54111be056beb24d58831c67"
   license "Apache-2.0"
   head "https://github.com/twitchdev/twitch-cli.git", branch: "main"
 
