@@ -8,10 +8,10 @@ class TwitchCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17368ac00141ea0f3d7e18d10887834cf8bd18551135daa414ae5bc9ed987f9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2e71233f815d1b6c20a2195bee47ef275f2050db0c16d2115cd6a5d74d7c9e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "2992543b04f719ee61f69c4829a3f5e67ed3076f4ce1fc84053c336cff474dca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa9ff19c0f3519035d851d171dff62ed032ef5fc2eb5fae3df283ece01ea9764"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e403c42e99a71fd428fa482a8d001e3f9f3ab004d9f45bf6ad01e54ce88ff2a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "febc7dd7c6b2f87f19a83b400c95961483672b0e7819a98978bbef2c27195d1d"
+    sha256 cellar: :any_skip_relocation, ventura:       "8256d9b2e443b101eaf0e82365df5b08db5dbcc16635a4681e125b4ad71ec49d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59904d04677b250d6e3cef4263fd7a016eb237cdc176b59e0946834590969d33"
   end
 
   depends_on "go" => :build
