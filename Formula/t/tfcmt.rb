@@ -16,19 +16,13 @@ class Tfcmt < Formula
 
   depends_on "go" => :build
 
-  # remove `version` command, PR ref, https://github.com/suzuki-shunsuke/tfcmt/pull/1732
-  patch do
-    url "https://github.com/suzuki-shunsuke/tfcmt/commit/be0a6726416cd3d7c2b732fa0724f30d4c7f335c.patch?full_index=1"
-    sha256 "165c98dc34333957182fc77d02b15a678f3771f85949f225b576539db911d45d"
-  end
-
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/tfcmt"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/tfcmt --version")
+    assert_match version.to_s, shell_output("#{bin}/tfcmt version")
 
     (testpath/"main.tf").write <<~HCL
       resource "aws_instance" "example" {
