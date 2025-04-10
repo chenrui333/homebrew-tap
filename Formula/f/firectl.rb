@@ -6,6 +6,11 @@ class Firectl < Formula
   license "Apache-2.0"
   head "https://github.com/firecracker-microvm/firectl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "97d9556d3588d7fb409ea1131116517b73dc9540e1a426bbeda7e7257b0c231f"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
