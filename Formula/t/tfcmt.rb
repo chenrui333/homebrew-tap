@@ -22,7 +22,8 @@ class Tfcmt < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/tfcmt version")
+    # `tfcmt version` now outputs "version version"
+    assert_match version.to_s, shell_output("#{bin}/tfcmt --version")
 
     (testpath/"main.tf").write <<~HCL
       resource "aws_instance" "example" {
