@@ -6,6 +6,14 @@ class HubTool < Formula
   license "Apache-2.0"
   head "https://github.com/docker/hub-tool.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a66f49bdb38378120894ebd5a485d10962724748735fe7f261f079aeabd803a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35490f63e31d82528493159c94f13b0b21841fca74dfafee16b0b90b01ea6452"
+    sha256 cellar: :any_skip_relocation, ventura:       "11fa24860ac44280d4f9f0549287cf288a542dfb27d0f909629a11e8e4fcc6ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e1aa944a0edd205ccdcaf17c60e1c388151b323a27a276bdd8a010a2602b824"
+  end
+
   depends_on "go" => :build
 
   def install
