@@ -80,13 +80,13 @@ brew install --cask <tool>
 - `cocainate`
 - `codstts`
 - `cohctl`
+- `config-file-validator`
 - `container2wasm`
 - `crlfmt`
 - `cueimports`
 - `darker`
 - `dbee`
 - `dbin`
-- `dblab`
 - `dela`
 - `docker-debug`
 - `dockerfilegraph`
@@ -102,6 +102,7 @@ brew install --cask <tool>
 - `fast-xml-parser`
 - `ferret`
 - `fex`
+- `firectl`
 - `fixjson`
 - `fkill-cli`
 - `flow-editor`
