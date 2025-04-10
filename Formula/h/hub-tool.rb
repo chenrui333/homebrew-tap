@@ -8,10 +8,10 @@ class HubTool < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a66f49bdb38378120894ebd5a485d10962724748735fe7f261f079aeabd803a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35490f63e31d82528493159c94f13b0b21841fca74dfafee16b0b90b01ea6452"
-    sha256 cellar: :any_skip_relocation, ventura:       "11fa24860ac44280d4f9f0549287cf288a542dfb27d0f909629a11e8e4fcc6ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e1aa944a0edd205ccdcaf17c60e1c388151b323a27a276bdd8a010a2602b824"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f5748cd452a47a9fcdb29bad772cd294adb0e3aacd2733cca2312e31f4a28ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c767ff476f2504ba59899e031089f5ec4c2ef40eddd8089c034f8b7a2c5373ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "60ef491bde1364768f2e305b8c6c8270944bd419da756dc9d4040d1d4bdc756f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59b9c58e382f2c212e25918b6041e36348a9d97ad3a42cc41ff9e065be2f994b"
   end
 
   depends_on "go" => :build
