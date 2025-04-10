@@ -1,8 +1,8 @@
 class HubTool < Formula
   desc "Docker Hub experimental CLI tool"
   homepage "https://github.com/docker/hub-tool"
-  url "https://github.com/docker/hub-tool/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "930f85b42f453628db6a407730eb690f79655e6c1e5c3337293a14b28d27c33a"
+  url "https://github.com/docker/hub-tool/archive/refs/tags/v04.6.tar.gz"
+  sha256 "e033e027c4b6dc360abf530a00b3ac0caec5ab17788c015336eb59a5e854e7d1"
   license "Apache-2.0"
   head "https://github.com/docker/hub-tool.git", branch: "main"
 
