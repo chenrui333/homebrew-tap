@@ -18,6 +18,7 @@
   "gut": "homebrew/core",
   "hcledit": "homebrew/core",
   "hishtory": "homebrew/core",
+  "hub-tool": "homebrew/core",
   "infisical": "homebrew/core",
   "jenkins-cli": "homebrew/core",
   "jira-cli": "homebrew/core",
