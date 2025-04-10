@@ -20,10 +20,13 @@ class Surgeon < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/bketelsen/surgeon/cmd.version=#{version}
-      -X github.com/bketelsen/surgeon/cmd.commit=#{tap.user}
+      -X main.version=#{version}
+      -X main.commit=#{tap.user}
+      -X main.date=#{time.iso8601}
+      -X main.treeState=clean
+      -X main.builtBy=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:), "./cmd/surgeon"
 
     generate_completions_from_executable(bin/"surgeon", "completion")
   end
