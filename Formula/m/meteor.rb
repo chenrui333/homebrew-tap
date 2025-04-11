@@ -2,8 +2,8 @@
 class Meteor < Formula
   desc "Highly configurable CLI tool for writing conventional commits"
   homepage "https://github.com/stefanlogue/meteor"
-  url "https://github.com/stefanlogue/meteor/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "3c6f0bafcf27d26a3ef369084630488a4ca05324cb11e61b2e020d827bec51d1"
+  url "https://github.com/stefanlogue/meteor/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "4bcd5fd361bfaf24f2258061e252931ad9ee45a80e24ab6e567c773ac5f33cb7"
   license "MIT"
   head "https://github.com/stefanlogue/meteor.git", branch: "main"
 
