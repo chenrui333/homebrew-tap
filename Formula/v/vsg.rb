@@ -28,6 +28,9 @@ class Vsg < Formula
   patch :DATA
 
   def install
+    # fix version
+    inreplace "pyproject.toml", "3.30.0", version.to_s
+
     virtualenv_install_with_resources
   end
 
