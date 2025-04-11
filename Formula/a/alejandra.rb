@@ -2,8 +2,8 @@
 class Alejandra < Formula
   desc "Uncompromising Nix Code Formatter"
   homepage "https://kamadorueda.com/alejandra/"
-  url "https://github.com/kamadorueda/alejandra/archive/refs/tags/3.1.0.tar.gz"
-  sha256 "35a56a8619e79fccd10fe64176afaa291c6539dc3be1136bc9e72639523fbc0e"
+  url "https://github.com/kamadorueda/alejandra/archive/refs/tags/4.0.0.tar.gz"
+  sha256 "f3f9989c3fb6a56e2050bf5329692fae32a2b54be7c0652aa394afe4660ebb74"
   license "Unlicense"
 
   bottle do
