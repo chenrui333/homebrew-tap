@@ -18,11 +18,17 @@ class AiContext < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X github.com/tanq16/ai-context/cmd.AIContextVersion=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    system bin/"ai-context", "--url", "https://example.com"
+    ENV["NO_COLOR"] = "1"
+
+    output = shell_output("#{bin}/ai-context https://example.com")
+    assert_match "INF All Operations Completed!", output
     assert_path_exists "context/web-example_com.md"
+
+    assert_match version.to_s, shell_output("#{bin}/ai-context --version")
   end
 end
