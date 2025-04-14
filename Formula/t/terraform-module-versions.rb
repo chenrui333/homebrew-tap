@@ -1,8 +1,8 @@
 class TerraformModuleVersions < Formula
   desc "CLI that checks Terraform code for module updates"
   homepage "https://github.com/keilerkonzept/terraform-module-versions"
-  url "https://github.com/keilerkonzept/terraform-module-versions/archive/refs/tags/v3.3.7.tar.gz"
-  sha256 "388f4c7aca5072e12ac5cc4e9f37c85d35f907b290d9c710bd0e73b70a5b5536"
+  url "https://github.com/keilerkonzept/terraform-module-versions/archive/refs/tags/v3.3.8.tar.gz"
+  sha256 "abea7352e65a7577bda927873797d99442c9074e37b52b585c74b3d8d5db963f"
   license "MIT"
   head "https://github.com/keilerkonzept/terraform-module-versions.git", branch: "master"
 
