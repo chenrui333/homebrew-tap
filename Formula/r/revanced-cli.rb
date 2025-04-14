@@ -1,8 +1,8 @@
 class RevancedCli < Formula
   desc "CLI for Revanced"
   homepage "https://revanced.app/"
-  url "https://github.com/ReVanced/revanced-cli/releases/download/v5.0.0/revanced-cli-5.0.0-all.jar"
-  sha256 "2b1c5d303c9b181120bb63b4c28cc50ccb33203cf8947add390d900f9fe7f2d8"
+  url "https://github.com/ReVanced/revanced-cli/releases/download/v5.0.1/revanced-cli-5.0.1-all.jar"
+  sha256 "b6af8349600f56ea51d96d49aa4d2f288e28c79cd649349ba70c8b72ce045daf"
   license "MIT"
 
   bottle do
