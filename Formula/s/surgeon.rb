@@ -9,10 +9,10 @@ class Surgeon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed5fe36d3e31157aa0f4a5cf8cea72f6a1f8ce6eb9fecb97f197b6a26cc532ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd63933400ed7047cd3451451e8760c55e424d7083f8b75d1fb2996684bc7630"
-    sha256 cellar: :any_skip_relocation, ventura:       "17f484651c7e20179dfe8ce0e63becc411b50704cd1bd25354a31a4c28a25d97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9769ee85d9474e108e761e593987d8733fd81ca0bd9f3511846106cb7ff1ea49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65dc89405911ee78f6cb83c4e12a26106e489d894e15a50423ac0bee28200f48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6a0197af8f6d87541668f951d4b42cacbe1e96a98547d0c5fe55e0e48a32b9e"
+    sha256 cellar: :any_skip_relocation, ventura:       "387a058815da8b64988151166671b016e1977665d7c8a50759e55f717de01659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10d0686417f9a5ccc3aa9ef67f2c36cb5a264e8815edceb10f7890e9796400d"
   end
 
   depends_on "go" => :build
