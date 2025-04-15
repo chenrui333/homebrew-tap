@@ -7,10 +7,10 @@ class AddonsLinter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94bfe330b11b12f41a6266bda414b1610c0378d418f08d6d2af56f0c592f4b35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2e4cbaeddc1ce629e630e7c00bd840ee34b0e62a1612a43528a6ff45a14d336"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba726591dc201976ea2752368b29262d1bbf5740e2c9392a14e2739bbb6b772b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b884cff8d4221d3be4135e1640e9f4ecf6b19631073b13fa53b4c3009fb7f71d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71282588787216290c6ea78ea500a0968bf3d745702a9de0da18233ea5b15ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9d27036349efa4ca4bbd986b27f839ef51fa9ae2faab1d4fdee5d9fb36cf807"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ee2b6e66cb45b0ba1d70909ff71cf31d9860ad4da9544e7f317784745e4dc44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d77b11501a9e1235893b350cb4f2e096404550d79fb82e18987f65066931b259"
   end
 
   depends_on "node"
