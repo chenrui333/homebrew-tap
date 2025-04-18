@@ -6,6 +6,14 @@ class Wrkflw < Formula
   license "MIT"
   head "https://github.com/bahdotsh/wrkflw.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bebc8d29a07dcc7e6ec059dcd6df4ccad24b524c1bcc1d1c8d2f0debd940586"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9deb88377ea4b7a33a2163157a9c21f0ed869ca8ab62ad9019312c32bc271482"
+    sha256 cellar: :any_skip_relocation, ventura:       "23eca3233f87206a758c90c9bf9d7aaee458be04bf472a86e0a3ca30973376b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cdb9b29341e261dcc0ef9e879c3ce3999cea65107745553f953bdcf65a38c8b"
+  end
+
   depends_on "rust" => :build
 
   def install
