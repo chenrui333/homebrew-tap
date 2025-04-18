@@ -6,6 +6,14 @@ class ProtocGenLint < Formula
   license "MIT"
   head "https://github.com/ckaznocha/protoc-gen-lint.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c1c9c3070713d2e8aad114c3c01d90d7edd8e73e80cf18aa8ec3b8fcb49db9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce753c635bbf69d81bfbb2489e985c69353443a2007597f6f1bcf40ecb0e6d96"
+    sha256 cellar: :any_skip_relocation, ventura:       "eeabf73dc69ea8093186a777e439454031aa62cf8dd97bbf99481d38ed2bad6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4752782faa507249042aefaddd47c28665c2857a846ae6678d390ec554759f3a"
+  end
+
   depends_on "go" => :build
   depends_on "protobuf"
 
