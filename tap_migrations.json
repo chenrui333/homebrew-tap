@@ -3,6 +3,7 @@
   "bacon-ls": "homebrew/core",
   "bombardier": "homebrew/core",
   "bpmnlint": "homebrew/core",
+  "buffrs": "homebrew/core",
   "cargo-spellcheck": "homebrew/core",
   "cf-terraforming": "homebrew/core",
   "cfnctl": "homebrew/core",
