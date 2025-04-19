@@ -6,6 +6,14 @@ class MultiGitter < Formula
   license "Apache-2.0"
   head "https://github.com/lindell/multi-gitter.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "634e5c120d94849bb899fb0d04623ff14995c2c075663341c3e2178faaaee737"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ad05bb5ebe343c54d6d2ed76b2980e633ae3dacbc86ba09833b604294300900"
+    sha256 cellar: :any_skip_relocation, ventura:       "220ab899a6747e1cdab68e51d8983d4e9a27f1bd46708c267534f36f693b69dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d7559d9b311f6d5c52f56b9924d14a79afcf429a9a4c0911401d9616f33215"
+  end
+
   depends_on "go" => :build
 
   def install
