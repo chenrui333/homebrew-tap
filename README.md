@@ -191,6 +191,7 @@ brew install --cask <tool>
 - `mmemoji`
 - `mnamer`
 - `mob`
+- `multi-gitter`
 - `narr`
 - `nest-cli`
 - `netfetch`
@@ -226,6 +227,7 @@ brew install --cask <tool>
 - `preevy`
 - `prefligit`
 - `projectable`
+- `protoc-gen-lint`
 - `protodep`
 - `protodot`
 - `protolock`
@@ -312,6 +314,7 @@ brew install --cask <tool>
 - `wallust`
 - `wedl`
 - `werk`
+- `wrkflw`
 - `xmlformatter`
 - `yajsv`
 - `yeetfile`
