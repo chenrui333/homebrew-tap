@@ -1,4 +1,5 @@
 {
+  "api-linter": "homebrew/core",
   "bacon-ls": "homebrew/core",
   "bombardier": "homebrew/core",
   "bpmnlint": "homebrew/core",
