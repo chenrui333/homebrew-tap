@@ -16,7 +16,7 @@ class RevancedCli < Formula
   depends_on "openjdk"
 
   def install
-    libexec.install "revanced-cli-5.0.0-all.jar" => "revanced-cli.jar"
+    libexec.install "revanced-cli-#{version}-all.jar" => "revanced-cli.jar"
     bin.write_jar_script libexec/"revanced-cli.jar", "revanced-cli"
   end
 
