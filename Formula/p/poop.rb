@@ -4,6 +4,7 @@ class Poop < Formula
   url "https://github.com/andrewrk/poop/archive/refs/tags/0.5.0.tar.gz"
   sha256 "b67d62c3583994fb262ccaf05094b215d3514d4d2935a25a3867dcab0cf89c93"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
