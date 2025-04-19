@@ -9,10 +9,10 @@ class Vsg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "335d50822fb948522c1e2154a5c683b3ba1c5fc06c6c7a4681a0c03e673384ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "406c7b4150d881576dcc8b1b247c715a0ef48363004d09406312c4c729281b0e"
-    sha256 cellar: :any,                 ventura:       "1f08f3235b330c3d582b549c8bfbf6a2aa1e0ee92ed306db4389faeeaf52c875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4212a84ba577f6531253b87b2437fbf52678ef01ff3df2ac520be5e898a0b38"
+    sha256 cellar: :any,                 arm64_sequoia: "c092badef46ddfa4ad3dde98d9286b0666576f9eecc1cc8e604bf03f395a4272"
+    sha256 cellar: :any,                 arm64_sonoma:  "15afc6f9d7b4d8b5c63367f400d207570621e4c6c0eb81ad2c2e5c1a2db15b55"
+    sha256 cellar: :any,                 ventura:       "15cc4be3ce535bbf2e9ed14d0a9d3962281b52f548255ffa689afee81151bb7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd67f5299afb728b2e76ee86cc6a0006ba644dd727c2ca13f6ff3cdfd8a2a35f"
   end
 
   depends_on "libyaml"
