@@ -44,7 +44,7 @@ class Vsg < Formula
 
     assert_match <<~EOS, shell_output("#{bin}/vsg test.vhdl")
       Phase 7 of 7... Reporting
-      Total Rules Checked: 879
+      Total Rules Checked: 881
       Total Violations:    0
         Error   :     0
         Warning :     0
