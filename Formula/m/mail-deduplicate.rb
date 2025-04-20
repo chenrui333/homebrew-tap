@@ -3,8 +3,8 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/3d/d5/5149cebc32348416cc1fbd45d58258c33f596d5bfe2b564e6c7318e56433/mail_deduplicate-7.6.1.tar.gz"
-  sha256 "48b9c955045838c342cb5c5f57ca1a8456e6d597a72464237a86d6aff8d3ad42"
+  url "https://files.pythonhosted.org/packages/47/ea/693d0357055dbacef0838419646819cb69eada05ea502088cc34e91175ae/mail_deduplicate-7.6.2.tar.gz"
+  sha256 "20368c6e048be51368eeaf73ba2cccaa3396009e77c8766d2f137dd6e1d2a48f"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -26,13 +26,18 @@ class MailDeduplicate < Formula
   end
 
   resource "boltons" do
-    url "https://files.pythonhosted.org/packages/84/76/dfc34232b3e88634025563f52a430be0838182647c063f99569086922554/boltons-24.1.0.tar.gz"
-    sha256 "4a49b7d57ee055b83a458c8682a2a6f199d263a8aa517098bda9bab813554b87"
+    url "https://files.pythonhosted.org/packages/63/54/71a94d8e02da9a865587fb3fff100cb0fc7aa9f4d5ed9ed3a591216ddcc7/boltons-25.0.0.tar.gz"
+    sha256 "e110fbdc30b7b9868cb604e3f71d4722dd8f4dcb4a5ddd06028ba8f1ab0b5ace"
   end
 
   resource "bracex" do
     url "https://files.pythonhosted.org/packages/d6/6c/57418c4404cd22fe6275b8301ca2b46a8cdaa8157938017a9ae0b3edf363/bracex-2.5.post1.tar.gz"
     sha256 "12c50952415bfa773d2d9ccb8e79651b8cdb1f31a42f6091b804f6ba2b4a66b6"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz"
+    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
   end
 
   resource "charset-normalizer" do
@@ -46,13 +51,13 @@ class MailDeduplicate < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/71/24/288936d3cedcb3a951a83fa735c990f166a6d58b26a0e292c66ed8710c23/click_extra-4.11.7.tar.gz"
-    sha256 "d70f2dc5287b414eb26cb3cdd165163941755728973fc8f00a7003e4dd18884b"
+    url "https://files.pythonhosted.org/packages/a8/21/f9dbd25024266effdfee7dc608b0b76ea757184a07de5e96b347c1ed2439/click_extra-4.15.0.tar.gz"
+    sha256 "20184fdb1791853cf5b68ab9f43c01cffd05f0d37c0295676bb4e0f20aee25fc"
   end
 
   resource "cloup" do
-    url "https://files.pythonhosted.org/packages/cf/71/608e4546208e5a421ef00b484f582e58ce0f17da05459b915c8ba22dfb78/cloup-3.0.5.tar.gz"
-    sha256 "c92b261c7bb7e13004930f3fb4b3edad8de2d1f12994dcddbe05bc21990443c5"
+    url "https://files.pythonhosted.org/packages/86/c9/3c621e0b7898403556e807244104095df1132a6094384f80c272bba4e4e4/cloup-3.0.7.tar.gz"
+    sha256 "c852e0a0541aa433c6ab31a9b8b503f63d9881e91ddaf0384d6927965f2b421c"
   end
 
   resource "distro" do
@@ -61,8 +66,8 @@ class MailDeduplicate < Formula
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/e0/a7/7fb81009b351e4f3194806cad083515bc11d9df0c86d731c7913840598fa/extra_platforms-1.6.0.tar.gz"
-    sha256 "dbef8d68019362690bd87fcb98ea287e7d381d7b1758a500d66abea320485234"
+    url "https://files.pythonhosted.org/packages/3b/79/47d9a71e0f97172c5c4b63c3aae66af4cc8e2b4a81473c840b1aa6e18da5/extra_platforms-3.1.0.tar.gz"
+    sha256 "60b6da2d0976aae1f88e6176516d46a5230861b24b5d20c14d1dee788c801690"
   end
 
   resource "idna" do
@@ -106,8 +111,8 @@ class MailDeduplicate < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "wcmatch" do
