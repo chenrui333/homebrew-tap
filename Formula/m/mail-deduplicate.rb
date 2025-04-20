@@ -9,11 +9,10 @@ class MailDeduplicate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "de22927230954d53c5ffb8584bbe292256005aad830cd79af251b7d92656e7a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1679119da1bd3291e607cf1cd8093fb9f53ae9d2da208f66301734f6679c0cb"
-    sha256 cellar: :any,                 ventura:       "fb246b54767166ae4d17ee3a55dbcaebd27bf02d72f6d6ac82068d0f545d82dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e766e1a186dc76a5723e35ab8d57f5b485ebecb9e6e107f2b5bf2a2b21c79623"
+    sha256 cellar: :any,                 arm64_sequoia: "481cf3c7ea2ff996e57a21c253e38ad54bc569de82b9828f9e78e35d104f1fc7"
+    sha256 cellar: :any,                 arm64_sonoma:  "9aafab550d476332954ae8742df4714b9f59f5ab1f0c3a7f73a77bf974eb402a"
+    sha256 cellar: :any,                 ventura:       "6b55f355e63e280e1fe68493338f329c5009eb7437986589c70500b1532bc680"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e11f2c23aa8b473a621b755d4c9e9db7433766b1e7d4a7c9a8164f40fbe6388b"
   end
 
   depends_on "certifi"
