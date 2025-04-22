@@ -14,7 +14,12 @@ class Wrkflw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cdb9b29341e261dcc0ef9e879c3ce3999cea65107745553f953bdcf65a38c8b"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
