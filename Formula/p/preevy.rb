@@ -1,8 +1,8 @@
 class Preevy < Formula
   desc "Quickly deploy preview environments to the cloud"
   homepage "https://preevy.dev/"
-  url "https://registry.npmjs.org/preevy/-/preevy-0.0.64.tgz"
-  sha256 "24956a8a0248bcbde2cb8462a7deab3e6b9f8465fe17566703ca5d7cd78c841a"
+  url "https://registry.npmjs.org/preevy/-/preevy-0.0.66.tgz"
+  sha256 "aae290aabc6046dc7770d853888dd9a7c13e57f3aa68397e249c2af608fd0460"
   license "Apache-2.0"
 
   bottle do
