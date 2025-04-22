@@ -52,6 +52,7 @@
   "terraform-cleaner": "homebrew/core",
   "terraform-iam-policy-validator": "homebrew/core",
   "tf-summarize": "homebrew/core",
+  "tfcmt": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
   "tgpt": "homebrew/core",
   "threatcl": "homebrew/core",
