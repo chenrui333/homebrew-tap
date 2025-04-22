@@ -53,7 +53,9 @@
   "terraform-iam-policy-validator": "homebrew/core",
   "tf-summarize": "homebrew/core",
   "tfcmt": "homebrew/core",
+  "tfmv": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
+  "tfsort": "homebrew/core",
   "tgpt": "homebrew/core",
   "threatcl": "homebrew/core",
   "tml": "homebrew/core",
@@ -63,6 +65,7 @@
   "typioca": "homebrew/core",
   "umka-lang": "homebrew/core",
   "visidata": "homebrew/core",
+  "wrkflw": "homebrew/core",
   "yamlfix": "homebrew/core",
   "yor": "homebrew/core",
   "ytt": "homebrew/core"
