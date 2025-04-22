@@ -288,9 +288,7 @@ brew install --cask <tool>
 - `terratag`
 - `tetrigo`
 - `tfmcp`
-- `tfmv`
 - `tfreveal`
-- `tfsort`
 - `tftarget`
 - `tftree`
 - `tickrs`
@@ -313,7 +311,6 @@ brew install --cask <tool>
 - `wallust`
 - `wedl`
 - `werk`
-- `wrkflw`
 - `xmlformatter`
 - `yajsv`
 - `yeetfile`
