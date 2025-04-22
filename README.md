@@ -287,7 +287,6 @@ brew install --cask <tool>
 - `terrap-cli`
 - `terratag`
 - `tetrigo`
-- `tfcmt`
 - `tfmcp`
 - `tfmv`
 - `tfreveal`
