@@ -8,10 +8,10 @@ class TerraformModuleVersions < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3641784519af4822af2c9be801563ae48aecfafe6a2a3daed3bbe3f699714687"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09ae733deda43f08c246a670dc0bb297e2104a9eb115457e74b94d02035d0d69"
-    sha256 cellar: :any_skip_relocation, ventura:       "98c0ac0fb8a1716c0ae20c5fc030ace997acf62c91a0ef2d4da14ed2df2c9a66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe536af5d39c9a9559987508e9fbb62059408d963e5a51f6ec32b6b6c06c8223"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31871c13c8e8c09cf520601e488e69ecddc3012fd419272668fb157324aa5040"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53e10bbbd15a56e92c70528de4a5baf184fccc5c381407933bd1665d18e595c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "257e31d22761d44c369413e2b0cdf3f4eddae84353be719ef2057a6b90b29a99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9be9cc3926069e931f567f365ce2381f84186f13f9591646fee5b634ad2bce1"
   end
 
   depends_on "go" => :build
