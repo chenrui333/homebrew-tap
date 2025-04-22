@@ -7,10 +7,10 @@ class Preevy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_sequoia: "7d0ebd2d57b55acc109497cf1a6da06fd989d1254b8dcabee03cc01726b921d3"
-    sha256                               arm64_sonoma:  "0ad50dba46d862991bfb9492ed0539aceca95e6cbbcef1cff33d632e436223aa"
-    sha256                               ventura:       "45b6c86876641dc1e74056c2c899b70d68231bf384ba91c51c928c7fb5d684b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b830f88b375f79fe4af61ff78b082e404fbabbe0baed9f5c8350d68c6c73771f"
+    sha256                               arm64_sequoia: "9836e4376d830b2420ed6e756626d153387672223dfc68a0d2f1fa15387b5cb4"
+    sha256                               arm64_sonoma:  "1032f1612994633997bec4bc76098de150e2a9b42372d7af109ffc1cf8fca9ce"
+    sha256                               ventura:       "44c65e65d6bcf5adec69f08d6538c03573fa1a986de0689a7921b2bf4dc0ae43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a86e1805b49e250706cbca535dafcac67b89908a25dc79ff30d06e59776ebb1"
   end
 
   depends_on "node"
