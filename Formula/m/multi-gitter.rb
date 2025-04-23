@@ -8,10 +8,10 @@ class MultiGitter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "634e5c120d94849bb899fb0d04623ff14995c2c075663341c3e2178faaaee737"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ad05bb5ebe343c54d6d2ed76b2980e633ae3dacbc86ba09833b604294300900"
-    sha256 cellar: :any_skip_relocation, ventura:       "220ab899a6747e1cdab68e51d8983d4e9a27f1bd46708c267534f36f693b69dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d7559d9b311f6d5c52f56b9924d14a79afcf429a9a4c0911401d9616f33215"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2ea9bebaed17cbe20aacb98e3f12bd850138dc81d839b5456d0a732af81523f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c823a9f1a99e42693b1866d82f53f27455ad92eac02b83a54bf94b1244cf9a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "c1102eb8bd9cbd9c471c888236a18a44e1eb4f03fe320ab96f89e26f9ae2fce7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f13b7518d115dc9766712658a80f2de7145ec368cd8c4844a48e73ad47a2dec"
   end
 
   depends_on "go" => :build
