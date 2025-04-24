@@ -190,7 +190,6 @@ brew install --cask <tool>
 - `mln`
 - `mmemoji`
 - `mnamer`
-- `multi-gitter`
 - `narr`
 - `nest-cli`
 - `netfetch`
@@ -223,7 +222,6 @@ brew install --cask <tool>
 - `pluralith`
 - `poop`
 - `precompress`
-- `preevy`
 - `prefligit`
 - `projectable`
 - `protoc-gen-lint`
@@ -281,7 +279,6 @@ brew install --cask <tool>
 - `termtunnel`
 - `terracove`
 - `terraform-diff`
-- `terraform-module-versions`
 - `terraform`
 - `terrap-cli`
 - `terratag`
