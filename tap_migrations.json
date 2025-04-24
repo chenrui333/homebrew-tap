@@ -34,6 +34,7 @@
   "koji": "homebrew/core",
   "lazyjj": "homebrew/core",
   "md2pdf": "homebrew/core",
+  "mob": "homebrew/core",
   "nak": "homebrew/core",
   "nom": "homebrew/core",
   "org-formation": "homebrew/core",
