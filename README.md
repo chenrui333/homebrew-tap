@@ -190,7 +190,6 @@ brew install --cask <tool>
 - `mln`
 - `mmemoji`
 - `mnamer`
-- `mob`
 - `multi-gitter`
 - `narr`
 - `nest-cli`
