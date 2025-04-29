@@ -8,10 +8,10 @@ class Travelgrunt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "622841722e37578f9821b6850e25ab6adf93abbd17c7f6fc5c0b0660552e1be4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43744b70810727436d9d4c89606fea99086ba14d83e3e9e14fd984c9df6dffbe"
-    sha256 cellar: :any_skip_relocation, ventura:       "a03a087822ea718746f172898344546045735a85d83dad618802c1c81061c708"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f18d5c11b724aa81aa39f9175677f2df9ca9cc10c44549a2b170dff5cb7030e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27948d32e9cc62c45829a6a8fc0d068034b3243bacaba0b2a3c1fe4f1970c56f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b634c9b04eaf6a6b3d81f0f93629f3cca6f562ec6c610c3032fbdf531e65e593"
+    sha256 cellar: :any_skip_relocation, ventura:       "98d2d929c4111f147fbef26d184d78e1dd9651656933ddb9d53c7eccac079d5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ad8d873254e669ade657fa9c6ddfe99028ea95312a3931cb0a8e4b8e30afcd"
   end
 
   depends_on "go" => :build
