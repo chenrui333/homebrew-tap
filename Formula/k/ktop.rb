@@ -6,6 +6,14 @@ class Ktop < Formula
   license "Apache-2.0"
   head "https://github.com/vladimirvivien/ktop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f86164612dcf2554ba4fca553094f208299ded0747b5636bb46d96007cf7c2c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c1987ddb2d4565b5d623582e2b5b98ad71642e384bb991840b0195b5185dca5"
+    sha256 cellar: :any_skip_relocation, ventura:       "95a6490765c303554c1087c062372753d8ab8c1bfc8638df74f60e07f3cd3224"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a02f7911831172cfe182c8670fc5eb32320fcf13620992371fcb5ecba4615b54"
+  end
+
   depends_on "go" => :build
 
   def install
