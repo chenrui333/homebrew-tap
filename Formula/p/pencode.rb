@@ -6,6 +6,14 @@ class Pencode < Formula
   license "MIT"
   head "https://github.com/ffuf/pencode.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b593f8e0c3022709e0a74049d0b5a1c7f59a19d4a9b166dc6b3d98b2606bb8a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a3bf9320ebcfaa88d2c01c6fb70157ea9cbc8dbb0b304aaab90e6eae2e6fdd0"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae25cd376a793f22592b19a876c36ba5af22b28bddc16f83e2953e5b769c283c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "058dffec2b86975279a991bb88fee384d23df33529011c4816850555f3feba2d"
+  end
+
   depends_on "go" => :build
 
   def install
