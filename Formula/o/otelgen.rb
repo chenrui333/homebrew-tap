@@ -6,6 +6,14 @@ class Otelgen < Formula
   license "Apache-2.0"
   head "https://github.com/krzko/otelgen.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31f047c4424b62aae83539a1c262f2219a47b2e2e11373598c69ed4244f3e0ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8222c4a33d57015f0020f399ed389596f36d4e261f89697ed45b146f0a7bdd00"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5c79aed356065f10ad36c16b09271031b3ceb03f1af15d556f81e2629771327"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849dfbf5ed0037775e0254686bb723613193b9e8359d66764a0fdc76385f3c73"
+  end
+
   depends_on "go" => :build
 
   def install
