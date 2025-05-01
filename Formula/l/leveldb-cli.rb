@@ -1,8 +1,8 @@
 class LeveldbCli < Formula
   desc "CLI for LevelDB"
   homepage "https://github.com/liderman/leveldb-cli"
-  url "https://github.com/liderman/leveldb-cli/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "d1e4fb7fba36c15d0f4456bef2a8f138f6424a065fc5b5c2bb7a5396c3b4cfde"
+  url "https://github.com/liderman/leveldb-cli/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "c6dcb3d960c1a8c0f8209c6a1cccb147b66aa23f100e14fcbddcb0784bacd90b"
   license "MIT"
   head "https://github.com/liderman/leveldb-cli.git", branch: "master"
 
