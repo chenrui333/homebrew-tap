@@ -7,10 +7,10 @@ class Satty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "e2224070983790bf63da7e81fa39d6f93454e44901481272d926a06bd4c20f28"
-    sha256 cellar: :any,                 arm64_sonoma:  "09ea7c97bff0da752e2e6071e505792cefe9101dc8b5fbc5ddc8c5e97e855353"
-    sha256 cellar: :any,                 ventura:       "1f3fe2166c9b0e7b5c515b8ef97d272801c5b6b8e6c1f429c7cb90f0acca1f11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ded338edf1c6289d1b2fdee30149adce3a68417285402bbc912577d6abaf6d36"
+    sha256 cellar: :any,                 arm64_sequoia: "e222dd181355455286cf022a3a2e23101d2d2528d6ef0d6f36b61ab36ec5eca6"
+    sha256 cellar: :any,                 arm64_sonoma:  "258934b7ffec1ae332c2c04fc9d4dce80f2b7cd13fc60a9e5df94b487a7431ac"
+    sha256 cellar: :any,                 ventura:       "48144014be4e066b7429dfff692fd15629fe6cbd5ec4a5bf0296f9f0188e24f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86dcc4de685495e2777bc8a17dcb706236a24c1405279fdeb5262e271565e433"
   end
 
   depends_on "pkgconf" => :build
