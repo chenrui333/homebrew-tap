@@ -7,6 +7,14 @@ class Graphtage < Formula
   sha256 "8650d1ca566f9ab4dbbd340c159131ce611f318f41014af47eaaac801e021d3b"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "e7ff37a1852efcd1c44de3ab85f2d6f73c7022135c4eb0b67bc712d447061526"
+    sha256 cellar: :any,                 arm64_sonoma:  "69d71f5ae10c9e9fda20253f7d8263e98569efdcc0efd057467a927a5abe02c2"
+    sha256 cellar: :any,                 ventura:       "f5449a05e6d211881f97f1770b102cb9559ce6a12c2ed0757791fa926edaf0d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34def5b4d0b5d259fb6947abc76b0f1bd46fa2ddb619bf6ea13d3370cbecfab3"
+  end
+
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "python-setuptools" # for distutils
