@@ -6,6 +6,14 @@ class Summon < Formula
   license "MIT"
   head "https://github.com/cyberark/summon.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9dea63cb293440d95fd29d45a8f8108518469def0c006e01f2671c72f0b41ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7979e84e4dfc8d0f7f07fb622a93d4b1f73cad852578a2e40dc3c330767eb92"
+    sha256 cellar: :any_skip_relocation, ventura:       "195aeb1de55341c08741620d0b564f5f87dd72b5650225a0c0e46e6596f32ebf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9e5d20974e8593b32bfcfd19339c8f140f0cd22a16ef192aa0f402558ae1138"
+  end
+
   depends_on "go" => :build
 
   def install
