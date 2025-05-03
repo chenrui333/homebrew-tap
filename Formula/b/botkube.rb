@@ -6,6 +6,14 @@ class Botkube < Formula
   license "MIT"
   head "https://github.com/kubeshop/botkube.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf34e240d7f3905536fdb26dda167e7c234293efce310b85b59d1ad2e72e1390"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b8633944f7fb056aef519080b62fa046a3ad6b5f43299df5692de537b359bc"
+    sha256 cellar: :any_skip_relocation, ventura:       "db43ed25f9ebebb997281503812a0442aeb43197e11c86ce0962b4f22e515eb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34c8ef5414ba6b8d495eed9bd54953f4d9ed036e2652f5b64812a61d61eecd32"
+  end
+
   depends_on "go" => :build
 
   def install
