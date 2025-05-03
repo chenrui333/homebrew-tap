@@ -26,7 +26,7 @@ class AiContext < Formula
     ENV["NO_COLOR"] = "1"
 
     output = shell_output("#{bin}/ai-context https://example.com")
-    assert_match "INF All Operations Completed!", output
+    assert_match "All operations completed", output
     assert_path_exists "context/web-example_com.md"
 
     assert_match version.to_s, shell_output("#{bin}/ai-context --version")
