@@ -6,6 +6,14 @@ class Mcman < Formula
   license "GPL-3.0-only"
   head "https://github.com/ParadigmMC/mcman.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cd8c04ac2c550c63535162a512238d832e735a1b008d38efe056278d9b47631"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8ef8a6291d3425bbc057717bcdd0ffb288522bf5bb05c21c2f0213d05223a47"
+    sha256 cellar: :any_skip_relocation, ventura:       "019ad1ab6d540ff1573aac24b4f9003feaf5c4d77d8d27c16a97991b32bb976e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3007ef72b2af5a94b1b06da54b9b966495fd69320e289fb544e188993ad011a3"
+  end
+
   depends_on "rust" => :build
 
   def install
