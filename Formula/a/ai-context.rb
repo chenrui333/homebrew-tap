@@ -9,10 +9,10 @@ class AiContext < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f751a6e3c14a260d6ce3f35cd7ef9af4f48ce86f09292053077260b04112f52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "269b47805102f76707fc5fb69adacb4993d93519f996609b771eea65b4b4ee5f"
-    sha256 cellar: :any_skip_relocation, ventura:       "65e732d294264771f567ff4fb52215faf86d790791dc8666a0764390ab689389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8757528f85594c4e3d907f2725ef578fcd24c24309582aa2f74d6451c48b759"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e5e4ed7ae0d205040ce20f7623c4530e645fff152f4bf5f9bd2536a36a8369e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "973a9fb41d8f3efed945ec05cfafda3cd4def200ca87c5ae2e01e82857518279"
+    sha256 cellar: :any_skip_relocation, ventura:       "b845f98232258c4c1f729251b829ee0c81eb5beb599f530e313c5df522524b7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c148be6f7b2244a63499be713010f5a9f58b3865bcb6cacc7dd8f9817c6ffb2f"
   end
 
   depends_on "go" => :build
