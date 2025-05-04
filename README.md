@@ -48,6 +48,7 @@ brew install --cask <tool>
 - `asmfmt`
 - `astro-language-server`
 - `autoflake`
+- `autotag`
 - `autotools-language-server`
 - `await`
 - `awk-language-server`
@@ -59,6 +60,7 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
+- `botkube`
 - `box`
 - `brighterscript-formatter`
 - `brotab`
@@ -73,6 +75,7 @@ brew install --cask <tool>
 - `cargo-sort`
 - `carton`
 - `castor`
+- `cello`
 - `certok`
 - `cf-vault`
 - `cloudlens`
@@ -99,6 +102,7 @@ brew install --cask <tool>
 - `enola`
 - `enry`
 - `envtpl`
+- `fast-cli`
 - `fast-xml-parser`
 - `ferret`
 - `fex`
@@ -130,6 +134,7 @@ brew install --cask <tool>
 - `gommit`
 - `goodls`
 - `gowebly`
+- `graphtage`
 - `grcov`
 - `grmon`
 - `gtts`
@@ -162,6 +167,7 @@ brew install --cask <tool>
 - `kpt`
 - `krs`
 - `kt`
+- `ktop`
 - `kube-role-gen`
 - `kubeseal-convert`
 - `kwt`
@@ -178,6 +184,7 @@ brew install --cask <tool>
 - `mamediff`
 - `markpdf`
 - `matcha`
+- `mcman`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
@@ -205,11 +212,13 @@ brew install --cask <tool>
 - `omnictl`
 - `optivorbis`
 - `osmar`
+- `otelgen`
 - `otto`
 - `oxbuild`
 - `oxen`
 - `papis`
 - `pdfsyntax`
+- `pencode`
 - `percollate`
 - `perfops`
 - `pgdog`
@@ -224,6 +233,7 @@ brew install --cask <tool>
 - `precompress`
 - `prefligit`
 - `projectable`
+- `proto2yaml`
 - `protoc-gen-lint`
 - `protodep`
 - `protodot`
@@ -273,9 +283,11 @@ brew install --cask <tool>
 - `spok`
 - `spotifydl`
 - `statoscope`
+- `summon`
 - `surgeon`
 - `tclint`
 - `tenderly`
+- `termsvg`
 - `termtunnel`
 - `terracove`
 - `terraform-diff`
