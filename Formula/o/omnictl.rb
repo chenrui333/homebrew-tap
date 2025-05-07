@@ -8,10 +8,10 @@ class Omnictl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "858ae4dd78259ec9a986077fad379d164e1917a0edddf8b32c025cb2a717718f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9474510018f7aa12fd47bf502bd65b1e02478f66b931608efcef707eb58ecde"
-    sha256 cellar: :any_skip_relocation, ventura:       "25cae446db1a9427951542c6ab96d7af12a9c26a6bca2420b0c3913a2e2a6cad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e507d96cf5c5cf64841d31dee4e2ef53b0e82ef13e247a2ce175a9142f58b91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1c5c4e165e8d22e7038e06b2e44a2ce7ecdffb3d43d156048af64508c81838d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53b50334aa8a12a3fe63ac593f893d73089342893bd308c3fa642bfb75084244"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2067c152bce2680c120cac7974a0c9e7bbdaf2bb92b65fea6260820a45039cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "424a86b1c3e8d79d0342482d6278fa3fa529b32f11edf9dad5955e968257501e"
   end
 
   depends_on "go" => :build
