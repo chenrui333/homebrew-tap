@@ -1,8 +1,8 @@
 class Ferret < Formula
   desc "Declarative web scraping"
   homepage "https://www.montferret.dev/"
-  url "https://github.com/MontFerret/ferret/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "c6170136012dcef52d4f20e226f8f4625fdb31519433a52d95a37a1c0d15d85d"
+  url "https://github.com/MontFerret/ferret/archive/refs/tags/v0.18.1.tar.gz"
+  sha256 "65dbdde0b2ba962fcf51d1ebcd5f691b323fc0d55813c3b395e58cc4104ecd1c"
   license "Apache-2.0"
   head "https://github.com/MontFerret/ferret.git", branch: "master"
 
