@@ -9,10 +9,10 @@ class Lintnet < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c724aa9197106b0d3d9ffb875da2741471c197986741d4e6a5e1c641ab2a87a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bc648a3c1e6577c41dd19f42ff18aba6b05ce5ec9ba29083552b10fc77856f2"
-    sha256 cellar: :any_skip_relocation, ventura:       "96692e4d4e7da60d63a1f7fec39965d18556c9e3d82e8f6c8720cb0bbdb2603f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6a77d7270dab7a91bec84322574d54246060db4fce61ce8316cd8fba679f55a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f86ba27633b7cf321c7bac08e5035a78d5bb022f22753dc56a3e67bd765750a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4634d92873070577bc1a59774b88d5f418cd4aecb952b198f6fac2c0357b26ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "8525f1e78b029d696920009b4b62d86dac11fa0f3d9c64554debc06c988f07ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c750aa2350c86068ed8cae3ec1666c63f615aa483d15779239c7e76219671c8"
   end
 
   depends_on "go" => :build
