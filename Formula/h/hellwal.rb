@@ -22,7 +22,7 @@ class Hellwal < Formula
 
   test do
     resource "test_image" do
-      url "https://rustfoundation.org/wp-content/uploads/2024/07/cropped-rust-lang-logo-black-300x300.png"
+      url "https://raw.githubusercontent.com/chenrui333/homebrew-tap/486af5b4f6eee92b2f14ffd02db0c60ab2287555/assets/cropped-rust-lang-logo-black-300x300.png"
       sha256 "62df7205f3fc29db0a47bbd328789d64325bd88ea62b0bcc7418589dca7337c4"
     end
 
