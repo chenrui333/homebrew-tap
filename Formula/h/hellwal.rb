@@ -7,9 +7,9 @@ class Hellwal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7786e5c8a24200904076d515081efeca8bc338ca72292be70bf338a6a572430"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "811455e39e7617a6d0f22121694cd6af5b29f4ec9ddfaee8f531fb160946c56b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f6e2bbaa3ee2a2d163b7f70f808c984780e4c9c83ebdee96cc669d813e5536b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "778d679a53cef4dbd676f5d05ece0bf8146b009406c00aa987128d657dbca040"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a57e8ca0e7843579ac344724f45e606d781038fd47feb2af03223dd85ba82eaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8df8b8cfcb4f5c70d1ca34d2cd601aa6085e641bb8de19b52a230e07cb78d1"
   end
 
   depends_on macos: :sonoma # failed on ventura
