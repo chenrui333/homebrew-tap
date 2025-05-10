@@ -1,8 +1,8 @@
 class Satty < Formula
   desc "Modern Screenshot Annotation"
   homepage "https://github.com/gabm/Satty"
-  url "https://github.com/gabm/Satty/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "78b3fd048afe13c6850c6761d308e3e4e3e7d235d6218859aab2947570f08fda"
+  url "https://github.com/gabm/Satty/archive/refs/tags/v0.18.1.tar.gz"
+  sha256 "9dc519e572982956db2e7165ab2931c19fe0e88db133a3776d4293ddcd13ca49"
   license "MPL-2.0"
 
   bottle do
