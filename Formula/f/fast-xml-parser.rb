@@ -7,10 +7,10 @@ class FastXmlParser < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "588ef854671fbc0a17365217e6cb25db82de299650f0ee87ad9d02cd43f951f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "058a82f839b9a0eb01fbebded9076460182fd94fb5ef19c89d4589d75c23b9fe"
-    sha256 cellar: :any_skip_relocation, ventura:       "754af1b7936c915bb674de154cbc8970b1efa0ca331602a9d2e6941bf892ffe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c118a7cb8d0ebf17f2d336d2d894c468ec8172d816ee4045f619e4f0885736ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86d9cc33359e8368a4eee09b9e584f50da8f9b7f155c36eedecd6bae4fcca070"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a72d35dfaf1c957e38a6db49b8a0c8bce21ac24e4e821975136b23b3567104b"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f4af681b33014081367e101a0c044041c62fa1e7ca4e5319cef1f787fcef704"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "888a1d11db7788d44bcc2741e4f91511011c423ca97fcfa912014561f2af6dff"
   end
 
   depends_on "node"
