@@ -9,10 +9,10 @@ class Refurb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8094845b33c974078a7093f955312be6158477e41f8f3c025c66a15ee0092d37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b785ee6af5d6462e74ae1d407cfaaf85053dd18c06ac3e0a2ac48494b3febb5"
-    sha256 cellar: :any_skip_relocation, ventura:       "dbfd871be23291162caf966931ff042aa2de16b605d17d9823330ae58ffa9a4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cefdb60d42e1302df8084f771385f1c5a703782da0cdba39b13c9644aeef542"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "957642dd6f18829f3d27a4a9a5e23e040280504f45c3fb2fe1f1f3c266287b3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39cc144b7163e86edc9e7d98b4a08ae9745e647dab83e4b89669abfdc682d69c"
+    sha256 cellar: :any_skip_relocation, ventura:       "12199863f2a2ed9bdad6c65b15aa4b317b727196dbcdb6cec05c115c7d542930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f34828098bb93b3a2c55b3b7c098569f6f256906e930ac834c0b10d86d2ea4f5"
   end
 
   depends_on "python@3.13"
