@@ -1,8 +1,8 @@
 class Ni < Formula
   desc "Use the right package manager"
   homepage "https://github.com/sindresorhus/ni"
-  url "https://registry.npmjs.org/@antfu/ni/-/ni-24.3.0.tgz"
-  sha256 "5a076b98f91dde1ec211ee5c151994f45e315c2dc4eca37636a8cdbf4195b881"
+  url "https://registry.npmjs.org/@antfu/ni/-/ni-24.4.0.tgz"
+  sha256 "bd3d7a551baf6251b71520dcb8abd0f52a050fed58471a1e81a0be117a50ddd2"
   license "MIT"
 
   bottle do
