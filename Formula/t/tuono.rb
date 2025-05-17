@@ -1,8 +1,8 @@
 class Tuono < Formula
   desc "Superfast fullstack React framework"
   homepage "https://tuono.dev/"
-  url "https://github.com/tuono-labs/tuono/archive/refs/tags/v0.19.4.tar.gz"
-  sha256 "69a7ac90d488351e8b675bff4091a9cb385211e1fa3621c3f706a1260c7d8b27"
+  url "https://github.com/tuono-labs/tuono/archive/refs/tags/v0.19.6.tar.gz"
+  sha256 "abba69543e51772f6068e302c12888bfadfa283215fbbc9817ce4e510f1b4387"
   license "MIT"
   head "https://github.com/tuono-labs/tuono.git", branch: "main"
 
