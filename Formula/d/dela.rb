@@ -1,8 +1,8 @@
 class Dela < Formula
   desc "Task runner"
   homepage "https://github.com/aleyan/dela"
-  url "https://static.crates.io/crates/dela/dela-0.0.4.crate"
-  sha256 "e83ea486f3e254644707052e89c1331a7542c95771b25c3cc18fb7a631d4e24b"
+  url "https://static.crates.io/crates/dela/dela-0.0.5.crate"
+  sha256 "03509398a70218c059f2a9d19d1ddeb717faf463152df95336db1ee1883c3880"
   license "MIT"
 
   bottle do
