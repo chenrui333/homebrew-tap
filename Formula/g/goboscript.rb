@@ -1,8 +1,8 @@
 class Goboscript < Formula
   desc "Scratch compiler"
   homepage "https://aspizu.github.io/goboscript/"
-  url "https://github.com/aspizu/goboscript/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "e5f83df69fd9eac64927f3e56e5cb0165d22eb5f994568eb7a8ba363fa156b5d"
+  url "https://github.com/aspizu/goboscript/archive/refs/tags/v3.2.1.tar.gz"
+  sha256 "558773962fceb1275875a05d2dab168be790c4fcbe773c8943bb4e9078638895"
   license "MIT"
 
   bottle do
