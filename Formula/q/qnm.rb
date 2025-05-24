@@ -1,6 +1,6 @@
 class Qnm < Formula
   desc "Cli utility for querying the node_modules directory"
-  homepage "https://github.com/sorenlouv/qnm"
+  homepage "https://qnm.readthedocs.io/en/latest/"
   url "https://registry.npmjs.org/qnm/-/qnm-2.10.4.tgz"
   sha256 "205044b4bbc4637917ac55f936c17b2763e622040cfa84acb1a0289b50b21098"
   license "MIT"
