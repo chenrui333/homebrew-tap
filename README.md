@@ -37,7 +37,6 @@ brew install --cask <tool>
 - `aiac`
 - `aiken`
 - `alacritty`
-- `alejandra`
 - `algolia`
 - `amoco`
 - `aoc-cli`
