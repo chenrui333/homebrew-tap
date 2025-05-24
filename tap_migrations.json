@@ -1,4 +1,5 @@
 {
+  "alejandra": "homebrew/core",
   "api-linter": "homebrew/core",
   "bacon-ls": "homebrew/core",
   "bombardier": "homebrew/core",
