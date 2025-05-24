@@ -1,6 +1,6 @@
 class Secco < Formula
   desc "Local package testing made easy"
-  homepage "https://github.com/sorenlouv/secco"
+  homepage "https://secco.lekoarts.de/"
   url "https://registry.npmjs.org/secco/-/secco-2.3.6.tgz"
   sha256 "c174d2d7ac994bf7034f969eadc7503268c19da539234adc7efba0f14c9b4261"
   license "MIT"
