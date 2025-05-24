@@ -13,10 +13,10 @@ class Plandex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b44ca5c7b8c4573a5d231f367e1fb9707266e909d397d4292e4dc0a9021c8eca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9feac529ea16d31712d4945eaf23346ff0ba1e3bf9dae7aea9b007fd96ffd393"
-    sha256 cellar: :any_skip_relocation, ventura:       "22b2448848355f7101e33de3009b1ba797668dc5103874fa53a495348adb466a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d33a180d2a9c5d58b5be0f127257ebf60db9a233f007cc391c8fe5623a7699d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c463e4213b059b88f2a002e26decd9e96118560c40edcf4d3ac28ad3db6e1cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39fec68e545e8a8133346f116ee5e5bdfb7cccc4845e1fb99cf916bdb4aabd85"
+    sha256 cellar: :any_skip_relocation, ventura:       "7379e0769970dac977ffa8d968c32c7731daa49dd1a1f4cff13c619a38d94d26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a901d533e1f45d99f706806848d0f5dd5b2f88ff0db4125a86e305a509c8b2fe"
   end
 
   depends_on "go" => :build
