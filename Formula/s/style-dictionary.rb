@@ -23,9 +23,11 @@ class StyleDictionary < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/style-dictionary --version")
 
-    system bin/"style-dictionary", "init", "basic"
+    output = shell_output("#{bin}/style-dictionary init basic")
+    assert_match "Source style dictionary starter files created!", output
     assert_path_exists testpath/"config.json"
 
-    system bin/"style-dictionary", "build"
+    output = shell_output("#{bin}/style-dictionary build")
+    assert_match "Token collisions detected", output
   end
 end
