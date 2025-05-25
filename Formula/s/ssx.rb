@@ -22,6 +22,11 @@ class Ssx < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ssx --version")
 
-    assert_match "operation not permitted", shell_output("#{bin}/ssx list 2>&1", 1)
+    expected_output = if OS.mac?
+      "operation not permitted"
+    else
+      "lookup 100: no such host"
+    end
+    assert_match expected_output, shell_output("#{bin}/ssx 100 2>&1", 1)
   end
 end
