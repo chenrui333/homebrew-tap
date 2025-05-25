@@ -6,6 +6,14 @@ class Pdtm < Formula
   license "MIT"
   head "https://github.com/projectdiscovery/pdtm.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bad6e04db9526ff85eca09dde12db1e922711c91792297698152a564cf194719"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d60432bdafc2d4405c661a43f630c0870d71d01478033716a8b45b4c6071f4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "01e537979805d749b931855907a9f6f2df90bacd95b37e364fd3abd72973b9ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f8abc3daf43934f903d8206ab1e2aad721a0f5b3967c645a1a0a4fd02ceefae"
+  end
+
   depends_on "go" => :build
 
   # purego patch, upstream pr ref, https://github.com/projectdiscovery/pdtm/pull/410
