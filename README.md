@@ -147,6 +147,7 @@ brew install --cask <tool>
 - `horusec`
 - `hostctl`
 - `humioctl`
+- `iftree`
 - `infraspec`
 - `ip2d`
 - `ips`
@@ -216,6 +217,7 @@ brew install --cask <tool>
 - `oxen`
 - `papis`
 - `pdfsyntax`
+- `pdtm`
 - `pencode`
 - `percollate`
 - `perfops`
@@ -280,6 +282,7 @@ brew install --cask <tool>
 - `spok`
 - `spotifydl`
 - `statoscope`
+- `style-dictionary`
 - `summon`
 - `surgeon`
 - `tclint`
