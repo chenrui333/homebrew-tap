@@ -5,6 +5,14 @@ class Speedscope < Formula
   sha256 "094d7b66e53678a8340199cf0e98d768cd7020eb2ffc9860daf45286bfd97392"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e02a590b363c2dca1aa22cb07bd3d9e07f7c758f7a551396af7b6799fedd314c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4099a33ee15ea2d37a419c87c398ebd8af55a860c530954c365a7da11a96bb8"
+    sha256 cellar: :any_skip_relocation, ventura:       "524eacdb13c04a8ae9731673b11b99eca60127d6f9341748581a67dc27ba11dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d72bd16c1b6428a7786df210a9bd796134601eb97c92e29ee528c326f2a7cfe6"
+  end
+
   depends_on "node"
 
   def install
