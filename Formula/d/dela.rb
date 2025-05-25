@@ -28,8 +28,8 @@ class Dela < Formula
     EOS
 
     assert_equal <<~EOS.strip, shell_output("#{bin}/dela list").strip
-      Tasks from #{testpath}/Makefile:
-        • all (make) - Hello, World!
+      make (1) — Makefile
+        all                   - Hello, World!
     EOS
   end
 end
