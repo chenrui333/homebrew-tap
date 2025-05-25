@@ -1,4 +1,5 @@
 {
+  "addons-linter": "homebrew/core",
   "alejandra": "homebrew/core",
   "api-linter": "homebrew/core",
   "bacon-ls": "homebrew/core",
@@ -45,6 +46,7 @@
   "pdfly": "homebrew/core",
   "preevy": "homebrew/core",
   "protoc-gen-doc": "homebrew/core",
+  "qnm": "homebrew/core",
   "rasterio": "homebrew/core",
   "restish": "homebrew/core",
   "rustywind": "homebrew/core",
