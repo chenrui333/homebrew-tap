@@ -2,8 +2,9 @@ class Goboscript < Formula
   desc "Scratch compiler"
   homepage "https://aspizu.github.io/goboscript/"
   url "https://github.com/aspizu/goboscript/archive/refs/tags/v3.2.1.tar.gz"
-  sha256 "558773962fceb1275875a05d2dab168be790c4fcbe773c8943bb4e9078638895"
+  sha256 "6c8de14efeabf33d64db7b17d81718b585a221a09db2422b72eb82eeed817664"
   license "MIT"
+  head "https://github.com/aspizu/goboscript.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
