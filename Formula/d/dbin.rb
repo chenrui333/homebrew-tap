@@ -26,6 +26,9 @@ class Dbin < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/dbin --version")
 
+    # no darwin dbin metadata in https://github.com/xplshn/dbin-metadata
+    return if OS.mac?
+
     output = shell_output("#{bin}/dbin del bed 2>&1")
     assert_match "Failed to retrieve full name for 'bed#'", output
   end
