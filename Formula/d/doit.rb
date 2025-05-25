@@ -7,6 +7,14 @@ class Doit < Formula
   sha256 "71d07ccc9514cb22fe59d98999577665eaab57e16f644d04336ae0b4bae234bc"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4211d31f917e7edc18f665cddd2e0427c1c78490bb5d4ce27ba9203f502b6a04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c9e576fb7bf6f7899e1e7641b812a50fc8d6f50d0b9a7c63b3e2255003540cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "c375e05df943a2048b32e5c059ab79917eebb8c33e3757a7adda55d84550d037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4941aa344f927ddd8ae9f01aed29eeb6d6ee71b6bdb3ddfafcb066f70ea34f"
+  end
+
   depends_on "python@3.13"
 
   resource "cloudpickle" do
