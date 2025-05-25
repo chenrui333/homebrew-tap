@@ -11,6 +11,11 @@ class Iftree < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b4d30becab1bf81672b0fb15e16ab40c82e9a19e6b4d1e493fe443d617eb48a"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
