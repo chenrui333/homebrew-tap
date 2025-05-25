@@ -9,10 +9,10 @@ class Pdfsyntax < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30e8d697324cd44bb0fdcf82759a744b132953daf5d070719f03fc85af250f5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e37665ecb685c3909891a7417c4de4a46a438831c202614bb1823628bef54cc8"
-    sha256 cellar: :any_skip_relocation, ventura:       "c42ef578ea1b199fc194b0720705b1063aa704da2c000dfbb4ccc06a4d25cef1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef994d9d05416bc5016ecadfc00abf56ffee7ff4e11cfcb667389551435766e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539cb4936cc22216f009958e08886c92157a530e8abf893a72bd8cf9b6990ed3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7cbe71863653fbad6825fb5c99eb97d9d250adfb000e69f239eace5191e912e"
+    sha256 cellar: :any_skip_relocation, ventura:       "cd9893f870df06af26661c7359c55b24062545ee151fd0311ce6e6221877b1a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fd8aa6f16a776ead9c8b4b4f62d57aaf08af1de4fb31d8b2925b7657a3e2f6b"
   end
 
   depends_on "python@3.13"
