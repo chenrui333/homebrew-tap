@@ -19,20 +19,9 @@ class Pdfsyntax < Formula
 
   def install
     virtualenv_install_with_resources
-
-    (bin/"pdfsyntax").write <<~EOS
-      #!/bin/bash
-      if [ "$1" = "--version" ]; then
-        echo "#{version}"
-        exit 0
-      fi
-      exec "#{libexec}/bin/python3.13" -m pdfsyntax "$@"
-    EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/pdfsyntax --version")
-
     test_pdf = test_fixtures("test.pdf")
     assert_match <<~EOS, shell_output("#{bin}/pdfsyntax overview #{test_pdf}")
       # Structure
