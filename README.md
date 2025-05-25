@@ -32,7 +32,6 @@ brew install --cask <tool>
 <summary>Formula List</summary>
 
 - `abc`
-- `addons-linter`
 - `ai-context`
 - `aiac`
 - `aiken`
@@ -241,7 +240,6 @@ brew install --cask <tool>
 - `pyink`
 - `pyment`
 - `pyp`
-- `qnm`
 - `quicssh-rs`
 - `r2md`
 - `rabbitmq-message-ops`
