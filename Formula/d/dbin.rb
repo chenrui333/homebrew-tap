@@ -2,8 +2,8 @@
 class Dbin < Formula
   desc "CLI tool to produce MD context files from many sources"
   homepage "https://github.com/xplshn/dbin"
-  url "https://github.com/xplshn/dbin/archive/refs/tags/1.4.tar.gz"
-  sha256 "4bbdac203152c211242b5eddd8cdb73871607a9fd7217a5fa52cfe5408ef021d"
+  url "https://github.com/xplshn/dbin/archive/refs/tags/1.5.tar.gz"
+  sha256 "7ed71d229a5de289f070a5a41d736480f15d80cd5afe26d8760a712720f8954d"
   # RABRMS is not a valid SPDX-License-Identifier
   # license any_of: ["ISC", "RABRMS"]
   license "ISC"
