@@ -34,8 +34,8 @@ class Zigmod < Formula
     ]
 
     # Clean caches explicitly
-    rm_r(buildpath/"zig-cache")
-    rm_r(buildpath/"zig-global-cache")
+    rm_r(buildpath/"zig-cache") if (buildpath/"zig-cache").exist?
+    rm_r(buildpath/"zig-global-cache") if (buildpath/"zig-global-cache").exist?
 
     args << "-Dcpu=#{cpu}" if build.bottle?
     system "zig", "build", *args
