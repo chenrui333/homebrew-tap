@@ -29,7 +29,13 @@ class Zigmod < Formula
       -Dmode=ReleaseSafe
       -Dstrip=true
       -fno-rosetta
+      --cache-dir #{buildpath}/zig-cache
+      --global-cache-dir #{buildpath}/zig-global-cache
     ]
+
+    # Clean caches explicitly
+    rm_r(buildpath/"zig-cache")
+    rm_r(buildpath/"zig-global-cache")
 
     args << "-Dcpu=#{cpu}" if build.bottle?
     system "zig", "build", *args
