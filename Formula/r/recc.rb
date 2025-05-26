@@ -117,6 +117,8 @@ class Recc < Formula
   end
 
   test do
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+
     # Start recc server
     recc_cache_dir = testpath/"recc_cache"
     recc_cache_dir.mkdir
