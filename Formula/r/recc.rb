@@ -30,6 +30,7 @@ class Recc < Formula
 
   on_macos do
     depends_on "gflags"
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
   end
 
   on_linux do
@@ -37,7 +38,14 @@ class Recc < Formula
     depends_on "util-linux"
   end
 
+  fails_with :clang do
+    build 1500
+    cause "Requires C++20 support"
+  end
+
   def install
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+
     buildbox_cmake_args = %W[
       -DCASD=ON
       -DCASD_BUILD_BENCHMARK=OFF
