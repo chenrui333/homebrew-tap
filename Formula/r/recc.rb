@@ -43,6 +43,11 @@ class Recc < Formula
     cause "Requires C++20 support"
   end
 
+  fails_with :gcc do
+    version "9"
+    cause "Requires C++20"
+  end
+
   def install
     if OS.mac? && DevelopmentTools.clang_build_version <= 1500
       ENV.llvm_clang
