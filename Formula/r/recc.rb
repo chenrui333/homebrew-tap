@@ -44,7 +44,14 @@ class Recc < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+      ENV.llvm_clang
+      # Work around failure mixing newer `llvm` headers with older Xcode's libc++:
+      # Undefined symbols for architecture arm64:
+      #   "std::exception_ptr::__from_native_exception_pointer(void*)", referenced from:
+      #       std::exception_ptr std::make_exception_ptr[abi:ne180100]<std::runtime_error>(std::runtime_error) ...
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
+    end
 
     buildbox_cmake_args = %W[
       -DCASD=ON
