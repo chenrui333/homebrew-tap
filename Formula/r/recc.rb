@@ -30,7 +30,14 @@ class Recc < Formula
 
   on_macos do
     depends_on "gflags"
-    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
+  end
+
+  on_ventura :or_older do
+    depends_on "llvm"
+
+    fails_with :clang do
+      cause "Needs C++20 std::hash<std::filesystem::path>"
+    end
   end
 
   on_linux do
@@ -38,18 +45,14 @@ class Recc < Formula
     depends_on "util-linux"
   end
 
-  fails_with :clang do
-    build 1500
-    cause "Requires C++20 support"
-  end
-
-  fails_with :gcc do
-    version "9"
-    cause "Requires C++20"
-  end
-
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    if OS.mac? && MacOS.version <= :ventura
+      ENV.llvm_clang
+      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/unwind -lunwind"
+      # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
+      # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
+    end
 
     buildbox_cmake_args = %W[
       -DCASD=ON
