@@ -1,8 +1,8 @@
 class CargoCareful < Formula
   desc "Execute Rust code carefully, with extra checking along the way"
   homepage "https://github.com/RalfJung/cargo-careful"
-  url "https://github.com/RalfJung/cargo-careful/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "2cc39ec6faf4c5d4afd852b82766aed7fb39d58440009dcfdf9b1691434c1faf"
+  url "https://github.com/RalfJung/cargo-careful/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "0c4e7320e7139a5a817edfc3ed0cdd1053fa39f2aa1a83d3228afede3246d37b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/RalfJung/cargo-careful.git", branch: "master"
 
