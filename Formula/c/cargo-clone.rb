@@ -1,8 +1,8 @@
 class CargoClone < Formula
   desc "Cargo subcommand to fetch the source code of a Rust crate"
   homepage "https://github.com/JanLikar/cargo-clone"
-  url "https://github.com/JanLikar/cargo-clone/archive/refs/tags/v1.2.3.tar.gz"
-  sha256 "b1df67690ac60ea184c54ffdf1bcf7ab8e3ab9dd9552ad70b4723109cf340718"
+  url "https://github.com/JanLikar/cargo-clone/archive/refs/tags/v1.2.4.tar.gz"
+  sha256 "58e86bd3440fc103572f6d8ff20ff1f99cf1e676cddb29975f204a9cb03f5b14"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/JanLikar/cargo-clone.git", branch: "master"
 
