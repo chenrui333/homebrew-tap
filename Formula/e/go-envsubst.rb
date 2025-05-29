@@ -6,6 +6,14 @@ class GoEnvsubst < Formula
   license "MIT"
   head "https://github.com/a8m/envsubst.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d221801c7ae74b0f49314ad529aad919c3c0edeec9bceabf259e21bc7a3d63f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eac6feb0720b61e287ed9936aad347c040c223a3d041aa9a857f1185edd71a29"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecfcffff8e8115289be50b93b61e9fae885bbb70aac95bb1b137fc15d28a2abf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b7f0bfa69cec179ffbde12a094b56bb2357b242a9ee3bab61aff0a5cffae5c9"
+  end
+
   depends_on "go" => :build
 
   def install
