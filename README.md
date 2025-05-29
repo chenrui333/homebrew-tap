@@ -91,6 +91,7 @@ brew install --cask <tool>
 - `dela`
 - `docker-debug`
 - `dockerfilegraph`
+- `doit`
 - `duster`
 - `dvm`
 - `eas-cli`
@@ -217,7 +218,6 @@ brew install --cask <tool>
 - `oxen`
 - `papis`
 - `pdfsyntax`
-- `pdtm`
 - `pencode`
 - `percollate`
 - `perfops`
@@ -278,6 +278,7 @@ brew install --cask <tool>
 - `sig`
 - `simdjzon`
 - `sloctl`
+- `speedscope`
 - `speedtest`
 - `spok`
 - `spotifydl`
@@ -310,6 +311,7 @@ brew install --cask <tool>
 - `tun2proxy`
 - `tuono`
 - `twiggy`
+- `unused-deps`
 - `usort`
 - `venom`
 - `vercel-serve`
