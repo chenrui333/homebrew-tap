@@ -9,10 +9,11 @@ class Dockerfilegraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0b0ec845b9eec1c871c6a2614d6d1de7f2ed18f70f81a69d1e65874d8d1404a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1134d713fa9648aab13dab95eba8fb374f00f3f2f24c7799d9f56a49b9a022"
-    sha256 cellar: :any_skip_relocation, ventura:       "cbca71387c8734fad061e6ee6a9c59280c100bb81e6fa9924233a0e6082025ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae89f25e0fed813fd64cf41570cdfc3d969b37c32a2969543027c8baa0fa574b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bea655fcd7df5eebab935f07b5c10843ecd7856428da5d7e42e41603938bb54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a4fb50dd87c18c40103dbd44d26e16506c9906529b17460220d0b048693d072"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f4ba5060ec65e587a1d46dc4075d229630c64d3956c2bfe9201b6c19e192289"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6930308d6bab4659e14283b22ed7b770992cff11789e73815bc06f3377ca2a33"
   end
 
   depends_on "go" => :build
