@@ -6,6 +6,14 @@ class Kube2pulumi < Formula
   license "Apache-2.0"
   head "https://github.com/pulumi/kube2pulumi.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "397a33b6a2e41d806c38f8c1d0c0bec9fd7e32daa5fb9e171741a3f09f0e18c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d63678d88291753cb385e9dca29a37c2e7a4db95c8a9c7e7c059dde3bfde5974"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8006543a4dd7363f05d7e82794d27be478a36b49c6103604f836040bda1a4f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55b5d464f19a880b584536729f748b1ce00cdf66a8a92a552932864c4e3efd4a"
+  end
+
   depends_on "go" => :build
 
   def install
