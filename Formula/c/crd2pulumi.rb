@@ -6,6 +6,14 @@ class Crd2pulumi < Formula
   license "Apache-2.0"
   head "https://github.com/pulumi/crd2pulumi.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec65f73e36ed5c9dee6ca4b01eb0dcfa109f3408925bd4bc67e1b1ea2cddba2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f02ce7ed0738b8ec733ae3c2c338e965c4b9e49ac1da663ee61890ef6dda01e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b938f5eb6628d7ac15800d15baf6ecc5774f48571329d012fa1c572a1556d30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e2e723a643971c33f3db50c41b6cdf95331c16a63c67d148095a3740da699a9"
+  end
+
   depends_on "go" => :build
 
   def install
