@@ -8,10 +8,10 @@ class Ghalint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78239c3b79ceea86e7e9da5a0af3adf11aa4d87c50ce86bff4fe7a6d81955453"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e6e49d08aa88092198ebc575f3d0d4449c29076bad9fabb3152c4f6f1a01d56"
-    sha256 cellar: :any_skip_relocation, ventura:       "dabf1b77e0bc7ed53db5983efd31e77429d1d6a15c8fa3d07af3c6b8220746b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0063b9a861c7196c69370206e520eabc6da3267b1cbb41d3c1224e3fe7e83a05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f29ae18ea9556bd91d80d09c2d8c991d9eb1317a4da675852bb809e1fa0406af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84adf6cfa7f3ea4b6784ff002b31e3412f233b6093924ebf367f1c587ca14e6b"
+    sha256 cellar: :any_skip_relocation, ventura:       "984b7a726fe1fe5d8ae45c88526663e98b8ad4f113c4efd0e468696934ef0781"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47e3778d36160e3658ff980c2112f9b4a9f6bd5c01c4070b8530323675038161"
   end
 
   depends_on "go" => :build
