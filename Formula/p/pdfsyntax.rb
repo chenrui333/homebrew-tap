@@ -3,8 +3,8 @@ class Pdfsyntax < Formula
 
   desc "Python library & tool to inspect and modify PDF internals"
   homepage "https://pdfsyntax.dev/"
-  url "https://files.pythonhosted.org/packages/44/a4/4c3018a22a9bf3ecd881b9abee9fd09db477715967f670d6d870eb87cbdc/pdfsyntax-0.1.5.tar.gz"
-  sha256 "4d4c8654e909a4931e8033e8e03fbd831f97548dea021a000f80b611ef1f75ea"
+  url "https://files.pythonhosted.org/packages/67/5e/ab7a10970258b28f569de8981b4ca511936ece713b6b3f495d51e34c76ef/pdfsyntax-0.1.6.tar.gz"
+  sha256 "b4d8823a83e77c4617bbcc96caabd1157e1ab8ae73c4af085c4397fb9a29f320"
   license "MIT"
 
   bottle do
