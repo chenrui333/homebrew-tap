@@ -83,6 +83,7 @@ brew install --cask <tool>
 - `cohctl`
 - `config-file-validator`
 - `container2wasm`
+- `crd2pulumi`
 - `crlfmt`
 - `cueimports`
 - `darker`
@@ -101,6 +102,7 @@ brew install --cask <tool>
 - `enola`
 - `enry`
 - `envtpl`
+- `go-envsubst`
 - `fast-cli`
 - `fast-xml-parser`
 - `ferret`
@@ -169,6 +171,7 @@ brew install --cask <tool>
 - `kt`
 - `ktop`
 - `kube-role-gen`
+- `kube2pulumi`
 - `kubeseal-convert`
 - `kwt`
 - `leetgo`
