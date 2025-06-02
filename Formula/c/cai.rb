@@ -2,8 +2,8 @@
 class Cai < Formula
   desc "CLI tool for prompting LLMs"
   homepage "https://github.com/ad-si/cai"
-  url "https://github.com/ad-si/cai/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "d01cbe2d0f1755287634c47ca965dcc17a2b5adbf7a4228c53eb37b6dcf8d0fc"
+  url "https://github.com/ad-si/cai/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "e4fcd76172ddd8fb95cbb81583bc836fe8ac2ef9c41feaec3dbb32697b7b4b27"
   license "ISC"
   head "https://github.com/ad-si/cai.git", branch: "main"
 
