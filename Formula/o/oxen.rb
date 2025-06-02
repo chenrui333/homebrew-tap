@@ -8,10 +8,10 @@ class Oxen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8e99681dcd78b1dc5f34df6b834d88f7f7b1f1ef921234ee5adf63270ab455f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70e571cb8b4da806f8c5e030e1ad41a4da4ae18a4da142a76b7ef3a0293ecabe"
-    sha256 cellar: :any_skip_relocation, ventura:       "c5752dcc46fb09625c9e3994ca1908ad4cfe629565a0c8f7973d3ed7e42d4dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4f6466176b342cb48468d624a5a3399d3cd61ebe125cfbd68e3846fdd87a990"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60fc5d34fe319aae4756e17230449c4cadce7518bfa7ea20fc76c6daa2ebf197"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9824329243bf1db2a9320dadc21b4f8f24bf6347901d2ef533114876288d8e83"
+    sha256 cellar: :any_skip_relocation, ventura:       "a8e502790cef53588cb1cc7d3e2000ef9b1d1874d91abed8196bfa932c0bc1c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7422c482e84d19b3cfa5eaf57c36cb0db71365601ab7902a47ebcbc892ea584c"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
