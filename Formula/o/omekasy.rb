@@ -9,10 +9,10 @@ class Omekasy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc8d34eacd65dc531dfc58ec0873e17ec6962a08726be6422993f6e5b27d0d8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd58d426e7458420d7c2a288203b97b574bb4402fa97fd0dd6e35fefc62e7258"
-    sha256 cellar: :any_skip_relocation, ventura:       "6108e9fd574e1ad16cc863893929521a6dacc2c4a5757366d2b9648353691275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee0b70ab5e913e1a806c4fd116267589b32d2ecfb07293dc233c44ee37d860c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "520e9d2db115aa858fb4f32eb5e432b4c04d0f139c010df41ed4e2dab2bea70e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c52d051161b9a87e3abbd20dac17fb0e38f812d47f36b2c98e3c613203693ad4"
+    sha256 cellar: :any_skip_relocation, ventura:       "b24f0c09642e5c1f1b7b273dded09da20d20509b4196361f0342c3c8920f7490"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb410d9f1e825c1784c78f3d580cf486b2780e8c5e67b2eed84cf9418b5dfa81"
   end
 
   depends_on "rust" => :build
