@@ -2,8 +2,8 @@
 class Omekasy < Formula
   desc "Converts alphanumeric input to various Unicode styles"
   homepage "https://github.com/ikanago/omekasy"
-  url "https://github.com/ikanago/omekasy/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "c887cf7c35dd2f82df823e1e74cde496967e0ff3bfecb4b87560fb4fb18d36f9"
+  url "https://github.com/ikanago/omekasy/archive/refs/tags/v1.3.3.tar.gz"
+  sha256 "0def519ad64396aa12b341dee459049fb54a3cfae265ae739da5e65ca1d7e377"
   license "MIT"
   head "https://github.com/ikanago/omekasy.git", branch: "main"
 
