@@ -5,6 +5,14 @@ class Nanodbc < Formula
   sha256 "56228372042b689beccd96b0ac3476643ea85b3f57b3f23fb11ca4314e68b9a5"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "3627ff1858f01199dd5e236230c4069c942ccc66a0462490824342af9dedc309"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d7862fbf0d36102f2e3b848ecd14c5e5458846f45a666b7d83ed9f54fbeff57"
+    sha256 cellar: :any,                 ventura:       "3cc39fc8c85feb5d2f56e235d833a7b53f6f1b41020ff5618c8db7c4d61d33dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4faccb446d3585c91a3093817cca08f2b97c3b162237fad43f0fe2e0b1153377"
+  end
+
   depends_on "cmake" => :build
 
   on_macos do
