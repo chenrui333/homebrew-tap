@@ -1,5 +1,5 @@
 class Proto2yaml < Formula
-  desc "Export Protocol Buffers (proto) files to YAML and JSO"
+  desc "Export Protocol Buffers (proto) files to YAML and JSON"
   homepage "https://github.com/krzko/proto2yaml"
   url "https://github.com/krzko/proto2yaml/archive/refs/tags/v0.6.5.tar.gz"
   sha256 "7a660661d68e92db4c87ec4ea75bd554b8acf9979f62f981eb32b99a0c83e0f1"
