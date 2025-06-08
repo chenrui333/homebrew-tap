@@ -200,6 +200,7 @@ brew install --cask <tool>
 - `mln`
 - `mmemoji`
 - `mnamer`
+- `nanodbc`
 - `narr`
 - `nest-cli`
 - `netfetch`
