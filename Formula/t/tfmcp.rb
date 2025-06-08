@@ -1,8 +1,8 @@
 class Tfmcp < Formula
   desc "Terraform Model Context Protocol (MCP) Tool"
   homepage "https://github.com/nwiizo/tfmcp"
-  url "https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "d4c0f16992f89f6c45d66c34eea578ca8e91c08f1027941f326de345487e29ba"
+  url "https://github.com/nwiizo/tfmcp/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "784c09b121bddf3a5bf393fb4991a3132cf096258bdc5bc05ac32a4b8e1fe0eb"
   license "MIT"
   head "https://github.com/nwiizo/tfmcp.git", branch: "main"
 
@@ -16,12 +16,6 @@ class Tfmcp < Formula
 
   depends_on "rust" => :build
   depends_on "opentofu" => :test
-
-  # opentofu support, PR: https://github.com/nwiizo/tfmcp/pull/3
-  patch do
-    url "https://github.com/nwiizo/tfmcp/commit/9e27ef3a70337da8eae56644ea8c2db833a4fba5.patch?full_index=1"
-    sha256 "89b08ff3f08a8a5733b4b1c39b119eee1ed1c20aaf35319ae60570e7b73066b6"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
