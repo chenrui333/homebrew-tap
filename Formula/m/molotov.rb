@@ -7,6 +7,14 @@ class Molotov < Formula
   sha256 "0f52d260b4566709882a12710eff9b5863604f88c9bc03749cab4f9de462771a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a6e6baf5948e63275f6c0fd39e6dfd4ed825562083ff52d1774c378b70ef3b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c39e26d90f0335fef34ec630efc52f146388a70a301d94cba4f57cc873a6c39"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff5f2bd92ddae9bbd1f4b63ce123393d8c49f28d7629707cf991cc890a4e3c2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f9675918b9b86a791de0d484f1aa23a108de6e25c260afa04e183db5934dbd"
+  end
+
   depends_on "python-setuptools"
   depends_on "python@3.13"
 
