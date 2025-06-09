@@ -168,7 +168,6 @@ brew install --cask <tool>
 - `kpt`
 - `krs`
 - `kt`
-- `ktop`
 - `kube-role-gen`
 - `kube2pulumi`
 - `kubeseal-convert`
