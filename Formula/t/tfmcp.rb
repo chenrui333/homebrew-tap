@@ -8,10 +8,10 @@ class Tfmcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2363405c0c210f338aa9cb344a04e27fa6f975d7f2c7054d7f197f9b27f26519"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1982d572106349c4b48a9c141bc71f19babe413483fdde4a344f86dd73e0a559"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb5d41ece35a67f4e96d9ee12cbe3be1727514e338fff066f8dd84e1c1a599b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb215a4f44c759f228fe827f57a06bc89e438c5e6f49fe7b792615fc05af2a9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "930e2090719a490c487c7899ae6e7e7feac0f99fc3bd0f4dd532069ca9cc5a26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a2b383a97bb81e06fec6b0a358b8538171228c2375b8729e8691dce85046713"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff1a911b7b5366c9ce91ee28d99c3d704f7133517d4ec51d7ebee4d4e0ece466"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f482e144076d0d098d058b50787c405a23fd8c6092708a24abe89f56d4af694b"
   end
 
   depends_on "rust" => :build
