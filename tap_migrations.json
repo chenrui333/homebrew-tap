@@ -45,6 +45,7 @@
   "org-formation": "homebrew/core",
   "otel-cli": "homebrew/core",
   "ov": "homebrew/core",
+  "oxen": "homebrew/core",
   "pdfly": "homebrew/core",
   "pdtm": "homebrew/core",
   "preevy": "homebrew/core",
