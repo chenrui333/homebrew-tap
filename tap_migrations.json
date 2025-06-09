@@ -58,6 +58,7 @@
   "soft-serve": "homebrew/core",
   "sql-formatter": "homebrew/core",
   "sttr": "homebrew/core",
+  "style-dictionary": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "terraform-iam-policy-validator": "homebrew/core",
   "terraform-module-versions": "homebrew/core",
