@@ -33,7 +33,7 @@ class Dbin < Formula
     return if OS.mac?
 
     output = shell_output("#{bin}/dbin del bed 2>&1")
-    assert_match "Failed to retrieve full name for 'bed#'", output
+    assert_match "Failed to retrieve full name for 'bed'", output
   end
 end
 
