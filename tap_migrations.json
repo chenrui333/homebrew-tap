@@ -10,6 +10,7 @@
   "cf-terraforming": "homebrew/core",
   "cfnctl": "homebrew/core",
   "comrak": "homebrew/core",
+  "crd2pulumi": "homebrew/core",
   "dblab": "homebrew/core",
   "decompose": "homebrew/core",
   "dyff": "homebrew/core",
