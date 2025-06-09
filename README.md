@@ -83,7 +83,6 @@ brew install --cask <tool>
 - `cohctl`
 - `config-file-validator`
 - `container2wasm`
-- `crd2pulumi`
 - `crlfmt`
 - `cueimports`
 - `darker`
