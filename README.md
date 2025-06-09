@@ -286,7 +286,6 @@ brew install --cask <tool>
 - `spok`
 - `spotifydl`
 - `statoscope`
-- `style-dictionary`
 - `summon`
 - `surgeon`
 - `tclint`
