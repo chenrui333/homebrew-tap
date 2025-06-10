@@ -9,10 +9,10 @@ class Mdsf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2665ee034a60e695d9eca33a3a6d09e53f120e97adda0e78d67d028bba61c7d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03672a76a168a38d4d07052e8c1a72a968c1ede7588f9889f6d6ac16b7d073d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "9d227a196ddad0a93927a2d61b5f9a60f27df2b96a6255bd8dd3622f77bd6f3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc2cdaf511c994edfa7ab6a308ed2935875581226cbed337afb772bad8b22c11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "157be8a61b04ac00ed827233dd1faff21e2a5c8567588491e9d04fad4e0b45b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7b1f73e2cc3a47883b68c4fc58ead86e2a9b3d86266626f517230e30d4b2c35"
+    sha256 cellar: :any_skip_relocation, ventura:       "853f655cd677f4ce6ad73e45ad8437259ecf10d1bcec1be104e34d54a6e0497e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "800bfdf9e950cd2a3ff23f49d10ea070263ce6a59d0d03566ff9e75c31f17482"
   end
 
   depends_on "rust" => :build
