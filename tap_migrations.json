@@ -38,6 +38,7 @@
   "ktop": "homebrew/core",
   "lazyjj": "homebrew/core",
   "md2pdf": "homebrew/core",
+  "mender-cli": "homebrew/core",
   "mob": "homebrew/core",
   "multi-gitter": "homebrew/core",
   "nak": "homebrew/core",
