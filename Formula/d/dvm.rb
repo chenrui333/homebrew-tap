@@ -1,8 +1,8 @@
 class Dvm < Formula
   desc "Deno Version Manager"
   homepage "https://dvm.deno.dev"
-  url "https://github.com/justjavac/dvm/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "3b9bb668c6bdac67c201c7de823c9737d302687a8bae98cab881b24c59207a4e"
+  url "https://github.com/justjavac/dvm/archive/refs/tags/v1.9.3.tar.gz"
+  sha256 "ce52f153d7d11f9cec3904b2a22b7298576a76be2f93fb026f8b780e5770d2df"
   license "MIT"
 
   bottle do
@@ -19,12 +19,6 @@ class Dvm < Formula
 
   on_linux do
     depends_on "openssl@3"
-  end
-
-  # version patch, upstream pr ref, https://github.com/justjavac/dvm/pull/214
-  patch do
-    url "https://github.com/justjavac/dvm/commit/1c9b1f4e5106f4907dfeafe80cbf6be709ae01a2.patch?full_index=1"
-    sha256 "b2c69414c91e9ad9b42fe507434b2b75c0a4b20ee28364bb82151316b9841cfd"
   end
 
   def install
