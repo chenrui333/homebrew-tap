@@ -70,12 +70,12 @@ brew install --cask <tool>
 - `cargo-clone`
 - `cargo-geiger`
 - `cargo-readme`
-- `cargo-sort`
 - `carton`
 - `castor`
 - `cello`
 - `certok`
 - `cf-vault`
+- `cf2pulumi`
 - `cloudlens`
 - `cmdx`
 - `cocainate`
@@ -90,7 +90,6 @@ brew install --cask <tool>
 - `dbin`
 - `dela`
 - `docker-debug`
-- `dockerfilegraph`
 - `doit`
 - `duster`
 - `dvm`
@@ -115,7 +114,6 @@ brew install --cask <tool>
 - `foy`
 - `fsociety`
 - `gemini-cli`
-- `gerust`
 - `ghalint`
 - `ghfetch`
 - `gignr`
@@ -307,7 +305,6 @@ brew install --cask <tool>
 - `toolctl`
 - `tpm`
 - `travelgrunt`
-- `tun2proxy`
 - `tuono`
 - `twiggy`
 - `unused-deps`
