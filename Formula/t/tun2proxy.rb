@@ -13,11 +13,10 @@ class Tun2proxy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca9ba1dbcb659f2b7a469be79fa75c933c0c72f00189abe540197fe78be49289"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62e6d40aa874d20c9d118fa11f23ec6a98c0562accec2e2ad328181e53280d7f"
-    sha256 cellar: :any_skip_relocation, ventura:       "24861e302e90e4a8c1b2138674ddfe1e0691f96cb185eef6e51fdf6811e75cb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e108ae33a79f84138a53075f418aedd613dea27a67ce8fbb421344866f6fbf79"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1eef28932e27a1efaa6578f77b6cc2ef40ee43adac972dce298cd1eb854e69c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08b2dceefcef958288c5bbb4826a5218c45c12dd17a5217891679ba2f56eca7c"
+    sha256 cellar: :any_skip_relocation, ventura:       "d62f1cacfe113101b28b3df8eedcad458f97a949e81b1b13047434f0ec6b726a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b756b76646c4df4d8591a93659889eaf106b1321bf2f719fa90330b2ebf7765"
   end
 
   depends_on "rust" => :build
