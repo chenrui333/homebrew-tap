@@ -1,8 +1,8 @@
 class CargoGeiger < Formula
   desc "Detects usage of unsafe Rust in a Rust crate and its dependencies"
   homepage "https://github.com/geiger-rs/cargo-geiger"
-  url "https://github.com/geiger-rs/cargo-geiger/archive/refs/tags/cargo-geiger@v0.11.7.tar.gz"
-  sha256 "6ddc447b0b8a46ee2b303897fbe2d416df794942cd23984c44b0ee69c4675bad"
+  url "https://github.com/geiger-rs/cargo-geiger/archive/refs/tags/cargo-geiger-0.12.0.tar.gz"
+  sha256 "8318108bfc6a5058134483faab45e9bf9d42f0b98bdf24b5ff42d41b7e060540"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
@@ -19,11 +19,6 @@ class CargoGeiger < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  patch do
-    url "https://raw.githubusercontent.com/chenrui333/homebrew-tap/ceb0ef84f4d34b992c0f20da279467c06c2590c7/patches/cargo-geiger/0.11.7.patch"
-    sha256 "5dde9965fc849e263d4be0a7d3ba317dd829ad3b37f3d67e0359613c9f617271"
-  end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
