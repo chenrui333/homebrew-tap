@@ -8,10 +8,10 @@ class Mamediff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2d8f02451d50aacdae5de36935ee6f68470320f2593d4819f479cad35d9d5fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d0afb6e08b193f738a642efbae0b5853daa377b68cf928e23f9815f8cb2ae86"
-    sha256 cellar: :any_skip_relocation, ventura:       "b4978cda6e2882da40c0770f73539198afb555757772b6716d2521038e88d6a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d7a29b21cb69b524b09b88e90c3bcc8966932da13d821479bf9c7cc968b5225"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db76c66b92602091157b5af4e4674d6108c106c539d38816d47c65f208783c6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "354d95161163a6a663992b844d0341522b10f4badb9977e776b8f6782023670b"
+    sha256 cellar: :any_skip_relocation, ventura:       "20f7cf27a561fe75af820e5659a63130a9f296556d8cbc88b510d96cfee62507"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17d8c4cbb48662cdf12f44e5f6400fff00517f60dc8962ea6ad121b0e163fd51"
   end
 
   depends_on "rust" => :build
