@@ -7,11 +7,10 @@ class Dvm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cdb2115b0981351d4b2802db8faaf11a9b35893bf0ee4b120111f3a18371451"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33fa2434254ed908128c27ba48e8d442a653a83cc7d38f0c8a64abf3040e4983"
-    sha256 cellar: :any_skip_relocation, ventura:       "01f9342be4adad5c8581b0a0c4518d9c5826f03cf4953a318a5e1e4dd5a72d5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30ee3a2762bff331e3ac96fefcf9137efc4e2a6e4381aa0477243e62cde7e27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef61b1766f3e3a4b0b4c1cb820c719f90934dc170ae506bd81bb53a36d4e2ebd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1158fc53f4de65792078574a45496e159ebb6b05b353c355db222143d262c281"
+    sha256 cellar: :any_skip_relocation, ventura:       "daa0d1c9bdfd0afe75b98885efe83669d841adea0e343fab8b42c3e26509c62d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b066142ea84a0c696b8a2fa198b2765d86bd24f5332d1ff6fa351921d1205f8"
   end
 
   depends_on "pkgconf" => :build
