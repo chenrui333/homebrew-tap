@@ -8,10 +8,10 @@ class Gerust < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "25b1bc9bc55b2a05af162eab440beac5ac3befc62e6ac7c41934f8f7e85581e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "7de5d9baa32407a3d31a20ed2a60d0324a9867b752ed34af5b92fc34f57ede7d"
-    sha256 cellar: :any,                 ventura:       "86e300fb7ac40493d61ac01ac3630a2b936f0dcf51bcf20327742b902ead3791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7008e273346784f93a34ed47cf647d3d6a848661037aa522ae5134f8e415ac9"
+    sha256 cellar: :any,                 arm64_sequoia: "8ad04b29400bc0a8442ab549070b1fe5a86e2a927273db50c8c12bda3d5861f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3dcfcbb8635ecadca0372f950e4d01ed4b3272d741736ae1722f6dde43cfc9c"
+    sha256 cellar: :any,                 ventura:       "f8b4dbed14f86f8eadbccdd02fb2cdebfaf169b0d4e9b3b4b4a2a628c95551af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30a6ee65231481758255c176f86a5f08a2cd2b9793a1d89d23779969984af2e4"
   end
 
   depends_on "pkgconf" => :build
