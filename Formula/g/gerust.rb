@@ -1,9 +1,10 @@
 class Gerust < Formula
   desc "Project generator for Rust backend projects"
   homepage "https://gerust.rs/"
-  url "https://github.com/mainmatter/gerust/archive/refs/tags/0.0.3.tar.gz"
-  sha256 "a6ed76805d5f8d2212761eab18623d35dad12276a72dcc51e8860132b9923ca9"
+  url "https://github.com/mainmatter/gerust/archive/refs/tags/v0.0.6.tar.gz"
+  sha256 "1036cc5461e91f775bf499575f2352cba8a91ac2c97d2b312bdc19601d300038"
   license "MIT"
+  head "https://github.com/mainmatter/gerust.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
