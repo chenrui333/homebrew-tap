@@ -189,7 +189,6 @@ brew install --cask <tool>
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
-- `mender-cli`
 - `mermaid-cli`
 - `meteor`
 - `mfa`
