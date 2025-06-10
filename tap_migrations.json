@@ -65,6 +65,7 @@
   "terraform-module-versions": "homebrew/core",
   "tf-summarize": "homebrew/core",
   "tfcmt": "homebrew/core",
+  "tfmcp": "homebrew/core",
   "tfmv": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
   "tfsort": "homebrew/core",
