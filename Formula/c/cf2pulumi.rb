@@ -7,6 +7,14 @@ class Cf2pulumi < Formula
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi-aws-native.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6bcba1c7ed76896835d995db458cef33d29bd72104800a5cd38ffebc974345e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de1819d6c29241e8cb1c2a7be700389f344c21ee9b5cfd1d10febc6d197eb684"
+    sha256 cellar: :any_skip_relocation, ventura:       "39b854c08b4c16a9d00a301c59dd3315016acdd8a85eaaa9531f9962aa4991e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7640832f3cc7f00886a25b9ee179f453484c58d3dd0bc0c47cd6d7875727752e"
+  end
+
   depends_on "go" => :build
   depends_on "pulumictl" => :build
 
