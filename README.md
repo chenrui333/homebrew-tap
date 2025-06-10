@@ -218,7 +218,6 @@ brew install --cask <tool>
 - `otelgen`
 - `otto`
 - `oxbuild`
-- `oxen`
 - `papis`
 - `pdfsyntax`
 - `pencode`
@@ -298,7 +297,6 @@ brew install --cask <tool>
 - `terrap-cli`
 - `terratag`
 - `tetrigo`
-- `tfmcp`
 - `tfreveal`
 - `tftarget`
 - `tftree`
