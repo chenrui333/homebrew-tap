@@ -1,10 +1,15 @@
 class Kpt < Formula
   desc "Automate Kubernetes Configuration Editing"
   homepage "https://kpt.dev/"
-  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.56.tar.gz"
-  sha256 "e5fb5a2b06c4f9e49676cfcc292be42b787c3607f75a3cf3050e829803e68c1f"
+  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.57.tar.gz"
+  sha256 "614f03e30064a58872c0e0eb356a4c05501909e3c56c985912d44bd47d3f3944"
   license "Apache-2.0"
   head "https://github.com/kptdev/kpt.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+(?:-beta\.\d+)?)$/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
