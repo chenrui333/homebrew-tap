@@ -7,10 +7,10 @@ class CargoGeiger < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "7dec3849127d9812fc861d29479c1a3a2a5d93a134e3201d61483605d415a661"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8f7dfc6c8c507de725fe6f566e42f353bbb39a17de41e0f37228e44d2fe982f"
-    sha256 cellar: :any,                 ventura:       "02fc0004a18da17115e4b1541fb03ada775949af70b29d0698e12e09eba962d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25feae9a085bc3bb14db936a0f924c4cb05c6a76e7633a7b3b0c029ee07e71d0"
+    sha256 cellar: :any,                 arm64_sequoia: "f846f472e9592f435fff9d49e9f1b96abb13e7fc10c9e4f6a74353a8f830eaee"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f22c185b2210eee4500a11a8f1fdec2027380d140fd5155fbed21471371f690"
+    sha256 cellar: :any,                 ventura:       "7688626505856f1bb932e97542abf4da06d9ef4f335aef81bb270a254ae0480e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "962dc15597774753c8c68751c1dd3839b0cba4950f6e3548fe81e4b9a644a8de"
   end
 
   depends_on "pkgconf" => :build
