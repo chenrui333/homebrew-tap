@@ -7,10 +7,10 @@ class MermaidCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "1f1b29d26a1ba6c82f3499788d8e906b9847376c5e9fed1c2d67a9b3c969b00b"
-    sha256 cellar: :any,                 arm64_sonoma:  "eef488faa75116e31252da98265578b653b5798b3803646d364dca060a37046a"
-    sha256 cellar: :any,                 ventura:       "14c018e154f2c3d687bac21fe01f680d7d5e7a031acc2afacc81420188492776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5b6c57106eaa831132a0afba0174fa18faa061f48b5d0ada5061b0492c9a767"
+    sha256 cellar: :any,                 arm64_sequoia: "79fc26185163161716a4fa7e74be029d04911382f75e56cd73ccefd6362f66eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "c8f0a5a36e02457ea3de8b11663e417c1e0248902179f39b0c6afdacbc618959"
+    sha256 cellar: :any,                 ventura:       "b0c0d8015e51c5e58c9d230bb2d761f9e6d9213c7ea83f7d530282250fb051c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e131fb9f5ebe72fbec6d745cc5c3198cb07136f1d90bb9c192788ca9a8096258"
   end
 
   depends_on "node"
