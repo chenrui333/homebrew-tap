@@ -3,8 +3,8 @@ class BlueutilTui < Formula
 
   desc "TUI for Mac to interact with bluetooth devices via blueutil"
   homepage "https://github.com/pypa/abi3audit"
-  url "https://files.pythonhosted.org/packages/02/f7/d3c82dd2f51cf4588e2a8364f4d0bc27a3f5c7e472c02d215cc309410afd/blueutil_tui-0.2.1.tar.gz"
-  sha256 "491eb3aa33649a9b2aaa1f1a141b3e08fb459dc6c365ace12dfc643ca4187f4b"
+  url "https://files.pythonhosted.org/packages/c6/f6/7904b0d6fbc33fc30a46d02343f6cdaa3e1c490b08ca7a66a6cd7ad5c0e8/blueutil_tui-0.2.2.tar.gz"
+  sha256 "8c48fe0be31ef38629e0a705579db65912a6022cca1aa70c13c5b6b55ce2223b"
   license "MIT"
 
   bottle do
@@ -39,8 +39,8 @@ class BlueutilTui < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/13/fc/128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4/platformdirs-4.3.6.tar.gz"
-    sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
+    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
+    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
   end
 
   resource "pygments" do
@@ -49,18 +49,18 @@ class BlueutilTui < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/86/ae/dfa6423fa0ecfc514eebf148e3464bc332648ec7f096fb4d50abe54b24d5/textual-2.1.0.tar.gz"
-    sha256 "0b1d45cbe351ccd68bfeefd22defa33a59811436089de048bab9fb8b4657bd87"
+    url "https://files.pythonhosted.org/packages/6d/96/02751746cf6950e9e8968186cb42eed1e52d91e2c80cc52bb19589e25900/textual-3.3.0.tar.gz"
+    sha256 "aa162b92dde93c5231e3689cdf26b141e86a77ac0a5ba96069bc9547e44119ae"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "uc-micro-py" do
