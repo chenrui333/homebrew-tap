@@ -8,10 +8,10 @@ class CargoCareful < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "216e4276854d473d90f4c180fef7348cc5570ae32db0ec28f63a9747bcf289b9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "798e6cf75800104e4b4a929caae76eb5c266bc0ec12e81a3b61034ab9bf23a11"
-    sha256 cellar: :any_skip_relocation, ventura:       "051ad22a8eb9a4c2a128722cb2d1c4ff88f1f75372bdba856626350c9b6faf0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d07b608cc8b75e5c40df2b6c4524e79a161c61533502c08bc5e1d62fe131c32d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e20b15935950bd2bcb7f7ee2f6ad6eaa291b039f834a8074bea7b219f67499a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c3cca766eb0bcce833c66fda1c78b6825035d21083bf92a388b74104d0f506b"
+    sha256 cellar: :any_skip_relocation, ventura:       "eaf49573d90c10f3ec07cc704fb0d29fdb0856f78d372a32897be4d714dd9d94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14beaa165c482f235a4845efc7373901ff34f458d1b5fc9f4a2504cb878e3d82"
   end
 
   depends_on "rust" => :build
