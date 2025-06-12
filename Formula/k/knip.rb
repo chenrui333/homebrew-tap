@@ -7,10 +7,10 @@ class Knip < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "8ec99f37b1eca385511d1e09719d886732142ba30badfd49974379af697833dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "4adac6049d447c3de45c9dbd78633e13269a5d2bac519a0e11a9e50e236a6b49"
-    sha256 cellar: :any,                 ventura:       "586b12062171305c5c9fe87a69eee51ea0a66332b0d9338091be1bc5df3a290d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faa9c91f89e8aa8e645dc88ee33151ce3341e2cfea2101f572bf90778c2bf111"
+    sha256 cellar: :any,                 arm64_sequoia: "a215ad69e34bab3eb394f0af1d43c664255e6a2b92f4a30fc6459bf48f027b25"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f368e1fa58e64bde80af73b4c8c69827e6afca9f896d83fbcad27db8e3d1232"
+    sha256 cellar: :any,                 ventura:       "e98806bf382bb40bb755a1b34e24bb6a3f8e50838b8c76d37bb186d05eb26267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a37aae2a9310939acb675e8586b5d719cc8a620454808e453c906f2c54a502"
   end
 
   depends_on "node"
