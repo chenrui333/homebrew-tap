@@ -7,6 +7,14 @@ class StrimziKafkaCli < Formula
   sha256 "dc80a0960e5fb22c0b5f2aebc0455851b2d0eac212fbdc72346dfc742c34aa23"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "86e4bc6e96601c9091f5820367bfd3945ba854db5a125fd8a7bace9644645414"
+    sha256 cellar: :any,                 arm64_sonoma:  "69964e8bc697c2abc08f816a6c12a62865501b3be3549e9b91f86a20b219aea9"
+    sha256 cellar: :any,                 ventura:       "13fd57ba456502ccd5edea86e178fbf7e8160464e21661bbca3105b7b858c1db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7575ff88ed5a4e20a803473742e968bd66ec1dadc25ca524611258ec316feadc"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
