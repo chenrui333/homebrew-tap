@@ -3,8 +3,8 @@ class BlueutilTui < Formula
 
   desc "TUI for Mac to interact with bluetooth devices via blueutil"
   homepage "https://github.com/pypa/abi3audit"
-  url "https://files.pythonhosted.org/packages/c6/f6/7904b0d6fbc33fc30a46d02343f6cdaa3e1c490b08ca7a66a6cd7ad5c0e8/blueutil_tui-0.2.2.tar.gz"
-  sha256 "8c48fe0be31ef38629e0a705579db65912a6022cca1aa70c13c5b6b55ce2223b"
+  url "https://files.pythonhosted.org/packages/a2/f0/acbbe64da5e02128358da4e66711d1af73a0311fffbc6f1527c134292330/blueutil_tui-0.2.3.tar.gz"
+  sha256 "9cc3b071a21d35be6cbd757e5c6df1ea8463c6ae4df9abaa8baeacd7d5061e09"
   license "MIT"
 
   bottle do
