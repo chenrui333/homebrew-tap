@@ -7,10 +7,10 @@ class Castor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "266afe688e9b9d931c50fa549c7ffb6f8065eb65b48d6125b51ebca1d78a14fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4254d342da97563e8651aa28752ebf004242ba652c14ec9f2fb34abdc64094c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "da00d1c6494c71ef884eb745a55aaad957301549cb0b5f9b622652ce4830f501"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d91d663473cec759acbcb4bbeb82bcfb4f67dd09c176b6dcd1847dfcd9d11221"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec79a55e552d3166b3eb92ddc0e2383127b03e01af99eee597fa9f00ed9a8310"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ecb943e5dde8dc89b38535b05f0159e9f42476bb3d97edf64eacc3990989e7b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2e81bbdeeb9395c89b10f82bc910822216bc90e343b789b6748681fd92fb51a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5fd377a2eb305705b066120330878ec2114869b8dd346b288faedd7478a362f"
   end
 
   depends_on "composer" => :build
