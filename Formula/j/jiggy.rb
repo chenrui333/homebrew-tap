@@ -5,6 +5,14 @@ class Jiggy < Formula
   sha256 "665c1538626f345564437a2ea3761cecefc1bf5d09d4cda77705401a4e942d39"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bd3cf42498bc8e7075d30288d344b5e3314b588e19cf3364b3cc2b89ff0bbea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b9ea9c53d12d9143b3fd879e17b4e6e9f2c35d42ab258d58a58bfc325f26417"
+    sha256 cellar: :any_skip_relocation, ventura:       "141bc17a46e95a728e091d3e1eb0c4fdcb35d05033d1413c3c9fa1806fd85728"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "587dfcdd03b2b5bf0354c959028ee74f1b59238e027020669458b1737d8fcbdf"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
