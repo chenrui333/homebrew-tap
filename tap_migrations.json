@@ -1,6 +1,7 @@
 {
   "addons-linter": "homebrew/core",
   "alejandra": "homebrew/core",
+  "algolia": "homebrew/core",
   "api-linter": "homebrew/core",
   "bacon-ls": "homebrew/core",
   "bombardier": "homebrew/core",
