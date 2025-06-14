@@ -89,6 +89,7 @@ brew install --cask <tool>
 - `dbee`
 - `dbin`
 - `dela`
+- `diagram`
 - `docker-debug`
 - `doit`
 - `duster`
@@ -282,6 +283,7 @@ brew install --cask <tool>
 - `spok`
 - `spotifydl`
 - `statoscope`
+- `strimzi-kafka-cli`
 - `summon`
 - `surgeon`
 - `tclint`
