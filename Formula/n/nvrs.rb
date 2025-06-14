@@ -9,10 +9,10 @@ class Nvrs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daacf2cfd392ab82447b4cf05f0b318b7883972a98cca9a7c66aadbd33343d9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4ff8b2e72815fe31f4846b66cba35fb91d3e03155e338f2226bdd815ca552f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "941d32e6e637cc8fdcd4138f1c96dbddf615f4e6686f4bf42ddf5dcad9eee3c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d52078498f791381ea38015a5db824c3c5309b6882923b65a89519ad02096091"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bec39e09115b9d296dfab0e53fed2dcd932b09c95e4114f2ec79836fdf5ec54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c3c11627fc55c8943d9a077456b7d1288097350051cf67559d57e2559b94340"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8df8dff79093f75510ab302cf69cb1b5b735047ee7dfe019596d7df065798b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e3316f33c8bf08102df01c6e3b2407dbbec2303e716b92d41aca6e8e4611330"
   end
 
   depends_on "pkgconf" => :build
