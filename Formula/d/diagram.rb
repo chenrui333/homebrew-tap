@@ -6,6 +6,14 @@ class Diagram < Formula
   license "MIT"
   head "https://github.com/esimov/diagram.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_sequoia: "47955fbb4a0097aed6bc61c6cd4b8f7c9ed964a89c75abee70bccaf520526db3"
+    sha256 arm64_sonoma:  "da8e4f2f8b66deb4de1f8a302db5ead49537b959feadef887e0901db5ae524bb"
+    sha256 ventura:       "fd821a05fd75185b8e32eff60170f4e6f5cfc0f8dde2a956313f56413d32c041"
+    sha256 x86_64_linux:  "45ca6bfaf016ec13bb22a2a9f8f2ba93e50b664b481672faacd461954f32475b"
+  end
+
   depends_on "go" => :build
   depends_on "pkgconf" => :build
 
