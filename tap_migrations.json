@@ -45,6 +45,7 @@
   "mob": "homebrew/core",
   "multi-gitter": "homebrew/core",
   "nak": "homebrew/core",
+  "netfetch": "homebrew/core",
   "nom": "homebrew/core",
   "org-formation": "homebrew/core",
   "otel-cli": "homebrew/core",
