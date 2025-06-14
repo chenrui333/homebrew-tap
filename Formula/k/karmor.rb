@@ -6,6 +6,14 @@ class Karmor < Formula
   license "Apache-2.0"
   head "https://github.com/kubearmor/kubearmor-client.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcee0d06a10360322478ba29ff06d69a65410f580ae9537d7c32a876d881a89f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e693aad21fdc09cdced0265cd3d09cb3e4307ee076737fe91d4bfb9ed87ff0ff"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ff19bb9b02ec09ceccae453a875bfdc4dca6925e298639d1d595c6b00f75b32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e5326901782e6048cb0d2b94ef16b8f81a6c1c62e4bab30b95bc1caa8cc9e70"
+  end
+
   depends_on "go" => :build
 
   def install
