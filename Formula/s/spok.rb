@@ -6,6 +6,11 @@ class Spok < Formula
   license "Apache-2.0"
   head "https://github.com/FollowTheProcess/spok.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e33888c40f84e96fa4f61d7aad5c786ad4e89880b4c6d2307378fed9c6e76d3"
