@@ -200,7 +200,6 @@ brew install --cask <tool>
 - `nanodbc`
 - `narr`
 - `nest-cli`
-- `netfetch`
 - `ngtop`
 - `nhost`
 - `ni`
@@ -254,7 +253,6 @@ brew install --cask <tool>
 - `remark-cli`
 - `resinator`
 - `revanced-cli`
-- `rpds-py`
 - `rslocal`
 - `rtop`
 - `rustfilt`
