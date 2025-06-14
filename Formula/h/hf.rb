@@ -19,7 +19,7 @@ class Hf < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"hf", "--generate-completion")
+    generate_completions_from_executable(bin/"hf", "completion")
   end
 
   test do
