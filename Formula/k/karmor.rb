@@ -1,8 +1,8 @@
 class Karmor < Formula
   desc "Query git repositories with SQL"
   homepage "https://github.com/kubearmor/kubearmor-client"
-  url "https://github.com/kubearmor/kubearmor-client/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "9399a4d0f66d755c5a979e628ad0ead80459cffbee871c626a6244c74bdeb778"
+  url "https://github.com/kubearmor/kubearmor-client/archive/refs/tags/v1.4.3.tar.gz"
+  sha256 "c26b5bf0ad09e2a1feaed776ad13d57d702d15abf536bd89f5ab6429cfdc34af"
   license "Apache-2.0"
   head "https://github.com/kubearmor/kubearmor-client.git", branch: "main"
 
