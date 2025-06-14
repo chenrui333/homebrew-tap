@@ -6,6 +6,14 @@ class HoloCli < Formula
   license "MIT"
   head "https://github.com/holo-routing/holo-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "fdb665f3e9dad32608016a112491a3381e0364928e8a47a94e35c47ee0bb88a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "34938c420e237b0325c20294a54311fcbbcb456dfaef13f487040caab772676c"
+    sha256 cellar: :any,                 ventura:       "942e50ed4f3ad94b0d1902bb9b2c42d4b5969f01006a6037c18c45b992434ad9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0e939365c9e7dba2df7b15b0da9b2d2c74889db0090da1e4f955a4e455a6a9f"
+  end
+
   depends_on "cmake" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
