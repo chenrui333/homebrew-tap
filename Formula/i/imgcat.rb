@@ -16,6 +16,12 @@ class Imgcat < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/imgcat --version")
 
-    assert_match "\e[44m \e[44m \e[44m \e[44m", shell_output("#{bin}/imgcat #{test_fixtures("test.png")}")
+    resource "test_img" do
+      url "https://raw.githubusercontent.com/eddieantonio/imgcat/master/tests/img/1px_8.png"
+      sha256 "8d615bd3d56e46e7c201537d591081a98c459cd93e32cd59841c29a425a656b3"
+    end
+    testpath.install resource("test_img")
+
+    assert_match "\e[40m \e[41m \e[42m \e[43m", shell_output("#{bin}/imgcat #{testpath}/1px_8.png")
   end
 end
