@@ -2,7 +2,7 @@ class Darker < Formula
   include Language::Python::Virtualenv
 
   desc "Apply Black formatting only in regions changed since last commit"
-  homepage "https://github.com/bdcht/amoco"
+  homepage "https://github.com/akaihola/darker"
   url "https://files.pythonhosted.org/packages/67/f4/a51ea71253b9df5206cfa5f2b2385670eaa21fde3dd21cad6532a78a2406/darker-2.1.1.tar.gz"
   sha256 "a6e6a682c0604e76fe9aec7650e96a944f517563c69b28fcc076db9d957d98ea"
   license "BSD-3-Clause"
