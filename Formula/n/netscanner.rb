@@ -6,6 +6,14 @@ class Netscanner < Formula
   license "MIT"
   head "https://github.com/Chleba/netscanner.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff5ff7c63929451365347808c9bd408fc56735b79f5838e6e8a2c903aa5ee91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc0f6b4a6ea9cea9074e1ab194afafbb1b6199af98defd26e91e218720d60e09"
+    sha256 cellar: :any_skip_relocation, ventura:       "9063088a83abb6929d8d90dbcc00db039806515dda9e62a2c152cd202a6f7515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b15ce1ba472deb6c6722394d1c05902186d991061f00ba3f07867e3bc5b523"
+  end
+
   depends_on "rust" => :build
 
   def install
