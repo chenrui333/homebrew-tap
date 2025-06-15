@@ -1,6 +1,6 @@
 # framework: cobra
 class Dbin < Formula
-  desc "CLI tool to produce MD context files from many sources"
+  desc "Easy to use, easy to get, suckless software distribution system"
   homepage "https://github.com/xplshn/dbin"
   url "https://github.com/xplshn/dbin/archive/refs/tags/1.5.tar.gz"
   sha256 "7ed71d229a5de289f070a5a41d736480f15d80cd5afe26d8760a712720f8954d"
