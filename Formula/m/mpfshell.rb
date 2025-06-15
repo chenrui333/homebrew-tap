@@ -7,6 +7,14 @@ class Mpfshell < Formula
   sha256 "3b2f176e17e9f9e08ccaf30a57503fae5bd15859d8d9efe74cc25a09abd8f349"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2ff730ac0f90a37c2b0bbfe1ecaf23a32fe0673b7b211987b42414f6f3d899a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d3762b8ac057a071fd7de4e085d1bbdc442e388a4c38f47a99e9285e694cdfa"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f01e3e8dfa18907bfc55eb7aad4bf5435b15dd6097e7fa947a39f2752e9a1ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9aeb1690d110bbf3cad3a4eef5b6aa237eb49e5ea6b3288344cb1ab5f01795b"
+  end
+
   # `telnetlib` module issue with py3.13
   depends_on "python@3.12"
 
