@@ -1,5 +1,5 @@
 class ArduinoLanguageServer < Formula
-  desc "Simplistic command runner and build system"
+  desc "Language server for Arduino development"
   homepage "https://github.com/arduino/arduino-language-server"
   url "https://github.com/arduino/arduino-language-server/archive/refs/tags/0.7.7.tar.gz"
   sha256 "ac9e63e3bd971ba85cdd33e19d736effde804114156b4bf3c0a969ba2d7395c3"
