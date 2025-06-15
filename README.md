@@ -201,9 +201,12 @@ brew install --cask <tool>
 - `mmemoji`
 - `mnamer`
 - `molotov`
+- `mpfshell`
+- `mpremote`
 - `nanodbc`
 - `narr`
 - `nest-cli`
+- `netscanner`
 - `ngtop`
 - `nhost`
 - `ni`
@@ -257,6 +260,7 @@ brew install --cask <tool>
 - `remark-cli`
 - `resinator`
 - `revanced-cli`
+- `rshell`
 - `rslocal`
 - `rtop`
 - `rustfilt`
