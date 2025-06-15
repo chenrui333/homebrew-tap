@@ -1,5 +1,5 @@
 class Pingu < Formula
-  desc "CLI tool to produce MD context files from many sources"
+  desc "`ping` command but with pingu"
   homepage "https://github.com/sheepla/pingu"
   url "https://github.com/sheepla/pingu/archive/926d475bda0fb27987e314cd9451c3e60976e643.tar.gz"
   version "0.0.5"
