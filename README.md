@@ -106,6 +106,7 @@ brew install --cask <tool>
 - `fex`
 - `firectl`
 - `fixjson`
+- `fjira`
 - `fkill-cli`
 - `flow-editor`
 - `flowgger`
