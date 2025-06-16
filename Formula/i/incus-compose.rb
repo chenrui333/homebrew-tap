@@ -6,6 +6,14 @@ class IncusCompose < Formula
   license "MIT"
   head "https://github.com/bketelsen/incus-compose.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11d28f4f9ecc094bab8d78264653a38e53fe3c71fcb18299fab087c8f1b86bb3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6abdf40e5df4578160293d60d3f72826a3e0f64bfa08deb2851ca01df4149d59"
+    sha256 cellar: :any_skip_relocation, ventura:       "0eae376f76a49f579bde41d2f0787b6dead7c2825651480dacfad3856476fa50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d88f7f507d2a6c89038f9c222b25e27688c1246343adf7ef325706707711ce71"
+  end
+
   depends_on "go" => :build
 
   def install
