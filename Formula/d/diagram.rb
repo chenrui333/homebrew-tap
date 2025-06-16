@@ -1,8 +1,8 @@
 class Diagram < Formula
   desc "CLI app to convert ASCII arts into hand drawn diagrams"
   homepage "https://github.com/esimov/diagram"
-  url "https://github.com/esimov/diagram/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "008594494e004c786ea65425abf10ba4ffef2e417102de83ece3ebdee5029c66"
+  url "https://github.com/esimov/diagram/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "f88bc99975ade753435ecf0e7a6470611f77563eb73b94d56fa6b6bafb4b8561"
   license "MIT"
   head "https://github.com/esimov/diagram.git", branch: "master"
 
