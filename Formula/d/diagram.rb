@@ -8,10 +8,10 @@ class Diagram < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_sequoia: "47955fbb4a0097aed6bc61c6cd4b8f7c9ed964a89c75abee70bccaf520526db3"
-    sha256 arm64_sonoma:  "da8e4f2f8b66deb4de1f8a302db5ead49537b959feadef887e0901db5ae524bb"
-    sha256 ventura:       "fd821a05fd75185b8e32eff60170f4e6f5cfc0f8dde2a956313f56413d32c041"
-    sha256 x86_64_linux:  "45ca6bfaf016ec13bb22a2a9f8f2ba93e50b664b481672faacd461954f32475b"
+    sha256 arm64_sequoia: "29a0c1a3ba4074cb011082d52ab33778018d5f6a6848ca47ec86a69420e64327"
+    sha256 arm64_sonoma:  "0989fc6ea4934dda2388a1823c79936a615dc8f6c17722bd582e97e68c9f3ae0"
+    sha256 ventura:       "d2c607eaa038c32a5704bea65edfd8095444a2d2b24de1afc06c4c65baf70d36"
+    sha256 x86_64_linux:  "b703e55f519e80ea9d1b610cd1675422b9b58f75a70886bf13ad95aa6362f3bd"
   end
 
   depends_on "go" => :build
