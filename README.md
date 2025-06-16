@@ -88,7 +88,6 @@ brew install --cask <tool>
 - `dbee`
 - `dbin`
 - `dela`
-- `diagram`
 - `docker-debug`
 - `doit`
 - `duster`
@@ -114,7 +113,6 @@ brew install --cask <tool>
 - `foy`
 - `fsociety`
 - `gemini-cli`
-- `ghalint`
 - `ghfetch`
 - `gignr`
 - `giq`
@@ -151,6 +149,7 @@ brew install --cask <tool>
 - `humioctl`
 - `iftree`
 - `illa`
+- `imgcat`
 - `infraspec`
 - `ip2d`
 - `ips`
@@ -202,7 +201,6 @@ brew install --cask <tool>
 - `mnamer`
 - `molotov`
 - `mpfshell`
-- `mpremote`
 - `nanodbc`
 - `narr`
 - `nest-cli`
