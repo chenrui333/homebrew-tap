@@ -17,6 +17,7 @@ extend-exclude = [
   "Formula/h/holo-cli.rb", # for `index 4ba84b7..9d404c0`
   "Formula/m/mitex.rb", # for `main.typ`
   "patches/flexiblas/3.4.5.patch",
+  "patches/fjira/1.4.4.patch",
 ]
 
 [type.ruby.extend-words]
