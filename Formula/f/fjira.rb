@@ -6,6 +6,14 @@ class Fjira < Formula
   license "AGPL-3.0-only"
   head "https://github.com/mk-5/fjira.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15ca4523fb54d903c23aaa42c68e7ada39b5a37dde18ccb46cbe8d5579e69113"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a6c05ff18582dc21b19c1ba3b414fbcaa661e520ba591b1a0a621ee639dba4c"
+    sha256 cellar: :any_skip_relocation, ventura:       "66ac1e3ca73e11fcb1a51d943a53721b173bab5a8a338ea4489ab4be91776034"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "706a5cc113bf748e0b259876e573b6e625c7933ee71bd5870c2fc4a48b5e8286"
+  end
+
   depends_on "go" => :build
 
   patch do
