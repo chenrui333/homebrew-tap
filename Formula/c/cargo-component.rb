@@ -1,8 +1,8 @@
 class CargoComponent < Formula
   desc "Creating WebAssembly components based on the component model proposal"
   homepage "https://github.com/bytecodealliance/cargo-component"
-  url "https://github.com/bytecodealliance/cargo-component/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "0b3d299c4cb26956b0f0bb673d09cbb4c0a826efbd2dc4805e68db91552c041d"
+  url "https://github.com/bytecodealliance/cargo-component/archive/refs/tags/v0.21.1.tar.gz"
+  sha256 "04ded8443b34687641d0bf01fa682ce46c1a9300af3f13ea5cf1bf5487d6f8b1"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/cargo-component.git", branch: "main"
 
