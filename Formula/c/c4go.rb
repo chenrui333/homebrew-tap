@@ -7,6 +7,14 @@ class C4go < Formula
   license "MIT"
   head "https://github.com/Konstantin8105/c4go.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9803e2c2f34d7432457f671225e28f5504e33daff6696a255da467bc9b0b5e34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f148fc2ea953688d2f2db4b071929b80cb669c079c3dd70f2c48b791b549271a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e152d6b291664d042c3337df23b9a89a36bf0a616b9abba087dcca9c8a83814e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b66add5b463015d55f2da20d0f9d693dadb6c9463e689da587e63b61969268d"
+  end
+
   depends_on "go" => :build
 
   def install
