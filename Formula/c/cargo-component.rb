@@ -6,6 +6,14 @@ class CargoComponent < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/cargo-component.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58b1df80d69c48d0a5a946bbf69ef3a4f1445356a934864d001fe1f593c51121"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c2439d2781a32a450a071ca922f31396269ea04c2bd6f37ab6f69913b10c481"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb881bf4315adef3c22eeda5d0612f8ad5a803cda80942f3adabc19780406ab0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f42a047c330a2fc5b48af299163cc302b4293ed111d7d6b3ca7fc7470ddf3ef7"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
