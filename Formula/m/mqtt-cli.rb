@@ -6,6 +6,14 @@ class MqttCli < Formula
   license "Apache-2.0"
   head "https://github.com/hivemq/mqtt-cli.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6949f63a3cd59d48f028bfe3d7a6e2e291543efd8d85ddd91c18207f6104793"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca0f6a73479b5af4014b9f96e1fb66e2d39506e0f80d9fea213123ecf0dcaece"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d59252e9decae0f23b7f2c0485e59194b929cba6a70cd44d7306edc376d1efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c407e5d11cce48ca7e8a4e5b4fdf979a606368d81d48e5a2522c36f1133dc380"
+  end
+
   depends_on "openjdk"
 
   # update toolchain to Java 24
