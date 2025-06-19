@@ -7,10 +7,10 @@ class Sherif < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d8ca02aed30e519e5a3625a4917ad40b34ad708011bbe3f8101c668a1f6c038"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "847bde81eb9955e6578b22936d187b9037524043ecfa2d2190d886fc17080577"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe4b0ef3f46de79adea2d74fb44eac93f6467d69124dd66780436751adc1bfd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2070955f3361360707a84ac7742d077cf8c069e3f54aa1fb292c904ec8f6ddc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bb0631dc3db5373b9629c76339da415bdbbfacb9aa191587802eab04221bb1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "662dbb308b3a6921bc8fc5740273f9852cb7ed1444eb35fb444b131e2bd2a0cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "76ee21b771aea074c18dba46473541598e7895f24c90127bc08416cdc27d1e32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ea307f60c59f7c0401d8d51ca49db5295947026b881d51f02d42ad66d235fbd"
   end
 
   depends_on "node"
