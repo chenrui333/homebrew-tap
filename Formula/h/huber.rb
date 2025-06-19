@@ -6,6 +6,14 @@ class Huber < Formula
   sha256 "7648c2840c2747fce2079e19cd57702b573bc03e200400f53125a47f37c4b817"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "2cb201c6f2fc0c36cd8b35aafd148665a7129cf078175f3ea9a35c58036f7034"
+    sha256 cellar: :any,                 arm64_sonoma:  "996d0f26257ea8a055adf608b5cf7b7bac514b9c948ef931db5b5c426436a54b"
+    sha256 cellar: :any,                 ventura:       "929078ed1c05ec6002ef36c59998b789c6625fa4be7186d7e2d9fee0e04587a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d64eea8709a44547ee0609e89036adb090a7013f3a902d9a72ccf84295fe9108"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
