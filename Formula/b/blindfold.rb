@@ -1,8 +1,8 @@
 class Blindfold < Formula
   desc "Generator of .gitignore files using gitignore.io"
   homepage "https://github.com/Eoin-McMahon/Blindfold"
-  url "https://github.com/Eoin-McMahon/blindfold/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "b3d515cf57e1925bd027be4431d856708c808a2288023b9019008b1afb0d8730"
+  url "https://github.com/Eoin-McMahon/blindfold/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "526ca5d4361a24ea6cb3422515c04519d2b738bab86de52358099ec37a61d59d"
   license "MIT"
   head "https://github.com/Eoin-McMahon/Blindfold.git", branch: "master"
 
@@ -35,6 +35,18 @@ class Blindfold < Formula
 end
 
 __END__
+diff --git a/Cargo.toml b/Cargo.toml
+index 5d0c964..32b693e 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -1,6 +1,6 @@
+ [package]
+ name = "blindfold"
+-version = "1.1.0"
++version = "1.2.0"
+ authors = ["Eóin McMahon <eoin.mcmahon.dev@gmail.com>"]
+ edition = "2018"
+ description ="gitignore file generator written in rust"
 diff --git a/src/cli.rs b/src/cli.rs
 index 8205fb4..fd54e5f 100644
 --- a/src/cli.rs
