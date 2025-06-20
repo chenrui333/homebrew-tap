@@ -63,10 +63,14 @@ brew install --cask <tool>
 - `brotab`
 - `brunette`
 - `btczee`
+- `bunster`
 - `bytebox`
+- `c4go`
 - `cai`
+- `cargo-benchcmp`
 - `cargo-careful`
 - `cargo-clone`
+- `cargo-component`
 - `cargo-geiger`
 - `cargo-readme`
 - `carton`
@@ -87,6 +91,7 @@ brew install --cask <tool>
 - `darker`
 - `dbee`
 - `dbin`
+- `ddev`
 - `dela`
 - `docker-debug`
 - `doit`
@@ -147,10 +152,12 @@ brew install --cask <tool>
 - `holo-cli`
 - `horusec`
 - `hostctl`
+- `huber`
 - `humioctl`
 - `iftree`
 - `illa`
 - `imgcat`
+- `incus-compose`
 - `infraspec`
 - `ip2d`
 - `ips`
@@ -202,6 +209,7 @@ brew install --cask <tool>
 - `mnamer`
 - `molotov`
 - `mpfshell`
+- `mqtt-cli`
 - `nanodbc`
 - `narr`
 - `nest-cli`
@@ -291,6 +299,7 @@ brew install --cask <tool>
 - `strimzi-kafka-cli`
 - `summon`
 - `surgeon`
+- `tantivy-cli`
 - `tclint`
 - `tenderly`
 - `termsvg`
@@ -324,6 +333,7 @@ brew install --cask <tool>
 - `wallust`
 - `wedl`
 - `werk`
+- `xcpkg`
 - `xmlformatter`
 - `yajsv`
 - `yeetfile`
