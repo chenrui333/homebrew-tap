@@ -6,6 +6,14 @@ class Blindfold < Formula
   license "MIT"
   head "https://github.com/Eoin-McMahon/Blindfold.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebef06ba6e4c47b49ba089f2faa3f90bb56c5ca7a7abc12b6aaec5fd3309b72a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78d3314f7543b97a893c34b1487f354eaa07b9d96e1fc7c8ec10a38630354643"
+    sha256 cellar: :any_skip_relocation, ventura:       "1ee56105052adcf92bf62f042c1f05743add140faaf53a9fc85f382b2ad2a0ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b0c68e137a5011b79ac725055b42676b8acaa9547b6fc38df08e96f4939fcc2"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
