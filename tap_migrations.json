@@ -63,6 +63,7 @@
   "rasterio": "homebrew/core",
   "restish": "homebrew/core",
   "rustywind": "homebrew/core",
+  "sherif": "homebrew/core",
   "shuttle": "homebrew/core",
   "snowflake-cli": "homebrew/core",
   "soft-serve": "homebrew/core",
