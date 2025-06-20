@@ -285,7 +285,6 @@ brew install --cask <tool>
 - `secco`
 - `sgpt`
 - `sheetui`
-- `sherif`
 - `shiroa`
 - `shopify-cli`
 - `sig`
