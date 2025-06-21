@@ -24,9 +24,9 @@ class Spok < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/FollowTheProcess/spok/cli/cmd.version=#{version}
-      -X github.com/FollowTheProcess/spok/cli/cmd.commit=#{tap.user}
-      -X github.com/FollowTheProcess/spok/cli/cmd.buildDate=#{time.iso8601}
+      -X go.followtheprocess.codes/spok/cli/cmd.version=#{version}
+      -X go.followtheprocess.codes/spok/cli/cmd.commit=#{tap.user}
+      -X go.followtheprocess.codes/spok/cli/cmd.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/spok"
   end
