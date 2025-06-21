@@ -8,10 +8,10 @@ class Blindfold < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebef06ba6e4c47b49ba089f2faa3f90bb56c5ca7a7abc12b6aaec5fd3309b72a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78d3314f7543b97a893c34b1487f354eaa07b9d96e1fc7c8ec10a38630354643"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ee56105052adcf92bf62f042c1f05743add140faaf53a9fc85f382b2ad2a0ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b0c68e137a5011b79ac725055b42676b8acaa9547b6fc38df08e96f4939fcc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "877eca16cbd5d3f6e73e6bca90e6d4d9e6d03f1fb8448d6e8353eb1e2b38aa04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d764a7d46151e5059571c9a7d85388d16605e16a3a74d72391e793922cc0e7d"
+    sha256 cellar: :any_skip_relocation, ventura:       "227f7227b14333a8bf12279df1f9fef9d3f3c3b282770c0a992e36a47e9e344e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cafd2904cccfb3d60ca0def9e7687375f19aefc62b888607a2af866fba93e3e"
   end
 
   depends_on "pkgconf" => :build
