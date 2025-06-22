@@ -40,6 +40,7 @@ brew install --cask <tool>
 - `aoc-cli`
 - `apkeep`
 - `arduino-language-server`
+- `arp-scan-rs`
 - `asciinema`
 - `asm-lsp`
 - `asmfmt`
@@ -54,6 +55,7 @@ brew install --cask <tool>
 - `backport`
 - `balcony`
 - `blade-formatter`
+- `blindfold`
 - `blue`
 - `blueutil-tui`
 - `blush`
@@ -79,6 +81,7 @@ brew install --cask <tool>
 - `certok`
 - `cf-vault`
 - `cf2pulumi`
+- `checkpwn`
 - `cloudlens`
 - `cmdx`
 - `cocainate`
@@ -154,6 +157,7 @@ brew install --cask <tool>
 - `hostctl`
 - `huber`
 - `humioctl`
+- `hygg`
 - `iftree`
 - `illa`
 - `imgcat`
