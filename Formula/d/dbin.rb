@@ -2,8 +2,8 @@
 class Dbin < Formula
   desc "Easy to use, easy to get, suckless software distribution system"
   homepage "https://github.com/xplshn/dbin"
-  url "https://github.com/xplshn/dbin/archive/refs/tags/1.5.tar.gz"
-  sha256 "7ed71d229a5de289f070a5a41d736480f15d80cd5afe26d8760a712720f8954d"
+  url "https://github.com/xplshn/dbin/archive/refs/tags/1.6.tar.gz"
+  sha256 "fa9e9d6bd3e209b755d79536f083a1c12751cb346a5c0a95337b403109841642"
   # RABRMS is not a valid SPDX-License-Identifier
   # license any_of: ["ISC", "RABRMS"]
   license "ISC"
