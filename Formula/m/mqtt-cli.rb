@@ -8,10 +8,10 @@ class MqttCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cf35d92f0fa91c3ab7c30e1557fe69dcd47699a1c0387c370614d0b5b3bf5c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "854c75164866e987a5632c732d0efa427bfa6afee382412c6409a3c1d0a8b953"
-    sha256 cellar: :any_skip_relocation, ventura:       "ac4c2291b492e96e4aa3adefc5d334ba2b93f4f1af2aa4f83223d130463ae2a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f8dea37e99aa9483f7f36bc32f7944d13f49ac0e99f74ebf211a4c729651965"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0658034f6826bd2a6fc7215a21a003b9c0559524815c4662f3f12d2e64e1b99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b1085d243d1785c0ae3b0f484c172b9a32f58d3ee4becc2407280f721cbd602"
+    sha256 cellar: :any_skip_relocation, ventura:       "59429bba498ecbd71b0fa6afbe730cbbec124154abe5b67944dfdf0ee7ab9c39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7d0fcfdbad91357d08ff98cbb9522ed3f71d8e35afffbad36db441be2b5bf6"
   end
 
   depends_on "openjdk"
