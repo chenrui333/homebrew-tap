@@ -290,6 +290,6 @@ class Readmeai < Formula
     #     "lineno": 276
     # }
     output = shell_output("#{bin}/readmeai --help 2>&1")
-    assert_match "Configuration file loaded", output
+    assert_match "Succesfully loaded cofing", output
   end
 end
