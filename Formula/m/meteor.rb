@@ -41,10 +41,8 @@ class Meteor < Formula
       logfile = testpath/"meteor.log"
       pid = spawn bin/"meteor", out: logfile.to_s, err: logfile.to_s
       sleep 1
-      assert_match "Select the type of change you're committing", logfile.read
-    ensure
       Process.kill("TERM", pid)
-      Process.wait(pid)
+      assert_match "Select the type of change that you're committing", logfile.read
     end
   end
 end
