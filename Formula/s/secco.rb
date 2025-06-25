@@ -7,10 +7,10 @@ class Secco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb9f0104c754c0378fc97b0657f99dc183e922c0b0ec17dbdab22af889a19e9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c7589c6f78ae4a1d41dfcfa571b6f873f89c22e013c00d812c117d3a173ef69"
-    sha256 cellar: :any_skip_relocation, ventura:       "e784881be7c0495cd020efb4201504ca9cbdd4e919696feb47c4d3d224932258"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a62f0cca61f79b045532dec69e578136990e775dfab604bbb8d09beb020a8e6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b61732c740badfadad91c726d0e64787dab3a7c6a84a1245f1d24e84d979c0c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ef8c539769e7bc80425ba537798575869c8458ae58db2b67263d33841b65d4f"
+    sha256 cellar: :any_skip_relocation, ventura:       "e357de9add7422e2ad5dfb967631347a8876dd57d7e0e350384b74c10e15765a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e7f347d4b7bdea6b80fd7a133387aa4df27fb4c88525c1877ef988a00a2cec6"
   end
 
   depends_on "node"
