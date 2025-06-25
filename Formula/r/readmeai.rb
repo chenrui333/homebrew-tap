@@ -9,11 +9,10 @@ class Readmeai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ed22ec83cdb325dfd6587cf3e0ded26d8178f69517abfb834c214faef67eba47"
-    sha256 cellar: :any,                 arm64_sonoma:  "6865541145335d3c09cbc99fc5d5f27bc1596f969300829ccf4ed684b37270f9"
-    sha256 cellar: :any,                 ventura:       "b0ef5ad4195713973fc394453b3ac79dc31d74b68f74dea0ee6aa1fab2e9a43c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c758e0e4ea58e71cc51ec0e2014c736eb73f796194dce2aa691114aa2bc0852"
+    sha256 cellar: :any,                 arm64_sequoia: "f3d5182935297c8db3ee28d1c7961c4241df20dc38ddef00fe49d78df8cc210d"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb00437ca76e1f9dd2229cb5b7d28edbf2abc223c458fd04f449780b918d61a9"
+    sha256 cellar: :any,                 ventura:       "0be54afa57632b8ae94fefa14191631a3f7bf05e0ce7b35a3cc58b27a5eac149"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f87386fe5fb0d187c05d43dfef3c4a7272f9dbdcd6ea09116b76dd7588a586c0"
   end
 
   depends_on "rust" => :build # for pydantic-core
