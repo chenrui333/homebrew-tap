@@ -1,8 +1,8 @@
 class Nhost < Formula
   desc "Developing locally with the Nhost CLI"
   homepage "https://docs.nhost.io/development/cli/overview"
-  url "https://github.com/nhost/cli/archive/refs/tags/v1.29.9.tar.gz"
-  sha256 "d104ae870f3afc2f94bd453423b1e5cf1b4b292a63bf4368a46f559c0ad3b0f6"
+  url "https://github.com/nhost/cli/archive/refs/tags/v1.30.0.tar.gz"
+  sha256 "eb335a0f6c5a5a4e695de50c3b1195ae76add9d07b593879e94d7ac398acb170"
   license "MIT"
   head "https://github.com/nhost/cli.git", branch: "main"
 
