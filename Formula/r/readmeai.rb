@@ -215,6 +215,12 @@ class Readmeai < Formula
     sha256 "d017a4997ee50c91fd5466cef416231bb82177b93b029906cefc542ce14c35ac"
   end
 
+  # version patch
+  patch do
+    url "https://github.com/eli64s/readme-ai/commit/70edf339e6379a26a4955752a1516227209c9f36.patch?full_index=1"
+    sha256 "d75a161414942db6a753fcaef22098718f5d499cf7375d169cc3228fd078df07"
+  end
+
   def install
     # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
