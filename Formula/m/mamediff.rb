@@ -1,8 +1,8 @@
 class Mamediff < Formula
   desc "TUI editor for managing unstaged and staged Git diffs"
   homepage "https://github.com/sile/mamediff"
-  url "https://github.com/sile/mamediff/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "41ccb6db241f4b0bee5a2b7a95735d15bcc30f1d7e9da54fc66e5c2f8e680fe0"
+  url "https://github.com/sile/mamediff/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "db69b4c1041a77a767ebb3e05e627ed7f50f09ae399820ca70137cbffa448e2e"
   license "MIT"
   head "https://github.com/sile/mamediff.git", branch: "main"
 
