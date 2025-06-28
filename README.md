@@ -89,6 +89,7 @@ brew install --cask <tool>
 - `cohctl`
 - `config-file-validator`
 - `container2wasm`
+- `critcmp`
 - `crlfmt`
 - `cueimports`
 - `darker`
