@@ -27,13 +27,6 @@ class Morpheus < Formula
     depends_on "libomp"
   end
 
-  # Suppress clang build error for `missing-template-arg-list-after-template-kw`
-  # upstream pr ref, https://gitlab.com/morpheus.lab/morpheus/-/merge_requests/162
-  patch do
-    url "https://gitlab.com/morpheus.lab/morpheus/-/commit/f725c3061c2f762f239c4c6e365e908c0f2816e7.diff"
-    sha256 "3464785550fe4f143eb3de601ee6e169421b2fbbaad5d1c2a594700bc05e21e4"
-  end
-
   def install
     # has to build with Ninja until: https://gitlab.kitware.com/cmake/cmake/-/issues/25142
     args = ["-G", "Ninja"]
