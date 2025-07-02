@@ -9,10 +9,10 @@ class Meteor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5da46e859090c79f3cbe7d2705185c72abc95327c856757cc55a4d76e31c71c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee7fee4de98556c234f97aecf32bbf347f3dc426c23d9726c3a11fc0839f2c84"
-    sha256 cellar: :any_skip_relocation, ventura:       "c9ee7e5a203326102f17eddf5cafbc18b7b649c2eddd7228c422c00aa2ce66f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28d217684a21e4a0518904220536ea8b92671af2a2c9e078fee0812f4afda0bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89b7c051c826ad6287d605a07e6b337ccea2f32e7a7dff322038df6d4a66ae0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb7b929d98fc9d047ba2146dbebc66f48595febcdda838b7a0aba5a62b154cb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "de7a2b56f37e597210feac42873d4efebf3ac4009ced3c10e9b979e4aff05bcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcd9da36343b69c9ee72aa425c160e34f7315ad8c957a948148e9630ff015d61"
   end
 
   depends_on "go" => :build
