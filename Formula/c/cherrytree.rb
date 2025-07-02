@@ -20,6 +20,7 @@ class Cherrytree < Formula
   depends_on "cairomm@1.14"
   depends_on "fmt"
   depends_on "fribidi"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "glibmm@2.66"
   depends_on "gspell"
@@ -44,7 +45,6 @@ class Cherrytree < Formula
   on_macos do
     depends_on "at-spi2-core"
     depends_on "enchant"
-    depends_on "gdk-pixbuf"
     depends_on "gettext"
     depends_on "harfbuzz"
   end
@@ -58,11 +58,16 @@ class Cherrytree < Formula
   def post_install
     system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
     system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+    system "#{Formula["gdk-pixbuf"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
   end
 
   test do
     # (cherrytree:46081): Gtk-WARNING **: 17:33:48.386: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    # Set environment variables to help with icon theme and display issues
+    ENV["XDG_DATA_DIRS"] = "#{HOMEBREW_PREFIX}/share"
+    ENV["GDK_PIXBUF_MODULE_FILE"] = "#{Formula["gdk-pixbuf"].opt_lib}/gdk-pixbuf-2.0/2.10.0/loaders.cache"
 
     (testpath/"homebrew.ctd").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
