@@ -4,7 +4,7 @@ class Infraspec < Formula
   homepage "https://github.com/robmorgan/infraspec"
   url "https://github.com/robmorgan/infraspec/archive/refs/tags/v0.0.6.tar.gz"
   sha256 "e06992bc160674a7cba9642177284811d511760798dd58bd7d1ec6d9d5a69987"
-  # license "Fair" # license question, https://github.com/robmorgan/infraspec/issues/4
+  license "Apache-2.0"
   head "https://github.com/robmorgan/infraspec.git", branch: "main"
 
   bottle do
