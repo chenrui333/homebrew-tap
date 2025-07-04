@@ -18,11 +18,14 @@ class Infraspec < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/infraspec"
+    ldflags = "-s -w -X github.com/robmorgan/infraspec/internal/build.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/infraspec"
+
+    generate_completions_from_executable(bin/"infraspec", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
-    system bin/"infraspec", "--help"
+    assert_match version.to_s, shell_output("#{bin}/infraspec --version")
 
     (testpath/"test.feature").write <<~EOS
       Feature: Test infrastructure
