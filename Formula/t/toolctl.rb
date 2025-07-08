@@ -1,8 +1,8 @@
 class Toolctl < Formula
   desc "Tool to control your tools"
   homepage "https://github.com/toolctl/toolctl"
-  url "https://github.com/toolctl/toolctl/archive/refs/tags/v0.4.14.tar.gz"
-  sha256 "bd346d2bbff16d25c16f619e7e844f54261e0fc1b9525176b66cce4578a5d821"
+  url "https://github.com/toolctl/toolctl/archive/refs/tags/v0.4.15.tar.gz"
+  sha256 "4667b156f11e26bd21661b16ae1eab28aed39f88685c8447a23de038b5a63e40"
   license "MIT"
   head "https://github.com/toolctl/toolctl.git", branch: "main"
 
