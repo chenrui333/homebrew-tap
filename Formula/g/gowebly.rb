@@ -8,10 +8,10 @@ class Gowebly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b882266f7b35d610cfdbf65a64a11703268fe783ebb4bebf46b3a78dfb37fdc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66099b4a282436e75d62f360aa9591a7d518dc5a46b610f08c96857f643b1f92"
-    sha256 cellar: :any_skip_relocation, ventura:       "932d9106da60ab17b4761ac02d0d33669928555d7ef3df89450b5a41c4ee0639"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62384eb932e734615af24d2b01ae12aaaf4eb2adfe28b7d40e6a3084ee1011ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af897b390d3488ddcddec45461973bcd869bc9b1bb42bba571a11b8e5df6d952"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b018a9cc5b5c56caadeb27b0a5d04033993be3d752675b408b1e54d7ea17cae"
+    sha256 cellar: :any_skip_relocation, ventura:       "1cbed5ed2542630e88dfc3ebd425f9ad628b3a7ddd14d363261ea63c93d0d134"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d17d34bc250cae232adc87ea05d1320127a3632fa5b3f43e2e0ece58d8fd9b60"
   end
 
   depends_on "go" => :build
