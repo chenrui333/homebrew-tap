@@ -7,10 +7,10 @@ class YewFmt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a061c0da4d6b7ed1de91398a8f5cd1f958cb1b52692ef7dcdf2cbb2364f40faf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ccb42ae706116e84779c56db8a5f0f3d5a5b471c8dcc8a0c6075400a8e60d7c"
-    sha256 cellar: :any_skip_relocation, ventura:       "128ebb4fde08370938f01e992589ea42c7d0eeded21c5b7f387b28bc332dac4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55817fd96c47a8e1b8089eab7a9217bb8e4f26207cccc8d78126fecb72580847"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb580ee4b0e9a02f5063bd46ba58d771129dd8007c9d94cf4aade36a45fb7694"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7da6df27af14516c57ab60d7c53fe00c13f42320a3bc511ea373f2272ace6357"
+    sha256 cellar: :any_skip_relocation, ventura:       "15e8fa5228f2e5ca3e0be8f5218dbe027bdb174413061eff5f2b820822fecbb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66955dbedadeaa1c58e6b948f7bbd7777950c72c5d886272c29cf03f27475311"
   end
 
   depends_on "rust" => :build
