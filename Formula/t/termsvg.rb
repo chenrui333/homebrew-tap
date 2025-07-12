@@ -1,8 +1,8 @@
 class Termsvg < Formula
   desc "Record, share and export your terminal as a animated SVG image"
   homepage "https://github.com/MrMarble/termsvg"
-  url "https://github.com/MrMarble/termsvg/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "b1245a32984aed094ea80962ee7ad771b4b0e862b24403c24a91fa3f81a19e56"
+  url "https://github.com/MrMarble/termsvg/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "a8352a3b2f12de97a5b2935885a1938633f46b02a4965efa6f1117de4b9cce83"
   license "GPL-3.0-only"
   head "https://github.com/MrMarble/termsvg.git", branch: "master"
 
