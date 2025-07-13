@@ -3,8 +3,8 @@ class Vsg < Formula
 
   desc "VHDL Style Guide"
   homepage "https://github.com/jeremiah-c-leary/vhdl-style-guide"
-  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.32.0.tar.gz"
-  sha256 "d3c76723f9718baaa557c876c5514ecead75e3c8f0c1d0d46148a2cdd5a7558a"
+  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.33.0.tar.gz"
+  sha256 "f6eed150f05e76fd3ff10637e84709d2dac369735684f91c5637e03bff66d16d"
   license "GPL-3.0-or-later"
 
   bottle do
