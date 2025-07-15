@@ -1,8 +1,8 @@
 class Wallust < Formula
   desc "Better pywal"
   homepage "https://codeberg.org/explosion-mental/wallust"
-  url "https://codeberg.org/explosion-mental/wallust/archive/3.3.0.tar.gz"
-  sha256 "95f5aeb108e6a9926bb2390b0e9ba3071a5fcd2a4c48e45fc1dfc96a2fd6c20b"
+  url "https://codeberg.org/explosion-mental/wallust/archive/3.4.0.tar.gz"
+  sha256 "2fa1b604a70026ff9ed853cc43bb5d4bed6c17ea1a0cea08563447bd5df5ddfb"
   license "MIT"
 
   bottle do
