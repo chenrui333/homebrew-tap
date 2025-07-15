@@ -2,8 +2,8 @@
 class Cmdx < Formula
   desc "Task runner"
   homepage "https://github.com/suzuki-shunsuke/cmdx"
-  url "https://github.com/suzuki-shunsuke/cmdx/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "22fea7d5b221a3863a6dfd88d949ef499a112c692b9511fbadfe6aa7127a95fc"
+  url "https://github.com/suzuki-shunsuke/cmdx/archive/refs/tags/v2.0.2-0.tar.gz"
+  sha256 "20f0a5303e8302f9043629d0dc7c06ef4d8eaaafa1700a4dd00b199d9f01d997"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/cmdx.git", branch: "main"
 
