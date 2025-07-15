@@ -9,10 +9,10 @@ class Cmdx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a764e0d086c221599bf29b5d5b3102ed3eb6f10768c6ea96679f8bb27d9a554e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "878d78f0754c20c11f6233b1680d1e9a96937bf717645bcdaded1022510bfd44"
-    sha256 cellar: :any_skip_relocation, ventura:       "3b4245b56eab31b0c9b9b3dd23cb29f6043867cfdae344537c1492cd84b11499"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9baaa95151bff3b5034374f007c075ee66c31cddc00967632f97a30bf27fbf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be5bd263cc9edfe399c4e8fd0540addc74e6bb76bb969eb6b69401c5d73be7c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85ad40ef4ffcd713162749a257f31233376a6cd491dab024fb25ba665627e2a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "5ed23451fea9f6bb886a6090a4082bed782ca5cb2b497a17a30626786b3675a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c40b6603ddd407bfef328e7dc65fa14409878bfc24d992c842a42c860895e5f1"
   end
 
   depends_on "go" => :build
