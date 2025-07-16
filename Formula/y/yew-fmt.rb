@@ -1,8 +1,8 @@
 class YewFmt < Formula
   desc "Code formatter for the Yew framework"
   homepage "https://github.com/its-the-shrimp/yew-fmt"
-  url "https://github.com/its-the-shrimp/yew-fmt/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "67d7e5b86b1641a12446da4ab761394765313ea687d16210fbf73934708628c3"
+  url "https://github.com/its-the-shrimp/yew-fmt/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "ff045c8bdd2e03a2e59dd7c58fb80abf6d45cd9f1267641c4aa296ca944112e1"
   license "MIT"
 
   bottle do
