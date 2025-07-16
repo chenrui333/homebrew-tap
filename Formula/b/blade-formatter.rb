@@ -7,10 +7,10 @@ class BladeFormatter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12e1675dc8f326339ec2358c2e1062a7dbfdc077d95f269c1bb2c1f210a378a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b333e5a18e6ea0d617878e3044edd29f5265cd8f5d27a8ff5ff75928e0527fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "c4354a3d3820369fb41d049798c2a50c1477cb1633e4bd7f62b91c60bec32da3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3a69c4d1b772ee73f1ee9346990b613f0a9a79f7116e60916598277fe29e1e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b55150e8fa7aeae6aba5316098d975070a9e2553c44cfcb8e4304ae746eac2eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e94b07b3ac57bd46cb3cc8f8d9da6b0518fe91ab903b4a37eadcbafa18e6a61e"
+    sha256 cellar: :any_skip_relocation, ventura:       "f291e3a81ce4178f27135abd4ee4aa1ef8d55a115b7c4a31a564d7aba5244991"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f57b0d192d87b53500063249a61c0232c36c3647274529b47f77dbd524eb253e"
   end
 
   depends_on "node"
