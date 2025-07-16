@@ -1,8 +1,8 @@
 class BladeFormatter < Formula
   desc "Opinionated blade template formatter for Laravel that respects readability"
   homepage "https://github.com/shufo/blade-formatter"
-  url "https://registry.npmjs.org/blade-formatter/-/blade-formatter-1.42.4.tgz"
-  sha256 "350460597e1d402fdd1ab8996b808b3e9042217fd1ade2b80c2ea35158c9cc5d"
+  url "https://registry.npmjs.org/blade-formatter/-/blade-formatter-1.43.0.tgz"
+  sha256 "d58ab534b61d005f782cb71ed09eb78181a1231de7f6461f73545909d26172d2"
   license "MIT"
 
   bottle do
