@@ -1,8 +1,8 @@
 class Hygg < Formula
   desc "Simplifying the way you read"
   homepage "https://github.com/kruserr/hygg"
-  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.15.tar.gz"
-  sha256 "46422bf7c5d8fcf0cbf0e5a4b7a31a33159f768b8f4eed937505c6a53d0ec945"
+  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.16.tar.gz"
+  sha256 "9b6eb2e3c9f9ffc7fb98637765690dd0e3a7b292c4580c3b236bbc99bfa29e14"
   license "AGPL-3.0-only"
   head "https://github.com/kruserr/hygg.git", branch: "main"
 
