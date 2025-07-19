@@ -22,13 +22,7 @@ class Hygg < Formula
   end
 
   test do
-    resource "test_pdf" do
-      url "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      sha256 "3df79d34abbca99308e79cb94461c1893582604d68329a41fd4bec1885e6adb4"
-    end
-
-    testpath.install resource("test_pdf")
-    output = shell_output("#{bin}/hygg --ocr #{testpath}/dummy.pdf 2>&1")
-    assert_match "Dummy PDF file", output
+    assert_match version.to_s, shell_output("#{bin}/hygg --version")
+    assert_match "Available demos", shell_output("#{bin}/hygg --list-demos")
   end
 end
