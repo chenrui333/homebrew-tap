@@ -24,7 +24,7 @@ class Termsvg < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/termsvg --version")
 
-    output = shell_output("#{bin}/termsvg play nonexist 2>&1", 1)
+    output = shell_output("#{bin}/termsvg play nonexist 2>&1", 80)
     assert_match "no such file or directory", output
   end
 end
