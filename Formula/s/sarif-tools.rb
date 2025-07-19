@@ -9,10 +9,10 @@ class SarifTools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "5e690d96f889344c255d84dd5edbf8c2bb680218f57a316f80145e43bd13ddb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "721709058155d2b06e3b1469d2470a563539abb5d31a8d3b3cc950ba63f2bed8"
-    sha256 cellar: :any,                 ventura:       "3cff60849d309fe7f159e4054951885aa705944d69a39d19babe1dda0b5eff29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c83afe3260a3e8b0aed90dfd8b83e5c8211f80a1003e39f292a4c0148d0590f8"
+    sha256 cellar: :any,                 arm64_sequoia: "4577a739edb60db3387c229fc7bde289d59454d5563aceb00e0a767706541543"
+    sha256 cellar: :any,                 arm64_sonoma:  "351133c157512baaffcefb571677ba1fafd46b482459a46a438214d19b8e03c5"
+    sha256 cellar: :any,                 ventura:       "4012d7442079ac8fe7e4d6585578f1294937bcbb3b6966eb6deef24c18c59596"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e02e021d326d24f1c5d642249fbbb835a42f622a70ae0c1668718344a5c4c22"
   end
 
   depends_on "cmake" => :build
