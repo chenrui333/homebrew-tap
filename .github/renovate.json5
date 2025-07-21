@@ -1,15 +1,15 @@
 {
-  "extends": [
-    "config:recommended",
-    "docker:pinDigests",
-    "helpers:pinGitHubActionDigests",
-    ":configMigration",
-    ":pinDevDependencies"
+  extends: [
+    'config:recommended',
+    'docker:pinDigests',
+    'helpers:pinGitHubActionDigests',
+    ':configMigration',
+    ':pinDevDependencies',
   ],
   commitMessageSuffix: ' in {{packageFile}}',
   automerge: true,
   automergeStrategy: 'rebase',
-  baseBranches: [
+  baseBranchPatterns: [
     'main',
   ],
   platformAutomerge: true,
