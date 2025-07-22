@@ -1,8 +1,8 @@
 class Dela < Formula
   desc "Task runner"
   homepage "https://github.com/aleyan/dela"
-  url "https://static.crates.io/crates/dela/dela-0.0.5.crate"
-  sha256 "03509398a70218c059f2a9d19d1ddeb717faf463152df95336db1ee1883c3880"
+  url "https://static.crates.io/crates/dela/dela-0.0.6.crate"
+  sha256 "8bacccfd80a9d65db3c1209cf1cbb391ec1c02952416a05ca8c62536553912f1"
   license "MIT"
 
   bottle do
@@ -28,7 +28,7 @@ class Dela < Formula
     EOS
 
     assert_equal <<~EOS.strip, shell_output("#{bin}/dela list").strip
-      make (1) — Makefile
+      make — Makefile
         all                   - Hello, World!
     EOS
   end
