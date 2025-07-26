@@ -1,8 +1,8 @@
 class MqttCli < Formula
   desc "CLI for connecting various MQTT clients supporting MQTT 5.0 and 3.1.1"
   homepage "https://hivemq.github.io/mqtt-cli/"
-  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.40.2.tar.gz"
-  sha256 "f87ea8a24939d9c69f831f20712b16df213f9ba1dae4c693d1c2798696bc6db4"
+  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.41.0.tar.gz"
+  sha256 "b860913097db5a7f1adb164c9c9dc828e7482f3b7e48b6336768bf328c2bc16e"
   license "Apache-2.0"
   head "https://github.com/hivemq/mqtt-cli.git", branch: "master"
 
@@ -15,11 +15,6 @@ class MqttCli < Formula
   end
 
   depends_on "openjdk"
-
-  patch do
-    url "https://github.com/hivemq/mqtt-cli/commit/4aa5809364717a840a6f0de47795313a58642ff1.patch?full_index=1"
-    sha256 "f9d8f2b5c15ba66fe2dc5eafd8c2cb88e259e35b8fb2246c61eb4eafd7ba2519"
-  end
 
   # update toolchain to Java 24
   patch :DATA
