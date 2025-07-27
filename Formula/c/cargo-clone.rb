@@ -8,10 +8,11 @@ class CargoClone < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "3c70399221e3d3b32a7a3c698ee24993f051f9ac8b0c682e2bfc124ea4c647d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "35021dd5d224761273dffd53767f733c37f9cd4fb9868ebf91268a904e000b7c"
-    sha256 cellar: :any,                 ventura:       "4b866449f2101ea7053cfaa471535d8f38d84992091a5371c23658815926bfc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9802c0d6dc309e126aefa26fdb003f99cf525e68be89c3c0f76576bf385212"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "aac5603a816b3b7883409edf85040c73d9ef70f970ea900afa2093e9cdef350a"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc91e5db640d59dd32541b6a311601b1740d7710c0e8b85457a57011cf8592c9"
+    sha256 cellar: :any,                 ventura:       "b3ffa2a748845e9c3980777d2849a6f19640a759c07865f3d136a8ac08d409d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bf5dedb7f46b7b7c79840c0651ab121ef036cfc0dc151982a7f06fcda88b134"
   end
 
   depends_on "pkgconf" => :build
