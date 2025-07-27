@@ -9,11 +9,11 @@ class Balcony < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "bf13c36bd45dbea5ad0a456de860e8d2c2968022d49386f4824006b9448939a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2e3507803b07d3c7c4cc05fd06a41dcd0d4950d50152625eda4837ef927e145"
-    sha256 cellar: :any,                 ventura:       "ab46364bd23ee3794006d83de2e43d99fe8ba628b9ebda6c11fba2b35765748d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42ed3b212246df6d58f7b359caa64f5ab5fd75443e3e04b2d04f0e61af676d80"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "95222e654bfaa0db8d8e6ca4eaebb4e652f35e0dcc9c9ff8cc66ff966051d707"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1c7c00f7be41c1aed073a7421d5f9058c470c96938b90cb3441723502c231ac"
+    sha256 cellar: :any,                 ventura:       "2a0a713b8c8385fe4c0bba4cd2ce45593f68e3f25d62c9463aa788a74689cab3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea880b742e0d93e2dad0ebc8d322499a205ca18c82c3ba71108370c0b0c7e652"
   end
 
   depends_on "libyaml"
