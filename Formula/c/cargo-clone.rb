@@ -20,6 +20,7 @@ class CargoClone < Formula
 
   depends_on "openssl@3"
 
+  uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
