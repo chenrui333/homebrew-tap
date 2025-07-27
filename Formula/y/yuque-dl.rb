@@ -7,10 +7,10 @@ class YuqueDl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "276ca23021dd9fed6648a8ea7bb511d82cafc9a5e7d008da551291340ac080c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "770eec23a229705293bab23d3f9b50a2bd871b03b1d9cef17e92c7fee401c59a"
-    sha256 cellar: :any,                 ventura:       "ce289160e3ea0e93684acaba7132935f291b3035944a29df683d5e7cb0ca6ae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cf6aa39d8962a91741c714188221ac529a6180891fba3d35d9f9a2ac5dad381"
+    sha256 cellar: :any,                 arm64_sequoia: "932c8a8a2caeefd1d17c1e5d8de5ea0d45cfe751e9eaab404638290587c1d297"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5a6410bad99c006e824f55f5bf9e2bb23d3b99a4e3033730fff503cfc39c17d"
+    sha256 cellar: :any,                 ventura:       "8ac160a30391d920758d82185923fb02c909d37c4cb80640dc7ba56e4dfe03fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd58e5805f410119743397b51f86db3c87d02e53c51e71fa7b7329338641cac4"
   end
 
   depends_on "node"
