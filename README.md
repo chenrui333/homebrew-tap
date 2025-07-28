@@ -71,7 +71,6 @@ brew install --cask <tool>
 - `cai`
 - `cargo-benchcmp`
 - `cargo-careful`
-- `cargo-clone`
 - `cargo-geiger`
 - `cargo-readme`
 - `carton`
