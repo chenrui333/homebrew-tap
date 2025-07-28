@@ -1,8 +1,8 @@
 class Container2wasm < Formula
   desc "Container to WASM converter"
   homepage "https://ktock.github.io/container2wasm-demo/"
-  url "https://github.com/container2wasm/container2wasm/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "f506f9bbab7dc22f6aee5e408e1444f7df4974cec3386c1acef9751ed1dca18b"
+  url "https://github.com/container2wasm/container2wasm/archive/refs/tags/v0.8.3.tar.gz"
+  sha256 "8e67b5e0d204ecf6ed2cf5e7abbd4dfe8e606568f1980193e5048aed0dd8c376"
   license "Apache-2.0"
   head "https://github.com/container2wasm/container2wasm.git", branch: "main"
 
