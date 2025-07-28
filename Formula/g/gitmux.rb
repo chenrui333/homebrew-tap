@@ -1,8 +1,8 @@
 class Gitmux < Formula
   desc "Git in your tmux status bar"
   homepage "https://github.com/arl/gitmux"
-  url "https://github.com/arl/gitmux/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "c62b180415c272743d01531b911091b9c35911be4ec4aae3e7bfceddf5094f6c"
+  url "https://github.com/arl/gitmux/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "6657fceefbee75565130ba971035610c7b71397a681fef2e58fc582b27fb5ed8"
   license "MIT"
   head "https://github.com/arl/gitmux.git", branch: "main"
 
