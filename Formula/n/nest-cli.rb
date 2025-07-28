@@ -7,10 +7,10 @@ class NestCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec9b60bd462058c143546cc2b4c8d5107f611f1ab36066bb2cbda5b3a863b7fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "328a9c0eed8af32446d3afd8e1b0ee3cbd2b65f5f376e0541bbc93346dbee623"
-    sha256 cellar: :any_skip_relocation, ventura:       "571ba1117487feba079957d3a3d3d4b35d2b6f4e51c264449757d7e86b237963"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "847279d91b5278957b4a619942926a2597e655a9eb6853de368069caa49ff370"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9218317e561aba4d98c1d38523ddbca20ae6afaea7200f4b6080455c0d08c84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f50a5596701dd1f5b2082f40750e687777ad9d07dcba945ea02888b26cc30c05"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b5cee0b21cc4c69dba1f954327e24f896941b4d7bd67c6c0f7553c6778a8f96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8a8b29fc2071303792f1ac9c28233b5b881bf60911b434638769e126e130964"
   end
 
   depends_on "node"
