@@ -2,8 +2,8 @@
 class Hf < Formula
   desc "Cross-platform hidden file library and utility"
   homepage "https://sorairolake.github.io/hf/book/index.html"
-  url "https://github.com/sorairolake/hf/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "30b4475571c3191f8b7cc229da5d21490ae5fee4d67455818d8f7eee779d1a1a"
+  url "https://github.com/sorairolake/hf/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "3b2920e53ed5628b5ab44ab1400835a3ead1c0b7fe73722b1512a3ca4e41c6d9"
   license "Apache-2.0"
 
   bottle do
