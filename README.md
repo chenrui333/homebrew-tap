@@ -34,7 +34,6 @@ brew install --cask <tool>
 - `abc`
 - `ai-context`
 - `aiac`
-- `aiken`
 - `alacritty`
 - `amoco`
 - `aoc-cli`
