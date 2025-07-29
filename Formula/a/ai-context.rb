@@ -2,8 +2,8 @@
 class AiContext < Formula
   desc "CLI tool to produce MD context files from many sources"
   homepage "https://github.com/Tanq16/ai-context"
-  url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.9.tar.gz"
-  sha256 "4d05cb8e19484a154919b86a043c96f846bf469966ce45c5a8cc292814a7c523"
+  url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.10.tar.gz"
+  sha256 "d776109efd9c4fb942252ec30fcc93a38045046cafc4c1208d398a5f14374881"
   license "MIT"
   head "https://github.com/Tanq16/ai-context.git", branch: "main"
 
