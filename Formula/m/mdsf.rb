@@ -2,8 +2,8 @@
 class Mdsf < Formula
   desc "Format, and lint, markdown code snippets using your favorite tools"
   homepage "https://github.com/hougesen/mdsf"
-  url "https://github.com/hougesen/mdsf/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "159bd8cd2588ed44af7f9bc2a4f72c9a70a25d7c30aa6eb289b294a7f4ec0049"
+  url "https://github.com/hougesen/mdsf/archive/refs/tags/v0.10.4.tar.gz"
+  sha256 "6ffaaada50f70e9235b7536b6b1f02fdb97b8b171408a338cfc0434bcafcea39"
   license "MIT"
   head "https://github.com/hougesen/mdsf.git", branch: "main"
 
