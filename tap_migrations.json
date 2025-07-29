@@ -1,5 +1,6 @@
 {
   "addons-linter": "homebrew/core",
+  "aiken": "homebrew/core",
   "alejandra": "homebrew/core",
   "algolia": "homebrew/core",
   "api-linter": "homebrew/core",
