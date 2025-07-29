@@ -6,6 +6,14 @@ class CargoDeadlinks < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/deadlinks/cargo-deadlinks.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f157fb00413be1f6ebc8ebdae777069c5725104d67ab74d6b61befa4dfca13fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7729b8339b882dc76d6144ca6d95f0b52126745308429b2f3242d7494c482378"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3bffdc5bc224e00b54b3a3086b63eba209a7ec74545e71c539338e2f953f2f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddce268bcccca22f7ff4ae58e367f3d019c595eccf191bff6dfe44698cf5696c"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
