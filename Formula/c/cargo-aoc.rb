@@ -6,6 +6,14 @@ class CargoAoc < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gobanos/cargo-aoc.git", branch: "v0.3"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3c47e6da3f08966a016d3397667886820d3125b61932d18ea926402ea96a537"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8515954ccd679c37a68b771c3ea181ad59eeafa669bc38d9e8718c4700a82a3b"
+    sha256 cellar: :any_skip_relocation, ventura:       "926d22164c7adb1af94f0fbd47bdafae772686ec8785b9382d5bd993cb2afed4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ee4a0796a590431fa4371de9be9d9c01d5d15f5c92f5aa62e6e44ae867fb9b4"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
