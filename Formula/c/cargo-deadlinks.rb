@@ -1,0 +1,39 @@
+class CargoDeadlinks < Formula
+  desc "Cargo subcommand to check rust documentation for broken links"
+  homepage "https://github.com/deadlinks/cargo-deadlinks"
+  url "https://github.com/deadlinks/cargo-deadlinks/archive/refs/tags/0.8.1.tar.gz"
+  sha256 "1557b197eb212c2f7e9530f382627b732ffcb14410109bf26cacaab28b26bddf"
+  license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/deadlinks/cargo-deadlinks.git", branch: "master"
+
+  depends_on "rust" => :build
+  depends_on "rustup" => :test
+
+  def install
+    system "cargo", "install", *std_cargo_args
+  end
+
+  test do
+    # Show that we can use a different toolchain than the one provided by the `rust` formula.
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    ENV.prepend_path "PATH", Formula["rustup"].bin
+    # Switch the default toolchain to nightly
+    system "rustup", "default", "nightly"
+    system "rustup", "set", "profile", "minimal"
+    system "rustup", "toolchain", "install", "nightly"
+
+    assert_match version.to_s, shell_output("cargo deadlinks --version")
+
+    (testpath/"docs").mkpath
+    (testpath/"docs/index.html").write <<~HTML
+      <!DOCTYPE html>
+      <html>
+        <body>
+          <a href="https://example.com">Valid Link</a>
+        </body>
+      </html>
+    HTML
+
+    system "cargo", "deadlinks", "--dir", testpath/"docs"
+  end
+end
