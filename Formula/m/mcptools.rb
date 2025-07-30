@@ -6,6 +6,14 @@ class Mcptools < Formula
   license "MIT"
   head "https://github.com/f/mcptools.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ec0479ac2b3c9c1266ba1c0beb4aee1784e974d46031f714fe98f42f5557ad9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61dd379ad1a0d48b6353fd5ddcf816050dc865beae7012cd83b45c1a9fc3b185"
+    sha256 cellar: :any_skip_relocation, ventura:       "d281d0b902fd9615893c76a4d22693abd1b89be95c3b1d406b512c7b10ab7f39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7eacb9d803d795e977b5470e5b6b7d3467563d81e6953b28ea34bc39fa8cf41"
+  end
+
   depends_on "go" => :build
 
   def install
