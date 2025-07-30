@@ -13,10 +13,10 @@ class Nhost < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c9b02e62127c19b5bd6df6d48b90135a2ff98679037fc1ed0f1bf68a4aa42e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eaf2b58290ec6bb58ca0aa45de9f9f916694df0fc5d059d6105b7f90f6846d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "7c19d9d73bc5d5d1b3313b6066905ebc8f9df34f0cb596564439b952db842538"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8889612d403e0f60a0a67593ec88f7448597fee13bb740a01dc94023f72eba59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d9c8cc2a88cb727efedf8ace07149df7da732ab9ee07723350f15c262dfae3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de88f0cad3a8bdd7f67224b957ba5fa39cf4842cd79f56dd35e315a232693080"
+    sha256 cellar: :any_skip_relocation, ventura:       "efcf0ba64ab39633c5d84534f45dda16a027f3dd658688c21daaea6b551016d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a44cf45295c6b99bd8bb962fd6d691fee1e726de38e3aa90bf47ea022c0fde84"
   end
 
   depends_on "go" => :build
