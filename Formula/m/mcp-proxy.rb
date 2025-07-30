@@ -7,6 +7,14 @@ class McpProxy < Formula
   sha256 "5d113da6c965bef04202ed2525c6642cfbb786e2517fff8b7c209d58d5a6d00e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "b3bb68230c5916ad44277bc9241656606c0a0c596ff34f57856a8dd1c22b9644"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a6a85d49a501860cf93e6f905bef27bb3cf2ad788888e14f65ac0855d6565cb"
+    sha256 cellar: :any,                 ventura:       "7015348e65371676b5feed0f102174b371349836389f489b01aac1e7f5983c1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a57c6185b62086e3fffa618bd1afe02de088f010a40ce3527c19296f79a1703"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for pydantic_core
   depends_on "python@3.13"
