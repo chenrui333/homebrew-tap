@@ -68,8 +68,10 @@ brew install --cask <tool>
 - `bytebox`
 - `c4go`
 - `cai`
+- `cargo-aoc`
 - `cargo-benchcmp`
 - `cargo-careful`
+- `cargo-deadlinks`
 - `cargo-geiger`
 - `cargo-readme`
 - `carton`
@@ -119,6 +121,7 @@ brew install --cask <tool>
 - `fortran-linter`
 - `foy`
 - `fsociety`
+- `fx-upscale`
 - `gemini-cli`
 - `ghfetch`
 - `gignr`
@@ -198,6 +201,8 @@ brew install --cask <tool>
 - `markpdf`
 - `matcha`
 - `mcman`
+- `mcp-proxy`
+- `mcptools`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
