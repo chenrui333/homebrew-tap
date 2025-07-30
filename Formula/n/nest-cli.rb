@@ -1,8 +1,8 @@
 class NestCli < Formula
   desc "CLI tool for Nest applications"
   homepage "https://nestjs.com/"
-  url "https://registry.npmjs.org/@nestjs/cli/-/cli-11.0.8.tgz"
-  sha256 "9487dc4bdad93fc74199c5d2dbd4e378a0fb13817c92fc066696d472963c0f32"
+  url "https://registry.npmjs.org/@nestjs/cli/-/cli-11.0.9.tgz"
+  sha256 "1ba31935d661e298791616c2dd921b8d460440c1c302ea81f99df9b6ddb1874c"
   license "MIT"
 
   bottle do
