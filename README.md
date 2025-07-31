@@ -70,7 +70,6 @@ brew install --cask <tool>
 - `cai`
 - `cargo-aoc`
 - `cargo-benchcmp`
-- `cargo-careful`
 - `cargo-deadlinks`
 - `cargo-geiger`
 - `cargo-readme`
@@ -130,7 +129,6 @@ brew install --cask <tool>
 - `git-vain`
 - `gitlabform`
 - `gitman`
-- `gitmux`
 - `glom`
 - `glsl-analyzer`
 - `go-junit-report`
@@ -247,6 +245,7 @@ brew install --cask <tool>
 - `pipeform`
 - `plandex`
 - `playerctl`
+- `playwright-mcp`
 - `pls`
 - `pluralith`
 - `poop`
@@ -304,6 +303,7 @@ brew install --cask <tool>
 - `statoscope`
 - `strimzi-kafka-cli`
 - `summon`
+- `supabase-mcp`
 - `surgeon`
 - `tantivy-cli`
 - `tclint`
