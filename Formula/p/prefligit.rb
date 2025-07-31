@@ -9,10 +9,10 @@ class Prefligit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cef9f7683ec6e241a3f907d704728e6aac0f773959572fcb25510c569cf09d2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55d44fea863fc9b56f47493c9f76d5e02fdf74dfe105a5e316f7d605d6af3785"
-    sha256 cellar: :any_skip_relocation, ventura:       "54e026452d77a6e59e9888d9dc668a4dbad854bb73011034b0373a5afd899dd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eaad6a0da67fb87d595b9fb7b9781dae0ff78a14cc321fd0995e71d0a131e49a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a14fee2ae7c41a42a2c012488501b00ac18bed523a5714d484c81df93f15809c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21ad140af0df6c799db2563ad5f46e67f57d435a2410c5a230b709fff420047f"
+    sha256 cellar: :any_skip_relocation, ventura:       "c06e10080adc8798365038947a45a2a5082f69280fd2d2c51767c60a16c867a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55595a2092c16c911d130c0f5bac1bb7d8586f7911c0c5f90ce4eefc025290ef"
   end
 
   depends_on "rust" => :build
