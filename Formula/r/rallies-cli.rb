@@ -7,6 +7,14 @@ class RalliesCli < Formula
   sha256 "5fbf2044e5d7262948fd57eb923f27061a1bf83cb432241f42a2eca85d9b828b"
   license "GPL-3.0-or-later" # TODO: need to upstream it
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "7568f67bce81507a06238794a30d9e7c7004eebae5d0e1996805f4417fe42f09"
+    sha256 cellar: :any,                 arm64_sonoma:  "190700fddfa19a0c77ee8b4cd7f0960d287ef007e25120fba03e42cd0f19a8f6"
+    sha256 cellar: :any,                 ventura:       "15151ba15a6b4965fb540e9bda6d77dcda4b4f7c89f3a8abc1b476e6419bda53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca6d65abaa4afe7743c14b0e4c14af740f196d62a502b47445d82c2ad7593202"
+  end
+
   depends_on "rust" => :build # for pydantic-core
   depends_on "certifi"
   depends_on "numpy"
