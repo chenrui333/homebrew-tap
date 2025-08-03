@@ -7,6 +7,14 @@ class ChiselCli < Formula
   sha256 "7b13e7c05d7bb82dbebb0b3e75301602e2bffa92241089d03d72416861233b55"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a7eedd893c50bccab67830acf6ae8b189d9c0855ca75d4e10aa81751b1e4c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab9d13b8e95450a318b657c8745a799515017166f2e8f92ff8ae1cc617b8108d"
+    sha256 cellar: :any_skip_relocation, ventura:       "af7caf2543fdfc78c79e8806e4efd5ae96aed43e5eb4fcb2742fb0c614a5b00d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e22aafc70392d996c80a30be60f8f20fb32261a13e46bbda53822c2f0371b1ea"
+  end
+
   depends_on "python@3.13"
 
   resource "certifi" do
