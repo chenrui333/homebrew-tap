@@ -1,8 +1,8 @@
 class Superclaude < Formula
   desc "AI-powered development toolkit"
   homepage "https://www.superclaude.sh/"
-  url "https://registry.npmjs.org/superclaude/-/superclaude-1.0.3.tgz"
-  sha256 "f292b6c18f01985382f51f40ad5c2fe0e91cf2f3121a7295b8f2294610b02312"
+  url "https://registry.npmjs.org/superclaude/-/superclaude-1.3.0.tgz"
+  sha256 "9ab3f890f36a6f6895516c7c2eb9cd645a012c7bf8e6f3fb0fb7ba3bd18cc75b"
   license "MIT"
 
   bottle do
