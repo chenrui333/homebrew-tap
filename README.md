@@ -230,6 +230,7 @@ brew install --cask <tool>
 - `np`
 - `npkill`
 - `nvrs`
+- `octelium`
 - `ohy`
 - `omekasy`
 - `omnictl`
@@ -244,6 +245,7 @@ brew install --cask <tool>
 - `percollate`
 - `perfops`
 - `pgdog`
+- `phpinsights`
 - `pike`
 - `pingu`
 - `pipeform`
@@ -254,7 +256,6 @@ brew install --cask <tool>
 - `pluralith`
 - `poop`
 - `precompress`
-- `prefligit`
 - `projectable`
 - `proto2yaml`
 - `protoc-gen-lint`
