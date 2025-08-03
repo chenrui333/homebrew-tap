@@ -1,4 +1,8 @@
 {
+  "context-file-manager": {
+    "package_name": "context-file-manager[mcp]",
+    "exclude_packages": ["certifi"]
+  },
   "gtts": {
     "exclude_packages": ["certifi"]
   },
