@@ -5,6 +5,14 @@ class Superclaude < Formula
   sha256 "f292b6c18f01985382f51f40ad5c2fe0e91cf2f3121a7295b8f2294610b02312"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58d03c6878c6b55e7495b080acb9aba14cb76e4185327c84a0396b2326230261"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6e07aa5c252582109fd14ababf1333f1131706dae3e767f5fe1745eb7bb3ce0"
+    sha256 cellar: :any_skip_relocation, ventura:       "2e89444577d93c0b0cfa00608711b00fd05e91ba66bff360519382fcce06de9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a705bed6cbb6a20f0bcf4ed7083d959bee0b5da154254e8352a383ff160b0bea"
+  end
+
   depends_on "node"
 
   patch :DATA
