@@ -6,6 +6,14 @@ class Octelium < Formula
   license "Apache-2.0"
   head "https://github.com/octelium/octelium.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab2fbfb4e55c1c71b177ac291e38c76705438a7d764fb2afaa87df09781fdf72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52ea5ff1ca76bbcb71701d5ab4ff2629040ffce344eb6007f09399b3db30b9cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d29b0d42306d52581c836998ad856cdd8ad5d8708013ce64b606f6373ad9696"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392017d7ab14325c512627979ba7bf9a0081ba536edb35024d4844d8d202b1de"
+  end
+
   depends_on "go" => :build
 
   def install
