@@ -29,6 +29,7 @@ class Dbin < Formula
     # no darwin dbin metadata in https://github.com/xplshn/dbin-metadata
     return if OS.mac?
 
+    (testpath/".local/bin").mkpath
     output = shell_output("#{bin}/dbin del bed 2>&1")
     assert_match "Failed to retrieve full name for 'bed'", output
   end
