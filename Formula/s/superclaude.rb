@@ -7,6 +7,8 @@ class Superclaude < Formula
 
   depends_on "node"
 
+  patch :DATA
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
@@ -20,3 +22,15 @@ class Superclaude < Formula
     assert_match "Claude Code not found", output
   end
 end
+
+__END__
+diff --git a/bin/superclaude b/bin/superclaude
+index 408bc00..8ae9d52 100755
+--- a/bin/superclaude
++++ b/bin/superclaude
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/env bash
+ 
+ # SuperClaude - AI-powered development toolkit
+ # Usage: ./scripts/superclaude.sh <command> [flags]
