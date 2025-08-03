@@ -1,8 +1,8 @@
 class FlowEditor < Formula
   desc "Programmer's text editor"
   homepage "https://github.com/neurocyte/flow"
-  url "https://github.com/neurocyte/flow/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "6cf7e270163d2d067f033e699572ca092ef39b338ae238ca3a7c0cf16a63c30f"
+  url "https://github.com/neurocyte/flow/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "1c69b69df208c92327641dd7b11fe293aa8d72cfc27f6b43d975114b60b52166"
   license "MIT"
 
   bottle do
