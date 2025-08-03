@@ -7,10 +7,10 @@ class Superclaude < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58d03c6878c6b55e7495b080acb9aba14cb76e4185327c84a0396b2326230261"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6e07aa5c252582109fd14ababf1333f1131706dae3e767f5fe1745eb7bb3ce0"
-    sha256 cellar: :any_skip_relocation, ventura:       "2e89444577d93c0b0cfa00608711b00fd05e91ba66bff360519382fcce06de9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a705bed6cbb6a20f0bcf4ed7083d959bee0b5da154254e8352a383ff160b0bea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "461ae6a3bbeb20525f06f546496dcfc7d0e4c5737b001d9d1c268aec4baabc1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86758bac262253e192c5843716bf79e29f83fd97fb7fab3906d7aedeef483246"
+    sha256 cellar: :any_skip_relocation, ventura:       "89901ed6161658d27f069a316a6e75262462888bb319663cb69093e8fcd40d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42a5f2935764e1cad2774308673288e4888bf513391dbfdae1f46e981a466120"
   end
 
   depends_on "node"
