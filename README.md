@@ -89,6 +89,7 @@ brew install --cask <tool>
 - `container2wasm`
 - `critcmp`
 - `crlfmt`
+- `crush`
 - `cueimports`
 - `darker`
 - `dbee`
@@ -96,7 +97,9 @@ brew install --cask <tool>
 - `ddev`
 - `dela`
 - `docker-debug`
+- `docmd`
 - `doit`
+- `dory-cli`
 - `duster`
 - `dvm`
 - `eas-cli`
@@ -131,6 +134,7 @@ brew install --cask <tool>
 - `gitman`
 - `glom`
 - `glsl-analyzer`
+- `gmap`
 - `go-junit-report`
 - `gobgp`
 - `goboscript`
@@ -265,6 +269,7 @@ brew install --cask <tool>
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
+- `rallies-cli`
 - `ramda-cli`
 - `rang`
 - `readmeai`
