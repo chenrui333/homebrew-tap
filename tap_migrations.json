@@ -65,6 +65,7 @@
   "pdfly": "homebrew/core",
   "pdtm": "homebrew/core",
   "preevy": "homebrew/core",
+  "prefligit": "homebrew/core",
   "protoc-gen-doc": "homebrew/core",
   "qnm": "homebrew/core",
   "rasterio": "homebrew/core",
