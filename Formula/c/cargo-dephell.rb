@@ -6,6 +6,14 @@ class CargoDephell < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/mimoo/cargo-dephell.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5811e592dc7ab07321185e7ebb906c2d8efb4c77d2fb7dd73ca1b65bdc41c3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81b1d2bcde4c31e3cda0a1e90eaa50c3c8352cdc934464b12f1cd5af52a4ea25"
+    sha256 cellar: :any_skip_relocation, ventura:       "948a8723dc9db26c05ef5b7808bee886494d58ef1fc1fcac6fef0b208a5d69bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b39704dec26178839ba739423b7f8ba5d8950cf5859ca52ff2dd33ea446b111"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
