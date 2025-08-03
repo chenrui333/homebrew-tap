@@ -6,6 +6,14 @@ class Lazycontainer < Formula
   license "MIT"
   head "https://github.com/andreybleme/lazycontainer.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb7ab10c08497f6cba6233f6c1a37e9e8f270d89acd03d228271c2e4acffd2e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d9da41054eabbdea8565e46352153b0f1b6dd643466a3885939c818a05fe238"
+    sha256 cellar: :any_skip_relocation, ventura:       "0fb686c80852a7482f5cd61faa14b0175c7eee1199b2ee32fb95f27edad3c463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c71649720553c8ccc545d5f7a6a5889b0f1361156d0801ba39577b1779ec5ec7"
+  end
+
   depends_on "go" => :build
 
   def install
