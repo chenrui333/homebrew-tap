@@ -6,6 +6,14 @@ class Cozypkg < Formula
   license "Apache-2.0"
   head "https://github.com/cozystack/cozypkg.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8f6d4a3d8e05275c52c19faa84988903516dab5f2129da18639b867fdd22623"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8c417d5407b36eb9121fd4a987bdf48550003dba623ebc39b84ca842718d3de"
+    sha256 cellar: :any_skip_relocation, ventura:       "777211f742937f3b17171686ce158ef6bdf15951285a2887324c20bf33a36e5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c430edc9dac80b72074b5a325db57e55768862c0bb7aa7ce74a10c8f0301b11"
+  end
+
   depends_on "go" => :build
 
   def install
