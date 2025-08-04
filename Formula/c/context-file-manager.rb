@@ -7,6 +7,14 @@ class ContextFileManager < Formula
   sha256 "4139b93b5420513a0b3c956511695667a72d773c80ffd405d435ad1f9f4489af"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "08919352959f1e4feffd123c8e65b466cad8471bd04b41917b3788e540b21693"
+    sha256 cellar: :any,                 arm64_sonoma:  "235b8841f7010ff34be6940f9775bb96278d8819695c57366edc489e50bf116c"
+    sha256 cellar: :any,                 ventura:       "e791b92676748a26ef82f00238a5f89965b2e6b62ef4c6665b1e0eedd7778056"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4264acedbad7179577bf77b51a31b1c6b89a186a127f930e7bc7c93403ba2ed"
+  end
+
   depends_on "rust" => :build # for pydantic_core
   depends_on "certifi"
   depends_on "python@3.13"
