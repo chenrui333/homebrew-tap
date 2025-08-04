@@ -7,10 +7,10 @@ class BrighterscriptFormatter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33a42e0891257f51dfff885d18dc2ea8d5c46cafcf8e359fc3ed265bb9712de8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f60d7a1e4ccc11f277155249dd1bf1b80137491f2f25a745b53aa85a2ce66b6b"
-    sha256 cellar: :any_skip_relocation, ventura:       "73791311b207b21282925643ffc659ea5173cec05d732cd96c9875d8f9986311"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1ccce9f829018ecd09b5e2dfcbb6be034f085628c718e38e12438c4fb3d38f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f94cf220f4be30a715e0c0f21acdd2b0be3865cc6fd0c0425fd6d0af914cb34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00b84005e1e403b02a7f8d37ba2031fa2eaa94543c6ac58ea2eb08147840bac8"
+    sha256 cellar: :any_skip_relocation, ventura:       "fed58aa1f1316e4c797db21a7b0f85ec72ba6d126338c04a1d3a7067ed397f8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2255d42a67c5c79a98335c8838c1fa965a51277d71d0a1abbe6cbdd8ead98bca"
   end
 
   depends_on "node"
