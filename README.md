@@ -32,6 +32,7 @@ brew install --cask <tool>
 <summary>Formula List</summary>
 
 - `abc`
+- `agl`
 - `ai-context`
 - `aiac`
 - `alacritty`
@@ -68,9 +69,11 @@ brew install --cask <tool>
 - `bytebox`
 - `c4go`
 - `cai`
+- `carbon-now-cli`
 - `cargo-aoc`
 - `cargo-benchcmp`
 - `cargo-deadlinks`
+- `cargo-dephell`
 - `cargo-geiger`
 - `cargo-readme`
 - `carton`
@@ -80,6 +83,8 @@ brew install --cask <tool>
 - `cf-vault`
 - `cf2pulumi`
 - `checkpwn`
+- `chisel-cli`
+- `clai`
 - `cloudlens`
 - `cmdx`
 - `cocainate`
@@ -87,6 +92,8 @@ brew install --cask <tool>
 - `cohctl`
 - `config-file-validator`
 - `container2wasm`
+- `context-file-manager`
+- `cozypkg`
 - `critcmp`
 - `crlfmt`
 - `crush`
@@ -95,11 +102,13 @@ brew install --cask <tool>
 - `dbee`
 - `dbin`
 - `ddev`
+- `decktape`
 - `dela`
 - `docker-debug`
 - `docmd`
 - `doit`
 - `dory-cli`
+- `dqy`
 - `duster`
 - `dvm`
 - `eas-cli`
@@ -158,6 +167,7 @@ brew install --cask <tool>
 - `holo-cli`
 - `horusec`
 - `hostctl`
+- `ht-mcp`
 - `huber`
 - `humioctl`
 - `hygg`
@@ -189,8 +199,10 @@ brew install --cask <tool>
 - `kube2pulumi`
 - `kubeseal-convert`
 - `kwt`
+- `lazycontainer`
 - `leetgo`
 - `leveldb-cli`
+- `lin`
 - `lintnet`
 - `llmdog`
 - `llmpeg`
@@ -203,8 +215,6 @@ brew install --cask <tool>
 - `markpdf`
 - `matcha`
 - `mcman`
-- `mcp-proxy`
-- `mcptools`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
@@ -294,6 +304,7 @@ brew install --cask <tool>
 - `sdl_net`
 - `sdl_ttf`
 - `seamstress`
+- `seastar`
 - `secco`
 - `sgpt`
 - `sheetui`
@@ -310,7 +321,9 @@ brew install --cask <tool>
 - `strimzi-kafka-cli`
 - `summon`
 - `supabase-mcp`
+- `superclaude`
 - `surgeon`
+- `swagger-mcp-server`
 - `tantivy-cli`
 - `tclint`
 - `tenderly`
@@ -333,12 +346,15 @@ brew install --cask <tool>
 - `toolctl`
 - `tpm`
 - `travelgrunt`
+- `trieve-cli`
 - `tuono`
 - `twiggy`
 - `unused-deps`
 - `usort`
 - `venom`
+- `vento`
 - `vercel-serve`
+- `vet-run`
 - `vgo`
 - `vitepress`
 - `vsg`
