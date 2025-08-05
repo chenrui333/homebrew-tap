@@ -10,6 +10,10 @@
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
   },
+  "chenrui333/tap/qdrant-mcp-server": {
+    "exclude_packages": ["certifi", "cryptography", "onnxruntime", "pillow"],
+    "extra_packages": ["protobuf"]
+  },
   "sarif-tools": {
     "exclude_packages": ["numpy", "pillow"]
   }
