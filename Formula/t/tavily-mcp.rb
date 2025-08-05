@@ -7,10 +7,10 @@ class TavilyMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a2ff0583bdb730220e84435f48213cd266f9edb7fc82a78152ec61497ec1c44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00d22dd3ee40ec2a499167a8fa475973e7622226900a4ea1cc45bd57e1186230"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae3a2bee50eed43a7b81ea7418de2341be7c3e46b500ef31aeb98c69a9df09d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1961f9e8f7966d0a303f20ce7b0781725388f6ebf2d50971880c01e3f030427c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9050e8f3c17c997930c1b14b72d8950bfd10dff824bc4803e3af2961d400720"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef9222a81c3898c9f2a4756f3c56f0794699f3d7801c2c899a565f88258f89dd"
+    sha256 cellar: :any_skip_relocation, ventura:       "31bc55f677a8ff2968d25b5295892aef9779b1ec7868a3843c1e127a9cb8872e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52176cc31f31d1e9a402b7c133774fbec15504555132fc3a3e9d84246eae030a"
   end
 
   depends_on "node"
