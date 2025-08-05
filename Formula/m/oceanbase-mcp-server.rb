@@ -7,6 +7,14 @@ class OceanbaseMcpServer < Formula
   sha256 "622e83b1c2d90b2a1c6d18210f9fb950b6e51438ed90699e2d9b39faecd3a50e"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "23df0b7a5bdae3bf6e13b2d9955e49480160995e76ca3c5215d6af84e06bccf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "f12dd327b0b88ee4a9522a304f71049109c24871af61f67a65a6a654df7c2a67"
+    sha256 cellar: :any,                 ventura:       "1d7d6866368119eaf58042e21e84cdb616c9207da07c66c3ac6e0db550413c8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "363471145139af66d236bc471e2d2c853bbff408d27793d6b4bca116fbee744d"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
