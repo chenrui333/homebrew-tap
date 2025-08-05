@@ -5,6 +5,14 @@ class GraphlitMcpServer < Formula
   sha256 "a6d760b231777411f72c94ba4e5973c45759511529061045b47a0ecff08b195e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "057ad0da2849367a45a39fc3037bcb03941d02a0a69a69e3bade47ac8349c55c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1bdde3da9c6190da8e5748d6c05e32832cb174c45a6b7f1b9cb78cb1cdf2e91"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae57408274022825b6e24ac4ecfa9c09c74696cb33dea06aaf35a00158b52187"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b2516aec5d1c95d4ddc750574a791d213363c690d402ffc4aa938f084ab08e1"
+  end
+
   depends_on "node"
 
   def install
