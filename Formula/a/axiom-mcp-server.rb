@@ -5,6 +5,14 @@ class AxiomMcpServer < Formula
   sha256 "73920c83e7da63e4747dce3ac867a32458db9079fed56a0b6f3ef7e882b5134c"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1093d30306f09bfbabc09f69a80b54e559c6adf92801cf17fb998eea1f91486e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8270090b281d9a89f3d540bcb9b054995b1206ed69bde728054f979065520fed"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fc325de83270cb73b29913a6e405ddb3a3fba9a2cd677cdc5dc958f6b40fbf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46fc7827c76e13e2d09fe2805048584073336c6e6185e03200cbdca6cdb4af3"
+  end
+
   depends_on "go" => :build
 
   def install
