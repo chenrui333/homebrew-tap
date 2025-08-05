@@ -7,10 +7,10 @@ class Vitepress < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "d360524ab895c8384ac3d72b663e9dc41702e92179c17637a97a428f68ebe1ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "883d4e68fd201772aaa8394470edd6018c062b1d0deb92fc56e5bac4401576af"
-    sha256 cellar: :any,                 ventura:       "148bbac77093eca22a02d2a863d2a0968dc723abcd54979d25fa60e76b034dad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d85672d5ca5c786b5f6567f41c09ce58285367f0f8a2a07ac85c82fcde177f9"
+    sha256 cellar: :any,                 arm64_sequoia: "c4c41cc91674d326a6e454b24f1c34d4c12ea38949b1aa5a7620065807b44f70"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2559ee9dbcf678db2b3c4b59e5aadae16c6b904ae2616e5eb61274af3ce3fde"
+    sha256 cellar: :any,                 ventura:       "9b41182e509e90434c33914df121b22e64ec8899c48699f3f7f87d20544c001a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "976b585e05a0022a13960b6edfcde8ae774cc3266425096a227600ec73ba32a4"
   end
 
   depends_on "node"
