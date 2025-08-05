@@ -1,8 +1,8 @@
 class Vitepress < Formula
   desc "Is a Vue-powered static site generator"
   homepage "https://vitepress.dev/"
-  url "https://registry.npmjs.org/vitepress/-/vitepress-1.6.3.tgz"
-  sha256 "cd2aeba61d31b35319a434425da574c418a343968f0cd4241376eb092336b731"
+  url "https://registry.npmjs.org/vitepress/-/vitepress-1.6.4.tgz"
+  sha256 "37f38a64e1e8ea1e9db68ad201488327c8df1303d3cdb2ceb0e3754259d65114"
   license "MIT"
 
   bottle do
