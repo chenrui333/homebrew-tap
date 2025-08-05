@@ -5,6 +5,14 @@ class BrowserbaseMcpServer < Formula
   sha256 "e5a17a0cf0fd421d44781c6b5159e62ccf824ab398a948ab752502cc581e329e"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_sequoia: "095a228a553f747403c381c211b7f3773db0d245cd13070f2dff57ec9aeb46ac"
+    sha256                               arm64_sonoma:  "392fdb1de6e3fa5ad9ae57a1ee2b29fc2f7f122a7955d5f75e786fb15dd57e41"
+    sha256                               ventura:       "95c1e4eb597c82bb83a0406c98b05892e72098ff95ee4137fdb38bdee9a2e528"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a127ffd9f16f650e145cfc60d04152c982d75e1f5c93cda019c4f90d008d8b35"
+  end
+
   depends_on "node"
 
   def install
