@@ -6,6 +6,14 @@ class Frep < Formula
   license "MIT"
   head "https://github.com/thomasschafer/frep.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06d06e47314bf3b3924447ebbe4baebe49a596df4a9072d7c0e435fad0d7372e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad2a95a5263b8929871aa6d085a26b9abffce3da337ff2561e911ecfdcaa3324"
+    sha256 cellar: :any_skip_relocation, ventura:       "208683522aebdac6ddd9dfbb57b645719798fa5d1b104682ef0aa8a8451aa381"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04fdd4c37916c2da7dbe746b1258d4adcdba70b72c88f7388b54ff033af9a44d"
+  end
+
   depends_on "rust" => :build
 
   def install
