@@ -5,6 +5,14 @@ class StripeMcp < Formula
   sha256 "7fad645d8fc951e864e757c837eca3bd2ff5fa9fb97410853e3a6dd24ee28897"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22fee7f6ed9b92370087d9cd1d5f9aa49c4b2f17cc86535b23d91cd7dbaf1a3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49b59aa77d12d49f591a9e4c27b9d9c91a41b81d88feb30369b91e96e8d44923"
+    sha256 cellar: :any_skip_relocation, ventura:       "aeea1ce4658172e29138b62abab11984d5a974df64c69d1d26bcb3b4d93948cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea0a67506c5472b8c50745105d747ad00db7122ac0184ddc2611e1cf533e81f5"
+  end
+
   depends_on "node"
 
   def install
