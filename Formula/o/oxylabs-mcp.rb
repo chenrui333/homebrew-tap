@@ -7,6 +7,14 @@ class OxylabsMcp < Formula
   sha256 "c49cb7fd8033023fe57842e814c248d10b16df11f983cf50df362c5937ee1d05"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "cb37fa0e6bb259d170503f6fa7cb0aded06b6052c37254d1416c250f30caf7c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "dca730a25a42cad082f139d1b7855b4cb7d7b213b4c1312f176700b7175fa056"
+    sha256 cellar: :any,                 ventura:       "6174781a8cc3eded15c9a18853c85842116ecce07f5e712e45dff77bbcc578f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "880149a13671617d5972bb952d503b46f3a27a2c7c03255c80736bfe2328d751"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
