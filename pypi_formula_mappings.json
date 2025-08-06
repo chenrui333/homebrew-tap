@@ -6,6 +6,11 @@
   "gtts": {
     "exclude_packages": ["certifi"]
   },
+  "promptflow": {
+    "package_name": "",
+    "extra_packages": ["promptflow"],
+    "exclude_packages": ["certifi", "pillow"]
+  },
   "rallies-cli": {
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
