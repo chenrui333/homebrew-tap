@@ -7,6 +7,14 @@ class LogfireMcp < Formula
   sha256 "5d3fbc837b057d192336d2cc49119b4b5540a408ba268e7335d676d0c4b11599"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "cc2b9b9d0987561fe9b9de7e68e651f3cd397c8f6478fdb82ba72e3d33aff07e"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd508767d3dc95113d9cb9b3c56f9e9eb55b17f7fd742cbd4229bdef993f36da"
+    sha256 cellar: :any,                 ventura:       "f9e330fed3adab523e8a81732f6757bd97a18e40833bbb4a1435db29ad8d22ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df241e4daec0245d0b23ecb8374a2d840499cd5472a30047a316eba48b284ba8"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
