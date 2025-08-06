@@ -1,4 +1,8 @@
 {
+  "archgw": {
+    "extra_packages": ["filelock"],
+    "exclude_packages": ["certifi", "numpy", "torch"]
+  },
   "context-file-manager": {
     "package_name": "context-file-manager[mcp]",
     "exclude_packages": ["certifi"]
