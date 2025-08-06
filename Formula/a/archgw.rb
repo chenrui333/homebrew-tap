@@ -7,6 +7,14 @@ class Archgw < Formula
   sha256 "b8c69fcb3844beaaafcbc15b151e65d7acf49951402ecd5ec468cc0c509cb943"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "b55d912a9641960a52c84d61b0113209a81d2a2925be14fe07b42c52c8f71ebc"
+    sha256 cellar: :any,                 arm64_sonoma:  "70e4f93e25a7ade78915447753edbdc74ff918e9dae2c30d9ccaf28a7c40bc1a"
+    sha256 cellar: :any,                 ventura:       "1e4164890a2286664f722799fea00aa140fd8a9a8f419f2fdd018f54e2d03110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6bf115670b047702ed49ce629140e7cadc204d7a140bdffd6c9d791362995cd"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "libyaml"
