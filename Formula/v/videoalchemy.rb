@@ -6,6 +6,14 @@ class Videoalchemy < Formula
   license "MIT"
   head "https://github.com/viddotech/videoalchemy.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08f571cd32c29ae75d52b40cb76abb9fd22469f1d7eabe5f23a785126e65dc5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9452f35bb3e498e888079d5588523a62f30ac37750e6f831f02959e35f7272d"
+    sha256 cellar: :any_skip_relocation, ventura:       "9874d9bdceaa4eb62e3dd562a9767263d670f3f8be5c91202159f519ee18737d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14264e7e55f9df60fa4f73cf35fa2c7a0d3f305c104d2b126cef2ce4ccac2ae8"
+  end
+
   depends_on "go" => :build
 
   def install
