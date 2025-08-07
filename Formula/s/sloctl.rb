@@ -1,8 +1,8 @@
 class Sloctl < Formula
   desc "CLI for Nobl9 to manage SLOs, Projects or Alert Policies"
   homepage "https://docs.nobl9.com/sloctl-user-guide/"
-  url "https://github.com/nobl9/sloctl/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "ec22d84763ec6e801a524a35e841598415e3e99c26c242f542fc0c9eafc6751c"
+  url "https://github.com/nobl9/sloctl/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "cc8eaf6fc3b362ab67edb37f6a95bb07a5ca9227d340e4315458f484d17a5cc4"
   license "MPL-2.0"
   head "https://github.com/nobl9/sloctl.git", branch: "main"
 
