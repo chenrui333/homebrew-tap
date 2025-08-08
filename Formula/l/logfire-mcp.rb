@@ -3,8 +3,8 @@ class LogfireMcp < Formula
 
   desc "MCP server for Pydantic Logfire"
   homepage "https://github.com/pydantic/logfire-mcp"
-  url "https://files.pythonhosted.org/packages/50/a4/b5914f04a219c00166e1fea727896289d5b89353775d007968c6e6c19e5d/logfire_mcp-0.3.1.tar.gz"
-  sha256 "5d3fbc837b057d192336d2cc49119b4b5540a408ba268e7335d676d0c4b11599"
+  url "https://files.pythonhosted.org/packages/fd/d6/b6d7dce77a8b484f55806772104de2447dfbc1df60c11264ce06224bc570/logfire_mcp-0.4.0.tar.gz"
+  sha256 "5226cf9877f739161f772f892013036de321b879c7d523eb63b61a7f342ffb23"
   license "MIT"
 
   bottle do
@@ -32,6 +32,11 @@ class LogfireMcp < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
     sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "charset-normalizer" do
@@ -95,8 +100,8 @@ class LogfireMcp < Formula
   end
 
   resource "logfire" do
-    url "https://files.pythonhosted.org/packages/41/92/9b34af3414f31d335751b7e634d5163d1ad97296136ef81db666c4616194/logfire-4.1.0.tar.gz"
-    sha256 "c0a30ed05740193a465b3cd3e0c162a72c9baa53b297dd6757c3f833c7feaa7b"
+    url "https://files.pythonhosted.org/packages/e9/1d/6646ff0bbd2793d960facc05c29a599619e1a4f265d333f294f7292a6488/logfire-4.2.0.tar.gz"
+    sha256 "72ffe5b68dd97f386f691143a48cfe4e8e5aae261e111a5d5a852b4e23c1e1a8"
   end
 
   resource "markdown-it-py" do
@@ -105,8 +110,8 @@ class LogfireMcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/4d/19/9955e2df5384ff5dd25d38f8e88aaf89d2d3d9d39f27e7383eaf0b293836/mcp-1.12.3.tar.gz"
-    sha256 "ab2e05f5e5c13e1dc90a4a9ef23ac500a6121362a564447855ef0ab643a99fed"
+    url "https://files.pythonhosted.org/packages/31/88/f6cb7e7c260cd4b4ce375f2b1614b33ce401f63af0f49f7141a2e9bf0a45/mcp-1.12.4.tar.gz"
+    sha256 "0765585e9a3a5916a3c3ab8659330e493adc7bd8b2ca6120c2d7a0c43e034ca5"
   end
 
   resource "mdurl" do
@@ -205,8 +210,8 @@ class LogfireMcp < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
+    url "https://files.pythonhosted.org/packages/1e/d9/991a0dee12d9fc53ed027e26a26a64b151d77252ac477e22666b9688bc16/rpds_py-0.27.0.tar.gz"
+    sha256 "8b23cf252f180cda89220b378d917180f29d313cd6a07b2431c0d3b776aae86f"
   end
 
   resource "shellingham" do
