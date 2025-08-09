@@ -3,8 +3,8 @@ class LogfireMcp < Formula
 
   desc "MCP server for Pydantic Logfire"
   homepage "https://github.com/pydantic/logfire-mcp"
-  url "https://files.pythonhosted.org/packages/fd/d6/b6d7dce77a8b484f55806772104de2447dfbc1df60c11264ce06224bc570/logfire_mcp-0.4.0.tar.gz"
-  sha256 "5226cf9877f739161f772f892013036de321b879c7d523eb63b61a7f342ffb23"
+  url "https://files.pythonhosted.org/packages/85/4b/09604290f703322e76ce34c475015ce799f1ac7a0b0694bfd14121d5ce65/logfire_mcp-0.5.0.tar.gz"
+  sha256 "b2ed23e0297a60e4c0e0c20f3dff4495e1961122f958c2468daf26baa51a9ed3"
   license "MIT"
 
   bottle do
