@@ -34,12 +34,12 @@ brew install --cask <tool>
 - `abc`
 - `agl`
 - `ai-context`
-- `aiac`
 - `alacritty`
 - `amoco`
 - `aoc-cli`
 - `apify-actors-mcp-server`
 - `apkeep`
+- `archgw`
 - `arduino-language-server`
 - `arp-scan-rs`
 - `asciinema`
@@ -93,6 +93,7 @@ brew install --cask <tool>
 - `cloudlens`
 - `cmdx`
 - `cocainate`
+- `code-pushup`
 - `codstts`
 - `cohctl`
 - `config-file-validator`
