@@ -7,10 +7,10 @@ class Speedscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0e1476d9546951ed71625fcab03c48d0b18fcd1828c8505c368109a31bf067e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f759e5b737fb57762762e8d5d36d2df7ea900611a94741d342fee7092c1c0a3"
-    sha256 cellar: :any_skip_relocation, ventura:       "12e1bf912ac9f33b9b3cf358bab52838a8b6cb2e4a017e299b28bc86de05858a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac3728282bc1bcf623b500251ddb04ed24639ea61e9bf54591239bb0df28c1b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d60ecbc1f7afb0330908f06ab021413ddd96b9108174075a759aefa390aca63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "131f832186f6d526954bba457215c547e0e90fe9630cd9c07c056bb4e8b7f16f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0dad33090fef9f527ea7fbe62b7ca9087592b21c87d982db209a1a44a5d49e49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc748c538e3e56842746aaba9e2cba85835580b0365cacb32d4d5a8a549de3e3"
   end
 
   depends_on "node"
