@@ -1,8 +1,8 @@
 class TddGuard < Formula
   desc "Automated TDD enforcement for Claude Code"
   homepage "https://github.com/nizos/tdd-guard"
-  url "https://registry.npmjs.org/tdd-guard/-/tdd-guard-0.9.0.tgz"
-  sha256 "1154cb7357a8a03f926fdb625ec9353af52f486a24990d8b3ec2bd09fe9661c1"
+  url "https://registry.npmjs.org/tdd-guard/-/tdd-guard-0.9.1.tgz"
+  sha256 "2fa125d93688abf70050aa11af717c3e9ee62c2c14569088cb97dd37e1ab3e64"
   license "MIT"
 
   bottle do
