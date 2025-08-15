@@ -3,8 +3,8 @@ class ChiselCli < Formula
 
   desc "Accelerate your Python functions with cloud GPUs"
   homepage "https://github.com/Herdora/chisel"
-  url "https://files.pythonhosted.org/packages/bb/96/71b46fa101744f0f330182cd47d4a0cf8c4cc8c126247d1bfcd61fa25eda/chisel_cli-0.1.32.tar.gz"
-  sha256 "7b13e7c05d7bb82dbebb0b3e75301602e2bffa92241089d03d72416861233b55"
+  url "https://files.pythonhosted.org/packages/90/74/b09ba892183e95d54acaaf8d5ed10c9adb38d9e219048a6a63e6366196af/chisel_cli-0.1.33.tar.gz"
+  sha256 "3d1958107ff6cde85e8b305e10b600e2e9ca52c0b469a6af0961afa9124318ce"
   license "MIT"
 
   bottle do
@@ -37,9 +37,29 @@ class ChiselCli < Formula
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
+    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
   resource "requests" do
     url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
     sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
+  end
+
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "urllib3" do
