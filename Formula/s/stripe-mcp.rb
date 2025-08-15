@@ -7,10 +7,10 @@ class StripeMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22fee7f6ed9b92370087d9cd1d5f9aa49c4b2f17cc86535b23d91cd7dbaf1a3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49b59aa77d12d49f591a9e4c27b9d9c91a41b81d88feb30369b91e96e8d44923"
-    sha256 cellar: :any_skip_relocation, ventura:       "aeea1ce4658172e29138b62abab11984d5a974df64c69d1d26bcb3b4d93948cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea0a67506c5472b8c50745105d747ad00db7122ac0184ddc2611e1cf533e81f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0fb167cd0e2516cdd805cff1c383874cb3a7f5d31f4fb571b88230dc7053eda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ad3f92d70a9183c577abb2c3a2d03ade04c0dedc7e920909187a91e6282e0b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "0d03b0f0022a4aaa9ed14a0677dab5e4497830a458ed04e329239ac9ec70c1ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "854f04de97b2c494b847f2d6162e530d948425ccfe86ed861c1a5bd37f5f140c"
   end
 
   depends_on "node"
