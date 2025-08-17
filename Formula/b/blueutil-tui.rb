@@ -9,8 +9,8 @@ class BlueutilTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfc24138d031eb6adb2131f9fd94414c88317d84fbdc085bfa0e9b51b2e13ae7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8caf6f21fdaeff29372c3b5c0c4573f3b84af79cbbf04d1e07746925a6819d1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2de74330d1f7619e010c84cdc9e58723500e40941346b051e35b224c12785338"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "766dbf539768329e51c44a1d69b04a36d7af4430e023c640c150f1a5d8485b46"
   end
 
   depends_on "blueutil"
