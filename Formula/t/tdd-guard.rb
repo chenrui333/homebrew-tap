@@ -7,10 +7,10 @@ class TddGuard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dbac1ff1c72e72fb8a2b0baa003623d8dae02d9046852edf0724204c64952c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "646b84647caf2b40bff11fa73b42ac34e4eacb7a5c48f2775846940b59eb4966"
-    sha256 cellar: :any_skip_relocation, ventura:       "0bb4acd9776c070783201e26446a463ade1a1a8ef046fabdf29ea9f258596123"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2820fe289cd399419bac90c4d260a621aa33210fc4fe5dd2732dffcc334fc0f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3299409f7488cc12d4bd0e0ba6c6d69bc6fd6bf86dbc62ccc2b11c5f95a441d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6da1b4e0a4b2b747638a2b64d5b5394012861d13f958a5a11f730f51063c3dcb"
+    sha256 cellar: :any_skip_relocation, ventura:       "c97f18f43fe0fce28bfe5fab4eb1650634ef539fc4ce7fef091281557d690d81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5277b3a7c1b2f63266962aa26634466fbe4232363925d2e203f83b17a7048e28"
   end
 
   depends_on "node"
