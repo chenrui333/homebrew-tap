@@ -24,8 +24,9 @@ class PlaywrightMcp < Formula
     assert_match version.to_s, shell_output("#{bin}/mcp-server-playwright --version")
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"homebrew","version":"#{version}"}}}
+      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
     JSON
 
     assert_match "browser_close", pipe_output(bin/"mcp-server-playwright", json, 0)
