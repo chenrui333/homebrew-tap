@@ -7,10 +7,10 @@ class Chatlog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48098291f9fc9f74b54579a5bc0d04c5feae9baa4234ee162222d38698ac9721"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42c502eb8068cc1afd24f137d77963929206dd2c66e91b1a79cabb8a320aa765"
-    sha256 cellar: :any_skip_relocation, ventura:       "d89e1440a69114a2ebcbcc7faa3be354ccbe019297feb73b87e1e359a83d4c30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01c85eeb63e78c379f093c3f48cafd27456b313693ebb4d06acef0edfe3e2bc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "818acd9ed28d15de768b6bf9de4d65710b901a5f032557f1dae2a58c7524f4ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3c2411ba05a302c374d17af87d66ec9a50291f3a766a875f9788b78f143bac1"
+    sha256 cellar: :any_skip_relocation, ventura:       "1ae027600ba12184a822ca99da4ceb5c95a8269c38951229cf7047ecca126a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aefcb0328367af1812c090548a5c0ce476dd42726091854de0737e3074ab0672"
   end
 
   depends_on "go" => :build
