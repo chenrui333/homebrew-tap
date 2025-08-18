@@ -7,6 +7,14 @@ class Raiz < Formula
   sha256 "e5b4cd4d6c82c773e162b2475bdc0a0064ea7691e6be8e7ced52f789cbb1af36"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "ef1937a7351238f4348dcb1761345a83ef2ea5a3a1f251e431b2df49f0a4e580"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae6d081fa6ce743387f8c442517106a8275c2762b8ebafba90dc483bb8887489"
+    sha256 cellar: :any,                 ventura:       "01bc65f7ea134092acdcb58ada882f672fa773ee348aa7e8f5de1a575a0b6316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28a3221417d12a880b2646c45651f0fd458c79d1c70c03c60c2338817d8bd461"
+  end
+
   depends_on "rust" => :build # for rpds-py
   depends_on "libyaml"
   depends_on "python@3.13"
