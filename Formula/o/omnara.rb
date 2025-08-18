@@ -7,6 +7,14 @@ class Omnara < Formula
   sha256 "ceaf68fcb21ef5e07fc4be3d222dbaafa9028697118296f1c392cd4d9bbf223a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "30e03b1501232708f5c09b8b0e1d67acf4cc90ec4aa41c9bd67b155a19afe4d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "98f745c89b79a2017ffa343b75952d54014220bceafdaf1bd5d78280d1d84dbc"
+    sha256 cellar: :any,                 ventura:       "0f7b1db96ab3c1bce98cc1822783b6374f3a8e783e84a7d007381b16d55399ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a731c05ae4c84a266b087792edb68af825bde40425940054c5439c07d3ff1f19"
+  end
+
   depends_on "rust" => :build # for pydantic-core
   depends_on "certifi"
   depends_on "cryptography"
