@@ -3,8 +3,8 @@ class OxylabsMcp < Formula
 
   desc "MCP server for Oxylabs"
   homepage "https://github.com/oxylabs/oxylabs-mcp"
-  url "https://files.pythonhosted.org/packages/20/6e/59ded1fbc1d3198471b7a1c01726cf1ad8a5b12d7b8d74121f161bf7edf4/oxylabs_mcp-0.4.1.tar.gz"
-  sha256 "c49cb7fd8033023fe57842e814c248d10b16df11f983cf50df362c5937ee1d05"
+  url "https://files.pythonhosted.org/packages/7e/66/d6ef3b0940c6695367000b4a00a8cad17cd559cf40f2de4f9393874864c3/oxylabs_mcp-0.5.0.tar.gz"
+  sha256 "ed7b460d890058d6844e80e59043bd8bdc40b28c8a5eb17547f2f48d0b290245"
   license "MIT"
 
   bottle do
@@ -32,14 +32,14 @@ class OxylabsMcp < Formula
     sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
   end
 
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
-  end
-
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/d8/e4/0c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6b/beautifulsoup4-4.13.4.tar.gz"
     sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "click" do
@@ -72,19 +72,9 @@ class OxylabsMcp < Formula
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
-  resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/d5/00/a297a868e9d0784450faa7365c2172a7d6110c763e30ba861867c32ae6a9/jsonschema-4.25.0.tar.gz"
-    sha256 "e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f"
-  end
-
-  resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
-    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
-  end
-
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
-    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
+    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
+    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
   end
 
   resource "lxml-html-clean" do
@@ -93,18 +83,18 @@ class OxylabsMcp < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
+    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
   resource "markdownify" do
-    url "https://files.pythonhosted.org/packages/2f/78/c48fed23c7aebc2c16049062e72de1da3220c274de59d28c942acdc9ffb2/markdownify-1.1.0.tar.gz"
-    sha256 "449c0bbbf1401c5112379619524f33b63490a8fa479456d41de9dc9e37560ebd"
+    url "https://files.pythonhosted.org/packages/83/1b/6f2697b51eaca81f08852fd2734745af15718fea10222a1d40f8a239c4ea/markdownify-1.2.0.tar.gz"
+    sha256 "f6c367c54eb24ee953921804dfe6d6575c5e5b42c643955e7242034435de634c"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/4d/19/9955e2df5384ff5dd25d38f8e88aaf89d2d3d9d39f27e7383eaf0b293836/mcp-1.12.3.tar.gz"
-    sha256 "ab2e05f5e5c13e1dc90a4a9ef23ac500a6121362a564447855ef0ab643a99fed"
+    url "https://files.pythonhosted.org/packages/bc/8d/0f4468582e9e97b0a24604b585c651dfd2144300ecffd1c06a680f5c8861/mcp-1.9.0.tar.gz"
+    sha256 "905d8d208baf7e3e71d70c82803b89112e321581bcd2530f9de0fe4103d28749"
   end
 
   resource "mdurl" do
@@ -113,8 +103,8 @@ class OxylabsMcp < Formula
   end
 
   resource "oxylabs-ai-studio" do
-    url "https://files.pythonhosted.org/packages/05/78/42a26856cad1905d97900478b8504c5dc4faec9dc6dce8dd3f0df7216130/oxylabs_ai_studio-0.2.10.tar.gz"
-    sha256 "27e94f0a36135cc7e73103b9e0e05a6f1795987ae8a3c1a766a325180e9be824"
+    url "https://files.pythonhosted.org/packages/75/40/d22e4c3eb3372b72cad3a0d18c32f5646c1c952f2c33d1b1409656baf468/oxylabs_ai_studio-0.2.12.tar.gz"
+    sha256 "631162a1e9e0ef28720866e7b22617352ffbf86597c9168a9e40d9f39aaccb92"
   end
 
   resource "pydantic" do
@@ -147,19 +137,9 @@ class OxylabsMcp < Formula
     sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
-  resource "referencing" do
-    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
-    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
-  end
-
   resource "rich" do
     url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
     sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
-    sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
   end
 
   resource "shellingham" do
