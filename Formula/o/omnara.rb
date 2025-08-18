@@ -9,10 +9,10 @@ class Omnara < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "30e03b1501232708f5c09b8b0e1d67acf4cc90ec4aa41c9bd67b155a19afe4d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "98f745c89b79a2017ffa343b75952d54014220bceafdaf1bd5d78280d1d84dbc"
-    sha256 cellar: :any,                 ventura:       "0f7b1db96ab3c1bce98cc1822783b6374f3a8e783e84a7d007381b16d55399ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a731c05ae4c84a266b087792edb68af825bde40425940054c5439c07d3ff1f19"
+    sha256 cellar: :any,                 arm64_sequoia: "bde86b45384bbb54b99d3d6d484ca34a18f1d14aaf8488aa485ecae11298d4ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "00c47183a3f50c71985c82097c5388195c85432cc44ba84e858d9d21a105446f"
+    sha256 cellar: :any,                 ventura:       "4ef6537f488e21048a3f6724af3ce5db06fdd55da7321ede136cf820684aa021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94dab57316190c975a072f7d380617570905ededed6685218d15c16e8b551a0e"
   end
 
   depends_on "rust" => :build # for pydantic-core
