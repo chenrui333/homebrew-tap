@@ -306,6 +306,7 @@ brew install --cask <tool>
 - `remark-cli`
 - `resinator`
 - `revanced-cli`
+- `rkik`
 - `rshell`
 - `rslocal`
 - `rtop`
