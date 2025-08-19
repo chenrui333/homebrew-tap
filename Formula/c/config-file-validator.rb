@@ -8,10 +8,10 @@ class ConfigFileValidator < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2ad24412ecb3637dd309b1bd91f11b724742a503b04f86eb328154c5f3a910c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "504d00dd075eaefeca46e7ee3762d9ad5d16e3383cae367a8da89d69b7bb1e2a"
-    sha256 cellar: :any_skip_relocation, ventura:       "c1b9c32e4bf2aeb482d9e4f9e5de0385b05c01530a21139ed1de3a7681f86649"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe58433e2163507972332f0de812fa4a7031aab668bb234bec489470f144481"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d2bb7c1c3dae4a84b8da30cc3ce2f7f387a22ebf03bf846d83dafd0f34b1d60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e37e301a2612ca04e3884dd48da1c5c17f7dce1284d82cddf0339bacbbc9091"
+    sha256 cellar: :any_skip_relocation, ventura:       "e40ed90826baeaa5f11effe21607b9bc1e69ba8f5d0ab9819126d10fdfe75283"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dfec46e4ab22bf5a38ff730153c4b2cffbc728bbc2d5e5083876208dbf52db8"
   end
 
   depends_on "go" => :build
