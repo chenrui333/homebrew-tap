@@ -7,6 +7,10 @@
     "package_name": "context-file-manager[mcp]",
     "exclude_packages": ["certifi"]
   },
+  "litellm": {
+    "package_name": "litellm[proxy]",
+    "exclude_packages": ["certifi", "cryptography"]
+  },
   "gtts": {
     "exclude_packages": ["certifi"]
   },
