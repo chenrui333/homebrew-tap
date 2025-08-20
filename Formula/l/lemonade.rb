@@ -7,6 +7,14 @@ class Lemonade < Formula
   sha256 "70d857ba2013a81c46ca81486a65adef108e04df859babd26d4463125a39a99b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_sequoia: "d155e3f0486a1bbbc034c25f09a21083da2f5bacb462167f9a9a80ef456d9695"
+    sha256 cellar: :any, arm64_sonoma:  "17bbdb084c9095cf2f576fc574c68df064104bb01aa7b58dffae6218819ef06a"
+    sha256 cellar: :any, ventura:       "4c1b02be02e22a5a448bea70ec6d4ee6fbf0ca8dd01725ca2530a6eb503fdc8b"
+    sha256               x86_64_linux:  "9fe36ab0cd891de8785f39ad788581d0e23832c20c7edb7eaf5b5a193c7ca5ba"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "libyaml"
