@@ -3,8 +3,8 @@ class Lemonade < Formula
 
   desc "Your LLM Aide for Validation and Deployment"
   homepage "https://lemonade-server.ai/"
-  url "https://files.pythonhosted.org/packages/bf/f3/2c979c44ec626ff8d1993722bb255d3e75a08b20fabf42deca1c9c6522f8/lemonade_sdk-8.1.4.tar.gz"
-  sha256 "70d857ba2013a81c46ca81486a65adef108e04df859babd26d4463125a39a99b"
+  url "https://files.pythonhosted.org/packages/8e/02/18bb37478a297922f840fafb7efd10897bd4485f1a7211749ee8a08d68ee/lemonade_sdk-8.1.5.tar.gz"
+  sha256 "3c21e18f640da91308aced8f2e9352b3670431bad5fed8aeef1b968a2974f761"
   license "Apache-2.0"
 
   bottle do
