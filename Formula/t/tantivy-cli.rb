@@ -7,10 +7,10 @@ class TantivyCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98ead2b1445d8a6aeb3c31a55ef8e8c9ad3b0d2352e9d19db5b7b200696b36df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d3d79cbf04ddf4a73def44d2b607233b2745d465774ddb6b9bcce1a16f74269"
-    sha256 cellar: :any_skip_relocation, ventura:       "e88d45abc90bdebde472b4b2606576f0b6555e3120d9911a05200da44abe5ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac57791c965a931113173d0b0472cf75db46cbdbd5874e7daa78cf46464972bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7a49eab533cf0cbaa0712ee283e70eb5c6556eb55df97909c25038726bc41f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f82c1be32dd5e0c45337410344e7440d38a920d45a05091176822470787aaf6"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb0da84d5f28ff74db9e2f45cea7a7c3bffa4c0a8d92e724a35876a775ccdb0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fae7926e5d60beffcbb61e31607e9bdf22946e7fb38697cd944ac9fd9bb76bd3"
   end
 
   depends_on "rust" => :build
