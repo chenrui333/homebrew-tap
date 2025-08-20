@@ -10,6 +10,9 @@
   "gtts": {
     "exclude_packages": ["certifi"]
   },
+  "lemonade": {
+    "exclude_packages": ["certifi", "numpy", "sentencepiece"]
+  },
   "rallies-cli": {
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
