@@ -1,8 +1,8 @@
 class Spok < Formula
   desc "Lightweight build system and command runner"
   homepage "https://followtheprocess.github.io/spok/"
-  url "https://github.com/FollowTheProcess/spok/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "31a4569fdecfc5d8e4ccc370d5ff7dde10dd375d94ac4706169b8841df82bafa"
+  url "https://github.com/FollowTheProcess/spok/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "4db1d868c9f7f70684aae4ab7c6e3195afa072f28fdd70656c69ee64a8cbcef7"
   license "Apache-2.0"
   head "https://github.com/FollowTheProcess/spok.git", branch: "main"
 
