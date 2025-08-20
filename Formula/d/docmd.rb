@@ -7,10 +7,10 @@ class Docmd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4d767f441c8a3a3f42754894be0dbee4714b33291524c49f2224704ea4b5972"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41b3c6185b34d39b31ae45e9d64165fd35a0e4f58ed23cb6c388f0808b2dc1ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c18b3483c857da3fb9f0dca84b9a8a95c3449b8c55e4b2255f2389b2269cdfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e2e67ceb81fb1360cb3e1efe7cc95294ae38501546ea5a17abec993204f5800"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fffb0e86fae4fb6000438cd556354eaef511912da65501bb4e8bc55f6a89232d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49d795e2ba9b8ca6471307bdbaf236c5a36bac3a84162ae061f9171d514b553b"
+    sha256 cellar: :any_skip_relocation, ventura:       "457443517deb565082081dc88b962a70d4999632f045f7f8ab2c8985815fbd90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "229ca4665ced56c95bd554b36864cf50fab2bbe5b0f57606f58844e29908ba42"
   end
 
   depends_on "node"
