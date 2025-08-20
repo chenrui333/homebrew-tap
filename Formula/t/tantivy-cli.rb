@@ -1,8 +1,8 @@
 class TantivyCli < Formula
   desc "CLI for the Tantivy search engine"
   homepage "https://github.com/quickwit-oss/tantivy-cli"
-  url "https://github.com/quickwit-oss/tantivy-cli/archive/refs/tags/0.24.tar.gz"
-  sha256 "556473dcea1f54781b066bc1519701e3521b7db17110df85cfdd06689e2035c6"
+  url "https://github.com/quickwit-oss/tantivy-cli/archive/refs/tags/0.25.0.tar.gz"
+  sha256 "1f398e80d214ff53b35db3e35b7de0d6a75c9366df7c5fdce66df2e6eb0c0964"
   license "MIT"
 
   bottle do
