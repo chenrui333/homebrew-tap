@@ -13,10 +13,10 @@ class Spok < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7da0175cd0c90f7f20dc3ff04b7f7a3664f2a074fabcb3f468a14426e38705b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "730d448acb4db941862c0842a88bc4dffe0af6be0cc759a2a8ea18439b36dc75"
-    sha256 cellar: :any_skip_relocation, ventura:       "55d4bb06ea3f08a06b8ab31404c8ba84a81a3e2aff49a228de447f13e8228afe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5715fa1293b987d6fe05e1cbdbde4f70bb609634a4d3bdeb8d47dff25c134ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c12bb42bb5403a8fcdadc238cc91a41ae3b8bcc41b50b79b323cf2373def22b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51062df357996280f96b3b0f7dd8988fe7ee4d2f081d2700117dfb5f29506f86"
+    sha256 cellar: :any_skip_relocation, ventura:       "56a866c55ba35f8d71d2a6f4b5034b83b255095814d31fe5580ac4f37858c359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20cfe788881f4fc3f360b8c98daa7cee418103199e978fd91e9d6b9c2c4df8e2"
   end
 
   depends_on "go" => :build
