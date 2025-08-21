@@ -6,6 +6,14 @@ class TerraformMcpServer < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-mcp-server.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "157d67d8f3e79e67ac18abcd95902ad2427b05a825c7cde11620e9ee04bd9eae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a847ebf00f10204a7cbf2d3836d826b46dc057c62fd792afd6dfe0f9f692008"
+    sha256 cellar: :any_skip_relocation, ventura:       "f61cc63279ef284ea04f0650d4ffe076a79326de14399fc4d8f12b8e265d7ed8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "512a1e7780f6b101c1e0e01e945c7270d307391fa0452fa878eaacdd5fd404bc"
+  end
+
   depends_on "go" => :build
 
   def install
