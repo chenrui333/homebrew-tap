@@ -6,6 +6,14 @@ class KubernetesMcpServer < Formula
   license "Apache-2.0"
   head "https://github.com/containers/kubernetes-mcp-server.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "285fd5dc59c6ca93755ccd0dc2fe63d5e20310ae1142b64298a130078c63a24d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e2bac0664ed78823b85f53ebf38bb2f49415e2561076ff8813ee7470fba4e97"
+    sha256 cellar: :any_skip_relocation, ventura:       "753fde226eeb0942274e3a561be6b7d5c0e4d0a74ec3a191cd716cfe2626a79d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e25c47956ba24baf2760880608955823f6f0b561f6c2a6816c1f9c4d3164b29d"
+  end
+
   depends_on "go" => :build
 
   def install
