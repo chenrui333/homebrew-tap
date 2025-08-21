@@ -7,6 +7,14 @@ class TinybirdMcpServer < Formula
   sha256 "9c4624eff2b1b43731c64f4bd0b3eb217bbe4758634309a3d92ac2fd42925e9f"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "9e75c5f4d6f22f0f33951ab9e05f5b9aebad4c889e7404fbbcd41fb1c75c9f6c"
+    sha256 cellar: :any,                 arm64_sonoma:  "cfc3a95098c85b7e3be13c612d12970f85dbdd92c7650ec1a9e592c65bc8f113"
+    sha256 cellar: :any,                 ventura:       "12c0d214a50385f7a8e7de49a99ccea6497873f223872f5c4fb4bbc3f52312f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c6378d44e7d8884dbd041e4e9e3c7a2432483e171ab18d117e8a38e39fd7d6f"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "python@3.13"
 
