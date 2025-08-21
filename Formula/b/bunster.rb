@@ -8,10 +8,10 @@ class Bunster < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51d508a75d0a9da15a212c1bcad2d80d0f593c30395b3cc29ee7f0956df5ccc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4fb83ac844d8253058517c855700cd67774c027588ce32cf5f925d097a7e561"
-    sha256 cellar: :any_skip_relocation, ventura:       "623564ada6731ff8eed8b78778ee485d2aa3744da4127038acb87bc66c1d38d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99247861b891bc1bde0cc6236358bfb75863a601a429a2dd28f56d414522f55f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "821a29b06508df5a2544a8aa5e68a8173ce3f10749f0f7ac29b0af64772638a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c53afaaf0e5436e28ec03fb5656437b788bb04a84ea35a5ab2e17a4d2baba61f"
+    sha256 cellar: :any_skip_relocation, ventura:       "6978afeae129d6287bdd83e46ff8389df880692a8ab5f2ea42dbe576cd2e1008"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea3adcae07c2e40745f6ab435ce274cf0b5fdf3abdf127d3c8dd27a3a9f1ff19"
   end
 
   depends_on "go"
