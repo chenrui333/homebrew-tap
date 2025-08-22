@@ -9,10 +9,10 @@ class LogfireMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "136a0e624a5a56e6ec452f72ac8e17b8159fa55d4948b181397e6d3fb68e6ffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "93691a96c3860ed4e0bd0c4f08a5fce4f94c8a51c5628dde491145b5bed526c6"
-    sha256 cellar: :any,                 ventura:       "c81868febfad9628124dbcb7c3dc50b5ef23282992269a361e0d909fe65c1443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f4a52002928b922c6a55ebf00b2dc2b974a08a4d70652d668a8b4d0beafc3d0"
+    sha256 cellar: :any,                 arm64_sequoia: "24aa3857d653f77eea880c543413f6d6ffe325155ca5d5bf00930927ddd6da25"
+    sha256 cellar: :any,                 arm64_sonoma:  "f29d394199d85bfdf4d33177f3a8d30b4da9de55cdaae0bdee9879d4801c562c"
+    sha256 cellar: :any,                 ventura:       "c42908849ac7526927ecaec8d9cab0bc871cd23a93411a07db3839e746bd22b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e37d554fcc9c8356d9369344f5694fc15f031a01657ee04925b8887b634a43c6"
   end
 
   depends_on "rust" => :build # for pydantic
