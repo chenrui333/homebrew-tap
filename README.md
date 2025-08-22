@@ -53,6 +53,7 @@ brew install --cask <tool>
 - `awk-language-server`
 - `awless`
 - `axiom-mcp-server`
+- `az-tui`
 - `azure-pipelines-language-server`
 - `backport`
 - `balcony`
@@ -88,7 +89,6 @@ brew install --cask <tool>
 - `cf2pulumi`
 - `chatlog`
 - `checkpwn`
-- `chisel-cli`
 - `clai`
 - `cloudlens`
 - `cmdx`
@@ -105,12 +105,14 @@ brew install --cask <tool>
 - `crush`
 - `cueimports`
 - `darker`
+- `datadog-mcp-server`
 - `dbee`
 - `dbin`
 - `ddev`
 - `decktape`
 - `deepteam`
 - `dela`
+- `dg`
 - `docker-debug`
 - `docmd`
 - `doit`
@@ -182,6 +184,7 @@ brew install --cask <tool>
 - `huber`
 - `humioctl`
 - `hygg`
+- `hyperbolic`
 - `iftree`
 - `illa`
 - `imgcat`
@@ -197,6 +200,7 @@ brew install --cask <tool>
 - `jsonl-graph`
 - `junit2html`
 - `kaluma-cli`
+- `kandc`
 - `karmor`
 - `kbst`
 - `kcl`
@@ -212,6 +216,7 @@ brew install --cask <tool>
 - `kwt`
 - `lazycontainer`
 - `leetgo`
+- `lemonade`
 - `leveldb-cli`
 - `lin`
 - `lintnet`
@@ -241,6 +246,7 @@ brew install --cask <tool>
 - `mmemoji`
 - `mnamer`
 - `molotov`
+- `mongodb-mcp-server`
 - `mpfshell`
 - `mqtt-cli`
 - `oceanbase-mcp-server`
@@ -267,6 +273,7 @@ brew install --cask <tool>
 - `oxbuild`
 - `oxylabs-mcp`
 - `papis`
+- `paq`
 - `pdfsyntax`
 - `pencode`
 - `percollate`
@@ -294,9 +301,11 @@ brew install --cask <tool>
 - `pyment`
 - `pyp`
 - `quicssh-rs`
+- `qwen-code`
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
+- `raiz`
 - `rallies-cli`
 - `ramda-cli`
 - `rang`
@@ -365,6 +374,7 @@ brew install --cask <tool>
 - `tftree`
 - `tickrs`
 - `timetrace`
+- `tinybird-mcp-server`
 - `tlint`
 - `togomak`
 - `token-cli`
@@ -375,6 +385,7 @@ brew install --cask <tool>
 - `trieve-cli`
 - `tuono`
 - `twiggy`
+- `twilio-mcp-server`
 - `unused-deps`
 - `usort`
 - `vectorize-mcp-server`
