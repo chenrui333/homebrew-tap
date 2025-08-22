@@ -7,6 +7,14 @@ class Kandc < Formula
   sha256 "e8b7246ab26ff5ccda0e6a0de054d3cad4088970bc4415635ef850dc4af80228"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "106a8355159d3b2942b01048a7a621c88f5dfc4fcc5219b0e0fbac59152efdee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c542bfcff39dfeda1ec57604c24c4606d4a77420f4b539406919282306adcf28"
+    sha256 cellar: :any_skip_relocation, ventura:       "f8b0cc353b86ae461e764689a144abefa48338fb6e9bdf7c6da315bd787ecc39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5abcbbdd6822294ea0c6fcb230d7f8c6283eaebf41ef91b0fa2f8af123367c"
+  end
+
   depends_on "python@3.13"
 
   resource "certifi" do
