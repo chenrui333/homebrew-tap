@@ -7,10 +7,10 @@ class NotionMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d900d9708df30211efb480a14cca8d4da284d15565f2d9254835c32c5cdb6bc2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63bceb19c435774bdedc02d243f47ddbd202d337184b0863edcf8cffcd875c9a"
-    sha256 cellar: :any_skip_relocation, ventura:       "98ac3e7661ee7d284628f1d68c5467202de8ae38e17b7fc5ab80bba6e2bebaaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a145afae10509c11f534d0186f1ad8f39738bb156336f157f0bc8a79e061cffd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd3af01da155b4df7ded86997126cb86a0b7f35f378cc83a176461c4642fc4ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "288653a944b036be12f5290ee7d0c7dd919b422787c02fa64eacfc41f23a82c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "32d73ee59779901a2b9a622b7e854a65f4598576b5d1b669e1e604273b9c9037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "729faa52961092407d097cabf445b5d4cdbc15558a9d6fd89bc7dca103907477"
   end
 
   depends_on "node"
