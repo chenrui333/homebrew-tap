@@ -17,8 +17,7 @@ class BrowserbaseMcpServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
-    mv bin/"mcp-server-browserbase", bin/"browserbase-mcp-server"
+    bin.install_symlink libexec/"bin/mcp-server-browserbase" => "browserbase-mcp-server"
   end
 
   test do
