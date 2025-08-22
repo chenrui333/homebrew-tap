@@ -6,10 +6,10 @@
   "gtts": {
     "exclude_packages": ["certifi"]
   },
-  "promptflow": {
+  "chenrui333/tap/promptflow": {
     "package_name": "",
     "extra_packages": ["promptflow"],
-    "exclude_packages": ["certifi", "pillow"]
+    "exclude_packages": ["certifi", "cryptography", "numpy", "pillow"]
   },
   "rallies-cli": {
     "package_name": "rallies",
