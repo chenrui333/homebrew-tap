@@ -9,10 +9,10 @@ class Lemonade < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_sequoia: "b91e0ddbaf9ce23a86e06ed295befdd00dede7f11accb6457885c45f5a310f23"
-    sha256 cellar: :any, arm64_sonoma:  "c91458dfdbc82ef4505b232dd2e9b0719cddf5b9320206343e638d4c1db2e468"
-    sha256 cellar: :any, ventura:       "bbe926d9674eea9ea6b952a8ccafeee85c82bcd28e094ddb695950a10aeb5d85"
-    sha256               x86_64_linux:  "531f5eecaa6ad7bd8eaeb6d2e16e97ab52e5036209ae635a8ec83ca30bf6eee6"
+    sha256 cellar: :any, arm64_sequoia: "e92f1f8f4991a28124c3b5d441c9984103c98925e7ee6212a852b60e67fad2ee"
+    sha256 cellar: :any, arm64_sonoma:  "2bda63474e003347961532db3be5261ac0bb486c3a7063a1645b60a4fc0daa41"
+    sha256 cellar: :any, ventura:       "1b75d329fd979e7dfe9414f336493b973b1d9821cb04685f9b33af27446a6e29"
+    sha256               x86_64_linux:  "b7a33c9785f0c12bca93ff780abc74d339cb718c720ac29a4a1a65ff91cf3521"
   end
 
   depends_on "rust" => :build # for pydantic
