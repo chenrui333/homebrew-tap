@@ -2,7 +2,7 @@ class BlueutilTui < Formula
   include Language::Python::Virtualenv
 
   desc "TUI for Mac to interact with bluetooth devices via blueutil"
-  homepage "https://github.com/pypa/abi3audit"
+  homepage "https://github.com/Zaloog/blueutil-tui"
   url "https://files.pythonhosted.org/packages/8b/93/4fca093a6c9e8c3b6004ac04a8c7884a22c02e279d7f8467f01a4405c57e/blueutil_tui-0.2.4.tar.gz"
   sha256 "aca0561f64dfc59211affba2eb51db9bfee8a05b355e486c8b688dd43c6c9625"
   license "MIT"
