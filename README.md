@@ -96,6 +96,7 @@ brew install --cask <tool>
 - `cmdx`
 - `cocainate`
 - `code-pushup`
+- `codespelunker`
 - `codstts`
 - `cohctl`
 - `config-file-validator`
@@ -173,6 +174,7 @@ brew install --cask <tool>
 - `graphtage`
 - `grcov`
 - `grmon`
+- `gtrash`
 - `gtts`
 - `hasha-cli`
 - `hauler`
@@ -204,6 +206,7 @@ brew install --cask <tool>
 - `jl`
 - `jplot`
 - `jsonl-graph`
+- `jsrpc`
 - `junit2html`
 - `kaluma-cli`
 - `kandc`
@@ -285,6 +288,7 @@ brew install --cask <tool>
 - `pencode`
 - `percollate`
 - `perfops`
+- `pg-schema-diff`
 - `pgdog`
 - `phpinsights`
 - `pike`
