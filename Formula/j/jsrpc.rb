@@ -6,6 +6,14 @@ class Jsrpc < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/jxhczhl/JsRpc.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3be843c19939002c64db60cb62560a522c3dba092a40e238f5a78e67089a2736"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21fbeeae36e641d0595d74c5af83a51b7fcaa464379c12b67c184bf829e9fd42"
+    sha256 cellar: :any_skip_relocation, ventura:       "1b6ba09913f7eb97ffa84ee9da97f5e7056eaa7e62a3dced384eace3e98b6aac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "480c3f3638c1d7aedf035418e59d259c12bd2f4ae9b95a8d2497313a4461f569"
+  end
+
   depends_on "go" => :build
 
   def install
