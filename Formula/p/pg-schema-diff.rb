@@ -6,6 +6,14 @@ class PgSchemaDiff < Formula
   license "MIT"
   head "https://github.com/stripe/pg-schema-diff.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cb4d93aa46edd61eb3fb6a7de7fa15058ab68ba0064471c0b8620b22309eac7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83d7a230f829150f005baa595497756d1072f294005021f7d2baae7136c61838"
+    sha256 cellar: :any_skip_relocation, ventura:       "aa70088641ff3cb8e11af4d21c47c895bbe59a052ac3e5563ef705d8b5b901b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84dc2937f24f38bb4c3e4fb78b9eaff4df22d4cf2d6ed21df064d0eb382f4a4b"
+  end
+
   depends_on "go" => :build
 
   def install
