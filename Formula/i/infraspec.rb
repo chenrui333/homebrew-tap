@@ -1,7 +1,7 @@
 # framework: cobra
 class Infraspec < Formula
   desc "Tool for running infrastructure tests written in pure Gherkin syntax"
-  homepage "https://github.com/robmorgan/infraspec"
+  homepage "https://infraspec.sh/"
   url "https://github.com/robmorgan/infraspec/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "3103267ec0b5660141182371348dbb953114e07ab87dc10bcd9a1a9799e031fc"
   license "Apache-2.0"
