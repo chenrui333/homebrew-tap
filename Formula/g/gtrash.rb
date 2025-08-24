@@ -6,6 +6,14 @@ class Gtrash < Formula
   license "MIT"
   head "https://github.com/umlx5h/gtrash.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77b8d62f9daedb94cca580326c150bac19a288cfeb6d7034db9edf8c5ad6bc6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06cdc9ef873ccc6cc66f4625a803ba51f6a6379e32968de3e9cd93a0f756de09"
+    sha256 cellar: :any_skip_relocation, ventura:       "34cfc2ed5b067c9f64dbfac0ea80694c166f02f25a1f6886824cde6db44a555e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "562b8ffff4310f77b52d677dcb7a155f49ff9471025e6c182915095fea099c62"
+  end
+
   depends_on "go" => :build
 
   def install
