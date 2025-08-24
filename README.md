@@ -57,7 +57,7 @@ brew install --cask <tool>
 - `azure-pipelines-language-server`
 - `backport`
 - `balcony`
-- `base-mcp`
+- `base-mcp-server`
 - `blade-formatter`
 - `blindfold`
 - `blue`
@@ -87,9 +87,11 @@ brew install --cask <tool>
 - `certok`
 - `cf-vault`
 - `cf2pulumi`
+- `changelogen`
 - `chatlog`
 - `checkpwn`
 - `clai`
+- `cloudflare-ddns`
 - `cloudlens`
 - `cmdx`
 - `cocainate`
@@ -104,6 +106,7 @@ brew install --cask <tool>
 - `crlfmt`
 - `crush`
 - `cueimports`
+- `curlconverter`
 - `darker`
 - `datadog-mcp-server`
 - `dbee`
@@ -113,10 +116,12 @@ brew install --cask <tool>
 - `deepteam`
 - `dela`
 - `dg`
+- `dnsforwarder`
 - `docker-debug`
 - `docmd`
 - `doit`
 - `dory-cli`
+- `doxx`
 - `dqy`
 - `duster`
 - `dvm`
@@ -145,6 +150,7 @@ brew install --cask <tool>
 - `fsociety`
 - `fx-upscale`
 - `gemini-cli`
+- `ggc`
 - `ghfetch`
 - `gignr`
 - `giq`
@@ -227,7 +233,7 @@ brew install --cask <tool>
 - `luaformatter`
 - `lib-x`
 - `libdivide`
-- `magic-mcp`
+- `magic-mcp-server`
 - `mail-deduplicate`
 - `mamediff`
 - `markpdf`
@@ -254,6 +260,7 @@ brew install --cask <tool>
 - `narr`
 - `nest-cli`
 - `netscanner`
+- `newsnow-mcp-server`
 - `ngtop`
 - `nhost`
 - `ni`
@@ -305,6 +312,7 @@ brew install --cask <tool>
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
+- `railway-mcp-server`
 - `raiz`
 - `rallies-cli`
 - `ramda-cli`
@@ -325,7 +333,7 @@ brew install --cask <tool>
 - `satty`
 - `saw`
 - `scholar`
-- `screenshotone-mcp`
+- `screenshotone-mcp-server`
 - `scrt`
 - `sdl_image`
 - `sdl_mixer`
@@ -349,9 +357,9 @@ brew install --cask <tool>
 - `spotifydl`
 - `statoscope`
 - `strimzi-kafka-cli`
-- `stripe-mcp`
+- `stripe-mcp-server`
 - `summon`
-- `supabase-mcp`
+- `supabase-mcp-server`
 - `superclaude`
 - `surgeon`
 - `swagger-mcp-server`
@@ -386,6 +394,7 @@ brew install --cask <tool>
 - `tuono`
 - `twiggy`
 - `twilio-mcp-server`
+- `typtea`
 - `unused-deps`
 - `usort`
 - `vectorize-mcp-server`
@@ -398,7 +407,9 @@ brew install --cask <tool>
 - `vitepress`
 - `vsg`
 - `wallust`
+- `watchfiles`
 - `wedl`
+- `weekly-git-summary`
 - `werk`
 - `xcpkg`
 - `xmlformatter`
