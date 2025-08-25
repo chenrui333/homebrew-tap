@@ -1,8 +1,8 @@
 class Simdjzon < Formula
   desc "Simdjson ported to zig"
   homepage "https://github.com/travisstaloch/simdjzon"
-  url "https://github.com/travisstaloch/simdjzon/archive/refs/tags/0.14.0.tar.gz"
-  sha256 "be2d071210fa7cfd30bf08c13464ac49f32809e2cd14cd74849314808c7ea2ac"
+  url "https://github.com/travisstaloch/simdjzon/archive/refs/tags/0.15.1.tar.gz"
+  sha256 "680cc168dce2c5351af94820eae55e982898e36ecba818c6ce78e67863f2da17"
   license "Apache-2.0"
 
   bottle do
