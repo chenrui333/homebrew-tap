@@ -5,6 +5,14 @@ class ShadcnUiMcpServer < Formula
   sha256 "4aeb3400a746f1e37c9b5960b605adf978fee1f84cb8262ccd2aa9f4e79740e9"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d361aa38c1e4cdce6c3572fcb3a5c0a90db39604eb1ab4f157fcba94d3a5d8bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08d6911b877e565edd923788518f88a9df9a21cdefd0a1b0a302351a4275674b"
+    sha256 cellar: :any_skip_relocation, ventura:       "079852ce17585df177887f963658874f3e3469b00b885fb4f0b8de3c3401e52c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdef32102a261fd88db2601d2af3e05d230cecd46bce21b59afc09949164fd7f"
+  end
+
   depends_on "node"
 
   def install
