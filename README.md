@@ -234,7 +234,6 @@ brew install --cask <tool>
 - `luaformatter`
 - `lib-x`
 - `libdivide`
-- `mac-cleanup-py`
 - `magic-mcp-server`
 - `mail-deduplicate`
 - `mamediff`
