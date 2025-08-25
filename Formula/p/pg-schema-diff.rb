@@ -8,10 +8,10 @@ class PgSchemaDiff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cb4d93aa46edd61eb3fb6a7de7fa15058ab68ba0064471c0b8620b22309eac7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83d7a230f829150f005baa595497756d1072f294005021f7d2baae7136c61838"
-    sha256 cellar: :any_skip_relocation, ventura:       "aa70088641ff3cb8e11af4d21c47c895bbe59a052ac3e5563ef705d8b5b901b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84dc2937f24f38bb4c3e4fb78b9eaff4df22d4cf2d6ed21df064d0eb382f4a4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4594c6754ef1142ffa341825c94cb083ce5a15649ea05ab63eb9f901eecc0a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9ad5647fe3bce8bd339cd7d2edc44f7061cfb8d705edb8641ac62f70b8ef234"
+    sha256 cellar: :any_skip_relocation, ventura:       "f8b8801f5c992088601e3e71d50387f3b7dde110b14a56760368207f392f1c4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35b6773f7c44a9a5807a503894b47335c033e9c3cb4db48384d8b0b9f7c1dadd"
   end
 
   depends_on "go" => :build
