@@ -7,6 +7,14 @@ class MacCleanupPy < Formula
   sha256 "6773f059ba2025d8121d0c764afe45d1d10d305df23f604b2a485e1360e526a3"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f56d2bfe34f6b5e40a8f371bf6345a6efdd2624bf7eb81770ec42bc43e5e8a7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f105756a976639ce9736f22b7431018762c8fad707acf8a80d765027d306812e"
+    sha256 cellar: :any_skip_relocation, ventura:       "90f6379553790699bf5892755502f6f273d2199ab6165cd25bc5374149ed373a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33cdf67763f8ae0c6df2416484f0bf5d7f7b65dc69c3d5a913b69b3de76d5334"
+  end
+
   depends_on "python@3.13"
 
   resource "attrs" do
