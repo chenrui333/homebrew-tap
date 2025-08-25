@@ -57,6 +57,7 @@
   "ktop": "homebrew/core",
   "kubernetes-mcp-server": "homebrew/core",
   "lazyjj": "homebrew/core",
+  "mac-cleanup-py": "homebrew/core",
   "mcp-get": "homebrew/core",
   "mcp-proxy": "homebrew/core",
   "mcphost": "homebrew/core",
