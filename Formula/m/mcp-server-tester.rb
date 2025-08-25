@@ -5,6 +5,14 @@ class McpServerTester < Formula
   sha256 "ac195741b7eccbaeaf23590c401b548024c6beb95bf1c3ccf0d5c1dec1e45786"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c874b459e31beefdda22cabae87a325e1acd5a72a3675a30a64270ea2c6739d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc750f0919d0b5edbb97678d5b74e77ac1f005d0686b4db6cbbbda6425725d5f"
+    sha256 cellar: :any_skip_relocation, ventura:       "76d1d99d4d6676abb5db556a6d891d5e36ec5665253c0ee2f392b1e3d73f0abe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc8e633a5aae7dd3320f6d372f1688ce139cdab3eadc719120ba3b6b6aeec2f8"
+  end
+
   depends_on "node"
 
   def install
