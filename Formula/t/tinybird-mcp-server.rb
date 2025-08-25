@@ -217,12 +217,13 @@ class TinybirdMcpServer < Formula
     ENV["TB_ADMIN_TOKEN"] = "tbp_admin"
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18"}}
+      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
     JSON
 
     output = pipe_output("#{bin}/mcp-tinybird 2>&1", json, 0)
     assert_match "Started MCP Tinybird", output
-    assert_match "Invalid request parameters", output
+    assert_match "List all Pipe Endpoints in the Tinybird Workspace", output
   end
 end
