@@ -58,6 +58,7 @@ brew install --cask <tool>
 - `backport`
 - `balcony`
 - `base-mcp-server`
+- `bearer`
 - `blade-formatter`
 - `blindfold`
 - `blue`
@@ -70,7 +71,6 @@ brew install --cask <tool>
 - `browserbase-mcp-server`
 - `brunette`
 - `btczee`
-- `bunster`
 - `bytebox`
 - `c4go`
 - `cai`
@@ -122,7 +122,6 @@ brew install --cask <tool>
 - `docmd`
 - `doit`
 - `dory-cli`
-- `doxx`
 - `dqy`
 - `duster`
 - `dvm`
@@ -151,7 +150,6 @@ brew install --cask <tool>
 - `fsociety`
 - `fx-upscale`
 - `gemini-cli`
-- `ggc`
 - `ghfetch`
 - `gignr`
 - `giq`
@@ -174,7 +172,6 @@ brew install --cask <tool>
 - `graphtage`
 - `grcov`
 - `grmon`
-- `gtrash`
 - `gtts`
 - `hasha-cli`
 - `hauler`
@@ -187,6 +184,7 @@ brew install --cask <tool>
 - `holo-cli`
 - `horusec`
 - `hostctl`
+- `howto`
 - `ht-mcp`
 - `htvend`
 - `huber`
@@ -236,6 +234,7 @@ brew install --cask <tool>
 - `luaformatter`
 - `lib-x`
 - `libdivide`
+- `mac-cleanup-py`
 - `magic-mcp-server`
 - `mail-deduplicate`
 - `mamediff`
@@ -268,7 +267,6 @@ brew install --cask <tool>
 - `nhost`
 - `ni`
 - `nocc`
-- `notion-mcp-server`
 - `np`
 - `npkill`
 - `nvrs`
@@ -312,7 +310,6 @@ brew install --cask <tool>
 - `pyment`
 - `pyp`
 - `quicssh-rs`
-- `qwen-code`
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
@@ -363,7 +360,6 @@ brew install --cask <tool>
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
 - `summon`
-- `supabase-mcp-server`
 - `superclaude`
 - `surgeon`
 - `swagger-mcp-server`
@@ -392,13 +388,13 @@ brew install --cask <tool>
 - `token-cli`
 - `tooka`
 - `toolctl`
+- `tparse`
 - `tpm`
 - `travelgrunt`
 - `trieve-cli`
 - `tuono`
 - `twiggy`
 - `twilio-mcp-server`
-- `typtea`
 - `unused-deps`
 - `usort`
 - `vectorize-mcp-server`
