@@ -22,7 +22,13 @@ class Pipeform < Formula
   end
 
   test do
-    # TODO: need a better test to test pipe
-    system bin/"pipeform", "--help"
+    stream = <<~JSON
+      {"@level":"info","@message":"Terraform will perform the following actions:"}
+      {"@level":"info","@message":"Plan: 1 to add, 0 to change, 0 to destroy."}
+    JSON
+
+    tee_path = testpath/"output.jsonl"
+    pipe_output("#{bin}/pipeform --plain-ui --tee #{tee_path}", stream, 1)
+    assert_match "Terraform will perform", tee_path.read
   end
 end
