@@ -7,6 +7,10 @@
     "package_name": "context-file-manager[mcp]",
     "exclude_packages": ["certifi"]
   },
+  "chenrui333/tap/excel-mcp-server": {
+    "exclude_packages": ["certifi", "cryptography"],
+    "extra_packages": ["excel_mcp"]
+  },
   "gtts": {
     "exclude_packages": ["certifi"]
   },
