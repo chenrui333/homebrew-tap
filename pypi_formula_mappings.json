@@ -7,6 +7,10 @@
     "package_name": "context-file-manager[mcp]",
     "exclude_packages": ["certifi"]
   },
+  "chenrui333/tap/docling": {
+    "exclude_packages": ["certifi", "numpy", "torch", "torchvision", "pillow", "scipy", "scikit-image"],
+    "extra_packages": ["typing_extensions"]
+  },
   "gtts": {
     "exclude_packages": ["certifi"]
   },
