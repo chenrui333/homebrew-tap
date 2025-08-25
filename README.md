@@ -125,6 +125,7 @@ brew install --cask <tool>
 - `dqy`
 - `duster`
 - `dvm`
+- `dxt`
 - `eas-cli`
 - `elastop`
 - `emoj`
@@ -168,6 +169,7 @@ brew install --cask <tool>
 - `gommit`
 - `goodls`
 - `gowebly`
+- `grafana-mcp-server`
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
@@ -241,6 +243,8 @@ brew install --cask <tool>
 - `matcha`
 - `mcman`
 - `mcp-server-cloudflare`
+- `mcp-server-tester`
+- `mcpd`
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
@@ -343,6 +347,7 @@ brew install --cask <tool>
 - `seastar`
 - `secco`
 - `sgpt`
+- `shadcn-ui-mcp-server`
 - `sheetui`
 - `shiroa`
 - `shopify-cli`
@@ -371,6 +376,7 @@ brew install --cask <tool>
 - `termsvg`
 - `termtunnel`
 - `terracove`
+- `terrafetch`
 - `terraform-diff`
 - `terraform`
 - `terrap-cli`
