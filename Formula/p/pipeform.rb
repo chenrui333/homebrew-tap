@@ -9,10 +9,11 @@ class Pipeform < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4537a0622eb7c6651f6e68f7835007237b206072939c6679ec19f068c93bba7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "362326526d5d4aa13844e2910a80b3c33f62253c8bc642604feed06aec9d1654"
-    sha256 cellar: :any_skip_relocation, ventura:       "7fb4d48afe9f200c7396a19e6b232c8f2f4b6560f57eda221176d06c7a67e024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec96a0100240bdb788d6c0a266bbdff791f3f26334c902cf86f6f147a1cf2dee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab1b5c745a37146903953804d6971f866d72981d670854ebea3b22e8c10a0275"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3b0dad0e02d0c0d4f2f52dd2d3f17e2d7f804add14f53953170f8ce03788027"
+    sha256 cellar: :any_skip_relocation, ventura:       "98bd0d2bc6e1d95ad82b99818a4b9b70744e2fcad9a935afb4774af02a6ed410"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9afcde06da06062190018c1fd0209e602d7e9954722e5e3d95dd3965259f72b4"
   end
 
   depends_on "go" => :build
