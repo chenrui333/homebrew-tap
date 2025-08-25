@@ -7,8 +7,8 @@ class Simdjzon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3c5e1c8bc8545e3b4af965f4afae46ef4dffbfcaaa3ac97f8f11cb33da3ec95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95bc3f2b65347f8f4114746181ece6e0ac8468d9c7f2e8cb5f708f7b7eb9c6a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f448fb49de1811e237feba4d801d33c78013c799ed599f1bac7894eb6f938c76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5057352a99714ca76780613eac42d4b4d6bfdff1b9fff70d77f185ec8a14fb05"
   end
 
   depends_on "zig" => :build
