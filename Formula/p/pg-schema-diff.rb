@@ -1,8 +1,8 @@
 class PgSchemaDiff < Formula
   desc "Diff Postgres schemas and generating SQL migrations"
   homepage "https://github.com/stripe/pg-schema-diff"
-  url "https://github.com/stripe/pg-schema-diff/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "38fae5ae53d8199b14ecc7eccf436cd138936a87bcb75aaa9968ba20d1d3dd1f"
+  url "https://github.com/stripe/pg-schema-diff/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "a763d45c8945f199e290cc1683da8f36181309f128053bbe802620619bf5f11e"
   license "MIT"
   head "https://github.com/stripe/pg-schema-diff.git", branch: "main"
 
@@ -23,8 +23,7 @@ class PgSchemaDiff < Formula
   end
 
   test do
-    schema_dir = testpath/"schema"
-    (schema_dir/"schema.sql").write <<~SQL
+    (testpath/"schema.sql").write <<~SQL
       CREATE TABLE public.foobar (
         id serial PRIMARY KEY,
         message text,
@@ -36,7 +35,7 @@ class PgSchemaDiff < Formula
     pg_port = free_port
     dsn = "postgres://postgres:postgres@127.0.0.1:#{pg_port}/postgres?sslmode=disable"
 
-    output = shell_output("#{bin}/pg-schema-diff plan --from-dsn '#{dsn}' --to-dir #{schema_dir} 2>&1", 1)
+    output = shell_output("#{bin}/pg-schema-diff plan --from-dsn '#{dsn}' --to-dir #{testpath} 2>&1", 1)
     assert_match "Error: creating temp db factory", output
   end
 end
