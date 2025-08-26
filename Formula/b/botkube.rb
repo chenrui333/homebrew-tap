@@ -17,18 +17,19 @@ class Botkube < Formula
   depends_on "go" => :build
 
   def install
-    # -X github.com/kubeshop/botkube/cmd/cli/cmd/migrate.DefaultImageTag={{ .Env.IMAGE_TAG }}
-    # -X github.com/kubeshop/botkube/internal/cli/analytics.APIKey={{ .Env.CLI_ANALYTICS_API_KEY }}
     ldflags = %W[
       -s -w
+      -X github.com/kubeshop/botkube/internal/cli/analytics.APIKey=
       -X go.szostok.io/version.version=#{version}
       -X go.szostok.io/version.buildDate=#{time.iso8601}
       -X go.szostok.io/version.commit=#{tap.user}
+      -X go.szostok.io/version.commitDate=#{time.iso8601}
       -X go.szostok.io/version.name=botkube
     ]
+
     system "go", "build", *std_go_args(ldflags:), "./cmd/cli"
 
-    generate_completions_from_executable(bin/"botkube", "completion")
+    generate_completions_from_executable(bin/"botkube", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
