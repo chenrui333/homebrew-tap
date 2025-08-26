@@ -2,8 +2,8 @@
 class GoZzz < Formula
   desc "Hot compilation of Go programs, stress testing for Golang development"
   homepage "https://github.com/sohaha/zzz"
-  url "https://github.com/sohaha/zzz/archive/refs/tags/v1.0.46.tar.gz"
-  sha256 "9a0c7e7103fc5b5ba51a35c9765c1a72152602b86050c51f5eb87fd95e9873ae"
+  url "https://github.com/sohaha/zzz/archive/refs/tags/v1.0.47.tar.gz"
+  sha256 "bf3bed039b16ce06cf11d489652858b9cfb89d35447875ff4e21aa1fcebc1088"
   license "Apache-2.0"
   head "https://github.com/sohaha/zzz.git", branch: "master"
 
