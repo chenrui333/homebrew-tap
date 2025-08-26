@@ -8,10 +8,11 @@ class Botkube < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf34e240d7f3905536fdb26dda167e7c234293efce310b85b59d1ad2e72e1390"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36b8633944f7fb056aef519080b62fa046a3ad6b5f43299df5692de537b359bc"
-    sha256 cellar: :any_skip_relocation, ventura:       "db43ed25f9ebebb997281503812a0442aeb43197e11c86ce0962b4f22e515eb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34c8ef5414ba6b8d495eed9bd54953f4d9ed036e2652f5b64812a61d61eecd32"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3ecb7b51fa9b0665320c8417c2ad50bfe940bb15620f62f4567768768ca72d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0acfca2dc95ad006ae4decf71efdc18e090b1088ad80aab0fd67e559a26f2076"
+    sha256 cellar: :any_skip_relocation, ventura:       "46a567e1a03c1b2a5aa598c9747b6b55459c78462f88c48a508be00457c56a5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3013aaadf694204dbe328f49a959c4a2a017c1f88b7a58459ff39ed3df70a869"
   end
 
   depends_on "go" => :build
