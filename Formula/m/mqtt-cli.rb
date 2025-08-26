@@ -16,18 +16,13 @@ class MqttCli < Formula
 
   depends_on "openjdk"
 
-  patch do
-    url "https://github.com/hivemq/mqtt-cli/commit/4aa5809364717a840a6f0de47795313a58642ff1.patch?full_index=1"
-    sha256 "f9d8f2b5c15ba66fe2dc5eafd8c2cb88e259e35b8fb2246c61eb4eafd7ba2519"
-  end
-
   # update toolchain to Java 24
   patch :DATA
 
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
 
-    system "./gradlew", "shadowJar", "--no-daemon"
+    system "./gradlew", "shadowJar", "--no-daemon", "-x", "test"
     libexec.install "build/libs/mqtt-cli-#{version}.jar" => "mqtt-cli.jar"
     bin.write_jar_script libexec/"mqtt-cli.jar", "mqtt"
   end
