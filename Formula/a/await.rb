@@ -15,9 +15,6 @@ class Await < Formula
   end
 
   def install
-    # patch version
-    inreplace "await.c", "1.0.9", version.to_s
-
     system ENV.cc, "await.c", "-o", "await", "-lpthread"
     bin.install "await"
 
