@@ -13,6 +13,9 @@
   "lemonade": {
     "exclude_packages": ["certifi", "numpy", "sentencepiece"]
   },
+  "chenrui333/tap/oxylabs-mcp": {
+    "exclude_packages": ["certifi", "cryptography"]
+  },
   "rallies-cli": {
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
