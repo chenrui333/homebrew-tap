@@ -7,6 +7,14 @@ class PubmedMcpServer < Formula
   sha256 "bbaa665daaf929d3f072ddeb6440d6a1761aaf897c476be34ff1314a9a63383c"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "69954875cdc24262f823a64bc9cf0cb548dc2e0053468503ff115fdfce401e7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e5b33362151eab3319a790f344ddeae99a6b6bc36c763eca4d4925109f09cda6"
+    sha256 cellar: :any,                 ventura:       "9b2b5495283e8ee4d4b9f8f174ce471596ccd62100097a3e653f04fad2b0f9e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bce39889b1576d53d5932476b1b269ca4b31e7792ffa07c3cddf2394ef7a1ebb"
+  end
+
   depends_on "cmake" => :build # for levenshtein
   depends_on "ninja" => :build # for levenshtein
   depends_on "rust" => :build # for pydantic
