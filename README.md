@@ -39,6 +39,7 @@ brew install --cask <tool>
 - `aoc-cli`
 - `apify-actors-mcp-server`
 - `apkeep`
+- `apple-health-mcp-server`
 - `archgw`
 - `arduino-language-server`
 - `arp-scan-rs`
@@ -66,6 +67,7 @@ brew install --cask <tool>
 - `blush`
 - `botkube`
 - `box`
+- `brave-search-mcp-server`
 - `brighterscript-formatter`
 - `brotab`
 - `browserbase-mcp-server`
@@ -371,7 +373,6 @@ brew install --cask <tool>
 - `tattoy`
 - `tavily-mcp`
 - `tclint`
-- `tdd-guard`
 - `tenderly`
 - `termsvg`
 - `termtunnel`
@@ -395,6 +396,7 @@ brew install --cask <tool>
 - `toolctl`
 - `tparse`
 - `tpm`
+- `tracetest`
 - `travelgrunt`
 - `trieve-cli`
 - `tuono`
@@ -402,6 +404,7 @@ brew install --cask <tool>
 - `twilio-mcp-server`
 - `unused-deps`
 - `usort`
+- `vapi-mcp-server`
 - `vectorize-mcp-server`
 - `venom`
 - `vento`
