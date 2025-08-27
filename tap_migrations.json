@@ -96,6 +96,7 @@
   "sttr": "homebrew/core",
   "style-dictionary": "homebrew/core",
   "supabase-mcp-server": "homebrew/core",
+  "tdd-guard": "homebrew/core",
   "terraform-cleaner": "homebrew/core",
   "terraform-iam-policy-validator": "homebrew/core",
   "terraform-mcp-server": "homebrew/core",
