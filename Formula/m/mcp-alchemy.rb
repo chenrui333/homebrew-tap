@@ -7,6 +7,14 @@ class McpAlchemy < Formula
   sha256 "13632a2eb8dfd62453c7ef1f9d8aded6b7ef9c1478d447cc1192dd9cbc2460e4"
   license "MPL-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "2922f62219639c9f6e917450046bbf5774adb519c981fbc90a3bfb37538380eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "47ee1b68fef29aa1324b4c675f1237c213477baf7997a701c6914d2632fec183"
+    sha256 cellar: :any,                 ventura:       "f528392b6c3cb1bb1a332fb4e4188de09e185a0e3008bd06146ec7d9a8438175"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac23eddb541b44813f3e47ccd9dc709c92e35be1a040c9ea5931591ee2648df"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
