@@ -7,6 +7,14 @@ class ArxivMcpServer < Formula
   sha256 "c8635eb54ede97a657b1abc3f2ebced7b399b5a3ee620ce4c62544938d36194b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "0f15f9b1194b21bc6914ba24ffa70e862e96321942a094199196a8a582f1badb"
+    sha256 cellar: :any,                 arm64_sonoma:  "4538a580245db70c2013aafed28a2d30fb4f606cb45da4dd6edc71577ab90c18"
+    sha256 cellar: :any,                 ventura:       "f3907cf048f553a64271bb150a6d2f6b9daacba1e0a5c66c90c56ff87359c7bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35260bcd6d72b09a34d3d2b2ff66be1ecc3c94b581ffe196110b5299095f514f"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "pymupdf"
