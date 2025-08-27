@@ -7,6 +7,14 @@ class CodeIndexMcpServer < Formula
   sha256 "f7ee8545551d8444bb7b057ed2e18b17032bbf2fc910916f6f5f329788dd2583"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "aa48ee9f71000a76b5b21ffc2a5307328637918de7070dce6b7a56229f23f6d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7017aea07404c6424e208a7cab9ec3bff34a41ed8d5578f404b3ea01ac92e70"
+    sha256 cellar: :any,                 ventura:       "8b8a1b33f02acba8e19468c4f367126b39128f28a064e209c3d0f179221306e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "853353185dc05a90def7897209078171cf61e2a5b2f87283a1364328758e5299"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
