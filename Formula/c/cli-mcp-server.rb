@@ -7,6 +7,14 @@ class CliMcpServer < Formula
   sha256 "b00a5b00a2b7cac5b78ad95d503290b22329b8089a4e6668c477ba6a0bf26aaa"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "d0ca36356cfa5a2d639b0f5a911dcf8120c678d20aee522f8614a5352d6b71f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "45a5ee91275e5dfb5b46c3058bf1764a3db33326eaf6b6b57ebdeda079e0674b"
+    sha256 cellar: :any,                 ventura:       "39d8492cb334b77b24317e6eeedc506aecd03f42a5702512f67e917460557b05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13c608cc1687d4e9b601097ad3446f8a4f402f9119df4d8d14b08a486140b2d8"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "python@3.13"
 
