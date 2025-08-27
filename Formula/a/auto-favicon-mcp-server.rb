@@ -7,6 +7,14 @@ class AutoFaviconMcpServer < Formula
   sha256 "afefc789e83f88356ad30fc05b802e74e6a5b934692bb07f051710b8b0200fda"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "f0476e48dbebb8462f179d1639728cc15ca0528c5f18ff25b15532a46a27d430"
+    sha256 cellar: :any,                 arm64_sonoma:  "86f361f58c7d4dccb656db132edebcb85ee8249c5a1c1142e3fd4a1703507627"
+    sha256 cellar: :any,                 ventura:       "0095222a7882e0ab3ba39da041ab5a5b2d38ed27dcca8ea8cf6c83c9b6f14428"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad22c3709753a17c3e94d65bcd9a857314056d52a6990114e32f2380b08ab0d"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "pillow"
