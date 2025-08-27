@@ -1,4 +1,7 @@
 {
+  "arxiv-mcp-server": {
+    "exclude_packages": ["certifi", "pymupdf"]
+  },
   "archgw": {
     "extra_packages": ["filelock"],
     "exclude_packages": ["certifi", "numpy", "torch"]
