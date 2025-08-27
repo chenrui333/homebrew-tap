@@ -7,6 +7,14 @@ class McpObsidian < Formula
   sha256 "1a0e8240056fcc3b10e90ab76267bc29a7191048cbaaaeb9eb941aa617ec3cda"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "87ceb893b094f228bb68302a8e1d10e1e9772a801a34936a58ee34c633fd3e79"
+    sha256 cellar: :any,                 arm64_sonoma:  "253358636c151e87c010130edde483a3f4f41cc001b15abd7e3d33ad421f3c21"
+    sha256 cellar: :any,                 ventura:       "f9746cd91a7cda693362fcb308e9b193538187c40674defc72e93eb437b84d8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1f463d5f2a9f261a20a2226704aa1228aa7df677f1564406ca86a0d9c6d8c8b"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
