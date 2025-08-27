@@ -1,4 +1,7 @@
 {
+  "chenrui333/tap/agent-factory": {
+    "exclude_packages": ["certifi", "numpy", "pillow"]
+  },
   "archgw": {
     "extra_packages": ["filelock"],
     "exclude_packages": ["certifi", "numpy", "torch"]
