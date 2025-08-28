@@ -14,7 +14,13 @@ class Vibekit < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/vibekit --version")
-    assert_match "Status: DISABLED", shell_output("#{bin}/vibekit sandbox status")
+
+    expected = if OS.mac?
+      "Status: DISABLED"
+    else
+      "Status: ENABLED"
+    end
+    assert_match expected, shell_output("#{bin}/vibekit sandbox status")
     assert_match "No analytics data found", shell_output("#{bin}/vibekit analytics --summary")
   end
 end
