@@ -7,6 +7,14 @@ class ZenMcpServer < Formula
   sha256 "f8aa2f5a9bc0fd935e98780d8c973df5572854f2994611bb2d9a602e049c560c"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "7f341a8dcd12161a73c780f09a60793b1e9e6c3228cbf04a1e016461012d57ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "a88bce8f9992cccdb6badc135fa5c66e137e641d9a451b8462739d23ccabbf81"
+    sha256 cellar: :any,                 ventura:       "1b77a82114490bf9efc16015d3c9847d537f3446baa46213b1705578acdf2074"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1c94ad067f07fb7b9e0c3aa6264d50aebc20125c21da8a82b417f9db3abaecb"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "python@3.13"
