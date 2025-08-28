@@ -7,10 +7,10 @@ class Percollate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daeca915611aed03736272e469c085e40673f2a38f53280da8fc881bed94dfaf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c47f497a464975794248b829e2497da6f73ad32142a069775e6256e3d7b4863"
-    sha256 cellar: :any_skip_relocation, ventura:       "2f40fab462e024890696336d58b248a42be7844022b7f4c30e7aa5417be8c37e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2eef1fa701ab259e864aac4d8ac8eab107a49d0d247d50248dc6c38083a94f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44424e7c2902661373ffb2b5c406d5b4291ea3cea2039a181594c588abb0e3d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8dde2f4264e1d9cbe81bc56be26d80581a19a363a17dbcd53600ef34dba43c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b8f1b5868975990c6ab22f2509850c05c2fa5cbc0afe8131f0b9b2e72490e07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f6baae7b5b14fad7d2df822947a4049e013b9d454960bb54113fc34871b6e5d"
   end
 
   depends_on "node"
