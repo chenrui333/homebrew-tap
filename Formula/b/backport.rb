@@ -7,10 +7,10 @@ class Backport < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d08c56e22bf46c9887cde7a9683a35b03df1627f02e3ffc2494bf283e6d6ce6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5cab4bacf7fd218476c68ec8a6ce2639c4418ed8a71633bf207002969891781"
-    sha256 cellar: :any_skip_relocation, ventura:       "99528a2a5e52e43a04a7f880931a5464a0fd5a68f11db25c75795a6c6d4febdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41a90d36dbf14b2684db5f8f906199720b4688d06b0c2dabaa2f015d2fb0b669"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8365d2f37a6cbf5a7eeae563f5985716f57788b5df41fe401d41f2dae42ad34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbeba895990a4c4ed1fb4ae2e95f662cbb163f1454240472b858d8d3bfaa90c2"
+    sha256 cellar: :any_skip_relocation, ventura:       "987e72d48d669c1b521f3196205a12cda38d57624879e9f23c0a418e3ffd5710"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c604bfe87504cacfbb39b1d1509e573b44e9d25a2017fbef201cc2d9a0875a2a"
   end
 
   depends_on "node"
