@@ -43,10 +43,12 @@ brew install --cask <tool>
 - `archgw`
 - `arduino-language-server`
 - `arp-scan-rs`
+- `arxiv-mcp-server`
 - `asciinema`
 - `asm-lsp`
 - `asmfmt`
 - `astro-language-server`
+- `auto-favicon-mcp-server`
 - `autoflake`
 - `autotag`
 - `autotools-language-server`
@@ -93,15 +95,19 @@ brew install --cask <tool>
 - `chatlog`
 - `checkpwn`
 - `clai`
+- `cli-mcp-server`
+- `cloud-run-mcp`
 - `cloudflare-ddns`
 - `cloudlens`
 - `cmdx`
 - `cocainate`
+- `code-index-mcp-server`
 - `code-pushup`
 - `codespelunker`
 - `codstts`
 - `cohctl`
 - `config-file-validator`
+- `container-use`
 - `container2wasm`
 - `context-file-manager`
 - `cozypkg`
@@ -115,6 +121,7 @@ brew install --cask <tool>
 - `dbee`
 - `dbin`
 - `ddev`
+- `debugg-ai-mcp`
 - `decktape`
 - `deepteam`
 - `dela`
@@ -244,6 +251,9 @@ brew install --cask <tool>
 - `markpdf`
 - `matcha`
 - `mcman`
+- `mcp-alchemy`
+- `mcp-obsidian`
+- `mcp-server-chart`
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
 - `mcpd`
@@ -311,6 +321,7 @@ brew install --cask <tool>
 - `protodot`
 - `protolock`
 - `public-ollama-finder`
+- `pubmed-mcp-server`
 - `pyink`
 - `pyment`
 - `pyp`
@@ -427,6 +438,7 @@ brew install --cask <tool>
 - `yosay`
 - `yuque-dl`
 - `go-zzz`
+- `zen-mcp-server`
 - `zero`
 - `zig@0.11`
 - `zig@0.12`
