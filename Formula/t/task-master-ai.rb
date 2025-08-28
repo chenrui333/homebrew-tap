@@ -6,6 +6,7 @@ class TaskMasterAi < Formula
   license "MIT" # should be "LicenseRef-MIT-with-commons-clause"
 
   depends_on "node"
+  depends_on "pcre2"
 
   def install
     system "npm", "install", *std_npm_args
