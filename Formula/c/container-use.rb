@@ -6,6 +6,14 @@ class ContainerUse < Formula
   license "Apache-2.0"
   head "https://github.com/dagger/container-use.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea9bd98957f36c9967c0ab8a0cd0f40fd2d78d54ee7840f0b4ffb9738bf8542f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73d65cc49392cd39df8e826c9566c8ba8907650c7ed201e57d02c6dc01c73e26"
+    sha256 cellar: :any_skip_relocation, ventura:       "722fa1ccc22e15244fb675d0fd741a2f2a72a654df6855516814cdaa24822713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f52d03d1df5f353946af532c89f4fcd60d48a3ab1c9fbd721bc5bf0d47f2ec57"
+  end
+
   depends_on "go" => :build
 
   def install
