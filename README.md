@@ -422,6 +422,7 @@ brew install --cask <tool>
 - `vercel-serve`
 - `vet-run`
 - `vgo`
+- `vibekit`
 - `videoalchemy`
 - `vitepress`
 - `vsg`
