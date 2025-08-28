@@ -17,6 +17,7 @@
   "cargo-spellcheck": "homebrew/core",
   "cf-terraforming": "homebrew/core",
   "cfnctl": "homebrew/core",
+  "claudekit": "homebrew/core",
   "comrak": "homebrew/core",
   "crd2pulumi": "homebrew/core",
   "dblab": "homebrew/core",
