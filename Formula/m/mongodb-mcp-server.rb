@@ -1,8 +1,8 @@
 class MongodbMcpServer < Formula
   desc "Self-testing CLI documentation tool that generates interactive demos"
   homepage "https://deepguide.ai/"
-  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-0.2.0.tgz"
-  sha256 "6821ad58c5c9f07f878a0fb8bfdbe4e34c8a867386981973e1c67a44a2924a28"
+  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-0.3.0.tgz"
+  sha256 "73f3f0fe3db4f5ac7ea618350f86a69a22fa1feb8981e96b218bb3cf5bceede9"
   license "Apache-2.0"
 
   bottle do
