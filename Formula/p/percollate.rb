@@ -1,8 +1,8 @@
 class Percollate < Formula
   desc "CLI to turn web pages into readable PDF, EPUB, HTML, or Markdown docs"
   homepage "https://github.com/danburzo/percollate"
-  url "https://registry.npmjs.org/percollate/-/percollate-4.2.3.tgz"
-  sha256 "a14bba93972213434a383de1e1ce720fd53ccf67283179c14f347686ae2c0c90"
+  url "https://registry.npmjs.org/percollate/-/percollate-4.2.4.tgz"
+  sha256 "8d726fec135df747f7b9e76dc069587de231b787c2dafb7a7665c89db4a866b6"
   license "MIT"
 
   bottle do
