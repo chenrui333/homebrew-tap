@@ -80,6 +80,7 @@
   "oxen": "homebrew/core",
   "pdfly": "homebrew/core",
   "pdtm": "homebrew/core",
+  "pg-schema-diff": "homebrew/core",
   "preevy": "homebrew/core",
   "prefligit": "homebrew/core",
   "protoc-gen-doc": "homebrew/core",
