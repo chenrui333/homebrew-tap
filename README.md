@@ -301,7 +301,6 @@ brew install --cask <tool>
 - `pencode`
 - `percollate`
 - `perfops`
-- `pg-schema-diff`
 - `pgdog`
 - `phpinsights`
 - `pike`
