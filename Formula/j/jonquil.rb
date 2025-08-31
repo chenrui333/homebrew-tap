@@ -9,9 +9,8 @@ class Jonquil < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
+  depends_on "chenrui333/tap/toml-f"
   depends_on "gcc" # for gfortran
-
-  depends_on "toml-f"
 
   patch :DATA
 
