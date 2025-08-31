@@ -6,6 +6,14 @@ class TomlF < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/toml-f/toml-f.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "77a1ee63bb0dda4d4bc5e1be2c4f2d28671ad221ad49713ab09655c4e531a9fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2fd6d8fec542cc3055120f0bc172887646557c1cff7003c2b9194d86c60d98c"
+    sha256 cellar: :any,                 ventura:       "e4cbd1f69deae36ca71ce351da9a1e1c8eeb81e62b9d8f8a500e87651e8e79bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2adb1692cb1d4428a661a1622c7cf03016cfca54d47af5b4895635ae2e01390f"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
