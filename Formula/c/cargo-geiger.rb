@@ -4,6 +4,7 @@ class CargoGeiger < Formula
   url "https://github.com/geiger-rs/cargo-geiger/archive/refs/tags/cargo-geiger-0.13.0.tar.gz"
   sha256 "02a3999b58e45527932cc9fa60503b3197f011778dc1954909fb5fe9dd168f72"
   license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/geiger-rs/cargo-geiger.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -35,31 +36,30 @@ class CargoGeiger < Formula
     system "rustup", "default", "beta"
     system "rustup", "set", "profile", "minimal"
 
-    require "utils/linkage"
-
     assert_match version.to_s, shell_output("#{bin}/cargo-geiger --version")
 
-    # does not work with newer versions of Cargo, upstream bug report, https://github.com/geiger-rs/cargo-geiger/issues/530
-    # mkdir "brewtest" do
-    #   (testpath/"brewtest/src/main.rs").write <<~RUST
-    #     fn main() {
-    #         unsafe {
-    #             let _a = 42;
-    #         }
-    #     }
-    #   RUST
+    mkdir "brewtest" do
+      (testpath/"brewtest/src/main.rs").write <<~RUST
+        fn main() {
+            let mut a: u8 = 0;
+            let p = &mut a as *mut u8;
+            unsafe { *p = 1; }
+            println!("{}", a);
+        }
+      RUST
 
-    #   (testpath/"brewtest/Cargo.toml").write <<~TOML
-    #     [package]
-    #     name = "test"
-    #     version = "0.1.0"
-    #     edition = "2018"
-    #   TOML
+      (testpath/"brewtest/Cargo.toml").write <<~TOML
+        [package]
+        name = "test"
+        version = "0.1.0"
+        edition = "2021"
+      TOML
 
-    #   system "cargo", "build"
-    #   output = shell_output("#{bin}/cargo-geiger --offline", 1)
-    #   assert_match "1 warning emitted", output
-    # end
+      system "cargo", "build", "--offline"
+      assert_match "Metric output format: x/y", shell_output("cargo geiger --offline")
+    end
+
+    require "utils/linkage"
 
     [
       Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
