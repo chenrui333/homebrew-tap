@@ -6,6 +6,11 @@ class Httptap < Formula
   license "MIT"
   head "https://github.com/monasticacademy/httptap.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "44a4dd949a12b227fedfd28f306ad32f567621ab7595d59cc4613b180b68f237"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
