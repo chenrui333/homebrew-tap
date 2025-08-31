@@ -12,10 +12,10 @@ yor = "yor"
 Hashi = "Hashi"
 aks = "aks"
 mosquitto = "mosquitto" # for mqtt-cli.rb
+debugg = "debugg"
 
 [files]
 extend-exclude = [
-  "Formula/d/debugg-ai-mcp.rb", # for `debugg`
   "Formula/h/holo-cli.rb", # for `index 4ba84b7..9d404c0`
   "Formula/m/mitex.rb", # for `main.typ`
   "Formula/r/readmeai.rb", # upstream pr ref, https://github.com/eli64s/readme-ai/pull/158
