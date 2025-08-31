@@ -6,6 +6,14 @@ class BinJq < Formula
   license "Apache-2.0"
   head "https://github.com/wader/fq.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "071695f80b8e6bdb51b505aa5ffb570eadc50f23815adda12777a73281c1486f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d344100d7636268e895cfa1d9d67d1f2e40f4bf762ce87ec324362d94750d9b"
+    sha256 cellar: :any_skip_relocation, ventura:       "7cd0bab5aca8eeba60417c3ad28c74abea4a35140262f322e7389cbea52999c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89050f05d8166c2699d52f52f9bb746cde304eaab5f21cc1f3968aa0057f879a"
+  end
+
   depends_on "go" => :build
 
   def install
