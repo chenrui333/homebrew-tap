@@ -238,6 +238,7 @@ brew install --cask <tool>
 - `leveldb-cli`
 - `lin`
 - `lintnet`
+- `lix`
 - `llmdog`
 - `llmpeg`
 - `logfire-mcp`
