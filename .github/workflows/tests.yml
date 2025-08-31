@@ -23,6 +23,8 @@ env:
   GH_NO_UPDATE_NOTIFIER: 1
   GH_PROMPT_DISABLED: 1
   PR: ${{ github.event.number }}
+  HOMEBREW_RELOCATABLE_INSTALL_NAMES: 1
+  HOMEBREW_ARM64_TESTING: 1
 
 jobs:
   test-bot:
