@@ -6,6 +6,14 @@ class Uplift < Formula
   license "Apache-2.0"
   head "https://github.com/gembaadvantage/uplift.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63b6101ec7c736bc128c466dff120e3af77ffb14dd6995adac4febccbe08aa16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc01a29d543ee79597c83e7f8d21121553affc06088643e5cb31590b5519eb32"
+    sha256 cellar: :any_skip_relocation, ventura:       "93d6901b203ebfd1eabf1f208dadb58caf3cae6cd8d2027c6ae10b14fd7ec3b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d689406ab29bd8f8e0158ac4fcf705d30ae1439046b151db0a783d325e9d62"
+  end
+
   depends_on "go" => :build
 
   def install
