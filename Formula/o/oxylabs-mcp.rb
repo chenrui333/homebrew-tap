@@ -347,11 +347,12 @@ class OxylabsMcp < Formula
     ENV["OXYLABS_AI_STUDIO_API_KEY"] = "test"
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18"}}
+      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
     JSON
 
-    output = pipe_output("#{bin}/oxylabs-mcp 2>&1", json, 1)
-    assert_match "OXYLABS_AI_STUDIO_API_KEY is not valid", output
+    output = pipe_output("#{bin}/oxylabs-mcp 2>&1", json, 0)
+    assert_match "Tool useful for crawling a website from starting url", output
   end
 end
