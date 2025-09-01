@@ -9,10 +9,11 @@ class Darker < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e84c75ffa9b0c43f257ea740d48c7c2a83db81a35db7a167fa04d182953c2b75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a72e295e9f0d1fc223d371bc138ef1ff2f1162a307dade6dae33b086f5a49517"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a471449d0746a974a2ab0a591139deadc6b2e133486d95b00995f6275030c2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65345b490f3e68b5074c884dd0f5b6bdefc2a446c93d32c0134ff60e923d01ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b7a0476b94c866d8f056ca436b10e634ffb4a460f8e9c27d073518d3d269e09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68fa0208f22331896b4a933cbea509baf8bd77fcdc03866793a8e52b33465519"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecab5df61b3ec50d969967acb2a1089e2666c00522754012ad70fb93f552e2b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b14d8a9d2ea3aa95b913a4491ecd3bc5989f86393cc36381cc331cd40e6a95"
   end
 
   depends_on "python@3.13"
