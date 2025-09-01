@@ -87,6 +87,10 @@ brew install --cask <tool>
 - `cargo-readme`
 - `carton`
 - `castor`
+- `cc-enhanced`
+- `ccexp`
+- `cchistory`
+- `cclogviewer`
 - `cello`
 - `certok`
 - `cf-vault`
@@ -95,6 +99,8 @@ brew install --cask <tool>
 - `chatlog`
 - `checkpwn`
 - `clai`
+- `claude-code-generic-hooks`
+- `claude-hooks`
 - `cli-mcp-server`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
@@ -143,6 +149,7 @@ brew install --cask <tool>
 - `enry`
 - `envtpl`
 - `go-envsubst`
+- `bin-jq`
 - `fast-cli`
 - `fast-xml-parser`
 - `ferret`
@@ -182,6 +189,7 @@ brew install --cask <tool>
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
+- `gritql`
 - `grmon`
 - `gtts`
 - `hasha-cli`
@@ -197,6 +205,7 @@ brew install --cask <tool>
 - `hostctl`
 - `howto`
 - `ht-mcp`
+- `httptap`
 - `htvend`
 - `huber`
 - `humioctl`
@@ -381,6 +390,7 @@ brew install --cask <tool>
 - `surgeon`
 - `swagger-mcp-server`
 - `tantivy-cli`
+- `taskonaut`
 - `tattoy`
 - `tavily-mcp`
 - `tclint`
@@ -403,6 +413,7 @@ brew install --cask <tool>
 - `tlint`
 - `togomak`
 - `token-cli`
+- `toml-f`
 - `tooka`
 - `toolctl`
 - `tparse`
@@ -411,9 +422,11 @@ brew install --cask <tool>
 - `travelgrunt`
 - `trieve-cli`
 - `tuono`
+- `tweakcc`
 - `twiggy`
 - `twilio-mcp-server`
 - `unused-deps`
+- `uplift`
 - `usort`
 - `vapi-mcp-server`
 - `vectorize-mcp-server`
