@@ -32,6 +32,8 @@ brew install --cask <tool>
 <summary>Formula List</summary>
 
 - `abc`
+- `adbtuifm`
+- `addlicense`
 - `agl`
 - `ai-context`
 - `alacritty`
@@ -132,12 +134,14 @@ brew install --cask <tool>
 - `deepteam`
 - `dela`
 - `dg`
+- `di-tui`
 - `dnsforwarder`
 - `docker-debug`
 - `docmd`
 - `doit`
 - `dory-cli`
 - `dqy`
+- `dstp`
 - `duster`
 - `dvm`
 - `dxt`
@@ -165,7 +169,6 @@ brew install --cask <tool>
 - `foy`
 - `frep`
 - `fsociety`
-- `fx-upscale`
 - `gemini-cli`
 - `ghfetch`
 - `gignr`
@@ -197,6 +200,7 @@ brew install --cask <tool>
 - `hcldump`
 - `hclgrep`
 - `hclq`
+- `headscale`
 - `hello`
 - `hellwal`
 - `hf`
@@ -292,8 +296,8 @@ brew install --cask <tool>
 - `nhost`
 - `ni`
 - `nocc`
-- `np`
 - `npkill`
+- `npm-np`
 - `nvrs`
 - `octelium`
 - `ohy`
@@ -322,6 +326,7 @@ brew install --cask <tool>
 - `pls`
 - `pluralith`
 - `poop`
+- `pphack`
 - `precompress`
 - `projectable`
 - `proto2yaml`
