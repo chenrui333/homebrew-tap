@@ -7,6 +7,14 @@ class Faq < Formula
   license "Apache-2.0"
   head "https://github.com/jzelinskie/faq.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f9044ac00542edde1f594cf12bb74ad754b79c18e0357d19bb76b158c4ed0bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a0e130dff9f88e6082a207e7f5b856e70a10681fcc418705a1b3676a37cabb"
+    sha256 cellar: :any_skip_relocation, ventura:       "788c94f5fa990884213466eec43139ed77fd1a181039fdf45574a83e422cd25f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6a3287e28561bf611f0cec3459a485142283a7624f6571b558464c65ff0ae83"
+  end
+
   depends_on "go" => :build
   depends_on "jq"
 
