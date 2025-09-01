@@ -1,8 +1,8 @@
 class Tweakcc < Formula
   desc "Customize your Claude Code themes, thinking verbs, and more"
   homepage "https://github.com/Piebald-AI/tweakcc"
-  url "https://registry.npmjs.org/tweakcc/-/tweakcc-1.2.4.tgz"
-  sha256 "51054ba53521a0d5d62139673399dcdedec0a5c38cc5dcfa2f97b195a00b4280"
+  url "https://registry.npmjs.org/tweakcc/-/tweakcc-1.2.5.tgz"
+  sha256 "930831dc25d292edcb930dc529c6cf779abb220f74678146b6e5506b93cf8d80"
   license "MIT"
 
   bottle do
