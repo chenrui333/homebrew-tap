@@ -17,9 +17,44 @@ class Darker < Formula
 
   depends_on "python@3.13"
 
+  # update with
+  # "chenrui333/tap/darker": {
+  #   "package_name": "darker[black]"
+  # },
+
+  resource "black" do
+    url "https://files.pythonhosted.org/packages/94/49/26a7b0f3f35da4b5a65f081943b7bcd22d7002f5f0fb8098ec1ff21cb6ef/black-25.1.0.tar.gz"
+    sha256 "33496d5cd1222ad73391352b4ae8da15253c5de89b93a80b3e2c8d9a19ec2666"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+  end
+
   resource "darkgraylib" do
     url "https://files.pythonhosted.org/packages/ed/f8/098b981e982f5bd4616e42409debde17783757405781c01e3fc9ead5012d/darkgraylib-2.4.0.tar.gz"
     sha256 "d270b2c5a50be3575f50d26ec22adcd934f9a7a9edcd3c5400fddf8fb1e89af7"
+  end
+
+  resource "mypy-extensions" do
+    url "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz"
+    sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
+    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz"
+    sha256 "ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"
   end
 
   resource "toml" do
@@ -37,10 +72,13 @@ class Darker < Formula
   end
 
   test do
-    # prints 1.2.1 rather than 2.1.1
-    system bin/"darker", "--version"
+    assert_match version.to_s, shell_output("#{bin}/darker --version")
 
-    # cannot get test working
-    # `Command '['git', 'rev-parse', '--is-inside-work-tree']' returned non-zero exit status 1`
+    (testpath/"darker_test.py").write <<~PYTHON
+      print(
+      'It works!')
+    PYTHON
+    system bin/"darker", "darker_test.py"
+    assert_equal 'print("It works!")', (testpath/"darker_test.py").read.strip
   end
 end
