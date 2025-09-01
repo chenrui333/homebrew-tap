@@ -3,7 +3,7 @@ class DockerDebug < Formula
   homepage "https://github.com/zeromake/docker-debug"
   url "https://github.com/zeromake/docker-debug/archive/refs/tags/v0.7.10.tar.gz"
   sha256 "5b7682acc6dcf93d9d260de88c269657348c4ef6db1ef184d794786509ba0af3"
-  license "Apache-2.0"
+  license "MIT"
   head "https://github.com/zeromake/docker-debug.git", branch: "master"
 
   bottle do
