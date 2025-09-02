@@ -8,10 +8,10 @@ class Oui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bc187889b787d025018c8b4cd46eaf3ecdccecc921edbc22b8b9a3cb107705d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37da5916eb4bb261e347e9b3075c3aa1a699b2ebeb163a147870fca6951e84a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "fbfb0a1e53cc7faa2cc3d28c64cd68bd88d848fabd95a38cbd36ee4aa9ae6051"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ef3cbac92db804e53b88455d462236ff891d83ce548f6322317e57d8070f3c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "462656cc13a0ff541d8777c7afaca58cea8b4071f87bfe45e357ceb35ebeac20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e6db060b17a4f71ccc934e304199d78995da3f910859e10c13b401e4398d414"
+    sha256 cellar: :any_skip_relocation, ventura:       "59cfd6657dd8c8a1214386159436bc18869124daa7dc04e613393f7f76755b2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21ebf9d3050ca7f06397272dbe802342889da8955c14f7a490f1f5dd9bca1928"
   end
 
   depends_on "go" => :build
