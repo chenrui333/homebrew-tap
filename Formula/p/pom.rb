@@ -7,6 +7,14 @@ class Pom < Formula
   license "MIT"
   head "https://github.com/maaslalani/pom.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "253c0ea5df371ceab92804641d7c79d2cb94cce5f37611a948ee91b4ac22a54b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26f35fb99a5f07c09d785846488101dcdc6a16f9834fe14913e565739ec162f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "d5657acb0c1f76959a125ac01819c2c5d6e3cb41921162836f17f979b2b6b479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f789927c62a6e3e38ec0f7522f79a931ecfcb34e9fcf4ad31657ce1b264fbd3"
+  end
+
   depends_on "go" => :build
 
   def install
