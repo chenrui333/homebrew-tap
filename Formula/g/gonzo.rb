@@ -6,6 +6,14 @@ class Gonzo < Formula
   license "MIT"
   head "https://github.com/control-theory/gonzo.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a46aeea35bbca469b409f0d412ec42deade763d5b833c6e3f76b60e4edddd1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5ff33f3e9e3f69239f4027b0be908398897c765464b7722c7adb20d6b393f64"
+    sha256 cellar: :any_skip_relocation, ventura:       "fa2e21adf8e663002021dca83b7ac6f81e9b916a0208a4261e5c142a11e75a0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e8712bc8c5a6510c5914890cced5c2d80336df194e976de17f6889106cb66ed"
+  end
+
   depends_on "go" => :build
 
   def install
