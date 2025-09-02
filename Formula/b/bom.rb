@@ -6,6 +6,14 @@ class Bom < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/bom.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d47741dc74bb6c77007675e8a0e5294e5c982a06951bb7fe3f92b3c61953c0d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11506fc0a54e5f17ae6f9211b2284fed8b1251d2ca1d40f5235ae5f459a94a36"
+    sha256 cellar: :any_skip_relocation, ventura:       "fa43183b8bcae5dd94a9b95aa162d86c751c655407190d51cde72baa9bc28fdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "531f3045eaf4ae8e01914709b60a2e584abe70b6c56dc27b8ca44aba974369c4"
+  end
+
   depends_on "go" => :build
 
   def install
