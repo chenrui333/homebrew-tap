@@ -69,6 +69,7 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
+- `bom`
 - `botkube`
 - `box`
 - `brave-search-mcp-server`
@@ -154,6 +155,7 @@ brew install --cask <tool>
 - `envtpl`
 - `go-envsubst`
 - `bin-jq`
+- `faq`
 - `fast-cli`
 - `fast-xml-parser`
 - `ferret`
@@ -186,7 +188,6 @@ brew install --cask <tool>
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
-- `goodls`
 - `gowebly`
 - `grafana-mcp-server`
 - `graphlit-mcp-server`
@@ -307,6 +308,7 @@ brew install --cask <tool>
 - `osmar`
 - `otelgen`
 - `otto`
+- `oui`
 - `oxbuild`
 - `oxylabs-mcp`
 - `papis`
@@ -325,6 +327,7 @@ brew install --cask <tool>
 - `playwright-mcp`
 - `pls`
 - `pluralith`
+- `pom`
 - `poop`
 - `pphack`
 - `precompress`
