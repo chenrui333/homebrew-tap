@@ -125,7 +125,6 @@ brew install --cask <tool>
 - `crush`
 - `cueimports`
 - `curlconverter`
-- `darker`
 - `datadog-mcp-server`
 - `dbee`
 - `dbin`
@@ -137,7 +136,6 @@ brew install --cask <tool>
 - `dg`
 - `di-tui`
 - `dnsforwarder`
-- `docker-debug`
 - `docmd`
 - `doit`
 - `dory-cli`
