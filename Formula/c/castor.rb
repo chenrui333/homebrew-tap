@@ -43,6 +43,6 @@ class Castor < Formula
     assert_match "Available commands", output
 
     output = pipe_output("#{bin}/castor init", "no\n")
-    assert_match "Could not find root \"castor.php\" file", output
+    assert_match "Do you want to create a new project? (yes/no) [no]:\n", output
   end
 end
