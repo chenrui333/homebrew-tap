@@ -8,10 +8,10 @@ class GrafanaMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6c96d4ac233f8d90945cc951980e6ee9660981be59f8c9b9097488c3690716d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc7334de3e39b6313066b41ef1de85401886539788909c6b380271f5082bb191"
-    sha256 cellar: :any_skip_relocation, ventura:       "0f7b42ee135bb889a7e174de7bbd147b20192eeb208e06acef076f1a3a972360"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11c5038ed1c5e53977ca8d7b919d51dbae736d4ed8bf9c01d458a686c61c4adf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80934634635980968c84239d5bfdd952660634ecbf87a1114123c2ba2fde684a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfcdfcc89207f5d0f801505e78eb3eaf93a2c9e9ae4c7695a9529dd000b174ed"
+    sha256 cellar: :any_skip_relocation, ventura:       "cabeb11ee54939dab2c64a434683c24559a14f196fcad81bc0a64c81afda50bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45b057959c79456548815d59045cd61ef7eb0a112e34643071f7a967f20d95b8"
   end
 
   depends_on "go" => :build
