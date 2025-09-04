@@ -6,6 +6,14 @@ class Moribito < Formula
   license "MIT"
   head "https://github.com/ericschmar/moribito.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92672e7f64942159f2e4b2ea806797206521f41b0280d312c1c8f8d1a13427cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e97823c0b1831dc0e27f0f2a8ae90cdab975b989fb7318de69427a550a3268d"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c8916d05c07c97436d1c7e15a045fefe1c436e2fb1dcf6a619550df2f40c87e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2469a90e6d3090b0dd805166e2b5c8fdd9c4a63966531a7485346c2b993c5f0c"
+  end
+
   depends_on "go" => :build
 
   def install
