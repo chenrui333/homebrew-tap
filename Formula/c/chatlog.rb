@@ -1,8 +1,8 @@
 class Chatlog < Formula
   desc "Easily use your own chat data"
   homepage "https://github.com/sjzar/chatlog"
-  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.28.tar.gz"
-  sha256 "845c358f574344a4273ae1cffbc9de0642329c3561242e7d33c568b6fa0415f9"
+  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.29.tar.gz"
+  sha256 "3d89406c9b19e94fa3b0f7a8504d60233091eb1e86c95af69c8f24bf78e16755"
   license "Apache-2.0"
 
   bottle do
