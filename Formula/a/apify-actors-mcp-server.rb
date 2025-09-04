@@ -7,10 +7,10 @@ class ApifyActorsMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9231673f3bc5382db368cf6a150ce7b30b179d4cdc0b406ac3820780bed7ec78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9735af78f16034c5fc2a445513993e3dad9d38d5c8a97afd02c51ab83239dd69"
-    sha256 cellar: :any_skip_relocation, ventura:       "cffbf1b7df07e142a0062bc6dd9a89e6f9bc82fc32dc838fbbbe76104301d277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bde53a69a643e390f67ca62073a130465a3b14fbaddbc3d408754bbb65aedc10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1eb68370908292e011e5f7d687220bfa6db88b39336d1f5d4d3dd59c9ddd2497"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdfa2315949439b4f2c183a371358c8c9f78874d5c6ad1d501490cab7823d032"
+    sha256 cellar: :any_skip_relocation, ventura:       "00004ea6baafeba23fd263152faae13a15ddd9614c70abfacb8208bc2a9a9bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48a2d3be9e73739af87adc2e67bb748792de9a30aabee2038b860af1c45e37e5"
   end
 
   depends_on "node"
