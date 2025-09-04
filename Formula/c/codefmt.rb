@@ -6,6 +6,14 @@ class Codefmt < Formula
   license "MIT"
   head "https://github.com/1nwf/codefmt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afbdb181b63215c1457cbcc67b9fd2d2f95573116e10d74ba3e4b6a9ae5d8e37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93d5eef92d72bc2d9a755cf54fa0d3952aeaa48651df65067e6e5a3f1d58eaf5"
+    sha256 cellar: :any_skip_relocation, ventura:       "cdfb3964ac613eb6d2e1c1c0e87792aa5d095b40ca198ae1b80b8d4d87ba89ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52b31be5466779a921f035a7956842e2cdc3de80179705e649989e42988aa825"
+  end
+
   depends_on "rust" => :build
 
   def install
