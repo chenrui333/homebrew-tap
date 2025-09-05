@@ -7,6 +7,14 @@ class Pitaya < Formula
   sha256 "0c7f205e8cef790e6624eaaada858607d9a50ea5552c2aa6a5930f767aa76da3"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ba7e0d79c188ff7b5599fb3f6e934c30111622c5b1ba185d42b9d0fe2db69e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b5461164eb668dbf457deac01fb32b17f48ee80ebc18c4838f7f35bba45f3cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a6a523846e5ca9c06225ef19dbb34986058fc8e0c38a1e45104065b3b457668b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea73f638af13a5d97f75f355f98d482c75b46f53fafbb970777925a1a4243cd"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
