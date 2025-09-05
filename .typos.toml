@@ -13,6 +13,7 @@ Hashi = "Hashi"
 aks = "aks"
 mosquitto = "mosquitto" # for mqtt-cli.rb
 debugg = "debugg"
+captable = "captable" # for captan.rb
 
 [files]
 extend-exclude = [
