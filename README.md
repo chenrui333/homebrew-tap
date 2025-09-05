@@ -69,7 +69,6 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
-- `bom`
 - `botkube`
 - `box`
 - `brave-search-mcp-server`
@@ -112,6 +111,7 @@ brew install --cask <tool>
 - `cocainate`
 - `code-index-mcp-server`
 - `code-pushup`
+- `codefmt`
 - `codespelunker`
 - `codstts`
 - `cohctl`
@@ -150,6 +150,7 @@ brew install --cask <tool>
 - `emplace`
 - `enola`
 - `enry`
+- `envie`
 - `envtpl`
 - `go-envsubst`
 - `bin-jq`
