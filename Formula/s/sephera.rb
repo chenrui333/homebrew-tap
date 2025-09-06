@@ -7,6 +7,14 @@ class Sephera < Formula
   sha256 "9b6c0839498bc34bbe32445d192c460621e317b56d0d8e74debf4cc1acdea67e"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1f53e63a04cde19195a46cd9131e3fd0c7657af68f7e00be1c3d4402201fa82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea8480965c3f73ee97a39f0ffbbee78da6646815b630ef2c50b5c71972889f8b"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c61a83222e6459d0f5dd10639e7df650ef2b08bfedbf22b40067d9f24c121f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69fc53e1c9aa84b5edbbb8241c0cd71ff9dae0988058c6660d14b487946a114f"
+  end
+
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "numpy"
