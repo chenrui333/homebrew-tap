@@ -1,8 +1,8 @@
 class Fjira < Formula
   desc "Fuzzy-find cli jira interface"
   homepage "https://github.com/mk-5/fjira"
-  url "https://github.com/mk-5/fjira/archive/refs/tags/1.4.4.tar.gz"
-  sha256 "0b703334bd04d11936292e1241d9629ffca2460deb7001f78ef1911a77607165"
+  url "https://github.com/mk-5/fjira/archive/refs/tags/1.4.5.tar.gz"
+  sha256 "ee8105020b3372542a8bf68c877c3e2ade8655e3caafae7c2c1a3344266743f5"
   license "AGPL-3.0-only"
   head "https://github.com/mk-5/fjira.git", branch: "master"
 
