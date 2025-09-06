@@ -8,10 +8,10 @@ class Fjira < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15ca4523fb54d903c23aaa42c68e7ada39b5a37dde18ccb46cbe8d5579e69113"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a6c05ff18582dc21b19c1ba3b414fbcaa661e520ba591b1a0a621ee639dba4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "66ac1e3ca73e11fcb1a51d943a53721b173bab5a8a338ea4489ab4be91776034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "706a5cc113bf748e0b259876e573b6e625c7933ee71bd5870c2fc4a48b5e8286"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35ec678692a0b5d2c9deac1685d2838c502e240c9f20af6d8cb6675aa7f34d03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf8d2be6741f3c65e1d7c1c0d32fa64a7f7d53b173b30750b66e8390452231d7"
+    sha256 cellar: :any_skip_relocation, ventura:       "a13f5ddbea8f3397f5214ebe358c533bd76e31672b01379e695ad1161361870e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d44da3b016a9916b2bef10302537d73e6449ec40f30b202a40969157f83195a"
   end
 
   depends_on "go" => :build
