@@ -7,6 +7,14 @@ class BrewCleaner < Formula
   sha256 "f1d04ab0e62743ca3a72bc3715c7ec3a5e580dc6a835886ea1d79ed30d298138"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c60cc1167615c437222cb9417904f8d655a75c7bb8f22bbb400c6427f972160"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70652586a13321e4f3549698c7b39a3b0f54324cc0668b1af05ca2d1cfe763c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "d16147c2487638a533d708999ae5794cdcf15f7f1eb1adc8026be72a9fb79bdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ae3caf763176d8d84d73c04af4cc07d6d6b159aa77ba8a59b6853e9f998f52d"
+  end
+
   depends_on "python@3.13"
 
   resource "prompt-toolkit" do
