@@ -5,6 +5,11 @@ class Zu < Formula
   sha256 "103d820a6ede88b39e442dc3ce57302953a3c7ad9e37d3fd723a756cbe995249"
   license "BSD-2-Clause"
 
+  on_linux do
+    depends_on "pkgconf" => :build
+    depends_on "readline"
+  end
+
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
     bin.install "zu"
