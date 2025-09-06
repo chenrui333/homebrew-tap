@@ -6,6 +6,14 @@ class Soundscope < Formula
   license "MIT"
   head "https://github.com/bananaofhappiness/soundscope.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee62f07d345fe20cdcbf48665501254c910c2104828e92beea9c1d179297f1c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84bb435089a2170f6e783d5e1e2827e9caef4dd173959e478b0c1346fd0def37"
+    sha256 cellar: :any_skip_relocation, ventura:       "707206b71f01a5dac21bddb00457819aefe7369921a035f1d3ce8612a68bffc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "223666da582965d03bafd2ec93715d1ff9fb59d361da9fef1fbe1329c804538e"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
