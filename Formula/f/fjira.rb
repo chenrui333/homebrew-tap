@@ -16,11 +16,6 @@ class Fjira < Formula
 
   depends_on "go" => :build
 
-  patch do
-    url "https://raw.githubusercontent.com/chenrui333/homebrew-tap/be741a8f29e7db039b73b5e88962792ac226393c/patches/fjira/1.4.4.patch"
-    sha256 "8b5598a2fa87542feb7aaf658d6aaa5caffbdb341158e0af2ca75d0a4a8e0910"
-  end
-
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fjira-cli"
 
