@@ -6,6 +6,14 @@ class Lacquer < Formula
   license "Apache-2.0"
   head "https://github.com/lacquerai/lacquer.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "180afbe33799e88599d1edc3c1fcdf7c01806a0a208b18552bbd115c74c1ed95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce78ac0e99e974f5d2ba670e77135346ee34585e318206feed0e091fe4f85b66"
+    sha256 cellar: :any_skip_relocation, ventura:       "cdd50fb52b46bd3fddf06e062715e943c1afa1304d2cef02c9e81fb59e310873"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bb7ef0cc47a544d4548e60a1fdf3f64ebf9acab04058f418cd68b3621730c8e"
+  end
+
   depends_on "go" => :build
 
   def install
