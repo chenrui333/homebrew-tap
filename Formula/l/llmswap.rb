@@ -7,6 +7,14 @@ class Llmswap < Formula
   sha256 "e0090fa17f25a8d020d78ab45318468ad10cd8fc30f26250b6cf52566d033591"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "4e933ae9cff41197197223f9c9c5c1efab6e08ed4663e763c9dc624d879be6d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8ce99e0534d52b4f879d1497b89af361978ab2884513e1541dcee5b3cf437a6"
+    sha256 cellar: :any,                 ventura:       "f61e53f22b5893d0451af33194d77bb904a6abfb00d91551f32a54fb2a837456"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1db468dfd9a86e444797cb03cb81bab53329c20332bc47413e5aec0a40b91940"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "libyaml"
