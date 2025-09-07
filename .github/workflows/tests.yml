@@ -13,7 +13,6 @@ concurrency:
 permissions:
   contents: read
   actions: read
-  pull-requests: write
 
 env:
   HOMEBREW_DEVELOPER: 1
