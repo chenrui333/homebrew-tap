@@ -8,10 +8,10 @@ class Shimmy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bfb03f5fcb21e2629f75388623c3b605afff449122258c0645b7dadf8e79b0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbb4625d1ca16510539ebe88d9c60e94f2b47a0ef9bfe412750b3bd1a876a858"
-    sha256 cellar: :any_skip_relocation, ventura:       "baa5c2f099a80265d0f9927e74e17de5d53750bb50d2fd91877a24af1e3a27f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb7654e08fff76d88fad3047342c949b7db5cf85d910ac1247ff25bd63ff5025"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "461d0dd780841c418236c71124bb210f9942defbcfee1eac2edc8fe9fbb3ee15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "648538523db789ed1fdd9a2646be53683dc9cb7093a073d490fc1f286e2e8ed0"
+    sha256 cellar: :any_skip_relocation, ventura:       "e613c7ae6f99376e98303ac6a6c03574a11a146762e37a329cf778be38acce7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71bf9ab0659a0e7ec647e5962782c2ecf2016dcb362c687c928961fe4fa09cff"
   end
 
   depends_on "rust" => :build
