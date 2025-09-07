@@ -5,6 +5,14 @@ class Ccapi < Formula
   sha256 "d967e3f737de30ebc1667bf6d1d0a4c35127ca285b11bdbb576995df8188eff0"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9156da478220858054f27f58acdb068de01bed77cf45afd76e3ac13a3b32d057"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b794f52826678d1bded107126b275d7f3e73aed891a81be9cdf90dff6f982d9"
+    sha256 cellar: :any_skip_relocation, ventura:       "e377e65980cd4eb3ad1d9007274cf6a25639d1a417901c29357c1a28499b515c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47a5209d0506617783d65e4868c114d479bad325e8a784a4dc14dbbc61456501"
+  end
+
   depends_on "node"
 
   def install
