@@ -72,6 +72,7 @@ brew install --cask <tool>
 - `botkube`
 - `box`
 - `brave-search-mcp-server`
+- `brew-cleaner`
 - `brighterscript-formatter`
 - `brotab`
 - `browserbase-mcp-server`
@@ -80,6 +81,7 @@ brew install --cask <tool>
 - `bytebox`
 - `c4go`
 - `cai`
+- `captan`
 - `carbon-now-cli`
 - `cargo-aoc`
 - `cargo-benchcmp`
@@ -125,6 +127,7 @@ brew install --cask <tool>
 - `crush`
 - `cueimports`
 - `curlconverter`
+- `datacmd`
 - `datadog-mcp-server`
 - `dbee`
 - `dbin`
@@ -176,6 +179,7 @@ brew install --cask <tool>
 - `giq`
 - `git-chglog`
 - `git-vain`
+- `git-x`
 - `gitlabform`
 - `gitman`
 - `glom`
@@ -203,6 +207,7 @@ brew install --cask <tool>
 - `headscale`
 - `hello`
 - `hellwal`
+- `hexora`
 - `hf`
 - `holo-cli`
 - `horusec`
@@ -245,6 +250,7 @@ brew install --cask <tool>
 - `kube2pulumi`
 - `kubeseal-convert`
 - `kwt`
+- `lacquer`
 - `lazycontainer`
 - `leetgo`
 - `lemonade`
@@ -254,6 +260,8 @@ brew install --cask <tool>
 - `lix`
 - `llmdog`
 - `llmpeg`
+- `llmswap`
+- `localports`
 - `logfire-mcp`
 - `lola`
 - `luaformatter`
@@ -321,11 +329,13 @@ brew install --cask <tool>
 - `pike`
 - `pingu`
 - `pipeform`
+- `pitaya`
 - `plandex`
 - `playerctl`
 - `playwright-mcp`
 - `pls`
 - `pluralith`
+- `pmx`
 - `pom`
 - `poop`
 - `pphack`
@@ -375,9 +385,11 @@ brew install --cask <tool>
 - `seamstress`
 - `seastar`
 - `secco`
+- `sephera`
 - `sgpt`
 - `shadcn-ui-mcp-server`
 - `sheetui`
+- `shimmy`
 - `shiroa`
 - `shopify-cli`
 - `sig`
@@ -385,6 +397,7 @@ brew install --cask <tool>
 - `sloctl`
 - `sloop`
 - `solfmt`
+- `soundscope`
 - `speedscope`
 - `speedtest`
 - `spok`
@@ -434,6 +447,7 @@ brew install --cask <tool>
 - `twilio-mcp-server`
 - `unused-deps`
 - `uplift`
+- `urlsup`
 - `usort`
 - `vapi-mcp-server`
 - `vectorize-mcp-server`
@@ -467,6 +481,7 @@ brew install --cask <tool>
 - `ziggy`
 - `ziglint`
 - `zigscient`
+- `zu`
 - `zware`
 
 </details>
