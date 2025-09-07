@@ -8,10 +8,10 @@ class Crush < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c0795b9f89177e7422cd2472418a2639720315821020ba3ef1be1f1e5b1d996"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ade7d2bd81f66edb69909ee6dad0b3f21965fd796436cedfbc3bdd2ecdc9166a"
-    sha256 cellar: :any_skip_relocation, ventura:       "f04bb0460333e2937d11abc5cc15f3c46ff49fd6729888664b9b026a58a1b193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f70cbbeca2f75df87db3dfa75dabe2eacced01839f6c383d9a789bd03f69678d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d35924f47540546dc6831b883307df10155be68e6562c2f2c9bbf3875418976d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faaf0702aa0e8feae5366ad9feba32456351e4925f66af76cf9800d17e51a230"
+    sha256 cellar: :any_skip_relocation, ventura:       "059863ed62792635f3519c50de6871a40af481d7aef1968f2ed2fcea5b5dba89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "304e8b8b418b1e7ac827c90b78372fd8d27d799142222636302690c6847a6ea0"
   end
 
   depends_on "go" => :build
