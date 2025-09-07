@@ -3,8 +3,8 @@ class Vsg < Formula
 
   desc "VHDL Style Guide"
   homepage "https://github.com/jeremiah-c-leary/vhdl-style-guide"
-  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.34.0.tar.gz"
-  sha256 "a2a7f3868a69b12ea7d0e0c9e9fee9d8a1f01533127bc16036262fdaa3b168fe"
+  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.35.0.tar.gz"
+  sha256 "243814d768d14ffa76503d63f4aa60a1c7afd3a561cbda46c0954602fcdff390"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -44,7 +44,7 @@ class Vsg < Formula
 
     assert_match <<~EOS, shell_output("#{bin}/vsg test.vhdl")
       Phase 7 of 7... Reporting
-      Total Rules Checked: 884
+      Total Rules Checked: 889
       Total Violations:    0
         Error   :     0
         Warning :     0
