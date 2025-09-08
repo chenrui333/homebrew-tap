@@ -7,10 +7,10 @@ class PlaywrightMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1418986cc8a3086eb92e694335868b4217b216cea05a045ca48f12fb3e35570"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "befdd96bd4c30e548ef6895f6ede00231d4eb4f14f0243991b58a5889b0d28fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "6bf5d032a6e2e4e1de132ec9354d20bda8eea67bdaf2f47768cf1ea690b1df9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3453798b2923030973d6b272710a14bb4ab2245aca3b582118a0516367539cc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11b36cbaa8a0d10e64ab5814fdd7fb94968f93c5f050ce8f7877d0d20a2c63a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74801c7e92a1c509b204702eb102ce1cc5bf73732080c09497d9b46946debb68"
+    sha256 cellar: :any_skip_relocation, ventura:       "35198823530465c5cfc9dd87d211097a8e4eb802b4439c0f976a9eb71d115e8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d08968ccb22da075c37c140dd78b618f09c343921338e4e82a637e3200189ac7"
   end
 
   depends_on "node"
