@@ -37,6 +37,7 @@ brew install --cask <tool>
 - `agl`
 - `ai-context`
 - `alacritty`
+- `am-i-vibing`
 - `amoco`
 - `aoc-cli`
 - `apify-actors-mcp-server`
@@ -92,6 +93,7 @@ brew install --cask <tool>
 - `carton`
 - `castor`
 - `cc-enhanced`
+- `ccapi`
 - `ccexp`
 - `cchistory`
 - `cclogviewer`
@@ -103,6 +105,7 @@ brew install --cask <tool>
 - `chatlog`
 - `checkpwn`
 - `clai`
+- `claude-cmd`
 - `claude-code-generic-hooks`
 - `claude-hooks`
 - `cli-mcp-server`
@@ -121,6 +124,7 @@ brew install --cask <tool>
 - `container-use`
 - `container2wasm`
 - `context-file-manager`
+- `context42`
 - `cozypkg`
 - `critcmp`
 - `crlfmt`
@@ -182,6 +186,7 @@ brew install --cask <tool>
 - `git-x`
 - `gitlabform`
 - `gitman`
+- `gix`
 - `glom`
 - `glsl-analyzer`
 - `gmap`
@@ -251,7 +256,6 @@ brew install --cask <tool>
 - `kubeseal-convert`
 - `kwt`
 - `lacquer`
-- `lazycontainer`
 - `leetgo`
 - `lemonade`
 - `leveldb-cli`
@@ -270,6 +274,7 @@ brew install --cask <tool>
 - `magic-mcp-server`
 - `mail-deduplicate`
 - `mamediff`
+- `marchat`
 - `markpdf`
 - `matcha`
 - `mcman`
