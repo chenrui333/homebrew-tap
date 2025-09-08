@@ -101,7 +101,6 @@ brew install --cask <tool>
 - `certok`
 - `cf-vault`
 - `cf2pulumi`
-- `changelogen`
 - `chatlog`
 - `checkpwn`
 - `clai`
@@ -147,7 +146,6 @@ brew install --cask <tool>
 - `doit`
 - `dory-cli`
 - `dqy`
-- `dstp`
 - `duster`
 - `dvm`
 - `dxt`
@@ -256,6 +254,7 @@ brew install --cask <tool>
 - `kubeseal-convert`
 - `kwt`
 - `lacquer`
+- `lazynpm`
 - `leetgo`
 - `lemonade`
 - `leveldb-cli`
@@ -473,6 +472,7 @@ brew install --cask <tool>
 - `xcpkg`
 - `xmlformatter`
 - `yajsv`
+- `yamlresume`
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
