@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/1f/d0/bf083b22de771de6233cad16d800b24d11f451ba8387611a89780d69a11b/llmswap-4.0.5.tar.gz"
-  sha256 "e0090fa17f25a8d020d78ab45318468ad10cd8fc30f26250b6cf52566d033591"
+  url "https://files.pythonhosted.org/packages/cb/9e/5e3af5b8c8e900d63bc0598b0ab7b593560ee345bea34b8686f3726f20bf/llmswap-4.1.1.tar.gz"
+  sha256 "0ac4dadebae096f05fe3010beea0f72f7602bc2a858fe055781f2e22c5da885e"
   license "MIT"
 
   bottle do
@@ -64,6 +64,11 @@ class Llmswap < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz"
     sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "charset-normalizer" do
@@ -229,6 +234,11 @@ class Llmswap < Formula
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
     sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
+  end
+
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/37/7d/3fec4199c5ffb892bed55cff901e4f39a58c81df9c44c280499e92cad264/numpy-2.3.2.tar.gz"
+    sha256 "e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48"
   end
 
   resource "openai" do
