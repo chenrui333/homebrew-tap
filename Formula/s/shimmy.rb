@@ -8,10 +8,10 @@ class Shimmy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "227ff855d41aa6d7802f8a00599c14ad333d6d4c81cdc2a97460b03970bc6a52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3daf0bca4f6494e39770e4a836becd2e0e1efa51f202bd3ca7ebed22647e18b"
-    sha256 cellar: :any_skip_relocation, ventura:       "15ed6ac233ed29c81dbf1fa0bf3b85c79d0b97532997f6361413fd7db0adb36e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fbd5bbb60555cb4901d47f34f81d3aaae21343c7f2dd3c30087a71cc267d083"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "103d1759fc7ae780522e859612117e41a719cc7d413fc38c5de1a10407fb36e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "970387655d3faa30ace9c94474dd7472908cd92af594a2b8e9d8c8bb54037a6a"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f8d24d2d7baf6e74e0e53e75003f720966b4030b210c7cfccc9df4175396f71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f7fe9f3746d4b2838bacba037fd309a2e01f5aebb1748735be7fe7a92fd3d9d"
   end
 
   depends_on "cmake" => :build # for llama-cpp-sys-2
