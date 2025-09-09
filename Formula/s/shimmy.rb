@@ -14,6 +14,7 @@ class Shimmy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fbd5bbb60555cb4901d47f34f81d3aaae21343c7f2dd3c30087a71cc267d083"
   end
 
+  depends_on "cmake" => :build # for llama-cpp-sys-2
   depends_on "rust" => :build
 
   def install
