@@ -1,8 +1,8 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "f81c3d392edd60579f677f2963407885fe2f710ce9aafc0a0977f1e45b8a60da"
+  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "c49b3b89b16366a8ff82839d966e9d95c4a4cd8e8ca640b8dda5e39439178e27"
   license "MIT"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
@@ -17,8 +17,6 @@ class Shimmy < Formula
   depends_on "rust" => :build
 
   def install
-    # patch version
-    inreplace "Cargo.toml", "0.1.0", version.to_s
     system "cargo", "install", *std_cargo_args
   end
 
