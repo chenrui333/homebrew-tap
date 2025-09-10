@@ -65,6 +65,7 @@ brew install --cask <tool>
 - `balcony`
 - `base-mcp-server`
 - `bearer`
+- `beelzebub`
 - `blade-formatter`
 - `blindfold`
 - `blue`
@@ -254,6 +255,7 @@ brew install --cask <tool>
 - `kubeseal-convert`
 - `kwt`
 - `lacquer`
+- `lazycli`
 - `lazynpm`
 - `leetgo`
 - `lemonade`
@@ -350,6 +352,7 @@ brew install --cask <tool>
 - `protodep`
 - `protodot`
 - `protolock`
+- `psq`
 - `public-ollama-finder`
 - `pubmed-mcp-server`
 - `pyink`
