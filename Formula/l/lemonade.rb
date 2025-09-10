@@ -3,8 +3,8 @@ class Lemonade < Formula
 
   desc "Your LLM Aide for Validation and Deployment"
   homepage "https://lemonade-server.ai/"
-  url "https://files.pythonhosted.org/packages/e5/aa/5b669e6691f169319566e42a23fea959c423b4ab331e32f22d6fe833ac0f/lemonade_sdk-8.1.8.tar.gz"
-  sha256 "3397b084a2259babd78b16e82a8e28cf54d9329942d990baed041d87513abf37"
+  url "https://files.pythonhosted.org/packages/75/76/6672badb5717cd378b9bf5bac0818e32a8c265f6619f5a8df1b55b3496b1/lemonade_sdk-8.1.9.tar.gz"
+  sha256 "f41f61cbc60817e14a958d6180babc34d48de350bccb07b31af6280867f00da3"
   license "Apache-2.0"
 
   bottle do
@@ -275,11 +275,6 @@ class Lemonade < Formula
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
     sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
-  end
-
-  resource "wmi" do
-    url "https://files.pythonhosted.org/packages/03/2d/cbf13257c0115bef37b6b743758411cec70c565405cbd08d0f7059bc715f/WMI-1.4.9.zip"
-    sha256 "192ccfad3d7bb3ef43116d753f4d5cf85c0a6b738f832cc131e928fd93cdd400"
   end
 
   resource "zstandard" do
