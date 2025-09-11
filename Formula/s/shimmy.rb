@@ -1,17 +1,17 @@
 class Shimmy < Formula
   desc "Small local inference server with OpenAI-compatible GGUF endpoints"
   homepage "https://github.com/Michael-A-Kuykendall/shimmy"
-  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "1652d06b77dd977e3a3c77b9c69cb3c471262d4565ac3a3c311e62f9b2d8a2d4"
+  url "https://github.com/Michael-A-Kuykendall/shimmy/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "0b1cecce9d47010e24230e6844991467f5d24a59423879fe07db68d3c1aeb852"
   license "MIT"
   head "https://github.com/Michael-A-Kuykendall/shimmy.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "158efff592f232b2d73be11e1aa4d15e6f4392ac163ecf21e3890deaf26e7781"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cda00fd00250087e801fffeb5eca67bbfe35960fbbfc7118c1ede0ab2b8aa1aa"
-    sha256 cellar: :any_skip_relocation, ventura:       "21fa8a7c0b121bd9454801a99714330b8426b1050e3fdda9a1d5501d03441d5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60740485ece28d48b02d2218b274123883ffacef280c8449d582fa8c27e96bcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f33137c93b6689fb2e12edad8cb97962767a3c9e7f31443312776d5a5b54c072"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91418e5b65104c01dba6292a9a6c30445c196082952896392eb4e76f87eabea9"
+    sha256 cellar: :any_skip_relocation, ventura:       "9d8dbf1ff3430fa281b793f24ba485cb102e7f84cd859e1b0e0ebee6fc6a00b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe8542f5360920666ca3d4d7c646e79cafda7094fa20dd046d484f08f709a1dd"
   end
 
   depends_on "cmake" => :build # for llama-cpp-sys-2
