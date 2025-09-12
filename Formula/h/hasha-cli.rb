@@ -1,8 +1,8 @@
 class HashaCli < Formula
   desc "Hashing made simple. Get the hash of text or stdin"
   homepage "https://github.com/sindresorhus/hasha-cli"
-  url "https://registry.npmjs.org/hasha-cli/-/hasha-cli-6.0.0.tgz"
-  sha256 "ab5264615b9d218dfe8956e7af5a0c1b24a51b0493ca1d13339036968531ada1"
+  url "https://registry.npmjs.org/hasha-cli/-/hasha-cli-7.0.0.tgz"
+  sha256 "49d0fe05964de724b5477f2b0800aa796e7e8150732324db0c462c097d3db180"
   license "MIT"
 
   bottle do
