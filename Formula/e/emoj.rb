@@ -1,8 +1,8 @@
 class Emoj < Formula
   desc "Find relevant emoji from text on the command-line"
   homepage "https://github.com/yeoman/emoj"
-  url "https://registry.npmjs.org/emoj/-/emoj-4.1.0.tgz"
-  sha256 "18ef4b06e9ab7dff8dfb15257bf6e9110d3c6842fa0285728d9e4e3c0a0ad298"
+  url "https://registry.npmjs.org/emoj/-/emoj-4.2.0.tgz"
+  sha256 "14901233fcf52543cd51bf4a6355a7ada69afdd8212a004fa90ea75b17d26383"
   license "MIT"
 
   bottle do
