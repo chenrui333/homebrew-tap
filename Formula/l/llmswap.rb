@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/cb/9e/5e3af5b8c8e900d63bc0598b0ab7b593560ee345bea34b8686f3726f20bf/llmswap-4.1.1.tar.gz"
-  sha256 "0ac4dadebae096f05fe3010beea0f72f7602bc2a858fe055781f2e22c5da885e"
+  url "https://files.pythonhosted.org/packages/1f/5e/78440a979fbb1980f7464963145279bf294b7c4308f4e0820dae7e1d133c/llmswap-4.1.2.tar.gz"
+  sha256 "20e51250ece0fbd9af02802ad38597b4c41694aff357fddef8d69cac94fc59af"
   license "MIT"
 
   bottle do
@@ -47,8 +47,8 @@ class Llmswap < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/fa/50/daa51c035e6a941f7b8034705796c7643443a85f5381cb41a797757fc6d3/anthropic-0.66.0.tar.gz"
-    sha256 "5aa8b18da57dc27d83fc1d82c9fb860977e5adfae3e0c215d7ab2ebd70afb9cb"
+    url "https://files.pythonhosted.org/packages/09/08/ee91464cd821e6fca52d9a23be44815c95edd3c1cf1e844b2c5e85f0d57f/anthropic-0.67.0.tar.gz"
+    sha256 "d1531b210ea300c73423141d29bcee20fcd24ef9f426f6437c0a5d93fc98fb8e"
   end
 
   resource "anyio" do
@@ -77,8 +77,8 @@ class Llmswap < Formula
   end
 
   resource "cohere" do
-    url "https://files.pythonhosted.org/packages/8a/ea/0b4bfb4b7f0f445db97acc979308f80ed5ab31df3786b1951d6e48b30d27/cohere-5.17.0.tar.gz"
-    sha256 "70d2fb7bccf8c9de77b07e1c0b3d93accf6346242e3cdc6ce293b577afa74a63"
+    url "https://files.pythonhosted.org/packages/0d/f5/4682a965449826044c853c82796805f8d3e9214471e2f120db3063116584/cohere-5.18.0.tar.gz"
+    sha256 "93a7753458a45cd30c796300182d22bb1889eadc510727e1de3d8342cb2bc0bf"
   end
 
   resource "distro" do
@@ -172,8 +172,8 @@ class Llmswap < Formula
   end
 
   resource "httplib2" do
-    url "https://files.pythonhosted.org/packages/5b/75/1d10a90b3411f707c10c226fa918cf4f5e0578113caa223369130f702b6b/httplib2-0.30.0.tar.gz"
-    sha256 "d5b23c11fcf8e57e00ff91b7008656af0f6242c8886fd97065c97509e4e548c5"
+    url "https://files.pythonhosted.org/packages/52/77/6653db69c1f7ecfe5e3f9726fdadc981794656fcd7d98c4209fecfea9993/httplib2-0.31.0.tar.gz"
+    sha256 "ac7ab497c50975147d4f7b1ade44becc7df2f8954d42b38b3d69c515f531135c"
   end
 
   resource "httpx" do
@@ -207,8 +207,8 @@ class Llmswap < Formula
   end
 
   resource "ibm-watsonx-ai" do
-    url "https://files.pythonhosted.org/packages/a7/e2/1698bcbd414de55f9c03cc01bdaffbb9893b804e5aff72651d0b6fbd37f6/ibm_watsonx_ai-1.3.37.tar.gz"
-    sha256 "f3470447a9e922a71d11917903d2f5a2862e444a23cc72e88888179aa94b7317"
+    url "https://files.pythonhosted.org/packages/5d/0e/d5589c06f8379b686c80abb8e44db8b411e3d8f076e964f2da3d249b1cd6/ibm_watsonx_ai-1.3.38.tar.gz"
+    sha256 "4e2db2663621a0d378806b7f1ba7e970d7c92f447d9699d72feb00e533b57f09"
   end
 
   resource "idna" do
@@ -237,13 +237,13 @@ class Llmswap < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/37/7d/3fec4199c5ffb892bed55cff901e4f39a58c81df9c44c280499e92cad264/numpy-2.3.2.tar.gz"
-    sha256 "e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48"
+    url "https://files.pythonhosted.org/packages/d0/19/95b3d357407220ed24c139018d2518fab0a61a948e68286a25f1a4d049ff/numpy-2.3.3.tar.gz"
+    sha256 "ddc7c39727ba62b80dfdbedf400d1c10ddfa8eefbd7ec8dcb118be8b56d31029"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/79/b6/1aff7d6b8e9f0c3ac26bfbb57b9861a6711d5d60bd7dd5f7eebbf80509b7/openai-1.106.1.tar.gz"
-    sha256 "5f575967e3a05555825c43829cdcd50be6e49ab6a3e5262f0937a3f791f917f1"
+    url "https://files.pythonhosted.org/packages/f3/e0/a62daa7ff769df969cc1b782852cace79615039630b297005356f5fb46fb/openai-1.107.1.tar.gz"
+    sha256 "7c51b6b8adadfcf5cada08a613423575258b180af5ad4bc2954b36ebc0d3ad48"
   end
 
   resource "packaging" do
