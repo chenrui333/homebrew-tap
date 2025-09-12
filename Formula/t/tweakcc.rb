@@ -7,10 +7,10 @@ class Tweakcc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c823f9f867f9fac43068728a3b299f39297d0c21d5ea4c5690bf7f40013daa9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b20a2d7face3a525173556af091f7ae224e295b3593c207b6231594b4ba71c8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a7bd58072a0103b0cc0d689cba6a201f4113e80a308ac50be25818b66e465f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54c8627cfdc6453bd6a26f1e5b08864098cf7960137fe8435b59b70e9a609878"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d80d98fcd5033bc75838ebfb96adc9e669cd4619b6802304c24da1c0e6350cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b22593c4ec84a0863243af4cf29aad3740c0d6e57dd46a0d525100ca5bb5c40"
+    sha256 cellar: :any_skip_relocation, ventura:       "fb01497de3a932ff981180a889b986bf7049ad63b9b3b89b8d43f09ff7d4433c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d18f943835e3c3713f9bc325d99fc57598520bc3834ad92a94cb32f7e1688f60"
   end
 
   depends_on "node"
