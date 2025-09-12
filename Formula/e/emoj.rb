@@ -7,10 +7,10 @@ class Emoj < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dc3fa3b0f4251f4d20886334a9bbe160b195e3ecc4d3af475c5a33ebbf0daa9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3a9a0f4c4c76caafa319e4238e4fe49175ef44b3c8eeafc08af0c155f5e67d0"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ea4d68ffdf59c8d2b26d7878ac5240c4ab04f8cc3e240f0d68ec70bcc0a7ca2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b32b443c969b5cc8f13f504eda6380244793320e037d82dc655ee66a7f54ea9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98a6984b2ca15a444d0b47a0abe6ef88489f343b6fc95fd981c5341f0d606255"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0339c1e94af5f3eb9b6654494b972c6ab849384cf7a7dbacbc92ef906a951759"
+    sha256 cellar: :any_skip_relocation, ventura:       "2e7fdc05733738d8542be01522914283035316aef808cfae22b9c441c440326f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12f79b7cecd53098f8467bead2caf2eb25bd160f1b447a81e9ca2aeb6ddf7d3a"
   end
 
   depends_on "node"
