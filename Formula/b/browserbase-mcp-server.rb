@@ -7,10 +7,10 @@ class BrowserbaseMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_sequoia: "f54d5edd90ca63f2c7193158e8a6120e21ba5e6053619cf93d721a35b2bd85d3"
-    sha256                               arm64_sonoma:  "83880fb604daacf9c24a47b8a67e943907414f29ca06682cf7d02aed9c6c711b"
-    sha256                               ventura:       "fa21a8c0f7b2d529aacfd23d780e3707620b3cb04b7aea755bda72f020e26750"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15a79e329c44e320fb3520c308068f2b30076b2dc5681635d089773d0a68bcb2"
+    sha256 cellar: :any,                 arm64_sequoia: "987a64aaae3f128f4bf4fbb06d70273c740d933e844888772762df9136ca3b4c"
+    sha256 cellar: :any,                 arm64_sonoma:  "65890fd9a93ad6f8806f9c97d56dd0d6235edaa2276ebf1ead3724b4ef47887a"
+    sha256 cellar: :any,                 ventura:       "2a2f57ddb06d6a898598ac412d8c1ee3cbdecb52b8c25ae2b32068e91fbbceb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa1bddb0e41362c6c669ab4ce9cde668c915081709b8a82c5c40895699cee6f"
   end
 
   depends_on "node"
