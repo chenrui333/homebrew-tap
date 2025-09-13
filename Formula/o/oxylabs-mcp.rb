@@ -9,10 +9,10 @@ class OxylabsMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "b851bac812d589bcfa58e412c947125856bb4c37a592f7a8c6160fa152373788"
-    sha256 cellar: :any,                 arm64_sonoma:  "691a16e76b64dc01bc41ca3eb117d1498a6dbdb065e951b3cd2885beb65daeeb"
-    sha256 cellar: :any,                 ventura:       "5c0c7f1a77eb28f662f3ac904d488b9ffd0200b54f77a39cbae6586a0cc24ee1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed173705342a9dd463fa1f37a90b5e7ef49627b8c6f84eb6eb55177228e0bfd0"
+    sha256 cellar: :any,                 arm64_sequoia: "50a89341f43d0ca29ee140d1dec5efd264d28d1e2e63e1bfffe09464b24cf0c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "38a92d194e6a8b1ea2149aa851824cf8b3dc0839498f829b74f4b410e7381ea1"
+    sha256 cellar: :any,                 ventura:       "e45aced6153977cba4588320604d75315804d43755b9847a6b8fb4de910b7a25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af793d5a156c84a0daf13025cf649ad14c099fd15d2c299f3da16c4da3cb8cb1"
   end
 
   depends_on "rust" => :build # for pydantic
