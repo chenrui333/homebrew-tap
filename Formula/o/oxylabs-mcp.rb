@@ -3,8 +3,8 @@ class OxylabsMcp < Formula
 
   desc "MCP server for Oxylabs"
   homepage "https://github.com/oxylabs/oxylabs-mcp"
-  url "https://files.pythonhosted.org/packages/99/bc/e4315fbfb4af4ecac4c521a5397f5dea27ec61ff221a76092f3f00177bef/oxylabs_mcp-0.6.2.tar.gz"
-  sha256 "95fb30a373d6388c7222b2c481193c7a53827d1d1db8c8f0d65c0dd3a09a259a"
+  url "https://files.pythonhosted.org/packages/9c/8c/0dd207f1f59925c121d4f82e0819e7c2b83ced98d4965efc45c9434f5af4/oxylabs_mcp-0.6.4.tar.gz"
+  sha256 "50e43e6de750db4934864e7b5235cd5bbed5d0c31848d96ec43fdabf80613cd9"
   license "MIT"
 
   bottle do
@@ -49,6 +49,16 @@ class OxylabsMcp < Formula
     sha256 "5e70131382930e7c3de33450a2f54a63d5e4b19386eab43a5b34d594268f3695"
   end
 
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+  end
+
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
+    sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
     sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
@@ -59,14 +69,19 @@ class OxylabsMcp < Formula
     sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/a7/35/c495bffc2056f2dadb32434f1feedd79abde2a7f8363e1974afa9c33c7e2/cryptography-45.0.7.tar.gz"
+    sha256 "4b1654dfc64ea479c242508eb8c724044f1e964a47d1d1cacc5132292d851971"
+  end
+
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/40/8b/87b309117bb0892233d279dc402603c1d44c13912baf54d0a9eb8d6205ce/cyclopts-3.23.0.tar.gz"
-    sha256 "e8e28386b600c12a6db8916f2191bfdb4518260fbbceb16177f0fecae7ac7996"
+    url "https://files.pythonhosted.org/packages/30/ca/7782da3b03242d5f0a16c20371dff99d4bd1fedafe26bc48ff82e42be8c9/cyclopts-3.24.0.tar.gz"
+    sha256 "de6964a041dfb3c57bf043b41e68c43548227a17de1bad246e3a0bfc5c4b7417"
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/b5/4a/263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829/dnspython-2.7.0.tar.gz"
-    sha256 "ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1"
+    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
+    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
   end
 
   resource "docstring-parser" do
@@ -90,8 +105,8 @@ class OxylabsMcp < Formula
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/06/80/13aec687ec21727b0fe6d26c6fe2febb33ae24e24c980929a706db3a8bc2/fastmcp-2.11.3.tar.gz"
-    sha256 "e8e3834a3e0b513712b8e63a6f0d4cbe19093459a1da3f7fbf8ef2810cfd34e3"
+    url "https://files.pythonhosted.org/packages/99/5e/035fdfa23646de8811776cd62d93440e334e8a4557b35c63c1bff125c08c/fastmcp-2.12.3.tar.gz"
+    sha256 "541dd569d5b6c083140b04d997ba3dc47f7c10695cee700d0a733ce63b20bb65"
   end
 
   resource "h11" do
@@ -135,8 +150,8 @@ class OxylabsMcp < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/bf/ce/46fbd9c8119cfc3581ee5643ea49464d168028cfb5caff5fc0596d0cf914/jsonschema_specifications-2025.4.1.tar.gz"
-    sha256 "630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608"
+    url "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz"
+    sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
   resource "lazy-object-proxy" do
@@ -170,8 +185,8 @@ class OxylabsMcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/66/3c/82c400c2d50afdac4fbefb5b4031fd327e2ad1f23ccef8eee13c5909aa48/mcp-1.13.1.tar.gz"
-    sha256 "165306a8fd7991dc80334edd2de07798175a56461043b7ae907b279794a834c5"
+    url "https://files.pythonhosted.org/packages/95/fd/d6e941a52446198b73e5e4a953441f667f1469aeb06fb382d9f6729d6168/mcp-1.14.0.tar.gz"
+    sha256 "2e7d98b195e08b2abc1dc6191f6f3dc0059604ac13ee6a40f88676274787fac4"
   end
 
   resource "mdurl" do
@@ -180,8 +195,8 @@ class OxylabsMcp < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/ce/a0/834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09/more_itertools-10.7.0.tar.gz"
-    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
+    url "https://files.pythonhosted.org/packages/ea/5d/38b681d3fce7a266dd9ab73c66959406d565b3e85f21d5e66e1181d93721/more_itertools-10.8.0.tar.gz"
+    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
   end
 
   resource "openapi-core" do
@@ -219,9 +234,14 @@ class OxylabsMcp < Formula
     sha256 "6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2"
   end
 
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/fe/cf/d2d3b9f5699fb1e4615c8e32ff220203e43b248e1dfcc6736ad9057731ca/pycparser-2.23.tar.gz"
+    sha256 "78816d4f24add8f10a06d6f05b4d424ad9e96cfebf68a4ddc99c65c0720d00c2"
+  end
+
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
-    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
+    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
+    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
   end
 
   resource "pydantic-core" do
@@ -310,8 +330,8 @@ class OxylabsMcp < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/15/b9/cc3017f9a9c9b6e27c5106cc10cc7904653c3eec0729793aec10479dd669/starlette-0.47.3.tar.gz"
-    sha256 "6bc94f839cc176c4858894f1f8908f0ab79dfec1a6b8402f6da9be26ebea52e9"
+    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
+    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
   end
 
   resource "typing-extensions" do
