@@ -1,8 +1,8 @@
 class Secco < Formula
   desc "Local package testing made easy"
   homepage "https://secco.lekoarts.de/"
-  url "https://registry.npmjs.org/secco/-/secco-3.0.1.tgz"
-  sha256 "8cb5b124d194773dfecfe687e958a7143de5c8af3610db6e81af835c126809da"
+  url "https://registry.npmjs.org/secco/-/secco-3.1.0.tgz"
+  sha256 "e8e6d09b56b003726271af4a4665c114127400c4cc4f9ece4ea62f59259c7420"
   license "MIT"
 
   bottle do
