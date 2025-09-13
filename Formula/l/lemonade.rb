@@ -3,8 +3,8 @@ class Lemonade < Formula
 
   desc "Your LLM Aide for Validation and Deployment"
   homepage "https://lemonade-server.ai/"
-  url "https://files.pythonhosted.org/packages/e5/aa/5b669e6691f169319566e42a23fea959c423b4ab331e32f22d6fe833ac0f/lemonade_sdk-8.1.8.tar.gz"
-  sha256 "3397b084a2259babd78b16e82a8e28cf54d9329942d990baed041d87513abf37"
+  url "https://files.pythonhosted.org/packages/b1/38/4f8ea6dd7948cd8afe0f213f30e9cb2c9811804c826d20c81942de4dc88c/lemonade_sdk-8.1.10.tar.gz"
+  sha256 "3c29ba2b12309e11a530dad37c7fc0eb5536fa38a00052024901745ef7c0931e"
   license "Apache-2.0"
 
   bottle do
@@ -83,8 +83,8 @@ class Lemonade < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/23/0f/5b60fc28ee7f8cc17a5114a584fd6b86e11c3e0a6e142a7f97a161e9640a/hf_xet-1.1.9.tar.gz"
-    sha256 "c99073ce404462e909f1d5839b2d14a3827b8fe75ed8aed551ba6609c026c803"
+    url "https://files.pythonhosted.org/packages/74/31/feeddfce1748c4a233ec1aa5b7396161c07ae1aa9b7bdbc9a72c3c7dd768/hf_xet-1.1.10.tar.gz"
+    sha256 "408aef343800a2102374a883f283ff29068055c111f003ff840733d3b715bb97"
   end
 
   resource "httpcore" do
@@ -148,8 +148,8 @@ class Lemonade < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/c0/df/fb4a8eeea482eca989b51cffd274aac2ee24e825f0bf3cbce5281fa1567b/protobuf-6.32.0.tar.gz"
-    sha256 "a81439049127067fc49ec1d36e25c6ee1d1a2b7be930675f919258d03c04e7d2"
+    url "https://files.pythonhosted.org/packages/fa/a4/cc17347aa2897568beece2e674674359f911d6fe21b0b8d6268cd42727ac/protobuf-6.32.1.tar.gz"
+    sha256 "ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"
   end
 
   resource "psutil" do
@@ -163,8 +163,8 @@ class Lemonade < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
-    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
+    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
+    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
   end
 
   resource "pydantic-core" do
@@ -275,11 +275,6 @@ class Lemonade < Formula
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
     sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
-  end
-
-  resource "wmi" do
-    url "https://files.pythonhosted.org/packages/03/2d/cbf13257c0115bef37b6b743758411cec70c565405cbd08d0f7059bc715f/WMI-1.4.9.zip"
-    sha256 "192ccfad3d7bb3ef43116d753f4d5cf85c0a6b738f832cc131e928fd93cdd400"
   end
 
   resource "zstandard" do
