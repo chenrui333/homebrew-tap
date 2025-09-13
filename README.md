@@ -396,7 +396,6 @@ brew install --cask <tool>
 - `sgpt`
 - `shadcn-ui-mcp-server`
 - `sheetui`
-- `shimmy`
 - `shiroa`
 - `shopify-cli`
 - `sig`
