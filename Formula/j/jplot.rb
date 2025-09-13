@@ -1,8 +1,8 @@
 class Jplot < Formula
   desc "ITerm2 expvar/JSON monitoring tool"
   homepage "https://github.com/rs/jplot"
-  url "https://github.com/rs/jplot/archive/refs/tags/v1.1.6.tar.gz"
-  sha256 "e24e9af3952271ad38fc870082695577af494d93f69cb60a360c87c964996325"
+  url "https://github.com/rs/jplot/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "e2d1aa4cf81a61cdcea0b190f18a8ee7502093faf77c48f54c2741b457b4f298"
   license "MIT"
   head "https://github.com/rs/jplot.git", branch: "master"
 
