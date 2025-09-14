@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/1f/5e/78440a979fbb1980f7464963145279bf294b7c4308f4e0820dae7e1d133c/llmswap-4.1.2.tar.gz"
-  sha256 "20e51250ece0fbd9af02802ad38597b4c41694aff357fddef8d69cac94fc59af"
+  url "https://files.pythonhosted.org/packages/cf/d6/282e0ec0454073529446cadf7e12587e244d0a08c28673eb861129381aeb/llmswap-4.1.3.tar.gz"
+  sha256 "3b57286d5cdb1acec948ba8878a5fb866ffc3c9b3b8b02a7f19e37477e3b99ad"
   license "MIT"
 
   bottle do
@@ -162,8 +162,8 @@ class Llmswap < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/23/0f/5b60fc28ee7f8cc17a5114a584fd6b86e11c3e0a6e142a7f97a161e9640a/hf_xet-1.1.9.tar.gz"
-    sha256 "c99073ce404462e909f1d5839b2d14a3827b8fe75ed8aed551ba6609c026c803"
+    url "https://files.pythonhosted.org/packages/74/31/feeddfce1748c4a233ec1aa5b7396161c07ae1aa9b7bdbc9a72c3c7dd768/hf_xet-1.1.10.tar.gz"
+    sha256 "408aef343800a2102374a883f283ff29068055c111f003ff840733d3b715bb97"
   end
 
   resource "httpcore" do
@@ -242,8 +242,8 @@ class Llmswap < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f3/e0/a62daa7ff769df969cc1b782852cace79615039630b297005356f5fb46fb/openai-1.107.1.tar.gz"
-    sha256 "7c51b6b8adadfcf5cada08a613423575258b180af5ad4bc2954b36ebc0d3ad48"
+    url "https://files.pythonhosted.org/packages/a0/66/61b0c63b68df8a22f8763d7d632ea7255edb4021dca1859f4359a5659b85/openai-1.107.2.tar.gz"
+    sha256 "a11fe8d4318e98e94309308dd3a25108dec4dfc1b606f9b1c5706e8d88bdd3cb"
   end
 
   resource "packaging" do
@@ -282,8 +282,8 @@ class Llmswap < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/00/dd/4325abf92c39ba8623b5af936ddb36ffcfe0beae70405d456ab1fb2f5b8c/pydantic-2.11.7.tar.gz"
-    sha256 "d989c3c6cb79469287b1569f7447a17848c998458d49ebe294e975b9baf0f0db"
+    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
+    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
   end
 
   resource "pydantic-core" do
@@ -292,8 +292,8 @@ class Llmswap < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
-    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
+    url "https://files.pythonhosted.org/packages/98/c9/b4594e6a81371dfa9eb7a2c110ad682acf985d96115ae8b25a1d63b4bf3b/pyparsing-3.2.4.tar.gz"
+    sha256 "fff89494f45559d0f2ce46613b419f632bbb6afbdaed49696d322bcf98a58e99"
   end
 
   resource "python-dateutil" do
@@ -352,8 +352,8 @@ class Llmswap < Formula
   end
 
   resource "types-requests" do
-    url "https://files.pythonhosted.org/packages/ed/b0/9355adb86ec84d057fea765e4c49cce592aaf3d5117ce5609a95a7fc3dac/types_requests-2.32.4.20250809.tar.gz"
-    sha256 "d8060de1c8ee599311f56ff58010fb4902f462a1470802cf9f6ed27bc46c4df3"
+    url "https://files.pythonhosted.org/packages/36/27/489922f4505975b11de2b5ad07b4fe1dca0bca9be81a703f26c5f3acfce5/types_requests-2.32.4.20250913.tar.gz"
+    sha256 "abd6d4f9ce3a9383f269775a9835a4c24e5cd6b9f647d64f88aa4613c33def5d"
   end
 
   resource "typing-extensions" do
