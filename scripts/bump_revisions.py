@@ -14,31 +14,89 @@ import sys
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+def _resolve_alias(formula_name: str, repo_root: Path) -> Optional[Path]:
+    """If formula_name is an alias, resolve it to the real Formula path."""
+    alias_path = repo_root / "Aliases" / formula_name
+    try:
+        if alias_path.exists():
+            # Aliases in homebrew-core are symlinks
+            target = os.readlink(alias_path)
+            target_path = (repo_root / target).resolve()
+            if target_path.exists():
+                return target_path
+    except OSError:
+        pass
+    return None
 
 def find_formula_file(formula_name: str, formula_dir: Path) -> Optional[Path]:
-    """Find the formula file for a given formula name."""
-    # Handle versioned formulae (e.g., percona-xtrabackup@8.0)
-    if "@" in formula_name:
-        filename = f"{formula_name}.rb"
-    else:
-        filename = f"{formula_name}.rb"
+    """
+    Find the formula file for a given formula name across common Homebrew layouts.
 
-    # Search in alphabetical subdirectories
+    Accepts either:
+      - repo root (…/homebrew-core), or
+      - Formula dir (…/homebrew-core/Formula)
+    """
+    filename = f"{formula_name}.rb"
+
+    # If user passed the repo root, derive useful subdirs
+    repo_root = formula_dir
+    formula_subdir = None
+    if (formula_dir / "Formula").is_dir():
+        # formula_dir is the repo root (contains Formula/)
+        repo_root = formula_dir
+        formula_subdir = formula_dir / "Formula"
+    elif formula_dir.name == "Formula" and formula_dir.is_dir():
+        # formula_dir is already the Formula directory
+        repo_root = formula_dir.parent
+        formula_subdir = formula_dir
+    else:
+        # Unknown structure; still try smart guesses below
+        formula_subdir = None
+
+    # 1) Preferred modern layout: Formula/<name>.rb
+    if formula_subdir:
+        p = formula_subdir / filename
+        if p.exists():
+            return p
+
+        # 2) Older/variant layout: Formula/<first>/<name>.rb
+        first_char = formula_name[0].lower()
+        if first_char.isalpha():
+            p = formula_subdir / first_char / filename
+            if p.exists():
+                return p
+
+    # 3) If user pointed to repo root, try top-level <name>.rb (some taps do this)
+    p = repo_root / filename
+    if p.exists():
+        return p
+
+    # 4) Try <first>/<name>.rb directly under the provided dir (some taps)
     first_char = formula_name[0].lower()
     if first_char.isalpha():
-        formula_path = formula_dir / first_char / filename
-        if formula_path.exists():
-            return formula_path
+        p = repo_root / first_char / filename
+        if p.exists():
+            return p
 
-    # Also check lib/ directory for some formulae
-    lib_path = formula_dir / "lib" / filename
-    if lib_path.exists():
-        return lib_path
+    # 5) Resolve aliases (homebrew-core has Aliases/<alias> symlinks)
+    alias_target = _resolve_alias(formula_name, repo_root)
+    if alias_target and alias_target.exists():
+        return alias_target
 
-    # Direct search in Formula directory
-    direct_path = formula_dir / filename
-    if direct_path.exists():
-        return direct_path
+    # 6) Last resort: recursive glob under Formula/ then repo root
+    search_roots = []
+    if formula_subdir:
+        search_roots.append(formula_subdir)
+    search_roots.append(repo_root)
+
+    for root in search_roots:
+        try:
+            found = next(root.rglob(filename), None)
+            if found:
+                return found
+        except Exception:
+            # In case of permission or symlink loops—just skip
+            pass
 
     return None
 
@@ -155,7 +213,7 @@ def main():
     parser = argparse.ArgumentParser(description='Bump revisions for Homebrew formulae')
     parser.add_argument('formulae', nargs='*', help='Formula names to bump (if none provided, reads from stdin)')
     parser.add_argument('--dry-run', action='store_true', help='Show what would be done without making changes')
-    parser.add_argument('--formula-dir', type=Path, default=Path('/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula'),
+    parser.add_argument('--formula-dir', type=Path, default=Path('/opt/homebrew/Homebrew/Library/Taps/homebrew/homebrew-core'),
                        help='Path to Formula directory')
 
     args = parser.parse_args()
