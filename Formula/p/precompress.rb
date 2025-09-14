@@ -7,10 +7,9 @@ class Precompress < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ab76bb0926eba633db6dd341b2358cc2245508bbe103a575e3b1c8aadac45e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "042950002d42207a4ff4e168e75eb5593b3f3d1958f5e2da15250f00fffa1a9b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c73523b6a33fe64ba741f84e21d0b24f941f9bb9200fcd76a466ff663e84f12e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f62cfe4711d98fe51c915dc33920c4585bbb557415cda9e979871c2bfc85a1a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38cf73628fe4ff86b7b2bfddc1dcd0e5480256c751cc50adca1649d83f7c6ff0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ec8769855f36c7c2ed381eadad1ad5c5013eff64fcff44cfbd1020b084c7edb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a7c03b124ad36ca59ca907796b17bc7e7e96f92316e02c90977339c47863837"
   end
 
   depends_on "node"
