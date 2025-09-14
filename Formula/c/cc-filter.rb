@@ -6,6 +6,14 @@ class CcFilter < Formula
   license "MIT"
   head "https://github.com/wissem/cc-filter.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "725a537835555016b590629f2741093a5178facd6a6288c83ee49be432f8ba86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1065d93e121ee3280c1381736a4e1d05bed01b83c2f5762b4ce54dbf11c76063"
+    sha256 cellar: :any_skip_relocation, ventura:       "06cb5f5514f0b942b8d2f6c331cabba563c0613dcae09e5930e4d2dc05fb95fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be3bfa8e11f8cd1ec1562e9a9340641de14212d515e2a6f9d9a79a5add11734"
+  end
+
   depends_on "go" => :build
 
   def install
