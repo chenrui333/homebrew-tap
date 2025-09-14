@@ -94,6 +94,7 @@ brew install --cask <tool>
 - `carton`
 - `castor`
 - `cc-enhanced`
+- `cc-filter`
 - `ccapi`
 - `ccexp`
 - `cchistory`
