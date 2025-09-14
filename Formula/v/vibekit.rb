@@ -1,8 +1,8 @@
 class Vibekit < Formula
   desc "Safety layer for your coding agent"
   homepage "https://www.vibekit.sh/"
-  url "https://registry.npmjs.org/vibekit/-/vibekit-0.0.2.tgz"
-  sha256 "80f31bf3f782c7293675ce9f1def338a815322e2648a0c52d2d21caed6344811"
+  url "https://registry.npmjs.org/vibekit/-/vibekit-0.0.3.tgz"
+  sha256 "10232d72a003a9fdd581f771ebae2540311a574aed0b4c719fbe49130ca6de07"
   license "MIT"
 
   bottle do
