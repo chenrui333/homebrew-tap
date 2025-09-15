@@ -5,6 +5,13 @@ class FlintCli < Formula
   sha256 "c021f81f89a1d67e8804aebecd21b74f722e120361de4d4b9f8f5bbcde6d720c"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bf643667990d21fc0df165db1b11febdf0d6e47e8f2d78e209ebd0b5338a269"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2b8dd83e58a619a2b20d9b562de9c6cd8657fbe0b39680eb9b204b54a05f15c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b32e0ec9cebdc5ab75b6e97bc576ead42d52b46fa7aeb24d5317cf9e497120eb"
+  end
+
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pkgconf" => :build
