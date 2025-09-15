@@ -16,6 +16,9 @@
   "lemonade": {
     "exclude_packages": ["certifi", "numpy", "sentencepiece"]
   },
+  "lue-reader": {
+    "exclude_packages": ["certifi", "pymupdf"]
+  },
   "rallies-cli": {
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
