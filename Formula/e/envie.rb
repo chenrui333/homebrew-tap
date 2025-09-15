@@ -1,8 +1,8 @@
 class Envie < Formula
   desc "MCP server for Apify"
   homepage "https://github.com/ilmari-h/envie"
-  url "https://registry.npmjs.org/@envie/cli/-/cli-0.0.7.tgz"
-  sha256 "a55785d2739866b49adb95b9d33e6f9e78418e870f07bff978665019a5a60292"
+  url "https://registry.npmjs.org/@envie/cli/-/cli-0.0.8.tgz"
+  sha256 "a965f91a3cd8e9757463c1c6b57b24c999cd5c0b967bc184f1628df4f3eb6d4d"
   license "Apache-2.0"
 
   bottle do
