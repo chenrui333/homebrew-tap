@@ -51,6 +51,7 @@ brew install --cask <tool>
 - `asm-lsp`
 - `asmfmt`
 - `astro-language-server`
+- `attempt-cli`
 - `auto-favicon-mcp-server`
 - `autoflake`
 - `autotag`
@@ -103,6 +104,7 @@ brew install --cask <tool>
 - `certok`
 - `cf-vault`
 - `cf2pulumi`
+- `chalet`
 - `chatlog`
 - `checkpwn`
 - `clai`
@@ -213,6 +215,7 @@ brew install --cask <tool>
 - `hello`
 - `hellwal`
 - `hexora`
+- `heyagent`
 - `hf`
 - `holo-cli`
 - `horusec`
@@ -268,6 +271,7 @@ brew install --cask <tool>
 - `llmpeg`
 - `llmswap`
 - `localports`
+- `locport`
 - `logfire-mcp`
 - `lola`
 - `luaformatter`
@@ -346,6 +350,7 @@ brew install --cask <tool>
 - `pom`
 - `poop`
 - `pphack`
+- `pr-desc-cli`
 - `precompress`
 - `projectable`
 - `proto2yaml`
@@ -424,12 +429,13 @@ brew install --cask <tool>
 - `tenderly`
 - `termsvg`
 - `termtunnel`
+- `terra-code-cli`
 - `terracove`
 - `terrafetch`
 - `terraform-diff`
 - `terraform`
 - `terrap-cli`
-- `terratag`
+- `testronaut`
 - `tetrigo`
 - `tfreveal`
 - `tftarget`
@@ -449,7 +455,6 @@ brew install --cask <tool>
 - `travelgrunt`
 - `trieve-cli`
 - `tuono`
-- `tweakcc`
 - `twiggy`
 - `twilio-mcp-server`
 - `unused-deps`
