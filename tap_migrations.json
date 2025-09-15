@@ -19,6 +19,8 @@
   "cf-terraforming": "homebrew/core",
   "cfnctl": "homebrew/core",
   "changelogen": "homebrew/core",
+  "claude-cmd": "homebrew/core",
+  "claude-hooks": "homebrew/core",
   "claudekit": "homebrew/core",
   "comrak": "homebrew/core",
   "crd2pulumi": "homebrew/core",
