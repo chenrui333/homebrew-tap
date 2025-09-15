@@ -1,8 +1,8 @@
 class TerraCodeCli < Formula
   desc "AI-powered development companion with persistent memory and knowledge"
   homepage "https://github.com/TerraAGI/terra-code-cli"
-  url "https://registry.npmjs.org/@terra-code/terra-code/-/terra-code-0.1.4.tgz"
-  sha256 "774f6976f9b3b5664a8ff5e5f711b3f1080cafe4a12f1ad9689fcf240741d8a6"
+  url "https://registry.npmjs.org/@terra-code/terra-code/-/terra-code-0.2.0.tgz"
+  sha256 "4bf515dbcc31afacd00d7a0de5870246ae6c4301a73ba9c0c7d319412298ed6a"
   license "Apache-2.0"
 
   bottle do
@@ -15,7 +15,7 @@ class TerraCodeCli < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args, "--ignore-scripts"
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
