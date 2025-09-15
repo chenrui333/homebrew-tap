@@ -6,6 +6,13 @@ class Olla < Formula
   license "Apache-2.0"
   head "https://github.com/thushan/olla.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72ffe34c7242b110101cefde5272f42a985f49c6140003603ae65817c347ccb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dcfff8a59ab38a3594ce21d09c2ae18fdf76983672c94be76869abd2faa40cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f158429ae9d1001e3adc822f8c7c9646c98db155fa245b7d52c9c94b467f3da6"
+  end
+
   depends_on "go" => :build
 
   def install
