@@ -6,6 +6,13 @@ class Tsuki < Formula
   license "MIT"
   head "https://github.com/ultimaweapon/tsuki.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29fdb17f63afb67c672ea8e6d6ae0ac4c30e3fbac8b352c06d7b0fcba7d65b83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a1b3c37dbfc62b8f4ba5f01bf81deee078806e1e2654f0748f52d1e8417b14d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "270a1ab8fa0292cfa3f317f581d5b5d77415376be7a464253b7fd28b08f613b5"
+  end
+
   depends_on "rust" => [:build, :test]
 
   def install
