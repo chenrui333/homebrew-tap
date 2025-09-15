@@ -1,8 +1,8 @@
 class Testronaut < Formula
   desc "Autonomous testing with OpenAI functions and browser automation"
   homepage "https://testronaut.app/"
-  url "https://registry.npmjs.org/testronaut/-/testronaut-1.0.26.tgz"
-  sha256 "32f244c72f59a4e2a02d9b6be2fbb39d15007fcbe22f00dc4428eddc54ac7b0a"
+  url "https://registry.npmjs.org/testronaut/-/testronaut-1.0.27.tgz"
+  sha256 "dbdd0804064757493781cb037008aae98014b62af20be87e839060aa4fc776aa"
   license "MIT"
 
   bottle do
