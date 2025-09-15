@@ -18,6 +18,11 @@ class Ccapi < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove incompatible pre-built binaries
+    node_modules = libexec/"lib/node_modules/@4xian/ccapi/node_modules"
+    ripgrep_vendor_dir = node_modules/"@anthropic-ai/claude-code/vendor/ripgrep"
+    rm_r(ripgrep_vendor_dir)
   end
 
   test do
