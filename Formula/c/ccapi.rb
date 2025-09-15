@@ -7,10 +7,9 @@ class Ccapi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9156da478220858054f27f58acdb068de01bed77cf45afd76e3ac13a3b32d057"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b794f52826678d1bded107126b275d7f3e73aed891a81be9cdf90dff6f982d9"
-    sha256 cellar: :any_skip_relocation, ventura:       "e377e65980cd4eb3ad1d9007274cf6a25639d1a417901c29357c1a28499b515c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47a5209d0506617783d65e4868c114d479bad325e8a784a4dc14dbbc61456501"
+    sha256 cellar: :any,                 arm64_sequoia: "c9cbaa68274a23e5e6b14241fb3804025f8b06c19b8bd4406ca122e39d332e68"
+    sha256 cellar: :any,                 arm64_sonoma:  "69f6173b67b6dd1c2ad9928df9e6c8ddd1e1bb060ebbe3309e47e42b049dffae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0834573e8a6651b68127946bf05c47cd97eced58b316f64c12426e056ac1853a"
   end
 
   depends_on "node"
