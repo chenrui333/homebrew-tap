@@ -40,7 +40,7 @@ class Secco < Formula
 
     (testpath/".seccorc").write "source.path=\"#{testpath}\""
 
-    output = shell_output("#{bin}/secco test 2>&1")
+    output = shell_output("#{bin}/secco test 2>&1", 1)
     assert_match "You haven't got any source dependencies in your current `package.json`", output
   end
 end
