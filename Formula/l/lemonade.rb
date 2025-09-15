@@ -289,6 +289,6 @@ class Lemonade < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/lemonade-server-dev --version")
     assert_match "Server is not running", shell_output("#{bin}/lemonade-server-dev status")
-    assert_match "gpt-oss-120b-GGUF", shell_output("#{bin}/lemonade-server-dev list")
+    assert_match "gpt-oss-120b-mxfp-GGUF", shell_output("#{bin}/lemonade-server-dev list")
   end
 end
