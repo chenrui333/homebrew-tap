@@ -5,6 +5,13 @@ class Wuchale < Formula
   sha256 "e9338a59571b0cf4c9227cbc5e5106a9e057bb99a391f1d56b6f937cefde8ccf"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85cd272f060154bea802ce124b4a28f0642215f7f0b66df88afde5ac425ef967"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "395123989e881eab6189da84b3885c62499a8587feb1d1b19136b560e6d7d2dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d185c8d40913379868bc36cf0f4b7ce0e4154bd43f0a25310dbf647dab4d6a23"
+  end
+
   depends_on "node"
 
   def install
