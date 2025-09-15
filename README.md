@@ -307,7 +307,6 @@ brew install --cask <tool>
 - `nanodbc`
 - `narr`
 - `nest-cli`
-- `netscanner`
 - `newsnow-mcp-server`
 - `ngtop`
 - `nhost`
