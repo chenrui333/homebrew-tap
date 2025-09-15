@@ -5,6 +5,13 @@ class ClaudeCode < Formula
   sha256 "7dfa04ede8c19e08273f555d4663094f4387dcff606cdff2e94d1df5a1cce89b"
   # license :unfree
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "4cecd2422e48258e5870507911a854432c463439a3c97f2c9009933e1acc9e1c"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c7ee9e658783a3df2f5bdb0a92cf374fc5a4d54213dfdde84f001185dcef74b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a468b1f4bba90356e198e5711526232247970251c3e8771fc2bee1fbf3a192e1"
+  end
+
   depends_on "node"
   depends_on "pcre2"
 
