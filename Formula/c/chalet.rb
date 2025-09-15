@@ -6,6 +6,13 @@ class Chalet < Formula
   license "MIT"
   head "https://github.com/chalet-dev/chalet.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e0c78578dc468937c5f5326c33635f2c2d3dd54c79e6695f01f6aff91bb5aa7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3dc32f9ce45117497f176618aab0eae95306abcb3ac2b5a35eeeba2e5d8433f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a4c95c52ace3520ba2c38e1eae74cb1ae0b8aad1c77d381b7f0838bf27d16cc"
+  end
+
   depends_on "go" => :build
 
   def install
