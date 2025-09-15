@@ -108,9 +108,7 @@ brew install --cask <tool>
 - `chatlog`
 - `checkpwn`
 - `clai`
-- `claude-cmd`
 - `claude-code-generic-hooks`
-- `claude-hooks`
 - `cli-mcp-server`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
@@ -320,6 +318,7 @@ brew install --cask <tool>
 - `nvrs`
 - `octelium`
 - `ohy`
+- `olla`
 - `omekasy`
 - `omnictl`
 - `optivorbis`
@@ -477,6 +476,7 @@ brew install --cask <tool>
 - `wedl`
 - `weekly-git-summary`
 - `werk`
+- `wuchale`
 - `xcpkg`
 - `xmlformatter`
 - `yajsv`
