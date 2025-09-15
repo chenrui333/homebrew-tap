@@ -6,6 +6,13 @@ class LueReader < Formula
   url "https://files.pythonhosted.org/packages/2b/22/e504c7b670ba2b40444cd25a4420ca77dac3d15e12b518b96e4a9db2685d/lue_reader-0.2.0.tar.gz"
   sha256 "707f11d7992b2512e47c5ceaf4273dc1937b2f366955caf1bf776cbd97fbf4da"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b88df25313f20d8998785c9b130697899e45c7ba577fb141cad0d53d3ab5c299"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be6a53cc3eddbb1308f4b01990e8266519bb41e0dd38ca4d3a372c16e3229fe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ddf35789d89cb31df8489bd41868fa6076f9c453dd2728a7207d22f94a9323e"
+  end
+
   depends_on "certifi"
   depends_on "ffmpeg"
   depends_on "pymupdf"
