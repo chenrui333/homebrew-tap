@@ -7,9 +7,26 @@ class Heyagent < Formula
 
   depends_on "node"
 
+  on_macos do
+    depends_on "terminal-notifier"
+  end
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Remove vendored pre-built binary `terminal-notifier`
+    node_notifier_vendor_dir = libexec/"lib/node_modules/heyagent/node_modules/node-notifier/vendor"
+    rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
+
+    if OS.mac?
+      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
+      terminal_notifier_dir.mkpath
+
+      # replace vendored `terminal-notifier` with our own
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
+    end
   end
 
   test do
