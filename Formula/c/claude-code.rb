@@ -6,6 +6,7 @@ class ClaudeCode < Formula
   # license :unfree
 
   depends_on "node"
+  depends_on "pcre2"
 
   def install
     system "npm", "install", *std_npm_args
