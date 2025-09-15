@@ -83,6 +83,7 @@
   "multi-gitter": "homebrew/core",
   "nak": "homebrew/core",
   "netfetch": "homebrew/core",
+  "netscanner": "homebrew/core",
   "nom": "homebrew/core",
   "notion-mcp-server": "homebrew/core",
   "omnara": "homebrew/core",
