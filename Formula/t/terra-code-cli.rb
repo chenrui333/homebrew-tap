@@ -5,6 +5,13 @@ class TerraCodeCli < Formula
   sha256 "774f6976f9b3b5664a8ff5e5f711b3f1080cafe4a12f1ad9689fcf240741d8a6"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e481cdb9f1799321921f0a937091cfce5b86b26bc92ea244eb543e51d9d6b262"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a6249d507d5740815dd036af7febfa47658489109ef0281de3f93fcd175a2e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75cf9f71eee1e5c710771d9913a55bee70dab176634325fbdc3d8f191819cb68"
+  end
+
   depends_on "node"
 
   def install
