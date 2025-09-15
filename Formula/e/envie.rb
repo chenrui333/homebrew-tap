@@ -7,10 +7,9 @@ class Envie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1810cca1e07d35cc55e2043288c804fac57f5e6cba4c5ee9afa0e39e2b526d4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1952631aec4c932b54b18fcbd7fda81b47e6fa25a55e9efb3c132527ce2102e"
-    sha256 cellar: :any_skip_relocation, ventura:       "3350cb62f8f3ff66c8f01742d0f1fb954d8ec2e1d1c4bccd3361fa1f93c6ec4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "747aab611d680936152b509ddd30f6c94d83cf024761cc9127dcd86eb76a24ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0bd9ee031f45570766c2059a15f20990948985909c86a437ca14931a35db870"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6db932062c1c3989ebdcfdcc294954ac345126d6b1ab19f0e6ce3a037156deb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea6c83d879ae26f69638ede55deba0c0352b1fd87c65916826647dc097a7ad8e"
   end
 
   depends_on "node"
