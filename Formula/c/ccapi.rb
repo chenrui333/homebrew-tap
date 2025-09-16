@@ -1,8 +1,8 @@
 class Ccapi < Formula
   desc "Claude Code Commands Manager"
   homepage "https://github.com/4xian/claude-auto-api"
-  url "https://registry.npmjs.org/@4xian/ccapi/-/ccapi-1.0.6.tgz"
-  sha256 "7c9e54023dd10c8d612e5eb492ecf2ca0a721dbd2b03d76f167f96b69bc7a9b6"
+  url "https://registry.npmjs.org/@4xian/ccapi/-/ccapi-1.0.7.tgz"
+  sha256 "8dae9edf4936cb4c9fe2d0f173f245c52ce76de053ac122645bc6d9015db2f72"
   license "MIT"
 
   bottle do
@@ -17,11 +17,6 @@ class Ccapi < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
-
-    # Remove incompatible pre-built binaries
-    node_modules = libexec/"lib/node_modules/@4xian/ccapi/node_modules"
-    ripgrep_vendor_dir = node_modules/"@anthropic-ai/claude-code/vendor/ripgrep"
-    rm_r(ripgrep_vendor_dir)
   end
 
   test do
