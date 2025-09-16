@@ -1,8 +1,8 @@
 class Beelzebub < Formula
   desc "Secure low code honeypot framework, leveraging AI for System Virtualization"
   homepage "https://beelzebub-honeypot.com/"
-  url "https://github.com/mariocandela/beelzebub/archive/refs/tags/v3.4.1.tar.gz"
-  sha256 "1ed26f12ff26a73272b24a984be3df443392c2daa7deb87e4810d9a35575c147"
+  url "https://github.com/mariocandela/beelzebub/archive/refs/tags/v3.4.2.tar.gz"
+  sha256 "cc682594d1045093a04088a32c48dcd7cb57dfc731262b98d5bce7aeaa8320ef"
   license "GPL-3.0-only"
   head "https://github.com/mariocandela/beelzebub.git", branch: "main"
 
