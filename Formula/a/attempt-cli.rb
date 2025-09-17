@@ -1,5 +1,5 @@
 class AttemptCli < Formula
-  desc "Containerize your dev environments"
+  desc "CLI for retrying fallible commands"
   homepage "https://github.com/MaxBondABE/attempt"
   url "https://github.com/MaxBondABE/attempt/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "59a5a250de15ec14802eec19b6c63de975ccb72d2f205f1402bef94cf30b2f10"
