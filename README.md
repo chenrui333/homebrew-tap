@@ -109,6 +109,7 @@ brew install --cask <tool>
 - `checkpwn`
 - `clai`
 - `claude-code-generic-hooks`
+- `claude-code`
 - `cli-mcp-server`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
@@ -171,6 +172,7 @@ brew install --cask <tool>
 - `fjira`
 - `fkill-cli`
 - `fli`
+- `flint-cli`
 - `flow-editor`
 - `flowgger`
 - `fortran-linter`
@@ -273,6 +275,7 @@ brew install --cask <tool>
 - `logfire-mcp`
 - `lola`
 - `luaformatter`
+- `lue-reader`
 - `lib-x`
 - `libdivide`
 - `magic-mcp-server`
@@ -452,6 +455,7 @@ brew install --cask <tool>
 - `tracetest`
 - `travelgrunt`
 - `trieve-cli`
+- `tsuki`
 - `tuono`
 - `twiggy`
 - `twilio-mcp-server`
