@@ -1,8 +1,8 @@
 class Summon < Formula
   desc "Provides on-demand secrets access for common DevOps tools"
   homepage "https://cyberark.github.io/summon/"
-  url "https://github.com/cyberark/summon/archive/refs/tags/v0.10.5.tar.gz"
-  sha256 "3cdebb25162efa71113676c008dc9beec054641506b2e784e61f3472dd2e904e"
+  url "https://github.com/cyberark/summon/archive/refs/tags/v0.10.6.tar.gz"
+  sha256 "d97509e13e5895a8ed1a69927b34ea968554180aac174a4cc76ab30d9618c848"
   license "MIT"
   head "https://github.com/cyberark/summon.git", branch: "main"
 
