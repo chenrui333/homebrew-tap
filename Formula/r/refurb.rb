@@ -3,8 +3,8 @@ class Refurb < Formula
 
   desc "Tool for refurbishing and modernizing Python codebases"
   homepage "https://github.com/dosisod/refurb"
-  url "https://files.pythonhosted.org/packages/1d/fe/34715ea7799daedfd8ef20fd8fbba23aa2aaa2039a94b41e63ee203e202d/refurb-2.1.0.tar.gz"
-  sha256 "4fb41a3a6523a035c2379792776d4c28ddb291c7fcb8348725cc01749a98e32c"
+  url "https://files.pythonhosted.org/packages/02/53/c90648f39d7b5d61122b7c6978cdfa29e8bdfd758711306d770c1a339b00/refurb-2.2.0.tar.gz"
+  sha256 "645472793b3af40cca121e37df45dd9b20b525c4df99429d9fd9f6b5c238b9ea"
   license "GPL-3.0-only"
 
   bottle do
@@ -18,8 +18,8 @@ class Refurb < Formula
   depends_on "python@3.13"
 
   resource "mypy" do
-    url "https://files.pythonhosted.org/packages/ce/43/d5e49a86afa64bd3839ea0d5b9c7103487007d728e1293f52525d6d5486a/mypy-1.15.0.tar.gz"
-    sha256 "404534629d51d3efea5c800ee7c42b72a6554d6c400e6a79eafe15d11341fd43"
+    url "https://files.pythonhosted.org/packages/14/a3/931e09fc02d7ba96da65266884da4e4a8806adcdb8a57faaacc6edf1d538/mypy-1.18.1.tar.gz"
+    sha256 "9e988c64ad3ac5987f43f5154f884747faf62141b7f842e87465b45299eea5a9"
   end
 
   resource "mypy-extensions" do
@@ -27,9 +27,14 @@ class Refurb < Formula
     sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
+    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+  end
+
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   def install
