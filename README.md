@@ -51,7 +51,6 @@ brew install --cask <tool>
 - `asm-lsp`
 - `asmfmt`
 - `astro-language-server`
-- `attempt-cli`
 - `auto-favicon-mcp-server`
 - `autoflake`
 - `autotag`
@@ -169,7 +168,6 @@ brew install --cask <tool>
 - `fex`
 - `firectl`
 - `fixjson`
-- `fjira`
 - `fkill-cli`
 - `fli`
 - `flint-cli`
