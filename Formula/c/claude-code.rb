@@ -7,9 +7,9 @@ class ClaudeCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "bdc92336ce4c020213c2157cc69c43f7ace93c9d6333c6fe3bcfb190ce8daa1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "d9bcfc3b5649667c97bcc183dc214605bf77d44127b607e8d28c6d242fcf3db5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26c58a8dc500723745db0d7d20849e1196364ccff75dfe3c23e505919e7c6104"
+    sha256 cellar: :any,                 arm64_sequoia: "f2aab9d2da09c8d60c9a971a3cb98ca8a0fddb49610c996e8e93a430f8df652a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a73ee80ba2e3188c7d81cf0da32a9a0d0e339ab47b93d66755c944284d30e31e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73e95fbd5c3aa7a573f1b46422ac02cb40f35933a8016e29b2203fa3fb93010c"
   end
 
   depends_on "node"
