@@ -7,10 +7,9 @@ class McpServerChart < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1906fe9a58638e17e07971162f3805ceb121dddd953c0c082fe42763eb534735"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5c85afa79b7fb848344c2ea80bd5d1fe2003bec360a0682bb6611e69fa4ff9b"
-    sha256 cellar: :any_skip_relocation, ventura:       "a1f0e58500040692b57cdda94e8bcf284b7664d4727a6f56696490d366c007e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba52d602b6d9f9904b267d19f57f7ee875b374385d066017a3b900e58870c2de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d79595e023484dbc7032ebb17124d68fa3013cd9fda53e6a62fb6ce04aa3051d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6e900ea05c3d8abb6228d50a050bc72b116460cc807ee8319ebb51c5e0a2a59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "202f5109d435bd6d24460694114e0afffec0c6d0bd451bfabe58d68b73219bca"
   end
 
   depends_on "node"
