@@ -7,10 +7,9 @@ class TavilyMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9050e8f3c17c997930c1b14b72d8950bfd10dff824bc4803e3af2961d400720"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef9222a81c3898c9f2a4756f3c56f0794699f3d7801c2c899a565f88258f89dd"
-    sha256 cellar: :any_skip_relocation, ventura:       "31bc55f677a8ff2968d25b5295892aef9779b1ec7868a3843c1e127a9cb8872e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52176cc31f31d1e9a402b7c133774fbec15504555132fc3a3e9d84246eae030a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ac925b7cc0c2b8a3e20581b244d2d6fddb7ee429a57566e199fd1e35918b8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "648830e583c943562c52368688b38bd18aa02335ebc42ae0bcb9bae704fd3c23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83e8e4c152e23a173c0433e47fab62cf40d22db8238e4e0403571f71a369aef7"
   end
 
   depends_on "node"
