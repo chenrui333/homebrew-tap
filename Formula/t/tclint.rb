@@ -3,8 +3,8 @@ class Tclint < Formula
 
   desc "EDA-centric utility for linting and analyzing Tcl code"
   homepage "https://github.com/nmoroze/tclint"
-  url "https://files.pythonhosted.org/packages/46/2e/e0b87f58765f43937e06b3f7f5f3e299ec0479fcf99a7ef5c033614d5cdc/tclint-0.6.0.tar.gz"
-  sha256 "8dd4d7b519e040c164615df8072cc4c28def4bfdc9d2a8672a280b0984b45fc3"
+  url "https://files.pythonhosted.org/packages/24/cd/399bc1cfbc6054c826ae137d57cd8311d2e76a648e5a745192c4c888fc36/tclint-0.6.1.tar.gz"
+  sha256 "996722a0296c76facb0ec6a21c48b15696689a434b592d6c3643559c1b8bd235"
   license "MIT"
 
   bottle do
@@ -24,8 +24,8 @@ class Tclint < Formula
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/57/2b/561d78f488dcc303da4639e02021311728fb7fda8006dd2835550cddd9ed/cattrs-25.1.1.tar.gz"
-    sha256 "c914b734e0f2d59e5b720d145ee010f1fd9a13ee93900922a2f3f9d593b8382c"
+    url "https://files.pythonhosted.org/packages/e3/42/988b3a667967e9d2d32346e7ed7edee540ef1cee829b53ef80aa8d4a0222/cattrs-25.2.0.tar.gz"
+    sha256 "f46c918e955db0177be6aa559068390f71988e877c603ae2e56c71827165cc06"
   end
 
   resource "importlib-metadata" do
@@ -54,8 +54,8 @@ class Tclint < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
-    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "voluptuous" do
