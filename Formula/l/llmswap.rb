@@ -9,10 +9,9 @@ class Llmswap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "91cc5de1559bf5809a141877b3f09cbc7a73030cea9f96f8076ba5272783eb82"
-    sha256 cellar: :any,                 arm64_sonoma:  "9e2a5e7b9ac461b63e9e7e0f184e06f80ba79d02690db82f827e6ce1f21e34c9"
-    sha256 cellar: :any,                 ventura:       "fe5914a297565461b11690eda1eeda1a8146579adcba7b72dc33254381df08e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d6cacb6e3aa80aa49f6085cd2814d4cc322f11d34fc0e1192b482056d333764"
+    sha256 cellar: :any,                 arm64_sequoia: "648bef8da7a90e328d2bbe99e883361646e628d46e8e1052c94e787e852e142a"
+    sha256 cellar: :any,                 arm64_sonoma:  "012926c35c362ebd15117a2417883f52c9195bb923f7b411e9c212184eea2bbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8288af5f929777bea83e7e1ef417e028b02b0d9477132b23e32de2009995dabf"
   end
 
   depends_on "rust" => :build # for pydantic
