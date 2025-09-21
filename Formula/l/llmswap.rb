@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/d2/6b/19456f1d22fcc092a1656b6fe8198c263675914eca4cdf20cdadc7c75439/llmswap-5.0.2.tar.gz"
-  sha256 "1a3574c88bb2a91b0aea0f56c0a688986f7b862b13f07248b1182d23be8f3aa4"
+  url "https://files.pythonhosted.org/packages/b7/ce/07e654fb011e8ddd1a1ab163b02d5de71952674888923db66bf5011b0afb/llmswap-5.0.3.tar.gz"
+  sha256 "132045bdf5b659608bec03495b1e96b1bce2e141a718d90e55d154c208e04552"
   license "MIT"
 
   bottle do
