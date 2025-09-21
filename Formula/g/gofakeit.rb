@@ -8,9 +8,9 @@ class Gofakeit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a793cf7fbf73d10cc8fa9c8c74b741f0916dc4b37e5bedd409c0fb91028618c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd09a477f1cc66f9a6b49028308afcb1413184793f2170feff5959b431866d96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea0d17064fce3bcbc8c429bab7b320b828725f8cb066ab6109a86ff74059456e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee50c08fd5f25078b1a70c128f6ff1636165c3a9b916dd6af0d98249d9b9f762"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e68a1cd8144aac28227130263e3032a061c10e138d690f39edb7b061d331105"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb0ea2939841f2378519da4dd8432612fa8ea712183ee03caed965945cd1c66"
   end
 
   depends_on "go" => :build
