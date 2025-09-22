@@ -1,8 +1,8 @@
 class Ccapi < Formula
   desc "Claude Code Commands Manager"
   homepage "https://github.com/4xian/claude-auto-api"
-  url "https://registry.npmjs.org/@4xian/ccapi/-/ccapi-1.0.7.tgz"
-  sha256 "8dae9edf4936cb4c9fe2d0f173f245c52ce76de053ac122645bc6d9015db2f72"
+  url "https://registry.npmjs.org/@4xian/ccapi/-/ccapi-1.0.8.tgz"
+  sha256 "4845ecaa62b7df2f336a6153159b04cbe4df73716d8418bdf23aeb2961795fff"
   license "MIT"
 
   bottle do
