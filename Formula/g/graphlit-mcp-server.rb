@@ -1,8 +1,8 @@
 class GraphlitMcpServer < Formula
   desc "Cloudflare MCP Server"
   homepage "https://www.graphlit.com/"
-  url "https://registry.npmjs.org/graphlit-mcp-server/-/graphlit-mcp-server-1.0.20250920001.tgz"
-  sha256 "90012f106fc5a2dc4e24c73b61a87e69ef074dfab7a3cd732aa63c8a296c93e8"
+  url "https://registry.npmjs.org/graphlit-mcp-server/-/graphlit-mcp-server-1.0.20250921001.tgz"
+  sha256 "0044c9965cc312174e170c8ee3dbda205b282ee04e4d5f2ebf8c0c5046f87afb"
   license "MIT"
 
   bottle do
