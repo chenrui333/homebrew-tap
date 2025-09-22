@@ -1,8 +1,8 @@
 class FastCli < Formula
   desc "Test your download and upload speed using fast.com"
   homepage "https://github.com/sindresorhus/fast-cli"
-  url "https://registry.npmjs.org/fast-cli/-/fast-cli-4.0.1.tgz"
-  sha256 "7deda4c3be0466cff2f190e4510978d0dfc608bec66d494638063cb0d563c092"
+  url "https://registry.npmjs.org/fast-cli/-/fast-cli-5.0.1.tgz"
+  sha256 "154cecdfc2f0a0465d6a34dd2b231ada73a24166ef0d7458dd4fb54640f9ffa7"
   license "MIT"
 
   bottle do
