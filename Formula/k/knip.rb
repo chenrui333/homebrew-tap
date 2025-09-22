@@ -21,8 +21,6 @@ class Knip < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/knip --version")
-
     (testpath/"package.json").write <<~JSON
       {
         "name": "my-project",
@@ -31,6 +29,8 @@ class Knip < Formula
         }
       }
     JSON
+
+    assert_match version.to_s, shell_output("#{bin}/knip --version")
 
     system bin/"knip", "--production"
   end
