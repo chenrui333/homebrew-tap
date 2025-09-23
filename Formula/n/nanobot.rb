@@ -6,6 +6,13 @@ class Nanobot < Formula
   license "Apache-2.0"
   head "https://github.com/nanobot-ai/nanobot.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83030a08953754ecf653dba735cf21e5444b7bb30927ba17331bfc0aeffd7bda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15aff55f989b3506bd5e28753f3fcb711b98324201cf970cb4255ef8ab4984c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d87369b85b3e163830d12a00eabd328ab5fa945a946a3dafd78897eb168e9b2"
+  end
+
   depends_on "go" => :build
 
   def install
