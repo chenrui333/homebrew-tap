@@ -23,6 +23,9 @@
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
   },
+  "ros-mcp-server": {
+    "exclude_packages": ["certifi", "cryptography", "numpy", "pillow"]
+  },
   "sarif-tools": {
     "exclude_packages": ["numpy", "pillow"]
   }
