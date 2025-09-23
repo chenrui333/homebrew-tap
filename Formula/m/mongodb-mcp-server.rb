@@ -1,6 +1,6 @@
 class MongodbMcpServer < Formula
-  desc "Self-testing CLI documentation tool that generates interactive demos"
-  homepage "https://deepguide.ai/"
+  desc "MCP Server to connect to MongoDB databases and MongoDB Atlas Clusters"
+  homepage "https://github.com/mongodb-js/mongodb-mcp-server"
   url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-0.3.0.tgz"
   sha256 "73f3f0fe3db4f5ac7ea618350f86a69a22fa1feb8981e96b218bb3cf5bceede9"
   license "Apache-2.0"
