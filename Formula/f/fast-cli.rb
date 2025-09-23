@@ -30,6 +30,6 @@ class FastCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/fast --version")
-    assert_empty shell_output("#{bin}/fast --upload --json 2>&1")
+    assert_empty shell_output("#{bin}/fast --upload --json 2>&1").strip
   end
 end
