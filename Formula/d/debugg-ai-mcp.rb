@@ -1,5 +1,5 @@
 class DebuggAiMcp < Formula
-  desc "MCP with 25+ @antvis charts for visualization, generation, and analysis"
+  desc "MCP Server for Debugg AI"
   homepage "https://debugg.ai/"
   url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-1.0.16.tgz"
   sha256 "3c52ed2403196b68520ea2c3f03986b27ebbb0d38361babc5237c426fd43d2dd"
