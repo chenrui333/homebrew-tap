@@ -21,10 +21,10 @@ class Decktape < Formula
 
     node_modules = libexec/"lib/node_modules/decktape/node_modules"
 
-    # Remove incompatible pre-built `bare-fs`/`bare-os` binaries
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
