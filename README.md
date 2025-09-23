@@ -292,7 +292,6 @@ brew install --cask <tool>
 - `mdbook-linkcheck`
 - `mdsf`
 - `mdslw`
-- `mermaid-cli`
 - `meteor`
 - `mfa`
 - `minisign`
@@ -305,6 +304,7 @@ brew install --cask <tool>
 - `mpfshell`
 - `mqtt-cli`
 - `oceanbase-mcp-server`
+- `nanobot`
 - `nanodbc`
 - `narr`
 - `nest-cli`
