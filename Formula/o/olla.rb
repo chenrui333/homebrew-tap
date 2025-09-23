@@ -8,9 +8,9 @@ class Olla < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72ffe34c7242b110101cefde5272f42a985f49c6140003603ae65817c347ccb0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dcfff8a59ab38a3594ce21d09c2ae18fdf76983672c94be76869abd2faa40cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f158429ae9d1001e3adc822f8c7c9646c98db155fa245b7d52c9c94b467f3da6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ac195447db4550d6fc52e59a9ce341d54a89e2ba9fe74824346d501d030bd16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c13a7ecf4ed5d39e19590b5e89624522436decc69f35e78c1c217884053e3a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c644055da0cd055b0fdd244263c4d6d3952e7ee871ee3fa41a5894f49c5fb9"
   end
 
   depends_on "go" => :build
