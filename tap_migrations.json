@@ -79,6 +79,7 @@
   "md2pdf": "homebrew/core",
   "melt": "homebrew/core",
   "mender-cli": "homebrew/core",
+  "mermaid-cli": "homebrew/core",
   "mob": "homebrew/core",
   "moribito": "homebrew/core",
   "mpremote": "homebrew/core",
