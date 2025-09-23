@@ -7,10 +7,9 @@ class FastCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "eb10af35af1366c9dc85ceed1724494542f5031a7f574326f190c2a8047c4faa"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ee5dd33389d33b49d4bf852d2122af372275826fd95cbd14fbc39205b74954a"
-    sha256 cellar: :any,                 ventura:       "e09002411ce9f9f2c7927a92ec30bc6f7f2bccabc572f16c8517e6a62c351358"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae49712cf16809c0e628fb8f6f646bda9293bbc98897a71810939c79e2102ba"
+    sha256 cellar: :any,                 arm64_sequoia: "5ac2d8d45854a47715fdfa1cc2d82f265cc68def8ef8b8039b06eb6f4ea67e88"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc4d902fc303959041197fdc6d330a6b8a1e038e5f5c4f26d6eca3388ece237a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "850e28091b33b0aca06a02ac17660827d97b95c200207edcf72ba579a22013c4"
   end
 
   depends_on "node"
