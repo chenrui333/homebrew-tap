@@ -5,6 +5,13 @@ class ChromeDevtoolsMcp < Formula
   sha256 "f17e6c561426bad01d20e3ae16266ff98ca2c0a224295064bd428a935ea2bcd3"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "fa4e3e9eeed879aa9f8a2de005be63eff5bb1cb3eb0f2fa44cc1c07eb401d0da"
+    sha256 cellar: :any,                 arm64_sonoma:  "2258eeeb5ce09169c31bc97e3ee9a7523c6137e868678044d434e80ead3f30e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4315ccefc69e5c22e0cf3fcbfdfab84c880589798da3fcb518e50a17eb3ca7a"
+  end
+
   depends_on "node"
 
   def install
