@@ -7,10 +7,9 @@ class Taskonaut < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34d303264f9d62b70d12a03360799ea8296dd36f40749243ae2d6233231e3751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef4397d8f5f54a671aa4e46783b3000e3ba8f80bc737c41c5810db45075eccb1"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e1a97c44fbf68c7f02153d3fafe2bc2f795c977c55ece63f971bad750b57a51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6fc48cbcfbe69b63de16b89b64055537acbf2110f39d4547e9f74cc83bef0b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb2d5c67688174132d36724ac49d32ca1c99d23ec298bf7dc1a649895055bd4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46e30c136f0471d1ce92cecc2fc6d7e97997d84c5a971200a530cf3e62474154"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6ce31b109375711f4ba77637c2616dbb7e9b4f152a7c4774aba17e92af08ad3"
   end
 
   depends_on "node"
