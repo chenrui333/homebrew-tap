@@ -1,8 +1,8 @@
 class N8nMcp < Formula
   desc "MCP for Claude Desktop, Claude Code, Windsurf, Cursor to build n8n workflows"
   homepage "https://www.n8n-mcp.com/"
-  url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.12.2.tgz"
-  sha256 "c6796d047792883416dd9bb4a8543501dcf3f5324c5b4d6c82d0fcec82b9de84"
+  url "https://registry.npmjs.org/n8n-mcp/-/n8n-mcp-2.13.0.tgz"
+  sha256 "947415f50f1049b4669d4d99dac2846a0237bfc1777062a9c8a39dd04e93c573"
   license "MIT"
 
   bottle do
@@ -26,7 +26,7 @@ class N8nMcp < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"n8n-mcp", testpath, [:out, :err] => output_log.to_s
     sleep 1
-    assert_match "MCP server initialized with 41 tools (n8n API: configured)", output_log.read
+    assert_match "MCP server initialized with 42 tools (n8n API: configured)", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
