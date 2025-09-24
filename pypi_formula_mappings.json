@@ -13,6 +13,9 @@
   "gtts": {
     "exclude_packages": ["certifi"]
   },
+  "fastmcp": {
+    "exclude_packages": ["certifi", "cryptography"]
+  },
   "lemonade": {
     "exclude_packages": ["certifi", "numpy", "sentencepiece"]
   },
