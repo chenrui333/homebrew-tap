@@ -6,6 +6,13 @@ class McpGrafana < Formula
   license "Apache-2.0"
   head "https://github.com/grafana/mcp-grafana.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "524fb4b8308eba9afafc18e8466dadffaac380ab4aaa9902571fcde6231217ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2aef1716be645e2701bdfe4a697216fc15d3a67c1339a73534c6b63c164a8447"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6b26d30ff5240896d79e23390259cb2869e4581aa5cd81e9d06e38d78716bfe"
+  end
+
   depends_on "go" => :build
 
   def install
