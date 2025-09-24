@@ -17,7 +17,7 @@ class ShadcnUiMcpServer < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec/"bin/shadcn-mcp" => "shadcn-ui-mcp-server"
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -26,7 +26,7 @@ class ShadcnUiMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/shadcn-ui-mcp-server 2>&1", json, 0)
+    output = pipe_output("#{bin}/shadcn-mcp 2>&1", json, 0)
     assert_match "No GitHub API key provided. Rate limited to 60 requests/hour", output
     assert_match "Get the source code for a specific shadcn/ui v4 component", output
   end
