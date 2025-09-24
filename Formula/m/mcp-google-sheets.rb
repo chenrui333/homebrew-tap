@@ -7,6 +7,13 @@ class McpGoogleSheets < Formula
   sha256 "9ba9d779baf47c383eec5246d52c19af580f236999a7e99f4a02e8545e31cff7"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "38ef925077f70286b719365e2ae9f03f6be752c9128dc1db3f85430475d33af3"
+    sha256 cellar: :any,                 arm64_sonoma:  "6dc701b2a4964e0c9c59fff60a6f564fb4c3cc7f4bec25c40a80c759e9b763df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "844b4f2c9bf7ebd5db43a361a14480d08ea4839e0cf4f5e1de7f8eb6987fe708"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "python@3.13"
