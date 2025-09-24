@@ -106,6 +106,7 @@ brew install --cask <tool>
 - `chalet`
 - `chatlog`
 - `checkpwn`
+- `chrome-devtools-mcp`
 - `clai`
 - `claude-code-generic-hooks`
 - `claude-code`
@@ -304,6 +305,7 @@ brew install --cask <tool>
 - `mpfshell`
 - `mqtt-cli`
 - `oceanbase-mcp-server`
+- `n8n-mcp`
 - `nanobot`
 - `nanodbc`
 - `narr`
@@ -383,6 +385,7 @@ brew install --cask <tool>
 - `rslocal`
 - `rtop`
 - `rustfilt`
+- `salesforce-mcp`
 - `sarif-tools`
 - `sato`
 - `satty`
@@ -409,6 +412,7 @@ brew install --cask <tool>
 - `sloop`
 - `solfmt`
 - `soundscope`
+- `sourcerer-mcp`
 - `speedscope`
 - `speedtest`
 - `spok`
