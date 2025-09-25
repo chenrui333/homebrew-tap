@@ -1,8 +1,8 @@
 class RailwayMcpServer < Formula
   desc "MCP server for Railway"
   homepage "https://github.com/railwayapp/railway-mcp-server"
-  url "https://registry.npmjs.org/@railway/mcp-server/-/mcp-server-0.1.5.tgz"
-  sha256 "272eba7dcd014f80009c5fdf3858fe62386bfb3f2e334302bca89c4e33e1ce99"
+  url "https://registry.npmjs.org/@railway/mcp-server/-/mcp-server-0.1.6.tgz"
+  sha256 "f259ab9f938db8ee09ebcf05e01c3116f50ceb309aa970d22afccd51c756e6f1"
   license "MIT"
 
   bottle do
