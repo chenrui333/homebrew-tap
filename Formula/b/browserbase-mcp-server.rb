@@ -1,8 +1,8 @@
 class BrowserbaseMcpServer < Formula
   desc "MCP server for AI web browser automation using Browserbase and Stagehand"
   homepage "https://github.com/browserbase/mcp-server-browserbase"
-  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.1.1.tgz"
-  sha256 "c1ea8ebd3cbe8e6eafbfd15d70a7d7a760c280d54475c8e50ac648a75f5f2200"
+  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.1.2.tgz"
+  sha256 "cc7b64c781947425865b81d70a03e2a9d826c6c0dd4740de5b241ad0b7a40357"
   license "Apache-2.0"
 
   bottle do
