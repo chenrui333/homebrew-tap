@@ -10,6 +10,19 @@ class CopilotCli < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # remove non-native architecture pre-built binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/@github/copilot/node_modules"
+
+    # Remove keytar-forked-forked non-native binaries
+    keytar_prebuilds = node_modules/"keytar-forked-forked/prebuilds"
+    keytar_prebuilds.each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    # Remove node-pty non-native binaries
+    node_pty_prebuilds = node_modules/"node-pty/prebuilds"
+    node_pty_prebuilds.each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do
