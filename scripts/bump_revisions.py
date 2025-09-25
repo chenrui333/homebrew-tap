@@ -213,7 +213,7 @@ def main():
     parser = argparse.ArgumentParser(description='Bump revisions for Homebrew formulae')
     parser.add_argument('formulae', nargs='*', help='Formula names to bump (if none provided, reads from stdin)')
     parser.add_argument('--dry-run', action='store_true', help='Show what would be done without making changes')
-    parser.add_argument('--formula-dir', type=Path, default=Path('/opt/homebrew/Homebrew/Library/Taps/homebrew/homebrew-core'),
+    parser.add_argument('--formula-dir', type=Path, default=Path('/opt/homebrew/Library/Taps/homebrew/homebrew-core'),
                        help='Path to Formula directory')
 
     args = parser.parse_args()
