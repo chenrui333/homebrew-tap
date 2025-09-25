@@ -5,6 +5,13 @@ class Terrawiz < Formula
   sha256 "dffe84a11a1aa86eeae48c4b6c5d922076e69dc076718f31fa2b918412068bbc"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b4f7e1c535d24621251370eee6dfd2b6d6758b6d0eb26b1068f8b236c00934"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2785bc7d950f5892c6af4a4eafc56f07f6518fc8704c465002e7de2dc646f1fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00bd30a4a215b2b2c67fc7d4b199f95f5de4b18b10e5266668cd043bffa708e7"
+  end
+
   depends_on "node"
 
   def install
