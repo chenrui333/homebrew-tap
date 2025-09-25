@@ -165,6 +165,7 @@ brew install --cask <tool>
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
+- `fastmcp`
 - `ferret`
 - `fex`
 - `firectl`
@@ -198,7 +199,6 @@ brew install --cask <tool>
 - `goimports-reviser`
 - `gommit`
 - `gowebly`
-- `grafana-mcp-server`
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
@@ -227,6 +227,7 @@ brew install --cask <tool>
 - `humioctl`
 - `hygg`
 - `hyperbolic`
+- `iam-convert`
 - `iftree`
 - `illa`
 - `imgcat`
@@ -285,6 +286,8 @@ brew install --cask <tool>
 - `matcha`
 - `mcman`
 - `mcp-alchemy`
+- `mcp-google-sheets`
+- `mcp-grafana`
 - `mcp-obsidian`
 - `mcp-server-chart`
 - `mcp-server-cloudflare`
@@ -438,9 +441,13 @@ brew install --cask <tool>
 - `terraform-diff`
 - `terraform`
 - `terrap-cli`
+- `terratags`
+- `terrawiz`
 - `testronaut`
 - `tetrigo`
+- `tfclean`
 - `tfreveal`
+- `tfstate-lookup`
 - `tftarget`
 - `tftree`
 - `tickrs`
