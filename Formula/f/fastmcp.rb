@@ -7,6 +7,13 @@ class Fastmcp < Formula
   sha256 "541dd569d5b6c083140b04d997ba3dc47f7c10695cee700d0a733ce63b20bb65"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "b12ecc3aa215d735706cd372a665b438ca74d5555e60b5c2676e46cbdeb9a83a"
+    sha256 cellar: :any,                 arm64_sonoma:  "c46cfac85b8c0c9e4bcb11a4d874d7f2d9139bbeef25eeb50218db95e0781c93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f9e93d9f497e7d292c7810850b01ba9ef26918a6183737b25057bc806fe480c"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
