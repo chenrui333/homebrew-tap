@@ -5,6 +5,13 @@ class Terratags < Formula
   sha256 "09a240210158ab578a90e805820a9e89f874796d45f9607efc83e783cf979cf1"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3f6b44fc9576a7ff71d8ad27bf9551661f12e2b9b6d6777b0f05a41dd46b388"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ef51a4617443c3ecc5e32001d1c475d2c001ae2f1ef03990604d898b6d594c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ece1c6cb117fc0479a2ee35206bbaf64d87d6d502636f0476570e075febb973b"
+  end
+
   depends_on "go" => :build
 
   def install
