@@ -1,8 +1,8 @@
 class Heyagent < Formula
   desc "Claude Code notifications"
   homepage "https://www.heyagent.dev/"
-  url "https://registry.npmjs.org/heyagent/-/heyagent-0.0.4.tgz"
-  sha256 "d3da7e5332789d1d46121fa79f175bfe7b06c73d2046573a3c7c49273869c378"
+  url "https://registry.npmjs.org/heyagent/-/heyagent-0.1.0.tgz"
+  sha256 "9725d5ff38c390e72d107d19ba16c492a6a57ea386d5e68fe951625301aef04a"
   license "MIT"
 
   bottle do
