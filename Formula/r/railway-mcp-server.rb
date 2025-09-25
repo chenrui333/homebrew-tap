@@ -7,10 +7,9 @@ class RailwayMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7af5a4cab08f2fceff732c690fa4dbcfab98d98e93d641d5a1440e826425433d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6bc89da6d2ed3653909df9b6aa71dde70144b74e3b5d09fde67580cc5bd66fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "c88ea9091bc863628baddfd610ab87080ccfa4f4b0d22d246441011271dda355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4ae38ac6df0dcd5e71f78d571e05f9b134b809049bc1e3f80c462d1d15a73e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30d312bc15d760e5f779129c830bca7b9339d6043de7b7f1273890ac228c489b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "296d1fd72a5478460fa0e932456652a4e365d6895074c25f216094d7373ad223"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1c7a8e0b859534e14c876f3af7eb9f9625222246cee063865368dc38c6c08ba"
   end
 
   depends_on "node"
