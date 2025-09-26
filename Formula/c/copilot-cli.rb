@@ -5,6 +5,12 @@ class CopilotCli < Formula
   sha256 "a9eea2e5ffde66e464a3a55a23fc5f94d5710d984eded395478571654a3eacc4"
   # license :unfree
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9956df9306aa869de974886e55bae45dcf9da70408746eeb68f64cba4594b766"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cf730ebce1511b78f076aa51f7694a55bbbf56517be49df7e9eab859902bf7d"
+  end
+
   depends_on :macos # TODO: add linux support
   depends_on "node"
 
