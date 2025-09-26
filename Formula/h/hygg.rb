@@ -8,9 +8,9 @@ class Hygg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc9ebb2e3003a2b19cde1ed4146e8c81146d2e2204be29869a19d0577255432e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39d2429d02369d6ca3b4d285ea0c5a53b351eff9e69c02d54a47e938a6352595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82a9b4c43d5b7037bcef986691f109e9f9fb0e22a2953377094548aefbcc8c7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e7033bb305f4d3119cb465ed7b89616c1348442cf0ada5af92f11169d5aa14d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62188dfee58bd7f29bb7ec12c28a4af7bcdc09b31b9ea97b6de51b5ec87ba1bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f92416fe55928ac40babcabc9bab7eaef397ea278e80b26eea9cb37918ab5537"
   end
 
   depends_on "rust" => :build
