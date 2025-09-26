@@ -2,7 +2,7 @@ class Pitaya < Formula
   include Language::Python::Virtualenv
 
   desc "Orchestrator of AI coding agents with pluggable and custom strategies"
-  homepage "https://github.com/bdcht/amoco"
+  homepage "https://github.com/tact-lang/pitaya"
   url "https://files.pythonhosted.org/packages/a4/37/d9452bc7b9dd4e0532a79d685b941267ebb8535b4023fe37affa6a456e3e/pitaya-0.2.0.tar.gz"
   sha256 "0c7f205e8cef790e6624eaaada858607d9a50ea5552c2aa6a5930f767aa76da3"
   license "MIT"
