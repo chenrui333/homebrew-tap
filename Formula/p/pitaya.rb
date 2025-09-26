@@ -3,8 +3,8 @@ class Pitaya < Formula
 
   desc "Orchestrator of AI coding agents with pluggable and custom strategies"
   homepage "https://github.com/tact-lang/pitaya"
-  url "https://files.pythonhosted.org/packages/a4/37/d9452bc7b9dd4e0532a79d685b941267ebb8535b4023fe37affa6a456e3e/pitaya-0.2.0.tar.gz"
-  sha256 "0c7f205e8cef790e6624eaaada858607d9a50ea5552c2aa6a5930f767aa76da3"
+  url "https://files.pythonhosted.org/packages/7d/14/650710972e7a780331afde7f45d6eec3903e1e1e472d0d35393a871dfa3b/pitaya-0.3.0.tar.gz"
+  sha256 "e0859b6342ce733a3058dcaafffcf7fdadb50b84f6bb6aabaf9da36f738886fa"
   license "MIT"
 
   bottle do
@@ -34,8 +34,8 @@ class Pitaya < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
-    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "docker" do
@@ -69,8 +69,8 @@ class Pitaya < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
@@ -106,7 +106,7 @@ class Pitaya < Formula
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
 
     assert_match version.to_s, shell_output("#{bin}/pitaya --version")
-    assert_match "cannot connect to docker daemon", shell_output("#{bin}/pitaya --list-runs 2>&1", 1)
+    assert_match "cannot connect to docker daemon", shell_output("#{bin}/pitaya --list-runs 2>&1")
     assert_match "import_conflict_policy: fail  (defaults)", shell_output("#{bin}/pitaya config print")
   end
 end
