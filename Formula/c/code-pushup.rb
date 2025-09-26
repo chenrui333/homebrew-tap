@@ -1,8 +1,8 @@
 class CodePushup < Formula
   desc "CLI to run all kinds of code quality measurements"
   homepage "https://code-pushup.dev/"
-  url "https://registry.npmjs.org/@code-pushup/cli/-/cli-0.80.1.tgz"
-  sha256 "56dfcebc66f78de5d22e127691580f42101e4f66bd7a3f9f85077307b0a73f0c"
+  url "https://registry.npmjs.org/@code-pushup/cli/-/cli-0.80.2.tgz"
+  sha256 "a41e5a4304c77bce24a01a96af20db9bebca12a52c123b0f1bde93c562c00597"
   license "MIT"
 
   bottle do
