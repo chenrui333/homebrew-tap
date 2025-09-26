@@ -6,6 +6,13 @@ class GoSwag < Formula
   license "MIT"
   head "https://github.com/swaggo/swag.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46761fa0ab92f2ac2d70e393d1b6ae827767ed54a06fa191702abec392a61f71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88c297dc1713f5aa549f3051d16297f82e29034b78b5cd59357f364e606bd220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f082b5e29b0712be7c9a74b638fc33e07b0b419cd808501086e709ed34ee1b4"
+  end
+
   depends_on "go" => :build
 
   def install
