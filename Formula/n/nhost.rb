@@ -13,9 +13,9 @@ class Nhost < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73974c0e79cdec28593eed1a5d94d452c5e03e26d7b22192c6bca1a4228fad28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b1a76c899aec80e8a91205929ae907482e1d1cb3b1260c8ea197b3b57123551"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d7a2c42d0955827ff821a15c02dd03f5764d931f835cd33b1a3b0334cb57069"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27ce18990ee03de34f2000f6d320e67062304236905500b3eb993b78ce12137f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b27f51c2fffaf34c14dfaa2e78c55c3b0145ba5827e13708e2d96994b90bf7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df63bddff0988ef8f6171346f1e07ce4d754e820f192b3e6e484439adaabaf48"
   end
 
   depends_on "go" => :build
