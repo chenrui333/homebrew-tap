@@ -7,9 +7,9 @@ class SalesforceMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8391ebada56de79d95debd6f51aa362b7a50ff3a51b800a8d9f57b7125d0735a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24cd17f3d6cca6f4575a9a6bd207e7d5f238eaa8fa3ae3b248f9f503b09f9a81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf0c3b50fb1d3d235d333acbc93207aa1b4d62d059cdf05343c986343483944c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "129dc8bdb6346a432b909acb2c9a29d98142930afb75ab9dde32e4dc814c0e95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ee2adc9807655a8da4db9df25543da4a434207dc57e4cb57978b84cd1f66ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56a8454c2a1e63e1885b0b2bf5bb885183bf4114799bead05438c218a58476cf"
   end
 
   depends_on "node"
