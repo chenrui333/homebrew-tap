@@ -165,7 +165,6 @@ brew install --cask <tool>
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
-- `fastmcp`
 - `ferret`
 - `fex`
 - `firectl`
@@ -275,7 +274,6 @@ brew install --cask <tool>
 - `logfire-mcp`
 - `lola`
 - `luaformatter`
-- `lue-reader`
 - `lib-x`
 - `libdivide`
 - `magic-mcp-server`
@@ -289,7 +287,6 @@ brew install --cask <tool>
 - `mcp-google-sheets`
 - `mcp-grafana`
 - `mcp-obsidian`
-- `mcp-server-chart`
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
 - `mcpd`
@@ -309,7 +306,6 @@ brew install --cask <tool>
 - `mqtt-cli`
 - `oceanbase-mcp-server`
 - `n8n-mcp`
-- `nanobot`
 - `nanodbc`
 - `narr`
 - `nest-cli`
