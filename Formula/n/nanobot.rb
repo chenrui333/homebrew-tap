@@ -8,9 +8,9 @@ class Nanobot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27a06b22d4f06a0440718e24bab8097487afcf00984ca79423c3324eaa4d74d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "780686c241b53dd33b8b379067dc056ed97a342e7cf2d887c3bbeb2b283e0bc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6946624a8b43c070292685ba74a091e96b96adac7be62baa8fec3cfa6c9d31c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1e3c03f1bda94c6bdc6537a538d1a45482af0ce47b72c614fc6a43b01d31d8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de7f827c1ee9a1a82036d41644e2f1e6558282e973235de61a924ad69010ce08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2dce558cb8f12f1b735c469f5e67918496a148bc0de64a86276e05c82d230ea"
   end
 
   depends_on "go" => :build
