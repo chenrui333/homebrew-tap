@@ -5,6 +5,7 @@ class CopilotCli < Formula
   sha256 "a9eea2e5ffde66e464a3a55a23fc5f94d5710d984eded395478571654a3eacc4"
   # license :unfree
 
+  depends_on :macos # TODO: add linux support
   depends_on "node"
 
   def install
