@@ -7,9 +7,9 @@ class Tfclean < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d099ed0dfe55a322a38e79fd6654d995e2917a55e28cac4dffb95c91cbf6dcd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c163ad14cc44bf2906d2f231197e7fd2422c4b7d3dc365546b6f73526565fa6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8637d71f77ad66e1457196b16f07f2a157406a76336bbb7e4ad000cbf95bb09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24714de5bd2f762267a445666bedabd0d5d1cd2e52e9ecda993b98ff8f6c46ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a54250fed0c7a60b8da0e5ca007b6c464bd9c97c14bde75d790edef5452d0def"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efca085187a5c0011239818ff9efdb177ba0fd67ba68bcb81e2bd16deca8ad0b"
   end
 
   depends_on "go" => :build
