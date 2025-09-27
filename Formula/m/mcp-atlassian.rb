@@ -7,6 +7,13 @@ class McpAtlassian < Formula
   sha256 "1ba6a171b5299e554d4e0eff98279e74cdc4eb1c12c8e62be924103d9cd38e5e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "218383c8a4c4aa92f4c28250fd1dad3bee3576848e7ec96507352b919b900c48"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed5c01a6954e45119875baf4a6036d58e182c2110a5bc8c712f76c4b700675c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97bc6262c914f933c0490079b7a4b125051ead4a26b3ca097261692b31c43bca"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "libyaml"
