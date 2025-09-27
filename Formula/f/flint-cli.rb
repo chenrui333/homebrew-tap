@@ -1,8 +1,8 @@
 class FlintCli < Formula
   desc "Lightweight tool for managing linux virtual machines"
   homepage "https://github.com/ccheshirecat/flint"
-  url "https://github.com/ccheshirecat/flint/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "ede6b3cf83a8f727bc2ec07cb1dfece8a94b29fdc8fd6bcbeffdbc73637fa518"
+  url "https://github.com/ccheshirecat/flint/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "c5c472a0a1dcb7133692ca3c5058c3a38f4409ae78662a085c6c87bda975917e"
   license "Apache-2.0"
 
   bottle do
