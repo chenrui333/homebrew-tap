@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/b7/ce/07e654fb011e8ddd1a1ab163b02d5de71952674888923db66bf5011b0afb/llmswap-5.0.3.tar.gz"
-  sha256 "132045bdf5b659608bec03495b1e96b1bce2e141a718d90e55d154c208e04552"
+  url "https://files.pythonhosted.org/packages/e7/60/3dac8a93aff7c34c9a88de83243966be3dc8c279b18aeb686b8cd37ee1bd/llmswap-5.0.4.tar.gz"
+  sha256 "a3b6f12a6b5d0a978ed60d73a16886705f974f7b90a4a81ebf534cb1d53bf0ae"
   license "MIT"
 
   bottle do
@@ -46,13 +46,13 @@ class Llmswap < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/64/46/da44bf087ddaf3f7dbe4808c00c7cde466fe68c4fc9fbebdfc231f4ea205/anthropic-0.68.0.tar.gz"
-    sha256 "507e9b5f627d1b249128ff15b21855e718fa4ed8dabc787d0e68860a4b32a7a8"
+    url "https://files.pythonhosted.org/packages/43/b9/5e736a924dabe0473b212597ae83a124e09818fac672998bb5960a64e9b1/anthropic-0.68.1.tar.gz"
+    sha256 "5fc01019dfffbc39e87a24f4d7cfe34e83dda4fff7b5371f33639f982f0c8dba"
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
-    sha256 "3f3fae35c96039744587aa5b8371e7e8e603c0702999535961dd336026973ba6"
+    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
+    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
   end
 
   resource "attrs" do
@@ -121,8 +121,8 @@ class Llmswap < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/6f/cb/b85b1d7d7fd520739fb70c4878f1f414043c3c34434bc90ba9d4f93366ed/google_api_python_client-2.182.0.tar.gz"
-    sha256 "cb2aa127e33c3a31e89a06f39cf9de982db90a98dee020911b21013afafad35f"
+    url "https://files.pythonhosted.org/packages/fa/1f/49a2c83fc6dcd8b127cc9efbecf7d5fc36109c2028ba22ed6cb4d072fca4/google_api_python_client-2.183.0.tar.gz"
+    sha256 "abae37e04fecf719388e5c02f707ed9cdf952f10b217c79a3e76c636762e3ea9"
   end
 
   resource "google-auth" do
@@ -151,8 +151,8 @@ class Llmswap < Formula
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/91/88/fe2844eefd3d2188bc0d7a2768c6375b46dfd96469ea52d8aeee8587d7e0/grpcio-1.75.0.tar.gz"
-    sha256 "b989e8b09489478c2d19fecc744a298930f40d8b27c3638afbfe84d22f36ce4e"
+    url "https://files.pythonhosted.org/packages/9d/f7/8963848164c7604efb3a3e6ee457fdb3a469653e19002bd24742473254f8/grpcio-1.75.1.tar.gz"
+    sha256 "3e81d89ece99b9ace23a6916880baca613c03a799925afb2857887efa8b1b3d2"
   end
 
   resource "grpcio-status" do
@@ -191,8 +191,8 @@ class Llmswap < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/37/79/d71d40efa058e8c4a075158f8855bc2998037b5ff1c84f249f34435c1df7/huggingface_hub-0.35.0.tar.gz"
-    sha256 "ccadd2a78eef75effff184ad89401413629fabc52cefd76f6bbacb9b1c0676ac"
+    url "https://files.pythonhosted.org/packages/f6/42/0e7be334a6851cd7d51cc11717cb95e89333ebf0064431c0255c56957526/huggingface_hub-0.35.1.tar.gz"
+    sha256 "3585b88c5169c64b7e4214d0e88163d4a709de6d1a502e0cd0459e9ee2c9c572"
   end
 
   resource "ibm-cos-sdk" do
@@ -211,8 +211,8 @@ class Llmswap < Formula
   end
 
   resource "ibm-watsonx-ai" do
-    url "https://files.pythonhosted.org/packages/5d/0e/d5589c06f8379b686c80abb8e44db8b411e3d8f076e964f2da3d249b1cd6/ibm_watsonx_ai-1.3.38.tar.gz"
-    sha256 "4e2db2663621a0d378806b7f1ba7e970d7c92f447d9699d72feb00e533b57f09"
+    url "https://files.pythonhosted.org/packages/4f/a1/ce3aee11d3fabee21960cf2ee0b67698079ce12970f02f90fffbe6e3796c/ibm_watsonx_ai-1.3.39.tar.gz"
+    sha256 "357a7d823948655035e4de6265519bf6e377a497f22ec2d26270a9327b71eb5a"
   end
 
   resource "idna" do
@@ -246,8 +246,8 @@ class Llmswap < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/25/7a/3f2fbdf82a22d48405c1872f7c3176a705eee80ff2d2715d29472089171f/openai-1.108.1.tar.gz"
-    sha256 "6648468c1aec4eacfa554001e933a9fa075f57bacfc27588c2e34456cee9fef9"
+    url "https://files.pythonhosted.org/packages/c6/a1/a303104dc55fc546a3f6914c842d3da471c64eec92043aef8f652eb6c524/openai-1.109.1.tar.gz"
+    sha256 "d173ed8dbca665892a6db099b4a2dfac624f94d20a93f46eb0b56aae940ed869"
   end
 
   resource "packaging" do
@@ -316,8 +316,8 @@ class Llmswap < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "requests" do
