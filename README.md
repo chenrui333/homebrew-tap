@@ -127,6 +127,7 @@ brew install --cask <tool>
 - `container2wasm`
 - `context-file-manager`
 - `context42`
+- `copilot-cli`
 - `cozypkg`
 - `critcmp`
 - `crlfmt`
@@ -192,6 +193,7 @@ brew install --cask <tool>
 - `glsl-analyzer`
 - `gmap`
 - `go-junit-report`
+- `go-swag`
 - `gobgp`
 - `goboscript`
 - `gofakeit`
