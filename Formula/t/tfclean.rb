@@ -3,7 +3,7 @@ class Tfclean < Formula
   homepage "https://github.com/takaishi/tfclean"
   url "https://github.com/takaishi/tfclean/archive/refs/tags/v0.0.12.tar.gz"
   sha256 "420c2e6c30ccbc79e27035f6eaccefbec1ef260232720a9bf07d86e73ad813ca"
-  # license bug report, https://github.com/takaishi/tfclean/issues/70
+  license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
