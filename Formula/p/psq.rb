@@ -7,10 +7,9 @@ class Psq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "436a452992f6c3921b85822bc0d46e32dcc78813070d27843aa31e6d11032f41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb19b4db061a62d34ed26d213e22dc193cc8ef24819e699a51c4624e261ead95"
-    sha256 cellar: :any_skip_relocation, ventura:       "119b1a6d1e201066410a41c17979e832f676a6683b626b3f0ee9b981f0e01389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30d37a56001a1fd48f1ba68e645a2e175daf72f54b44809ca47d3ccb8639c5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be6a4940ab5cd3cd7a58741b2e6f748298d2d6a2b4955f5309aba43d4130240b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb06eaeaf46487df508a3fd3d3d433f26050f552a91a1209811504aae15ead38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b5859b12158c2290db7104cbf4cbd9b7e759cc89a2c723073c70337af61c7f"
   end
 
   depends_on "go" => :build
