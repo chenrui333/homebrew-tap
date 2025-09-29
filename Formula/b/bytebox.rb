@@ -1,10 +1,11 @@
 class Bytebox < Formula
   desc "Standalone WebAssembly VM"
   homepage "https://github.com/rdunnington/bytebox"
-  url "https://github.com/rdunnington/bytebox/archive/5931f4fa85b4a65d4edbb8810f8e767da1143e14.tar.gz"
+  url "https://github.com/rdunnington/bytebox/archive/5c8753ba11c394e4d642dddbb459edcd7c97ac26.tar.gz" # for zig 0.15.1
   version "0.0.1"
-  sha256 "ed8aba1339abf3cafb9fb923731b8a9edefad366623be45877677457a166d7aa"
+  sha256 "ed49be2d515765afde9716e9179485b524e9c53989048a9bfb9f416971664846"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
