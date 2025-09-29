@@ -1,9 +1,11 @@
 class Fex < Formula
   desc "Command-line file explorer prioritizing quick navigation"
   homepage "https://github.com/18alantom/fex"
-  url "https://github.com/18alantom/fex/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "a6e51e07802442e2e938197f78b287816ea2688200c9c86738d44230d4bc780e"
+  url "https://github.com/18alantom/fex/archive/b77ab14e4f42b3f8f866028b7770b54a2a1c9680.tar.gz"
+  version "0.1.4"
+  sha256 "1647866741bd2384121f0580ef47bb689fa9b329a38568b8f1c9ff8bba03de66"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
