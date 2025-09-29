@@ -1,8 +1,8 @@
 class Travelgrunt < Formula
   desc "Package manager for Terraform providers"
   homepage "https://github.com/ivanilves/travelgrunt"
-  url "https://github.com/ivanilves/travelgrunt/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "3a97f1c60f107507e965a826798c38e511a02462c417d1dda8fd619590c22aa9"
+  url "https://github.com/ivanilves/travelgrunt/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "4832013c2ed7627f6206cc2a2b1ca4fc493d138efcac490e24caf4051ac30797"
   license "Apache-2.0"
   head "https://github.com/ivanilves/travelgrunt.git", branch: "main"
 
