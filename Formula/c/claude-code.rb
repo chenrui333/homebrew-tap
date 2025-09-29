@@ -31,7 +31,7 @@ class ClaudeCode < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/claude --version")
 
-    output = shell_output("#{bin}/claude config list")
-    assert_equal false, JSON.parse(output)["hasTrustDialogAccepted"]
+    output = shell_output("#{bin}/claude config list", 1)
+    assert_match "Invalid API key · Please run /login", output
   end
 end
