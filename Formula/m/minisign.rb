@@ -1,11 +1,11 @@
 class Minisign < Formula
   desc "Tool to sign files and verify digital signatures"
   homepage "https://github.com/jedisct1/minisign"
-  url "https://github.com/jedisct1/minisign/archive/108ea640ba92f1486841e747573017c282df7280.tar.gz"
+  url "https://github.com/jedisct1/minisign/archive/20ccc774085f3b865dd9c0b8fbc859bdaf8b1fa5.tar.gz"
   version "0.12"
-  sha256 "2096baebd41025fb2407b37411c90343ee6029acd2e7b283c4ef6f15cb9efd07"
+  sha256 "0be35a734c1da8365136f4d8c485d720f1b305d59934bf0564aa493e451783cf"
   license "ISC"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
