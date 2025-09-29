@@ -1,7 +1,7 @@
 class Minisign < Formula
   desc "Tool to sign files and verify digital signatures"
   homepage "https://github.com/jedisct1/minisign"
-  url "https://github.com/jedisct1/minisign/archive/20ccc774085f3b865dd9c0b8fbc859bdaf8b1fa5.tar.gz"
+  url "https://github.com/jedisct1/minisign/archive/20ccc774085f3b865dd9c0b8fbc859bdaf8b1fa5.tar.gz" # for zig 0.15.1
   version "0.12"
   sha256 "0be35a734c1da8365136f4d8c485d720f1b305d59934bf0564aa493e451783cf"
   license "ISC"
