@@ -7,9 +7,9 @@ class ChromeDevtoolsMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "c68c22672ff700c480561592769082ea137365f5780f2a214652cbae60897183"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f91bc81f46804bd4ddc14238a74638aaa093cb29fdccd6c829e80ae1701721a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d31c73678f64c7ff8693e74225cd0e2728f70aae66b7464c737f51c697250b2"
+    sha256 cellar: :any,                 arm64_sequoia: "298b0dc18cfd8adae108447f2e95e0ff8a45e50b4c90249abbcca27844793459"
+    sha256 cellar: :any,                 arm64_sonoma:  "6316cf908333fb8809a57772eb6f122b90a17f10e60a713093c96cfb6ea85a60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61f482df28055868790582fb54e1ee564932503739c4eca19d7d57b6a592a85a"
   end
 
   depends_on "node"
