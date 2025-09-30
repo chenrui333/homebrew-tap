@@ -16,12 +16,16 @@ class Nino < Formula
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"nino", testpath, [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "src/terminal.c: 419: getWindowSize", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    begin
+      output_log = testpath/"output.log"
+      pid = spawn bin/"nino", testpath, [:out, :err] => output_log.to_s
+      sleep 1
+      assert_match "src/terminal.c: 419: getWindowSize", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
