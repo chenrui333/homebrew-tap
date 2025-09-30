@@ -287,7 +287,6 @@ brew install --cask <tool>
 - `mcman`
 - `mcp-alchemy`
 - `mcp-google-sheets`
-- `mcp-grafana`
 - `mcp-obsidian`
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
@@ -345,7 +344,6 @@ brew install --cask <tool>
 - `pitaya`
 - `plandex`
 - `playerctl`
-- `playwright-mcp`
 - `pls`
 - `pluralith`
 - `pmx`
@@ -386,8 +384,6 @@ brew install --cask <tool>
 - `rslocal`
 - `rtop`
 - `rustfilt`
-- `salesforce-mcp`
-- `sarif-tools`
 - `sato`
 - `satty`
 - `saw`
