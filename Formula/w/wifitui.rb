@@ -6,6 +6,13 @@ class Wifitui < Formula
   license "MIT"
   head "https://github.com/CrociDB/bulletty.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "785b6698e4ac56101b6440360bdd3231456197e6ce9f3eb0c9f6bb3b039b107e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aaee268f4cd701d73abd53bc7a911ff137c7516f38f04429a73afa846840664b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c8aa9521edc369b2ff41b816c5943cfe1df4e1e4d5a43ca093eb3977cb42284"
+  end
+
   depends_on "go" => :build
 
   def install
