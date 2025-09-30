@@ -7,6 +7,13 @@ class Nino < Formula
   license "BSD-2-Clause"
   head "https://github.com/evanlin96069/nino.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de9aa301536678f629bccba6d853d9ed1fc6a305aad45945bf7733d7ac59953a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f9b9327b424ddbd9244a702c3266bd9ab0cb5eeb9d9856a0974dfd976689693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06403802565cdd70a4d8bc87ec142247ee09f684f86aaa03b9ba2c859c2ce6bb"
+  end
+
   depends_on "cmake" => :build
 
   def install
