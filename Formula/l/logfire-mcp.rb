@@ -285,6 +285,6 @@ class LogfireMcp < Formula
 
     output = pipe_output("#{bin}/logfire-mcp --test 2>&1", json, 0)
     assert_match "testing Logfire MCP server", output
-    assert_match "Invalid token", output
+    assert_match "logfire_read_token: `test...test` from environment variable", output
   end
 end
