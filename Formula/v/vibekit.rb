@@ -7,9 +7,9 @@ class Vibekit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d81d83eb11ed8a8f8d109840856ce28585084ff258066aae2ae066da4947214a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "138487a1e87094f66530af0a2a4ccf29186d0c0fc4f539bec0cbc89295864381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38eed45de476dfa9d960d6d4c1171549258ffdceac83f0e04ceda8c2fb3413ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20edcb9dcfe421aa7d635612326caea5b8e317c429213c1579f47dcbf5f5ce08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53a2a93b699121cf044712c4d69a36d3d08951b728025a675e3301d956fac88e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ae6e9bd2c6c9799c31ce4b10d3a13eb1288396008b6046a6ec4c512859df5cc"
   end
 
   depends_on "node"
