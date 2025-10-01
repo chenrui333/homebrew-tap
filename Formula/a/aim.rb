@@ -1,12 +1,14 @@
 class Aim < Formula
-  desc "Command line download/upload tool with resume"
+  desc "Command-line download/upload tool with resume"
   homepage "https://github.com/mihaigalos/aim"
   url "https://github.com/mihaigalos/aim/archive/refs/tags/1.8.6.tar.gz"
   sha256 "1f6b7bce494106e0503024eecbc75b449c9bd30a12f3286a9c44bd0dfdd2c3fb"
   license "MIT"
   head "https://github.com/mihaigalos/aim.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args
