@@ -8,9 +8,9 @@ class Cello < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c353f973a908969fff254f88af9307ad2aaaced6c762a08237b9ef4edceeddfb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6a64097e74b9ec5322b5aee235e09548032e7190cb11e37b37b03324218b87c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e96afee38b025b9b4cbb2ae47b967cc86ea655be80fa89269cdec88199bb3c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f91200b4efeb1272a444ce7e37ba34f8cf5ba27e769f1e4e91ac32ec9b9995cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c0de3abcddb5a64462801dfce932c58503a21e4efed891c5f4a4dadc1f98c13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c92d61f00d0a87de4dcb6e0edf91dcd91a6f74958c4af11932c3cfde8c02e1c3"
   end
 
   depends_on "go" => :build
