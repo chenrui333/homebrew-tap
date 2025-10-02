@@ -32,10 +32,12 @@ brew install --cask <tool>
 <summary>Formula List</summary>
 
 - `abc`
+- `act3`
 - `adbtuifm`
 - `addlicense`
 - `agl`
 - `ai-context`
+- `aim`
 - `alacritty`
 - `am-i-vibing`
 - `amoco`
@@ -80,6 +82,7 @@ brew install --cask <tool>
 - `browserbase-mcp-server`
 - `brunette`
 - `btczee`
+- `bulletty`
 - `bytebox`
 - `c4go`
 - `cai`
@@ -175,6 +178,7 @@ brew install --cask <tool>
 - `flint-cli`
 - `flow-editor`
 - `flowgger`
+- `flowrs`
 - `fortran-linter`
 - `foy`
 - `frep`
@@ -188,6 +192,7 @@ brew install --cask <tool>
 - `git-x`
 - `gitlabform`
 - `gitman`
+- `gittype`
 - `gix`
 - `glom`
 - `glsl-analyzer`
@@ -243,6 +248,7 @@ brew install --cask <tool>
 - `jplot`
 - `jsonl-graph`
 - `jsrpc`
+- `judo`
 - `junit2html`
 - `kaluma-cli`
 - `kandc`
@@ -314,6 +320,7 @@ brew install --cask <tool>
 - `ngtop`
 - `nhost`
 - `ni`
+- `nino`
 - `nocc`
 - `npkill`
 - `npm-np`
@@ -482,6 +489,7 @@ brew install --cask <tool>
 - `wedl`
 - `weekly-git-summary`
 - `werk`
+- `wifitui`
 - `wuchale`
 - `xcpkg`
 - `xmlformatter`
