@@ -21,6 +21,10 @@ class Lemonade < Formula
   depends_on "python@3.13"
   depends_on "sentencepiece"
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
+  end
+
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
     sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
@@ -297,7 +301,16 @@ class Lemonade < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    if OS.mac?
+      # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula
+      ENV.append_to_cflags "-isysroot #{MacOS.sdk_path}"
+
+      # needed for pyobjc-core "-fdisable-block-signature-string"
+      ENV.llvm_clang if DevelopmentTools.clang_build_version <= 1699
+    else
+      without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
+    end
+    virtualenv_install_with_resources(without:)
   end
 
   test do
