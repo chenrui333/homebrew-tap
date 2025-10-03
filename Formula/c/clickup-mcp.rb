@@ -5,6 +5,13 @@ class ClickupMcp < Formula
   sha256 "6f9023e9983ee7dd4bb120ebd20ef8476fbe4a16dbc79f58dc84e31d4005e16b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27ec16dc9066e6cfe983720347834bbcc101a7ede2ae51f899aebdd4937239dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5725bc09c698f95938037a895d924652c074f9645238b188f829e6e1eaba941"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efce4fdc6fb1d2a0dba77e70d25556f132af844fce467d5ec3ef67270eec1b48"
+  end
+
   depends_on "node"
 
   def install
