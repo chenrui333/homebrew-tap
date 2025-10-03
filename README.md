@@ -38,6 +38,7 @@ brew install --cask <tool>
 - `agl`
 - `ai-context`
 - `aim`
+- `airtable-mcp-server`
 - `alacritty`
 - `am-i-vibing`
 - `amoco`
@@ -113,6 +114,7 @@ brew install --cask <tool>
 - `clai`
 - `claude-code-generic-hooks`
 - `claude-code`
+- `claudio`
 - `cli-mcp-server`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
