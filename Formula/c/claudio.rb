@@ -5,6 +5,13 @@ class Claudio < Formula
   sha256 "5129a0926a4e001e2a39492207d7369ddc1a56f050f87104a668315829c88d74"
   head "https://github.com/ctoth/claudio.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf2b62f210f639511abbdba3d8c598a91a0c2a4621ce7c633a6d2460e992cb99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e78c592f1e13477a51d1f011e5b7d2d484a24f3117195939ea2e33455d69bd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b4274024c8ca0a12e8c839b53a81d2e47455b49991e64658703ccdd5f206136"
+  end
+
   depends_on "go" => :build
 
   def install
