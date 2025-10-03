@@ -7,9 +7,9 @@ class EasCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16f0817aae77ad5f41e891bcbfea012762efd6ab8ca4ebe918eb2873a6277ff2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4915c733fdcaf09b8b97dee76b4ef21d7a53e0aa9c46caa79d43394d714e5e5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ac9ae3de5538cecfad15b241914a62172c981e7f8c1a3a85d383e79bb2b5ca8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cb342ac696c924f362b31f0f302f0ec6938e6729a911399bf43a8df9d236a1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09700642d2674dd62f9a455bd8104d2901e5e0f367d959e07fcd708e4fdb2b95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c96e2c4e96e80afa3969e7cd31066a54bc7f612fabd14d4e74ec11072ebac24b"
   end
 
   depends_on "node"
