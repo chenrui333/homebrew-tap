@@ -8,10 +8,9 @@ class Hauler < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4f3fba7338c4ed469165801d54d88a8845c6da929d27f2d20805730942d5b7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "193c1ee2e71cefd9d22620e9ff54e3385036c6d04e0de8d7990fb7ca98a38cc0"
-    sha256 cellar: :any_skip_relocation, ventura:       "282c9cb998f3bb88a7146593c86ac01ee42242e87884f8c7619e28854725ac09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cdeabbe2bb39e67a168c9a98a7a243f56ff323879581cc78d92414cdabfaf02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96753f4c2e14975bc58bedcc5e4dfb678a5ecc94f87f2df7bbd8f32f22ee4587"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b650d9594fcb5ab2e8865c7dc84b5c96788248aadbd4cef152dd9586910e4061"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fabd243f59586cefea37b64db22ad220c7cd9047ba793ef7213d1edcdc9e7bc"
   end
 
   depends_on "go" => :build
