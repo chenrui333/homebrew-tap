@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/84/97/71dd71b952fd9883230489a1692fa3da75602f567d45f4188b32bf156293/llmswap-5.1.0.tar.gz"
-  sha256 "ff6ee09076c0d8d54614669e71b1d8984c39629a5e4d3b1b21ffc2697e279999"
+  url "https://files.pythonhosted.org/packages/3f/fd/1f8c6c616a897d041e7c3dcdd3080dbb19d772832c2be35ba0605a7d7e24/llmswap-5.1.2.tar.gz"
+  sha256 "45bc8cd830ee5ed7757e87f39214bd24308cfc2c2c6eafea9ae9052bc4188594"
   license "MIT"
 
   bottle do
@@ -116,13 +116,13 @@ class Llmswap < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/dc/21/e9d043e88222317afdbdb567165fdbc3b0aad90064c7e0c9eb0ad9955ad8/google_api_core-2.25.1.tar.gz"
-    sha256 "d2aaa0b13c78c61cb3f4282c464c046e45fbd75755683c9c525e6e8f7ed0a5e8"
+    url "https://files.pythonhosted.org/packages/09/cd/63f1557235c2440fe0577acdbc32577c5c002684c58c7f4d770a92366a24/google_api_core-2.25.2.tar.gz"
+    sha256 "1c63aa6af0d0d5e37966f157a77f9396d820fba59f9e43e9415bc3dc5baff300"
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/fa/1f/49a2c83fc6dcd8b127cc9efbecf7d5fc36109c2028ba22ed6cb4d072fca4/google_api_python_client-2.183.0.tar.gz"
-    sha256 "abae37e04fecf719388e5c02f707ed9cdf952f10b217c79a3e76c636762e3ea9"
+    url "https://files.pythonhosted.org/packages/7c/30/8b3a626ccf84ca43da62d77e2d40d70bedc6387951cc5104011cddce34e0/google_api_python_client-2.184.0.tar.gz"
+    sha256 "ef2a3330ad058cdfc8a558d199c051c3356f6ed012436c3ad3d08b67891b039f"
   end
 
   resource "google-auth" do
@@ -211,8 +211,8 @@ class Llmswap < Formula
   end
 
   resource "ibm-watsonx-ai" do
-    url "https://files.pythonhosted.org/packages/4f/a1/ce3aee11d3fabee21960cf2ee0b67698079ce12970f02f90fffbe6e3796c/ibm_watsonx_ai-1.3.39.tar.gz"
-    sha256 "357a7d823948655035e4de6265519bf6e377a497f22ec2d26270a9327b71eb5a"
+    url "https://files.pythonhosted.org/packages/c7/82/2c841e053a91c6f0232f8f914c698efed38747b2ec58e6643e635b963434/ibm_watsonx_ai-1.3.40.tar.gz"
+    sha256 "b83b097150318e327661e1c5d6262b2e085df1dee14920cfcf549c48fdc6202b"
   end
 
   resource "idna" do
@@ -246,8 +246,8 @@ class Llmswap < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/d8/5d/74fa2b0358ef15d113b1a6ca2323cee0034020b085a81a94eeddc6914de9/openai-2.0.0.tar.gz"
-    sha256 "6b9513b485f856b0be6bc44c518831acb58e37a12bed72fcc52b1177d1fb34a8"
+    url "https://files.pythonhosted.org/packages/1a/dd/4d4d46a06943e37c95b6e388237e1e38d1e9aab264ff070f86345d60b7a4/openai-2.1.0.tar.gz"
+    sha256 "47f3463a5047340a989b4c0cd5378054acfca966ff61a96553b22f098e3270a2"
   end
 
   resource "packaging" do
