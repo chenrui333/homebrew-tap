@@ -45,7 +45,7 @@ brew install --cask <tool>
 - `aoc-cli`
 - `apify-actors-mcp-server`
 - `apkeep`
-- `apple-health-mcp-server`
+- `apple-health-mcp`
 - `archgw`
 - `arduino-language-server`
 - `arp-scan-rs`
@@ -122,7 +122,7 @@ brew install --cask <tool>
 - `cloudlens`
 - `cmdx`
 - `cocainate`
-- `code-index-mcp-server`
+- `code-index-mcp`
 - `code-pushup`
 - `codefmt`
 - `codespelunker`
@@ -297,6 +297,7 @@ brew install --cask <tool>
 - `mcp-alchemy`
 - `mcp-google-sheets`
 - `mcp-obsidian`
+- `mcp-server-airbnb`
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
 - `mcpd`
