@@ -8,9 +8,9 @@ class Judo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b3f37b5c30aa4e942f2a13049e66219ad24b0a79a9b4f3b49fadbfb1c35264b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "193cd7da925bc3e06436a911a13c259b1faebcdf4853547af5988c49b1701abf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04242488968bc5c755eaf7037729d02d846843e83a64cffd2ed0926874938861"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac61c6ea42a74a50a10a2b2790cb222e0f3bab49c571e1fa0bf380387373931f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e53a2a2b81509451b25180aaed064367562d9be392ebab68f9bcfc1d0f61c463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a7188a6be9eebacb93dfe7f15b8a87fbeed931469961d54206bd0e2258b7133"
   end
 
   depends_on "rust" => :build
