@@ -1,8 +1,8 @@
 class McpServerTester < Formula
   desc "CLI-based tester for verifying that MCP servers"
   homepage "https://github.com/steviec/mcp-server-tester"
-  url "https://registry.npmjs.org/mcp-server-tester/-/mcp-server-tester-1.4.0.tgz"
-  sha256 "ac195741b7eccbaeaf23590c401b548024c6beb95bf1c3ccf0d5c1dec1e45786"
+  url "https://registry.npmjs.org/mcp-server-tester/-/mcp-server-tester-1.4.1.tgz"
+  sha256 "5941077555e91ae5cb21dcec7d7cb9b9e03e07bc24f62c7c4384400b1a5d43fb"
   license "MIT"
 
   bottle do
