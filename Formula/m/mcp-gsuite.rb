@@ -4,7 +4,7 @@ class McpGsuite < Formula
   desc "MCP Server to interact with Google GSuite services"
   homepage "https://github.com/MarkusPfundstein/mcp-gsuite"
   url "https://files.pythonhosted.org/packages/0d/c5/d06a7ce35acab0aadc1492c43d3f545d04a7cff9771a54097167e8f97eaa/mcp_gsuite-0.4.1.tar.gz"
-  sha256 "9ba9d779baf47c383eec5246d52c19af580f236999a7e99f4a02e8545e31cff7"
+  sha256 "9cd14f316de78cf49d604321119871aa8097f82ea652ea258a16a1587f90032f"
   license "MIT"
 
   depends_on "rust" => :build # for pydantic
