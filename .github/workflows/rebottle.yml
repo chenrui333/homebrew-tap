@@ -35,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, macos-14, macos-15] # build for all platforms
+        os: [ubuntu-22.04, macos-14, macos-15, macos-26] # build for all platforms
     env:
       BOTTLES_DIR: ${{ github.workspace }}/bottles
     steps:
