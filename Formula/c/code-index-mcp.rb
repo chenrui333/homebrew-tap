@@ -9,10 +9,9 @@ class CodeIndexMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "aa48ee9f71000a76b5b21ffc2a5307328637918de7070dce6b7a56229f23f6d5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7017aea07404c6424e208a7cab9ec3bff34a41ed8d5578f404b3ea01ac92e70"
-    sha256 cellar: :any,                 ventura:       "8b8a1b33f02acba8e19468c4f367126b39128f28a064e209c3d0f179221306e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "853353185dc05a90def7897209078171cf61e2a5b2f87283a1364328758e5299"
+    sha256 cellar: :any,                 arm64_sequoia: "a5d023a7b8314f67a5a7d33209d3a2a877804dee4b78382602da3454bbd7d558"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e7d42b888a30e7d7d338ef2cb343a1b752c188722190071e96d138b7a26d74d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7385f6c6c464c9a21664456ce7a79298cf840b6128b5f55871a5d525e13d136"
   end
 
   depends_on "rust" => :build # for pydantic
