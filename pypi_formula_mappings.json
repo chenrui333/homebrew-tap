@@ -2,6 +2,10 @@
   "arxiv-mcp-server": {
     "exclude_packages": ["certifi", "pymupdf"]
   },
+  "aws-services-mcp-server": {
+    "package_name": "awslabs.core-mcp-server",
+    "exclude_packages": ["certifi"]
+  },
   "archgw": {
     "extra_packages": ["filelock"],
     "exclude_packages": ["certifi", "numpy", "torch"]
