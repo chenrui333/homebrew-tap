@@ -11,6 +11,7 @@ class Pixelle < Formula
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
+  depends_on "pillow"
   depends_on "python@3.13"
 
   resource "aiofiles" do
@@ -626,11 +627,6 @@ class Pixelle < Formula
   resource "pathable" do
     url "https://files.pythonhosted.org/packages/67/93/8f2c2075b180c12c1e9f6a09d1a985bc2036906b13dff1d8917e395f2048/pathable-0.4.4.tar.gz"
     sha256 "6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2"
-  end
-
-  resource "pillow" do
-    url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
-    sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   end
 
   resource "posthog" do
