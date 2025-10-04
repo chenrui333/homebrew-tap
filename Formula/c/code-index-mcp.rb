@@ -1,4 +1,4 @@
-class CodeIndexMcpServer < Formula
+class CodeIndexMcp < Formula
   include Language::Python::Virtualenv
 
   desc "MCP server for LLMs to index, search, and analyze code repos"
