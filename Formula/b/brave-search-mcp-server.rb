@@ -7,9 +7,9 @@ class BraveSearchMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ea09197f8fd70d45a7f3e42c3ad215b7cc5dc71556d5b3a59880f8083b94850"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84db8c9a68bb39460ae4c15f3fb67bb62a2d1f3ce928b2510be1d98e1de973a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1edd1d7cedcfcff7648d6d7d61daf86520c135e16b5ce9c86219f49e0939b69d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63f1f697ebf3d68e55d360a1257384cc66702d1287b29a45db05861bf9edbe4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9559d260994fc1ffcb35d8a708906836c80d3e0ca6476da44b63b25d57284655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d182a42ea090c9285fbb1fbe616ab2e66f307dc56d6ae64281b8f354d2d18810"
   end
 
   depends_on "node"
