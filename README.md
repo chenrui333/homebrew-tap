@@ -116,6 +116,7 @@ brew install --cask <tool>
 - `claude-code`
 - `claudio`
 - `cli-mcp-server`
+- `clickup-mcp`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
 - `cloudlens`
