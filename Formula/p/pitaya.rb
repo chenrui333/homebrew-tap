@@ -15,17 +15,13 @@ class Pitaya < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea73f638af13a5d97f75f355f98d482c75b46f53fafbb970777925a1a4243cd"
   end
 
+  depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz"
     sha256 "22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "charset-normalizer" do
@@ -106,7 +102,7 @@ class Pitaya < Formula
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
 
     assert_match version.to_s, shell_output("#{bin}/pitaya --version")
-    assert_match "cannot connect to docker daemon", shell_output("#{bin}/pitaya --list-runs 2>&1")
+    assert_match "No runs found", shell_output("#{bin}/pitaya --list-runs 2>&1")
     assert_match "import_conflict_policy: fail  (defaults)", shell_output("#{bin}/pitaya config print")
   end
 end
