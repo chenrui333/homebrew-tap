@@ -9,10 +9,11 @@ class Archgw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "b55d912a9641960a52c84d61b0113209a81d2a2925be14fe07b42c52c8f71ebc"
-    sha256 cellar: :any,                 arm64_sonoma:  "70e4f93e25a7ade78915447753edbdc74ff918e9dae2c30d9ccaf28a7c40bc1a"
-    sha256 cellar: :any,                 ventura:       "1e4164890a2286664f722799fea00aa140fd8a9a8f419f2fdd018f54e2d03110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6bf115670b047702ed49ce629140e7cadc204d7a140bdffd6c9d791362995cd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c9f03f6ff0d62c153809d87da72d8cb7ab12a53736b0df022033405982b8285a"
+    sha256 cellar: :any,                 arm64_sequoia: "6d90f926317bef1562552d0df4c2524622ad6418297dee452a56813012e19a5c"
+    sha256 cellar: :any,                 arm64_sonoma:  "289d67e68940ba8f04b7ccd72aabd8e097566a4db942be51b99b85f0dc225d8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37fa00c82df7eb5d243f107289f0ead28a3e2a65273e113cbbed424807fde81f"
   end
 
   depends_on "rust" => :build # for pydantic
