@@ -6,6 +6,14 @@ class Mynav < Formula
   license "MIT"
   head "https://github.com/GianlucaP106/mynav.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "151f6d60cbfb129253eb809cf883673a4c5e33740d3d8d8a0afd4097380eb294"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2777bcb6aa28fb7bc01fa8c8be30649361c1c5bc92a18e5f428292209acce261"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "752b66f53fa965f964962169e6585cc44aa85e4f8845314def6305a5228c4e45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e28d6e379027f568b00e4621d2e192250c06bb0541caa09a2a5fd85b66863952"
+  end
+
   depends_on "go" => :build
 
   def install
