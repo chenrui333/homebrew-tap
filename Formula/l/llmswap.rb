@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/74/e0/f01c960fcb797644254dd0477d1fe576308ee329734314825a5227a1eb81/llmswap-5.1.4.tar.gz"
-  sha256 "909cee04582b1fb10c53d0b738cb76645c95ee7f3722d874f6e7e6d8a86338c9"
+  url "https://files.pythonhosted.org/packages/ff/b7/3c82b9480bd2d91826948973a6684d3a81dbe50aa5e6321cd4857f414edb/llmswap-5.1.5.tar.gz"
+  sha256 "2ad68a928d8388baba6801e75cafeddb53eb24e89eb7c287d740a353ac76f509"
   license "MIT"
 
   bottle do
@@ -67,8 +67,8 @@ class Llmswap < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
-    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+    url "https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/certifi-2025.10.5.tar.gz"
+    sha256 "47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"
   end
 
   resource "charset-normalizer" do
