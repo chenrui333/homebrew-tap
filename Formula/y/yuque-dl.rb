@@ -17,7 +17,7 @@ class YuqueDl < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec/"bin/yuque-dl"
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
