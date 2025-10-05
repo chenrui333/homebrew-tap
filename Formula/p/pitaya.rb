@@ -9,10 +9,10 @@ class Pitaya < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ba7e0d79c188ff7b5599fb3f6e934c30111622c5b1ba185d42b9d0fe2db69e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b5461164eb668dbf457deac01fb32b17f48ee80ebc18c4838f7f35bba45f3cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "a6a523846e5ca9c06225ef19dbb34986058fc8e0c38a1e45104065b3b457668b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea73f638af13a5d97f75f355f98d482c75b46f53fafbb970777925a1a4243cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06926c33cd7a4b4c625a39f8a2a5dbc4aac7c5132cb2d4319b257fbfa9bb2149"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1e7789deda5202e0b8ac9b8834dd3fb264a2340dd2f2c55712c61f1f25338a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a15459bc3e1669de9cfa64c5ce236bd998e1595253e993fbf9df85c5b06be79a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2af3218572032b1c0f21ae98fdd25a4747fed982c8505170735adc89cbe2513"
   end
 
   depends_on "certifi"
