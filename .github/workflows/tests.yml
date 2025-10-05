@@ -35,13 +35,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-22.04
-          - macos-14 # arm runner
-          - macos-15 # arm runner
-          - macos-26 # arm runner
+        include:
+          # Linux x64
+          - os: ubuntu-22.04
+            container_image: homebrew/ubuntu22.04:latest
+            container_opts: --user=linuxbrew
+          # Linux arm64 (GitHub-hosted)
+          - os: ubuntu-22.04-arm
+            container_image: homebrew/ubuntu22.04:latest
+            container_opts: --user=linuxbrew
+          # macOS arm64 runners
+          - os: macos-14
+          - os: macos-15
+          - os: macos-26
 
     runs-on: ${{ matrix.os }}
+    container:
+      # Use container only on Linux runners; on macOS it'll be ignored automatically
+      image: ${{ matrix.container_image || '' }}
+      options: ${{ matrix.container_opts || '' }}
 
     steps:
       - name: Set up Homebrew
