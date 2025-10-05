@@ -7,10 +7,10 @@ class McpServerTester < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c874b459e31beefdda22cabae87a325e1acd5a72a3675a30a64270ea2c6739d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc750f0919d0b5edbb97678d5b74e77ac1f005d0686b4db6cbbbda6425725d5f"
-    sha256 cellar: :any_skip_relocation, ventura:       "76d1d99d4d6676abb5db556a6d891d5e36ec5665253c0ee2f392b1e3d73f0abe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc8e633a5aae7dd3320f6d372f1688ce139cdab3eadc719120ba3b6b6aeec2f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22969bc70ace702a9b5b127a223b2dd4d93fbed6d8e7ef0b2aacd9902a078437"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9dfd0460220b8de30dae5e7801d58232c05f21734f9f6c7ead1d295162cc114e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd95711dc97aaec04c7a314ad0c0ec8ac1ccdfbdcedb99918e29163f58161897"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41edc75d887fc1d1baa1b79a22ac1a2406740b86ff3ebb29d059458d63ff9bc3"
   end
 
   depends_on "patch-package" => :build
