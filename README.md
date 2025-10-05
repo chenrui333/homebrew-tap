@@ -140,6 +140,7 @@ brew install --cask <tool>
 - `crush`
 - `cueimports`
 - `curlconverter`
+- `dakora`
 - `datacmd`
 - `datadog-mcp-server`
 - `dbee`
@@ -356,6 +357,7 @@ brew install --cask <tool>
 - `plandex`
 - `playerctl`
 - `pls`
+- `pluqqy`
 - `pluralith`
 - `pmx`
 - `pom`
