@@ -1,8 +1,8 @@
 class Zigscient < Formula
   desc "Zig Language Server"
   homepage "https://github.com/llogick/zigscient"
-  url "https://github.com/llogick/zigscient/archive/refs/tags/0.14.1.tar.gz"
-  sha256 "58d2256c934543d08b5254bf054ad2c540b2295c6b076ae1c7a4dcea6ebcedf5"
+  url "https://github.com/llogick/zigscient/archive/refs/tags/0.14.15.tar.gz"
+  sha256 "6cd68db13b29a88716e13f5dcf28dabe872312f652d08c4ca9c8a3ce77589d91"
   license "ISC"
 
   bottle do
@@ -13,7 +13,7 @@ class Zigscient < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fef0474aee30c32cb4dc3a77a7e882d9c7e49792b76580a0154e5e62abc46a8"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.14" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
