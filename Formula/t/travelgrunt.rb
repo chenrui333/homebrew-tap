@@ -8,9 +8,10 @@ class Travelgrunt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6b654f65eaf2bf94bdb667d8757678eb82157e58fbc9749bdac7d46f3c270fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53a682ca425c13a65c10d26dd15b141abe237d95ef4eafbe0dd617f52732f18c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d58313e098341e3a0812b3138af4a3f2aad916df7d964d5f8496827f7f8b54f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bbd1b96a4502c1abbb9ce5453d81da57c8ffcf29493c7185ecb0443e3ac22841"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cbf17ccb1ca2b285835ebaa11f898a833d404cd80ee2b8668d247a99123272b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eeb656d73b0c8591f50c89fdabbfb37d4dd1cda926bca902f8bdd8b9f0cfcec0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2809f207dcc3b3a787698bba858fb85c86ea748913424b914dca7895164f5cc1"
   end
 
   depends_on "go" => :build
