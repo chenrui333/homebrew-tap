@@ -8,6 +8,14 @@ class Dakora < Formula
   license "Apache-2.0"
   head "https://github.com/microsoft/wassette.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "493bb5325a5af69dae0a8c2214fc8046f8f4c177e803038b702d076de2e0c71d"
+    sha256 cellar: :any,                 arm64_sequoia: "a090378f004a8bc34036a9dc3662deff6b5067bb825b78914e59ce48722f9d88"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ae710b3f296c6477b89c20dcaadd7ce62a0553221bea1f0fb0a5c59d4066619"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba860b4bc00dbcf257ee654711f49534467937f31339a27c7893e07991e6a224"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "libyaml"
   depends_on "python@3.13"
