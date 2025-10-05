@@ -9,10 +9,10 @@ class Deepteam < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "c43d95eeea938d39b262ee39604b198c2a08edfcd59a52448c12df17f1fa001c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e238ea9413f0b5d4ddc966fa0f4fdb391582eb1693d6699ff850c4e36987cf7c"
-    sha256 cellar: :any,                 ventura:       "48a21095d35b2a131b1bbf6c6255381d4f0c91e1f4ab5ef5403d97ae7ae4bbb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10e47da7c5a8d364ed7ab40a271602ba4eefddebcfd4f2a0c7c1bf0c8aee7e58"
+    sha256 cellar: :any,                 arm64_tahoe:   "7afd28402d7e012fe480cee4ed59b2fffc530a7e776e1c63cfc3423dbd4b2d98"
+    sha256 cellar: :any,                 arm64_sequoia: "35a4d37a505866018a7fffb1a06deb060aaf1cad5241882bd9cc49b087c57d26"
+    sha256 cellar: :any,                 arm64_sonoma:  "af3d0067bee3421c4bf647816c46e72a0d419cdab19ea6d38ccba0435c91faea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83ef0175c7951de0855486920cf7deabd8b9d892e4b848d55608690f4dca3ad8"
   end
 
   depends_on "rust" => :build # for pydantic
