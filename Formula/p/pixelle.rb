@@ -7,6 +7,14 @@ class Pixelle < Formula
   sha256 "d6b1fbd348b71f7a4109e23ff15d14a9cddac95e382feca0f46b0a0bf2556960"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "8cd8ad758fea6181f80d3fee25033e8d7bad45f3168a9f3b63f79ac99c5754f6"
+    sha256 cellar: :any,                 arm64_sequoia: "5f5e4edadd71cc8df972307c79f77c6e381738e0f7337cecfeaad6eee9fcdffe"
+    sha256 cellar: :any,                 arm64_sonoma:  "43923d1b01baf421e84c7434509a85d6cbfdf1a76b639036fa97079a4639c48e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe71e51c0c69217047f8dff44effacfd55209059b50a354437b4dfe43e8650cc"
+  end
+
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "cryptography"
