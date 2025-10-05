@@ -25,15 +25,10 @@ class Ddev < Formula
   end
 
   test do
+    ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
+
     assert_match version.to_s, shell_output("#{bin}/ddev --version")
 
-    expected = if OS.mac?
-      "Could not connect to a Docker provider"
-    else
-      "No DDEV projects were found."
-    end
-
-    ret_status = OS.mac? ? 1 : 0
-    assert_match expected, shell_output("#{bin}/ddev list 2>&1", ret_status)
+    assert_match "Cannot connect to the Docker daemon", shell_output("#{bin}/ddev list 2>&1", 1)
   end
 end
