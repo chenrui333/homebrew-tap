@@ -13,6 +13,7 @@ class McpServerTester < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc8e633a5aae7dd3320f6d372f1688ce139cdab3eadc719120ba3b6b6aeec2f8"
   end
 
+  depends_on "patch-package" => :build
   depends_on "node"
 
   def install
