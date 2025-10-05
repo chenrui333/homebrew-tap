@@ -1,5 +1,5 @@
 class Hygg < Formula
-  desc "Simplifying the way you read"
+  desc "Simplifying the way you read. Minimalistic Vim-like TUI document reader"
   homepage "https://github.com/kruserr/hygg"
   url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.19.tar.gz"
   sha256 "36491747e9d47cf7d24ae0666fd2908535eac437e8223a6bd88465a90e1cf35a"
