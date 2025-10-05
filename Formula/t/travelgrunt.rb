@@ -22,7 +22,10 @@ class Travelgrunt < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/travelgrunt -version 2>&1")
 
+    system "git", "init", "--initial-branch=main"
+    system "git", "commit", "--allow-empty", "-m", "invalid"
+
     output = shell_output("#{bin}/travelgrunt -top 2>&1", 1)
-    assert_match "failed to extract top level filesystem path", output
+    assert_match "no such file or directory", output
   end
 end
