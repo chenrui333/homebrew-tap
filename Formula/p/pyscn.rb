@@ -6,6 +6,14 @@ class Pyscn < Formula
   license "MIT"
   head "https://github.com/ludo-technologies/pyscn.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d25933fc6571420258c2a0dfac6ec86699d2385421298a2f905bf51f02c9421e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1caab2cdf0d618e087770ce26f2105bf04ad15c1631c9f4580e207d8a5932401"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fec8f9a17f9a08915e035b57c102053bfca10e76ff4e03cadf408cd893e0bc12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63ea7bfee56924bbca67f6ecf37ba311eac03faaf630212842cb3a999c6de216"
+  end
+
   depends_on "go" => :build
 
   def install
