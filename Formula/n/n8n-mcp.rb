@@ -7,9 +7,10 @@ class N8nMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0ba84e65ee895267a699c8bac5a8333d71a5bc902b86f338296be9e8f3e1e1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e4473c8231f29a98f2b3fb2fd5d4bf641223c88794dd5717597b6618f436748"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8e77b6c2e72727192c7f1dbb88ca133cd6de07278f974d70fae40a8bb2a9f7e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c1f7e749aa5384a1afd23c85a301249f1e9e26969b31b3c048a39065a4c07b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41458bc12facd8e241f26a7775517e0b2ffdb5b2f84fb16c335ceb408b81d94f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b83bce35b56583f30eeda8ef123677bb6212a19802c7d984ef628c0d71d4f2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "556b07b6975de93c56899bbc936374b1b9539c17f05dc0aee592b067459685e5"
   end
 
   depends_on "node"
