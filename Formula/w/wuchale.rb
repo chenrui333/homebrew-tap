@@ -7,10 +7,10 @@ class Wuchale < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e73fc2ad3eceaae5b77a867bdd74aa4d64f5ddf20b6d7fddbd26d266b000db1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e21c4400fa2736e0eadfaa9831a9a2e775d60f808f847b4629554cfa4ae4647"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d7ea9b63fd716f33e46f3ee71964bbf14a9e98606b1cd7bef94a52356aa1d8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0bb5d45507b2ce8af18287740e93733629f0db4a72b701dfa3fdf8b1fb98070"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59224f9aeaa9d1a02d7d678af7109fc3a1c8b5fb2c8caa583308b3a476cc7ed6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e54399c3c562d5fd2beff5d05482b574a857f17ac4bfa73ff3354669f31fa89a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cda02f45eeae01891510884d127e80291030435e02cf4570b40f46b9df2df74a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6b5862ff933fea4013646bdc79fa7002e55780065145fdc0fe8f4888a90dcd2"
   end
 
   depends_on "node"
