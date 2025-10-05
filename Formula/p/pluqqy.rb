@@ -6,6 +6,14 @@ class Pluqqy < Formula
   license "MIT"
   head "https://github.com/pluqqy/pluqqy-terminal.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abb88c7712b7bc0df96329675a6e49c6d0c41db71b2b2ab2ac3ec2dc1fc39e7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ae2a49b7039bcc55dde1262f778cd17114ff8a93282e73b21baccd9ad954676"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52847b8663d84a1241418e6546b20cff6d5f7334d199b14110a556dc9105e2e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "982b56f56c37bde3253eaa68fbf7fac84121434cc87ae13fdaac03c168b48d5b"
+  end
+
   depends_on "go" => :build
 
   def install
