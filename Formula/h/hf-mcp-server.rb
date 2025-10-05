@@ -5,6 +5,14 @@ class HfMcpServer < Formula
   sha256 "e9706cd54acd7d80c1656640662598314432eca847b858571df5ab4dc9d914cc"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "70e6d1192bac0ec1139cee5926831b5b2629512779a6af55e9d7822557a782ce"
+    sha256 cellar: :any,                 arm64_sequoia: "05e6dea99c9cd62e3d85d55a939350662f86c0a43ea9c5a674c04d62e20ee3d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "128b24779fbe88ef3c7b6c92d65a0ad78211de57bdaacfde3cea9589dc26e951"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "321134b2e77d5b7832bec0e59c4c70fbe747ae418e10415367337d5c6d971c9f"
+  end
+
   depends_on "node"
 
   def install
