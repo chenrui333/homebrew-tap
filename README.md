@@ -199,7 +199,6 @@ brew install --cask <tool>
 - `glsl-analyzer`
 - `gmap`
 - `go-junit-report`
-- `go-swag`
 - `gobgp`
 - `goboscript`
 - `gofakeit`
@@ -374,6 +373,7 @@ brew install --cask <tool>
 - `pyink`
 - `pyment`
 - `pyp`
+- `pyscn`
 - `quicssh-rs`
 - `r2md`
 - `rabbitmq-message-ops`
@@ -393,6 +393,7 @@ brew install --cask <tool>
 - `rshell`
 - `rslocal`
 - `rtop`
+- `run`
 - `rustfilt`
 - `sato`
 - `satty`
@@ -437,7 +438,6 @@ brew install --cask <tool>
 - `tavily-mcp`
 - `tclint`
 - `tenderly`
-- `termsvg`
 - `termtunnel`
 - `terra-code-cli`
 - `terracove`
@@ -451,7 +451,6 @@ brew install --cask <tool>
 - `tetrigo`
 - `tfclean`
 - `tfreveal`
-- `tfstate-lookup`
 - `tftarget`
 - `tftree`
 - `tickrs`
