@@ -38,7 +38,6 @@ brew install --cask <tool>
 - `agl`
 - `ai-context`
 - `aim`
-- `airtable-mcp-server`
 - `alacritty`
 - `am-i-vibing`
 - `amoco`
@@ -46,7 +45,6 @@ brew install --cask <tool>
 - `apify-actors-mcp-server`
 - `apkeep`
 - `apple-health-mcp`
-- `archgw`
 - `arduino-language-server`
 - `arp-scan-rs`
 - `arxiv-mcp-server`
@@ -110,7 +108,6 @@ brew install --cask <tool>
 - `chalet`
 - `chatlog`
 - `checkpwn`
-- `chrome-devtools-mcp`
 - `clai`
 - `claude-code-generic-hooks`
 - `claude-code`
@@ -225,6 +222,7 @@ brew install --cask <tool>
 - `hellwal`
 - `hexora`
 - `heyagent`
+- `hf-mcp-server`
 - `hf`
 - `holo-cli`
 - `horusec`
@@ -296,7 +294,6 @@ brew install --cask <tool>
 - `matcha`
 - `mcman`
 - `mcp-alchemy`
-- `mcp-google-sheets`
 - `mcp-obsidian`
 - `mcp-server-airbnb`
 - `mcp-server-cloudflare`
@@ -317,7 +314,6 @@ brew install --cask <tool>
 - `mpfshell`
 - `mqtt-cli`
 - `oceanbase-mcp-server`
-- `n8n-mcp`
 - `nanodbc`
 - `narr`
 - `nest-cli`
@@ -354,6 +350,7 @@ brew install --cask <tool>
 - `pingu`
 - `pipeform`
 - `pitaya`
+- `pixelle`
 - `plandex`
 - `playerctl`
 - `pls`
@@ -500,7 +497,6 @@ brew install --cask <tool>
 - `xcpkg`
 - `xmlformatter`
 - `yajsv`
-- `yamlresume`
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
