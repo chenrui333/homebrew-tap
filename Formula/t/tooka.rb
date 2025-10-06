@@ -8,10 +8,10 @@ class Tooka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edd389fbd44f78af6c7bb9128f242cb6000e18612d197947a7849b5b2e8a7f50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99727d35605d3bb42cb089183847708db7bb09cb09b81d680c5134c5a0a1cad2"
-    sha256 cellar: :any_skip_relocation, ventura:       "fd522539b8281b016dede754e9168132c2bb4ce321feca886929867c7513b00e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "909f3173bebba9297386cb06b76b484bb79acee30f779f2eb051d59f2cb847a2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0498cee5793eeb9c72561577364da56e946543b2810607d65971d754599c4012"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5ca764b3e7caf7607805cb4ceb58ec1babb553d74b3229b69ad062d6c9afe14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61a3bdc7b490f41b4c7bab7f3a43fa5a3d604979ff5513a0497fabe67f3c29d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ea9870cb881edbd764e10f40ed6b18c9146e3395670c4b1051ad5b971b8fd09"
   end
 
   depends_on "rust" => :build
