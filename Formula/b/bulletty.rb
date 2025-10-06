@@ -8,9 +8,10 @@ class Bulletty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a35e4507c3ab993aeb4fd138d6d87dd033332bbcd356cb002d360f87f606fe8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bfd5e24470657e73d01c88fecf1f05839762b8e4ea6ff90568969900c62f953"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8540d3584eedf5da6170e48f9f3fdaa0c6429bd3ab93b609b110f13b5cf8a3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be7332e2efe23101487364d78cb4fb7b2f3ee7678bc2ece3689c897fa24f1a69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da775d287cc9f756c4cfb30f56f95c76cd8c3bc0325b2f01186b84321fcd1476"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aea4ba84549c3fb88eccd9001db3135ad6c41fe612452fbadacdbecceb80476"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd1fda13184d9d22471f41a0905df1908efb4eddcc8ad1009c3edf1e0cd58a35"
   end
 
   depends_on "pkgconf" => :build
