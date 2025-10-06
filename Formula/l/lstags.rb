@@ -1,8 +1,8 @@
 class Lstags < Formula
   desc "Explore Docker registries and manipulate Docker images"
   homepage "https://github.com/ivanilves/lstags"
-  url "https://github.com/ivanilves/lstags/archive/refs/tags/v1.2.23.tar.gz"
-  sha256 "43ecc6b925e85cb6656b0114cc1404611cb5a4c50e0eeda80bcf5727ebf8c187"
+  url "https://github.com/ivanilves/lstags/archive/refs/tags/v51.tar.gz"
+  sha256 "d80266e9cb2a01af1066e627e0e4e98f5b9225a99db353de888e59c5007d92c2"
   license "Apache-2.0"
   head "https://github.com/ivanilves/lstags.git", branch: "master"
 
