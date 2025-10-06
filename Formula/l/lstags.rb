@@ -6,6 +6,14 @@ class Lstags < Formula
   license "Apache-2.0"
   head "https://github.com/ivanilves/lstags.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48ccb35ac46890e6fef371cd9418b2ee905da36136c4b918f0bd2c8521a7f5d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28e60e1996ae2654d361d1c9f3160cbe0ad5f9c70efc5ad25147d0e21e461bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a718b885f6a517edb165b1070423bc2d1b2e9dd456e0ef2a4cd4b2001339ca4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca330fc96a6190f9c7cb6839df270f988dca63268f39ce1e2af0248144cd8bb3"
+  end
+
   depends_on "go" => :build
 
   def install
