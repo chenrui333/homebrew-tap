@@ -7,9 +7,10 @@ class MongodbMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_sequoia: "085456094b297edb3e6b185991c8e053e8578110387ad15afb4981cf03c50168"
-    sha256                               arm64_sonoma:  "3285c51d098310831e51855a77aa41d2991d9e0129f78f128d48946597b1600b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b84283cab03d1697bd856d752c5906671083740039584387d5306fd3b9872cbf"
+    sha256                               arm64_tahoe:   "ffc6287c4ab11846e69a9696c0685a309840e21dfc7fccc6a8c1adf004faca99"
+    sha256                               arm64_sequoia: "74aa066976bd73d849cce0bae79c07952db9b6c0f9f98b46aeba0babe6af19ef"
+    sha256                               arm64_sonoma:  "8e6bca1a76323248f71092d45d55c1a5bd13db0fd2670ae8ea6826cf28041752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecfc6823a82f24bc368f9e512bc23ad55d37f7ca6db51edc178197498f894b33"
   end
 
   depends_on "node"
