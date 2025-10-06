@@ -1,8 +1,8 @@
 class Tooka < Formula
   desc "CLI for the Tooka engine"
   homepage "https://github.com/tooka-org/tooka"
-  url "https://github.com/tooka-org/tooka/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "0582dce8a5f241f7cce78be04fcee51cc5e2c175df2ff524147018f755ccd1f6"
+  url "https://github.com/tooka-org/tooka/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "c8784ee56cd59a889faa4a93051cc8efdf12564541e7716807c3662151fb90b0"
   license "GPL-3.0-only"
   head "https://github.com/tooka-org/tooka.git", branch: "main"
 
