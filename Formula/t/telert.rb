@@ -63,7 +63,11 @@ class Telert < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/telert --version")
 
-    assert_match "No providers configured", shell_output("#{bin}/telert status")
+    if OS.mac?
+      assert_match "No providers configured", shell_output("#{bin}/telert status")
+    else
+      assert_match "No messaging provider configured", shell_output("#{bin}/telert status", 1)
+    end
 
     output = shell_output("#{bin}/telert monitor activity")
     assert_match "No logs found matching the specified criteria.", output
