@@ -8,10 +8,10 @@ class Pyscn < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d25933fc6571420258c2a0dfac6ec86699d2385421298a2f905bf51f02c9421e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1caab2cdf0d618e087770ce26f2105bf04ad15c1631c9f4580e207d8a5932401"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fec8f9a17f9a08915e035b57c102053bfca10e76ff4e03cadf408cd893e0bc12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63ea7bfee56924bbca67f6ecf37ba311eac03faaf630212842cb3a999c6de216"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7e35bc0f5060b9f1335af94c1fe4a46a97761987aa66b6bf854348f1e9e6a52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9969c445a48f5ed04dca35bf65c74f8d8ed7bb19985ef953585ad7c9f0a0e08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f3f488b0c2025b2ee3c5f3710f0c7a3cee99362195aaf70d77cb198ba8cae17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46e9f45c44f497d1f7ea3943986f409ad31be2a2cbbc17730d4e3e2320401409"
   end
 
   depends_on "go" => :build
