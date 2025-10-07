@@ -56,6 +56,7 @@ brew install --cask <tool>
 - `autoflake`
 - `autotag`
 - `autotools-language-server`
+- `av`
 - `await`
 - `awk-language-server`
 - `awless`
@@ -114,6 +115,7 @@ brew install --cask <tool>
 - `claudio`
 - `cli-mcp-server`
 - `clickup-mcp`
+- `clog-cli`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
 - `cloudlens`
@@ -185,6 +187,7 @@ brew install --cask <tool>
 - `frep`
 - `fsociety`
 - `gemini-cli`
+- `get-port-cli`
 - `ghfetch`
 - `gignr`
 - `giq`
@@ -282,6 +285,7 @@ brew install --cask <tool>
 - `locport`
 - `logfire-mcp`
 - `lola`
+- `lstags`
 - `luaformatter`
 - `lib-x`
 - `libdivide`
@@ -312,6 +316,7 @@ brew install --cask <tool>
 - `mongodb-mcp-server`
 - `mpfshell`
 - `mqtt-cli`
+- `mynav`
 - `oceanbase-mcp-server`
 - `nanodbc`
 - `narr`
@@ -383,6 +388,7 @@ brew install --cask <tool>
 - `rallies-cli`
 - `ramda-cli`
 - `rang`
+- `rawhide`
 - `readmeai`
 - `reformat-gherkin`
 - `refurb`
@@ -414,6 +420,7 @@ brew install --cask <tool>
 - `sheetui`
 - `shiroa`
 - `shopify-cli`
+- `shuk`
 - `sig`
 - `simdjzon`
 - `sloctl`
@@ -426,6 +433,7 @@ brew install --cask <tool>
 - `spok`
 - `spotifydl`
 - `statoscope`
+- `stree`
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
 - `summon`
