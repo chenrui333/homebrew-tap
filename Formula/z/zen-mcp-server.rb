@@ -9,10 +9,10 @@ class ZenMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "93a7df73930341fd711c6edb9eb90c7b1f591d5ef5c2a8c94c41cf05f0973c6c"
-    sha256 cellar: :any,                 arm64_sequoia: "a8f2fac9708b52f9addd8014dc853d56454226a210d3eac1f7519396667642a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e4d49cb01c73fc7f69458c1bcf2f92d05bed4e2b1f4cc333bc0eeddbcd1bf4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30d6b48b1edd3aeca4f43280cbc10b3590dead4d9b8cdf6f9d965c1e09f1bf2b"
+    sha256 cellar: :any,                 arm64_tahoe:   "21b7f6de4c3cef2edaee824fa64f8fc2d9ee560081c4f992011e029f0ee4958f"
+    sha256 cellar: :any,                 arm64_sequoia: "6459a3349d11fdc1478930a57616cf97d7eeb7e2f8b8144fb397f56169efb62e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b1dbfa0f03e041f3fc1fe18adc53a05f7a37914f4f7c89356a510cb5a0d162d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6b1052cf49187675f7a01ee55ba962b12e1258d172ff1f95b5f159577cdbe19"
   end
 
   depends_on "rust" => :build # for pydantic
