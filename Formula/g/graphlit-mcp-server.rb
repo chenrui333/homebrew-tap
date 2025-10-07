@@ -7,10 +7,10 @@ class GraphlitMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ce4f9c249fed851ad21940e6fb36603e41ecc84e046175e6ae33c8a53aeb367"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43fa5d772f1f13af5872c64d07f76d41ec7138390ba2ea2775c6044fe566d22f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8db0e4cf139002210f177370af6fb3368bd8dcc9195ebd80ffa9130c5c098c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e9c394562a3d1b104f79dea1cf4309fa9912acf8365418836ed3e31b3b50528"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3eaff2c5067257e7f0421b2d7ea54b9c1a60595b6d95ac929ed02151a49bcd13"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef9c39d6013e0ea75a411251efaf1149c720e9a807b36402e09d1575124e0786"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b88af779c59381102146fd7ed701a5a281d999aa93495e4abb7699a17f0c6b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b94d94d688d7dbf86417dfc0cc7a5d8dac9a16c82090daf7b4de20abf0ed937"
   end
 
   depends_on "node"
