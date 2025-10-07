@@ -1,8 +1,8 @@
 class Wifitui < Formula
   desc "Pretty feed reader (ATOM/RSS) that stores articles in Markdown files"
   homepage "https://github.com/shazow/wifitui"
-  url "https://github.com/shazow/wifitui/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "7cefb600618122e08e2c4569b9162a94931a65758fc01be2280b08c9be978b67"
+  url "https://github.com/shazow/wifitui/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "7705cc20e2f4a59418750e4ee51ddb2e475b902315bce6022230c3c31d1cf4c8"
   license "MIT"
   head "https://github.com/CrociDB/bulletty.git", branch: "main"
 
