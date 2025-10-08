@@ -9,9 +9,11 @@ class DiTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05136ba5c475d7b08731a8a469e92d43c5af27efdd50b89ce89ca286f9e6ac84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1187a040b713e74ec6cf3dea8bc31d1751653ebad7d079e5e45d02b86d3ef7d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8a19865fa5cd2b5a2d27563e5ed504fa306dab7fd35421f5496666026ca854d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "864795ef4daab6861675a0551e8c39ab64ab40813a556618ad06445d009ba3d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "864795ef4daab6861675a0551e8c39ab64ab40813a556618ad06445d009ba3d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "864795ef4daab6861675a0551e8c39ab64ab40813a556618ad06445d009ba3d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22852b7c54fb2b6378c091c3b13840ee4b2cec749381c9f7ada1e38d0da38d61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06ea52547d48134495aa0b4e1ae372682d19abe970c6e0814fcfc2a7ad79bd25"
   end
 
   depends_on "go" => :build
