@@ -4,6 +4,7 @@ class Bearer < Formula
   url "https://github.com/Bearer/bearer/archive/refs/tags/v1.51.0.tar.gz"
   sha256 "ba8d621ef954c2a5f43337c9f401d05d74301b101272101ed386182c3834a774"
   license "Elastic-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
