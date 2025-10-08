@@ -4,6 +4,7 @@ class Enry < Formula
   url "https://github.com/go-enry/enry/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "39058e160b27828eceadaf374bfb380434acdcf8857da4a0b3e3600c1d136cac"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/go-enry/enry.git", branch: "master"
 
   bottle do

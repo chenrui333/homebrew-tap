@@ -5,6 +5,7 @@ class Enola < Formula
   url "https://github.com/TheYahya/enola/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "3d1e08662a2a535773379b24d40c542fac406318c8ea6db6d6c191dfd0f2f703"
   license "MIT"
+  revision 1
   head "https://github.com/TheYahya/enola.git", branch: "main"
 
   bottle do

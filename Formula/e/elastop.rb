@@ -4,6 +4,7 @@ class Elastop < Formula
   url "https://github.com/acidvegas/elastop/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "d97517b9ca1f085972020a085ce51fb087afa4fc24c367952acc7dc02aa4105b"
   license "ISC"
+  revision 1
   head "https://github.com/acidvegas/elastop.git", branch: "main"
 
   bottle do
