@@ -9,10 +9,11 @@ class Addlicense < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d104563710829813f23c36e0d39f3fe8e271318dbf3ebaf295de72bd2ba6b7bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dce435e663081292d2a3bec2b5c5f87904264cbb6d08c721414a8fbf9762be56"
-    sha256 cellar: :any_skip_relocation, ventura:       "2423e34bc109aa95579f84bbebc25751533762e782e475e5a70ba296bfafb95e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78829b5991f8ae8eb18b5f984e2d950e2508bcf9d87f30905f190383bd41c8be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "042fe29608840adb4e0d5662624d4372df11e9c2a7f4d038828c989f85512e42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "042fe29608840adb4e0d5662624d4372df11e9c2a7f4d038828c989f85512e42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "042fe29608840adb4e0d5662624d4372df11e9c2a7f4d038828c989f85512e42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e95c23547a4874fa0c7a3bff7b66301a69b4dc083fc513b309bd80fb58ea35f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ed1fb459ea0a9619498a4837911a82b25067956e15960e4482a43abe7a2e1b"
   end
 
   depends_on "go" => :build
