@@ -4,6 +4,7 @@ class Blush < Formula
   url "https://github.com/arsham/blush/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "6db6b033bb5d4c4ac350b36b82d79447d5b91509db3a5eceb72ecb9484495e54"
   license "MIT"
+  revision 1
   head "https://github.com/arsham/blush.git", branch: "master"
 
   bottle do

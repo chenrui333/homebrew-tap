@@ -4,6 +4,7 @@ class Beelzebub < Formula
   url "https://github.com/mariocandela/beelzebub/archive/refs/tags/v3.4.2.tar.gz"
   sha256 "cc682594d1045093a04088a32c48dcd7cb57dfc731262b98d5bce7aeaa8320ef"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/mariocandela/beelzebub.git", branch: "main"
 
   bottle do

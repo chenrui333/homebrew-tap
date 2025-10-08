@@ -4,6 +4,7 @@ class Botkube < Formula
   url "https://github.com/kubeshop/botkube/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "ca637b3a18ea8a398eba0e2b498c9c0c91f6c31a4529bd7ae54d4ae4e3fc6928"
   license "MIT"
+  revision 1
   head "https://github.com/kubeshop/botkube.git", branch: "main"
 
   bottle do
