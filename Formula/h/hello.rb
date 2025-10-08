@@ -1,10 +1,9 @@
 class Hello < Formula
   desc "Program providing model for GNU coding standards and practices"
   homepage "https://www.gnu.org/software/hello/"
-  url "https://ftpmirror.gnu.org/gnu/gnu/hello/hello-2.12.1.tar.gz"
-  sha256 "8d99142afd92576f30b0cd7cb42a8dc6809998bc5d607d88761f512e26c7db20"
+  url "https://ftpmirror.gnu.org/gnu/hello/hello-2.12.2.tar.gz"
+  sha256 "5a9a996dc292cc24dcf411cee87e92f6aae5b8d13bd9c6819b4c7a9dce0818ab"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
