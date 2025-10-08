@@ -36,7 +36,7 @@ class SdlMixer < Formula
 
     inreplace "SDL_mixer.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    args = %W[
+    args = %w[
       --enable-music-ogg
       --enable-music-flac
       --disable-music-ogg-shared
@@ -58,6 +58,6 @@ class SdlMixer < Formula
                    "-o", "playwave"
     Utils.safe_popen_read({ "SDL_VIDEODRIVER" => "dummy", "SDL_AUDIODRIVER" => "disk" },
                           "./playwave", test_fixtures("test.wav"))
-    assert_predicate testpath/"sdlaudio.raw", :exist?
+    assert_path_exists testpath/"sdlaudio.raw"
   end
 end
