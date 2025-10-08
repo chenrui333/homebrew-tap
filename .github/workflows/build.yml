@@ -24,7 +24,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:main
+      image: ghcr.io/homebrew/ubuntu22.04:main@sha256:94ee9b0eb28f35b108f4874c75a665351d7ad9a8c4424a7180c78f6255a2d0dc
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     outputs:
@@ -58,11 +58,11 @@ jobs:
       container: ${{ steps.check-labels.outputs.container }}
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
 
       - name: Check for CI labels
         id: check-labels
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         env:
           SCRIPTS_PATH: .github/scripts
         with:
