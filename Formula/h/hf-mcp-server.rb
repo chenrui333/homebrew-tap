@@ -7,10 +7,10 @@ class HfMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "70e6d1192bac0ec1139cee5926831b5b2629512779a6af55e9d7822557a782ce"
-    sha256 cellar: :any,                 arm64_sequoia: "05e6dea99c9cd62e3d85d55a939350662f86c0a43ea9c5a674c04d62e20ee3d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "128b24779fbe88ef3c7b6c92d65a0ad78211de57bdaacfde3cea9589dc26e951"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "321134b2e77d5b7832bec0e59c4c70fbe747ae418e10415367337d5c6d971c9f"
+    sha256 cellar: :any,                 arm64_tahoe:   "1a2ea5cc3d97f8157bac2bd22aa7185467937fbfa6f69a07a351fb77092c4220"
+    sha256 cellar: :any,                 arm64_sequoia: "ba3b3e8f384d885c04f6e19d6df4624cf622fa76b0ce806b9fc67b15fc039eba"
+    sha256 cellar: :any,                 arm64_sonoma:  "bcf11bcfa52def122e9f1f11ad7f2d56c654869eceba33649290c29126ecea31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9782daff3e7ca85f9e7478887eedecc21fcf6c7953dfdf2ac71b3e06589735ae"
   end
 
   depends_on "node"
