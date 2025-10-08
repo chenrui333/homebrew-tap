@@ -4,6 +4,7 @@ class Container2wasm < Formula
   url "https://github.com/container2wasm/container2wasm/archive/refs/tags/v0.8.3.tar.gz"
   sha256 "8e67b5e0d204ecf6ed2cf5e7abbd4dfe8e606568f1980193e5048aed0dd8c376"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/container2wasm/container2wasm.git", branch: "main"
 
   bottle do

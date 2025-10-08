@@ -5,6 +5,7 @@ class Cohctl < Formula
   url "https://github.com/oracle/coherence-cli/archive/refs/tags/1.10.3.tar.gz"
   sha256 "e5285aa467c449098f16ceab38a2337e17418c81ebe10063abb42afccaa74489"
   license "UPL-1.0"
+  revision 1
   head "https://github.com/oracle/coherence-cli.git", branch: "main"
 
   bottle do

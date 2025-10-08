@@ -5,6 +5,7 @@ class Cmdx < Formula
   url "https://github.com/suzuki-shunsuke/cmdx/archive/refs/tags/v2.0.2-0.tar.gz"
   sha256 "20f0a5303e8302f9043629d0dc7c06ef4d8eaaafa1700a4dd00b199d9f01d997"
   license "MIT"
+  revision 1
   head "https://github.com/suzuki-shunsuke/cmdx.git", branch: "main"
 
   bottle do

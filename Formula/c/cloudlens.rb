@@ -5,6 +5,7 @@ class Cloudlens < Formula
   url "https://github.com/one2nc/cloudlens/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "d049a756d2ad6198755dfc6e467f44428c043a54d578fd7938962c3abe15d78d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/one2nc/cloudlens.git", branch: "main"
 
   bottle do

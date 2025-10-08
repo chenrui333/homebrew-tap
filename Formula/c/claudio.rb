@@ -3,6 +3,7 @@ class Claudio < Formula
   homepage "https://github.com/ctoth/claudio"
   url "https://github.com/ctoth/claudio/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "5129a0926a4e001e2a39492207d7369ddc1a56f050f87104a668315829c88d74"
+  revision 1
   head "https://github.com/ctoth/claudio.git", branch: "master"
 
   bottle do

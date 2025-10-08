@@ -4,6 +4,7 @@ class Clai < Formula
   url "https://github.com/baalimago/clai/archive/refs/tags/v1.8.3.tar.gz"
   sha256 "4b018579b4fa53af31f52421f0fbdd67a921e5d9f67a77c06c9880d41b23235b"
   license "MIT"
+  revision 1
   head "https://github.com/baalimago/clai.git", branch: "main"
 
   bottle do

@@ -5,6 +5,7 @@ class Cf2pulumi < Formula
       tag:      "v1.36.0",
       revision: "93f7c1dfc12b4e8e638995ab057e2e5c58c5a747"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/pulumi/pulumi-aws-native.git", branch: "master"
 
   bottle do

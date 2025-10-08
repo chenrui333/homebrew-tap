@@ -4,6 +4,7 @@ class Cello < Formula
   url "https://github.com/cello-proj/cello/archive/refs/tags/v0.22.0.tar.gz"
   sha256 "77975a0b69e99ce6d71f5d7356ce5720ab35e81c86f3e491c36a1a0640db1205"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/cello-proj/cello.git", branch: "main"
 
   bottle do
