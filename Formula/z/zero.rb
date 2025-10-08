@@ -4,6 +4,7 @@ class Zero < Formula
   url "https://github.com/yarlson/zero/archive/refs/tags/1.1.0.tar.gz"
   sha256 "eae1b4cee2b971d7dca445fe2a65df7b7c30958e505374632e27cfdd23377e4f"
   license "MIT"
+  revision 1
   head "https://github.com/yarlson/zero.git", branch: "main"
 
   bottle do

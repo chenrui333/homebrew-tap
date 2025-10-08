@@ -4,6 +4,7 @@ class Sloop < Formula
   url "https://github.com/salesforce/sloop/archive/refs/tags/v1.2.tar.gz"
   sha256 "ff5b6e91ab56ab534dfa967fa560fd9c2c4a95e63c38c19d1574c4c37645dbd5"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

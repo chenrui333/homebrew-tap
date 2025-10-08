@@ -5,6 +5,7 @@ class TerrapCli < Formula
   url "https://github.com/sirrend/terrap-cli/archive/refs/tags/v0.0.4.tar.gz"
   sha256 "4b479cc312207a43ffd92229eb8940074d32b84ec93dc6c53458a13270dc7a21"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/sirrend/terrap-cli.git", branch: "main"
 
   bottle do

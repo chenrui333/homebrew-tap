@@ -4,6 +4,7 @@ class Tracetest < Formula
   url "https://github.com/kubeshop/tracetest/archive/refs/tags/v1.7.1.tar.gz"
   sha256 "9f2fb4edab3e469465302c70bcddf0f48517306db0004afdc1d016f30b5380e5"
   license "MIT" # MIT license for the CLI, TCL license for agent
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

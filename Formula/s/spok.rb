@@ -4,6 +4,7 @@ class Spok < Formula
   url "https://github.com/FollowTheProcess/spok/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "4db1d868c9f7f70684aae4ab7c6e3195afa072f28fdd70656c69ee64a8cbcef7"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/FollowTheProcess/spok.git", branch: "main"
 
   livecheck do

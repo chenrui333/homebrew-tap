@@ -5,6 +5,7 @@ class Solfmt < Formula
   version "0.0.1"
   sha256 "e72473ad928528216d98107275f7a402cae5f36f8fb0c65032ebee5c19e04f61"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

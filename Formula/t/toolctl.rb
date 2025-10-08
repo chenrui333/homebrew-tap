@@ -4,6 +4,7 @@ class Toolctl < Formula
   url "https://github.com/toolctl/toolctl/archive/refs/tags/v0.4.15.tar.gz"
   sha256 "4667b156f11e26bd21661b16ae1eab28aed39f88685c8447a23de038b5a63e40"
   license "MIT"
+  revision 1
   head "https://github.com/toolctl/toolctl.git", branch: "main"
 
   bottle do

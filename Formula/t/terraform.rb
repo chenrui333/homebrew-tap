@@ -4,6 +4,7 @@ class Terraform < Formula
   url "https://github.com/hashicorp/terraform/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "c40b484ad84d1461e15e4c8f1d45ef85b85941fde30f5fa69126f3720dad77c0"
   # license "BUSL-1.1"
+  revision 1
   head "https://github.com/hashicorp/terraform.git", branch: "main"
 
   bottle do

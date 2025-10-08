@@ -4,6 +4,7 @@ class Yajsv < Formula
   url "https://github.com/neilpa/yajsv/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "08118f3614231f3c5f86f4f68816e706e120b8c91cdf6c1caaea45a71e3e5943"
   license "MIT"
+  revision 1
   head "https://github.com/neilpa/yajsv.git", branch: "master"
 
   bottle do

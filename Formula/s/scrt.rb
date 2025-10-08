@@ -4,6 +4,7 @@ class Scrt < Formula
   url "https://github.com/loderunner/scrt/archive/refs/tags/v0.3.3.tar.gz"
   sha256 "72ac4c594e8c89b43d679118d571f2726a86628b324b33486fba4331b1dc39de"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/loderunner/scrt.git", branch: "main"
 
   bottle do

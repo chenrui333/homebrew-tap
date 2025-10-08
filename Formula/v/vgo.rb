@@ -4,6 +4,7 @@ class Vgo < Formula
   url "https://github.com/vg006/vgo/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "3a2fee499c91225f2abe1acdb8a640560cda6f4364f4b1aff04756d8ada6282d"
   license "MIT"
+  revision 1
   head "https://github.com/vg006/vgo.git", branch: "main"
 
   bottle do

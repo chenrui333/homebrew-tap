@@ -4,6 +4,7 @@ class Tetrigo < Formula
   url "https://github.com/Broderick-Westrope/tetrigo/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "0347e2739e6fd7fc37667eb8873030f700d26e824d124d73ff8eb49c910946a8"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

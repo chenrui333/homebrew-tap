@@ -4,6 +4,7 @@ class Sloctl < Formula
   url "https://github.com/nobl9/sloctl/archive/refs/tags/v0.16.1.tar.gz"
   sha256 "2a2e12e5d1aa957087a6f7a55d39a95f53e539bd9c350422ea0c6c572080aff5"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/nobl9/sloctl.git", branch: "main"
 
   bottle do

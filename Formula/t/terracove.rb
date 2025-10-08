@@ -5,6 +5,7 @@ class Terracove < Formula
   url "https://github.com/ElementTech/terracove/archive/refs/tags/v0.0.7.tar.gz"
   sha256 "6790f897ba830886d66748fcaf0a484ef6a062658898931415dd600428ed4a23"
   license "MIT"
+  revision 1
   head "https://github.com/ElementTech/terracove.git", branch: "main"
 
   bottle do

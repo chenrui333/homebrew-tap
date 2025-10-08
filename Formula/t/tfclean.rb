@@ -4,6 +4,7 @@ class Tfclean < Formula
   url "https://github.com/takaishi/tfclean/archive/refs/tags/v0.0.12.tar.gz"
   sha256 "420c2e6c30ccbc79e27035f6eaccefbec1ef260232720a9bf07d86e73ad813ca"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

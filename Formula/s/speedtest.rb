@@ -4,6 +4,7 @@ class Speedtest < Formula
   url "https://github.com/showwin/speedtest-go/archive/refs/tags/v1.7.10.tar.gz"
   sha256 "70a2937d0759820fe7ee8f61b960d60c07b34c0d783ed11c0065b68fe2964aea"
   license "MIT"
+  revision 1
   head "https://github.com/showwin/speedtest-go.git", branch: "master"
 
   bottle do

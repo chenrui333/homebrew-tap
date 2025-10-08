@@ -4,6 +4,7 @@ class Timetrace < Formula
   url "https://github.com/dominikbraun/timetrace/archive/refs/tags/v0.14.3.tar.gz"
   sha256 "670ae0b147ddd6a430efb0a727f1612bcc66fffb025855f151760002c63fb847"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/dominikbraun/timetrace.git", branch: "main"
 
   bottle do

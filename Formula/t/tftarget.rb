@@ -5,6 +5,7 @@ class Tftarget < Formula
   url "https://github.com/future-architect/tftarget/archive/refs/tags/v0.0.9.tar.gz"
   sha256 "c68ad9cc23f0ae1ac735dc74e98e340512be6b3ba4dd5cf2925caf6f5cb1cc13"
   license "MIT"
+  revision 1
   head "https://github.com/future-architect/tftarget.git", branch: "main"
 
   bottle do

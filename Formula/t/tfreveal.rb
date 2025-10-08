@@ -5,6 +5,7 @@ class Tfreveal < Formula
   url "https://github.com/breml/tfreveal/archive/refs/tags/v0.0.4.tar.gz"
   sha256 "392ea05d250c6a19254e10643ba45a5bff16c566b81cba8a0e5527aff3317ced"
   license "MIT"
+  revision 1
   head "https://github.com/breml/tfreveal.git", branch: "master"
 
   bottle do

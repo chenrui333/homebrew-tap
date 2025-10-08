@@ -4,6 +4,7 @@ class Wifitui < Formula
   url "https://github.com/shazow/wifitui/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "7705cc20e2f4a59418750e4ee51ddb2e475b902315bce6022230c3c31d1cf4c8"
   license "MIT"
+  revision 1
   head "https://github.com/CrociDB/bulletty.git", branch: "main"
 
   bottle do

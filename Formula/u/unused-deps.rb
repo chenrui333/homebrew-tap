@@ -4,6 +4,7 @@ class UnusedDeps < Formula
   url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v8.2.1.tar.gz"
   sha256 "53119397bbce1cd7e4c590e117dcda343c2086199de62932106c80733526c261"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/bazelbuild/buildtools.git", branch: "main"
 
   bottle do

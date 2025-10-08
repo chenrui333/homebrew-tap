@@ -4,6 +4,7 @@ class Travelgrunt < Formula
   url "https://github.com/ivanilves/travelgrunt/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "ad52294a93d7a06e2c551e0b29b03300790c91cf547440547da48e4406c0af0c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ivanilves/travelgrunt.git", branch: "main"
 
   bottle do

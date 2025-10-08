@@ -4,6 +4,7 @@ class Terrafetch < Formula
   url "https://github.com/RoseSecurity/terrafetch/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "d9daffc04c9996c5901444917d76806cf1e7e6933a32139f1d6452d08ef787a7"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/RoseSecurity/terrafetch.git", branch: "main"
 
   bottle do
