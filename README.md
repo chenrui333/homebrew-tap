@@ -208,7 +208,6 @@ brew install --cask <tool>
 - `goimports-reviser`
 - `gommit`
 - `gowebly`
-- `granted`
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
