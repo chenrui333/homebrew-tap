@@ -18,6 +18,8 @@ class AzTui < Formula
   depends_on "azure-cli"
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/IAL32/az-tui/internal/build.Version=#{version}
