@@ -22,7 +22,7 @@ concurrency:
 jobs:
   tap-syntax:
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:main@sha256:94ee9b0eb28f35b108f4874c75a665351d7ad9a8c4424a7180c78f6255a2d0dc
     env:
@@ -47,7 +47,7 @@ jobs:
 
   set-environment:
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: tap-syntax
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
@@ -160,7 +160,7 @@ jobs:
   label-pr:
     needs: build-formula
     if: success() && github.event_name == 'pull_request'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       pull-requests: write
     steps:
