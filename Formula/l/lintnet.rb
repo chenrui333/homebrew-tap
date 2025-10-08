@@ -5,6 +5,7 @@ class Lintnet < Formula
   url "https://github.com/lintnet/lintnet/archive/refs/tags/v0.4.11-2.tar.gz"
   sha256 "622e80e8af2aafcef8be66823e23b09e748a666d2e73f88f98deb1e26a59863c"
   license "MIT"
+  revision 1
   head "https://github.com/lintnet/lintnet.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class LeveldbCli < Formula
   url "https://github.com/liderman/leveldb-cli/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "c6dcb3d960c1a8c0f8209c6a1cccb147b66aa23f100e14fcbddcb0784bacd90b"
   license "MIT"
+  revision 1
   head "https://github.com/liderman/leveldb-cli.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Lazynpm < Formula
   url "https://github.com/jesseduffield/lazynpm/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "841583d686fa55872a4136627c0bed9d15edd6f87989a3a64ff7b28a0784254e"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

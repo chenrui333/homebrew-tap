@@ -4,6 +4,7 @@ class Marchat < Formula
   url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v0.6.0-beta.3.tar.gz"
   sha256 "37741caa85abdffe83d8f4097099394777b1ee5ee2c915b5e641c2cb915539f8"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

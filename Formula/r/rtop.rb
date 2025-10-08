@@ -5,6 +5,7 @@ class Rtop < Formula
   version "1.0"
   sha256 "a706d6cddf8d2782d47a63e118dddf856d99bd9172000f4d1f3350704d98747f"
   license "MIT"
+  revision 1
   head "https://github.com/rapidloop/rtop.git", branch: "master"
 
   livecheck do

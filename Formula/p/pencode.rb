@@ -4,6 +4,7 @@ class Pencode < Formula
   url "https://github.com/ffuf/pencode/archive/refs/tags/v0.4.tar.gz"
   sha256 "90a7ed8078eddbc2afdefa193a4c3e5d2fd85ece447c47149e53a4c10d495a87"
   license "MIT"
+  revision 1
   head "https://github.com/ffuf/pencode.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Mln < Formula
   url "https://github.com/tkmru/mln/archive/refs/tags/v0.1.2.tar.gz"
   sha256 "8d57a09b95be6bd24f7c7c90be19e6ddf94640d153fd157f41282ee64c767dfc"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

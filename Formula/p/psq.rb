@@ -4,6 +4,7 @@ class Psq < Formula
   url "https://github.com/benjaminsanborn/psq/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "d17d056ec599452024829709b2942d1416af2e62d47babc9ed387122118617db"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

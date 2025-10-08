@@ -4,6 +4,7 @@ class Markpdf < Formula
   url "https://github.com/ajaxray/markpdf/archive/refs/tags/1.0.1.tar.gz"
   sha256 "df31ae2432b0b321771829a44dce8335642fe616ab1f40a2e80663326683226d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ajaxray/markpdf.git", branch: "master"
 
   bottle do

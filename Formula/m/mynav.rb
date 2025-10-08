@@ -4,6 +4,7 @@ class Mynav < Formula
   url "https://github.com/GianlucaP106/mynav/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "323a1461f90adc233a6778f32b6829b1ed366de39e34477f7c852afaa25facad"
   license "MIT"
+  revision 1
   head "https://github.com/GianlucaP106/mynav.git", branch: "main"
 
   bottle do

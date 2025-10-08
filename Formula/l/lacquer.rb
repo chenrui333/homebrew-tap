@@ -4,6 +4,7 @@ class Lacquer < Formula
   url "https://github.com/lacquerai/lacquer/archive/refs/tags/v0.1.7.tar.gz"
   sha256 "c22d8393f56cc89d9665054de3fa03efac16e41ef6a6d9732c5ea1a208377be7"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/lacquerai/lacquer.git", branch: "main"
 
   bottle do

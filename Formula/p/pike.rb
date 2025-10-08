@@ -5,6 +5,7 @@ class Pike < Formula
   url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v0.3.39.tar.gz"
   sha256 "728c17762378b5469e30637a06b1921414694199da1dc3c317c14f70061cb740"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jamesWoolfenden/pike.git", branch: "master"
 
   bottle do

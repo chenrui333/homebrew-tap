@@ -4,6 +4,7 @@ class Mcpd < Formula
   url "https://github.com/mozilla-ai/mcpd/archive/refs/tags/v0.0.9.tar.gz"
   sha256 "d611fd8cee54f7e1f9f5849d59d825943def80abe8583b49f848a1bae5fd8ac6"
   license "MIT"
+  revision 1
   head "https://github.com/mozilla-ai/mcpd.git", branch: "main"
 
   bottle do

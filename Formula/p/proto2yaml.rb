@@ -4,6 +4,7 @@ class Proto2yaml < Formula
   url "https://github.com/krzko/proto2yaml/archive/refs/tags/v0.6.5.tar.gz"
   sha256 "7a660661d68e92db4c87ec4ea75bd554b8acf9979f62f981eb32b99a0c83e0f1"
   license "MIT"
+  revision 1
   head "https://github.com/krzko/proto2yaml.git", branch: "main"
 
   bottle do

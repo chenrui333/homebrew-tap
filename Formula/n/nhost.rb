@@ -4,6 +4,7 @@ class Nhost < Formula
   url "https://github.com/nhost/cli/archive/refs/tags/v1.31.3.tar.gz"
   sha256 "adb9cf2e6d2fabc81687c97559f1ab62e7373947667b582f1dc5ff93bc972713"
   license "MIT"
+  revision 1
   head "https://github.com/nhost/cli.git", branch: "main"
 
   livecheck do

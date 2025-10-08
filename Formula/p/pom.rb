@@ -5,6 +5,7 @@ class Pom < Formula
   version "0.1.0"
   sha256 "2d661be063d1f8e770d26162bfa3d8d74d019a0e936dd91b652dcd4f9b9c8d87"
   license "MIT"
+  revision 1
   head "https://github.com/maaslalani/pom.git", branch: "main"
 
   bottle do

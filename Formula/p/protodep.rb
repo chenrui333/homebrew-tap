@@ -4,6 +4,7 @@ class Protodep < Formula
   url "https://github.com/stormcat24/protodep/archive/refs/tags/v0.1.8.tar.gz"
   sha256 "0dd26260f604955209c856c179e225cdc956fe7ba7f92f33a4f1d5d8d86d30aa"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

@@ -4,6 +4,7 @@ class Lstags < Formula
   url "https://github.com/ivanilves/lstags/archive/refs/tags/v1.2.23.tar.gz"
   sha256 "43ecc6b925e85cb6656b0114cc1404611cb5a4c50e0eeda80bcf5727ebf8c187"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ivanilves/lstags.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Plandex < Formula
   url "https://github.com/plandex-ai/plandex/archive/refs/tags/cli/v2.2.1.tar.gz"
   sha256 "04f80a0244e041e5366bd4947e9a83b29b67e25e9f9cf643d8811fe83a3190bc"
   license "MIT"
+  revision 1
   head "https://github.com/plandex-ai/plandex.git", branch: "main"
 
   livecheck do

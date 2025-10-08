@@ -5,6 +5,7 @@ class Sato < Formula
   url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.34.tar.gz"
   sha256 "6e9be240d6fbdd747886ec4cdcc02677cf5e36a725e3f642e89696cca7152902"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/JamesWoolfenden/sato.git", branch: "master"
 
   bottle do

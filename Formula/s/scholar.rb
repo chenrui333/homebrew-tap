@@ -4,6 +4,7 @@ class Scholar < Formula
   url "https://github.com/cgxeiji/scholar/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "9c17246667f0d435dd8e1be63aedc605aa351d749ab865b8b8393e4b9268158f"
   license "MIT"
+  revision 1
   head "https://github.com/cgxeiji/scholar.git", branch: "master"
 
   bottle do
