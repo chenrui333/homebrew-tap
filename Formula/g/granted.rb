@@ -6,6 +6,14 @@ class Granted < Formula
   license "MIT"
   head "https://github.com/fwdcloudsec/granted.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e01e3166379346a656edb8a5567f0bfede6d23076e5b17bd68d9dcdbef0a09ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e1d16ef6d47bebe5ba378b4d01e6aa00dfadbe949ffab195b3279ff3a58b0a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f6e95d65590878cb7bf0d25dc372da192f20dfd2cde599eb5b85366a33cc185"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b393c23adc6be87ad1024db46524103ea5a4db18e3d5f9b9382b8fa41ffad88"
+  end
+
   depends_on "go" => :build
 
   def install
