@@ -4,6 +4,7 @@ class Jplot < Formula
   url "https://github.com/rs/jplot/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "e2d1aa4cf81a61cdcea0b190f18a8ee7502093faf77c48f54c2741b457b4f298"
   license "MIT"
+  revision 1
   head "https://github.com/rs/jplot.git", branch: "master"
 
   bottle do

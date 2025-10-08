@@ -5,6 +5,7 @@ class Hcldump < Formula
   version "0.0.0"
   sha256 "dd58066f20000b68599c038e90479aca2bacd0700546050d7f6eaf030e51cd22"
   # no license
+  revision 1
   head "https://github.com/magodo/hcldump.git", branch: "master"
 
   bottle do

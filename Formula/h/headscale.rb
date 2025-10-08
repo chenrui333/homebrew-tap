@@ -4,6 +4,7 @@ class Headscale < Formula
   url "https://github.com/juanfont/headscale/archive/refs/tags/v0.26.1.tar.gz"
   sha256 "8a19bfaaa1533ab69b63e9cef4658758aad79dadd43088c6cc7313ab88df7de5"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/juanfont/headscale.git", branch: "main"
 
   bottle do

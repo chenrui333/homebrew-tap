@@ -4,6 +4,7 @@ class Firectl < Formula
   url "https://github.com/firecracker-microvm/firectl/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "4d3d2f2b404e9e0bbeb3a1816c56db69b5d93c85523b135fc39c38566afd0233"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/firecracker-microvm/firectl.git", branch: "main"
 
   bottle do

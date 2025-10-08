@@ -4,6 +4,7 @@ class Kube2pulumi < Formula
   url "https://github.com/pulumi/kube2pulumi/archive/refs/tags/v0.0.17.tar.gz"
   sha256 "1e2286e8d981e1abd0e96ff3c847b4c48af79fdcf4f081fd16918b554d1342f7"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/pulumi/kube2pulumi.git", branch: "master"
 
   bottle do

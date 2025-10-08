@@ -5,6 +5,7 @@ class Ghfetch < Formula
   url "https://github.com/orangekame3/ghfetch/archive/refs/tags/v0.0.19.tar.gz"
   sha256 "ad7199da9a19d966fa88c14f5365d076661390b014653932ff7e7a39845d0431"
   license "MIT"
+  revision 1
   head "https://github.com/orangekame3/ghfetch.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class Gix < Formula
   url "https://github.com/ademajagon/gix/archive/refs/tags/v0.2.6.tar.gz"
   sha256 "bc8301ebb6b6b83445d4b8f99ed451c7a68b396bac8bc7059fe5ea5497881535"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

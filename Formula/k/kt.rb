@@ -4,6 +4,7 @@ class Kt < Formula
   url "https://github.com/fgeller/kt/archive/refs/tags/v13.1.1.tar.gz"
   sha256 "75031bd1d63b08b4f3d8e4b59eb1c9157d21d69f483bb1355933dc09f50f888d"
   license "MIT"
+  revision 1
   head "https://github.com/fgeller/kt.git", branch: "main"
 
   livecheck do

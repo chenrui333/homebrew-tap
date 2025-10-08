@@ -4,6 +4,7 @@ class Iftree < Formula
   url "https://github.com/t1anz0ng/iftree/archive/refs/tags/v0.0.10.tar.gz"
   sha256 "89ca2bb7ccb2d3cae4eef7679cb4856ec093aa1dcb3f6952c5d47d740dfbdcbe"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/t1anz0ng/iftree.git", branch: "main"
 
   livecheck do

@@ -4,6 +4,7 @@ class Fli < Formula
   url "https://github.com/fractalops/fli/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "4b3c7c454fef762209b4fe879e205ecbc51126625172675ad1ea8f60dc47df82"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

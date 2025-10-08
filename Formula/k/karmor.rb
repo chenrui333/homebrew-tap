@@ -4,6 +4,7 @@ class Karmor < Formula
   url "https://github.com/kubearmor/kubearmor-client/archive/refs/tags/v1.4.4.tar.gz"
   sha256 "4f032e427c6bfc1bac70da2b856ddbabab107d071231653d245293a540524ca1"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kubearmor/kubearmor-client.git", branch: "main"
 
   bottle do

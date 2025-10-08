@@ -4,6 +4,7 @@ class Kbst < Formula
   url "https://github.com/kbst/kbst/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "a02615028a00f4ce1e0121f3c8822dc5245f79e4e34bb85de48cc6ba6b3d5047"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kbst/kbst.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class Hyperbolic < Formula
   url "https://github.com/HyperbolicLabs/hyperbolic-cli/archive/refs/tags/v0.0.3.tar.gz"
   sha256 "c6c88cbd0f48d67df9688a50b59b13fc3bd6b24cd4274e142f63d7fd1d8b7928"
   license "MIT"
+  revision 1
   head "https://github.com/HyperbolicLabs/hyperbolic-cli.git", branch: "main"
 
   bottle do

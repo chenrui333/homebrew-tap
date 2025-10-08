@@ -4,6 +4,7 @@ class GeminiCli < Formula
   url "https://github.com/reugn/gemini-cli/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "5ab91899025696f63a6cf18d8f3cccd757e6bedcbe49277c2f9b0d62d27bd9a9"
   license "MIT"
+  revision 1
   head "https://github.com/reugn/gemini-cli.git", branch: "main"
 
   bottle do

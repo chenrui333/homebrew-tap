@@ -4,6 +4,7 @@ class FlintCli < Formula
   url "https://github.com/ccheshirecat/flint/archive/refs/tags/v1.27.0.tar.gz"
   sha256 "c5c472a0a1dcb7133692ca3c5058c3a38f4409ae78662a085c6c87bda975917e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

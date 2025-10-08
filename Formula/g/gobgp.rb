@@ -4,6 +4,7 @@ class Gobgp < Formula
   url "https://github.com/osrg/gobgp/archive/refs/tags/v3.37.0.tar.gz"
   sha256 "198c82cf77a73872350f10a3567096009b3794929a1aaf348c4924785a99d087"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/osrg/gobgp.git", branch: "master"
 
   bottle do

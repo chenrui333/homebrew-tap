@@ -4,6 +4,7 @@ class Grmon < Formula
   url "https://github.com/bcicen/grmon/archive/refs/tags/v0.1.tar.gz"
   sha256 "5a01e42a168e822e96ab08848a8c6b2db990ed41d5581fd98759b6fd98dfc364"
   license "MIT"
+  revision 1
   head "https://github.com/bcicen/grmon.git", branch: "master"
 
   bottle do

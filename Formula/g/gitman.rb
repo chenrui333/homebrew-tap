@@ -4,6 +4,7 @@ class Gitman < Formula
   url "https://github.com/pyrod3v/gitman/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "52525be583585adf0d07d735db753cffd036258acab91190a27d64b358092314"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/pyrod3v/gitman.git", branch: "main"
 
   bottle do

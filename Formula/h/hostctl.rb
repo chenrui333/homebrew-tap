@@ -5,6 +5,7 @@ class Hostctl < Formula
   url "https://github.com/guumaster/hostctl/archive/refs/tags/v1.1.4.tar.gz"
   sha256 "c3df61772bb0f521def04e3fff2bda652725ee2dfb4c58e10456d84e94f67003"
   license "MIT"
+  revision 1
   head "https://github.com/guumaster/hostctl.git", branch: "master"
 
   bottle do

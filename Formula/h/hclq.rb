@@ -5,6 +5,7 @@ class Hclq < Formula
   version "0.5.3"
   sha256 "d9f1fcf3e282fcceef978754fe16118c31eeb5350294f312b45182cb75967883"
   license "Unlicense"
+  revision 1
   head "https://github.com/mattolenik/hclq.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Krs < Formula
   url "https://github.com/mhausenblas/krs/archive/refs/tags/0.2.tar.gz"
   sha256 "be745bd8c96a95a06f453bdc55e893b5afcdf305a622e94a76af054ae61d1b56"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/mhausenblas/krs.git", branch: "master"
 
   livecheck do

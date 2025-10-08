@@ -4,6 +4,7 @@ class Jl < Formula
   url "https://github.com/koenbollen/jl/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "91d01ace8795f156a84d0d0294451ba5d9b5a3ee2b00cb27852cf901657fc115"
   license "ISC"
+  revision 1
   head "https://github.com/koenbollen/jl.git", branch: "master"
 
   bottle do

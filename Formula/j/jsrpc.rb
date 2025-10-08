@@ -4,6 +4,7 @@ class Jsrpc < Formula
   url "https://github.com/jxhczhl/JsRpc/archive/refs/tags/v1.095.tar.gz"
   sha256 "4bc104d1c3ccf46034db063d82f5ba1d0fa6f131501644594c17cfdcbce53044"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/jxhczhl/JsRpc.git", branch: "main"
 
   bottle do

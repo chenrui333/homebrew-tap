@@ -4,6 +4,7 @@ class Gowebly < Formula
   url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.0.5.tar.gz"
   sha256 "1fb7c5ffc04ece4478c6579ccde4f7df82aeccab96e59cd2330fb223627a84a5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/gowebly/gowebly.git", branch: "main"
 
   bottle do

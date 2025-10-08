@@ -5,6 +5,7 @@ class Giq < Formula
   url "https://github.com/doganarif/giq/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "d66f7b67138527c087c9a1b421d9717fa9fa91f673e6a12a02aaa571a85bdd9f"
   license "MIT"
+  revision 1
   head "https://github.com/doganarif/giq.git", branch: "main"
 
   bottle do

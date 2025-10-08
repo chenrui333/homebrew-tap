@@ -4,6 +4,7 @@ class JsonlGraph < Formula
   url "https://github.com/nikolaydubina/jsonl-graph/archive/refs/tags/v1.2.3.tar.gz"
   sha256 "cd61614046413f942cb9bb1417d1e8ff2aa5ab9ccad8c78bd2aab73fb455ae3d"
   license "MIT"
+  revision 1
   head "https://github.com/nikolaydubina/jsonl-graph.git", branch: "main"
 
   bottle do

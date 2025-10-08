@@ -4,6 +4,7 @@ class Jaggr < Formula
   url "https://github.com/rs/jaggr/archive/refs/tags/1.0.1.tar.gz"
   sha256 "3277e0b459cc5930e504faa8719c61327fd69c4f840bbc6a08ddd78f6f0e8c0c"
   license "MIT"
+  revision 1
   head "https://github.com/rs/jaggr.git", branch: "master"
 
   bottle do

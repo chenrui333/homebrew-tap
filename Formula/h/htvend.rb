@@ -5,6 +5,7 @@ class Htvend < Formula
   version "0.0.1"
   sha256 "79890c69f1c16e2b16c4f12633dfc652f6e3c8f5a0480be941903d5a5ac5d0ff"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
