@@ -9,10 +9,11 @@ class Dbee < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "886526a70a83380147335f8914b9766de45cc74fbb7e73bd3dca75ae09537695"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "753f95855d36463a4043da50067e501e3da806c2a41ace3e64f5d2cb3791d8fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "5714ad5a05eb7a62b721b77128e08b1f2d2cb53eb5ed391dd395da76b1540ab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49c4f46a8537b352c66ac0c6045afc5fbff56bcdefdd2693634f8c394a929ec6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d11c23c976c685cef5034c5d95dfa184166a1184b959822c57cd35b39a7c3cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d11c23c976c685cef5034c5d95dfa184166a1184b959822c57cd35b39a7c3cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d11c23c976c685cef5034c5d95dfa184166a1184b959822c57cd35b39a7c3cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f52731eebdd10ed82a6bcf3b18583c90ff4ca9a6cd89fac6b5d2e5e8d4bca5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "845a67cd4e2775ebc276e694164831612bc5b6e6b7c340a926cf2f9367f791c9"
   end
 
   depends_on "go" => :build
