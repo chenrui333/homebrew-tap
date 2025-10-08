@@ -4,6 +4,7 @@ class GoEnvsubst < Formula
   url "https://github.com/a8m/envsubst/archive/refs/tags/v1.4.3.tar.gz"
   sha256 "01ca48a2beaeeda5b9fbca9c46bb9e9acc0e55354761d90e4beba5ca1c97aa8b"
   license "MIT"
+  revision 1
   head "https://github.com/a8m/envsubst.git", branch: "master"
 
   bottle do

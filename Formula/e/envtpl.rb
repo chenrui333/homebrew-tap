@@ -4,6 +4,7 @@ class Envtpl < Formula
   url "https://github.com/chenrui333/envtpl/archive/refs/tags/v2.0.5.tar.gz"
   sha256 "ae7f12c22fd79174179e5173e36137da97b2999d734d68025ab39a200300f54e"
   license "MIT"
+  revision 1
   head "https://github.com/chenrui333/envtpl.git", branch: "main"
 
   bottle do
