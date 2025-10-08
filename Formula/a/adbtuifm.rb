@@ -9,10 +9,11 @@ class Adbtuifm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ba495be52869769df731a9869a941657bc9f5ca937b392648905c5abbe9af81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3c5a6211667d84228832ec7e008799ebfd7181dac427425e809a234f841f34d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5eb118922e2a01e743d288a42e482e480da1bdfda497392b3978d25109cd52f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8084e18b4b741e531dd44b55b815e0e957673a2ad266e72c411ca590c44be6cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45e4ee75df4fd3eaad37e1b9efef474e11c0c6d3e66ff582212da6fb3761ce30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45e4ee75df4fd3eaad37e1b9efef474e11c0c6d3e66ff582212da6fb3761ce30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45e4ee75df4fd3eaad37e1b9efef474e11c0c6d3e66ff582212da6fb3761ce30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a72cfad8603ec0bba4c2dfea775c8cfd15330d32bac3b9e0f1ca6cf139fc1000"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa1de2bea0c4f2309f4ffae15a96e14f6f82855f1e50cbcf580c3ae14d4e29a"
   end
 
   depends_on "go" => :build
