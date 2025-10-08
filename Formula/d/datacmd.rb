@@ -9,10 +9,11 @@ class Datacmd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b11f2b9bce33dc893724d9dac77bdbe4092b74744c4046ae1d8a160cb17af7ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ec7edd654c2a5c362e0758dd0e304b48c7e508215861ccf2e15915352b1b807"
-    sha256 cellar: :any_skip_relocation, ventura:       "dc23c8622ee3418daad721d2b42cebb9e522d3fce5963c29dd9326a9c9c0347a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5c0b53d22f6b89f9339805834eab7e6fdc15589197441daee12bac83760ff8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f1f08c3c942e167642efd382542487fb8671d37ec40cde54dc0242cd1d70da6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1978aa5c6acff5167527f5c148c39f0ef14cac5d80730b36612daa575f706e0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88cea9dd3e34045563194ebbb4deffee40f185f45ef04aad2e267e1afa16d7bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "915b7c142f21782fed51f16d7402665fa21f9457f422cd8bd5837d3e6428dc72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aad098cdecdec9a87974a3419999d0286cbf685f75cd0e1c53d28b7e020eda58"
   end
 
   depends_on "go" => :build
