@@ -5,6 +5,7 @@ class Dnsforwarder < Formula
   version "0.0.1"
   sha256 "c9d31f26db8b641ecd50c0ef02bd1dbfbdbd61842ca3bbb7dd853e24ef6f8e93"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/Kk-ships/dnsforwarder.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Ddev < Formula
   url "https://github.com/ddev/ddev/archive/refs/tags/v1.24.8.tar.gz"
   sha256 "73b5d155003e349c32c535bde075447a97201cb609e471636859a3b3806224ee"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ddev/ddev.git", branch: "main"
 
   bottle do

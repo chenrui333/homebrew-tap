@@ -7,6 +7,7 @@ class Dbin < Formula
   # RABRMS is not a valid SPDX-License-Identifier
   # license any_of: ["ISC", "RABRMS"]
   license "ISC"
+  revision 1
   head "https://github.com/xplshn/dbin.git", branch: "master"
 
   bottle do

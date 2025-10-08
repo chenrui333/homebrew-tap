@@ -4,6 +4,7 @@ class Dbee < Formula
   url "https://github.com/murat-cileli/dbee/archive/refs/tags/v0.2.2.tar.gz"
   sha256 "4a1994a02dbc1d6f64aa7a2554f0a172603e7ba1f3fe9b4ab4481f1be1182c7f"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/murat-cileli/dbee.git", branch: "main"
 
   bottle do

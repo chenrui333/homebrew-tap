@@ -4,6 +4,7 @@ class DiTui < Formula
   url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.11.3.tar.gz"
   sha256 "c51a19ba85a3370ffe13caba0967eebb61a3f3202a761d624640622778e62dfc"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/acaloiaro/di-tui.git", branch: "main"
 
   bottle do
