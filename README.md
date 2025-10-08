@@ -68,6 +68,7 @@ brew install --cask <tool>
 - `base-mcp-server`
 - `bearer`
 - `beelzebub`
+- `bin-fq`
 - `blade-formatter`
 - `blindfold`
 - `blue`
@@ -168,7 +169,6 @@ brew install --cask <tool>
 - `envie`
 - `envtpl`
 - `go-envsubst`
-- `bin-jq`
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
