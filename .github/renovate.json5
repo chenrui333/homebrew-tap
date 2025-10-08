@@ -14,7 +14,9 @@
   ],
   platformAutomerge: true,
   labels: [
+    'CI-syntax-only',
     'dependencies',
+    'renovate',
   ],
   vulnerabilityAlerts: {
     enabled: true,
