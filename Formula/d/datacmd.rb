@@ -4,6 +4,7 @@ class Datacmd < Formula
   url "https://github.com/VincenzoManto/Datacmd/archive/refs/tags/v0.0.3.1.tar.gz"
   sha256 "15a1ffd74f667960b556f5b601991204b068217a71e2e350133dbb1c0f6a1f05"
   license "MIT"
+  revision 1
   head "https://github.com/VincenzoManto/Datacmd.git", branch: "main"
 
   bottle do
