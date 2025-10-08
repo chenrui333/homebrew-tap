@@ -9,10 +9,11 @@ class Blush < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e4965bcf1d5c76f970c887b6ceb0b3ad781a96da41aa578d2216cd24ff65275"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f5239d798d04c3f2f38363014e313ab070b30aeca154dee51dfda0a5760e436"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc466066f6da541f0a8873fd5e5f82ab1dbd70d450fb3ad9d81b9dae4a5e0be0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed0d94801b9e22702add2c7618aa2de11350f719725ae462e53ae8c56f64359d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06bf30af4fa379fb0743773ed96c650876086a807a19cd8b40fb133807bf730c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06bf30af4fa379fb0743773ed96c650876086a807a19cd8b40fb133807bf730c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06bf30af4fa379fb0743773ed96c650876086a807a19cd8b40fb133807bf730c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55e42a9d76081b4d12b8157a1de4c50b25655972968bf64fd5c34de6ab121fee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa81fbebaff23335cba4c4a914d3decae53777b1e2e1f063605aa8e96eaadc40"
   end
 
   depends_on "go" => :build
