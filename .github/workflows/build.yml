@@ -59,7 +59,7 @@ jobs:
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Check for CI labels
         id: check-labels
         uses: actions/github-script@v7
@@ -97,8 +97,6 @@ jobs:
           - runner: 'macos-15'
             cleanup: true
           - runner: 'macos-14'
-            cleanup: true
-          - runner: 'macos-14-x86_64'
             cleanup: true
           - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-runner || 'ubuntu-22.04' }}
             container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
@@ -140,7 +138,7 @@ jobs:
             export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
             export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
           fi
-          
+
           # Use custom args for PR events, default args otherwise
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
