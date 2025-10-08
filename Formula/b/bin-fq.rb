@@ -6,6 +6,15 @@ class BinFq < Formula
   license "Apache-2.0"
   head "https://github.com/wader/fq.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e10571e06f0676cdc614302172b87a2562e061f444238d6712d57df724a6f25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e10571e06f0676cdc614302172b87a2562e061f444238d6712d57df724a6f25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e10571e06f0676cdc614302172b87a2562e061f444238d6712d57df724a6f25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c08a74799531419d24c5e09815203ddc882cb47b06c59f6f61209da3ea6256f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f411a4b2f1fa0eff803912a1d8f6e09ca7c1d8f5056fc68d7ee3625c5e53929"
+  end
+
   depends_on "go" => :build
 
   def install
