@@ -1,6 +1,9 @@
 name: Build and Test Formulae
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
   workflow_dispatch:
 
@@ -79,8 +82,13 @@ jobs:
             }
 
   build-formula:
-    needs: set-environment
-    if: github.event_name == 'pull_request' && needs.set-environment.outputs.syntax-only != 'true'
+    needs: [tap-syntax, set-environment]
+    if: |
+      always() &&
+      !cancelled() &&
+      (needs.tap-syntax.result == 'success' || needs.tap-syntax.result == 'skipped') &&
+      (needs.set-environment.result == 'success' || needs.set-environment.result == 'skipped') &&
+      (github.event_name != 'pull_request' || needs.set-environment.outputs.syntax-only != 'true')
     strategy:
       matrix:
         include:
@@ -92,20 +100,20 @@ jobs:
             cleanup: true
           - runner: 'macos-14-x86_64'
             cleanup: true
-          - runner: ${{needs.set-environment.outputs.linux-runner}}
-            container: ${{fromJson(needs.set-environment.outputs.container)}}
+          - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-runner || 'ubuntu-22.04' }}
+            container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
             workdir: /github/home
             cleanup: false
             timeout: 4320
-          - runner: ${{needs.set-environment.outputs.linux-arm64-runner}}
-            container: ${{fromJson(needs.set-environment.outputs.container)}}
+          - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-arm64-runner || 'ubuntu-22.04-arm' }}
+            container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
             workdir: /github/home
             cleanup: false
             timeout: 4320
-      fail-fast: ${{fromJson(needs.set-environment.outputs.fail-fast)}}
+      fail-fast: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.fail-fast) || false }}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
-    timeout-minutes: ${{ matrix.timeout || fromJson(needs.set-environment.outputs.timeout-minutes) }}
+    timeout-minutes: ${{ matrix.timeout || (github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.timeout-minutes) || 240) }}
     defaults:
       run:
         shell: /bin/bash -e {0}
@@ -121,7 +129,7 @@ jobs:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
 
-      - name: Run brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
+      - name: Run brew test-bot
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
         run: |
@@ -133,7 +141,12 @@ jobs:
             export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
           fi
           
-          brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
+          # Use custom args for PR events, default args otherwise
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
+          else
+            brew test-bot --only-formulae --skip-recursive-dependents --root-url="https://ghcr.io/v2/chenrui333/tap"
+          fi
 
       - name: Post-build steps
         if: always()
@@ -146,7 +159,7 @@ jobs:
 
   label-pr:
     needs: build-formula
-    if: github.event_name == 'pull_request'
+    if: success() && github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     permissions:
       pull-requests: write
