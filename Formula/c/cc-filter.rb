@@ -4,6 +4,7 @@ class CcFilter < Formula
   url "https://github.com/wissem/cc-filter/archive/refs/tags/v0.0.3.tar.gz"
   sha256 "7b8a196dd7ba360fa5c1bebb45e7145ee26f6f3993caaa015a68ac739fe3039a"
   license "MIT"
+  revision 1
   head "https://github.com/wissem/cc-filter.git", branch: "main"
 
   bottle do

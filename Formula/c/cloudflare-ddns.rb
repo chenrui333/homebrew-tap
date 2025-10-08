@@ -4,6 +4,7 @@ class CloudflareDdns < Formula
   url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.15.1.tar.gz"
   sha256 "8f2288e84257a445934e02500db2b778e17e41d0be059a38170ec8bfff6caa1d"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https://github.com/favonia/cloudflare-ddns.git", branch: "main"
 
   bottle do

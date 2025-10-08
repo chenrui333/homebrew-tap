@@ -5,6 +5,7 @@ class Cocainate < Formula
   url "https://github.com/AppleGamer22/cocainate/archive/refs/tags/v1.1.4.tar.gz"
   sha256 "c49a871e30647155f064704ae39084406d0506f52f8b1362b150e1bc239950e8"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/AppleGamer22/cocainate.git", branch: "master"
 
   bottle do

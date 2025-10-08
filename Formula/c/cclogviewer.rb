@@ -4,6 +4,7 @@ class Cclogviewer < Formula
   url "https://github.com/Brads3290/cclogviewer/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "1e95505212ae110ca1271eb3dc5c178a5913c3abe78337ea797e49c0ed7794d4"
   license "MIT"
+  revision 1
   head "https://github.com/Brads3290/cclogviewer.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class Chatlog < Formula
   url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.29.tar.gz"
   sha256 "3d89406c9b19e94fa3b0f7a8504d60233091eb1e86c95af69c8f24bf78e16755"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

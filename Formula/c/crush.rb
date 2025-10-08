@@ -4,6 +4,7 @@ class Crush < Formula
   url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.10.4.tar.gz"
   sha256 "24074bbf98871966061ca364458d6dfa0c319dcd7910437cc3dcc9911e90113b"
   # license "FSL-1.1-MIT"
+  revision 1
   head "https://github.com/charmbracelet/crush.git", branch: "main"
 
   bottle do

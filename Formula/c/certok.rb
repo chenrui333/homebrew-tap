@@ -4,6 +4,7 @@ class Certok < Formula
   url "https://github.com/genuinetools/certok/archive/refs/tags/v0.5.5.tar.gz"
   sha256 "e874b7a04781ca5b056a53f3a7082ab91bd68e3841789e6d9aeab90ac5976149"
   license "MIT"
+  revision 1
 
   livecheck do
     skip "no recent releases"

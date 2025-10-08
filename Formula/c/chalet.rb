@@ -4,6 +4,7 @@ class Chalet < Formula
   url "https://github.com/chalet-dev/chalet/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "df98043f4258d9a55e6dd41f2e9a8a302cbc7740974ae77fe43926953bea223c"
   license "MIT"
+  revision 1
   head "https://github.com/chalet-dev/chalet.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class Cueimports < Formula
   url "https://github.com/asdine/cueimports/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "8437f1118cdb93848cd47db7688bb66889938e66ba4a5eccdeb449a1dfd5f033"
   license "MIT"
+  revision 1
   head "https://github.com/asdine/cueimports.git", branch: "main"
 
   bottle do

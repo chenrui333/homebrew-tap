@@ -4,6 +4,7 @@ class Cozypkg < Formula
   url "https://github.com/cozystack/cozypkg/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "5852fcafe6dd3e354c328d6b89adc3a61b7eb40f681d91a099d614f927d93ce9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/cozystack/cozypkg.git", branch: "main"
 
   bottle do
