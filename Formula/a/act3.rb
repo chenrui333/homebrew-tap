@@ -4,6 +4,7 @@ class Act3 < Formula
   url "https://github.com/dhth/act3/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "5ba04d59ba44e659a0a23eee674923acd92c4bfd622e12bcf8bd993468699fe9"
   license "MIT"
+  revision 1
   head "https://github.com/dhth/act3.git", branch: "main"
 
   bottle do

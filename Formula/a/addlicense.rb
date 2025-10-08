@@ -4,6 +4,7 @@ class Addlicense < Formula
   url "https://github.com/google/addlicense/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "d2e05668e6f3da9b119931c2fdadfa6dd19a8fc441218eb3f2aec4aa24ae3f90"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/google/addlicense.git", branch: "main"
 
   bottle do

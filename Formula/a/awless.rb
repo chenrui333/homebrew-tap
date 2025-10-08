@@ -4,6 +4,7 @@ class Awless < Formula
   url "https://github.com/wallix/awless/archive/refs/tags/v0.1.11.tar.gz"
   sha256 "1a78636face8753cb983a5e4c1e3bfc9e1940e7eb932aa01fe2cbded46fd4292"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/wallix/awless.git", branch: "master"
 
   bottle do

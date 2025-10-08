@@ -4,6 +4,7 @@ class Abc < Formula
   url "https://github.com/appbaseio/abc/archive/refs/tags/1.0.0.tar.gz"
   sha256 "d140cbb2573c4e77d8402fe6263fd866595cac27154e9981374cc716bf5f2bc0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/appbaseio/abc.git", branch: "dev"
 
   bottle do

@@ -5,6 +5,7 @@ class AiContext < Formula
   url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.14.tar.gz"
   sha256 "09ddbb4bc8eaf9c20ffed53dc9886057bdd5207b62e6ed9485b90369dda57ac6"
   license "MIT"
+  revision 1
   head "https://github.com/Tanq16/ai-context.git", branch: "main"
 
   bottle do

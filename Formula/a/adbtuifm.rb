@@ -4,6 +4,7 @@ class Adbtuifm < Formula
   url "https://github.com/darkhz/adbtuifm/archive/refs/tags/v0.5.8.tar.gz"
   sha256 "1483c1dbf1a7bbd610f27d7ad3039f4731ca456fa059b5f84d3bb532e79efc66"
   license "MIT"
+  revision 1
   head "https://github.com/darkhz/adbtuifm.git", branch: "main"
 
   bottle do

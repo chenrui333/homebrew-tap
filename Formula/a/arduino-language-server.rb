@@ -4,6 +4,7 @@ class ArduinoLanguageServer < Formula
   url "https://github.com/arduino/arduino-language-server/archive/refs/tags/0.7.7.tar.gz"
   sha256 "ac9e63e3bd971ba85cdd33e19d736effde804114156b4bf3c0a969ba2d7395c3"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

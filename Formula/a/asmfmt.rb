@@ -4,6 +4,7 @@ class Asmfmt < Formula
   url "https://github.com/klauspost/asmfmt/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "4bb6931aefcf105c0e0bc6d239845f6350aceba5b2b76e84c961ba8d100f8fc6"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

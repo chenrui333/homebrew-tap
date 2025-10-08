@@ -4,6 +4,7 @@ class AzTui < Formula
   url "https://github.com/IAL32/az-tui/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "da6015c53c265fd618cf461a9c84b53ec3f7c5e5db38df15df5191888483e681"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
