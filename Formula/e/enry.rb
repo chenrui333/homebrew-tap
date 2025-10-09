@@ -9,10 +9,11 @@ class Enry < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d4b4122bad5b7dd5f52aec3fd1496eea4f523ae6142997d1c2f4dc8ab487d5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "915adaf0cf0a1d9744ad238639e76098337af96e9fa8bc61b1b47a6067367174"
-    sha256 cellar: :any_skip_relocation, ventura:       "68a1c5aa23e62f72dc92b1b95058eb603d34682b2bd4e32a4fd4cf3b93e8182c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88bc7612e1d31883553e890ae7c2e880136c93f7429da16d8493e61df7b6e8cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8308f978a1b231d2966eada20f716d87a5362966e827870fbad35dee558d726"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8308f978a1b231d2966eada20f716d87a5362966e827870fbad35dee558d726"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8308f978a1b231d2966eada20f716d87a5362966e827870fbad35dee558d726"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71b63fb25b3f829f58b7e67d19526c733c8f2cb7b1b6508bea5b91d2f1650232"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b24e0c16a52b3479d9bb93a90b00f8b3d96e608d951b053435738c7f98b14104"
   end
 
   depends_on "go" => :build
