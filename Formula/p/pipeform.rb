@@ -19,6 +19,10 @@ class Pipeform < Formula
 
   depends_on "go" => :build
 
+  on_linux do
+    depends_on "libx11"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
