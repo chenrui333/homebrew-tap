@@ -7,10 +7,7 @@ class WeeklyGitSummary < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3d0c93850e0ba598c50b0dd7b8a383d079938ac7faa052f5b588ca7e7d02197"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b21c90da4386dcf3bb2c6922d5627787b7014432f6b71ed7f2ce6108374252b"
-    sha256 cellar: :any_skip_relocation, ventura:       "9d2f46dea0eb67ffd87d529b5c0ab11a0e85363e6df6b269ec348d1246bb8e08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20900f483b3a3d5953ef1ffbe93421c4ef0b5c3eb7f3979f885128d4cbe492a2"
+    sha256 cellar: :any_skip_relocation, all: "8bacb272949ac9d84dfc3db0645053426ff7ec0999706dbba3bf1e8e648cd105"
   end
 
   depends_on "node"
