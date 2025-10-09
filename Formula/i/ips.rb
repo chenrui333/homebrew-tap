@@ -20,6 +20,8 @@ class Ips < Formula
   patch :DATA
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X github.com/sjzar/ips/cmd/ips.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
