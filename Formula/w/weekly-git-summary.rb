@@ -1,8 +1,8 @@
 class WeeklyGitSummary < Formula
   desc "跨平台 CLI 工具，用于生成 Git 提交周报，支持文本、JSON、Markdown"
   homepage "https://github.com/yinzhenyu-su/weekly-git-summary"
-  url "https://registry.npmjs.org/weekly-git-summary/-/weekly-git-summary-1.1.0.tgz"
-  sha256 "96397088089c164823530facece2af86c35c5b29c68ce92ea836a53e6c5f006a"
+  url "https://registry.npmjs.org/weekly-git-summary/-/weekly-git-summary-1.2.0.tgz"
+  sha256 "681860b996949f498a934789004a24afdae5698cc8c57a9384d68ed35fc0a493"
   license "MIT"
 
   bottle do
