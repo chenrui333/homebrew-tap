@@ -9,10 +9,11 @@ class Cclogviewer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67c0442d845a905f1779bd206de87a66a7fe091864b26ecf89d522099b5a19ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b7462a6c9bc52721d9600feedf0baba8760c80c89e99b7e903cd40f38cc6ddb"
-    sha256 cellar: :any_skip_relocation, ventura:       "45f0d47139f5902ccbea5217aad0eaffbfccab20c4926d7f00e533c2369011a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd492b16dc5decb4f6a724cf86a67265bc3da9f3657f3da9794d584845668bb6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af2dc9fa8248a35576da2f591440655d84a9f962f0eaaf2833f263d7bc7c2184"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af2dc9fa8248a35576da2f591440655d84a9f962f0eaaf2833f263d7bc7c2184"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af2dc9fa8248a35576da2f591440655d84a9f962f0eaaf2833f263d7bc7c2184"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2773ec3a96b66e242652b55e320b8bfa23f1202726402131fb8a6dbb4cbb465"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adaa5a0df153980e0f9f23f1642c42fed3847e27b6b9600398b3ca50e6bd83d9"
   end
 
   depends_on "go" => :build
