@@ -9,10 +9,11 @@ class Elastop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc2c8e8f926f49d966dc86eca4fe573c9e9195525f5ee906c1530b925c6acd99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3424d31a2be9527b97cd9f4ed76ddc34878dcd5b9a8e012815af98c4f194921"
-    sha256 cellar: :any_skip_relocation, ventura:       "c3e596a8314f4608fd0d0f0ff0afb05b1e899b87a994cb0cf4bad348b1ccb9fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3e05c857c6de3ae3f9b16bc4e194c84f184299e3e228d3f06f105cbccefa1aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "489df75029f290d88542e11f01be12bc32f3e2cfbb260017c048783e91705512"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "489df75029f290d88542e11f01be12bc32f3e2cfbb260017c048783e91705512"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489df75029f290d88542e11f01be12bc32f3e2cfbb260017c048783e91705512"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74dcba1345ace3a66abaaf032d4daa9122adf567f8e006660d300235bce9bae3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4535adafd5a1c1dac63040d863b0f4c2d573b6926ae43ea3ff6dda8492bea962"
   end
 
   depends_on "go" => :build
