@@ -9,10 +9,11 @@ class Cueimports < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69ff95f54588692b98fedeb0d9fcd5f733ac3fd4bfee67989c717947535c04f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55f2c6c773be144dc99816940036a5a580dc3ea0bbbb6200d77f536657f2fcab"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e79d92713bd94ad0d3eacaaaab20933f9930ebeb9a901d93cc6c7558f9289b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06ecdcc65cd2b9338b0678718764790e48039c5f17a838de6b07aceaf932a672"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "693504383ac3f88e524c59e30e4569d0713c9fce624d152c00c3ad2bdafe4df0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "693504383ac3f88e524c59e30e4569d0713c9fce624d152c00c3ad2bdafe4df0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "693504383ac3f88e524c59e30e4569d0713c9fce624d152c00c3ad2bdafe4df0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "805f169d33aed1e99507bd3f9ba8bdcf0481215b2359d773a5c778e1b4ec768d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "121963ee0a0809a2068a55f63bf0cc0a1694d69d82a45a7e2215525e3daf65cd"
   end
 
   depends_on "go" => :build
