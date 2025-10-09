@@ -9,10 +9,11 @@ class CcFilter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "725a537835555016b590629f2741093a5178facd6a6288c83ee49be432f8ba86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1065d93e121ee3280c1381736a4e1d05bed01b83c2f5762b4ce54dbf11c76063"
-    sha256 cellar: :any_skip_relocation, ventura:       "06cb5f5514f0b942b8d2f6c331cabba563c0613dcae09e5930e4d2dc05fb95fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be3bfa8e11f8cd1ec1562e9a9340641de14212d515e2a6f9d9a79a5add11734"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9411141673b6e6b4d313f9e9ce8d8113a676b6784179cac342d91313c358df20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9411141673b6e6b4d313f9e9ce8d8113a676b6784179cac342d91313c358df20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9411141673b6e6b4d313f9e9ce8d8113a676b6784179cac342d91313c358df20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b4cf307f470e8496acd36499d4118031be62b6152f9360eafb4f6e1152ee36f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a5907ca52ef932837ba8f65971343fa6d1f83a50361678a37cc40ab111b344"
   end
 
   depends_on "go" => :build
