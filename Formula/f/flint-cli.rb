@@ -20,6 +20,8 @@ class FlintCli < Formula
   depends_on "qemu"
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     cd "web" do
       system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"
