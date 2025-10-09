@@ -12,10 +12,11 @@ class Certok < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83d4a29052d1c279e449ef42652a33a1f4d087a03d36997429c09b0c2e273105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ee72d6beca808ee3a263d49e95031b7c714d446a752f50819a003167b65da7a"
-    sha256 cellar: :any_skip_relocation, ventura:       "c86e862ae79070e79b32984394a8e11e9d77a7920c87b1cc7a83ab9469fdb466"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a61f4dfba0bdb890bd4348e871592e175b52f33caf425335b132c21a696f5e47"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59fde6f8fffad3f331c81019b8ef8d0bf2945a6706ca3c0f1f204540d8b1eeb9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59fde6f8fffad3f331c81019b8ef8d0bf2945a6706ca3c0f1f204540d8b1eeb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59fde6f8fffad3f331c81019b8ef8d0bf2945a6706ca3c0f1f204540d8b1eeb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "def542c49a33ceb650de99785b7915b5e83bb94ae94a3b13ae1d0377716563b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "184855e4fce0323c959323430da6f424d4bb8655d86509e924d58eb2a31f9a47"
   end
 
   depends_on "go" => :build
