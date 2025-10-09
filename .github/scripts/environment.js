@@ -3,8 +3,6 @@
  * 
  * This script reads PR labels and sets outputs for the build workflow:
  * - syntax-only: Skip expensive build steps if CI-syntax-only label is present
- * - linux-only: Skip macOS runners if linux-only label is present
- * - macos-only: Skip Linux runners if macos-only label is present
  * - linux-runner: Ubuntu runner for x86_64 Linux builds
  * - linux-arm64-runner: Ubuntu runner for ARM64 Linux builds
  * - fail-fast: Whether to stop on first failing matrix build
@@ -27,24 +25,6 @@ module.exports = async ({github, context, core}, formula_detect) => {
     } else {
         console.log('No CI-syntax-only label found. Running tests job.')
         core.setOutput('syntax-only', 'false')
-    }
-
-    // Check for linux-only label
-    if (label_names.includes('linux-only')) {
-        console.log('linux-only label found. Skipping macOS runners.')
-        core.setOutput('linux-only', 'true')
-    } else {
-        console.log('No linux-only label found. Running all platforms.')
-        core.setOutput('linux-only', 'false')
-    }
-
-    // Check for macos-only label
-    if (label_names.includes('macos-only')) {
-        console.log('macos-only label found. Skipping Linux runners.')
-        core.setOutput('macos-only', 'true')
-    } else {
-        console.log('No macos-only label found. Running all platforms.')
-        core.setOutput('macos-only', 'false')
     }
 
     // Configure Linux runners
