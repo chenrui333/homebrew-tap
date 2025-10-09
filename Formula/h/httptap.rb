@@ -4,7 +4,6 @@ class Httptap < Formula
   url "https://github.com/monasticacademy/httptap/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "dc6b99f20b1ab33f6801050a2367529a235c2b1a654d24f908b1f1bf62a36457"
   license "MIT"
-  revision 1
   head "https://github.com/monasticacademy/httptap.git", branch: "main"
 
   bottle do
@@ -16,8 +15,6 @@ class Httptap < Formula
   depends_on :linux
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
