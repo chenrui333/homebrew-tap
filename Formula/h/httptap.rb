@@ -16,6 +16,8 @@ class Httptap < Formula
   depends_on :linux
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
