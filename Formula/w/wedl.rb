@@ -4,7 +4,6 @@ class Wedl < Formula
   url "https://github.com/gnojus/wedl/archive/refs/tags/v0.1.11.tar.gz"
   sha256 "1d52adf91a6a0424e54610741b48384135ee2e7c4c2bf13e8a9f6f4d301dd1dc"
   license "Unlicense"
-  revision 1
   head "https://github.com/gnojus/wedl.git", branch: "master"
 
   bottle do
@@ -18,8 +17,6 @@ class Wedl < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
