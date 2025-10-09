@@ -9,10 +9,11 @@ class Crlfmt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be4ece60f4fc4dba16581bc96919333aad12c5f39b5c56da9205c68306649847"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "432995552c8a2d87a374407d52b391406c6bcd85d5f6257d7a3e65a30859b306"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c1b715e6cee129a23a0a2b5f1796c5d93934de29dc66375b9a39c7c43d604b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7e96e651956d88f355f39929a22ae3cb6217cf9cd9e1ebfcc18e6aafcc695f6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10cae0690c75f1cc4472e55d218f7227f5e4820e6484de961ee7a3c2af83ba08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10cae0690c75f1cc4472e55d218f7227f5e4820e6484de961ee7a3c2af83ba08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10cae0690c75f1cc4472e55d218f7227f5e4820e6484de961ee7a3c2af83ba08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "948ccd6c07a4120d699c0869224d15a6850ff4866a50b7eb053ee27007adf60f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6801133bb2f575c7f4c8a3181f664268d91b9d8f66cda484f63bac5c0d9d3d2"
   end
 
   depends_on "go" => :build
