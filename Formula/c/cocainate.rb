@@ -10,10 +10,11 @@ class Cocainate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91c81a350c430224019d60681b169ef98fbe8401ecfca9e7562be77e6e2580f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d484ca4d926579b48281c4a6674237d77c95a08fb7037b4c5d5bb84479cbc027"
-    sha256 cellar: :any_skip_relocation, ventura:       "dfa23a0c3c4fb8c1cd19ea33ac52b1a8da7845edc0df2b07d104032482030650"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3827812184a94d8c4c2c26476d2a8c2e4b1d660e99629b3870102252d42baab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1680c934a297eb482d3a9518a587a44ab2fd11b49ef1bf0b1246e10d8408d316"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "140eca5b92915250988b9002a3023f38b93f67f2d974117ea0cc11f952f1d50b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "761c072af5c6aa75bfdf7052894b23b0d0a3fa32d95c19d7e57aa1be9b86b776"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a81050c4544b8477149cbc85bdfbb2595a4a97037ad3244c68d4bc73754e2e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98e40e0bac7c6baa2a13f3667b7c26ca1e32682454790b88e60e6186e129c87b"
   end
 
   depends_on "go" => :build
