@@ -137,34 +137,27 @@ jobs:
       HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
       BOTTLES_DIR: ${{matrix.workdir || github.workspace}}/bottles
     steps:
-      - name: Check if runner should be skipped
-        id: skip-check
-        run: |
-          # Skip macOS runners when linux-only label is present
-          if [[ "${{ github.event_name }}" == "pull_request" && \
-                "${{ needs.set-environment.outputs.linux-only }}" == "true" && \
-                "${{ matrix.skip_on_linux_only }}" == "true" ]]; then
-            echo "Skipping macOS runner for linux-only PR"
-            echo "skip=true" >> $GITHUB_OUTPUT
-          # Skip Linux runners when macos-only label is present
-          elif [[ "${{ github.event_name }}" == "pull_request" && \
-                  "${{ needs.set-environment.outputs.macos-only }}" == "true" && \
-                  "${{ matrix.skip_on_macos_only }}" == "true" ]]; then
-            echo "Skipping Linux runner for macos-only PR"
-            echo "skip=true" >> $GITHUB_OUTPUT
-          else
-            echo "skip=false" >> $GITHUB_OUTPUT
-          fi
-
       - name: Pre-test steps
-        if: steps.skip-check.outputs.skip != 'true'
+        if: |
+          !((github.event_name == 'pull_request' && 
+             needs.set-environment.outputs.linux-only == 'true' && 
+             matrix.skip_on_linux_only == true) ||
+            (github.event_name == 'pull_request' && 
+             needs.set-environment.outputs.macos-only == 'true' && 
+             matrix.skip_on_macos_only == true))
         uses: Homebrew/actions/pre-build@master
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
 
       - name: Run brew test-bot
-        if: steps.skip-check.outputs.skip != 'true'
+        if: |
+          !((github.event_name == 'pull_request' && 
+             needs.set-environment.outputs.linux-only == 'true' && 
+             matrix.skip_on_linux_only == true) ||
+            (github.event_name == 'pull_request' && 
+             needs.set-environment.outputs.macos-only == 'true' && 
+             matrix.skip_on_macos_only == true))
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
         run: |
@@ -184,7 +177,14 @@ jobs:
           fi
 
       - name: Post-build steps
-        if: always() && steps.skip-check.outputs.skip != 'true'
+        if: |
+          always() &&
+          !((github.event_name == 'pull_request' && 
+             needs.set-environment.outputs.linux-only == 'true' && 
+             matrix.skip_on_linux_only == true) ||
+            (github.event_name == 'pull_request' && 
+             needs.set-environment.outputs.macos-only == 'true' && 
+             matrix.skip_on_macos_only == true))
         uses: Homebrew/actions/post-build@master
         with:
           runner: ${{ matrix.runner }}
