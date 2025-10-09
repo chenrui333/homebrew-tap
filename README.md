@@ -168,7 +168,6 @@ brew install --cask <tool>
 - `enry`
 - `envie`
 - `envtpl`
-- `go-envsubst`
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
@@ -201,6 +200,7 @@ brew install --cask <tool>
 - `glom`
 - `glsl-analyzer`
 - `gmap`
+- `go-envsubst`
 - `go-junit-report`
 - `gobgp`
 - `goboscript`
