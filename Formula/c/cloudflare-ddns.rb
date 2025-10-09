@@ -9,10 +9,11 @@ class CloudflareDdns < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8438ef7b6e83af7446aa80b466c6a71660797033c35647adb549c4540bc7187"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6023b280ac9d28aa7715132213c48eef55b67bf081828fb0488d0b318079a995"
-    sha256 cellar: :any_skip_relocation, ventura:       "f4a843c0b11fab977a27f435ff3c5686860b35b63aaf40afb4216f7d2c0b5743"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b9947ea6c56dab19f14324354770a7345102bb121a9d15084fc69d000f411d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e360723140c6af8ec6864b687cd239f7bd28d399466b33623a0adb4f0aeec6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e360723140c6af8ec6864b687cd239f7bd28d399466b33623a0adb4f0aeec6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e360723140c6af8ec6864b687cd239f7bd28d399466b33623a0adb4f0aeec6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "834ad25a604f94971064ebf1394fbdb1ba86d19f3ab690e674354b77fdb87b2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b4a1b939fb34c0bae8b3cc41b0701c02f23663cc061ce36dbbe45921a666d90"
   end
 
   depends_on "go" => :build
