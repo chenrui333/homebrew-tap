@@ -52,6 +52,7 @@ jobs:
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
       linux-only: ${{ steps.check-labels.outputs.linux-only }}
+      macos-only: ${{ steps.check-labels.outputs.macos-only }}
       linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
       linux-arm64-runner: ${{ steps.check-labels.outputs.linux-arm64-runner }}
       fail-fast: ${{ steps.check-labels.outputs.fail-fast }}
@@ -96,27 +97,33 @@ jobs:
           - runner: 'macos-26'
             cleanup: true
             skip_on_linux_only: true
+            skip_on_macos_only: false
           - runner: 'macos-15'
             cleanup: true
             skip_on_linux_only: true
+            skip_on_macos_only: false
           - runner: 'macos-14'
             cleanup: true
             skip_on_linux_only: true
+            skip_on_macos_only: false
           - runner: 'macos-15-intel'
             cleanup: true
             skip_on_linux_only: true
+            skip_on_macos_only: false
           - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-runner || 'ubuntu-22.04' }}
             container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
             workdir: /github/home
             cleanup: false
             timeout: 4320
             skip_on_linux_only: false
+            skip_on_macos_only: true
           - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-arm64-runner || 'ubuntu-22.04-arm' }}
             container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
             workdir: /github/home
             cleanup: false
             timeout: 4320
             skip_on_linux_only: false
+            skip_on_macos_only: true
       fail-fast: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.fail-fast) || false }}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
@@ -138,6 +145,12 @@ jobs:
                 "${{ needs.set-environment.outputs.linux-only }}" == "true" && \
                 "${{ matrix.skip_on_linux_only }}" == "true" ]]; then
             echo "Skipping macOS runner for linux-only PR"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          # Skip Linux runners when macos-only label is present
+          elif [[ "${{ github.event_name }}" == "pull_request" && \
+                  "${{ needs.set-environment.outputs.macos-only }}" == "true" && \
+                  "${{ matrix.skip_on_macos_only }}" == "true" ]]; then
+            echo "Skipping Linux runner for macos-only PR"
             echo "skip=true" >> $GITHUB_OUTPUT
           else
             echo "skip=false" >> $GITHUB_OUTPUT
