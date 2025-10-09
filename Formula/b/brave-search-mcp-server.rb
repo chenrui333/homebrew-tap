@@ -7,7 +7,7 @@ class BraveSearchMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2d6d682b7a98efca600cbbf80753c15be837d9b4aa00d2e43814c67497256e52"
+    sha256 cellar: :any_skip_relocation, all: "f0d10cd616187e0bcbc7978a3de59efeed5ae94543c99133e6adf6527860e971"
   end
 
   depends_on "node"
