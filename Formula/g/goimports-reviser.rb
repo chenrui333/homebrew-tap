@@ -18,6 +18,8 @@ class GoimportsReviser < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     go_version = Formula["go"].version
     ldflags = %W[
       -s -w
