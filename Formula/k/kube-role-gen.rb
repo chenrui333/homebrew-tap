@@ -18,6 +18,8 @@ class KubeRoleGen < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     # patch version
     inreplace "cmd/kube-role-gen/main.go", "0.0.6", version.to_s
 
