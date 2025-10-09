@@ -18,6 +18,10 @@ class Faq < Formula
   depends_on "go" => :build
   depends_on "jq"
 
+  on_macos do
+    depends_on "oniguruma"
+  end
+
   def install
     ldflags = "-s -w -X github.com/jzelinskie/faq/internal/version.Version=#{version}"
     system "go", "build", "-tags", "netgo", *std_go_args(ldflags:), "./cmd/faq"
