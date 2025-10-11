@@ -20,8 +20,6 @@ class Ddev < Formula
   depends_on "docker" => :test
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = "-s -w -X github.com/ddev/ddev/pkg/versionconstants.DdevVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ddev"
 
