@@ -4,6 +4,7 @@ class Kt < Formula
   url "https://github.com/fgeller/kt/archive/refs/tags/v13.1.1.tar.gz"
   sha256 "75031bd1d63b08b4f3d8e4b59eb1c9157d21d69f483bb1355933dc09f50f888d"
   license "MIT"
+  revision 1
   head "https://github.com/fgeller/kt.git", branch: "main"
 
   livecheck do
@@ -22,6 +23,8 @@ class Kt < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildTime=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end

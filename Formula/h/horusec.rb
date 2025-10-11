@@ -4,6 +4,7 @@ class Horusec < Formula
   url "https://github.com/ZupIT/horusec/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "3824728b7b29656416aaf23ff8cbda62fe9921d2fb982c19f8cda4f0df933592"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ZupIT/horusec.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Horusec < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/ZupIT/horusec/cmd/app/version.Version=#{version}
