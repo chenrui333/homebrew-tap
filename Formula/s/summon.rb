@@ -4,6 +4,7 @@ class Summon < Formula
   url "https://github.com/cyberark/summon/archive/refs/tags/v0.10.6.tar.gz"
   sha256 "d97509e13e5895a8ed1a69927b34ea968554180aac174a4cc76ab30d9618c848"
   license "MIT"
+  revision 1
   head "https://github.com/cyberark/summon.git", branch: "main"
 
   bottle do

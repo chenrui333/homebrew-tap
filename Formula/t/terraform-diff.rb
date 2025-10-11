@@ -5,6 +5,7 @@ class TerraformDiff < Formula
   version "0.0.0"
   sha256 "41192ddcfb2f2d01255e166f779f7cb85576c78ebf183d432e398fce0403e2cd"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/contentful-labs/terraform-diff.git", branch: "master"
 
   bottle do

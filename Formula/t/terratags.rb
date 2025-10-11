@@ -4,6 +4,7 @@ class Terratags < Formula
   url "https://github.com/terratags/terratags/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "09a240210158ab578a90e805820a9e89f874796d45f9607efc83e783cf979cf1"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -15,6 +16,8 @@ class Terratags < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 

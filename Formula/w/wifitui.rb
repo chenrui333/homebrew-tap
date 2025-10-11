@@ -4,6 +4,7 @@ class Wifitui < Formula
   url "https://github.com/shazow/wifitui/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "7705cc20e2f4a59418750e4ee51ddb2e475b902315bce6022230c3c31d1cf4c8"
   license "MIT"
+  revision 1
   head "https://github.com/CrociDB/bulletty.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Wifitui < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
   end
 

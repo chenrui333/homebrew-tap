@@ -5,6 +5,7 @@ class Surgeon < Formula
   url "https://github.com/bketelsen/surgeon/archive/refs/tags/v0.2.7.tar.gz"
   sha256 "d769bbb4640965c14eb00952f337d65f39c62886920d2171cc8b168abe4da9fd"
   license "MIT"
+  revision 1
   head "https://github.com/bketelsen/surgeon.git", branch: "main"
 
   bottle do
@@ -18,6 +19,8 @@ class Surgeon < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X main.version=#{version}
