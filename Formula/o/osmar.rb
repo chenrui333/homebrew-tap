@@ -25,7 +25,7 @@ class Osmar < Formula
 
     resource "test_osm_file" do
       url "https://download.geofabrik.de/europe/germany/bremen-latest.osm.pbf"
-      sha256 "cf9d3835cd06f8040a84bcf107a6919a03bd30d766e568525a9f63cb86275ff9"
+      sha256 "69628eba37465f5527c67b2ff3cd5dc016da478f3f6fcf237ce2c0229fe684db"
     end
 
     testpath.install resource("test_osm_file")
