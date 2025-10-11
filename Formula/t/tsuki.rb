@@ -1,8 +1,8 @@
 class Tsuki < Formula
   desc "Lua 5.4 port written in Rust (library for embedding)"
   homepage "https://github.com/ultimaweapon/tsuki"
-  url "https://github.com/ultimaweapon/tsuki/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "242e59f7a81fe7eb9c89da659a90119d849b060adb5ff9487e897df9c23ee5af"
+  url "https://github.com/ultimaweapon/tsuki/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "e50e96f3dfa29a7e2b02aec1efb0e66a60ec32906ad0dae214f8bdb342fb989e"
   license "MIT"
   head "https://github.com/ultimaweapon/tsuki.git", branch: "main"
 
