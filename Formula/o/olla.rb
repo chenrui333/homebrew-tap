@@ -4,6 +4,7 @@ class Olla < Formula
   url "https://github.com/thushan/olla/archive/refs/tags/v0.0.19.tar.gz"
   sha256 "0763f65613d469b0e64f9061b8824e1fddd85373e09b1e4d8ddc1a28bfbd72c4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/thushan/olla.git", branch: "master"
 
   bottle do

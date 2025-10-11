@@ -4,6 +4,7 @@ class RabbitmqMessageOps < Formula
   url "https://github.com/happening-oss/rabbitmq-message-ops/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "c3aa0b65873ea3fc0aa769abc5cb03934c4cb432ae4828f36b09b6d2a5621c06"
   license "MIT"
+  revision 1
   head "https://github.com/happening-oss/rabbitmq-message-ops.git", branch: "master"
 
   bottle do

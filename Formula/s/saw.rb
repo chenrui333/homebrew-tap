@@ -5,6 +5,7 @@ class Saw < Formula
   version "0.2.2"
   sha256 "958f80ff9fc38f7ae49adb3f48864a874dc9839d96406d30952b214f2b574e58"
   license "MIT"
+  revision 1
 
   livecheck do
     skip "no recent releases"

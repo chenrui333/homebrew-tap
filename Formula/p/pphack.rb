@@ -4,6 +4,7 @@ class Pphack < Formula
   url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "1e7006f6834da2a511a2b375aa7c56d0559afea30fcc4bc63a7d5237aadfb30f"
   license "MIT"
+  revision 1
   head "https://github.com/edoardottt/pphack.git", branch: "main"
 
   bottle do

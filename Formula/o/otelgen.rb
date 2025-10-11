@@ -4,6 +4,7 @@ class Otelgen < Formula
   url "https://github.com/krzko/otelgen/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "c8b609c2fd6b77a6782f8b42c9f1f269551632492c662b8b54859b9b067a631a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/krzko/otelgen.git", branch: "main"
 
   bottle do
