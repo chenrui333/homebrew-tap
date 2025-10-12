@@ -1,8 +1,8 @@
 class Gofakeit < Formula
   desc "Random fake data generator written in go"
   homepage "https://github.com/brianvoe/gofakeit"
-  url "https://github.com/brianvoe/gofakeit/archive/refs/tags/v7.7.3.tar.gz"
-  sha256 "990cac9e91950fb8711aa8cc899514734b4caf0c2eb349f59b2e7bd9d82325cf"
+  url "https://github.com/brianvoe/gofakeit/archive/refs/tags/v7.8.0.tar.gz"
+  sha256 "f351f8de3368df27ffec3f29a536a3f46b7880fb058358e844013791b6ae1263"
   license "MIT"
   head "https://github.com/brianvoe/gofakeit.git", branch: "master"
 
