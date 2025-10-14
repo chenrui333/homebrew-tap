@@ -1,10 +1,9 @@
 class Bearer < Formula
   desc "SAST tool to find, filter, and prioritize code security & privacy risks"
   homepage "https://docs.bearer.com/"
-  url "https://github.com/Bearer/bearer/archive/refs/tags/v1.51.0.tar.gz"
-  sha256 "ba8d621ef954c2a5f43337c9f401d05d74301b101272101ed386182c3834a774"
+  url "https://github.com/Bearer/bearer/archive/refs/tags/v1.51.1.tar.gz"
+  sha256 "98bce2142f1a970395d233c774f4c8f52e2c65cb39da46d530f975396d95b093"
   license "Elastic-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
