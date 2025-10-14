@@ -1,10 +1,9 @@
 class Chatlog < Formula
   desc "Easily use your own chat data"
   homepage "https://github.com/sjzar/chatlog"
-  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.29.tar.gz"
-  sha256 "3d89406c9b19e94fa3b0f7a8504d60233091eb1e86c95af69c8f24bf78e16755"
+  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.31.tar.gz"
+  sha256 "e2eb72bdfcfb36bef2fe6f7c4e983db8ebf60ecb124e43de49562d711b3b9a65"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
