@@ -2,8 +2,8 @@
 class Nvrs < Formula
   desc "Fast new version checker for software releases"
   homepage "https://nvrs.adamperkowski.dev/"
-  url "https://github.com/adamperkowski/nvrs/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "d306d520d76d84826e267c1baa58e497b9f14d7bd1d9b651f07e7f598dd7821d"
+  url "https://github.com/adamperkowski/nvrs/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "a0baea3ae1b5ae5d64f9afc303dc516d19a71b347c7a53729fafee29a559a2e3"
   license "MIT"
   head "https://github.com/adamperkowski/nvrs.git", branch: "main"
 
