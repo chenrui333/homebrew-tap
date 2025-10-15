@@ -3,8 +3,8 @@ class Pixelle < Formula
 
   desc "Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM"
   homepage "https://pixelle.ai/"
-  url "https://files.pythonhosted.org/packages/b6/b1/8539719a6ae13293f023b259a315ee907b493d0919227b366952ff62cb68/pixelle-0.1.15.tar.gz"
-  sha256 "d6b1fbd348b71f7a4109e23ff15d14a9cddac95e382feca0f46b0a0bf2556960"
+  url "https://files.pythonhosted.org/packages/cf/6a/77b094ee9f63901e6eeb9adfe3d9e659f8c83586ef3f84c80f5249138045/pixelle-0.1.16.tar.gz"
+  sha256 "d40534b739bcb76cb7266530ba65824a6ca73964d7b59b5d97b0d42722fbb0ff"
   license "MIT"
 
   bottle do
@@ -15,6 +15,7 @@ class Pixelle < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe71e51c0c69217047f8dff44effacfd55209059b50a354437b4dfe43e8650cc"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
   depends_on "cryptography"
@@ -33,8 +34,8 @@ class Pixelle < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/9b/e7/d92a237d8802ca88483906c388f7c201bbe96cd80a165ffd0ac2f6a8d59f/aiohttp-3.12.15.tar.gz"
-    sha256 "4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2"
+    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
+    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
   end
 
   resource "aiosignal" do
@@ -63,8 +64,8 @@ class Pixelle < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "audioop-lts" do
@@ -88,23 +89,23 @@ class Pixelle < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/19/22/97605e64b8661a13f1dd9412c7989b3d78673bc79d91ca61d8237e90b503/boto3-1.40.45.tar.gz"
-    sha256 "e8d794dc1f01729d93dc188c90cf63cd0d32df8818a82ac46e641f6ffcea615e"
+    url "https://files.pythonhosted.org/packages/a0/5a/8ba08c979926326d961e2384d994d789a2eda3ed281bb6cb333b36e92310/boto3-1.40.52.tar.gz"
+    sha256 "96ee720b52be647d8ef5ba92fccfce6b65d6321769430fe6edd10d57ec43c25b"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/0e/19/6c85d5523dd05e060d182cd0e7ce82df60ab738d18b1c8ee2202e4ca02b9/botocore-1.40.45.tar.gz"
-    sha256 "cf8b743527a2a7e108702d24d2f617e93c6dc7ae5eb09aadbe866f15481059df"
+    url "https://files.pythonhosted.org/packages/83/74/3449d77c002d82586786b91dff6dd2e6fd52c5cdc1793d1ac7ea690ea52c/botocore-1.40.52.tar.gz"
+    sha256 "b65d970ca4ccd869639332083da17c3a933bcf495120dcc4f5c7723cb3f6216c"
   end
 
   resource "chainlit" do
-    url "https://files.pythonhosted.org/packages/6d/7e/3daeb83d892d3b12e6393f31d19e5030a75e484fd25544dad414748ec18e/chainlit-2.8.2.tar.gz"
-    sha256 "b0b4bdd0ffc9bbf0e31ddde4c10441361317a2056c70051ce30179115365cbc2"
+    url "https://files.pythonhosted.org/packages/5a/86/c569ec39fddfaf5166194ff444cbb29367dbd9644cdbeef8c9602d4e83e6/chainlit-2.8.3.tar.gz"
+    sha256 "fbd70aa5563e93e148a7fed251c7b4ac79c14f0946ebeb6516c1605fa1ee0b15"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
-    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
+    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
   end
 
   resource "chevron" do
@@ -188,8 +189,8 @@ class Pixelle < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz"
-    sha256 "66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58"
+    url "https://files.pythonhosted.org/packages/58/46/0028a82567109b5ef6e4d2a1f04a583fb513e6cf9527fcdd09afd817deeb/filelock-3.20.0.tar.gz"
+    sha256 "711e943b4ec6be42e1d4e6690b48dc175c822967466bb31c0c293f34334c13f4"
   end
 
   resource "filetype" do
@@ -198,8 +199,8 @@ class Pixelle < Formula
   end
 
   resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/79/b1/b64018016eeb087db503b038296fd782586432b9c077fc5c7839e9cb6ef6/frozenlist-1.7.0.tar.gz"
-    sha256 "2e310d81923c2437ea8670467121cc3e9b0f76d3043cc1d2331d56c7fb7a3a8f"
+    url "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz"
+    sha256 "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
   end
 
   resource "fsspec" do
@@ -238,8 +239,8 @@ class Pixelle < Formula
   end
 
   resource "httpx-sse" do
-    url "https://files.pythonhosted.org/packages/6e/fa/66bd985dd0b7c109a3bcb89272ee0bfb7e2b4d06309ad7b38ff866734b2a/httpx_sse-0.4.1.tar.gz"
-    sha256 "8f44d34414bc7b21bf3602713005c5df4917884f76072479b21f68befa4ea26e"
+    url "https://files.pythonhosted.org/packages/0f/4c/751061ffa58615a32c31b2d82e8482be8dd4a89154f003147acee90f2be9/httpx_sse-0.4.3.tar.gz"
+    sha256 "9b1ed0127459a66014aec3c56bebd93da3c1bc8bb6618c8082039a44889a755d"
   end
 
   resource "huggingface-hub" do
@@ -248,8 +249,8 @@ class Pixelle < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
-    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "importlib-metadata" do
@@ -308,8 +309,8 @@ class Pixelle < Formula
   end
 
   resource "litellm" do
-    url "https://files.pythonhosted.org/packages/e1/a3/85fc92d998ec9645c9fac108618681ef411ca4b338cc7544d6b3aad57699/litellm-1.77.5.tar.gz"
-    sha256 "8e8a83b49c4a6ae044b1a1c01adfbdef72b0031b86f1463dd743e267fa1d7b99"
+    url "https://files.pythonhosted.org/packages/fd/3e/1a96a3caeeb6092d85e70904e2caa98598abb7179cefe734e2fbffac6978/litellm-1.78.0.tar.gz"
+    sha256 "020e40e0d6e16009bb3a6b156d4c1d98cb5c33704aa340fdf9ffd014bfd31f3b"
   end
 
   resource "literalai" do
@@ -333,8 +334,8 @@ class Pixelle < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/3d/a1/b1f328da3b153683d2ec34f849b4b6eac2790fb240e3aef06ff2fab3df9d/mcp-1.16.0.tar.gz"
-    sha256 "39b8ca25460c578ee2cdad33feeea122694cfdf73eef58bee76c42f6ef0589df"
+    url "https://files.pythonhosted.org/packages/5a/79/5724a540df19e192e8606c543cdcf162de8eb435077520cca150f7365ec0/mcp-1.17.0.tar.gz"
+    sha256 "1b57fabf3203240ccc48e39859faf3ae1ccb0b571ff798bbedae800c73c6df90"
   end
 
   resource "mdurl" do
@@ -353,8 +354,8 @@ class Pixelle < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/69/7f/0652e6ed47ab288e3756ea9c0df8b14950781184d4bd7883f4d87dd41245/multidict-6.6.4.tar.gz"
-    sha256 "d2d4e4787672911b48350df02ed3fa3fffdc2f2e8ca06dd6afdf34189b76a9dd"
+    url "https://files.pythonhosted.org/packages/80/1e/5492c365f222f907de1039b91f922b93fa4f764c713ee858d235495d8f50/multidict-6.7.0.tar.gz"
+    sha256 "c6e99d9a65ca282e578dfea819cfa9c0a62b2499d8677392e09feaf305e9e6f5"
   end
 
   resource "mypy-extensions" do
@@ -368,8 +369,8 @@ class Pixelle < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/1a/dd/4d4d46a06943e37c95b6e388237e1e38d1e9aab264ff070f86345d60b7a4/openai-2.1.0.tar.gz"
-    sha256 "47f3463a5047340a989b4c0cd5378054acfca966ff61a96553b22f098e3270a2"
+    url "https://files.pythonhosted.org/packages/de/90/8f26554d24d63ed4f94d33c24271559863223a67e624f4d2e65ba8e48dca/openai-2.3.0.tar.gz"
+    sha256 "8d213ee5aaf91737faea2d7fc1cd608657a5367a18966372a3756ceaabfbd812"
   end
 
   resource "openapi-core" do
@@ -648,8 +649,8 @@ class Pixelle < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/a6/16/43264e4a779dd8588c21a70f0709665ee8f611211bdd2c87d952cfa7c776/propcache-0.3.2.tar.gz"
-    sha256 "20d7d62e4e7ef05f221e0db2856b979540686342e7dd9973b815599c7057e168"
+    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
+    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
   end
 
   resource "protobuf" do
@@ -663,13 +664,13 @@ class Pixelle < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ff/5d/09a551ba512d7ca404d785072700d3f6727a02f6f3c24ecfd081c7cf0aa8/pydantic-2.11.9.tar.gz"
-    sha256 "6b8ffda597a14812a7975c90b82a8a2e777d9257aba3453f973acd3c032a18e2"
+    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
+    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
-    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
+    url "https://files.pythonhosted.org/packages/df/18/d0944e8eaaa3efd0a91b0f1fc537d3be55ad35091b6a87638211ba691964/pydantic_core-2.41.4.tar.gz"
+    sha256 "70e47929a9d4a1905a67e4b687d5946026390568a8e952b92824118063cee4d5"
   end
 
   resource "pydantic-settings" do
@@ -748,13 +749,13 @@ class Pixelle < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
-    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "rich-rst" do
-    url "https://files.pythonhosted.org/packages/b0/69/5514c3a87b5f10f09a34bb011bc0927bc12c596c8dae5915604e71abc386/rich_rst-1.3.1.tar.gz"
-    sha256 "fad46e3ba42785ea8c1785e2ceaa56e0ffa32dbe5410dec432f37e4107c4f383"
+    url "https://files.pythonhosted.org/packages/bc/6d/a506aaa4a9eaa945ed8ab2b7347859f53593864289853c5d6d62b77246e0/rich_rst-1.3.2.tar.gz"
+    sha256 "a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4"
   end
 
   resource "rpds-py" do
@@ -808,8 +809,8 @@ class Pixelle < Formula
   end
 
   resource "tiktoken" do
-    url "https://files.pythonhosted.org/packages/a7/86/ad0155a37c4f310935d5ac0b1ccf9bdb635dcb906e0a9a26b616dd55825a/tiktoken-0.11.0.tar.gz"
-    sha256 "3c518641aee1c52247c2b97e74d8d07d780092af79d5911a6ab5e79359d9b06a"
+    url "https://files.pythonhosted.org/packages/7d/ab/4d017d0f76ec3171d469d80fc03dfbb4e48a4bcaddaa831b31d526f05edc/tiktoken-0.12.0.tar.gz"
+    sha256 "b18ba7ee2b093863978fcb14f74b3707cdc8d4d4d3836853ce7ec60772139931"
   end
 
   resource "tokenizers" do
@@ -818,8 +819,8 @@ class Pixelle < Formula
   end
 
   resource "tomli" do
-    url "https://files.pythonhosted.org/packages/18/87/302344fed471e44a87289cf4967697d07e532f2421fdaf868a303cbae4ff/tomli-2.2.1.tar.gz"
-    sha256 "cd45e1dc79c835ce60f7404ec8119f2eb06d38b1deba146f07ced3bbc44505ff"
+    url "https://files.pythonhosted.org/packages/52/ed/3f73f72945444548f33eba9a87fc7a6e969915e7b1acc8260b30e1f76a2f/tomli-2.3.0.tar.gz"
+    sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
   end
 
   resource "tqdm" do
@@ -893,8 +894,8 @@ class Pixelle < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/3c/fb/efaa23fa4e45537b827620f04cf8f3cd658b76642205162e072703a5b963/yarl-1.20.1.tar.gz"
-    sha256 "d017a4997ee50c91fd5466cef416231bb82177b93b029906cefc542ce14c35ac"
+    url "https://files.pythonhosted.org/packages/57/63/0c6ebca57330cd313f6102b16dd57ffaf3ec4c83403dcb45dbd15c6f3ea1/yarl-1.22.0.tar.gz"
+    sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
   end
 
   resource "zipp" do
