@@ -7,10 +7,7 @@ class Box < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11a19a732110154dabbe352e1a8041391291d9474580b98383cac3efb208ffab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f6a1e38068168bbd3040d0459245c36a5cac5ef23dd8f7c83954ee79fe5d8b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "df298fa0705581a55a52e52b0de0d6184d4aca3fd4462e5dca89ff5fda0ffb8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e849793c92415c8d08a5dede04c5c1a84227bafd27a4cd0cedbab99517af82c7"
+    sha256 cellar: :any_skip_relocation, all: "d3217ea3a74a100d98b8d493cd38823b9cee10eb2ca0b811b0e61d1d5a76f2c6"
   end
 
   depends_on "php"
