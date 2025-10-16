@@ -1,8 +1,8 @@
 class Phpinsights < Formula
   desc "Instant PHP quality checks from your console"
   homepage "https://github.com/nunomaduro/phpinsights"
-  url "https://github.com/nunomaduro/phpinsights/archive/refs/tags/v2.13.2.tar.gz"
-  sha256 "20dc00aba477e515e55d3aa3417205a1294b24b5c112b58ee4c5fb0548dbd7ec"
+  url "https://github.com/nunomaduro/phpinsights/archive/refs/tags/v2.13.3.tar.gz"
+  sha256 "8ec77e13d4f97b9437cb58517ee9c79cad4e1b2c11b460fa6fe6d881024d92f3"
   license "MIT"
 
   bottle do
