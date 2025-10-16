@@ -4,6 +4,7 @@ class GitChglog < Formula
   url "https://github.com/git-chglog/git-chglog/archive/refs/tags/v0.15.4.tar.gz"
   sha256 "2351cb4ca5fde61ddc844d210dc5481c7361cfb99f70f35140a57ef6cb5cb311"
   license "MIT"
+  revision 1
   head "https://github.com/git-chglog/git-chglog.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class GitChglog < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/git-chglog"
   end
 

@@ -4,6 +4,7 @@ class GoimportsReviser < Formula
   url "https://github.com/incu6us/goimports-reviser/archive/refs/tags/v3.10.0.tar.gz"
   sha256 "78a56fd0bec395d41b7c03f88a5444d699678a2d5d3f48a33acfff89687f5ced"
   license "MIT"
+  revision 1
   head "https://github.com/incu6us/goimports-reviser.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class GoimportsReviser < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     go_version = Formula["go"].version
     ldflags = %W[
       -s -w

@@ -4,6 +4,7 @@ class Gignr < Formula
   url "https://github.com/jasonuc/gignr/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "f7b4d820de3230c59c999f7a85e6652ad74dfba03f41f90f946b48c0d8f04578"
   license "MIT"
+  revision 1
   head "https://github.com/jasonuc/gignr.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Gignr < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     generate_completions_from_executable(bin/"gignr", "completion")

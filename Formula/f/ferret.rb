@@ -4,6 +4,7 @@ class Ferret < Formula
   url "https://github.com/MontFerret/ferret/archive/refs/tags/v0.18.1.tar.gz"
   sha256 "65dbdde0b2ba962fcf51d1ebcd5f691b323fc0d55813c3b395e58cc4104ecd1c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/MontFerret/ferret.git", branch: "master"
 
   bottle do

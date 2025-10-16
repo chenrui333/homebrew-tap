@@ -4,6 +4,7 @@ class Howto < Formula
   url "https://github.com/nalgeon/howto/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "336805619dd0cf5e59d10d376abfaf44d7c40f91dec6e982ea1db005784f5c78"
   license "MIT"
+  revision 1
   head "https://github.com/nalgeon/howto.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Howto < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end
