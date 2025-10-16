@@ -1,8 +1,8 @@
 class BrowserbaseMcpServer < Formula
   desc "MCP server for AI web browser automation using Browserbase and Stagehand"
   homepage "https://github.com/browserbase/mcp-server-browserbase"
-  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.1.3.tgz"
-  sha256 "35a47d60a656b044512560914a4504318a8e13195a337d7fce54d9962f403ccc"
+  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.2.0.tgz"
+  sha256 "2d625b8fdc1359e4e2af403cd483ea7ec7810c622f930e18c6a558eed224739a"
   license "Apache-2.0"
 
   bottle do
@@ -26,6 +26,6 @@ class BrowserbaseMcpServer < Formula
     JSON
 
     output = pipe_output(bin/"browserbase-mcp-server", json, 0)
-    assert_match "Create parallel browser session for multi-session workflows", output
+    assert_match "Create or reuse a Browserbase browser session and set it as active", output
   end
 end
