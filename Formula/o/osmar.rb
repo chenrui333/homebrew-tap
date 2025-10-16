@@ -4,6 +4,7 @@ class Osmar < Formula
   url "https://github.com/codesoap/osmar/archive/refs/tags/v3.0.2.tar.gz"
   sha256 "9753deb74a09a50f8ab55bedf76a1c70f2b70be30d9964a3b8ff385751f66312"
   license "MIT"
+  revision 1
   head "https://github.com/codesoap/osmar.git", branch: "master"
 
   bottle do
