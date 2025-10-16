@@ -4,6 +4,7 @@ class Tftree < Formula
   url "https://github.com/busser/tftree/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "b69f527afc4b0d6b910042941b4268202161a48122ac12e21947c9de527620f4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/busser/tftree.git", branch: "main"
 
   bottle do

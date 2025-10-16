@@ -5,6 +5,7 @@ class Tpm < Formula
   url "https://github.com/Madh93/tpm/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "bf06784de3533893725ffa9999697e02a6863416267aa290fa38a9fa15eb73df"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Madh93/tpm.git", branch: "main"
 
   bottle do
@@ -18,6 +19,8 @@ class Tpm < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     generate_completions_from_executable(bin/"tpm", "completion")

@@ -4,6 +4,7 @@ class Tenderly < Formula
   url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.6.tar.gz"
   sha256 "f3a91adf489b50b61b1c13d664be77c6d4130fa2a8f554fe091700ead9978d8b"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/Tenderly/tenderly-cli.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class Tenderly < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
     generate_completions_from_executable(bin/"tenderly", "completion")

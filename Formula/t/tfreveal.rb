@@ -5,6 +5,7 @@ class Tfreveal < Formula
   url "https://github.com/breml/tfreveal/archive/refs/tags/v0.0.4.tar.gz"
   sha256 "392ea05d250c6a19254e10643ba45a5bff16c566b81cba8a0e5527aff3317ced"
   license "MIT"
+  revision 1
   head "https://github.com/breml/tfreveal.git", branch: "master"
 
   bottle do
@@ -18,6 +19,8 @@ class Tfreveal < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end

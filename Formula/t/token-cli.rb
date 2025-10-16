@@ -6,6 +6,7 @@ class TokenCli < Formula
   version "1.0.0"
   sha256 "530a8eb098ab3cdf7218b65984167e3a48c7d320cc06b0a57245b1b586e87dc7"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     skip "No new releases"
@@ -22,6 +23,8 @@ class TokenCli < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X github.com/imduffy15/token-cli/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 

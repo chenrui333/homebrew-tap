@@ -4,6 +4,7 @@ class Togomak < Formula
   url "https://github.com/srevinsaju/togomak/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "a5d6f41cc98f8901c48158b2b8145f66e3b6aacc1f559527f2ee80be611df5a6"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/srevinsaju/togomak.git", branch: "v2"
 
   bottle do
@@ -17,6 +18,8 @@ class Togomak < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/togomak"
   end

@@ -4,6 +4,7 @@ class Stree < Formula
   url "https://github.com/orangekame3/stree/archive/refs/tags/v0.0.21.tar.gz"
   sha256 "1edce8b1aa86a22a7ce4f8e1781eebf44ee838a70925eeaf45c7b35b3c22c03b"
   license "MIT"
+  revision 1
   head "https://github.com/orangekame3/stree.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Stree < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 

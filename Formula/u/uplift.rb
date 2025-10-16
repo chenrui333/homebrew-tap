@@ -4,6 +4,7 @@ class Uplift < Formula
   url "https://github.com/gembaadvantage/uplift/archive/refs/tags/v2.26.0.tar.gz"
   sha256 "dcdc073213c81da806ee9ccf6340b4a855dae399685fa719a29a72ee0f2af423"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/gembaadvantage/uplift.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Uplift < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/gembaadvantage/uplift/internal/version.version=#{version}

@@ -4,6 +4,7 @@ class Spotifydl < Formula
   url "https://github.com/BharatKalluri/spotifydl/archive/refs/tags/0.1.1.tar.gz"
   sha256 "ece91673c8cd2d8b6cd89610cbfdf6e1ef4dc1e15fae8aa120e9d1acb8fbfbb9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/BharatKalluri/spotifydl.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class Spotifydl < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
