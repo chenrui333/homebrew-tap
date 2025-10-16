@@ -23,7 +23,7 @@ class Wifitui < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/wifitui --version")
 
-    expected = OS.mac? ? "no Wi-Fi interface found" : "failed to list networks"
+    expected = OS.mac? ? "no Wi-Fi interface found" : "connect: no such file or directory"
     assert_match expected, shell_output("#{bin}/wifitui list 2>&1", 1)
   end
 end
