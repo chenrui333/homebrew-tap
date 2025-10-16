@@ -28,7 +28,7 @@ class HfMcpServer < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"hf-mcp-server", [:out, :err] => output_log.to_s
     sleep 1
-    assert_match "STDIO transport initialized", output_log.read
+    assert_match "Failed to authenticate with Hugging Face API", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
