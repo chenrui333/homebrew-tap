@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/2b/8c/26e75f1d69b3e700ca556ce91edf7c0c77695e1e04efd9440abc3f05de3e/llmswap-5.2.0.tar.gz"
-  sha256 "eb2a6f054b521fa776be494a3ea57acf8f0289354ae6a9bfcbe699a7ce6802b6"
+  url "https://files.pythonhosted.org/packages/71/8d/3cd84d3837bcdd96d43969479e7ad2ed3615afbee40eb8bd8676cc2404da/llmswap-5.2.1.tar.gz"
+  sha256 "f8cb8b54e82eef2aa27c63a118275f0984a61a698d966564ab18319557c6380a"
   license "MIT"
 
   bottle do
@@ -77,8 +77,8 @@ class Llmswap < Formula
   end
 
   resource "cohere" do
-    url "https://files.pythonhosted.org/packages/0d/f5/4682a965449826044c853c82796805f8d3e9214471e2f120db3063116584/cohere-5.18.0.tar.gz"
-    sha256 "93a7753458a45cd30c796300182d22bb1889eadc510727e1de3d8342cb2bc0bf"
+    url "https://files.pythonhosted.org/packages/b0/91/a643240d558005edee11d67d29e29086d1ea4a595b9e8ba50c7a1f456d8f/cohere-5.19.0.tar.gz"
+    sha256 "95c038a4823913a6e0eabbfc1a208ed3e849144630f69010a6bb57ead2bbb55c"
   end
 
   resource "distro" do
