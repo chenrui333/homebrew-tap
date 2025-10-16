@@ -23,6 +23,6 @@ class Ccapi < Formula
     assert_match version.to_s, shell_output("#{bin}/ccapi --version")
 
     output = shell_output("#{bin}/ccapi list 2>&1", 1)
-    assert_match "列举配置失败: settings.json file path not set", output
+    assert_match "列举Claude配置失败: settings.json file path not set", output
   end
 end
