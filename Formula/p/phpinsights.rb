@@ -7,7 +7,7 @@ class Phpinsights < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "ce2b82c58352585bf85fd53df549a0f014bc2c6ed8f1ae2c797d3e6730c3e4eb"
+    sha256 cellar: :any_skip_relocation, all: "c1f0181760b52dbc4da1df78bd56cc0a2c7fcd6f310f5ce314db9fe2dd541959"
   end
 
   depends_on "composer" => :build
