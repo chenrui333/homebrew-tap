@@ -30,6 +30,6 @@ class Crush < Formula
     assert_match version.to_s, shell_output("#{bin}/crush --version")
 
     output = shell_output("#{bin}/crush run 'Explain the use of context in Go' 2>&1", 1)
-    assert_match "no providers configured", output
+    assert_match "No providers configured", output
   end
 end
