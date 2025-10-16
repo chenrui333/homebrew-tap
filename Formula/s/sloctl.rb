@@ -30,7 +30,7 @@ class Sloctl < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/sloctl version")
 
-    assert_match "[default]", shell_output("#{bin}/sloctl config get-contexts")
+    assert_match "default", shell_output("#{bin}/sloctl config get-contexts")
     output = shell_output("#{bin}/sloctl get agents 2>&1", 1)
     assert_match "Both client id and client secret must be provided", output
   end
