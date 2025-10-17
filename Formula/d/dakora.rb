@@ -10,10 +10,10 @@ class Dakora < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "493bb5325a5af69dae0a8c2214fc8046f8f4c177e803038b702d076de2e0c71d"
-    sha256 cellar: :any,                 arm64_sequoia: "a090378f004a8bc34036a9dc3662deff6b5067bb825b78914e59ce48722f9d88"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ae710b3f296c6477b89c20dcaadd7ce62a0553221bea1f0fb0a5c59d4066619"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba860b4bc00dbcf257ee654711f49534467937f31339a27c7893e07991e6a224"
+    sha256 cellar: :any,                 arm64_tahoe:   "bb552d10a8e5b62b99ac5734d0fb2da32daeaa46df079df084b892b02afdeacb"
+    sha256 cellar: :any,                 arm64_sequoia: "27feaf80ea0b4bd93aa5e7de8c00f073cc23263f407fb7f0ad60d6d29554b31f"
+    sha256 cellar: :any,                 arm64_sonoma:  "60b4e6599945dd91ab303d503e36c72341577b4e89ccd429155781a9e8ab580c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a79017700beb17897cfe6cf29ae8ec1111570f8d57444dcb3373ebeba3c489e1"
   end
 
   depends_on "rust" => :build # for pydantic
