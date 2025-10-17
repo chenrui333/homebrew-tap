@@ -3,8 +3,8 @@ class ZenMcpServer < Formula
 
   desc "Many Workflows. One Context"
   homepage "https://github.com/dagger/container-use"
-  url "https://github.com/BeehiveInnovations/zen-mcp-server/releases/download/v8.0.0/zen_mcp_server-8.0.0.tar.gz"
-  sha256 "6b35b2c852d0b2ff61a83048d24e9e039669d4b8f3b413ae1822e51603d9e309"
+  url "https://github.com/BeehiveInnovations/zen-mcp-server/releases/download/v9.1.1/zen_mcp_server-9.1.1.tar.gz"
+  sha256 "a792d2b29014b6fd6d96cd7f38ad758c7dd0a7d3868dd9bedb07d97004147022"
   license "Apache-2.0"
 
   bottle do
