@@ -26,10 +26,10 @@ jobs:
             exit 1
           fi
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@573994b44bc6c5b3a14a43732d17daec8fb33c5e
+        uses: Homebrew/actions/setup-homebrew@b2da65092292aade9599608fc29415389641b3cb
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@573994b44bc6c5b3a14a43732d17daec8fb33c5e
+        uses: Homebrew/actions/git-user-config@b2da65092292aade9599608fc29415389641b3cb
         with:
           username: BrewTestBot
 
@@ -42,7 +42,7 @@ jobs:
         run: brew pr-pull --debug --root-url="https://ghcr.io/v2/chenrui333/tap" --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
 
       - name: Push commits
-        uses: Homebrew/actions/git-try-push@573994b44bc6c5b3a14a43732d17daec8fb33c5e
+        uses: Homebrew/actions/git-try-push@b2da65092292aade9599608fc29415389641b3cb
         with:
           token: ${{ github.token }}
           branch: main
