@@ -1,8 +1,8 @@
 class Alacritty < Formula
   desc "Cross-platform, OpenGL terminal emulator"
   homepage "https://github.com/alacritty/alacritty"
-  url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "b814e30c6271ae23158c66e0e2377c3600bb24041fa382a36e81be564eeb2e36"
+  url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "7baaf26acd80f6b7ceceb2c984b0d43b4089af2d12db3cbaa60ad1243d712e72"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
