@@ -131,7 +131,6 @@ jobs:
 
       - name: Run brew test-bot
         id: brew-test-bot-formulae
-        working-directory: ${{ env.BOTTLES_DIR }}
         run: |
           # Set Linux-specific environment variables if running on Linux
           if [[ "$RUNNER_OS" == "Linux" ]]; then
