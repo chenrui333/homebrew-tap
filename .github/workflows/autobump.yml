@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@573994b44bc6c5b3a14a43732d17daec8fb33c5e
+        uses: Homebrew/actions/setup-homebrew@b2da65092292aade9599608fc29415389641b3cb
         with:
           core: false
           cask: false
@@ -35,12 +35,12 @@ jobs:
           echo "Locked Homebrew to commit: $(git rev-parse HEAD)"
 
       - name: Configure Git user
-        uses: Homebrew/actions/git-user-config@573994b44bc6c5b3a14a43732d17daec8fb33c5e
+        uses: Homebrew/actions/git-user-config@b2da65092292aade9599608fc29415389641b3cb
         with:
           username: BrewTestBot
 
       # - name: Set up commit signing
-      #   uses: Homebrew/actions/setup-commit-signing@master
+      #   uses: Homebrew/actions/setup-commit-signing@b2da65092292aade9599608fc29415389641b3cb
       #   with:
       #     signing_key: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY }}
 
@@ -52,7 +52,7 @@ jobs:
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump formulae
-        uses: Homebrew/actions/bump-packages@573994b44bc6c5b3a14a43732d17daec8fb33c5e
+        uses: Homebrew/actions/bump-packages@b2da65092292aade9599608fc29415389641b3cb
         continue-on-error: true
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
