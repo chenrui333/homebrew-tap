@@ -8,11 +8,12 @@ class AzTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64ceb78a2e465dbdb6f5d6f4baf4f89f23cf1ed86c0917dd8999ab79afe8c42d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64ceb78a2e465dbdb6f5d6f4baf4f89f23cf1ed86c0917dd8999ab79afe8c42d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64ceb78a2e465dbdb6f5d6f4baf4f89f23cf1ed86c0917dd8999ab79afe8c42d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57cdf0b5b7d14dfddf32990275816d805a3b258fd30794708e4ad0f9871b6aa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdfe01944c55b4eea0ef53d13addc3564f099688888628eacee2048c94f40e46"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fe948c67797bb8cb34d9ce4d16f1e3093c15ba942e8702c5843746e2f8728c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fe948c67797bb8cb34d9ce4d16f1e3093c15ba942e8702c5843746e2f8728c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fe948c67797bb8cb34d9ce4d16f1e3093c15ba942e8702c5843746e2f8728c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f03659219929606f0c039b70e43a9d52a9f930552817c6dc77dacbb45c742a2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7036aa10e63dadb6c41a90b85d2ef51bf799c639d300ddc0828935704bc6a546"
   end
 
   depends_on "go" => :build
