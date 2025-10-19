@@ -8,11 +8,12 @@ class Crush < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da62cff4df27ddbdfe06d4c125dfa3f4871045cda2fc6f3f62fc45ca277af957"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da62cff4df27ddbdfe06d4c125dfa3f4871045cda2fc6f3f62fc45ca277af957"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da62cff4df27ddbdfe06d4c125dfa3f4871045cda2fc6f3f62fc45ca277af957"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "83095f77bfe0faaa809211b83707aca63151098f8b98936fe64e11134ca02b21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "677ab33728bd7a02b57ccad22dabfda5f78f2c68e96861d1169a7bc6e3288bc0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ead537f28ffafd18cde8c4d4dabf3783612e4685b1c58562d30cdd5b6b0f867"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ead537f28ffafd18cde8c4d4dabf3783612e4685b1c58562d30cdd5b6b0f867"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ead537f28ffafd18cde8c4d4dabf3783612e4685b1c58562d30cdd5b6b0f867"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0aefc86f40f2e83c0b8e39e60ca1ee471daeb0066afec4e19110ffdf0d8f555"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d68b456768bc746eb79172c161440ead5b8f4581e7ad712625e19e2221761618"
   end
 
   depends_on "go" => :build
