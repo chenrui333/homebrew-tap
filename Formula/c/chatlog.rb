@@ -17,6 +17,8 @@ class Chatlog < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     # Prevent init() from overwriting ldflags version
     inreplace "pkg/version/version.go",
               "if len(bi.Main.Version) > 0",
