@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/2b/8c/26e75f1d69b3e700ca556ce91edf7c0c77695e1e04efd9440abc3f05de3e/llmswap-5.2.0.tar.gz"
-  sha256 "eb2a6f054b521fa776be494a3ea57acf8f0289354ae6a9bfcbe699a7ce6802b6"
+  url "https://files.pythonhosted.org/packages/3b/d2/0f241ed41732020510eb13c33510caeb663b42de9756b31cf40e15d1452c/llmswap-5.2.2.tar.gz"
+  sha256 "1ab32c41b9a8149e75e67042b3b61e7323030acbeb6ba03a9d47225919477e39"
   license "MIT"
 
   bottle do
@@ -32,8 +32,8 @@ class Llmswap < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/62/f1/8515650ac3121a9e55c7b217c60e7fae3e0134b5acfe65691781b5356929/aiohttp-3.13.0.tar.gz"
-    sha256 "378dbc57dd8cf341ce243f13fa1fa5394d68e2e02c15cd5f28eae35a70ec7f67"
+    url "https://files.pythonhosted.org/packages/ba/fa/3ae643cd525cf6844d3dc810481e5748107368eb49563c15a5fb9f680750/aiohttp-3.13.1.tar.gz"
+    sha256 "4b7ee9c355015813a6aa085170b96ec22315dabc3d866fd77d147927000e9464"
   end
 
   resource "aiosignal" do
@@ -47,8 +47,8 @@ class Llmswap < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/1b/be/a80a8678d39d77b2325b1a32a55d62ca9dc376984a3d66d351229d37da9c/anthropic-0.70.0.tar.gz"
-    sha256 "24078275246636d9fd38c94bb8cf64799ce7fc6bbad379422b36fa86b3e4deee"
+    url "https://files.pythonhosted.org/packages/82/4f/70682b068d897841f43223df82d96ec1d617435a8b759c4a2d901a50158b/anthropic-0.71.0.tar.gz"
+    sha256 "eb8e6fa86d049061b3ef26eb4cbae0174ebbff21affa6de7b3098da857d8de6a"
   end
 
   resource "anyio" do
@@ -77,8 +77,8 @@ class Llmswap < Formula
   end
 
   resource "cohere" do
-    url "https://files.pythonhosted.org/packages/0d/f5/4682a965449826044c853c82796805f8d3e9214471e2f120db3063116584/cohere-5.18.0.tar.gz"
-    sha256 "93a7753458a45cd30c796300182d22bb1889eadc510727e1de3d8342cb2bc0bf"
+    url "https://files.pythonhosted.org/packages/b0/91/a643240d558005edee11d67d29e29086d1ea4a595b9e8ba50c7a1f456d8f/cohere-5.19.0.tar.gz"
+    sha256 "95c038a4823913a6e0eabbfc1a208ed3e849144630f69010a6bb57ead2bbb55c"
   end
 
   resource "distro" do
@@ -122,8 +122,8 @@ class Llmswap < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/7c/30/8b3a626ccf84ca43da62d77e2d40d70bedc6387951cc5104011cddce34e0/google_api_python_client-2.184.0.tar.gz"
-    sha256 "ef2a3330ad058cdfc8a558d199c051c3356f6ed012436c3ad3d08b67891b039f"
+    url "https://files.pythonhosted.org/packages/8e/5a/6f9b49d67ea91376305fdb8bbf2877c746d756e45fd8fb7d2e32d6dad19b/google_api_python_client-2.185.0.tar.gz"
+    sha256 "aa1b338e4bb0f141c2df26743f6b46b11f38705aacd775b61971cbc51da089c3"
   end
 
   resource "google-auth" do
@@ -202,8 +202,8 @@ class Llmswap < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/9d/c0/a3bb4cc13aced219dd18191ea66e874266bd8aa7b96744e495e1c733aa2d/jiter-0.11.0.tar.gz"
-    sha256 "1d9637eaf8c1d6a63d6562f2a6e5ab3af946c66037eb1b894e8fad75422266e4"
+    url "https://files.pythonhosted.org/packages/a3/68/0357982493a7b20925aece061f7fb7a2678e3b232f8d73a6edb7e5304443/jiter-0.11.1.tar.gz"
+    sha256 "849dcfc76481c0ea0099391235b7ca97d7279e0fa4c86005457ac7c88e8b76dc"
   end
 
   resource "multidict" do
@@ -212,8 +212,8 @@ class Llmswap < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/de/90/8f26554d24d63ed4f94d33c24271559863223a67e624f4d2e65ba8e48dca/openai-2.3.0.tar.gz"
-    sha256 "8d213ee5aaf91737faea2d7fc1cd608657a5367a18966372a3756ceaabfbd812"
+    url "https://files.pythonhosted.org/packages/72/39/aa3767c920c217ef56f27e89cbe3aaa43dd6eea3269c95f045c5761b9df1/openai-2.5.0.tar.gz"
+    sha256 "f8fa7611f96886a0f31ac6b97e58bc0ada494b255ee2cfd51c8eb502cfcb4814"
   end
 
   resource "packaging" do
@@ -247,8 +247,8 @@ class Llmswap < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8d/35/d319ed522433215526689bad428a94058b6dd12190ce7ddd78618ac14b28/pydantic-2.12.2.tar.gz"
-    sha256 "7b8fa15b831a4bbde9d5b84028641ac3080a4ca2cbd4a621a661687e741624fd"
+    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
+    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
   end
 
   resource "pydantic-core" do
@@ -327,6 +327,9 @@ class Llmswap < Formula
   end
 
   def install
+    # upstream pr ref, https://github.com/sreenathmmenon/llmswap/pull/1
+    inreplace "llmswap/__init__.py", "5.2.0", version.to_s
+
     virtualenv_install_with_resources
   end
 
