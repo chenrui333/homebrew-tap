@@ -35,7 +35,7 @@ jobs:
           username: BrewTestBot
 
       # - name: Set up commit signing
-      #   uses: Homebrew/actions/setup-commit-signing@master
+      #   uses: Homebrew/actions/setup-commit-signing@main
       #   with:
       #     signing_key: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY }}
 
