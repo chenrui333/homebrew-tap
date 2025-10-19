@@ -8,11 +8,12 @@ class AxiomMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d93eb17682e9451798edc5ff33bf7fb1a087d652c420adae1949a4390b5da5b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d93eb17682e9451798edc5ff33bf7fb1a087d652c420adae1949a4390b5da5b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d93eb17682e9451798edc5ff33bf7fb1a087d652c420adae1949a4390b5da5b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b3be5863068c270b1facb6dd0f6a07ac1195ff9c42259affa8d3597e78cbab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11cbf7a64bca4e425dcdf49b6dc7d8183d7609f92ee0505a5b1e2f528d458961"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6edaa1de22930137f7252cfdf09f4091c918b67c82d69962d9ad60723318af3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6edaa1de22930137f7252cfdf09f4091c918b67c82d69962d9ad60723318af3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6edaa1de22930137f7252cfdf09f4091c918b67c82d69962d9ad60723318af3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0401a6bdf573ccacc68e7da977d98c1834182b13982203731fb2a990b7bec1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "925740e554981fad82e851e8235b27b3c7668d28903bec91e3ba583e81446b3b"
   end
 
   depends_on "go" => :build
