@@ -12,11 +12,12 @@ class Dbin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "688a87ea6f8bf00219e98857cd7addb0ba19deea6e9beb6aa31067f6bb8d923b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "688a87ea6f8bf00219e98857cd7addb0ba19deea6e9beb6aa31067f6bb8d923b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "688a87ea6f8bf00219e98857cd7addb0ba19deea6e9beb6aa31067f6bb8d923b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b372d83eba832ce93db393a4e57f989aadda4c3744f8314c3b7a5bf0174adc69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c4360f5564dc8297585655e1c200b2c5da7b81964f2c67eb2f538046d1f78e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fa74b621afc07d42a7b8ee6a41d82e5761791689580f503eb839d5d5c03a648"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fa74b621afc07d42a7b8ee6a41d82e5761791689580f503eb839d5d5c03a648"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fa74b621afc07d42a7b8ee6a41d82e5761791689580f503eb839d5d5c03a648"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8a7437d6ee879161f764e9c0da93cd1011f793043ce13ae59c9b66a1ea24a7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9f6bf3d60e295539beee7ee7ab4c457f0a25697502a434471595191998d039"
   end
 
   depends_on "go" => :build
