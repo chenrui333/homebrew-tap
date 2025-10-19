@@ -9,11 +9,12 @@ class Awless < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d78ee4774152ff84658f84c1b843731dae1ea77c4faaef37f534b8764cc8f260"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d78ee4774152ff84658f84c1b843731dae1ea77c4faaef37f534b8764cc8f260"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d78ee4774152ff84658f84c1b843731dae1ea77c4faaef37f534b8764cc8f260"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ebce2accac5d45164a7bc7533b4756ac3d0743bb643e3f67ad288a820cce77e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3e7e770d787a72f9bf62eaa9bd88aed1af2a677d1563acbdaf616ab7bae146"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a1ef0362189dcd12c9a9cf7c971f58f5fdb94c5afebdffdb9257c9ef0f8af55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a1ef0362189dcd12c9a9cf7c971f58f5fdb94c5afebdffdb9257c9ef0f8af55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a1ef0362189dcd12c9a9cf7c971f58f5fdb94c5afebdffdb9257c9ef0f8af55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "237f5d502406db6dc04b4fb9a7b55a3b9b9b8c066132a1c124c3db1d0eda3117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a4b58ce02704f657d14d3d92e9af9f32e1fb6fa5bbf334484f0c3854b738d61"
   end
 
   depends_on "go" => :build
