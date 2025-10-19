@@ -10,11 +10,12 @@ class Dnsforwarder < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c697c392a9e5d0a2c4a0815139c8f64a160ab5e327b88e24835dac230fda13f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "687cc7764e7cd9c7cff08a66e542ff97925f698b730dc892b932d28e9b387ff8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f58b0de99b558f47d0ddd065b7785bc38ecf4b4e6b51b42534fdcbfcb21fc47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f3cb70d4a39506a8bb13fae91fbfa062030a56e5a1265c6cd3e9caece435fa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2ccdf796d161771b9c8c2e5b208ed18186c43f2ed2e16ba279f54ac8888e6a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c620b2be0e5afcd3d40822803cb7bda1efe7bfbdcceea142cc1d384426ee2c77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1ff2a882fc7d864f95bebe8f79b0d068eb2b473d345d22ccc0a8f3ebf4de5f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a762bb8595775f2e07f6bb8ef6da6b9cae924998d97a57a7751a5fa8210b0f06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "324dbedcfbf6b7e29464165bc9aaed349923300ebb4891ec560722d83d555c05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69144bb71475127ed167666bfaa1a2b514e4d7d32907f2654df9db164e2a823b"
   end
 
   depends_on "go" => :build
