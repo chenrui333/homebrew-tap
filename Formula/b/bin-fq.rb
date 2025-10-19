@@ -18,14 +18,13 @@ class BinFq < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"fq")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/fq --version")
+
     out = pipe_output("#{bin}/fq -d json '.[0]'", "[1,2,3]")
     assert_equal "1\n", out
   end
