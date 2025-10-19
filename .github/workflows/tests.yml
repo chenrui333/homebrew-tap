@@ -24,7 +24,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:main@sha256:44e58b84265112338d7f94746609aa5e29c7607e4f7df3163ae71b12009225b5
+      image: ghcr.io/homebrew/ubuntu22.04:main@sha256:88490e215bf877606a4b15cfdf43dbbb58e756afb1f3fd90ac227306f1486e80
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     outputs:
@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@main
+        uses: Homebrew/actions/setup-homebrew@master
         with:
           core: true
           cask: false
@@ -124,7 +124,7 @@ jobs:
       BOTTLES_DIR: ${{matrix.workdir || github.workspace}}/bottles
     steps:
       - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@main
+        uses: Homebrew/actions/pre-build@master
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
@@ -147,6 +147,15 @@ jobs:
           else
             brew test-bot --only-formulae --skip-recursive-dependents --root-url="https://ghcr.io/v2/chenrui333/tap"
           fi
+
+      - name: Post-build steps
+        if: always()
+        uses: Homebrew/actions/post-build@master
+        with:
+          runner: ${{ matrix.runner }}
+          cleanup: ${{ matrix.cleanup }}
+          bottles-directory: ${{ env.BOTTLES_DIR }}
+          logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
 
   label-pr:
     needs: build-formula
