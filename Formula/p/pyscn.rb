@@ -18,6 +18,8 @@ class Pyscn < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/ludo-technologies/pyscn/internal/version.Version=#{version}
