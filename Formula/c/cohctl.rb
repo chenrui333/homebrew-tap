@@ -10,11 +10,12 @@ class Cohctl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf86269faba76fa2c0c5dfe0a954798b149f736f589cc454967510483d77d5d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf86269faba76fa2c0c5dfe0a954798b149f736f589cc454967510483d77d5d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf86269faba76fa2c0c5dfe0a954798b149f736f589cc454967510483d77d5d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b6aaa37890a6e7ed386958610a11c361bd45c1c3b083324a1d76bf42ef26d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff3b8ff01b6e9874ea461e9ffcdea2370a10a49c6183fbb961de3ff15556d0d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ed9e01cb444b0beb7ab2782349f6a02114c0b9d234f2f9e98f5cee8e0f57b43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ed9e01cb444b0beb7ab2782349f6a02114c0b9d234f2f9e98f5cee8e0f57b43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ed9e01cb444b0beb7ab2782349f6a02114c0b9d234f2f9e98f5cee8e0f57b43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb99b25f7a609ff038fd2d91a54e9b874dc823b2e30123f9e60dd9bca35360da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d341996b062faca346f3b9d6929fffb1a14d06eb2173dcbef73c4da42781e60"
   end
 
   depends_on "go" => :build
