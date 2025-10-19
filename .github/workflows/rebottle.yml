@@ -104,7 +104,7 @@ jobs:
 
       # TODO: build provenance setup
       # - name: Set up commit signing
-      #   uses: Homebrew/actions/setup-commit-signing@main
+      #   uses: Homebrew/actions/setup-commit-signing@master
       #   with:
       #     signing_key: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY }}
 
