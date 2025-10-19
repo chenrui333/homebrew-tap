@@ -9,11 +9,12 @@ class Envtpl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6025ef60071f6f4a00fde5c2228472bd51059e6d77095f024656ce2686713e19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6025ef60071f6f4a00fde5c2228472bd51059e6d77095f024656ce2686713e19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6025ef60071f6f4a00fde5c2228472bd51059e6d77095f024656ce2686713e19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "89128c77763d1382c29c090b96995d4fcfee0fa17b151acb629db2446972c7ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "987f58362319dccf2c05866fade24a032c2bdb766fa8f86ba80b5844ed5c3402"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "280d597c06349747ae9c78c3dab386d850be2f4c916e115d382b1773e8582038"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "280d597c06349747ae9c78c3dab386d850be2f4c916e115d382b1773e8582038"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "280d597c06349747ae9c78c3dab386d850be2f4c916e115d382b1773e8582038"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "097eb9481b89356b24c210df44572c0106fcf9a904af9b3b5effc83b10876c53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e72dd014b27fbd20b8333d8a1d3ac179e63b513790a88696b49e35bfb98cfb0"
   end
 
   depends_on "go" => :build
