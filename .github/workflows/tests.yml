@@ -133,20 +133,16 @@ jobs:
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
         run: |
-          # Set Linux-specific environment variables if running on Linux
-          if [[ "$RUNNER_OS" == "Linux" ]]; then
-            export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-            export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
-            export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
-            export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-          fi
+          brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
 
-          # Use custom args for PR events, default args otherwise
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
-          else
-            brew test-bot --only-formulae --skip-recursive-dependents --root-url="https://ghcr.io/v2/chenrui333/tap"
-          fi
+      - name: Post-build steps
+        if: always()
+        uses: Homebrew/actions/post-build@main
+        with:
+          runner: ${{ matrix.runner }}
+          cleanup: ${{ matrix.cleanup }}
+          bottles-directory: ${{ env.BOTTLES_DIR }}
+          logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
 
   label-pr:
     needs: build-formula
