@@ -238,6 +238,7 @@ brew install --cask <tool>
 - `hygg`
 - `hyperbolic`
 - `iam-convert`
+- `iflow-cli`
 - `iftree`
 - `illa`
 - `imgcat`
