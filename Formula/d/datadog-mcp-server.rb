@@ -7,10 +7,7 @@ class DatadogMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f44140b73a5c4f046ae4a8d89028c96997cabc3f8195c7ad919b7488ffb7f5b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4f3ed19548dc9e51119fb47681913f9050cd2bd0f1ab1a4b7d9d7f9fca8c36e"
-    sha256 cellar: :any_skip_relocation, ventura:       "851624de7eabbcaf60a9161e9bd2d4c5326902647a741f165340620f942c73a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a1b735edd54ef54720e7835aa49b9b464f517d3a09b05613c0829c16278b676"
+    sha256 cellar: :any_skip_relocation, all: "ffc2df9e69d9dc0b64660693bfede66d77e5a828b80b4baab66b06fa809e96d3"
   end
 
   depends_on "node"
