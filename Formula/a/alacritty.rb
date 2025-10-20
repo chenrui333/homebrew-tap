@@ -12,11 +12,11 @@ class Alacritty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63dccd92b84e7f512c7243356b26ef0c32ebe2a597e4938d1f7d8ccce4b46c78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d90c26472ebcb6f162452098eddfe5f83592abf8e9704a0a580fb5348295131"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5bbd110c5fbea59dbfcb9650e6f08ace5aaad29434dd471b5f1ad43b1aa53ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7ace95f29da1611367488281839e4ff5f9a82aa0fd9c908c43661d9bb87d0c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41ab0d975e056c35bf3d8c952c6f7822b3d88a93f2562bb2015d9078e4724a25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c61d79b5d29648b25ec4a338a3b49da7bf9fa99282c0d512a25ae9aebb01b6f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7b8d90e3ffc3975cfcafa71ed7e2917e60e081d1d7e46e953dd0a976b34eb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3602d593ff125a1149fbd34b4aeca7c417285e7a4fb6d9b491048930521177e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ba30fa72a90e2c9d2f2ff71c615a7832095357f60d70cba111a5ab1dec7675"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7230f7f3e71d7de219cf5ff73ec33de54c9fd6d1e4185ceee160c46337a82f79"
   end
 
   depends_on "pkgconf" => :build
