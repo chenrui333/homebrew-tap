@@ -9,10 +9,10 @@ class Pixelle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "8cd8ad758fea6181f80d3fee25033e8d7bad45f3168a9f3b63f79ac99c5754f6"
-    sha256 cellar: :any,                 arm64_sequoia: "5f5e4edadd71cc8df972307c79f77c6e381738e0f7337cecfeaad6eee9fcdffe"
-    sha256 cellar: :any,                 arm64_sonoma:  "43923d1b01baf421e84c7434509a85d6cbfdf1a76b639036fa97079a4639c48e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe71e51c0c69217047f8dff44effacfd55209059b50a354437b4dfe43e8650cc"
+    sha256 cellar: :any,                 arm64_tahoe:   "3b96bbeb18b25eae809960c1e0f3c8483a63bf4d413cf47d5172287b4b9abf86"
+    sha256 cellar: :any,                 arm64_sequoia: "bda72d8a1a66515af5e57cfe5d48d6396a44cd0d155bf5148b4b17ca2ac8d2d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "26529f55000aef1076e65a5ea672bb04cc2289f8453651ceae9278f9fcc4b271"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1aabde1d53714a0e2293e5cc90e1d8796fa847715e8607ba1c56bfb57e7aebf"
   end
 
   depends_on "pkgconf" => :build
