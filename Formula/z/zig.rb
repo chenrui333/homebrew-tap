@@ -59,9 +59,12 @@ class Zig < Formula
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 
-    # Limit memory usage to ~6GB for CI environments
-    build_args = ENV["HOMEBREW_GITHUB_ACTIONS"] ? ["--", "--maxrss=6000000000"] : []
-    system "cmake", "--build", "build", *build_args
+    # Limit parallelism for CI environments to reduce memory usage
+    if ENV["HOMEBREW_GITHUB_ACTIONS"]
+      system "cmake", "--build", "build", "--parallel", "2"
+    else
+      system "cmake", "--build", "build"
+    end
     system "cmake", "--install", "build"
   end
 
