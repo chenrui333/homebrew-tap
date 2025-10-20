@@ -1,8 +1,8 @@
 class DatadogMcpServer < Formula
   desc "Community-maintained Datadog MCP server"
   homepage "https://github.com/winor30/mcp-server-datadog"
-  url "https://registry.npmjs.org/@winor30/mcp-server-datadog/-/mcp-server-datadog-1.6.0.tgz"
-  sha256 "e376bea68a2dc26ccf675a39f08f95c9c9fb0b4a44764c76e9762c53c9bbfcb9"
+  url "https://registry.npmjs.org/@winor30/mcp-server-datadog/-/mcp-server-datadog-1.7.0.tgz"
+  sha256 "5036898f75a9e4d5609670fce7894372d651350277b1c4891c61c5cfb14db012"
   license "Apache-2.0"
 
   bottle do
