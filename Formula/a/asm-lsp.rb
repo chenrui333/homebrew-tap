@@ -7,10 +7,11 @@ class AsmLsp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5b30871ab4dd4f9d94928c496547ca4dd15b3424f2bd6cddb5b39b4df511a91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "489d71f204483110a11266e8dd66396d537431ab877f9d32aa2a194bbd0715d7"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5361012dfa26e6ebe43d00efada309ef4dbbb99513632aa76d1e550af90fd71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cf71266ea3ba3b2224746c58e2c24fdb0d38c49a4fbe5cffda47fffd6a79b09"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a85bf32fa26ad27f0ae108620b73f93ef441a2ea03ad38d174b8e5f775a214"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4571a9c8bcf80f87ef3c0691ccded1a98b6b9f24a7868baab2f63b39f4863eae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85a7b43684e2113326ca6b8e6e9156a67451e9599d8b8243a7b2432b845efea7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "222fd553b4b01bb8c417ccc87ed90b9da432e429b4f09ddbac656ba626aac298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05eb0d9b223fef0d7a661489edcfa8422b0252b13141073a6a2e4e79f3063270"
   end
 
   depends_on "pkgconf" => :build
