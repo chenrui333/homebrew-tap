@@ -58,7 +58,10 @@ class Zig < Formula
     args << "-DZIG_TARGET_MCPU=#{cpu}" if build.bottle?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build"
+
+    # Limit memory usage to ~6GB for CI environments
+    build_args = ENV["HOMEBREW_GITHUB_ACTIONS"] ? ["--", "--maxrss=6000000000"] : []
+    system "cmake", "--build", "build", *build_args
     system "cmake", "--install", "build"
   end
 
