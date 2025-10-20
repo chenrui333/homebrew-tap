@@ -1,8 +1,8 @@
 class AsmLsp < Formula
   desc "Simplistic command runner and build system"
   homepage "https://github.com/bergercookie/asm-lsp"
-  url "https://github.com/bergercookie/asm-lsp/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "4755848aa7d88856be7e40d0930990b95b46c4593a53db3809d3ba7214d9d16d"
+  url "https://github.com/bergercookie/asm-lsp/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "9500dd7234966ae9fa57d8759edf1d165acd06c4924d7dbeddb7d52eb0ce59d6"
   license "BSD-2-Clause"
 
   bottle do
