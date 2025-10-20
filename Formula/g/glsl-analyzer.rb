@@ -14,7 +14,7 @@ class GlslAnalyzer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4246054679b96000ea1560bf7e6c4bfbfd5a49d245f485e68628be7dea9daa6d"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.14" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
