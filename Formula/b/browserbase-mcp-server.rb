@@ -7,7 +7,7 @@ class BrowserbaseMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "3c7085aff65162912d8d979abd3a95e1b275e0a04127c8e652e018ec5af855ff"
+    sha256 cellar: :any_skip_relocation, all: "e81deb3e096718ae59173a17988ee5688bb7e34437fd53b48408103065c44595"
   end
 
   depends_on "node"
