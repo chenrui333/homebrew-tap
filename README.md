@@ -475,6 +475,7 @@ brew install --cask <tool>
 - `tpm`
 - `tracetest`
 - `travelgrunt`
+- `trdl`
 - `trieve-cli`
 - `tsuki`
 - `tuono`
