@@ -6,6 +6,15 @@ class Trdl < Formula
   license "Apache-2.0"
   head "https://github.com/werf/trdl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3d1927079724fc072b698a7b9ccc9319c2f9e72307f9d77335c8909d4d7965d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3d1927079724fc072b698a7b9ccc9319c2f9e72307f9d77335c8909d4d7965d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3d1927079724fc072b698a7b9ccc9319c2f9e72307f9d77335c8909d4d7965d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6bfd2df8f390618681d0515d7471dfd9341a2fd1490267a2340490db9c55d6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7af6c7df18d6e2404a2bb72cfa7a9e394fccc9bf187af529a027db283a9ab787"
+  end
+
   depends_on "go" => :build
 
   def install
