@@ -1,8 +1,8 @@
 class HfMcpServer < Formula
   desc "MCP Server for Hugging Face"
   homepage "https://github.com/evalstate/hf-mcp-server"
-  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.2.32.tgz"
-  sha256 "6d09ea7b9b62d8cdcd648bac253a379602fef67acdb0a76ab0670c0ea33a36e7"
+  url "https://registry.npmjs.org/@llmindset/hf-mcp-server/-/hf-mcp-server-0.2.33.tgz"
+  sha256 "4200386eb1b0b049e2dbbac4468fe894ff7bd684dcbdd4070ec8a9bf458ceeba"
   license "MIT"
 
   bottle do
