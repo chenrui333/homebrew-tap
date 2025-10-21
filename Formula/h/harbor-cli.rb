@@ -6,6 +6,15 @@ class HarborCli < Formula
   license "Apache-2.0"
   head "https://github.com/goharbor/harbor-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d15fc0f3a609c1133a83f55a97fe67eb6cfab5041bc7b450df733c016970076d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d15fc0f3a609c1133a83f55a97fe67eb6cfab5041bc7b450df733c016970076d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d15fc0f3a609c1133a83f55a97fe67eb6cfab5041bc7b450df733c016970076d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "281ac30f46ee7c15529986aab8021353312c1df1f8b2d7a92e2309f84d5bc400"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "391176bc847301dc92a6892249e2ca515a6f22fee1102e07e259483d82b2f55f"
+  end
+
   depends_on "go" => :build
 
   # defer keyring initialization to prevent build-time keychain errors
