@@ -121,6 +121,7 @@ brew install --cask <tool>
 - `cloudflare-ddns`
 - `cloudlens`
 - `cmdx`
+- `cnspec`
 - `cocainate`
 - `code-index-mcp`
 - `code-pushup`
