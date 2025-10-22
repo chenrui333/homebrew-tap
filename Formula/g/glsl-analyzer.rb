@@ -2,8 +2,8 @@ class GlslAnalyzer < Formula
   desc "Language server for GLSL"
   homepage "https://github.com/nolanderc/glsl_analyzer"
   url "https://github.com/nolanderc/glsl_analyzer.git",
-      tag:      "v1.7.0",
-      revision: "31690cb38c1d78aa831b503de0e4a45ba5bb8c7a"
+      tag:      "v1.7.1",
+      revision: "d595fb18c165f9e6c0c99a39dd457b993cfdd9aa"
   license "MIT"
 
   bottle do
