@@ -8,10 +8,10 @@ class GlslAnalyzer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6a411a1e429a920ff5af1a83003ff70f6de9f6d819b9f26c01c1884d16b3c6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a1a3e7c6bd5389e70f9e6c6a2d42ddb65900ce69c6b842443f28678c81fddaf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "160e720a0c734319652c447ef2d91cb61b93f1a9e3babbe262be65cc8c48427b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02ea89a7478376615d96079831c8ad0c9ee105b43c31a6f88447d17bd11db73a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f547b77849ff6679ad56f0a44b2bc45afc02f0d5e56b8ad89e3665e38fb0f0eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3398c52157d6efbb61293659be6a6af57cdce6dec9736ccb730dd13e2acb365c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4731449f8041328d01be3eedc5fa2953078d3a6ed9c85ca8bfe1934f4efc3249"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88df97170594fa3f5087979a77b974899ccf3d51126e44df8e7f3dad72a35e76"
   end
 
   depends_on "zig@0.14" => :build
