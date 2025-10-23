@@ -1,8 +1,8 @@
 class Trdl < Formula
   desc "Deliver software updates securely from a trusted TUF repository"
   homepage "https://trdl.dev/"
-  url "https://github.com/werf/trdl/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "dc6b99f20b1ab33f6801050a2367529a235c2b1a654d24f908b1f1bf62a36457"
+  url "https://github.com/werf/trdl/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "ec9cfd4a43f4b030f1579af4ad40774e8a56fe1214300f8ed72cdb0009866265"
   license "Apache-2.0"
   head "https://github.com/werf/trdl.git", branch: "main"
 
