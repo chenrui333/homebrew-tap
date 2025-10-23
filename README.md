@@ -215,6 +215,7 @@ brew install --cask <tool>
 - `gritql`
 - `grmon`
 - `gtts`
+- `harbor-cli`
 - `hasha-cli`
 - `hauler`
 - `hcldump`
