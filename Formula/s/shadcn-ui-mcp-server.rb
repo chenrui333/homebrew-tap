@@ -1,8 +1,8 @@
 class ShadcnUiMcpServer < Formula
   desc "MCP server for Shadcn UI v4"
   homepage "https://github.com/jpisnice/shadcn-ui-mcp-server"
-  url "https://registry.npmjs.org/@jpisnice/shadcn-ui-mcp-server/-/shadcn-ui-mcp-server-1.1.0.tgz"
-  sha256 "4aeb3400a746f1e37c9b5960b605adf978fee1f84cb8262ccd2aa9f4e79740e9"
+  url "https://registry.npmjs.org/@jpisnice/shadcn-ui-mcp-server/-/shadcn-ui-mcp-server-1.1.4.tgz"
+  sha256 "6ebace7f838d15446734159b35db77ee6187cbfadb7c117d8b09c28bbbf0ae34"
   license "MIT"
 
   bottle do
