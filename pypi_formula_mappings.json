@@ -1,4 +1,7 @@
 {
+  "kimi-cli": {
+    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
+  },
   "arxiv-mcp-server": {
     "exclude_packages": ["certifi", "pymupdf"]
   },
