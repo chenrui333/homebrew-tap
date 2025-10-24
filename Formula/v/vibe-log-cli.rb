@@ -5,6 +5,15 @@ class VibeLogCli < Formula
   sha256 "830ce89a5c6863cd8712f83b26b9924485789fdc3a8359a6ef2872cfe85981a7"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "c50c82073ce2cdf774a055b54a32753b123c69f082df69763018eb4962005ea3"
+    sha256 cellar: :any,                 arm64_sequoia: "67d0cecbf1f4e9246c208caab35036975aad5ca1ca856bfe3990a74f4cdf2970"
+    sha256 cellar: :any,                 arm64_sonoma:  "67d0cecbf1f4e9246c208caab35036975aad5ca1ca856bfe3990a74f4cdf2970"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "640d69662d9579ed7e75fc6a9e8f634da382f6164eb99a232cd1ad6a2825035e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "269a164cde866c6c1bd708b0c4ccc3e628845fa4541e1720e3d7f643f50562ba"
+  end
+
   depends_on "node"
 
   def install
