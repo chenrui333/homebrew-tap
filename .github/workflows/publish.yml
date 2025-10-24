@@ -26,7 +26,7 @@ jobs:
             exit 1
           fi
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@cc2a7f49ce8002d7100030e49058837f8589a297
+        uses: Homebrew/actions/setup-homebrew@c39f0335940fb3214046dce5a5d2f94ed275ab4b
         with:
           core: true
           cask: false
@@ -38,7 +38,7 @@ jobs:
           echo "Locked Homebrew to commit: $(git rev-parse HEAD)"
 
       - name: Set up git
-        uses: Homebrew/actions/git-user-config@cc2a7f49ce8002d7100030e49058837f8589a297
+        uses: Homebrew/actions/git-user-config@c39f0335940fb3214046dce5a5d2f94ed275ab4b
         with:
           username: BrewTestBot
 
@@ -51,7 +51,7 @@ jobs:
         run: brew pr-pull --debug --root-url="https://ghcr.io/v2/chenrui333/tap" --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
 
       - name: Push commits
-        uses: Homebrew/actions/git-try-push@cc2a7f49ce8002d7100030e49058837f8589a297
+        uses: Homebrew/actions/git-try-push@c39f0335940fb3214046dce5a5d2f94ed275ab4b
         with:
           token: ${{ github.token }}
           branch: main
