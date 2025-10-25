@@ -12,6 +12,10 @@
   "lemonade": {
     "exclude_packages": ["certifi", "numpy", "sentencepiece"]
   },
+  "markitdown": {
+    "package_name": "markitdown[all]",
+    "exclude_packages": ["certifi", "cryptography", "onnxruntime"]
+  },
   "rallies-cli": {
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
