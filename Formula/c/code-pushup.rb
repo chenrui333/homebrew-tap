@@ -7,11 +7,11 @@ class CodePushup < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c950f175c40d8f4c0b75aacf4ccc185b905787116540a9512ed0a734ceae8f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c950f175c40d8f4c0b75aacf4ccc185b905787116540a9512ed0a734ceae8f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c950f175c40d8f4c0b75aacf4ccc185b905787116540a9512ed0a734ceae8f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e84c580dd9360164e1f89328500ff4c5b33cbbc25f43b75336c0dcb36073ecc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a82819449a92f2250306f72af47474272a37cee75d047e67c75a8c004601c2e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a710e633d13de45b85094ad6c8367b317424dd603f48b95e7f47a1418376de4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a710e633d13de45b85094ad6c8367b317424dd603f48b95e7f47a1418376de4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a710e633d13de45b85094ad6c8367b317424dd603f48b95e7f47a1418376de4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d525bc19d48f6282deeccb830768fb79d2de3a34fe8c5f3c107d591af3202a18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c2be93c613b54256e00f879fe886be64b0c9609fa00dc06430f2750ed219c18"
   end
 
   depends_on "node"
