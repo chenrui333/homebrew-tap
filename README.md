@@ -262,6 +262,7 @@ brew install --cask <tool>
 - `karmor`
 - `kbst`
 - `kcl`
+- `kekkai`
 - `keyhunter`
 - `klepto`
 - `knip`
@@ -494,6 +495,7 @@ brew install --cask <tool>
 - `vercel-serve`
 - `vet-run`
 - `vgo`
+- `vibe-log-cli`
 - `vibekit`
 - `videoalchemy`
 - `vitepress`
