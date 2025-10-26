@@ -10,6 +10,7 @@ class Markitdown < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "onnxruntime"
+  depends_on "pillow"
   depends_on "python@3.13"
 
   uses_from_macos "libxml2", since: :ventura
@@ -123,11 +124,6 @@ class Markitdown < Formula
   resource "pdfminer-six" do
     url "https://files.pythonhosted.org/packages/78/46/5223d613ac4963e1f7c07b2660fe0e9e770102ec6bda8c038400113fb215/pdfminer_six-20250506.tar.gz"
     sha256 "b03cc8df09cf3c7aba8246deae52e0bca7ebb112a38895b5e1d4f5dd2b8ca2e7"
-  end
-
-  resource "pillow" do
-    url "https://files.pythonhosted.org/packages/5a/b0/cace85a1b0c9775a9f8f5d5423c8261c858760e2466c79b2dd184638b056/pillow-12.0.0.tar.gz"
-    sha256 "87d4f8125c9988bfbed67af47dd7a953e2fc7b0cc1e7800ec6d2080d490bb353"
   end
 
   resource "pydub" do

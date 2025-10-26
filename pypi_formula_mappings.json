@@ -14,7 +14,7 @@
   },
   "markitdown": {
     "package_name": "markitdown[all]",
-    "exclude_packages": ["certifi", "cryptography", "onnxruntime"]
+    "exclude_packages": ["certifi", "cryptography", "onnxruntime", "pillow"]
   },
   "rallies-cli": {
     "package_name": "rallies",
