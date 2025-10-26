@@ -9,11 +9,8 @@ class Amoco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e099f669d16a02f6985ffafccb71cd721be9bb0a04a55264362177633e13f105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6662fc57360a2b77b6cb051fd73627047011f8312a9fffe8392082b2098d099d"
-    sha256 cellar: :any_skip_relocation, ventura:       "0440b59283e92784415c4eaadddf634bd330c4cbcd4d68dd2dbfede94dc17af3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1959f6c3fbe2cd03ca555fa873f014e6fbdd96325a24f3bbbfe221276e9cec3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "92e1836249525338e58f7c966af223c74ef7243ac763098cce5692aba40411d3"
   end
 
   depends_on "python@3.14"
