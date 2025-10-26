@@ -511,7 +511,6 @@ brew install --cask <tool>
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
-- `yuque-dl`
 - `go-zzz`
 - `zen-mcp-server`
 - `zero`
