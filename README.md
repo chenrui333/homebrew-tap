@@ -424,6 +424,7 @@ brew install --cask <tool>
 - `sheetui`
 - `shiroa`
 - `shopify-cli`
+- `shortest`
 - `shuk`
 - `sig`
 - `simdjzon`
