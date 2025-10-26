@@ -4,6 +4,7 @@ class Ziglint < Formula
   url "https://github.com/DonIsaac/zlint/archive/refs/tags/v0.7.9.tar.gz"
   sha256 "be81fd5d9dd7cafc65c1214946c05b629d1ceb3ada31add96bfd260efea2e2fc"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
