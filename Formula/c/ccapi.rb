@@ -7,7 +7,7 @@ class Ccapi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "af1fdabe28692bda56e1e067d9d7ae89dac25627d2a8221c2a1119e12c68147b"
+    sha256 cellar: :any_skip_relocation, all: "23e89a5257704e08aa7df292c89dff9a3bbc63f618e21e7e80a770ee502b1157"
   end
 
   depends_on "node"
