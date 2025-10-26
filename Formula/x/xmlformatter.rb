@@ -15,7 +15,7 @@ class Xmlformatter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e526923af680bee9fd86f6ed3f8d3cbd7b66d61e62328386c9545c5f2aefc7ff"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources
