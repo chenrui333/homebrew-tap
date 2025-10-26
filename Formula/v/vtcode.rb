@@ -8,11 +8,11 @@ class Vtcode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14164333686dc2ed14b496cb4a7cb1c63b87d08d5af2f8ae8c45596a476bd04e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70e2ae11b420b171c13eb3ee8777dc5abfcc5f9c3ab5edd11d8a537d9ce98ed6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5baba72cb1bdf7818d51865a012ac0d2273dee41f24f0e707f5eb1829c88d9f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3edfe17d2eaeb357748c9ebcbfc7ba3fd1de28dc4cf9a56711e609450b4adad4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99497e8291ed1bcea1e654349cfe0a72b340cd612dc4388d72646f277f155ae4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9a12993033f1cfdb38b935bae9c9c2c1d4eb231773b83e6a81a64d0ab024950"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5b199c599ff9640df72af647300474c43beac57c8f4ddb37d5aa39b6dc341c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1c3bc9e7d20d02a275086b1bcdd62e176d5a18741ad8bc94b64c85dad3d21bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c73282bd67ff98cb4d9f6a77d61da97458fb7e9625a88b250744317452c7f603"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a907dda7476817a9417c5e1323a3eca15d8f227f5a59dbf8fc3b017c4650f96"
   end
 
   depends_on "pkgconf" => :build
