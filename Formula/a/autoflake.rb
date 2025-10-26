@@ -15,11 +15,11 @@ class Autoflake < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9baad05efcc1b028d1bc73645214c32ceaa7e2c9529b6e13b99e7e04dc27c96"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/57/f9/669d8c9c86613c9d568757c7f5824bd3197d7b1c6c27553bc5618a27cce2/pyflakes-3.2.0.tar.gz"
-    sha256 "1c61603ff154621fb2a9172037d84dca3500def8c8b630657d1701f026f8af3f"
+    url "https://files.pythonhosted.org/packages/45/dc/fd034dc20b4b264b3d015808458391acbf9df40b1e54750ef175d39180b1/pyflakes-3.4.0.tar.gz"
+    sha256 "b24f96fafb7d2ab0ec5075b7350b3d2d2218eab42003821c06344973d3ea2f58"
   end
 
   def install
