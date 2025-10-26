@@ -5,6 +5,7 @@ class Venom < Formula
   url "https://github.com/ovh/venom/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "8047a7d20aa5be003684182830ddf05b6133f0761a89256b5791fe665358dff9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ovh/venom.git", branch: "master"
 
   bottle do

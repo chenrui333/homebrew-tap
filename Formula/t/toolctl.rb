@@ -4,6 +4,7 @@ class Toolctl < Formula
   url "https://github.com/toolctl/toolctl/archive/refs/tags/v0.4.15.tar.gz"
   sha256 "4667b156f11e26bd21661b16ae1eab28aed39f88685c8447a23de038b5a63e40"
   license "MIT"
+  revision 1
   head "https://github.com/toolctl/toolctl.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Toolctl < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/toolctl/toolctl/internal/cmd.gitVersion=#{version}

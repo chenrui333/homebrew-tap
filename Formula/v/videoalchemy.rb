@@ -4,6 +4,7 @@ class Videoalchemy < Formula
   url "https://github.com/viddotech/videoalchemy/archive/refs/tags/1.0.0.tar.gz"
   sha256 "1ad4ab7e1037a84a7a894ff7dd5e0e3b1b33ded684eace4cadc606632bbc5e3d"
   license "MIT"
+  revision 1
   head "https://github.com/viddotech/videoalchemy.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Videoalchemy < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/compose"
 

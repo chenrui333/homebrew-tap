@@ -4,6 +4,7 @@ class Sloctl < Formula
   url "https://github.com/nobl9/sloctl/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "5f508f1a4dcc2d7666bd43fe0b1469a86a9a7d46a40897c55ec6d37bae0d9d1b"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/nobl9/sloctl.git", branch: "main"
 
   bottle do
@@ -18,6 +19,8 @@ class Sloctl < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/nobl9/sloctl/internal.BuildVersion=#{version}

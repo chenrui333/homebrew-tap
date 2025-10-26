@@ -4,6 +4,7 @@ class Speedtest < Formula
   url "https://github.com/showwin/speedtest-go/archive/refs/tags/v1.7.10.tar.gz"
   sha256 "70a2937d0759820fe7ee8f61b960d60c07b34c0d783ed11c0065b68fe2964aea"
   license "MIT"
+  revision 1
   head "https://github.com/showwin/speedtest-go.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class Speedtest < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end

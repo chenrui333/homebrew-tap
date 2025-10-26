@@ -4,6 +4,7 @@ class SourcererMcp < Formula
   url "https://github.com/st3v3nmw/sourcerer-mcp/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "91d4d05112dba2c51f0575a70fa2e02d41c0c946f23182b48ff6e6971cb5815b"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

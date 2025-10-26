@@ -4,6 +4,7 @@ class Sgpt < Formula
   url "https://github.com/tbckr/sgpt/archive/refs/tags/v2.17.1.tar.gz"
   sha256 "d02c1e3b12dd40cc22a5741e3a90f359123fd6f37d6e56c63f6a82e12507dfbe"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/tbckr/sgpt.git", branch: "main"
 
   bottle do
@@ -18,6 +19,8 @@ class Sgpt < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/tbckr/sgpt/internal/buildinfo.version=#{version}
