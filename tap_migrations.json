@@ -167,5 +167,6 @@
   "yamlfix": "homebrew/core",
   "yamlresume": "homebrew-core",
   "yor": "homebrew/core",
-  "ytt": "homebrew/core"
+  "ytt": "homebrew/core",
+  "yuque-dl": "homebrew/core"
 }
