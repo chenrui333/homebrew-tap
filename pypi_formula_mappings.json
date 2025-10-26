@@ -1,6 +1,6 @@
 {
   "arxiv-mcp-server": {
-    "exclude_packages": ["certifi", "pymupdf"]
+    "exclude_packages": ["certifi", "pymupdf", "pydantic-core", "rpds-py"]
   },
   "context-file-manager": {
     "package_name": "context-file-manager[mcp]",
