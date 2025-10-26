@@ -9,10 +9,12 @@ class AutotoolsLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "7cbe299888817b45cd2acb0c60c186e91ebae3a7eb1594f14458b0e995124eff"
-    sha256 cellar: :any,                 arm64_sonoma:  "3552f897727e341c9779fa7e24ba90776356d0646ada31f9658efee5599bae4a"
-    sha256 cellar: :any,                 ventura:       "cc807708621373c3526bdd64106c3dd1b219ccaed6959a1abd6304999f93a81b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57d3f7a35c024685f7827be483d0c73aea4200e8036827ae1fcc5db9371e96e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "550d40005047e644408b1e98f3b063607a7abd78214c8190f956e4d590b76ddc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c11827853205db0d9987d0be70e43ab24c5d3a39d1a9baa29184c08d5f7a9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0822dedcd4e5d707a5e675c4d01e71cd96609ce41b06ad000ce2552bba779064"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "155d0c160df2fc68829bc6930aaa5818ed2d79088561535f91bd86b7eb9e99a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cce201546405893776fbdb77d9e009859c94f978e19e3afce8bb19344c76a3a2"
   end
 
   depends_on "python@3.14"
