@@ -7,8 +7,13 @@ class Markitdown < Formula
   sha256 "b0d9127c3373a68274dede6af6c9bb0684b78ce364c727c4c304da97a20d6fd9"
   license "MIT"
 
+  depends_on "cmake" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
+  depends_on "numpy"
   depends_on "onnxruntime"
   depends_on "pillow"
   depends_on "python@3.13"
