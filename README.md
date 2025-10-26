@@ -186,6 +186,7 @@ brew install --cask <tool>
 - `foy`
 - `frep`
 - `fsociety`
+- `fuck-u-code`
 - `gemini-cli`
 - `get-port-cli`
 - `ghfetch`
@@ -493,7 +494,6 @@ brew install --cask <tool>
 - `vento`
 - `vercel-serve`
 - `vet-run`
-- `vgo`
 - `vibekit`
 - `videoalchemy`
 - `vitepress`
