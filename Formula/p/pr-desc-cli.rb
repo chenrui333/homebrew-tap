@@ -1,8 +1,8 @@
 class PrDescCli < Formula
   desc "AI-powered PR description generator"
   homepage "https://github.com/chalet-dev/chalet"
-  url "https://registry.npmjs.org/pr-desc-cli/-/pr-desc-cli-2.0.2.tgz"
-  sha256 "a807d522b1d1106dafdda5f774309e5e4dafdda137715630af8f93843d10cb84"
+  url "https://registry.npmjs.org/pr-desc-cli/-/pr-desc-cli-2.0.3.tgz"
+  sha256 "59cb6fbe61187b100db447ebc550f933c527f543245aedbcbf8379b1ee4bce78"
   license "MIT"
 
   bottle do
