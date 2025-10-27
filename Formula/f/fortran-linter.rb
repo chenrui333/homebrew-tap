@@ -15,7 +15,7 @@ class FortranLinter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2de8e05a0980c9d7095bbb9fa48632093b9daf796a7162481bf2940ad5c27a9"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources
