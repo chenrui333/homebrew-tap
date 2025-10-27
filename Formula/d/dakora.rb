@@ -6,7 +6,7 @@ class Dakora < Formula
   url "https://files.pythonhosted.org/packages/3e/58/d8362ae8b268c7ea35c992233621bc80e44e89337fe2d1502fe49faf0109/dakora-1.0.3.tar.gz"
   sha256 "ce276e3dbaf049ee71f4053a727db1d0ea3a331b2000825dd646af7633d61811"
   license "Apache-2.0"
-  head "https://github.com/microsoft/wassette.git", branch: "main"
+  head "https://github.com/dakora-labs/dakora.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
