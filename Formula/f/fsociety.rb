@@ -9,10 +9,8 @@ class Fsociety < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "126e51a1e83c8fb973ee23e559fc90fd195b33ba40d432470990e9f003380bcb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9e81f95c209e72c518d50e65972f750f62d31f51dbdf01e884012190469febe"
-    sha256 cellar: :any_skip_relocation, ventura:       "7cce4e99e034da264ea86e5e5d76cb65187c0096d02bd03e5baf710deb9312da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6463de247908f5428bf68331c70793d6bfd9ab3818230b17f87aba31e0c1a1a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d140926a1ba20313fb84017cc0867f2814316711a758ae4e6242ca47cf969db2"
   end
 
   depends_on "certifi" => :no_linkage
