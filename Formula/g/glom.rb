@@ -15,7 +15,7 @@ class Glom < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafbec4139a5f0d2b7e0c47a1b8634c47e7fea6185786b319a683a41cb9531cc"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz"
