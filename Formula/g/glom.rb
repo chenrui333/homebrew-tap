@@ -9,10 +9,8 @@ class Glom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7a66e6d65938dcc173c7442506b7141c217be6028c3c1c477b643f80c776e05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "241053b9ea7fbd97a6278b387e76010f3b673c4d1e39ec34fd3b3b5ff5ac468f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e05bfa7862ac27e20d28ce8866220386ba9ba19e4c9fb203a6024a355699723"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafbec4139a5f0d2b7e0c47a1b8634c47e7fea6185786b319a683a41cb9531cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3247763adf39cecd4ab0755648bbec36d0882212563058f1c640e46d78c8352f"
   end
 
   depends_on "python@3.14"
