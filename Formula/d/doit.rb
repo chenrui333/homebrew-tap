@@ -15,7 +15,7 @@ class Doit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4941aa344f927ddd8ae9f01aed29eeb6d6ee71b6bdb3ddfafcb066f70ea34f"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "cloudpickle" do
     url "https://files.pythonhosted.org/packages/52/39/069100b84d7418bc358d81669d5748efb14b9cceacd2f9c75f550424132f/cloudpickle-3.1.1.tar.gz"
@@ -28,8 +28,8 @@ class Doit < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/3f/50/bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56f/zipp-3.21.0.tar.gz"
-    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
+    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install
