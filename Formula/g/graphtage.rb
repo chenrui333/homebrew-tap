@@ -9,10 +9,12 @@ class Graphtage < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "e7ff37a1852efcd1c44de3ab85f2d6f73c7022135c4eb0b67bc712d447061526"
-    sha256 cellar: :any,                 arm64_sonoma:  "69d71f5ae10c9e9fda20253f7d8263e98569efdcc0efd057467a927a5abe02c2"
-    sha256 cellar: :any,                 ventura:       "f5449a05e6d211881f97f1770b102cb9559ce6a12c2ed0757791fa926edaf0d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34def5b4d0b5d259fb6947abc76b0f1bd46fa2ddb619bf6ea13d3370cbecfab3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1acbf3be56ca1669c6468a1c4b7ba1a7f23aa76b330defc02146ada8065b042d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de65c5ec5cbc10b4d0ed62755dc80f91406cc792ced2c0f6bcb99074c580e6eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d2673ae17f0e14ca7cefac801a789cfd23378ad7c9e313b9f9ff34ae407069a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "503a28d204b0e5c9b0cfafd0e8059d962e35ae8fdfcc5f0db56cb00e7c6a0c61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87eeed55ee1c6473eda6fe96c7e4e085174022efa2b22c8cbffaeedbe07ae684"
   end
 
   depends_on "libyaml"
