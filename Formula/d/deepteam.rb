@@ -16,9 +16,11 @@ class Deepteam < Formula
   end
 
   depends_on "rust" => :build # for pydantic
-  depends_on "certifi"
+  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "pydantic-core" => :no_linkage
   depends_on "python@3.13"
+  depends_on "rpds-py" => :no_linkage
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"

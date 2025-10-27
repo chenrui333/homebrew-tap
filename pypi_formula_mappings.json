@@ -6,6 +6,9 @@
     "package_name": "context-file-manager[mcp]",
     "exclude_packages": ["certifi"]
   },
+  "dakora": {
+    "exclude_packages": ["certifi", "pydantic-core", "rpds-py"]
+  },
   "gtts": {
     "exclude_packages": ["certifi"]
   },
