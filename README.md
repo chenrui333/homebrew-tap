@@ -217,7 +217,6 @@ brew install --cask <tool>
 - `gritql`
 - `grmon`
 - `gtts`
-- `harbor-cli`
 - `hasha-cli`
 - `hauler`
 - `hcldump`
@@ -486,6 +485,7 @@ brew install --cask <tool>
 - `tuono`
 - `twiggy`
 - `twilio-mcp-server`
+- `ty`
 - `unused-deps`
 - `uplift`
 - `urlsup`
