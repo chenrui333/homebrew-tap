@@ -8,11 +8,11 @@ class HarborCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d15fc0f3a609c1133a83f55a97fe67eb6cfab5041bc7b450df733c016970076d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d15fc0f3a609c1133a83f55a97fe67eb6cfab5041bc7b450df733c016970076d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d15fc0f3a609c1133a83f55a97fe67eb6cfab5041bc7b450df733c016970076d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "281ac30f46ee7c15529986aab8021353312c1df1f8b2d7a92e2309f84d5bc400"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "391176bc847301dc92a6892249e2ca515a6f22fee1102e07e259483d82b2f55f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "232fa58aa037d1a7c56e7f7ea59cf4e9b856efceac361fa57b5014e508071ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "232fa58aa037d1a7c56e7f7ea59cf4e9b856efceac361fa57b5014e508071ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "232fa58aa037d1a7c56e7f7ea59cf4e9b856efceac361fa57b5014e508071ac2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1727c6374374aab348b296b0380f486950a2cdfad72eb7cbabd9213854499ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fc505f39ce7035c373fe844f4324921a1e40709941c18f1ca8fd3f3d578b5f3"
   end
 
   depends_on "go" => :build
