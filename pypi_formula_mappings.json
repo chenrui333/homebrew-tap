@@ -12,6 +12,9 @@
   "lemonade": {
     "exclude_packages": ["certifi", "numpy", "sentencepiece"]
   },
+  "oxylabs-mcp": {
+    "exclude_packages": ["certifi", "cryptography", "pydantic-core", "rpds-py"]
+  },
   "rallies-cli": {
     "package_name": "rallies",
     "exclude_packages": ["certifi", "numpy"]
