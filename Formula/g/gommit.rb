@@ -4,6 +4,7 @@ class Gommit < Formula
   url "https://github.com/antham/gommit/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "b4a94b0f2c1dc588df267e9f697c5b5b60b0a3668a2ef058c30e9983b8d6279d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/antham/gommit.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class Gommit < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X gommit.appVersion=#{version}")
 
     generate_completions_from_executable(bin/"gommit", "completion")

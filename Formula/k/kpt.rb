@@ -4,6 +4,7 @@ class Kpt < Formula
   url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.59.tar.gz"
   sha256 "77f8693eea137a97c8e66178392fef6d5a7644aaf10a06091c57e0fcd9552340"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kptdev/kpt.git", branch: "main"
 
   livecheck do
