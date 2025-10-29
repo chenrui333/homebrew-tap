@@ -5,6 +5,7 @@ class Pluralith < Formula
   url "https://github.com/Pluralith/pluralith-cli/archive/refs/tags/v0.2.2.tar.gz"
   sha256 "83cbef01a82e15024c20c023e80b11b1f2aa0f878019c486055b604eaafeba07"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/Pluralith/pluralith-cli.git", branch: "main"
 
   bottle do

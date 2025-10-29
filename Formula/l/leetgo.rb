@@ -5,6 +5,7 @@ class Leetgo < Formula
   url "https://github.com/j178/leetgo/archive/refs/tags/v1.4.13.tar.gz"
   sha256 "b92f1708b1420e85c6b97e41f8a09b127a42c387918cba950543e1713195384d"
   license "MIT"
+  revision 1
   head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do

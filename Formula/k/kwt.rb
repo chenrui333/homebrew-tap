@@ -4,6 +4,7 @@ class Kwt < Formula
   url "https://github.com/carvel-dev/kwt/archive/refs/tags/v0.0.8.tar.gz"
   sha256 "705e95244dda01be18bc7f58c7748ea55590c917504683bb1252569bafe8df9d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/carvel-dev/kwt.git", branch: "develop"
 
   bottle do

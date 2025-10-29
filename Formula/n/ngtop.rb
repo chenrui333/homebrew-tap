@@ -4,6 +4,7 @@ class Ngtop < Formula
   url "https://github.com/facundoolano/ngtop/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "41fe7b63277c67f521155030e028b53ebc0649fb34919bc31785b0b3723b5c6f"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/facundoolano/ngtop.git", branch: "main"
 
   bottle do
