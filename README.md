@@ -41,6 +41,7 @@ brew install --cask <tool>
 - `alacritty`
 - `am-i-vibing`
 - `amoco`
+- `amp-cli`
 - `aoc-cli`
 - `apify-actors-mcp-server`
 - `apkeep`
@@ -257,6 +258,7 @@ brew install --cask <tool>
 - `jsonl-graph`
 - `jsrpc`
 - `judo`
+- `jules`
 - `junit2html`
 - `kaluma-cli`
 - `kandc`
