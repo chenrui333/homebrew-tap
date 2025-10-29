@@ -17,13 +17,6 @@ class HarborCli < Formula
 
   depends_on "go" => :build
 
-  # defer keyring initialization to prevent build-time keychain errors
-  # upstream pr ref, https://github.com/goharbor/harbor-cli/pull/562
-  patch do
-    url "https://github.com/goharbor/harbor-cli/commit/93f98b72d28fb5d4f02f7931cb5fddcaa56ccd12.patch?full_index=1"
-    sha256 "d37e4d7b1fb387c44c6ac0cf70f49f5edb266e29500a0023ba3a22c49379fdec"
-  end
-
   def install
     ldflags = %W[
       -s -w
