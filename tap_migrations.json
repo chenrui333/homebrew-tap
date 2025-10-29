@@ -60,6 +60,7 @@
   "gtrash": "homebrew/core",
   "gtree": "homebrew/core",
   "gut": "homebrew/core",
+  "harbor-cli": "homebrew/core",
   "hcledit": "homebrew/core",
   "hishtory": "homebrew/core",
   "hub-tool": "homebrew/core",
