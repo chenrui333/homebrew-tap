@@ -1,8 +1,8 @@
 class Cello < Formula
   desc "Service for running infrastructure as code software tools"
   homepage "https://github.com/cello-proj/cello"
-  url "https://github.com/cello-proj/cello/archive/refs/tags/v0.22.2.tar.gz"
-  sha256 "45e320a1bb317fd8d2683492e069b07f33658c7ee04b2bdb89b6f3109d1939bb"
+  url "https://github.com/cello-proj/cello/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "6b471025cfe16385fcdcda495f8d38190c4be05093899e09b88d7ccc68a17142"
   license "Apache-2.0"
   head "https://github.com/cello-proj/cello.git", branch: "main"
 
