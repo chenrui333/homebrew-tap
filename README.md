@@ -427,6 +427,7 @@ brew install --cask <tool>
 - `shopify-cli`
 - `shuk`
 - `sig`
+- `silver-surfer`
 - `simdjzon`
 - `sloctl`
 - `sloop`
