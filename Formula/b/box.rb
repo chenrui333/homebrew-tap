@@ -7,7 +7,7 @@ class Box < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d3217ea3a74a100d98b8d493cd38823b9cee10eb2ca0b811b0e61d1d5a76f2c6"
+    sha256 cellar: :any_skip_relocation, all: "a52e45a435bf9f0e567cc10aa8afccfabf469db5e073f30a6d275be1ae3e927e"
   end
 
   depends_on "php"
