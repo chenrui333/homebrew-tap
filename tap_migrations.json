@@ -14,6 +14,7 @@
   "bpmnlint": "homebrew/core",
   "buffrs": "homebrew/core",
   "bunster": "homebrew/core",
+  "cai": "homebrew/core",
   "cargo-careful": "homebrew/core",
   "cargo-clone": "homebrew/core",
   "cargo-component": "homebrew/core",
