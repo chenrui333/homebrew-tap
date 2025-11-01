@@ -92,7 +92,6 @@ brew install --cask <tool>
 - `cargo-benchcmp`
 - `cargo-deadlinks`
 - `cargo-dephell`
-- `cargo-geiger`
 - `cargo-readme`
 - `carton`
 - `castor`
