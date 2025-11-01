@@ -7,9 +7,7 @@ class PrDescCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35c21837954cd721dd3a54ec9ef496b76fd863f2b5e58ce412c7108128eca340"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ee603fd7ba4a9cb53f47fef74864356242370c18539c5dfe35623931920c2cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9c9c7371bfbca0b1cff29c6c9fffef20c7575a7ad4cdea6547f9d5c2b4bbaeb"
+    sha256 cellar: :any_skip_relocation, all: "cb158fc5e9492a39515577b402cc578c6a390b54a144065ce1f4ab3860b6b7ef"
   end
 
   depends_on "node"
