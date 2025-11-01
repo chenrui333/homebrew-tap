@@ -86,7 +86,6 @@ brew install --cask <tool>
 - `bulletty`
 - `bytebox`
 - `c4go`
-- `cai`
 - `captan`
 - `carbon-now-cli`
 - `cargo-aoc`
