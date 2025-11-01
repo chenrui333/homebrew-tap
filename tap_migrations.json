@@ -18,6 +18,7 @@
   "cargo-careful": "homebrew/core",
   "cargo-clone": "homebrew/core",
   "cargo-component": "homebrew/core",
+  "cargo-geiger": "homebrew/core",
   "cargo-sort": "homebrew/core",
   "cargo-spellcheck": "homebrew/core",
   "cf-terraforming": "homebrew/core",
