@@ -1,5 +1,5 @@
 class AsmLsp < Formula
-  desc "Simplistic command runner and build system"
+  desc "Language server for NASM/GAS/GO Assembly"
   homepage "https://github.com/bergercookie/asm-lsp"
   url "https://github.com/bergercookie/asm-lsp/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "9500dd7234966ae9fa57d8759edf1d165acd06c4924d7dbeddb7d52eb0ce59d6"
