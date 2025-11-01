@@ -49,7 +49,6 @@ brew install --cask <tool>
 - `arduino-language-server`
 - `arp-scan-rs`
 - `arxiv-mcp-server`
-- `asciinema`
 - `asm-lsp`
 - `asmfmt`
 - `astro-language-server`
