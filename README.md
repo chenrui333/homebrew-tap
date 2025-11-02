@@ -134,6 +134,7 @@ brew install --cask <tool>
 - `context42`
 - `copilot-cli`
 - `cozypkg`
+- `crates-lsp`
 - `critcmp`
 - `crlfmt`
 - `crush`
@@ -363,6 +364,7 @@ brew install --cask <tool>
 - `pluqqy`
 - `pluralith`
 - `pmx`
+- `podcli`
 - `pom`
 - `poop`
 - `pphack`
