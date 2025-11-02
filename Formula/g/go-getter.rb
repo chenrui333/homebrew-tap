@@ -6,6 +6,15 @@ class GoGetter < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/go-getter.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f035d3f9daa00acd4b53abd297340f4cea2b5c0fa4f95dd5fc534775fcd6f3bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f035d3f9daa00acd4b53abd297340f4cea2b5c0fa4f95dd5fc534775fcd6f3bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f035d3f9daa00acd4b53abd297340f4cea2b5c0fa4f95dd5fc534775fcd6f3bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d358c266be2ec62c19d6cd376ea8d6aefa181923c9f643f51d307df787f32815"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "365794547392d3c1ce8c8149f424d5283a302a7c45a359f03c9195f84fc4f9c9"
+  end
+
   depends_on "go" => :build
 
   def install
