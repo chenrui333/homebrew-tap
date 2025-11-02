@@ -6,6 +6,15 @@ class GoEagle < Formula
   license "MIT"
   head "https://github.com/go-eagle/eagle.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fdcc789585d0dcaabcb9e7ae85d08557797344b859ce6255a48e46b826831c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fdcc789585d0dcaabcb9e7ae85d08557797344b859ce6255a48e46b826831c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fdcc789585d0dcaabcb9e7ae85d08557797344b859ce6255a48e46b826831c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0bb1c23d585098939ae1d5f4413dd85dae37c81323b2f93e0b5ef490c92e075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f260963fcd3feb3e22118581df64971ed8bd8b068207932e78c90b172fd3c419"
+  end
+
   depends_on "go" => :build
 
   def install
