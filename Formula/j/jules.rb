@@ -1,8 +1,8 @@
 class Jules < Formula
   desc "Asynchronous coding agent from Google, in the terminal"
   homepage "https://jules.google/docs"
-  url "https://registry.npmjs.org/@google/jules/-/jules-0.1.38.tgz"
-  sha256 "5a7ef1c25e3e58ecb5518c866f644ca4bcf6fda312688c20d7fbc5adfc79cba6"
+  url "https://registry.npmjs.org/@google/jules/-/jules-0.1.40.tgz"
+  sha256 "2e7156ba1bdeebc8544abc837e2481d307a414789643444b6bc6f8be8fcd1d0e"
   # license :unfree
 
   bottle do
