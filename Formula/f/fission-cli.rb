@@ -17,7 +17,8 @@ class FissionCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"fission"), "./cmd/fission-cli"
 
-    generate_completions_from_executable(bin/"fission", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    # Error: failed to get fission client: couldn't find kubeconfig file
+    # generate_completions_from_executable(bin/"fission", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
