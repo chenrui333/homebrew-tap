@@ -6,6 +6,15 @@ class Teldrive < Formula
   license "MIT"
   head "https://github.com/tgdrive/teldrive.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d50aa46bae06d005d4d21f9c019ef0b5d3c265e87c2c38cfd24436a5948a5358"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d50aa46bae06d005d4d21f9c019ef0b5d3c265e87c2c38cfd24436a5948a5358"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d50aa46bae06d005d4d21f9c019ef0b5d3c265e87c2c38cfd24436a5948a5358"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82ef4a1361498bedd346b4c83b9edb2f4456b42ac6bac7b6f9aff87e9a61d219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8feb75ac3dbae678e75739a78f2d954551aee78b9b3f277a4674066e2178229f"
+  end
+
   depends_on "go" => :build
 
   resource "ui_assets" do
