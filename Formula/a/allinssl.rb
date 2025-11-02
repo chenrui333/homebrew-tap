@@ -6,6 +6,15 @@ class Allinssl < Formula
   license "GPL-3.0-only"
   head "https://github.com/allinssl/allinssl.git", branch: "1.1.1"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c94fece6f8b4aa9799f2a10431d5a3a22fc38c8f7e5b24cf69c78e7f2e650f48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c94fece6f8b4aa9799f2a10431d5a3a22fc38c8f7e5b24cf69c78e7f2e650f48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c94fece6f8b4aa9799f2a10431d5a3a22fc38c8f7e5b24cf69c78e7f2e650f48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f102665e0cc58496393b14b8dc759cba3b3aa39b1a64dd0e6c5373f151f1d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d8f25cc1fb02369fe82efc84b04222776bfb025de94d8354f741203051897e2"
+  end
+
   depends_on "go" => :build
 
   def install
