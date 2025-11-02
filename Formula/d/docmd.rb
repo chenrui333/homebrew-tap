@@ -24,7 +24,7 @@ class Docmd < Formula
     assert_match version.to_s, shell_output("#{bin}/docmd --version")
 
     system bin/"docmd", "init"
-    assert_path_exists testpath/"config.js"
+    assert_path_exists testpath/"docmd.config.js"
     assert_match "title: \"Welcome\"", (testpath/"docs/index.md").read
   end
 end
