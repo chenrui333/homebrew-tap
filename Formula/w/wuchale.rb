@@ -7,7 +7,7 @@ class Wuchale < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "52210233629dcccf3e066a9c9ae49d4206d724a0d959c021aaafd6b0bdd78d03"
+    sha256 cellar: :any_skip_relocation, all: "3692d411a41e19cbc27b500c0145629c370fbffff6fbd82e8239c995adc3ef4d"
   end
 
   depends_on "node"
