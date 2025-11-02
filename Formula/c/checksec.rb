@@ -6,6 +6,15 @@ class Checksec < Formula
   license "BSD-3-Clause"
   head "https://github.com/slimm609/checksec.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4dea3c01be687c175ff5fd2f2027aa260a06f523c8c7c8bb8418a3db71fdcd3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0be385e65082ffecfae1844e74cd23ac8e3d3111db682b91b0e34b65ac35a9f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3d243fd1b211afc86cd4a861d818b2231b3fdfbcb93f380160a95f9351edfd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3faaeda0e1ca2a11dc6a29ee9e2f9548749d261f6a4f6643b1453e4b3c75f87e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d76a40c42c0cbc6ee097b48db18e27c57330d123b654e5aca2cd6fac7158c03"
+  end
+
   depends_on "go" => :build
 
   def install
