@@ -3,7 +3,7 @@ class Permify < Formula
   homepage "https://github.com/Permify/permify"
   url "https://github.com/Permify/permify/archive/refs/tags/v1.4.9.tar.gz"
   sha256 "c1419492151dca5a2fe5f11a51ca50147ab068c2d860609b17e8ad060198e359"
-  license "Apache-2.0"
+  license "AGPL-3.0-only"
   head "https://github.com/Permify/permify.git", branch: "master"
 
   bottle do
