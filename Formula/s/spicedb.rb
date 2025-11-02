@@ -6,6 +6,15 @@ class Spicedb < Formula
   license "Apache-2.0"
   head "https://github.com/authzed/spicedb.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6f27c8a37e3edc14c81df1310246e40413247bce7b14465851d8a65a01063d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0a752ee0e9e23d7f665eefc609dc878fd45545bb727f4ac44cd24d99421b856"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c959caf8110aeec3905b61b44fc8cc4bc970b41e946f2f3df9520e011b967709"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08b26a05d0395536bf6618bc2d6398e610f31899b8b5c279691d15a4fdff1145"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e57950b40150c038f0eb0234890db90fb1c7d0d2835b7c71ea253b3ee74e8309"
+  end
+
   depends_on "go" => :build
 
   def install
