@@ -6,6 +6,15 @@ class Chproxy < Formula
   license "MIT"
   head "https://github.com/ContentSquare/chproxy.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de53f9539d01a2e53e4ae1f67987ae7b2e9f6a160835429e0eb1e096e27772ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de53f9539d01a2e53e4ae1f67987ae7b2e9f6a160835429e0eb1e096e27772ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de53f9539d01a2e53e4ae1f67987ae7b2e9f6a160835429e0eb1e096e27772ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1616156c391384ef0c810331a2d6625db964e633ca589dc922907c2777c1c34c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33032495781f625672a2de056e030830a9d7011eeea712de13a2f087dfed6c95"
+  end
+
   depends_on "go" => :build
 
   def install
