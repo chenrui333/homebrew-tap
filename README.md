@@ -351,6 +351,8 @@ brew install --cask <tool>
 - `pencode`
 - `percollate`
 - `perfops`
+- `permify`
+- `pet`
 - `pgdog`
 - `phpinsights`
 - `pike`
@@ -428,6 +430,7 @@ brew install --cask <tool>
 - `sig`
 - `silver-surfer`
 - `simdjzon`
+- `sish`
 - `sloctl`
 - `sloop`
 - `solfmt`
@@ -500,6 +503,7 @@ brew install --cask <tool>
 - `videoalchemy`
 - `vitepress`
 - `vsg`
+- `vuls`
 - `wallust`
 - `watchfiles`
 - `wedl`
