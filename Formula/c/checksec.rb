@@ -26,7 +26,12 @@ class Checksec < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/checksec --version")
 
-    output = shell_output("#{bin}/checksec file #{bin}/checksec 2>&1", 1)
-    assert_match "File is not an ELF file", output
+    if OS.mac?
+      output = shell_output("#{bin}/checksec file #{bin}/checksec 2>&1", 1)
+      assert_match "File is not an ELF file", output
+    else
+      expected = (Hardware::CPU.arch == :arm64) ? "PIE Enabled" : "PIE Disabled"
+      assert_match expected, shell_output("#{bin}/checksec file #{bin}/checksec")
+    end
   end
 end
