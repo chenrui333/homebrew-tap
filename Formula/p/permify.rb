@@ -6,6 +6,15 @@ class Permify < Formula
   license "Apache-2.0"
   head "https://github.com/Permify/permify.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f13a56bf8f27d0022a3fb10213ed6c5d2e0dbda209f0b94d5f2990520182c84c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b685a0fa0fa68e19abba9467eddeb7b1de8dbd296d014114d167f5acedf5c11b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d24b1daca27393fad50001552a8863d924a617f8c3f3eaa200e62828c3d7716"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03ec4c3c946a49bc83a683b0a4c4d31fd9148c4129d131b19d5b337a02db6d74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "507026d95edc3f33e34ae79d0abe9081144f40a44420a410d1f38eb16d5b90bd"
+  end
+
   depends_on "go" => :build
 
   def install
