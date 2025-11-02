@@ -6,6 +6,15 @@ class Ergo < Formula
   license "MIT"
   head "https://github.com/ergochat/ergo.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12761dfc0b7b5cd82f7199d9735d1a3b8007c03da9867adf4dca9da751fc7aac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12761dfc0b7b5cd82f7199d9735d1a3b8007c03da9867adf4dca9da751fc7aac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12761dfc0b7b5cd82f7199d9735d1a3b8007c03da9867adf4dca9da751fc7aac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "147f9980039958297ce0e6cb75bea46230895a64a5b59fc7707660e5f1bef981"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbdf0d7b72b7f65187430cd34e875c397c2bb500bdd0a74c27b2b32de959ed73"
+  end
+
   depends_on "go" => :build
 
   def install
