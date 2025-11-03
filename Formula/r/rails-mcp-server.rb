@@ -5,6 +5,15 @@ class RailsMcpServer < Formula
   sha256 "61b678c95903f671b3915eaabe267cc873eabe0deeb6ca12bcb9b38c55283683"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b891d1bb7c055b0b0bd958d1061ddeee9bbfb78c7e7641bfe366fffee886f6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcee3f7994494866f8f85b1295d9aefe0936ed49ffeac64c9a89a8f66a174455"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afa8973952d89d40786ebb6e8f8a1056d7666add62d1cabab34e988677d05bd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "448f862d8108cf4899e71da8a45a144c0ab69ec1763b363ceefae097fd5dc986"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09361cfbf2a5ad9f665f02bfc12333af653040b21b1d98da0ab3bad2599275a4"
+  end
+
   depends_on "ruby"
 
   def install
