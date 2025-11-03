@@ -9,11 +9,8 @@ class Blue < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54c98b767dcb423f9e5c6f91e5aab4987353b2677899c08058b6a47552872bd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "506cfe191dff63c2836d1a60ff46d2f75a7ceca0cd4cf19e06ed974acb22b3fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "7bb0d122f907c53d1a7ad695dc98185217230c6adcf0e26b856a02a0d01abc27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f90da82b54b60409cbc67a0cd343a725756af3fb10f3ba8406a52658f45721ed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "20347bff96a304bf3774e8af5aaaaf447ef6980c276829bf325dda0b30c38a07"
   end
 
   # cannot upgrade to python 3.14 due to `module 'ast' has no attribute 'Str'` error
