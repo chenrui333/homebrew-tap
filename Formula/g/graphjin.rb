@@ -6,6 +6,15 @@ class Graphjin < Formula
   license "Apache-2.0"
   head "https://github.com/dosco/graphjin.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "715a930b6dd6396ea52eea81116b5ad8e90d4ab37301c1da29d836cb788d7486"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "715a930b6dd6396ea52eea81116b5ad8e90d4ab37301c1da29d836cb788d7486"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "715a930b6dd6396ea52eea81116b5ad8e90d4ab37301c1da29d836cb788d7486"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "305f3e891c9566f26fd344bb7a5e1c4bbd6f2b1665213d84b132e52014a01b8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "067d495ab3e60808164182f7e7dc7fa36b83e0447ae2ad0eb1405c0ca803374c"
+  end
+
   depends_on "go" => :build
 
   # Fix go.mod files with invalid version specs (bare "v" without version)
