@@ -112,6 +112,7 @@ brew install --cask <tool>
 - `chproxy`
 - `clai`
 - `claude-code-generic-hooks`
+- `claude-code-templates`
 - `claude-code`
 - `claudio`
 - `cli-mcp-server`
@@ -387,6 +388,7 @@ brew install --cask <tool>
 - `protodep`
 - `protodot`
 - `protolock`
+- `prpm`
 - `psq`
 - `public-ollama-finder`
 - `pubmed-mcp-server`
