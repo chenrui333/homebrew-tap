@@ -6,6 +6,15 @@ class GitlabCiPipelinesExporter < Formula
   license "Apache-2.0"
   head "https://github.com/mvisonneau/gitlab-ci-pipelines-exporter.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bea7fac4e40b3462c28cb4cf34c1773ce58e0f301d0239cc7d41217989483610"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bea7fac4e40b3462c28cb4cf34c1773ce58e0f301d0239cc7d41217989483610"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bea7fac4e40b3462c28cb4cf34c1773ce58e0f301d0239cc7d41217989483610"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a8754cf324c5b69d3dc1e55bd7ac669c250cd0a738332ffe67502e3f1cc8831"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efb348f9c1db5016a2ea8095614bdc64a4838783fdc190489ff0a8011fb875b1"
+  end
+
   depends_on "go" => :build
 
   def install
