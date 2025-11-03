@@ -1,8 +1,8 @@
 class Gobgp < Formula
   desc "CLI tool for GoBGP"
   homepage "https://osrg.github.io/gobgp/"
-  url "https://github.com/osrg/gobgp/archive/refs/tags/v3.37.0.tar.gz"
-  sha256 "198c82cf77a73872350f10a3567096009b3794929a1aaf348c4924785a99d087"
+  url "https://github.com/osrg/gobgp/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "05df03495226913f7686103efca62a6866a848b57681cd4319a50089f1c3727b"
   license "Apache-2.0"
   head "https://github.com/osrg/gobgp.git", branch: "master"
 
@@ -25,6 +25,6 @@ class Gobgp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gobgp --version")
-    assert_match "context deadline exceeded", shell_output("#{bin}/gobgp neighbor 2>&1", 1)
+    assert_match "connect: connection refused", shell_output("#{bin}/gobgp neighbor 2>&1", 1)
   end
 end
