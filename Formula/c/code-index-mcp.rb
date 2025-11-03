@@ -9,9 +9,12 @@ class CodeIndexMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "a5d023a7b8314f67a5a7d33209d3a2a877804dee4b78382602da3454bbd7d558"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e7d42b888a30e7d7d338ef2cb343a1b752c188722190071e96d138b7a26d74d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7385f6c6c464c9a21664456ce7a79298cf840b6128b5f55871a5d525e13d136"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "849c7c6efbc2760bb700e99d9681e514a8405f96989ea14c915e9eed13dbaa68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83eee4892d4a9e0060a757e0bf7471a0aa627f52b8cbc72857d1466fcaf79d51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf696a73352616ac8c18d3cf022b02f4c8cd1178bc1b4a3845bdcfb8395883e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75fd9acbaadd44b07cae36a1588fb20dcbeda13699fe8d04b1f2774e2305118d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba43870f5c5b24c6858eac70a093e2c9953fa47c8ddc45efae6e498696fc3f57"
   end
 
   depends_on "certifi" => :no_linkage
