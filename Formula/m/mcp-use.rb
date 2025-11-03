@@ -5,6 +5,15 @@ class McpUse < Formula
   sha256 "ac4e1f36f5abdb411c7f02833379b0ccd1d202175286e935c57bb67048ea8eab"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "62ef7f5aa26a5460e146483bf3f8f2be6dd8e59fa016b97acdb014ce845df8ea"
+    sha256                               arm64_sequoia: "313c1b97969ad65791cf79f00c6f852bc1cecf331f9cbaa0eeec94ece30b0a28"
+    sha256                               arm64_sonoma:  "03b9bc195c1e4faab0f4ad7137b0c44eb2527eaf8628bb23699bd013f5d33b8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a577b8dd52ced9bc7f38403ae47e7b58ccbf3cd6dd7c386e7afd5aa8e192c12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c78ccdc46cfd6daaed5f42d49fad62b0217363af40b24f499b7c82a801429cbc"
+  end
+
   depends_on "typescript" => :test
   depends_on "node"
 
