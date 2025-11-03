@@ -9,11 +9,11 @@ class Deepteam < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "0b67e0354fb213a3f51f29270a46f27234c2eebc4553dd5042014f631c4335a6"
-    sha256 cellar: :any,                 arm64_sequoia: "eb86715a97e8b8366712f9f45e16f5982bc97bfa8018d71fd25fc73f3cd37446"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fd25f921138f9c3061ac2be7ab6c07ebd27da5753752a33fbb0379d753b9250"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d623e4e2b452526927f1b94f711f7b010b323b8457ebbe4eb53210dce5642c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95c313bbe2789622042818b9d9a31c22cad346d03ebe4e5bf2f0fc94f387ac76"
+    sha256 cellar: :any,                 arm64_tahoe:   "43bac5b59940e6dd691aff6fff24a337338f14e205bb3d9cb893e30dd7e4f08e"
+    sha256 cellar: :any,                 arm64_sequoia: "0cef246cec2cef34f2e3ae8fce697124d9fd56aa2d1fa1e72226231e40413bf0"
+    sha256 cellar: :any,                 arm64_sonoma:  "684fb7c0f0133a0f8d73e7c50ee62b10720eded452d9480e4ccdd14e0e669189"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a893d38fae85c0f65ee0825cd3ea83f12bbf0c2cc8a70d6cfbc595bde1faafd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee6b16a0b075fb0e7c86072bb1cf28e60c024609084669501e3b3c62190920c1"
   end
 
   depends_on "pkgconf" => :build
