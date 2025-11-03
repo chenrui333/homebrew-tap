@@ -5,6 +5,11 @@ class CreateMcpUseApp < Formula
   sha256 "c57758912c28aadef9fabeb9022f8e064c1c9ea9f58dfb925ff5f3aa732ac9cb"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "45a7e746511db383be86ca26b4e98863130d492a854acfdca3470e784917680c"
+  end
+
   depends_on "node"
 
   def install
