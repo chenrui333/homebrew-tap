@@ -39,6 +39,7 @@ brew install --cask <tool>
 - `ai-context`
 - `aim`
 - `alacritty`
+- `allinssl`
 - `am-i-vibing`
 - `amoco`
 - `amp-cli`
@@ -108,6 +109,8 @@ brew install --cask <tool>
 - `chalet`
 - `chatlog`
 - `checkpwn`
+- `checksec`
+- `chproxy`
 - `clai`
 - `claude-code-generic-hooks`
 - `claude-code`
@@ -168,16 +171,20 @@ brew install --cask <tool>
 - `enry`
 - `envie`
 - `envtpl`
+- `ergo`
+- `fake-gcs-server`
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
 - `ferret`
 - `fex`
 - `firectl`
+- `fission-cli`
 - `fixjson`
 - `fkill-cli`
 - `fli`
 - `flint-cli`
+- `flipt`
 - `flow-editor`
 - `flowgger`
 - `flowrs`
@@ -201,14 +208,18 @@ brew install --cask <tool>
 - `glom`
 - `glsl-analyzer`
 - `gmap`
+- `go-eagle`
 - `go-envsubst`
+- `go-getter`
 - `go-junit-report`
 - `gobgp`
 - `goboscript`
+- `goclone`
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
 - `gowebly`
+- `graphjin`
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
@@ -243,6 +254,7 @@ brew install --cask <tool>
 - `iftree`
 - `illa`
 - `imgcat`
+- `inbucket`
 - `incus-compose`
 - `infraspec`
 - `ip2d`
@@ -270,6 +282,7 @@ brew install --cask <tool>
 - `kt`
 - `kube-role-gen`
 - `kube2pulumi`
+- `kubectl-tree`
 - `kubeseal-convert`
 - `kwt`
 - `lacquer`
@@ -328,6 +341,7 @@ brew install --cask <tool>
 - `ngtop`
 - `nhost`
 - `ni`
+- `ninjabot`
 - `nino`
 - `nocc`
 - `npkill`
@@ -420,6 +434,7 @@ brew install --cask <tool>
 - `seamstress`
 - `seastar`
 - `secco`
+- `semaphore`
 - `sephera`
 - `sgpt`
 - `shadcn-ui-mcp-server`
@@ -438,6 +453,7 @@ brew install --cask <tool>
 - `sourcerer-mcp`
 - `speedscope`
 - `speedtest`
+- `spicedb`
 - `spok`
 - `spotifydl`
 - `statoscope`
@@ -453,6 +469,7 @@ brew install --cask <tool>
 - `tattoy`
 - `tavily-mcp`
 - `tclint`
+- `teldrive`
 - `tenderly`
 - `termtunnel`
 - `terra-code-cli`
