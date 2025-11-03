@@ -201,6 +201,7 @@ brew install --cask <tool>
 - `git-chglog`
 - `git-vain`
 - `git-x`
+- `gitlab-ci-pipelines-exporter`
 - `gitlabform`
 - `gitman`
 - `gittype`
@@ -309,6 +310,7 @@ brew install --cask <tool>
 - `mail-deduplicate`
 - `mamediff`
 - `marchat`
+- `mark`
 - `markpdf`
 - `matcha`
 - `mcman`
@@ -456,6 +458,7 @@ brew install --cask <tool>
 - `spicedb`
 - `spok`
 - `spotifydl`
+- `starcharts`
 - `statoscope`
 - `stree`
 - `strimzi-kafka-cli`
@@ -508,6 +511,7 @@ brew install --cask <tool>
 - `ty`
 - `unused-deps`
 - `uplift`
+- `urlhunter`
 - `urlsup`
 - `usort`
 - `vapi-mcp-server`
