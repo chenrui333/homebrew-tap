@@ -5,6 +5,11 @@ class ClaudeCodeTemplates < Formula
   sha256 "3ee7fa8c3a60d2fe5bb7cd8650381a337af803acbd55dc47314292930d4bf770"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "29a77311b7c48121d23552b94157e98d776ce0da5f3e55d8fa034b8e83526a94"
+  end
+
   depends_on "node"
 
   def install
