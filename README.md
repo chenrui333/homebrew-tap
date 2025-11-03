@@ -50,7 +50,6 @@ brew install --cask <tool>
 - `arduino-language-server`
 - `arp-scan-rs`
 - `arxiv-mcp-server`
-- `asm-lsp`
 - `asmfmt`
 - `astro-language-server`
 - `auto-favicon-mcp-server`
@@ -156,7 +155,6 @@ brew install --cask <tool>
 - `dg`
 - `di-tui`
 - `dnsforwarder`
-- `docmd`
 - `doit`
 - `dory-cli`
 - `dqy`
@@ -172,7 +170,6 @@ brew install --cask <tool>
 - `envie`
 - `envtpl`
 - `ergo`
-- `fake-gcs-server`
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
@@ -201,7 +198,6 @@ brew install --cask <tool>
 - `git-chglog`
 - `git-vain`
 - `git-x`
-- `gitlab-ci-pipelines-exporter`
 - `gitlabform`
 - `gitman`
 - `gittype`
@@ -215,7 +211,6 @@ brew install --cask <tool>
 - `go-junit-report`
 - `gobgp`
 - `goboscript`
-- `goclone`
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
@@ -310,7 +305,6 @@ brew install --cask <tool>
 - `mail-deduplicate`
 - `mamediff`
 - `marchat`
-- `mark`
 - `markpdf`
 - `matcha`
 - `mcman`
@@ -367,7 +361,6 @@ brew install --cask <tool>
 - `pencode`
 - `percollate`
 - `perfops`
-- `permify`
 - `pet`
 - `pgdog`
 - `phpinsights`
@@ -500,7 +493,6 @@ brew install --cask <tool>
 - `toolctl`
 - `tparse`
 - `tpm`
-- `tracetest`
 - `travelgrunt`
 - `trdl`
 - `trieve-cli`
