@@ -5,6 +5,11 @@ class McpRemote < Formula
   sha256 "94fc8f7e85f883cb802a2d5ecb48f7a6def673f4641fea68b9d4a2d998d3b1e2"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "dcc4ef313e216b844b506e9f98195b93331d09b35bcf27f35e21f4f09245c95c"
+  end
+
   depends_on "node"
 
   def install
