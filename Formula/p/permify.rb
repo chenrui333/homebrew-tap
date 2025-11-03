@@ -8,11 +8,11 @@ class Permify < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f13a56bf8f27d0022a3fb10213ed6c5d2e0dbda209f0b94d5f2990520182c84c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b685a0fa0fa68e19abba9467eddeb7b1de8dbd296d014114d167f5acedf5c11b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d24b1daca27393fad50001552a8863d924a617f8c3f3eaa200e62828c3d7716"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03ec4c3c946a49bc83a683b0a4c4d31fd9148c4129d131b19d5b337a02db6d74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "507026d95edc3f33e34ae79d0abe9081144f40a44420a410d1f38eb16d5b90bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9486b09f80b5a7f0b7fd2a82837145ca34df6d9540e9a948cdebf9a98cc2b00b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f53fd2daba50136e72e96c0679d3813a3541e6f66987ab973618dba44fc52b4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6563adb77acf9ea9901bca26a27a0a06ee999364df467587d0ebe7e3d7c7f59d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10afd688888904155beb6a1c4b80815bbc34366c19896c1f111c1c4c064ad3f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "923da33fd2c1cbefb5361ccc36fa1be7373b7d4b02d551fcc8f74c8da832cb0a"
   end
 
   depends_on "go" => :build
