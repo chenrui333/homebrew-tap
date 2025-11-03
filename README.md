@@ -138,6 +138,7 @@ brew install --cask <tool>
 - `copilot-cli`
 - `cozypkg`
 - `crates-lsp`
+- `create-mcp-use-app`
 - `critcmp`
 - `crlfmt`
 - `crush`
@@ -311,9 +312,11 @@ brew install --cask <tool>
 - `mcman`
 - `mcp-alchemy`
 - `mcp-obsidian`
+- `mcp-remote`
 - `mcp-server-airbnb`
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
+- `mcp-use`
 - `mcpd`
 - `mdbook-linkcheck`
 - `mdsf`
@@ -518,6 +521,7 @@ brew install --cask <tool>
 - `videoalchemy`
 - `vitepress`
 - `vsg`
+- `vulcain`
 - `vuls`
 - `wallust`
 - `watchfiles`
