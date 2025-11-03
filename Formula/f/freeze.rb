@@ -24,7 +24,7 @@ class Freeze < Formula
       }
     GO
 
-    system bin/"freeze", "hello.go", "-o", "hello.png"
+    system bin/"freeze", testpath/"hello.go", "--language", "go", "--output", testpath/"hello.png"
     assert_path_exists testpath/"hello.png"
   end
 end
