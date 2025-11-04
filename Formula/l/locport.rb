@@ -13,10 +13,12 @@ class Locport < Formula
   depends_on "ruby"
 
   def install
+    ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
+    ENV["BUNDLE_WITHOUT"] = "development test"
+    ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
     ENV["NOKOGIRI_USE_SYSTEM_LIBRARIES"] = "1"
 
-    system "bundle", "config", "set", "without", "development", "test"
     system "bundle", "install"
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
