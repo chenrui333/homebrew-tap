@@ -403,7 +403,6 @@ brew install --cask <tool>
 - `quicssh-rs`
 - `r2md`
 - `rabbitmq-message-ops`
-- `rails-mcp-server`
 - `rails-new`
 - `railway-mcp-server`
 - `raiz`
