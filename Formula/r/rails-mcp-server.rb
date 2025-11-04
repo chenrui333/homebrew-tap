@@ -7,11 +7,11 @@ class RailsMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b891d1bb7c055b0b0bd958d1061ddeee9bbfb78c7e7641bfe366fffee886f6d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcee3f7994494866f8f85b1295d9aefe0936ed49ffeac64c9a89a8f66a174455"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afa8973952d89d40786ebb6e8f8a1056d7666add62d1cabab34e988677d05bd1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "448f862d8108cf4899e71da8a45a144c0ab69ec1763b363ceefae097fd5dc986"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09361cfbf2a5ad9f665f02bfc12333af653040b21b1d98da0ab3bad2599275a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "071ac2152adb5ba56323215d05b0985470cfed13478cf4b903641756275d4034"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11c6f00e412c15d70c76fb01260b2331f67e22b3743a10cb45393cdd584c9876"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f1f5c3128fa6edea3fc6e60f216466af15e78f40ccb847c2096b4bd860fd68a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "322e3d2275bbd3e770f08370f5b0aa3d2fbc9bad9265d811b4071344a3e748cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed4dc18f864d2d641e1d3cf39f9cc054508c8d4313968a62f7117df68810f20"
   end
 
   depends_on "ruby"
