@@ -15,6 +15,9 @@ class Reddix < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/reddix --version")
 
+    # Fails in Linux CI with "No such device or address (os error 6)"
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     begin
       output_log = testpath/"output.log"
       pid = spawn bin/"reddix", testpath, [:out, :err] => output_log.to_s
