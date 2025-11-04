@@ -6,6 +6,15 @@ class Tuios < Formula
   license "MIT"
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbac7576a8b735a42171c02ac4cda1e047e30a36e1692273b9244ffea16a8350"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46a2d96055f51167fdbc4874e95f347b2b1fc96e9ad7d051ef84c8be5c0090aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e8c91842462c184d7bf3f98777448e34318bda69b93791878a57f2033564ebd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fa398471b11f43e75e7deaff8354ecc6592bf1dd29fbd5b5ba2ba880725b101"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68ee4f1692dd9334292ffd08eb0db33fc23c562c3002b7c7ffea013c1beb31e0"
+  end
+
   depends_on "go" => :build
 
   def install
