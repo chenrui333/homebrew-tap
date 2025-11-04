@@ -6,6 +6,15 @@ class Cerbos < Formula
   license "Apache-2.0"
   head "https://github.com/cerbos/cerbos.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "251aa3bab55fe6b7d37a6410e7e83e8d8e64e2d753e7d8d9847627f1e1b533b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d383481f05b1109d870aed98034bdd8b62a6389f6c5236dab03c6abc74fdf6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5354292d9598913894c52d9e9943c0287f85f0ac8cfce5efd56793db4c83a431"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2affced1057b3fc212902ed36a200554e8827914eece726595096bce2ae632b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19e89eefc8b7843bd74c449532ea10557edf8ab7b1782a0d98f8f338e0486f88"
+  end
+
   depends_on "go" => :build
 
   def install
