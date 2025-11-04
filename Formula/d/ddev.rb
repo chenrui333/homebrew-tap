@@ -1,8 +1,8 @@
 class Ddev < Formula
   desc "Docker-based local PHP+Node.js web development environments"
   homepage "https://ddev.com/"
-  url "https://github.com/ddev/ddev/archive/refs/tags/v1.24.9.tar.gz"
-  sha256 "a88130b99f59152c0e6ee24b99927a4371bf0d54b624aa8a2918eb25a80beccf"
+  url "https://github.com/ddev/ddev/archive/refs/tags/v1.24.10.tar.gz"
+  sha256 "a89b12021f5612c0560d353b0cb0699c3be51ad4dd0470f23f0409e26008a5fd"
   license "Apache-2.0"
   head "https://github.com/ddev/ddev.git", branch: "main"
 
