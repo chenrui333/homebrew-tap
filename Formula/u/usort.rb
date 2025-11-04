@@ -3,8 +3,8 @@ class Usort < Formula
 
   desc "Safe, minimal import sorting for Python projects"
   homepage "https://usort.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/9b/f4/3ef48b43f2645f2cb4a37d6007e611bc669af44eecfee953c5dd57433011/usort-1.0.8.post1.tar.gz"
-  sha256 "68def75f2b20b97390c552c503e071ee06c65ad502c5f94f3bd03f095cf4dfe6"
+  url "https://files.pythonhosted.org/packages/df/69/8bcbed123ec60ee3e529ec39ebb0bd405cc17bcf101094513ad05c326f6b/usort-1.1.0.tar.gz"
+  sha256 "a24d3a19c80d006b82d47319ec42cca740e4a1efceba35465e1fd49393a28966"
   license "MIT"
   head "https://github.com/facebook/usort.git", branch: "main"
 
@@ -22,23 +22,23 @@ class Usort < Formula
   depends_on "python@3.13"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
+    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/f4/ec/d24c0ad33838dfbfe20a760b301d529c63cef32f8b91dae380c97f8bf127/libcst-1.6.0.tar.gz"
-    sha256 "e80ecdbe3fa43b3793cae8fa0b07a985bd9a693edbe6e9d076f5422ecadbf0db"
+    url "https://files.pythonhosted.org/packages/de/cd/337df968b38d94c5aabd3e1b10630f047a2b345f6e1d4456bd9fe7417537/libcst-1.8.6.tar.gz"
+    sha256 "f729c37c9317126da9475bdd06a7208eb52fcbd180a6341648b45a56b4ba708b"
   end
 
   resource "moreorless" do
-    url "https://files.pythonhosted.org/packages/c5/5d/c8ed33403f62a2f755905c8d2d36b71e3fc32588deeb53ad1206edbb067a/moreorless-0.4.0.tar.gz"
-    sha256 "85e19972c1a0b3a49f8543914f57bd83f6e1b10df144d5b97b8c5e9744d9c08c"
+    url "https://files.pythonhosted.org/packages/8d/85/2e4999ac4a21ab3c5f31e2a48e0989a80be3afc512a7983e3253615983d4/moreorless-0.5.0.tar.gz"
+    sha256 "560a04f85006fccd74feaa4b6213a446392ff7b5ec0194a5464b6c30f182fa33"
   end
 
   resource "pathspec" do
@@ -46,14 +46,14 @@ class Usort < Formula
     sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
-    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+  resource "pyyaml-ft" do
+    url "https://files.pythonhosted.org/packages/5e/eb/5a0d575de784f9a1f94e2b1288c6886f13f34185e13117ed530f32b6f8a8/pyyaml_ft-8.0.0.tar.gz"
+    sha256 "0c947dce03954c7b5d38869ed4878b2e6ff1d44b08a0d84dc83fdad205ae39ab"
   end
 
   resource "stdlibs" do
-    url "https://files.pythonhosted.org/packages/c4/19/1bafdce539149fbcae1d173164c297b7b7c9e59a43221555a0d359c132cc/stdlibs-2024.12.3.tar.gz"
-    sha256 "b88cf600ac0b80e3d0de0ad6f2be786786db063bccd14b897547fcd9bd7169be"
+    url "https://files.pythonhosted.org/packages/e4/83/ac15c4a3c059725dcb5f5d76270b986808cc12d2d7d417ee540d37609e46/stdlibs-2025.10.28.tar.gz"
+    sha256 "18db81f45f7783ddf86b80771e061782c70e2f4a8642843b3c80b42cd774b24f"
   end
 
   resource "toml" do
