@@ -6,9 +6,25 @@ class Sprofile < Formula
   license "MIT"
   head "https://github.com/GoodBoyNeon/sprofile.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
+  end
+
+  test do
+    output_log = testpath/"output.log"
+
+    pid = spawn bin/"sprofile", [:out, :err] => output_log.to_s
+    sleep 1
+    assert_match "* * Welcome to Sprofile! * *", output_log.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
