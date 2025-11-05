@@ -1,8 +1,8 @@
 class Reddix < Formula
   desc "Reddit, refined for the terminal"
   homepage "https://github.com/ck-zhang/reddix"
-  url "https://github.com/ck-zhang/reddix/archive/refs/tags/v0.2.8.tar.gz"
-  sha256 "35a134cbe0a80f4df3c3931b1e9546553c37ee6caa41f48c1925e8a70946a41b"
+  url "https://github.com/ck-zhang/reddix/archive/refs/tags/v0.2.9.tar.gz"
+  sha256 "0c1af2b263d3c47cc64acd9addc3ba7c44731f2bace4ee8ad5189eb2a510b9d9"
   license "MIT"
   head "https://github.com/ck-zhang/reddix.git", branch: "master"
 
