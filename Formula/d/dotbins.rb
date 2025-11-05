@@ -8,6 +8,15 @@ class Dotbins < Formula
   license "Apache-2.0"
   head "https://github.com/basnijholt/dotbins.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e37de51995038e67483e37f2856a38dad63bd61b2ff68281986d2cf62364c29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3894d34459ea47f6b0cd631a300aa1260caddfbcde4ef4c2e8a6ee8d7ad68571"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0e7dd6e54f51e264d2674da48b36caf55054b4fb65e3febe0e082b17700e4b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42b9089dd8f83f0abd93f5ae3d9cd38f5bcd83ec8496e3682c93cb052fde701e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90ce2b7007d73ce105e28ccf185b44c0d1b7f31018d8a64462a9e10264ae165e"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
