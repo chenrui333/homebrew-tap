@@ -261,6 +261,7 @@ brew install --cask <tool>
 - `jaggr`
 - `jetzig`
 - `jiggy`
+- `jjj`
 - `jl`
 - `jplot`
 - `jsonl-graph`
@@ -310,6 +311,7 @@ brew install --cask <tool>
 - `marchat`
 - `markpdf`
 - `matcha`
+- `mcat`
 - `mcman`
 - `mcp-alchemy`
 - `mcp-obsidian`
@@ -349,6 +351,7 @@ brew install --cask <tool>
 - `npm-np`
 - `nvrs`
 - `octelium`
+- `octotype`
 - `ohy`
 - `olla`
 - `omekasy`
@@ -411,15 +414,18 @@ brew install --cask <tool>
 - `rang`
 - `rawhide`
 - `readmeai`
+- `reddix`
 - `reformat-gherkin`
 - `refurb`
 - `remark-cli`
 - `resinator`
+- `resterm`
 - `revanced-cli`
 - `rkik`
 - `rshell`
 - `rslocal`
 - `rtop`
+- `rum`
 - `run`
 - `rustfilt`
 - `sato`
@@ -490,6 +496,7 @@ brew install --cask <tool>
 - `tftree`
 - `tickrs`
 - `timetrace`
+- `tinifier`
 - `tinybird-mcp-server`
 - `tlint`
 - `togomak`
@@ -497,12 +504,14 @@ brew install --cask <tool>
 - `toml-f`
 - `tooka`
 - `toolctl`
+- `torrra`
 - `tparse`
 - `tpm`
 - `travelgrunt`
 - `trdl`
 - `trieve-cli`
 - `tsuki`
+- `tuios`
 - `tuono`
 - `twiggy`
 - `twilio-mcp-server`
@@ -530,6 +539,7 @@ brew install --cask <tool>
 - `weekly-git-summary`
 - `werk`
 - `wifitui`
+- `wisu`
 - `wuchale`
 - `xcpkg`
 - `xmlformatter`
