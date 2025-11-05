@@ -9,6 +9,16 @@ class AustinTui < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin-tui.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ed73b565620117301ac3f9a6c293c462fb3c9bdd5ed479373b33be8f635b29d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd1fd9e917534ae1e3ef0c637f03b6e498c1304f2f207e7b93ef6445949eaa8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "878c1b691800dd5f2b7d9b4a12738f72c1fa26d00997b438cd933567131b1438"
+    sha256 cellar: :any_skip_relocation, sequoia:       "606ab63f6f499a80b2041642dbf120b3dae68ff901d9ff58518b3d6488498d10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc2e482c80a4e9e848456dddeb32a6d7192a3e71dab31576def7d62688df0afa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab8186b29708aebe2ce20cd4170e4d9642508f259de6d9d0e08344715aeea826"
+  end
+
   depends_on "python@3.13"
 
   uses_from_macos "libxml2", since: :ventura
