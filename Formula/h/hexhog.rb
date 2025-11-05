@@ -6,6 +6,15 @@ class Hexhog < Formula
   license "MIT"
   head "https://github.com/DVDTSB/hexhog.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9291a845c224cf51cc70230db5099abb7de27a21395c499da5e67f34c4f56301"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76896020751f70a85c76ca49cc79af2fe21c434f443d8712318bb26adbeb1481"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee18f38eda04c08a62c3b952b16a6c3caeb0c01524c4ceef1da1a242529c90ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef5103ce975b10232559a92e82a5272e0de9061d92d99446d65bcc237606899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ec533634d5c3bd458e5770dd1499d140dc22fac3d4deafb50001b1b8a109cd3"
+  end
+
   depends_on "rust" => :build
 
   def install
