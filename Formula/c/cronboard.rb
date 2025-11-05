@@ -238,4 +238,14 @@ class Cronboard < Formula
   def install
     virtualenv_install_with_resources
   end
+
+  test do
+    output_log = testpath/"output.log"
+    pid = spawn bin/"cronboard", [:out, :err] => output_log.to_s
+    sleep 1
+    assert_match "Operation not permitted: '/usr/bin/crontab'", output_log.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
+  end
 end
