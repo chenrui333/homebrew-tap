@@ -1,0 +1,60 @@
+class Zigfetch < Formula
+  desc "Minimal neofetch/fastfetch like system information tool"
+  homepage "https://github.com/utox39/zigfetch"
+  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.24.2.tar.gz"
+  sha256 "adc3db4b8a4e59cd098a49dd61d7cf56d77d70497cc7ad4d350b0fd119b41c9e"
+  license "MIT"
+
+  depends_on "pkgconf" => :build
+  depends_on "zig" => :build
+
+  on_linux do
+    depends_on "pciutils" # provides libpci.so and pci/pci.h
+  end
+
+  def install
+    # Fix illegal instruction errors when using bottles on older CPUs.
+    # https://github.com/Homebrew/homebrew-core/issues/92282
+    cpu = case ENV.effective_arch
+    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
+    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
+    else ENV.effective_arch
+    end
+
+    args = %W[
+      --prefix #{prefix}
+      -Doptimize=ReleaseFast
+    ]
+
+    args << "-Dcpu=#{cpu}" if build.bottle?
+
+    system "zig", "build", *args
+  end
+
+  test do
+    if OS.mac?
+      expected_error = "error: NotAppleARMIODevice"
+      assert_match expected_error, shell_output("#{bin}/zigfetch 2>&1", 1)
+    else
+      assert_match "Shell:\e[0m bash", shell_output(bin/"zigfetch")
+    end
+
+    # rchen@rchen
+    # -----------
+    # OS: macOS 15.7
+    # Kernel: Darwin 24.6.0
+    # Uptime: 27 days, 0 hours, 41 minutes
+    # Packages: brew: 334 brew-cask: 26
+    # Shell: fish, version 4.1.2
+    # Cpu: Apple M4 Pro (12) @ 4.51 GHz
+    # Gpu: Apple M4 Pro (16) @ 1.58 GHz
+    # Ram: 40.69 / 48.00 GiB (84%)
+    # Swap: 8.97 / 10.00 GiB (89%)
+    # Disk (/): 393.29 / 494.38 GB (79%)
+    # Local IP (en0): 10.0.0.153
+    # Local IP (utun0): 172.16.0.2
+    # WM: Rectangle
+    # Terminal: iTerm.app
+    # Locale: en_US.UTF-8
+  end
+end
