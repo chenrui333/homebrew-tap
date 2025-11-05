@@ -6,6 +6,15 @@ class Jjj < Formula
   license "MIT"
   head "https://github.com/icorbrey/jjj.git", branch: "trunk"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d34fbc07def1562736fa942c2a18cbda5c4948108c46a999debc032a8ef5dee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fad778bcad0971617061ae44d26bc3753bc3f0f2dec50726cc3856d3f4ee37f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c7537aed75cfd55583764fb5d657b8c3b8eb3639956f95815aae218becd3d68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13d89021a793f271dd4fc3d0d0afdab1a006e54d940c3dea64dfffb695b0911e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff7571cbd2d99cdbd116cbf3ec9743420d6d1067be936cf360b97904b9ab6110"
+  end
+
   depends_on "rust" => :build
   depends_on "jj"
 
