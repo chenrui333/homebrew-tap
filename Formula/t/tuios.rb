@@ -8,11 +8,11 @@ class Tuios < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbac7576a8b735a42171c02ac4cda1e047e30a36e1692273b9244ffea16a8350"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46a2d96055f51167fdbc4874e95f347b2b1fc96e9ad7d051ef84c8be5c0090aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e8c91842462c184d7bf3f98777448e34318bda69b93791878a57f2033564ebd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fa398471b11f43e75e7deaff8354ecc6592bf1dd29fbd5b5ba2ba880725b101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68ee4f1692dd9334292ffd08eb0db33fc23c562c3002b7c7ffea013c1beb31e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8f0678847675ca50d40f88765f7094d5cfaef695d96b8e7b22573008265d42d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2936a4ab2acbbd1de6be8aa8a9a667ef393afdc0ea003a681e59ab68864cf0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "634947415bea0b18b8c290de78a3e44e4ec78f9267a4b2f63b526964b82fa888"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "164037673f8a62695d2583aaf0f77295c2002b14ee0e4da1ae848a29e7c49828"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d32390de66717e15188043e2efdd321d26ee0272bd1b8b30e6f65ae6cfbc56d"
   end
 
   depends_on "go" => :build
