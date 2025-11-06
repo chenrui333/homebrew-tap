@@ -1,8 +1,8 @@
 class Hexhog < Formula
   desc "Hex viewer/editor"
   homepage "https://github.com/DVDTSB/hexhog"
-  url "https://github.com/DVDTSB/hexhog/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "d97176d41b9e9662909445a4002850f0ac12b902b28bc4e85a3b5bf983c93e61"
+  url "https://github.com/DVDTSB/hexhog/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "5858dcb32b3f12647784c9a6ba2e107e157b9a82884bcfed3e994a70c7584b29"
   license "MIT"
   head "https://github.com/DVDTSB/hexhog.git", branch: "main"
 
