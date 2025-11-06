@@ -31,7 +31,7 @@ class Reddix < Formula
       output_log = testpath/"output.log"
       pid = spawn bin/"reddix", testpath, [:out, :err] => output_log.to_s
       sleep 1
-      assert_match "Browse Reddit galleries without leaving the terminal", output_log.read
+      assert_match "Sign in to load comments", output_log.read
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
