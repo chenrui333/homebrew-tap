@@ -316,7 +316,6 @@ brew install --cask <tool>
 - `marchat`
 - `markpdf`
 - `matcha`
-- `mcat`
 - `mcman`
 - `mcp-alchemy`
 - `mcp-obsidian`
@@ -517,7 +516,6 @@ brew install --cask <tool>
 - `trdl`
 - `trieve-cli`
 - `tsuki`
-- `tuios`
 - `tuono`
 - `twiggy`
 - `twilio-mcp-server`
