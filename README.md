@@ -235,7 +235,6 @@ brew install --cask <tool>
 - `headscale`
 - `hello`
 - `hellwal`
-- `hexhog`
 - `hexora`
 - `heyagent`
 - `hf-mcp-server`
@@ -259,7 +258,6 @@ brew install --cask <tool>
 - `inbucket`
 - `incus-compose`
 - `infraspec`
-- `intelli-shell`
 - `ip2d`
 - `ips`
 - `jaggr`
@@ -284,7 +282,6 @@ brew install --cask <tool>
 - `kpt`
 - `krs`
 - `kt`
-- `ktea`
 - `kube-role-gen`
 - `kube2pulumi`
 - `kubectl-tree`
