@@ -33,1121 +33,1121 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 
 | Tool | Description | Link |
 |------|-------------|------|
-| tuios ⭐ | A TUI window manager for managing multiple terminal sessions. | https://github.com/Gaurav-Gosain/tuios |
-| austin-tui | The top-like text-based user interface for Austin. | https://github.com/P403n1x87/austin-tui |
-| wifitui | A fast, featureful and friendly WiFi terminal UI. | https://github.com/shazow/wifitui |
-| dotbins | Keep updated binaries in your dotfiles. | https://github.com/basnijholt/dotbins |
-| cargo-geiger | Detects usage of unsafe Rust in a Rust crate and its dependencies. | https://github.com/geiger-rs/cargo-geiger |
-| octotype | A typing trainer for your terminal. | https://github.com/mahlquistj/octotype |
+| tuios ⭐ | A TUI window manager for managing multiple terminal sessions. | [Link](https://github.com/Gaurav-Gosain/tuios) |
+| austin-tui | The top-like text-based user interface for Austin. | [Link](https://github.com/P403n1x87/austin-tui) |
+| wifitui | A fast, featureful and friendly WiFi terminal UI. | [Link](https://github.com/shazow/wifitui) |
+| dotbins | Keep updated binaries in your dotfiles. | [Link](https://github.com/basnijholt/dotbins) |
+| cargo-geiger | Detects usage of unsafe Rust in a Rust crate and its dependencies. | [Link](https://github.com/geiger-rs/cargo-geiger) |
+| octotype | A typing trainer for your terminal. | [Link](https://github.com/mahlquistj/octotype) |
 
 ## October 14, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| jjj | A TUI interface for Jujutsu VCS. | https://github.com/icorbrey/jjj |
-| gobackup ⭐ | A CLI tool to backup your databases, files to cloud storage. | https://github.com/gobackup/gobackup |
-| intentrace | A better strace(1) for everyone. | https://github.com/sectordistrict/intentrace |
-| hexhog | A configurable hex viewer/editor. | https://github.com/DVDTSB/hexhog |
-| az-tui | A TUI for managing Azure Container Apps. | https://github.com/IAL32/az-tui/ |
-| dhv | A TUI for visually exploring disassembled Python bytecode. | https://github.com/davep/dhv |
+| jjj | A TUI interface for Jujutsu VCS. | [Link](https://github.com/icorbrey/jjj) |
+| gobackup ⭐ | A CLI tool to backup your databases, files to cloud storage. | [Link](https://github.com/gobackup/gobackup) |
+| intentrace | A better strace(1) for everyone. | [Link](https://github.com/sectordistrict/intentrace) |
+| hexhog | A configurable hex viewer/editor. | [Link](https://github.com/DVDTSB/hexhog) |
+| az-tui | A TUI for managing Azure Container Apps. | [Link](https://github.com/IAL32/az-tui/) |
+| dhv | A TUI for visually exploring disassembled Python bytecode. | [Link](https://github.com/davep/dhv) |
 
 ## October 7, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| sprofile | Blazingly fast TUI application for viewing your Spotify listening activity. | https://github.com/GoodBoyNeon/sprofile |
-| ad | An adaptable text editor. | https://github.com/sminez/ad |
-| ugdb | An alternative TUI for gdb. | https://github.com/ftilde/ugdb |
-| ereandel | A Gemini web browser using shell script. | https://github.com/blmayer/ereandel |
-| lemurs | A customizable TUI display/login manager written in Rust. | https://github.com/coastalwhite/lemurs |
-| intelli-shell ⭐ | Like IntelliSense, but for shells! | https://github.com/lasantosr/intelli-shell |
+| sprofile | Blazingly fast TUI application for viewing your Spotify listening activity. | [Link](https://github.com/GoodBoyNeon/sprofile) |
+| ad | An adaptable text editor. | [Link](https://github.com/sminez/ad) |
+| ugdb | An alternative TUI for gdb. | [Link](https://github.com/ftilde/ugdb) |
+| ereandel | A Gemini web browser using shell script. | [Link](https://github.com/blmayer/ereandel) |
+| lemurs | A customizable TUI display/login manager written in Rust. | [Link](https://github.com/coastalwhite/lemurs) |
+| intelli-shell ⭐ | Like IntelliSense, but for shells! | [Link](https://github.com/lasantosr/intelli-shell) |
 
 ## September 30, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| oq | A terminal-based OpenAPI Spec (OAS) viewer. | https://github.com/plutov/oq |
-| soundscope | A TUI audio file analyzer tool. | https://github.com/bananaofhappiness/soundscope |
-| judo | A multi-database TUI for todo lists. | https://github.com/giacomopiccinini/judo |
-| gittype | A terminal code-typing game that turns your source code into typing challenges. | https://github.com/unhappychoice/gittype |
-| aria2tui | A TUI client for the aria2 download utility. | https://github.com/grimandgreedy/Aria2TUI |
-| flowrs ⭐ | A TUI application for Apache Airflow. | https://github.com/jvanbuel/flowrs |
+| oq | A terminal-based OpenAPI Spec (OAS) viewer. | [Link](https://github.com/plutov/oq) |
+| soundscope | A TUI audio file analyzer tool. | [Link](https://github.com/bananaofhappiness/soundscope) |
+| judo | A multi-database TUI for todo lists. | [Link](https://github.com/giacomopiccinini/judo) |
+| gittype | A terminal code-typing game that turns your source code into typing challenges. | [Link](https://github.com/unhappychoice/gittype) |
+| aria2tui | A TUI client for the aria2 download utility. | [Link](https://github.com/grimandgreedy/Aria2TUI) |
+| flowrs ⭐ | A TUI application for Apache Airflow. | [Link](https://github.com/jvanbuel/flowrs) |
 
 ## September 23, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| sncli | A TUI and CLI for Simplenote. | https://github.com/insanum/sncli |
-| lue ⭐ | A TUI ebook reader with Text-to-Speech (TTS). | https://github.com/superstarryeyes/lue |
-| glues | A vim-inspired, privacy-first TUI note-taking app with multiple storage options. | https://github.com/gluesql/glues |
-| bugstalker | A Modern Rust debugger for Linux x86-64. | https://github.com/godzie44/BugStalker |
-| zigfetch | A minimal neofetch/fastfetch like system information tool. | https://github.com/utox39/zigfetch |
-| ktea | An Apache Kafka TUI client. | https://github.com/jonas-grgt/ktea |
+| sncli | A TUI and CLI for Simplenote. | [Link](https://github.com/insanum/sncli) |
+| lue ⭐ | A TUI ebook reader with Text-to-Speech (TTS). | [Link](https://github.com/superstarryeyes/lue) |
+| glues | A vim-inspired, privacy-first TUI note-taking app with multiple storage options. | [Link](https://github.com/gluesql/glues) |
+| bugstalker | A Modern Rust debugger for Linux x86-64. | [Link](https://github.com/godzie44/BugStalker) |
+| zigfetch | A minimal neofetch/fastfetch like system information tool. | [Link](https://github.com/utox39/zigfetch) |
+| ktea | An Apache Kafka TUI client. | [Link](https://github.com/jonas-grgt/ktea) |
 
 ## September 16, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| pproftui | A terminal-based diagnostic tool for Go pprof data. | https://github.com/Oloruntobi1/pproftui |
-| lazyssh ⭐ | A terminal-based SSH manager. | https://github.com/Adembc/lazyssh |
-| fat | A modern, TUI file and archive viewer for your terminal. | https://github.com/Zuhaitz-dev/fat |
-| envx | A powerful and secure TUI environment variable manager. | https://github.com/mikeleppane/envx |
-| gruyere | A tiny (and pretty) program for viewing + killing listening ports. | https://github.com/savannahostrowski/gruyere |
-| marchat | A lightweight realtime terminal chat client and server with E2E support. | https://github.com/Cod-e-Codes/marchat |
+| pproftui | A terminal-based diagnostic tool for Go pprof data. | [Link](https://github.com/Oloruntobi1/pproftui) |
+| lazyssh ⭐ | A terminal-based SSH manager. | [Link](https://github.com/Adembc/lazyssh) |
+| fat | A modern, TUI file and archive viewer for your terminal. | [Link](https://github.com/Zuhaitz-dev/fat) |
+| envx | A powerful and secure TUI environment variable manager. | [Link](https://github.com/mikeleppane/envx) |
+| gruyere | A tiny (and pretty) program for viewing + killing listening ports. | [Link](https://github.com/savannahostrowski/gruyere) |
+| marchat | A lightweight realtime terminal chat client and server with E2E support. | [Link](https://github.com/Cod-e-Codes/marchat) |
 
 ## September 9, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| cmdperf | Benchmark and compare shell commands interactively. | https://github.com/miklosn/cmdperf |
-| celerator | Monitor and debug celery tasks in the terminal. | https://github.com/f4rih/celerator |
-| jiratui | Manage JIRA issues directly from the terminal. | https://github.com/whyisdifficult/jiratui |
-| rustormy | Minimal neofetch-like weather CLI. | https://github.com/Tairesh/rustormy |
-| branchlet | Manage Git worktrees with automation from the terminal. | https://github.com/raghavpillai/branchlet |
-| dirsearch ⭐ | A web path scanner for finding hidden files and directories. | https://github.com/maurosoria/dirsearch |
+| cmdperf | Benchmark and compare shell commands interactively. | [Link](https://github.com/miklosn/cmdperf) |
+| celerator | Monitor and debug celery tasks in the terminal. | [Link](https://github.com/f4rih/celerator) |
+| jiratui | Manage JIRA issues directly from the terminal. | [Link](https://github.com/whyisdifficult/jiratui) |
+| rustormy | Minimal neofetch-like weather CLI. | [Link](https://github.com/Tairesh/rustormy) |
+| branchlet | Manage Git worktrees with automation from the terminal. | [Link](https://github.com/raghavpillai/branchlet) |
+| dirsearch ⭐ | A web path scanner for finding hidden files and directories. | [Link](https://github.com/maurosoria/dirsearch) |
 
 ## September 2, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| dcv ⭐ | A TUI viewer for docker-compose. | https://github.com/tokuhirom/dcv |
-| systeroid | A more powerful alternative to sysctl(8). | https://github.com/orhun/systeroid |
-| ly | A lightweight TUI (ncurses-like) display manager. | https://github.com/terminaltrove |
-| systemd-manager-tui | A TUI for managing systemd services. | https://github.com/matheus-git/systemd-manager-tui |
-| incplot | A CLI tool for drawing great looking plots in the terminal using unicode characters. | https://github.com/InCom-0/incplot |
-| mastui | A Modern Mastodon TUI Client. | https://github.com/kimusan/mastui/ |
+| dcv ⭐ | A TUI viewer for docker-compose. | [Link](https://github.com/tokuhirom/dcv) |
+| systeroid | A more powerful alternative to sysctl(8). | [Link](https://github.com/orhun/systeroid) |
+| ly | A lightweight TUI (ncurses-like) display manager. | [Link](https://github.com/terminaltrove) |
+| systemd-manager-tui | A TUI for managing systemd services. | [Link](https://github.com/matheus-git/systemd-manager-tui) |
+| incplot | A CLI tool for drawing great looking plots in the terminal using unicode characters. | [Link](https://github.com/InCom-0/incplot) |
+| mastui | A Modern Mastodon TUI Client. | [Link](https://github.com/kimusan/mastui/) |
 
 ## August 26, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| hwinfo-tui | A terminal visualization tool for monitoring real-time hardware sensor data from HWInfo. | https://github.com/JuanjoFuchs/hwinfo-tui |
-| doxx ⭐ | A viewer for Microsoft Word .docx files in the terminal. | https://github.com/bgreenwell/doxx |
-| wiremix | A simple TUI audio mixer for PipeWire. | https://github.com/tsowell/wiremix |
-| kakoune | A modern selection-based modal text editor. | https://github.com/mawww/kakoune |
-| squall | A TUI SQLite viewer and editor. | https://github.com/driscollis/squall |
-| ssh-list | An SSH connection manager with a TUI interface. | https://github.com/akinoiro/ssh-list |
+| hwinfo-tui | A terminal visualization tool for monitoring real-time hardware sensor data from HWInfo. | [Link](https://github.com/JuanjoFuchs/hwinfo-tui) |
+| doxx ⭐ | A viewer for Microsoft Word .docx files in the terminal. | [Link](https://github.com/bgreenwell/doxx) |
+| wiremix | A simple TUI audio mixer for PipeWire. | [Link](https://github.com/tsowell/wiremix) |
+| kakoune | A modern selection-based modal text editor. | [Link](https://github.com/mawww/kakoune) |
+| squall | A TUI SQLite viewer and editor. | [Link](https://github.com/driscollis/squall) |
+| ssh-list | An SSH connection manager with a TUI interface. | [Link](https://github.com/akinoiro/ssh-list) |
 
 ## August 19, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| hapless | Run and manage background processes. | https://github.com/bmwant/hapless |
-| typtea | A minimal terminal-based type-speed tester. | https://github.com/ashish0kumar/typtea |
-| jocalsend ⭐ | A TUI file-sharing tool based on the LocalSend protocol. | https://github.com/terminaltrove |
-| oatmeal | A TUI to chat with LLMs and direct integrations with your favourite editors. | https://github.com/dustinblackman/oatmeal |
-| tldr-pages | Collaborative cheatsheets for console commands. | https://github.com/tldr-pages/tldr |
-| mergiraf | A syntax-aware Git merge conflict resolver. | https://github.com/terminaltrove |
+| hapless | Run and manage background processes. | [Link](https://github.com/bmwant/hapless) |
+| typtea | A minimal terminal-based type-speed tester. | [Link](https://github.com/ashish0kumar/typtea) |
+| jocalsend ⭐ | A TUI file-sharing tool based on the LocalSend protocol. | [Link](https://github.com/terminaltrove) |
+| oatmeal | A TUI to chat with LLMs and direct integrations with your favourite editors. | [Link](https://github.com/dustinblackman/oatmeal) |
+| tldr-pages | Collaborative cheatsheets for console commands. | [Link](https://github.com/tldr-pages/tldr) |
+| mergiraf | A syntax-aware Git merge conflict resolver. | [Link](https://github.com/terminaltrove) |
 
 ## August 12, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| swaptop | A real-time swap usage monitor with a TUI. | https://github.com/luis-ota/swaptop |
-| qmassa | Terminal-based tool for displaying GPUs usage stats on Linux. | https://github.com/ulissesf/qmassa |
-| gcli | A Portable Git(hub\|lab\|tea)/Forgejo/Bugzilla CLI tool. | https://github.com/herrhotzenplotz/gcli |
-| cashd | A fast and cozy TUI for personal finance management. | https://github.com/hzqtc/cashd |
-| kanha | A web-app pentesting suite in Rust. | https://github.com/pwnwriter/kanha |
-| cariddi ⭐ | A tool to crawl urls, scan endpoints, secrets, api keys, file extensions, tokens and more. | https://github.com/edoardottt/cariddi |
+| swaptop | A real-time swap usage monitor with a TUI. | [Link](https://github.com/luis-ota/swaptop) |
+| qmassa | Terminal-based tool for displaying GPUs usage stats on Linux. | [Link](https://github.com/ulissesf/qmassa) |
+| gcli | A Portable Git(hub\|lab\|tea)/Forgejo/Bugzilla CLI tool. | [Link](https://github.com/herrhotzenplotz/gcli) |
+| cashd | A fast and cozy TUI for personal finance management. | [Link](https://github.com/hzqtc/cashd) |
+| kanha | A web-app pentesting suite in Rust. | [Link](https://github.com/pwnwriter/kanha) |
+| cariddi ⭐ | A tool to crawl urls, scan endpoints, secrets, api keys, file extensions, tokens and more. | [Link](https://github.com/edoardottt/cariddi) |
 
 ## August 5, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| exosphere ⭐ | A CLI / TUI for aggregated patch reporting &amp; system status monitoring via SSH. | https://github.com/mrdaemon/exosphere |
-| mult | Run a command multiple times and glance at the outputs. | https://github.com/dhth/mult |
-| pspg | A UNIX pager optimized for tabular data. | https://github.com/okbob/pspg |
-| cloctui | A TUI interface for CLOC (Count Lines of Code) | https://github.com/edward-jazzhands/cloctui |
-| comchan | A blazingly fast, minimal, and beginner-friendly serial monitor. | https://github.com/Vaishnav-Sabari-Girish/ComChan |
-| fli | A command-line tool that simplifies AWS VPC Flow Logs analysis. | https://github.com/fractalops/fli |
+| exosphere ⭐ | A CLI / TUI for aggregated patch reporting &amp; system status monitoring via SSH. | [Link](https://github.com/mrdaemon/exosphere) |
+| mult | Run a command multiple times and glance at the outputs. | [Link](https://github.com/dhth/mult) |
+| pspg | A UNIX pager optimized for tabular data. | [Link](https://github.com/okbob/pspg) |
+| cloctui | A TUI interface for CLOC (Count Lines of Code) | [Link](https://github.com/edward-jazzhands/cloctui) |
+| comchan | A blazingly fast, minimal, and beginner-friendly serial monitor. | [Link](https://github.com/Vaishnav-Sabari-Girish/ComChan) |
+| fli | A command-line tool that simplifies AWS VPC Flow Logs analysis. | [Link](https://github.com/fractalops/fli) |
 
 ## July 29, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| yatto | Interactive Git-based todo-list for the command line. | https://github.com/handlebargh/yatto |
-| renux | A terminal-based bulk file renamer with a TUI. | https://github.com/andrianllmm/renux |
-| lazycelery | A TUI for monitoring and managing Celery workers and tasks. | https://github.com/fguedes90/lazycelery |
-| netshow | An interactive, process-aware network monitoring for your terminal. | https://github.com/taylorwilsdon/netshow |
-| dtop | A high-performance TUI for Docker container management. | https://github.com/StakeSquid/dtop |
-| apisnip ⭐ | A TUI tool for trimming OpenAPI specifications down to size. | https://github.com/Tuurlijk/apisnip |
+| yatto | Interactive Git-based todo-list for the command line. | [Link](https://github.com/handlebargh/yatto) |
+| renux | A terminal-based bulk file renamer with a TUI. | [Link](https://github.com/andrianllmm/renux) |
+| lazycelery | A TUI for monitoring and managing Celery workers and tasks. | [Link](https://github.com/fguedes90/lazycelery) |
+| netshow | An interactive, process-aware network monitoring for your terminal. | [Link](https://github.com/taylorwilsdon/netshow) |
+| dtop | A high-performance TUI for Docker container management. | [Link](https://github.com/StakeSquid/dtop) |
+| apisnip ⭐ | A TUI tool for trimming OpenAPI specifications down to size. | [Link](https://github.com/Tuurlijk/apisnip) |
 
 ## July 22, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| gotip | A TUI application for interactively selecting and running Go tests. | https://github.com/lusingander/gotip |
-| stormy | Minimal, customizable, and neofetch-like weather CLI. | https://github.com/ashish0kumar/stormy |
-| simtool | A beautiful and powerful TUI for managing iOS simulators. | https://github.com/azizuysal/simtool |
-| kat | A TUI and rule-based rendering engine for Kubernetes manifests. | https://github.com/MacroPower/kat |
-| hygg | Minimalistic Vim-like TUI document reader. | https://github.com/kruserr/hygg |
-| bitchat-tui ⭐ | A TUI client for bitchat. | https://github.com/vaibhav-mattoo/bitchat-tui |
+| gotip | A TUI application for interactively selecting and running Go tests. | [Link](https://github.com/lusingander/gotip) |
+| stormy | Minimal, customizable, and neofetch-like weather CLI. | [Link](https://github.com/ashish0kumar/stormy) |
+| simtool | A beautiful and powerful TUI for managing iOS simulators. | [Link](https://github.com/azizuysal/simtool) |
+| kat | A TUI and rule-based rendering engine for Kubernetes manifests. | [Link](https://github.com/MacroPower/kat) |
+| hygg | Minimalistic Vim-like TUI document reader. | [Link](https://github.com/kruserr/hygg) |
+| bitchat-tui ⭐ | A TUI client for bitchat. | [Link](https://github.com/vaibhav-mattoo/bitchat-tui) |
 
 ## July 15, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| froggit | A modern, minimalist Git TUI. | https://github.com/thewizardshell/froggit |
-| cargo-seek | A TUI for searching, adding and installing cargo crates. | https://github.com/tareqimbasher/cargo-seek |
-| ecscope | monitor AWS ECS resources from the terminal. | https://github.com/dhth/ecscope |
-| runal | A creative coding environment for the terminal. | https://github.com/emprcl/runal |
-| taproom ⭐ | An interactive TUI for Homebrew. | https://github.com/hzqtc/taproom |
-| theattyr | A terminal theater for playing VT100 art and animations. | https://github.com/orhun/theattyr |
+| froggit | A modern, minimalist Git TUI. | [Link](https://github.com/thewizardshell/froggit) |
+| cargo-seek | A TUI for searching, adding and installing cargo crates. | [Link](https://github.com/tareqimbasher/cargo-seek) |
+| ecscope | monitor AWS ECS resources from the terminal. | [Link](https://github.com/dhth/ecscope) |
+| runal | A creative coding environment for the terminal. | [Link](https://github.com/emprcl/runal) |
+| taproom ⭐ | An interactive TUI for Homebrew. | [Link](https://github.com/hzqtc/taproom) |
+| theattyr | A terminal theater for playing VT100 art and animations. | [Link](https://github.com/orhun/theattyr) |
 
 ## July 8, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| up | A tool for writing Linux pipes with instant live preview. | https://github.com/akavel/up |
-| outside | A multi-purpose weather client for your terminal. | https://github.com/BaconIsAVeg/outside |
-| termframe | Terminal output SVG screenshot tool. | https://github.com/pamburus/termframe |
-| ftdv | File Tree Diff Viewer. | https://github.com/wtnqk/ftdv |
-| mcp-probe ⭐ | Advanced MCP Protocol Debugger &amp; Interactive TUI. | https://github.com/conikeec/mcp-probe |
-| domain-check | A fast, powerful CLI tool for checking domain availability using RDAP and WHOIS. | https://github.com/saidutt46/domain-check |
+| up | A tool for writing Linux pipes with instant live preview. | [Link](https://github.com/akavel/up) |
+| outside | A multi-purpose weather client for your terminal. | [Link](https://github.com/BaconIsAVeg/outside) |
+| termframe | Terminal output SVG screenshot tool. | [Link](https://github.com/pamburus/termframe) |
+| ftdv | File Tree Diff Viewer. | [Link](https://github.com/wtnqk/ftdv) |
+| mcp-probe ⭐ | Advanced MCP Protocol Debugger &amp; Interactive TUI. | [Link](https://github.com/conikeec/mcp-probe) |
+| domain-check | A fast, powerful CLI tool for checking domain availability using RDAP and WHOIS. | [Link](https://github.com/saidutt46/domain-check) |
 
 ## July 1, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| imgcat | Display images and gifs in your terminal. | https://github.com/danielgatis/imgcat |
-| vi-mongo ⭐ | A TUI for managing MongoDB databases. | https://github.com/kopecmaciej/vi-mongo |
-| yozefu | An TUI application for exploring data of a kafka cluster. | https://github.com/MAIF/yozefu |
-| meteor | A highly configurable CLI tool for writing conventional commits. | https://github.com/stefanlogue/meteor |
-| mufetch | neofetch-style CLI for music. | https://github.com/ashish0kumar/mufetch |
-| awsesh | A charming TUI for AWS SSO session management. | https://github.com/elva-labs/awsesh |
+| imgcat | Display images and gifs in your terminal. | [Link](https://github.com/danielgatis/imgcat) |
+| vi-mongo ⭐ | A TUI for managing MongoDB databases. | [Link](https://github.com/kopecmaciej/vi-mongo) |
+| yozefu | An TUI application for exploring data of a kafka cluster. | [Link](https://github.com/MAIF/yozefu) |
+| meteor | A highly configurable CLI tool for writing conventional commits. | [Link](https://github.com/stefanlogue/meteor) |
+| mufetch | neofetch-style CLI for music. | [Link](https://github.com/ashish0kumar/mufetch) |
+| awsesh | A charming TUI for AWS SSO session management. | [Link](https://github.com/elva-labs/awsesh) |
 
 ## June 24, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| fclones | Efficient duplicate file finder and remover. | https://github.com/pkolaczk/fclones |
-| nmail | Terminal email client for Linux and macOS. | https://github.com/d99kris/nmail |
-| smassh ⭐ | Smassh your Keyboard, TUI Edition. | https://github.com/kraanzu/smassh |
-| tatuin | Task Aggregator TUI for N providers. | https://github.com/panter-dsd/tatuin |
-| so | A terminal interface for Stack Overflow. | https://github.com/samtay/so |
-| lstr | A fast, minimalist directory tree viewer. | https://github.com/bgreenwell/lstr |
+| fclones | Efficient duplicate file finder and remover. | [Link](https://github.com/pkolaczk/fclones) |
+| nmail | Terminal email client for Linux and macOS. | [Link](https://github.com/d99kris/nmail) |
+| smassh ⭐ | Smassh your Keyboard, TUI Edition. | [Link](https://github.com/kraanzu/smassh) |
+| tatuin | Task Aggregator TUI for N providers. | [Link](https://github.com/panter-dsd/tatuin) |
+| so | A terminal interface for Stack Overflow. | [Link](https://github.com/samtay/so) |
+| lstr | A fast, minimalist directory tree viewer. | [Link](https://github.com/bgreenwell/lstr) |
 
 ## June 17, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| kyma | A terminal-based presentation tool with smooth animated transitions. | https://github.com/museslabs/kyma |
-| gita | A command-line tool to manage multiple git repos. | https://github.com/nosarthur/gita |
-| wakey | A TUI built for managing and waking your devices using Wake-on-LAN. | https://github.com/jonathanruiz/wakey |
-| e1s ⭐ | A TUI for managing AWS ECS Resources. | https://github.com/keidarcy/e1s |
-| bfs | A breadth-first version of the UNIX find command. | https://github.com/tavianator/bfs |
-| chawan | A TUI web browser. | https://github.com/terminaltrove |
+| kyma | A terminal-based presentation tool with smooth animated transitions. | [Link](https://github.com/museslabs/kyma) |
+| gita | A command-line tool to manage multiple git repos. | [Link](https://github.com/nosarthur/gita) |
+| wakey | A TUI built for managing and waking your devices using Wake-on-LAN. | [Link](https://github.com/jonathanruiz/wakey) |
+| e1s ⭐ | A TUI for managing AWS ECS Resources. | [Link](https://github.com/keidarcy/e1s) |
+| bfs | A breadth-first version of the UNIX find command. | [Link](https://github.com/tavianator/bfs) |
+| chawan | A TUI web browser. | [Link](https://github.com/terminaltrove) |
 
 ## June 10, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| gollama | Go manage your ollama models. | https://github.com/sammcj/gollama |
-| deletor ⭐ | Manage &amp; delete files efficiently with an interactive TUI &amp; scriptable CLI. | https://github.com/pashkov256/deletor |
-| eg | Useful examples at the command line. | https://github.com/srsudar/eg |
-| mdns-scanner | Scan a network and create a list of IPs and associated hostnames. | https://github.com/CramBL/mdns-scanner |
-| feluda | Detect license usage restrictions in your project! | https://github.com/anistark/feluda |
-| ssm | Streamline SSH connections with a simple TUI. | https://github.com/lfaoro/ssm |
+| gollama | Go manage your ollama models. | [Link](https://github.com/sammcj/gollama) |
+| deletor ⭐ | Manage &amp; delete files efficiently with an interactive TUI &amp; scriptable CLI. | [Link](https://github.com/pashkov256/deletor) |
+| eg | Useful examples at the command line. | [Link](https://github.com/srsudar/eg) |
+| mdns-scanner | Scan a network and create a list of IPs and associated hostnames. | [Link](https://github.com/CramBL/mdns-scanner) |
+| feluda | Detect license usage restrictions in your project! | [Link](https://github.com/anistark/feluda) |
+| ssm | Streamline SSH connections with a simple TUI. | [Link](https://github.com/lfaoro/ssm) |
 
 ## June 3, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| bbrew | A Homebrew TUI Manager. | https://github.com/Valkyrie00/bold-brew |
-| ssl-checker | Fast and beautiful program to check all your https endpoint. | https://github.com/fabio42/ssl-checker |
-| igrep | Interactive Grep. | https://github.com/konradsz/igrep/ |
-| tldx ⭐ | A Domain Availability Research Tool. | https://github.com/brandonyoungdev/tldx |
-| dysk | A linux utility listing your filesystems. | https://github.com/canop/dysk |
-| gitid | Manage multiple Git identities through a TUI. | https://github.com/nathabonfim59/gitid |
+| bbrew | A Homebrew TUI Manager. | [Link](https://github.com/Valkyrie00/bold-brew) |
+| ssl-checker | Fast and beautiful program to check all your https endpoint. | [Link](https://github.com/fabio42/ssl-checker) |
+| igrep | Interactive Grep. | [Link](https://github.com/konradsz/igrep/) |
+| tldx ⭐ | A Domain Availability Research Tool. | [Link](https://github.com/brandonyoungdev/tldx) |
+| dysk | A linux utility listing your filesystems. | [Link](https://github.com/canop/dysk) |
+| gitid | Manage multiple Git identities through a TUI. | [Link](https://github.com/nathabonfim59/gitid) |
 
 ## May 27, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| pgcli | A postgres CLI with autocompletion and syntax highlighting. | https://github.com/dbcli/pgcli |
-| zmate | Instant terminal sharing using Zellij. | https://github.com/ziinaio/zmate |
-| tracker | A terminal-based real-time satellite tracking and orbit prediction application. | https://github.com/ShenMian/tracker |
-| wikiman | A universal offline documentation search engine for manual pages. | https://github.com/filiparag/wikiman |
-| kdash ⭐ | A simple and fast dashboard for Kubernetes. | https://github.com/kdash-rs/kdash |
-| tofuref | A TUI for the OpenTofu provider registry. | https://github.com/djetelina/tofuref |
+| pgcli | A postgres CLI with autocompletion and syntax highlighting. | [Link](https://github.com/dbcli/pgcli) |
+| zmate | Instant terminal sharing using Zellij. | [Link](https://github.com/ziinaio/zmate) |
+| tracker | A terminal-based real-time satellite tracking and orbit prediction application. | [Link](https://github.com/ShenMian/tracker) |
+| wikiman | A universal offline documentation search engine for manual pages. | [Link](https://github.com/filiparag/wikiman) |
+| kdash ⭐ | A simple and fast dashboard for Kubernetes. | [Link](https://github.com/kdash-rs/kdash) |
+| tofuref | A TUI for the OpenTofu provider registry. | [Link](https://github.com/djetelina/tofuref) |
 
 ## May 20, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| intermodal | A 40&#39; shipping container for the Internet. | https://github.com/casey/intermodal |
-| needs | checks if bin(s) are installed, oh and the version too. | https://github.com/NQMVD/needs |
-| chiko | A TUI gRPC client. | https://github.com/felangga/chiko |
-| clipse | Configurable TUI clipboard manager for Unix. | https://github.com/savedra1/clipse |
-| basalt ⭐ | A TUI for managing Obsidian vaults and notes. | https://github.com/erikjuhani/basalt |
-| lexy | A CLI for reading Learn X in Y Minutes directly into your terminal. | https://github.com/antoniorodr/lexy |
+| intermodal | A 40&#39; shipping container for the Internet. | [Link](https://github.com/casey/intermodal) |
+| needs | checks if bin(s) are installed, oh and the version too. | [Link](https://github.com/NQMVD/needs) |
+| chiko | A TUI gRPC client. | [Link](https://github.com/felangga/chiko) |
+| clipse | Configurable TUI clipboard manager for Unix. | [Link](https://github.com/savedra1/clipse) |
+| basalt ⭐ | A TUI for managing Obsidian vaults and notes. | [Link](https://github.com/erikjuhani/basalt) |
+| lexy | A CLI for reading Learn X in Y Minutes directly into your terminal. | [Link](https://github.com/antoniorodr/lexy) |
 
 ## May 13, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| httpmonitor | A small TUI application to monitor a single or multiple targets. | https://github.com/ricoberger/httpmonitor |
-| parqv | A TUI for visualizing and analyzing files with multiple formats. | https://github.com/sanspareilsmyn/parqv |
-| nerdlog ⭐ | A fast, remote-first, multi-host TUI log viewer. | https://github.com/dimonomid/nerdlog |
-| lazyjj | A TUI for Jujutsu / jj. | https://github.com/Cretezy/lazyjj |
-| scooter | Interactive find and replace in the terminal. | https://github.com/thomasschafer/scooter |
-| peplum | The TUI PEP lookup manager for your terminal. | https://github.com/davep/peplum |
+| httpmonitor | A small TUI application to monitor a single or multiple targets. | [Link](https://github.com/ricoberger/httpmonitor) |
+| parqv | A TUI for visualizing and analyzing files with multiple formats. | [Link](https://github.com/sanspareilsmyn/parqv) |
+| nerdlog ⭐ | A fast, remote-first, multi-host TUI log viewer. | [Link](https://github.com/dimonomid/nerdlog) |
+| lazyjj | A TUI for Jujutsu / jj. | [Link](https://github.com/Cretezy/lazyjj) |
+| scooter | Interactive find and replace in the terminal. | [Link](https://github.com/thomasschafer/scooter) |
+| peplum | The TUI PEP lookup manager for your terminal. | [Link](https://github.com/davep/peplum) |
 
 ## May 6, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| daylight ⭐ | Track sunrise and sunset times in the terminal. | https://github.com/jbreckmckye/daylight |
-| osintui | Open Source Intelligence Terminal User Interface. | https://github.com/wssheldon/osintui |
-| lobtui | A TUI for lobste.rs website. | https://github.com/pythops/lobtui |
-| just | Just a command runner. | https://github.com/casey/just |
-| zizmor | A static analysis tool for GitHub Actions. | https://github.com/woodruffw/zizmor |
-| gitsnip | A CLI tool to download specific folders from a git repository. | https://github.com/dagimg-dot/gitsnip |
+| daylight ⭐ | Track sunrise and sunset times in the terminal. | [Link](https://github.com/jbreckmckye/daylight) |
+| osintui | Open Source Intelligence Terminal User Interface. | [Link](https://github.com/wssheldon/osintui) |
+| lobtui | A TUI for lobste.rs website. | [Link](https://github.com/pythops/lobtui) |
+| just | Just a command runner. | [Link](https://github.com/casey/just) |
+| zizmor | A static analysis tool for GitHub Actions. | [Link](https://github.com/woodruffw/zizmor) |
+| gitsnip | A CLI tool to download specific folders from a git repository. | [Link](https://github.com/dagimg-dot/gitsnip) |
 
 ## April 29, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| kure | A CLI password manager with sessions. | https://github.com/GGP1/kure |
-| passepartui | A TUI for pass. | https://github.com/kardwen/passepartui |
-| motus | Dead simple password generator. | https://github.com/oleiade/motus |
-| andcli ⭐ | A 2FA TUI for your shell. | https://github.com/tjblackheart/andcli |
-| apw | A CLI for Apple Passwords (also known as iCloud Keychain) | https://github.com/bendews/apw |
-| pwdsafety | A command line tool checking password safety. | https://github.com/edoardottt/pwdsafety |
+| kure | A CLI password manager with sessions. | [Link](https://github.com/GGP1/kure) |
+| passepartui | A TUI for pass. | [Link](https://github.com/kardwen/passepartui) |
+| motus | Dead simple password generator. | [Link](https://github.com/oleiade/motus) |
+| andcli ⭐ | A 2FA TUI for your shell. | [Link](https://github.com/tjblackheart/andcli) |
+| apw | A CLI for Apple Passwords (also known as iCloud Keychain) | [Link](https://github.com/bendews/apw) |
+| pwdsafety | A command line tool checking password safety. | [Link](https://github.com/edoardottt/pwdsafety) |
 
 ## April 23, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ticker ⭐ | A terminal stock ticker with live updates and position tracking. | https://github.com/achannarasappa/ticker |
+| ticker ⭐ | A terminal stock ticker with live updates and position tracking. | [Link](https://github.com/achannarasappa/ticker) |
 
 ## April 22, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| zf | A fuzzy finder that excels at filtering filepaths. | https://github.com/natecraddock/zf |
-| srgn | A syntax‑aware grep alternative with code edits. | https://github.com/alexpovel/srgn |
-| asak | A cross-platform audio recording/playback CLI tool with a TUI. | https://github.com/chaosprint/asak |
-| inspect-cert-chain | Inspect and debug TLS certificate chains. (without OpenSSL) | https://github.com/robjtede/inspect-cert-chain |
-| serpl | A simple TUI for search and replace, akin to VS Code. | https://github.com/yassinebridi/serpl |
+| zf | A fuzzy finder that excels at filtering filepaths. | [Link](https://github.com/natecraddock/zf) |
+| srgn | A syntax‑aware grep alternative with code edits. | [Link](https://github.com/alexpovel/srgn) |
+| asak | A cross-platform audio recording/playback CLI tool with a TUI. | [Link](https://github.com/chaosprint/asak) |
+| inspect-cert-chain | Inspect and debug TLS certificate chains. (without OpenSSL) | [Link](https://github.com/robjtede/inspect-cert-chain) |
+| serpl | A simple TUI for search and replace, akin to VS Code. | [Link](https://github.com/yassinebridi/serpl) |
 
 ## April 15, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| parllama ⭐ | TUI for ollama and other LLM providers. | https://github.com/paulrobello/parllama |
-| resto | Send pretty HTTP &amp; API requests with TUI. | https://github.com/abdfnx/resto |
-| mandown | man-page inspired Markdown viewer. | https://github.com/Titor8115/mandown |
-| riff | A diff filter highlighting which line parts have changed. | https://github.com/walles/riff |
-| macchina | Fast, minimal and customizable system information frontend. | https://github.com/Macchina-CLI/macchina |
-| hexowl | Lightweight, flexible programmer&#39;s calculator with variables and functions. | https://github.com/dece2183/hexowl |
+| parllama ⭐ | TUI for ollama and other LLM providers. | [Link](https://github.com/paulrobello/parllama) |
+| resto | Send pretty HTTP &amp; API requests with TUI. | [Link](https://github.com/abdfnx/resto) |
+| mandown | man-page inspired Markdown viewer. | [Link](https://github.com/Titor8115/mandown) |
+| riff | A diff filter highlighting which line parts have changed. | [Link](https://github.com/walles/riff) |
+| macchina | Fast, minimal and customizable system information frontend. | [Link](https://github.com/Macchina-CLI/macchina) |
+| hexowl | Lightweight, flexible programmer&#39;s calculator with variables and functions. | [Link](https://github.com/dece2183/hexowl) |
 
 ## April 8, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ballast | A tool for snapshot load testing APIs. | https://github.com/synoet/ballast |
-| caps-log | A small TUI journaling tool. | https://github.com/NikolaDucak/caps-log |
-| xan ⭐ | The CSV magician. | https://github.com/medialab/xan |
-| roumon | A universal goroutine monitor with a TUI. | https://github.com/becheran/roumon |
-| cueitup | Inspect messages in an AWS SQS queue. | https://github.com/dhth/cueitup |
-| regname | Mass renamer TUI written in Rust. | https://github.com/linkdd/regname |
+| ballast | A tool for snapshot load testing APIs. | [Link](https://github.com/synoet/ballast) |
+| caps-log | A small TUI journaling tool. | [Link](https://github.com/NikolaDucak/caps-log) |
+| xan ⭐ | The CSV magician. | [Link](https://github.com/medialab/xan) |
+| roumon | A universal goroutine monitor with a TUI. | [Link](https://github.com/becheran/roumon) |
+| cueitup | Inspect messages in an AWS SQS queue. | [Link](https://github.com/dhth/cueitup) |
+| regname | Mass renamer TUI written in Rust. | [Link](https://github.com/linkdd/regname) |
 
 ## April 1, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| wtfis ⭐ | Passive hostname, domain and IP lookup tool for non-robots. | https://github.com/pirxthepilot/wtfis |
-| vectro | The rpn calculator for your terminal. | https://github.com/gurgeous/vectro |
-| countryfetch | A neofetch-like tool for fetching information about your country. | https://github.com/nik-rev/countryfetch |
-| fex | A command-line file explorer prioritizing quick navigation. | https://github.com/18alantom/fex |
-| lumon | The work is mysterious and important... | https://github.com/terminaltrove/lumon |
-| puffin | A beautiful terminal dashboard for hledger. | https://github.com/siddhantac/puffin |
+| wtfis ⭐ | Passive hostname, domain and IP lookup tool for non-robots. | [Link](https://github.com/pirxthepilot/wtfis) |
+| vectro | The rpn calculator for your terminal. | [Link](https://github.com/gurgeous/vectro) |
+| countryfetch | A neofetch-like tool for fetching information about your country. | [Link](https://github.com/nik-rev/countryfetch) |
+| fex | A command-line file explorer prioritizing quick navigation. | [Link](https://github.com/18alantom/fex) |
+| lumon | The work is mysterious and important... | [Link](https://github.com/terminaltrove/lumon) |
+| puffin | A beautiful terminal dashboard for hledger. | [Link](https://github.com/siddhantac/puffin) |
 
 ## March 26, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| nping | A TUI concurrent ping tool developed in Rust. | https://github.com/hanshuaikang/nping |
-| git-who | Git blame for file trees. | https://github.com/sinclairtarget/git-who |
-| senpai | Your everyday IRC student. | https://github.com/terminaltrove |
-| fm | A minimalistic file manager for the terminal. | https://github.com/mistakenelf/fm |
-| tasktimer | A dead simple TUI task timer. | https://github.com/caarlos0/tasktimer |
-| euporie ⭐ | Jupyter notebooks in the terminal. | https://github.com/joouha/euporie |
+| nping | A TUI concurrent ping tool developed in Rust. | [Link](https://github.com/hanshuaikang/nping) |
+| git-who | Git blame for file trees. | [Link](https://github.com/sinclairtarget/git-who) |
+| senpai | Your everyday IRC student. | [Link](https://github.com/terminaltrove) |
+| fm | A minimalistic file manager for the terminal. | [Link](https://github.com/mistakenelf/fm) |
+| tasktimer | A dead simple TUI task timer. | [Link](https://github.com/caarlos0/tasktimer) |
+| euporie ⭐ | Jupyter notebooks in the terminal. | [Link](https://github.com/joouha/euporie) |
 
 ## March 19, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ncspot | A cross-platform ncurses Spotify client. | https://github.com/hrkfdn/ncspot |
-| sake | A task runner for local and remote hosts. | https://github.com/alajmo/sake |
-| pet | Simple command-line snippet manager. | https://github.com/knqyf263/pet |
-| pqviewer | View Apache Parquet Files In Your Terminal. | https://github.com/thread53/pqviewer |
-| httpstat | Visualizes curl(1) statistics in a way of beauty and clarity. | https://github.com/reorx/httpstat |
-| mani ⭐ | A CLI tool to help you manage multiple repositories. | https://github.com/alajmo/mani/ |
+| ncspot | A cross-platform ncurses Spotify client. | [Link](https://github.com/hrkfdn/ncspot) |
+| sake | A task runner for local and remote hosts. | [Link](https://github.com/alajmo/sake) |
+| pet | Simple command-line snippet manager. | [Link](https://github.com/knqyf263/pet) |
+| pqviewer | View Apache Parquet Files In Your Terminal. | [Link](https://github.com/thread53/pqviewer) |
+| httpstat | Visualizes curl(1) statistics in a way of beauty and clarity. | [Link](https://github.com/reorx/httpstat) |
+| mani ⭐ | A CLI tool to help you manage multiple repositories. | [Link](https://github.com/alajmo/mani/) |
 
 ## March 12, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ddv ⭐ | A TUI to view Amazon DynamoDB in the terminal. | https://github.com/lusingander/ddv |
-| wuzz | An interactive TUI tool for HTTP inspection. | https://github.com/asciimoo/wuzz |
-| pipeform | A TUI for Terraform runtime progress. | https://github.com/magodo/pipeform |
-| castero | A TUI podcast client for the terminal. | https://github.com/xgi/castero |
-| patch-hub | TUI for lore.kernel.org | https://github.com/kworkflow/patch-hub |
-| termpicker | A color picker for the terminal. | https://github.com/ChausseBenjamin/termpicker |
+| ddv ⭐ | A TUI to view Amazon DynamoDB in the terminal. | [Link](https://github.com/lusingander/ddv) |
+| wuzz | An interactive TUI tool for HTTP inspection. | [Link](https://github.com/asciimoo/wuzz) |
+| pipeform | A TUI for Terraform runtime progress. | [Link](https://github.com/magodo/pipeform) |
+| castero | A TUI podcast client for the terminal. | [Link](https://github.com/xgi/castero) |
+| patch-hub | TUI for lore.kernel.org | [Link](https://github.com/kworkflow/patch-hub) |
+| termpicker | A color picker for the terminal. | [Link](https://github.com/ChausseBenjamin/termpicker) |
 
 ## March 5, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| hike | A Markdown browser for the terminal. | https://github.com/davep/hike |
-| fuzpad | A minimalistic note management solution. Powered by fzf. | https://github.com/JianZcar/FuzPad |
-| xbps-tui | A TUI-wrapper for xbps package manager on Void Linux. | https://github.com/terminaltrove |
-| slumber | Terminal-based HTTP/REST client. | https://github.com/LucasPickering/slumber |
-| bibiman ⭐ | A simple TUI for handling your BibLaTeX database. | https://github.com/terminaltrove |
-| envfetch | Lightweight cross-platform CLI tool for working with environment variables. | https://github.com/ankddev/envfetch |
+| hike | A Markdown browser for the terminal. | [Link](https://github.com/davep/hike) |
+| fuzpad | A minimalistic note management solution. Powered by fzf. | [Link](https://github.com/JianZcar/FuzPad) |
+| xbps-tui | A TUI-wrapper for xbps package manager on Void Linux. | [Link](https://github.com/terminaltrove) |
+| slumber | Terminal-based HTTP/REST client. | [Link](https://github.com/LucasPickering/slumber) |
+| bibiman ⭐ | A simple TUI for handling your BibLaTeX database. | [Link](https://github.com/terminaltrove) |
+| envfetch | Lightweight cross-platform CLI tool for working with environment variables. | [Link](https://github.com/ankddev/envfetch) |
 
 ## February 26, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| t-rec | Blazingly fast terminal recorder that generates animated gif images. | https://github.com/sassman/t-rec-rs |
-| bmm | Get to your bookmarks in a flash. | https://github.com/dhth/bmm |
-| loggo ⭐ | A powerful terminal app for structured log streaming. | https://github.com/aurc/loggo |
-| systemctl-tui | A fast, simple TUI for interacting with systemd services and their logs. | https://github.com/rgwood/systemctl-tui |
-| gurk | Signal Messenger client for terminal. | https://github.com/boxdot/gurk-rs |
-| sou | A tool for exploring files in container image layers. | https://github.com/knqyf263/sou |
+| t-rec | Blazingly fast terminal recorder that generates animated gif images. | [Link](https://github.com/sassman/t-rec-rs) |
+| bmm | Get to your bookmarks in a flash. | [Link](https://github.com/dhth/bmm) |
+| loggo ⭐ | A powerful terminal app for structured log streaming. | [Link](https://github.com/aurc/loggo) |
+| systemctl-tui | A fast, simple TUI for interacting with systemd services and their logs. | [Link](https://github.com/rgwood/systemctl-tui) |
+| gurk | Signal Messenger client for terminal. | [Link](https://github.com/boxdot/gurk-rs) |
+| sou | A tool for exploring files in container image layers. | [Link](https://github.com/knqyf263/sou) |
 
 ## February 19, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| nkt | Note taking in the terminal. | https://github.com/terminaltrove |
-| jjui | A terminal user interface for working with Jujutsu. | https://github.com/idursun/jjui |
-| forgit ⭐ | A utility tool powered by fzf for using Git interactively. | https://github.com/wfxr/forgit |
-| ggh | Recall your SSH sessions. | https://github.com/byawitz/ggh |
-| bcal | Bits, bytes and address calculator. | https://github.com/jarun/bcal |
-| pacseek | A TUI for searching and installing Arch Linux packages. | https://github.com/moson-mo/pacseek |
+| nkt | Note taking in the terminal. | [Link](https://github.com/terminaltrove) |
+| jjui | A terminal user interface for working with Jujutsu. | [Link](https://github.com/idursun/jjui) |
+| forgit ⭐ | A utility tool powered by fzf for using Git interactively. | [Link](https://github.com/wfxr/forgit) |
+| ggh | Recall your SSH sessions. | [Link](https://github.com/byawitz/ggh) |
+| bcal | Bits, bytes and address calculator. | [Link](https://github.com/jarun/bcal) |
+| pacseek | A TUI for searching and installing Arch Linux packages. | [Link](https://github.com/moson-mo/pacseek) |
 
 ## February 12, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| enola | A CLI tool to search for usernames across social networks. | https://github.com/TheYahya/enola |
-| ktool | A TUI Mach-O/ObjC analysis and editing toolkit in the terminal. | https://github.com/0cyn/ktool |
-| g | A feature-rich, customizable, and cross-platform ls alternative. | https://github.com/Equationzhao/g |
-| flamelens ⭐ | An interactive flamegraph viewer in the terminal. | https://github.com/YS-L/flamelens |
-| httpyac | A command line interface to execute *.http, *.rest files. | https://github.com/anweber/httpyac |
-| lazysql | A cross-platform TUI database management tool. | https://github.com/jorgerojas26/lazysql |
+| enola | A CLI tool to search for usernames across social networks. | [Link](https://github.com/TheYahya/enola) |
+| ktool | A TUI Mach-O/ObjC analysis and editing toolkit in the terminal. | [Link](https://github.com/0cyn/ktool) |
+| g | A feature-rich, customizable, and cross-platform ls alternative. | [Link](https://github.com/Equationzhao/g) |
+| flamelens ⭐ | An interactive flamegraph viewer in the terminal. | [Link](https://github.com/YS-L/flamelens) |
+| httpyac | A command line interface to execute *.http, *.rest files. | [Link](https://github.com/anweber/httpyac) |
+| lazysql | A cross-platform TUI database management tool. | [Link](https://github.com/jorgerojas26/lazysql) |
 
 ## February 5, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| keep-alive | A lightweight, cross-platform utility to prevent your system from sleeping. | https://github.com/stigoleg/keep-alive |
-| godap ⭐ | A complete terminal user interface (TUI) for LDAP. | https://github.com/Macmod/godap |
-| tukai | Terminal based touch typing application. | https://github.com/hlsxx/tukai |
-| desed | Demystify and debug your sed scripts, from the comfort of your terminal. | https://github.com/SoptikHa2/desed |
-| gomi | Unix rm(1) command that can restore deleted files. | https://github.com/babarot/gomi |
-| vifm | A file manager with curses interface. | https://github.com/vifm/vifm |
+| keep-alive | A lightweight, cross-platform utility to prevent your system from sleeping. | [Link](https://github.com/stigoleg/keep-alive) |
+| godap ⭐ | A complete terminal user interface (TUI) for LDAP. | [Link](https://github.com/Macmod/godap) |
+| tukai | Terminal based touch typing application. | [Link](https://github.com/hlsxx/tukai) |
+| desed | Demystify and debug your sed scripts, from the comfort of your terminal. | [Link](https://github.com/SoptikHa2/desed) |
+| gomi | Unix rm(1) command that can restore deleted files. | [Link](https://github.com/babarot/gomi) |
+| vifm | A file manager with curses interface. | [Link](https://github.com/vifm/vifm) |
 
 ## January 29, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| wut | A CLI that explains the output of your last command. | https://github.com/shobrook/wut |
-| tegratop | A TUI monitoring tool for Nvidia jetson boards. | https://github.com/pythops/tegratop |
-| gowall | A CLI tool to convert an image to any color-scheme. | https://github.com/Achno/gowall |
-| sqly | Easily execute SQL against CSV/TSV/LTSV/JSON and Excel with shell. | https://github.com/nao1215/sqly |
-| bagels ⭐ | A powerful expense tracker that lives in your terminal. | https://github.com/EnhancedJax/Bagels |
-| arduino-cli-interactive | An Interactive way to use the arduino-cli. | https://github.com/Vaishnav-Sabari-Girish/arduino-cli-interactive |
+| wut | A CLI that explains the output of your last command. | [Link](https://github.com/shobrook/wut) |
+| tegratop | A TUI monitoring tool for Nvidia jetson boards. | [Link](https://github.com/pythops/tegratop) |
+| gowall | A CLI tool to convert an image to any color-scheme. | [Link](https://github.com/Achno/gowall) |
+| sqly | Easily execute SQL against CSV/TSV/LTSV/JSON and Excel with shell. | [Link](https://github.com/nao1215/sqly) |
+| bagels ⭐ | A powerful expense tracker that lives in your terminal. | [Link](https://github.com/EnhancedJax/Bagels) |
+| arduino-cli-interactive | An Interactive way to use the arduino-cli. | [Link](https://github.com/Vaishnav-Sabari-Girish/arduino-cli-interactive) |
 
 ## January 22, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| astroterm | A terminal-based star map. | https://github.com/da-luce/astroterm |
-| heh | A terminal UI to edit bytes by the nibble. | https://github.com/ndd7xv/heh |
-| lsr | Basically ls but readable. | https://github.com/jmattaa/laser |
-| isd ⭐ | A keyboard-focused, highly customizable systemd units TUI. | https://github.com/isd-project/isd |
-| ghfetch | A CLI tool to fetch GitHub user information. | https://github.com/orangekame3/ghfetch |
-| gaze | Executes commands for you. | https://github.com/wtetsu/gaze |
+| astroterm | A terminal-based star map. | [Link](https://github.com/da-luce/astroterm) |
+| heh | A terminal UI to edit bytes by the nibble. | [Link](https://github.com/ndd7xv/heh) |
+| lsr | Basically ls but readable. | [Link](https://github.com/jmattaa/laser) |
+| isd ⭐ | A keyboard-focused, highly customizable systemd units TUI. | [Link](https://github.com/isd-project/isd) |
+| ghfetch | A CLI tool to fetch GitHub user information. | [Link](https://github.com/orangekame3/ghfetch) |
+| gaze | Executes commands for you. | [Link](https://github.com/wtetsu/gaze) |
 
 ## January 15, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| drft | A diff re/viewer and file tree viewer. | https://github.com/terminaltrove |
-| gocker | TUI for Docker management. | https://github.com/micoli/gocker |
-| flowcontrol | Flow Control: a programmer&#39;s text editor. | https://github.com/neurocyte/flow |
-| wiper ⭐ | A TUI disk analyser and cleanup tool. | https://github.com/ikebastuz/wiper |
-| braindrop | A terminal-based client for raindrop.io. | https://github.com/davep/braindrop |
-| durdraw | Versatile ASCII and ANSI Art text editor for terminals. | https://github.com/cmang/durdraw |
+| drft | A diff re/viewer and file tree viewer. | [Link](https://github.com/terminaltrove) |
+| gocker | TUI for Docker management. | [Link](https://github.com/micoli/gocker) |
+| flowcontrol | Flow Control: a programmer&#39;s text editor. | [Link](https://github.com/neurocyte/flow) |
+| wiper ⭐ | A TUI disk analyser and cleanup tool. | [Link](https://github.com/ikebastuz/wiper) |
+| braindrop | A terminal-based client for raindrop.io. | [Link](https://github.com/davep/braindrop) |
+| durdraw | Versatile ASCII and ANSI Art text editor for terminals. | [Link](https://github.com/cmang/durdraw) |
 
 ## January 8, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| gotz | A simple CLI timezone info tool. | https://github.com/merschformann/gotz |
-| dstp | Run common networking tests against any site. | https://github.com/ycd/dstp |
-| sunbeam ⭐ | A general purpose command-line launcher. | https://github.com/pomdtr/sunbeam |
-| fselect | Find files with SQL-like queries. | https://github.com/jhspetersson/fselect |
-| jql | A JSON Query Language CLI tool. | https://github.com/yamafaktory/jql |
+| gotz | A simple CLI timezone info tool. | [Link](https://github.com/merschformann/gotz) |
+| dstp | Run common networking tests against any site. | [Link](https://github.com/ycd/dstp) |
+| sunbeam ⭐ | A general purpose command-line launcher. | [Link](https://github.com/pomdtr/sunbeam) |
+| fselect | Find files with SQL-like queries. | [Link](https://github.com/jhspetersson/fselect) |
+| jql | A JSON Query Language CLI tool. | [Link](https://github.com/yamafaktory/jql) |
 
 ## December 25, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| rhit | A nginx log explorer. | https://github.com/Canop/rhit |
-| textual-paint ⭐ | MS Paint in your terminal. | https://github.com/1j01/textual-paint |
-| hoard | A CLI command organizer tool to hoard all your precious commands. | https://github.com/Hyde46/hoard |
-| snowmachine | Make it snow in the terminal! | https://github.com/sontek/snowmachine |
-| dstask | A CLI TODO manager with git-based sync + markdown notes. | https://github.com/naggie/dstask |
-| pingtop | Ping multiple servers and show the result in a top like terminal UI. | https://github.com/laixintao/pingtop |
+| rhit | A nginx log explorer. | [Link](https://github.com/Canop/rhit) |
+| textual-paint ⭐ | MS Paint in your terminal. | [Link](https://github.com/1j01/textual-paint) |
+| hoard | A CLI command organizer tool to hoard all your precious commands. | [Link](https://github.com/Hyde46/hoard) |
+| snowmachine | Make it snow in the terminal! | [Link](https://github.com/sontek/snowmachine) |
+| dstask | A CLI TODO manager with git-based sync + markdown notes. | [Link](https://github.com/naggie/dstask) |
+| pingtop | Ping multiple servers and show the result in a top like terminal UI. | [Link](https://github.com/laixintao/pingtop) |
 
 ## December 18, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| dte | A small, configurable console text editor. | https://github.com/craigbarnes/dte |
-| ssh-para | Parallel SSH jobs manager interactive CLI. | https://github.com/joknarf/ssh-para |
-| tuistash ⭐ | A terminal user interface for Logstash. | https://github.com/edmocosta/tuistash |
-| nvrs | Fast new version checker for software releases. | https://github.com/adamperkowski/nvrs |
-| nomino | Batch rename utility for developers. | https://github.com/yaa110/nomino |
-| heretek | Yet Another GDB TUI Frontend. | https://github.com/wcampbell0x2a/heretek |
+| dte | A small, configurable console text editor. | [Link](https://github.com/craigbarnes/dte) |
+| ssh-para | Parallel SSH jobs manager interactive CLI. | [Link](https://github.com/joknarf/ssh-para) |
+| tuistash ⭐ | A terminal user interface for Logstash. | [Link](https://github.com/edmocosta/tuistash) |
+| nvrs | Fast new version checker for software releases. | [Link](https://github.com/adamperkowski/nvrs) |
+| nomino | Batch rename utility for developers. | [Link](https://github.com/yaa110/nomino) |
+| heretek | Yet Another GDB TUI Frontend. | [Link](https://github.com/wcampbell0x2a/heretek) |
 
 ## December 11, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| uuinfo | A tool to debug unique identifiers. (UUID, ULID, Snowflake, etc) | https://github.com/Racum/uuinfo |
-| hevi | A hex viewer. | https://github.com/Arnau478/hevi |
-| lazyjournal | A terminal user interface for journalctl. | https://github.com/Lifailon/lazyjournal |
-| kl ⭐ | An interactive Kubernetes log viewer for your terminal. | https://github.com/robinovitch61/kl/ |
-| smartcat | Putting a brain behind cat(1). | https://github.com/efugier/smartcat |
-| lla | A blazing fast ls replacement with superpowers. | https://github.com/triyanox/lla |
+| uuinfo | A tool to debug unique identifiers. (UUID, ULID, Snowflake, etc) | [Link](https://github.com/Racum/uuinfo) |
+| hevi | A hex viewer. | [Link](https://github.com/Arnau478/hevi) |
+| lazyjournal | A terminal user interface for journalctl. | [Link](https://github.com/Lifailon/lazyjournal) |
+| kl ⭐ | An interactive Kubernetes log viewer for your terminal. | [Link](https://github.com/robinovitch61/kl/) |
+| smartcat | Putting a brain behind cat(1). | [Link](https://github.com/efugier/smartcat) |
+| lla | A blazing fast ls replacement with superpowers. | [Link](https://github.com/triyanox/lla) |
 
 ## December 4, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| television ⭐ | A blazingly fast general purpose fuzzy finder TUI. | https://github.com/alexpasmantier/television |
-| phetch | A terminal client designed to help you quickly navigate the gophersphere. | https://github.com/xvxx/phetch |
-| bacon | A background rust code checker. | https://github.com/Canop/bacon |
-| kanban-tui | A customizable task manager in the terminal. | https://github.com/Zaloog/kanban-tui |
-| kplay | Inspect messages in a Kafka topic in a simple and deliberate manner. | https://github.com/dhth/kplay |
-| fblog | Small command-line JSON Log viewer. | https://github.com/brocode/fblog |
+| television ⭐ | A blazingly fast general purpose fuzzy finder TUI. | [Link](https://github.com/alexpasmantier/television) |
+| phetch | A terminal client designed to help you quickly navigate the gophersphere. | [Link](https://github.com/xvxx/phetch) |
+| bacon | A background rust code checker. | [Link](https://github.com/Canop/bacon) |
+| kanban-tui | A customizable task manager in the terminal. | [Link](https://github.com/Zaloog/kanban-tui) |
+| kplay | Inspect messages in a Kafka topic in a simple and deliberate manner. | [Link](https://github.com/dhth/kplay) |
+| fblog | Small command-line JSON Log viewer. | [Link](https://github.com/brocode/fblog) |
 
 ## November 27, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| khal | A standards based CLI and terminal calendar program. | https://github.com/pimutils/khal |
-| cargo-selector | Cargo subcommand to select and execute binary/example targets. | https://github.com/lusingander/cargo-selector |
-| para-cada | Executes your command for each file selected using glob expression(s). | https://github.com/gergelyk/para-cada |
-| tzupdate | Set the system timezone based on IP geolocation. | https://github.com/cdown/tzupdate |
-| sshclick ⭐ | Terminal based assisted management of your SSH config files. | https://github.com/karlot/sshclick |
-| ali | A load testing tool capable of performing real-time analysis. | https://github.com/nakabonne/ali |
+| khal | A standards based CLI and terminal calendar program. | [Link](https://github.com/pimutils/khal) |
+| cargo-selector | Cargo subcommand to select and execute binary/example targets. | [Link](https://github.com/lusingander/cargo-selector) |
+| para-cada | Executes your command for each file selected using glob expression(s). | [Link](https://github.com/gergelyk/para-cada) |
+| tzupdate | Set the system timezone based on IP geolocation. | [Link](https://github.com/cdown/tzupdate) |
+| sshclick ⭐ | Terminal based assisted management of your SSH config files. | [Link](https://github.com/karlot/sshclick) |
+| ali | A load testing tool capable of performing real-time analysis. | [Link](https://github.com/nakabonne/ali) |
 
 ## November 20, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| tere | A faster alternative to cd + ls. | https://github.com/mgunyho/tere |
-| dusage | A command line disk usage information tool. | https://github.com/mihaigalos/dusage |
-| wireman ⭐ | A TUI gRPC client for the terminal. | https://github.com/preiter93/wireman |
-| qrc | A QR code generator for text terminals. | https://github.com/fumiyas/qrc |
-| bkp | Utility that makes backups of your files/directories. | https://github.com/gergelyk/bkp |
-| caligula | A user-friendly, lightweight TUI for disk imaging. | https://github.com/ifd3f/caligula |
+| tere | A faster alternative to cd + ls. | [Link](https://github.com/mgunyho/tere) |
+| dusage | A command line disk usage information tool. | [Link](https://github.com/mihaigalos/dusage) |
+| wireman ⭐ | A TUI gRPC client for the terminal. | [Link](https://github.com/preiter93/wireman) |
+| qrc | A QR code generator for text terminals. | [Link](https://github.com/fumiyas/qrc) |
+| bkp | Utility that makes backups of your files/directories. | [Link](https://github.com/gergelyk/bkp) |
+| caligula | A user-friendly, lightweight TUI for disk imaging. | [Link](https://github.com/ifd3f/caligula) |
 
 ## November 13, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ddgr ⭐ | DuckDuckGo from the terminal. | https://github.com/jarun/ddgr |
-| qq | A jq inspired interoperable config format transcoder with interactive querying. | https://github.com/JFryy/qq/ |
-| menyoki | Screenshot/cast and perform ImageOps on the command line. | https://github.com/orhun/menyoki |
-| kibi | A text editor in less than 1024 lines of code, written in Rust. | https://github.com/ilai-deutel/kibi |
-| koji | An interactive CLI for creating conventional commits. | https://github.com/cococonscious/koji |
-| yr | Get the weather delivered to your command-line. | https://github.com/terminaltrove |
+| ddgr ⭐ | DuckDuckGo from the terminal. | [Link](https://github.com/jarun/ddgr) |
+| qq | A jq inspired interoperable config format transcoder with interactive querying. | [Link](https://github.com/JFryy/qq/) |
+| menyoki | Screenshot/cast and perform ImageOps on the command line. | [Link](https://github.com/orhun/menyoki) |
+| kibi | A text editor in less than 1024 lines of code, written in Rust. | [Link](https://github.com/ilai-deutel/kibi) |
+| koji | An interactive CLI for creating conventional commits. | [Link](https://github.com/cococonscious/koji) |
+| yr | Get the weather delivered to your command-line. | [Link](https://github.com/terminaltrove) |
 
 ## November 6, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| hishtory | Your shell history: synced, queryable, and in context. | https://github.com/ddworken/hishtory |
-| bt | Interactive tree-like terminal file manager. | https://github.com/LeperGnome/bt |
-| mqttui ⭐ | A TUI tool to publish/subscribe MQTT messages from the terminal. | https://github.com/EdJoPaTo/mqttui/ |
-| rsyncy | A status/progress bar for rsync. | https://github.com/laktak/rsyncy |
-| dotenvhub | A TUI to manage your .env files in the terminal. | https://github.com/Zaloog/dotenvhub |
-| tabiew | A lightweight TUI application to view and query tabular data files. | https://github.com/shshemi/tabiew |
+| hishtory | Your shell history: synced, queryable, and in context. | [Link](https://github.com/ddworken/hishtory) |
+| bt | Interactive tree-like terminal file manager. | [Link](https://github.com/LeperGnome/bt) |
+| mqttui ⭐ | A TUI tool to publish/subscribe MQTT messages from the terminal. | [Link](https://github.com/EdJoPaTo/mqttui/) |
+| rsyncy | A status/progress bar for rsync. | [Link](https://github.com/laktak/rsyncy) |
+| dotenvhub | A TUI to manage your .env files in the terminal. | [Link](https://github.com/Zaloog/dotenvhub) |
+| tabiew | A lightweight TUI application to view and query tabular data files. | [Link](https://github.com/shshemi/tabiew) |
 
 ## October 30, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| angryoxide | A WiFi attack and pentesting tool built in Rust. | https://github.com/Ragnt/AngryOxide |
-| s3scanner | A tool to scan for misconfigured S3 buckets. | https://github.com/sa7mon/S3Scanner |
-| cy ⭐ | A time traveling terminal multiplexer. | https://github.com/cfoust/cy |
-| haiti | A CLI to that identifies various hash types. | https://github.com/noraj/haiti |
-| gfold | A CLI tool that helps you keep track of multiple Git repositories. | https://github.com/nickgerace/gfold |
+| angryoxide | A WiFi attack and pentesting tool built in Rust. | [Link](https://github.com/Ragnt/AngryOxide) |
+| s3scanner | A tool to scan for misconfigured S3 buckets. | [Link](https://github.com/sa7mon/S3Scanner) |
+| cy ⭐ | A time traveling terminal multiplexer. | [Link](https://github.com/cfoust/cy) |
+| haiti | A CLI to that identifies various hash types. | [Link](https://github.com/noraj/haiti) |
+| gfold | A CLI tool that helps you keep track of multiple Git repositories. | [Link](https://github.com/nickgerace/gfold) |
 
 ## October 22, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| tui-journal | Your journal app if you live in a terminal. | https://github.com/AmmarAbouZor/tui-journal |
-| tenere ⭐ | A TUI interface for LLMs. | https://github.com/pythops/tenere |
-| aim | A command line download/upload tool with resume. | https://github.com/mihaigalos/aim |
-| jellex | A TUI to filter JSON and JSON Lines data with Python syntax. | https://github.com/kellyjonbrazil/jellex |
-| vignore | A powerful tool to visualize ignored files. | https://github.com/james4ever0/vignore |
-| bluetuith | A TUI bluetooth manager for Linux. | https://github.com/darkhz/bluetuith |
+| tui-journal | Your journal app if you live in a terminal. | [Link](https://github.com/AmmarAbouZor/tui-journal) |
+| tenere ⭐ | A TUI interface for LLMs. | [Link](https://github.com/pythops/tenere) |
+| aim | A command line download/upload tool with resume. | [Link](https://github.com/mihaigalos/aim) |
+| jellex | A TUI to filter JSON and JSON Lines data with Python syntax. | [Link](https://github.com/kellyjonbrazil/jellex) |
+| vignore | A powerful tool to visualize ignored files. | [Link](https://github.com/james4ever0/vignore) |
+| bluetuith | A TUI bluetooth manager for Linux. | [Link](https://github.com/darkhz/bluetuith) |
 
 ## October 15, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| monolith ⭐ | A CLI tool for saving complete web pages as a single HTML file. | https://github.com/Y2Z/monolith |
-| hdf5_ui | A TUI for inspection of HDF5 files. | https://github.com/rhuygen/hdf5_ui |
-| tewi | Text-based interface for the Transmission BitTorrent daemon. | https://github.com/anlar/tewi |
-| has | Checks presence of various CLI tools and their versions on the path. | https://github.com/kdabir/has |
-| aria2 | The ultra fast download utility. | https://github.com/aria2/aria2 |
-| gotp | A CLI to manage and generate Time-based One Time Password. (TOTP) | https://github.com/terminaltrove |
+| monolith ⭐ | A CLI tool for saving complete web pages as a single HTML file. | [Link](https://github.com/Y2Z/monolith) |
+| hdf5_ui | A TUI for inspection of HDF5 files. | [Link](https://github.com/rhuygen/hdf5_ui) |
+| tewi | Text-based interface for the Transmission BitTorrent daemon. | [Link](https://github.com/anlar/tewi) |
+| has | Checks presence of various CLI tools and their versions on the path. | [Link](https://github.com/kdabir/has) |
+| aria2 | The ultra fast download utility. | [Link](https://github.com/aria2/aria2) |
+| gotp | A CLI to manage and generate Time-based One Time Password. (TOTP) | [Link](https://github.com/terminaltrove) |
 
 ## October 8, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| sq | The missing swiss-army knife tool for wrangling data. | https://github.com/neilotoole/sq |
-| tcping | A cross-platform ping program for TCP ports. | https://github.com/pouriyajamshidi/tcping |
-| stew | An independent package manager for compiled binaries. | https://github.com/marwanhawari/stew |
-| rucola | A terminal based markdown note manager. | https://github.com/Linus-Mussmaecher/rucola |
-| lychee ⭐ | A fast, async link checker written in Rust. | https://github.com/lycheeverse/lychee |
-| packemon | A TUI for generating packets of arbitrary input and monitoring packets. | https://github.com/ddddddO/packemon |
+| sq | The missing swiss-army knife tool for wrangling data. | [Link](https://github.com/neilotoole/sq) |
+| tcping | A cross-platform ping program for TCP ports. | [Link](https://github.com/pouriyajamshidi/tcping) |
+| stew | An independent package manager for compiled binaries. | [Link](https://github.com/marwanhawari/stew) |
+| rucola | A terminal based markdown note manager. | [Link](https://github.com/Linus-Mussmaecher/rucola) |
+| lychee ⭐ | A fast, async link checker written in Rust. | [Link](https://github.com/lycheeverse/lychee) |
+| packemon | A TUI for generating packets of arbitrary input and monitoring packets. | [Link](https://github.com/ddddddO/packemon) |
 
 ## October 1, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| diffnav | A git diff pager based on delta but with a file tree, à la GitHub. | https://github.com/dlvhdr/diffnav |
-| gitu | A TUI Git client inspired by Magit. | https://github.com/altsem/gitu |
-| carl | a cal(1) alternative calendar for the command-line. | https://github.com/b1rger/carl |
-| papis | A powerful and highly extensible CLI document and bibliography manager. | https://github.com/papis/papis |
-| pocker | A TUI tool for Docker. | https://github.com/pommee/Pocker |
-| binsider ⭐ | Analyze ELF binaries like a boss. | https://github.com/orhun/binsider |
+| diffnav | A git diff pager based on delta but with a file tree, à la GitHub. | [Link](https://github.com/dlvhdr/diffnav) |
+| gitu | A TUI Git client inspired by Magit. | [Link](https://github.com/altsem/gitu) |
+| carl | a cal(1) alternative calendar for the command-line. | [Link](https://github.com/b1rger/carl) |
+| papis | A powerful and highly extensible CLI document and bibliography manager. | [Link](https://github.com/papis/papis) |
+| pocker | A TUI tool for Docker. | [Link](https://github.com/pommee/Pocker) |
+| binsider ⭐ | Analyze ELF binaries like a boss. | [Link](https://github.com/orhun/binsider) |
 
 ## September 24, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| basilk | A TUI to manage your tasks with minimal kanban logic. | https://github.com/GabAlpha/basilk |
-| httm | Interactive, file-level Time Machine-like tool for ZFS/btrfs/nilfs2. | https://github.com/kimono-koans/httm |
-| sherlock | Hunt down social media accounts by username across social networks. | https://github.com/sherlock-project/sherlock |
-| gtrash | A featureful trash CLI manager. | https://github.com/umlx5h/gtrash |
-| spiel ⭐ | Display richly-styled presentations using your terminal. | https://github.com/JoshKarpel/spiel |
-| toolong | A terminal application to view, tail, merge, and search log files (plus JSONL). | https://github.com/Textualize/toolong |
+| basilk | A TUI to manage your tasks with minimal kanban logic. | [Link](https://github.com/GabAlpha/basilk) |
+| httm | Interactive, file-level Time Machine-like tool for ZFS/btrfs/nilfs2. | [Link](https://github.com/kimono-koans/httm) |
+| sherlock | Hunt down social media accounts by username across social networks. | [Link](https://github.com/sherlock-project/sherlock) |
+| gtrash | A featureful trash CLI manager. | [Link](https://github.com/umlx5h/gtrash) |
+| spiel ⭐ | Display richly-styled presentations using your terminal. | [Link](https://github.com/JoshKarpel/spiel) |
+| toolong | A terminal application to view, tail, merge, and search log files (plus JSONL). | [Link](https://github.com/Textualize/toolong) |
 
 ## September 17, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| serie | A rich git commit graph in your terminal, like magic! | https://github.com/lusingander/serie |
-| pik ⭐ | A TUI for interactively stopping processes. | https://github.com/jacek-kurlit/pik |
-| hl | A fast and powerful log viewer and processor. | https://github.com/pamburus/hl |
-| pls | A prettier and powerful ls(1) for the pros. | https://github.com/pls-rs/pls |
-| tre | A modern and improved alternative to the tree(1) command. | https://github.com/dduan/tre |
-| oryx | A TUI for sniffing network traffic using eBPF on Linux. | https://github.com/pythops/oryx |
+| serie | A rich git commit graph in your terminal, like magic! | [Link](https://github.com/lusingander/serie) |
+| pik ⭐ | A TUI for interactively stopping processes. | [Link](https://github.com/jacek-kurlit/pik) |
+| hl | A fast and powerful log viewer and processor. | [Link](https://github.com/pamburus/hl) |
+| pls | A prettier and powerful ls(1) for the pros. | [Link](https://github.com/pls-rs/pls) |
+| tre | A modern and improved alternative to the tree(1) command. | [Link](https://github.com/dduan/tre) |
+| oryx | A TUI for sniffing network traffic using eBPF on Linux. | [Link](https://github.com/pythops/oryx) |
 
 ## September 10, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| sen | Terminal User Interface for containers. | https://github.com/TomasTomecek/sen |
-| lssh | A TUI list select SSH/SCP/SFTP client tools. | https://github.com/blacknon/lssh |
-| hf | Cross-platform hidden file library and utility. | https://github.com/sorairolake/hf |
-| rga | Ripgrep, but can also search in docs, PDFs, E-Books, zip, tar.gz, etc. | https://github.com/phiresky/ripgrep-all |
-| gitnr ⭐ | A CLI / TUI to generate .gitignore files using templates. | https://github.com/reemus-dev/gitnr |
-| hstr | A bash and zsh shell history suggestion box for your command history. | https://github.com/dvorka/hstr |
+| sen | Terminal User Interface for containers. | [Link](https://github.com/TomasTomecek/sen) |
+| lssh | A TUI list select SSH/SCP/SFTP client tools. | [Link](https://github.com/blacknon/lssh) |
+| hf | Cross-platform hidden file library and utility. | [Link](https://github.com/sorairolake/hf) |
+| rga | Ripgrep, but can also search in docs, PDFs, E-Books, zip, tar.gz, etc. | [Link](https://github.com/phiresky/ripgrep-all) |
+| gitnr ⭐ | A CLI / TUI to generate .gitignore files using templates. | [Link](https://github.com/reemus-dev/gitnr) |
+| hstr | A bash and zsh shell history suggestion box for your command history. | [Link](https://github.com/dvorka/hstr) |
 
 ## September 3, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| otree | A tool to view objects (JSON/YAML/TOML) in a TUI tree widget. | https://github.com/fioncat/otree |
-| tuptime | Like uptime(1), but preserves shutdown / restart stats. | https://github.com/rfmoz/tuptime |
-| terminaltexteffects | Inline Visual Effects in the Terminal. | https://github.com/ChrisBuilds/terminaltexteffects |
-| hexpatch | A binary patcher and editor with a terminal user interface. | https://github.com/Etto48/HexPatch |
-| httplab | Inspect HTTP requests and mock their responses in the terminal. | https://github.com/qustavo/httplab |
-| gama ⭐ | Manage your GitHub Actions from the terminal. | https://github.com/termkit/gama |
+| otree | A tool to view objects (JSON/YAML/TOML) in a TUI tree widget. | [Link](https://github.com/fioncat/otree) |
+| tuptime | Like uptime(1), but preserves shutdown / restart stats. | [Link](https://github.com/rfmoz/tuptime) |
+| terminaltexteffects | Inline Visual Effects in the Terminal. | [Link](https://github.com/ChrisBuilds/terminaltexteffects) |
+| hexpatch | A binary patcher and editor with a terminal user interface. | [Link](https://github.com/Etto48/HexPatch) |
+| httplab | Inspect HTTP requests and mock their responses in the terminal. | [Link](https://github.com/qustavo/httplab) |
+| gama ⭐ | Manage your GitHub Actions from the terminal. | [Link](https://github.com/termkit/gama) |
 
 ## August 27, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| pueue | Manage your shell commands. | https://github.com/Nukesor/pueue |
-| logria | A powerful CLI tool that puts log aggregation at your fingertips. | https://github.com/ReagentX/Logria |
-| rainfrog | A database management TUI for postgres. | https://github.com/achristmascarl/rainfrog |
-| atuin ⭐ | Sync, search and backup shell history. | https://github.com/atuinsh/atuin |
-| kb | A minimalist knowledge base manager. | https://github.com/gnebbia/kb |
-| pkgtop | An interactive linux package manager &amp; resource monitor. | https://github.com/orhun/pkgtop |
+| pueue | Manage your shell commands. | [Link](https://github.com/Nukesor/pueue) |
+| logria | A powerful CLI tool that puts log aggregation at your fingertips. | [Link](https://github.com/ReagentX/Logria) |
+| rainfrog | A database management TUI for postgres. | [Link](https://github.com/achristmascarl/rainfrog) |
+| atuin ⭐ | Sync, search and backup shell history. | [Link](https://github.com/atuinsh/atuin) |
+| kb | A minimalist knowledge base manager. | [Link](https://github.com/gnebbia/kb) |
+| pkgtop | An interactive linux package manager &amp; resource monitor. | [Link](https://github.com/orhun/pkgtop) |
 
 ## August 20, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| tracexec | A small utility for tracing/debugging program execution. | https://github.com/kxxt/tracexec |
-| fztea | A flipperzero remote control locally in the terminal and ssh. | https://github.com/jon4hz/fztea |
-| macmon | Sudoless performance monitoring for Apple Silicon processors. | https://github.com/vladkens/macmon |
-| moneyterm ⭐ | TUI expense and budget tracker. | https://github.com/ChrisBuilds/moneyterm |
-| octocov | A toolkit for collecting code metrics. | https://github.com/k1LoW/octocov |
-| moe | A command line Nim based editor inspired by Vim. | https://github.com/fox0430/moe |
+| tracexec | A small utility for tracing/debugging program execution. | [Link](https://github.com/kxxt/tracexec) |
+| fztea | A flipperzero remote control locally in the terminal and ssh. | [Link](https://github.com/jon4hz/fztea) |
+| macmon | Sudoless performance monitoring for Apple Silicon processors. | [Link](https://github.com/vladkens/macmon) |
+| moneyterm ⭐ | TUI expense and budget tracker. | [Link](https://github.com/ChrisBuilds/moneyterm) |
+| octocov | A toolkit for collecting code metrics. | [Link](https://github.com/k1LoW/octocov) |
+| moe | A command line Nim based editor inspired by Vim. | [Link](https://github.com/fox0430/moe) |
 
 ## August 13, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| circumflex | It&#39;s Hacker News in your terminal. | https://github.com/bensadeh/circumflex |
-| croc | Easily and securely send things from one computer to another. | https://github.com/schollz/croc |
-| peco | A simplistic interactive filtering tool. | https://github.com/peco/peco |
-| rexi | A terminal UI for regex testing. | https://github.com/royreznik/rexi |
-| tgt ⭐ | A simple TUI for Telegram. | https://github.com/FedericoBruzzone/tgt |
-| tufw | Terminal UI for ufw. | https://github.com/peltho/tufw |
+| circumflex | It&#39;s Hacker News in your terminal. | [Link](https://github.com/bensadeh/circumflex) |
+| croc | Easily and securely send things from one computer to another. | [Link](https://github.com/schollz/croc) |
+| peco | A simplistic interactive filtering tool. | [Link](https://github.com/peco/peco) |
+| rexi | A terminal UI for regex testing. | [Link](https://github.com/royreznik/rexi) |
+| tgt ⭐ | A simple TUI for Telegram. | [Link](https://github.com/FedericoBruzzone/tgt) |
+| tufw | Terminal UI for ufw. | [Link](https://github.com/peltho/tufw) |
 
 ## August 6, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| tgpt | AI Chatbots in the terminal without needing API keys. | https://github.com/aandrew-me/tgpt |
-| tuisky | A TUI client for Bluesky. | https://github.com/sugyan/tuisky |
-| vscli | A CLI/TUI making it easy to launch Visual Studio Code (vscode) projects. | https://github.com/michidk/vscli |
-| act3 | Glance at the last 3 runs of your Github Actions. | https://github.com/dhth/act3 |
-| chdig ⭐ | Dig into ClickHouse with TUI interface. | https://github.com/azat/chdig |
-| reader | Readability for the command line. | https://github.com/mrusme/reader |
+| tgpt | AI Chatbots in the terminal without needing API keys. | [Link](https://github.com/aandrew-me/tgpt) |
+| tuisky | A TUI client for Bluesky. | [Link](https://github.com/sugyan/tuisky) |
+| vscli | A CLI/TUI making it easy to launch Visual Studio Code (vscode) projects. | [Link](https://github.com/michidk/vscli) |
+| act3 | Glance at the last 3 runs of your Github Actions. | [Link](https://github.com/dhth/act3) |
+| chdig ⭐ | Dig into ClickHouse with TUI interface. | [Link](https://github.com/azat/chdig) |
+| reader | Readability for the command line. | [Link](https://github.com/mrusme/reader) |
 
 ## July 31, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| clipboard | Your new, ridonkulously smart clipboard manager. | https://github.com/Slackadays/Clipboard |
+| clipboard | Your new, ridonkulously smart clipboard manager. | [Link](https://github.com/Slackadays/Clipboard) |
 
 ## July 30, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| jc | A tool convert CLI output, files &amp; strings to JSON/YAML. | https://github.com/kellyjonbrazil/jc |
-| process-compose | A scheduler and orchestrator to manage non-containerized applications. | https://github.com/F1bonacc1/process-compose |
-| redu | ncdu for your restic repository. | https://github.com/drdo/redu |
-| rustscan ⭐ | The Modern Port Scanner. | https://github.com/RustScan/RustScan |
-| zeitfetch | Instantaneous snapshots of system information. | https://github.com/nidnogg/zeitfetch |
+| jc | A tool convert CLI output, files &amp; strings to JSON/YAML. | [Link](https://github.com/kellyjonbrazil/jc) |
+| process-compose | A scheduler and orchestrator to manage non-containerized applications. | [Link](https://github.com/F1bonacc1/process-compose) |
+| redu | ncdu for your restic repository. | [Link](https://github.com/drdo/redu) |
+| rustscan ⭐ | The Modern Port Scanner. | [Link](https://github.com/RustScan/RustScan) |
+| zeitfetch | Instantaneous snapshots of system information. | [Link](https://github.com/nidnogg/zeitfetch) |
 
 ## July 23, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| erdtree | A general purpose filesystem and disk-usage utility. | https://github.com/solidiquis/erdtree |
-| posting ⭐ | A powerful HTTP client that lives in your terminal. | https://github.com/darrenburns/posting |
-| cyme | List system USB buses and devices. | https://github.com/tuna-f1sh/cyme |
-| bluetui | TUI for managing bluetooth on Linux. | https://github.com/pythops/bluetui |
-| scc | A very fast accurate code counter with complexity calculations. | https://github.com/boyter/scc |
-| prs | Stay updated on PRs without leaving the terminal. | https://github.com/dhth/prs |
+| erdtree | A general purpose filesystem and disk-usage utility. | [Link](https://github.com/solidiquis/erdtree) |
+| posting ⭐ | A powerful HTTP client that lives in your terminal. | [Link](https://github.com/darrenburns/posting) |
+| cyme | List system USB buses and devices. | [Link](https://github.com/tuna-f1sh/cyme) |
+| bluetui | TUI for managing bluetooth on Linux. | [Link](https://github.com/pythops/bluetui) |
+| scc | A very fast accurate code counter with complexity calculations. | [Link](https://github.com/boyter/scc) |
+| prs | Stay updated on PRs without leaving the terminal. | [Link](https://github.com/dhth/prs) |
 
 ## July 16, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| omm | A keyboard-driven task manager for the terminal. | https://github.com/dhth/omm |
-| nap | Code snippets in your terminal. | https://github.com/maaslalani/nap |
-| sampler ⭐ | Visualization for any shell command. | https://github.com/sqshq/sampler |
-| eva | A calculator REPL, similar to bc. | https://github.com/oppiliappan/eva |
-| recoverpy | A TUI to interactively recover overwritten or deleted data. | https://github.com/PabloLec/RecoverPy |
-| cidr | A CLI to perform various actions on CIDR ranges. | https://github.com/bschaatsbergen/cidr |
+| omm | A keyboard-driven task manager for the terminal. | [Link](https://github.com/dhth/omm) |
+| nap | Code snippets in your terminal. | [Link](https://github.com/maaslalani/nap) |
+| sampler ⭐ | Visualization for any shell command. | [Link](https://github.com/sqshq/sampler) |
+| eva | A calculator REPL, similar to bc. | [Link](https://github.com/oppiliappan/eva) |
+| recoverpy | A TUI to interactively recover overwritten or deleted data. | [Link](https://github.com/PabloLec/RecoverPy) |
+| cidr | A CLI to perform various actions on CIDR ranges. | [Link](https://github.com/bschaatsbergen/cidr) |
 
 ## July 9, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| cpufetch | Simple yet fancy CPU architecture fetching tool. | https://github.com/Dr-Noob/cpufetch |
-| impala | TUI for managing WiFi on Linux. | https://github.com/pythops/impala |
-| ducker | A slightly quackers Docker TUI. | https://github.com/robertpsoane/ducker |
-| kaskade ⭐ | A text user interface (TUI) for Apache Kafka. | https://github.com/sauljabin/kaskade |
-| xh | Friendly and fast tool for sending HTTP requests. | https://github.com/ducaale/xh |
-| goji | Commitizen-like tool for formatting commit messages using emojis. | https://github.com/muandane/goji |
+| cpufetch | Simple yet fancy CPU architecture fetching tool. | [Link](https://github.com/Dr-Noob/cpufetch) |
+| impala | TUI for managing WiFi on Linux. | [Link](https://github.com/pythops/impala) |
+| ducker | A slightly quackers Docker TUI. | [Link](https://github.com/robertpsoane/ducker) |
+| kaskade ⭐ | A text user interface (TUI) for Apache Kafka. | [Link](https://github.com/sauljabin/kaskade) |
+| xh | Friendly and fast tool for sending HTTP requests. | [Link](https://github.com/ducaale/xh) |
+| goji | Commitizen-like tool for formatting commit messages using emojis. | [Link](https://github.com/muandane/goji) |
 
 ## July 2, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| shellcheck | A static analysis tool for shell scripts. | https://github.com/koalaman/shellcheck |
-| dblab | The database client designed for command line specialists. | https://github.com/danvergara/dblab |
-| mprocs | Run multiple commands in parallel. | https://github.com/pvolok/mprocs |
-| pillager ⭐ | Pillage filesystems for sensitive information. | https://github.com/brittonhayes/pillager |
-| pdu | Highly parallelized, blazing fast directory tree analyzer. | https://github.com/KSXGitHub/parallel-disk-usage |
-| calcure | Modern, customizable TUI calendar and task manager. | https://github.com/anufrievroman/calcure |
+| shellcheck | A static analysis tool for shell scripts. | [Link](https://github.com/koalaman/shellcheck) |
+| dblab | The database client designed for command line specialists. | [Link](https://github.com/danvergara/dblab) |
+| mprocs | Run multiple commands in parallel. | [Link](https://github.com/pvolok/mprocs) |
+| pillager ⭐ | Pillage filesystems for sensitive information. | [Link](https://github.com/brittonhayes/pillager) |
+| pdu | Highly parallelized, blazing fast directory tree analyzer. | [Link](https://github.com/KSXGitHub/parallel-disk-usage) |
+| calcure | Modern, customizable TUI calendar and task manager. | [Link](https://github.com/anufrievroman/calcure) |
 
 ## June 25, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| hostctl | A CLI tool to manage /etc/hosts like a pro! | https://github.com/guumaster/hostctl |
-| ktop ⭐ | A top-like tool for your Kubernetes clusters. | https://github.com/vladimirvivien/ktop |
-| logmerger | A utility to view multiple log files with merged timeline. | https://github.com/ptmcg/logmerger |
-| typeinc | A cool ncurses based typing speed test tool. | https://github.com/AnirudhG07/typeinc |
-| pgtree | Unix process hierarchy tree for specific processes. | https://github.com/joknarf/pgtree |
-| mise | The front-end to your dev env. | https://github.com/jdx/mise |
+| hostctl | A CLI tool to manage /etc/hosts like a pro! | [Link](https://github.com/guumaster/hostctl) |
+| ktop ⭐ | A top-like tool for your Kubernetes clusters. | [Link](https://github.com/vladimirvivien/ktop) |
+| logmerger | A utility to view multiple log files with merged timeline. | [Link](https://github.com/ptmcg/logmerger) |
+| typeinc | A cool ncurses based typing speed test tool. | [Link](https://github.com/AnirudhG07/typeinc) |
+| pgtree | Unix process hierarchy tree for specific processes. | [Link](https://github.com/joknarf/pgtree) |
+| mise | The front-end to your dev env. | [Link](https://github.com/jdx/mise) |
 
 ## June 18, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| dyff | diff tool for YAML files, and sometimes JSON. | https://github.com/homeport/dyff |
-| fnm | fast and simple node.js version manager in rust. | https://github.com/Schniz/fnm |
-| goto | SSH manager for easy server access. | https://github.com/grafviktor/goto |
-| pumas | Power Usage Monitor for Apple Silicon. | https://github.com/graelo/pumas |
-| hours | no-frills time tracking toolkit for the command line. | https://github.com/dhth/hours |
-| fq ⭐ | jq for binary formats. | https://github.com/wader/fq |
+| dyff | diff tool for YAML files, and sometimes JSON. | [Link](https://github.com/homeport/dyff) |
+| fnm | fast and simple node.js version manager in rust. | [Link](https://github.com/Schniz/fnm) |
+| goto | SSH manager for easy server access. | [Link](https://github.com/grafviktor/goto) |
+| pumas | Power Usage Monitor for Apple Silicon. | [Link](https://github.com/graelo/pumas) |
+| hours | no-frills time tracking toolkit for the command line. | [Link](https://github.com/dhth/hours) |
+| fq ⭐ | jq for binary formats. | [Link](https://github.com/wader/fq) |
 
 ## June 11, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| qrtool | A utility for encoding or decoding QR codes. | https://github.com/sorairolake/qrtool |
-| lnav ⭐ | An ncurses-based log file viewer for the terminal. | https://github.com/tstack/lnav |
-| mdtt | Markdown Table Editor TUI. | https://github.com/szktkfm/mdtt |
-| hwatch | An alternative watch command. | https://github.com/blacknon/hwatch |
-| gopass | The enhanced unix password manager for teams. | https://github.com/gopasspw/gopass |
-| fend | An arbitrary-precision unit-aware calculator. | https://github.com/printfn/fend |
+| qrtool | A utility for encoding or decoding QR codes. | [Link](https://github.com/sorairolake/qrtool) |
+| lnav ⭐ | An ncurses-based log file viewer for the terminal. | [Link](https://github.com/tstack/lnav) |
+| mdtt | Markdown Table Editor TUI. | [Link](https://github.com/szktkfm/mdtt) |
+| hwatch | An alternative watch command. | [Link](https://github.com/blacknon/hwatch) |
+| gopass | The enhanced unix password manager for teams. | [Link](https://github.com/gopasspw/gopass) |
+| fend | An arbitrary-precision unit-aware calculator. | [Link](https://github.com/printfn/fend) |
 
 ## June 4, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| typioca | Cozy typing speed tester in terminal. | https://github.com/bloznelis/typioca |
-| jnv | Interactive JSON filter using jq. | https://github.com/ynqa/jnv |
-| erldash | A simple, terminal-based Erlang dashboard. | https://github.com/sile/erldash |
-| pug ⭐ | Drive terraform at terminal velocity. | https://github.com/leg100/pug |
-| kubecolor | Colorize your kubectl output. | https://github.com/kubecolor/kubecolor |
-| lemmeknow | The fastest way to identify anything! | https://github.com/swanandx/lemmeknow |
+| typioca | Cozy typing speed tester in terminal. | [Link](https://github.com/bloznelis/typioca) |
+| jnv | Interactive JSON filter using jq. | [Link](https://github.com/ynqa/jnv) |
+| erldash | A simple, terminal-based Erlang dashboard. | [Link](https://github.com/sile/erldash) |
+| pug ⭐ | Drive terraform at terminal velocity. | [Link](https://github.com/leg100/pug) |
+| kubecolor | Colorize your kubectl output. | [Link](https://github.com/kubecolor/kubecolor) |
+| lemmeknow | The fastest way to identify anything! | [Link](https://github.com/swanandx/lemmeknow) |
 
 ## May 28, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| sig | interactive grep. (for streaming) | https://github.com/ynqa/sig |
-| kbt | A keyboard tester in terminal. | https://github.com/bloznelis/kbt |
-| oterm ⭐ | A text-based terminal client for ollama. | https://github.com/ggozad/oterm |
-| onefetch | A command-line Git information tool. | https://github.com/o2sh/onefetch |
-| hyperfine | A command-line benchmarking tool. | https://github.com/sharkdp/hyperfine |
-| grex | generate regular expressions from user-provided test cases. | https://github.com/pemistahl/grex |
+| sig | interactive grep. (for streaming) | [Link](https://github.com/ynqa/sig) |
+| kbt | A keyboard tester in terminal. | [Link](https://github.com/bloznelis/kbt) |
+| oterm ⭐ | A text-based terminal client for ollama. | [Link](https://github.com/ggozad/oterm) |
+| onefetch | A command-line Git information tool. | [Link](https://github.com/o2sh/onefetch) |
+| hyperfine | A command-line benchmarking tool. | [Link](https://github.com/sharkdp/hyperfine) |
+| grex | generate regular expressions from user-provided test cases. | [Link](https://github.com/pemistahl/grex) |
 
 ## May 21, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| flawz ⭐ | A TUI for browsing CVE security vulnerabilities. | https://github.com/orhun/flawz |
-| aichat | all-in-one AI powered CLI chat and copilot. | https://github.com/sigoden/aichat |
-| blink | tiniest x86-64-linux emulator. | https://github.com/jart/blink |
-| diskonaut | terminal disk space navigator. | https://github.com/imsnif/diskonaut |
-| oxker | A simple TUI to view &amp; control docker containers. | https://github.com/mrjackwills/oxker |
-| otti | one-time TUI password manager for the terminal. | https://github.com/dnaka91/otti |
+| flawz ⭐ | A TUI for browsing CVE security vulnerabilities. | [Link](https://github.com/orhun/flawz) |
+| aichat | all-in-one AI powered CLI chat and copilot. | [Link](https://github.com/sigoden/aichat) |
+| blink | tiniest x86-64-linux emulator. | [Link](https://github.com/jart/blink) |
+| diskonaut | terminal disk space navigator. | [Link](https://github.com/imsnif/diskonaut) |
+| oxker | A simple TUI to view &amp; control docker containers. | [Link](https://github.com/mrjackwills/oxker) |
+| otti | one-time TUI password manager for the terminal. | [Link](https://github.com/dnaka91/otti) |
 
 ## May 14, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| flameshow | A flamegraph viewer in the terminal. | https://github.com/laixintao/flameshow |
-| csvlens | a csv viewer like less but made for csv. | https://github.com/YS-L/csvlens |
-| presenterm | A TUI markdown terminal slideshow tool. | https://github.com/mfontanini/presenterm |
-| atac ⭐ | A simple API client (postman like) in your terminal. | https://github.com/Julien-cpsn/ATAC |
-| gri | manage git/gerrit change requests in the terminal. | https://github.com/pycontribs/gri |
-| hexabyte | A modern, modular, and robust TUI hex editor. | https://github.com/thetacom/hexabyte |
+| flameshow | A flamegraph viewer in the terminal. | [Link](https://github.com/laixintao/flameshow) |
+| csvlens | a csv viewer like less but made for csv. | [Link](https://github.com/YS-L/csvlens) |
+| presenterm | A TUI markdown terminal slideshow tool. | [Link](https://github.com/mfontanini/presenterm) |
+| atac ⭐ | A simple API client (postman like) in your terminal. | [Link](https://github.com/Julien-cpsn/ATAC) |
+| gri | manage git/gerrit change requests in the terminal. | [Link](https://github.com/pycontribs/gri) |
+| hexabyte | A modern, modular, and robust TUI hex editor. | [Link](https://github.com/thetacom/hexabyte) |
 
 ## May 7, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| kmon | Linux Kernel Manager and Activity Monitor. | https://github.com/orhun/kmon |
-| fx | command-line tool and terminal JSON viewer. | https://github.com/antonmedv/fx |
-| lazynpm | A simple TUI for npm commands. | https://github.com/jesseduffield/lazynpm |
-| keyb | Create and view custom hotkey cheatsheets in the terminal. | https://github.com/kencx/keyb |
-| portal | A quick and easy command-line file transfer utility. | https://github.com/SpatiumPortae/portal |
-| tinboard ⭐ | A terminal-based client for pinboard.in | https://github.com/davep/tinboard |
+| kmon | Linux Kernel Manager and Activity Monitor. | [Link](https://github.com/orhun/kmon) |
+| fx | command-line tool and terminal JSON viewer. | [Link](https://github.com/antonmedv/fx) |
+| lazynpm | A simple TUI for npm commands. | [Link](https://github.com/jesseduffield/lazynpm) |
+| keyb | Create and view custom hotkey cheatsheets in the terminal. | [Link](https://github.com/kencx/keyb) |
+| portal | A quick and easy command-line file transfer utility. | [Link](https://github.com/SpatiumPortae/portal) |
+| tinboard ⭐ | A terminal-based client for pinboard.in | [Link](https://github.com/davep/tinboard) |
 
 ## April 30, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| adguardian-term | An AdGuard Home terminal monitoring tool. | https://github.com/Lissy93/AdGuardian-Term |
-| terraform-tui | A powerful terraform textual TUI. | https://github.com/idoavrah/terraform-tui |
-| doggo | A command-line DNS client for humans. | https://github.com/mr-karan/doggo |
-| nvitop | An interactive NVIDIA-GPU process viewer and beyond. | https://github.com/XuehaiPan/nvitop |
-| jwt-ui ⭐ | A CLI and TUI for decoding/encoding JSON Web Tokens. | https://github.com/jwt-rs/jwt-ui |
-| stu | A TUI application for AWS S3 written in Rust. | https://github.com/lusingander/stu |
+| adguardian-term | An AdGuard Home terminal monitoring tool. | [Link](https://github.com/Lissy93/AdGuardian-Term) |
+| terraform-tui | A powerful terraform textual TUI. | [Link](https://github.com/idoavrah/terraform-tui) |
+| doggo | A command-line DNS client for humans. | [Link](https://github.com/mr-karan/doggo) |
+| nvitop | An interactive NVIDIA-GPU process viewer and beyond. | [Link](https://github.com/XuehaiPan/nvitop) |
+| jwt-ui ⭐ | A CLI and TUI for decoding/encoding JSON Web Tokens. | [Link](https://github.com/jwt-rs/jwt-ui) |
+| stu | A TUI application for AWS S3 written in Rust. | [Link](https://github.com/lusingander/stu) |
 
 ## April 23, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| iamb | A matrix client for vim addicts. | https://github.com/ulyssa/iamb |
-| dns53 | Expose your EC2 quickly, easily and privately within a VPC. | https://github.com/purpleclay/dns53 |
-| tuime | A colorful and customizable TUI clock written in Rust. | https://github.com/nate-sys/tuime |
-| browsr | A pleasant file explorer in your terminal supporting all filesystems. | https://github.com/juftin/browsr |
-| sttr ⭐ | A CLI/TUI tool to perform 30+ string transformations on text. | https://github.com/abhimanyu003/sttr |
-| oha | A tiny TUI program that sends some load to a web application. | https://github.com/hatoo/oha |
+| iamb | A matrix client for vim addicts. | [Link](https://github.com/ulyssa/iamb) |
+| dns53 | Expose your EC2 quickly, easily and privately within a VPC. | [Link](https://github.com/purpleclay/dns53) |
+| tuime | A colorful and customizable TUI clock written in Rust. | [Link](https://github.com/nate-sys/tuime) |
+| browsr | A pleasant file explorer in your terminal supporting all filesystems. | [Link](https://github.com/juftin/browsr) |
+| sttr ⭐ | A CLI/TUI tool to perform 30+ string transformations on text. | [Link](https://github.com/abhimanyu003/sttr) |
+| oha | A tiny TUI program that sends some load to a web application. | [Link](https://github.com/hatoo/oha) |
 
 ## April 16, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| kondo | Cleans node_modules, target, build, and friends from your projects. | https://github.com/tbillington/kondo |
-| ov | A feature rich terminal-based pager. | https://github.com/noborus/ov |
-| netscanner | A network scanning tool. | https://github.com/Chleba/netscanner |
-| bombadillo | A non-web client for the terminal, supporting Gopher, Gemini and much more. | https://github.com/terminaltrove |
-| superfile | fancy, modern file manager in the terminal. | https://github.com/MHNightCat/superfile |
-| termscp ⭐ | A feature rich terminal file transfer tool. | https://github.com/veeso/termscp |
+| kondo | Cleans node_modules, target, build, and friends from your projects. | [Link](https://github.com/tbillington/kondo) |
+| ov | A feature rich terminal-based pager. | [Link](https://github.com/noborus/ov) |
+| netscanner | A network scanning tool. | [Link](https://github.com/Chleba/netscanner) |
+| bombadillo | A non-web client for the terminal, supporting Gopher, Gemini and much more. | [Link](https://github.com/terminaltrove) |
+| superfile | fancy, modern file manager in the terminal. | [Link](https://github.com/MHNightCat/superfile) |
+| termscp ⭐ | A feature rich terminal file transfer tool. | [Link](https://github.com/veeso/termscp) |
 
 ## April 10, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| halp | A CLI tool to get help with CLI tools. | https://github.com/orhun/halp |
+| halp | A CLI tool to get help with CLI tools. | [Link](https://github.com/orhun/halp) |
 
 ## April 9, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| navi | An interactive cheatsheet tool for the command line. | https://github.com/denisidoro/navi |
-| fnug ⭐ | Run all your lints, tests and commands at once, in the terminal. | https://github.com/nickolaj-jepsen/fnug |
-| notox | No toxic names anymore. | https://github.com/Its-Just-Nans/notox |
-| aerc | A pretty good email client. | https://github.com/terminaltrove |
-| atop | An advanced interactive monitor for linux systems. | https://github.com/terminaltrove |
+| navi | An interactive cheatsheet tool for the command line. | [Link](https://github.com/denisidoro/navi) |
+| fnug ⭐ | Run all your lints, tests and commands at once, in the terminal. | [Link](https://github.com/nickolaj-jepsen/fnug) |
+| notox | No toxic names anymore. | [Link](https://github.com/Its-Just-Nans/notox) |
+| aerc | A pretty good email client. | [Link](https://github.com/terminaltrove) |
+| atop | An advanced interactive monitor for linux systems. | [Link](https://github.com/terminaltrove) |
 
 ## April 2, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ttyplot | A realtime terminal plotting utility with data input from stdin. | https://github.com/tenox7/ttyplot |
-| fork-cleaner | A tool to clean up old and inactive forks on your GitHub account. | https://github.com/caarlos0/fork-cleaner |
-| openapi-tui ⭐ | Browse and run APIs defined with OpenAPI v3.0 in the TUI | https://github.com/zaghaghi/openapi-tui |
-| pastel | Generate, analyze, convert and manipulate colors. | https://github.com/sharkdp/pastel |
-| servitor | A fediverse client with a terminal interface | https://github.com/bentonedmondson/servitor |
-| hurl | Run and test HTTP requests with plain text. | https://github.com/Orange-OpenSource/hurl |
+| ttyplot | A realtime terminal plotting utility with data input from stdin. | [Link](https://github.com/tenox7/ttyplot) |
+| fork-cleaner | A tool to clean up old and inactive forks on your GitHub account. | [Link](https://github.com/caarlos0/fork-cleaner) |
+| openapi-tui ⭐ | Browse and run APIs defined with OpenAPI v3.0 in the TUI | [Link](https://github.com/zaghaghi/openapi-tui) |
+| pastel | Generate, analyze, convert and manipulate colors. | [Link](https://github.com/sharkdp/pastel) |
+| servitor | A fediverse client with a terminal interface | [Link](https://github.com/bentonedmondson/servitor) |
+| hurl | Run and test HTTP requests with plain text. | [Link](https://github.com/Orange-OpenSource/hurl) |
 
 ## March 27, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| mitmproxy | A TLS/SSL-capable interception HTTP proxy. | https://github.com/mitmproxy/mitmproxy |
-| gallery-dl | Download image galleries and collections from image hosting sites. | https://github.com/mikf/gallery-dl |
-| bandwhich ⭐ | Terminal bandwidth utilization tool | https://github.com/imsnif/bandwhich |
-| pathos | A terminal interface for editing and managing PATH environment variables. | https://github.com/chip/pathos |
-| slides | A terminal based presentation tool | https://github.com/maaslalani/slides |
-| tz | A terminal based timezone helper | https://github.com/oz/tz |
+| mitmproxy | A TLS/SSL-capable interception HTTP proxy. | [Link](https://github.com/mitmproxy/mitmproxy) |
+| gallery-dl | Download image galleries and collections from image hosting sites. | [Link](https://github.com/mikf/gallery-dl) |
+| bandwhich ⭐ | Terminal bandwidth utilization tool | [Link](https://github.com/imsnif/bandwhich) |
+| pathos | A terminal interface for editing and managing PATH environment variables. | [Link](https://github.com/chip/pathos) |
+| slides | A terminal based presentation tool | [Link](https://github.com/maaslalani/slides) |
+| tz | A terminal based timezone helper | [Link](https://github.com/oz/tz) |
 
 ## March 20, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| jaq | A jq clone focused on correctness, speed, and simplicity | https://github.com/01mf02/jaq |
-| stree | A simple directory tree command for listing AWS S3 bucket | https://github.com/orangekame3/stree |
-| numbat | high precision scientific calculator with full support for physical units. | https://github.com/sharkdp/numbat |
-| crates-tui ⭐ | A TUI for exploring crates.io | https://github.com/ratatui-org/crates-tui |
-| amp | A complete text editor for your terminal. | https://github.com/jmacdonald/amp |
-| pvw | A terminal-based (TUI) port viewer in Go | https://github.com/allyring/pvw |
+| jaq | A jq clone focused on correctness, speed, and simplicity | [Link](https://github.com/01mf02/jaq) |
+| stree | A simple directory tree command for listing AWS S3 bucket | [Link](https://github.com/orangekame3/stree) |
+| numbat | high precision scientific calculator with full support for physical units. | [Link](https://github.com/sharkdp/numbat) |
+| crates-tui ⭐ | A TUI for exploring crates.io | [Link](https://github.com/ratatui-org/crates-tui) |
+| amp | A complete text editor for your terminal. | [Link](https://github.com/jmacdonald/amp) |
+| pvw | A terminal-based (TUI) port viewer in Go | [Link](https://github.com/allyring/pvw) |
 
 ## March 13, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| git-split-diffs | Syntax highlighted side-by-side diffs in your terminal | https://github.com/banga/git-split-diffs |
-| sd | Intuitive find &amp; replace CLI (sed alternative) | https://github.com/chmln/sd |
-| restic | Fast, secure, efficient backup program. | https://github.com/restic/restic |
-| age ⭐ | A simple, modern and secure file encryption tool. | https://github.com/FiloSottile/age |
-| tran | Securely transfer and send anything between computers with a TUI | https://github.com/abdfnx/tran |
-| buku | Personal mini-web in text | https://github.com/jarun/buku |
+| git-split-diffs | Syntax highlighted side-by-side diffs in your terminal | [Link](https://github.com/banga/git-split-diffs) |
+| sd | Intuitive find &amp; replace CLI (sed alternative) | [Link](https://github.com/chmln/sd) |
+| restic | Fast, secure, efficient backup program. | [Link](https://github.com/restic/restic) |
+| age ⭐ | A simple, modern and secure file encryption tool. | [Link](https://github.com/FiloSottile/age) |
+| tran | Securely transfer and send anything between computers with a TUI | [Link](https://github.com/abdfnx/tran) |
+| buku | Personal mini-web in text | [Link](https://github.com/jarun/buku) |
 
 ## March 6, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| viddy | A modern watch command, time machine and pager. | https://github.com/sachaos/viddy |
-| updo | Uptime monitoring CLI tool with alerting and advanced settings. | https://github.com/Owloops/updo |
-| rclone | rsync for cloud storage | https://github.com/rclone/rclone |
-| gocovsh | A shell for interacting with Go coverage profiles. | https://github.com/orlangure/gocovsh |
-| opencubicplayer | a text-based audio player with some few graphical views. | https://github.com/mywave82/opencubicplayer |
-| cotp | trusted, encrypted, TOTP/HOTP authenticator with import functionality. | https://github.com/replydev/cotp |
-| dolphie ⭐ | Realtime MySQL health monitoring in the terminal. | https://github.com/charles-001/dolphie |
-| tailspin | A log file highlighter | https://github.com/bensadeh/tailspin |
-| goose | A database migration tool written in Go. | https://github.com/pressly/goose |
-| tealdeer | A very fast implementation of tldr in Rust. | https://github.com/dbrgn/tealdeer |
+| viddy | A modern watch command, time machine and pager. | [Link](https://github.com/sachaos/viddy) |
+| updo | Uptime monitoring CLI tool with alerting and advanced settings. | [Link](https://github.com/Owloops/updo) |
+| rclone | rsync for cloud storage | [Link](https://github.com/rclone/rclone) |
+| gocovsh | A shell for interacting with Go coverage profiles. | [Link](https://github.com/orlangure/gocovsh) |
+| opencubicplayer | a text-based audio player with some few graphical views. | [Link](https://github.com/mywave82/opencubicplayer) |
+| cotp | trusted, encrypted, TOTP/HOTP authenticator with import functionality. | [Link](https://github.com/replydev/cotp) |
+| dolphie ⭐ | Realtime MySQL health monitoring in the terminal. | [Link](https://github.com/charles-001/dolphie) |
+| tailspin | A log file highlighter | [Link](https://github.com/bensadeh/tailspin) |
+| goose | A database migration tool written in Go. | [Link](https://github.com/pressly/goose) |
+| tealdeer | A very fast implementation of tldr in Rust. | [Link](https://github.com/dbrgn/tealdeer) |
 
 ## February 28, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ghq | Remote repository management made easy. | https://github.com/x-motemen/ghq |
-| kalker ⭐ | A scientific terminal calculator with math syntax. | https://github.com/PaddiM8/kalker |
-| yt-dlp | A youtube-dl fork with additional features and fixes. | https://github.com/yt-dlp/yt-dlp |
-| logss | A simple cli for logs splitting. | https://github.com/todoesverso/logss |
-| gomuks | A terminal based Matrix client written in Go. | https://github.com/tulir/gomuks |
-| tokei | Count your code, quickly. | https://github.com/xampprocky/tokei |
+| ghq | Remote repository management made easy. | [Link](https://github.com/x-motemen/ghq) |
+| kalker ⭐ | A scientific terminal calculator with math syntax. | [Link](https://github.com/PaddiM8/kalker) |
+| yt-dlp | A youtube-dl fork with additional features and fixes. | [Link](https://github.com/yt-dlp/yt-dlp) |
+| logss | A simple cli for logs splitting. | [Link](https://github.com/todoesverso/logss) |
+| gomuks | A terminal based Matrix client written in Go. | [Link](https://github.com/tulir/gomuks) |
+| tokei | Count your code, quickly. | [Link](https://github.com/xampprocky/tokei) |
 
 ## February 21, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| curlie | The power of curl, the ease of use of httpie. | https://github.com/rs/curlie |
-| eddy | Simple, fast CLI file encryption tool. | https://github.com/70sh1/eddy |
-| docfd | TUI multiline fuzzy document finder. | https://github.com/darrenldl/docfd |
-| youplot | A command line tool that draw plots on the terminal. | https://github.com/red-data-tools/YouPlot |
-| dua | View disk space usage and delete unwanted data, fast. | https://github.com/Byron/dua-cli |
-| jless ⭐ | A command-line JSON viewer. | https://github.com/PaulJuliusMartinez/jless |
+| curlie | The power of curl, the ease of use of httpie. | [Link](https://github.com/rs/curlie) |
+| eddy | Simple, fast CLI file encryption tool. | [Link](https://github.com/70sh1/eddy) |
+| docfd | TUI multiline fuzzy document finder. | [Link](https://github.com/darrenldl/docfd) |
+| youplot | A command line tool that draw plots on the terminal. | [Link](https://github.com/red-data-tools/YouPlot) |
+| dua | View disk space usage and delete unwanted data, fast. | [Link](https://github.com/Byron/dua-cli) |
+| jless ⭐ | A command-line JSON viewer. | [Link](https://github.com/PaulJuliusMartinez/jless) |
 
 ## February 14, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| tiptop ⭐ | Command-line system monitoring | https://github.com/nschloe/tiptop |
-| asn | ASN lookup tool and traceroute server | https://github.com/nitefood/asn |
-| fastfetch | Like neofetch, but much faster. | https://github.com/fastfetch-cli/fastfetch |
-| havn | A fast configurable port scanner with reasonable defaults. | https://github.com/mrjackwills/havn |
-| daff | align and compare tables | https://github.com/paulfitz/daff |
-| s-tui | terminal-based CPU stress and monitoring utility. | https://github.com/amanusk/s-tui |
+| tiptop ⭐ | Command-line system monitoring | [Link](https://github.com/nschloe/tiptop) |
+| asn | ASN lookup tool and traceroute server | [Link](https://github.com/nitefood/asn) |
+| fastfetch | Like neofetch, but much faster. | [Link](https://github.com/fastfetch-cli/fastfetch) |
+| havn | A fast configurable port scanner with reasonable defaults. | [Link](https://github.com/mrjackwills/havn) |
+| daff | align and compare tables | [Link](https://github.com/paulfitz/daff) |
+| s-tui | terminal-based CPU stress and monitoring utility. | [Link](https://github.com/amanusk/s-tui) |
 
 ## February 7, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| ouch | Painless compression and decompression in the terminal | https://github.com/ouch-org/ouch |
-| sshs | Terminal user interface for SSH | https://github.com/quantumsheep/sshs |
-| wiki-tui ⭐ | A fast Wikipedia CLI/TUI client | https://github.com/Builditluc/wiki-tui |
-| qsv | Blazing-fast CSV data-wrangling toolkit | https://github.com/jqnatividad/qsv |
-| sizeof | A command-line tool to calculate the size of data structures | https://github.com/zackproser/sizeof |
+| ouch | Painless compression and decompression in the terminal | [Link](https://github.com/ouch-org/ouch) |
+| sshs | Terminal user interface for SSH | [Link](https://github.com/quantumsheep/sshs) |
+| wiki-tui ⭐ | A fast Wikipedia CLI/TUI client | [Link](https://github.com/Builditluc/wiki-tui) |
+| qsv | Blazing-fast CSV data-wrangling toolkit | [Link](https://github.com/jqnatividad/qsv) |
+| sizeof | A command-line tool to calculate the size of data structures | [Link](https://github.com/zackproser/sizeof) |
 
 ## January 31, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| toot | Interact with Mastodon directly in the terminal. | https://github.com/ihabunek/toot |
-| trippy ⭐ | A TUI network diagnostics tool | https://github.com/fujiapple852/trippy/ |
-| logshark | A CLI / TUI debugger for JSON logs. | https://github.com/ugosan/logshark |
-| textql | Execute SQL against structured text like CSV or TSV | https://github.com/dinedal/textql |
-| lsd | lsdeluxe, the next gen ls command in Rust. | https://github.com/lsd-rs/lsd |
-| mdcat | fancy cat for markdown | https://github.com/swsnr/mdcat |
+| toot | Interact with Mastodon directly in the terminal. | [Link](https://github.com/ihabunek/toot) |
+| trippy ⭐ | A TUI network diagnostics tool | [Link](https://github.com/fujiapple852/trippy/) |
+| logshark | A CLI / TUI debugger for JSON logs. | [Link](https://github.com/ugosan/logshark) |
+| textql | Execute SQL against structured text like CSV or TSV | [Link](https://github.com/dinedal/textql) |
+| lsd | lsdeluxe, the next gen ls command in Rust. | [Link](https://github.com/lsd-rs/lsd) |
+| mdcat | fancy cat for markdown | [Link](https://github.com/swsnr/mdcat) |
 
 ## January 24, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| pysentation | TUI for displaying Python presentations | https://github.com/mimseyedi/pysentation |
-| topgrade | Upgrade all the things | https://github.com/topgrade-rs/topgrade/ |
-| wg-cmd | TUI for managing WireGuard configuration files | https://github.com/AndrianBdn/wg-cmd |
-| brows | A GitHub releases browser for the terminal | https://github.com/rubysolo/brows |
-| eget ⭐ | Easily install prebuilt binaries from GitHub. | https://github.com/zyedidia/eget |
-| termdbms | A terminal UI for editing database files | https://github.com/mathaou/termdbms |
+| pysentation | TUI for displaying Python presentations | [Link](https://github.com/mimseyedi/pysentation) |
+| topgrade | Upgrade all the things | [Link](https://github.com/topgrade-rs/topgrade/) |
+| wg-cmd | TUI for managing WireGuard configuration files | [Link](https://github.com/AndrianBdn/wg-cmd) |
+| brows | A GitHub releases browser for the terminal | [Link](https://github.com/rubysolo/brows) |
+| eget ⭐ | Easily install prebuilt binaries from GitHub. | [Link](https://github.com/zyedidia/eget) |
+| termdbms | A terminal UI for editing database files | [Link](https://github.com/mathaou/termdbms) |
 
 ## January 17, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| lf | A terminal file manager which &#34;lists files&#34;. | https://github.com/gokcehan/lf |
-| zoxide | A smarter cd command. Supports all major shells. | https://github.com/ajeetdsouza/zoxide |
-| yazi | Blazing fast terminal file manager written in Rust, based on async I/O. | https://github.com/sxyazi/yazi |
-| neomutt | A command line mail reader based on mutt | https://github.com/neomutt/neomutt |
-| gdu ⭐ | Pretty fast disk usage analyzer | https://github.com/dundee/gdu |
-| mapscii | The whole world in your console. | https://github.com/rastapasta/mapscii |
-| git-cc | a git extension to help write conventional commits | https://github.com/SKalt/git-cc/ |
+| lf | A terminal file manager which &#34;lists files&#34;. | [Link](https://github.com/gokcehan/lf) |
+| zoxide | A smarter cd command. Supports all major shells. | [Link](https://github.com/ajeetdsouza/zoxide) |
+| yazi | Blazing fast terminal file manager written in Rust, based on async I/O. | [Link](https://github.com/sxyazi/yazi) |
+| neomutt | A command line mail reader based on mutt | [Link](https://github.com/neomutt/neomutt) |
+| gdu ⭐ | Pretty fast disk usage analyzer | [Link](https://github.com/dundee/gdu) |
+| mapscii | The whole world in your console. | [Link](https://github.com/rastapasta/mapscii) |
+| git-cc | a git extension to help write conventional commits | [Link](https://github.com/SKalt/git-cc/) |
 
 ## January 10, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| aider ⭐ | AI pair programming in your terminal. | https://github.com/paul-gauthier/aider |
-| helix | A post-modern text editor. | https://github.com/helix-editor/helix |
-| dug | A global DNS propagation checker on your CLI | https://github.com/unfrl/dug |
-| musikcube | A cross-platform terminal-based music player | https://github.com/clangen/musikcube |
-| fnc | interactive text-based user interface for Fossil | https://github.com/terminaltrove |
-| miller | an all in one swiss army knife for data processing. | https://github.com/johnkerl/miller |
-| zrok | a next-generation peer-to-peer sharing platform | https://github.com/openziti/zrok |
+| aider ⭐ | AI pair programming in your terminal. | [Link](https://github.com/paul-gauthier/aider) |
+| helix | A post-modern text editor. | [Link](https://github.com/helix-editor/helix) |
+| dug | A global DNS propagation checker on your CLI | [Link](https://github.com/unfrl/dug) |
+| musikcube | A cross-platform terminal-based music player | [Link](https://github.com/clangen/musikcube) |
+| fnc | interactive text-based user interface for Fossil | [Link](https://github.com/terminaltrove) |
+| miller | an all in one swiss army knife for data processing. | [Link](https://github.com/johnkerl/miller) |
+| zrok | a next-generation peer-to-peer sharing platform | [Link](https://github.com/openziti/zrok) |
 
 ## January 3, 2024
 
 | Tool | Description | Link |
 |------|-------------|------|
-| fnt | apt for fonts, the missing font manager for macOS and Linux | https://github.com/alexmyczko/fnt |
-| hackernews-tui | A Terminal UI (TUI) to browse Hacker News. | https://github.com/aome510/hackernews-TUI |
-| neovim | Hyperextensible Vim-based text editor | https://github.com/neovim/neovim |
-| eza | A modern replacement for ls | https://github.com/eza-community/eza |
-| harlequin ⭐ | The SQL IDE for Your Terminal. | https://github.com/tconbeer/harlequin |
-| dust | A more intuitive version of du in rust | https://github.com/bootandy/dust |
-| difftastic | A structural diff that understands syntax | https://github.com/Wilfred/difftastic |
-| hledger-ui | Fast, friendly, robust plain text accounting software (TUI version) | https://github.com/simonmichael/hledger |
-| procmux | A terminal multiplexer for processes. | https://github.com/napisani/procmux |
-| ugm | A TUI to view information about UNIX users and groups | https://github.com/ariasmn/ugm |
-| hledger | Fast, friendly, robust plain text accounting software | https://github.com/simonmichael/hledger |
+| fnt | apt for fonts, the missing font manager for macOS and Linux | [Link](https://github.com/alexmyczko/fnt) |
+| hackernews-tui | A Terminal UI (TUI) to browse Hacker News. | [Link](https://github.com/aome510/hackernews-TUI) |
+| neovim | Hyperextensible Vim-based text editor | [Link](https://github.com/neovim/neovim) |
+| eza | A modern replacement for ls | [Link](https://github.com/eza-community/eza) |
+| harlequin ⭐ | The SQL IDE for Your Terminal. | [Link](https://github.com/tconbeer/harlequin) |
+| dust | A more intuitive version of du in rust | [Link](https://github.com/bootandy/dust) |
+| difftastic | A structural diff that understands syntax | [Link](https://github.com/Wilfred/difftastic) |
+| hledger-ui | Fast, friendly, robust plain text accounting software (TUI version) | [Link](https://github.com/simonmichael/hledger) |
+| procmux | A terminal multiplexer for processes. | [Link](https://github.com/napisani/procmux) |
+| ugm | A TUI to view information about UNIX users and groups | [Link](https://github.com/ariasmn/ugm) |
+| hledger | Fast, friendly, robust plain text accounting software | [Link](https://github.com/simonmichael/hledger) |
 
 ## November 15, 2023
 
 | Tool | Description | Link |
 |------|-------------|------|
-| slack-term | A Slack client for your terminal. | https://github.com/erroneousboat/slack-term |
-| devzat | A tool to chat over SSH. | https://github.com/quackduck/devzat |
-| meli | configurable and extensible terminal email client. | https://github.com/meli/meli |
-| irssi | A well known cross-platform and famous IRC client | https://github.com/irssi/irssi |
-| patat | Terminal-based presentations using Pandoc. | https://github.com/jaspervdj/patat |
-| jira-cli | Interact with Jira in the Terminal with Jira CLI. | https://github.com/ankitpokhrel/jira-cli |
-| lazygit | Simple terminal UI for git commands. | https://github.com/jesseduffield/lazygit |
-| dive | A tool for exploring each layer in a docker image. | https://github.com/wagoodman/dive |
-| cmus | Small, fast and powerful console music player for Unix-like operating systems. | https://github.com/cmus/cmus |
-| zellij | A terminal workspace with batteries included. | https://github.com/zellij-org/zellij |
-| visidata | A terminal spreadsheet multitool for discovering and arranging data. | https://github.com/saulpw/visidata |
-| grv | A Git Repository Viewer. | https://github.com/rgburke/grv |
-| termshark | A terminal UI (TUI) for tshark, inspired by Wireshark. | https://github.com/gcla/termshark |
-| tcpterm | A terminal-based TCP dump viewer. | https://github.com/sachaos/tcpterm |
-| ox | A Rust text editor that runs in your terminal! | https://github.com/curlpipe/ox |
-| delta | A viewer for git and diff output. | https://github.com/dandavison/delta |
-| netop | A network topology visualizer. | https://github.com/ZingerLittleBee/netop |
-| tickrs | Realtime ticker data in your terminal. | https://github.com/tarkah/tickrs |
-| gobang | A cross platform TUI database management tool written in Rust | https://github.com/TaKO8Ki/gobang |
-| neoss | User-friendly and detailed socket statistics with a TUI. | https://github.com/PabloLec/neoss |
-| scli | simple terminal user interface (TUI) for Signal. | https://github.com/isamert/scli |
-| calcurse | A calendar and scheduling application for the command line. | https://github.com/terminaltrove |
+| slack-term | A Slack client for your terminal. | [Link](https://github.com/erroneousboat/slack-term) |
+| devzat | A tool to chat over SSH. | [Link](https://github.com/quackduck/devzat) |
+| meli | configurable and extensible terminal email client. | [Link](https://github.com/meli/meli) |
+| irssi | A well known cross-platform and famous IRC client | [Link](https://github.com/irssi/irssi) |
+| patat | Terminal-based presentations using Pandoc. | [Link](https://github.com/jaspervdj/patat) |
+| jira-cli | Interact with Jira in the Terminal with Jira CLI. | [Link](https://github.com/ankitpokhrel/jira-cli) |
+| lazygit | Simple terminal UI for git commands. | [Link](https://github.com/jesseduffield/lazygit) |
+| dive | A tool for exploring each layer in a docker image. | [Link](https://github.com/wagoodman/dive) |
+| cmus | Small, fast and powerful console music player for Unix-like operating systems. | [Link](https://github.com/cmus/cmus) |
+| zellij | A terminal workspace with batteries included. | [Link](https://github.com/zellij-org/zellij) |
+| visidata | A terminal spreadsheet multitool for discovering and arranging data. | [Link](https://github.com/saulpw/visidata) |
+| grv | A Git Repository Viewer. | [Link](https://github.com/rgburke/grv) |
+| termshark | A terminal UI (TUI) for tshark, inspired by Wireshark. | [Link](https://github.com/gcla/termshark) |
+| tcpterm | A terminal-based TCP dump viewer. | [Link](https://github.com/sachaos/tcpterm) |
+| ox | A Rust text editor that runs in your terminal! | [Link](https://github.com/curlpipe/ox) |
+| delta | A viewer for git and diff output. | [Link](https://github.com/dandavison/delta) |
+| netop | A network topology visualizer. | [Link](https://github.com/ZingerLittleBee/netop) |
+| tickrs | Realtime ticker data in your terminal. | [Link](https://github.com/tarkah/tickrs) |
+| gobang | A cross platform TUI database management tool written in Rust | [Link](https://github.com/TaKO8Ki/gobang) |
+| neoss | User-friendly and detailed socket statistics with a TUI. | [Link](https://github.com/PabloLec/neoss) |
+| scli | simple terminal user interface (TUI) for Signal. | [Link](https://github.com/isamert/scli) |
+| calcurse | A calendar and scheduling application for the command line. | [Link](https://github.com/terminaltrove) |
 
 ## November 8, 2023
 
 | Tool | Description | Link |
 |------|-------------|------|
-| xplr | A hackable, minimal, fast TUI file explorer | https://github.com/sayanarijit/xplr |
-| twitch-tui | A Twitch chat TUI client for the terminal | https://github.com/Xithrius/twitch-tui |
-| tut | A TUI for Mastodon with vim inspired keys | https://github.com/RasmusLindroth/tut |
-| planor | A TUI client for cloud services for aws, vultr, heroku, etc. | https://github.com/mrusme/planor |
-| bmon | Bandwidth monitor and rate estimator | https://github.com/tgraf/bmon |
-| zenith | A terminal UI (TUI) for monitoring system resources | https://github.com/bvaisvil/zenith |
-| ctop | A top-like interface for container metrics. | https://github.com/bcicen/ctop |
-| zeit | A simple command-line tool to track your time | https://github.com/mrusme/zeit |
-| ttyper | A terminal-based typing test | https://github.com/max-niederman/ttyper |
-| nemu | ncurses-based TUI for QEMU. | https://github.com/nemuTUI/nemu |
-| micro | A modern and intuitive terminal-based text editor. | https://github.com/zyedidia/micro |
-| orbiton | A terminal-based text editor and a minimalistic IDE. | https://github.com/xyproto/orbiton |
-| gotop | A terminal-based graphical activity monitor written in Go. | https://github.com/xxxserxxx/gotop |
-| mc | Midnight Commander, a feature-rich visual file manager for the terminal. | https://github.com/MidnightCommander/mc |
+| xplr | A hackable, minimal, fast TUI file explorer | [Link](https://github.com/sayanarijit/xplr) |
+| twitch-tui | A Twitch chat TUI client for the terminal | [Link](https://github.com/Xithrius/twitch-tui) |
+| tut | A TUI for Mastodon with vim inspired keys | [Link](https://github.com/RasmusLindroth/tut) |
+| planor | A TUI client for cloud services for aws, vultr, heroku, etc. | [Link](https://github.com/mrusme/planor) |
+| bmon | Bandwidth monitor and rate estimator | [Link](https://github.com/tgraf/bmon) |
+| zenith | A terminal UI (TUI) for monitoring system resources | [Link](https://github.com/bvaisvil/zenith) |
+| ctop | A top-like interface for container metrics. | [Link](https://github.com/bcicen/ctop) |
+| zeit | A simple command-line tool to track your time | [Link](https://github.com/mrusme/zeit) |
+| ttyper | A terminal-based typing test | [Link](https://github.com/max-niederman/ttyper) |
+| nemu | ncurses-based TUI for QEMU. | [Link](https://github.com/nemuTUI/nemu) |
+| micro | A modern and intuitive terminal-based text editor. | [Link](https://github.com/zyedidia/micro) |
+| orbiton | A terminal-based text editor and a minimalistic IDE. | [Link](https://github.com/xyproto/orbiton) |
+| gotop | A terminal-based graphical activity monitor written in Go. | [Link](https://github.com/xxxserxxx/gotop) |
+| mc | Midnight Commander, a feature-rich visual file manager for the terminal. | [Link](https://github.com/MidnightCommander/mc) |
 
 ## November 1, 2023
 
 | Tool | Description | Link |
 |------|-------------|------|
-| bottom | Yet another cross-platform graphical process/system monitor. | https://github.com/ClementTsang/bottom |
-| moc | A music player with a terminal user interface (TUI) | https://github.com/terminaltrove |
-| jq | Command-line JSON processor | https://github.com/jqlang/jq |
-| cgdb | A curses (terminal-based) interface to the GNU Debugger (GDB) | https://github.com/cgdb/cgdb |
-| wordgrinder | A cross-platform word processor for the terminal | https://github.com/davidgiven/wordgrinder |
-| typespeed | Test your typing speed, and challenge your friends | https://github.com/terminaltrove |
-| ncdu | A ncurses based disk usage analyzer | https://github.com/terminaltrove |
-| hexyl | A rust based command-line hex viewer | https://github.com/sharkdp/hexyl |
-| k9s | Kubernetes CLI and TUI To Manage Your Clusters In Style! | https://github.com/derailed/k9s |
-| textual-astview | A Textual-based Python AST viewing widget library and application | https://github.com/davep/textual-astview |
-| lazydocker | The lazier way to manage everything docker | https://github.com/jesseduffield/lazydocker |
-| jqp | A TUI playground to experiment with jq. | https://github.com/noahgorstein/jqp |
-| sntop | A simple network top for monitoring connectivity | https://github.com/terminaltrove |
-| noping | A C library to generate ICMP echo requests with a visualization | https://github.com/octo/liboping |
+| bottom | Yet another cross-platform graphical process/system monitor. | [Link](https://github.com/ClementTsang/bottom) |
+| moc | A music player with a terminal user interface (TUI) | [Link](https://github.com/terminaltrove) |
+| jq | Command-line JSON processor | [Link](https://github.com/jqlang/jq) |
+| cgdb | A curses (terminal-based) interface to the GNU Debugger (GDB) | [Link](https://github.com/cgdb/cgdb) |
+| wordgrinder | A cross-platform word processor for the terminal | [Link](https://github.com/davidgiven/wordgrinder) |
+| typespeed | Test your typing speed, and challenge your friends | [Link](https://github.com/terminaltrove) |
+| ncdu | A ncurses based disk usage analyzer | [Link](https://github.com/terminaltrove) |
+| hexyl | A rust based command-line hex viewer | [Link](https://github.com/sharkdp/hexyl) |
+| k9s | Kubernetes CLI and TUI To Manage Your Clusters In Style! | [Link](https://github.com/derailed/k9s) |
+| textual-astview | A Textual-based Python AST viewing widget library and application | [Link](https://github.com/davep/textual-astview) |
+| lazydocker | The lazier way to manage everything docker | [Link](https://github.com/jesseduffield/lazydocker) |
+| jqp | A TUI playground to experiment with jq. | [Link](https://github.com/noahgorstein/jqp) |
+| sntop | A simple network top for monitoring connectivity | [Link](https://github.com/terminaltrove) |
+| noping | A C library to generate ICMP echo requests with a visualization | [Link](https://github.com/octo/liboping) |
 
