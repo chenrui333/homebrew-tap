@@ -31,6 +31,12 @@ jobs:
           core: true
           cask: false
 
+      - name: Lock Homebrew to working commit
+        run: |
+          cd "$(brew --repository)"
+          git checkout 209b66dd4eff0a0ab48ebf6120c18a2a345150bd
+          echo "Locked Homebrew to commit: $(git rev-parse HEAD)"
+
       - name: Set up git
         uses: Homebrew/actions/git-user-config@6608395265063b0b4534ee5672930fa31cd45f94
         with:

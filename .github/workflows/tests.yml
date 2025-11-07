@@ -39,6 +39,12 @@ jobs:
           core: true
           cask: false
 
+      - name: Lock Homebrew to working commit
+        run: |
+          cd "$(brew --repository)"
+          git checkout 209b66dd4eff0a0ab48ebf6120c18a2a345150bd
+          echo "Locked Homebrew to commit: $(git rev-parse HEAD)"
+
       - run: brew test-bot --only-tap-syntax
         continue-on-error: true # Skip due to license check issues
 
@@ -128,6 +134,12 @@ jobs:
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
+
+      - name: Lock Homebrew to working commit
+        run: |
+          cd "$(brew --repository)"
+          git checkout 209b66dd4eff0a0ab48ebf6120c18a2a345150bd
+          echo "Locked Homebrew to commit: $(git rev-parse HEAD)"
 
       - name: Run brew test-bot
         id: brew-test-bot-formulae
