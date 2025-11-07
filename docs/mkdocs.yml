@@ -1,0 +1,29 @@
+site_name: Homebrew Tap Docs
+site_description: Documentation for chenrui333's homebrew-tap
+repo_url: https://github.com/chenrui333/homebrew-tap
+repo_name: homebrew-tap
+edit_uri: edit/main/docs/
+
+docs_dir: .
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+nav:
+  - Home: index.md
+  - Frameworks:
+    - CLI Frameworks: frameworks/cli-frameworks.md
+    - TUI Frameworks: frameworks/tui-frameworks.md
+  - Terminal Trove: terminal-trove/index.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - toc

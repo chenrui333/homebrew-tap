@@ -10,24 +10,24 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 
 | Tool | Description | Link |
 |------|-------------|------|
-| mcat ⭐ | Parse, convert &amp; preview images, videos &amp; markdown in your terminal. | https://github.com/Skardyy/mcat |
-| jrnl | Collect your thoughts and notes without leaving the command line. | https://github.com/jrnl-org/jrnl |
-| resterm | A TUI REST, GraphQL, gRPC, WebSocket and SSE client. | https://github.com/unkn0wn-root/resterm |
-| torra | Find and download torrents without leaving your CLI. | https://github.com/stabldev/torrra |
-| pvetui | A Terminal UI for Proxmox VE. | https://github.com/devnullvoid/pvetui |
-| coderabbit | Free AI Code Reviews in the CLI. | https://github.com/terminaltrove |
-| rum | A TUI to list, search and run package.json scripts. | https://github.com/thekarel/rum |
+| mcat ⭐ | Parse, convert &amp; preview images, videos &amp; markdown in your terminal. | [Link](https://github.com/Skardyy/mcat) |
+| jrnl | Collect your thoughts and notes without leaving the command line. | [Link](https://github.com/jrnl-org/jrnl) |
+| resterm | A TUI REST, GraphQL, gRPC, WebSocket and SSE client. | [Link](https://github.com/unkn0wn-root/resterm) |
+| torra | Find and download torrents without leaving your CLI. | [Link](https://github.com/stabldev/torrra) |
+| pvetui | A Terminal UI for Proxmox VE. | [Link](https://github.com/devnullvoid/pvetui) |
+| coderabbit | Free AI Code Reviews in the CLI. | [Link](https://github.com/terminaltrove) |
+| rum | A TUI to list, search and run package.json scripts. | [Link](https://github.com/thekarel/rum) |
 
 ## October 29, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| benben | A fast and efficient command line audio player and audio converter. | https://github.com/terminaltrove |
-| nethogs | A linux &#39;net top&#39; tool. | https://github.com/raboof/nethogs |
-| reddix | Reddit, refined for the terminal. | https://github.com/ck-zhang/reddix |
-| cronboard ⭐ | A terminal tool for managing cron jobs locally and on servers. | https://github.com/antoniorodr/cronboard |
-| wizu | A fast, minimalist directory tree viewer. | https://github.com/sh1zen/wisu |
-| tinifier | A CLI tool for compressing images using the TinyPNG service. | https://github.com/tarampampam/tinifier |
+| benben | A fast and efficient command line audio player and audio converter. | [Link](https://github.com/terminaltrove) |
+| nethogs | A linux &#39;net top&#39; tool. | [Link](https://github.com/raboof/nethogs) |
+| reddix | Reddit, refined for the terminal. | [Link](https://github.com/ck-zhang/reddix) |
+| cronboard ⭐ | A terminal tool for managing cron jobs locally and on servers. | [Link](https://github.com/antoniorodr/cronboard) |
+| wizu | A fast, minimalist directory tree viewer. | [Link](https://github.com/sh1zen/wisu) |
+| tinifier | A CLI tool for compressing images using the TinyPNG service. | [Link](https://github.com/tarampampam/tinifier) |
 
 ## October 21, 2025
 
