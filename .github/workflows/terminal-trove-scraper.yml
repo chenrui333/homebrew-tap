@@ -1,0 +1,39 @@
+name: Terminal Trove Weekly Scraper
+
+on:
+  schedule:
+    # Run every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Run Terminal Trove scraper
+        working-directory: ./docs/terminal-trove
+        run: python3 scrape_terminal_trove.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "actions@github.com"
+
+          # Check if there are changes
+          if git diff --quiet; then
+            echo "No changes detected"
+          else
+            git add docs/terminal-trove/terminal_trove_weekly.md docs/terminal-trove/.project_links_cache.json
+            git commit -m "chore: update terminal trove weekly tools list" || true
+            git push
+          fi
