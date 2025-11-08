@@ -8,11 +8,11 @@ class Resterm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a764ce74160544a8360803a778ce7edc6865e397d17ced9fd93df040ae6eb84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a764ce74160544a8360803a778ce7edc6865e397d17ced9fd93df040ae6eb84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a764ce74160544a8360803a778ce7edc6865e397d17ced9fd93df040ae6eb84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b63d222dd8dfa25969984d88b55394fe3d7a60f5b18ea70443f13049a02bdd56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40ee4df8f57d0dc16236b76c704757ddefba118ee8f28a00424cdcb21d3e815"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fa66bb8ecab8424c2ef6f62fb8feded0e78527e87e08bdb2c09358f67ac8a07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fa66bb8ecab8424c2ef6f62fb8feded0e78527e87e08bdb2c09358f67ac8a07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fa66bb8ecab8424c2ef6f62fb8feded0e78527e87e08bdb2c09358f67ac8a07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d83ba3068e7ca4d872d307fc6d2bf35e1c5c69cb69f596879d11a9ea6030e639"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98d9d450cb1f6da6f122cd5e75804f134ef80ff9598b2ad1bb1960ad5ef9ac4d"
   end
 
   depends_on "go" => :build
