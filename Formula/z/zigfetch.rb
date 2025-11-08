@@ -5,6 +5,15 @@ class Zigfetch < Formula
   sha256 "adc3db4b8a4e59cd098a49dd61d7cf56d77d70497cc7ad4d350b0fd119b41c9e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "5c16c38c31bce2247d750722fcdb39f50dcaa1564098917324e3d9fddcd34b71"
+    sha256                               arm64_sequoia: "6baeb1ada1524f7d91a6bf810bcf158ad21432f7e202a584e1df5bbdd8b6458d"
+    sha256                               arm64_sonoma:  "83556e2c0a86d599bd3b4cd813370f98f380c8826ef4b2a48d609c8a9d56b7e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ed1fba7db9b8a9c9f1220dc59932a6cac2997126c6163ba12b20fc14c428ae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14f45a7765bec3739c10475ab2826aea93925f3244c3a5fd978b465a5b6c459e"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "zig" => :build
 
