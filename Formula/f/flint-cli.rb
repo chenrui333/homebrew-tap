@@ -7,9 +7,10 @@ class FlintCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e1cb2ae112840762952c244c60bbd70dcc2fd7b35626b5b95343d210ab77f75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6be8ef580236a31374040de44ac1e1ac9cd70900c3bb68d24ffa17f3b038871a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd0021b58d581454809c47eb26230dbed1848412b8cf028313242edc099aca96"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5af96b3b59171cc23024264959f7ac273e6b36c10a49c6d8351c20b1d77f8496"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6150d6ec291ed31f3148d6544766818dbb6a4dd2e5cdbdf15f9e94b529295770"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60de89a8e9da788ef8da26fbd25f2cd3374c2f82b508a62f532ba4cf82385ef6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f770cfb892aee30655b77cc00e80d0948b7ee9f5ba7b735632caa240dd39dbc5"
   end
 
   depends_on "go" => :build
