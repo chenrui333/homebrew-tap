@@ -1,10 +1,9 @@
 class Envtpl < Formula
   desc "Render Go templates on the command-line with shell environment variables"
   homepage "https://github.com/chenrui333/envtpl"
-  url "https://github.com/chenrui333/envtpl/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "ae7f12c22fd79174179e5173e36137da97b2999d734d68025ab39a200300f54e"
+  url "https://github.com/chenrui333/envtpl/archive/refs/tags/v2.0.6.tar.gz"
+  sha256 "1417578635f956d5f5b270613c15226fab2672b9ea317af6d08244653e372caa"
   license "MIT"
-  revision 1
   head "https://github.com/chenrui333/envtpl.git", branch: "main"
 
   bottle do
