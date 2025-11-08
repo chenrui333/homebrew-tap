@@ -7,7 +7,7 @@ class Prpm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "0dfca06fb48702c9417cfa06d641138c7d86fb126526ac5aab5b424dad5fc56f"
+    sha256 cellar: :any_skip_relocation, all: "0e86b0f02e8f13325c8adae3ad558959e6c88e7ee3647f9d4625b818a5f7a627"
   end
 
   depends_on "node"
