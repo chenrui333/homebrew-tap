@@ -13,6 +13,9 @@ class Ugdb < Formula
   end
 
   test do
+    # Fails in Linux CI with `Failed to get terminal attributes: Sys(ENOTTY)`
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     assert_match version.to_s, shell_output("#{bin}/ugdb --version")
 
     assert_match "Failed to spawn gdb process (\"gdb\")", shell_output("#{bin}/ugdb 2>&1", 252)
