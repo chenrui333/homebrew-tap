@@ -1,8 +1,8 @@
 class Graphjin < Formula
   desc "Build NodeJS / GO APIs in 5 minutes not weeks"
   homepage "https://graphjin.com/"
-  url "https://github.com/dosco/graphjin/archive/refs/tags/v3.1.3.tar.gz"
-  sha256 "476e370b9ab1133c6a08fa63ce8e2f71a8ed16e7be2c858e389012f1ee940616"
+  url "https://github.com/dosco/graphjin/archive/refs/tags/v3.1.4.tar.gz"
+  sha256 "bf3a9b49a1b947bc547f484d72a112894a7f2a66f2c2205aa81046c1e1882151"
   license "Apache-2.0"
   head "https://github.com/dosco/graphjin.git", branch: "master"
 
@@ -47,114 +47,114 @@ end
 
 __END__
 diff --git a/auth/go.mod b/auth/go.mod
-index 3e97801..5b5e93f 100644
+index 19dfd91..3b98377 100644
 --- a/auth/go.mod
 +++ b/auth/go.mod
-@@ -5,7 +5,7 @@ go 1.23.0
+@@ -3,7 +3,7 @@ module github.com/dosco/graphjin/auth/v3
+ go 1.24.0
+ 
  require (
- 	github.com/adjust/gorails v0.0.0-20171013043634-2786ed0c03d3
- 	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874
--	github.com/dosco/graphjin/core/v3 v
-+	github.com/dosco/graphjin/core/v3 v3.1.3
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/core/v3 v3.1.4
  	github.com/golang-jwt/jwt v3.2.2+incompatible
- 	github.com/gomodule/redigo v1.9.2
  	github.com/gorilla/websocket v1.5.3
+ 	github.com/lestrrat-go/jwx v1.2.31
 diff --git a/cmd/go.mod b/cmd/go.mod
-index b544f1c..97728f8 100644
+index 1170212..80e7dc5 100644
 --- a/cmd/go.mod
 +++ b/cmd/go.mod
-@@ -7,8 +7,8 @@ toolchain go1.23.1
+@@ -5,8 +5,8 @@ go 1.24.0
  require (
  	github.com/brianvoe/gofakeit/v6 v6.28.0
- 	github.com/dop251/goja v0.0.0-20240828124009-016eb7256539
--	github.com/dosco/graphjin/core/v3 v
--	github.com/dosco/graphjin/serv/v3 v
-+	github.com/dosco/graphjin/core/v3 v3.1.3
-+	github.com/dosco/graphjin/serv/v3 v3.1.3
- 	github.com/gosimple/slug v1.14.0
- 	github.com/jackc/pgx/v5 v5.6.0
- 	github.com/jvatic/goja-babel v0.0.0-20240829121804-52a2d5a94eb5
-@@ -45,8 +45,8 @@ require (
- 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.3.0 // indirect
- 	github.com/dimchansky/utfbom v1.1.1 // indirect
- 	github.com/dlclark/regexp2 v1.11.4 // indirect
--	github.com/dosco/graphjin/auth/v3 v // indirect
--	github.com/dosco/graphjin/plugin/otel/v3 v // indirect
-+	github.com/dosco/graphjin/auth/v3 v3.1.3 // indirect
-+	github.com/dosco/graphjin/plugin/otel/v3 v3.1.3 // indirect
- 	github.com/fatih/color v1.16.0 // indirect
+ 	github.com/dop251/goja v0.0.0-20250630131328-58d95d85e994
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
+-	github.com/dosco/graphjin/serv/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/core/v3 v3.1.4
++	github.com/dosco/graphjin/serv/v3 v3.1.4
+ 	github.com/gosimple/slug v1.15.0
+ 	github.com/jackc/pgx/v5 v5.7.6
+ 	github.com/jvatic/goja-babel v0.0.0-20250906111304-06c40d6b931b
+@@ -27,8 +27,8 @@ require (
+ 	filippo.io/edwards25519 v1.1.0 // indirect
+ 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.4.0 // indirect
+ 	github.com/dlclark/regexp2 v1.11.5 // indirect
+-	github.com/dosco/graphjin/auth/v3 v-00010101000000-000000000000 // indirect
+-	github.com/dosco/graphjin/plugin/otel/v3 v-00010101000000-000000000000 // indirect
++	github.com/dosco/graphjin/auth/v3 v3.1.4 // indirect
++	github.com/dosco/graphjin/plugin/otel/v3 v3.1.4 // indirect
  	github.com/felixge/httpsnoop v1.0.4 // indirect
- 	github.com/fsnotify/fsnotify v1.7.0 // indirect
+ 	github.com/fsnotify/fsnotify v1.9.0 // indirect
+ 	github.com/go-chi/chi/v5 v5.2.3 // indirect
 diff --git a/conf/go.mod b/conf/go.mod
-index 513264e..2ba508f 100644
+index 3d13602..96110a7 100644
 --- a/conf/go.mod
 +++ b/conf/go.mod
 @@ -3,7 +3,7 @@ module github.com/dosco/graphjin/conf/v3
- go 1.18
-
+ go 1.24.0
+ 
  require (
--	github.com/dosco/graphjin/core/v3 v
-+	github.com/dosco/graphjin/core/v3 v3.1.3
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/core/v3 v3.1.4
  	gopkg.in/yaml.v3 v3.0.1
  )
-
+ 
 diff --git a/plugin/otel/go.mod b/plugin/otel/go.mod
-index 0c0580f..44bfb30 100644
+index beb9eda..23287f9 100644
 --- a/plugin/otel/go.mod
 +++ b/plugin/otel/go.mod
-@@ -5,7 +5,7 @@ go 1.21
- toolchain go1.23.1
-
+@@ -3,7 +3,7 @@ module github.com/dosco/graphjin/plugin/otel/v3
+ go 1.24.0
+ 
  require (
--	github.com/dosco/graphjin/core/v3 v
-+	github.com/dosco/graphjin/core/v3 v3.1.3
- 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.42.0
- 	go.opentelemetry.io/otel v1.29.0
- 	go.opentelemetry.io/otel/trace v1.29.0
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/core/v3 v3.1.4
+ 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.63.0
+ 	go.opentelemetry.io/otel v1.38.0
+ 	go.opentelemetry.io/otel/trace v1.38.0
 diff --git a/serv/go.mod b/serv/go.mod
-index 15e04b5..8fb5688 100644
+index 4cbb328..609313f 100644
 --- a/serv/go.mod
 +++ b/serv/go.mod
-@@ -5,9 +5,9 @@ go 1.23.0
- toolchain go1.23.5
-
+@@ -3,9 +3,9 @@ module github.com/dosco/graphjin/serv/v3
+ go 1.24.0
+ 
  require (
--	github.com/dosco/graphjin/auth/v3 v
--	github.com/dosco/graphjin/core/v3 v
--	github.com/dosco/graphjin/plugin/otel/v3 v
-+	github.com/dosco/graphjin/auth/v3 v3.1.3
-+	github.com/dosco/graphjin/core/v3 v3.1.3
-+	github.com/dosco/graphjin/plugin/otel/v3 v3.1.3
+-	github.com/dosco/graphjin/auth/v3 v-00010101000000-000000000000
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
+-	github.com/dosco/graphjin/plugin/otel/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/auth/v3 v3.1.4
++	github.com/dosco/graphjin/core/v3 v3.1.4
++	github.com/dosco/graphjin/plugin/otel/v3 v3.1.4
  	github.com/fsnotify/fsnotify v1.9.0
  	github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
  	github.com/go-pkgz/expirable-cache v1.0.0
 diff --git a/tests/go.mod b/tests/go.mod
-index 4450474..97aa5dd 100644
+index 51b5719..ed67332 100644
 --- a/tests/go.mod
 +++ b/tests/go.mod
-@@ -5,8 +5,8 @@ go 1.21
- toolchain go1.23.1
-
+@@ -3,8 +3,8 @@ module github.com/dosco/graphjin/tests/v3
+ go 1.24.0
+ 
  require (
--	github.com/dosco/graphjin/conf/v3 v
--	github.com/dosco/graphjin/core/v3 v
-+	github.com/dosco/graphjin/conf/v3 v3.1.3
-+	github.com/dosco/graphjin/core/v3 v3.1.3
- 	github.com/orlangure/gnomock v0.30.0
- 	github.com/stretchr/testify v1.9.0
- 	golang.org/x/sync v0.8.0
+-	github.com/dosco/graphjin/conf/v3 v-00010101000000-000000000000
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/conf/v3 v3.1.4
++	github.com/dosco/graphjin/core/v3 v3.1.4
+ 	github.com/go-sql-driver/mysql v1.9.3
+ 	github.com/lib/pq v1.10.9
+ 	github.com/stretchr/testify v1.11.1
 diff --git a/wasm/go.mod b/wasm/go.mod
-index caee9bd..b925ab2 100644
+index 36f9bc2..51d6904 100644
 --- a/wasm/go.mod
 +++ b/wasm/go.mod
 @@ -3,8 +3,8 @@ module github.com/dosco/graphjin/wasm/v3
- go 1.18
-
+ go 1.24.0
+ 
  require (
--	github.com/dosco/graphjin/conf/v3 v
--	github.com/dosco/graphjin/core/v3 v
-+	github.com/dosco/graphjin/conf/v3 v3.1.3
-+	github.com/dosco/graphjin/core/v3 v3.1.3
+-	github.com/dosco/graphjin/conf/v3 v-00010101000000-000000000000
+-	github.com/dosco/graphjin/core/v3 v-00010101000000-000000000000
++	github.com/dosco/graphjin/conf/v3 v3.1.4
++	github.com/dosco/graphjin/core/v3 v3.1.4
  )
-
- require (
+ 
+ replace (
