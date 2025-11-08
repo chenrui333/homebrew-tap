@@ -8,11 +8,11 @@ class Bulletty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8899e59ca4429b57b0555b70876a07575d4662095c1c9664126d63668a50fb38"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e95deabacbfacbf55c1736d608f1d386aff5b1cf890d71033d3c3338060e6a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4eadd372f22144892cd42108eb431bda1714987ff4175686db1e33dd97811f88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9afa8979b64f1429be521ccbf6fc00c1782ca9364d81a05c6aa01e76bc189756"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dec25b6ae20f065ebb9b1664e080f1d24689bb81e2922382fa6d48e9200d1b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "890392ad15964df31fa3afd729861838b4ab8d04e769864c3fca9b06e8f27ace"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe256a502532d198646a33345622957c256ff15ab70509a7ed85e8ac39129d58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "202dcaaaee84148833edd05cc739beaea6ccfaafff329de911fec07ece2f32d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc68c9d01a17fd899b840cb2426750e5479e3b611d1d8c99a76ab47bd31df4ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4825c6b00e7443c9e4ca596de4b350309565f62ec451bb9d7beaa3c7de246a0a"
   end
 
   depends_on "pkgconf" => :build
