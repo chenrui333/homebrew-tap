@@ -22,7 +22,7 @@ class Prpm < Formula
 
     system bin/"prpm", "init", "--yes"
     assert_path_exists testpath/"prpm.json"
-    assert_match "# README.md", (testpath/"README.md").read
+    assert_match "A PRPM package", (testpath/"README.md").read
 
     assert_match "No packages installed", shell_output("#{bin}/prpm list")
   end
