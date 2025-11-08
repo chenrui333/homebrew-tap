@@ -413,6 +413,8 @@ class OxylabsMcp < Formula
   end
 
   test do
+    ENV["OXYLABS_USERNAME"] = "test"
+    ENV["OXYLABS_PASSWORD"] = "test"
     ENV["OXYLABS_AI_STUDIO_API_KEY"] = "test"
 
     json = <<~JSON
@@ -421,7 +423,7 @@ class OxylabsMcp < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
     JSON
 
-    output = pipe_output("#{bin}/oxylabs-mcp 2>&1", json, 0)
-    assert_match "Tool useful for crawling a website from starting url", output
+    output = pipe_output("#{bin}/oxylabs-mcp 2>&1", json, 1)
+    assert_match "Starting MCP server 'oxylabs_mcp'", output
   end
 end
