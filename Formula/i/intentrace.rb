@@ -6,6 +6,11 @@ class Intentrace < Formula
   license "MIT"
   head "https://github.com/sectordistrict/intentrace.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cdb5a0a8a1e464a4b764cd349b950e8c43d50bb48396bdb2ccf0f608f8fb3bb5"
+  end
+
   depends_on "rust" => :build
   depends_on arch: :x86_64
   depends_on :linux
