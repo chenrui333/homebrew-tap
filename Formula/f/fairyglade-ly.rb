@@ -6,6 +6,12 @@ class FairygladeLy < Formula
   license "WTFPL"
   head "https://codeberg.org/fairyglade/ly.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "e1dd9d21e3ce8fb91f90b7da4f72f95b8ef2546b2a55e01aa948110f8fa5084a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aacdbb8ff7509bd50a9f6e2c1a1342d452240898337edfad3c2bf5714942e785"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "zig" => :build
   depends_on "libxcb"
