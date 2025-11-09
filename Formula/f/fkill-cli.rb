@@ -7,10 +7,7 @@ class FkillCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b916aa293073304ac5a729d15c5d0be89322eb51489110255a3daf495997e82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d1e0d8934269079497df4a256f31696b52e7d628d3b4b395d7ae1b9f895cba2"
-    sha256 cellar: :any_skip_relocation, ventura:       "e4aa228c1acf75319175b95f56b58b95d64eded921761fcc8812c8cd8b95862b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5987db01cd87dc1442c1d7cc6b898a57de36ba8755971b27e15e3722daef3656"
+    sha256 cellar: :any_skip_relocation, all: "48af16649f0abe0865f59ef9573a1e705fba9ab03956d3920690076bbc3b5f9a"
   end
 
   depends_on "node"
