@@ -258,6 +258,7 @@ brew install --cask <tool>
 - `inbucket`
 - `incus-compose`
 - `infraspec`
+- `intentrace`
 - `ip2d`
 - `ips`
 - `jaggr`
@@ -554,6 +555,7 @@ brew install --cask <tool>
 - `zig@0.11`
 - `zig@0.12`
 - `zig@0.13`
+- `zigfetch`
 - `ziggy`
 - `ziglint`
 - `zigscient`
