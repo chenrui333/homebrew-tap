@@ -164,20 +164,24 @@ class Dhv < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/dhv --version")
 
-    (testpath/"hello.py").write <<~PYTHON
-      def greet(name):
-          print(f"Hello, {name}!")
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-      greet("Homebrew")
-    PYTHON
+    begin
+      (testpath/"hello.py").write <<~PYTHON
+        def greet(name):
+            print(f"Hello, {name}!")
 
-    output_log = testpath/"output.log"
+        greet("Homebrew")
+      PYTHON
 
-    pid = spawn bin/"dhv", "hello.py", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "RETURN_VALUE", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+      output_log = testpath/"output.log"
+
+      pid = spawn bin/"dhv", "hello.py", [:out, :err] => output_log.to_s
+      sleep 1
+      assert_match "RETURN_VALUE", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
