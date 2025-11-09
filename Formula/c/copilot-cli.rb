@@ -21,15 +21,16 @@ class CopilotCli < Formula
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules = libexec/"lib/node_modules/@github/copilot/node_modules"
+    node_modules = libexec/"lib/node_modules/@github/copilot"
 
-    # Remove keytar-forked-forked non-native binaries
-    keytar_prebuilds = node_modules/"keytar-forked-forked/prebuilds"
-    keytar_prebuilds.each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    # Remove non-native binaries, like `keytar.node`, `pty.node`, `spawn-helper`
+    prebuilds = node_modules/"prebuilds"
+    prebuilds.each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
-    # Remove node-pty non-native binaries
-    node_pty_prebuilds = node_modules/"node-pty/prebuilds"
-    node_pty_prebuilds.each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    # Remove non-native sharp prebuilds
+    sharp_prebuilds = node_modules/"sharp/node_modules/@img"
+    keep = %W[sharp-#{os}-#{arch} sharp-libvips-#{os}-#{arch}]
+    sharp_prebuilds.each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
   end
 
   test do
