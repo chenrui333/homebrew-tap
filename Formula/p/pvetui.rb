@@ -6,6 +6,15 @@ class Pvetui < Formula
   license "MIT"
   head "https://github.com/devnullvoid/pvetui.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71d02474b5623ce5301df34fdd92912bcfdbbfc55e7c898d8534b3020f7910a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71d02474b5623ce5301df34fdd92912bcfdbbfc55e7c898d8534b3020f7910a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71d02474b5623ce5301df34fdd92912bcfdbbfc55e7c898d8534b3020f7910a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bcc6e890e3a8890e20f251b09e54f2c2d5ce0a1c35e7dd3c9631207fbab367a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac6e23fb6c8fc6ce1ff7789adece4c9b6ddb4ebb01f2e6c9afea7b813bb0dfbf"
+  end
+
   depends_on "go" => :build
 
   def install
