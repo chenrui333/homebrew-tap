@@ -4,7 +4,12 @@ class GoGetter < Formula
   url "https://github.com/hashicorp/go-getter/archive/refs/tags/v1.8.3.tar.gz"
   sha256 "480e8106fe50127a4e5329cc5d09909cc2d7b48dfee80d6681679f483b3c560e"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/go-getter.git", branch: "master"
+  head "https://github.com/hashicorp/go-getter.git", branch: "main"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
