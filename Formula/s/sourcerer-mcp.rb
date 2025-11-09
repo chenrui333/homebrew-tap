@@ -1,8 +1,8 @@
 class SourcererMcp < Formula
   desc "MCP for semantic code search & navigation that reduces token waste"
   homepage "https://github.com/st3v3nmw/sourcerer-mcp"
-  url "https://github.com/st3v3nmw/sourcerer-mcp/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "91d4d05112dba2c51f0575a70fa2e02d41c0c946f23182b48ff6e6971cb5815b"
+  url "https://github.com/st3v3nmw/sourcerer-mcp/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "4b838a32c6f9e249630d3175bc4f752b9404508f015a1c5b2fb63231eaa47a4b"
   license "MIT"
 
   bottle do
