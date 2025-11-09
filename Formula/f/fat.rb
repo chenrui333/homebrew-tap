@@ -5,6 +5,15 @@ class Fat < Formula
   sha256 "1a5cd3f2d12ca46dbe400e8f685eb8ecc34f269693373a398e8530a3abb5d097"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "f36391377c958696e3dd4b0abd029336a586a3d5346a537d5888f21db02ec625"
+    sha256 arm64_sequoia: "bd7235b7d62c3db8f2b99207ae1893e5cd1e95ab10a434258d9e17d88896f9cc"
+    sha256 arm64_sonoma:  "8333f0478e93d2e23c74d67973506124e4c31c9f8de2b466977da331c4cde219"
+    sha256 arm64_linux:   "1135dce94f49aa19aa977c39b3bb51fea016a4ce3bb31168ad80e6bbec5e2143"
+    sha256 x86_64_linux:  "8a4c8b9bda3cc52fc51b1b0013d8c7bb6337a0a2b86409eb0050cf780bfc3760"
+  end
+
   depends_on "libmagic"
   depends_on "libtar"
   depends_on "libzip"
