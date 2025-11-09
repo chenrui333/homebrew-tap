@@ -1,8 +1,8 @@
 class FkillCli < Formula
   desc "Fabulously kill processes. Cross-platform"
   homepage "https://github.com/sindresorhus/fkill-cli"
-  url "https://registry.npmjs.org/fkill-cli/-/fkill-cli-8.0.0.tgz"
-  sha256 "47be11adbcb1524213aea291a829640c13f93381324fc00bbe059805166da40c"
+  url "https://registry.npmjs.org/fkill-cli/-/fkill-cli-9.0.0.tgz"
+  sha256 "e92e858097abefc2c1438fb0aceeae86a4f7059034c28fb483efaa762ba45cb2"
   license "MIT"
 
   bottle do
