@@ -6,6 +6,11 @@ class FissionCli < Formula
   license "Apache-2.0"
   head "https://github.com/fission/fission.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a21ed803277daa111ce1f134865e6da487f2a88224e70b6e6050559b2c31e8bb"
