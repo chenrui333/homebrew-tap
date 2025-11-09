@@ -29,9 +29,9 @@ class Locport < Formula
   end
 
   test do
-    assert_match "Projects index", shell_output("#{bin}/locport info")
+    assert_match "Index file", shell_output("#{bin}/locport info")
 
-    (testpath/".local/share/locport/projects").write("[]")
-    assert_match "All hosts and ports are unique", shell_output("#{bin}/locport list")
+    system bin/"locport", "add", "myapp.localhost"
+    assert_match "myapp.localhost", shell_output("#{bin}/locport list")
   end
 end
