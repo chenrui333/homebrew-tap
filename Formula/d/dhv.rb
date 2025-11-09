@@ -8,6 +8,15 @@ class Dhv < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/davep/dhv.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44aaec15aadb242f8445d33f36c70bcac236102c06dffdea1c4b652a83fe0dbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbf5fdf558f561e347975857f5ba19a6a13bd5766a82bfbf6943539a66845377"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad5c1a68d625e5f2a8c77ca6ba10478f4474c89edcea423d6367fd9543f5ce15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb8a22f72be5382c7133e09e79fba5afb6264c2212ead2f32804b29d9ad96293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8fa0bf0c758c3a1349b9338cab8ee4aa7bbfc90d68a32ebcd4a43c57d791d6d"
+  end
+
   depends_on "rust" => :build # for textual_enhanced
   depends_on "python@3.14"
   depends_on "tree-sitter"
