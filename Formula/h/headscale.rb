@@ -1,8 +1,9 @@
 class Headscale < Formula
   desc "Open source, self-hosted implementation of the Tailscale control server"
   homepage "https://github.com/juanfont/headscale"
-  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "581fa3f150f6cb89025161a314a41bef25e4f2b88161b4625713c1e9a301895e"
+  url "https://github.com/juanfont/headscale.git",
+      tag:      "v0.27.0",
+      revision: "450a7b15ec7b08926738e308bd11ec17753d06ab"
   license "BSD-3-Clause"
   head "https://github.com/juanfont/headscale.git", branch: "main"
 
@@ -20,7 +21,7 @@ class Headscale < Formula
     ldflags = %W[
       -s -w
       -X github.com/juanfont/headscale/hscontrol/types.Version=#{version}
-      -X github.com/juanfont/headscale/hscontrol/types.GitCommitHash=#{tap.user}
+      -X github.com/juanfont/headscale/hscontrol/types.GitCommitHash=#{Utils.git_head}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/headscale"
