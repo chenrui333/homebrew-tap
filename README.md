@@ -123,6 +123,7 @@ brew install --cask <tool>
 - `cloud-run-mcp`
 - `cloudflare-ddns`
 - `cloudlens`
+- `cmdperf`
 - `cmdx`
 - `cnspec`
 - `cocainate`
@@ -151,12 +152,14 @@ brew install --cask <tool>
 - `datadog-mcp-server`
 - `dbee`
 - `dbin`
+- `dcv`
 - `ddev`
 - `debugg-ai-mcp`
 - `decktape`
 - `deepteam`
 - `dela`
 - `dg`
+- `dhv`
 - `di-tui`
 - `dnsforwarder`
 - `doit`
@@ -174,10 +177,13 @@ brew install --cask <tool>
 - `enry`
 - `envie`
 - `envtpl`
+- `envx`
 - `ergo`
+- `fairyglade-ly`
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
+- `fat`
 - `ferret`
 - `fex`
 - `firectl`
@@ -401,6 +407,7 @@ brew install --cask <tool>
 - `psq`
 - `public-ollama-finder`
 - `pubmed-mcp-server`
+- `pvetui`
 - `pyink`
 - `pyment`
 - `pyp`
@@ -430,6 +437,7 @@ brew install --cask <tool>
 - `rum`
 - `run`
 - `rustfilt`
+- `rustormy`
 - `sato`
 - `satty`
 - `saw`
@@ -475,6 +483,7 @@ brew install --cask <tool>
 - `superclaude`
 - `surgeon`
 - `swagger-mcp-server`
+- `systeroid`
 - `tantivy-cli`
 - `taskonaut`
 - `tattoy`
@@ -518,6 +527,7 @@ brew install --cask <tool>
 - `twiggy`
 - `twilio-mcp-server`
 - `ty`
+- `ugdb`
 - `unused-deps`
 - `uplift`
 - `urlhunter`
