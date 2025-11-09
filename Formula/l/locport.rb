@@ -7,8 +7,7 @@ class Locport < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "93fc50147ac6b40b0fbe6671fdb8622363cd8c4e71e0164ca98a6d6710e1aaf0"
+    sha256 cellar: :any_skip_relocation, all: "e7c8cd456b5d763c16658c44b220b887723a19bc825a3ba2d7b4e299bbabc321"
   end
 
   depends_on "ruby"
