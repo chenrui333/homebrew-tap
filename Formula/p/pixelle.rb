@@ -9,10 +9,11 @@ class Pixelle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "3b96bbeb18b25eae809960c1e0f3c8483a63bf4d413cf47d5172287b4b9abf86"
-    sha256 cellar: :any,                 arm64_sequoia: "bda72d8a1a66515af5e57cfe5d48d6396a44cd0d155bf5148b4b17ca2ac8d2d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "26529f55000aef1076e65a5ea672bb04cc2289f8453651ceae9278f9fcc4b271"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1aabde1d53714a0e2293e5cc90e1d8796fa847715e8607ba1c56bfb57e7aebf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ea2005982078bfdeb838526e07d5bc460d36528003b943709a01751838308442"
+    sha256 cellar: :any,                 arm64_sequoia: "666e09a36cae955a4c1c47ad1661b60d8fa7db34766fd30dc111a02bb91cac37"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c6e70b10d681fe2116d1a786db6e2b7b515d49a856cab41de222b6c9be48704"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94279600a3e0e08d8d4c533f35de4c086ea3dad1f4c583a534ccbbc42043d541"
   end
 
   depends_on "rust" => :build # for tiktoken
