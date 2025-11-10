@@ -8,9 +8,5 @@
   },
   "gtts": {
     "exclude_packages": ["certifi"]
-  },
-  "rallies-cli": {
-    "package_name": "rallies",
-    "exclude_packages": ["certifi", "numpy"]
   }
 }
