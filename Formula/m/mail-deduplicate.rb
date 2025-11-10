@@ -9,10 +9,12 @@ class MailDeduplicate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "481cf3c7ea2ff996e57a21c253e38ad54bc569de82b9828f9e78e35d104f1fc7"
-    sha256 cellar: :any,                 arm64_sonoma:  "9aafab550d476332954ae8742df4714b9f59f5ab1f0c3a7f73a77bf974eb402a"
-    sha256 cellar: :any,                 ventura:       "6b55f355e63e280e1fe68493338f329c5009eb7437986589c70500b1532bc680"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e11f2c23aa8b473a621b755d4c9e9db7433766b1e7d4a7c9a8164f40fbe6388b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9b62180b38cc45e6bcee6dd35e91331f959ac0e23272821f6ffad2a5d58afdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e3dddbde1bf2b834a9981259f20f9b59164ccd3782a488307202bb34c7c4344"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12350c013206a7107df58ad538c7dc748ceb25db005fcbccd5bf3ea06887f7b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce9f3bdd6b36c9dabc4fc23e15f9bcfb56b9b1d0d8542ddd4aaa9c3ab94a5905"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31973968feb782b6e5f2cd05fcd34becc65d5604450ae67114ee51ff7423b90d"
   end
 
   depends_on "certifi" => :no_linkage
