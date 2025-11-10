@@ -9,10 +9,11 @@ class Llmswap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f7c75911732558b3dd723957d57b8db3f24e5df2811f18135914b990f6141988"
-    sha256 cellar: :any,                 arm64_sequoia: "beadc2a038aa92bd410f18339d8c25a9b5883efdef01767fd4dc88bf34398aca"
-    sha256 cellar: :any,                 arm64_sonoma:  "37dde4f5bef792673d9f6f2832d0a9cf5548503959da3e857ca3b7cb4bdc2c60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1cd9267d4dee29926c4adbb0e545d9c3a7a77d1ef606f25f7ae6883773abd31"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "4e35bce833b138deae4db3881646ed4960e43b4ce92ba361d23835ba90cec02d"
+    sha256 cellar: :any,                 arm64_sequoia: "622a89fbb61bd8ebd2e788f16e3ef4d19520531a6d940e0e2da02856070a16fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "8195e8554e29001d4536cea401a0a6de5430c49e862c607e329c7da1524e735a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24256eefe4b04f37e4f5c9572e9cad3323dccb104ed4034ea78a282f58a26b48"
   end
 
   depends_on "rust" => :build # for jiter
