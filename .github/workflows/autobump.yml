@@ -42,7 +42,7 @@ jobs:
         id: autobump
         run: |
           autobump_list=$(brew tap-info chenrui333/homebrew-tap --json | \
-            jq -c -r '.[0]["formula_names"] | map("chenrui333/tap/" + .) | join(" ")')
+            jq -c -r '.[0]["formula_names"] | join(" ")')
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump formulae
@@ -51,4 +51,5 @@ jobs:
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           formulae: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
+          tap: chenrui333/tap
           fork: false
