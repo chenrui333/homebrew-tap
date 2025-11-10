@@ -9,11 +9,8 @@ class Gtts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d50f7730abed4d574d41e653cbb3fefdc74b3d02e9c8120bc72d0c0435fabab2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1236079c98d301052367ece4073ad5f5750e6926386acb4e5cd44dc3d3a30b64"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5d91426a2a8738db9d0cad6185bec2a0f75027ad42d46bb1b87c583e7300d19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5a793a191d2114af45b440c925424711f13fb0474f834bc5b387ba7162a55cc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "67979c55f273e09e773183be9e0efceb47860a0f88be5ad0cda41042a9d3a9b4"
   end
 
   depends_on "certifi" => :no_linkage
