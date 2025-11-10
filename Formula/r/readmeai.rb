@@ -9,10 +9,12 @@ class Readmeai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "f3d5182935297c8db3ee28d1c7961c4241df20dc38ddef00fe49d78df8cc210d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb00437ca76e1f9dd2229cb5b7d28edbf2abc223c458fd04f449780b918d61a9"
-    sha256 cellar: :any,                 ventura:       "0be54afa57632b8ae94fefa14191631a3f7bf05e0ce7b35a3cc58b27a5eac149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f87386fe5fb0d187c05d43dfef3c4a7272f9dbdcd6ea09116b76dd7588a586c0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8bd13d1db0445ef3ecc8a518fdced5dc838df1fa0af1d66543db08a3c60c3e49"
+    sha256 cellar: :any,                 arm64_sequoia: "dcd6a921a50b586899ec1a13486fcddaad91b519be0c90e8499edaeecac70454"
+    sha256 cellar: :any,                 arm64_sonoma:  "67bd431e6c9bcb8c30789ea7960eabb29fe13fbe2bd4a2746c68d4183db7d39a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c09f8020517c005ef08412fb4bde7f4070ae2e7190c0488df142fa6a35040292"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "306299fda1f8cd76db902a00c0fbc4199cc69a6b050f88daaf8e557bc3897d46"
   end
 
   depends_on "rust" => :build # for jiter
