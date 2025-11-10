@@ -19,8 +19,6 @@ class TomlF < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "gcc" # provides gfortran
 
-  patch :DATA
-
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -41,28 +39,3 @@ class TomlF < Formula
     assert_equal "ok", shell_output("./test").strip
   end
 end
-
-__END__
-diff --git a/meson.build b/meson.build
-index 9fa8f09..c94ccbf 100644
---- a/meson.build
-+++ b/meson.build
-@@ -74,5 +74,7 @@ if install
- endif
-
- # add the testsuite
--fpm_toml = meson.current_source_dir()/'fpm.toml'
--subdir('test')
-+if get_option('tests')
-+  fpm_toml = meson.current_source_dir()/'fpm.toml'
-+  subdir('test')
-+endif
-diff --git a/meson_options.txt b/meson_options.txt
-new file mode 100644
-index 0000000..93d92ff
---- /dev/null
-+++ b/meson_options.txt
-@@ -0,0 +1,3 @@
-+# Build options for toml-f
-+option('tests',
-+  type: 'boolean', value: false, description: 'Build test suite')
