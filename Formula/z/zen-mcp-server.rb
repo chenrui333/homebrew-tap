@@ -16,6 +16,7 @@ class ZenMcpServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "069f152b3a835316efb467993d52094e01e9f3e462071ca1e88b67bee48c4247"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
