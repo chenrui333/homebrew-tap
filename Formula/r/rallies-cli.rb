@@ -9,10 +9,12 @@ class RalliesCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "7568f67bce81507a06238794a30d9e7c7004eebae5d0e1996805f4417fe42f09"
-    sha256 cellar: :any,                 arm64_sonoma:  "190700fddfa19a0c77ee8b4cd7f0960d287ef007e25120fba03e42cd0f19a8f6"
-    sha256 cellar: :any,                 ventura:       "15151ba15a6b4965fb540e9bda6d77dcda4b4f7c89f3a8abc1b476e6419bda53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca6d65abaa4afe7743c14b0e4c14af740f196d62a502b47445d82c2ad7593202"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d83483bc880ae86cad8a449cee42530566bf30724dafe0759c9a03158780828e"
+    sha256 cellar: :any,                 arm64_sequoia: "a28aab417e25b1734b75946eb2294f8d862533947ccf0f21fd6737e16732bf65"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ff8b661c5eb6557694117c0b9c7d50c2df405a850372964b1bd57f305811451"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e69f9e55ab9eb17bc7437ba21c552a3c25fa859384692882f0579d42f349a34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e5eb63cabfde207f4fb8f0199b5ac069d845409f4614c866ffd64085cf977a0"
   end
 
   depends_on "rust" => :build # for pydantic-core
