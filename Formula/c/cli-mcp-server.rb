@@ -9,8 +9,8 @@ class CliMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "8697f392a92a5ac8bd70263e0bb21fd0dd742350285d4725955a4270cf0285c9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "3569a514f7f9c54a7e51468c1602968d7a195e31fdc1bcd51e16d539dadee778"
   end
 
   depends_on "certifi" => :no_linkage
