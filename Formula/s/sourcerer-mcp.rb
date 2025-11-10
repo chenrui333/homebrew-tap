@@ -7,10 +7,10 @@ class SourcererMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1b9644fc3c413986d01d3783f8bb9b86769ffb67e95d4e976d5f97b089d8195"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5668a854753499f521fa80d696a601d32c1b87e750bf71dbb389c3d7dc674c95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef5266a79b5f15d85ef24a7c9b2ea6712c7d0086eea15110a168f71e7e164e58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7523c8d441f239b999220cd18da4f9d87459cf3a957265c786bbd396cf053f3c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd2893223213a3e90c7b12863c13602b54ef953fb32444e1795b7965f8a87ab0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75ad1ae8195a88ec24c3bedaed05288dafa648e77b4234e6c1b102c84baab3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac11afb05940d0bb2fccfa838dffaf25483b6c0f08d4c8b044d7e3301ee9846f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e081ed82ae1db7bbc149b560db286aab016278077b9bdbf97db9df852fdc810b"
   end
 
   depends_on "go" => :build
