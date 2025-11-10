@@ -9,9 +9,12 @@ class LogfireMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "4ddcbe196367edb00011cff87147785fbf0e84963ca838c72063543857cb7afe"
-    sha256 cellar: :any,                 arm64_sonoma:  "61ae269b8dda06345219dcffeb3ecdd5f71dfc94b900208eefa6bf90cd782de5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "897224da2124c1af96e38327082d59fa3db358bf571012ca715f140600e707a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5ac37dd7c462748fc6e95770f5fc88b473d9fb4aeb15628dd8fa0de6ac9416e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeca5f61b7de8b0a18373a1000ccd76f377960267dae991da0225385b1a18718"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "386cd8be77907c1a89960003e467e8acbe5bd90b63e53bc17ad864c142f79ab5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77daeb7762f9bc1f6e8962c32ca45d8330cd7d2419d26d82b29542c068d23460"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e0a46f4ab5270e15beb5c846eb7e281c0735f0fafc60a160ebcd4050fbb4cac"
   end
 
   depends_on "certifi" => :no_linkage
