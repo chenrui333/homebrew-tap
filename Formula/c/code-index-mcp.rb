@@ -3,8 +3,8 @@ class CodeIndexMcp < Formula
 
   desc "MCP server for LLMs to index, search, and analyze code repos"
   homepage "https://github.com/johnhuang316/code-index-mcp"
-  url "https://files.pythonhosted.org/packages/45/26/d034291f8baf31a7d6b189dcd2dd6526eedde0db89560c093c9fa520605e/code_index_mcp-2.2.1.tar.gz"
-  sha256 "f7ee8545551d8444bb7b057ed2e18b17032bbf2fc910916f6f5f329788dd2583"
+  url "https://files.pythonhosted.org/packages/55/87/d89e49264ba8ccbb038cb32c36d3d11eb72dc7fe02a6cfa078e339a17de1/code_index_mcp-2.8.0.tar.gz"
+  sha256 "325c269f0b487ac1caaddf9656845ff3fc541ca4fa97c77b7d673e8898484a5a"
   license "MIT"
 
   bottle do
@@ -18,14 +18,12 @@ class CodeIndexMcp < Formula
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "pydantic-core" => :no_linkage
+  depends_on "cryptography" => :no_linkage
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py python-dateutil]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -78,8 +76,8 @@ class CodeIndexMcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/69/2b/916852a5668f45d8787378461eaa1244876d77575ffef024483c94c0649c/mcp-1.19.0.tar.gz"
-    sha256 "213de0d3cd63f71bc08ffe9cc8d4409cc87acffd383f6195d2ce0457c021b5c1"
+    url "https://files.pythonhosted.org/packages/33/54/dd2330ef4611c27ae59124820863c34e1d3edb1133c58e6375e2d938c9c5/mcp-1.21.0.tar.gz"
+    sha256 "bab0a38e8f8c48080d787233343f8d301b0e1e95846ae7dead251b2421d99855"
   end
 
   resource "msgpack" do
@@ -92,14 +90,14 @@ class CodeIndexMcp < Formula
     sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/f3/1e/4f0a3233767010308f2fd6bd0814597e3f63f1dc98304a9112b8759df4ff/pydantic-2.12.3.tar.gz"
-    sha256 "1da1c82b0fc140bb0103bc1441ffe062154c8d38491189751ee00fd8ca65ce74"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
     sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+  end
+
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "python-dotenv" do
@@ -123,13 +121,13 @@ class CodeIndexMcp < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/42/6f/22ed6e33f8a9e76ca0a412405f31abb844b779d52c5f96660766edcd737c/sse_starlette-3.0.2.tar.gz"
-    sha256 "ccd60b5765ebb3584d0de2d7a6e4f745672581de4f5005ab31c3a25d10b52b3a"
+    url "https://files.pythonhosted.org/packages/db/3c/fa6517610dc641262b77cc7bf994ecd17465812c1b0585fe33e11be758ab/sse_starlette-3.0.3.tar.gz"
+    sha256 "88cfb08747e16200ea990c8ca876b03910a23b547ab3bd764c0d8eb81019b971"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/a7/a5/d6f429d43394057b67a6b5bbe6eae2f77a6bf7459d961fdb224bf206eee6/starlette-0.48.0.tar.gz"
-    sha256 "7e8cee469a8ab2352911528110ce9088fdc6a37d9876926e73da7ce4aa4c7a46"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "tree-sitter" do
@@ -155,16 +153,6 @@ class CodeIndexMcp < Formula
   resource "tree-sitter-zig" do
     url "https://github.com/tree-sitter-grammars/tree-sitter-zig/archive/refs/tags/v1.1.2.tar.gz"
     sha256 "612d67059faa90ec7691e5d786d70d8f7c2c8b15b83de901b9b801122ad4cf25"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
   end
 
   resource "uvicorn" do
