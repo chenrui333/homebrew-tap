@@ -9,10 +9,12 @@ class Papis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "efe2defd9396c18b5e6c08f86acf2c32776ad511d2acf481a3a5a654c6d11789"
-    sha256 cellar: :any,                 arm64_sonoma:  "d627fe970eb10c8dc03750a95c44e6825d98b10c0ec37bf44b5de565e4feabcf"
-    sha256 cellar: :any,                 ventura:       "1f56d7a074b8ed1884c9ed06f11b75b74c6963aec37e8ce967b12bb0f420bce6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35ed302677d371d64f3e06ec25e445895b9714df731546a65eb0ea18f039c1dc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "44aa40e384c2c3ae42978feb26d7caee3e5f5cbf5d8040b5f60e6a272ff89671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5693d473259db6d051579cf2b0e656a455e7eb17bbd6d15b8072cbe92164730"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67fce050f11baf4de8752b78e31aac098269fb4edea0632035041231a4ab3242"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6d71140bf7e08254a22a883fe66b8b0d847440791b0e66136d3d6f2b1c6acd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2af2ea1e61523aab6b5842222d611f2a87b8e461eaa492e2495e51292587e09"
   end
 
   depends_on "certifi" => :no_linkage
