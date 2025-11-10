@@ -13,10 +13,11 @@ class Apkeep < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbd98a43607b52c3e8f47854e1bd3c0fe04bcac711b13fdb98684a4491198fb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ef7df84f1fe13312cd1096abbcb04cdd5eecf2a94e07d7e4a24d12e994bc317"
-    sha256 cellar: :any_skip_relocation, ventura:       "4419fc3890843867991226173e5493e2145d333b5bdddd6d93c3c9140ad73599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70e851ecd533938b55112588b15fa6841a998261903e524d0b1f4d35cc176166"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ad02304c71f8eed1279e94d751080a1a0b12612c4a1ddb184413140f96d1767"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e3bdbfbc029ea41d6a653290c5a49c359e777ece21bab46ec9032d71504633b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76b43a5321abb3bfd3b877204593b819ae73bf75f925ee0088e49c20039d5029"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57f16471ffe1d4ff4c34c1b8abf9bb45cc46c4f5cd08b4c5240fb7a48b917ab2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5770090144270b7e1b2530b2a139b94947c78a635e3f9342eaa48b501a8b657b"
   end
 
   depends_on "pkgconf" => :build
