@@ -17,7 +17,7 @@ class Torrra < Formula
   depends_on "libtorrent-rasterbar"
   depends_on "python@3.14"
 
-  # pypi_packages exclude_packages: %w[certifi libtorrent]
+  pypi_packages exclude_packages: %w[certifi libtorrent]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
