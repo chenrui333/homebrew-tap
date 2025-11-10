@@ -1,10 +1,15 @@
 class AxiomMcpServer < Formula
   desc "MCP server for Axiom"
   homepage "https://github.com/axiomhq/mcp-server-axiom"
-  url "https://github.com/axiomhq/mcp-server-axiom/archive/refs/tags/v0.0.4.tar.gz"
-  sha256 "73920c83e7da63e4747dce3ac867a32458db9079fed56a0b6f3ef7e882b5134c"
+  url "https://github.com/axiomhq/mcp-server-axiom/archive/refs/tags/v0.0.5.tar.gz"
+  sha256 "11bcaa469544c175b9e35f5694644064aabe74b425a250c082fb5e19cbc257a1"
   license "MIT"
-  revision 1
+  head "https://github.com/axiomhq/mcp-server-axiom.git", branch: "master"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
