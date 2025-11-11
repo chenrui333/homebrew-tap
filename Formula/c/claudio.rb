@@ -1,9 +1,8 @@
 class Claudio < Formula
   desc "Hook-based audio plugin for Claude Code that plays contextual sounds"
   homepage "https://github.com/ctoth/claudio"
-  url "https://github.com/ctoth/claudio/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "5129a0926a4e001e2a39492207d7369ddc1a56f050f87104a668315829c88d74"
-  revision 1
+  url "https://github.com/ctoth/claudio/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "af01e82acfbddb4acb93909e12eb9d715b350cb6dcb49f8071e7f3873a5fd0e6"
   head "https://github.com/ctoth/claudio.git", branch: "master"
 
   bottle do
