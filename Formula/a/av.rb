@@ -31,7 +31,7 @@ class Av < Formula
     system "git", "init"
 
     output = shell_output("#{bin}/av init 2>&1", 1)
-    assert_match "error: this repository doesn't have a remote origin", output
+    assert_match "Failed to determine repository default branch", output
     assert_path_exists testpath/".git/av"
   end
 end
