@@ -1,8 +1,8 @@
 class ShopifyCli < Formula
   desc "CLI which helps you build against the Shopify platform faster"
   homepage "https://shopify.dev/"
-  url "https://registry.npmjs.org/@shopify/cli/-/cli-3.87.1.tgz"
-  sha256 "b27709f7f0e6c1933d2c6d14e14fa1a102bd05c0e445f299a9d72a00d1b4accd"
+  url "https://registry.npmjs.org/@shopify/cli/-/cli-3.87.2.tgz"
+  sha256 "e74bcdfcfa3fd691d207d805a286b471e4728a0b581489d843bcf13d0766195d"
   license "MIT"
 
   bottle do
