@@ -1,10 +1,9 @@
 class Wuchale < Formula
   desc "Protobuf-like i18n from plain code"
   homepage "https://wuchale.dev/"
-  url "https://registry.npmjs.org/wuchale/-/wuchale-0.18.3.tgz"
-  sha256 "fcfebab9291f956a087bd3836ee9c8d5f5b69127eb1e346eab5ab979b5122b95"
+  url "https://registry.npmjs.org/wuchale/-/wuchale-0.18.4.tgz"
+  sha256 "936f6286b738b51227fcd3cb03a6ab6f2e829fd6117bca28b87e10a1614cada5"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
