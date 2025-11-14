@@ -21,7 +21,7 @@ jobs:
       statuses: write
     steps:
       - name: Label pull request
-        uses: Homebrew/actions/label-pull-requests@6608395265063b0b4534ee5672930fa31cd45f94
+        uses: Homebrew/actions/label-pull-requests@e58f0b60d43355cab9d13c7ecf58a4fbfced93c2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           def: |
