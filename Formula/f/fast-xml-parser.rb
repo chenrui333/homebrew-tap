@@ -7,7 +7,7 @@ class FastXmlParser < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "3d41e3932efb3fe100c46d851a2bff7b0f4b2765845dbc74e5b182867c112af2"
+    sha256 cellar: :any_skip_relocation, all: "ee7cc5eda12b511bebf614eec05ad78437882ab4d72dada08b63fc2b793369b3"
   end
 
   depends_on "node"
