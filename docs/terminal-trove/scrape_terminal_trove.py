@@ -10,13 +10,32 @@ import json
 import os
 import re
 import time
+from collections import OrderedDict
+
+# Guard against stale placeholder links previously scraped from TerminalTrove
+PLACEHOLDER_PREFIX = "https://github.com/terminaltrove"
+
+
+def is_placeholder_link(link):
+    if not link:
+        return True
+    return link.rstrip('/').startswith(PLACEHOLDER_PREFIX)
 
 def load_link_cache(cache_file):
     """Load cached project links"""
     if os.path.exists(cache_file):
         try:
             with open(cache_file, 'r') as f:
-                return json.load(f)
+                cache = json.load(f, object_pairs_hook=OrderedDict)
+                # Drop placeholders so we re-fetch on next run but keep order stable
+                filtered = OrderedDict()
+                for k, v in cache.items():
+                    if is_placeholder_link(v):
+                        continue
+                    if v and '?' in v:
+                        v = v.split('?')[0]
+                    filtered[k] = v
+                return filtered
         except:
             return {}
     return {}
@@ -24,8 +43,15 @@ def load_link_cache(cache_file):
 def save_link_cache(cache, cache_file):
     """Save project links to cache"""
     try:
+        safe_cache = OrderedDict()
+        for k, v in cache.items():
+            if is_placeholder_link(v):
+                continue
+            if v and '?' in v:
+                v = v.split('?')[0]
+            safe_cache[k] = v
         with open(cache_file, 'w') as f:
-            json.dump(cache, f, indent=2)
+            json.dump(safe_cache, f, indent=2)
     except:
         pass
 
@@ -43,21 +69,19 @@ def get_project_link(tool_url, cache):
         with urllib.request.urlopen(req, timeout=5) as response:
             html = response.read().decode('utf-8')
 
-        # Look for project links: GitHub, GitLab, Codeberg, etc.
-        # Priority: GitHub > GitLab > Codeberg > other repos
-        patterns = [
-            r'href=["\']?(https://github\.com/[^"\'\s<>]+)["\']?',
-            r'href=["\']?(https://gitlab\.com/[^"\'\s<>]+)["\']?',
-            r'href=["\']?(https://codeberg\.org/[^"\'\s<>]+)["\']?',
-            r'href=["\']?(https://[a-zA-Z0-9.-]+\.(com|org|io|dev)/[^"\'\s<>]+)["\']?'
-        ]
-
-        for pattern in patterns:
-            match = re.search(pattern, html)
-            if match:
-                link = match.group(1)
-                cache[tool_url] = link
-                return link
+        # Collect first external link from anchors on the project page
+        for match in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\']', html, re.IGNORECASE):
+            link = match.group(1)
+            if not link.lower().startswith("http"):
+                continue
+            link = link.rstrip(').,\'"')
+            if 'terminaltrove.com' in link:
+                continue
+            # Strip tracking params
+            if '?' in link:
+                link = link.split('?')[0]
+            cache[tool_url] = link
+            return link
 
         cache[tool_url] = None
         return None
@@ -166,10 +190,15 @@ def generate_markdown(tools_data):
             # Escape pipes in description
             description = description.replace('|', '\\|')
 
-            link = tool['project_link'] if tool['project_link'] else '-'
+            link = tool['project_link'] if tool['project_link'] else None
+            if not link:
+                link = tool['url']
+
             # Strip ref parameter from links
             if link and '?' in link:
                 link = link.split('?')[0]
+
+            link = link if link else '-'
 
             markdown += f"| {tool_name} | {description} | {link} |\n"
 
