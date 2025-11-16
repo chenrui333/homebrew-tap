@@ -8,6 +8,16 @@ class Hapless < Formula
   license "MIT"
   head "https://github.com/bmwant/hapless.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67d14816ea446e32d5abd4ccf044013e0bc8cea1c058277b8a62d378c7778608"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8fd7364840996af1e6f9f8c229f4965f97e433f0622532ae34b8013edbbbade"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6909b581f4a11567eb87ff6ce8f1efe4689038fe0481cacb426997064eeec41a"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1cc92ad5afb63cbc5ca30a0b6e017f38394661311116e6ca5168801f59cdd654"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12474aab4de5a25e642df0e2e4006f7ee3569c11867fb840c0da48c996ce7004"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59d9b282d77710b1e98c16cce090d847f065ae157ce89d95ea6667e50da7c8be"
+  end
+
   depends_on "python@3.14"
 
   resource "click" do
