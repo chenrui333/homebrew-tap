@@ -15,9 +15,6 @@ class Terrawiz < Formula
   depends_on "node"
 
   def install
-    # upstream bug report, https://github.com/efemaer/terrawiz/issues/59
-    inreplace "dist/src/index.js", "1.0.0", version.to_s
-
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
