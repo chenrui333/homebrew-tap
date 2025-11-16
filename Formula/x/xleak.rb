@@ -6,6 +6,15 @@ class Xleak < Formula
   license "MIT"
   head "https://github.com/bgreenwell/xleak.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1485eb2196a70f10b28cf30c9667ecbabd339d58c064af372da8d23d4e777c11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "899ee0cac191f45ea20386f7fc7ebe7131926f72b1b3875d1639968ca47be329"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39228dd3d0ac4eaf56a2a0187a0911bcf436920433332e53cd4893def68958d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55360688f5aaffbb67b1b982ef076c056df9e7522dd0b35c1f818442491b5862"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df1b050d9a1203cb2fbf97746aa97b370a1f06f11861d09f46c2222f3e34616"
+  end
+
   depends_on "rust" => :build
 
   def install
