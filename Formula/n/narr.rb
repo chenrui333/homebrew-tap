@@ -4,6 +4,7 @@ class Narr < Formula
   url "https://github.com/IljaN/narr/archive/refs/tags/0.2.0.tar.gz"
   sha256 "f5913c56d842ba37802fa792a30d8fbe10a608d8a3133a1d593ccc9a22b70f02"
   license "Unlicense"
+  revision 1
   head "https://github.com/IljaN/narr.git", branch: "master"
 
   bottle do

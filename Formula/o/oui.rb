@@ -4,6 +4,7 @@ class Oui < Formula
   url "https://github.com/thatmattlove/oui/archive/refs/tags/v2.0.6.tar.gz"
   sha256 "33d7aecf62b0b61e20801c298e60e4c59c564bae40367bf0b379b71d5f425a9a"
   license "BSD-3-Clause-Clear"
+  revision 1
   head "https://github.com/thatmattlove/oui.git", branch: "main"
 
   bottle do

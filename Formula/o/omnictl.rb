@@ -4,6 +4,7 @@ class Omnictl < Formula
   url "https://github.com/siderolabs/omni/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "0788890dee48aaf04d12921862e9f24db2c475cedcc87adc56148dcb2b6f0a34"
   # license "BSL-1.1"
+  revision 1
   head "https://github.com/siderolabs/omni.git", branch: "main"
 
   bottle do

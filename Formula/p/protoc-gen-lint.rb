@@ -4,6 +4,7 @@ class ProtocGenLint < Formula
   url "https://github.com/ckaznocha/protoc-gen-lint/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "0085935e4e07ad7c341dc09ac8e023da4cbc46981a8da4e95efa354b66dfe49c"
   license "MIT"
+  revision 1
   head "https://github.com/ckaznocha/protoc-gen-lint.git", branch: "master"
 
   bottle do

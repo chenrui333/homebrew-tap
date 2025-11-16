@@ -4,6 +4,7 @@ class Perfops < Formula
   url "https://github.com/ProspectOne/perfops-cli/archive/refs/tags/v0.8.18.tar.gz"
   sha256 "05ace04f3dc3ff76e49e4b2971ebb9ded8b8e1cd91308984c38e47da2e0a51c2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ProspectOne/perfops-cli.git", branch: "develop"
 
   bottle do

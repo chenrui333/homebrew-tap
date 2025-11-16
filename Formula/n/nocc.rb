@@ -4,6 +4,7 @@ class Nocc < Formula
   url "https://github.com/VKCOM/nocc/archive/refs/tags/v1.2.tar.gz"
   sha256 "075cb42bdd00e07b62879ada30ece3aaf860ca46203a033a0f9da344fd43eb59"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
