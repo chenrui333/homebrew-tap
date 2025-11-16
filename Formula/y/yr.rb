@@ -6,6 +6,15 @@ class Yr < Formula
   license "GPL-3.0-only"
   head "https://git.sr.ht/~timharek/yr", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb42f8077f2494424bc044bb6da060987b261328ea8d71b3b78c7f23c5bcd597"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb42f8077f2494424bc044bb6da060987b261328ea8d71b3b78c7f23c5bcd597"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb42f8077f2494424bc044bb6da060987b261328ea8d71b3b78c7f23c5bcd597"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c64d0b86bbc121e2a7fb82f51fbe2189abd20d5dc9204534e3ce1216fe2db22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6caa51fb283113c5f6ca104ce87512b5699858bc9d384dacbac61d0f03c35fc6"
+  end
+
   depends_on "go" => :build
 
   def install
