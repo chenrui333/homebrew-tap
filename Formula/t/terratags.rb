@@ -7,11 +7,11 @@ class Terratags < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4babb48b4f21fcc8c08a49009821ec59454ef26136c28ad5fff23b5138a2a991"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4babb48b4f21fcc8c08a49009821ec59454ef26136c28ad5fff23b5138a2a991"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4babb48b4f21fcc8c08a49009821ec59454ef26136c28ad5fff23b5138a2a991"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "851c8cfded122942630b2cb139c1abfaf5cb3ac197dd4b4a1e8b6f263e3e784d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "139c1acf59c920f38f744b4534079539257d6db1213b0c6725914ae8a2fe92a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e88143e05b5c1865458d7bfe0dae15d6b1c13d495f6c7cad6eddabe9b6652a6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e88143e05b5c1865458d7bfe0dae15d6b1c13d495f6c7cad6eddabe9b6652a6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e88143e05b5c1865458d7bfe0dae15d6b1c13d495f6c7cad6eddabe9b6652a6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc4ef6ed480be9022f7829c35332332f375eea2ecae0ef4d8aeb6b7fd4143562"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8720b60936404ee2291eebc3aee6c9a599d043b8e969ba3cd593da55dd5d352"
   end
 
   depends_on "go" => :build
