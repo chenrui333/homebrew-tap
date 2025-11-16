@@ -5,6 +5,9 @@ class Fnc < Formula
   sha256 "49f94c67e00213440d84f3b09bcf75850f9b6e8d8721856d68f4596c49cec780"
   license "ISC"
 
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
