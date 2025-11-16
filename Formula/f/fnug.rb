@@ -8,6 +8,15 @@ class Fnug < Formula
   license "GPL-3.0-only"
   head "https://github.com/nickolaj-jepsen/fnug.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "21c9cfb42d670fea156b0d396b678ca025ee2c4edb2d39765bcc9f5c52bf9ded"
+    sha256 cellar: :any, arm64_sequoia: "3e99c0510b9a8890957d6e432ae9dd9d1be5600ac146ae463a3b2fb9a2ab75d1"
+    sha256 cellar: :any, arm64_sonoma:  "6cfb7af2ed55a6624d5e2cc3b35f7d96b37efe7a65a1e49ff4295774e8f707dd"
+    sha256               arm64_linux:   "fad6bf37d2613145c978881cbd12de01ca921eba2abbb8fe4abf131c646405c7"
+    sha256               x86_64_linux:  "118232340c8722f60bf0f3831aab08f9faf153e01d5981fefb4d82bf68656c2f"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.14"
 
