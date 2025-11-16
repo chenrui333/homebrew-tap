@@ -8,11 +8,11 @@ class KubectlTree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "341d4f4411d60d4c4dd85dd11d59b683bf521a84130494ab5d9d1331fbb8b16f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c41c1f08f10bd8229da9b966a6ec78c4f7c591b0ad1ea4312379b75a0d37302"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f12b4e7321e5dae6b98fd00c4a82b9dc8cf57dfe45235dc186685d2f36eb2539"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d3470c4e4df62354cbd0bdd41d0a2a08cb73339a5d037c532bddfbc691a4bfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c9943abcc27aecd25c91a158f0a22e99e56a799c8b830a93bc0a569e6f59c76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5bb1489781ec03c45d956cde41a207462ad07a2be4c8b8ed489e998bdbe5ad5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60ae0cad0e115277b0a345a75f6014f28f677b4a0a361bd6b9853a8ea7fdad68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1cf906de6664e7666625137e85a0bdc7a9d8fcf003256e2fe20d887105d779b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ae02b6c16d31d2757c8545eebd801dfd3edb2140020de052bb66b91354b1fa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d25f8cc76dc873e61c3ca7abe548895577cf94d935ec7261294d192bbad83b75"
   end
 
   depends_on "go" => :build
