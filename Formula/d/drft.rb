@@ -6,6 +6,15 @@ class Drft < Formula
   license "BSD-3-Clause"
   head "https://codeberg.org/nightsail/drft.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d10f0615f746c0fc5f24f74d9ca454089484ce0c626b088bd25189014bf52da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b47259a6975620c95bee7a5c1f309d814099de0b8a4947dbb572c6b69905fbeb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe08b3cbbd71a5c5a1f38254792ddb2509556b2d0d72605df6f9e1282f449a6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4db4a126bc2e4e1ac6ff9771c77560c1355e764cc8e006cf41b0d33065c62dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "911504535245190924a4886c6c27ba75810a4765e5e8d5bf5ae113fae25e3d4e"
+  end
+
   depends_on "rust" => :build
 
   def install
