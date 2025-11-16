@@ -272,6 +272,7 @@ brew install --cask <tool>
 - `jiggy`
 - `jjj`
 - `jl`
+- `jocalsend`
 - `jplot`
 - `jsonl-graph`
 - `jsrpc`
@@ -358,6 +359,7 @@ brew install --cask <tool>
 - `npkill`
 - `npm-np`
 - `nvrs`
+- `oatmeal`
 - `octelium`
 - `octotype`
 - `ohy`
