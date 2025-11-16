@@ -6,6 +6,11 @@ class E1s < Formula
   license "Apache-2.0"
   head "https://github.com/keidarcy/e1s.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "124254b8071bd2c12d297884f09847f9d9ea5ac99c090292128d5c1394d2af37"
