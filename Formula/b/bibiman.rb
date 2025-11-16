@@ -15,18 +15,23 @@ class Bibiman < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/bibiman --version")
 
-    test_file = testpath/"test.bib"
-    test_file.write("")
+    # failed with Linux CI, `No such device or address (os error 6)`
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    test_config = testpath/".config/bibiman/bibiman.toml"
-    test_config.write("")
+    begin
+      test_file = testpath/"test.bib"
+      test_file.write("")
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"bibiman", "--config-file", test_config.to_s, test_file.to_s, [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "Bibliographic Entries", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+      test_config = testpath/".config/bibiman/bibiman.toml"
+      test_config.write("")
+
+      output_log = testpath/"output.log"
+      pid = spawn bin/"bibiman", "--config-file", test_config.to_s, test_file.to_s, [:out, :err] => output_log.to_s
+      sleep 1
+      assert_match "Bibliographic Entries", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
