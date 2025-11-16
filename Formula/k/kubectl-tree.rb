@@ -23,10 +23,9 @@ class KubectlTree < Formula
   end
 
   test do
-    # no version command
     assert_match "Show sub-resources of the Kubernetes object", shell_output("kubectl tree --help")
 
     output = shell_output("kubectl tree deployment -A 2>&1", 1)
-    assert_match "failed to fetch api groups from kubernetes", output
+    assert_match "couldn't get current server API group list", output
   end
 end
