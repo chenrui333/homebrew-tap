@@ -171,6 +171,10 @@ def generate_markdown(tools_data):
             if link and '?' in link:
                 link = link.split('?')[0]
 
+            # Make link clickable
+            if link != '-':
+                link = f"[Link]({link})"
+
             markdown += f"| {tool_name} | {description} | {link} |\n"
 
         markdown += "\n"
