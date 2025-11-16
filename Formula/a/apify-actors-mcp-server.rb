@@ -25,7 +25,7 @@ class ApifyActorsMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/actors-mcp-server 2>&1", json, 1)
-    assert_match "User was not found or authentication token is not valid", output
+    output = pipe_output(bin/"actors-mcp-server", json, 0)
+    assert_match "Get detailed information about an Actor by its ID or full name", output
   end
 end
