@@ -8,6 +8,16 @@ class Squall < Formula
   license "MIT"
   head "https://github.com/driscollis/squall.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1266c0a662efdfbb62848f30ba52134ba015869e79b89281f8028c7cbc2409ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6b8f316356138d2ca7fe4c4037ffe1061b2a3d69b81f2abab4ebba47c088b22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95a5b58c8a78256eafa8d4189104ee8e7f0039cdcae9368a6ab7aadcf5c925bd"
+    sha256 cellar: :any_skip_relocation, sequoia:       "804ac93403e0450d57d7faf8a22267b131d5d38bbb1c6e8737bc6eef47a7f543"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6faa4f39f1390c26fe05b9bb929dc3c4b4c2f450e0c3f313da7d9f75d8c4d0a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca97098579fddabc4e0e2f453de4934f415eb63197a2e569cee18a8ebf092029"
+  end
+
   depends_on "python@3.14"
 
   resource "linkify-it-py" do
