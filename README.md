@@ -69,6 +69,7 @@ brew install --cask <tool>
 - `base-mcp-server`
 - `bearer`
 - `beelzebub`
+- `bibiman`
 - `bin-fq`
 - `blade-formatter`
 - `blindfold`
@@ -126,6 +127,7 @@ brew install --cask <tool>
 - `cmdperf`
 - `cmdx`
 - `cnspec`
+- `cobib`
 - `cocainate`
 - `code-index-mcp`
 - `code-pushup`
@@ -166,9 +168,11 @@ brew install --cask <tool>
 - `dory-cli`
 - `dotbins`
 - `dqy`
+- `drft`
 - `duster`
 - `dvm`
 - `dxt`
+- `e1s`
 - `eas-cli`
 - `elastop`
 - `emoj`
@@ -196,11 +200,13 @@ brew install --cask <tool>
 - `flow-editor`
 - `flowgger`
 - `flowrs`
+- `fnug`
 - `fortran-linter`
 - `foy`
 - `frep`
 - `fsociety`
 - `fuck-u-code`
+- `g1c`
 - `gemini-cli`
 - `get-port-cli`
 - `ghfetch`
@@ -243,7 +249,6 @@ brew install --cask <tool>
 - `hellwal`
 - `hexora`
 - `heyagent`
-- `hf-mcp-server`
 - `hf`
 - `holo-cli`
 - `horusec`
@@ -355,6 +360,7 @@ brew install --cask <tool>
 - `ni`
 - `ninjabot`
 - `nino`
+- `nkt`
 - `nocc`
 - `npkill`
 - `npm-np`
@@ -430,7 +436,6 @@ brew install --cask <tool>
 - `refurb`
 - `remark-cli`
 - `resinator`
-- `resterm`
 - `revanced-cli`
 - `rkik`
 - `rshell`
@@ -483,6 +488,7 @@ brew install --cask <tool>
 - `stripe-mcp-server`
 - `summon`
 - `superclaude`
+- `superstarryeyes-bit`
 - `surgeon`
 - `swagger-mcp-server`
 - `systeroid`
@@ -518,7 +524,6 @@ brew install --cask <tool>
 - `toml-f`
 - `tooka`
 - `toolctl`
-- `torrra`
 - `tparse`
 - `tpm`
 - `travelgrunt`
@@ -556,11 +561,13 @@ brew install --cask <tool>
 - `wisu`
 - `wuchale`
 - `xcpkg`
+- `xleak`
 - `xmlformatter`
 - `yajsv`
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
+- `yr`
 - `go-zzz`
 - `zen-mcp-server`
 - `zero`
