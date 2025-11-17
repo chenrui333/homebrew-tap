@@ -3,8 +3,8 @@ class Deepteam < Formula
 
   desc "LLM Red Teaming Framework"
   homepage "https://www.trydeepteam.com/"
-  url "https://files.pythonhosted.org/packages/da/46/0ff30a771109dfc17a747fe6460d1fd2417f1c9dbf74e49278842fe5cbe4/deepteam-1.0.0.tar.gz"
-  sha256 "c0cf934a38034d8b7221150b752a12725b738ccd4b23a59e777a42c8e03b4d82"
+  url "https://files.pythonhosted.org/packages/41/69/4b199eb66347a9efde80cd7e9d7d545fae455f39076a3fb299f79083f772/deepteam-1.0.2.tar.gz"
+  sha256 "3f73d2323080ee51f71e972e6c81e2d44551aa8e262e5a57263d8123f0942b1a"
   license "Apache-2.0"
 
   bottle do
@@ -43,8 +43,8 @@ class Deepteam < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/dd/f3/feb750a21461090ecf48bbebcaa261cd09003cc1d14e2fa9643ad59edd4d/anthropic-0.72.1.tar.gz"
-    sha256 "a6d1d660e1f4af91dddc732f340786d19acaffa1ae8e69442e56be5fa6539d51"
+    url "https://files.pythonhosted.org/packages/f0/07/f550112c3f5299d02f06580577f602e8a112b1988ad7c98ac1a8f7292d7e/anthropic-0.73.0.tar.gz"
+    sha256 "30f0d7d86390165f86af6ca7c3041f8720bb2e1b0e12a44525c8edfdbd2c5239"
   end
 
   resource "anyio" do
@@ -63,8 +63,8 @@ class Deepteam < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
+    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
   end
 
   resource "certifi" do
@@ -83,8 +83,8 @@ class Deepteam < Formula
   end
 
   resource "deepeval" do
-    url "https://files.pythonhosted.org/packages/a4/01/ea75796848e330d76837ea27c2bed4d7b2a4f219ec7f36913c2a4981c57d/deepeval-3.6.2.tar.gz"
-    sha256 "7c35214f693260ec38e1317e74bef2438640f182f380236992731503aefff974"
+    url "https://files.pythonhosted.org/packages/40/c6/c3dd2779839c1e9cd2504955d04b529b98effb59ef66efe903800545f757/deepeval-3.7.2.tar.gz"
+    sha256 "5e328168082d78eec09df4e6ef7019aaf709db7fe9d122cf2affa7254abf4525"
   end
 
   resource "distro" do
@@ -113,8 +113,8 @@ class Deepteam < Formula
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/82/49/1a724ee3c3748fa50721d53a52d9fee88c67d0c43bb16eb2b10ee89ab239/google_genai-1.49.0.tar.gz"
-    sha256 "35eb16023b72e298571ae30e919c810694f258f2ba68fc77a2185c7c8829ad5a"
+    url "https://files.pythonhosted.org/packages/09/74/1382f655a8c24adc2811f113018ff2b3884f333284ba9bff5c57f8dbcbba/google_genai-1.50.1.tar.gz"
+    sha256 "8f0d95b1b165df71e6a7e1c0d0cadb5fad30f913f42c6b131b9ebb504eec0e5f"
   end
 
   resource "googleapis-common-protos" do
@@ -193,13 +193,13 @@ class Deepteam < Formula
   end
 
   resource "ollama" do
-    url "https://files.pythonhosted.org/packages/d6/47/f9ee32467fe92744474a8c72e138113f3b529fc266eea76abfdec9a33f3b/ollama-0.6.0.tar.gz"
-    sha256 "da2b2d846b5944cfbcee1ca1e6ee0585f6c9d45a2fe9467cbcd096a37383da2f"
+    url "https://files.pythonhosted.org/packages/9d/5a/652dac4b7affc2b37b95386f8ae78f22808af09d720689e3d7a86b6ed98e/ollama-0.6.1.tar.gz"
+    sha256 "478c67546836430034b415ed64fa890fd3d1ff91781a9d548b3325274e69d7c6"
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/71/e3/cec27fa28ef36c4ccea71e9e8c20be9b8539618732989a82027575aab9d4/openai-2.7.2.tar.gz"
-    sha256 "082ef61163074d8efad0035dd08934cf5e3afd37254f70fc9165dd6a8c67dcbd"
+    url "https://files.pythonhosted.org/packages/04/0c/b9321e12f89e236f5e9a46346c30fb801818e22ba33b798a5aca84be895c/openai-2.8.0.tar.gz"
+    sha256 "4851908f6d6fcacbd47ba659c5ac084f7725b752b6bfa1e948b6fbfc111a6bad"
   end
 
   resource "opentelemetry-api" do
@@ -248,8 +248,8 @@ class Deepteam < Formula
   end
 
   resource "posthog" do
-    url "https://files.pythonhosted.org/packages/b3/03/ed31e77f260971ed633c13815107b08edf999c7d1ec769d6313765ec89cb/posthog-6.9.3.tar.gz"
-    sha256 "7d201774ea9eba156f1de46d34313e30b2384d523900fe8e425accc92486cc34"
+    url "https://files.pythonhosted.org/packages/48/20/60ae67bb9d82f00427946218d49e2e7e80fb41c15dc5019482289ec9ce8d/posthog-5.4.0.tar.gz"
+    sha256 "701669261b8d07cdde0276e5bc096b87f9e200e3b9589c5ebff14df658c5893c"
   end
 
   resource "propcache" do
@@ -258,8 +258,8 @@ class Deepteam < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
-    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
+    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
+    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
   end
 
   resource "pyasn1" do
@@ -313,8 +313,8 @@ class Deepteam < Formula
   end
 
   resource "pytest-rerunfailures" do
-    url "https://files.pythonhosted.org/packages/97/66/40f778791860c5234c5c677026d45c1a8708873b3dba8111de672bceac4f/pytest-rerunfailures-12.0.tar.gz"
-    sha256 "784f462fa87fe9bdf781d0027d856b47a4bfe6c12af108f6bd887057a917b48e"
+    url "https://files.pythonhosted.org/packages/de/04/71e9520551fc8fe2cf5c1a1842e4e600265b0815f2016b7c27ec85688682/pytest_rerunfailures-16.1.tar.gz"
+    sha256 "c38b266db8a808953ebd71ac25c381cb1981a78ff9340a14bcb9f1b9bff1899e"
   end
 
   resource "pytest-xdist" do
