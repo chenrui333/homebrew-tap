@@ -1,8 +1,8 @@
 class Junit2html < Formula
   desc "Convert junit.xml into gorgeous HTML reports"
   homepage "https://github.com/kitproj/junit2html"
-  url "https://github.com/kitproj/junit2html/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "d4155f4c79cc1db9140eb7851b14554bdcac4f92b815628c10a4162449619ab0"
+  url "https://github.com/kitproj/junit2html/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "a9940e248731f63665bb49f5d7b4ca32e612ccb396dc0d78a2515ab388bf0be9"
   license "MIT"
   head "https://github.com/kitproj/junit2html.git", branch: "main"
 
