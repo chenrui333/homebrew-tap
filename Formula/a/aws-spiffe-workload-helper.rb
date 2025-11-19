@@ -6,6 +6,15 @@ class AwsSpiffeWorkloadHelper < Formula
   license "Apache-2.0"
   head "https://github.com/spiffe/aws-spiffe-workload-helper.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1295faadf091bb2c552f1bf9b8c500cbad6e81a3b3ad1517501af165b8a3b90a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1295faadf091bb2c552f1bf9b8c500cbad6e81a3b3ad1517501af165b8a3b90a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1295faadf091bb2c552f1bf9b8c500cbad6e81a3b3ad1517501af165b8a3b90a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3bf65d722f81bca07e2685a4a6cadec0a95bdba2c951e98645f4a19e89a1788"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47374f040d319eb457d001d5ab108f9fcf5e25799d715c30d63d2f59d247d83b"
+  end
+
   depends_on "go" => :build
 
   def install
