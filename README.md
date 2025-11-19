@@ -61,6 +61,7 @@ brew install --cask <tool>
 - `await`
 - `awk-language-server`
 - `awless`
+- `aws-spiffe-workload-helper`
 - `axiom-mcp-server`
 - `az-tui`
 - `azure-pipelines-language-server`
