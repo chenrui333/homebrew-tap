@@ -96,6 +96,7 @@ brew install --cask <tool>
 - `cargo-dephell`
 - `cargo-readme`
 - `carton`
+- `cashd`
 - `castor`
 - `cc-enhanced`
 - `cc-filter`
@@ -286,6 +287,7 @@ brew install --cask <tool>
 - `junit2html`
 - `kaluma-cli`
 - `kandc`
+- `kanha`
 - `karmor`
 - `kbst`
 - `kcl`
@@ -481,6 +483,7 @@ brew install --cask <tool>
 - `spok`
 - `spotifydl`
 - `sprofile`
+- `squall`
 - `starcharts`
 - `statoscope`
 - `stree`
