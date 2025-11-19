@@ -480,6 +480,7 @@ brew install --cask <tool>
 - `speedscope`
 - `speedtest`
 - `spicedb`
+- `spiffe-helper`
 - `spok`
 - `spotifydl`
 - `sprofile`
