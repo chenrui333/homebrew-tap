@@ -110,6 +110,7 @@ brew install --cask <tool>
 - `certok`
 - `cf-vault`
 - `cf2pulumi`
+- `cgpu`
 - `chalet`
 - `chatlog`
 - `checkpwn`
@@ -241,6 +242,7 @@ brew install --cask <tool>
 - `gritql`
 - `grmon`
 - `gtts`
+- `haloy`
 - `hasha-cli`
 - `hauler`
 - `hcldump`
@@ -384,6 +386,7 @@ brew install --cask <tool>
 - `oxylabs-mcp`
 - `papis`
 - `paq`
+- `parqeye`
 - `pdfsyntax`
 - `pencode`
 - `percollate`
