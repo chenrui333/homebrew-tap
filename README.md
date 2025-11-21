@@ -163,6 +163,7 @@ brew install --cask <tool>
 - `decktape`
 - `deepteam`
 - `dela`
+- `devcockpit`
 - `dg`
 - `dhv`
 - `di-tui`
