@@ -15,6 +15,9 @@ class Parqeye < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/parqeye --version")
 
+    # Fails in Linux CI with `No such device or address` error
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     (testpath/"test.parquet").write <<~PARQUET
       PAR1
     PARQUET
