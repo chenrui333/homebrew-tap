@@ -6,6 +6,15 @@ class Haloy < Formula
   license "MIT"
   head "https://github.com/haloydev/haloy.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40f161f45ba7a128e2d1c2553ded41c55e39e794ecf8f88353f79f9c9dcc8acc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40f161f45ba7a128e2d1c2553ded41c55e39e794ecf8f88353f79f9c9dcc8acc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f161f45ba7a128e2d1c2553ded41c55e39e794ecf8f88353f79f9c9dcc8acc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51c14110573c5f561c19905927247ef33b05cb84a607e7856051612edf5f315b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43789ebab34eff1f2eb03c7181eff6253b5604cf4f7a81e6bdd7f010ad2f00d5"
+  end
+
   depends_on "go" => :build
 
   def install
