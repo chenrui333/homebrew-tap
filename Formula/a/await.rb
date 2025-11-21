@@ -1,8 +1,8 @@
 class Await < Formula
   desc "Small binary that runs a list of commands in parallel and awaits termination"
   homepage "https://github.com/slavaGanzin/await"
-  url "https://github.com/slavaGanzin/await/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "6fd1878e1a84cd89bc80f885dbcce48651a5c4682c0512f32c2d471e71cf8d80"
+  url "https://github.com/slavaGanzin/await/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "3abecf4f70382970476102ab4ef9601cf30564cc3a0f8385228b791f3e515960"
   license "MIT"
 
   bottle do
