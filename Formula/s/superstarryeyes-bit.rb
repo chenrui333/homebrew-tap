@@ -1,8 +1,8 @@
 class SuperstarryeyesBit < Formula
   desc "CLI/TUI logo designer with ANSI fonts, gradients, shadows, and exports"
   homepage "https://github.com/superstarryeyes/bit"
-  url "https://github.com/superstarryeyes/bit/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ab950b643de0bf8b6ebc64bf4fd68f40f4eaf8e33c5d320eeb3368d2657cff29"
+  url "https://github.com/superstarryeyes/bit/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "eb5e2a0ff22a4cd5312180e2e8396736b4e5d63ebe2c6c5ac0f98560992c9dac"
   license "MIT"
   head "https://github.com/superstarryeyes/bit.git", branch: "main"
 
