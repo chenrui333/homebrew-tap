@@ -3,7 +3,7 @@ class Devcockpit < Formula
   homepage "https://devcockpit.app/"
   url "https://github.com/caioricciuti/dev-cockpit/archive/refs/tags/v1.0.8.tar.gz"
   sha256 "a1ce6d16d46da379d88ca579f24d9d16c542b047c6dd3005637c2d45cf7c49e7"
-  license "MPL-2.0"
+  license "GPL-3.0-only"
   head "https://github.com/caioricciuti/dev-cockpit.git", branch: "main"
 
   bottle do
