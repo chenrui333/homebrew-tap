@@ -1,8 +1,8 @@
 class Paq < Formula
   desc "Fast Hashing of File or Directory"
   homepage "https://github.com/gregl83/paq"
-  url "https://github.com/gregl83/paq/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "8c1bb3d59e3346551d81b07818adf62dcc12d0373295ac004360cf977522ce19"
+  url "https://github.com/gregl83/paq/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "d1e1274f4ee229580947850de4d8f6e0f2eaafda478130a045e95af2b6b40b75"
   license "MIT"
   head "https://github.com/gregl83/paq.git", branch: "main"
 
