@@ -7,11 +7,11 @@ class EasCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2d3994fa2cc56f31d75e2ec31bd503bb1bd4800dfd634e7e1bf5738684772c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e96f908b5fd38f670d393e7e595f64da768b5036314fe6c589866161e5377dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e7b9d06ed85f113c98420b4d9af6fe0f505aa4354f2127505561d6d7c3210f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "076113cb272c19d898227692facbd9022c44b6389d83813d705ab558e9ff9bc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d781caab5fac0375199bdee8f5ff3e57b5ec753759d8ac8fa16f646c0ff47957"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f93f07a2c5e64ff4b814d8dd2448d3fc8dd14ba700195da125ffb6615afbbdef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cedf2fbf91d4b782398942a5ab0b04a8e2bd041752bf7a9177bcccb73d7622a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b790ea0f49c770e4db5cb3e31916ce26232e88518f91d3224b9e4d8ec13e6cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceb3851346f076738a95462f9a48065e464e27afc7772a6220e37863cc5b6a39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6974e22b57f75adecdddbbdfdaa3a4b1a582dd9383b0adbcc5f8dd39a03e9f1"
   end
 
   depends_on "node"
