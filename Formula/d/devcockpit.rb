@@ -12,6 +12,12 @@ class Devcockpit < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
+    # Workaround to avoid patchelf corruption when cgo is required (for go-zetasql)
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     cd "app" do
       system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/devcockpit"
     end
