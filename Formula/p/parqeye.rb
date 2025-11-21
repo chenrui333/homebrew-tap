@@ -1,6 +1,6 @@
 class Parqeye < Formula
   desc "Peek inside Parquet files right from your terminal"
-  homepage "https://haloy.dev/"
+  homepage "https://github.com/kaushiksrini/parqeye"
   url "https://github.com/kaushiksrini/parqeye/archive/refs/tags/v0.0.2.tar.gz"
   sha256 "67f896a9fe53a9f85022bdaf2042ae196feb784d2073df7d25eb37648d620139"
   license "MIT"
