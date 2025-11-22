@@ -7,6 +7,12 @@ class OpensnitchTui < Formula
   license "GPL-3.0-only"
   head "https://github.com/amalbansode/opensnitch-tui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "4668c4fcb20dbed60b6ba77e42f3846b71831e29a6571b0c754a66a22984a4bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8246c5c6ffcd41f1ceb0a62172e1a3512b3c26302780a08f9b41b3b86ad0a105"
+  end
+
   depends_on "protobuf" => :build
   depends_on "rust" => :build
   depends_on :linux
