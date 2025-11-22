@@ -378,6 +378,7 @@ brew install --cask <tool>
 - `olla`
 - `omekasy`
 - `omnictl`
+- `opensnitch-tui`
 - `optivorbis`
 - `osmar`
 - `otelgen`
@@ -427,6 +428,7 @@ brew install --cask <tool>
 - `pyment`
 - `pyp`
 - `pyscn`
+- `qqqa`
 - `quicssh-rs`
 - `r2md`
 - `rabbitmq-message-ops`
@@ -486,6 +488,7 @@ brew install --cask <tool>
 - `speedtest`
 - `spicedb`
 - `spiffe-helper`
+- `spiffe-spike`
 - `spok`
 - `spotifydl`
 - `sprofile`
