@@ -8,11 +8,11 @@ class SuperstarryeyesBit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "895a8937eaa9e490b83aea8d061ee5e998926c3bae7e371d42d474e49299d52e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "895a8937eaa9e490b83aea8d061ee5e998926c3bae7e371d42d474e49299d52e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "895a8937eaa9e490b83aea8d061ee5e998926c3bae7e371d42d474e49299d52e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "872cdfcb92040098b458bdec59ffffbd45cac7f82c6c8a3e066984644a6e6d69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aa02fd33ba486beb4f31df124a9c2588b45c418387a215d03b21936b9f583dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff6e022171932453fcaa60f26d623d771dd20187e79684d82ba07785771b9960"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff6e022171932453fcaa60f26d623d771dd20187e79684d82ba07785771b9960"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff6e022171932453fcaa60f26d623d771dd20187e79684d82ba07785771b9960"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "717aa9de81d745c735b0cda2f4bd038ddbdef9baca4c6807b4872882c4d4aaeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e227fd69174b502610612465b2e240960d8d4a2c0ea5336a1e3cec44797619a"
   end
 
   depends_on "go" => :build
