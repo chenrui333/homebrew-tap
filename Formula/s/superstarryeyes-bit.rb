@@ -19,10 +19,9 @@ class SuperstarryeyesBit < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"bit"), "./cmd/bit"
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"ansifonts-cli"), "./cmd/ansifonts"
   end
 
   test do
-    assert_match "Error listing fonts", shell_output("#{bin}/ansifonts-cli -list 2>&1", 1)
+    assert_match "Available fonts", shell_output("#{bin}/bit -list")
   end
 end
