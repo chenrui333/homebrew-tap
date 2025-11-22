@@ -21,7 +21,7 @@ class CreateMcpUseApp < Formula
     assert_match version.to_s, shell_output("#{bin}/create-mcp-use-app --version")
 
     # create a test app
-    system bin/"create-mcp-use-app", "test-app", "--no-install", "--no-git", "--template", "starter"
+    system bin/"create-mcp-use-app", "test-app", "--no-git", "--template", "starter"
     assert_path_exists testpath/"test-app/package.json"
   end
 end
