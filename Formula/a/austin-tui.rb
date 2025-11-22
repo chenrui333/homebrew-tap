@@ -19,7 +19,7 @@ class AustinTui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab8186b29708aebe2ce20cd4170e4d9642508f259de6d9d0e08344715aeea826"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
