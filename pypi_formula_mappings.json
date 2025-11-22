@@ -1,5 +1,0 @@
-{
-  "gtts": {
-    "exclude_packages": ["certifi"]
-  }
-}
