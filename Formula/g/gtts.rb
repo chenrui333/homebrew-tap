@@ -9,8 +9,8 @@ class Gtts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "67979c55f273e09e773183be9e0efceb47860a0f88be5ad0cda41042a9d3a9b4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "91b2a5e9f2eeed6149faaafad53de597f463cdeeee183be8f2f9227aa1fe0125"
   end
 
   depends_on "certifi" => :no_linkage
