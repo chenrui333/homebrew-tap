@@ -1,8 +1,8 @@
 class Podcli < Formula
   desc "CLI for podinfo"
   homepage "https://github.com/stefanprodan/podinfo"
-  url "https://github.com/stefanprodan/podinfo/archive/refs/tags/6.9.2.tar.gz"
-  sha256 "03c65174ed2bb0818b8a503d4e9d34408ff5d2775f77879b8cecdee6bf2a17c8"
+  url "https://github.com/stefanprodan/podinfo/archive/refs/tags/6.9.3.tar.gz"
+  sha256 "6b2ace5b62abb0ded08b354f3a464a315db6e26619f6a87cc81d3264dd3d24d1"
   license "Apache-2.0"
   head "https://github.com/stefanprodan/podinfo.git", branch: "dev"
 
