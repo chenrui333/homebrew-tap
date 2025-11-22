@@ -11,12 +11,13 @@ class AustinTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ed73b565620117301ac3f9a6c293c462fb3c9bdd5ed479373b33be8f635b29d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd1fd9e917534ae1e3ef0c637f03b6e498c1304f2f207e7b93ef6445949eaa8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "878c1b691800dd5f2b7d9b4a12738f72c1fa26d00997b438cd933567131b1438"
-    sha256 cellar: :any_skip_relocation, sequoia:       "606ab63f6f499a80b2041642dbf120b3dae68ff901d9ff58518b3d6488498d10"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc2e482c80a4e9e848456dddeb32a6d7192a3e71dab31576def7d62688df0afa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab8186b29708aebe2ce20cd4170e4d9642508f259de6d9d0e08344715aeea826"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57824e6ab37451051729fc8a374e08011c8543433ae78e27c0cde2ae2f11595b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f68fa24422a85cc4b2e102eb06c78db4b8f2c69dcdb02676078a81f21fce41b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e3bfa0c465acb211eabe3b713f6c9771fdb23cf0997de9c9a006287f7ce601e"
+    sha256 cellar: :any_skip_relocation, sequoia:       "8b0a59be0b93f69bdb91d651199fed2ebe985088f37966ebc211b918bc7efda8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa183be34818d76538c8e2cbb3141d3f752719884cbd336433e648715c8046b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99816edee5af4cc4449b98921e5ef97260e654c9debc5bc05362fc766638104c"
   end
 
   depends_on "python@3.14"
