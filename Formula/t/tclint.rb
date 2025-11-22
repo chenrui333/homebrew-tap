@@ -14,17 +14,16 @@ class Tclint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a7e986a8cb116042e82b9559269cebb80ac7d6e10ee82c43b6a445ca13c2df1"
   end
 
-  depends_on "rust" => :build # for rpds-py
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/e3/42/988b3a667967e9d2d32346e7ed7edee540ef1cee829b53ef80aa8d4a0222/cattrs-25.2.0.tar.gz"
-    sha256 "f46c918e955db0177be6aa559068390f71988e877c603ae2e56c71827165cc06"
+    url "https://files.pythonhosted.org/packages/6e/00/2432bb2d445b39b5407f0a90e01b9a271475eea7caf913d7a86bcb956385/cattrs-25.3.0.tar.gz"
+    sha256 "1ac88d9e5eda10436c4517e390a4142d88638fe682c436c93db7ce4a277b884a"
   end
 
   resource "importlib-metadata" do
