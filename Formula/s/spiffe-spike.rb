@@ -14,6 +14,12 @@ class SpiffeSpike < Formula
     ENV["CGO_ENABLED"] = "1"
     ENV["GOFIPS140"] = "v1.0.0"
 
+    # Workaround to avoid patchelf corruption when cgo is required
+    if OS.linux? && Hardware::CPU.arch == :arm64
+      ENV["GO_EXTLINK_ENABLED"] = "1"
+      ENV.append "GOFLAGS", "-buildmode=pie"
+    end
+
     %w[keeper nexus spike].each do |cmd|
       ldflags = "-s -w"
       system "go", "build", *std_go_args(ldflags:, output: bin/cmd), "./app/#{cmd}/cmd/main.go"
