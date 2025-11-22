@@ -1,8 +1,8 @@
 class Cgpu < Formula
   desc "CLI enabling free cloud GPU access in your terminal for learning CUDA"
   homepage "https://github.com/RohanAdwankar/cgpu"
-  url "https://registry.npmjs.org/cgpu/-/cgpu-0.1.3.tgz"
-  sha256 "1716420d6b30833402a3371986490791f26afce6fc128edc35000c53a0d835b6"
+  url "https://registry.npmjs.org/cgpu/-/cgpu-0.1.4.tgz"
+  sha256 "8035b028b1ea508082d32af11d8de6d9aad44535d1d8bb57f9339e8446c24581"
   license "Apache-2.0"
 
   bottle do
