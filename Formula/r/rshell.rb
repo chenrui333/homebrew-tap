@@ -15,7 +15,7 @@ class Rshell < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9b82a7384824707a8de0ddc328a01a2f646566faeaf048b1548c260296e3ba7"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "pyserial" do
     url "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz"
@@ -23,8 +23,8 @@ class Rshell < Formula
   end
 
   resource "pyudev" do
-    url "https://files.pythonhosted.org/packages/c4/5c/6cc034da13830e3da123ccf9a30910bc868fa16670362f004e4b788d0df1/pyudev-0.24.3.tar.gz"
-    sha256 "2e945427a21674893bb97632401db62139d91cea1ee96137cc7b07ad22198fc7"
+    url "https://files.pythonhosted.org/packages/5e/1d/8bdbf651de1002e8b58fbe817bee22b1e8bfcdd24341d42c3238ce9a75f4/pyudev-0.24.4.tar.gz"
+    sha256 "e788bb983700b1a84efc2e88862b0a51af2a995d5b86bc9997546505cf7b36bc"
   end
 
   def install
