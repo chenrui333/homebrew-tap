@@ -15,7 +15,7 @@ class Pyp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "003725a544558684dee1cdd930f08ab833527b5904a83aaa5473e5e59a081dfa"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources
