@@ -9,11 +9,12 @@ class ReformatGherkin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "26b1847b70e24413fb8dba0e424551c60aa94299ae781cb5f3b2953611393cd4"
-    sha256 cellar: :any,                 arm64_sonoma:  "b60f966d6a213e479710c22d837f93a89e56e1b3adf3151fd66fa26b9d6a7b18"
-    sha256 cellar: :any,                 ventura:       "db3dcb64b53ee45c1f8e85d2296f9366675d05c9827a965f45c4f29ab84cf2c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6328c6f43909ce98af15cbcf5d278f7252bc8e56c1904c29c9ffa5801ef7e4ef"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b86a19115c0beb48514c929cca12b699e1dd7088202c41903716bef074ef7ce0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f99a305373ddce511f93c4b27dbf70bd9db5d094789efc2c33cd8ec22d7a57e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b179416b1392f5952c0ab4d0ed6d68438fc6e8d9ffa9f5de0553a1ae3f0083c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb570c3c0d42ccb6f4ac2fff1331441b294446d5d95913f58c714ce37bfb67c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e6fc7ca952190d890a6b4fdb12d94ad7e0ca350288226bbc2a56e4a583e895c"
   end
 
   depends_on "libyaml"
