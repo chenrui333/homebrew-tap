@@ -17,6 +17,7 @@ class Raiz < Formula
 
   depends_on "libyaml"
   depends_on "python@3.14"
+  depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: "rpds-py"
 
