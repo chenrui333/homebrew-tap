@@ -14,7 +14,7 @@ class Kandc < Formula
   end
 
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"
 
