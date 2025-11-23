@@ -19,7 +19,7 @@ class Pitaya < Formula
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.13" # see https://github.com/tact-lang/pitaya/blob/main/pyproject.toml#L6
 
   pypi_packages exclude_packages: "certifi"
 
