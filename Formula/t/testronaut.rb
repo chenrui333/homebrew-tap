@@ -7,7 +7,7 @@ class Testronaut < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "787619d4e9b9cdf170072a5a751a0730f2364672e9ad05b61c536f04c1799127"
+    sha256 cellar: :any_skip_relocation, all: "87bb38c52fec9337c8ca26716a3125c4643868a4027ba8d21eda42ccb27f2f34"
   end
 
   depends_on "node"
