@@ -1,9 +1,17 @@
 class AmpCli < Formula
   desc "Coding agent for your terminal and editor, built by Sourcegraph"
   homepage "https://ampcode.com/"
-  url "https://registry.npmjs.org/@sourcegraph/amp/-/amp-0.0.1761667293-g539b00.tgz"
+  url "https://registry.npmjs.org/@sourcegraph/amp/-/amp-0.0.1762732906-g989d54.tgz"
+  version "0.0.1762732906"
   sha256 "63edce81abfbaf6baef54ee2237512069dee150127e81a7b921d5aa16fe3f953"
   # license :unfree
+
+  livecheck do
+    url "https://registry.npmjs.org/@sourcegraph/amp"
+    strategy :json do |json|
+      json["dist-tags"]["latest"]&.scan(/\d+\.\d+\.\d+/).first
+    end
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
