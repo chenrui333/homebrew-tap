@@ -6,6 +6,15 @@ class BashScriptTools < Formula
   license "MIT"
   head "https://github.com/overflowy/bash-script-tools.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23fcd5ea0964dca516b7a3e2d6633cd64cab441a702413bce371406a85410ff0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23fcd5ea0964dca516b7a3e2d6633cd64cab441a702413bce371406a85410ff0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23fcd5ea0964dca516b7a3e2d6633cd64cab441a702413bce371406a85410ff0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13e87a0c29fda2925b07e9ae35c7876743c95169e4c6aa3cf07ff130eb430f8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a01822d8d287a058242cc5d3a718ffb61ebd78375246a5879eff233dc1199005"
+  end
+
   depends_on "go" => :build
   depends_on "shellcheck"
   depends_on "shfmt"
