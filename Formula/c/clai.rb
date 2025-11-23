@@ -1,8 +1,8 @@
 class Clai < Formula
   desc "Command-line artificial intelligence - Your local LLM context-feeder"
   homepage "https://github.com/baalimago/clai"
-  url "https://github.com/baalimago/clai/archive/refs/tags/v1.8.6.tar.gz"
-  sha256 "a88022e5c21e32ebb3d3c93dc9c9449dea97e5b221c93327d70dd607d7a6b128"
+  url "https://github.com/baalimago/clai/archive/refs/tags/v1.8.7.tar.gz"
+  sha256 "e5f3c4c2e574694df8766ccfd61cb9ce0c0b229ecd637146e14ce09da2725339"
   license "MIT"
   head "https://github.com/baalimago/clai.git", branch: "main"
 
