@@ -4,6 +4,7 @@ class Pyscn < Formula
   url "https://github.com/ludo-technologies/pyscn/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "a8a18b04278241f3e837c2eb0e618f9bfb51f86329d9cd3b3463151269f86ec6"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

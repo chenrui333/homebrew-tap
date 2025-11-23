@@ -4,6 +4,7 @@ class Protolock < Formula
   url "https://github.com/nilslice/protolock/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "81bec7a85a866f1c4c2f361bba718bc2d6ba7dc7e6d662787a44c4e89c0d4b3d"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/nilslice/protolock.git", branch: "main"
 
   bottle do

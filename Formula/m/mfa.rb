@@ -5,6 +5,7 @@ class Mfa < Formula
   url "https://github.com/k-saiki/mfa/archive/refs/tags/v0.0.10.tar.gz"
   sha256 "a20ac0d18903477da46c240d8e61f71a9964da7d93692267dc9394e200d0df75"
   license "MIT"
+  revision 1
   head "https://github.com/k-saiki/mfa.git", branch: "main"
 
   bottle do
