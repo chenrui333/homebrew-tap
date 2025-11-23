@@ -19,7 +19,7 @@ class Papis < Formula
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -32,8 +32,8 @@ class Papis < Formula
   end
 
   resource "arxiv" do
-    url "https://files.pythonhosted.org/packages/d2/51/62bc73f67c9c9d3d3ea2cff5868ed4a9f4ecf74f07694d63fe724e51c344/arxiv-2.3.0.tar.gz"
-    sha256 "0fd8224180819cf8d0c6c3964bdca18cd33775adc8938562c788abed3bab6b1f"
+    url "https://files.pythonhosted.org/packages/dd/95/65e38ddfb54762a8f1777bbe80da2cebf7941376e67a2212de487d9372db/arxiv-2.3.1.tar.gz"
+    sha256 "08567185dfc102c8d349de4b9e84dfde0af46d6402486e3009afc90f8ccf9709"
   end
 
   resource "beautifulsoup4" do
@@ -52,8 +52,8 @@ class Papis < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "colorama" do
@@ -172,8 +172,8 @@ class Papis < Formula
   end
 
   resource "stevedore" do
-    url "https://files.pythonhosted.org/packages/2a/5f/8418daad5c353300b7661dd8ce2574b0410a6316a8be650a189d5c68d938/stevedore-5.5.0.tar.gz"
-    sha256 "d31496a4f4df9825e1a1e4f1f74d19abb0154aff311c3b376fcc89dae8fccd73"
+    url "https://files.pythonhosted.org/packages/96/5b/496f8abebd10c3301129abba7ddafd46c71d799a70c44ab080323987c4c9/stevedore-5.6.0.tar.gz"
+    sha256 "f22d15c6ead40c5bbfa9ca54aa7e7b4a07d59b36ae03ed12ced1a54cf0b51945"
   end
 
   resource "text-unidecode" do
