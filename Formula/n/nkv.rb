@@ -6,6 +6,15 @@ class Nkv < Formula
   license "Apache-2.0"
   head "https://github.com/nkval/nkv.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58f0495dd201b3e2e2e4ad264202a5d7a06c17ad928dd2d58165dee8b4544d52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbca07e0293f8fc88bfd2f0f370e97355d6bb58522a5e1586d10207568c23fce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86b611d96d8b687d4b4a285ee364d9d6c7f4a8ae7734667f554a4e84a1a6644f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0175125e5b35d6aa6f51a8053825dce3a76b8b88241039823368323810f7394e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f85170088bb82162af91c606d3a40c852235f2b7ecbba3984247a074bd34324d"
+  end
+
   depends_on "rust" => :build
 
   def install
