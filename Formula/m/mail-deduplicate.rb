@@ -10,7 +10,8 @@ class MailDeduplicate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5e7a8a8b3b24943143af3d87c566422933419e68f56d4e81489f5b343befd984"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "eb9927e741c8cd5b148f090be0b3d9684a8fae1ab4c59e01d9a04c8603dc028a"
   end
 
   depends_on "certifi" => :no_linkage
