@@ -6,6 +6,7 @@ class Llmswap < Formula
   url "https://files.pythonhosted.org/packages/3b/d2/0f241ed41732020510eb13c33510caeb663b42de9756b31cf40e15d1452c/llmswap-5.2.2.tar.gz"
   sha256 "1ab32c41b9a8149e75e67042b3b61e7323030acbeb6ba03a9d47225919477e39"
   license "MIT"
+  head "https://github.com/sreenathmmenon/llmswap.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -21,7 +22,7 @@ class Llmswap < Formula
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages exclude_packages: %w[certifi numpy pydantic]
 
@@ -46,8 +47,8 @@ class Llmswap < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/49/07/61f3ca8e69c5dcdaec31b36b79a53ea21c5b4ca5e93c7df58c71f43bf8d8/anthropic-0.72.0.tar.gz"
-    sha256 "8971fe76dcffc644f74ac3883069beb1527641115ae0d6eb8fa21c1ce4082f7a"
+    url "https://files.pythonhosted.org/packages/d7/7b/609eea5c54ae69b1a4a94169d4b0c86dc5c41b43509989913f6cdc61b81d/anthropic-0.74.1.tar.gz"
+    sha256 "04c087b2751385c524f6d332d066a913870e4de8b3e335fb0a0c595f1f88dc6e"
   end
 
   resource "anyio" do
@@ -61,8 +62,8 @@ class Llmswap < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
+    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
   end
 
   resource "charset-normalizer" do
@@ -71,8 +72,8 @@ class Llmswap < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "cohere" do
@@ -116,8 +117,8 @@ class Llmswap < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/61/da/83d7043169ac2c8c7469f0e375610d78ae2160134bf1b80634c482fa079c/google_api_core-2.28.1.tar.gz"
-    sha256 "2b405df02d68e68ce0fbc138559e6036559e685159d148ae5861013dc201baf8"
+    url "https://files.pythonhosted.org/packages/09/cd/63f1557235c2440fe0577acdbc32577c5c002684c58c7f4d770a92366a24/google_api_core-2.25.2.tar.gz"
+    sha256 "1c63aa6af0d0d5e37966f157a77f9396d820fba59f9e43e9415bc3dc5baff300"
   end
 
   resource "google-api-python-client" do
@@ -146,8 +147,8 @@ class Llmswap < Formula
   end
 
   resource "groq" do
-    url "https://files.pythonhosted.org/packages/eb/51/b85f8100078a4802340e8325af2bfa357e3e8d367f11ee8fd83dc3441523/groq-0.33.0.tar.gz"
-    sha256 "5342158026a1f6bf58653d774696f47ef1d763c401e20f9dbc9598337859523a"
+    url "https://files.pythonhosted.org/packages/27/83/932f29aee838dac4ab77d5249c886159f88e157f925de214681cd54b0a1c/groq-0.36.0.tar.gz"
+    sha256 "766fa1ae34918552c6488767b16d4bd0ee3f0fb7809cd9f7760c90d13f32c63a"
   end
 
   resource "grpcio" do
@@ -191,8 +192,8 @@ class Llmswap < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/b8/63/eeea214a6b456d8e91ac2ea73ebb83da3af9aa64716dfb6e28dd9b2e6223/huggingface_hub-1.1.2.tar.gz"
-    sha256 "7bdafc432dc12fa1f15211bdfa689a02531d2a47a3cc0d74935f5726cdbcab8e"
+    url "https://files.pythonhosted.org/packages/fb/02/c3d534d7498ba2792da1d2ce56b5d38bbcbcbbba62071c90ee289b408e8d/huggingface_hub-1.1.5.tar.gz"
+    sha256 "40ba5c9a08792d888fde6088920a0a71ab3cd9d5e6617c81a797c657f1fd9968"
   end
 
   resource "idna" do
@@ -211,8 +212,8 @@ class Llmswap < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
-    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
+    url "https://files.pythonhosted.org/packages/d5/e4/42591e356f1d53c568418dc7e30dcda7be31dd5a4d570bca22acb0525862/openai-2.8.1.tar.gz"
+    sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
   end
 
   resource "packaging" do
