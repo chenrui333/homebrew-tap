@@ -22,7 +22,7 @@ class Pixelle < Formula
   depends_on "libyaml"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
@@ -48,13 +48,13 @@ class Pixelle < Formula
   end
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/d7/a6/dc46877b911e40c00d395771ea710d5e77b6de7bacd5fdcd78d70cc5a48f/annotated_doc-0.0.3.tar.gz"
-    sha256 "e18370014c70187422c33e945053ff4c286f453a984eba84d0dbfa0c935adeda"
+    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
+    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/49/07/61f3ca8e69c5dcdaec31b36b79a53ea21c5b4ca5e93c7df58c71f43bf8d8/anthropic-0.72.0.tar.gz"
-    sha256 "8971fe76dcffc644f74ac3883069beb1527641115ae0d6eb8fa21c1ce4082f7a"
+    url "https://files.pythonhosted.org/packages/d7/7b/609eea5c54ae69b1a4a94169d4b0c86dc5c41b43509989913f6cdc61b81d/anthropic-0.74.1.tar.gz"
+    sha256 "04c087b2751385c524f6d332d066a913870e4de8b3e335fb0a0c595f1f88dc6e"
   end
 
   resource "anyio" do
@@ -88,8 +88,8 @@ class Pixelle < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/a6/09/9003e5662691056e0e8b2e6f57c799e71875fac0be0e785d8cb11557cd2a/beartype-0.22.5.tar.gz"
-    sha256 "516a9096cc77103c96153474fa35c3ebcd9d36bd2ec8d0e3a43307ced0fa6341"
+    url "https://files.pythonhosted.org/packages/88/e2/105ceb1704cb80fe4ab3872529ab7b6f365cf7c74f725e6132d0efcf1560/beartype-0.22.6.tar.gz"
+    sha256 "97fbda69c20b48c5780ac2ca60ce3c1bb9af29b3a1a0216898ffabdd523e48f4"
   end
 
   resource "bidict" do
@@ -98,23 +98,23 @@ class Pixelle < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/56/36/65d292d14261aedbb9a22e5bf194d84c119c889135b42448db646d06d76b/boto3-1.40.69.tar.gz"
-    sha256 "5273f6bac347331a87db809dff97d8736c50c3be19f2bb36ad08c5131c408976"
+    url "https://files.pythonhosted.org/packages/fa/81/2600e83ddd7cb1dac43d28fd39774434afcda0d85d730402192b1a9266a3/boto3-1.41.2.tar.gz"
+    sha256 "7054fbc61cadab383f40ea6d725013ba6c8f569641dddb14c0055e790280ad6c"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e2/73/42499b183ca5cef25c35338ad2636368b0ae2193654642756492e96ee906/botocore-1.40.69.tar.gz"
-    sha256 "df310ddc4d2de5543ba3df4e4b5f9907a2951896d63a9fbae115c26ca0976951"
+    url "https://files.pythonhosted.org/packages/c5/0b/6eb5dc752b240dd0b76d7e3257ae25b70683896d1789e7bfb78fba7c7c99/botocore-1.41.2.tar.gz"
+    sha256 "49a3e8f4c1a1759a687941fef8b36efd7bafcf63c1ef74aa75d6497eb4887c9c"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/cc/7e/b975b5814bd36faf009faebe22c1072a1fa1168db34d285ef0ba071ad78c/cachetools-6.2.1.tar.gz"
-    sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
+    url "https://files.pythonhosted.org/packages/fb/44/ca1675be2a83aeee1886ab745b28cda92093066590233cc501890eb8417a/cachetools-6.2.2.tar.gz"
+    sha256 "8e6d266b25e539df852251cfd6f990b4bc3a141db73b939058d809ebd2590fc6"
   end
 
   resource "chainlit" do
-    url "https://files.pythonhosted.org/packages/13/67/ead4f2ef893915f421f3f5bdc1309666304ef66c5826941475994001c147/chainlit-2.9.0.tar.gz"
-    sha256 "1c6ab1aa24b4ab9203d04806455eeab8ef3cf1fbbb6c71d364621ed5db268fff"
+    url "https://files.pythonhosted.org/packages/c8/0a/69d9a91345749f3edabd6949f41a03de7b8e466a654a567e907cac2c777e/chainlit-2.9.2.tar.gz"
+    sha256 "6239c6912e93ee07be2ec0bd84fb207ee570ff62d07d9f4f7c27f16709e8b702"
   end
 
   resource "charset-normalizer" do
@@ -128,8 +128,8 @@ class Pixelle < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "colorama" do
@@ -143,8 +143,8 @@ class Pixelle < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
-    sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
+    url "https://files.pythonhosted.org/packages/94/f0/5a83ac365800969552a7eb261b03860dea38647fb6cc31574bdbcdc9f0f5/cyclopts-4.2.5.tar.gz"
+    sha256 "91aff5da5b8b841ccb32b5142c2d12fd93678fbc9eba7ef7319452323e24d6d4"
   end
 
   resource "dataclasses-json" do
@@ -188,18 +188,18 @@ class Pixelle < Formula
   end
 
   resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/0b/9f/a65090624ecf468cdca03533906e7c69ed7588582240cfe7cc9e770b50eb/exceptiongroup-1.3.0.tar.gz"
-    sha256 "b241f5885f560bc56a59ee63ca4c6a8bfa46ae4ad651af316d4e81817bb9fd88"
+    url "https://files.pythonhosted.org/packages/50/79/66800aadf48771f6b62f7eb014e352e5d06856655206165d775e675a02c9/exceptiongroup-1.3.1.tar.gz"
+    sha256 "8b412432c6055b0b7d14c310000ae93352ed6754f70fa8f7c34141f91c4e3219"
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/6b/a4/29e1b861fc9017488ed02ff1052feffa40940cb355ed632a8845df84ce84/fastapi-0.121.1.tar.gz"
-    sha256 "b6dba0538fd15dab6fe4d3e5493c3957d8a9e1e9257f56446b5859af66f32441"
+    url "https://files.pythonhosted.org/packages/80/f0/086c442c6516195786131b8ca70488c6ef11d2f2e33c9a893576b2b0d3f7/fastapi-0.121.3.tar.gz"
+    sha256 "0055bc24fe53e56a40e9e0ad1ae2baa81622c406e548e501e717634e2dfbc40b"
   end
 
   resource "fastmcp" do
-    url "https://files.pythonhosted.org/packages/1b/74/584a152bcd174c99ddf3cfdd7e86ec4a6c696fb190a907c2a2ec9056bda2/fastmcp-2.13.0.2.tar.gz"
-    sha256 "d35386561b6f3cde195ba2b5892dc89b8919a721e6b39b98e7a16f9a7c0b8e8b"
+    url "https://files.pythonhosted.org/packages/d4/a3/c9eb28b5f0b979b0dd8aa9ba56e69298cdb2d72c15592165d042ccb20194/fastmcp-2.13.1.tar.gz"
+    sha256 "b9c664c51f1ff47c698225e7304267ae29a51913f681bd49e442b8682f9a5f90"
   end
 
   resource "fastuuid" do
@@ -263,8 +263,8 @@ class Pixelle < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/b8/63/eeea214a6b456d8e91ac2ea73ebb83da3af9aa64716dfb6e28dd9b2e6223/huggingface_hub-1.1.2.tar.gz"
-    sha256 "7bdafc432dc12fa1f15211bdfa689a02531d2a47a3cc0d74935f5726cdbcab8e"
+    url "https://files.pythonhosted.org/packages/fb/02/c3d534d7498ba2792da1d2ce56b5d38bbcbcbbba62071c90ee289b408e8d/huggingface_hub-1.1.5.tar.gz"
+    sha256 "40ba5c9a08792d888fde6088920a0a71ab3cd9d5e6617c81a797c657f1fd9968"
   end
 
   resource "idna" do
@@ -328,8 +328,8 @@ class Pixelle < Formula
   end
 
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz"
-    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
   resource "lazify" do
@@ -338,8 +338,8 @@ class Pixelle < Formula
   end
 
   resource "litellm" do
-    url "https://files.pythonhosted.org/packages/c3/0a/587c3f895f5d6c842d6cd630204c8bf7de677fc69ce2bd26e812c02b6e0b/litellm-1.79.3.tar.gz"
-    sha256 "4da4716f8da3e1b77838262c36d3016146860933e0489171658a9d4a3fd59b1b"
+    url "https://files.pythonhosted.org/packages/85/b8/357544534bef87dd2858432f3cbd3a0e5cc267caebca5ea86b03618786c5/litellm-1.80.5.tar.gz"
+    sha256 "922791c264845d9ed59e540c8fa74a74d237c1b209568a05ffeacd8b51770deb"
   end
 
   resource "literalai" do
@@ -363,8 +363,8 @@ class Pixelle < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/33/54/dd2330ef4611c27ae59124820863c34e1d3edb1133c58e6375e2d938c9c5/mcp-1.21.0.tar.gz"
-    sha256 "bab0a38e8f8c48080d787233343f8d301b0e1e95846ae7dead251b2421d99855"
+    url "https://files.pythonhosted.org/packages/a3/a2/c5ec0ab38b35ade2ae49a90fada718fbc76811dc5aa1760414c6aaa6b08a/mcp-1.22.0.tar.gz"
+    sha256 "769b9ac90ed42134375b19e777a2858ca300f95f2e800982b3e2be62dfc0ba01"
   end
 
   resource "mdurl" do
@@ -398,8 +398,8 @@ class Pixelle < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/51/a2/f4023c1e0c868a6a5854955b3374f17153388aed95e835af114a17eac95b/openai-2.7.1.tar.gz"
-    sha256 "df4d4a3622b2df3475ead8eb0fbb3c27fd1c070fa2e55d778ca4f40e0186c726"
+    url "https://files.pythonhosted.org/packages/d5/e4/42591e356f1d53c568418dc7e30dcda7be31dd5a4d570bca22acb0525862/openai-2.8.1.tar.gz"
+    sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
   end
 
   resource "openapi-pydantic" do
@@ -410,11 +410,6 @@ class Pixelle < Formula
   resource "opentelemetry-api" do
     url "https://files.pythonhosted.org/packages/08/d8/0f354c375628e048bd0570645b310797299754730079853095bf000fba69/opentelemetry_api-1.38.0.tar.gz"
     sha256 "f4c193b5e8acb0912b06ac5b16321908dd0843d75049c091487322284a3eea12"
-  end
-
-  resource "opentelemetry-exporter-otlp" do
-    url "https://files.pythonhosted.org/packages/c2/2d/16e3487ddde2dee702bd746dd41950a8789b846d22a1c7e64824aac5ebea/opentelemetry_exporter_otlp-1.38.0.tar.gz"
-    sha256 "2f55acdd475e4136117eff20fbf1b9488b1b0b665ab64407516e1ac06f9c3f9d"
   end
 
   resource "opentelemetry-exporter-otlp-proto-common" do
@@ -438,63 +433,63 @@ class Pixelle < Formula
   end
 
   resource "opentelemetry-instrumentation-alephalpha" do
-    url "https://files.pythonhosted.org/packages/43/5d/3e783b635e77e7489110c5c1b3b447e164df9b67c9d38a023beb8c533c1c/opentelemetry_instrumentation_alephalpha-0.47.5.tar.gz"
-    sha256 "ca5ec9685dd057f2b12855bbe2f2947439d7fc2438f3b87bf1fd8211e9c1230c"
+    url "https://files.pythonhosted.org/packages/91/91/3e0bff99a1fbdc6c59b64534af1fc6c735fd3f579809364ce7ae0c6ba930/opentelemetry_instrumentation_alephalpha-0.48.1.tar.gz"
+    sha256 "c56d95134973712be1d6eb02c2e40b0bc142af747ce33c0b0b7c73362ed61948"
   end
 
   resource "opentelemetry-instrumentation-anthropic" do
-    url "https://files.pythonhosted.org/packages/09/85/a2fc2cdc7633aabe85f9c644f0c2b9824c4d0e6ad7da35dfdd1ef5b5dcce/opentelemetry_instrumentation_anthropic-0.47.5.tar.gz"
-    sha256 "087470be96bb00b2c9229aa3be1b177b5e81e3a7454988847f3f06418a23d106"
+    url "https://files.pythonhosted.org/packages/c3/78/b90f8d933d56c407e64a0832be8c90bc5bf9df72c6a64deb75f45eede73b/opentelemetry_instrumentation_anthropic-0.48.1.tar.gz"
+    sha256 "4b48c6529f44e3f7aa5e6dc4ea1dd02f5ae785ab85ade01c85b34bbf3fb8bda0"
   end
 
   resource "opentelemetry-instrumentation-bedrock" do
-    url "https://files.pythonhosted.org/packages/88/f4/d98ff19c38093609dfc18c936b99e7e4de8d0690f093ed436b90f7c91db7/opentelemetry_instrumentation_bedrock-0.47.5.tar.gz"
-    sha256 "779fa422179f17c1d164cf6338e8e6064bcabffb347ef8df2be7a7ff39650f4b"
+    url "https://files.pythonhosted.org/packages/34/0e/1426231259f15b21b4929ba8a5a3ba1cd46064efcd0519c2a5a9e9faf79b/opentelemetry_instrumentation_bedrock-0.48.1.tar.gz"
+    sha256 "091f4ed1b503059de3e641a23d52091136497520073c2683eaa57108ff1371a2"
   end
 
   resource "opentelemetry-instrumentation-chromadb" do
-    url "https://files.pythonhosted.org/packages/e5/6b/d5fb1e2812b5143f2d10e79ce8beaae0bdc0461fdafe70ad927317c03571/opentelemetry_instrumentation_chromadb-0.47.5.tar.gz"
-    sha256 "102ab80d5b567ec3407304f2266c44bc1d6fc1396c295cd1fac3542d1f81dd81"
+    url "https://files.pythonhosted.org/packages/bc/6b/e06f82959c0a8f87e7f7b75efde2820d46993066b3a9cbdfe06a1335c5ff/opentelemetry_instrumentation_chromadb-0.48.1.tar.gz"
+    sha256 "bca2184ddeeb59c04ce6adc3977c937c1edbd48f05625b0cfc9bfadfba99eaa5"
   end
 
   resource "opentelemetry-instrumentation-cohere" do
-    url "https://files.pythonhosted.org/packages/d3/18/ecf5fb8d9db0ace1bed271a20999d68ff63ca25a5b8479637242cd65535d/opentelemetry_instrumentation_cohere-0.47.5.tar.gz"
-    sha256 "3127ef07b4ab2b50fb5ab6ac6a5bec86ff4e99c37c23b44587894ee630b21906"
+    url "https://files.pythonhosted.org/packages/22/41/563efba4c4ab21f41aacbeee5e908e09e667eb09c7b6439adff156bdb348/opentelemetry_instrumentation_cohere-0.48.1.tar.gz"
+    sha256 "4abd1df5dcff54d514f49ceea9cf9780fbd616555a5a6c8f8d204cc0d30b4073"
   end
 
   resource "opentelemetry-instrumentation-crewai" do
-    url "https://files.pythonhosted.org/packages/19/b9/d8a2c6bad56516941d6aba683fbb9d4187c8f4f897bb857256ea142136cd/opentelemetry_instrumentation_crewai-0.47.5.tar.gz"
-    sha256 "5965924923364b2f5ebe3365be083c60602737052db0f8996e60c74392987431"
+    url "https://files.pythonhosted.org/packages/17/8c/bb088239d4f57c46828fcff580263a100de3ec1e7b270d288609d077f262/opentelemetry_instrumentation_crewai-0.48.1.tar.gz"
+    sha256 "e7e53cbbdee480859e90bfc202f80b06845529bf8ddc95a1b9d94337ce403428"
   end
 
   resource "opentelemetry-instrumentation-google-generativeai" do
-    url "https://files.pythonhosted.org/packages/28/27/dc8125b4e4ed7d14b018f5b83e467c99b2908726787c4901be55f5ed8940/opentelemetry_instrumentation_google_generativeai-0.47.5.tar.gz"
-    sha256 "248cf101ebb3bf4a8641e693650276c877274032ca2cee49e69db09c727ac4a8"
+    url "https://files.pythonhosted.org/packages/df/f1/8e54ab737414f09c0cb643508efdfc56acb0f854d249f3dead99b37e3b09/opentelemetry_instrumentation_google_generativeai-0.48.1.tar.gz"
+    sha256 "54c60a316b79e556ca12f2291aafcb0370d16e3e5a2ba3ac97912b060b7d960b"
   end
 
   resource "opentelemetry-instrumentation-groq" do
-    url "https://files.pythonhosted.org/packages/e2/b4/ce00b908e5324169e7197adbc723835271c126e9018c66f969d42c223d60/opentelemetry_instrumentation_groq-0.47.5.tar.gz"
-    sha256 "e5ed4b2666fe884ef7690cd8b1d439d4665aa280161113f6b72c8f7940cc0d2c"
+    url "https://files.pythonhosted.org/packages/47/66/79fdcffe1d71b760ffb792a948c73b8a5e3b72912b5d921979c50e2e0f73/opentelemetry_instrumentation_groq-0.48.1.tar.gz"
+    sha256 "29914b19f270e45686c9ed80ec4e162f367d0f6e519cde4d43a6b781ae663b0a"
   end
 
   resource "opentelemetry-instrumentation-haystack" do
-    url "https://files.pythonhosted.org/packages/a9/4b/bcef0b44a61730fd037add48016932c58902e69edb923d7b760c786b08d4/opentelemetry_instrumentation_haystack-0.47.5.tar.gz"
-    sha256 "28d5a9429c508d26f57f0ca63daffdbc211bda889a27a8d21477e5c758a2181a"
+    url "https://files.pythonhosted.org/packages/88/e8/a9591cfe54d2d64f9513f9897c4ce609dc44f02df5f8817b4e26c85d0973/opentelemetry_instrumentation_haystack-0.48.1.tar.gz"
+    sha256 "2087bbed1c6c741197d0276fcf19735bd1d9f133a04e86c641b4bb9bf2fd69dc"
   end
 
   resource "opentelemetry-instrumentation-lancedb" do
-    url "https://files.pythonhosted.org/packages/43/1c/409594efd6da67fcb7ec32ea6b2fcee64af20344dfff4309b46176d0e40c/opentelemetry_instrumentation_lancedb-0.47.5.tar.gz"
-    sha256 "ce4dc51dec36c5eaa783c83a9c343ae4dffb87066fab7c521c832a0de4d44d8b"
+    url "https://files.pythonhosted.org/packages/04/ba/093142448c14bd44dee3fa5973c1d891b0a6c90744099592caf003d58e96/opentelemetry_instrumentation_lancedb-0.48.1.tar.gz"
+    sha256 "97be9e61d8436a386538cd394eca1cdbad10991ee67297f10a8683947fabcd8e"
   end
 
   resource "opentelemetry-instrumentation-langchain" do
-    url "https://files.pythonhosted.org/packages/09/3d/bf5aa4d587cc8bcc01939daf2ad5244fac1043c77206d5597322612da117/opentelemetry_instrumentation_langchain-0.47.5.tar.gz"
-    sha256 "720c5fc0bc0d060a28bea91045feaf8bb459f9d1f4361fea8ae2afdcdcf4dd3c"
+    url "https://files.pythonhosted.org/packages/02/68/2129809e55e0b8b70d5f5532551d7f27d1fa97e3b1a9e4602c0d04655c52/opentelemetry_instrumentation_langchain-0.48.1.tar.gz"
+    sha256 "2251d1ab4cbe1d8874f66a7566680dfe48a02ebc78e9f845a69ad0f26840661b"
   end
 
   resource "opentelemetry-instrumentation-llamaindex" do
-    url "https://files.pythonhosted.org/packages/55/88/32730585c65426567ae9aa8cb19722d41ef5b32797b885af0dcef7966c73/opentelemetry_instrumentation_llamaindex-0.47.5.tar.gz"
-    sha256 "29eb4c1b306bb1327d9a68846b0f1e8adef896e43e8e55ca5daa3fe2410ddbf4"
+    url "https://files.pythonhosted.org/packages/87/ba/56f1e18b45f45f0c38c94b6ab2c5ea35fe01419ad84f2b8f3c4c309c9d39/opentelemetry_instrumentation_llamaindex-0.48.1.tar.gz"
+    sha256 "f23059e21708308a625d50359d9bd968059d0ab47807046a1c90aed6fdf72f46"
   end
 
   resource "opentelemetry-instrumentation-logging" do
@@ -503,48 +498,48 @@ class Pixelle < Formula
   end
 
   resource "opentelemetry-instrumentation-marqo" do
-    url "https://files.pythonhosted.org/packages/d5/17/fcaf6a64c7c4d5fd1fd5129189f7f45ecd06a08e61ab40cecd516d67e6da/opentelemetry_instrumentation_marqo-0.47.5.tar.gz"
-    sha256 "7a5c112284dac61371712830c024a4ce7c91b3b7a9f1432336814bfa18ead2ed"
+    url "https://files.pythonhosted.org/packages/09/a4/1476eaa2f1235194f1bd315dbde6ebc7870eb473183b6c067ed6811390d5/opentelemetry_instrumentation_marqo-0.48.1.tar.gz"
+    sha256 "05c80fc3e220f942801523ea2e4199af6f48cd8827c6b3ad639c7d00007bdd5d"
   end
 
   resource "opentelemetry-instrumentation-mcp" do
-    url "https://files.pythonhosted.org/packages/51/44/ede68cfc4c3d262dd82088763c7bebd019ef57438adc815c15e1aa82bf27/opentelemetry_instrumentation_mcp-0.47.5.tar.gz"
-    sha256 "dc873754a35dff09eff2737322afbd999da4517138a62e8f29ffd668e4d885e8"
+    url "https://files.pythonhosted.org/packages/dc/61/97d31a8e59c981c21ceb3f7cf96675da306af5a3e8957ad3ceb5c669b780/opentelemetry_instrumentation_mcp-0.48.1.tar.gz"
+    sha256 "5907c2d1cc87e530e3c6a3609912d1ade6b56d5ca157afc470586b04ea99602c"
   end
 
   resource "opentelemetry-instrumentation-milvus" do
-    url "https://files.pythonhosted.org/packages/5d/b2/e4bd7659fb9eb0b1e9b590e072184b18a996ef80026992bb446ed369722d/opentelemetry_instrumentation_milvus-0.47.5.tar.gz"
-    sha256 "cbd234a8e23dd623a73a40813c8c71e3d7d3671cab6ad14d64dd32545891c7a6"
+    url "https://files.pythonhosted.org/packages/b7/79/c719b97bf8e938f17aedfec4a8cc6c978adefa99c7dec900a62c7d1ce0ed/opentelemetry_instrumentation_milvus-0.48.1.tar.gz"
+    sha256 "9de095f8c16c0e149c97d31cbf734c002ca3aa3d33a949845e15e2d228edf5a2"
   end
 
   resource "opentelemetry-instrumentation-mistralai" do
-    url "https://files.pythonhosted.org/packages/04/d7/b380859e4ef73a320230171c5974ba6a390e8eb07f1bececae1d8a35e219/opentelemetry_instrumentation_mistralai-0.47.5.tar.gz"
-    sha256 "116682cfce1c83be5ce05bbc971bebddbc126f5312fa55a7f25eab3a6f6d0c82"
+    url "https://files.pythonhosted.org/packages/b0/22/1c8be67d14dfb5faebfb293e5eae2c12d988dcd2c8cbb68972f7e30370a0/opentelemetry_instrumentation_mistralai-0.48.1.tar.gz"
+    sha256 "e206d1012258c31cb431d08b42058e89d5ff07b1b1a50fdf26050ed490ee741c"
   end
 
   resource "opentelemetry-instrumentation-ollama" do
-    url "https://files.pythonhosted.org/packages/bd/cc/366c14c19cc96f5401eae5739586195fb3eb709eed15406645064dd3cdb5/opentelemetry_instrumentation_ollama-0.47.5.tar.gz"
-    sha256 "1533f6d36b1327772053e4a39b520eda3c960382c19c38569291d5e0a21ecdcd"
+    url "https://files.pythonhosted.org/packages/8e/72/9d2fecebbb6b000a7abd894192a1c4aa14bad763a59f3b215b5b59344817/opentelemetry_instrumentation_ollama-0.48.1.tar.gz"
+    sha256 "fe51018381b4b35db1309b36b1b06eec9a580ff8bd5968e3d5fb0ad87fbf3fa6"
   end
 
   resource "opentelemetry-instrumentation-openai" do
-    url "https://files.pythonhosted.org/packages/e2/db/3786ddc4de92e9b44ef7416a3786549b28f8a797fdf90e0dd265e6f9fb4d/opentelemetry_instrumentation_openai-0.47.5.tar.gz"
-    sha256 "0073613d1b586111aa40098d44d6a910b4edbe5d8df455fe778e85f50814e421"
+    url "https://files.pythonhosted.org/packages/ae/2e/9d32127aad2e48f7b05de10acedb96e8da77a7d3f7e4af50096f092cc65b/opentelemetry_instrumentation_openai-0.48.1.tar.gz"
+    sha256 "e081eeb6e5aa59f286abd70ce100212b93885ac23061cd4af304217aefc5347a"
   end
 
   resource "opentelemetry-instrumentation-openai-agents" do
-    url "https://files.pythonhosted.org/packages/df/de/b38a887163db474c5db4b39541b412bfcd95a78017b752c922a42271a0fa/opentelemetry_instrumentation_openai_agents-0.47.5.tar.gz"
-    sha256 "89ef8e6e75aaa0aae39383a3bab153f5676240d3d2fed44bcd8eb311c32df6f9"
+    url "https://files.pythonhosted.org/packages/7a/28/a97989398cf39cf6e66bc3cb1e35409bb2476fe2fe28716eb4829644d8d6/opentelemetry_instrumentation_openai_agents-0.48.1.tar.gz"
+    sha256 "bfde836e7be87d007f56466162d3af82d7df87ef5be3e3b04f5311635ef68e75"
   end
 
   resource "opentelemetry-instrumentation-pinecone" do
-    url "https://files.pythonhosted.org/packages/f8/bc/fdce123537b140aadc79b975aefc14fe96cabb156f9f94dfcc886f05b787/opentelemetry_instrumentation_pinecone-0.47.5.tar.gz"
-    sha256 "23838254d2851782b3fcfb70f82ee60c4e73929c85e63275779a35f0707bbc39"
+    url "https://files.pythonhosted.org/packages/1f/4e/4ec1d30dcd19229c2dcba6f726be52b3daa40f66d43f31f545dbc7b7831a/opentelemetry_instrumentation_pinecone-0.48.1.tar.gz"
+    sha256 "225fff84d659d60cefef1b68c79d9f2901ed91e6f3873961bac7883312a6fda9"
   end
 
   resource "opentelemetry-instrumentation-qdrant" do
-    url "https://files.pythonhosted.org/packages/50/08/6f3f6da00097a6b40e47621a59a919fd6e751b16722cec102646656477e2/opentelemetry_instrumentation_qdrant-0.47.5.tar.gz"
-    sha256 "2ece450b726b9556fa5b2dcd34df1c7e87d7a5aca716f84bc7894f3d96a4825e"
+    url "https://files.pythonhosted.org/packages/c5/b3/52ecf317134ddf45d8f6edcb2e51f69fa34a849bea5f1fe2aa54cebfe215/opentelemetry_instrumentation_qdrant-0.48.1.tar.gz"
+    sha256 "f373120d9925d95f3e72aee8e7b62ac05c9e972dae3c54b74e7b67c019a8c7d3"
   end
 
   resource "opentelemetry-instrumentation-redis" do
@@ -553,8 +548,8 @@ class Pixelle < Formula
   end
 
   resource "opentelemetry-instrumentation-replicate" do
-    url "https://files.pythonhosted.org/packages/9e/be/516c136042608c94c1acf9b1b667971b76fd7af02156a49bec62846dbd31/opentelemetry_instrumentation_replicate-0.47.5.tar.gz"
-    sha256 "e136d8ca5d45edb906536c70ce5af54620dc579c47773c8fe4ec555bb1f5c93c"
+    url "https://files.pythonhosted.org/packages/9e/f0/88f0d74c52008f3b5f11edcdc9977df2b4c80447018a78c8029a629d25ac/opentelemetry_instrumentation_replicate-0.48.1.tar.gz"
+    sha256 "d03b243006aa7ed3b34e16d6ac8b76d8bd1452af20c52a5c343e826b66028af6"
   end
 
   resource "opentelemetry-instrumentation-requests" do
@@ -563,8 +558,8 @@ class Pixelle < Formula
   end
 
   resource "opentelemetry-instrumentation-sagemaker" do
-    url "https://files.pythonhosted.org/packages/b5/7c/41f605a268c53cffdf4184b2f1a2d8f7897638366fd72fb6b76d3ed6534e/opentelemetry_instrumentation_sagemaker-0.47.5.tar.gz"
-    sha256 "7ba6bfb5c714ae1b10d6b51f326a2bddce48f9e9ff02ac27b0a25fe5290b8745"
+    url "https://files.pythonhosted.org/packages/ae/eb/2b4e249845267ae2aa6609e8ce1e5d4d2e78127404ec67fb33dcb3376aa6/opentelemetry_instrumentation_sagemaker-0.48.1.tar.gz"
+    sha256 "d3c103750c270ab69f38a588ca4918031fc9115f45fbfd96f804d29801485fde"
   end
 
   resource "opentelemetry-instrumentation-sqlalchemy" do
@@ -578,13 +573,13 @@ class Pixelle < Formula
   end
 
   resource "opentelemetry-instrumentation-together" do
-    url "https://files.pythonhosted.org/packages/62/53/89b0fea8080c37f37fc948cfb7c6ea0e744f0835545f843db71c2e820240/opentelemetry_instrumentation_together-0.47.5.tar.gz"
-    sha256 "ab07cfce3ceec31f7c9bff44b9e5e37b7193a9529ca535b85049c7fa85cb331c"
+    url "https://files.pythonhosted.org/packages/d6/90/7c410ec9e9578714f3ed62bac3e405348f02e4d00273202bf5041cfe3efa/opentelemetry_instrumentation_together-0.48.1.tar.gz"
+    sha256 "aa9bfd602d53c7cc94ac3978298daf7bf5703f30008b7086317b0c3bb502e99c"
   end
 
   resource "opentelemetry-instrumentation-transformers" do
-    url "https://files.pythonhosted.org/packages/59/57/6e573307ab2c0e0abf4e417813f85d108b99c68e6d6d0ee2437714798ed6/opentelemetry_instrumentation_transformers-0.47.5.tar.gz"
-    sha256 "770bb1f3b59a7effe46ddcfaac8ac534255e17738f891626ecdf8452f957bfac"
+    url "https://files.pythonhosted.org/packages/d9/6b/059cca8ab13796fc1e445b1b2a5a6209902322cabd68654fc10b082726be/opentelemetry_instrumentation_transformers-0.48.1.tar.gz"
+    sha256 "721409c4da7d7f8fdab5b2e1c13b9c7da670bd1d2afcb1d629433a275b2e2bab"
   end
 
   resource "opentelemetry-instrumentation-urllib3" do
@@ -593,23 +588,23 @@ class Pixelle < Formula
   end
 
   resource "opentelemetry-instrumentation-vertexai" do
-    url "https://files.pythonhosted.org/packages/62/b0/4500df0dc5ab3aa10e83a8f14d54a5e132f9ae385811b166266063f3bfd6/opentelemetry_instrumentation_vertexai-0.47.5.tar.gz"
-    sha256 "c575438e97409f88751f75e4045de4490cec291dc30347867dad030d72bad0b8"
+    url "https://files.pythonhosted.org/packages/29/62/abefa969fdace6c911f1acd15ada5a90c4c0ef0cb8ba0d2cc38ee2fcc34e/opentelemetry_instrumentation_vertexai-0.48.1.tar.gz"
+    sha256 "6c79aa74a76e75d7b16a2fa2e717e9b2df6c09922521323ad5b842422eb3871f"
   end
 
   resource "opentelemetry-instrumentation-watsonx" do
-    url "https://files.pythonhosted.org/packages/67/73/afa4c50f4bdf1d23664ee920f0f7839c81f475477923faed51fdae29f651/opentelemetry_instrumentation_watsonx-0.47.5.tar.gz"
-    sha256 "9bbae585b6af17663964fc6f13914638aec6e7fc7ebb6a81e600a48cc128f0d6"
+    url "https://files.pythonhosted.org/packages/a8/ef/59e14bb8f4b9813646ae580200b836e82d52c01e3e8250a6a8ab99343955/opentelemetry_instrumentation_watsonx-0.48.1.tar.gz"
+    sha256 "08b06be3a7f34c9f630d462c728b0aa20707250a16ee3635a7efe4bea5b7a2be"
   end
 
   resource "opentelemetry-instrumentation-weaviate" do
-    url "https://files.pythonhosted.org/packages/0a/90/82163ae891da35380a2176923dbaf1cad0b7b228c19d7ba040d332ebe01c/opentelemetry_instrumentation_weaviate-0.47.5.tar.gz"
-    sha256 "5dc25066df61f4dfd9b8ae4799b8a589da44960ce639d32590a806e0bfdb5217"
+    url "https://files.pythonhosted.org/packages/86/44/38dea71e72ca451709bf10798b9b9a2474282d5b1345edfb9b38f09d7db7/opentelemetry_instrumentation_weaviate-0.48.1.tar.gz"
+    sha256 "7d3b058a821d3b470431a6eca8276e7bc47d7805f08345d88007fac58cdf95d2"
   end
 
   resource "opentelemetry-instrumentation-writer" do
-    url "https://files.pythonhosted.org/packages/5f/08/5418adb9ae9263e9d86d7204bde812a0ca0404a0ed417a8125030e08b322/opentelemetry_instrumentation_writer-0.47.5.tar.gz"
-    sha256 "5a41a1e253674e7840130205fe4618fa6f4033b02d14febe3769be9ad389e3a2"
+    url "https://files.pythonhosted.org/packages/58/1f/76da80db293c778d9fed2a82ba1dc57bf0e2e917508e6da5e2ae3a0dcbfd/opentelemetry_instrumentation_writer-0.48.1.tar.gz"
+    sha256 "270b4738027778ce51d8a3565f8074df64a2c8b58b4463c351c0f38dc2df4028"
   end
 
   resource "opentelemetry-proto" do
@@ -673,8 +668,8 @@ class Pixelle < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/19/ff/64a6c8f420818bb873713988ca5492cba3a7946be57e027ac63495157d97/protobuf-6.33.0.tar.gz"
-    sha256 "140303d5c8d2037730c548f8c7b93b20bb1dc301be280c378b82b8894589c954"
+    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
+    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
   end
 
   resource "psutil" do
@@ -693,8 +688,8 @@ class Pixelle < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/20/c5/dbbc27b814c71676593d1c3f718e6cd7d4f00652cefa24b75f7aa3efb25e/pydantic_settings-2.11.0.tar.gz"
-    sha256 "d0e87a1c7d33593beb7194adb8470fc426e95ba02af83a0f23474a04c9a08180"
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
   end
 
   resource "pygments" do
@@ -733,8 +728,8 @@ class Pixelle < Formula
   end
 
   resource "python-socketio" do
-    url "https://files.pythonhosted.org/packages/c0/3f/02f5970c82285bd015ec433078bfc3275580b03715ed6024607dbe0f1966/python_socketio-5.14.3.tar.gz"
-    sha256 "cd8da5e0666e741b4be19e07882e880f57a4751d1645f92c2bc746c95f23b1eb"
+    url "https://files.pythonhosted.org/packages/72/a8/5f7c805dd6d0d6cba91d3ea215b4b88889d1b99b71a53c932629daba53f1/python_socketio-5.15.0.tar.gz"
+    sha256 "d0403ababb59aa12fd5adcfc933a821113f27bd77761bc1c54aad2e3191a9b69"
   end
 
   resource "pyyaml" do
@@ -773,8 +768,8 @@ class Pixelle < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/62/74/8d69dcb7a9efe8baa2046891735e5dfe433ad558ae23d9e3c14c633d1d58/s3transfer-0.14.0.tar.gz"
-    sha256 "eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"
+    url "https://files.pythonhosted.org/packages/ca/bb/940d6af975948c1cc18f44545ffb219d3c35d78ec972b42ae229e8e37e08/s3transfer-0.15.0.tar.gz"
+    sha256 "d36fac8d0e3603eff9b5bfa4282c7ce6feb0301a633566153cbd0b93d11d8379"
   end
 
   resource "shellingham" do
@@ -803,8 +798,8 @@ class Pixelle < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/de/1a/608df0b10b53b0beb96a37854ee05864d182ddd4b1156a22f1ad3860425a/starlette-0.49.3.tar.gz"
-    sha256 "1c14546f299b5901a1ea0e34410575bc33bbd741377a10484a54445588d00284"
+    url "https://files.pythonhosted.org/packages/ba/b8/73a0e6a6e079a9d9cfa64113d771e421640b6f679a52eeb9b32f72d871a1/starlette-0.50.0.tar.gz"
+    sha256 "a2a17b22203254bcbc2e1f926d2d55f3f9497f769416b3190768befe598fa3ca"
   end
 
   resource "syncer" do
@@ -838,8 +833,8 @@ class Pixelle < Formula
   end
 
   resource "traceloop-sdk" do
-    url "https://files.pythonhosted.org/packages/3c/b0/e77687b935fbf980b52a99984dc264f2e44cde7824a3b44f28a742611900/traceloop_sdk-0.47.5.tar.gz"
-    sha256 "b592d331800b36c104316d17b1352212e3e3dbcfb37589daf2c2f3e90e84ddfe"
+    url "https://files.pythonhosted.org/packages/e4/f1/bdf609dfb683a643c5ec061cb6cd1e4594484414001d627bff47f5f8a697/traceloop_sdk-0.48.1.tar.gz"
+    sha256 "dd96fe1458e9cdbdcb82ea7af89113f8b6266c449ec1fe22aa0003543f2badc6"
   end
 
   resource "typer" do
@@ -888,8 +883,8 @@ class Pixelle < Formula
   end
 
   resource "wsproto" do
-    url "https://files.pythonhosted.org/packages/c9/4a/44d3c295350d776427904d73c189e10aeae66d7f555bb2feee16d1e4ba5a/wsproto-1.2.0.tar.gz"
-    sha256 "ad565f26ecb92588a3e43bc3d96164de84cd9902482b130d0ddbaa9664a85065"
+    url "https://files.pythonhosted.org/packages/c7/79/12135bdf8b9c9367b8701c2c19a14c913c120b882d50b014ca0d38083c2c/wsproto-1.3.2.tar.gz"
+    sha256 "b86885dcf294e15204919950f666e06ffc6c7c114ca900b060d6e16293528294"
   end
 
   resource "yarl" do
@@ -904,6 +899,12 @@ class Pixelle < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
+    # disable it to allow `typer` to use argument as shell for completions
+    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
+    ENV["_TYPER_COMPLETE_TEST_DISABLE_SHELL_DETECTION"] = "1"
+    generate_completions_from_executable(bin/"pixelle", "--show-completion")
   end
 
   test do
