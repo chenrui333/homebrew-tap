@@ -15,7 +15,7 @@ class Pdfsyntax < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e28e8048500ad23b10b7e10c2761195785c546454d442c0981a9cb8cc20f2f"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
     virtualenv_install_with_resources
