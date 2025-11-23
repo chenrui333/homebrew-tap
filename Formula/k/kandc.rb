@@ -9,8 +9,8 @@ class Kandc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9828ade2abb8deffb710a2a485ed90829f297fd16f2cc58746395e5719fd815c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "bc46869ed97af8f6d19dbaa2af9daead9379f35cf40f87a6611cd990a0a65e1e"
   end
 
   depends_on "certifi" => :no_linkage
