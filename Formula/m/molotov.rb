@@ -9,10 +9,13 @@ class Molotov < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a6e6baf5948e63275f6c0fd39e6dfd4ed825562083ff52d1774c378b70ef3b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c39e26d90f0335fef34ec630efc52f146388a70a301d94cba4f57cc873a6c39"
-    sha256 cellar: :any_skip_relocation, ventura:       "ff5f2bd92ddae9bbd1f4b63ce123393d8c49f28d7629707cf991cc890a4e3c2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f9675918b9b86a791de0d484f1aa23a108de6e25c260afa04e183db5934dbd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac78047b93b4368ffff8614d126207e12b05cae2169d262de3e4f9638179c404"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83c9e88f6ad2b8fa4bc7134b8de9005f5b70fd9845c0342ab3d65f838471ce74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "399579654ca180fa94bd0abe1ab0f246fd05d2b3184cc0a3d12a3189f47f19e1"
+    sha256 cellar: :any_skip_relocation, sequoia:       "68902258e9ebb3b47813cd0cb365786df03190fb9d428f356f24f4e7cd8a444a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ace3eda1df55664cefb4694459c559920c87686948f099145f593b1fe15438d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db90959a5c49c1958cfaacd0876c4804fc543f7465d831f16d2725fc7c6757bd"
   end
 
   depends_on "python-setuptools"
