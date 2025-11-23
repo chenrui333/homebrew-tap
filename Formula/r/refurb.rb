@@ -14,11 +14,11 @@ class Refurb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "54b07124f7707f282f7eeeab645c22de5bf1310fcc798451a11487a1a39a208d"
   end
 
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "mypy" do
-    url "https://files.pythonhosted.org/packages/14/a3/931e09fc02d7ba96da65266884da4e4a8806adcdb8a57faaacc6edf1d538/mypy-1.18.1.tar.gz"
-    sha256 "9e988c64ad3ac5987f43f5154f884747faf62141b7f842e87465b45299eea5a9"
+    url "https://files.pythonhosted.org/packages/c0/77/8f0d0001ffad290cef2f7f216f96c814866248a0b92a722365ed54648e7e/mypy-1.18.2.tar.gz"
+    sha256 "06a398102a5f203d7477b2923dda3634c36727fa5c237d8f859ef90c42a9924b"
   end
 
   resource "mypy-extensions" do
