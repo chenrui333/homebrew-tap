@@ -6,6 +6,7 @@ class MailDeduplicate < Formula
   url "https://files.pythonhosted.org/packages/a1/e1/2e54daf7750bf86205cbb9ddde0e7ba33617949d256ecc44cac6e28e156f/mail_deduplicate-8.0.0.tar.gz"
   sha256 "d58e019571be73a08015c4bf404b0a52fdc5fd85765726808343dba5963241d7"
   license "GPL-2.0-or-later"
+  head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -14,7 +15,7 @@ class MailDeduplicate < Formula
 
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi"
 
