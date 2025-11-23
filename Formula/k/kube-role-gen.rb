@@ -4,6 +4,7 @@ class KubeRoleGen < Formula
   url "https://github.com/coopernetes/kube-role-gen/archive/refs/tags/v0.0.7.tar.gz"
   sha256 "a1602a053e5f4d4424ea01295956ec8eaef53ce2b59c6eddee1d076631946b5d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/coopernetes/kube-role-gen.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class KubeRoleGen < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     # patch version
     inreplace "cmd/kube-role-gen/main.go", "0.0.6", version.to_s
 

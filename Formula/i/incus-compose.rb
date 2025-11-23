@@ -4,6 +4,7 @@ class IncusCompose < Formula
   url "https://github.com/bketelsen/incus-compose/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "b7505fb5d92a0b30ed3bf014208ccad8d754f48f1eb4f2b6627201bdefdc4056"
   license "MIT"
+  revision 1
   head "https://github.com/bketelsen/incus-compose.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class IncusCompose < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = %W[
       -s -w
       -X github.com/bketelsen/incus-compose/cmd.date=#{time.iso8601}

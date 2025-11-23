@@ -4,6 +4,7 @@ class Gofakeit < Formula
   url "https://github.com/brianvoe/gofakeit/archive/refs/tags/v7.10.0.tar.gz"
   sha256 "5c2547035fb84c60307f3a9aa34fe19f56e72bc5561c742261f8999488dbcc32"
   license "MIT"
+  revision 1
   head "https://github.com/brianvoe/gofakeit.git", branch: "master"
 
   bottle do

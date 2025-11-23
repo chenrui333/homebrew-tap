@@ -5,6 +5,7 @@ class Faq < Formula
   version "0.0.7"
   sha256 "30bb89d9072ab4f185da3f2dcee0442205cfe4612cf479d988bea3338283d4b8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/jzelinskie/faq.git", branch: "master"
 
   bottle do
