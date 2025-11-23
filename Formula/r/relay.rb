@@ -5,6 +5,11 @@ class Relay < Formula
   sha256 "ca49e43fe8f334a037448ab8bdcc7bb0351aee7fceebc9eac8fde6807be2049b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "4f6e5c5a5d31928598490d37c12a32039ded3a4e34e0c7d6adddb304198526ed"
+  end
+
   depends_on "node"
 
   def install
