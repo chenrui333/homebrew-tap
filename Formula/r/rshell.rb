@@ -9,10 +9,8 @@ class Rshell < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67da65ed8100858373afefac209b5a11e64b35313f052969a50fb9401cf9d4b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb3932d31247bce16245ad40849aec8e393dc466f52439b1914b8a7063995d7"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3cc110de01312ffc3aa2bc540380434a479e9eb19b12bf27288b87dfa06abef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9b82a7384824707a8de0ddc328a01a2f646566faeaf048b1548c260296e3ba7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ff1cf4fefe9f79e2beb7c64f6abdd4a56e07825014d9275bc372a4a7a02e0c03"
   end
 
   depends_on "python@3.14"
