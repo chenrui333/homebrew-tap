@@ -9,11 +9,12 @@ class Watchfiles < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "c075b4b920330d62f2bcf4a1c0854a2d2e5dbdd9fc1dd8bfbcd8edff4ea6b147"
-    sha256 cellar: :any,                 arm64_sequoia: "c236a98deda3e4961b5de05fabc7641ef7a9007fd63fe4995c5999ef4b24c0e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff8c7698686c84c9e5097285f81b1a6d00665c2bb5c5a91b67887a6f831808be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3eb4a4710c29f42f759e97ecef19da39bac3ebe048315402a920746fc2f0e6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72ef269a6aa76bc257371b12bc11d74d9fcea5804b8c6669c9cf9e8176b0f620"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "53b14a2f1e98dad723f9cd681c49ca86db85d805327c1b9793d5db54d51c3720"
+    sha256 cellar: :any,                 arm64_sequoia: "49d99781c2e9e1a70ee9ffb5b3f064143e233038ee6f0a73c1db7aec08c3d0a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c1baf8ff00510999869aea5b16f6454ddd0ce7c87ae8534acee8b7d299d53c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2180dd6fee0f2ffd0464aa81bbc05a8c5204fe2ead219c9074de37a543746bd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "706622176181a171f32a1615fe0ee5a0ee0434d22edb5989a034096c54b61a3a"
   end
 
   depends_on "rust" => :build
