@@ -10,8 +10,8 @@ class Ifstate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "1d5dc2a3c6fc8bd779d02bbe17bcbb1310ce6be20ca702725bf9ae4f58cedaa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f1cde8c13cbac312d1ff2c55e556cf9b23c8cdbce6d36e1b4849370ff4357fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "36ce3f117f2652cc38a9cdee30349a69c4d1afceaf279cf0609ad48aba7de986"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2e93a6ee16a442e81f25ad1db2ac38852debd35d4e8432ad8262192a5cda4541"
   end
 
   depends_on "libyaml"
