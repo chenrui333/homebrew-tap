@@ -178,7 +178,6 @@ brew install --cask <tool>
 - `duster`
 - `dvm`
 - `dxt`
-- `e1s`
 - `eas-cli`
 - `elastop`
 - `emoj`
@@ -223,6 +222,7 @@ brew install --cask <tool>
 - `git-vain`
 - `git-x`
 - `gitlabform`
+- `gitlogue`
 - `gitman`
 - `gittype`
 - `gix`
@@ -500,6 +500,7 @@ brew install --cask <tool>
 - `sprofile`
 - `squall`
 - `starcharts`
+- `starlit`
 - `statoscope`
 - `stree`
 - `strimzi-kafka-cli`
@@ -580,7 +581,6 @@ brew install --cask <tool>
 - `wisu`
 - `wuchale`
 - `xcpkg`
-- `xleak`
 - `xmlformatter`
 - `yajsv`
 - `yeetfile`
