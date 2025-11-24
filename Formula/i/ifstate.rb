@@ -8,6 +8,12 @@ class Ifstate < Formula
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "1d5dc2a3c6fc8bd779d02bbe17bcbb1310ce6be20ca702725bf9ae4f58cedaa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f1cde8c13cbac312d1ff2c55e556cf9b23c8cdbce6d36e1b4849370ff4357fc"
+  end
+
   depends_on "libyaml"
   depends_on :linux
   depends_on "python@3.14"
