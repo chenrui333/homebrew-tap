@@ -52,6 +52,7 @@ brew install --cask <tool>
 - `arxiv-mcp-server`
 - `asmfmt`
 - `astro-language-server`
+- `auggie`
 - `austin-tui`
 - `auto-favicon-mcp-server`
 - `autoflake`
@@ -195,6 +196,7 @@ brew install --cask <tool>
 - `fat`
 - `ferret`
 - `fex`
+- `filessh`
 - `firectl`
 - `fission-cli`
 - `fixjson`
@@ -280,6 +282,7 @@ brew install --cask <tool>
 - `ip2d`
 - `ips`
 - `jaggr`
+- `jarl`
 - `jetzig`
 - `jiggy`
 - `jjj`
