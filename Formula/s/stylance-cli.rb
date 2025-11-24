@@ -6,6 +6,15 @@ class StylanceCli < Formula
   license "MIT"
   head "https://github.com/basro/stylance-rs.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f10e3e30bb52fb8968f2fbbadf1565cfd8830b93889fa7d2859fd019bef63655"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea3d8d4b3f62a9e962e6a90720a0086143a03bbef992bba6228a4659cedd01e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16e2d3f89080628110958713c7319519c7a6c93af28746fa94927e37d14ed8b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77773a3a50ba4ffe576b2c95f5b7ce9b3ba77db1567e600b4a0a38112a963eaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29511dbac7fd9d401a99dae34895475ca8844ddcbf18e0a1c402d30563c118d3"
+  end
+
   depends_on "rust" => :build
 
   def install
