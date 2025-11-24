@@ -8,6 +8,11 @@ class Starlit < Formula
   # missing license
   head "https://github.com/ashuhlee/starlit.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "a878b44231a44e0cbef5595dd7d88f730e168a89f06d173d2361e794a9d38bef"
+  end
+
   depends_on "certifi"
   depends_on "python@3.14"
 
