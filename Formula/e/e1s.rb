@@ -3,8 +3,8 @@ class E1s < Formula
   homepage "https://github.com/keidarcy/e1s"
   url "https://github.com/keidarcy/e1s/archive/refs/tags/v1.0.51.tar.gz"
   sha256 "c0f368ca487386b9105b675aff066eb9d1f03a31e1edcd2986bccb687c07058e"
-  license "Apache-2.0"
-  head "https://github.com/keidarcy/e1s.git", branch: "main"
+  license "MIT"
+  head "https://github.com/keidarcy/e1s.git", branch: "master"
 
   livecheck do
     url :stable
