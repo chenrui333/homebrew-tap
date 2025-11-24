@@ -5,6 +5,11 @@ class Auggie < Formula
   sha256 "62abb347a91eabca63bee85e460378d12a7c69f0a238dff138253c865ae5e505"
   # license :unfree
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "f02d80aaa5e5d9e06d48a211fcc48ab3c0c32c4f6eb2395c11b6f89cf56d59b5"
+  end
+
   depends_on "node"
 
   def install
