@@ -6,7 +6,12 @@ class Snipt < Formula
   license "MIT"
   head "https://github.com/snipt/snipt.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/snipt-cli")
