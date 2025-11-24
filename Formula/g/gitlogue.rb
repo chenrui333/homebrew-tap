@@ -1,0 +1,39 @@
+class Gitlogue < Formula
+  desc "Git commit history replay"
+  homepage "https://github.com/unhappychoice/gitlogue"
+  url "https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "7346e59149f48c34f7b6c7777a6c02da342c27202c257dea86a5d20e6b3d8828"
+  license "ISC"
+  head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
+
+  depends_on "rust" => :build
+
+  # upstream pr ref, https://github.com/unhappychoice/gitlogue/pull/95
+  patch :DATA
+
+  def install
+    system "cargo", "install", *std_cargo_args
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/gitlogue --version")
+    assert_match "ayu-dark", shell_output("#{bin}/gitlogue theme list")
+  end
+end
+
+__END__
+diff --git a/src/main.rs b/src/main.rs
+index ea2281a..b996926 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -25,8 +25,8 @@ pub enum PlaybackOrder {
+
+ #[derive(Parser, Debug)]
+ #[command(
+-    name = "git-logue",
+-    version = "0.0.1",
++    name = "gitlogue",
++    version = "0.3.0",
+     about = "A Git history screensaver - watch your code rewrite itself",
+     long_about = "git-logue is a terminal-based screensaver that replays Git commits as if a ghost developer were typing each change by hand. Characters appear, vanish, and transform with natural pacing and syntax highlighting."
+ )]
