@@ -7,6 +7,15 @@ class NamespaceCli < Formula
   license "Apache-2.0"
   head "https://github.com/HarishChandran3304/better-env.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89a9c2f0b74ffb21a6a8d6ff00c4343fb646cd51a3f952612c694be6fb9d57a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a9c2f0b74ffb21a6a8d6ff00c4343fb646cd51a3f952612c694be6fb9d57a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a9c2f0b74ffb21a6a8d6ff00c4343fb646cd51a3f952612c694be6fb9d57a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "235e940aa9486fdef0f4c4f6994d392b00f055e541ba9f9a3deee3197072df8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6022fcb6c7bd42f4121f099ba2778515d8b2a9219af99653f52715000b6f5a35"
+  end
+
   depends_on "go" => :build
 
   def install
