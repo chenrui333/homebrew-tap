@@ -6,6 +6,15 @@ class BetterEnv < Formula
   license "MIT"
   head "https://github.com/HarishChandran3304/better-env.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cd496d1ff136919ea8cede59a9ad993a6a2d749eed2af6b6d7c7d3292e6cb5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2cd496d1ff136919ea8cede59a9ad993a6a2d749eed2af6b6d7c7d3292e6cb5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cd496d1ff136919ea8cede59a9ad993a6a2d749eed2af6b6d7c7d3292e6cb5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b903c954aeb7326899668b1b3ac4833e9b855a8beb5c142f731db9cf7a74798"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1af2cfff78be361dca3c082c188ca9d71556e38471782b22628ddefa073c6ce8"
+  end
+
   depends_on "go" => :build
 
   def install
