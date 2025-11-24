@@ -6,6 +6,15 @@ class Filessh < Formula
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/JayanAXHF/filessh.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09cabe80712914b740083bfde5a8e3f98e69d3690cabefabf091ea14873532de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf2f7c440b483e3909f3c76a365de9cec2b06f309e8f49c300cb11e328501d11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e38d5443d00e8235715dd2d9cee3766ac08aa2a0ffe5b7a07cd5a45a3c72ed9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5c5782d12d97952bc9434ea9f215b7080325c4cfc22bb7178a8a7dc3dfab365"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ab1a6bb5c29335c5d3939063e366e3bbaaa3c2f1084a57d847b1683b4325587"
+  end
+
   depends_on "rust" => :build
 
   def install
