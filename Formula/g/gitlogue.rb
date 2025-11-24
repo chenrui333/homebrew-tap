@@ -6,7 +6,9 @@ class Gitlogue < Formula
   license "ISC"
   head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   # upstream pr ref, https://github.com/unhappychoice/gitlogue/pull/95
   patch :DATA
