@@ -61,15 +61,16 @@ brew install --cask <tool>
 - `await`
 - `awk-language-server`
 - `awless`
-- `aws-spiffe-workload-helper`
 - `axiom-mcp-server`
 - `az-tui`
 - `azure-pipelines-language-server`
 - `backport`
 - `balcony`
 - `base-mcp-server`
+- `bash-script-tools`
 - `bearer`
 - `beelzebub`
+- `better-env`
 - `bibiman`
 - `bin-fq`
 - `blade-formatter`
@@ -134,6 +135,7 @@ brew install --cask <tool>
 - `cocainate`
 - `code-index-mcp`
 - `code-pushup`
+- `codebuff`
 - `codefmt`
 - `codespelunker`
 - `codstts`
@@ -163,7 +165,6 @@ brew install --cask <tool>
 - `decktape`
 - `deepteam`
 - `dela`
-- `devcockpit`
 - `dg`
 - `dhv`
 - `di-tui`
@@ -268,6 +269,7 @@ brew install --cask <tool>
 - `hyperbolic`
 - `iam-convert`
 - `iflow-cli`
+- `ifstate`
 - `iftree`
 - `illa`
 - `imgcat`
@@ -327,7 +329,6 @@ brew install --cask <tool>
 - `lib-x`
 - `libdivide`
 - `magic-mcp-server`
-- `mail-deduplicate`
 - `mamediff`
 - `marchat`
 - `markpdf`
@@ -357,6 +358,7 @@ brew install --cask <tool>
 - `mqtt-cli`
 - `mynav`
 - `oceanbase-mcp-server`
+- `namespace-cli`
 - `nanodbc`
 - `narr`
 - `nest-cli`
@@ -367,6 +369,7 @@ brew install --cask <tool>
 - `ninjabot`
 - `nino`
 - `nkt`
+- `nkv`
 - `nocc`
 - `npkill`
 - `npm-np`
@@ -388,7 +391,6 @@ brew install --cask <tool>
 - `oxylabs-mcp`
 - `papis`
 - `paq`
-- `parqeye`
 - `pdfsyntax`
 - `pencode`
 - `percollate`
@@ -429,6 +431,7 @@ brew install --cask <tool>
 - `pyp`
 - `pyscn`
 - `qqqa`
+- `que`
 - `quicssh-rs`
 - `r2md`
 - `rabbitmq-message-ops`
@@ -443,6 +446,7 @@ brew install --cask <tool>
 - `reddix`
 - `reformat-gherkin`
 - `refurb`
+- `relay`
 - `remark-cli`
 - `resinator`
 - `revanced-cli`
@@ -487,7 +491,6 @@ brew install --cask <tool>
 - `speedscope`
 - `speedtest`
 - `spicedb`
-- `spiffe-helper`
 - `spiffe-spike`
 - `spok`
 - `spotifydl`
@@ -498,6 +501,7 @@ brew install --cask <tool>
 - `stree`
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
+- `stylance-cli`
 - `summon`
 - `superclaude`
 - `superstarryeyes-bit`
