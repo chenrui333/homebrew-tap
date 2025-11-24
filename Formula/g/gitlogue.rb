@@ -10,6 +10,8 @@ class Gitlogue < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
+  uses_from_macos "zlib"
+
   # upstream pr ref, https://github.com/unhappychoice/gitlogue/pull/95
   patch :DATA
 
