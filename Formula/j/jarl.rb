@@ -6,6 +6,15 @@ class Jarl < Formula
   license "MIT"
   head "https://github.com/etiennebacher/jarl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "937aa67a231a1ba65df5fda55968c78a8f4e6b7db32b7b4090c9924b9998ae8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "674b5393bb20c7dc6c346fc365724406383835f5f1d2e52334671b77122c45dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3da2a347b4fe83a748fdfdf5a0eaad462a67354970899d59d63a6fb3ca0ccebb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60b2003c455802cccc95072689274a5bd432f3eff1fa882f84fafc22489be71b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9987828e6781f572c579fc8a2db66638184391c907e75292eeb60b2387d94e2"
+  end
+
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
