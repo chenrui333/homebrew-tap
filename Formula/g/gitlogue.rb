@@ -1,8 +1,8 @@
 class Gitlogue < Formula
   desc "Git commit history replay"
   homepage "https://github.com/unhappychoice/gitlogue"
-  url "https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "7346e59149f48c34f7b6c7777a6c02da342c27202c257dea86a5d20e6b3d8828"
+  url "https://github.com/unhappychoice/gitlogue/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "7c7af3264815f6e77726f2b568b793d46349ce49548606aba0d414286bcc8601"
   license "ISC"
   head "https://github.com/unhappychoice/gitlogue.git", branch: "main"
 
