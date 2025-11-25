@@ -28,6 +28,7 @@
   "changelogen": "homebrew/core",
   "chrome-devtools-mcp": "homebrew-core",
   "claude-cmd": "homebrew/core",
+  "claude-code-templates": "homebrew/core",
   "claude-hooks": "homebrew/core",
   "claudekit": "homebrew/core",
   "comrak": "homebrew/core",
