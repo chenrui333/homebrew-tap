@@ -8,11 +8,11 @@ class Qqqa < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "144c701460c95624c95192be206ba8d53d6f358ccb62f382d9ef5c706cc70267"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0200f138ddfbc86987e44b0e9d66520e5f8c0652c479320696a4ae9bb4a9adf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3029c4a1788f7f1277f8e5a9cae9aab5ca8ce3bc96f3ef5554bc7369aa848f5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ed7f2b32a72993867baaeb09cca84c2c882f79bb029d0777acc8529b36c3341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c049a93fce5221fd6faf8c92915ee8250d9fa9665c3063f8f5c58b45ea456c04"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b28644cdbbedd452ec7996ae3f0c9b5631353d5dcdb28e64595867e70f951bbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e94ecb76d9763399b6c576a10cc88888056a89cd8f4efba6020019598eab43c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb752d18eec21e4c2c29ca849231280f6699de00d78b8d1274a86c52da6f7050"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26138e39e35ba5b1aa4791d889b00c4680b2a7752d6bc5c8c4b6b45b911840ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3ffca88afd021611566bcdb4ab1df9c63db255a798ccf49f00f00882879b86d"
   end
 
   depends_on "rust" => :build
