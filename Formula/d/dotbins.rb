@@ -3,8 +3,8 @@ class Dotbins < Formula
 
   desc "TUI typing trainer inspired by monkeytype with a focus on customization"
   homepage "https://github.com/basnijholt/dotbins"
-  url "https://files.pythonhosted.org/packages/f5/86/bccb92e988e8924b49b4fedc66ad96ed88b8d48c92b5e587346f5eb0bc12/dotbins-2.4.0.tar.gz"
-  sha256 "d15fef24383db96dd8e55270727e039172f0719c65d2fb0bd82e47e3a314a4bb"
+  url "https://files.pythonhosted.org/packages/fd/05/94ad838e6710c2a048ba00968e20c5684697024e0e394f65f2db86777fb7/dotbins-2.5.0.tar.gz"
+  sha256 "e9e01aff7ff345b0ac5d35f1b3860f12e89a2f786288c176ec771c9a64b99e9c"
   license "Apache-2.0"
   head "https://github.com/basnijholt/dotbins.git", branch: "main"
 
