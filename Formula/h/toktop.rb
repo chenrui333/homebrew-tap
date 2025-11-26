@@ -18,6 +18,9 @@ class Toktop < Formula
   end
 
   test do
+    # Fails in Linux CI with `No such device or address` error
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     ENV["OPENAI_ADMIN_KEY"] = "test"
     ENV["ANTHROPIC_ADMIN_KEY"] = "test"
     assert_match "OpenAI", pipe_output("#{bin}/toktop 2>&1", "\e")
