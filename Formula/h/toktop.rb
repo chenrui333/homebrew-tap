@@ -1,5 +1,5 @@
 class Toktop < Formula
-  desc "Llm usage monitor in terminal"
+  desc "LLM usage monitor in terminal"
   homepage "https://github.com/htin1/toktop"
   url "https://github.com/htin1/toktop/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "3ce3a9a9737d0d29f10ce1f34a8dfef076ceade49e4ec1202dc7cba955eace66"
