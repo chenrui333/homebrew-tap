@@ -1,8 +1,8 @@
 class Codebuff < Formula
   desc "Generate code from the terminal"
   homepage "https://www.codebuff.com/"
-  url "https://registry.npmjs.org/codebuff/-/codebuff-1.0.532.tgz"
-  sha256 "a4869b8d409ff8c738f33de37c15715ca30f4846e380573e1196ee8a329075d9"
+  url "https://registry.npmjs.org/codebuff/-/codebuff-1.0.533.tgz"
+  sha256 "b0ae2bec4169c955850e327ab4de27246c5a6e001bb27ee5c0bc5371520b94b1"
   license "MIT"
 
   bottle do
