@@ -7,6 +7,15 @@ class Labcoat < Formula
   license "MIT"
   head "https://github.com/jhillyerd/labcoat.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8921d122b1b4a4722a3db0d0bf64fb0ed2202de1631227aba7326f1d8b2c2092"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8921d122b1b4a4722a3db0d0bf64fb0ed2202de1631227aba7326f1d8b2c2092"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8921d122b1b4a4722a3db0d0bf64fb0ed2202de1631227aba7326f1d8b2c2092"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a462e09c9814ece78b8874cca1e36950f20d1fb607a593dbc483866c41f549b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30fac4abe3d366f8bd93927a9cb92f40dbb12b808c6cc201a804cc8d69dba2fa"
+  end
+
   depends_on "go" => :build
 
   def install
