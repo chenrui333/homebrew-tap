@@ -21,9 +21,6 @@ class Gitlogue < Formula
 
   uses_from_macos "zlib"
 
-  # upstream pr ref, https://github.com/unhappychoice/gitlogue/pull/95
-  patch :DATA
-
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -33,20 +30,3 @@ class Gitlogue < Formula
     assert_match "ayu-dark", shell_output("#{bin}/gitlogue theme list")
   end
 end
-
-__END__
-diff --git a/src/main.rs b/src/main.rs
-index ea2281a..b996926 100644
---- a/src/main.rs
-+++ b/src/main.rs
-@@ -25,8 +25,8 @@ pub enum PlaybackOrder {
-
- #[derive(Parser, Debug)]
- #[command(
--    name = "git-logue",
--    version = "0.0.1",
-+    name = "gitlogue",
-+    version = "0.3.0",
-     about = "A Git history screensaver - watch your code rewrite itself",
-     long_about = "git-logue is a terminal-based screensaver that replays Git commits as if a ghost developer were typing each change by hand. Characters appear, vanish, and transform with natural pacing and syntax highlighting."
- )]
