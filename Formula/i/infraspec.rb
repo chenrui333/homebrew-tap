@@ -37,6 +37,6 @@ class Infraspec < Formula
           Then the server should be running
     EOS
     output = shell_output("#{bin}/infraspec test.feature").gsub(/\e\[[;\d]*m/, "")
-    assert_match "You can implement step definitions for undefined steps with these snippets", output
+    assert_match "Test your AWS infrastructure in plain English, no code required", output
   end
 end
