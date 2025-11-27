@@ -9,13 +9,12 @@ class Mnamer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53a704d33f0f46c04ff8b3beade31c477ffe7b02ce698d3c4d5bc1b7f4163423"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53a704d33f0f46c04ff8b3beade31c477ffe7b02ce698d3c4d5bc1b7f4163423"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53a704d33f0f46c04ff8b3beade31c477ffe7b02ce698d3c4d5bc1b7f4163423"
-    sha256 cellar: :any_skip_relocation, sequoia:       "90556f463426675fe720d48e1d9e782cb8c38c777cd372cfc2ba63ba2d3eaceb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "90556f463426675fe720d48e1d9e782cb8c38c777cd372cfc2ba63ba2d3eaceb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90556f463426675fe720d48e1d9e782cb8c38c777cd372cfc2ba63ba2d3eaceb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc374ddf42f4ec984e277135ed9485ed4f607ae96e8735f86772e98ecf128b42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc374ddf42f4ec984e277135ed9485ed4f607ae96e8735f86772e98ecf128b42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc374ddf42f4ec984e277135ed9485ed4f607ae96e8735f86772e98ecf128b42"
+    sha256 cellar: :any_skip_relocation, sequoia:       "22d19574e484fe916bcf760df976658ce01f6f7a0dabf22a009552bba7517a95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22d19574e484fe916bcf760df976658ce01f6f7a0dabf22a009552bba7517a95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22d19574e484fe916bcf760df976658ce01f6f7a0dabf22a009552bba7517a95"
   end
 
   depends_on "certifi" => :no_linkage
