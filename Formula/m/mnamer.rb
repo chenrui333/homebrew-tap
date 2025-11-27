@@ -3,8 +3,8 @@ class Mnamer < Formula
 
   desc "Media file renaming and organizing tool"
   homepage "https://github.com/jkwill87/mnamer"
-  url "https://files.pythonhosted.org/packages/7c/27/8cbd8e1565d6ec3f312a6b29f4cae55aa36d7e24927c0da408176f99f90c/mnamer-2.5.5.tar.gz"
-  sha256 "c3905b7fc03e07b5b22d92f29ce9c80cc2c2788cebe35e2297fe9f3a4ce7fbf3"
+  url "https://files.pythonhosted.org/packages/80/92/0c8dddccbbca6df0ceade9d595c3bfec2f5de47110b40ad5f008be44a814/mnamer-2.6.0.tar.gz"
+  sha256 "0af4f0fa681f59a43fabbc0f7fcf488b6bd8ed120ae0d52d2eb72be3d066a993"
   license "MIT"
 
   bottle do
@@ -39,8 +39,8 @@ class Mnamer < Formula
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/29/7b/da4aa2f95afb2f28010453d03d6eedf018f9e085bd001f039e15731aba89/cattrs-24.1.3.tar.gz"
-    sha256 "981a6ef05875b5bb0c7fb68885546186d306f10f0f6718fe9b96c226e68821ff"
+    url "https://files.pythonhosted.org/packages/6e/00/2432bb2d445b39b5407f0a90e01b9a271475eea7caf913d7a86bcb956385/cattrs-25.3.0.tar.gz"
+    sha256 "1ac88d9e5eda10436c4517e390a4142d88638fe682c436c93db7ce4a277b884a"
   end
 
   resource "charset-normalizer" do
@@ -49,8 +49,8 @@ class Mnamer < Formula
   end
 
   resource "guessit" do
-    url "https://files.pythonhosted.org/packages/96/5f/64304acee35bac703cee51656a5caf37bd18c9490561fbff225922f41d39/guessit-3.7.1.tar.gz"
-    sha256 "2c18d982ee6db30db5d59557add0324a2b49bf3940a752947510632a2b58a3c1"
+    url "https://files.pythonhosted.org/packages/d0/07/5a88020bfe2591af2ffc75841200b2c17ff52510779510346af5477e64cd/guessit-3.8.0.tar.gz"
+    sha256 "6619fcbbf9a0510ec8c2c33744c4251cad0507b1d573d05c875de17edc5edbed"
   end
 
   resource "idna" do
@@ -89,8 +89,8 @@ class Mnamer < Formula
   end
 
   resource "setuptools-scm" do
-    url "https://files.pythonhosted.org/packages/98/12/2c1e579bb968759fc512391473340d0661b1a8c96a59fb7c65b02eec1321/setuptools_scm-7.1.0.tar.gz"
-    sha256 "6c508345a771aad7d56ebff0e70628bf2b0ec7573762be9960214730de278f27"
+    url "https://files.pythonhosted.org/packages/7b/b1/19587742aad604f1988a8a362e660e8c3ac03adccdb71c96d86526e5eb62/setuptools_scm-9.2.2.tar.gz"
+    sha256 "1c674ab4665686a0887d7e24c03ab25f24201c213e82ea689d2f3e169ef7ef57"
   end
 
   resource "six" do
@@ -104,8 +104,8 @@ class Mnamer < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/3c/8b/0111dd7d6c1478bf83baa1cab85c686426c7a6274119aceb2bd9d35395ad/typing_extensions-4.7.1.tar.gz"
-    sha256 "b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2"
+    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
+    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
   end
 
   resource "url-normalize" do
