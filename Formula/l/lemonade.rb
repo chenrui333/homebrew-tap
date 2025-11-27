@@ -3,8 +3,8 @@ class Lemonade < Formula
 
   desc "Your LLM Aide for Validation and Deployment"
   homepage "https://lemonade-server.ai/"
-  url "https://files.pythonhosted.org/packages/6a/e4/70a1a562421787cce6b86f3e78abb4fc52714a8b3cd3f6a7987f695ae929/lemonade_sdk-9.0.3.tar.gz"
-  sha256 "1d9291cc27f49f8009b32c15061ed5dffe66b54ac311dfc01e7c2dcd3b75fed5"
+  url "https://files.pythonhosted.org/packages/3b/48/ba8938f073df2623d10acb0bef3c210688f202df5b11860f8c22606ad587/lemonade_sdk-9.0.4.tar.gz"
+  sha256 "c32faac82f8b5963ac2ddd4938aa0ac55546d2280f156453d2144d0455fd9c3d"
   license "Apache-2.0"
 
   bottle do
@@ -55,8 +55,8 @@ class Lemonade < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/80/f0/086c442c6516195786131b8ca70488c6ef11d2f2e33c9a893576b2b0d3f7/fastapi-0.121.3.tar.gz"
-    sha256 "0055bc24fe53e56a40e9e0ad1ae2baa81622c406e548e501e717634e2dfbc40b"
+    url "https://files.pythonhosted.org/packages/b2/de/3ee97a4f6ffef1fb70bf20561e4f88531633bb5045dc6cebc0f8471f764d/fastapi-0.122.0.tar.gz"
+    sha256 "cd9b5352031f93773228af8b4c443eedc2ac2aa74b27780387b853c3726fb94b"
   end
 
   resource "fasteners" do
