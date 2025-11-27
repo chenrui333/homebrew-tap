@@ -268,6 +268,7 @@ brew install --cask <tool>
 - `humioctl`
 - `hygg`
 - `hyperbolic`
+- `toktop`
 - `iam-convert`
 - `iflow-cli`
 - `ifstate`
@@ -310,6 +311,7 @@ brew install --cask <tool>
 - `kubectl-tree`
 - `kubeseal-convert`
 - `kwt`
+- `labcoat`
 - `lacquer`
 - `lazycli`
 - `lazynpm`
@@ -357,6 +359,7 @@ brew install --cask <tool>
 - `molotov`
 - `mongodb-mcp-server`
 - `mpfshell`
+- `mq`
 - `mqtt-cli`
 - `mynav`
 - `oceanbase-mcp-server`
@@ -547,6 +550,7 @@ brew install --cask <tool>
 - `tpm`
 - `travelgrunt`
 - `trdl`
+- `treemd`
 - `trieve-cli`
 - `tsuki`
 - `tuono`
