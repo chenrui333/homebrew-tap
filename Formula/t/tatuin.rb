@@ -6,7 +6,12 @@ class Tatuin < Formula
   license "MIT"
   head "https://github.com/panter-dsd/tatuin.git", branch: "master"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
