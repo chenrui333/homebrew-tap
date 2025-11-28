@@ -6,6 +6,15 @@ class Mufetch < Formula
   license "MIT"
   head "https://github.com/ashish0kumar/mufetch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9544aed3ef0e36876a05b9028d4f2f95dfd49d247ef78e418eba0026a2b7df6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9544aed3ef0e36876a05b9028d4f2f95dfd49d247ef78e418eba0026a2b7df6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9544aed3ef0e36876a05b9028d4f2f95dfd49d247ef78e418eba0026a2b7df6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "869c690d422a1755023c7a97797683dc446c8e05d44c8daabce5d477028904e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18a2ca95acf740dc45b2d48449503406bc0d03f6066ab0d2d783e5275860c28e"
+  end
+
   depends_on "go" => :build
 
   def install
