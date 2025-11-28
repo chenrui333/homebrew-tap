@@ -6,6 +6,15 @@ class Tatuin < Formula
   license "MIT"
   head "https://github.com/panter-dsd/tatuin.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "617901e2fc3c9d589eb2f4236d490db8b3ccfc5e1d78bfa82964779e3c6a698b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acccd182bc47e5bc9d2616b3e1bf8764a19e211c81926690e3a4e1e07adf3eb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f29b1af9356e26c88ddfc7dfa20025231bdd4cd85ab0d12affc7fe6ccb3c4f44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1c662233661fcc88292b34e5bbff38e5e079ea79bbc3e3cfdd614bc6762e304"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49073861dd1a4bf1613d17b40c38f148074d8eb16e7ebb207891b2af838c70ae"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
