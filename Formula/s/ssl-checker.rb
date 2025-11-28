@@ -18,6 +18,9 @@ class SslChecker < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ssl-checker --version")
 
+    # failed with Linux CI, `/dev/tty: no such device or address` error
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     output = shell_output("#{bin}/ssl-checker domains example.com --silent")
     assert_match "CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US", output
   end
