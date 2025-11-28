@@ -23,5 +23,7 @@ class Qmassa < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/qmassa --version")
+
+    assert_match "Error: No DRM devices found", shell_output("#{bin}/qmassa 2>&1", 1)
   end
 end
