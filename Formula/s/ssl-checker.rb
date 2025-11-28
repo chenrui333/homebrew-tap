@@ -6,6 +6,15 @@ class SslChecker < Formula
   license "MIT"
   head "https://github.com/fabio42/ssl-checker.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "570e8ddea6d822360174865d1d2dae830054748b37e9071befbc64fc3ed0390d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "570e8ddea6d822360174865d1d2dae830054748b37e9071befbc64fc3ed0390d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "570e8ddea6d822360174865d1d2dae830054748b37e9071befbc64fc3ed0390d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7066294abb13e11a9b34b6ea2ddf8b75634469070c463da3f93ae376a06fb4e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcc0092f86d538a292140dd6d6adff7193bad83fe4a2fd9d68274b913baf9f30"
+  end
+
   depends_on "go" => :build
 
   def install
