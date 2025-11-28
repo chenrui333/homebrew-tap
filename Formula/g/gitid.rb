@@ -6,6 +6,15 @@ class Gitid < Formula
   license "MIT"
   head "https://github.com/nathabonfim59/gitid.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de25a5ab58a1ddd8493182436cb3a09bfcfc54f1016f8f7bfa51832984e265d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de25a5ab58a1ddd8493182436cb3a09bfcfc54f1016f8f7bfa51832984e265d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de25a5ab58a1ddd8493182436cb3a09bfcfc54f1016f8f7bfa51832984e265d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0b7286aead4baaa56feca863ca78f49cad9bc82093bad558f68420ef9db7146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d441c479c4a730b44795b790f5956059f4e6b9eac518bfec2a1127d4e3ad75f2"
+  end
+
   depends_on "go" => :build
 
   def install
