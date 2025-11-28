@@ -45,6 +45,7 @@ brew install --cask <tool>
 - `amp-cli`
 - `aoc-cli`
 - `apify-actors-mcp-server`
+- `apisnip`
 - `apkeep`
 - `apple-health-mcp`
 - `arduino-language-server`
@@ -179,6 +180,7 @@ brew install --cask <tool>
 - `dvm`
 - `dxt`
 - `eas-cli`
+- `ecscope`
 - `elastop`
 - `emoj`
 - `emplace`
@@ -299,6 +301,7 @@ brew install --cask <tool>
 - `kandc`
 - `kanha`
 - `karmor`
+- `kat`
 - `kbst`
 - `kcl`
 - `keyhunter`
@@ -314,6 +317,7 @@ brew install --cask <tool>
 - `kwt`
 - `labcoat`
 - `lacquer`
+- `lazycelery`
 - `lazycli`
 - `lazynpm`
 - `leetgo`
@@ -455,6 +459,7 @@ brew install --cask <tool>
 - `refurb`
 - `relay`
 - `remark-cli`
+- `renux`
 - `resinator`
 - `revanced-cli`
 - `rkik`
@@ -588,6 +593,7 @@ brew install --cask <tool>
 - `xcpkg`
 - `xmlformatter`
 - `yajsv`
+- `yatto`
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
