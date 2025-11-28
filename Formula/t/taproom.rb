@@ -21,6 +21,9 @@ class Taproom < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/taproom --version")
 
+    # Skip test on Linux GitHub Actions runners due to TTY issues
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     begin
       output_log = testpath/"output.log"
       pid = spawn bin/"taproom", [:out, :err] => output_log.to_s
