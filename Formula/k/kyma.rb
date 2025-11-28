@@ -16,19 +16,24 @@ class Kyma < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kyma version")
 
-    (testpath/"test.md").write <<~EOS
-      # Slide 1
-      ---
-      # Slide 2
-    EOS
+    # Skip test on Linux GitHub Actions runners due to TTY issues
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"kyma", "test.md", [:out, :err] => output_log.to_s
-    sleep 1
-    output = output_log.read.gsub(%r{\e\[[0-9;?]*[ -/]*[@-~]}, "") # strip all ANSI escape codes
-    assert_match "# Slide 1", output
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    begin
+      (testpath/"test.md").write <<~EOS
+        # Slide 1
+        ---
+        # Slide 2
+      EOS
+
+      output_log = testpath/"output.log"
+      pid = spawn bin/"kyma", "test.md", [:out, :err] => output_log.to_s
+      sleep 1
+      output = output_log.read.gsub(%r{\e\[[0-9;?]*[ -/]*[@-~]}, "") # strip all ANSI escape codes
+      assert_match "# Slide 1", output
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
