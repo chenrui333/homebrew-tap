@@ -60,6 +60,7 @@
   "ghalint": "homebrew/core",
   "gitea-mcp-server": "homebrew/core",
   "gitlab-ci-pipelines-exporter": "homebrew/core",
+  "gitlogue": "homebrew/core",
   "gitmux": "homebrew/core",
   "go-passbolt-cli": "homebrew/core",
   "go-swag": "homebrew-core",
