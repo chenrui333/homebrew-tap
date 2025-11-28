@@ -6,6 +6,15 @@ class BitchatTui < Formula
   license "MIT"
   head "https://github.com/vaibhav-mattoo/bitchat-tui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea79669c124475143c6dcd0a20a59c20a22a48030e2a528661a320ebcd898e25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "543df0f7885d5653f506aeff1ba13b760778e9c02394a54c9efd56fe0d3b39e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a86a445de5b6312f1bbf57a568b909adc2c1a0ebac604471885ace22a93b329"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10d884d0703879c68ff9e688e5abace1d7e5729d96598527ce2862ec1deeba57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e94acb92aa91d21d2d2696daf7790a956cb62a686d4881177a667165ef00107"
+  end
+
   depends_on "rust" => :build
 
   def install
