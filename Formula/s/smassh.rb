@@ -8,6 +8,11 @@ class Smassh < Formula
   license "GPL-3.0-only"
   head "https://github.com/kraanzu/smassh.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "c8430d84fd539cb9d11ff49e86780cdbfab4d01b2fde9f02775545eab474d9a7"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
