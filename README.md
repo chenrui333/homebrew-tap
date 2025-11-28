@@ -224,7 +224,6 @@ brew install --cask <tool>
 - `git-vain`
 - `git-x`
 - `gitlabform`
-- `gitlogue`
 - `gitman`
 - `gittype`
 - `gix`
