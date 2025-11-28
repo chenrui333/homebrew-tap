@@ -8,6 +8,16 @@ class Netshow < Formula
   license "MIT"
   head "https://github.com/taylorwilsdon/netshow.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aaa82204b2bf1b4181aae05c1ea04a70ac7e0a3e51bb57088e9f6ef26a66e486"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2630ad03325dbb8b2f38e0d8c59e9a5975d29be8b8fa58f0d66815bbf774dc5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc605a46e357c24b30443298e08ce72e50d4ed0f54fdeae6922e81ba331cf272"
+    sha256 cellar: :any_skip_relocation, sequoia:       "727f707c4ae5e23406bf70c81573c3e16d1c5dbaa41c84cc0d53e248ce45b718"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7cf57583cd6a99f175d4cca7711552b3699770954dd19d81d9e9fa29caf0778"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2084e876aa52b67a52984ce3db6de91bbc4eebddb5c178208a26a4868fc8975f"
+  end
+
   depends_on "python@3.14"
 
   resource "linkify-it-py" do
