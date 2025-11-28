@@ -17,7 +17,7 @@ class Branchlet < Formula
 
     output_log = testpath/"output.log"
     pid = spawn bin/"branchlet", "list", [:out, :err] => output_log.to_s
-    sleep 1
+    sleep 3
     assert_match "🌳 Branchlet - List", output_log.read
   ensure
     Process.kill("TERM", pid)
