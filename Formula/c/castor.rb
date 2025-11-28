@@ -44,6 +44,6 @@ class Castor < Formula
     assert_match "Available commands", output
 
     output = pipe_output("#{bin}/castor init", "no\n")
-    assert_match "Do you want to initialize current directory with castor? (yes/no)", output
+    assert_match "\"castor.php\" file has been created in the current directory", output
   end
 end
