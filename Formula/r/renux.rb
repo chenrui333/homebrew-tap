@@ -8,6 +8,11 @@ class Renux < Formula
   license "MIT"
   head "https://github.com/andrianllmm/renux.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "241baa4ed5222e206abbc64e4a930469340b4ff7aa5301c127e8ced4c39b7094"
+  end
+
   depends_on "python@3.14"
 
   resource "linkify-it-py" do
