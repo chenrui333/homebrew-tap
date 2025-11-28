@@ -6,6 +6,15 @@ class Kyma < Formula
   license "GPL-3.0-only"
   head "https://github.com/museslabs/kyma.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7758ed6765248967e7f3f43213f4a7e80093456d7c0850bfa2ee686199e9854d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7758ed6765248967e7f3f43213f4a7e80093456d7c0850bfa2ee686199e9854d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7758ed6765248967e7f3f43213f4a7e80093456d7c0850bfa2ee686199e9854d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6787dde00f22f7b187aab8ea96c994427309ee9482e153450363704d184634e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a93f884cbe38c3c67efea37948700fd26e6ef3c666585e81f8db59dadbc0a370"
+  end
+
   depends_on "go" => :build
 
   def install
