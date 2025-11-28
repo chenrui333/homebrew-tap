@@ -124,6 +124,7 @@ brew install --cask <tool>
 - `claudio`
 - `cli-mcp-server`
 - `clickup-mcp`
+- `cloctui`
 - `clog-cli`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
@@ -435,6 +436,7 @@ brew install --cask <tool>
 - `pyment`
 - `pyp`
 - `pyscn`
+- `qmassa`
 - `qqqa`
 - `que`
 - `quicssh-rs`
