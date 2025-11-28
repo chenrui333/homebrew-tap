@@ -15,12 +15,17 @@ class Kdash < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kdash --version")
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "Unable to obtain Kubernetes client. failed to infer config", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    # failed with Linux CI, `No such device or address (os error 6)` error
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    begin
+      output_log = testpath/"output.log"
+      pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
+      sleep 1
+      assert_match "Unable to obtain Kubernetes client. failed to infer config", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
