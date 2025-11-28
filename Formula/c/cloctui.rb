@@ -8,6 +8,11 @@ class Cloctui < Formula
   license "MIT"
   head "https://github.com/edward-jazzhands/cloctui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "4312cb39429cb8732dfdcbc5988356093534a8af780d6c8b54f8c9fed882ca71"
+  end
+
   depends_on "cloc"
   depends_on "python@3.14"
 
