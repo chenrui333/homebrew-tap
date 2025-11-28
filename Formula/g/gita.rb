@@ -8,6 +8,16 @@ class Gita < Formula
   license "MIT"
   head "https://github.com/nosarthur/gita.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8209f4d077a24e81ba468d10a7794b77fae23d2743c8e078484f3684ecf7e607"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8209f4d077a24e81ba468d10a7794b77fae23d2743c8e078484f3684ecf7e607"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8209f4d077a24e81ba468d10a7794b77fae23d2743c8e078484f3684ecf7e607"
+    sha256 cellar: :any_skip_relocation, sequoia:       "cc0c0931a9798dadf35b1c76e3d459595f24660b9ba899103bd7fd006bbd1142"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc0c0931a9798dadf35b1c76e3d459595f24660b9ba899103bd7fd006bbd1142"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc0c0931a9798dadf35b1c76e3d459595f24660b9ba899103bd7fd006bbd1142"
+  end
+
   depends_on "python@3.14"
 
   resource "argcomplete" do
