@@ -72,7 +72,7 @@ class Netshow < Formula
   test do
     output_log = testpath/"output.log"
     pid = spawn bin/"netshow", [:out, :err] => output_log.to_s
-    sleep 1
+    sleep 3
     assert_match "Netshow (lsof)", output_log.read
   ensure
     Process.kill("TERM", pid)
