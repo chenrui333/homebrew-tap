@@ -6,6 +6,15 @@ class Zmate < Formula
   license "MIT"
   head "https://github.com/ziinaio/zmate.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60ab2d3ba264b8de3abe00e7a746c22f7df0665b6311875c8d64a179deff5e6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60ab2d3ba264b8de3abe00e7a746c22f7df0665b6311875c8d64a179deff5e6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60ab2d3ba264b8de3abe00e7a746c22f7df0665b6311875c8d64a179deff5e6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e785393b4db980c52ccaf231119e49e65e6548e2c13453d63d69ac82ef75dd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8343429ea575feed0dc35e06f583cc1b909f6a23bd05c5ba937df9ce284f9bc4"
+  end
+
   depends_on "go" => :build
   depends_on "zellij"
 
