@@ -6,6 +6,15 @@ class Yatto < Formula
   license "MIT"
   head "https://github.com/handlebargh/yatto.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "753ead63fdfe9898fc4dc8cde9ffa8a41f44b30ca7b922d5f68aff6ea91ceaa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "753ead63fdfe9898fc4dc8cde9ffa8a41f44b30ca7b922d5f68aff6ea91ceaa3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "753ead63fdfe9898fc4dc8cde9ffa8a41f44b30ca7b922d5f68aff6ea91ceaa3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "596573a06d1f29358b39c14fcc36e874ef18814fd22efd0159ead65367cac12e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "113aff2b0addada39bc919bab7a9e95070d118e57569fdefbdf865b6ab913da6"
+  end
+
   depends_on "go" => :build
 
   def install
