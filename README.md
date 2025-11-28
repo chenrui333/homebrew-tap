@@ -270,7 +270,6 @@ brew install --cask <tool>
 - `humioctl`
 - `hygg`
 - `hyperbolic`
-- `toktop`
 - `iam-convert`
 - `iflow-cli`
 - `ifstate`
@@ -549,6 +548,7 @@ brew install --cask <tool>
 - `tlint`
 - `togomak`
 - `token-cli`
+- `toktop`
 - `toml-f`
 - `tooka`
 - `toolctl`
