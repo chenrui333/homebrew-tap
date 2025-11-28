@@ -6,6 +6,15 @@ class Taproom < Formula
   license "MIT"
   head "https://github.com/hzqtc/taproom.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b830ae58dcd64a265edc9f5c39f5ad5ebbe65aa40ef533bd20a30b35dff94116"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b830ae58dcd64a265edc9f5c39f5ad5ebbe65aa40ef533bd20a30b35dff94116"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b830ae58dcd64a265edc9f5c39f5ad5ebbe65aa40ef533bd20a30b35dff94116"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b76e1684c20baa381f0ccac212114275e1bf491c5da332755ba351ca50cc92e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e72c36318de326da9f1691362fa0531439204520748acd2e28dd23cf81ba485a"
+  end
+
   depends_on "go" => :build
 
   # INSTALL_RECEIPT.json patch, upstream pr ref, https://github.com/hzqtc/taproom/pull/19
