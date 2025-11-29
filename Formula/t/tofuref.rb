@@ -137,7 +137,7 @@ class Tofuref < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"tofuref", [:out, :err] => output_log.to_s
     sleep 2
-    assert_match "Welcome to tofuref!", output_log.read
+    assert_match "Provider Version", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
