@@ -1,8 +1,8 @@
 class Apisnip < Formula
   desc "TUI tool for trimming OpenAPI specifications down to size"
   homepage "https://github.com/Tuurlijk/apisnip"
-  url "https://github.com/Tuurlijk/apisnip/archive/refs/tags/v1.4.59.tar.gz"
-  sha256 "2e3f907e336ad8242cb2941ff0b80ef167966a16acba7ad9cb0d5e331b4afb63"
+  url "https://github.com/Tuurlijk/apisnip/archive/refs/tags/v1.4.60.tar.gz"
+  sha256 "96469b1f13d14a62ee17928995bc3fec0ec2356c44ed3524dfb6eef8279a0b55"
   license "MIT"
   head "https://github.com/Tuurlijk/apisnip.git", branch: "main"
 
