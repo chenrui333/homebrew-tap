@@ -8,6 +8,15 @@ class Parqv < Formula
   license "Apache-2.0"
   head "https://github.com/sanspareilsmyn/parqv.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "f7df9632e48550d38f51c687c817f3a2afc7add6e65de7ff52cbab0dca9c57a6"
+    sha256 cellar: :any, arm64_sequoia: "9477c4f179d54da37c2ee39af10af1897be5e0253215dd5a660b2f17e214c02b"
+    sha256 cellar: :any, arm64_sonoma:  "388af71fee1be190a09deb8fc25fa618d05b30d00983d784435bfb1143c7469e"
+    sha256               arm64_linux:   "223f314402c42904424117ac967f1ffebae540ecf6f0c57f5cd8bc188c5b2849"
+    sha256               x86_64_linux:  "41cb892e307a768b594bee045436c06b6203065d63720bad4ba84a96c0c776c1"
+  end
+
   depends_on "cmake" => :build # for pyarrow
   depends_on "ninja" => :build # for pyarrow
   depends_on "apache-arrow"
