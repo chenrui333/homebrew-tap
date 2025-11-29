@@ -8,11 +8,11 @@ class SpiffeSpike < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88070e72195e8a59aa485585a37a8b9b49745d331b5281136fea459f2e0922b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55252aafff9b5c7061defacaac15c18d02ffee74c167dfa86d44196b5648e6fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8296e12ac9d8dce771f0bc7fbf807a2d10916cc1f083b504e485481d2feb0b71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78e831986cd7d7b30f835697f4b17f101f72cebbcd0286b5fe21f7cfbab7ed52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c832d28e1ede5eb4b43c292b395008f699ce003fb78987b08b29bdd52d31d9a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76bf9b2809bb37ed9ecbc6ccdb837482e9fecf53618a5cfaf361382f2a3a99b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "034094d8100c9f8028fe45b7fd9a0328f571f7e0532503713b7d7695de60f497"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7f19c6af226a08e0a0d660699c34f262afa517c280890ed91c11a05445569d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f093840d8fd4f63f970b448b8a727a8a921bfa623aaa7945866a4151c0dcfc2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "808ad5b7bec4bcc9da12dc9303bbb1bce8e41f6196e9fca6c1ba0d7c24df8ec7"
   end
 
   depends_on "go" => :build
