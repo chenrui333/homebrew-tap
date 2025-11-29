@@ -1,8 +1,8 @@
 class SpiffeSpike < Formula
   desc "Lightweight secrets store using SPIFFE as its identity control plane"
   homepage "https://spike.ist/"
-  url "https://github.com/spiffe/spike/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "649a3dd1df79f4f1952d93d65c73a070b946c74847e92be6287b1ec09cfa6a14"
+  url "https://github.com/spiffe/spike/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "6cc31ed9b8b9890e83deb280065ed5d247562aab6b7e88e659bd66548ced5b4a"
   license "Apache-2.0"
   head "https://github.com/spiffe/spike.git", branch: "main"
 
