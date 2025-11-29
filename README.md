@@ -48,6 +48,7 @@ brew install --cask <tool>
 - `apisnip`
 - `apkeep`
 - `apple-health-mcp`
+- `apw`
 - `arduino-language-server`
 - `arp-scan-rs`
 - `arxiv-mcp-server`
@@ -63,6 +64,7 @@ brew install --cask <tool>
 - `await`
 - `awk-language-server`
 - `awless`
+- `awsesh`
 - `axiom-mcp-server`
 - `az-tui`
 - `azure-pipelines-language-server`
@@ -70,11 +72,13 @@ brew install --cask <tool>
 - `balcony`
 - `base-mcp-server`
 - `bash-script-tools`
+- `bbrew`
 - `bearer`
 - `beelzebub`
 - `better-env`
 - `bibiman`
 - `bin-fq`
+- `bitchat-tui`
 - `blade-formatter`
 - `blindfold`
 - `blue`
@@ -159,6 +163,7 @@ brew install --cask <tool>
 - `dakora`
 - `datacmd`
 - `datadog-mcp-server`
+- `daylight`
 - `dbee`
 - `dbin`
 - `dcv`
@@ -167,6 +172,7 @@ brew install --cask <tool>
 - `decktape`
 - `deepteam`
 - `dela`
+- `deletor`
 - `dg`
 - `dhv`
 - `di-tui`
@@ -223,6 +229,8 @@ brew install --cask <tool>
 - `git-chglog`
 - `git-vain`
 - `git-x`
+- `gita`
+- `gitid`
 - `gitlabform`
 - `gitman`
 - `gittype`
@@ -295,6 +303,7 @@ brew install --cask <tool>
 - `judo`
 - `jules`
 - `junit2html`
+- `jwt-ui`
 - `kaluma-cli`
 - `kandc`
 - `kanha`
@@ -302,6 +311,7 @@ brew install --cask <tool>
 - `kat`
 - `kbst`
 - `kcl`
+- `kdash`
 - `keyhunter`
 - `klepto`
 - `knip`
@@ -312,7 +322,9 @@ brew install --cask <tool>
 - `kube2pulumi`
 - `kubectl-tree`
 - `kubeseal-convert`
+- `kure`
 - `kwt`
+- `kyma`
 - `labcoat`
 - `lacquer`
 - `lazycelery`
@@ -327,6 +339,7 @@ brew install --cask <tool>
 - `llmdog`
 - `llmpeg`
 - `llmswap`
+- `lobtui`
 - `localports`
 - `locport`
 - `logfire-mcp`
@@ -350,6 +363,7 @@ brew install --cask <tool>
 - `mcp-use`
 - `mcpd`
 - `mdbook-linkcheck`
+- `mdns-scanner`
 - `mdsf`
 - `mdslw`
 - `meteor`
@@ -364,12 +378,15 @@ brew install --cask <tool>
 - `mpfshell`
 - `mq`
 - `mqtt-cli`
+- `mufetch`
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
 - `nanodbc`
 - `narr`
+- `needs`
 - `nest-cli`
+- `netshow`
 - `newsnow-mcp-server`
 - `ngtop`
 - `nhost`
@@ -399,6 +416,7 @@ brew install --cask <tool>
 - `oxylabs-mcp`
 - `papis`
 - `paq`
+- `parqv`
 - `pdfsyntax`
 - `pencode`
 - `percollate`
@@ -434,6 +452,7 @@ brew install --cask <tool>
 - `public-ollama-finder`
 - `pubmed-mcp-server`
 - `pvetui`
+- `pwdsafety`
 - `pyink`
 - `pyment`
 - `pyp`
@@ -495,6 +514,7 @@ brew install --cask <tool>
 - `sish`
 - `sloctl`
 - `sloop`
+- `smassh`
 - `solfmt`
 - `soundscope`
 - `sourcerer-mcp`
@@ -506,6 +526,8 @@ brew install --cask <tool>
 - `spotifydl`
 - `sprofile`
 - `squall`
+- `ssl-checker`
+- `ssm`
 - `starcharts`
 - `starlit`
 - `statoscope`
@@ -520,8 +542,10 @@ brew install --cask <tool>
 - `swagger-mcp-server`
 - `systeroid`
 - `tantivy-cli`
+- `taproom`
 - `taskonaut`
 - `tattoy`
+- `tatuin`
 - `tavily-mcp`
 - `tclint`
 - `teldrive`
@@ -541,6 +565,7 @@ brew install --cask <tool>
 - `tfreveal`
 - `tftarget`
 - `tftree`
+- `ticker`
 - `tickrs`
 - `timetrace`
 - `tinifier`
@@ -575,12 +600,14 @@ brew install --cask <tool>
 - `vento`
 - `vercel-serve`
 - `vet-run`
+- `vi-mongo`
 - `vibekit`
 - `videoalchemy`
 - `vitepress`
 - `vsg`
 - `vulcain`
 - `vuls`
+- `wakey`
 - `wallust`
 - `watchfiles`
 - `wedl`
@@ -607,6 +634,7 @@ brew install --cask <tool>
 - `ziggy`
 - `ziglint`
 - `zigscient`
+- `zmate`
 - `zu`
 - `zware`
 
