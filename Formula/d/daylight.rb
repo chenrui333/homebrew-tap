@@ -6,6 +6,15 @@ class Daylight < Formula
   license "GPL-3.0-only"
   head "https://github.com/jbreckmckye/daylight.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70d9a509cc06d1cf59c1fc22534af8d924606114500e48ea24ebc97fa4e73dee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70d9a509cc06d1cf59c1fc22534af8d924606114500e48ea24ebc97fa4e73dee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70d9a509cc06d1cf59c1fc22534af8d924606114500e48ea24ebc97fa4e73dee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f5e23c540fc3f7aa80fbc65cf7b96ed658ec84441cf035a91dd24269413113a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50481318cbf7585fcaeb78cbfa041032e87f3403da180899b86f54322fd30a3d"
+  end
+
   depends_on "go" => :build
 
   def install
