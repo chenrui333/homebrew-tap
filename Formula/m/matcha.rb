@@ -1,8 +1,8 @@
 class Matcha < Formula
   desc "Daily Digest Reader"
   homepage "https://github.com/piqoni/matcha"
-  url "https://github.com/piqoni/matcha/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "a24de22ba5614be70563a8eeda579f16479af7f809373fe15b0eb869e1c174db"
+  url "https://github.com/piqoni/matcha/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "239f97bed3014c8809d3d70c7840b77985c7cd12dc73510ae7a2fe3f557a0e1d"
   license "MIT"
   head "https://github.com/piqoni/matcha.git", branch: "main"
 
