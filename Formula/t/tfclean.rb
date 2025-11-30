@@ -17,7 +17,13 @@ class Tfclean < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.Revision=#{tap.user}"
+    ldflags = %W[
+      -s -w
+      -X github.com/takaishi/tfclean.Version=#{version}
+      -X github.com/takaishi/tfclean.Revision=#{tap.user}
+      -X github.com/takaishi/tfclean/cmd/tfclean.Version=#{version}
+      -X github.com/takaishi/tfclean/cmd/tfclean.Revision=#{tap.user}
+    ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/tfclean"
   end
 
