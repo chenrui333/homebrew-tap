@@ -287,6 +287,7 @@ brew install --cask <tool>
 - `inbucket`
 - `incus-compose`
 - `infraspec`
+- `inspect-cert-chain`
 - `intentrace`
 - `ip2d`
 - `ips`
