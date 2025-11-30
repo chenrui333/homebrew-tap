@@ -7,11 +7,11 @@ class Tfclean < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd10b900ee171e1b7e9bcb7c339c149f95921390948a355854a7f3061ca5588a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd10b900ee171e1b7e9bcb7c339c149f95921390948a355854a7f3061ca5588a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd10b900ee171e1b7e9bcb7c339c149f95921390948a355854a7f3061ca5588a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ae64697253f8da7cf72f12651a8b9e8d3def99ae037b0f374281153e88d0fb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3741dc5e5ea298da715041ed150fc1c5f8204a01f953e6512bda68932f8c051"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa13a214941406a2d4a23eeedf020ad277af0e5958cd0bca5621db9eb667ea27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa13a214941406a2d4a23eeedf020ad277af0e5958cd0bca5621db9eb667ea27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa13a214941406a2d4a23eeedf020ad277af0e5958cd0bca5621db9eb667ea27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf0d10fd9b961ded6cb0d35d2b0ec43332012d653e7b94af731c84de41a87aba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01627b270c37607430650aae75ba817086d9b71ebd82851f1524499a52ae6816"
   end
 
   depends_on "go" => :build
