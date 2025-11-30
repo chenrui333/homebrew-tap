@@ -4,6 +4,7 @@ class Pluqqy < Formula
   url "https://github.com/pluqqy/pluqqy-terminal/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "ea69eefa597a87f715f57cfbee3cf82cb7cd8e74ba0517b8194affefa3a55e2f"
   license "MIT"
+  revision 1
   head "https://github.com/pluqqy/pluqqy-terminal.git", branch: "main"
 
   bottle do

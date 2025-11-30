@@ -5,6 +5,7 @@ class Pingu < Formula
   version "0.0.5"
   sha256 "f7bb5dde9b1c9c358d3b57b04000c08f30d53721efb5594ea9eda830b3ea671f"
   license "MIT"
+  revision 1
   head "https://github.com/sheepla/pingu.git", branch: "master"
 
   livecheck do

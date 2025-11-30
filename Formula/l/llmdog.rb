@@ -5,6 +5,7 @@ class Llmdog < Formula
   url "https://github.com/doganarif/LLMDog/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "32adc9485e80cfd6c91c1215cf797c760f3edc31c5e97d6263ce2685399eb75a"
   license "MIT"
+  revision 1
   head "https://github.com/doganarif/llmdog.git", branch: "main"
 
   bottle do
