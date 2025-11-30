@@ -17,12 +17,17 @@ class Passepartui < Formula
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"passepartui", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "Password file", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    # failed with Linux CI, `No such device or address` error
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    begin
+      output_log = testpath/"output.log"
+      pid = spawn bin/"passepartui", [:out, :err] => output_log.to_s
+      sleep 1
+      assert_match "Password file", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
