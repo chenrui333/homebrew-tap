@@ -9,13 +9,12 @@ class Mmemoji < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ec8fd2d4f3aec4e8901d3c2e8d5a270fca24232b9368b7d992356892bfd6127"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3150b5a5c71aa5df93be57b510137d0476147aa5d0dc95fcfa634b6736254ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37689c796cf20374a0c6e53e26cf432800861783f09e5b99d541670f3b202b75"
-    sha256 cellar: :any_skip_relocation, sequoia:       "4c0aeb8234f05bceacda6a73267f7f5d84fcaeaf4193a23ac33ad6e0a4d4d180"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84dec6590b3b67a4ca8a8ea1c1b9b9077620d4ccf45f32160edfe1ae24f421d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcae933ed9f2e98d09d008eace37495dcf7a5af54e9efaab55779395b62b66a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9434a9620c3833daedb7c06f8ecba16d862ddd5fcf22581a24bb8e5ed7cdf0d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfb2af02b9ffe267cb95bed81de39fcc126ea3d8d9152362a70e3160a6f3f341"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "297144345882836170e8ca2af93fdedb92483530c36d8664d9d62905591dd030"
+    sha256 cellar: :any_skip_relocation, sequoia:       "5ca3cccf300eede349dc09a83b9c997d622de31a17c65a08ea54302793b0505b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a725fb1210b5252ec0ae250b6da4883598ad81437180f4f6812153e259f49b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8082d335eef1d9c72abe9e87f079314cb787e5595f5192582f2c37b48ae148a6"
   end
 
   depends_on "certifi" => :no_linkage
