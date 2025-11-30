@@ -4,6 +4,7 @@ class Humioctl < Formula
   url "https://github.com/humio/cli/archive/refs/tags/v0.38.1.tar.gz"
   sha256 "e588092e47d9943a1823e0af707c798945924957eff834b7d7b041ebcf712bc8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/humio/cli.git", branch: "master"
 
   bottle do
@@ -17,6 +18,8 @@ class Humioctl < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/humioctl"
 

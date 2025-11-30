@@ -4,6 +4,7 @@ class FlintCli < Formula
   url "https://github.com/ccheshirecat/flint/archive/refs/tags/v1.28.0.tar.gz"
   sha256 "4b302cb4d72f7978747c49fb4f400c4cf838d15674738d8e042b98dc7e43fcf9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -20,6 +21,8 @@ class FlintCli < Formula
   depends_on "qemu"
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     cd "web" do
       system "npm", "install", *std_npm_args(prefix: false)
       system "npm", "run", "build"

@@ -5,6 +5,7 @@ class Hclgrep < Formula
   version "0.0.0"
   sha256 "d6010eeb679e660ecd8612d5081ccc10a199482d266e01c530cbdd94bf6d666e"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/magodo/hclgrep.git", branch: "main"
 
   bottle do
