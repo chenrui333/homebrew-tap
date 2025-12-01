@@ -4,6 +4,7 @@ class Protodot < Formula
   url "https://github.com/seamia/protodot/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "c629518cb6a6eb80d5013b04fa7d826ec821c0335e407140350504e47d807f53"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/seamia/protodot.git", branch: "master"
 
   bottle do

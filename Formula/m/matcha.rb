@@ -4,6 +4,7 @@ class Matcha < Formula
   url "https://github.com/piqoni/matcha/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "239f97bed3014c8809d3d70c7840b77985c7cd12dc73510ae7a2fe3f557a0e1d"
   license "MIT"
+  revision 1
   head "https://github.com/piqoni/matcha.git", branch: "main"
 
   bottle do

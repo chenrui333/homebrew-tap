@@ -4,6 +4,7 @@ class Octelium < Formula
   url "https://github.com/octelium/octelium/archive/refs/tags/v0.22.0.tar.gz"
   sha256 "e82ce469e277ce8fb4d56e07d1a8243ef2e5f044a962decb90fd5084d6b7bcb0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/octelium/octelium.git", branch: "main"
 
   bottle do
