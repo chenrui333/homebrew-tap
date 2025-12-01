@@ -1,8 +1,8 @@
 class Kat < Formula
   desc "TUI and rule-based rendering engine for Kubernetes manifests"
   homepage "https://github.com/MacroPower/kat"
-  url "https://github.com/MacroPower/kat/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "20fb87893ff1c60c4a642966d00d2b468e7946988d12ac1f7167c9a867800d4c"
+  url "https://github.com/MacroPower/kat/archive/refs/tags/v0.28.1.tar.gz"
+  sha256 "770b6849498ae0d174bf01226a745e84ecb62291be2cb79642b512e97b9c271e"
   license "Apache-2.0"
   head "https://github.com/MacroPower/kat.git", branch: "main"
 
