@@ -4,6 +4,7 @@ class KubesealConvert < Formula
   url "https://github.com/EladLeev/kubeseal-convert/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "1d6e0b012d9d3d6dd54ac535aa092442d50f41faa6047862a3d057eb528593ce"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/EladLeev/kubeseal-convert.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class KubesealConvert < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
     generate_completions_from_executable(bin/"kubeseal-convert", "completion")

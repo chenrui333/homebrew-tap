@@ -4,6 +4,7 @@ class Kcl < Formula
   url "https://github.com/kcl-lang/cli/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "c5be30a27f83847ab75471ccf04182cedabd3f026b4ebe35f9dc0af59d2cb5eb"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kcl-lang/cli.git", branch: "main"
 
   bottle do

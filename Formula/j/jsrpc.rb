@@ -4,6 +4,7 @@ class Jsrpc < Formula
   url "https://github.com/jxhczhl/JsRpc/archive/refs/tags/v1.095.tar.gz"
   sha256 "4bc104d1c3ccf46034db063d82f5ba1d0fa6f131501644594c17cfdcbce53044"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/jxhczhl/JsRpc.git", branch: "main"
 
   bottle do
@@ -17,6 +18,8 @@ class Jsrpc < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 

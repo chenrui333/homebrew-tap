@@ -4,6 +4,7 @@ class Gobgp < Formula
   url "https://github.com/osrg/gobgp/archive/refs/tags/v4.1.0.tar.gz"
   sha256 "e1c564a99481af8671c717bafcd59edfb4022c0dae73ea53320e2a9540c10702"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/osrg/gobgp.git", branch: "master"
 
   bottle do
@@ -18,6 +19,8 @@ class Gobgp < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0" if OS.linux? && Hardware::CPU.arm?
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gobgp"
 
     # `context deadline exceeded` error when generating completions
