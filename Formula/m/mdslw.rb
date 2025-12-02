@@ -9,11 +9,11 @@ class Mdslw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c5cf18734179abbd2f8695e58ee363e1321ceb93ceac4e4641b9922b4187add"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba93ae3428879abb08e0c857fc715308def50e94d2bda7b64c5d829499d28a35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4401f70d47e18a96fa9ed3902697ff69f5197ce611dcf196752e90666e0a5f75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c509e0faf944ce3e0b5482232b748d9051f0485fe1eedcaad272d3730d3e0e8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bbfce07770f2fcfedb00dd352ae4c67c51b39fcb9679163afb72493a6a69d02"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7716260e05f1e8416b2257dca9f3aa1c7f454c23731ead76e57043cc06c65c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8209ba428af103e3232b161a151200e096f1429f514ee233c185291cf0563329"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "338c25ade0c0dded0ddfdabe47c2c58e2282c624086a5c8f3fbf99e8b4d01fde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05bec2d44e80d8f8229c06409fa10ce8a43b8e75e4a9be6b9fc5b1a43a20116c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4edc5c3bc9056f9d2eea49eda8b8ffb4edadd2ac7fe10914ea8a7e600124c2d0"
   end
 
   depends_on "pkgconf" => :build
