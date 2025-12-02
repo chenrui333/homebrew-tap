@@ -8,12 +8,11 @@ class Autotag < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86c9d2513479c264a1f15533b09943db64245b816d0ef640b67c675c4be38cd6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86c9d2513479c264a1f15533b09943db64245b816d0ef640b67c675c4be38cd6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86c9d2513479c264a1f15533b09943db64245b816d0ef640b67c675c4be38cd6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "247166c6babbf55c54093affdf3b29d4e4bb5f3a00493107b320c2e60cc69f5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "332fe10bfe616a61f01fc7a3609d6815f11975c6a9efbb815c86426e9b6f30ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf50ac8026ac8a1e1b2f0f7d2ef3702e49ff60e4cc8eedf7f21728ce0361a44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf50ac8026ac8a1e1b2f0f7d2ef3702e49ff60e4cc8eedf7f21728ce0361a44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caf50ac8026ac8a1e1b2f0f7d2ef3702e49ff60e4cc8eedf7f21728ce0361a44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "501bfa690ef82144dba38859bdb6ff4981e33965181a833de4b5bfde6c561920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ffeadf0b08c7fd06cebae6d1c072043552fac1fd536a5e1604bcf9019103d43"
   end
 
   depends_on "go" => :build
