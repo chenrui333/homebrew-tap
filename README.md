@@ -418,6 +418,7 @@ brew install --cask <tool>
 - `papis`
 - `paq`
 - `parqv`
+- `passepartui`
 - `pdfsyntax`
 - `pencode`
 - `percollate`
