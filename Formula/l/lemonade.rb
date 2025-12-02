@@ -3,8 +3,8 @@ class Lemonade < Formula
 
   desc "Your LLM Aide for Validation and Deployment"
   homepage "https://lemonade-server.ai/"
-  url "https://files.pythonhosted.org/packages/3b/48/ba8938f073df2623d10acb0bef3c210688f202df5b11860f8c22606ad587/lemonade_sdk-9.0.4.tar.gz"
-  sha256 "c32faac82f8b5963ac2ddd4938aa0ac55546d2280f156453d2144d0455fd9c3d"
+  url "https://files.pythonhosted.org/packages/0b/ee/1eff92acd8f8367ed904c3e97421472d9ed96c73b7f66a2bd3a4e25c0430/lemonade_sdk-9.0.5.tar.gz"
+  sha256 "ef6e4693172503dfec280011ee4b1b62b25f2ca40244f327fc1804aeefa28bf6"
   license "Apache-2.0"
 
   bottle do
@@ -35,8 +35,8 @@ class Lemonade < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
+    url "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz"
+    sha256 "73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0"
   end
 
   resource "charset-normalizer" do
@@ -55,8 +55,8 @@ class Lemonade < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/b2/de/3ee97a4f6ffef1fb70bf20561e4f88531633bb5045dc6cebc0f8471f764d/fastapi-0.122.0.tar.gz"
-    sha256 "cd9b5352031f93773228af8b4c443eedc2ac2aa74b27780387b853c3726fb94b"
+    url "https://files.pythonhosted.org/packages/e4/70/b856e5db716c4d84cc9d7f69e7dba0f3f900e0deee01336a458f60add3d7/fastapi-0.123.4.tar.gz"
+    sha256 "c2d0ac82f3534c8e35692fda67e2412ac60bad846bb903a65cd8145a65741474"
   end
 
   resource "fasteners" do
