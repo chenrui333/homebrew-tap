@@ -1,8 +1,8 @@
 class ClaudeCode < Formula
   desc "Agentic coding tool that lives in your terminal"
   homepage "https://github.com/anthropics/claude-code"
-  url "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.0.56.tgz"
-  sha256 "96ff0e446dc662afae8f1131f880c8ecd57263aabd0b04fa422387e2f9f5bf04"
+  url "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.0.57.tgz"
+  sha256 "3ff2f935f1e436f0a848ebdaad2776ca0bab0c1e7b941656ce3a6e64d0b74043"
   # license :unfree
 
   bottle do
