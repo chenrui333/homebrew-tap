@@ -185,6 +185,7 @@ brew install --cask <tool>
 - `duster`
 - `dvm`
 - `dxt`
+- `e2c`
 - `eas-cli`
 - `ecscope`
 - `elastop`
