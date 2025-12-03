@@ -587,6 +587,7 @@ brew install --cask <tool>
 - `trieve-cli`
 - `tsuki`
 - `tuono`
+- `turm`
 - `twiggy`
 - `twilio-mcp-server`
 - `ty`
