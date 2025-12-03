@@ -6,6 +6,15 @@ class E2c < Formula
   license "Apache-2.0"
   head "https://github.com/nlamirault/e2c.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdfbf42610254ae1cac36564dbbe32fcee86dda33a00c4d5c821d9cbca72a58e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdfbf42610254ae1cac36564dbbe32fcee86dda33a00c4d5c821d9cbca72a58e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdfbf42610254ae1cac36564dbbe32fcee86dda33a00c4d5c821d9cbca72a58e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1369eada8c630eb842ecacac4bde3d052964bdf95e5933b31d0b12fc7e55b6e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e89e8f806479a53ce1adcb7f5fa96d47e16d3a9aa10ac42f35fb7fe8d97e8414"
+  end
+
   depends_on "go" => :build
 
   def install
