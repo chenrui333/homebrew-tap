@@ -651,5 +651,11 @@
   "https://terminaltrove.com/treemd/": "https://github.com/epistates/treemd",
   "https://terminaltrove.com/mq/": "https://github.com/harehare/mq",
   "https://terminaltrove.com/kyanos/": "https://github.com/hengyoush/kyanos",
-  "https://terminaltrove.com/toktop/": "https://github.com/htin1/toktop"
+  "https://terminaltrove.com/toktop/": "https://github.com/htin1/toktop",
+  "https://terminaltrove.com/turm/": "https://github.com/kabouzeid/turm",
+  "https://terminaltrove.com/ibtop/": "https://github.com/JannikSt/ibtop",
+  "https://terminaltrove.com/oeis-tui/": "https://github.com/hako/oeis-tui",
+  "https://terminaltrove.com/e2c/": "https://github.com/nlamirault/e2c",
+  "https://terminaltrove.com/ast-grep/": "https://github.com/ast-grep/ast-grep",
+  "https://terminaltrove.com/csvi/": "https://github.com/hymkor/csvi"
 }
