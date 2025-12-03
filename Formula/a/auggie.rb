@@ -7,7 +7,7 @@ class Auggie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "09eb2482278a8d7fdcaecbeb9f6357165bf027c3c0f49e7c5f65d7460c1d0d07"
+    sha256 cellar: :any_skip_relocation, all: "16ea665aba5c73a1ad5359e9b9a0290a10a71038d7aa891374ce4c34bd1825c2"
   end
 
   depends_on "node"
