@@ -1,8 +1,8 @@
 class Speedscope < Formula
   desc "Fast, interactive web-based viewer for performance profiles"
   homepage "https://www.speedscope.app/"
-  url "https://registry.npmjs.org/speedscope/-/speedscope-1.24.0.tgz"
-  sha256 "e2c2a17af16072033291670652cea3cf6cefc59ce0078bd5741f556f7cf4c9ff"
+  url "https://registry.npmjs.org/speedscope/-/speedscope-1.25.0.tgz"
+  sha256 "2831f1e0d26df914b477e522d78b8485511495a6af81a0b88158f8b48f9e0d03"
   license "MIT"
 
   bottle do
