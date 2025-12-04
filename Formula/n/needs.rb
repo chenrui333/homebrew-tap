@@ -1,8 +1,8 @@
 class Needs < Formula
   desc "Checks if bin(s) are installed, oh and the version too"
   homepage "https://github.com/NQMVD/needs"
-  url "https://github.com/NQMVD/needs/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "8ae733e7dd37a5d23b934c1a8c1eebcc9e9296e790944d7d5dc82e45f5b0279e"
+  url "https://github.com/NQMVD/needs/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "0b20957fd5cfd926ec9e20bb26316322dac73f1788d59d95256cc14f69b13d1c"
   license "GPL-3.0-or-later"
   head "https://github.com/NQMVD/needs.git", branch: "main"
 
