@@ -9,10 +9,11 @@ class Lintnet < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96f2e62c5d0a97c9eb3dd018ed2f699c1d3c97d600ed374c632298b5b595e230"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23333d0ce051a3c40b30064801e827c6156b1790e352c13f3593daa0eafae82f"
-    sha256 cellar: :any_skip_relocation, ventura:       "3baee84033a4e5dad880f7107b1aa77a067ffb843204f181f63833e778a1f8de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaca4d81531e9135707ec48cc5ab9e320ca0ce8430da1fbfe39d5994414e11d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06986cc119c669794b3588ab64edb3d2630330461698afe71f8fb95aa8266e50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06986cc119c669794b3588ab64edb3d2630330461698afe71f8fb95aa8266e50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06986cc119c669794b3588ab64edb3d2630330461698afe71f8fb95aa8266e50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b6be77d2094de45fc580ea291bd9e890167180041d612dbe7a69888b9b16e33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf5cf195825ca510fbdd5a2489186bf1f69524b2a5eed04ce2900c8319d8b1a9"
   end
 
   depends_on "go" => :build
