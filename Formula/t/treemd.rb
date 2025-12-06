@@ -8,11 +8,11 @@ class Treemd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ea46b5e2c3086cb55b31d219de4cfe3aa4e93874108518f9ca26957d2e33c3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cbf0f9980356d9dfffe011402eae7af046490dc3226dce248e5154696d49c33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "088133e147aeea7073a0494ddc208ea28c2facc91d7ef1464064f7cda4ee1349"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44f5536dad69a126f0f82b73af6ce79a64b82970f487dca1714ad0f11bb0b980"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf0d52634d192782e71532d64b239b9440a680c228811105963da02ce5ecb85d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2773e12c9f97dc498bf2e8033471616a9c7fabd2031d17a505d5d16d3fc4b2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6127272d01c318c2e4188a421143644529b52f06d4691bb37ae7d700f16cfe1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7c0789268a5bef82d89be647384a695b08d4bb8e9637c795280bdcfae32d4dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdd3cdbbfb72e91a8e96fd90270a6bd62abbc3450d4a8fc956954ba5ca7dd1df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a32bd7119f49cc9177470aeecfa4b523830f37306b46c0ae11ef068093ed524"
   end
 
   depends_on "rust" => :build
