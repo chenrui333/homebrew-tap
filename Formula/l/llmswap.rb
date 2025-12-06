@@ -317,9 +317,6 @@ class Llmswap < Formula
   end
 
   def install
-    # upstream pr ref, https://github.com/sreenathmmenon/llmswap/pull/1
-    inreplace "llmswap/__init__.py", "5.2.0", version.to_s
-
     virtualenv_install_with_resources
   end
 
