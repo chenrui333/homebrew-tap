@@ -8,11 +8,11 @@ class Inbucket < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b39a8bfbcbfb459368bee731be9787b814ffc817caeeceaae35a48ed8595985"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b39a8bfbcbfb459368bee731be9787b814ffc817caeeceaae35a48ed8595985"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b39a8bfbcbfb459368bee731be9787b814ffc817caeeceaae35a48ed8595985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64228e2461b71b1b1a7b312120914f70cab9288b309dd2f076568b2d283e94de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "278c751b0dc48193e60c2b46b46304de30fc01ad87bb5b80d358f5a752338e35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75ba55762825487122d7cbdd8ece14b43428e6437c67d13a69e37a5c3444a489"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ba55762825487122d7cbdd8ece14b43428e6437c67d13a69e37a5c3444a489"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75ba55762825487122d7cbdd8ece14b43428e6437c67d13a69e37a5c3444a489"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c581d14094c75dedc73704d01c77a727ef407f093eaa00cecd0f874260a79a08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dfdf74ea04c3de5da52fd41bf3863902f1d087ab411caadb66a9ead308f5fce"
   end
 
   depends_on "go" => :build
