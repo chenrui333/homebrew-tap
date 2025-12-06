@@ -222,6 +222,7 @@ brew install --cask <tool>
 - `fsociety`
 - `fuck-u-code`
 - `g1c`
+- `garage`
 - `gemini-cli`
 - `get-port-cli`
 - `ghfetch`
