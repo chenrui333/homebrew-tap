@@ -8,12 +8,11 @@ class BinFq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87bec6a5b897bc083684c779e6726a1aa6aea71d6b119fef69caf2e7c303413c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87bec6a5b897bc083684c779e6726a1aa6aea71d6b119fef69caf2e7c303413c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87bec6a5b897bc083684c779e6726a1aa6aea71d6b119fef69caf2e7c303413c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cc0d463d88c7b4b2268c80fa8eb6c5518eb897a749dcfab4144f72c4a05e24c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff8ec3c9ac09920c68cbaa20d6a6aa9fd68a63f7abeaa4951d57bfc7a9bf45c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37dc7bde1a535884933c151cef6bd69eae712406a44bafa5919989976bdc5b7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37dc7bde1a535884933c151cef6bd69eae712406a44bafa5919989976bdc5b7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37dc7bde1a535884933c151cef6bd69eae712406a44bafa5919989976bdc5b7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "151b9f944b4763bc3fa20b46f1cd4170d763a34919baa2faca65a76523fd0244"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "034d494b695f167623f14a8590923cac732cfa47b3b9e8007dc9ca79fe8c575d"
   end
 
   depends_on "go" => :build
