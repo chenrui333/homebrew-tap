@@ -1,8 +1,8 @@
 class BinFq < Formula
   desc "Jq for binary formats"
   homepage "https://github.com/wader/fq"
-  url "https://github.com/wader/fq/archive/refs/tags/v0.15.1.tar.gz"
-  sha256 "9f668394c33f3effd02b7d7a145f1087ce784e01d3d0c6e6ba41a899d5e349a7"
+  url "https://github.com/wader/fq/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "c0bfc8caa6ecb0ca558a803d704316b1cdde18fda96e77836c0d95c2bcdb2ee6"
   license "Apache-2.0"
   head "https://github.com/wader/fq.git", branch: "master"
 
