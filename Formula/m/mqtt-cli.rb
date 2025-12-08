@@ -14,17 +14,14 @@ class MqttCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c6a1ae1f84e9f2174ec336dc6060bd94e1b36f408c16518caa80bd4c61c259"
   end
 
-  depends_on "openjdk"
-
-  # update toolchain to Java 24
-  patch :DATA
+  depends_on "openjdk@21"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = Formula["openjdk@21"].opt_prefix
 
     system "./gradlew", "shadowJar", "--no-daemon", "-x", "test"
     libexec.install "build/libs/mqtt-cli-#{version}.jar" => "mqtt-cli.jar"
-    bin.write_jar_script libexec/"mqtt-cli.jar", "mqtt"
+    bin.write_jar_script libexec/"mqtt-cli.jar", "mqtt", java_version: "21"
   end
 
   test do
@@ -53,37 +50,3 @@ class MqttCli < Formula
     assert_match "Hello, World!", output
   end
 end
-
-__END__
-diff --git a/build.gradle.kts b/build.gradle.kts
-index 78e791a..12ebc89 100644
---- a/build.gradle.kts
-+++ b/build.gradle.kts
-@@ -50,13 +50,13 @@ application {
-
- java {
-     toolchain {
--        languageVersion = JavaLanguageVersion.of(21)
-+        languageVersion = JavaLanguageVersion.of(24)
-     }
- }
-
- tasks.compileJava {
-     javaCompiler = javaToolchains.compilerFor {
--        languageVersion = JavaLanguageVersion.of(11)
-+        languageVersion = JavaLanguageVersion.of(24)
-     }
- }
-
-diff --git a/mqtt-cli-plugins/build.gradle.kts b/mqtt-cli-plugins/build.gradle.kts
-index e57af1c..e8572dd 100644
---- a/mqtt-cli-plugins/build.gradle.kts
-+++ b/mqtt-cli-plugins/build.gradle.kts
-@@ -6,7 +6,7 @@ group = "com.hivemq"
-
- java {
-     toolchain {
--        languageVersion = JavaLanguageVersion.of(11)
-+        languageVersion = JavaLanguageVersion.of(24)
-     }
- }
