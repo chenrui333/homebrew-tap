@@ -146,7 +146,6 @@ brew install --cask <tool>
 - `codespelunker`
 - `codstts`
 - `cohctl`
-- `config-file-validator`
 - `container-use`
 - `container2wasm`
 - `context-file-manager`
@@ -280,7 +279,10 @@ brew install --cask <tool>
 - `humioctl`
 - `hygg`
 - `hyperbolic`
+- `iam-collect`
 - `iam-convert`
+- `iam-expand`
+- `iam-lens`
 - `iflow-cli`
 - `ifstate`
 - `iftree`
