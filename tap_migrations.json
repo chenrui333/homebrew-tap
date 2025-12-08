@@ -32,6 +32,7 @@
   "claude-hooks": "homebrew/core",
   "claudekit": "homebrew/core",
   "comrak": "homebrew/core",
+  "config-file-validator": "homebrew/core",
   "crd2pulumi": "homebrew/core",
   "darker": "homebrew/core",
   "dblab": "homebrew/core",
