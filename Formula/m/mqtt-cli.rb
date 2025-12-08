@@ -15,9 +15,12 @@ class MqttCli < Formula
   end
 
   depends_on "openjdk@21"
+  patch :DATA
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk@21"].opt_prefix
+    java21 = Language::Java.java_home("21")
+    ENV["JAVA_HOME"] = java21
+    ENV["GRADLE_OPTS"] = "-Dorg.gradle.java.installations.paths=#{java21}"
 
     system "./gradlew", "shadowJar", "--no-daemon", "-x", "test"
     libexec.install "build/libs/mqtt-cli-#{version}.jar" => "mqtt-cli.jar"
@@ -50,3 +53,36 @@ class MqttCli < Formula
     assert_match "Hello, World!", output
   end
 end
+
+__END__
+diff --git a/build.gradle.kts b/build.gradle.kts
+index 78e791a..d1e23ac 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -50,13 +50,13 @@ application {
+
+ java {
+     toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+     }
+ }
+
+ tasks.compileJava {
+     javaCompiler = javaToolchains.compilerFor {
+-        languageVersion = JavaLanguageVersion.of(11)
++        languageVersion = JavaLanguageVersion.of(21)
+     }
+ }
+
+diff --git a/mqtt-cli-plugins/build.gradle.kts b/mqtt-cli-plugins/build.gradle.kts
+index e57af1c..f2a4d3e 100644
+--- a/mqtt-cli-plugins/build.gradle.kts
++++ b/mqtt-cli-plugins/build.gradle.kts
+@@ -6,7 +6,7 @@ group = "com.hivemq"
+
+ java {
+     toolchain {
+-        languageVersion = JavaLanguageVersion.of(11)
++        languageVersion = JavaLanguageVersion.of(21)
+     }
+ }
