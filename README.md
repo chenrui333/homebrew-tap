@@ -357,7 +357,6 @@ brew install --cask <tool>
 - `mamediff`
 - `marchat`
 - `markpdf`
-- `matcha`
 - `mcman`
 - `mcp-alchemy`
 - `mcp-obsidian`
