@@ -18,6 +18,8 @@ class Vuls < Formula
   depends_on "go" => :build
 
   def install
+    ENV["GOEXPERIMENT"] = "jsonv2"
+
     ldflags = %W[
       -s -w
       -X github.com/future-architect/vuls/config.Version=#{version}
