@@ -19,5 +19,13 @@ class Codebuff < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/cb --version")
+
+    output_log = testpath/"output.log"
+    pid = spawn bin/"cb", testpath, [:out, :err] => output_log.to_s
+    sleep 1
+    assert_match "Codebuff will run commands on your behalf to help you build", output_log.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
