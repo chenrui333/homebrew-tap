@@ -6,6 +6,15 @@ class Resto < Formula
   license "MIT"
   head "https://github.com/abdfnx/resto.git", branch: "dev"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5731d2a898c2e46bfaf118f5837a3f05495f381d67f128930ccfd45bfc329403"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5731d2a898c2e46bfaf118f5837a3f05495f381d67f128930ccfd45bfc329403"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5731d2a898c2e46bfaf118f5837a3f05495f381d67f128930ccfd45bfc329403"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f546b81730abe804029282dddfb96f9507f794186b0827adae4c80d3dcdfa921"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45c3a2c7d918ebc131c652aff7ed633d03baba3d8ff9638e3973e7527b120d8f"
+  end
+
   depends_on "go" => :build
 
   def install
