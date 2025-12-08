@@ -450,6 +450,6 @@ class Deepteam < Formula
     YAML
 
     output = shell_output("#{bin}/deepteam run #{testpath}/bad.yaml 2>&1", 1)
-    assert_match "OpenAIError: The api_key client option must be set", output
+    assert_match "DeepEvalError: OpenAI API key is not configured", output
   end
 end
