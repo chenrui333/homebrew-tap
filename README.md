@@ -380,9 +380,7 @@ brew install --cask <tool>
 - `molotov`
 - `mongodb-mcp-server`
 - `mpfshell`
-- `mq`
 - `mqtt-cli`
-- `mufetch`
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
@@ -390,14 +388,12 @@ brew install --cask <tool>
 - `narr`
 - `needs`
 - `nest-cli`
-- `netshow`
 - `newsnow-mcp-server`
 - `ngtop`
 - `nhost`
 - `ni`
 - `ninjabot`
 - `nino`
-- `nkt`
 - `nkv`
 - `nocc`
 - `npkill`
@@ -483,6 +479,7 @@ brew install --cask <tool>
 - `remark-cli`
 - `renux`
 - `resinator`
+- `resto`
 - `revanced-cli`
 - `rkik`
 - `rshell`
@@ -570,6 +567,7 @@ brew install --cask <tool>
 - `tfreveal`
 - `tftarget`
 - `tftree`
+- `theattyr`
 - `ticker`
 - `tickrs`
 - `timetrace`
