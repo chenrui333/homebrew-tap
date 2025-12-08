@@ -5,6 +5,11 @@ class IamCollect < Formula
   sha256 "c16d9a45a08c8db9bc17e30a9af52d7f6e737a28a7a2471315df0a5fb65186a2"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "ac821c582892a146a65a504b82b0d2059c5ac1340ef698ba46c45836149fd390"
+  end
+
   depends_on "node"
 
   def install
