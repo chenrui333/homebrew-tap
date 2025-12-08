@@ -5,6 +5,11 @@ class IamLens < Formula
   sha256 "912773d6ed90a676b32b1cef0ffc9bd1b0363cb009cf234a8994811288367014"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "138744d86a4b90b45cb06056335cce0ad396c787cbdaf45983d98773feb2a1eb"
+  end
+
   depends_on "iam-collect"
   depends_on "node"
 
