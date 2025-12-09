@@ -8,6 +8,15 @@ class Procmux < Formula
   license "MIT"
   head "https://github.com/napisani/procmux.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13c4489bc3d60400a9558fc24b712246c5bbbcff0e2e3518ead85427535351b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b55972bc286463ec0074b7dc9acfee221948ee3a96f3ab977bd60969f6cc77fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdd4125376c848ad56353de30085d692a16533bc148ad65f79725d929e30e70e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0c6f64cc6f17627d0ea66318790d675bf79c36cd00e9ba923fbc55063b0a36c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffaf321615a635bac45d3b8690f3d278cb27bd37be5fffe96cb0774695627560"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.14"
 
