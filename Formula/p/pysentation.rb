@@ -7,6 +7,11 @@ class Pysentation < Formula
   sha256 "996b2d8569e4fbf9376b73e695ffb8133cbbf1a37a146c7f396e4dd53245a8d0"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "f69553984a691495d2fa02dc6be75c2cfa703ec817f8e47c1d8a63651ce1e418"
+  end
+
   depends_on "python@3.14"
 
   resource "click" do
