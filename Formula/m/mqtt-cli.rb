@@ -1,8 +1,8 @@
 class MqttCli < Formula
   desc "CLI for connecting various MQTT clients supporting MQTT 5.0 and 3.1.1"
   homepage "https://hivemq.github.io/mqtt-cli/"
-  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.43.0.tar.gz"
-  sha256 "620ae91e25f2b26339dd1950ef91b4c0562bb1d39fe07313aded55e424297ac4"
+  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.47.1.tar.gz"
+  sha256 "00ac9653e8e9334fc5ef4a9336a7e13d163f5b376d8d097c8b7d8a946e53ba30"
   license "Apache-2.0"
   head "https://github.com/hivemq/mqtt-cli.git", branch: "master"
 
