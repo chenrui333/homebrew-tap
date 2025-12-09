@@ -256,6 +256,7 @@ brew install --cask <tool>
 - `gritql`
 - `grmon`
 - `gtts`
+- `hackernews-tui`
 - `haloy`
 - `hasha-cli`
 - `hauler`
@@ -355,6 +356,7 @@ brew install --cask <tool>
 - `libdivide`
 - `magic-mcp-server`
 - `mamediff`
+- `mapscii`
 - `marchat`
 - `markpdf`
 - `mcman`
@@ -442,6 +444,7 @@ brew install --cask <tool>
 - `pphack`
 - `pr-desc-cli`
 - `precompress`
+- `procmux`
 - `projectable`
 - `proto2yaml`
 - `protoc-gen-lint`
@@ -458,6 +461,7 @@ brew install --cask <tool>
 - `pyment`
 - `pyp`
 - `pyscn`
+- `pysentation`
 - `qmassa`
 - `qqqa`
 - `que`
@@ -552,6 +556,7 @@ brew install --cask <tool>
 - `tclint`
 - `teldrive`
 - `tenderly`
+- `termdbms`
 - `termtunnel`
 - `terra-code-cli`
 - `terracove`
