@@ -5,6 +5,11 @@ class Mapscii < Formula
   sha256 "21f18b687975f1decef998664ef6d292cf2379d9e4308a5b4cbb66af240341b3"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "61f92600ac54b2ba21f4a000cfdf5ec209c8f1d19d18ee1c3e90658845a071be"
+  end
+
   depends_on "node"
 
   def install
