@@ -3,8 +3,8 @@ class Lemonade < Formula
 
   desc "Your LLM Aide for Validation and Deployment"
   homepage "https://lemonade-server.ai/"
-  url "https://files.pythonhosted.org/packages/3d/5a/152644c52cb9a838c52e8b25044e323eec8c98d290459e140f83c6b0c416/lemonade_sdk-9.0.8.tar.gz"
-  sha256 "2708c0c8a8d24c8ed48bd5ed28619f0ac2cc76b04bdbe6ede3a9721cd6c75b22"
+  url "https://files.pythonhosted.org/packages/84/81/7042690aa2be3817bb90d9bfc4a73f03516c4a99b54fd7531aa42369b7fa/lemonade_sdk-9.1.0.tar.gz"
+  sha256 "64adef2e49542373c4526f8717668ef0328ac3c2fad1be9a0a2cf583e5250a67"
   license "Apache-2.0"
 
   bottle do
@@ -55,8 +55,8 @@ class Lemonade < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/2c/01/c3fb48c0135d89586a03c3e2c5bc04540dda52079a1af5cac4a63598efb9/fastapi-0.123.9.tar.gz"
-    sha256 "ab33d672d8e1cc6e0b49777eb73c32ccf20761011f5ca16755889ab406fd1de0"
+    url "https://files.pythonhosted.org/packages/58/b7/4dbca3f9d847ba9876dcb7098c13a4c6c86ee8db148c923fab78e27748d3/fastapi-0.124.2.tar.gz"
+    sha256 "72e188f01f360e2f59da51c8822cbe4bca210c35daaae6321b1b724109101c00"
   end
 
   resource "fasteners" do
@@ -155,8 +155,8 @@ class Lemonade < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/0a/03/a1440979a3f74f16cab3b75b0da1a1a7f922d56a8ddea96092391998edc0/protobuf-6.33.1.tar.gz"
-    sha256 "97f65757e8d09870de6fd973aeddb92f85435607235d20b2dfed93405d00c85b"
+    url "https://files.pythonhosted.org/packages/34/44/e49ecff446afeec9d1a66d6bbf9adc21e3c7cea7803a920ca3773379d4f6/protobuf-6.33.2.tar.gz"
+    sha256 "56dc370c91fbb8ac85bc13582c9e373569668a290aa2e66a590c2a0d35ddb9e4"
   end
 
   resource "psutil" do
@@ -260,8 +260,8 @@ class Lemonade < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/5e/1d/0f3a93cca1ac5e8287842ed4eebbd0f7a991315089b1a0b01c7788aa7b63/urllib3-2.6.1.tar.gz"
+    sha256 "5379eb6e1aba4088bae84f8242960017ec8d8e3decf30480b3a1abdaa9671a3f"
   end
 
   resource "uvicorn" do
