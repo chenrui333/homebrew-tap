@@ -7,11 +7,7 @@ class Jules < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5235f32e6a1998ec1f1ece58900783db9db39201e1e9b7ff776152d2b1432f08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5235f32e6a1998ec1f1ece58900783db9db39201e1e9b7ff776152d2b1432f08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5235f32e6a1998ec1f1ece58900783db9db39201e1e9b7ff776152d2b1432f08"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97c0d08bd67f5c98cba45a553a90a65c1859a2838feece1dfd692373c7c3aef7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9bb6c6481ba4920072b90cf8cfc9d4fd9f3a6286b01ee576740bb3f248d3e0e"
+    sha256 cellar: :any_skip_relocation, all: "2453695685faeafc1b0d03b0df317704b8c7fb2d42fd15142ccebdf18179352b"
   end
 
   depends_on "node"
