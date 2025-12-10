@@ -9,11 +9,11 @@ class NamespaceCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b14537f76c70af5cec09a90c09ae76c18b89181954b50b4f39e4d141610dbf21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b14537f76c70af5cec09a90c09ae76c18b89181954b50b4f39e4d141610dbf21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b14537f76c70af5cec09a90c09ae76c18b89181954b50b4f39e4d141610dbf21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b4789a713f655c834ad3c36f77080c43bf7fba9e950a892889d8c78de43d997"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6da58f4c441b4dde8cc3b53b90fd0aa65b9e3621134d3d164204c8252bc2f185"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d93679bf21a27fa2e7fd903abe5903f0e02fd48df8af84de6ea4e004f2eadd07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d93679bf21a27fa2e7fd903abe5903f0e02fd48df8af84de6ea4e004f2eadd07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d93679bf21a27fa2e7fd903abe5903f0e02fd48df8af84de6ea4e004f2eadd07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a528d18f5f84ecaa29ceb03176782dfb4ce9a70a05561aa1b3f2559fde38dfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "814a67fc3d85064fd7a9dddba6c4ae12bfd47a7fd1e9075d8e04662834eab323"
   end
 
   depends_on "go" => :build
