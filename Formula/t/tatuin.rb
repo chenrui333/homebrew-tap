@@ -1,8 +1,8 @@
 class Tatuin < Formula
   desc "Task Aggregator TUI for N providers"
   homepage "https://github.com/panter-dsd/tatuin"
-  url "https://github.com/panter-dsd/tatuin/archive/refs/tags/v0.25.1.tar.gz"
-  sha256 "4295f7bea79e646a0b156f0d3ff071be4ab5071bf5b9f73b26d135aa070c1b49"
+  url "https://github.com/panter-dsd/tatuin/archive/refs/tags/v0.25.2.tar.gz"
+  sha256 "953f1d0cf9cee1eea05ea9818d1b65b31d704e381f27dac6547a577738743657"
   license "MIT"
   head "https://github.com/panter-dsd/tatuin.git", branch: "master"
 
