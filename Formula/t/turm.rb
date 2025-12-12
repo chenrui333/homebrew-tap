@@ -1,8 +1,8 @@
 class Turm < Formula
   desc "TUI for the Slurm Workload Manager"
   homepage "https://github.com/kabouzeid/turm"
-  url "https://github.com/kabouzeid/turm/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "390a7a295b4bfcc52cdbad69c3597b042dbc2a44190594b74940f048e3592eab"
+  url "https://github.com/kabouzeid/turm/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "91a8600bb292ecdf6b52d076ce5cf20d58692d99615c21b0a4ecd207db99a990"
   license "MIT"
   head "https://github.com/kabouzeid/turm.git", branch: "main"
 
