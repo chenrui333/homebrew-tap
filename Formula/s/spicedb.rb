@@ -8,11 +8,11 @@ class Spicedb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fce3737d827271490c7d79067967a777f22a236b724f74e45e1d07395beed9e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe66f0e5573af17010eaa8abc67f7d3192528a2903c05100686df3451b33cc11"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "361e57e2a5d5f5ef2398a21a6d4f261dd6337c01123da83bcaa76de70d82ebb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b65496a61bf961be44f7874f264c76ce98cf0541d78513eb55392cc4fbfe532d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ae048c6b9167fa328e10d9a3ff42190fe8130973e8138804d28b4b520ecad8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6798f75a9b59359cd7dc92ef5b8123e8487502978bbcbeb953c5f693f0a13ba3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fceb674da2b1c4af1e245c063a0354961cc5f2c57eb7490ec157543f27d47cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d0e00617203592ad8bd051e9c6070c107e94c16c476fd76e9fc1215885dae42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c14dba947ebc0f98b4d29546a09a5cba65b72349fb87a40c25b8e66680990ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9f48597b7366cfad927373b0682a00722baa76b9d0a7ada4ef756a6fb43b4c"
   end
 
   depends_on "go" => :build
