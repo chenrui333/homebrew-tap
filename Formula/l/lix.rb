@@ -1,8 +1,8 @@
 class Lix < Formula
   desc "Dependable package manager for your Haxe projects"
   homepage "https://github.com/lix-pm/lix.client"
-  url "https://registry.npmjs.org/lix/-/lix-15.12.4.tgz"
-  sha256 "4f2257276aba9f552b1b35237d33fbc1a0898039d8105ed6e8d1468e6c53a2fa"
+  url "https://registry.npmjs.org/lix/-/lix-16.0.2.tgz"
+  sha256 "02f513a86e07ed149d876459f2bc210dce136cf5b41b7e1f34eb99be120cc4e5"
   license "MIT"
   head "https://github.com/lix-pm/lix.client.git", branch: "master"
 
