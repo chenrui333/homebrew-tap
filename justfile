@@ -103,6 +103,14 @@ status-check:
     if pgrep -f "generate_formula_status.py" > /dev/null; then
         echo "✓ Formula status generation is running"
         pgrep -f "generate_formula_status.py" | xargs ps -p
+        echo ""
+        echo "Check STATUS.md for partial results:"
+        if [ -f STATUS.md ]; then
+            echo "  Last modified: $(stat -f "%Sm" STATUS.md)"
+            echo "  Size: $(wc -c < STATUS.md) bytes"
+            FORMULAS=$(grep -c '^| [a-z]' STATUS.md 2>/dev/null || echo 0)
+            echo "  Formulas processed so far: $FORMULAS"
+        fi
     else
         echo "✗ Formula status generation is not running"
     fi
@@ -117,9 +125,55 @@ status-kill:
         echo "✗ No running formula status generation found"
     fi
 
+# Watch progress in real-time (refreshes every 2 seconds)
+status-watch:
+    #!/usr/bin/env bash
+    while true; do
+        clear
+        echo "=== Formula Status Progress ==="
+        echo ""
+        date
+        echo ""
+
+        if pgrep -f "generate_formula_status.py" > /dev/null; then
+            echo "✓ Running"
+            echo ""
+
+            if [ -f STATUS.md ]; then
+                echo "STATUS.md:"
+                echo "  Last modified: $(stat -f "%Sm" STATUS.md)"
+                echo "  Size: $(wc -c < STATUS.md) bytes"
+                FORMULAS=$(grep -c '^| [a-z]' STATUS.md 2>/dev/null || echo 0)
+                echo "  Formulas processed: $FORMULAS"
+            fi
+
+            if [ -f .cache/formula_status.json ]; then
+                echo ""
+                echo "Cache:"
+                CACHED=$(jq 'keys | length' .cache/formula_status.json 2>/dev/null || echo 0)
+                echo "  GitHub repos cached: $CACHED"
+            fi
+        else
+            echo "✗ Not running"
+            break
+        fi
+
+        echo ""
+        echo "Press Ctrl+C to stop watching"
+        sleep 2
+    done
+
 # Follow status generation logs
 status-logs:
-    tail -f formula-status.log
+    #!/usr/bin/env bash
+    if [ -f formula-status.log ]; then
+        tail -f formula-status.log
+    else
+        echo "No log file found. Run 'just status-background' first."
+        echo ""
+        echo "Or if running directly, redirect output:"
+        echo "  python3 scripts/generate_formula_status.py --verbose > formula-status.log 2>&1"
+    fi
 
 # Test the script on a single formula
 test-formula FORMULA:
