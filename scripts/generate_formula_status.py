@@ -2,7 +2,12 @@
 """
 Formula Metadata Crawler for Homebrew Tap
 
-Extracts formula metadata and fetches GitHub/GitLab/Codeberg stats.
+Extracts formula metadata and fetches git hosting stats from:
+- GitHub (via gh CLI)
+- GitLab (via API)
+- Codeberg (via Forgejo API)
+- SourceHut (limited support)
+
 Pure git hosting metadata - no brew checks.
 """
 
@@ -156,6 +161,12 @@ class FormulaCrawler:
                 repo = repo.replace('.git', '')
                 return ("codeberg", owner, repo)
 
+            # SourceHut
+            if match := re.search(r'git\.sr\.ht[/:]~([^/]+)/([^/\s.]+)', link):
+                owner, repo = match.groups()
+                repo = repo.replace('.git', '')
+                return ("sourcehut", owner, repo)
+
         return None
 
     def fetch_github_stats(self, owner: str, repo: str) -> GitStats:
@@ -217,6 +228,166 @@ class FormulaCrawler:
 
         return stats
 
+    def fetch_gitlab_stats(self, owner: str, repo: str) -> GitStats:
+        """Fetch GitLab stats using API"""
+        cache_key = f"gitlab:{owner}/{repo}"
+
+        if cache_key in self.cache:
+            cached = self.cache[cache_key]
+            return GitStats(
+                stars=cached.get("stars"),
+                forks=cached.get("forks"),
+                last_commit=cached.get("last_commit"),
+                last_release=cached.get("last_release"),
+                hosting="gitlab"
+            )
+
+        stats = GitStats(hosting="gitlab")
+
+        try:
+            # Fetch project info
+            result = subprocess.run(
+                ["curl", "-s", f"https://gitlab.com/api/v4/projects/{owner}%2F{repo}"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+
+            if result.returncode == 0:
+                data = json.loads(result.stdout)
+                stats.stars = data.get("star_count")
+                stats.forks = data.get("forks_count")
+
+                if last_activity := data.get("last_activity_at"):
+                    stats.last_commit = last_activity.split("T")[0]
+
+            # Fetch latest release
+            result = subprocess.run(
+                ["curl", "-s", f"https://gitlab.com/api/v4/projects/{owner}%2F{repo}/releases"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+
+            if result.returncode == 0:
+                releases = json.loads(result.stdout)
+                if releases and len(releases) > 0:
+                    stats.last_release = releases[0].get("released_at", "").split("T")[0]
+
+        except Exception as e:
+            self.log(f"Error fetching GitLab stats for {owner}/{repo}: {e}")
+
+        # Cache results
+        self.cache[cache_key] = {
+            "stars": stats.stars,
+            "forks": stats.forks,
+            "last_commit": stats.last_commit,
+            "last_release": stats.last_release,
+        }
+
+        return stats
+
+    def fetch_codeberg_stats(self, owner: str, repo: str) -> GitStats:
+        """Fetch Codeberg stats using Forgejo/Gitea API"""
+        cache_key = f"codeberg:{owner}/{repo}"
+
+        if cache_key in self.cache:
+            cached = self.cache[cache_key]
+            return GitStats(
+                stars=cached.get("stars"),
+                forks=cached.get("forks"),
+                last_commit=cached.get("last_commit"),
+                last_release=cached.get("last_release"),
+                hosting="codeberg"
+            )
+
+        stats = GitStats(hosting="codeberg")
+
+        try:
+            # Fetch repo info
+            result = subprocess.run(
+                ["curl", "-s", f"https://codeberg.org/api/v1/repos/{owner}/{repo}"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+
+            if result.returncode == 0:
+                data = json.loads(result.stdout)
+                stats.stars = data.get("stars_count")
+                stats.forks = data.get("forks_count")
+
+                if updated_at := data.get("updated_at"):
+                    stats.last_commit = updated_at.split("T")[0]
+
+            # Fetch latest release
+            result = subprocess.run(
+                ["curl", "-s", f"https://codeberg.org/api/v1/repos/{owner}/{repo}/releases"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+
+            if result.returncode == 0:
+                releases = json.loads(result.stdout)
+                if releases and len(releases) > 0:
+                    stats.last_release = releases[0].get("published_at", "").split("T")[0]
+
+        except Exception as e:
+            self.log(f"Error fetching Codeberg stats for {owner}/{repo}: {e}")
+
+        # Cache results
+        self.cache[cache_key] = {
+            "stars": stats.stars,
+            "forks": stats.forks,
+            "last_commit": stats.last_commit,
+            "last_release": stats.last_release,
+        }
+
+        return stats
+
+    def fetch_sourcehut_stats(self, owner: str, repo: str) -> GitStats:
+        """Fetch SourceHut stats using API"""
+        cache_key = f"sourcehut:{owner}/{repo}"
+
+        if cache_key in self.cache:
+            cached = self.cache[cache_key]
+            return GitStats(
+                stars=cached.get("stars"),
+                forks=cached.get("forks"),
+                last_commit=cached.get("last_commit"),
+                last_release=cached.get("last_release"),
+                hosting="sourcehut"
+            )
+
+        stats = GitStats(hosting="sourcehut")
+
+        try:
+            # SourceHut doesn't have a public API for repo stats like stars/forks
+            # We can at least try to fetch basic info
+            result = subprocess.run(
+                ["curl", "-s", f"https://git.sr.ht/~{owner}/{repo}"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+
+            # SourceHut doesn't expose stars/forks in API, so we leave them as None
+            # We could scrape the HTML but that's fragile
+
+        except Exception as e:
+            self.log(f"Error fetching SourceHut stats for ~{owner}/{repo}: {e}")
+
+        # Cache results (even if mostly empty)
+        self.cache[cache_key] = {
+            "stars": stats.stars,
+            "forks": stats.forks,
+            "last_commit": stats.last_commit,
+            "last_release": stats.last_release,
+        }
+
+        return stats
+
     def process_formula(self, formula_path: Path) -> FormulaInfo:
         """Process single formula"""
         formula_name = formula_path.stem
@@ -232,7 +403,12 @@ class FormulaCrawler:
 
             if hosting == "github":
                 git_stats = self.fetch_github_stats(owner, repo)
-            # TODO: Add GitLab/Codeberg support if needed
+            elif hosting == "gitlab":
+                git_stats = self.fetch_gitlab_stats(owner, repo)
+            elif hosting == "codeberg":
+                git_stats = self.fetch_codeberg_stats(owner, repo)
+            elif hosting == "sourcehut":
+                git_stats = self.fetch_sourcehut_stats(owner, repo)
 
         return FormulaInfo(
             name=formula_name,
