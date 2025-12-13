@@ -1,9 +1,10 @@
 class Wallust < Formula
   desc "Better pywal"
-  homepage "https://codeberg.org/explosion-mental/wallust"
+  homepage "https://explosion-mental.codeberg.page/wallust/"
   url "https://codeberg.org/explosion-mental/wallust/archive/3.4.0.tar.gz"
   sha256 "2fa1b604a70026ff9ed853cc43bb5d4bed6c17ea1a0cea08563447bd5df5ddfb"
   license "MIT"
+  head "https://codeberg.org/explosion-mental/wallust.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
