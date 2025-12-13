@@ -397,32 +397,54 @@ class FormulaStatusGenerator:
 
         # Calculate summary
         total = len(statuses)
-        pass_count = sum(1 for s in statuses if s.overall_status == "PASS")
-        fail_count = sum(1 for s in statuses if s.overall_status == "FAIL")
-        unknown_count = sum(1 for s in statuses if s.overall_status == "UNKNOWN")
 
-        # Sort: FAIL first, then by name
-        statuses.sort(key=lambda s: (s.overall_status != "FAIL", s.name))
+        # Only show pass/fail/unknown if checks were run
+        if self.enabled_checks:
+            pass_count = sum(1 for s in statuses if s.overall_status == "PASS")
+            fail_count = sum(1 for s in statuses if s.overall_status == "FAIL")
+            unknown_count = sum(1 for s in statuses if s.overall_status == "UNKNOWN")
+
+            # Sort: FAIL first, then by name
+            statuses.sort(key=lambda s: (s.overall_status != "FAIL", s.name))
+        else:
+            # No checks, just sort by name
+            statuses.sort(key=lambda s: s.name)
 
         lines = [
             "# Formula Status",
             "",
             f"Generated: {timestamp}",
+            f"Mode: {'Metadata + GitHub Stats' if not self.enabled_checks else 'With Checks'}",
             "",
             "## Summary",
             "",
             f"- **Total formulas**: {total}",
-            f"- **Pass**: {pass_count}",
-            f"- **Fail**: {fail_count}",
-            f"- **Unknown**: {unknown_count}",
+        ]
+
+        # Only show pass/fail/unknown if checks were run
+        if self.enabled_checks:
+            lines.extend([
+                f"- **Pass**: {pass_count}",
+                f"- **Fail**: {fail_count}",
+                f"- **Unknown**: {unknown_count}",
+            ])
+
+        lines.extend([
             "",
             "## Status Table",
             "",
-        ]
+        ])
 
-        # Table header
-        header = ["Formula", "Audit", "Style", "Readall", "Desc", "Stars",
-                  "Forks", "Last commit", "Last release", "Homepage", "Notes"]
+        # Table header - conditionally include check columns
+        header = ["Formula"]
+        if "audit" in self.enabled_checks:
+            header.append("Audit")
+        if "style" in self.enabled_checks:
+            header.append("Style")
+        if "readall" in self.enabled_checks:
+            header.append("Readall")
+
+        header.extend(["Desc", "Stars", "Forks", "Last commit", "Last release", "Homepage", "Notes"])
         separator = ["---"] * len(header)
 
         lines.append("| " + " | ".join(header) + " |")
@@ -430,11 +452,18 @@ class FormulaStatusGenerator:
 
         # Table rows
         for status in statuses:
-            row = [
-                status.name,
-                status.get_check_status("audit"),
-                status.get_check_status("style"),
-                status.get_check_status("readall"),
+            row = [status.name]
+
+            # Add check columns if enabled
+            if "audit" in self.enabled_checks:
+                row.append(status.get_check_status("audit"))
+            if "style" in self.enabled_checks:
+                row.append(status.get_check_status("style"))
+            if "readall" in self.enabled_checks:
+                row.append(status.get_check_status("readall"))
+
+            # Add metadata and GitHub stats
+            row.extend([
                 status.desc[:50] + "..." if len(status.desc) > 50 else status.desc,
                 str(status.github_stats.stars) if status.github_stats.stars else "-",
                 str(status.github_stats.forks) if status.github_stats.forks else "-",
@@ -442,7 +471,8 @@ class FormulaStatusGenerator:
                 status.github_stats.last_release or "-",
                 f"[link]({status.homepage})" if status.homepage else "-",
                 status.get_notes(),
-            ]
+            ])
+
             lines.append("| " + " | ".join(row) + " |")
 
         return "\n".join(lines) + "\n"
@@ -553,8 +583,13 @@ def main():
     )
     parser.add_argument(
         "--checks",
-        default="audit,style,readall",
-        help="Comma-separated list of checks to run (audit,style,readall)",
+        default="",
+        help="Comma-separated list of checks to run (audit,style,readall). Empty for metadata-only mode.",
+    )
+    parser.add_argument(
+        "--no-checks",
+        action="store_true",
+        help="Skip all brew checks, only gather metadata and GitHub stats (fast mode)",
     )
     parser.add_argument(
         "--workers",
@@ -574,12 +609,15 @@ def main():
     tap_name = args.tap or detect_tap_name()
 
     # Parse checks
-    enabled_checks = set(args.checks.split(","))
-
-    # Skip style and readall in fast mode to speed things up
-    if args.mode == "fast":
-        # Keep audit only in fast mode by default
-        enabled_checks = {"audit"}
+    if args.no_checks or args.checks == "":
+        # Metadata-only mode: no brew checks
+        enabled_checks = set()
+    else:
+        enabled_checks = set(args.checks.split(","))
+        # Skip style and readall in fast mode to speed things up
+        if args.mode == "fast":
+            # Keep audit only in fast mode by default
+            enabled_checks = {"audit"}
 
     # Create generator and run
     generator = FormulaStatusGenerator(

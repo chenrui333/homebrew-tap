@@ -8,11 +8,12 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Check mode (fast or full)'
+        description: 'Check mode'
         required: false
-        default: 'fast'
+        default: 'metadata-only'
         type: choice
         options:
+          - metadata-only
           - fast
           - full
 
@@ -55,9 +56,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MODE="${{ github.event.inputs.mode || 'fast' }}"
+          MODE="${{ github.event.inputs.mode || 'metadata-only' }}"
           echo "Running in $MODE mode..."
-          python3 scripts/generate_formula_status.py --mode "$MODE" --output STATUS.md
+
+          if [ "$MODE" = "metadata-only" ]; then
+            python3 scripts/generate_formula_status.py --no-checks --output STATUS.md
+          else
+            python3 scripts/generate_formula_status.py --mode "$MODE" --output STATUS.md
+          fi
 
       - name: Check for changes
         id: check_changes
