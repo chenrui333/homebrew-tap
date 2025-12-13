@@ -581,7 +581,6 @@ brew install --cask <tool>
 - `tlint`
 - `togomak`
 - `token-cli`
-- `toktop`
 - `toml-f`
 - `tooka`
 - `toolctl`
