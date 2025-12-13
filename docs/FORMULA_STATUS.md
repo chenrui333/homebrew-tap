@@ -1,29 +1,32 @@
-# Formula Status System
+# Formula Metadata System
 
-Automated health checking and monitoring for all formulas in this tap.
+Automated metadata crawling and git hosting statistics for all formulas in this tap.
 
 ## Overview
 
-The Formula Status system provides automated health checks for every formula in the tap, generating a comprehensive `STATUS.md` report with:
+The Formula Metadata system provides automated metadata extraction and git hosting statistics for every formula in the tap, generating a comprehensive `STATUS.md` report with:
 
-- **Per-formula health checks**: audit, style, and readall validation
-- **Metadata extraction**: description, homepage, license, bottle, livecheck
-- **GitHub statistics**: stars, forks, last commit, last release
-- **Failure diagnostics**: clear error messages for failed checks
+- **Metadata extraction**: description, homepage, license, bottle, livecheck status
+- **Multi-platform git statistics**: stars, forks, last commit, last release
+  - GitHub (via gh CLI)
+  - GitLab (via API)
+  - Codeberg (via Forgejo API)
+  - SourceHut (limited support)
+- **Smart sorting**: formulas ranked by popularity (stars)
 
 ## Quick Start
 
 ### Using Justfile (Recommended)
 
 ```bash
-# Fast mode (audit only)
+# Generate metadata report
 just status
 
-# Fast mode with verbose logging (see what's happening)
+# Generate with verbose logging (see what's happening)
 just status-verbose
 
-# Full mode (all checks)
-just status-full
+# Refresh git stats cache
+just status-refresh
 
 # Run in background and follow logs
 just status-background
@@ -34,8 +37,8 @@ just status-check
 
 # View results
 just view
-just summary
-just failed
+just count
+just top 10
 
 # Clean up
 just clean
@@ -44,25 +47,19 @@ just clean
 ### Direct Python Usage
 
 ```bash
-# Fast mode (audit only, recommended for quick checks)
+# Generate metadata report
 python3 scripts/generate_formula_status.py
 
-# Fast mode with verbose logging
+# Generate with verbose logging
 python3 scripts/generate_formula_status.py --verbose
 
-# Full mode (strict audit + style + readall)
-python3 scripts/generate_formula_status.py --mode full
-
-# Refresh GitHub stats cache
+# Refresh git stats cache (ignore cached results)
 python3 scripts/generate_formula_status.py --refresh
 
 # Custom output file
 python3 scripts/generate_formula_status.py --output my-status.md
 
-# Select specific checks
-python3 scripts/generate_formula_status.py --checks audit,style
-
-# Control parallelism
+# Control parallelism (default: 20 workers)
 python3 scripts/generate_formula_status.py --workers 10
 ```
 
@@ -72,8 +69,7 @@ The system runs automatically:
 
 - **Weekly**: Every Monday at 09:00 UTC
 - **Manual**: Trigger from GitHub Actions UI
-  - Go to Actions → Formula Status → Run workflow
-  - Choose mode: `fast` or `full`
+  - Go to Actions → Formula Metadata → Run workflow
 
 Changes are automatically committed to the repository.
 
@@ -81,11 +77,8 @@ Changes are automatically committed to the repository.
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--mode` | Check mode: `fast` (audit only) or `full` (all checks) | `fast` |
-| `--refresh` | Ignore cache and refresh GitHub stats | false |
 | `--output` | Output file path | `STATUS.md` |
-| `--tap` | Tap name (e.g., `chenrui333/tap`) | Auto-detected |
-| `--checks` | Comma-separated checks to run | `audit,style,readall` |
+| `--refresh` | Ignore cache and refresh git stats | false |
 | `--workers` | Number of parallel workers | 20 |
 | `--verbose` / `-v` | Enable verbose logging | false |
 
@@ -94,113 +87,93 @@ Changes are automatically committed to the repository.
 The `justfile` provides convenient shortcuts for common operations:
 
 ### Generation Commands
-- `just status` - Fast mode generation
-- `just status-verbose` - Fast mode with detailed logging
-- `just status-full` - Full mode with all checks
-- `just status-full-verbose` - Full mode with logging
-- `just status-refresh` - Refresh GitHub stats cache
-- `just status-workers N` - Use N parallel workers
-- `just status-checks CHECKS` - Run specific checks
+- `just status` - Generate metadata report
+- `just status-verbose` - Generate with verbose logging
+- `just status-refresh` - Refresh git stats cache
+- `just status-workers N` - Use N parallel workers (default: 20)
 
 ### Background Execution
 - `just status-background` - Run in background with logging
-- `just status-check` - Check if generation is running
-- `just status-kill` - Stop background generation
+- `just status-check` - Check if crawler is running
+- `just status-kill` - Stop background crawler
 - `just status-logs` - Follow background logs
+- `just status-watch` - Watch progress in real-time
 
 ### Viewing & Analysis
 - `just view` - Display full STATUS.md
-- `just summary` - Show summary section only
-- `just failed` - Show failed formulas only
-- `just count` - Count formulas by status
+- `just count` - Count total formulas
+- `just top N` - Show top N formulas by stars (default: 10)
 
 ### Maintenance
 - `just clean` - Remove all generated files and cache
-- `just clean-cache` - Remove GitHub stats cache only
+- `just clean-cache` - Remove git stats cache only
 - `just clean-reports` - Remove STATUS.md only
+- `just clean-logs` - Remove log files
 - `just validate` - Validate generated STATUS.md
 
 ### Utilities
-- `just example` - Show mock output table
-- `just diff-status` - Compare with previous version
-- `just test-formula FORMULA` - Test single formula
-- `just install-deps` - Check dependencies
+- `just example` - Show example output table
+- `just install-deps` - Check dependencies (python3, gh)
 
-## Check Types
+## Git Hosting Platform Support
 
-### Audit Check
+The crawler automatically detects and fetches statistics from multiple git hosting platforms:
 
-Runs `brew audit --formula` (or `--strict` in full mode) to verify:
-- Formula syntax and structure
-- Metadata completeness
-- URL accessibility
-- License information
-- Best practices compliance
+### GitHub
+- **Detection**: `github.com` in homepage or URL
+- **Method**: `gh` CLI tool
+- **Stats**: stars, forks, last commit, last release
+- **Requirements**: `gh` command must be installed and authenticated
 
-**Fast mode**: Basic audit checks
-**Full mode**: Strict audit with additional validations
+### GitLab
+- **Detection**: `gitlab.com` in homepage or URL
+- **Method**: GitLab REST API
+- **Stats**: stars, forks, last activity, latest release
+- **Requirements**: No authentication needed for public repos
 
-### Style Check
+### Codeberg
+- **Detection**: `codeberg.org` in homepage or URL
+- **Method**: Forgejo/Gitea API
+- **Stats**: stars, forks, last update, latest release
+- **Requirements**: No authentication needed for public repos
 
-Runs `brew style` to verify:
-- Ruby code style compliance
-- RuboCop violations
-- Formatting consistency
-
-**Note**: Only enabled in full mode by default due to execution time.
-
-### Readall Check
-
-Runs `brew readall --tap=<tap>` to verify:
-- Formula can be parsed without errors
-- No Ruby syntax errors
-- Dependencies are valid
-
-**Note**: Only enabled in full mode by default.
+### SourceHut
+- **Detection**: `git.sr.ht` in homepage or URL
+- **Method**: Limited API support
+- **Stats**: Basic repo information only (stars/forks not available)
+- **Note**: SourceHut has minimal public API for statistics
 
 ## Output Format
 
-The generated `STATUS.md` contains:
+The generated `STATUS.md` contains a sorted table of all formulas:
 
-### Summary Section
+### Metadata Table
 
-```markdown
-## Summary
-
-- **Total formulas**: 150
-- **Pass**: 145
-- **Fail**: 3
-- **Unknown**: 2
-```
-
-### Status Table
-
-| Formula | Audit | Style | Readall | Desc | Stars | Forks | Last commit | Last release | Homepage | Notes |
-|---------|-------|-------|---------|------|-------|-------|-------------|--------------|----------|-------|
-| failing-tool | FAIL | PASS | PASS | A tool that fails | 42 | 7 | 2024-12-01 | 2024-11-15 | [link](https://...) | license: MIT; bottle: yes, livecheck: yes; audit: URL not accessible |
-| passing-tool | PASS | PASS | PASS | A working tool | 100 | 20 | 2024-12-10 | 2024-12-05 | [link](https://...) | license: Apache-2.0; bottle: yes, livecheck: no |
+| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |
+|---------|-------------|-------|-------|-------------|--------------|---------|--------|-----------|----------|
+| popular-tool | An awesome CLI tool for developers | 1234 | 56 | 2024-12-10 | 2024-11-20 | MIT | ✓ | ✓ | [link](https://...) |
+| another-tool | A cool application | 567 | 23 | 2024-12-12 | - | Apache-2.0 | ✓ | - | [link](https://...) |
 
 **Table columns**:
 1. **Formula**: Formula name
-2. **Audit**: Audit check status (PASS/FAIL/N/A)
-3. **Style**: Style check status (PASS/FAIL/N/A)
-4. **Readall**: Readall check status (PASS/FAIL/N/A)
-5. **Desc**: Short description (truncated to 50 chars)
-6. **Stars**: GitHub stars count
-7. **Forks**: GitHub forks count
-8. **Last commit**: Last commit date (YYYY-MM-DD)
-9. **Last release**: Last release date (YYYY-MM-DD)
+2. **Description**: Short description (truncated to 60 chars)
+3. **Stars**: Git hosting stars count (or `-` if unavailable)
+4. **Forks**: Git hosting forks count (or `-` if unavailable)
+5. **Last Commit**: Last commit date in YYYY-MM-DD format
+6. **Last Release**: Last release date in YYYY-MM-DD format (or `-` if none)
+7. **License**: Software license (or `-` if not specified)
+8. **Bottle**: ✓ if pre-built binary available, `-` otherwise
+9. **Livecheck**: ✓ if version check configured, `-` otherwise
 10. **Homepage**: Link to project homepage
-11. **Notes**: License, bottle/livecheck status, failure messages
 
-**Sorting**: Failed formulas appear first, then sorted alphabetically.
+**Sorting**: Formulas are sorted by stars (descending), then alphabetically by name.
 
-## GitHub Stats Caching
+## Git Stats Caching
 
-GitHub API responses are cached in `.cache/formula_status.json` to:
-- Avoid rate limiting
+Git hosting API responses are cached in `.cache/formula_metadata.json` to:
+- Avoid rate limiting (especially for GitHub)
 - Speed up subsequent runs
-- Reduce API usage
+- Reduce API usage across all platforms
 
 Cache is automatically:
 - **Loaded**: On script start (unless `--refresh` specified)
@@ -208,24 +181,27 @@ Cache is automatically:
 - **Saved**: After processing all formulas
 - **Committed**: To repository for CI/CD reuse
 
-Use `--refresh` to force-refresh all cached stats.
+Use `--refresh` to force-refresh all cached stats for all platforms.
 
 ## Example Output
 
-### Mock Table Header + 2 Rows
+### Sample Table
 
 ```markdown
-| Formula | Audit | Style | Readall | Desc | Stars | Forks | Last commit | Last release | Homepage | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| broken-formula | FAIL | PASS | PASS | Tool with audit issues | 1234 | 56 | 2024-12-10 | 2024-11-20 | [link](https://github.com/user/broken-formula) | license: MIT; bottle: yes, livecheck: yes; audit: URL checksum mismatch |
-| working-formula | PASS | PASS | PASS | Perfectly working tool | 5678 | 123 | 2024-12-12 | 2024-12-01 | [link](https://github.com/user/working-formula) | license: Apache-2.0; bottle: yes, livecheck: no |
+| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |
+|---------|-------------|-------|-------|-------------|--------------|---------|--------|-----------|----------|
+| awesome-tool | An awesome CLI tool for developers | 1234 | 56 | 2024-12-10 | 2024-11-20 | MIT | ✓ | ✓ | [link](https://github.com/user/awesome-tool) |
+| cool-app | A cool application for productivity | 567 | 23 | 2024-12-12 | - | Apache-2.0 | ✓ | - | [link](https://gitlab.com/user/cool-app) |
+| neat-util | Neat utility for developers | 234 | 12 | 2024-12-08 | 2024-11-15 | BSD-3-Clause | - | ✓ | [link](https://codeberg.org/user/neat-util) |
 ```
 
 ## Requirements
 
-- **Python 3**: For running the script
-- **Homebrew**: For formula checks (`brew` command)
-- **GitHub CLI**: For fetching repo stats (`gh` command)
+- **Python 3.x**: For running the script
+- **GitHub CLI** (`gh`): For fetching GitHub repo stats (most common)
+- **curl**: For fetching GitLab, Codeberg, and SourceHut stats
+
+The `gh` CLI must be installed and authenticated for GitHub repos. For other platforms, no authentication is needed for public repositories.
 
 All requirements are pre-installed in the GitHub Actions environment.
 
@@ -235,28 +211,35 @@ All requirements are pre-installed in the GitHub Actions environment.
 
 **Script fails to find formulas**:
 - Ensure you're in the tap root directory
-- Check that `Formula/` directory exists
+- Check that `Formula/` directory exists with `.rb` files
 
 **GitHub API rate limiting**:
 - Use cached results (default behavior)
+- Ensure `gh` CLI is authenticated: `gh auth status`
 - Run during off-peak hours
-- Use personal access token with higher limits
 
-**Check timeouts**:
-- Use `--mode fast` for quicker execution
-- Disable slow checks with `--checks audit`
+**Missing stats for some formulas**:
+- Formula may not have a recognized git hosting URL
+- Git hosting platform may be down or rate-limited
+- Check formula's homepage and url fields
+
+**Script appears stuck**:
+- Use `--verbose` flag to see progress
+- Use `just status-watch` to monitor in real-time
+- Check process with `just status-check`
 
 **Permission errors**:
 - Ensure script is executable: `chmod +x scripts/generate_formula_status.py`
+- Ensure `gh` CLI is authenticated
 
-### Debug Mode
+### Verbose Mode
 
-Enable verbose output by modifying the script:
+Enable verbose output to see detailed progress:
 
-```python
-# Add at the top of main()
-import logging
-logging.basicConfig(level=logging.DEBUG)
+```bash
+just status-verbose
+# or
+python3 scripts/generate_formula_status.py --verbose
 ```
 
 ## Integration with Other Tools
@@ -286,25 +269,26 @@ Add to README:
 
 ## Performance
 
-**Fast mode** (~5-10 minutes for 150 formulas):
-- Audit only
-- Cached GitHub stats
-- Parallel-friendly
+**Typical execution** (~3-5 minutes for 150 formulas):
+- Pure metadata extraction and git stats
+- Parallel processing with 20 workers
+- Cached git stats for subsequent runs
+- Fast API calls to GitLab, Codeberg
+- GitHub via `gh` CLI (fastest)
 
-**Full mode** (~15-30 minutes for 150 formulas):
-- Strict audit
-- Style checks
-- Readall validation
-- May require sequential processing
+**Optimization tips**:
+- Use cached results (default) for faster runs
+- Adjust `--workers` based on your system
+- Run with `--verbose` only when debugging
 
 ## Contributing
 
-To improve the status system:
+To improve the metadata system:
 
-1. **Add new checks**: Modify `run_check()` method
+1. **Add new platforms**: Add detection pattern and stats fetcher
 2. **Enhance reporting**: Update `generate_report()` method
 3. **Improve caching**: Extend cache schema
-4. **Add metrics**: Track additional formula metadata
+4. **Add metadata**: Track additional formula fields
 
 See `scripts/generate_formula_status.py` for implementation details.
 
@@ -312,13 +296,13 @@ See `scripts/generate_formula_status.py` for implementation details.
 
 Planned improvements:
 
-- [ ] Parallel check execution for speed
-- [ ] Historical trend tracking
-- [ ] Email notifications for failures
+- [ ] Self-hosted GitLab/Gitea instance support
+- [ ] Historical trend tracking (stars over time)
+- [ ] Formula health scoring algorithm
 - [ ] Integration with Homebrew analytics
-- [ ] Custom check definitions
-- [ ] Multi-tap support
+- [ ] Multi-tap aggregation support
 - [ ] Web dashboard UI
+- [ ] Better SourceHut API integration (when available)
 
 ## Support
 
