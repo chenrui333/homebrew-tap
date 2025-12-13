@@ -18,12 +18,10 @@ yor = "yor"
 [files]
 extend-exclude = [
   "Formula/h/holo-cli.rb", # for `index 4ba84b7..9d404c0`
-  "Formula/m/mitex.rb", # for `main.typ`
   "Formula/r/readmeai.rb", # upstream pr ref, https://github.com/eli64s/readme-ai/pull/158
-  "Formula/g/graphjin.rb", # ignore patch
-  "patches/flexiblas/3.4.5.patch",
-  "patches/fjira/1.4.4.patch",
+  "patches/**",
   "docs/terminal-trove/terminal_trove_weekly.md",
+  "STATUS.md",
 ]
 
 [type.ruby.extend-words]
