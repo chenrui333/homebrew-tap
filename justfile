@@ -7,24 +7,24 @@ default:
 
 # Generate formula metadata report
 status:
-    python3 scripts/generate_formula_status.py
+    python3 formula-status/generate_formula_status.py
 
 # Generate with verbose logging
 status-verbose:
-    python3 scripts/generate_formula_status.py --verbose
+    python3 formula-status/generate_formula_status.py --verbose
 
 # Refresh git stats cache
 status-refresh:
-    python3 scripts/generate_formula_status.py --refresh
+    python3 formula-status/generate_formula_status.py --refresh
 
 # Run with custom number of workers
 status-workers WORKERS="10":
-    python3 scripts/generate_formula_status.py --workers {{WORKERS}}
+    python3 formula-status/generate_formula_status.py --workers {{WORKERS}}
 
 # Run in background with logging
 status-background:
     #!/usr/bin/env bash
-    nohup python3 scripts/generate_formula_status.py --verbose > formula-status.log 2>&1 &
+    nohup python3 formula-status/generate_formula_status.py --verbose > formula-status.log 2>&1 &
     echo "Crawler running in background (PID: $!)"
     echo "Follow logs with: just status-logs"
 
