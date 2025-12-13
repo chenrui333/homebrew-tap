@@ -5,15 +5,23 @@
 default:
     @just --list
 
-# Generate formula status in fast mode (audit only)
+# Generate formula status with metadata + GitHub stats only (fastest, no brew checks)
 status:
+    python3 scripts/generate_formula_status.py --no-checks
+
+# Generate formula status with brew audit checks
+status-with-checks:
     python3 scripts/generate_formula_status.py --mode fast
 
-# Generate formula status with verbose logging
+# Generate formula status with verbose logging (metadata + GitHub only)
 status-verbose:
+    python3 scripts/generate_formula_status.py --no-checks --verbose
+
+# Generate formula status with brew audit checks (verbose)
+status-with-checks-verbose:
     python3 scripts/generate_formula_status.py --mode fast --verbose
 
-# Generate formula status in full mode (all checks)
+# Generate formula status in full mode (all checks: audit, style, readall)
 status-full:
     python3 scripts/generate_formula_status.py --mode full
 
@@ -21,17 +29,17 @@ status-full:
 status-full-verbose:
     python3 scripts/generate_formula_status.py --mode full --verbose
 
-# Refresh GitHub stats cache
+# Refresh GitHub stats cache (no checks)
 status-refresh:
-    python3 scripts/generate_formula_status.py --mode fast --refresh
+    python3 scripts/generate_formula_status.py --no-checks --refresh
 
-# Run with custom number of workers
+# Run with custom number of workers (no checks)
 status-workers WORKERS="10":
-    python3 scripts/generate_formula_status.py --mode fast --workers {{WORKERS}}
+    python3 scripts/generate_formula_status.py --no-checks --workers {{WORKERS}}
 
 # Run specific checks only (e.g., just status-checks audit,style)
 status-checks CHECKS="audit":
-    python3 scripts/generate_formula_status.py --mode fast --checks {{CHECKS}}
+    python3 scripts/generate_formula_status.py --checks {{CHECKS}}
 
 # Run on a small sample for testing (first 10 formulas)
 status-sample:
@@ -90,8 +98,15 @@ clean-reports:
 clean: clean-cache clean-reports
     @echo "All artifacts cleaned"
 
-# Run in background with logging
+# Run in background with logging (metadata + GitHub only, fast)
 status-background:
+    #!/usr/bin/env bash
+    nohup python3 scripts/generate_formula_status.py --no-checks --verbose > formula-status.log 2>&1 &
+    echo "Status generation running in background (PID: $!)"
+    echo "Follow logs with: tail -f formula-status.log"
+
+# Run in background with brew checks
+status-background-with-checks:
     #!/usr/bin/env bash
     nohup python3 scripts/generate_formula_status.py --mode fast --verbose > formula-status.log 2>&1 &
     echo "Status generation running in background (PID: $!)"
