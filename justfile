@@ -1,0 +1,185 @@
+# Formula Status Management Justfile
+# Quick commands for generating and managing formula status reports
+
+# Default recipe - show help
+default:
+    @just --list
+
+# Generate formula status in fast mode (audit only)
+status:
+    python3 scripts/generate_formula_status.py --mode fast
+
+# Generate formula status with verbose logging
+status-verbose:
+    python3 scripts/generate_formula_status.py --mode fast --verbose
+
+# Generate formula status in full mode (all checks)
+status-full:
+    python3 scripts/generate_formula_status.py --mode full
+
+# Generate formula status in full mode with verbose logging
+status-full-verbose:
+    python3 scripts/generate_formula_status.py --mode full --verbose
+
+# Refresh GitHub stats cache
+status-refresh:
+    python3 scripts/generate_formula_status.py --mode fast --refresh
+
+# Run with custom number of workers
+status-workers WORKERS="10":
+    python3 scripts/generate_formula_status.py --mode fast --workers {{WORKERS}}
+
+# Run specific checks only (e.g., just status-checks audit,style)
+status-checks CHECKS="audit":
+    python3 scripts/generate_formula_status.py --mode fast --checks {{CHECKS}}
+
+# Run on a small sample for testing (first 10 formulas)
+status-sample:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # Create temp dir with sample formulas
+    mkdir -p /tmp/test-formulas/Formula/a
+    find Formula/a -name "*.rb" | head -10 | xargs -I {} cp {} /tmp/test-formulas/Formula/a/
+    cd /tmp/test-formulas
+    python3 ../../scripts/generate_formula_status.py --mode fast --output SAMPLE-STATUS.md
+    cat SAMPLE-STATUS.md
+
+# View generated status report
+view:
+    cat STATUS.md
+
+# View status summary only
+summary:
+    awk '/## Summary/,/## Status Table/' STATUS.md
+
+# Count formulas by status
+count:
+    #!/usr/bin/env bash
+    if [ ! -f STATUS.md ]; then
+        echo "STATUS.md not found. Run 'just status' first."
+        exit 1
+    fi
+    echo "Formula Status Count:"
+    echo "===================="
+    grep "| PASS |" STATUS.md | wc -l | xargs echo "PASS:"
+    grep "| FAIL |" STATUS.md | wc -l | xargs echo "FAIL:"
+    grep "| UNKNOWN |" STATUS.md | wc -l | xargs echo "UNKNOWN:"
+
+# Show failed formulas only
+failed:
+    #!/usr/bin/env bash
+    if [ ! -f STATUS.md ]; then
+        echo "STATUS.md not found. Run 'just status' first."
+        exit 1
+    fi
+    echo "Failed Formulas:"
+    echo "================"
+    grep "| FAIL |" STATUS.md
+
+# Clean cache
+clean-cache:
+    rm -rf .cache/formula_status.json
+    @echo "Cache cleaned"
+
+# Clean generated reports
+clean-reports:
+    rm -f STATUS.md
+    @echo "Reports cleaned"
+
+# Clean everything
+clean: clean-cache clean-reports
+    @echo "All artifacts cleaned"
+
+# Run in background with logging
+status-background:
+    #!/usr/bin/env bash
+    nohup python3 scripts/generate_formula_status.py --mode fast --verbose > formula-status.log 2>&1 &
+    echo "Status generation running in background (PID: $!)"
+    echo "Follow logs with: tail -f formula-status.log"
+
+# Check if status generation is running
+status-check:
+    #!/usr/bin/env bash
+    if pgrep -f "generate_formula_status.py" > /dev/null; then
+        echo "✓ Formula status generation is running"
+        pgrep -f "generate_formula_status.py" | xargs ps -p
+    else
+        echo "✗ Formula status generation is not running"
+    fi
+
+# Kill running status generation
+status-kill:
+    #!/usr/bin/env bash
+    if pgrep -f "generate_formula_status.py" > /dev/null; then
+        pkill -f "generate_formula_status.py"
+        echo "✓ Killed formula status generation"
+    else
+        echo "✗ No running formula status generation found"
+    fi
+
+# Follow status generation logs
+status-logs:
+    tail -f formula-status.log
+
+# Test the script on a single formula
+test-formula FORMULA:
+    #!/usr/bin/env bash
+    brew audit --formula {{FORMULA}}
+
+# Validate the generated STATUS.md
+validate:
+    #!/usr/bin/env bash
+    if [ ! -f STATUS.md ]; then
+        echo "❌ STATUS.md not found"
+        exit 1
+    fi
+
+    echo "Validating STATUS.md..."
+
+    # Check file size
+    SIZE=$(wc -c < STATUS.md)
+    if [ "$SIZE" -lt 1000 ]; then
+        echo "❌ STATUS.md seems too small ($SIZE bytes)"
+        exit 1
+    fi
+
+    # Check for required sections
+    if ! grep -q "## Summary" STATUS.md; then
+        echo "❌ Missing Summary section"
+        exit 1
+    fi
+
+    if ! grep -q "## Status Table" STATUS.md; then
+        echo "❌ Missing Status Table section"
+        exit 1
+    fi
+
+    echo "✅ STATUS.md validation passed"
+    echo "   Size: $SIZE bytes"
+    echo "   Formulas: $(grep -c '^|' STATUS.md | xargs echo)"
+
+# Compare with previous status (requires git)
+diff-status:
+    #!/usr/bin/env bash
+    if [ ! -f STATUS.md ]; then
+        echo "STATUS.md not found"
+        exit 1
+    fi
+    git diff HEAD STATUS.md || echo "No differences or not in git"
+
+# Show example mock output
+example:
+    @echo "Example Formula Status Table:"
+    @echo ""
+    @echo "| Formula | Audit | Style | Readall | Desc | Stars | Forks | Last commit | Last release | Homepage | Notes |"
+    @echo "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"
+    @echo "| broken-formula | FAIL | PASS | PASS | Tool with audit issues | 1234 | 56 | 2024-12-10 | 2024-11-20 | [link](https://github.com/user/broken) | license: MIT; bottle: yes, livecheck: yes; audit: URL checksum mismatch |"
+    @echo "| working-formula | PASS | PASS | PASS | Perfectly working tool | 5678 | 123 | 2024-12-12 | 2024-12-01 | [link](https://github.com/user/working) | license: Apache-2.0; bottle: yes, livecheck: no |"
+
+# Install dependencies (if needed)
+install-deps:
+    @echo "Checking dependencies..."
+    @which python3 > /dev/null || (echo "❌ python3 not found" && exit 1)
+    @which brew > /dev/null || (echo "❌ brew not found" && exit 1)
+    @which gh > /dev/null || (echo "❌ gh not found" && exit 1)
+    @echo "✅ All dependencies installed"
