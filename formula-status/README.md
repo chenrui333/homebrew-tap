@@ -4,7 +4,7 @@ Automated metadata crawling and git hosting statistics for all formulas in this 
 
 ## Overview
 
-The Formula Metadata system provides automated metadata extraction and git hosting statistics for every formula in the tap, generating a comprehensive `formula-status.md` report with:
+The Formula Metadata system provides automated metadata extraction and git hosting statistics for every formula in the tap, generating a comprehensive `formula-status/formula-status.md` report with:
 
 - **Metadata extraction**: description, homepage, license, bottle, livecheck status
 - **Multi-platform git statistics**: stars, forks, last commit, last release
@@ -77,7 +77,7 @@ Changes are automatically committed to the repository.
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--output` | Output file path | `formula-status.md` |
+| `--output` | Output file path | `formula-status/formula-status.md` |
 | `--refresh` | Ignore cache and refresh git stats | false |
 | `--workers` | Number of parallel workers | 20 |
 | `--verbose` / `-v` | Enable verbose logging | false |
@@ -100,16 +100,16 @@ The `justfile` provides convenient shortcuts for common operations:
 - `just status-watch` - Watch progress in real-time
 
 ### Viewing & Analysis
-- `just view` - Display full formula-status.md
+- `just view` - Display full formula-status/formula-status.md
 - `just count` - Count total formulas
 - `just top N` - Show top N formulas by stars (default: 10)
 
 ### Maintenance
 - `just clean` - Remove all generated files and cache
 - `just clean-cache` - Remove git stats cache only
-- `just clean-reports` - Remove formula-status.md only
+- `just clean-reports` - Remove formula-status/formula-status.md only
 - `just clean-logs` - Remove log files
-- `just validate` - Validate generated formula-status.md
+- `just validate` - Validate generated formula-status/formula-status.md
 
 ### Utilities
 - `just example` - Show example output table
@@ -145,26 +145,21 @@ The crawler automatically detects and fetches statistics from multiple git hosti
 
 ## Output Format
 
-The generated `formula-status.md` contains a sorted table of all formulas:
+The generated `formula-status/formula-status.md` contains a sorted table of all formulas:
 
 ### Metadata Table
 
-| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |
-|---------|-------------|-------|-------|-------------|--------------|---------|--------|-----------|----------|
-| popular-tool | An awesome CLI tool for developers | 1234 | 56 | 2024-12-10 | 2024-11-20 | MIT | ✓ | ✓ | [link](https://...) |
-| another-tool | A cool application | 567 | 23 | 2024-12-12 | - | Apache-2.0 | ✓ | - | [link](https://...) |
+| Formula | Stars | Forks | Last Commit | Last Release |
+|---------|-------|-------|-------------|--------------|
+| popular-tool | 1234 | 56 | 2024-12-10 | 2024-11-20 |
+| another-tool | 567 | 23 | 2024-12-12 | - |
 
 **Table columns**:
 1. **Formula**: Formula name
-2. **Description**: Short description (truncated to 60 chars)
-3. **Stars**: Git hosting stars count (or `-` if unavailable)
-4. **Forks**: Git hosting forks count (or `-` if unavailable)
-5. **Last Commit**: Last commit date in YYYY-MM-DD format
-6. **Last Release**: Last release date in YYYY-MM-DD format (or `-` if none)
-7. **License**: Software license (or `-` if not specified)
-8. **Bottle**: ✓ if pre-built binary available, `-` otherwise
-9. **Livecheck**: ✓ if version check configured, `-` otherwise
-10. **Homepage**: Link to project homepage
+2. **Stars**: Git hosting stars count (or `-` if unavailable)
+3. **Forks**: Git hosting forks count (or `-` if unavailable)
+4. **Last Commit**: Last commit date in YYYY-MM-DD format
+5. **Last Release**: Last release date in YYYY-MM-DD format (or `-` if none)
 
 **Sorting**: Formulas are sorted by stars (descending), then alphabetically by name.
 
@@ -188,11 +183,11 @@ Use `--refresh` to force-refresh all cached stats for all platforms.
 ### Sample Table
 
 ```markdown
-| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |
-|---------|-------------|-------|-------|-------------|--------------|---------|--------|-----------|----------|
-| awesome-tool | An awesome CLI tool for developers | 1234 | 56 | 2024-12-10 | 2024-11-20 | MIT | ✓ | ✓ | [link](https://github.com/user/awesome-tool) |
-| cool-app | A cool application for productivity | 567 | 23 | 2024-12-12 | - | Apache-2.0 | ✓ | - | [link](https://gitlab.com/user/cool-app) |
-| neat-util | Neat utility for developers | 234 | 12 | 2024-12-08 | 2024-11-15 | BSD-3-Clause | - | ✓ | [link](https://codeberg.org/user/neat-util) |
+| Formula | Stars | Forks | Last Commit | Last Release |
+|---------|-------|-------|-------------|--------------|
+| awesome-tool | 1234 | 56 | 2024-12-10 | 2024-11-20 |
+| cool-app | 567 | 23 | 2024-12-12 | - |
+| neat-util | 234 | 12 | 2024-12-08 | 2024-11-15 |
 ```
 
 ## Requirements
@@ -308,5 +303,5 @@ Planned improvements:
 
 For issues or questions:
 - Open an issue on GitHub
-- Check existing formula-status.md for formula-specific issues
+- Check existing formula-status/formula-status.md for formula-specific issues
 - Review GitHub Actions logs for CI failures

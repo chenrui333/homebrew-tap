@@ -436,23 +436,17 @@ class FormulaCrawler:
             "",
             "## Formulas",
             "",
-            "| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |",
-            "| ------- | ----------- | ----- | ----- | ----------- | ------------ | ------- | ------ | --------- | -------- |",
+            "| Formula | Stars | Forks | Last Commit | Last Release |",
+            "| ------- | ----- | ----- | ----------- | ------------ |",
         ]
 
         for formula in formulas:
-            desc = formula.desc[:60] + "..." if len(formula.desc) > 60 else formula.desc
             row = [
                 formula.name,
-                desc,
                 str(formula.git_stats.stars) if formula.git_stats.stars else "-",
                 str(formula.git_stats.forks) if formula.git_stats.forks else "-",
                 formula.git_stats.last_commit or "-",
                 formula.git_stats.last_release or "-",
-                formula.license or "-",
-                "✓" if formula.has_bottle else "-",
-                "✓" if formula.has_livecheck else "-",
-                f"[link]({formula.homepage})" if formula.homepage else "-",
             ]
             lines.append("| " + " | ".join(row) + " |")
 
@@ -512,8 +506,8 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("formula-status.md"),
-        help="Output file (default: formula-status.md)",
+        default=Path("formula-status/formula-status.md"),
+        help="Output file (default: formula-status/formula-status.md)",
     )
     parser.add_argument(
         "--workers",
