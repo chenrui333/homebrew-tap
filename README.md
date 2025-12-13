@@ -303,6 +303,7 @@ brew install --cask <tool>
 - `jjj`
 - `jl`
 - `jocalsend`
+- `jonquil`
 - `jplot`
 - `jsonl-graph`
 - `jsrpc`
@@ -594,7 +595,6 @@ brew install --cask <tool>
 - `turm`
 - `twiggy`
 - `twilio-mcp-server`
-- `ty`
 - `ugdb`
 - `unused-deps`
 - `uplift`
@@ -622,7 +622,6 @@ brew install --cask <tool>
 - `werk`
 - `wifitui`
 - `wisu`
-- `wuchale`
 - `xcpkg`
 - `xmlformatter`
 - `yajsv`
