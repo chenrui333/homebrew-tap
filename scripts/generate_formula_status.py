@@ -100,16 +100,24 @@ class FormulaStatusGenerator:
     """Main class for generating formula status reports"""
 
     def __init__(self, tap_name: str, mode: str, checks: Set[str],
-                 refresh_cache: bool, output_file: Path, workers: int = 20):
+                 refresh_cache: bool, output_file: Path, workers: int = 20,
+                 verbose: bool = False):
         self.tap_name = tap_name
         self.mode = mode
         self.enabled_checks = checks
         self.refresh_cache = refresh_cache
         self.output_file = output_file
         self.workers = workers
+        self.verbose = verbose
         self.cache_file = Path(".cache/formula_status.json")
         self.github_cache: Dict = {}
         self._load_cache()
+
+    def log(self, msg: str, force: bool = False):
+        """Print log message if verbose or force"""
+        if self.verbose or force:
+            timestamp = datetime.now().strftime("%H:%M:%S")
+            print(f"[{timestamp}] {msg}")
 
     def _load_cache(self):
         """Load GitHub stats cache"""
@@ -283,12 +291,16 @@ class FormulaStatusGenerator:
                     cmd.append(strict_flag)
                 cmd.append(formula_name)
 
+                self.log(f"{formula_name}: Running {' '.join(cmd)}")
+
                 result = subprocess.run(
                     cmd,
                     capture_output=True,
                     text=True,
                     timeout=60,
                 )
+
+                self.log(f"{formula_name}: audit completed (rc={result.returncode})")
 
                 if result.returncode == 0:
                     return CheckResult(check_name, "PASS")
@@ -344,7 +356,7 @@ class FormulaStatusGenerator:
     def process_formula(self, formula_path: Path) -> FormulaStatus:
         """Process a single formula and generate its status"""
         formula_name = formula_path.stem
-        print(f"Processing {formula_name}...")
+        start_time = datetime.now()
 
         # Extract metadata
         metadata = self.extract_metadata(formula_path)
@@ -352,14 +364,20 @@ class FormulaStatusGenerator:
         # Run enabled checks
         checks = []
         for check_name in self.enabled_checks:
+            check_start = datetime.now()
             check_result = self.run_check(check_name, formula_path)
+            check_duration = (datetime.now() - check_start).total_seconds()
             checks.append(check_result)
 
         # Fetch GitHub stats
         github_stats = GitHubStats()
         github_repo = self.infer_github_repo(metadata["homepage"], metadata["url"])
         if github_repo:
+            gh_start = datetime.now()
             github_stats = self.fetch_github_stats(github_repo)
+            gh_duration = (datetime.now() - gh_start).total_seconds()
+
+        duration = (datetime.now() - start_time).total_seconds()
 
         return FormulaStatus(
             name=formula_name,
@@ -544,6 +562,11 @@ def main():
         default=20,
         help="Number of parallel workers (default: 20)",
     )
+    parser.add_argument(
+        "-v", "--verbose",
+        action="store_true",
+        help="Enable verbose logging",
+    )
 
     args = parser.parse_args()
 
@@ -566,6 +589,7 @@ def main():
         refresh_cache=args.refresh,
         output_file=args.output,
         workers=args.workers,
+        verbose=args.verbose,
     )
 
     try:
