@@ -117,7 +117,7 @@ class FormulaStatusGenerator:
         """Print log message if verbose or force"""
         if self.verbose or force:
             timestamp = datetime.now().strftime("%H:%M:%S")
-            print(f"[{timestamp}] {msg}")
+            print(f"[{timestamp}] {msg}", flush=True)
 
     def _load_cache(self):
         """Load GitHub stats cache"""
@@ -449,24 +449,24 @@ class FormulaStatusGenerator:
 
     def run(self):
         """Main execution flow"""
-        print(f"Formula Status Generator")
-        print(f"Tap: {self.tap_name}")
-        print(f"Mode: {self.mode}")
-        print(f"Checks: {', '.join(self.enabled_checks)}")
-        print(f"Workers: {self.workers}")
-        print()
+        print(f"Formula Status Generator", flush=True)
+        print(f"Tap: {self.tap_name}", flush=True)
+        print(f"Mode: {self.mode}", flush=True)
+        print(f"Checks: {', '.join(self.enabled_checks)}", flush=True)
+        print(f"Workers: {self.workers}", flush=True)
+        print(flush=True)
 
         # Find all formulas
         formulas = self.find_formulas()
-        print(f"Found {len(formulas)} formulas")
+        print(f"Found {len(formulas)} formulas", flush=True)
 
         if not formulas:
-            print("No formulas found!")
+            print("No formulas found!", flush=True)
             return
 
         # Process formulas in parallel
         statuses = []
-        print(f"\nProcessing formulas with {self.workers} parallel workers...")
+        print(f"\nProcessing formulas with {self.workers} parallel workers...", flush=True)
 
         with ThreadPoolExecutor(max_workers=self.workers) as executor:
             # Submit all formulas for processing
@@ -484,9 +484,9 @@ class FormulaStatusGenerator:
                 try:
                     status = future.result()
                     statuses.append(status)
-                    print(f"[{completed}/{len(formulas)}] ✓ {status.name}")
+                    print(f"[{completed}/{len(formulas)}] ✓ {status.name}", flush=True)
                 except Exception as e:
-                    print(f"[{completed}/{len(formulas)}] ✗ {formula_path.stem}: {e}")
+                    print(f"[{completed}/{len(formulas)}] ✗ {formula_path.stem}: {e}", flush=True)
 
         # Save GitHub cache
         self._save_cache()
@@ -496,7 +496,7 @@ class FormulaStatusGenerator:
 
         # Write output
         self.output_file.write_text(report)
-        print(f"\nReport written to {self.output_file}")
+        print(f"\nReport written to {self.output_file}", flush=True)
 
 
 def detect_tap_name() -> str:
