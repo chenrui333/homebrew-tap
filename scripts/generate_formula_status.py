@@ -12,6 +12,7 @@ import os
 import re
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -99,12 +100,13 @@ class FormulaStatusGenerator:
     """Main class for generating formula status reports"""
 
     def __init__(self, tap_name: str, mode: str, checks: Set[str],
-                 refresh_cache: bool, output_file: Path):
+                 refresh_cache: bool, output_file: Path, workers: int = 20):
         self.tap_name = tap_name
         self.mode = mode
         self.enabled_checks = checks
         self.refresh_cache = refresh_cache
         self.output_file = output_file
+        self.workers = workers
         self.cache_file = Path(".cache/formula_status.json")
         self.github_cache: Dict = {}
         self._load_cache()
@@ -433,6 +435,7 @@ class FormulaStatusGenerator:
         print(f"Tap: {self.tap_name}")
         print(f"Mode: {self.mode}")
         print(f"Checks: {', '.join(self.enabled_checks)}")
+        print(f"Workers: {self.workers}")
         print()
 
         # Find all formulas
@@ -443,14 +446,29 @@ class FormulaStatusGenerator:
             print("No formulas found!")
             return
 
-        # Process each formula
+        # Process formulas in parallel
         statuses = []
-        for formula_path in formulas:
-            try:
-                status = self.process_formula(formula_path)
-                statuses.append(status)
-            except Exception as e:
-                print(f"Error processing {formula_path}: {e}")
+        print(f"\nProcessing formulas with {self.workers} parallel workers...")
+
+        with ThreadPoolExecutor(max_workers=self.workers) as executor:
+            # Submit all formulas for processing
+            future_to_formula = {
+                executor.submit(self.process_formula, formula_path): formula_path
+                for formula_path in formulas
+            }
+
+            # Collect results as they complete
+            completed = 0
+            for future in as_completed(future_to_formula):
+                formula_path = future_to_formula[future]
+                completed += 1
+
+                try:
+                    status = future.result()
+                    statuses.append(status)
+                    print(f"[{completed}/{len(formulas)}] ✓ {status.name}")
+                except Exception as e:
+                    print(f"[{completed}/{len(formulas)}] ✗ {formula_path.stem}: {e}")
 
         # Save GitHub cache
         self._save_cache()
@@ -520,6 +538,12 @@ def main():
         default="audit,style,readall",
         help="Comma-separated list of checks to run (audit,style,readall)",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=20,
+        help="Number of parallel workers (default: 20)",
+    )
 
     args = parser.parse_args()
 
@@ -541,6 +565,7 @@ def main():
         checks=enabled_checks,
         refresh_cache=args.refresh,
         output_file=args.output,
+        workers=args.workers,
     )
 
     try:
