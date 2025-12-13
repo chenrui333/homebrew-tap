@@ -589,7 +589,6 @@ brew install --cask <tool>
 - `tpm`
 - `travelgrunt`
 - `trdl`
-- `treemd`
 - `trieve-cli`
 - `tsuki`
 - `tuono`
