@@ -512,8 +512,8 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("STATUS.md"),
-        help="Output file (default: STATUS.md)",
+        default=Path("formula-status.md"),
+        help="Output file (default: formula-status.md)",
     )
     parser.add_argument(
         "--workers",
