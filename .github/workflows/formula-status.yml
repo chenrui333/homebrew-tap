@@ -44,7 +44,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python3 scripts/generate_formula_status.py --output STATUS.md
+          python3 formula-status/generate_formula_status.py --output STATUS.md
 
       - name: Check for changes
         id: check_changes
