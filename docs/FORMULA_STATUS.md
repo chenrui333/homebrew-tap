@@ -13,11 +13,42 @@ The Formula Status system provides automated health checks for every formula in 
 
 ## Quick Start
 
-### Local Usage
+### Using Justfile (Recommended)
+
+```bash
+# Fast mode (audit only)
+just status
+
+# Fast mode with verbose logging (see what's happening)
+just status-verbose
+
+# Full mode (all checks)
+just status-full
+
+# Run in background and follow logs
+just status-background
+just status-logs
+
+# Check if it's running
+just status-check
+
+# View results
+just view
+just summary
+just failed
+
+# Clean up
+just clean
+```
+
+### Direct Python Usage
 
 ```bash
 # Fast mode (audit only, recommended for quick checks)
 python3 scripts/generate_formula_status.py
+
+# Fast mode with verbose logging
+python3 scripts/generate_formula_status.py --verbose
 
 # Full mode (strict audit + style + readall)
 python3 scripts/generate_formula_status.py --mode full
@@ -30,6 +61,9 @@ python3 scripts/generate_formula_status.py --output my-status.md
 
 # Select specific checks
 python3 scripts/generate_formula_status.py --checks audit,style
+
+# Control parallelism
+python3 scripts/generate_formula_status.py --workers 10
 ```
 
 ### CI/CD Integration
@@ -52,6 +86,45 @@ Changes are automatically committed to the repository.
 | `--output` | Output file path | `STATUS.md` |
 | `--tap` | Tap name (e.g., `chenrui333/tap`) | Auto-detected |
 | `--checks` | Comma-separated checks to run | `audit,style,readall` |
+| `--workers` | Number of parallel workers | 20 |
+| `--verbose` / `-v` | Enable verbose logging | false |
+
+## Justfile Commands
+
+The `justfile` provides convenient shortcuts for common operations:
+
+### Generation Commands
+- `just status` - Fast mode generation
+- `just status-verbose` - Fast mode with detailed logging
+- `just status-full` - Full mode with all checks
+- `just status-full-verbose` - Full mode with logging
+- `just status-refresh` - Refresh GitHub stats cache
+- `just status-workers N` - Use N parallel workers
+- `just status-checks CHECKS` - Run specific checks
+
+### Background Execution
+- `just status-background` - Run in background with logging
+- `just status-check` - Check if generation is running
+- `just status-kill` - Stop background generation
+- `just status-logs` - Follow background logs
+
+### Viewing & Analysis
+- `just view` - Display full STATUS.md
+- `just summary` - Show summary section only
+- `just failed` - Show failed formulas only
+- `just count` - Count formulas by status
+
+### Maintenance
+- `just clean` - Remove all generated files and cache
+- `just clean-cache` - Remove GitHub stats cache only
+- `just clean-reports` - Remove STATUS.md only
+- `just validate` - Validate generated STATUS.md
+
+### Utilities
+- `just example` - Show mock output table
+- `just diff-status` - Compare with previous version
+- `just test-formula FORMULA` - Test single formula
+- `just install-deps` - Check dependencies
 
 ## Check Types
 
