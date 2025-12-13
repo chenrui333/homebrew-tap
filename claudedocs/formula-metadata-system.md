@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Formula Metadata Crawler is an automated system that extracts formula metadata and fetches git hosting statistics for all formulas in the homebrew-tap. It generates a comprehensive `STATUS.md` report sorted by popularity (stars).
+The Formula Metadata Crawler is an automated system that extracts formula metadata and fetches git hosting statistics for all formulas in the homebrew-tap. It generates a comprehensive `formula-status.md` report sorted by popularity (stars).
 
 ## Location
 
@@ -42,7 +42,7 @@ Fetch stats via platform-specific method
     ↓
 Cache results (.cache/formula_metadata.json)
     ↓
-Generate sorted Markdown table (STATUS.md)
+Generate sorted Markdown table (formula-status.md)
 ```
 
 ## Git Hosting Platform Support
@@ -127,7 +127,7 @@ python3 formula-status/generate_formula_status.py
 
 # With options
 python3 formula-status/generate_formula_status.py \
-  --output STATUS.md \
+  --output formula-status.md \
   --workers 20 \
   --verbose \
   --refresh
@@ -137,7 +137,7 @@ python3 formula-status/generate_formula_status.py \
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--output` | Output file path | `STATUS.md` |
+| `--output` | Output file path | `formula-status.md` |
 | `--workers` | Parallel workers | `20` |
 | `--verbose` / `-v` | Enable verbose logging | `false` |
 | `--refresh` | Ignore cache, refresh all stats | `false` |
@@ -152,7 +152,7 @@ python3 formula-status/generate_formula_status.py \
   1. Checkout repo
   2. Set up Homebrew and Python
   3. Generate metadata with `GH_TOKEN`
-  4. Commit changes if STATUS.md updated
+  4. Commit changes if formula-status.md updated
   5. Push to repository
 
 ## Technical Details
@@ -227,7 +227,7 @@ Reads `.rb` files and extracts via regex:
 scripts/
   └── generate_formula_status.py
 docs/
-  └── FORMULA_STATUS.md
+  └── FORMULA_formula-status.md
 ```
 
 ### After Reorganization
@@ -246,7 +246,7 @@ claudedocs/
 - **Justfile**: justfile (status-* commands)
 - **Workflow**: .github/workflows/formula-status.yml
 - **Cache**: .cache/formula_metadata.json
-- **Output**: STATUS.md
+- **Output**: formula-status.md
 
 ## Troubleshooting
 
@@ -326,6 +326,6 @@ Potential improvements:
 
 For questions or improvements:
 - Open an issue on GitHub
-- Check STATUS.md for formula-specific data
+- Check formula-status.md for formula-specific data
 - Review GitHub Actions logs for CI failures
 - Read formula-status/README.md for full documentation

@@ -4,7 +4,7 @@ Automated metadata crawling and git hosting statistics for all formulas in this 
 
 ## Overview
 
-The Formula Metadata system provides automated metadata extraction and git hosting statistics for every formula in the tap, generating a comprehensive `STATUS.md` report with:
+The Formula Metadata system provides automated metadata extraction and git hosting statistics for every formula in the tap, generating a comprehensive `formula-status.md` report with:
 
 - **Metadata extraction**: description, homepage, license, bottle, livecheck status
 - **Multi-platform git statistics**: stars, forks, last commit, last release
@@ -77,7 +77,7 @@ Changes are automatically committed to the repository.
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--output` | Output file path | `STATUS.md` |
+| `--output` | Output file path | `formula-status.md` |
 | `--refresh` | Ignore cache and refresh git stats | false |
 | `--workers` | Number of parallel workers | 20 |
 | `--verbose` / `-v` | Enable verbose logging | false |
@@ -100,16 +100,16 @@ The `justfile` provides convenient shortcuts for common operations:
 - `just status-watch` - Watch progress in real-time
 
 ### Viewing & Analysis
-- `just view` - Display full STATUS.md
+- `just view` - Display full formula-status.md
 - `just count` - Count total formulas
 - `just top N` - Show top N formulas by stars (default: 10)
 
 ### Maintenance
 - `just clean` - Remove all generated files and cache
 - `just clean-cache` - Remove git stats cache only
-- `just clean-reports` - Remove STATUS.md only
+- `just clean-reports` - Remove formula-status.md only
 - `just clean-logs` - Remove log files
-- `just validate` - Validate generated STATUS.md
+- `just validate` - Validate generated formula-status.md
 
 ### Utilities
 - `just example` - Show example output table
@@ -145,7 +145,7 @@ The crawler automatically detects and fetches statistics from multiple git hosti
 
 ## Output Format
 
-The generated `STATUS.md` contains a sorted table of all formulas:
+The generated `formula-status.md` contains a sorted table of all formulas:
 
 ### Metadata Table
 
@@ -308,5 +308,5 @@ Planned improvements:
 
 For issues or questions:
 - Open an issue on GitHub
-- Check existing STATUS.md for formula-specific issues
+- Check existing formula-status.md for formula-specific issues
 - Review GitHub Actions logs for CI failures
