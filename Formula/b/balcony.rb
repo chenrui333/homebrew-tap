@@ -249,8 +249,6 @@ class Balcony < Formula
     sha256 "9ddf7c82fda3ae8e24decda1338ede66e1c99883db93711d8fb941eaa2d8c282"
   end
 
-  patch :DATA
-
   def install
     virtualenv_install_with_resources
 
@@ -268,31 +266,3 @@ class Balcony < Formula
     EOS
   end
 end
-
-__END__
-diff --git a/balcony/cli.py b/balcony/cli.py
-index 1c42303..3dacc4a 100644
---- a/balcony/cli.py
-+++ b/balcony/cli.py
-@@ -41,7 +41,7 @@ console = get_rich_console()
- logger = get_logger(__name__)
- session = _create_boto_session()
- balcony_aws = BalconyAWS(session)
--app = typer.Typer(no_args_is_help=True, pretty_exceptions_enable=False)
-+app = typer.Typer(no_args_is_help=True, pretty_exceptions_show_locals=False)
-
-
-
-diff --git a/pyproject.toml b/pyproject.toml
-index 811f0e1..1e20916 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -13,7 +13,7 @@ balcony                         = "balcony.cli:run_app"
-
- [tool.poetry.dependencies]
- python                          = "^3.9"
--typer                           = "^0.7.0"
-+typer                           = "^0.12.0"
- rich                            = "^13.3.4"
- boto3                           = "^1.24.80"
- jmespath                        = "^1.0.1"
