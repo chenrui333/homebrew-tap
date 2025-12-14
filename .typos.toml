@@ -21,6 +21,7 @@ extend-exclude = [
   "Formula/r/readmeai.rb", # upstream pr ref, https://github.com/eli64s/readme-ai/pull/158
   "patches/**",
   "docs/terminal-trove/terminal_trove_weekly.md",
+  "formula-status/formula-status.md",
   "STATUS.md",
 ]
 
