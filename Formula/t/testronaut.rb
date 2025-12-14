@@ -1,14 +1,9 @@
 class Testronaut < Formula
   desc "Autonomous testing with OpenAI functions and browser automation"
   homepage "https://testronaut.app/"
-  url "https://registry.npmjs.org/testronaut/-/testronaut-1.3.0.tgz"
-  sha256 "2c3a76c6579d8a6d7e2e8a0c833ef7bb5c7d37ea46943868d23dfdc4fe5fad00"
+  url "https://registry.npmjs.org/testronaut/-/testronaut-1.3.1.tgz"
+  sha256 "418eb1ba54785f748a25bb44065f2e3159dbeea30dc73c3ad00c5b28c0c9b40f"
   license "MIT"
-
-  bottle do
-    root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "87bb38c52fec9337c8ca26716a3125c4643868a4027ba8d21eda42ccb27f2f34"
-  end
 
   depends_on "node"
 
