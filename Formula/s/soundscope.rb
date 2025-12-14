@@ -8,11 +8,11 @@ class Soundscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "586cfeddfa483eb57e637d8691d52c8bb63bcb870ab45ed2c744a783feae031e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4df3c4b9eca72b5173aa32ca323adbe4b09a693522641fb0df7b86a4591d0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7ff436228f1b1e16db0dd99371b640ac6ebb81a7554249784ad4bdbad84aece"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81934c66728f064751cbbf29dcb7f89bf5f10a3f96e425e6fdbf338726f3f20d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dc65e163eef7c2b37e0c7dfcc9ecc4823857389d387f3030c8fa4ab3906f921"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63c4fa8dffc4218c9647cc1eda491e4abed09c16048d33e171e0ceb72f1872b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc3797010db6fcb58b8f20c1338207af95fa6709960c76fbdaada98ebf5685cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99623ceb99a29b9a9b50f1db527276bbe15dd71be963128756c604b724d865dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdc589d12469de76f84f99b25dc0bc679a1c998b434af58aa287037b0dcae6d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b258bb57f192a36a3ea2961c99634e33f0c110f2ce891175a8e8c64d12a7602c"
   end
 
   depends_on "pkgconf" => :build
