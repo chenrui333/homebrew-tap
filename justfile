@@ -7,24 +7,24 @@ default:
 
 # Generate formula metadata report
 status:
-    python3 formula-status/generate_formula_status.py
+    python3 formula-status/generate_formula_status.py --output formula-status/formula-status.md
 
 # Generate with verbose logging
 status-verbose:
-    python3 formula-status/generate_formula_status.py --verbose
+    python3 formula-status/generate_formula_status.py --output formula-status/formula-status.md --verbose
 
 # Refresh git stats cache
 status-refresh:
-    python3 formula-status/generate_formula_status.py --refresh
+    python3 formula-status/generate_formula_status.py --output formula-status/formula-status.md --refresh
 
 # Run with custom number of workers
 status-workers WORKERS="10":
-    python3 formula-status/generate_formula_status.py --workers {{WORKERS}}
+    python3 formula-status/generate_formula_status.py --output formula-status/formula-status.md --workers {{WORKERS}}
 
 # Run in background with logging
 status-background:
     #!/usr/bin/env bash
-    nohup python3 formula-status/generate_formula_status.py --verbose > formula-status.log 2>&1 &
+    nohup python3 formula-status/generate_formula_status.py --output formula-status/formula-status.md --verbose > formula-status.log 2>&1 &
     echo "Crawler running in background (PID: $!)"
     echo "Follow logs with: just status-logs"
 
@@ -42,11 +42,11 @@ status-watch:
             echo "✓ Running"
             echo ""
 
-            if [ -f formula-status.md ]; then
-                echo "formula-status.md:"
-                echo "  Last modified: $(stat -f "%Sm" formula-status.md)"
-                echo "  Size: $(wc -c < formula-status.md) bytes"
-                FORMULAS=$(grep -c '^| [a-z]' formula-status.md 2>/dev/null || echo 0)
+            if [ -f formula-status/formula-status.md ]; then
+                echo "formula-status/formula-status.md:"
+                echo "  Last modified: $(stat -f "%Sm" formula-status/formula-status.md)"
+                echo "  Size: $(wc -c < formula-status/formula-status.md) bytes"
+                FORMULAS=$(grep -c '^| [a-z]' formula-status/formula-status.md 2>/dev/null || echo 0)
                 echo "  Formulas processed: $FORMULAS"
             fi
 
@@ -73,10 +73,10 @@ status-check:
         echo "✓ Formula metadata crawler is running"
         pgrep -f "generate_formula_status.py" | xargs ps -p
         echo ""
-        if [ -f formula-status.md ]; then
-            echo "formula-status.md:"
-            echo "  Last modified: $(stat -f "%Sm" formula-status.md)"
-            FORMULAS=$(grep -c '^| [a-z]' formula-status.md 2>/dev/null || echo 0)
+        if [ -f formula-status/formula-status.md ]; then
+            echo "formula-status/formula-status.md:"
+            echo "  Last modified: $(stat -f "%Sm" formula-status/formula-status.md)"
+            FORMULAS=$(grep -c '^| [a-z]' formula-status/formula-status.md 2>/dev/null || echo 0)
             echo "  Formulas processed: $FORMULAS"
         fi
     else
@@ -104,27 +104,27 @@ status-logs:
 
 # View generated report
 view:
-    cat formula-status.md
+    cat formula-status/formula-status.md
 
 # Count formulas
 count:
     #!/usr/bin/env bash
-    if [ ! -f formula-status.md ]; then
-        echo "formula-status.md not found. Run 'just status' first."
+    if [ ! -f formula-status/formula-status.md ]; then
+        echo "formula-status/formula-status.md not found. Run 'just status' first."
         exit 1
     fi
-    TOTAL=$(grep -c '^| [a-z]' formula-status.md 2>/dev/null || echo 0)
+    TOTAL=$(grep -c '^| [a-z]' formula-status/formula-status.md 2>/dev/null || echo 0)
     echo "Total formulas: $TOTAL"
 
 # Show top formulas by stars
 top N="10":
     #!/usr/bin/env bash
-    if [ ! -f formula-status.md ]; then
-        echo "formula-status.md not found. Run 'just status' first."
+    if [ ! -f formula-status/formula-status.md ]; then
+        echo "formula-status/formula-status.md not found. Run 'just status' first."
         exit 1
     fi
     echo "Top {{N}} formulas by stars:"
-    grep '^| [a-z]' formula-status.md | head -{{N}}
+    grep '^| [a-z]' formula-status/formula-status.md | head -{{N}}
 
 # Clean cache
 clean-cache:
@@ -133,7 +133,7 @@ clean-cache:
 
 # Clean reports
 clean-reports:
-    rm -f formula-status.md
+    rm -f formula-status/formula-status.md
     @echo "Reports cleaned"
 
 # Clean logs
@@ -148,25 +148,25 @@ clean: clean-cache clean-reports clean-logs
 # Validate generated report
 validate:
     #!/usr/bin/env bash
-    if [ ! -f formula-status.md ]; then
-        echo "❌ formula-status.md not found"
+    if [ ! -f formula-status/formula-status.md ]; then
+        echo "❌ formula-status/formula-status.md not found"
         exit 1
     fi
 
-    SIZE=$(wc -c < formula-status.md)
+    SIZE=$(wc -c < formula-status/formula-status.md)
     if [ "$SIZE" -lt 500 ]; then
-        echo "❌ formula-status.md seems too small ($SIZE bytes)"
+        echo "❌ formula-status/formula-status.md seems too small ($SIZE bytes)"
         exit 1
     fi
 
-    if ! grep -q "# Formula Metadata" formula-status.md; then
+    if ! grep -q "# Formula Metadata" formula-status/formula-status.md; then
         echo "❌ Missing header"
         exit 1
     fi
 
-    echo "✅ formula-status.md validation passed"
+    echo "✅ formula-status/formula-status.md validation passed"
     echo "   Size: $SIZE bytes"
-    FORMULAS=$(grep -c '^| [a-z]' formula-status.md 2>/dev/null || echo 0)
+    FORMULAS=$(grep -c '^| [a-z]' formula-status/formula-status.md 2>/dev/null || echo 0)
     echo "   Formulas: $FORMULAS"
 
 # Example output

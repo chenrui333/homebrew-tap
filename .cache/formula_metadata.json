@@ -1,0 +1,3266 @@
+{
+  "github:scarvalhojr/aoc-cli": {
+    "stars": 320,
+    "forks": 23,
+    "last_commit": "2023-12-22",
+    "last_release": "2023-01-12"
+  },
+  "github:mihaigalos/aim": {
+    "stars": 163,
+    "forks": 6,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-03-14"
+  },
+  "github:blazickjp/arxiv-mcp-server": {
+    "stars": 1950,
+    "forks": 147,
+    "last_commit": "2025-08-19",
+    "last_release": null
+  },
+  "github:bendews/apw": {
+    "stars": 150,
+    "forks": 9,
+    "last_commit": "2025-10-16",
+    "last_release": "2025-10-16"
+  },
+  "github:allinssl/allinssl": {
+    "stars": 3157,
+    "forks": 323,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-09-18"
+  },
+  "github:EFForg/apkeep": {
+    "stars": 1450,
+    "forks": 105,
+    "last_commit": "2025-11-21",
+    "last_release": "2025-10-31"
+  },
+  "github:neiltron/apple-health-mcp": {
+    "stars": 495,
+    "forks": 16,
+    "last_commit": "2025-07-22",
+    "last_release": null
+  },
+  "github:ascorbic/am-i-vibing": {
+    "stars": 331,
+    "forks": 10,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-08-07"
+  },
+  "github:kongbytes/arp-scan-rs": {
+    "stars": 147,
+    "forks": 21,
+    "last_commit": "2025-11-18",
+    "last_release": "2025-11-18"
+  },
+  "github:dhth/act3": {
+    "stars": 60,
+    "forks": 5,
+    "last_commit": "2025-12-03",
+    "last_release": "2025-06-16"
+  },
+  "github:bdcht/amoco": {
+    "stars": 490,
+    "forks": 65,
+    "last_commit": "2025-02-17",
+    "last_release": null
+  },
+  "github:Tanq16/ai-context": {
+    "stars": 143,
+    "forks": 11,
+    "last_commit": "2025-07-30",
+    "last_release": "2025-07-30"
+  },
+  "github:Tuurlijk/apisnip": {
+    "stars": 77,
+    "forks": 1,
+    "last_commit": "2025-11-29",
+    "last_release": "2025-11-29"
+  },
+  "github:google/addlicense": {
+    "stars": 852,
+    "forks": 189,
+    "last_commit": "2025-10-28",
+    "last_release": "2025-08-13"
+  },
+  "github:appbaseio/abc": {
+    "stars": 471,
+    "forks": 47,
+    "last_commit": "2025-12-05",
+    "last_release": "2022-04-04"
+  },
+  "github:darkhz/adbtuifm": {
+    "stars": 176,
+    "forks": 9,
+    "last_commit": "2022-03-16",
+    "last_release": "2022-03-16"
+  },
+  "github:arduino/arduino-language-server": {
+    "stars": 175,
+    "forks": 19,
+    "last_commit": "2025-11-21",
+    "last_release": "2025-03-19"
+  },
+  "github:klauspost/asmfmt": {
+    "stars": 300,
+    "forks": 18,
+    "last_commit": "2022-04-04",
+    "last_release": "2022-04-04"
+  },
+  "github:alaingilbert/agl": {
+    "stars": 104,
+    "forks": 7,
+    "last_commit": "2025-11-16",
+    "last_release": null
+  },
+  "github:dh1011/auto-favicon-mcp": {
+    "stars": 31,
+    "forks": 5,
+    "last_commit": "2025-07-27",
+    "last_release": null
+  },
+  "github:PyCQA/autoflake": {
+    "stars": 948,
+    "forks": 83,
+    "last_commit": "2025-12-05",
+    "last_release": "2024-03-13"
+  },
+  "github:withastro/language-tools": {
+    "stars": 332,
+    "forks": 59,
+    "last_commit": "2025-11-17",
+    "last_release": "2024-10-25"
+  },
+  "github:P403n1x87/austin-tui": {
+    "stars": 661,
+    "forks": 18,
+    "last_commit": "2025-11-09",
+    "last_release": "2025-11-09"
+  },
+  "github:alacritty/alacritty": {
+    "stars": 61411,
+    "forks": 3245,
+    "last_commit": "2025-12-05",
+    "last_release": "2025-10-20"
+  },
+  "github:slavaGanzin/await": {
+    "stars": 236,
+    "forks": 10,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-11-21"
+  },
+  "github:axiomhq/mcp-server-axiom": {
+    "stars": 58,
+    "forks": 12,
+    "last_commit": "2025-11-20",
+    "last_release": "2025-08-13"
+  },
+  "github:autotag-dev/autotag": {
+    "stars": 202,
+    "forks": 45,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-02"
+  },
+  "github:IAL32/az-tui": {
+    "stars": 14,
+    "forks": 0,
+    "last_commit": "2025-08-15",
+    "last_release": "2025-08-11"
+  },
+  "github:elva-labs/awsesh": {
+    "stars": 118,
+    "forks": 4,
+    "last_commit": "2025-11-27",
+    "last_release": "2025-10-23"
+  },
+  "github:Beaglefoot/awk-language-server": {
+    "stars": 107,
+    "forks": 6,
+    "last_commit": "2024-11-19",
+    "last_release": "2024-11-02"
+  },
+  "github:Freed-Wu/autotools-language-server": {
+    "stars": 43,
+    "forks": 4,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-11-04"
+  },
+  "github:overflowy/bash-script-tools": {
+    "stars": 5,
+    "forks": 0,
+    "last_commit": "2025-11-09",
+    "last_release": "2025-11-09"
+  },
+  "github:wallix/awless": {
+    "stars": 4975,
+    "forks": 259,
+    "last_commit": "2022-08-02",
+    "last_release": "2018-06-21"
+  },
+  "github:sorenlouv/backport": {
+    "stars": 272,
+    "forks": 67,
+    "last_commit": "2025-11-07",
+    "last_release": "2025-09-18"
+  },
+  "github:base/base-mcp": {
+    "stars": 329,
+    "forks": 116,
+    "last_commit": "2025-06-17",
+    "last_release": "2025-04-22"
+  },
+  "github:Valkyrie00/bold-brew": {
+    "stars": 227,
+    "forks": 9,
+    "last_commit": "2025-11-24",
+    "last_release": "2025-11-24"
+  },
+  "github:mariocandela/beelzebub": {
+    "stars": 1741,
+    "forks": 161,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-12-03"
+  },
+  "github:Bearer/bearer": {
+    "stars": 2501,
+    "forks": 136,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-10-14"
+  },
+  "github:microsoft/azure-pipelines-language-server": {
+    "stars": 41,
+    "forks": 28,
+    "last_commit": "2025-11-16",
+    "last_release": "2024-02-26"
+  },
+  "github:wader/fq": {
+    "stars": 10341,
+    "forks": 240,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-07"
+  },
+  "github:HarishChandran3304/better-env": {
+    "stars": 18,
+    "forks": 1,
+    "last_commit": "2025-11-23",
+    "last_release": "2025-11-18"
+  },
+  "github:Eoin-McMahon/Blindfold": {
+    "stars": 90,
+    "forks": 2,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-06-15"
+  },
+  "github:shufo/blade-formatter": {
+    "stars": 531,
+    "forks": 30,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-08-11"
+  },
+  "github:Zaloog/blueutil-tui": {
+    "stars": 31,
+    "forks": 1,
+    "last_commit": "2025-08-17",
+    "last_release": null
+  },
+  "github:vaibhav-mattoo/bitchat-tui": {
+    "stars": 283,
+    "forks": 19,
+    "last_commit": "2025-08-01",
+    "last_release": "2025-07-21"
+  },
+  "github:aviator-co/av": {
+    "stars": 436,
+    "forks": 32,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-11-11"
+  },
+  "github:arsham/blush": {
+    "stars": 555,
+    "forks": 18,
+    "last_commit": "2023-09-03",
+    "last_release": "2022-04-22"
+  },
+  "github:kubeshop/botkube": {
+    "stars": 2256,
+    "forks": 301,
+    "last_commit": "2024-12-11",
+    "last_release": "2024-11-13"
+  },
+  "codeberg:lukeflo/bibiman": {
+    "stars": 39,
+    "forks": 6,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-10-06"
+  },
+  "github:rokucommunity/brighterscript-formatter": {
+    "stars": 16,
+    "forks": 8,
+    "last_commit": "2025-10-31",
+    "last_release": "2025-10-31"
+  },
+  "github:brave/brave-search-mcp-server": {
+    "stars": 406,
+    "forks": 89,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-12-10"
+  },
+  "github:googlecloudplatform/cloud-run-mcp": {
+    "stars": 484,
+    "forks": 78,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-12-11"
+  },
+  "github:box-project/box": {
+    "stars": 1267,
+    "forks": 108,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-10-31"
+  },
+  "github:balta2ar/brotab": {
+    "stars": 470,
+    "forks": 41,
+    "last_commit": "2025-01-22",
+    "last_release": "2022-05-29"
+  },
+  "github:zig-bitcoin/btczee": {
+    "stars": 65,
+    "forks": 30,
+    "last_commit": "2024-10-07",
+    "last_release": null
+  },
+  "github:browserbase/mcp-server-browserbase": {
+    "stars": 2918,
+    "forks": 323,
+    "last_commit": "2025-12-10",
+    "last_release": null
+  },
+  "github:ODwyerSoftware/brunette": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:acossta/captan": {
+    "stars": 2,
+    "forks": 0,
+    "last_commit": "2025-08-22",
+    "last_release": "2025-08-22"
+  },
+  "github:gobanos/cargo-aoc": {
+    "stars": 477,
+    "forks": 59,
+    "last_commit": "2025-05-09",
+    "last_release": "2023-12-02"
+  },
+  "github:mixn/carbon-now-cli": {
+    "stars": 5968,
+    "forks": 127,
+    "last_commit": "2025-11-14",
+    "last_release": "2024-12-12"
+  },
+  "github:rdunnington/bytebox": {
+    "stars": 120,
+    "forks": 7,
+    "last_commit": "2025-11-23",
+    "last_release": null
+  },
+  "github:CrociDB/bulletty": {
+    "stars": 241,
+    "forks": 14,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-11-07"
+  },
+  "github:webern/cargo-readme": {
+    "stars": 380,
+    "forks": 59,
+    "last_commit": "2025-07-05",
+    "last_release": "2023-11-06"
+  },
+  "github:Konstantin8105/c4go": {
+    "stars": 376,
+    "forks": 41,
+    "last_commit": "2024-09-19",
+    "last_release": null
+  },
+  "github:BurntSushi/cargo-benchcmp": {
+    "stars": 363,
+    "forks": 20,
+    "last_commit": "2024-08-29",
+    "last_release": null
+  },
+  "github:mimoo/cargo-dephell": {
+    "stars": 48,
+    "forks": 5,
+    "last_commit": "2023-05-12",
+    "last_release": "2020-03-26"
+  },
+  "github:melonicecream/cc-enhanced": {
+    "stars": 18,
+    "forks": 4,
+    "last_commit": "2025-07-23",
+    "last_release": "2025-07-23"
+  },
+  "github:swiftwasm/carton": {
+    "stars": 500,
+    "forks": 45,
+    "last_commit": "2025-11-29",
+    "last_release": "2024-12-10"
+  },
+  "github:deadlinks/cargo-deadlinks": {
+    "stars": 155,
+    "forks": 15,
+    "last_commit": "2024-12-10",
+    "last_release": "2021-10-13"
+  },
+  "github:jolicode/castor": {
+    "stars": 520,
+    "forks": 27,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-26"
+  },
+  "github:wissem/cc-filter": {
+    "stars": 32,
+    "forks": 1,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-09-13"
+  },
+  "github:nyatinte/ccexp": {
+    "stars": 225,
+    "forks": 9,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-07-30"
+  },
+  "github:eckardt/cchistory": {
+    "stars": 82,
+    "forks": 4,
+    "last_commit": "2025-12-01",
+    "last_release": "2025-09-10"
+  },
+  "github:Brads3290/cclogviewer": {
+    "stars": 55,
+    "forks": 4,
+    "last_commit": "2025-08-08",
+    "last_release": null
+  },
+  "github:4xian/claude-auto-api": {
+    "stars": 154,
+    "forks": 13,
+    "last_commit": "2025-10-26",
+    "last_release": "2025-10-13"
+  },
+  "github:jacobbednarz/cf-vault": {
+    "stars": 78,
+    "forks": 6,
+    "last_commit": "2025-11-24",
+    "last_release": "2024-01-03"
+  },
+  "github:cello-proj/cello": {
+    "stars": 288,
+    "forks": 37,
+    "last_commit": "2025-10-31",
+    "last_release": "2025-10-30"
+  },
+  "github:sjzar/chatlog": {
+    "stars": 9108,
+    "forks": 2254,
+    "last_commit": "2025-10-20",
+    "last_release": null
+  },
+  "github:hzqtc/cashd": {
+    "stars": 46,
+    "forks": 0,
+    "last_commit": "2025-10-04",
+    "last_release": "2025-10-04"
+  },
+  "github:pulumi/pulumi-aws-native": {
+    "stars": 105,
+    "forks": 17,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-11"
+  },
+  "github:genuinetools/certok": {
+    "stars": 162,
+    "forks": 15,
+    "last_commit": "2020-09-17",
+    "last_release": "2019-11-20"
+  },
+  "github:chalet-dev/chalet": {
+    "stars": 13,
+    "forks": 1,
+    "last_commit": "2024-07-08",
+    "last_release": "2024-06-25"
+  },
+  "github:cerbos/cerbos": {
+    "stars": 4163,
+    "forks": 171,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-10"
+  },
+  "github:RohanAdwankar/cgpu": {
+    "stars": 140,
+    "forks": 23,
+    "last_commit": "2025-11-30",
+    "last_release": null
+  },
+  "github:slimm609/checksec": {
+    "stars": 2253,
+    "forks": 312,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-03-11"
+  },
+  "github:brycx/checkpwn": {
+    "stars": 131,
+    "forks": 12,
+    "last_commit": "2025-01-27",
+    "last_release": "2022-01-23"
+  },
+  "github:ContentSquare/chproxy": {
+    "stars": 1421,
+    "forks": 273,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-09-10"
+  },
+  "github:possibilities/claude-code-generic-hooks": {
+    "stars": 46,
+    "forks": 4,
+    "last_commit": "2025-08-12",
+    "last_release": null
+  },
+  "github:baalimago/clai": {
+    "stars": 128,
+    "forks": 6,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-13"
+  },
+  "github:ctoth/claudio": {
+    "stars": 35,
+    "forks": 3,
+    "last_commit": "2025-11-11",
+    "last_release": null
+  },
+  "github:anthropics/claude-code": {
+    "stars": 45756,
+    "forks": 3193,
+    "last_commit": "2025-12-13",
+    "last_release": null
+  },
+  "github:edward-jazzhands/cloctui": {
+    "stars": 55,
+    "forks": 0,
+    "last_commit": "2025-07-20",
+    "last_release": null
+  },
+  "github:mladensu/cli-mcp-server": {
+    "stars": 155,
+    "forks": 30,
+    "last_commit": "2025-07-04",
+    "last_release": null
+  },
+  "github:miklosn/cmdperf": {
+    "stars": 24,
+    "forks": 0,
+    "last_commit": "2025-08-04",
+    "last_release": "2025-08-01"
+  },
+  "github:clog-tool/clog-cli": {
+    "stars": 901,
+    "forks": 44,
+    "last_commit": "2024-08-15",
+    "last_release": "2017-03-18"
+  },
+  "github:hauptsacheNet/clickup-mcp": {
+    "stars": 29,
+    "forks": 7,
+    "last_commit": "2025-12-02",
+    "last_release": "2025-11-25"
+  },
+  "github:one2nc/cloudlens": {
+    "stars": 580,
+    "forks": 38,
+    "last_commit": "2024-04-20",
+    "last_release": "2023-11-29"
+  },
+  "github:suzuki-shunsuke/cmdx": {
+    "stars": 50,
+    "forks": 1,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-07-15"
+  },
+  "github:AppleGamer22/cocainate": {
+    "stars": 24,
+    "forks": 0,
+    "last_commit": "2025-12-10",
+    "last_release": "2024-10-21"
+  },
+  "github:johnhuang316/code-index-mcp": {
+    "stars": 602,
+    "forks": 77,
+    "last_commit": "2025-11-27",
+    "last_release": "2025-11-27"
+  },
+  "github:mondoohq/cnspec": {
+    "stars": 381,
+    "forks": 26,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-09"
+  },
+  "github:boyter/cs": {
+    "stars": 546,
+    "forks": 14,
+    "last_commit": "2025-09-28",
+    "last_release": "2023-08-15"
+  },
+  "github:favonia/cloudflare-ddns": {
+    "stars": 2147,
+    "forks": 91,
+    "last_commit": "2025-12-12",
+    "last_release": "2024-12-16"
+  },
+  "github:zheng0116/codstts": {
+    "stars": 5,
+    "forks": 1,
+    "last_commit": "2025-01-27",
+    "last_release": "2025-01-26"
+  },
+  "github:container2wasm/container2wasm": {
+    "stars": 2475,
+    "forks": 117,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-07-28"
+  },
+  "github:dagger/container-use": {
+    "stars": 3323,
+    "forks": 174,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-08-19"
+  },
+  "github:oracle/coherence-cli": {
+    "stars": 21,
+    "forks": 8,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-12"
+  },
+  "github:github/copilot-cli": {
+    "stars": 5915,
+    "forks": 669,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-11"
+  },
+  "github:zenbase-ai/context42": {
+    "stars": 48,
+    "forks": 2,
+    "last_commit": "2025-11-21",
+    "last_release": null
+  },
+  "github:1nwf/codefmt": {
+    "stars": 15,
+    "forks": 0,
+    "last_commit": "2025-09-01",
+    "last_release": "2025-09-01"
+  },
+  "github:mcp-use/mcp-use": {
+    "stars": 8560,
+    "forks": 1029,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-01"
+  },
+  "github:cozystack/cozypkg": {
+    "stars": 19,
+    "forks": 0,
+    "last_commit": "2025-11-19",
+    "last_release": "2025-11-19"
+  },
+  "github:BurntSushi/critcmp": {
+    "stars": 257,
+    "forks": 20,
+    "last_commit": "2024-09-25",
+    "last_release": null
+  },
+  "github:VincenzoManto/Datacmd": {
+    "stars": 99,
+    "forks": 3,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-09-03"
+  },
+  "github:charmbracelet/crush": {
+    "stars": 15926,
+    "forks": 943,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-12"
+  },
+  "github:winor30/mcp-server-datadog": {
+    "stars": 111,
+    "forks": 56,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-10-19"
+  },
+  "github:murat-cileli/dbee": {
+    "stars": 148,
+    "forks": 4,
+    "last_commit": "2024-06-22",
+    "last_release": "2024-06-20"
+  },
+  "github:cockroachdb/crlfmt": {
+    "stars": 20,
+    "forks": 14,
+    "last_commit": "2024-08-07",
+    "last_release": "2024-08-07"
+  },
+  "github:jbreckmckye/daylight": {
+    "stars": 346,
+    "forks": 9,
+    "last_commit": "2025-09-30",
+    "last_release": "2025-09-30"
+  },
+  "github:asdine/cueimports": {
+    "stars": 24,
+    "forks": 3,
+    "last_commit": "2025-02-10",
+    "last_release": "2022-09-20"
+  },
+  "github:xplshn/dbin": {
+    "stars": 275,
+    "forks": 8,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-07-31"
+  },
+  "github:aleyan/dela": {
+    "stars": 52,
+    "forks": 1,
+    "last_commit": "2025-12-09",
+    "last_release": null
+  },
+  "github:ddev/ddev": {
+    "stars": 3402,
+    "forks": 683,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-11-04"
+  },
+  "github:basnijholt/dotbins": {
+    "stars": 225,
+    "forks": 6,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-25"
+  },
+  "github:astefanutti/decktape": {
+    "stars": 2316,
+    "forks": 186,
+    "last_commit": "2025-11-20",
+    "last_release": "2025-04-21"
+  },
+  "github:pashkov256/deletor": {
+    "stars": 98,
+    "forks": 27,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-06-11"
+  },
+  "github:acaloiaro/di-tui": {
+    "stars": 54,
+    "forks": 5,
+    "last_commit": "2025-11-29",
+    "last_release": "2025-11-29"
+  },
+  "github:tokuhirom/dcv": {
+    "stars": 206,
+    "forks": 2,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-09-05"
+  },
+  "github:tighten/duster": {
+    "stars": 589,
+    "forks": 22,
+    "last_commit": "2025-11-07",
+    "last_release": "2025-11-07"
+  },
+  "codeberg:nightsail/drft": {
+    "stars": 9,
+    "forks": 0,
+    "last_commit": "2025-01-13",
+    "last_release": null
+  },
+  "github:yeoman/emoj": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:nlamirault/e2c": {
+    "stars": 11,
+    "forks": 2,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-09-10"
+  },
+  "github:justjavac/dvm": {
+    "stars": 693,
+    "forks": 39,
+    "last_commit": "2025-05-26",
+    "last_release": "2025-02-13"
+  },
+  "github:dandyvica/dqy": {
+    "stars": 40,
+    "forks": 4,
+    "last_commit": "2025-09-19",
+    "last_release": null
+  },
+  "github:Kk-ships/dnsforwarder": {
+    "stars": 33,
+    "forks": 0,
+    "last_commit": "2025-11-18",
+    "last_release": null
+  },
+  "github:MathiasPius/crates-lsp": {
+    "stars": 44,
+    "forks": 14,
+    "last_commit": "2025-11-14",
+    "last_release": "2025-10-15"
+  },
+  "github:dhth/ecscope": {
+    "stars": 12,
+    "forks": 0,
+    "last_commit": "2025-12-03",
+    "last_release": "2025-07-15"
+  },
+  "github:tversteeg/emplace": {
+    "stars": 284,
+    "forks": 28,
+    "last_commit": "2025-12-03",
+    "last_release": "2024-05-25"
+  },
+  "github:TheYahya/enola": {
+    "stars": 809,
+    "forks": 57,
+    "last_commit": "2025-02-16",
+    "last_release": "2025-02-16"
+  },
+  "github:anthropics/dxt": {
+    "stars": 1598,
+    "forks": 146,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-12-04"
+  },
+  "github:ilmari-h/envie": {
+    "stars": 117,
+    "forks": 2,
+    "last_commit": "2025-11-19",
+    "last_release": "2025-11-19"
+  },
+  "github:chenrui333/envtpl": {
+    "stars": 3,
+    "forks": 1,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-11-08"
+  },
+  "github:ergochat/ergo": {
+    "stars": 2987,
+    "forks": 214,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-05-18"
+  },
+  "github:acidvegas/elastop": {
+    "stars": 290,
+    "forks": 10,
+    "last_commit": "2024-12-13",
+    "last_release": "2024-12-06"
+  },
+  "github:mikeleppane/envx": {
+    "stars": 182,
+    "forks": 5,
+    "last_commit": "2025-09-19",
+    "last_release": "2025-09-19"
+  },
+  "github:go-enry/enry": {
+    "stars": 54,
+    "forks": 14,
+    "last_commit": "2023-09-22",
+    "last_release": "2023-09-22"
+  },
+  "github:jzelinskie/faq": {
+    "stars": 459,
+    "forks": 14,
+    "last_commit": "2024-10-02",
+    "last_release": null
+  },
+  "github:sindresorhus/fast-cli": {
+    "stars": 2771,
+    "forks": 119,
+    "last_commit": "2025-09-23",
+    "last_release": "2025-09-23"
+  },
+  "github:MontFerret/ferret": {
+    "stars": 5903,
+    "forks": 312,
+    "last_commit": "2025-09-11",
+    "last_release": "2025-05-07"
+  },
+  "github:Zuhaitz-dev/fat": {
+    "stars": 75,
+    "forks": 6,
+    "last_commit": "2025-08-24",
+    "last_release": "2025-08-08"
+  },
+  "github:18alantom/fex": {
+    "stars": 155,
+    "forks": 8,
+    "last_commit": "2025-05-18",
+    "last_release": "2024-09-21"
+  },
+  "github:firecracker-microvm/firectl": {
+    "stars": 573,
+    "forks": 78,
+    "last_commit": "2025-11-10",
+    "last_release": "2022-10-24"
+  },
+  "github:fission/fission": {
+    "stars": 8786,
+    "forks": 791,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-01-25"
+  },
+  "github:JayanAXHF/filessh": {
+    "stars": 176,
+    "forks": 3,
+    "last_commit": "2025-12-06",
+    "last_release": "2025-11-30"
+  },
+  "github:rhysd/fixjson": {
+    "stars": 158,
+    "forks": 6,
+    "last_commit": "2023-10-17",
+    "last_release": null
+  },
+  "github:sindresorhus/fkill-cli": {
+    "stars": 6956,
+    "forks": 161,
+    "last_commit": "2025-11-09",
+    "last_release": "2025-11-09"
+  },
+  "codeberg:fairyglade/ly": {
+    "stars": 307,
+    "forks": 34,
+    "last_commit": "2025-12-06",
+    "last_release": "2025-12-06"
+  },
+  "github:flipt-io/flipt": {
+    "stars": 4656,
+    "forks": 274,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-11-20"
+  },
+  "github:neurocyte/flow": {
+    "stars": 1429,
+    "forks": 71,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-11-05"
+  },
+  "github:ccheshirecat/flint": {
+    "stars": 1455,
+    "forks": 80,
+    "last_commit": "2025-11-06",
+    "last_release": "2025-11-07"
+  },
+  "github:awslabs/flowgger": {
+    "stars": 874,
+    "forks": 60,
+    "last_commit": "2025-06-23",
+    "last_release": "2024-05-17"
+  },
+  "github:nickolaj-jepsen/fnug": {
+    "stars": 45,
+    "forks": 0,
+    "last_commit": "2024-12-03",
+    "last_release": "2024-11-06"
+  },
+  "github:Done-0/fuck-u-code": {
+    "stars": 6438,
+    "forks": 307,
+    "last_commit": "2025-11-09",
+    "last_release": "2025-07-25"
+  },
+  "github:fractalops/fli": {
+    "stars": 17,
+    "forks": 0,
+    "last_commit": "2025-08-08",
+    "last_release": "2025-07-08"
+  },
+  "github:jvanbuel/flowrs": {
+    "stars": 68,
+    "forks": 3,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-12"
+  },
+  "github:thomasschafer/frep": {
+    "stars": 8,
+    "forks": 0,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-09-01"
+  },
+  "github:cphyc/fortran-linter": {
+    "stars": 32,
+    "forks": 11,
+    "last_commit": "2025-12-10",
+    "last_release": "2024-05-08"
+  },
+  "github:nlamirault/g1c": {
+    "stars": 28,
+    "forks": 2,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-06-09"
+  },
+  "github:sindresorhus/get-port-cli": {
+    "stars": 150,
+    "forks": 14,
+    "last_commit": "2025-08-14",
+    "last_release": "2021-10-14"
+  },
+  "github:reugn/gemini-cli": {
+    "stars": 220,
+    "forks": 18,
+    "last_commit": "2025-11-22",
+    "last_release": "2025-11-22"
+  },
+  "github:orangekame3/ghfetch": {
+    "stars": 57,
+    "forks": 1,
+    "last_commit": "2025-12-14",
+    "last_release": "2023-10-10"
+  },
+  "github:jasonuc/gignr": {
+    "stars": 10,
+    "forks": 0,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-02-16"
+  },
+  "github:nosarthur/gita": {
+    "stars": 1808,
+    "forks": 81,
+    "last_commit": "2025-11-18",
+    "last_release": null
+  },
+  "github:git-chglog/git-chglog": {
+    "stars": 2885,
+    "forks": 228,
+    "last_commit": "2025-11-20",
+    "last_release": "2023-02-15"
+  },
+  "github:simeg/git-x": {
+    "stars": 10,
+    "forks": 0,
+    "last_commit": "2025-12-05",
+    "last_release": null
+  },
+  "github:will/git-vain": {
+    "stars": 66,
+    "forks": 9,
+    "last_commit": "2024-12-12",
+    "last_release": null
+  },
+  "github:doganarif/giq": {
+    "stars": 15,
+    "forks": 0,
+    "last_commit": "2025-03-19",
+    "last_release": "2025-02-06"
+  },
+  "github:pyrod3v/gitman": {
+    "stars": 15,
+    "forks": 3,
+    "last_commit": "2025-04-06",
+    "last_release": "2025-02-18"
+  },
+  "github:nathabonfim59/gitid": {
+    "stars": 27,
+    "forks": 0,
+    "last_commit": "2025-10-11",
+    "last_release": "2025-10-11"
+  },
+  "github:nolanderc/glsl_analyzer": {
+    "stars": 320,
+    "forks": 16,
+    "last_commit": "2025-10-22",
+    "last_release": "2025-10-22"
+  },
+  "github:go-eagle/eagle": {
+    "stars": 2404,
+    "forks": 262,
+    "last_commit": "2025-11-28",
+    "last_release": "2025-10-14"
+  },
+  "github:unhappychoice/gittype": {
+    "stars": 784,
+    "forks": 20,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-09-24"
+  },
+  "github:ademajagon/gix": {
+    "stars": 32,
+    "forks": 2,
+    "last_commit": "2025-07-20",
+    "last_release": "2025-07-19"
+  },
+  "github:a8m/envsubst": {
+    "stars": 852,
+    "forks": 92,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-02-26"
+  },
+  "github:jstemmer/go-junit-report": {
+    "stars": 820,
+    "forks": 234,
+    "last_commit": "2024-08-20",
+    "last_release": "2023-10-18"
+  },
+  "github:hashicorp/go-getter": {
+    "stars": 1783,
+    "forks": 259,
+    "last_commit": "2025-11-30",
+    "last_release": "2025-10-31"
+  },
+  "github:aspizu/goboscript": {
+    "stars": 420,
+    "forks": 40,
+    "last_commit": "2025-11-02",
+    "last_release": "2025-05-22"
+  },
+  "github:seeyebe/gmap": {
+    "stars": 211,
+    "forks": 5,
+    "last_commit": "2025-11-23",
+    "last_release": "2025-11-02"
+  },
+  "github:osrg/gobgp": {
+    "stars": 3937,
+    "forks": 765,
+    "last_commit": "2025-12-03",
+    "last_release": "2025-11-30"
+  },
+  "github:brianvoe/gofakeit": {
+    "stars": 5264,
+    "forks": 294,
+    "last_commit": "2025-12-03",
+    "last_release": "2025-11-08"
+  },
+  "github:dosco/graphjin": {
+    "stars": 3015,
+    "forks": 184,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-11-05"
+  },
+  "github:gowebly/gowebly": {
+    "stars": 1180,
+    "forks": 46,
+    "last_commit": "2025-07-09",
+    "last_release": "2025-07-09"
+  },
+  "github:antham/gommit": {
+    "stars": 115,
+    "forks": 5,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-02-09"
+  },
+  "github:trailofbits/graphtage": {
+    "stars": 2442,
+    "forks": 52,
+    "last_commit": "2025-12-02",
+    "last_release": "2024-01-08"
+  },
+  "github:mozilla/grcov": {
+    "stars": 1320,
+    "forks": 166,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-08-06"
+  },
+  "github:aome510/hackernews-TUI": {
+    "stars": 667,
+    "forks": 30,
+    "last_commit": "2024-10-22",
+    "last_release": "2024-10-22"
+  },
+  "github:hauler-dev/hauler": {
+    "stars": 182,
+    "forks": 39,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-07"
+  },
+  "github:sindresorhus/hasha-cli": {
+    "stars": 75,
+    "forks": 3,
+    "last_commit": "2025-09-12",
+    "last_release": "2025-09-12"
+  },
+  "github:getgrit/gritql": {
+    "stars": 4255,
+    "forks": 112,
+    "last_commit": "2025-12-01",
+    "last_release": "2025-03-26"
+  },
+  "github:bcicen/grmon": {
+    "stars": 1910,
+    "forks": 56,
+    "last_commit": "2023-07-18",
+    "last_release": "2021-10-13"
+  },
+  "github:magodo/hclgrep": {
+    "stars": 97,
+    "forks": 7,
+    "last_commit": "2024-03-07",
+    "last_release": null
+  },
+  "github:magodo/hcldump": {
+    "stars": 8,
+    "forks": 1,
+    "last_commit": "2021-12-27",
+    "last_release": null
+  },
+  "github:haloydev/haloy": {
+    "stars": 81,
+    "forks": 4,
+    "last_commit": "2025-12-13",
+    "last_release": null
+  },
+  "github:juanfont/headscale": {
+    "stars": 33494,
+    "forks": 1800,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-11"
+  },
+  "github:mattolenik/hclq": {
+    "stars": 259,
+    "forks": 23,
+    "last_commit": "2023-09-19",
+    "last_release": "2019-04-16"
+  },
+  "github:danihek/hellwal": {
+    "stars": 794,
+    "forks": 22,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-09-04"
+  },
+  "github:sorairolake/hf": {
+    "stars": 31,
+    "forks": 2,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-07-28"
+  },
+  "github:nalgeon/howto": {
+    "stars": 121,
+    "forks": 6,
+    "last_commit": "2025-07-08",
+    "last_release": "2025-02-10"
+  },
+  "github:holo-routing/holo-cli": {
+    "stars": 4,
+    "forks": 8,
+    "last_commit": "2025-09-22",
+    "last_release": null
+  },
+  "github:monasticacademy/httptap": {
+    "stars": 4126,
+    "forks": 64,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-02-26"
+  },
+  "github:guumaster/hostctl": {
+    "stars": 1193,
+    "forks": 53,
+    "last_commit": "2024-01-26",
+    "last_release": "2023-05-02"
+  },
+  "github:incu6us/goimports-reviser": {
+    "stars": 705,
+    "forks": 76,
+    "last_commit": "2025-12-02",
+    "last_release": "2025-11-24"
+  },
+  "github:rushter/hexora": {
+    "stars": 86,
+    "forks": 5,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-09-10"
+  },
+  "github:memextech/ht-mcp": {
+    "stars": 193,
+    "forks": 8,
+    "last_commit": "2025-12-01",
+    "last_release": "2025-06-19"
+  },
+  "github:continusec/htvend": {
+    "stars": 8,
+    "forks": 0,
+    "last_commit": "2025-12-10",
+    "last_release": null
+  },
+  "github:ZupIT/horusec": {
+    "stars": 1284,
+    "forks": 208,
+    "last_commit": "2025-12-08",
+    "last_release": "2022-06-08"
+  },
+  "github:innobead/huber": {
+    "stars": 216,
+    "forks": 14,
+    "last_commit": "2025-02-18",
+    "last_release": "2025-02-15"
+  },
+  "github:humio/cli": {
+    "stars": 49,
+    "forks": 25,
+    "last_commit": "2025-06-02",
+    "last_release": "2025-06-02"
+  },
+  "github:HyperbolicLabs/hyperbolic-cli": {
+    "stars": 1,
+    "forks": 0,
+    "last_commit": "2025-08-07",
+    "last_release": "2025-08-07"
+  },
+  "github:cloud-copilot/iam-collect": {
+    "stars": 81,
+    "forks": 2,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-13"
+  },
+  "github:kruserr/hygg": {
+    "stars": 222,
+    "forks": 8,
+    "last_commit": "2025-12-02",
+    "last_release": "2025-09-26"
+  },
+  "github:eddieantonio/imgcat": {
+    "stars": 912,
+    "forks": 34,
+    "last_commit": "2025-10-21",
+    "last_release": "2023-12-18"
+  },
+  "github:inbucket/inbucket": {
+    "stars": 1957,
+    "forks": 179,
+    "last_commit": "2025-12-06",
+    "last_release": "2025-12-06"
+  },
+  "github:illacloud/illa": {
+    "stars": 260,
+    "forks": 45,
+    "last_commit": "2024-04-14",
+    "last_release": "2023-10-25"
+  },
+  "github:cloud-copilot/iam-lens": {
+    "stars": 256,
+    "forks": 13,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-13"
+  },
+  "github:t1anz0ng/iftree": {
+    "stars": 120,
+    "forks": 6,
+    "last_commit": "2023-03-06",
+    "last_release": "2022-09-14"
+  },
+  "github:bketelsen/incus-compose": {
+    "stars": 118,
+    "forks": 11,
+    "last_commit": "2025-07-07",
+    "last_release": "2025-03-31"
+  },
+  "github:robmorgan/infraspec": {
+    "stars": 35,
+    "forks": 1,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-11-29"
+  },
+  "github:robjtede/inspect-cert-chain": {
+    "stars": 53,
+    "forks": 1,
+    "last_commit": "2025-12-01",
+    "last_release": "2025-07-13"
+  },
+  "github:sectordistrict/intentrace": {
+    "stars": 646,
+    "forks": 9,
+    "last_commit": "2025-06-21",
+    "last_release": "2025-06-21"
+  },
+  "github:sjzar/ips": {
+    "stars": 413,
+    "forks": 37,
+    "last_commit": "2025-02-21",
+    "last_release": "2025-02-21"
+  },
+  "github:0xflotus/ip2d-rust": {
+    "stars": 6,
+    "forks": 4,
+    "last_commit": "2025-11-24",
+    "last_release": "2024-10-11"
+  },
+  "github:rs/jaggr": {
+    "stars": 482,
+    "forks": 16,
+    "last_commit": "2024-08-29",
+    "last_release": "2022-12-28"
+  },
+  "github:icorbrey/jjj": {
+    "stars": 74,
+    "forks": 2,
+    "last_commit": "2025-11-19",
+    "last_release": "2025-04-21"
+  },
+  "github:jetzig-framework/jetzig": {
+    "stars": 1355,
+    "forks": 49,
+    "last_commit": "2025-11-02",
+    "last_release": null
+  },
+  "codeberg:liske/ifstate": {
+    "stars": 16,
+    "forks": 5,
+    "last_commit": "2025-12-03",
+    "last_release": "2025-12-03"
+  },
+  "github:koenbollen/jl": {
+    "stars": 245,
+    "forks": 12,
+    "last_commit": "2024-04-05",
+    "last_release": "2023-07-08"
+  },
+  "github:0xdea/jiggy": {
+    "stars": 19,
+    "forks": 1,
+    "last_commit": "2025-12-06",
+    "last_release": "2025-12-06"
+  },
+  "github:toml-f/jonquil": {
+    "stars": 8,
+    "forks": 6,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-05-18"
+  },
+  "github:etiennebacher/jarl": {
+    "stars": 81,
+    "forks": 5,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-11-29"
+  },
+  "github:rs/jplot": {
+    "stars": 1172,
+    "forks": 42,
+    "last_commit": "2025-10-20",
+    "last_release": "2025-09-13"
+  },
+  "github:jxhczhl/JsRpc": {
+    "stars": 2055,
+    "forks": 428,
+    "last_commit": "2025-11-22",
+    "last_release": "2025-04-30"
+  },
+  "github:Herdora/chisel": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:kitproj/junit2html": {
+    "stars": 12,
+    "forks": 10,
+    "last_commit": "2025-11-18",
+    "last_release": "2025-11-18"
+  },
+  "github:jwt-rs/jwt-ui": {
+    "stars": 268,
+    "forks": 17,
+    "last_commit": "2025-10-30",
+    "last_release": "2024-12-06"
+  },
+  "github:giacomopiccinini/judo": {
+    "stars": 89,
+    "forks": 4,
+    "last_commit": "2025-11-17",
+    "last_release": null
+  },
+  "github:pwnwriter/kanha": {
+    "stars": 317,
+    "forks": 19,
+    "last_commit": "2025-01-08",
+    "last_release": "2023-10-17"
+  },
+  "github:MacroPower/kat": {
+    "stars": 153,
+    "forks": 1,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-30"
+  },
+  "github:kubearmor/kubearmor-client": {
+    "stars": 42,
+    "forks": 89,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-20"
+  },
+  "github:nikolaydubina/jsonl-graph": {
+    "stars": 77,
+    "forks": 5,
+    "last_commit": "2024-08-22",
+    "last_release": "2024-03-21"
+  },
+  "github:kdash-rs/kdash": {
+    "stars": 2393,
+    "forks": 90,
+    "last_commit": "2025-10-17",
+    "last_release": "2025-03-12"
+  },
+  "github:kcl-lang/cli": {
+    "stars": 31,
+    "forks": 20,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-12"
+  },
+  "github:kbst/kbst": {
+    "stars": 41,
+    "forks": 7,
+    "last_commit": "2023-04-14",
+    "last_release": null
+  },
+  "github:DonIsaac/keyhunter": {
+    "stars": 36,
+    "forks": 1,
+    "last_commit": "2025-05-05",
+    "last_release": "2024-08-27"
+  },
+  "github:mhausenblas/krs": {
+    "stars": 95,
+    "forks": 8,
+    "last_commit": "2018-10-24",
+    "last_release": "2018-10-18"
+  },
+  "github:kptdev/kpt": {
+    "stars": 1836,
+    "forks": 239,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-09-10"
+  },
+  "github:pulumi/kube2pulumi": {
+    "stars": 108,
+    "forks": 5,
+    "last_commit": "2025-11-21",
+    "last_release": "2024-02-02"
+  },
+  "github:coopernetes/kube-role-gen": {
+    "stars": 20,
+    "forks": 7,
+    "last_commit": "2025-08-17",
+    "last_release": "2023-10-11"
+  },
+  "github:hellofresh/klepto": {
+    "stars": 301,
+    "forks": 41,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-02-27"
+  },
+  "github:fgeller/kt": {
+    "stars": 954,
+    "forks": 103,
+    "last_commit": "2024-04-08",
+    "last_release": "2022-01-22"
+  },
+  "github:ahmetb/kubectl-tree": {
+    "stars": 3267,
+    "forks": 138,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-11-15"
+  },
+  "github:GGP1/kure": {
+    "stars": 164,
+    "forks": 14,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-11-02"
+  },
+  "github:museslabs/kyma": {
+    "stars": 74,
+    "forks": 1,
+    "last_commit": "2025-11-28",
+    "last_release": "2025-06-21"
+  },
+  "github:jhillyerd/labcoat": {
+    "stars": 40,
+    "forks": 0,
+    "last_commit": "2025-12-09",
+    "last_release": null
+  },
+  "github:carvel-dev/kwt": {
+    "stars": 165,
+    "forks": 12,
+    "last_commit": "2023-12-18",
+    "last_release": "2023-09-25"
+  },
+  "github:fguedes90/lazycelery": {
+    "stars": 51,
+    "forks": 2,
+    "last_commit": "2025-11-24",
+    "last_release": "2025-08-28"
+  },
+  "github:liderman/leveldb-cli": {
+    "stars": 117,
+    "forks": 26,
+    "last_commit": "2025-05-01",
+    "last_release": "2025-05-01"
+  },
+  "github:j178/leetgo": {
+    "stars": 631,
+    "forks": 38,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-07-14"
+  },
+  "github:EladLeev/kubeseal-convert": {
+    "stars": 73,
+    "forks": 7,
+    "last_commit": "2025-12-11",
+    "last_release": "2024-08-26"
+  },
+  "github:jesseduffield/lazynpm": {
+    "stars": 809,
+    "forks": 37,
+    "last_commit": "2023-03-02",
+    "last_release": "2020-04-18"
+  },
+  "github:jesseduffield/lazycli": {
+    "stars": 414,
+    "forks": 16,
+    "last_commit": "2023-07-15",
+    "last_release": "2021-06-02"
+  },
+  "github:lintnet/lintnet": {
+    "stars": 62,
+    "forks": 0,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-06"
+  },
+  "github:doganarif/llmdog": {
+    "stars": 78,
+    "forks": 4,
+    "last_commit": "2025-03-19",
+    "last_release": "2025-03-02"
+  },
+  "github:klevo/locport": {
+    "stars": 18,
+    "forks": 0,
+    "last_commit": "2025-11-16",
+    "last_release": null
+  },
+  "github:pythops/lobtui": {
+    "stars": 112,
+    "forks": 4,
+    "last_commit": "2025-05-16",
+    "last_release": "2025-05-16"
+  },
+  "github:sreenathmmenon/llmswap": {
+    "stars": 24,
+    "forks": 5,
+    "last_commit": "2025-12-07",
+    "last_release": "2025-12-07"
+  },
+  "github:jjcm/llmpeg": {
+    "stars": 485,
+    "forks": 15,
+    "last_commit": "2025-01-19",
+    "last_release": null
+  },
+  "github:pydantic/logfire-mcp": {
+    "stars": 128,
+    "forks": 23,
+    "last_commit": "2025-11-26",
+    "last_release": "2025-11-26"
+  },
+  "github:diegoholiveira/localports": {
+    "stars": 95,
+    "forks": 3,
+    "last_commit": "2025-08-30",
+    "last_release": "2025-08-30"
+  },
+  "github:ikskuh/LoLa": {
+    "stars": 227,
+    "forks": 12,
+    "last_commit": "2025-05-24",
+    "last_release": null
+  },
+  "github:lacquerai/lacquer": {
+    "stars": 29,
+    "forks": 1,
+    "last_commit": "2025-08-22",
+    "last_release": "2025-08-21"
+  },
+  "github:lix-pm/lix": {
+    "stars": 125,
+    "forks": 25,
+    "last_commit": "2025-12-12",
+    "last_release": null
+  },
+  "github:ivanilves/lstags": {
+    "stars": 341,
+    "forks": 26,
+    "last_commit": "2023-05-11",
+    "last_release": "2022-04-09"
+  },
+  "github:ascorbic/mapscii": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:Koihik/LuaFormatter": {
+    "stars": 799,
+    "forks": 86,
+    "last_commit": "2023-08-25",
+    "last_release": "2021-05-18"
+  },
+  "github:Benexl/lib-x": {
+    "stars": 72,
+    "forks": 3,
+    "last_commit": "2025-07-07",
+    "last_release": "2025-01-27"
+  },
+  "github:sile/mamediff": {
+    "stars": 34,
+    "forks": 1,
+    "last_commit": "2025-10-09",
+    "last_release": "2025-10-09"
+  },
+  "github:ajaxray/markpdf": {
+    "stars": 205,
+    "forks": 40,
+    "last_commit": "2024-07-17",
+    "last_release": "2022-12-27"
+  },
+  "github:MarkusPfundstein/mcp-obsidian": {
+    "stars": 2528,
+    "forks": 321,
+    "last_commit": "2025-06-28",
+    "last_release": null
+  },
+  "github:Cod-e-Codes/marchat": {
+    "stars": 114,
+    "forks": 6,
+    "last_commit": "2025-11-24",
+    "last_release": "2025-11-08"
+  },
+  "github:ridiculousfish/libdivide": {
+    "stars": 1259,
+    "forks": 89,
+    "last_commit": "2025-06-15",
+    "last_release": "2025-01-25"
+  },
+  "github:ParadigmMC/mcman": {
+    "stars": 278,
+    "forks": 21,
+    "last_commit": "2025-12-07",
+    "last_release": "2024-07-16"
+  },
+  "github:geelen/mcp-remote": {
+    "stars": 1171,
+    "forks": 190,
+    "last_commit": "2025-12-03",
+    "last_release": null
+  },
+  "github:steviec/mcp-server-tester": {
+    "stars": 31,
+    "forks": 2,
+    "last_commit": "2025-09-16",
+    "last_release": "2025-09-16"
+  },
+  "github:runekaagaard/mcp-alchemy": {
+    "stars": 378,
+    "forks": 56,
+    "last_commit": "2025-08-15",
+    "last_release": null
+  },
+  "github:mozilla-ai/mcpd": {
+    "stars": 111,
+    "forks": 12,
+    "last_commit": "2025-11-26",
+    "last_release": "2025-10-21"
+  },
+  "github:hougesen/mdsf": {
+    "stars": 87,
+    "forks": 3,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-11-11"
+  },
+  "github:CramBL/mdns-scanner": {
+    "stars": 45,
+    "forks": 2,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-12-07"
+  },
+  "github:cloudflare/mcp-server-cloudflare": {
+    "stars": 3202,
+    "forks": 304,
+    "last_commit": "2025-12-02",
+    "last_release": "2025-12-02"
+  },
+  "github:stefanlogue/meteor": {
+    "stars": 391,
+    "forks": 21,
+    "last_commit": "2025-09-24",
+    "last_release": "2025-09-24"
+  },
+  "github:Michael-F-Bryan/mdbook-linkcheck": {
+    "stars": 164,
+    "forks": 32,
+    "last_commit": "2024-08-15",
+    "last_release": "2022-10-03"
+  },
+  "github:razziel89/mdslw": {
+    "stars": 24,
+    "forks": 1,
+    "last_commit": "2025-12-02",
+    "last_release": "2025-12-02"
+  },
+  "github:k-saiki/mfa": {
+    "stars": 22,
+    "forks": 0,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-02-18"
+  },
+  "github:jedisct1/minisign": {
+    "stars": 2540,
+    "forks": 138,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-01-15"
+  },
+  "github:mitex-rs/mitex": {
+    "stars": 489,
+    "forks": 19,
+    "last_commit": "2025-11-11",
+    "last_release": null
+  },
+  "github:maxbrunet/mmemoji": {
+    "stars": 26,
+    "forks": 4,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-11-29"
+  },
+  "github:jkwill87/mnamer": {
+    "stars": 970,
+    "forks": 91,
+    "last_commit": "2025-11-27",
+    "last_release": "2025-11-27"
+  },
+  "github:tkmru/mln": {
+    "stars": 16,
+    "forks": 0,
+    "last_commit": "2020-03-02",
+    "last_release": "2020-02-20"
+  },
+  "github:wendlers/mpfshell": {
+    "stars": 415,
+    "forks": 87,
+    "last_commit": "2025-01-09",
+    "last_release": null
+  },
+  "github:GianlucaP106/mynav": {
+    "stars": 211,
+    "forks": 10,
+    "last_commit": "2025-09-28",
+    "last_release": "2025-08-01"
+  },
+  "github:mongodb-js/mongodb-mcp-server": {
+    "stars": 852,
+    "forks": 171,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-12"
+  },
+  "github:hivemq/mqtt-cli": {
+    "stars": 351,
+    "forks": 52,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-04"
+  },
+  "github:NQMVD/needs": {
+    "stars": 17,
+    "forks": 0,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-12-04"
+  },
+  "github:ourongxing/newsnow-mcp-server": {
+    "stars": 15,
+    "forks": 7,
+    "last_commit": "2025-08-20",
+    "last_release": "2025-08-20"
+  },
+  "github:IljaN/narr": {
+    "stars": 76,
+    "forks": 8,
+    "last_commit": "2025-03-16",
+    "last_release": "2024-09-29"
+  },
+  "github:namespacelabs/foundation": {
+    "stars": 144,
+    "forks": 14,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-12-10"
+  },
+  "github:evanlin96069/nino": {
+    "stars": 59,
+    "forks": 1,
+    "last_commit": "2025-12-11",
+    "last_release": null
+  },
+  "github:sindresorhus/ni": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:facundoolano/ngtop": {
+    "stars": 583,
+    "forks": 8,
+    "last_commit": "2024-09-14",
+    "last_release": "2024-09-14"
+  },
+  "github:rodrigo-brito/ninjabot": {
+    "stars": 1590,
+    "forks": 198,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-10-12"
+  },
+  "github:oceanbase/mcp-oceanbase": {
+    "stars": 86,
+    "forks": 35,
+    "last_commit": "2025-12-04",
+    "last_release": "2025-11-15"
+  },
+  "github:nanodbc/nanodbc": {
+    "stars": 366,
+    "forks": 94,
+    "last_commit": "2025-09-22",
+    "last_release": "2022-03-23"
+  },
+  "github:nkval/nkv": {
+    "stars": 4,
+    "forks": 1,
+    "last_commit": "2025-11-14",
+    "last_release": "2025-10-14"
+  },
+  "github:nhost/cli": {
+    "stars": 82,
+    "forks": 31,
+    "last_commit": "2025-09-26",
+    "last_release": "2025-09-26"
+  },
+  "github:VKCOM/nocc": {
+    "stars": 290,
+    "forks": 17,
+    "last_commit": "2025-08-05",
+    "last_release": "2023-05-03"
+  },
+  "github:sindresorhus/np": {
+    "stars": 7657,
+    "forks": 307,
+    "last_commit": "2025-11-15",
+    "last_release": "2025-01-26"
+  },
+  "github:dustinblackman/oatmeal": {
+    "stars": 726,
+    "forks": 42,
+    "last_commit": "2024-06-01",
+    "last_release": "2024-03-16"
+  },
+  "github:adamperkowski/nvrs": {
+    "stars": 61,
+    "forks": 4,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-10-14"
+  },
+  "github:octelium/octelium": {
+    "stars": 2888,
+    "forks": 96,
+    "last_commit": "2025-12-14",
+    "last_release": "2025-11-21"
+  },
+  "github:mahlquistj/octotype": {
+    "stars": 82,
+    "forks": 0,
+    "last_commit": "2025-12-07",
+    "last_release": "2025-11-03"
+  },
+  "github:ohyfun/ohy": {
+    "stars": 79,
+    "forks": 5,
+    "last_commit": "2025-08-17",
+    "last_release": null
+  },
+  "github:thushan/olla": {
+    "stars": 121,
+    "forks": 12,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-11-06"
+  },
+  "github:ikanago/omekasy": {
+    "stars": 153,
+    "forks": 5,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-06-06"
+  },
+  "github:amalbansode/opensnitch-tui": {
+    "stars": 17,
+    "forks": 1,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-12-09"
+  },
+  "github:krzko/otelgen": {
+    "stars": 154,
+    "forks": 23,
+    "last_commit": "2025-03-31",
+    "last_release": "2024-10-23"
+  },
+  "github:robertkrimen/otto": {
+    "stars": 8418,
+    "forks": 599,
+    "last_commit": "2025-06-13",
+    "last_release": "2024-11-05"
+  },
+  "github:codesoap/osmar": {
+    "stars": 131,
+    "forks": 5,
+    "last_commit": "2025-07-21",
+    "last_release": "2024-10-04"
+  },
+  "github:thatmattlove/oui": {
+    "stars": 54,
+    "forks": 5,
+    "last_commit": "2024-08-01",
+    "last_release": "2024-08-01"
+  },
+  "github:DonIsaac/oxbuild": {
+    "stars": 99,
+    "forks": 4,
+    "last_commit": "2025-07-11",
+    "last_release": "2024-10-08"
+  },
+  "github:oxylabs/oxylabs-mcp": {
+    "stars": 76,
+    "forks": 20,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-12-08"
+  },
+  "github:sanspareilsmyn/parqv": {
+    "stars": 59,
+    "forks": 1,
+    "last_commit": "2025-07-19",
+    "last_release": "2025-07-19"
+  },
+  "github:kardwen/passepartui": {
+    "stars": 118,
+    "forks": 3,
+    "last_commit": "2025-05-07",
+    "last_release": "2025-01-16"
+  },
+  "github:gregl83/paq": {
+    "stars": 22,
+    "forks": 3,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-11-26"
+  },
+  "github:danburzo/percollate": {
+    "stars": 4539,
+    "forks": 173,
+    "last_commit": "2025-08-29",
+    "last_release": "2025-08-29"
+  },
+  "github:ProspectOne/perfops-cli": {
+    "stars": 293,
+    "forks": 48,
+    "last_commit": "2025-03-06",
+    "last_release": "2023-03-31"
+  },
+  "github:OptiVorbis/OptiVorbis": {
+    "stars": 117,
+    "forks": 6,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-01-13"
+  },
+  "github:knqyf263/pet": {
+    "stars": 5015,
+    "forks": 244,
+    "last_commit": "2025-11-24",
+    "last_release": "2024-12-08"
+  },
+  "github:ffuf/pencode": {
+    "stars": 238,
+    "forks": 26,
+    "last_commit": "2024-01-20",
+    "last_release": "2024-01-20"
+  },
+  "github:nunomaduro/phpinsights": {
+    "stars": 5549,
+    "forks": 292,
+    "last_commit": "2025-11-12",
+    "last_release": "2025-10-16"
+  },
+  "github:sheepla/pingu": {
+    "stars": 2086,
+    "forks": 62,
+    "last_commit": "2024-01-22",
+    "last_release": "2023-02-09"
+  },
+  "github:jamesWoolfenden/pike": {
+    "stars": 791,
+    "forks": 37,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-07"
+  },
+  "github:plandex-ai/plandex": {
+    "stars": 14749,
+    "forks": 1054,
+    "last_commit": "2025-10-03",
+    "last_release": "2025-07-16"
+  },
+  "github:magodo/pipeform": {
+    "stars": 337,
+    "forks": 13,
+    "last_commit": "2025-01-31",
+    "last_release": "2025-01-29"
+  },
+  "github:tact-lang/pitaya": {
+    "stars": 14,
+    "forks": 1,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-09-26"
+  },
+  "github:levkk/pgdog": {
+    "stars": 2882,
+    "forks": 108,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-12"
+  },
+  "github:pls-rs/pls": {
+    "stars": 912,
+    "forks": 30,
+    "last_commit": "2025-11-19",
+    "last_release": null
+  },
+  "github:altdesktop/playerctl": {
+    "stars": 2794,
+    "forks": 94,
+    "last_commit": "2024-06-13",
+    "last_release": "2021-09-21"
+  },
+  "github:pluqqy/pluqqy-terminal": {
+    "stars": 21,
+    "forks": 2,
+    "last_commit": "2025-10-03",
+    "last_release": "2025-10-03"
+  },
+  "github:Pluralith/pluralith-cli": {
+    "stars": 839,
+    "forks": 57,
+    "last_commit": "2023-07-14",
+    "last_release": "2023-03-23"
+  },
+  "github:NishantJoshi00/pmx": {
+    "stars": 5,
+    "forks": 0,
+    "last_commit": "2025-10-10",
+    "last_release": null
+  },
+  "github:stefanprodan/podinfo": {
+    "stars": 5790,
+    "forks": 1840,
+    "last_commit": "2025-12-07",
+    "last_release": "2025-12-07"
+  },
+  "github:silverwind/precompress": {
+    "stars": 29,
+    "forks": 0,
+    "last_commit": "2025-11-19",
+    "last_release": "2025-09-14"
+  },
+  "github:andrewrk/poop": {
+    "stars": 1785,
+    "forks": 82,
+    "last_commit": "2025-10-29",
+    "last_release": "2024-09-06"
+  },
+  "github:napisani/procmux": {
+    "stars": 100,
+    "forks": 5,
+    "last_commit": "2025-11-23",
+    "last_release": null
+  },
+  "github:krzko/proto2yaml": {
+    "stars": 19,
+    "forks": 2,
+    "last_commit": "2024-04-25",
+    "last_release": "2024-01-16"
+  },
+  "github:edoardottt/pphack": {
+    "stars": 243,
+    "forks": 23,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-10-21"
+  },
+  "github:dzfrias/projectable": {
+    "stars": 447,
+    "forks": 15,
+    "last_commit": "2025-05-28",
+    "last_release": "2025-01-13"
+  },
+  "github:ckaznocha/protoc-gen-lint": {
+    "stars": 288,
+    "forks": 16,
+    "last_commit": "2024-12-23",
+    "last_release": "2022-11-08"
+  },
+  "github:stormcat24/protodep": {
+    "stars": 321,
+    "forks": 58,
+    "last_commit": "2024-01-26",
+    "last_release": "2023-06-19"
+  },
+  "github:benjaminsanborn/psq": {
+    "stars": 10,
+    "forks": 1,
+    "last_commit": "2025-09-29",
+    "last_release": "2025-09-29"
+  },
+  "github:zonay/public-ollama-finder": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:nilslice/protolock": {
+    "stars": 629,
+    "forks": 37,
+    "last_commit": "2024-02-12",
+    "last_release": "2023-12-19"
+  },
+  "github:seamia/protodot": {
+    "stars": 464,
+    "forks": 41,
+    "last_commit": "2023-12-21",
+    "last_release": null
+  },
+  "github:maaslalani/pom": {
+    "stars": 127,
+    "forks": 2,
+    "last_commit": "2024-05-16",
+    "last_release": "2024-05-12"
+  },
+  "github:andybrandt/mcp-simple-pubmed": {
+    "stars": 144,
+    "forks": 34,
+    "last_commit": "2025-09-24",
+    "last_release": null
+  },
+  "github:devnullvoid/pvetui": {
+    "stars": 357,
+    "forks": 10,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-07"
+  },
+  "github:edoardottt/pwdsafety": {
+    "stars": 94,
+    "forks": 15,
+    "last_commit": "2025-11-21",
+    "last_release": "2025-09-15"
+  },
+  "github:google/pyink": {
+    "stars": 281,
+    "forks": 18,
+    "last_commit": "2025-05-27",
+    "last_release": "2025-01-10"
+  },
+  "github:siderolabs/omni": {
+    "stars": 943,
+    "forks": 76,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-20"
+  },
+  "github:hauntsaninja/pyp": {
+    "stars": 1504,
+    "forks": 43,
+    "last_commit": "2025-11-27",
+    "last_release": "2024-12-27"
+  },
+  "github:oowl/quicssh-rs": {
+    "stars": 247,
+    "forks": 13,
+    "last_commit": "2025-10-27",
+    "last_release": "2024-04-19"
+  },
+  "github:ludo-technologies/pyscn": {
+    "stars": 947,
+    "forks": 45,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-12"
+  },
+  "github:mimseyedi/pysentation": {
+    "stars": 261,
+    "forks": 6,
+    "last_commit": "2025-03-18",
+    "last_release": "2023-08-28"
+  },
+  "github:ulissesf/qmassa": {
+    "stars": 88,
+    "forks": 5,
+    "last_commit": "2025-12-08",
+    "last_release": null
+  },
+  "github:dadadel/pyment": {
+    "stars": 941,
+    "forks": 64,
+    "last_commit": "2024-06-18",
+    "last_release": "2021-03-08"
+  },
+  "github:njenia/que": {
+    "stars": 6,
+    "forks": 1,
+    "last_commit": "2025-11-21",
+    "last_release": "2025-11-20"
+  },
+  "github:iagooar/qqqa": {
+    "stars": 545,
+    "forks": 16,
+    "last_commit": "2025-11-30",
+    "last_release": "2025-11-25"
+  },
+  "github:skirdey-inflection/r2md": {
+    "stars": 12,
+    "forks": 2,
+    "last_commit": "2025-03-02",
+    "last_release": "2025-02-24"
+  },
+  "github:happening-oss/rabbitmq-message-ops": {
+    "stars": 15,
+    "forks": 0,
+    "last_commit": "2025-01-25",
+    "last_release": "2025-01-21"
+  },
+  "github:daleonpz/raiz": {
+    "stars": 6,
+    "forks": 0,
+    "last_commit": "2025-08-09",
+    "last_release": null
+  },
+  "github:railwayapp/railway-mcp-server": {
+    "stars": 95,
+    "forks": 18,
+    "last_commit": "2025-09-26",
+    "last_release": null
+  },
+  "github:raine/ramda-cli": {
+    "stars": 579,
+    "forks": 12,
+    "last_commit": "2022-12-30",
+    "last_release": null
+  },
+  "github:rails/rails-new": {
+    "stars": 309,
+    "forks": 32,
+    "last_commit": "2025-01-16",
+    "last_release": null
+  },
+  "github:raforg/rawhide": {
+    "stars": 53,
+    "forks": 6,
+    "last_commit": "2025-11-28",
+    "last_release": "2023-10-13"
+  },
+  "github:agauniyal/rang": {
+    "stars": 1567,
+    "forks": 153,
+    "last_commit": "2024-07-23",
+    "last_release": "2021-07-30"
+  },
+  "github:ck-zhang/reddix": {
+    "stars": 860,
+    "forks": 19,
+    "last_commit": "2025-12-06",
+    "last_release": "2025-11-05"
+  },
+  "github:dosisod/refurb": {
+    "stars": 2521,
+    "forks": 54,
+    "last_commit": "2025-09-17",
+    "last_release": "2025-09-17"
+  },
+  "github:ducminh-phan/reformat-gherkin": {
+    "stars": 31,
+    "forks": 14,
+    "last_commit": "2025-10-06",
+    "last_release": "2022-10-04"
+  },
+  "github:talyuk/relay": {
+    "stars": 6,
+    "forks": 0,
+    "last_commit": "2025-11-08",
+    "last_release": null
+  },
+  "github:dhylands/rshell": {
+    "stars": 1033,
+    "forks": 139,
+    "last_commit": "2024-12-04",
+    "last_release": "2024-02-13"
+  },
+  "github:squeek502/resinator": {
+    "stars": 132,
+    "forks": 5,
+    "last_commit": "2025-10-01",
+    "last_release": "2024-10-11"
+  },
+  "github:abdfnx/resto": {
+    "stars": 280,
+    "forks": 13,
+    "last_commit": "2024-07-19",
+    "last_release": "2022-01-03"
+  },
+  "github:andrianllmm/renux": {
+    "stars": 20,
+    "forks": 0,
+    "last_commit": "2025-12-08",
+    "last_release": null
+  },
+  "github:thekarel/rum": {
+    "stars": 10,
+    "forks": 0,
+    "last_commit": "2025-11-08",
+    "last_release": "2025-11-08"
+  },
+  "github:Esubaalew/run": {
+    "stars": 872,
+    "forks": 22,
+    "last_commit": "2025-10-31",
+    "last_release": "2025-10-31"
+  },
+  "github:JamesWoolfenden/sato": {
+    "stars": 111,
+    "forks": 8,
+    "last_commit": "2025-11-20",
+    "last_release": "2025-04-25"
+  },
+  "github:rapidloop/rtop": {
+    "stars": 2187,
+    "forks": 159,
+    "last_commit": "2022-06-06",
+    "last_release": null
+  },
+  "github:luser/rustfilt": {
+    "stars": 287,
+    "forks": 26,
+    "last_commit": "2023-05-31",
+    "last_release": "2021-12-22"
+  },
+  "github:ReVanced/revanced-cli": {
+    "stars": 1469,
+    "forks": 216,
+    "last_commit": "2025-07-08",
+    "last_release": "2025-04-14"
+  },
+  "github:aguacero7/rkik": {
+    "stars": 50,
+    "forks": 3,
+    "last_commit": "2025-11-25",
+    "last_release": "2025-11-25"
+  },
+  "github:TylerBrock/saw": {
+    "stars": 1432,
+    "forks": 83,
+    "last_commit": "2023-03-27",
+    "last_release": "2019-01-17"
+  },
+  "github:screenshotone/mcp": {
+    "stars": 32,
+    "forks": 14,
+    "last_commit": "2025-06-10",
+    "last_release": null
+  },
+  "github:gabm/Satty": {
+    "stars": 1649,
+    "forks": 65,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-10-08"
+  },
+  "github:cgxeiji/scholar": {
+    "stars": 65,
+    "forks": 5,
+    "last_commit": "2021-03-15",
+    "last_release": "2019-09-20"
+  },
+  "github:loderunner/scrt": {
+    "stars": 164,
+    "forks": 7,
+    "last_commit": "2024-06-28",
+    "last_release": "2022-06-07"
+  },
+  "github:libsdl-org/SDL_image": {
+    "stars": 869,
+    "forks": 241,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-03-03"
+  },
+  "github:bonaysoft/rslocal": {
+    "stars": 236,
+    "forks": 15,
+    "last_commit": "2022-05-13",
+    "last_release": "2022-05-11"
+  },
+  "github:libsdl-org/SDL_ttf": {
+    "stars": 646,
+    "forks": 186,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-03-31"
+  },
+  "github:libsdl-org/SDL_mixer": {
+    "stars": 622,
+    "forks": 192,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-02-07"
+  },
+  "github:nonscalar/Seastar": {
+    "stars": 69,
+    "forks": 1,
+    "last_commit": "2025-06-16",
+    "last_release": null
+  },
+  "github:semaphoreui/semaphore": {
+    "stars": 12923,
+    "forks": 1197,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-07"
+  },
+  "github:jpisnice/shadcn-ui-mcp-server": {
+    "stars": 2525,
+    "forks": 277,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-10-23"
+  },
+  "github:robbielyman/seamstress": {
+    "stars": 19,
+    "forks": 1,
+    "last_commit": "2025-05-08",
+    "last_release": null
+  },
+  "github:Myriad-Dreamin/shiroa": {
+    "stars": 582,
+    "forks": 27,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-03-06"
+  },
+  "github:libsdl-org/SDL_net": {
+    "stars": 303,
+    "forks": 67,
+    "last_commit": "2025-12-12",
+    "last_release": "2022-08-19"
+  },
+  "github:zaphar/sheetsui": {
+    "stars": 230,
+    "forks": 6,
+    "last_commit": "2025-09-26",
+    "last_release": null
+  },
+  "github:darko-mesaros/shuk": {
+    "stars": 34,
+    "forks": 4,
+    "last_commit": "2024-12-11",
+    "last_release": "2024-12-11"
+  },
+  "github:tbckr/sgpt": {
+    "stars": 400,
+    "forks": 33,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-10-13"
+  },
+  "github:Syndica/sig": {
+    "stars": 347,
+    "forks": 52,
+    "last_commit": "2025-12-12",
+    "last_release": "2023-05-20"
+  },
+  "github:devtron-labs/silver-surfer": {
+    "stars": 436,
+    "forks": 39,
+    "last_commit": "2025-06-05",
+    "last_release": "2024-09-04"
+  },
+  "github:antoniomika/sish": {
+    "stars": 4464,
+    "forks": 326,
+    "last_commit": "2025-11-20",
+    "last_release": "2025-07-01"
+  },
+  "github:travisstaloch/simdjzon": {
+    "stars": 132,
+    "forks": 6,
+    "last_commit": "2025-11-04",
+    "last_release": null
+  },
+  "github:nobl9/sloctl": {
+    "stars": 37,
+    "forks": 2,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-10-29"
+  },
+  "github:noperator/sol": {
+    "stars": 519,
+    "forks": 6,
+    "last_commit": "2024-09-03",
+    "last_release": null
+  },
+  "github:kraanzu/smassh": {
+    "stars": 1810,
+    "forks": 56,
+    "last_commit": "2025-11-15",
+    "last_release": "2025-11-15"
+  },
+  "github:salesforce/sloop": {
+    "stars": 1551,
+    "forks": 134,
+    "last_commit": "2025-12-11",
+    "last_release": "2022-12-08"
+  },
+  "github:st3v3nmw/sourcerer-mcp": {
+    "stars": 96,
+    "forks": 11,
+    "last_commit": "2025-11-10",
+    "last_release": null
+  },
+  "github:Tairesh/rustormy": {
+    "stars": 66,
+    "forks": 2,
+    "last_commit": "2025-11-25",
+    "last_release": "2025-09-14"
+  },
+  "github:bananaofhappiness/soundscope": {
+    "stars": 134,
+    "forks": 1,
+    "last_commit": "2025-10-24",
+    "last_release": "2025-10-16"
+  },
+  "github:showwin/speedtest-go": {
+    "stars": 741,
+    "forks": 132,
+    "last_commit": "2025-10-15",
+    "last_release": "2024-12-20"
+  },
+  "github:GoodBoyNeon/sprofile": {
+    "stars": 39,
+    "forks": 1,
+    "last_commit": "2024-06-15",
+    "last_release": "2024-06-15"
+  },
+  "github:authzed/spicedb": {
+    "stars": 6272,
+    "forks": 356,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-12"
+  },
+  "github:spiffe/spike": {
+    "stars": 147,
+    "forks": 25,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-29"
+  },
+  "github:lfaoro/ssm": {
+    "stars": 95,
+    "forks": 5,
+    "last_commit": "2025-08-06",
+    "last_release": "2025-08-04"
+  },
+  "github:FollowTheProcess/spok": {
+    "stars": 15,
+    "forks": 0,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-08-20"
+  },
+  "github:driscollis/squall": {
+    "stars": 34,
+    "forks": 3,
+    "last_commit": "2025-10-13",
+    "last_release": "2025-03-11"
+  },
+  "github:caarlos0/starcharts": {
+    "stars": 1379,
+    "forks": 138,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-04-14"
+  },
+  "github:BharatKalluri/spotifydl": {
+    "stars": 81,
+    "forks": 7,
+    "last_commit": "2023-03-07",
+    "last_release": "2021-08-01"
+  },
+  "github:fabio42/ssl-checker": {
+    "stars": 25,
+    "forks": 4,
+    "last_commit": "2025-04-16",
+    "last_release": "2023-06-19"
+  },
+  "github:statoscope/statoscope": {
+    "stars": 1563,
+    "forks": 48,
+    "last_commit": "2025-09-30",
+    "last_release": "2025-04-05"
+  },
+  "github:orangekame3/stree": {
+    "stars": 142,
+    "forks": 9,
+    "last_commit": "2024-07-17",
+    "last_release": "2024-07-17"
+  },
+  "github:ashuhlee/starlit": {
+    "stars": 17,
+    "forks": 1,
+    "last_commit": "2025-11-07",
+    "last_release": "2025-11-03"
+  },
+  "github:bketelsen/surgeon": {
+    "stars": 19,
+    "forks": 0,
+    "last_commit": "2025-06-03",
+    "last_release": "2025-04-14"
+  },
+  "github:gulbaki/swagger-mcp-server": {
+    "stars": 13,
+    "forks": 3,
+    "last_commit": "2025-06-16",
+    "last_release": null
+  },
+  "github:SystemCraftsman/strimzi-kafka-cli": {
+    "stars": 85,
+    "forks": 13,
+    "last_commit": "2024-11-06",
+    "last_release": null
+  },
+  "github:hzqtc/taproom": {
+    "stars": 281,
+    "forks": 7,
+    "last_commit": "2025-09-17",
+    "last_release": "2025-09-16"
+  },
+  "github:superstarryeyes/bit": {
+    "stars": 292,
+    "forks": 9,
+    "last_commit": "2025-12-08",
+    "last_release": "2025-12-08"
+  },
+  "github:cyberark/summon": {
+    "stars": 753,
+    "forks": 67,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-12-10"
+  },
+  "github:tattoy-org/tattoy": {
+    "stars": 554,
+    "forks": 16,
+    "last_commit": "2025-09-14",
+    "last_release": "2025-07-28"
+  },
+  "github:panter-dsd/tatuin": {
+    "stars": 106,
+    "forks": 4,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-10"
+  },
+  "github:Tenderly/tenderly-cli": {
+    "stars": 567,
+    "forks": 170,
+    "last_commit": "2025-05-09",
+    "last_release": "2025-05-09"
+  },
+  "github:tgdrive/teldrive": {
+    "stars": 2512,
+    "forks": 372,
+    "last_commit": "2025-11-06",
+    "last_release": "2025-11-06"
+  },
+  "github:SchematicHQ/taskonaut": {
+    "stars": 20,
+    "forks": 1,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-24"
+  },
+  "github:nmoroze/tclint": {
+    "stars": 78,
+    "forks": 11,
+    "last_commit": "2025-12-05",
+    "last_release": "2025-11-30"
+  },
+  "github:tavily-ai/tavily-mcp": {
+    "stars": 991,
+    "forks": 166,
+    "last_commit": "2025-12-12",
+    "last_release": null
+  },
+  "github:stripe/agent-toolkit": {
+    "stars": 1152,
+    "forks": 175,
+    "last_commit": "2025-12-12",
+    "last_release": null
+  },
+  "github:basro/stylance-rs": {
+    "stars": 131,
+    "forks": 13,
+    "last_commit": "2025-11-24",
+    "last_release": "2025-11-24"
+  },
+  "github:beordle/termtunnel": {
+    "stars": 367,
+    "forks": 35,
+    "last_commit": "2024-05-21",
+    "last_release": "2024-05-21"
+  },
+  "github:orhun/systeroid": {
+    "stars": 1405,
+    "forks": 26,
+    "last_commit": "2025-12-01",
+    "last_release": "2025-09-07"
+  },
+  "github:TerraAGI/terra-code-cli": {
+    "stars": 40,
+    "forks": 4,
+    "last_commit": "2025-09-07",
+    "last_release": null
+  },
+  "github:quickwit-oss/tantivy-cli": {
+    "stars": 376,
+    "forks": 68,
+    "last_commit": "2025-08-20",
+    "last_release": "2025-08-20"
+  },
+  "github:ElementTech/terracove": {
+    "stars": 52,
+    "forks": 1,
+    "last_commit": "2023-07-18",
+    "last_release": "2023-07-18"
+  },
+  "github:sirrend/terrap-cli": {
+    "stars": 67,
+    "forks": 0,
+    "last_commit": "2023-12-05",
+    "last_release": "2023-05-04"
+  },
+  "github:Broderick-Westrope/tetrigo": {
+    "stars": 578,
+    "forks": 22,
+    "last_commit": "2025-11-07",
+    "last_release": "2024-12-27"
+  },
+  "github:efemaer/terrawiz": {
+    "stars": 82,
+    "forks": 4,
+    "last_commit": "2025-11-15",
+    "last_release": "2025-11-15"
+  },
+  "github:contentful-labs/terraform-diff": {
+    "stars": 68,
+    "forks": 5,
+    "last_commit": "2025-09-18",
+    "last_release": null
+  },
+  "github:mathaou/termdbms": {
+    "stars": 1809,
+    "forks": 35,
+    "last_commit": "2022-06-11",
+    "last_release": null
+  },
+  "github:RoseSecurity/terrafetch": {
+    "stars": 61,
+    "forks": 2,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-09-09"
+  },
+  "github:hashicorp/terraform": {
+    "stars": 47273,
+    "forks": 10142,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-11"
+  },
+  "github:takaishi/tfclean": {
+    "stars": 77,
+    "forks": 5,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-11-30"
+  },
+  "github:future-architect/tftarget": {
+    "stars": 273,
+    "forks": 12,
+    "last_commit": "2024-12-24",
+    "last_release": "2024-12-24"
+  },
+  "github:tarkah/tickrs": {
+    "stars": 1493,
+    "forks": 84,
+    "last_commit": "2025-02-27",
+    "last_release": "2025-02-21"
+  },
+  "github:breml/tfreveal": {
+    "stars": 46,
+    "forks": 2,
+    "last_commit": "2025-09-22",
+    "last_release": "2024-08-09"
+  },
+  "github:busser/tftree": {
+    "stars": 158,
+    "forks": 5,
+    "last_commit": "2025-11-20",
+    "last_release": "2023-10-02"
+  },
+  "github:achannarasappa/ticker": {
+    "stars": 5844,
+    "forks": 317,
+    "last_commit": "2025-11-17",
+    "last_release": "2025-11-16"
+  },
+  "github:orhun/theattyr": {
+    "stars": 153,
+    "forks": 4,
+    "last_commit": "2024-10-26",
+    "last_release": "2024-10-11"
+  },
+  "github:dominikbraun/timetrace": {
+    "stars": 780,
+    "forks": 79,
+    "last_commit": "2024-06-28",
+    "last_release": "2022-03-06"
+  },
+  "github:tarampampam/tinifier": {
+    "stars": 99,
+    "forks": 11,
+    "last_commit": "2025-12-02",
+    "last_release": "2025-11-02"
+  },
+  "github:tinybirdco/mcp-tinybird": {
+    "stars": 75,
+    "forks": 17,
+    "last_commit": "2025-09-01",
+    "last_release": null
+  },
+  "github:tighten/tlint": {
+    "stars": 530,
+    "forks": 31,
+    "last_commit": "2025-03-21",
+    "last_release": "2025-03-21"
+  },
+  "github:srevinsaju/togomak": {
+    "stars": 151,
+    "forks": 6,
+    "last_commit": "2024-04-19",
+    "last_release": "2024-04-06"
+  },
+  "github:terratags/terratags": {
+    "stars": 45,
+    "forks": 2,
+    "last_commit": "2025-12-07",
+    "last_release": "2025-11-16"
+  },
+  "github:toml-f/toml-f": {
+    "stars": 121,
+    "forks": 33,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-10"
+  },
+  "github:imduffy15/token-cli": {
+    "stars": 19,
+    "forks": 2,
+    "last_commit": "2022-10-26",
+    "last_release": "2021-09-04"
+  },
+  "github:Madh93/tpm": {
+    "stars": 85,
+    "forks": 2,
+    "last_commit": "2025-08-21",
+    "last_release": "2023-05-19"
+  },
+  "github:toolctl/toolctl": {
+    "stars": 42,
+    "forks": 7,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-11-30"
+  },
+  "github:werf/trdl": {
+    "stars": 293,
+    "forks": 17,
+    "last_commit": "2025-10-24",
+    "last_release": "2025-10-23"
+  },
+  "github:mfridman/tparse": {
+    "stars": 1204,
+    "forks": 35,
+    "last_commit": "2025-11-27",
+    "last_release": "2025-08-24"
+  },
+  "github:ivanilves/travelgrunt": {
+    "stars": 69,
+    "forks": 3,
+    "last_commit": "2025-10-04",
+    "last_release": "2025-10-04"
+  },
+  "github:tuono-labs/tuono": {
+    "stars": 1080,
+    "forks": 55,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-05-25"
+  },
+  "github:ultimaweapon/tsuki": {
+    "stars": 123,
+    "forks": 3,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-12-07"
+  },
+  "github:gembaadvantage/uplift": {
+    "stars": 66,
+    "forks": 8,
+    "last_commit": "2025-10-09",
+    "last_release": "2025-07-13"
+  },
+  "github:rustwasm/twiggy": {
+    "stars": 1407,
+    "forks": 74,
+    "last_commit": "2025-10-20",
+    "last_release": null
+  },
+  "github:tooka-org/tooka": {
+    "stars": 10,
+    "forks": 0,
+    "last_commit": "2025-11-11",
+    "last_release": "2025-10-06"
+  },
+  "github:simeg/urlsup": {
+    "stars": 17,
+    "forks": 1,
+    "last_commit": "2025-08-10",
+    "last_release": null
+  },
+  "github:utkusen/urlhunter": {
+    "stars": 1658,
+    "forks": 116,
+    "last_commit": "2025-01-23",
+    "last_release": "2025-01-23"
+  },
+  "github:ftilde/ugdb": {
+    "stars": 438,
+    "forks": 8,
+    "last_commit": "2025-03-09",
+    "last_release": null
+  },
+  "github:kabouzeid/turm": {
+    "stars": 240,
+    "forks": 18,
+    "last_commit": "2025-12-12",
+    "last_release": "2025-12-12"
+  },
+  "github:vapiai/mcp-server": {
+    "stars": 30,
+    "forks": 16,
+    "last_commit": "2025-07-22",
+    "last_release": "2025-06-22"
+  },
+  "github:bazelbuild/buildtools": {
+    "stars": 1145,
+    "forks": 453,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-06-10"
+  },
+  "github:vectorize-io/vectorize-mcp-server": {
+    "stars": 98,
+    "forks": 22,
+    "last_commit": "2025-06-12",
+    "last_release": "2025-04-07"
+  },
+  "github:ovh/venom": {
+    "stars": 1169,
+    "forks": 165,
+    "last_commit": "2025-12-02",
+    "last_release": "2024-03-29"
+  },
+  "github:kopecmaciej/vi-mongo": {
+    "stars": 169,
+    "forks": 12,
+    "last_commit": "2025-12-10",
+    "last_release": "2025-12-10"
+  },
+  "github:viddotech/videoalchemy": {
+    "stars": 137,
+    "forks": 10,
+    "last_commit": "2025-09-18",
+    "last_release": "2025-01-01"
+  },
+  "github:vet-run/vet": {
+    "stars": 972,
+    "forks": 21,
+    "last_commit": "2025-08-20",
+    "last_release": "2025-07-25"
+  },
+  "github:jonathanruiz/wakey": {
+    "stars": 48,
+    "forks": 1,
+    "last_commit": "2024-09-13",
+    "last_release": "2024-09-13"
+  },
+  "github:vercel/serve": {
+    "stars": 9782,
+    "forks": 694,
+    "last_commit": "2025-09-04",
+    "last_release": "2025-09-04"
+  },
+  "github:jeremiah-c-leary/vhdl-style-guide": {
+    "stars": 228,
+    "forks": 60,
+    "last_commit": "2025-11-10",
+    "last_release": null
+  },
+  "github:dunglas/vulcain": {
+    "stars": 3564,
+    "forks": 106,
+    "last_commit": "2025-10-30",
+    "last_release": "2025-08-26"
+  },
+  "github:gnojus/wedl": {
+    "stars": 39,
+    "forks": 5,
+    "last_commit": "2025-07-04",
+    "last_release": "2024-10-05"
+  },
+  "github:future-architect/vuls": {
+    "stars": 11852,
+    "forks": 1209,
+    "last_commit": "2025-12-09",
+    "last_release": "2025-12-09"
+  },
+  "github:yinzhenyu-su/weekly-git-summary": {
+    "stars": 192,
+    "forks": 6,
+    "last_commit": "2025-12-01",
+    "last_release": "2025-10-09"
+  },
+  "github:sh1zen/wisu": {
+    "stars": 38,
+    "forks": 0,
+    "last_commit": "2025-10-31",
+    "last_release": "2025-10-31"
+  },
+  "github:leleliu008/xcpkg": {
+    "stars": 27,
+    "forks": 3,
+    "last_commit": "2025-09-14",
+    "last_release": "2024-10-26"
+  },
+  "github:pamoller/xmlformatter": {
+    "stars": 34,
+    "forks": 10,
+    "last_commit": "2025-06-03",
+    "last_release": "2024-10-27"
+  },
+  "github:kyotalab/vento": {
+    "stars": 6,
+    "forks": 0,
+    "last_commit": "2025-07-01",
+    "last_release": "2025-07-01"
+  },
+  "github:neilpa/yajsv": {
+    "stars": 100,
+    "forks": 13,
+    "last_commit": "2023-11-21",
+    "last_release": "2022-09-22"
+  },
+  "github:handlebargh/yatto": {
+    "stars": 73,
+    "forks": 4,
+    "last_commit": "2025-12-07",
+    "last_release": "2025-11-17"
+  },
+  "github:benbusby/yeetfile": {
+    "stars": 262,
+    "forks": 16,
+    "last_commit": "2025-08-18",
+    "last_release": "2025-02-26"
+  },
+  "github:simonask/werk": {
+    "stars": 315,
+    "forks": 9,
+    "last_commit": "2025-04-28",
+    "last_release": null
+  },
+  "github:its-the-shrimp/yew-fmt": {
+    "stars": 26,
+    "forks": 3,
+    "last_commit": "2025-07-16",
+    "last_release": "2025-07-16"
+  },
+  "github:utox39/zigfetch": {
+    "stars": 24,
+    "forks": 1,
+    "last_commit": "2025-12-11",
+    "last_release": "2025-10-15"
+  },
+  "github:yarlson/zero": {
+    "stars": 13,
+    "forks": 0,
+    "last_commit": "2025-11-20",
+    "last_release": "2025-04-08"
+  },
+  "github:shazow/wifitui": {
+    "stars": 141,
+    "forks": 4,
+    "last_commit": "2025-12-06",
+    "last_release": "2025-11-25"
+  },
+  "github:yeoman/yosay": {
+    "stars": 207,
+    "forks": 40,
+    "last_commit": "2025-02-07",
+    "last_release": "2023-10-27"
+  },
+  "codeberg:explosion-mental/wallust": {
+    "stars": 124,
+    "forks": 17,
+    "last_commit": "2025-12-13",
+    "last_release": "2025-07-15"
+  },
+  "github:kristoff-it/ziggy": {
+    "stars": 498,
+    "forks": 36,
+    "last_commit": "2025-11-25",
+    "last_release": null
+  },
+  "github:DonIsaac/zlint": {
+    "stars": 237,
+    "forks": 12,
+    "last_commit": "2025-11-30",
+    "last_release": "2025-07-16"
+  },
+  "github:sohaha/zzz": {
+    "stars": 234,
+    "forks": 3,
+    "last_commit": "2025-11-20",
+    "last_release": "2025-08-26"
+  },
+  "github:llogick/zigscient": {
+    "stars": 118,
+    "forks": 6,
+    "last_commit": "2025-10-23",
+    "last_release": "2025-10-23"
+  },
+  "github:ziinaio/zmate": {
+    "stars": 83,
+    "forks": 1,
+    "last_commit": "2025-06-20",
+    "last_release": "2025-06-19"
+  },
+  "github:539hex/zu": {
+    "stars": 14,
+    "forks": 0,
+    "last_commit": "2025-08-27",
+    "last_release": "2025-08-27"
+  },
+  "sourcehut:timharek/yr": {
+    "stars": null,
+    "forks": null,
+    "last_commit": null,
+    "last_release": null
+  },
+  "github:malcolmstill/zware": {
+    "stars": 367,
+    "forks": 15,
+    "last_commit": "2025-10-06",
+    "last_release": null
+  }
+}
