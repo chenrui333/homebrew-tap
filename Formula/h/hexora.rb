@@ -8,9 +8,11 @@ class Hexora < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9a7cb5da8457fda0b9a1d1ac2d89c0bf76fc64775d6a39b2bf124f107aefbf4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "397962f862cc861372383159e3bedeab25f30ce7441f9296cef3cdcc478cb0d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fdd00758a8a2d1237a3dc889cdbdddbd759e400083612f2b43fdb85fdfc0121"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a37b6a420110d7ee626634e6f858897c2b5bcb1675637b0acd232bf504c5c20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae4686c81b9d43dbfb27172b6f9e528cd07ec99792acf06a7d95311fd6a05b34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3eb7f92936e65487ab758c723e149422096432893dbc43fa416bf93a4f8fb5c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "421cd168592f68d3966be7d56cd065a5dfeaa8718629cdf757e6e8d2e3628b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf819e985c9f0ab444bd3e7e27a20008d52725eae89890da593750bc8d97fa3d"
   end
 
   depends_on "rust" => :build
