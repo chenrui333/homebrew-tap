@@ -24,6 +24,9 @@ class Qmassa < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/qmassa --version")
 
+    # Fails in Linux CI with `No such device or address` error
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     assert_match "Error: No DRM devices found", shell_output("#{bin}/qmassa 2>&1", 1)
   end
 end
