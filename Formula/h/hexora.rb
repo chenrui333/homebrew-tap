@@ -15,6 +15,8 @@ class Hexora < Formula
 
   depends_on "rust" => :build
 
+  uses_from_macos "python" => :build
+
   def install
     system "cargo", "install", *std_cargo_args
   end
