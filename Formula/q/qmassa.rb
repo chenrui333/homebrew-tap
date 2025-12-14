@@ -1,8 +1,8 @@
 class Qmassa < Formula
   desc "TUI for displaying GPUs usage stats on Linux"
   homepage "https://github.com/ulissesf/qmassa"
-  url "https://github.com/ulissesf/qmassa/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "a65763543858b7042d91756bbd9afe45a3c3dddea7b845115e9e8ba4625044f3"
+  url "https://github.com/ulissesf/qmassa/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "738384c96cc015817b384575733f8ead8297c9507d752a9612bfffe95cf8aba2"
   license "Apache-2.0"
   head "https://github.com/ulissesf/qmassa.git", branch: "main"
 
