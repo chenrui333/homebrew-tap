@@ -2,8 +2,8 @@
 class Tickrs < Formula
   desc "Realtime ticker data in your terminal"
   homepage "https://github.com/tarkah/tickrs"
-  url "https://github.com/tarkah/tickrs/archive/refs/tags/v0.14.11.tar.gz"
-  sha256 "e6c7c4cfbc381c4e56316734335c87e88f32b722afb91ea1bd96bba80297660b"
+  url "https://github.com/tarkah/tickrs/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "d06648feb9d0da53f10188f050e8324162a1a83a1ed0f2f7a360983dc2f2b0a6"
   license "MIT"
 
   bottle do
