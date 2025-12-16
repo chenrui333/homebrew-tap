@@ -1,8 +1,8 @@
 class TavilyMcp < Formula
   desc "MCP server for Tavily"
   homepage "https://github.com/tavily-ai/tavily-mcp"
-  url "https://registry.npmjs.org/tavily-mcp/-/tavily-mcp-0.2.10.tgz"
-  sha256 "ffa0cec649dedcd408919d92541ff4684aef26bf2e713dfda18378cb9590f039"
+  url "https://registry.npmjs.org/tavily-mcp/-/tavily-mcp-0.2.11.tgz"
+  sha256 "808c49910f807495a9bfde904719434dce0115edda126ebc132a4e7f6490673b"
   license "MIT"
 
   bottle do
