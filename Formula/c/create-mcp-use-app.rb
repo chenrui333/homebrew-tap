@@ -1,8 +1,8 @@
 class CreateMcpUseApp < Formula
   desc "Project scaffolding tool for mcp-use applications"
   homepage "https://github.com/mcp-use/mcp-use"
-  url "https://registry.npmjs.org/create-mcp-use-app/-/create-mcp-use-app-0.9.0.tgz"
-  sha256 "32b4b1318b8c32be914db9596370ca4af0cae9474b1558a4f7aa0e8fcc9bc3d3"
+  url "https://registry.npmjs.org/create-mcp-use-app/-/create-mcp-use-app-0.9.1.tgz"
+  sha256 "e0a45775520a3b61538d1ebd4463e6a6091e7cb3be716caa55918a54c6f93817"
   license "MIT"
 
   bottle do
