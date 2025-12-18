@@ -8,11 +8,11 @@ class Cnspec < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e400ac35bf08490c73289091ef23476e0b3d0dec28e88259abb41e541c54877b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fc0ae157a1a25a0cff44c708342695b1a502950849ed9c5ffbd285f1af80f78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4221ce8f8f6c1dc95aedd401845a491d5bf9c3ae2b585af99b8a6fc14a1b574"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55c66ce911fb24cb0a94ae30b479676546e500a204459057e2addfa8260f5f46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34603fac2eca2eed068fafabcfcb324c717374946af2149186b3b78984ed52d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3086d1149ac5fc6148fa7ea809ca962a3a6e3e2349dc6598e6e0b383daa349d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16026c677be88ec7eec34a36b479096d7d3737c531ae52da1b6169da6d7ad75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec23b7ba87ac5aeca8cbde99ae06164f90574b139c1cf337ef22750c4934c3d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e6231212cc18355f83e0b6b0a43ed23fc0957da43ef21e02a2a65876545cd1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "559cbcc7f6b62494725eeae9f8c18a3e1db3ed69ce967d23e7bb923ea879973c"
   end
 
   depends_on "go" => :build
