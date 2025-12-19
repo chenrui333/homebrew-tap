@@ -9,11 +9,11 @@ class Cf2pulumi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f88209a1819397e1716279d7a90b7bc8b5ee293b995242ddfbcb5e161c5dd896"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f88209a1819397e1716279d7a90b7bc8b5ee293b995242ddfbcb5e161c5dd896"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f88209a1819397e1716279d7a90b7bc8b5ee293b995242ddfbcb5e161c5dd896"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7f9ed5d742de78bab29042e6dc3be20469f1a8d45165fc26d6cf380f13cd69b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70287ab120858187df735d2349149ce2cea274481b10e19b5668106ae1061bbd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb483565e603df23d16d8892a8c945018df4ff0146c5bcaf0e01d2ff17fb998d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb483565e603df23d16d8892a8c945018df4ff0146c5bcaf0e01d2ff17fb998d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb483565e603df23d16d8892a8c945018df4ff0146c5bcaf0e01d2ff17fb998d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0bbe8367bf3b5334b68473a0734fde91b82ea28c529d85d03a65fac6820949d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9b0889c096fb067eb65d1da26b1122cb0e3c765b5cef9c15e513e41fb8a0ae9"
   end
 
   depends_on "go" => :build
