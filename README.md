@@ -172,6 +172,7 @@ brew install --cask <tool>
 - `deepteam`
 - `dela`
 - `deletor`
+- `depot`
 - `dg`
 - `dhv`
 - `di-tui`
@@ -543,6 +544,7 @@ brew install --cask <tool>
 - `stylance-cli`
 - `summon`
 - `superclaude`
+- `superseedr`
 - `superstarryeyes-bit`
 - `surgeon`
 - `swagger-mcp-server`
