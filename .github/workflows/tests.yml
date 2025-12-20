@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@696ef0de3166f256259af861e4b6dcbb7b99d84b
+        uses: Homebrew/actions/setup-homebrew@6aaece888488245de2952b2b26bacb194357855c
         with:
           core: true
           cask: false
@@ -130,7 +130,7 @@ jobs:
       BOTTLES_DIR: ${{matrix.workdir || github.workspace}}/bottles
     steps:
       - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@696ef0de3166f256259af861e4b6dcbb7b99d84b
+        uses: Homebrew/actions/pre-build@6aaece888488245de2952b2b26bacb194357855c
         with:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
@@ -156,7 +156,7 @@ jobs:
 
       - name: Post-build steps
         if: always()
-        uses: Homebrew/actions/post-build@696ef0de3166f256259af861e4b6dcbb7b99d84b
+        uses: Homebrew/actions/post-build@6aaece888488245de2952b2b26bacb194357855c
         with:
           runner: ${{ matrix.runner }}
           cleanup: ${{ matrix.cleanup }}
