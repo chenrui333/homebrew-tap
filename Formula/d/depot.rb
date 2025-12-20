@@ -8,11 +8,11 @@ class Depot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3115ffca86d2c1c09fc4e2eef5142fd99c7f490bdc5cbdd585c5d2529e15ce6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3115ffca86d2c1c09fc4e2eef5142fd99c7f490bdc5cbdd585c5d2529e15ce6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3115ffca86d2c1c09fc4e2eef5142fd99c7f490bdc5cbdd585c5d2529e15ce6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "882079f04c7b6fdfcb5acae7f976597ba9b680b81b5eb5221a87287d94a8a26a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "499a85f61374d08e7ef6980404b93f4b4afa3b2a6a93d50cd3745e1c2dfd643c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89dacfeb3ebd88897601d61220de09ee5adbafc2112b350129996f8c49ed431d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89dacfeb3ebd88897601d61220de09ee5adbafc2112b350129996f8c49ed431d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89dacfeb3ebd88897601d61220de09ee5adbafc2112b350129996f8c49ed431d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc6bf80b084dd2eb52154fb1422ba5ade6195928f3bd6d561dbf1569a3712f5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fbc5f956e8ad243be1a99496bfb93cfb75ad467b509893a996c0b00073d57aa"
   end
 
   depends_on "go" => :build
