@@ -461,7 +461,6 @@ brew install --cask <tool>
 - `pyink`
 - `pyment`
 - `pyp`
-- `pyscn`
 - `pysentation`
 - `qmassa`
 - `qqqa`
