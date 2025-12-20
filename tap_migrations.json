@@ -144,6 +144,7 @@
   "preevy": "homebrew/core",
   "prefligit": "homebrew/core",
   "protoc-gen-doc": "homebrew/core",
+  "pyscn": "homebrew/core",
   "qnm": "homebrew/core",
   "qwen-code": "homebrew/core",
   "rails-mcp-server": "homebrew/core",
