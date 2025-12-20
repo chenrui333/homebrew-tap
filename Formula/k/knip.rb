@@ -33,6 +33,6 @@ class Knip < Formula
 
     assert_match version.to_s, shell_output("#{bin}/knip --version")
 
-    system bin/"knip", "--production"
+    assert_match "Knip found no issues", shell_output("#{bin}/knip --production")
   end
 end
