@@ -493,6 +493,7 @@ brew install --cask <tool>
 - `rum`
 - `run`
 - `rustfilt`
+- `rusticon`
 - `rustormy`
 - `sato`
 - `satty`
