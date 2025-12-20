@@ -19,6 +19,7 @@ yor = "yor"
 extend-exclude = [
   "Formula/h/holo-cli.rb", # for `index 4ba84b7..9d404c0`
   "Formula/r/readmeai.rb", # upstream pr ref, https://github.com/eli64s/readme-ai/pull/158
+  "Formula/r/rusticon.rb", # error: `ND` should be `AND` for license
   "patches/**",
   "docs/terminal-trove/terminal_trove_weekly.md",
   "formula-status/formula-status.md",
