@@ -8,11 +8,11 @@ class Rusticon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96ecfbfefa7512cca1a3ee7e00a147af334aa835cef4fa1b4d793c1bd124579e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab0f8e4146dfdea6794690454f806f6a0137f629ca9f06f3011b0d09bd750dfa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22fad6216399eaa5e34603a8261f988da0acd38d99477d467823d027ebe9025b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e271e262bd34c0e837d08218eabc054a47463d515f79400213c7bff885de874b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b78aebb06ce385c74d5e33c29003acbfff777548b9fa498c12c86f02ede1c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4cd3d33a47473c572d81f48a48551755d1cbd4792b0f246a4ea965c45770d74"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d66665f1092559c179c8e26cb9381ccc5de2aa13c00086db9eef7c0b7657b6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a384f3ff875d4985798c9c9a79f96fa9f624d3e7abcbb58e4f52ca28ca1479ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d18cbd5822fb3c44fa55935e79733c47bb6a7b27d9e4d34499e1d25a76bd9185"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77cbd331df5e613ae9b88c822234522becb7a852eceb28962042a41e66b1dabc"
   end
 
   depends_on "rust" => :build
