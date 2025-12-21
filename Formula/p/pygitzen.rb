@@ -8,6 +8,16 @@ class Pygitzen < Formula
   license "MIT"
   head "https://github.com/SunnyTamang/pygitzen.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95b6c5b6d0f6ce0f91f118ccafb3d6acec0d1275b1fb3ceca11807e042dbd669"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "980613db2d3e7faefa019b8f56e238a76403fe9977f074ef43b795d0d0f9507c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54af264469fec03ed0562b56a0de2135eac204b72cfb51bcb63f8d8798413306"
+    sha256 cellar: :any_skip_relocation, sequoia:       "74f46c7a1ef756e06156e128291b29c896596e6ec4b6221ffcb41fa61070828f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a86ca0c5d28160e6b2201c2d881cd6be5618b713b4e3e32b8656fcf952e0c407"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57f8b58c3b02bc76b7951e79be3a836d052c2c5ba354b39caed32df0739dc9fd"
+  end
+
   depends_on "python@3.14"
 
   resource "dulwich" do
