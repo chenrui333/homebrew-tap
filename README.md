@@ -378,6 +378,7 @@ brew install --cask <tool>
 - `mfa`
 - `minisign`
 - `mitex`
+- `mlbt`
 - `mln`
 - `mmemoji`
 - `mnamer`
