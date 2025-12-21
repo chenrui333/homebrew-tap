@@ -68,6 +68,7 @@ brew install --cask <tool>
 - `axiom-mcp-server`
 - `az-tui`
 - `azure-pipelines-language-server`
+- `b4n`
 - `backport`
 - `balcony`
 - `base-mcp-server`
@@ -460,6 +461,7 @@ brew install --cask <tool>
 - `pubmed-mcp-server`
 - `pvetui`
 - `pwdsafety`
+- `pygitzen`
 - `pyink`
 - `pyment`
 - `pyp`
