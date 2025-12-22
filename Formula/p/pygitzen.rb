@@ -3,8 +3,8 @@ class Pygitzen < Formula
 
   desc "Python native terminal based Git client"
   homepage "https://github.com/SunnyTamang/pygitzen"
-  url "https://files.pythonhosted.org/packages/86/2a/562d451865fa9fe8da639bdcb434ab9b06d77c6c307ed9f66cb9e97722ed/pygitzen-0.2.5.tar.gz"
-  sha256 "d3030cf330939676bf925bf0c609bc5f68db6ea255e9b72877b47e1e84952dbf"
+  url "https://files.pythonhosted.org/packages/2c/d1/34ffe7c01b2205c9f6fbe8081b6ff63f6cea1c816ba4450b734708c90f8b/pygitzen-0.2.6.tar.gz"
+  sha256 "14d318b35547f2d38f6386f04a98cc9997c66d0de0a495fa1a6f11f2df9e5b36"
   license "MIT"
   head "https://github.com/SunnyTamang/pygitzen.git", branch: "main"
 
