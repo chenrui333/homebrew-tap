@@ -3,8 +3,8 @@ class Tclint < Formula
 
   desc "EDA-centric utility for linting and analyzing Tcl code"
   homepage "https://github.com/nmoroze/tclint"
-  url "https://files.pythonhosted.org/packages/fc/32/2088167023fea63991dbc2a3309e0146cd224a251f9126c781637485cbd5/tclint-0.6.2.tar.gz"
-  sha256 "7659a4ad45748f34e451c481097456c9278ed22135770ad9241bd37b6321c63e"
+  url "https://files.pythonhosted.org/packages/84/57/bac53151cc404c8fd5b15c69943cde772b404cd740ee576d5a7ca12732d1/tclint-0.7.0.tar.gz"
+  sha256 "bd605b11d44708e1537b902e63d7dd1d05f2d85c2c99a36854b157606eac1e8a"
   license "MIT"
 
   bottle do
