@@ -479,6 +479,7 @@ brew install --cask <tool>
 - `ramda-cli`
 - `rang`
 - `rawhide`
+- `rbac-lookup`
 - `readmeai`
 - `reddix`
 - `reformat-gherkin`
@@ -553,6 +554,7 @@ brew install --cask <tool>
 - `surgeon`
 - `swagger-mcp-server`
 - `systeroid`
+- `tftargets`
 - `tantivy-cli`
 - `taproom`
 - `taskonaut`
