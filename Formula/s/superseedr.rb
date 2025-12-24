@@ -8,11 +8,11 @@ class Superseedr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03f32a9e0280b4629b3f15427c53fafb789a9828c8e55709b2a7856250dffd03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9d5a1716ef921099a61f7a0da5d19fcee71148984aac41e416c5995b4355078"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b473675122e75fe2a29942e6063947822b940d1d9608750e8cbf7da6d666e8d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5d06752902c0dbf29cb4c38b58a0bc2ab69d4c9a32091b29f271cbc1e057fbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25cbb1c62d3b349eba467279c6963bd89b7a6ace2b6b0cc0a82d8782b182b8ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09a39f3c8953951c6b7286f88b0ed412406b3128714dce79611b0ffb0af806f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9ba8334fd7f4fb4526c43a92a2531e79079d4148edf2a9ccf8eeda4e74be967"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5737ac5a70ae75ba732fbd5d3d3f7b0f4df517412431f88d9fb1c9ff1b5ae314"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61d5126b56c96ce970cb39856625b6bf1b26767a87aa00c39eae46b02933c202"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96ff3083b6236a2e1de4e482b8d21732c543b5af1ee5e48135bb1d29469de9c"
   end
 
   depends_on "pkgconf" => :build
