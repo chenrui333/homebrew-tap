@@ -2,8 +2,8 @@
 class Mfa < Formula
   desc "Generate TOTP(Time-based One-time Password) token with CLI"
   homepage "https://github.com/k-saiki/mfa"
-  url "https://github.com/k-saiki/mfa/archive/refs/tags/v0.0.11.tar.gz"
-  sha256 "c191a9d61a5b382fc4964b5383fa2a637f99dc05f4a35bfcf11fd517f0afebde"
+  url "https://github.com/k-saiki/mfa/archive/refs/tags/v0.0.12.tar.gz"
+  sha256 "5b8155fc7f71673cd95d0f668fbdc5b6e15125b0b50aa9028e1906605448f708"
   license "MIT"
   head "https://github.com/k-saiki/mfa.git", branch: "main"
 
