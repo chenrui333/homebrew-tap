@@ -670,5 +670,11 @@
   "https://terminaltrove.com/himalaya/": "https://github.com/pimalaya/himalaya",
   "https://terminaltrove.com/opamui/": "https://github.com/nlamirault/opamui",
   "https://terminaltrove.com/mlbt/": "https://github.com/mlb-rs/mlbt",
-  "https://terminaltrove.com/fresh/": "https://github.com/sinelaw/fresh"
+  "https://terminaltrove.com/fresh/": "https://github.com/sinelaw/fresh",
+  "https://terminaltrove.com/sqlit/": "https://github.com/Maxteabag/sqlit",
+  "https://terminaltrove.com/git-interactive-rebase-tool/": "https://github.com/MitMaro/git-interactive-rebase-tool",
+  "https://terminaltrove.com/pomo/": "https://github.com/Bahaaio/pomo",
+  "https://terminaltrove.com/bookokrat/": "https://github.com/bugzmanov/bookokrat",
+  "https://terminaltrove.com/cpx/": "https://github.com/ozacod/cpx",
+  "https://terminaltrove.com/zuse/": "https://github.com/babycommando/zuse"
 }
