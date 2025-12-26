@@ -113,6 +113,7 @@ brew install --cask <tool>
 - `ccexp`
 - `cchistory`
 - `cclogviewer`
+- `ccql`
 - `cello`
 - `cerbos`
 - `certok`
@@ -260,6 +261,7 @@ brew install --cask <tool>
 - `gtts`
 - `hackernews-tui`
 - `haloy`
+- `hapi`
 - `hasha-cli`
 - `hauler`
 - `hcldump`
@@ -322,6 +324,7 @@ brew install --cask <tool>
 - `kcl`
 - `kdash`
 - `keyhunter`
+- `khaos-cli`
 - `klepto`
 - `knip`
 - `kpt`
