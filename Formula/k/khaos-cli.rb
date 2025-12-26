@@ -8,6 +8,15 @@ class KhaosCli < Formula
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13c4255f3215c80ab078995dbc19489cef4d97a055a1f7223b76d839432b4a98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ea3fbe4de0d62753bf7445caa6ce4b0cf4c6495edf8023210402e25fbe429e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "270852e3faafc050dfb420ce3b12ad13c8f964dae3d30701864b7d669cd0efcb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd40a2d3c2c6c14d8d7924b4d1a01e54693a469452f54e8891b7bc8262eb1974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec548495f2dd77eb038f375365165844b7bb073b2b22344560475adff1dec36"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "librdkafka"
