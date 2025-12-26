@@ -8,6 +8,15 @@ class SpecfactCli < Formula
   license "Apache-2.0"
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "cc82a041a368e62c3c5fba5815e8142d388e2692fee7f318cec36e9a45f2df14"
+    sha256 cellar: :any,                 arm64_sequoia: "dc349fcd4f53c75242fba35c3ff4572ca9fbf8448754263a6882664af176ee96"
+    sha256 cellar: :any,                 arm64_sonoma:  "e98dedcd198df0efe5260fff5047cf745ace0dc5dc2891cc2c253cb311c28877"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "201ec38922575efbe0d7fb6d93bb03d3abc88b49cdfefa00cae40e83a1ab9f59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd0569720c3440ce84e29e0ede090730702cc3d8b7c3d2535bfa1e08b7cb7344"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
