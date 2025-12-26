@@ -16,12 +16,17 @@ class Pomo < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pomo --version")
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"pomo", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "work session", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    # Fails in Linux CI with `/dev/tty: no such device or address`
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    begin
+      output_log = testpath/"output.log"
+      pid = spawn bin/"pomo", [:out, :err] => output_log.to_s
+      sleep 1
+      assert_match "work session", output_log.read
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
