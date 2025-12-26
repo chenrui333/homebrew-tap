@@ -6,6 +6,15 @@ class Cpx < Formula
   license "MIT"
   head "https://github.com/ozacod/cpx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5049bee71cfd3f5b0cb97c14c27f9bb1bc25c6d5e82d48c3908d92643280b2b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5049bee71cfd3f5b0cb97c14c27f9bb1bc25c6d5e82d48c3908d92643280b2b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5049bee71cfd3f5b0cb97c14c27f9bb1bc25c6d5e82d48c3908d92643280b2b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c85f4a466beca221cec683a050ddf7ffdcda0f995435f43ac9ce82083211ea00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b02279ba738880ae3ccc31074df1349f5b1f380e17f05efc5e0162f60368ee58"
+  end
+
   depends_on "go" => :build
 
   def install
