@@ -6,6 +6,15 @@ class Zuse < Formula
   license "Apache-2.0"
   head "https://github.com/babycommando/zuse.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a8db3d30cc0e9c91b26d0a1a36dab2fc803313554f8ed57d7df4cd789749fac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a8db3d30cc0e9c91b26d0a1a36dab2fc803313554f8ed57d7df4cd789749fac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a8db3d30cc0e9c91b26d0a1a36dab2fc803313554f8ed57d7df4cd789749fac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c028af4eaf7d23798b7e33cfa4739010d0c423de6d5e22de6b7175d51a083dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f0c3659e74adbc747a2e0a814d62bb12f36c16b2a0b22699fc6810cb377093f"
+  end
+
   depends_on "go" => :build
 
   def install
