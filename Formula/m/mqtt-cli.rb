@@ -1,8 +1,8 @@
 class MqttCli < Formula
   desc "CLI for connecting various MQTT clients supporting MQTT 5.0 and 3.1.1"
   homepage "https://hivemq.github.io/mqtt-cli/"
-  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.43.0.tar.gz"
-  sha256 "620ae91e25f2b26339dd1950ef91b4c0562bb1d39fe07313aded55e424297ac4"
+  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.47.0.tar.gz"
+  sha256 "cb918952a253c01fe35a457efc0f727d3701de914a3654d3797f4cf36abb093b"
   license "Apache-2.0"
   head "https://github.com/hivemq/mqtt-cli.git", branch: "master"
 
@@ -14,17 +14,17 @@ class MqttCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c6a1ae1f84e9f2174ec336dc6060bd94e1b36f408c16518caa80bd4c61c259"
   end
 
-  depends_on "openjdk"
-
-  # update toolchain to Java 24
+  depends_on "openjdk@21"
   patch :DATA
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    java21 = Language::Java.java_home("21")
+    ENV["JAVA_HOME"] = java21
+    ENV["GRADLE_OPTS"] = "-Dorg.gradle.java.installations.paths=#{java21}"
 
     system "./gradlew", "shadowJar", "--no-daemon", "-x", "test"
     libexec.install "build/libs/mqtt-cli-#{version}.jar" => "mqtt-cli.jar"
-    bin.write_jar_script libexec/"mqtt-cli.jar", "mqtt"
+    bin.write_jar_script libexec/"mqtt-cli.jar", "mqtt", java_version: "21"
   end
 
   test do
@@ -56,27 +56,26 @@ end
 
 __END__
 diff --git a/build.gradle.kts b/build.gradle.kts
-index 78e791a..12ebc89 100644
+index 78e791a..d1e23ac 100644
 --- a/build.gradle.kts
 +++ b/build.gradle.kts
 @@ -50,13 +50,13 @@ application {
 
  java {
      toolchain {
--        languageVersion = JavaLanguageVersion.of(21)
-+        languageVersion = JavaLanguageVersion.of(24)
+        languageVersion = JavaLanguageVersion.of(21)
      }
  }
 
  tasks.compileJava {
      javaCompiler = javaToolchains.compilerFor {
 -        languageVersion = JavaLanguageVersion.of(11)
-+        languageVersion = JavaLanguageVersion.of(24)
++        languageVersion = JavaLanguageVersion.of(21)
      }
  }
 
 diff --git a/mqtt-cli-plugins/build.gradle.kts b/mqtt-cli-plugins/build.gradle.kts
-index e57af1c..e8572dd 100644
+index e57af1c..f2a4d3e 100644
 --- a/mqtt-cli-plugins/build.gradle.kts
 +++ b/mqtt-cli-plugins/build.gradle.kts
 @@ -6,7 +6,7 @@ group = "com.hivemq"
@@ -84,6 +83,6 @@ index e57af1c..e8572dd 100644
  java {
      toolchain {
 -        languageVersion = JavaLanguageVersion.of(11)
-+        languageVersion = JavaLanguageVersion.of(24)
++        languageVersion = JavaLanguageVersion.of(21)
      }
  }
