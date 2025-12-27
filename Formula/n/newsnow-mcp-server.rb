@@ -1,8 +1,8 @@
 class NewsnowMcpServer < Formula
   desc "MCP server for NewsNow"
   homepage "https://github.com/ourongxing/newsnow-mcp-server"
-  url "https://registry.npmjs.org/newsnow-mcp-server/-/newsnow-mcp-server-0.0.10.tgz"
-  sha256 "b35f06401bba08bdf359db390c21053d8c2e1497bdaaae9c8ced908d8e9a0301"
+  url "https://registry.npmjs.org/newsnow-mcp-server/-/newsnow-mcp-server-0.0.11.tgz"
+  sha256 "c0d6d7baf25f4450d1faf135ef925fe8d743b3976d382ae46644651e4a5046aa"
   license "MIT"
 
   bottle do
