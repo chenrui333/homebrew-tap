@@ -85,6 +85,7 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
+- `bookokrat`
 - `botkube`
 - `box`
 - `brave-search-mcp-server`
@@ -154,6 +155,7 @@ brew install --cask <tool>
 - `context42`
 - `copilot-cli`
 - `cozypkg`
+- `cpx`
 - `crates-lsp`
 - `create-mcp-use-app`
 - `critcmp`
@@ -447,6 +449,7 @@ brew install --cask <tool>
 - `pmx`
 - `podcli`
 - `pom`
+- `pomo`
 - `poop`
 - `pphack`
 - `pr-desc-cli`
@@ -533,6 +536,7 @@ brew install --cask <tool>
 - `solfmt`
 - `soundscope`
 - `sourcerer-mcp`
+- `specfact-cli`
 - `speedscope`
 - `speedtest`
 - `spicedb`
@@ -652,6 +656,7 @@ brew install --cask <tool>
 - `zigscient`
 - `zmate`
 - `zu`
+- `zuse`
 - `zware`
 
 </details>
