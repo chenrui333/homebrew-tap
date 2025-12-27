@@ -1,8 +1,8 @@
 class Hexora < Formula
   desc "Static analysis of malicious Python code"
   homepage "https://github.com/rushter/hexora"
-  url "https://github.com/rushter/hexora/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "b07560b2424dc383981596b424ea235d0003121fa410235a953961b3b20208dd"
+  url "https://github.com/rushter/hexora/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "27934aaacc9139357fb80916d03daaaa7abd567713bc560c935a19757d3a5676"
   license "MIT"
   head "https://github.com/rushter/hexora.git", branch: "main"
 
@@ -20,7 +20,7 @@ class Hexora < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/hexora")
   end
 
   test do
