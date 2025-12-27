@@ -1,8 +1,8 @@
 class Bookokrat < Formula
   desc "Terminal EPUB Book Reader"
   homepage "https://bugzmanov.github.io/bookokrat/index.html"
-  url "https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "980678dc85b6b401e1c53be86eeb98a0b9da076155946d6d5a4b59eccc9c7e5f"
+  url "https://github.com/bugzmanov/bookokrat/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "c3e65ab54bfd0bb3b4abf21139ccf07d32f15316afec69eb011ff74dd3893a1d"
   license "MIT"
   head "https://github.com/bugzmanov/bookokrat.git", branch: "main"
 
