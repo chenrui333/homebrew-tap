@@ -10,11 +10,11 @@ class KhaosCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13c4255f3215c80ab078995dbc19489cef4d97a055a1f7223b76d839432b4a98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ea3fbe4de0d62753bf7445caa6ce4b0cf4c6495edf8023210402e25fbe429e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "270852e3faafc050dfb420ce3b12ad13c8f964dae3d30701864b7d669cd0efcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd40a2d3c2c6c14d8d7924b4d1a01e54693a469452f54e8891b7bc8262eb1974"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec548495f2dd77eb038f375365165844b7bb073b2b22344560475adff1dec36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4799facaeca98ad000176d19fbb913492a313cf4938cd9a728d47f670500135"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d86d9053efaf709dfbacb6ea8212c2c2a2353f641ff28da4f4403378851b7379"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0972984da7168b401e4eb8c5e2ee93d8715a2cdb7aa2225462944b9727dd2fc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59b50ef69c71f4adf9b31b99f1d5d7a610f25104d5e2d12c53091f1692539df1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8c8ba904f7d07eb954153129c9e338cb694e2538768d970e7fc91ac80127de4"
   end
 
   depends_on "certifi" => :no_linkage
