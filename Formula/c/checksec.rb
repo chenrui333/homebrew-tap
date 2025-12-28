@@ -18,7 +18,7 @@ class Checksec < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     # Workaround to avoid patchelf corruption when cgo is required (for go-zetasql)
     if OS.linux? && Hardware::CPU.arch == :arm64
@@ -29,7 +29,7 @@ class Checksec < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"checksec", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"checksec", shell_parameter_format: :cobra)
   end
 
   test do
