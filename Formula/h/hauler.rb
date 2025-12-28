@@ -28,7 +28,7 @@ class Hauler < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/hauler"
 
-    generate_completions_from_executable(bin/"hauler", "completion")
+    generate_completions_from_executable(bin/"hauler", shell_parameter_format: :cobra)
   end
 
   test do
