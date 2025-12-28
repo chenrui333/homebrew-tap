@@ -20,7 +20,7 @@ class Turm < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"turm", "completion")
+    generate_completions_from_executable(bin/"turm", shell_parameter_format: :clap)
   end
 
   test do
