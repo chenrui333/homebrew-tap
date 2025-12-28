@@ -21,7 +21,7 @@ class Venom < Formula
     ldflags = "-s -w -X github.com/ovh/venom.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/venom"
 
-    generate_completions_from_executable(bin/"venom", "completion")
+    generate_completions_from_executable(bin/"venom", shell_parameter_format: :cobra)
   end
 
   test do
