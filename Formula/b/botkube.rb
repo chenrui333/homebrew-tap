@@ -9,11 +9,12 @@ class Botkube < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "94593646bba64289dcbbfd629335c488b239d060ed6c14496467aa2fbbd1c255"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fdf910bff18ceccf470f8403f4802d4b70dccebfd8bdde0d721a87b8455a9b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c232683b63e06642c08b1d8925cd8fa8c0f8f3d9be59024b8cb08971362e7a55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09520b00cf5ecd0e82500f3374c62b495d91c19152904e532496fac3064e93e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8745775e8f60df06245943954a53daa7e51fac4420982a7882c0533d82caa94d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f118f252797351183b508265d49c2dd27cd72e8b462ac9e7f87e155c9c431902"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f71cf9ca9409b876a982bd8378319190814187dce2e0cb0e37900d03d2387366"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ea79b73f83c1dcce8473397a3ecaf69ae9aa8e6a76d81e2c10e3c83862c414d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f434fc390dd4e3ad94c8d4c1fc4edc8e06a17565a89acc05e5b18a1f7f21e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d3d699f85a4e6437a508562fa8569f2e5e082765eb52128a6eabd3194db25f2"
   end
 
   depends_on "go" => :build
