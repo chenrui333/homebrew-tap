@@ -8,11 +8,12 @@ class Haloy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40f161f45ba7a128e2d1c2553ded41c55e39e794ecf8f88353f79f9c9dcc8acc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40f161f45ba7a128e2d1c2553ded41c55e39e794ecf8f88353f79f9c9dcc8acc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f161f45ba7a128e2d1c2553ded41c55e39e794ecf8f88353f79f9c9dcc8acc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51c14110573c5f561c19905927247ef33b05cb84a607e7856051612edf5f315b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43789ebab34eff1f2eb03c7181eff6253b5604cf4f7a81e6bdd7f010ad2f00d5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35d0be71c4cc4f9f8e53eb971e235491171f07c3b039f0ddfe6bdf4d98e44bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35d0be71c4cc4f9f8e53eb971e235491171f07c3b039f0ddfe6bdf4d98e44bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35d0be71c4cc4f9f8e53eb971e235491171f07c3b039f0ddfe6bdf4d98e44bd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aec143304c5cdbd3d31d5976665e47f751685c7875b3476dd99080dd1d5cce41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "419b90adb218c6c16156ab7eda94c9e9d3459dad95c26fa0545a0075459f7c32"
   end
 
   depends_on "go" => :build
