@@ -33,7 +33,7 @@ class Graphjin < Formula
       system "go", "build", *std_go_args(ldflags:)
     end
 
-    generate_completions_from_executable(bin/"graphjin", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"graphjin", shell_parameter_format: :cobra)
   end
 
   test do
