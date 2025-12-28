@@ -26,7 +26,7 @@ class Toolctl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"toolctl", "completion")
+    generate_completions_from_executable(bin/"toolctl", shell_parameter_format: :cobra)
   end
 
   test do
