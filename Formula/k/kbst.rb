@@ -20,7 +20,7 @@ class Kbst < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kbst", "completion")
+    generate_completions_from_executable(bin/"kbst", shell_parameter_format: :cobra)
   end
 
   test do
