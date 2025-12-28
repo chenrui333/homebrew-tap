@@ -26,7 +26,7 @@ class Sloctl < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/sloctl"
 
-    generate_completions_from_executable(bin/"sloctl", "completion")
+    generate_completions_from_executable(bin/"sloctl", shell_parameter_format: :cobra)
   end
 
   test do
