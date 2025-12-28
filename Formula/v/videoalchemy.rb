@@ -8,10 +8,12 @@ class Videoalchemy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08f571cd32c29ae75d52b40cb76abb9fd22469f1d7eabe5f23a785126e65dc5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9452f35bb3e498e888079d5588523a62f30ac37750e6f831f02959e35f7272d"
-    sha256 cellar: :any_skip_relocation, ventura:       "9874d9bdceaa4eb62e3dd562a9767263d670f3f8be5c91202159f519ee18737d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14264e7e55f9df60fa4f73cf35fa2c7a0d3f305c104d2b126cef2ce4ccac2ae8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d1920eb31c8a15e3e2960eb5d79d232609f85085091dfcde6db588a7e82527c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae565a7c2365bbd921dc8a7664ef1eef570865c272d002664bfcbbebfd1b6f9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72788fdb6f409d88c925d344d5aac48b217477cb419c3b9ebc249b517bfa412c"
   end
 
   depends_on "go" => :build
