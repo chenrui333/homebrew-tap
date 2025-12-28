@@ -22,7 +22,7 @@ class Haloy < Formula
       ldflags = "-s -w -X github.com/haloydev/haloy/cmd.version=#{version}"
       system "go", "build", *std_go_args(ldflags:, output: bin/cmd), "./cmd/#{cmd}"
 
-      generate_completions_from_executable(bin/cmd, "completion", shells: [:bash, :zsh, :fish, :pwsh])
+      generate_completions_from_executable(bin/cmd, shell_parameter_format: :cobra)
     end
   end
 
