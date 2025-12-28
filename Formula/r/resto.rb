@@ -21,7 +21,7 @@ class Resto < Formula
     ldflags = "-s -w -X main.version=v#{version} -X main.versionDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"resto", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"resto", shell_parameter_format: :cobra)
   end
 
   test do
