@@ -1,8 +1,8 @@
 class Pomo < Formula
   desc "Terminal Pomodoro Timer"
   homepage "https://github.com/Bahaaio/pomo"
-  url "https://github.com/Bahaaio/pomo/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "f758f6d1849c143accaf776979b2354f7ef0ca4b9f1f7244d75afd597248428c"
+  url "https://github.com/Bahaaio/pomo/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "42b0414334afbf03125c7b04e1dcad1d0cb9f6eb1342d54f95ff55e3f5ae2f3d"
   license "MIT"
   head "https://github.com/Bahaaio/pomo.git", branch: "main"
 
