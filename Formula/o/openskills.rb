@@ -5,6 +5,11 @@ class Openskills < Formula
   sha256 "88ab379000b618e3a460305e306cd2260eca4618ac65c50345e56ae77059f917"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "16d9ec949356c039e07ccd241dc13bb60e938887ea2386b741642886603cdd78"
+  end
+
   depends_on "node"
 
   def install
