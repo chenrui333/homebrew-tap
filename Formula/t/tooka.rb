@@ -18,7 +18,7 @@ class Tooka < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"tooka", "completions", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"tooka", shell_parameter_format: :clap)
   end
 
   test do
