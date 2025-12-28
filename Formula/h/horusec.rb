@@ -1,6 +1,6 @@
 class Horusec < Formula
   desc "Improve identification of vulnerabilities in your project with just one command"
-  homepage "https://docs.horusec.io/docs/cli/overview/"
+  homepage "https://github.com/ZupIT/horusec"
   url "https://github.com/ZupIT/horusec/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "3824728b7b29656416aaf23ff8cbda62fe9921d2fb982c19f8cda4f0df933592"
   license "Apache-2.0"
