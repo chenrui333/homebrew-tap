@@ -27,7 +27,7 @@ class FlintCli < Formula
 
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"flint")
 
-    generate_completions_from_executable(bin/"flint", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"flint", shell_parameter_format: :cobra)
   end
 
   test do
