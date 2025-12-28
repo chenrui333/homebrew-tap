@@ -8,10 +8,12 @@ class KubesealConvert < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac3f67f8fb602b70386d138ab719707ec17f9c3213188899cc8fb3f2ee242023"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af47965efa0bd1d0eec709cfa6f304e5bc20f2b8620b1f8ae3530231a02d817d"
-    sha256 cellar: :any_skip_relocation, ventura:       "98d741de2820f1cf7cd143b8174173a0dc54ddf18a52f0634a8a164e491b501f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44e6be718fddb24b39d06319e9add190d6cc693fa1982c1083fc535135a0b483"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cc55a8c31d9dbbb0ce8fd2a1786fc02e6637cf6dd4f9d553f623813a45e471e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cc55a8c31d9dbbb0ce8fd2a1786fc02e6637cf6dd4f9d553f623813a45e471e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cc55a8c31d9dbbb0ce8fd2a1786fc02e6637cf6dd4f9d553f623813a45e471e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "128faa69f618e1f1f626c636d07882a7bcf09b4bbfb01afb9bc36a80b3f33fde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24984ded1e69d0dcf3c182f20bfbd3ec30d9201be6e78fca62db4bde61cc6f21"
   end
 
   depends_on "go" => :build
