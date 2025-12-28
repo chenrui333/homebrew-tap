@@ -7,7 +7,7 @@ class IamLens < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "01f8c027d1d04e3ae308b3ec4f3b1f63fadcc03df75ae4ece441675468ef6cd8"
+    sha256 cellar: :any_skip_relocation, all: "164673622e9a4f3e6abb54ee5c4d99dfa023e9d3da9c5a32d539d4c8829df3a9"
   end
 
   depends_on "iam-collect"
