@@ -20,7 +20,7 @@ class Yr < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/yr"
 
-    generate_completions_from_executable(bin/"yr", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"yr", shell_parameter_format: :cobra)
   end
 
   test do
