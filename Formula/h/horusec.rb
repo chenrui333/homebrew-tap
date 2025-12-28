@@ -25,7 +25,7 @@ class Horusec < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/app"
 
-    generate_completions_from_executable(bin/"horusec", "completion")
+    generate_completions_from_executable(bin/"horusec", shell_parameter_format: :cobra)
   end
 
   test do
