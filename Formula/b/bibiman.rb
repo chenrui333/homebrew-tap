@@ -24,9 +24,6 @@ class Bibiman < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/bibiman --version")
 
-    # failed with Linux CI, `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     begin
       test_file = testpath/"test.bib"
       test_file.write("")
