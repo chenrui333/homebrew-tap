@@ -21,13 +21,10 @@ class Cocainate < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/AppleGamer22/cocainate/commands.Version=#{version}
-    ]
+    ldflags = "-s -w -X github.com/AppleGamer22/cocainate/commands.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"cocainate", "completion")
+    generate_completions_from_executable(bin/"cocainate", shell_parameter_format: :cobra)
     (man1/"cocainate.1").write Utils.safe_popen_read(bin/"cocainate", "manual")
   end
 
