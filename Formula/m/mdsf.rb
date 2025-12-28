@@ -21,7 +21,7 @@ class Mdsf < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "mdsf")
 
-    generate_completions_from_executable(bin/"mdsf", "completions")
+    generate_completions_from_executable(bin/"mdsf", shell_parameter_format: :clap)
   end
 
   test do
