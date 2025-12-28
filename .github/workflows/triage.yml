@@ -127,6 +127,14 @@ jobs:
               path: Formula/.+
               content: system "swift", "build"
 
+            - label: alias
+              path: Aliases/.+
+              allow_any_match: true
+
+            - label: shell-completion
+              path: Formula/.+
+              patch_content: (generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)
+
   typos:
     name: Spell Check
     runs-on: ubuntu-latest
