@@ -18,7 +18,7 @@ class Fli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fli"
 
-    generate_completions_from_executable(bin/"fli", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"fli", shell_parameter_format: :cobra)
   end
 
   test do
