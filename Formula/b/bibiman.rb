@@ -17,6 +17,12 @@ class Bibiman < Formula
 
   depends_on "rust" => :build
 
+  # Remove helix_stdx dependency from clipboard provider, upstream pr ref, https://codeberg.org/lukeflo/bibiman/pulls/69
+  patch do
+    url "https://codeberg.org/lukeflo/bibiman/commit/720c98cb758e318a824af8e10e8ce338513654fa.patch"
+    sha256 "45c5d428d011c7d847eeb560a002770e7758c1c1fcbaf6a38a009f9bb04a0a80"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
