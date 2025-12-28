@@ -27,7 +27,7 @@ class GoZzz < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"zzz")
 
-    generate_completions_from_executable(bin/"zzz", "completion")
+    generate_completions_from_executable(bin/"zzz", shell_parameter_format: :cobra)
   end
 
   test do
