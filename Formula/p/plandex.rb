@@ -24,7 +24,7 @@ class Plandex < Formula
   def install
     cd "app/cli" do
       system "go", "build", *std_go_args(ldflags: "-s -w -X plandex-cli/version.Version=#{version}")
-      generate_completions_from_executable(bin/"plandex", "completion")
+      generate_completions_from_executable(bin/"plandex", shell_parameter_format: :cobra)
     end
   end
 
