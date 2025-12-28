@@ -8,10 +8,12 @@ class Uplift < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63b6101ec7c736bc128c466dff120e3af77ffb14dd6995adac4febccbe08aa16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc01a29d543ee79597c83e7f8d21121553affc06088643e5cb31590b5519eb32"
-    sha256 cellar: :any_skip_relocation, ventura:       "93d6901b203ebfd1eabf1f208dadb58caf3cae6cd8d2027c6ae10b14fd7ec3b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d689406ab29bd8f8e0158ac4fcf705d30ae1439046b151db0a783d325e9d62"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c1de256f631b9f2ab6a8a2ae15c795e17e18c15c35922c7864c2f5101a4a38a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c1de256f631b9f2ab6a8a2ae15c795e17e18c15c35922c7864c2f5101a4a38a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c1de256f631b9f2ab6a8a2ae15c795e17e18c15c35922c7864c2f5101a4a38a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb708232f1b8b01850f4f717edcf49f3e6868ca6dc19ec68169945ea26d376d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c85f97afed13749f12c041336d96093d50be36ac409f01d9cf0371021fa196d5"
   end
 
   depends_on "go" => :build
