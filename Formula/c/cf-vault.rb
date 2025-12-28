@@ -24,7 +24,7 @@ class CfVault < Formula
     ldflags = "-s -w -s -w -X github.com/jacobbednarz/cf-vault/cmd.Rev=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"cf-vault", "completion")
+    generate_completions_from_executable(bin/"cf-vault", shell_parameter_format: :cobra)
   end
 
   test do
