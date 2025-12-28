@@ -8,10 +8,12 @@ class Tenderly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e5637665ecc3a89321ac4a64523083cb0e10454c356927776f3e33de2f18aac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a26f048b40558467ea26e81bf14581fadce5c326659c6da08c9a59c6fc9d30b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "f9440727b22cb3669055fb4e2de936a29120c8b862b6fd25269458a0b5909d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb3e05db9fe60635e1c0d3e233e8de1120aedd5ef3df28a9d91eec5b0bc7af5b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b9b196f829d27fa6918343c9abadbc76eda494ee970814bc29018b620b4ea9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b9b196f829d27fa6918343c9abadbc76eda494ee970814bc29018b620b4ea9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b9b196f829d27fa6918343c9abadbc76eda494ee970814bc29018b620b4ea9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba8a74247a6042adcf67cbe995ca25060f1f6b74daae9c0e795735fa90d6bb47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45a8bc0ba7bb784cba422cf39853341789d69ed6ff9346fd4ae241a82efbe4c0"
   end
 
   depends_on "go" => :build
