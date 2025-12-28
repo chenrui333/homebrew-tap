@@ -18,10 +18,9 @@ class FuckUCode < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/fuck-u-code"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/fuck-u-code"
 
-    generate_completions_from_executable(bin/"fuck-u-code", "completion")
+    generate_completions_from_executable(bin/"fuck-u-code", shell_parameter_format: :cobra)
   end
 
   test do
