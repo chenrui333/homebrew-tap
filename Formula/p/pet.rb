@@ -2,7 +2,7 @@ class Pet < Formula
   desc "Simple command-line snippet manager"
   homepage "https://github.com/knqyf263/pet"
   url "https://github.com/knqyf263/pet/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "2f9ffefefe07f6d2c7b7f75885e748dee3dd63024242ca22f115c85259acc7d9"
+  sha256 "b829628445b8a7039f0211fd74decee41ee5eb1c28417a4c8d8fca99de59091f"
   license "MIT"
   head "https://github.com/knqyf263/pet.git", branch: "main"
 
