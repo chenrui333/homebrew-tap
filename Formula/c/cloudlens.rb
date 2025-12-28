@@ -10,12 +10,12 @@ class Cloudlens < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d293917c4f35fa9a577d37335939b63936c1972a9ec8b1bf9b59cc947e341f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d293917c4f35fa9a577d37335939b63936c1972a9ec8b1bf9b59cc947e341f5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d293917c4f35fa9a577d37335939b63936c1972a9ec8b1bf9b59cc947e341f5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c357a4e9b45000226d430e3dcee99f50ac54a07a414cc9ec8fd1c43a1166a02c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c2730cf9e5cfdf781ca9ac829fab3c501bb16626b1efa6ec0e62206850ab637"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "006b14f41c54ef805e8dba806b84bc37a4439f686b081d3ef31f621b86ce1850"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "006b14f41c54ef805e8dba806b84bc37a4439f686b081d3ef31f621b86ce1850"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "006b14f41c54ef805e8dba806b84bc37a4439f686b081d3ef31f621b86ce1850"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca2c3778b32c22f7f73400d268be60451ec9e6def6b1e6d0cd991fe6ff9138c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b00692bbfc2829b177c2df5427a396b4ed791d7d1750a75cda64309557a0663"
   end
 
   depends_on "go" => :build
