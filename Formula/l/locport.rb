@@ -1,8 +1,8 @@
 class Locport < Formula
   desc "Manage local ports across projects"
   homepage "https://github.com/klevo/locport"
-  url "https://github.com/klevo/locport/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "e8bc684ee239ddef9c2d98f24f34a9b716e5f539a96300959db278a8e156a56b"
+  url "https://github.com/klevo/locport/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "5c30f9930c45ce4c8052235f1d8c2df3741e20f56a864be53ae1fcc8aee3ddfa"
   license "MIT"
 
   bottle do
