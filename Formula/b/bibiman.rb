@@ -1,8 +1,8 @@
 class Bibiman < Formula
   desc "TUI for fast and simple interacting with your BibLaTeX database"
   homepage "https://codeberg.org/lukeflo/bibiman"
-  url "https://codeberg.org/lukeflo/bibiman/archive/v0.19.1.tar.gz"
-  sha256 "409d600df1346e89d435bdf6be3b6dee1f76f2a86eec6be203b459531ecba575"
+  url "https://codeberg.org/lukeflo/bibiman/archive/v0.19.2.tar.gz"
+  sha256 "43f0f4ae2c0b2c533a5a6590153b258e0b41b647ed45cfb73f76b65519e3e3da"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/lukeflo/bibiman.git", branch: "main"
 
@@ -16,12 +16,6 @@ class Bibiman < Formula
   end
 
   depends_on "rust" => :build
-
-  # Remove helix_stdx dependency from clipboard provider, upstream pr ref, https://codeberg.org/lukeflo/bibiman/pulls/69
-  patch do
-    url "https://codeberg.org/lukeflo/bibiman/commit/720c98cb758e318a824af8e10e8ce338513654fa.patch"
-    sha256 "45c5d428d011c7d847eeb560a002770e7758c1c1fcbaf6a38a009f9bb04a0a80"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
