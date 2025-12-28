@@ -21,7 +21,7 @@ class Spicedb < Formula
     ldflags = "-s -w -X github.com/jzelinskie/cobrautil/v2.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/spicedb"
 
-    generate_completions_from_executable(bin/"spicedb", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"spicedb", shell_parameter_format: :cobra)
     (man1/"spicedb.1").write Utils.safe_popen_read(bin/"spicedb", "man")
   end
 
