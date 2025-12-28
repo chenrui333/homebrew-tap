@@ -28,7 +28,7 @@ class Kat < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/kat"
 
-    generate_completions_from_executable(bin/"kat", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kat", shell_parameter_format: :cobra)
   end
 
   test do
