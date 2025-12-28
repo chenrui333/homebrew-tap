@@ -7,10 +7,12 @@ class Protodep < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ffb701c7fc8d041d2e20990b3a7b6d891d8ea31110b7d8dbff84ed60786b43e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00de15ca4cce4708369b303681146e21df1d79d84ff8a301e0b6782a1fafca8f"
-    sha256 cellar: :any_skip_relocation, ventura:       "5403f3af0bd42e59feab3a238b1544faae26ef9d41d79414da2d4502a27ee299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74b100e1dcdd457a8a19e52205ec3c5b3a31bd589e5afdadbf2293a40f52b5a1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fd211e495e92aac44aecbae393438c951ef3366fcefbe71e8d8b746b55daeeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fd211e495e92aac44aecbae393438c951ef3366fcefbe71e8d8b746b55daeeb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fd211e495e92aac44aecbae393438c951ef3366fcefbe71e8d8b746b55daeeb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e1337613c632f412c15120e2700d54b41d89923be4225014b27303bcbd050bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72fce7ed955ed81c0d3d7341dcdb62dcf1f5be3c49ed9d499d895ac257112f3b"
   end
 
   depends_on "go" => :build
