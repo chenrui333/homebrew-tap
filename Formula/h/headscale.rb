@@ -25,7 +25,7 @@ class Headscale < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/headscale"
 
-    generate_completions_from_executable(bin/"headscale", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"headscale", shell_parameter_format: :cobra)
   end
 
   test do
