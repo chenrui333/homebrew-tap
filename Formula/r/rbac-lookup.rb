@@ -8,11 +8,12 @@ class RbacLookup < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22697b7d33bd8cd8fcc5abd7429e03f117698336e143003974d27813d39ca305"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22697b7d33bd8cd8fcc5abd7429e03f117698336e143003974d27813d39ca305"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22697b7d33bd8cd8fcc5abd7429e03f117698336e143003974d27813d39ca305"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b73e11b8a3bda51cf325708b7cefc76d5548b00f0fb4afdd9c543fa59783748b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6fdffce1c6219411666fc7c9f42ca4c358b8d9750fbe4733600ceeb459ab246"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be21a8b8b0a6745fbcf829a1d46797d8b073bd52759a406df764555c2e2153b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be21a8b8b0a6745fbcf829a1d46797d8b073bd52759a406df764555c2e2153b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be21a8b8b0a6745fbcf829a1d46797d8b073bd52759a406df764555c2e2153b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99e1856614c0f46287436e3717771f46a51d2680b2a2ddd77cbb298cfa61fe18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90da988885e2b68fe5e19c9f7d60941221be27a09f674be37f41f436f7ed28bc"
   end
 
   depends_on "go" => :build
