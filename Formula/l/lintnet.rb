@@ -18,6 +18,9 @@ class Lintnet < Formula
 
   depends_on "go" => :build
 
+  # add completion compatibility patch
+  patch :DATA
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/lintnet"
@@ -33,3 +36,38 @@ class Lintnet < Formula
     assert_match "A configuration file of lintnet", (testpath/"lintnet.jsonnet").read
   end
 end
+
+__END__
+diff --git a/pkg/cli/runner.go b/pkg/cli/runner.go
+index 01bd584..65ab375 100644
+--- a/pkg/cli/runner.go
++++ b/pkg/cli/runner.go
+@@ -13,6 +13,21 @@ type GlobalFlags struct {
+ 	Config   string
+ }
+ 
++// normalizeArgs rewrites "completion powershell" to "completion pwsh" for Homebrew compatibility.
++// Homebrew's generate_completions_from_executable calls "completion powershell",
++// but urfave/cli/v3 only recognizes "pwsh", not "powershell".
++// This function treats "powershell" as an alias for "pwsh".
++func normalizeArgs(args []string) []string {
++	// Check if args match: [<program>, "completion", "powershell", ...]
++	if len(args) >= 3 && args[1] == "completion" && args[2] == "powershell" {
++		// Copy-on-write: create a new slice to avoid mutating the original
++		normalized := append([]string(nil), args...)
++		normalized[2] = "pwsh"
++		return normalized
++	}
++	return args
++}
++
+ func Run(ctx context.Context, logger *slogutil.Logger, env *urfave.Env) error {
+ 	gFlags := &GlobalFlags{}
+ 	return urfave.Command(env, &cli.Command{ //nolint:wrapcheck
+@@ -46,5 +61,5 @@ func Run(ctx context.Context, logger *slogutil.Logger, env *urfave.Env) error {
+ 			}).command(logger, gFlags),
+ 			(&newCommand{}).command(logger, gFlags),
+ 		},
+-	}).Run(ctx, env.Args)
++	}).Run(ctx, normalizeArgs(env.Args))
+ }
