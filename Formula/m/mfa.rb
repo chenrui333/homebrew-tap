@@ -26,7 +26,7 @@ class Mfa < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"mfa", "completion")
+    generate_completions_from_executable(bin/"mfa", shell_parameter_format: :cobra)
   end
 
   test do
