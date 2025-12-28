@@ -22,7 +22,7 @@ class Cohctl < Formula
     ldflags = "-s -w -X main.Version=#{version} -X main.Commit=#{tap.user} -X main.Date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cohctl"
 
-    generate_completions_from_executable(bin/"cohctl", "completion")
+    generate_completions_from_executable(bin/"cohctl", shell_parameter_format: :cobra)
   end
 
   test do
