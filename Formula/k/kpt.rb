@@ -26,7 +26,7 @@ class Kpt < Formula
     ldflags = "-s -w -X github.com/kptdev/kpt/run.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kpt", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"kpt", shell_parameter_format: :cobra)
   end
 
   test do
