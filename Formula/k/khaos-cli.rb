@@ -3,8 +3,8 @@ class KhaosCli < Formula
 
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://files.pythonhosted.org/packages/56/21/e141421bbeec357238902169392f8de1417ee856e9cb742499e5547d66a6/khaos_cli-0.6.0.tar.gz"
-  sha256 "30c62c64bf96786e1e52956d10c88315bc216785d5a78fd8fe2d44278808f890"
+  url "https://files.pythonhosted.org/packages/0f/70/ff6027de843d508548dd3dd6ccfc6b55ff08b79faf2032605fb61e443416/khaos_cli-0.6.3.tar.gz"
+  sha256 "1511af48a2414a21028a6cb8a09446158ad9cc48e7deae2ab525725259a197d3"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
