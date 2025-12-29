@@ -5,6 +5,11 @@ class Pinme < Formula
   sha256 "065fa4f23364757a618b73db0f72b887feaaa9613144119631cca9a8cc2af92a"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "69e854c3001bb4a5ddb1a92f13c99f04200230192668f7ad1be9a48cc8a4f87e"
+  end
+
   depends_on "node"
 
   def install
