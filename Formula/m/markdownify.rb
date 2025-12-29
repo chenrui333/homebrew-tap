@@ -8,6 +8,11 @@ class Markdownify < Formula
   license "MIT"
   head "https://github.com/matthewwithanm/python-markdownify.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "fe6c488f7bb77c01976c156d83f5ac5d1a1a4319634ff64d1950a03e1c4f3047"
+  end
+
   depends_on "python@3.14"
 
   resource "beautifulsoup4" do
