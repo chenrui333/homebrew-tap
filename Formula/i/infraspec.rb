@@ -9,12 +9,11 @@ class Infraspec < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "406f10b4e273c2fee002e0fb0ee6980de0b1e481339e9fd5fe3bfc74a2d74a92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "406f10b4e273c2fee002e0fb0ee6980de0b1e481339e9fd5fe3bfc74a2d74a92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "406f10b4e273c2fee002e0fb0ee6980de0b1e481339e9fd5fe3bfc74a2d74a92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ff16df5c0dfbef3b3d891bac058120806c00b4228805cb8e0cf3e9fbbe0c59a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15aff358a499ea8d7e9bbe5bbd97fc7ad5a619c69163900bf3f736e8c09d6e1a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "978c915d8b7be64e8a3a795328ba05e46a7b016423427705f0d0ab5288ac4075"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "978c915d8b7be64e8a3a795328ba05e46a7b016423427705f0d0ab5288ac4075"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "978c915d8b7be64e8a3a795328ba05e46a7b016423427705f0d0ab5288ac4075"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a52dc5201b80b411a83872a46463acb66656f2f83944da58bae69b33c02fb93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8e4ec05e6fc5f245d3e7fdb2761ac178ef581bd10661957272251667794710a"
   end
 
   depends_on "go" => :build
