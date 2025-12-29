@@ -417,6 +417,7 @@ brew install --cask <tool>
 - `olla`
 - `omekasy`
 - `omnictl`
+- `openskills`
 - `opensnitch-tui`
 - `optivorbis`
 - `osmar`
