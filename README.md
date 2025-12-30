@@ -191,6 +191,7 @@ brew install --cask <tool>
 - `dxt`
 - `e2c`
 - `eas-cli`
+- `easy-llm-cli`
 - `ecscope`
 - `elastop`
 - `emoj`
@@ -359,6 +360,7 @@ brew install --cask <tool>
 - `logfire-mcp`
 - `lola`
 - `lstags`
+- `lsv`
 - `luaformatter`
 - `lib-x`
 - `libdivide`
@@ -366,6 +368,7 @@ brew install --cask <tool>
 - `mamediff`
 - `mapscii`
 - `marchat`
+- `markdownify`
 - `markpdf`
 - `mcman`
 - `mcp-alchemy`
@@ -439,6 +442,7 @@ brew install --cask <tool>
 - `phpinsights`
 - `pike`
 - `pingu`
+- `pinme`
 - `pipeform`
 - `pitaya`
 - `pixelle`
