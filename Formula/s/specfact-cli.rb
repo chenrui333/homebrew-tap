@@ -3,8 +3,8 @@ class SpecfactCli < Formula
 
   desc "Reverse Engineer Legacy Python into Enforceable Contracts"
   homepage "https://specfact.com/"
-  url "https://files.pythonhosted.org/packages/d0/3d/1a74a2c92c25a29d5faf78db281d5620442d55a8eb563417b17e4462d088/specfact_cli-0.21.0.tar.gz"
-  sha256 "1ebc4100344ca5c4527e910249bbcb071c8356bc6f105efb75d1abf216eb04ba"
+  url "https://files.pythonhosted.org/packages/ba/16/826c7c6eb67d45a7a43f63a0cd69fef139c7c39b8ef84b3558edbaef216e/specfact_cli-0.21.1.tar.gz"
+  sha256 "4d3a501b17a744823889280c15fb7229107d3d3d4d66cb76f93dcfa4d800af50"
   license "Apache-2.0"
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
