@@ -45,7 +45,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@de5be2e08e11cf6633df490a1195080edb8e9f5e
+        uses: Homebrew/actions/setup-homebrew@ac399ee818eb2bb93b838aeccd2cbaa6272e2403
 
       - name: Build bottles via test-bot
         run: |
@@ -60,7 +60,7 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Post-build steps
         if: always()
-        uses: Homebrew/actions/post-build@de5be2e08e11cf6633df490a1195080edb8e9f5e
+        uses: Homebrew/actions/post-build@ac399ee818eb2bb93b838aeccd2cbaa6272e2403
         with:
           # runner: ${{ matrix.os }}
           bottles-directory: ${{ env.BOTTLES_DIR }}
@@ -87,7 +87,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@de5be2e08e11cf6633df490a1195080edb8e9f5e
+        uses: Homebrew/actions/setup-homebrew@ac399ee818eb2bb93b838aeccd2cbaa6272e2403
 
       - name: Download bottles from GitHub Actions
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
@@ -98,7 +98,7 @@ jobs:
 
       - name: Setup git
         id: git-user-config
-        uses: Homebrew/actions/git-user-config@de5be2e08e11cf6633df490a1195080edb8e9f5e
+        uses: Homebrew/actions/git-user-config@ac399ee818eb2bb93b838aeccd2cbaa6272e2403
         with:
           username: BrewTestBot
 
