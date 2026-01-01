@@ -3,8 +3,8 @@ class Llmswap < Formula
 
   desc "Switch between Anthropic, OpenAI, Google, Ollama, Watsonx, etc"
   homepage "https://github.com/sreenathmmenon/llmswap"
-  url "https://files.pythonhosted.org/packages/86/45/4686641918afbc4637591ac9255127909184be084e2bb5ed4e895517db57/llmswap-5.5.3.tar.gz"
-  sha256 "f155b7b3d48b7ec3b695633383668a901e1652f5ab69dd382a97e3de74986b03"
+  url "https://files.pythonhosted.org/packages/94/44/b5b6684e95b9c3a07cad177690de501177fbc9731cf53b20a4074711908a/llmswap-5.5.4.tar.gz"
+  sha256 "d3065951a8a5587c477cc3de731bb0311385327026a9165fe7a402136ea61ed6"
   license "MIT"
   head "https://github.com/sreenathmmenon/llmswap.git", branch: "main"
 
@@ -271,8 +271,8 @@ class Llmswap < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/62/1d/d559954c70be4aade5a6c292c2a940718c4f1da764866b82d8f4261eea3c/pyparsing-3.3.0.tar.gz"
-    sha256 "0de16f2661afbab11fe6645d9472c3b96968d2fffea5b0cc9da88f5be286f039"
+    url "https://files.pythonhosted.org/packages/33/c1/1d9de9aeaa1b89b0186e5fe23294ff6517fce1bc69149185577cd31016b2/pyparsing-3.3.1.tar.gz"
+    sha256 "47fad0f17ac1e2cad3de3b458570fbc9b03560aa029ed5e16ee5554da9a2251c"
   end
 
   resource "python-dotenv" do
@@ -316,8 +316,8 @@ class Llmswap < Formula
   end
 
   resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/3f/3d/6a4ec47010e8de34dade20c8e7bce90502b173f62a6b41619523a3fcf562/typer_slim-0.20.1.tar.gz"
-    sha256 "bb9e4f7e6dc31551c8a201383df322b81b0ce37239a5ead302598a2ebb6f7c9c"
+    url "https://files.pythonhosted.org/packages/f9/3b/2f60ce16f578b1db5b8816d37d6a4d9786b33b76407fc8c13b0b86312c31/typer_slim-0.21.0.tar.gz"
+    sha256 "f2dbd150cfa0fead2242e21fa9f654dfc64773763ddf07c6be9a49ad34f79557"
   end
 
   resource "types-requests" do
