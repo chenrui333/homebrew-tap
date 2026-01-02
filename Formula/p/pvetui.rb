@@ -8,11 +8,11 @@ class Pvetui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eba3c54c5db2b85a872b48496b9bc346155bc133f6d0078cf2632ab040b1340e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eba3c54c5db2b85a872b48496b9bc346155bc133f6d0078cf2632ab040b1340e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eba3c54c5db2b85a872b48496b9bc346155bc133f6d0078cf2632ab040b1340e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "628ddc06b3b36eed7d8d6ed4dd03c7a294267ccd519d13f094356a550e1ddd20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47aceeb65e1a08c6935c2299456947ac3539eb43c91d27ff530d0999e930a92e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8847d86527beb817775696b473de756e0af327418057c3a5d727f17511fa0f78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8847d86527beb817775696b473de756e0af327418057c3a5d727f17511fa0f78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8847d86527beb817775696b473de756e0af327418057c3a5d727f17511fa0f78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44277790e61ae353c3cf73f643dc6b5af39b600e92bf1be6978bb31cfced559f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3ded9303dc23e1ec287b4f2ef8a9f751487356f4241770e34841f0ac3991dbc"
   end
 
   depends_on "go" => :build
