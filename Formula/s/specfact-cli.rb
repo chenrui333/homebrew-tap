@@ -3,8 +3,8 @@ class SpecfactCli < Formula
 
   desc "Reverse Engineer Legacy Python into Enforceable Contracts"
   homepage "https://specfact.com/"
-  url "https://files.pythonhosted.org/packages/ba/16/826c7c6eb67d45a7a43f63a0cd69fef139c7c39b8ef84b3558edbaef216e/specfact_cli-0.21.1.tar.gz"
-  sha256 "4d3a501b17a744823889280c15fb7229107d3d3d4d66cb76f93dcfa4d800af50"
+  url "https://files.pythonhosted.org/packages/61/f5/47df2a744240d2f75dd2657b5143542dc024d05d17eac7d0d188f0a034d7/specfact_cli-0.22.0.tar.gz"
+  sha256 "380617c41bcd16ae869f1f181c576d0f5f4b13bf40f0ebde0878e9012b116976"
   license "Apache-2.0"
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
@@ -67,8 +67,8 @@ class SpecfactCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/9a/c8/dd58967d119baab745caec2f9d853297cec1989ec1d63f677d3880632b88/gitpython-3.1.45.tar.gz"
-    sha256 "85b0ee964ceddf211c41b9f27a49086010a190fd8132a24e21f362a4b36a791c"
+    url "https://files.pythonhosted.org/packages/df/b5/59d16470a1f0dfe8c793f9ef56fd3826093fc52b3bd96d6b9d6c26c7e27b/gitpython-3.1.46.tar.gz"
+    sha256 "400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f"
   end
 
   resource "googleapis-common-protos" do
@@ -82,8 +82,8 @@ class SpecfactCli < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/25/b3/e098d91195f121602bb3e4d00276cf1da0035df53e9deeb18115467d6da9/hypothesis-6.148.8.tar.gz"
-    sha256 "fa6b2ae029bc02f9d2d6c2257b0cbf2dc3782362457d2027a038ad7f4209c385"
+    url "https://files.pythonhosted.org/packages/b4/1b/de4a349fe5942e500c3f6b0e61e09347d9fefab9e1ac7048c909080a31a0/hypothesis-6.148.9.tar.gz"
+    sha256 "6ec0696ed2fff8c514d61b6f1ca2cd1cb00c948ffd18cab1877c941c0ddb2839"
   end
 
   resource "icontract" do
@@ -227,13 +227,13 @@ class SpecfactCli < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/3a/2b/7a1f1ebcd6b3f14febdc003e658778d81e76b40df2267904ee6b13f0c5c6/ruamel_yaml-0.18.17.tar.gz"
-    sha256 "9091cd6e2d93a3a4b157ddb8fabf348c3de7f1fb1381346d985b6b247dcd8d3c"
+    url "https://files.pythonhosted.org/packages/0c/5d/8a1de57b5a11245c61c906d422cd1e66b6778e134a1c68823a451be5759c/ruamel_yaml-0.19.0.tar.gz"
+    sha256 "ff19233e1eb3e9301e7a3d437847713e361a80faace167639327efbe8c0e5f95"
   end
 
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
-    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
+  resource "ruamel-yaml-clibz" do
+    url "https://files.pythonhosted.org/packages/8f/95/9bcc25e84703180c3941062796572e0fc73bd659086efdc4ef9b8af19e36/ruamel_yaml_clibz-0.3.4.tar.gz"
+    sha256 "e99077ac6aa4943af1000161a0cb793a379c5c8cd03ea8dd3803e0b58739b685"
   end
 
   resource "shellingham" do
