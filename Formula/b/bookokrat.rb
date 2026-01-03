@@ -8,11 +8,11 @@ class Bookokrat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d25be1c092794c7e1de537a18103bb84a646d35bb3d178ffee5989f0b815c98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7a791ed5aa1daf6950fd100450547a18c4c0323a02a0dfed24d557a89f38d22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d441e3fdc25687239f3271871ae813dd76c266ddf89944bcd39798d0d411a5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7faec892bb759ea4fc1b3ccbc6ac520105c7239740b730baa7718f9f9f72178d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "533fd70d95e53a6ecf89bbe32cb5beda99a386fea7e7d76bbfe408b385b57f0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b75d710291cfd2394ad50f39723e176d301daa0cd9cf35d5fd6b19b620f4a47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "883fcacc1cc81be887e0eb456665aca6720e582bdcab7a2695b5e6d2e829d9b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43af416da098ca498cf3fb78b90d5a016318bdf2a5dc428bf8a5a8166a02940d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c87240dd8c442e39b3d2a9cc91cbe8109f91a457c979e30f80d9ff227a61380"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37db9f8d48028d15579a0a9893964795853b64f6565e70efecb0c0eae7fae2bf"
   end
 
   depends_on "rust" => :build
