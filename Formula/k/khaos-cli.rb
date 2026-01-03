@@ -3,8 +3,8 @@ class KhaosCli < Formula
 
   desc "Kafka traffic simulator for observability and chaos engineering"
   homepage "https://github.com/aleksandarskrbic/khaos"
-  url "https://files.pythonhosted.org/packages/56/21/e141421bbeec357238902169392f8de1417ee856e9cb742499e5547d66a6/khaos_cli-0.6.0.tar.gz"
-  sha256 "30c62c64bf96786e1e52956d10c88315bc216785d5a78fd8fe2d44278808f890"
+  url "https://files.pythonhosted.org/packages/12/53/27e6d5a744ab0ed7a2066ddc6e26606bdacdadef49cc4cb57bafca4f37de/khaos_cli-0.6.4.tar.gz"
+  sha256 "12945d5935353628e17d000a9e311c58caf1ce9e4996962ad628fa8bb5b29c53"
   license "Apache-2.0"
   head "https://github.com/aleksandarskrbic/khaos.git", branch: "main"
 
@@ -56,8 +56,8 @@ class KhaosCli < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/30/b9/0897fb5888ddda099dc0f314a8a9afb5faa7e52eaf6865c00686dfb394db/faker-39.0.0.tar.gz"
-    sha256 "ddae46d3b27e01cea7894651d687b33bcbe19a45ef044042c721ceac6d3da0ff"
+    url "https://files.pythonhosted.org/packages/73/5e/f30b61314d3cbfdb48a631a1aa859bbff8a1945436d52981d5afc6ee87c6/faker-39.1.0.tar.gz"
+    sha256 "35d40738093a62158f349f4996115680ca591d9789f24c99a4afa522a1dd4018"
   end
 
   resource "fastavro" do
