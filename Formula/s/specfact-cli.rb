@@ -3,8 +3,8 @@ class SpecfactCli < Formula
 
   desc "Reverse Engineer Legacy Python into Enforceable Contracts"
   homepage "https://specfact.com/"
-  url "https://files.pythonhosted.org/packages/61/f5/47df2a744240d2f75dd2657b5143542dc024d05d17eac7d0d188f0a034d7/specfact_cli-0.22.0.tar.gz"
-  sha256 "380617c41bcd16ae869f1f181c576d0f5f4b13bf40f0ebde0878e9012b116976"
+  url "https://files.pythonhosted.org/packages/79/fc/8906ff1a31042c0122e6eb88862e5fbc5d6cdbd401f18ad269443161f89b/specfact_cli-0.22.1.tar.gz"
+  sha256 "428710424337260560363b8d789db8b89d9a9e43a07ac1ba482ecffd80cf0a7a"
   license "Apache-2.0"
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
@@ -82,8 +82,8 @@ class SpecfactCli < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/b4/1b/de4a349fe5942e500c3f6b0e61e09347d9fefab9e1ac7048c909080a31a0/hypothesis-6.148.9.tar.gz"
-    sha256 "6ec0696ed2fff8c514d61b6f1ca2cd1cb00c948ffd18cab1877c941c0ddb2839"
+    url "https://files.pythonhosted.org/packages/30/c7/d6805f66a7650549cbddca008a3042dcd0ec71394902c1937aa0ab0efa1e/hypothesis-6.148.10.tar.gz"
+    sha256 "3a905400ec1ff59804da182e42e659c96795eb28c47638520bf42cadbd471a38"
   end
 
   resource "icontract" do
@@ -227,13 +227,8 @@ class SpecfactCli < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/0c/5d/8a1de57b5a11245c61c906d422cd1e66b6778e134a1c68823a451be5759c/ruamel_yaml-0.19.0.tar.gz"
-    sha256 "ff19233e1eb3e9301e7a3d437847713e361a80faace167639327efbe8c0e5f95"
-  end
-
-  resource "ruamel-yaml-clibz" do
-    url "https://files.pythonhosted.org/packages/8f/95/9bcc25e84703180c3941062796572e0fc73bd659086efdc4ef9b8af19e36/ruamel_yaml_clibz-0.3.4.tar.gz"
-    sha256 "e99077ac6aa4943af1000161a0cb793a379c5c8cd03ea8dd3803e0b58739b685"
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "shellingham" do
