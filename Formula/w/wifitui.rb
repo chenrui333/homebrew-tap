@@ -8,11 +8,11 @@ class Wifitui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e179b500b7364740d78bffa758b0c622fbb13511c9d07d0124af266a25cc9ac3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e179b500b7364740d78bffa758b0c622fbb13511c9d07d0124af266a25cc9ac3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e179b500b7364740d78bffa758b0c622fbb13511c9d07d0124af266a25cc9ac3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27dcf58e310ab29948c3ad2f6f222dcd3fec0b64d1b10e9656255d003c9b5ad9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "488bf347d8eb7714cc09e6a8eacac7947556e00d45eaa04c0742fbf647b7755e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58a37318b1d1b42fef00624ec1accd3e5bfd47a6b50ba4149516141cd0732a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58a37318b1d1b42fef00624ec1accd3e5bfd47a6b50ba4149516141cd0732a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58a37318b1d1b42fef00624ec1accd3e5bfd47a6b50ba4149516141cd0732a2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "643013c7b1132eeb35badf844d4585a59207025a20045ab85a8b9b25c0df2246"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54c86ef265c3d5c192d58c5789d264f57c48f6989915995a36cfac4fde932527"
   end
 
   depends_on "go" => :build
