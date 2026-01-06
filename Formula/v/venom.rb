@@ -2,8 +2,8 @@
 class Venom < Formula
   desc "Manage and run your integration tests with efficiency"
   homepage "https://github.com/ovh/venom"
-  url "https://github.com/ovh/venom/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "8047a7d20aa5be003684182830ddf05b6133f0761a89256b5791fe665358dff9"
+  url "https://github.com/ovh/venom/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "de7ef1f7794d0aa3e3dceb55cc54e44d4a52594bf1e9af0e9c73f85e6071cfd3"
   license "Apache-2.0"
   head "https://github.com/ovh/venom.git", branch: "master"
 
