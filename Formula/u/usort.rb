@@ -3,8 +3,8 @@ class Usort < Formula
 
   desc "Safe, minimal import sorting for Python projects"
   homepage "https://usort.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/df/69/8bcbed123ec60ee3e529ec39ebb0bd405cc17bcf101094513ad05c326f6b/usort-1.1.0.tar.gz"
-  sha256 "a24d3a19c80d006b82d47319ec42cca740e4a1efceba35465e1fd49393a28966"
+  url "https://files.pythonhosted.org/packages/14/eb/5bfe7a497da7c780760e545503e3b469687cc02f044348952edf6b65378a/usort-1.1.1.tar.gz"
+  sha256 "9e6fa64fc0f86a111255a8baa6cf8fd3957fe4b7e68090d380653f4c58751950"
   license "MIT"
   head "https://github.com/facebook/usort.git", branch: "main"
 
@@ -27,8 +27,8 @@ class Usort < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "libcst" do
@@ -54,11 +54,6 @@ class Usort < Formula
   resource "stdlibs" do
     url "https://files.pythonhosted.org/packages/e4/83/ac15c4a3c059725dcb5f5d76270b986808cc12d2d7d417ee540d37609e46/stdlibs-2025.10.28.tar.gz"
     sha256 "18db81f45f7783ddf86b80771e061782c70e2f4a8642843b3c80b42cd774b24f"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "trailrunner" do
