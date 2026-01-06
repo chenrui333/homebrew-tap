@@ -9,12 +9,11 @@ class Venom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e8db527425ec5376f5b442cfdea883535aee5a941aea031a404aaa34d52f450"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "831fd809ab5f8b0ee736463089ce8af3b9bf17211963649d7922f947559b0997"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e6b93a2c858af520853f11a9e922b5ec2d828272cda1514401706a9477ef68b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51c28ec00409ba8e8b07b86f8841ba468ac721cec5817c38f9a3f2a899734aec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ce6cc8097b008307085a6ec95dbc1eea22263f10d3eb41155bb4ab0d12d1a5c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "055ea8c74e4da8b83370f20f4633ec5dbc9f65d6feb062b1b0b080fc0e0ade41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f348c0649bcbeacfb014fdc31cadabe05ca6b8a4c94da7385f80dfc572d2c7fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d75442d6440e547499ec4fa15402c95ec892d9ecda470a5ccddb80430f043bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "442d6db7d53c965b5e0161b07fd3949f5b2878473c4c8960bc9a3c2262092060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "385fead16c046cc90e7da7ce9c76668c2425f818a9487c127fa8c7227218e346"
   end
 
   depends_on "go" => :build
