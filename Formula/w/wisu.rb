@@ -1,8 +1,8 @@
 class Wisu < Formula
   desc "Fast, minimalist directory tree viewer, written in Rust"
   homepage "https://github.com/sh1zen/wisu"
-  url "https://github.com/sh1zen/wisu/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "3f2ed775b6b0050390a63d230847e4eb527f35ff058b79ed375236cf5e3e665e"
+  url "https://github.com/sh1zen/wisu/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "4e638701b312987cb9af6cde412bf7fc15d80ae42d234de7fd6ca648958557fa"
   license "Apache-2.0"
   head "https://github.com/sh1zen/wisu.git", branch: "main"
 
