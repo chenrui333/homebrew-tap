@@ -3,8 +3,8 @@ class Usort < Formula
 
   desc "Safe, minimal import sorting for Python projects"
   homepage "https://usort.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/14/eb/5bfe7a497da7c780760e545503e3b469687cc02f044348952edf6b65378a/usort-1.1.1.tar.gz"
-  sha256 "9e6fa64fc0f86a111255a8baa6cf8fd3957fe4b7e68090d380653f4c58751950"
+  url "https://files.pythonhosted.org/packages/71/42/13cd4343e3bc508efad5d2b229af8afa88db3ba66d3ad4f112308cecc1dd/usort-1.1.2.tar.gz"
+  sha256 "784f780d85d2a8063e0a24ce4f9bbb7b4cac07028d51394a01789aa7ca130399"
   license "MIT"
   head "https://github.com/facebook/usort.git", branch: "main"
 
@@ -42,8 +42,8 @@ class Usort < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
-    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+    url "https://files.pythonhosted.org/packages/4c/b2/bb8e495d5262bfec41ab5cb18f522f1012933347fb5d9e62452d446baca2/pathspec-1.0.3.tar.gz"
+    sha256 "bac5cf97ae2c2876e2d25ebb15078eb04d76e4b98921ee31c6f85ade8b59444d"
   end
 
   resource "pyyaml-ft" do
