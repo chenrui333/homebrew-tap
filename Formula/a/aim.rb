@@ -8,9 +8,11 @@ class Aim < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d88b7c28e9a12ab6a5caf14ae75db4402369ecd52658ee50c03150c78de03b28"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "620a26324ad68e10b1a0f6745f3502d882fc320f3b2ec1386d7cded265fe8bd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7610add3e929c90810bf41898222f2f8f51ffc947ffb6b3a8d13a52faa92854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8de7738e8dd003d826f77e4b4485cca4efc28503e04c7d50c8b238f526cde50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e92f98a9eb349d7bd871dd6bdb51af7d8d3dc1f727e7a3f7bc3baf3a224fc150"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1d36a9447354ce3752c9734aa4541aa380560d6cb2748555562b621f6ca4d0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "989e853737f98c4f99cd1abb23c55c5626df4bcba4e20d4f9d0e2be0e0363f0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "388bdd6a6ce5c2887422741a941d094fcc332ca4a8074cf5df8e81e91e289fb0"
   end
 
   depends_on "pkgconf" => :build
