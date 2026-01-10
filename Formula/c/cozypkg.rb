@@ -1,8 +1,8 @@
 class Cozypkg < Formula
   desc "Cozy wrapper around Helm and Flux CD for local development"
   homepage "https://github.com/cozystack/cozypkg"
-  url "https://github.com/cozystack/cozypkg/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "167f184beceb030a1d15dd941bc7d2f90a89a97e9268eba98dfe94a2ca586e7f"
+  url "https://github.com/cozystack/cozypkg/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "8ae439290ed31e9fbfc1ec0eebff71e2ac70f33ccd8361dea2f92324ad6c5681"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozypkg.git", branch: "main"
 
