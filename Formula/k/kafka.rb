@@ -20,8 +20,8 @@ class Kafka < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5693294afbccfda699c56b8a15c6fcc71bdc357dff246b9bf24b23862fcef8"
   end
 
-  depends_on "openjdk"
-  depends_on "zookeeper"
+  depends_on "openjdk@21"
+  depends_on "chenrui333/tap/zookeeper"
 
   def install
     data = var/"lib"
@@ -46,7 +46,7 @@ class Kafka < Formula
     libexec.install "libs"
 
     prefix.install "bin"
-    bin.env_script_all_files(libexec/"bin", Language::Java.overridable_java_home_env)
+    bin.env_script_all_files(libexec/"bin", Language::Java.overridable_java_home_env("21"))
     Dir["#{bin}/*.sh"].each { |f| mv f, f.to_s.gsub(/.sh$/, "") }
 
     mv "config", "kafka"
