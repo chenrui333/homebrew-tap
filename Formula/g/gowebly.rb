@@ -1,8 +1,8 @@
 class Gowebly < Formula
   desc "Next-generation CLI tool to easily build amazing web applications"
   homepage "https://gowebly.org/"
-  url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.0.5.tar.gz"
-  sha256 "1fb7c5ffc04ece4478c6579ccde4f7df82aeccab96e59cd2330fb223627a84a5"
+  url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.0.6.tar.gz"
+  sha256 "6d5292f12855495c369316fd3a9d830715be65f5b7a1762d55f53974dfed0ca6"
   license "Apache-2.0"
   head "https://github.com/gowebly/gowebly.git", branch: "main"
 
