@@ -318,6 +318,7 @@ brew install --cask <tool>
 - `jules`
 - `junit2html`
 - `jwt-ui`
+- `kafka`
 - `kaluma-cli`
 - `kandc`
 - `kanha`
