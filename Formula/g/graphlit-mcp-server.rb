@@ -7,7 +7,7 @@ class GraphlitMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "30bf49f1d1daf11b5d9d2d5dea5c6f6a773d66ebe45be3104fd677353e62a786"
+    sha256 cellar: :any_skip_relocation, all: "f23f1836d3e614d7ed27a6d439f294f6959974e7620ba4a6eea05973e04f35ee"
   end
 
   depends_on "node"
