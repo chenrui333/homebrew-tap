@@ -8,11 +8,11 @@ class Mcpd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed5aceb6c06f5da35faf3d0dbd87a6832b31d488eb6d2e328def95fdd0ec8071"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed5aceb6c06f5da35faf3d0dbd87a6832b31d488eb6d2e328def95fdd0ec8071"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed5aceb6c06f5da35faf3d0dbd87a6832b31d488eb6d2e328def95fdd0ec8071"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5756cc153c415b08bf1879c03e6ef8e874d15d44f048f89494f82b4619bc0204"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90efb62a32f8b13dac56ce2069febc778a604f29e87c2b4b2ded09b34f548724"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbf83545aa32be5c14443a9b54f84a3a83f23d6a601c871575225642bc72ad93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbf83545aa32be5c14443a9b54f84a3a83f23d6a601c871575225642bc72ad93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbf83545aa32be5c14443a9b54f84a3a83f23d6a601c871575225642bc72ad93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdfda08b408fbd35c8f652a950277df8c2c47a38d1ec4ef8a4fdd2b98ff9da31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe992c7112df58b0d4dfe2bf3a6f830d883505e290a51bc1bd55062b394aa44c"
   end
 
   depends_on "go" => :build
