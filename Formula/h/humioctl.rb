@@ -1,8 +1,8 @@
 class Humioctl < Formula
   desc "CLI Client for Humio - Stream Logs All Day Long"
   homepage "https://www.crowdstrike.com/platform/next-gen-siem/falcon-logscale/"
-  url "https://github.com/humio/cli/archive/refs/tags/v0.38.1.tar.gz"
-  sha256 "e588092e47d9943a1823e0af707c798945924957eff834b7d7b041ebcf712bc8"
+  url "https://github.com/humio/cli/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "d59bbb35b005cd1b606b87f458ba9b2ed4ef55113ed273e6c7ea7d7b575ca51d"
   license "Apache-2.0"
   head "https://github.com/humio/cli.git", branch: "master"
 
