@@ -2,8 +2,8 @@
 class Sato < Formula
   desc "Tool to convert ARM or CFN into Terraform"
   homepage "https://github.com/JamesWoolfenden/sato"
-  url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.35.tar.gz"
-  sha256 "c39cea880a4724270d724773edbc9728e8f15544a3e69de91779f91d01bd5640"
+  url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.37.tar.gz"
+  sha256 "ee10611e1d481f811b4db5c7cfd44bc0c90bac87dca0164871cd9a77a8f29ab7"
   license "Apache-2.0"
   head "https://github.com/JamesWoolfenden/sato.git", branch: "master"
 
