@@ -5,6 +5,7 @@ class Pipeform < Formula
   url "https://github.com/magodo/pipeform/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "0b251f3d0d259b0e3d15b08b95567f3eef123afae9c3d0e20107cd6f08aa6278"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/magodo/pipeform.git", branch: "main"
 
   bottle do
@@ -17,6 +18,10 @@ class Pipeform < Formula
   end
 
   depends_on "go" => :build
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
