@@ -7,6 +7,10 @@ class Zookeeper < Formula
   license "Apache-2.0"
   head "https://gitbox.apache.org/repos/asf/zookeeper.git", branch: "master"
 
+  livecheck do
+    skip "forked formula"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cppunit" => :build
