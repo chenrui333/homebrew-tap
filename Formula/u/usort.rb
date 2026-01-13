@@ -3,8 +3,8 @@ class Usort < Formula
 
   desc "Safe, minimal import sorting for Python projects"
   homepage "https://usort.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/71/42/13cd4343e3bc508efad5d2b229af8afa88db3ba66d3ad4f112308cecc1dd/usort-1.1.2.tar.gz"
-  sha256 "784f780d85d2a8063e0a24ce4f9bbb7b4cac07028d51394a01789aa7ca130399"
+  url "https://files.pythonhosted.org/packages/66/f4/b10e2c565f6c79a06bb9e8f97834044eec8810897338e529dd537f4ba475/usort-1.1.3.tar.gz"
+  sha256 "3928043b4644f35c80e417698b0e89cc7bb51a1b0a021f2ba55ceffb86326398"
   license "MIT"
   head "https://github.com/facebook/usort.git", branch: "main"
 
