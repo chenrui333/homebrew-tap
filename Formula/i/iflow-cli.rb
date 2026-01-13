@@ -17,7 +17,7 @@ class IflowCli < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries
