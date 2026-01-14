@@ -1,8 +1,8 @@
 class Allinssl < Formula
   desc "All-in-one SSL certificate lifecycle management tool"
   homepage "https://allinssl.com/"
-  url "https://github.com/allinssl/allinssl/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "be5a1f3fab194efdbd24d41dac90d86d88cdc89531f40f2818872c6af6d78e01"
+  url "https://github.com/allinssl/allinssl/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "090a24028b0aca237fc53a5da5ee3535157a3cfe820b23577f69476e487b3916"
   license "GPL-3.0-only"
   head "https://github.com/allinssl/allinssl.git", branch: "1.1.1"
 
