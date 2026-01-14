@@ -1,8 +1,8 @@
 class BraveSearchMcpServer < Formula
   desc "MCP server for Brave Search"
   homepage "https://github.com/brave/brave-search-mcp-server"
-  url "https://registry.npmjs.org/@brave/brave-search-mcp-server/-/brave-search-mcp-server-2.0.66.tgz"
-  sha256 "99caa3357a50127547dcf5ce1fed74948a5e62dcf7010673322ac878bf90a073"
+  url "https://registry.npmjs.org/@brave/brave-search-mcp-server/-/brave-search-mcp-server-2.0.67.tgz"
+  sha256 "f83735e7f74e79f3b336a874290bd0628fe6cc583f90169d6ce57e11d1d18cdb"
   license "MIT"
 
   bottle do
