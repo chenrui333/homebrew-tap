@@ -34,7 +34,7 @@ class GoZzz < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zzz --version")
-    assert_match "Zzz one-click installation command", shell_output("#{bin}/zzz more")
+    assert_match "zzz more [flags]", shell_output("#{bin}/zzz more")
 
     system "go", "mod", "init", "brewtest"
 
