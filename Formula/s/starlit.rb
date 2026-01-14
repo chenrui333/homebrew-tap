@@ -3,8 +3,8 @@ class Starlit < Formula
 
   desc "Minimal, cute and customizable weather cli"
   homepage "https://github.com/ashuhlee/starlit"
-  url "https://files.pythonhosted.org/packages/1a/76/01f96cd9f600e482d87442bb332b48bde104f7c99c132456e5db657cb499/starlit_cli-0.2.3.tar.gz"
-  sha256 "415af60487236f69dfa02721ff02b83fc43b0a53e79c1e8422cb23fea171a1b6"
+  url "https://files.pythonhosted.org/packages/ae/2c/c39f24dc65849d487f35be9aea7c92636ab698c51ffdfe63459dd9f19104/starlit_cli-0.2.4.tar.gz"
+  sha256 "3b9e3469f3814d0c8d4fdc9f2178962ac596d7e27fafa37c9d2d8424ebc95286"
   # missing license
   head "https://github.com/ashuhlee/starlit.git", branch: "main"
 
@@ -69,8 +69,8 @@ class Starlit < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/07/56/f013048ac4bc4c1d9be45afd4ab209ea62822fb1598f40687e6bf45dcea4/pytest-9.0.1.tar.gz"
-    sha256 "3e9c069ea73583e255c3b21cf46b8d3c56f6e3a1a8f6da94ccb0fcf57b9d73c8"
+    url "https://files.pythonhosted.org/packages/d1/db/7ef3487e0fb0049ddb5ce41d3a49c235bf9ad299b6a25d5780a89f19230f/pytest-9.0.2.tar.gz"
+    sha256 "75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11"
   end
 
   resource "python-dotenv" do
@@ -104,8 +104,8 @@ class Starlit < Formula
   end
 
   resource "terminaltexteffects" do
-    url "https://files.pythonhosted.org/packages/48/7e/bf49b6f95246ca21a9dca1fa84627f11f9b95fc092469137788e00d0ed4c/terminaltexteffects-0.13.0.tar.gz"
-    sha256 "2890e0f7925c47076f9174f1c143bc2e684078ed3c5a1845af4235675c188316"
+    url "https://files.pythonhosted.org/packages/16/d2/9293a967c80172bc56b342e51cf5354bfdf0bf2b4b9df0b25f91c9c7c439/terminaltexteffects-0.14.2.tar.gz"
+    sha256 "213c899ce4b8f7643d2d0568af144e1274e11e4493db9f5b04387bd17c217714"
   end
 
   resource "typer" do
@@ -119,8 +119,8 @@ class Starlit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
