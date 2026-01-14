@@ -20,7 +20,7 @@ class Teldrive < Formula
 
   resource "ui_assets" do
     url "https://github.com/tgdrive/teldrive-ui/releases/download/latest/teldrive-ui.zip"
-    sha256 "332846ee65061adca2a7213fbe01ec1f182e20bde9db498407061c6d4e4228b5"
+    sha256 "17f1d12439184f08821e9556741dd8bf999ea631a24a8302c75c31b334bf7a41"
   end
 
   def install
