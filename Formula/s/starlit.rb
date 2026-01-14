@@ -10,7 +10,7 @@ class Starlit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a878b44231a44e0cbef5595dd7d88f730e168a89f06d173d2361e794a9d38bef"
+    sha256 cellar: :any_skip_relocation, all: "f99d23f5686e9d2f9b763ec04e74d11f8c11b4805938cf5b2285a2e8b0cf0e71"
   end
 
   depends_on "certifi"
