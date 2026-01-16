@@ -5,6 +5,7 @@ class Kafka < Formula
   mirror "https://archive.apache.org/dist/kafka/3.9.0/kafka_2.13-3.9.0.tgz"
   sha256 "abc44402ddf103e38f19b0e4b44e65da9a831ba9e58fd7725041b1aa168ee8d1"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     skip "forked formula"
@@ -18,6 +19,11 @@ class Kafka < Formula
 
   depends_on "chenrui333/tap/zookeeper"
   depends_on "openjdk@21"
+
+  resource "aws-msk-iam-auth" do
+    url "https://github.com/aws/aws-msk-iam-auth/releases/download/v2.3.5/aws-msk-iam-auth-2.3.5-all.jar"
+    sha256 "bcd6020ce1ca2c3f1a65e087057dc8c0757185ba1f169b38e0eda54b617e4225"
+  end
 
   def install
     data = var/"lib"
@@ -40,6 +46,10 @@ class Kafka < Formula
     rm_r("bin/windows")
 
     libexec.install "libs"
+
+    resource("aws-msk-iam-auth").stage do
+      (libexec/"libs").install "aws-msk-iam-auth-#{resource("aws-msk-iam-auth").version}-all.jar"
+    end
 
     prefix.install "bin"
     bin.env_script_all_files(libexec/"bin", Language::Java.overridable_java_home_env("21"))
