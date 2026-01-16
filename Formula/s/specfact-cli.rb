@@ -3,8 +3,8 @@ class SpecfactCli < Formula
 
   desc "Reverse Engineer Legacy Python into Enforceable Contracts"
   homepage "https://specfact.com/"
-  url "https://files.pythonhosted.org/packages/c9/34/095e503bad5059fc9b6b73ebe3aab3e897eededfb2be5a550f517e795c61/specfact_cli-0.24.1.tar.gz"
-  sha256 "a112886ff05b9b9ff193b9f7159c92b0df3181ddfd8c66aa4419cbf5cc50a2f2"
+  url "https://files.pythonhosted.org/packages/37/62/24130c66c3dc8a185faddbc1cbf7af0d29ab8c3bd42ca69c694d2863ac66/specfact_cli-0.25.0.tar.gz"
+  sha256 "a3f593d6651298cd60e0ca24ad78a6caec3557822e7dffd60913ab4ad407eaca"
   license "Apache-2.0"
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
@@ -82,8 +82,8 @@ class SpecfactCli < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/ab/20/37805e8871ffd4bf4958c2e13d608fe1fc914d00f3707b35744ab62751a4/hypothesis-6.150.0.tar.gz"
-    sha256 "ac263bdaf338f4899a9a56e8224304e29b3ad91799e0274783c49abd91ea35ac"
+    url "https://files.pythonhosted.org/packages/d2/19/a4eee0c98e2ec678854272f79646f34943f8fbbc42689cc355b530c5bc96/hypothesis-6.150.2.tar.gz"
+    sha256 "deb043c41c53eaf0955f4a08739c2a34c3d8040ee3d9a2da0aa5470122979f75"
   end
 
   resource "icontract" do
@@ -187,8 +187,8 @@ class SpecfactCli < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/cc/5c/f912bdebdd4af4160da6a2c2b1b3aaa1b8c578d0243ba8f694f93c7095f0/protobuf-6.33.3.tar.gz"
-    sha256 "c8794debeb402963fddff41a595e1f649bcd76616ba56c835645cab4539e810e"
+    url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
+    sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
   end
 
   resource "pygls" do
