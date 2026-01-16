@@ -1,8 +1,8 @@
 class Hauler < Formula
   desc "Airgap Swiss Army Knife"
   homepage "https://docs.hauler.dev/docs/intro"
-  url "https://github.com/hauler-dev/hauler/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "958dfc96475ed9a437e98e560291a315ee997bfff14806b7da454c4dda5ec039"
+  url "https://github.com/hauler-dev/hauler/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "2a51430e8a88d055f744c948ca14d640b846a9ed2de9ec2f50a92a102d69cd06"
   license "Apache-2.0"
   head "https://github.com/hauler-dev/hauler.git", branch: "main"
 
