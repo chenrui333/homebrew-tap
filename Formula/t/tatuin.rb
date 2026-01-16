@@ -8,11 +8,11 @@ class Tatuin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5718c68fb267b8fe5b33430f6a666d067d18423dba0da4712cb5cbcfc885646c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bd71828940d604dddcabce69d187427c22a7b257f28967f1c6cdedaa99b2fb9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0d7549875a5ebfd09909a81ecccb61898c97e6c45014d746fd137c55a869284"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40f31df72b491d18bf779e14542e97e6bdab7b33aec8d6ea43fc6a909510e684"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e914fe19eda6948ffefa500ee15197f9f3985798661b5d78835ec5288d1a389b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9416b50bc640913b6b9e23fc8bf068e0dd863779945f43493837cf45d3f2c2ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a27dfabad402cb09243bcf9b32b669d67e7731e77c4b03d64c4a350cd71fd0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "56c1a1131fae8a177874926dc0ad806ee2c8e22f013890acdefc1e34fedb8d27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "914088cd2edabde8bcd2477a36197ec0fe8cafbd8922543bd9e730fd5cb9bf46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "840d8ae331117739bd6bee3895a15e641366c839f695ce5abbb25a772eee8d2c"
   end
 
   depends_on "pkgconf" => :build
