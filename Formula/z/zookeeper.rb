@@ -11,6 +11,15 @@ class Zookeeper < Formula
     skip "forked formula"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "173366ab79f914770d14a495862721f8007dc71e427c30eb68ee0d6530f5bb33"
+    sha256 cellar: :any,                 arm64_sequoia: "bdafea7eb078c656d860bad0b469ad1232dbca1e54dbd41f1acc51a564f35d74"
+    sha256 cellar: :any,                 arm64_sonoma:  "89f3689c7d314926c258d1d7426941230237d8ad628d8ad6b924c6b521c840d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "774aec777c67e2126b9605a7e6abbb4c9d5205724ae929dec72f523cf261e55c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1527d2b4753a7f7a5b71c15aceef15c5a39f5704a2dc7bc6cc409f8ee61bc9fc"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cppunit" => :build
