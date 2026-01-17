@@ -661,6 +661,7 @@ brew install --cask <tool>
 - `ziglint`
 - `zigscient`
 - `zmate`
+- `zookeeper`
 - `zu`
 - `zuse`
 - `zware`
