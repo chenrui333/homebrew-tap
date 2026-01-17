@@ -3,8 +3,8 @@ class Starlit < Formula
 
   desc "Minimal, cute and customizable weather cli"
   homepage "https://github.com/ashuhlee/starlit"
-  url "https://files.pythonhosted.org/packages/ae/2c/c39f24dc65849d487f35be9aea7c92636ab698c51ffdfe63459dd9f19104/starlit_cli-0.2.4.tar.gz"
-  sha256 "3b9e3469f3814d0c8d4fdc9f2178962ac596d7e27fafa37c9d2d8424ebc95286"
+  url "https://files.pythonhosted.org/packages/57/f9/41ae3003ede961ce78955420d1b7f3d14bfbc3bd6ba23fda42ee2e9bcdf6/starlit_cli-0.3.0.tar.gz"
+  sha256 "3f3090e3ebb3886e5f12c8113319bbc678458a9bb9fdaba3bed66be86acb1020"
   # missing license
   head "https://github.com/ashuhlee/starlit.git", branch: "main"
 
