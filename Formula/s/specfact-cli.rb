@@ -10,11 +10,11 @@ class SpecfactCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "fc63425049395072ff411e5bfbb95ebfa8027f003c3437da1d6b02725ee5c695"
-    sha256 cellar: :any,                 arm64_sequoia: "43755f54d34e30c5231ed306da096ccb966b73a99bf7b5507dfdf9213f7fffdb"
-    sha256 cellar: :any,                 arm64_sonoma:  "91cff4be78a978145ad0c2e1356e7ec7ae3c2d0d3c80edc5e172db33bb7d15ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51fac664174cecf462f6c1e3cd1b6534eb1b04401fcb7b22ebbfbefeaa975e5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d13f37820390060e210b4c78f710853544f743868febed6d1621579179a3aa20"
+    sha256 cellar: :any,                 arm64_tahoe:   "5651ba2b5eaf6022a9884b58b8d00d8b66624edde77993f557b7a7ebc06bc85e"
+    sha256 cellar: :any,                 arm64_sequoia: "9a0b61abf1b0905312db1eb1d97a6bc5d9a24c89dd25e161e8d4b4380bd1b08a"
+    sha256 cellar: :any,                 arm64_sonoma:  "04a81dcb92820b65b6a9a1dc2a45170caac5b007810a88b59e5558c5ac1599c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "206541558bd426be8677ed7375f97bb171a6aa130208df23a51bcf3b1a022433"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2342ce43a055e83e2838cc09238971cf3944d58cef7a306b60c648522f51c84"
   end
 
   depends_on "certifi" => :no_linkage
