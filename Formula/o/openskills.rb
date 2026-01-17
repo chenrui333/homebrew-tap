@@ -1,8 +1,8 @@
 class Openskills < Formula
   desc "Universal skills loader for AI coding agents"
   homepage "https://github.com/numman-ali/openskills"
-  url "https://registry.npmjs.org/openskills/-/openskills-1.3.1.tgz"
-  sha256 "93d30fa7a8757eb51d6be27399aa9e8516cc44803aee5afee609a10274d97252"
+  url "https://registry.npmjs.org/openskills/-/openskills-1.4.0.tgz"
+  sha256 "f45a1f0d191e2ecdf2bd2cc6b11a9617cf720c9d23dc21b41a1d5cf6978ac70d"
   license "Apache-2.0"
 
   bottle do
