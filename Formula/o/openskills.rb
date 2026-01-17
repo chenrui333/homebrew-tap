@@ -7,7 +7,7 @@ class Openskills < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "e1cef110c811ac46b8994535ac6f4146b77d249c06a38af01d2962a0fb2a40fd"
+    sha256 cellar: :any_skip_relocation, all: "66e5ffed64edb92cef9c1b462905c31817d9f1e1de7251828f6c430f78d542a7"
   end
 
   depends_on "node"
