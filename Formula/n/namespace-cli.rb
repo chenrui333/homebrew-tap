@@ -2,8 +2,8 @@ class NamespaceCli < Formula
   desc "Command-line interface for the Namespaces platform"
   homepage "https://github.com/namespacelabs/foundation"
   url "https://github.com/namespacelabs/foundation.git",
-      tag:      "v0.0.472",
-      revision: "3fa638ccfab49a5d5cfd99c528f717e51fd84b41"
+      tag:      "v0.0.473",
+      revision: "7a21b61b629d7537862cc791a6495aa7d9808c25"
   license "Apache-2.0"
   head "https://github.com/HarishChandran3304/better-env.git", branch: "main"
 
