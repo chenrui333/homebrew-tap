@@ -6,6 +6,15 @@ class Tock < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/kriuchkov/tock.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eca4efcc09418546a77344a6ecdf31ae54f2a7d0992164b961db2819795b71a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eca4efcc09418546a77344a6ecdf31ae54f2a7d0992164b961db2819795b71a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eca4efcc09418546a77344a6ecdf31ae54f2a7d0992164b961db2819795b71a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98200a37c7b84160b2832213337e59614089174a1c33a82c247f18ad0df1ada5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0c9c9b2dcb9d269afcb738fa4addccaaad1c40975c09a7c792b16aee91185da"
+  end
+
   depends_on "go" => :build
 
   def install
