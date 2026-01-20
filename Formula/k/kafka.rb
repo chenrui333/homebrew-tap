@@ -1,11 +1,10 @@
 class Kafka < Formula
   desc "Open-source distributed event streaming platform"
   homepage "https://kafka.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=kafka/3.9.0/kafka_2.13-3.9.0.tgz"
-  mirror "https://archive.apache.org/dist/kafka/3.9.0/kafka_2.13-3.9.0.tgz"
-  sha256 "abc44402ddf103e38f19b0e4b44e65da9a831ba9e58fd7725041b1aa168ee8d1"
+  url "https://www.apache.org/dyn/closer.lua?path=kafka/3.9.1/kafka_2.13-3.9.1.tgz"
+  mirror "https://archive.apache.org/dist/kafka/3.9.1/kafka_2.13-3.9.1.tgz"
+  sha256 "dd4399816e678946cab76e3bd1686103555e69bc8f2ab8686cda71aa15bc31a3"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     skip "forked formula"
