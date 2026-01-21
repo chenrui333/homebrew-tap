@@ -9,10 +9,10 @@ class Lemonade < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "224760a628e11659902e33486ecabd9dea8ae4ea415080dc6942f344e7f908a9"
-    sha256 cellar: :any, arm64_sequoia: "94360811cc8639e6cd93870a3d64769401ec69e167575d6c3575d1676a69c8b4"
-    sha256 cellar: :any, arm64_sonoma:  "11e6e3f42ee89a3aaa399b1a3ed055e35863fad5a1c43203620bdd597373e650"
-    sha256               x86_64_linux:  "548f6c878f2747d5f0c33fc565950f3801f584811da6a67d9065edcd296a9f6a"
+    sha256 cellar: :any, arm64_tahoe:   "fbd1f39421bc20af345d9304e8f2cbbb263e26f374656b3fd1c4526cbae0a5fb"
+    sha256 cellar: :any, arm64_sequoia: "d617375a106080188119df6e551c0f1b6594d6e85b870d6b004c6c95423956f5"
+    sha256 cellar: :any, arm64_sonoma:  "ad4db4bf3e55b60bc46177fd1fa0dd480dd55b351bc915312cfbdda5a9e1b372"
+    sha256               x86_64_linux:  "5d0d4bdcb6957448e77af1ae0c2cc4e7dfe96aead06c69192966548d47646fd8"
   end
 
   depends_on "rust" => :build # for jitter
