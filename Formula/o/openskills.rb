@@ -18,9 +18,7 @@ class Openskills < Formula
   end
 
   test do
-    # version report has issue, https://github.com/numman-ali/openskills/pull/27
-    # assert_match version.to_s, shell_output("#{bin}/openskills --version")
-    system bin/"openskills", "--version"
+    assert_match version.to_s, shell_output("#{bin}/openskills --version")
     assert_match "No skills installed", shell_output("#{bin}/openskills list")
   end
 end
