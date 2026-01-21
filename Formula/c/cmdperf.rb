@@ -1,8 +1,8 @@
 class Cmdperf < Formula
   desc "Command Performance Benchmarking"
   homepage "https://github.com/miklosn/cmdperf"
-  url "https://github.com/miklosn/cmdperf/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "11add8c4ee1744a0408ffb1e3e4a41d66985c563ebe8b873ea17748a60e7dbbe"
+  url "https://github.com/miklosn/cmdperf/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "b5d2d1cad158b9af95e184851a6ebeffd98f81debbb547401d392a11e95c557d"
   license "MIT"
 
   bottle do
