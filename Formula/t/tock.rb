@@ -4,7 +4,7 @@ class Tock < Formula
   url "https://github.com/kriuchkov/tock/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "bd43b2d3e59845cde23de2930b5e9067ca7a4113b28dc2a04b02b635b743032c"
   license "GPL-3.0-or-later"
-  head "https://github.com/kriuchkov/tock.git", branch: "main"
+  head "https://github.com/kriuchkov/tock.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
