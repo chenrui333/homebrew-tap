@@ -37,6 +37,7 @@ brew install --cask <tool>
 - `addlicense`
 - `agl`
 - `ai-context`
+- `aic`
 - `aim`
 - `alacritty`
 - `allinssl`
@@ -254,6 +255,7 @@ brew install --cask <tool>
 - `gofakeit`
 - `goimports-reviser`
 - `gommit`
+- `gorae`
 - `gowebly`
 - `graphjin`
 - `graphlit-mcp-server`
@@ -600,6 +602,7 @@ brew install --cask <tool>
 - `tinifier`
 - `tinybird-mcp-server`
 - `tlint`
+- `tock`
 - `togomak`
 - `token-cli`
 - `toml-f`
