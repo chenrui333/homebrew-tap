@@ -1,8 +1,8 @@
 class Kpt < Formula
   desc "Automate Kubernetes Configuration Editing"
   homepage "https://kpt.dev/"
-  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.59.tar.gz"
-  sha256 "77f8693eea137a97c8e66178392fef6d5a7644aaf10a06091c57e0fcd9552340"
+  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.60.tar.gz"
+  sha256 "6d582e51fe26f16e1b8bda9c516dcbb0acfce5f1de733953b3ba2c36a399bf41"
   license "Apache-2.0"
   head "https://github.com/kptdev/kpt.git", branch: "main"
 
