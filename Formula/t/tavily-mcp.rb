@@ -7,7 +7,7 @@ class TavilyMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "25f4a9f4f05bd51fce271960c20a10c1fed959e84fbdb65b4f7496a8efd14ece"
+    sha256 cellar: :any_skip_relocation, all: "e9790e06a84b0ae19b5a08bda8370421e4e2f5b60f54387f6b4e2f109fd211ec"
   end
 
   depends_on "node"
