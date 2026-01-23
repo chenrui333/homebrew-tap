@@ -10,11 +10,11 @@ class Dotbins < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6565b5fb92a069fccd2297444075746cb5b11d6e62cc11433a44dea32c97407"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "663e4061dabe169fad358327eb1602d024b689ee85d707c4d9caf91355f047eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7849319a756d489e56b555f14f58dfcb95ae35a5d3fb87c9318cde3adcbef666"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "616e84cebb7c308d9fe028abdf892a944dc637292d28691630a7b6e8d827ddac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c74726f4c0457868d72e93f77f629ea3367b192bc32b296abd706158e6a79020"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9004146b7d0479222707435ed17a9e7b639b608f5f9e0d8d74e0101aae1421b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ab93d002ca2130d1933ed6f7574f457992340d722bba305eadccd4a953edc73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c48780d9cbe65ff1b850788664ff9c33512765766654d09955381ea611d4f75b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "115bd9c0be84c80c97df6951cac245e7e7dba8d28e30e2963613f0e8af86a473"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1888b6b0fe5b072bf1570220ffbc78967c71a7ecd2b90e13d8530e10f7a1c57"
   end
 
   depends_on "certifi" => :no_linkage
