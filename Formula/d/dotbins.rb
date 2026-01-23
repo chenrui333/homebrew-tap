@@ -3,8 +3,8 @@ class Dotbins < Formula
 
   desc "TUI typing trainer inspired by monkeytype with a focus on customization"
   homepage "https://github.com/basnijholt/dotbins"
-  url "https://files.pythonhosted.org/packages/fd/05/94ad838e6710c2a048ba00968e20c5684697024e0e394f65f2db86777fb7/dotbins-2.5.0.tar.gz"
-  sha256 "e9e01aff7ff345b0ac5d35f1b3860f12e89a2f786288c176ec771c9a64b99e9c"
+  url "https://files.pythonhosted.org/packages/b7/52/42e80fdc4abba53f2a8abcdd7feb8bb95de90402e42acb8973c07135eaae/dotbins-2.6.0.tar.gz"
+  sha256 "9b85f26ad6cfd11274cd6f8a800aaea5d1e6b6d797d3a38f22cbdd7c775686ee"
   license "Apache-2.0"
   head "https://github.com/basnijholt/dotbins.git", branch: "main"
 
@@ -69,8 +69,8 @@ class Dotbins < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
-    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
