@@ -1,8 +1,8 @@
 class Autotag < Formula
   desc "Git repository version tagging tool"
   homepage "https://github.com/autotag-dev/autotag"
-  url "https://github.com/autotag-dev/autotag/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "81b7d928d03cb6e64a73044973bccec5d01e87876193b55f920ae4859a941715"
+  url "https://github.com/autotag-dev/autotag/archive/refs/tags/v1.4.3.tar.gz"
+  sha256 "fa694f5e1e8da3229b03b459221764f0de7624aa8119c7f7095fd1820ae72b92"
   license "Apache-2.0"
   head "https://github.com/autotag-dev/autotag.git", branch: "main"
 
