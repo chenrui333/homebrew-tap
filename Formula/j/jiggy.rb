@@ -1,8 +1,8 @@
 class Jiggy < Formula
   desc "Minimalistic cross-platform mouse jiggler written in Rust"
   homepage "https://0xdeadbeef.info/"
-  url "https://github.com/0xdea/jiggy/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "31c5042034a9b9a55e521ac77f01c44f7cb1fe7946d8fd4b77439e024a5bd6cf"
+  url "https://github.com/0xdea/jiggy/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "11e3d3c3d55ae9fddbfb6e94c27edda03a8ccdcf29b1cc6247a84411510c9d80"
   license "MIT"
 
   bottle do
