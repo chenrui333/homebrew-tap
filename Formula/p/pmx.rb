@@ -18,7 +18,7 @@ class Pmx < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"pmx", "completion", shells: [:zsh])
+    generate_completions_from_executable(bin/"pmx", shell_parameter_format: :clap)
   end
 
   test do
