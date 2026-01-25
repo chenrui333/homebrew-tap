@@ -1,8 +1,8 @@
 class Rum < Formula
   desc "TUI to list, search and run package.json scripts"
   homepage "https://github.com/thekarel/rum"
-  url "https://github.com/thekarel/rum/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "2db4b64eac92d7212ad47a3ff8e786f083bcde1bda5f68d8e5fe2d94895d19c7"
+  url "https://github.com/thekarel/rum/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "4c780babaea3f7469bd19e0b117ce805cf477d516933cd96f029a280d6c763bb"
   license "MIT"
   head "https://github.com/thekarel/rum.git", branch: "main"
 
