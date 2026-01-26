@@ -1,8 +1,8 @@
 class Flowrs < Formula
   desc "TUI application for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  url "https://github.com/jvanbuel/flowrs/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "50f5ac89000e0e7e52bdd7ad64ee362e2ad89dc4abd499ffefee7b9c667821be"
+  url "https://github.com/jvanbuel/flowrs/archive/refs/tags/v0.8.3.tar.gz"
+  sha256 "c57226c17b48cc6c3aa2024e5f9fe032660a84bec851a89b4280e01ba1842263"
   license "MIT"
   head "https://github.com/jvanbuel/flowrs.git", branch: "main"
 
