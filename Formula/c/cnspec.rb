@@ -1,8 +1,8 @@
 class Cnspec < Formula
   desc "Open source, cloud-native security and policy project"
   homepage "https://github.com/mondoohq/cnspec"
-  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v12.19.2.tar.gz"
-  sha256 "e36e4e6b38053e6d95048d9442214b4b4dbe4053eab8035389c56c11d6187fcb"
+  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v12.20.0.tar.gz"
+  sha256 "f9bcf01e8ab5a11a36d05d0497251fae840a9b1269d68b163aebba1864ef4e9d"
   license "BUSL-1.1"
   head "https://github.com/mondoohq/cnspec.git", branch: "main"
 
