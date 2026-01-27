@@ -8,11 +8,11 @@ class Cozypkg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07b42e956af43540723db0021185214201e5f2a2c6d53646c66262ae86c42011"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd2045b66c66d0f655cd8f02e1cba303746fb7c6a5c9209c47090fff6df61b97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a21104e94835139819064b069ed6a46df50c04502908ebfb58d399800c09138"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73f712e23dcd4e765b7cefbb2462ab0c492e65c63cce42c4ad3fc4730903996e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb65573db43863cca56f8094dd7670718de5fe1dee4f29bf9d8725f32a229848"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac236ee4f919057930461fe99a988d741dc625d64b9bb5c8834a3fbd93590b0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a89bbe86d30981ba9f41e00f0ee3b1942e88a19185385de28736829de2caa7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d672f019334e6afa54e783697ea3fbcb39688ed50029784f89d63860d3f2a3e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b64fa374c49a0ac585380b3e90e488847cb3e8f38b45c770492f70aad533d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfa240c1a2204a19d0ed825325c4289f385a23b340babe88e6febd05f6160139"
   end
 
   depends_on "go" => :build
