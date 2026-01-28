@@ -1,8 +1,8 @@
 class Bearer < Formula
   desc "SAST tool to find, filter, and prioritize code security & privacy risks"
   homepage "https://docs.bearer.com/"
-  url "https://github.com/Bearer/bearer/archive/refs/tags/v1.51.1.tar.gz"
-  sha256 "98bce2142f1a970395d233c774f4c8f52e2c65cb39da46d530f975396d95b093"
+  url "https://github.com/Bearer/bearer/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "983c2e2b0be5409b5f2278f40b58ee136e4ae3fc5184de382598ca70fb72d26b"
   license "Elastic-2.0"
 
   bottle do
