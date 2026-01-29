@@ -700,5 +700,11 @@
   "https://terminaltrove.com/jolt/": "https://github.com/jordond/jolt",
   "https://terminaltrove.com/pass-cli/": "https://github.com/ari1110/pass-cli",
   "https://terminaltrove.com/cloudflare-speed-cli/": "https://github.com/kavehtehrani/cloudflare-speed-cli",
-  "https://terminaltrove.com/oyo/": "https://github.com/ahkohd/oyo"
+  "https://terminaltrove.com/oyo/": "https://github.com/ahkohd/oyo",
+  "https://terminaltrove.com/sidecar/": "https://github.com/marcus/sidecar",
+  "https://terminaltrove.com/surge/": "https://github.com/surge-downloader/surge",
+  "https://terminaltrove.com/try-rs/": "https://github.com/tassiovirginio/try-rs",
+  "https://terminaltrove.com/tredis/": "https://github.com/huseyinbabal/tredis",
+  "https://terminaltrove.com/mole/": "https://github.com/tw93/mole",
+  "https://terminaltrove.com/vortix/": "https://github.com/Harry-kp/vortix"
 }
