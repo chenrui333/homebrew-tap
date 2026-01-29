@@ -8,11 +8,11 @@ class Flowrs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce8153d8ac68d7cf19c18b1ed2a92a0128168c7d114ec7222dd98eba7930c7be"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62d239a74165167e7993c7369b68b7d916395503f8d79a6b48dc4e5010f9d76f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5576ab8459d1672a25e137e9854687e5c427776a13512fe63f5d180df021c13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fe114b302db0f43eff707243fd00985c458f29b89a0a8a27796e85716cc7103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbe38c6f833257be7263e81d2c127080081bcdd93dfbdaccc47106aa7e6322ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "189baa94da18a00843e06caafb378cec1c0eb2a607346d7ec4b509410f5114e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23d5fb02a91f982161fa66d2923cb6d16ba8a59b8a8b213ad5f823d1930d8c55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c33d5935435a38fe40d4ee009a386a5f165541e2572db3e3fbefde44fe2f8c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6564e642a5fcec2e4dd1543c980c94208fbfeb40e3da97e5479fef9bfd6f09e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e010624b23ee8058821766a20a80b06356488a942169b2fa354cde46fc1da3"
   end
 
   depends_on "pkgconf" => :build
