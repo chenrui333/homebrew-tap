@@ -8,11 +8,11 @@ class Judo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20472096d189efe0540fc1044639139303e8c70a1d1dae3eb6921932b636d546"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b60398d182b2d33804a44bc59befc87e5b6f898bead550f7a6e8674b7aefae94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12f205f45e3fe44386b25cb95b42a5db779bdf1f1b397b49f758de9ed54a7166"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f78d9d9cc086b798f52767dffb0a286f3b77784d8e981645e0eab37f12819c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "658a12880f438c6686633a6f2eb9035544609697eb72f919174ddb26fecd4037"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53de8b2988e3233964f420e08cc2f72a917971996b579e5a6da7c89c26ac6bbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "948668d544b8a169530f859421e8d09232791d03c45bc55ecb99280703696b27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0ceccab88b83a0b6e52e69fa5ce19624d271b06eacbc61737346305f9bf60e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "920b8138ad4b6b12b912f15a4bd096f79be0e788522fcdc0ac02715a4dc592e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad0522b4fe0306e79cedfac38898d6b5666a9cc0b7f1b4cc752cf6d5543835b6"
   end
 
   depends_on "rust" => :build
