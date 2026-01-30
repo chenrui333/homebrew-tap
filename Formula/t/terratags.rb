@@ -1,8 +1,8 @@
 class Terratags < Formula
   desc "Required tags validation on terraform resources"
   homepage "https://terratags.github.io/terratags/"
-  url "https://github.com/terratags/terratags/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "f96e83e0021f417f7cdb7d99d94ab47495474be7efc7aaf1e7cd909736c1069e"
+  url "https://github.com/terratags/terratags/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "dd3f88f7048ef065c7f497176d3e7f92123450574c84bb3114f2ebdce88e6169"
   license "MIT"
 
   bottle do
