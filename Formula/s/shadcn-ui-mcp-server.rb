@@ -7,7 +7,7 @@ class ShadcnUiMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "46c434bea4e0a169fd55953bcf3c83dff0b67f5a91eca1339d73d7c858e0ac3f"
+    sha256 cellar: :any_skip_relocation, all: "3fc396ed670e3be98f7f1629ba54d0300ebdaf77e198cd0b1e4baa106d081db5"
   end
 
   depends_on "node"
