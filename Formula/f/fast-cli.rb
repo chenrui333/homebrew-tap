@@ -7,11 +7,11 @@ class FastCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "294aea85285c637ed567691d94333b3be008bda36e345ceccca9c2230c07ab1a"
-    sha256 cellar: :any,                 arm64_sequoia: "5301a9de2ab924542e18e3c021a7e6147174387c42658e120d5af002a5ea30a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "5301a9de2ab924542e18e3c021a7e6147174387c42658e120d5af002a5ea30a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "abec3273668dbb98524305df63753376b766e6b3ba8128dce9d6cbb87836e701"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30edafc62521d5df79b230cba8b1105769901971d7f49696be43e228b45c0a3a"
+    sha256 cellar: :any,                 arm64_tahoe:   "6e8d0e9548345909eed7eaefe74337dc62f2b6f97b26ee5c330a13c13b6ceae3"
+    sha256 cellar: :any,                 arm64_sequoia: "5595a5ea313b7f13f21e36e542bc9dadf6cc1bffe97a654b067f1856a9559087"
+    sha256 cellar: :any,                 arm64_sonoma:  "5595a5ea313b7f13f21e36e542bc9dadf6cc1bffe97a654b067f1856a9559087"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9fa7bd62c3039ebd7c7d4889a7701c136b5815baadd839aff5bb83d248a9682"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7977024fac64646d3555fd118176f629796a21e5b4841f71fbd5dedd983e6f"
   end
 
   depends_on "node"
