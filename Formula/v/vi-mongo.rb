@@ -8,11 +8,11 @@ class ViMongo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa431b7ce33460a37e26ac0e2e8284703caaa5f0483e2e8ac53abe8e1d5f2b25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa431b7ce33460a37e26ac0e2e8284703caaa5f0483e2e8ac53abe8e1d5f2b25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa431b7ce33460a37e26ac0e2e8284703caaa5f0483e2e8ac53abe8e1d5f2b25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cba5341a8dfd3332d8ae729a47d2dd30bb5922fd0d14cf6719c6bb2933755075"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e992fbe1ae0d4052b3ddea446d35900acc31f590e55ae5a24ea63386c757798c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec28eabafddfce82103fce1e72e35ecb2491ee391a6173647b9e83315a3bb708"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec28eabafddfce82103fce1e72e35ecb2491ee391a6173647b9e83315a3bb708"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec28eabafddfce82103fce1e72e35ecb2491ee391a6173647b9e83315a3bb708"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f843132a79721196b37fd7a10f09190b76ae4c9588d3b13050e28ad4bd96a3c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a17ce0f8de25522a8e7d68ae4c9a80651e4b1ad1425e93da1df4092fd5e5d44"
   end
 
   depends_on "go" => :build
