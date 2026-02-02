@@ -1,8 +1,8 @@
 class Headscale < Formula
   desc "Open source, self-hosted implementation of the Tailscale control server"
   homepage "https://github.com/juanfont/headscale"
-  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.26.1.tar.gz"
-  sha256 "8a19bfaaa1533ab69b63e9cef4658758aad79dadd43088c6cc7313ab88df7de5"
+  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "a2ba09811919e4b285d17e4cdaf7ed5aeb9a8567eda11119557436d59711632e"
   license "BSD-3-Clause"
   head "https://github.com/juanfont/headscale.git", branch: "main"
 
