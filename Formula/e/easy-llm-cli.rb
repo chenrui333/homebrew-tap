@@ -1,8 +1,8 @@
 class EasyLlmCli < Formula
   desc "Open-source AI agent that is compatible with multiple LLM models"
   homepage "https://github.com/ConardLi/easy-llm-cli"
-  url "https://registry.npmjs.org/easy-llm-cli/-/easy-llm-cli-0.1.11.tgz"
-  sha256 "f8f2adf430a2034e8991017538ef77d618d1af5a025ada3139787f24d6a27d83"
+  url "https://registry.npmjs.org/easy-llm-cli/-/easy-llm-cli-0.1.12.tgz"
+  sha256 "0efb2e44ed9644570a290a107a87655d669824d458b26b0f5a3fbfea57317ef6"
   license "Apache-2.0"
 
   bottle do
