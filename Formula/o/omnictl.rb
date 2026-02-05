@@ -1,8 +1,8 @@
 class Omnictl < Formula
   desc "CLI for the Sidero Omni Kubernetes management platform"
   homepage "https://omni.siderolabs.com/"
-  url "https://github.com/siderolabs/omni/archive/refs/tags/v1.4.8.tar.gz"
-  sha256 "09079fbe59915b08305718a56df91630408752e224c394e2ca2c6d0eb67368b0"
+  url "https://github.com/siderolabs/omni/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "f5a5fd84ad2d6da84d39a60f63bbef81bb672bb644e361ec46fa4e933b218b72"
   # license "BSL-1.1"
   head "https://github.com/siderolabs/omni.git", branch: "main"
 
