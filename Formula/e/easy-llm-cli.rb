@@ -7,7 +7,7 @@ class EasyLlmCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "de2f61d16526c7cce3ab2d3d65b33b3431ab5af854958c2f1077e897fd9b2e1b"
+    sha256 cellar: :any_skip_relocation, all: "c8da67128eb77c7c9df5b3b9f981bc4cb0b95c16ee5ad97bb45225a32cad35e0"
   end
 
   depends_on "node"
