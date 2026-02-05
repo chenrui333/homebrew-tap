@@ -8,8 +8,8 @@ class FairygladeLy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "60d69b4b0ebce0e8c649a310a9605be8102c73b3ee6d984962159e7ee545090e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8069c398c81fdba48b9a9d1e4110415653b2fb884aa8d7afb5e8bcd932a943b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2c13ea0c6c6c91fa00e0e7419730372d6a4eca7f2d3436cb3d7ec5b39833bbe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "40f71491e3923630c54f40d2a190ab2a0a087fac2b9a7875cf467c3def934b87"
   end
 
   depends_on "pkgconf" => :build
