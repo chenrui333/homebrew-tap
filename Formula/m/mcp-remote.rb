@@ -19,6 +19,6 @@ class McpRemote < Formula
 
   test do
     output = shell_output("#{bin}/mcp-remote https://example.com/v1/sse/stream 2>&1", 1)
-    assert_match "Connection error: Error: Error POSTing to endpoint", output
+    assert_match "Streamable HTTP error: Error POSTing to endpoint", output
   end
 end
