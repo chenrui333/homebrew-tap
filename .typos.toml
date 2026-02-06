@@ -28,3 +28,4 @@ extend-exclude = [
 
 [type.ruby.extend-words]
 fo = "fo" # for resinator.rb
+certifi = "certifi" # python package name used in ruby formulae
