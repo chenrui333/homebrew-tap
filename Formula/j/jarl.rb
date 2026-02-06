@@ -32,10 +32,10 @@ class Jarl < Formula
       print( x +y )
     R
 
-    output = shell_output("#{bin}/jarl check #{testpath}/test.R 2>&1", 1)
+    output = shell_output("#{bin}/jarl check --select assignment #{testpath}/test.R 2>&1", 1)
     assert_match "Found 1 error", output
 
-    output = shell_output("#{bin}/jarl check --fix --allow-no-vcs #{testpath}/test.R")
+    output = shell_output("#{bin}/jarl check --select assignment --fix --allow-no-vcs #{testpath}/test.R")
     assert_match "All checks passed!", output
   end
 end
