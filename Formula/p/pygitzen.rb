@@ -3,8 +3,8 @@ class Pygitzen < Formula
 
   desc "Python native terminal based Git client"
   homepage "https://github.com/SunnyTamang/pygitzen"
-  url "https://files.pythonhosted.org/packages/2c/d1/34ffe7c01b2205c9f6fbe8081b6ff63f6cea1c816ba4450b734708c90f8b/pygitzen-0.2.6.tar.gz"
-  sha256 "14d318b35547f2d38f6386f04a98cc9997c66d0de0a495fa1a6f11f2df9e5b36"
+  url "https://files.pythonhosted.org/packages/10/88/769cb5eb4f5705cd4fa36a50bbd7f6e7fc0640ae2bdf16307b4966881d5e/pygitzen-0.2.7.tar.gz"
+  sha256 "9ceb24c6fca0ad3b6c1822934ffbad5fcb0f8a9e9057c4d3b1606a439de71cf5"
   license "MIT"
   head "https://github.com/SunnyTamang/pygitzen.git", branch: "main"
 
@@ -21,8 +21,8 @@ class Pygitzen < Formula
   depends_on "python@3.14"
 
   resource "dulwich" do
-    url "https://files.pythonhosted.org/packages/6f/97/f65ab4c7d999bb10c717cace283bfe60dcaa02993ba445574e217ae7c71e/dulwich-0.25.0.tar.gz"
-    sha256 "baa84b539fea0e6a925a9159c3e0a1d08cceeea5260732b84200e077444a4b0e"
+    url "https://files.pythonhosted.org/packages/ee/df/4178b6465e118e6e74fd78774b451953dd53c09fdec18f2c4b3319dd0485/dulwich-1.0.0.tar.gz"
+    sha256 "3d07104735525f22bfec35514ac611cf328c89b7acb059316a4f6e583c8f09bc"
   end
 
   resource "linkify-it-py" do
@@ -56,13 +56,13 @@ class Pygitzen < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
+    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/55/06/906f86bbc59ec7cd3fb424250e19ce670406d1f28e49e86c2221e9fd7ed2/textual-6.11.0.tar.gz"
-    sha256 "08237ebda0cfbbfd1a4e2fd3039882b35894a73994f6f0fcc12c5b0d78acf3cc"
+    url "https://files.pythonhosted.org/packages/9f/38/7d169a765993efde5095c70a668bf4f5831bb7ac099e932f2783e9b71abf/textual-7.5.0.tar.gz"
+    sha256 "c730cba1e3d704e8f1ca915b6a3af01451e3bca380114baacf6abf87e9dac8b6"
   end
 
   resource "typing-extensions" do
@@ -76,8 +76,8 @@ class Pygitzen < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
+    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
+    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
   def install
