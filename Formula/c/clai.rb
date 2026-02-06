@@ -22,7 +22,8 @@ class Clai < Formula
   end
 
   test do
-    system bin/"clai", "-h"
+    output = shell_output("#{bin}/clai -h 2>&1", 1)
+    assert_match "Usage of clai:", output
 
     if OS.mac?
       assert_path_exists testpath/"Library/Application Support/.clai/conversations"
