@@ -10,7 +10,6 @@ aks = "aks"
 captable = "captable" # for captan.rb
 debugg = "debugg" 
 mosquitto = "mosquitto" # for mqtt-cli.rb
-ratatui = "ratatui" 
 sherif = "sherif" # for sherif.rb
 sur = "sur" # for big sur
 yor = "yor" 
@@ -27,5 +26,8 @@ extend-exclude = [
 ]
 
 [type.ruby.extend-words]
-fo = "fo" # for resinator.rb
 certifi = "certifi" # python package name used in ruby formulae
+fo = "fo" # for resinator.rb
+
+[type.md.extend-words]
+ratatui = "ratatui"
