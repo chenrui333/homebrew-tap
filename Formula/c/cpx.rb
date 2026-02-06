@@ -1,8 +1,8 @@
 class Cpx < Formula
   desc "Batteries-included Cargo-like CLI for C++"
   homepage "https://cpx-dev.vercel.app/"
-  url "https://github.com/ozacod/cpx/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "0e83234edef4b87bcb1d33174a58e8a01b882760b869d0f9712a33ede6927059"
+  url "https://github.com/ozacod/cpx/archive/refs/tags/v1.3.5.tar.gz"
+  sha256 "133b4ae441397ca1cdf0fddb8482e2ff0c73ecc1637669cc6329e3647a3db178"
   license "MIT"
   head "https://github.com/ozacod/cpx.git", branch: "main"
 
