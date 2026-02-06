@@ -7,11 +7,11 @@ class IflowCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1adfbc759f93fd6625b2b2e0462e959fdc7d761ab1107d6ebac2ef76aba95fd4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1adfbc759f93fd6625b2b2e0462e959fdc7d761ab1107d6ebac2ef76aba95fd4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1adfbc759f93fd6625b2b2e0462e959fdc7d761ab1107d6ebac2ef76aba95fd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8da95f51d611d4c77c9d2a09f78967e03c2383795697ea2e37dd7030a81df9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98b36ac399224109c912cd9998278d41f61f0cc76420c20e1203522ccd058eb8"
+    sha256                               arm64_tahoe:   "695cf3ad9087ce1031413dd9208b915fccfbc9202bcbca659545a4110b9f6a30"
+    sha256                               arm64_sequoia: "2d5eab400866df51aedd6e561d4ef7d5ca6a16272396f14baa2388581d42ee6f"
+    sha256                               arm64_sonoma:  "33dbfc1f856570e55d50b91baaba482fafe03854c17f8ac7da0178fe31e891fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b2417eda71584361bf38b2cd2137f313f684bd71216a1f612cd0ea87f3a7c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc814fdf1a490aa800e1c4ab385268b83eee81a19f3b3bdf8257b44984d6d886"
   end
 
   depends_on "node"
