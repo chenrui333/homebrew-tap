@@ -32,10 +32,12 @@ class MqttCli < Formula
 
     require "timeout"
     output = ""
+    # spellchecker:ignore-next-line
     io = IO.popen("#{bin}/mqtt sub -t test/brewtest -h test.mosquitto.org")
     begin
       sleep 1
 
+      # spellchecker:ignore-next-line
       system bin/"mqtt", "pub", "--verbose", "-t", "test/brewtest", "-m", "Hello, World!", "-h", "test.mosquitto.org"
 
       Timeout.timeout(5) do

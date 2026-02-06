@@ -28,6 +28,7 @@ class Kbst < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kbst --version")
 
+    # spellchecker:ignore-next-line
     output = shell_output("#{bin}/kbst init aks example.com testCluster eastus testResourceGroup 2>&1", 1)
     assert_match "author field is required", output
     assert_match "# Welcome to Kubestack", (testpath/"kubestack-starter-aks/README.md").read

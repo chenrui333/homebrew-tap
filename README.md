@@ -171,7 +171,7 @@ brew install --cask <tool>
 - `dbin`
 - `dcv`
 - `ddev`
-- `debugg-ai-mcp`
+- `debugg-ai-mcp` <!-- spellchecker:disable-line -->
 - `decktape`
 - `deepteam`
 - `dela`

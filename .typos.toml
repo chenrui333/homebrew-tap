@@ -2,15 +2,20 @@
 
 [default]
 locale = "en"
+extend-ignore-re = [
+  # Inline spellchecker directives
+  "(?Rm)^.*(#|//)\\s*spellchecker:disable-line$",
+  "(#|//)\\s*spellchecker:ignore-next-line\\n.*",
+  "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on",
+  "(?Rm)^.*<!--\\s*spellchecker:disable-line\\s*-->$",
+  "<!--\\s*spellchecker:ignore-next-line\\s*-->\\n.*",
+  "(?s)<!--\\s*spellchecker:off\\s*-->.*?<!--\\s*spellchecker:on\\s*-->",
+]
 
 [default.extend-words]
 Hashi = "Hashi" 
 Sur = "Sur" 
-aks = "aks" 
-captable = "captable" # for captan.rb
-debugg = "debugg" 
-mosquitto = "mosquitto" # for mqtt-cli.rb
-sherif = "sherif" # for sherif.rb
+debugg = "debugg" # for debugg-ai-mcp filename
 sur = "sur" # for big sur
 yor = "yor" 
 
@@ -31,3 +36,12 @@ fo = "fo" # for resinator.rb
 
 [type.md.extend-words]
 ratatui = "ratatui"
+
+[type.tap_migrations]
+extend-glob = ["**/tap_migrations.json"]
+
+[type.tap_migrations.extend-words]
+sherif = "sherif" # for tap_migrations.json
+
+[type.tap_migrations.extend-identifiers]
+sherif = "sherif" # for tap_migrations.json

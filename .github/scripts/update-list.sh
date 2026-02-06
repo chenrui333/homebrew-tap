@@ -8,12 +8,19 @@ FORMULAE="$(
 )"
 
 # 2. Build the lines we want to insert, including bullet points
+FORMATTED_FORMULAE="$(
+  echo "$FORMULAE" | awk '
+    $0 == "debugg-ai-mcp" { printf("- `%s` <!-- spellchecker:disable-line -->\n", $0); next }
+    { printf("- `%s`\n", $0) }
+  '
+)"
+
 cat <<EOF > .tmp-formulae-list
 <!-- FORMULAE-LIST-START -->
 <details>
 <summary>Formula List</summary>
 
-$(echo "$FORMULAE" | sed 's/^/- `/; s/$/`/')
+${FORMATTED_FORMULAE}
 
 </details>
 <!-- FORMULAE-LIST-END -->

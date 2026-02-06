@@ -1,3 +1,4 @@
+# spellchecker:off
 class DebuggAiMcp < Formula
   desc "MCP Server for Debugg AI"
   homepage "https://debugg.ai/"
@@ -32,3 +33,4 @@ class DebuggAiMcp < Formula
     assert_match "Run end-to-end browser tests using AI agents", output
   end
 end
+# spellchecker:on
