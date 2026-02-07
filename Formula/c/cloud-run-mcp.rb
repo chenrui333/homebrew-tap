@@ -1,8 +1,8 @@
 class CloudRunMcp < Formula
   desc "MCP server to deploy code to Google Cloud Run"
   homepage "https://github.com/googlecloudplatform/cloud-run-mcp"
-  url "https://registry.npmjs.org/@google-cloud/cloud-run-mcp/-/cloud-run-mcp-1.5.0.tgz"
-  sha256 "6e362e745798672cebb2c4dfebbcff14edb679fa41d62d97cb5ac1366dcea547"
+  url "https://registry.npmjs.org/@google-cloud/cloud-run-mcp/-/cloud-run-mcp-1.8.0.tgz"
+  sha256 "113ac56e85353dee391533fa8a4cfeb221e9ef92e13c77794abca1c19e3acdd8"
   license "MIT"
 
   bottle do
