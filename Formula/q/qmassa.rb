@@ -8,8 +8,8 @@ class Qmassa < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "23aa4e9ac7b02ae2a62d396ad1b92aec278ef8cd59d7cd1af258c7e6c2a343d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b8871e55b502871c1d056cbe8729a070ef984b57dbc5ce389abdd4f110bb1f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ad1f4de97407f64b94182ee6e68c2abeca225d924cbd6dc35e2ce69e2d0a07d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "553fbd39381d202066f2a31e35418cc4fe49d427ed08612501da8253a20c6a4a"
   end
 
   depends_on "pkgconf" => :build
