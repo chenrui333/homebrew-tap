@@ -3,8 +3,8 @@ class SpecfactCli < Formula
 
   desc "Reverse Engineer Legacy Python into Enforceable Contracts"
   homepage "https://specfact.com/"
-  url "https://files.pythonhosted.org/packages/04/ad/bf7ce3c9316cdc3b5b273158a92ae1d02213879c065e50c1d7e3ef662025/specfact_cli-0.25.2.tar.gz"
-  sha256 "aa5227fa08462b35f3bdbfaf6f2ae340ba099fe3abc3da860b318510bf00f1d8"
+  url "https://files.pythonhosted.org/packages/ac/2a/a68d6a9835b4d6da1b1c70bca986b4ac7b7e1f5ffcd1424cacf7d92f68d5/specfact_cli-0.26.5.tar.gz"
+  sha256 "e91203694b81d88b6ead2529273f0fd19fa76a3ac03eedda6bf598d71747e7eb"
   license "Apache-2.0"
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
@@ -36,6 +36,16 @@ class SpecfactCli < Formula
     sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
+  resource "azure-core" do
+    url "https://files.pythonhosted.org/packages/dc/1b/e503e08e755ea94e7d3419c9242315f888fc664211c90d032e40479022bf/azure_core-1.38.0.tar.gz"
+    sha256 "8194d2682245a3e4e3151a667c686464c3786fed7918b394d035bdcd61bb5993"
+  end
+
+  resource "azure-identity" do
+    url "https://files.pythonhosted.org/packages/06/8d/1a6c41c28a37eab26dc85ab6c86992c700cd3f4a597d9ed174b0e9c69489/azure_identity-1.25.1.tar.gz"
+    sha256 "87ca8328883de6036443e1c37b40e8dc8fb74898240f61071e09d2e369361456"
+  end
+
   resource "beartype" do
     url "https://files.pythonhosted.org/packages/c7/94/1009e248bbfbab11397abca7193bea6626806be9a327d399810d523a07cb/beartype-0.22.9.tar.gz"
     sha256 "8f82b54aa723a2848a56008d18875f91c1db02c32ef6a62319a002e3e25a975f"
@@ -44,6 +54,11 @@ class SpecfactCli < Formula
   resource "cattrs" do
     url "https://files.pythonhosted.org/packages/6e/00/2432bb2d445b39b5407f0a90e01b9a271475eea7caf913d7a86bcb956385/cattrs-25.3.0.tar.gz"
     sha256 "1ac88d9e5eda10436c4517e390a4142d88638fe682c436c93db7ce4a277b884a"
+  end
+
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
+    sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
   end
 
   resource "charset-normalizer" do
@@ -57,8 +72,13 @@ class SpecfactCli < Formula
   end
 
   resource "crosshair-tool" do
-    url "https://files.pythonhosted.org/packages/5a/bb/75256bf53b0e5e78f748924cf698771a39a6aced1c8e43ac9df8ecef3d81/crosshair_tool-0.0.101.tar.gz"
-    sha256 "c36eb18e211b344b47dc9aaf85d0b16ae4cb00719d20f131eb6ebf5e79767983"
+    url "https://files.pythonhosted.org/packages/7c/bd/3afb64fe1579be13b3199b659276c7c5be4303e0c578afa9c0ba1d6720f2/crosshair_tool-0.0.102.tar.gz"
+    sha256 "665aed0492618d9ae61a7f17d5d32ea2a7182c04d5a39ae81b5e3e519a7869ba"
+  end
+
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/9f/33/c00162f49c0e2fe8064a62cb92b93e50c74a72bc370ab92f86112b33ff62/cryptography-46.0.3.tar.gz"
+    sha256 "a8b17438104fed022ce745b362294d9ce35b4c2e45c1d958ad4a4b019285f4a1"
   end
 
   resource "gitdb" do
@@ -141,6 +161,16 @@ class SpecfactCli < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "msal" do
+    url "https://files.pythonhosted.org/packages/cf/0e/c857c46d653e104019a84f22d4494f2119b4fe9f896c92b4b864b3b045cc/msal-1.34.0.tar.gz"
+    sha256 "76ba83b716ea5a6d75b0279c0ac353a0e05b820ca1f6682c0eb7f45190c43c2f"
+  end
+
+  resource "msal-extensions" do
+    url "https://files.pythonhosted.org/packages/01/99/5d239b6156eddf761a636bded1118414d161bd6b7b37a9335549ed159396/msal_extensions-1.3.1.tar.gz"
+    sha256 "c5b0fd10f65ef62b5f1d62f4251d51cbcaf003fcedae8c91b040a488614be1a4"
+  end
+
   resource "mypy-extensions" do
     url "https://files.pythonhosted.org/packages/a2/6e/371856a3fb9d31ca8dac321cda606860fa4548858c0cc45d9d1d4ca2628b/mypy_extensions-1.1.0.tar.gz"
     sha256 "52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558"
@@ -182,13 +212,18 @@ class SpecfactCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "protobuf" do
     url "https://files.pythonhosted.org/packages/53/b8/cda15d9d46d03d4aa3a67cb6bffe05173440ccf86a9541afaf7ac59a1b6b/protobuf-6.33.4.tar.gz"
     sha256 "dc2e61bca3b10470c1912d166fe0af67bfc20eb55971dcef8dfa48ce14f0ed91"
+  end
+
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
+    sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
   end
 
   resource "pygls" do
@@ -199,6 +234,11 @@ class SpecfactCli < Formula
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "python-dotenv" do
