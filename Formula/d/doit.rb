@@ -9,8 +9,7 @@ class Doit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "73348067ec6776b1e5e29141d9e42da7fc080bd6865f1269535a587cca0110ad"
+    sha256 cellar: :any_skip_relocation, all: "eeb1cfde14737d184cad2ef8cb262940d452ca9ff62a8700da52f6031400d3e0"
   end
 
   depends_on "python@3.14"
