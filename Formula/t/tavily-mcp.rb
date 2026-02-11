@@ -1,8 +1,8 @@
 class TavilyMcp < Formula
   desc "MCP server for Tavily"
   homepage "https://github.com/tavily-ai/tavily-mcp"
-  url "https://registry.npmjs.org/tavily-mcp/-/tavily-mcp-0.2.13.tgz"
-  sha256 "6132c39dd8165e6110c1c92641863147f12fbd35cafcb15e0c95d518f921e325"
+  url "https://registry.npmjs.org/tavily-mcp/-/tavily-mcp-0.2.17.tgz"
+  sha256 "e0b2b92321b5c9458625aee9da7c707fffa98cabc49d012340ce6d5b60315c8d"
   license "MIT"
 
   bottle do
@@ -27,6 +27,6 @@ class TavilyMcp < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    assert_match "using Tavily's AI search engine", pipe_output(bin/"tavily-mcp", json, 0)
+    assert_match "Search the web for current information on any topic", pipe_output(bin/"tavily-mcp", json, 0)
   end
 end
