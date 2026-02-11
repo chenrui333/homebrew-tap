@@ -7,7 +7,7 @@ class Pinme < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "ec3d0929dbae4332237e05f3c404d6afef1a8893f1bffd821ba7e5e673bd23f8"
+    sha256 cellar: :any_skip_relocation, all: "28e5ef1414f646890147bdf7119eb09b576ad4eb95eb93b98aea8ccda88a280e"
   end
 
   depends_on "node"
