@@ -7,10 +7,10 @@ class FlowEditor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7002bbcb2fa36dfb04019d36b7cc5002ea607740f6e63191b85386a8b210bdc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b708430a772d230538ed60b2c39de204f75a6955f9a03e6a0d7a39566e4b180"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f92501a5968406187a2b3ab38b81f631a09364c7bfe2096e09ddb55efcf2372"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a82bff20a17f585761dda0718f608f4ba1211ab0bfe6a5a6e649a6b5201e0a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "997ffac6e0580adbc2d3261b213b6a1bd978c356abf5ecbe1ca6e80cc0debb12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcdf7b72379f7ee9e54af1971061bab917d6fa8294e58b6c7a3182c1dba67577"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a7174ccbf016031547958f095ab1f01975d3c693bcd12cb939b91adab5032dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07ee5cb40ffc7e8b531b43100973ee867be1055f7c840cfe39d01484cb8391e1"
   end
 
   depends_on "zig" => :build
