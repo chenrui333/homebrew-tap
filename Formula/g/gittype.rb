@@ -1,8 +1,8 @@
 class Gittype < Formula
   desc "CLI code-typing game that turns your source code into typing challenges"
   homepage "https://github.com/unhappychoice/gittype"
-  url "https://github.com/unhappychoice/gittype/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "8683af755410563122cad529d382087bf717e7aeaee9e1d1b053225668f34ef0"
+  url "https://github.com/unhappychoice/gittype/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "2efb51de5b8e00a4bc0086a3811e473f5934ca08750a32bcc39b19dfdeff68e7"
   license "MIT"
   head "https://github.com/unhappychoice/gittype.git", branch: "main"
 
@@ -32,6 +32,6 @@ class Gittype < Formula
     end
 
     output = shell_output("#{bin}/gittype repo list 2>&1", 1)
-    assert_match "Error: Database error: no such table: repositories", output
+    assert_match "Error: Terminal error: Not running in a terminal environment", output
   end
 end
