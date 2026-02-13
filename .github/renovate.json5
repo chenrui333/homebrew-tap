@@ -8,11 +8,12 @@
   ],
   commitMessageSuffix: ' in {{packageFile}}',
   automerge: true,
-  automergeStrategy: 'rebase',
+  automergeType: 'pr',
+  automergeStrategy: 'squash',
   baseBranchPatterns: [
     'main',
   ],
-  platformAutomerge: true,
+  platformAutomerge: false,
   labels: [
     'CI-syntax-only',
     'dependencies',
