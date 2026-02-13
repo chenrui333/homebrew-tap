@@ -5,6 +5,11 @@ class Dominds < Formula
   sha256 "39ba2c00b0785fd479b9a3df8d02ed529c94d341ac5849ea6162f54abff8eeef"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "e8b03a40a84b91103debe85e22cda69628144f33d89618a76c3f9e3320d6b568"
+  end
+
   depends_on "node"
 
   def install
