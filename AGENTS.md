@@ -70,6 +70,12 @@ Commit message: `foo 1.2.3 (new formula)`
   - For libraries: compile and link sample code
   - Use `testpath` for temporary files
 
+### Library Packaging Guidance
+
+- Prefer installing **shared libraries** (`.dylib`/`.so`) when upstream supports both shared and static builds.
+- Avoid static-only installs unless upstream cannot build shared libraries, or there is a clear technical reason documented in the formula.
+- If upstream lacks `install()` rules, manual installation is acceptable, but still prefer installing the shared artifact when available.
+
 - **Service block**: If the software can run as a daemon, include a `service do` block:
   ```ruby
 service do
