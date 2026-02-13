@@ -361,6 +361,7 @@ brew install --cask <tool>
 - `locport`
 - `logfire-mcp`
 - `lola`
+- `ls-hpack`
 - `lstags`
 - `lsv`
 - `luaformatter`
