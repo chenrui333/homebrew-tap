@@ -5,6 +5,15 @@ class Openspec < Formula
   sha256 "e943e2137f86bb6772f1a5ec2fb725fd4302b590de0515a0349364ba419e033c"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf53641b49901614bda2ca4fa2c611f27be4705cf7a0e874e928fda1ef95bd56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf53641b49901614bda2ca4fa2c611f27be4705cf7a0e874e928fda1ef95bd56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf53641b49901614bda2ca4fa2c611f27be4705cf7a0e874e928fda1ef95bd56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e500c30cc325f4eb0ebed82821be4c8a109dc02c5ea77d6f4c4ff01d8c5429c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e500c30cc325f4eb0ebed82821be4c8a109dc02c5ea77d6f4c4ff01d8c5429c"
+  end
+
   depends_on "node"
 
   def install
