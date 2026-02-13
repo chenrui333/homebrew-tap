@@ -426,6 +426,7 @@ brew install --cask <tool>
 - `omnictl`
 - `openskills`
 - `opensnitch-tui`
+- `openspec`
 - `optivorbis`
 - `osmar`
 - `otelgen`
@@ -659,6 +660,7 @@ brew install --cask <tool>
 - `go-zzz`
 - `zen-mcp-server`
 - `zero`
+- `zerobrew`
 - `zig@0.11`
 - `zig@0.12`
 - `zig@0.13`
