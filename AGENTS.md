@@ -66,7 +66,7 @@ Commit message: `foo 1.2.3 (new formula)`
 ### Required Elements
 
 - **Test block**: MUST verify actual functionality, not just `--version` or `--help`
-  - Version check is acceptable as an additional assertion
+  - Include a version assertion as an additional check whenever a reliable version command/output exists
   - For libraries: compile and link sample code
   - Use `testpath` for temporary files
 
