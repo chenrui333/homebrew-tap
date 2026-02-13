@@ -70,6 +70,8 @@ Commit message: `foo 1.2.3 (new formula)`
   - If upstream only ships binaries and no buildable source path, raise it for manual review instead of adding the formula.
 - **Test block**: MUST verify actual functionality, not just `--version` or `--help`
   - Include a version assertion as an additional check whenever a reliable version command/output exists
+  - Prefer the simple standard form: `assert_match version.to_s, shell_output("#{bin}/foo --version")`
+  - Avoid regex-only version assertions when `version.to_s` matching is available
   - For libraries: compile and link sample code
   - Use `testpath` for temporary files
 
