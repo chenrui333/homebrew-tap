@@ -7,12 +7,13 @@ class LsHpack < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "174b2ba3db2da8fb24ff7a019efc1facf64186ba132a026b3a0918c617a3aada"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5607e6adbceaf4400fa89414644c45a8172281e0480e90766cf07e9c27c1fa4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c0e6dd2a5ac1a85ca6a62797f83d757a3fe4ae5094c6a3ac1b81b15c6c2975a"
-    sha256 cellar: :any_skip_relocation, sequoia:       "7709b1c11b0979b0d3a079cc749391483dd0b48ccb5d3b54771ad5843e0d945c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c07db604b3170a8f21fa45169af39e71fd52eeb710e80c2ab88ee578f74a7274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "201e2612304554a6022911c7e44e76b41a8b2e46cb74dc4e6f3975951cd541b8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "1f91663e7b38b1f45409a01931768ffdb3bc2c51718213bdfdaa71b2eb0a2358"
+    sha256 cellar: :any,                 arm64_sequoia: "906c4e3acd99221dddf3d8d4a0649f7bc6cc207945532222bf793ab85357510d"
+    sha256 cellar: :any,                 arm64_sonoma:  "cecd7d91dce1ffaa18096347e9c6b252842a6cd7145fe51cd5c30069ef6a51d6"
+    sha256 cellar: :any,                 sequoia:       "b0e46998b8a2520ec1326039afb41842c379fb5c8933498f8d150dd0935676a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb97b47e4d51ebc3e308a82d206d8d7e1763be91b2a351619b09093def373860"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6edeb50e88418f23113ed87ebfc7e39d834f718e2c379750869e60d2cb7bf7f"
   end
 
   depends_on "cmake" => :build
