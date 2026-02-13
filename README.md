@@ -495,6 +495,7 @@ brew install --cask <tool>
 - `rawhide`
 - `rbac-lookup`
 - `readmeai`
+- `recall`
 - `reddix`
 - `reformat-gherkin`
 - `refurb`
