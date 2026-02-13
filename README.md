@@ -501,6 +501,7 @@ brew install --cask <tool>
 - `relay`
 - `remark-cli`
 - `renux`
+- `repology`
 - `resinator`
 - `resto`
 - `revanced-cli`
