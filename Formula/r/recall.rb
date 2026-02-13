@@ -6,6 +6,15 @@ class Recall < Formula
   license "MIT"
   head "https://github.com/zippoxer/recall.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bc397bfe969d8309f1dc82a2810d1f4c0ba358e2d15fce21a35dc80cc3a8571"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6691d039d019781397c801a3e1765a380b68bdb8ccaebf57b98a1d2048e89d37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "411df93c61ec4bbe89fd4fe066173099fecec583481f6a056febb7c011fe9992"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6f041fe783be84e265239b71371146d05470499879efe991e5c702662efe3a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77feaa36c751ade680d678851649b09dced402f4721fb33e10aa187ab5517979"
+  end
+
   depends_on "rust" => :build
 
   def install
