@@ -23,11 +23,12 @@ class LsHpack < Formula
     system "cmake", "-S", ".", "-B", "build",
                   "-DCMAKE_BUILD_TYPE=Release",
                   "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                  "-DSHARED=1",
                   "-DLSHPACK_XXH=1",
                   *std_cmake_args
     system "cmake", "--build", "build"
 
-    lib.install "build/libls-hpack.a"
+    lib.install "build/#{shared_library("libls-hpack")}"
     include.install "lshpack.h", "lsxpack_header.h"
   end
 
