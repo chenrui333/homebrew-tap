@@ -65,6 +65,9 @@ Commit message: `foo 1.2.3 (new formula)`
 
 ### Required Elements
 
+- **Build source policy**: MUST build from source in the formula (e.g., `go build`, `cargo install`, `cmake`, etc.).
+  - Do NOT package upstream prebuilt binaries/releases for formula installation.
+  - If upstream only ships binaries and no buildable source path, raise it for manual review instead of adding the formula.
 - **Test block**: MUST verify actual functionality, not just `--version` or `--help`
   - Include a version assertion as an additional check whenever a reliable version command/output exists
   - For libraries: compile and link sample code
