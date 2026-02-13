@@ -182,6 +182,7 @@ brew install --cask <tool>
 - `di-tui`
 - `dnsforwarder`
 - `doit`
+- `dominds`
 - `dory-cli`
 - `dotbins`
 - `dqy`
