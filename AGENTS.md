@@ -74,6 +74,11 @@ Commit message: `foo 1.2.3 (new formula)`
   - Avoid regex-only version assertions when `version.to_s` matching is available
   - For libraries: compile and link sample code
   - Use `testpath` for temporary files
+- **Completions policy**: Add shell completion support when upstream CLI supports it.
+  - Use Homebrew DSL: `generate_completions_from_executable`.
+  - Rust CLIs: prefer `shell_parameter_format: :clap`.
+  - Go CLIs: prefer `shell_parameter_format: :cobra`.
+  - Python CLIs: prefer `shell_parameter_format: :click` or `:typer` (based on upstream framework).
 
 ### Library Packaging Guidance
 
