@@ -5,6 +5,16 @@ class LsHpack < Formula
   sha256 "4abeeb786d6211d0aaf13ef3df7651c765c2ffb58cd226ec5c9e6e8b6d801ca1"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "174b2ba3db2da8fb24ff7a019efc1facf64186ba132a026b3a0918c617a3aada"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5607e6adbceaf4400fa89414644c45a8172281e0480e90766cf07e9c27c1fa4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c0e6dd2a5ac1a85ca6a62797f83d757a3fe4ae5094c6a3ac1b81b15c6c2975a"
+    sha256 cellar: :any_skip_relocation, sequoia:       "7709b1c11b0979b0d3a079cc749391483dd0b48ccb5d3b54771ad5843e0d945c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c07db604b3170a8f21fa45169af39e71fd52eeb710e80c2ab88ee578f74a7274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "201e2612304554a6022911c7e44e76b41a8b2e46cb74dc4e6f3975951cd541b8"
+  end
+
   depends_on "cmake" => :build
 
   def install
