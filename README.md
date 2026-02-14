@@ -650,6 +650,7 @@ brew install --cask <tool>
 - `wifitui`
 - `wisu`
 - `xcpkg`
+- `xfr`
 - `xmlformatter`
 - `yajsv`
 - `yatto`
