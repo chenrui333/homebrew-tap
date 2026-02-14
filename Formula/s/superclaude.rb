@@ -19,7 +19,7 @@ class Superclaude < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
@@ -39,6 +39,6 @@ index 408bc00..8ae9d52 100755
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/usr/bin/env bash
- 
+
  # SuperClaude - AI-powered development toolkit
  # Usage: ./scripts/superclaude.sh <command> [flags]

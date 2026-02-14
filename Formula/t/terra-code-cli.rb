@@ -16,7 +16,7 @@ class TerraCodeCli < Formula
 
   def install
     system "npm", "install", *std_npm_args, "--ignore-scripts"
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

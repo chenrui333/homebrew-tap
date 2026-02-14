@@ -20,7 +20,7 @@ class ClaudeCodeGenericHooks < Formula
     inreplace "dist/cli.js", "0.1.12", version.to_s
 
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

@@ -17,7 +17,7 @@ class Curlconverter < Formula
 
   def install
     system "npm", "install", *std_npm_args, "--ignore-scripts"
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase

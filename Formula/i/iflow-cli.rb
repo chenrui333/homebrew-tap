@@ -22,7 +22,7 @@ class IflowCli < Formula
 
   def install
     system "npm", "install", *std_npm_args(ignore_scripts: false)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     ripgrep_vendor_dir = libexec/"lib/node_modules/@iflow-ai/iflow-cli/vendors/ripgrep"

@@ -18,7 +18,7 @@ class DoryCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     if OS.linux?
       (libexec/"lib/node_modules/@clidey/dory/node_modules")
