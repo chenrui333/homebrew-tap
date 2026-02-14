@@ -23,7 +23,7 @@ class Recall < Formula
 
   test do
     session_dir = testpath/".codex/sessions/2026/01/01"
-    mkdir_p session_dir
+    session_dir.mkpath
 
     (session_dir/"rollout-test.jsonl").write <<~JSONL
       {"type":"session_meta","timestamp":"2026-01-01T00:00:00Z","payload":{"id":"test-codex-123","cwd":"/tmp/project","git":{"branch":"main"}}}
