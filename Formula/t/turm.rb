@@ -8,11 +8,11 @@ class Turm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92a0ab7b203c52e2a38a25887adb6d36961a85d282a164309254423ffca28858"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d22f4f36451401c99b63531933e708cf1d3aa69885bbc354573e279b66e5cb56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ac3f2be9a294a98940d3a42e58343a2b23ad1a1d48c2a00f24c4ffa471c0f2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a259b0adc2dbf1ffac281d26c76aa39e389b37b386b5221ed3dc72f5083121b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e322f92a24d8706df8c7ccb5e1dbe1507b025ab12e20b9339516ca247d176ea7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4fa7ec6e3e0a1788cec41ee7f57cb177929c398dfcb486b2e2832312154899b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84f9210dcba058139cefa1362da5fed4bb77c4dc88e98e4761367f000990a890"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd8f1167d0417c0cae0cbabae4749af8e5816855580b9812fb2626b5b086bf8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a42b72048d1c6ef158f97a0f726a9d652de590a8bd869d06518c2e1897652d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac9da41e82a33babaa94176164b609bc08693d4e59d167a8b8d3f186ec8a4c1"
   end
 
   depends_on "rust" => :build
