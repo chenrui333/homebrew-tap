@@ -21,7 +21,7 @@ class Oatmeal < Formula
     system "cargo", "update", "-p", "time"
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"oatmeal", "completions", "--shell", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"oatmeal", shell_parameter_format: :clap)
     (man1/"oatmeal.1").write Utils.safe_popen_read(bin/"oatmeal", "manpages")
   end
 
