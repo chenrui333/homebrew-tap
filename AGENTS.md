@@ -45,6 +45,16 @@ brew edit <formula>
 
 Commit message: `foo: fix <description>` or `foo: <description>`
 
+### Ruby Style Preferences
+
+Prefer `Pathname` idioms where possible.
+
+Examples:
+```ruby
+session_dir.mkpath
+bin.install_symlink libexec.glob("bin/*")
+```
+
 ### When to Add a Revision
 
 Add or increment `revision` when:
