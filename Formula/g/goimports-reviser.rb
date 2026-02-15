@@ -1,8 +1,8 @@
 class GoimportsReviser < Formula
   desc "Right imports sorting & code formatting tool (goimports alternative)"
   homepage "https://github.com/incu6us/goimports-reviser"
-  url "https://github.com/incu6us/goimports-reviser/archive/refs/tags/v3.12.4.tar.gz"
-  sha256 "e1b5eed12504afd7054de019719b724cbb714fa42441ca1afe8e1fa20c69855e"
+  url "https://github.com/incu6us/goimports-reviser/archive/refs/tags/v3.12.5.tar.gz"
+  sha256 "90b97c2ae009e858e665bf26c5b20da0a360d1b3f7066549ed26a42fbde1c1db"
   license "MIT"
   head "https://github.com/incu6us/goimports-reviser.git", branch: "master"
 
