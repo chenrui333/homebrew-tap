@@ -1,8 +1,8 @@
 class Aic < Formula
   desc "Fetch the latest changelogs for popular AI coding assistants"
   homepage "https://github.com/arimxyer/aic"
-  url "https://github.com/arimxyer/aic/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "676fca3cff1234d54978ad921d08895d993d288079a0ca315f64f4094ace105f"
+  url "https://github.com/arimxyer/aic/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "0aa0c3f8de64c50695f3e3b04b1e1812212b6b61d2690ef5e845e6077cf3ba67"
   license "MIT"
 
   bottle do
