@@ -1,8 +1,8 @@
 class Judo < Formula
   desc "Multi-database TUI for ToDo lists"
   homepage "https://github.com/giacomopiccinini/judo"
-  url "https://static.crates.io/crates/judo/judo-1.2.0.crate"
-  sha256 "dd1025aca46fcb6bf3d6224d883f3dd47066e9193a9ac4e03fde95d9964d191e"
+  url "https://static.crates.io/crates/judo/judo-2.0.6.crate"
+  sha256 "4d1a483ff30b0114866ba8837c07615abd1ae7d4ad161e14959a2f08e4143344"
   license "MIT"
   head "https://github.com/giacomopiccinini/judo.git", branch: "main"
 
