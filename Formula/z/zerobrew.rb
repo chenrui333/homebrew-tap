@@ -1,8 +1,8 @@
 class Zerobrew < Formula
   desc "Drop-in, faster, experimental Homebrew alternative"
   homepage "https://github.com/lucasgelfond/zerobrew"
-  url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "dbbddff4b22a264e993ab7b254e0eb87a958a559c8438671f4eac3fd5517868b"
+  url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "efab8d6171751bdea6ef17b028d9dafccad45ff1252874ab2f1e6f87b4c2bdc1"
   license "Apache-2.0"
   head "https://github.com/lucasgelfond/zerobrew.git", branch: "main"
 
