@@ -1,8 +1,8 @@
 class Av < Formula
   desc "Manage stacked PRs with Aviator"
   homepage "https://www.aviator.co/"
-  url "https://github.com/aviator-co/av/archive/refs/tags/v0.1.13.tar.gz"
-  sha256 "2c44b37987621b6a2b7aa7677fc76e1d18296838ce9f9ccda710604e15c25374"
+  url "https://github.com/aviator-co/av/archive/refs/tags/v0.1.16.tar.gz"
+  sha256 "2d3d5a561a3fee5d7fb55d3b021dc5a8be12cb4fc901fede655154a2166b0ba9"
   license "MIT"
   head "https://github.com/aviator-co/av.git", branch: "master"
 
@@ -31,7 +31,7 @@ class Av < Formula
     system "git", "init"
 
     output = shell_output("#{bin}/av init 2>&1", 1)
-    assert_match "error: this repository doesn't have a remote origin", output
+    assert_match "Failed to determine repository default branch", output
     assert_path_exists testpath/".git/av"
   end
 end
