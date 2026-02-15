@@ -1,8 +1,8 @@
 class Yatto < Formula
   desc "Interactive VCS-based todo-list for the command-line"
   homepage "https://github.com/handlebargh/yatto"
-  url "https://github.com/handlebargh/yatto/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "2c3d3d9d5b97686441ce5ec89bf1a9204744b2c5fb53cd9b0eec6d2e4d699c80"
+  url "https://github.com/handlebargh/yatto/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "47e301b85b24f92305f0f7d5cb5786d762ff01267a29c4da743ddae98bb65f1f"
   license "MIT"
   head "https://github.com/handlebargh/yatto.git", branch: "main"
 
