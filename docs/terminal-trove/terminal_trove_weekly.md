@@ -45,7 +45,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 |------|-------------|------|
 | cloudflare-speed-cli | A terminal interface for cloudflare&#39;s internet speed tester. | https://github.com/kavehtehrani/cloudflare-speed-cli |
 | oyo | A step-through diff viewer. | https://github.com/ahkohd/oyo |
-| pass-cli | A secure, cross-platform, command-line password manager. | https://github.com/ari1110/pass-cli |
+| pass-cli | A secure, cross-platform, command-line password manager. | https://github.com/arimxyer/pass-cli |
 | handler | A2A Protocol client and developer toolkit. | https://github.com/alDuncanson/Handler |
 | lazyworktree | Effortless Git worktree management for the terminal. | https://github.com/chmouel/lazyworktree |
 | jolt ⭐ | A beautiful TUI battery and energy monitor for your terminal. | https://github.com/jordond/jolt |
@@ -100,7 +100,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 |------|-------------|------|
 | rusticon | A mouse driven SVG favicon editor for your terminal. | https://github.com/ronilan/rusticon |
 | fresh | A text editor for your terminal, easy, powerful and fast. | https://github.com/sinelaw/fresh |
-| depot | Replace docker build with depot build for up to 40x faster container image builds. | https://fandf.co/48yzJm7 |
+| depot | Replace docker build with depot build for up to 40x faster container image builds. | https://depot.dev/docs/cli/installation?utm_source=fnf&utm_medium=website&utm_campaign=depot-december&utm_term=terminal-trove&utm_content=install-CLI |
 | himalaya | A CLI to manage emails. | https://github.com/pimalaya/himalaya |
 | superseedr ⭐ | A BitTorrent client in your terminal. | https://github.com/Jagalite/superseedr |
 | mlbt | A TUI interface for the MLB Statcast API. | https://github.com/mlb-rs/mlbt |
@@ -124,7 +124,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 | oeis-tui ⭐ | A TUI and CLI for exploring the On-Line Encyclopedia of Integer Sequences (OEIS). | https://github.com/hako/oeis-tui |
 | e2c | A TUI application for managing AWS EC2 instances. | https://github.com/nlamirault/e2c |
 | ast-grep | A CLI tool for code structural search, lint and rewriting. | https://github.com/ast-grep/ast-grep |
-| turm | TUI for the Slurm Workload Manager. | https://github.com/kabouzeid/turm |
+| turm | TUI for the Slurm Workload Manager. | https://github.com/karimknaebel/turm |
 | ibtop | Real-time terminal monitor for InfiniBand networks. | https://github.com/JannikSt/ibtop |
 | csvi | A simple cross-platform terminal CSV editor. | https://github.com/hymkor/csvi |
 
@@ -143,7 +143,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 
 | Tool | Description | Link |
 |------|-------------|------|
-| auggie | All the power of Augment Code in your terminal. | https://fandf.co/3JFejdh |
+| auggie | All the power of Augment Code in your terminal. | https://www.augmentcode.com/product/CLI?utm_source=terminal-trove&utm_medium=site&utm_campaign=augmentcode-november&utm_term=freeman-forrest&utm_content=CLI |
 | snipt | A powerful text snippet expansion tool. | https://github.com/snipt/snipt |
 | filessh | A fast and convenient TUI file browser for remote servers. | https://github.com/JayanAXHF/filessh |
 | starlit | A minimal, cute and customizable weather cli. | https://github.com/ashuhlee/starlit |
@@ -171,14 +171,14 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 | jrnl | Collect your thoughts and notes without leaving the command line. | https://github.com/jrnl-org/jrnl |
 | rum | A TUI to list, search and run package.json scripts. | https://github.com/thekarel/rum |
 | mcat ⭐ | Parse, convert &amp; preview images, videos &amp; markdown in your terminal. | https://github.com/Skardyy/mcat |
-| coderabbit | Free AI Code Reviews in the CLI. | https://coderabbit.link/terminaltrove |
+| coderabbit | Free AI Code Reviews in the CLI. | https://www.coderabbit.ai/cli?utm_source=website&utm_medium=website&utm_campaign=coderabbit_cli&utm_content=coderabbit_cli&utm_term=terminaltrove&ref=terminaltrove |
 | pvetui | A Terminal UI for Proxmox VE. | https://github.com/devnullvoid/pvetui |
 
 ## October 29, 2025
 
 | Tool | Description | Link |
 |------|-------------|------|
-| benben | A fast and efficient command line audio player and audio converter. | https://chiselapp.com/user/MistressRemilia/repository/benben |
+| benben | A fast and efficient command line audio player and audio converter. | https://chiselapp.com/user/MistressRemilia/repository/benben/index |
 | cronboard ⭐ | A terminal tool for managing cron jobs locally and on servers. | https://github.com/antoniorodr/cronboard |
 | reddix | Reddit, refined for the terminal. | https://github.com/ck-zhang/reddix |
 | nethogs | A linux &#39;net top&#39; tool. | https://github.com/raboof/nethogs |
@@ -335,7 +335,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 | bitchat-tui ⭐ | A TUI client for bitchat. | https://github.com/vaibhav-mattoo/bitchat-tui |
 | simtool | A beautiful and powerful TUI for managing iOS simulators. | https://github.com/azizuysal/simtool |
 | gotip | A TUI application for interactively selecting and running Go tests. | https://github.com/lusingander/gotip |
-| hygg | Minimalistic Vim-like TUI document reader. | https://github.com/kruserr/hygg |
+| hygg | Minimalistic Vim-like TUI document reader. | https://github.com/kruseio/hygg |
 | stormy | Minimal, customizable, and neofetch-like weather CLI. | https://github.com/ashish0kumar/stormy |
 | kat | A TUI and rule-based rendering engine for Kubernetes manifests. | https://github.com/MacroPower/kat |
 
@@ -431,7 +431,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 
 | Tool | Description | Link |
 |------|-------------|------|
-| needs | checks if bin(s) are installed, oh and the version too. | https://github.com/NQMVD/needs |
+| needs | checks if bin(s) are installed, oh and the version too. | https://github.com/nmb4/needs |
 | basalt ⭐ | A TUI for managing Obsidian vaults and notes. | https://github.com/erikjuhani/basalt |
 | chiko | A TUI gRPC client. | https://github.com/felangga/chiko |
 | lexy | A CLI for reading Learn X in Y Minutes directly into your terminal. | https://github.com/antoniorodr/lexy |
@@ -636,7 +636,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 |------|-------------|------|
 | durdraw | Versatile ASCII and ANSI Art text editor for terminals. | https://github.com/cmang/durdraw |
 | gocker | TUI for Docker management. | https://github.com/micoli/gocker |
-| drft | A diff re/viewer and file tree viewer. | https://codeberg.org/ncts/drft |
+| drft | A diff re/viewer and file tree viewer. | https://codeberg.org/nightsail/drft |
 | wiper ⭐ | A TUI disk analyser and cleanup tool. | https://github.com/ikebastuz/wiper |
 | braindrop | A terminal-based client for raindrop.io. | https://github.com/davep/braindrop |
 | flowcontrol | Flow Control: a programmer&#39;s text editor. | https://github.com/neurocyte/flow |
@@ -758,7 +758,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 | aim | A command line download/upload tool with resume. | https://github.com/mihaigalos/aim |
 | vignore | A powerful tool to visualize ignored files. | https://github.com/james4ever0/vignore |
 | tui-journal | Your journal app if you live in a terminal. | https://github.com/AmmarAbouZor/tui-journal |
-| bluetuith | A TUI bluetooth manager for Linux. | https://github.com/darkhz/bluetuith |
+| bluetuith | A TUI bluetooth manager for Linux. | https://github.com/bluetuith-org/bluetuith |
 
 ## October 15, 2024
 
@@ -893,7 +893,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 |------|-------------|------|
 | jc | A tool convert CLI output, files &amp; strings to JSON/YAML. | https://github.com/kellyjonbrazil/jc |
 | redu | ncdu for your restic repository. | https://github.com/drdo/redu |
-| rustscan ⭐ | The Modern Port Scanner. | https://github.com/RustScan/RustScan |
+| rustscan ⭐ | The Modern Port Scanner. | https://github.com/bee-san/RustScan |
 | zeitfetch | Instantaneous snapshots of system information. | https://github.com/nidnogg/zeitfetch |
 | process-compose | A scheduler and orchestrator to manage non-containerized applications. | https://github.com/F1bonacc1/process-compose |
 
