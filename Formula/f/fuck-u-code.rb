@@ -1,8 +1,8 @@
 class FuckUCode < Formula
   desc "Detect legacy code mess and generate a beautiful report"
   homepage "https://github.com/Done-0/fuck-u-code"
-  url "https://github.com/Done-0/fuck-u-code/archive/refs/tags/v1.0.0-beta.1.tar.gz"
-  sha256 "0ca19c3d57da39ea091b47e829cea18e5a2420c68468e7c03995a3c9649a40bf"
+  url "https://github.com/Done-0/fuck-u-code/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "8d8bb9382db388109fa96ea000841c90d6d5fca91f452bf599160830edc08f49"
   license "MIT"
   head "https://github.com/Done-0/fuck-u-code.git", branch: "main"
 
