@@ -43,8 +43,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions"
+          git config --local user.email "actions@github.com"
 
       - name: Generate formula metadata
         env:
