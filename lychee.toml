@@ -1,0 +1,33 @@
+# Lychee link checker configuration
+
+max_retries = 3
+retry_wait_time = 5
+max_concurrency = 10
+
+# Treat 429 as valid after retries to avoid transient rate-limit failures.
+accept = [200, 204, 206, 429]
+
+# Exclude placeholder URLs used in documentation examples.
+# Temporary baseline exclusions tracked in:
+# https://github.com/chenrui333/homebrew-tap/issues/4237
+exclude = [
+  "^https://\\.\\.\\./?$",
+  "^https://alanza\\.xyz/?$",
+  "^https://docs\\.horusec\\.io/docs/cli/overview/?$",
+  "^https://git\\.calcurse\\.org/?$",
+  "^https://twilioalpha\\.com/mcp/?$",
+  "^https://github\\.com/zonay/public-ollama-finder/?$",
+  "^https://github\\.com/stripe/agent-toolkit/tree/main/modelcontextprotocol/?$",
+  "^https://www\\.vibekit\\.sh/?$",
+  "^https://github\\.com/sindresorhus/ni/?$",
+  "^https://github\\.com/Herdora/chisel/?$",
+  "^https://github\\.com/yeoman/emoj/?$",
+  "^https://docs\\.nhost\\.io/platform/cli/overview(?:#.*)?$",
+  "^https://github\\.com/ascorbic/mapscii/?$",
+  "^https://rustwasm\\.github\\.io/twiggy/?$",
+  "^https://github\\.com/ODwyerSoftware/brunette/?$",
+  "^https://www\\.gnu\\.org/software/hello/?$",
+]
+
+cache = true
+user_agent = "homebrew-tap link checker (https://github.com/chenrui333/homebrew-tap)"
