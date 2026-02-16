@@ -82,8 +82,19 @@ class FormulaCrawler:
         """Save git stats cache"""
         self.cache_file.parent.mkdir(parents=True, exist_ok=True)
         try:
+            # Keep cache output deterministic for stable diffs across runs.
+            normalized_cache = {
+                cache_key: {
+                    "forks": (self.cache.get(cache_key) or {}).get("forks"),
+                    "last_commit": (self.cache.get(cache_key) or {}).get("last_commit"),
+                    "last_release": (self.cache.get(cache_key) or {}).get("last_release"),
+                    "stars": (self.cache.get(cache_key) or {}).get("stars"),
+                }
+                for cache_key in sorted(self.cache)
+            }
             with open(self.cache_file, 'w') as f:
-                json.dump(self.cache, f, indent=2)
+                json.dump(normalized_cache, f, indent=2, sort_keys=True)
+                f.write("\n")
             print(f"Saved cache to {self.cache_file}", flush=True)
         except Exception as e:
             print(f"Warning: Failed to save cache: {e}", flush=True)
