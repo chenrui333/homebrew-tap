@@ -26,6 +26,7 @@ exclude = [
   "^https://github\\.com/ascorbic/mapscii/?$",
   "^https://rustwasm\\.github\\.io/twiggy/?$",
   "^https://github\\.com/ODwyerSoftware/brunette/?$",
+  "^https://www\\.gnu\\.org/software/hello/?$",
 ]
 
 cache = true
