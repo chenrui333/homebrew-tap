@@ -2,7 +2,7 @@ class Mcpd < Formula
   desc "Declaratively manage Model Context Protocol (MCP) servers"
   homepage "https://mozilla-ai.github.io/mcpd/"
   url "https://github.com/mozilla-ai/mcpd/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "ef9bf9ed0b664b532363a01e699f411ee2b578adec353f36b037261df8fed6d6"
+  sha256 "c99c9d02799782a2dd7a9b2082c805f363a1a75535fffed05743ce33e19491c9"
   license "MIT"
   head "https://github.com/mozilla-ai/mcpd.git", branch: "main"
 
@@ -20,9 +20,9 @@ class Mcpd < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/mozilla-ai/mcpd/v2/internal/cmd.version=#{version}
-      -X github.com/mozilla-ai/mcpd/v2/internal/cmd.commit=#{tap.user}
-      -X github.com/mozilla-ai/mcpd/v2/internal/cmd.date=#{time.iso8601}
+      -X github.com/mozilla-ai/mcpd/internal/cmd.version=#{version}
+      -X github.com/mozilla-ai/mcpd/internal/cmd.commit=#{tap.user}
+      -X github.com/mozilla-ai/mcpd/internal/cmd.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end
