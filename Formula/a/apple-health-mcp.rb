@@ -16,6 +16,8 @@ class AppleHealthMcp < Formula
 
   def install
     system "npm", "install", *std_npm_args
+    ENV["npm_config_build_from_source"] = "true"
+    system "npm", "rebuild", "duckdb", "--prefix", libexec/"lib/node_modules/@neiltron/apple-health-mcp"
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
@@ -25,6 +27,7 @@ class AppleHealthMcp < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
+    ENV["NODE_NO_WARNINGS"] = "1"
     output = pipe_output("#{bin}/apple-health-mcp 2>&1", json, 1)
     assert_empty output
   end
