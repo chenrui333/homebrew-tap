@@ -19,7 +19,7 @@ class Testronaut < Formula
 
   test do
     output = shell_output("#{bin}/testronaut 2>&1", 1)
-    assert_match "No `missions` directory found", output
+    assert_match "Missions directory not found", output
 
     output = shell_output("#{bin}/testronaut serve 2>&1", 1)
     assert_match "No HTML reports found in missions/mission_reports", output
