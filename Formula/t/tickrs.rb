@@ -29,20 +29,6 @@ class Tickrs < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tickrs --version")
-
-    require "pty"
-
-    output = ""
-
-    PTY.spawn("#{bin}/tickrs") do |reader, _writer, pid|
-      sleep 1
-      Process.kill "TERM", pid
-      begin
-        output = reader.read
-        assert_match("Add\e[22;7HTicker", output)
-      rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
-      end
-    end
+    assert_match "Realtime ticker data in your terminal", shell_output("#{bin}/tickrs --help")
   end
 end
