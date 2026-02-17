@@ -220,7 +220,8 @@ class ZenMcpServer < Formula
     output = pipe_output("#{bin}/zen-mcp-server 2>&1", json, 0)
     # "Your question or idea for collaborative thinking to be sent to the external model.
     # Provide detailed context, including your goal, what you've tried, and any specific challenges.
-    # WARNING: Large inline code must NOT be shared in prompt. Provide full-path to files on disk as separate parameter."
+    # WARNING: Large inline code must NOT be shared in prompt.
+    # Provide full-path to files on disk as separate parameter."
     assert_match "Your question or idea for collaborative thinking to be sent to the external model", output
   end
 end
