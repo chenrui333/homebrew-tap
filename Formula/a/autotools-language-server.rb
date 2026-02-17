@@ -17,6 +17,7 @@ class AutotoolsLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cce201546405893776fbdb77d9e009859c94f978e19e3afce8bb19344c76a3a2"
   end
 
+  depends_on "rust" => :build # for rpds-py
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
