@@ -8,11 +8,12 @@ class Oatmeal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71afa42d950702d109a5e6a07aa72e0c85022f11feb5bd9822226ca5f1f8a8c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca662830c08fe280aed3ff5a4416932bb545a5c6482206ee5287ba7a5e308270"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "920878067d9b1448645c43ee3611ad08f00c47e9506cc69caead33183a5bb0e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f366ecd59256ea9d905f0955f62315175f1028573638a450732e9ce8d52a9b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8834fd16d76f34f2d9114e020d4005d5b55c1d17754133bbea734c4356e6b85b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2a972aa9e987bdfbc9be55b2a6719f3224276feeb9dec85f7999adab96c1787"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c27d86cd2dfb43b6a9513e51da145ab4c9e7185da3da872f9fc2b50ddd13a8e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2029a5faa8ca7ee8cc9de8ea3d8014bde83f4185e946c9329997d5a6a93a389b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43013c19bae88ffe2557f5c0cbdd2a7cf32ea4356f2091caaf8382bb36e0a6bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2166e10f4be1a059455d1158c53e297bc0ec4801b426396b9f97708189b39d2d"
   end
 
   depends_on "rust" => :build
