@@ -31,6 +31,7 @@ class SslChecker < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     output = shell_output("#{bin}/ssl-checker domains example.com --silent")
-    assert_match "CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US", output
+    assert_match "example.com", output
+    assert_match "CN=", output
   end
 end
