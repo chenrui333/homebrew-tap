@@ -30,6 +30,6 @@ class Ddev < Formula
 
     assert_match version.to_s, shell_output("#{bin}/ddev --version")
 
-    assert_match "Cannot connect to the Docker daemon", shell_output("#{bin}/ddev list 2>&1", 1)
+    assert_match "failed to connect to the docker API", shell_output("#{bin}/ddev list 2>&1", 1)
   end
 end
