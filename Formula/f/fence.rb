@@ -1,5 +1,5 @@
 class Fence < Formula
-  desc "Lightweight sandbox for running commands with network and filesystem restrictions"
+  desc "Lightweight sandbox with network and filesystem restrictions"
   homepage "https://github.com/Use-Tusk/fence"
   url "https://github.com/Use-Tusk/fence/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "a513a6e6f4bbbd597d0f00d461cf1c32dcf27df9680ad5f72d8d3fe6b4baae6a"
