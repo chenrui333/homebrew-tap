@@ -40,6 +40,6 @@ class Claudio < Formula
     JSON
 
     output = pipe_output("#{bin}/claudio --silent 2>&1", json_input)
-    assert_match "INFO tracking database initialized successfully", output
+    assert_empty output
   end
 end
