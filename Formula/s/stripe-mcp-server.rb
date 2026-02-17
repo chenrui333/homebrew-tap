@@ -23,7 +23,8 @@ class StripeMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/stripe-mcp-server --tools=all --api-key=sk_TEST", json, 0)
-    assert_match "This tool will create a customer in Stripe", output
+    output = pipe_output("#{bin}/stripe-mcp-server --api-key=sk_TEST 2>&1", json, 0)
+    assert_match "Stripe MCP Server running on stdio", output
+    assert_match "Unauthorized. See https://docs.stripe.com/mcp", output
   end
 end
