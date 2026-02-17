@@ -30,6 +30,6 @@ class CloudRunMcp < Formula
     JSON
 
     output = pipe_output("#{bin}/cloud-run-mcp 2>&1", json, 0)
-    assert_match "Lists Cloud Run services in a given project and region", output
+    assert_match "Lists all Cloud Run services in a given project.", output
   end
 end
