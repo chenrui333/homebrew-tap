@@ -2,7 +2,7 @@ class Teldrive < Formula
   desc "Utility to organize, manage, and sync Telegram files locally"
   homepage "https://teldrive-docs.pages.dev/"
   url "https://github.com/tgdrive/teldrive/archive/refs/tags/1.8.3.tar.gz"
-  sha256 "03d8caad41046fb231c89e9213b6a353ff8bc1c51e7fb8c0af301ec4e92b7eac"
+  sha256 "731126690b81f96e241e07ae45330dffb8b4a6df6ccce153f262667a404ca4e3"
   license "MIT"
   head "https://github.com/tgdrive/teldrive.git", branch: "master"
 
@@ -20,7 +20,7 @@ class Teldrive < Formula
 
   resource "ui_assets" do
     url "https://github.com/tgdrive/teldrive-ui/releases/download/latest/teldrive-ui.zip"
-    sha256 "332846ee65061adca2a7213fbe01ec1f182e20bde9db498407061c6d4e4228b5"
+    sha256 "bf3e9c3c2541eb9c222adfe12275480591a0d20a6152b439951729649f854739"
   end
 
   def install
@@ -48,6 +48,7 @@ class Teldrive < Formula
     TOML
 
     output = shell_output("#{bin}/teldrive check 2>&1", 1)
-    assert_match "database: failed to connect to `user=user database=dbname`", output
+    assert_match "Failed to connect to database", output
+    assert_match "failed to connect to `user=user database=dbname`", output
   end
 end
