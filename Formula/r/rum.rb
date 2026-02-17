@@ -33,7 +33,7 @@ class Rum < Formula
       }
     JSON
 
-    output = shell_output("#{bin}/rum #{testpath}/package.json --help")
-    assert_match "TUI to list, filter and run package.json scripts", output
+    output = shell_output("#{bin}/rum -l #{testpath}/package.json")
+    assert_match "start    echo Starting", output
   end
 end
