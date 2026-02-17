@@ -32,7 +32,10 @@ class Mitex < Formula
 
     system "cargo", "install", *std_cargo_args(path: "crates/mitex-cli")
 
-    generate_completions_from_executable(bin/"mitex", shell_parameter_format: :clap)
+    [bash_completion/"mitex", fish_completion/"mitex.fish", zsh_completion/"_mitex"].each do |completion_file|
+      rm completion_file if completion_file.exist?
+    end
+    generate_completions_from_executable(bin/"mitex", "completion")
     system bin/"mitex", "manual", man1
   end
 
