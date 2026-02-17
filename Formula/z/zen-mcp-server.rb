@@ -9,12 +9,11 @@ class ZenMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "60192cee1879cc67f499a5a56efafe26268e1b3959ae46f060276be4a6f8c747"
-    sha256 cellar: :any,                 arm64_sequoia: "4bf1f55d266396621b65c0996d5a775bdb7769749577932b362c575406f96ce1"
-    sha256 cellar: :any,                 arm64_sonoma:  "66ccfbfae2c2a8ff3de532e8727eb69282fa0345eca4530c8bf4e9821cd28ccb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c463b84ec155b9469c714eb4aa11b304282346aa37856a43ac5546311e99a5de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d80427ed68748eeb79d79346622b76c8afe0f334ee750477930f67deabc2d914"
+    sha256 cellar: :any,                 arm64_tahoe:   "568f2f72e6b5fe15535eb1f70d3310ffc3cab33b6c08cd0a9b0a9dc7cc2d3235"
+    sha256 cellar: :any,                 arm64_sequoia: "5a2878b3199f9654a88e3fd1a449f3032b2450338c92396353b196a6795f7b16"
+    sha256 cellar: :any,                 arm64_sonoma:  "75ebf2758529a8c094a4ebddccb44f8e78111712d3c91016842f938ea24d222c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3bb0e3bfd099a7e02ee845c140835bd416fbc30985a18f0a074dd2b111bb3d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2010e571bc7e19f8b1a3f2c0191fb7ad080d64dc8b9dbf4a1e49408bc514103"
   end
 
   depends_on "pkgconf" => :build
