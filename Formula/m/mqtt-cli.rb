@@ -14,13 +14,13 @@ class MqttCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c6a1ae1f84e9f2174ec336dc6060bd94e1b36f408c16518caa80bd4c61c259"
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@21"
 
-  # update toolchain to Java 24
+  # Normalize toolchain to Java 21 for Homebrew's openjdk@21 runtime.
   patch :DATA
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = Formula["openjdk@21"].opt_prefix
 
     system "./gradlew", "shadowJar", "--no-daemon", "-x", "test"
     libexec.install "build/libs/mqtt-cli-#{version}.jar" => "mqtt-cli.jar"
@@ -66,14 +66,14 @@ index 78e791a..12ebc89 100644
  java {
      toolchain {
 -        languageVersion = JavaLanguageVersion.of(21)
-+        languageVersion = JavaLanguageVersion.of(24)
++        languageVersion = JavaLanguageVersion.of(21)
      }
  }
 
  tasks.compileJava {
      javaCompiler = javaToolchains.compilerFor {
 -        languageVersion = JavaLanguageVersion.of(11)
-+        languageVersion = JavaLanguageVersion.of(24)
++        languageVersion = JavaLanguageVersion.of(21)
      }
  }
 
@@ -86,6 +86,6 @@ index e57af1c..e8572dd 100644
  java {
      toolchain {
 -        languageVersion = JavaLanguageVersion.of(11)
-+        languageVersion = JavaLanguageVersion.of(24)
++        languageVersion = JavaLanguageVersion.of(21)
      }
  }
