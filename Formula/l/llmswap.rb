@@ -346,12 +346,27 @@ class Llmswap < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources(without: "hf-xet")
+
+    resource("hf-xet").stage do
+      # `hf-xet` sdist has an invalid Python source path in `pyproject.toml`.
+      # Upstream issue: https://github.com/huggingface/xet-core/issues/658
+      inreplace "pyproject.toml", 'python-source = "hf_xet/python"', 'python-source = "."'
+
+      # Disable sha2-asm on ARM which requires -march=armv8-a+crypto.
+      if ENV.effective_arch == :armv8
+        inreplace "data/Cargo.toml",
+                  'sha2 = { workspace = true, features = ["asm"] }',
+                  "sha2 = { workspace = true }"
+      end
+
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do
     ENV["ANTHROPIC_API_KEY"] = "test"
     assert_match version.to_s, shell_output("#{bin}/llmswap --version")
-    assert_match "💡 Cost Analysis & Optimization", shell_output("#{bin}/llmswap costs")
+    assert_match "API key appears invalid", shell_output("#{bin}/llmswap costs 2>&1", 1)
   end
 end
