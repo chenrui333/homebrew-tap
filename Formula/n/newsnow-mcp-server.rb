@@ -7,10 +7,7 @@ class NewsnowMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d290d5d7915f533d60b903650069a9a6d96d5ec0d687f335fd3fc1df364df31e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd199f52c62fe2b4a5896e538c0cc783f0a02215240b10d234ccba8e1b8a2c26"
-    sha256 cellar: :any_skip_relocation, ventura:       "d93e8ad5abe05e03faed15b6caa049b1b01b30a1119fcfe4dde83eb8073d3d4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "197ca5c47a269c1f5b4c46fbd0ccab7081b3c10aa796a073ec2d5db034ac2d9b"
+    sha256 cellar: :any_skip_relocation, all: "faccc2986ad97824b9390a373e9cd7e8b3813c89afea851e6e33362fde9c7c30"
   end
 
   depends_on "node"
