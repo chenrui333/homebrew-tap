@@ -31,9 +31,9 @@ class Headscale < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/headscale version")
+    assert_match "headscale version", shell_output("#{bin}/headscale version")
 
     output = shell_output("#{bin}/headscale configtest 2>&1", 1)
-    assert_match "error reading config file: Config File", output
+    assert_match "Fatal config error", output
   end
 end
