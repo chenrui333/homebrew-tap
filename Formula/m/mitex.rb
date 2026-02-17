@@ -12,10 +12,12 @@ class Mitex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cee75e8bd5abc217ace2223c28fbdd4ce893957646ace1dc079217067c54bf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc877355fa90fc2451f0307aea43df091816169ac826e9c0afef28a3cdbfad2f"
-    sha256 cellar: :any_skip_relocation, ventura:       "7c52e1ef7c1065c0046e291d96d2900594b75243939f3439ffe6c81396f6f792"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec5daed2578b21fc0f88b6d5cbf2cb9e429b4f2ca95f181df63a651e1cea646"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c704517439a8624af23b900bd93117667dcd66ac3a28ac11a34bd87794a6736b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e72f94062bd855f2f588c69fb42118b35fd69f8ec3960ae78b7763bda3e0f87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38b45ed3a0fe4fa7e55f7c2e97ad3b6c1d1480979539e543ce2922b897151473"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a92ffda1cd21a351b6bb79c28f466e19f6538887adda67fe4cc87be806e22129"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a36e12df2713e67dd4324e83083731479d58839f1b0ac417aafe923de42ec129"
   end
 
   depends_on "rust" => :build
