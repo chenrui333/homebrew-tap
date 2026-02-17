@@ -19,7 +19,14 @@ class Goboscript < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"goboscript", shell_parameter_format: :clap)
+    [
+      bash_completion/"goboscript",
+      fish_completion/"goboscript.fish",
+      zsh_completion/"_goboscript",
+    ].each do |completion_file|
+      rm completion_file if completion_file.exist?
+    end
+    generate_completions_from_executable(bin/"goboscript", "completions")
   end
 
   test do
