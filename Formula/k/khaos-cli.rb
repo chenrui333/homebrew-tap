@@ -146,6 +146,6 @@ class KhaosCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/khaos --version")
-    assert_match "No scenarios found", shell_output("#{bin}/khaos list")
+    assert_match "Available Scenarios", shell_output("#{bin}/khaos list")
   end
 end
