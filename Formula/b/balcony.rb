@@ -9,11 +9,11 @@ class Balcony < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "95222e654bfaa0db8d8e6ca4eaebb4e652f35e0dcc9c9ff8cc66ff966051d707"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1c7c00f7be41c1aed073a7421d5f9058c470c96938b90cb3441723502c231ac"
-    sha256 cellar: :any,                 ventura:       "2a0a713b8c8385fe4c0bba4cd2ce45593f68e3f25d62c9463aa788a74689cab3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea880b742e0d93e2dad0ebc8d322499a205ca18c82c3ba71108370c0b0c7e652"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22d20227062fe689af3e995df1e0cd29d799de4f09901825602359e9f73ef92f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7a4db9f2bdb37781009c7b59fd365078ef334f0205f20cb4e810896d75caabc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4574e2a84ea606b9889ed3ca42c50622ec9601e0ec8fc8856e7d5f2c5b15732"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe09b366bd2707842d208dc920aa56208cc464490f41c625930b9ec2aa978bed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5fc96f6c7816328ed0df29d5cd0fa4f1c2600d632ea4dfacd26cd84cc93ebd7"
   end
 
   depends_on "rust" => :build # for uv_build > maturin
