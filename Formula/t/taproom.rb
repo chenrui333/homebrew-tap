@@ -17,12 +17,6 @@ class Taproom < Formula
 
   depends_on "go" => :build
 
-  # INSTALL_RECEIPT.json patch, upstream pr ref, https://github.com/hzqtc/taproom/pull/19
-  patch do
-    url "https://github.com/hzqtc/taproom/commit/a897689ac05447305eabdd0aa340293aec6a83dc.patch?full_index=1"
-    sha256 "299c75d53e52ed5ed39f6cc14817a68c87560b744fdd7107107ffec2d3ed3473"
-  end
-
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
