@@ -8,10 +8,7 @@ class MqttCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ca0349f7c50d2ed25704f051cf11545abdc3cb704417afeb7c5627f467474dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddc586e88d0f210fd45fcdee3cddb041a5986ab5da76e5147844d148810ce603"
-    sha256 cellar: :any_skip_relocation, ventura:       "89c57c01ab29c7c1a8a2711ba13dbb2b33ea14c549e66662f1e82a350fa3a0b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8c6a1ae1f84e9f2174ec336dc6060bd94e1b36f408c16518caa80bd4c61c259"
+    sha256 cellar: :any_skip_relocation, all: "eb10addc1649576e6be84505e4289e670d4031a2eabbeae85e28fb3a296e560e"
   end
 
   depends_on "openjdk@21"
