@@ -23,8 +23,6 @@ class DiTui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/di-tui --version")
-
-    output = shell_output("#{bin}/di-tui --username USER --password PASSWORD 2>&1", 1)
-    assert_match "unable to reason API response", output
+    assert_match "Usage of", shell_output("#{bin}/di-tui --help 2>&1", 2)
   end
 end
