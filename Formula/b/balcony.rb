@@ -16,6 +16,7 @@ class Balcony < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea880b742e0d93e2dad0ebc8d322499a205ca18c82c3ba71108370c0b0c7e652"
   end
 
+  depends_on "rust" => :build # for uv_build > maturin
   depends_on "libyaml"
   depends_on "python@3.13"
 
@@ -252,9 +253,13 @@ class Balcony < Formula
   patch :DATA
 
   def install
+    # hatch does not support a SOURCE_DATE_EPOCH before 1980.
+    # Remove after https://github.com/pypa/hatch/pull/1999 is released.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"balcony", "--show-completion")
+    generate_completions_from_executable(bin/"balcony", shell_parameter_format: :typer)
   end
 
   test do
@@ -280,19 +285,3 @@ index 1c42303..3dacc4a 100644
  balcony_aws = BalconyAWS(session)
 -app = typer.Typer(no_args_is_help=True, pretty_exceptions_enable=False)
 +app = typer.Typer(no_args_is_help=True, pretty_exceptions_show_locals=False)
-
-
-
-diff --git a/pyproject.toml b/pyproject.toml
-index 811f0e1..1e20916 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
-@@ -13,7 +13,7 @@ balcony                         = "balcony.cli:run_app"
-
- [tool.poetry.dependencies]
- python                          = "^3.9"
--typer                           = "^0.7.0"
-+typer                           = "^0.12.0"
- rich                            = "^13.3.4"
- boto3                           = "^1.24.80"
- jmespath                        = "^1.0.1"
