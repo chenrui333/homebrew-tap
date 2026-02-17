@@ -9,7 +9,19 @@ class Tabminal < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    prebuilds = libexec/"lib/node_modules/tabminal/node_modules/node-pty/prebuilds"
+    if OS.mac? && Hardware::CPU.arm?
+      rm_r prebuilds/"darwin-x64" if (prebuilds/"darwin-x64").exist?
+    elsif OS.mac? && Hardware::CPU.intel?
+      rm_r prebuilds/"darwin-arm64" if (prebuilds/"darwin-arm64").exist?
+    elsif OS.linux? && Hardware::CPU.arm?
+      rm_r prebuilds/"linux-x64" if (prebuilds/"linux-x64").exist?
+    elsif OS.linux? && Hardware::CPU.intel?
+      rm_r prebuilds/"linux-arm64" if (prebuilds/"linux-arm64").exist?
+    end
+
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
