@@ -18,15 +18,13 @@ class Cpx < Formula
   depends_on "go" => :build
 
   def install
-    cd "cpx" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cpx"
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cpx"
 
     generate_completions_from_executable(bin/"cpx", shell_parameter_format: :cobra)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cpx --version")
-    assert_match "vcpkg_root not set in config", shell_output("#{bin}/cpx list 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/cpx version")
+    assert_match "#compdef cpx", shell_output("#{bin}/cpx completion zsh")
   end
 end
