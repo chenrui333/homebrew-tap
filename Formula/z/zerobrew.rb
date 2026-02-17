@@ -18,8 +18,6 @@ class Zerobrew < Formula
   depends_on "rust" => :build
 
   def install
-    # upstream has already bumped to use 0.1.2, https://github.com/lucasgelfond/zerobrew/blob/main/zb_cli/Cargo.toml#L3
-    inreplace "zb_cli/Cargo.toml", 'version = "0.1.0"', "version = \"#{version}\""
     system "cargo", "install", *std_cargo_args(path: "zb_cli")
   end
 
