@@ -16,15 +16,28 @@ class FuckUCode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7183b33a5c2ec4bc4644634c20292e430d53daf85770535912d34c4a39d74b"
   end
 
-  depends_on "go" => :build
+  depends_on "node"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/fuck-u-code"
-
-    generate_completions_from_executable(bin/"fuck-u-code", shell_parameter_format: :cobra)
+    system "npm", "install", *std_npm_args(prefix: false)
+    system "npm", "run", "build"
+    system "npm", "install", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    assert_match "🌸 屎山代码分析报告 🌸", shell_output("#{bin}/fuck-u-code analyze")
+    (testpath/"main.js").write <<~JS
+      function greeting(name) {
+        return `Hello, ${name}!`
+      }
+
+      console.log(greeting("brew"))
+    JS
+
+    assert_match version.to_s, shell_output("#{bin}/fuck-u-code --version")
+
+    output = shell_output("#{bin}/fuck-u-code analyze #{testpath}")
+    assert_match "Code Quality Analysis Report", output
+    assert_match "Overall Score", output
   end
 end
