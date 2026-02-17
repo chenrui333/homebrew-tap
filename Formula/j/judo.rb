@@ -22,17 +22,19 @@ class Judo < Formula
   end
 
   test do
-    # Fails in Linux CI with `No such device or address` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_match version.to_s, shell_output("#{bin}/judo --version")
 
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"judo", testpath, [:out, :err] => output_log.to_s
-      sleep 1
-      assert_match "D A T A B A S E", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    db_name = "testdb#{Process.pid}"
+    list_name = "inbox#{Process.pid}"
+    item_name = "task#{Process.pid}"
+
+    system bin/"judo", "dbs", "add", "--name", db_name
+    system bin/"judo", "lists", "add", "--name", list_name, "--db", db_name
+    system bin/"judo", "items", "add", "--name", item_name, "--db", db_name, "--list-name", list_name
+
+    output = shell_output("#{bin}/judo items show")
+    assert_match item_name, output
+    assert_match list_name, output
+    assert_match db_name, output
   end
 end
