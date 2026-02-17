@@ -70,7 +70,7 @@ class CodePushup < Formula
       export default config;
     TS
 
-    output = shell_output("#{bin}/code-pushup print-config --config code-pushup.config.ts 2>&1")
-    assert_equal "TypeScript migration", JSON.parse(output)["plugins"][0]["title"]
+    system bin/"code-pushup", "print-config", "--config", "code-pushup.config.ts", "--output", "resolved.json"
+    assert_equal "TypeScript migration", JSON.parse((testpath/"resolved.json").read)["plugins"][0]["title"]
   end
 end
