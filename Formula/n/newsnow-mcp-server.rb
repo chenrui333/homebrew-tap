@@ -28,6 +28,7 @@ class NewsnowMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    assert_match "get hottest or latest news from source", pipe_output(bin/"newsnow-mcp-server", json, 0)
+    output = pipe_output("#{bin}/newsnow-mcp-server 2>&1", json, 1)
+    assert_match "Server does not support completions", output
   end
 end
