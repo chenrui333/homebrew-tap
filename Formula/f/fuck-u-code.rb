@@ -8,12 +8,7 @@ class FuckUCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5c60b79d5e0f212fff90cd93da78773fb2e0d74d47bc11c097caab5b81729ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5c60b79d5e0f212fff90cd93da78773fb2e0d74d47bc11c097caab5b81729ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5c60b79d5e0f212fff90cd93da78773fb2e0d74d47bc11c097caab5b81729ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15c0559b4965560531344b796b08064141bf5e3d0a90b3f34f9badf90814d20f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab7183b33a5c2ec4bc4644634c20292e430d53daf85770535912d34c4a39d74b"
+    sha256 cellar: :any_skip_relocation, all: "d9ced27d83d9b5f5bbf1d7f4eb0fd281513e7c0b2f67b42255e8c7a502935b83"
   end
 
   depends_on "node"
