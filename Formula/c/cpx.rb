@@ -8,11 +8,11 @@ class Cpx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5049bee71cfd3f5b0cb97c14c27f9bb1bc25c6d5e82d48c3908d92643280b2b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5049bee71cfd3f5b0cb97c14c27f9bb1bc25c6d5e82d48c3908d92643280b2b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5049bee71cfd3f5b0cb97c14c27f9bb1bc25c6d5e82d48c3908d92643280b2b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c85f4a466beca221cec683a050ddf7ffdcda0f995435f43ac9ce82083211ea00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b02279ba738880ae3ccc31074df1349f5b1f380e17f05efc5e0162f60368ee58"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03e0ba06effffab2199800b094e1f54de81873c51a80a97096aebe4d81406e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03e0ba06effffab2199800b094e1f54de81873c51a80a97096aebe4d81406e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03e0ba06effffab2199800b094e1f54de81873c51a80a97096aebe4d81406e7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adc398530e19e2acd1e923e17697b20d14a622e22aee0d70b4d927b237bcaf81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6de377ad754f9da1c6ae141c0bf9cf07b1b06e9422ab9e60683bd1913cd55f8a"
   end
 
   depends_on "go" => :build
