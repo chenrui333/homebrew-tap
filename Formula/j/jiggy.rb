@@ -25,7 +25,7 @@ class Jiggy < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/jiggy --version")
+    assert_match version.to_s, shell_output("#{bin}/jiggy --version 2>&1", 1)
 
     # Error: DISPLAY environment variable is empty.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
