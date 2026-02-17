@@ -8,11 +8,11 @@ class Zerobrew < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8816bcdc4c1d1a8ced16bed9c8a8a72e0be02e0bed4e537cc0f874a1ad47bb9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "256e829bf35991eec26accb1cb145ca7575fa5ddf5ef51c9454fd0d375ade862"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76e1af8cc2aaf50d5ea2dad75456dec7f4bb8384d6c83dd588aad8f0e9329d36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "423440a1e267a57b588d60eac67078701eaff92c6f10cd7cbe493f2c846da9e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5218445ad50142bfeb927091f9136f73db3f67093ead30ecc9c3ea35d8415b8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ad46f9925db2246d407f680844cfaa924efbe922f41e4f6d08fb51de3f4366f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5600e973f59d600931e2e63ead23d2c9e7d2687ec1fbaaaf54bf95c322d043bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a74ff9738e4c87ada24e9e6575be383d1aed9c7a525e8015a5f9ce9a35acf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7257112d4faa655e1589c3edeaf3904d5bc9e4262569d26b02987dd8bf90cb3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81ac0fe934ccb3b20ad03973e7ddff4a1cbed67baea7a52db3db1967808c3052"
   end
 
   depends_on "rust" => :build
