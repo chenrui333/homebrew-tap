@@ -7,10 +7,7 @@ class CloudRunMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33b5aef4756c5f222f97ebc73ffc54ef32c0eef87fc2e028c538ed13b6014c23"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1f6347052e8421908243b90dcbb23a1cf045972f678b3f768a864eafc00b542"
-    sha256 cellar: :any_skip_relocation, ventura:       "c3a050a829c7c1b8e9411fdaefe56ae541943552476f5faee353aa439604e684"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "221b89c1a3190a2ce6ed7396d7f7e0fe4f2c79f552f0481d3a59996f8c3c4a67"
+    sha256 cellar: :any_skip_relocation, all: "a9288cf2a586928814161fa9bba2fc2f4a5f1bd8cecc50888ce7af4345930638"
   end
 
   depends_on "node"
