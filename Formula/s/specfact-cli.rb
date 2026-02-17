@@ -17,6 +17,7 @@ class SpecfactCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde164bcac9fd294dcf3196bb4eb5cc4c9d445b56c5179a5d6209be361feacb1"
   end
 
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
