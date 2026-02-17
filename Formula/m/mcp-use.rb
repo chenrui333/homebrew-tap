@@ -17,9 +17,47 @@ class McpUse < Formula
   depends_on "typescript" => :test
   depends_on "node"
 
+  resource "mcp-use-lib" do
+    url "https://registry.npmjs.org/mcp-use/-/mcp-use-1.19.0.tgz"
+    sha256 "32e137861910b5927c77b95d15da0c588ac7d9600cc1f38370fb03fb95ae25f7"
+  end
+
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    package = libexec/"lib/node_modules/@mcp-use/cli"
+    package.install Dir["*"]
+
+    (deps = buildpath/"deps").mkpath
+    (deps/"package.json").write <<~JSON
+      {"name":"mcp-use-homebrew-deps","version":"1.0.0"}
+    JSON
+
+    install_packages = %w[
+      zod
+      commander
+      dotenv
+      vite-plugin-singlefile
+      @modelcontextprotocol/sdk
+      hono
+      jose
+      @modelcontextprotocol/ext-apps
+      @mcp-ui/server
+    ]
+
+    cd deps do
+      install_packages.each do |npm_package|
+        system "npm", "install", npm_package, *std_npm_args(prefix: false)
+      end
+    end
+
+    (package/"node_modules").mkpath
+    cp_r Dir[deps/"node_modules/*"], package/"node_modules"
+
+    resource("mcp-use-lib").stage do
+      (package/"node_modules/mcp-use").install Dir["*"]
+    end
+
+    (package/"dist/index.cjs").chmod 0755
+    bin.install_symlink package/"dist/index.cjs" => "mcp-use"
   end
 
   test do
