@@ -436,6 +436,7 @@ brew install --cask <tool>
 - `oui`
 - `oxbuild`
 - `oxylabs-mcp`
+- `pal-mcp-server`
 - `papis`
 - `paq`
 - `parqv`
@@ -661,7 +662,6 @@ brew install --cask <tool>
 - `yosay`
 - `yr`
 - `go-zzz`
-- `zen-mcp-server`
 - `zero`
 - `zerobrew`
 - `zig@0.11`

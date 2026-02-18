@@ -45,7 +45,7 @@ Total formulas: 643
 | gobgp | CLI tool for GoBGP | 3984 | 769 | 2026-02-12 | 2026-01-01 | Apache-2.0 | ✓ | - | [link](https://osrg.github.io/gobgp/) |
 | vulcain | Fast and idiomatic client-driven REST APIs | 3571 | 104 | 2025-10-30 | 2025-08-26 | AGPL-3.0-only | ✓ | - | [link](https://vulcain.rocks/) |
 | container-use | Dev envs for coding agents. Run multiple agents safely with ... | 3543 | 172 | 2025-12-08 | 2025-08-19 | Apache-2.0 | ✓ | - | [link](https://github.com/dagger/container-use) |
-| zen-mcp-server | Many Workflows. One Context | 3543 | 172 | 2025-12-08 | 2025-08-19 | Apache-2.0 | ✓ | - | [link](https://github.com/dagger/container-use) |
+| pal-mcp-server | AI-powered MCP server with multiple model providers | 11082 | 935 | 2025-12-15 | 2025-06-08 | Apache-2.0 | ✓ | - | [link](https://github.com/BeehiveInnovations/pal-mcp-server) |
 | ddev | Docker-based local PHP+Node.js web development environments | 3498 | 692 | 2026-02-16 | 2026-02-03 | Apache-2.0 | ✓ | - | [link](https://ddev.com/) |
 | mcp-server-cloudflare | Cloudflare MCP Server | 3415 | 340 | 2026-01-22 | 2026-01-13 | Apache-2.0 | ✓ | - | [link](https://github.com/cloudflare/mcp-server-cloudflare) |
 | octelium | Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API... | 3359 | 111 | 2026-02-16 | 2026-02-15 | Apache-2.0 | ✓ | - | [link](https://octelium.com/docs/octelium/latest/overview/intro) |
