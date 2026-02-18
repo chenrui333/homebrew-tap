@@ -1,8 +1,8 @@
 class ZenMcpServer < Formula
   include Language::Python::Virtualenv
 
-  desc "Many Workflows. One Context"
-  homepage "https://github.com/dagger/container-use"
+  desc "AI-powered MCP server with multiple model providers"
+  homepage "https://github.com/BeehiveInnovations/zen-mcp-server"
   url "https://github.com/BeehiveInnovations/zen-mcp-server/releases/download/v9.4.1/zen_mcp_server-9.4.1.tar.gz"
   sha256 "e62cc230d80a4eb228bdb2854310b6636649f5af5c5be52ca0ebbef09fba1f31"
   license "Apache-2.0"
