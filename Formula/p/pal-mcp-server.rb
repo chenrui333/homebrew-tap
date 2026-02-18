@@ -1,20 +1,11 @@
-class ZenMcpServer < Formula
+class PalMcpServer < Formula
   include Language::Python::Virtualenv
 
   desc "AI-powered MCP server with multiple model providers"
-  homepage "https://github.com/BeehiveInnovations/zen-mcp-server"
-  url "https://github.com/BeehiveInnovations/zen-mcp-server/releases/download/v9.4.1/zen_mcp_server-9.4.1.tar.gz"
-  sha256 "e62cc230d80a4eb228bdb2854310b6636649f5af5c5be52ca0ebbef09fba1f31"
+  homepage "https://github.com/BeehiveInnovations/pal-mcp-server"
+  url "https://github.com/BeehiveInnovations/pal-mcp-server/releases/download/v9.8.2/pal_mcp_server-9.8.2.tar.gz"
+  sha256 "6c26eb859a918f59ab0d7121851a4d7f68173da672fe7cb8b8d4d06ee67ca208"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "568f2f72e6b5fe15535eb1f70d3310ffc3cab33b6c08cd0a9b0a9dc7cc2d3235"
-    sha256 cellar: :any,                 arm64_sequoia: "5a2878b3199f9654a88e3fd1a449f3032b2450338c92396353b196a6795f7b16"
-    sha256 cellar: :any,                 arm64_sonoma:  "75ebf2758529a8c094a4ebddccb44f8e78111712d3c91016842f938ea24d222c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3bb0e3bfd099a7e02ee845c140835bd416fbc30985a18f0a074dd2b111bb3d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2010e571bc7e19f8b1a3f2c0191fb7ad080d64dc8b9dbf4a1e49408bc514103"
-  end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
@@ -216,7 +207,7 @@ class ZenMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
     JSON
 
-    output = pipe_output("#{bin}/zen-mcp-server 2>&1", json, 0)
+    output = pipe_output("#{bin}/pal-mcp-server 2>&1", json, 0)
     # "Your question or idea for collaborative thinking to be sent to the external model.
     # Provide detailed context, including your goal, what you've tried, and any specific challenges.
     # WARNING: Large inline code must NOT be shared in prompt.
