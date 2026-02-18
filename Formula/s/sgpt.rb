@@ -1,8 +1,8 @@
 class Sgpt < Formula
   desc "CLI tool to query OpenAI and generate shell commands and code"
   homepage "https://github.com/tbckr/sgpt"
-  url "https://github.com/tbckr/sgpt/archive/refs/tags/v2.17.5.tar.gz"
-  sha256 "1f5137f20b81e7f58229ee360fd958344420d82fe5ac18af78ede6762c90c5c7"
+  url "https://github.com/tbckr/sgpt/archive/refs/tags/v2.17.6.tar.gz"
+  sha256 "7cce09459cc9ddf1c81632ca9b8074dce53e1626caa28efefaf38905b91e6ff2"
   license "Apache-2.0"
   head "https://github.com/tbckr/sgpt.git", branch: "main"
 
