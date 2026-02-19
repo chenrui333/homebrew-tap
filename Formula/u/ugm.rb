@@ -14,6 +14,7 @@ class Ugm < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ugm --version")
+    output = shell_output("script -qec \"#{bin}/ugm --version\" /dev/null 2>&1")
+    assert_match version.to_s, output
   end
 end
