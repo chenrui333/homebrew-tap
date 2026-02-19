@@ -23,6 +23,12 @@ class Xpdig < Formula
   end
 
   test do
-    assert_match "Set of tools to explore your crossplane resources", shell_output("#{bin}/xpdig --help")
+    version_output = shell_output("#{bin}/xpdig version")
+    assert_match version.to_s, version_output
+
+    # Concrete negative-path command to prove the binary handles bad input cleanly.
+    invalid_output = shell_output("#{bin}/xpdig not-a-real-command 2>&1", 3)
+    assert_match "No help topic for 'not-a-real-command'", invalid_output
+    refute_match "panic:", invalid_output
   end
 end
