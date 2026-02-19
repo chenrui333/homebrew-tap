@@ -27,14 +27,12 @@ class SpaceliftIntent < Formula
 
       deadline = Time.now + 10
       until output.include?("# Infrastructure Management - Essential Instructions") || Time.now > deadline
-        break unless IO.select([stdout_err], nil, nil, 0.5)
+        break unless stdout_err.wait_readable(0.5)
+
         output << stdout_err.readpartial(1024)
       end
 
-      begin
-        Process.kill("TERM", wait_thr.pid)
-      rescue Errno::ESRCH
-      end
+      Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
     end
 
     assert_match "# Infrastructure Management - Essential Instructions", output
