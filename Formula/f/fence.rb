@@ -6,6 +6,15 @@ class Fence < Formula
   license "Apache-2.0"
   head "https://github.com/Use-Tusk/fence.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4698f19cb6dbcc244e437ed1941f61a276d9f4d2d9e5382a7abb2a38fd9e8ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4698f19cb6dbcc244e437ed1941f61a276d9f4d2d9e5382a7abb2a38fd9e8ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4698f19cb6dbcc244e437ed1941f61a276d9f4d2d9e5382a7abb2a38fd9e8ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7827efd45df0cd7f14f89396978da6b2c67fa2ca474a5f01886d1c57207b4ec4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16ab161c85172438cad78a2b538c89efb773cc1a5da4f93aafe39944175aeb2b"
+  end
+
   depends_on "go" => :build
 
   def install
