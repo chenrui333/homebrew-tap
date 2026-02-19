@@ -3,8 +3,8 @@ class Tofuref < Formula
 
   desc "TUI for OpenTofu provider registry"
   homepage "https://github.com/djetelina/tofuref"
-  url "https://files.pythonhosted.org/packages/00/0a/5db034d7ade551a0417fc6d09f6f2f82d912743ef76eecb601343de0dbf3/tofuref-1.6.0.tar.gz"
-  sha256 "1fa7df9aebe2356f18063e438fff935bc4d3c9fe84a9d1b5e6c7855da56ef515"
+  url "https://files.pythonhosted.org/packages/50/c3/02c84adac02cdbf31f977be388fb8c115745bd9ff25599997ce27dcb3f91/tofuref-1.7.0.tar.gz"
+  sha256 "5cbb702f926f1607ba7530885f86fbbb9907adc5a7d12332ce422876d975ffd5"
   license "MIT"
   head "https://github.com/djetelina/tofuref.git", branch: "main"
 
@@ -14,24 +14,9 @@ class Tofuref < Formula
 
   pypi_packages exclude_packages: "certifi"
 
-  resource "aiofile" do
-    url "https://files.pythonhosted.org/packages/67/e2/d7cb819de8df6b5c1968a2756c3cb4122d4fa2b8fc768b53b7c9e5edb646/aiofile-3.9.0.tar.gz"
-    sha256 "e5ad718bb148b265b6df1b3752c4d1d83024b93da9bd599df74b9d9ffcf7919b"
-  end
-
-  resource "aiopath" do
-    url "https://files.pythonhosted.org/packages/a4/6f/b377e3eb293feb57e457b33961004cc3716794ef97428d2ae2a326599b1c/aiopath-0.7.7.tar.gz"
-    sha256 "ad4b9d09ae08ddf6d39dd06e7b0a353939e89528da571c0cd4f3fe071aefad4f"
-  end
-
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
-    sha256 "82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4"
-  end
-
-  resource "caio" do
-    url "https://files.pythonhosted.org/packages/98/04/ec9b6864135032fd454f6cd1d9444e0bb01040196ad0cd776c061fc92c6b/caio-0.9.24.tar.gz"
-    sha256 "5bcdecaea02a9aa8e3acf0364eff8ad9903d57d70cdb274a42270126290a77f1"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "h11" do
@@ -75,13 +60,13 @@ class Tofuref < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
+    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
+    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
   end
 
   resource "pygments" do
@@ -100,18 +85,13 @@ class Tofuref < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/f6/2f/f0b408f227edca21d1996c1cd0b65309f0cbff44264aa40aded3ff9ce2e1/textual-6.6.0.tar.gz"
-    sha256 "53345166d6b0f9fd028ed0217d73b8f47c3a26679a18ba3b67616dcacb470eec"
+    url "https://files.pythonhosted.org/packages/f7/08/1e1f705825359590ddfaeda57653bd518c4ff7a96bb2c3239ba1b6fc4c51/textual-8.0.0.tar.gz"
+    sha256 "ce48f83a3d686c0fac0e80bf9136e1f8851c653aa6a4502e43293a151df18809"
   end
 
   resource "typing-extensions" do
