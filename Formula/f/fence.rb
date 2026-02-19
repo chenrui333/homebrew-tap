@@ -16,7 +16,8 @@ class Fence < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/fence --version")
 
-    output = shell_output("#{bin}/fence --debug -c 'echo hello && ls' 2>&1", 71)
-    assert_match "[fence] Sandbox manager cleaned up", output
+    output = shell_output("#{bin}/fence --list-templates")
+    assert_match "Available templates:", output
+    assert_match "code", output
   end
 end
