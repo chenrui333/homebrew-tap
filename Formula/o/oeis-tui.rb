@@ -14,6 +14,8 @@ class OeisTui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/oeis --version")
-    assert_match "102334155", shell_output("#{bin}/oeis fetch A000045 -f values -q")
+
+    output = shell_output("#{bin}/oeis fetch foo 2>&1", 1)
+    assert_match "Invalid A-number format", output
   end
 end
