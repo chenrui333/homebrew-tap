@@ -27,7 +27,8 @@ class Tabminal < Formula
   test do
     assert_match "\"version\": \"#{version}\"", (libexec/"lib/node_modules/tabminal/package.json").read
 
-    output = shell_output("#{bin}/tabminal 2>&1", 1)
-    assert_match "To start the service, use the '-y' flag", output
+    output = shell_output("#{bin}/tabminal --help")
+    assert_match "Tabminal - A modern web terminal", output
+    assert_match "--accept-terms, -y", output
   end
 end
