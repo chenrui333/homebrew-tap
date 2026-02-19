@@ -12,6 +12,11 @@ class Ironclaw < Formula
     system "cargo", "install", *std_cargo_args
   end
 
+  service do
+    run [opt_bin/"ironclaw", "run"]
+    keep_alive true
+  end
+
   test do
     ENV["HOME"] = testpath
 
