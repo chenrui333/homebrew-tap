@@ -21,7 +21,7 @@ class Osintui < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"osintui", [:out, :err] => output_log.to_s
     sleep 1
-    assert_match "Integrations", output_log.read
+    assert_match "Config will be saved to", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
