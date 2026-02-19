@@ -1,8 +1,8 @@
 class Psq < Formula
   desc "Lightweight postgres monitor for the terminal"
   homepage "https://github.com/benjaminsanborn/psq"
-  url "https://github.com/benjaminsanborn/psq/archive/refs/tags/v1.9.2.tar.gz"
-  sha256 "7006a3db8660b2240707ffb9cb923fccdff29e1cd755a647801b04c1b2929ba8"
+  url "https://github.com/benjaminsanborn/psq/archive/refs/tags/v1.9.3.tar.gz"
+  sha256 "cc1b41192a21d16352d93c012682176723da0551080f1bd5e3d77b8b7aed3da1"
   license "Apache-2.0"
 
   bottle do
