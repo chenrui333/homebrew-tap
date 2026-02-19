@@ -6,6 +6,15 @@ class Osintui < Formula
   license "MIT"
   head "https://github.com/wssheldon/osintui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef25b21fade83dab585835cf9d125855aef60416e44b2e05256497f815e006db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b47941171513d26b4dbb1f9138f01c7c5c2a03582a122067ee1cb9c73f898a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd41c0884965e6763babe2941eb88b1db99b654148212d47af8aa81ae1a71a72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14ab6854e6aff4a587296aa684451cdae0be05e7f139221db61abac2939e3a97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81dae5c17fd1ebc3f9cbe05c9cf021ae33ae557b93244176a7036a669b81a971"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
