@@ -1,8 +1,8 @@
 class Clipse < Formula
   desc "Configurable TUI clipboard manager for Unix"
   homepage "https://github.com/savedra1/clipse"
-  url "https://github.com/savedra1/clipse/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "a265b16505ef6ab45259d2daf8fbb4b13f18c8231a7deb70b08936fce759c29e"
+  url "https://github.com/savedra1/clipse/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "ec906744103a611cc1045a9d65f20b13b454ee046fd979abf1341a1b78fe553e"
   license "MIT"
   head "https://github.com/savedra1/clipse.git", branch: "main"
 
