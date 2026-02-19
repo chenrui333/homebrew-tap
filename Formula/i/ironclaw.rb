@@ -7,6 +7,7 @@ class Ironclaw < Formula
   head "https://github.com/nearai/ironclaw.git", branch: "main"
 
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args
