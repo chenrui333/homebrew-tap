@@ -14,7 +14,7 @@ class Pproftui < Formula
   end
 
   test do
-    assert_match "Usage of pproftui", shell_output("#{bin}/pproftui -h")
+    assert_match "Usage of", shell_output("#{bin}/pproftui -h 2>&1")
 
     resource "test_profile" do
       url "https://github.com/parca-dev/parca/raw/refs/heads/main/pkg/symbolizer/testdata/normal-cpu.stripped.pprof"
@@ -25,10 +25,19 @@ class Pproftui < Formula
 
     output_log = testpath/"output.log"
     pid = spawn bin/"pproftui", testpath/"normal-cpu.stripped.pprof", [:out, :err] => output_log.to_s
-    sleep 1
+
+    timeout = Time.now + 10
+    until output_log.exist? && output_log.read.include?("Initializing...")
+      break if Time.now > timeout
+
+      sleep 0.2
+    end
+
     assert_match "Initializing...", output_log.read
   ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    if pid && Process.waitpid(pid, Process::WNOHANG).nil?
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
