@@ -1,8 +1,8 @@
 class Swaptop < Formula
   desc "TUI for monitoring swap usage"
   homepage "https://github.com/luis-ota/swaptop"
-  url "https://github.com/luis-ota/swaptop/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "53ae565d556a953e03d006eb09ee6b1fa1bf8fc990dd1ab80fa5bbd6625a07a9"
+  url "https://github.com/luis-ota/swaptop/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "20bcd3b83e7fe29100771d4adc932cec9c8c14e1361be7c7608d70ba515af80f"
   license "MIT"
   head "https://github.com/luis-ota/swaptop.git", branch: "main"
 
@@ -16,7 +16,8 @@ class Swaptop < Formula
 
   test do
     if ENV["HOMEBREW_GITHUB_ACTIONS"]
-      assert_match "failed to initialize terminal", shell_output("#{bin}/swaptop --version")
+      output = shell_output("#{bin}/swaptop --version 2>&1", 101)
+      assert_match "failed to initialize terminal", output
     end
   end
 end
