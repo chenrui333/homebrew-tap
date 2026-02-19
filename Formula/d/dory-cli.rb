@@ -7,11 +7,11 @@ class DoryCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "68b560dcc1ad29a38e3bafa57c8b689e521a0bbdaa8e415e93de59c23d389003"
-    sha256 cellar: :any,                 arm64_sequoia: "9fa70fee4c2d0640df91670dfaa273bc04c03c8224c84ecbf3e1f76cfeaa0ded"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fa70fee4c2d0640df91670dfaa273bc04c03c8224c84ecbf3e1f76cfeaa0ded"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c86f4a8acfe0ea1fc81c41f925f897f60f34b6bc9144d3f0f12deb408f6d700e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "323b267dabcdb1085a48304630974f29965c41db3091aabc87754cbc22cb042f"
+    sha256 cellar: :any,                 arm64_tahoe:   "bfa2461211ec3f23528c4e9b87537209a7de8ec9769ef4cde2dcce2a3feded3d"
+    sha256 cellar: :any,                 arm64_sequoia: "2fd1e1934ab0ddb922baa0ecf31cced0e7adb93d2bcc6393f8daa5fb4ec3bb86"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fd1e1934ab0ddb922baa0ecf31cced0e7adb93d2bcc6393f8daa5fb4ec3bb86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cc1988f8783c2660f718bfc57a806bff45643b3583c206326c2e92e279de1b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ba3277d3da93c8b391a450e6e501f3808563559532fc2a82d5597c6152402c"
   end
 
   depends_on "node"
