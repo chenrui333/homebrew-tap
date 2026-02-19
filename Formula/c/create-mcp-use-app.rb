@@ -7,7 +7,7 @@ class CreateMcpUseApp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f9119e8f468442805ed03300336424ed037b0cf181fbfaf10725af6d1606a14a"
+    sha256 cellar: :any_skip_relocation, all: "14c2a6c47bc82ea0774d01a9f9a3d54859ac4015a2b9c5267f7b9dcc28188b82"
   end
 
   depends_on "node"
