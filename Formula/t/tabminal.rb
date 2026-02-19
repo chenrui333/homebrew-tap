@@ -1,8 +1,8 @@
 class Tabminal < Formula
   desc "Cloud-Native, Proactive AI Integrated Terminal works in modern browsers"
   homepage "https://github.com/Leask/Tabminal"
-  url "https://registry.npmjs.org/tabminal/-/tabminal-1.1.21.tgz"
-  sha256 "6e35c8d8ebf03609c656ff992386b2368fb25e993ca0994920de99683e13ee4a"
+  url "https://registry.npmjs.org/tabminal/-/tabminal-2.0.2.tgz"
+  sha256 "aae7d87958b459af48151dc9410accce1d4d8711c773d02aa7d414728983974c"
   license "MIT"
 
   depends_on "node"
@@ -25,7 +25,9 @@ class Tabminal < Formula
   end
 
   test do
-    output = shell_output("#{bin}/tabminal --openrouter-key YOUR_API_KEY --accept-terms 2>&1", 1)
-    assert_match "[SECURITY] No password provided. Generated temporary password", output
+    assert_match "\"version\": \"#{version}\"", (libexec/"lib/node_modules/tabminal/package.json").read
+
+    output = shell_output("#{bin}/tabminal 2>&1", 1)
+    assert_match "To start the service, use the '-y' flag", output
   end
 end
