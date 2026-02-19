@@ -5,6 +5,11 @@ class IamShrink < Formula
   sha256 "437901533518ff4a5d2380aab343effde5c51937c2ae8e3e3560b973c20a7cab"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "65e6f74e97746672f71de25320e38475b9f4384778ab919f15490cc8f7ee85c1"
+  end
+
   depends_on "node"
 
   def install
