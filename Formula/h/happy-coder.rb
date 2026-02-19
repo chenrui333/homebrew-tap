@@ -13,8 +13,8 @@ class HappyCoder < Formula
   end
 
   test do
-    output = shell_output("#{bin}/happy-coder doctor")
+    output = shell_output("#{bin}/happy doctor 2>&1")
     assert_match "Happy CLI Version: #{version}", output
-    assert_match "Daemon Spawn Diagnostics", output
+    assert_match "Doctor diagnosis complete!", output
   end
 end
