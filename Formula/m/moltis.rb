@@ -6,6 +6,15 @@ class Moltis < Formula
   license "MIT"
   head "https://github.com/moltis-org/moltis.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6330863cb4b616ddf5ca66e0136916e3c4a50f01f534ed1e1b804d05d2aa7469"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3efa038dc1c1d321355bd0f3b682dc652b9253ce7a44123a01f99a91f16d648e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a06f2307ebba5dec3761445c98c612e53d5b52ec82683540ad4136b746ddbcea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8719a1dbf4dc8025a8958f630e36be6d75ba55b38904880e60083424205e47c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e1228c15d1c4072f628b351587cc67a0c53d3f60bae79578148cf886b45a421"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
