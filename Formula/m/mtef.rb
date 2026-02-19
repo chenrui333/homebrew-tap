@@ -7,6 +7,15 @@ class Mtef < Formula
   sha256 "ca7e7d771731e587f0c8160b06f21a26404cab134decd598af595c86c1fd6d8a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "eab54fb9e30fbbd304d339494b92997fee17289c15c6398fca75faaf452a202e"
+    sha256 cellar: :any,                 arm64_sequoia: "9113256b6625bd63411a6cb91e2263e5baa0d003a08c9e40be1d481e23594518"
+    sha256 cellar: :any,                 arm64_sonoma:  "65d8382d689c8d5324c005221b3a9593b51f770525420420474a0deb40cb9436"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bb95a8c1dc343fb2875241eb89e319359c9061ff31d954e1eea2582a2ecb593"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0121e3145acef60309487090e2e8f9a23803af6480de83cf4efac20b9c1dd463"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.13"
 
