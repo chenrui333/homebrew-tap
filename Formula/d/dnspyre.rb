@@ -1,8 +1,8 @@
 class Dnspyre < Formula
   desc "CLI tool for a high QPS DNS benchmark"
   homepage "https://tantalor93.github.io/dnspyre/"
-  url "https://github.com/Tantalor93/dnspyre/archive/refs/tags/v3.6.0.tar.gz"
-  sha256 "6c9bcb389a93382aaca6bce79596b1e6691d520d3b267f40edadd3ce51d79362"
+  url "https://github.com/Tantalor93/dnspyre/archive/refs/tags/v3.10.0.tar.gz"
+  sha256 "31429fd7aa95440509850e174bc932b7d33aed8be687d90904129c95f73da715"
   license "MIT"
   head "https://github.com/Tantalor93/dnspyre.git", branch: "master"
 
