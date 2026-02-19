@@ -6,6 +6,15 @@ class Zeptoclaw < Formula
   license "Apache-2.0"
   head "https://github.com/qhkm/zeptoclaw.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9177865c264f6b57a323248d3fc95ce1af5a591ce116b18a5b6affba9c971687"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49eb5a754ebffda225bdd9d317a1171c043d5a7bbe913a391e5e511fbd7b323f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "151c3dd5cdb554d73895f1be6d9635b5b4ac105b32f1e1809b4738e41d36fde3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc5f786d63a11828865bcdf010b34adfe23083f156a93e225948bbb60f51629"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b621641d9705a1582dc13d48db64b903a593289883dd2d272f3aa2289ae0501b"
+  end
+
   depends_on "rust" => :build
 
   def install
