@@ -8,7 +8,16 @@ class Tcpterm < Formula
 
   depends_on "go" => :build
 
+  on_linux do
+    depends_on "libpcap"
+  end
+
   def install
+    if OS.linux?
+      ENV.append "CGO_CFLAGS", "-I#{Formula["libpcap"].opt_include}"
+      ENV.append "CGO_LDFLAGS", "-L#{Formula["libpcap"].opt_lib} -lpcap"
+    end
+
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     system "go", "build", *std_go_args(ldflags: "-s -w")
