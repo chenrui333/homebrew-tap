@@ -1,8 +1,8 @@
 class Froggit < Formula
   desc "Modern, minimalist Git TUI"
   homepage "https://froggit-docs.vercel.app/"
-  url "https://github.com/thewizardshell/froggit/archive/refs/tags/v0.5.0-beta.tar.gz"
-  sha256 "ba3b2f046929e9cca45e06d65cbcbdf1c16cd15ba835f44c0b0b74c2580a6067"
+  url "https://github.com/thewizardshell/froggit/archive/refs/tags/v1.2.0-beta.tar.gz"
+  sha256 "9b3dc1b9669ae35b612abaa6d579b76b7ed78539a075efcdcc4de7e5e42dd113"
   license "MIT"
   head "https://github.com/thewizardshell/froggit.git", branch: "main"
 
@@ -13,7 +13,7 @@ class Froggit < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/froggit -version")
+    assert_match "Version:", shell_output("#{bin}/froggit -version")
     assert_match "Keyboard Shortcuts", shell_output("#{bin}/froggit -keys")
   end
 end
