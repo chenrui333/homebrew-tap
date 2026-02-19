@@ -6,6 +6,15 @@ class SpaceliftIntent < Formula
   license "Apache-2.0"
   head "https://github.com/spacelift-io/spacelift-intent.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6ce322e58b4072414c5180ef9a9b82aaf7a85c6c416aa622c26bab35cecdb7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecf224851ecc1c70c7a345b8b76bea41e62ab447cb4dc5bd3895e6b4695e3837"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca450a4e61d091202795ceb08827aa6cb5aba5bed61ff10e2bf5863909172938"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3da7ac383cd8e598a80c1868a163c975e8ae28e7d50d473286dd4a47a008c787"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "686e8b881660944e67b6dd2b559019e966fc280cfd9ef3edef50dccc413a4397"
+  end
+
   depends_on "go" => :build
 
   def install
