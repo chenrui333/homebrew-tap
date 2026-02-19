@@ -6,6 +6,12 @@ class Ibtop < Formula
   license "Apache-2.0"
   head "https://github.com/JannikSt/ibtop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "d6947267f32d05ac6d69c45c5279c88fd59965715f2e93273b9711c315e74da3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bec8b9b6747309064c04f68b9c069419cbcd8bbdeba516eef0313c48e0722344"
+  end
+
   depends_on "rust" => :build
   depends_on :linux
 
