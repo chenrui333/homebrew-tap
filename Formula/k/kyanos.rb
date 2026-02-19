@@ -19,6 +19,9 @@ class Kyanos < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
+    # Upstream expects generated eBPF objects to exist before `go build`.
+    system "make", "build-bpf"
+
     ldflags = %W[
       -s -w
       -X kyanos/version.Version=#{version}
