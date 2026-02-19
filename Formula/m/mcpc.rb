@@ -9,6 +9,7 @@ class Mcpc < Formula
   depends_on "node"
 
   on_linux do
+    depends_on "glib"
     depends_on "libsecret"
   end
 
