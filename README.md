@@ -114,6 +114,7 @@ brew install --cask <tool>
 - `cc-enhanced`
 - `cc-filter`
 - `ccapi`
+- `ccboard`
 - `ccexp`
 - `cchistory`
 - `cclogviewer`
@@ -183,6 +184,7 @@ brew install --cask <tool>
 - `dhv`
 - `di-tui`
 - `dnsforwarder`
+- `dnspyre`
 - `doit`
 - `dominds`
 - `dory-cli`
@@ -210,6 +212,7 @@ brew install --cask <tool>
 - `fast-cli`
 - `fast-xml-parser`
 - `fat`
+- `fence`
 - `ferret`
 - `fex`
 - `filessh`
@@ -227,6 +230,7 @@ brew install --cask <tool>
 - `fortran-linter`
 - `foy`
 - `frep`
+- `froggit`
 - `fsociety`
 - `fuck-u-code`
 - `g1c`
@@ -278,6 +282,7 @@ brew install --cask <tool>
 - `hello`
 - `hellwal`
 - `hexora`
+- `hexowl`
 - `heyagent`
 - `hf`
 - `holo-cli`
@@ -295,6 +300,8 @@ brew install --cask <tool>
 - `iam-convert`
 - `iam-expand`
 - `iam-lens`
+- `iam-shrink`
+- `ibtop`
 - `iflow-cli`
 - `ifstate`
 - `iftree`
@@ -307,6 +314,7 @@ brew install --cask <tool>
 - `intentrace`
 - `ip2d`
 - `ips`
+- `ironclaw`
 - `jaggr`
 - `jarl`
 - `jetzig`
@@ -384,6 +392,7 @@ brew install --cask <tool>
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
 - `mcp-use`
+- `mcpc`
 - `mcpd`
 - `mdbook-linkcheck`
 - `mdns-scanner`
@@ -398,9 +407,11 @@ brew install --cask <tool>
 - `mmemoji`
 - `mnamer`
 - `molotov`
+- `moltis`
 - `mongodb-mcp-server`
 - `mpfshell`
 - `mqtt-cli`
+- `mtef`
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
@@ -422,6 +433,7 @@ brew install --cask <tool>
 - `oatmeal`
 - `octelium`
 - `octotype`
+- `oeis-tui`
 - `ohy`
 - `olla`
 - `omekasy`
@@ -430,6 +442,7 @@ brew install --cask <tool>
 - `opensnitch-tui`
 - `openspec`
 - `optivorbis`
+- `osintui`
 - `osmar`
 - `otelgen`
 - `otto`
@@ -551,6 +564,7 @@ brew install --cask <tool>
 - `solfmt`
 - `soundscope`
 - `sourcerer-mcp`
+- `spacelift-intent`
 - `specfact-cli`
 - `speedscope`
 - `speedtest`
@@ -584,6 +598,7 @@ brew install --cask <tool>
 - `tatuin`
 - `tavily-mcp`
 - `tclint`
+- `tcpterm`
 - `teldrive`
 - `tenderly`
 - `termdbms`
@@ -662,6 +677,7 @@ brew install --cask <tool>
 - `yosay`
 - `yr`
 - `go-zzz`
+- `zeptoclaw`
 - `zero`
 - `zerobrew`
 - `zig@0.11`
