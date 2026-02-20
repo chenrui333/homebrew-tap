@@ -3,8 +3,8 @@ class Autoflake < Formula
 
   desc "Removes unused imports and unused variables as reported by pyflakes"
   homepage "https://github.com/PyCQA/autoflake"
-  url "https://files.pythonhosted.org/packages/2a/cb/486f912d6171bc5748c311a2984a301f4e2d054833a1da78485866c71522/autoflake-2.3.1.tar.gz"
-  sha256 "c98b75dc5b0a86459c4f01a1d32ac7eb4338ec4317a4469515ff1e687ecd909e"
+  url "https://files.pythonhosted.org/packages/c3/0b/70c277eef225133763bf05c02c88df182e57d5c5c0730d3998958096a82e/autoflake-2.3.3.tar.gz"
+  sha256 "c24809541e23999f7a7b0d2faadf15deb0bc04cdde49728a2fd943a0c8055504"
   license "MIT"
 
   bottle do
