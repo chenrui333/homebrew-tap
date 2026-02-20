@@ -1,9 +1,11 @@
 class Nullclaw < Formula
   desc "Tiny autonomous AI assistant infrastructure written in Zig"
   homepage "https://nullclaw.github.io"
-  url "https://github.com/nullclaw/nullclaw/archive/refs/tags/v2026.2.19.tar.gz"
-  sha256 "4d725a85c8951ce5934e3e2f7daaab287cb62073e4960b8e4c57cbf5935d4575"
+  url "https://github.com/chenrui333/nullclaw/archive/4b588ca3786e15446995ccd47b9c191ca9b3e321.tar.gz"
+  version "2026.2.19"
+  sha256 "64378063af232b0f07e6ea6a36f4bc05d718db6281fdcf78d26910fe16333f31"
   license "MIT"
+  revision 1
   head "https://github.com/nullclaw/nullclaw.git", branch: "main"
 
   bottle do
@@ -18,7 +20,7 @@ class Nullclaw < Formula
   depends_on "zig" => :build
 
   def install
-    system "zig", "build", "-Doptimize=ReleaseFast"
+    system "zig", "build", "-Doptimize=ReleaseFast", "-Dversion=#{version}"
     bin.install "zig-out/bin/nullclaw"
   end
 
@@ -33,10 +35,7 @@ class Nullclaw < Formula
     output = shell_output("#{bin}/nullclaw status 2>&1")
     assert_match "nullclaw Status", output
     assert_match "Provider:    openrouter", output
-    assert_match(/\nVersion:\s+\d+\.\d+\.\d+\n/, output)
-
-    # TODO: Re-enable when nullclaw supports `--version`:
-    # https://github.com/nullclaw/nullclaw/issues/27
-    # assert_match version.to_s, shell_output("#{bin}/nullclaw --version")
+    assert_match "Version:     #{version}", output
+    assert_match "nullclaw #{version}", shell_output("#{bin}/nullclaw version 2>&1")
   end
 end
