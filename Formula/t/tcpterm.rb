@@ -1,8 +1,8 @@
 class Tcpterm < Formula
   desc "Terminal-based TCP dump viewer"
   homepage "https://github.com/sachaos/tcpterm"
-  url "https://github.com/sachaos/tcpterm/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "c4c0c536ddd12509f1fa2607d84a1e2a002a5a82269ade98a9da4933bc8bd020"
+  url "https://github.com/sachaos/tcpterm/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "b513d95083e245abf156aa39b5ea1093e6340646a8423bf30a4514670b18dbc1"
   license "MIT"
   head "https://github.com/sachaos/tcpterm.git", branch: "main"
 
