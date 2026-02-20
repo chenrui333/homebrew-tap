@@ -24,7 +24,6 @@ class Zerobrew < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/zb --version")
 
-    ENV["HOME"] = testpath
     output = shell_output("#{bin}/zb --root #{testpath}/root --prefix #{testpath}/prefix init 2>&1")
     assert_match "Initialization complete!", output
     assert_path_exists testpath/"prefix/Cellar"
