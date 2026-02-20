@@ -29,8 +29,6 @@ class Ironclaw < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
     assert_match version.to_s, shell_output("#{bin}/ironclaw --version")
     assert_match "Settings", shell_output("#{bin}/ironclaw config list")
   end
