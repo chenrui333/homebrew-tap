@@ -6,6 +6,15 @@ class Jikkou < Formula
   license "Apache-2.0"
   head "https://github.com/streamthoughts/jikkou.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e431158b2d54229d9c8be279467cb204c054b7e6b9c7977d6762d7bd28b0ab37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b1c73c3204a5b94280d25a3b19f35c146d79e6bcb4461a1c9cc1f16405c53cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c0e0512d307515b14aba2605bf465885bb48615557c00cc4249c7589ec64025"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd644ed6a9226d2086f0dc77b7ff5079e82f3ba76cc53513a84f0ceba53c49cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63401236dc800c3d51b63aa6b4d0a3e1427d04f6c7188e533f22d81aef20ee88"
+  end
+
   depends_on "maven" => :build
   depends_on "openjdk"
 
