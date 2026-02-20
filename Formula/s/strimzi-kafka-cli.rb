@@ -119,7 +119,16 @@ class StrimziKafkaCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "jproperties"
+
+    resource("jproperties").stage do
+      # `jproperties` builds with legacy `setuptools_scm` pinning that breaks
+      # with modern setuptools where `pkg_resources` is removed.
+      inreplace "setup.py", "    use_scm_version=True,\n", "    version=\"2.1.1\",\n"
+      inreplace "setup.py", /setup_requires=\[\n\s+"setuptools_scm ~= 3\.3"\n\s+\],\n/m, ""
+
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do
