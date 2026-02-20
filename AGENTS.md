@@ -179,6 +179,14 @@ Built and tested locally on [macOS version/Linux].
 [One sentence describing the change if not obvious from title.]
 ```
 
+## GitHub Body Formatting
+
+When using `gh` to create/edit PRs or issues:
+
+- Prefer `--body-file` with a heredoc-generated markdown file to preserve newlines.
+- Avoid passing escaped `\n` in quoted `--body` strings.
+- If inline body text is required, use single quotes around the full body to avoid shell interpolation.
+
 ## CI Failures
 
 - Reproduce failures locally before debugging
