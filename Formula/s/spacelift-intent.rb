@@ -30,7 +30,7 @@ class SpaceliftIntent < Formula
     JSON
 
     output = +""
-    Open3.popen2e(bin/"spacelift-intent") do |stdin, stdout_err, wait_thr|
+    Open3.popen2e(bin/"spacelift-intent") do |stdin, stdout_err, wait_thread|
       stdin.write json
       stdin.close
 
@@ -41,7 +41,7 @@ class SpaceliftIntent < Formula
         output << stdout_err.readpartial(1024)
       end
 
-      Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
+      Process.kill("TERM", wait_thread.pid) if wait_thread.alive?
     end
 
     assert_match "# Infrastructure Management - Essential Instructions", output
