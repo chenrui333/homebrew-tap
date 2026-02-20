@@ -6,6 +6,15 @@ class Nullclaw < Formula
   license "MIT"
   head "https://github.com/nullclaw/nullclaw.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cffd2c3a5751dafb6b5cc594a31931dc5ec11a62126aa1fa2be61c8d33cadff0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b62f9f0d646955a1e32c352ee040ae9172985a317b6f7396fbb103199678b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d88a92dda891c16ff821d7eb736bd8460184bc0f148438431ab1aef59909ae7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53babedcb18fcd1983bcfab4707b3cf7dfb43866d7fcc53167a81aef9fea9e18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94931f8dcb426d8c9b8ccda22238e946da23c36e7831f28d3a9374dcb1ae31d9"
+  end
+
   depends_on "zig" => :build
 
   def install
