@@ -8,11 +8,12 @@ class Moltis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f456bfb5381cdc3e127fee6358f592a11f8d50326cf25cb587c398597f04a1d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e17f604116f7c5d5a00328553fc108ec8fbac34a3e28a17ebc27a19ab2712d93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d44443d49911b81d24a48be6d7fa35f0461309a5ee13eaacc065099811c77809"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d537044e8d53384ce676ac0b0c657c591023f0e4219f271973818d6f0716757"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "973d5b3fd8a03690ca10db9a8345f142b630c66e4669cbaad27864cd21ac6626"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d756065e41db4d01e3089d342ac714fe6e30a8ca5318d407148a9a5f7ca46945"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fef90b8af04351694e2225718c466d69535f4a05ee6ff5d25c41e080909561a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2903d7781950b0d99bee86ab4724ba06dda58daf1a874085aea2440c3d582bc7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "175abcc7e5afdaadf534195882fb6aa465d31149358ba6633df3912ab20aae6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e4bcd79670fde94f1df625ab190a12370a15a0323c243f9452110bce66f9225"
   end
 
   depends_on "cmake" => :build
