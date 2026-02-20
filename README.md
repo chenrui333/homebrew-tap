@@ -330,6 +330,7 @@ brew install --cask <tool>
 - `jules`
 - `junit2html`
 - `jwt-ui`
+- `kaf`
 - `kafka`
 - `kaluma-cli`
 - `kandc`
@@ -337,6 +338,7 @@ brew install --cask <tool>
 - `karmor`
 - `kat`
 - `kbst`
+- `kcl-kafka`
 - `kcl`
 - `kdash`
 - `keyhunter`
@@ -429,6 +431,7 @@ brew install --cask <tool>
 - `nocc`
 - `npkill`
 - `npm-np`
+- `nullclaw`
 - `nvrs`
 - `oatmeal`
 - `octelium`
