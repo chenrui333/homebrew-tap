@@ -28,8 +28,6 @@ class Nullclaw < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
     output = shell_output("#{bin}/nullclaw status 2>&1")
     assert_match "nullclaw Status", output
     assert_match "Provider:    openrouter", output
