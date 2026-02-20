@@ -27,8 +27,6 @@ class Zeptoclaw < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
     assert_match version.to_s, shell_output("#{bin}/zeptoclaw --version")
     assert_match "No config file found", shell_output("#{bin}/zeptoclaw config check")
   end
