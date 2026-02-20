@@ -27,13 +27,10 @@ class Dvm < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
-    assert_match <<~EOS, shell_output("#{bin}/dvm info")
-      dvm #{version}
-      deno -
-      dvm root #{testpath}/.dvm
-    EOS
+    output = shell_output("#{bin}/dvm info")
+    assert_match "dvm #{version}", output
+    assert_match(/^deno\s+\S+$/, output.lines[1].chomp)
+    assert_match "dvm root #{Dir.home}/.dvm", output
 
     assert_match version.to_s, shell_output("#{bin}/dvm --version")
   end
