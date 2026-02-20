@@ -7,10 +7,12 @@ class Dvm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef61b1766f3e3a4b0b4c1cb820c719f90934dc170ae506bd81bb53a36d4e2ebd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1158fc53f4de65792078574a45496e159ebb6b05b353c355db222143d262c281"
-    sha256 cellar: :any_skip_relocation, ventura:       "daa0d1c9bdfd0afe75b98885efe83669d841adea0e343fab8b42c3e26509c62d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b066142ea84a0c696b8a2fa198b2765d86bd24f5332d1ff6fa351921d1205f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd38b1c7bc1f064095856267472166798aa867cddf60d82c5aed6d23e43b197e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "484f96e1f39844566bbcf97788cdbcd2b802b44ac4199eaa561650ec30f81355"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d73ff5be88bafe6763e6b2e740e4143314fbe9b915c8f729bd7db615ea041d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e1ef5160e83890f2cea3b1e98a6d02a767f7c8abd8bdcea7d18545a167de57c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4082076f29acbcaf03cd78733ae4ae443d66b64004bf1d3e711c1660deb2504e"
   end
 
   depends_on "pkgconf" => :build
