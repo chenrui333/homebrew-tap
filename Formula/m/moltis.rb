@@ -44,8 +44,6 @@ class Moltis < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
     assert_match version.to_s, shell_output("#{bin}/moltis --version")
     assert_match "No issues found.", shell_output("#{bin}/moltis config check 2>&1")
   end
