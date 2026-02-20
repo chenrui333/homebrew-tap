@@ -10,12 +10,11 @@ class Nullclaw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "866887bd6e4d097fedefe858729194050e0d70570a2f1527aa8117fa663307ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc57275eb83ac6a24d869c2be6da2f8002108df9dfc0eb75604801f443abcedc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "382014e53c37e56bea01c08b8cce4b95b676b5a45b07d220e93854bfda2054ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ef15a3f153779d065c22559ae49b19f803d3d073a1356d84cebee9a888a1341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b29204ec6f77f19c85f38ffff5d225bc700fe2fa21dbe8d7fe141ce04c4492cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0096deef50eecc87f2a3ff0c51308c946be4cdd8c9ff83ab5ab1d951e2bb1093"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e60d6d08709a67f3584187bbe629b99e8f7bc267c8d680dace33ccd4b8862ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e7681461e81abd25f82c64a80f4a3ccb2f126a5710cf15f68b2d0ccf58cb916"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23305df57a033fc3a90d6af10f1c54c0daf737e1512649b273898a361f894e75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3521f63d78edfe90c01b009e391227db1b4bbfc93ddfe4cfd5e027a63200971e"
   end
 
   depends_on "zig" => :build
