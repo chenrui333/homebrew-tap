@@ -10,7 +10,7 @@ class Jikkou < Formula
   depends_on "openjdk"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_libexec/"openjdk.jdk/Contents/Home"
+    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
     ENV.prepend_path "PATH", Formula["openjdk"].opt_bin
 
     system "mvn", "-ntp", "-B", "-pl", "cli", "-am", "package", "-DskipTests"
