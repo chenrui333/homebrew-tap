@@ -1,8 +1,8 @@
 class Semaphore < Formula
   desc "Modern UI and powerful API for Ansible, Terraform/OpenTofu/Terragrunt"
   homepage "https://filebrowser.org/"
-  url "https://github.com/semaphoreui/semaphore/archive/refs/tags/v2.17.12.tar.gz"
-  sha256 "213a7ef04d1c1e2f64ccaae84a519431a3fc3e5383028bc3833f9411e0bbee29"
+  url "https://github.com/semaphoreui/semaphore/archive/refs/tags/v2.17.14.tar.gz"
+  sha256 "e6f5bcffee932a47cb82723c85113fc9b00c2f147b9ab555bd6988e473b9bd6e"
   license "MIT"
   head "https://github.com/semaphoreui/semaphore.git", branch: "develop"
 
