@@ -1,8 +1,8 @@
 class Vuls < Formula
   desc "Agentless Vulnerability Scanner for Linux/FreeBSD"
   homepage "https://vuls.io/"
-  url "https://github.com/future-architect/vuls/archive/refs/tags/v0.38.1.tar.gz"
-  sha256 "3eb670b85031f72dd0b18657d2a2a935617a74c9deac24876abc0b950cb64b84"
+  url "https://github.com/future-architect/vuls/archive/refs/tags/v0.38.2.tar.gz"
+  sha256 "23ad508d52db993eb9477f186e9e2e0457b3531c32a05de5b78afa5eab233edb"
   license "GPL-3.0-only"
   head "https://github.com/future-architect/vuls.git", branch: "dev"
 
