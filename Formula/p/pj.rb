@@ -6,6 +6,15 @@ class Pj < Formula
   license "MIT"
   head "https://github.com/josephschmitt/pj.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea8dee351b19590a602f8a0e080349fa82373045bf564711b949f845d871c81c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8dee351b19590a602f8a0e080349fa82373045bf564711b949f845d871c81c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea8dee351b19590a602f8a0e080349fa82373045bf564711b949f845d871c81c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfb6981ed7576f1f51d0530af9c82ad30f5595cb086aae68ca1b075c9e8c33a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5742e5a212c8ca102f954c49e8afabc689b1dc4b87d6dfaff3542641648a5403"
+  end
+
   depends_on "go" => :build
 
   def install
