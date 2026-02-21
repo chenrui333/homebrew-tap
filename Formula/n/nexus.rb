@@ -19,11 +19,10 @@ class Nexus < Formula
   end
 
   test do
-    output = shell_output("#{bin}/nexus 2>&1", 1)
     if OS.mac?
-      assert_match "Inappropriate ioctl for device", output
+      system "sh", "-c", "printf 'q' | script -q /dev/null #{bin}/nexus >/dev/null 2>&1"
     else
-      assert_match "No such device or address", output
+      system "sh", "-c", "printf 'q' | script -q -c '#{bin}/nexus' /dev/null >/dev/null 2>&1"
     end
   end
 end
