@@ -7,6 +7,15 @@ class Nexus < Formula
   license "MIT"
   head "https://github.com/pranav-cs-1/nexus.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "684edf8f054d17ed74e075172fff6da8e5ee3e0f3a65b7478960dacf8985b303"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "697e068cdc19e969310de5497e1e39f56d7ea6ec7ae617e10e4b99c2dd2a5f97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1093efce05af232806f162f3bf19cc1f75b7b57175488b0161cc7af65777ae0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a01caddec29d265dc5b8ec7fdf5a528e96b3ad82c9dc7aeafde3ff97424a31b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b31bafd31fef1527b764109ccd8c5bfa925cb0184bf665cb53c1819022209f1"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
