@@ -20,9 +20,9 @@ class Nexus < Formula
 
   test do
     if OS.mac?
-      system "sh", "-c", "printf 'q' | script -q /dev/null #{bin}/nexus >/dev/null 2>&1"
+      system "sh", "-c", "printf 'qq' | script -q /dev/null #{bin}/nexus >/dev/null 2>&1"
     else
-      system "sh", "-c", "printf 'q' | script -q -c '#{bin}/nexus' /dev/null >/dev/null 2>&1"
+      system "sh", "-c", "printf 'qq' | script -q -c '#{bin}/nexus' /dev/null >/dev/null 2>&1"
     end
   end
 end
