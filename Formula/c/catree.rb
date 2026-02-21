@@ -6,6 +6,11 @@ class Catree < Formula
   license "MIT"
   head "https://github.com/luislve17/catree.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "a2f4d79d0991ad4935fdbbeac8f728e3285caa070e280c006b778f3c80caf7bb"
+  end
+
   def install
     bin.install "catree"
   end
