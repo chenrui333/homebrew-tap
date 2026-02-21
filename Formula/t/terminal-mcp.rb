@@ -30,7 +30,7 @@ class TerminalMcp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/terminal-mcp --version")
-    output = shell_output("#{bin}/terminal-mcp --sandbox --sandbox-config #{testpath}/missing.json 2>&1", 1)
-    assert_match "Failed to load sandbox config", output
+    output = shell_output("TERMINAL_MCP=1 #{bin}/terminal-mcp 2>&1", 1)
+    assert_match "cannot be run from within itself", output
   end
 end
