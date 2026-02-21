@@ -6,6 +6,15 @@ class AwsDoctor < Formula
   license "MIT"
   head "https://github.com/elC0mpa/aws-doctor.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ef9ca839212c2d4364eb62710769faf052ac9aa3192b3251624327539904bcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ef9ca839212c2d4364eb62710769faf052ac9aa3192b3251624327539904bcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ef9ca839212c2d4364eb62710769faf052ac9aa3192b3251624327539904bcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f713e2e4c4c2a284978c07db24f74458ac463a43dc86e4110ccfd414047d97db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d8e5e3aa9190af8e0802483646126aeb700afb59c5bd37a25c01fadd9031b0e"
+  end
+
   depends_on "go" => :build
 
   def install
