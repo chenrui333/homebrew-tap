@@ -6,6 +6,15 @@ class Sbomlyze < Formula
   license "Apache-2.0"
   head "https://github.com/rezmoss/sbomlyze.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf3dc1a1f53d00af3a1758f51fa2f2eafdc9be840567bee075ac9806bb8fda86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf3dc1a1f53d00af3a1758f51fa2f2eafdc9be840567bee075ac9806bb8fda86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf3dc1a1f53d00af3a1758f51fa2f2eafdc9be840567bee075ac9806bb8fda86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed9cef542f5e1797664306eb79202c6d5e721527b193813e86a9338301e01022"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59311f1a0e0b475a3d2605ad4ffa87924e5674ea514f0724ee3e2ef1f04c5288"
+  end
+
   depends_on "go" => :build
 
   def install
