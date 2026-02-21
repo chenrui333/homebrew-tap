@@ -8,6 +8,15 @@ class Memora < Formula
   license "MIT"
   head "https://github.com/agentic-mcp-tools/memora.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "82be0adf95e5bf79261fc01b8ca0dbcd73d4eafc679975b0e73c78d78d742f79"
+    sha256 cellar: :any,                 arm64_sequoia: "5f658356dc2ac481eb58317354f2645b7f2117a40101af6b1f3fcdc7d3d2e827"
+    sha256 cellar: :any,                 arm64_sonoma:  "b67d9144605ef37e321ae5dca0fc3f1a8fbe020c78ccbf0908af832a2c7ba7ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf1d913499cbcb94a77788dd52ca3225fc9a1cac81ad05a3c72b436195101688"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf0abb0dcabe77e15df3f450ff9d53e5789b323704f5b9f5b7a4fda2c482a120"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
