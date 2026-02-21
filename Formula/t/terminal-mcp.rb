@@ -26,6 +26,18 @@ class TerminalMcp < Formula
         rm_r path, force: true if path.basename.to_s != native_prebuild
       end
     end
+
+    return unless OS.linux?
+
+    native_seccomp = Hardware::CPU.arm? ? "arm64" : "x64"
+    seccomp_root = libexec/"lib/node_modules/@ellery/terminal-mcp/node_modules/@anthropic-ai/sandbox-runtime"
+    [seccomp_root/"dist/vendor/seccomp", seccomp_root/"vendor/seccomp"].each do |path|
+      next unless path.exist?
+
+      path.children.each do |child|
+        rm_r child, force: true if child.basename.to_s != native_seccomp
+      end
+    end
   end
 
   test do
