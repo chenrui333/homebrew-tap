@@ -6,6 +6,11 @@ class Jotbird < Formula
   license "MIT"
   head "https://github.com/jotbirdhq/jotbird-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "a9fddbd701e975ea763850a65630afb885f8498588680fdab48afbb2966aeb06"
+  end
+
   depends_on "node"
 
   def install
