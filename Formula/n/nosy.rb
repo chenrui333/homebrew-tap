@@ -6,6 +6,15 @@ class Nosy < Formula
   license "MIT"
   head "https://github.com/ynqa/nosy.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "851f4d879134f7b328afbe7f246f30a3119d714200b7c6700442bac9758790d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d8bd6955c05c589775b3ba5c45174ad24f8c07c9afa983b1aa2774c176dd0c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f77157387a27761c5d222238c7271353501d9796237276bd00afd886a10e467f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "caac0e6a9c676091ba43acaadfb871d88bcce2ecf6b9a9f9136e2ef52eac8ee2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d3f33e836c3cd66563399055246de99046fb5cbfcf034af0dcfeedfcb50c721"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
   on_linux do
