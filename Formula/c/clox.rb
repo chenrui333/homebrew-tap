@@ -8,6 +8,11 @@ class Clox < Formula
   license "MIT"
   head "https://github.com/sepandhaghighi/clox.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "984abc19ea0791e2831b62249e944fc92d08f0a02a6eb75b5a0fc1f0c9367f54"
+  end
+
   depends_on "python@3.14"
 
   resource "art" do
