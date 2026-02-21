@@ -15,10 +15,16 @@ class TerminalMcp < Formula
     bin.install_symlink libexec/"bin/terminal-mcp"
 
     prebuilds = libexec/"lib/node_modules/@ellery/terminal-mcp/node_modules/node-pty/prebuilds"
-    if OS.mac? && Hardware::CPU.arm?
-      rm_r prebuilds/"darwin-x64", force: true
-    elsif OS.mac? && Hardware::CPU.intel?
-      rm_r prebuilds/"darwin-arm64", force: true
+    native_prebuild = if OS.mac?
+      Hardware::CPU.arm? ? "darwin-arm64" : "darwin-x64"
+    elsif OS.linux?
+      Hardware::CPU.arm? ? "linux-arm64" : "linux-x64"
+    end
+
+    if prebuilds.exist? && native_prebuild
+      prebuilds.children.each do |path|
+        rm_r path, force: true if path.basename.to_s != native_prebuild
+      end
     end
   end
 
