@@ -6,6 +6,15 @@ class Matcha < Formula
   license "MIT"
   head "https://github.com/floatpane/matcha.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbce59ec5a13033966dcf1002f86d2bdea7bac2f638997a93e4141cb57d5afd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbce59ec5a13033966dcf1002f86d2bdea7bac2f638997a93e4141cb57d5afd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbce59ec5a13033966dcf1002f86d2bdea7bac2f638997a93e4141cb57d5afd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "208aaaadea149986e290fe1f749ce566adc09bad8a6bf002f0eb2e24fe285817"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f09bf1df69dfc4312133ac920807682cc875e6e79155ed80b3c118abb1ef30e6"
+  end
+
   depends_on "go" => :build
 
   def install
