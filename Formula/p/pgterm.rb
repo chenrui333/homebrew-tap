@@ -7,6 +7,15 @@ class Pgterm < Formula
   license :cannot_represent
   head "https://github.com/nabsk911/pgterm.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a8f10333e5b833e34b420bb8c18eda195c04e4f8ad8d42e73b299868e81aba8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a8f10333e5b833e34b420bb8c18eda195c04e4f8ad8d42e73b299868e81aba8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a8f10333e5b833e34b420bb8c18eda195c04e4f8ad8d42e73b299868e81aba8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6885461b51213a6f3e9eb448b7de5a4a7ba03825104eab3bcf227ef69b4a689c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58eb3166c73c69ddafef4d4c0ab040bf99b98f2b31551322cbba27c6bcbc7aa1"
+  end
+
   depends_on "go" => :build
 
   def install
