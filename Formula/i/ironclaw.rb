@@ -8,12 +8,11 @@ class Ironclaw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ecbd6a4261622bf8428ea862e6a5700e207104f0f5ed5f73315773aa749acab0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e561cff193ae73a7616a65d62c335f5d38e0d14ef5624ff020bbdc67f2abbbfa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5291aa053677e56fb93bec798f01a9377b3b472e93b4de9ccfb359f6c47fa37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19ff6d5cc398e294ab45177e3548519a28ab0e381ae2f430c3db1a61cc26a38e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69832946645c0c618f59264b52db68a26dfbd2c2f1a6c1e3c140f74937f16518"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d77c84885523d7cc0caaf50562c76bb9677ba6824acde20d4b7cd7ce38010591"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1738e15b88d52ef539109f6572ff3d41b0da01e85a5f693369dbcd3f38d0df92"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5191e0168ec07283f07fac1b0f2b27c0565f220d8cf620c620c626d2c18a3c8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a7e8a5a8600d1219b662bb996700a2e85021d55cf83f04bea83b6cadd2d4690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ed49343d17331c911e90262a0731dc9c07f450230224e903e2df8806a756e57"
   end
 
   depends_on "pkgconf" => :build
