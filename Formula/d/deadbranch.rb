@@ -6,6 +6,15 @@ class Deadbranch < Formula
   license "MIT"
   head "https://github.com/armgabrielyan/deadbranch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "43d7fff7f317f922bd154ee78475ebaebb2fdd2cdd3792335b6771666557c22f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f34e5b5ad0153d141569d94de3bfc30b1f7646058a67813b3113af051b68ca0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ea59d284b889d5e173e204c520cb4611065d6010907d484657090dc12d229d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba6ffd3761143dcd531821eab29bd6a6bbe55d3733f826e8f10d7c95982df829"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b764794942bcf1fb0bb4539381cfda3ece88a2ca40cff2d9114c17a9fa0dae5"
+  end
+
   depends_on "rust" => :build
 
   def install
