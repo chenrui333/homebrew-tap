@@ -3,8 +3,8 @@ class Refurb < Formula
 
   desc "Tool for refurbishing and modernizing Python codebases"
   homepage "https://github.com/dosisod/refurb"
-  url "https://files.pythonhosted.org/packages/02/53/c90648f39d7b5d61122b7c6978cdfa29e8bdfd758711306d770c1a339b00/refurb-2.2.0.tar.gz"
-  sha256 "645472793b3af40cca121e37df45dd9b20b525c4df99429d9fd9f6b5c238b9ea"
+  url "https://files.pythonhosted.org/packages/b1/9e/6f6d7d2d717edef96bb18ca62a08977640fa31f6803fbd61b13aaf6f70c8/refurb-2.3.0.tar.gz"
+  sha256 "c6225698b7334760511038d8d5db75bc1524cc842e668fff27cda85fae29bef5"
   license "GPL-3.0-only"
 
   bottle do
@@ -15,9 +15,14 @@ class Refurb < Formula
 
   depends_on "python@3.14"
 
+  resource "librt" do
+    url "https://files.pythonhosted.org/packages/56/9c/b4b0c54d84da4a94b37bd44151e46d5e583c9534c7e02250b961b1b6d8a8/librt-0.8.1.tar.gz"
+    sha256 "be46a14693955b3bd96014ccbdb8339ee8c9346fbe11c1b78901b55125f14c73"
+  end
+
   resource "mypy" do
-    url "https://files.pythonhosted.org/packages/c0/77/8f0d0001ffad290cef2f7f216f96c814866248a0b92a722365ed54648e7e/mypy-1.18.2.tar.gz"
-    sha256 "06a398102a5f203d7477b2923dda3634c36727fa5c237d8f859ef90c42a9924b"
+    url "https://files.pythonhosted.org/packages/f5/db/4efed9504bc01309ab9c2da7e352cc223569f05478012b5d9ece38fd44d2/mypy-1.19.1.tar.gz"
+    sha256 "19d88bb05303fe63f71dd2c6270daca27cb9401c4ca8255fe50d1d920e0eb9ba"
   end
 
   resource "mypy-extensions" do
@@ -26,8 +31,8 @@ class Refurb < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
-    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
+    url "https://files.pythonhosted.org/packages/fa/36/e27608899f9b8d4dff0617b2d9ab17ca5608956ca44461ac14ac48b44015/pathspec-1.0.4.tar.gz"
+    sha256 "0210e2ae8a21a9137c0d470578cb0e595af87edaa6ebf12ff176f14a02e0e645"
   end
 
   resource "typing-extensions" do
