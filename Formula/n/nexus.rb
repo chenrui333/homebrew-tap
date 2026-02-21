@@ -8,6 +8,10 @@ class Nexus < Formula
   head "https://github.com/pranav-cs-1/nexus.git", branch: "main"
 
   depends_on "rust" => :build
+  on_linux do
+    depends_on "openssl@3"
+    depends_on "pkgconf" => :build
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: ".")
