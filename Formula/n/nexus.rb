@@ -7,10 +7,11 @@ class Nexus < Formula
   license "MIT"
   head "https://github.com/pranav-cs-1/nexus.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
   on_linux do
     depends_on "openssl@3"
-    depends_on "pkgconf" => :build
   end
 
   def install
@@ -18,7 +19,6 @@ class Nexus < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
     data_dir = if OS.mac?
       testpath/"Library/Application Support/nexus"
     else
