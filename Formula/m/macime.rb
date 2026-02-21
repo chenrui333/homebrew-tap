@@ -1,8 +1,8 @@
 class Macime < Formula
   desc "Blazingly fast IME switcher for macOS"
   homepage "https://github.com/riodelphino/macime"
-  url "https://github.com/riodelphino/macime/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "ec68e50bcc1e63e1a07592d40c2a4e3ae324b059b1e3702f1d89287798b85ce4"
+  url "https://github.com/riodelphino/macime/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "db127614084603aebcdc569194963b76ba10d843510aa698f1ab4f1c5ed752ed"
   license "MIT"
   head "https://github.com/riodelphino/macime.git", branch: "4.x"
 
