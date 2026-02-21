@@ -1,8 +1,8 @@
 class Dcv < Formula
   desc "TUI viewer for docker-compose"
   homepage "https://github.com/tokuhirom/dcv"
-  url "https://github.com/tokuhirom/dcv/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "3a97f480df7466b8bf0fc50e3bfb643d768245156738bc1858de8cd2032582e8"
+  url "https://github.com/tokuhirom/dcv/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "c09ca4a2ddc9378316b6ed336203d38a64f329e562665319106f2c9b83f6c18d"
   license "MIT"
 
   bottle do
