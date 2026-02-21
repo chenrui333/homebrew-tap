@@ -6,6 +6,15 @@ class SpotiflacCli < Formula
   license "MIT"
   head "https://github.com/Superredstone/spotiflac-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a682efb063603a3a28ffc2f44949f5fdeeb85ab44d25785b9261e572e9ecbe99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a682efb063603a3a28ffc2f44949f5fdeeb85ab44d25785b9261e572e9ecbe99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a682efb063603a3a28ffc2f44949f5fdeeb85ab44d25785b9261e572e9ecbe99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "289f46ec05476ebdc340569f40d90ff2dbf172759cf173f7a76a535de6dda88e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d321bd7baec62a2e00d885221b53115226d911a6cad033a466e3d2fbc37b70"
+  end
+
   depends_on "go" => :build
   depends_on "ffmpeg"
 
