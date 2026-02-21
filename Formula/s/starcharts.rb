@@ -1,8 +1,8 @@
 class Starcharts < Formula
   desc "Plot your repository stars over time"
   homepage "https://starchart.cc/"
-  url "https://github.com/caarlos0/starcharts/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "df9599decfb241557d18c4c03e9204c65182117f9f12fe5322b75420617d401c"
+  url "https://github.com/caarlos0/starcharts/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "2c98d43d5056a35eaf21455754b6253b526f5c0c7e4b8517407e247257e1beaf"
   license "MIT"
   head "https://github.com/caarlos0/starcharts.git", branch: "main"
 
