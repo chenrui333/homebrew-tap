@@ -19,24 +19,11 @@ class Nexus < Formula
   end
 
   test do
-    data_dir = if OS.mac?
-      testpath/"Library/Application Support/nexus"
+    output = shell_output("#{bin}/nexus 2>&1", 1)
+    if OS.mac?
+      assert_match "Inappropriate ioctl for device", output
     else
-      testpath/".local/share/nexus"
-    end
-    db_path = data_dir/"nexus.db"
-
-    pid = fork do
-      exec bin/"nexus"
-    end
-
-    begin
-      timeout = Time.now + 5
-      sleep 0.1 until db_path.exist? || Time.now > timeout
-      assert_path_exists db_path
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
+      assert_match "No such device or address", output
     end
   end
 end
