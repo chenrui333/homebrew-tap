@@ -6,6 +6,15 @@ class TerminalMcp < Formula
   license "MIT"
   head "https://github.com/elleryfamilia/terminal-mcp.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c40b4c36161ffd4cb99dfc36abf2342b282a661257462a0e106af03fca396de2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c40b4c36161ffd4cb99dfc36abf2342b282a661257462a0e106af03fca396de2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c40b4c36161ffd4cb99dfc36abf2342b282a661257462a0e106af03fca396de2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86751980e05f7e433b4e7a4e501de7fcee1b157d94ddda3b4706d11cf9c38688"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c658a752dde82ffe8e71e980fd7fce995e7bab051da35b82d20b2a15f097a11a"
+  end
+
   depends_on "node"
 
   def install
