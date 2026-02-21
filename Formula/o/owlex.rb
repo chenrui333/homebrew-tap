@@ -8,6 +8,11 @@ class Owlex < Formula
   license "MIT"
   head "https://github.com/agentic-mcp-tools/owlex.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "a2b187852be0b01809ad234ae6f88c8748f340d515b6993dfa95a4693ada716b"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
