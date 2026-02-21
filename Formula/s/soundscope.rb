@@ -1,8 +1,8 @@
 class Soundscope < Formula
   desc "TUI app for analyzing audio data such as frequencies and loudness (LUFS)"
   homepage "https://github.com/bananaofhappiness/soundscope"
-  url "https://github.com/bananaofhappiness/soundscope/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "dc38dafe1af452bb0552726d34429235154a5ebb49980717d4e12ab85bfabf4f"
+  url "https://github.com/bananaofhappiness/soundscope/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "62e87ada5d4fe2828dc49cf764256a6451a20700a3e98494ad5206f3b43b4e93"
   license "MIT"
   head "https://github.com/bananaofhappiness/soundscope.git", branch: "master"
 
