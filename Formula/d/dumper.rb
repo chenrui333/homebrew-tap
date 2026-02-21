@@ -6,6 +6,15 @@ class Dumper < Formula
   license "MIT"
   head "https://github.com/elkirrs/dumper.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85406c197dfb957ea32ae01b5b7ba3d43352a5055c48a0e1d5270a9975e352a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85406c197dfb957ea32ae01b5b7ba3d43352a5055c48a0e1d5270a9975e352a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85406c197dfb957ea32ae01b5b7ba3d43352a5055c48a0e1d5270a9975e352a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca4b5dac2f151c6878b6c2228935c5001227d5ef6a65fd653e4ef35b4f2ab9e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2357d2bf02747c95715a8c22cca20ee30e8d62db7e16d968ea0f75460adc2a0f"
+  end
+
   depends_on "go" => :build
 
   def install
