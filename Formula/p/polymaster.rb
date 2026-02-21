@@ -7,7 +7,12 @@ class Polymaster < Formula
   license :cannot_represent
   head "https://github.com/neur0map/polymaster.git", branch: "master"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: ".")
