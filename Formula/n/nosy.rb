@@ -8,8 +8,13 @@ class Nosy < Formula
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
+  on_linux do
+    depends_on "llvm" => :build
+  end
 
   def install
+    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+
     system "cargo", "install", *std_cargo_args(path: ".")
     generate_completions_from_executable(bin/"nosy", "completion")
   end
