@@ -8,6 +8,11 @@ class Fdir < Formula
   license "MIT"
   head "https://github.com/VG-dev1/fdir.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "df5d8490f952bf976804dc4ae02cf2c5a12682c3c0cd6371b5c078ac65a18d11"
+  end
+
   depends_on "python@3.13"
 
   def install
