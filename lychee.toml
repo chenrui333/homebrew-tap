@@ -26,6 +26,8 @@ exclude = [
   "^https://github\\.com/ascorbic/mapscii/?$",
   "^https://rustwasm\\.github\\.io/twiggy/?$",
   "^https://github\\.com/ODwyerSoftware/brunette/?$",
+  "^https://beelzebub-honeypot\\.com/?$",
+  "^https://fnc\\.bsdbox\\.org/index/?$",
   "^https://www\\.gnu\\.org/software/hello/?$",
 ]
 
