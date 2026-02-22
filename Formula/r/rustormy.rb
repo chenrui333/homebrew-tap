@@ -1,8 +1,8 @@
 class Rustormy < Formula
   desc "Minimal neofetch-like weather CLI"
   homepage "https://github.com/Tairesh/rustormy"
-  url "https://github.com/Tairesh/rustormy/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "bdf2a1ecf8d9831efc6b67dd28aee3d11dfb2d8d066bd70a1f67163ee9560008"
+  url "https://github.com/Tairesh/rustormy/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "5c4ad2e72778eef778977c7c617a324b07d671d1a12ddd7d59880c4d1c8dc7ce"
   license "MIT"
   head "https://github.com/Tairesh/rustormy.git", branch: "main"
 
