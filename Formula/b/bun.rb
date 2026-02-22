@@ -377,33 +377,31 @@ class Bun < Formula
               "#undef ENABLE_WEB_RTC\n#define ENABLE_WEB_RTC 0\n"
     # Backport upstream Highway SVE fix for Linux arm64: sizeless vector types
     # cannot be stored in arrays (`hn::Vec<D8> char_vecs[]`).
-    # Keep blank lines truly blank so inreplace matches upstream spacing.
-    # Prefix all non-empty lines, including already-indented ones.
-    highway_chars_old = <<~CPP.gsub(/^(\s*\S.*)$/, "        \\1")
-      constexpr size_t kMaxPreloadedChars = 16;
-      hn::Vec<D8> char_vecs[kMaxPreloadedChars];
-      const size_t num_chars_to_preload = std::min(chars_len, kMaxPreloadedChars);
-      for (size_t c = 0; c < num_chars_to_preload; ++c) {
-          char_vecs[c] = hn::Set(d, chars[c]);
-      }
-
-      const size_t simd_text_len = text_len - (text_len % N);
-      size_t i = 0;
-
-      for (; i < simd_text_len; i += N) {
-          const auto text_vec = hn::LoadN(d, text + i, N);
-          auto found_mask = hn::MaskFalse(d);
-
-          for (size_t c = 0; c < num_chars_to_preload; ++c) {
-              found_mask = hn::Or(found_mask, hn::Eq(text_vec, char_vecs[c]));
-          }
-          if (chars_len > num_chars_to_preload) {
-              for (size_t c = num_chars_to_preload; c < chars_len; ++c) {
-                  found_mask = hn::Or(found_mask, hn::Eq(text_vec, hn::Set(d, chars[c])));
-              }
-          }
-    CPP
-    highway_chars_new = <<~CPP.gsub(/^(\s*\S.*)$/, "        \\1")
+    highway_chars_pattern = /
+      ^\s*constexpr size_t kMaxPreloadedChars = 16;\n
+      ^\s*hn::Vec<D8> char_vecs\[kMaxPreloadedChars\];\n
+      ^\s*const size_t num_chars_to_preload = std::min\(chars_len, kMaxPreloadedChars\);\n
+      ^\s*for \(size_t c = 0; c < num_chars_to_preload; \+\+c\) \{\n
+      ^\s*char_vecs\[c\] = hn::Set\(d, chars\[c\]\);\n
+      ^\s*\}\n
+      ^\s*\n
+      ^\s*const size_t simd_text_len = text_len - \(text_len % N\);\n
+      ^\s*size_t i = 0;\n
+      ^\s*\n
+      ^\s*for \(; i < simd_text_len; i \+= N\) \{\n
+      ^\s*const auto text_vec = hn::LoadN\(d, text \+ i, N\);\n
+      ^\s*auto found_mask = hn::MaskFalse\(d\);\n
+      ^\s*\n
+      ^\s*for \(size_t c = 0; c < num_chars_to_preload; \+\+c\) \{\n
+      ^\s*found_mask = hn::Or\(found_mask, hn::Eq\(text_vec, char_vecs\[c\]\)\);\n
+      ^\s*\}\n
+      ^\s*if \(chars_len > num_chars_to_preload\) \{\n
+      ^\s*for \(size_t c = num_chars_to_preload; c < chars_len; \+\+c\) \{\n
+      ^\s*found_mask = hn::Or\(found_mask, hn::Eq\(text_vec, hn::Set\(d, chars\[c\]\)\)\);\n
+      ^\s*\}\n
+      ^\s*\}\n
+    /x
+    highway_chars_replacement = <<~CPP
       const size_t simd_text_len = text_len - (text_len % N);
       size_t i = 0;
 
@@ -415,9 +413,11 @@ class Bun < Formula
               found_mask = hn::Or(found_mask, hn::Eq(text_vec, hn::Set(d, chars[c])));
           }
     CPP
-    inreplace "src/bun.js/bindings/highway_strings.cpp",
-              highway_chars_old,
-              highway_chars_new
+    inreplace "src/bun.js/bindings/highway_strings.cpp" do |s|
+      unless s.gsub!(highway_chars_pattern, highway_chars_replacement)
+        raise "Failed to patch Highway char preloading block"
+      end
+    end
     inreplace "cmake/targets/BuildBun.cmake",
               <<~CMAKE,
                 if (NOT WIN32)
