@@ -336,7 +336,6 @@ brew install --cask <tool>
 - `intentrace`
 - `ip2d`
 - `ips`
-- `ironclaw`
 - `jaggr`
 - `jarl`
 - `jetzig`
@@ -463,7 +462,6 @@ brew install --cask <tool>
 - `nosy`
 - `npkill`
 - `npm-np`
-- `nullclaw`
 - `nuls`
 - `nvrs`
 - `oatmeal`
