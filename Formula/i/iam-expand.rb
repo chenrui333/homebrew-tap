@@ -7,7 +7,7 @@ class IamExpand < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "bae6608037b7df345a19933a4e1504e8982cac501b877756a659770485226b5c"
+    sha256 cellar: :any_skip_relocation, all: "cf08c6608f3606213e40e2274dce0572642c2d9f3fbd2f2f9a118ef0d2c4d32d"
   end
 
   depends_on "node"
