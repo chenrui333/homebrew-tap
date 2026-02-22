@@ -6,11 +6,13 @@ on:
       - main
     paths:
       - "Casks/**"
+      - ".github/workflows/cask-tests.yml"
   pull_request:
     branches:
       - main
     paths:
       - "Casks/**"
+      - ".github/workflows/cask-tests.yml"
   workflow_dispatch:
     inputs:
       casks:
