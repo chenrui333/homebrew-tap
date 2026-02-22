@@ -576,6 +576,11 @@ class Bun < Formula
                     message(FATAL_ERROR "BUN_BOOTSTRAP=OFF: external repository downloads are disabled.")
                   endif()
               CMAKE
+    # Tarballs have no .git metadata, so fall back to package version for
+    # UWS/USOCKETS version defines instead of "unknown".
+    inreplace "cmake/tools/GenerateDependencyVersions.cmake",
+              'set(BUN_GIT_SHA "unknown")',
+              'set(BUN_GIT_SHA "${BUN_VERSION_STRING}")'
     # ── System dependency patches: USE_SYSTEM_* for Homebrew deps ──
     inreplace "cmake/targets/CloneZstd.cmake",
               "register_repository(",
@@ -1911,34 +1916,6 @@ index ab78654512..ae6cfdf827 100644
    list(GET CMD_COMMAND 0 CMD_EXECUTABLE)
   if(CMD_EXECUTABLE MATCHES "/|\\\\")
     list(APPEND CMD_EFFECTIVE_DEPENDS ${CMD_EXECUTABLE})
--- 
-2.50.1 (Apple Git-155)
-
-From 0e8c2f0b7f3c7b9a0b5e2f2a1f1b26e0b0a9f5c7 Mon Sep 17 00:00:00 2001
-From: Rui Chen <rui@chenrui.dev>
-Date: Fri, 6 Feb 2026 13:55:00 -0500
-Subject: [PATCH 4/4] cmake: fallback UWS/USOCKETS version in tarballs
-
----
- cmake/tools/GenerateDependencyVersions.cmake | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/cmake/tools/GenerateDependencyVersions.cmake b/cmake/tools/GenerateDependencyVersions.cmake
-index 0d60a8c2c2..a5c8c2b4e1 100644
---- a/cmake/tools/GenerateDependencyVersions.cmake
-+++ b/cmake/tools/GenerateDependencyVersions.cmake
-@@ -123,7 +123,7 @@ function(generate_dependency_versions_header)
-     OUTPUT_VARIABLE BUN_GIT_SHA
-     OUTPUT_STRIP_TRAILING_WHITESPACE
-     ERROR_QUIET
-   )
--  if(NOT BUN_GIT_SHA)
--    set(BUN_GIT_SHA "unknown")
-+  if(NOT BUN_GIT_SHA)
-+    set(BUN_GIT_SHA "${BUN_VERSION_STRING}")
-   endif()
-   list(APPEND DEPENDENCY_VERSIONS "UWS" "${BUN_GIT_SHA}")
-   list(APPEND DEPENDENCY_VERSIONS "USOCKETS" "${BUN_GIT_SHA}")
 -- 
 2.50.1 (Apple Git-155)
 
