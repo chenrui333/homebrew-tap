@@ -555,6 +555,8 @@ class Bun < Formula
                   endforeach()
                   message(STATUS "Created JSC bare-include shim: ${JSC_BARE_SHIM}")
                 endif()
+                include_directories("#{jsc_bare_shim}")
+                include_directories("#{jsc_shim}")
               CMAKE
     # JSCOnly mode strips PLATFORM(COCOA) but bun uses REMOTE_INSPECTOR with
     # the socket transport. Tell the WTF headers to pick the socket variant.
