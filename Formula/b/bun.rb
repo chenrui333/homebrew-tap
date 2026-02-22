@@ -956,17 +956,22 @@ class Bun < Formula
     if OS.linux?
       llvm_bin = Formula["llvm"].opt_bin
       lld_program = llvm_bin/"ld.lld"
+      linker_program = if lld_program.exist?
+        lld_program.to_s
+      else
+        "ld.gold"
+      end
       args << "-DABI=gnu"
       args << "-DCMAKE_C_COMPILER=#{llvm_bin}/clang"
       args << "-DCMAKE_CXX_COMPILER=#{llvm_bin}/clang++"
       args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
       args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
-      args << "-DCMAKE_LINKER=#{llvm_bin}/ld.lld"
-      # Upstream Linux link flags require lld behavior (e.g. `--gdb-index`).
-      # Pass an explicit ld.lld path so clang does not fall back to GNU ld.
-      args << "-DLLD_PROGRAM=#{lld_program}"
-      args << "-DCMAKE_EXE_LINKER_FLAGS=--ld-path=#{lld_program}"
-      args << "-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=#{lld_program}"
+      args << "-DCMAKE_LINKER=#{linker_program}"
+      # Upstream Linux link flags require a linker with GNU gold/LLD features
+      # (e.g. `--gdb-index` and `-icf=safe`). Prefer ld.lld, fallback to ld.gold.
+      args << "-DLLD_PROGRAM=#{linker_program}"
+      args << "-DCMAKE_EXE_LINKER_FLAGS=--ld-path=#{linker_program}"
+      args << "-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=#{linker_program}"
       unless linux_warning_patch_applied
         linux_warning_flags = "-Wno-dangling-assignment-gsl " \
                               "-Wno-character-conversion " \
