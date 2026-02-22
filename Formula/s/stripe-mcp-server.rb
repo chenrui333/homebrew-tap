@@ -1,8 +1,8 @@
 class StripeMcpServer < Formula
   desc "MCP server for Stripe"
   homepage "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol"
-  url "https://registry.npmjs.org/@stripe/mcp/-/mcp-0.2.5.tgz"
-  sha256 "e8ad6034782e24dbca7e7edb182cc69d8298045f3954a7853e476492d7790187"
+  url "https://registry.npmjs.org/@stripe/mcp/-/mcp-0.3.1.tgz"
+  sha256 "22bd30ce776b9960e2330424f8b149a511e4f4b2ad293a550c391f2dc284f594"
   license "MIT"
 
   bottle do
@@ -23,7 +23,8 @@ class StripeMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/stripe-mcp-server --tools=all --api-key=sk_TEST", json, 0)
-    assert_match "This tool will create a customer in Stripe", output
+    output = pipe_output("#{bin}/stripe-mcp-server --api-key=sk_TEST 2>&1", json, 0)
+    assert_match "Stripe MCP Server running on stdio", output
+    assert_match "Unauthorized. See https://docs.stripe.com/mcp", output
   end
 end
