@@ -379,6 +379,7 @@ class Bun < Formula
     # cannot be stored in arrays (`hn::Vec<D8> char_vecs[]`).
     highway_start_marker = "        constexpr size_t kMaxPreloadedChars = 16;\n"
     highway_end_marker = "            const intptr_t pos = hn::FindFirstTrue(d, found_mask);\n"
+    highway_block_pattern = /#{Regexp.escape(highway_start_marker)}.*?#{Regexp.escape(highway_end_marker)}/m
     highway_chars_replacement = <<~CPP.gsub(/^(\s*\S.*)$/, "        \\1")
       const size_t simd_text_len = text_len - (text_len % N);
       size_t i = 0;
@@ -392,12 +393,9 @@ class Bun < Formula
           }
     CPP
     inreplace "src/bun.js/bindings/highway_strings.cpp" do |s|
-      start_index = s.index(highway_start_marker)
-      end_index = s.index(highway_end_marker, start_index)
-      raise "Failed to locate Highway preloading block start" unless start_index
-      raise "Failed to locate Highway preloading block end" unless end_index
-
-      s[start_index...end_index] = highway_chars_replacement
+      unless s.gsub!(highway_block_pattern, "#{highway_chars_replacement}#{highway_end_marker}")
+        raise "Failed to patch Highway char preloading block"
+      end
     end
     inreplace "cmake/targets/BuildBun.cmake",
               <<~CMAKE,
