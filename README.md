@@ -58,6 +58,7 @@ brew install --cask <tool>
 - `asmfmt`
 - `astro-language-server`
 - `auggie`
+- `auox`
 - `austin-tui`
 - `auto-favicon-mcp-server`
 - `autoflake`
@@ -67,6 +68,7 @@ brew install --cask <tool>
 - `await`
 - `awk-language-server`
 - `awless`
+- `aws-doctor`
 - `awsesh`
 - `axiom-mcp-server`
 - `az-tui`
@@ -111,6 +113,7 @@ brew install --cask <tool>
 - `carton`
 - `cashd`
 - `castor`
+- `catree`
 - `cc-enhanced`
 - `cc-filter`
 - `ccapi`
@@ -133,6 +136,7 @@ brew install --cask <tool>
 - `clai`
 - `claude-code-generic-hooks`
 - `claudio`
+- `clawea`
 - `cli-mcp-server`
 - `clickup-mcp`
 - `cloctui`
@@ -140,6 +144,7 @@ brew install --cask <tool>
 - `cloud-run-mcp`
 - `cloudflare-ddns`
 - `cloudlens`
+- `clox`
 - `cmdperf`
 - `cmdx`
 - `cnspec`
@@ -159,6 +164,7 @@ brew install --cask <tool>
 - `copilot-cli`
 - `cozypkg`
 - `cpx`
+- `cpx11`
 - `crates-lsp`
 - `create-mcp-use-app`
 - `critcmp`
@@ -174,6 +180,7 @@ brew install --cask <tool>
 - `dbin`
 - `dcv`
 - `ddev`
+- `deadbranch`
 - `debugg-ai-mcp` <!-- spellchecker:disable-line -->
 - `decktape`
 - `deepteam`
@@ -191,6 +198,7 @@ brew install --cask <tool>
 - `dotbins`
 - `dqy`
 - `drft`
+- `dumper`
 - `duster`
 - `dvm`
 - `dxt`
@@ -205,6 +213,7 @@ brew install --cask <tool>
 - `enry`
 - `envie`
 - `envtpl`
+- `envtrace`
 - `envx`
 - `ergo`
 - `fairyglade-ly`
@@ -212,6 +221,7 @@ brew install --cask <tool>
 - `fast-cli`
 - `fast-xml-parser`
 - `fat`
+- `fdir`
 - `fence`
 - `ferret`
 - `fex`
@@ -260,6 +270,8 @@ brew install --cask <tool>
 - `goboscript`
 - `gofakeit`
 - `goimports-reviser`
+- `gokin`
+- `golazo`
 - `gommit`
 - `gorae`
 - `gowebly`
@@ -269,6 +281,7 @@ brew install --cask <tool>
 - `grcov`
 - `gritql`
 - `grmon`
+- `gsh`
 - `gtts`
 - `hackernews-tui`
 - `haloy`
@@ -319,10 +332,12 @@ brew install --cask <tool>
 - `jarl`
 - `jetzig`
 - `jiggy`
+- `jikkou`
 - `jjj`
 - `jl`
 - `jocalsend`
 - `jonquil`
+- `jotbird`
 - `jplot`
 - `jsonl-graph`
 - `jsrpc`
@@ -359,6 +374,7 @@ brew install --cask <tool>
 - `lacquer`
 - `lazycelery`
 - `lazycli`
+- `lazymake`
 - `lazynpm`
 - `leetgo`
 - `lemonade`
@@ -380,12 +396,14 @@ brew install --cask <tool>
 - `luaformatter`
 - `lib-x`
 - `libdivide`
+- `macime`
 - `magic-mcp-server`
 - `mamediff`
 - `mapscii`
 - `marchat`
 - `markdownify`
 - `markpdf`
+- `matcha`
 - `mcman`
 - `mcp-alchemy`
 - `mcp-obsidian`
@@ -400,6 +418,7 @@ brew install --cask <tool>
 - `mdns-scanner`
 - `mdsf`
 - `mdslw`
+- `memora`
 - `meteor`
 - `mfa`
 - `minisign`
@@ -422,6 +441,7 @@ brew install --cask <tool>
 - `needs`
 - `nest-cli`
 - `newsnow-mcp-server`
+- `nexus`
 - `ngtop`
 - `nhost`
 - `ni`
@@ -429,6 +449,7 @@ brew install --cask <tool>
 - `nino`
 - `nkv`
 - `nocc`
+- `nosy`
 - `npkill`
 - `npm-np`
 - `nullclaw`
@@ -445,11 +466,13 @@ brew install --cask <tool>
 - `opensnitch-tui`
 - `openspec`
 - `optivorbis`
+- `orla`
 - `osintui`
 - `osmar`
 - `otelgen`
 - `otto`
 - `oui`
+- `owlex`
 - `oxbuild`
 - `oxylabs-mcp`
 - `pal-mcp-server`
@@ -463,6 +486,7 @@ brew install --cask <tool>
 - `perfops`
 - `pet`
 - `pgdog`
+- `pgterm`
 - `phpinsights`
 - `pike`
 - `pingu`
@@ -470,6 +494,7 @@ brew install --cask <tool>
 - `pipeform`
 - `pitaya`
 - `pixelle`
+- `pj`
 - `plandex`
 - `playerctl`
 - `pls`
@@ -477,6 +502,7 @@ brew install --cask <tool>
 - `pluralith`
 - `pmx`
 - `podcli`
+- `polymaster`
 - `pom`
 - `pomo`
 - `poop`
@@ -530,6 +556,7 @@ brew install --cask <tool>
 - `rkik`
 - `rshell`
 - `rslocal`
+- `rt`
 - `rtop`
 - `rum`
 - `run`
@@ -539,6 +566,7 @@ brew install --cask <tool>
 - `sato`
 - `satty`
 - `saw`
+- `sbomlyze`
 - `scholar`
 - `screenshotone-mcp-server`
 - `scrt`
@@ -574,8 +602,10 @@ brew install --cask <tool>
 - `spicedb`
 - `spiffe-spike`
 - `spok`
+- `spotiflac-cli`
 - `spotifydl`
 - `sprofile`
+- `sqd`
 - `squall`
 - `ssl-checker`
 - `ssm`
@@ -605,6 +635,7 @@ brew install --cask <tool>
 - `teldrive`
 - `tenderly`
 - `termdbms`
+- `terminal-mcp`
 - `termtunnel`
 - `terra-code-cli`
 - `terracove`
@@ -673,11 +704,13 @@ brew install --cask <tool>
 - `xcpkg`
 - `xfr`
 - `xmlformatter`
+- `xytz`
 - `yajsv`
 - `yatto`
 - `yeetfile`
 - `yew-fmt`
 - `yosay`
+- `youtube-music-cli`
 - `yr`
 - `go-zzz`
 - `zeptoclaw`
@@ -691,6 +724,7 @@ brew install --cask <tool>
 - `ziglint`
 - `zigscient`
 - `zmate`
+- `zombie`
 - `zookeeper`
 - `zu`
 - `zuse`
