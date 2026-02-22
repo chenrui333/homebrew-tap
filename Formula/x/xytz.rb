@@ -25,13 +25,8 @@ class Xytz < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
     ENV["XDG_CONFIG_HOME"] = testpath/".config"
-
     assert_match "Usage:", shell_output("#{bin}/xytz --help")
-
-    config = testpath/".config/xytz/config.yaml"
-    assert_path_exists config
-    assert_match "search_limit:", config.read
+    assert_match "search_limit:", (testpath/".config/xytz/config.yaml").read
   end
 end
