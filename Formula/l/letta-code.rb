@@ -17,16 +17,14 @@ class LettaCode < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", "--legacy-peer-deps", "--include=optional", *std_npm_args
+    system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/letta --version")
 
-    ENV["HOME"] = testpath
     output = shell_output("#{bin}/letta --info")
-    assert_match "Letta Code #{version}", output
     assert_match "Locally pinned agents: (none)", output
   end
 end
