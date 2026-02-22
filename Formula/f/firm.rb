@@ -6,6 +6,15 @@ class Firm < Formula
   license "AGPL-3.0-only"
   head "https://github.com/42futures/firm.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "078978dd8ee81154962e14357adbf91a5643986084eba5d4b3152c75f6a3f8cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc877568f60fc73b5e23c49a76080fb891fa3c4009811fdd037df9c8e659bf59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c90d9f6e0cdb91a5eec5bf65a67f7536929d8f2cb1d6a68dcc0942d021ba623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2c790cb88343ca5a01584b55405ef301235dba056646dba185adbb6db869bdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e583563a1df25ef5c1bcd6f5cba7be318b17ed4e77b406fd1244a2e2737d9ee"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
