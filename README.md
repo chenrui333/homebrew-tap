@@ -154,6 +154,7 @@ brew install --cask <tool>
 - `code-pushup`
 - `codebuff`
 - `codefmt`
+- `codemap`
 - `codespelunker`
 - `codstts`
 - `cohctl`
@@ -453,6 +454,7 @@ brew install --cask <tool>
 - `npkill`
 - `npm-np`
 - `nullclaw`
+- `nuls`
 - `nvrs`
 - `oatmeal`
 - `octelium`
@@ -478,6 +480,7 @@ brew install --cask <tool>
 - `pal-mcp-server`
 - `papis`
 - `paq`
+- `parm`
 - `parqv`
 - `passepartui`
 - `pdfsyntax`
