@@ -1329,18 +1329,6 @@ class Bun < Formula
           LifecycleReporterBackendDispatcherHandler* m_agent { nullptr };
       };
 
-      class JS_EXPORT_PRIVATE LifecycleReporterFrontendDispatcher {
-          WTF_MAKE_NONCOPYABLE(LifecycleReporterFrontendDispatcher);
-          WTF_DEPRECATED_MAKE_FAST_ALLOCATED(LifecycleReporterFrontendDispatcher);
-      public:
-          LifecycleReporterFrontendDispatcher(FrontendRouter& router) : m_router(router) {}
-          ~LifecycleReporterFrontendDispatcher() = default;
-          void reload() {}
-          void error(const String&, const String&, Ref<JSON::ArrayOf<String>>&&, Ref<JSON::ArrayOf<int>>&&, Ref<JSON::ArrayOf<String>>&&) {}
-      private:
-          const CheckedRef<FrontendRouter> m_router;
-      };
-
       // ------ TestReporter ------
       } // namespace Inspector
     HEADER
