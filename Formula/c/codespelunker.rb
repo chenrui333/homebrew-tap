@@ -1,8 +1,8 @@
 class Codespelunker < Formula
   desc "Command-line codespelunker or code search"
   homepage "https://github.com/boyter/cs"
-  url "https://github.com/boyter/cs/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "8bf45d8ad5b379cc942e4e54cbede2b3441d71dfdeb5487eeb5aa0597779d9c0"
+  url "https://github.com/boyter/cs/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "b6212838289a634f9ee1bfeea33cdbfbb4c5a291f780c01bddd3054d48b32ac0"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/boyter/cs.git", branch: "master"
 
