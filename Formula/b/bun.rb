@@ -330,6 +330,11 @@ class Bun < Formula
     inreplace "cmake/targets/BuildBun.cmake",
               "--platform=browser\n      --minify",
               "--platform=browser\n      --minify\n      --external:peechy"
+    # Some environments expose an unresolved CMake LLD path
+    # (`LLD_PROGRAM-NOTFOUND`), which makes clang reject `--ld-path`.
+    inreplace "cmake/targets/BuildBun.cmake",
+              "    --ld-path=${LLD_PROGRAM}\n",
+              ""
     # Keep Bun's warning policy aligned with upstream Buildkite builds while
     # tolerating newer Linux clang diagnostics seen in Homebrew CI.
     warning_line_replacement = <<~CMAKE.chomp
