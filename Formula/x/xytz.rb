@@ -8,11 +8,12 @@ class Xytz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4aaff18b9f434c3005046852dfd20ea35c80e87bd0def2dcaf9afcb1ab9509cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aaff18b9f434c3005046852dfd20ea35c80e87bd0def2dcaf9afcb1ab9509cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4aaff18b9f434c3005046852dfd20ea35c80e87bd0def2dcaf9afcb1ab9509cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a8a8b6dee1770af66f27877b97c386c94198c3d6437c602ab73ead40407a77a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cca43f6231f18ac10d3b89f5a0f59cd56eb6cf8b0bc6b88767275a06ab83afcd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c9d98bbb2e334a2f2bb195f4cf8f5ea79a863e509e1117efdfe16b8606cf675"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c9d98bbb2e334a2f2bb195f4cf8f5ea79a863e509e1117efdfe16b8606cf675"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c9d98bbb2e334a2f2bb195f4cf8f5ea79a863e509e1117efdfe16b8606cf675"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "256e21398968a5ff829a38dc69f8c30d59676bfef26299887951c48fc633f451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed59c2ca826fd9b2738c37f7dbc3908043b3329b61bca57cd4d82b5ee830ea58"
   end
 
   depends_on "go" => :build
