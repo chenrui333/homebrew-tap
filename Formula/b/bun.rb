@@ -335,6 +335,17 @@ class Bun < Formula
     inreplace "cmake/targets/BuildBun.cmake",
               "    --ld-path=${LLD_PROGRAM}\n",
               ""
+    inreplace "cmake/tools/SetupLLVM.cmake",
+              <<~CMAKE,
+                list(APPEND CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
+                list(APPEND CMAKE_ARGS -DCMAKE_SHARED_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
+              CMAKE
+              <<~CMAKE
+                if(LLD_PROGRAM)
+                  list(APPEND CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
+                  list(APPEND CMAKE_ARGS -DCMAKE_SHARED_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
+                endif()
+              CMAKE
     # Keep Bun's warning policy aligned with upstream Buildkite builds while
     # tolerating newer Linux clang diagnostics seen in Homebrew CI.
     warning_line_replacement = <<~CMAKE.chomp
