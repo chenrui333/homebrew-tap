@@ -93,9 +93,15 @@ def main():
         raise SystemExit(1)
 
     source_labels = merge_source_labels()
+    destination_labels = fetch_labels(DEST_OWNER, DEST_REPO)
+    destination_names = {label["name"].strip().lower() for label in destination_labels}
+    missing_labels = [label for label in source_labels if label["name"].strip().lower() not in destination_names]
 
-    print(f"Creating {len(source_labels)} labels in {DEST_OWNER}/{DEST_REPO}...")
-    for label in source_labels:
+    print(
+        f"Source labels: {len(source_labels)} | Existing in {DEST_OWNER}/{DEST_REPO}: {len(destination_labels)} | "
+        f"Missing to create: {len(missing_labels)}"
+    )
+    for label in missing_labels:
         create_label(label, DEST_LABELS_URL)
 
 if __name__ == "__main__":
