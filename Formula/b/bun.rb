@@ -907,7 +907,7 @@ class Bun < Formula
       args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
       args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
       args << "-DCMAKE_LINKER=#{llvm_bin}/ld.lld"
-      args << "-DCMAKE_CXX_FLAGS=-Wno-dangling-assignment-gsl"
+      args << "-DCMAKE_CXX_FLAGS=-Wno-dangling-assignment-gsl -Wno-character-conversion -Wno-deprecated-declarations"
     end
 
     webkit_path = ENV["HOMEBREW_BUN_WEBKIT_PATH"].to_s
