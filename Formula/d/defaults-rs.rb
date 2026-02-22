@@ -6,6 +6,13 @@ class DefaultsRs < Formula
   license "MIT"
   head "https://github.com/machlit/defaults-rs.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9102cae97ca71eefd11b3af5af1edb09e3c02a005b47835e3a5a2f43a8429b98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab241b11e45dac1733721d6303c2fa26ce4194dd6eb62349744bcd1bc53f929b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "893a7e1e53b5574fb4abca11da6aa53f846e70941e492b6700b070e087b3806f"
+  end
+
   depends_on "rust" => :build
   depends_on :macos
 
