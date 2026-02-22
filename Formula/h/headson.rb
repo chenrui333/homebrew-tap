@@ -9,7 +9,19 @@ class Headson < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
+    if OS.linux?
+      zlib = Formula["zlib-ng-compat"]
+      ENV["ZLIB_ROOT"] = zlib.opt_prefix.to_s
+      ENV.append_path "PKG_CONFIG_PATH", zlib.opt_lib/"pkgconfig"
+      ENV.append "LDFLAGS", "-L#{zlib.opt_lib}"
+      ENV.append "CPPFLAGS", "-I#{zlib.opt_include}"
+    end
+
     system "cargo", "install", *std_cargo_args(path: ".")
   end
 
