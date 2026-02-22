@@ -1342,14 +1342,6 @@ class Bun < Formula
       };
 
       // ------ TestReporter ------
-      class JS_EXPORT_PRIVATE TestReporterBackendDispatcherHandler {
-      public:
-          virtual Inspector::CommandResult<void> enable() = 0;
-          virtual Inspector::CommandResult<void> disable() = 0;
-      protected:
-          virtual ~TestReporterBackendDispatcherHandler() = default;
-      };
-
       } // namespace Inspector
     HEADER
     %w[InspectorLifecycleAgent InspectorTestReporterAgent].each do |agent|
