@@ -6,6 +6,11 @@ class Clawbands < Formula
   license "MIT"
   head "https://github.com/SeyZ/clawbands.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "23a0ec28ea5a666b041531a51fc007ef55161b04b02aa8d83820c5f79745157d"
+  end
+
   depends_on "node"
 
   def install
