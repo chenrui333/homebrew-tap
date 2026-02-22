@@ -20,6 +20,7 @@ class Bun < Formula
   depends_on "libdeflate"
   depends_on "libuv"
   depends_on "lol-html"
+  depends_on "ls-hpack"
   depends_on "mimalloc"
   depends_on "openssl@3"
   depends_on "sqlite"
@@ -28,10 +29,6 @@ class Bun < Formula
   resource "picohttpparser" do
     url "https://github.com/h2o/picohttpparser/archive/066d2b1e9ab820703db0837a7255d92d30f0c9f5.tar.gz"
     sha256 "637ff2ab6f5c7f7e05a5b5dc393d5cf2fea8d4754fcaceaaf935ffff5c1323ee"
-  end
-  resource "ls-hpack" do
-    url "https://github.com/litespeedtech/ls-hpack/archive/8905c024b6d052f083a3d11d0a169b3c2735c8a1.tar.gz"
-    sha256 "07d8bf901bb1b15543f38eabd23938519e1210eebadb52f3d651d6ef130ef973"
   end
   resource "nodejs-headers" do
     url "https://nodejs.org/dist/v24.3.0/node-v24.3.0-headers.tar.gz"
@@ -82,11 +79,6 @@ class Bun < Formula
       mkdir_p buildpath/"vendor/picohttpparser"
       cp "picohttpparser.c", buildpath/"vendor/picohttpparser/picohttpparser.c"
       cp "picohttpparser.h", buildpath/"vendor/picohttpparser/picohttpparser.h"
-    end
-    resource("ls-hpack").stage do
-      rm_r buildpath/"vendor/lshpack" if (buildpath/"vendor/lshpack").exist?
-      mkdir_p buildpath/"vendor/lshpack"
-      cp_r Dir["*"], buildpath/"vendor/lshpack"
     end
     resource("nodejs-headers").stage do
       rm_r buildpath/"vendor/nodejs" if (buildpath/"vendor/nodejs").exist?
@@ -479,7 +471,8 @@ class Bun < Formula
                   foreach(HDIR "#{patched_ph_dir}"
                                "${WEBKIT_PATH}/JavaScriptCore/PrivateHeaders"
                                "${WEBKIT_PATH}/JavaScriptCore.framework/Headers"
-                               "${WEBKIT_PATH}/JavaScriptCore/Headers")
+                               "${WEBKIT_PATH}/JavaScriptCore/Headers"
+                               "${WEBKIT_INCLUDE_PATH}/JavaScriptCore")
                     if(EXISTS "${HDIR}")
                       file(GLOB _hdrs "${HDIR}/*.h")
                       foreach(_h ${_hdrs})
@@ -514,12 +507,25 @@ class Bun < Formula
                 # overlapping headers), so we symlink only the MISSING headers into a
                 # separate shim directory that's in the -I path.
                 set(JSC_BARE_SHIM "#{jsc_bare_shim}")
+                # Prebuilt WebKit tarballs only ship include/JavaScriptCore.
+                # Seed the bare-include shim from there so stripped includes
+                # like <JSCJSValue.h> still resolve when Source/ is absent.
+                if(EXISTS "${WEBKIT_INCLUDE_PATH}/JavaScriptCore")
+                  file(GLOB _pkg_hdrs "${WEBKIT_INCLUDE_PATH}/JavaScriptCore/*.h")
+                  foreach(_pkg_h ${_pkg_hdrs})
+                    get_filename_component(_pkg_name "${_pkg_h}" NAME)
+                    if(NOT EXISTS "${JSC_BARE_SHIM}/${_pkg_name}")
+                      file(CREATE_LINK "${_pkg_h}" "${JSC_BARE_SHIM}/${_pkg_name}" SYMBOLIC)
+                    endif()
+                  endforeach()
+                endif()
                 set(JSC_SRC2 "${WEBKIT_PATH}/../../Source/JavaScriptCore")
                 if(EXISTS "${JSC_SRC2}")
                   # Collect all PrivateHeaders names to skip
                   set(_ph_names)
                   foreach(PH_DIR2 "${WEBKIT_PATH}/JavaScriptCore.framework/PrivateHeaders"
-                                  "${WEBKIT_PATH}/JavaScriptCore/PrivateHeaders")
+                                  "${WEBKIT_PATH}/JavaScriptCore/PrivateHeaders"
+                                  "${WEBKIT_INCLUDE_PATH}/JavaScriptCore")
                     if(EXISTS "${PH_DIR2}")
                       file(GLOB _ph_hdrs "${PH_DIR2}/*.h")
                       foreach(_ph ${_ph_hdrs})
@@ -796,6 +802,16 @@ class Bun < Formula
                 )
               CMAKE
               <<~CMAKE
+                option(USE_SYSTEM_LSHPACK "Use system ls-hpack" OFF)
+                if(USE_SYSTEM_LSHPACK)
+                  find_library(LSHPACK_LIBRARY NAMES ls-hpack REQUIRED)
+                  find_path(LSHPACK_INCLUDE_DIR NAMES lshpack.h REQUIRED)
+                  add_custom_target(lshpack)
+                  target_include_directories(${bun} PRIVATE ${LSHPACK_INCLUDE_DIR})
+                  target_link_libraries(${bun} PRIVATE ${LSHPACK_LIBRARY})
+                  message(STATUS "Using system ls-hpack")
+                  return()
+                endif()
                 if(EXISTS ${VENDOR_PATH}/lshpack/CMakeLists.txt)
                   message(STATUS "Using vendored ls-hpack")
                 else()
@@ -860,9 +876,9 @@ class Bun < Formula
       -DUSE_SYSTEM_LOLHTML=ON
       -DUSE_SYSTEM_MIMALLOC=ON
       -DUSE_SYSTEM_ESBUILD=ON
+      -DUSE_SYSTEM_LSHPACK=ON
       -DUSE_SYSTEM_ZLIB=ON
       -DUSE_SYSTEM_ZSTD=ON
-      -DWEBKIT_LOCAL=ON
       -DENABLE_TINYCC=OFF
       -DENABLE_BASELINE=ON
       -DENABLE_CANARY=OFF
@@ -889,9 +905,14 @@ class Bun < Formula
         Pathname(webkit_path)/"WebKitBuild/Release/libWTF.a",
       ]
     end
-    if webkit_candidates.none?(&:exist?)
-      odie "WEBKIT_LOCAL=ON requires local WebKit static libs (missing libWTF.a). " \
-           "Set HOMEBREW_BUN_WEBKIT_PATH to a prebuilt WebKit tree."
+    webkit_local = webkit_candidates.any?(&:exist?)
+    if webkit_local
+      args << "-DWEBKIT_LOCAL=ON"
+    elsif webkit_path.empty?
+      args << "-DWEBKIT_LOCAL=OFF"
+      opoo "Local WebKit static libs not found; falling back to upstream WebKit download."
+    else
+      odie "HOMEBREW_BUN_WEBKIT_PATH is set but local WebKit static libs are missing (libWTF.a)."
     end
 
     # ABI fix: the prebuilt WebKit library was compiled with PORT=Mac which
