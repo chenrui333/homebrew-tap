@@ -6,6 +6,15 @@ class Qwe < Formula
   license "MIT"
   head "https://github.com/mainak55512/qwe.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4ef8e39810cea7b9ed479f8e0cbdf44ba0d6c483873e72a08709d2b7f1d3dae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4ef8e39810cea7b9ed479f8e0cbdf44ba0d6c483873e72a08709d2b7f1d3dae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4ef8e39810cea7b9ed479f8e0cbdf44ba0d6c483873e72a08709d2b7f1d3dae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4055028b1da1bfa3d0b494f16a111d7174385e8a9a22736efef3944da00473a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "740f64f1e1de7b8b13755283b9734416c3e26f57ba6b52835140a73efc27de03"
+  end
+
   depends_on "go" => :build
 
   def install
