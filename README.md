@@ -299,6 +299,7 @@ brew install --cask <tool>
 - `hclgrep`
 - `hclq`
 - `headscale`
+- `headson`
 - `hello`
 - `hellwal`
 - `hexora`
