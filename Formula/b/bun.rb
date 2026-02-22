@@ -58,6 +58,8 @@ class Bun < Formula
   patch :DATA
 
   def install
+    linux_warning_patch_applied = false
+
     # Populate cmake/sources/*.txt from cmake/Sources.json.  The release
     # tarball ships empty placeholder files; the upstream build expects
     # `scripts/glob-sources.mjs` (a bun script) to have been run beforehand.
@@ -334,10 +336,14 @@ class Bun < Formula
       -Wno-dangling-assignment-gsl
       -Wno-deprecated-declarations
     CMAKE
-    inreplace "cmake/targets/BuildBun.cmake",
-              "-Wno-character-conversion",
-              warning_line_replacement,
-              global: true
+    buildbun_cmake = buildpath/"cmake/targets/BuildBun.cmake"
+    if buildbun_cmake.read.include?("-Wno-character-conversion")
+      inreplace "cmake/targets/BuildBun.cmake",
+                "-Wno-character-conversion",
+                warning_line_replacement,
+                global: true
+      linux_warning_patch_applied = true
+    end
     bun_error_esbuild_cmd = <<~'CMAKE'.gsub(/^/, "      ")
       bun-error.css
       --outdir=${BUN_ERROR_OUTPUT}
@@ -920,6 +926,12 @@ class Bun < Formula
       args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
       args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
       args << "-DCMAKE_LINKER=#{llvm_bin}/ld.lld"
+      unless linux_warning_patch_applied
+        linux_warning_flags = "-Wno-dangling-assignment-gsl " \
+                              "-Wno-character-conversion " \
+                              "-Wno-deprecated-declarations"
+        args << "-DCMAKE_CXX_FLAGS=#{linux_warning_flags}"
+      end
     end
 
     webkit_path = ENV["HOMEBREW_BUN_WEBKIT_PATH"].to_s
