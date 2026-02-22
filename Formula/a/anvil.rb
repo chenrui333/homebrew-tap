@@ -6,6 +6,15 @@ class Anvil < Formula
   license "Apache-2.0"
   head "https://github.com/0xjuanma/anvil.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "822173c395b58de82bb444a75b4f9f7ef8540c37c3b1422aab3cc5eca16be43a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "822173c395b58de82bb444a75b4f9f7ef8540c37c3b1422aab3cc5eca16be43a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "822173c395b58de82bb444a75b4f9f7ef8540c37c3b1422aab3cc5eca16be43a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "172956d32effb56e33cebd93734c11f06ef42fd4381706e09a63d1e7528d1326"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dece0f35e045bc73329ededd090a95dff1428cf52c617ca56290f5348dd8f01"
+  end
+
   depends_on "go" => :build
 
   def install
