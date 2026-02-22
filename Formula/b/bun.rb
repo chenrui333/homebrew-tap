@@ -377,7 +377,8 @@ class Bun < Formula
               "#undef ENABLE_WEB_RTC\n#define ENABLE_WEB_RTC 0\n"
     # Backport upstream Highway SVE fix for Linux arm64: sizeless vector types
     # cannot be stored in arrays (`hn::Vec<D8> char_vecs[]`).
-    highway_chars_old = <<~CPP.gsub(/^/, "        ")
+    # Keep blank lines truly blank so inreplace matches upstream spacing.
+    highway_chars_old = <<~CPP.gsub(/^(?=\S)/, "        ")
       constexpr size_t kMaxPreloadedChars = 16;
       hn::Vec<D8> char_vecs[kMaxPreloadedChars];
       const size_t num_chars_to_preload = std::min(chars_len, kMaxPreloadedChars);
@@ -401,7 +402,7 @@ class Bun < Formula
               }
           }
     CPP
-    highway_chars_new = <<~CPP.gsub(/^/, "        ")
+    highway_chars_new = <<~CPP.gsub(/^(?=\S)/, "        ")
       const size_t simd_text_len = text_len - (text_len % N);
       size_t i = 0;
 
