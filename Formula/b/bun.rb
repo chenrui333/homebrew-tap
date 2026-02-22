@@ -1363,20 +1363,6 @@ class Bun < Formula
           TestReporterBackendDispatcherHandler* m_agent { nullptr };
       };
 
-      class JS_EXPORT_PRIVATE TestReporterFrontendDispatcher {
-          WTF_MAKE_NONCOPYABLE(TestReporterFrontendDispatcher);
-          WTF_DEPRECATED_MAKE_FAST_ALLOCATED(TestReporterFrontendDispatcher);
-      public:
-          TestReporterFrontendDispatcher(FrontendRouter& router) : m_router(router) {}
-          ~TestReporterFrontendDispatcher() = default;
-          void found(int, const String&, const String&, int, const String&,
-                     Protocol::TestReporter::TestType, std::optional<int>) {}
-          void start(int) {}
-          void end(int, Protocol::TestReporter::TestStatus, double) {}
-      private:
-          const CheckedRef<FrontendRouter> m_router;
-      };
-
       } // namespace Inspector
     HEADER
     %w[InspectorLifecycleAgent InspectorTestReporterAgent].each do |agent|
