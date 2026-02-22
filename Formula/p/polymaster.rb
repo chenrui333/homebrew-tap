@@ -24,12 +24,10 @@ class Polymaster < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    ENV["HOME"] = testpath
-
     assert_match "Usage:", shell_output("#{bin}/wwatcher --help")
     assert_match "WHALE WATCHER STATUS", shell_output("#{bin}/wwatcher status")
   end
