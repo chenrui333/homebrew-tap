@@ -6,6 +6,11 @@ class Clawra < Formula
   license "MIT"
   head "https://github.com/SumeLabs/clawra.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "00f554c700f9c8395313c2eff2d8b6c92398fe4360f5d26f48064f3c33701b64"
+  end
+
   depends_on "node"
 
   def install
