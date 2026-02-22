@@ -21,6 +21,9 @@ class Mdsf < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "mdsf")
 
+    [bash_completion/"mdsf", fish_completion/"mdsf.fish", zsh_completion/"_mdsf"].each do |completion_file|
+      rm completion_file if completion_file.exist?
+    end
     generate_completions_from_executable(bin/"mdsf", "completions")
   end
 
@@ -37,7 +40,7 @@ class Mdsf < Formula
 
     expected_content = <<~MARKDOWN
       ```python
-      print( "Hello, World!" )
+      print("Hello, World!")
       ```
     MARKDOWN
 
