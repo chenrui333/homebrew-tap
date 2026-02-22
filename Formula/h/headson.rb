@@ -6,6 +6,15 @@ class Headson < Formula
   license "MIT"
   head "https://github.com/kantord/headson.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fdb71323365cc056e7a55cc1c212d1f7f4ebb39c34e4dbad49552087d4824a72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba90e30885d6b29ed23067c6f5172295751643ad637f538da250d65f5786f8a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf4c6995deeb6601f762ea1c5caf8477b74c3aaf06c54a9276bf1045203b3a6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1898a2f96a9febcc1836061943e0e89bd1815fc60ee5a2f22e5d70348fbb6fcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a0243d67272b109ef2723107855eda5eca1a6f1503d43a94778cf6048afc417"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
