@@ -7,8 +7,11 @@ class Bunsen < Formula
   license "MIT"
   head "https://github.com/g4rcez/bunsen.git", branch: "main"
 
-  depends_on "bun" => :build
   depends_on :macos
+
+  on_macos do
+    depends_on "bun" => :build
+  end
 
   def install
     inreplace "src/cli/index.ts", ".version('0.0.0')", ".version('#{version}')"
