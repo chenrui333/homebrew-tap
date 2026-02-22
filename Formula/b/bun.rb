@@ -1275,47 +1275,6 @@ class Bun < Formula
                 "#{ns_line}\n\nWTF_MAKE_TZONE_ALLOCATED_IMPL(#{klass});"
     end
 
-    # ── Runtime stubs and linker shims ──
-    # The bun-WebKit build is missing generated C++ dispatchers for two custom
-    # inspector protocol domains (LifecycleReporter and TestReporter).  Create
-    # a stub header that provides the minimal interfaces needed by the bun
-    # agent code.
-    (buildpath/"src/bun.js/bindings/BunInspectorProtocolStubs.h").write(<<~HEADER)
-      #pragma once
-      // Auto-generated stubs for bun's custom inspector protocol domains that
-      // are missing from the WebKit DerivedSources.
-
-      #include <JavaScriptCore/InspectorBackendDispatcher.h>
-      #include <JavaScriptCore/InspectorFrontendRouter.h>
-      #include <JavaScriptCore/InspectorProtocolTypes.h>
-      #include <wtf/JSONValues.h>
-      #include <wtf/FastMalloc.h>
-      #include <wtf/Forward.h>
-      #include <wtf/Ref.h>
-      #include <optional>
-
-      namespace Inspector {
-
-      // ------ Protocol types ------
-      namespace Protocol {
-      namespace TestReporter {
-      enum class TestStatus { Pass, Fail, Timeout, Skip, Todo, Skipped_because_label };
-      enum class TestType { Test, Describe };
-      } // namespace TestReporter
-      } // namespace Protocol
-
-      // ------ TestReporter ------
-      } // namespace Inspector
-    HEADER
-    %w[InspectorLifecycleAgent InspectorTestReporterAgent].each do |agent|
-      inreplace "src/bun.js/bindings/#{agent}.h",
-                "#include <JavaScriptCore/InspectorBackendDispatchers.h>\n" \
-                "#include <JavaScriptCore/InspectorFrontendDispatchers.h>",
-                "#include <JavaScriptCore/InspectorBackendDispatchers.h>\n" \
-                "#include <JavaScriptCore/InspectorFrontendDispatchers.h>\n" \
-                "#include \"BunInspectorProtocolStubs.h\""
-    end
-
     # JSBuffer.cpp references JSUint8Array::s_info which is an explicit
     # template specialization defined in the JSC library.  Tell the compiler
     # the definition exists in another translation unit.
