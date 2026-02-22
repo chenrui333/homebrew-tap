@@ -1304,31 +1304,6 @@ class Bun < Formula
       } // namespace TestReporter
       } // namespace Protocol
 
-      // ------ LifecycleReporter ------
-      class JS_EXPORT_PRIVATE LifecycleReporterBackendDispatcherHandler {
-      public:
-          virtual Inspector::CommandResult<void> enable() = 0;
-          virtual Inspector::CommandResult<void> disable() = 0;
-          virtual Inspector::CommandResult<void> preventExit() = 0;
-          virtual Inspector::CommandResult<void> stopPreventingExit() = 0;
-          virtual Inspector::CommandResultOf<Ref<JSON::ArrayOf<String>>,Ref<JSON::ArrayOf<String>>,String,String,Ref<JSON::ArrayOf<String>>> getModuleGraph() = 0;
-      protected:
-          virtual ~LifecycleReporterBackendDispatcherHandler() = default;
-      };
-
-      class JS_EXPORT_PRIVATE LifecycleReporterBackendDispatcher final : public SupplementalBackendDispatcher {
-      public:
-          static Ref<LifecycleReporterBackendDispatcher> create(BackendDispatcher& bd, LifecycleReporterBackendDispatcherHandler* agent)
-          {
-              return adoptRef(*new LifecycleReporterBackendDispatcher(bd, agent));
-          }
-          void dispatch(long, const String&, Ref<JSON::Object>&&) final {}
-      private:
-          LifecycleReporterBackendDispatcher(BackendDispatcher& bd, LifecycleReporterBackendDispatcherHandler* agent)
-              : SupplementalBackendDispatcher(bd), m_agent(agent) {}
-          LifecycleReporterBackendDispatcherHandler* m_agent { nullptr };
-      };
-
       // ------ TestReporter ------
       } // namespace Inspector
     HEADER
