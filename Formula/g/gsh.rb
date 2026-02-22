@@ -24,16 +24,11 @@ class Gsh < Formula
     system "go", "install", "golang.org/x/tools/cmd/stringer@latest"
     system "go", "generate", "./..."
 
-    ldflags = %W[
-      -s
-      -w
-      -X main.BUILD_VERSION=#{version}
-    ]
+    ldflags = "-s -w -X main.BUILD_VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"gsh"), "./cmd/gsh/main.go"
   end
 
   test do
-    ENV["HOME"] = testpath
     assert_match version.to_s, shell_output("#{bin}/gsh --version")
     assert_match "Telemetry:", shell_output("#{bin}/gsh telemetry status")
   end
