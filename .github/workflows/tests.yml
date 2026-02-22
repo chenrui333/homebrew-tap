@@ -102,6 +102,8 @@ jobs:
             cleanup: true
           - runner: 'macos-15'
             cleanup: true
+          - runner: 'macos-14'
+            cleanup: true
           - runner: 'macos-15-intel'
             cleanup: true
           - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-runner || 'ubuntu-22.04' }}
