@@ -35,6 +35,7 @@ brew install --cask <tool>
 
 - `abc`
 - `act3`
+- `actionbook`
 - `adbtuifm`
 - `addlicense`
 - `agl`
@@ -119,6 +120,7 @@ brew install --cask <tool>
 - `cc-filter`
 - `ccapi`
 - `ccboard`
+- `cccc`
 - `ccexp`
 - `cchistory`
 - `cclogviewer`
@@ -138,7 +140,9 @@ brew install --cask <tool>
 - `clai`
 - `claude-code-generic-hooks`
 - `claudio`
+- `clawbands`
 - `clawea`
+- `clawra`
 - `cli-mcp-server`
 - `clickup-mcp`
 - `cloctui`
@@ -386,6 +390,7 @@ brew install --cask <tool>
 - `lazynpm`
 - `leetgo`
 - `lemonade`
+- `letta-code`
 - `leveldb-cli`
 - `lin`
 - `lintnet`
