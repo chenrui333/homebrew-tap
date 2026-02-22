@@ -8,6 +8,7 @@ class Bunsen < Formula
   head "https://github.com/g4rcez/bunsen.git", branch: "main"
 
   depends_on "bun" => :build
+  depends_on :macos
 
   def install
     inreplace "src/cli/index.ts", ".version('0.0.0')", ".version('#{version}')"
