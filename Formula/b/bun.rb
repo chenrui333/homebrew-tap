@@ -330,11 +330,6 @@ class Bun < Formula
     inreplace "cmake/targets/BuildBun.cmake",
               "--platform=browser\n      --minify",
               "--platform=browser\n      --minify\n      --external:peechy"
-    # Some environments expose an unresolved CMake LLD path
-    # (`LLD_PROGRAM-NOTFOUND`), which makes clang reject `--ld-path`.
-    inreplace "cmake/targets/BuildBun.cmake",
-              "    --ld-path=${LLD_PROGRAM}\n",
-              ""
     setupllvm_ld_path_pattern = /
       list\(APPEND\s+CMAKE_ARGS\s+-DCMAKE_EXE_LINKER_FLAGS=--ld-path=\$\{LLD_PROGRAM\}\)\n
       \s*list\(APPEND\s+CMAKE_ARGS\s+-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=\$\{LLD_PROGRAM\}\)\n
@@ -960,12 +955,18 @@ class Bun < Formula
 
     if OS.linux?
       llvm_bin = Formula["llvm"].opt_bin
+      lld_program = llvm_bin/"ld.lld"
       args << "-DABI=gnu"
       args << "-DCMAKE_C_COMPILER=#{llvm_bin}/clang"
       args << "-DCMAKE_CXX_COMPILER=#{llvm_bin}/clang++"
       args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
       args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
       args << "-DCMAKE_LINKER=#{llvm_bin}/ld.lld"
+      # Upstream Linux link flags require lld behavior (e.g. `--gdb-index`).
+      # Pass an explicit ld.lld path so clang does not fall back to GNU ld.
+      args << "-DLLD_PROGRAM=#{lld_program}"
+      args << "-DCMAKE_EXE_LINKER_FLAGS=--ld-path=#{lld_program}"
+      args << "-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=#{lld_program}"
       unless linux_warning_patch_applied
         linux_warning_flags = "-Wno-dangling-assignment-gsl " \
                               "-Wno-character-conversion " \
