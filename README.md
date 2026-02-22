@@ -46,6 +46,7 @@ brew install --cask <tool>
 - `am-i-vibing`
 - `amoco`
 - `amp-cli`
+- `anvil`
 - `aoc-cli`
 - `apify-actors-mcp-server`
 - `apisnip`
@@ -132,6 +133,7 @@ brew install --cask <tool>
 - `chatlog`
 - `checkpwn`
 - `checksec`
+- `chiko`
 - `chproxy`
 - `clai`
 - `claude-code-generic-hooks`
@@ -185,6 +187,7 @@ brew install --cask <tool>
 - `debugg-ai-mcp` <!-- spellchecker:disable-line -->
 - `decktape`
 - `deepteam`
+- `defaults-rs`
 - `dela`
 - `deletor`
 - `depot`
@@ -197,6 +200,7 @@ brew install --cask <tool>
 - `dominds`
 - `dory-cli`
 - `dotbins`
+- `dotr`
 - `dqy`
 - `drft`
 - `dumper`
@@ -213,6 +217,7 @@ brew install --cask <tool>
 - `enola`
 - `enry`
 - `envie`
+- `envlens`
 - `envtpl`
 - `envtrace`
 - `envx`
@@ -228,6 +233,7 @@ brew install --cask <tool>
 - `fex`
 - `filessh`
 - `firectl`
+- `firm`
 - `fission-cli`
 - `fixjson`
 - `fkill-cli`
@@ -325,6 +331,7 @@ brew install --cask <tool>
 - `incus-compose`
 - `infraspec`
 - `inspect-cert-chain`
+- `instagram-cli`
 - `intentrace`
 - `ip2d`
 - `ips`
@@ -386,6 +393,7 @@ brew install --cask <tool>
 - `llmdog`
 - `llmpeg`
 - `llmswap`
+- `lnko`
 - `lobtui`
 - `localports`
 - `locport`
@@ -439,6 +447,7 @@ brew install --cask <tool>
 - `namespace-cli`
 - `nanodbc`
 - `narr`
+- `needle`
 - `needs`
 - `nest-cli`
 - `newsnow-mcp-server`
@@ -463,6 +472,7 @@ brew install --cask <tool>
 - `ohy`
 - `olla`
 - `omekasy`
+- `omni-cache`
 - `omnictl`
 - `openskills`
 - `opensnitch-tui`
@@ -496,6 +506,7 @@ brew install --cask <tool>
 - `pinme`
 - `pipeform`
 - `pitaya`
+- `pixeli`
 - `pixelle`
 - `pj`
 - `plandex`
@@ -534,6 +545,7 @@ brew install --cask <tool>
 - `qqqa`
 - `que`
 - `quicssh-rs`
+- `qwe`
 - `r2md`
 - `rabbitmq-message-ops`
 - `rails-new`
@@ -551,6 +563,7 @@ brew install --cask <tool>
 - `refurb`
 - `relay`
 - `remark-cli`
+- `rendy`
 - `renux`
 - `repology`
 - `resinator`
@@ -609,6 +622,7 @@ brew install --cask <tool>
 - `spotifydl`
 - `sprofile`
 - `sqd`
+- `sqlit`
 - `squall`
 - `ssl-checker`
 - `ssm`
@@ -675,6 +689,7 @@ brew install --cask <tool>
 - `tsuki`
 - `tuono`
 - `turm`
+- `twig`
 - `twiggy`
 - `twilio-mcp-server`
 - `ugdb`
