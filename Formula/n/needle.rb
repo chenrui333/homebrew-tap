@@ -6,6 +6,15 @@ class Needle < Formula
   license "MIT"
   head "https://github.com/cesarferreira/needle.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "108f095af6555df8bbad494de938bd8716ad896656625b866e3e14f7a3633949"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05d428bc8e832e19603918facf0ef69c22427f71b5042d17ad91f53724d9bd63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "394748d75cf7d696c7c53ee5c88113dedd9673e5b0ac6b32666b158c2dbb69be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b4f536f5aa16e1e7200e64f76e9ca9b7cb51d709e5935480e05fcbe330aaf3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe4a77b820db58b3def5d82108d7de13f44b3bc10c3eaeb9606ba1212de65a46"
+  end
+
   depends_on "rust" => :build
 
   def install
