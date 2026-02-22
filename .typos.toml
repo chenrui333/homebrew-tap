@@ -16,6 +16,8 @@ extend-ignore-re = [
 Hashi = "Hashi" 
 Sur = "Sur" 
 debugg = "debugg" # for debugg-ai-mcp filename
+parm = "parm" # formula name
+Parm = "Parm" # Ruby class name for formula
 sur = "sur" # for big sur
 yor = "yor" 
 
