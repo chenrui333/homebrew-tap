@@ -377,31 +377,9 @@ class Bun < Formula
               "#undef ENABLE_WEB_RTC\n#define ENABLE_WEB_RTC 0\n"
     # Backport upstream Highway SVE fix for Linux arm64: sizeless vector types
     # cannot be stored in arrays (`hn::Vec<D8> char_vecs[]`).
-    highway_chars_pattern = /
-      ^\s*constexpr size_t kMaxPreloadedChars = 16;\n
-      ^\s*hn::Vec<D8> char_vecs\[kMaxPreloadedChars\];\n
-      ^\s*const size_t num_chars_to_preload = std::min\(chars_len, kMaxPreloadedChars\);\n
-      ^\s*for \(size_t c = 0; c < num_chars_to_preload; \+\+c\) \{\n
-      ^\s*char_vecs\[c\] = hn::Set\(d, chars\[c\]\);\n
-      ^\s*\}\n
-      ^\s*\n
-      ^\s*const size_t simd_text_len = text_len - \(text_len % N\);\n
-      ^\s*size_t i = 0;\n
-      ^\s*\n
-      ^\s*for \(; i < simd_text_len; i \+= N\) \{\n
-      ^\s*const auto text_vec = hn::LoadN\(d, text \+ i, N\);\n
-      ^\s*auto found_mask = hn::MaskFalse\(d\);\n
-      ^\s*\n
-      ^\s*for \(size_t c = 0; c < num_chars_to_preload; \+\+c\) \{\n
-      ^\s*found_mask = hn::Or\(found_mask, hn::Eq\(text_vec, char_vecs\[c\]\)\);\n
-      ^\s*\}\n
-      ^\s*if \(chars_len > num_chars_to_preload\) \{\n
-      ^\s*for \(size_t c = num_chars_to_preload; c < chars_len; \+\+c\) \{\n
-      ^\s*found_mask = hn::Or\(found_mask, hn::Eq\(text_vec, hn::Set\(d, chars\[c\]\)\)\);\n
-      ^\s*\}\n
-      ^\s*\}\n
-    /x
-    highway_chars_replacement = <<~CPP
+    highway_start_marker = "        constexpr size_t kMaxPreloadedChars = 16;\n"
+    highway_end_marker = "            const intptr_t pos = hn::FindFirstTrue(d, found_mask);\n"
+    highway_chars_replacement = <<~CPP.gsub(/^(\s*\S.*)$/, "        \\1")
       const size_t simd_text_len = text_len - (text_len % N);
       size_t i = 0;
 
@@ -414,9 +392,12 @@ class Bun < Formula
           }
     CPP
     inreplace "src/bun.js/bindings/highway_strings.cpp" do |s|
-      unless s.gsub!(highway_chars_pattern, highway_chars_replacement)
-        raise "Failed to patch Highway char preloading block"
-      end
+      start_index = s.index(highway_start_marker)
+      end_index = s.index(highway_end_marker, start_index)
+      raise "Failed to locate Highway preloading block start" unless start_index
+      raise "Failed to locate Highway preloading block end" unless end_index
+
+      s[start_index...end_index] = highway_chars_replacement
     end
     inreplace "cmake/targets/BuildBun.cmake",
               <<~CMAKE,
