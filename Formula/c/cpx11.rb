@@ -1,8 +1,8 @@
 class Cpx11 < Formula
   desc "Modern and fast file copy CLI"
   homepage "https://github.com/11happy/cpx"
-  url "https://github.com/11happy/cpx/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "ca13056223142dba089df2698c47e225a1c1e3453ce5e1767d4870404998f9bf"
+  url "https://github.com/11happy/cpx/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "f7d8b7d1926c007d358780dbf82e4ef6b0a84cb44ea3f68732f29a83e78a0495"
   license "MIT"
   head "https://github.com/11happy/cpx.git", branch: "main"
 
