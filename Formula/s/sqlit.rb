@@ -8,7 +8,15 @@ class Sqlit < Formula
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
-  depends_on "python@3.13"
+  depends_on "cmake" => :build # for pyarrow
+  depends_on "ninja" => :build # for pyarrow
+  depends_on "apache-arrow"
+  depends_on "numpy"
+  depends_on "python@3.14"
+
+  on_linux do
+    depends_on "patchelf" => :build # for pyarrow
+  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/e0/2d/a891ca51311197f6ad14a7ef42e2399f36cf2f9bd44752b3dc4eab60fdc5/certifi-2026.1.4.tar.gz"
@@ -75,11 +83,6 @@ class Sqlit < Formula
     sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
   end
 
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/76/21/7d2a95e4bba9dc13d043ee156a356c0a8f0c6309dff6b21b4d71a073b8a8/numpy-2.2.6.tar.gz"
-    sha256 "e29554e2bef54a90aa5cc07da6ce955accb83f21ab5de01a62c8478897b264fd"
-  end
-
   resource "pandas" do
     url "https://files.pythonhosted.org/packages/33/01/d40b85317f86cf08d853a4f495195c73815fdf205eef3993821720274518/pandas-2.3.3.tar.gz"
     sha256 "e05e1af93b977f7eafa636d043f9f94c7ee3ac81af99c13508215942e64c993b"
@@ -90,26 +93,9 @@ class Sqlit < Formula
     sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
   end
 
-  if OS.mac? && Hardware::CPU.arm?
-    resource "pyarrow" do
-      url "https://files.pythonhosted.org/packages/16/ca/c7eaa8e62db8fb37ce942b1ea0c6d7abfe3786ca193957afa25e71b81b66/pyarrow-21.0.0-cp313-cp313-macosx_12_0_arm64.whl"
-      sha256 "e99310a4ebd4479bcd1964dff9e14af33746300cb014aa4a3781738ac63baf4a"
-    end
-  elsif OS.mac?
-    resource "pyarrow" do
-      url "https://files.pythonhosted.org/packages/ce/e8/e87d9e3b2489302b3a1aea709aaca4b781c5252fcb812a17ab6275a9a484/pyarrow-21.0.0-cp313-cp313-macosx_12_0_x86_64.whl"
-      sha256 "d2fe8e7f3ce329a71b7ddd7498b3cfac0eeb200c2789bd840234f0dc271a8efe"
-    end
-  elsif Hardware::CPU.arm?
-    resource "pyarrow" do
-      url "https://files.pythonhosted.org/packages/84/52/79095d73a742aa0aba370c7942b1b655f598069489ab387fe47261a849e1/pyarrow-21.0.0-cp313-cp313-manylinux_2_28_aarch64.whl"
-      sha256 "f522e5709379d72fb3da7785aa489ff0bb87448a9dc5a75f45763a795a089ebd"
-    end
-  else
-    resource "pyarrow" do
-      url "https://files.pythonhosted.org/packages/89/4b/7782438b551dbb0468892a276b8c789b8bbdb25ea5c5eb27faadd753e037/pyarrow-21.0.0-cp313-cp313-manylinux_2_28_x86_64.whl"
-      sha256 "69cbbdf0631396e9925e048cfa5bce4e8c3d3b41562bbd70c685a8eb53a91e61"
-    end
+  resource "pyarrow" do
+    url "https://files.pythonhosted.org/packages/01/33/ffd9c3eb087fa41dd79c3cf20c4c0ae3cdb877c4f8e1107a446006344924/pyarrow-23.0.0.tar.gz"
+    sha256 "180e3150e7edfcd182d3d9afba72f7cf19839a497cc76555a8dce998a8f67615"
   end
 
   resource "pygments" do
@@ -168,95 +154,78 @@ class Sqlit < Formula
   end
 
   resource "tree-sitter-bash" do
-    url "https://files.pythonhosted.org/packages/8e/0e/f0108be910f1eef6499eabce517e79fe3b12057280ed398da67ce2426cba/tree_sitter_bash-0.25.1.tar.gz"
-    sha256 "bfc0bdaa77bc1e86e3c6652e5a6e140c40c0a16b84185c2b63ad7cd809b88f14"
+    url "https://github.com/tree-sitter/tree-sitter-bash/archive/refs/tags/v0.25.1.tar.gz"
+    sha256 "2e785a761225b6c433410ef9c7b63cfb0a4e83a35a19e0f2aec140b42c06b52d"
   end
 
   resource "tree-sitter-css" do
-    url "https://files.pythonhosted.org/packages/38/37/7d60171240d4c5ba330f05b725dfb5e5fd5b7cbe0aa98ef9e77f77f868f5/tree_sitter_css-0.25.0.tar.gz"
-    sha256 "2fc996bf05b04e06061e88ee4c60837783dc4e62a695205acbc262ee30454138"
+    url "https://github.com/tree-sitter/tree-sitter-css/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "03965344d8c0435dc54fb45b281578420bb7db8b99df4d34e7e74105a274cb79"
   end
 
   resource "tree-sitter-go" do
-    url "https://files.pythonhosted.org/packages/01/05/727308adbbc79bcb1c92fc0ea10556a735f9d0f0a5435a18f59d40f7fd77/tree_sitter_go-0.25.0.tar.gz"
-    sha256 "a7466e9b8d94dda94cae8d91629f26edb2d26166fd454d4831c3bf6dfa2e8d68"
+    url "https://github.com/tree-sitter/tree-sitter-go/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "2dc241b97872c53195e01b86542b411a3c1a6201d9c946c78d5c60c063bba1ef"
   end
 
-  if OS.mac? && Hardware::CPU.arm?
-    resource "tree-sitter-html" do
-      url "https://files.pythonhosted.org/packages/bd/17/827c315deb156bb8cac541da800c4bd62878f50a28b7498fbb722bddd225/tree_sitter_html-0.23.2-cp39-abi3-macosx_11_0_arm64.whl"
-      sha256 "3d0a83dd6cd1c7d4bcf6287b5145c92140f0194f8516f329ae8b9e952fbfa8ff"
-    end
-  elsif OS.mac?
-    resource "tree-sitter-html" do
-      url "https://files.pythonhosted.org/packages/fb/27/b846852b567601c4df765bcb4636085a3260e9f03ae21e0ef2e7c7f957fc/tree_sitter_html-0.23.2-cp39-abi3-macosx_10_9_x86_64.whl"
-      sha256 "9e1641d5edf5568a246c6c47b947ed524b5bf944664e6473b21d4ae568e28ee9"
-    end
-  elsif Hardware::CPU.arm?
-    resource "tree-sitter-html" do
-      url "https://files.pythonhosted.org/packages/91/cb/2028fe446d0e18edf3737d91edcb6430f2c97f2296b8cd760702dfa13d90/tree_sitter_html-0.23.2-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
-      sha256 "81b3775732fffc0abd275a419ef018fd4c1ad4044b2a2e422f3378d93c30eded"
-    end
-  else
-    resource "tree-sitter-html" do
-      url "https://files.pythonhosted.org/packages/19/bc/b24f5e66be51447cf7e9bcce3d9440a6b4f17021da85779a51566646a7c7/tree_sitter_html-0.23.2-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-      sha256 "4bdaa7ac5030d416aea0c512d4810ef847bbbd62d61e3d213f370b64ce147293"
-    end
+  resource "tree-sitter-html" do
+    url "https://github.com/tree-sitter/tree-sitter-html/archive/refs/tags/v0.23.2.tar.gz"
+    sha256 "21fa4f2d4dcb890ef12d09f4979a0007814f67f1c7294a9b17b0108a09e45ef7"
   end
 
   resource "tree-sitter-java" do
-    url "https://files.pythonhosted.org/packages/fa/dc/eb9c8f96304e5d8ae1663126d89967a622a80937ad2909903569ccb7ec8f/tree_sitter_java-0.23.5.tar.gz"
-    sha256 "f5cd57b8f1270a7f0438878750d02ccc79421d45cca65ff284f1527e9ef02e38"
+    url "https://github.com/tree-sitter/tree-sitter-java/archive/refs/tags/v0.23.5.tar.gz"
+    sha256 "cb199e0faae4b2c08425f88cbb51c1a9319612e7b96315a174a624db9bf3d9f0"
   end
 
   resource "tree-sitter-javascript" do
-    url "https://files.pythonhosted.org/packages/59/e0/e63103c72a9d3dfd89a31e02e660263ad84b7438e5f44ee82e443e65bbde/tree_sitter_javascript-0.25.0.tar.gz"
-    sha256 "329b5414874f0588a98f1c291f1b28138286617aa907746ffe55adfdcf963f38"
+    url "https://github.com/tree-sitter/tree-sitter-javascript/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "9712fc283d3dc01d996d20b6392143445d05867a7aad76fdd723824468428b86"
   end
 
   resource "tree-sitter-json" do
-    url "https://files.pythonhosted.org/packages/d7/29/e92df6dca3a6b2ab1c179978be398059817e1173fbacd47e832aaff3446b/tree_sitter_json-0.24.8.tar.gz"
-    sha256 "ca8486e52e2d261819311d35cf98656123d59008c3b7dcf91e61d2c0c6f3120e"
+    url "https://github.com/tree-sitter/tree-sitter-json/archive/refs/tags/v0.24.8.tar.gz"
+    sha256 "acf6e8362457e819ed8b613f2ad9a0e1b621a77556c296f3abea58f7880a9213"
   end
 
   resource "tree-sitter-markdown" do
-    url "https://files.pythonhosted.org/packages/9a/87/8f705d8f99337c8a691bcc8c22d89ddd323eb2b860a78ae2e894b9f7ade1/tree_sitter_markdown-0.5.1.tar.gz"
-    sha256 "6c69d7270a7e09be8988ced44584c09a6a4f541cea0dc394dd1c1a5ac3b5601d"
+    url "https://github.com/tree-sitter-grammars/tree-sitter-markdown/archive/refs/tags/v0.5.1.tar.gz"
+    sha256 "acaffe5a54b4890f1a082ad6b309b600b792e93fc6ee2903d022257d5b15e216"
   end
 
   resource "tree-sitter-python" do
-    url "https://files.pythonhosted.org/packages/b8/8b/c992ff0e768cb6768d5c96234579bf8842b3a633db641455d86dd30d5dac/tree_sitter_python-0.25.0.tar.gz"
-    sha256 "b13e090f725f5b9c86aa455a268553c65cadf325471ad5b65cd29cac8a1a68ac"
+    url "https://github.com/tree-sitter/tree-sitter-python/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "4609a3665a620e117acf795ff01b9e965880f81745f287a16336f4ca86cf270c"
   end
 
   resource "tree-sitter-regex" do
-    url "https://files.pythonhosted.org/packages/86/92/1767b833518d731b97c07cf616ea15495dcc0af584aa0381657be4ec446d/tree_sitter_regex-0.25.0.tar.gz"
-    sha256 "5d29111b3f27d4afb31496476d392d1f562fe0bfe954e8968f1d8683424fc331"
+    url "https://github.com/tree-sitter/tree-sitter-regex/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "853200795c4cf856eba9de3f4f9abb370d22aef4fb32e8911e210bb7e4253087"
   end
 
   resource "tree-sitter-rust" do
-    url "https://files.pythonhosted.org/packages/8a/ae/fde1ab896f3d79205add86749f6f443537f59c747616a8fc004c7a453c29/tree_sitter_rust-0.24.0.tar.gz"
-    sha256 "c7185f482717bd41f24ffcd90b5ee24e7e0d6334fecce69f1579609994cd599d"
+    url "https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.0.tar.gz"
+    sha256 "79c9eb05af4ebcce8c40760fc65405e0255e2d562702314b813a5dec1273b9a2"
   end
 
   resource "tree-sitter-sql" do
-    url "https://files.pythonhosted.org/packages/e8/5c/3d10387f779f36835486167253682f61d5f4fd8336b7001da1ac7d78f31c/tree_sitter_sql-0.3.11.tar.gz"
-    sha256 "700b93be2174c3c83d174ec3e10b682f72a4fb451f0076c7ce5012f1d5a76cbc"
+    url "https://github.com/DerekStride/tree-sitter-sql/releases/download/v0.3.11/tree-sitter-sql-v0.3.11.tar.gz"
+    sha256 "a97a324eae9c81ed68f6e162b9b33f8911fc6442caa2950e57c498e2460d1387"
   end
 
   resource "tree-sitter-toml" do
-    url "https://files.pythonhosted.org/packages/59/b9/03ee757ac375e77186ea112c14fcf31e0ca70b27b6388d93dcceef61f029/tree_sitter_toml-0.7.0.tar.gz"
-    sha256 "29e257612fa8f0c1fcbc4e7e08ddc561169f1725265302e64d81086354144a70"
+    url "https://github.com/tree-sitter-grammars/tree-sitter-toml/archive/refs/tags/v0.7.0.tar.gz"
+    sha256 "7d52a7d4884f307aabc872867c69084d94456d8afcdc63b0a73031a8b29036dc"
   end
 
   resource "tree-sitter-xml" do
-    url "https://files.pythonhosted.org/packages/41/ba/77a92dbb4dfb374fb99863a07f938de7509ceeaa74139933ac2bd306eeb1/tree_sitter_xml-0.7.0.tar.gz"
-    sha256 "ab0ff396f20230ad8483d968151ce0c35abe193eb023b20fbd8b8ce4cf9e9f61"
+    url "https://github.com/tree-sitter-grammars/tree-sitter-xml/archive/refs/tags/v0.7.0.tar.gz"
+    sha256 "4330a6b3685c2f66d108e1df0448eb40c468518c3a66f2c1607a924c262a3eb9"
   end
 
   resource "tree-sitter-yaml" do
-    url "https://files.pythonhosted.org/packages/57/b6/941d356ac70c90b9d2927375259e3a4204f38f7499ec6e7e8a95b9664689/tree_sitter_yaml-0.7.2.tar.gz"
-    sha256 "756db4c09c9d9e97c81699e8f941cb8ce4e51104927f6090eefe638ee567d32c"
+    url "https://github.com/tree-sitter-grammars/tree-sitter-yaml/archive/refs/tags/v0.7.2.tar.gz"
+    sha256 "aeaff5731bb8b66c7054c8aed33cd5edea5f4cd2ac71654f3f6c2ba2073d8fac"
   end
 
   resource "typing-extensions" do
@@ -280,17 +249,8 @@ class Sqlit < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
-
-    resources.each do |resource|
-      next if resource.name == "pyarrow" || resource.name.start_with?("tree-sitter")
-
-      venv.pip_install resource
-    end
-
-    pyarrow_wheel = buildpath/File.basename(resource("pyarrow").url.to_s)
-    cp resource("pyarrow").cached_download, pyarrow_wheel
-    venv.pip_install pyarrow_wheel
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resources
     venv.pip_install_and_link buildpath
   end
 
