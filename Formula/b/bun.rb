@@ -335,11 +335,12 @@ class Bun < Formula
     inreplace "cmake/targets/BuildBun.cmake",
               "    --ld-path=${LLD_PROGRAM}\n",
               ""
+    setupllvm_ld_path_pattern = /
+      list\(APPEND\s+CMAKE_ARGS\s+-DCMAKE_EXE_LINKER_FLAGS=--ld-path=\$\{LLD_PROGRAM\}\)\n
+      \s*list\(APPEND\s+CMAKE_ARGS\s+-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=\$\{LLD_PROGRAM\}\)\n
+    /x
     inreplace "cmake/tools/SetupLLVM.cmake",
-              <<~CMAKE,
-                list(APPEND CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
-                list(APPEND CMAKE_ARGS -DCMAKE_SHARED_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
-              CMAKE
+              setupllvm_ld_path_pattern,
               <<~CMAKE
                 if(LLD_PROGRAM)
                   list(APPEND CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS=--ld-path=${LLD_PROGRAM})
