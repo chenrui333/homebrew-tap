@@ -285,3 +285,38 @@ jobs:
     steps:
       - name: Result
         run: ${{ needs.test.result == 'success' }}
+
+  label-pr:
+    needs: conclusion
+    if: success() && github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Check if PR has 'in progress' label
+        id: check-label
+        run: |
+          LABELS=$(gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name')
+          if echo "$LABELS" | grep -q "^in progress$"; then
+            echo "skip_label=true" >> "$GITHUB_ENV"
+          else
+            echo "skip_label=false" >> "$GITHUB_ENV"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+      - name: Ensure cask merge label exists
+        if: env.skip_label == 'false'
+        run: |
+          gh label create "pr-cask-merge" \
+            --color "0e8a16" \
+            --description "PR is ready for cask merge workflow" \
+            --repo "${{ github.repository }}" || true
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+      - name: Label the PR with 'pr-cask-merge'
+        if: env.skip_label == 'false'
+        run: gh pr edit "${{ github.event.pull_request.number }}" --add-label 'pr-cask-merge' --repo "${{ github.repository }}"
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
