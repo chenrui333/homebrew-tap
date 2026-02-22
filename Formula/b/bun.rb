@@ -375,6 +375,47 @@ class Bun < Formula
               "#undef ENABLE_WEBGL\n#define ENABLE_WEBGL 0\n" \
               "#undef ENABLE_MEDIA_SOURCE\n#define ENABLE_MEDIA_SOURCE 0\n" \
               "#undef ENABLE_WEB_RTC\n#define ENABLE_WEB_RTC 0\n"
+    # Backport upstream Highway SVE fix for Linux arm64: sizeless vector types
+    # cannot be stored in arrays (`hn::Vec<D8> char_vecs[]`).
+    highway_chars_old = <<~CPP.gsub(/^/, "        ")
+      constexpr size_t kMaxPreloadedChars = 16;
+      hn::Vec<D8> char_vecs[kMaxPreloadedChars];
+      const size_t num_chars_to_preload = std::min(chars_len, kMaxPreloadedChars);
+      for (size_t c = 0; c < num_chars_to_preload; ++c) {
+          char_vecs[c] = hn::Set(d, chars[c]);
+      }
+
+      const size_t simd_text_len = text_len - (text_len % N);
+      size_t i = 0;
+
+      for (; i < simd_text_len; i += N) {
+          const auto text_vec = hn::LoadN(d, text + i, N);
+          auto found_mask = hn::MaskFalse(d);
+
+          for (size_t c = 0; c < num_chars_to_preload; ++c) {
+              found_mask = hn::Or(found_mask, hn::Eq(text_vec, char_vecs[c]));
+          }
+          if (chars_len > num_chars_to_preload) {
+              for (size_t c = num_chars_to_preload; c < chars_len; ++c) {
+                  found_mask = hn::Or(found_mask, hn::Eq(text_vec, hn::Set(d, chars[c])));
+              }
+          }
+    CPP
+    highway_chars_new = <<~CPP.gsub(/^/, "        ")
+      const size_t simd_text_len = text_len - (text_len % N);
+      size_t i = 0;
+
+      for (; i < simd_text_len; i += N) {
+          const auto text_vec = hn::LoadN(d, text + i, N);
+          auto found_mask = hn::MaskFalse(d);
+
+          for (size_t c = 0; c < chars_len; ++c) {
+              found_mask = hn::Or(found_mask, hn::Eq(text_vec, hn::Set(d, chars[c])));
+          }
+    CPP
+    inreplace "src/bun.js/bindings/highway_strings.cpp",
+              highway_chars_old,
+              highway_chars_new
     inreplace "cmake/targets/BuildBun.cmake",
               <<~CMAKE,
                 if (NOT WIN32)
