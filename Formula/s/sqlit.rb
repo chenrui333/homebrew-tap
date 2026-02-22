@@ -8,6 +8,15 @@ class Sqlit < Formula
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "84d8797c329c4f52f5801f1fb53df8ed7490eeb10b05f99e3d4e9bad847d00fe"
+    sha256 cellar: :any, arm64_sequoia: "8fd93492da07e983309cfb29737945e6fa156fd63100bb38addd2f6ea29fc333"
+    sha256 cellar: :any, arm64_sonoma:  "fea633c104aecc7671104bb681fcd400151d66a3836db8c1336c087ebef808c4"
+    sha256               arm64_linux:   "2c0f8bf1ebc8776a6767963838ce16d8d98a3454e1390e37e648a4888a877140"
+    sha256               x86_64_linux:  "ccbf8c32cd2df74f33c2e109a61d423d648db7a5a3e4857f6067f8dc56771e99"
+  end
+
   depends_on "cmake" => :build # for pyarrow
   depends_on "ninja" => :build # for pyarrow
   depends_on "apache-arrow"
