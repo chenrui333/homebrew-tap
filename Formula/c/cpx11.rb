@@ -24,7 +24,7 @@ class Cpx11 < Formula
                 "#[cfg(target_os = \"linux\")]\npub mod fast_copy;"
     end
 
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

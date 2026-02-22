@@ -24,7 +24,7 @@ class Nexus < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

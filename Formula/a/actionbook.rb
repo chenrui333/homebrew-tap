@@ -20,7 +20,7 @@ class Actionbook < Formula
     cd "packages/actionbook-rs" do
       # Keep binary `--version` aligned with the tagged CLI release.
       inreplace "Cargo.toml", 'version = "0.7.1"', "version = \"#{version}\""
-      system "cargo", "install", "--bin", "actionbook", *std_cargo_args(path: ".")
+      system "cargo", "install", "--bin", "actionbook", *std_cargo_args
     end
   end
 

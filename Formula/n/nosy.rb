@@ -24,7 +24,7 @@ class Nosy < Formula
   def install
     ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
 
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"nosy", "completion")
   end
 
