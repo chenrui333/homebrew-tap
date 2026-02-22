@@ -10,7 +10,7 @@ class Bunsen < Formula
   depends_on :macos
 
   on_macos do
-    depends_on "bun" => :build
+    depends_on "oven-sh/bun/bun" => :build
   end
 
   def install
