@@ -1010,8 +1010,8 @@ class Bun < Formula
               CPP
     # root_certs_linux.cpp uses ERR_clear_error and needs openssl/err.h.
     inreplace "packages/bun-usockets/src/crypto/root_certs_linux.cpp",
-              '#include "./root_certs.h"',
-              "#include \"./root_certs.h\"\n#include <openssl/err.h>"
+              "#include <openssl/pem.h>",
+              "#include <openssl/pem.h>\n#include <openssl/err.h>"
     # Suppress deprecated warnings in headers using deprecated OpenSSL 3
     # functions (RSA_free, EC_KEY_free, DH_free, etc.) that are still functional.
     %w[
