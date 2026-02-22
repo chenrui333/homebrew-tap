@@ -8,6 +8,15 @@ class Cccc < Formula
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f6ed46035da1efc6ea1a03ddf52e971db0d92893b6d3be77c7a3f2e277fd7aa"
+    sha256 cellar: :any,                 arm64_sequoia: "d215addfc1401022a7cac07e845b7082511efa5d553810d8f3e5ed6698e172da"
+    sha256 cellar: :any,                 arm64_sonoma:  "f8ffbb9f195c806397f703f065eb59ecb04fb380de252c43e54f2a3c4b028ab2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d06248c964f7e2e7d7973cfc939c34620b2d662c4afe19852f157cd01a876660"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e03121d3ab9e6e8446729b5a4e2f90f7d5b96b9d2a5d20540bc389e61e8efa0b"
+  end
+
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
