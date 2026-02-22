@@ -32,6 +32,11 @@ jobs:
               path: Formula/.+
               allow_any_match: true
 
+            - label: new cask
+              status: added
+              path: Casks/.+
+              allow_any_match: true
+
             - label: linux-only
               path: Formula/.+
               content: depends_on :linux
