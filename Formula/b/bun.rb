@@ -26,6 +26,10 @@ class Bun < Formula
   depends_on "sqlite"
   depends_on "zstd"
 
+  on_linux do
+    depends_on "llvm" => :build
+  end
+
   resource "picohttpparser" do
     url "https://github.com/h2o/picohttpparser/archive/066d2b1e9ab820703db0837a7255d92d30f0c9f5.tar.gz"
     sha256 "637ff2ab6f5c7f7e05a5b5dc393d5cf2fea8d4754fcaceaaf935ffff5c1323ee"
@@ -893,6 +897,15 @@ class Bun < Formula
     # Use system bun for codegen if available (avoids flaky bootstrap download)
     system_bun = Pathname("#{Dir.home}/.bun/bin/bun")
     args << "-DBUN_EXECUTABLE=#{system_bun}" if system_bun.executable?
+
+    if OS.linux?
+      llvm_bin = Formula["llvm"].opt_bin
+      args << "-DCMAKE_C_COMPILER=#{llvm_bin}/clang"
+      args << "-DCMAKE_CXX_COMPILER=#{llvm_bin}/clang++"
+      args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
+      args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
+      args << "-DCMAKE_LINKER=#{llvm_bin}/ld.lld"
+    end
 
     webkit_path = ENV["HOMEBREW_BUN_WEBKIT_PATH"].to_s
     webkit_candidates = if webkit_path.empty?
