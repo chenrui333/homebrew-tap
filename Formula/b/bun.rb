@@ -1350,19 +1350,6 @@ class Bun < Formula
           virtual ~TestReporterBackendDispatcherHandler() = default;
       };
 
-      class JS_EXPORT_PRIVATE TestReporterBackendDispatcher final : public SupplementalBackendDispatcher {
-      public:
-          static Ref<TestReporterBackendDispatcher> create(BackendDispatcher& bd, TestReporterBackendDispatcherHandler* agent)
-          {
-              return adoptRef(*new TestReporterBackendDispatcher(bd, agent));
-          }
-          void dispatch(long, const String&, Ref<JSON::Object>&&) final {}
-      private:
-          TestReporterBackendDispatcher(BackendDispatcher& bd, TestReporterBackendDispatcherHandler* agent)
-              : SupplementalBackendDispatcher(bd), m_agent(agent) {}
-          TestReporterBackendDispatcherHandler* m_agent { nullptr };
-      };
-
       } // namespace Inspector
     HEADER
     %w[InspectorLifecycleAgent InspectorTestReporterAgent].each do |agent|
