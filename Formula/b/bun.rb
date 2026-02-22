@@ -327,6 +327,22 @@ class Bun < Formula
     inreplace "cmake/targets/BuildBun.cmake",
               "--platform=browser\n      --minify",
               "--platform=browser\n      --minify\n      --external:peechy"
+    # Keep Bun's warning policy aligned with upstream Buildkite builds while
+    # tolerating newer Linux clang diagnostics seen in Homebrew CI.
+    warning_block = <<~CMAKE
+      -Wno-character-conversion
+      -Werror
+    CMAKE
+    warning_block_replacement = <<~CMAKE
+      -Wno-character-conversion
+      -Wno-dangling-assignment-gsl
+      -Wno-deprecated-declarations
+      -Werror
+    CMAKE
+    inreplace "cmake/targets/BuildBun.cmake",
+              warning_block,
+              warning_block_replacement,
+              global: true
     bun_error_esbuild_cmd = <<~'CMAKE'.gsub(/^/, "      ")
       bun-error.css
       --outdir=${BUN_ERROR_OUTPUT}
@@ -893,6 +909,7 @@ class Bun < Formula
       -DENABLE_TINYCC=OFF
       -DENABLE_BASELINE=ON
       -DENABLE_CANARY=OFF
+      -DCMAKE_VERBOSE_MAKEFILE=ON
       -DCMAKE_DSYMUTIL=dsymutil
     ]
 
@@ -902,12 +919,12 @@ class Bun < Formula
 
     if OS.linux?
       llvm_bin = Formula["llvm"].opt_bin
+      args << "-DABI=gnu"
       args << "-DCMAKE_C_COMPILER=#{llvm_bin}/clang"
       args << "-DCMAKE_CXX_COMPILER=#{llvm_bin}/clang++"
       args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
       args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
       args << "-DCMAKE_LINKER=#{llvm_bin}/ld.lld"
-      args << "-DCMAKE_CXX_FLAGS=-Wno-dangling-assignment-gsl -Wno-character-conversion -Wno-deprecated-declarations"
     end
 
     webkit_path = ENV["HOMEBREW_BUN_WEBKIT_PATH"].to_s
