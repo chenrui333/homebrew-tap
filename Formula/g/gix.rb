@@ -25,13 +25,13 @@ class Gix < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gix version")
+    assert_match version.to_s, shell_output("#{bin}/gix --version")
 
     (testpath/"test.txt").write("Hello World!")
     system "git", "init"
     system "git", "add", "test.txt"
 
     output = shell_output("#{bin}/gix commit 2>&1", 1)
-    assert_match "error: config not loaded: config file not found", output
+    assert_match "config not found - run `gix config set-key`", output
   end
 end
