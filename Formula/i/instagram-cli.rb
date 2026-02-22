@@ -13,6 +13,11 @@ class InstagramCli < Formula
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
 
+    # Remove upstream prebuilt reporter binary so audit doesn't flag non-native artifacts.
+    reporter = libexec/"lib/node_modules/@i7m/instagram-cli/node_modules/instagram-private-api"
+    reporter /= "node_modules/ts-custom-error/codeclimate-reporter"
+    reporter.delete if reporter.exist?
+
     bin.install_symlink libexec/"bin/instagram-cli"
   end
 
