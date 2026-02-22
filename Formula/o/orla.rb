@@ -18,19 +18,16 @@ class Orla < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s
-      -w
-      -X main.version=#{version}
-    ]
-    system "go", "build", *std_go_args(ldflags:, output: bin/"orla"), "./cmd/orla"
-    generate_completions_from_executable(bin/"orla", "completion", shell_parameter_format: :cobra)
+    ldflags = "-s -w -X main.version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), "./cmd/orla"
+
+    generate_completions_from_executable(bin/"orla", shell_parameter_format: :cobra)
   end
 
   test do
-    ENV["HOME"] = testpath
-    (testpath/".orla/tools").mkpath
     assert_match version.to_s, shell_output("#{bin}/orla --version")
+
+    (testpath/".orla/tools").mkpath
     assert_match "[]", shell_output("#{bin}/orla tool list --json")
   end
 end
