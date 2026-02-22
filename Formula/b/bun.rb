@@ -329,19 +329,14 @@ class Bun < Formula
               "--platform=browser\n      --minify\n      --external:peechy"
     # Keep Bun's warning policy aligned with upstream Buildkite builds while
     # tolerating newer Linux clang diagnostics seen in Homebrew CI.
-    warning_block = <<~CMAKE
-      -Wno-character-conversion
-      -Werror
-    CMAKE
-    warning_block_replacement = <<~CMAKE
+    warning_line_replacement = <<~CMAKE.chomp
       -Wno-character-conversion
       -Wno-dangling-assignment-gsl
       -Wno-deprecated-declarations
-      -Werror
     CMAKE
     inreplace "cmake/targets/BuildBun.cmake",
-              warning_block,
-              warning_block_replacement,
+              "-Wno-character-conversion",
+              warning_line_replacement,
               global: true
     bun_error_esbuild_cmd = <<~'CMAKE'.gsub(/^/, "      ")
       bun-error.css
