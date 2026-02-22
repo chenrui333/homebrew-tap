@@ -21,6 +21,7 @@ class Bun < Formula
   depends_on "libuv"
   depends_on "lol-html"
   depends_on "ls-hpack"
+  depends_on macos: :sequoia
   depends_on "mimalloc"
   depends_on "openssl@3"
   depends_on "sqlite"
