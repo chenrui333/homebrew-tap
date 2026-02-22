@@ -1,9 +1,8 @@
 class Nuls < Formula
   desc "NuShell-inspired ls with colorful table output"
   homepage "https://github.com/cesarferreira/nuls"
-  url "https://github.com/cesarferreira/nuls/archive/563f6e1e96766fc1dd6983de420e785648f01e16.tar.gz"
-  version "0.2.0"
-  sha256 "27a71ce5947d452af92a0c92ff97b7c5b0a191f0673721accf67e5ca3a5cb14c"
+  url "https://static.crates.io/crates/nuls/nuls-0.2.0.crate"
+  sha256 "24fb69fbb3ca465f6e051d36c75867f9fbe3e358eedb931fcb65125e4946e08e"
   license "MIT"
   head "https://github.com/cesarferreira/nuls.git", branch: "main"
 
