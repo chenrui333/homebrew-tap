@@ -1477,6 +1477,20 @@ class Bun < Formula
                   target_link_libraries(${bun} PRIVATE ${WEBKIT_LIB_PATH}/libpas.a)
                 endif()
               CMAKE
+    # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries with
+    # versioned glibc symbols like exp@GLIBC_2.17.
+    inreplace "cmake/targets/BuildBun.cmake",
+              "  )\n\n  if(NOT ABI STREQUAL \"musl\")",
+              <<~CMAKE.chomp
+                )
+
+                if(ENABLE_LTO)
+                  set_source_files_properties(${CWD}/src/bun.js/bindings/workaround-missing-symbols.cpp
+                    PROPERTIES COMPILE_OPTIONS "-fno-lto")
+                endif()
+
+                if(NOT ABI STREQUAL "musl")
+              CMAKE
 
     # Homebrew mimalloc installs flat headers (no mimalloc/ subdirectory) and
     # does not expose internal types.h. Only MI_MAX_ALIGN_SIZE is needed.
@@ -1915,22 +1929,3 @@ index ab78654512..ae6cfdf827 100644
  
  if(WEBKIT_LOCAL)
    if(EXISTS ${WEBKIT_PATH}/cmakeconfig.h)
-
---- a/cmake/targets/BuildBun.cmake
-+++ b/cmake/targets/BuildBun.cmake
-@@ -1138,6 +1138,14 @@ if(LINUX)
-     -Wl,--wrap=logf
-     -Wl,--wrap=pow
-     -Wl,--wrap=powf
-   )
-+
-+  # Disable LTO for workaround-missing-symbols.cpp to prevent versioned
-+  # glibc symbols (e.g. exp@GLIBC_2.17) from being emitted into
-+  # `.lto_discard`, which cannot parse '@' in this path.
-+  if(ENABLE_LTO)
-+    set_source_files_properties(${CWD}/src/bun.js/bindings/workaround-missing-symbols.cpp
-+      PROPERTIES COMPILE_OPTIONS "-fno-lto")
-+  endif()
- 
-   if(NOT ABI STREQUAL "musl")
-     target_link_options(${bun} PUBLIC
