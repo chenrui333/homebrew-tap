@@ -1477,20 +1477,22 @@ class Bun < Formula
                   target_link_libraries(${bun} PRIVATE ${WEBKIT_LIB_PATH}/libpas.a)
                 endif()
               CMAKE
-    # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries with
-    # versioned glibc symbols like exp@GLIBC_2.17.
-    inreplace "cmake/targets/BuildBun.cmake",
-              "  )\n\n  if(NOT ABI STREQUAL \"musl\")",
-              <<~CMAKE.chomp
-                )
+    if OS.linux?
+      # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries
+      # with versioned glibc symbols like exp@GLIBC_2.17.
+      inreplace "cmake/targets/BuildBun.cmake",
+                "  endif()\n\n  if(NOT ABI STREQUAL \"musl\")",
+                <<~CMAKE.chomp
+                  endif()
 
-                if(ENABLE_LTO)
-                  set_source_files_properties(${CWD}/src/bun.js/bindings/workaround-missing-symbols.cpp
-                    PROPERTIES COMPILE_OPTIONS "-fno-lto")
-                endif()
+                  if(ENABLE_LTO)
+                    set_source_files_properties(${CWD}/src/bun.js/bindings/workaround-missing-symbols.cpp
+                      PROPERTIES COMPILE_OPTIONS "-fno-lto")
+                  endif()
 
-                if(NOT ABI STREQUAL "musl")
-              CMAKE
+                  if(NOT ABI STREQUAL "musl")
+                CMAKE
+    end
 
     # Homebrew mimalloc installs flat headers (no mimalloc/ subdirectory) and
     # does not expose internal types.h. Only MI_MAX_ALIGN_SIZE is needed.
