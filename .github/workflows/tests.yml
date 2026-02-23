@@ -100,6 +100,8 @@ jobs:
         include:
           - runner: 'macos-26'
             cleanup: true
+          - runner: 'macos-15'
+            cleanup: true
           - runner: 'macos-14'
             cleanup: true
           - runner: 'macos-15-intel'
