@@ -162,6 +162,7 @@ brew install --cask <tool>
 - `codefmt`
 - `codemap`
 - `codespelunker`
+- `codex-viz`
 - `codstts`
 - `cohctl`
 - `container-use`
