@@ -1504,20 +1504,23 @@ class Bun < Formula
     if OS.linux?
       # Full LTO frequently exhausts memory while linking `bun-profile` in
       # Linux CI; use ThinLTO to reduce linker RSS and force split LTO units.
-      inreplace "cmake/CompilerFlags.cmake" do |s|
-        lto_flag_pattern = /-flto(?:=full)?(?= \$\{UNIX\}|$)/
-        lto_flags_rewritten = s.gsub!(lto_flag_pattern, "-flto=thin")
-        lto_thin_present = s =~ /-flto=thin(?= \$\{UNIX\}|$)/
-        lto_mode_missing = !lto_flags_rewritten && lto_thin_present.nil?
-        raise "Failed to lower Linux LTO mode in CompilerFlags.cmake" if lto_mode_missing
+      compiler_flags_file = "cmake/CompilerFlags.cmake"
+      compiler_flags_before = File.read(compiler_flags_file)
+      lto_flag_pattern = /-flto(?:=full)?(?= \$\{UNIX\}|$)/
+      lto_split_flags = "-flto=thin -fsplit-lto-unit"
+      lto_present = compiler_flags_before.match?(lto_flag_pattern) || compiler_flags_before.include?("-flto=thin")
+      raise "Failed to lower Linux LTO mode in CompilerFlags.cmake" unless lto_present
 
-        split_lto_pattern = /-flto=thin(?! -fsplit-lto-unit)(?= \$\{UNIX\}|$)/
-        split_lto_rewritten = s.gsub!(split_lto_pattern, "-flto=thin -fsplit-lto-unit")
-        split_lto_present = s =~ /-flto=thin -fsplit-lto-unit(?= \$\{UNIX\}|$)/
-        next if split_lto_rewritten || !split_lto_present.nil?
-
-        raise "Failed to enable split Linux LTO mode in CompilerFlags.cmake"
+      inreplace compiler_flags_file do |s|
+        s.gsub!(lto_flag_pattern, "-flto=thin")
+        s.gsub!(/-flto=thin(?! -fsplit-lto-unit)(?= \$\{UNIX\}|$)/, lto_split_flags)
       end
+
+      compiler_flags_after = File.read(compiler_flags_file)
+      raise "Failed to lower Linux LTO mode in CompilerFlags.cmake" unless compiler_flags_after.include?("-flto=thin")
+
+      split_lto_enabled = compiler_flags_after.include?(lto_split_flags)
+      raise "Failed to enable split Linux LTO mode in CompilerFlags.cmake" unless split_lto_enabled
 
       # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries
       # with versioned glibc symbols like exp@GLIBC_2.17.
