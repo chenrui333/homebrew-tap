@@ -506,7 +506,7 @@ class Bun < Formula
     # Replace framework PrivateHeaders path with our patched copy so that
     # transitive #include "Heap.h" from JSC headers picks up the ABI fix.
     inreplace "cmake/tools/SetupWebKit.cmake",
-              "      ${WEBKIT_PATH}/JavaScriptCore/PrivateHeaders\n",
+              "    ${WEBKIT_PATH}/JavaScriptCore/PrivateHeaders\n",
               <<~CMAKE
                 ${WEBKIT_PATH}/JavaScriptCore.framework/Headers
                 #{patched_ph_dir}
