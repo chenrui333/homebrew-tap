@@ -115,14 +115,14 @@ class Bun < Formula
                   if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Darwin")
                     if(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "^(arm64|aarch64)$")
                       set(BUN_BOOTSTRAP_FILENAME "bun-darwin-aarch64.zip")
-                      set(BUN_BOOTSTRAP_SHA256 "672a0a9a7b744d085a1d2219ca907e3e26f5579fca9e783a9510a4f98a36212f")
+                      set(BUN_BOOTSTRAP_SHA256 "cde6a4edf19cf64909158fa5a464a12026fd7f0d79a4a950c10cf0af04266d85")
                     else()
                       set(BUN_BOOTSTRAP_FILENAME "bun-darwin-x64.zip")
                       set(BUN_BOOTSTRAP_SHA256 "4a0ecd703b37d66abaf51e5bc24fd1249e8dc392c17ee6235710cf51a0988b85")
                     endif()
                   elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "^(arm64|aarch64)$")
                     set(BUN_BOOTSTRAP_FILENAME "bun-linux-aarch64.zip")
-                    set(BUN_BOOTSTRAP_SHA256 "4e9deb6814a7ec7f68725ddd97d0d7b4065bcda9a850f69d497567e995a7fa33")
+                    set(BUN_BOOTSTRAP_SHA256 "a2c2862bcc1fd1c0b3a8dcdc8c7efb5e2acd871eb20ed2f17617884ede81c844")
                   else()
                     set(BUN_BOOTSTRAP_FILENAME "bun-linux-x64.zip")
                     set(BUN_BOOTSTRAP_SHA256 "0322b17f0722da76a64298aad498225aedcbf6df1008a1dee45e16ecb226a3f1")
@@ -370,7 +370,7 @@ class Bun < Formula
     # Keep Bun's warning policy aligned with upstream Buildkite builds while
     # tolerating newer Linux clang diagnostics seen in Homebrew CI.
     warning_line_replacement = <<~CMAKE.chomp
-      -Wno-character-conversion
+      #{OS.mac? ? "-Wno-vector-conversion" : "-Wno-character-conversion"}
       -Wno-dangling-assignment-gsl
       -Wno-deprecated-declarations
     CMAKE
@@ -1374,6 +1374,15 @@ class Bun < Formula
                 #pragma clang diagnostic push
                 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
               CPP
+    inreplace "src/bun.js/bindings/EncodingTables.h",
+              '#pragma clang diagnostic ignored "-Wcharacter-conversion"',
+              <<~CPP.chomp
+                #if __has_warning("-Wcharacter-conversion")
+                #pragma clang diagnostic ignored "-Wcharacter-conversion"
+                #elif __has_warning("-Wvector-conversion")
+                #pragma clang diagnostic ignored "-Wvector-conversion"
+                #endif
+              CPP
     # CryptoKeyECOpenSSL.cpp: OpenSSL 3 compat — guard deprecated
     # EC_KEY_set_asn1_flag (already the default with EC_KEY_new_by_curve_name)
     # and fix const return types from EVP_PKEY_get0_EC_KEY.
@@ -1582,6 +1591,14 @@ class Bun < Formula
       #undef OpenSSL_add_all_algorithms
       void OpenSSL_add_all_algorithms(void) { /* no-op in OpenSSL 3 */ }
       void CRYPTO_library_init(void) { /* no-op - BoringSSL specific */ }
+
+      // Mimalloc 3.x no longer exports mi_heap_get_default; map Bun's
+      // expected symbol to the current public entry point.
+      struct mi_heap_s;
+      mi_heap_s* mi_heap_main(void);
+      __attribute__((weak, visibility("default"))) mi_heap_s* mi_heap_get_default(void) {
+          return mi_heap_main();
+      }
 
       // --- sk_* functions (BoringSSL uses short names, OpenSSL 3 uses OPENSSL_sk_*) ---
       #undef sk_num
