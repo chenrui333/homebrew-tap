@@ -19,6 +19,12 @@ class CodexViz < Formula
            *std_npm_args(prefix: false, ignore_scripts: false)
 
     libexec.install Dir["*"]
+    if OS.linux?
+      # Keep only glibc Next.js binaries to avoid musl-only `libc.so` linkage.
+      libexec.glob("node_modules/@next/swc-linux-*-musl").each do |swc_musl|
+        rm_r swc_musl
+      end
+    end
 
     (bin/"codex-viz").write <<~SH
       #!/bin/bash
