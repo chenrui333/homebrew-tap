@@ -28,6 +28,7 @@ class Bun < Formula
   depends_on "zstd"
 
   on_linux do
+    depends_on "lld" => :build
     depends_on "llvm" => :build
   end
 
@@ -955,20 +956,17 @@ class Bun < Formula
 
     if OS.linux?
       llvm_bin = Formula["llvm"].opt_bin
-      lld_program = llvm_bin/"ld.lld"
-      linker_program = if lld_program.exist?
-        lld_program.to_s
-      else
-        "ld.gold"
-      end
+      lld_program = Formula["lld"].opt_bin/"ld.lld"
+      lld_program = llvm_bin/"ld.lld" unless lld_program.exist?
+      odie "Unable to find ld.lld for Linux build" unless lld_program.exist?
+      linker_program = lld_program.to_s
       args << "-DABI=gnu"
       args << "-DCMAKE_C_COMPILER=#{llvm_bin}/clang"
       args << "-DCMAKE_CXX_COMPILER=#{llvm_bin}/clang++"
       args << "-DCMAKE_AR=#{llvm_bin}/llvm-ar"
       args << "-DCMAKE_RANLIB=#{llvm_bin}/llvm-ranlib"
       args << "-DCMAKE_LINKER=#{linker_program}"
-      # Upstream Linux link flags require a linker with GNU gold/LLD features
-      # (e.g. `--gdb-index` and `-icf=safe`). Prefer ld.lld, fallback to ld.gold.
+      # Use ld.lld to avoid ld.gold LLVM plugin failures on Linux CI builds.
       args << "-DLLD_PROGRAM=#{linker_program}"
       args << "-DCMAKE_EXE_LINKER_FLAGS=--ld-path=#{linker_program}"
       args << "-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=#{linker_program}"
@@ -1917,3 +1915,22 @@ index ab78654512..ae6cfdf827 100644
  
  if(WEBKIT_LOCAL)
    if(EXISTS ${WEBKIT_PATH}/cmakeconfig.h)
+
+--- a/cmake/targets/BuildBun.cmake
++++ b/cmake/targets/BuildBun.cmake
+@@ -1138,6 +1138,14 @@ if(LINUX)
+     -Wl,--wrap=logf
+     -Wl,--wrap=pow
+     -Wl,--wrap=powf
+   )
++
++  # Disable LTO for workaround-missing-symbols.cpp to prevent versioned
++  # glibc symbols (e.g. exp@GLIBC_2.17) from being emitted into
++  # `.lto_discard`, which cannot parse '@' in this path.
++  if(ENABLE_LTO)
++    set_source_files_properties(${CWD}/src/bun.js/bindings/workaround-missing-symbols.cpp
++      PROPERTIES COMPILE_OPTIONS "-fno-lto")
++  endif()
+ 
+   if(NOT ABI STREQUAL "musl")
+     target_link_options(${bun} PUBLIC
