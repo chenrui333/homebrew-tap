@@ -30,6 +30,7 @@ class Orla < Formula
   test do
     ENV["HOME"] = testpath
     assert_match version.to_s, shell_output("#{bin}/orla --version")
-    assert_match "agent", shell_output("#{bin}/orla --help")
+    output = shell_output("#{bin}/orla agent --model does-not-exist 'hello' 2>&1", 1)
+    assert_match "failed to create executor", output
   end
 end
