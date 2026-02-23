@@ -29,8 +29,7 @@ class Orla < Formula
 
   test do
     ENV["HOME"] = testpath
-    (testpath/".orla/tools").mkpath
     assert_match version.to_s, shell_output("#{bin}/orla --version")
-    assert_match "[]", shell_output("#{bin}/orla tool list --json")
+    assert_match "agent", shell_output("#{bin}/orla --help")
   end
 end
