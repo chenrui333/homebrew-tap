@@ -18,7 +18,8 @@ class Zeptoclaw < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    # upstream bug report on the build target issue, https://github.com/qhkm/zeptoclaw/issues/119
+    system "cargo", "install", "--bin", "zeptoclaw", *std_cargo_args
   end
 
   service do
