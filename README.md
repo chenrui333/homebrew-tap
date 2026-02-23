@@ -357,7 +357,6 @@ brew install --cask <tool>
 - `jules`
 - `junit2html`
 - `jwt-ui`
-- `kaf`
 - `kafka`
 - `kaluma-cli`
 - `kandc`
@@ -390,7 +389,6 @@ brew install --cask <tool>
 - `lazynpm`
 - `leetgo`
 - `lemonade`
-- `letta-code`
 - `leveldb-cli`
 - `lin`
 - `lintnet`
