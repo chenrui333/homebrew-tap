@@ -1504,8 +1504,12 @@ class Bun < Formula
     if OS.linux?
       # Full LTO frequently exhausts memory while linking `bun-profile` in
       # Linux CI; use ThinLTO to reduce linker RSS.
-      inreplace "cmake/targets/BuildBun.cmake" do |s|
-        raise "Failed to lower Linux LTO mode in BuildBun.cmake" unless s.gsub!("-flto=full", "-flto=thin")
+      inreplace "cmake/CompilerFlags.cmake" do |s|
+        lto_flag_pattern = /-flto(?:=full)?(?= \$\{UNIX\}|$)/
+        lto_flags_rewritten = s.gsub!(lto_flag_pattern, "-flto=thin")
+        next if lto_flags_rewritten || s.match?(/-flto=thin(?= \$\{UNIX\}|$)/)
+
+        raise "Failed to lower Linux LTO mode in CompilerFlags.cmake"
       end
 
       # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries
