@@ -7,11 +7,11 @@ class Actionbook < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c55fc553735c0dcc72724c27d95eca0507f17b1e72b5e859836649da678b4cc8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96f376af481a2edf74b711e0749cc3a851b43260512ec0b9880cafb04d6d28f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd33a5d16918a4a19cc569ea56d251c21335d5d13b593b0d62de4919927afcaf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fd7556ec1b02d3ccf31e14cfdf0bcfdd6e610a02ea0a7da51409b0963377e2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19f5a31369e487de66518c0077e839c1deb3f00c22df2be99da9a0b1d8000c9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f1904a45f795a1fe92f95d97ab6d56f419a24263dcdbbc6d99e184d7d0efb5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd1f6a8ce5eb84654933ef9fcaf357b0566f983629ff02da7fc4675879713030"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b5ac25557527e99c414a3af9ac0bab095bbeb34ba6c574780777db762e95388"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26523c02788cb036094ab935def8d97376194197a225d910be9981601fab0c62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1ce253735b410cb5fe4e8b2fbbb093a53eb1f852f4c8f3dc27038f2fe6bcb36"
   end
 
   depends_on "rust" => :build
