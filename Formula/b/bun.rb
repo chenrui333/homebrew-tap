@@ -1511,7 +1511,7 @@ class Bun < Formula
       extern "C" {
 
       // --- WTFTimer bridge ---
-      void WTFTimer__fire(void* timer) {
+      __attribute__((weak, visibility("default"))) void WTFTimer__fire(void* timer) {
           reinterpret_cast<WTF::RunLoop::TimerBase*>(timer)->fired();
       }
 
@@ -1719,7 +1719,7 @@ class Bun < Formula
           size_t memoryFootprint;
           double percentAvailableMemoryInUse;
       };
-      __attribute__((visibility("default"))) MemoryStatus memoryStatus() { return MemoryStatus(0, 0.5); }
+      __attribute__((weak, visibility("default"))) MemoryStatus memoryStatus() { return MemoryStatus(0, 0.5); }
       } // namespace bmalloc
 
       namespace Inspector {
@@ -1728,11 +1728,11 @@ class Bun < Formula
           static RemoteInspectorServer& singleton();
           bool start(const char*, unsigned short);
       };
-      __attribute__((visibility("default"))) RemoteInspectorServer& RemoteInspectorServer::singleton() {
+      __attribute__((weak, visibility("default"))) RemoteInspectorServer& RemoteInspectorServer::singleton() {
           static RemoteInspectorServer instance;
           return instance;
       }
-      __attribute__((visibility("default"))) bool RemoteInspectorServer::start(const char*, unsigned short) {
+      __attribute__((weak, visibility("default"))) bool RemoteInspectorServer::start(const char*, unsigned short) {
           return false;
       }
       } // namespace Inspector
