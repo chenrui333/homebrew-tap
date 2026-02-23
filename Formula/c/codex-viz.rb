@@ -7,6 +7,15 @@ class CodexViz < Formula
   license "MIT"
   head "https://github.com/onewesong/codex-viz.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "d234f1add68034fa1318b7fccf4863bfbadc1629e06b2629e8c398e72c1894c4"
+    sha256 cellar: :any,                 arm64_sequoia: "33a37d9859406fea7dde206d9428895a47608fb08d02373e4f84a0b0c35269d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "33a37d9859406fea7dde206d9428895a47608fb08d02373e4f84a0b0c35269d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50e6d9e3630b82b53e267d79d10d9b58134e754c46cbd123ca3086229f21db12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b03cc0e0b7528db111efadbafc613e4e6067a30fe718e913a72919b0acfc1de1"
+  end
+
   depends_on "node"
 
   def install
