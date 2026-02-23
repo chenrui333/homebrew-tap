@@ -190,7 +190,7 @@ class Cccc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cccc --version")
+    assert_match version.to_s, shell_output("#{bin}/cccc version")
 
     output = shell_output("#{bin}/cccc active")
     assert_match "\"ok\": true", output
