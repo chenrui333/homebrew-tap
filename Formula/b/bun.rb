@@ -150,6 +150,11 @@ class Bun < Formula
 
                 if (NOT CI)
               CMAKE
+    setup_bun_guard = 'message(STATUS "Using downloaded bootstrap Bun: ${BUN_EXECUTABLE}")'
+    unless (buildpath/"cmake/tools/SetupBun.cmake").read.include?(setup_bun_guard)
+      raise "Failed to patch SetupBun.cmake bootstrap fallback"
+    end
+
     # Use vendored Node.js headers instead of downloading
     inreplace "cmake/targets/BuildBun.cmake",
               "set(NODEJS_HEADERS_PATH ${VENDOR_PATH}/nodejs)\n\nregister_command(",
@@ -163,6 +168,11 @@ class Bun < Formula
 
                 register_command(
               CMAKE
+    node_headers_guard = 'message(STATUS "Using vendored Node.js headers")'
+    unless (buildpath/"cmake/targets/BuildBun.cmake").read.include?(node_headers_guard)
+      raise "Failed to patch BuildBun.cmake vendored Node.js headers"
+    end
+
     # Avoid network package installs for bun-error and node-fallbacks
     react_refresh_define = %q(--define:process.env.NODE_ENV=\"'development'\")
     {
@@ -183,6 +193,15 @@ class Bun < Formula
                   message(STATUS "Skipping bun install for #{name}")
                 CMAKE
     end
+    build_bun_cmake_contents = (buildpath/"cmake/targets/BuildBun.cmake").read
+    unless build_bun_cmake_contents.include?('message(STATUS "Skipping bun install for bun-error")')
+      raise "Failed to patch BuildBun.cmake bun-error install guard"
+    end
+
+    unless build_bun_cmake_contents.include?('message(STATUS "Skipping bun install for node-fallbacks")')
+      raise "Failed to patch BuildBun.cmake node-fallbacks install guard"
+    end
+
     inreplace "cmake/targets/BuildBun.cmake",
               <<~CMAKE,
                 # This command relies on an older version of `esbuild`, which is why
@@ -241,6 +260,11 @@ class Bun < Formula
                   )
                 endif()
               CMAKE
+    node_fallbacks_guard = 'message(STATUS "Skipping node-fallbacks/*.js (node_modules not installed)")'
+    unless (buildpath/"cmake/targets/BuildBun.cmake").read.include?(node_fallbacks_guard)
+      raise "Failed to patch BuildBun.cmake node-fallbacks placeholder guard"
+    end
+
     inreplace "cmake/targets/BuildBun.cmake",
               <<~CMAKE,
                 # An embedded copy of react-refresh is used when the user forgets to install it.
