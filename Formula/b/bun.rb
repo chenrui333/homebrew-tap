@@ -1503,13 +1503,19 @@ class Bun < Formula
               CMAKE
     if OS.linux?
       # Full LTO frequently exhausts memory while linking `bun-profile` in
-      # Linux CI; use ThinLTO to reduce linker RSS.
+      # Linux CI; use ThinLTO to reduce linker RSS and force split LTO units.
       inreplace "cmake/CompilerFlags.cmake" do |s|
         lto_flag_pattern = /-flto(?:=full)?(?= \$\{UNIX\}|$)/
         lto_flags_rewritten = s.gsub!(lto_flag_pattern, "-flto=thin")
-        next if lto_flags_rewritten || s.match?(/-flto=thin(?= \$\{UNIX\}|$)/)
+        lto_thin_present = s.match?(/-flto=thin(?= \$\{UNIX\}|$)/)
+        lto_mode_missing = !lto_flags_rewritten && !lto_thin_present
+        raise "Failed to lower Linux LTO mode in CompilerFlags.cmake" if lto_mode_missing
 
-        raise "Failed to lower Linux LTO mode in CompilerFlags.cmake"
+        split_lto_pattern = /-flto=thin(?! -fsplit-lto-unit)(?= \$\{UNIX\}|$)/
+        split_lto_rewritten = s.gsub!(split_lto_pattern, "-flto=thin -fsplit-lto-unit")
+        next if split_lto_rewritten || s.match?(/-flto=thin -fsplit-lto-unit(?= \$\{UNIX\}|$)/)
+
+        raise "Failed to enable split Linux LTO mode in CompilerFlags.cmake"
       end
 
       # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries
