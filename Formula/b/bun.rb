@@ -1502,6 +1502,12 @@ class Bun < Formula
                 endif()
               CMAKE
     if OS.linux?
+      # Full LTO frequently exhausts memory while linking `bun-profile` in
+      # Linux CI; use ThinLTO to reduce linker RSS.
+      inreplace "cmake/targets/BuildBun.cmake" do |s|
+        raise "Failed to lower Linux LTO mode in BuildBun.cmake" unless s.gsub!("-flto=full", "-flto=thin")
+      end
+
       # Avoid ld.lld failures caused by LTO-generated `.lto_discard` entries
       # with versioned glibc symbols like exp@GLIBC_2.17.
       inreplace "cmake/targets/BuildBun.cmake",
