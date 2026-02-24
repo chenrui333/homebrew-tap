@@ -7,7 +7,7 @@ class Dominds < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "647c8fde9bf66f6367b203eb491321f183ac5a15a4062a74594c6563855e8a5d"
+    sha256 cellar: :any_skip_relocation, all: "7caba40c98c76a1cd28ff0d99b1d963418b76432c23c0beda83cfb8d1bef2146"
   end
 
   depends_on "node"
