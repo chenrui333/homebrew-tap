@@ -1,8 +1,8 @@
 class Zeptoclaw < Formula
   desc "Lightweight personal AI gateway with layered safety controls"
   homepage "https://zeptoclaw.com/"
-  url "https://github.com/qhkm/zeptoclaw/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "9df5ce34bee506b2968af7b8d257a4574d72dc8f8978c72756f7e61954fc120a"
+  url "https://github.com/qhkm/zeptoclaw/archive/refs/tags/v0.5.8.tar.gz"
+  sha256 "009ae09728f986c9fa8c9c3df64f00af8db4c9cf0bb212c40b71706355671752"
   license "Apache-2.0"
   head "https://github.com/qhkm/zeptoclaw.git", branch: "main"
 
