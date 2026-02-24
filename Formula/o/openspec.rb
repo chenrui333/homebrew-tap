@@ -1,8 +1,8 @@
 class Openspec < Formula
   desc "AI-native system for spec-driven development"
   homepage "https://github.com/Fission-AI/OpenSpec"
-  url "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.1.1.tgz"
-  sha256 "e943e2137f86bb6772f1a5ec2fb725fd4302b590de0515a0349364ba419e033c"
+  url "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.2.0.tgz"
+  sha256 "2aceda94693f1db0b0d2ea3c750a2a418737eab30d026d1d066629945cde98ba"
   license "MIT"
 
   bottle do
