@@ -3,8 +3,8 @@ class Dotbins < Formula
 
   desc "TUI typing trainer inspired by monkeytype with a focus on customization"
   homepage "https://github.com/basnijholt/dotbins"
-  url "https://files.pythonhosted.org/packages/1b/1c/6a3dde77303c66a4235b4e8451b91a2c53b418483fd8de6d8a486b59e52a/dotbins-2.9.0.tar.gz"
-  sha256 "e8af1aecf06235482d0600e891dcb2f3f38bab5402723d2c0454e4556bbbea66"
+  url "https://files.pythonhosted.org/packages/36/9b/3688e20eb076795da82e744c1e7703cee20f9378af3a3dbf33a2d2342633/dotbins-2.10.0.tar.gz"
+  sha256 "155e8b7bd4ae1103c47f95bcd07774625bf75c6fe282681c7ef5528a1bb3a779"
   license "Apache-2.0"
   head "https://github.com/basnijholt/dotbins.git", branch: "main"
 
@@ -59,8 +59,8 @@ class Dotbins < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/74/99/a4cab2acbb884f80e558b0771e97e21e939c5dfb460f488d19df485e8298/rich-14.3.2.tar.gz"
-    sha256 "e712f11c1a562a11843306f5ed999475f09ac31ffb64281f73ab29ffdda8b3b8"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "rich-argparse" do
