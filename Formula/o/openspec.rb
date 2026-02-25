@@ -26,6 +26,7 @@ class Openspec < Formula
 
     output = shell_output("#{bin}/openspec init --tools codex")
     assert_match "OpenSpec structure created", output
-    assert_match "name: openspec-sync-specs", (testpath/".codex/skills/openspec-sync-specs/SKILL.md").read
+    assert_path_exists testpath/"openspec/specs"
+    assert_path_exists testpath/".codex/skills/openspec-propose/SKILL.md"
   end
 end
