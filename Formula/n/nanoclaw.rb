@@ -7,12 +7,13 @@ class Nanoclaw < Formula
   license "MIT"
   head "https://github.com/qwibitai/nanoclaw.git", branch: "main"
 
-  depends_on "node"
+  depends_on "node@24"
 
   def install
-    system "npm", "ci"
-    system "npm", "run", "build"
-    system "npm", "prune", "--omit=dev"
+    npm = Formula["node@24"].opt_bin/"npm"
+    system npm, "ci"
+    system npm, "run", "build"
+    system npm, "prune", "--omit=dev"
 
     libexec.install Dir["*"]
 
@@ -23,7 +24,7 @@ class Nanoclaw < Formula
         exit 0
       fi
 
-      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/dist/index.js" "$@"
+      exec "#{Formula["node@24"].opt_bin}/node" "#{libexec}/dist/index.js" "$@"
     SH
     chmod 0755, bin/"nanoclaw"
   end
@@ -31,8 +32,12 @@ class Nanoclaw < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/nanoclaw --version")
 
+    node_eval = <<~EOS
+      import('#{libexec}/dist/index.js').then(() => console.log('load-ok'))
+    EOS
+
     output = shell_output(
-      "#{Formula["node"].opt_bin}/node -e \"import('#{libexec}/dist/index.js').then(() => console.log('load-ok'))\"",
+      "#{Formula["node@24"].opt_bin}/node -e \"#{node_eval}\"",
     )
     assert_match "load-ok", output
   end
