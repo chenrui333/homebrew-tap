@@ -7,11 +7,11 @@ class MongodbMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "388fa1db7fef6378026648590e63dbe3457e16e4553eb7abf2f79db3007bef0e"
-    sha256 cellar: :any,                 arm64_sequoia: "0935c13c6438af36ad6063c3c7379b29aa0d30f7551080d89d64d45c3eb77b42"
-    sha256 cellar: :any,                 arm64_sonoma:  "0935c13c6438af36ad6063c3c7379b29aa0d30f7551080d89d64d45c3eb77b42"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "39bb091c3a2ae6d62280ba4851af83f1bbc0f83e12a76b590ea398af2985ee67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "412e9cf9a59a66b4c1530ee599b041817ab3f90c46758db060472445343a9b52"
+    sha256                               arm64_tahoe:   "31ce8feafa886dd7b47adbee3315e359c0fbda2db88309df39b980d174e565ab"
+    sha256                               arm64_sequoia: "03cd8ae7aa361d560038a20869a1595c540e1cea57b82d8bce0406d109793ccc"
+    sha256                               arm64_sonoma:  "03cd8ae7aa361d560038a20869a1595c540e1cea57b82d8bce0406d109793ccc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b40a48d1209ff3b4ce3a984b337d743c704615783eefd4755712d9dca40fc33d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94b73404d2010321a5592f956b7f4644ef23354f68ae93df8a9e1c69fa6a5e8b"
   end
 
   depends_on "node"
