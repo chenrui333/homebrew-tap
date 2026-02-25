@@ -26,8 +26,6 @@ class Orla < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/orla --version")
-
-    (testpath/".orla/tools").mkpath
-    assert_match "[]", shell_output("#{bin}/orla tool list --json")
+    assert_match "Start orla's agent engine as a service", shell_output("#{bin}/orla serve --help")
   end
 end
