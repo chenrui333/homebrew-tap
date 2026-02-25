@@ -17,10 +17,12 @@ class Llmswap < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed58c0af734ab75f29dfae99a078cc21adf219c265ad986f7ec6752a1ede10f2"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
+  depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
