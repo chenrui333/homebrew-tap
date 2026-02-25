@@ -19,6 +19,13 @@ class McpUse < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    if OS.linux?
+      # ext-apps vendors Bun platform packages; keep glibc builds but remove
+      # musl variants to satisfy linkage checks on Homebrew Linux runners.
+      libexec.glob("lib/node_modules/**/@oven/bun-linux-*-musl*").each(&:rmtree)
+    end
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
