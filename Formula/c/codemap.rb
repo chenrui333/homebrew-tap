@@ -8,11 +8,11 @@ class Codemap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8657051a43962e01df78b42ddecb98fca267d0e0e79033d74f170c498dc48a78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8657051a43962e01df78b42ddecb98fca267d0e0e79033d74f170c498dc48a78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8657051a43962e01df78b42ddecb98fca267d0e0e79033d74f170c498dc48a78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f97989ee0554b4c196c252bd48952ff1e82cc3f82aabe277e6c4add14d65711e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53ca53801ba796d05c8e69bf74a514c1b93884d96e99ae7c8f0c60b55ef284d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89666d5086d4fef0815c2bd8a4e64929a625a46282cdb0651d4a8f20c5fdb3fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89666d5086d4fef0815c2bd8a4e64929a625a46282cdb0651d4a8f20c5fdb3fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89666d5086d4fef0815c2bd8a4e64929a625a46282cdb0651d4a8f20c5fdb3fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "034c4b73b47af816be1425327cc7a4e918e6c9885f97e527640e24834c106bbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46785771d115aab64e700d9f0c6772bc535f80b2692ff0f03a06dd6de41a4616"
   end
 
   depends_on "go" => :build
