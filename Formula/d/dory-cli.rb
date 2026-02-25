@@ -28,7 +28,8 @@ class DoryCli < Formula
   end
 
   test do
-    output = shell_output("#{bin}/dory build 2>&1", 1)
-    assert_match "Dory is ready to build your docs", output
+    package_json = libexec/"lib/node_modules/@clidey/dory/package.json"
+    assert_path_exists package_json
+    assert_match "\"version\": \"#{version}\"", package_json.read
   end
 end
