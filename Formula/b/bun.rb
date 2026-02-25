@@ -1535,6 +1535,12 @@ class Bun < Formula
                 #endif
               CPP
 
+    # Xcode 16.4 libc++ no longer declares std::__libcpp_verbose_abort as
+    # noexcept, so Bun's compatibility override must match that declaration.
+    inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
+              /void std::__libcpp_verbose_abort\((?:char const\*|const char\*) format, \.\.\.\) noexcept/,
+              "void std::__libcpp_verbose_abort(char const* format, ...)"
+
     # Create BoringSSL → OpenSSL 3 compatibility shim for pre-compiled bun-zig.o
     # which references BoringSSL-specific symbols not present in OpenSSL 3.
     # Also provides WTFTimer__fire which bridges Zig → C++ WTF::RunLoop::TimerBase.
