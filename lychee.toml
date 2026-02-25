@@ -27,6 +27,7 @@ exclude = [
   "^https://rustwasm\\.github\\.io/twiggy/?$",
   "^https://github\\.com/ODwyerSoftware/brunette/?$",
   "^https://www\\.gnu\\.org/software/hello/?$",
+  "^https://www\\.atoptool\\.nl/downloadatop\\.php/?$",
 ]
 
 cache = true
