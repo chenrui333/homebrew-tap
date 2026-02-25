@@ -1,10 +1,9 @@
 class Osintui < Formula
   desc "Open Source Intelligence Terminal User Interface"
-  homepage "https://github.com/wssheldon/osintui"
+  homepage "https://docs.rs/crate/osintui/latest"
   url "https://static.crates.io/crates/osintui/osintui-0.1.1.crate"
   sha256 "732444225882845e6148e0fcc1ab4351454180014eb605f2133c490a1314b703"
   license "MIT"
-  head "https://github.com/wssheldon/osintui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"

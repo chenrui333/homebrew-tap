@@ -466,7 +466,7 @@ Scraped from [Terminal Trove - New Tools](https://terminaltrove.com/new/)
 |------|-------------|------|
 | lobtui | A TUI for lobste.rs website. | https://github.com/pythops/lobtui |
 | zizmor | A static analysis tool for GitHub Actions. | https://github.com/woodruffw/zizmor |
-| osintui | Open Source Intelligence Terminal User Interface. | https://github.com/wssheldon/osintui |
+| osintui | Open Source Intelligence Terminal User Interface. | https://docs.rs/crate/osintui/latest |
 | gitsnip | A CLI tool to download specific folders from a git repository. | https://github.com/dagimg-dot/gitsnip |
 | just | Just a command runner. | https://github.com/casey/just |
 | daylight ⭐ | Track sunrise and sunset times in the terminal. | https://github.com/jbreckmckye/daylight |

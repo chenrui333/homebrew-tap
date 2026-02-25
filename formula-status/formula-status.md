@@ -695,7 +695,7 @@ Total formulas: 716
 | nest-cli | CLI tool for Nest applications | - | - | - | - | MIT | ✓ | - | [link](https://nestjs.com/) |
 | ni | Use the right package manager | - | - | - | - | MIT | ✓ | - | [link](https://github.com/sindresorhus/ni) |
 | npkill | Easily find and remove old and heavy node_modules folders | - | - | - | - | MIT | ✓ | - | [link](https://npkill.js.org) |
-| osintui | Open Source Intelligence Terminal User Interface | - | - | - | - | MIT | ✓ | - | [link](https://github.com/wssheldon/osintui) |
+| osintui | Open Source Intelligence Terminal User Interface | - | - | - | - | MIT | ✓ | - | [link](https://docs.rs/crate/osintui/latest) |
 | papis | Powerful command-line document and bibliography manager | - | - | - | - | GPL-3.0-or-later | ✓ | - | [link](https://papis.readthedocs.io/en/latest/) |
 | pdfsyntax | Python library & tool to inspect and modify PDF internals | - | - | - | - | MIT | ✓ | - | [link](https://pdfsyntax.dev/) |
 | pinme | Deploy Your Frontend in a Single Command | - | - | - | - | MIT | ✓ | - | [link](https://pinme.eth.limo/) |
