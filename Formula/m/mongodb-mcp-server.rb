@@ -19,6 +19,12 @@ class MongodbMcpServer < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    if OS.linux?
+      # ext-apps vendors Bun platform packages; keep glibc builds but remove
+      # musl variants to satisfy linkage checks on Homebrew Linux runners.
+      libexec.glob("lib/node_modules/**/@oven/bun-linux-*-musl*").each(&:rmtree)
+    end
   end
 
   test do
