@@ -21,11 +21,14 @@ class Bun < Formula
   depends_on "libuv"
   depends_on "lol-html"
   depends_on "ls-hpack"
-  depends_on macos: :sequoia # macOS 14 clang lacks required warning flags
   depends_on "mimalloc"
   depends_on "openssl@3"
   depends_on "sqlite"
   depends_on "zstd"
+
+  on_macos do
+    depends_on "llvm" => :build if MacOS.version < :sequoia
+  end
 
   on_linux do
     depends_on "lld" => :build
@@ -61,6 +64,10 @@ class Bun < Formula
 
   def install
     linux_warning_patch_applied = false
+    if OS.mac? && MacOS.version < :sequoia
+      # Use brewed clang with full C++23 support on older macOS.
+      ENV.llvm_clang
+    end
 
     # Populate cmake/sources/*.txt from cmake/Sources.json.  The release
     # tarball ships empty placeholder files; the upstream build expects
@@ -371,7 +378,7 @@ class Bun < Formula
     # tolerating newer Linux clang diagnostics seen in Homebrew CI.
     warning_line_replacement = <<~CMAKE.chomp
       #{OS.mac? ? "-Wno-vector-conversion" : "-Wno-character-conversion"}
-      -Wno-dangling-assignment-gsl
+      #{(OS.mac? && MacOS.version < :sequoia) ? "-Wno-dangling-gsl" : "-Wno-dangling-assignment-gsl"}
       -Wno-deprecated-declarations
     CMAKE
     buildbun_cmake = buildpath/"cmake/targets/BuildBun.cmake"
@@ -381,6 +388,33 @@ class Bun < Formula
                 warning_line_replacement,
                 global: true
       linux_warning_patch_applied = true
+    end
+    if OS.mac? && MacOS.version < :sequoia
+      compiler_flags = buildpath/"cmake/CompilerFlags.cmake"
+      if compiler_flags.read.include?("-Wno-c23-extensions")
+        inreplace "cmake/CompilerFlags.cmake",
+                  "-Wno-c23-extensions",
+                  "-Wno-c2x-extensions",
+                  global: true
+      end
+      if buildbun_cmake.read.include?("-Wno-c23-extensions")
+        inreplace "cmake/targets/BuildBun.cmake",
+                  "-Wno-c23-extensions",
+                  "-Wno-c2x-extensions",
+                  global: true
+      end
+      if buildbun_cmake.read.include?("-Wno-c++23-lambda-attributes")
+        inreplace "cmake/targets/BuildBun.cmake",
+                  "-Wno-c++23-lambda-attributes",
+                  "",
+                  global: true
+      end
+      if buildbun_cmake.read.include?("-Wno-dangling-assignment-gsl")
+        inreplace "cmake/targets/BuildBun.cmake",
+                  "-Wno-dangling-assignment-gsl",
+                  "-Wno-dangling-gsl",
+                  global: true
+      end
     end
     bun_error_esbuild_cmd = <<~'CMAKE'.gsub(/^/, "      ")
       bun-error.css
@@ -1537,9 +1571,11 @@ class Bun < Formula
 
     # Xcode 16.4 libc++ no longer declares std::__libcpp_verbose_abort as
     # noexcept, so Bun's compatibility override must match that declaration.
-    inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
-              /void std::__libcpp_verbose_abort\((?:char const\*|const char\*) format, \.\.\.\) noexcept/,
-              "void std::__libcpp_verbose_abort(char const* format, ...)"
+    if OS.mac? && MacOS.version >= :sequoia
+      inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
+                /void std::__libcpp_verbose_abort\((?:char const\*|const char\*) format, \.\.\.\) noexcept/,
+                "void std::__libcpp_verbose_abort(char const* format, ...)"
+    end
 
     # Create BoringSSL → OpenSSL 3 compatibility shim for pre-compiled bun-zig.o
     # which references BoringSSL-specific symbols not present in OpenSSL 3.
