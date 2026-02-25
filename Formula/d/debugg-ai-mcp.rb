@@ -18,6 +18,11 @@ class DebuggAiMcp < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    # Remove vendored prebuilt ngrok binary to avoid shipping non-native artifacts.
+    ngrok_bin = libexec/"lib/node_modules/@debugg-ai/debugg-ai-mcp/node_modules/ngrok/bin/ngrok"
+    rm ngrok_bin
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
@@ -25,12 +30,14 @@ class DebuggAiMcp < Formula
     ENV["DEBUGGAI_API_KEY"] = "test"
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"homebrew","version":"1.0"}}}
+      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
     output = pipe_output("#{bin}/debugg-ai-mcp 2>&1", json, 0)
-    assert_match "Run end-to-end browser tests using AI agents", output
+    assert_match "\"name\":\"check_app_in_browser\"", output
+    assert_match "\"title\":\"Run E2E Browser Test\"", output
   end
 end
 # spellchecker:on
