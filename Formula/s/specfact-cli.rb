@@ -17,8 +17,12 @@ class SpecfactCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde164bcac9fd294dcf3196bb4eb5cc4c9d445b56c5179a5d6209be361feacb1"
   end
 
+  depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
@@ -347,13 +351,20 @@ class SpecfactCli < Formula
   end
 
   def install
+    # 0.37.4 sdist omits these module directories but still force-includes them.
+    inreplace "pyproject.toml" do |s|
+      s.gsub!(%r{^"modules/backlog-core" = "specfact_cli/modules/backlog-core"\n}, "")
+      s.gsub!(%r{^"modules/bundle-mapper" = "specfact_cli/modules/bundle-mapper"\n}, "")
+    end
+
     virtualenv_install_with_resources
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/specfact --version")
 
-    assert_match "Initialization Complete", shell_output("#{bin}/specfact init")
+    shell_output("#{bin}/specfact init ide --repo .")
     assert_path_exists testpath/".github/prompts"
+    assert_path_exists testpath/".vscode/settings.json"
   end
 end
