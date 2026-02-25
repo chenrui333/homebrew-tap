@@ -703,6 +703,20 @@ class Bun < Formula
                 endif()
                 register_command(
               CMAKE
+    inreplace "cmake/tools/SetupZig.cmake",
+              <<~CMAKE,
+                if(WIN32 AND DEFAULT_ZIG_OPTIMIZE STREQUAL "ReleaseFast")
+                  set(DEFAULT_ZIG_OPTIMIZE "ReleaseSafe")
+                endif()
+              CMAKE
+              <<~CMAKE
+                if(WIN32 AND DEFAULT_ZIG_OPTIMIZE STREQUAL "ReleaseFast")
+                  set(DEFAULT_ZIG_OPTIMIZE "ReleaseSafe")
+                endif()
+                if(LINUX AND DEFAULT_ZIG_OPTIMIZE STREQUAL "ReleaseFast")
+                  set(DEFAULT_ZIG_OPTIMIZE "ReleaseSafe")
+                endif()
+              CMAKE
     inreplace "cmake/tools/SetupEsbuild.cmake",
               "if(CMAKE_HOST_WIN32)",
               <<~CMAKE
@@ -1006,6 +1020,8 @@ class Bun < Formula
       args << "-DLLD_PROGRAM=#{linker_program}"
       args << "-DCMAKE_EXE_LINKER_FLAGS=--ld-path=#{linker_program}"
       args << "-DCMAKE_SHARED_LINKER_FLAGS=--ld-path=#{linker_program}"
+      # Zig ReleaseFast is unstable/OOM on Linux arm64 in CI; use ReleaseSafe.
+      args << "-DZIG_OPTIMIZE=ReleaseSafe"
       unless linux_warning_patch_applied
         linux_warning_flags = "-Wno-dangling-assignment-gsl " \
                               "-Wno-character-conversion " \
@@ -1084,11 +1100,20 @@ class Bun < Formula
     mkdir_p "vendor/zstd"
     ln_s Formula["zstd"].opt_include, "vendor/zstd/lib"
 
+    # Linux builds are memory intensive (bun-profile compile frequently OOMs).
+    # Serialize the build to keep peak RSS below CI limits.
+    build_args = []
+    if OS.linux?
+      ENV.deparallelize
+      ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = "1"
+      build_args = ["--", "-j1"]
+    end
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
 
     # Generate codegen files first — they are Ninja build targets, not
     # produced during cmake configure.
-    system "cmake", "--build", "build", "--target", "bun-zig-generated-classes"
+    system "cmake", "--build", "build", "--target", "bun-zig-generated-classes", *build_args
 
     # root_certs.cpp and root_certs_darwin.cpp also use BoringSSL-specific APIs.
     # Add OpenSSL 3 compat shims to root_certs.cpp (includes + OPENSSL_PUT_ERROR + ERR_R_MALLOC_FAILURE).
@@ -1843,7 +1868,7 @@ class Bun < Formula
               "          --strip-all\n          --strip-debug\n          --discard-all\n",
               "          -x\n"
 
-    system "cmake", "--build", "build"
+    system "cmake", "--build", "build", *build_args
 
     # Bun has no cmake install() rules; install the stripped binary manually
     bin.install "build/bun"
