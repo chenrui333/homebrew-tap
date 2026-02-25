@@ -23,6 +23,7 @@ class Aic < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/aic --version")
-    assert_match "Claude Code", shell_output("#{bin}/aic claude")
+    # Avoid network-dependent changelog lookups in CI.
+    assert_match "Usage:", shell_output("#{bin}/aic claude --help")
   end
 end
