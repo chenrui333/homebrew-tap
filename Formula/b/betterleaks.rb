@@ -6,6 +6,15 @@ class Betterleaks < Formula
   license "MIT"
   head "https://github.com/betterleaks/betterleaks.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "244b438c7f23008b54c0e7aeeabe7db39a69f6e5a254bc40260ffaaeacd08627"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "244b438c7f23008b54c0e7aeeabe7db39a69f6e5a254bc40260ffaaeacd08627"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "244b438c7f23008b54c0e7aeeabe7db39a69f6e5a254bc40260ffaaeacd08627"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8685db945294b2cfc1ec08952d1ebbdce2386fc247df22370c9f3db2de3c6901"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52bc272be61a4d21fe631a523c8efbc115b5e216f1a5b6e864a13e912241f1b2"
+  end
+
   depends_on "go" => :build
 
   def install
