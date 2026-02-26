@@ -35,15 +35,16 @@ class Betterleaks < Formula
       regex = '''SECRET_[A-Z0-9]{8}'''
     TOML
 
-    (testpath/"secrets.txt").write "prefix SECRET_ABC12345 suffix\n"
+    (testpath/"secrets.txt").write "prefix SECRET_ABC12345 suffix"
 
     report = testpath/"report.json"
-    shell_output(
+    output = shell_output(
       "#{bin}/betterleaks dir --no-banner --log-level error " \
       "--config #{testpath}/betterleaks.toml " \
       "--report-format json --report-path #{report} #{testpath}/secrets.txt 2>&1",
       1,
     )
+    assert_empty output
 
     findings = JSON.parse(report.read)
     assert_equal 1, findings.length
