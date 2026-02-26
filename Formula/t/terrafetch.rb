@@ -8,11 +8,11 @@ class Terrafetch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80e14e805a18b9904a576a8e37f025f6818b9aeefbbaa109b871edb020e78cbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80e14e805a18b9904a576a8e37f025f6818b9aeefbbaa109b871edb020e78cbf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80e14e805a18b9904a576a8e37f025f6818b9aeefbbaa109b871edb020e78cbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73e747f704f3ac9664bb53511e1ad5ccc14643c69130cbbab8d8b542a3d782ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74681649b980b9bfe818dd46dc9ce05192ebb0ebadffa1d5e85e2b27ba6cf806"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a719a18e014db3c4eaed51ac8022bb5bf1e461af3a0d59b1388ae1876b5b13d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a719a18e014db3c4eaed51ac8022bb5bf1e461af3a0d59b1388ae1876b5b13d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a719a18e014db3c4eaed51ac8022bb5bf1e461af3a0d59b1388ae1876b5b13d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e913a40ed59f39bf4e060dea8b4da8a14e3a80d28f991ade85cbafe9b62304fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "627e3f402fc89c4feee99b1a571e59d41015f8afa1b2104a51ef437161907927"
   end
 
   depends_on "go" => :build
