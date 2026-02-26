@@ -84,6 +84,7 @@ brew install --cask <tool>
 - `bearer`
 - `beelzebub`
 - `better-env`
+- `betterleaks`
 - `bibiman`
 - `bin-fq`
 - `bitchat-tui`
@@ -659,6 +660,7 @@ brew install --cask <tool>
 - `termtunnel`
 - `terra-code-cli`
 - `terracove`
+- `terradozer`
 - `terrafetch`
 - `terraform-diff`
 - `terraform`
