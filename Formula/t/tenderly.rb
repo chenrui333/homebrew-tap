@@ -1,8 +1,8 @@
 class Tenderly < Formula
   desc "Debugging, monitoring & tracking smart contract execution"
   homepage "https://tenderly.co/"
-  url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.7.tar.gz"
-  sha256 "07cc5107a1f2aae7819982dac714ec3dd95e6d1b9b0e3a2c419eeeb81dab4985"
+  url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.8.tar.gz"
+  sha256 "a6a74cfb74f2f390af4926f3604f136f334191e028e5ab5e6d98f64ae8addc68"
   license "GPL-3.0-only"
   head "https://github.com/Tenderly/tenderly-cli.git", branch: "master"
 
