@@ -1,8 +1,8 @@
 class OmniCache < Formula
   desc "Sidecar for your caching needs in CI"
   homepage "https://github.com/cirruslabs/omni-cache"
-  url "https://github.com/cirruslabs/omni-cache/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "42e19843cb42a02d8e610d37414efe82b5080583efd70b75e29ffd45dfa6592f"
+  url "https://github.com/cirruslabs/omni-cache/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "adb2b16e27a632f71a69b3c8aec03ce175f796a9daf79c2e1b0ae278c4f8b767"
   license "Apache-2.0"
   head "https://github.com/cirruslabs/omni-cache.git", branch: "main"
 
