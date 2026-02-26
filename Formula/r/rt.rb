@@ -1,8 +1,8 @@
 class Rt < Formula
   desc "Run tasks interactively across different task runners"
   homepage "https://github.com/unvalley/rt"
-  url "https://github.com/unvalley/rt/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "82d1daf1f16517502fbb7011d287bcf6eba649c6dd8a1f3c9a97212dfba8ac45"
+  url "https://github.com/unvalley/rt/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "16eec7218a0c4cc0bee7734a54e3629df85dac6011c9caf070caeaa3db61487c"
   license "MIT"
   head "https://github.com/unvalley/rt.git", branch: "main"
 
