@@ -18,6 +18,7 @@ exclude = [
   "^https://twilioalpha\\.com/mcp/?$",
   "^https://github\\.com/zonay/public-ollama-finder/?$",
   "^https://github\\.com/stripe/agent-toolkit/tree/main/modelcontextprotocol/?$",
+  "^https://github\\.com/wssheldon/osintui/?$",
   "^https://www\\.vibekit\\.sh/?$",
   "^https://github\\.com/sindresorhus/ni/?$",
   "^https://github\\.com/Herdora/chisel/?$",
