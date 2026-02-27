@@ -8,11 +8,11 @@ class Sloctl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f54261bef668f714346c7d9a60af3a7a448cd8c1f5ef40e1cd4050b9730729cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f54261bef668f714346c7d9a60af3a7a448cd8c1f5ef40e1cd4050b9730729cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f54261bef668f714346c7d9a60af3a7a448cd8c1f5ef40e1cd4050b9730729cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a35c3193dd168634a39c4b477a7d910dd3a826feb1702e9870546de8cfc6ba28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee8a1d2ad1d61e311593631af86b1910d150f14e2b21b46005ec2d28ad7b4be9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78f3a37fd0dce6dea7295b5a904ffc80a4f8208b7990d420480d2dee800ffa55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f3a37fd0dce6dea7295b5a904ffc80a4f8208b7990d420480d2dee800ffa55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78f3a37fd0dce6dea7295b5a904ffc80a4f8208b7990d420480d2dee800ffa55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e462231afd35f4a035862123e4d2f19940fbb074098196a3b26fdc2b615e7c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b57b2da30aab09adbcf18cddcc2fab1695e96643aebaf684c67dc3ec44b1b41e"
   end
 
   depends_on "go" => :build
