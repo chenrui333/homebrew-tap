@@ -8,7 +8,7 @@ class FuckUCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d9ced27d83d9b5f5bbf1d7f4eb0fd281513e7c0b2f67b42255e8c7a502935b83"
+    sha256 cellar: :any_skip_relocation, all: "032e3c08270d761be788a4a9bcb15580f5f0f354b71ebc374e44bbb484fb494c"
   end
 
   depends_on "node"
