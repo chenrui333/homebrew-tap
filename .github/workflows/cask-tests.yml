@@ -50,7 +50,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@cced187498280712e078aaba62dc13a3e9cd80bf
+        uses: Homebrew/actions/setup-homebrew@ac2ec1ccabf33716b2fe5f4d467e250296951780
         with:
           core: false
           cask: true
@@ -93,7 +93,7 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@cced187498280712e078aaba62dc13a3e9cd80bf
+        uses: Homebrew/actions/setup-homebrew@ac2ec1ccabf33716b2fe5f4d467e250296951780
         with:
           core: true
           cask: true
