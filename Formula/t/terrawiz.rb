@@ -1,8 +1,8 @@
 class Terrawiz < Formula
   desc "Discover Terraform & Terragrunt modules on GitHub, GitLab, and local files"
   homepage "https://github.com/efemaer/terrawiz"
-  url "https://registry.npmjs.org/terrawiz/-/terrawiz-0.5.0.tgz"
-  sha256 "d705b00918e3f60ec2368e5da7c60d63f595a5c4f742bd0831c1f8a63d2ca972"
+  url "https://registry.npmjs.org/terrawiz/-/terrawiz-1.0.0.tgz"
+  sha256 "34ff788efe924d5f6444d61e06fe7e9306f7641bdcb808fc6c1a61b001faf0b3"
   license "MIT"
 
   bottle do
