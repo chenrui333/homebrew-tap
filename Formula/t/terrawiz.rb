@@ -7,7 +7,7 @@ class Terrawiz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "dfb15b41c4d8a3e96c84b4afbbb4b7a58252698aab5d785a0a34e0be27d63971"
+    sha256 cellar: :any_skip_relocation, all: "8d3c1a6f544475ec3c46e9be482bd4f9e0f67525b27392aa0f9484be5a7c38c0"
   end
 
   depends_on "node"
