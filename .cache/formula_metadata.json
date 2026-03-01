@@ -1037,6 +1037,12 @@
     "last_release": "2024-05-21",
     "stars": 370
   },
+  "github:betterleaks/betterleaks": {
+    "forks": 5,
+    "last_commit": "2026-02-28",
+    "last_release": "2026-02-20",
+    "stars": 109
+  },
   "github:bketelsen/incus-compose": {
     "forks": 11,
     "last_commit": "2025-07-07",
@@ -1180,6 +1186,12 @@
     "last_commit": "2026-02-11",
     "last_release": "2025-11-08",
     "stars": 3
+  },
+  "github:chenrui333/terradozer": {
+    "forks": 0,
+    "last_commit": "2026-02-26",
+    "last_release": "2026-02-26",
+    "stars": 1
   },
   "github:cirruslabs/omni-cache": {
     "forks": 0,
@@ -2770,6 +2782,12 @@
     "last_commit": "2024-04-20",
     "last_release": "2023-11-29",
     "stars": 584
+  },
+  "github:onewesong/codex-viz": {
+    "forks": 2,
+    "last_commit": "2026-01-27",
+    "last_release": null,
+    "stars": 40
   },
   "github:oowl/quicssh-rs": {
     "forks": 15,

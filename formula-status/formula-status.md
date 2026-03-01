@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-02-23 09:26:20 UTC
-Total formulas: 716
+Generated: 2026-03-01 09:10:15 UTC
+Total formulas: 719
 
 ## Formulas
 
@@ -390,6 +390,7 @@ Total formulas: 716
 | gommit | Enforce git message commit consistency | 115 | 5 | 2026-02-10 | 2025-02-09 | Apache-2.0 | ✓ | - | [link](https://github.com/antham/gommit) |
 | awk-language-server | Language Server for AWK | 113 | 6 | 2024-11-19 | 2024-11-02 | MIT | ✓ | - | [link](https://github.com/Beaglefoot/awk-language-server) |
 | sato | Tool to convert ARM or CFN into Terraform | 110 | 8 | 2026-02-13 | 2025-12-15 | Apache-2.0 | ✓ | - | [link](https://github.com/JamesWoolfenden/sato) |
+| betterleaks | Secrets scanner built for configurability and speed | 109 | 5 | 2026-02-28 | 2026-02-20 | MIT | ✓ | - | [link](https://github.com/betterleaks/betterleaks) |
 | kube2pulumi | Upgrade your Kubernetes YAML to a modern language | 108 | 5 | 2025-11-21 | 2024-02-02 | Apache-2.0 | ✓ | - | [link](https://github.com/pulumi/kube2pulumi) |
 | hexora | Static analysis of malicious Python code | 107 | 7 | 2025-12-28 | 2025-12-27 | MIT | ✓ | - | [link](https://github.com/rushter/hexora) |
 | localports | List network ports with their associated binaries | 107 | 3 | 2025-08-30 | 2025-08-30 | MIT | ✓ | - | [link](https://github.com/diegoholiveira/localports) |
@@ -517,6 +518,7 @@ Total formulas: 716
 | kbst | Kubestack framework CLI | 41 | 7 | 2023-04-14 | - | Apache-2.0 | ✓ | - | [link](https://www.kubestack.com/) |
 | sprofile | Blazingly fast TUI application for viewing your Spotify list... | 41 | 1 | 2024-06-15 | 2024-06-15 | MIT | ✓ | - | [link](https://github.com/GoodBoyNeon/sprofile) |
 | wisu | Fast, minimalist directory tree viewer, written in Rust | 41 | - | 2026-01-14 | 2026-01-07 | Apache-2.0 | ✓ | - | [link](https://github.com/sh1zen/wisu) |
+| codex-viz | Local-first dashboard for Codex CLI sessions | 40 | 2 | 2026-01-27 | - | MIT | ✓ | - | [link](https://github.com/onewesong/codex-viz) |
 | terra-code-cli | AI-powered development companion with persistent memory and ... | 40 | 4 | 2025-09-07 | - | Apache-2.0 | ✓ | - | [link](https://github.com/TerraAGI/terra-code-cli) |
 | sloctl | CLI for Nobl9 to manage SLOs, Projects or Alert Policies | 39 | 2 | 2026-02-16 | 2026-02-16 | MPL-2.0 | ✓ | - | [link](https://docs.nobl9.com/sloctl-user-guide/) |
 | wedl | CLI to download from https://wetransfer.com | 39 | 5 | 2025-07-04 | 2024-10-05 | Unlicense | ✓ | - | [link](https://github.com/gnojus/wedl) |
@@ -641,6 +643,7 @@ Total formulas: 716
 | envtpl | Render Go templates on the command-line with shell environme... | 3 | 1 | 2026-02-11 | 2025-11-08 | MIT | ✓ | - | [link](https://github.com/chenrui333/envtpl) |
 | captan | Lightweight, hackable CLI tool for managing startup cap tabl... | 2 | - | 2025-08-22 | 2025-08-22 | MIT | ✓ | - | [link](https://github.com/acossta/captan) |
 | hyperbolic | Command-line interface for creating and managing GPU instanc... | 1 | - | 2025-08-07 | 2025-08-07 | MIT | ✓ | - | [link](https://github.com/HyperbolicLabs/hyperbolic-cli) |
+| terradozer | Terraform destroy using state only with no *.tf files needed | 1 | - | 2026-02-26 | 2026-02-26 | MIT | ✓ | - | [link](https://github.com/chenrui333/terradozer) |
 | amp-cli | Coding agent for your terminal and editor, built by Sourcegr... | - | - | - | - | - | ✓ | - | [link](https://ampcode.com/) |
 | apify-actors-mcp-server | MCP server for Apify | - | - | - | - | MIT | ✓ | - | [link](https://docs.apify.com/platform/integrations/mcp) |
 | auggie | All the power of Augment Code in your terminal | - | - | - | - | - | ✓ | - | [link](https://www.augmentcode.com/product/CLI) |
