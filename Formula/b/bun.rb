@@ -66,6 +66,8 @@ class Bun < Formula
       # Bun's CMake config passes Clang-specific flags that fail with GCC.
       ENV["CC"] = Formula["llvm"].opt_bin/"clang"
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      # Highway can emit evex512 ignored-attribute warnings that become errors.
+      ENV.append "CXXFLAGS", "-Wno-ignored-attributes"
     end
 
     # Some Bun CMake sub-builds fail to auto-detect archive tools under Homebrew
