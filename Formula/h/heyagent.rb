@@ -1,8 +1,8 @@
 class Heyagent < Formula
   desc "Claude Code notifications"
   homepage "https://www.heyagent.dev/"
-  url "https://registry.npmjs.org/heyagent/-/heyagent-0.1.0.tgz"
-  sha256 "9725d5ff38c390e72d107d19ba16c492a6a57ea386d5e68fe951625301aef04a"
+  url "https://registry.npmjs.org/heyagent/-/heyagent-2.0.0.tgz"
+  sha256 "5bf3f3db28e218a835ee6b22bd22ab2b118f36324a40a4d5839c3dd7cd2b9e79"
   license "MIT"
 
   bottle do
@@ -24,7 +24,7 @@ class Heyagent < Formula
 
     # Remove vendored pre-built binary `terminal-notifier`
     node_notifier_vendor_dir = libexec/"lib/node_modules/heyagent/node_modules/node-notifier/vendor"
-    rm_r(node_notifier_vendor_dir) # remove vendored pre-built binaries
+    rm_r(node_notifier_vendor_dir) if node_notifier_vendor_dir.exist?
 
     if OS.mac?
       terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
