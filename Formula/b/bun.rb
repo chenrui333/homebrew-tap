@@ -62,6 +62,11 @@ class Bun < Formula
       ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = "1"
     end
 
+    if OS.mac? && MacOS.version < :sequoia
+      # Use brewed clang on macOS 14 to avoid older Apple clang flag gaps.
+      ENV.llvm_clang
+    end
+
     if OS.linux?
       # Bun's CMake config passes Clang-specific flags that fail with GCC.
       ENV["CC"] = Formula["llvm"].opt_bin/"clang"
@@ -125,6 +130,34 @@ class Bun < Formula
                   endif()
                 endif()
               EOS
+    if OS.mac? && MacOS.version < :sequoia
+      compiler_flags = buildpath/"cmake/CompilerFlags.cmake"
+      if compiler_flags.exist? && compiler_flags.read.include?("-Wno-c23-extensions")
+        inreplace "cmake/CompilerFlags.cmake",
+                  "-Wno-c23-extensions",
+                  "-Wno-c2x-extensions",
+                  global: true
+      end
+      buildbun_cmake = buildpath/"cmake/targets/BuildBun.cmake"
+      if buildbun_cmake.read.include?("-Wno-c23-extensions")
+        inreplace "cmake/targets/BuildBun.cmake",
+                  "-Wno-c23-extensions",
+                  "-Wno-c2x-extensions",
+                  global: true
+      end
+      if buildbun_cmake.read.include?("-Wno-c++23-lambda-attributes")
+        inreplace "cmake/targets/BuildBun.cmake",
+                  "-Wno-c++23-lambda-attributes",
+                  "",
+                  global: true
+      end
+      if buildbun_cmake.read.include?("-Wno-dangling-assignment-gsl")
+        inreplace "cmake/targets/BuildBun.cmake",
+                  "-Wno-dangling-assignment-gsl",
+                  "-Wno-dangling-gsl",
+                  global: true
+      end
+    end
     # Highway AVX3/AVX512 target variants can fail to compile on Linux x86_64
     # CI runners; disable those targets to keep baseline/x86-64 builds stable.
     inreplace "cmake/targets/BuildHighway.cmake",
