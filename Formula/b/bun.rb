@@ -69,10 +69,20 @@ class Bun < Formula
       # Highway can emit evex512 ignored-attribute warnings that become errors.
       ENV.append "CXXFLAGS", "-Wno-ignored-attributes"
     end
+    if OS.linux? && Hardware::CPU.intel?
+      # Keep Linux x86_64 builds off unstable AVX3/AVX512 Highway targets.
+      ENV.append "CXXFLAGS",
+                 "-DHWY_DISABLED_TARGETS=(HWY_AVX3+HWY_AVX3_DL+HWY_AVX3_ZEN4+HWY_AVX3_SPR)"
+    end
     if OS.linux? && Hardware::CPU.arm?
       # GCC 12/libstdc++ marks temporary-buffer helpers deprecated and Bun treats
       # warnings as errors in TextCodecCJK.
       ENV.append "CXXFLAGS", "-Wno-error=deprecated-declarations"
+    end
+    if OS.mac? && MacOS.version <= :sonoma
+      # AppleClang on macOS 14 treats unnamed parameters in C stubs as C2x
+      # extension warnings, and Bun builds with -Werror.
+      ENV.append "CFLAGS", "-Wno-error=c2x-extensions"
     end
 
     # Some Bun CMake sub-builds fail to auto-detect archive tools under Homebrew
@@ -130,13 +140,11 @@ class Bun < Formula
                   endif()
                 endif()
               EOS
-    if OS.linux? && Hardware::CPU.intel?
-      # Keep Linux x86_64 builds off unstable AVX3/AVX512 Highway targets.
-      inreplace "src/bun.js/bindings/highway_strings.cpp",
-                "// Must be first\n#include \"root.h\"\n",
-                "// Must be first\n#define HWY_DISABLED_TARGETS " \
-                "(HWY_AVX3 | HWY_AVX3_DL | HWY_AVX3_ZEN4 | HWY_AVX3_SPR)\n" \
-                "#include \"root.h\"\n"
+    if OS.mac?
+      # Newer macOS SDK headers declare this symbol without noexcept.
+      inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
+                "void std::__libcpp_verbose_abort(char const* format, ...) noexcept",
+                "void std::__libcpp_verbose_abort(char const* format, ...)"
     end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
