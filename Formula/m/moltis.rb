@@ -28,9 +28,9 @@ class Moltis < Formula
   def install
     ENV["RUSTC_BOOTSTRAP"] = "1"
     # Avoid compiling embedded WASM tools on unsupported build targets.
-    inreplace "crates/cli/Cargo.toml",
-      'moltis-tools           = { workspace = true }',
-      'moltis-tools           = { default-features = false, workspace = true }'
+    inreplace "Cargo.toml",
+      'moltis-tools           = { path = "crates/tools" }',
+      'moltis-tools           = { default-features = false, path = "crates/tools" }'
 
     if OS.linux?
       zlib = Formula["zlib-ng-compat"]
