@@ -353,6 +353,11 @@ class SpecfactCli < Formula
     ENV["OPENSSL_LIB_DIR"] = Formula["openssl@3"].opt_lib.to_s
     ENV["OPENSSL_INCLUDE_DIR"] = Formula["openssl@3"].opt_include.to_s
     ENV.append_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+    # Upstream sdist omits optional module directories referenced by force-include.
+    inreplace "pyproject.toml",
+      "\"modules/backlog-core\" = \"specfact_cli/modules/backlog-core\"\n", ""
+    inreplace "pyproject.toml",
+      "\"modules/bundle-mapper\" = \"specfact_cli/modules/bundle-mapper\"\n", ""
 
     virtualenv_install_with_resources
   end
