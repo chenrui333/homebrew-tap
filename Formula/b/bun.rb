@@ -74,11 +74,11 @@ class Bun < Formula
     # Avoid -Wundefined-var-template failures with current toolchains.
     ENV.append "CXXFLAGS", "-Wno-undefined-var-template"
 
-    # Bun 1.3.9 can invoke this block with an empty target on macOS during
-    # configure, which trips register_command validation.
+    # Bun 1.3.9 defines this dSYM post-build hook with no explicit SOURCES.
+    # register_command rejects that, so wire the built bun binary as a source.
     inreplace "cmake/targets/BuildBun.cmake",
-              "if(CMAKE_HOST_APPLE AND bunStrip)",
-              "if(CMAKE_HOST_APPLE AND bunStrip AND NOT \"${bun}\" STREQUAL \"\")"
+              "      TARGET\n        ${bun}\n      TARGET_PHASE\n",
+              "      TARGET\n        ${bun}\n      SOURCES\n        ${BUILD_PATH}/${bun}\n      TARGET_PHASE\n"
 
     system "bun", "run", "build:release"
 
