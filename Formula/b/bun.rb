@@ -165,6 +165,8 @@ class Bun < Formula
                 EOS
                 <<~EOS
                   struct EitherCleanupHook : std::variant<SyncCleanupHook, AsyncCleanupHook> {
+                      using std::variant<SyncCleanupHook, AsyncCleanupHook>::variant;
+
                       CleanupHook& get()
                       {
                           if (auto* sync = std::get_if<SyncCleanupHook>(this)) {
