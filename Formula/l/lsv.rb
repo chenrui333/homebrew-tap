@@ -1,8 +1,8 @@
 class Lsv < Formula
   desc "Three Pane Terminal File Viewer"
   homepage "https://github.com/SecretDeveloper/lsv"
-  url "https://static.crates.io/crates/lsv/lsv-0.1.11.crate"
-  sha256 "7fef93920b47348fb35e4b27c80427cb87351fa4e09a77c2e9d7e8f9d03d274d"
+  url "https://static.crates.io/crates/lsv/lsv-0.1.12.crate"
+  sha256 "284fc8720c8fd14b155e2cf2e1028e2e143cdad3ea64d538f002e574badf614c"
   license "MIT"
   head "https://github.com/SecretDeveloper/lsv.git", branch: "main"
 
