@@ -62,6 +62,12 @@ class Bun < Formula
       ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = "1"
     end
 
+    if OS.linux?
+      # Bun's CMake config passes Clang-specific flags that fail with GCC.
+      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+    end
+
     resource("bun-bootstrap").stage buildpath/"bootstrap"
     bootstrap_bin = Dir[buildpath/"bootstrap"/"**/bun"].first
     raise "bootstrap bun binary not found" if bootstrap_bin.nil?
