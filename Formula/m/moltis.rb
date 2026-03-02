@@ -37,7 +37,8 @@ class Moltis < Formula
       ENV.append "CPPFLAGS", "-I#{zlib.opt_include}"
     end
 
-    system "cargo", "install", *std_cargo_args(path: "crates/cli")
+    system "cargo", "install", "--no-default-features", "--features", "lightweight",
+      *std_cargo_args(path: "crates/cli")
   end
 
   service do
