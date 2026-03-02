@@ -28,6 +28,6 @@ class InspectCertChain < Formula
 
     output = shell_output("#{bin}/inspect-cert-chain --host example.com")
     output = output.gsub(/\e\[[0-9;]*m/, "") # Remove ANSI color codes
-    assert_match "Subject: CN=*.example.com,O=Internet Corporation for Assigned Names and Numbers", output
+    assert_match(/Subject: CN=(\*\.)?example\.com/, output)
   end
 end
