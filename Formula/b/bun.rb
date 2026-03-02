@@ -102,6 +102,29 @@ class Bun < Formula
     inreplace "cmake/targets/BuildBun.cmake",
               "          --strip-all\n          --strip-debug\n          --discard-all\n",
               ""
+    # Older Apple clang rejects this zlib workaround flag as unknown.
+    # Keep it only when the current compiler supports it.
+    inreplace "cmake/targets/BuildZlib.cmake",
+              <<~EOS,
+                if(APPLE)
+                  set(ZLIB_CMAKE_C_FLAGS "-fno-define-target-os-macros")
+                  set(ZLIB_CMAKE_CXX_FLAGS "-fno-define-target-os-macros")
+                endif()
+              EOS
+              <<~EOS
+                if(APPLE)
+                  include(CheckCCompilerFlag)
+                  include(CheckCXXCompilerFlag)
+                  check_c_compiler_flag("-fno-define-target-os-macros" ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_C)
+                  check_cxx_compiler_flag("-fno-define-target-os-macros" ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_CXX)
+                  if(ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_C)
+                    set(ZLIB_CMAKE_C_FLAGS "-fno-define-target-os-macros")
+                  endif()
+                  if(ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_CXX)
+                    set(ZLIB_CMAKE_CXX_FLAGS "-fno-define-target-os-macros")
+                  endif()
+                endif()
+              EOS
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
     # values, which later surfaces as "CMAKE_AR-NOTFOUND: command not found".
@@ -133,7 +156,7 @@ class Bun < Formula
                 endif()
               EOS
 
-    system "bun", "run", "build:release"
+    system buildpath/"bootstrap-bin/bun", "run", "build:release"
 
     bin.install "build/release/bun"
     bin.install_symlink bin/"bun" => "bunx"
