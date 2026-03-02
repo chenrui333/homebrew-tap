@@ -69,6 +69,11 @@ class Bun < Formula
       # Highway can emit evex512 ignored-attribute warnings that become errors.
       ENV.append "CXXFLAGS", "-Wno-ignored-attributes"
     end
+    if OS.linux? && Hardware::CPU.arm?
+      # GCC 12/libstdc++ marks temporary-buffer helpers deprecated and Bun treats
+      # warnings as errors in TextCodecCJK.
+      ENV.append "CXXFLAGS", "-Wno-error=deprecated-declarations"
+    end
 
     # Some Bun CMake sub-builds fail to auto-detect archive tools under Homebrew
     # superenv and emit CMAKE_AR-NOTFOUND.
@@ -128,10 +133,10 @@ class Bun < Formula
     if OS.linux? && Hardware::CPU.intel?
       # Keep Linux x86_64 builds off unstable AVX3/AVX512 Highway targets.
       inreplace "src/bun.js/bindings/highway_strings.cpp",
-                "#include <hwy/foreach_target.h> // Must come before highway.h",
-                "#define HWY_DISABLED_TARGETS " \
+                "// Must be first\n#include \"root.h\"\n",
+                "// Must be first\n#define HWY_DISABLED_TARGETS " \
                 "(HWY_AVX3 | HWY_AVX3_DL | HWY_AVX3_ZEN4 | HWY_AVX3_SPR)\n" \
-                "#include <hwy/foreach_target.h> // Must come before highway.h"
+                "#include \"root.h\"\n"
     end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
