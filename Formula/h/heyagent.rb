@@ -7,9 +7,11 @@ class Heyagent < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4c1ab94ece877f47090fdbbdc55e7233681ba6e60717fe29f3c7b59939c5078"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d69d16c67197f6bbf4e9ed1aa4417123c424a67eed4a962305bb67eaa31ac52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96d70970980581b8b511e3e2262333ba304d854f7a0dfd96443ffd19ceffe889"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a89eb11619a8c5c77c1db80b8fc75083eb4b0fbddc7e002903bdba33b4f3bec9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a89eb11619a8c5c77c1db80b8fc75083eb4b0fbddc7e002903bdba33b4f3bec9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a89eb11619a8c5c77c1db80b8fc75083eb4b0fbddc7e002903bdba33b4f3bec9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7f3950bca7c2d9716b86dc8bba7606314957b6b4a7d81fe7978761b76b3bfd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7f3950bca7c2d9716b86dc8bba7606314957b6b4a7d81fe7978761b76b3bfd6"
   end
 
   depends_on "node"
