@@ -339,8 +339,8 @@ class SpecfactCli < Formula
   end
 
   resource "z3-solver" do
-    url "https://files.pythonhosted.org/packages/93/3b/2b714c40ef2ecf6d8aa080056b9c24a77fe4ca2c83abd83e9c93d34212ac/z3_solver-4.16.0.0.tar.gz"
-    sha256 "263d9ad668966e832c2b246ba0389298a599637793da2dc01cc5e4ef4b0b6c78"
+    url "https://files.pythonhosted.org/packages/52/17/a2456f380272af131637f358fce8e5ee36700f7f771fddb99758f98f9f9c/z3_solver-4.15.4.0.tar.gz"
+    sha256 "928c29b58c4eb62106da51c1914f6a4a55d0441f8f48a81b9da07950434a8946"
   end
 
   resource "zipp" do
