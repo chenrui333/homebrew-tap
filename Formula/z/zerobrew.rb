@@ -3,7 +3,7 @@ class Zerobrew < Formula
   homepage "https://github.com/lucasgelfond/zerobrew"
   url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.1.2.tar.gz"
   sha256 "efab8d6171751bdea6ef17b028d9dafccad45ff1252874ab2f1e6f87b4c2bdc1"
-  license "Apache-2.0"
+  license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/lucasgelfond/zerobrew.git", branch: "main"
 
   bottle do
