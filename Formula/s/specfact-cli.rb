@@ -19,6 +19,7 @@ class SpecfactCli < Formula
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
+  depends_on "libffi"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
