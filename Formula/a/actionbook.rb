@@ -1,8 +1,8 @@
 class Actionbook < Formula
   desc "Browser action engine for AI agents"
   homepage "https://actionbook.dev"
-  url "https://github.com/actionbook/actionbook/archive/refs/tags/actionbook-cli-v0.7.5.tar.gz"
-  sha256 "dd5c9bbf9794226b9a18ed963838312c01d4c7e2cdeb7cd1421aa0f443fcb171"
+  url "https://github.com/actionbook/actionbook/archive/refs/tags/actionbook-cli-v0.8.1.tar.gz"
+  sha256 "5db59f7fe5b67b82972b04720a88e36ff724762e313d4974ee893efad46a4036"
   license "Apache-2.0"
 
   bottle do
@@ -19,7 +19,7 @@ class Actionbook < Formula
   def install
     cd "packages/actionbook-rs" do
       # Keep binary `--version` aligned with the tagged CLI release.
-      inreplace "Cargo.toml", 'version = "0.7.1"', "version = \"#{version}\""
+      inreplace "Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
       system "cargo", "install", "--bin", "actionbook", *std_cargo_args
     end
   end
