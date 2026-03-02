@@ -72,7 +72,7 @@ class Bun < Formula
     if OS.linux? && Hardware::CPU.intel?
       # Keep Linux x86_64 builds off unstable AVX3/AVX512 Highway targets.
       ENV.append "CXXFLAGS",
-                 "-DHWY_DISABLED_TARGETS=(HWY_AVX3+HWY_AVX3_DL+HWY_AVX3_ZEN4+HWY_AVX3_SPR)"
+                 "-DHWY_DISABLED_TARGETS=HWY_AVX3+HWY_AVX3_DL+HWY_AVX3_ZEN4+HWY_AVX3_SPR"
     end
     if OS.linux? && Hardware::CPU.arm?
       # GCC 12/libstdc++ marks temporary-buffer helpers deprecated and Bun treats
@@ -140,11 +140,49 @@ class Bun < Formula
                   endif()
                 endif()
               EOS
-    if OS.mac?
-      # Newer macOS SDK headers declare this symbol without noexcept.
+    if OS.mac? && MacOS.version <= :sequoia
+      # macOS 14/15 SDK headers declare this symbol without noexcept.
       inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
                 "void std::__libcpp_verbose_abort(char const* format, ...) noexcept",
                 "void std::__libcpp_verbose_abort(char const* format, ...)"
+    end
+    if OS.mac?
+      # macOS 14's compiler does not support deducing-this syntax in this block.
+      inreplace "src/bun.js/bindings/napi.h",
+                <<~EOS,
+                  struct EitherCleanupHook : std::variant<SyncCleanupHook, AsyncCleanupHook> {
+                      template<typename Self>
+                      auto& get(this Self& self)
+                      {
+                          using Hook = MatchConst<Self, CleanupHook>::type;
+
+                          if (auto* sync = std::get_if<SyncCleanupHook>(&self)) {
+                              return static_cast<Hook&>(*sync);
+                          }
+
+                          return static_cast<Hook&>(std::get<AsyncCleanupHook>(self));
+                      }
+                EOS
+                <<~EOS
+                  struct EitherCleanupHook : std::variant<SyncCleanupHook, AsyncCleanupHook> {
+                      CleanupHook& get()
+                      {
+                          if (auto* sync = std::get_if<SyncCleanupHook>(this)) {
+                              return static_cast<CleanupHook&>(*sync);
+                          }
+
+                          return static_cast<CleanupHook&>(std::get<AsyncCleanupHook>(*this));
+                      }
+
+                      const CleanupHook& get() const
+                      {
+                          if (auto* sync = std::get_if<SyncCleanupHook>(this)) {
+                              return static_cast<const CleanupHook&>(*sync);
+                          }
+
+                          return static_cast<const CleanupHook&>(std::get<AsyncCleanupHook>(*this));
+                      }
+                EOS
     end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
