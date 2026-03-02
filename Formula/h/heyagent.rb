@@ -38,6 +38,6 @@ class Heyagent < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/hey --version")
-    assert_match "HeyAgent notifications enabled", shell_output("#{bin}/hey on")
+    assert_match "Provider: not set", shell_output("#{bin}/hey status")
   end
 end
