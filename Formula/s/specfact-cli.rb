@@ -364,8 +364,6 @@ class SpecfactCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/specfact --version")
-
-    assert_match "Initialization Complete", shell_output("#{bin}/specfact init")
-    assert_path_exists testpath/".github/prompts"
+    assert_match "IDE Initialization Complete", shell_output("#{bin}/specfact init ide")
   end
 end
