@@ -29,7 +29,7 @@ class Mcpc < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/mcpc --version")
-    output = shell_output("#{bin}/mcpc tools-list 2>&1", 1)
-    assert_match "[McpClient:mcpc] Failed to connect", output
+    output = shell_output("#{bin}/mcpc https://tools-list.invalid tools-list 2>&1", 3)
+    assert_match "Failed to connect", output
   end
 end
