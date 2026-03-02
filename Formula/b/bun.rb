@@ -125,6 +125,20 @@ class Bun < Formula
                   endif()
                 endif()
               EOS
+    # Highway AVX3/AVX512 target variants can fail to compile on Linux x86_64
+    # CI runners; disable those targets to keep baseline/x86-64 builds stable.
+    inreplace "cmake/targets/BuildHighway.cmake",
+              "endif()\n",
+              <<~EOS
+                endif()
+
+                if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64")
+                  list(APPEND HIGHWAY_CMAKE_ARGS
+                    -DCMAKE_C_FLAGS=-DHWY_DISABLED_TARGETS=(HWY_AVX3|HWY_AVX3_DL|HWY_AVX3_ZEN4|HWY_AVX3_SPR)
+                    -DCMAKE_CXX_FLAGS=-DHWY_DISABLED_TARGETS=(HWY_AVX3|HWY_AVX3_DL|HWY_AVX3_ZEN4|HWY_AVX3_SPR)
+                  )
+                endif()
+              EOS
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
     # values, which later surfaces as "CMAKE_AR-NOTFOUND: command not found".
