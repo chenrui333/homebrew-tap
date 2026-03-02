@@ -68,6 +68,11 @@ class Bun < Formula
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
     end
 
+    # Some Bun CMake sub-builds fail to auto-detect archive tools under Homebrew
+    # superenv and emit CMAKE_AR-NOTFOUND.
+    ENV["AR"] = "ar"
+    ENV["RANLIB"] = "ranlib"
+
     resource("bun-bootstrap").stage buildpath/"bootstrap"
     bootstrap_bin = Dir[buildpath/"bootstrap"/"**/bun"].first
     raise "bootstrap bun binary not found" if bootstrap_bin.nil?
