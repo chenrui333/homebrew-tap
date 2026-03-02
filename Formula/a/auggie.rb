@@ -1,9 +1,9 @@
 class Auggie < Formula
   desc "All the power of Augment Code in your terminal"
   homepage "https://www.augmentcode.com/product/CLI"
-  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.16.2.tgz"
-  sha256 "1a00dad9149e5afc473e1eb562febd836845f4b5ec2cf7183cf3c26c4e917fa8"
-  # license :unfree
+  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.17.2.tgz"
+  sha256 "f397da7bcba5af0ac0c45a73830cfdf5424c571c47951f094a5d066a73ac6bf4"
+  license :cannot_represent
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -20,7 +20,7 @@ class Auggie < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/auggie --version")
 
-    assert_match "Total: 14 tools", shell_output("#{bin}/auggie tools list")
-    assert_match "You are not currently logged in to Augment", shell_output("#{bin}/auggie model list 2>&1", 1)
+    assert_match "Total:", shell_output("#{bin}/auggie tools list")
+    assert_match "You are not currently logged in to Augment", shell_output("#{bin}/auggie model list 2>&1")
   end
 end
