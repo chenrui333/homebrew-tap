@@ -1,8 +1,8 @@
 class Moltis < Formula
   desc "Local-first personal AI gateway with plugin-driven channels"
   homepage "https://moltis.org/"
-  url "https://github.com/moltis-org/moltis/archive/refs/tags/v0.9.10.tar.gz"
-  sha256 "b9dc9f3c73242cd8c491a372a8f0c7cdbdf1bbb2355c73f6754669833fb6e842"
+  url "https://github.com/moltis-org/moltis/archive/refs/tags/v0.10.6.tar.gz"
+  sha256 "9fae8e64c22e6cd92a4cf3770858768745a0580b6649da496c074375420554d7"
   license "MIT"
   head "https://github.com/moltis-org/moltis.git", branch: "main"
 
@@ -26,6 +26,8 @@ class Moltis < Formula
   end
 
   def install
+    ENV["RUSTC_BOOTSTRAP"] = "1"
+
     if OS.linux?
       zlib = Formula["zlib-ng-compat"]
       ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
