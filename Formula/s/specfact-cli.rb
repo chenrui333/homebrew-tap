@@ -20,6 +20,7 @@ class SpecfactCli < Formula
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
+  depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
@@ -348,6 +349,11 @@ class SpecfactCli < Formula
   end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix.to_s
+    ENV["OPENSSL_LIB_DIR"] = Formula["openssl@3"].opt_lib.to_s
+    ENV["OPENSSL_INCLUDE_DIR"] = Formula["openssl@3"].opt_include.to_s
+    ENV.append_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+
     virtualenv_install_with_resources
   end
 
