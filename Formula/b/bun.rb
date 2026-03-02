@@ -155,6 +155,11 @@ class Bun < Formula
                   list(APPEND CMAKE_ARGS -DCMAKE_DSYMUTIL=${CMAKE_DSYMUTIL})
                 endif()
               EOS
+    # Newer libc++ <ranges> headers break if included after this private/public
+    # shim used by Bun's V8 header wrapper.
+    inreplace "src/bun.js/bindings/v8/real_v8.h",
+              "#define private public",
+              "#include <ranges>\n#define private public"
 
     system buildpath/"bootstrap-bin/bun", "run", "build:release"
 
