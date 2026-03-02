@@ -82,14 +82,54 @@ class Bun < Formula
     chmod 0755, buildpath/"bootstrap-bin/bun"
     ENV.prepend_path "PATH", buildpath/"bootstrap-bin"
 
-    # Avoid -Wundefined-var-template failures with current toolchains.
-    ENV.append "CXXFLAGS", "-Wno-undefined-var-template"
+    # Avoid warning-option portability breakages under newer AppleClang/GCC.
+    ENV.append "CFLAGS", "-Wno-unknown-warning-option"
+    ENV.append "CXXFLAGS", "-Wno-undefined-var-template -Wno-unknown-warning-option"
 
     # Bun 1.3.9 defines this dSYM post-build hook with no explicit SOURCES.
     # register_command rejects that, so wire the built bun binary as a source.
     inreplace "cmake/targets/BuildBun.cmake",
               "      TARGET\n        ${bun}\n      TARGET_PHASE\n",
               "      TARGET\n        ${bun}\n      SOURCES\n        ${BUILD_PATH}/${bun}\n      TARGET_PHASE\n"
+    # Apple strip lacks Bun's GNU-style options in this block.
+    inreplace "cmake/targets/BuildBun.cmake",
+              "    set(CMAKE_STRIP_FLAGS --remove-section=__TEXT,__eh_frame " \
+              "--remove-section=__TEXT,__unwind_info " \
+              "--remove-section=__TEXT,__gcc_except_tab)\n",
+              "    set(CMAKE_STRIP_FLAGS)\n"
+    inreplace "cmake/targets/BuildBun.cmake",
+              "          --strip-all\n          --strip-debug\n          --discard-all\n",
+              ""
+
+    # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
+    # values, which later surfaces as "CMAKE_AR-NOTFOUND: command not found".
+    inreplace "cmake/tools/SetupLLVM.cmake",
+              "  find_llvm_command(CMAKE_AR llvm-ar)\n",
+              <<~EOS
+                find_llvm_command(CMAKE_AR llvm-ar)
+                if(CMAKE_AR MATCHES "NOTFOUND")
+                  find_command(VARIABLE CMAKE_AR COMMAND ar REQUIRED ON)
+                  list(APPEND CMAKE_ARGS -DCMAKE_AR=${CMAKE_AR})
+                endif()
+              EOS
+    inreplace "cmake/tools/SetupLLVM.cmake",
+              "  find_llvm_command(CMAKE_RANLIB llvm-ranlib)\n",
+              <<~EOS
+                find_llvm_command(CMAKE_RANLIB llvm-ranlib)
+                if(CMAKE_RANLIB MATCHES "NOTFOUND")
+                  find_command(VARIABLE CMAKE_RANLIB COMMAND ranlib REQUIRED ON)
+                  list(APPEND CMAKE_ARGS -DCMAKE_RANLIB=${CMAKE_RANLIB})
+                endif()
+              EOS
+    inreplace "cmake/tools/SetupLLVM.cmake",
+              "    find_llvm_command(CMAKE_DSYMUTIL dsymutil)\n",
+              <<~EOS
+                find_llvm_command(CMAKE_DSYMUTIL dsymutil)
+                if(CMAKE_DSYMUTIL MATCHES "NOTFOUND")
+                  find_command(VARIABLE CMAKE_DSYMUTIL COMMAND dsymutil REQUIRED ON)
+                  list(APPEND CMAKE_ARGS -DCMAKE_DSYMUTIL=${CMAKE_DSYMUTIL})
+                endif()
+              EOS
 
     system "bun", "run", "build:release"
 
