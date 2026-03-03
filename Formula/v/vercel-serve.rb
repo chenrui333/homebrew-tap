@@ -1,8 +1,8 @@
 class VercelServe < Formula
   desc "Static file serving and directory listing"
   homepage "https://github.com/vercel/serve"
-  url "https://registry.npmjs.org/serve/-/serve-14.2.5.tgz"
-  sha256 "c0d39ad4cb5b5991b3860eeeba64d8d4f1aeb8f28035b08e12fb86182ca7456f"
+  url "https://registry.npmjs.org/serve/-/serve-14.2.6.tgz"
+  sha256 "126b5ec79d81a85307ebd1953084526ae181c203276cf64b961a7bee31cb7b81"
   license "MIT"
 
   bottle do
