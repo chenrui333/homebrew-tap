@@ -72,7 +72,7 @@ class Bun < Formula
     if OS.linux? && Hardware::CPU.intel?
       # Keep Linux x86_64 builds off unstable AVX3/AVX512 Highway targets.
       ENV.append "CXXFLAGS",
-                 "-DHWY_DISABLED_TARGETS=HWY_AVX3+HWY_AVX3_DL+HWY_AVX3_ZEN4+HWY_AVX3_SPR"
+                 "-DHWY_DISABLED_TARGETS=HWY_AVX3+HWY_AVX3_DL+HWY_AVX3_ZEN4+HWY_AVX3_SPR+HWY_AVX10_2"
     end
     if OS.linux? && Hardware::CPU.arm?
       # GCC 12/libstdc++ marks temporary-buffer helpers deprecated and Bun treats
@@ -194,6 +194,11 @@ class Bun < Formula
       inreplace "src/bun.js/bindings/napi.cpp",
                 "new Bun::NapiModuleMeta(globalObject->m_pendingNapiModuleDlopenHandle);",
                 "new Bun::NapiModuleMeta{globalObject->m_pendingNapiModuleDlopenHandle};"
+      # AppleClang 15 cannot deduce this aggregate's template argument from
+      # designated initializers.
+      inreplace "src/bun.js/bindings/node/crypto/KeyObject.cpp",
+                "auto buf = ncrypto::Buffer {",
+                "auto buf = ncrypto::Buffer<const unsigned char> {"
     end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
