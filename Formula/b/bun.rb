@@ -216,7 +216,7 @@ class Bun < Formula
                 "static constexpr auto humanReadableName = std::to_array(\"value\");\n")
         s.gsub!(/
           static\ constexpr\ auto\ humanReadableName\s*=\s*Bun::concatCStrings\(
-          "array of ",\s*Detail::nestedHumanReadableName<IDL>\(\)\);\s*
+          "array\ of\ ",\s*Detail::nestedHumanReadableName<IDL>\(\)\);\s*
         /mx,
                 "static constexpr auto humanReadableName = std::to_array(\"array\");\n")
         s.gsub!(/static constexpr auto humanReadableName\s*=\s*Bun::joinCStringsAsList\(Detail::nestedHumanReadableName<IDL>\(\)\.\.\.\);\s*/m,
