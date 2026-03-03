@@ -13,6 +13,15 @@ class Bun < Formula
   ]
   head "https://github.com/oven-sh/bun.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "ff3d868285c93142374ed139b20aec7c59635e4e18fd42c402935763dda07da3"
+    sha256                               arm64_sequoia: "7d9b1821cf04c2159b71f69c9fde3fca73734814e8178a95a3980f2d359dd519"
+    sha256                               arm64_sonoma:  "74e65dfed03a8422a6bd54627533fd136c5f790a299edb0368038f5d2d0acf88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3d078e53d2ff98655ab2d42dbc8fef000236d3989bff91625d7ab8b777e6ebf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae5fe762fe3c47a8e0fb9157db31700afa76543fbf1c94454d1976d2699dba19"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
