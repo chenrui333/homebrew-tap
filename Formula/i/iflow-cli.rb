@@ -1,8 +1,8 @@
 class IflowCli < Formula
   desc "AI assistant that runs directly in your terminal"
   homepage "https://cli.iflow.cn/"
-  url "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.14.tgz"
-  sha256 "7d715c3dc611e3134aaa96a1f68467471b2c50c9b04fba093f4bc4b2ad17b599"
+  url "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.15.tgz"
+  sha256 "de04af5f3c0e6f45f72704afa765795930e6f2657fa02dfea0ac72338348256c"
   license "Apache-2.0" # derived from LICENSE, but no source code for the project in https://github.com/iflow-ai/iflow-cli
 
   bottle do
