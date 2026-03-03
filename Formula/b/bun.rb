@@ -186,6 +186,12 @@ class Bun < Formula
                       }
                 EOS
     end
+    if OS.mac? && MacOS.version <= :sonoma
+      # AppleClang 15 rejects parenthesized aggregate init for this C-style type.
+      inreplace "src/bun.js/bindings/BunProcess.cpp",
+                "new Bun::NapiModuleMeta(globalObject->m_pendingNapiModuleDlopenHandle);",
+                "new Bun::NapiModuleMeta{globalObject->m_pendingNapiModuleDlopenHandle};"
+    end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
     # values, which later surfaces as "CMAKE_AR-NOTFOUND: command not found".
