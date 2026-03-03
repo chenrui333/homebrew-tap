@@ -245,6 +245,14 @@ class Bun < Formula
                 endif()
               EOS
     inreplace "cmake/tools/SetupLLVM.cmake",
+              "    find_llvm_command(LLD_PROGRAM ld.lld)\n",
+              <<~EOS
+                find_llvm_command(LLD_PROGRAM ld.lld)
+                if(LLD_PROGRAM MATCHES "NOTFOUND")
+                  find_command(VARIABLE LLD_PROGRAM COMMAND ld.lld REQUIRED ON)
+                endif()
+              EOS
+    inreplace "cmake/tools/SetupLLVM.cmake",
               "    find_llvm_command(CMAKE_DSYMUTIL dsymutil)\n",
               <<~EOS
                 find_llvm_command(CMAKE_DSYMUTIL dsymutil)
