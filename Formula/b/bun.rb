@@ -272,6 +272,13 @@ class Bun < Formula
                   list(APPEND CMAKE_ARGS -DCMAKE_DSYMUTIL=${CMAKE_DSYMUTIL})
                 endif()
               EOS
+    if OS.linux? && Hardware::CPU.arm?
+      # Full LTO on Linux ARM CI can OOM at the final bun-profile link step.
+      inreplace "cmake/Options.cmake",
+                "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN)",
+                "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN " \
+                "AND NOT (LINUX AND ARCH STREQUAL \"aarch64\"))"
+    end
     # Newer libc++ <ranges> headers break if included after this private/public
     # shim used by Bun's V8 header wrapper.
     inreplace "src/bun.js/bindings/v8/real_v8.h",
