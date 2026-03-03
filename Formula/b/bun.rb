@@ -74,7 +74,7 @@ class Bun < Formula
       ENV.append "CXXFLAGS",
                  "-DHWY_DISABLED_TARGETS=HWY_AVX3+HWY_AVX3_DL+HWY_AVX3_ZEN4+HWY_AVX3_SPR+HWY_AVX10_2"
     end
-    if OS.linux? && Hardware::CPU.arm?
+    if OS.linux?
       # GCC 12/libstdc++ marks temporary-buffer helpers deprecated and Bun treats
       # warnings as errors in TextCodecCJK.
       ENV.append "CXXFLAGS", "-Wno-error=deprecated-declarations"
