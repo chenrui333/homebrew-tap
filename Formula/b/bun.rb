@@ -140,6 +140,17 @@ class Bun < Formula
                   endif()
                 endif()
               EOS
+    # WebKit autobuild artifacts can contain this typo in JSArrayInlines.h.
+    inreplace "cmake/tools/SetupWebKit.cmake",
+              "file(RENAME ${CACHE_PATH}/bun-webkit ${WEBKIT_PATH})\n",
+              <<~EOS
+                file(RENAME ${CACHE_PATH}/bun-webkit ${WEBKIT_PATH})
+                if(EXISTS ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h)
+                  file(READ ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h JSARRAYINLINES_CONTENT)
+                  string(REPLACE "DirectArgumeLts" "DirectArguments" JSARRAYINLINES_CONTENT "${JSARRAYINLINES_CONTENT}")
+                  file(WRITE ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h "${JSARRAYINLINES_CONTENT}")
+                endif()
+              EOS
     if OS.mac? && MacOS.version <= :sequoia
       # macOS 14/15 SDK headers declare this symbol without noexcept.
       inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
