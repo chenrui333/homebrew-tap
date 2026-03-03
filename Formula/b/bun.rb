@@ -57,9 +57,14 @@ class Bun < Formula
 
   def install
     if OS.linux? && ENV["CI"]
-      # Linux CI runners are prone to OOM with default parallel build settings.
-      ENV.deparallelize
-      ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = "1"
+      # Linux ARM CI runners are prone to OOM with default parallel build settings.
+      if Hardware::CPU.arm?
+        ENV.deparallelize
+        ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = "1"
+      else
+        # Keep some parallelism on Linux x86_64 to avoid CI timeouts.
+        ENV["CMAKE_BUILD_PARALLEL_LEVEL"] = "2"
+      end
     end
 
     if OS.linux?
