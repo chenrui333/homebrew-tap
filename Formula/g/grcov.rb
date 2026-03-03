@@ -1,8 +1,8 @@
 class Grcov < Formula
   desc "Rust tool to collect and aggregate code coverage data for multiple source files"
   homepage "https://github.com/mozilla/grcov"
-  url "https://github.com/mozilla/grcov/archive/refs/tags/v0.10.5.tar.gz"
-  sha256 "afba6d38b56898575273f4639cb31dfcfa28de60eca0b157524ca96bc36bc320"
+  url "https://github.com/mozilla/grcov/archive/refs/tags/v0.10.6.tar.gz"
+  sha256 "26902308c2ce9fbd5d3e83cacd6083d332f2384227ca824c663b59219750a7f2"
   license "MPL-2.0"
 
   bottle do
