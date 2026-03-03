@@ -1,8 +1,8 @@
 class Gix < Formula
   desc "Git, but with superpowers"
   homepage "https://github.com/ademajagon/gix"
-  url "https://github.com/ademajagon/gix/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "8fa237140ce9c986f07908450853cf80a00a6b88af7dd1568ca84f0665c7f1ab"
+  url "https://github.com/ademajagon/gix/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "4ef0bca5a27f17ef4bb46239a8a5a7c43e3f32aac9a76ef8821b04b53f6d4e64"
   license "MIT"
 
   bottle do
