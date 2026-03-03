@@ -205,42 +205,23 @@ class Bun < Formula
                 "static_assert(sizeof(T) == 0, \"Invalid held type\");"
       # AppleClang 15 rejects several consteval string builders in this helper.
       # These names are for diagnostics only, so keep simpler literals on Sonoma.
-      inreplace "src/bun.js/bindings/BunIDLHumanReadable.h",
-                <<~EOS,
-                  static constexpr auto humanReadableName = Bun::concatCStrings(
-                      Detail::nestedHumanReadableName<IDL>(),
-                      Detail::separatorForHumanReadableBinaryDisjunction<IDL>(),
-                      "null");
-                EOS
-                <<~EOS
-                  static constexpr auto humanReadableName = std::to_array("value");
-                EOS
-      inreplace "src/bun.js/bindings/BunIDLHumanReadable.h",
-                <<~EOS,
-                  static constexpr auto humanReadableName = Bun::concatCStrings(
-                      Detail::nestedHumanReadableName<IDL>(),
-                      Detail::separatorForHumanReadableBinaryDisjunction<IDL>(),
-                      "undefined");
-                EOS
-                <<~EOS
-                  static constexpr auto humanReadableName = std::to_array("value");
-                EOS
-      inreplace "src/bun.js/bindings/BunIDLHumanReadable.h",
-                <<~EOS,
-                  static constexpr auto humanReadableName
-                      = Bun::concatCStrings("array of ", Detail::nestedHumanReadableName<IDL>());
-                EOS
-                <<~EOS
-                  static constexpr auto humanReadableName = std::to_array("array");
-                EOS
-      inreplace "src/bun.js/bindings/BunIDLHumanReadable.h",
-                <<~EOS,
-                  static constexpr auto humanReadableName
-                      = Bun::joinCStringsAsList(Detail::nestedHumanReadableName<IDL>()...);
-                EOS
-                <<~EOS
-                  static constexpr auto humanReadableName = std::to_array("value");
-                EOS
+      inreplace "src/bun.js/bindings/BunIDLHumanReadable.h" do |s|
+        s.gsub!(/
+          static\ constexpr\ auto\ humanReadableName\ =\ Bun::concatCStrings\(
+          \s*Detail::nestedHumanReadableName<IDL>\(\),
+          \s*Detail::separatorForHumanReadableBinaryDisjunction<IDL>\(\),
+          \s*"(?:null|undefined)"\);
+          \s*
+        /mx,
+                "static constexpr auto humanReadableName = std::to_array(\"value\");\n")
+        s.gsub!(/
+          static\ constexpr\ auto\ humanReadableName\s*=\s*Bun::concatCStrings\(
+          "array of ",\s*Detail::nestedHumanReadableName<IDL>\(\)\);\s*
+        /mx,
+                "static constexpr auto humanReadableName = std::to_array(\"array\");\n")
+        s.gsub!(/static constexpr auto humanReadableName\s*=\s*Bun::joinCStringsAsList\(Detail::nestedHumanReadableName<IDL>\(\)\.\.\.\);\s*/m,
+                "static constexpr auto humanReadableName = std::to_array(\"value\");\n")
+      end
     end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
