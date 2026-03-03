@@ -199,6 +199,10 @@ class Bun < Formula
       inreplace "src/bun.js/bindings/node/crypto/KeyObject.cpp",
                 "auto buf = ncrypto::Buffer {",
                 "auto buf = ncrypto::Buffer<const unsigned char> {"
+      # AppleClang 15 doesn't apply CWG2518; keep this assertion dependent.
+      inreplace "src/vm/SigintWatcher.h",
+                "static_assert(false, \"Invalid held type\");",
+                "static_assert(sizeof(T) == 0, \"Invalid held type\");"
     end
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
