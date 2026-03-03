@@ -282,7 +282,8 @@ class Bun < Formula
       inreplace "cmake/Options.cmake",
                 "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN)",
                 "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN " \
-                "AND NOT (LINUX AND (ARCH STREQUAL \"aarch64\" OR ARCH STREQUAL \"x86_64\")))"
+                "AND NOT (LINUX AND (ARCH STREQUAL \"aarch64\" OR ARCH STREQUAL \"arm64\" " \
+                "OR ARCH STREQUAL \"x86_64\" OR ARCH STREQUAL \"x64\")))"
     end
     # Newer libc++ <ranges> headers break if included after this private/public
     # shim used by Bun's V8 header wrapper.
