@@ -1,8 +1,8 @@
 class Clawea < Formula
   desc "Terminal-based weather forecast application"
   homepage "https://github.com/Cladamos/clawea"
-  url "https://github.com/Cladamos/clawea/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "63f02bae943f7142d5257366c2ca101396f2561ad5d913f2bbcc43356ae79384"
+  url "https://github.com/Cladamos/clawea/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "939e15ba6bc99c42ceb280e487596f58a4c12967bdb9c8c7d4910439a7a40df4"
   license :cannot_represent
   head "https://github.com/Cladamos/clawea.git", branch: "main"
 
