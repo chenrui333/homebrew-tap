@@ -8,11 +8,11 @@ class Zeptoclaw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0f130c3ddca45949ab0defbbd17f7473b62ce6745a66a8663dcfa6f74dd1732"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0848daa2af23a7e26f7daebadba14628261616c485805354ea55201d30322056"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44c707bd0d7afddafe405143506a6a62414d14b42bdde647f7623535617c758c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a650533a2b894e8ad3a820387115832c905ceaa46e31cb49300ec177a00f3db1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03b72ccff9469acf1e0515512edc2f974bdc1295b3bb37f04528c85cdcc6e8ca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "734ca13ac08a685351391364da606b20e396614ae5701f9f4a419e452b872ae2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "997b9efb11c4149c736fe0b37f8b1c7a58955cea566ab609cc46f9099733d288"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbf18cfe6234408fe53a7e47b251a7666d811cc35cd39c178d499507a71b86ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab4ed7f471f891e6e662efd891bede05a2eab4b7367c9e3a8a455b28cdeb303f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed3af41f55ff8fac1283a581cc343780b65efefa394a3f21b0e98ae6f63e47b2"
   end
 
   depends_on "rust" => :build
