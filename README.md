@@ -104,6 +104,7 @@ brew install --cask <tool>
 - `brunette`
 - `btczee`
 - `bulletty`
+- `bun`
 - `bytebox`
 - `c4go`
 - `captan`
