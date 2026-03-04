@@ -7,7 +7,7 @@ class ApifyActorsMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "68b3e0387039b6d16f6174c467f79e076c06c22c8d7c5f6957622b1ce27408af"
+    sha256 cellar: :any_skip_relocation, all: "f9bd96105de75fdad31f15eeb9ed0ed2db4969bd761eff4d2262043ca9b614f4"
   end
 
   depends_on "node"
