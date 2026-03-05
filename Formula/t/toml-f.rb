@@ -1,8 +1,8 @@
 class TomlF < Formula
   desc "TOML parser for data serialization/deserialization in Fortran"
   homepage "https://github.com/toml-f/toml-f"
-  url "https://github.com/toml-f/toml-f/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "d7fdd12a68c2e433785f453b20c1984bed037d213a35d8f0946da7e7f6b89c45"
+  url "https://github.com/toml-f/toml-f/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "a9e546221d788416fa6ca8d8550a79d1adf983a2a67b5c9ef57ae79fb02c9df0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/toml-f/toml-f.git", branch: "main"
 
