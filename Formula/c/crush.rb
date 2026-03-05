@@ -1,8 +1,8 @@
 class Crush < Formula
   desc "Glamorous AI coding agent for your favorite terminal"
   homepage "https://github.com/charmbracelet/crush"
-  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.47.1.tar.gz"
-  sha256 "d986d0f9975dfb4660bee717c0821165b998afdc95bdcbba7ef8e726df0760fd"
+  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.47.2.tar.gz"
+  sha256 "b782062d3e185de065632d6cf9701bf9b4be3419f688cc9a996f7ea397fe2c9b"
   # license "FSL-1.1-MIT"
   head "https://github.com/charmbracelet/crush.git", branch: "main"
 
