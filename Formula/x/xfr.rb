@@ -8,11 +8,11 @@ class Xfr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "387679a91e7c0e2bb54167dbe1c8bce8aacf3eb442b25c5cf84da5f00be489de"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39cb25cbe1ee58c6ffa1a875f1a9f5b4a2fe95be96b82f31d629b97a75adaf0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34c6dd84f901587cf331f07ecf2083e2b0b8285b1177ec214f1743f27381192a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97de6778165a44469f641b9c364d17fd40613655d08dd38e9c913de34a8101b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40baf36c5938598c920735642f6f5758853bc31c0f1a50b010c4c02966ab098a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c78d86670c06a8e1374fa305309dd09f53fe4687f050d3b87330a5040eb067e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f28dbc3312b84fa6183e8fbc350556f23fc960ec1babfe817b6220f8b346c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdb36f876a8f80418ab863cfae12e6256c223787fb713773b341c828492ffbb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa855e1f32bba2f774730bfa93cf62d2fa82871950da13fb063817d94377f9e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ad31b4374a1f4b0c98e39e8df9e5539ba0bc2711a0afa4dac76fad845af5199"
   end
 
   depends_on "rust" => :build
