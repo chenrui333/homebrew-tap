@@ -84,7 +84,6 @@ brew install --cask <tool>
 - `bearer`
 - `beelzebub`
 - `better-env`
-- `betterleaks`
 - `bibiman`
 - `bin-fq`
 - `bitchat-tui`
