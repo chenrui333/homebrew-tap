@@ -8,11 +8,11 @@ class Betterleaks < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "244b438c7f23008b54c0e7aeeabe7db39a69f6e5a254bc40260ffaaeacd08627"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "244b438c7f23008b54c0e7aeeabe7db39a69f6e5a254bc40260ffaaeacd08627"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "244b438c7f23008b54c0e7aeeabe7db39a69f6e5a254bc40260ffaaeacd08627"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8685db945294b2cfc1ec08952d1ebbdce2386fc247df22370c9f3db2de3c6901"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52bc272be61a4d21fe631a523c8efbc115b5e216f1a5b6e864a13e912241f1b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "262f03847d487830a55df9bc3d6c34a0bfdff79ba69c6985d6fe5488d1fb6cbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "262f03847d487830a55df9bc3d6c34a0bfdff79ba69c6985d6fe5488d1fb6cbb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "262f03847d487830a55df9bc3d6c34a0bfdff79ba69c6985d6fe5488d1fb6cbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "440a5057db09dbed6254c27bcfb0cb78277eee3d9c232161b9d180481f72ef85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f23243a3391c935d453f87748bb87ccb9e30fa623982cfd7d018b6ea51fd72"
   end
 
   depends_on "go" => :build
