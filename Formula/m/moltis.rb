@@ -1,8 +1,8 @@
 class Moltis < Formula
   desc "Local-first personal AI gateway with plugin-driven channels"
   homepage "https://moltis.org/"
-  url "https://github.com/moltis-org/moltis/archive/refs/tags/v0.10.16.tar.gz"
-  sha256 "5a31a974ba9888cb8416fd0e3594ffdf5c2c8588c763fda5d69801b9eb5ff073"
+  url "https://github.com/moltis-org/moltis/archive/refs/tags/v0.10.17.tar.gz"
+  sha256 "65cc0af6bcd2b70df0669eb76843519f74ba813be348c639899047e1c2178dd5"
   license "MIT"
   head "https://github.com/moltis-org/moltis.git", branch: "main"
 
