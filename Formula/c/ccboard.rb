@@ -23,7 +23,7 @@ class Ccboard < Formula
   end
 
   def install
-    system "cargo", "install", "--locked", *std_cargo_args(path: "crates/ccboard")
+    system "cargo", "install", *std_cargo_args(path: "crates/ccboard")
   end
 
   test do
