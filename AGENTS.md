@@ -118,10 +118,13 @@ All checks MUST pass locally before opening a PR:
 
 ```sh
 # Build from source (required)
-HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source <formula>
+HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source <formula>
 
 # Run tests
 brew test <formula>
+
+# Linkage check
+brew linkage --test <formula>
 
 # Audit (existing formula)
 brew audit --strict <formula>
@@ -133,6 +136,71 @@ brew audit --new <formula>
 brew style <formula>
 ```
 
+## PR Triage Workflow
+
+For formula patch PR triage, follow this exact sequence:
+
+1. Run brew ops and ensure all pass:
+   ```sh
+   HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source <formula>
+   brew test <formula>
+   brew linkage --test <formula>
+   brew audit --strict <formula>   # or --new for new formulae
+   brew style <formula>
+   ```
+   - If any step fails, patch the PR branch with the smallest formula fix and rerun the full brew-ops chain until all steps pass.
+   - When testing on Linux/macOS `*.upterm.dev` remote runners, do not run `exit`, `logout`, or close the session after brew ops; keep the runner alive for follow-up commands.
+2. Commit on the PR head branch with a short, concise formula patch:
+   ```sh
+   branch="$(gh pr view --json headRefName -q .headRefName)"
+   git switch "$branch"
+   git add Formula/<path>/<formula>.rb
+   git commit -m "<formula>: <short fix>"
+   ```
+3. Squash commits while preserving the BrewTestBot-compatible commit subject header:
+   ```sh
+   base="$(gh pr view --json baseRefName -q .baseRefName)"
+   header="$(git log --reverse --format=%s "origin/${base}..HEAD" | head -n1)"
+   # Squash as needed, but keep the final first line equal to "$header"
+   git log -1 --pretty=%s
+   ```
+4. Force-update the PR head branch safely:
+   ```sh
+   git push --force-with-lease origin "$branch"
+   ```
+5. Mark the PR with `CI-no-fail-fast`:
+   ```sh
+   pr="$(gh pr view --json number -q .number)"
+   gh pr edit "$pr" --add-label CI-no-fail-fast
+   ```
+6. If triaging many open PRs, dedupe only version-bump PRs for the same formula by keeping only the latest one.
+   - Apply this only to PR titles in version-bump format (`<formula> <version>`), and skip non-version PRs such as `foo: fix ...`.
+   ```sh
+   repo="<owner>/<repo>"
+   gh pr list --repo "$repo" --state open --limit 1000 --json number,title,createdAt > /tmp/open_prs.json
+   jq -r '
+     # Version-bump titles only: "<formula> <version>"
+     map(select(.title | test("^[^: ]+ [0-9]"))) |
+     sort_by(.createdAt) |
+     group_by(.title | capture("^(?<formula>[^ ]+) ").formula)[] |
+     select(length > 1) |
+     (.[-1].number | tostring) as $keeper |
+     .[0:-1][] |
+     "\(.number) \($keeper)"
+   ' /tmp/open_prs.json > /tmp/superseded_pr_pairs.txt
+   ```
+7. For each older PR, comment + label + close:
+   ```sh
+   repo="<owner>/<repo>"
+   while read -r old_pr keeper_pr; do
+     [ -n "$old_pr" ] || continue
+     printf 'Superseded by #%s\n' "$keeper_pr" > "/tmp/pr-${old_pr}-superseded.md"
+     gh pr comment "$old_pr" --repo "$repo" --body-file "/tmp/pr-${old_pr}-superseded.md"
+     gh pr edit "$old_pr" --repo "$repo" --add-label superseded
+     gh pr close "$old_pr" --repo "$repo"
+   done < /tmp/superseded_pr_pairs.txt
+   ```
+
 ## PR Template Checklist
 
 You MUST verify all items before submitting:
@@ -142,7 +210,9 @@ You MUST verify all items before submitting:
 - [ ] No existing [open PRs](https://github.com/Homebrew/homebrew-core/pulls) for same change
 - [ ] Built locally with `HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source`
 - [ ] Tests pass with `brew test`
+- [ ] Linkage passes with `brew linkage --test`
 - [ ] Audit passes with `brew audit --strict` (or `--new` for new formulae)
+- [ ] Style passes with `brew style`
 
 ## Commit Message Format
 
