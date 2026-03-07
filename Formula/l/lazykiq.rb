@@ -1,0 +1,26 @@
+class Lazykiq < Formula
+  desc "Rich terminal UI for Sidekiq"
+  homepage "https://kpumuk.github.io/lazykiq/"
+  url "https://github.com/kpumuk/lazykiq/archive/refs/tags/v0.0.13.tar.gz"
+  sha256 "a556b1ff88dbbd43e5d114d3f3142e69e9d35ae4d9a88358e8b843f30bf0140a"
+  license "MIT"
+  head "https://github.com/kpumuk/lazykiq.git", branch: "main"
+
+  depends_on "go" => :build
+
+  def install
+    ldflags = %W[
+      -s -w
+      -X main.Version=#{version}
+      -X main.BuiltBy=Homebrew
+    ]
+
+    system "go", "build", *std_go_args(ldflags:), "./cmd/lazykiq"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/lazykiq --version")
+    output = shell_output("#{bin}/lazykiq --redis not-a-url 2>&1", 1)
+    assert_match "parse redis url", output
+  end
+end
