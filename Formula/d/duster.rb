@@ -13,8 +13,6 @@ class Duster < Formula
   depends_on "php"
 
   def install
-    odie "try add version check back" if build.stable? && version > "3.3.0"
-
     bin.install "builds/duster" => "duster"
     bin.install "builds/duster.phar"
   end
