@@ -359,7 +359,7 @@ class SpecfactCli < Formula
     pyproject_content = pyproject.read
     pyproject_content.gsub!(%r{^\s*"modules/backlog-core"\s*=.*\n}, "")
     pyproject_content.gsub!(%r{^\s*"modules/bundle-mapper"\s*=.*\n}, "")
-    pyproject.write(pyproject_content)
+    File.write(pyproject, pyproject_content)
 
     virtualenv_install_with_resources
   end
