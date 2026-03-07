@@ -5,11 +5,6 @@ class NpmNp < Formula
   sha256 "7b54c3862d9046760ed55eaa65e7c17813183d46e1e9d593b5ea4eb3ab8a97e8"
   license "MIT"
 
-  bottle do
-    root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d64685a5a907a12f287d19b1ddf128bab429a593ae4b7e0fd85aa180d715848e"
-  end
-
   depends_on "node"
 
   on_linux do
