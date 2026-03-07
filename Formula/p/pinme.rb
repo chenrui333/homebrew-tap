@@ -14,6 +14,15 @@ class Pinme < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    node_modules = libexec/"lib/node_modules/pinme/node_modules"
+
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries.
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
