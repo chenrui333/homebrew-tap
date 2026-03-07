@@ -5,6 +5,15 @@ class NpmNp < Formula
   sha256 "7b54c3862d9046760ed55eaa65e7c17813183d46e1e9d593b5ea4eb3ab8a97e8"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d2400eee33c5b76567e08ef95148af41af183554a85bbf351119061113c954b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d2400eee33c5b76567e08ef95148af41af183554a85bbf351119061113c954b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d2400eee33c5b76567e08ef95148af41af183554a85bbf351119061113c954b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d093975ba79dd9e42744122db8692794957bd3f345d90d19a3a49b22a752ff0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d093975ba79dd9e42744122db8692794957bd3f345d90d19a3a49b22a752ff0d"
+  end
+
   depends_on "node"
 
   on_linux do
