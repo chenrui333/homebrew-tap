@@ -4,6 +4,7 @@ class DealveTui < Formula
   url "https://github.com/kurama/dealve-tui/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "b7361e77437307ba967eba74afbdb771712160e5980b5f6d5dfb2deb624f2ad7"
   license any_of: ["MIT", "Apache-2.0"]
+  revision 1
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
