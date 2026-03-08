@@ -4,6 +4,7 @@ class Tredis < Formula
   url "https://github.com/huseyinbabal/tredis/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "cabecaa55b0dce4162f88c27a4949102e53563a0cd0945116a6408d6f122b306"
   license "MIT"
+  revision 1
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
