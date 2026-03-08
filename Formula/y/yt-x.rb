@@ -6,6 +6,11 @@ class YtX < Formula
   license "MIT"
   head "https://github.com/Benexl/yt-x.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "21857de520a03f64fb8fa48b5230626a9cbe4fbb06781cd9b073a1dcb6463c14"
+  end
+
   depends_on "bash"
   depends_on "ffmpeg"
   depends_on "fzf"
