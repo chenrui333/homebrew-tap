@@ -4,6 +4,7 @@ class Tfjournal < Formula
   url "https://github.com/Owloops/tfjournal/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "11648cf5e910890592da30ff028aa172c3eebc0e73a1a3eb11d206196df43dbc"
   license "MIT"
+  revision 1
   head "https://github.com/Owloops/tfjournal.git", branch: "main"
 
   depends_on "go" => :build
