@@ -182,8 +182,45 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
 
-      - name: Label the PR with 'pr-pull'
+      - name: Check for bottle JSON artifacts
         if: env.skip_label == 'false'
-        run: gh pr edit "${{ github.event.pull_request.number }}" --add-label 'pr-pull' --repo "${{ github.repository }}"
+        run: |
+          temp_dir="$(mktemp -d)"
+          trap 'rm -rf "$temp_dir"' EXIT
+
+          found=false
+          while IFS= read -r artifact_name; do
+            [ -n "$artifact_name" ] || continue
+            rm -rf "$temp_dir"/*
+            gh run download "${{ github.run_id }}" \
+              --repo "${{ github.repository }}" \
+              --name "$artifact_name" \
+              --dir "$temp_dir"
+            if find "$temp_dir" -type f -name '*.bottle.json' -print -quit | grep -q .; then
+              found=true
+              break
+            fi
+          done < <(
+            gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+              --jq '.artifacts[] | select(.name | startswith("bottles_")) | .name'
+          )
+
+          echo "has_bottle_json=$found" >> "$GITHUB_ENV"
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+      - name: Label the PR with 'pr-pull'
+        if: env.skip_label == 'false' && env.has_bottle_json == 'true'
+        run: |
+          if gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name' | grep -q "^pr-pull$"; then
+            gh pr edit "${{ github.event.pull_request.number }}" --remove-label 'pr-pull' --repo "${{ github.repository }}"
+          fi
+          gh pr edit "${{ github.event.pull_request.number }}" --add-label 'pr-pull' --repo "${{ github.repository }}"
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+
+      - name: Skip 'pr-pull' label without bottle artifacts
+        if: env.skip_label == 'false' && env.has_bottle_json != 'true'
+        run: echo "No bottle JSON artifacts were produced in this run; skipping pr-pull label."
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
