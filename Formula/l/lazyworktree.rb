@@ -4,6 +4,7 @@ class Lazyworktree < Formula
   url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.41.0.tar.gz"
   sha256 "01d3f737424f9e8fff9b847426548f0fc53e5e8c97c53da4b1def6fa06095bdf"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/chmouel/lazyworktree.git", branch: "main"
 
   depends_on "go" => :build
