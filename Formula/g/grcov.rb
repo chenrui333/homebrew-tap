@@ -4,6 +4,7 @@ class Grcov < Formula
   url "https://github.com/mozilla/grcov/archive/refs/tags/v0.10.7.tar.gz"
   sha256 "5c4a236133f6982a4ea6588f0b1a9c0cc5838be50cb533da2023344b198120df"
   license "MPL-2.0"
+  head "https://github.com/mozilla/grcov.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -17,7 +18,9 @@ class Grcov < Formula
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
