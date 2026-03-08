@@ -4,6 +4,7 @@ class Datui < Formula
   url "https://github.com/derekwisong/datui/archive/refs/tags/v0.2.49.tar.gz"
   sha256 "461640173fccaedeb3a140ea15f3beb739b394271a2514bd9aa789a04a44f8c4"
   license "MIT"
+  revision 1
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
