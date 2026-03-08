@@ -6,6 +6,11 @@ class Clawhub < Formula
   license "MIT"
   head "https://github.com/openclaw/clawhub.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "933df7491f7da04e4307e1c03df9a570f0835a4ebc290564a13336ae11b164ff"
+  end
+
   depends_on "node"
 
   def install
