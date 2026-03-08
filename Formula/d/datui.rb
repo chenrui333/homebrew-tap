@@ -6,6 +6,13 @@ class Datui < Formula
   license "MIT"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f95e744d35717eb57183e1f2619f5f92f4bb8229d6ac7a9f52d826c7d5ca9aaf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "271809a4c0143cd5214e0244f0b3f8150bd714e5eef4e207978aeb655a0141d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75e5d7634f4a66954f39e6de08aec34f5a4e264ad9d8cbebd61c43c3d7cfb071"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "fontconfig"
