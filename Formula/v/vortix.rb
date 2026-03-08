@@ -21,7 +21,7 @@ class Vortix < Formula
   depends_on "wireguard-tools"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
