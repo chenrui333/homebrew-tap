@@ -6,6 +6,15 @@ class Dawn < Formula
   license "MIT"
   head "https://github.com/andrewmd5/dawn.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6039749249f63c460808c38d248a8bc72e2455a13e27137c760e546bfee77ffb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e188e1162d85c4e41d32732adc5274f6e9dc7f83d722827db428aeea2e595a12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a210d7778dafba5671d2471f067d30c2f41040278abd0f904879650838d8c24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa3faacb6ad8f00c6890ef5258529a50301dbd60a018e1b4e187211beae05572"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10fd5b53586c1bf7ce5fdc1e060599a447b7522ef1be0f9743d6d1f5f2d781a"
+  end
+
   depends_on "cmake" => :build
   depends_on "curl"
 
