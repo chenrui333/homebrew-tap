@@ -6,6 +6,15 @@ class Lazykiq < Formula
   license "MIT"
   head "https://github.com/kpumuk/lazykiq.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc8ab479853d9b4614d8d2b68fa6e9a608d413c60e0b7a4011532396fb1a6332"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc8ab479853d9b4614d8d2b68fa6e9a608d413c60e0b7a4011532396fb1a6332"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc8ab479853d9b4614d8d2b68fa6e9a608d413c60e0b7a4011532396fb1a6332"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59c78c9ee4b070e516fbdf89b0b18ec872e7d4e8895af3897f1bc842f19bd9bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26494fa0a09c648b372abbf738e99d8a262f9846edc7462dbed6e1d3251a050c"
+  end
+
   depends_on "go" => :build
 
   def install
