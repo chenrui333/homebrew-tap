@@ -141,6 +141,15 @@ brew audit --new <formula>
 brew style <formula>
 ```
 
+## Merge Path
+
+- Any formula PR that is not labeled `CI-syntax-only` MUST go through the `pr-pull` process.
+  - This includes new formulae, version bumps, revision rebuilds, and formula fixes that should produce or refresh bottles.
+  - After checks pass, wait for the test workflow to add `pr-pull`, then let the `brew pr-pull` workflow merge the PR.
+  - Do NOT manually merge these PRs with `gh pr merge`, because that bypasses BrewTestBot bottle commits and can leave `main` without a `bottle do` block.
+- Manual merges are acceptable only for PRs explicitly labeled `CI-syntax-only`, meaning CI should run syntax checks only and no bottle-producing build should occur.
+- If a new formula lands on `main` without a `bottle do` block, open a one-formula follow-up PR that only adds or increments `revision` to force a fresh bottle build, and again leave that PR for the bot-managed `pr-pull` merge path.
+
 ## PR Triage Workflow
 
 For formula patch PR triage, follow this exact sequence:
@@ -178,7 +187,10 @@ For formula patch PR triage, follow this exact sequence:
    pr="$(gh pr view --json number -q .number)"
    gh pr edit "$pr" --add-label CI-no-fail-fast
    ```
-6. If triaging many open PRs, dedupe only version-bump PRs for the same formula by keeping only the latest one.
+6. For any formula PR not labeled `CI-syntax-only`, stop after the branch is green and labeled correctly, then leave merge to the bot-managed `pr-pull` workflow.
+   - Do NOT use `gh pr merge` manually for formula PRs that should produce bottles.
+   - If the goal is to regenerate missing bottles for a merged formula, open a one-formula `revision` follow-up PR and again leave merge to `pr-pull`.
+7. If triaging many open PRs, dedupe only version-bump PRs for the same formula by keeping only the latest one.
    - Apply this only to PR titles in version-bump format (`<formula> <version>`), and skip non-version PRs such as `foo: fix ...`.
    ```sh
    repo="<owner>/<repo>"
@@ -194,7 +206,7 @@ For formula patch PR triage, follow this exact sequence:
      "\(.number) \($keeper)"
    ' /tmp/open_prs.json > /tmp/superseded_pr_pairs.txt
    ```
-7. For each older PR, comment + label + close:
+8. For each older PR, comment + label + close:
    ```sh
    repo="<owner>/<repo>"
    while read -r old_pr keeper_pr; do
@@ -235,6 +247,7 @@ You MUST verify all items before submitting:
 - One formula change per PR
 - Keep diffs minimal and focused
 - Provide only essential context in PR description
+- For any formula PR not labeled `CI-syntax-only`, use the `pr-pull` merge path so BrewTestBot adds the bottle commit to `main`
 
 ### MUST NOT
 
@@ -243,6 +256,7 @@ You MUST verify all items before submitting:
 - Include large logs or verbose output in PR body
 - Add non-Homebrew usage caveats in PR body
 - Include unrelated refactors or cleanups
+- Manually merge formula PRs that are not labeled `CI-syntax-only` with `gh pr merge`
 
 ## PR Description Template
 
