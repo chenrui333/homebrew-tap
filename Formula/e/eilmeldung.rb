@@ -4,6 +4,7 @@ class Eilmeldung < Formula
   url "https://github.com/christo-auer/eilmeldung/archive/refs/tags/1.0.0.tar.gz"
   sha256 "c4167e91c69dd174552535f0a2bf8718617ec29c8f6999dc990d2d320f51d146"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/christo-auer/eilmeldung.git", branch: "main"
 
   depends_on "pkgconf" => :build
