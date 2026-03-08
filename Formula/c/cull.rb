@@ -4,6 +4,7 @@ class Cull < Formula
   url "https://github.com/legostin/cull/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "d0c74e027aca172e55281a58492e78ced4cfdc896a89ba501a0d9e7ea54ee948"
   license "MIT"
+  revision 1
   head "https://github.com/legostin/cull.git", branch: "main"
 
   depends_on "go" => :build
