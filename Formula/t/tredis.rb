@@ -16,7 +16,7 @@ class Tredis < Formula
     ENV["OPENSSL_INCLUDE_DIR"] = openssl.opt_include
     ENV.prepend_path "PKG_CONFIG_PATH", openssl.opt_lib/"pkgconfig"
 
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
