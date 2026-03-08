@@ -129,7 +129,6 @@ brew install --cask <tool>
 - `chalet`
 - `chatlog`
 - `chatuino`
-- `checkpwn`
 - `checksec`
 - `chproxy`
 - `clai`
@@ -137,7 +136,9 @@ brew install --cask <tool>
 - `claudio`
 - `clawbands`
 - `clawea`
+- `clawhub`
 - `clawra`
+- `claws`
 - `cli-mcp-server`
 - `clickup-mcp`
 - `climp`
@@ -145,7 +146,6 @@ brew install --cask <tool>
 - `clog-cli`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
-- `cloudflare-speed-cli`
 - `cloudlens`
 - `clox`
 - `cmdperf`
@@ -182,6 +182,7 @@ brew install --cask <tool>
 - `datacmd`
 - `datadog-mcp-server`
 - `datui`
+- `dawn`
 - `daylight`
 - `dbee`
 - `dbin`
@@ -204,6 +205,7 @@ brew install --cask <tool>
 - `dory-cli`
 - `dotbins`
 - `dotr`
+- `dotstate`
 - `dqy`
 - `drft`
 - `dumper`
@@ -221,6 +223,7 @@ brew install --cask <tool>
 - `emplace`
 - `enola`
 - `enry`
+- `envdiff`
 - `envie`
 - `envlens`
 - `envtpl`
@@ -251,6 +254,7 @@ brew install --cask <tool>
 - `fortran-linter`
 - `foy`
 - `frep`
+- `fresh`
 - `froggit`
 - `fsociety`
 - `fuck-u-code`
@@ -442,6 +446,7 @@ brew install --cask <tool>
 - `moltbook-tui`
 - `moltis`
 - `mongodb-mcp-server`
+- `monitui`
 - `mpfshell`
 - `mqtt-cli`
 - `msgvault`
@@ -470,6 +475,7 @@ brew install --cask <tool>
 - `octelium`
 - `octotype`
 - `oeis-tui`
+- `offpunk`
 - `ohy`
 - `olla`
 - `omni-cache`
@@ -684,6 +690,7 @@ brew install --cask <tool>
 - `travelgrunt`
 - `trdl`
 - `tredis`
+- `trex`
 - `trieve-cli`
 - `tsuki`
 - `tuono`
@@ -691,6 +698,7 @@ brew install --cask <tool>
 - `twig`
 - `twiggy`
 - `twilio-mcp-server`
+- `typeui-sh`
 - `ugdb`
 - `unused-deps`
 - `uplift`
@@ -727,6 +735,7 @@ brew install --cask <tool>
 - `yosay`
 - `youtube-music-cli`
 - `yr`
+- `yt-x`
 - `go-zzz`
 - `zero`
 - `zerobrew`
