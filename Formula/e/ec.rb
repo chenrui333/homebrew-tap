@@ -4,6 +4,7 @@ class Ec < Formula
   url "https://github.com/chojs23/ec/archive/refs/tags/v0.2.3.tar.gz"
   sha256 "9093607b10bf080f4d1ab92898e1b3b9af8bfb67049775ce3d4daaae3fd28d27"
   license "MIT"
+  revision 1
   head "https://github.com/chojs23/ec.git", branch: "main"
 
   depends_on "go" => :build
