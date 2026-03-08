@@ -4,6 +4,7 @@ class Vortix < Formula
   url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "6fbf71e896cd8ced1073c7eee51317686e63e5da13a369fd20cd3de34411c9cc"
   license "MIT"
+  revision 1
   head "https://github.com/Harry-kp/vortix.git", branch: "main"
 
   depends_on "rust" => :build
