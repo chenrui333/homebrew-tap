@@ -7,6 +7,15 @@ class Ec < Formula
   revision 1
   head "https://github.com/chojs23/ec.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b17cfcc40f81568ba951026be68dfe1d2d7b389ff123d709aec21a3d7cc6a01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b17cfcc40f81568ba951026be68dfe1d2d7b389ff123d709aec21a3d7cc6a01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b17cfcc40f81568ba951026be68dfe1d2d7b389ff123d709aec21a3d7cc6a01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05e8acee84b0b502f0d54c9f6ae49327d8a34f03dd7684849fb48f75877a54c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "860fa6e8a064c67523688a62235b6f0e2c231cf8bf5f062cd6a283393a0e33d1"
+  end
+
   depends_on "go" => :build
 
   def install
