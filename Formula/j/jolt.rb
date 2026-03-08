@@ -4,6 +4,7 @@ class Jolt < Formula
   url "https://github.com/jordond/jolt/archive/refs/tags/1.2.0.tar.gz"
   sha256 "c6756b84349a6f253d81eb9ad6074f9b94461043c053b1b7ce5f86c2e1bed04d"
   license "MIT"
+  revision 1
   head "https://github.com/jordond/jolt.git", branch: "main"
 
   depends_on "rust" => :build
