@@ -9,9 +9,11 @@ class OxylabsMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "40ef74dee5f97187ab684a305f3582117399cdc333f8a61ebca3de257400530a"
-    sha256 cellar: :any,                 arm64_sonoma:  "197ec13929ea08d7b2ff1e660252e804a5006da1e45abe046ca600e6630da29e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b85fc0e9478db6aa913f0af1f4da4d63eab784c1e9282add33b025bb04ee004"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f564a7953ed8d04959b6d771c4a4037cd8d6fbdd08869330214cd2a6171b957"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3acf76db671958526b9716e11299841a4cb10263081799fe2d7bfbb03b525171"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a08a1053e3a9e19724d06cb0e7e71d382341c35cf2d0498e158dda3ec3b0a10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07516b9b91dfc790c0e95715773b80e936a492cfd9c097ac6d6fbd45288e4bd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f27b86915c907cad49bdc04d32e07a6df3fe84b5ed6e9f01b0496f46023f5569"
   end
 
   depends_on "rust" => :build # for uv-build
