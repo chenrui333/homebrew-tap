@@ -7,6 +7,17 @@ This document helps coding agents produce high-quality PRs for homebrew-core for
 1. **Check for existing PRs** for the same formula: [open PRs](https://github.com/Homebrew/homebrew-core/pulls)
 2. Run `brew tap homebrew/core` if not already tapped
 
+## Tap/Core Overlap Checks
+
+- Treat a tap vs `homebrew/core` overlap as real only when both formulae point to the same upstream project.
+- For quick screening, compare exact formula name plus `url` and `desc`; a name match alone is not enough.
+- Re-verify any collision whose `url` or `desc` differs before proposing removal, rename, or dedupe work.
+- Known exceptions in this tap:
+  - `hello` is an intentional overlap and should be kept because it is used to test the tap formula infrastructure.
+  - `kafka` is an intentional overlap because this tap needs Kafka 3.9.
+  - `zookeeper` is an intentional overlap because this tap needs a JDK 21 build; the `homebrew/core` `openjdk`-based formula does not work for this use case.
+  - `carton` is a name-only collision, not a real overlap: this tap packages `swiftwasm/carton`, while `homebrew/core` `carton` is the Perl CPAN dependency manager.
+
 ## Version Updates
 
 Preferred method for version bumps:
