@@ -11,6 +11,9 @@ on:
 permissions:
   contents: write
 
+# Keep only the newest run for a given ref.
+# Side effect: older commits can show a cancelled check in GitHub's UI because
+# concurrency cancellation is reported as cancelled, not skipped/successful.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
