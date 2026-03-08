@@ -1,8 +1,8 @@
 class Lazycelery < Formula
   desc "High-performance TUI for Docker container management"
   homepage "https://github.com/fguedes90/lazycelery"
-  url "https://github.com/Fguedes90/lazycelery/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "9cd598627727535f63c5c5184c28779ba6bef9f917592a1fede2b23f4a19e53a"
+  url "https://github.com/Fguedes90/lazycelery/archive/refs/tags/v0.8.3.tar.gz"
+  sha256 "5e9ec7fa7285678eb07fdf88cd9147fb6ed0ec1e77df6f1204661e2275114966"
   license "MIT"
   head "https://github.com/Fguedes90/lazycelery.git", branch: "main"
 
@@ -18,7 +18,6 @@ class Lazycelery < Formula
   depends_on "rust" => :build
 
   def install
-    inreplace "Cargo.toml", "0.7.2", version.to_s
     system "cargo", "install", *std_cargo_args
   end
 
