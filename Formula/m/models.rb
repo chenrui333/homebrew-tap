@@ -4,6 +4,7 @@ class Models < Formula
   url "https://github.com/arimxyer/models/archive/refs/tags/v0.9.7.tar.gz"
   sha256 "9bb24235bb5deddd73ead028a51cdc7c7bcb0993d0fc254af37a194f13fce56e"
   license "MIT"
+  revision 1
   head "https://github.com/arimxyer/models.git", branch: "main"
 
   depends_on "rust" => :build
