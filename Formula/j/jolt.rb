@@ -18,13 +18,13 @@ class Jolt < Formula
 
   depends_on "rust" => :build
 
+  def install
+    system "cargo", "install", *std_cargo_args(path: "cli")
+  end
+
   service do
     run [opt_bin/"jolt", "daemon", "start", "--foreground"]
     keep_alive true
-  end
-
-  def install
-    system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do
