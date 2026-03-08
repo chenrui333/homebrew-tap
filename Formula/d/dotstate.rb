@@ -24,17 +24,12 @@ class Dotstate < Formula
   end
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_LIB_DIR"] = Formula["openssl@3"].opt_lib
-    ENV["OPENSSL_INCLUDE_DIR"] = Formula["openssl@3"].opt_include
-
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"dotstate", "completions")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/dotstate --version")
-    assert_match "_dotstate", shell_output("#{bin}/dotstate completions zsh")
+    assert_match "No files are currently synced", shell_output("#{bin}/dotstate list")
   end
 end
