@@ -4,6 +4,7 @@ class Perch < Formula
   url "https://github.com/ricardodantas/perch/archive/refs/tags/v0.3.3.tar.gz"
   sha256 "c4a6b6212f16c6ddd4d37d131235997da0cdb9334977fd2c45326726c158736d"
   license "GPL-3.0-or-later"
+  revision 1
 
   depends_on "rust" => :build
 
