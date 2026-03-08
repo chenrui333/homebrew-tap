@@ -4,6 +4,7 @@ class RalphTui < Formula
   url "https://github.com/subsy/ralph-tui/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "aa532de1fab2a8e7ebb0cf575e26fdf2a4ad5d3454459a7e7487f1912ec1dc5a"
   license "MIT"
+  revision 1
   head "https://github.com/subsy/ralph-tui.git", branch: "main"
 
   depends_on "oven-sh/bun/bun" => :build
