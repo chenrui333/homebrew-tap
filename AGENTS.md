@@ -147,6 +147,10 @@ brew style <formula>
   - This includes new formulae, version bumps, revision rebuilds, and formula fixes that should produce or refresh bottles.
   - After checks pass, wait for the test workflow to add `pr-pull`, then let the `brew pr-pull` workflow merge the PR.
   - Do NOT manually merge these PRs with `gh pr merge`, because that bypasses BrewTestBot bottle commits and can leave `main` without a `bottle do` block.
+- Never force-push `main` to `main`.
+  - `git push --force-with-lease` is only for PR head branches that you explicitly verified are not `main`.
+  - When updating `main`, use a normal `git push origin main`.
+  - If local `main` and `origin/main` diverge, run `git pull --rebase origin main`, resolve conflicts locally, and then push normally.
 - Manual merges are acceptable only for PRs explicitly labeled `CI-syntax-only`, meaning CI should run syntax checks only and no bottle-producing build should occur.
 - If a new formula lands on `main` without a `bottle do` block, open a one-formula follow-up PR that only adds or increments `revision` to force a fresh bottle build, and again leave that PR for the bot-managed `pr-pull` merge path.
 
@@ -180,6 +184,7 @@ For formula patch PR triage, follow this exact sequence:
    ```
 4. Force-update the PR head branch safely:
    ```sh
+   test "$branch" != main
    git push --force-with-lease origin "$branch"
    ```
 5. Mark the PR with `CI-no-fail-fast`:
