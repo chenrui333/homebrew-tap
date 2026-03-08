@@ -1,8 +1,8 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.47.tar.gz"
-  sha256 "b000a61677361af3b7b8b155c5b1f104b07700792e6408306086aaf4402ae18d"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.52.tar.gz"
+  sha256 "13214fc63f71b7d0676a8f0653f28cc50f9e91dc840ac0e3b9e9088c93ff5e0d"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
@@ -15,14 +15,22 @@ class YoutubeMusicCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9d0595e8d8ba3484d131754afbd113d8f403533554cf6b4f939d5c5cb6981bf"
   end
 
+  depends_on "oven-sh/bun/bun" => :build
   depends_on "mpv"
   depends_on "node"
   depends_on "yt-dlp"
 
   def install
+    bun = Formula["oven-sh/bun/bun"].opt_bin/"bun"
+
     system "npm", "install", "--include=dev", "--legacy-peer-deps",
            *std_npm_args(prefix: false, ignore_scripts: false)
-    system "npm", "exec", "--", "tsc"
+    system bun, "build", "source/cli.tsx", "--outfile", "dist/index.js", "--target", "node",
+           "--footer", "//Copyright (c) 2026 involvex"
+    inreplace "package.json",
+              "\"youtube-music-cli\": \"dist/source/cli.js\"",
+              "\"youtube-music-cli\": \"dist/index.js\""
+    inreplace "package.json", "\"ymc\": \"dist/source/cli.js\"", "\"ymc\": \"dist/index.js\""
     system "npm", "install", *std_npm_args
 
     notifier_app = "lib/node_modules/@involvex/youtube-music-cli/node_modules/" \
