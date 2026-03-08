@@ -4,6 +4,7 @@ class Hazelnut < Formula
   url "https://github.com/ricardodantas/hazelnut/archive/refs/tags/v0.2.49.tar.gz"
   sha256 "b5a56cdd717dab2fe6ca0442377b4b8bc375639531a82bddeff8ec1ad31520eb"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ricardodantas/hazelnut.git", branch: "main"
 
   depends_on "rust" => :build
