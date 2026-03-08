@@ -6,6 +6,11 @@ class TypeuiSh < Formula
   license "MIT"
   head "https://github.com/bergside/typeui.sh.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "6185a36906e8284d58901a8c7f11659a16519df8a70ce6c6f0ead30393e87ab9"
+  end
+
   depends_on "node"
 
   def install
