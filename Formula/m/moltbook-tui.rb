@@ -4,6 +4,7 @@ class MoltbookTui < Formula
   url "https://github.com/terminaltrove/moltbook-tui/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "b970101d47776b976ef848424454742a047fcaf1b4fb24f4d0bc4bfdc5b954b7"
   license "MIT"
+  revision 1
   head "https://github.com/terminaltrove/moltbook-tui.git", branch: "master"
 
   depends_on "rust" => :build
