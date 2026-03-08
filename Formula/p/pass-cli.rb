@@ -6,6 +6,15 @@ class PassCli < Formula
   license "Apache-2.0"
   head "https://github.com/ari1110/pass-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "419c5306d548525ef048090cd89c9c091b0a0a6fe6775610490dbc8fff27862b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "419c5306d548525ef048090cd89c9c091b0a0a6fe6775610490dbc8fff27862b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "419c5306d548525ef048090cd89c9c091b0a0a6fe6775610490dbc8fff27862b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9320490be9df9e612ec654d64617a3d502c9690286acd227d6ec4a159a363a56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14ddd5f10875474155681dc1118b053328e2d12013c21fb9ac10ddfb57525778"
+  end
+
   depends_on "go" => :build
 
   def install
