@@ -11,6 +11,12 @@ class Monitui < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "26383a4ef0c055352385b1997222737ccf25ec08928904d8da75d5177e275fef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c824557421ea50b2f17f6c4e1245f3dccc42c5e421e183047787fba930ab87a"
+  end
+
   depends_on "rust" => :build
   depends_on :linux
 
