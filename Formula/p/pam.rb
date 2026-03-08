@@ -4,6 +4,7 @@ class Pam < Formula
   url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.3.0-beta.tar.gz"
   sha256 "32dd9ab000f8c498427ab7ed715b33166ab19b4fcb850479da709b684a037760"
   license "MIT"
+  revision 1
   head "https://github.com/eduardofuncao/squix.git", branch: "main"
 
   depends_on "go" => :build
