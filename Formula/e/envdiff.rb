@@ -6,6 +6,15 @@ class Envdiff < Formula
   license "MIT"
   head "https://github.com/GBerghoff/envdiff.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a619afa4736964247d536547808f2fc31c182477c393210e4ac13453c44db1f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a619afa4736964247d536547808f2fc31c182477c393210e4ac13453c44db1f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a619afa4736964247d536547808f2fc31c182477c393210e4ac13453c44db1f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b597916be394eafc9cbac9e820677dfcce41522ceeb1bd11772d1da96040e70d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92e45b69f62a2c7d952b1681744935ba2704c409c4b8cf9c1d553616f3e4319f"
+  end
+
   depends_on "go" => :build
 
   def install
