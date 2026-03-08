@@ -6,6 +6,15 @@ class Trex < Formula
   license "MIT"
   head "https://github.com/samyakbardiya/trex.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ab02fb815c86743c45a4179d7c2cca14b8aa5e938479c75fa28e1efd148214a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c05fc6b6bb3c711c05f1bfafa995058ac268f41810bd08abcbc0736f7fa49191"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9623dee3aec234208778759dd98140d325df855317de055088e67c19d23fa5ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36bbc437ea60e8a1465b80618a6380d4089ca563e0f04ce0a2caddce82e94c4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d84c0aa3fcc31267a78dc5733735c59d660677b66af73bb916d023df533259b5"
+  end
+
   depends_on "go" => :build
 
   on_linux do
