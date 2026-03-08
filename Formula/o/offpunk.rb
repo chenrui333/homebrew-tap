@@ -8,6 +8,15 @@ class Offpunk < Formula
   license "AGPL-3.0-or-later"
   head "https://git.sr.ht/~lioploum/offpunk", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "774f83295e237fad60b5521f62d0fcddd9cb51713850c71d9ae378bb37e14fc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "facc58ffad213e0518c229e61220964f388a7f6555de0e91e761cc1335b1a445"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "381110f8c3d72ef9b92fdc8ef7975616bd06fa5217832c836a3bf21ec3f105a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cae1bbf83d568265252b58f5e298dcebf7cf582c5893b66a9e5a585cacb23e54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3da53a81237c610cecc63a47d4c8586995689b881af20ef1dcc9069e3a5051"
+  end
+
   depends_on "gettext" => :build
   depends_on "python@3.13"
 
