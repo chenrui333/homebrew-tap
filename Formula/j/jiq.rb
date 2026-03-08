@@ -6,6 +6,15 @@ class Jiq < Formula
   license "Apache-2.0"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b92d16cc52546d6287797cbbbad708348946462a44c520326bd3afecd83954e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da31ae86182e38af09b165fe334cdc5b1009bfedf5b7c5cdb4c0e9dab41529d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "500189605e88cfb18348a7c4a675deaf6d24880a8e195c96fecc6f8adc4b3ad8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6b93db43e36849e61742cb38a731b6b8f75ec7509a3dde6147d4a25e72cd1ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30b833baa9294d44a8e6fd1bbda7ce44859ac6de7ffaaaa0314142d0e2466b1b"
+  end
+
   depends_on "rust" => :build
 
   def install
