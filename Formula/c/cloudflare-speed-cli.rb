@@ -4,6 +4,7 @@ class CloudflareSpeedCli < Formula
   url "https://github.com/kavehtehrani/cloudflare-speed-cli/archive/refs/tags/v0.6.5.tar.gz"
   sha256 "d259b81f2641613192ef00612a58a817e3cb04e83ee56f8e2052d70cf403bf7f"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/kavehtehrani/cloudflare-speed-cli.git", branch: "main"
 
   depends_on "rust" => :build
