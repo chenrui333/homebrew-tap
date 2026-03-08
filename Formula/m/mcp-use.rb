@@ -36,14 +36,13 @@ class McpUse < Formula
       {
         "compilerOptions": {
           "target": "ES2020",
-          "module": "commonjs",
-          "lib": ["ES2020"],
+          "module": "ESNext",
+          "moduleResolution": "bundler",
           "outDir": "./dist",
           "rootDir": "./src",
           "strict": true,
           "esModuleInterop": true,
-          "skipLibCheck": true,
-          "forceConsistentCasingInFileNames": true
+          "skipLibCheck": true
         },
         "include": ["src/**/*"],
         "exclude": ["node_modules"]
@@ -51,7 +50,14 @@ class McpUse < Formula
     JSON
 
     (testpath/"src/index.ts").write <<~TYPESCRIPT
-      export const hello = (): string => "Hello from mcp-use";
+      import { MCPServer } from "mcp-use/server";
+
+      const server = new MCPServer({
+        name: "test-mcp-server",
+        version: "1.0.0",
+      });
+
+      export default server;
     TYPESCRIPT
 
     (testpath/"package.json").write <<~JSON
@@ -60,10 +66,9 @@ class McpUse < Formula
         "version": "1.0.0",
         "description": "Test project for mcp-use",
         "main": "dist/index.js",
-        "scripts": {
-          "build": "tsc"
-        },
+        "type": "module",
         "devDependencies": {
+          "mcp-use": "^1.21.2",
           "typescript": "^5.0.0"
         }
       }
@@ -73,6 +78,6 @@ class McpUse < Formula
     system bin/"mcp-use", "build"
 
     assert_path_exists testpath/"dist/index.js"
-    assert_match "Hello from mcp-use", (testpath/"dist/index.js").read
+    assert_match "test-mcp-server", (testpath/"dist/index.js").read
   end
 end
