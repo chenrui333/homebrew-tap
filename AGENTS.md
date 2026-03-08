@@ -78,12 +78,17 @@ Commit message: `foo 1.2.3 (new formula)`
 - **Build source policy**: MUST build from source in the formula (e.g., `go build`, `cargo install`, `cmake`, etc.).
   - Do NOT package upstream prebuilt binaries/releases for formula installation.
   - If upstream only ships binaries and no buildable source path, raise it for manual review instead of adding the formula.
+  - Rust binary formulae MUST use `cargo install` with `std_cargo_args` (for example `system "cargo", "install", *std_cargo_args(path: ".")`).
+  - Do NOT hand-roll standard Rust binary installs with `cargo build` + `bin.install` when `std_cargo_args` applies.
+  - Do NOT manually append `--locked` or `--path` when `std_cargo_args(path: "...")` is used.
 - **Test block**: MUST verify actual functionality, not just `--version` or `--help`
   - Include a version assertion as an additional check whenever a reliable version command/output exists
   - Prefer the simple standard form: `assert_match version.to_s, shell_output("#{bin}/foo --version")`
   - Avoid regex-only version assertions when `version.to_s` matching is available
   - For libraries: compile and link sample code
   - Use `testpath` for temporary files
+  - Do NOT set `ENV["HOME"] = testpath.to_s` in `test do`.
+  - Prefer command-scoped environment overrides such as `shell_output("HOME=#{testpath} #{bin}/foo ...")` or `system "env", "HOME=#{testpath}", bin/"foo", ...`.
 - **Completions policy**: Add shell completion support when upstream CLI supports it.
   - Use Homebrew DSL: `generate_completions_from_executable`.
   - Rust CLIs: prefer `shell_parameter_format: :clap`.
