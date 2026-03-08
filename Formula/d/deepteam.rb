@@ -17,10 +17,13 @@ class Deepteam < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for pydantic
+  depends_on "rust" => :build # for jiter
   depends_on "certifi"
   depends_on "libyaml"
+  depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
+
+  pypi_packages exclude_packages: %w[pydantic pydantic-core]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
@@ -212,16 +215,6 @@ class Deepteam < Formula
     sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
   end
 
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/69/44/36f1a6e523abc58ae5f928898e4aca2e0ea509b5aa6f6f392a5d882be928/pydantic-2.12.5.tar.gz"
-    sha256 "4d351024c75c0f085a9febbb665ce8c0c6ec5d30e903bdb6394b7ede26aebb49"
-  end
-
-  resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
-    sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
-  end
-
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
     sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
@@ -363,16 +356,13 @@ class Deepteam < Formula
   end
 
   def install
-    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
-    # defer installation to allow `typer` to use argument as shell for completions
-    # Ref: https://typer.tiangolo.com/features/#user-friendly-cli-apps
-    venv = virtualenv_install_with_resources without: "shellingham"
-    generate_completions_from_executable(bin/"deepteam", "--show-completion")
-    venv.pip_install resource("shellingham")
+    virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"deepteam", shell_parameter_format: :typer)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/deepteam --version")
+    ENV["PYTHONWARNINGS"] = "ignore::SyntaxWarning"
 
     (testpath/"bad.yaml").write <<~YAML
       target:
@@ -380,6 +370,6 @@ class Deepteam < Formula
     YAML
 
     output = shell_output("#{bin}/deepteam run #{testpath}/bad.yaml 2>&1", 1)
-    assert_match "OpenAIError: The api_key client option must be set", output
+    assert_match "OpenAI API key is not configured", output
   end
 end
