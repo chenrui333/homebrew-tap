@@ -4,6 +4,7 @@ class Jiq < Formula
   url "https://github.com/bellicose100xp/jiq/archive/refs/tags/v3.21.0.tar.gz"
   sha256 "fc03c02bacb74573fb9a446d7809c5ae7d2e9ef1cc1f849d24a40683173b23f6"
   license "Apache-2.0"
+  revision 1
 
   depends_on "rust" => :build
 
