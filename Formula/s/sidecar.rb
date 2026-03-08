@@ -4,6 +4,7 @@ class Sidecar < Formula
   url "https://github.com/marcus/sidecar/archive/refs/tags/v0.77.0.tar.gz"
   sha256 "5f27ab886cae95a3b2681a0d376528ccaf07cb0c129ae5c749557f2eafa7effb"
   license "MIT"
+  revision 1
   head "https://github.com/marcus/sidecar.git", branch: "main"
 
   depends_on "go" => :build
