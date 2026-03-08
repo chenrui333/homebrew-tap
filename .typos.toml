@@ -37,6 +37,7 @@ certifi = "certifi" # python package name used in ruby formulae
 fo = "fo" # for resinator.rb
 
 [type.md.extend-words]
+certifi = "certifi"
 ratatui = "ratatui"
 
 [type.tap_migrations]
