@@ -7,6 +7,15 @@ class Jolt < Formula
   revision 1
   head "https://github.com/jordond/jolt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "525093f44a0865b41ed2d6cf36102d6da4f83ae444f89240a9d1f2ab21874858"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7c25b17322156fd70d85dd79a412e592f04e2199a7bca6a1168b0d8f41c1f8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfc33f3eb04c5d36f398c97f28d05b4beb914aa53f0eed7cec6da9df7673240f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d03de623ccd0ba5efc9482a79ac8ec769081105047014971a55dd6db58c26e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c74805dbfa0d8ff6810654a2557f3362833b8b568b51fcfb4cc32b8bb69e56d1"
+  end
+
   depends_on "rust" => :build
 
   service do
