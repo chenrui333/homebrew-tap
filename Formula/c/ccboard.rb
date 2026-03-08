@@ -1,8 +1,8 @@
 class Ccboard < Formula
   desc "Unified Claude Code management dashboard for TUI and web"
   homepage "https://github.com/FlorianBruniaux/ccboard"
-  url "https://github.com/FlorianBruniaux/ccboard/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "a3f96b7c0dc7e33591d9ceed4c60172a40cec6de7ff00eda367adfd2f1a20166"
+  url "https://github.com/FlorianBruniaux/ccboard/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "adb2d490778b6fbc21e082655a8e2b35a40ae0a28f77f185d5a1a95eb9649de7"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/FlorianBruniaux/ccboard.git", branch: "main"
 
@@ -17,12 +17,17 @@ class Ccboard < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "trunk" => :build
 
   on_linux do
     depends_on "openssl@3"
   end
 
   def install
+    cd "crates/ccboard-web" do
+      system Formula["trunk"].opt_bin/"trunk", "build", "--release"
+    end
+
     system "cargo", "install", *std_cargo_args(path: "crates/ccboard")
   end
 
