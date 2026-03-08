@@ -7,6 +7,15 @@ class Cull < Formula
   revision 1
   head "https://github.com/legostin/cull.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5cdfc5f1e2cbb51c46db96c8a4a6ba9daf61e4b43d6c545ff97b63cf6f0bcc87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cdfc5f1e2cbb51c46db96c8a4a6ba9daf61e4b43d6c545ff97b63cf6f0bcc87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cdfc5f1e2cbb51c46db96c8a4a6ba9daf61e4b43d6c545ff97b63cf6f0bcc87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2716caa08dc8689679c1b4bee1f64cfa6a75ffbe8180783b8d1046c2a8568b09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fad8d679f511d833223fcee4e3be01f2ac92742271d45989991aab8cda718943"
+  end
+
   depends_on "go" => :build
 
   def install
