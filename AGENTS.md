@@ -120,7 +120,8 @@ Commit message: `foo 1.2.3 (new formula)`
 - Avoid static-only installs unless upstream cannot build shared libraries, or there is a clear technical reason documented in the formula.
 - If upstream lacks `install()` rules, manual installation is acceptable, but still prefer installing the shared artifact when available.
 
-- **Service block**: If the software can run as a daemon, include a `service do` block:
+- **Service block**: If the software can run as a daemon, include a `service do` block.
+  - Place `service do` after `def install` and before `test do`.
   ```ruby
 service do
   run [opt_bin/"foo", "start"]
