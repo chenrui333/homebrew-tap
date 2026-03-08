@@ -55,6 +55,25 @@ session_dir.mkpath
 bin.install_symlink libexec.glob("bin/*")
 ```
 
+### Python Dependency Reuse
+
+When a Python formula can reuse a packaged dependency from Homebrew instead of vendoring it as a resource, prefer the shared formula dependency.
+
+- For Pydantic v2 consumers, prefer:
+  ```ruby
+  depends_on "pydantic" => :no_linkage
+  ```
+- Do NOT add `depends_on "pydantic-core"`: there is no standalone `pydantic-core` formula in Homebrew; `pydantic-core` is provided by the `pydantic` formula.
+- Remove vendored `pydantic`, `pydantic-core`, and their helper resources when they are satisfied by the shared `pydantic` formula.
+- If the formula uses `pypi_packages`, exclude shared Python formula deps there as well so autobump can manage the remaining vendored resources cleanly. For example:
+  ```ruby
+  depends_on "certifi" => :no_linkage
+  depends_on "pydantic" => :no_linkage
+
+  pypi_packages exclude_packages: %w[certifi pydantic]
+  ```
+- Apply the same exclusion pattern to any other shared Python deps moved out of resources, such as `cryptography` or `rpds-py`.
+
 ### When to Add a Revision
 
 Add or increment `revision` when:
