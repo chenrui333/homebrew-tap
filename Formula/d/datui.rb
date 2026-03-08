@@ -10,7 +10,7 @@ class Datui < Formula
   depends_on "fontconfig"
 
   def install
-    system "cargo", "install", "--bin", "datui", *std_cargo_args(path: ".")
+    system "cargo", "install", "--bin", "datui", *std_cargo_args
   end
 
   test do
