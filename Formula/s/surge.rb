@@ -4,6 +4,7 @@ class Surge < Formula
   url "https://github.com/surge-downloader/Surge/archive/refs/tags/v0.6.10.tar.gz"
   sha256 "3cfb3cc68d360f370863f4d487b56ef56f920a3add0fb9d35da1ab3303a8d947"
   license "MIT"
+  revision 1
   head "https://github.com/surge-downloader/Surge.git", branch: "main"
 
   depends_on "go" => :build
