@@ -4,6 +4,7 @@ class HardcoverTui < Formula
   url "https://github.com/NotMugil/hardcover-tui/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "fa230e92bc28cde6f7f49aa0489834d9060f7935815a92a1e95d3853b100c838"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/NotMugil/hardcover-tui.git", branch: "main"
 
   depends_on "go" => :build
