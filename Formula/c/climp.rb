@@ -4,6 +4,7 @@ class Climp < Formula
   url "https://github.com/olivier-w/climp/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "92b30ab8aff15240f1d859cc2667d380d7b58642990023875fafae2b111b91c8"
   license "Apache-2.0"
+  revision 1
 
   depends_on "go" => :build
   depends_on "pkgconf" => :build
