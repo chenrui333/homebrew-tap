@@ -73,8 +73,9 @@ class YtX < Formula
     libexec.install "yt-x"
     pkgshare.install "extensions"
 
-    ENV["HOME"] = buildpath.to_s
-    generate_completions_from_executable(libexec/"yt-x", "completions", shell_parameter_format: :flag)
+    with_env("HOME" => buildpath.to_s) do
+      generate_completions_from_executable(libexec/"yt-x", "completions", shell_parameter_format: :flag)
+    end
 
     path = [
       Formula["ffmpeg"].opt_bin,
