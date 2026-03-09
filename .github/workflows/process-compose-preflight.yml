@@ -35,11 +35,6 @@ jobs:
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - name: Tap current branch
-        run: |
-          brew untap chenrui333/tap || true
-          brew tap --custom-remote chenrui333/tap "$GITHUB_WORKSPACE"
-
       - name: Install from source
         run: brew install --build-from-source chenrui333/tap/process-compose
 
