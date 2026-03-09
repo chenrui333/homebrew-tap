@@ -85,6 +85,17 @@ When a Python formula can reuse a packaged dependency from Homebrew instead of v
   ```
 - Apply the same exclusion pattern to any other shared Python deps moved out of resources, such as `cryptography` or `rpds-py`.
 
+### Linux `zlib` Dependency
+
+- Do NOT use `uses_from_macos "zlib"`.
+- Prefer:
+  ```ruby
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+  ```
+- Keep this Linux-only unless the formula needs a separate macOS change for other reasons.
+
 ### When to Add a Revision
 
 Add or increment `revision` when:
