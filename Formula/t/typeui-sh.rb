@@ -23,8 +23,6 @@ class TypeuiSh < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
     (testpath/".typeui-sh").mkpath
     (testpath/".typeui-sh/license.json").write <<~JSON
       {
