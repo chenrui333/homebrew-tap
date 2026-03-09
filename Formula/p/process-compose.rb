@@ -6,6 +6,15 @@ class ProcessCompose < Formula
   license "Apache-2.0"
   head "https://github.com/F1bonacc1/process-compose.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "705a519f80ec2199bea884daee09e812653c578acb854cd06796052a6a94114d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2eb55a3ec7237927d31a4a4312b16828dd11fd03951b5b8c4674ccab33675466"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9857bc6418ecb9bcad9789af182a78c96cd0f032092d3c788692bcdfc073ccf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b612b9202723ba637593f5613bd4686fc226b531b9e0f29d8c218dfaf2ee80dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f885ad22bd5edfc7aaee0f691ec5d8c230bfa237f95714a3fc6fce57335c9c74"
+  end
+
   depends_on "go" => :build
 
   def install
