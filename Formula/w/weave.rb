@@ -8,11 +8,11 @@ class Weave < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c35c0c3dca623fac836919568e7a95ffecee8f1c9a707f9921b805d17caaba2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9f6e61e354a519f249410061851455740f444af1cb9bfba011bb27b4a91a57e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "243e898f97f6b9d3ab3c89f3913c28c8fbca21f72746b3142d2370e26a2608d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c65403b60cd476f89979eaccd26d4a7b365c43feacc5f39d9c3703e1a2581162"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50374ce60ddfd3d3c86adfaa1f28388c3fbc8405c417238f982bd80b4ea6345"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65a8e93a2ac4019cca3b3433d088efbb36c793ac7c4ee4cfc6936ef8d8462ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aedb948fc1519e5da801c54f4fb516980dd06655db005ee9b02df1324f6ca5d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd718472e2590f696268e5b693aafc6300d000c97ace0a1b61b5202522e01786"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c01ce93248a1812d55c7c12840df6701641bf863b785641648381e06598347"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12e66e0c73b52a34fc3b29601991cb53874e6790b24acbb94515505c62c385d1"
   end
 
   depends_on "pkgconf" => :build
