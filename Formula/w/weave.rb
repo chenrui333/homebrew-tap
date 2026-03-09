@@ -6,6 +6,15 @@ class Weave < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/weave.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c35c0c3dca623fac836919568e7a95ffecee8f1c9a707f9921b805d17caaba2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9f6e61e354a519f249410061851455740f444af1cb9bfba011bb27b4a91a57e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "243e898f97f6b9d3ab3c89f3913c28c8fbca21f72746b3142d2370e26a2608d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c65403b60cd476f89979eaccd26d4a7b365c43feacc5f39d9c3703e1a2581162"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50374ce60ddfd3d3c86adfaa1f28388c3fbc8405c417238f982bd80b4ea6345"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
