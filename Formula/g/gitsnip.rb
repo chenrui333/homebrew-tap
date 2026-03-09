@@ -6,6 +6,15 @@ class Gitsnip < Formula
   license "MIT"
   head "https://github.com/dagimg-dot/gitsnip.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fd3e70e13030ef490ddc878f213becaa8ef397c8fae07683174dd7c8448220b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fd3e70e13030ef490ddc878f213becaa8ef397c8fae07683174dd7c8448220b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fd3e70e13030ef490ddc878f213becaa8ef397c8fae07683174dd7c8448220b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2cbf575ef6e7f4e406d3602f702e65bdd5d943fa07b3f010611474b7a97f081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b7b3b188029b4233f92d5f8f51f0aced96d5a5b3fcb625cd8bc4a65e6ef297"
+  end
+
   depends_on "go" => :build
 
   def install
