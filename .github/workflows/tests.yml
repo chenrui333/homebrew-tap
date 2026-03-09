@@ -12,24 +12,6 @@ on:
     paths:
       - 'Formula/**'
   workflow_dispatch:
-    inputs:
-      formulae:
-        description: "Space-separated formula names to test"
-        required: true
-        type: string
-      added_formulae:
-        description: "Optional override for added formula names"
-        required: false
-        type: string
-      deleted_formulae:
-        description: "Optional space-separated deleted formula names"
-        required: false
-        type: string
-      fail_fast:
-        description: "Stop the matrix on the first failure"
-        required: false
-        default: false
-        type: boolean
 
 env:
   HOMEBREW_DEVELOPER: 1
@@ -134,7 +116,7 @@ jobs:
             workdir: /github/home
             cleanup: false
             timeout: 4320
-      fail-fast: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.fail-fast) || github.event_name == 'workflow_dispatch' && inputs.fail_fast || false }}
+      fail-fast: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.fail-fast) || false }}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
     timeout-minutes: ${{ matrix.timeout || (github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.timeout-minutes) || 240) }}
@@ -165,31 +147,9 @@ jobs:
             export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
           fi
 
-          # Use custom args for PR events, workflow-dispatch inputs otherwise.
+          # Use custom args for PR events, default args otherwise
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
-          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            formulae='${{ inputs.formulae }}'
-            added_formulae='${{ inputs.added_formulae }}'
-            deleted_formulae='${{ inputs.deleted_formulae }}'
-
-            args=(
-              --only-formulae
-              --junit
-              --only-json-tab
-              --skip-recursive-dependents
-              --root-url=https://ghcr.io/v2/chenrui333/tap
-            )
-
-            [[ -n "${formulae}" ]] && args+=(--testing-formulae="${formulae}")
-            if [[ -n "${added_formulae}" ]]; then
-              args+=(--added-formulae="${added_formulae}")
-            elif [[ -n "${formulae}" ]]; then
-              args+=(--added-formulae="${formulae}")
-            fi
-            [[ -n "${deleted_formulae}" ]] && args+=(--deleted-formulae="${deleted_formulae}")
-
-            brew test-bot "${args[@]}"
           else
             brew test-bot --only-formulae --skip-recursive-dependents --root-url="https://ghcr.io/v2/chenrui333/tap"
           fi
@@ -231,7 +191,7 @@ jobs:
           found=false
           while IFS= read -r artifact_name; do
             [ -n "$artifact_name" ] || continue
-            find "$temp_dir" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+            rm -rf "$temp_dir"/*
             gh run download "${{ github.run_id }}" \
               --repo "${{ github.repository }}" \
               --name "$artifact_name" \
