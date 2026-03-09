@@ -6,6 +6,15 @@ class Tasktimer < Formula
   license "MIT"
   head "https://github.com/caarlos0/tasktimer.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7423695d29ff6f93744ecd727203012371c9a4c7d2ff327b63e546abd489594b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7423695d29ff6f93744ecd727203012371c9a4c7d2ff327b63e546abd489594b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7423695d29ff6f93744ecd727203012371c9a4c7d2ff327b63e546abd489594b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32b4cbb01f332d3e56cf7b615fe0b04aaeeb699710a827c87633da99a1ed9cde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8704793ceb1dfb00610690327fc7ba65ad9536ce2ebd800b66065b8e02ad8b68"
+  end
+
   depends_on "go" => :build
 
   def install
