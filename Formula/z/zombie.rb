@@ -22,8 +22,6 @@ class Zombie < Formula
   end
 
   test do
-    ENV["HOME"] = testpath
-
     history_path = if OS.mac?
       testpath/"Library/Application Support/com.zombie.cli/history.json"
     else
