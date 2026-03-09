@@ -162,11 +162,13 @@ brew install --cask <tool>
 - `codex-viz`
 - `codstts`
 - `cohctl`
+- `comchan`
 - `container-use`
 - `container2wasm`
 - `context-file-manager`
 - `context42`
 - `copilot-cli`
+- `countryfetch`
 - `cozypkg`
 - `cpx`
 - `cpx11`
@@ -224,11 +226,13 @@ brew install --cask <tool>
 - `enola`
 - `enry`
 - `envdiff`
+- `envfetch`
 - `envie`
 - `envlens`
 - `envtpl`
 - `envtrace`
 - `envx`
+- `ereandel`
 - `ergo`
 - `fairyglade-ly`
 - `faq`
@@ -249,7 +253,6 @@ brew install --cask <tool>
 - `flipt`
 - `flow-editor`
 - `flowgger`
-- `flowrs`
 - `fnug`
 - `fortran-linter`
 - `foy`
@@ -257,6 +260,7 @@ brew install --cask <tool>
 - `fresh`
 - `froggit`
 - `fsociety`
+- `ftdv`
 - `fuck-u-code`
 - `g1c`
 - `gemini-cli`
@@ -271,7 +275,7 @@ brew install --cask <tool>
 - `gitid`
 - `gitlabform`
 - `gitman`
-- `gittype`
+- `gitsnip`
 - `gitv`
 - `gix`
 - `glsl-analyzer`
@@ -445,10 +449,12 @@ brew install --cask <tool>
 - `moltis`
 - `mongodb-mcp-server`
 - `monitui`
+- `motus`
 - `mpfshell`
 - `mqtt-cli`
 - `msgvault`
 - `mtef`
+- `mult`
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
@@ -487,6 +493,7 @@ brew install --cask <tool>
 - `otelgen`
 - `otto`
 - `oui`
+- `outside`
 - `owlex`
 - `oxbuild`
 - `oxylabs-mcp`
@@ -528,6 +535,7 @@ brew install --cask <tool>
 - `pphack`
 - `pr-desc-cli`
 - `precompress`
+- `process-compose`
 - `procmux`
 - `proto2yaml`
 - `protoc-gen-lint`
@@ -595,6 +603,7 @@ brew install --cask <tool>
 - `seamstress`
 - `seastar`
 - `secco`
+- `sem-cli`
 - `semaphore`
 - `sephera`
 - `sgpt`
@@ -646,6 +655,7 @@ brew install --cask <tool>
 - `tantivy-cli`
 - `taproom`
 - `taskonaut`
+- `tasktimer`
 - `tattoy`
 - `tatuin`
 - `tavily-mcp`
@@ -718,6 +728,7 @@ brew install --cask <tool>
 - `wakey`
 - `wallust`
 - `watchfiles`
+- `weave`
 - `wedl`
 - `weekly-git-summary`
 - `werk`
