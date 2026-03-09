@@ -49,6 +49,10 @@ jobs:
               path: \.github/autobump\.txt
               allow_any_match: true
 
+            - label: skills
+              path: skills/.+
+              allow_any_match: true
+
             - label: missing license
               path: Formula/.+
               missing_content: \n  license .+\n
