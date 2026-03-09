@@ -335,6 +335,17 @@ When using `gh` to create/edit PRs or issues:
 - For Linux failures, use the [Homebrew Docker container](CONTRIBUTING.md#homebrew-docker-container)
 - If stuck, comment describing what you've tried
 
+### Restarting GitHub Actions Runs
+
+- For tap PR check refreshes, use the repo-local skill at `skills/restart-github-actions-runs/SKILL.md`.
+- Prefer the helper:
+  ```sh
+  skills/restart-github-actions-runs/scripts/restart_pr_actions.sh --repo chenrui333/homebrew-tap <pr> [<pr> ...]
+  ```
+- The helper prefers a safe empty-amend + `git push --force-with-lease` on verified same-repo PR head branches, and falls back to `gh run rerun` when the head branch is missing or otherwise not safe to push.
+- Never edit workflow files just to restart checks.
+- Never force-push `main`.
+
 ## AI Disclosure
 
 If AI assisted with the PR, check the AI checkbox in the PR template and briefly describe:
