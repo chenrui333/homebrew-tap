@@ -123,7 +123,7 @@ Commit message: `foo 1.2.3 (new formula)`
   - Prefer command-scoped environment overrides such as `shell_output("HOME=#{testpath} #{bin}/foo ...")` or `system "env", "HOME=#{testpath}", bin/"foo", ...`.
 - **Completions policy**: Add shell completion support when upstream CLI supports it.
   - Use Homebrew DSL: `generate_completions_from_executable`.
-  - Rust CLIs: prefer `shell_parameter_format: :clap`.
+  - Rust CLIs: only use `shell_parameter_format: :clap` when the binary supports Homebrew's `COMPLETE=<shell>` invocation; otherwise keep the explicit `"completion"` or `"completions"` subcommand form.
   - Go CLIs: prefer `shell_parameter_format: :cobra`.
   - Python CLIs: prefer `shell_parameter_format: :click` or `:typer` (based on upstream framework).
 
