@@ -728,7 +728,6 @@ brew install --cask <tool>
 - `wakey`
 - `wallust`
 - `watchfiles`
-- `weave`
 - `wedl`
 - `weekly-git-summary`
 - `werk`
