@@ -6,6 +6,15 @@ class Mult < Formula
   license "MIT"
   head "https://github.com/dhth/mult.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13a0b1a1b73dacb092e1ffc2a418d3871cc57b75763e83a547f9d7d17f9b6039"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13a0b1a1b73dacb092e1ffc2a418d3871cc57b75763e83a547f9d7d17f9b6039"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13a0b1a1b73dacb092e1ffc2a418d3871cc57b75763e83a547f9d7d17f9b6039"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dee538d1687fad7a4bebfa05b19ccc18d537f5a89f25a723412572a9c6701d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce9338ddeefb6d8b95ca39a12e76678108265c0dfd80a954e04da9c613d22c42"
+  end
+
   depends_on "go" => :build
 
   def install
