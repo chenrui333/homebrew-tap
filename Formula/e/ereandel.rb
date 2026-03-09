@@ -6,6 +6,11 @@ class Ereandel < Formula
   license "MIT"
   head "https://github.com/blmayer/ereandel.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "1a38095e47b70925db9c249330d0d11406467a483e32e20c237d91e8cb3fe4b6"
+  end
+
   def install
     inreplace "ereandel", 'version="0.26.0"', "version=\"#{version}\""
 
