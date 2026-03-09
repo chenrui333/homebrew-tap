@@ -19,7 +19,9 @@ class Gritql < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli_bin")
