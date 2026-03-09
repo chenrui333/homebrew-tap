@@ -7,11 +7,12 @@ class Fat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "f36391377c958696e3dd4b0abd029336a586a3d5346a537d5888f21db02ec625"
-    sha256 arm64_sequoia: "bd7235b7d62c3db8f2b99207ae1893e5cd1e95ab10a434258d9e17d88896f9cc"
-    sha256 arm64_sonoma:  "8333f0478e93d2e23c74d67973506124e4c31c9f8de2b466977da331c4cde219"
-    sha256 arm64_linux:   "1135dce94f49aa19aa977c39b3bb51fea016a4ce3bb31168ad80e6bbec5e2143"
-    sha256 x86_64_linux:  "8a4c8b9bda3cc52fc51b1b0013d8c7bb6337a0a2b86409eb0050cf780bfc3760"
+    rebuild 1
+    sha256 arm64_tahoe:   "7ced12f890929c85a7a3dcc8b304bacbe07fd0b8650d96bbd406f6faa32130e8"
+    sha256 arm64_sequoia: "e0ce26ee8f47d994b128e4541f72d8ab0287faa5ad0da1f020edf67ab6f0133e"
+    sha256 arm64_sonoma:  "9dba4fece3751855aa73fdd7f93f49ee564e26d49e22ff3a35ad001dce30a73e"
+    sha256 arm64_linux:   "48132202410303d8d93cde2ff8f6b7ddf474b97696a187fb0b55c0536b4738ac"
+    sha256 x86_64_linux:  "f4d857365b358c53bb3d5ffb73a3127a62ec802619dc5e2331e8330365d1f2f4"
   end
 
   depends_on "libmagic"
