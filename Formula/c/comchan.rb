@@ -6,6 +6,15 @@ class Comchan < Formula
   license "MIT"
   head "https://github.com/Vaishnav-Sabari-Girish/ComChan.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b29ff2eddfa3dc2fd77081a235b3625d6413a91c1ae73697d8d2dcb6724d811a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcee11c6737bd46f7c56fd4c9e3fba9e0d27a3fabf0e2a7af9990439be2c40a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4ff0e40856c01edefbedf3a637e1aba0b4b655d1da2ef39f2a80ce8f85b83e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c2ae7d92fd77bffd7c08035bc4bd3ff452158868af6e7f68ee9c9a868fdbdd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f163a12bc16a74f7c5c7c9b46781a193d84777cdf2e4ead767fd96be38d57b8"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
