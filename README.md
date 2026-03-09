@@ -275,7 +275,6 @@ brew install --cask <tool>
 - `gitv`
 - `gix`
 - `glsl-analyzer`
-- `gmap`
 - `go-eagle`
 - `go-envsubst`
 - `go-getter`
@@ -333,7 +332,6 @@ brew install --cask <tool>
 - `iflow-cli`
 - `ifstate`
 - `iftree`
-- `illa`
 - `imgcat`
 - `inbucket`
 - `incus-compose`
