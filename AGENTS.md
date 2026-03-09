@@ -130,8 +130,10 @@ Commit message: `foo 1.2.3 (new formula)`
   - Avoid regex-only version assertions when `version.to_s` matching is available
   - For libraries: compile and link sample code
   - Use `testpath` for temporary files
-  - Do NOT set `ENV["HOME"] = testpath.to_s` in `test do`.
-  - Prefer command-scoped environment overrides such as `shell_output("HOME=#{testpath} #{bin}/foo ...")` or `system "env", "HOME=#{testpath}", bin/"foo", ...`.
+  - Do NOT override `HOME` in `test do` when Homebrew already provides the isolated test home.
+  - In particular, do NOT set `ENV["HOME"] = testpath` or `ENV["HOME"] = testpath.to_s` in `test do`.
+  - When a formula genuinely needs a custom `HOME` outside `test do` (for example during install-time completion generation), scope it to the smallest possible block with `with_env` or a command-scoped override instead of mutating global `ENV`.
+  - Prefer no `HOME` override whenever possible.
 - **Completions policy**: Add shell completion support when upstream CLI supports it.
   - Use Homebrew DSL: `generate_completions_from_executable`.
   - Rust CLIs: only use `shell_parameter_format: :clap` when the binary supports Homebrew's `COMPLETE=<shell>` invocation; otherwise keep the explicit `"completion"` or `"completions"` subcommand form.
