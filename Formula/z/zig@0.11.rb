@@ -26,12 +26,12 @@ class ZigAT011 < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
 
   # `llvm` is not actually used, but we need it because `brew`'s compiler
   # selector does not currently support using Clang from a versioned LLVM.
   on_linux do
     depends_on "llvm" => :build
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc
