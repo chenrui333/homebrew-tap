@@ -1,8 +1,8 @@
 class ViMongo < Formula
   desc "MongoDB TUI designed to simplify data visualization and quick manipulation"
   homepage "https://github.com/kopecmaciej/vi-mongo"
-  url "https://github.com/kopecmaciej/vi-mongo/archive/refs/tags/v0.1.35.tar.gz"
-  sha256 "a231ce251f25ddef6727f6d057169516f7a310386e42b69e6d13fb4a51b0f7b0"
+  url "https://github.com/kopecmaciej/vi-mongo/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "298b6553a576716086def2828588552cfd11c4ca783b53b5c35659c5e73fb06c"
   license "Apache-2.0"
   head "https://github.com/kopecmaciej/vi-mongo.git", branch: "master"
 
@@ -18,12 +18,12 @@ class ViMongo < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/kopecmaciej/vi-mongo/cmd.version=#{version}"
+    ldflags = "-s -w -X github.com/kopecmaciej/vi-mongo/internal/build.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/vi-mongo --version")
-    assert_match "No connections available", shell_output("#{bin}/vi-mongo --connection-list")
+    assert_match version.to_s, shell_output("#{bin/"vi-mongo"} --version")
+    assert_match "No connections available", shell_output("#{bin/"vi-mongo"} --connection-list")
   end
 end
