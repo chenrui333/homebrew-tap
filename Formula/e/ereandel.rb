@@ -1,8 +1,8 @@
 class Ereandel < Formula
   desc "Gemini web browser using shell script"
   homepage "https://github.com/blmayer/ereandel"
-  url "https://github.com/blmayer/ereandel/archive/refs/tags/v0.26.1.tar.gz"
-  sha256 "78bf4f35500ae9b1bc75ee22174cbdf2ff15eb694d9b46b9d3926ac943786201"
+  url "https://github.com/blmayer/ereandel/archive/refs/tags/v0.26.2.tar.gz"
+  sha256 "deadb0a59a18178695a016dd1648957ac8146516a9f6488bbdd8123d47175eab"
   license "MIT"
   head "https://github.com/blmayer/ereandel.git", branch: "main"
 
