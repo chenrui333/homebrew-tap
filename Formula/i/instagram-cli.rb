@@ -8,11 +8,11 @@ class InstagramCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "1e66f76efe293276c4367aee7b4b1cb3405f5d22cb28cadb07ee828cb77611b5"
-    sha256 cellar: :any,                 arm64_sequoia: "61e13afe2e3d4b7fa8dc69886c5cb687e1f47a5e0a7dc787c59e4702d88603d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "61e13afe2e3d4b7fa8dc69886c5cb687e1f47a5e0a7dc787c59e4702d88603d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3ea723d7a875a1603fb6ab9d6ba17af8088caa6ac7adb736917d558a02f71ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fad8b6eec7e7ec4232355fef9efe4701ed96c0cb2b083fef5909cec824d9644a"
+    sha256 cellar: :any,                 arm64_tahoe:   "eabe31efd49d1e755e6f494119691086bbfd8df3a2ea0c8be3365718fb5b9b61"
+    sha256 cellar: :any,                 arm64_sequoia: "e9d2a5feb074142fa2e6ee6650f51bd14509e5a71647102d22accdef0dc8896e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9d2a5feb074142fa2e6ee6650f51bd14509e5a71647102d22accdef0dc8896e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47be8ddc1a52995a00a7de7599f90480ff6bee62548872abc9176f56b7f55a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a377fa0408cad1f18341d98dca2745925dc7cbe03e7636cdac3d260ffe914277"
   end
 
   depends_on "node"
