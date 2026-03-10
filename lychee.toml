@@ -32,6 +32,8 @@ exclude = [
   "^https://www\\.gnu\\.org/software/hello/?$",
   "^https://www\\.atoptool\\.nl/downloadatop\\.php/?$",
   "^https://git\\.kittencollective\\.com/nebkor/joecalsend/?$",
+  "^https://aspizu\\.github\\.io/goboscript/?$",
+  "^https://github\\.com/aspizu/goboscript/?$",
 ]
 
 cache = true
