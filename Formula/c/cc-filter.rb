@@ -1,8 +1,8 @@
 class CcFilter < Formula
   desc "Claude Code Sensitive Information Filter"
   homepage "https://github.com/wissem/cc-filter"
-  url "https://github.com/wissem/cc-filter/archive/refs/tags/v0.0.4.tar.gz"
-  sha256 "ac3844606726dac61c083799b8579b3b97b52059822fe7913401ac08f7db1b4d"
+  url "https://github.com/wissem/cc-filter/archive/refs/tags/v0.0.5.tar.gz"
+  sha256 "c184455050d2941dd68ce6d03c9b21ea346840663dac206331a6bc72c20ed276"
   license "MIT"
   head "https://github.com/wissem/cc-filter.git", branch: "main"
 
