@@ -1,8 +1,8 @@
 class Xytz < Formula
   desc "Beautiful TUI YouTube downloader"
   homepage "https://github.com/xdagiz/xytz"
-  url "https://github.com/xdagiz/xytz/archive/refs/tags/v0.8.5.tar.gz"
-  sha256 "cb3cffe738c0b36e4608840ed6e20e68f85f311525266fd218fb143b881a133d"
+  url "https://github.com/xdagiz/xytz/archive/refs/tags/v0.8.6.tar.gz"
+  sha256 "ed774a03414692a7cb3e944b307b57647d048dbed7ae97abae4f89eadaca8be1"
   license "MIT"
   head "https://github.com/xdagiz/xytz.git", branch: "main"
 
