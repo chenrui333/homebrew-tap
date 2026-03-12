@@ -735,5 +735,11 @@
   "https://terminaltrove.com/gitv/": "https://github.com/JayanAXHF/gitv",
   "https://terminaltrove.com/msgvault/": "https://github.com/wesm/msgvault",
   "https://terminaltrove.com/tori/": "https://github.com/thobiasn/tori-cli",
-  "https://terminaltrove.com/rustnet/": "https://github.com/domcyrus/rustnet"
+  "https://terminaltrove.com/rustnet/": "https://github.com/domcyrus/rustnet",
+  "https://terminaltrove.com/pikpaktui/": "https://github.com/Bengerthelorf/pikpaktui",
+  "https://terminaltrove.com/pop/": "https://github.com/charmbracelet/pop",
+  "https://terminaltrove.com/gptop/": "https://github.com/evilsocket/gptop",
+  "https://terminaltrove.com/taskdog/": "https://github.com/Kohei-Wada/taskdog",
+  "https://terminaltrove.com/omp-manager/": "https://github.com/marlocarlo/omp-manager",
+  "https://terminaltrove.com/tortuise/": "https://github.com/buildoak/tortuise"
 }
