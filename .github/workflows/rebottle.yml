@@ -90,7 +90,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@5edd97230ed47129c4f26ca168186ce7a2e94a7c
 
       - name: Download bottles from GitHub Actions
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           pattern: bottles_*
           path: ${{ env.BOTTLES_DIR }}
