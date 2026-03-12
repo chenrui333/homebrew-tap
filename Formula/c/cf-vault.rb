@@ -9,12 +9,11 @@ class CfVault < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9241a5f19a4ebdcec013d2906e5294ce583b29aa312da94d66cbd754b1e4674d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "450354eeee312a300f6e86e3dba8774c6d478477ca558fa1f0b175a41212f510"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7dba7772333c70006636ec4ecf60ac2ed520bc980fb41152c6499a8c2cd1e00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee3535c159046adf008a7a32d911a4d19f410550f23f3bf7ce35e257dc9aeb26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1713f3565ee4c05cce352ac7ac3d789096dea9f735c740118778828f70842a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "363a305e709314af9a14022b7d0a94e71c0bcebdc8a4ac5a564fd25057f2c570"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e3ef58edf9d6d73cec2b95e12151a3b1cb334c0568ed3011fe85f742d069701"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e03ee3c979f294db780a83ae9b6611acad6652399784810fb7e260a62b85390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b4a9839fd8c894caffa5f5be508b69d76d46f2e7f302dc5404d727a936ccc27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86363c24b1dfc4bac1e95263f8d815f58cc7587da7b5b3ed829ce4b343e70f75"
   end
 
   depends_on "go" => :build
