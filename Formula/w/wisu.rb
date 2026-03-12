@@ -1,8 +1,8 @@
 class Wisu < Formula
   desc "Blazingly fast, minimalist directory tree viewer"
   homepage "https://github.com/sh1zen/wisu"
-  url "https://github.com/sh1zen/wisu/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "4e638701b312987cb9af6cde412bf7fc15d80ae42d234de7fd6ca648958557fa"
+  url "https://github.com/sh1zen/wisu/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "0331ebc1663c3fcc4c58992692b6dc952d8733d1d77efac71250bb2689925edd"
   license "Apache-2.0"
   head "https://github.com/sh1zen/wisu.git", branch: "master"
 
