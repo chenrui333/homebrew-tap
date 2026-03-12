@@ -2,10 +2,9 @@
 class CfVault < Formula
   desc "Manage your Cloudflare credentials, securely"
   homepage "https://github.com/jacobbednarz/cf-vault"
-  url "https://github.com/jacobbednarz/cf-vault/archive/refs/tags/0.0.18.tar.gz"
-  sha256 "cdb8eddfec7a153e2e75f42e8246f3f266ff3c566a5784f8d22b0a6b8f48c779"
+  url "https://github.com/jacobbednarz/cf-vault/archive/refs/tags/0.0.19.tar.gz"
+  sha256 "0e04e97df82cb12a85c63b3bea8a148dcd346417208c6b1cc45fddbbe643d05f"
   license "MIT"
-  revision 1
   head "https://github.com/jacobbednarz/cf-vault.git", branch: "master"
 
   bottle do
