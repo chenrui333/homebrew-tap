@@ -11,6 +11,11 @@ class Distill < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "244b1f1285df1578220b9e7fbb01ac04526862c90f994803ae689661992e5806"
+  end
+
   depends_on "chenrui333/tap/bun" => :build
   depends_on "node"
 
