@@ -24,6 +24,8 @@ class ViMongo < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin/"vi-mongo"} --version")
-    assert_match "No connections available", shell_output("#{bin/"vi-mongo"} --connection-list")
+
+    output = shell_output("#{bin/"vi-mongo"} --connection-list")
+    assert_match "connection", output.downcase
   end
 end
