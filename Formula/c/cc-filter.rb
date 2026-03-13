@@ -22,10 +22,11 @@ class CcFilter < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cc-filter --version")
+    assert_match version.to_s, shell_output("#{bin/"cc-filter"} --version")
 
-    output = pipe_output("#{bin}/cc-filter", "API_KEY=secret123", 0)
-    assert_match "API_KEY=secret123", output
+    output = pipe_output(bin/"cc-filter", "API_KEY=secret123\n", 0)
+    assert_match "API_KEY=***FILTERED***", output
+    refute_match "secret123", output
     assert_path_exists testpath/".cc-filter/filter.log"
   end
 end
