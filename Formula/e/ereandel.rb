@@ -12,7 +12,7 @@ class Ereandel < Formula
   end
 
   def install
-    inreplace "ereandel", 'version="0.26.0"', "version=\"#{version}\""
+    inreplace "ereandel", /^version=".*"$/, "version=\"#{version}\""
 
     bin.install "ereandel"
     man1.install "ereandel.en.1" => "ereandel.1"
@@ -31,6 +31,7 @@ class Ereandel < Formula
     output = shell_output(
       "printf 'q' | HOME=#{testpath} XDG_CONFIG_HOME=#{testpath}/config XDG_CACHE_HOME=#{testpath}/cache " \
       "#{bin}/ereandel --file #{testpath}/sample.gmi 2>&1",
+      1,
     )
     assert_match "Hello", output
     assert_match "gemini://example.org Link", output
