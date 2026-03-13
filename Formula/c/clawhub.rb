@@ -1,8 +1,8 @@
 class Clawhub < Formula
   desc "Install, update, search, and publish agent skills"
   homepage "https://clawhub.ai"
-  url "https://github.com/openclaw/clawhub/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "12f9519b4415b3a782e3fa954d3586999739b39cd61365cf9435218b5c95df9c"
+  url "https://github.com/openclaw/clawhub/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "203588e0c789aabbd765762a66879f3a8dbf5c4a2cfee88776d0dab0f429e68f"
   license "MIT"
   head "https://github.com/openclaw/clawhub.git", branch: "main"
 
