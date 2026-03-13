@@ -8,7 +8,7 @@ class Ereandel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1a38095e47b70925db9c249330d0d11406467a483e32e20c237d91e8cb3fe4b6"
+    sha256 cellar: :any_skip_relocation, all: "3177a737673108d95391988cdddadf71c364e2d474d306f3220a51ed7e5ea922"
   end
 
   def install
