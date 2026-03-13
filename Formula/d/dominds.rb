@@ -1,8 +1,8 @@
 class Dominds < Formula
   desc "AI-driven DevOps framework with persistent memory"
   homepage "https://github.com/longrun-ai/dominds"
-  url "https://registry.npmjs.org/dominds/-/dominds-1.4.2.tgz"
-  sha256 "8b9590e816d88707b1fc91b6d3f4d0ec26868cc09ce5cf54a949240e4f242423"
+  url "https://registry.npmjs.org/dominds/-/dominds-1.8.0.tgz"
+  sha256 "fdc6f869fcfeee07ff487edebdba897f318abac38761f6b014fafb9a53bd80b1"
   license "LGPL-3.0-or-later"
 
   bottle do
@@ -13,10 +13,6 @@ class Dominds < Formula
   depends_on "node"
 
   def install
-    inreplace "package.json",
-              "\"@longrun-ai/codex-auth\": \"^0.9.0\"",
-              "\"@longrun-ai/codex-auth\": \"^0.8.0\""
-
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
