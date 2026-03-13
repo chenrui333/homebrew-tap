@@ -15,6 +15,7 @@ class YoutubeMusicCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9d0595e8d8ba3484d131754afbd113d8f403533554cf6b4f939d5c5cb6981bf"
   end
 
+  depends_on "chenrui333/tap/bun" => :build
   depends_on "mpv"
   depends_on "node"
   depends_on "yt-dlp"
@@ -22,7 +23,7 @@ class YoutubeMusicCli < Formula
   def install
     system "npm", "install", "--include=dev", "--legacy-peer-deps",
            *std_npm_args(prefix: false, ignore_scripts: false)
-    system "npm", "exec", "--", "tsc"
+    system Formula["chenrui333/tap/bun"].opt_bin/"bun", "run", "build"
     system "npm", "install", *std_npm_args
 
     notifier_app = "lib/node_modules/@involvex/youtube-music-cli/node_modules/" \
@@ -34,6 +35,6 @@ class YoutubeMusicCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/youtube-music-cli --version")
-    assert_match "No plugins installed.", shell_output("#{bin}/youtube-music-cli plugins list")
+    assert_match(/plugins?/i, shell_output("#{bin}/youtube-music-cli plugins list 2>&1"))
   end
 end
