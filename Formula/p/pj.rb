@@ -1,8 +1,8 @@
 class Pj < Formula
   desc "Fast project directory finder"
   homepage "https://github.com/josephschmitt/pj"
-  url "https://github.com/josephschmitt/pj/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "0e860c72842f2127e469c3826de8ea9ee04defbc54996060acd8571206f42413"
+  url "https://github.com/josephschmitt/pj/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "7c08277c6cae5c5193400c2fbe2f2b87a68c79502278e088285ec45abe2b1bd5"
   license "MIT"
   head "https://github.com/josephschmitt/pj.git", branch: "main"
 
