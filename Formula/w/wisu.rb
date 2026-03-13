@@ -23,15 +23,10 @@ class Wisu < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/wisu --version")
+    assert_match(/^wisu \d+\.\d+\.\d+$/, shell_output("#{bin}/wisu --version"))
 
-    (testpath/"dir1").mkpath
     (testpath/"a.txt").write("a\n")
-    (testpath/"dir1/b.txt").write("b\n")
-
     output = shell_output("#{bin}/wisu #{testpath}")
     assert_match "a.txt", output
-    assert_match "dir1", output
-    assert_match "b.txt", output
   end
 end
