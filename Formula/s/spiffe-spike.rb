@@ -20,7 +20,7 @@ class SpiffeSpike < Formula
 
   def install
     # cgo for sqlite dependency
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     ENV["GOFIPS140"] = "v1.0.0"
 
     # Workaround to avoid patchelf corruption when cgo is required
