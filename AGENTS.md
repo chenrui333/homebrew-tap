@@ -119,6 +119,11 @@ Commit message: `foo 1.2.3 (new formula)`
 - **Build source policy**: MUST build from source in the formula (e.g., `go build`, `cargo install`, `cmake`, etc.).
   - Do NOT package upstream prebuilt binaries/releases for formula installation.
   - If upstream only ships binaries and no buildable source path, raise it for manual review instead of adding the formula.
+  - Go formulae that need to override Homebrew's default cgo behavior should prefer:
+    ```ruby
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+    ```
+  - Do NOT set `ENV["CGO_ENABLED"] = "1"` unconditionally in Go formulae unless the formula has a separately verified requirement outside Linux ARM.
   - Rust binary formulae MUST use `cargo install` with `std_cargo_args` (for example `system "cargo", "install", *std_cargo_args`).
   - When the crate root is the current directory, use bare `*std_cargo_args` and do NOT pass `path: "."`.
   - Reserve `std_cargo_args(path: "...")` for crates that live in a subdirectory.
