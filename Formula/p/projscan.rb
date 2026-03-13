@@ -6,6 +6,11 @@ class Projscan < Formula
   license "MIT"
   head "https://github.com/abhiyoheswaran1/projscan.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "989e36842205822884dcead26b8ea3870a170f03f80e0bfd9099bbe072cd724b"
+  end
+
   depends_on "node"
 
   def install
