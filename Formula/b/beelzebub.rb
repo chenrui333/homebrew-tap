@@ -22,7 +22,7 @@ class Beelzebub < Formula
   end
 
   test do
-    output = shell_output("#{bin}/beelzebub 2>&1", 1)
-    assert_match "Error during ReadConfigurationsCore", output
+    output = shell_output("#{bin/"beelzebub"} 2>&1", 1)
+    assert_match "no services configured", output
   end
 end
