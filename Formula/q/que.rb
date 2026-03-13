@@ -18,7 +18,7 @@ class Que < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     # Workaround to avoid patchelf corruption when cgo is required
     if OS.linux? && Hardware::CPU.arch == :arm64
