@@ -6,6 +6,11 @@ class BskyCli < Formula
   license "MIT"
   head "https://github.com/harveyrandall/bsky-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "175964c060f0f816711d1604bcf31766dccbb25e3dfbcfb2d447b34457122aa3"
+  end
+
   depends_on "node"
 
   def install
