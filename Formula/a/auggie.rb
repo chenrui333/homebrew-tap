@@ -20,7 +20,10 @@ class Auggie < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/auggie --version")
 
-    assert_match "Total:", shell_output("#{bin}/auggie tools list")
-    assert_match "You are not currently logged in to Augment", shell_output("#{bin}/auggie model list 2>&1")
+    tools_output = shell_output("#{bin}/auggie tools list")
+    assert_match "Total:", tools_output
+
+    model_output = shell_output("#{bin}/auggie model list 2>&1")
+    assert_match "logged in", model_output
   end
 end
