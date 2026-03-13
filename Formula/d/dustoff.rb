@@ -6,6 +6,11 @@ class Dustoff < Formula
   license "MIT"
   head "https://github.com/westpoint-io/dustoff.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "5841ad1c971e8b3a1732bec0e0de9e7ea26c23e275e84f04c296140e4d40d072"
+  end
+
   depends_on "chenrui333/tap/bun" => :build
   depends_on "node"
 
