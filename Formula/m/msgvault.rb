@@ -25,7 +25,7 @@ class Msgvault < Formula
       -X github.com/wesm/msgvault/cmd/msgvault/cmd.BuildDate=#{time.iso8601}
     ]
 
-    ENV["CGO_ENABLED"] = "1"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args(ldflags:), "-tags", "fts5", "./cmd/msgvault"
 
     ENV["MSGVAULT_HOME"] = buildpath/".msgvault"
