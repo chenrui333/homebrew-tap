@@ -14,8 +14,8 @@ class Dominds < Formula
 
   def install
     inreplace "package.json",
-              "\"@longrun-ai/codex-auth\": \"^0.9.0\"",
-              "\"@longrun-ai/codex-auth\": \"^0.8.0\""
+              %r{"@longrun-ai/codex-auth": "\^[^"]+"},
+              '"@longrun-ai/codex-auth": "^0.8.0"'
 
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
