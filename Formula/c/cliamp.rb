@@ -30,13 +30,12 @@ class Cliamp < Formula
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cliamp --version")
-    output = shell_output("#{bin}/cliamp search 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin/"cliamp"} --version")
+    output = shell_output("#{bin/"cliamp"} search 2>&1", 1)
     assert_match "search requires a query string", output
   end
 end
