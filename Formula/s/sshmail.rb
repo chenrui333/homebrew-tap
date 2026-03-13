@@ -11,6 +11,15 @@ class Sshmail < Formula
     skip "no tagged releases"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16278d1139f23fe47c66550d9bc11e07ec072e99967b1f7971b97f933b33dd66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16278d1139f23fe47c66550d9bc11e07ec072e99967b1f7971b97f933b33dd66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16278d1139f23fe47c66550d9bc11e07ec072e99967b1f7971b97f933b33dd66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dcd8fe0425d61b033940c499aa8c36ee52d45d51c23cdf0a81c3549e108bc62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90a1aff371c2a472fb2303d29e3e4aaeecc6dea5e2ea4308958f762ef20f1ce5"
+  end
+
   depends_on "go" => :build
 
   def install
