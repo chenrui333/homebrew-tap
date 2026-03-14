@@ -18,7 +18,7 @@ class Zerobrew < Formula
   depends_on "rust" => :build
 
   def install
-    inreplace "zb_cli/Cargo.toml", 'version = "0.1.2"', "version = \"#{version}\""
+    inreplace "zb_cli/Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
     system "cargo", "install", *std_cargo_args(path: "zb_cli")
   end
 
