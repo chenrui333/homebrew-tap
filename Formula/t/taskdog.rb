@@ -8,6 +8,15 @@ class Taskdog < Formula
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "64747c7a78cc0f758f7afc1523afea748e865d542fbc26d1cd2e9bf8822c4a15"
+    sha256 cellar: :any,                 arm64_sequoia: "b0015c9a6ce0c6e549844d3b04852223b7360794c9e90bdca6c61354316da840"
+    sha256 cellar: :any,                 arm64_sonoma:  "15de727b2df21f6d2536baa28c5b02b441a5abb07e50c6e1c83a6b206e38cfa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b96550d71e0a1cc5789e9b81efa046dea4708841c22ca56a583f4a6cb183e807"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df805695eeb75e85c07506ab5958e1d22f59e14bb292b94e60c66ef9ddd993c0"
+  end
+
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
