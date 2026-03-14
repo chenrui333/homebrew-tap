@@ -1,8 +1,8 @@
 class Deadbranch < Formula
   desc "Clean up stale git branches safely"
   homepage "https://github.com/armgabrielyan/deadbranch"
-  url "https://github.com/armgabrielyan/deadbranch/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "c2b7dc20250bf4d6fe8505ab20b10f50dedf99b121ca682f4ee9ae19ca53972f"
+  url "https://github.com/armgabrielyan/deadbranch/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "b773f176a26179c928f48c58c5299c6cc000f9e5d9ea71d258dcac3df19ef715"
   license "MIT"
   head "https://github.com/armgabrielyan/deadbranch.git", branch: "main"
 
