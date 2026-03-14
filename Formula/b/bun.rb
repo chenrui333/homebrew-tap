@@ -44,11 +44,11 @@ class Bun < Formula
   resource "bun-bootstrap" do
     on_macos do
       on_arm do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-darwin-aarch64.zip"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-darwin-aarch64.zip", using: :nounzip
         sha256 "cde6a4edf19cf64909158fa5a464a12026fd7f0d79a4a950c10cf0af04266d85"
       end
       on_intel do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-darwin-x64.zip"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-darwin-x64.zip", using: :nounzip
         sha256 "588f4a48740b9a0c366a00f878810ab3ab5e6734d29b7c3cbdd9484b74a007de"
       end
     end
@@ -105,6 +105,9 @@ class Bun < Formula
     ENV["RANLIB"] = "ranlib"
 
     resource("bun-bootstrap").stage buildpath/"bootstrap"
+    if (bootstrap_zip = Dir[buildpath/"bootstrap"/"*.zip"].first)
+      system "unzip", "-q", bootstrap_zip, "-d", buildpath/"bootstrap"
+    end
     bootstrap_bin = Dir[buildpath/"bootstrap"/"**/bun"].first
     raise "bootstrap bun binary not found" if bootstrap_bin.nil?
 
@@ -166,10 +169,10 @@ class Bun < Formula
                 endif()
               EOS
     if OS.mac? && MacOS.version <= :sequoia
-      # macOS 14/15 SDK headers declare this symbol without noexcept.
+      # LLVM 20/21 libc++ declarations differ here; use macro form to match both.
       inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
                 "void std::__libcpp_verbose_abort(char const* format, ...) noexcept",
-                "void std::__libcpp_verbose_abort(char const* format, ...)"
+                "void std::__libcpp_verbose_abort(char const* format, ...) _NOEXCEPT"
     end
     if OS.mac?
       # macOS 14's compiler does not support deducing-this syntax in this block.
