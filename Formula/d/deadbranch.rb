@@ -8,11 +8,11 @@ class Deadbranch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa00922b103c429ee26a768bd2624972251a2f1d577fa0cb1b1b2f39efa2b62a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d99b7709061bf3acc94f0bb537f40b539c4db1444126b31c489398948fbc6a83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2123128303a1e9d16748d3e44f4aa317a3121cb3c253c20c7a90c5500bae48da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ca179c87fd359b3c59f40489dd20259ab56b76660d22127eabde1a56a0ad850"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36960ca14642d9d0fe8f2f5d7144fbdbec05a92f7abe9b20f9fb9c371ce230ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfbd37dc3b5534def226e9dd183136bd2b6bed93408c52a737c9cb0b27d78335"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79a19d35d6ae92c30e11e50fe7364eeb3a32499ea12445ff62f313fbbe83df3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "610c980f18cf8cef575f2321ddde816b59ad962bf21c67bd006e273df0e2cd2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff355e3b31ec49866fcd8048aa03b5e9fbc16925514ca0ff53590360d101c602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3d5781f15e551b19a2bba91f0dcccb97d3d9bf5f72012f768afb8a9e13867a9"
   end
 
   depends_on "rust" => :build
