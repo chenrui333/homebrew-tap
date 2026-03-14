@@ -26,12 +26,23 @@ class ZigAT013 < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # https://github.com/Homebrew/homebrew-core/issues/209483
   skip_clean "lib/zig/libc/darwin/libSystem.tbd"
 
+  fails_with :gcc
+
   def install
+    if OS.linux?
+      ENV.prepend_path "PATH", Formula["llvm@18"].opt_bin
+      ENV["CC"] = Formula["llvm@18"].opt_bin/"clang"
+      ENV["CXX"] = Formula["llvm@18"].opt_bin/"clang++"
+    end
+
     llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
                .to_formula
     if llvm.versioned_formula? && deps.any? { |dep| dep.name == "z3" }
