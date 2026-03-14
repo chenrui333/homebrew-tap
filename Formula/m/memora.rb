@@ -3,8 +3,8 @@ class Memora < Formula
 
   desc "Lightweight MCP server for semantic memory storage"
   homepage "https://github.com/agentic-mcp-tools/memora"
-  url "https://github.com/agentic-mcp-tools/memora/archive/refs/tags/v0.2.22.tar.gz"
-  sha256 "6120ec4162b8b490fa6ff97cd79d2b4acf47b76a6fca04036691fabebfde3187"
+  url "https://github.com/agentic-mcp-tools/memora/archive/refs/tags/v0.2.23.tar.gz"
+  sha256 "412c082e07adbc512b12a87683b308cdf4d5b15948bb3b0f8c4765f14011d804"
   license "MIT"
   head "https://github.com/agentic-mcp-tools/memora.git", branch: "main"
 
@@ -199,7 +199,7 @@ class Memora < Formula
   test do
     python = libexec/"bin/python"
     version_output = shell_output(
-      "#{python} -c \"import importlib.metadata as m; print(m.version('memora'))\"",
+      "#{python} -c \"import importlib.metadata as m; print(m.version('memora-mcp'))\"",
     )
     assert_match version.to_s, version_output
 
