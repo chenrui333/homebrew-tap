@@ -15,7 +15,11 @@ class Gptop < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gptop --version")
 
-    if OS.mac?
+    if OS.mac? && Hardware::CPU.arm?
+      output = shell_output("#{bin}/gptop --json 2>&1", 1)
+      assert_match "Apple backend init failed", output
+      assert_match "No supported GPU backend found", output
+    elsif OS.mac?
       output = shell_output("#{bin}/gptop --json")
       assert_match "\"devices\":", output
       assert_match "\"gpu_metrics\":", output
