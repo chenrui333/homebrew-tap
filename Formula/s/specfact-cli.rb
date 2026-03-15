@@ -10,11 +10,11 @@ class SpecfactCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f6b5fdcd1ebc4b91effa822f6668b395bd0e0902f27d572599748d2a29e06e48"
-    sha256 cellar: :any,                 arm64_sequoia: "032d741eeecd6c501300022b42c563ba4e8ab16e7b8633be1165d07dc92bd5d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd45d7dc4e441338f4b1c137b48e73c103b2a386b051f0f258488e36de542b58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0179d88339533cb468da98b318e1aaa1d5c765f642357ae02d9c3aa7a7fb4a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3e6da0ca9af787609233e0db555ad5c7dfafe81603226657530b36f07e4bebb"
+    sha256 cellar: :any, arm64_tahoe:   "901f9fbd2169143b809a6a83759702696457325a535f4c418bd50ea2fbcc97ab"
+    sha256 cellar: :any, arm64_sequoia: "89e79b76f969808bb99bbb431831f70e5cb021cbb88c329dd7648b713f249604"
+    sha256 cellar: :any, arm64_sonoma:  "c56d10a8a0feed255fff11a454446c213458d82a56a0e6d1524a554aed0d1cad"
+    sha256               arm64_linux:   "7f6daa8c96568a4570ffde0f710d5786c35e99c45c1a36c0b405db02318e208d"
+    sha256               x86_64_linux:  "268de81720c8c3d6ea7670e370bad77c1702d2b544b998b9ada369978dffd79b"
   end
 
   depends_on "gcc" => :build if OS.linux?
