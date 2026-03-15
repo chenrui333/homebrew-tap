@@ -76,6 +76,7 @@ brew install --cask <tool>
 - `balcony`
 - `base-mcp-server`
 - `bash-script-tools`
+- `batctl`
 - `bbrew`
 - `bearer`
 - `beelzebub`
@@ -96,6 +97,7 @@ brew install --cask <tool>
 - `brotab`
 - `browserbase-mcp-server`
 - `brunette`
+- `bsky-cli`
 - `btczee`
 - `bun`
 - `bytebox`
@@ -140,6 +142,7 @@ brew install --cask <tool>
 - `clawra`
 - `claws`
 - `cli-mcp-server`
+- `cliamp`
 - `clickup-mcp`
 - `climp`
 - `cloctui`
@@ -201,6 +204,7 @@ brew install --cask <tool>
 - `dg`
 - `dhv`
 - `di-tui`
+- `distill`
 - `dnsforwarder`
 - `doit`
 - `dominds`
@@ -212,6 +216,7 @@ brew install --cask <tool>
 - `drft`
 - `dumper`
 - `duster`
+- `dustoff`
 - `dvm`
 - `dxt`
 - `e2c`
@@ -292,6 +297,7 @@ brew install --cask <tool>
 - `gommit`
 - `gorae`
 - `gowebly`
+- `gptop`
 - `graphjin`
 - `graphlit-mcp-server`
 - `graphtage`
@@ -484,6 +490,7 @@ brew install --cask <tool>
 - `olla`
 - `omni-cache`
 - `omnictl`
+- `omp-manager`
 - `opensnitch-tui`
 - `openspec`
 - `optivorbis`
@@ -514,6 +521,7 @@ brew install --cask <tool>
 - `pgterm`
 - `phpinsights`
 - `pike`
+- `pikpaktui`
 - `pingu`
 - `pinme`
 - `pipeform`
@@ -537,6 +545,7 @@ brew install --cask <tool>
 - `precompress`
 - `process-compose`
 - `procmux`
+- `projscan`
 - `proto2yaml`
 - `protoc-gen-lint`
 - `protodep`
@@ -635,6 +644,7 @@ brew install --cask <tool>
 - `sqd`
 - `sqlit`
 - `squall`
+- `sshmail`
 - `ssl-checker`
 - `ssm`
 - `starcharts`
@@ -654,6 +664,8 @@ brew install --cask <tool>
 - `tftargets`
 - `tantivy-cli`
 - `taproom`
+- `taskbook`
+- `taskdog`
 - `taskonaut`
 - `tasktimer`
 - `tattoy`
@@ -693,6 +705,7 @@ brew install --cask <tool>
 - `tooka`
 - `toolctl`
 - `tori`
+- `tortuise`
 - `tparse`
 - `tpm`
 - `travelgrunt`
@@ -740,6 +753,7 @@ brew install --cask <tool>
 - `yatto`
 - `yeetfile`
 - `yew-fmt`
+- `ymp`
 - `yosay`
 - `youtube-music-cli`
 - `yr`
