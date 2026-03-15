@@ -8,11 +8,11 @@ class Bibiman < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1697d0c569cfacca8ac8450023c1ca5534fb0723813b519b1c890d49ccd741b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8912f7b23a72ee0dd4f24b9187fcc266aa8d8a6061d3a4c373a69715d855a15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d68c9761b00163accc6066a2526a04339afb75fcf8a4f67a11d5810d9fe1a47"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bd626b7e0b8f27e2cba8fac36cf552a943096624c634b6d8013aa7fbe5e5b38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88a229391eec974acd7ed27d43080f70260dff952aa8939b987f4734668331e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82bb25eda1b6f07a84bf7932b735937e74f560c97f07fea32be4a1dc14d91e1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fae28c6246ed5c7e5f34eb835997a81aef517f224e999a17fcdb699c695d9144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d94696a160aba5e4199e89c963ca202cb41c18eca8776e9ac0868993573edf3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c940fb99cce21d53e0bbca2fbc975b921bf06b5c8612cd1255bd3cbb2e2c4c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25ce596d5c8f58c52d1d02ced3dac3d72bafbeefbd5263428214240d54069182"
   end
 
   depends_on "rust" => :build
