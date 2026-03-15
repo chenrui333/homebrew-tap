@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/01/3d/3be3ef0f0556b1102465bd30aa5a9d5c748ebfaf7cb6f274d083497546df/cccc_pair-0.4.3.tar.gz"
-  sha256 "80d0e57bf1e84c278e91790746640d3f9666b7bd27c868befcac38ec9669e970"
+  url "https://files.pythonhosted.org/packages/d6/fd/b251202b0d63a9fd2d493976639e5380e398428c4b383438b1e7919e8b27/cccc_pair-0.4.4.tar.gz"
+  sha256 "fca311ceb66c3fafbc89f1e69a45d775c9a4f458075763e396edf2a7f16a8198"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
