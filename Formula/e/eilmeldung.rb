@@ -8,11 +8,11 @@ class Eilmeldung < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a670e189f1652bc7a1d022d071f6e9cd0631be1607d778bc54109fe09b4aa21a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff8af5bfb58afb46ba7afda9d7fd0dcab75efcf114d9a3be7ea5e400a68407e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80fefd5b9ac87e2b9d3721cacb71fc888e65eef72baae0bacc2135d70eac1b8e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3168b67f1720f10108d8aaa7e0ff9b7a44051d0acc5de87ba95434fd2dfc764a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5846c65002e97112c61080ab1015d6ef087abc613b1f1518ab91ca5fb55a0b6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81233e832420da383d2e25a9df19cd829abbfa2aaac46cf4ca10f150d49b2f9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e9498b1e605acfec2c18795b5f4be8f2d79a14b9261cabc299311daa1255b04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f46baab1ceb3bad84ba9f923fc0483c7596f5365ce1fc14fb2b47f8c4116de5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51ee0be62d20886fc1ee6fa34f207c951d1490ba1137eddbcc334fd50642ed23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8e139241f0714656b73cab87a58068ce80f7824514eb12acbd45fbc7b8edab5"
   end
 
   depends_on "pkgconf" => :build
