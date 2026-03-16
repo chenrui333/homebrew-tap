@@ -6,6 +6,15 @@ class NightWatchCli < Formula
   license "MIT"
   head "https://github.com/jonit-dev/night-watch-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "488e08552c757bc325cb2628056dbb5ae0163af2dc7045ddd9c17520c704d370"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "488e08552c757bc325cb2628056dbb5ae0163af2dc7045ddd9c17520c704d370"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "488e08552c757bc325cb2628056dbb5ae0163af2dc7045ddd9c17520c704d370"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0871c99081e335fd4c9e255d91dfaf374727c557c76735f06f8bc2d588720a6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0871c99081e335fd4c9e255d91dfaf374727c557c76735f06f8bc2d588720a6e"
+  end
+
   depends_on "node"
 
   on_macos do
