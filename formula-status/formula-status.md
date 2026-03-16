@@ -673,7 +673,7 @@ Total formulas: 730
 | curlconverter | Transpile curl commands into Python, JavaScript and 27 other... | - | - | - | - | MIT | ✓ | - | [link](https://curlconverter.com/) |
 | dakora | Manage and hot-reload prompts with typed inputs and zero-dep... | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://dakora.io/) |
 | debugg-ai-mcp | MCP Server for Debugg AI | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://debugg.ai/) |
-| deepteam | LLM Red Teaming Framework | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://www.trydeepteam.com/) |
+| deepteam | LLM Red Teaming Framework | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://github.com/confident-ai/deepteam) |
 | dg | Self-testing CLI documentation tool that generates interacti... | - | - | - | - | MIT | ✓ | - | [link](https://deepguide.ai/) |
 | dhv | Tool to dive into Python code | - | - | - | - | GPL-3.0-or-later | ✓ | - | [link](https://dhv.davep.dev/) |
 | doit | CLI task management & automation tool | - | - | - | - | MIT | ✓ | - | [link](https://pydoit.org/) |

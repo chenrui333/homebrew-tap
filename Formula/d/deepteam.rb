@@ -2,7 +2,7 @@ class Deepteam < Formula
   include Language::Python::Virtualenv
 
   desc "LLM Red Teaming Framework"
-  homepage "https://www.trydeepteam.com/"
+  homepage "https://github.com/confident-ai/deepteam"
   url "https://files.pythonhosted.org/packages/31/4a/908f66e0e2ddfb0c3703b947dca8aa9be0c3af1c7abc4c88285ea009cf7b/deepteam-1.0.6.tar.gz"
   sha256 "0b215c0a4df438783e6b18fdc7c98be08eefbc4eb65c75bff3a79f715ba2bc1e"
   license "Apache-2.0"
