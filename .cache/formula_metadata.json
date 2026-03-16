@@ -149,6 +149,12 @@
     "last_release": "2025-01-04",
     "stars": 1441
   },
+  "github:Bengerthelorf/pikpaktui": {
+    "forks": 0,
+    "last_commit": "2026-03-15",
+    "last_release": "2026-03-14",
+    "stars": 11
+  },
   "github:BharatKalluri/spotifydl": {
     "forks": 7,
     "last_commit": "2023-03-07",
@@ -425,6 +431,12 @@
     "last_release": null,
     "stars": 33
   },
+  "github:Kohei-Wada/taskdog": {
+    "forks": 2,
+    "last_commit": "2026-03-16",
+    "last_release": "2026-03-15",
+    "stars": 76
+  },
   "github:Koihik/LuaFormatter": {
     "forks": 85,
     "last_commit": "2023-08-25",
@@ -514,6 +526,12 @@
     "last_commit": null,
     "last_release": null,
     "stars": null
+  },
+  "github:Ooooze/batctl": {
+    "forks": 1,
+    "last_commit": "2026-03-11",
+    "last_release": "2026-03-11",
+    "stars": 109
   },
   "github:OptiVorbis/OptiVorbis": {
     "forks": 6,
@@ -736,6 +754,12 @@
     "last_commit": "2024-07-19",
     "last_release": "2022-01-03",
     "stars": 282
+  },
+  "github:abhiyoheswaran1/projscan": {
+    "forks": 0,
+    "last_commit": "2026-03-12",
+    "last_release": "2026-03-11",
+    "stars": 2
   },
   "github:acaloiaro/di-tui": {
     "forks": 5,
@@ -1151,6 +1175,12 @@
     "last_release": "2026-02-20",
     "stars": 109
   },
+  "github:bjarneo/cliamp": {
+    "forks": 48,
+    "last_commit": "2026-03-15",
+    "last_release": "2026-03-14",
+    "stars": 853
+  },
   "github:bketelsen/incus-compose": {
     "forks": 11,
     "last_commit": "2025-07-07",
@@ -1228,6 +1258,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-16",
     "stars": 589
+  },
+  "github:buildoak/tortuise": {
+    "forks": 7,
+    "last_commit": "2026-03-15",
+    "last_release": "2026-02-24",
+    "stars": 143
   },
   "github:busser/tftree": {
     "forks": 5,
@@ -1390,6 +1426,12 @@
     "last_commit": "2025-07-21",
     "last_release": "2024-10-04",
     "stars": 132
+  },
+  "github:confident-ai/deepteam": {
+    "forks": 211,
+    "last_commit": "2026-03-16",
+    "last_release": "2025-11-12",
+    "stars": 1373
   },
   "github:container2wasm/container2wasm": {
     "forks": 128,
@@ -1733,6 +1775,12 @@
     "last_release": null,
     "stars": 67
   },
+  "github:evilsocket/gptop": {
+    "forks": 1,
+    "last_commit": "2026-03-05",
+    "last_release": "2026-03-04",
+    "stars": 68
+  },
   "github:fabio42/ssl-checker": {
     "forks": 4,
     "last_commit": "2025-04-16",
@@ -1972,6 +2020,12 @@
     "last_commit": "2025-01-25",
     "last_release": "2025-01-21",
     "stars": 15
+  },
+  "github:harveyrandall/bsky-cli": {
+    "forks": 0,
+    "last_commit": "2026-03-15",
+    "last_release": "2026-03-15",
+    "stars": 14
   },
   "github:hashicorp/go-getter": {
     "forks": 257,
@@ -2650,6 +2704,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-13",
     "stars": 1843
+  },
+  "github:marlocarlo/omp-manager": {
+    "forks": 0,
+    "last_commit": "2026-03-04",
+    "last_release": "2026-03-03",
+    "stars": 19
   },
   "github:mathaou/termdbms": {
     "forks": 35,
@@ -3341,6 +3401,12 @@
     "last_release": "2025-10-31",
     "stars": 17
   },
+  "github:rolandnsharp/sshmail": {
+    "forks": 5,
+    "last_commit": "2026-03-12",
+    "last_release": null,
+    "stars": 35
+  },
   "github:ronilan/rusticon": {
     "forks": 1,
     "last_commit": "2026-02-10",
@@ -3394,6 +3460,12 @@
     "last_commit": "2025-12-11",
     "last_release": "2022-12-08",
     "stars": 1556
+  },
+  "github:samuelfaj/distill": {
+    "forks": 16,
+    "last_commit": "2026-03-12",
+    "last_release": null,
+    "stars": 296
   },
   "github:samyakbardiya/trex": {
     "forks": 3,
@@ -3779,6 +3851,12 @@
     "last_release": "2025-12-15",
     "stars": 1532
   },
+  "github:taskbook-sh/taskbook": {
+    "forks": 3,
+    "last_commit": "2026-03-12",
+    "last_release": "2026-03-12",
+    "stars": 101
+  },
   "github:tattoy-org/tattoy": {
     "forks": 15,
     "last_commit": "2025-09-14",
@@ -3923,6 +4001,12 @@
     "last_release": "2024-01-08",
     "stars": 2460
   },
+  "github:trap251/ymp": {
+    "forks": 2,
+    "last_commit": "2026-03-14",
+    "last_release": "2026-02-03",
+    "stars": 13
+  },
   "github:travisstaloch/simdjzon": {
     "forks": 6,
     "last_commit": "2025-11-04",
@@ -4060,6 +4144,12 @@
     "last_commit": "2026-03-03",
     "last_release": "2026-02-26",
     "stars": 1297
+  },
+  "github:westpoint-io/dustoff": {
+    "forks": 1,
+    "last_commit": "2026-03-06",
+    "last_release": "2026-03-04",
+    "stars": 26
   },
   "github:will/git-vain": {
     "forks": 9,
