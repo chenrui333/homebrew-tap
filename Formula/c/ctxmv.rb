@@ -6,6 +6,13 @@ class Ctxmv < Formula
   license "MIT"
   head "https://github.com/Ryu0118/ctxmv.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d790d3e31db55aff29fd412aab292c432c58f063bfdd6123732a018469e4cca4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04ef0a8ef26bfd5d00a5c42dd2ada485aab257d1051d899dfc6a61e909361632"
+    sha256 cellar: :any_skip_relocation, sequoia:       "de225d925afc527a2da5055c739367bf048eb47bb8888c06fbbdb8a0c0a825a0"
+  end
+
   depends_on xcode: ["16.0", :build]
   depends_on :macos
   depends_on macos: :sequoia
