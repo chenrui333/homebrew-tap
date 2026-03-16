@@ -6,6 +6,15 @@ class Cdx < Formula
   license "Apache-2.0"
   head "https://github.com/ezpzai/cdx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "7e58987ac351cb3bcbf7d54d3d9e52bbe760fdba1b6fc7a821ec233b837a3f47"
+    sha256                               arm64_sequoia: "284f3ca90e5ebfc657f122b8300abf25db69c7b20e14c133cd150b70a2154629"
+    sha256                               arm64_sonoma:  "c9bec8de32a7c3c81ce6debfd3b7633caa56c276447c14ea29c7b0923328329d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6f3ea8c313b90d7ba9ca6975b1e72ce2523285c4d12c55df7d00e81be44846e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8407160c1f237e937357b4e580b1ed87f406c6eaff0e837b0760f3daa76a4b30"
+  end
+
   depends_on "node"
 
   on_macos do
