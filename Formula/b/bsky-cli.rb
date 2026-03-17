@@ -8,7 +8,7 @@ class BskyCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "3708decaafee67f49f115f79931b8ffd72889eacc2df8f400eeb5dd1fe9727e7"
+    sha256 cellar: :any_skip_relocation, all: "985626a2fd81c19adff984d15c90b51370742d00a687d1240302e713b77d29c3"
   end
 
   depends_on "node"
