@@ -1,8 +1,8 @@
 class Dominds < Formula
   desc "AI-driven DevOps framework with persistent memory"
   homepage "https://github.com/longrun-ai/dominds"
-  url "https://registry.npmjs.org/dominds/-/dominds-1.8.10.tgz"
-  sha256 "60b2eb401832ad0c4815cb3dc7b6ae3783f1bcde97f2aa299c05a3159ee1af83"
+  url "https://registry.npmjs.org/dominds/-/dominds-1.8.11.tgz"
+  sha256 "f42ec2477ec6a65f3c00f69475c653e3450bfa4db13fa83d4322090c057ba513"
   license "LGPL-3.0-or-later"
 
   bottle do
