@@ -1,8 +1,8 @@
 class AwsDoctor < Formula
   desc "Audit AWS security, costs, and best practices"
   homepage "https://awsdoctor.compacompila.com/"
-  url "https://github.com/elC0mpa/aws-doctor/archive/refs/tags/v1.10.2.tar.gz"
-  sha256 "51200abc7fe270754d2df1d6a5078a6a9d74f4064eca0425efb6515b4969f524"
+  url "https://github.com/elC0mpa/aws-doctor/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "3e0e91c92e5c7d2e050274370009b8714df8360b046892ae30a9b0d928ec5fa4"
   license "MIT"
   head "https://github.com/elC0mpa/aws-doctor.git", branch: "main"
 
