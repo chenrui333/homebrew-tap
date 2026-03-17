@@ -8,6 +8,13 @@ class MlxVlm < Formula
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6f3a752e40adbda13009db9b7702c9d2bda634aa628d0fb86910d7608a07c38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f296336fa3b79923b0183f0e4ebe12742868198e23fe8e6a7bf38b02ed6958ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d3f580a238b321073dea20727eaeeb352a2ce7e797db6308a314a35f54db0ff"
+  end
+
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
   depends_on "libsndfile"
