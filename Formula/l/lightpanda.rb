@@ -6,6 +6,15 @@ class Lightpanda < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/lightpanda-io/browser.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "408058ed431697892c2cc2e4c73e6e643ac464d628de7ccc3aefcc7b53bad4b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abc1b4c70f5397c456a91bc383c374a2c96aef1b5de3d84cfdba5aa0fa782d80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ce973f58e3cb9a57241b396fc07d6250e2af55e3cedb819cb0f8e61c9f8e801"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11441a954699e3be16a339377860acc5710821a246fe91b415378a65c875f53b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b253b711287327417b0d3206fc99dfce4433ac603d5c401483d0d486f399a3b"
+  end
+
   depends_on "rust" => :build
   depends_on "zig" => :build
 
