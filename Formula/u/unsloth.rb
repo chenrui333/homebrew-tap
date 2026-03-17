@@ -11,6 +11,15 @@ class Unsloth < Formula
   license all_of: ["Apache-2.0", "AGPL-3.0-only"]
   head "https://github.com/unslothai/unsloth.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79831fe1f129ab6a6502829bbf94191d4b0aef0e312f509ad991150349e035bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b854950e71884d5625126b384c981df612a138a9eae1e29f649d8b247a0533c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef38866134d1a6ad0a14677d01b8a1425114d43cf9d9816f8fd56d9bdeb8f37a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4354f08861326162257ad1c919e74841d4ebfaabb2f7f6c597465038e25a26b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61ca248626cadf09ab27a406fc39ea99806ae7bb9e96a1ec45947a1e723b2b53"
+  end
+
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
