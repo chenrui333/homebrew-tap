@@ -8,6 +8,13 @@ class MlxAudio < Formula
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "fbee24078b68f5d3b5c1b71c00e199ade2f478d8c2b348e396af4d45609ef5b8"
+    sha256 cellar: :any, arm64_sequoia: "b97657ace4288799246bf27c342030e95acdd953b97ec42c21a74ab3db2bff80"
+    sha256 cellar: :any, arm64_sonoma:  "4d8fa24ec0916eeacceec91729706992c666459ee6668f9dc4fd0ec009b441b7"
+  end
+
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
   depends_on "libsndfile"
