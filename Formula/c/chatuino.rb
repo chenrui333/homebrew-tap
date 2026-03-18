@@ -8,11 +8,11 @@ class Chatuino < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77886ec762e63ab81cc2967c5a608afb1b49149be4fe3e3e2b31c3238621d742"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89b3d7d826b4506cccffef82835bf57642e3ba5bc23c053973b3a44646a96b43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e6fa0bd0aa706ddf3a7fa15f9db740e896b7021265fa89b022a6ee4cfe7fba1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6bee52d283bfe7361dc43864b0bbf71256fd4f22df2f1e24c736f05416f67f5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24e8247675ddce97889e913eeff8356e8ff180d67a28c6d517e62a12cd83f0cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65b8e69849cd6fa9fd2c089f661e80d319aadd502175102f197be062db6c94eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dadbadb02645506e61c213f943e9955723fa95135d6570b760b3e9e710d5c23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f924b18108372a7bc65a363ff83b5a8479efe399c51c2a3707d3da5b22fa321e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c4bd1ef1767ff6236df9fc93d965da7b4963eab5c2164e4beb4e8b553933f73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98620ee77702200d33c33aee17f604c0c771dfbb03eaa0a685c1616141102190"
   end
 
   depends_on "go" => :build
