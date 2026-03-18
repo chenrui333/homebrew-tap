@@ -1,8 +1,8 @@
 class Ymp < Formula
   desc "Browse and play YouTube audio from the terminal"
   homepage "https://github.com/trap251/ymp"
-  url "https://github.com/trap251/ymp/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "6cdd43fd0b058745b37d34dfb7a7427e83a8d0ccfb3978f412095f9805cbbf4a"
+  url "https://github.com/trap251/ymp/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "b7587c9cac1784a611ee28388da97ba1d11b3c54404883980ddd8d41f72aebc5"
   license "MIT"
   head "https://github.com/trap251/ymp.git", branch: "main"
 
