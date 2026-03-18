@@ -1,8 +1,8 @@
 class Prpm < Formula
   desc "Universal registry for AI coding tools"
   homepage "https://prpm.dev/"
-  url "https://registry.npmjs.org/prpm/-/prpm-2.1.30.tgz"
-  sha256 "cbe914e75c107da644e5ea9ffa3e9125650f6b75d5fbd4a1626f237e9f71b17c"
+  url "https://registry.npmjs.org/prpm/-/prpm-2.1.31.tgz"
+  sha256 "4cf509e307b97e12751dd1f5097ed9d6652a7fd967b8653bad4d5373c772184d"
   license "MIT"
 
   bottle do
