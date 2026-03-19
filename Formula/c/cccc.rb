@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/5d/91/6e5e351f43be9b7a1569293a2fb1bb6aae35e581d04b8df54aed6a5dead4/cccc_pair-0.4.5.tar.gz"
-  sha256 "7cd4fea91437b32575e22b16baad7121ca3d23b7ab736218fcf2f6bd5e5cabb6"
+  url "https://files.pythonhosted.org/packages/7f/b5/caf4178762768809cd7677ea82ed0f5f6b2cc3c3ca93c2570b468c66169e/cccc_pair-0.4.6.tar.gz"
+  sha256 "4e22f87f88f53e9f41245c6dd03ea9e895e91dedb91c26be0e8cb0ab4951c06d"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -178,6 +178,11 @@ class Cccc < Formula
   resource "watchfiles" do
     url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
     sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+  end
+
+  resource "websocket-client" do
+    url "https://files.pythonhosted.org/packages/2c/41/aa4bf9664e4cda14c3b39865b12251e8e7d239f4cd0e3cc1b6c2ccde25c1/websocket_client-1.9.0.tar.gz"
+    sha256 "9e813624b6eb619999a97dc7958469217c3176312b3a16a4bd1bc7e08a46ec98"
   end
 
   resource "websockets" do
