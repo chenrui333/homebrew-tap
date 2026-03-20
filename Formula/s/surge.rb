@@ -8,11 +8,11 @@ class Surge < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f24d95956348d22bfbf47eed7a21c3b09042ab690c4613a28752ddb7c9b643a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f24d95956348d22bfbf47eed7a21c3b09042ab690c4613a28752ddb7c9b643a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f24d95956348d22bfbf47eed7a21c3b09042ab690c4613a28752ddb7c9b643a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b196d19777805b32ebad8c5c98ba268b1a1490909f0cdae04b77fff8c403a709"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "539adb4431685809447048606d53dbc556066789e9fa86baf0461552c41a41a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61ae3f824cfe17fa9787d7124db14b5be4b00453b6764b7fcf22b96b28b618b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61ae3f824cfe17fa9787d7124db14b5be4b00453b6764b7fcf22b96b28b618b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61ae3f824cfe17fa9787d7124db14b5be4b00453b6764b7fcf22b96b28b618b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69b003e4c6dadcd7db4ebc63e455c1d2de6eb2cce9107077f251f7e1d3e58394"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a1dfb8a510dbdf03311f4b72ed86da84297e9e7366568dddfeefd1ac859492"
   end
 
   depends_on "go" => :build
