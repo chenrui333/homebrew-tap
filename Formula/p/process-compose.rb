@@ -1,8 +1,8 @@
 class ProcessCompose < Formula
   desc "Flexible scheduler for non-containerized applications"
   homepage "https://f1bonacc1.github.io/process-compose/"
-  url "https://github.com/F1bonacc1/process-compose/archive/refs/tags/v1.94.0.tar.gz"
-  sha256 "8e1ce5deefd004ee46728f8944c164341a7bf2e1f1714804724dc10362de6663"
+  url "https://github.com/F1bonacc1/process-compose/archive/refs/tags/v1.100.0.tar.gz"
+  sha256 "4761d3386c5ec12979aaf554878b0ac5ceb68c83db55451cc83a8b1f42a6d245"
   license "Apache-2.0"
   head "https://github.com/F1bonacc1/process-compose.git", branch: "main"
 
