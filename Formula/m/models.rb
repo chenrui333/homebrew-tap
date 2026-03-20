@@ -1,8 +1,8 @@
 class Models < Formula
   desc "CLI and TUI for browsing AI models and coding agents"
   homepage "https://github.com/arimxyer/models"
-  url "https://github.com/arimxyer/models/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "ae065a6a839f54a08e220a960636f349890b34ca75f0ba76cd6bb5fbe4677deb"
+  url "https://github.com/arimxyer/models/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "d235c5eaf77551570670f4e4b6f8497b8089319a4078ea17d938c9f4cb288d68"
   license "MIT"
   head "https://github.com/arimxyer/models.git", branch: "main"
 
