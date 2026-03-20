@@ -1,8 +1,8 @@
 class Surge < Formula
   desc "Blazing fast TUI download manager"
   homepage "https://github.com/surge-downloader/Surge"
-  url "https://github.com/surge-downloader/Surge/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "f7fd97760eadd3083092eb01e15ecbe481f0def3f40b499ab5266e054dd0766d"
+  url "https://github.com/surge-downloader/Surge/archive/refs/tags/v0.7.4.tar.gz"
+  sha256 "952ef5c75e8de4500990de65c1c41305458c76cbdd0c268e6a03eacd03a7c953"
   license "MIT"
   head "https://github.com/surge-downloader/Surge.git", branch: "main"
 
