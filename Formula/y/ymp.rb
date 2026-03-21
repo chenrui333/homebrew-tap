@@ -8,11 +8,11 @@ class Ymp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e798008b2f2fc5640858c72578ac4a28f75b9695b88ea3e581f3c2578b3225ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31f379202e5836f828fc1a539b9507f8f2f813a3ca6d0c4403a8bc1b84f7b10a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9f831d04b99056778150fadd9fef08f0cdfcfde5b3191c253ff3990c0635d14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fae0aaf19866ceab734288948bc3b4296a32ce0a075069cad6737f12997ae53f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c06e10eecec832bb7b2958ed8f5446fa2f61efe70c1cecd46dbb5a02270977e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fdb25bcdd9db5235fdd0febc4594cdab8a0d451d958db4f1345595612886940"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "457a1b1aab0889d1033d8b6224caaf1023dea98286c8d251e2345865d41135c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "041b54be227ad7017a002bcc96e5449b67d0d8c473cc443b1d6fe281be7d21ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d43539d589d4b4b56138ded42b30a7c66a4f47430b185a3f912e889871bd0aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "453dda4074b4a123229c0e806b91b83f1978c349fbf7f003220e95f8d34c83e5"
   end
 
   depends_on "rust" => :build
