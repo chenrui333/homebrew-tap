@@ -366,6 +366,13 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
 - Never edit workflow files just to restart checks.
 - Never force-push `main`.
 
+### GitHub Package Visibility
+
+- For GitHub package visibility changes, use the repo-local skill at `skills/github-package-visibility/SKILL.md`.
+- Use Playwright MCP with an existing signed-in browser session when available.
+- Verify the owner/account context first, change one package before batching, and keep committed examples generic.
+- Confirm completion from the filtered `private` packages view after the run.
+
 ## AI Disclosure
 
 If AI assisted with the PR, check the AI checkbox in the PR template and briefly describe:
