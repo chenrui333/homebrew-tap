@@ -8,11 +8,11 @@ class Pwdsafety < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ecf822ea3c2567858ba10f3fcba23b0dc2da652b7d63a3bbd7edcdf220cfa99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ecf822ea3c2567858ba10f3fcba23b0dc2da652b7d63a3bbd7edcdf220cfa99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ecf822ea3c2567858ba10f3fcba23b0dc2da652b7d63a3bbd7edcdf220cfa99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eddb9a1c9bb4b4504382f942da9cf683b5ae3546c9e8f3c68095d242adf998a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8ae2e0631ce9bf5c1b4e09d45d468c2309537f9ab0ff3e09b811a2a32b85759"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "704a29e204a3ef89a534dfcbabb794b9172196afee42471bcd6c6f5098258be9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "704a29e204a3ef89a534dfcbabb794b9172196afee42471bcd6c6f5098258be9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "704a29e204a3ef89a534dfcbabb794b9172196afee42471bcd6c6f5098258be9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e23248ca2f5ff39e154f40de309c6a1f985eb730401d372bdb93ebad3d830911"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cc85f8c575b9e4853a99e0ea07197a2cec7d1e57e0720db9060b6f2bafcb30e"
   end
 
   depends_on "go" => :build
