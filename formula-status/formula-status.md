@@ -19,7 +19,7 @@ Total formulas: 741
 | vercel-serve | Static file serving and directory listing | 9822 | 695 | 2025-09-04 | 2025-09-04 | MIT | ✓ | - | [link](https://github.com/vercel/serve) |
 | chatlog | Easily use your own chat data | 9185 | 2659 | 2025-10-20 | - | Apache-2.0 | ✓ | - | [link](https://github.com/sjzar/chatlog) |
 | create-mcp-use-app | Project scaffolding tool for mcp-use applications | 9162 | 1125 | 2026-02-16 | 2026-01-22 | MIT | ✓ | - | [link](https://github.com/mcp-use/mcp-use) |
-| fission-cli | Fast and Simple Serverless Functions for Kubernetes | 8829 | 793 | 2026-02-12 | 2025-12-18 | Apache-2.0 | ✓ | ✓ | [link](https://fission.io/) |
+| fission-cli | Fast and Simple Serverless Functions for Kubernetes | 8829 | 793 | 2026-02-12 | 2025-12-18 | Apache-2.0 | ✓ | ✓ | [link](https://github.com/fission/fission) |
 | copilot-cli | Copilot coding agent directly to your terminal | 8435 | 1154 | 2026-02-16 | 2026-02-14 | - | ✓ | - | [link](https://github.com/github/copilot-cli) |
 | otto | JavaScript interpreter in Go (golang) | 8434 | 599 | 2025-06-13 | 2024-11-05 | MIT | ✓ | - | [link](https://github.com/robertkrimen/otto) |
 | npm-np | Better `npm publish` | 7683 | 311 | 2026-01-29 | 2026-01-29 | MIT | ✓ | - | [link](https://github.com/sindresorhus/np) |
