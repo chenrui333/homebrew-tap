@@ -6,6 +6,15 @@ class Sonar < Formula
   license "MIT"
   head "https://github.com/raskrebs/sonar.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3115c38f85405812866eb7abddbaaa46c02ed18ceb667cd945359db24a2f26d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3115c38f85405812866eb7abddbaaa46c02ed18ceb667cd945359db24a2f26d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3115c38f85405812866eb7abddbaaa46c02ed18ceb667cd945359db24a2f26d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef5e4ea0216752229b5f82a669f0645d17faae723c602af684c84b11ba56c847"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a49a9da5425b09da42a03599f2f9883883ca07c46f7c68bd3498780ceee09cf4"
+  end
+
   depends_on "go" => :build
 
   def install
