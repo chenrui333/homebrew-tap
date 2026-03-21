@@ -6,12 +6,13 @@ This directory contains custom Homebrew commands provided by the `chenrui333/tap
 
 Create a tap PR that migrates a formula from the previous Homebrew `python@X.Y`
 dependency to the current one and refreshes resource blocks with
-`brew update-python-resources`.
+`brew update-python-resources2`.
 
 ### Usage
 
 ```bash
 brew migrate-python readmeai
+brew migrate-python chenrui333/tap/readmeai
 brew migrate-python readmeai --exclude foo,bar
 ```
 
@@ -19,6 +20,7 @@ brew migrate-python readmeai --exclude foo,bar
 
 - Works against `chenrui333/homebrew-tap`
 - Creates a branch from `origin/main`
+- Uses `brew update-python-resources2` so missing sdists are handled in the same tap workflow
 - Pushes the branch and opens a PR automatically
 - Adds the matching `python-X.Y-migration` label when present
 - Requires a clean tracked worktree in the tap
@@ -164,4 +166,5 @@ Run a strict online audit with autofix enabled.
 
 ```bash
 brew check chenrui333/tap/bun
+brew check bun
 ```
