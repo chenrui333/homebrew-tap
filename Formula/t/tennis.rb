@@ -6,6 +6,15 @@ class Tennis < Formula
   license "MIT"
   head "https://github.com/gurgeous/tennis.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c404adc8c48f5bbb220b0b505c16f2e577f4e79ad670d6101b52ead9cd0fe52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92636c62f7211a88634df5d9c18177c515ada0330705e66ee618b733ec422709"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51664cc308c0697e5568374f80f86cdb36c14391a42bb327c14f14e0107e5bb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c177a056ed6376f47a114a77f3bf272791f3ff89616b9e282ac0b23ed33094b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64cebead59d15c10406e7c2dd5f246d92fdd874160a7d999a8f367751aa8cd4c"
+  end
+
   depends_on "zig" => :build
 
   def install
