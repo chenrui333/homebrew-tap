@@ -2,8 +2,8 @@ class Bun < Formula
   desc "Incredibly fast JavaScript runtime, bundler, test runner, and package manager"
   homepage "https://bun.com"
   url "https://github.com/oven-sh/bun.git",
-      tag:      "bun-v1.3.9",
-      revision: "cf6cdbbbadd50604bc17f21ed5d0612c920a5d9a"
+      tag:      "bun-v1.3.11",
+      revision: "a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d"
   license all_of: [
     "MIT",          # Bun itself and most dependencies
     "Apache-2.0",   # boringssl, simdutf, uSockets, and others
@@ -35,8 +35,8 @@ class Bun < Formula
   end
 
   on_linux do
-    depends_on "lld" => :build
-    depends_on "llvm" => :build
+    depends_on "lld@21" => :build
+    depends_on "llvm@21" => :build
   end
 
   # Use the official release binary only as a bootstrap compiler for
@@ -44,22 +44,22 @@ class Bun < Formula
   resource "bun-bootstrap" do
     on_macos do
       on_arm do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-darwin-aarch64.zip"
-        sha256 "cde6a4edf19cf64909158fa5a464a12026fd7f0d79a4a950c10cf0af04266d85"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-darwin-aarch64.zip", using: :nounzip
+        sha256 "6f5a3467ed9caec4795bf78cd476507d9f870c7d57b86c945fcb338126772ffc"
       end
       on_intel do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-darwin-x64.zip"
-        sha256 "588f4a48740b9a0c366a00f878810ab3ab5e6734d29b7c3cbdd9484b74a007de"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-darwin-x64.zip", using: :nounzip
+        sha256 "c4fe2b9247218b0295f24e895aaec8fee62e74452679a9026b67eacbd611a286"
       end
     end
     on_linux do
       on_arm do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-linux-aarch64.zip"
-        sha256 "a2c2862bcc1fd1c0b3a8dcdc8c7efb5e2acd871eb20ed2f17617884ede81c844"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-linux-aarch64.zip"
+        sha256 "d13944da12a53ecc74bf6a720bd1d04c4555c038dfe422365356a7be47691fdf"
       end
       on_intel do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.9/bun-linux-x64.zip"
-        sha256 "4680e80e44e32aa718560ceae85d22ecfbf2efb8f3641782e35e4b7efd65a1aa"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-linux-x64.zip"
+        sha256 "8611ba935af886f05a6f38740a15160326c15e5d5d07adef966130b4493607ed"
       end
     end
   end
@@ -77,9 +77,11 @@ class Bun < Formula
     end
 
     if OS.linux?
+      ENV.prepend_path "PATH", Formula["lld@21"].opt_bin
+      ENV.prepend_path "PATH", Formula["llvm@21"].opt_bin
       # Bun's CMake config passes Clang-specific flags that fail with GCC.
-      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV["CC"] = Formula["llvm@21"].opt_bin/"clang"
+      ENV["CXX"] = Formula["llvm@21"].opt_bin/"clang++"
       # Highway can emit evex512 ignored-attribute warnings that become errors.
       ENV.append "CXXFLAGS", "-Wno-ignored-attributes"
     end
@@ -105,6 +107,9 @@ class Bun < Formula
     ENV["RANLIB"] = "ranlib"
 
     resource("bun-bootstrap").stage buildpath/"bootstrap"
+    if (bootstrap_zip = Dir[buildpath/"bootstrap"/"*.zip"].first)
+      system "unzip", "-q", bootstrap_zip, "-d", buildpath/"bootstrap"
+    end
     bootstrap_bin = Dir[buildpath/"bootstrap"/"**/bun"].first
     raise "bootstrap bun binary not found" if bootstrap_bin.nil?
 
@@ -117,7 +122,7 @@ class Bun < Formula
     ENV.append "CFLAGS", "-Wno-unknown-warning-option"
     ENV.append "CXXFLAGS", "-Wno-undefined-var-template -Wno-unknown-warning-option"
 
-    # Bun 1.3.9 defines this dSYM post-build hook with no explicit SOURCES.
+    # Bun defines this dSYM post-build hook with no explicit SOURCES.
     # register_command rejects that, so wire the built bun binary as a source.
     inreplace "cmake/targets/BuildBun.cmake",
               "      TARGET\n        ${bun}\n      TARGET_PHASE\n",
@@ -165,11 +170,29 @@ class Bun < Formula
                   file(WRITE ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h "${JSARRAYINLINES_CONTENT}")
                 endif()
               EOS
+    if OS.linux?
+      # Bun's bun-only warning table injects a plain -Werror, so the formula's
+      # Linux CXXFLAGS do not demote this libstdc++ 12 deprecation on their own.
+      inreplace "scripts/build/flags.ts",
+                '      "-Werror",',
+                <<~EOS.chomp
+                  "-Werror",
+                  "-Wno-error=deprecated-declarations",
+                EOS
+    end
     if OS.mac? && MacOS.version <= :sequoia
-      # macOS 14/15 SDK headers declare this symbol without noexcept.
+      # LLVM 20/21 libc++ declarations differ here; use macro form to match both.
       inreplace "src/bun.js/bindings/workaround-missing-symbols.cpp",
                 "void std::__libcpp_verbose_abort(char const* format, ...) noexcept",
-                "void std::__libcpp_verbose_abort(char const* format, ...)"
+                "void std::__libcpp_verbose_abort(char const* format, ...) _NOEXCEPT"
+    end
+    if OS.mac? && MacOS.version >= :tahoe
+      # The final macOS 26 bun-profile link is getting SIGKILL; skip the large
+      # linker map there to keep the Tahoe link step lighter until upstream adjusts.
+      inreplace "scripts/build/flags.ts",
+                'flag: c => ["-dead_strip", "-dead_strip_dylibs", ' \
+                "`-Wl,-map,${c.buildDir}/${bunExeName(c)}.linker-map`],",
+                'flag: ["-dead_strip", "-dead_strip_dylibs"],'
     end
     if OS.mac?
       # macOS 14's compiler does not support deducing-this syntax in this block.
