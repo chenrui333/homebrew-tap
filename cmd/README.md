@@ -2,6 +2,27 @@
 
 This directory contains custom Homebrew commands provided by the `chenrui333/tap` tap.
 
+## `brew migrate-python`
+
+Create a tap PR that migrates a formula from the previous Homebrew `python@X.Y`
+dependency to the current one and refreshes resource blocks with
+`brew update-python-resources`.
+
+### Usage
+
+```bash
+brew migrate-python readmeai
+brew migrate-python readmeai --exclude foo,bar
+```
+
+### Notes
+
+- Works against `chenrui333/homebrew-tap`
+- Creates a branch from `origin/main`
+- Pushes the branch and opens a PR automatically
+- Adds the matching `python-X.Y-migration` label when present
+- Requires a clean tracked worktree in the tap
+
 ## `brew update-python-resources2`
 
 An enhanced wrapper around `brew update-python-resources` that handles PyPI packages lacking suitable source distributions by creating skeleton resource stanzas for manual backfill.
@@ -123,3 +144,24 @@ Sets `HOMEBREW_NO_AUTO_UPDATE=1` when calling the underlying command to prevent 
 - Does not retry for other types of errors (shows full output and exits)
 - Requires manual backfill of URL and sha256 for skeleton resources
 - Formula must be in the tap (cannot modify formulas from other taps)
+
+## `brew patch`
+
+Fetch a patch URL, calculate its SHA-256, and print a Homebrew `patch do`
+block.
+
+### Usage
+
+```bash
+brew patch https://github.com/org/repo/commit/abc123.patch
+```
+
+## `brew check`
+
+Run a strict online audit with autofix enabled.
+
+### Usage
+
+```bash
+brew check chenrui333/tap/bun
+```
