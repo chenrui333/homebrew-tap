@@ -8,11 +8,11 @@ class NightWatchCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "488e08552c757bc325cb2628056dbb5ae0163af2dc7045ddd9c17520c704d370"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "488e08552c757bc325cb2628056dbb5ae0163af2dc7045ddd9c17520c704d370"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "488e08552c757bc325cb2628056dbb5ae0163af2dc7045ddd9c17520c704d370"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0871c99081e335fd4c9e255d91dfaf374727c557c76735f06f8bc2d588720a6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0871c99081e335fd4c9e255d91dfaf374727c557c76735f06f8bc2d588720a6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26519dbd3ba713fb09b8ec6cbfee6db56e7d9c0242ea3ef12664347372653f78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26519dbd3ba713fb09b8ec6cbfee6db56e7d9c0242ea3ef12664347372653f78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26519dbd3ba713fb09b8ec6cbfee6db56e7d9c0242ea3ef12664347372653f78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1e5f5fed8410cb886449c4d6793b70f44db5233387e97ce244cbe9be4712e06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1e5f5fed8410cb886449c4d6793b70f44db5233387e97ce244cbe9be4712e06"
   end
 
   depends_on "node"
