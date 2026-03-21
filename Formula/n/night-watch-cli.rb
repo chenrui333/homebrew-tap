@@ -1,8 +1,8 @@
 class NightWatchCli < Formula
   desc "Async execution layer for PRDs and queued engineering work"
   homepage "https://github.com/jonit-dev/night-watch-cli"
-  url "https://registry.npmjs.org/@jonit-dev/night-watch-cli/-/night-watch-cli-1.8.5.tgz"
-  sha256 "508608afa8e3f44125a1b8fcdb41421412f17cc5bfd50ec46ad8022103d0e715"
+  url "https://registry.npmjs.org/@jonit-dev/night-watch-cli/-/night-watch-cli-1.8.7.tgz"
+  sha256 "7948b2d00f4b54fd15a641d35b8687666c0e9e81ec1ca03615ccb98fee6aa302"
   license "MIT"
   head "https://github.com/jonit-dev/night-watch-cli.git", branch: "main"
 
