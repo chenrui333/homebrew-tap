@@ -332,6 +332,21 @@ When using `gh` to create/edit PRs or issues:
 - Avoid passing escaped `\n` in quoted `--body` strings.
 - If inline body text is required, use single quotes around the full body to avoid shell interpolation.
 
+## Tap Maintenance Helpers
+
+For recurring maintenance work in this tap, prefer the repo-local helpers under `cmd/` when they fit:
+
+- `brew migrate-python <formula>`
+  - For tap-local Python migration PRs.
+  - Works against `chenrui333/tap`, refreshes resources with `brew update-python-resources2`, pushes the branch, and opens the PR.
+- `brew check <formula>`
+  - Shortcut for `brew audit --strict --git --online --fix`.
+  - Bare formula names are resolved to `chenrui333/tap/<formula>`.
+- `brew patch <url>`
+  - Fetches a patch URL, computes the SHA-256, and prints a `patch do` block for formula edits.
+
+If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh` commands in this document instead of forcing the helper into a workflow it was not built for.
+
 ## CI Failures
 
 - Reproduce failures locally before debugging

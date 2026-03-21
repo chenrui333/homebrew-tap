@@ -9,8 +9,21 @@ Usage: brew check <formula> [...]
 Run a strict online audit with autofix enabled.
 
 Example:
+  brew check bun
   brew check chenrui333/tap/bun
 EOF
+}
+
+normalize_formula_arg() {
+  local tap="chenrui333/tap"
+  local arg="$1"
+
+  if [[ "$arg" == *.rb || "$arg" == */* ]]; then
+    printf '%s\n' "$arg"
+    return 0
+  fi
+
+  printf '%s\n' "${tap}/${arg}"
 }
 
 if [[ $# -eq 0 ]]; then
@@ -25,4 +38,9 @@ case "${1:-}" in
     ;;
 esac
 
-brew audit --strict --git --online --fix "$@"
+args=()
+for arg in "$@"; do
+  args+=("$(normalize_formula_arg "$arg")")
+done
+
+HOMEBREW_NO_AUTO_UPDATE=1 brew audit --strict --git --online --fix "${args[@]}"

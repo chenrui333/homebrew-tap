@@ -8,12 +8,12 @@ Usage: brew migrate-python <formula> [update-python-resources options]
 
 Create a tap PR that migrates a formula from the previous Homebrew `python@X.Y`
 dependency to the current one returned by `brew which-formula python3`, then
-refresh Python resources with `brew update-python-resources`.
+refresh Python resources with `brew update-python-resources2`.
 
 The command:
   1. creates a branch from `origin/main`
   2. replaces `python@<current-1>` with `python@<current>`
-  3. runs `brew update-python-resources`
+  3. runs `brew update-python-resources2`
   4. commits, pushes, and opens a PR in `chenrui333/homebrew-tap`
 
 Requirements:
@@ -22,6 +22,7 @@ Requirements:
 
 Examples:
   brew migrate-python readmeai
+  brew migrate-python chenrui333/tap/readmeai
   brew migrate-python readmeai --exclude foo,bar
 EOF
 }
@@ -51,6 +52,22 @@ find_formula_path() {
   return 1
 }
 
+normalize_formula_name() {
+  local tap="chenrui333/tap"
+  local arg="$1"
+
+  if [[ "$arg" == "${tap}/"* ]]; then
+    printf '%s\n' "${arg#"${tap}"/}"
+    return 0
+  fi
+
+  if [[ "$arg" == */* ]]; then
+    odie "formula must be in ${tap}; got '${arg}'"
+  fi
+
+  printf '%s\n' "$arg"
+}
+
 if [[ $# -eq 0 ]]; then
   usage
   exit 1
@@ -63,14 +80,14 @@ case "${1:-}" in
     ;;
 esac
 
-formula="$1"
+formula="$(normalize_formula_name "$1")"
 shift
 
 tap="chenrui333/tap"
 repo="chenrui333/homebrew-tap"
-tap_root="$(brew --repository "$tap")"
+tap_root="$(HOMEBREW_NO_AUTO_UPDATE=1 brew --repository "$tap")"
 formula_path="$(find_formula_path "$tap_root" "$formula")" || odie "could not find formula '${formula}' in ${tap}"
-formula_rel="${formula_path#${tap_root}/}"
+formula_rel="${formula_path#"${tap_root}"/}"
 
 token="${HOMEBREW_GITHUB_API_TOKEN:-}"
 if [[ -z "$token" ]]; then
@@ -79,7 +96,7 @@ fi
 [[ -n "$token" ]] || odie "GitHub token required. Run 'gh auth login' or export HOMEBREW_GITHUB_API_TOKEN."
 export GITHUB_TOKEN="$token"
 
-next="$(brew which-formula python3 2>/dev/null | awk -F'@' 'NF > 1 { print $2; exit }')"
+next="$(HOMEBREW_NO_AUTO_UPDATE=1 brew which-formula python3 2>/dev/null | awk -F'@' 'NF > 1 { print $2; exit }')"
 [[ -n "$next" ]] || odie "could not resolve the active Homebrew python3 formula"
 
 curr="$(awk -F. '{ printf "%s.%d", $1, $2 - 1 }' <<<"$next")"
@@ -99,6 +116,10 @@ fi
 
 if git -C "$tap_root" show-ref --verify --quiet "refs/heads/${branch}"; then
   odie "local branch '${branch}' already exists"
+fi
+
+if git -C "$tap_root" ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+  odie "remote branch '${branch}' already exists on origin"
 fi
 
 branch_created=false
@@ -133,7 +154,7 @@ export HOMEBREW_PYTHON_MIGRATE_CURR="python@${curr}"
 export HOMEBREW_PYTHON_MIGRATE_NEXT="python@${next}"
 perl -0pi -e 's/\Q$ENV{HOMEBREW_PYTHON_MIGRATE_CURR}\E/$ENV{HOMEBREW_PYTHON_MIGRATE_NEXT}/g' "$formula_path"
 
-brew update-python-resources "${tap}/${formula}" "$@" || true
+HOMEBREW_NO_AUTO_UPDATE=1 brew update-python-resources2 "$formula" "$@"
 
 git -C "$tap_root" add -- "$formula_rel"
 if git -C "$tap_root" diff --cached --quiet -- "$formula_rel"; then
