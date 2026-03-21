@@ -1,8 +1,8 @@
 class Pwdsafety < Formula
   desc "CLI checking password safety"
   homepage "https://github.com/edoardottt/pwdsafety"
-  url "https://github.com/edoardottt/pwdsafety/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "9c5135d01f1bcbd3db064a9e22532d539da0c36372c4e7044799ebc7bf3801e3"
+  url "https://github.com/edoardottt/pwdsafety/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "6676f7ccc1ad32e8c68b889426b563d69080a69c1f9212b32d79fccc2e70b79f"
   license "GPL-3.0-only"
   head "https://github.com/edoardottt/pwdsafety.git", branch: "main"
 
