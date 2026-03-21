@@ -355,16 +355,14 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
 - For Linux failures, use the [Homebrew Docker container](CONTRIBUTING.md#homebrew-docker-container)
 - If stuck, comment describing what you've tried
 
-### Restarting GitHub Actions Runs
+### Repo-local Skills
 
-- For tap PR check refreshes, use the repo-local skill at `skills/restart-github-actions-runs/SKILL.md`.
-- Prefer the helper:
+- Restart GitHub Actions runs: use [skills/restart-github-actions-runs/SKILL.md](skills/restart-github-actions-runs/SKILL.md) when you need to refresh tap PR checks without editing workflows. Prefer the helper:
   ```sh
   skills/restart-github-actions-runs/scripts/restart_pr_actions.sh --repo chenrui333/homebrew-tap <pr> [<pr> ...]
   ```
-- The helper prefers a safe empty-amend + `git push --force-with-lease` on verified same-repo PR head branches, and falls back to `gh run rerun` when the head branch is missing or otherwise not safe to push.
-- Never edit workflow files just to restart checks.
-- Never force-push `main`.
+  The helper prefers a safe empty-amend + `git push --force-with-lease` on verified same-repo PR head branches, and falls back to `gh run rerun` when the head branch is missing or otherwise not safe to push. Never edit workflow files just to restart checks, and never force-push `main`.
+- GitHub package visibility: use [skills/github-package-visibility/SKILL.md](skills/github-package-visibility/SKILL.md) when you need to change GitHub package visibility with Playwright, especially for bulk private-to-public flips. Verify the signed-in owner first, change one package before batching, keep committed examples generic, and confirm the final `private` filter is empty after the run.
 
 ## AI Disclosure
 
