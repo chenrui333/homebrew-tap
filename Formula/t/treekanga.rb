@@ -6,6 +6,15 @@ class Treekanga < Formula
   license :cannot_represent
   head "https://github.com/garrettkrohn/treekanga.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3050cfde2278c4d09259d1def8ca6570d9919d0252a4aa8cae33a4157739f01"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3050cfde2278c4d09259d1def8ca6570d9919d0252a4aa8cae33a4157739f01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3050cfde2278c4d09259d1def8ca6570d9919d0252a4aa8cae33a4157739f01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9d55ee131e0f488b082faacaa0aa10ce1608d461fa2b9fe88c4e5bda665f51e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af0f509cfe6ca779b029b0d0c18f80c3d15a37b9c24d28b88452e367c47fd21f"
+  end
+
   depends_on "go" => :build
 
   def install
