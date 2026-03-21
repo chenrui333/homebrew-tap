@@ -6,6 +6,14 @@ class Steamfetch < Formula
   license "ISC"
   head "https://github.com/unhappychoice/steamfetch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "4356e5c8757a8070b104d07e81eb4a978b7b2c14e3ba096f54d626ee8f72f320"
+    sha256 cellar: :any,                 arm64_sequoia: "4042fd4bbb0a21a95ac04801af5af87297dd46134dbebc0fd95c27f0e7135868"
+    sha256 cellar: :any,                 arm64_sonoma:  "032edb81b115bfd38f64a4ce0c387b608378d2ec0ad43ff2a4a627a5657fa13a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc89f106fed5ace2a30a9f46b496b60296abaeecaa47e6dbb328a69376c6460"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
