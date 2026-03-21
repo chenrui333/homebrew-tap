@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: brew migrate-python <formula> [update-python-resources options]
+
+Create a tap PR that migrates a formula from the previous Homebrew `python@X.Y`
+dependency to the current one returned by `brew which-formula python3`, then
+refresh Python resources with `brew update-python-resources`.
+
+The command:
+  1. creates a branch from `origin/main`
+  2. replaces `python@<current-1>` with `python@<current>`
+  3. runs `brew update-python-resources`
+  4. commits, pushes, and opens a PR in `chenrui333/homebrew-tap`
+
+Requirements:
+  - a clean tracked worktree in `chenrui333/tap`
+  - GitHub auth via `gh auth login` or `HOMEBREW_GITHUB_API_TOKEN`
+
+Examples:
+  brew migrate-python readmeai
+  brew migrate-python readmeai --exclude foo,bar
+EOF
+}
+
+odie() {
+  echo "Error: $*" >&2
+  exit 1
+}
+
+find_formula_path() {
+  local tap_root="$1"
+  local formula_name="$2"
+  local first_letter="${formula_name:0:1}"
+  local candidate="${tap_root}/Formula/${first_letter}/${formula_name}.rb"
+
+  if [[ -f "$candidate" ]]; then
+    printf '%s\n' "$candidate"
+    return 0
+  fi
+
+  candidate="${tap_root}/Formula/${formula_name}.rb"
+  if [[ -f "$candidate" ]]; then
+    printf '%s\n' "$candidate"
+    return 0
+  fi
+
+  return 1
+}
+
+if [[ $# -eq 0 ]]; then
+  usage
+  exit 1
+fi
+
+case "${1:-}" in
+  -h|--help)
+    usage
+    exit 0
+    ;;
+esac
+
+formula="$1"
+shift
+
+tap="chenrui333/tap"
+repo="chenrui333/homebrew-tap"
+tap_root="$(brew --repository "$tap")"
+formula_path="$(find_formula_path "$tap_root" "$formula")" || odie "could not find formula '${formula}' in ${tap}"
+formula_rel="${formula_path#${tap_root}/}"
+
+token="${HOMEBREW_GITHUB_API_TOKEN:-}"
+if [[ -z "$token" ]]; then
+  token="$(gh auth token 2>/dev/null || true)"
+fi
+[[ -n "$token" ]] || odie "GitHub token required. Run 'gh auth login' or export HOMEBREW_GITHUB_API_TOKEN."
+export GITHUB_TOKEN="$token"
+
+next="$(brew which-formula python3 2>/dev/null | awk -F'@' 'NF > 1 { print $2; exit }')"
+[[ -n "$next" ]] || odie "could not resolve the active Homebrew python3 formula"
+
+curr="$(awk -F. '{ printf "%s.%d", $1, $2 - 1 }' <<<"$next")"
+message="${formula}: migrate to \`python@${next}\`"
+branch="python@${next}-${formula}"
+label="python-${next}-migration"
+
+duplicate="$(gh pr list --repo "$repo" --search "in:title \"${message}\"" --state all --limit 1 --json number --jq '.[0].number // empty')"
+[[ -z "$duplicate" ]] || odie "Found duplicate! https://github.com/${repo}/pull/${duplicate}"
+
+orig_branch="$(git -C "$tap_root" branch --show-current)"
+[[ -n "$orig_branch" ]] || odie "detached HEAD is not supported"
+
+if [[ -n "$(git -C "$tap_root" status --porcelain --untracked-files=no)" ]]; then
+  odie "tracked changes present in ${tap_root}; commit or stash them first"
+fi
+
+if git -C "$tap_root" show-ref --verify --quiet "refs/heads/${branch}"; then
+  odie "local branch '${branch}' already exists"
+fi
+
+branch_created=false
+cleanup() {
+  local status=$?
+  if [[ "$branch_created" == true ]]; then
+    local current_branch=""
+    current_branch="$(git -C "$tap_root" branch --show-current 2>/dev/null || true)"
+    if [[ "$current_branch" == "$branch" ]]; then
+      git -C "$tap_root" switch "$orig_branch" >/dev/null 2>&1 || true
+    fi
+    if [[ $status -ne 0 ]]; then
+      git -C "$tap_root" branch -D "$branch" >/dev/null 2>&1 || true
+    fi
+  fi
+  exit $status
+}
+trap cleanup EXIT
+
+git -C "$tap_root" fetch origin main --quiet
+git -C "$tap_root" switch -c "$branch" origin/main >/dev/null
+branch_created=true
+
+if ! grep -q "python@${curr}" "$formula_path"; then
+  if grep -q "python@${next}" "$formula_path"; then
+    odie "${formula} already depends on python@${next}"
+  fi
+  odie "did not find python@${curr} in ${formula_rel}"
+fi
+
+export HOMEBREW_PYTHON_MIGRATE_CURR="python@${curr}"
+export HOMEBREW_PYTHON_MIGRATE_NEXT="python@${next}"
+perl -0pi -e 's/\Q$ENV{HOMEBREW_PYTHON_MIGRATE_CURR}\E/$ENV{HOMEBREW_PYTHON_MIGRATE_NEXT}/g' "$formula_path"
+
+brew update-python-resources "${tap}/${formula}" "$@" || true
+
+git -C "$tap_root" add -- "$formula_rel"
+if git -C "$tap_root" diff --cached --quiet -- "$formula_rel"; then
+  odie "no changes produced for ${formula_rel}"
+fi
+
+git -C "$tap_root" commit -m "$message" -- "$formula_rel"
+git -C "$tap_root" push --set-upstream origin "$branch"
+
+body_file="$(mktemp)"
+trap 'rm -f "$body_file"; cleanup' EXIT
+cat >"$body_file" <<EOF
+Automated migration to \`python@${next}\`.
+
+- update the formula dependency from \`python@${curr}\` to \`python@${next}\`
+- refresh Python resource blocks with \`brew update-python-resources\`
+EOF
+
+pr_url="$(gh pr create --repo "$repo" --base main --head "$branch" --title "$message" --body-file "$body_file")"
+
+if gh label list --repo "$repo" --json name --jq '.[].name' | grep -qx "$label"; then
+  gh pr edit "$pr_url" --repo "$repo" --add-label "$label"
+fi
+
+printf 'Created %s\n' "$pr_url"
