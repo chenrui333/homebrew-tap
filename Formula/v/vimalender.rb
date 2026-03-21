@@ -6,6 +6,15 @@ class Vimalender < Formula
   license "MIT"
   head "https://github.com/Sadoaz/vimalender.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0027549504723d09cd62f89269c602a9ead92ddc26759b218b0fe2caf346f4af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0027549504723d09cd62f89269c602a9ead92ddc26759b218b0fe2caf346f4af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0027549504723d09cd62f89269c602a9ead92ddc26759b218b0fe2caf346f4af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2a9ea8a78e07a1dce707b5c80528efc7f5ec28f519afa01351652d7c09aca3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55cc32ab758ffabee874dda60e87bcde5105120f9177abdf04f0aa0255495a0c"
+  end
+
   depends_on "go" => :build
 
   def install
