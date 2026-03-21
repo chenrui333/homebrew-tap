@@ -1,8 +1,8 @@
 class Ec < Formula
   desc "Terminal-native 3-way Git conflict resolver"
   homepage "https://github.com/chojs23/ec"
-  url "https://github.com/chojs23/ec/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "43b810c771d9d71d66fb252620ec1a8d255b4738493b767b2329a248cf39b4c7"
+  url "https://github.com/chojs23/ec/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "71bf8b390b5f5b010c07b65ecd4243535f690282f728cd164f9e2a79d1f14577"
   license "MIT"
   head "https://github.com/chojs23/ec.git", branch: "main"
 
