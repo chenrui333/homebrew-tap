@@ -20,7 +20,6 @@ class Sonar < Formula
   end
 
   test do
-    require "json"
     require "socket"
 
     server = TCPServer.new("127.0.0.1", 0)
@@ -28,8 +27,7 @@ class Sonar < Formula
 
     assert_match version.to_s, shell_output("#{bin}/sonar version")
 
-    output = JSON.parse(shell_output("#{bin}/sonar next #{port}-#{port + 1} --json"))
-    assert_equal [port + 1], output["ports"]
+    system bin/"sonar", "wait", port.to_s, "--quiet", "--timeout", "1s"
   ensure
     server&.close
   end
