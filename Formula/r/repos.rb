@@ -6,6 +6,15 @@ class Repos < Formula
   license "MIT"
   head "https://github.com/epilande/repos.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "d0ddebc2ec304bc776fa42c4290c8df86db2f69db59b5aea8a9a5daa91936b61"
+    sha256                               arm64_sequoia: "460869e1d851fea42f7613807b08bfd8f5795ca001a22573d833f1d125723c3b"
+    sha256                               arm64_sonoma:  "872288b526bd7877cbfb1a6b2df67d4ff3217d54717f9b4972efe326b9666e98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "132a6c5f2c9405fad66214cb834c33fe04749ddd9563475f5a4ad0486c6ac4a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0af262e73d3b0c002455461e87be9a0f446ad05241b9d3602248eba9bbd13786"
+  end
+
   depends_on "chenrui333/tap/bun" => :build
   depends_on "gh"
 
