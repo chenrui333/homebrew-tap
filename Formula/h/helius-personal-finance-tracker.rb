@@ -6,6 +6,15 @@ class HeliusPersonalFinanceTracker < Formula
   license "AGPL-3.0-only"
   head "https://github.com/STVR393/helius-personal-finance-tracker.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32cd0b28da1aacce0631b395b6fd1fca0f28106697c82a2c59366f5844b81d7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01afb49245d1b14dfc06050c377c8427e6cb358591a05023913ff30b150fdc76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0491a1b89931ef875e9190128435ebd84785aa08e3b6e63a5f62f5500a7e7a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b3f9b87775ec5a67a9f0b47d23d501eb564a273d8e437e61ce531e586305922"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a32be2f7166d1357ac60bf5de07b5bc0284e0114c41e984c7374feec57f131e"
+  end
+
   depends_on "rust" => :build
 
   def install
