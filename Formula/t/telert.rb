@@ -8,6 +8,16 @@ class Telert < Formula
   license "MIT"
   head "https://github.com/navig-me/telert.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b9dab5f699a52514cae52e91baae03a5ab76fe90db7722a7a6a2aae6156d2bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e09e4a6ef4a7c4b8ae7c8f0f8bce1cb5c65241be201a5e77cccf8bd7d52e7679"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cb8497a38c5654358f025e9f8b0e70badd2a1369078a08c81e5b9a316e4c26a"
+    sha256 cellar: :any_skip_relocation, sequoia:       "a2ba0987d481803552a2e8838f614ce8be56bfbe407b75d567426df93839f7f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "652f59835bfe4ca0f35feae2599406ab3c06caeb64695ca832152415f2af7b13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c63af567c17f223f9d09c4e9fb00ce551774cfff7957334b961b6c9ed0de145e"
+  end
+
   depends_on "certifi"
   depends_on "python@3.13"
 
