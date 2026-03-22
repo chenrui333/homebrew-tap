@@ -29,6 +29,6 @@ class AwsDoctor < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/aws-doctor version")
     output = shell_output("#{bin}/aws-doctor --invalid-flag 2>&1", 1)
-    assert_match "flag provided but not defined", output
+    assert_match "unknown flag", output
   end
 end
