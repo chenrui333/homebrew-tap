@@ -1,8 +1,8 @@
 class TuiBanner < Formula
   desc "Cinematic ANSI banners for Rust CLI/TUI"
   homepage "https://github.com/coolbeevip/tui-banner"
-  url "https://github.com/coolbeevip/tui-banner/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "7a324196d9b68a9354a0ca25113f375cbf550e3024aea8bb7bf2538975d6214f"
+  url "https://github.com/coolbeevip/tui-banner/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "20154caf8c9f621a2e51183fad2315f09e6b146937a1d7699f15b0d7cbcc4b69"
   license "Apache-2.0"
   head "https://github.com/coolbeevip/tui-banner.git", branch: "main"
 
