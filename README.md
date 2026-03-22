@@ -122,7 +122,6 @@ brew install --cask <tool>
 - `cchistory`
 - `cclogviewer`
 - `ccql`
-- `cdx`
 - `cello`
 - `cerbos`
 - `certok`
@@ -181,9 +180,7 @@ brew install --cask <tool>
 - `critcmp`
 - `crlfmt`
 - `crush`
-- `ctxmv`
 - `cueimports`
-- `cueitup`
 - `cull`
 - `curlconverter`
 - `dakora`
@@ -274,7 +271,6 @@ brew install --cask <tool>
 - `gemini-cli`
 - `get-port-cli`
 - `ghfetch`
-- `ghgrab`
 - `gignr`
 - `giq`
 - `git-chglog`
@@ -404,12 +400,9 @@ brew install --cask <tool>
 - `lazykiq`
 - `lazymake`
 - `lazynpm`
-- `lazytail`
 - `lazyworktree`
 - `lemonade`
 - `leveldb-cli`
-- `lightpanda-v8`
-- `lightpanda`
 - `lin`
 - `lintnet`
 - `lix`
@@ -454,9 +447,6 @@ brew install --cask <tool>
 - `mitex`
 - `mlbt`
 - `mln`
-- `mlx-audio`
-- `mlx-tune`
-- `mlx-vlm`
 - `mmemoji`
 - `mnamer`
 - `models`
@@ -483,7 +473,6 @@ brew install --cask <tool>
 - `nexus`
 - `ngtop`
 - `nhost`
-- `night-watch-cli`
 - `ninjabot`
 - `nino`
 - `nkv`
@@ -594,12 +583,10 @@ brew install --cask <tool>
 - `remark-cli`
 - `rendy`
 - `renux`
-- `repeater`
 - `repology`
 - `resinator`
 - `resto`
 - `revanced-cli`
-- `rip`
 - `rkik`
 - `rshell`
 - `rslocal`
@@ -643,7 +630,6 @@ brew install --cask <tool>
 - `sloop`
 - `smassh`
 - `solfmt`
-- `sonar`
 - `soundscope`
 - `sourcerer-mcp`
 - `spacelift-intent`
@@ -664,7 +650,6 @@ brew install --cask <tool>
 - `starcharts`
 - `starlit`
 - `statoscope`
-- `steamfetch`
 - `stree`
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
@@ -679,7 +664,6 @@ brew install --cask <tool>
 - `tftargets`
 - `tantivy-cli`
 - `taproom`
-- `tascli`
 - `taskbook`
 - `taskdog`
 - `taskonaut`
@@ -691,7 +675,6 @@ brew install --cask <tool>
 - `tcpterm`
 - `teldrive`
 - `tenderly`
-- `tennis`
 - `termdbms`
 - `terminal-mcp`
 - `termtunnel`
@@ -728,7 +711,6 @@ brew install --cask <tool>
 - `travelgrunt`
 - `trdl`
 - `tredis`
-- `treekanga`
 - `trex`
 - `trieve-cli`
 - `tsuki`
@@ -739,7 +721,6 @@ brew install --cask <tool>
 - `twilio-mcp-server`
 - `typeui-sh`
 - `ugdb`
-- `unsloth`
 - `unused-deps`
 - `uplift`
 - `urlhunter`
@@ -753,7 +734,6 @@ brew install --cask <tool>
 - `vet-run`
 - `vi-mongo`
 - `vibekit`
-- `vimalender`
 - `vitepress`
 - `vortix`
 - `vsg`
@@ -761,7 +741,6 @@ brew install --cask <tool>
 - `wakey`
 - `wallust`
 - `watchfiles`
-- `weathr`
 - `wedl`
 - `weekly-git-summary`
 - `werk`
