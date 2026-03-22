@@ -1,8 +1,8 @@
 class AwsDoctor < Formula
   desc "Audit AWS security, costs, and best practices"
   homepage "https://awsdoctor.compacompila.com/"
-  url "https://github.com/elC0mpa/aws-doctor/archive/refs/tags/v1.10.2.tar.gz"
-  sha256 "51200abc7fe270754d2df1d6a5078a6a9d74f4064eca0425efb6515b4969f524"
+  url "https://github.com/elC0mpa/aws-doctor/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "dedc51c7d71feaff6bf86a4f9521127518506bbb687c396925ae8bd536bdb995"
   license "MIT"
   head "https://github.com/elC0mpa/aws-doctor.git", branch: "main"
 
@@ -27,7 +27,7 @@ class AwsDoctor < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/aws-doctor --version")
+    assert_match version.to_s, shell_output("#{bin}/aws-doctor version")
     output = shell_output("#{bin}/aws-doctor --invalid-flag 2>&1", 1)
     assert_match "flag provided but not defined", output
   end
