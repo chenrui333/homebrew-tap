@@ -6,6 +6,15 @@ class AshAi < Formula
   license "MIT"
   head "https://github.com/ash-ai-org/ash-ai.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "814c41cc236aa4f2c52a30578c75ca18e833f85fd3829dca75e76f6193ac5270"
+    sha256 cellar: :any,                 arm64_sequoia: "fad1f849e22bcf06d96d93477ddfe587c6a6ac000b21dc7c9de20c36ff734917"
+    sha256 cellar: :any,                 arm64_sonoma:  "360afa513dbfdb0284883a547a0f05f2d6db223d499f922b7e9117341200fd74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08bf8358b6fb312d4020c599421fd845cc2ade4be6ba606632a5b522984467e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc976ff9bfc43722b766a3fdb7bb8a65d05b618c876d7e36c11a1f26dd9694d9"
+  end
+
   depends_on "node@24"
   depends_on "pcre2"
 
