@@ -8,6 +8,15 @@ class Rovr < Formula
   license "MIT"
   head "https://github.com/NSPC911/rovr.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "96c3d182c691f46ba7582c078cb1dfc3292989351e7c7e1b60a1e1279be946f8"
+    sha256 cellar: :any,                 arm64_sequoia: "bc86947aed493076202be03ce2210b952f55c9fb17ac88e635859e9c506aa732"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f22289e16b79fe1e906efcf9c3dbba344ce096b4495ac73332b366ebb4fa4a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56ae2398f717f27beaf4d0552196aa8414eaac87866fdb73b403d9e4c2fd96ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47bf2eef7870c33c0dbc25bf3bcd4f944698a7c2f99b9a7fbf991a6aa093210"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "jpeg-turbo"
