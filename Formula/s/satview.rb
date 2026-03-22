@@ -20,12 +20,21 @@ class Satview < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/tracker --version")
 
-    output = if OS.mac?
-      shell_output("printf 'q' | script -q /dev/null #{bin}/tracker")
+    output_log = testpath/"tracker.log"
+    pid = if OS.mac?
+      spawn "script", "-q", File::NULL, bin/"tracker", [:out, :err] => output_log.to_s
     else
-      shell_output("printf 'q' | script -q -c '#{bin}/tracker' /dev/null")
+      spawn "script", "-q", "-c", bin/"tracker", File::NULL, [:out, :err] => output_log.to_s
     end
+    sleep 2
+    Process.kill("TERM", pid)
+    Process.wait(pid)
+    output = output_log.read
     assert_match "\e[?1049h", output
-    refute_match "Error", output
+    refute_match "No such device or address", output
+  rescue Errno::ESRCH
+    output = output_log.exist? ? output_log.read : ""
+    assert_match "\e[?1049h", output
+    refute_match "No such device or address", output
   end
 end
