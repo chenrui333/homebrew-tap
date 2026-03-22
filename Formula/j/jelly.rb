@@ -6,6 +6,11 @@ class Jelly < Formula
   license "0BSD"
   head "https://github.com/AzureHound/jelly.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "419a2ce0682a40fc80917bd56b81e6eec948293ae4cbaaa37025abd0509164fd"
+  end
+
   depends_on "bash"
   depends_on "chafa"
   depends_on "curl"
