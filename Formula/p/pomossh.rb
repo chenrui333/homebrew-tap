@@ -6,6 +6,15 @@ class Pomossh < Formula
   license "AGPL-3.0-only"
   head "https://github.com/sairash/pomossh.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b08152683bbe167c32dc520c1e6cdfcb3818859af41f8166e2081aa6e277223"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b08152683bbe167c32dc520c1e6cdfcb3818859af41f8166e2081aa6e277223"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b08152683bbe167c32dc520c1e6cdfcb3818859af41f8166e2081aa6e277223"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d7e5533d48d228b0eaae25cecf9c1918e50af4fba63e91bbf51ba1f8096448d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cd577ce7b3ca337e74d23ffcffe97c89571e7dbaf28052ccf72ff77cca70247"
+  end
+
   depends_on "go" => :build
 
   def install
