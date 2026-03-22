@@ -6,6 +6,15 @@ class GhRepoMan < Formula
   license "MIT"
   head "https://github.com/2KAbhishek/gh-repo-man.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c3ad69145fa5e8713fde0ce0782d0ef900c26579fe87ad48a8e35b7a477f72c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c3ad69145fa5e8713fde0ce0782d0ef900c26579fe87ad48a8e35b7a477f72c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c3ad69145fa5e8713fde0ce0782d0ef900c26579fe87ad48a8e35b7a477f72c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b164db103a3d7573712c9c9afa3294b0be5ea117064b4aaa082c0362364295eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e412366157a8401b81b6fc71e02198107e9044dc14241a1a8f980f213c3109cf"
+  end
+
   depends_on "go" => :build
   depends_on "fzf"
   depends_on "gh"
