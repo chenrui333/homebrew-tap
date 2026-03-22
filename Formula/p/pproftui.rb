@@ -7,6 +7,15 @@ class Pproftui < Formula
   license "MIT"
   head "https://github.com/Oloruntobi1/pproftui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25c3fb18edd058546efef9406060aac9d3df6266a9e896b9bc99f4819f2a109f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25c3fb18edd058546efef9406060aac9d3df6266a9e896b9bc99f4819f2a109f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25c3fb18edd058546efef9406060aac9d3df6266a9e896b9bc99f4819f2a109f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d64a4cf7fd6e7fd3a04ad0246017f80150ca6eda5cca47908ba9871d6408edc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b938a312c73a373f47853c0533cf14154ddcf00f55a610e1f84b7bcffa9e809f"
+  end
+
   depends_on "go" => :build
 
   def install
