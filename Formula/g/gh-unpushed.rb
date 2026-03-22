@@ -6,6 +6,11 @@ class GhUnpushed < Formula
   license "MIT"
   head "https://github.com/achoreim/gh-unpushed.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "bc2f77f04194c8d1cd9c1f08774a4a9bf0d59199922b7c568714f3e44c9faaa4"
+  end
+
   depends_on "gh"
 
   def install
