@@ -6,6 +6,15 @@ class WikiTui < Formula
   license "MIT"
   head "https://github.com/Builditluc/wiki-tui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75db1acdff9d7b7dd1210177215fafcc9d16348c59dc00ced6a8ba30d230f7c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e56f0605dc6bd9da7557d29c9aa63a5e6c1300df53251cdfc031b501ddbe396"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4e0896de4cf127d7e0ec4aa0d80c139c3e97e0d6227eefa4cc6eca18f47c8e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a9df923fffbb3253701a3a5315a1868698228fde826d5db2d2ce14a6927636e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "717ef01f36c62909fabbc3cda15c07a319a43b0c500da83b1d3500ae048879bc"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
