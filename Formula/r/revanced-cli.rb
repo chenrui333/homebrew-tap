@@ -1,8 +1,8 @@
 class RevancedCli < Formula
   desc "CLI for Revanced"
   homepage "https://revanced.app/"
-  url "https://github.com/ReVanced/revanced-cli/releases/download/v5.0.1/revanced-cli-5.0.1-all.jar"
-  sha256 "b6af8349600f56ea51d96d49aa4d2f288e28c79cd649349ba70c8b72ce045daf"
+  url "https://github.com/ReVanced/revanced-cli/releases/download/v6.0.0/revanced-cli-6.0.0-all.jar"
+  sha256 "c25549bc17d59d2eb94fa5f86e60e9b77a02772ca88f7050f8f1276f923a9958"
   license "MIT"
 
   bottle do
@@ -24,12 +24,13 @@ class RevancedCli < Formula
     assert_match version.to_s, shell_output("#{bin}/revanced-cli --version")
 
     resource "patches_rvp" do
-      url "https://github.com/ReVanced/revanced-patches/releases/download/v5.13.0-dev.11/patches-5.13.0-dev.11.rvp"
-      sha256 "e162eacc07587336848fdfee949ba5941d0e939448d83a40b467ce826b54cea7"
+      url "https://github.com/ReVanced/revanced-patches/releases/download/v6.1.0/patches-6.1.0.rvp"
+      sha256 "5ef9f18359a04c3bebd731cf6185b7171719aa64dbdfcd91e1d141371706ce92"
     end
 
     testpath.install resource("patches_rvp")
-    output = shell_output("#{bin}/revanced-cli list-patches patches-5.13.0-dev.11.rvp")
-    assert_match "Index: 203\nName: Unlock premium\nDescription: null\nEnabled: true", output
+    output = shell_output("#{bin}/revanced-cli list-patches -b -p patches-6.1.0.rvp")
+    assert_match "Index: 0", output
+    assert_match "Name: Export all activities", output
   end
 end
