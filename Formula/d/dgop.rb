@@ -6,6 +6,12 @@ class Dgop < Formula
   license "MIT"
   head "https://github.com/AvengeMedia/dgop.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "e65c25a935653bf3c59b5b7ff216c549932af15bb20884c2b7608a787634a216"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5bf796d64972bce4bd7a7541b668979551b0f55bbc512abbddf511e3dad09707"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
