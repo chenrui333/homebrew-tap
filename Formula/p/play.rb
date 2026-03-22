@@ -6,6 +6,15 @@ class Play < Formula
   license "Apache-2.0"
   head "https://github.com/paololazzari/play.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfaefe5c82199bf64d4a6a969e6ab8af565f8a4d531d911b48d57601e43b3195"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfaefe5c82199bf64d4a6a969e6ab8af565f8a4d531d911b48d57601e43b3195"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfaefe5c82199bf64d4a6a969e6ab8af565f8a4d531d911b48d57601e43b3195"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81c940526e253fbbdce3a1d6900aedc38978e16e9ebbbf1ba3882a1dafa7b9cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf6d67230e72d706780c806ae63f640b34b6f1c7b7b2e51b4150aa17bbb3bd4"
+  end
+
   depends_on "go" => :build
 
   def install
