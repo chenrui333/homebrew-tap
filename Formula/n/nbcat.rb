@@ -8,6 +8,15 @@ class Nbcat < Formula
   license "MIT"
   head "https://github.com/akopdev/nbcat.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d3f9fb8441fc8f54d44ce82b9d89cc1aff096a16ad2c57bda34ce7278e1fd1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d3f9fb8441fc8f54d44ce82b9d89cc1aff096a16ad2c57bda34ce7278e1fd1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d3f9fb8441fc8f54d44ce82b9d89cc1aff096a16ad2c57bda34ce7278e1fd1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44c74ea1b9dde51c32ff84da019b1a8f58d3f25fcdb9af1df1ec42c2f57d8d35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44c74ea1b9dde51c32ff84da019b1a8f58d3f25fcdb9af1df1ec42c2f57d8d35"
+  end
+
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
