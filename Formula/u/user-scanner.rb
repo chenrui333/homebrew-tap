@@ -8,6 +8,11 @@ class UserScanner < Formula
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "84afef952042175fdf606378c665218c6eb6a686c26dda920f847eb7f05dd720"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.13"
 
