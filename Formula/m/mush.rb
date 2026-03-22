@@ -6,6 +6,11 @@ class Mush < Formula
   license "MIT"
   head "https://github.com/javanile/mush.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "5539a76807ea357c72c787dea0955f7daa017b57f4da32792ae7229612381943"
+  end
+
   depends_on "bash"
 
   def install
