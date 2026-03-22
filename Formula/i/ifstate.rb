@@ -3,8 +3,8 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.2.4.tar.gz"
-  sha256 "e6cc079fe9dce64484079a26b830ee525da70646fbc617469a817eec541a34d2"
+  url "https://codeberg.org/liske/ifstate/archive/2.3.0-pre0.tar.gz"
+  sha256 "67a4e869f143a6680387adf01fbb55644ef3de36d560b628f952f445939ea337"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
@@ -61,7 +61,7 @@ class Ifstate < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ifstatecli --version")
-    system bin/"ifstatecli", "--help"
+    assert_match "ifstatecli", shell_output("#{bin}/ifstatecli --version")
+    assert_match "usage:", shell_output("#{bin}/ifstatecli --help").downcase
   end
 end
