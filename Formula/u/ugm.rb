@@ -6,6 +6,12 @@ class Ugm < Formula
   license "MIT"
   head "https://github.com/ariasmn/ugm.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "4a0efedd0fc3a7d36df15a26462793bfb5babff1448691a628f2979d15bcc70e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "83376d43ad450b828737497f2b84ae61e05e2931d71a58065aedc62b1b318a10"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
