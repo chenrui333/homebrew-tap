@@ -6,6 +6,15 @@ class Siggy < Formula
   license "GPL-3.0-only"
   head "https://github.com/johnsideserf/siggy.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a11120d6bc7dcbc07e7b6e0c736bbe0e8f4cc6314b9826dab0a0006cf867685"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e52a4c40a5f95575957191bdf5012caa30fbeb32a279538c24c4eca09a51987"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5c85c1fabe9b189bdbaa6d5709918ff3097a80b611488e336d5eff17432a32d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a3bec65a7e8892428067792d813c92c23699d6cb6a14b1eba03a50b82a72ac8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa7f457d82d23d455d72ce8dccd19b32c49475e3698006f2de2b43a4b34edf28"
+  end
+
   depends_on "rust" => :build
   depends_on "signal-cli"
 
