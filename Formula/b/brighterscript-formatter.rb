@@ -5,6 +5,15 @@ class BrighterscriptFormatter < Formula
   sha256 "de52ff14056ffb2d0187d1ff115e69601a023be1fd826c0b2882075c403cee12"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b607cbd55822baaf9fce9b8118f6d406f8713b9c7465964a1fc9711834cc6c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b607cbd55822baaf9fce9b8118f6d406f8713b9c7465964a1fc9711834cc6c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b607cbd55822baaf9fce9b8118f6d406f8713b9c7465964a1fc9711834cc6c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64139f2df5d42936acb26694fa2c91420d0febf89b9460db2135ea201b2f87da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64139f2df5d42936acb26694fa2c91420d0febf89b9460db2135ea201b2f87da"
+  end
+
   depends_on "node"
 
   def install
