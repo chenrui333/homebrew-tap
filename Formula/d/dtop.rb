@@ -8,6 +8,16 @@ class Dtop < Formula
   license "MIT"
   head "https://github.com/StakeSquid/dtop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80011be50b36dc04ed1913e429b16bf45087ee54b3ed0224bf87dbce2fdf2fc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53a1945d8683928aac06f7776b1575734e4e6b28d1130150133a84cdde503ac0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f91ad84607c30cf8f27eded34597f4dd36416b5c31214439374f623e7f570508"
+    sha256 cellar: :any_skip_relocation, sequoia:       "28faf477c19852aa5a3c59126ff36bf6f1ead89e4a98d4edc950a86fe1433c6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "824501f7428918884851a9a5b107711040d0da18e2d8c0ab62e5a0b0db47cab2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45ef37ce5f7c8668cd78c54451a06343845a2d1fd68161ff1016b7568e0f668b"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
