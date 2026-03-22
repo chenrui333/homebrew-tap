@@ -8,6 +8,15 @@ class Tofuref < Formula
   license "MIT"
   head "https://github.com/djetelina/tofuref.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df7fedbc6ecf10ced486db1b044db50f9cbf6043662d537a7f041dbdf2ef938c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67f0cb8474c5ba4d99817a19959719fb9979c7464d75f6ed2a1c5e28e29b0e30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "809fe120cab3dabe52a17f81ab0494bb260b4ad15f99b78121a478e2a842ff97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d2c42a07485dccfe28146efed7a755604f74abc7de7777aae7dfdeabcd960d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9c44e77a5b7f35c3e4c7adcc49945240603aef0c63de39bc10cca44d229223c"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.13"
