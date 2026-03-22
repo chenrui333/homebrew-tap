@@ -6,6 +6,15 @@ class Gitcredits < Formula
   license "MIT"
   head "https://github.com/Higangssh/gitcredits.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4f5bb1212d710994ab1ba0306db9e0fba08a37eabd3f03bbcf13bf379c0c1ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4f5bb1212d710994ab1ba0306db9e0fba08a37eabd3f03bbcf13bf379c0c1ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4f5bb1212d710994ab1ba0306db9e0fba08a37eabd3f03bbcf13bf379c0c1ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7456e42e989680195728bfafe0e35628be4b7761547a36262596300d57ca9e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "962d7772186421cd58c36eed7f7f266a89116b7cb0d955c4ce71086685680190"
+  end
+
   depends_on "go" => :build
 
   def install
