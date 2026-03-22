@@ -6,6 +6,15 @@ class MqttCli < Formula
   license "Apache-2.0"
   head "https://github.com/hivemq/mqtt-cli.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75a2ee74ca92935ff224aa0b2f0ee75e957a82535b87bd445cd3b707f76ac9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75a2ee74ca92935ff224aa0b2f0ee75e957a82535b87bd445cd3b707f76ac9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75a2ee74ca92935ff224aa0b2f0ee75e957a82535b87bd445cd3b707f76ac9ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae1bbe5e130ad545ddd7ea79c9d119a6a3dfab5d70fecf4c94272eb9136a4f00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae1bbe5e130ad545ddd7ea79c9d119a6a3dfab5d70fecf4c94272eb9136a4f00"
+  end
+
   depends_on "openjdk@21"
 
   # Normalize toolchain to Java 21 for Homebrew's openjdk@21 runtime.
