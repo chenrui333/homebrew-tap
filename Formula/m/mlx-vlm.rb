@@ -3,8 +3,8 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/00/39/bbbfb5b434e78afca8c7331f66d2a07f12daf98c96cb0391215e64565246/mlx_vlm-0.4.0.tar.gz"
-  sha256 "2618faaea759bb5c083e171300849bec8713e33e3a4343e5a5165af04691635c"
+  url "https://files.pythonhosted.org/packages/57/8f/31204f1a8c7404e523a5578949ea668e668e10dd67a0f63336f261014c0f/mlx_vlm-0.4.1.tar.gz"
+  sha256 "4e2d8a232715dbca72d346f43cf54d5738452848855792ffb1b285228ae7c7bd"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
@@ -127,15 +127,21 @@ class MlxVlm < Formula
                  shell_output("#{bin}/mlx_vlm.server --help")
 
     (testpath/"test.py").write <<~PYTHON
+      import importlib.util
+      import pathlib
       from importlib.metadata import version
-      from mlx_vlm.prompt_utils import extract_text_from_content
 
-      assert version("mlx-vlm") == "0.4.0"
+      module_path = pathlib.Path("#{libexec}") / "lib/python3.14/site-packages/mlx_vlm/prompt_utils.py"
+      spec = importlib.util.spec_from_file_location("mlx_vlm_prompt_utils", module_path)
+      prompt_utils = importlib.util.module_from_spec(spec)
+      spec.loader.exec_module(prompt_utils)
+
+      assert version("mlx-vlm") == "0.4.1"
       content = [
         {"type": "text", "text": "Describe this image"},
         {"type": "image_url", "image_url": {"url": "https://example.com/image.png"}},
       ]
-      assert extract_text_from_content(content) == "Describe this image"
+      assert prompt_utils.extract_text_from_content(content) == "Describe this image"
     PYTHON
 
     system libexec/"bin/python", "test.py"
