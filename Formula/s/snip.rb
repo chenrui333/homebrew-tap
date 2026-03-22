@@ -8,6 +8,11 @@ class Snip < Formula
   license "MIT"
   head "https://github.com/phlx0/snip.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "5bdf0ae4b4d167055cf3c2d183553d50149c06c25860b2471a5adbd31a45be2e"
+  end
+
   depends_on "python@3.14"
 
   resource "linkify-it-py" do
