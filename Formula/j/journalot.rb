@@ -6,6 +6,11 @@ class Journalot < Formula
   license "MIT"
   head "https://github.com/jtaylortech/journalot.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "d18f60773187b9fc5a7f8038c32e616a9cb362998c89e593ba19a8db3b4474a0"
+  end
+
   depends_on "bash"
 
   def install
