@@ -8,6 +8,11 @@ class Kaydet < Formula
   license "MIT"
   head "https://github.com/miratcan/kaydet.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "a13e539315259ce07357f0e37c7747db591621e70de15bc09b02effb95cf1ba0"
+  end
+
   depends_on "python@3.14"
 
   resource "markdown-it-py" do
