@@ -6,6 +6,15 @@ class Envy < Formula
   license "MIT"
   head "https://github.com/XENONCYBER/envy.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf8b6d43837ac385c3b655df41f6a3bd41da5b4573c5f1c3d20b2df577aa076"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf8b6d43837ac385c3b655df41f6a3bd41da5b4573c5f1c3d20b2df577aa076"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caf8b6d43837ac385c3b655df41f6a3bd41da5b4573c5f1c3d20b2df577aa076"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b5da76e473d3208479bd76f40d860b62035b2643d60cb55a0c1a2cca4a4e5ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec2b6d0382b0e4aacdfdbc11d01346a7ec0a947dfc7c075db89b5509afff4206"
+  end
+
   depends_on "go" => :build
 
   def install
