@@ -219,6 +219,10 @@ For formula patch PR triage, follow this exact sequence:
    ```
    - If any step fails, patch the PR branch with the smallest formula fix and rerun the full brew-ops chain until all steps pass.
    - When testing on Linux/macOS `*.upterm.dev` remote runners, do not run `exit`, `logout`, or close the session after brew ops; keep the runner alive for follow-up commands.
+   - When using rerun-backed debug workflows, always attach to the current attempt's job/session rather than an older rerun attempt.
+   - On a fresh remote runner connection, start with harmless probes such as `pwd` and `uname -a` before heavier commands.
+   - Do not lead with `set -euo pipefail` before confirming the runner's working directory and the paths you plan to use actually exist on that runner.
+   - Do not reference workstation-local paths such as `/private/tmp/...` or `/Users/...` on the runner; use heredocs, `scp`, or create the needed files directly on the runner first.
 2. Commit on the PR head branch with a short, concise formula patch:
    ```sh
    branch="$(gh pr view --json headRefName -q .headRefName)"

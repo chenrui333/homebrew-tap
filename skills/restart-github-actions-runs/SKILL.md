@@ -48,3 +48,12 @@ gh pr view <pr> --repo chenrui333/homebrew-tap --json url,headRefName,headRefOid
 ```
 
 A fresh restart should show new `pending` checks or newly queued workflow runs.
+
+## Upterm Session Hygiene
+
+When the restarted workflow exposes an `*.upterm.dev` session for remote brew ops:
+
+- Always attach to the current attempt's job/session, not an older rerun attempt. Old attempt URLs and SSH strings commonly look like "dead runners" even when the latest attempt is healthy.
+- On a fresh connection, start with harmless probes such as `pwd` and `uname -a` before running brew commands.
+- Do not begin with `set -euo pipefail` until you have confirmed the runner's working directory and any file paths you plan to use.
+- Never reference workstation-local paths such as `/private/tmp/...` or `/Users/...` on the runner. Use heredocs, `scp`, or create the required files directly on the runner first.
