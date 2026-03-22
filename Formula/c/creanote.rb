@@ -6,6 +6,11 @@ class Creanote < Formula
   license "MIT"
   head "https://github.com/elitalpa/creanote.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "2ef047f451bfa50607ea7160b4b5337dedaad17cfd09d96d4bf1cf56d3031ff3"
+  end
+
   depends_on "node"
 
   def install
