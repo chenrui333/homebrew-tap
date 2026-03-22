@@ -6,6 +6,15 @@ class Xpdig < Formula
   license "Apache-2.0"
   head "https://github.com/brunoluiz/xpdig.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c356f5e07b9c3160a43d8088b6f73f382ee1346312095b11b18650b62845b1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c356f5e07b9c3160a43d8088b6f73f382ee1346312095b11b18650b62845b1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c356f5e07b9c3160a43d8088b6f73f382ee1346312095b11b18650b62845b1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "649924165a86a2badfba38d34527fe002d34a9939f4e2853c995eec3d54d31bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f351cdcbb69311a97d0d054c99662db062701ed33c3e0cdd5ee8046e23b4335a"
+  end
+
   depends_on "go" => :build
   depends_on "crossplane"
 
