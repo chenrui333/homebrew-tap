@@ -1,8 +1,8 @@
 class BskyCli < Formula
   desc "Command-line client for Bluesky"
   homepage "https://github.com/harveyrandall/bsky-cli"
-  url "https://github.com/harveyrandall/bsky-cli/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "36d9ea05c5ab0a7b482a0ad61f5f04dc190767c68e0d1f8b5b96cc23780e423f"
+  url "https://github.com/harveyrandall/bsky-cli/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "8a58f53562da0e2530e57af9c7d3788fc0da2927eafb5c2a6260f007a3a4f27c"
   license "MIT"
   head "https://github.com/harveyrandall/bsky-cli.git", branch: "main"
 
@@ -14,8 +14,6 @@ class BskyCli < Formula
   depends_on "node"
 
   def install
-    inreplace "src/index.ts", '.version("1.0.0")', ".version(\"#{version}\")"
-
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
