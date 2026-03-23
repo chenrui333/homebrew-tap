@@ -7,6 +7,11 @@ class McpManager < Formula
   sha256 "9fa1ac9184148d9eef1364bb48220c4ece912442d9ffa68c6266fd18b9691c80"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "e1441722a7414475dafb7c1bba410dd3792ae11c8eef67749d3bea3a47496602"
+  end
+
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
