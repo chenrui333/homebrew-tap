@@ -5,6 +5,15 @@ class Sls < Formula
   sha256 "4f47b7d4934aecde5f415c4273898ebe1bebae9401129a16d65f9a259fe32882"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2da4027c34509c9ec1435bf5a90985c1c1c81197c3e767db8a742f10bf64b94d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da4027c34509c9ec1435bf5a90985c1c1c81197c3e767db8a742f10bf64b94d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2da4027c34509c9ec1435bf5a90985c1c1c81197c3e767db8a742f10bf64b94d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71fb977c32a4f1108b22db565dbd8e87f2802ae771a206b456da1b1a2c2091e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49467ad91834d4907f72c60a2442b259b2acbe222929f579daca4ff063013d52"
+  end
+
   depends_on "go" => :build
 
   def install
