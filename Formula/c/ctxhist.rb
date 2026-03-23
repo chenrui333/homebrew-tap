@@ -6,6 +6,11 @@ class Ctxhist < Formula
   license "MIT"
   head "https://github.com/nakkiy/ctxhist.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "59019335565d4542d4bf8e297c2de4e4b90bc235d4687a98e7d65970b2d538fe"
+  end
+
   depends_on "bash"
   depends_on "fzf"
 
