@@ -8,11 +8,11 @@ class Orla < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2fa2ab0fc4f28d6ae8fb8f0f83255d93db71f6659662af6c8a7c2beccdaae78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b45eeb368e37828d5579cb6032add9d0e52156f20de032bf46bb6a90a058dbab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac5a437fa175f8489dc9ded7f0f78223db6404464e726853feec0382a744de0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ddaac3a37f4d7f0ef5f7c588a8c828521f9d078bbdc0e18d14573582d31d6a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6971d0479b0059d01e0f209f7ca3e9e6fb206fbe895d6f66175c6ca661319ed4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f12a07fa60a4f9c28ff31059a99b6f45ff546f292028c326e8a572c6671ecf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ab89503e074971ac19168ea98805fb81d1794891a7007a7e1fb2234654fe74c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b202824c445b8e34bcf1684aa2f0320c8d013c0b718b723f9e50c7c463b0eb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbc49d3c420be56267b6ad0390e68833d2d3240aea613382ac7c13f73ce854cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee5c20bf4d667e1abaec9e02613350dfb54d5128cfb075c801f73f8b94939945"
   end
 
   depends_on "go" => :build
