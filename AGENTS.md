@@ -145,6 +145,14 @@ Commit message: `foo 1.2.3 (new formula)`
   - Go CLIs: prefer `shell_parameter_format: :cobra`.
   - Python CLIs: prefer `shell_parameter_format: :click` or `:typer` (based on upstream framework).
 
+### Shell Plugin Formulae
+
+- For shell plugins that are not standalone executables (for example Oh My Zsh or Bash plugin repos), package the plugin assets with `pkgshare.install` instead of pretending the repo is a normal binary formula.
+- Prefer adding a small installer wrapper in `bin/` when upstream's install story is "copy these plugin files into a plugin directory".
+- For Oh My Zsh-style plugins, use a deterministic test with a fake `ZSH_CUSTOM` directory under `testpath`, run the installer wrapper, and assert that the plugin files were copied into the expected plugin directory.
+- If the plugin needs multiple files (for example `*.plugin.zsh`, helper `*.zsh`, or a `lib/` directory), install and copy the full runtime set; do not package only the entrypoint file.
+- Add caveats that point users to the installer wrapper or the `pkgshare` source path instead of telling them to clone the repo manually.
+
 ### Library Packaging Guidance
 
 - Prefer installing **shared libraries** (`.dylib`/`.so`) when upstream supports both shared and static builds.
