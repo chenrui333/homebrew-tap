@@ -1,8 +1,8 @@
 class Tascli < Formula
   desc "Track tasks and records from the terminal"
   homepage "https://github.com/Aperocky/tascli"
-  url "https://github.com/Aperocky/tascli/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "0ddaae7fc8a18020fb4cf67f82705cff351e79e15c4109e7fe0fd533f43d31f3"
+  url "https://github.com/Aperocky/tascli/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "e7ce1b10383724bac04ca8927895693945838e8bee5c43cf89c4ab458b65fb1d"
   license "MIT"
   head "https://github.com/Aperocky/tascli.git", branch: "master"
 
