@@ -13,6 +13,7 @@ Use this skill when the goal is to refresh GitHub Actions runs for open PRs in t
 - Never force-push `main`.
 - Only force-update verified PR head branches that are open, same-repo, and not `main`.
 - If the PR head branch is missing, cross-repo, or otherwise not pushable, rerun the existing workflow runs with `gh run rerun` instead.
+- If global git config rewrites `https://github.com/` pushes to `git@github.com:` and SSH auth is unavailable, run the helper or any equivalent manual PR-branch push with `env GIT_CONFIG_GLOBAL=/dev/null` instead of changing `origin`.
 
 ## Preferred Command
 

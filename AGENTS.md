@@ -175,6 +175,7 @@ end
 head "https://github.com/org/repo.git", branch: "main"
   ```
   Git repositories MUST specify `branch:`.
+  - If local tap intake is blocked only because the current environment falsely rejects an otherwise-valid GitHub `head` URL, prefer omitting `head` in this tap rather than stalling the formula on local transport validation noise.
 
 ## Required Validation (All PR Types)
 
@@ -250,6 +251,9 @@ For formula patch PR triage, follow this exact sequence:
    test "$branch" != main
    git push --force-with-lease origin "$branch"
    ```
+   - If a global Git config rewrites `https://github.com/` pushes to `git@github.com:` and SSH auth is unavailable, use
+     `env GIT_CONFIG_GLOBAL=/dev/null git push -u https://github.com/<owner>/<repo> "$branch"`
+     instead of rewriting `origin`.
 5. Mark the PR with `CI-no-fail-fast`:
    ```sh
    pr="$(gh pr view --json number -q .number)"
@@ -375,6 +379,7 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
   skills/restart-github-actions-runs/scripts/restart_pr_actions.sh --repo chenrui333/homebrew-tap <pr> [<pr> ...]
   ```
 - The helper prefers a safe empty-amend + `git push --force-with-lease` on verified same-repo PR head branches, and falls back to `gh run rerun` when the head branch is missing or otherwise not safe to push.
+- If GitHub HTTPS pushes are being rewritten to SSH by global git config and SSH auth is unavailable, run the helper or any manual PR-branch push under `env GIT_CONFIG_GLOBAL=/dev/null` instead of changing `origin`.
 - Never edit workflow files just to restart checks.
 - Never force-push `main`.
 
