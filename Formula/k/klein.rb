@@ -6,6 +6,15 @@ class Klein < Formula
   license "Apache-2.0"
   head "https://github.com/Adarsh-codesOP/Klein.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "321a6a08b64c0ce6a768294d3d1e1c2a5e444e8afe96057602fda01a6534f4b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ebfd29ded67ece7b57e6be9a32ff41d2abc95f9cc2ab5f12a1db41fe1b1069f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c6944b7912b7f6075ef25a5f884d790b2c054b9b3ce8ace81bf059ab3d2b185"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa8bb6069374ff5f4bdb7c07ffdcb7315e6593b88c69364be12b6db5b99110b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a5c9efe6ee5e485c8c13ebc20a51d113fbbda4890a9faa6fa84e31e4e0d2cf1"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
