@@ -1,8 +1,8 @@
 class StripeMcpServer < Formula
   desc "MCP server for Stripe"
   homepage "https://github.com/stripe/agent-toolkit/tree/main/modelcontextprotocol"
-  url "https://registry.npmjs.org/@stripe/mcp/-/mcp-0.3.1.tgz"
-  sha256 "22bd30ce776b9960e2330424f8b149a511e4f4b2ad293a550c391f2dc284f594"
+  url "https://registry.npmjs.org/@stripe/mcp/-/mcp-0.3.2.tgz"
+  sha256 "58faa2335e3e0c8b252481a012876db1895f5fe8366220fa06e4283fa28e29ea"
   license "MIT"
 
   bottle do
