@@ -6,6 +6,15 @@ class Konfigo < Formula
   license "MIT"
   head "https://github.com/ebogdum/konfigo.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8c66914cd31151c2fd1742a9ac4e413b2fb0aca6dce548b755d596b5e5f12d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8c66914cd31151c2fd1742a9ac4e413b2fb0aca6dce548b755d596b5e5f12d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8c66914cd31151c2fd1742a9ac4e413b2fb0aca6dce548b755d596b5e5f12d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6308d772179d1b2ac00fae21e99c681a98b735b2c98e184a8186626201225188"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68045b3fd56f76f94662bd26da615ed3e54bdc41c7b1832777fc53ca0213c80f"
+  end
+
   depends_on "go" => :build
 
   def install
