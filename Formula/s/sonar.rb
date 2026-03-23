@@ -20,12 +20,10 @@ class Sonar < Formula
   def install
     ldflags = "-s -w -X github.com/raskrebs/sonar/internal/selfupdate.Version=v#{version}"
 
-    cd "cli" do
-      system "go", "build", *std_go_args(ldflags:)
-      generate_completions_from_executable(bin/"sonar",
-                                           shell_parameter_format: :cobra,
-                                           shells:                 [:bash, :zsh, :fish])
-    end
+    system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"sonar",
+                                         shell_parameter_format: :cobra,
+                                         shells:                 [:bash, :zsh, :fish])
   end
 
   test do
