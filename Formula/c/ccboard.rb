@@ -8,11 +8,11 @@ class Ccboard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a550fb523c02705e857a9fb3cc2f3d7282854ba15a80a6bfe188a3066001b16a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35fc71f8773c68221ba58fc87468a521d451c2048400bf8da3065f7dba66c125"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53bf495a04ba31417ab269465fc53ae710f7a5c7862e52968f52e4e98b2dfd6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "235ae0abf7523227acdcd669d5db9c2b1a53f036689d5d6c502420a65b817f1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9add3cde24820e01a01fa998eccb5bf282db4dd9bd108abe2a8f29a7e6d4f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0592168844c547280b6febe6062d3f2ce514d88725753b045b69a37190c93736"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02379c9dd3edc532703eccdecd1b356628a453451c34d95e7502778c1d44fe30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "454a3cd87530d20673b551234b62f8d1b1dd3801abc0846938a0d176898b14a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb766626f80a5c3572445323b3cb9960733ea60153527a548d85aff0fe734cdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49f190fe7e8237fbe9bb62085d7a76fd42c951a3cd8f6ce0048db525c4e50a1e"
   end
 
   depends_on "pkgconf" => :build
