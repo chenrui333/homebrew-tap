@@ -1,8 +1,8 @@
 class Av < Formula
   desc "Manage stacked PRs with Aviator"
   homepage "https://www.aviator.co/"
-  url "https://github.com/aviator-co/av/archive/refs/tags/v0.1.16.tar.gz"
-  sha256 "2d3d5a561a3fee5d7fb55d3b021dc5a8be12cb4fc901fede655154a2166b0ba9"
+  url "https://github.com/aviator-co/av/archive/refs/tags/v0.1.17.tar.gz"
+  sha256 "48f4ba9b6406263dd79e6120a22ea26ebd1a4236c712fc681472a107c29ad201"
   license "MIT"
   head "https://github.com/aviator-co/av.git", branch: "master"
 
