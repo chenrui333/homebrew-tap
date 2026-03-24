@@ -3,8 +3,8 @@ class Dtop < Formula
 
   desc "High-performance TUI for Docker container management"
   homepage "https://stakesquid.com/"
-  url "https://files.pythonhosted.org/packages/b6/6b/cb87181fd67a95d2d656699308e436bf75d47a61106e06c98bfa5806260a/dtop-2.3.4.tar.gz"
-  sha256 "7f14aa66098a652160acc41e23cfeab373a31856d0f412f11d82365b0c21750c"
+  url "https://files.pythonhosted.org/packages/38/98/695c2ee5bb375a21ec072c2dc7d01f8d8e2f662b24c3791d438331702c78/dtop-2.3.5.tar.gz"
+  sha256 "4fac2146484faf87b86951ef9d3ff0c13d726a9b8fe077607d84d1d195338572"
   license "MIT"
   head "https://github.com/StakeSquid/dtop.git", branch: "main"
 
