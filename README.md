@@ -1,5 +1,6 @@
 # homebrew-tap
 
+[![Hypercommit](https://img.shields.io/badge/Hypercommit-DB2475)](https://hypercommit.com/homebrew-tap)
 [![link-checker](https://github.com/chenrui333/homebrew-tap/actions/workflows/link-checker.yml/badge.svg)](https://github.com/chenrui333/homebrew-tap/actions/workflows/link-checker.yml)
 
 This tap is setup for several reasons:
