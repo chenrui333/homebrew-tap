@@ -8,11 +8,11 @@ class Cliamp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a60ebd138e7f3883ad11e0ae6b4d369800d8c96c736830ad4ed3342e0a1bd53d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80a44739c92224c1c7212d998f8db7cbe35f678773e8f69dff85d3dd3789268f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "958ed1d9267b474c64c82d44532e3b519604e2f8c0c00fa6da79e9b318fef4b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec89b08293e74906d2e02bd752268486427016a1293de1692976e7defdb32561"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "761ba13a9a734baa14d72f74089443f80d2ec729fd6c2fc5a2114b83f032c4fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f150862748fa72546a32e57cd9936ad8f472611ffe205634d05a24461d3ed231"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9ff1135dadf43eadfea470f5e62a0ebca7fb1a041d8a7f641d74878c18eebc4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f26dd3536ad8685a5c6199d7e0fce03f790562c5a982c2bcf9ab48dea755bef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9a0d83205c861b40d11891f06bf4b43c19c050e0c8e532d518d3d2f7d428085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeeaa44ca2c21856c851a4aca12a6b652b97af66c2932272e9336d156df6bae1"
   end
 
   depends_on "go" => :build
