@@ -8,7 +8,7 @@ class Dustoff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5841ad1c971e8b3a1732bec0e0de9e7ea26c23e275e84f04c296140e4d40d072"
+    sha256 cellar: :any_skip_relocation, all: "84040b361eec671127a90625f0a1e4f34cc70a19850f48593bd4ba163ae5c623"
   end
 
   depends_on "chenrui333/tap/bun" => :build
