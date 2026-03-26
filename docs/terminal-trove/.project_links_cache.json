@@ -748,5 +748,12 @@
   "https://terminaltrove.com/taws/": "https://github.com/huseyinbabal/taws",
   "https://terminaltrove.com/amux/": "https://github.com/andyrewlee/amux",
   "https://terminaltrove.com/strace-tui/": "https://github.com/Rodrigodd/strace-tui",
-  "https://terminaltrove.com/squix/": "https://github.com/eduardofuncao/squix"
+  "https://terminaltrove.com/squix/": "https://github.com/eduardofuncao/squix",
+  "https://terminaltrove.com/cliamp/": "https://github.com/bjarneo/cliamp",
+  "https://terminaltrove.com/bpftop/": "https://github.com/Netflix/bpftop",
+  "https://terminaltrove.com/twig/": "https://github.com/workdone0/twig",
+  "https://terminaltrove.com/lazycut/": "https://github.com/emin-ozata/lazycut/",
+  "https://terminaltrove.com/aptui/": "https://github.com/mexirica/aptui",
+  "https://terminaltrove.com/tiki/": "https://github.com/boolean-maybe/tiki",
+  "https://terminaltrove.com/lyn/": "https://git.sr.ht/~timharek/lyn"
 }
