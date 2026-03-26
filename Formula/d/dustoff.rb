@@ -1,8 +1,8 @@
 class Dustoff < Formula
   desc "Find and remove JS/TS build artifacts wasting disk space"
   homepage "https://github.com/westpoint-io/dustoff"
-  url "https://github.com/westpoint-io/dustoff/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ab79347519ee298b85c05f3aed53a118dbf6a0b40140530862d081699ffe54f0"
+  url "https://github.com/westpoint-io/dustoff/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "800a7aefaabde74db65bd2ea8ed49e39a48bc52cae43f59ce234422f39f41b27"
   license "MIT"
   head "https://github.com/westpoint-io/dustoff.git", branch: "main"
 
