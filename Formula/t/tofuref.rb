@@ -3,8 +3,8 @@ class Tofuref < Formula
 
   desc "TUI for OpenTofu provider registry"
   homepage "https://github.com/djetelina/tofuref"
-  url "https://files.pythonhosted.org/packages/50/c3/02c84adac02cdbf31f977be388fb8c115745bd9ff25599997ce27dcb3f91/tofuref-1.7.0.tar.gz"
-  sha256 "5cbb702f926f1607ba7530885f86fbbb9907adc5a7d12332ce422876d975ffd5"
+  url "https://files.pythonhosted.org/packages/80/71/c86c0806858b6c1b58b6c05570bc88f130de8872e0478bd43cb51dab0f6a/tofuref-1.8.0.tar.gz"
+  sha256 "347a64743ad076707fb1668de36e09323f58aa246c4f65381091add74014c4c9"
   license "MIT"
   head "https://github.com/djetelina/tofuref.git", branch: "main"
 
@@ -24,8 +24,13 @@ class Tofuref < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
+    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "h11" do
@@ -49,8 +54,8 @@ class Tofuref < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2a/ae/bb56c6828e4797ba5a4821eec7c43b8bf40f69cda4d4f5f8c8a2810ec96a/linkify-it-py-2.0.3.tar.gz"
-    sha256 "68cda27e162e9215c17d786649d1da0021a451bdc436ef9e0fa0ba5234b9b048"
+    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
+    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
   end
 
   resource "markdown-it-py" do
@@ -74,8 +79,8 @@ class Tofuref < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1b/04/fea538adf7dbbd6d186f551d595961e564a3b6715bdf276b477460858672/platformdirs-4.9.2.tar.gz"
-    sha256 "9a33809944b9db043ad67ca0db94b14bf452cc6aeaac46a88ea55b26e2e9d291"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pygments" do
@@ -99,8 +104,8 @@ class Tofuref < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/f7/08/1e1f705825359590ddfaeda57653bd518c4ff7a96bb2c3239ba1b6fc4c51/textual-8.0.0.tar.gz"
-    sha256 "ce48f83a3d686c0fac0e80bf9136e1f8851c653aa6a4502e43293a151df18809"
+    url "https://files.pythonhosted.org/packages/72/23/8c709655c5f2208ee82ab81b8104802421865535c278a7649b842b129db1/textual-8.1.1.tar.gz"
+    sha256 "eef0256a6131f06a20ad7576412138c1f30f92ddeedd055953c08d97044bc317"
   end
 
   resource "typing-extensions" do
@@ -109,8 +114,8 @@ class Tofuref < Formula
   end
 
   resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/91/7a/146a99696aee0609e3712f2b44c6274566bc368dfe8375191278045186b8/uc-micro-py-1.0.3.tar.gz"
-    sha256 "d321b92cff673ec58027c04015fcaa8bb1e005478643ff4a500882eaab88c48a"
+    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
+    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
   end
 
   resource "yaucl" do
