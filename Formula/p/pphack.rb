@@ -8,11 +8,11 @@ class Pphack < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20b10dd802bc560a074cf9c8fad76b4ea4957b91d45a5c5f02643a806d01e8fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20b10dd802bc560a074cf9c8fad76b4ea4957b91d45a5c5f02643a806d01e8fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b10dd802bc560a074cf9c8fad76b4ea4957b91d45a5c5f02643a806d01e8fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f4817ebed122cecc7a5c0741b54e675f28c34c530a2f39e159a8afb018f5cf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fce1bd363cd07fb72f5f6b00006b38c153d9dc74d568ad07ffbaa1a9ee3788b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59b2095ebc7d02903f5583746b8514135a35eaa32d3a0c6e719094f9210fd316"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59b2095ebc7d02903f5583746b8514135a35eaa32d3a0c6e719094f9210fd316"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59b2095ebc7d02903f5583746b8514135a35eaa32d3a0c6e719094f9210fd316"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7c6fae4bd4e5cf5f960e5930fe0d737e953623989080da8cc7bcbec8423269e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23fcdc50a52841c6e4ff9847e204223bd950b17e2b0e8dafd164d3ceb8f382ea"
   end
 
   depends_on "go" => :build
