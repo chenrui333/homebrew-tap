@@ -25,5 +25,13 @@ class Turm < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/turm --version")
+
+    output_log = testpath/"output.log"
+    pid = spawn bin/"turm", [:out, :err] => output_log.to_s
+    sleep 1
+    assert_match "Jobs", output_log.read
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
