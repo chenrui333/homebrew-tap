@@ -1,8 +1,8 @@
 class Lazymake < Formula
   desc "Terminal UI for browsing and running Makefile targets"
   homepage "https://lazymake.vercel.app/"
-  url "https://github.com/rshelekhov/lazymake/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "47e99a41c68c92acc81900ee74905e35f9ee97e3dbce4b7f93fd8d56f42d34c3"
+  url "https://github.com/rshelekhov/lazymake/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "49dc29635990385fef22717d23c986a62803dc2afeeb428e0a1910711b169c37"
   license "MIT"
   head "https://github.com/rshelekhov/lazymake.git", branch: "main"
 
