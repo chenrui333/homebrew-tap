@@ -1,8 +1,8 @@
 class Hexora < Formula
   desc "Static analysis of malicious Python code"
   homepage "https://github.com/rushter/hexora"
-  url "https://github.com/rushter/hexora/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "27934aaacc9139357fb80916d03daaaa7abd567713bc560c935a19757d3a5676"
+  url "https://github.com/rushter/hexora/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "50a2045248d227cf353f2d862e5f34b3b6aca67a3eec0db1488fb4136287f22f"
   license "MIT"
   head "https://github.com/rushter/hexora.git", branch: "main"
 
