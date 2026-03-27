@@ -1,8 +1,8 @@
 class Actionbook < Formula
   desc "Browser action engine for AI agents"
   homepage "https://actionbook.dev"
-  url "https://github.com/actionbook/actionbook/archive/refs/tags/actionbook-cli-v0.11.5.tar.gz"
-  sha256 "04bdd0ed39f5a0658344add09962c61c9bf69958e805e93de3f371cedad9a880"
+  url "https://github.com/actionbook/actionbook/archive/refs/tags/actionbook-cli-v0.11.7.tar.gz"
+  sha256 "eeed2f46041598067251c9542c8ac11e20a17530e53f33e162d7fc9ee731bd04"
   license "Apache-2.0"
 
   bottle do
