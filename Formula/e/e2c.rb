@@ -1,8 +1,8 @@
 class E2c < Formula
   desc "TUI application for managing AWS EC2 instances"
   homepage "https://github.com/nlamirault/e2c"
-  url "https://github.com/nlamirault/e2c/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "88eae361fc6d8c843a82d889f79f89798b65b6fdc72c2e3ac2b4f6a0cf2af45b"
+  url "https://github.com/nlamirault/e2c/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "305211335f7c1cdebfcca8ed0fe51028c28e015f5ad17453cde33d1da5f76381"
   license "Apache-2.0"
   head "https://github.com/nlamirault/e2c.git", branch: "main"
 
