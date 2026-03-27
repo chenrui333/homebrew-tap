@@ -8,11 +8,11 @@ class Hexora < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca5a60803edfabb0a1d90eb5a2646b196d13bc338d2ed815582980592e498a18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4369528087efa5cca0511bdef5387ebfed7a6016bf11093059510cfb2b8d1e7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58190eb0850859cf47f2e8a99c494197d0763bbd7f61b509c2836f5fb2572dae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33f7c74fd081e92c3caaa04d0dfd5d800440159810d0d08f3bad01eb65ac4b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9122991933e9117ef93e4c8f99d6903b9361ac2dcee034cd144010e91f1c8367"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "741c72818b2bde249077992bf39c2f6b9a524f4e753d4d983417cd93067e436a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18937037791a7791d55957feca3272d1cfdc2e178713b3a64e7db108eb579c6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e1afbca41377950ebe7e2c348325e3bd193ad8c2e222d63a2795eb0d731bd9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c962057393058fb881c8a76eb93845899c27f4b638e7de3997c39297dcd251c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec03448402f6979ad9c7ca611eb5b7a2977dcf459f1460a6334de238182cf54a"
   end
 
   depends_on "rust" => :build
