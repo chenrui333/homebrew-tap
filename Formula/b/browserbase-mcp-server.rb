@@ -1,8 +1,8 @@
 class BrowserbaseMcpServer < Formula
   desc "MCP server for AI web browser automation using Browserbase and Stagehand"
   homepage "https://github.com/browserbase/mcp-server-browserbase"
-  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.4.1.tgz"
-  sha256 "baf910db6503525f8ec43fb4f6ee7684f3221b231d319e8a5801e6b137fd6f90"
+  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.4.3.tgz"
+  sha256 "d0255d41e987f916797eda5c209de4b219090f83e0dd01a713b6bd398d81ad81"
   license "Apache-2.0"
 
   bottle do
@@ -20,13 +20,18 @@ class BrowserbaseMcpServer < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec/"bin/mcp-server-browserbase" => "browserbase-mcp-server"
 
-    node_modules = libexec/"lib/node_modules/@browserbasehq/mcp-server-browserbase/node_modules"
-
-    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    # Remove incompatible pre-built native artifacts and keep only the host one.
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
-                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    libexec.glob("lib/node_modules/**/{bare-fs,bare-os,bare-url,bufferutil}/prebuilds/*")
+           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+
+    if OS.linux?
+      # Keep glibc artifacts and prune vendored musl binaries that fail linkage.
+      libexec.glob("lib/node_modules/**/@oven/bun-linux-*-musl*").each(&:rmtree)
+      libexec.glob("lib/node_modules/**/@img/sharp-linuxmusl-*").each(&:rmtree)
+      libexec.glob("lib/node_modules/**/@img/sharp-libvips-linuxmusl-*").each(&:rmtree)
+    end
   end
 
   test do
