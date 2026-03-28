@@ -26,7 +26,10 @@ class ZigAT012 < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
