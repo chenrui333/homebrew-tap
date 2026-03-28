@@ -1,8 +1,8 @@
 class Wakey < Formula
   desc "TUI built for managing and waking your devices using Wake-on-LAN"
   homepage "https://github.com/jonathanruiz/wakey"
-  url "https://github.com/jonathanruiz/wakey/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "29a58792be3334063bf8b2f5b48f9193a5d308b41a7e7f3b2a704d0bb05aa53d"
+  url "https://github.com/jonathanruiz/wakey/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "20480d3132f75a2b6af8cfd2990921ee363965e649de9ae3d5c5464dadba635f"
   license "MIT"
   head "https://github.com/jonathanruiz/wakey.git", branch: "main"
 
