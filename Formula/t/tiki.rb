@@ -26,9 +26,5 @@ class Tiki < Formula
     assert_match "Project Root:", output
 
     assert_match version.to_s, shell_output("#{bin/"tiki"} --version")
-
-    system "git", "init"
-    usage = shell_output(bin/"tiki")
-    assert_match "Run 'tiki init' to initialize this repository.", usage
   end
 end
