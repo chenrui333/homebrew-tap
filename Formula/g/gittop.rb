@@ -20,9 +20,9 @@ class Gittop < Formula
     system "git", "commit", "-m", "init"
 
     command = if OS.mac?
-      "printf 'q' | script -q /dev/null #{bin}/gittop #{testpath}"
+      "printf 'q' | script -q /dev/null #{bin/"gittop"} #{testpath}"
     else
-      "printf 'q' | script -qefc '#{bin}/gittop #{testpath}' /dev/null"
+      "printf 'q' | script -qefc '#{bin/"gittop"} #{testpath}' /dev/null"
     end
 
     output = shell_output("#{command} 2>&1")
