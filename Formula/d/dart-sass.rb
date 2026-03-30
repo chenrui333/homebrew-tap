@@ -27,14 +27,31 @@ class DartSass < Formula
     ENV.delete "UPDATE_SASS_PROTOCOL"
 
     protocol_version = (buildpath/"build/language/spec/EMBEDDED_PROTOCOL_VERSION").read.strip
+    if OS.linux?
+      system dart, "compile", "jit-snapshot",
+             "-Dversion=#{version}",
+             "-Dcompiler-version=#{version}",
+             "-Dprotocol-version=#{protocol_version}",
+             "-o", "sass.snapshot",
+             "bin/sass.dart", "--version"
 
-    system dart, "compile", "exe",
-           "-Dversion=#{version}",
-           "-Dcompiler-version=#{version}",
-           "-Dprotocol-version=#{protocol_version}",
-           "bin/sass.dart", "-o", "sass"
+      libexec.install "sass.snapshot"
+      cp dart, libexec
 
-    bin.install "sass"
+      (bin/"sass").write <<~SH
+        #!/bin/sh
+        exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "$@"
+      SH
+      chmod 0555, bin/"sass"
+    else
+      system dart, "compile", "exe",
+             "-Dversion=#{version}",
+             "-Dcompiler-version=#{version}",
+             "-Dprotocol-version=#{protocol_version}",
+             "bin/sass.dart", "-o", "sass"
+
+      bin.install "sass"
+    end
   end
 
   test do
