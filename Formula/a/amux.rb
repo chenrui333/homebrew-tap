@@ -22,9 +22,9 @@ class Amux < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/amux --version")
+    assert_match version.to_s, shell_output("#{bin/"amux"} --version")
 
-    output = shell_output("#{bin}/amux status")
+    output = shell_output("#{bin/"amux"} status")
     assert_match "tmux:", output
     assert_match "workspaces:", output
   end
