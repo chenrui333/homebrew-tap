@@ -36,6 +36,7 @@ exclude = [
   "^https://github\\.com/aspizu/goboscript/?$",
   "^https://reim-developer\\.github\\.io/Sephera/?$",
   "^https://taskbook\\.sh/?$",
+  "^https://chiselapp\\.com/user/MistressRemilia/repository/benben/?$",
 ]
 
 cache = true
