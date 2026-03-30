@@ -665,6 +665,12 @@
     "last_release": "2025-04-14",
     "stars": 1519
   },
+  "github:Rodrigodd/strace-tui": {
+    "forks": 5,
+    "last_commit": "2026-03-08",
+    "last_release": "2026-03-01",
+    "stars": 217
+  },
   "github:RohanAdwankar/cgpu": {
     "forks": 23,
     "last_commit": "2025-11-30",
@@ -1073,6 +1079,12 @@
     "last_release": null,
     "stars": 156
   },
+  "github:andyrewlee/amux": {
+    "forks": 2,
+    "last_commit": "2026-03-30",
+    "last_release": "2026-03-18",
+    "stars": 74
+  },
   "github:ankddev/envfetch": {
     "forks": 3,
     "last_commit": "2025-12-26",
@@ -1373,6 +1385,12 @@
     "last_release": "2022-05-11",
     "stars": 235
   },
+  "github:boolean-maybe/tiki": {
+    "forks": 3,
+    "last_commit": "2026-03-30",
+    "last_release": "2026-03-26",
+    "stars": 129
+  },
   "github:box-project/box": {
     "forks": 106,
     "last_commit": "2026-02-16",
@@ -1396,6 +1414,12 @@
     "last_commit": "2025-09-22",
     "last_release": "2024-08-09",
     "stars": 46
+  },
+  "github:brevity1swos/rgx": {
+    "forks": 2,
+    "last_commit": "2026-03-25",
+    "last_release": "2026-03-25",
+    "stars": 169
   },
   "github:brianvoe/gofakeit": {
     "forks": 292,
@@ -2309,6 +2333,12 @@
     "last_release": "2026-01-27",
     "stars": 358
   },
+  "github:hjr265/gittop": {
+    "forks": 1,
+    "last_commit": "2026-03-28",
+    "last_release": "2026-03-19",
+    "stars": 104
+  },
   "github:holo-routing/holo-cli": {
     "forks": 10,
     "last_commit": "2026-01-16",
@@ -2326,6 +2356,12 @@
     "last_commit": "2026-01-22",
     "last_release": "2026-01-12",
     "stars": 51
+  },
+  "github:huseyinbabal/taws": {
+    "forks": 62,
+    "last_commit": "2026-03-29",
+    "last_release": "2026-01-29",
+    "stars": 2182
   },
   "github:huseyinbabal/tredis": {
     "forks": 2,
@@ -3844,6 +3880,12 @@
     "last_commit": "2025-07-19",
     "last_release": "2025-07-19",
     "stars": 59
+  },
+  "github:sass/dart-sass": {
+    "forks": 379,
+    "last_commit": "2026-03-30",
+    "last_release": "2026-03-10",
+    "stars": 4181
   },
   "github:scarvalhojr/aoc-cli": {
     "forks": 23,

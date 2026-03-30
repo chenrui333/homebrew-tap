@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-03-23 09:30:32 UTC
-Total formulas: 809
+Generated: 2026-03-30 09:40:36 UTC
+Total formulas: 816
 
 ## Formulas
 
@@ -43,6 +43,7 @@ Total formulas: 809
 | sish | HTTP(S)/WS(S)/TCP Tunnels to localhost using only SSH | 4528 | 330 | 2026-02-04 | 2026-02-04 | MIT | ✓ | - | [link](https://docs.ssi.sh/) |
 | gritql | Query language for searching, linting, and modifying code | 4399 | 120 | 2025-12-01 | 2025-03-26 | MIT | ✓ | - | [link](https://docs.grit.io/) |
 | cerbos | Scalable, context-aware authorization service for applicatio... | 4221 | 171 | 2026-02-16 | 2026-02-04 | Apache-2.0 | ✓ | - | [link](https://www.cerbos.dev/) |
+| dart-sass | Reference implementation of Sass stylesheet compiler | 4181 | 379 | 2026-03-30 | 2026-03-10 | MIT | ✓ | - | [link](https://sass-lang.com) |
 | httptap | View HTTP/HTTPS requests made by any Linux program | 4145 | 64 | 2025-12-23 | 2025-02-26 | MIT | ✓ | - | [link](https://github.com/monasticacademy/httptap) |
 | gobgp | CLI tool for GoBGP | 3984 | 769 | 2026-02-12 | 2026-01-01 | Apache-2.0 | ✓ | - | [link](https://osrg.github.io/gobgp/) |
 | sqlit | User friendly TUI for SQL databases | 3718 | 94 | 2026-02-02 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/Maxteabag/sqlit) |
@@ -76,6 +77,7 @@ Total formulas: 809
 | botkube | CLI for botkube | 2276 | 308 | 2024-12-11 | 2024-11-13 | MIT | ✓ | - | [link](https://botkube.io/) |
 | process-compose | Flexible scheduler for non-containerized applications | 2189 | 109 | 2026-02-21 | 2026-02-21 | Apache-2.0 | ✓ | - | [link](https://f1bonacc1.github.io/process-compose/) |
 | rtop | CLI tool to produce MD context files from many sources | 2189 | 158 | 2022-06-06 | - | MIT | ✓ | ✓ | [link](https://github.com/rapidloop/rtop) |
+| taws | Terminal-based AWS resource viewer and manager | 2182 | 62 | 2026-03-29 | 2026-01-29 | MIT | ✓ | - | [link](https://github.com/huseyinbabal/taws) |
 | surge | Blazing fast TUI download manager | 2180 | 76 | 2026-03-09 | 2026-02-28 | MIT | ✓ | - | [link](https://github.com/surge-downloader/Surge) |
 | arxiv-mcp-server | MCP Server for ArXiv | 2178 | 177 | 2026-02-13 | - | MIT | ✓ | - | [link](https://github.com/blazickjp/arxiv-mcp-server) |
 | jsrpc | 远程调用(rpc)浏览器方法，免去抠代码补环境 | 2171 | 441 | 2026-01-09 | 2026-01-09 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/jxhczhl/JsRpc) |
@@ -321,6 +323,7 @@ Total formulas: 809
 | dcv | TUI viewer for docker-compose | 222 | 2 | 2026-02-12 | 2025-09-05 | MIT | ✓ | - | [link](https://github.com/tokuhirom/dcv) |
 | gemini-cli | CLI for Google Gemini | 222 | 17 | 2025-11-22 | 2025-11-22 | MIT | ✓ | - | [link](https://github.com/reugn/gemini-cli) |
 | huber | Simplify GitHub package management | 219 | 14 | 2025-02-18 | 2025-02-15 | Apache-2.0 | ✓ | - | [link](https://innobead.github.io/huber/) |
+| strace-tui | Terminal user interface for visualizing and exploring strace... | 217 | 5 | 2026-03-08 | 2026-03-01 | - | ✓ | - | [link](https://github.com/Rodrigodd/strace-tui) |
 | dealve-tui | Terminal interface for game deal discovery | 212 | 4 | 2026-02-23 | 2026-02-23 | - | ✓ | - | [link](https://github.com/kurama/dealve-tui) |
 | yosay | Tell Yeoman what to say | 208 | 40 | 2025-02-07 | 2023-10-27 | BSD-2-Clause | ✓ | - | [link](https://github.com/yeoman/yosay) |
 | markpdf | Watermark PDF files using image or text | 207 | 41 | 2024-07-17 | 2022-12-27 | Apache-2.0 | ✓ | - | [link](https://github.com/ajaxray/markpdf) |
@@ -341,6 +344,7 @@ Total formulas: 809
 | csvi | Cross-platform terminal CSV editor | 177 | 4 | 2026-03-21 | 2026-03-21 | MIT | ✓ | - | [link](https://hymkor.github.io/csvi/) |
 | aim | Command-line download/upload tool with resume | 171 | 6 | 2026-02-15 | 2026-01-10 | MIT | ✓ | - | [link](https://github.com/mihaigalos/aim) |
 | lazyworktree | TUI for managing Git worktrees | 170 | 6 | 2026-03-09 | 2026-03-08 | Apache-2.0 | ✓ | - | [link](https://github.com/chmouel/lazyworktree) |
+| rgx | Terminal regex tester with real-time matching and multi-engi... | 169 | 2 | 2026-03-25 | 2026-03-25 | - | ✓ | - | [link](https://github.com/brevity1swos/rgx) |
 | kure | CLI password manager with sessions | 167 | 14 | 2026-01-27 | 2025-11-02 | Apache-2.0 | ✓ | - | [link](https://github.com/GGP1/kure) |
 | mdbook-linkcheck | Backend for `mdbook` which will check your links for you | 167 | 32 | 2024-08-15 | 2022-10-03 | MIT | ✓ | - | [link](https://github.com/Michael-F-Bryan/mdbook-linkcheck) |
 | apw | CLI for Apple Passwords (also known as iCloud Keychain) | 166 | 9 | 2026-01-20 | 2025-10-16 | GPL-3.0-only | ✓ | - | [link](https://github.com/bendews/apw) |
@@ -395,6 +399,7 @@ Total formulas: 809
 | simdjzon | Simdjson ported to zig | 131 | 6 | 2025-11-04 | - | Apache-2.0 | ✓ | - | [link](https://github.com/travisstaloch/simdjzon) |
 | mcpd | Declaratively manage Model Context Protocol (MCP) servers | 130 | 17 | 2026-02-13 | 2026-01-28 | MIT | ✓ | - | [link](https://mozilla-ai.github.io/mcpd/) |
 | vimalender | Vim-style terminal calendar | 130 | 3 | 2026-03-12 | 2026-03-10 | MIT | ✓ | - | [link](https://github.com/Sadoaz/vimalender) |
+| tiki | Markdown-based git-versioned documentation and issue managem... | 129 | 3 | 2026-03-30 | 2026-03-26 | Apache-2.0 | ✓ | - | [link](https://github.com/boolean-maybe/tiki) |
 | lix | Dependable package manager for your Haxe projects | 127 | 25 | 2026-01-29 | - | MIT | ✓ | - | [link](https://github.com/lix-pm/lix.client) |
 | trex | Terminal app for writing, visualizing, and testing regular e... | 127 | 3 | 2025-09-30 | 2025-02-27 | MIT | ✓ | - | [link](https://github.com/samyakbardiya/trex) |
 | zigscient | Zig Language Server | 127 | 5 | 2026-02-12 | 2026-01-22 | ISC | ✓ | - | [link](https://github.com/llogick/zigscient) |
@@ -430,6 +435,7 @@ Total formulas: 809
 | anvil | CLI to streamline config management and tool installation | 105 | 2 | 2026-01-24 | 2026-01-24 | Apache-2.0 | ✓ | - | [link](https://tryanvil.app) |
 | cf2pulumi | Convert CloudFormation Templates to Pulumi programs | 105 | 19 | 2026-02-16 | 2026-02-16 | Apache-2.0 | ✓ | - | [link](https://github.com/pulumi/pulumi-aws-native) |
 | datacmd | Auto-generative dashboards from different sources in your CM... | 105 | 4 | 2025-12-31 | 2025-09-03 | MIT | ✓ | - | [link](https://github.com/VincenzoManto/Datacmd) |
+| gittop | Beautiful terminal UI for visualizing Git repository statist... | 104 | 1 | 2026-03-28 | 2026-03-19 | BSD-3-Clause | ✓ | - | [link](https://github.com/hjr265/gittop) |
 | tinifier | CLI tool for compressing images using the TinyPNG | 104 | 11 | 2026-01-01 | 2025-11-02 | MIT | ✓ | - | [link](https://github.com/tarampampam/tinifier) |
 | vectorize-mcp-server | MCP Server for Vectorize | 102 | 24 | 2025-06-12 | 2025-04-07 | ISC | ✓ | - | [link](https://github.com/vectorize-io/vectorize-mcp-server) |
 | yajsv | Yet Another JSON Schema Validator | 102 | 13 | 2023-11-21 | 2022-09-22 | MIT | ✓ | - | [link](https://json-schema.org/) |
@@ -489,6 +495,7 @@ Total formulas: 809
 | kyma | Presentations from markdown in the terminal with fancy trans... | 76 | 1 | 2026-02-13 | 2025-06-21 | GPL-3.0-only | ✓ | - | [link](https://www.kyma.ink/) |
 | taskdog | Task manager with CLI, TUI, and local REST API server | 76 | 2 | 2026-03-16 | 2026-03-15 | MIT | ✓ | - | [link](https://github.com/Kohei-Wada/taskdog) |
 | tinybird-mcp-server | MCP server for Tinybird | 76 | 17 | 2025-09-01 | - | Apache-2.0 | ✓ | - | [link](https://github.com/tinybirdco/mcp-tinybird) |
+| amux | TUI for easily running parallel coding agents | 74 | 2 | 2026-03-30 | 2026-03-18 | MIT | ✓ | - | [link](https://github.com/andyrewlee/amux) |
 | kubeseal-convert | Tool to import secrets from secret managers (Vault, SecretsM... | 73 | 8 | 2026-02-09 | 2024-08-26 | Apache-2.0 | ✓ | - | [link](https://github.com/EladLeev/kubeseal-convert) |
 | lib-x | Browse your calibre library from the terminal | 73 | 3 | 2025-07-07 | 2025-01-27 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/Benexl/lib-x) |
 | matcha | Terminal email client built with Bubble Tea | 72 | 4 | 2026-02-23 | 2026-02-22 | MIT | ✓ | - | [link](https://matcha.floatpane.com/) |
