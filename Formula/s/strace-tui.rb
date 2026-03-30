@@ -21,7 +21,7 @@ class StraceTui < Formula
     EOS
     (testpath/"trace.txt").write(sample)
 
-    output = shell_output("#{bin}/strace-tui parse #{testpath}/trace.txt --json")
+    output = shell_output("#{bin/"strace-tui"} parse #{testpath}/trace.txt --json")
     parsed = JSON.parse(output)
 
     assert_kind_of Array, parsed["entries"]
