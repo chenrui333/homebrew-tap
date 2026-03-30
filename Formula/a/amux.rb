@@ -5,6 +5,15 @@ class Amux < Formula
   sha256 "5c45784694c849dbdd1bbb47c403c8df89eb9a53ac3a0122ffb6e14560568522"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "112db4efb370a625236f5c5b48f3bc24219d24f46b6e7c969f6c4ba19f6c83be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "112db4efb370a625236f5c5b48f3bc24219d24f46b6e7c969f6c4ba19f6c83be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "112db4efb370a625236f5c5b48f3bc24219d24f46b6e7c969f6c4ba19f6c83be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa1bedadc53a0f70ee83a04b7a32fef6f2f8d43361058b11e21759c4b472b709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6873002ea8c98b0452881d639ca806f5a26a74421118512c05b81f6385bda4d"
+  end
+
   depends_on "go" => :build
   depends_on "tmux"
 
