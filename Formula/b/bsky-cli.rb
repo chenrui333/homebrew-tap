@@ -1,8 +1,8 @@
 class BskyCli < Formula
   desc "Command-line client for Bluesky"
   homepage "https://github.com/harveyrandall/bsky-cli"
-  url "https://github.com/harveyrandall/bsky-cli/archive/refs/tags/v1.8.7.tar.gz"
-  sha256 "7bbcd1d63c5e61bee6da1f449186bf5bca6d2e36717d92b34581d238e78025d1"
+  url "https://github.com/harveyrandall/bsky-cli/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "201180b279b2d18a7ad6c49bdba6fc2e6e2e51c291a2d99e4f72e92b34657b68"
   license "MIT"
   head "https://github.com/harveyrandall/bsky-cli.git", branch: "main"
 
