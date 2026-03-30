@@ -35,7 +35,11 @@ class DartSass < Formula
            "bin/sass.dart", "-o", "sass"
 
     bin.install "sass"
-    bin.install_symlink "sass" => "dart-sass"
+    (bin/"dart-sass").write <<~SH
+      #!/bin/sh
+      exec "$(dirname "$0")/sass" "$@"
+    SH
+    chmod 0555, bin/"dart-sass"
   end
 
   test do
