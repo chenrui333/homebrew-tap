@@ -5,6 +5,15 @@ class StraceTui < Formula
   sha256 "da3ee283c3e293392ddba9a8608c5fe045537ae700c34b4582fedefa5bd808dd"
   license any_of: ["Apache-2.0", "MIT"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42d841b78a6e8bd53f1b0279372a40ad26d630361656e9edd11845ef87aced63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24107ad36c6cab82b325d861b79b65f2a2ad582889a2d5bb47adb39cbe994e5f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc449eaecd674cc8eb41ad61a57665d3406c1470a5b8898b695e06eaa295903d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79ef2f13f92515c967dc5bcd84e65fd01b1f51d98a5264585a5a7b805b121515"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77f61d7eab6c5743d5b2cb071359f21970abf9853b657e105abbfba26fdb0f6d"
+  end
+
   depends_on "rust" => :build
 
   def install
