@@ -5,6 +5,15 @@ class Tiki < Formula
   sha256 "f4542065925a331b91cd6758b3fc98cfc87048a5d08b8c0092c2832e41fe730a"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8acca3cb389bd83211872bed88080b23277282e35f64773e08af26de21c77bc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8acca3cb389bd83211872bed88080b23277282e35f64773e08af26de21c77bc1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8acca3cb389bd83211872bed88080b23277282e35f64773e08af26de21c77bc1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc67313b6b6ffed6b9e426518b6dd61370d35698baa5866e32481cd96acae5be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0b9813ee913fc902e5c9fd9169bbc52639f6374533fdca432806d27284a89bf"
+  end
+
   depends_on "go" => :build
 
   def install
