@@ -35,16 +35,11 @@ class DartSass < Formula
            "bin/sass.dart", "-o", "sass"
 
     bin.install "sass"
-    (bin/"dart-sass").write <<~SH
-      #!/bin/sh
-      exec "$(dirname "$0")/sass" "$@"
-    SH
-    chmod 0555, bin/"dart-sass"
   end
 
   test do
     (testpath/"test.scss").write(".class { property: 1 + 1; }\n")
-    output = shell_output("#{bin}/dart-sass test.scss")
+    output = shell_output("#{bin}/sass test.scss")
     assert_match ".class {", output
     assert_match "property: 2;", output
   end
