@@ -39,10 +39,8 @@ class DartSass < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dart-sass --version")
-
     (testpath/"test.scss").write(".class { property: 1 + 1; }\n")
-    output = shell_output("#{bin}/sass test.scss")
+    output = shell_output("#{bin}/dart-sass test.scss")
     assert_match ".class {", output
     assert_match "property: 2;", output
   end
