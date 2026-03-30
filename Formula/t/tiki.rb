@@ -6,7 +6,6 @@ class Tiki < Formula
   license "Apache-2.0"
 
   depends_on "go" => :build
-  depends_on "git"
 
   def install
     ldflags = %W[
@@ -21,15 +20,15 @@ class Tiki < Formula
   end
 
   test do
-    output = shell_output("#{bin}/tiki sysinfo")
+    output = shell_output("#{bin/"tiki"} sysinfo")
     assert_match "System Information", output
     assert_match "OS:", output
     assert_match "Project Root:", output
 
-    assert_match version.to_s, shell_output("#{bin}/tiki --version")
+    assert_match version.to_s, shell_output("#{bin/"tiki"} --version")
 
     system "git", "init"
-    usage = shell_output("#{bin}/tiki")
+    usage = shell_output(bin/"tiki")
     assert_match "Run 'tiki init' to initialize this repository.", usage
   end
 end
