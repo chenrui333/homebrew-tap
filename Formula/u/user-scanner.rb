@@ -3,8 +3,8 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/c6/76/3aadc72a346ed17ba3f1313fa4342a67486fac243f4baaca9ba46a6a80a2/user_scanner-1.3.5.1.tar.gz"
-  sha256 "08a32ce2a7211b3049ec6251385ff1c4a1164b748f77bdcaa1164d168c886530"
+  url "https://files.pythonhosted.org/packages/db/cc/8f13aabf0ccdc7e01be0fb098a7c3850f99886d3fcb51a4052953636b3da/user_scanner-1.3.5.3.tar.gz"
+  sha256 "0f711b5cee004d6f885a9935a58f219b14b86930ae06a304584bfb1a1704992e"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
@@ -17,8 +17,8 @@ class UserScanner < Formula
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
+    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
   end
 
   resource "certifi" do
