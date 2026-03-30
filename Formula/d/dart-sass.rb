@@ -6,6 +6,15 @@ class DartSass < Formula
   license "MIT"
   head "https://github.com/sass/dart-sass.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a4d91c4e6d5786b0e6aa9c60a2839207a40018b651be886539d6d9bf470a4c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f32b25c7bc2a202fbea56646c247cb5d469ae4188f39a1448a59c17d9233ae55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37690ce54457e848239b5660c21591328bfe3224e3d46d62aa8c2de216c1d448"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "313354c1529df8e81a7abcaacfcb4ffb646f9ea70f8965d340cf071bf7e669cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b93ea02faeed968d3fdef57099eb80b08322fd4951de401b52d7dbcee683590c"
+  end
+
   depends_on "buf" => :build
   depends_on "dart-sdk" if OS.linux?
   depends_on "dart-sdk" => :build unless OS.linux?
