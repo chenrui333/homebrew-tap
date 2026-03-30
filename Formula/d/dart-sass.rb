@@ -7,7 +7,8 @@ class DartSass < Formula
   head "https://github.com/sass/dart-sass.git", branch: "main"
 
   depends_on "buf" => :build
-  depends_on "dart-sdk" => :build
+  depends_on "dart-sdk" if OS.linux?
+  depends_on "dart-sdk" => :build unless OS.linux?
 
   resource "language" do
     url "https://github.com/sass/sass.git",
@@ -15,7 +16,7 @@ class DartSass < Formula
   end
 
   def install
-    dart = Formula["dart-sdk"].opt_bin/"dart"
+    dart = Formula["dart-sdk"].opt_libexec/"bin/dart"
 
     ENV["PUB_ENVIRONMENT"] = "homebrew:dart-sass"
 
@@ -36,11 +37,10 @@ class DartSass < Formula
              "bin/sass.dart", "--version"
 
       libexec.install "sass.snapshot"
-      cp dart, libexec
 
       (bin/"sass").write <<~SH
         #!/bin/sh
-        exec "#{libexec}/dart" "#{libexec}/sass.snapshot" "$@"
+        exec "#{Formula["dart-sdk"].opt_libexec}/bin/dart" "#{libexec}/sass.snapshot" "$@"
       SH
       chmod 0555, bin/"sass"
     else
