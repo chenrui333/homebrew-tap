@@ -13,9 +13,9 @@ class Taws < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/taws --version")
+    assert_match version.to_s, shell_output("#{bin/"taws"} --version")
 
-    output = shell_output("#{bin}/taws completion bash")
+    output = shell_output("#{bin/"taws"} completion bash")
     assert_match "taws__completion", output
     assert_match "--profile", output
   end
