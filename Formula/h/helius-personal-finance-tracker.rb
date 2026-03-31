@@ -1,8 +1,8 @@
 class HeliusPersonalFinanceTracker < Formula
   desc "Local-first personal finance tracker with CLI and TUI"
   homepage "https://github.com/STVR393/helius-personal-finance-tracker"
-  url "https://github.com/STVR393/helius-personal-finance-tracker/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "297ab38931dd141639f7576c6c2213717734fad617e2654e0a93f9dae08f27b0"
+  url "https://github.com/STVR393/helius-personal-finance-tracker/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "b785c7b7afe32e0334c0449dbd19ececd193fceafd3b407e687e6330632dc098"
   license "AGPL-3.0-only"
   head "https://github.com/STVR393/helius-personal-finance-tracker.git", branch: "main"
 
