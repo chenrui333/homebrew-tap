@@ -8,11 +8,11 @@ class Gitv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6235b970173eb61697bbb3261d6ea2d7c15875cb76b57827311e18ef3f347ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aacfac0de41fee8ec137bcf0320667ee6e2555182ae135d2866c02726ab5a1a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59f0df09cfbd889d172a2a973a439cc2a3b80919a99575afefafb9a514bb0eaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22767a862095b2ffb1406c6abd5e3fa3ec6426c99ac522d2342f80090be431d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d93ab25fd9c9cebeaed669e25b7ceacc01d5b7232672d85a98e28a1d597d638"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb1a63489101e9b235fbba522f4faf2820bccd8d6ba0e5a617c1d4fdd6ec5c39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eba3e655c85396c5d059e3bb33fae4bc42dc16dcc7bd6eb847f7078229d0c4cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f93b48284b4d53bffcb96418d4797bbd374406e1854e3afba79aa9de5e43f61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dac1bbfc312085ffa0c18fc645fd43c5a2265cedaf3a8cea23b74647c415462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8788dc25ce970444c41a4ecd14043f9c73a36254dfac3aa9d4ad2e97a4fb0bc8"
   end
 
   depends_on "rust" => :build
