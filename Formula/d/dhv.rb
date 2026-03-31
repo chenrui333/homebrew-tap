@@ -3,8 +3,8 @@ class Dhv < Formula
 
   desc "Tool to dive into Python code"
   homepage "https://dhv.davep.dev/"
-  url "https://files.pythonhosted.org/packages/b2/8c/8acccb89bd0022fbe4b5617874a17d002b637847ac3d5b25b75e5ce8e156/dhv-0.8.1.tar.gz"
-  sha256 "25e2b4dcd4635b30959d2d3368850e68073a895a44d57670cf45bef0c202d643"
+  url "https://files.pythonhosted.org/packages/12/87/235a0f94d2cc4124e840d733b956dff1a16ff2bd4e6dca6492aa1f40e916/dhv-1.0.0.tar.gz"
+  sha256 "46f5d8aa731dbd4cd648e0e77b9216f4b05460f49c734b669810439e3b8daaa2"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/dhv.git", branch: "main"
 
@@ -24,8 +24,8 @@ class Dhv < Formula
   # pypi_packages exclude_packages: "tree-sitter"
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2a/ae/bb56c6828e4797ba5a4821eec7c43b8bf40f69cda4d4f5f8c8a2810ec96a/linkify-it-py-2.0.3.tar.gz"
-    sha256 "68cda27e162e9215c17d786649d1da0021a451bdc436ef9e0fa0ba5234b9b048"
+    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
+    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
   end
 
   resource "markdown-it-py" do
@@ -44,38 +44,43 @@ class Dhv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
-    sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+    url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
+    sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
+    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/af/90/59757aa887ddcea61428820274f1a2d1f986feb7880374a5420ab5d37132/textual-6.5.0.tar.gz"
-    sha256 "e5f152cdd47db48a635d23b839721bae4d0e8b6d855e3fede7285218289294e3"
+    url "https://files.pythonhosted.org/packages/4f/07/766ad19cf2b15cae2d79e0db46a1b783b62316e9ff3e058e7424b2a4398b/textual-8.2.1.tar.gz"
+    sha256 "4176890e9cd5c95dcdd206541b2956b0808e74c8c36381c88db53dcb45237451"
   end
 
   resource "textual-enhanced" do
-    url "https://files.pythonhosted.org/packages/68/4a/31e14a619a3030eca07fde8301f3ff708b687c068813a428d51586a2b35d/textual_enhanced-1.0.0.tar.gz"
-    sha256 "d2cfd128e5c0bae7a6b5c510a82b7cba4f6555bcedf8e75c6e3ea7949dd86d49"
+    url "https://files.pythonhosted.org/packages/3f/ae/467473ebf75590117d96b8c5d8a6f9ed03bdcfaef6e6e785d4b4ea8ec0c7/textual_enhanced-1.3.0.tar.gz"
+    sha256 "3f2eb43f946c4315b3044684caf89e1cd0fd3d61efb853a77bc5dc72021bf284"
   end
 
   resource "textual-fspicker" do
-    url "https://files.pythonhosted.org/packages/15/2e/8c1ae6f0c26af2fe0c49d61d42c91d0077cbfd984df049d7e3d82a40d93d/textual_fspicker-0.6.0.tar.gz"
-    sha256 "0da0e3f35025f72c5b90557d12777c9f67c674470b3263cbe2c2de38f5b70c3c"
+    url "https://files.pythonhosted.org/packages/e8/fd/dc3160123af550838d50a4fa7f62e357d7ad2fc9b4220ead9160661bcd1b/textual_fspicker-1.0.0.tar.gz"
+    sha256 "462608dbe6a14edff679fc6116addcf288f4a79f8e4fffd240f9ce2caaf9e655"
+  end
+
+  resource "tree-sitter" do
+    url "https://files.pythonhosted.org/packages/66/7c/0350cfc47faadc0d3cf7d8237a4e34032b3014ddf4a12ded9933e1648b55/tree-sitter-0.25.2.tar.gz"
+    sha256 "fe43c158555da46723b28b52e058ad444195afd1db3ca7720c59a254544e9c20"
   end
 
   resource "tree-sitter-bash" do
-    url "https://files.pythonhosted.org/packages/bb/94/fe115f24fd8a3e1073e240c1e766b573ea678a87f1f5e036ec071bdfe419/tree_sitter_bash-0.25.0.tar.gz"
-    sha256 "6b6410ea5f54abe8780e4b260b01adbfec3a0729907c7a62a3448f670010e72e"
+    url "https://files.pythonhosted.org/packages/8e/0e/f0108be910f1eef6499eabce517e79fe3b12057280ed398da67ce2426cba/tree_sitter_bash-0.25.1.tar.gz"
+    sha256 "bfc0bdaa77bc1e86e3c6652e5a6e140c40c0a16b84185c2b63ad7cd809b88f14"
   end
 
   resource "tree-sitter-css" do
@@ -114,8 +119,8 @@ class Dhv < Formula
   end
 
   resource "tree-sitter-python" do
-    url "https://files.pythonhosted.org/packages/b8/8b/c992ff0e768cb6768d5c96234579bf8842b3a633db641455d86dd30d5dac/tree_sitter_python-0.25.0.tar.gz"
-    sha256 "b13e090f725f5b9c86aa455a268553c65cadf325471ad5b65cd29cac8a1a68ac"
+    url "https://github.com/tree-sitter/tree-sitter-python/archive/refs/tags/v0.25.0.tar.gz"
+    sha256 "4609a3665a620e117acf795ff01b9e965880f81745f287a16336f4ca86cf270c"
   end
 
   resource "tree-sitter-regex" do
@@ -124,8 +129,8 @@ class Dhv < Formula
   end
 
   resource "tree-sitter-rust" do
-    url "https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.0.tar.gz"
-    sha256 "79c9eb05af4ebcce8c40760fc65405e0255e2d562702314b813a5dec1273b9a2"
+    url "https://files.pythonhosted.org/packages/b7/87/75cbd22b927267d310f76cca1ab3c1d9d41035dfa3eb9cc95f96ee199440/tree_sitter_rust-0.24.2.tar.gz"
+    sha256 "54fb02a5911e345308b405174465112479f56dc39e3f1e7744d7568595f00db9"
   end
 
   resource "tree-sitter-sql" do
@@ -154,8 +159,8 @@ class Dhv < Formula
   end
 
   resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/91/7a/146a99696aee0609e3712f2b44c6274566bc368dfe8375191278045186b8/uc-micro-py-1.0.3.tar.gz"
-    sha256 "d321b92cff673ec58027c04015fcaa8bb1e005478643ff4a500882eaab88c48a"
+    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
+    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
   end
 
   resource "xdg-base-dirs" do
@@ -167,7 +172,16 @@ class Dhv < Formula
     # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    virtualenv_install_with_resources
+    tree_sitter_include = libexec/"include/tree_sitter"
+    tree_sitter_include.mkpath
+    resource("tree-sitter").stage do
+      cp Dir["tree_sitter/core/lib/src/*.h"], tree_sitter_include
+      cp "tree_sitter/core/lib/include/tree_sitter/api.h", tree_sitter_include/"api.h"
+    end
+
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resources
+    venv.pip_install_and_link buildpath
   end
 
   test do
