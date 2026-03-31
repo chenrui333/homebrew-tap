@@ -8,11 +8,11 @@ class HeliusPersonalFinanceTracker < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32cd0b28da1aacce0631b395b6fd1fca0f28106697c82a2c59366f5844b81d7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01afb49245d1b14dfc06050c377c8427e6cb358591a05023913ff30b150fdc76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0491a1b89931ef875e9190128435ebd84785aa08e3b6e63a5f62f5500a7e7a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b3f9b87775ec5a67a9f0b47d23d501eb564a273d8e437e61ce531e586305922"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a32be2f7166d1357ac60bf5de07b5bc0284e0114c41e984c7374feec57f131e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c217e810bc169e7c5c0b71d88444ddaf1c0ecacb6b5706b048f3e0d830e2b2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adb079817661a22fc52abfb3d64997f3bdc9e43c54e0982aa6867774dea25f28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fff137308032de554b1a8d19c028980f7afc39678359db902ebadb6693bac3e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "545a4c1224ac4b07dbbe7efbe251ac2d6324541029358c798f85fedeff156799"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0fbb85da9735863b41acd38fc660783ede29fc97896ac254440fb8ab5c7a709"
   end
 
   depends_on "rust" => :build
