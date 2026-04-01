@@ -8,11 +8,11 @@ class Cdx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "10d514b3c80a6c62e1d16ab868577628b36c632594dc08dc940aa919eb672af1"
-    sha256                               arm64_sequoia: "e2795f280480509ae49a284151a97e9c8f4c9333fb805edd6af499da6b51a13c"
-    sha256                               arm64_sonoma:  "a6c28d10cf45554a4e8ec6cb8a9ef2d74491f41f07d86eb0ea543fcb3e900cc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "01ca163771c926ffb365dd14f70adf68d42b64839602c274aec1e93897ae241e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c11c6120302eed30909ad13cd7f38253001ac11e0a2f57e01a2da054e3a058e2"
+    sha256                               arm64_tahoe:   "ee1a831809b37ef43056ef7073302a086d2a39e552f407bac8e23de4ef354e15"
+    sha256                               arm64_sequoia: "de6096129fac742bd761d6ad06c4bc9843b6b1fdbfd034d2975ba3ba498834b7"
+    sha256                               arm64_sonoma:  "a675f4635e34b6588bd54d951972c069469ef260373243ec6b507441849b8b2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9f67b0c6bbdeddd6c3c43f6a2bf2532573af0e6d499fb64a022b6356d3bde5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a23bcc32695dd02e3512f0947e58450d8ce652393950665bcae0ba95fe30294a"
   end
 
   depends_on "node"
