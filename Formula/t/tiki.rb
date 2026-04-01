@@ -1,8 +1,8 @@
 class Tiki < Formula
   desc "Markdown-based git-versioned documentation and issue management"
   homepage "https://github.com/boolean-maybe/tiki"
-  url "https://github.com/boolean-maybe/tiki/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "f4542065925a331b91cd6758b3fc98cfc87048a5d08b8c0092c2832e41fe730a"
+  url "https://github.com/boolean-maybe/tiki/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "62b1fa93db51c19177f8877b3878d9079c3a2647ae7c8aea657ec84c22eeac1a"
   license "Apache-2.0"
 
   bottle do
