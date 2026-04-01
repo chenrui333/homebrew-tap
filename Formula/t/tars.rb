@@ -5,6 +5,15 @@ class Tars < Formula
   sha256 "42750cd03677794806cdc08e12daaf7eb34b4bd123838d7bb6811bfb93fca3b1"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d8c5b72bb258d7675934678cd9c69344754fcd5ffd6cd98e12e44739c2c5420"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d8c5b72bb258d7675934678cd9c69344754fcd5ffd6cd98e12e44739c2c5420"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d8c5b72bb258d7675934678cd9c69344754fcd5ffd6cd98e12e44739c2c5420"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a2cc9be5f11faa32415d7528e2cc698ec3fddbd1d7cb181b9a5153b5427c868"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e19ab632c4daa40b2fc26e89b2df5cb49d264f1e5d9f2d747219b01fe19e8c92"
+  end
+
   depends_on "node"
 
   def install
