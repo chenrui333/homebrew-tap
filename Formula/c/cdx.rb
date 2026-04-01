@@ -1,8 +1,8 @@
 class Cdx < Formula
   desc "Use Codex more easily, even away from your desk"
   homepage "https://github.com/ezpzai/cdx"
-  url "https://registry.npmjs.org/@ezpzai/cdx/-/cdx-1.0.8.tgz"
-  sha256 "119d1de48e457115a10dca70911550234aff83bb5f18dddf0d67d3736febd7fd"
+  url "https://registry.npmjs.org/@ezpzai/cdx/-/cdx-1.0.12.tgz"
+  sha256 "4365718a6a15cae9300a42cb508abffdba0edddf69fe6b9d21feffd972d9c3cc"
   license "Apache-2.0"
   head "https://github.com/ezpzai/cdx.git", branch: "main"
 
