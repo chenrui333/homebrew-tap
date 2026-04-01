@@ -5,6 +5,15 @@ class Viwo < Formula
   sha256 "675e42e472c7a9d881f17b69e79ee9b39f09735e60ed62f766622e2295d58ec5"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "5fc6679f31f062ca276c479ab84c759be5e719b34ed2cf17b6d77f0aca771c58"
+    sha256                               arm64_sequoia: "97020eae2517cdc745c9657ae67e8154e6f1a117048a608d468862dc7e1e8590"
+    sha256                               arm64_sonoma:  "6c9ec037d0ae2a4fea2bd73256e669b9cb0808732481f8d5c57f8a0b420c5d90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e67c681d7d82390618d47cf1396a6f0d6b8adc070439089d8ba920ee6f4e2b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0726c34590e2513e28da8f244602474240a2f53b2459902f1dec8fa01946071b"
+  end
+
   depends_on "chenrui333/tap/bun" => :build
 
   def install
