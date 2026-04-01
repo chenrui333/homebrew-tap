@@ -8,11 +8,11 @@ class Siggy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a11120d6bc7dcbc07e7b6e0c736bbe0e8f4cc6314b9826dab0a0006cf867685"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e52a4c40a5f95575957191bdf5012caa30fbeb32a279538c24c4eca09a51987"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5c85c1fabe9b189bdbaa6d5709918ff3097a80b611488e336d5eff17432a32d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a3bec65a7e8892428067792d813c92c23699d6cb6a14b1eba03a50b82a72ac8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa7f457d82d23d455d72ce8dccd19b32c49475e3698006f2de2b43a4b34edf28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "faef2e7c109bb9ce1f1accd123946b4ef8bfd83587d3628a8018c8c1c3693231"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7804ce0040763d6386d071e8b07d3bcb06cedb00547cc0cbc03973b26de36f8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eef116ca7b4ea909a7deff64b7741ec8121c4575a80df4a854fb4f756c1c14ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "599b8db02f06fcc09e1915345c5d4d3d7e7caa56acdada178244fb35da6556c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edce3890131d8cd785e046a97a24f1f00247bcf53eb6c46f3ae8fb27a5039881"
   end
 
   depends_on "rust" => :build
