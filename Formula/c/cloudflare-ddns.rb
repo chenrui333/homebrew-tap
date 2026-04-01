@@ -1,10 +1,9 @@
 class CloudflareDdns < Formula
   desc "Small, feature-rich, and robust Cloudflare DDNS updater"
   homepage "https://github.com/favonia/cloudflare-ddns"
-  url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.15.1.tar.gz"
-  sha256 "8f2288e84257a445934e02500db2b778e17e41d0be059a38170ec8bfff6caa1d"
+  url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "3e36610960a4923d46da927438f1efb8c4e79ee5cf3c352685292c1d7f81c004"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
   head "https://github.com/favonia/cloudflare-ddns.git", branch: "main"
 
   bottle do
