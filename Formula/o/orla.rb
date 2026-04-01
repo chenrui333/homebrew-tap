@@ -1,8 +1,8 @@
 class Orla < Formula
   desc "High-performance execution engine for open-source agents"
   homepage "https://github.com/dorcha-inc/orla"
-  url "https://github.com/dorcha-inc/orla/archive/refs/tags/v1.2.11.tar.gz"
-  sha256 "d8fdabf5de981ba4441cd1c18b34291ba90ab24a93770aba42537ced868d8392"
+  url "https://github.com/dorcha-inc/orla/archive/refs/tags/v1.2.12.tar.gz"
+  sha256 "4722f30fe564c7443fe5e0857e99cc4ceb62e7cfa7b33628beb7b228f842e4b1"
   license "MIT"
   head "https://github.com/dorcha-inc/orla.git", branch: "main"
 
