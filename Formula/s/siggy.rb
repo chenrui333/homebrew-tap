@@ -1,8 +1,8 @@
 class Siggy < Formula
   desc "Terminal-based Signal messenger client with vim keybindings"
   homepage "https://github.com/johnsideserf/siggy"
-  url "https://github.com/johnsideserf/siggy/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "84105115bbada8fd4002077330953586fcae77afb4437d5ab121526a88daccdd"
+  url "https://github.com/johnsideserf/siggy/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "87eba28668442715af88fe4634f252e5d28c81c90518a50bd97a0f43c1d26482"
   license "GPL-3.0-only"
   head "https://github.com/johnsideserf/siggy.git", branch: "master"
 
