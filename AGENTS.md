@@ -316,7 +316,8 @@ You MUST verify all items before submitting:
 
 ### MUST
 
-- One formula change per PR
+- One formula or cask change per PR — always create a dedicated branch and open a separate PR for each formula/cask, even when working on multiple in the same session
+- Never commit formula or cask changes directly to `main`; always use a PR branch
 - Keep diffs minimal and focused
 - Provide only essential context in PR description
 - For any formula PR not labeled `CI-syntax-only`, use the `pr-pull` merge path so BrewTestBot adds the bottle commit to `main`
@@ -324,7 +325,7 @@ You MUST verify all items before submitting:
 ### MUST NOT
 
 - Edit `bottle do` blocks (managed by BrewTestBot)
-- Batch unrelated formula changes
+- Batch unrelated formula or cask changes into a single PR
 - Include large logs or verbose output in PR body
 - Add non-Homebrew usage caveats in PR body
 - Include unrelated refactors or cleanups
