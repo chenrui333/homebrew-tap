@@ -8,11 +8,11 @@ class Konfigo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8c66914cd31151c2fd1742a9ac4e413b2fb0aca6dce548b755d596b5e5f12d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8c66914cd31151c2fd1742a9ac4e413b2fb0aca6dce548b755d596b5e5f12d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8c66914cd31151c2fd1742a9ac4e413b2fb0aca6dce548b755d596b5e5f12d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6308d772179d1b2ac00fae21e99c681a98b735b2c98e184a8186626201225188"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68045b3fd56f76f94662bd26da615ed3e54bdc41c7b1832777fc53ca0213c80f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7aec41d6badc3771aedcc16b309dfb4c2df04e47579b052324690cef892f0287"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aec41d6badc3771aedcc16b309dfb4c2df04e47579b052324690cef892f0287"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7aec41d6badc3771aedcc16b309dfb4c2df04e47579b052324690cef892f0287"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3abcd0610094dfe29070c679c82cb3bbe1e0bb7f0573c7a21e9bf64f080df04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14e9a0db0455a442b410dd5fde128e1d1fc35d0a7d9a5050db3cfc592084eccb"
   end
 
   depends_on "go" => :build
