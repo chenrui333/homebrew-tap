@@ -8,12 +8,12 @@ class LightpandaV8 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "311e84549d289d61805b55fdcc3777ba4e30927b29faa3da0b30138a61aee90b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69a33721b94262df3ce1ee6371c9350226139b2d132209ffec703b057244547b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "745cc077b9d7941715cfbbb06d7a61f2b9c588a42d94f08ec59ae05735ea4193"
-    sha256 cellar: :any_skip_relocation, sequoia:       "76f48967542ebbb6f968a6c882f34c0b0f470bfaae6eeaf065cae76885683a22"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31e174252f4b9ee23b9a48a7da06aeef62c9d04de7531468919b5c7fd76873d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "832d6bfc73ab1a567295ed37525b5bd8cec10eafed9515eb4390de5b01f2f184"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8d29936c3a29ec79e7b951e3357f06a8902c1edc804916878b0ce40323b7d16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afcd30f4969460a00e38fc737110d16dd2e8f49ef9ebd5b49b0fe1c3eea073dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b89e2d8ba16ed8ce0a3ca2a13586718ab26dd1f99244c89c202ba9809f64bb8"
+    sha256 cellar: :any_skip_relocation, sequoia:       "4ecd9fea17e867a473ff2533ff2d6f9a5d3343d0946176a629a6f337a8a609a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b509dab18daca18d9f8d6d9535389b4b5cf8f852d0810af0dab934077b644d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc1a9505648bf82c14bb83cd91289cea49c2f0e6d0ede41a35168b5d293143b9"
   end
 
   if OS.mac? && Hardware::CPU.arm?
