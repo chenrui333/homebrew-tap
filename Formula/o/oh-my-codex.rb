@@ -6,6 +6,15 @@ class OhMyCodex < Formula
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec916307207a0e93bbe3755f901212bcdfc255f7ac0a54cc9dc6e00dc66b13bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec916307207a0e93bbe3755f901212bcdfc255f7ac0a54cc9dc6e00dc66b13bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec916307207a0e93bbe3755f901212bcdfc255f7ac0a54cc9dc6e00dc66b13bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2049ba2b924487d883eedfb59885250d9eda8e996e2720f0c11a60c6c788225f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2049ba2b924487d883eedfb59885250d9eda8e996e2720f0c11a60c6c788225f"
+  end
+
   depends_on "node"
 
   def install
