@@ -6,6 +6,15 @@ class Lazyjira < Formula
   license "MIT"
   head "https://github.com/textfuel/lazyjira.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "308e71d6b575b35588eb494f87dd11793828bbee1d7e35dc02fad8078ac0c170"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "308e71d6b575b35588eb494f87dd11793828bbee1d7e35dc02fad8078ac0c170"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "308e71d6b575b35588eb494f87dd11793828bbee1d7e35dc02fad8078ac0c170"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "569007290a19fdfb18d6cd536b6c337c385bdd77144ab2026664d86c7f823243"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e7600b1aa3699ec7e70a122535cbc7c279ec57351f7ea0db50457af0715d769"
+  end
+
   depends_on "go" => :build
 
   def install
