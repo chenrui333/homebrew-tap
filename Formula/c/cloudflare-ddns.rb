@@ -1,10 +1,9 @@
 class CloudflareDdns < Formula
   desc "Small, feature-rich, and robust Cloudflare DDNS updater"
   homepage "https://github.com/favonia/cloudflare-ddns"
-  url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.15.1.tar.gz"
-  sha256 "8f2288e84257a445934e02500db2b778e17e41d0be059a38170ec8bfff6caa1d"
+  url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.16.2.tar.gz"
+  sha256 "dbf196357e6f7aaf1d83ad5e800012f16708b405c8b0d6f131058d44a175f392"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
   head "https://github.com/favonia/cloudflare-ddns.git", branch: "main"
 
   bottle do
@@ -30,6 +29,8 @@ class CloudflareDdns < Formula
 
     output = shell_output(bin/"cloudflare-ddns")
     assert_match version.to_s, output
-    assert_match "Failed to check the existence of a zone named example.org", output
+    assert_match "The Cloudflare API token appears to be invalid", output
+    assert_match "Failed to check", output
+    assert_match "zone named example.org", output
   end
 end
