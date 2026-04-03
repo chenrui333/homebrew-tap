@@ -9,12 +9,12 @@ class Refurb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2eec4cda2b9a661985c05a2dc4d2a53dca426ccb7851b8434c9faf1d9ba32e45"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3759c841109f11b54c9415eba765bbb6de1909cb4ea0dd5b86be8feb5cc2fd7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a109b17896f3145a5b0ac3c51dfef71fd6c65d01c362596e57e98123534cab9"
-    sha256 cellar: :any_skip_relocation, sequoia:       "a997b4cc97ebfb3b674ad459960801285e5e0bd618de25a9222fc8b14d6038b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "898ea5410858a481311d5c94b8f868c64a6d2affe6ca0c354b7ca96a705e70b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d97676f159dfc2c1882cd4335662934a23baa13cbb9d9ac4ebea0d73c388551a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a06cdc0e330b94da5acbeef2cf9633359bd1a480118fb67adf61c5a08c0f29f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ff62e7912dd8ffe00218032c7391f2c41d069b84aca6574c1946593267a4f47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26846944de616848e43b9ab61bbb5d3c61ee8224f4671b3aea5aa9eec0512e37"
+    sha256 cellar: :any_skip_relocation, sequoia:       "25af157699af8e142617e8d46a7b730d08d99e0c37aa01edd016e16aef68acb4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f39c20783dc41f6a3bceee65de1ca7e310b290aee33aa8469d2c19af1b454200"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6de502cdd823daee1144fe8950f525873476f279d8544ca023371220527c2e02"
   end
 
   depends_on "python@3.14"
