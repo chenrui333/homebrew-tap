@@ -1,8 +1,8 @@
 class Cliamp < Formula
   desc "Retro terminal music player inspired by Winamp"
   homepage "https://www.cliamp.stream"
-  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v1.33.0.tar.gz"
-  sha256 "716490cff2874df30261cfa8cd8ed3e1824c52b9c79ca6b2e662f849df16a43e"
+  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v1.33.1.tar.gz"
+  sha256 "dc93679c8f94679d4dca0c22cc9e2d61d62e9ac013c11d9a274587fb98289781"
   license "MIT"
   head "https://github.com/bjarneo/cliamp.git", branch: "main"
 
