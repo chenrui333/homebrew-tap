@@ -3,8 +3,8 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/5a/a6/54d231095e5ecb46d9cc4fc7e5f637f4f335fd44f0b6b342934adc5a80f5/arxiv_mcp_server-0.4.10.tar.gz"
-  sha256 "c424a23fc9ce7b5f4060a4ec579eddd7fe2ef02dbc2c5c162cd70182d80aa0f4"
+  url "https://files.pythonhosted.org/packages/8a/28/8122ec22a8e2cac0dda33fb74bdafb3342fe336512764c7bcca88edf2534/arxiv_mcp_server-0.4.11.tar.gz"
+  sha256 "148390b3eb1476852f6e60ab2f4a0d964987236970ca034ec85cf87ec0f5e078"
   license "MIT"
 
   bottle do
@@ -236,7 +236,7 @@ class ArxivMcpServer < Formula
 
   test do
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18"}}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"Homebrew","version":"1.0"}}}
       {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
       {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
     JSON
