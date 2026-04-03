@@ -3,8 +3,8 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/3e/bf/66a5cf047a774c5b754c2bbf0d86d42fa5e76d46935e73d206c71dd16aac/arxiv_mcp_server-0.4.6.tar.gz"
-  sha256 "59771920d2d39747842e9335c5151f14c03b4f2e3d0f87dde8dc0f2a56d26482"
+  url "https://files.pythonhosted.org/packages/5a/a6/54d231095e5ecb46d9cc4fc7e5f637f4f335fd44f0b6b342934adc5a80f5/arxiv_mcp_server-0.4.10.tar.gz"
+  sha256 "c424a23fc9ce7b5f4060a4ec579eddd7fe2ef02dbc2c5c162cd70182d80aa0f4"
   license "MIT"
 
   bottle do
