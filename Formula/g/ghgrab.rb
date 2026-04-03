@@ -1,8 +1,8 @@
 class Ghgrab < Formula
   desc "TUI for searching and downloading files from GitHub repositories"
   homepage "https://github.com/abhixdd/ghgrab"
-  url "https://github.com/abhixdd/ghgrab/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "661e504ad53f303083f9221daf2b593d971544b131a199c735b445298eae6079"
+  url "https://github.com/abhixdd/ghgrab/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "cb7cd6a6747add6653f8556c3911aa1ddaaff35061c8d7ee334694deecd03595"
   license "MIT"
   head "https://github.com/abhixdd/ghgrab.git", branch: "main"
 
