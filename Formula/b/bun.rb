@@ -13,6 +13,11 @@ class Bun < Formula
   ]
   head "https://github.com/oven-sh/bun.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^bun[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256                               arm64_tahoe:   "6ddcc50e4aad7157d2a78302f5a0f26fa6ccc97394ac03b6101dfecc8d173909"
