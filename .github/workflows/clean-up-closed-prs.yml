@@ -27,7 +27,7 @@ jobs:
       !github.event.pull_request.merged
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/homebrew/ubuntu22.04:main@sha256:e4a65b2b3ee3fcbf865c66444365af650f66c457f32d2bcaf00ebd33ebb889d9
+      image: ghcr.io/homebrew/ubuntu22.04:main@sha256:9d325046194863930cd13f24a9cbc2fba65eaebe3cc0f2673b4a5805277020d8
     permissions:
       contents: read
       actions: write # for `gh run cancel`
