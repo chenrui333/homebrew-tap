@@ -8,11 +8,11 @@ class Vortix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df39b3a44bd0c337349886766208110bcefda8bd08266317e050c9d9c17fb537"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1e35e4d813308dfbf2a2b36db1faa058f8e62a4a12c58bc145ab779567d8adf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c95c6ebed820d5ccc73106b784719afd6e05def9945453e582a757f344dec5c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d21c83f8cd40a30a0a8364940809549d7f60b84ad7698fb567da81500d8999ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3db37e090f5e0a8e3a8071793c7a32b9d7bc8b9aed4459124601a652e2c6cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8819a2bab0dbb75885891cb2896eeac1130d40699165ccfe2c53537b8f8e8fab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bacb88f865efc8cedf84bc0af45d23e76f2773f0749ad43a4452bc21f747e2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23860c481823321084aac79bfef96e987e92e043e7587420553c872e3b72c33b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9b3136b5d7bfddd3738a726d8d5e0e20714d3b6d556853c93e50d9e58beb024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52599908df2e84a8653f0d9c59a03e3c74d9457cfecddbf281e464d5569191bc"
   end
 
   depends_on "rust" => :build
