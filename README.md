@@ -47,6 +47,7 @@ brew install --cask <tool>
 - `am-i-vibing`
 - `amoco`
 - `amp-cli`
+- `amux`
 - `anvil`
 - `aoc-cli`
 - `apify-actors-mcp-server`
@@ -194,6 +195,7 @@ brew install --cask <tool>
 - `cull`
 - `curlconverter`
 - `dakora`
+- `dart-sass`
 - `datacmd`
 - `datadog-mcp-server`
 - `datui`
@@ -299,9 +301,11 @@ brew install --cask <tool>
 - `gitlabform`
 - `gitman`
 - `gitsnip`
+- `gittop`
 - `gitv`
 - `gix`
 - `glsl-analyzer`
+- `gnhf`
 - `go-eagle`
 - `go-envsubst`
 - `go-getter`
@@ -315,6 +319,7 @@ brew install --cask <tool>
 - `gommit`
 - `gorae`
 - `gowebly`
+- `gpk`
 - `gptop`
 - `graphjin`
 - `graphlit-mcp-server`
@@ -334,6 +339,7 @@ brew install --cask <tool>
 - `hcldump`
 - `hclgrep`
 - `hclq`
+- `hcom`
 - `headscale`
 - `helius-personal-finance-tracker`
 - `hello`
@@ -422,6 +428,7 @@ brew install --cask <tool>
 - `lacquer`
 - `lazycelery`
 - `lazycli`
+- `lazyjira`
 - `lazykiq`
 - `lazymake`
 - `lazynpm`
@@ -521,6 +528,7 @@ brew install --cask <tool>
 - `octotype`
 - `oeis-tui`
 - `offpunk`
+- `oh-my-codex`
 - `ohy`
 - `olla`
 - `omni-cache`
@@ -628,6 +636,7 @@ brew install --cask <tool>
 - `resinator`
 - `resto`
 - `revanced-cli`
+- `rgx`
 - `rip`
 - `rkik`
 - `rovr`
@@ -685,12 +694,14 @@ brew install --cask <tool>
 - `speedscope`
 - `speedtest`
 - `spiffe-spike`
+- `splitrail`
 - `spok`
 - `spotiflac-cli`
 - `spotifydl`
 - `sprofile`
 - `sqd`
 - `sqlit`
+- `squads-cli`
 - `squall`
 - `sshmail`
 - `ssl-checker`
@@ -699,6 +710,7 @@ brew install --cask <tool>
 - `starlit`
 - `statoscope`
 - `steamfetch`
+- `strace-tui`
 - `stree`
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
@@ -714,6 +726,7 @@ brew install --cask <tool>
 - `tftargets`
 - `tantivy-cli`
 - `taproom`
+- `tars`
 - `tascli`
 - `taskbook`
 - `taskdog`
@@ -722,6 +735,7 @@ brew install --cask <tool>
 - `tattoy`
 - `tatuin`
 - `tavily-mcp`
+- `taws`
 - `tclint`
 - `tcpterm`
 - `teldrive`
@@ -749,6 +763,7 @@ brew install --cask <tool>
 - `theattyr`
 - `ticker`
 - `tickrs`
+- `tiki`
 - `timetrace`
 - `tinifier`
 - `tinybird-mcp-server`
@@ -798,6 +813,7 @@ brew install --cask <tool>
 - `vibekit`
 - `vimalender`
 - `vitepress`
+- `viwo`
 - `vortix`
 - `vsg`
 - `vulcain`
@@ -810,6 +826,7 @@ brew install --cask <tool>
 - `werk`
 - `wiki-tui`
 - `wisu`
+- `wolfpack`
 - `xcpkg`
 - `xfr`
 - `xmlformatter`
