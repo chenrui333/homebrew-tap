@@ -1,8 +1,8 @@
 class Alacritty < Formula
   desc "Cross-platform, OpenGL terminal emulator"
   homepage "https://github.com/alacritty/alacritty"
-  url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.16.1.tar.gz"
-  sha256 "b7240df4a52c004470977237a276185fc97395d59319480d67cad3c4347f395e"
+  url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "38d6527d346cda5c6049332a1f3338a89ea66cd7981b54d4c3ce801b392496f8"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -24,6 +24,7 @@ class Alacritty < Formula
 
   on_linux do
     depends_on "fontconfig"
+    depends_on "freetype"
   end
 
   def install
