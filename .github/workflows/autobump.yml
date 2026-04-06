@@ -23,13 +23,13 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@6fa4c8300154020277b11ecfbab85263ca1d5a5a
+        uses: Homebrew/actions/setup-homebrew@8a142227998406381655ae2982b49542c6c9201e
         with:
           core: false
           cask: false
 
       - name: Configure Git user
-        uses: Homebrew/actions/git-user-config@6fa4c8300154020277b11ecfbab85263ca1d5a5a
+        uses: Homebrew/actions/git-user-config@8a142227998406381655ae2982b49542c6c9201e
         with:
           username: BrewTestBot
 
@@ -46,7 +46,7 @@ jobs:
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump formulae
-        uses: Homebrew/actions/bump-packages@6fa4c8300154020277b11ecfbab85263ca1d5a5a
+        uses: Homebrew/actions/bump-packages@8a142227998406381655ae2982b49542c6c9201e
         continue-on-error: true
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
