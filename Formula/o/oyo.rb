@@ -8,11 +8,11 @@ class Oyo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cea5691b42d6204ebcb095982159efb58c433a7f12d3f43361c0d7637942f13d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "032cca9e4eec01a6e1cb96f8fa07670aca510c8d2cf2495d1f5e8291e3523d12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "394186e93983c0d6814aa91d6d1dd1d74215cc0f73c7338f49b13c55610369e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7cf80ec47efb60499f8670282d970e3dd4c37166062816fa9e1080570f47c91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac4d8984e13dae220683f4e8271ff57d25e197228d8549efb9d10177377f591e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a023fbbd64d83ac6f8c572f43e4b87b0085278317627a0c6347be11affc72a5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f68a5081ca38d453b2c1c663a997f1bd9bc0c4f0c0a33aa71f4e4aa63d5091e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f48e3ebe66b48b7fb27b952c52b322cec7e03ea1d5e0903aaf71588ea70ad1d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "556955decfb90bc4a7ddaf17aad60ea03ad278025829859d7c92448f579248c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1976cb8fdb287cd25decc3177c06746cc04d1ae9253181480de0ce8928cf7100"
   end
 
   depends_on "pkgconf" => :build
