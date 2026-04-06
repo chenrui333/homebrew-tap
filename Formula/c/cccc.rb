@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/6a/c7/50c688163a66a6b287b8aeb2f20e9a18214dcffc6ab682174bc2df5d6cb6/cccc_pair-0.4.8.tar.gz"
-  sha256 "6d762b64febb3230736c2c714706a177fe1203388c0dff1a35721d868c7e066e"
+  url "https://files.pythonhosted.org/packages/e6/0d/7843e7ec2b8c4ff579d8a24c048e74af195fecca107f4d4ff84cd2978236/cccc_pair-0.4.9.tar.gz"
+  sha256 "0152bbb81528e1d47520024eedd9da5613c3a94648d51d05cf835c9340cb840b"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -31,8 +31,8 @@ class Cccc < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/45/4a/064321452809dae953c1ed6e017504e72551a26b6f5708a5a80e4bf556ff/aiohttp-3.13.4.tar.gz"
-    sha256 "d97a6d09c66087890c2ab5d49069e1e570583f7ac0314ecf98294c1b6aaebd38"
+    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
+    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
   end
 
   resource "aiosignal" do
@@ -56,13 +56,13 @@ class Cccc < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/7b/60/e3bec1881450851b087e301bedc3daa9377a4d45f1c26aa90b0b235e38aa/charset_normalizer-3.4.6.tar.gz"
-    sha256 "1ae6b62897110aa7c79ea2f5dd38d1abca6db663687c0b1ad9aed6f6bae3d9d6"
+    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
+    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
+    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
   end
 
   resource "dingtalk-stream" do
@@ -71,8 +71,8 @@ class Cccc < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/c4/73/5903c4b13beae98618d64eb9870c3fac4f605523dd0312ca5c80dadbd5b9/fastapi-0.135.2.tar.gz"
-    sha256 "88a832095359755527b7f63bb4c6bc9edb8329a026189eed83d6c1afcf419d56"
+    url "https://files.pythonhosted.org/packages/f7/e6/7adb4c5fa231e82c35b8f5741a9f2d055f520c29af5546fd70d3e8e1cd2e/fastapi-0.135.3.tar.gz"
+    sha256 "bd6d7caf1a2bdd8d676843cdcd2287729572a1ef524fc4d65c17ae002a1be654"
   end
 
   resource "frozenlist" do
@@ -141,8 +141,8 @@ class Cccc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
-    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
+    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
+    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
   end
 
   resource "requests-toolbelt" do
@@ -166,8 +166,8 @@ class Cccc < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e3/ad/4a96c425be6fb67e0621e62d86c402b4a17ab2be7f7c055d9bd2f638b9e2/uvicorn-0.42.0.tar.gz"
-    sha256 "9b1f190ce15a2dd22e7758651d9b6d12df09a13d51ba5bf4fc33c383a48e1775"
+    url "https://files.pythonhosted.org/packages/62/f2/368268300fb8af33743508d738ef7bb4d56afdb46c6d9c0fa3dd515df171/uvicorn-0.43.0.tar.gz"
+    sha256 "ab1652d2fb23abf124f36ccc399828558880def222c3cb3d98d24021520dc6e8"
   end
 
   resource "uvloop" do
