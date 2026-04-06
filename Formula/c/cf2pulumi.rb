@@ -2,8 +2,8 @@ class Cf2pulumi < Formula
   desc "Convert CloudFormation Templates to Pulumi programs"
   homepage "https://github.com/pulumi/pulumi-aws-native"
   url "https://github.com/pulumi/pulumi-aws-native.git",
-      tag:      "v1.59.0",
-      revision: "e0aefa588f1958b5d26fe6f52d3a4c7ed3d451ba"
+      tag:      "v1.60.0",
+      revision: "be37473d05690a8a02cbb55d66e4c5028d8ace45"
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi-aws-native.git", branch: "master"
 
