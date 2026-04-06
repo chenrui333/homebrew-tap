@@ -623,6 +623,12 @@
     "last_release": "2025-01-13",
     "stars": 117
   },
+  "github:OverseedAI/viwo": {
+    "forks": 5,
+    "last_commit": "2026-04-03",
+    "last_release": "2026-01-05",
+    "stars": 32
+  },
   "github:Owloops/tfjournal": {
     "forks": 0,
     "last_commit": "2026-01-30",
@@ -640,6 +646,12 @@
     "last_commit": "2025-12-28",
     "last_release": "2024-07-16",
     "stars": 297
+  },
+  "github:Piebald-AI/splitrail": {
+    "forks": 13,
+    "last_commit": "2026-04-05",
+    "last_release": "2026-04-05",
+    "stars": 146
   },
   "github:Pluralith/pluralith-cli": {
     "forks": 58,
@@ -863,6 +875,12 @@
     "last_release": "2026-03-03",
     "stars": 69
   },
+  "github:Yeachan-Heo/oh-my-codex": {
+    "forks": 1624,
+    "last_commit": "2026-04-06",
+    "last_release": "2026-04-04",
+    "stars": 16978
+  },
   "github:Zaloog/blueutil-tui": {
     "forks": 1,
     "last_commit": "2025-08-17",
@@ -886,6 +904,12 @@
     "last_commit": "2025-12-10",
     "last_release": "2025-02-26",
     "stars": 861
+  },
+  "github:aannoo/hcom": {
+    "forks": 24,
+    "last_commit": "2026-04-06",
+    "last_release": "2026-04-05",
+    "stars": 190
   },
   "github:abdfnx/resto": {
     "forks": 13,
@@ -971,11 +995,23 @@
     "last_release": "2026-02-18",
     "stars": 50
   },
+  "github:agents-squads/squads-cli": {
+    "forks": 2,
+    "last_commit": "2026-04-02",
+    "last_release": "2026-03-28",
+    "stars": 39
+  },
   "github:aguacero7/rkik": {
     "forks": 4,
     "last_commit": "2026-02-11",
     "last_release": "2026-01-24",
     "stars": 55
+  },
+  "github:agustinsacco/tars": {
+    "forks": 0,
+    "last_commit": "2026-04-01",
+    "last_release": "2026-03-29",
+    "stars": 1
   },
   "github:ahkohd/oyo": {
     "forks": 5,
@@ -1036,6 +1072,12 @@
     "last_commit": "2026-01-29",
     "last_release": "2026-01-21",
     "stars": 3352
+  },
+  "github:almogdepaz/wolfpack": {
+    "forks": 6,
+    "last_commit": "2026-04-06",
+    "last_release": "2026-03-24",
+    "stars": 22
   },
   "github:altdesktop/playerctl": {
     "forks": 95,
@@ -2819,6 +2861,12 @@
     "last_release": "2024-11-13",
     "stars": 2276
   },
+  "github:kunchenguid/gnhf": {
+    "forks": 11,
+    "last_commit": "2026-04-06",
+    "last_release": "2026-04-06",
+    "stars": 248
+  },
   "github:kurama/dealve-tui": {
     "forks": 4,
     "last_commit": "2026-02-23",
@@ -3286,6 +3334,12 @@
     "last_commit": "2026-01-16",
     "last_release": "2026-01-16",
     "stars": 518
+  },
+  "github:neur0map/glazepkg": {
+    "forks": 17,
+    "last_commit": "2026-04-03",
+    "last_release": "2026-03-28",
+    "stars": 454
   },
   "github:neur0map/polymaster": {
     "forks": 4,
@@ -4306,6 +4360,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-15",
     "stars": 48
+  },
+  "github:textfuel/lazyjira": {
+    "forks": 8,
+    "last_commit": "2026-04-03",
+    "last_release": "2026-04-03",
+    "stars": 234
   },
   "github:tgdrive/teldrive": {
     "forks": 384,
