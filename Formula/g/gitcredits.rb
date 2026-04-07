@@ -1,8 +1,8 @@
 class Gitcredits < Formula
   desc "Turn your Git repository into movie-style rolling credits"
   homepage "https://github.com/Higangssh/gitcredits"
-  url "https://github.com/Higangssh/gitcredits/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "eaeac80eb537784b554b83d33600eff93f12946cbfcdfaae65f953dd6679056d"
+  url "https://github.com/Higangssh/gitcredits/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "4cf71d10bc247500eaef4bc139e0716148ddca3077d2ee1024e253d7c1d49483"
   license "MIT"
   head "https://github.com/Higangssh/gitcredits.git", branch: "main"
 
