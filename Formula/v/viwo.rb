@@ -7,11 +7,11 @@ class Viwo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "5fc6679f31f062ca276c479ab84c759be5e719b34ed2cf17b6d77f0aca771c58"
-    sha256                               arm64_sequoia: "97020eae2517cdc745c9657ae67e8154e6f1a117048a608d468862dc7e1e8590"
-    sha256                               arm64_sonoma:  "6c9ec037d0ae2a4fea2bd73256e669b9cb0808732481f8d5c57f8a0b420c5d90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e67c681d7d82390618d47cf1396a6f0d6b8adc070439089d8ba920ee6f4e2b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0726c34590e2513e28da8f244602474240a2f53b2459902f1dec8fa01946071b"
+    sha256                               arm64_tahoe:   "104ebd8f479126abd150564b44f4ba3fe601ae227a0e3cee65006f70b10b4390"
+    sha256                               arm64_sequoia: "79027d4b272f7efe0405f7cf38e24f1679db403d5e4d2bafcdf6a06ea5511a63"
+    sha256                               arm64_sonoma:  "f0d32a97261012779494f9dec87f4a104a0ed89007da204f879281771b65edeb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5af4fc0a27149a64c8bc2f835f64cc5e19460893dfcafd6189d7e68bed86dcea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98e893eb5c53c47881e39f332b2f5eb264d37eae0fde3d1b7ab2edefc00c8caa"
   end
 
   depends_on "chenrui333/tap/bun" => :build
