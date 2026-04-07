@@ -1,8 +1,8 @@
 class Gokin < Formula
   desc "AI-powered CLI assistant for code"
   homepage "https://gokin.ginkida.dev"
-  url "https://github.com/ginkida/gokin/archive/refs/tags/v0.55.9.tar.gz"
-  sha256 "d3673d3162736e0012ec6922d8b5bea5789a815ecc3237788e064787611faaa7"
+  url "https://github.com/ginkida/gokin/archive/refs/tags/v0.56.1.tar.gz"
+  sha256 "e3ecafe4a42f9bc7c53f44f0ae33736cc5549a4cb3cb4af176fe21bd8b05b193"
   license "MIT"
   head "https://github.com/ginkida/gokin.git", branch: "main"
 
