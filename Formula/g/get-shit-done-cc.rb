@@ -6,6 +6,11 @@ class GetShitDoneCc < Formula
   license "MIT"
   head "https://github.com/gsd-build/get-shit-done.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "d9ea477c4c5d912637030f04707f4b46624877e1c7d70f7955ad9226918e5423"
+  end
+
   depends_on "node"
 
   def install
