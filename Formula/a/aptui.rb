@@ -6,6 +6,12 @@ class Aptui < Formula
   license "MIT"
   head "https://github.com/mexirica/aptui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "5673d19662f0bd133bcfc12db1b1591dc59b26714911978f84756464ab3d475f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "073324427964b89c35d242ff37bfc22d53e69a782323e2215b794d17d868b53b"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
