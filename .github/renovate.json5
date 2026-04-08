@@ -6,6 +6,7 @@
     ':configMigration',
     ':pinDevDependencies',
   ],
+  commitMessagePrefix: 'chore(deps):',
   commitMessageSuffix: ' in {{packageFile}}',
   automerge: true,
   automergeType: 'pr',
