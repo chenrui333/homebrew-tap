@@ -6,6 +6,12 @@ class Hyprmoncfg < Formula
   license "MIT"
   head "https://github.com/crmne/hyprmoncfg.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9edaf420a3eaf307ade188358b2987e43e39f5a3955eaa4a10792a2f7667d1cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "20fab41378e48dcbfa65dd239e0dbc03b0b7517b7cd89ac8b2dcfaf9c19adabd"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
