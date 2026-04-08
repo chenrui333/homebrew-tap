@@ -7,7 +7,7 @@ class Backport < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "aa138be09b5d9d0c1d02bd84321dc182cfdd19094612b4e44d46897578c8e39b"
+    sha256 cellar: :any_skip_relocation, all: "0267b56c4124dc7e32a02ba354da8bf65848a456656630cc5ebee5e7d5ac6e95"
   end
 
   depends_on "node"
