@@ -8,11 +8,11 @@ class Gokin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df166405a035fbc9d5c6fe55b807351fd77102ac72e0a8a245eb1238463cefd4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df166405a035fbc9d5c6fe55b807351fd77102ac72e0a8a245eb1238463cefd4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df166405a035fbc9d5c6fe55b807351fd77102ac72e0a8a245eb1238463cefd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fab665c2acb0700cb1bfff04b77fff9191308d6708557e03a986d0b2a3258b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cd6e5b8900a877c58b9ad5bf7305eb4b4ae88576d6267d7c8b099543e68b44e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b66f9e9deb527d54487511bf51c36c24979db73dca35febf6a72abb0b8f25dcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b66f9e9deb527d54487511bf51c36c24979db73dca35febf6a72abb0b8f25dcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b66f9e9deb527d54487511bf51c36c24979db73dca35febf6a72abb0b8f25dcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efd863c39dff844eed194542331668683d780553783bbd5844a8a8f167925652"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23b1646b9129277b0e127795134d95aaba18b23146218d96f3010f22aac6997d"
   end
 
   depends_on "go" => :build
