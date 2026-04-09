@@ -8,11 +8,11 @@ class Msgvault < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e3075b401cc4b4a9849a8173f28433dcfe0f3d40eb0f118635e851f380e30c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6baa61fbe74da99853a7e7015e449f917f9beb9c13030b1b76c7e8e88a270359"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89f326bb7266a16223627be7d633b66a842b68e7f2a357bd14b95c22f4f5f8a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb45bec4cf1a25cb4a46169d0d43928f782a39833430a8e961d15a5f52221c37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d6f8ed9bf977f1b1b6368f7469bf7ef1cf5bdd5299444e13442b25e40c4830"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd83c1c45bf79cda0d1fa438445c7bc4a29931fdd0c432245a676ad84beb621f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2e1a250bf56879eafb621538e1790853dda18a629b2a25f9bebffbe430096dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b935b74a90cf8fab6eab60be837e9ca1409c6ac9b8fa23b5953996edd2d162b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90679e9bc67b0a605827bda270849a9bc8b9222ec13bb5545b432da8587d7799"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05b4d26d847735d6fd76f8a5eefae9e5681c12db1775f3dbc95ca548f6ed141f"
   end
 
   depends_on "go" => :build
