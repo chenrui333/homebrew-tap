@@ -1,8 +1,8 @@
 class Lazytail < Formula
   desc "Terminal-based log viewer with live filtering"
   homepage "https://github.com/raaymax/lazytail"
-  url "https://github.com/raaymax/lazytail/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "750d24bfc59eb0f7caa78a8846b7c68033f12df7feb582b07a90721b4e684bd4"
+  url "https://github.com/raaymax/lazytail/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "1bf691141abf77942c9a2d5347a865195f7080485fd48396c22de5564e75bc9d"
   license "MIT"
   head "https://github.com/raaymax/lazytail.git", branch: "master"
 
