@@ -7,10 +7,11 @@ class CargoReadme < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48c7e2125963f83ce33057ac80738afee24cb0c1f8c7476a326c8f9eb2fad861"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1dbf2f8a2a90a62797b70d4fea81595bb474cc48f5b62d342317ceb76f44c8b"
-    sha256 cellar: :any_skip_relocation, ventura:       "1553597ea0be120b73067399748c9a3028a0ee34622f5860568c6c4b3d73b31e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c976f1a17d13172c5da4fc6549d12dc7d2e73e5d7b3af0a1600ca47ba4caf4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "347e366b4377569c9dd0208038479da6ea77ae5f20163072c91ff9379d5a1ff9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "502fda991ee05fa366a7a15f1860521b36feb60895441ac27b308e5d441e7749"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49593b1b777668bb1e70d572e461b4b9c7ea4352310be6f1d996c0edde7c9e06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f00eb874f7bbac06029cc0eb7e988149ac4b19549721bc308534f2328cc799b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be099e773df1868a498d161debdb5af88f700e7d5be5f330340086737bcd54b"
   end
 
   depends_on "rust" => :build
