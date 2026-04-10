@@ -1,8 +1,8 @@
 class Sqd < Formula
   desc "SQL-like document editor"
   homepage "https://github.com/albertoboccolini/sqd"
-  url "https://github.com/albertoboccolini/sqd/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "ee4586ad8200b4a06808b6ef0c8baf940664d993b233f7e74331d0529c193f34"
+  url "https://github.com/albertoboccolini/sqd/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "7a761802a8e80d9a613a149a9feaf8243ed85160e04e451791f975dc7d2bd5c2"
   license "MIT"
   head "https://github.com/albertoboccolini/sqd.git", branch: "main"
 
