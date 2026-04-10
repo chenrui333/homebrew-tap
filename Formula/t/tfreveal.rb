@@ -2,8 +2,8 @@
 class Tfreveal < Formula
   desc "CLI to show Terraform plan with all the secret (sensitive) values revealed"
   homepage "https://github.com/breml/tfreveal"
-  url "https://github.com/breml/tfreveal/archive/refs/tags/v0.0.4.tar.gz"
-  sha256 "392ea05d250c6a19254e10643ba45a5bff16c566b81cba8a0e5527aff3317ced"
+  url "https://github.com/breml/tfreveal/archive/refs/tags/v0.0.5.tar.gz"
+  sha256 "ece05febc2b4e8bb19f1e01b3359edeff4202b8e0a248d28c2b93ad7ee154937"
   license "MIT"
   head "https://github.com/breml/tfreveal.git", branch: "master"
 
