@@ -9,10 +9,11 @@ class Tfreveal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f796f528b963022849e26d3580bee3b2dd30c35a3e2667dd1dc681d5b245adfd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ead5e6bd914141a882ba3e712cdf7d3fabf3e6c97765a4e45f961548d2a9dda"
-    sha256 cellar: :any_skip_relocation, ventura:       "d874ab163e8fe032a5ced17e80df1fb2a1d1afc515662f39c4db9b79223ecafb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cc99c05370b2e1a94642a802d681675ed414a4a0ee52b3df4ebacf005d4b57a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0460e1888917aa7d2021b8d79b725105fee7ba556d424e158982463ec58af760"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0460e1888917aa7d2021b8d79b725105fee7ba556d424e158982463ec58af760"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0460e1888917aa7d2021b8d79b725105fee7ba556d424e158982463ec58af760"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "080757248430086dbc9d4d38c9f5377aea34406c97b0e55123d1381d7d238f71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aef6e1944355b1db145f199b35f7e783357d1c9a0c545931ad1709985fb195e"
   end
 
   depends_on "go" => :build
