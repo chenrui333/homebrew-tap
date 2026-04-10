@@ -1,8 +1,8 @@
 class Tinifier < Formula
   desc "CLI tool for compressing images using the TinyPNG"
   homepage "https://github.com/tarampampam/tinifier"
-  url "https://github.com/tarampampam/tinifier/archive/refs/tags/v5.1.1.tar.gz"
-  sha256 "3f2ed775b6b0050390a63d230847e4eb527f35ff058b79ed375236cf5e3e665e"
+  url "https://github.com/tarampampam/tinifier/archive/refs/tags/v5.1.2.tar.gz"
+  sha256 "40d8863a26c8c0e8d41b05955527e938a6dbdcf39d15255aed604375c403245b"
   license "MIT"
   head "https://github.com/tarampampam/tinifier.git", branch: "master"
 
