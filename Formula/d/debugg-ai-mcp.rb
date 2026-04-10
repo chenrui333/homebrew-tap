@@ -8,7 +8,7 @@ class DebuggAiMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "73484f18d2b66ac45d2196c8af0eee4102e6ee7e953ef744054b706e5bff4669"
+    sha256 cellar: :any_skip_relocation, all: "f639b80caa70c31605c44430c17a97d6cb420b0825363d489c2052de300664b9"
   end
 
   depends_on "node"
