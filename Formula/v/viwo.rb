@@ -1,8 +1,8 @@
 class Viwo < Formula
   desc "Docker-sandboxed virtual workspaces for Claude Code"
   homepage "https://github.com/OverseedAI/viwo"
-  url "https://github.com/OverseedAI/viwo/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "5bd05ea6e02c4d6648c015c07ec527b1a0efd2165dc06a0856fea7dd68b08f93"
+  url "https://github.com/OverseedAI/viwo/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "1c216ceb05deb428500b89a34f2102df74c1806cf54bfefefce1b63bae1751cb"
   license "MIT"
 
   bottle do
