@@ -20,7 +20,8 @@ class Dominds < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/dominds --version")
 
-    output = shell_output("#{bin}/dominds manual ws_read --lang en --all")
-    assert_match "Toolset manual: ws_read", output
+    output = shell_output("#{bin}/dominds manual --list")
+    assert_match "Available toolsets:", output
+    assert_match "ws_read", output
   end
 end
