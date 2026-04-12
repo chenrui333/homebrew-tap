@@ -17,17 +17,18 @@ class Actionbook < Formula
   depends_on "rust" => :build
 
   def install
-    cd "packages/actionbook-rs" do
-      # Keep binary `--version` aligned with the tagged CLI release.
-      inreplace "Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
-      system "cargo", "install", "--bin", "actionbook", *std_cargo_args
-    end
+    # Keep binary `--version` aligned with the tagged CLI release.
+    inreplace "packages/cli/Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
+    system "cargo", "install", "--bin", "actionbook", *std_cargo_args(path: "packages/cli")
   end
 
   test do
+    require "json"
+
     assert_match version.to_s, shell_output("#{bin}/actionbook --version")
 
-    output = shell_output("HOME=#{testpath} #{bin}/actionbook profile list --json")
-    assert_match "\"name\": \"actionbook\"", output
+    output = JSON.parse(shell_output("#{bin}/actionbook --json browser list-sessions"))
+    assert_equal true, output.fetch("ok")
+    assert_equal 0, output.dig("data", "total_sessions")
   end
 end
