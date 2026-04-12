@@ -7,10 +7,11 @@ class Decktape < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "096547e8ff0f64153853de94592430ef254574d19f4aef291ae9d95b34801465"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b03711a2ba31a78b8408a17d771864fd4bd33a56bd25602b69b0582b50680fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fb604c65c9885442e64e5832403851efdd37d1c9de2ac388c6ed0072e09075b"
+    sha256 cellar: :any,                 arm64_tahoe:   "a80489e3c918ea521eda682489ba7a2cc263c3e9942b1c17b920c939c70f27d2"
+    sha256 cellar: :any,                 arm64_sequoia: "3ec8c4e41980244707b23bd4a3a572263a220c0c505641192e75878594da812d"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ec8c4e41980244707b23bd4a3a572263a220c0c505641192e75878594da812d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69eccfddcba9085beef922533e88161aef795963a13f6f918ad79c352475d38e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7ee0f72f0076b5967779d5bceb0abdb99c5d084e99ddcc3323197dbc2d5ea26"
   end
 
   depends_on "node"
