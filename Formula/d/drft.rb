@@ -1,8 +1,8 @@
 class Drft < Formula
   desc "Diff re/viewer, file tree"
   homepage "https://codeberg.org/nightsail/drft"
-  url "https://codeberg.org/nightsail/drft/archive/1.0.0.tar.gz"
-  sha256 "a2d837982131bfbc84f20de04bfbc0762bf8910e2c4d72794469baa76732a4f8"
+  url "https://codeberg.org/nightsail/drft/archive/1.1.0.tar.gz"
+  sha256 "f1f67e9890d1d9e22f232dc06e96df4fcb4f570566377c3d356711083d9658be"
   license "BSD-3-Clause"
   head "https://codeberg.org/nightsail/drft.git", branch: "master"
 
