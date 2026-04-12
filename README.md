@@ -53,6 +53,7 @@ brew install --cask <tool>
 - `apify-actors-mcp-server`
 - `apisnip`
 - `apple-health-mcp`
+- `aptui`
 - `apw`
 - `arduino-language-server`
 - `arxiv-mcp-server`
@@ -196,6 +197,7 @@ brew install --cask <tool>
 - `curlconverter`
 - `dakora`
 - `dart-sass`
+- `darya`
 - `datacmd`
 - `datadog-mcp-server`
 - `datui`
@@ -285,6 +287,7 @@ brew install --cask <tool>
 - `g1c`
 - `gemini-cli`
 - `get-port-cli`
+- `get-shit-done-cc`
 - `gh-repo-man`
 - `gh-unpushed`
 - `ghfetch`
@@ -359,6 +362,7 @@ brew install --cask <tool>
 - `humioctl`
 - `hygg`
 - `hyperbolic`
+- `hyprmoncfg`
 - `iam-collect`
 - `iam-convert`
 - `iam-expand`
@@ -540,6 +544,7 @@ brew install --cask <tool>
 - `orla`
 - `osintui`
 - `osmar`
+- `otel-tui`
 - `otelgen`
 - `otto`
 - `oui`
@@ -636,6 +641,7 @@ brew install --cask <tool>
 - `resinator`
 - `resto`
 - `revanced-cli`
+- `rfc_reader`
 - `rgx`
 - `rip`
 - `rkik`
