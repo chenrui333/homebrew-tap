@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/25/9e/ba8fa58a3fc8cb0a9ddf8148f37d08c9f5be92f7602daa23c86b67f4edb3/cccc_pair-0.4.10.tar.gz"
-  sha256 "e0b4c3b40aa755ae66df0c77906ab7033885d180a28fb1ec1e9a7c66d3271650"
+  url "https://files.pythonhosted.org/packages/a0/aa/b1a0366e9460f0eafd5c45e079dd4892269951a47ff78f7654d130522fdf/cccc_pair-0.4.11.tar.gz"
+  sha256 "5f9b12908ffd8959c1713209be67b31d8373a2869fe1988cd773e60c0340d8b6"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -19,11 +19,12 @@ class Cccc < Formula
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
 
-  pypi_packages exclude_packages: %w[certifi pydantic]
+  pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
@@ -131,8 +132,8 @@ class Cccc < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/8a/45/e23b5dc14ddb9918ae4a625379506b17b6f8fc56ca1d82db62462f59aea6/python_multipart-0.0.24.tar.gz"
-    sha256 "9574c97e1c026e00bc30340ef7c7d76739512ab4dfd428fec8c330fa6a5cc3c8"
+    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
+    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
   end
 
   resource "pyyaml" do
@@ -188,6 +189,11 @@ class Cccc < Formula
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
     sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
+  end
+
+  resource "wechatbot-sdk" do
+    url "https://files.pythonhosted.org/packages/3e/42/5091d783adb4f8ed61cbbc5a96bdf56aaacd9e5493a71d31659a0d51bae1/wechatbot_sdk-0.2.0.tar.gz"
+    sha256 "d94958cb9536574e57a4d3844a817b3ba7d0cd3cc97ad169a96c37cdacf7f26c"
   end
 
   resource "yarl" do
