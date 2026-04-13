@@ -6,6 +6,15 @@ class OhMyClaude < Formula
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-claudecode.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "1574b5f4a30cba6080a5a7d1cd663642dae19f34f7c1f09816d5674f3c233b30"
+    sha256 cellar: :any,                 arm64_sequoia: "a7072c7e839ad6300f88fea89bc7f8f8e11bca4bed47686c517cc52e3ef5eff9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7072c7e839ad6300f88fea89bc7f8f8e11bca4bed47686c517cc52e3ef5eff9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae6a49e2fa75b43342ddda3c4b5b0a139eb888178af0613930d8bcb5afe9653a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "999ff627c8f306bce58480582eb3c84df8547483afe8fa24b03060aad4d9746b"
+  end
+
   depends_on "node"
 
   def install
