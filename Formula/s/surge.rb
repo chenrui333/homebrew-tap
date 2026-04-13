@@ -20,8 +20,8 @@ class Surge < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/surge-downloader/surge/cmd.Version=#{version}
-      -X github.com/surge-downloader/surge/cmd.BuildTime=homebrew
+      -X github.com/SurgeDM/Surge/cmd.Version=#{version}
+      -X github.com/SurgeDM/Surge/cmd.BuildTime=homebrew
     ]
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"surge"), "."
