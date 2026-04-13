@@ -28,6 +28,6 @@ class Rustormy < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rustormy --version")
-    assert_match "Condition:", shell_output("#{bin}/rustormy --city nyc")
+    assert_match "Cache cleared successfully.", shell_output("#{bin}/rustormy --clear-cache")
   end
 end
