@@ -27,7 +27,9 @@ class Sls < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"sls")
-    generate_completions_from_executable(bin/"sls", shell_parameter_format: :cobra)
+    with_env(PULSE_DISABLED: "1") do
+      generate_completions_from_executable(bin/"sls", shell_parameter_format: :cobra)
+    end
   end
 
   test do
@@ -40,7 +42,9 @@ class Sls < Formula
           Port 2222
     CONFIG
 
-    assert_equal "demo", shell_output("#{bin}/sls config list").strip
-    assert_match version.to_s, shell_output("#{bin}/sls version")
+    with_env(PULSE_DISABLED: "1") do
+      assert_equal "demo", shell_output("#{bin}/sls config list").strip
+      assert_match version.to_s, shell_output("#{bin}/sls version")
+    end
   end
 end
