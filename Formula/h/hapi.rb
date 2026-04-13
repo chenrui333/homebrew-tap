@@ -17,6 +17,8 @@ class Hapi < Formula
   depends_on "node"
 
   def install
+    # Required for the platform-specific optional binary package on CI mirrors.
+    ENV["npm_config_registry"] = "https://registry.npmjs.org"
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
