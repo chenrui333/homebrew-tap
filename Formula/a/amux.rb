@@ -33,8 +33,7 @@ class Amux < Formula
   test do
     assert_match version.to_s, shell_output("#{bin/"amux"} --version")
 
-    output = shell_output("#{bin/"amux"} status")
-    assert_match "tmux:", output
-    assert_match "workspaces:", output
+    output = shell_output("#{bin/"amux"} 2>&1", 1)
+    assert_match "requires stdin, stdout, and stderr to be TTYs", output
   end
 end
