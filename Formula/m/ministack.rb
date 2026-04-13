@@ -8,6 +8,15 @@ class Ministack < Formula
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "d04273cfc230a072ea0356e02135dfb4d6af29ac70f2cb8c00d7c4bde1ede749"
+    sha256 cellar: :any,                 arm64_sequoia: "19fe19830c1f0f04c4025ef42b800a29caa1979fb340e66c863312339c9c9d56"
+    sha256 cellar: :any,                 arm64_sonoma:  "939480acff9c656189958f4ebb049ca121caa74040c4f07067b226ef68894174"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc3696c2d88f09d52643b46b3ca32859caaea0f87726ff27278728e41ff7b51b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c37ce6111a731dec69cee1ebf18c0919a5de28adba67406ac36f2bc212e196c1"
+  end
+
   depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
