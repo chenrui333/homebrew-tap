@@ -1,8 +1,8 @@
 class Envdiff < Formula
   desc "Tool to snapshot and diff environments"
   homepage "https://github.com/GBerghoff/envdiff"
-  url "https://github.com/GBerghoff/envdiff/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "1d5b83553b2bf026cb17a813c1c9ff20626359ff171075905ebaf2fbfb50d8fc"
+  url "https://github.com/GBerghoff/envdiff/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "604cef7dbfa1d9639751b102c6b44a505dc8a1602de22bd18566fcbcb7a0eb20"
   license "MIT"
   head "https://github.com/GBerghoff/envdiff.git", branch: "main"
 
