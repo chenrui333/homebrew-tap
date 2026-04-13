@@ -7,6 +7,15 @@ class Untether < Formula
   sha256 "deaefbdca9426cc38c2c33979fd64b142f1d3a5bd82fc2b56d8d4f2add21c93d"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "f964080dec402b1e6a730f4072e61cda3680b06ffb49c45dc869e22f7675fcd1"
+    sha256 cellar: :any,                 arm64_sequoia: "60b4bda1b57f1d18abb5fd26d0c3781326a00f09f08a53ea1ab2b2e2e2ce42bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "2311ce86111f30eab817ff4945a636a1fe28a778505dc44a7166afdd1f598d6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c4a2cf71aacbfdbbb747902f8b0338d917458c3788c263f36e2fa90e1d00a3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c957b3940f4171eae4091f4ee49a22f652328641ba333344ed1414c9e2bb065a"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.13"
   uses_from_macos "libxml2"
