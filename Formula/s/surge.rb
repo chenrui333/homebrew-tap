@@ -8,11 +8,11 @@ class Surge < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf387558057a0559b587be12c57dbae1676f70675930726768bc3547153e1546"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf387558057a0559b587be12c57dbae1676f70675930726768bc3547153e1546"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf387558057a0559b587be12c57dbae1676f70675930726768bc3547153e1546"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "269d7a1ca9c1feba87f39493e5a60354dfdb5f79f3f7672428e7946dfdeeee0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "127f5d83655dc8992535b00f988fbd1c82f97bd38f81431589c65291fc585f65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22a879910120e78012c06f078a807fdd008bd225c72c3bf47852a2a61b7ef63d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22a879910120e78012c06f078a807fdd008bd225c72c3bf47852a2a61b7ef63d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22a879910120e78012c06f078a807fdd008bd225c72c3bf47852a2a61b7ef63d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b34c9d4a755071419bcf44215afb4f796010e6d1b1d5a6ed233f3dfe992eaa9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e8f00bc6bd5efa83ad24800f9cd836aed0e00993c1dcffb272f0538c670a343"
   end
 
   depends_on "go" => :build
