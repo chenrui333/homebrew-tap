@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://github.com/ministackorg/ministack/archive/refs/tags/v1.2.8.tar.gz"
-  sha256 "8b03273307e29baad4dbefb77f9afdf492970137e112a12832e060bd7daa4ea3"
+  url "https://github.com/ministackorg/ministack/archive/refs/tags/v1.2.10.tar.gz"
+  sha256 "d0a1cf9fb519376939a35978b1bc24b5cfb3f2d8a54ba2a5f8b56d50f1c65cff"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
