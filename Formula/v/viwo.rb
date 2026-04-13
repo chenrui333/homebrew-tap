@@ -18,7 +18,7 @@ class Viwo < Formula
 
   def install
     Dir.chdir("packages/cli") do
-      system "bun", "install", "--frozen-lockfile"
+      system "bun", "install"
       system "bun", "build", "src/cli.ts", "--compile", "--outfile", "viwo"
       bin.install "viwo"
     end
