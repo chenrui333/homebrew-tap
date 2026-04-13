@@ -1,8 +1,8 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.64.tar.gz"
-  sha256 "3dad8be2a80a02cb8545a54b6b078cc0f4d5a839a097f2b7dee57ca1f29f2608"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.65.tar.gz"
+  sha256 "83e271486fb5bf9b5f04a438df024f1066e3dc1efd61f1844634c55a15123658"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
@@ -21,16 +21,21 @@ class YoutubeMusicCli < Formula
   depends_on "yt-dlp"
 
   def install
-    system "npm", "install", "--include=dev", "--legacy-peer-deps",
-           *std_npm_args(prefix: false, ignore_scripts: false)
-    system Formula["chenrui333/tap/bun"].opt_bin/"bun", "run", "build"
-    system "npm", "install", *std_npm_args
+    bun = Formula["chenrui333/tap/bun"].opt_bin/"bun"
 
-    notifier_app = "lib/node_modules/@involvex/youtube-music-cli/node_modules/" \
-                   "node-notifier/vendor/mac.noindex/terminal-notifier.app"
-    rm_r libexec/notifier_app, force: true
-    bin.install_symlink libexec/"bin/youtube-music-cli"
-    bin.install_symlink libexec/"bin/ymc"
+    system bun, "install", "--frozen-lockfile"
+    system bun, "run", "build"
+    system bun, "install", "--frozen-lockfile", "--production"
+
+    libexec.install "dist", "node_modules", "package.json"
+    chmod 0755, libexec/"dist/source/cli.js"
+
+    rm_r libexec/"node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app", force: true
+    libexec.glob("node_modules/.bun/node-notifier@*/vendor/mac.noindex/terminal-notifier.app").each do |app|
+      rm_r app, force: true
+    end
+    bin.install_symlink libexec/"dist/source/cli.js" => "youtube-music-cli"
+    bin.install_symlink libexec/"dist/source/cli.js" => "ymc"
   end
 
   test do
