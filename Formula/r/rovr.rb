@@ -176,14 +176,13 @@ class Rovr < Formula
     end
 
     virtualenv_install_with_resources
-    generate_completions_from_executable(bin/"rovr", shell_parameter_format: :click)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rovr --version")
 
     output = JSON.parse(shell_output("#{bin}/rovr --config-path --config-folder=#{testpath}"))
-    assert_equal %w[custom_config custom_styles persistent_state pinned_folders], output.keys.sort
+    assert_equal %w[custom_config custom_styles logs persistent_state pinned_folders], output.keys.sort
     assert_equal "config.toml", File.basename(output["custom_config"])
     assert_equal "pins.json", File.basename(output["pinned_folders"])
     assert_equal "style.tcss", File.basename(output["custom_styles"])
