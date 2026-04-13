@@ -2,8 +2,8 @@ class Bun < Formula
   desc "Incredibly fast JavaScript runtime, bundler, test runner, and package manager"
   homepage "https://bun.com"
   url "https://github.com/oven-sh/bun.git",
-      tag:      "bun-v1.3.11",
-      revision: "a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d"
+      tag:      "bun-v1.3.12",
+      revision: "700fc117a2fd01ac0201deaa6fa69c5557acb04f"
   license all_of: [
     "MIT",          # Bun itself and most dependencies
     "Apache-2.0",   # boringssl, simdutf, uSockets, and others
@@ -49,22 +49,22 @@ class Bun < Formula
   resource "bun-bootstrap" do
     on_macos do
       on_arm do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-darwin-aarch64.zip", using: :nounzip
-        sha256 "6f5a3467ed9caec4795bf78cd476507d9f870c7d57b86c945fcb338126772ffc"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-darwin-aarch64.zip", using: :nounzip
+        sha256 "6c4bb87dd013ed1a8d6a16e357a3d094959fd5530b4d7061f7f3680c3c7cea1c"
       end
       on_intel do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-darwin-x64.zip", using: :nounzip
-        sha256 "c4fe2b9247218b0295f24e895aaec8fee62e74452679a9026b67eacbd611a286"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-darwin-x64.zip", using: :nounzip
+        sha256 "0f58c53a3e7947f1e626d2f8d285f97c14b7cadcca9c09ebafc0ae9d35b58c3d"
       end
     end
     on_linux do
       on_arm do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-linux-aarch64.zip"
-        sha256 "d13944da12a53ecc74bf6a720bd1d04c4555c038dfe422365356a7be47691fdf"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-aarch64.zip"
+        sha256 "c40bc0ebca11bde7d75af497a654a874d0c7fd8d6a8d6031c173c10c9064297b"
       end
       on_intel do
-        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-linux-x64.zip"
-        sha256 "8611ba935af886f05a6f38740a15160326c15e5d5d07adef966130b4493607ed"
+        url "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-x64.zip"
+        sha256 "11dc3ee11bc1695e149737c6ca3d5619302cf4346e6b8a6ec7988967ef01ddc5"
       end
     end
   end
@@ -127,54 +127,63 @@ class Bun < Formula
     ENV.append "CFLAGS", "-Wno-unknown-warning-option"
     ENV.append "CXXFLAGS", "-Wno-undefined-var-template -Wno-unknown-warning-option"
 
-    # Bun defines this dSYM post-build hook with no explicit SOURCES.
-    # register_command rejects that, so wire the built bun binary as a source.
-    inreplace "cmake/targets/BuildBun.cmake",
-              "      TARGET\n        ${bun}\n      TARGET_PHASE\n",
-              "      TARGET\n        ${bun}\n      SOURCES\n        ${BUILD_PATH}/${bun}\n      TARGET_PHASE\n"
-    # Apple strip lacks Bun's GNU-style options in this block.
-    inreplace "cmake/targets/BuildBun.cmake",
-              "    set(CMAKE_STRIP_FLAGS --remove-section=__TEXT,__eh_frame " \
-              "--remove-section=__TEXT,__unwind_info " \
-              "--remove-section=__TEXT,__gcc_except_tab)\n",
-              "    set(CMAKE_STRIP_FLAGS)\n"
-    inreplace "cmake/targets/BuildBun.cmake",
-              "          --strip-all\n          --strip-debug\n          --discard-all\n",
-              ""
+    buildbun_cmake = buildpath/"cmake/targets/BuildBun.cmake"
+    if buildbun_cmake.exist?
+      # Bun defines this dSYM post-build hook with no explicit SOURCES.
+      # register_command rejects that, so wire the built bun binary as a source.
+      inreplace buildbun_cmake,
+                "      TARGET\n        ${bun}\n      TARGET_PHASE\n",
+                "      TARGET\n        ${bun}\n      SOURCES\n        ${BUILD_PATH}/${bun}\n      TARGET_PHASE\n"
+      # Apple strip lacks Bun's GNU-style options in this block.
+      inreplace buildbun_cmake,
+                "    set(CMAKE_STRIP_FLAGS --remove-section=__TEXT,__eh_frame " \
+                "--remove-section=__TEXT,__unwind_info " \
+                "--remove-section=__TEXT,__gcc_except_tab)\n",
+                "    set(CMAKE_STRIP_FLAGS)\n"
+      inreplace buildbun_cmake,
+                "          --strip-all\n          --strip-debug\n          --discard-all\n",
+                ""
+    end
     # Older Apple clang rejects this zlib workaround flag as unknown.
     # Keep it only when the current compiler supports it.
-    inreplace "cmake/targets/BuildZlib.cmake",
-              <<~EOS,
-                if(APPLE)
-                  set(ZLIB_CMAKE_C_FLAGS "-fno-define-target-os-macros")
-                  set(ZLIB_CMAKE_CXX_FLAGS "-fno-define-target-os-macros")
-                endif()
-              EOS
-              <<~EOS
-                if(APPLE)
-                  include(CheckCCompilerFlag)
-                  include(CheckCXXCompilerFlag)
-                  check_c_compiler_flag("-fno-define-target-os-macros" ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_C)
-                  check_cxx_compiler_flag("-fno-define-target-os-macros" ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_CXX)
-                  if(ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_C)
+    buildzlib_cmake = buildpath/"cmake/targets/BuildZlib.cmake"
+    if buildzlib_cmake.exist?
+      inreplace buildzlib_cmake,
+                <<~EOS,
+                  if(APPLE)
                     set(ZLIB_CMAKE_C_FLAGS "-fno-define-target-os-macros")
-                  endif()
-                  if(ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_CXX)
                     set(ZLIB_CMAKE_CXX_FLAGS "-fno-define-target-os-macros")
                   endif()
-                endif()
-              EOS
+                EOS
+                <<~EOS
+                  if(APPLE)
+                    include(CheckCCompilerFlag)
+                    include(CheckCXXCompilerFlag)
+                    check_c_compiler_flag("-fno-define-target-os-macros" ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_C)
+                    check_cxx_compiler_flag("-fno-define-target-os-macros" ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_CXX)
+                    if(ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_C)
+                      set(ZLIB_CMAKE_C_FLAGS "-fno-define-target-os-macros")
+                    endif()
+                    if(ZLIB_HAS_NO_DEFINE_TARGET_OS_MACROS_CXX)
+                      set(ZLIB_CMAKE_CXX_FLAGS "-fno-define-target-os-macros")
+                    endif()
+                  endif()
+                EOS
+    end
     # WebKit autobuild artifacts can contain this typo in JSArrayInlines.h.
-    inreplace "cmake/tools/SetupWebKit.cmake",
-              "file(RENAME ${CACHE_PATH}/bun-webkit ${WEBKIT_PATH})\n",
-              <<~EOS
-                file(RENAME ${CACHE_PATH}/bun-webkit ${WEBKIT_PATH})
-                if(EXISTS ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h)
-                  file(READ ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h JSARRAYINLINES_CONTENT)
-                  string(REPLACE "DirectArgumeLts" "DirectArguments" JSARRAYINLINES_CONTENT "${JSARRAYINLINES_CONTENT}")
-                  file(WRITE ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h "${JSARRAYINLINES_CONTENT}")
-                endif()
-              EOS
+    setupwebkit_cmake = buildpath/"cmake/tools/SetupWebKit.cmake"
+    if setupwebkit_cmake.exist?
+      inreplace setupwebkit_cmake,
+                "file(RENAME ${CACHE_PATH}/bun-webkit ${WEBKIT_PATH})\n",
+                <<~EOS
+                  file(RENAME ${CACHE_PATH}/bun-webkit ${WEBKIT_PATH})
+                  if(EXISTS ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h)
+                    file(READ ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h JSARRAYINLINES_CONTENT)
+                    string(REPLACE "DirectArgumeLts" "DirectArguments" JSARRAYINLINES_CONTENT "${JSARRAYINLINES_CONTENT}")
+                    file(WRITE ${WEBKIT_INCLUDE_PATH}/JavaScriptCore/JSArrayInlines.h "${JSARRAYINLINES_CONTENT}")
+                  endif()
+                EOS
+    end
     if OS.linux?
       # Bun's bun-only warning table injects a plain -Werror, so the formula's
       # Linux CXXFLAGS do not demote this libstdc++ 12 deprecation on their own.
@@ -279,48 +288,54 @@ class Bun < Formula
 
     # Bun's SetupLLVM helper can append CMAKE_AR/CMAKE_RANLIB with NOTFOUND
     # values, which later surfaces as "CMAKE_AR-NOTFOUND: command not found".
-    inreplace "cmake/tools/SetupLLVM.cmake",
-              "  find_llvm_command(CMAKE_AR llvm-ar)\n",
-              <<~EOS
-                find_llvm_command(CMAKE_AR llvm-ar)
-                if(CMAKE_AR MATCHES "NOTFOUND")
-                  find_command(VARIABLE CMAKE_AR COMMAND ar REQUIRED ON)
-                  list(APPEND CMAKE_ARGS -DCMAKE_AR=${CMAKE_AR})
-                endif()
-              EOS
-    inreplace "cmake/tools/SetupLLVM.cmake",
-              "  find_llvm_command(CMAKE_RANLIB llvm-ranlib)\n",
-              <<~EOS
-                find_llvm_command(CMAKE_RANLIB llvm-ranlib)
-                if(CMAKE_RANLIB MATCHES "NOTFOUND")
-                  find_command(VARIABLE CMAKE_RANLIB COMMAND ranlib REQUIRED ON)
-                  list(APPEND CMAKE_ARGS -DCMAKE_RANLIB=${CMAKE_RANLIB})
-                endif()
-              EOS
-    inreplace "cmake/tools/SetupLLVM.cmake",
-              "    find_llvm_command(LLD_PROGRAM ld.lld)\n",
-              <<~EOS
-                find_llvm_command(LLD_PROGRAM ld.lld)
-                if(LLD_PROGRAM MATCHES "NOTFOUND")
-                  find_command(VARIABLE LLD_PROGRAM COMMAND ld.lld REQUIRED ON)
-                endif()
-              EOS
-    inreplace "cmake/tools/SetupLLVM.cmake",
-              "    find_llvm_command(CMAKE_DSYMUTIL dsymutil)\n",
-              <<~EOS
-                find_llvm_command(CMAKE_DSYMUTIL dsymutil)
-                if(CMAKE_DSYMUTIL MATCHES "NOTFOUND")
-                  find_command(VARIABLE CMAKE_DSYMUTIL COMMAND dsymutil REQUIRED ON)
-                  list(APPEND CMAKE_ARGS -DCMAKE_DSYMUTIL=${CMAKE_DSYMUTIL})
-                endif()
-              EOS
+    setupllvm_cmake = buildpath/"cmake/tools/SetupLLVM.cmake"
+    if setupllvm_cmake.exist?
+      inreplace setupllvm_cmake,
+                "  find_llvm_command(CMAKE_AR llvm-ar)\n",
+                <<~EOS
+                  find_llvm_command(CMAKE_AR llvm-ar)
+                  if(CMAKE_AR MATCHES "NOTFOUND")
+                    find_command(VARIABLE CMAKE_AR COMMAND ar REQUIRED ON)
+                    list(APPEND CMAKE_ARGS -DCMAKE_AR=${CMAKE_AR})
+                  endif()
+                EOS
+      inreplace setupllvm_cmake,
+                "  find_llvm_command(CMAKE_RANLIB llvm-ranlib)\n",
+                <<~EOS
+                  find_llvm_command(CMAKE_RANLIB llvm-ranlib)
+                  if(CMAKE_RANLIB MATCHES "NOTFOUND")
+                    find_command(VARIABLE CMAKE_RANLIB COMMAND ranlib REQUIRED ON)
+                    list(APPEND CMAKE_ARGS -DCMAKE_RANLIB=${CMAKE_RANLIB})
+                  endif()
+                EOS
+      inreplace setupllvm_cmake,
+                "    find_llvm_command(LLD_PROGRAM ld.lld)\n",
+                <<~EOS
+                  find_llvm_command(LLD_PROGRAM ld.lld)
+                  if(LLD_PROGRAM MATCHES "NOTFOUND")
+                    find_command(VARIABLE LLD_PROGRAM COMMAND ld.lld REQUIRED ON)
+                  endif()
+                EOS
+      inreplace setupllvm_cmake,
+                "    find_llvm_command(CMAKE_DSYMUTIL dsymutil)\n",
+                <<~EOS
+                  find_llvm_command(CMAKE_DSYMUTIL dsymutil)
+                  if(CMAKE_DSYMUTIL MATCHES "NOTFOUND")
+                    find_command(VARIABLE CMAKE_DSYMUTIL COMMAND dsymutil REQUIRED ON)
+                    list(APPEND CMAKE_ARGS -DCMAKE_DSYMUTIL=${CMAKE_DSYMUTIL})
+                  endif()
+                EOS
+    end
     if OS.linux?
       # Full LTO on Linux CI can fail at the final bun-profile link step.
-      inreplace "cmake/Options.cmake",
-                "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN)",
-                "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN " \
-                "AND NOT (LINUX AND (ARCH STREQUAL \"aarch64\" OR ARCH STREQUAL \"arm64\" " \
-                "OR ARCH STREQUAL \"x86_64\" OR ARCH STREQUAL \"x64\")))"
+      options_cmake = buildpath/"cmake/Options.cmake"
+      if options_cmake.exist?
+        inreplace options_cmake,
+                  "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN)",
+                  "if(RELEASE AND LINUX AND CI AND NOT ENABLE_ASSERTIONS AND NOT ENABLE_ASAN " \
+                  "AND NOT (LINUX AND (ARCH STREQUAL \"aarch64\" OR ARCH STREQUAL \"arm64\" " \
+                  "OR ARCH STREQUAL \"x86_64\" OR ARCH STREQUAL \"x64\")))"
+      end
     end
     # Newer libc++ <ranges> headers break if included after this private/public
     # shim used by Bun's V8 header wrapper.
