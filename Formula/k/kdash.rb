@@ -2,7 +2,7 @@ class Kdash < Formula
   desc "Simple and fast dashboard for Kubernetes"
   homepage "https://kdash.cli.rs/"
   url "https://github.com/kdash-rs/kdash/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "cf38d20c8656dca1d0118265ddfd93cdc9d5e3bef68aa64e571b147a68f07b23"
+  sha256 "b53a2997af2bfcb4170639dd671aa5b816321002cff6da1b41bb209ed27fe3ff"
   license "MIT"
   head "https://github.com/kdash-rs/kdash.git", branch: "main"
 
@@ -31,7 +31,8 @@ class Kdash < Formula
       output_log = testpath/"output.log"
       pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
       sleep 1
-      assert_match "Unable to obtain Kubernetes client. failed to infer config", output_log.read
+      output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
+      assert_match(/Failed to load .* config/i, output)
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
