@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-04-06 09:37:22 UTC
-Total formulas: 826
+Generated: 2026-04-13 09:45:14 UTC
+Total formulas: 836
 
 ## Formulas
 
@@ -10,6 +10,7 @@ Total formulas: 826
 | bun | Incredibly fast JavaScript runtime, bundler, test runner, an... | 87982 | 4151 | 2026-03-09 | 2026-02-26 | - | ✓ | ✓ | [link](https://bun.com) |
 | alacritty | Cross-platform, OpenGL terminal emulator | 62443 | 3303 | 2026-01-29 | 2025-10-20 | - | ✓ | ✓ | [link](https://github.com/alacritty/alacritty) |
 | unsloth | CLI for Unsloth training and studio workflows | 57650 | 4858 | 2026-03-23 | 2026-03-22 | - | ✓ | - | [link](https://github.com/unslothai/unsloth) |
+| get-shit-done-cc | Meta-prompting and context engineering system for AI coding ... | 51581 | 4333 | 2026-04-12 | 2026-04-11 | MIT | ✓ | - | [link](https://github.com/gsd-build/get-shit-done) |
 | headscale | Open source, self-hosted implementation of the Tailscale con... | 35437 | 1901 | 2026-02-16 | 2026-02-04 | BSD-3-Clause | ✓ | - | [link](https://github.com/juanfont/headscale) |
 | openspec | AI-native system for spec-driven development | 24298 | 1600 | 2026-02-16 | 2026-01-30 | MIT | ✓ | - | [link](https://github.com/Fission-AI/OpenSpec) |
 | lightpanda | Headless browser designed for AI and automation | 23947 | 947 | 2026-03-23 | 2024-07-16 | AGPL-3.0-or-later | ✓ | - | [link](https://github.com/lightpanda-io/browser) |
@@ -20,6 +21,7 @@ Total formulas: 826
 | pal-mcp-server | AI-powered MCP server with multiple model providers | 11104 | 944 | 2025-12-15 | 2025-12-15 | Apache-2.0 | ✓ | - | [link](https://github.com/BeehiveInnovations/pal-mcp-server) |
 | bin-fq | Jq for binary formats | 10411 | 243 | 2026-02-12 | 2025-12-07 | Apache-2.0 | ✓ | - | [link](https://github.com/wader/fq) |
 | vercel-serve | Static file serving and directory listing | 9822 | 695 | 2025-09-04 | 2025-09-04 | MIT | ✓ | - | [link](https://github.com/vercel/serve) |
+| openharness | Open-source AI-powered CLI coding assistant | 9212 | 1600 | 2026-04-13 | 2026-04-10 | MIT | ✓ | - | [link](https://github.com/HKUDS/OpenHarness) |
 | chatlog | Easily use your own chat data | 9185 | 2659 | 2025-10-20 | - | Apache-2.0 | ✓ | - | [link](https://github.com/sjzar/chatlog) |
 | create-mcp-use-app | Project scaffolding tool for mcp-use applications | 9162 | 1125 | 2026-02-16 | 2026-01-22 | MIT | ✓ | - | [link](https://github.com/mcp-use/mcp-use) |
 | fission-cli | Fast and Simple Serverless Functions for Kubernetes | 8829 | 793 | 2026-02-12 | 2025-12-18 | Apache-2.0 | ✓ | ✓ | [link](https://fission.io/) |
@@ -52,6 +54,7 @@ Total formulas: 826
 | container-use | Dev envs for coding agents. Run multiple agents safely with ... | 3543 | 172 | 2025-12-08 | 2025-08-19 | Apache-2.0 | ✓ | - | [link](https://github.com/dagger/container-use) |
 | ddev | Docker-based local PHP+Node.js web development environments | 3498 | 692 | 2026-02-16 | 2026-02-03 | Apache-2.0 | ✓ | - | [link](https://ddev.com/) |
 | mcp-server-cloudflare | Cloudflare MCP Server | 3415 | 340 | 2026-01-22 | 2026-01-13 | Apache-2.0 | ✓ | - | [link](https://github.com/cloudflare/mcp-server-cloudflare) |
+| floci | Open-source local AWS emulator | 3363 | 187 | 2026-04-13 | 2026-04-13 | MIT | ✓ | - | [link](https://github.com/floci-io/floci) |
 | octelium | Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API... | 3359 | 111 | 2026-02-16 | 2026-02-15 | Apache-2.0 | ✓ | - | [link](https://octelium.com/docs/octelium/latest/overview/intro) |
 | allinssl | All-in-one SSL certificate lifecycle management tool | 3352 | 354 | 2026-01-29 | 2026-01-21 | GPL-3.0-only | ✓ | - | [link](https://allinssl.com/) |
 | pgdog | Automatic sharding for PostgreSQL | 3347 | 130 | 2026-02-16 | 2026-02-12 | AGPL-3.0-only | ✓ | ✓ | [link](https://pgdog.dev/) |
@@ -86,6 +89,7 @@ Total formulas: 826
 | ralph-tui | AI agent loop orchestrator | 2069 | 205 | 2026-02-25 | 2026-02-25 | MIT | - | - | [link](https://ralph-tui.com) |
 | markdownify | Convert HTML to Markdown | 2064 | 183 | 2025-11-16 | 2025-11-16 | MIT | ✓ | - | [link](https://github.com/matthewwithanm/python-markdownify) |
 | inbucket | Disposable webmail server with SMTP, POP3, and REST interfac... | 1983 | 180 | 2026-01-21 | 2025-12-06 | MIT | ✓ | - | [link](https://inbucket.org/) |
+| ministack | Local AWS service emulator and LocalStack replacement | 1909 | 131 | 2026-04-13 | 2026-04-12 | MIT | ✓ | - | [link](https://github.com/ministackorg/ministack) |
 | grmon | Command-line monitoring for goroutines | 1904 | 56 | 2023-07-18 | 2021-10-13 | MIT | ✓ | - | [link](https://github.com/bcicen/grmon) |
 | satty | Modern Screenshot Annotation | 1871 | 71 | 2026-02-16 | 2026-02-06 | MPL-2.0 | ✓ | - | [link](https://github.com/gabm/Satty) |
 | smassh | TUI based typing test application | 1869 | 60 | 2025-11-15 | 2025-11-15 | GPL-3.0-only | ✓ | - | [link](https://github.com/kraanzu/smassh) |
@@ -145,6 +149,7 @@ Total formulas: 826
 | pyment | Format and convert Python docstrings and generates patches | 946 | 67 | 2024-06-18 | 2021-03-08 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/dadadel/pyment) |
 | mongodb-mcp-server | MCP Server to connect to MongoDB databases and MongoDB Atlas... | 917 | 197 | 2026-02-16 | 2026-02-10 | Apache-2.0 | ✓ | - | [link](https://github.com/mongodb-js/mongodb-mcp-server) |
 | pls | Prettier and powerful ls(1) for the pros | 916 | 30 | 2026-02-06 | - | GPL-3.0-or-later | ✓ | ✓ | [link](https://pls.cli.rs/) |
+| otel-tui | Terminal OpenTelemetry viewer | 915 | 24 | 2026-04-13 | 2026-02-07 | Apache-2.0 | ✓ | - | [link](https://github.com/ymtdzzz/otel-tui) |
 | imgcat | Like cat, but for images | 914 | 35 | 2025-10-21 | 2023-12-18 | ISC | ✓ | - | [link](https://github.com/eddieantonio/imgcat) |
 | clog-cli | Generate beautiful changelogs from your Git commit history | 904 | 44 | 2024-08-15 | 2017-03-18 | MIT | ✓ | - | [link](https://github.com/clog-tool/clog-cli) |
 | sdl_image | Image file loading library | 904 | 255 | 2026-02-16 | 2026-01-22 | Zlib | ✓ | ✓ | [link](https://github.com/libsdl-org/SDL_image) |
@@ -172,6 +177,7 @@ Total formulas: 826
 | wiki-tui | TUI for Wikipedia | 695 | 29 | 2025-12-08 | 2025-12-08 | MIT | ✓ | - | [link](https://github.com/Builditluc/wiki-tui) |
 | hackernews-tui | TUI to browse Hacker News | 686 | 30 | 2024-10-22 | 2024-10-22 | MIT | ✓ | - | [link](https://github.com/aome510/hackernews-TUI) |
 | sdl_ttf | Library for using TrueType fonts in SDL applications | 679 | 199 | 2026-02-13 | 2025-03-31 | Zlib | ✓ | ✓ | [link](https://github.com/libsdl-org/SDL_ttf) |
+| kumo | Lightweight AWS service emulator written in Go | 670 | 29 | 2026-04-10 | 2026-04-07 | MIT | ✓ | - | [link](https://github.com/sivchari/kumo) |
 | sdl_mixer | Sample multi-channel audio mixer library | 664 | 204 | 2026-02-06 | 2025-02-07 | Zlib | ✓ | ✓ | [link](https://github.com/libsdl-org/SDL_mixer) |
 | austin-tui | Top-like text-based user interface for Austin | 663 | 18 | 2025-11-09 | 2025-11-09 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/P403n1x87/austin-tui) |
 | intentrace | Better strace(1) for everyone | 654 | 9 | 2025-06-21 | 2025-06-21 | MIT | ✓ | - | [link](https://github.com/sectordistrict/intentrace) |
@@ -249,6 +255,7 @@ Total formulas: 826
 | mqtt-cli | CLI for connecting various MQTT clients supporting MQTT 5.0 ... | 358 | 51 | 2026-02-16 | 2026-01-27 | Apache-2.0 | ✓ | - | [link](https://hivemq.github.io/mqtt-cli/) |
 | daylight | Track sunrise and sunset times in the terminal | 356 | 10 | 2025-09-30 | 2025-09-30 | GPL-3.0-only | ✓ | - | [link](https://github.com/jbreckmckye/daylight) |
 | aws-doctor | Audit AWS security, costs, and best practices | 355 | 14 | 2026-02-15 | 2026-02-15 | MIT | ✓ | - | [link](https://awsdoctor.compacompila.com/) |
+| aptui | TUI package manager for APT-based Linux distributions | 346 | 9 | 2026-04-10 | 2026-04-08 | MIT | ✓ | - | [link](https://github.com/mexirica/aptui) |
 | pipeform | Terraform runtime TUI | 346 | 13 | 2025-01-31 | 2025-01-29 | MPL-2.0 | ✓ | - | [link](https://github.com/magodo/pipeform) |
 | rovr | Post-modern terminal file explorer | 343 | 24 | 2026-03-23 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/NSPC911/rovr) |
 | lstags | Explore Docker registries and manipulate Docker images | 340 | 26 | 2023-05-11 | 2022-04-09 | Apache-2.0 | ✓ | - | [link](https://github.com/ivanilves/lstags) |
@@ -326,6 +333,7 @@ Total formulas: 826
 | mynav | Workspace and session management TUI | 223 | 12 | 2025-09-28 | 2025-08-01 | MIT | ✓ | - | [link](https://github.com/GianlucaP106/mynav) |
 | dcv | TUI viewer for docker-compose | 222 | 2 | 2026-02-12 | 2025-09-05 | MIT | ✓ | - | [link](https://github.com/tokuhirom/dcv) |
 | gemini-cli | CLI for Google Gemini | 222 | 17 | 2025-11-22 | 2025-11-22 | MIT | ✓ | - | [link](https://github.com/reugn/gemini-cli) |
+| hyprmoncfg | Terminal-first monitor configurator and daemon for Hyprland | 221 | 6 | 2026-04-10 | 2026-04-02 | MIT | ✓ | - | [link](https://hyprmoncfg.dev/) |
 | huber | Simplify GitHub package management | 219 | 14 | 2025-02-18 | 2025-02-15 | Apache-2.0 | ✓ | - | [link](https://innobead.github.io/huber/) |
 | strace-tui | Terminal user interface for visualizing and exploring strace... | 217 | 5 | 2026-03-08 | 2026-03-01 | - | ✓ | - | [link](https://github.com/Rodrigodd/strace-tui) |
 | dealve-tui | Terminal interface for game deal discovery | 212 | 4 | 2026-02-23 | 2026-02-23 | - | ✓ | - | [link](https://github.com/kurama/dealve-tui) |
@@ -416,6 +424,7 @@ Total formulas: 826
 | bytebox | Standalone WebAssembly VM | 123 | 7 | 2025-11-23 | - | MIT | ✓ | - | [link](https://github.com/rdunnington/bytebox) |
 | tatuin | Task Aggregator TUI for N providers | 123 | 4 | 2026-02-14 | 2026-01-16 | MIT | ✓ | - | [link](https://github.com/panter-dsd/tatuin) |
 | awsesh | TUI for AWS SSO session management | 122 | 4 | 2026-01-30 | 2025-10-23 | MIT | ✓ | - | [link](https://github.com/elva-labs/awsesh) |
+| darya | Disk usage explorer with a TUI and live treemap | 122 | - | 2026-04-06 | 2026-03-26 | GPL-3.0-only | ✓ | - | [link](https://github.com/mrkatebzadeh/darya) |
 | passepartui | TUI for pass | 122 | 3 | 2025-05-07 | 2025-01-16 | GPL-3.0-only | ✓ | - | [link](https://github.com/kardwen/passepartui) |
 | marchat | Terminal chat with WebSockets, E2E encryption, plugins, and ... | 121 | 9 | 2026-02-16 | 2026-02-16 | MIT | ✓ | - | [link](https://github.com/Cod-e-Codes/marchat) |
 | mlbt | TUI for MLB stats API | 121 | 11 | 2026-02-06 | 2025-07-31 | MIT | ✓ | - | [link](https://github.com/mlb-rs/mlbt) |
@@ -534,6 +543,7 @@ Total formulas: 826
 | pomossh | Terminal pomodoro timer with optional SSH mode | 62 | 2 | 2026-02-22 | 2025-03-25 | AGPL-3.0-only | ✓ | - | [link](https://github.com/sairash/pomossh) |
 | yamcp | Manage MCP servers and workspaces from the command-line | 61 | 10 | 2025-05-27 | 2025-05-26 | MIT | ✓ | - | [link](https://github.com/hamidra/yamcp) |
 | clox | Geeky clock for terminal enthusiasts | 60 | 2 | 2026-02-17 | 2026-02-17 | MIT | ✓ | - | [link](https://github.com/sepandhaghighi/clox) |
+| rfc_reader | RFC viewer with TUI | 60 | 1 | 2026-04-08 | 2025-12-13 | MIT | ✓ | - | [link](https://github.com/ozan2003/rfc_reader) |
 | inspect-cert-chain | Inspect and debug TLS certificate chains (without OpenSSL) | 59 | 1 | 2026-02-16 | 2025-07-13 | - | ✓ | - | [link](https://github.com/robjtede/inspect-cert-chain) |
 | parqv | TUI for visualizing and analyzing files with multiple format... | 59 | 1 | 2025-07-19 | 2025-07-19 | Apache-2.0 | ✓ | - | [link](https://github.com/sanspareilsmyn/parqv) |
 | axiom-mcp-server | MCP server for Axiom | 58 | 15 | 2025-11-20 | 2025-08-13 | MIT | ✓ | ✓ | [link](https://github.com/axiomhq/mcp-server-axiom) |

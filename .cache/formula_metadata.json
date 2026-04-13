@@ -401,6 +401,12 @@
     "last_release": "2024-06-15",
     "stars": 41
   },
+  "github:HKUDS/OpenHarness": {
+    "forks": 1600,
+    "last_commit": "2026-04-13",
+    "last_release": "2026-04-10",
+    "stars": 9212
+  },
   "github:Han8931/gorae": {
     "forks": 2,
     "last_commit": "2026-01-06",
@@ -1721,6 +1727,12 @@
     "last_release": "2025-12-08",
     "stars": 42
   },
+  "github:crmne/hyprmoncfg": {
+    "forks": 6,
+    "last_commit": "2026-04-10",
+    "last_release": "2026-04-02",
+    "stars": 221
+  },
   "github:ctoth/claudio": {
     "forks": 4,
     "last_commit": "2026-01-08",
@@ -2141,6 +2153,12 @@
     "last_release": "2026-02-22",
     "stars": 72
   },
+  "github:floci-io/floci": {
+    "forks": 187,
+    "last_commit": "2026-04-13",
+    "last_release": "2026-04-13",
+    "stars": 3363
+  },
   "github:fractalops/fli": {
     "forks": 0,
     "last_commit": "2025-08-08",
@@ -2278,6 +2296,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2025-12-29",
     "stars": 24
+  },
+  "github:gsd-build/get-shit-done": {
+    "forks": 4333,
+    "last_commit": "2026-04-12",
+    "last_release": "2026-04-11",
+    "stars": 51581
   },
   "github:gulbaki/swagger-mcp-server": {
     "forks": 4,
@@ -3131,6 +3155,12 @@
     "last_release": "2025-06-19",
     "stars": 206
   },
+  "github:mexirica/aptui": {
+    "forks": 9,
+    "last_commit": "2026-04-10",
+    "last_release": "2026-04-08",
+    "stars": 346
+  },
   "github:mfridman/tparse": {
     "forks": 36,
     "last_commit": "2025-11-27",
@@ -3184,6 +3214,12 @@
     "last_commit": "2025-03-18",
     "last_release": "2023-08-28",
     "stars": 263
+  },
+  "github:ministackorg/ministack": {
+    "forks": 131,
+    "last_commit": "2026-04-13",
+    "last_release": "2026-04-12",
+    "stars": 1909
   },
   "github:miratcan/kaydet": {
     "forks": 1,
@@ -3250,6 +3286,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2025-08-06",
     "stars": 1333
+  },
+  "github:mrkatebzadeh/darya": {
+    "forks": 0,
+    "last_commit": "2026-04-06",
+    "last_release": "2026-03-26",
+    "stars": 122
   },
   "github:murat-cileli/dbee": {
     "forks": 4,
@@ -3592,6 +3634,12 @@
     "last_commit": "2026-01-28",
     "last_release": "2026-01-28",
     "stars": 58
+  },
+  "github:ozan2003/rfc_reader": {
+    "forks": 1,
+    "last_commit": "2026-04-08",
+    "last_release": "2025-12-13",
+    "stars": 60
   },
   "github:pakdad-mousavi/pixeli": {
     "forks": 1,
@@ -4108,6 +4156,12 @@
     "last_commit": "2023-12-05",
     "last_release": "2023-05-04",
     "stars": 67
+  },
+  "github:sivchari/kumo": {
+    "forks": 29,
+    "last_commit": "2026-04-10",
+    "last_release": "2026-04-07",
+    "stars": 670
   },
   "github:sjzar/chatlog": {
     "forks": 2659,
@@ -4726,6 +4780,12 @@
     "last_commit": "2026-01-14",
     "last_release": "2025-10-09",
     "stars": 198
+  },
+  "github:ymtdzzz/otel-tui": {
+    "forks": 24,
+    "last_commit": "2026-04-13",
+    "last_release": "2026-02-07",
+    "stars": 915
   },
   "github:ynqa/nosy": {
     "forks": 0,
