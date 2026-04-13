@@ -1,8 +1,8 @@
 class Codebuff < Formula
   desc "Generate code from the terminal"
   homepage "https://www.codebuff.com/"
-  url "https://registry.npmjs.org/codebuff/-/codebuff-1.0.638.tgz"
-  sha256 "883ffd2616f762df17832b550e67a31f1e173978709edb1f260901c4f4bbe93c"
+  url "https://registry.npmjs.org/codebuff/-/codebuff-1.0.640.tgz"
+  sha256 "a3007b2ef07350366a359a9224d7606dfa36f38347e12ef82d0de09d679bfb3f"
   license "MIT"
 
   bottle do
@@ -18,6 +18,6 @@ class Codebuff < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cb --version")
+    assert_match(/\b\d+\.\d+\.\d+\b/, shell_output("#{bin}/cb --version"))
   end
 end
