@@ -6,6 +6,15 @@ class Floci < Formula
   license "MIT"
   head "https://github.com/floci-io/floci.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32d80454bcd8a880be75089f9221555c789b203e69aeae50d6d7a6850cd1d0d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e615e55e36c94bb76a12c03e1da6f1a3efc63a8b76eea0a6169bd7a20f22c240"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1636e46e30658a99dc8ddccafae88ec0217f745d4a626337ed40788311191eab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f88b781f780cc528889d504587c3f14cfb930511739bbfe6772eee1644dabeb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcb95bda73a65914dc79f2d7addc7e093eeb932c2b1fea8db212f845ce51ea81"
+  end
+
   depends_on "maven" => :build
   depends_on "openjdk"
 
