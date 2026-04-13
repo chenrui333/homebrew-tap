@@ -1,8 +1,8 @@
 class Foy < Formula
   desc "Simple, light-weight and modern task runner for general purpose"
   homepage "https://zaaack.github.io/foy/"
-  url "https://registry.npmjs.org/foy/-/foy-0.3.0.tgz"
-  sha256 "275c7e3a8f4a9243dc7d32bbfca008a2f87c0517a6e2bd8b0db9647a5ba5a914"
+  url "https://registry.npmjs.org/foy/-/foy-1.0.0.tgz"
+  sha256 "aeb22884699934f0f3de4517dedb57e8ce3fd08260b4c38542ab3c2065e6ddac"
   license "MIT"
 
   bottle do
@@ -21,23 +21,21 @@ class Foy < Formula
   end
 
   test do
-    # see test failure in https://github.com/chenrui333/homebrew-tap/pull/485#issuecomment-2701902017
-    ENV.prepend_path "NODE_PATH", libexec/"lib/node_modules"
-
     (testpath/"package.json").write <<~JSON
       {
         "name": "test",
         "version": "1.0.0",
-        "main": "index.js",
-        "dependencies": {
-          "foy": "#{version}"
-        }
+        "type": "module"
       }
     JSON
 
+    (testpath/"node_modules").mkpath
+    ln_s libexec/"lib/node_modules/foy", testpath/"node_modules/foy"
+
     (testpath/"Foyfile.js").write <<~JS
-      const { task } = require('foy')
-      task('hello', async ctx => {
+      import { task } from "foy"
+
+      task("hello", async () => {
         console.log('Hello, world!')
       })
     JS
