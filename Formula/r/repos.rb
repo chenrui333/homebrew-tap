@@ -1,8 +1,8 @@
 class Repos < Formula
   desc "Manage multiple Git repositories with an interactive terminal UI"
   homepage "https://github.com/epilande/repos"
-  url "https://github.com/epilande/repos/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "1d7640dbce3d3e6851924efa29aff5854533e75304e78e023db40ea0eeff55ea"
+  url "https://github.com/epilande/repos/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "83084c251e9ad14547e3bd3ee8d1975b9887ef31e85383657d97460aaa2b3027"
   license "MIT"
   head "https://github.com/epilande/repos.git", branch: "main"
 
