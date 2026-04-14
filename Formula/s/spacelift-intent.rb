@@ -1,8 +1,8 @@
 class SpaceliftIntent < Formula
   desc "Provision and manage cloud infrastructure using natural language"
   homepage "https://spacelift.io/intent"
-  url "https://github.com/spacelift-io/spacelift-intent/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "523f345e29949b61b47683fbf892431cfd83e907a43a6d023a1b32745dce7006"
+  url "https://github.com/spacelift-io/spacelift-intent/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "4562ea20d2a2234890127b6ba235c07cefcfac6dbbe743defd1234f2cd89bc9f"
   license "Apache-2.0"
   head "https://github.com/spacelift-io/spacelift-intent.git", branch: "main"
 
