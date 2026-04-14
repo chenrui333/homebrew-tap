@@ -10,7 +10,18 @@ cask "accomplish" do
   desc "AI desktop agent that automates file management and browser tasks"
   homepage "https://www.accomplish.ai/"
 
-  depends_on macos: ">= :monterey"
+  livecheck do
+    url "https://www.accomplish.ai/"
+    regex(/Accomplish[._-]v?(\d+(?:\.\d+)+)[._-]mac/i)
+  end
+
+  auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "Accomplish.app"
+
+  zap trash: [
+    "~/Library/Application Support/Accomplish",
+    "~/Library/Preferences/ai.accomplish.desktop.plist",
+  ]
 end
