@@ -1,8 +1,8 @@
 class Zigscient < Formula
   desc "Zig Language Server"
   homepage "https://github.com/llogick/zigscient"
-  url "https://github.com/llogick/zigscient/archive/refs/tags/0.14.15-3.tar.gz"
-  sha256 "5c295fd98b957092cfffed76337c7bc59e78bf4c112577845efaf90454ecc048"
+  url "https://github.com/llogick/zigscient/archive/refs/tags/0.16.0.tar.gz"
+  sha256 "21bae1796b729704d43d9e108f8a3f03fcacbe5ddc91d3285ae81c62fbdf2240"
   license "ISC"
 
   bottle do
