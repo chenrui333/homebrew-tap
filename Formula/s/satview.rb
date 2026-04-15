@@ -8,11 +8,11 @@ class Satview < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8bf3b67939c21a69784de722e1aba0e043ef5570cff8c9d7d392ddf5e94051a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69480d53790ad8519b5a3363fa662e9d29d816a1f9ccb2ab7e2d5bb8f38b7d35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d41ede1bad7ee7a7be0295a767898791edae07310dcd4f692815918d4fb59ad7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c7e7bed9ac43be75646c03d72ed6aa4948675b2c1815657734be57196bd8b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9134a7bb28bfb5b515075feeec02f160f52c98f644a88f509faaaaca528b0378"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01a1e01e02a36a6aedda5b32b1c4d12427b56c2a7549a999faf304f0898e855f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b93a6ad0338ee23fbb93a974e5797c88c77fca5e9223eec5ec4fca9d3a1c08b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "231f5dcfca0a129b330bbec2e88aff50720d794cbc8d0f522a8d9eabe2177f17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "539ee81aa216edf62ea5a2a476158209805f4a85acc09383252c5ab900006569"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e976c23bf611ee6a9498c2660fb5b6ac26e3153b0180921dfa66dc17d6e046"
   end
 
   depends_on "pkgconf" => :build
