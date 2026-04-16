@@ -7,7 +7,7 @@ class NestCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "b1dcc1ff2fb05b995f486cb8e08601c7a372a6ca4c99fa8273e16bef3edd9838"
+    sha256 cellar: :any_skip_relocation, all: "e28317b95ecf1b625573463f41f8845331bfe72934404f1bd97a2249b3bb6afd"
   end
 
   depends_on "node"
