@@ -1,8 +1,8 @@
 class GetShitDoneCc < Formula
   desc "Meta-prompting and context engineering system for AI coding agents"
   homepage "https://github.com/gsd-build/get-shit-done"
-  url "https://github.com/gsd-build/get-shit-done/archive/refs/tags/v1.36.0.tar.gz"
-  sha256 "f5b03c91cdddef9d64624bb31fff6697e2fbd1292b6bb4270c9aedc5ab8b8d03"
+  url "https://github.com/gsd-build/get-shit-done/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "c0fd3b784023f8a3c9004b3a71c1e615314656091305b9e96b26accd747b2d09"
   license "MIT"
   head "https://github.com/gsd-build/get-shit-done.git", branch: "main"
 
