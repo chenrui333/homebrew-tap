@@ -8,7 +8,7 @@ class GetShitDoneCc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "dfd306cad6e2b48d980d590a9790e230dc665292aecfccf67d0170a11414d022"
+    sha256 cellar: :any_skip_relocation, all: "cf0eb9eefe195a090fa7fa6cb6dd70939d283dbd9daae39889a96b9b445b1495"
   end
 
   depends_on "node"
