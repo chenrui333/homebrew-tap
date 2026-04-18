@@ -1,8 +1,8 @@
 class Gorae < Formula
   desc "TUI librarian for PDFs and EPUBs"
   homepage "https://github.com/Han8931/gorae"
-  url "https://github.com/Han8931/gorae/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "865e21a4b0890278bfa5e71374b7aaab35a1667bb1229756a65754be17580ce2"
+  url "https://github.com/Han8931/gorae/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "ff04dab6b7b480d5d67a8f3f463b80ef0de9cae52cf13e827b9bb6d24e008106"
   license "MIT"
   head "https://github.com/Han8931/gorae.git", branch: "main"
 
