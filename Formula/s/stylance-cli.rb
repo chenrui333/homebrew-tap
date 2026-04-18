@@ -1,8 +1,8 @@
 class StylanceCli < Formula
   desc "Scoped CSS style imports for rust"
   homepage "https://github.com/basro/stylance-rs"
-  url "https://github.com/basro/stylance-rs/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "4895bdd41379dbfe1166eba513a69186946abe8f5fab1fa0d269131e2bc1efbb"
+  url "https://github.com/basro/stylance-rs/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "3c47cdd2222c05da09fbc333e74ea1c04d63d5a3368fc7b2e225daa4be4a6e72"
   license "MIT"
   head "https://github.com/basro/stylance-rs.git", branch: "main"
 
