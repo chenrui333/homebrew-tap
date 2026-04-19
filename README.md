@@ -149,6 +149,7 @@ brew install --cask <tool>
 - `claws`
 - `cli-mcp-server`
 - `cliamp`
+- `clickhousectl`
 - `clickup-mcp`
 - `climp`
 - `cloctui`
@@ -273,6 +274,7 @@ brew install --cask <tool>
 - `fli`
 - `flint-cli`
 - `flipt`
+- `floci`
 - `flow-editor`
 - `flowgger`
 - `fnug`
@@ -425,6 +427,7 @@ brew install --cask <tool>
 - `kube-role-gen`
 - `kube2pulumi`
 - `kubeseal-convert`
+- `kumo`
 - `kure`
 - `kwt`
 - `kyma`
@@ -484,6 +487,7 @@ brew install --cask <tool>
 - `memora`
 - `meteor`
 - `mfa`
+- `ministack`
 - `mitex`
 - `mlbt`
 - `mln`
@@ -532,12 +536,14 @@ brew install --cask <tool>
 - `octotype`
 - `oeis-tui`
 - `offpunk`
+- `oh-my-claude`
 - `oh-my-codex`
 - `ohy`
 - `olla`
 - `omni-cache`
 - `omnictl`
 - `omp-manager`
+- `openharness`
 - `opensnitch-tui`
 - `openspec`
 - `optivorbis`
@@ -803,6 +809,7 @@ brew install --cask <tool>
 - `ugdb`
 - `ugm`
 - `unsloth`
+- `untether`
 - `unused-deps`
 - `uplift`
 - `urlhunter`
