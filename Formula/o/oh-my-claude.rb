@@ -1,8 +1,8 @@
 class OhMyClaude < Formula
   desc "Teams-first multi-agent orchestration for Claude Code"
   homepage "https://github.com/Yeachan-Heo/oh-my-claudecode"
-  url "https://registry.npmjs.org/oh-my-claude-sisyphus/-/oh-my-claude-sisyphus-4.12.0.tgz"
-  sha256 "5cded5a331d59b04e9a5293b8d97769e7d98f3ace73fc7eed190f2617c422a1c"
+  url "https://registry.npmjs.org/oh-my-claude-sisyphus/-/oh-my-claude-sisyphus-4.12.1.tgz"
+  sha256 "90f8a3837e0b020289b327de858abc0b34dca9e278cf70619d25e8772fa6f571"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-claudecode.git", branch: "main"
 
