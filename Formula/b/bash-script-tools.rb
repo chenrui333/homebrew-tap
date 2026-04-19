@@ -1,8 +1,8 @@
 class BashScriptTools < Formula
   desc "Web-based bash script formatter and linter with AI-powered autofix"
   homepage "https://github.com/overflowy/bash-script-tools"
-  url "https://github.com/overflowy/bash-script-tools/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "274dfcc090cae3c2595e2300705076e3dbd56102581ced0cd0b47eed217cf647"
+  url "https://github.com/overflowy/bash-script-tools/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "c4a1554057dcd1e3a15edbf11d6c5ba232804082378d77cc620e05572ea7ffde"
   license "MIT"
   head "https://github.com/overflowy/bash-script-tools.git", branch: "main"
 
