@@ -7,11 +7,11 @@ class Hapi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "086b7584946f97d51131f79c3c0cb763394016950f092f0038a53d8b90d1e9f1"
-    sha256                               arm64_sequoia: "086b7584946f97d51131f79c3c0cb763394016950f092f0038a53d8b90d1e9f1"
-    sha256                               arm64_sonoma:  "086b7584946f97d51131f79c3c0cb763394016950f092f0038a53d8b90d1e9f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a44eec1bd4716e0ef8cc514727453253e534a9345e3c51b9587bed05069b47f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "721151d91bb58888361d4dfed4a2cdf0c87f29ba405569da33e2ba842363f03d"
+    sha256                               arm64_tahoe:   "50dff64bfb9b64eafa630101aab5fb3366160b28140f8ca1efd00a2e4790aff3"
+    sha256                               arm64_sequoia: "50dff64bfb9b64eafa630101aab5fb3366160b28140f8ca1efd00a2e4790aff3"
+    sha256                               arm64_sonoma:  "50dff64bfb9b64eafa630101aab5fb3366160b28140f8ca1efd00a2e4790aff3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01562bc66f1fd6ddedc1572497f9a376fb83789ac6f359504bf037d83edc7173"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "628076ea51af5fa29686cf1b6963e78b3eacaa305f90dbe575aee49ef36e54ec"
   end
 
   depends_on "node"
