@@ -3,8 +3,8 @@ class Openharness < Formula
 
   desc "Open-source AI-powered CLI coding assistant"
   homepage "https://github.com/HKUDS/OpenHarness"
-  url "https://files.pythonhosted.org/packages/d1/2c/314dd5bc658222a9893ed72f72deb541ffe95050062532f5d7e972abca95/openharness_ai-0.1.6.tar.gz"
-  sha256 "4e30a75d674197f9320e07c61f683c6668e0423fef64318b5f41a35f4a48810f"
+  url "https://files.pythonhosted.org/packages/ab/bc/44a0389aed5e65d51b579f9b05d2e0fbbee6227f0328c8137f1d60eb1ac4/openharness_ai-0.1.7.tar.gz"
+  sha256 "77b2c37c95280ec86da757b5f9c9b1e5540fe6d0184e99081ae70ffe4d48c77d"
   license "MIT"
   head "https://github.com/HKUDS/OpenHarness.git", branch: "main"
 
@@ -48,8 +48,8 @@ class Openharness < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/60/d7/11a649b986da06aaeb81334632f1843d70e3797f54ca4a9c5d604b7987d0/anthropic-0.94.0.tar.gz"
-    sha256 "dde8c57de73538c5136c1bca9b16da92e75446b53a73562cc911574e4934435c"
+    url "https://files.pythonhosted.org/packages/b9/7e/672f533dee813028d2c699bfd2a7f52c9118d7353680d9aa44b9e23f717f/anthropic-0.96.0.tar.gz"
+    sha256 "9de947b737f39452f68aa520f1c2239d44119c9b73b0fb6d4e6ca80f00279ee6"
   end
 
   resource "anyio" do
@@ -93,8 +93,8 @@ class Openharness < Formula
   end
 
   resource "docstring-parser" do
-    url "https://files.pythonhosted.org/packages/b2/9d/c3b43da9515bd270df0f80548d9944e389870713cc1fe2b8fb35fe2bcefd/docstring_parser-0.17.0.tar.gz"
-    sha256 "583de4a309722b3315439bb31d64ba3eebada841f2e2cee23b99df001434c912"
+    url "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz"
+    sha256 "292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015"
   end
 
   resource "frozenlist" do
@@ -178,8 +178,8 @@ class Openharness < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/94/fe/64b3d035780b3188f86c4f6f1bc202e7bb74757ef028802112273b9dcacf/openai-2.31.0.tar.gz"
-    sha256 "43ca59a88fc973ad1848d86b98d7fac207e265ebbd1828b5e4bdfc85f79427a5"
+    url "https://files.pythonhosted.org/packages/ed/59/bdcc6b759b8c42dd73afaf5bf8f902c04b37987a5514dbc1c64dba390fef/openai-2.32.0.tar.gz"
+    sha256 "c54b27a9e4cb8d51f0dd94972ffd1a04437efeb259a9e60d8922b8bd26fe55e0"
   end
 
   resource "platformdirs" do
@@ -268,8 +268,8 @@ class Openharness < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e9/67/cae617f1351490c25a4b8ac3b8b63a4dda609295d8222bad12242dfdc629/rich-14.3.4.tar.gz"
-    sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "shellingham" do
