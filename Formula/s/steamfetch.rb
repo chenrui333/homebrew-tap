@@ -8,10 +8,10 @@ class Steamfetch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "4356e5c8757a8070b104d07e81eb4a978b7b2c14e3ba096f54d626ee8f72f320"
-    sha256 cellar: :any,                 arm64_sequoia: "4042fd4bbb0a21a95ac04801af5af87297dd46134dbebc0fd95c27f0e7135868"
-    sha256 cellar: :any,                 arm64_sonoma:  "032edb81b115bfd38f64a4ce0c387b608378d2ec0ad43ff2a4a627a5657fa13a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc89f106fed5ace2a30a9f46b496b60296abaeecaa47e6dbb328a69376c6460"
+    sha256                               arm64_tahoe:   "2fb66e5f8ed132b171f31433dd996d4be077f7ab38aea15fc04851d5d2d2e9cf"
+    sha256                               arm64_sequoia: "9445b7b23177ec60708f59f506bc5749bb8f49b26a12a01a4662517e9b599d04"
+    sha256                               arm64_sonoma:  "cab1b62189e8aa2aa47bc0c99b56b0ea8ecc534d2608b29025bea6b214beb3c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82b6707595253022bc9864730dd35053b752ffe7cffd2bd3b7075337636bb01f"
   end
 
   depends_on "rust" => :build
