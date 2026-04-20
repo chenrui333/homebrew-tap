@@ -1,8 +1,8 @@
 class Rgx < Formula
   desc "Terminal regex tester with real-time matching and multi-engine support"
   homepage "https://github.com/brevity1swos/rgx"
-  url "https://github.com/brevity1swos/rgx/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "9affcf4a715cdd884133a04bb2b5db2b7114d4179d8abe18235fc42dbc42aa6f"
+  url "https://github.com/brevity1swos/rgx/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "0598513279859e2832272d5a3c7f5961a334c59dacf649a9d180a3fb79c53b71"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/brevity1swos/rgx.git", branch: "main"
 
