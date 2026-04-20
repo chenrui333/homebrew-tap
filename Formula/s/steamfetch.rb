@@ -1,8 +1,8 @@
 class Steamfetch < Formula
   desc "Display Steam stats in the terminal"
   homepage "https://github.com/unhappychoice/steamfetch"
-  url "https://github.com/unhappychoice/steamfetch/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "9f1b6a201ad3aa2aaa51270f068a109f05ad1d1d2e37c1cae3df88e5f4edf421"
+  url "https://github.com/unhappychoice/steamfetch/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "73506a78d60215b2ed32afd4634d5549e4e316e57c0f87fd31724a568138f928"
   license "ISC"
   head "https://github.com/unhappychoice/steamfetch.git", branch: "main"
 
