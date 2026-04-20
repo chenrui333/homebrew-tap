@@ -7,11 +7,11 @@ class Tiki < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ba60a9bd2b967715d0969e0c8ee358a7fca18d21dbc2a56d38e31d10ced0d5b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ba60a9bd2b967715d0969e0c8ee358a7fca18d21dbc2a56d38e31d10ced0d5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ba60a9bd2b967715d0969e0c8ee358a7fca18d21dbc2a56d38e31d10ced0d5b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ea88991517afa94e8ac9dd7c13157e9e9c55dded36c58c459e12475b382bbb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3585f0c84692263c819dcd5debda394bc068e534737645270527943ec29e2eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18910b139b39d25451f7a5fa23db3e4baf2270fa3c4b6e4ee1921057b0120bd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18910b139b39d25451f7a5fa23db3e4baf2270fa3c4b6e4ee1921057b0120bd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18910b139b39d25451f7a5fa23db3e4baf2270fa3c4b6e4ee1921057b0120bd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d34631646de65eb243be3f97b195e4b9c64588dd18c3e3f286f4d7f8465a2add"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fea0dbd4f40c863d5b5895b9d0003fe23b852bd1f527db4e460da1aab7effd4c"
   end
 
   depends_on "go" => :build
