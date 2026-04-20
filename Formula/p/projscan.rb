@@ -8,7 +8,7 @@ class Projscan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "989e36842205822884dcead26b8ea3870a170f03f80e0bfd9099bbe072cd724b"
+    sha256 cellar: :any_skip_relocation, all: "58d1039c8e2be9086c8e6cb64b17afa11389aa99b6f4c997a8ce3c6c964ec1b0"
   end
 
   depends_on "node"
