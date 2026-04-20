@@ -1,8 +1,8 @@
 class Sls < Formula
   desc "Fuzzy CLI selector for SSH config hosts"
   homepage "https://github.com/JinmuGo/sls"
-  url "https://github.com/JinmuGo/sls/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "4032ddc4f9eab99b9bf176e707b56c531bf558438f96903ae9530151031fdc32"
+  url "https://github.com/JinmuGo/sls/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "473b5be5bc86998e748ee430180350d866097b46af9118eb6c0b1cdd498da1fc"
   license "MIT"
 
   bottle do
