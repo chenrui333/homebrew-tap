@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-04-13 09:45:14 UTC
-Total formulas: 836
+Generated: 2026-04-20 09:44:00 UTC
+Total formulas: 839
 
 ## Formulas
 
@@ -12,6 +12,7 @@ Total formulas: 836
 | unsloth | CLI for Unsloth training and studio workflows | 57650 | 4858 | 2026-03-23 | 2026-03-22 | - | ✓ | - | [link](https://github.com/unslothai/unsloth) |
 | get-shit-done-cc | Meta-prompting and context engineering system for AI coding ... | 51581 | 4333 | 2026-04-12 | 2026-04-11 | MIT | ✓ | - | [link](https://github.com/gsd-build/get-shit-done) |
 | headscale | Open source, self-hosted implementation of the Tailscale con... | 35437 | 1901 | 2026-02-16 | 2026-02-04 | BSD-3-Clause | ✓ | - | [link](https://github.com/juanfont/headscale) |
+| oh-my-claude | Teams-first multi-agent orchestration for Claude Code | 30156 | 2796 | 2026-04-20 | 2026-04-19 | MIT | ✓ | - | [link](https://github.com/Yeachan-Heo/oh-my-claudecode) |
 | openspec | AI-native system for spec-driven development | 24298 | 1600 | 2026-02-16 | 2026-01-30 | MIT | ✓ | - | [link](https://github.com/Fission-AI/OpenSpec) |
 | lightpanda | Headless browser designed for AI and automation | 23947 | 947 | 2026-03-23 | 2024-07-16 | AGPL-3.0-or-later | ✓ | - | [link](https://github.com/lightpanda-io/browser) |
 | crush | Glamorous AI coding agent for your favorite terminal | 20049 | 1234 | 2026-02-16 | 2026-02-13 | FSL-1.1-MIT | ✓ | - | [link](https://github.com/charmbracelet/crush) |
@@ -566,6 +567,7 @@ Total formulas: 836
 | qwe | File-first atomic version control system | 53 | 7 | 2025-12-14 | 2025-12-14 | MIT | ✓ | - | [link](https://mainak55512.github.io/qwe/) |
 | siggy | Terminal-based Signal messenger client with vim keybindings | 53 | 3 | 2026-03-21 | 2026-03-16 | GPL-3.0-only | ✓ | - | [link](https://github.com/johnsideserf/siggy) |
 | claude-code-generic-hooks | Generic hooks for Claude Code | 52 | 4 | 2025-08-12 | - | MIT | ✓ | - | [link](https://github.com/possibilities/claude-code-generic-hooks) |
+| clickhousectl | CLI for ClickHouse: local and cloud | 52 | 2 | 2026-04-19 | 2026-04-14 | Apache-2.0 | ✓ | - | [link](https://github.com/ClickHouse/clickhousectl) |
 | terracove | Recursively test a directory tree for Terraform diffs and co... | 52 | 1 | 2023-07-18 | 2023-07-18 | MIT | ✓ | - | [link](https://github.com/ElementTech/terracove) |
 | wakey | TUI built for managing and waking your devices using Wake-on... | 52 | 2 | 2024-09-13 | 2024-09-13 | MIT | ✓ | - | [link](https://github.com/jonathanruiz/wakey) |
 | humioctl | CLI Client for Humio - Stream Logs All Day Long | 51 | 25 | 2026-01-22 | 2026-01-12 | Apache-2.0 | ✓ | - | [link](https://www.crowdstrike.com/platform/next-gen-siem/falcon-logscale/) |
@@ -609,6 +611,7 @@ Total formulas: 836
 | gix | Git, but with superpowers | 36 | 3 | 2025-07-20 | 2025-07-19 | MIT | ✓ | - | [link](https://github.com/ademajagon/gix) |
 | nbcat | Preview Jupyter notebooks directly in your terminal | 36 | - | 2025-06-04 | 2025-05-15 | MIT | ✓ | - | [link](https://github.com/akopdev/nbcat) |
 | squall | TUI SQLite Viewer and Editor | 36 | 3 | 2026-01-26 | 2025-03-11 | MIT | ✓ | - | [link](https://github.com/driscollis/squall) |
+| untether | Telegram bridge for AI coding agents with voice input and li... | 36 | 3 | 2026-04-20 | 2026-04-20 | MIT | ✓ | - | [link](https://github.com/littlebearapps/untether) |
 | clickup-mcp | MCP Server for ClickUp | 35 | 12 | 2026-02-13 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/hauptsacheNet/clickup-mcp) |
 | infraspec | Tool for running infrastructure tests written in pure Gherki... | 35 | 1 | 2026-02-16 | 2025-12-30 | Apache-2.0 | ✓ | - | [link](https://infraspec.sh/) |
 | kcl | CLI for the KCL programming language | 35 | 21 | 2026-02-16 | 2025-12-12 | Apache-2.0 | ✓ | - | [link](https://github.com/kcl-lang/cli) |
