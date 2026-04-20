@@ -8,11 +8,11 @@ class DiTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "027d082eabc4d9b4a40ffb89a93b84ca531ec77227c3c201bf11b2ece2a77ee9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "027d082eabc4d9b4a40ffb89a93b84ca531ec77227c3c201bf11b2ece2a77ee9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "027d082eabc4d9b4a40ffb89a93b84ca531ec77227c3c201bf11b2ece2a77ee9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a14edead28c6888118e4aa8fc47edb1003490d05310577e4c6fc1495dca143e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491069fd41261e9e57614232731163a4d6c07d05700f30abd2c0ccb89fa20c43"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a78853efa182b759dac59cb5219aee19f0013d12729325202084326b9b6b38c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a78853efa182b759dac59cb5219aee19f0013d12729325202084326b9b6b38c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a78853efa182b759dac59cb5219aee19f0013d12729325202084326b9b6b38c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "334e1b6a8d867c2b55b61bdd747e84582663d8823a33188077a855c05aa14a0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd57a1b9d0100c47deb0fea794733ac8de12a7efd7737681d6104e4f6d45f3e2"
   end
 
   depends_on "go" => :build
