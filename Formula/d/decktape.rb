@@ -1,8 +1,8 @@
 class Decktape < Formula
   desc "PDF exporter for HTML presentations"
   homepage "https://github.com/astefanutti/decktape"
-  url "https://registry.npmjs.org/decktape/-/decktape-3.16.0.tgz"
-  sha256 "69555736650d0c92a95c1c38fcc4a51028c96e263acb1c2bb0b47925ef9804af"
+  url "https://registry.npmjs.org/decktape/-/decktape-3.16.1.tgz"
+  sha256 "20e4fe92c367f668d87f7a6db41d8ae306e5dde4cdba4bee61453adb98de43fa"
   license "MIT"
 
   bottle do
