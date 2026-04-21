@@ -1,8 +1,8 @@
 class Comchan < Formula
   desc "Minimal serial monitor and plotter for embedded applications"
   homepage "https://github.com/Vaishnav-Sabari-Girish/ComChan"
-  url "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "98e77a367f5dfbb05aec1e681b1177d68e18b7cc6f0b9c22fec191a3b0415ce1"
+  url "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "8647ca415638ba9f4134a53669489e1ff7bee1cfc3fd89bfef2ad40a546fac44"
   license "MIT"
   head "https://github.com/Vaishnav-Sabari-Girish/ComChan.git", branch: "main"
 
