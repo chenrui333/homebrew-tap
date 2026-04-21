@@ -1,8 +1,8 @@
 class Xfr < Formula
   desc "Modern iperf3 alternative with a live TUI"
   homepage "https://github.com/lance0/xfr"
-  url "https://github.com/lance0/xfr/archive/refs/tags/v0.9.8.tar.gz"
-  sha256 "304f551cf5723a0cfcfdaef79d7fa89f23c80f9858c8b2782607639a463d8242"
+  url "https://github.com/lance0/xfr/archive/refs/tags/v0.9.9.tar.gz"
+  sha256 "12db06825e50fdb28fadf4cc36c82360864485096124d8856e16c8a57869d13a"
   license "MIT"
   head "https://github.com/lance0/xfr.git", branch: "master"
 
