@@ -1,8 +1,8 @@
 class Precompress < Formula
   desc "CLI to compress files to gzip and brotli"
   homepage "https://github.com/silverwind/precompress"
-  url "https://registry.npmjs.org/precompress/-/precompress-13.0.5.tgz"
-  sha256 "5693414d9bd3ca43d33049e4ab6b3fb918f1fbf0ff150a828051cf1f5c5e2299"
+  url "https://registry.npmjs.org/precompress/-/precompress-13.0.6.tgz"
+  sha256 "c4923f50fd1701cb1cbc84273ba1be05902c6b2bbb3fe2e48f81aad9fdc2597c"
   license "BSD-2-Clause"
 
   bottle do
