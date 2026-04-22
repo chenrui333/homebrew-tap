@@ -1,8 +1,8 @@
 class Lnko < Formula
   desc "Simple stow-like dotfile linker"
   homepage "https://github.com/luanvil/lnko"
-  url "https://github.com/luanvil/lnko/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "cb88089bc789d38754648244f8e1cb7aa901479c40e57069e1a214ec5334dd17"
+  url "https://github.com/luanvil/lnko/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "4eabc70767cd5cedd365113b81618d61566c10cbf3a7e8d15729d9a005cf641c"
   license "GPL-3.0-only"
   head "https://github.com/luanvil/lnko.git", branch: "main"
 
