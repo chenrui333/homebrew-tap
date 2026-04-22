@@ -1,8 +1,8 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.68.tar.gz"
-  sha256 "00241d21ff961cd8e881f0c02ac6eebed86a661a1986f350480010dc80e0921c"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.71.tar.gz"
+  sha256 "388e59024fb6130dc9be7bce4826b153d9301605700a454107623f08df00f7bf"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
@@ -15,7 +15,7 @@ class YoutubeMusicCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c48539983a00dd8c74205553e2fd30f21b85d036d022970a11ed74f8207d4684"
   end
 
-  depends_on "chenrui333/tap/bun" => :build
+  depends_on "chenrui333/tap/bun"
   depends_on "mpv"
   depends_on "node"
   depends_on "yt-dlp"
