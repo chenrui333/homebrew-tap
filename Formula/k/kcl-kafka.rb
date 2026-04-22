@@ -8,11 +8,11 @@ class KclKafka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f8346d8e9b93c8d5329bae91516eaf0803513ead24dd888665bab1805e56172"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f8346d8e9b93c8d5329bae91516eaf0803513ead24dd888665bab1805e56172"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f8346d8e9b93c8d5329bae91516eaf0803513ead24dd888665bab1805e56172"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2008fb57d1ef764a049c0b26b67917c541a2f959ecd0553540ff8c5ee229d2e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89a9bba7b1cf2ced98a8ab991378b0d063df217b519cd290fb39945eaf211d39"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84d76c5df3c4d57dae374c44a1252affc7fd32edc7f026d06d3779868bc694bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84d76c5df3c4d57dae374c44a1252affc7fd32edc7f026d06d3779868bc694bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84d76c5df3c4d57dae374c44a1252affc7fd32edc7f026d06d3779868bc694bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c707c0a257c100b1f40313ad46e9086a8ee4f65e8a62cdb7dbee85f758b72a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2de44dabc7fae46f913ec4cbf7de42a3635cff778098cec81beb3038f4744f92"
   end
 
   depends_on "go" => :build
