@@ -2,10 +2,10 @@
 class Nvrs < Formula
   desc "Fast new version checker for software releases"
   homepage "https://nvrs.koi.rip/"
-  url "https://github.com/adamperkowski/nvrs/archive/refs/tags/v0.1.9.tar.gz"
-  sha256 "a0baea3ae1b5ae5d64f9afc303dc516d19a71b347c7a53729fafee29a559a2e3"
+  url "https://github.com/koibtw/nvrs/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "67305ede8d833c1c7d449863c904c485ed3cf9ae32b9f976bfaee5108ad244b8"
   license "MIT"
-  head "https://github.com/adamperkowski/nvrs.git", branch: "main"
+  head "https://github.com/koibtw/nvrs.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -38,7 +38,7 @@ class Nvrs < Formula
       keys = ["dummy_value"]
     EOS
 
-    output = shell_output("#{bin}/nvrs")
+    output = shell_output(bin/"nvrs")
     assert_match "comlink NONE -> 0.1.1", output
   end
 end
