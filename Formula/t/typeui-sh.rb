@@ -1,8 +1,8 @@
 class TypeuiSh < Formula
   desc "Generate design-system skill markdown files for AI providers"
   homepage "https://www.typeui.sh"
-  url "https://github.com/bergside/typeui.sh/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "620ef45cb7618744310d835f8a05ad30b79937c5c4c45a38a4a55fb9849f09b8"
+  url "https://github.com/bergside/typeui.sh/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "aa813fb32d8d4da51e244bc606dd4fe1aec407c74da01446bb6b1d025cf383e3"
   license "MIT"
   head "https://github.com/bergside/typeui.sh.git", branch: "main"
 
