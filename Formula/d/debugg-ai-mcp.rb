@@ -2,8 +2,8 @@
 class DebuggAiMcp < Formula
   desc "MCP Server for Debugg AI"
   homepage "https://debugg.ai/"
-  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-1.0.63.tgz"
-  sha256 "e22bee1f42167cb7c6df5ac779997013cc99934f5371b151ee484dfa864f10d2"
+  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-1.0.64.tgz"
+  sha256 "42cb707e29c5b80299f2882db00f4022d513575050a4143916184a843d1d9eef"
   license "Apache-2.0" # license fix PR, https://github.com/debugg-ai/debugg-ai-mcp/pull/4
 
   bottle do
