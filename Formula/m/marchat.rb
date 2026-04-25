@@ -34,7 +34,7 @@ class Marchat < Formula
     pid = spawn bin/"marchat", testpath, [:out, :err] => output_log.to_s
     sleep 1
     assert_match version.to_s, output_log.read
-    assert_match "Starting server without TLS on :8080", output_log.read
+    assert_match "TLS: Disabled", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
