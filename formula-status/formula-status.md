@@ -533,7 +533,7 @@ Total formulas: 839
 | ereandel | Gemini web browser using shell script | 65 | 6 | 2026-02-22 | 2024-09-01 | MIT | ✓ | - | [link](https://github.com/blmayer/ereandel) |
 | mult | Run a command multiple times and glance at the outputs | 65 | 2 | 2026-03-01 | 2025-08-12 | MIT | ✓ | - | [link](https://github.com/dhth/mult) |
 | act3 | Glance at the last 3 runs of your Github Actions | 64 | 5 | 2026-02-14 | 2025-06-16 | MIT | ✓ | - | [link](https://tools.dhruvs.space/act3/) |
-| nvrs | Fast new version checker for software releases | 64 | 4 | 2026-01-05 | 2025-10-14 | MIT | ✓ | - | [link](https://nvrs.adamperkowski.dev/) |
+| nvrs | Fast new version checker for software releases | 64 | 4 | 2026-01-05 | 2025-10-14 | MIT | ✓ | - | [link](https://nvrs.koi.rip/) |
 | uplift | Semantic versioning the easy way | 64 | 9 | 2025-10-09 | 2025-07-13 | Apache-2.0 | ✓ | - | [link](https://upliftci.dev/) |
 | lintnet | General purpose linter for structured configuration data pow... | 63 | - | 2026-02-16 | 2025-12-06 | MIT | ✓ | - | [link](https://lintnet.github.io/) |
 | terrafetch | Neofetch of Terraform. Let your IaC flex for you | 63 | 2 | 2026-02-12 | 2025-09-09 | Apache-2.0 | ✓ | - | [link](https://github.com/RoseSecurity/terrafetch) |

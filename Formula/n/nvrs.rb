@@ -1,7 +1,7 @@
 # framework: clap
 class Nvrs < Formula
   desc "Fast new version checker for software releases"
-  homepage "https://nvrs.adamperkowski.dev/"
+  homepage "https://nvrs.koi.rip/"
   url "https://github.com/adamperkowski/nvrs/archive/refs/tags/v0.1.9.tar.gz"
   sha256 "a0baea3ae1b5ae5d64f9afc303dc516d19a71b347c7a53729fafee29a559a2e3"
   license "MIT"
