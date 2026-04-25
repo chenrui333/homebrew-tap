@@ -36,7 +36,7 @@ class Graphjin < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/graphjin version")
 
-    system bin/"graphjin", "new", "myapp"
+    system bin/"graphjin", "serve", "new", "myapp"
     assert_path_exists testpath/"myapp"
     assert_match "app_name: \"Myapp Development\"", (testpath/"myapp/dev.yml").read
   end
