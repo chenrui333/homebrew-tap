@@ -9,11 +9,11 @@ class Untether < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f964080dec402b1e6a730f4072e61cda3680b06ffb49c45dc869e22f7675fcd1"
-    sha256 cellar: :any,                 arm64_sequoia: "60b4bda1b57f1d18abb5fd26d0c3781326a00f09f08a53ea1ab2b2e2e2ce42bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "2311ce86111f30eab817ff4945a636a1fe28a778505dc44a7166afdd1f598d6e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c4a2cf71aacbfdbbb747902f8b0338d917458c3788c263f36e2fa90e1d00a3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c957b3940f4171eae4091f4ee49a22f652328641ba333344ed1414c9e2bb065a"
+    sha256 cellar: :any,                 arm64_tahoe:   "3087d19ed1883ee94e3d8957ce9d884740ab82d7842dd8b2d3257d9a386042d5"
+    sha256 cellar: :any,                 arm64_sequoia: "dd7ace5f73cf8e4976ba221b7d5f06eb61ec7ff496bfb03d85032ecbfa373e7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "6267b534f1089af710765c21d743a081a72eae53becc785730e1500ea33c96df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "821d21cb829a936b02c3ab54edfc9e21c412f9603e90c32636c402415f05476f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e176e53bea8c427f691785a1fbe8dfbbdc14b3dbe8677f75bfd1d78341e1b56a"
   end
 
   depends_on "rust" => :build
