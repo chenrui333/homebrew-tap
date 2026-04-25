@@ -66,6 +66,11 @@ session_dir.mkpath
 bin.install_symlink libexec.glob("bin/*")
 ```
 
+### Build Dependencies
+
+- Declare `depends_on "pkgconf" => :build` at the top level by default. `pkgconf` is a build tool, so keep it OS-agnostic unless the formula has a verified platform-specific build path that never invokes `pkg-config` elsewhere.
+- Keep platform guards for the libraries that are actually platform-specific, such as Linux-only `glib` or `libsecret` dependencies.
+
 ### Python Dependency Reuse
 
 When a Python formula can reuse a packaged dependency from Homebrew instead of vendoring it as a resource, prefer the shared formula dependency.
