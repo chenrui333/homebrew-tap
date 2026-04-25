@@ -130,8 +130,8 @@ class CodeIndexMcp < Formula
   end
 
   resource "tree-sitter-c-sharp" do
-    url "https://files.pythonhosted.org/packages/9f/fb/7e2962bc1901daf264e7ce263b168e0139304a5f8f66c9b2baf20e550f87/tree_sitter_c_sharp-0.23.5.tar.gz"
-    sha256 "2635c7d5ec93e59f2e831b571bed99c4cc68a5d183a0994020aa769e1b990a71"
+    url "https://github.com/tree-sitter/tree-sitter-c-sharp/archive/refs/tags/v0.23.5.tar.gz"
+    sha256 "9628b164369071019368618bdefa446f0aab8acaac47b75d5dfb209e93b8903b"
   end
 
   resource "tree-sitter-java" do
