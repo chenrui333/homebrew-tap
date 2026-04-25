@@ -1,8 +1,8 @@
 class Satview < Formula
   desc "Terminal-based real-time satellite tracking and orbit prediction application"
   homepage "https://github.com/ShenMian/tracker"
-  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.1.19.tar.gz"
-  sha256 "e8aeb8d814b658705fecd4f9cf6b9007ae7132441f677686d27fbef8158f8ec9"
+  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.1.20.tar.gz"
+  sha256 "9a5ff9f12230b6821805a07a76e61420d52f0ed60ee4a5da2cc37917abdebebf"
   license "Apache-2.0"
   head "https://github.com/ShenMian/tracker.git", branch: "main"
 
