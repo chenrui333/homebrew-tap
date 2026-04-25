@@ -1,8 +1,8 @@
 class Projscan < Formula
   desc "Instant codebase insights for any repository"
   homepage "https://github.com/abhiyoheswaran1/projscan"
-  url "https://github.com/abhiyoheswaran1/projscan/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "8b6682344d34686905080079536ac0b5e8c1382409d1b244154308813a8fb628"
+  url "https://github.com/abhiyoheswaran1/projscan/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "b4a046d24028709fda216c0f98e20524866c7a7f52e4eca619eeea4baa7c83e9"
   license "MIT"
   head "https://github.com/abhiyoheswaran1/projscan.git", branch: "main"
 
@@ -15,22 +15,27 @@ class Projscan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c0421537a132e25ac175c42e3e2af1c3be651203c854f894409327fb1e60f20"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "node"
   depends_on "vips"
 
   def install
+    # Use Homebrew's Node headers instead of letting node-gyp fetch them during builds.
+    ENV["npm_config_nodedir"] = Formula["node"].opt_prefix
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
+
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
 
-    bin.install_symlink libexec.glob("bin/*")
-
-    # Remove incompatible tree-sitter pre-built binaries.
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/projscan/node_modules"
-    node_modules.glob("tree-sitter-{go,python}/prebuilds/*")
-                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    cd libexec/"lib/node_modules/projscan" do
+      system "npm", "rebuild", "tree-sitter-go", "tree-sitter-java",
+             "tree-sitter-python", "tree-sitter-ruby", "--build-from-source"
+    end
+    rm_r node_modules.glob("tree-sitter-*/prebuilds")
+
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
