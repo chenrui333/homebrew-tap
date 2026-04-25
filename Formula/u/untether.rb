@@ -81,9 +81,14 @@ class Untether < Formula
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+  end
+
   resource "html5lib" do
-    url "https://files.pythonhosted.org/packages/6c/dd/a834df6482147d48e225a49515aabc28974ad5a4ca3215c18a882565b028/html5lib-1.1-py2.py3-none-any.whl"
-    sha256 "0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d"
+    url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
+    sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
   end
 
   resource "httpcore" do
@@ -137,8 +142,8 @@ class Untether < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/1e/c1/d6e64ccd0536bf616556f0cad2b6d94a8125f508d25cfd814b1d2db4e2f1/openai-2.32.0-py3-none-any.whl"
-    sha256 "4dcc9badeb4bf54ad0d187453742f290226d30150890b7890711bda4f32f192f"
+    url "https://files.pythonhosted.org/packages/ed/59/bdcc6b759b8c42dd73afaf5bf8f902c04b37987a5514dbc1c64dba390fef/openai-2.32.0.tar.gz"
+    sha256 "c54b27a9e4cb8d51f0dd94972ffd1a04437efeb259a9e60d8922b8bd26fe55e0"
   end
 
   resource "prompt-toolkit" do
@@ -262,7 +267,14 @@ class Untether < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    # Ensure source-built hatchling wheels use ZIP-compatible mtimes.
+    ENV["SOURCE_DATE_EPOCH"] = "315532800"
+
+    venv = virtualenv_create(libexec, "python3.13")
+    venv.pip_install resource("setuptools"), build_isolation: false
+    venv.pip_install resource("html5lib"), build_isolation: false
+    venv.pip_install resources.reject { |r| %w[setuptools html5lib].include?(r.name) }
+    venv.pip_install_and_link buildpath
   end
 
   test do
