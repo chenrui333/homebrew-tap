@@ -364,6 +364,11 @@ For recurring maintenance work in this tap, prefer the repo-local helpers under 
 
 If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh` commands in this document instead of forcing the helper into a workflow it was not built for.
 
+## Renovate And Autobump Ownership
+
+- Formula version bumps are owned by [autobump-formula.yml](.github/workflows/autobump-formula.yml). Keep Renovate from opening `Formula/**` update PRs; if Renovate proposes a formula update, close it as a duplicate of the BrewTestBot/autobump PR or update [.github/renovate.json5](.github/renovate.json5).
+- Do not add `Casks/**` to Renovate ignore rules just to mirror `Formula/**`. Renovate's current Homebrew manager does not scan casks, and leaving `Casks/**` visible preserves future native cask support. Cask bumps remain owned by [autobump-cask.yml](.github/workflows/autobump-cask.yml) unless the repo intentionally changes policy.
+
 ## CI Failures
 
 - Reproduce failures locally before debugging
