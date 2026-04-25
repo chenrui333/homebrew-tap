@@ -6,6 +6,15 @@ class Ytsurf < Formula
   license "GPL-3.0-only"
   head "https://github.com/Stan-breaks/ytsurf.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b3a22e712fe27ff693a518900c43d5278b3f306b6be5fc1a47a7748b2aba8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85b3a22e712fe27ff693a518900c43d5278b3f306b6be5fc1a47a7748b2aba8f"
+  end
+
   depends_on "bash"
   depends_on "chafa"
   depends_on "ffmpeg"
