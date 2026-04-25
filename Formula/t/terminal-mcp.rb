@@ -1,8 +1,8 @@
 class TerminalMcp < Formula
   desc "Headless terminal emulator exposed via MCP for AI assistants"
   homepage "https://github.com/elleryfamilia/terminal-mcp"
-  url "https://github.com/elleryfamilia/terminal-mcp/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "d143d0c173d9b1e5db5c9abd1829fd3045c543e8a89881e5d13c93ed0ba212ee"
+  url "https://github.com/elleryfamilia/terminal-mcp/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "869ab8dc573c38295f265a1176561079147b020f423bdd7c3a9f797a81d4cfb4"
   license "MIT"
   head "https://github.com/elleryfamilia/terminal-mcp.git", branch: "main"
 
