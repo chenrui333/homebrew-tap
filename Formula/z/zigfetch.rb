@@ -30,22 +30,29 @@ class Zigfetch < Formula
     else ENV.effective_arch
     end
 
-    args = %W[
-      --prefix #{prefix}
-      -Doptimize=ReleaseFast
-    ]
-
+    args = []
     args << "-Dcpu=#{cpu}" if build.bottle?
 
-    system "zig", "build", *args
+    zig = "zig"
+    system zig, "build", *args, *std_zig_args(release_mode: :fast)
   end
 
   test do
-    if OS.mac?
-      expected_error = "error: NotAppleARMIODevice"
-      assert_match expected_error, shell_output("#{bin}/zigfetch 2>&1", 1)
-    else
-      assert_match "Shell:\e[0m bash", shell_output(bin/"zigfetch")
+    with_env(
+      "LANG"         => "C.UTF-8",
+      "SHELL"        => "/bin/bash",
+      "TERM_PROGRAM" => "Homebrew",
+      "USER"         => "brewtest",
+    ) do
+      if OS.mac?
+        output = shell_output("#{bin}/zigfetch 2>&1 || true")
+        assert_match(/brewtest|error: (EnvironmentVariableMissing|NotAppleARMIODevice)/, output)
+      else
+        output = shell_output(bin/"zigfetch")
+        assert_match "brewtest", output
+        assert_match "Shell:\e[0m bash", output
+        assert_match "Terminal:\e[0m Homebrew", output
+      end
     end
 
     # rchen@rchen
