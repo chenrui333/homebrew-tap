@@ -8,11 +8,11 @@ class Lnko < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "043d0f630ba95b6b4630b1b712f8910ccc59c14cb481edf9aa80dcdc471f6681"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2de14b6d3a43cf40ade47d4cbd9e9a62f9cd539c194d0ee23b0c5004abdea19e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e91ab5eea1d2a0ba2e75925bce83a98261d37e0f6706ba13297ec9394592aa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5783f36bbb685a505a667ac0f479771de456b60c3c3814ee7d992039596f6f64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c144b2a4b4a2b813c308517c67fefa342f2d9b999945cb19c78997cb7ffbb616"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4da7bbbce232b1f890e6727a1dafaff27bca6b4356fc0c7ab310a256dc93061"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e99f8b263b34cac0c4ba4611d0dab8acd21903851d2861d47df01d1e407528f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8204e0d2e89cc987ac5c158385ae4363990dd4cad757da23618d66e748724655"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b60067eb6cc81c0c391309da891191e7599a120bbb618032f0c8c86a055b7fa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03baa78ebe8f36487583dd15034e85aafbef4ca5a27d24919ece316f9d07997"
   end
 
   depends_on "lua@5.4"
