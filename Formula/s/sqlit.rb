@@ -21,6 +21,7 @@ class Sqlit < Formula
   depends_on "ninja" => :build # for pyarrow
   depends_on "apache-arrow"
   depends_on "numpy"
+  depends_on "openblas"
   depends_on "python@3.14"
 
   on_linux do
@@ -218,8 +219,8 @@ class Sqlit < Formula
   end
 
   resource "tree-sitter-rust" do
-    url "https://files.pythonhosted.org/packages/b7/87/75cbd22b927267d310f76cca1ab3c1d9d41035dfa3eb9cc95f96ee199440/tree_sitter_rust-0.24.2.tar.gz"
-    sha256 "54fb02a5911e345308b405174465112479f56dc39e3f1e7744d7568595f00db9"
+    url "https://github.com/tree-sitter/tree-sitter-rust/archive/refs/tags/v0.24.2.tar.gz"
+    sha256 "061e90a539a55a6aa65dceb0ad6425c50ab1a6e3e6d4ba430e2795ed4550f10e"
   end
 
   resource "tree-sitter-sql" do
@@ -263,6 +264,10 @@ class Sqlit < Formula
   end
 
   def install
+    # pandas 2.3.x metadata generation is incompatible with Meson 1.11.
+    (buildpath/"constraints.txt").write "meson<1.11\n"
+    ENV["PIP_CONSTRAINT"] = buildpath/"constraints.txt"
+
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     venv.pip_install_and_link buildpath
