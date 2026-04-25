@@ -32,7 +32,8 @@ class Kdash < Formula
       pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
       sleep 1
       output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
-      assert_match(/Failed to load .* config/i, output)
+      assert_match "Active Context", output
+      assert_match "Resources", output
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
