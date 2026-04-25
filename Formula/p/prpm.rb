@@ -5,6 +5,11 @@ class Prpm < Formula
   sha256 "bd4384e4dd1c14db392d898311d82299e5413d32565335cc08ae49e013cc5d38"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "921fe35cfd10111f86665cfc8a8e1076f49baa018f0fcb33602c6e491a4746c9"
+  end
+
   depends_on "node"
 
   def install
