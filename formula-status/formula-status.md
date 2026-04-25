@@ -508,7 +508,7 @@ Total formulas: 839
 | rustormy | Minimal neofetch-like weather CLI | 78 | 3 | 2026-02-12 | 2025-09-14 | MIT | ✓ | - | [link](https://github.com/Tairesh/rustormy) |
 | jsonl-graph | CLI for JSONL Graph | 77 | 5 | 2026-01-31 | 2024-03-21 | MIT | ✓ | - | [link](https://github.com/nikolaydubina/jsonl-graph) |
 | ohy | Lightweight, Privacy-First CLI for Packaging Web into Deskto... | 77 | 5 | 2025-08-17 | - | MIT | ✓ | ✓ | [link](https://github.com/ohyfun/ohy) |
-| kyma | Presentations from markdown in the terminal with fancy trans... | 76 | 1 | 2026-02-13 | 2025-06-21 | GPL-3.0-only | ✓ | - | [link](https://www.kyma.ink/) |
+| kyma | Presentations from markdown in the terminal with fancy trans... | 76 | 1 | 2026-02-13 | 2025-06-21 | GPL-3.0-only | ✓ | - | [link](https://github.com/museslabs/kyma) |
 | taskdog | Task manager with CLI, TUI, and local REST API server | 76 | 2 | 2026-03-16 | 2026-03-15 | MIT | ✓ | - | [link](https://github.com/Kohei-Wada/taskdog) |
 | tinybird-mcp-server | MCP server for Tinybird | 76 | 17 | 2025-09-01 | - | Apache-2.0 | ✓ | - | [link](https://github.com/tinybirdco/mcp-tinybird) |
 | amux | TUI for easily running parallel coding agents | 74 | 2 | 2026-03-30 | 2026-03-18 | MIT | ✓ | - | [link](https://github.com/andyrewlee/amux) |

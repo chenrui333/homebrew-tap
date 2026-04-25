@@ -1,6 +1,6 @@
 class Kyma < Formula
   desc "Presentations from markdown in the terminal with fancy transition animations"
-  homepage "https://www.kyma.ink/"
+  homepage "https://github.com/museslabs/kyma"
   url "https://github.com/museslabs/kyma/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "ee2e3da492b51a352dda5c6ad9e3d6d0f8da212b1eaacce655ffb39c2986c36d"
   license "GPL-3.0-only"
