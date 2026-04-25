@@ -13,7 +13,7 @@ class Zigscient < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff36afcf2e67751bb54ceeb613a8f339ccc26c87d82764ba22dfaac8fa3e26b5"
   end
 
-  depends_on "zig@0.14" => :build
+  depends_on "zig" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
@@ -23,19 +23,17 @@ class Zigscient < Formula
     else Hardware.oldest_cpu
     end
 
-    args = %W[
-      --prefix #{prefix}
-      -Doptimize=ReleaseSafe
-    ]
-
+    args = []
     args << "-Dcpu=#{cpu}" if build.bottle?
-    system "zig", "build", *args
+
+    zig = "zig"
+    system zig, "build", *args, *std_zig_args(release_mode: :safe)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zigscient --version")
 
-    output = shell_output("#{bin}/zigscient --show-config-path 2>&1")
-    assert_match "path to the local configuration folder will be printed instead", output
+    output = shell_output("#{bin}/zigscient env")
+    assert_match "\"config_file\":", output
   end
 end
