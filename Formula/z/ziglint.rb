@@ -13,7 +13,7 @@ class Ziglint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "584fa198e53e522d959424fe692c72e840dade68bad0de0716ba7cbd2d1b7979"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
@@ -23,14 +23,12 @@ class Ziglint < Formula
     else Hardware.oldest_cpu
     end
 
-    args = %W[
-      --prefix #{prefix}
-      -Doptimize=ReleaseFast
-      -Dversion=#{version}
-    ]
+    args = ["-Dversion=#{version}"]
 
     args << "-Dcpu=#{cpu}" if build.bottle?
-    system "zig", "build", *args
+
+    zig = Formula["zig@0.15"].opt_bin/"zig"
+    system zig, "build", *args, *std_zig_args(release_mode: :fast)
   end
 
   test do
