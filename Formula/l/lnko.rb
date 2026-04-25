@@ -15,7 +15,7 @@ class Lnko < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c144b2a4b4a2b813c308517c67fefa342f2d9b999945cb19c78997cb7ffbb616"
   end
 
-  depends_on "lua"
+  depends_on "lua@5.4"
 
   resource "luafilesystem" do
     url "https://github.com/lunarmodules/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
@@ -23,8 +23,9 @@ class Lnko < Formula
   end
 
   def install
-    lua_version = Formula["lua"].version.major_minor
-    lua_include = Formula["lua"].opt_include
+    lua = Formula["lua@5.4"]
+    lua_version = lua.version.major_minor
+    lua_include = lua.opt_include
     lua_libdir = libexec/"lib/lua/#{lua_version}"
 
     resource("luafilesystem").stage do
@@ -51,7 +52,7 @@ class Lnko < Formula
       #!/bin/bash
       export LUA_PATH="#{libexec}/?.lua;#{libexec}/?/init.lua;#{libexec}/lnko/?.lua;;"
       export LUA_CPATH="#{lua_libdir}/?.so;;"
-      exec "#{Formula["lua"].opt_bin}/lua" "#{libexec}/bin/lnko.lua" "$@"
+      exec "#{lua.opt_bin}/lua" "#{libexec}/bin/lnko.lua" "$@"
     SH
   end
 
