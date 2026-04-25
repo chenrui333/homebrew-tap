@@ -8,11 +8,11 @@ class SpaceliftIntent < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6ce322e58b4072414c5180ef9a9b82aaf7a85c6c416aa622c26bab35cecdb7d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecf224851ecc1c70c7a345b8b76bea41e62ab447cb4dc5bd3895e6b4695e3837"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca450a4e61d091202795ceb08827aa6cb5aba5bed61ff10e2bf5863909172938"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3da7ac383cd8e598a80c1868a163c975e8ae28e7d50d473286dd4a47a008c787"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "686e8b881660944e67b6dd2b559019e966fc280cfd9ef3edef50dccc413a4397"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d483c1cb92f28258fb69416b20cf8db6c223ec89b4aaf98ca8ae1d5b4854296"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f15cc72c2d01c6c993aea72bcd46119b811e5dfbefe4874279d6a6c3574afc95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5135ecd0a552fcc733e88eecad0e5bb7c33a5b1e31c76753281664df8bd7fad0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "599f60214b069a217fe0e846b3e37a794cde9a0e5f3bca629022be8ee8e51ce1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcd230e4f2eb791ef2c832ef947589fa9be371d8a5e6452d4bd8e473ba6de828"
   end
 
   depends_on "go" => :build
