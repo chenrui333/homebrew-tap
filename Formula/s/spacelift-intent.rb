@@ -22,26 +22,61 @@ class SpaceliftIntent < Formula
   end
 
   test do
+    require "json"
     require "open3"
 
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
-    JSON
+    messages = [
+      {
+        jsonrpc: "2.0",
+        id:      1,
+        method:  "initialize",
+        params:  {
+          protocolVersion: "2025-03-26",
+          capabilities:    {},
+          clientInfo:      {
+            name:    "brew-test",
+            version: "1.0",
+          },
+        },
+      },
+      {
+        jsonrpc: "2.0",
+        method:  "notifications/initialized",
+        params:  {},
+      },
+      {
+        jsonrpc: "2.0",
+        id:      2,
+        method:  "tools/list",
+        params:  {},
+      },
+    ]
 
     output = +""
     Open3.popen2e(bin/"spacelift-intent") do |stdin, stdout_err, wait_thread|
-      stdin.write json
-      stdin.close
+      messages.each { |message| stdin.puts JSON.generate(message) }
+      stdin.flush
 
       deadline = Time.now + 10
       until output.include?("# Infrastructure Management - Essential Instructions") || Time.now > deadline
-        break unless stdout_err.wait_readable(0.5)
+        next unless stdout_err.wait_readable(0.5)
 
-        output << stdout_err.readpartial(1024)
+        begin
+          output << stdout_err.readpartial(4096)
+        rescue EOFError
+          break
+        end
       end
 
-      Process.kill("TERM", wait_thread.pid) if wait_thread.alive?
+      stdin.close unless stdin.closed?
+      if wait_thread.alive?
+        begin
+          Process.kill("TERM", wait_thread.pid)
+        rescue Errno::ESRCH
+          nil
+        end
+        wait_thread.join
+      end
     end
 
     assert_match "# Infrastructure Management - Essential Instructions", output
