@@ -84,6 +84,7 @@ When a Python formula can reuse a packaged dependency from Homebrew instead of v
   pypi_packages exclude_packages: %w[certifi pydantic]
   ```
 - Apply the same exclusion pattern to any other shared Python deps moved out of resources, such as `cryptography` or `rpds-py`.
+- Prefer source tarballs for Python formula resources. Do not switch resources to wheels just to bypass isolated-build failures; fix the source build inputs or use shared Homebrew dependencies instead. Wheels are acceptable only when upstream has no usable sdist or there is a separately verified packaging reason.
 
 ### Linux `zlib` Dependency
 
