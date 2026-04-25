@@ -2,7 +2,7 @@ class Gowebly < Formula
   desc "Next-generation CLI tool to easily build amazing web applications"
   homepage "https://gowebly.org/"
   url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "2f197e1f5e151001af5b97e9ecc4d49a38a685260dbffcd38c8bea0a7799230a"
+  sha256 "c7fdc2740199d1bc3bd371e527f093025be9484e61439c6a9361522569a3813f"
   license "Apache-2.0"
   head "https://github.com/gowebly/gowebly.git", branch: "main"
 
@@ -18,6 +18,10 @@ class Gowebly < Formula
   depends_on "go" => :build
 
   def install
+    inreplace "internal/variables/version.go",
+              /var GoweblyVersion string = "v[\d.]+"/,
+              "var GoweblyVersion string = \"v#{version}\""
+
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
