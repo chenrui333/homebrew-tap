@@ -12,6 +12,7 @@ class Projscan < Formula
   end
 
   depends_on "node"
+  depends_on "vips"
 
   def install
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
@@ -19,6 +20,13 @@ class Projscan < Formula
     system "npm", "install", *std_npm_args
 
     bin.install_symlink libexec.glob("bin/*")
+
+    # Remove incompatible tree-sitter pre-built binaries.
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/projscan/node_modules"
+    node_modules.glob("tree-sitter-{go,python}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do
