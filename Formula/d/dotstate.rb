@@ -30,6 +30,20 @@ class Dotstate < Formula
   end
 
   test do
+    repo = testpath/".config/dotstate/storage"
+    repo.mkpath
+    (repo/".dotstate-profiles.toml").write <<~TOML
+      version = 2
+
+      [common]
+      synced_files = []
+
+      [[profiles]]
+      name = "default"
+      synced_files = []
+      packages = []
+    TOML
+
     assert_match version.to_s, shell_output("#{bin}/dotstate --version")
     assert_match "No files are currently synced", shell_output("#{bin}/dotstate list")
   end
