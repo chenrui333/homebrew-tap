@@ -547,6 +547,7 @@ brew install --cask <tool>
 - `opensnitch-tui`
 - `openspec`
 - `optivorbis`
+- `oracle`
 - `orla`
 - `osintui`
 - `osmar`
