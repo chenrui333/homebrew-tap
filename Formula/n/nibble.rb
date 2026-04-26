@@ -7,6 +7,7 @@ class Nibble < Formula
   head "https://github.com/backendsystems/nibble.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on "ruby" => :test
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
