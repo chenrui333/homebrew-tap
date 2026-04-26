@@ -5,8 +5,10 @@ class Sudocode < Formula
   sha256 "aa850176a5e51fb92de52a97048bf4526f23d1760595951c20179ad341faee8b"
   license "Apache-2.0"
 
+  depends_on "pkgconf" => :build
   depends_on "node@24"
   depends_on "ripgrep"
+  depends_on "vips"
 
   def install
     node_path = "#{Formula["node@24"].opt_bin}:#{Formula["node@24"].opt_libexec/"bin"}:" \
@@ -14,8 +16,10 @@ class Sudocode < Formula
 
     ENV.prepend_path "PATH", Formula["node@24"].opt_bin
     ENV.prepend_path "PATH", Formula["node@24"].opt_libexec/"bin"
+    ENV["npm_config_nodedir"] = Formula["node@24"].opt_prefix
+    ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
 
     # Align CLI sub-package version with meta-package version
     cli_pkg = libexec/"lib/node_modules/sudocode/node_modules/@sudocode-ai/cli/package.json"
@@ -32,6 +36,7 @@ class Sudocode < Formula
     end
     nm.glob("**/@anthropic-ai/claude-agent-sdk/vendor/ripgrep").each(&:rmtree)
     nm.glob("@zed-industries/codex-acp-linux-*").each(&:rmtree)
+    nm.glob("**/@img/sharp-*").each(&:rmtree)
 
     libexec.glob("bin/*").each do |path|
       (bin/path.basename).write_env_script path, PATH: node_path, USE_BUILTIN_RIPGREP: "1"
