@@ -25,6 +25,7 @@ class BrowserbaseMcpServer < Formula
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     libexec.glob("lib/node_modules/**/{bare-fs,bare-os,bare-url,bufferutil}/prebuilds/*")
            .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    libexec.glob("lib/node_modules/**/@rollup/rollup-*").each(&:rmtree)
 
     if OS.linux?
       # Keep glibc artifacts and prune vendored musl binaries that fail linkage.
