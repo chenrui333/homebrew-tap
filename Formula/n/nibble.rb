@@ -6,6 +6,15 @@ class Nibble < Formula
   license "MIT"
   head "https://github.com/backendsystems/nibble.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e50da470effcc97a305a18601f28dcddff9513ea171318c25e594bacd55ad22"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e50da470effcc97a305a18601f28dcddff9513ea171318c25e594bacd55ad22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e50da470effcc97a305a18601f28dcddff9513ea171318c25e594bacd55ad22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bdee109ba2ac3df29e805dd471e9d840f3eb7f0ab49c426b61d5b2fe0516318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "572f3d55979ecc37cf3955e5bbf5c3268d63b9462fb5969b07f49463b2d0ccb8"
+  end
+
   depends_on "go" => :build
   depends_on "ruby" => :test
 
