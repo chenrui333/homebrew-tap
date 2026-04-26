@@ -15,14 +15,20 @@ class MlxAudio < Formula
     sha256 cellar: :any, arm64_sonoma:  "4d8fa24ec0916eeacceec91729706992c666459ee6668f9dc4fd0ec009b441b7"
   end
 
+  depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
+  depends_on "gcc" # for gfortran
+  depends_on "libomp"
   depends_on "libsndfile"
+  depends_on "llvm@20"
   depends_on macos: :sonoma
   depends_on :macos
   depends_on "mlx"
   depends_on "mlx-lm"
   depends_on "numpy"
+  depends_on "openblas"
   depends_on "protobuf"
   depends_on "python@3.14"
 
@@ -79,6 +85,13 @@ class MlxAudio < Formula
   resource "llvmlite" do
     url "https://files.pythonhosted.org/packages/74/cd/08ae687ba099c7e3d21fe2ea536500563ef1943c5105bf6ab4ee3829f68e/llvmlite-0.46.0.tar.gz"
     sha256 "227c9fd6d09dce2783c18b754b7cd9d9b3b3515210c46acc2d3c5badd9870ceb"
+
+    # Fix for setuptools error > 81
+    # PR ref: https://github.com/numba/llvmlite/pull/1400
+    patch do
+      url "https://github.com/numba/llvmlite/commit/e6a4cf1bd9b1ac213124ef125cae44896ed9885c.patch?full_index=1"
+      sha256 "9d23e9490600eb9076a12c808e3222a5b5c25fef200b4e97703d8fea069fd6d3"
+    end
   end
 
   resource "miniaudio" do
@@ -172,18 +185,10 @@ class MlxAudio < Formula
   end
 
   def install
-    wheel_resources = %w[llvmlite numba scikit-learn scipy]
+    ENV["LLVMLITE_SHARED"] = "1"
+
     venv = virtualenv_create(libexec, "python3.14")
-
-    venv.pip_install resources.reject { |resource| wheel_resources.include?(resource.name) }
-
-    wheel_resources.each do |resource_name|
-      wheel_resource = resource(resource_name)
-      wheel_resource.stage do
-        venv.pip_install Pathname.pwd/wheel_resource.downloader.basename
-      end
-    end
-
+    venv.pip_install resources
     venv.pip_install_and_link buildpath
 
     mlx_lm_site_packages = Language::Python.site_packages(venv.root/"bin/python3")
@@ -211,7 +216,7 @@ class MlxAudio < Formula
       from importlib.metadata import version
       from mlx_audio.stt.generate import format_timestamp, format_vtt_timestamp
 
-      assert version("mlx-audio") == "0.4.1"
+      assert version("mlx-audio") == "0.4.2"
       assert format_timestamp(61.234) == "00:01:01,234"
       assert format_vtt_timestamp(61.234) == "00:01:01.234"
     PYTHON
