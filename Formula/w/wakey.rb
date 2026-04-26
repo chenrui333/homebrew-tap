@@ -25,9 +25,16 @@ class Wakey < Formula
     output_log = testpath/"output.log"
     pid = spawn bin/"wakey", [:out, :err] => output_log.to_s
     sleep 1
-    assert_match '"devices": []', (testpath/".wakey_config.json").read
+    assert_path_exists testpath/".wakey.db"
+    assert_operator (testpath/".wakey.db").size, :>, 0
   ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    if pid
+      begin
+        Process.kill("TERM", pid)
+        Process.wait(pid)
+      rescue Errno::ECHILD, Errno::ESRCH
+        nil
+      end
+    end
   end
 end
