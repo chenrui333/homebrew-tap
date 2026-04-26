@@ -1,0 +1,58 @@
+name: Close superseded formula PRs
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Close superseded formula PRs. Disable for a dry-run."
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: close-superseded-formula-prs
+  cancel-in-progress: false
+
+env:
+  GH_NO_UPDATE_NOTIFIER: 1
+  GH_PROMPT_DISABLED: 1
+  GH_REPO: ${{ github.repository }}
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_FROM_API: 1
+
+jobs:
+  close-superseded-prs:
+    if: github.repository_owner == 'chenrui333'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@f1cc9df7a62b7f6244414d21a3ebc3ba9156a082 # main
+        with:
+          core: true
+          cask: false
+
+      - name: Close superseded formula PRs
+        env:
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          args=()
+          if [[ "$APPLY" == "true" ]]; then
+            if [[ "$GITHUB_REF_NAME" != "main" ]]; then
+              echo "::error ::Refusing to close PRs from non-main ref: $GITHUB_REF_NAME"
+              exit 1
+            fi
+            args+=(--apply)
+          fi
+
+          ./cmd/brew-close-superseded-prs "${args[@]}"

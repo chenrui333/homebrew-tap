@@ -1,0 +1,233 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "json"
+require "open3"
+require "optparse"
+require "rubygems"
+require "tempfile"
+require "time"
+
+DEFAULT_REPO = "chenrui333/homebrew-tap"
+SUPERSEDED_LABEL = "superseded"
+TITLE_PATTERN = /\A(?<formula>[A-Za-z0-9][A-Za-z0-9._+@-]*) (?<version>[0-9][A-Za-z0-9._+:-]*)\z/
+SKIP_LABELS = ["new formula", "new cask"].freeze
+TAP_ROOT = File.expand_path("..", __dir__)
+
+options = {
+  apply: false,
+  formulas: [],
+  limit: 1000,
+  repo: ENV.fetch("GH_REPO", DEFAULT_REPO),
+}
+
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: brew close-superseded-prs [options]"
+
+  opts.on("--apply", "Comment, label, and close superseded PRs") do
+    options[:apply] = true
+  end
+
+  opts.on("--dry-run", "Print planned closures without changing GitHub state (default)") do
+    options[:apply] = false
+  end
+
+  opts.on("--formula NAME", "Only inspect one formula (can be repeated)") do |formula|
+    options[:formulas] << formula
+  end
+
+  opts.on("--limit N", Integer, "Maximum open PRs to inspect (default: 1000)") do |limit|
+    options[:limit] = limit
+  end
+
+  opts.on("--repo OWNER/REPO", "GitHub repository (default: #{DEFAULT_REPO})") do |repo|
+    options[:repo] = repo
+  end
+
+  opts.on("-h", "--help", "Show this help") do
+    puts opts
+    exit
+  end
+end
+
+parser.parse!
+
+def odie(message)
+  warn "Error: #{message}"
+  exit 1
+end
+
+def command_env
+  env = {
+    "GH_NO_UPDATE_NOTIFIER" => "1",
+    "GH_PROMPT_DISABLED" => "1",
+  }
+
+  token = ENV["GH_TOKEN"] || ENV["GITHUB_TOKEN"] || ENV["HOMEBREW_GITHUB_API_TOKEN"]
+  env["GH_TOKEN"] = token if token && !token.empty?
+  env
+end
+
+def capture!(*command, env: command_env)
+  stdout, stderr, status = Open3.capture3(env, *command)
+  return stdout if status.success?
+
+  odie("#{command.join(" ")} failed:\n#{stderr}")
+end
+
+def gh_json(*args)
+  JSON.parse(capture!("gh", *args))
+end
+
+def formula_path(formula)
+  candidates = [
+    File.join(TAP_ROOT, "Formula", formula[0], "#{formula}.rb"),
+    File.join(TAP_ROOT, "Formula", "#{formula}.rb"),
+  ]
+  candidates.find { |candidate| File.file?(candidate) }
+end
+
+def formula_version(formula)
+  path = formula_path(formula)
+  return nil unless path
+
+  env = {
+    "HOMEBREW_NO_AUTO_UPDATE" => "1",
+    "HOMEBREW_NO_INSTALL_FROM_API" => "1",
+  }
+  output = capture!("brew", "info", "--json=v2", "--formula", path, env: env)
+  JSON.parse(output).fetch("formulae").first.fetch("versions").fetch("stable")
+rescue StandardError => e
+  warn "Warning: could not determine current #{formula} version: #{e.message}"
+  nil
+end
+
+def version_for_compare(version)
+  Gem::Version.new(version.to_s.strip.sub(/\Av/i, "").tr("_-", "."))
+end
+
+def compare_versions(left, right)
+  version_for_compare(left) <=> version_for_compare(right)
+rescue ArgumentError
+  left.to_s <=> right.to_s
+end
+
+def created_at(pr)
+  Time.parse(pr.fetch("createdAt"))
+end
+
+def bump_pr(title)
+  match = TITLE_PATTERN.match(title)
+  return unless match
+
+  {
+    formula: match[:formula],
+    version: match[:version],
+  }
+end
+
+def ensure_superseded_label(repo)
+  labels = gh_json("label", "list", "--repo", repo, "--limit", "1000", "--json", "name")
+  return if labels.any? { |label| label.fetch("name") == SUPERSEDED_LABEL }
+
+  capture!(
+    "gh", "label", "create", SUPERSEDED_LABEL,
+    "--repo", repo,
+    "--color", "ededed",
+    "--description", "Closed because a newer formula update supersedes this PR"
+  )
+end
+
+def close_pr(repo, number, body)
+  Tempfile.create(["pr-#{number}-superseded", ".md"]) do |file|
+    file.write("#{body}\n")
+    file.close
+    capture!("gh", "pr", "comment", number.to_s, "--repo", repo, "--body-file", file.path)
+  end
+
+  capture!("gh", "pr", "edit", number.to_s, "--repo", repo, "--add-label", SUPERSEDED_LABEL)
+  capture!("gh", "pr", "close", number.to_s, "--repo", repo)
+end
+
+formula_filter = {}
+options[:formulas].each do |formula|
+  formula_filter[formula.sub(%r{\Achenrui333/tap/}, "")] = true
+end
+prs = gh_json(
+  "pr", "list",
+  "--repo", options[:repo],
+  "--state", "open",
+  "--limit", options[:limit].to_s,
+  "--json", "number,title,labels,createdAt"
+)
+
+bump_prs = []
+prs.each do |pr|
+  parsed = bump_pr(pr.fetch("title"))
+  next unless parsed
+  next if formula_filter.any? && !formula_filter[parsed[:formula]]
+
+  labels = pr.fetch("labels").map { |label| label.fetch("name") }
+  next if (labels & SKIP_LABELS).any?
+  next unless formula_path(parsed[:formula])
+
+  bump_prs << pr.merge(parsed)
+end
+
+closures = []
+bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
+  current_version = formula_version(formula)
+  pending_prs = []
+
+  formula_prs.each do |pr|
+    if current_version && compare_versions(current_version, pr.fetch(:version)) >= 0
+      closures << {
+        number: pr.fetch("number"),
+        formula: formula,
+        version: pr.fetch(:version),
+        body: "Superseded by current main, which has #{formula} #{current_version}.",
+      }
+    else
+      pending_prs << pr
+    end
+  end
+
+  next if pending_prs.length <= 1
+
+  # Keep the most recently opened bump PR, even if it intentionally rolls back
+  # a bad higher-version bump.
+  keeper = pending_prs.max_by { |pr| [created_at(pr), pr.fetch("number")] }
+
+  pending_prs.each do |pr|
+    next if pr.fetch("number") == keeper.fetch("number")
+
+    closures << {
+      number: pr.fetch("number"),
+      formula: formula,
+      version: pr.fetch(:version),
+      body: "Superseded by ##{keeper.fetch("number")}",
+    }
+  end
+end
+
+closures.uniq! { |closure| closure.fetch(:number) }
+
+if closures.empty?
+  puts "No superseded formula PRs found."
+  exit
+end
+
+verb = options[:apply] ? "Closing" : "Would close"
+closures.sort_by { |closure| closure.fetch(:number) }.each do |closure|
+  puts "#{verb} ##{closure.fetch(:number)} #{closure.fetch(:formula)} #{closure.fetch(:version)}: #{closure.fetch(:body)}"
+end
+
+if options[:apply]
+  ensure_superseded_label(options[:repo])
+  closures.each do |closure|
+    close_pr(options[:repo], closure.fetch(:number), closure.fetch(:body))
+  end
+  puts "Closed #{closures.length} superseded formula PR(s)."
+else
+  puts "Dry-run only. Re-run with --apply to close these PRs."
+end

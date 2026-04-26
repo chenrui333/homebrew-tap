@@ -168,3 +168,27 @@ Run a strict online audit with autofix enabled.
 brew check chenrui333/tap/bun
 brew check bun
 ```
+
+## `brew close-superseded-prs`
+
+Find open formula version-bump PRs that are no longer the latest update for a
+formula, then optionally comment, label, and close them.
+
+The command only considers PR titles in the standard formula bump format:
+`<formula> <version>`. It skips new formula/cask PRs and non-version update
+titles.
+
+### Usage
+
+```bash
+brew close-superseded-prs
+brew close-superseded-prs --formula ministack
+brew close-superseded-prs --apply
+```
+
+### Notes
+
+- Defaults to dry-run output.
+- Closes PRs already covered by the version on `main` with a `Superseded by current main...` comment.
+- Keeps the most recently opened bump PR for each formula and closes older open bumps with `Superseded by #<pr>`.
+- Uses the `superseded` label when applying changes.
