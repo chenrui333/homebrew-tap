@@ -5,6 +5,7 @@ class LlxprtCode < Formula
   sha256 "fd673a16c4f9706936d8f181a7ec83347d764830237f3c842ae7e21f98bc271b"
   license "Apache-2.0"
 
+  depends_on "tree-sitter-cli" => :build
   depends_on "node"
 
   def install
@@ -21,8 +22,14 @@ class LlxprtCode < Formula
       nm.glob("**/prebuilds/prebuild-macOS-ARM64").each(&:rmtree)
       nm.glob("**/prebuilds/linux-arm64").each(&:rmtree)
     end
-    # Remove @ast-grep prebuilds that fail dylib ID rewriting
-    nm.glob("**/@ast-grep/*/prebuilds").each(&:rmtree)
+    %w[c cpp go java json python ruby rust].each do |language|
+      path = nm/"@ast-grep/lang-#{language}"
+      cd path do
+        system "tree-sitter", "build", "-o", "parser.so"
+      end
+    end
+    nm.glob("@ast-grep/lang-*/prebuilds").each { |path| rm_r path }
+    nm.glob("**/clipboardy/fallbacks/linux/xsel").each(&:rmtree)
   end
 
   test do
