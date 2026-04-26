@@ -9,11 +9,12 @@ class Deface < Formula
   head "https://github.com/ORB-HD/deface.git", branch: "develop"
 
   depends_on "numpy" => :no_linkage
+  depends_on "opencv"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
   depends_on "scipy" => :no_linkage
 
-  pypi_packages exclude_packages: %w[numpy pillow scipy]
+  pypi_packages exclude_packages: %w[numpy opencv-python pillow scipy]
 
   resource "imageio" do
     url "https://files.pythonhosted.org/packages/a3/6f/606be632e37bf8d05b253e8626c2291d74c691ddc7bcdf7d6aaf33b32f6a/imageio-2.37.2.tar.gz"
@@ -33,11 +34,6 @@ class Deface < Formula
   resource "networkx" do
     url "https://files.pythonhosted.org/packages/6a/51/63fe664f3908c97be9d2e4f1158eb633317598cfa6e1fc14af5383f17512/networkx-3.6.1.tar.gz"
     sha256 "26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509"
-  end
-
-  resource "opencv-python" do
-    url "https://files.pythonhosted.org/packages/ac/71/25c98e634b6bdeca4727c7f6d6927b056080668c5008ad3c8fc9e7f8f6ec/opencv-python-4.12.0.88.tar.gz"
-    sha256 "8b738389cede219405f6f3880b851efa3415ccd674752219377353f017d2994d"
   end
 
   resource "packaging" do
