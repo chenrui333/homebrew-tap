@@ -14,6 +14,7 @@ class Nanoclaw < Formula
     system npm, "ci"
     system npm, "run", "build"
     system npm, "prune", "--omit=dev"
+    rm_r Dir["node_modules/@img/*linuxmusl*"]
 
     libexec.install Dir["*"]
 
