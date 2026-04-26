@@ -35,7 +35,7 @@ class Sudocode < Formula
       nm.glob("**/ripgrep/arm64-darwin").each(&:rmtree)
     end
     nm.glob("**/@anthropic-ai/claude-agent-sdk/vendor/ripgrep").each(&:rmtree)
-    nm.glob("@zed-industries/codex-acp-linux-*").each(&:rmtree)
+    nm.glob("**/@zed-industries/codex-acp-linux-*").each(&:rmtree)
     nm.glob("**/@img/sharp-*").each(&:rmtree)
 
     libexec.glob("bin/*").each do |path|
