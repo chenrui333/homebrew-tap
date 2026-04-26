@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/a0/aa/b1a0366e9460f0eafd5c45e079dd4892269951a47ff78f7654d130522fdf/cccc_pair-0.4.11.tar.gz"
-  sha256 "5f9b12908ffd8959c1713209be67b31d8373a2869fe1988cd773e60c0340d8b6"
+  url "https://files.pythonhosted.org/packages/06/ce/3159dd69ff2ad0c540f74c7141202145e222bf94a367b81081da1afb504f/cccc_pair-0.4.12.tar.gz"
+  sha256 "a41a523f025d5466567a3020e292a7d8886f95decb4ff7c249aa552b2ed2465a"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -62,8 +62,8 @@ class Cccc < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
+    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "dingtalk-stream" do
@@ -72,8 +72,8 @@ class Cccc < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/f7/e6/7adb4c5fa231e82c35b8f5741a9f2d055f520c29af5546fd70d3e8e1cd2e/fastapi-0.135.3.tar.gz"
-    sha256 "bd6d7caf1a2bdd8d676843cdcd2287729572a1ef524fc4d65c17ae002a1be654"
+    url "https://files.pythonhosted.org/packages/5d/45/c130091c2dfa061bbfe3150f2a5091ef1adf149f2a8d2ae769ecaf6e99a2/fastapi-0.136.1.tar.gz"
+    sha256 "7af665ad7acfa0a3baf8983d393b6b471b9da10ede59c60045f49fbc89a0fa7f"
   end
 
   resource "frozenlist" do
@@ -102,13 +102,13 @@ class Cccc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
+    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/bf/ff/2ece5d735ebfa2af600a53176f2636ae47af2bf934e08effab64f0d1e047/lark_oapi-1.5.3-py3-none-any.whl"
-    sha256 "fda6b32bb38d21b6bdaae94979c600b94c7c521e985adade63a54e4b3e20cc36"
+    url "https://files.pythonhosted.org/packages/b4/72/c2e973066da57e9f6720c229364e673d89c884fac65c265a08e2c32eed3c/lark_oapi-1.5.5-py3-none-any.whl"
+    sha256 "c953d3f87e5b43d9e99cdee7c2d962568ac05d5c01ef57ad662fbb5d4ec0e69f"
   end
 
   resource "multidict" do
@@ -167,8 +167,8 @@ class Cccc < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5e/da/6eee1ff8b6cbeed47eeb5229749168e81eb4b7b999a1a15a7176e51410c9/uvicorn-0.44.0.tar.gz"
-    sha256 "6c942071b68f07e178264b9152f1f16dfac5da85880c4ce06366a96d70d4f31e"
+    url "https://files.pythonhosted.org/packages/1f/93/041fca8274050e40e6791f267d82e0e2e27dd165627bd640d3e0e378d877/uvicorn-0.46.0.tar.gz"
+    sha256 "fb9da0926999cc6cb22dc7cd71a94a632f078e6ae47ff683c5c420750fb7413d"
   end
 
   resource "uvloop" do
@@ -192,8 +192,8 @@ class Cccc < Formula
   end
 
   resource "wechatbot-sdk" do
-    url "https://files.pythonhosted.org/packages/3e/42/5091d783adb4f8ed61cbbc5a96bdf56aaacd9e5493a71d31659a0d51bae1/wechatbot_sdk-0.2.0.tar.gz"
-    sha256 "d94958cb9536574e57a4d3844a817b3ba7d0cd3cc97ad169a96c37cdacf7f26c"
+    url "https://files.pythonhosted.org/packages/42/fe/fc419ff228e64a5d02de7ad06a5b663dcef10502e10a2263ae667b7aa80b/wechatbot_sdk-0.2.1.tar.gz"
+    sha256 "7c06d252fdc35110e0ef6fdd701469c04a1436a602b1088e4d3c30f944ec01c3"
   end
 
   resource "yarl" do
