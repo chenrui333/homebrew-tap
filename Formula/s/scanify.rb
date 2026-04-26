@@ -7,9 +7,9 @@ class Scanify < Formula
   head "https://github.com/Francium-Tech/scanify.git", branch: "main"
 
   on_linux do
-    depends_on "swift" => :build
     depends_on "imagemagick"
     depends_on "poppler"
+    depends_on "swift"
   end
 
   def install
