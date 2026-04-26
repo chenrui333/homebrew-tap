@@ -7,6 +7,15 @@ class ApmCli < Formula
   sha256 "4bf16be9e932e98a1a13d8c33f153340c803546a4a9e70409116142c1977940a"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "14c9392118198b7c4749a9a854818a82babe4f8d09430c14f423d2597c99d1d4"
+    sha256 cellar: :any,                 arm64_sequoia: "d8f2865d3f0b5784276ad6b461b14c450d76aedf66c0673ae8c97c2fffce0952"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b9effae504599de94c3725f9f2618e7ede9e46828a9e06ccb0885d3e9b1c871"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f86ff7bd517ec0993f79928da132d42110198d569dfeb92b88dfa3292a18b445"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccbf09c51db8c2ca4073bc1d660cb1c4956b43412e3704e25c0a28a8807a18bf"
+  end
+
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
   depends_on "pydantic" => :no_linkage
