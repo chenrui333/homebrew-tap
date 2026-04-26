@@ -9,6 +9,10 @@ class Termide < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
