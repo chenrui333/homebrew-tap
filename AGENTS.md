@@ -270,6 +270,7 @@ For formula patch PR triage, follow this exact sequence:
    - If the goal is to regenerate missing bottles for a merged formula, open a one-formula `revision` follow-up PR and again leave merge to `pr-pull`.
 7. If triaging many open PRs, dedupe only version-bump PRs for the same formula by keeping only the latest one.
    - Apply this only to PR titles in version-bump format (`<formula> <version>`), and skip non-version PRs such as `foo: fix ...`.
+   - Prefer `brew close-superseded-prs --apply` for this cleanup when it fits; it dry-runs by default and handles both PRs already covered by `main` and older open bump PRs superseded by a more recently opened bump.
    ```sh
    repo="<owner>/<repo>"
    gh pr list --repo "$repo" --state open --limit 1000 --json number,title,createdAt > /tmp/open_prs.json
@@ -367,6 +368,9 @@ For recurring maintenance work in this tap, prefer the repo-local helpers under 
   - Bare formula names are resolved to `chenrui333/tap/<formula>`.
 - `brew patch <url>`
   - Fetches a patch URL, computes the SHA-256, and prints a `patch do` block for formula edits.
+- `brew close-superseded-prs`
+  - Dry-runs stale formula bump cleanup by default.
+  - With `--apply`, comments, labels `superseded`, and closes formula bump PRs that are covered by `main` or superseded by a more recently opened bump PR for the same formula.
 
 If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh` commands in this document instead of forcing the helper into a workflow it was not built for.
 
