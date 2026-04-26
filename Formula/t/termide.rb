@@ -5,6 +5,15 @@ class Termide < Formula
   sha256 "30e2e19ac45f5176c16a010257083362819025eb8b47a8c73f63383602296c9c"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "b6b8df50f2a995f0f55dd667fd7ec9c36a72454a62303a952930d90c357864bb"
+    sha256                               arm64_sequoia: "d5f0c838e8fc34a541a682a3c7ce5d5d39dce94e32e23ad42d5ace7b50fa7c5f"
+    sha256                               arm64_sonoma:  "3fcc78a582efbd2dfefa442a5550d23cca0f5665e0000ee3e09ab8f14080cbdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "741afdb6ef34a46b27e43e33f4386ba03096000a45829919ea7619871f7e5ee7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe21b332b3eed6857b816f93435b09c4a779b2cb1d1acf249bf0d599a7bb9775"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
