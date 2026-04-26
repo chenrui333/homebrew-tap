@@ -30,7 +30,8 @@ jobs:
           fi
 
           for file in "${files[@]}"; do
-            if [[ ! "$file" =~ ^Casks/ ]]; then
+            # Cask signing exceptions are part of cask-only maintenance.
+            if [[ ! "$file" =~ ^Casks/ && "$file" != "audit_exceptions/signing_audit_skiplist.json" ]]; then
               echo "Non-cask file detected in cask merge workflow: $file"
               exit 1
             fi
