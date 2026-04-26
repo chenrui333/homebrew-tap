@@ -22,12 +22,8 @@ class GhDash < Formula
   end
 
   test do
-    (testpath/"bad.yml").write <<~YAML
-      foo: [
-    YAML
-
-    output = shell_output("#{bin}/gh-dash --config #{testpath/"bad.yml"} 2>&1", 1)
-    assert_match "failed parsing config file", output
+    output = shell_output("#{bin}/gh-dash one two 2>&1", 1)
+    assert_match "Accepts at most 1 arg(s)", output
     assert_match version.to_s, shell_output("#{bin}/gh-dash --version")
   end
 end
