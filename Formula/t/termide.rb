@@ -5,7 +5,9 @@ class Termide < Formula
   sha256 "30e2e19ac45f5176c16a010257083362819025eb8b47a8c73f63383602296c9c"
   license "MIT"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args
