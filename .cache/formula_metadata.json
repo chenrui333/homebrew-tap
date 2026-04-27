@@ -377,6 +377,12 @@
     "last_release": "2025-08-20",
     "stars": 15
   },
+  "github:Francium-Tech/scanify": {
+    "forks": 2,
+    "last_commit": "2026-02-03",
+    "last_release": "2025-12-20",
+    "stars": 101
+  },
   "github:Freed-Wu/autotools-language-server": {
     "forks": 5,
     "last_commit": "2026-02-16",
@@ -533,6 +539,12 @@
     "last_release": null,
     "stars": 378
   },
+  "github:Leask/Tabminal": {
+    "forks": 23,
+    "last_commit": "2026-04-14",
+    "last_release": null,
+    "stars": 361
+  },
   "github:MacroPower/kat": {
     "forks": 1,
     "last_commit": "2026-02-16",
@@ -616,6 +628,12 @@
     "last_commit": null,
     "last_release": null,
     "stars": null
+  },
+  "github:ORB-HD/deface": {
+    "forks": 167,
+    "last_commit": "2024-10-13",
+    "last_release": "2023-10-15",
+    "stars": 1411
   },
   "github:Oloruntobi1/pproftui": {
     "forks": 5,
@@ -1307,6 +1325,12 @@
     "last_release": "2025-08-13",
     "stars": 58
   },
+  "github:ayn2op/discordo": {
+    "forks": 202,
+    "last_commit": "2026-04-23",
+    "last_release": null,
+    "stars": 5466
+  },
   "github:baalimago/clai": {
     "forks": 10,
     "last_commit": "2026-02-09",
@@ -1318,6 +1342,12 @@
     "last_commit": "2025-07-28",
     "last_release": "2025-07-28",
     "stars": 310
+  },
+  "github:backendsystems/nibble": {
+    "forks": 5,
+    "last_commit": "2026-04-22",
+    "last_release": "2026-04-22",
+    "stars": 158
   },
   "github:balta2ar/brotab": {
     "forks": 43,
@@ -1811,6 +1841,12 @@
     "last_release": "2024-12-11",
     "stars": 34
   },
+  "github:davidlattimore/wild": {
+    "forks": 111,
+    "last_commit": "2026-04-26",
+    "last_release": "2026-01-16",
+    "stars": 3527
+  },
   "github:ddddddO/packemon": {
     "forks": 4,
     "last_commit": "2026-03-17",
@@ -1900,6 +1936,12 @@
     "last_commit": "2026-03-16",
     "last_release": "2026-01-19",
     "stars": 22
+  },
+  "github:dlvhdr/gh-dash": {
+    "forks": 378,
+    "last_commit": "2026-04-24",
+    "last_release": "2026-03-07",
+    "stars": 11472
   },
   "github:doganarif/giq": {
     "forks": 0,
@@ -2405,6 +2447,12 @@
     "last_release": "2025-02-27",
     "stars": 300
   },
+  "github:hengyoush/kyanos": {
+    "forks": 228,
+    "last_commit": "2026-04-27",
+    "last_release": "2025-03-19",
+    "stars": 5013
+  },
   "github:hivemq/mqtt-cli": {
     "forks": 51,
     "last_commit": "2026-02-16",
@@ -2825,6 +2873,12 @@
     "last_release": "2023-07-08",
     "stars": 246
   },
+  "github:koibtw/nvrs": {
+    "forks": 4,
+    "last_commit": "2026-04-23",
+    "last_release": "2026-04-23",
+    "stars": 62
+  },
   "github:kongbytes/arp-scan-rs": {
     "forks": 22,
     "last_commit": "2025-11-18",
@@ -2998,6 +3052,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2025-12-06",
     "stars": 63
+  },
+  "github:linuxmobile/oxicord": {
+    "forks": 10,
+    "last_commit": "2026-03-05",
+    "last_release": "2026-02-23",
+    "stars": 288
   },
   "github:litespeedtech/ls-hpack": {
     "forks": 25,
@@ -3190,6 +3250,12 @@
     "last_commit": "2018-10-24",
     "last_release": "2018-10-18",
     "stars": 95
+  },
+  "github:microsoft/apm": {
+    "forks": 145,
+    "last_commit": "2026-04-27",
+    "last_release": "2026-04-27",
+    "stars": 2083
   },
   "github:microsoft/azure-pipelines-language-server": {
     "forks": 29,
@@ -3779,6 +3845,12 @@
     "last_release": "2025-08-20",
     "stars": 382
   },
+  "github:qwibitai/nanoclaw": {
+    "forks": 12663,
+    "last_commit": "2026-04-26",
+    "last_release": null,
+    "stars": 28189
+  },
   "github:raaymax/lazytail": {
     "forks": 2,
     "last_commit": "2026-03-19",
@@ -4007,6 +4079,12 @@
     "last_release": "2026-03-10",
     "stars": 4181
   },
+  "github:savedra1/clipse": {
+    "forks": 47,
+    "last_commit": "2026-04-20",
+    "last_release": "2026-01-27",
+    "stars": 971
+  },
   "github:scarvalhojr/aoc-cli": {
     "forks": 23,
     "last_commit": "2023-12-22",
@@ -4211,6 +4289,12 @@
     "last_release": "2025-12-21",
     "stars": 2289
   },
+  "github:snipt/snipt": {
+    "forks": 3,
+    "last_commit": "2026-04-02",
+    "last_release": "2025-05-08",
+    "stars": 146
+  },
   "github:sohaha/zzz": {
     "forks": 3,
     "last_commit": "2026-01-20",
@@ -4283,6 +4367,12 @@
     "last_release": "2026-02-03",
     "stars": 5826
   },
+  "github:steipete/oracle": {
+    "forks": 199,
+    "last_commit": "2026-04-24",
+    "last_release": "2026-03-08",
+    "stars": 2086
+  },
   "github:steviec/mcp-server-tester": {
     "forks": 3,
     "last_commit": "2025-09-16",
@@ -4312,6 +4402,12 @@
     "last_commit": "2026-02-25",
     "last_release": "2026-02-25",
     "stars": 2069
+  },
+  "github:sudocode-ai/sudocode": {
+    "forks": 23,
+    "last_commit": "2026-03-18",
+    "last_release": "2026-03-18",
+    "stars": 273
   },
   "github:superstarryeyes/bit": {
     "forks": 10,
@@ -4420,6 +4516,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-08",
     "stars": 415
+  },
+  "github:termide/termide": {
+    "forks": 1,
+    "last_commit": "2026-04-27",
+    "last_release": "2026-04-27",
+    "stars": 91
   },
   "github:terminaltrove/moltbook-tui": {
     "forks": 1,
@@ -4571,6 +4673,12 @@
     "last_release": null,
     "stars": 131
   },
+  "github:tsowell/wiremix": {
+    "forks": 29,
+    "last_commit": "2026-04-13",
+    "last_release": null,
+    "stars": 868
+  },
   "github:tuono-labs/tuono": {
     "forks": 55,
     "last_commit": "2026-02-16",
@@ -4678,6 +4786,12 @@
     "last_commit": "2025-09-18",
     "last_release": "2025-01-01",
     "stars": 136
+  },
+  "github:vybestack/llxprt-code": {
+    "forks": 90,
+    "last_commit": "2026-04-27",
+    "last_release": "2026-04-27",
+    "stars": 669
   },
   "github:wader/fq": {
     "forks": 243,
