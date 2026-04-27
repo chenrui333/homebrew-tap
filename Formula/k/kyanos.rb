@@ -6,6 +6,12 @@ class Kyanos < Formula
   license "Apache-2.0"
   head "https://github.com/hengyoush/kyanos.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "3891d9a99a02dfdbe32cc44447121dc2cee3770a6650104e0da823ea22f95ae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7034d462c2beb91ffd92afab35e5203694c6b51c38671b16fb2c3c8478f2e328"
+  end
+
   depends_on "go" => :build
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
