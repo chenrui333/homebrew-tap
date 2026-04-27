@@ -7,11 +7,20 @@ class Kyanos < Formula
   head "https://github.com/hengyoush/kyanos.git", branch: "main"
 
   depends_on "go" => :build
-  depends_on "libbpf"
+  depends_on "llvm" => :build
+  depends_on "pkgconf" => :build
+  depends_on "elfutils"
   depends_on :linux
+  depends_on "zlib-ng-compat"
+
+  resource "libbpf" do
+    url "https://github.com/libbpf/libbpf/archive/e0554200338152aa5c9ffe635a5c312a0a0e86dc.tar.gz"
+    sha256 "1726ab89357fb41b575680e010f37f6ac1c3329c43aba63f9901fa8aea06d300"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "1"
+    ENV.prepend_path "PATH", Formula["llvm"].opt_bin
 
     # Workaround to avoid patchelf corruption when cgo is required
     if OS.linux? && Hardware::CPU.arch == :arm64
@@ -20,7 +29,8 @@ class Kyanos < Formula
     end
 
     # Upstream expects generated eBPF objects to exist before `go build`.
-    system "make", "build-bpf"
+    resource("libbpf").stage buildpath/"libbpf"
+    system "make", "build-bpf", "CLANG=#{Formula["llvm"].opt_bin/"clang"}"
 
     ldflags = %W[
       -s -w
