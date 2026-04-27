@@ -6,6 +6,12 @@ class Wild < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/davidlattimore/wild.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "f85bd8b77ed8cce31a7f3128ce3399bdb046fd4a1c32d5492356300bf3477bed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "52020f072419683889b0141657f35d629b2cbbe4f4b25beb40a30ab045de3724"
+  end
+
   depends_on "rust" => :build
   depends_on :linux
 
