@@ -7,6 +7,15 @@ class McpGsuite < Formula
   sha256 "9cd14f316de78cf49d604321119871aa8097f82ea652ea258a16a1587f90032f"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "b64ea2fe7e15f00ba1a55a595e1b3054cf180467ca50ae86f4b47aa1612b9280"
+    sha256 cellar: :any,                 arm64_sequoia: "008419d43ca48dbc0f6b76928caa10c842209640f62800b1b2b0980954f24734"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ee9343f3c890d0ab09de596feada6ec29701787af6169faa8e73964279b8861"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28ab7f58cdd350e28f9576a6c3a64de74dcef118d9fcece34699f3ae9decc81e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce7e4b2564077cb874655703efe825376ab9b2a8c96b22582a5bde40a83d76d5"
+  end
+
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi" => :no_linkage
   depends_on "pydantic" => :no_linkage
