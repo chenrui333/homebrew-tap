@@ -1,8 +1,8 @@
 class Wiremix < Formula
   desc "TUI audio mixer for PipeWire"
   homepage "https://github.com/tsowell/wiremix"
-  url "https://github.com/tsowell/wiremix/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "9fd8979fa3bc260a80d170c30041ab2aeea26273439bac8ce928a9405ce1d0f5"
+  url "https://github.com/tsowell/wiremix/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "dfb165ff664b804099c5592fd26d2b03d78e67069522bc5d3d8ef75a19505adf"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tsowell/wiremix.git", branch: "main"
 
