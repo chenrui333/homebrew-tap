@@ -26,7 +26,8 @@ class Wild < Formula
       }
     C
 
-    system bin/"wild", "a.c", "-o", "a.out"
+    (testpath/"ld").make_symlink bin/"wild"
+    system ENV.cc, "-B#{testpath}", "a.c", "-o", "a.out"
     assert_equal "Hello, World!\n", shell_output("./a.out")
   end
 end
