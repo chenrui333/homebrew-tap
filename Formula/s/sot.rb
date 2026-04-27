@@ -8,6 +8,16 @@ class Sot < Formula
   license "MIT"
   head "https://github.com/anistark/sot.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "525463039fd4e1ce9ff45f549de58f9b9b1c50d30408fd5769cdfe49e2686cb4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84962e89b164f1d889c8f8c12956342abdfbb32f5fac5953284d449f36b5ed06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9002171d8b6db3a7d2b8e3a0cb79a535f366c7d14c1adb461e4bf12d439c0a4f"
+    sha256 cellar: :any_skip_relocation, sequoia:       "2060842928c5acc53378d8678229fb9be5dced3fa6fc3041473e175cbd0a4dde"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "519173bd0420c13958a956dea1accaab9572a731c56dd47b60ebdbce90739bf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "207593b52e3775fa64847978d595003c19004bf6f62723df3293e3521ff2c9c3"
+  end
+
   depends_on "python@3.14"
 
   resource "distro" do
