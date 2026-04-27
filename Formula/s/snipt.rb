@@ -11,6 +11,7 @@ class Snipt < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxi"
   end
 
   def install
