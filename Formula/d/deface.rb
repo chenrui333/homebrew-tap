@@ -12,9 +12,10 @@ class Deface < Formula
   depends_on "opencv"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.14"
+  depends_on "scikit-image" => :no_linkage
   depends_on "scipy" => :no_linkage
 
-  pypi_packages exclude_packages: %w[numpy opencv-python pillow scipy]
+  pypi_packages exclude_packages: %w[numpy opencv-python pillow scikit-image scipy]
 
   resource "imageio" do
     url "https://files.pythonhosted.org/packages/a3/6f/606be632e37bf8d05b253e8626c2291d74c691ddc7bcdf7d6aaf33b32f6a/imageio-2.37.2.tar.gz"
@@ -41,11 +42,6 @@ class Deface < Formula
     sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
-  resource "scikit-image" do
-    url "https://files.pythonhosted.org/packages/a1/b4/2528bb43c67d48053a7a649a9666432dc307d66ba02e3a6d5c40f46655df/scikit_image-0.26.0.tar.gz"
-    sha256 "f5f970ab04efad85c24714321fcc91613fcb64ef2a892a13167df2f3e59199fa"
-  end
-
   resource "tifffile" do
     url "https://files.pythonhosted.org/packages/f8/a6/85e8ecfd7cb4167f8bd17136b2d42cba296fbc08a247bba70d5747e2046a/tifffile-2025.12.20.tar.gz"
     sha256 "cb8a4fee327d15b3e3eeac80bbdd8a53b323c80473330bcfb99418ee4c1c827f"
@@ -57,7 +53,11 @@ class Deface < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
+
+    site_packages = Language::Python.site_packages(venv.root/"bin/python3")
+    pth_contents = "import site; site.addsitedir('#{Formula["scikit-image"].opt_libexec/site_packages}')\n"
+    (venv.site_packages/"homebrew-scikit-image.pth").write pth_contents
   end
 
   test do
