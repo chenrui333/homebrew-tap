@@ -1,8 +1,8 @@
 class Termide < Formula
   desc "Cross-platform terminal-based IDE, file manager, and virtual terminal"
   homepage "https://termide.github.io"
-  url "https://github.com/termide/termide/archive/refs/tags/0.20.1.tar.gz"
-  sha256 "a50dcbc3bdda96dedf97f5d043e84a0c2923191b3004efa5ad03a64669893edc"
+  url "https://github.com/termide/termide/archive/refs/tags/0.21.0.tar.gz"
+  sha256 "acfc674dfd5affc08a47795b539ddb20d9907f2ea9a412c871a3e18f906a8891"
   license "MIT"
 
   bottle do
