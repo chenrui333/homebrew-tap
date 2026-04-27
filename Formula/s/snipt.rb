@@ -13,6 +13,7 @@ class Snipt < Formula
     depends_on "libx11"
     depends_on "libxi"
     depends_on "libxtst"
+    depends_on "xdotool"
   end
 
   def install
