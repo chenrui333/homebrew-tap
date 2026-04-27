@@ -42,6 +42,7 @@ class Kyanos < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kyanos --version")
+    assert_match "Version: #{version}", shell_output("#{bin}/kyanos version")
+    assert_match "watch HTTP message", shell_output("#{bin}/kyanos watch http --help")
   end
 end
