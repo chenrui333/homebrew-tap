@@ -1,8 +1,8 @@
 class Tennis < Formula
   desc "Print stylish CSV tables in your terminal"
   homepage "https://github.com/gurgeous/tennis"
-  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "f594102485056ac95f87d584cbd5e32e3449b65588bf650b8169b448cf2a8ce6"
+  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "31a23740c51008d870cc90b6236473ed009b0957f17c9db62ed9f04aebb7f9b4"
   license "MIT"
   head "https://github.com/gurgeous/tennis.git", branch: "main"
 
