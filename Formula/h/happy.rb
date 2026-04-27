@@ -10,6 +10,16 @@ class Happy < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    if OS.linux?
+      sandbox_runtime = libexec/"lib/node_modules/happy/node_modules/@anthropic-ai/sandbox-runtime"
+      unused_arch = Hardware::CPU.arm? ? "x64" : "arm64"
+      rm_r [
+        sandbox_runtime/"dist/vendor/seccomp/#{unused_arch}",
+        sandbox_runtime/"vendor/seccomp/#{unused_arch}",
+      ].select(&:exist?)
+    end
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
