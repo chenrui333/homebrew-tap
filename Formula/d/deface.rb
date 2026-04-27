@@ -8,6 +8,11 @@ class Deface < Formula
   license "MIT"
   head "https://github.com/ORB-HD/deface.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "d66e93a8c35289636d22675cc515844ac0f7176a0c4d4f58463d996ffde715cc"
+  end
+
   depends_on "numpy" => :no_linkage
   depends_on "opencv"
   depends_on "pillow" => :no_linkage
