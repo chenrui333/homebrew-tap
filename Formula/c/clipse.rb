@@ -9,7 +9,6 @@ class Clipse < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1"
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
