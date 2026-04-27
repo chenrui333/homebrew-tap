@@ -5,6 +5,7 @@ class Codemachine < Formula
   sha256 "13b5b78d7e33e1d6733e8dce05e5b4d41173db44465f6ca559172b517890bcdd"
   license "Apache-2.0"
 
+  depends_on "chenrui333/tap/bun"
   depends_on "node"
 
   def install
