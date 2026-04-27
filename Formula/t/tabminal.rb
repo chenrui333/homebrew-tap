@@ -5,6 +5,15 @@ class Tabminal < Formula
   sha256 "aae7d87958b459af48151dc9410accce1d4d8711c773d02aa7d414728983974c"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62ece0365f537ce505f92d670ffdb2a2b206b9307dc89d8189a6cd7c34a69b20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62ece0365f537ce505f92d670ffdb2a2b206b9307dc89d8189a6cd7c34a69b20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62ece0365f537ce505f92d670ffdb2a2b206b9307dc89d8189a6cd7c34a69b20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "376848e99825779f9c1643e5933bd300adbab1f5a2852587f3011dbd26c8e171"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "554f968591ddb1d6b8e7c38ad00884af3d26026f27a2b83d4e8f99f7bc83e9b5"
+  end
+
   depends_on "node"
 
   def install
