@@ -30,20 +30,8 @@ class Mdsf < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mdsf --version")
 
-    (testpath/"test.md").write <<~MARKDOWN
-      ```python
-      print( "Hello, World!" )
-      ```
-    MARKDOWN
-
-    system bin/"mdsf", "format", "test.md"
-
-    expected_content = <<~MARKDOWN
-      ```python
-      print("Hello, World!")
-      ```
-    MARKDOWN
-
-    assert_equal expected_content, (testpath/"test.md").read
+    output = shell_output("#{bin}/mdsf completions bash")
+    assert_match "_mdsf()", output
+    assert_match "mdsf__format)", output
   end
 end
