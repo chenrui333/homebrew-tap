@@ -6,6 +6,12 @@ class Wiremix < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tsowell/wiremix.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9c410428a6c8448372120eea5e97e76a2680d35b6e61c51e337e9bf7f8862ab5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3480a45b59346236a1bf16b3d932e4e1d55ee9d95eae31a503cf9775741ee297"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on :linux
