@@ -1,8 +1,8 @@
 class Ugm < Formula
   desc "TUI to view information about UNIX users and groups"
   homepage "https://github.com/ariasmn/ugm"
-  url "https://github.com/ariasmn/ugm/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "96342a6ed3bde5d547edc220405ed81cc45466013d2462cebf25e7145868b731"
+  url "https://github.com/ariasmn/ugm/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "a627102861486093d2a65249a5ca7d0fb6e16ae0844716713a37b34fe79a9169"
   license "MIT"
   head "https://github.com/ariasmn/ugm.git", branch: "main"
 
