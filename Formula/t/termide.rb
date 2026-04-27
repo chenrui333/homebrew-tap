@@ -7,11 +7,11 @@ class Termide < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "1a5444c15556c7eacc7d16a015df77fd947b3094e8e58a567072684f52f335e0"
-    sha256                               arm64_sequoia: "21c01a83992381d4bbc518c4b81b05787fb6247bf6d46231bc3fd5c4ba814542"
-    sha256                               arm64_sonoma:  "80ab6308a6188ebdd38c90fc2fa6517916c7f97a8ec88816b6ccfc15ea0965b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "acc069a3dde5140c1f1ac29fdccb12465bdf18b97515674d555b79a3378aa5d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7988bbaca4851e392aa91613c50ae4c70a3e81cccddf33ac0d874278fe417307"
+    sha256                               arm64_tahoe:   "168359dac0b9f0fb5a6b195562061059bf285d50f56b19a0ab75d706e5304270"
+    sha256                               arm64_sequoia: "67187c24a92f0737ee7a0db45a1d1e9307c5a5aaa32da592f071d8b769900863"
+    sha256                               arm64_sonoma:  "fdeeb57d87b9c5f8ed968234216b5fa4d34dfefd63b7362afcded18cc2c75d2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad7c6b88634934731f9c74ee7abafbd164cac84d92f2e4b1848aa63cc316081c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8fe09cc9ba110d67fc55fb51aaccb0b4cfa0ee5293a483dc9ffe21ca05b1992"
   end
 
   depends_on "pkgconf" => :build
