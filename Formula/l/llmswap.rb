@@ -20,6 +20,7 @@ class Llmswap < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
+  depends_on "libffi"
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "openssl@3"
@@ -384,6 +385,9 @@ class Llmswap < Formula
   end
 
   def install
+    # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+
     venv = virtualenv_install_with_resources(without: "hf-xet")
 
     resource("hf-xet").stage do
