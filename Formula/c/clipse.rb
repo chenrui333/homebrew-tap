@@ -23,7 +23,9 @@ class Clipse < Formula
     assert_match version.to_s, shell_output("#{bin}/clipse -v")
 
     test_string = "Homebrew clipse test"
-    system bin/"clipse", "-c", test_string
-    assert_equal test_string, shell_output("#{bin}/clipse -p").chomp
+    with_env(XDG_CONFIG_HOME: testpath/".config") do
+      system bin/"clipse", "-a", test_string
+      assert_equal test_string, shell_output("#{bin}/clipse -output-all unescaped").chomp
+    end
   end
 end
