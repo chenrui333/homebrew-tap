@@ -7,6 +7,13 @@ class Clipse < Formula
   head "https://github.com/savedra1/clipse.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
+
+  on_linux do
+    depends_on "libx11"
+    depends_on "libxfixes"
+    depends_on "libxtst"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
