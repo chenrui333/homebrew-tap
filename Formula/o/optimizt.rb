@@ -5,6 +5,15 @@ class Optimizt < Formula
   sha256 "eb7fbfe1cacbc61eecf9fa598d4e09d25448827246e00a999553da779ba4d1d2"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "c4e73326dbf149667b1f3c71915c81fe06af45dc2a6d3b5c76c5c4ad152e47fa"
+    sha256 cellar: :any,                 arm64_sequoia: "7d427c5c4e44b5e0674fd8c21ce21991c2b3c380eb5c0c308965c0828adf6bd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d427c5c4e44b5e0674fd8c21ce21991c2b3c380eb5c0c308965c0828adf6bd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d6ee49f8237d55234244320114f6314181afadee17afd0ff10cb9ed4a71d400"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70f5be2bb3106d9b2b945a7df97977b98e8e7bc43f821521d36fac4eabecc982"
+  end
+
   depends_on "gifsicle"
   depends_on "guetzli"
   depends_on "node"
