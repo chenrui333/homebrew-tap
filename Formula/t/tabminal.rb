@@ -16,7 +16,7 @@ class Tabminal < Formula
       cd libexec/"lib/node_modules/tabminal" do
         system "npm", "rebuild", "node-pty", "--build-from-source"
       end
-      rm_r prebuilds
+      rm_r prebuilds if prebuilds.exist?
     elsif OS.mac? && Hardware::CPU.arm?
       rm_r prebuilds/"darwin-x64" if (prebuilds/"darwin-x64").exist?
     elsif OS.mac? && Hardware::CPU.intel?
