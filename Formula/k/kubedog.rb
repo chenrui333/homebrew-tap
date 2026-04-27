@@ -9,6 +9,15 @@ class Kubedog < Formula
   license "Apache-2.0"
   head "https://github.com/werf/kubedog.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07ad2b5e5d25248723385f7e0a817f767a9cbbf705f4fc01edaa4e740b021ab0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2eae69e078441af400ba4982e7545ecb776ed8448084d74514d45cb7ebc98cd4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9276ada77605111dbad34a6b90672a2d5fb7162c064a182acfb567dc4a9e07f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bcd0b08840c52474f48dc99b617d264f12140cf76de6bf42aa56cbdd6e52b1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "630095ea36043d856ceb261208eaa310e7ce2e8b37b97ceb3d65fec732288c83"
+  end
+
   depends_on "go" => :build
 
   def install
