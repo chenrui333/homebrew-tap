@@ -6,6 +6,15 @@ class Snipt < Formula
   license "MIT"
   head "https://github.com/snipt/snipt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "378f31ee8af8f9e145e2cfc6f57ec09dfd85563304a3e52a4ba9b1e05b80a14b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98a68b23d5df305214fb8498383b0387af19526948131c290d9bb4c6350bb691"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2761f232e421cba0ae648ea35f4bcf7fb6e1c2eb3b070d9069e0b83d7a0de31a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f543404f3592e889a65f0267629765c9cc87ab8af506ce1b00c56464a8b2cb9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b41ab2d47a5513c3ee6fbcc4bdbcf03b7ceea050eb30fd4dfac9cb90449ecad"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
