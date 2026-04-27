@@ -7,6 +7,15 @@ class WutCli < Formula
   sha256 "a2b812b36a4dd70798c672d536233261c9265246494769743ae25acb33a90186"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "34c6e87f4aff65e843b03b5a3f6d36d35f3012ab7433fff73af4c69c8cd77205"
+    sha256 cellar: :any,                 arm64_sequoia: "06b04bcf1f244aa4671c2e7ab3930c09d85e9caa491afdf420cbd3272bc9aa64"
+    sha256 cellar: :any,                 arm64_sonoma:  "3dd896fe05690cf0d1ebe556f8a65db4015c3fb10f5473c4d6246c97f81b2e22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91173f479b2eeebda7e177ff039b31b413ea71eff4ca49451d3dcc60857c556b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f07d64298d21a2188ba4acadb8027cdd79288ab01186c2ff9ec601e68e9e028"
+  end
+
   depends_on "rust" => :build # for jiter
   depends_on "certifi"
   depends_on "pydantic" => :no_linkage
