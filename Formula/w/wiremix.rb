@@ -22,6 +22,6 @@ class Wiremix < Formula
   end
 
   test do
-    assert_match "wiremix #{version}", shell_output("#{bin}/wiremix --version")
+    assert_match "wiremix v#{version}", shell_output("#{bin}/wiremix --version")
   end
 end
