@@ -11,7 +11,13 @@ class Wiremix < Formula
   depends_on :linux
   depends_on "pipewire"
 
+  on_linux do
+    depends_on "llvm" => :build
+  end
+
   def install
+    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+
     system "cargo", "install", *std_cargo_args
   end
 
