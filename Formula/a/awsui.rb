@@ -8,6 +8,16 @@ class Awsui < Formula
   license "MIT"
   head "https://github.com/junminhong/awsui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55e891794e520713242a0e7002e489fc87fe8e8ffdca0dd16cdba024cea6a560"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55e891794e520713242a0e7002e489fc87fe8e8ffdca0dd16cdba024cea6a560"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55e891794e520713242a0e7002e489fc87fe8e8ffdca0dd16cdba024cea6a560"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b797cf2c2486fe79f774fcbbedbf8d1ff67144299f6da7f57b8ae10a2b3e6f89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dd934a211cf824649eafaad1758910e467c2d3df4e71f92969d7301e46d8057"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dd934a211cf824649eafaad1758910e467c2d3df4e71f92969d7301e46d8057"
+  end
+
   depends_on "python@3.13"
 
   resource "linkify-it-py" do
