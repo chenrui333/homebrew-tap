@@ -1,18 +1,18 @@
 class ViMongo < Formula
   desc "MongoDB TUI designed to simplify data visualization and quick manipulation"
   homepage "https://github.com/kopecmaciej/vi-mongo"
-  url "https://github.com/kopecmaciej/vi-mongo/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "f22fb09b6f5d8439663142dcc02039b788c59aa9ffdeb32a96c2e2dddc360ffe"
+  url "https://github.com/kopecmaciej/vi-mongo/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "298b6553a576716086def2828588552cfd11c4ca783b53b5c35659c5e73fb06c"
   license "Apache-2.0"
   head "https://github.com/kopecmaciej/vi-mongo.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad06addbb6fefc6074f3f43c828ed1e0f611f85670b9205bbe1c847e1732e150"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad06addbb6fefc6074f3f43c828ed1e0f611f85670b9205bbe1c847e1732e150"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad06addbb6fefc6074f3f43c828ed1e0f611f85670b9205bbe1c847e1732e150"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffdd02f8c61d917ac071d0623acf95f151a1421ca585decd4af5db3daff5a4af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1239b55a7d592e6187500e2c425853a3f2520840153e19c2602c64c7de91ab30"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "324d0f865417520a941ec49331d95f8b74d586276355a39b8a7539fa569c7ca1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "324d0f865417520a941ec49331d95f8b74d586276355a39b8a7539fa569c7ca1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "324d0f865417520a941ec49331d95f8b74d586276355a39b8a7539fa569c7ca1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b881078a4d018d3b35c4e5df47be647eeff30931be71036fce3dccfebf188778"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "316712664d81ccdd0fcd6abbbdf2afc406360df36c3aea866a195abf8cefa011"
   end
 
   depends_on "go" => :build

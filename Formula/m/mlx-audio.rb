@@ -3,32 +3,26 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/9d/76/a74893a84caf7f36e401bedd5ccc5342299849a21a6fdf5ef68805d330bd/mlx_audio-0.4.2.tar.gz"
-  sha256 "f728221c9664dbe33bd13560c710a2bdb2e6898af4a4682c6358f1128aab1086"
+  url "https://files.pythonhosted.org/packages/06/0f/5a6c43517d5c7a7200674c993df13c80d9b10311d83a2f83b45f028b3fff/mlx_audio-0.4.1.tar.gz"
+  sha256 "e16260255324feb603d70925584d48421c7581943ec9a71f36d149cdbab302d8"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "150191095a60868f22c259eb4c479b9401f969400feb87b0daf4616c561e4560"
-    sha256 arm64_sequoia: "78a0d575daf048edf7aba274710ae5a65f127ec9969665e1c78e4669d80671fb"
-    sha256 arm64_sonoma:  "5734f87e6ac73b08119f310514cbe00c1100bcedb23f892473c91a7e84d56db8"
+    sha256 cellar: :any, arm64_tahoe:   "fbee24078b68f5d3b5c1b71c00e199ade2f478d8c2b348e396af4d45609ef5b8"
+    sha256 cellar: :any, arm64_sequoia: "b97657ace4288799246bf27c342030e95acdd953b97ec42c21a74ab3db2bff80"
+    sha256 cellar: :any, arm64_sonoma:  "4d8fa24ec0916eeacceec91729706992c666459ee6668f9dc4fd0ec009b441b7"
   end
 
-  depends_on "cmake" => :build
-  depends_on "pkgconf" => :build
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
-  depends_on "gcc" # for gfortran
-  depends_on "libomp"
   depends_on "libsndfile"
-  depends_on "llvm@20"
   depends_on macos: :sonoma
   depends_on :macos
   depends_on "mlx"
   depends_on "mlx-lm"
   depends_on "numpy"
-  depends_on "openblas"
   depends_on "protobuf"
   depends_on "python@3.14"
 
@@ -83,15 +77,8 @@ class MlxAudio < Formula
   end
 
   resource "llvmlite" do
-    url "https://files.pythonhosted.org/packages/74/cd/08ae687ba099c7e3d21fe2ea536500563ef1943c5105bf6ab4ee3829f68e/llvmlite-0.46.0.tar.gz"
-    sha256 "227c9fd6d09dce2783c18b754b7cd9d9b3b3515210c46acc2d3c5badd9870ceb"
-
-    # Fix for setuptools error > 81
-    # PR ref: https://github.com/numba/llvmlite/pull/1400
-    patch do
-      url "https://github.com/numba/llvmlite/commit/e6a4cf1bd9b1ac213124ef125cae44896ed9885c.patch?full_index=1"
-      sha256 "9d23e9490600eb9076a12c808e3222a5b5c25fef200b4e97703d8fea069fd6d3"
-    end
+    url "https://files.pythonhosted.org/packages/95/ae/af0ffb724814cc2ea64445acad05f71cff5f799bb7efb22e47ee99340dbc/llvmlite-0.46.0-cp314-cp314-macosx_12_0_arm64.whl"
+    sha256 "d252edfb9f4ac1fcf20652258e3f102b26b03eef738dc8a6ffdab7d7d341d547"
   end
 
   resource "miniaudio" do
@@ -105,8 +92,8 @@ class MlxAudio < Formula
   end
 
   resource "numba" do
-    url "https://files.pythonhosted.org/packages/23/c9/a0fb41787d01d621046138da30f6c2100d80857bf34b3390dd68040f27a3/numba-0.64.0.tar.gz"
-    sha256 "95e7300af648baa3308127b1955b52ce6d11889d16e8cfe637b4f85d2fca52b1"
+    url "https://files.pythonhosted.org/packages/3d/8a/77d26afe0988c592dd97cb8d4e80bfb3dfc7dbdacfca7d74a7c5c81dd8c2/numba-0.64.0-cp314-cp314-macosx_12_0_arm64.whl"
+    sha256 "f565d55eaeff382cbc86c63c8c610347453af3d1e7afb2b6569aac1c9b5c93ce"
   end
 
   resource "platformdirs" do
@@ -130,18 +117,18 @@ class MlxAudio < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
+    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
   end
 
   resource "scikit-learn" do
-    url "https://files.pythonhosted.org/packages/0e/d4/40988bf3b8e34feec1d0e6a051446b1f66225f8529b9309becaeef62b6c4/scikit_learn-1.8.0.tar.gz"
-    sha256 "9bccbb3b40e3de10351f8f5068e105d0f4083b1a65fa07b6634fbc401a6287fd"
+    url "https://files.pythonhosted.org/packages/a8/25/01c0af38fe969473fb292bba9dc2b8f9b451f3112ff242c647fee3d0dfe7/scikit_learn-1.8.0-cp314-cp314-macosx_12_0_arm64.whl"
+    sha256 "6b595b07a03069a2b1740dc08c2299993850ea81cce4fe19b2421e0c970de6b7"
   end
 
   resource "scipy" do
-    url "https://files.pythonhosted.org/packages/7a/97/5a3609c4f8d58b039179648e62dd220f89864f56f7357f5d4f45c29eb2cc/scipy-1.17.1.tar.gz"
-    sha256 "95d8e012d8cb8816c226aef832200b1d45109ed4464303e997c5b13122b297c0"
+    url "https://files.pythonhosted.org/packages/ed/a6/d05a85fd51daeb2e4ea71d102f15b34fedca8e931af02594193ae4fd25f7/scipy-1.17.1-cp314-cp314-macosx_12_0_arm64.whl"
+    sha256 "45abad819184f07240d8a696117a7aacd39787af9e0b719d00285549ed19a1e9"
   end
 
   resource "sounddevice" do
@@ -185,10 +172,18 @@ class MlxAudio < Formula
   end
 
   def install
-    ENV["LLVMLITE_SHARED"] = "1"
-
+    wheel_resources = %w[llvmlite numba scikit-learn scipy]
     venv = virtualenv_create(libexec, "python3.14")
-    venv.pip_install resources
+
+    venv.pip_install resources.reject { |resource| wheel_resources.include?(resource.name) }
+
+    wheel_resources.each do |resource_name|
+      wheel_resource = resource(resource_name)
+      wheel_resource.stage do
+        venv.pip_install Pathname.pwd/wheel_resource.downloader.basename
+      end
+    end
+
     venv.pip_install_and_link buildpath
 
     mlx_lm_site_packages = Language::Python.site_packages(venv.root/"bin/python3")
@@ -216,7 +211,7 @@ class MlxAudio < Formula
       from importlib.metadata import version
       from mlx_audio.stt.generate import format_timestamp, format_vtt_timestamp
 
-      assert version("mlx-audio") == "0.4.2"
+      assert version("mlx-audio") == "0.4.1"
       assert format_timestamp(61.234) == "00:01:01,234"
       assert format_vtt_timestamp(61.234) == "00:01:01.234"
     PYTHON

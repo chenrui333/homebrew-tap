@@ -1,21 +1,21 @@
 class Clawhub < Formula
   desc "Install, update, search, and publish agent skills"
   homepage "https://clawhub.ai"
-  url "https://github.com/openclaw/clawhub/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "14d97a228d883eda32eaf3c50a4e3e4aa34f0970052ba95a3a970595a4d0e839"
+  url "https://github.com/openclaw/clawhub/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "203588e0c789aabbd765762a66879f3a8dbf5c4a2cfee88776d0dab0f429e68f"
   license "MIT"
   head "https://github.com/openclaw/clawhub.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5ab7bc89937340697e288f9ee5a744b62beb231ee7bbcdd8b174938df949cc9c"
+    sha256 cellar: :any_skip_relocation, all: "ba196092bbdb705cad67ee1bbfea0330c9397d3c7c29b0925fe0aff04e69c675"
   end
 
   depends_on "node"
 
   def install
     cli_dir = buildpath/"clawhub-cli"
-    cp_r buildpath/"packages/clawhub", cli_dir
+    cp_r buildpath/"packages/clawdhub", cli_dir
 
     Dir.glob(cli_dir/"src/**/*test.ts").each do |file|
       rm file

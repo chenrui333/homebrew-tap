@@ -1,18 +1,19 @@
 class Oyo < Formula
   desc "Step-through diff viewer"
   homepage "https://github.com/ahkohd/oyo"
-  url "https://github.com/ahkohd/oyo/archive/refs/tags/v0.1.30.tar.gz"
-  sha256 "9454a46fb1b7189151c3d264df88e6b0569df965f560d47dadc931e861158c2f"
+  url "https://github.com/ahkohd/oyo/archive/refs/tags/v0.1.24.tar.gz"
+  sha256 "5283d39438fa71e25a096ade1c755ca80f3eb3f2adbadd7b56936e1e83f3f197"
   license "MIT"
+  revision 1
   head "https://github.com/ahkohd/oyo.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bb3cc343b6eebdcedeb7408ea5bf7676e1fd8d746e45dfdffdfd95412e6a5ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29530d8adb5f7349972fc58ff903568f1e80a709cc082567145a48e56a841c9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71992799ff4cb43fb2f0f7c8ade7ad100a9b52d69223e0ead900efdf242f420b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcbe16434b26ded1eabc240a3bce3771d834cd0d7687e5efbedcb776d10ae142"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f4a9d436cace4d37f063b300aff4fba546a43a9ab57fd97d7aead0578868fb6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00a74f7913efbb889dc5cefe96a8b4c89d4c1637e28495d40ef828a9841f6590"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78572db2028765541f494d004a6a6f48dabacd98aa8401cb00618eccdea4543d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2345a3b03f5e9543a076bf40f253cd9abdd88a40f8a047342342fa33eadc6160"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c79e8b7a9e7c99b5bb859337b69e3d578d8997cebb396e88ffffedb1db1180a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50dbceb8211d3b5f668b9838f50fa065f51a47b2b28ab1f94893a2cb563e53bf"
   end
 
   depends_on "pkgconf" => :build

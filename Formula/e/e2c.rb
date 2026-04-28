@@ -1,18 +1,19 @@
 class E2c < Formula
   desc "TUI application for managing AWS EC2 instances"
   homepage "https://github.com/nlamirault/e2c"
-  url "https://github.com/nlamirault/e2c/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "305211335f7c1cdebfcca8ed0fe51028c28e015f5ad17453cde33d1da5f76381"
+  url "https://github.com/nlamirault/e2c/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "88eae361fc6d8c843a82d889f79f89798b65b6fdc72c2e3ac2b4f6a0cf2af45b"
   license "Apache-2.0"
   head "https://github.com/nlamirault/e2c.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c89cbafb51dda52fb0189c4b775746d6ab74b166566abbdb488c511a9d81372"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c89cbafb51dda52fb0189c4b775746d6ab74b166566abbdb488c511a9d81372"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c89cbafb51dda52fb0189c4b775746d6ab74b166566abbdb488c511a9d81372"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5456832f56e3f53f7f8f67d6fcb48c9fe4b24729c20f9504f51376145ce33139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8825cd2ff25c4707526ce9ce657b0b9d60cf687e5c1a963326b75f24277d3208"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ba1e1cc888de05e26c56e3e41c2b70baa3baae3aaa7531435c3a8e6be6846c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ba1e1cc888de05e26c56e3e41c2b70baa3baae3aaa7531435c3a8e6be6846c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ba1e1cc888de05e26c56e3e41c2b70baa3baae3aaa7531435c3a8e6be6846c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ded030746b73bab7158bbbc61e7d207a3076d18282c8a0a5f1a905239b0debe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "845c55645573a0333e6c23c227d66dd3be056d8ab282a2fb0f7149bce903ca8e"
   end
 
   depends_on "go" => :build

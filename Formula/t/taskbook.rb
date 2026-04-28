@@ -1,18 +1,18 @@
 class Taskbook < Formula
   desc "Tasks, boards & notes for the command-line habitat"
   homepage "https://taskbook.sh"
-  url "https://github.com/taskbook-sh/taskbook/archive/refs/tags/v1.3.4.tar.gz"
-  sha256 "6ac61632ef47ca49d40b102dda00fb482f6f7597a758eea31d9c6cef0ece48a8"
+  url "https://github.com/taskbook-sh/taskbook/archive/refs/tags/v1.3.3.tar.gz"
+  sha256 "86e63a776a11e4b597f9b3c453f7712953eff186fd5462c555611cb035210f5c"
   license "MIT"
   head "https://github.com/taskbook-sh/taskbook.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd8a95f898435cff98a2f632840495c6091d133d841e7805ac6e755b5e5c8174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a486f7e68cd696d2193afb4de6e7d87ddb90b6f41d217e8c79f76c7efaba8f47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfe4dc1533af4955851934da4cc3bca7aa544a8eb9ab3041d52a0607df982588"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a94be314e4873c5bc4fbe3ee45a0f816a918e834dfc39915eb119c72edc4dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c06120f8e2fe456204b8abdade23c406d9a0574dcf66daf83d5444be2d62bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03590370bac49137987e3f0abb1d7b2449bc80f20670c066f601d4bed622e9a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6f0e9e870e3226abe4c6cb3572d883fa3ac2a62289eec07dc026ab9e274b722"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6798cbe0527fa683dd62da9b6fbfe3c7165e89e890253c5daafa7ddcddf316e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3a40d7cc5662bad83bb3fdc7ab9de48cd1c96326dbc2b4a2b97efad82c3df5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0b76339e88ee1a0181ea45272164f09f1b64580d4f2bfd718df57c862bd4813"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class Vortix < Formula
   desc "Terminal UI for WireGuard and OpenVPN with real-time telemetry"
   homepage "https://github.com/Harry-kp/vortix"
-  url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "12ad1807b9bb7a4f79f2305740d8a7751d2edb95878ab2992f4a21033ca74161"
+  url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "680d4a5456be0bf7875ed65c36798db751c8ad1cbbcfa81b6ec714845ec311ec"
   license "MIT"
   head "https://github.com/Harry-kp/vortix.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8819a2bab0dbb75885891cb2896eeac1130d40699165ccfe2c53537b8f8e8fab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bacb88f865efc8cedf84bc0af45d23e76f2773f0749ad43a4452bc21f747e2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23860c481823321084aac79bfef96e987e92e043e7587420553c872e3b72c33b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9b3136b5d7bfddd3738a726d8d5e0e20714d3b6d556853c93e50d9e58beb024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52599908df2e84a8653f0d9c59a03e3c74d9457cfecddbf281e464d5569191bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1ff59828c2912c4d80e2cf10f578c2346ee1ecd0051781759b262c1b7fe2df8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48f74a01b3e19a3ab0b876faa3dd9f1f27a66e3abd838e680829df41916b525b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f5718d5564f2f5fbf8f485e6774f7c765bfbf4a17f51f6e9310e92800bfdb89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab3a6889136c0fe923c3a81a881e4935ca8d933276636d8f1fcec305e2e5e2e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a353df7e64ac35b742d23e74905d3e4df1316cd0f17c82667db7a8b65181912"
   end
 
   depends_on "rust" => :build

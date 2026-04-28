@@ -1,18 +1,19 @@
 class Jarl < Formula
   desc "Just Another R Linter"
   homepage "https://jarl.etiennebacher.com/"
-  url "https://github.com/etiennebacher/jarl/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "7b1fd11adc3924fa71f3a4202a2a4a87f1c8d62944160adedba65eb8f01d1cda"
+  url "https://github.com/etiennebacher/jarl/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "a7f88a222ad47356ac29059e39faa8f1b24cc46f311c0e759b03dff1aeb31b4a"
   license "MIT"
   head "https://github.com/etiennebacher/jarl.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1f71774eb20e31455fd0934700403932811991d8df403e7249a65ef3c6e0ada"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebe2afff100048ae17ba00107c12662fb85a020e5b5022e589b7b6a66b93803f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abf93122df4083f3aa02ce335ae4a85ea2bbd7972dc993451ec335eef6284f94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00d335824a9a036a91b83a1d333b82e1e086152cbca19886d882aecfc5cfded6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4824f7e015241dcc34b144454cf686672785a96109350d9080efefb2690eb058"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "923d8f158510f528a359acc13a72f19ee361f1b7555dc9d02209d09f933f3bde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeb955d30766cae889d708dedd6452ef9344d0def8dbb85a67c447f80be13ef7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb72931d1996d5cdf0ff11a85d5f0a697a8a522377003d12843025f522d0e31c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3369a0b3a0c1e665b053c18e40572d8f420479b97b6e01f0480e64f6b0f72f27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a4cfcd3fdd010118bafcc43b27af8bf24c61bf80caca7f03b449ef1714d954"
   end
 
   depends_on "rust" => :build

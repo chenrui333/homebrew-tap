@@ -8,12 +8,11 @@ class Turm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d2073b762676bf2d5b3c7eb092de14fe62f0376f159081d25b2e91928e3a939"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85cb8a6b6b30de3b94877edf5dec6ee357849d06d727d4e26294bd937a79b8c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dc290d644aa54180fced5ea28dd770b3ed78e7301dbf59c24e40b59b1f26cfa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d7f319f821397f51d102fa9332b111428843d2bdf9995bf94b26f48652ee674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4718d2daf53a07eb35b728d510375800ae0250394a797028c764a2ba1a180876"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4aab6d72ebf4b4354c09dadc90c647260876b26b03ed8b9f84fce6fb8d1ce4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8355fc10a6ef805dfa88538bba61bcd68013653588b1fd848511d7442055fd24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdba44cb9bf528f3ff405548638f6296459c4b3c37ed7b8498e3377852c94f7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "466d7ff93d17d2c74d4c194b606512699080cab09c4641484b299c48b6f2591d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e6e9940863bf280cd341865f3b805f22beb390b8c808b8c52b3d43503ae8b17"
   end
 
   depends_on "rust" => :build
@@ -26,9 +25,5 @@ class Turm < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/turm --version")
-
-    output = shell_output("#{bin}/turm completion bash")
-    assert_match "_turm()", output
-    assert_match "complete -F _turm", output
   end
 end

@@ -1,18 +1,18 @@
 class Gsh < Formula
   desc "Battery-included, POSIX-compatible, generative shell"
   homepage "https://github.com/atinylittleshell/gsh"
-  url "https://github.com/atinylittleshell/gsh/archive/refs/tags/v1.10.3.tar.gz"
-  sha256 "388dc40c0efde2d1a9fcbaa438569d4d7ab2fbbda41ed00bd56c0397c4dd95d4"
+  url "https://github.com/atinylittleshell/gsh/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "47a1dd4506a24e59862d9dc2862cc091e1bb26e5eada18d4b82aaeb991460dfa"
   license "GPL-3.0-only"
   head "https://github.com/atinylittleshell/gsh.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9c18376d50a12742dfa28aec3d9c945e02838464d0e5fb711b2c53e6f848a77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9c18376d50a12742dfa28aec3d9c945e02838464d0e5fb711b2c53e6f848a77"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9c18376d50a12742dfa28aec3d9c945e02838464d0e5fb711b2c53e6f848a77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "26eed9942d0b282ca92b5b770a0c07797d933efc22c15ed8372337baf600c396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d65a6d8d2dec7caaa79671c004f75431280d9a6006b1de1ddceced3b19d551"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc311995e855ea5d86682c2f46fab08d367c96d9a61c29ea1401a479233ead86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc311995e855ea5d86682c2f46fab08d367c96d9a61c29ea1401a479233ead86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc311995e855ea5d86682c2f46fab08d367c96d9a61c29ea1401a479233ead86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e35cfe7242f26f1d2d85c627cf42538931ebcb178d75eb43de83d4c8d7b6ace"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97b053d390103339b622e2dde587299304e8989175c27c9e9af465360bc1fd09"
   end
 
   depends_on "go" => :build

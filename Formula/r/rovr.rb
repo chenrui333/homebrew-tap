@@ -3,18 +3,18 @@ class Rovr < Formula
 
   desc "Post-modern terminal file explorer"
   homepage "https://github.com/NSPC911/rovr"
-  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "a0b68aca5b99b68a79c38342355608abb90df015678179e18216cad3bf3dd5e1"
+  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "540c703b84211cc919524717592a223cd7f4ec87b17d0e55c55dc151f897d8ac"
   license "MIT"
   head "https://github.com/NSPC911/rovr.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "d664d41b157aa4d8b6e2f74eb2d4db035b642f33f630bd3e1354c48533182977"
-    sha256 cellar: :any,                 arm64_sequoia: "0d0b6b01830c6f5dd24d35a7cf1f2b3f1807e400ac29dde030a6a9314c836315"
-    sha256 cellar: :any,                 arm64_sonoma:  "e328f6c7159ff68ec1aa384d94db29420834c85e02fdf51a1abdecd1cc583f62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa774b04244b52b7ffc57efc24eaabf7d8624e292f60d6590cd80983928fc9c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d8e15cb40e4ea7cd9675323d522ed49b2ea232991155dae29aa92cf5011f88"
+    sha256 cellar: :any,                 arm64_tahoe:   "96c3d182c691f46ba7582c078cb1dfc3292989351e7c7e1b60a1e1279be946f8"
+    sha256 cellar: :any,                 arm64_sequoia: "bc86947aed493076202be03ce2210b952f55c9fb17ac88e635859e9c506aa732"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f22289e16b79fe1e906efcf9c3dbba344ce096b4495ac73332b366ebb4fa4a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56ae2398f717f27beaf4d0552196aa8414eaac87866fdb73b403d9e4c2fd96ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47bf2eef7870c33c0dbc25bf3bcd4f944698a7c2f99b9a7fbf991a6aa093210"
   end
 
   depends_on "pkgconf" => :build
@@ -176,13 +176,14 @@ class Rovr < Formula
     end
 
     virtualenv_install_with_resources
+    generate_completions_from_executable(bin/"rovr", shell_parameter_format: :click)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rovr --version")
 
     output = JSON.parse(shell_output("#{bin}/rovr --config-path --config-folder=#{testpath}"))
-    assert_equal %w[custom_config custom_styles logs persistent_state pinned_folders], output.keys.sort
+    assert_equal %w[custom_config custom_styles persistent_state pinned_folders], output.keys.sort
     assert_equal "config.toml", File.basename(output["custom_config"])
     assert_equal "pins.json", File.basename(output["pinned_folders"])
     assert_equal "style.tcss", File.basename(output["custom_styles"])

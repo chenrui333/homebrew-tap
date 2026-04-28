@@ -1,18 +1,18 @@
 class Cdx < Formula
   desc "Use Codex more easily, even away from your desk"
   homepage "https://github.com/ezpzai/cdx"
-  url "https://registry.npmjs.org/@ezpzai/cdx/-/cdx-1.0.12.tgz"
-  sha256 "4365718a6a15cae9300a42cb508abffdba0edddf69fe6b9d21feffd972d9c3cc"
+  url "https://registry.npmjs.org/@ezpzai/cdx/-/cdx-1.0.7.tgz"
+  sha256 "cbeb0c7770b65488120edcbbd88a828b6165ba8b37e049a9a009fe2736626124"
   license "Apache-2.0"
   head "https://github.com/ezpzai/cdx.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "ee1a831809b37ef43056ef7073302a086d2a39e552f407bac8e23de4ef354e15"
-    sha256                               arm64_sequoia: "de6096129fac742bd761d6ad06c4bc9843b6b1fdbfd034d2975ba3ba498834b7"
-    sha256                               arm64_sonoma:  "a675f4635e34b6588bd54d951972c069469ef260373243ec6b507441849b8b2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9f67b0c6bbdeddd6c3c43f6a2bf2532573af0e6d499fb64a022b6356d3bde5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a23bcc32695dd02e3512f0947e58450d8ce652393950665bcae0ba95fe30294a"
+    sha256                               arm64_tahoe:   "6232301cc9ec7a2631e22b7ee2b745c799184ea95095d4532f364de09619a1d0"
+    sha256                               arm64_sequoia: "015927a461bf5d9018a3cdde78a7ca1f8fec805b8e73ff874d734a62e17b089a"
+    sha256                               arm64_sonoma:  "2610ef1a49cf9f4ebc46dfb9c242a45f39b519c5c6fc55aa05468392500b8f83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ba774be582f2d1062257cc24343a3eff359bc8d77064deb3fb7ada188b06daf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36daaeb454af7d27578727d1fe87bacd9ae340fab17effe424757422b86231f7"
   end
 
   depends_on "node"

@@ -1,18 +1,18 @@
 class Sonar < Formula
   desc "CLI tool for inspecting and managing localhost ports"
   homepage "https://github.com/raskrebs/sonar"
-  url "https://github.com/raskrebs/sonar/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "9e987cc9f4c538a202add26817e2396e697a88f73bcb1b76fa1aa6d501a4f4e2"
+  url "https://github.com/raskrebs/sonar/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "9f6f6dc68497196275a1aecd15622837b22319a561989bfdb71ab6e536ba3657"
   license "MIT"
   head "https://github.com/raskrebs/sonar.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fcf7fc4752001903d2e43f31ca7670d2f4d07c12e0fb1583559fd7da2bc5e51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fcf7fc4752001903d2e43f31ca7670d2f4d07c12e0fb1583559fd7da2bc5e51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fcf7fc4752001903d2e43f31ca7670d2f4d07c12e0fb1583559fd7da2bc5e51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a841bbdff78f9f846e843562e98af84bc694c0c3f9453c37f9a19244d4fb06ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0db476d4aeee38e0cc47e197ab6b0b9b6164be9d874c3e3d0d4a5051ed0163b0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3115c38f85405812866eb7abddbaaa46c02ed18ceb667cd945359db24a2f26d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3115c38f85405812866eb7abddbaaa46c02ed18ceb667cd945359db24a2f26d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3115c38f85405812866eb7abddbaaa46c02ed18ceb667cd945359db24a2f26d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef5e4ea0216752229b5f82a669f0645d17faae723c602af684c84b11ba56c847"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a49a9da5425b09da42a03599f2f9883883ca07c46f7c68bd3498780ceee09cf4"
   end
 
   depends_on "go" => :build
@@ -20,10 +20,12 @@ class Sonar < Formula
   def install
     ldflags = "-s -w -X github.com/raskrebs/sonar/internal/selfupdate.Version=v#{version}"
 
-    system "go", "build", *std_go_args(ldflags:)
-    generate_completions_from_executable(bin/"sonar",
-                                         shell_parameter_format: :cobra,
-                                         shells:                 [:bash, :zsh, :fish])
+    cd "cli" do
+      system "go", "build", *std_go_args(ldflags:)
+      generate_completions_from_executable(bin/"sonar",
+                                           shell_parameter_format: :cobra,
+                                           shells:                 [:bash, :zsh, :fish])
+    end
   end
 
   test do

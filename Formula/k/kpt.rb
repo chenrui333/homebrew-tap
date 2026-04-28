@@ -1,8 +1,8 @@
 class Kpt < Formula
   desc "Automate Kubernetes Configuration Editing"
   homepage "https://kpt.dev/"
-  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.62.tar.gz"
-  sha256 "1198a5f397cd96424bee681970d1c4edf299c4c583015de1a6cba8668026b28d"
+  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.61.tar.gz"
+  sha256 "308e809ac79c5cc72672a0119a654805ee151a94659542166194d1660f69c4c9"
   license "Apache-2.0"
   head "https://github.com/kptdev/kpt.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Kpt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7decda1e649fee5adba5be4d686996cf435d2d420b73aad5185499bfd71bcb54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4118e600fcbae8d63b822d2b23ddc95541072f5a156958ea98da19edb6861f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09769a920c3f48025c051cfee4829e3ac1590bacd5388d746eb4d8b217649940"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc865c825b48420a738b98417c23cd81acc71771b06436838c0f393af78b3ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a344e497e19cac1deeb248712b6e22d9ef3cbb21e0034d4a64002e46b3737ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63daef8310a81522f7e9ffc4b044ebac08ecf39913b5976f1613fa10143af8ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23d81618a8944cd8bffc185fea24145c7989221c0dee73282e3d918d379961e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "233a23c68e50f6f48507034b3bd12b63793833feb9d5aa4eee4330a17307b525"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44cf4bec6225d7539fec46d674917363154a40554973a4be350e99fd7e258b27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ea811a79c7e97dad36ff9c71b6b96ddf5b9754c633f88dc813e8f982392c383"
   end
 
   depends_on "go" => :build

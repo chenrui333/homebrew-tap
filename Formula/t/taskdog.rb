@@ -3,18 +3,18 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.18.6.tar.gz"
-  sha256 "fc6f0a2b067f22c72b00eb200d7cf6a87b58bcee9b9c2fde0d78c6e703d3e656"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "0aeaef611960f9ffb63f868f11058bbde98b6e333d30d76ece13fc79eb249fd9"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "bffb98cf57dff97746b1d47588cbb5b932ee99a305d76d1a1c05c64198eda24a"
-    sha256 cellar: :any,                 arm64_sequoia: "b1a42a5923b32729a6f7aff243f0406cfefba745673fdd7fe49a849808750d59"
-    sha256 cellar: :any,                 arm64_sonoma:  "7125bf26e23a788840965b1c47fa00efd9df53f0c5a6da6d06f54c5d6de8071d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97f8995d68a4e660991f7da2336cb1c016707243ba6e50553178c0c2ee27abdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6073f3c4d1dcd06095d93d80e8bbcadaa196b936f5ee72ad98839acea1054db"
+    sha256 cellar: :any,                 arm64_tahoe:   "b475c9d21987243fc889147e4a38540052ee0a469f522c6be8b2ed1764c862f8"
+    sha256 cellar: :any,                 arm64_sequoia: "2099737ae045a1bb3a4e8c687d8765bad835576516e2430ad4adb8981970c756"
+    sha256 cellar: :any,                 arm64_sonoma:  "74ce21f18789127379c98bda16d2c64e97688e658a4e0b07f9f6bc75733a948d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7944102249a084dc4ec20de1c435b46a2d49447d56b1ab698a4dec678aedb63e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c8b68e33bf2304b0eba9e5d31dfbb82a307e7b82e15adaf16d219d3f8d3f70f"
   end
 
   depends_on "rust" => :build

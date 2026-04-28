@@ -1,21 +1,21 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.71.tar.gz"
-  sha256 "388e59024fb6130dc9be7bce4826b153d9301605700a454107623f08df00f7bf"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.61.tar.gz"
+  sha256 "3c750de13ed661a2c29d8b0df11addc08f67344f6fa8e70f2f2797d88609ac96"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c8e261bd452eff14dd041fbcfcfa6f43aecaa3d42f2cc09e3a9ac57a7c219d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "687e21c7bd104941874d8e8549846e462cd09e638d6ec6d66774f751c213a0ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b482f0931639ed6aa39577c74896d93648a9bc926b5e95f5ee4dee584e3a535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cff6eb0325a6f161644b831abe4898089681348f355cd0a01d0f3e85d9e13616"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab120ed857062bcfc7f60895857c31e4ed4cdf875b14d6d781fad753fef7ffc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4be6e2c0b265047c642f16a61f81c7789ef7efc2bb44447cd30d4d35584421fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45a6e666abb4f4d42aef491406da26b451485c15540f54a29509f484f3f49b10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32fbc8dc5d4b472c4d6e9fa8878aa9e7cb9dae3d2ef15f22c041f1f1392eec1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2bccb72cc40288472a8a75ed81136b21864d796afcf7ed9db7b019e86b7e0e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63897c48b32599a3c42be0e582dfccb2c10408951095fb3bc33932805746bc8a"
   end
 
-  depends_on "chenrui333/tap/bun"
+  depends_on "chenrui333/tap/bun" => :build
   depends_on "mpv"
   depends_on "node"
   depends_on "yt-dlp"

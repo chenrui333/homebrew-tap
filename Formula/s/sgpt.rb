@@ -1,18 +1,18 @@
 class Sgpt < Formula
   desc "CLI tool to query OpenAI and generate shell commands and code"
   homepage "https://github.com/tbckr/sgpt"
-  url "https://github.com/tbckr/sgpt/archive/refs/tags/v2.20.0.tar.gz"
-  sha256 "a57259f28ad5fec62b2b2e8171768e368aa43577ef7de049e63b2f3f63b2bf1a"
+  url "https://github.com/tbckr/sgpt/archive/refs/tags/v2.19.0.tar.gz"
+  sha256 "cad0ef94629b3f1c889f847bc90233f4837856606f91e4106a4873392f2e2b3c"
   license "Apache-2.0"
   head "https://github.com/tbckr/sgpt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28d63c69a903c864592bdc7ec6f95a94fcc7f2cc2e41dbf02cae5a5e0d689d5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28d63c69a903c864592bdc7ec6f95a94fcc7f2cc2e41dbf02cae5a5e0d689d5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28d63c69a903c864592bdc7ec6f95a94fcc7f2cc2e41dbf02cae5a5e0d689d5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f3c9162418584151ca7eadc5de8467fe4266ec92c54eb1fef763322a32a37e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54262e92c41aee344f3247931f6521f110603a7dbd637f259608242ef148c559"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6f6332573fc1c3614395564e9f53cc389bf2f7b2a941713e9b2bdb9b8da2f63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6f6332573fc1c3614395564e9f53cc389bf2f7b2a941713e9b2bdb9b8da2f63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6f6332573fc1c3614395564e9f53cc389bf2f7b2a941713e9b2bdb9b8da2f63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8525a142621b2c084b218c98c638a9fa29b7de0b778345cd6b9499bcdd6b984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd8c2bf033990eae29b44f7efaeef1f2b2ba1d131e512471dc8846599822e2d2"
   end
 
   depends_on "go" => :build

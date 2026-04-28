@@ -1,13 +1,16 @@
 class Foy < Formula
   desc "Simple, light-weight and modern task runner for general purpose"
   homepage "https://zaaack.github.io/foy/"
-  url "https://registry.npmjs.org/foy/-/foy-1.0.1.tgz"
-  sha256 "cbeb9511db1d1aa35c27e3db281637fa70d41065c65579bbc179eaacce351e46"
+  url "https://registry.npmjs.org/foy/-/foy-0.3.0.tgz"
+  sha256 "275c7e3a8f4a9243dc7d32bbfca008a2f87c0517a6e2bd8b0db9647a5ba5a914"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "da3c3a790feffbbed6012fde61d54a5f68792fee81f48c163e3365928968e867"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "048ef2bb88b689f6eed4b1b86d61fff7f0e7f76492d1e92ad7fa9a6511b7c288"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50d41e8f6a254d8c11bdd616408f4e903eaef44e1204d0781417702041e4ae60"
+    sha256 cellar: :any_skip_relocation, ventura:       "491605b0fce3c12c7827b778e4c45200b0bcec147f704f1003688003281b6e30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec1dbb1d34bbb1399db473f86e83dfccaf54f654b773023ff2cb6ab231f76806"
   end
 
   depends_on "node"
@@ -18,21 +21,23 @@ class Foy < Formula
   end
 
   test do
+    # see test failure in https://github.com/chenrui333/homebrew-tap/pull/485#issuecomment-2701902017
+    ENV.prepend_path "NODE_PATH", libexec/"lib/node_modules"
+
     (testpath/"package.json").write <<~JSON
       {
         "name": "test",
         "version": "1.0.0",
-        "type": "module"
+        "main": "index.js",
+        "dependencies": {
+          "foy": "#{version}"
+        }
       }
     JSON
 
-    (testpath/"node_modules").mkpath
-    ln_s libexec/"lib/node_modules/foy", testpath/"node_modules/foy"
-
     (testpath/"Foyfile.js").write <<~JS
-      import { task } from "foy"
-
-      task("hello", async () => {
+      const { task } = require('foy')
+      task('hello', async ctx => {
         console.log('Hello, world!')
       })
     JS

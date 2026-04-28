@@ -1,18 +1,18 @@
 class Ccboard < Formula
   desc "Unified Claude Code management dashboard for TUI and web"
   homepage "https://github.com/FlorianBruniaux/ccboard"
-  url "https://github.com/FlorianBruniaux/ccboard/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "b6fe42b5ce519e12b39b5c7b29346099bf021eec7a94800a9553496d7321ca6c"
+  url "https://github.com/FlorianBruniaux/ccboard/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "969c4bff66f6ac955098314cb309549aba62d31233e000f8c3b5c91b1c6daa36"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/FlorianBruniaux/ccboard.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27ccf5fe65121b5f0142a0855d76024016f7ea91086d3e1fb00d0cc84a3d43a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd6ae051e9d83c374088ad791c1a8eb39ad01c80adb9de52249125f33a9532a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1013d3910893dac35d9b2e98b18a677c08ea3cedef5cb170845d89962e45b850"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25c7e21d402b3652bb3b82d1a4059bc6a01f8bf183cf177167e2de7cd6f8a36d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65a52dfeec42b1bdc511c928dd3a17cbbe75646ca17fffd580351aa4309a3939"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a550fb523c02705e857a9fb3cc2f3d7282854ba15a80a6bfe188a3066001b16a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35fc71f8773c68221ba58fc87468a521d451c2048400bf8da3065f7dba66c125"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53bf495a04ba31417ab269465fc53ae710f7a5c7862e52968f52e4e98b2dfd6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "235ae0abf7523227acdcd669d5db9c2b1a53f036689d5d6c502420a65b817f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9add3cde24820e01a01fa998eccb5bf282db4dd9bd108abe2a8f29a7e6d4f0"
   end
 
   depends_on "pkgconf" => :build

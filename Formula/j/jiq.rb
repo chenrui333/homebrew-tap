@@ -1,17 +1,18 @@
 class Jiq < Formula
   desc "Interactive JSON query tool with real-time output and AI assistance"
   homepage "https://github.com/bellicose100xp/jiq"
-  url "https://github.com/bellicose100xp/jiq/archive/refs/tags/v3.22.1.tar.gz"
-  sha256 "797d0b988e0231a20cb4da205ddb1f4e3b974c15613f45951fbd502d9082a418"
+  url "https://github.com/bellicose100xp/jiq/archive/refs/tags/v3.21.0.tar.gz"
+  sha256 "fc03c02bacb74573fb9a446d7809c5ae7d2e9ef1cc1f849d24a40683173b23f6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b13ff62eb7a7d52fdbb05f47ffb97425036d7eba6650930551923a378c7a6879"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50515511752350e10e177d7d181195f3abfc4ce9763c29812235f2e458cdf53f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f37e04653ef307346be857cf63894d1f4d567c715316c35e24d6ae59ff4e0414"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3a18289874e72ccbaa61b2a74f580e6fc6b102d0f405c78d15de6a21e9fc4b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6fa68f788a6bac39fbdf02c45cc8a2816f2528efda238c433bfc82a845ab85f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b92d16cc52546d6287797cbbbad708348946462a44c520326bd3afecd83954e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da31ae86182e38af09b165fe334cdc5b1009bfedf5b7c5cdb4c0e9dab41529d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "500189605e88cfb18348a7c4a675deaf6d24880a8e195c96fecc6f8adc4b3ad8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6b93db43e36849e61742cb38a731b6b8f75ec7509a3dde6147d4a25e72cd1ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30b833baa9294d44a8e6fd1bbda7ce44859ac6de7ffaaaa0314142d0e2466b1b"
   end
 
   depends_on "rust" => :build

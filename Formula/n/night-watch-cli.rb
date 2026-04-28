@@ -1,18 +1,18 @@
 class NightWatchCli < Formula
   desc "Async execution layer for PRDs and queued engineering work"
   homepage "https://github.com/jonit-dev/night-watch-cli"
-  url "https://registry.npmjs.org/@jonit-dev/night-watch-cli/-/night-watch-cli-1.8.11.tgz"
-  sha256 "d74e91a8f46c222a6946015bcc5fb79177668e21f6c7b2b9069cfdb1d07233ac"
+  url "https://registry.npmjs.org/@jonit-dev/night-watch-cli/-/night-watch-cli-1.8.7.tgz"
+  sha256 "7948b2d00f4b54fd15a641d35b8687666c0e9e81ec1ca03615ccb98fee6aa302"
   license "MIT"
   head "https://github.com/jonit-dev/night-watch-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45e31ba25e3fb9ec280dffaf55c92600662ea66994778820621831a953f19952"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45e31ba25e3fb9ec280dffaf55c92600662ea66994778820621831a953f19952"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45e31ba25e3fb9ec280dffaf55c92600662ea66994778820621831a953f19952"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1021d6770ade2910f2342f78fde76c29dd5bf6adf04682dda20065ad1102ba7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1021d6770ade2910f2342f78fde76c29dd5bf6adf04682dda20065ad1102ba7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26519dbd3ba713fb09b8ec6cbfee6db56e7d9c0242ea3ef12664347372653f78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26519dbd3ba713fb09b8ec6cbfee6db56e7d9c0242ea3ef12664347372653f78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26519dbd3ba713fb09b8ec6cbfee6db56e7d9c0242ea3ef12664347372653f78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1e5f5fed8410cb886449c4d6793b70f44db5233387e97ce244cbe9be4712e06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1e5f5fed8410cb886449c4d6793b70f44db5233387e97ce244cbe9be4712e06"
   end
 
   depends_on "node"

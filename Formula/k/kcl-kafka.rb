@@ -1,18 +1,18 @@
 class KclKafka < Formula
   desc "Kafka swiss-army knife for producing, consuming, and administration"
   homepage "https://github.com/twmb/kcl"
-  url "https://github.com/twmb/kcl/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "3c434446e39401af0825067e6b334efe5dea43fa7edeff1d7666dfe35f379bc5"
+  url "https://github.com/twmb/kcl/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "d5e79722fb68b2a5e4b97c5047e7fc04c5c3151a56d6cce609eb8a4f9e34eb94"
   license "BSD-3-Clause"
   head "https://github.com/twmb/kcl.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84d76c5df3c4d57dae374c44a1252affc7fd32edc7f026d06d3779868bc694bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84d76c5df3c4d57dae374c44a1252affc7fd32edc7f026d06d3779868bc694bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84d76c5df3c4d57dae374c44a1252affc7fd32edc7f026d06d3779868bc694bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c707c0a257c100b1f40313ad46e9086a8ee4f65e8a62cdb7dbee85f758b72a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2de44dabc7fae46f913ec4cbf7de42a3635cff778098cec81beb3038f4744f92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f8346d8e9b93c8d5329bae91516eaf0803513ead24dd888665bab1805e56172"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f8346d8e9b93c8d5329bae91516eaf0803513ead24dd888665bab1805e56172"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f8346d8e9b93c8d5329bae91516eaf0803513ead24dd888665bab1805e56172"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2008fb57d1ef764a049c0b26b67917c541a2f959ecd0553540ff8c5ee229d2e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89a9bba7b1cf2ced98a8ab991378b0d063df217b519cd290fb39945eaf211d39"
   end
 
   depends_on "go" => :build

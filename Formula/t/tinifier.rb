@@ -1,18 +1,18 @@
 class Tinifier < Formula
   desc "CLI tool for compressing images using the TinyPNG"
   homepage "https://github.com/tarampampam/tinifier"
-  url "https://github.com/tarampampam/tinifier/archive/refs/tags/v5.1.2.tar.gz"
-  sha256 "40d8863a26c8c0e8d41b05955527e938a6dbdcf39d15255aed604375c403245b"
+  url "https://github.com/tarampampam/tinifier/archive/refs/tags/v5.1.1.tar.gz"
+  sha256 "3f2ed775b6b0050390a63d230847e4eb527f35ff058b79ed375236cf5e3e665e"
   license "MIT"
   head "https://github.com/tarampampam/tinifier.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "784fc2933fce363e6d444312e3607aeeea5ca225ecc249caea378ac2b00249d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "784fc2933fce363e6d444312e3607aeeea5ca225ecc249caea378ac2b00249d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "784fc2933fce363e6d444312e3607aeeea5ca225ecc249caea378ac2b00249d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "508df1e9f9ec18a259675226a13e17807503a232a9ee5e2b953c978814462565"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1300d44a72272ffb72ee562ecfa11c9894330f452dbf677252ae51e2a9576786"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e500802eb5442399fd0edaa608553a7a846ba1e19ba9015bebe71c87b152f4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e500802eb5442399fd0edaa608553a7a846ba1e19ba9015bebe71c87b152f4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e500802eb5442399fd0edaa608553a7a846ba1e19ba9015bebe71c87b152f4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cff814dd19b6ef650674e9c315998f569667c330880f0888602693a7d34b3a38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcfe27b748a55e6d52a433cb9a0d294f1e17de5e271b1c69f80201d0e81ac9a5"
   end
 
   depends_on "go" => :build

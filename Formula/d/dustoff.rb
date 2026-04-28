@@ -1,14 +1,14 @@
 class Dustoff < Formula
   desc "Find and remove JS/TS build artifacts wasting disk space"
   homepage "https://github.com/westpoint-io/dustoff"
-  url "https://github.com/westpoint-io/dustoff/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "800a7aefaabde74db65bd2ea8ed49e39a48bc52cae43f59ce234422f39f41b27"
+  url "https://github.com/westpoint-io/dustoff/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "ab79347519ee298b85c05f3aed53a118dbf6a0b40140530862d081699ffe54f0"
   license "MIT"
   head "https://github.com/westpoint-io/dustoff.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "84040b361eec671127a90625f0a1e4f34cc70a19850f48593bd4ba163ae5c623"
+    sha256 cellar: :any_skip_relocation, all: "5841ad1c971e8b3a1732bec0e0de9e7ea26c23e275e84f04c296140e4d40d072"
   end
 
   depends_on "chenrui333/tap/bun" => :build

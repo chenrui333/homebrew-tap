@@ -1,17 +1,17 @@
 class Jiggy < Formula
   desc "Minimalistic cross-platform mouse jiggler written in Rust"
   homepage "https://0xdeadbeef.info/"
-  url "https://github.com/0xdea/jiggy/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "8ae5c61611b5a025180b00b932d1ebff9dab5991d4be0644e396d4312db48769"
+  url "https://github.com/0xdea/jiggy/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "49f8d2e064f43e984de2363d3b067ac02646251894eff4711b507572aeb3add1"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a94f07e921aceecf82cbf90044fc7b6952da7c439fe50128d0edd72c74e916c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e840d8563138cc8f6480fc5799d2bd85eb474ea50110fdb3f6c82dd14ee6cdd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "848efe2403f8bd3984c7ab3007eb378fb4cbd44c5605cd5ce07686643afc4289"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1032ad5f600f62cbc6a1e9d4f5a027f13dd6cfb8b56dbf7f8ff9a41e10957006"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbf431033f8ba1fb2432e1e1d67c9403d4ea359e61f5d76b807848a3f2f3ae21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5bc3f37ed3e8ed3a2b1b6314823bf8e2dbd8437e646c39ba40a06a5353c1da44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b704a0014f1c9e7f539570d8aac570bb393db10f761bb48687fa3788781903a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96d3c1ad1f8dfd4a5ac6bfc2ece3d5c584ba88d31c75280f10316d763018aa8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "566c6de0127a185dd75f78b029e75d92da90f7c7645576b3fd1b38aea9463d90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4476e12df2298143bc12f6450bd323c711a721977f4401a7e4cc1c48dabcdb0f"
   end
 
   depends_on "rust" => :build

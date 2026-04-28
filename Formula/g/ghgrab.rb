@@ -1,18 +1,18 @@
 class Ghgrab < Formula
   desc "TUI for searching and downloading files from GitHub repositories"
   homepage "https://github.com/abhixdd/ghgrab"
-  url "https://github.com/abhixdd/ghgrab/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "2c38e403957eb60c4c20cbd6accadc4900e09cee02edad2ee047e9284006a944"
+  url "https://github.com/abhixdd/ghgrab/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "0b68ec1e7c0a0975f5ddb5e040be4349a4f5657b761c3e7c1a6d302f364cb8c8"
   license "MIT"
   head "https://github.com/abhixdd/ghgrab.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc88a968000080a2b67bbc07383455251efd0ac9412fac4140492e913c7d7155"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71c6e3485b7b729973c1b7a047660b6e390053dbd3b6629072a5d4aa9458ec53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76d518edad1e5df7ed973a2804044873583afcee8e5225ac08bf7505795b2aa9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9dc2b03d8fa7d06c60fbb43ebb88368b15882a854b22bd55fbf9fd6a7cf8426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b830ffe00443549e354710bc0f89ab5e991d9e390baf7441cddaaffe48e143d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ee0c4673e68ce42e7f1da2599dc0de633d7eb4723c07d49a04eec1f2272b1d83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "631fb279fa04fa9b67576e4b878f5760a0ca21f2f408a5a059af5acf7781c6aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45194eae6f7c7829871b08ca464a00b3066fd484f9894e7d135c7e1f35e8a3a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eee6f8e269fee0fb7353e823341cb027b5af6c101c6fac35f291ecb6d5e7213"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "accf81c69a1ea8a7a200f2031d5b2624635fecb2c501a6e235311128d9975cb8"
   end
 
   depends_on "rust" => :build

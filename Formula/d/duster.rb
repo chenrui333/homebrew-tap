@@ -1,13 +1,13 @@
 class Duster < Formula
   desc "Automatic configuration for Laravel apps"
   homepage "https://github.com/tighten/duster"
-  url "https://github.com/tighten/duster/archive/refs/tags/v3.4.2.tar.gz"
-  sha256 "ab5519158209deb4ab4b60bf41ec349a18cb5d3ef7941e3746074013d3231185"
+  url "https://github.com/tighten/duster/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "7e7909ef2b4b4bc491cf4e7c8dff19c20e71500356a5888d8ed5d8f11d63cf7d"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d4b2afa38e0645639618e83a1373658b995859632ce9e358f32ae14ea33fd3ea"
+    sha256 cellar: :any_skip_relocation, all: "ac9efddc80ecccede812b2c27fffd6cf8a60e48e6388792458db6838526d7bc3"
   end
 
   depends_on "php"

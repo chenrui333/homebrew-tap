@@ -1,14 +1,14 @@
 class BskyCli < Formula
   desc "Command-line client for Bluesky"
   homepage "https://github.com/harveyrandall/bsky-cli"
-  url "https://github.com/harveyrandall/bsky-cli/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "53b8725ee7310446e71a38cb05611eb8d3e65ebab4bcf74938c35e453886dbfc"
+  url "https://github.com/harveyrandall/bsky-cli/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "8a58f53562da0e2530e57af9c7d3788fc0da2927eafb5c2a6260f007a3a4f27c"
   license "MIT"
   head "https://github.com/harveyrandall/bsky-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "e7a72fe3d7d98105a4832889f10e5b52b750815ded31782afdb9c57467543a5d"
+    sha256 cellar: :any_skip_relocation, all: "514c87c95b53f8a6ce1b50b35d64886ffb174d9c575941cd09cc864c754687b3"
   end
 
   depends_on "node"

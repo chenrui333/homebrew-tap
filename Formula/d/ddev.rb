@@ -1,18 +1,18 @@
 class Ddev < Formula
   desc "Docker-based local PHP+Node.js web development environments"
   homepage "https://ddev.com/"
-  url "https://github.com/ddev/ddev/archive/refs/tags/v1.25.2.tar.gz"
-  sha256 "70e197045911c30a187b5966eebc9e48664f883a6ea20022b284f200cdab77fa"
+  url "https://github.com/ddev/ddev/archive/refs/tags/v1.25.1.tar.gz"
+  sha256 "3a78e189d5a61f6d949c5a7329faf9190920120aab37bb74fc0a5abd0be23773"
   license "Apache-2.0"
   head "https://github.com/ddev/ddev.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9330531c05373c97a959511bae09eeed138d3c8635338d6b7cbf786a1f905c05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9330531c05373c97a959511bae09eeed138d3c8635338d6b7cbf786a1f905c05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9330531c05373c97a959511bae09eeed138d3c8635338d6b7cbf786a1f905c05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36fbdc37d5d100c5d9a6564f34e91af86072f03a4d5efbe96898dd4cf913bab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c83ce636a1dcb20eb453257b372da88540abc00dc77589370d1385a9cc8836d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf076a11e9881b072dd35aaf1b0bdfeada2e343f2c8cf659aa0b6ef0e1c16a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf076a11e9881b072dd35aaf1b0bdfeada2e343f2c8cf659aa0b6ef0e1c16a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caf076a11e9881b072dd35aaf1b0bdfeada2e343f2c8cf659aa0b6ef0e1c16a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b020ad3e65480594c17cc2ac00b33cceed921686112b2ed12519c4d36faefd5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a3469c5f3f430a78acb4acb597d1bdb06c9fa11db2438554e0dcb69477d155e"
   end
 
   depends_on "go" => :build

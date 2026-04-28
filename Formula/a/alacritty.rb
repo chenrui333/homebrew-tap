@@ -1,8 +1,8 @@
 class Alacritty < Formula
   desc "Cross-platform, OpenGL terminal emulator"
   homepage "https://github.com/alacritty/alacritty"
-  url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "38d6527d346cda5c6049332a1f3338a89ea66cd7981b54d4c3ce801b392496f8"
+  url "https://github.com/alacritty/alacritty/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "b7240df4a52c004470977237a276185fc97395d59319480d67cad3c4347f395e"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -12,11 +12,11 @@ class Alacritty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2a7576a36bb4af7e53567c3d5740da315f081c38698c5c18864c38645db3a74"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd792b3f59812f9fc70abf44d14d83e15074c4be4b7c7f4c34502c507c267d97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48baefdb79515b4b87ceced94aa1172c2f93ac7a3d42f4c789f1b0aa01084207"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aac1b9815c13de299e916b83dc1ef98698594eed29d852a5baa57a78d34ef656"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e04ab7410ec38b924c0e2d979cbde1d59739ee7d89af8f52b776b2b24d26a1ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c61d79b5d29648b25ec4a338a3b49da7bf9fa99282c0d512a25ae9aebb01b6f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b7b8d90e3ffc3975cfcafa71ed7e2917e60e081d1d7e46e953dd0a976b34eb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3602d593ff125a1149fbd34b4aeca7c417285e7a4fb6d9b491048930521177e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92ba30fa72a90e2c9d2f2ff71c615a7832095357f60d70cba111a5ab1dec7675"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7230f7f3e71d7de219cf5ff73ec33de54c9fd6d1e4185ceee160c46337a82f79"
   end
 
   depends_on "pkgconf" => :build
@@ -24,7 +24,6 @@ class Alacritty < Formula
 
   on_linux do
     depends_on "fontconfig"
-    depends_on "freetype"
   end
 
   def install

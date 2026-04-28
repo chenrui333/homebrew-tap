@@ -6,7 +6,6 @@
     ':configMigration',
     ':pinDevDependencies',
   ],
-  commitMessagePrefix: 'chore(deps):',
   commitMessageSuffix: ' in {{packageFile}}',
   automerge: true,
   automergeType: 'pr',
@@ -19,12 +18,6 @@
     'CI-syntax-only',
     'dependencies',
     'renovate',
-  ],
-  // Renovate's Homebrew manager currently only matches Formula/**. Ignore
-  // formulae to avoid duplicating autobump-formula.yml, but leave Casks/**
-  // visible in case Renovate adds native cask support later.
-  ignorePaths: [
-    'Formula/**',
   ],
   vulnerabilityAlerts: {
     enabled: true,

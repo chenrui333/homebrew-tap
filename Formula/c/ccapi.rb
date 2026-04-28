@@ -1,13 +1,13 @@
 class Ccapi < Formula
   desc "Claude Code Commands Manager"
   homepage "https://github.com/4xian/claude-auto-api"
-  url "https://registry.npmjs.org/@4xian/ccapi/-/ccapi-1.0.11.tgz"
-  sha256 "96c925d72dd6cf33c5b246aede910163384c1d6d0e88b025c1aeeaf9a272bed9"
+  url "https://registry.npmjs.org/@4xian/ccapi/-/ccapi-1.0.10.tgz"
+  sha256 "24593c4a4b51ac9384f8f292f5d80697abc11be82206c232b0d28d8ad6729324"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5bbfa31b3546ffed495feeb3775ad17775df5e9b81fdf1ae5d1bd096804bf811"
+    sha256 cellar: :any_skip_relocation, all: "23e89a5257704e08aa7df292c89dff9a3bbc63f618e21e7e80a770ee502b1157"
   end
 
   depends_on "node"

@@ -1,13 +1,13 @@
 class CreateMcpUseApp < Formula
   desc "Project scaffolding tool for mcp-use applications"
   homepage "https://github.com/mcp-use/mcp-use"
-  url "https://registry.npmjs.org/create-mcp-use-app/-/create-mcp-use-app-0.14.9.tgz"
-  sha256 "c91698eefa8173971e6006ed3031399c4da018835a030c414230361169a165dc"
+  url "https://registry.npmjs.org/create-mcp-use-app/-/create-mcp-use-app-0.14.6.tgz"
+  sha256 "9b471dba0205dd891b68638278a4f4b01021aeefb528934d09009efb5cef9f08"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a65be3b3a3c4f96e40e349604d32edc5dc587fdea1e71ab7db45138c54bdfa04"
+    sha256 cellar: :any_skip_relocation, all: "d9feb3ffa466c6b2fdb8197e0b803bab48cd9f1d8fc8b8eec52532b71ea5f4c6"
   end
 
   depends_on "node"

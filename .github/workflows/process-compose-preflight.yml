@@ -28,7 +28,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/setup-homebrew@42435f26fd0824180d7a31f0dd75afd37eb2e18f
         with:
           core: true
           cask: false

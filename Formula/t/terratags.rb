@@ -1,17 +1,17 @@
 class Terratags < Formula
   desc "Required tags validation on terraform resources"
   homepage "https://terratags.github.io/terratags/"
-  url "https://github.com/terratags/terratags/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "1b5ac2f89bdbc0b1aa42e95c4d6edcaf56adc4cdbd78538925c1b25cca149468"
+  url "https://github.com/terratags/terratags/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "6b5480faba42aeaf10e4782d1655a5efea1e3e7bab39f4fb6339c2369f41fc53"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1225784ff676b6ac76a55934d46d94e2a8db514627a7f97efde131c22bd1d1fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1225784ff676b6ac76a55934d46d94e2a8db514627a7f97efde131c22bd1d1fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1225784ff676b6ac76a55934d46d94e2a8db514627a7f97efde131c22bd1d1fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc0e1d503a697af40dcdc7986c18309d9844804d8b6c193b5a72cb67a5e4f570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7800fec68e23ae20af5035aaa2735dca82caecd75a26206676831db39644e4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ab96f12583100e2a233e9d5c57550dc89f40bcf15cf14a8f3f9be681713f55d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ab96f12583100e2a233e9d5c57550dc89f40bcf15cf14a8f3f9be681713f55d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ab96f12583100e2a233e9d5c57550dc89f40bcf15cf14a8f3f9be681713f55d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c37d5b2fce06e7e016fd8f7fb79447e3e0a0a9df51a1cd41e8bddee0857c8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5b345c6fa82616871ce5977c9d68481b7bbeb8c5afc696506c78461bc86e261"
   end
 
   depends_on "go" => :build

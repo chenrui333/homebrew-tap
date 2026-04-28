@@ -23,7 +23,7 @@ jobs:
       statuses: write
     steps:
       - name: Label pull request
-        uses: Homebrew/actions/label-pull-requests@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/label-pull-requests@42435f26fd0824180d7a31f0dd75afd37eb2e18f
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           def: |
@@ -156,6 +156,6 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           persist-credentials: false
-      - uses: crate-ci/typos@7c572958218557a3272c2d6719629443b5cc26fd # v1.45.2
+      - uses: crate-ci/typos@631208b7aac2daa8b707f55e7331f9112b0e062d # v1.44.0
         with:
           files: .

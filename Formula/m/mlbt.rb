@@ -1,18 +1,18 @@
 class Mlbt < Formula
   desc "TUI for MLB stats API"
   homepage "https://github.com/mlb-rs/mlbt"
-  url "https://github.com/mlb-rs/mlbt/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "a0ff8d51c1294c05a3fa7bed81f80f44562fb344020d88fc0c7ed94711934da1"
+  url "https://github.com/mlb-rs/mlbt/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "440ae10cc3284950b12fb13f6b832c3c2a7cf4587cf64d69b6d9bd04513d8a50"
   license "MIT"
   head "https://github.com/mlb-rs/mlbt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bce2f4489f58d7c81fe5a0d03d6cdbbd7640bcc1600f11ef8a566c8e59f1c89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b001a800a803ac37b1a0a390eff2cb6f56324a388cd9eff2a48a151e077341cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18f6a8385b4148bef9188270b2aadac2fb55b21f5bab4afc11340c7d0a5f6c2c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0660f4004c5ba4f7efb383046e17955e649f4d7d320c54a502d7ac66f672ba35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eca503b710aa0d788511fccbdef34de69c3c62017429198ed9bd06175959996"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a88d3d22e214b27640add50290194172414ca14323c0ffebe0b3d9c29964e7e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5f1b6b636d8803eef48cb72b721a8c8ae9fbcb844c3e8ed3a5d94ad0039fabd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0cdc1ce4ea823519d724549cb358340654717fe8980bf1d73ff5fc744b89041"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3d423ce08e18c291fd3d7c4eb93b05c7c8f2968b6be83ec4bc6e2b7d5f45d57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94fa55f44a37c17cb9a1b171d71d250cf7dcb6e0d74a5c324f1be59ba99483c7"
   end
 
   depends_on "rust" => :build

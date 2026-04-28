@@ -1,18 +1,18 @@
 class MqttCli < Formula
   desc "CLI for connecting various MQTT clients supporting MQTT 5.0 and 3.1.1"
   homepage "https://hivemq.github.io/mqtt-cli/"
-  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.50.0.tar.gz"
-  sha256 "8f938ca1e01b24f3162888c6ede68295391af10a888f177906cf04706e794516"
+  url "https://github.com/hivemq/mqtt-cli/archive/refs/tags/v4.49.0.tar.gz"
+  sha256 "613a67e2df1588595a58c29e9e993ebc16db1a5b493ab9087d3930bef5a79d2c"
   license "Apache-2.0"
   head "https://github.com/hivemq/mqtt-cli.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78086e80a4697244f2f5bd23f4df3f383c65745dced375ca872e3f15d4683a4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78086e80a4697244f2f5bd23f4df3f383c65745dced375ca872e3f15d4683a4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78086e80a4697244f2f5bd23f4df3f383c65745dced375ca872e3f15d4683a4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca83f6db27065c2c5f145f242829193f7bdd5a512a5f22ed630db4919b5cb965"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca83f6db27065c2c5f145f242829193f7bdd5a512a5f22ed630db4919b5cb965"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75a2ee74ca92935ff224aa0b2f0ee75e957a82535b87bd445cd3b707f76ac9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75a2ee74ca92935ff224aa0b2f0ee75e957a82535b87bd445cd3b707f76ac9ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75a2ee74ca92935ff224aa0b2f0ee75e957a82535b87bd445cd3b707f76ac9ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae1bbe5e130ad545ddd7ea79c9d119a6a3dfab5d70fecf4c94272eb9136a4f00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae1bbe5e130ad545ddd7ea79c9d119a6a3dfab5d70fecf4c94272eb9136a4f00"
   end
 
   depends_on "openjdk@21"

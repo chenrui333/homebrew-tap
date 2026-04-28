@@ -1,18 +1,19 @@
 class Dotstate < Formula
   desc "Modern and secure dotfile manager"
   homepage "https://dotstate.serkan.dev"
-  url "https://github.com/serkanyersen/dotstate/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "f571b8582d67931d0eea41763b86ce8ed6c8c577d26902c42e59d19008eb80c3"
+  url "https://github.com/serkanyersen/dotstate/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "c6d0bb49be40186543451f67356581eab488f888188ddf84678feafeec19db27"
   license "MIT"
   head "https://github.com/serkanyersen/dotstate.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "dddba082fc2d6da2565ade06e44ae8f8f5a3fc1896658b2d2d2a350d90041f65"
-    sha256                               arm64_sequoia: "f365a71607e6714a9ba435ae0653e12b88d37d79ec1756b46afc96eeb34ced66"
-    sha256                               arm64_sonoma:  "aa90f1d2ee03ba3e0e3942b6ab36d6aee2708e98f81842d97efa528a7dbcde74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3168c9740dc23a9aa02e0573172003535be6c82010719c9982df8f2aaa5fb2c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "354cdddde50ff0452614a37091cbe06b8cdb87e96c0a973fe184e661919813a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d932ee47a8050fea3e242efa3af2db4f5c024e0c6f25e0e18298e7a531a6a72c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8af5b40e43e295d219d5dd22246673d38e80e25d71cf961ecb73912c828ac8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e1ad7362502352f626d42f2b8baf78f8a40e24bfe6fef929b41f217df707f46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9109df788089df27482038313fb8c7da9c556bf9b88133a6df5d7fdb6dce57de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "569c5494f9474133c47c36e16933c194515b567a2093a688d03ce5f04d9c339a"
   end
 
   depends_on "pkgconf" => :build
@@ -29,20 +30,6 @@ class Dotstate < Formula
   end
 
   test do
-    repo = testpath/".config/dotstate/storage"
-    repo.mkpath
-    (repo/".dotstate-profiles.toml").write <<~TOML
-      version = 2
-
-      [common]
-      synced_files = []
-
-      [[profiles]]
-      name = "default"
-      synced_files = []
-      packages = []
-    TOML
-
     assert_match version.to_s, shell_output("#{bin}/dotstate --version")
     assert_match "No files are currently synced", shell_output("#{bin}/dotstate list")
   end

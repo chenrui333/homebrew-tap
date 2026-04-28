@@ -1,18 +1,18 @@
 class Satview < Formula
   desc "Terminal-based real-time satellite tracking and orbit prediction application"
   homepage "https://github.com/ShenMian/tracker"
-  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.1.20.tar.gz"
-  sha256 "9a5ff9f12230b6821805a07a76e61420d52f0ed60ee4a5da2cc37917abdebebf"
+  url "https://github.com/ShenMian/tracker/archive/refs/tags/v0.1.18.tar.gz"
+  sha256 "6c6c82ed9fd04a8509424c3dfb932e938f47b6e30c29a128855f305804bb4496"
   license "Apache-2.0"
   head "https://github.com/ShenMian/tracker.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc3d510c1a82733d45a2ec50345f8efd73091a29b6c5789a1203115636545f96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91059b8f3e8cb412a7e4dcc43f32abd6a6123de5f6157c2b7a43544eb51938ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa08d595d3af588b1e1c8cf3a3f7f5bfd8c6fb7cddbead4206287745a6756862"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1febc5eff86adff402e6a1919e1eeaa96607ec4ba793d158abf7a2bab3d4af04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbca8d14f1b68528591849185995e3af65e97566441e551191d8f1fe470d638b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8bf3b67939c21a69784de722e1aba0e043ef5570cff8c9d7d392ddf5e94051a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69480d53790ad8519b5a3363fa662e9d29d816a1f9ccb2ab7e2d5bb8f38b7d35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d41ede1bad7ee7a7be0295a767898791edae07310dcd4f692815918d4fb59ad7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c7e7bed9ac43be75646c03d72ed6aa4948675b2c1815657734be57196bd8b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9134a7bb28bfb5b515075feeec02f160f52c98f644a88f509faaaaca528b0378"
   end
 
   depends_on "pkgconf" => :build

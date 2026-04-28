@@ -66,11 +66,6 @@ session_dir.mkpath
 bin.install_symlink libexec.glob("bin/*")
 ```
 
-### Build Dependencies
-
-- Declare `depends_on "pkgconf" => :build` at the top level by default. `pkgconf` is a build tool, so keep it OS-agnostic unless the formula has a verified platform-specific build path that never invokes `pkg-config` elsewhere.
-- Keep platform guards for the libraries that are actually platform-specific, such as Linux-only `glib` or `libsecret` dependencies.
-
 ### Python Dependency Reuse
 
 When a Python formula can reuse a packaged dependency from Homebrew instead of vendoring it as a resource, prefer the shared formula dependency.
@@ -89,7 +84,6 @@ When a Python formula can reuse a packaged dependency from Homebrew instead of v
   pypi_packages exclude_packages: %w[certifi pydantic]
   ```
 - Apply the same exclusion pattern to any other shared Python deps moved out of resources, such as `cryptography` or `rpds-py`.
-- Prefer source tarballs for Python formula resources. Do not switch resources to wheels just to bypass isolated-build failures; fix the source build inputs or use shared Homebrew dependencies instead. Wheels are acceptable only when upstream has no usable sdist or there is a separately verified packaging reason.
 
 ### Linux `zlib` Dependency
 
@@ -151,14 +145,6 @@ Commit message: `foo 1.2.3 (new formula)`
   - Go CLIs: prefer `shell_parameter_format: :cobra`.
   - Python CLIs: prefer `shell_parameter_format: :click` or `:typer` (based on upstream framework).
 
-### Shell Plugin Formulae
-
-- For shell plugins that are not standalone executables (for example Oh My Zsh or Bash plugin repos), package the plugin assets with `pkgshare.install` instead of pretending the repo is a normal binary formula.
-- Prefer adding a small installer wrapper in `bin/` when upstream's install story is "copy these plugin files into a plugin directory".
-- For Oh My Zsh-style plugins, use a deterministic test with a fake `ZSH_CUSTOM` directory under `testpath`, run the installer wrapper, and assert that the plugin files were copied into the expected plugin directory.
-- If the plugin needs multiple files (for example `*.plugin.zsh`, helper `*.zsh`, or a `lib/` directory), install and copy the full runtime set; do not package only the entrypoint file.
-- Add caveats that point users to the installer wrapper or the `pkgshare` source path instead of telling them to clone the repo manually.
-
 ### Library Packaging Guidance
 
 - Prefer installing **shared libraries** (`.dylib`/`.so`) when upstream supports both shared and static builds.
@@ -181,7 +167,6 @@ end
 head "https://github.com/org/repo.git", branch: "main"
   ```
   Git repositories MUST specify `branch:`.
-  - If local tap intake is blocked only because the current environment falsely rejects an otherwise-valid GitHub `head` URL, prefer omitting `head` in this tap rather than stalling the formula on local transport validation noise.
 
 ## Required Validation (All PR Types)
 
@@ -257,9 +242,6 @@ For formula patch PR triage, follow this exact sequence:
    test "$branch" != main
    git push --force-with-lease origin "$branch"
    ```
-   - If a global Git config rewrites `https://github.com/` pushes to `git@github.com:` and SSH auth is unavailable, use
-     `env GIT_CONFIG_GLOBAL=/dev/null git push -u https://github.com/<owner>/<repo> "$branch"`
-     instead of rewriting `origin`.
 5. Mark the PR with `CI-no-fail-fast`:
    ```sh
    pr="$(gh pr view --json number -q .number)"
@@ -270,7 +252,6 @@ For formula patch PR triage, follow this exact sequence:
    - If the goal is to regenerate missing bottles for a merged formula, open a one-formula `revision` follow-up PR and again leave merge to `pr-pull`.
 7. If triaging many open PRs, dedupe only version-bump PRs for the same formula by keeping only the latest one.
    - Apply this only to PR titles in version-bump format (`<formula> <version>`), and skip non-version PRs such as `foo: fix ...`.
-   - Prefer `brew close-superseded-prs --apply` for this cleanup when it fits; it dry-runs by default and handles both PRs already covered by `main` and older open bump PRs superseded by a more recently opened bump.
    ```sh
    repo="<owner>/<repo>"
    gh pr list --repo "$repo" --state open --limit 1000 --json number,title,createdAt > /tmp/open_prs.json
@@ -323,8 +304,7 @@ You MUST verify all items before submitting:
 
 ### MUST
 
-- One formula or cask change per PR — always create a dedicated branch and open a separate PR for each formula/cask, even when working on multiple in the same session
-- Never commit formula or cask changes directly to `main`; always use a PR branch
+- One formula change per PR
 - Keep diffs minimal and focused
 - Provide only essential context in PR description
 - For any formula PR not labeled `CI-syntax-only`, use the `pr-pull` merge path so BrewTestBot adds the bottle commit to `main`
@@ -332,7 +312,7 @@ You MUST verify all items before submitting:
 ### MUST NOT
 
 - Edit `bottle do` blocks (managed by BrewTestBot)
-- Batch unrelated formula or cask changes into a single PR
+- Batch unrelated formula changes
 - Include large logs or verbose output in PR body
 - Add non-Homebrew usage caveats in PR body
 - Include unrelated refactors or cleanups
@@ -368,16 +348,8 @@ For recurring maintenance work in this tap, prefer the repo-local helpers under 
   - Bare formula names are resolved to `chenrui333/tap/<formula>`.
 - `brew patch <url>`
   - Fetches a patch URL, computes the SHA-256, and prints a `patch do` block for formula edits.
-- `brew close-superseded-prs`
-  - Dry-runs stale formula bump cleanup by default.
-  - With `--apply`, comments, labels `superseded`, and closes formula bump PRs that are covered by `main` or superseded by a more recently opened bump PR for the same formula.
 
 If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh` commands in this document instead of forcing the helper into a workflow it was not built for.
-
-## Renovate And Autobump Ownership
-
-- Formula version bumps are owned by [autobump-formula.yml](.github/workflows/autobump-formula.yml). Keep Renovate from opening `Formula/**` update PRs; if Renovate proposes a formula update, close it as a duplicate of the BrewTestBot/autobump PR or update [.github/renovate.json5](.github/renovate.json5).
-- Do not add `Casks/**` to Renovate ignore rules just to mirror `Formula/**`. Renovate's current Homebrew manager does not scan casks, and leaving `Casks/**` visible preserves future native cask support. Cask bumps remain owned by [autobump-cask.yml](.github/workflows/autobump-cask.yml) unless the repo intentionally changes policy.
 
 ## CI Failures
 
@@ -395,7 +367,6 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
   skills/restart-github-actions-runs/scripts/restart_pr_actions.sh --repo chenrui333/homebrew-tap <pr> [<pr> ...]
   ```
 - The helper prefers a safe empty-amend + `git push --force-with-lease` on verified same-repo PR head branches, and falls back to `gh run rerun` when the head branch is missing or otherwise not safe to push.
-- If GitHub HTTPS pushes are being rewritten to SSH by global git config and SSH auth is unavailable, run the helper or any manual PR-branch push under `env GIT_CONFIG_GLOBAL=/dev/null` instead of changing `origin`.
 - Never edit workflow files just to restart checks.
 - Never force-push `main`.
 
