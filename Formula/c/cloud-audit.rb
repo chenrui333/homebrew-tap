@@ -10,8 +10,9 @@ class CloudAudit < Formula
   license "MIT"
   head "https://github.com/gebalamariusz/cloud-audit.git", branch: "main"
 
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for rpds-py
   depends_on "certifi" => :no_linkage
+  depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
@@ -41,19 +42,9 @@ class CloudAudit < Formula
     sha256 "75b3b841ffacaa944f645196655a21ca777591dd8911e732bfb6614545af0250"
   end
 
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
-    sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
-  end
-
   resource "click" do
     url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
     sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/ef/b2/7ffa7fe8207a8c42147ffe70c3e360b228160c1d85dc3faff16aaa3244c0/cryptography-47.0.0.tar.gz"
-    sha256 "9f8e55fe4e63613a5e1cc5819030f27b97742d720203a087802ce4ce9ceb52bb"
   end
 
   resource "h11" do
@@ -119,11 +110,6 @@ class CloudAudit < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
-    sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
   end
 
   resource "pydantic-settings" do
