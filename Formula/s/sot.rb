@@ -1,7 +1,7 @@
 class Sot < Formula
   include Language::Python::Virtualenv
 
-  desc "Command-line System Obervation Tool"
+  desc "Command-line System Observation Tool"
   homepage "https://github.com/anistark/sot"
   url "https://files.pythonhosted.org/packages/a6/4a/0dd99d933389166e665b9bcc42e84302866d981155e18833c844ae4e43a6/sot-6.0.1.tar.gz"
   sha256 "bdfe41b91a53258d43798eb5cd5a034af0589f0d960c637211b5a9e29cca9cda"
