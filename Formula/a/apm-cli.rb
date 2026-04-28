@@ -18,6 +18,7 @@ class ApmCli < Formula
 
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
+  depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
 
