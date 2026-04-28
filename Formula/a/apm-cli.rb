@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/51/ee/c68beffc08d6efe218fdb6a24756d53d00f62fef44b38183d99236f27161/apm_cli-0.9.4.tar.gz"
-  sha256 "fe7c0ba5a57dd16fe5d5ad3437a5076f981c6650486b1f471659ee1d06fabfef"
+  url "https://files.pythonhosted.org/packages/2b/b4/a290fe25ea0ec3cd4d9cc8854cc3382d43fa277ce669a2a0bed77dc9ed1d/apm_cli-0.10.0.tar.gz"
+  sha256 "266cb8028f800e40f332265654d29376359fb2a4f2276b680eeae26398622763"
   license "MIT"
 
   bottle do
@@ -235,6 +235,11 @@ class ApmCli < Formula
   resource "rich-click" do
     url "https://files.pythonhosted.org/packages/04/27/091e140ea834272188e63f8dd6faac1f5c687582b687197b3e0ec3c78ebf/rich_click-1.9.7.tar.gz"
     sha256 "022997c1e30731995bdbc8ec2f82819340d42543237f033a003c7b1f843fc5dc"
+  end
+
+  resource "ruamel-yaml" do
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "setuptools" do
