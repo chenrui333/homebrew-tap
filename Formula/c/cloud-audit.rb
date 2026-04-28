@@ -10,6 +10,7 @@ class CloudAudit < Formula
   license "MIT"
   head "https://github.com/gebalamariusz/cloud-audit.git", branch: "main"
 
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
