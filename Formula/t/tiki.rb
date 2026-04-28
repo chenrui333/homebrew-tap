@@ -1,17 +1,17 @@
 class Tiki < Formula
   desc "Markdown-based git-versioned documentation and issue management"
   homepage "https://github.com/boolean-maybe/tiki"
-  url "https://github.com/boolean-maybe/tiki/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "3c6a694b063c9f406cca0e5577f82f260d9d3509a62018ec5caadb53405d53c1"
+  url "https://github.com/boolean-maybe/tiki/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "b3e9e6887678d35acb6e986e8b2fa0be1a51f5f5dbe41071436e977d6728a112"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d988a4d8df130231d4a6445633bf55e8e902d04d9e64b8d76af310fadc44a49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d988a4d8df130231d4a6445633bf55e8e902d04d9e64b8d76af310fadc44a49"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d988a4d8df130231d4a6445633bf55e8e902d04d9e64b8d76af310fadc44a49"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ac18a3e5cc768fcbe84583d418cc901517d25904f9afb91e8783ff99115fe08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de5f4a04fa73c964f4ebaddc855eb2f70d69d78e72ba76ac3afdc9a0dfc81ca8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f306d8bbf69c5af479f939831a98454773c4f31c3c8e89c59a5c06b020d411d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f306d8bbf69c5af479f939831a98454773c4f31c3c8e89c59a5c06b020d411d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f306d8bbf69c5af479f939831a98454773c4f31c3c8e89c59a5c06b020d411d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb0b93e33dcc4999dc8e1c9537f922f52e3b20987c1fec5801099938fa50062b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d63a9a5e9459fd232774fbaf8bd38c91350fff40e8d9f91c0c88ec0724b2368c"
   end
 
   depends_on "go" => :build
