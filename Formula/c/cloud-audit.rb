@@ -10,6 +10,15 @@ class CloudAudit < Formula
   license "MIT"
   head "https://github.com/gebalamariusz/cloud-audit.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "41f9bf395cff28ec83355f12f075434dd472edd860d6b79c901d900cf03d2af3"
+    sha256 cellar: :any,                 arm64_sequoia: "6d427d3227edd2fe6f33840299dad75ecb6d7bf68a3e553e8b7be94bbcf2e6ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d86e972a8c5458024ea54080c0a0d04cf2ad4a3f490fc53f3838d7066a3873d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0256234d367b0f803f4b2b2a7791fcf81eca72c18281dca95a35201b1fb6448"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e723b0a949924bb68c79c2dd924c3e98c8d96a3f3a94d5be75a0276f49696227"
+  end
+
   depends_on "rust" => :build # for rpds-py
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
