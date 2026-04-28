@@ -1,8 +1,8 @@
 class IamCollect < Formula
   desc "Collect IAM information from all your AWS organization, accounts, and resources"
   homepage "https://github.com/cloud-copilot/iam-collect"
-  url "https://registry.npmjs.org/@cloud-copilot/iam-collect/-/iam-collect-0.1.187.tgz"
-  sha256 "84f0e0f5c189ff742094c231f7cc4c231c15909d17e4096cb255315a6b924376"
+  url "https://registry.npmjs.org/@cloud-copilot/iam-collect/-/iam-collect-0.1.188.tgz"
+  sha256 "3c180bf65ab7ce5b01f7f7915004db09a50151775a3dfff1dc879edd083c9279"
   license "AGPL-3.0-or-later"
 
   bottle do
