@@ -1,17 +1,17 @@
 class Castor < Formula
   desc "DX-oriented task runner and command launcher built in PHP"
   homepage "https://castor.jolicode.com/"
-  url "https://github.com/jolicode/castor/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "9dfab832eeb7b9256d9987ab546898d7550eb4413bd2683c0c2e70b6b719250a"
+  url "https://github.com/jolicode/castor/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "2f92303833acbd40430d2f67dececada48cab1f2534018493a08777204204d4a"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df9f09dc04f66a04ade0f47a3cbf055c29270eba36129e401c0555cbfe61d4d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df9f09dc04f66a04ade0f47a3cbf055c29270eba36129e401c0555cbfe61d4d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df9f09dc04f66a04ade0f47a3cbf055c29270eba36129e401c0555cbfe61d4d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc9fa92ad267a8b9c2b588a06a30e4f2acacc0554d5d1f5d7b7082e3a7bc8d0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8589fb278b3b72f6737db3740bbb6cff5101a2fcbb1a10181bd7647af55877da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "626e81b11e5cdc8d24c79b2b3fa3158a24bc182da3f4439c184d54d3dc04b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "626e81b11e5cdc8d24c79b2b3fa3158a24bc182da3f4439c184d54d3dc04b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "626e81b11e5cdc8d24c79b2b3fa3158a24bc182da3f4439c184d54d3dc04b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c612c30c9610accd8d21d449a8333ebfdac6e540d1bf704d88170ce053794e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a1de2fa9ddfde1759983b9be9d2fc3b6a7765b1b078f101c0fb03410780efc3"
   end
 
   depends_on "composer" => :build

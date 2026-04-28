@@ -19,10 +19,7 @@ debugg = "debugg" # for debugg-ai-mcp filename
 parm = "parm" # formula name
 Parm = "Parm" # Ruby class name for formula
 sur = "sur" # for big sur
-yor = "yor"
-aks = "aks" # Azure Kubernetes Service
-Aks = "Aks"
-AKS = "AKS"
+yor = "yor" 
 
 [files]
 extend-exclude = [
