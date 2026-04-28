@@ -1,17 +1,17 @@
 class Tars < Formula
   desc "Local-first autonomous AI supervisor and sidekick powered by Google Gemini"
   homepage "https://github.com/agustinsacco/tars"
-  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.27.1.tgz"
-  sha256 "a080ad58482dba3f48f5f48a744a4e9c5861b9283e3d43d5a7b17f860708cf14"
+  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.25.0.tgz"
+  sha256 "3702df4478d762ea17f89597f2f4862a09da4cf83eb8868147f102b8f268165f"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "730a2913ea6c76d5ece856ea8fb28c6fb34252c00476b636302e5f3c81c8c88e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "730a2913ea6c76d5ece856ea8fb28c6fb34252c00476b636302e5f3c81c8c88e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "730a2913ea6c76d5ece856ea8fb28c6fb34252c00476b636302e5f3c81c8c88e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "226194f77a07389ac976ea1e8e7a107d245124d2ce1acd09ec5a57da26f6306e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1172c25cd6e9b6080885befe6372f85c94888debd3de7af1cc5a6e796032039b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8015ac0c0f1d560f5eec19917f7a53aa9d8b52febe4b00520bb695549cc8b7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8015ac0c0f1d560f5eec19917f7a53aa9d8b52febe4b00520bb695549cc8b7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8015ac0c0f1d560f5eec19917f7a53aa9d8b52febe4b00520bb695549cc8b7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7446f5251f407240c1a26c8cd7b61901fa30e85ac2ac9047395856734e9774bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77bc41b55ac21dff08bf3c60748fdf34303a957f77e50ea91987fcbbb6cb6cdb"
   end
 
   depends_on "node"
