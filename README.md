@@ -42,7 +42,6 @@ brew install --cask <tool>
 - `ai-context`
 - `aic`
 - `aim`
-- `aks-mcp`
 - `alacritty`
 - `allinssl`
 - `am-i-vibing`
@@ -53,7 +52,6 @@ brew install --cask <tool>
 - `aoc-cli`
 - `apify-actors-mcp-server`
 - `apisnip`
-- `apm-cli`
 - `apple-health-mcp`
 - `aptui`
 - `apw`
@@ -74,7 +72,6 @@ brew install --cask <tool>
 - `awless`
 - `aws-doctor`
 - `awsesh`
-- `awsui`
 - `axiom-mcp-server`
 - `az-tui`
 - `azure-pipelines-language-server`
@@ -155,7 +152,6 @@ brew install --cask <tool>
 - `clickhousectl`
 - `clickup-mcp`
 - `climp`
-- `clipse`
 - `cloctui`
 - `clog-cli`
 - `cloud-run-mcp`
@@ -171,7 +167,6 @@ brew install --cask <tool>
 - `code-pushup`
 - `codebuff`
 - `codefmt`
-- `codemachine`
 - `codemap`
 - `codespelunker`
 - `codex-viz`
@@ -218,7 +213,6 @@ brew install --cask <tool>
 - `debugg-ai-mcp` <!-- spellchecker:disable-line -->
 - `decktape`
 - `deepteam`
-- `deface`
 - `defaults-rs`
 - `dela`
 - `deletor`
@@ -226,7 +220,6 @@ brew install --cask <tool>
 - `dgop`
 - `dhv`
 - `di-tui`
-- `discordo`
 - `distill`
 - `dnsforwarder`
 - `doit`
@@ -297,7 +290,6 @@ brew install --cask <tool>
 - `gemini-cli`
 - `get-port-cli`
 - `get-shit-done-cc`
-- `gh-dash`
 - `gh-repo-man`
 - `gh-unpushed`
 - `ghfetch`
@@ -345,7 +337,6 @@ brew install --cask <tool>
 - `hackernews-tui`
 - `haloy`
 - `hapi`
-- `happy`
 - `hardcover-tui`
 - `hasha-cli`
 - `hauler`
@@ -370,7 +361,6 @@ brew install --cask <tool>
 - `httptap`
 - `htvend`
 - `huber`
-- `humanlayer`
 - `humioctl`
 - `hygg`
 - `hyperbolic`
@@ -436,12 +426,10 @@ brew install --cask <tool>
 - `kt`
 - `kube-role-gen`
 - `kube2pulumi`
-- `kubedog`
 - `kubeseal-convert`
 - `kumo`
 - `kure`
 - `kwt`
-- `kyanos`
 - `kyma`
 - `labcoat`
 - `lacquer`
@@ -463,7 +451,6 @@ brew install --cask <tool>
 - `llmdog`
 - `llmpeg`
 - `llmswap`
-- `llxprt-code`
 - `lnko`
 - `lobtui`
 - `localports`
@@ -484,7 +471,6 @@ brew install --cask <tool>
 - `mcdu`
 - `mcman`
 - `mcp-alchemy`
-- `mcp-gsuite`
 - `mcp-manager`
 - `mcp-obsidian`
 - `mcp-remote`
@@ -526,7 +512,6 @@ brew install --cask <tool>
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
-- `nanoclaw`
 - `nanodbc`
 - `narr`
 - `nbcat`
@@ -537,7 +522,6 @@ brew install --cask <tool>
 - `nexus`
 - `ngtop`
 - `nhost`
-- `nibble`
 - `night-watch-cli`
 - `ninjabot`
 - `nino`
@@ -559,11 +543,9 @@ brew install --cask <tool>
 - `omni-cache`
 - `omnictl`
 - `omp-manager`
-- `opamui`
 - `openharness`
 - `opensnitch-tui`
 - `openspec`
-- `optimizt`
 - `optivorbis`
 - `oracle`
 - `orla`
@@ -576,10 +558,8 @@ brew install --cask <tool>
 - `outside`
 - `owlex`
 - `oxbuild`
-- `oxicord`
 - `oxylabs-mcp`
 - `oyo`
-- `plutov-oq`
 - `packemon`
 - `pal-mcp-server`
 - `pam`
@@ -688,7 +668,6 @@ brew install --cask <tool>
 - `satview`
 - `saw`
 - `sbomlyze`
-- `scanify`
 - `scholar`
 - `screenshotone-mcp-server`
 - `scrt`
@@ -719,10 +698,8 @@ brew install --cask <tool>
 - `sls`
 - `smassh`
 - `snip`
-- `snipt`
 - `solfmt`
 - `sonar`
-- `sot`
 - `soundscope`
 - `sourcerer-mcp`
 - `spacelift-intent`
@@ -751,7 +728,6 @@ brew install --cask <tool>
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
 - `stylance-cli`
-- `sudocode`
 - `summon`
 - `superclaude`
 - `superstarryeyes-bit`
@@ -761,7 +737,6 @@ brew install --cask <tool>
 - `swaptop`
 - `systeroid`
 - `tftargets`
-- `tabminal`
 - `tantivy-cli`
 - `taproom`
 - `tars`
@@ -781,7 +756,6 @@ brew install --cask <tool>
 - `tenderly`
 - `tennis`
 - `termdbms`
-- `termide`
 - `terminal-mcp`
 - `termtunnel`
 - `terra-code-cli`
@@ -865,11 +839,8 @@ brew install --cask <tool>
 - `weekly-git-summary`
 - `werk`
 - `wiki-tui`
-- `wild`
-- `wiremix`
 - `wisu`
 - `wolfpack`
-- `wut-cli`
 - `xcpkg`
 - `xfr`
 - `xmlformatter`

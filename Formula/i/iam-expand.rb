@@ -1,13 +1,13 @@
 class IamExpand < Formula
   desc "Expand IAM Actions with Wildcards"
   homepage "https://iam.cloudcopilot.io/tools/iam-expand"
-  url "https://registry.npmjs.org/@cloud-copilot/iam-expand/-/iam-expand-0.11.63.tgz"
-  sha256 "d5e69fb87ced867742d4702fb4e174418f6c1a9dce677caffd9be892d53a4647"
+  url "https://registry.npmjs.org/@cloud-copilot/iam-expand/-/iam-expand-0.11.62.tgz"
+  sha256 "725fe5886cbb82e3ce703e835d23eede5e7dfe6ac6f384e9b542e462ccd17615"
   license "AGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "cb7fd3c6c4ea64b3d6b09a9423ad622b2ea16123073f5792d4c8d2c5e2d12b90"
+    sha256 cellar: :any_skip_relocation, all: "a0cb4753b0b496cbb7e5eaf563025755d66df1e2b991f5e5fe24da9053c33767"
   end
 
   depends_on "node"
