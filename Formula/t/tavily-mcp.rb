@@ -1,13 +1,13 @@
 class TavilyMcp < Formula
   desc "MCP server for Tavily"
   homepage "https://github.com/tavily-ai/tavily-mcp"
-  url "https://registry.npmjs.org/tavily-mcp/-/tavily-mcp-0.2.19.tgz"
-  sha256 "cd18deff0b6852cf374fcb263e83dbf9590e6ae8fe665125ba60d79b8b9f502f"
+  url "https://registry.npmjs.org/tavily-mcp/-/tavily-mcp-0.2.18.tgz"
+  sha256 "1e2e40d089e43e3d0af387deb037cd626733643fdaf14fadf693288d9111a768"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "0cc741c5b46b728dfddc8cb8355106889cec186cf91dfbeeb25682dded05af00"
+    sha256 cellar: :any_skip_relocation, all: "509f7c9d4506527ff8d86a798178b2b41f71ebb2c261790b69c6afde17c63571"
   end
 
   depends_on "node"

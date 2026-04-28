@@ -1,18 +1,18 @@
 class Tennis < Formula
   desc "Print stylish CSV tables in your terminal"
   homepage "https://github.com/gurgeous/tennis"
-  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "31a23740c51008d870cc90b6236473ed009b0957f17c9db62ed9f04aebb7f9b4"
+  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "65a1d57d34442a97d1e470260eba43f7046c95ad47be217eed7bbb2595af873d"
   license "MIT"
   head "https://github.com/gurgeous/tennis.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d8da977cf37910d38ae3713681c10524fb94a090fdb37ac51fb3d2c0bb89a7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3c1eb0b6fe1b8e7abdd836ed82e19df088460b97a3c76d96fc70ddb20f40c9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "446cac55c62354ff5a2e46592399ab04205b7b04ffed614be02810db0d78bbc0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f72317e8b1fc70088822044591036bbb899921581b7b09a50c0b6fe8eb12ea6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f4c5f7328b7b587f242bd3c9cc6fda9c00c2bc31e7e1b15017d66cd8824f310"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c404adc8c48f5bbb220b0b505c16f2e577f4e79ad670d6101b52ead9cd0fe52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92636c62f7211a88634df5d9c18177c515ada0330705e66ee618b733ec422709"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51664cc308c0697e5568374f80f86cdb36c14391a42bb327c14f14e0107e5bb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c177a056ed6376f47a114a77f3bf272791f3ff89616b9e282ac0b23ed33094b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64cebead59d15c10406e7c2dd5f246d92fdd874160a7d999a8f367751aa8cd4c"
   end
 
   depends_on "zig" => :build

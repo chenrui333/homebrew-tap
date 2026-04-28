@@ -1,18 +1,18 @@
 class Kdash < Formula
   desc "Simple and fast dashboard for Kubernetes"
   homepage "https://kdash.cli.rs/"
-  url "https://github.com/kdash-rs/kdash/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "645416f29f5af7c4a9a90b69e9803d37dae1061b5a0cf141393310cfb4d1aa5d"
+  url "https://github.com/kdash-rs/kdash/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "1198decf3a53e53fdd4bf90a50e5d3c665ad4c4f2a483c6a3aa8a2fce6f43d8f"
   license "MIT"
   head "https://github.com/kdash-rs/kdash.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c1a5b85be10fcfffcf4464ad0667b783adea877cdc49ddb840ad0294c3c1dee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d32addae0ea30ae6ba76a6c6caac68dce645e6871e9bd9a815504ac45a47df9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad8c33dc4fac6438c3215ab19cd4e409b196a7d39f74a0364c9f576b5ed6c5a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a574f2e6d80763b592f77b7859e649c605210b658f520e230fc2fa581f043a8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5c3228bf32cf8749bebe22e55a63af3b1f41c406435a70b9147d4b86d8aac5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97fed814d759ea4b2411b8ec752e0145bf081befbe47e0dd588236d6b01510e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43a8a1d30b7165f911c99e08ea5507f2d1627474237f81a8c737911f011a7e58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "850acfeb8746910cac7c8b1313ac981691b6ab4f4223bbab146dcb8c8965d5dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c233584395f8f07316fa57c24b670bf0c0008e2ce08ac946f49eee8c7a7ebd0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4c3ddeaef8e73bf96d5db16e19298b1bf42b04fff6b54f9c9e29e9b86b730eb"
   end
 
   depends_on "rust" => :build
@@ -31,9 +31,7 @@ class Kdash < Formula
       output_log = testpath/"output.log"
       pid = spawn bin/"kdash", [:out, :err] => output_log.to_s
       sleep 1
-      output = output_log.read.gsub(%r{\e\[[\d;?]*[ -/]*[@-~]}, "")
-      assert_match "Active Context", output
-      assert_match "Resources", output
+      assert_match "Unable to obtain Kubernetes client. failed to infer config", output_log.read
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

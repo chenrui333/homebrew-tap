@@ -1,14 +1,15 @@
 class TypeuiSh < Formula
   desc "Generate design-system skill markdown files for AI providers"
   homepage "https://www.typeui.sh"
-  url "https://github.com/bergside/typeui.sh/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "aa813fb32d8d4da51e244bc606dd4fe1aec407c74da01446bb6b1d025cf383e3"
+  url "https://github.com/bergside/typeui.sh/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "7f4722a087c62764c55721ca67a76b1c80593665482d71032c10e270d7e7a6f6"
   license "MIT"
   head "https://github.com/bergside/typeui.sh.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "c1761461190bad99bd635dd872a2ff5ffd112ab9b7b41a5566488d5d787e6320"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "66eb3bb3bb8ae8d9ebbbd2546fd79229bb9223740026c53f11971b7be68e56fe"
   end
 
   depends_on "node"
@@ -23,57 +24,19 @@ class TypeuiSh < Formula
   end
 
   test do
-    help = shell_output("#{bin}/typeui.sh --help")
-    assert_match "generate [options]", help
-
-    (testpath/"generate.js").write <<~JS
-      const { runGeneration } = require("#{libexec}/lib/node_modules/typeui.sh/dist/generation/runGeneration.js");
-
-      async function main() {
-        await runGeneration({
-          projectRoot: process.cwd(),
-          providers: ["universal", "codex"],
-          designSystem: {
-            productName: "Formula Test",
-            brandSummary: "Offline test design system.",
-            visualStyle: "modern, clean, high-contrast",
-            typographyScale: "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=400, 500, 600, 700",
-            colorPalette: "primary, neutral, success, warning, danger | Tokens: primary=#3B82F6, secondary=#8B5CF6, success=#16A34A, warning=#D97706, danger=#DC2626, surface=#FFFFFF, text=#111827",
-            spacingScale: "4/8/12/16/24/32",
-            accessibilityRequirements: "WCAG 2.2 AA, keyboard-first interactions, visible focus states",
-            writingTone: "concise, confident, helpful",
-            doRules: [
-              "prefer semantic tokens over raw values",
-              "preserve visual hierarchy",
-              "keep interaction states explicit",
-            ],
-            dontRules: [
-              "avoid low contrast text",
-              "avoid inconsistent spacing rhythm",
-              "avoid ambiguous labels",
-            ],
-          },
-          metadata: {
-            name: "formula-test-skill",
-            description: "Formula test design system",
-          },
-          dryRun: false,
-        });
+    (testpath/".typeui-sh").mkpath
+    (testpath/".typeui-sh/license.json").write <<~JSON
+      {
+        "productId": "typeui.sh",
+        "verifiedAt": "2026-03-07T00:00:00.000Z",
+        "expiresAt": "2999-01-01T00:00:00.000Z",
+        "licenseKeyFingerprint": "deadbeefdeadbeef"
       }
+    JSON
 
-      main().catch((error) => {
-        console.error(error);
-        process.exitCode = 1;
-      });
-    JS
+    assert_match "deadbeefdeadbeef", shell_output("#{bin}/typeui.sh license")
 
-    system Formula["node"].opt_bin/"node", testpath/"generate.js"
-
-    universal = testpath/".agents/skills/design-system/SKILL.md"
-    codex = testpath/".codex/skills/design-system/SKILL.md"
-    assert_path_exists universal
-    assert_path_exists codex
-    assert_match "Formula Test Design System Skill (Universal)", universal.read
-    assert_match "Formula Test Design System Skill (Codex)", codex.read
+    assert_match "Cleared local cache state.", shell_output("#{bin}/typeui.sh clear-cache")
+    assert_match "No cached license.", shell_output("#{bin}/typeui.sh license")
   end
 end

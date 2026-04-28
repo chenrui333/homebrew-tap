@@ -2,18 +2,18 @@ class Cf2pulumi < Formula
   desc "Convert CloudFormation Templates to Pulumi programs"
   homepage "https://github.com/pulumi/pulumi-aws-native"
   url "https://github.com/pulumi/pulumi-aws-native.git",
-      tag:      "v1.62.0",
-      revision: "571be0f9fac2b6eaca84cfecf182e1fd88c70b27"
+      tag:      "v1.57.0",
+      revision: "dfe454da1da95528db85eedf9fd2b09a7913a611"
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi-aws-native.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adb46215972bb869a1ebf6e5f34dd7ebbb6dc6d383cec89115e7be18f00c02d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adb46215972bb869a1ebf6e5f34dd7ebbb6dc6d383cec89115e7be18f00c02d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adb46215972bb869a1ebf6e5f34dd7ebbb6dc6d383cec89115e7be18f00c02d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67e7a4d85f5bfddb83188625f1fffb107ac4bfa6f52ed0355a86aaeb2d2d914f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25e899ed7213ed4db0b43d3a8c8427ec32b15a785002d2a4808d1a9f1bb5ef7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bee5b69d672424c3adb17d5bb7b6d70e910671b94e591cf782d7cb6120ab4da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bee5b69d672424c3adb17d5bb7b6d70e910671b94e591cf782d7cb6120ab4da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bee5b69d672424c3adb17d5bb7b6d70e910671b94e591cf782d7cb6120ab4da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ef7028ee4930d11885f5a541ea9b868e921beb83d0bde1c23265fff76dfe6eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d072685e34a41f8c81d7a8148e478797bc4bd23ff9550bf6a4a56dd411161e1b"
   end
 
   depends_on "go" => :build

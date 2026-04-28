@@ -1,18 +1,18 @@
 class Ticker < Formula
   desc "Terminal stock ticker with live updates and position tracking"
   homepage "https://github.com/achannarasappa/ticker"
-  url "https://github.com/achannarasappa/ticker/archive/refs/tags/v5.2.1.tar.gz"
-  sha256 "774b060941aed0773b49633bb5b009247ff8122ee7d45ddfe406940c635f6926"
+  url "https://github.com/achannarasappa/ticker/archive/refs/tags/v5.2.0.tar.gz"
+  sha256 "e2cfb09173cce87cb68c42331a6d4e23f5fd6135980e17c2dd37bfd23432cea3"
   license "GPL-3.0-only"
   head "https://github.com/achannarasappa/ticker.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61e1bf97281ed96c01ba95724b443cc7f16d1cd6f8a630844774e1d747e5534f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61e1bf97281ed96c01ba95724b443cc7f16d1cd6f8a630844774e1d747e5534f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61e1bf97281ed96c01ba95724b443cc7f16d1cd6f8a630844774e1d747e5534f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7593e9325b18f222e6dcd6072f9e97e46b97de9f5acd6612e3691873dc83d998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f7c838fae54878184ad3320f1614c323924ab053fdd700aca7111855ab13dc0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d56a3495dab73d5ade8a512ae2b3c37dd3333f858a35f1f752ba735fbd4fb17a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d56a3495dab73d5ade8a512ae2b3c37dd3333f858a35f1f752ba735fbd4fb17a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d56a3495dab73d5ade8a512ae2b3c37dd3333f858a35f1f752ba735fbd4fb17a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df511f19a0b66e55dc1929a7915eca32ffc34ffd10a76ebe6ab4bf326ad32912"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a96e4d3e8a8e534f7f1c6f5e58c1ae4bcb1812a36e2d792fa495b4a28143c77"
   end
 
   depends_on "go" => :build

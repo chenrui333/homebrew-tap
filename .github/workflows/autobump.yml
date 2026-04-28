@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/autobump-formula.yml
+      - .github/workflows/autobump.yml
   workflow_dispatch:
     inputs:
       formulae:
@@ -23,13 +23,13 @@ jobs:
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/setup-homebrew@42435f26fd0824180d7a31f0dd75afd37eb2e18f
         with:
           core: false
           cask: false
 
       - name: Configure Git user
-        uses: Homebrew/actions/git-user-config@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/git-user-config@42435f26fd0824180d7a31f0dd75afd37eb2e18f
         with:
           username: BrewTestBot
 
@@ -46,7 +46,7 @@ jobs:
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump formulae
-        uses: Homebrew/actions/bump-packages@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/bump-packages@42435f26fd0824180d7a31f0dd75afd37eb2e18f
         continue-on-error: true
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}

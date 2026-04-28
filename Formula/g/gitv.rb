@@ -1,18 +1,18 @@
 class Gitv < Formula
   desc "Terminal-based viewer for GitHub issues"
   homepage "https://github.com/JayanAXHF/gitv"
-  url "https://github.com/JayanAXHF/gitv/archive/refs/tags/gitv-tui-v0.4.3.tar.gz"
-  sha256 "36f3eea4b2cc9cfe37278df0357172099e334092320253ddba275e22c771d971"
+  url "https://github.com/JayanAXHF/gitv/archive/refs/tags/gitv-tui-v0.4.1.tar.gz"
+  sha256 "d3b25900bd3a81ae5d2fb62b85f848018c25362bde00e328094bbbfc09c5274a"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/JayanAXHF/gitv.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "366a843d20a55f7759915c83922c4e17dfc63ccd627519385f12fc525e5cb9a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da4cb2f3c62b237470dc342accaed866550949bf9ce6e6ff08af15957dae1967"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03d908f376bd131eff02825c6afa5bd1748fabf074ac6ac9a977088ed04b468a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43368dddc94570588550949a5d0643db1e2f8c87bea480e930b48b13d4a24825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "111328b3c0c5285b4d31475e02d2f35743775812a601a9b0c13825a4c8021a8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6235b970173eb61697bbb3261d6ea2d7c15875cb76b57827311e18ef3f347ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aacfac0de41fee8ec137bcf0320667ee6e2555182ae135d2866c02726ab5a1a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59f0df09cfbd889d172a2a973a439cc2a3b80919a99575afefafb9a514bb0eaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22767a862095b2ffb1406c6abd5e3fa3ec6426c99ac522d2342f80090be431d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d93ab25fd9c9cebeaed669e25b7ceacc01d5b7232672d85a98e28a1d597d638"
   end
 
   depends_on "rust" => :build

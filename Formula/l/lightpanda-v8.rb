@@ -1,19 +1,19 @@
 class LightpandaV8 < Formula
   desc "Fork-specific V8 archive and Zig module layout for Lightpanda"
   homepage "https://github.com/lightpanda-io/zig-v8-fork"
-  url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "66f154a6fc8fa9bec266f8f9f47c18a6a955eb1fdd805e0fc47a137306bb07d3"
+  url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "3afea883254bc0e29724e7c0eb1d0a037aee2532448979de51289cfce67d917b"
   license "MIT"
   head "https://github.com/lightpanda-io/zig-v8-fork.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8423c9d56453769f08b5f21491a10bea14bca811d4a69d85788ebc0968f7552d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a8365b177b36758fb60d73e2fe6b49282fb8731d140fea5e6aaf9ea659c41b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bd8a3352d876e0f720a9bffb0214968ba59a65672496e4b6de140c0cbd237c3"
-    sha256 cellar: :any_skip_relocation, sequoia:       "1c82bbe5bcf21b4793aa0491787e1e0eae59444a331709e70787464beb33aa3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5685faa75bb3bfd7852ac1ccfade735065762383c4a5453defde61c202858d38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d64edae38bc4033feb6c5e133ae0fd12f8458f48c2188f268468bbadeac0b5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8db13a6d70d8c417490364b2ba241d99ee3fcb8da0e79328511f6b125259972c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a8dafd8ab58fddb13ab9f4e0294cdb7f998911af517f31a11189fa12bda5721"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7584734e9f3449505e0a715297feb42deafe923370c1d0806a0a45a8803bf355"
+    sha256 cellar: :any_skip_relocation, sequoia:       "f35541bc96fef2620716429383e999321a5880fae1240b9eb65c177434fcf904"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5e432f4ec714b105bb70fc0c76162a99ac5de5c5728202ea91a6720952646da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a8efb74c84c4e1e7db14566ae5212aa06b8d7ac2e709002b7e66a5f6d8a916b"
   end
 
   if OS.mac? && Hardware::CPU.arm?

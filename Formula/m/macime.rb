@@ -1,17 +1,17 @@
 class Macime < Formula
   desc "Blazingly fast IME switcher for macOS"
   homepage "https://github.com/riodelphino/macime"
-  url "https://github.com/riodelphino/macime/archive/refs/tags/v4.4.2.tar.gz"
-  sha256 "f9257fe9ac84a9650533645290f99e3d7e7d928de9a88afa280037e779f84794"
+  url "https://github.com/riodelphino/macime/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "db127614084603aebcdc569194963b76ba10d843510aa698f1ab4f1c5ed752ed"
   license "MIT"
   head "https://github.com/riodelphino/macime.git", branch: "4.x"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5eeaa20e11534ed122147ab3da966ea5405a7ce3bcb16394cfb781cb66a13695"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73e3db362ce0e911cb13aae8583ea1ab246725aec5d3fbaa48b417855f16efd6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdf36779135b2770f5258f211ee92fa98c3b44f3f95f2796d1460f336a15ddec"
-    sha256 cellar: :any_skip_relocation, sequoia:       "dd3d63f524848aa07999e91eaf51250b228af768e5011e5ba837e0ca01d5c0da"
+    sha256                               arm64_tahoe:   "618c69372eff097e45ee922dee729a57ee24b4ccd99711a17fdc3db3938cd20e"
+    sha256                               arm64_sequoia: "1027c4905ac3612369ae8ee0288e159ce7d14fbd5782ad6a37fc8abc9f6bf10a"
+    sha256                               arm64_sonoma:  "a7935a80dd4747bf21af5081515faddefbeff63425e6d1b1fd3f7c9ec2f079c4"
+    sha256 cellar: :any_skip_relocation, sequoia:       "82a4ec9c9c6d2a769e58d15821aa25fa8ec17808da52221ea00ee11108bab8d8"
   end
 
   depends_on :macos

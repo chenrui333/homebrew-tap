@@ -1,18 +1,18 @@
 class Deadbranch < Formula
   desc "Clean up stale git branches safely"
   homepage "https://github.com/armgabrielyan/deadbranch"
-  url "https://github.com/armgabrielyan/deadbranch/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "6a4b45018f3daae0302469d6a305a7c143bc207284210310ca5532c2ee6536f3"
+  url "https://github.com/armgabrielyan/deadbranch/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "b773f176a26179c928f48c58c5299c6cc000f9e5d9ea71d258dcac3df19ef715"
   license "MIT"
   head "https://github.com/armgabrielyan/deadbranch.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fb7e50c81431ff85fe125e19419d5664f0cbe8f56be42c6a1f63b55364e91a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc4c7f0d3b6ac473c6016519cfe1e0dc146a7cce86820cf181d1ac4e0cd62230"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94bbb9c5e117ff2a485b298c246ac0a4871c024c4b44fef78ae464fc9eebd509"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "188f825887759809a44b20409c02b566ff0211f02e091d36a57f56c5feb6e201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c7b9be4f008c007d43f8645f722a6201754d7a5961532a72d0620ce0d98f35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fc90437a48528beb69440bddc048856dbbf0c2afcfedf3aee93b4580cbbe744"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d6075cdde69d205380b5f101c6a49a0d908c2a9fcf72d4de7d6730313038776"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99dbe42d91f8c63940a3fc14cecefc32659bd2a71b3d4dfb47479b6f713bf883"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fec32eab68ecaa08cc4ce62ea70e72d66e49936a5fa6b2318f31b970f6e8edad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39cac5fb51f71fc3b069e4ba942ef665d6cbccca541e135f6552ccae537ea659"
   end
 
   depends_on "rust" => :build

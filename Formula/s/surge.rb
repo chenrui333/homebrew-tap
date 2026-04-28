@@ -1,18 +1,18 @@
 class Surge < Formula
   desc "Blazing fast TUI download manager"
   homepage "https://github.com/surge-downloader/Surge"
-  url "https://github.com/surge-downloader/Surge/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "317183ecc2589a407baae10e3e892be4df21171c1bdf0bbc41053f8be910f771"
+  url "https://github.com/surge-downloader/Surge/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "124d22676e64306d32210e9a2f00f93bcf7bf79ae332fbde55dbbd1ff5f27da6"
   license "MIT"
   head "https://github.com/surge-downloader/Surge.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22a879910120e78012c06f078a807fdd008bd225c72c3bf47852a2a61b7ef63d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22a879910120e78012c06f078a807fdd008bd225c72c3bf47852a2a61b7ef63d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22a879910120e78012c06f078a807fdd008bd225c72c3bf47852a2a61b7ef63d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b34c9d4a755071419bcf44215afb4f796010e6d1b1d5a6ed233f3dfe992eaa9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e8f00bc6bd5efa83ad24800f9cd836aed0e00993c1dcffb272f0538c670a343"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf387558057a0559b587be12c57dbae1676f70675930726768bc3547153e1546"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf387558057a0559b587be12c57dbae1676f70675930726768bc3547153e1546"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf387558057a0559b587be12c57dbae1676f70675930726768bc3547153e1546"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "269d7a1ca9c1feba87f39493e5a60354dfdb5f79f3f7672428e7946dfdeeee0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "127f5d83655dc8992535b00f988fbd1c82f97bd38f81431589c65291fc585f65"
   end
 
   depends_on "go" => :build
@@ -20,8 +20,8 @@ class Surge < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/SurgeDM/Surge/cmd.Version=#{version}
-      -X github.com/SurgeDM/Surge/cmd.BuildTime=homebrew
+      -X github.com/surge-downloader/surge/cmd.Version=#{version}
+      -X github.com/surge-downloader/surge/cmd.BuildTime=homebrew
     ]
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"surge"), "."

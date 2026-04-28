@@ -1,17 +1,17 @@
 class IflowCli < Formula
   desc "AI assistant that runs directly in your terminal"
   homepage "https://cli.iflow.cn/"
-  url "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.19.tgz"
-  sha256 "4ac4ec1d6e52362c5794bb07213886bafb554d4036752b8af8c8ca08462ab365"
+  url "https://registry.npmjs.org/@iflow-ai/iflow-cli/-/iflow-cli-0.5.18.tgz"
+  sha256 "0ba6d9d7a1e0ee99facc26fad6324d65487dc792a3490838a061a7a8c8326a55"
   license "Apache-2.0" # derived from LICENSE, but no source code for the project in https://github.com/iflow-ai/iflow-cli
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "0ca6bc04772b3fae4bbae453e3e5f43b37dc589a0d241791983d654fa3c94e80"
-    sha256                               arm64_sequoia: "d0567070d2b3e524af4984d7b8536aa6645c4a3c3b87732bf0e0059ce7fa6414"
-    sha256                               arm64_sonoma:  "da11732037439574092b180a52c14e2775dff5e8f88e6975c3ab9a1138c7d806"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f93fac9f67127398fb6871e2fe74e12f0d45a97681f11d9f5b1d6c930817760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aabea75bf717940c5b88315d67f3547dbce67cea6f490b426401114202fe18d9"
+    sha256                               arm64_tahoe:   "993f6eb393694ad28f7900f71cad08f40d8d6c1bf47583318e98131dd95c0ddd"
+    sha256                               arm64_sequoia: "584206e871dc820a09ae46ac5e7cc6bf5806cfd66b7b631f53d112927a930761"
+    sha256                               arm64_sonoma:  "1b09907e3c7e7dc8df418eea5636d891f782f57c795f9555214c552b47f1b1da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d8ca734d16aacf669f91919f334a3693f932d321b26f68320b2a7ae1671b2a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "215138879d1806bb51e2ee071569d4e8d1394d9c269fb9db17ee17aa43031591"
   end
 
   depends_on "node"

@@ -1,18 +1,14 @@
 class Ytsurf < Formula
   desc "YouTube in your terminal without the usual browser clutter"
   homepage "https://github.com/Stan-breaks/ytsurf"
-  url "https://github.com/Stan-breaks/ytsurf/archive/refs/tags/v3.1.6.tar.gz"
-  sha256 "458036a070733af43dc21f65439b34c17b745cafffce85a53cf5ee855dc00950"
+  url "https://github.com/Stan-breaks/ytsurf/archive/refs/tags/v3.1.5.tar.gz"
+  sha256 "03ef4d50c1821df5f7e476efc4a6da684af5590a7493714722e71d75b8c229e8"
   license "GPL-3.0-only"
   head "https://github.com/Stan-breaks/ytsurf.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b3a22e712fe27ff693a518900c43d5278b3f306b6be5fc1a47a7748b2aba8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85b3a22e712fe27ff693a518900c43d5278b3f306b6be5fc1a47a7748b2aba8f"
+    sha256 cellar: :any_skip_relocation, all: "1d13f735c272be4bd7127a5c8a6dac0a7e9ef293fd45e8ea2fc208460f521bed"
   end
 
   depends_on "bash"

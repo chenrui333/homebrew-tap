@@ -1,21 +1,21 @@
 class Lnko < Formula
   desc "Simple stow-like dotfile linker"
   homepage "https://github.com/luanvil/lnko"
-  url "https://github.com/luanvil/lnko/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "4eabc70767cd5cedd365113b81618d61566c10cbf3a7e8d15729d9a005cf641c"
+  url "https://github.com/luanvil/lnko/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "cb88089bc789d38754648244f8e1cb7aa901479c40e57069e1a214ec5334dd17"
   license "GPL-3.0-only"
   head "https://github.com/luanvil/lnko.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4da7bbbce232b1f890e6727a1dafaff27bca6b4356fc0c7ab310a256dc93061"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e99f8b263b34cac0c4ba4611d0dab8acd21903851d2861d47df01d1e407528f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8204e0d2e89cc987ac5c158385ae4363990dd4cad757da23618d66e748724655"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b60067eb6cc81c0c391309da891191e7599a120bbb618032f0c8c86a055b7fa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a03baa78ebe8f36487583dd15034e85aafbef4ca5a27d24919ece316f9d07997"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "043d0f630ba95b6b4630b1b712f8910ccc59c14cb481edf9aa80dcdc471f6681"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2de14b6d3a43cf40ade47d4cbd9e9a62f9cd539c194d0ee23b0c5004abdea19e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e91ab5eea1d2a0ba2e75925bce83a98261d37e0f6706ba13297ec9394592aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5783f36bbb685a505a667ac0f479771de456b60c3c3814ee7d992039596f6f64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c144b2a4b4a2b813c308517c67fefa342f2d9b999945cb19c78997cb7ffbb616"
   end
 
-  depends_on "lua@5.4"
+  depends_on "lua"
 
   resource "luafilesystem" do
     url "https://github.com/lunarmodules/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
@@ -23,9 +23,8 @@ class Lnko < Formula
   end
 
   def install
-    lua = Formula["lua@5.4"]
-    lua_version = lua.version.major_minor
-    lua_include = lua.opt_include
+    lua_version = Formula["lua"].version.major_minor
+    lua_include = Formula["lua"].opt_include
     lua_libdir = libexec/"lib/lua/#{lua_version}"
 
     resource("luafilesystem").stage do
@@ -52,7 +51,7 @@ class Lnko < Formula
       #!/bin/bash
       export LUA_PATH="#{libexec}/?.lua;#{libexec}/?/init.lua;#{libexec}/lnko/?.lua;;"
       export LUA_CPATH="#{lua_libdir}/?.so;;"
-      exec "#{lua.opt_bin}/lua" "#{libexec}/bin/lnko.lua" "$@"
+      exec "#{Formula["lua"].opt_bin}/lua" "#{libexec}/bin/lnko.lua" "$@"
     SH
   end
 

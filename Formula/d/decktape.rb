@@ -1,17 +1,16 @@
 class Decktape < Formula
   desc "PDF exporter for HTML presentations"
   homepage "https://github.com/astefanutti/decktape"
-  url "https://registry.npmjs.org/decktape/-/decktape-3.16.1.tgz"
-  sha256 "20e4fe92c367f668d87f7a6db41d8ae306e5dde4cdba4bee61453adb98de43fa"
+  url "https://registry.npmjs.org/decktape/-/decktape-3.15.0.tgz"
+  sha256 "9ef30a860f2b9a89a3f7143cf4961a8887302d8a53b44cc69958254e44b5eb33"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "251090233280af8501a49a8b17b5758e4c67082cb9b03425297ae341faeee265"
-    sha256 cellar: :any,                 arm64_sequoia: "6dbf4835495375b293aa137d292becc974c2f9f808de7f5a78d5adf708430553"
-    sha256 cellar: :any,                 arm64_sonoma:  "6dbf4835495375b293aa137d292becc974c2f9f808de7f5a78d5adf708430553"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9ed7c9b45b2233759cac46c35979e33bd926867e563201c983efd4eb1846c80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f1cf4d2f481dbb227390968bcfe62b1b7289d181f160992ef9e56e3636aedb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "096547e8ff0f64153853de94592430ef254574d19f4aef291ae9d95b34801465"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b03711a2ba31a78b8408a17d771864fd4bd33a56bd25602b69b0582b50680fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fb604c65c9885442e64e5832403851efdd37d1c9de2ac388c6ed0072e09075b"
   end
 
   depends_on "node"

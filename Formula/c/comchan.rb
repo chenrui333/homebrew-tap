@@ -1,18 +1,18 @@
 class Comchan < Formula
   desc "Minimal serial monitor and plotter for embedded applications"
   homepage "https://github.com/Vaishnav-Sabari-Girish/ComChan"
-  url "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "8647ca415638ba9f4134a53669489e1ff7bee1cfc3fd89bfef2ad40a546fac44"
+  url "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "b4ef7d7dfbf2dcdf2a22ba4f4de356f8237f9252ccb69c7f2aab1e76191a8cb9"
   license "MIT"
   head "https://github.com/Vaishnav-Sabari-Girish/ComChan.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d6d3f3c9386f2723dcef134e4fd7f9f01535c0dc914d0415cc8c8bbc4227059"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5d4f1095b6ff1465a2c5100eb3f4d274cb401c9aa04b609b931b6582dcf4107"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa41b042f4f64547891bd744d1db3d9e515df595de2ae49a8637758d16577f88"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a34a194d615726d0df9616eaaa1c79e40760612edbe20937357f613d6b267bd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4fc18c11cea265dfd1f8580bbed2c6bc6f7195db6e0029b472d0181ed7b310"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b29ff2eddfa3dc2fd77081a235b3625d6413a91c1ae73697d8d2dcb6724d811a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcee11c6737bd46f7c56fd4c9e3fba9e0d27a3fabf0e2a7af9990439be2c40a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4ff0e40856c01edefbedf3a637e1aba0b4b655d1da2ef39f2a80ce8f85b83e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c2ae7d92fd77bffd7c08035bc4bd3ff452158868af6e7f68ee9c9a868fdbdd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f163a12bc16a74f7c5c7c9b46781a193d84777cdf2e4ead767fd96be38d57b8"
   end
 
   depends_on "pkgconf" => :build

@@ -1,17 +1,17 @@
 class MongodbMcpServer < Formula
   desc "MCP Server to connect to MongoDB databases and MongoDB Atlas Clusters"
   homepage "https://github.com/mongodb-js/mongodb-mcp-server"
-  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-1.10.0.tgz"
-  sha256 "3e9e5701117352c579329332a659bbd7776d12f4ce0d068551c6c9600a517924"
+  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-1.8.1.tgz"
+  sha256 "b25112c52ae6410937b4ba863afd2613adc7b8b4af0e7a83a33b2f9657a77046"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "a81bbb126dc249c2bef3cb5638a24a28e9c0e7f5780eaaf745bc6ed6c49de8e8"
-    sha256                               arm64_sequoia: "53d69398c1c79bdc06991ca20459bbb7511b53c4462dbd5b30bd69234f21fa45"
-    sha256                               arm64_sonoma:  "53d69398c1c79bdc06991ca20459bbb7511b53c4462dbd5b30bd69234f21fa45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c78709bb72524ebfd7dbc53bc5067475dd04f5c36fa6c1bf9bdc21104dbb1fdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afd9e6d16db4edf0434b54afb9db7b7a3441acc3b0031e172567b8fb909d304d"
+    sha256                               arm64_tahoe:   "465dbcce232afcb744b23d628332e1b71d8e685ce6046fc2ce73bd2c125b2770"
+    sha256                               arm64_sequoia: "3cdecb1a55b4d9b8cf86049730db4c5390e28967095475bc6a599f5aed35fd97"
+    sha256                               arm64_sonoma:  "3cdecb1a55b4d9b8cf86049730db4c5390e28967095475bc6a599f5aed35fd97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b12a3fc4e1286cf5c845b76d7103b24e1e262bbd1103a453b91f778a6568facc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5a3bbc26006c6cb1c513694f0386e6be4bc1d8bca2bfaa28b9f29024e1dce23"
   end
 
   depends_on "node"

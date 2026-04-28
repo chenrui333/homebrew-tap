@@ -1,13 +1,13 @@
 class Auggie < Formula
   desc "All the power of Augment Code in your terminal"
   homepage "https://www.augmentcode.com/product/CLI"
-  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.24.0.tgz"
-  sha256 "c184cc2ccc995f10ab2558f470193df56efb21da7140c5f376720c216a519c54"
+  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.20.1.tgz"
+  sha256 "d4b9818ae672da0a0b746394be08c58e8b7a3bca091800b98b8921850f229b09"
   license :cannot_represent
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "565e2849e0ab46b23aae98c3fe7bd8c84666e3c587b878c0aae40b615dc680f5"
+    sha256 cellar: :any_skip_relocation, all: "cadceb38584e163a1aed425a31fdeaf886ac6948352ac08a5cdcbe045c6959cd"
   end
 
   depends_on "node"

@@ -1,17 +1,16 @@
 class Marchat < Formula
   desc "Terminal chat with WebSockets, E2E encryption, plugins, and file sharing"
   homepage "https://github.com/Cod-e-Codes/marchat"
-  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "fcd8439949a4671c6f452f1e90fc3b02e0dc61ebd9794a46fe6531f0166f8018"
+  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v0.6.0-beta.3.tar.gz"
+  sha256 "37741caa85abdffe83d8f4097099394777b1ee5ee2c915b5e641c2cb915539f8"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30b91041fd360463bf7769a39fe80e2d48b5ec80a8a5610976c69f2eb538d937"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30b91041fd360463bf7769a39fe80e2d48b5ec80a8a5610976c69f2eb538d937"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30b91041fd360463bf7769a39fe80e2d48b5ec80a8a5610976c69f2eb538d937"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f59bed8001016e879b11a6ba66e5be3ad224a81c2379587b96449d5f05cbc85a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6ca06e57aa89cd19176b0ded17fef368cc51aebf7cb58d9b42cfd245d4ca011"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db6cb7d96085408f47f9db29deb5fbb7463487cf5cbfa5941b9218b657b6dc03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eaba7d98e2658cfeeb79275d0ad1716355f2a38b0e162dcbdf53520de1cf3de4"
+    sha256 cellar: :any_skip_relocation, ventura:       "885470a2bb885a05222aadfe7f26f10b2dbbc41c9cd1c76085dd05aeda9fb5c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99d7df95e8a52e6ff6c6288a74b4c3cf48668ab2353e7b7b8edf7e803f79d44f"
   end
 
   depends_on "go" => :build
@@ -35,7 +34,7 @@ class Marchat < Formula
     pid = spawn bin/"marchat", testpath, [:out, :err] => output_log.to_s
     sleep 1
     assert_match version.to_s, output_log.read
-    assert_match "TLS: Disabled", output_log.read
+    assert_match "Starting server without TLS on :8080", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

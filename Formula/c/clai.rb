@@ -1,18 +1,18 @@
 class Clai < Formula
   desc "Command-line artificial intelligence - Your local LLM context-feeder"
   homepage "https://github.com/baalimago/clai"
-  url "https://github.com/baalimago/clai/archive/refs/tags/v1.10.6.tar.gz"
-  sha256 "2df65c20d89b176d2a3d8f321609b863f72c29112103163c5f1e6de072d31561"
+  url "https://github.com/baalimago/clai/archive/refs/tags/v1.10.3.tar.gz"
+  sha256 "b7a2885d163fc027090c027293f36096a6fbaca99e43483540df2927bf0795c9"
   license "MIT"
   head "https://github.com/baalimago/clai.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7187ecfb565e1d0f92ac075d443ed61c7d0de3104cdef5ff270d556f39679cae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7187ecfb565e1d0f92ac075d443ed61c7d0de3104cdef5ff270d556f39679cae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7187ecfb565e1d0f92ac075d443ed61c7d0de3104cdef5ff270d556f39679cae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e21ea05a3f5cb5a3aa66051358f7be0eefa8835797413e5081df019e0e1719de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3b48b62ee7adfa83986e119c41aa99ae4116ed0d3b20d893fbae305c6a7f33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd52b1d73f624e74474238a32b5025403439c23c1e2fbb92469c41402595b4fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd52b1d73f624e74474238a32b5025403439c23c1e2fbb92469c41402595b4fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd52b1d73f624e74474238a32b5025403439c23c1e2fbb92469c41402595b4fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65f5b0d9648b3d704942592906cacd9226eb9c35b37e42920a0dd52d229814c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d7a6cc4fd2f92068b1071eedda435c0f4ea46d4cdce88419d4286d994670337"
   end
 
   depends_on "go" => :build

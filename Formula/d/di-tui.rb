@@ -1,18 +1,18 @@
 class DiTui < Formula
   desc "Simple terminal UI player for di.fm"
   homepage "https://github.com/acaloiaro/di-tui"
-  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.13.4.tar.gz"
-  sha256 "12fb90dcaea96bfb906b65e00e925a54ceb22045b3ca96f82b92dbc8e5481097"
+  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.13.2.tar.gz"
+  sha256 "cd8abe4d3f0e49ac83fb45058c2579dd939fa2156685c052b41235e978907baa"
   license "BSD-2-Clause"
   head "https://github.com/acaloiaro/di-tui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "206a2e03c765dce5e61107597cf821a472d47d04e0bd4aa0e17cbf95672ab8df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "206a2e03c765dce5e61107597cf821a472d47d04e0bd4aa0e17cbf95672ab8df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "206a2e03c765dce5e61107597cf821a472d47d04e0bd4aa0e17cbf95672ab8df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66dae02f6c9bc3a6cc01b690551892856e1351bd1acf99378705ac962c6a404e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "305ebb141d9d8213a32d1cc7acc70ef7dd93d7a395b2a2597569e11febaeb6c4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "027d082eabc4d9b4a40ffb89a93b84ca531ec77227c3c201bf11b2ece2a77ee9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "027d082eabc4d9b4a40ffb89a93b84ca531ec77227c3c201bf11b2ece2a77ee9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "027d082eabc4d9b4a40ffb89a93b84ca531ec77227c3c201bf11b2ece2a77ee9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a14edead28c6888118e4aa8fc47edb1003490d05310577e4c6fc1495dca143e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491069fd41261e9e57614232731163a4d6c07d05700f30abd2c0ccb89fa20c43"
   end
 
   depends_on "go" => :build

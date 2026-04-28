@@ -1,13 +1,13 @@
 class Phpinsights < Formula
   desc "Instant PHP quality checks from your console"
   homepage "https://github.com/nunomaduro/phpinsights"
-  url "https://github.com/nunomaduro/phpinsights/archive/refs/tags/v2.14.2.tar.gz"
-  sha256 "a58f38633e83ac342afdc736f91dfe88ff505e1cf13e9711f0faa2189f0dadb4"
+  url "https://github.com/nunomaduro/phpinsights/archive/refs/tags/v2.14.0.tar.gz"
+  sha256 "b5efacd946a89aed891881ce44439f71b2dedf92c32fc611aff313676f646b88"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "687a0e2b4f903975cc48ebafecba64ddaa3e63446242e69f74c65a9d16764aa1"
+    sha256 cellar: :any_skip_relocation, all: "6ba4914af735ae3024fe651f94e96c031a62a54514eaa2d2c3cde4b4c128c4b4"
   end
 
   depends_on "composer" => :build

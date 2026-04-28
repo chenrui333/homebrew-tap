@@ -1,18 +1,18 @@
 class Sqd < Formula
   desc "SQL-like document editor"
   homepage "https://github.com/albertoboccolini/sqd"
-  url "https://github.com/albertoboccolini/sqd/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "7a761802a8e80d9a613a149a9feaf8243ed85160e04e451791f975dc7d2bd5c2"
+  url "https://github.com/albertoboccolini/sqd/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "9e86925c186d8b2b3fa8f6f5612a2bb0eff513a2b37d3eef6f452fcc33e1b6a3"
   license "MIT"
   head "https://github.com/albertoboccolini/sqd.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3fb17d694f8ffc53d36d5b38818a6f8f801a3bfd9e1298acc356359f0e0039b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3fb17d694f8ffc53d36d5b38818a6f8f801a3bfd9e1298acc356359f0e0039b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3fb17d694f8ffc53d36d5b38818a6f8f801a3bfd9e1298acc356359f0e0039b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2cedde3ee441194ab874005406d2a4a85c592ad1a5ede1c164952be4576184d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e7ebe19644edae15b55de0dc580d49b41a73f693a59d0490cf8f7b009e6e380"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "867c3cd35c98f355ba7824b8a5fc99d4796cb9cb560b6d431a9c26ff6782caff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "867c3cd35c98f355ba7824b8a5fc99d4796cb9cb560b6d431a9c26ff6782caff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "867c3cd35c98f355ba7824b8a5fc99d4796cb9cb560b6d431a9c26ff6782caff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5c30f761ef759ef2e6d17ebd88c71ce59c4d011a9cddcfa6d4e8d36d96ab2a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3a2f6ae4e16d0e70473782a19c682d322aa85738cc4bdeb6301c881191ae8da"
   end
 
   depends_on "go" => :build

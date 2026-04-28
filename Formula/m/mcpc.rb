@@ -1,17 +1,17 @@
 class Mcpc < Formula
   desc "Universal CLI client for MCP"
   homepage "https://github.com/apify/mcp-cli"
-  url "https://registry.npmjs.org/@apify/mcpc/-/mcpc-0.2.6.tgz"
-  sha256 "4a97a72b7094ae0890a6a6409185983e9f3672beea28928e6d23c6b072f39cd6"
+  url "https://registry.npmjs.org/@apify/mcpc/-/mcpc-0.1.11.tgz"
+  sha256 "4703184e83fa44be5e7ae5150b7d86984803328122b5d2a71021f5d549b8caa4"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "0c37a6c7433f47268781990c6b149f120245065f4e6a0bb730283841cc328ed9"
-    sha256 cellar: :any,                 arm64_sequoia: "1f9dc90e6af4d8f511d52152ec9da18f7ce38f4a6d605ae2b28c7df76345fc07"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f9dc90e6af4d8f511d52152ec9da18f7ce38f4a6d605ae2b28c7df76345fc07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48fee7f7ceb87df73fc365ea2e2488bdb91830209ca8e08776e8184db20734c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8cf6b173623672352ceff99b3e3650d57a28021e2a1748209291db8d3f6450a"
+    sha256 cellar: :any,                 arm64_tahoe:   "88b0ec4dd52fe33863ed6a20324e3d1955915758fd5baf430ee80a67227c870a"
+    sha256 cellar: :any,                 arm64_sequoia: "3648cc1dea39bd2f66f7ec6e9c47595188d572fed4a121ac00df6a1b287afa43"
+    sha256 cellar: :any,                 arm64_sonoma:  "3648cc1dea39bd2f66f7ec6e9c47595188d572fed4a121ac00df6a1b287afa43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51c3dc8b6dcd7df044d5ebcb9cfe12ae96c8a7b54336c5ad9ca1617424b562c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6fe5a8ad4914bb360336746b46a0411e2ff54f5d66e00a266077f7a5e2ab4f3"
   end
 
   depends_on "pkgconf" => :build
@@ -29,12 +29,7 @@ class Mcpc < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/mcpc --version")
-    connect_output = shell_output("#{bin}/mcpc connect https://tools-list.invalid @test 2>&1")
-    assert_match "Session @test created", connect_output
-
-    output = shell_output("#{bin}/mcpc @test tools-list 2>&1", 1)
-    assert_match "@test", output
-    assert_match "tools-list.invalid", output
-    assert_match(/Failed to connect|Connection closed/, output)
+    output = shell_output("#{bin}/mcpc https://tools-list.invalid tools-list 2>&1", 3)
+    assert_match "Failed to connect", output
   end
 end

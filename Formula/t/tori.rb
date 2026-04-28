@@ -1,18 +1,18 @@
 class Tori < Formula
   desc "Remote Docker and host monitoring over SSH"
   homepage "https://toricli.sh/"
-  url "https://github.com/thobiasn/tori-cli/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "c432d112ac8f10c6024fb76211429ea62a961f6cb12dc722322da43d478ccb79"
+  url "https://github.com/thobiasn/tori-cli/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "2aff7df66154fa4558edc3633d28bb4d7dd41d36dcf374028138b961ee243513"
   license "MIT"
   head "https://github.com/thobiasn/tori-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48d5a0d21c0df5706ec006dc52e442ca2e0165e2e309403e9f6091d6e7aca9a5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48d5a0d21c0df5706ec006dc52e442ca2e0165e2e309403e9f6091d6e7aca9a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48d5a0d21c0df5706ec006dc52e442ca2e0165e2e309403e9f6091d6e7aca9a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "706c662f04fc95f695b82067234d97ad6d1c6bc8ced345b2d42e720532e24217"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4199838891bd783e4f57e848207d4d5c5e26165a286a48ca887a59f2f6578a2f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b7afa6fa61f203e6c96ca2d584d85c60a932bd1e3c338b4d7eb791ade1ed7a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b7afa6fa61f203e6c96ca2d584d85c60a932bd1e3c338b4d7eb791ade1ed7a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b7afa6fa61f203e6c96ca2d584d85c60a932bd1e3c338b4d7eb791ade1ed7a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0940727b177952008a11de75f01da66fdcce6cf977e49995b71f704efbda5d7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c000ae7ca1a42ebac5c500a2138c3788c5880c1b5d65e853d09efcaada4625c6"
   end
 
   depends_on "go" => :build

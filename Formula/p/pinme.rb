@@ -1,17 +1,17 @@
 class Pinme < Formula
   desc "Deploy Your Frontend in a Single Command"
   homepage "https://pinme.eth.limo/"
-  url "https://registry.npmjs.org/pinme/-/pinme-2.0.1.tgz"
-  sha256 "28ec3e233662369043af8b62c3c8dbd2f1479785a5fee249227a3a7c27c50f0b"
+  url "https://registry.npmjs.org/pinme/-/pinme-1.2.6.tgz"
+  sha256 "916eb6ebab15c630a3b0d1d203ea5fff337062f494135285bfbb53866963d0b1"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "b203d24de6527271834805e29d5d4998911f5be974dc2524b3bc7fafc8d0c40f"
-    sha256 cellar: :any,                 arm64_sequoia: "42db69377a42901b33ab48392a852722eeaf88a82ce08ba8dfa9d030f12e23ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "42db69377a42901b33ab48392a852722eeaf88a82ce08ba8dfa9d030f12e23ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4326ecc835bc13dcd139afe47b3310dfb583fefbc6bd722fcc27f2c2031c5be3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5df73325319433ba7125286f36245619799e2a3051d7aa2dfd7bac472c77f79a"
+    sha256 cellar: :any,                 arm64_tahoe:   "061bb5503a07358b71d9221c97248f6e7dbce1db11168fd22caba4f3651504d5"
+    sha256 cellar: :any,                 arm64_sequoia: "d41be75ebe1f2f7c71fe261bc2123435f7919cec7cf96acbf801ce5dc2bbeed8"
+    sha256 cellar: :any,                 arm64_sonoma:  "d41be75ebe1f2f7c71fe261bc2123435f7919cec7cf96acbf801ce5dc2bbeed8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5ddc6bb0404aad381ad22ed8e3dfa9633ad9e1ada5ee7b92e9b3ae66fe7a66e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee0b77d583f4b2241fc50518ae14d818f72b4114e35546c6cf53d1921550bc7b"
   end
 
   depends_on "node"

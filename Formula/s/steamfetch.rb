@@ -1,17 +1,17 @@
 class Steamfetch < Formula
   desc "Display Steam stats in the terminal"
   homepage "https://github.com/unhappychoice/steamfetch"
-  url "https://github.com/unhappychoice/steamfetch/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "9726d9675cac0ca7336d64d53f550a7271c184d10be59e65b7a205a7f2ccc3a3"
+  url "https://github.com/unhappychoice/steamfetch/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "9f1b6a201ad3aa2aaa51270f068a109f05ad1d1d2e37c1cae3df88e5f4edf421"
   license "ISC"
   head "https://github.com/unhappychoice/steamfetch.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "0de60fe4d38d4ed66b9d17424aa7c1b9a0dc5bd15305f4e06bb0fbb2e8b68ec4"
-    sha256                               arm64_sequoia: "d19e95e4b14754b2a41bfb647cc9df50f4bb908348fd592bf300fddea59cd5e4"
-    sha256                               arm64_sonoma:  "9b8ea23671ff00b1ffe2c9ff71e4acf5870f5492ef3c65e8b1e3f585081e02bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ba60b06b8780a26dd12114d4ef9514c38f70868e518d87a39635ac615cf1996"
+    sha256 cellar: :any,                 arm64_tahoe:   "4356e5c8757a8070b104d07e81eb4a978b7b2c14e3ba096f54d626ee8f72f320"
+    sha256 cellar: :any,                 arm64_sequoia: "4042fd4bbb0a21a95ac04801af5af87297dd46134dbebc0fd95c27f0e7135868"
+    sha256 cellar: :any,                 arm64_sonoma:  "032edb81b115bfd38f64a4ce0c387b608378d2ec0ad43ff2a4a627a5657fa13a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebc89f106fed5ace2a30a9f46b496b60296abaeecaa47e6dbb328a69376c6460"
   end
 
   depends_on "rust" => :build

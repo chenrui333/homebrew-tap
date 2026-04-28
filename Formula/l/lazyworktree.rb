@@ -1,18 +1,18 @@
 class Lazyworktree < Formula
   desc "TUI for managing Git worktrees"
   homepage "https://github.com/chmouel/lazyworktree"
-  url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.45.1.tar.gz"
-  sha256 "55ea155a20bf708fd267f3e64719693669b9330f6ced157e8cb7ad86a41eb004"
+  url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.44.0.tar.gz"
+  sha256 "703faea84f95a77b2db5d68c55b43b9840089de68b599f16e2230cf714706082"
   license "Apache-2.0"
   head "https://github.com/chmouel/lazyworktree.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab23f747775cf42549255f0ebd897b7b11de3ef2f52c96f7cb9059f160a1f165"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab23f747775cf42549255f0ebd897b7b11de3ef2f52c96f7cb9059f160a1f165"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab23f747775cf42549255f0ebd897b7b11de3ef2f52c96f7cb9059f160a1f165"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aad4594724895449742266ca20a46206e2201024d6823b711f3c5e5dcfb9cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e8d4db6ae67cce4b882e88106f5592e4c6726ade7d2b9869f0a7291613ac0b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d0fc6b375d61045dc9237ad6bda748e1431a05408ccafae60571491d893a2c43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0fc6b375d61045dc9237ad6bda748e1431a05408ccafae60571491d893a2c43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0fc6b375d61045dc9237ad6bda748e1431a05408ccafae60571491d893a2c43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a72e420b7033414e7ce83c0bad14a3ed59128463395abebee21576cb038d0661"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d70c43c78528f59054fc45edb5f8271064ea68749056726597c927c580f046"
   end
 
   depends_on "go" => :build

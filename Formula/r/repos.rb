@@ -1,18 +1,18 @@
 class Repos < Formula
   desc "Manage multiple Git repositories with an interactive terminal UI"
   homepage "https://github.com/epilande/repos"
-  url "https://github.com/epilande/repos/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "83084c251e9ad14547e3bd3ee8d1975b9887ef31e85383657d97460aaa2b3027"
+  url "https://github.com/epilande/repos/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "1d7640dbce3d3e6851924efa29aff5854533e75304e78e023db40ea0eeff55ea"
   license "MIT"
   head "https://github.com/epilande/repos.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "3f23bfdbc5cb79a2ce8e837182a1febc77a2f513083191ee63800c06633d83af"
-    sha256                               arm64_sequoia: "bf45a4f87909fdda2e28fd2aa1787afa1c93ceaef5e932e37671030298170899"
-    sha256                               arm64_sonoma:  "2711869e1289c0051b1416016bad3a7e1547fef3020f326dec2668f62aa1e5a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cadb16457a80c8f3b575facc0438728b161ebcbf3a517ca3830ac7242eb81dc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc21802ae2af630b76f9885f6d2daf27ee82fa4cf7edd60e9ff8c4e38841d0ad"
+    sha256                               arm64_tahoe:   "d0ddebc2ec304bc776fa42c4290c8df86db2f69db59b5aea8a9a5daa91936b61"
+    sha256                               arm64_sequoia: "460869e1d851fea42f7613807b08bfd8f5795ca001a22573d833f1d125723c3b"
+    sha256                               arm64_sonoma:  "872288b526bd7877cbfb1a6b2df67d4ff3217d54717f9b4972efe326b9666e98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "132a6c5f2c9405fad66214cb834c33fe04749ddd9563475f5a4ad0486c6ac4a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0af262e73d3b0c002455461e87be9a0f446ad05241b9d3602248eba9bbd13786"
   end
 
   depends_on "chenrui333/tap/bun" => :build

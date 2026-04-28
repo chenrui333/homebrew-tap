@@ -1,18 +1,18 @@
 class Rustormy < Formula
   desc "Minimal neofetch-like weather CLI"
   homepage "https://github.com/Tairesh/rustormy"
-  url "https://github.com/Tairesh/rustormy/archive/refs/tags/v0.4.4.tar.gz"
-  sha256 "d5934a381c3c8fdea69e51296ef1ecf428e30466edf781e3824753a029e27cea"
+  url "https://github.com/Tairesh/rustormy/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "f937cf5287e73a6082eb0e7a241508c628bd5edac00d1ef00d8bde1b6bfea22b"
   license "MIT"
   head "https://github.com/Tairesh/rustormy.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85d722f80aeb8df3b406c1c92c020292c081adbc9bc5bed651e0ae1099f5a25b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3211b5d3b54ca6f1e8384dc8546d6e3dbc025e7024d1c3cd2a2337e6c2c5e21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67aee9f9cb477d8751176ec3ac151b1d2aca214d04a2ba6e5fef0c4d43b03c15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d24b8fbc2674daf1bf9ecedc992f845cc2405e2dcdc27261112d195dc92432d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6955d59398dd6197b82c793475c9bb71a608ba3d90a8cd8eb291d234216941a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5b7860e043b90922b3ea142b653fefe5a059c7912be6bd31d0d32bf94ba25fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71f2bdcb35d33a80d217c8599dbb0e8cd4eeb8366a2cbfbf20d746f2d66c43fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e451f32d0ba3a9f15a7386f1c902e1c1c79198c39d00d199eea9e028ceb47f42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f48c10610d6e91ac7cb9031ab31c893b96d8dc363e340aaadfc5eba6fc82812"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a835d53a7a7326fdf090fe600a17f78171b1bfbcb1fcff8e3c9c54411e907bd0"
   end
 
   depends_on "pkgconf" => :build
@@ -28,6 +28,6 @@ class Rustormy < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rustormy --version")
-    assert_match "Cache cleared successfully.", shell_output("#{bin}/rustormy --clear-cache")
+    assert_match "Condition:", shell_output("#{bin}/rustormy --city nyc")
   end
 end

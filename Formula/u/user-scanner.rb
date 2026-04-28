@@ -3,27 +3,27 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/84/01/81407134ef71dacdcef225f1be3f90ada52c2308a748c244b39fd2add0a4/user_scanner-1.3.5.9.tar.gz"
-  sha256 "c33e0107cddc1a70a4fd83bf461fe087c01f0a38a617f6536ffd84d3ef6358cb"
+  url "https://files.pythonhosted.org/packages/c6/76/3aadc72a346ed17ba3f1313fa4342a67486fac243f4baaca9ba46a6a80a2/user_scanner-1.3.5.1.tar.gz"
+  sha256 "08a32ce2a7211b3049ec6251385ff1c4a1164b748f77bdcaa1164d168c886530"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f6fccda52f3679bc95919894ccaad46b336fd6855d1f41c3392df601ed54707c"
+    sha256 cellar: :any_skip_relocation, all: "7d1c1da59ca6eb8e01942fd2789c3c6d7d28d1a29d9d3f14cfe0829a56da27a1"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
+    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/25/ee/6caf7a40c36a1220410afe15a1cc64993a1f864871f698c0f93acb72842a/certifi-2026.4.22.tar.gz"
-    sha256 "8d455352a37b71bf76a79caa83a3d6c25afee4a385d632127b6afb3963f1c580"
+    url "https://files.pythonhosted.org/packages/af/2d/7bf41579a8986e348fa033a31cdd0e4121114f6bce2457e8876010b092dd/certifi-2026.2.25.tar.gz"
+    sha256 "e887ab5cee78ea814d3472169153c2d12cd43b14bd03329a39a9c6e2e80bfba7"
   end
 
   resource "colorama" do
@@ -62,8 +62,8 @@ class UserScanner < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
+    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "socksio" do

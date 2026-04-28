@@ -1,26 +1,13 @@
 cask "cc-hdrm" do
-  version "1.4.9"
-  sha256 "5c2cfb69e19c84f2aab963a47fb37f0e38703ae1d1cc06cd98f46e74ded26ca3"
+  version "1.4.2"
+  sha256 "dc0bc570ad7714354083b596aba93c37e7f5297a36f7f558360b73049f34e5ec"
 
   url "https://github.com/rajish/cc-hdrm/releases/download/v#{version}/cc-hdrm-#{version}.dmg"
   name "cc-hdrm"
   desc "Menu bar utility showing Claude subscription session headroom"
   homepage "https://github.com/rajish/cc-hdrm"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
-  disable! date: "2026-09-01", because: :fails_gatekeeper_check
-
   depends_on macos: ">= :sonoma"
 
   app "cc-hdrm.app"
-
-  zap trash: [
-    "~/Library/Application Support/cc-hdrm",
-    "~/Library/Caches/com.cc-hdrm.app",
-    "~/Library/HTTPStorages/com.cc-hdrm.app",
-  ]
 end

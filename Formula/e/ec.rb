@@ -1,18 +1,18 @@
 class Ec < Formula
   desc "Terminal-native 3-way Git conflict resolver"
   homepage "https://github.com/chojs23/ec"
-  url "https://github.com/chojs23/ec/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "348d264be5380b909fbe49b145ad882f479c17ef9babbcf753b80c2b8ffb643e"
+  url "https://github.com/chojs23/ec/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "71bf8b390b5f5b010c07b65ecd4243535f690282f728cd164f9e2a79d1f14577"
   license "MIT"
   head "https://github.com/chojs23/ec.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "436340fb60a4f386d64627225513f651a804da51b9599e4d1c60517f4cceb3ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "436340fb60a4f386d64627225513f651a804da51b9599e4d1c60517f4cceb3ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "436340fb60a4f386d64627225513f651a804da51b9599e4d1c60517f4cceb3ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40f937a86eafd13129e5e21c2f8b8c5c0e94fc6b3fccd54697bb8000981aa191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d06f8a19b989bdd9af4708918c7d88da8c69b75c07c52616171d59dd2f09b7c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b134f6bda98642b647797407175957feb39bf26889514a2a299cd06b8fd3df3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b134f6bda98642b647797407175957feb39bf26889514a2a299cd06b8fd3df3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b134f6bda98642b647797407175957feb39bf26889514a2a299cd06b8fd3df3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efae58d5d689517f313086a92d8cb84a747c10196b15213c268b9ca430308684"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "771408244feba2c642d47236336019c5a6da996389f41d31e177964078a6ee5f"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Refurb < Formula
 
   desc "Tool for refurbishing and modernizing Python codebases"
   homepage "https://github.com/dosisod/refurb"
-  url "https://files.pythonhosted.org/packages/48/90/572837d7ec45cb9385b85b751bd5f317294a938e1600b2b7190618a2929b/refurb-2.3.1.tar.gz"
-  sha256 "8605ef2cf40804403340396b9cf51b13bd5d0f5f6a84f8b4447484b7ba94bc79"
+  url "https://files.pythonhosted.org/packages/b1/9e/6f6d7d2d717edef96bb18ca62a08977640fa31f6803fbd61b13aaf6f70c8/refurb-2.3.0.tar.gz"
+  sha256 "c6225698b7334760511038d8d5db75bc1524cc842e668fff27cda85fae29bef5"
   license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a06cdc0e330b94da5acbeef2cf9633359bd1a480118fb67adf61c5a08c0f29f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ff62e7912dd8ffe00218032c7391f2c41d069b84aca6574c1946593267a4f47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26846944de616848e43b9ab61bbb5d3c61ee8224f4671b3aea5aa9eec0512e37"
-    sha256 cellar: :any_skip_relocation, sequoia:       "25af157699af8e142617e8d46a7b730d08d99e0c37aa01edd016e16aef68acb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f39c20783dc41f6a3bceee65de1ca7e310b290aee33aa8469d2c19af1b454200"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6de502cdd823daee1144fe8950f525873476f279d8544ca023371220527c2e02"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2eec4cda2b9a661985c05a2dc4d2a53dca426ccb7851b8434c9faf1d9ba32e45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3759c841109f11b54c9415eba765bbb6de1909cb4ea0dd5b86be8feb5cc2fd7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a109b17896f3145a5b0ac3c51dfef71fd6c65d01c362596e57e98123534cab9"
+    sha256 cellar: :any_skip_relocation, sequoia:       "a997b4cc97ebfb3b674ad459960801285e5e0bd618de25a9222fc8b14d6038b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "898ea5410858a481311d5c94b8f868c64a6d2affe6ca0c354b7ca96a705e70b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d97676f159dfc2c1882cd4335662934a23baa13cbb9d9ac4ebea0d73c388551a"
   end
 
   depends_on "python@3.14"
@@ -25,8 +25,8 @@ class Refurb < Formula
   end
 
   resource "mypy" do
-    url "https://files.pythonhosted.org/packages/f8/5c/b0089fe7fef0a994ae5ee07029ced0526082c6cfaaa4c10d40a10e33b097/mypy-1.20.0.tar.gz"
-    sha256 "eb96c84efcc33f0b5e0e04beacf00129dd963b67226b01c00b9dfc8affb464c3"
+    url "https://files.pythonhosted.org/packages/f5/db/4efed9504bc01309ab9c2da7e352cc223569f05478012b5d9ece38fd44d2/mypy-1.19.1.tar.gz"
+    sha256 "19d88bb05303fe63f71dd2c6270daca27cb9401c4ca8255fe50d1d920e0eb9ba"
   end
 
   resource "mypy-extensions" do
