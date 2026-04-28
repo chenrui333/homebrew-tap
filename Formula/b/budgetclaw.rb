@@ -19,5 +19,6 @@ class Budgetclaw < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/budgetclaw version")
+    assert_match "No activity tracked yet", shell_output("#{bin}/budgetclaw status")
   end
 end
