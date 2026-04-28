@@ -15,7 +15,7 @@ class Clawhub < Formula
 
   def install
     cli_dir = buildpath/"clawhub-cli"
-    cp_r buildpath/"packages/clawdhub", cli_dir
+    cp_r buildpath/"packages/clawhub", cli_dir
 
     Dir.glob(cli_dir/"src/**/*test.ts").each do |file|
       rm file
