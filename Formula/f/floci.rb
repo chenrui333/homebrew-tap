@@ -1,18 +1,18 @@
 class Floci < Formula
   desc "Open-source local AWS emulator"
   homepage "https://github.com/floci-io/floci"
-  url "https://github.com/floci-io/floci/archive/refs/tags/1.5.9.tar.gz"
-  sha256 "43eb3862880eae3208b5ffbb0359d98b3d657b58dcf82774c62ee213a5c9d03a"
+  url "https://github.com/floci-io/floci/archive/refs/tags/1.5.8.tar.gz"
+  sha256 "33d0836ce6c072d7213e78e338496b1e26f0b147567c1826fda19c87ea3aff55"
   license "MIT"
   head "https://github.com/floci-io/floci.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe4288962f56f500f20b7ca8d8cfa2be4323dc6ca8b58855707d0307fa28f311"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "381f8c781d778806ec73be8923522455139f33b700d0254a03ed1b870d15f73b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61e65336afa84a0e7e513de6a8e6b65aa63141ebfb6e66ced66ffa7cd3d33769"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b101e75f5d38852f28bd5d18ebfb93edd50601ae0f66967cd6816b77e098318"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb267518a8a55a97585b12c8a5cb64376a3fcfee78485d4e0e90574a6c021b38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d692f1c026271cffdd6dd9c2ddbd294464d3d0a71a885150d4b81d7d5b798d62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c604aa3a07f13a60dd0d4bb06bf3c21640d90197af2275512a8fb7ef10e71a23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10ae79e83bf45ba05e540372e0f3e5c5ddd79c70b661207809f99fdd37c091af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82bde848d9c25530f7cc41d59059564a6fc6f38477698a211b799aea4e891f93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c8ce081c5e14594342618497bb49792c96f325cfc20c9e0b7bd0a91ac24c1bb"
   end
 
   depends_on "maven" => :build

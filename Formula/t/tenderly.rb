@@ -1,18 +1,18 @@
 class Tenderly < Formula
   desc "Debugging, monitoring & tracking smart contract execution"
   homepage "https://tenderly.co/"
-  url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.10.tar.gz"
-  sha256 "f6fda133553e2d298dfccfb0065480f541ab82fd2546262d894f40808e920cae"
+  url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.9.tar.gz"
+  sha256 "3e7bb7a1fe47ffe870f8e7982f83d8754aaf35748ae43f43847e82d592f17504"
   license "GPL-3.0-only"
   head "https://github.com/Tenderly/tenderly-cli.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbf6077a52bccad176013f825345389069d13e9478016b19f37e712ec5f251cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbf6077a52bccad176013f825345389069d13e9478016b19f37e712ec5f251cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbf6077a52bccad176013f825345389069d13e9478016b19f37e712ec5f251cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d8bc21fa92512939e6a876897aa95b97ac646b7db4e6b00c18f1cb69a5628d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "791faf0edf715cd50d3f83152eff5dfdf7e7476025784be569931918066bc493"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e93f80a6bbd83759b84accda0ba6ea8e2aca8292d5b9b2c4d9d057cabf748b0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e93f80a6bbd83759b84accda0ba6ea8e2aca8292d5b9b2c4d9d057cabf748b0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e93f80a6bbd83759b84accda0ba6ea8e2aca8292d5b9b2c4d9d057cabf748b0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6a5025ccbcef16df40402748dd1f463744432a955bc4c31e2ed84f9d674ac5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "decd4ae76df3c197991a79f6415f05ce31d991cabd4aa83ffb97077e19ffa8b4"
   end
 
   depends_on "go" => :build
