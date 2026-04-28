@@ -1,20 +1,23 @@
 class Speedscope < Formula
   desc "Fast, interactive web-based viewer for performance profiles"
   homepage "https://www.speedscope.app/"
-  url "https://registry.npmjs.org/speedscope/-/speedscope-1.25.0.tgz"
-  sha256 "2831f1e0d26df914b477e522d78b8485511495a6af81a0b88158f8b48f9e0d03"
+  url "https://registry.npmjs.org/speedscope/-/speedscope-1.23.1.tgz"
+  sha256 "399319ce48f37746e4b48cdefa81e0dc41744ab2079204727c6aececf3cbe633"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a993dfa3efcf30e5a395a14f757ca0fb1fc2c81066893548dd515cab7c08b715"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d60ecbc1f7afb0330908f06ab021413ddd96b9108174075a759aefa390aca63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "131f832186f6d526954bba457215c547e0e90fe9630cd9c07c056bb4e8b7f16f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0dad33090fef9f527ea7fbe62b7ca9087592b21c87d982db209a1a44a5d49e49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc748c538e3e56842746aaba9e2cba85835580b0365cacb32d4d5a8a549de3e3"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do

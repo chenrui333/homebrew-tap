@@ -1,17 +1,17 @@
 class BrowserbaseMcpServer < Formula
   desc "MCP server for AI web browser automation using Browserbase and Stagehand"
   homepage "https://github.com/browserbase/mcp-server-browserbase"
-  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.4.3.tgz"
-  sha256 "d0255d41e987f916797eda5c209de4b219090f83e0dd01a713b6bd398d81ad81"
+  url "https://registry.npmjs.org/@browserbasehq/mcp-server-browserbase/-/mcp-server-browserbase-2.0.1.tgz"
+  sha256 "0b720b596113f4640aa27d5e7339bcfb3da4ba21182c72179735267d44170c12"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "0321a4628679b5f98129902355e6676714eec366011ea309a8181b9500acbdcd"
-    sha256                               arm64_sequoia: "4e96bd67d30ac416a080c3851254c30ba8b1cc0e949ea32ddc6392033ec6ad04"
-    sha256                               arm64_sonoma:  "4e96bd67d30ac416a080c3851254c30ba8b1cc0e949ea32ddc6392033ec6ad04"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e282eefa3fe6e366887e808cc00cae955fbcdb2ac0d611256d5e6c748649c1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72019e5ecabc5ab7c3b5b2678747bbfa1787c97a3cdc94a02d97f47e92232909"
+    rebuild 1
+    sha256                               arm64_sequoia: "b201eca708197405f6f1c26dd417f494d921225862c753bab40a7b3afcb3ef98"
+    sha256                               arm64_sonoma:  "3825ed82ee5343837d36c39ae4764460ce1ee03655f29763489b3e9aceed2edb"
+    sha256                               ventura:       "5856de0e263aa85036d4ffbec6251c67304ec82b18035f1f628a94a6ddda8c81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "491fc887d8d86e6c8874102e9db3aab7ecd2b036b5f8d12fca7e25c36612307d"
   end
 
   depends_on "node"
@@ -19,20 +19,6 @@ class BrowserbaseMcpServer < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec/"bin/mcp-server-browserbase" => "browserbase-mcp-server"
-
-    # Remove incompatible pre-built native artifacts and keep only the host one.
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    libexec.glob("lib/node_modules/**/{bare-fs,bare-os,bare-url,bufferutil}/prebuilds/*")
-           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
-    libexec.glob("lib/node_modules/**/@rollup/rollup-*").each(&:rmtree)
-
-    if OS.linux?
-      # Keep glibc artifacts and prune vendored musl binaries that fail linkage.
-      libexec.glob("lib/node_modules/**/@oven/bun-linux-*-musl*").each(&:rmtree)
-      libexec.glob("lib/node_modules/**/@img/sharp-linuxmusl-*").each(&:rmtree)
-      libexec.glob("lib/node_modules/**/@img/sharp-libvips-linuxmusl-*").each(&:rmtree)
-    end
   end
 
   test do
@@ -44,6 +30,6 @@ class BrowserbaseMcpServer < Formula
     JSON
 
     output = pipe_output(bin/"browserbase-mcp-server", json, 0)
-    assert_match "Create or reuse a Browserbase browser session and set it as active", output
+    assert_match "Create parallel browser session for multi-session workflows", output
   end
 end

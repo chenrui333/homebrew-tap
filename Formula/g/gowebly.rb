@@ -1,27 +1,22 @@
 class Gowebly < Formula
   desc "Next-generation CLI tool to easily build amazing web applications"
   homepage "https://gowebly.org/"
-  url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "c7fdc2740199d1bc3bd371e527f093025be9484e61439c6a9361522569a3813f"
+  url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.0.5.tar.gz"
+  sha256 "1fb7c5ffc04ece4478c6579ccde4f7df82aeccab96e59cd2330fb223627a84a5"
   license "Apache-2.0"
   head "https://github.com/gowebly/gowebly.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2432dda8d8b3a23c2745cbb13fa2ca35279b6db6fbb475946bda42fffbd4e078"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2432dda8d8b3a23c2745cbb13fa2ca35279b6db6fbb475946bda42fffbd4e078"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2432dda8d8b3a23c2745cbb13fa2ca35279b6db6fbb475946bda42fffbd4e078"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa88a90e33ab4f61afab9e33dcb625ac3c48f27e9d7533a83393f3eb8c8db0c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4224d7a130a0b4228e0452b40f62fe0e4d3f1337925439a66970f591263408c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af897b390d3488ddcddec45461973bcd869bc9b1bb42bba571a11b8e5df6d952"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b018a9cc5b5c56caadeb27b0a5d04033993be3d752675b408b1e54d7ea17cae"
+    sha256 cellar: :any_skip_relocation, ventura:       "1cbed5ed2542630e88dfc3ebd425f9ad628b3a7ddd14d363261ea63c93d0d134"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d17d34bc250cae232adc87ea05d1320127a3632fa5b3f43e2e0ece58d8fd9b60"
   end
 
   depends_on "go" => :build
 
   def install
-    inreplace "internal/variables/version.go",
-              /var GoweblyVersion string = "v[\d.]+"/,
-              "var GoweblyVersion string = \"v#{version}\""
-
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 

@@ -1,18 +1,17 @@
 class Tenderly < Formula
   desc "Debugging, monitoring & tracking smart contract execution"
   homepage "https://tenderly.co/"
-  url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.10.tar.gz"
-  sha256 "f6fda133553e2d298dfccfb0065480f541ab82fd2546262d894f40808e920cae"
+  url "https://github.com/Tenderly/tenderly-cli/archive/refs/tags/v1.6.6.tar.gz"
+  sha256 "f3a91adf489b50b61b1c13d664be77c6d4130fa2a8f554fe091700ead9978d8b"
   license "GPL-3.0-only"
   head "https://github.com/Tenderly/tenderly-cli.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbf6077a52bccad176013f825345389069d13e9478016b19f37e712ec5f251cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbf6077a52bccad176013f825345389069d13e9478016b19f37e712ec5f251cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbf6077a52bccad176013f825345389069d13e9478016b19f37e712ec5f251cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d8bc21fa92512939e6a876897aa95b97ac646b7db4e6b00c18f1cb69a5628d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "791faf0edf715cd50d3f83152eff5dfdf7e7476025784be569931918066bc493"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e5637665ecc3a89321ac4a64523083cb0e10454c356927776f3e33de2f18aac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a26f048b40558467ea26e81bf14581fadce5c326659c6da08c9a59c6fc9d30b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "f9440727b22cb3669055fb4e2de936a29120c8b862b6fd25269458a0b5909d87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb3e05db9fe60635e1c0d3e233e8de1120aedd5ef3df28a9d91eec5b0bc7af5b"
   end
 
   depends_on "go" => :build
@@ -20,7 +19,7 @@ class Tenderly < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin/"tenderly", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"tenderly", "completion")
   end
 
   test do

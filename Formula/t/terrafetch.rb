@@ -1,18 +1,17 @@
 class Terrafetch < Formula
   desc "Neofetch of Terraform. Let your IaC flex for you"
   homepage "https://github.com/RoseSecurity/terrafetch"
-  url "https://github.com/RoseSecurity/terrafetch/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "1ac690c842b0443365d24277ea9a4f2f858949aaf33faa1e88f54976f2e90b61"
+  url "https://github.com/RoseSecurity/terrafetch/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "8050217514feca77c2b33faa114a3b92893494387ba754c3219108e3345088d0"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/terrafetch.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a719a18e014db3c4eaed51ac8022bb5bf1e461af3a0d59b1388ae1876b5b13d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a719a18e014db3c4eaed51ac8022bb5bf1e461af3a0d59b1388ae1876b5b13d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a719a18e014db3c4eaed51ac8022bb5bf1e461af3a0d59b1388ae1876b5b13d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e913a40ed59f39bf4e060dea8b4da8a14e3a80d28f991ade85cbafe9b62304fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "627e3f402fc89c4feee99b1a571e59d41015f8afa1b2104a51ef437161907927"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a180b7f2d6c8d8fb05dcc20caaa6321b8bdb72a8160900d3630d8a2dff092595"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d74c84434e47540f15894d7938c3f9fe47ce1a14d4dd63c342f891f775d99c92"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b6fc23aee1f7fec40d53afcb195e5fff3f4b41e8de79c46f75b8b1e3b6dde59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16c45ef1cb2789a06f076d00ac43b4796f0e260e7b7e06998efd331b5277abdd"
   end
 
   depends_on "go" => :build

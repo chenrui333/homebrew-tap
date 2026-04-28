@@ -4,16 +4,13 @@ class AzTui < Formula
   url "https://github.com/IAL32/az-tui/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "da6015c53c265fd618cf461a9c84b53ec3f7c5e5db38df15df5191888483e681"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fe948c67797bb8cb34d9ce4d16f1e3093c15ba942e8702c5843746e2f8728c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fe948c67797bb8cb34d9ce4d16f1e3093c15ba942e8702c5843746e2f8728c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fe948c67797bb8cb34d9ce4d16f1e3093c15ba942e8702c5843746e2f8728c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f03659219929606f0c039b70e43a9d52a9f930552817c6dc77dacbb45c742a2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7036aa10e63dadb6c41a90b85d2ef51bf799c639d300ddc0828935704bc6a546"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f923583575367d4045a13c4528cf0eda607dfeff7f7c744c1c83cb4fab587e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8994e22003c8290851ea4a847f611bc19b6b5d7a9bc8c5fa820d3f477cb220c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a40a7f493abfe5244ee9c899624ba224c3f32857652542922b9e6751a24ba170"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2be66e942abf2f6ee82cddf0e81c8bf6d243825c2f78aaee1c885e4c6562d4b8"
   end
 
   depends_on "go" => :build

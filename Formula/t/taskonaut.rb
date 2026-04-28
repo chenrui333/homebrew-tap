@@ -1,20 +1,23 @@
 class Taskonaut < Formula
   desc "Interactive CLI tool for exec into AWS ECS tasks"
   homepage "https://github.com/SchematicHQ/taskonaut"
-  url "https://registry.npmjs.org/@schematichq/taskonaut/-/taskonaut-1.10.5.tgz"
-  sha256 "7f6b11e48e648616b2fac07cd1851654f4339b5bf01c7598552bc284fc840437"
+  url "https://registry.npmjs.org/@schematichq/taskonaut/-/taskonaut-1.7.1.tgz"
+  sha256 "8611eebb7070146c503285b544bf01748b878f461e394909ccecc1e74ca2c89a"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "0a65aa97d8728a64492326d95e3a3f2e43ae6dc8b20f1a07307e5b0aa2ca110c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34d303264f9d62b70d12a03360799ea8296dd36f40749243ae2d6233231e3751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef4397d8f5f54a671aa4e46783b3000e3ba8f80bc737c41c5810db45075eccb1"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e1a97c44fbf68c7f02153d3fafe2bc2f795c977c55ece63f971bad750b57a51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6fc48cbcfbe69b63de16b89b64055537acbf2110f39d4547e9f74cc83bef0b0"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do

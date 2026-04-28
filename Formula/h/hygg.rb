@@ -1,18 +1,17 @@
 class Hygg < Formula
-  desc "Simplifying the way you read. Minimalistic Vim-like TUI document reader"
+  desc "Simplifying the way you read"
   homepage "https://github.com/kruserr/hygg"
-  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.19.tar.gz"
-  sha256 "36491747e9d47cf7d24ae0666fd2908535eac437e8223a6bd88465a90e1cf35a"
+  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.17.tar.gz"
+  sha256 "f657312f7071300561d8e73c382b7ff2350f389355ff55db0053fb4584062f85"
   license "AGPL-3.0-only"
   head "https://github.com/kruserr/hygg.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "458622fe4d29e2deae57ebf8fc7cdfaf79f2f0f50e6871778358d0515636af6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d4ea5cd556bdf6c7812fa5c964a2e254745aebe730953d455ae0ac95d92bc3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c90ce560983e0744153961c41ddb8bc6d5ceabfb82da7789ec6a7b7b0188a648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f29d8687e1e74d04a3f314663586240ef4985622b0757fc0d973ab68165138"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a216872df67892945901b17fdeb8714a75a0b5939c37899388e12731723089a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cda804d388f9c3804d690d2cc182eacefd89f22db6c22c4ec2d9b9dc3d14cf0e"
+    sha256 cellar: :any_skip_relocation, ventura:       "d62e6b8bcdef00100a5b61e651fad3ad9f9be276f572c25194ac572973ef12fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e7cdbbe0a31e583e287524cfa4972037f88c7e6e5cf42df03a0e2d95bbbd71"
   end
 
   depends_on "rust" => :build

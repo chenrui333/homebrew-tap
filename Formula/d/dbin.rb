@@ -7,17 +7,14 @@ class Dbin < Formula
   # RABRMS is not a valid SPDX-License-Identifier
   # license any_of: ["ISC", "RABRMS"]
   license "ISC"
-  revision 1
   head "https://github.com/xplshn/dbin.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fa74b621afc07d42a7b8ee6a41d82e5761791689580f503eb839d5d5c03a648"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fa74b621afc07d42a7b8ee6a41d82e5761791689580f503eb839d5d5c03a648"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fa74b621afc07d42a7b8ee6a41d82e5761791689580f503eb839d5d5c03a648"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8a7437d6ee879161f764e9c0da93cd1011f793043ce13ae59c9b66a1ea24a7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9f6bf3d60e295539beee7ee7ab4c457f0a25697502a434471595191998d039"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11ac9b40c6dc265c113ed1c7f476a8bf72028c47394dea71a661909e6f444a65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bd14adb5c17ae52c9acb8a8ccd49d2750d92035fa0563d22ae1f6670d96a31a"
+    sha256 cellar: :any_skip_relocation, ventura:       "9e2af5357521035aa761897670439bdc015385c20925772946317d1a5ea96e0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57fc6d5564036517bee8c81682d07017df62cef9f7d76c3aef62c9eb5f04f595"
   end
 
   depends_on "go" => :build

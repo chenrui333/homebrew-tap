@@ -9,11 +9,13 @@ class BrewCleaner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5e1e12bc9cca20c43960661493e433932443fb7ec5a29f90f7f1650aa59dd93c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c60cc1167615c437222cb9417904f8d655a75c7bb8f22bbb400c6427f972160"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70652586a13321e4f3549698c7b39a3b0f54324cc0668b1af05ca2d1cfe763c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "d16147c2487638a533d708999ae5794cdcf15f7f1eb1adc8026be72a9fb79bdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ae3caf763176d8d84d73c04af4cc07d6d6b159aa77ba8a59b6853e9f998f52d"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.13"
 
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
@@ -21,8 +23,8 @@ class BrewCleaner < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
-    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install

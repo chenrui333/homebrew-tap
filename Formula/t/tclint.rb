@@ -3,25 +3,29 @@ class Tclint < Formula
 
   desc "EDA-centric utility for linting and analyzing Tcl code"
   homepage "https://github.com/nmoroze/tclint"
-  url "https://files.pythonhosted.org/packages/3f/4e/9ec785aa3f9473bcbd56bb858a46749db94baee2c1df603c458bfe189b51/tclint-0.8.0.tar.gz"
-  sha256 "0a0fff0dd4610859a85c06bd347c8ffb46e9bed79cdd34662738a518acc43c0c"
+  url "https://files.pythonhosted.org/packages/46/2e/e0b87f58765f43937e06b3f7f5f3e299ec0479fcf99a7ef5c033614d5cdc/tclint-0.6.0.tar.gz"
+  sha256 "8dd4d7b519e040c164615df8072cc4c28def4bfdc9d2a8672a280b0984b45fc3"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "843724514b4f510d8ac9ab18fa0b9922a76c5d5cde358497e9fe1bf66a6c5821"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9244584339f88b4e4ee8dad5055cc9a289a1a710ea38bcb3e907108bf9189180"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ad2ed432a76327f46e0faa23aece159da325433c9d6b1099fcc36c99cf780c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "a66bd39b291d5a810ebd3c9baf2eb352efc7c08c78be339e5a040d0fba9b863a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7917ae16129e6807e7d63cd7a3ef1cb6a9e41c1bc2a65dd6d7bda609803b9081"
   end
 
-  depends_on "python@3.14"
+  depends_on "rust" => :build # for rpds-py
+  depends_on "python@3.13"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
-    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
+    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/a0/ec/ba18945e7d6e55a58364d9fb2e46049c1c2998b3d805f19b703f14e81057/cattrs-26.1.0.tar.gz"
-    sha256 "fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40"
+    url "https://files.pythonhosted.org/packages/57/2b/561d78f488dcc303da4639e02021311728fb7fda8006dd2835550cddd9ed/cattrs-25.1.1.tar.gz"
+    sha256 "c914b734e0f2d59e5b720d145ee010f1fd9a13ee93900922a2f3f9d593b8382c"
   end
 
   resource "importlib-metadata" do
@@ -50,8 +54,8 @@ class Tclint < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "voluptuous" do

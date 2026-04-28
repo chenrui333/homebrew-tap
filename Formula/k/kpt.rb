@@ -1,8 +1,8 @@
 class Kpt < Formula
   desc "Automate Kubernetes Configuration Editing"
   homepage "https://kpt.dev/"
-  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.62.tar.gz"
-  sha256 "1198a5f397cd96424bee681970d1c4edf299c4c583015de1a6cba8668026b28d"
+  url "https://github.com/kptdev/kpt/archive/refs/tags/v1.0.0-beta.57.tar.gz"
+  sha256 "614f03e30064a58872c0e0eb356a4c05501909e3c56c985912d44bd47d3f3944"
   license "Apache-2.0"
   head "https://github.com/kptdev/kpt.git", branch: "main"
 
@@ -13,20 +13,19 @@ class Kpt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7decda1e649fee5adba5be4d686996cf435d2d420b73aad5185499bfd71bcb54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4118e600fcbae8d63b822d2b23ddc95541072f5a156958ea98da19edb6861f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09769a920c3f48025c051cfee4829e3ac1590bacd5388d746eb4d8b217649940"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc865c825b48420a738b98417c23cd81acc71771b06436838c0f393af78b3ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a344e497e19cac1deeb248712b6e22d9ef3cbb21e0034d4a64002e46b3737ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "882da51089fe11c8637d96ceed0a54bdc5f5328dffdfe6fe1a717e12b9d82544"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2dd6fdd596d867d54a4bda3c81d0e446a569e9b8411910b6ae384ce3c28f27e"
+    sha256 cellar: :any_skip_relocation, ventura:       "31fdb6beee34ab3f3c709ad37f529b849815be7df7c4d4b7929f7fe859dd59f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b4e1453df55214af8bb90fe3f2c1fdf3dfcb20850ddfca2bef8687bc710bb62"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/kptdev/kpt/run.version=#{version}"
+    ldflags = "-s -w -X github.com/GoogleContainerTools/kpt/run.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"kpt", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"kpt", "completion")
   end
 
   test do

@@ -1,18 +1,17 @@
 class Octelium < Formula
   desc "Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API gateway & homelab"
   homepage "https://octelium.com/docs/octelium/latest/overview/intro"
-  url "https://github.com/octelium/octelium/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "7dc4ebf51b0f875af05415ba95193ea5b3a7b385960a49c8ffdf7aefc49f4da7"
+  url "https://github.com/octelium/octelium/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "c0b3cc44e3b1df97f7a2ec4859b9ace6f4bcab73c0aeeb4bfe20efae9c40dae8"
   license "Apache-2.0"
   head "https://github.com/octelium/octelium.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68a1474f150c040df76882e3aee4bdaefa06a8fd34026ddd42039991ef9cbd91"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68a1474f150c040df76882e3aee4bdaefa06a8fd34026ddd42039991ef9cbd91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68a1474f150c040df76882e3aee4bdaefa06a8fd34026ddd42039991ef9cbd91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f596c05b518389d3f63b6f2d414b609c2ded036b43af165d693efe183d682553"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dc3cda36a5b4204e3d8dbfa771396c05df5a37ff5347ee411caad8d9bd99d91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "556b03a63ff42ca743c8ec89b6d7a8210b663347a2071c329475bffb975fa613"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "188e50879a11ba8509f9fb0d1936945a7b3c56746801cde2ec6f30beb30f987b"
+    sha256 cellar: :any_skip_relocation, ventura:       "945c342b7f6f7c4f18a31131547f27eb1909754a2737a15b5d5b83498e2b34c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "777df2be536d5ef3b13d98a08f999ead28ee2b7f94d4eda05021a44843011722"
   end
 
   depends_on "go" => :build
@@ -28,7 +27,7 @@ class Octelium < Formula
 
     %w[octelium octeliumctl octops].each do |cli|
       system "go", "build", *std_go_args(ldflags:, output: bin/cli), "./client/#{cli}"
-      generate_completions_from_executable(bin/cli, shell_parameter_format: :cobra)
+      generate_completions_from_executable(bin/cli, "completion", shells: [:bash, :zsh, :fish, :pwsh])
     end
   end
 

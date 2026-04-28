@@ -1,18 +1,17 @@
 class Autotag < Formula
   desc "Git repository version tagging tool"
   homepage "https://github.com/autotag-dev/autotag"
-  url "https://github.com/autotag-dev/autotag/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "fa694f5e1e8da3229b03b459221764f0de7624aa8119c7f7095fd1820ae72b92"
+  url "https://github.com/autotag-dev/autotag/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "71d6f082efa5c641461f603c16b50c1d3e4aae2cdd5f550b912efb5051043a99"
   license "Apache-2.0"
   head "https://github.com/autotag-dev/autotag.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d36b97c3d26d31877de330b2a82c45fc554b997ab07d8f455714cc5c02519e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d36b97c3d26d31877de330b2a82c45fc554b997ab07d8f455714cc5c02519e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d36b97c3d26d31877de330b2a82c45fc554b997ab07d8f455714cc5c02519e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e2030acbac198380a6d93bbbf2929c1172c29c746839521f7d60ccbaea5b356"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d12fa01eecb282d8ae048c9f55181bec3d080ee98854221db6aea1b01c8efa16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04fb1ccea2013872d08894e09183f34160dcb77716c37af6e1cface0a1830606"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83d72e9b909813c35083a8564d1742f933bc03d68ff1e36133eb8e48e53beaab"
+    sha256 cellar: :any_skip_relocation, ventura:       "c5eaa8725e62dc33d04befb9551cec8fd42dc6b8e3b612c5a98f448689b0d42c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fa65652baea635086743b0a0e0d7a33f4565ccb5705cf51ae42025736c90bea"
   end
 
   depends_on "go" => :build

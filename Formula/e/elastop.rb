@@ -4,17 +4,14 @@ class Elastop < Formula
   url "https://github.com/acidvegas/elastop/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "d97517b9ca1f085972020a085ce51fb087afa4fc24c367952acc7dc02aa4105b"
   license "ISC"
-  revision 1
   head "https://github.com/acidvegas/elastop.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b67ef016e584156b41e1d243fc1ce5d55933906095c704f37d05cbac28b515f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b67ef016e584156b41e1d243fc1ce5d55933906095c704f37d05cbac28b515f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b67ef016e584156b41e1d243fc1ce5d55933906095c704f37d05cbac28b515f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2656c74b66ba8861ae9128656dfdc5c3d08c8c724ca986631270f8a6f27c59d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74633176205d935a845abe8c6282d2a20b2e90683bc9119e707e67ea1b949ea3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc2c8e8f926f49d966dc86eca4fe573c9e9195525f5ee906c1530b925c6acd99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3424d31a2be9527b97cd9f4ed76ddc34878dcd5b9a8e012815af98c4f194921"
+    sha256 cellar: :any_skip_relocation, ventura:       "c3e596a8314f4608fd0d0f0ff0afb05b1e899b87a994cb0cf4bad348b1ccb9fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3e05c857c6de3ae3f9b16bc4e194c84f184299e3e228d3f06f105cbccefa1aa"
   end
 
   depends_on "go" => :build

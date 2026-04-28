@@ -1,17 +1,16 @@
 class Castor < Formula
   desc "DX-oriented task runner and command launcher built in PHP"
   homepage "https://castor.jolicode.com/"
-  url "https://github.com/jolicode/castor/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "9dfab832eeb7b9256d9987ab546898d7550eb4413bd2683c0c2e70b6b719250a"
+  url "https://github.com/jolicode/castor/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "1c5757f621405cc8ba80e9a60a98a37a659fdaf49523100ddc8c0ba6851150e8"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df9f09dc04f66a04ade0f47a3cbf055c29270eba36129e401c0555cbfe61d4d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df9f09dc04f66a04ade0f47a3cbf055c29270eba36129e401c0555cbfe61d4d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df9f09dc04f66a04ade0f47a3cbf055c29270eba36129e401c0555cbfe61d4d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc9fa92ad267a8b9c2b588a06a30e4f2acacc0554d5d1f5d7b7082e3a7bc8d0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8589fb278b3b72f6737db3740bbb6cff5101a2fcbb1a10181bd7647af55877da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "869f7dca424e6ed0bdcd5523cec0f0f57b8dc8b6fe77017078d3b22e81450e24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5fd408c4f4be558b0c640a479a056dd6a4a931f96caa58f5174104f81ac78969"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a60c116de7d7c002fea10ab6ffe8bec887c49682861487fe37beffd6d661c2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88ac9345ba9e84fed2f34ebb29ae1239e76dd4550193aa99d8f1689ce1f600b7"
   end
 
   depends_on "composer" => :build
@@ -44,6 +43,6 @@ class Castor < Formula
     assert_match "Available commands", output
 
     output = pipe_output("#{bin}/castor init", "no\n")
-    assert_match "\"castor.php\" file has been created in the current directory", output
+    assert_match "Do you want to create a new project? (yes/no) [no]:\n", output
   end
 end

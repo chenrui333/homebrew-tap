@@ -1,17 +1,15 @@
 name: Triage tasks
 
 on:
-  pull_request:
   pull_request_target:
 
 concurrency:
-  group: "triage-${{ github.event.pull_request.number }}-${{ github.event_name }}"
+  group: "triage-${{ github.event.number }}"
   cancel-in-progress: true
 
 jobs:
   triage:
     if: |
-      github.event_name == 'pull_request_target' &&
       github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.user.type != 'Bot' &&
       github.event.pull_request.state == 'open'
@@ -23,18 +21,13 @@ jobs:
       statuses: write
     steps:
       - name: Label pull request
-        uses: Homebrew/actions/label-pull-requests@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/label-pull-requests@5248cb50fb1ac9ad0b0d0acda8500e192bca25fb
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           def: |
             - label: new formula
               status: added
               path: Formula/.+
-              allow_any_match: true
-
-            - label: new cask
-              status: added
-              path: Casks/.+
               allow_any_match: true
 
             - label: linux-only
@@ -47,10 +40,6 @@ jobs:
 
             - label: autobump
               path: \.github/autobump\.txt
-              allow_any_match: true
-
-            - label: skills
-              path: skills/.+
               allow_any_match: true
 
             - label: missing license
@@ -138,24 +127,15 @@ jobs:
               path: Formula/.+
               content: system "swift", "build"
 
-            - label: alias
-              path: Aliases/.+
-              allow_any_match: true
-
-            - label: shell-completion
-              path: Formula/.+
-              patch_content: (generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)
-
   typos:
     name: Spell Check
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           persist-credentials: false
-      - uses: crate-ci/typos@7c572958218557a3272c2d6719629443b5cc26fd # v1.45.2
+      - uses: crate-ci/typos@85f62a8a84f939ae994ab3763f01a0296d61a7ee # v1.36.2
         with:
           files: .

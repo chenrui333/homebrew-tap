@@ -1,18 +1,17 @@
 class Crush < Formula
   desc "Glamorous AI coding agent for your favorite terminal"
   homepage "https://github.com/charmbracelet/crush"
-  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.63.0.tar.gz"
-  sha256 "8aadf71a18ec33cf09c96d7371dac3fdeeda4364caa95139a4bf1a78424cb3ff"
+  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.7.6.tar.gz"
+  sha256 "b0742e565c6e05c0e59339bedf37d79ba22732dc62a533210f89892b040503e6"
   # license "FSL-1.1-MIT"
   head "https://github.com/charmbracelet/crush.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ea74ee38bc84cea4f08387e400fc0c275c053540b4fb68486992ec0b3e1b99c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b284444db5ed5c90461d11d893ffb37312f9b139eb90500eeb8679f4e0abd981"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9fcc88bd6befc827d2399c0852b7013e23abdf1b67f6672cb3597c71bc56da2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98664b190cfaf4a08767ef9c20147fd46880d580b9b7557479d40879974cbe4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09c4414d14106b3b22d54ef729343d080e4b63f8268fd231f5421cd2a2eeefa6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d35924f47540546dc6831b883307df10155be68e6562c2f2c9bbf3875418976d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faaf0702aa0e8feae5366ad9feba32456351e4925f66af76cf9800d17e51a230"
+    sha256 cellar: :any_skip_relocation, ventura:       "059863ed62792635f3519c50de6871a40af481d7aef1968f2ed2fcea5b5dba89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "304e8b8b418b1e7ac827c90b78372fd8d27d799142222636302690c6847a6ea0"
   end
 
   depends_on "go" => :build
@@ -21,13 +20,13 @@ class Crush < Formula
     ldflags = "-s -w -X github.com/charmbracelet/crush/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"crush", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"crush", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/crush --version")
 
     output = shell_output("#{bin}/crush run 'Explain the use of context in Go' 2>&1", 1)
-    assert_match "No providers configured", output
+    assert_match "no providers configured", output
   end
 end

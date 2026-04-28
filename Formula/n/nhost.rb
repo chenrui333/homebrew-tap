@@ -1,8 +1,8 @@
 class Nhost < Formula
   desc "Developing locally with the Nhost CLI"
   homepage "https://docs.nhost.io/platform/cli/overview#cli-overview"
-  url "https://github.com/nhost/cli/archive/refs/tags/v1.31.3.tar.gz"
-  sha256 "adb9cf2e6d2fabc81687c97559f1ab62e7373947667b582f1dc5ff93bc972713"
+  url "https://github.com/nhost/cli/archive/refs/tags/v1.31.1.tar.gz"
+  sha256 "2d28fd4079b807d5619f9a748860fc81329dc65470785dc274dc4543e58af7f2"
   license "MIT"
   head "https://github.com/nhost/cli.git", branch: "main"
 
@@ -13,9 +13,10 @@ class Nhost < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27ce18990ee03de34f2000f6d320e67062304236905500b3eb993b78ce12137f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b27f51c2fffaf34c14dfaa2e78c55c3b0145ba5827e13708e2d96994b90bf7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df63bddff0988ef8f6171346f1e07ce4d754e820f192b3e6e484439adaabaf48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d9c8cc2a88cb727efedf8ace07149df7da732ab9ee07723350f15c262dfae3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de88f0cad3a8bdd7f67224b957ba5fa39cf4842cd79f56dd35e315a232693080"
+    sha256 cellar: :any_skip_relocation, ventura:       "efcf0ba64ab39633c5d84534f45dda16a027f3dd658688c21daaea6b551016d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a44cf45295c6b99bd8bb962fd6d691fee1e726de38e3aa90bf47ea022c0fde84"
   end
 
   depends_on "go" => :build

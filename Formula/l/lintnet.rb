@@ -2,31 +2,26 @@
 class Lintnet < Formula
   desc "General purpose linter for structured configuration data powered by Jsonnet"
   homepage "https://lintnet.github.io/"
-  url "https://github.com/lintnet/lintnet/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "c5286cc799333898c1fc74cc27c22a779a6679438fe669351f31236d485e312e"
+  url "https://github.com/lintnet/lintnet/archive/refs/tags/v0.4.11-2.tar.gz"
+  sha256 "622e80e8af2aafcef8be66823e23b09e748a666d2e73f88f98deb1e26a59863c"
   license "MIT"
   head "https://github.com/lintnet/lintnet.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d09a7901bc0a704968e96a2fc2b76fbb7c1d6626c844a931de361f1102ba9b18"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d09a7901bc0a704968e96a2fc2b76fbb7c1d6626c844a931de361f1102ba9b18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d09a7901bc0a704968e96a2fc2b76fbb7c1d6626c844a931de361f1102ba9b18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1064ab257f255e7e033d2d71009a8e1ddd8a14f2c47426514c6d8594156db265"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1aecae7027fb4fe0ae581cbcefae5dd90985c4fb613f1d1605fc8b9a6787481"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96f2e62c5d0a97c9eb3dd018ed2f699c1d3c97d600ed374c632298b5b595e230"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23333d0ce051a3c40b30064801e827c6156b1790e352c13f3593daa0eafae82f"
+    sha256 cellar: :any_skip_relocation, ventura:       "3baee84033a4e5dad880f7107b1aa77a067ffb843204f181f63833e778a1f8de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaca4d81531e9135707ec48cc5ab9e320ca0ce8430da1fbfe39d5994414e11d3"
   end
 
   depends_on "go" => :build
-
-  # add completion compatibility patch
-  patch :DATA
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/lintnet"
 
-    generate_completions_from_executable(bin/"lintnet", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"lintnet", "completion")
   end
 
   test do
@@ -37,38 +32,3 @@ class Lintnet < Formula
     assert_match "A configuration file of lintnet", (testpath/"lintnet.jsonnet").read
   end
 end
-
-__END__
-diff --git a/pkg/cli/runner.go b/pkg/cli/runner.go
-index 01bd584..65ab375 100644
---- a/pkg/cli/runner.go
-+++ b/pkg/cli/runner.go
-@@ -13,6 +13,21 @@ type GlobalFlags struct {
- 	Config   string
- }
- 
-+// normalizeArgs rewrites "completion powershell" to "completion pwsh" for Homebrew compatibility.
-+// Homebrew's generate_completions_from_executable calls "completion powershell",
-+// but urfave/cli/v3 only recognizes "pwsh", not "powershell".
-+// This function treats "powershell" as an alias for "pwsh".
-+func normalizeArgs(args []string) []string {
-+	// Check if args match: [<program>, "completion", "powershell", ...]
-+	if len(args) >= 3 && args[1] == "completion" && args[2] == "powershell" {
-+		// Copy-on-write: create a new slice to avoid mutating the original
-+		normalized := append([]string(nil), args...)
-+		normalized[2] = "pwsh"
-+		return normalized
-+	}
-+	return args
-+}
-+
- func Run(ctx context.Context, logger *slogutil.Logger, env *urfave.Env) error {
- 	gFlags := &GlobalFlags{}
- 	return urfave.Command(env, &cli.Command{ //nolint:wrapcheck
-@@ -46,5 +61,5 @@ func Run(ctx context.Context, logger *slogutil.Logger, env *urfave.Env) error {
- 			}).command(logger, gFlags),
- 			(&newCommand{}).command(logger, gFlags),
- 		},
--	}).Run(ctx, env.Args)
-+	}).Run(ctx, normalizeArgs(env.Args))
- }

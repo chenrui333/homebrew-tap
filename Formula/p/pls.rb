@@ -12,19 +12,15 @@ class Pls < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "286760b4e9dd852f2fc46796005adc6ca57dc3494c34cd94a8aa92f855839603"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3eff5d5190d27d2382205640f0c9640baed85720309de96dd4aeed9a03476854"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2a30c7cf3e3dbfdacd9255f5951e734101e330f12b327b46f1acb492b952de2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96484dafbd99eaf19cac69d82785b60bc69c57476e3937643cf0f5358fb028de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b21bc2ee0f3599323e58879307113fe1bc52aa2967b60ecb87d0cc28cd49b77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efd5ac22d746a8161ec5032b8c40739f40c4a2ce129a89f51a910a82fe26a489"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8611f96a5f6270658b08fc26767a46537c17f5506121074b318f1939d93ce1c"
+    sha256 cellar: :any_skip_relocation, ventura:       "5153126f221acd8b360d35f0ed19e217420fec7314096dc549c7a713274a87fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbcab0d216cfd82b019700a4c31bdb90501457dbb12ca0d8f6c38d22c61d5ce9"
   end
 
   depends_on "rust" => :build
 
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "zlib"
 
   def install
     system "cargo", "install", *std_cargo_args

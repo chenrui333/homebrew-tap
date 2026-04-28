@@ -1,6 +1,6 @@
 class Horusec < Formula
   desc "Improve identification of vulnerabilities in your project with just one command"
-  homepage "https://github.com/ZupIT/horusec"
+  homepage "https://docs.horusec.io/docs/cli/overview/"
   url "https://github.com/ZupIT/horusec/archive/refs/tags/v2.8.0.tar.gz"
   sha256 "3824728b7b29656416aaf23ff8cbda62fe9921d2fb982c19f8cda4f0df933592"
   license "Apache-2.0"
@@ -8,12 +8,10 @@ class Horusec < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33c8faa9cbe98e3695d692b8b0097c919f241caac373bbd446f70fb7ef199691"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33c8faa9cbe98e3695d692b8b0097c919f241caac373bbd446f70fb7ef199691"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33c8faa9cbe98e3695d692b8b0097c919f241caac373bbd446f70fb7ef199691"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6657e4285aa8926d741c1ee1476849c3fe99ae2771d17a80bf49300809bc230"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "095146b8bf4a70bad26f7ebe2e2df735965aebd34f349a359b25c1be4a76de28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1693b4fabee9526e7871b41744711ef25f89be6bacfc98f5421c25bf91ac74e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c17573ecb0ad13fb69f1fd221ae0829439f65c4879501ba3a6ad83ef365ccc1"
+    sha256 cellar: :any_skip_relocation, ventura:       "abdd3013a485c880e375bca54fa7a84eb22344466f2a79f137a21ca1486b3250"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ffeb3c55db70f3be676e76c25378ea20ade68db6bb13942b5184de1698dcc8"
   end
 
   depends_on "go" => :build
@@ -27,7 +25,7 @@ class Horusec < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/app"
 
-    generate_completions_from_executable(bin/"horusec", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"horusec", "completion")
   end
 
   test do

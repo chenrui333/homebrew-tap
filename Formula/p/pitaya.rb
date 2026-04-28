@@ -2,40 +2,40 @@ class Pitaya < Formula
   include Language::Python::Virtualenv
 
   desc "Orchestrator of AI coding agents with pluggable and custom strategies"
-  homepage "https://github.com/tact-lang/pitaya"
-  url "https://files.pythonhosted.org/packages/7d/14/650710972e7a780331afde7f45d6eec3903e1e1e472d0d35393a871dfa3b/pitaya-0.3.0.tar.gz"
-  sha256 "e0859b6342ce733a3058dcaafffcf7fdadb50b84f6bb6aabaf9da36f738886fa"
+  homepage "https://github.com/bdcht/amoco"
+  url "https://files.pythonhosted.org/packages/a4/37/d9452bc7b9dd4e0532a79d685b941267ebb8535b4023fe37affa6a456e3e/pitaya-0.2.0.tar.gz"
+  sha256 "0c7f205e8cef790e6624eaaada858607d9a50ea5552c2aa6a5930f767aa76da3"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e54053764fdc83e2747e4587bab547ddf1a2a8096e4e2fc778455ff3774d20f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2394d8865e9b86847a8a52843aa2f437ed6d06c2dc7d0949cd339ac9fb300829"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23d7ad14366e888f68b3972f699d53db83e8c204e1391ce131008ed88dd7d0dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bce69c977d57f9898b741b252252ff0eafa04f1546e60274024d5daec57d3755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "435ca161c63ecaf4889e5ac64bd1ffe8a3b1e447861cc95230ccd673af1a1f18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ba7e0d79c188ff7b5599fb3f6e934c30111622c5b1ba185d42b9d0fe2db69e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b5461164eb668dbf457deac01fb32b17f48ee80ebc18c4838f7f35bba45f3cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a6a523846e5ca9c06225ef19dbb34986058fc8e0c38a1e45104065b3b457668b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea73f638af13a5d97f75f355f98d482c75b46f53fafbb970777925a1a4243cd"
   end
 
-  depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.13" # see https://github.com/tact-lang/pitaya/blob/main/pyproject.toml#L6
-
-  pypi_packages exclude_packages: "certifi"
+  depends_on "python@3.13"
 
   resource "aiofiles" do
-    url "https://files.pythonhosted.org/packages/41/c3/534eac40372d8ee36ef40df62ec129bee4fdb5ad9706e58a29be53b2c970/aiofiles-25.1.0.tar.gz"
-    sha256 "a8d728f0a29de45dc521f18f07297428d56992a742f0cd2701ba86e44d23d5b2"
+    url "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz"
+    sha256 "22a075c9e5a3810f0c2e48f3008c94d68c65d763b9b03857924c99e57355166c"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/46/61/de6cd827efad202d7057d93e0fed9294b96952e188f7384832791c7b2254/click-8.3.0.tar.gz"
-    sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "docker" do
@@ -44,8 +44,8 @@ class Pitaya < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "markdown-it-py" do
@@ -64,13 +64,13 @@ class Pitaya < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/f6/b0/4bc07ccd3572a2f9df7e6782f52b0c6c90dcbb803ac4a167702d7d0dfe1e/python_dotenv-1.1.1.tar.gz"
+    sha256 "a8a6399716257f45be6a007360200409fce5cda2661e3dec71d23dc15f6189ab"
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
-    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   resource "requests" do
@@ -79,8 +79,8 @@ class Pitaya < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
-    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
+    url "https://files.pythonhosted.org/packages/fe/75/af448d8e52bf1d8fa6a9d089ca6c07ff4453d86c65c145d0a300bb073b9b/rich-14.1.0.tar.gz"
+    sha256 "e497a48b844b0320d45007cdebfeaeed8db2a4f4bcf49f15e455cfc4af11eaa8"
   end
 
   resource "typing-extensions" do
@@ -106,7 +106,7 @@ class Pitaya < Formula
     ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
 
     assert_match version.to_s, shell_output("#{bin}/pitaya --version")
-    assert_match "No runs found", shell_output("#{bin}/pitaya --list-runs 2>&1")
+    assert_match "cannot connect to docker daemon", shell_output("#{bin}/pitaya --list-runs 2>&1", 1)
     assert_match "import_conflict_policy: fail  (defaults)", shell_output("#{bin}/pitaya config print")
   end
 end

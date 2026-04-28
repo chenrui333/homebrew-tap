@@ -1,24 +1,21 @@
 class Chatlog < Formula
   desc "Easily use your own chat data"
   homepage "https://github.com/sjzar/chatlog"
-  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.31.tar.gz"
-  sha256 "e2eb72bdfcfb36bef2fe6f7c4e983db8ebf60ecb124e43de49562d711b3b9a65"
+  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.29.tar.gz"
+  sha256 "3d89406c9b19e94fa3b0f7a8504d60233091eb1e86c95af69c8f24bf78e16755"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca07a5f201836171c5faaac8bb9eb2ce5188d9a774c74a89dadcaad5c985d0fc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45060f5a399f54ac44f19f2b3efdfaf42de4265fb8d3fafde24ff9af1d279472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6a563481df98dc069f1d7cb7b1b989ecc40f3f3c281c759c465ec292a5c67f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2904ff0491789491e388a90068756ccd4b892ffec145cc0a537500760b29d0fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9355464eabe88f5d41ad0d5462cc44520a89b99dd976401cf957ef0cc3bced2f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "803214f36bd38e52e250f0bd0e9831d55b8890f0a58efbc3c0c8eb7f017218d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05eb87eaac75446646f479eccf6b7ba3e3a38e72a399bfa1d370d2ea8b96f59e"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad5a9e59cf14d4f0cca4ae6b0c423ca659b6597b365ec900103a9f1722ec98c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5355144300993d8477bcdee6c28a7917dd03d5885e74f0ddedc984090bcaed51"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-
     # Prevent init() from overwriting ldflags version
     inreplace "pkg/version/version.go",
               "if len(bi.Main.Version) > 0",

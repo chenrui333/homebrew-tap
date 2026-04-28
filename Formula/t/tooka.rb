@@ -1,25 +1,24 @@
 class Tooka < Formula
   desc "CLI for the Tooka engine"
   homepage "https://github.com/tooka-org/tooka"
-  url "https://github.com/tooka-org/tooka/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "170db766a08d485c82e9ca446c06abe66329642540c6e7f289093d5cba000a65"
+  url "https://github.com/tooka-org/tooka/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "0582dce8a5f241f7cce78be04fcee51cc5e2c175df2ff524147018f755ccd1f6"
   license "GPL-3.0-only"
   head "https://github.com/tooka-org/tooka.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13b5518dbec07d23870f94f0410d7c4f430f35e0d88103b5561df893adcab9c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d839e11416d89ce29cfe74f2bc98301e77079d62a6df7fb2ef5948a48053683c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbe88a94def0b2da78b39cb35b83b333947427b8890935b038d7724ff9ca2eb6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8944be46ddb57df61386f728a6906641626fc89b5b82557f748e5cb1390903bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ef52e2373a980588e3f1615cd22c42eb0fdc88d7493e0cef42686d69ebb5530"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edd389fbd44f78af6c7bb9128f242cb6000e18612d197947a7849b5b2e8a7f50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99727d35605d3bb42cb089183847708db7bb09cb09b81d680c5134c5a0a1cad2"
+    sha256 cellar: :any_skip_relocation, ventura:       "fd522539b8281b016dede754e9168132c2bb4ce321feca886929867c7513b00e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "909f3173bebba9297386cb06b76b484bb79acee30f779f2eb051d59f2cb847a2"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"tooka", shell_parameter_format: :clap)
+    generate_completions_from_executable(bin/"tooka", "completions", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

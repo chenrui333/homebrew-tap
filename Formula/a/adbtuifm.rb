@@ -4,17 +4,14 @@ class Adbtuifm < Formula
   url "https://github.com/darkhz/adbtuifm/archive/refs/tags/v0.5.8.tar.gz"
   sha256 "1483c1dbf1a7bbd610f27d7ad3039f4731ca456fa059b5f84d3bb532e79efc66"
   license "MIT"
-  revision 1
   head "https://github.com/darkhz/adbtuifm.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34db19f48a06c4f274b02926cc25ac68d93658200ec190242d1398f75d5063c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34db19f48a06c4f274b02926cc25ac68d93658200ec190242d1398f75d5063c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34db19f48a06c4f274b02926cc25ac68d93658200ec190242d1398f75d5063c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bbd220b67545fd975f2c378993ac2c040c4e6a81ccc2c3eb1462697de05d6c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "729c394611325b75c7c4dd14c34d6c400e5634644ec00492f61c9f5bf94338d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ba495be52869769df731a9869a941657bc9f5ca937b392648905c5abbe9af81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3c5a6211667d84228832ec7e008799ebfd7181dac427425e809a234f841f34d"
+    sha256 cellar: :any_skip_relocation, ventura:       "e5eb118922e2a01e743d288a42e482e480da1bdfda497392b3978d25109cd52f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8084e18b4b741e531dd44b55b815e0e957673a2ad266e72c411ca590c44be6cc"
   end
 
   depends_on "go" => :build

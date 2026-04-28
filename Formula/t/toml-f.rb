@@ -1,25 +1,25 @@
 class TomlF < Formula
   desc "TOML parser for data serialization/deserialization in Fortran"
   homepage "https://github.com/toml-f/toml-f"
-  url "https://github.com/toml-f/toml-f/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a9e546221d788416fa6ca8d8550a79d1adf983a2a67b5c9ef57ae79fb02c9df0"
+  url "https://github.com/toml-f/toml-f/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "e66d0e355a8a2e65fd5fc7cd4f00078dfbdbf1b3cc47b60f028c19467df4c337"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/toml-f/toml-f.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "41683d4feb98a35ee34f6916b1188ec11ca7c98512d855ac8622a2614b1a0d6d"
-    sha256 cellar: :any,                 arm64_sequoia: "137a3501aaf9d2245877320a4c9d0ed783dadf396e0eae2e3b225fcc793eb2be"
-    sha256 cellar: :any,                 arm64_sonoma:  "55ba3925152c22a348935710493905dd45e7b51d34c994aa230f489a13e4380f"
-    sha256 cellar: :any,                 sequoia:       "df8bf324cda197c2a4a72ae64f9f4517da5025ee62f1318e309ffe3618f7e414"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "692ac4401a6bb475ce74d6ea457eb95d4befabdb4e8ed704dbc4a0f4073a3fc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b9e8b620da21e066ac4931db753fa5706b27f725293cc352c3ce27e3cf7cfa3"
+    sha256 cellar: :any,                 arm64_sequoia: "77a1ee63bb0dda4d4bc5e1be2c4f2d28671ad221ad49713ab09655c4e531a9fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2fd6d8fec542cc3055120f0bc172887646557c1cff7003c2b9194d86c60d98c"
+    sha256 cellar: :any,                 ventura:       "e4cbd1f69deae36ca71ce351da9a1e1c8eeb81e62b9d8f8a500e87651e8e79bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2adb1692cb1d4428a661a1622c7cf03016cfca54d47af5b4895635ae2e01390f"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "gcc" # provides gfortran
+
+  patch :DATA
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
@@ -41,3 +41,28 @@ class TomlF < Formula
     assert_equal "ok", shell_output("./test").strip
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index 9fa8f09..c94ccbf 100644
+--- a/meson.build
++++ b/meson.build
+@@ -74,5 +74,7 @@ if install
+ endif
+
+ # add the testsuite
+-fpm_toml = meson.current_source_dir()/'fpm.toml'
+-subdir('test')
++if get_option('tests')
++  fpm_toml = meson.current_source_dir()/'fpm.toml'
++  subdir('test')
++endif
+diff --git a/meson_options.txt b/meson_options.txt
+new file mode 100644
+index 0000000..93d92ff
+--- /dev/null
++++ b/meson_options.txt
+@@ -0,0 +1,3 @@
++# Build options for toml-f
++option('tests',
++  type: 'boolean', value: false, description: 'Build test suite')

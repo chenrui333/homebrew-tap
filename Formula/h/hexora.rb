@@ -1,26 +1,23 @@
 class Hexora < Formula
   desc "Static analysis of malicious Python code"
   homepage "https://github.com/rushter/hexora"
-  url "https://github.com/rushter/hexora/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "0a5ec5fbdc59c25d2d84a90626a47c36203817f8dc82301051888f3e528d5910"
+  url "https://github.com/rushter/hexora/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "86de5c5ea4a7300876d22b79d4ce48e30b9ef2f537bf95c75df476ed540b24dd"
   license "MIT"
   head "https://github.com/rushter/hexora.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55a9666e0781660049d78ea5fd0c06aac575c2bc33de996d1aa7c9d421ef02a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3d614dd19d0473b5e0d6c067225f2946e18ffda861cc946231bdb347c5cbff4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e0faba9b6dfded0f4d5ab352e1ddc5691b5ad0dca2d589efc83d708fdd72745"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be4504a8862abb8eb8c8999d5a4884ef4dd47130112b34ab3dcce43efc98026b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "891f68eee3d23ef27258b0c4492bd980f3c7d7dc1537ee5ecdbeaa444a06fc26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44efd8060ec8d4a99471c6f6cd57cb89fc1fcfe720abf944dff4ae3ed3997d9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c1fc0b16de4138a6ddc9d713ac953e35454c60cd378b883ce902e0d2071dcd7"
+    sha256 cellar: :any_skip_relocation, ventura:       "283e3cf7e60622ae5286abe5ec1682ba2420d918c11ec69f79a55b4ff86da1c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3c0f1eeae04334ef7ce15e8c3f45ec4d171a7af192cebcb2920c35f5a641b68"
   end
 
   depends_on "rust" => :build
 
-  uses_from_macos "python" => :build
-
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/hexora")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

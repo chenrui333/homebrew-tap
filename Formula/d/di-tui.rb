@@ -1,18 +1,17 @@
 class DiTui < Formula
   desc "Simple terminal UI player for di.fm"
   homepage "https://github.com/acaloiaro/di-tui"
-  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.13.4.tar.gz"
-  sha256 "12fb90dcaea96bfb906b65e00e925a54ceb22045b3ca96f82b92dbc8e5481097"
+  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.11.2.tar.gz"
+  sha256 "4ed7002746374825da2a0e982fdd7b59d93c76525064ce6b184acc9f123c0a6c"
   license "BSD-2-Clause"
   head "https://github.com/acaloiaro/di-tui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "206a2e03c765dce5e61107597cf821a472d47d04e0bd4aa0e17cbf95672ab8df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "206a2e03c765dce5e61107597cf821a472d47d04e0bd4aa0e17cbf95672ab8df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "206a2e03c765dce5e61107597cf821a472d47d04e0bd4aa0e17cbf95672ab8df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "66dae02f6c9bc3a6cc01b690551892856e1351bd1acf99378705ac962c6a404e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "305ebb141d9d8213a32d1cc7acc70ef7dd93d7a395b2a2597569e11febaeb6c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "791ee9480c3501468b6cc7a845c38d79fdd2718efc176a74d19129243cc0f216"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43b441a27d24fc48d52a83c4c53a50b8d733b8d83a43bad19e30d4af8e1743f0"
+    sha256 cellar: :any_skip_relocation, ventura:       "12a1ee11006d1a43b992f7da3fa7e26f0b1e91c6c36790ee948018487679b721"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c7f7d6f75bc7a62c89a08005c1a9e55bb1446b4c456eea94dc0744ad206841"
   end
 
   depends_on "go" => :build
@@ -23,6 +22,8 @@ class DiTui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/di-tui --version")
-    assert_match "Usage of", shell_output("#{bin}/di-tui --help 2>&1", 2)
+
+    output = shell_output("#{bin}/di-tui --username USER --password PASSWORD 2>&1", 1)
+    assert_match "unable to reason API response", output
   end
 end

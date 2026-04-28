@@ -4,17 +4,14 @@ class Datacmd < Formula
   url "https://github.com/VincenzoManto/Datacmd/archive/refs/tags/v0.0.3.1.tar.gz"
   sha256 "15a1ffd74f667960b556f5b601991204b068217a71e2e350133dbb1c0f6a1f05"
   license "MIT"
-  revision 1
   head "https://github.com/VincenzoManto/Datacmd.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bccaa631915e1fcfe34722002052465f19bd81479591333f926f7f2e4d406d1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0224d203b385351957c9b7bec4414351761d2b7c8a2f3dd9f3664139e08f5731"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ee6bce9b575a026302c2315ca972d1148533f0beb61809cd0aaee0888ffbb1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "636cff30e12cff6f3186af1930752446d59ed859078678e844282dbc3ae98629"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a292a2b95f9ff97f715947a910aa739efd1bb7cd285b23c6a758c7ac7baeaa7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b11f2b9bce33dc893724d9dac77bdbe4092b74744c4046ae1d8a160cb17af7ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ec7edd654c2a5c362e0758dd0e304b48c7e508215861ccf2e15915352b1b807"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc23c8622ee3418daad721d2b42cebb9e522d3fce5963c29dd9326a9c9c0347a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5c0b53d22f6b89f9339805834eab7e6fdc15589197441daee12bac83760ff8"
   end
 
   depends_on "go" => :build

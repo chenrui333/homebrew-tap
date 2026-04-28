@@ -1,18 +1,17 @@
 class Cozypkg < Formula
   desc "Cozy wrapper around Helm and Flux CD for local development"
   homepage "https://github.com/cozystack/cozypkg"
-  url "https://github.com/cozystack/cozypkg/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "2b93668c7c24ebdc0588ca15e7821de77879b883c263f2d295fba41fb9b1c05c"
+  url "https://github.com/cozystack/cozypkg/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "5852fcafe6dd3e354c328d6b89adc3a61b7eb40f681d91a099d614f927d93ce9"
   license "Apache-2.0"
   head "https://github.com/cozystack/cozypkg.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac236ee4f919057930461fe99a988d741dc625d64b9bb5c8834a3fbd93590b0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a89bbe86d30981ba9f41e00f0ee3b1942e88a19185385de28736829de2caa7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d672f019334e6afa54e783697ea3fbcb39688ed50029784f89d63860d3f2a3e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b64fa374c49a0ac585380b3e90e488847cb3e8f38b45c770492f70aad533d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfa240c1a2204a19d0ed825325c4289f385a23b340babe88e6febd05f6160139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8f6d4a3d8e05275c52c19faa84988903516dab5f2129da18639b867fdd22623"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8c417d5407b36eb9121fd4a987bdf48550003dba623ebc39b84ca842718d3de"
+    sha256 cellar: :any_skip_relocation, ventura:       "777211f742937f3b17171686ce158ef6bdf15951285a2887324c20bf33a36e5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c430edc9dac80b72074b5a325db57e55768862c0bb7aa7ce74a10c8f0301b11"
   end
 
   depends_on "go" => :build
@@ -20,7 +19,7 @@ class Cozypkg < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    generate_completions_from_executable(bin/"cozypkg", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"cozypkg", "completion", shells: [:bash, :zsh, :fish, :pwsh])
   end
 
   test do

@@ -2,18 +2,17 @@
 class Mfa < Formula
   desc "Generate TOTP(Time-based One-time Password) token with CLI"
   homepage "https://github.com/k-saiki/mfa"
-  url "https://github.com/k-saiki/mfa/archive/refs/tags/v0.0.13.tar.gz"
-  sha256 "70a5366bafb84ac3c9b554613fdd6ae1da9d5d035695060c9b64c791b684bb1c"
+  url "https://github.com/k-saiki/mfa/archive/refs/tags/v0.0.10.tar.gz"
+  sha256 "a20ac0d18903477da46c240d8e61f71a9964da7d93692267dc9394e200d0df75"
   license "MIT"
   head "https://github.com/k-saiki/mfa.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b860e340a8ae8f1f2f0717a8a22fe763973533a703c50cd33a7ab3dc25f52ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b860e340a8ae8f1f2f0717a8a22fe763973533a703c50cd33a7ab3dc25f52ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b860e340a8ae8f1f2f0717a8a22fe763973533a703c50cd33a7ab3dc25f52ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55013170d069b03bb28140385d4868c8db10878281485fd17c7970f88fb4adde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e8ef09ae687e8d1d2f4c2d70eab1f524a2c6cf433d622bef1226c00cb1d4924"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92e204f591fd3b429f0800371dacd869dfd842a5da05ea01bc49d90f48df72c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cdd6f79aa3619bf04844069eb4e19bb94833b39ae02a9d546cca47605ca069b"
+    sha256 cellar: :any_skip_relocation, ventura:       "8340d527533b73543475427376e08d710c66e138d36910d81dda9d58f00eeab7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1446e797e148b34c4ef32a1f84d9454e7a079c3cc9b5c10c8412be447983d8cc"
   end
 
   depends_on "go" => :build
@@ -26,7 +25,7 @@ class Mfa < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"mfa", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"mfa", "completion")
   end
 
   test do
