@@ -9,23 +9,27 @@ class Kandc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "bc46869ed97af8f6d19dbaa2af9daead9379f35cf40f87a6611cd990a0a65e1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "106a8355159d3b2942b01048a7a621c88f5dfc4fcc5219b0e0fbac59152efdee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c542bfcff39dfeda1ec57604c24c4606d4a77420f4b539406919282306adcf28"
+    sha256 cellar: :any_skip_relocation, ventura:       "f8b0cc353b86ae461e764689a144abefa48338fb6e9bdf7c6da315bd787ecc39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf5abcbbdd6822294ea0c6fcb230d7f8c6283eaebf41ef91b0fa2f8af123367c"
   end
 
-  depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.13"
 
-  pypi_packages exclude_packages: "certifi"
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/dc/67/960ebe6bf230a96cda2e0abcf73af550ec4f090005363542f0765df162e0/certifi-2025.8.3.tar.gz"
+    sha256 "e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"
+  end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "requests" do

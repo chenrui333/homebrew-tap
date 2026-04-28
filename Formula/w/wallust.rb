@@ -1,18 +1,16 @@
 class Wallust < Formula
   desc "Better pywal"
-  homepage "https://explosion-mental.codeberg.page/wallust/"
-  url "https://codeberg.org/explosion-mental/wallust/archive/3.5.2.tar.gz"
-  sha256 "46c2592217f0de968437850b14b2e844f2af4158b70135b2b448dc426c0309a1"
+  homepage "https://codeberg.org/explosion-mental/wallust"
+  url "https://codeberg.org/explosion-mental/wallust/archive/3.4.0.tar.gz"
+  sha256 "2fa1b604a70026ff9ed853cc43bb5d4bed6c17ea1a0cea08563447bd5df5ddfb"
   license "MIT"
-  head "https://codeberg.org/explosion-mental/wallust.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b276b0d7cf7117c7e322f877e7877fd921f1f5a185629e659a2cf0af7ddd012a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c4af12dad6b39a05accb551e5b45a277e1053a8b2d6f9aaf5c38cc0898af777"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8579fe4c620f6f63fca82b33a0ea96f79c200c857e6a90106c39e20bf50b1e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f05339d3809a3c682dbeb1db6bdde0ccef8a462e9c4673f025a87ab4563a0b24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7e3fa4953127c06c69a9d4b0a6ad1e43804f2b55cb480f3c3e2c1d64ab525fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3279a1d19cff08b2d94333d18157f5315fe179ec9c139ad623badd55592cf60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80d4ff3eb56f5525867106c9d05e90335319d051643158e234d9f9ba9c6d85fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "6af9be1d176a9be754d4e9db63580b168101a3ff9af4797e41333cdeff55da05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d2ee5137690cdc0d63352da4cb1ce1d20a5f55aae83f2906de51ed3fac6d93a"
   end
 
   depends_on "rust" => :build

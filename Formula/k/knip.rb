@@ -1,27 +1,28 @@
 class Knip < Formula
   desc "Declutter your JavaScript & TypeScript projects"
   homepage "https://knip.dev/"
-  url "https://registry.npmjs.org/knip/-/knip-6.7.0.tgz"
-  sha256 "c7a4f5e4146b352629dd5309282df830e3e782a953780413a982ff9f27a8ecf1"
+  url "https://registry.npmjs.org/knip/-/knip-5.63.0.tgz"
+  sha256 "a7c598853437e131a60450caa06b6bcd1267251cb1bfa26baf3ad5663baa8915"
   license "ISC"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "9c0d24bf10fe932edf074ad433d2c76aa044f689f7bb3c422defcb4569a48351"
-    sha256 cellar: :any,                 arm64_sequoia: "29bc78b2b24b36f37de04feade3a618cb48c7d545cb13d5ca1bae488ad34742a"
-    sha256 cellar: :any,                 arm64_sonoma:  "29bc78b2b24b36f37de04feade3a618cb48c7d545cb13d5ca1bae488ad34742a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afa599deda13a632b85dd437873e14888e823f14aa063f6dcbb4bc8c372695bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d265ca63dd6427b845c5371cf307798b466a85b684e643b690a5d703a3cf3005"
+    sha256 cellar: :any,                 arm64_sequoia: "8e90d81c2ec84a1e30e6edd50e067ab2c014168c660d8e41c94ec537e162a2ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "af0f2f77f2ae0ab27ae4a07d39c5554215dfb960fc90321001eb6f720d054919"
+    sha256 cellar: :any,                 ventura:       "424ef10a4518f7e3bbc0d95c2c0c12d83f237e31620cb4bd9cb353713d15b7ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96f5421618a4e63420fd3598873b2a1a0d466e6a124f0c2a675083f7c8728fc4"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/knip --version")
+
     (testpath/"package.json").write <<~JSON
       {
         "name": "my-project",
@@ -30,8 +31,6 @@ class Knip < Formula
         }
       }
     JSON
-
-    assert_match version.to_s, shell_output("#{bin}/knip --version")
 
     system bin/"knip", "--production"
   end

@@ -8,20 +8,19 @@ class CcEnhanced < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "135097c2ed35c72080bc9ed47645cc0af0821b28afcee5ed1d4419d3795bf1bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fae2307b1a4455b428b469806c94a3249597dcfad05690ac27ce6fecfd3ed557"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d14ec78aa08a6b523fb007f25b46152c4ddec4091c32c3019b8ba9d03715a8f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48b2b5a75df61d84c04e35137579c0d60c4f573184d353ae0d9adf70c193030c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31a3552bb627e63096f638e5be2c84da2ce7471488d8450c27f8d1f4d83b1363"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79c1b2eddf48c456a9001c5ad39b3d49a09755377fb9a851d8a4602a86c46da9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a4d1fad5baa3f57bb6c043681eefe421c6693bd23d21d6945f94f7992f5fa19"
+    sha256 cellar: :any_skip_relocation, ventura:       "df9b41d6c2b3f95e0c56a17998654470715ed50e044a7069ba35b555fcea30a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70ec20c0baa6aa0308515f4c139c4f9e5da46e1c17b1f184f5603f6de6d3db47"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
+  uses_from_macos "zlib"
+
   on_linux do
     depends_on "openssl@3"
-    depends_on "zlib-ng-compat"
   end
 
   def install

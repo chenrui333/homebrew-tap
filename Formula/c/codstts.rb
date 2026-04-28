@@ -23,7 +23,7 @@ class Codstts < Formula
     assert_match version.to_s, shell_output("#{bin}/codstts --version")
 
     testpath_dir = testpath/"test_project"
-    testpath_dir.mkpath
+    mkdir_p testpath_dir
 
     (testpath_dir/"test.py").write <<~PYTHON
       def hello():

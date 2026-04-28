@@ -9,21 +9,17 @@ class Gritql < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "813f99e6a4a8969e4135948c466b99fae6b73ddfd681185f060c258ccf6a727f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13d71a08405879b1c42a993c78e83d081466d0f2afa1c1d37b1d51ea5fb3b4d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "971dc949ec27962552d1e74faba0818e767531b6d1d04ea178837ef275c2433a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c2882d668b02b66423205a7bca0c9127db6ff1a972e408179a97177051dea93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50782edde61d78b81c49abdbcd2d2529c868c64575ca84a43817eaea13f71f88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da42f4f8c14409bcd378af659fb666a2eaae686384e45ca9b48e6539104f12c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c788c59d0f1bbfda8ef4ce9c7017449f3c4e6fc82943823bdf0eaad33811265"
+    sha256 cellar: :any_skip_relocation, ventura:       "04935941062b0622d388c7ee2335d01ccfb4b1ac517617dc979a849d86ec18ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b652a906f5a1f716360ff56f8fa68b1e650c45b6a67791ccf4b81b2b410cd53"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "zlib"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli_bin")

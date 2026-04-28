@@ -1,19 +1,18 @@
 # framework: clap
 class Nvrs < Formula
   desc "Fast new version checker for software releases"
-  homepage "https://nvrs.koi.rip/"
-  url "https://github.com/koibtw/nvrs/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "67305ede8d833c1c7d449863c904c485ed3cf9ae32b9f976bfaee5108ad244b8"
+  homepage "https://nvrs.adamperkowski.dev/"
+  url "https://github.com/adamperkowski/nvrs/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "d306d520d76d84826e267c1baa58e497b9f14d7bd1d9b651f07e7f598dd7821d"
   license "MIT"
-  head "https://github.com/koibtw/nvrs.git", branch: "main"
+  head "https://github.com/adamperkowski/nvrs.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23998dc3d80bc579e28f517d4121c9d38f250c242e9629eb4d6f194e47d07cf9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2e1363e21305be81da97c65b45e1b031bde492b3303fcb6c51a08c7d0bbd2ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69779a140205e8d7b3f5c493b26e8c75cc6b7b04ce9e25033a0311ca3291068b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13c51fe4691a3af6c541ab759dbcbc27c89f4703d988341214f0561a871eeae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e73691424c8d674c387b731f154f66e2d69de3cc2ba5606d9e391507fcf1f034"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bec39e09115b9d296dfab0e53fed2dcd932b09c95e4114f2ec79836fdf5ec54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c3c11627fc55c8943d9a077456b7d1288097350051cf67559d57e2559b94340"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8df8dff79093f75510ab302cf69cb1b5b735047ee7dfe019596d7df065798b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e3316f33c8bf08102df01c6e3b2407dbbec2303e716b92d41aca6e8e4611330"
   end
 
   depends_on "pkgconf" => :build
@@ -38,7 +37,7 @@ class Nvrs < Formula
       keys = ["dummy_value"]
     EOS
 
-    output = shell_output(bin/"nvrs")
+    output = shell_output("#{bin}/nvrs")
     assert_match "comlink NONE -> 0.1.1", output
   end
 end

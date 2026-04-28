@@ -1,13 +1,16 @@
 class Box < Formula
   desc "Fast, zero config application bundler with PHARs"
   homepage "https://box-project.github.io/box/"
-  url "https://github.com/box-project/box/releases/download/4.7.0/box.phar"
-  sha256 "3d390eeaec33288098fe83f8a54c60cc575cb6be295f38ff4482b4b4f26f8d52"
+  url "https://github.com/box-project/box/releases/download/4.6.7/box.phar"
+  sha256 "f49a711985219c9e0ef9faa49a95d8ab47385b8b8966dc5ac0ca10f9ac318e6b"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "90106abc8ffb8aac60387b9c04057d6440ba70f1973e51f34236334a4ce92828"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11a19a732110154dabbe352e1a8041391291d9474580b98383cac3efb208ffab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f6a1e38068168bbd3040d0459245c36a5cac5ef23dd8f7c83954ee79fe5d8b7"
+    sha256 cellar: :any_skip_relocation, ventura:       "df298fa0705581a55a52e52b0de0d6184d4aca3fd4462e5dca89ff5fda0ffb8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e849793c92415c8d08a5dede04c5c1a84227bafd27a4cd0cedbab99517af82c7"
   end
 
   depends_on "php"

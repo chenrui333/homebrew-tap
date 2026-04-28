@@ -1,17 +1,16 @@
 class BladeFormatter < Formula
   desc "Opinionated blade template formatter for Laravel that respects readability"
   homepage "https://github.com/shufo/blade-formatter"
-  url "https://registry.npmjs.org/blade-formatter/-/blade-formatter-1.44.4.tgz"
-  sha256 "f71388bf77051936cce72d9ab562d59876b066bbeeac6da7d43a04c654b5d6cd"
+  url "https://registry.npmjs.org/blade-formatter/-/blade-formatter-1.44.2.tgz"
+  sha256 "86c2c12d101cf01113a61778a9b159c26aebd4881efc5cd1f6d86b8b01e0c059"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "829892ef971fcef65d1be610964648e0823169aa03d6f07d289f1c3889ea012a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "829892ef971fcef65d1be610964648e0823169aa03d6f07d289f1c3889ea012a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "829892ef971fcef65d1be610964648e0823169aa03d6f07d289f1c3889ea012a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ade2351df5e7b4258fe77c9bfb12bb0304c4484c18700d5b8111082fa0582eab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ade2351df5e7b4258fe77c9bfb12bb0304c4484c18700d5b8111082fa0582eab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e6bb6070a72b52aaeb71e7ba4fec895c3e9965c8677b61853fafba4f29b37a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1f5a0ae4f87a17b932e5d207913effcf253a60cfe0bec5d035dc9ec1a3ee35f"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c9864ebc707382ae3433d8c5f92aa5b253507eb6a5069d0eee777afed129ff8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a451dbfdcdf80549f288aea4a6db79b6706e5db1b6bf63972c272f093a46176"
   end
 
   depends_on "node"

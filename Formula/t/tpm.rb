@@ -9,12 +9,10 @@ class Tpm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "587ddd77ce3e52181fe63c360f9acf2070e0bccacbc189f9aa80836e1310ecba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "587ddd77ce3e52181fe63c360f9acf2070e0bccacbc189f9aa80836e1310ecba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "587ddd77ce3e52181fe63c360f9acf2070e0bccacbc189f9aa80836e1310ecba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d64af2cabd5947cb7c9cd2e802f72ec06d2381b7a3b1d8cd59a6f632dabe57b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f25465b1b8fa9e7f89a46bc035c8cdc8676db364eed5141ef39208078df65468"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff47b84faebac6c681f0ed7695e0dd31561dd072d0f34ee0f899003f6fe78f4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66c8d390aec7e5b0c4e838631715df222ba3d9f44c9ae687e26290821a1ebdef"
+    sha256 cellar: :any_skip_relocation, ventura:       "d18b5eda4beaeb860a4e816d3210ae84bc3b4f7c3987c33494982eed04baf5d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e95efe39f6a61e0ea7dfd839007449364f607c7cbc6f50616ce12b476eea7f9f"
   end
 
   depends_on "go" => :build
@@ -22,7 +20,7 @@ class Tpm < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"tpm", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"tpm", "completion")
   end
 
   test do

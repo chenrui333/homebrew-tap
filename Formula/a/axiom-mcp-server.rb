@@ -1,23 +1,16 @@
 class AxiomMcpServer < Formula
   desc "MCP server for Axiom"
   homepage "https://github.com/axiomhq/mcp-server-axiom"
-  url "https://github.com/axiomhq/mcp-server-axiom/archive/refs/tags/v0.0.5.tar.gz"
-  sha256 "11bcaa469544c175b9e35f5694644064aabe74b425a250c082fb5e19cbc257a1"
+  url "https://github.com/axiomhq/mcp-server-axiom/archive/refs/tags/v0.0.4.tar.gz"
+  sha256 "73920c83e7da63e4747dce3ac867a32458db9079fed56a0b6f3ef7e882b5134c"
   license "MIT"
-  head "https://github.com/axiomhq/mcp-server-axiom.git", branch: "master"
-
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b0d213f098b69da308bf0eef1d97954869ecfb1ade40f74c381f8b2861c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b0d213f098b69da308bf0eef1d97954869ecfb1ade40f74c381f8b2861c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b0d213f098b69da308bf0eef1d97954869ecfb1ade40f74c381f8b2861c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb3f2bbd94a67e06403e61be16a8b009e34a01ab3b93bcf62f72383f1fc05c1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfd28830b872c92602de75d3b597326aa1cab4bcce9790b024bed016dff43bf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1093d30306f09bfbabc09f69a80b54e559c6adf92801cf17fb998eea1f91486e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8270090b281d9a89f3d540bcb9b054995b1206ed69bde728054f979065520fed"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fc325de83270cb73b29913a6e405ddb3a3fba9a2cd677cdc5dc958f6b40fbf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46fc7827c76e13e2d09fe2805048584073336c6e6185e03200cbdca6cdb4af3"
   end
 
   depends_on "go" => :build

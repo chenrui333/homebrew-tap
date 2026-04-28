@@ -1,40 +1,34 @@
-# spellchecker:off
 class DebuggAiMcp < Formula
-  desc "MCP Server for Debugg AI"
+  desc "MCP with 25+ @antvis charts for visualization, generation, and analysis"
   homepage "https://debugg.ai/"
-  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-2.3.0.tgz"
-  sha256 "166833102142d69b81c46dcf729b7f6073760de6deae23a2393e6acb0ec360ff"
+  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-1.0.16.tgz"
+  sha256 "3c52ed2403196b68520ea2c3f03986b27ebbb0d38361babc5237c426fd43d2dd"
   license "Apache-2.0" # license fix PR, https://github.com/debugg-ai/debugg-ai-mcp/pull/4
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "51b9b99e252eb6b39658fa7bde1b7605c50e969db8bda7278c49e488d7982bdc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66488e6768c8a75fb8e5f5fef1d1b94bd50bf42a7281481102ce4f63b574acd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c49e49cbd3dd01035a51983b2132ecf9fe9c199c47d2792b60bcb684d592d30c"
+    sha256 cellar: :any_skip_relocation, ventura:       "9aca20da0cc9e39966664e32a5b95bcc63f249b4efac939036109d3db2c55e22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b339ec10d9856b524929effd22f9fc11ba99c1996e41a1bcedc92413d4e70e04"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-
-    # Remove vendored prebuilt ngrok binary to avoid shipping non-native artifacts.
-    ngrok_bin = libexec/"lib/node_modules/@debugg-ai/debugg-ai-mcp/node_modules/ngrok/bin/ngrok"
-    rm ngrok_bin
-
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
     ENV["DEBUGGAI_API_KEY"] = "test"
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"homebrew","version":"1.0"}}}
-      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
     output = pipe_output("#{bin}/debugg-ai-mcp 2>&1", json, 0)
-    assert_match "\"name\":\"check_app_in_browser\"", output
-    assert_match "\"title\":\"Run E2E Browser Test\"", output
+    assert_match "Run end-to-end browser tests using AI agents", output
   end
 end
-# spellchecker:on

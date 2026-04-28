@@ -1,18 +1,16 @@
 class Await < Formula
   desc "Small binary that runs a list of commands in parallel and awaits termination"
   homepage "https://github.com/slavaGanzin/await"
-  url "https://github.com/slavaGanzin/await/archive/refs/tags/2.4.0.tar.gz"
-  sha256 "3abecf4f70382970476102ab4ef9601cf30564cc3a0f8385228b791f3e515960"
+  url "https://github.com/slavaGanzin/await/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "167ec2e23edc6213abb192601611d60c87dd4d3f3796a9d3d560fe214c1f2807"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c1af7f9a8341aa74241bba5d90625f3eacfc6aa195f708b14b039657b827ecc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba9d24fbce11fd328c530a8a5f76a194f59373b96ee8f1d5b14eddb4add47384"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b20c60d98c1947298d7671e505d0513a46d0a57b157e0cfdcfea867c80651831"
-    sha256 cellar: :any_skip_relocation, sequoia:       "064656380b20fa45802ae581b18a2c50bb0c6a815db4912b28ef6e5f979f2d38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14d0e9a0c2a7c1d6110cafb9ae9b55a6f8ce5399882ac90322420037804e05fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d92ce75e182fdc2b0c63feb9e954f184bcb492df52812e44daf6ad9030cffb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24adb3cd0e04c6430321dfee9d0106576c1a200c5ac124a9fc2083b2e33253ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0141205d150d04fde1fc5259088b0d3b10b3cd13983d6c379de61d846f8cf139"
+    sha256 cellar: :any_skip_relocation, ventura:       "1760621ccaa6447b7c6e56873280132c65bbf9c2611f97b4024532e68bd9096f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8b88d3286f11595f383415c3082cbb3e986d863187be62d04998c40da61edae"
   end
 
   def install

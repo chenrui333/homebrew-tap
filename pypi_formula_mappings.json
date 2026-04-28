@@ -1,0 +1,26 @@
+{
+  "arxiv-mcp-server": {
+    "exclude_packages": ["certifi", "pymupdf"]
+  },
+  "archgw": {
+    "extra_packages": ["filelock"],
+    "exclude_packages": ["certifi", "numpy", "torch"]
+  },
+  "context-file-manager": {
+    "package_name": "context-file-manager[mcp]",
+    "exclude_packages": ["certifi"]
+  },
+  "gtts": {
+    "exclude_packages": ["certifi"]
+  },
+  "lemonade": {
+    "exclude_packages": ["certifi", "numpy", "sentencepiece"]
+  },
+  "rallies-cli": {
+    "package_name": "rallies",
+    "exclude_packages": ["certifi", "numpy"]
+  },
+  "sarif-tools": {
+    "exclude_packages": ["numpy", "pillow"]
+  }
+}

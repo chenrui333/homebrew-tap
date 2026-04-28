@@ -3,26 +3,24 @@ class Vsg < Formula
 
   desc "VHDL Style Guide"
   homepage "https://github.com/jeremiah-c-leary/vhdl-style-guide"
-  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.35.0.tar.gz"
-  sha256 "243814d768d14ffa76503d63f4aa60a1c7afd3a561cbda46c0954602fcdff390"
+  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.34.0.tar.gz"
+  sha256 "a2a7f3868a69b12ea7d0e0c9e9fee9d8a1f01533127bc16036262fdaa3b168fe"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24b27f0298b12d00e3ffd2424f1de5b0d203a63b62e213f7235d958f69ada5cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da93cadca0fb91ea70b2f7e5f02b916bbf71c15ebda0fd70cc864d69cfee2971"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebe22656f9b068241e26660fb690688a529b71431173c25ab73abeda7d3798cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e103031e177f5c00162ff9368ca94e83b2da2d276fe15a132192f6937b14a20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ffee7d395585493e7e5516e6518e3471e5787f068cd68b7ab394c64995d39e8"
+    sha256 cellar: :any,                 arm64_sequoia: "a65dc8d56c26964f633d9b0237d9df86e7f64974efd4506dda4bee73c8effcb9"
+    sha256 cellar: :any,                 arm64_sonoma:  "491651b4db6b5eabe07d4dafb766131a8be4ff5cbee42f808b0a3fd381224d9d"
+    sha256 cellar: :any,                 ventura:       "ba921c0ddc82c4c5da07a9ded608288894225e1312aa11f589fd4dd5c4b5742d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d479a6064aa56a38b02671ae124d1e296864785a9d6d4044b4f7e86b88fb854"
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.13"
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
-    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+    url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
 
   # add `starting_version` to override default `0.0.1`
@@ -46,7 +44,7 @@ class Vsg < Formula
 
     assert_match <<~EOS, shell_output("#{bin}/vsg test.vhdl")
       Phase 7 of 7... Reporting
-      Total Rules Checked: 889
+      Total Rules Checked: 884
       Total Violations:    0
         Error   :     0
         Warning :     0

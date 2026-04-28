@@ -8,12 +8,10 @@ class Huber < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d7b9ed368c6f508c865f4bef32fe9cff9a439e601bd003bfbf97112711247eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d875976273831c33f0a55f10e71a1336ada738c77384da5e6df140ec3e88ebc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b8e2a02d6d3e1c00d92e2c0101149e7c1b1b5de44dca6d76b245459911af526"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81ff186d79f193423604b579fc4850370e11a93657a13abf8e1d1efcb293a7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b46cd3d6e10a446f1634246d1c7adb79f437bd9889aba2b9ad99983815635414"
+    sha256 cellar: :any,                 arm64_sequoia: "2cb201c6f2fc0c36cd8b35aafd148665a7129cf078175f3ea9a35c58036f7034"
+    sha256 cellar: :any,                 arm64_sonoma:  "996d0f26257ea8a055adf608b5cf7b7bac514b9c948ef931db5b5c426436a54b"
+    sha256 cellar: :any,                 ventura:       "929078ed1c05ec6002ef36c59998b789c6625fa4be7186d7e2d9fee0e04587a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d64eea8709a44547ee0609e89036adb090a7013f3a902d9a72ccf84295fe9108"
   end
 
   depends_on "cmake" => :build
@@ -21,9 +19,7 @@ class Huber < Formula
 
   depends_on "openssl@3"
 
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "zlib"
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.

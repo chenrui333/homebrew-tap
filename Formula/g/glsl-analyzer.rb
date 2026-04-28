@@ -2,19 +2,19 @@ class GlslAnalyzer < Formula
   desc "Language server for GLSL"
   homepage "https://github.com/nolanderc/glsl_analyzer"
   url "https://github.com/nolanderc/glsl_analyzer.git",
-      tag:      "v1.7.1",
-      revision: "d595fb18c165f9e6c0c99a39dd457b993cfdd9aa"
+      tag:      "v1.6.0",
+      revision: "a79772884572e5a8d11bca8d74e5ed6c2cf47848"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f547b77849ff6679ad56f0a44b2bc45afc02f0d5e56b8ad89e3665e38fb0f0eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3398c52157d6efbb61293659be6a6af57cdce6dec9736ccb730dd13e2acb365c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4731449f8041328d01be3eedc5fa2953078d3a6ed9c85ca8bfe1934f4efc3249"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88df97170594fa3f5087979a77b974899ccf3d51126e44df8e7f3dad72a35e76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30fc4c8e153ae106e527610c5cc5c491910d9ed64215197dbb02033360986a80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d8967020ce7f070e6751a0e48ed29645f8f4538491eb6c0ed6eace907118267"
+    sha256 cellar: :any_skip_relocation, ventura:       "f47b98e47a5ca4d44a8aaff21c308a6c5f35ebf73587ff39d517f3d723db5722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4246054679b96000ea1560bf7e6c4bfbfd5a49d245f485e68628be7dea9daa6d"
   end
 
-  depends_on "zig@0.14" => :build
+  depends_on "zig" => :build
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.

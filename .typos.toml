@@ -2,52 +2,27 @@
 
 [default]
 locale = "en"
-extend-ignore-re = [
-  # Inline spellchecker directives
-  "(?Rm)^.*(#|//)\\s*spellchecker:disable-line$",
-  "(#|//)\\s*spellchecker:ignore-next-line\\n.*",
-  "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on",
-  "(?Rm)^.*<!--\\s*spellchecker:disable-line\\s*-->$",
-  "<!--\\s*spellchecker:ignore-next-line\\s*-->\\n.*",
-  "(?s)<!--\\s*spellchecker:off\\s*-->.*?<!--\\s*spellchecker:on\\s*-->",
-]
 
 [default.extend-words]
-Hashi = "Hashi" 
-Sur = "Sur" 
-debugg = "debugg" # for debugg-ai-mcp filename
-parm = "parm" # formula name
-Parm = "Parm" # Ruby class name for formula
+sherif = "sherif" # for sherif.rb
 sur = "sur" # for big sur
+Sur = "Sur"
+ratatui = "ratatui"
 yor = "yor"
-aks = "aks" # Azure Kubernetes Service
-Aks = "Aks"
-AKS = "AKS"
+Hashi = "Hashi"
+aks = "aks"
+mosquitto = "mosquitto" # for mqtt-cli.rb
+debugg = "debugg"
+captable = "captable" # for captan.rb
 
 [files]
 extend-exclude = [
   "Formula/h/holo-cli.rb", # for `index 4ba84b7..9d404c0`
+  "Formula/m/mitex.rb", # for `main.typ`
   "Formula/r/readmeai.rb", # upstream pr ref, https://github.com/eli64s/readme-ai/pull/158
-  "Formula/r/rusticon.rb", # error: `ND` should be `AND` for license
-  "patches/**",
-  "docs/terminal-trove/terminal_trove_weekly.md",
-  "formula-status/formula-status.md",
-  "STATUS.md",
+  "patches/flexiblas/3.4.5.patch",
+  "patches/fjira/1.4.4.patch",
 ]
 
 [type.ruby.extend-words]
-certifi = "certifi" # python package name used in ruby formulae
 fo = "fo" # for resinator.rb
-
-[type.md.extend-words]
-certifi = "certifi"
-ratatui = "ratatui"
-
-[type.tap_migrations]
-extend-glob = ["**/tap_migrations.json"]
-
-[type.tap_migrations.extend-words]
-sherif = "sherif" # for tap_migrations.json
-
-[type.tap_migrations.extend-identifiers]
-sherif = "sherif" # for tap_migrations.json

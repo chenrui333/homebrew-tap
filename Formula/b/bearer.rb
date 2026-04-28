@@ -1,24 +1,21 @@
 class Bearer < Formula
   desc "SAST tool to find, filter, and prioritize code security & privacy risks"
   homepage "https://docs.bearer.com/"
-  url "https://github.com/Bearer/bearer/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "677105bd9f3d270196d82f7f19d6fd7cf68b3a70a8339a6f4119010b02ef6509"
+  url "https://github.com/Bearer/bearer/archive/refs/tags/v1.51.0.tar.gz"
+  sha256 "ba8d621ef954c2a5f43337c9f401d05d74301b101272101ed386182c3834a774"
   license "Elastic-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eb38df92361051d0616e748e029df3048089a87101c6854338ec0104a661fafb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb87fdbe7ee94737e68b75abfd4d9ce89f38bda3a30321aac83231e619e18319"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0bb63de7b3fbb979a5ce6d1cfcae66c5b4e563900aaf4079e5300b97568a478"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a4fd8d49f6982074d926707c80a2a8c44d4f56f3754c2b877b5d77e12b15f65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3989cb7950460bcc78c2afc22b8688c9d2c0b7d2b223a6aace66d786a3a0eec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "372ccef6c52ea14afca4879954f55fd2a4f63a8d7c2c640f62067c1df47be769"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4d45a21d74634e63ef0c69aae93d069a0ed6e1519d463b64da75665cfccc6d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "eb558fffc0623bf359e0e40643b30010364dc06dba7d54a5173e27d5f3a7ff34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9035b8e4689b2bc8cb0c893441c649df1161f1d9d67df6e2bf799c533d2dabd"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-
     ldflags = %W[
       -s -w
       -X github.com/bearer/bearer/cmd/bearer/build.Version=#{version}

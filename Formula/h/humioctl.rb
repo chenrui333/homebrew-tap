@@ -1,18 +1,17 @@
 class Humioctl < Formula
   desc "CLI Client for Humio - Stream Logs All Day Long"
   homepage "https://www.crowdstrike.com/platform/next-gen-siem/falcon-logscale/"
-  url "https://github.com/humio/cli/archive/refs/tags/v0.40.0.tar.gz"
-  sha256 "1c6cbf9a3ca97700b7792c4d2dc247c9af3ba9f7715fb3f87b11a49adec15447"
+  url "https://github.com/humio/cli/archive/refs/tags/v0.38.1.tar.gz"
+  sha256 "e588092e47d9943a1823e0af707c798945924957eff834b7d7b041ebcf712bc8"
   license "Apache-2.0"
   head "https://github.com/humio/cli.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d397c65e438e086c47342e36d96c5cc7b10b7549c19e078cc4bfcee44f1c276"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d397c65e438e086c47342e36d96c5cc7b10b7549c19e078cc4bfcee44f1c276"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d397c65e438e086c47342e36d96c5cc7b10b7549c19e078cc4bfcee44f1c276"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6b40fdd3785b6282c2974bc7e2c07cd2cc757b4f50658fa296ed6fc5753d5af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1701c34f2946046cfcd78fe882ec5f272f03d4934d7586a37c111e7576e8651a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cff544aa70eb05dffb3d1f844ddb8275c497b50945ed47ae6745ff63b074126"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "859c91e94da2d80d42c2daf59c030b12879ecb8965ea6994312fa86c7b4acc18"
+    sha256 cellar: :any_skip_relocation, ventura:       "4951f674c427df56691ab19b882e0d4df6c57a680711a1982d8a5744116e5709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75567f825ebd815a7ec0cf4eebc70d8fb2a6cecb323336f813e1c27f6f21365b"
   end
 
   depends_on "go" => :build

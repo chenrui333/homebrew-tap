@@ -1,18 +1,17 @@
 class Clai < Formula
   desc "Command-line artificial intelligence - Your local LLM context-feeder"
   homepage "https://github.com/baalimago/clai"
-  url "https://github.com/baalimago/clai/archive/refs/tags/v1.10.6.tar.gz"
-  sha256 "2df65c20d89b176d2a3d8f321609b863f72c29112103163c5f1e6de072d31561"
+  url "https://github.com/baalimago/clai/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "fbefd120941e01320bfccbccada6614014c0626f969ca4ace9a6b489333fe165"
   license "MIT"
   head "https://github.com/baalimago/clai.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7187ecfb565e1d0f92ac075d443ed61c7d0de3104cdef5ff270d556f39679cae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7187ecfb565e1d0f92ac075d443ed61c7d0de3104cdef5ff270d556f39679cae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7187ecfb565e1d0f92ac075d443ed61c7d0de3104cdef5ff270d556f39679cae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e21ea05a3f5cb5a3aa66051358f7be0eefa8835797413e5081df019e0e1719de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3b48b62ee7adfa83986e119c41aa99ae4116ed0d3b20d893fbae305c6a7f33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cfa127d072fa0c1ae861cc6c315e664d18b3d48ef8a0e78f98ce094e3c86a19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41937e1a6fc679083c017a096a63aff7774aec9040a9d03accb0d82a58e074e1"
+    sha256 cellar: :any_skip_relocation, ventura:       "5350ce95d545bfd960acdabc9f89ea48ecd16a9e63daff0e4a62dd2f3196a208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bac006757f0159c5db3695a20368648d4623fce4cf4b95d20c3ab251859a42c2"
   end
 
   depends_on "go" => :build
@@ -22,8 +21,7 @@ class Clai < Formula
   end
 
   test do
-    output = shell_output("#{bin}/clai -h 2>&1", 1)
-    assert_match "Usage of clai:", output
+    system bin/"clai", "-h"
 
     if OS.mac?
       assert_path_exists testpath/"Library/Application Support/.clai/conversations"

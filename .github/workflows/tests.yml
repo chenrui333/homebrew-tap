@@ -1,179 +1,97 @@
-name: Build and Test Formulae
+name: brew test-bot
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'Formula/**'
   pull_request:
-    branches:
-      - main
-    paths:
-      - 'Formula/**'
-  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: read
 
 env:
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
+  HOMEBREW_TEST_BOT_ANALYTICS: 1
+  HOMEBREW_ENFORCE_SBOM: 1
+  HOMEBREW_NO_BUILD_ERROR_ISSUES: 1
+  HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+  GH_REPO: ${{ github.repository }}
+  GH_NO_UPDATE_NOTIFIER: 1
+  GH_PROMPT_DISABLED: 1
+  PR: ${{ github.event.number }}
   HOMEBREW_RELOCATABLE_INSTALL_NAMES: 1
   HOMEBREW_ARM64_TESTING: 1
 
-concurrency:
-  group: "build-${{ github.ref }}"
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
-
 jobs:
-  tap-syntax:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
-    container:
-      image: ghcr.io/homebrew/ubuntu22.04:main@sha256:12faadc5521e46a968515ed15bf6817a9c2ef02b0330a388498c9c941d559d30
-    env:
-      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
-    outputs:
-      testing_formulae: ${{ steps.formulae-detect.outputs.testing_formulae }}
-      added_formulae: ${{ steps.formulae-detect.outputs.added_formulae }}
-      deleted_formulae: ${{ steps.formulae-detect.outputs.deleted_formulae }}
+  test-bot:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-22.04
+          - macos-13 # intel runner
+          - macos-14 # arm runner
+          - macos-15 # arm runner
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@fc695c54c2032716dd4cedd007489c8e32fc8a5d
+        uses: Homebrew/actions/setup-homebrew@5248cb50fb1ac9ad0b0d0acda8500e192bca25fb
+
+      - name: Cache Homebrew Bundler RubyGems
+        id: cache
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4
         with:
-          core: true
-          cask: false
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ matrix.os }}-rubygems-
 
-      - run: brew test-bot --only-tap-syntax
-        continue-on-error: true # Skip due to license check issues
+      - name: Install Homebrew Bundler RubyGems
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: brew install-bundler-gems
 
-      - run: brew test-bot --only-formulae-detect
-        id: formulae-detect
+      - run: brew test-bot --only-cleanup-before
 
-  set-environment:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
-    needs: tap-syntax
-    outputs:
-      syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
-      linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
-      linux-arm64-runner: ${{ steps.check-labels.outputs.linux-arm64-runner }}
-      fail-fast: ${{ steps.check-labels.outputs.fail-fast }}
-      timeout-minutes: ${{ steps.check-labels.outputs.timeout-minutes }}
-      container: ${{ steps.check-labels.outputs.container }}
-      test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - run: brew test-bot --only-setup
+        continue-on-error: true # ignore `brew doctor` failure, https://github.com/chenrui333/homebrew-tap/issues/301
 
-      - name: Check for CI labels
-        id: check-labels
-        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
-        env:
-          SCRIPTS_PATH: .github/scripts
+      # skip due to the license check
+      # - run: brew test-bot --only-tap-syntax
+
+      - run: brew test-bot --only-formulae --skip-dependents --root-url=https://ghcr.io/v2/chenrui333/tap
+        if: github.event_name == 'pull_request'
+
+      - name: Upload bottles as artifact
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const path = require('path')
-            const script = require(path.resolve(`${process.env.SCRIPTS_PATH}/environment.js`))
-            const formula_detect = {
-              testing_formulae: '${{needs.tap-syntax.outputs.testing_formulae}}',
-              added_formulae: '${{needs.tap-syntax.outputs.added_formulae}}',
-              deleted_formulae: '${{needs.tap-syntax.outputs.deleted_formulae}}'
-            }
-            try {
-              await script({github, context, core}, formula_detect)
-            } catch (error) {
-              console.error(error);
-            }
-
-  build-formula:
-    needs: [tap-syntax, set-environment]
-    if: |
-      always() &&
-      !cancelled() &&
-      (needs.tap-syntax.result == 'success' || needs.tap-syntax.result == 'skipped') &&
-      (needs.set-environment.result == 'success' || needs.set-environment.result == 'skipped') &&
-      (github.event_name != 'pull_request' || needs.set-environment.outputs.syntax-only != 'true')
-    strategy:
-      matrix:
-        include:
-          - runner: 'macos-26'
-            cleanup: true
-          - runner: 'macos-15'
-            cleanup: true
-          - runner: 'macos-14'
-            cleanup: true
-          - runner: 'macos-15-intel'
-            cleanup: true
-          - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-runner || 'ubuntu-22.04' }}
-            container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
-            workdir: /github/home
-            cleanup: false
-            timeout: 4320
-          - runner: ${{ github.event_name == 'pull_request' && needs.set-environment.outputs.linux-arm64-runner || 'ubuntu-22.04-arm' }}
-            container: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.container) || fromJson('{"image":"ghcr.io/homebrew/ubuntu22.04:main","options":"--user=linuxbrew"}') }}
-            workdir: /github/home
-            cleanup: false
-            timeout: 4320
-      fail-fast: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.fail-fast) || false }}
-    runs-on: ${{matrix.runner}}
-    container: ${{matrix.container}}
-    timeout-minutes: ${{ matrix.timeout || (github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.timeout-minutes) || 240) }}
-    defaults:
-      run:
-        shell: /bin/bash -e {0}
-        working-directory: ${{matrix.workdir || github.workspace}}
-    env:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-      BOTTLES_DIR: ${{matrix.workdir || github.workspace}}/bottles
-    steps:
-      - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@fc695c54c2032716dd4cedd007489c8e32fc8a5d
-        with:
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-          cleanup: ${{ matrix.cleanup }}
-
-      - name: Run brew test-bot
-        id: brew-test-bot-formulae
-        working-directory: ${{ env.BOTTLES_DIR }}
-        run: |
-          # Set Linux-specific environment variables if running on Linux
-          if [[ "$RUNNER_OS" == "Linux" ]]; then
-            export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-            export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
-            export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
-            export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-          fi
-
-          # Use custom args for PR events, default args otherwise
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
-          else
-            brew test-bot --only-formulae --skip-recursive-dependents --root-url="https://ghcr.io/v2/chenrui333/tap"
-          fi
-
-      - name: Post-build steps
-        if: always()
-        uses: Homebrew/actions/post-build@fc695c54c2032716dd4cedd007489c8e32fc8a5d
-        with:
-          runner: ${{ matrix.runner }}
-          cleanup: ${{ matrix.cleanup }}
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-          logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
+          # Stable prefix; unique per run to avoid overwrites
+          name: bottles_${{ matrix.os }}_${{ github.run_id }}
+          path: '*.bottle.*'
+          if-no-files-found: ignore
 
   label-pr:
-    needs: build-formula
-    if: success() && github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
     permissions:
-      pull-requests: write
+      pull-requests: write # for `gh pr edit`
+    name: Label PR as pr-pull
+    needs: test-bot
+    runs-on: ubuntu-latest
+    if: ${{ success() && github.event_name == 'pull_request' }}
     steps:
       - name: Check if PR has 'in progress' label
         id: check-label
         run: |
-          LABELS=$(gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name')
+          LABELS=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name')
           if echo "$LABELS" | grep -q "^in progress$"; then
             echo "skip_label=true" >> "$GITHUB_ENV"
           else
@@ -182,45 +100,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
 
-      - name: Check for bottle JSON artifacts
-        if: env.skip_label == 'false'
-        run: |
-          temp_dir="$(mktemp -d)"
-          trap 'rm -rf "$temp_dir"' EXIT
-
-          found=false
-          while IFS= read -r artifact_name; do
-            [ -n "$artifact_name" ] || continue
-            rm -rf "$temp_dir"/*
-            gh run download "${{ github.run_id }}" \
-              --repo "${{ github.repository }}" \
-              --name "$artifact_name" \
-              --dir "$temp_dir"
-            if find "$temp_dir" -type f -name '*.bottle.json' -print -quit | grep -q .; then
-              found=true
-              break
-            fi
-          done < <(
-            gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
-              --jq '.artifacts[] | select(.name | startswith("bottles_")) | .name'
-          )
-
-          echo "has_bottle_json=$found" >> "$GITHUB_ENV"
-        env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-
       - name: Label the PR with 'pr-pull'
-        if: env.skip_label == 'false' && env.has_bottle_json == 'true'
-        run: |
-          if gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name' | grep -q "^pr-pull$"; then
-            gh pr edit "${{ github.event.pull_request.number }}" --remove-label 'pr-pull' --repo "${{ github.repository }}"
-          fi
-          gh pr edit "${{ github.event.pull_request.number }}" --add-label 'pr-pull' --repo "${{ github.repository }}"
-        env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-
-      - name: Skip 'pr-pull' label without bottle artifacts
-        if: env.skip_label == 'false' && env.has_bottle_json != 'true'
-        run: echo "No bottle JSON artifacts were produced in this run; skipping pr-pull label."
+        if: env.skip_label == 'false'
+        run: gh pr edit "$PR" --add-label 'pr-pull' --repo "$GITHUB_REPOSITORY"
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}

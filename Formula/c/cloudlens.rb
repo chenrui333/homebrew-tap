@@ -5,17 +5,14 @@ class Cloudlens < Formula
   url "https://github.com/one2nc/cloudlens/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "d049a756d2ad6198755dfc6e467f44428c043a54d578fd7938962c3abe15d78d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/one2nc/cloudlens.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "006b14f41c54ef805e8dba806b84bc37a4439f686b081d3ef31f621b86ce1850"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "006b14f41c54ef805e8dba806b84bc37a4439f686b081d3ef31f621b86ce1850"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "006b14f41c54ef805e8dba806b84bc37a4439f686b081d3ef31f621b86ce1850"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca2c3778b32c22f7f73400d268be60451ec9e6def6b1e6d0cd991fe6ff9138c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b00692bbfc2829b177c2df5427a396b4ed791d7d1750a75cda64309557a0663"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e651f79bb14827e279d544136f2280989c6c49ac9b95c9f4557d638e57c202c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f964aefbb52d1c18a718569d82b4c6e0ed52c53efbabbc6a0b129911d698b2c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "76fb4fc8f6040e138bf7cd3a9d56f48792ebd83dccd275b5eaba045911816f7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a100349310ca0e076bbce82f717ec1004da943cbe8f9936ecda2362453900765"
   end
 
   depends_on "go" => :build
@@ -29,7 +26,7 @@ class Cloudlens < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    generate_completions_from_executable(bin/"cloudlens", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"cloudlens", "completion")
   end
 
   test do

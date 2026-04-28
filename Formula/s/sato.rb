@@ -2,24 +2,23 @@
 class Sato < Formula
   desc "Tool to convert ARM or CFN into Terraform"
   homepage "https://github.com/JamesWoolfenden/sato"
-  url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.49.tar.gz"
-  sha256 "ce8390f210a8a90340bc27c612f9cf2bfb1597bd33a5976c37f8776a4faa2e10"
+  url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.34.tar.gz"
+  sha256 "6e9be240d6fbdd747886ec4cdcc02677cf5e36a725e3f642e89696cca7152902"
   license "Apache-2.0"
   head "https://github.com/JamesWoolfenden/sato.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "368c815862cb89f53b91b0b7e921595247195afc00c02ec79d9a7d1e4abf8f29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "368c815862cb89f53b91b0b7e921595247195afc00c02ec79d9a7d1e4abf8f29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "368c815862cb89f53b91b0b7e921595247195afc00c02ec79d9a7d1e4abf8f29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8b3b76cefff824210beb54b9f7b39348bd3b84bf38ee10fd317d31215a8afe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dedd1a23963aaa4a3ae7e55c79e3799dd0a9c6a9772eb8a995642fa7892259c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "718f16fc8d688922c136d5c9d23f35c865c1e091e6c0be548238186c176248f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e2d1fb4f1ebe056755daf28f7a8919278061136efcf410f2b52fec9f66a0b73"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c1bcc5df2206d3e1dd165564deeb68c7cf06287902c2f308e70ff6ce17eae78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8510feccce79d0f0c6692c1d5192ea783945c1d2d71786c20d8c1ae323de4ed"
   end
 
   depends_on "go" => :build
 
   def install
-    inreplace "src/version/version.go", "var Version = \"dev\"", "var Version = \"#{version}\""
+    inreplace "src/version/version.go", "Version = \"9.9.9\"", "Version = \"#{version}\""
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     pkgshare.install "examples"

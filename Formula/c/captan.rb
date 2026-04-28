@@ -17,7 +17,7 @@ class Captan < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -33,7 +33,7 @@ class Captan < Formula
           "--pool-pct", "20"
 
     # Files should be created
-    assert_path_exists testpath/"captable.json", "captable.json was not created" # spellchecker:disable-line
+    assert_path_exists testpath/"captable.json", "captable.json was not created"
 
     # 2) Validate (basic)
     output = shell_output("#{bin}/captan validate")
@@ -44,7 +44,7 @@ class Captan < Formula
     assert_match "📊 Ownership Table", report
 
     # 4) Export CSV to a file and verify it exists & is non-empty
-    csv_path = testpath/"captable.csv" # spellchecker:disable-line
+    csv_path = testpath/"captable.csv"
     system bin/"captan", "export", "csv", "--output", csv_path
     assert_path_exists csv_path
   end

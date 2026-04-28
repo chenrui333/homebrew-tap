@@ -11,10 +11,10 @@ class ZigAT011 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c2c5723cf40a1eb1fcae5e36a3dc9e94bd0f5d05c03053ea6b0ba0b111171f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ca46c8d8859c107bd218eb384357f7a3dea754cd9d074ade3ec8b4c6b58e97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e12f715a53605e92778344a7085f969092236f2e689c51e8affb52a7de056758"
+    sha256 cellar: :any,                 arm64_sequoia: "b10a8a3deadab825aefa41ab283f0d18a6146786047499899ad8a6282737934d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7e298ca1e2b3ab1d2ec0345d39bcc4cbcaf6aac758b0c9cce0c1be51b9f4c0e"
+    sha256 cellar: :any,                 ventura:       "3e413f57aadd777e7d85620d6ed8b19905bad7b0e59a39a755e10393a06eccdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f8cc9558cc39f3bef4476172245b5921d9fcb3c87f16f5f580ead41aa49e7db"
   end
 
   keg_only :versioned_formula
@@ -26,12 +26,12 @@ class ZigAT011 < Formula
   depends_on "zstd"
 
   uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   # `llvm` is not actually used, but we need it because `brew`'s compiler
   # selector does not currently support using Clang from a versioned LLVM.
   on_linux do
     depends_on "llvm" => :build
-    depends_on "zlib-ng-compat"
   end
 
   fails_with :gcc

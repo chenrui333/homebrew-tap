@@ -1,20 +1,23 @@
 class BraveSearchMcpServer < Formula
   desc "MCP server for Brave Search"
   homepage "https://github.com/brave/brave-search-mcp-server"
-  url "https://registry.npmjs.org/@brave/brave-search-mcp-server/-/brave-search-mcp-server-2.0.80.tgz"
-  sha256 "d9ac4dbf6d684134a4189cc25ae271298168b4878bdda8309f680729c736f524"
+  url "https://registry.npmjs.org/@brave/brave-search-mcp-server/-/brave-search-mcp-server-1.3.7.tgz"
+  sha256 "2b636d7fc369544d798b9f34ac038e60a32edbcd5302cfc8552b727d76877b1d"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "aa70e791c8df3f7b0bec005213de8c26f66f50948bfacea4a25d0040c2aec519"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f36f2bdfec9bedde522bb7cd65e95b25644bb92330802a66980ea7f127bdfe48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "868da276238f910ef68c4b8715bd6f0c73b442ee6cc5f787be20aaa0778bde54"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f41d187b06921fa3f6a99b04667e062c2ba774fe4d571d4f24302d145c618cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa45b123b2b093d9f4d3bd0bfe17106bd09bbc7c5111a7b68d34fe399ea72fd5"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do

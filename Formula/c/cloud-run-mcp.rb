@@ -1,25 +1,23 @@
 class CloudRunMcp < Formula
   desc "MCP server to deploy code to Google Cloud Run"
   homepage "https://github.com/googlecloudplatform/cloud-run-mcp"
-  url "https://registry.npmjs.org/@google-cloud/cloud-run-mcp/-/cloud-run-mcp-1.10.0.tgz"
-  sha256 "eb189a42f04949c49c379379873740be85d94d06a5e2190e31ef2691968a2048"
+  url "https://registry.npmjs.org/@google-cloud/cloud-run-mcp/-/cloud-run-mcp-1.5.0.tgz"
+  sha256 "6e362e745798672cebb2c4dfebbcff14edb679fa41d62d97cb5ac1366dcea547"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "60a9385ce3c8519ca4b4df98edd16ec0aa7b4127ccc7651e1417dd111ca22f4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33b5aef4756c5f222f97ebc73ffc54ef32c0eef87fc2e028c538ed13b6014c23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1f6347052e8421908243b90dcbb23a1cf045972f678b3f768a864eafc00b542"
+    sha256 cellar: :any_skip_relocation, ventura:       "c3a050a829c7c1b8e9411fdaefe56ae541943552476f5faee353aa439604e684"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "221b89c1a3190a2ce6ed7396d7f7e0fe4f2c79f552f0481d3a59996f8c3c4a67"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-
-    # These optional native prebuilds vary by platform and break `:all` bottles.
-    prebuilds = "lib/node_modules/@google-cloud/cloud-run-mcp/node_modules/{bare-fs,bare-os,bare-url}/prebuilds"
-    libexec.glob(prebuilds).each(&:rmtree)
-
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -32,6 +30,6 @@ class CloudRunMcp < Formula
     JSON
 
     output = pipe_output("#{bin}/cloud-run-mcp 2>&1", json, 0)
-    assert_match "Lists all Cloud Run services in a given project.", output
+    assert_match "Lists Cloud Run services in a given project and region", output
   end
 end

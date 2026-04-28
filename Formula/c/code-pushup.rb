@@ -1,24 +1,23 @@
 class CodePushup < Formula
   desc "CLI to run all kinds of code quality measurements"
   homepage "https://code-pushup.dev/"
-  url "https://registry.npmjs.org/@code-pushup/cli/-/cli-0.126.2.tgz"
-  sha256 "cf5a59b5f769366b39ed01b3e3304677a0366af506f8f4f6619d6269b07c2602"
+  url "https://registry.npmjs.org/@code-pushup/cli/-/cli-0.79.1.tgz"
+  sha256 "b4bf2b80a535259fe1839f219381eb00f793e1f2ae8fadf3f97fdea15f5a0064"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54fd07a1212d68be72511c88ec9a1cbb15cf63e83666d3ff7f5e93581c1970bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54fd07a1212d68be72511c88ec9a1cbb15cf63e83666d3ff7f5e93581c1970bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54fd07a1212d68be72511c88ec9a1cbb15cf63e83666d3ff7f5e93581c1970bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3828a82da037dacfb47760562b28daf1ddf482282bac25304e6b5fe971f8b28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95a160332e8f3d95b2b2bff49d850539ace94a2275fc6e3ed3841861eadf8468"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abf0d794ebf809a7070d029e347a60225b73374710d613167a6ff7b802abacf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed18c1088ea86527a9d60f0d9c983d4543b87788f3e7941fae2c1f55f61c9ccf"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e0650d4f1ec2aa33e0cbbc528e294cef04c817243388bffc86e029d2d0fd5d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a999e42a5bf08d1a5b86911ef901d6a21709fc01b500074f3a605f6b984b6c32"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
@@ -70,7 +69,7 @@ class CodePushup < Formula
       export default config;
     TS
 
-    system bin/"code-pushup", "print-config", "--config", "code-pushup.config.ts", "--output", "resolved.json"
-    assert_equal "TypeScript migration", JSON.parse((testpath/"resolved.json").read)["plugins"][0]["title"]
+    output = shell_output("#{bin}/code-pushup print-config --config code-pushup.config.ts 2>&1")
+    assert_equal "TypeScript migration", JSON.parse(output)["plugins"][0]["title"]
   end
 end

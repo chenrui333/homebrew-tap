@@ -1,38 +1,31 @@
-import os
-import sys
-
 import requests
+import os
 
 # --- CONFIGURATION ---
-SOURCE_REPOS = [
-    ("homebrew", "homebrew-core"),
-    ("homebrew", "homebrew-cask"),
-]
+SOURCE_OWNER = "homebrew"
+SOURCE_REPO = "homebrew-core"
 DEST_OWNER = "chenrui333"
 DEST_REPO = "homebrew-tap"
 
 GITHUB_TOKEN = os.environ.get("HOMEBREW_GITHUB_API_TOKEN")
 # --------------------
 
+# GitHub API endpoints
+SOURCE_LABELS_URL = f"https://api.github.com/repos/{SOURCE_OWNER}/{SOURCE_REPO}/labels"
 DEST_LABELS_URL = f"https://api.github.com/repos/{DEST_OWNER}/{DEST_REPO}/labels"
 
 headers = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
-    "Accept": "application/vnd.github+json",
+    "Accept": "application/vnd.github+json"  # or application/vnd.github.v3+json
 }
 
-
-def labels_url(owner, repo):
-    return f"https://api.github.com/repos/{owner}/{repo}/labels"
-
-
-def fetch_labels(owner, repo):
-    """Fetch all labels from a source repository (handle pagination)."""
+def fetch_labels(url):
+    """Fetch all labels from the source repository (handle pagination)."""
     all_labels = []
     page = 1
 
     while True:
-        response = requests.get(labels_url(owner, repo), headers=headers, params={"page": page, "per_page": 100})
+        response = requests.get(url, headers=headers, params={"page": page, "per_page": 100})
         response.raise_for_status()
         data = response.json()
 
@@ -43,33 +36,6 @@ def fetch_labels(owner, repo):
         page += 1
 
     return all_labels
-
-
-def merge_source_labels():
-    """
-    Merge labels from SOURCE_REPOS in order.
-
-    homebrew-core labels win over homebrew-cask labels on conflicts.
-    """
-    merged = {}
-
-    for owner, repo in SOURCE_REPOS:
-        source_name = f"{owner}/{repo}"
-        print(f"Fetching labels from {source_name}...")
-        for label in fetch_labels(owner, repo):
-            key = label["name"].strip().lower()
-            if key in merged:
-                print(
-                    f"Ignoring conflict from {source_name} for label '{label['name']}' "
-                    f"(already defined by {merged[key]['_source_repo']})."
-                )
-                continue
-
-            label["_source_repo"] = source_name
-            merged[key] = label
-
-    return list(merged.values())
-
 
 def create_label(label, url):
     """Create an individual label in the destination repository."""
@@ -88,20 +54,11 @@ def create_label(label, url):
         print(f"Failed to create label '{label['name']}': {response.text}")
 
 def main():
-    if not GITHUB_TOKEN:
-        print("HOMEBREW_GITHUB_API_TOKEN is required.", file=sys.stderr)
-        raise SystemExit(1)
+    print(f"Fetching labels from {SOURCE_OWNER}/{SOURCE_REPO}...")
+    source_labels = fetch_labels(SOURCE_LABELS_URL)
 
-    source_labels = merge_source_labels()
-    destination_labels = fetch_labels(DEST_OWNER, DEST_REPO)
-    destination_names = {label["name"].strip().lower() for label in destination_labels}
-    missing_labels = [label for label in source_labels if label["name"].strip().lower() not in destination_names]
-
-    print(
-        f"Source labels: {len(source_labels)} | Existing in {DEST_OWNER}/{DEST_REPO}: {len(destination_labels)} | "
-        f"Missing to create: {len(missing_labels)}"
-    )
-    for label in missing_labels:
+    print(f"Creating labels in {DEST_OWNER}/{DEST_REPO}...")
+    for label in source_labels:
         create_label(label, DEST_LABELS_URL)
 
 if __name__ == "__main__":

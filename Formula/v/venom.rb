@@ -2,18 +2,17 @@
 class Venom < Formula
   desc "Manage and run your integration tests with efficiency"
   homepage "https://github.com/ovh/venom"
-  url "https://github.com/ovh/venom/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "de7ef1f7794d0aa3e3dceb55cc54e44d4a52594bf1e9af0e9c73f85e6071cfd3"
+  url "https://github.com/ovh/venom/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "8047a7d20aa5be003684182830ddf05b6133f0761a89256b5791fe665358dff9"
   license "Apache-2.0"
   head "https://github.com/ovh/venom.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "055ea8c74e4da8b83370f20f4633ec5dbc9f65d6feb062b1b0b080fc0e0ade41"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f348c0649bcbeacfb014fdc31cadabe05ca6b8a4c94da7385f80dfc572d2c7fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d75442d6440e547499ec4fa15402c95ec892d9ecda470a5ccddb80430f043bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "442d6db7d53c965b5e0161b07fd3949f5b2878473c4c8960bc9a3c2262092060"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "385fead16c046cc90e7da7ce9c76668c2425f818a9487c127fa8c7227218e346"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0c116950e759523bb1a478e818e1894b7d0fed64a958f42e8499a257a7aef38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45bf0f445dc8a3c6062e2013cc8e615539b45f5cf44146e2fb2cd85e5c9c338"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2a68ace298cf3934a0df8c77c252b81f2f7a90d3b152d0de51a0f15c5c1b08f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf148470ac8eb306b770119f2738fbb262995832f1395387a0fe87ebdb0780d2"
   end
 
   depends_on "go" => :build
@@ -22,7 +21,7 @@ class Venom < Formula
     ldflags = "-s -w -X github.com/ovh/venom.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/venom"
 
-    generate_completions_from_executable(bin/"venom", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"venom", "completion")
   end
 
   test do
