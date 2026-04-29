@@ -10,11 +10,11 @@ class Fakecloud < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "116c825d6e9a0e82c346425bf715532d758b51aa2ad74fd764f3c27b68fee484"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afad3d74161f1d2e8459572ca15be23e13ce7fd180b397e396492550820a2205"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae7d8bf40c644d14a341fb21dfe4fe4dc697ffd5465c48e1390016b57c4de359"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34266b45017866b783577111e3d22caf8111e4b080584a8be0461cc79e9e58ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4e424ff19c70830650df2fde2aa91a2f6ae9e56a72d552b4e28c4b6632a9328"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37c9c51d1a4ecc466f37075e3a2a77032519422273f8127e355b43aeceb91528"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af8fce9158c3287b2c5df059f8a6c0ea42f4773064580ce709ad537ac2e1e637"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e72a1f26142972820e8caa4b41094bba0218c1f35b597662b93fb54815a5215a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65bd91bf79f5f1dda66c36adc7d30465257b8e82d9876bbe48181a21f0d459bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e6f50fc4389884671e0783f4828a5d06597d7038e44474425eb9bdece3963ee"
   end
 
   depends_on "pkgconf" => :build
