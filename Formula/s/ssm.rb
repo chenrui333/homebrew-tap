@@ -1,8 +1,8 @@
 class Ssm < Formula
   desc "Terminal Secure Shell Manager"
   homepage "https://github.com/lfaoro/ssm"
-  url "https://github.com/lfaoro/ssm/archive/refs/tags/0.4.2.tar.gz"
-  sha256 "6a2226884509377b873831efc4e4103c007e3e59283baf9598c3bfbc4f3e96b8"
+  url "https://github.com/lfaoro/ssm/archive/refs/tags/1.0.0.tar.gz"
+  sha256 "73dedcd54e35b8a3876ac7024778594e539b94748ec6c50ba6a685f4eb099331"
   license "BSD-3-Clause"
   head "https://github.com/lfaoro/ssm.git", branch: "main"
 
