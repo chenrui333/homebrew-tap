@@ -8,7 +8,7 @@ class Tlint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8e5bfb9ae0e023a6a1a1d5389a80438300abcd646341faeb374d4f5fe268c55a"
+    sha256 cellar: :any_skip_relocation, all: "d4a89e54090a153bd6bced09f58226d1a4877553703ebb23106d781f486e91a3"
   end
 
   depends_on "composer" => :build
