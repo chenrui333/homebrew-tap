@@ -6,6 +6,15 @@ class Aube < Formula
   license "MIT"
   head "https://github.com/endevco/aube.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d5daa3723b11dfd9417d880c43cd219aff307d590facf72830296f5a64ad683"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47a4a730c9705ddc0cc82aa7dd92edb1c025e0a14d840a40e52f300e4c0e611b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "accffacb2696e7b65f882508319088b7058052191922300c052f4017c38e8254"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10d9e02257f1aef3757e30e9eb57525781b260359fe93678fbc42eab594101b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3b03882acac909ea6779bd02840a8c347d7d16c90163d01dec92820522203bf"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "usage" => :build
