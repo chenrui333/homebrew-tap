@@ -1,8 +1,8 @@
 class Mlbt < Formula
   desc "TUI for MLB stats API"
   homepage "https://github.com/mlb-rs/mlbt"
-  url "https://github.com/mlb-rs/mlbt/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "a0ff8d51c1294c05a3fa7bed81f80f44562fb344020d88fc0c7ed94711934da1"
+  url "https://github.com/mlb-rs/mlbt/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "dee9070332edf3a3308c8db69fa7302173806931fd06a97010ad67a25181dfbf"
   license "MIT"
   head "https://github.com/mlb-rs/mlbt.git", branch: "main"
 
