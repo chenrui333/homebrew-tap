@@ -8,11 +8,11 @@ class Floci < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe4288962f56f500f20b7ca8d8cfa2be4323dc6ca8b58855707d0307fa28f311"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "381f8c781d778806ec73be8923522455139f33b700d0254a03ed1b870d15f73b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61e65336afa84a0e7e513de6a8e6b65aa63141ebfb6e66ced66ffa7cd3d33769"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b101e75f5d38852f28bd5d18ebfb93edd50601ae0f66967cd6816b77e098318"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb267518a8a55a97585b12c8a5cb64376a3fcfee78485d4e0e90574a6c021b38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdb117af1cdfa9d14cb33f4c81b9afd14755732a240be2a2556eb977ca9ec7e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62b53c1bf4fc856145ecd3a58c62e0eceab9425aeef1f746ca5f407887650193"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fcbeb8cd938bfa7215317039d98695fd40a6778db9880db3562fcbcb9347478"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f12b9f2eb02a6e585873c87161b720f64df0454de5c17082e482499dc938bb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dceb41a697c79d9b53adee220cfaa127e66e9d2061dde17f2a856eb325cc8f4"
   end
 
   depends_on "maven" => :build
