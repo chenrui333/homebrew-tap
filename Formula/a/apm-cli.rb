@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/2b/b4/a290fe25ea0ec3cd4d9cc8854cc3382d43fa277ce669a2a0bed77dc9ed1d/apm_cli-0.10.0.tar.gz"
-  sha256 "266cb8028f800e40f332265654d29376359fb2a4f2276b680eeae26398622763"
+  url "https://files.pythonhosted.org/packages/b1/7c/83100c30844ebe3826bcfe7e444bf7264598ebfdc74a506405fce8484c5a/apm_cli-0.11.0.tar.gz"
+  sha256 "1bdd05f6ededf7f32e24a1d1d51bffda2c8594c7362e6b3ea0ff1f0140edeadf"
   license "MIT"
 
   bottle do
@@ -108,8 +108,8 @@ class ApmCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c1/bd/50db468e9b1310529a19fce651b3b0e753b5c07954d486cba31bbee9a5d5/gitpython-3.1.47.tar.gz"
-    sha256 "dba27f922bd2b42cb54c87a8ab3cb6beb6bf07f3d564e21ac848913a05a8a3cd"
+    url "https://files.pythonhosted.org/packages/e1/63/210aaa302d6a0a78daa67c5c15bbac2cad361722841278b0209b6da20855/gitpython-3.1.49.tar.gz"
+    sha256 "42f9399c9eb33fc581014bedd76049dfbaf6375aa2a5754575966387280315e1"
   end
 
   resource "h11" do
@@ -168,8 +168,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ed/59/bdcc6b759b8c42dd73afaf5bf8f902c04b37987a5514dbc1c64dba390fef/openai-2.32.0.tar.gz"
-    sha256 "c54b27a9e4cb8d51f0dd94972ffd1a04437efeb259a9e60d8922b8bd26fe55e0"
+    url "https://files.pythonhosted.org/packages/f0/ee/d056c82f63c05f06baac0cffb4a90952d8274f90c49dfe244f20497b9bbd/openai-2.33.0.tar.gz"
+    sha256 "f850c435e2a4685bba3295bd54912dd26315d9c1b7733068186134d6e0599f9a"
   end
 
   resource "pluggy" do
