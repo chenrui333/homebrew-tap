@@ -1,9 +1,9 @@
 cask "claude-control" do
   arch arm: "-arm64", intel: ""
 
-  version "0.15.0"
-  sha256 arm:   "89eee829b19ebbaf842c06114aa83abf1fd3a16756132cd0aac6eb20b6f3c57e",
-         intel: "b9e723a534b1ba1eb085f8b6b2b547348f912e7c9d498f0298e1ccc927b33577"
+  version "0.16.0"
+  sha256 arm:   "dfecffe1ec54abdebe5e04db89106529bedfdcfd7591d88996253e6081012dce",
+         intel: "1d11ee0465ef1fce6472711fc581346959f35c9949bf8e89fff5fb55babd29ef"
 
   url "https://github.com/sverrirsig/claude-control/releases/download/v#{version}/Claude.Control-#{version}#{arch}.dmg"
   name "Claude Control"
