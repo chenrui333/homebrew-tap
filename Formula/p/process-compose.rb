@@ -8,11 +8,11 @@ class ProcessCompose < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26667148ac35fa1b646e90fd8b9d3679627609634bc550ebf1b748f85b6dea52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d82bb04a96e3f1bbbcb2368e04333d607b182b91960f34ce64f1e221b79bc44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2112d1debc9b205919caaaeeaac0dfcd3209f6af643ba601895231f5254e2ba1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3cc4a4dcc1fedf044e33daba6d5648d92650cd54df092bed45ba0768087ab234"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "159d5710529df6d0fb3fef21a47b695c61b2cd8ceef748e11fe750f32508bdfb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "489ea937a59eeb2b82bb4bef292a834bfde873beb3ce39d98081a4276411824d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70506db72995610600e76135b2ae82bebdf7307ac36eb940a96f0faf91bc35de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d711129995917faac630d0b8db811e23fc6f0cacfd886331ed9dcfd53eb1a37a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf358d46b976206bf9d163cf8c455076807b70a4eb4def19ca8cc205da250387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85443804e8054284fee41785e71b0d197a88803f70f921d4f11a400e00cc4ddc"
   end
 
   depends_on "go" => :build
