@@ -77,6 +77,12 @@
     "last_release": "2025-10-29",
     "stars": 27
   },
+  "github:343dev/optimizt": {
+    "forks": 7,
+    "last_commit": "2026-04-25",
+    "last_release": "2026-01-02",
+    "stars": 170
+  },
   "github:42futures/firm": {
     "forks": 42,
     "last_commit": "2026-02-15",
@@ -136,6 +142,12 @@
     "last_commit": "2026-02-23",
     "last_release": "2026-02-14",
     "stars": 99
+  },
+  "github:Azure/aks-mcp": {
+    "forks": 36,
+    "last_commit": "2026-04-30",
+    "last_release": "2026-04-03",
+    "stars": 132
   },
   "github:AzureHound/jelly": {
     "forks": 2,
@@ -557,6 +569,12 @@
     "last_release": "2023-05-19",
     "stars": 85
   },
+  "github:MarkusPfundstein/mcp-gsuite": {
+    "forks": 98,
+    "last_commit": "2025-04-14",
+    "last_release": null,
+    "stars": 487
+  },
   "github:MarkusPfundstein/mcp-obsidian": {
     "forks": 358,
     "last_commit": "2025-06-28",
@@ -718,6 +736,12 @@
     "last_commit": "2025-11-30",
     "last_release": null,
     "stars": 138
+  },
+  "github:RoninForge/budgetclaw": {
+    "forks": 0,
+    "last_commit": "2026-04-28",
+    "last_release": "2026-04-28",
+    "stars": 4
   },
   "github:RoseSecurity/terrafetch": {
     "forks": 2,
@@ -1162,6 +1186,12 @@
     "last_commit": "2026-03-30",
     "last_release": "2026-03-18",
     "stars": 74
+  },
+  "github:anistark/sot": {
+    "forks": 3,
+    "last_commit": "2026-01-18",
+    "last_release": "2026-01-18",
+    "stars": 54
   },
   "github:ankddev/envfetch": {
     "forks": 3,
@@ -2099,6 +2129,18 @@
     "last_release": "2025-10-23",
     "stars": 122
   },
+  "github:endevco/aube": {
+    "forks": 18,
+    "last_commit": "2026-05-01",
+    "last_release": "2026-04-29",
+    "stars": 740
+  },
+  "github:endevco/pitchfork": {
+    "forks": 21,
+    "last_commit": "2026-04-30",
+    "last_release": "2026-04-28",
+    "stars": 350
+  },
   "github:epilande/repos": {
     "forks": 0,
     "last_commit": "2025-12-30",
@@ -2146,6 +2188,12 @@
     "last_commit": "2024-09-14",
     "last_release": "2024-09-14",
     "stars": 584
+  },
+  "github:faiscadev/fakecloud": {
+    "forks": 15,
+    "last_commit": "2026-04-30",
+    "last_release": "2026-04-29",
+    "stars": 266
   },
   "github:favonia/cloudflare-ddns": {
     "forks": 93,
@@ -2248,6 +2296,12 @@
     "last_commit": "2026-03-20",
     "last_release": "2026-01-31",
     "stars": 32
+  },
+  "github:gebalamariusz/cloud-audit": {
+    "forks": 10,
+    "last_commit": "2026-04-28",
+    "last_release": "2026-04-28",
+    "stars": 51
   },
   "github:geelen/mcp-remote": {
     "forks": 204,
@@ -2638,6 +2692,12 @@
     "last_commit": "2025-09-30",
     "last_release": "2025-09-30",
     "stars": 356
+  },
+  "github:jdx/fnox": {
+    "forks": 70,
+    "last_commit": "2026-04-30",
+    "last_release": "2026-04-26",
+    "stars": 1576
   },
   "github:jedisct1/minisign": {
     "forks": 144,
@@ -3479,6 +3539,12 @@
     "last_release": "2026-02-14",
     "stars": 1670
   },
+  "github:ngmeyer/librarian-mcp": {
+    "forks": 2,
+    "last_commit": "2026-04-26",
+    "last_release": "2026-04-13",
+    "stars": 6
+  },
   "github:nhost/cli": {
     "forks": 31,
     "last_commit": "2025-09-26",
@@ -3532,6 +3598,12 @@
     "last_commit": "2026-02-03",
     "last_release": "2025-06-09",
     "stars": 42
+  },
+  "github:nlamirault/opamui": {
+    "forks": 0,
+    "last_commit": "2026-01-26",
+    "last_release": "2025-11-14",
+    "stars": 4
   },
   "github:nmoroze/tclint": {
     "forks": 11,
@@ -3778,6 +3850,12 @@
     "last_commit": "2025-10-03",
     "last_release": "2025-10-03",
     "stars": 21
+  },
+  "github:plutov/oq": {
+    "forks": 18,
+    "last_commit": "2026-04-14",
+    "last_release": "2026-03-15",
+    "stars": 962
   },
   "github:possibilities/claude-code-generic-hooks": {
     "forks": 4,
@@ -4156,6 +4234,12 @@
     "last_commit": "2024-01-22",
     "last_release": "2023-02-09",
     "stars": 2086
+  },
+  "github:shobrook/wut": {
+    "forks": 85,
+    "last_commit": "2024-12-20",
+    "last_release": "2024-12-15",
+    "stars": 1422
   },
   "github:showwin/speedtest-go": {
     "forks": 136,
@@ -4816,6 +4900,12 @@
     "last_commit": "2025-01-09",
     "last_release": null,
     "stars": 416
+  },
+  "github:werf/kubedog": {
+    "forks": 50,
+    "last_commit": "2026-04-29",
+    "last_release": "2025-01-22",
+    "stars": 739
   },
   "github:werf/trdl": {
     "forks": 19,
