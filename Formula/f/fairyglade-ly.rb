@@ -1,8 +1,8 @@
 class FairygladeLy < Formula
   desc "TUI (ncurses-like) display manager for Linux and BSD"
   homepage "https://codeberg.org/fairyglade/ly"
-  url "https://codeberg.org/fairyglade/ly/archive/v1.3.2.tar.gz"
-  sha256 "db069cc2dcacc64b2890552a10ec8547aee4f9b9e5b0bc6b07c3d5d431a757e6"
+  url "https://codeberg.org/fairyglade/ly/archive/v1.4.0.tar.gz"
+  sha256 "3ee8f2f8c14a00437f7c3ec044bf5c95a6be45036c7ed5aa43c6f9eb91bf925a"
   license "WTFPL"
   head "https://codeberg.org/fairyglade/ly.git", branch: "master"
 
