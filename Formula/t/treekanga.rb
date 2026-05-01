@@ -8,12 +8,11 @@ class Treekanga < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "113f89d1e4d4e2a0578beced9fbaae8db94728b134c0d137192fa40ead6f9b5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "113f89d1e4d4e2a0578beced9fbaae8db94728b134c0d137192fa40ead6f9b5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "113f89d1e4d4e2a0578beced9fbaae8db94728b134c0d137192fa40ead6f9b5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f229856e28ec3df0fcb84f081da9d5b54539c2daac50680e074ff3a964c5d01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "708d0fb55d15a0d0de5776d90cd445bec1dcfde92f9341edd9b5cf38c95e8d17"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48137ca1c4d3048643a8e933e5c663094c355637e31c01b25199b35517683a23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48137ca1c4d3048643a8e933e5c663094c355637e31c01b25199b35517683a23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48137ca1c4d3048643a8e933e5c663094c355637e31c01b25199b35517683a23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89a9c4e1bb7f43c3bf42e43a8fbf6060a5016d4189e56eadd13ca2a7fddde3f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efa7c8b382d8cd571b86ecdbed2f6640ba6e0bb7546e35fd62f828dc8d8a2c65"
   end
 
   depends_on "go" => :build
