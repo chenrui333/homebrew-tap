@@ -8,11 +8,11 @@ class Octelium < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68a1474f150c040df76882e3aee4bdaefa06a8fd34026ddd42039991ef9cbd91"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68a1474f150c040df76882e3aee4bdaefa06a8fd34026ddd42039991ef9cbd91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68a1474f150c040df76882e3aee4bdaefa06a8fd34026ddd42039991ef9cbd91"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f596c05b518389d3f63b6f2d414b609c2ded036b43af165d693efe183d682553"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dc3cda36a5b4204e3d8dbfa771396c05df5a37ff5347ee411caad8d9bd99d91"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ccbe28974ff942fb8de3991df032f74b91eec08ae1fdf4515e670e8a55796eef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccbe28974ff942fb8de3991df032f74b91eec08ae1fdf4515e670e8a55796eef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccbe28974ff942fb8de3991df032f74b91eec08ae1fdf4515e670e8a55796eef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04a581b4b1ffdada060638ec80b1f0462046f1231233d5fcff1c3dc78d1731e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fabcc8d486de6e4aa9155964bb7dd3ed1b5bb935507d9d86ee60fd0f69f815b9"
   end
 
   depends_on "go" => :build
