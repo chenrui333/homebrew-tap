@@ -1,8 +1,8 @@
 class DiTui < Formula
   desc "Simple terminal UI player for di.fm"
   homepage "https://github.com/acaloiaro/di-tui"
-  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.13.4.tar.gz"
-  sha256 "12fb90dcaea96bfb906b65e00e925a54ceb22045b3ca96f82b92dbc8e5481097"
+  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "94c4b29951ad4ac28c99817105e8e123ba645de1ad3ff2f26db8171893b5124f"
   license "BSD-2-Clause"
   head "https://github.com/acaloiaro/di-tui.git", branch: "main"
 
