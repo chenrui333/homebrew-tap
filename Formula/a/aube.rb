@@ -20,6 +20,9 @@ class Aube < Formula
   depends_on "usage" => :build
 
   def install
+    # Avoid build-time network primer generation; aube falls back to runtime packument fetches.
+    rm "scripts/generate-primer.mjs"
+
     system "cargo", "install", *std_cargo_args(path: "crates/aube")
 
     generate_completions_from_executable(bin/"aube", "completion")
