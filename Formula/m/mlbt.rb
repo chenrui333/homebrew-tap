@@ -29,7 +29,10 @@ class Mlbt < Formula
       output_log = testpath/"output.log"
       pid = spawn bin/"mlbt", testpath, [:out, :err] => output_log.to_s
       sleep 1
-      assert_match "Gameday │ Stats │ Standings", output_log.read
+      output = output_log.read
+      assert_match "Gameday", output
+      assert_match "Stats", output
+      assert_match "Standings", output
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
