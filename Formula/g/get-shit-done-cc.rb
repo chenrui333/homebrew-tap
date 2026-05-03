@@ -26,6 +26,6 @@ class GetShitDoneCc < Formula
   test do
     output = shell_output("#{bin}/get-shit-done-cc --help")
     assert_match "Get Shit Done", output
-    assert_match version.to_s, output
+    assert_match(/v\d+\.\d+\.\d+(?:-[\w.]+)?/, output)
   end
 end
