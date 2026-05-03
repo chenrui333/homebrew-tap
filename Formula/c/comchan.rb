@@ -20,6 +20,7 @@ class Comchan < Formula
 
   on_linux do
     depends_on "fontconfig"
+    depends_on "freetype"
     depends_on "systemd" # for libudev
   end
 
