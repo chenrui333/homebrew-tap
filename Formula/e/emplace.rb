@@ -1,10 +1,10 @@
 class Emplace < Formula
   desc "Synchronize installed packages on multiple machines"
-  homepage "https://github.com/tversteeg/emplace"
-  url "https://github.com/tversteeg/emplace/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "c50c085e75bb0c4ad6fb5d5baabf94bc74080499d74fd7072fee9b17041e8586"
+  homepage "https://codeberg.org/fosk/emplace"
+  url "https://codeberg.org/fosk/emplace/archive/v1.6.0.tar.gz"
+  sha256 "cf40269689b5b683fdad2dafb401ebf3eff43e4f6dab113849a3d28563c39d00"
   license "AGPL-3.0-or-later"
-  head "https://github.com/tversteeg/emplace.git", branch: "master"
+  head "https://codeberg.org/fosk/emplace.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -16,10 +16,10 @@ class Emplace < Formula
 
   depends_on "rust" => :build
 
-  # time crate patch for rust 1.80+, upstream pr ref, https://github.com/tversteeg/emplace/pull/397
+  # time crate patch for rust 1.80+, upstream pr ref, https://codeberg.org/fosk/emplace/pull/397
   patch do
-    url "https://github.com/tversteeg/emplace/commit/ea39f5826f6d0501aa3073f620b8a764900d3dc5.patch?full_index=1"
-    sha256 "d203be4401956ccdf38de75c503ae215a91e4ea8a1be0aed1de07ef248a67f01"
+    url "https://codeberg.org/fosk/emplace/commit/ea39f5826f6d0501aa3073f620b8a764900d3dc5.patch?full_index=1"
+    sha256 "2b040ef1b5cfb96aefa8c17def110562dc4fa280c1e7fa764162c7d3568c6d30"
   end
 
   def install
