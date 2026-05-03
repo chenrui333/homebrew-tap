@@ -32,7 +32,7 @@ class Pinme < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pinme --version")
-    assert_match "Failed to fetch domains: Auth not set", shell_output("#{bin}/pinme domain")
+    assert_match "Request: GET /my_domains", shell_output("#{bin}/pinme domain 2>&1")
     assert_match "No upload history found", shell_output("#{bin}/pinme ls")
   end
 end
