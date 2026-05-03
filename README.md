@@ -60,6 +60,7 @@ brew install --cask <tool>
 - `arxiv-mcp-server`
 - `ash-ai`
 - `astro-language-server`
+- `aube`
 - `auggie`
 - `auox`
 - `austin-tui`
@@ -105,6 +106,7 @@ brew install --cask <tool>
 - `brunette`
 - `bsky-cli`
 - `btczee`
+- `budgetclaw`
 - `bun`
 - `bytebox`
 - `c4go`
@@ -157,6 +159,7 @@ brew install --cask <tool>
 - `clipse`
 - `cloctui`
 - `clog-cli`
+- `cloud-audit`
 - `cloud-run-mcp`
 - `cloudflare-ddns`
 - `cloudlens`
@@ -264,6 +267,7 @@ brew install --cask <tool>
 - `ereandel`
 - `ergo`
 - `fairyglade-ly`
+- `fakecloud`
 - `faq`
 - `fast-cli`
 - `fast-xml-parser`
@@ -283,6 +287,7 @@ brew install --cask <tool>
 - `floci`
 - `flow-editor`
 - `flowgger`
+- `fnox`
 - `fnug`
 - `fortran-linter`
 - `foy`
@@ -454,6 +459,7 @@ brew install --cask <tool>
 - `lazyworktree`
 - `lemonade`
 - `leveldb-cli`
+- `librarian-mcp`
 - `lightpanda-v8`
 - `lightpanda`
 - `lin`
@@ -601,6 +607,7 @@ brew install --cask <tool>
 - `pinme`
 - `pipeform`
 - `pitaya`
+- `pitchfork`
 - `pixeli`
 - `pixelle`
 - `pj`
