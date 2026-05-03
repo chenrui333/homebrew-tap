@@ -1,8 +1,8 @@
 class Gnhf < Formula
   desc "Autonomous agent orchestrator for long-running coding tasks"
   homepage "https://github.com/kunchenguid/gnhf"
-  url "https://registry.npmjs.org/gnhf/-/gnhf-0.1.30.tgz"
-  sha256 "3c3b83f27537dbb6baaf853f77a39d188c2a8a555394dcf27e65817018e3395b"
+  url "https://registry.npmjs.org/gnhf/-/gnhf-0.1.32.tgz"
+  sha256 "c9d292cfed03d5835902d206c3059e7484d3736906bb0cb35383c94cfe6a5a05"
   license "MIT"
 
   bottle do
