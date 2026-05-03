@@ -8,10 +8,12 @@ class Emplace < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cafcbe921b780e56a3c60245c919c0756a06088c08b871eaeba7d66ce5fbfd00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "997b22993ed02ec5d12ebdda8b5b2ab05050eb4d8879c70735a918ffdbeaa0e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "07440dfd76804a78bf12acabf6a6ebc0e005b2e776ada28450f066c4edc55aac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b89d713e7d3bd9e007611612826f6382963bce4efdc7cbbce1e4f588ec89c2e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "802929028d37d8523a97f1849b7da36bc546d2d10ef7633801c81b3ab2ef90e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "820ac3211dce211f7e64c931338caa4f9d430cdcb247e95add2fe449b55158c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea8d6f53c28fdb3a81d08de9725af01727db1eecf96f07126b9488ad83ada678"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01c2cfcc4a7683c88a5741ae1a6931869a342a2bdf955c28eef9250bdc4e0684"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "638cbef047e91e47735fdde183695d7874ca6895fb2a3ba0498f9e8602a1160e"
   end
 
   depends_on "rust" => :build
