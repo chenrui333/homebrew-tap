@@ -314,7 +314,7 @@ Total formulas: 876
 | oxicord | Lightweight, secure Discord terminal client written in Rust | 288 | 10 | 2026-03-05 | 2026-02-23 | GPL-3.0-only | ✓ | - | [link](https://github.com/linuxmobile/oxicord) |
 | protoc-gen-lint | Lint .proto files for style violations | 287 | 16 | 2024-12-23 | 2022-11-08 | MIT | ✓ | - | [link](https://github.com/ckaznocha/protoc-gen-lint) |
 | pyink | Python formatter, forked from Black with a few different for... | 287 | 18 | 2026-01-02 | 2025-01-10 | MIT | ✓ | - | [link](https://github.com/google/pyink) |
-| emplace | Synchronize installed packages on multiple machines | 283 | 27 | 2026-02-16 | 2024-05-25 | AGPL-3.0-or-later | ✓ | - | [link](https://github.com/tversteeg/emplace) |
+| emplace | Synchronize installed packages on multiple machines | 283 | 27 | 2026-02-16 | 2024-05-25 | AGPL-3.0-or-later | ✓ | - | [link](https://codeberg.org/fosk/emplace) |
 | oyo | Step-through diff viewer | 282 | 5 | 2026-03-01 | 2026-02-15 | MIT | ✓ | - | [link](https://github.com/ahkohd/oyo) |
 | resto | Send pretty HTTP & API requests with TUI | 282 | 13 | 2024-07-19 | 2022-01-03 | MIT | ✓ | - | [link](https://github.com/abdfnx/resto) |
 | jiq | Interactive JSON query tool with real-time output and AI ass... | 280 | 3 | 2026-02-24 | 2026-02-20 | Apache-2.0 | ✓ | - | [link](https://github.com/bellicose100xp/jiq) |
