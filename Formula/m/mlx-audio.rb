@@ -99,7 +99,7 @@ class MlxAudio < Formula
       from importlib.metadata import version
       from mlx_audio.stt.generate import format_timestamp, format_vtt_timestamp
 
-      assert version("mlx-audio") == "0.4.2"
+      assert version("mlx-audio") == "#{version}"
       assert format_timestamp(61.234) == "00:01:01,234"
       assert format_vtt_timestamp(61.234) == "00:01:01.234"
     PYTHON
