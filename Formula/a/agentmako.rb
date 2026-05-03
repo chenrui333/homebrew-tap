@@ -13,6 +13,15 @@ class Agentmako < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    # Build tree-sitter addons from source; upstream linux-arm64 prebuilds are x86_64.
+    cd libexec/"lib/node_modules/agentmako" do
+      system "npm", "rebuild", "tree-sitter-javascript", "tree-sitter-typescript", "--build-from-source"
+    end
+    %w[tree-sitter-javascript tree-sitter-typescript].each do |package|
+      rm_r libexec/"lib/node_modules/agentmako/node_modules/#{package}/prebuilds"
+    end
+
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove prebuilds for non-native platforms/architectures
