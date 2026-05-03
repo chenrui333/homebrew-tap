@@ -7,6 +7,11 @@ class Agentmako < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "9c0697e45576759f2c759b64170580c5d7784d470603476c3f06068299fa4d94"
+    sha256                               arm64_sequoia: "ab6fddccdf2df987a5c6b84d79f11e9dcc6a544f72066abf1d345f5af4675161"
+    sha256                               arm64_sonoma:  "2be410e681c22922b2ef2089137001a1b282186ebf4f32fd3ddaaba8d7e9bc57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a95db86a02d2228e8f83d289fda8d6a45b98d216fc9188e54fdde6ee7fed0322"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "885e100cad0009c564b1d8fa6302b560272fee06b2d423cf39f4bff3ed6db483"
   end
 
   depends_on "node"
