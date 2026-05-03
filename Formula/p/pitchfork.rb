@@ -8,11 +8,11 @@ class Pitchfork < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbcbaeda22e0941b83f1c56874a78abd1c14704bf1da3ed83f6298a50a68072e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddcfca9473e4046eff8954e3c23969cb89a1871beadb6810eafe6cac1a34fd43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72fc1f1f5b4c8477eb681a122297dd564ca86dafdab7872ca8ae07c13ab156c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f99eeceeda47b2f8c4a14fe1f85627906e16bebe86b5db2177e8e1d039c0c8ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7d11b61aa21cdead87617f01ee6ab10afff4f8fc54b450af77339c1d725857b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7991083888965ef81972a7218e3a92ed2ee3498b981b3542e36f9f3f3d7fa5a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8db68521102c24c0f4657852f71213f734fa7e7be8f997df50756620103fc303"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "799be7e6f44a421d910edf7662f2e6f661f2285e89d0ff21f0271cee86419448"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57719754af6b36f72348189ce2a0d0642c617038452b45f86c79ac8c666fffd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8b934eed4c9d2bc59448921b935a4d1f9c1391844067385f6d46a2e1c43bd2a"
   end
 
   depends_on "rust" => :build
