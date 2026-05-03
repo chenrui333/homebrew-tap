@@ -7,12 +7,12 @@ class Await < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c1af7f9a8341aa74241bba5d90625f3eacfc6aa195f708b14b039657b827ecc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba9d24fbce11fd328c530a8a5f76a194f59373b96ee8f1d5b14eddb4add47384"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b20c60d98c1947298d7671e505d0513a46d0a57b157e0cfdcfea867c80651831"
-    sha256 cellar: :any_skip_relocation, sequoia:       "064656380b20fa45802ae581b18a2c50bb0c6a815db4912b28ef6e5f979f2d38"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14d0e9a0c2a7c1d6110cafb9ae9b55a6f8ce5399882ac90322420037804e05fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d92ce75e182fdc2b0c63feb9e954f184bcb492df52812e44daf6ad9030cffb6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4d5e5f9524ac82e2ae37422699f71299a050102f2e38676fa93f178e2a85008"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bdd9e30d55ea810662395c7a802d91848f522dabf7cddb2b06c163a33655e8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14ed6fc7a1d9c063fc170f1a999936457cc0e3dd897ea57b362c36ea0741d747"
+    sha256 cellar: :any_skip_relocation, sequoia:       "dd115bb3eff9654c18dc6fed42f24c76197eeee4daad38671c7bf52f00853d5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b534e513c3cf2e78100c178a1993a10ceeb4f46176a8d85a5d7f450ceb2d0ff8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dfa27d03e0c85d0021cd29632a9c4142058de0292e753a3acaf4d4016d72ab1"
   end
 
   def install
