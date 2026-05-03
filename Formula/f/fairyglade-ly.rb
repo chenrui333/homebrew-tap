@@ -19,18 +19,12 @@ class FairygladeLy < Formula
   depends_on "linux-pam"
 
   def install
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case ENV.effective_arch
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else ENV.effective_arch
-    end
+    args = %W[
+      --search-prefix #{Formula["libxcb"].opt_prefix}
+      --search-prefix #{Formula["linux-pam"].opt_prefix}
+    ]
 
-    args = []
-    args << "-Dcpu=#{cpu}" if build.bottle?
-
-    system "zig", "build", *std_zig_args, *args
+    system Formula["zig"].opt_bin/"zig", "build", *std_zig_args, *args
   end
 
   test do
