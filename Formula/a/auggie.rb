@@ -23,7 +23,7 @@ class Auggie < Formula
     tools_output = shell_output("#{bin}/auggie tools list")
     assert_match "Total:", tools_output
 
-    model_output = shell_output("#{bin}/auggie model list 2>&1")
-    assert_match "logged in", model_output
+    model_output = shell_output("#{bin}/auggie model list 2>&1", 1)
+    assert_match "not currently logged in", model_output
   end
 end
