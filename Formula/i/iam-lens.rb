@@ -13,6 +13,9 @@ class IamLens < Formula
   depends_on "iam-collect"
   depends_on "node"
 
+  # Preserve npm's env shebangs so the JavaScript payload stays platform-independent.
+  skip_clean "libexec"
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
