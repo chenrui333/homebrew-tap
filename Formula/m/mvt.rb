@@ -9,6 +9,15 @@ class Mvt < Formula
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25d7a9f1e3f67cccb32ae7096d353014d38ffee192648518aabacd87eb52fe5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d79d38b3a36536deccfaabcaccc37a275bcc2da8ba12d0178a2c13e4af22157c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fed9f4bb39b6e686ea7c6facfb90477eb401d76533ac9247918ce0bf16736261"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37917cd0164fa777c164527464201be5a10dc2fdcdcb1d88626a795a69ee3dfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "528aba31d5f81c1bb374bc78a76e0754c72b0f17a790d14f8f58873015768715"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
