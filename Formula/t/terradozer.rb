@@ -8,11 +8,11 @@ class Terradozer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7bc1c3691b26fe7223f6ada64836e64983681ed42c940f16129473d15ddd770"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7bc1c3691b26fe7223f6ada64836e64983681ed42c940f16129473d15ddd770"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7bc1c3691b26fe7223f6ada64836e64983681ed42c940f16129473d15ddd770"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5eea18a2d70b80eb8f824f6d141fb9ebdb255023cbe8afa57756ecb62b51faca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5c4bae4669dc2770fe1cdb7a5a1196151d142fbd4b5c3e2f6f39d38fb5da9ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c05fa3cffcd6f7e536f80ae7e7170b32e5fad7542f16003b085bc53eebc071eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c05fa3cffcd6f7e536f80ae7e7170b32e5fad7542f16003b085bc53eebc071eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c05fa3cffcd6f7e536f80ae7e7170b32e5fad7542f16003b085bc53eebc071eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a906070a4b8e74d7f5af4fb6a02c8e30dfacabfcfab9771341b850f4b5778ec8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b1e8cc6ffc977ad1444fb1aad953de843f849c39a954d2efc9d7cb6cc3fe0ad"
   end
 
   depends_on "go" => :build
