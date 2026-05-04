@@ -36,7 +36,7 @@ class ClaudeAgentAcp < Formula
       {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":1}}
     JSON
 
-    Open3.popen3(bin/"claude-agent-acp") do |stdin, stdout, stderr, wait_thr|
+    Open3.popen3(bin/"claude-agent-acp") do |stdin, stdout, stderr, wait_thread|
       stdin.puts json
       stdin.flush
 
@@ -53,9 +53,9 @@ class ClaudeAgentAcp < Formula
       assert_match "\"protocolVersion\":1", output
     ensure
       stdin.close unless stdin.closed?
-      if wait_thr&.alive?
+      if wait_thread&.alive?
         begin
-          Process.kill("TERM", wait_thr.pid)
+          Process.kill("TERM", wait_thread.pid)
         rescue Errno::ESRCH
           # Process already exited between alive? check and kill.
         end
