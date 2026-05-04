@@ -1,8 +1,8 @@
 class VibeLogCli < Formula
   desc "CLI tool for analyzing Claude Code sessions"
   homepage "https://vibe-log.dev/"
-  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.6.tgz"
-  sha256 "25c321dcf0ac2c53eec2cb4b0d8756d0b074e31948ed9dce85a690d7a38f65de"
+  url "https://registry.npmjs.org/vibe-log-cli/-/vibe-log-cli-0.8.14.tgz"
+  sha256 "9ff3c3378e020c884529d206c68e2b6a78eae5400b85dbfef7b0858e61911758"
   license "MIT"
 
   bottle do
@@ -22,6 +22,7 @@ class VibeLogCli < Formula
 
   on_linux do
     depends_on "xsel"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -36,6 +37,8 @@ class VibeLogCli < Formula
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/vibe-log-cli/node_modules"
+    node_modules.glob("**/@img/sharp-*").each(&:rmtree)
+
     vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     rm_r(vendor_dir)
 
