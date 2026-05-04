@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/1e/a0/5df7aa1fce762a8e683b9257acabd8c9ced9328aaa2bbec592c5cfae80f0/apm_cli-0.12.0.tar.gz"
-  sha256 "99f993ac1a34171a753c1b3dabb85931a80ffc5bf84dd60d6a000437db735304"
+  url "https://files.pythonhosted.org/packages/17/c4/7a64c2524da6ab36299a120f95ff725dbcadba9d05c345c0747e2dcf9e3b/apm_cli-0.12.1.tar.gz"
+  sha256 "481d6561522669daa8ef8d307940c05d80e570b748e4b386a46eb61f92714e8b"
   license "MIT"
 
   bottle do
@@ -95,6 +95,11 @@ class ApmCli < Formula
   resource "distro" do
     url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
     sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
+  end
+
+  resource "filelock" do
+    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
+    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
   end
 
   resource "frozenlist" do
