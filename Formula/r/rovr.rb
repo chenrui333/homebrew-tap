@@ -3,8 +3,8 @@ class Rovr < Formula
 
   desc "Post-modern terminal file explorer"
   homepage "https://github.com/NSPC911/rovr"
-  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "a0b68aca5b99b68a79c38342355608abb90df015678179e18216cad3bf3dd5e1"
+  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "3298036f1dee47ff60d80c10db6f5c6276e33894c811f71eefecf7c591cd5e84"
   license "MIT"
   head "https://github.com/NSPC911/rovr.git", branch: "main"
 
