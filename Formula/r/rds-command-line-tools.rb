@@ -5,6 +5,11 @@ class RdsCommandLineTools < Formula
   sha256 "298c15ccd04bd91f1be457645d233455364992e7dd27e09c48230fbc20b5950c"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "a9a0ed2c2b318ae726c73ffa999b2bb6a4db4cbbe4b74a3bda2a6f625c04bc2f"
+  end
+
   # Deprecated and replaced by AWS CLI for RDS
   # Ref: https://web.archive.org/web/20161119170150/http://docs.aws.amazon.com/AmazonRDS/latest/CommandLineReference/StartCLI.html
   deprecate! date: "2024-08-02", because: :deprecated_upstream
