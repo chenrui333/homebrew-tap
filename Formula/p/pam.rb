@@ -1,11 +1,15 @@
 class Pam < Formula
   desc "Minimal CLI tool for managing and executing SQL queries with a TUI"
   homepage "https://github.com/eduardofuncao/squix"
-  url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.3.0-beta.tar.gz"
-  sha256 "32dd9ab000f8c498427ab7ed715b33166ab19b4fcb850479da709b684a037760"
+  url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.4.0-beta.tar.gz"
+  sha256 "be4e0283df5e1f8801af2e8e6a9c8017cba6b8f7923aa56c829d3abca51801e2"
   license "MIT"
-  revision 1
   head "https://github.com/eduardofuncao/squix.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+-beta)$/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -25,7 +29,7 @@ class Pam < Formula
   end
 
   test do
-    output = shell_output("HOME=#{testpath} #{bin}/pam list connections")
+    output = shell_output("#{bin}/pam list connections")
     assert_match "No connections configured", output
     assert_equal shell_output("#{bin}/squix --version").strip, shell_output("#{bin}/pam --version").strip
   end
