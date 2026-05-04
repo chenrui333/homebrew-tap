@@ -7,7 +7,7 @@ class Gnhf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "6a716fbeaedac1d1aaca9513ebac804dc8a37ae3a3f417ba6b71a5fe785efc3b"
+    sha256 cellar: :any_skip_relocation, all: "4b38fdec228db0db9262650fba11900c278011870e3b93f4b1fda1d8290c815d"
   end
 
   depends_on "node"
