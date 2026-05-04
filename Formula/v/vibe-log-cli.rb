@@ -5,6 +5,15 @@ class VibeLogCli < Formula
   sha256 "25c321dcf0ac2c53eec2cb4b0d8756d0b074e31948ed9dce85a690d7a38f65de"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "8b6008cb061f1ad6744157e2596175392f308b19954667778b7e144828c3f2a1"
+    sha256 cellar: :any,                 arm64_sequoia: "64a9d5f3690eee22d5c89d96a6996f0ae6a16128450a988900a2eb5251e5fb86"
+    sha256 cellar: :any,                 arm64_sonoma:  "64a9d5f3690eee22d5c89d96a6996f0ae6a16128450a988900a2eb5251e5fb86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10b349e0a3629982a2a63e301e981257bdc204eec91a73057d80977e71c4f395"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "926e609132b4e9d1aac3c1d0727fbe085e2ac2031735770778d9a520bb2e1c53"
+  end
+
   depends_on "node"
 
   on_macos do
