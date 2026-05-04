@@ -5,6 +5,11 @@ class Oysttyer < Formula
   sha256 "3c0ce1c7b112f2db496cc75a6e76c67f1cad956f9e7812819c6ae7a979b2baea"
   head "https://github.com/oysttyer/oysttyer.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "7b7ba178d1f29b1d9002fd329b5c714ad26bb9d8603a33e06eca409affdc81c5"
+  end
+
   deprecate! date: "2024-01-06", because: :repo_archived
 
   def install
