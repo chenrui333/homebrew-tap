@@ -4,8 +4,8 @@ class AustinTui < Formula
 
   desc "Top-like text-based user interface for Austin"
   homepage "https://github.com/P403n1x87/austin-tui"
-  url "https://files.pythonhosted.org/packages/ea/e8/5e17d176d3a3464573cffaef94d4bfa8bf710f5d88f1ad3859e199e6efc7/austin_tui-1.4.0.tar.gz"
-  sha256 "bf607c175fc770101ebdcf3a7ab69f10339e76524f8019d0dccdce335ccc232c"
+  url "https://files.pythonhosted.org/packages/3b/5c/76bc4ce2aa8fdbfc736ca4335dc6a14805850fdce5f54b030fa289d7e110/austin_tui-1.4.1.tar.gz"
+  sha256 "3ef0fae5dcebac8c64c0289f92815412fe7104535aac9c84f998dd0bc595d2c4"
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin-tui.git", branch: "master"
 
@@ -46,8 +46,13 @@ class AustinTui < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
-    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
+    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
+    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
   end
 
   resource "toml" do
@@ -56,7 +61,11 @@ class AustinTui < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resource("setuptools"), build_isolation: false
+    venv.pip_install resource("protobuf"), build_isolation: false
+    venv.pip_install resources.reject { |r| %w[setuptools protobuf].include?(r.name) }
+    venv.pip_install_and_link buildpath
   end
 
   test do
