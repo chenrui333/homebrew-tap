@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-05-01 09:37:52 UTC
-Total formulas: 876
+Generated: 2026-05-04 09:54:33 UTC
+Total formulas: 879
 
 ## Formulas
 
@@ -64,6 +64,7 @@ Total formulas: 876
 | octelium | Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API... | 3359 | 111 | 2026-02-16 | 2026-02-15 | Apache-2.0 | ✓ | - | [link](https://octelium.com/docs/octelium/latest/overview/intro) |
 | allinssl | All-in-one SSL certificate lifecycle management tool | 3352 | 354 | 2026-01-29 | 2026-01-21 | GPL-3.0-only | ✓ | - | [link](https://allinssl.com/) |
 | pgdog | Automatic sharding for PostgreSQL | 3347 | 130 | 2026-02-16 | 2026-02-12 | AGPL-3.0-only | ✓ | ✓ | [link](https://pgdog.dev/) |
+| mockgen | Mock code generator for Go interfaces | 3327 | 164 | 2025-12-17 | 2025-08-18 | Apache-2.0 | ✓ | - | [link](https://github.com/uber-go/mock) |
 | browserbase-mcp-server | MCP server for AI web browser automation using Browserbase a... | 3133 | 338 | 2026-01-23 | - | Apache-2.0 | ✓ | - | [link](https://github.com/browserbase/mcp-server-browserbase) |
 | ergo | Modern IRC server (daemon/ircd) written in Go | 3075 | 225 | 2026-02-16 | 2025-12-22 | MIT | ✓ | - | [link](https://github.com/ergochat/ergo) |
 | graphjin | Build NodeJS / GO APIs in 5 minutes not weeks | 3020 | 186 | 2026-02-14 | 2026-02-14 | Apache-2.0 | ✓ | - | [link](https://graphjin.com/) |
@@ -150,6 +151,7 @@ Total formulas: 876
 | unused-deps | Determine any unused dependencies in java_library rules | 1161 | 457 | 2026-02-11 | 2026-01-30 | Apache-2.0 | ✓ | - | [link](https://github.com/bazelbuild/buildtools) |
 | tuono | Superfast fullstack React framework | 1103 | 55 | 2026-02-16 | 2025-05-25 | MIT | ✓ | - | [link](https://tuono.dev/) |
 | mnamer | Media file renaming and organizing tool | 1056 | 93 | 2025-11-27 | 2025-11-27 | MIT | ✓ | - | [link](https://github.com/jkwill87/mnamer) |
+| nanobrew | Fast package manager for macOS and Linux | 1036 | 13 | 2026-04-28 | 2026-04-26 | Apache-2.0 | ✓ | - | [link](https://nanobrew.trilok.ai) |
 | rshell | Remote Shell for MicroPython | 1031 | 139 | 2024-12-04 | 2024-02-13 | MIT | ✓ | - | [link](https://github.com/dhylands/rshell) |
 | omnictl | CLI for the Sidero Omni Kubernetes management platform | 1026 | 85 | 2026-02-16 | 2026-02-12 | BSL-1.1 | ✓ | - | [link](https://omni.siderolabs.com/) |
 | chess-tui | Play chess from your terminal | 987 | 59 | 2026-03-17 | 2026-02-26 | MIT | ✓ | - | [link](https://github.com/thomas-mauran/chess-tui) |
@@ -314,7 +316,6 @@ Total formulas: 876
 | oxicord | Lightweight, secure Discord terminal client written in Rust | 288 | 10 | 2026-03-05 | 2026-02-23 | GPL-3.0-only | ✓ | - | [link](https://github.com/linuxmobile/oxicord) |
 | protoc-gen-lint | Lint .proto files for style violations | 287 | 16 | 2024-12-23 | 2022-11-08 | MIT | ✓ | - | [link](https://github.com/ckaznocha/protoc-gen-lint) |
 | pyink | Python formatter, forked from Black with a few different for... | 287 | 18 | 2026-01-02 | 2025-01-10 | MIT | ✓ | - | [link](https://github.com/google/pyink) |
-| emplace | Synchronize installed packages on multiple machines | 283 | 27 | 2026-02-16 | 2024-05-25 | AGPL-3.0-or-later | ✓ | - | [link](https://codeberg.org/fosk/emplace) |
 | oyo | Step-through diff viewer | 282 | 5 | 2026-03-01 | 2026-02-15 | MIT | ✓ | - | [link](https://github.com/ahkohd/oyo) |
 | resto | Send pretty HTTP & API requests with TUI | 282 | 13 | 2024-07-19 | 2022-01-03 | MIT | ✓ | - | [link](https://github.com/abdfnx/resto) |
 | jiq | Interactive JSON query tool with real-time output and AI ass... | 280 | 3 | 2026-02-24 | 2026-02-20 | Apache-2.0 | ✓ | - | [link](https://github.com/bellicose100xp/jiq) |
@@ -642,6 +643,7 @@ Total formulas: 876
 | nbcat | Preview Jupyter notebooks directly in your terminal | 36 | - | 2025-06-04 | 2025-05-15 | MIT | ✓ | - | [link](https://github.com/akopdev/nbcat) |
 | squall | TUI SQLite Viewer and Editor | 36 | 3 | 2026-01-26 | 2025-03-11 | MIT | ✓ | - | [link](https://github.com/driscollis/squall) |
 | untether | Telegram bridge for AI coding agents with voice input and li... | 36 | 3 | 2026-04-20 | 2026-04-20 | MIT | ✓ | - | [link](https://github.com/littlebearapps/untether) |
+| agentmako | Local project intelligence CLI and MCP server for codebases ... | 35 | 5 | 2026-05-03 | 2026-05-01 | Apache-2.0 | ✓ | - | [link](https://github.com/drhalto/agentmako) |
 | clickup-mcp | MCP Server for ClickUp | 35 | 12 | 2026-02-13 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/hauptsacheNet/clickup-mcp) |
 | infraspec | Tool for running infrastructure tests written in pure Gherki... | 35 | 1 | 2026-02-16 | 2025-12-30 | Apache-2.0 | ✓ | - | [link](https://infraspec.sh/) |
 | kcl | CLI for the KCL programming language | 35 | 21 | 2026-02-16 | 2025-12-12 | Apache-2.0 | ✓ | - | [link](https://github.com/kcl-lang/cli) |
@@ -824,6 +826,7 @@ Total formulas: 876
 | dtop | High-performance TUI for Docker container management | - | - | - | - | MIT | ✓ | - | [link](https://stakesquid.com/) |
 | eas-cli | Fastest way to build, submit, and update iOS and Android app... | - | - | - | - | MIT | ✓ | - | [link](https://docs.expo.dev/eas/) |
 | emoj | Find relevant emoji from text on the command-line | - | - | - | - | MIT | ✓ | - | [link](https://github.com/yeoman/emoj) |
+| emplace | Synchronize installed packages on multiple machines | - | - | 2025-03-10 | - | AGPL-3.0-or-later | ✓ | - | [link](https://codeberg.org/fosk/emplace) |
 | fast-xml-parser | Validate XML, Parse XML and Build XML rapidly | - | - | - | - | MIT | ✓ | - | [link](https://naturalintelligence.github.io/fast-xml-parser/) |
 | foy | Simple, light-weight and modern task runner for general purp... | - | - | - | - | MIT | ✓ | - | [link](https://zaaack.github.io/foy/) |
 | fsociety | Modular Penetration Testing Framework | - | - | - | - | MIT | ✓ | - | [link](https://fsociety.dev/) |

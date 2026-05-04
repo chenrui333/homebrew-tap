@@ -11,6 +11,12 @@
     "last_release": "2026-02-05",
     "stars": 382
   },
+  "codeberg:fosk/emplace": {
+    "forks": 0,
+    "last_commit": "2025-03-10",
+    "last_release": null,
+    "stars": 0
+  },
   "codeberg:liske/ifstate": {
     "forks": null,
     "last_commit": null,
@@ -2021,6 +2027,12 @@
     "last_release": "2025-12-23",
     "stars": 3
   },
+  "github:drhalto/agentmako": {
+    "forks": 5,
+    "last_commit": "2026-05-03",
+    "last_release": "2026-05-01",
+    "stars": 35
+  },
   "github:driscollis/squall": {
     "forks": 3,
     "last_commit": "2026-01-26",
@@ -2830,6 +2842,12 @@
     "last_commit": "2025-05-26",
     "last_release": "2025-02-13",
     "stars": 697
+  },
+  "github:justrach/nanobrew": {
+    "forks": 13,
+    "last_commit": "2026-04-28",
+    "last_release": "2026-04-26",
+    "stars": 1036
   },
   "github:jvanbuel/flowrs": {
     "forks": 3,
@@ -4780,6 +4798,12 @@
     "last_commit": "2025-11-20",
     "last_release": "2025-10-17",
     "stars": 223
+  },
+  "github:uber-go/mock": {
+    "forks": 164,
+    "last_commit": "2025-12-17",
+    "last_release": "2025-08-18",
+    "stars": 3327
   },
   "github:ulissesf/qmassa": {
     "forks": 5,
