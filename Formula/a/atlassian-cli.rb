@@ -10,6 +10,11 @@ class AtlassianCli < Formula
     regex(/acli[._-]v?(\d+(?:\.\d+)+)-distribution\.zip/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "2acc22c1e9d6940a85c31cba0e25f7674141c5d56827ff2dd08b5738e84c2dce"
+  end
+
   depends_on "openjdk"
 
   def install
