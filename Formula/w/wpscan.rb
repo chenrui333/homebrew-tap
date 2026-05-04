@@ -6,6 +6,15 @@ class Wpscan < Formula
   license :cannot_represent # Source is public, commercial use requires a paid license
   head "https://github.com/wpscanteam/wpscan.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "5f10fa13d66b340f039b01f53396e46bc585f1b23694d5c76d10ebbcab4fb1e1"
+    sha256                               arm64_sequoia: "ac7d09d9ed3ecf0c0e1b0b5d31d59cf088d9c7787a17ca758fbd87f99245de84"
+    sha256                               arm64_sonoma:  "b5fff7c248b92fc2cb57a1926064eacadeabf7654e243237c97afdddd5d83f1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f64ee44a97ed14714c817ba6735a01e157c8579157982272fee5aeffd8b5096"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7215cd9cab277ef468bf6f60a9ed0bbea4c4f2c4cf11614ddb090c2b5d2fe169"
+  end
+
   depends_on "ruby" # Some gems require >= ruby 2.7
   depends_on "xz" # for liblzma
 
