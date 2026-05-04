@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/b1/7c/83100c30844ebe3826bcfe7e444bf7264598ebfdc74a506405fce8484c5a/apm_cli-0.11.0.tar.gz"
-  sha256 "1bdd05f6ededf7f32e24a1d1d51bffda2c8594c7362e6b3ea0ff1f0140edeadf"
+  url "https://files.pythonhosted.org/packages/1e/a0/5df7aa1fce762a8e683b9257acabd8c9ced9328aaa2bbec592c5cfae80f0/apm_cli-0.12.0.tar.gz"
+  sha256 "99f993ac1a34171a753c1b3dabb85931a80ffc5bf84dd60d6a000437db735304"
   license "MIT"
 
   bottle do
@@ -58,8 +58,8 @@ class ApmCli < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/34/83/bbde3faa84ddcb8eb0eca4b3ffb3221252281db4ce351300fe248c5c70b1/azure_core-1.39.0.tar.gz"
-    sha256 "8a90a562998dd44ce84597590fff6249701b98c0e8797c95fcdd695b54c35d74"
+    url "https://files.pythonhosted.org/packages/ce/d9/6f5972b44761277394527a3a76af5ae2ef82fc5f20ce351abf0c826eca67/azure_core-1.40.0.tar.gz"
+    sha256 "ecf5b6ddf2564471fae9d576147b7e77a4da285958b2d9f4fd6c3af104f3e9d7"
   end
 
   resource "certifi" do
