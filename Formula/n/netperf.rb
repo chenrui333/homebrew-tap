@@ -32,6 +32,16 @@ class Netperf < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc37cfb670784d93508bbbd80f4bea3bb8b1bb95d453f7224e613037ddcf0665"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3265fd05f2dee8d9bbeb348c4e69d35edd7a29e68310756b683bc185acae2a95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1643baed75d80b83d4477208e91f133c1399e74a4df6c5806ad7a3cdfa49b6fb"
+    sha256 cellar: :any_skip_relocation, sequoia:       "8d88f8275d3c14369fa3a0dd973b1c9c848102895bafb42ba70092f5fdb90ae4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c16a10bb4f655c32943bfbbc234321481e721a0c59d15831b491985fc6308db5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2e0695967d2c68c7b6b0f24df361201f5836ce5352066e8f0e98573a1f018d4"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
