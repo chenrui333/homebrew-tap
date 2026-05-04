@@ -1,8 +1,8 @@
 class Terradozer < Formula
   desc "Terraform destroy using state only with no *.tf files needed"
   homepage "https://github.com/chenrui333/terradozer"
-  url "https://github.com/chenrui333/terradozer/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "6b40747ba3f83a416010ed798edff6bc3bce30f5b69b506ed44af148711aa4e7"
+  url "https://github.com/chenrui333/terradozer/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "27eb57e90111a9381ac76c942d625c2a6ac36aefc0cc2697fb7af1f8272de2e6"
   license "MIT"
   head "https://github.com/chenrui333/terradozer.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Terradozer < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/jckuester/terradozer/internal.version=#{version}"
+    ldflags = "-s -w -X github.com/chenrui333/terradozer/internal.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
