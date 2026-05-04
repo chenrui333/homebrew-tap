@@ -9,6 +9,11 @@ class Ec2AmiTools < Formula
     regex(/>ec2-ami-tools[._-]v?(\d+(?:\.\d+)+)\.zip</i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "837527187fed043eaaab272442a2cd8eb515f4a098f3e00271652f29d12ed7b8"
+  end
+
   depends_on "openjdk"
 
   uses_from_macos "ruby"
