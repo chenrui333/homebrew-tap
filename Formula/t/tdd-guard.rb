@@ -1,8 +1,8 @@
 class TddGuard < Formula
   desc "Automated TDD enforcement for Claude Code"
   homepage "https://github.com/nizos/tdd-guard"
-  url "https://registry.npmjs.org/tdd-guard/-/tdd-guard-1.1.0.tgz"
-  sha256 "f9da65d258979704097f6646190473a31080e05909ab54c814b8d902a8938087"
+  url "https://registry.npmjs.org/tdd-guard/-/tdd-guard-1.6.8.tgz"
+  sha256 "66578d92316852408b6c80b545a314d11ce1ee5acec8c068db1bb4b22e3b8031"
   license "MIT"
 
   bottle do
@@ -22,30 +22,31 @@ class TddGuard < Formula
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/tdd-guard/node_modules"
+    os = OS.mac? ? "macOS" : "Linux"
+    arch = Hardware::CPU.intel? ? "X64" : "ARM64"
+    node_modules.glob("@ast-grep/lang-*/prebuilds/*").each do |dir|
+      rm_r(dir) if dir.basename.to_s != "prebuild-#{os}-#{arch}"
+    end
+    node_modules.glob("**/@img/sharp-*").each(&:rmtree)
+
     ripgrep_vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     rm_r(ripgrep_vendor_dir)
+
+    audio_capture_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/audio-capture"
+    rm_r(audio_capture_dir) if audio_capture_dir.directory?
   end
 
   test do
-    (testpath/".env").write <<~EOS
-      MODEL_TYPE=claude_cli
-      USE_SYSTEM_CLAUDE=true
-      LINTER_TYPE=eslint
-    EOS
-
     input = <<~JSON
       {
-        "event": "PreToolUse",
-        "tool_use": {
-          "name": "Write",
-          "input": {
-            "path": "example.py",
-            "contents": "print('hello')"
-          }
-        }
+        "session_id": "homebrew-test",
+        "transcript_path": "#{testpath}/transcript.jsonl",
+        "hook_event_name": "UserPromptSubmit",
+        "cwd": "#{testpath}",
+        "prompt": "tdd-guard off"
       }
     JSON
 
-    assert_match "reason", pipe_output(bin/"tdd-guard", input, 0)
+    assert_match "TDD Guard disabled", pipe_output(bin/"tdd-guard", input, 0)
   end
 end
