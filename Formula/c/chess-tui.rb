@@ -1,8 +1,8 @@
 class ChessTui < Formula
   desc "Play chess from your terminal"
   homepage "https://github.com/thomas-mauran/chess-tui"
-  url "https://github.com/thomas-mauran/chess-tui/archive/refs/tags/2.5.1.tar.gz"
-  sha256 "65054f32c6361dc859306504046968a1be776d91658d0fec018035be398d9002"
+  url "https://github.com/thomas-mauran/chess-tui/archive/refs/tags/2.6.2.tar.gz"
+  sha256 "414a2b03751864cef59e7e3bd6fd8c9568a876a57d4b8605eaeeee1dec3cc625"
   license "MIT"
   head "https://github.com/thomas-mauran/chess-tui.git", branch: "main"
 
