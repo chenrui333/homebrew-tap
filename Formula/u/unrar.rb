@@ -12,12 +12,12 @@ class Unrar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "9d62e765e7e4e0c8e8f96bd9aaba72f83ee394cddc70cb5ae2e489e941806fb8"
-    sha256 cellar: :any,                 arm64_sequoia: "c9418a200e643737d27d2545c869ccdc6452a5f995fc34e3e2855180739ef8d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "f83a269042439e5bb1fbceb45ac55941798892429c614d6b151c8ff78e261997"
-    sha256 cellar: :any,                 sequoia:       "c0b3466e937f7a09d0e16c4b1f9e557923458845870afee60063956de662e8df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5de99403b07b99e6dbdac2653d0d5cd2e8cfbe4e71458c41864402e30732db75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b7ab2fd9551471f591e47e8050a6568023f1b2e6cc80e8358d3b9ff1fa23cdb"
+    sha256 cellar: :any,                 arm64_tahoe:   "6f33890fa020c402d9eefa3e63452dd5ee6814c914d4f3afc3187bb6fbece3fb"
+    sha256 cellar: :any,                 arm64_sequoia: "c9b2c635fe4fcd0f594f9954c256c96d0def77ab2a4dde1bf94c42489e549994"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca60c09be4f5220c89a9c53fe05993b711f8a5181f384050867faddc7bfd7df4"
+    sha256 cellar: :any,                 sequoia:       "189b1764dd88bbc522ce19a8710b6e00f71bdde9bb82bca188ad781e23dd3d03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d22645f9816d2e6476f5d60d80f35ae6eb76ec2963b083605253b443191cb2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33d90ed7a97cedcf69cb5b31e0ad0c659b657ec58e3c5ee4e618554cc6e8e195"
   end
 
   def install
