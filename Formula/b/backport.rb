@@ -1,8 +1,8 @@
 class Backport < Formula
   desc "CLI tool that automates the process of backporting commits"
   homepage "https://github.com/sorenlouv/backport"
-  url "https://registry.npmjs.org/backport/-/backport-11.0.2.tgz"
-  sha256 "aa3b99a69ae5949c607152666dbbfd23bacb085d2ed50a48382d6011276ef0d3"
+  url "https://registry.npmjs.org/backport/-/backport-12.0.0.tgz"
+  sha256 "a918fcddc49234279681a1d402e87ede7f65f7f971633dca7afcfddee1d66b06"
   license "Apache-2.0"
 
   bottle do
@@ -28,6 +28,6 @@ class Backport < Formula
     JSON
 
     output = shell_output("#{bin}/backport --dry-run 2>&1", 1)
-    assert_match "It must contain a valid \"accessToken\"", output
+    assert_match "It must contain a valid \"githubToken\"", output
   end
 end
