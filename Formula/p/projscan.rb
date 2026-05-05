@@ -8,11 +8,11 @@ class Projscan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "f816cac65324c20e51fe035cb766e3b0581b188a09b060d08a0dae3681a0dfbb"
-    sha256                               arm64_sequoia: "4e9a11984556ab40d02402aff45994e43b4bbd8c5e934decb5b6e6c98f65b33b"
-    sha256                               arm64_sonoma:  "c1eca6a17ff3482cde7ce965b30346c8a600cffa7cae27b74785293cae73e4c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b218d41843bb9411b3d1984dfbde164da5b7ac52addf7be166e4806a0d7b3cd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "783407fc701f33eb1e96ee71006fa620ad83ab5c0632c9401a21d3d3c0ba5cb1"
+    sha256                               arm64_tahoe:   "02767f7dc970cc2bd233945a32409883a8d3b78ae6bfa8dd4cdc7182303526ab"
+    sha256                               arm64_sequoia: "b5be9d5c47acfe700c1f060b23c094cb34923732f3e605562926db7a869482b7"
+    sha256                               arm64_sonoma:  "d9ee208b1664eca614585e4d0e89bc7a65e0c1ec0a7065d989ec0345c043af8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed6da2b46c3f96e7d809fe2f179d48e818eeaa90bcca375c416c9e3d95b0d52c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c78497d876bca87fe02b0b6fac0afe55fbfa60a7664ba9cae6bf5659f651be5"
   end
 
   depends_on "pkgconf" => :build
