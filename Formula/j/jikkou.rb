@@ -1,8 +1,8 @@
 class Jikkou < Formula
   desc "Resource as code framework for Apache Kafka"
   homepage "https://www.jikkou.io/"
-  url "https://github.com/streamthoughts/jikkou/archive/refs/tags/v0.37.2.tar.gz"
-  sha256 "cb21ce35699ceabea6d7c728396802742ed5b015b30b8d22b739c27d21c905f4"
+  url "https://github.com/streamthoughts/jikkou/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "bda99c83985d341b06695ea4a7b4cce2b22b662582d1ca01bc018107e179abec"
   license "Apache-2.0"
   head "https://github.com/streamthoughts/jikkou.git", branch: "main"
 
