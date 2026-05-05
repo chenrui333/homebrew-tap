@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/06/ce/3159dd69ff2ad0c540f74c7141202145e222bf94a367b81081da1afb504f/cccc_pair-0.4.12.tar.gz"
-  sha256 "a41a523f025d5466567a3020e292a7d8886f95decb4ff7c249aa552b2ed2465a"
+  url "https://files.pythonhosted.org/packages/b5/e4/e5700c54834c63e1a65579e1df251bb60c61fa4a60661ee5fc3d8a518e55/cccc_pair-0.4.13.tar.gz"
+  sha256 "512eb262d0b4c5fce536710a8aa452db15b979cacb1f537e903215e9eca5bc1f"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -132,8 +132,8 @@ class Cccc < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
-    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
+    url "https://files.pythonhosted.org/packages/69/9b/f23807317a113dc36e74e75eb265a02dd1a4d9082abc3c1064acd22997c4/python_multipart-0.0.27.tar.gz"
+    sha256 "9870a6a8c5a20a5bf4f07c017bd1489006ff8836cff097b6933355ee2b49b602"
   end
 
   resource "pyyaml" do
