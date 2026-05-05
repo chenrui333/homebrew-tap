@@ -7,11 +7,11 @@ class CrossSeed < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b745f782943fb301b184ed366a18a58444c4eb8b739fb84bba467c7fef5405ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4db9210ac93cdd46241202ce2288a11a2211f5bdfe56b533174b3801b76870c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6e2d9770b7948c06ec8de0ce222b416b57c83d2cf290442f6d8d1dc8d6aa948"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e0cabdc13b14eccd4ca13524e44eb9c6c2275822146ffecbc498049a69b389c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "972d610d91e979b169ed207e1d4bce24c2d5accd27a014dd25cf1290a9aabf41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d671cff45e03089826193932591bab201fd35e35fa77dd58d4d2491e860a47ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e043b1b2437a4ddb817250666beb6d81327addca3174df8db42e4e64c2e4399"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6aecb6992374a3d8662490430010ae0ea8adc8ca3c61c1f4a16dadadedbfe4b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f272c3da7d237371c0a17de092b4179ff0893ff405a61899132daa656287d713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a3de4ac69a1050f1389fccd69b6891b7232329dd84c7b7b5f88c3ef80066a72"
   end
 
   depends_on "node@24"
