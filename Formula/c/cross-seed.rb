@@ -1,8 +1,8 @@
 class CrossSeed < Formula
   desc "Fully-automatic cross-seeding with Torznab"
   homepage "https://www.cross-seed.org/"
-  url "https://registry.npmjs.org/cross-seed/-/cross-seed-6.13.6.tgz"
-  sha256 "51b34f05d4d0d70315654ea0051fca6a72d9a11a93bf449544c1a3bbd87018da"
+  url "https://registry.npmjs.org/cross-seed/-/cross-seed-6.13.7.tgz"
+  sha256 "cd8936f70c94ec62640d1eba5c4c32315b866efed5d3d3fc1fa22109fb5f11b9"
   license "Apache-2.0"
 
   bottle do
