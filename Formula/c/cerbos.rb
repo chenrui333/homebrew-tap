@@ -1,8 +1,8 @@
 class Cerbos < Formula
   desc "Scalable, context-aware authorization service for applications"
   homepage "https://www.cerbos.dev/"
-  url "https://github.com/cerbos/cerbos/archive/refs/tags/v0.52.0.tar.gz"
-  sha256 "87b7221f4cd2cae70d5fa05d0333b62ca1a90d4018c14d28334fecda20b39285"
+  url "https://github.com/cerbos/cerbos/archive/refs/tags/v0.53.0.tar.gz"
+  sha256 "f473be16e1ef96f8ee71f137995d0e35cb1d759d2e50dd0ffece3decd4c2a51b"
   license "Apache-2.0"
   head "https://github.com/cerbos/cerbos.git", branch: "main"
 
