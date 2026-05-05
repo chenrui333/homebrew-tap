@@ -7,7 +7,7 @@ class Codebuff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a4a7a7f651c1ab2b138ab9ab7603a9141a9fc354c89b668cd56cb2630ad7d999"
+    sha256 cellar: :any_skip_relocation, all: "da2af80a4691878ed8de6d0f3cedf84acfd08fa2807b735913be0cf4880ba600"
   end
 
   depends_on "node"
