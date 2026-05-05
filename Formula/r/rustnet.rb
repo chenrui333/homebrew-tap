@@ -1,8 +1,8 @@
 class Rustnet < Formula
   desc "Cross-platform network monitoring TUI"
   homepage "https://github.com/domcyrus/rustnet"
-  url "https://github.com/domcyrus/rustnet/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "b91d41bc715f74453a8cd9ac2cd91e2b3808f01f959e8a92cb65c1f2f717312d"
+  url "https://github.com/domcyrus/rustnet/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "258ea142f3ca04e45c33761eb28868a8d8afc62a3f9556a1d5b312e805905ce5"
   license "Apache-2.0"
   head "https://github.com/domcyrus/rustnet.git", branch: "main"
 
