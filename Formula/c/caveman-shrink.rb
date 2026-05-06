@@ -5,6 +5,11 @@ class CavemanShrink < Formula
   sha256 "2b40eccce35fe8ce145e6c02fe02d192235ab655cb3614244ca98188c04f87a7"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "66b7845450c239d2fd1e19447785dec35d5d9e85f7dce842589a824759c72cd5"
+  end
+
   depends_on "node"
 
   def install
