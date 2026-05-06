@@ -1,9 +1,9 @@
 class GetShitDoneCc < Formula
   desc "Meta-prompting and context engineering system for AI coding agents"
   homepage "https://github.com/gsd-build/get-shit-done"
-  url "https://github.com/gsd-build/get-shit-done/archive/refs/tags/v1.50.0-canary.1.tar.gz"
-  version "1.50.0-canary.1"
-  sha256 "e041def09c595ab08c25eec108d9ea0d2d4c241ad5be3776af61081099bc2567"
+  url "https://github.com/gsd-build/get-shit-done/archive/refs/tags/v1.50.0-canary.2.tar.gz"
+  version "1.50.0-canary.2"
+  sha256 "a1c5148bfdc2b6b13e98458d0361e70748edb759e625b09e7385362d2f97213c"
   license "MIT"
   head "https://github.com/gsd-build/get-shit-done.git", branch: "main"
 
