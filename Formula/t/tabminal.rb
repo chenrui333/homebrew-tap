@@ -1,8 +1,8 @@
 class Tabminal < Formula
   desc "Cloud-Native, Proactive AI Integrated Terminal works in modern browsers"
   homepage "https://github.com/Leask/Tabminal"
-  url "https://registry.npmjs.org/tabminal/-/tabminal-3.0.39.tgz"
-  sha256 "d04c50297e11b192197eab651a160c909549b8dd6954fe3d2818eac36948c51b"
+  url "https://registry.npmjs.org/tabminal/-/tabminal-3.0.40.tgz"
+  sha256 "c931b8448a1ac2c0000ac88669e0e42c8871508fd278a39615d6a2eb829a2720"
   license "MIT"
 
   bottle do
