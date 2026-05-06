@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/17/c4/7a64c2524da6ab36299a120f95ff725dbcadba9d05c345c0747e2dcf9e3b/apm_cli-0.12.1.tar.gz"
-  sha256 "481d6561522669daa8ef8d307940c05d80e570b748e4b386a46eb61f92714e8b"
+  url "https://files.pythonhosted.org/packages/97/c5/7eac3258dd2b2f97ccdd506eb61724d84d5b9d5bc87d7a734ba155c6f13a/apm_cli-0.12.2.tar.gz"
+  sha256 "6ef0d918a27d297a24c7bd2723908f401bf133bfc4818705591b8294a11869c8"
   license "MIT"
 
   bottle do
@@ -173,8 +173,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f0/ee/d056c82f63c05f06baac0cffb4a90952d8274f90c49dfe244f20497b9bbd/openai-2.33.0.tar.gz"
-    sha256 "f850c435e2a4685bba3295bd54912dd26315d9c1b7733068186134d6e0599f9a"
+    url "https://files.pythonhosted.org/packages/7b/89/f1e78f5f828f4e97a6ebca8f45c6b35667da12b074ac490dc8362b882279/openai-2.34.0.tar.gz"
+    sha256 "828b4efcbb126352c2b5eb97d33ae890c92a71ab72511aefc1b7fe64aeccb07b"
   end
 
   resource "pluggy" do
