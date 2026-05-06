@@ -7,11 +7,11 @@ class Tabminal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3bc17db59847c1b27f354d0834f214c41a128c17eb23778d85a1df9cc6aa384"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3bc17db59847c1b27f354d0834f214c41a128c17eb23778d85a1df9cc6aa384"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3bc17db59847c1b27f354d0834f214c41a128c17eb23778d85a1df9cc6aa384"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a2ac95d4c30e114e9ac56ccca64181655daaa286cca5105ab4508d38afff9e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bfe49061c84301a8450cff2805f193aa4e9bd156a3910fe855a099e0aca093d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fb2331ebe189cfb057e6bd28444dca3dde35454e7beb1e7042bc3a793c052d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fb2331ebe189cfb057e6bd28444dca3dde35454e7beb1e7042bc3a793c052d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fb2331ebe189cfb057e6bd28444dca3dde35454e7beb1e7042bc3a793c052d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f608610036740ecc93d8feca9d847a6a00e913d3f1589f648025b8a7de48315b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f07776569eec758f0413084042fcf23f06f57a815f8782c90a5423575ff96c41"
   end
 
   depends_on "node"
