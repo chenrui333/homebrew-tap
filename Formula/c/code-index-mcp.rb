@@ -3,8 +3,8 @@ class CodeIndexMcp < Formula
 
   desc "MCP server for LLMs to index, search, and analyze code repos"
   homepage "https://github.com/johnhuang316/code-index-mcp"
-  url "https://files.pythonhosted.org/packages/2d/21/394a7ee2676f2f467bda8d831ab9ae8c13ab2e778b432b4bcc842bf3ce72/code_index_mcp-2.16.0.tar.gz"
-  sha256 "958466887433e28b5cbcd8db08690ec25ca059ae054e318fc19e7ae9448f4de5"
+  url "https://files.pythonhosted.org/packages/37/c3/93d99634c9e027ba43cfc9ce8669d2009c03c2d8f16853ec114380f19e52/code_index_mcp-2.17.0.tar.gz"
+  sha256 "78aeac6189f600d264b616b993bdad049448a3176cf22b95bad25265dc6ec4bb"
   license "MIT"
 
   bottle do
@@ -85,8 +85,8 @@ class CodeIndexMcp < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/2e/17/9c3094b822982b9f1ea666d8580ce59000f61f87c1663556fb72031ad9ec/pathspec-1.1.0.tar.gz"
-    sha256 "f5d7c555da02fd8dde3e4a2354b6aba817a89112fa8f333f7917a2a4834dd080"
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
   end
 
   resource "pydantic-settings" do
@@ -105,8 +105,8 @@ class CodeIndexMcp < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/88/71/b145a380824a960ebd60e1014256dbb7d2253f2316ff2d73dfd8928ec2c3/python_multipart-0.0.26.tar.gz"
-    sha256 "08fadc45918cd615e26846437f50c5d6d23304da32c341f289a617127b081f17"
+    url "https://files.pythonhosted.org/packages/69/9b/f23807317a113dc36e74e75eb265a02dd1a4d9082abc3c1064acd22997c4/python_multipart-0.0.27.tar.gz"
+    sha256 "9870a6a8c5a20a5bf4f07c017bd1489006ff8836cff097b6933355ee2b49b602"
   end
 
   resource "referencing" do
@@ -115,8 +115,8 @@ class CodeIndexMcp < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/26/8c/f9290339ef6d79badbc010f067cd769d6601ec11a57d78569c683fb4dd87/sse_starlette-3.3.4.tar.gz"
-    sha256 "aaf92fc067af8a5427192895ac028e947b484ac01edbc3caf00e7e7137c7bef1"
+    url "https://files.pythonhosted.org/packages/e1/9a/f35932a8c0eb6b2287b66fa65a0321df8c84e4e355a659c1841a37c39fdb/sse_starlette-3.4.1.tar.gz"
+    sha256 "f780bebcf6c8997fe514e3bd8e8c648d8284976b391c8bed0bcb1f611632b555"
   end
 
   resource "starlette" do
