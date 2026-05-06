@@ -1,8 +1,8 @@
 class Ytsurf < Formula
   desc "YouTube in your terminal without the usual browser clutter"
   homepage "https://github.com/Stan-breaks/ytsurf"
-  url "https://github.com/Stan-breaks/ytsurf/archive/refs/tags/v3.1.6.tar.gz"
-  sha256 "458036a070733af43dc21f65439b34c17b745cafffce85a53cf5ee855dc00950"
+  url "https://github.com/Stan-breaks/ytsurf/archive/refs/tags/v3.1.7.tar.gz"
+  sha256 "ba61e89fc6748c823030dec8406e4c2522aa2bb294db60a141e53b95e6bb0e22"
   license "GPL-3.0-only"
   head "https://github.com/Stan-breaks/ytsurf.git", branch: "main"
 
