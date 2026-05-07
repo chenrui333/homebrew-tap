@@ -8,11 +8,11 @@ class Lazykiq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2f3b06d7330395c23d81ee451ff12f862e905d5be9712baafbef7ee86cbbf9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2f3b06d7330395c23d81ee451ff12f862e905d5be9712baafbef7ee86cbbf9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2f3b06d7330395c23d81ee451ff12f862e905d5be9712baafbef7ee86cbbf9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5f7dcb737152c30ac7143c814eb62d6a4e8d38b4150b9b1bdff3ca961077f3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a288c23bbd8417cd558584b3a096dca48740011293844de3ec5a714fd6346fe3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7c8e53c6ea4c4c489447284547e8891c888b510b7f2618717275a4566b47013"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7c8e53c6ea4c4c489447284547e8891c888b510b7f2618717275a4566b47013"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7c8e53c6ea4c4c489447284547e8891c888b510b7f2618717275a4566b47013"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "452c57858503fd7ab2248acead20a1db4149ca71f098847363ace53afa7e4380"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "246c8d97d9bfc8b7d4e348c5752fe3228d163bfbb3da7aa26269a2f44f2690d8"
   end
 
   depends_on "go" => :build
