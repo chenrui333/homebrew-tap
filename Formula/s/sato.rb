@@ -9,11 +9,11 @@ class Sato < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "368c815862cb89f53b91b0b7e921595247195afc00c02ec79d9a7d1e4abf8f29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "368c815862cb89f53b91b0b7e921595247195afc00c02ec79d9a7d1e4abf8f29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "368c815862cb89f53b91b0b7e921595247195afc00c02ec79d9a7d1e4abf8f29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8b3b76cefff824210beb54b9f7b39348bd3b84bf38ee10fd317d31215a8afe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dedd1a23963aaa4a3ae7e55c79e3799dd0a9c6a9772eb8a995642fa7892259c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c7281f4c53dcadf6649c8b210f76aee610a45440a7c5274eeeb07aca1011300"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c7281f4c53dcadf6649c8b210f76aee610a45440a7c5274eeeb07aca1011300"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c7281f4c53dcadf6649c8b210f76aee610a45440a7c5274eeeb07aca1011300"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a71365186125c55ced7756e121911e77670b763855746dccdf9f861dedbcd61d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b5d1aa8acdfcdb902163411dc3e5df780a8df76c960346af1aaa523bcfcc190"
   end
 
   depends_on "go" => :build
