@@ -1,8 +1,8 @@
 class Aptui < Formula
   desc "TUI package manager for APT-based Linux distributions"
   homepage "https://github.com/mexirica/aptui"
-  url "https://github.com/mexirica/aptui/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "3bad4de097216fab7177e5c280e1970435d627b06dda6a8a95e0cbe67437c14e"
+  url "https://github.com/mexirica/aptui/archive/refs/tags/v0.8.tar.gz"
+  sha256 "e8c767971b8772b27ed6da91abadd322393561176f03cab5218c96973d6791ae"
   license "MIT"
   head "https://github.com/mexirica/aptui.git", branch: "main"
 
