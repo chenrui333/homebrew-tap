@@ -3,8 +3,8 @@ class Xmlformatter < Formula
 
   desc "Format and compress XML documents"
   homepage "https://github.com/pamoller/xmlformatter"
-  url "https://files.pythonhosted.org/packages/24/86/1cdcb604b04c08e83366dc082611795695f08fc38700344ddb81342c63a8/xmlformatter-0.2.8.tar.gz"
-  sha256 "ddc82e7cb4ff2669f54014e2eaf86b493d5e2da95b536f974f0a15f02763f64c"
+  url "https://files.pythonhosted.org/packages/8e/3c/c82fe32478256a1d6cfae4770eda5e4da629e56f7d5a2baace308819c910/xmlformatter-0.2.9.tar.gz"
+  sha256 "22266ce398950d7848df66d5edc1bee57ead6d1b2404184c335ac4d0892d2760"
   license "MIT"
 
   bottle do
