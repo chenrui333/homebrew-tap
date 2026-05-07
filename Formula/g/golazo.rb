@@ -1,8 +1,8 @@
 class Golazo < Formula
   desc "Minimal TUI app to follow live and recent football matches"
   homepage "https://github.com/0xjuanma/golazo"
-  url "https://github.com/0xjuanma/golazo/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "9dcc5103833cbd57c86ddea99f7ff70f18e6e2606961e2a7036462db089f64c4"
+  url "https://github.com/0xjuanma/golazo/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "c8e1830b542a2a5d6746de1bba41491cad70b3a54c979ca59da052f4ba91c761"
   license "MIT"
   head "https://github.com/0xjuanma/golazo.git", branch: "main"
 
