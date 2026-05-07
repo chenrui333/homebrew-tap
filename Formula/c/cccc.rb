@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/b5/e4/e5700c54834c63e1a65579e1df251bb60c61fa4a60661ee5fc3d8a518e55/cccc_pair-0.4.13.tar.gz"
-  sha256 "512eb262d0b4c5fce536710a8aa452db15b979cacb1f537e903215e9eca5bc1f"
+  url "https://files.pythonhosted.org/packages/52/c0/006d45bb658b873651cc2fd2e1c47bedc2f122b808e31ad380f795bd6d7d/cccc_pair-0.4.14.tar.gz"
+  sha256 "4f977e7c7002a9f19b757f725f9b682ec9414c7f8f45adddbe8ea9110f768384"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -107,8 +107,8 @@ class Cccc < Formula
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/b4/72/c2e973066da57e9f6720c229364e673d89c884fac65c265a08e2c32eed3c/lark_oapi-1.5.5-py3-none-any.whl"
-    sha256 "c953d3f87e5b43d9e99cdee7c2d962568ac05d5c01ef57ad662fbb5d4ec0e69f"
+    url "https://files.pythonhosted.org/packages/85/18/3770b74ce7e91af4b45a7b5c2c86084851e8997006b696aaddcd91b7977c/lark_oapi-1.6.0.tar.gz"
+    sha256 "da8ff124635a62819618ac409c0e1275d47a74b606de8b03173aec3b122a7393"
   end
 
   resource "multidict" do
@@ -187,8 +187,8 @@ class Cccc < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/04/24/4b2031d72e840ce4c1ccb255f693b15c334757fc50023e4db9537080b8c4/websockets-16.0.tar.gz"
-    sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
+    url "https://files.pythonhosted.org/packages/e2/73/9223dbc7be3dcaf2a7bbf756c351ec8da04b1fa573edaf545b95f6b0c7fd/websockets-13.1.tar.gz"
+    sha256 "a3b3366087c1bc0a2795111edcadddb8b3b59509d5db5d7ea3fdd69f954a8878"
   end
 
   resource "wechatbot-sdk" do
