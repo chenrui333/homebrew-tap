@@ -785,5 +785,11 @@
   "https://terminaltrove.com/steamfetch/": "https://github.com/unhappychoice/steamfetch",
   "https://terminaltrove.com/adsb-tui/": "https://github.com/j4v3l/ADS-B_TUI/",
   "https://terminaltrove.com/octoscope/": "https://github.com/gfazioli/octoscope",
-  "https://terminaltrove.com/threatdeck/": "https://github.com/gripebomb/threatdeck"
+  "https://terminaltrove.com/threatdeck/": "https://github.com/gripebomb/threatdeck",
+  "https://terminaltrove.com/ytm-player/": "https://github.com/peternaame-boop/ytm-player",
+  "https://terminaltrove.com/holo/": "https://github.com/measure-sh/holo",
+  "https://terminaltrove.com/splashboard/": "https://github.com/unhappychoice/splashboard",
+  "https://terminaltrove.com/nless/": "https://github.com/mpryor/nothing-less",
+  "https://terminaltrove.com/chess-tui/": "https://github.com/thomas-mauran/chess-tui",
+  "https://terminaltrove.com/wintui/": "https://github.com/kts982/wintui"
 }
