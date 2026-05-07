@@ -9,8 +9,7 @@ class Xmlformatter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2c629884ff5f001cfbd4f1031f9e6cd92514dd57b6ec3492c855fb0e12588acb"
+    sha256 cellar: :any_skip_relocation, all: "634be72e8938a12f0203ad46322c4e82ed5a88d08c1efd5351d4019956b12150"
   end
 
   depends_on "python@3.14"
