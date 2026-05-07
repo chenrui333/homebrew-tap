@@ -8,11 +8,11 @@ class Golazo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "17570e3014879c8984a3057f6cba6c2bc5a76e4684f072ea333c8f62a57784f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17570e3014879c8984a3057f6cba6c2bc5a76e4684f072ea333c8f62a57784f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17570e3014879c8984a3057f6cba6c2bc5a76e4684f072ea333c8f62a57784f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ba4ac0a32caee0f7641632e039d0f068a9f1f396102040ec2dfc3a466f59e8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd01830dd136f9403fa662d8234297b09fcfed3e4d6c9f9a445e951f9610bd34"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07f0fead039dc878bc7ef2c457644a11045037b66fa344b78527b503e7ea3629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07f0fead039dc878bc7ef2c457644a11045037b66fa344b78527b503e7ea3629"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07f0fead039dc878bc7ef2c457644a11045037b66fa344b78527b503e7ea3629"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "434125005b1d73ce3bc3ce03b6ddb9505384b2b10cd8ee727a81b9654b886f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e17ea12f88e5e79c1b2884b216ca4b14a0fe6f9e0dd894895cd621d103946b98"
   end
 
   depends_on "go" => :build
