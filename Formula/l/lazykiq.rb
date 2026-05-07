@@ -1,8 +1,8 @@
 class Lazykiq < Formula
   desc "Rich terminal UI for Sidekiq"
   homepage "https://kpumuk.github.io/lazykiq/"
-  url "https://github.com/kpumuk/lazykiq/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ed90a5a0ba67b08fe1306c69ab3383e7db76394ab23ea2d6d3dbf9ee2b3ea7a1"
+  url "https://github.com/kpumuk/lazykiq/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "460b9bdf6e89a518e92d6854ba9d58024aa61f77bb2ac72cf69912013abab923"
   license "MIT"
   head "https://github.com/kpumuk/lazykiq.git", branch: "main"
 
