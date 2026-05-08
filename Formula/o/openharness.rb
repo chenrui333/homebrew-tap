@@ -10,11 +10,11 @@ class Openharness < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "5626a255f4d576a2795631f53065caaf85e3eada87337a4045feb7169d2029e9"
-    sha256 cellar: :any,                 arm64_sequoia: "0a47f20032896e19416f70fe2f6733f037215fb509765093d21bd8355222f30f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a0222bb904758c47b62a06421d6ed2d6b10ee14857caf6abe1d02555239b67a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d92b189c3f86bdaced2c364746d2a5b7983b547d670aea6b8d665a48788d9204"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ec5502c4647a8c7bb873a11a3f72babc29b6e000b1c0fe72cb33fb90239750a"
+    sha256 cellar: :any,                 arm64_tahoe:   "c98d5268965712810f41842cd158412e58256b4ad4487998b4ed8c1ba26850f6"
+    sha256 cellar: :any,                 arm64_sequoia: "1948ba54023cdb481bbc62e51b5e3454e8afc129c1c918f4574338355ebe88a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ebb1117823c8eae242d1ab53e456f89990d333d4fb0f390e0bac7a5e8646861"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "062d3b978bda85b262d84cddc1e6ff1b87bb75525f657ba928001aca1d20ac7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f434f37d3f6e8cdcbea7dc54bf6248f3b00f341cfdfb42495b827cbaaf2235c"
   end
 
   depends_on "rust" => :build
