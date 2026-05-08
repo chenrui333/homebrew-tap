@@ -7,7 +7,7 @@ class AmIVibing < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "55f40efcd76330066c6a08b2dc7a9a0a587f1c392a3950d8921040654d962470"
+    sha256 cellar: :any_skip_relocation, all: "6ee65c011fa5d41de49e2bbc561074edf11fcdbcad0892f3ffd4c34e1a459274"
   end
 
   depends_on "node"
