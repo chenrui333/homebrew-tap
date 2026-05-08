@@ -3,8 +3,8 @@ class Openharness < Formula
 
   desc "Open-source AI-powered CLI coding assistant"
   homepage "https://github.com/HKUDS/OpenHarness"
-  url "https://files.pythonhosted.org/packages/25/e1/74178f0405c8c85c534cb25f18359f715b7371722299d0390c0e630aa1a2/openharness_ai-0.1.8.tar.gz"
-  sha256 "e2fe9afac9d51a5b81283f4b4b4be73babc885023c12d83fa4c26a902c2901a9"
+  url "https://files.pythonhosted.org/packages/67/65/213f553f06ddb3f23249ea7691b1adde7c362ade1422232d265b062571b7/openharness_ai-0.1.9.tar.gz"
+  sha256 "b9f6231c8680577504ba29bff50d3b13132b59a5f5be11f1cb59b6f13dfce578"
   license "MIT"
   head "https://github.com/HKUDS/OpenHarness.git", branch: "main"
 
@@ -48,8 +48,8 @@ class Openharness < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/0d/c9/e8a3a1caeab575e80551b30b084096b5a430abc52739a526a1daaadd038c/anthropic-0.99.0.tar.gz"
-    sha256 "16f41e00f215ed2d193b146be3dd567c4319c32ed3af6c8725d68ba875257c1c"
+    url "https://files.pythonhosted.org/packages/9c/2d/24caf0ff727cba2ed863925017c8f93463a2ea6224a0efe5626e672bc3d2/anthropic-0.100.0.tar.gz"
+    sha256 "650dee9e023afb16395939ee4104bbc21f966b380210119fb91122c12099c79a"
   end
 
   resource "anyio" do
@@ -143,8 +143,8 @@ class Openharness < Formula
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/85/18/3770b74ce7e91af4b45a7b5c2c86084851e8997006b696aaddcd91b7977c/lark_oapi-1.6.0.tar.gz"
-    sha256 "da8ff124635a62819618ac409c0e1275d47a74b606de8b03173aec3b122a7393"
+    url "https://files.pythonhosted.org/packages/93/e2/89665d999a87ee1947bfd9109ff17c5259020293958d85ac0eef1f2e14f0/lark_oapi-1.6.1.tar.gz"
+    sha256 "34d0594464e37c5a5ffbb398a567f8f3c608d6f49496b828a897233f094cc067"
   end
 
   resource "linkify-it-py" do
@@ -153,8 +153,8 @@ class Openharness < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mcp" do
@@ -163,8 +163,8 @@ class Openharness < Formula
   end
 
   resource "mdit-py-plugins" do
-    url "https://files.pythonhosted.org/packages/b2/fd/a756d36c0bfba5f6e39a1cdbdbfdd448dc02692467d83816dff4592a1ebc/mdit_py_plugins-0.5.0.tar.gz"
-    sha256 "f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"
+    url "https://files.pythonhosted.org/packages/d8/3d/e0e8d9d1cee04f758120915e2b2a3a07eb41f8cf4654b4734788a522bcd1/mdit_py_plugins-0.6.0.tar.gz"
+    sha256 "2436f14a7295837ac9228a36feeabda867c4abc488c8d019ad5c0bda88eee040"
   end
 
   resource "mdurl" do
@@ -178,8 +178,8 @@ class Openharness < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/7b/89/f1e78f5f828f4e97a6ebca8f45c6b35667da12b074ac490dc8362b882279/openai-2.34.0.tar.gz"
-    sha256 "828b4efcbb126352c2b5eb97d33ae890c92a71ab72511aefc1b7fe64aeccb07b"
+    url "https://files.pythonhosted.org/packages/a8/33/41d130d33d0ae7d1d8dcd2f61d6ff044e1edcec7246e904f86c684a3dc94/openai-2.35.1.tar.gz"
+    sha256 "ae61ad96c514295476c42fbd61d1f84b2060bc6dd8e4e4a7d85273f089614ce4"
   end
 
   resource "platformdirs" do
@@ -293,8 +293,8 @@ class Openharness < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/e1/9a/f35932a8c0eb6b2287b66fa65a0321df8c84e4e355a659c1841a37c39fdb/sse_starlette-3.4.1.tar.gz"
-    sha256 "f780bebcf6c8997fe514e3bd8e8c648d8284976b391c8bed0bcb1f611632b555"
+    url "https://files.pythonhosted.org/packages/38/82/10cdfab4ab663a6b6bd624d33f55b2cfa41af5105be033a6d5d135a92c5f/sse_starlette-3.4.2.tar.gz"
+    sha256 "2f9a7f51ed84395a0427fb9f66cb1ec11f7899d977a72cbc9070b962a2e14489"
   end
 
   resource "starlette" do
