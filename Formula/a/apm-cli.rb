@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/51/b1/cd43f987dcaeeee701c227e41a26ee1b10a05517c460f80e26557c66ef3d/apm_cli-0.12.3.tar.gz"
-  sha256 "ec90d59e27a20f7d431d642e498a3bec29effd981030f5ec681f5e2a2a973324"
+  url "https://files.pythonhosted.org/packages/9b/d1/de9c8b499d02fb9e9fac771aa83ec1a19daecbefb986cf29a97b971b5eb0/apm_cli-0.12.4.tar.gz"
+  sha256 "01f5e4e25be12384da817c333ee0f016314b6782145758b50c5575c3bc5fc2fe"
   license "MIT"
 
   bottle do
@@ -158,8 +158,8 @@ class ApmCli < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5c/5c/f3aedc83549aae71cd52b9e9687fe896e3dc6e966ba20eba04718605d198/markdown_it_py-4.1.0.tar.gz"
-    sha256 "760e3f87b2787c044c5138a5ba107b7c2be26c03b13cc7f8fe42756b65b1df6c"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
