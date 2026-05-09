@@ -1,8 +1,8 @@
 class Gpk < Formula
   desc "TUI dashboard that consolidates 36+ package managers into one interface"
   homepage "https://github.com/neur0map/glazepkg"
-  url "https://github.com/neur0map/glazepkg/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "510f8f2062f89f9a6dc3dbf6055291f3f04d7707a8214115ca10db20d15bded9"
+  url "https://github.com/neur0map/glazepkg/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "16194f20ef6d7411affdd54b0b094217b4c0945b4ac36a6a3081f80efed3cd74"
   license "GPL-3.0-only"
   head "https://github.com/neur0map/glazepkg.git", branch: "main"
 
