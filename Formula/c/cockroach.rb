@@ -61,9 +61,16 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/googletest/googletest/CMakeLists.txt",
               "cmake_minimum_required(VERSION 2.6.4)",
               "cmake_minimum_required(VERSION 3.5)"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/cryptopp/CMakeLists.txt",
+              "cmake_minimum_required(VERSION 2.8.5 FATAL_ERROR)",
+              "cmake_minimum_required(VERSION 3.5)"
+    inreplace "src/github.com/cockroachdb/cockroach/Makefile",
+              "cd $(KRB5_SRC_DIR)/src && autoreconf",
+              "cd $(KRB5_SRC_DIR)/src && autoconf -o configure configure.in"
 
     # Ensure that go modules are not used as cockroachdb does not support them.
     ENV["GO111MODULE"] = "off"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     # Build only the OSS components
     system "make", "buildoss"
