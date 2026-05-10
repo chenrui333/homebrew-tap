@@ -8,11 +8,11 @@ class CodeReviewGraph < Formula
   license "MIT"
   head "https://github.com/tirth8205/code-review-graph.git", branch: "main"
 
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "rust" => :build
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
