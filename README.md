@@ -37,6 +37,7 @@ brew install --cask <tool>
 - `act3`
 - `actionbook`
 - `adbtuifm`
+- `agentmako`
 - `agl`
 - `ai-context`
 - `aic`
@@ -60,6 +61,7 @@ brew install --cask <tool>
 - `arxiv-mcp-server`
 - `ash-ai`
 - `astro-language-server`
+- `atlassian-cli`
 - `aube`
 - `auggie`
 - `auox`
@@ -121,6 +123,7 @@ brew install --cask <tool>
 - `cashd`
 - `castor`
 - `catree`
+- `caveman-shrink`
 - `cc-enhanced`
 - `cc-filter`
 - `ccapi`
@@ -144,6 +147,7 @@ brew install --cask <tool>
 - `chess-tui`
 - `chproxy`
 - `clai`
+- `claude-agent-acp`
 - `claude-code-generic-hooks`
 - `claudio`
 - `clawbands`
@@ -225,6 +229,7 @@ brew install --cask <tool>
 - `dela`
 - `deletor`
 - `dg`
+- `dgen`
 - `dgop`
 - `dhv`
 - `di-tui`
@@ -249,6 +254,7 @@ brew install --cask <tool>
 - `eas-cli`
 - `easy-llm-cli`
 - `ec`
+- `ec2-ami-tools`
 - `ecscope`
 - `eilmeldung`
 - `elastop`
@@ -293,6 +299,7 @@ brew install --cask <tool>
 - `foy`
 - `frep`
 - `fresh`
+- `frobtads`
 - `froggit`
 - `fsociety`
 - `ftdv`
@@ -378,6 +385,7 @@ brew install --cask <tool>
 - `humioctl`
 - `hygg`
 - `hyperbolic`
+- `hyperspec`
 - `hyprmoncfg`
 - `iam-collect`
 - `iam-convert`
@@ -395,6 +403,7 @@ brew install --cask <tool>
 - `inspect-cert-chain`
 - `instagram-cli`
 - `intentrace`
+- `iozone`
 - `ip2d`
 - `ips`
 - `jaggr`
@@ -412,6 +421,7 @@ brew install --cask <tool>
 - `jotbird`
 - `journalot`
 - `jplot`
+- `jsmin`
 - `jsonl-graph`
 - `jsrpc`
 - `judo`
@@ -515,6 +525,7 @@ brew install --cask <tool>
 - `mlx-vlm`
 - `mmemoji`
 - `mnamer`
+- `mockgen`
 - `models`
 - `molotov`
 - `moltbook-tui`
@@ -528,9 +539,11 @@ brew install --cask <tool>
 - `mtef`
 - `mult`
 - `mush`
+- `mvt`
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
+- `nanobrew`
 - `nanoclaw`
 - `nanodbc`
 - `narr`
@@ -538,6 +551,7 @@ brew install --cask <tool>
 - `needle`
 - `needs`
 - `nest-cli`
+- `netperf`
 - `newsnow-mcp-server`
 - `nexus`
 - `ngtop`
@@ -584,6 +598,7 @@ brew install --cask <tool>
 - `oxicord`
 - `oxylabs-mcp`
 - `oyo`
+- `oysttyer`
 - `plutov-oq`
 - `packemon`
 - `pal-mcp-server`
@@ -660,6 +675,7 @@ brew install --cask <tool>
 - `rang`
 - `rawhide`
 - `rbac-lookup`
+- `rds-command-line-tools`
 - `readmeai`
 - `recall`
 - `reformat-gherkin`
@@ -683,6 +699,7 @@ brew install --cask <tool>
 - `rslocal`
 - `rt`
 - `rtop`
+- `ruler`
 - `rum`
 - `run`
 - `rustfilt`
@@ -708,6 +725,7 @@ brew install --cask <tool>
 - `sem-cli`
 - `semaphore`
 - `sephera`
+- `sflowtool`
 - `sgpt`
 - `shadcn-ui-mcp-server`
 - `sheetui`
@@ -728,6 +746,8 @@ brew install --cask <tool>
 - `snipt`
 - `solfmt`
 - `sonar`
+- `sonarqube-lts`
+- `sonarqube`
 - `sot`
 - `soundscope`
 - `sourcerer-mcp`
@@ -782,6 +802,7 @@ brew install --cask <tool>
 - `taws`
 - `tclint`
 - `tcpterm`
+- `tdd-guard`
 - `teldrive`
 - `telert`
 - `tenderly`
@@ -841,6 +862,8 @@ brew install --cask <tool>
 - `typeui-sh`
 - `ugdb`
 - `ugm`
+- `unarj`
+- `unrar`
 - `unsloth`
 - `untether`
 - `unused-deps`
@@ -856,6 +879,7 @@ brew install --cask <tool>
 - `vercel-serve`
 - `vet-run`
 - `vi-mongo`
+- `vibe-log-cli`
 - `vibekit`
 - `vimalender`
 - `vitepress`
@@ -875,6 +899,7 @@ brew install --cask <tool>
 - `wiremix`
 - `wisu`
 - `wolfpack`
+- `wpscan`
 - `wut-cli`
 - `xcpkg`
 - `xfr`
