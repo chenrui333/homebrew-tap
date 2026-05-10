@@ -30,7 +30,7 @@ class Projscan < Formula
 
     tree_sitter_cli = buildpath/"node_modules/tree-sitter-cli/tree-sitter"
     rm tree_sitter_cli
-    tree_sitter_cli.dirname.install_symlink Formula["tree-sitter"].opt_bin/"tree-sitter"
+    ln_sf Formula["tree-sitter"].opt_bin/"tree-sitter", tree_sitter_cli
 
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
