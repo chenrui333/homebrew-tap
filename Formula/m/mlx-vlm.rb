@@ -16,6 +16,7 @@ class MlxVlm < Formula
   end
 
   depends_on arch: :arm64
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libsndfile"
   depends_on macos: :sonoma
