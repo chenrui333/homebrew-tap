@@ -27,7 +27,7 @@ class MlxVlm < Formula
   depends_on "numpy"
   depends_on "openblas"
   depends_on "opencv"
-  depends_on "pillow"
+  depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
