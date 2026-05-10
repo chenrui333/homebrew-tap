@@ -21,7 +21,6 @@ class MlxVlm < Formula
   depends_on "gcc"
   depends_on "libsndfile"
   depends_on macos: :sonoma
-  depends_on :macos
   depends_on "mlx"
   depends_on "mlx-lm"
   depends_on "numpy"
