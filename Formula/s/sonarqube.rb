@@ -27,6 +27,7 @@ class Sonarqube < Formula
       s.sub!(/^#sonar\.path\.data=.*/, "sonar.path.data=#{var}/sonarqube/data")
       s.sub!(/^#sonar\.path\.logs=.*/, "sonar.path.logs=#{var}/sonarqube/logs")
       s.sub!(/^#sonar\.path\.temp=.*/, "sonar.path.temp=#{var}/sonarqube/temp")
+      s.sub!(/^#sonar\.search\.javaAdditionalOpts=.*/, "sonar.search.javaAdditionalOpts=-Des.entitlements.enabled=false")
     end
 
     libexec.install Dir["*"]
@@ -40,7 +41,7 @@ class Sonarqube < Formula
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    arch = Hardware::CPU.intel? ? "x64" : "aarch64"
     (libexec/"elasticsearch/lib/platform").glob("*").each do |dir|
       rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
     end
