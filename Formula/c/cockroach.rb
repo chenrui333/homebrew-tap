@@ -12,6 +12,10 @@ class Cockroach < Formula
   depends_on "make" => :build
   depends_on "xz" => :build
 
+  on_linux do
+    depends_on arch: :x86_64 # Cockroach 19.1 vendored Kerberos does not configure on Linux ARM
+  end
+
   def install
     # The GNU Make that ships with macOS Mojave (v3.81 at the time of writing) has a bug
     # that causes it to loop infinitely when trying to build cockroach. Use
