@@ -16,7 +16,7 @@ class Projscan < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "tree-sitter" => :build
+  depends_on "tree-sitter-cli" => :build
   depends_on "node"
   depends_on "vips"
 
@@ -30,7 +30,7 @@ class Projscan < Formula
 
     tree_sitter_cli = buildpath/"node_modules/tree-sitter-cli/tree-sitter"
     rm tree_sitter_cli
-    ln_sf Formula["tree-sitter"].opt_bin/"tree-sitter", tree_sitter_cli
+    ln_sf Formula["tree-sitter-cli"].opt_bin/"tree-sitter", tree_sitter_cli
 
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
