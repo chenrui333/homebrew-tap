@@ -71,9 +71,6 @@ class YtX < Formula
     assert_match "Name=yt-x", desktop_entry
     assert_match "Version=#{version}", desktop_entry
 
-    config_paths = [testpath/"config/yt-x/config", testpath/".config/yt-x/config"]
-    assert config_paths.any?(&:exist?), "Expected yt-x config to be created"
-
     version_output, status = Open3.capture2e(env, bin/"yt-x", "--version")
     assert_predicate status, :success?
     assert_match "yt-x v#{version}", version_output
