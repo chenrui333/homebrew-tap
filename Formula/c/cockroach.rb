@@ -14,8 +14,8 @@ class Cockroach < Formula
   depends_on "xz" => :build
 
   on_linux do
-    depends_on "ncurses"
     depends_on arch: :x86_64 # Cockroach 19.1 vendored Kerberos does not configure on Linux ARM
+    depends_on "ncurses"
   end
 
   def install
@@ -72,6 +72,9 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/cryptopp/CMakeLists.txt",
               "cmake_minimum_required(VERSION 2.8.5 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
+    inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/strtime/bsdshim.h",
+              "#include <time.h>\n\n#define locale_t int",
+              "#include <time.h>\n#include <locale.h>\n\n#define locale_t int"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
