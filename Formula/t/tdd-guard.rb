@@ -28,7 +28,7 @@ class TddGuard < Formula
     node_modules.glob("@ast-grep/lang-*").each do |lang_dir|
       rm_r(lang_dir/"prebuilds")
       cd lang_dir do
-        if lang_dir.basename.to_s == "@ast-grep/lang-php"
+        if lang_dir.basename.to_s == "lang-php"
           inreplace "package.json",
                     "tree-sitter build -o parser.so ./node_modules/tree-sitter-php/php",
                     "tree-sitter build -o parser.so"
