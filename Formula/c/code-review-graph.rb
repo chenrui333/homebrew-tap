@@ -8,6 +8,15 @@ class CodeReviewGraph < Formula
   license "MIT"
   head "https://github.com/tirth8205/code-review-graph.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b60dbb8c69258e4cc3603725c2f3249a51ce637abc4f62de21cf284352b6cab4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3bbdac4dcc6a3fcec5ce3a4dfc2499c5e909c7a2ccabf87d55a866aab7fdbc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30575ca408df74e63458218812f425ba8172556f799316644b862ab9bd2b6ce9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dbcd2efe221925028852c6817ff00df378f2d0597d64ef885e079e0ad3594f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4db3bcce9c627a2f45818859399d54d9761afbc6ba783f93bbd9a19c6e602ae0"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
