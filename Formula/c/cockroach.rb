@@ -42,7 +42,7 @@ class Cockroach < Formula
         253c253
         <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
         ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted -Wno-error=deprecated-copy-with-user-provided-copy -Wno-error=unused-but-set-variable -Wno-error=unused-function")
+        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted -Wno-error=deprecated-copy -Wno-error=deprecated-copy-with-user-provided-copy -Wno-error=unused-but-set-variable -Wno-error=unused-function")
       PATCH
     end
     patchfile = Tempfile.new("patch")
