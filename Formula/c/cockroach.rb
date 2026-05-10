@@ -7,6 +7,7 @@ class Cockroach < Formula
   head "https://github.com/cockroachdb/cockroach.git", branch: "master"
 
   depends_on "autoconf" => :build
+  depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "go" => :build
   depends_on "make" => :build
@@ -21,6 +22,7 @@ class Cockroach < Formula
     # that causes it to loop infinitely when trying to build cockroach. Use
     # the more up-to-date make that Homebrew provides.
     ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
+    ENV["YACC"] = "#{Formula["bison"].opt_bin/"bison"} -y"
 
     # Patch the CXX_FLAGS used to build rocksdb as a workaround for the issue fixed by
     # https://github.com/facebook/rocksdb/pull/5779. Furthermore on 10.14 (Mojave) and
