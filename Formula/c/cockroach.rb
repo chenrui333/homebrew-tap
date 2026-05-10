@@ -26,25 +26,13 @@ class Cockroach < Formula
     ENV["YACC"] = "#{Formula["bison"].opt_bin/"bison"} -y"
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    # Patch the CXX_FLAGS used to build rocksdb as a workaround for the issue fixed by
-    # https://github.com/facebook/rocksdb/pull/5779. Furthermore on 10.14 (Mojave) and
-    # later we also allow defaulted-function-delete as a workaround for
-    # https://github.com/facebook/rocksdb/pull/5095.
-    if !OS.mac? || MacOS.version < "10.14"
-      patch = <<~PATCH
-        253c253
-        <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
-        ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=unused-but-set-variable -Wno-error=unused-function")
-      PATCH
-    else
-      patch = <<~PATCH
-        253c253
-        <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
-        ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted -Wno-error=deprecated-copy -Wno-error=deprecated-copy-with-user-provided-copy -Wno-error=unused-but-set-variable -Wno-error=unused-function")
-      PATCH
-    end
+    # Current compilers emit warnings that old RocksDB promoted to hard errors.
+    patch = <<~PATCH
+      253c253
+      <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+      ---
+      >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    PATCH
     patchfile = Tempfile.new("patch")
     begin
       patchfile.write(patch)
