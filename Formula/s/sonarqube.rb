@@ -19,9 +19,9 @@ class Sonarqube < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c878af8f838e67d91da4e184255b3a1103b964be1bd2b9f57b054d38ace9f860"
   end
 
-  preserve_rpath
-
   depends_on "openjdk@21"
+
+  preserve_rpath
 
   def install
     inreplace "conf/sonar.properties" do |s|
