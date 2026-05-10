@@ -8,11 +8,11 @@ class Ytsurf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c2a80f93d7a147e87c76bc1810bebfb3f520742569daa18ecf246735485b95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b3a22e712fe27ff693a518900c43d5278b3f306b6be5fc1a47a7748b2aba8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85b3a22e712fe27ff693a518900c43d5278b3f306b6be5fc1a47a7748b2aba8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1300c07171a8252861ab7dc89290a2e18c709d1ad27a30c2a1abb6aa9f4919ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1300c07171a8252861ab7dc89290a2e18c709d1ad27a30c2a1abb6aa9f4919ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1300c07171a8252861ab7dc89290a2e18c709d1ad27a30c2a1abb6aa9f4919ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5dadf3fb7e3dff92cf502dc7c9cad1a014bd4b9666fa347fdd59a74b2fb4544"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5dadf3fb7e3dff92cf502dc7c9cad1a014bd4b9666fa347fdd59a74b2fb4544"
   end
 
   depends_on "bash"
