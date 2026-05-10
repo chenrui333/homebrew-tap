@@ -79,6 +79,23 @@ class Cockroach < Formula
               "static void\ntimesub(timep, offset, tmp)\nconst time_t * const\t\t\ttimep;\n" \
               "const long\t\t\t\toffset;\nstruct mytm * const\t\ttmp;\n{\n",
               "static void\ntimesub(const time_t * const timep, const long offset, struct mytm * const tmp)\n{\n"
+    syscall_glob = "src/github.com/cockroachdb/cockroach/vendor/golang.org/x/sys/unix/" \
+                   "zsyscall_darwin_*.go"
+    linkname_re = %r{
+      ^func\ (libc_\w+)_trampoline\(\)\n\n
+      //go:linkname\ [^\n]+\n
+      (//go:cgo_import_dynamic\ [^\n]+)
+    }x
+    Pathname.glob(syscall_glob).each do |syscall_file|
+      inreplace syscall_file do |s|
+        s.gsub!(/funcPC\((libc_\w+)_trampoline\)/) do
+          "#{$1}_trampoline_addr"
+        end
+        s.gsub!(linkname_re) do
+          "var #{$1}_trampoline_addr uintptr\n\n#{$2}"
+        end
+      end
+    end
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
