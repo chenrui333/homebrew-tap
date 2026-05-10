@@ -1,6 +1,6 @@
 class Matcha < Formula
   desc "Terminal email client built with Bubble Tea"
-  homepage "https://matcha.floatpane.com/"
+  homepage "https://matcha.email/"
   url "https://github.com/floatpane/matcha/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "8b20f7c92e48c5a5c5c8a5e4dbd8baa5152820124382f0547d583afe294b8fe9"
   license "MIT"

@@ -543,7 +543,7 @@ Total formulas: 879
 | amux | TUI for easily running parallel coding agents | 74 | 2 | 2026-03-30 | 2026-03-18 | MIT | ✓ | - | [link](https://github.com/andyrewlee/amux) |
 | kubeseal-convert | Tool to import secrets from secret managers (Vault, SecretsM... | 73 | 8 | 2026-02-09 | 2024-08-26 | Apache-2.0 | ✓ | - | [link](https://github.com/EladLeev/kubeseal-convert) |
 | lib-x | Browse your calibre library from the terminal | 73 | 3 | 2025-07-07 | 2025-01-27 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/Benexl/lib-x) |
-| matcha | Terminal email client built with Bubble Tea | 72 | 4 | 2026-02-23 | 2026-02-22 | MIT | ✓ | - | [link](https://matcha.floatpane.com/) |
+| matcha | Terminal email client built with Bubble Tea | 72 | 4 | 2026-02-23 | 2026-02-22 | MIT | ✓ | - | [link](https://matcha.email/) |
 | mush | Build system for shell packages | 72 | 1 | 2026-03-22 | 2024-03-21 | MIT | ✓ | - | [link](https://github.com/javanile/mush) |
 | ftdv | Terminal-based file tree diff viewer with flexible diff tool... | 71 | 6 | 2025-12-15 | 2025-07-02 | - | ✓ | - | [link](https://github.com/wtnqk/ftdv) |
 | snip | Terminal snippet manager for storing, searching, and copying... | 70 | 1 | 2026-03-19 | 2026-03-19 | MIT | ✓ | - | [link](https://github.com/phlx0/snip) |
