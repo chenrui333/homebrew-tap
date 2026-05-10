@@ -54,6 +54,10 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/CMakeLists.txt",
               "if(CMAKE_SYSTEM_PROCESSOR MATCHES arm)",
               "if(CMAKE_SYSTEM_PROCESSOR MATCHES arm AND CMAKE_OSX_SYSROOT MATCHES \"iphone\")"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/util/autovector.h" do |s|
+      s.gsub! "const_reference operator*() const", "reference operator*() const"
+      s.gsub! "const_pointer operator->() const", "pointer operator->() const"
+    end
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
               "cmake_minimum_required(VERSION 3.3 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
