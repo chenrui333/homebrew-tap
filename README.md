@@ -207,7 +207,6 @@ brew install --cask <tool>
 - `cueitup`
 - `cull`
 - `curlconverter`
-- `dakora`
 - `dart-sass`
 - `darya`
 - `datacmd`
