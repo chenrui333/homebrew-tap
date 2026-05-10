@@ -1,0 +1,16 @@
+formula-status/formula-status.md
+  h_9df9c32c3f321d 546
+Formula/m/matcha.rb
+  h_9df9c32c3f321d 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "7b86f70450ce71d822b50bc43af3468099ae54c2",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
