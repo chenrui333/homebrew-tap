@@ -98,7 +98,16 @@ class Cockroach < Formula
     cp host_dir/"host_darwin_amd64.go", host_dir/"host_darwin_arm64.go"
     inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/go-libedit/unix/sigtramp/sigtramp_other.go",
               "// +build !darwin !amd64",
-              "//go:build !darwin && !amd64\n// +build !darwin,!amd64"
+              "//go:build !darwin\n// +build !darwin"
+    inreplace "src/github.com/cockroachdb/cockroach/Makefile",
+              "@echo '// #cgo LDFLAGS: $(addprefix -L,$(CRYPTOPP_DIR) $(PROTOBUF_DIR) " \
+              "$(JEMALLOC_DIR)/lib $(SNAPPY_DIR) $(ROCKSDB_DIR) $(LIBROACH_DIR) $(KRB_DIR))' >> $@\n" \
+              "\t@echo 'import \"C\"' >> $@",
+              "@echo '// #cgo LDFLAGS: $(addprefix -L,$(CRYPTOPP_DIR) $(PROTOBUF_DIR) " \
+              "$(JEMALLOC_DIR)/lib $(SNAPPY_DIR) $(ROCKSDB_DIR) $(LIBROACH_DIR) $(KRB_DIR))' >> $@\n" \
+              "\t@if [ \"$(notdir $(@D))\" = \"engine\" ]; then echo " \
+              "'// #cgo darwin LDFLAGS: -Wl,-force_load,$(ROCKSDB_DIR)/librocksdb.a' >> $@; fi\n" \
+              "\t@echo 'import \"C\"' >> $@"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
