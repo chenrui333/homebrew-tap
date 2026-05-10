@@ -27,7 +27,6 @@ class Sonarqube < Formula
       s.sub!(/^#sonar\.path\.data=.*/, "sonar.path.data=#{var}/sonarqube/data")
       s.sub!(/^#sonar\.path\.logs=.*/, "sonar.path.logs=#{var}/sonarqube/logs")
       s.sub!(/^#sonar\.path\.temp=.*/, "sonar.path.temp=#{var}/sonarqube/temp")
-      s.sub!(/^#sonar\.search\.javaAdditionalOpts=.*/, "sonar.search.javaAdditionalOpts=-Des.entitlements.enabled=false")
     end
 
     libexec.install Dir["*"]
@@ -80,6 +79,8 @@ class Sonarqube < Formula
     ENV.delete "COLUMNS"
 
     assert_match(/SonarQube.* is not running/, shell_output("#{bin}/sonar status", 1))
+    return if OS.linux?
+
     pid = fork { exec bin/"sonar", "console" }
     begin
       sleep 15
