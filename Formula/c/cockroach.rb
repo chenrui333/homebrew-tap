@@ -80,6 +80,13 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/Makefile",
               "cd $(KRB5_SRC_DIR)/src && autoreconf",
               "cd $(KRB5_SRC_DIR)/src && autoheader configure.in && autoconf -o configure configure.in"
+    if OS.linux?
+      inreplace "src/github.com/cockroachdb/cockroach/Makefile",
+                "cd $(KRB5_DIR) && env -u CFLAGS -u CXXFLAGS $(KRB5_SRC_DIR)/src/configure " \
+                "$(xconfigure-flags) --enable-static --disable-shared",
+                "cd $(KRB5_DIR) && env -u CXXFLAGS CFLAGS=\"-g -O2 -fcommon\" " \
+                "$(KRB5_SRC_DIR)/src/configure $(xconfigure-flags) --enable-static --disable-shared"
+    end
     inreplace "src/github.com/cockroachdb/cockroach/Makefile",
               'cd $(CRYPTOPP_DIR) && CFLAGS+=" $(aes)" && CXXFLAGS+=" $(aes)" cmake',
               'cd $(CRYPTOPP_DIR) && CFLAGS+=" $(aes)" && CXXFLAGS+=" $(aes) -std=c++14" cmake'
