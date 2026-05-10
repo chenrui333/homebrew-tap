@@ -24,7 +24,6 @@ class Cockroach < Formula
     # the more up-to-date make that Homebrew provides.
     ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
     ENV["YACC"] = "#{Formula["bison"].opt_bin/"bison"} -y"
-    ENV["CGO_LDFLAGS_ALLOW"] = "-Wl,-force_load,.*" if OS.mac?
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     # Patch the CXX_FLAGS used to build rocksdb as a workaround for the issue fixed by
@@ -64,6 +63,9 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/CMakeLists.txt",
               "cmake_minimum_required(VERSION 2.8.12)",
               "cmake_minimum_required(VERSION 3.5)"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/CMakeLists.txt",
+              "if(CMAKE_SYSTEM_PROCESSOR MATCHES arm)",
+              "if(CMAKE_SYSTEM_PROCESSOR MATCHES arm AND CMAKE_OSX_SYSROOT MATCHES \"iphone\")"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
               "cmake_minimum_required(VERSION 3.3 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
@@ -100,15 +102,6 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/go-libedit/unix/sigtramp/sigtramp_other.go",
               "// +build !darwin !amd64",
               "//go:build !darwin\n// +build !darwin"
-    inreplace "src/github.com/cockroachdb/cockroach/Makefile",
-              "@echo '// #cgo LDFLAGS: $(addprefix -L,$(CRYPTOPP_DIR) $(PROTOBUF_DIR) " \
-              "$(JEMALLOC_DIR)/lib $(SNAPPY_DIR) $(ROCKSDB_DIR) $(LIBROACH_DIR) $(KRB_DIR))' >> $@\n" \
-              "\t@echo 'import \"C\"' >> $@",
-              "@echo '// #cgo LDFLAGS: $(addprefix -L,$(CRYPTOPP_DIR) $(PROTOBUF_DIR) " \
-              "$(JEMALLOC_DIR)/lib $(SNAPPY_DIR) $(ROCKSDB_DIR) $(LIBROACH_DIR) $(KRB_DIR))' >> $@\n" \
-              "\t@if [ \"$(notdir $(@D))\" = \"engine\" ]; then echo " \
-              "'// #cgo darwin LDFLAGS: -Wl,-force_load,$(ROCKSDB_DIR)/librocksdb.a' >> $@; fi\n" \
-              "\t@echo 'import \"C\"' >> $@"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
