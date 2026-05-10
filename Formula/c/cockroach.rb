@@ -94,6 +94,8 @@ class Cockroach < Formula
     end
     process_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/github.com/shirou/gopsutil/process")
     cp process_dir/"process_darwin_amd64.go", process_dir/"process_darwin_arm64.go"
+    host_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/github.com/shirou/gopsutil/host")
+    cp host_dir/"host_darwin_amd64.go", host_dir/"host_darwin_arm64.go"
     inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/go-libedit/unix/sigtramp/sigtramp_other.go",
               "// +build !darwin !amd64",
               "//go:build !darwin && !amd64\n// +build !darwin,!amd64"
