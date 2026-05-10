@@ -42,6 +42,8 @@ class VibeLogCli < Formula
     vendor_dir = node_modules/"@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     rm_r(vendor_dir)
 
+    node_modules.glob("**/@zed-industries/codex-acp-linux-*").each(&:rmtree)
+
     clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
     if OS.linux?
