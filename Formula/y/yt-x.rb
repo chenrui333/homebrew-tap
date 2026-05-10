@@ -38,23 +38,6 @@ class YtX < Formula
                 fi
               EOS
 
-    extension_dispatch_replacement = [
-      "      elif [ -s \"$CLI_EXTENSIONS_DIR/$2\" ]; then",
-      "        . \"$CLI_EXTENSIONS_DIR/$2\"",
-      "      elif [ -s \"$CLI_BUNDLED_EXTENSIONS_DIR/$2\" ]; then",
-      "        . \"$CLI_BUNDLED_EXTENSIONS_DIR/$2\"",
-      "      else",
-      "        echo \"Extension '$2' not found in $CLI_EXTENSIONS_DIR or $CLI_BUNDLED_EXTENSIONS_DIR\" >&2",
-      "        exit 1",
-      "      fi",
-      "",
-      "      shift_count=2",
-      "    ;;",
-    ].join("\n")
-    inreplace "yt-x",
-              /      else\n        \. "\$CLI_EXTENSIONS_DIR\/\$2"\n      fi\n\n      shift_count=2\n    ;;/,
-              extension_dispatch_replacement
-
     inreplace "yt-x",
               'ext_dir="$HOME/.config/$CLI_NAME/extensions"',
               "ext_dir=\"#{pkgshare}/extensions\""
