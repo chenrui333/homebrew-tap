@@ -14,6 +14,7 @@ class Cockroach < Formula
   depends_on "xz" => :build
 
   on_linux do
+    depends_on "ncurses"
     depends_on arch: :x86_64 # Cockroach 19.1 vendored Kerberos does not configure on Linux ARM
   end
 
@@ -34,14 +35,14 @@ class Cockroach < Formula
         253c253
         <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
         ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=unused-but-set-variable")
+        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=unused-but-set-variable -Wno-error=unused-function")
       PATCH
     else
       patch = <<~PATCH
         253c253
         <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
         ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted -Wno-error=deprecated-copy-with-user-provided-copy -Wno-error=unused-but-set-variable")
+        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted -Wno-error=deprecated-copy-with-user-provided-copy -Wno-error=unused-but-set-variable -Wno-error=unused-function")
       PATCH
     end
     patchfile = Tempfile.new("patch")
@@ -133,15 +134,19 @@ class Cockroach < Formula
   end
 
   test do
+    port = free_port
+    http_port = free_port
+
     # Redirect stdout and stderr to a file, or else  `brew test --verbose`
     # will hang forever as it waits for stdout and stderr to close.
-    system "#{bin}/cockroach start --insecure --background &> start.out"
-    pipe_output("#{bin}/cockroach sql --insecure", <<~EOS)
+    system "#{bin}/cockroach start --insecure --listen-addr=localhost:#{port} " \
+           "--http-addr=localhost:#{http_port} --store=#{testpath}/store --background > start.out 2>&1"
+    pipe_output("#{bin}/cockroach sql --insecure --host=localhost:#{port}", <<~EOS)
       CREATE DATABASE bank;
       CREATE TABLE bank.accounts (id INT PRIMARY KEY, balance DECIMAL);
       INSERT INTO bank.accounts VALUES (1, 1000.50);
     EOS
-    output = pipe_output("#{bin}/cockroach sql --insecure --format=csv",
+    output = pipe_output("#{bin}/cockroach sql --insecure --host=localhost:#{port} --format=csv",
       "SELECT * FROM bank.accounts;")
     assert_equal <<~EOS, output
       id,balance
@@ -157,6 +162,6 @@ class Cockroach < Formula
     end
     raise e
   ensure
-    system bin/"cockroach", "quit", "--insecure"
+    system bin/"cockroach", "quit", "--insecure", "--host=localhost:#{port}" if port
   end
 end
