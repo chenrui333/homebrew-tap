@@ -5,6 +5,8 @@ class Sonarqube < Formula
   sha256 "3bf5d9b8cc545df1f148878675a5d04e306f846eb4d3ba72577cf82d2bb287b8"
   license "LGPL-3.0-or-later"
 
+  preserve_rpath
+
   livecheck do
     url "https://www.sonarsource.com/page-data/products/sonarqube/downloads/success-download-community-edition/page-data.json"
     regex(/sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
@@ -43,6 +45,12 @@ class Sonarqube < Formula
     arch = Hardware::CPU.intel? ? "x64" : "aarch64"
     (libexec/"elasticsearch/lib/platform").glob("*").each do |dir|
       rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
+    end
+
+    if OS.mac?
+      libexec.glob("elasticsearch/lib/platform/darwin-*/libvec.dylib").each do |dylib|
+        MachO::Tools.change_dylib_id(dylib, "@rpath/libvec.dylib")
+      end
     end
   end
 
