@@ -16,6 +16,7 @@ class Projscan < Formula
   end
 
   depends_on "pkgconf" => :build
+  depends_on "tree-sitter" => :build
   depends_on "node"
   depends_on "vips"
 
@@ -24,7 +25,13 @@ class Projscan < Formula
     ENV["npm_config_nodedir"] = Formula["node"].opt_prefix
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
+    system "npm", "pkg", "delete", "scripts.prepare"
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+
+    tree_sitter_cli = buildpath/"node_modules/tree-sitter-cli/tree-sitter"
+    rm tree_sitter_cli
+    tree_sitter_cli.dirname.install_symlink Formula["tree-sitter"].opt_bin/"tree-sitter"
+
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
 
