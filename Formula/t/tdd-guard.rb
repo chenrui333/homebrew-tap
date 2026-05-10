@@ -14,11 +14,11 @@ class TddGuard < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4387aced381ebee74c9430eab942c78f696801c20e0a52756b3e9b18f731c5d6"
   end
 
-  depends_on "tree-sitter" => :build
+  depends_on "tree-sitter-cli" => :build
   depends_on "node"
 
   def install
-    ENV.prepend_path "PATH", Formula["tree-sitter"].opt_bin
+    ENV.prepend_path "PATH", Formula["tree-sitter-cli"].opt_bin
 
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
