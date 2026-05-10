@@ -71,6 +71,9 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
+              "],krb5_cv_inet6=yes,krb5_cv_inet6=no)])\nfi",
+              "],krb5_cv_inet6=yes,krb5_cv_inet6=no)\nfi])"
     inreplace "src/github.com/cockroachdb/cockroach/Makefile",
               "cd $(KRB5_SRC_DIR)/src && autoreconf",
               "cd $(KRB5_SRC_DIR)/src && autoconf -o configure configure.in"
