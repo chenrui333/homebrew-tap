@@ -18,12 +18,14 @@ class MlxVlm < Formula
   depends_on "rust" => :build
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
+  depends_on "gcc"
   depends_on "libsndfile"
   depends_on macos: :sonoma
   depends_on :macos
   depends_on "mlx"
   depends_on "mlx-lm"
   depends_on "numpy"
+  depends_on "openblas"
   depends_on "opencv"
   depends_on "pillow"
   depends_on "pydantic" => :no_linkage
