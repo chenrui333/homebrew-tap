@@ -45,10 +45,6 @@ class YtX < Formula
     libexec.install "yt-x"
     pkgshare.install "extensions"
 
-    with_env("HOME" => buildpath.to_s) do
-      generate_completions_from_executable(libexec/"yt-x", "completions", shell_parameter_format: :flag)
-    end
-
     path = [
       Formula["ffmpeg"].opt_bin,
       Formula["fzf"].opt_bin,
@@ -77,10 +73,6 @@ class YtX < Formula
 
     assert_path_exists testpath/".config/yt-x/config"
     assert_path_exists testpath/"Videos/yt-x"
-
-    fish_completion, status = Open3.capture2e(env, bin/"yt-x", "completions", "--fish")
-    assert_predicate status, :success?
-    assert_match "complete -c yt-x", fish_completion
 
     version_output, status = Open3.capture2e(env, bin/"yt-x", "--version")
     assert_predicate status, :success?
