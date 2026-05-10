@@ -14,6 +14,7 @@ class TddGuard < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4387aced381ebee74c9430eab942c78f696801c20e0a52756b3e9b18f731c5d6"
   end
 
+  depends_on "tree-sitter" => :build
   depends_on "node"
 
   def install
@@ -22,10 +23,11 @@ class TddGuard < Formula
 
     # Remove incompatible pre-built binaries
     node_modules = libexec/"lib/node_modules/tdd-guard/node_modules"
-    os = OS.mac? ? "macOS" : "Linux"
-    arch = Hardware::CPU.intel? ? "X64" : "ARM64"
-    node_modules.glob("@ast-grep/lang-*/prebuilds/*").each do |dir|
-      rm_r(dir) if dir.basename.to_s != "prebuild-#{os}-#{arch}"
+    node_modules.glob("@ast-grep/lang-*").each do |lang_dir|
+      rm_r(lang_dir/"prebuilds")
+      cd lang_dir do
+        system "npm", "run", "build"
+      end
     end
     node_modules.glob("**/@img/sharp-*").each(&:rmtree)
 
