@@ -18,6 +18,8 @@ class TddGuard < Formula
   depends_on "node"
 
   def install
+    ENV.prepend_path "PATH", Formula["tree-sitter"].opt_bin
+
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
