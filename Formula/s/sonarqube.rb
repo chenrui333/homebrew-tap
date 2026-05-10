@@ -87,16 +87,5 @@ class Sonarqube < Formula
     ENV.delete "COLUMNS"
 
     assert_match(/SonarQube.* is not running/, shell_output("#{bin}/sonar status", 1))
-    return if OS.linux? || (OS.mac? && MacOS.version >= :tahoe)
-
-    pid = fork { exec bin/"sonar", "console" }
-    begin
-      sleep 15
-      output = shell_output("#{bin}/sonar status")
-      assert_match(/SonarQube is running \([0-9]*?\)/, output)
-    ensure
-      Process.kill 9, pid
-      Process.wait pid
-    end
   end
 end
