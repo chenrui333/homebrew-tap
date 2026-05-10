@@ -30,6 +30,8 @@ class TddGuard < Formula
       cd lang_dir do
         if lang_dir.basename.to_s == "lang-php"
           system "npm", "install", "--no-save", "--ignore-scripts", "--no-audit", "--no-fund", "tree-sitter-php@0.24.2"
+          rm_r("node_modules/tree-sitter-cli")
+          rm_f("node_modules/.bin/tree-sitter")
         end
         system "npm", "run", "build"
         rm_r("node_modules") if lang_dir.basename.to_s == "lang-php"
