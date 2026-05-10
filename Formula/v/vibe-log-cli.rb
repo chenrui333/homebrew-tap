@@ -7,11 +7,11 @@ class VibeLogCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "8b6008cb061f1ad6744157e2596175392f308b19954667778b7e144828c3f2a1"
-    sha256 cellar: :any,                 arm64_sequoia: "64a9d5f3690eee22d5c89d96a6996f0ae6a16128450a988900a2eb5251e5fb86"
-    sha256 cellar: :any,                 arm64_sonoma:  "64a9d5f3690eee22d5c89d96a6996f0ae6a16128450a988900a2eb5251e5fb86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10b349e0a3629982a2a63e301e981257bdc204eec91a73057d80977e71c4f395"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "926e609132b4e9d1aac3c1d0727fbe085e2ac2031735770778d9a520bb2e1c53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25df11b797ab02e0b1cebc3ff0050fd1d1c0e56adbbf4e56cbeb02981aad6639"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25df11b797ab02e0b1cebc3ff0050fd1d1c0e56adbbf4e56cbeb02981aad6639"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25df11b797ab02e0b1cebc3ff0050fd1d1c0e56adbbf4e56cbeb02981aad6639"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "759f465c7cd39ccedbfae87161f404d1f1cc7a5136eab0f9be8cac83ce1e6cdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67857b1716fa29d9cbd519710ddcdc8007675cff01933ff9789504165b87a34b"
   end
 
   depends_on "node"
