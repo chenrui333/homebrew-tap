@@ -41,7 +41,7 @@ class YtX < Formula
     old_extension_dispatch = [
       "    -x | --extensions)",
       "      [ -n \"$2\" ] || _app_usage 1",
-      "      if [ \"\${2#/}\" != \"$2\" ]; then",
+      "      if [ \"${2#/}\" != \"$2\" ]; then",
       "        . \"$2\"",
       "      else",
       "        . \"$CLI_EXTENSIONS_DIR/$2\"",
@@ -49,12 +49,11 @@ class YtX < Formula
       "",
       "      shift_count=2",
       "    ;;",
-      "",
     ].join("\n")
     new_extension_dispatch = [
       "    -x | --extensions)",
       "      [ -n \"$2\" ] || _app_usage 1",
-      "      if [ \"\${2#/}\" != \"$2\" ]; then",
+      "      if [ \"${2#/}\" != \"$2\" ]; then",
       "        . \"$2\"",
       "      elif [ -s \"$CLI_EXTENSIONS_DIR/$2\" ]; then",
       "        . \"$CLI_EXTENSIONS_DIR/$2\"",
@@ -67,7 +66,6 @@ class YtX < Formula
       "",
       "      shift_count=2",
       "    ;;",
-      "",
     ].join("\n")
     inreplace "yt-x", old_extension_dispatch, new_extension_dispatch
 
