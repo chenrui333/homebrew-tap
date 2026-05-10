@@ -24,6 +24,7 @@ class Cockroach < Formula
     # the more up-to-date make that Homebrew provides.
     ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
     ENV["YACC"] = "#{Formula["bison"].opt_bin/"bison"} -y"
+    ENV["CGO_LDFLAGS_ALLOW"] = "-Wl,-force_load,.*" if OS.mac?
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     # Patch the CXX_FLAGS used to build rocksdb as a workaround for the issue fixed by
