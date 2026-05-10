@@ -38,23 +38,7 @@ class YtX < Formula
                 fi
               EOS
 
-    old_extension_dispatch = [
-      "    -x | --extensions)",
-      "      [ -n \"$2\" ] || _app_usage 1",
-      "      if [ \"${2#/}\" != \"$2\" ]; then",
-      "        . \"$2\"",
-      "      else",
-      "        . \"$CLI_EXTENSIONS_DIR/$2\"",
-      "      fi",
-      "",
-      "      shift_count=2",
-      "    ;;",
-    ].join("\n")
-    new_extension_dispatch = [
-      "    -x | --extensions)",
-      "      [ -n \"$2\" ] || _app_usage 1",
-      "      if [ \"${2#/}\" != \"$2\" ]; then",
-      "        . \"$2\"",
+    extension_dispatch_replacement = [
       "      elif [ -s \"$CLI_EXTENSIONS_DIR/$2\" ]; then",
       "        . \"$CLI_EXTENSIONS_DIR/$2\"",
       "      elif [ -s \"$CLI_BUNDLED_EXTENSIONS_DIR/$2\" ]; then",
@@ -67,7 +51,9 @@ class YtX < Formula
       "      shift_count=2",
       "    ;;",
     ].join("\n")
-    inreplace "yt-x", old_extension_dispatch, new_extension_dispatch
+    inreplace "yt-x",
+              /      else\n        \. "\$CLI_EXTENSIONS_DIR\/\$2"\n      fi\n\n      shift_count=2\n    ;;/,
+              extension_dispatch_replacement
 
     inreplace "yt-x",
               'ext_dir="$HOME/.config/$CLI_NAME/extensions"',
