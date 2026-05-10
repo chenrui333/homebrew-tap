@@ -64,7 +64,7 @@ class Ytsurf < Formula
     assert_predicate status, :success?
     assert_match version.to_s, version_output
 
-    cache_dir = testpath/"cache/ytsurf"
+    cache_dir = testpath/".cache/ytsurf"
     cache_dir.mkpath
     (cache_dir/"queue.json").write "[]\n"
 
