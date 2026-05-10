@@ -5,12 +5,12 @@ class Sonarqube < Formula
   sha256 "3bf5d9b8cc545df1f148878675a5d04e306f846eb4d3ba72577cf82d2bb287b8"
   license "LGPL-3.0-or-later"
 
-  preserve_rpath
-
   livecheck do
     url "https://www.sonarsource.com/page-data/products/sonarqube/downloads/success-download-community-edition/page-data.json"
     regex(/sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
+
+  preserve_rpath
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
