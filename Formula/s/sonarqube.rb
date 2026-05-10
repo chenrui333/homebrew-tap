@@ -19,7 +19,7 @@ class Sonarqube < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c878af8f838e67d91da4e184255b3a1103b964be1bd2b9f57b054d38ace9f860"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk@21"
 
   def install
     inreplace "conf/sonar.properties" do |s|
@@ -32,7 +32,7 @@ class Sonarqube < Formula
     libexec.install Dir["*"]
     (libexec/"extensions/downloads").mkpath
 
-    env = Language::Java.overridable_java_home_env("17")
+    env = Language::Java.overridable_java_home_env("21")
     env["PATH"] = "$JAVA_HOME/bin:$PATH"
     env["PIDDIR"] = var/"run"
     platform = OS.mac? ? "macosx-universal-64" : "linux-x86-64"
