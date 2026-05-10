@@ -75,6 +75,10 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/strtime/bsdshim.h",
               "#include <time.h>\n\n#define locale_t int",
               "#include <time.h>\n#include <locale.h>\n\n#define locale_t int"
+    inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/strtime/gmtime_r.c",
+              "static void\ntimesub(timep, offset, tmp)\nconst time_t * const\t\t\ttimep;\n" \
+              "const long\t\t\t\toffset;\nstruct mytm * const\t\ttmp;\n{\n",
+              "static void\ntimesub(const time_t * const timep, const long offset, struct mytm * const tmp)\n{\n"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
