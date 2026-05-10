@@ -12,11 +12,11 @@ class Sonarqube < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2cb4e57b4aa813b943b838c4ba1ea998b47ab3da28586759873531a7182449c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2cb4e57b4aa813b943b838c4ba1ea998b47ab3da28586759873531a7182449c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2cb4e57b4aa813b943b838c4ba1ea998b47ab3da28586759873531a7182449c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea27212d82b3368ccaa42bcfa66a94422b9d65820333a08aea2ca56e87503ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c878af8f838e67d91da4e184255b3a1103b964be1bd2b9f57b054d38ace9f860"
+    sha256 cellar: :any,                 arm64_tahoe:   "de2a2ef38e7bc8e626d22bd23074e9a10bf2b377a951ef44424fda1c322cb459"
+    sha256 cellar: :any,                 arm64_sequoia: "a73e6b26a549e2e2342468f68e8145cd279575c75a83eb69c4f05cb71dfb8db5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a73e6b26a549e2e2342468f68e8145cd279575c75a83eb69c4f05cb71dfb8db5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98b8640289b3d17991f63fc331d526868b523ff5008c2c5d980186f14d0acdd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d780b8d5486ed46f59d567ba9ffc7c3d92abd0857a09220c41ef2ab6ab73280d"
   end
 
   depends_on "openjdk@21"
