@@ -88,8 +88,8 @@ class Cockroach < Formula
     }x
     Pathname.glob(syscall_glob).each do |syscall_file|
       inreplace syscall_file do |s|
-        s.gsub!(/funcPC\((libc_\w+)_trampoline\)/, "\\1_trampoline_addr")
-        s.gsub!(linkname_re, "var \\1_trampoline_addr uintptr\n\n\\2")
+        s.gsub!(/funcPC\((libc_\w+)_trampoline\)/, "\\1_trampoline_addr", audit_result: false)
+        s.gsub!(linkname_re, "var \\1_trampoline_addr uintptr\n\n\\2", audit_result: false)
       end
     end
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
