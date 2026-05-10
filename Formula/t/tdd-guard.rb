@@ -29,11 +29,10 @@ class TddGuard < Formula
       rm_r(lang_dir/"prebuilds")
       cd lang_dir do
         if lang_dir.basename.to_s == "lang-php"
-          inreplace "package.json",
-                    "tree-sitter build -o parser.so ./node_modules/tree-sitter-php/php",
-                    "tree-sitter build -o parser.so"
+          system "npm", "install", "--no-save", "--ignore-scripts", "--no-audit", "--no-fund", "tree-sitter-php@0.24.2"
         end
         system "npm", "run", "build"
+        rm_r("node_modules") if lang_dir.basename.to_s == "lang-php"
       end
     end
     node_modules.glob("**/@img/sharp-*").each(&:rmtree)
