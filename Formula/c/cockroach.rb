@@ -92,6 +92,11 @@ class Cockroach < Formula
         s.gsub!(linkname_re, "var \\1_trampoline_addr uintptr\n\n\\2", audit_result: false)
       end
     end
+    process_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/github.com/shirou/gopsutil/process")
+    cp process_dir/"process_darwin_amd64.go", process_dir/"process_darwin_arm64.go"
+    inreplace "src/github.com/cockroachdb/cockroach/vendor/github.com/knz/go-libedit/unix/sigtramp/sigtramp_other.go",
+              "// +build !darwin !amd64",
+              "//go:build !darwin && !amd64\n// +build !darwin,!amd64"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
               "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
