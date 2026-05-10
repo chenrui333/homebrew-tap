@@ -56,7 +56,7 @@ class Cockroach < Formula
               "cmake_minimum_required(VERSION 2.8.12)",
               "cmake_minimum_required(VERSION 3.5)"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
-              "cmake_minimum_required(VERSION 2.8)",
+              "cmake_minimum_required(VERSION 3.3 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
 
     # Ensure that go modules are not used as cockroachdb does not support them.
