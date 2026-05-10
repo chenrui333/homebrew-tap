@@ -69,7 +69,11 @@ class AustinTui < Formula
   end
 
   test do
-    output = shell_output("#{bin}/austin-tui --version 2>&1", 1)
-    assert_match "🏁 Starting the Austin TUI", output
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"austin-tui", "--version")
+    assert_includes [1, 255], status.exitstatus
+    assert_match "Austin failed to start", output
+    assert_match "Some arguments were left unparsed", output
   end
 end
