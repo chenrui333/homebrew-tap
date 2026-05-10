@@ -10,8 +10,6 @@ class Sonarqube < Formula
     regex(/sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
-  preserve_rpath
-
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2cb4e57b4aa813b943b838c4ba1ea998b47ab3da28586759873531a7182449c"
@@ -20,6 +18,8 @@ class Sonarqube < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea27212d82b3368ccaa42bcfa66a94422b9d65820333a08aea2ca56e87503ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c878af8f838e67d91da4e184255b3a1103b964be1bd2b9f57b054d38ace9f860"
   end
+
+  preserve_rpath
 
   depends_on "openjdk@21"
 
