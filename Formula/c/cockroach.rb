@@ -27,14 +27,14 @@ class Cockroach < Formula
         253c253
         <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
         ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow")
+        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=unused-but-set-variable")
       PATCH
     else
       patch = <<~PATCH
         253c253
         <     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
         ---
-        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted")
+        >     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-error=shadow -Wno-error=defaulted-function-deleted -Wno-error=unused-but-set-variable")
       PATCH
     end
     patchfile = Tempfile.new("patch")
@@ -54,6 +54,9 @@ class Cockroach < Formula
               "cmake_minimum_required(VERSION 3.5)"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/CMakeLists.txt",
               "cmake_minimum_required(VERSION 2.8.12)",
+              "cmake_minimum_required(VERSION 3.5)"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
+              "cmake_minimum_required(VERSION 2.8)",
               "cmake_minimum_required(VERSION 3.5)"
 
     # Ensure that go modules are not used as cockroachdb does not support them.
