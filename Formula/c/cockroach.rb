@@ -64,9 +64,15 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/cryptopp/CMakeLists.txt",
               "cmake_minimum_required(VERSION 2.8.5 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/krb5/src/aclocal.m4",
+              "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)",
+              "if test -d \"$srcdir/$ac_config_fragdir\"; then\n  :\n  AC_CONFIG_AUX_DIR(K5_TOPDIR/config)"
     inreplace "src/github.com/cockroachdb/cockroach/Makefile",
               "cd $(KRB5_SRC_DIR)/src && autoreconf",
               "cd $(KRB5_SRC_DIR)/src && autoconf -o configure configure.in"
+    inreplace "src/github.com/cockroachdb/cockroach/Makefile",
+              'cd $(CRYPTOPP_DIR) && CFLAGS+=" $(aes)" && CXXFLAGS+=" $(aes)" cmake',
+              'cd $(CRYPTOPP_DIR) && CFLAGS+=" $(aes)" && CXXFLAGS+=" $(aes) -std=c++14" cmake'
 
     # Ensure that go modules are not used as cockroachdb does not support them.
     ENV["GO111MODULE"] = "off"
