@@ -71,7 +71,7 @@ class YtX < Formula
     assert_match "Name=yt-x", desktop_entry
     assert_match "Version=#{version}", desktop_entry
 
-    assert_path_exists testpath/".config/yt-x/config"
+    assert_path_exists testpath/"config/yt-x/config"
     assert_path_exists testpath/"Videos/yt-x"
 
     version_output, status = Open3.capture2e(env, bin/"yt-x", "--version")
