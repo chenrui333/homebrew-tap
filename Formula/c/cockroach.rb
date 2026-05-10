@@ -76,7 +76,7 @@ class Cockroach < Formula
               "],krb5_cv_inet6=yes,krb5_cv_inet6=no)\nfi])"
     inreplace "src/github.com/cockroachdb/cockroach/Makefile",
               "cd $(KRB5_SRC_DIR)/src && autoreconf",
-              "cd $(KRB5_SRC_DIR)/src && autoconf -o configure configure.in"
+              "cd $(KRB5_SRC_DIR)/src && autoheader configure.in && autoconf -o configure configure.in"
     inreplace "src/github.com/cockroachdb/cockroach/Makefile",
               'cd $(CRYPTOPP_DIR) && CFLAGS+=" $(aes)" && CXXFLAGS+=" $(aes)" cmake',
               'cd $(CRYPTOPP_DIR) && CFLAGS+=" $(aes)" && CXXFLAGS+=" $(aes) -std=c++14" cmake'
