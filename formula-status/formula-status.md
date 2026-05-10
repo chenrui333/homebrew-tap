@@ -817,7 +817,6 @@ Total formulas: 879
 | context-file-manager | File management CLI tool for your prompts and context | - | - | - | - | MIT | ✓ | - | [link](https://docs.nhost.io/platform/cli/overview#cli-overview) |
 | cross-seed | Fully-automatic cross-seeding with Torznab | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://www.cross-seed.org/) |
 | curlconverter | Transpile curl commands into Python, JavaScript and 27 other... | - | - | - | - | MIT | ✓ | - | [link](https://curlconverter.com/) |
-| dakora | Manage and hot-reload prompts with typed inputs and zero-dep... | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://dakora.io/) |
 | debugg-ai-mcp | MCP Server for Debugg AI | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://debugg.ai/) |
 | dg | Self-testing CLI documentation tool that generates interacti... | - | - | - | - | MIT | ✓ | - | [link](https://deepguide.ai/) |
 | dhv | Tool to dive into Python code | - | - | - | - | GPL-3.0-or-later | ✓ | - | [link](https://dhv.davep.dev/) |
