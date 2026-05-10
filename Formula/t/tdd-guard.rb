@@ -7,11 +7,11 @@ class TddGuard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "e6819975f8e39b0c55e8374d02f464492daa0feedc97f70d23e65a47f0ebc5e3"
-    sha256 cellar: :any,                 arm64_sequoia: "ee0e0e55bd08ef48a097875f8155c4bbef36f76b5bb65ecc2252ec8618ccac64"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee0e0e55bd08ef48a097875f8155c4bbef36f76b5bb65ecc2252ec8618ccac64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f1934a40ca684bbb527e73814bef355e6e85b404bac6719f9fb2726491f32fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4387aced381ebee74c9430eab942c78f696801c20e0a52756b3e9b18f731c5d6"
+    sha256 cellar: :any,                 arm64_tahoe:   "caa8c6b56c89fa022b34aa171ef9ee2c33a1beddc6700a4391537c594dd00d54"
+    sha256 cellar: :any,                 arm64_sequoia: "e59ad4c9dfce75153cff697dc0ced818ad1c771caedb47c5b40b77a9718a5ff1"
+    sha256 cellar: :any,                 arm64_sonoma:  "0e380b60e3a308724e5a9bea7b955118ee216b56143a681834e197af93185a24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36e8a32cffea3cf8c2c68e489ffafbc5172ee2f8e2e6457ed4dd38b3a0df1e2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f9e6c54309862b06d5bc0af771c941cf9cfe1155b87ff118094807939260a8b"
   end
 
   depends_on "tree-sitter-cli" => :build
