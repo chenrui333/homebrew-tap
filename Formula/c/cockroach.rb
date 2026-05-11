@@ -6,6 +6,14 @@ class Cockroach < Formula
   license "Apache-2.0"
   head "https://github.com/cockroachdb/cockroach.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7ff60f49d6ee2c15c10ebebe1ae119e961092def8c6f5ab8b422cd5d5ac39c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a52c95a2930c47717e7d48a6a09638379696bedf06f2ddd170297ee4166994bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dabb8a366d155ad19ebaaa6a408f1c8df979401285fbfd568faa98668792be1"
+    sha256                               x86_64_linux:  "f6c35960e7a574aeb35c4ef4328e8cfbad3db18b6a477af926d28c7d76faee02"
+  end
+
   depends_on "autoconf" => :build
   depends_on "bison" => :build
   depends_on "cmake" => :build
