@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/52/c0/006d45bb658b873651cc2fd2e1c47bedc2f122b808e31ad380f795bd6d7d/cccc_pair-0.4.14.tar.gz"
-  sha256 "4f977e7c7002a9f19b757f725f9b682ec9414c7f8f45adddbe8ea9110f768384"
+  url "https://files.pythonhosted.org/packages/6c/97/dba48dbbf0b61eadd0fb91752dfcbe0ae374d48bf65d2dd3396065a928c6/cccc_pair-0.4.15.tar.gz"
+  sha256 "12348471dc7139375ff23b0ac739b61ea138466b4903415a84483eba98f40e33"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -107,8 +107,8 @@ class Cccc < Formula
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/85/18/3770b74ce7e91af4b45a7b5c2c86084851e8997006b696aaddcd91b7977c/lark_oapi-1.6.0.tar.gz"
-    sha256 "da8ff124635a62819618ac409c0e1275d47a74b606de8b03173aec3b122a7393"
+    url "https://files.pythonhosted.org/packages/d1/48/cc1ffab88050ba015b7248038d35974a012a904ab240a85189d136c16552/lark_oapi-1.6.2.tar.gz"
+    sha256 "d98b89cb476be433d654e92252bb33bfbaeccfe87fda14ddec4b384096162d6f"
   end
 
   resource "multidict" do
@@ -117,8 +117,8 @@ class Cccc < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/9e/da/e9fc233cf63743258bff22b3dfa7ea5baef7b5bc324af47a0ad89b8ffc6f/propcache-0.4.1.tar.gz"
-    sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
+    url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
+    sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
   end
 
   resource "pycryptodome" do
@@ -162,8 +162,8 @@ class Cccc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
+    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
   resource "uvicorn" do
@@ -187,8 +187,8 @@ class Cccc < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/e2/73/9223dbc7be3dcaf2a7bbf756c351ec8da04b1fa573edaf545b95f6b0c7fd/websockets-13.1.tar.gz"
-    sha256 "a3b3366087c1bc0a2795111edcadddb8b3b59509d5db5d7ea3fdd69f954a8878"
+    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
+    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
   resource "wechatbot-sdk" do
