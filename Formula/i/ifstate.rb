@@ -3,8 +3,8 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.3.0-pre6.tar.gz"
-  sha256 "328f5762f3a9bae24bd5e72bce36a7c1ac6ceca063af3a5f9bf608e7c1f0f49e"
+  url "https://codeberg.org/liske/ifstate/archive/2.3.0.tar.gz"
+  sha256 "bd5e8621847e1226547798818a01c1d8cc8dff5fdd7cf2b98f6802c8042e7ef3"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
