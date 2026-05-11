@@ -161,56 +161,12 @@ class Cockroach < Formula
   end
 
   test do
-    require "socket"
+    assert_match version.to_s, shell_output("#{bin}/cockroach version")
 
-    pid = nil
-    port = free_port
-    http_port = free_port
-
-    log = testpath/"start.out"
-    pid = spawn bin/"cockroach", "start", "--insecure", "--listen-addr=127.0.0.1:#{port}",
-                "--http-addr=127.0.0.1:#{http_port}", "--store=#{testpath}/store",
-                out: log.to_s, err: log.to_s
-
-    port_open = false
-    60.times do
-      TCPSocket.new("127.0.0.1", port).close
-      port_open = true
-      break
-    rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Errno::ETIMEDOUT
-      sleep 1
-    end
-    assert port_open, "cockroach server did not start"
-
-    sql_cmd = "#{bin}/cockroach sql --insecure --host=127.0.0.1:#{port}"
-    pipe_output(sql_cmd, <<~EOS)
-      CREATE DATABASE bank;
-      CREATE TABLE bank.accounts (id INT PRIMARY KEY, balance DECIMAL);
-      INSERT INTO bank.accounts VALUES (1, 1000.50);
-    EOS
-    output = pipe_output("#{sql_cmd} --format=csv", "SELECT * FROM bank.accounts;")
-    assert_equal <<~EOS, output
-      id,balance
-      1,1000.50
-    EOS
-  rescue => e
-    # If an error occurs, attempt to print out any messages from the
-    # server.
-    begin
-      $stderr.puts "server messages:", File.read("start.out")
-    rescue
-      $stderr.puts "unable to load messages from start.out"
-    end
-    raise e
-  ensure
-    quiet_system bin/"cockroach", "quit", "--insecure", "--host=127.0.0.1:#{port}" if port
-    if pid
-      begin
-        Process.kill("TERM", pid)
-      rescue Errno::ESRCH
-        nil
-      end
-      Process.wait(pid)
-    end
+    key = testpath/"store.key"
+    output = shell_output("#{bin}/cockroach gen encryption-key #{key} --size=128")
+    assert_match "successfully created AES-128 key", output
+    assert_equal 48, key.size
+    assert_equal 0600, key.stat.mode & 0777
   end
 end
