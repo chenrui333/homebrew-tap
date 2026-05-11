@@ -8,11 +8,11 @@ class Nibble < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6881f72ce891c010d6236b79c6b7accf9ad27b80c293fd030a69498736aff08f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6881f72ce891c010d6236b79c6b7accf9ad27b80c293fd030a69498736aff08f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6881f72ce891c010d6236b79c6b7accf9ad27b80c293fd030a69498736aff08f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81f8087cc1f7a8ffccc6e214f7ae6dc5973c02cf7e4c75e6c843ed474fe8b11f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ca1123784c0980aee51e6819cd18be63907999ecebd394ea5e21c16e72bf7bb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e17b236b4fbe394ad48b56c7db07ceae43fd9c1fe25137097ef2116f0ef1a83f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e17b236b4fbe394ad48b56c7db07ceae43fd9c1fe25137097ef2116f0ef1a83f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e17b236b4fbe394ad48b56c7db07ceae43fd9c1fe25137097ef2116f0ef1a83f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8aec5bf1672fd8b7fa086202fa9598d799704e587089590f20fb2fff9db1431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db53192f7b417796e4dd3e9c5174c1619af095220e083f2fa8e20a7f7988ac8"
   end
 
   depends_on "go" => :build
