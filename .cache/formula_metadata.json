@@ -461,6 +461,12 @@
     "last_release": null,
     "stars": null
   },
+  "github:HewlettPackard/netperf": {
+    "forks": 204,
+    "last_commit": "2025-07-28",
+    "last_release": null,
+    "stars": 959
+  },
   "github:Higangssh/gitcredits": {
     "forks": 4,
     "last_commit": "2026-03-21",
@@ -526,6 +532,12 @@
     "last_commit": "2026-02-21",
     "last_release": "2026-02-21",
     "stars": 447
+  },
+  "github:JuliusBrussee/caveman": {
+    "forks": 3181,
+    "last_commit": "2026-05-10",
+    "last_release": "2026-05-10",
+    "stars": 57896
   },
   "github:Kenzo-Wada/thanks-stars": {
     "forks": 2,
@@ -2026,6 +2038,12 @@
     "last_commit": "2025-12-23",
     "last_release": "2025-12-23",
     "stars": 3
+  },
+  "github:douglascrockford/JSMin": {
+    "forks": 150,
+    "last_commit": "2026-03-03",
+    "last_release": null,
+    "stars": 713
   },
   "github:drhalto/agentmako": {
     "forks": 5,
@@ -3593,6 +3611,12 @@
     "last_release": "2023-12-19",
     "stars": 632
   },
+  "github:nizos/tdd-guard": {
+    "forks": 160,
+    "last_commit": "2026-05-10",
+    "last_release": "2026-05-02",
+    "stars": 2100
+  },
   "github:njenia/que": {
     "forks": 1,
     "last_commit": "2025-11-21",
@@ -3803,6 +3827,12 @@
     "last_release": "2025-12-08",
     "stars": 85
   },
+  "github:oysttyer/oysttyer": {
+    "forks": 45,
+    "last_commit": "2023-02-02",
+    "last_release": null,
+    "stars": 339
+  },
   "github:ozacod/cpx": {
     "forks": 0,
     "last_commit": "2026-01-28",
@@ -4000,6 +4030,12 @@
     "last_commit": "2025-11-23",
     "last_release": null,
     "stars": 123
+  },
+  "github:realnc/frobtads": {
+    "forks": 14,
+    "last_commit": "2022-06-19",
+    "last_release": "2021-05-09",
+    "stars": 51
   },
   "github:reugn/gemini-cli": {
     "forks": 17,
@@ -4217,6 +4253,12 @@
     "last_release": "2026-02-16",
     "stars": 13221
   },
+  "github:sensepost/ruler": {
+    "forks": 361,
+    "last_commit": "2024-06-10",
+    "last_release": "2021-02-19",
+    "stars": 2304
+  },
   "github:sepandhaghighi/clox": {
     "forks": 2,
     "last_commit": "2026-02-17",
@@ -4228,6 +4270,12 @@
     "last_commit": "2026-02-17",
     "last_release": "2026-02-17",
     "stars": 303
+  },
+  "github:sflow/sflowtool": {
+    "forks": 89,
+    "last_commit": "2026-04-29",
+    "last_release": "2026-04-29",
+    "stars": 226
   },
   "github:sh1zen/wisu": {
     "forks": 0,
@@ -4979,6 +5027,12 @@
     "last_release": "2025-12-25",
     "stars": 97
   },
+  "github:wpscanteam/wpscan": {
+    "forks": 1341,
+    "last_commit": "2026-05-08",
+    "last_release": "2025-02-24",
+    "stars": 9566
+  },
   "github:wssheldon/osintui": {
     "forks": null,
     "last_commit": null,
@@ -5044,6 +5098,12 @@
     "last_commit": "2025-09-26",
     "last_release": null,
     "stars": 231
+  },
+  "github:zed-industries/claude-agent-acp": {
+    "forks": 265,
+    "last_commit": "2026-05-08",
+    "last_release": "2026-05-07",
+    "stars": 1856
   },
   "github:zenbase-ai/context42": {
     "forks": 2,
