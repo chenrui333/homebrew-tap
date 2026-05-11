@@ -87,6 +87,11 @@ class Cockroach < Formula
         s.gsub!(linkname_re, "var \\1_trampoline_addr uintptr\n\n\\2", audit_result: false)
       end
     end
+    xsys_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/golang.org/x/sys/unix")
+    go_xsys_dir = Formula["go"].opt_libexec/"src/cmd/vendor/golang.org/x/sys/unix"
+    %w[amd64 arm64].each do |arch|
+      cp go_xsys_dir/"zsyscall_darwin_#{arch}.s", xsys_dir/"zsyscall_darwin_#{arch}.s"
+    end
     process_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/github.com/shirou/gopsutil/process")
     cp process_dir/"process_darwin_amd64.go", process_dir/"process_darwin_arm64.go"
     host_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/github.com/shirou/gopsutil/host")
