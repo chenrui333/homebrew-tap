@@ -1,8 +1,8 @@
 class Nibble < Formula
   desc "Scan local networks from a terminal user interface"
   homepage "https://github.com/backendsystems/nibble"
-  url "https://github.com/backendsystems/nibble/archive/refs/tags/v0.8.3.tar.gz"
-  sha256 "5c7bc47d86847009f686adf3f7db27e9589ebe31f567c4dcbcf64834f4975910"
+  url "https://github.com/backendsystems/nibble/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "e3b084ddfacba6b9af9a004d7f6205495e862652b63d9bd96950990d3e610ec5"
   license "MIT"
   head "https://github.com/backendsystems/nibble.git", branch: "main"
 
