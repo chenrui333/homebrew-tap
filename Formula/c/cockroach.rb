@@ -161,23 +161,28 @@ class Cockroach < Formula
   end
 
   test do
+    require "socket"
+
+    pid = nil
     port = free_port
     http_port = free_port
 
-    pid = fork do
-      $stdout.reopen("start.out", "w")
-      $stderr.reopen($stdout)
-      exec bin/"cockroach", "start", "--insecure", "--listen-addr=127.0.0.1:#{port}",
-           "--http-addr=127.0.0.1:#{http_port}", "--store=#{testpath}/store"
-    end
+    log = testpath/"start.out"
+    pid = spawn bin/"cockroach", "start", "--insecure", "--listen-addr=127.0.0.1:#{port}",
+                "--http-addr=127.0.0.1:#{http_port}", "--store=#{testpath}/store",
+                out: log.to_s, err: log.to_s
 
-    sql_cmd = "#{bin}/cockroach sql --insecure --host=127.0.0.1:#{port}"
-    30.times do
-      break if system "#{sql_cmd} -e 'SELECT 1;' >/dev/null 2>&1"
-
+    port_open = false
+    60.times do
+      TCPSocket.new("127.0.0.1", port).close
+      port_open = true
+      break
+    rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Errno::ETIMEDOUT
       sleep 1
     end
+    assert port_open, "cockroach server did not start"
 
+    sql_cmd = "#{bin}/cockroach sql --insecure --host=127.0.0.1:#{port}"
     pipe_output(sql_cmd, <<~EOS)
       CREATE DATABASE bank;
       CREATE TABLE bank.accounts (id INT PRIMARY KEY, balance DECIMAL);
@@ -198,7 +203,7 @@ class Cockroach < Formula
     end
     raise e
   ensure
-    system bin/"cockroach", "quit", "--insecure", "--host=127.0.0.1:#{port}" if port
+    quiet_system bin/"cockroach", "quit", "--insecure", "--host=127.0.0.1:#{port}" if port
     if pid
       begin
         Process.kill("TERM", pid)
