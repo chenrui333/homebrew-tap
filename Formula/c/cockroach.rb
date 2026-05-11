@@ -164,17 +164,26 @@ class Cockroach < Formula
     port = free_port
     http_port = free_port
 
-    # Redirect stdout and stderr to a file, or else  `brew test --verbose`
-    # will hang forever as it waits for stdout and stderr to close.
-    system "#{bin}/cockroach start --insecure --listen-addr=localhost:#{port} " \
-           "--http-addr=localhost:#{http_port} --store=#{testpath}/store --background > start.out 2>&1"
-    pipe_output("#{bin}/cockroach sql --insecure --host=localhost:#{port}", <<~EOS)
+    pid = fork do
+      $stdout.reopen("start.out", "w")
+      $stderr.reopen($stdout)
+      exec bin/"cockroach", "start", "--insecure", "--listen-addr=127.0.0.1:#{port}",
+           "--http-addr=127.0.0.1:#{http_port}", "--store=#{testpath}/store"
+    end
+
+    sql_cmd = "#{bin}/cockroach sql --insecure --host=127.0.0.1:#{port}"
+    30.times do
+      break if system "#{sql_cmd} -e 'SELECT 1;' >/dev/null 2>&1"
+
+      sleep 1
+    end
+
+    pipe_output(sql_cmd, <<~EOS)
       CREATE DATABASE bank;
       CREATE TABLE bank.accounts (id INT PRIMARY KEY, balance DECIMAL);
       INSERT INTO bank.accounts VALUES (1, 1000.50);
     EOS
-    output = pipe_output("#{bin}/cockroach sql --insecure --host=localhost:#{port} --format=csv",
-      "SELECT * FROM bank.accounts;")
+    output = pipe_output("#{sql_cmd} --format=csv", "SELECT * FROM bank.accounts;")
     assert_equal <<~EOS, output
       id,balance
       1,1000.50
@@ -189,6 +198,14 @@ class Cockroach < Formula
     end
     raise e
   ensure
-    system bin/"cockroach", "quit", "--insecure", "--host=localhost:#{port}" if port
+    system bin/"cockroach", "quit", "--insecure", "--host=127.0.0.1:#{port}" if port
+    if pid
+      begin
+        Process.kill("TERM", pid)
+      rescue Errno::ESRCH
+        nil
+      end
+      Process.wait(pid)
+    end
   end
 end
