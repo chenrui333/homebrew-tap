@@ -6,6 +6,15 @@ class Gitpane < Formula
   license "MIT"
   head "https://github.com/affromero/gitpane.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "d90c261639277543eeed1321e4d11cd45978a6ffa4b63ba882b1b58bb387e2d3"
+    sha256                               arm64_sequoia: "43497aff7409392eb2e6150123745d515beb605a9a973a10a5427f77fcddd588"
+    sha256                               arm64_sonoma:  "fccd523329cd46c3ff6234fd7ba292a62098d8d97d6577196756fb368bd68849"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c998e5d243d4fdadc3d12917b6d7cd9843503f5a2e29c6dd66501d7799de36e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "870d23950b4518c84e0e9095ea333c90e61fa39ddc011e4aa0ed55465ad8b746"
+  end
+
   depends_on "rust" => :build
   depends_on "openssl@3"
 
