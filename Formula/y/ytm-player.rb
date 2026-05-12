@@ -158,7 +158,7 @@ class YtmPlayer < Formula
   end
 
   def install
-    ENV["PIP_NO_BUILD_ISOLATION"] = "1"
+    ENV["PIP_BUILD_ISOLATION"] = "false"
     virtualenv_install_with_resources
   end
 
