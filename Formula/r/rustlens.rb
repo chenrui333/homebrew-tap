@@ -15,7 +15,6 @@ class Rustlens < Formula
   end
 
   test do
-    (testpath/"src/main.rs").write("fn main() {}")
     assert_predicate bin/"rustlens", :exist?
   end
 end
