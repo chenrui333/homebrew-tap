@@ -4,6 +4,15 @@ class Gloomberb < Formula
   version "0.7.2"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "0b17f6ca397c3206fa206074e4895e446d425743e91dcf9adb73634326786807"
+    sha256                               arm64_sequoia: "0b17f6ca397c3206fa206074e4895e446d425743e91dcf9adb73634326786807"
+    sha256                               arm64_sonoma:  "0b17f6ca397c3206fa206074e4895e446d425743e91dcf9adb73634326786807"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f68437e19c2c79b0e6fa8cc467ec65d2a18eb4a632f2590d81f325a3f3d15fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31da9ea143e597aa4b626debdaf3fa2ee09a4f789b3461b7015fb05f70a43908"
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/vincelwt/gloomberb/releases/download/v#{version}/gloomberb-darwin-arm64.gz",
