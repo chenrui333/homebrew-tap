@@ -198,7 +198,7 @@ class Artui < Formula
   end
 
   def install
-    ENV.prepend "CPATH", "#{Formula["tree-sitter"].opt_include}:"
+    ENV.append "CFLAGS", "-I#{Formula["tree-sitter"].opt_include}"
     virtualenv_install_with_resources
   end
 
