@@ -1,8 +1,8 @@
 class Threatdeck < Formula
   desc "Terminal based threat intelligence monitoring and alerting platform"
   homepage "https://github.com/gripebomb/threatdeck"
-  url "https://github.com/gripebomb/threatdeck/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "334bf01aabc67b276b8a6cae6fe7c1d4b2c679be33358ab76416d4cf64cce4d6"
+  url "https://github.com/gripebomb/threatdeck/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "3fe1abb884507b2478dc30f24a03d2ba37d5f81c12d98572fc6daa17541a0ba6"
   license "MIT"
   head "https://github.com/gripebomb/threatdeck.git", branch: "main"
 
