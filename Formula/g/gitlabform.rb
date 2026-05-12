@@ -181,7 +181,7 @@ class Gitlabform < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gitlabform --version")
+    assert_match version.to_s, shell_output("#{bin}/gitlabform --version --skip-version-check")
 
     (testpath/"config.yml").write <<~YAML
       config_version: 3
