@@ -184,7 +184,7 @@ class Gitlabform < Formula
     assert_match version.to_s, shell_output("#{bin}/gitlabform --version --skip-version-check")
 
     (testpath/"config.yml").write <<~YAML
-      config_version: 3
+      config_version: 4
       project_settings:
         "*/*":
           merge_requests_access_level: "enabled"
