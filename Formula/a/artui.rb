@@ -10,7 +10,6 @@ class Artui < Formula
 
   depends_on "libyaml"
   depends_on "python@3.13"
-  depends_on "tree-sitter"
 
   resource "arxiv" do
     url "https://files.pythonhosted.org/packages/ff/78/1e93a001ed51b5114e1978247078fa3130cbb2794a520603949cbe9a7028/arxiv-3.0.0.tar.gz"
@@ -198,7 +197,18 @@ class Artui < Formula
   end
 
   def install
-    ENV.append "CFLAGS", "-I#{Formula["tree-sitter"].opt_include}"
+    # tree-sitter-html needs tree_sitter/parser.h (old API name)
+    # Use Python tree-sitter's bundled api.h + create parser.h shim
+    (buildpath/"ts_include/tree_sitter").mkpath
+    resource("tree-sitter").stage do
+      cp "tree_sitter/core/lib/include/tree_sitter/api.h",
+         buildpath/"ts_include/tree_sitter/api.h"
+    end
+    (buildpath/"ts_include/tree_sitter/parser.h").write(<<~EOS)
+      /* Shim: tree_sitter/parser.h was renamed to api.h in tree-sitter 0.24+ */
+      #include "api.h"
+    EOS
+    ENV.append "CFLAGS", "-I#{buildpath}/ts_include"
     virtualenv_install_with_resources
   end
 
