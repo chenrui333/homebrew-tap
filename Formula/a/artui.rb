@@ -4,7 +4,7 @@ class Artui < Formula
   desc "Read and track recent arXiv papers with a TUI"
   homepage "https://github.com/fjonasALICE/arTui"
   url "https://github.com/fjonasALICE/arTui/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "f22f2ac7a89ea1ffff04b18f8a010406bd465219e7832917f097329bf0a4f8ae"
+  sha256 "3fa66c140d21acbdec772734894b95226a3d7015a1c274ac6817afa60fe50f6b"
   license "MIT"
   head "https://github.com/fjonasALICE/arTui.git", branch: "main"
 
