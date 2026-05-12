@@ -2,7 +2,7 @@ class AdsbTui < Formula
   desc "Modern terminal user interface for tracking aircraft using ADS-B data"
   homepage "https://github.com/j4v3l/ADS-B_TUI"
   url "https://github.com/j4v3l/ADS-B_TUI/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "ea5644e236cbf22a22fbfbe7d82a690f2a2ab42548a6aa7c01de62a8699d402a"
+  sha256 "cfaec5443f30eeaa1908b7587695f219ff0b4cdf6c5967047f145fc50ac7375e"
   license :cannot_represent
   head "https://github.com/j4v3l/ADS-B_TUI.git", branch: "main"
 
