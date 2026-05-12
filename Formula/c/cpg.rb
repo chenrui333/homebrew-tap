@@ -9,7 +9,7 @@ class Cpg < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cpg"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/cpg"
 
     generate_completions_from_executable(bin/"cpg", "completion", shell_parameter_format: :cobra)
   end
