@@ -8,11 +8,11 @@ class Yatto < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "027ef95fccf1e0cbea90e87eac15f4be91be3a9961a2ce5a912b1aef65d4c211"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "027ef95fccf1e0cbea90e87eac15f4be91be3a9961a2ce5a912b1aef65d4c211"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "027ef95fccf1e0cbea90e87eac15f4be91be3a9961a2ce5a912b1aef65d4c211"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17b0544fd38996486e25e0736359f30a8a9413ae5dc7071e4d910490533c17e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5271cbcefcf8c148ff4f9a9ce62c5781816f31192fbc99e40a8ec34d8ccf55bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ffdae19effb7ab658e17dc976df320ede48582fda676f1a17d01c78783b3382d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffdae19effb7ab658e17dc976df320ede48582fda676f1a17d01c78783b3382d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffdae19effb7ab658e17dc976df320ede48582fda676f1a17d01c78783b3382d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55ef579d01cb774eeb0dcacc74d5ce9804d4bbbe3765aa35e587f0bb6798ff7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4d2f510d3833f317574c4ce1d6088f35878657e3621767fd1b5389d1560d2a8"
   end
 
   depends_on "go" => :build
