@@ -1,0 +1,19 @@
+Formula/y/ytm-player.rb
+  s_2938d91c415974::t_0378c67b88f2a1 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "7cd26f61ce854207ff9318a563b78c49bfeae090",
+  "prompts": {},
+  "sessions": {
+    "s_2938d91c415974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d0879da9-01bd-4ee0-9c32-ccaf2a798e5b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
