@@ -7,11 +7,11 @@ class Marchat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30b91041fd360463bf7769a39fe80e2d48b5ec80a8a5610976c69f2eb538d937"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30b91041fd360463bf7769a39fe80e2d48b5ec80a8a5610976c69f2eb538d937"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30b91041fd360463bf7769a39fe80e2d48b5ec80a8a5610976c69f2eb538d937"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f59bed8001016e879b11a6ba66e5be3ad224a81c2379587b96449d5f05cbc85a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6ca06e57aa89cd19176b0ded17fef368cc51aebf7cb58d9b42cfd245d4ca011"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2b56cff49db36a599b6b304a4309f4faec8f3fe45e5c3c3bf85a0fdc16159ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2b56cff49db36a599b6b304a4309f4faec8f3fe45e5c3c3bf85a0fdc16159ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2b56cff49db36a599b6b304a4309f4faec8f3fe45e5c3c3bf85a0fdc16159ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56c74211306e64bdc8131f54426758945c99461478e7cb3a0ab3de3f24ffd0c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "880fd953f5d7ac5ccc04dea559f9e20848ca761cd6c2dc54a685a3913954e27d"
   end
 
   depends_on "go" => :build
