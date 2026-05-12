@@ -1,0 +1,19 @@
+Formula/l/lfk.rb
+  s_2938d91c415974::t_7c3fc4941f25dc 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "ac4182437ba0f895482c2bece1b5dbe8203f50c1",
+  "prompts": {},
+  "sessions": {
+    "s_2938d91c415974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d0879da9-01bd-4ee0-9c32-ccaf2a798e5b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
