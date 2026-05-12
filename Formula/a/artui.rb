@@ -8,6 +8,15 @@ class Artui < Formula
   license "MIT"
   head "https://github.com/fjonasALICE/arTui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dc5f4c9a645d79fffc19791851cee189e21653d2a5a667df3fb968ba21f622a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cda4bc1ee4b3903167c2159aed93568ad5940abe659ca924cd0db08d257233f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc2bcb4104dc4bae3aed0524111dcc8c733329292c915fd116535e131a654eb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad2d09ae9636e4c83efd9474ba854ffb752efd0b4e89a1104da7d456e6c92e90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d778e48c2880b35395dba8b017c2977e510dec4778d9deda468f72f7e7d3c5"
+  end
+
   depends_on "libyaml"
   depends_on "python@3.13"
 
