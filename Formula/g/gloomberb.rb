@@ -10,7 +10,6 @@ class Gloomberb < Formula
           using: :nounzip
       sha256 "2c9fc51ea92f29d70402bd7fb402025cec6f2ea7adac3de9e2f1b00bd8564995"
     end
-
   end
 
   on_linux do
