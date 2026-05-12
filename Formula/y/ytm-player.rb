@@ -8,6 +8,11 @@ class YtmPlayer < Formula
   license "MIT"
   head "https://github.com/peternaame-boop/ytm-player.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "f00b9fa4ab0779fa9a3abe74613c11a7ff8f79b1cfa1e82f39e698ef155d5755"
+  end
+
   depends_on "mpv"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.13"
