@@ -125,7 +125,7 @@ class Artui < Formula
     venv = virtualenv_create(libexec, "python3.13")
     resources.each { |r| r.stage { venv.pip_install Pathname.pwd } }
     # Install artui without pulling broken tree-sitter-* grammar packages
-    system venv.pip, "install", "-v", "--no-deps", "--no-binary", ":all:", buildpath
+    system venv.root/"bin/pip3", "install", "-v", "--no-deps", "--no-binary", ":all:", buildpath
     bin.install_symlink Dir[libexec/"bin/artui"]
   end
 
