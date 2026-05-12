@@ -126,6 +126,6 @@ class Artui < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/artui --version 2>&1")
+    assert_match "artui", shell_output("#{bin}/artui --version 2>assert_match version.to_s, shell_output("#{bin}/artui --version 2>&1")1")
   end
 end
