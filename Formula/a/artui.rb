@@ -196,18 +196,17 @@ class Artui < Formula
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
+  resource "tree-sitter-grammar-header" do
+    url "https://raw.githubusercontent.com/tree-sitter/tree-sitter/v0.20.0/lib/include/tree_sitter/parser.h"
+    sha256 "c569eeb34b7ed816b3a0a43c4cb8c06b36a6ef1164bc82ebed5047284cd73036"
+  end
+
   def install
-    # tree-sitter-html needs tree_sitter/parser.h (old API name)
-    # Use Python tree-sitter's bundled api.h + create parser.h shim
+    # tree-sitter-html 0.23.x needs tree_sitter/parser.h (removed in tree-sitter 0.24+)
     (buildpath/"ts_include/tree_sitter").mkpath
-    resource("tree-sitter").stage do
-      cp "tree_sitter/core/lib/include/tree_sitter/api.h",
-         buildpath/"ts_include/tree_sitter/api.h"
+    resource("tree-sitter-grammar-header").stage do
+      cp "parser.h", buildpath/"ts_include/tree_sitter/parser.h"
     end
-    (buildpath/"ts_include/tree_sitter/parser.h").write(<<~EOS)
-      /* Shim: tree_sitter/parser.h was renamed to api.h in tree-sitter 0.24+ */
-      #include "api.h"
-    EOS
     ENV.append "CFLAGS", "-I#{buildpath}/ts_include"
     virtualenv_install_with_resources
   end
