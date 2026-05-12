@@ -12,13 +12,6 @@ class YtmPlayer < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.13"
 
-  on_macos do
-    resource "pyobjc-core" do
-      url "https://files.pythonhosted.org/packages/72/16/0c468e73dbecb821e3da8819236fe832dfc53eb5f66a11775b055a7589ea/pyobjc_core-11.0-cp313-cp313-macosx_10_13_universal2.whl",
-          using: :nounzip
-      sha256 "c338c1deb7ab2e9436d4175d1127da2eeed4a1b564b3d83b9f3ae4844ba97e86"
-    end
-
     resource "pyobjc-framework-AVFoundation" do
       url "https://files.pythonhosted.org/packages/c0/17/8db165bff8c78d424ab7bc2bc3dae856e432673b5425a4ed2084c23345e8/pyobjc_framework_AVFoundation-11.0-cp313-cp313-macosx_10_13_universal2.whl",
           using: :nounzip
@@ -163,14 +156,7 @@ class YtmPlayer < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.13")
-    resources.each do |r|
-      if r.url.end_with?(".whl")
-        r.stage { system venv.root/"bin/pip3", "install", "--no-deps", Dir["*.whl"].first }
-      else
-        venv.pip_install r
-      end
-    end
-    # Install ytm-player without pulling in pyobjc (macOS media keys, not core functionality)
+    resources.each { |r| venv.pip_install r }
     system venv.root/"bin/pip3", "install", "--no-deps", buildpath
     bin.install_symlink libexec/"bin/ytm"
   end
