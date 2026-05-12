@@ -1,0 +1,9 @@
+Formula/o/octoscope.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "4f9b750387a88be403a01977b9faf1b2b87dada9",
+  "prompts": {}
+}
