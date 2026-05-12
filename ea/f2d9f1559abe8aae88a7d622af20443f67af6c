@@ -1,0 +1,9 @@
+Formula/s/splashboard.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "eaf2d9f1559abe8aae88a7d622af20443f67af6c",
+  "prompts": {}
+}
