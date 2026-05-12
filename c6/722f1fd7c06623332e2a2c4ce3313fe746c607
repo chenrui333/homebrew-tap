@@ -1,0 +1,9 @@
+Formula/u/unifly.rb
+  ai_agent 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "c6722f1fd7c06623332e2a2c4ce3313fe746c607",
+  "prompts": {}
+}
