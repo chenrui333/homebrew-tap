@@ -12,11 +12,6 @@ class YtmPlayer < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.13"
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
-    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
-  end
-
   resource "aiosqlite" do
     url "https://files.pythonhosted.org/packages/4e/8a/64761f4005f17809769d23e518d915db74e6310474e733e3593cfc854ef1/aiosqlite-0.22.1.tar.gz"
     sha256 "043e0bd78d32888c0a9ca90fc788b38796843360c855a7262a532813133a0650"
@@ -77,41 +72,6 @@ class YtmPlayer < Formula
     sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
-  resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/5c/94/a111239b98260869780a5767e5d74bfd3a8c13a40457f479c28dcd91f89d/pyobjc_core-11.0.tar.gz"
-    sha256 "63bced211cb8a8fb5c8ff46473603da30e51112861bd02c438fbbbc8578d9a70"
-  end
-
-  resource "pyobjc-framework-avfoundation" do
-    url "https://files.pythonhosted.org/packages/76/06/018ad0e2a38dbdbc5c126d7ce37488c4d581d4e2a2b9ef678162bb36d5f6/pyobjc_framework_avfoundation-11.0.tar.gz"
-    sha256 "269a592bdaf8a16948d8935f0cf7c8cb9a53e7ea609a963ada0e55f749ddb530"
-  end
-
-  resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/c5/32/53809096ad5fc3e7a2c5ddea642590a5f2cb5b81d0ad6ea67fdb2263d9f9/pyobjc_framework_cocoa-11.0.tar.gz"
-    sha256 "00346a8cb81ad7b017b32ff7bf596000f9faa905807b1bd234644ebd47f692c5"
-  end
-
-  resource "pyobjc-framework-coreaudio" do
-    url "https://files.pythonhosted.org/packages/31/e6/3b7a8af3defec012d6cacf277fd8d5c3e254ceace63a05447dc1119f3a7e/pyobjc_framework_coreaudio-11.0.tar.gz"
-    sha256 "38b6b531381119be6998cf704d04c9ea475aaa33f6dd460e0584351475acd0ae"
-  end
-
-  resource "pyobjc-framework-coremedia" do
-    url "https://files.pythonhosted.org/packages/02/60/7c7b9f13c94910882de6cc08f48a52cce9739e75cc3b3b6de5c857e6536a/pyobjc_framework_coremedia-11.0.tar.gz"
-    sha256 "a414db97ba30b43c9dd96213459d6efb169f9e92ce1ad7a75516a679b181ddfb"
-  end
-
-  resource "pyobjc-framework-mediaplayer" do
-    url "https://files.pythonhosted.org/packages/a2/ce/3d2783f2f96ddf51bebcf6537a4a0f2a8a1fe4e520de218fc1b7c5b219ed/pyobjc_framework_mediaplayer-11.0.tar.gz"
-    sha256 "c61be0ba6c648db6b1d013a52f9afb8901a8d7fbabd983df2175c1b1fbff81e5"
-  end
-
-  resource "pyobjc-framework-quartz" do
-    url "https://files.pythonhosted.org/packages/a5/ad/f00f3f53387c23bbf4e0bb1410e11978cbf87c82fa6baff0ee86f74c5fb6/pyobjc_framework_quartz-11.0.tar.gz"
-    sha256 "3205bf7795fb9ae34747f701486b3db6dfac71924894d1f372977c4d70c3c619"
-  end
-
   resource "python-mpv" do
     url "https://files.pythonhosted.org/packages/77/bc/6aa34c8805ff62e2fefc7d171563c60598aac215d5241186031a2c839935/python_mpv-1.0.8.tar.gz"
     sha256 "017fa359da059c831a94c419083491903e6d2f7c81b9841c33c196cabf4b3fe3"
@@ -158,8 +118,11 @@ class YtmPlayer < Formula
   end
 
   def install
-    ENV["PIP_BUILD_ISOLATION"] = "false"
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+    resources.each { |r| r.stage { venv.pip_install Pathname.pwd } }
+    # Install ytm-player without pulling in pyobjc (macOS media keys, not core functionality)
+    system venv.pip, "install", "--no-deps", buildpath
+    bin.install_symlink libexec/"bin/ytm"
   end
 
   test do
