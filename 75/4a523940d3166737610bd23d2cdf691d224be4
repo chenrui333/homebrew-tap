@@ -1,0 +1,21 @@
+Formula/s/space-cli.rb
+  s_6992f72c58936c::t_faaecd270e90ef 5
+  s_6992f72c58936c::t_b53facd7e42332 1-4,6-15,19-36
+  s_6992f72c58936c::t_d9f6d3527cc72d 16-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "754a523940d3166737610bd23d2cdf691d224be4",
+  "prompts": {},
+  "sessions": {
+    "s_6992f72c58936c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "af37ee83-9a10-4781-8b04-ca99ed92e1e2",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
