@@ -1,0 +1,9 @@
+Formula/g/gitpane.rb
+  ai_agent 9,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "211aff099be897e7d03826380fda806a720d0b6d",
+  "prompts": {}
+}
