@@ -12,6 +12,43 @@ class YtmPlayer < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.13"
 
+  on_macos do
+    resource "pyobjc-core" do
+      url "https://files.pythonhosted.org/packages/72/16/0c468e73dbecb821e3da8819236fe832dfc53eb5f66a11775b055a7589ea/pyobjc_core-11.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "c338c1deb7ab2e9436d4175d1127da2eeed4a1b564b3d83b9f3ae4844ba97e86"
+    end
+
+    resource "pyobjc-framework-AVFoundation" do
+      url "https://files.pythonhosted.org/packages/c0/17/8db165bff8c78d424ab7bc2bc3dae856e432673b5425a4ed2084c23345e8/pyobjc_framework_AVFoundation-11.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "d9d2497acf3e7c5ae4a8175832af249754847b415494422727ac43efe14cc776"
+    end
+
+    resource "pyobjc-framework-Cocoa" do
+      url "https://files.pythonhosted.org/packages/1d/a5/609281a7e89efefbef9db1d8fe66bc0458c3b4e74e2227c644f9c18926fa/pyobjc_framework_Cocoa-11.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "15b2bd977ed340074f930f1330f03d42912d5882b697d78bd06f8ebe263ef92e"
+    end
+
+    resource "pyobjc-framework-CoreAudio" do
+      url "https://files.pythonhosted.org/packages/37/e4/c716820c64c1f9aeb129c7d03e214d9787ba6a5c18f5425082d32adfecdc/pyobjc_framework_CoreAudio-11.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "272388af86809f7a81250d931e99f650f62878410d4e1cfcd8adf0bbfb0d4581"
+    end
+
+    resource "pyobjc-framework-CoreMedia" do
+      url "https://files.pythonhosted.org/packages/1c/ac/26b33f7d2386d9a04dfc1697bb2c0b4f6701c8d5fa8ece68162ffbee7049/pyobjc_framework_CoreMedia-11.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "88b26ca9a1333ddbe2a6dfa9a8c2d2be712cb717c3e9e1174fed66bf8d7af067"
+    end
+
+    resource "pyobjc-framework-MediaPlayer" do
+      url "https://files.pythonhosted.org/packages/96/b2/57b7b75bb5f2b624ce48cd48fb7d651d2f24d279918b352ae8fb03384b47/pyobjc_framework_MediaPlayer-11.0-py2.py3-none-any.whl"
+      sha256 "b124b0f18444b69b64142bad2579287d0b1a4a35cb6b14526523a822066d527d"
+    end
+
+    resource "pyobjc-framework-Quartz" do
+      url "https://files.pythonhosted.org/packages/a6/9e/54c48fe8faab06ee5eb80796c8c17ec61fc313d84398540ee70abeaf7070/pyobjc_framework_Quartz-11.0-cp313-cp313-macosx_10_13_universal2.whl"
+      sha256 "973b4f9b8ab844574461a038bd5269f425a7368d6e677e3cc81fcc9b27b65498"
+    end
+  end
+
   resource "aiosqlite" do
     url "https://files.pythonhosted.org/packages/4e/8a/64761f4005f17809769d23e518d915db74e6310474e733e3593cfc854ef1/aiosqlite-0.22.1.tar.gz"
     sha256 "043e0bd78d32888c0a9ca90fc788b38796843360c855a7262a532813133a0650"
@@ -115,43 +152,6 @@ class YtmPlayer < Formula
   resource "ytmusicapi" do
     url "https://files.pythonhosted.org/packages/4f/16/728305b1e6d100f2f2c696f6de08b3717f3db323bd666a8246397d70bcad/ytmusicapi-1.12.0.tar.gz"
     sha256 "9a466e633c43e90025b4c3dfa862f0f5677af4eacc8d2052ef9fc8f48cd65140"
-  end
-
-  on_macos do
-    resource "pyobjc-core" do
-      url "https://files.pythonhosted.org/packages/72/16/0c468e73dbecb821e3da8819236fe832dfc53eb5f66a11775b055a7589ea/pyobjc_core-11.0-cp313-cp313-macosx_10_13_universal2.whl"
-      sha256 "c338c1deb7ab2e9436d4175d1127da2eeed4a1b564b3d83b9f3ae4844ba97e86"
-    end
-
-    resource "pyobjc-framework-AVFoundation" do
-      url "https://files.pythonhosted.org/packages/c0/17/8db165bff8c78d424ab7bc2bc3dae856e432673b5425a4ed2084c23345e8/pyobjc_framework_AVFoundation-11.0-cp313-cp313-macosx_10_13_universal2.whl"
-      sha256 "d9d2497acf3e7c5ae4a8175832af249754847b415494422727ac43efe14cc776"
-    end
-
-    resource "pyobjc-framework-Cocoa" do
-      url "https://files.pythonhosted.org/packages/1d/a5/609281a7e89efefbef9db1d8fe66bc0458c3b4e74e2227c644f9c18926fa/pyobjc_framework_Cocoa-11.0-cp313-cp313-macosx_10_13_universal2.whl"
-      sha256 "15b2bd977ed340074f930f1330f03d42912d5882b697d78bd06f8ebe263ef92e"
-    end
-
-    resource "pyobjc-framework-CoreAudio" do
-      url "https://files.pythonhosted.org/packages/37/e4/c716820c64c1f9aeb129c7d03e214d9787ba6a5c18f5425082d32adfecdc/pyobjc_framework_CoreAudio-11.0-cp313-cp313-macosx_10_13_universal2.whl"
-      sha256 "272388af86809f7a81250d931e99f650f62878410d4e1cfcd8adf0bbfb0d4581"
-    end
-
-    resource "pyobjc-framework-CoreMedia" do
-      url "https://files.pythonhosted.org/packages/1c/ac/26b33f7d2386d9a04dfc1697bb2c0b4f6701c8d5fa8ece68162ffbee7049/pyobjc_framework_CoreMedia-11.0-cp313-cp313-macosx_10_13_universal2.whl"
-      sha256 "88b26ca9a1333ddbe2a6dfa9a8c2d2be712cb717c3e9e1174fed66bf8d7af067"
-    end
-
-    resource "pyobjc-framework-MediaPlayer" do
-      url "https://files.pythonhosted.org/packages/96/b2/57b7b75bb5f2b624ce48cd48fb7d651d2f24d279918b352ae8fb03384b47/pyobjc_framework_MediaPlayer-11.0-py2.py3-none-any.whl"
-      sha256 "b124b0f18444b69b64142bad2579287d0b1a4a35cb6b14526523a822066d527d"
-    end
-
-    resource "pyobjc-framework-Quartz" do
-      url "https://files.pythonhosted.org/packages/a6/9e/54c48fe8faab06ee5eb80796c8c17ec61fc313d84398540ee70abeaf7070/pyobjc_framework_Quartz-11.0-cp313-cp313-macosx_10_13_universal2.whl"
-      sha256 "973b4f9b8ab844574461a038bd5269f425a7368d6e677e3cc81fcc9b27b65498"
-    end
   end
 
   def install
