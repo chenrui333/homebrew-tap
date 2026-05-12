@@ -73,38 +73,38 @@ class YtmPlayer < Formula
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
-    sha256 "2bb3903f5387f72422145e1466b3ac3f7f0ef2e9960afa9bcd8961c5cbf8bd21"
+    url "https://files.pythonhosted.org/packages/5c/94/a111239b98260869780a5767e5d74bfd3a8c13a40457f479c28dcd91f89d/pyobjc_core-11.0.tar.gz"
+    sha256 "63bced211cb8a8fb5c8ff46473603da30e51112861bd02c438fbbbc8578d9a70"
   end
 
   resource "pyobjc-framework-avfoundation" do
-    url "https://files.pythonhosted.org/packages/cd/42/c026ab308edc2ed5582d8b4b93da6b15d1b6557c0086914a4aabedd1f032/pyobjc_framework_avfoundation-12.1.tar.gz"
-    sha256 "eda0bb60be380f9ba2344600c4231dd58a3efafa99fdc65d3673ecfbb83f6fcb"
+    url "https://files.pythonhosted.org/packages/76/06/018ad0e2a38dbdbc5c126d7ce37488c4d581d4e2a2b9ef678162bb36d5f6/pyobjc_framework_avfoundation-11.0.tar.gz"
+    sha256 "269a592bdaf8a16948d8935f0cf7c8cb9a53e7ea609a963ada0e55f749ddb530"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz"
-    sha256 "5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640"
+    url "https://files.pythonhosted.org/packages/c5/32/53809096ad5fc3e7a2c5ddea642590a5f2cb5b81d0ad6ea67fdb2263d9f9/pyobjc_framework_cocoa-11.0.tar.gz"
+    sha256 "00346a8cb81ad7b017b32ff7bf596000f9faa905807b1bd234644ebd47f692c5"
   end
 
   resource "pyobjc-framework-coreaudio" do
-    url "https://files.pythonhosted.org/packages/84/d1/0b884c5564ab952ff5daa949128c64815300556019c1bba0cf2ca752a1a0/pyobjc_framework_coreaudio-12.1.tar.gz"
-    sha256 "a9e72925fcc1795430496ce0bffd4ddaa92c22460a10308a7283ade830089fe1"
+    url "https://files.pythonhosted.org/packages/31/e6/3b7a8af3defec012d6cacf277fd8d5c3e254ceace63a05447dc1119f3a7e/pyobjc_framework_coreaudio-11.0.tar.gz"
+    sha256 "38b6b531381119be6998cf704d04c9ea475aaa33f6dd460e0584351475acd0ae"
   end
 
   resource "pyobjc-framework-coremedia" do
-    url "https://files.pythonhosted.org/packages/da/7d/5ad600ff7aedfef8ba8f51b11d9aaacdf247b870bd14045d6e6f232e3df9/pyobjc_framework_coremedia-12.1.tar.gz"
-    sha256 "166c66a9c01e7a70103f3ca44c571431d124b9070612ef63a1511a4e6d9d84a7"
+    url "https://files.pythonhosted.org/packages/02/60/7c7b9f13c94910882de6cc08f48a52cce9739e75cc3b3b6de5c857e6536a/pyobjc_framework_coremedia-11.0.tar.gz"
+    sha256 "a414db97ba30b43c9dd96213459d6efb169f9e92ce1ad7a75516a679b181ddfb"
   end
 
   resource "pyobjc-framework-mediaplayer" do
-    url "https://files.pythonhosted.org/packages/e9/f0/851f6f47e11acbd62d5f5dcb8274afc969135e30018591f75bf3cbf6417f/pyobjc_framework_mediaplayer-12.1.tar.gz"
-    sha256 "5ef3f669bdf837d87cdb5a486ec34831542360d14bcba099c7c2e0383380794c"
+    url "https://files.pythonhosted.org/packages/a2/ce/3d2783f2f96ddf51bebcf6537a4a0f2a8a1fe4e520de218fc1b7c5b219ed/pyobjc_framework_mediaplayer-11.0.tar.gz"
+    sha256 "c61be0ba6c648db6b1d013a52f9afb8901a8d7fbabd983df2175c1b1fbff81e5"
   end
 
   resource "pyobjc-framework-quartz" do
-    url "https://files.pythonhosted.org/packages/94/18/cc59f3d4355c9456fc945eae7fe8797003c4da99212dd531ad1b0de8a0c6/pyobjc_framework_quartz-12.1.tar.gz"
-    sha256 "27f782f3513ac88ec9b6c82d9767eef95a5cf4175ce88a1e5a65875fee799608"
+    url "https://files.pythonhosted.org/packages/a5/ad/f00f3f53387c23bbf4e0bb1410e11978cbf87c82fa6baff0ee86f74c5fb6/pyobjc_framework_quartz-11.0.tar.gz"
+    sha256 "3205bf7795fb9ae34747f701486b3db6dfac71924894d1f372977c4d70c3c619"
   end
 
   resource "python-mpv" do
