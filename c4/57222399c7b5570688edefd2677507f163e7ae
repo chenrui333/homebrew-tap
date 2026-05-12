@@ -1,0 +1,9 @@
+Formula/a/artui.rb
+  ai_agent 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "c457222399c7b5570688edefd2677507f163e7ae",
+  "prompts": {}
+}
