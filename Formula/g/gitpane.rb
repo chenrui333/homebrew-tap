@@ -15,6 +15,6 @@ class Gitpane < Formula
   end
 
   test do
-    assert_match "gitpane", shell_output("#{bin}/gitpane --help 2>assert_match version.to_s, shell_output("#{bin}/gitpane --version 2>&1")1")
+    assert_match "gitpane", shell_output("#{bin}/gitpane --help 2>&1")
   end
 end
