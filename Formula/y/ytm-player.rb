@@ -12,6 +12,11 @@ class YtmPlayer < Formula
   depends_on "pillow" => :no_linkage
   depends_on "python@3.13"
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+  end
+
   resource "aiosqlite" do
     url "https://files.pythonhosted.org/packages/4e/8a/64761f4005f17809769d23e518d915db74e6310474e733e3593cfc854ef1/aiosqlite-0.22.1.tar.gz"
     sha256 "043e0bd78d32888c0a9ca90fc788b38796843360c855a7262a532813133a0650"
