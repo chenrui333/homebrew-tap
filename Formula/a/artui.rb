@@ -9,6 +9,7 @@ class Artui < Formula
   head "https://github.com/fjonasALICE/arTui.git", branch: "main"
 
   depends_on "libyaml"
+  depends_on "tree-sitter"
   depends_on "python@3.13"
 
   resource "arxiv" do
