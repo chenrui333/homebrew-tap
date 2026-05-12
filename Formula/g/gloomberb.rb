@@ -12,7 +12,10 @@ class Gloomberb < Formula
     end
 
     on_intel do
-      disable! date: "2025-05-12", because: "no macOS x86_64 binary available upstream"
+      url "https://github.com/vincelwt/gloomberb/releases/download/v#{version}/gloomberb-darwin-arm64.gz",
+          using: :nounzip
+      sha256 "2c9fc51ea92f29d70402bd7fb402025cec6f2ea7adac3de9e2f1b00bd8564995"
+      disable! date: "2025-05-12", because: "no macOS x86_64 binary; use Rosetta 2"
     end
   end
 
