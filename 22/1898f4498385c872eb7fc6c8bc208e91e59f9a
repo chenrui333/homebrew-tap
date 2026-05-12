@@ -1,0 +1,9 @@
+Formula/r/rustlens.rb
+  ai_agent 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "221898f4498385c872eb7fc6c8bc208e91e59f9a",
+  "prompts": {}
+}
