@@ -6,6 +6,15 @@ class Toofan < Formula
   license "MIT"
   head "https://github.com/vyrx-dev/toofan.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7923769ae6e5a774a46f3800a962385b816a422913bdda015c802d642978f81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7923769ae6e5a774a46f3800a962385b816a422913bdda015c802d642978f81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7923769ae6e5a774a46f3800a962385b816a422913bdda015c802d642978f81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf44a8f93c0627bb55864aedb3aeeebc9d52ef1947128a9d293e0769187cdf4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a49019a1bdeeb055f7f85eb43f20c4947ee5baf742f97e22687fc28a2556003"
+  end
+
   depends_on "go" => :build
 
   def install
