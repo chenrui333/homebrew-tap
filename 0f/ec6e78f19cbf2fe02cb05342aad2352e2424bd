@@ -1,0 +1,20 @@
+Formula/a/artui.rb
+  s_2938d91c415974::t_bb4bb01e350c2c 203,206,211
+  s_2938d91c415974::t_d7f20d7d4dc3e4 200-202,204-205,207-210
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "0fec6e78f19cbf2fe02cb05342aad2352e2424bd",
+  "prompts": {},
+  "sessions": {
+    "s_2938d91c415974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d0879da9-01bd-4ee0-9c32-ccaf2a798e5b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
