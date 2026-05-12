@@ -121,7 +121,7 @@ class YtmPlayer < Formula
     venv = virtualenv_create(libexec, "python3.13")
     resources.each { |r| r.stage { venv.pip_install Pathname.pwd } }
     # Install ytm-player without pulling in pyobjc (macOS media keys, not core functionality)
-    system venv.pip, "install", "--no-deps", buildpath
+    system venv.root/"bin/pip3", "install", "--no-deps", buildpath
     bin.install_symlink libexec/"bin/ytm"
   end
 
