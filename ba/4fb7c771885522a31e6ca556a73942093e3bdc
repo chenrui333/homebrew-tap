@@ -1,0 +1,21 @@
+Formula/n/nless.rb
+  s_2938d91c415974::t_9d09ff86f03d0d 6-7
+  s_2938d91c415974::t_c984ebbef15418 1-5,8-11,72-79
+  s_2938d91c415974::t_8baa607e2f4c24 12-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "ba4fb7c771885522a31e6ca556a73942093e3bdc",
+  "prompts": {},
+  "sessions": {
+    "s_2938d91c415974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d0879da9-01bd-4ee0-9c32-ccaf2a798e5b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
