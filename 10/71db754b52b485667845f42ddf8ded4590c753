@@ -1,0 +1,19 @@
+Formula/s/splashboard.rb
+  s_2938d91c415974::t_a599a8ee111b2d 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "1071db754b52b485667845f42ddf8ded4590c753",
+  "prompts": {},
+  "sessions": {
+    "s_2938d91c415974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d0879da9-01bd-4ee0-9c32-ccaf2a798e5b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
