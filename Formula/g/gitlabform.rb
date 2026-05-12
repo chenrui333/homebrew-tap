@@ -191,7 +191,7 @@ class Gitlabform < Formula
     YAML
 
     output = shell_output("#{bin}/gitlabform -c config.yml --noop ALL_DEFINED 2>&1", 1)
-    assert_match "Unable to find the key: gitlab.url", output
+    assert_match "GitLab test request failed", output
   end
 end
 
