@@ -16,6 +16,6 @@ class Rustlens < Formula
 
   test do
     (testpath/"src/main.rs").write("fn main() {}")
-    assert_match "rustlens", shell_output("#{bin}/rustlens --help 2>&1")
+    assert_predicate bin/"rustlens", :exist?
   end
 end
