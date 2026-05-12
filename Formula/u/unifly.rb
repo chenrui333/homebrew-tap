@@ -6,6 +6,7 @@ class Unifly < Formula
   license "Apache-2.0"
   head "https://github.com/hyperb1iss/unifly.git", branch: "main"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
