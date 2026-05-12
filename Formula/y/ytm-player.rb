@@ -165,7 +165,7 @@ class YtmPlayer < Formula
     venv = virtualenv_create(libexec, "python3.13")
     resources.each do |r|
       if r.url.end_with?(".whl")
-        system venv.root/"bin/pip3", "install", "--no-deps", r.cached_download
+        r.stage { system venv.root/"bin/pip3", "install", "--no-deps", Dir["*.whl"].first }
       else
         venv.pip_install r
       end
