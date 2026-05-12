@@ -13,6 +13,6 @@ class Holo < Formula
   end
 
   test do
-    assert_predicate bin/"holo", :exist?
+    assert_path_exists bin/"holo"
   end
 end
