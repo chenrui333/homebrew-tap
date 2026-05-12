@@ -9,6 +9,7 @@ class Unifly < Formula
   depends_on "rust" => :build
 
   def install
+    (buildpath/".cargo/config.toml").delete if OS.linux?
     system "cargo", "install", *std_cargo_args(path: "crates/unifly")
   end
 
