@@ -4,7 +4,7 @@ class YtmPlayer < Formula
   desc "YouTube Music TUI client with vim keybindings and synced lyrics"
   homepage "https://github.com/peternaame-boop/ytm-player"
   url "https://github.com/peternaame-boop/ytm-player/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "395408a3dc9c3db2b5c200b8722a13a60898c861633b99e6e250186adffd1370"
+  sha256 "6eeb105e902b43648d50d8f23392861a72aa43b9e4fee0cae10bddb0902f526d"
   license "MIT"
   head "https://github.com/peternaame-boop/ytm-player.git", branch: "master"
 
