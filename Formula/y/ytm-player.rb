@@ -9,6 +9,7 @@ class YtmPlayer < Formula
   head "https://github.com/peternaame-boop/ytm-player.git", branch: "master"
 
   depends_on "mpv"
+  depends_on "pillow" => :no_linkage
   depends_on "python@3.13"
 
   resource "aiosqlite" do
@@ -61,10 +62,6 @@ class YtmPlayer < Formula
     sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
-  resource "pillow" do
-    url "https://files.pythonhosted.org/packages/8c/21/c2bcdd5906101a30244eaffc1b6e6ce71a31bd0742a01eb89e660ebfac2d/pillow-12.2.0.tar.gz"
-    sha256 "a830b1a40919539d07806aa58e1b114df53ddd43213d9c8b75847eee6c0182b5"
-  end
 
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
