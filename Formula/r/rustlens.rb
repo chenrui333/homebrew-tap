@@ -15,6 +15,6 @@ class Rustlens < Formula
   end
 
   test do
-    assert_predicate bin/"rustlens", :exist?
+    assert_path_exists bin/"rustlens"
   end
 end
