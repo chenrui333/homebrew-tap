@@ -3,8 +3,8 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/7d/e6/f8b780cabb3a12433bdd8f6825ad5c029b2b10553be7f0c0a3184e3e82c4/user_scanner-1.3.6.tar.gz"
-  sha256 "2265270538c81866846b197d89347b56d0caeab965c882d8090285999818d34e"
+  url "https://files.pythonhosted.org/packages/c7/88/39a815ed4d1e00473522b3113fa5e0ecae95402df40bc6203b7fa9176b40/user_scanner-1.3.6.1.tar.gz"
+  sha256 "a316e5cc5a54b0940cd15fcc1cf75b27929f0e1dc25a190e9e1cb898faeff836"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
@@ -62,8 +62,8 @@ class UserScanner < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
+    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
   end
 
   resource "socksio" do
