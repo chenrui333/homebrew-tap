@@ -7,6 +7,11 @@ class Nless < Formula
   sha256 "75fabadeac2d9ddd10c5679015d64cb2997cf7c1a0331a69cde09dda391f4d3d"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "4e49bed22b6caf43911090928f9e6c2277dd3f628a0977d9e6ae9f907057f7ca"
+  end
+
   depends_on "python@3.13"
 
   resource "linkify-it-py" do
