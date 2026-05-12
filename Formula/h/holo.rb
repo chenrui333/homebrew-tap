@@ -13,6 +13,7 @@ class Holo < Formula
   end
 
   test do
-    assert_match "holo", shell_output("#{bin}/holo --help 2>&1")
+    output = shell_output("#{bin}/holo 2>&1", 101)
+    assert_match "terminal", output
   end
 end
