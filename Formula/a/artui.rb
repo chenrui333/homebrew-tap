@@ -122,10 +122,7 @@ class Artui < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
-    resources.each { |r| venv.pip_install r }
-    system venv.root/"bin/pip3", "install", "--no-deps", buildpath
-    bin.install_symlink libexec/"bin/artui"
+    virtualenv_install_with_resources
   end
 
   test do
