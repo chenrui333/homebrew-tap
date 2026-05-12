@@ -8,13 +8,13 @@ class Gloomberb < Formula
     on_arm do
       url "https://github.com/vincelwt/gloomberb/releases/download/v#{version}/gloomberb-darwin-arm64.gz",
           using: :nounzip
-      sha256 "ec551f50649486fbf4f0cc506d727d770e8a4ad49a8de8fd3dff4d208dc94586"
+      sha256 "2c9fc51ea92f29d70402bd7fb402025cec6f2ea7adac3de9e2f1b00bd8564995"
     end
 
     on_intel do
       url "https://github.com/vincelwt/gloomberb/releases/download/v#{version}/gloomberb-darwin-arm64.gz",
           using: :nounzip
-      sha256 "ec551f50649486fbf4f0cc506d727d770e8a4ad49a8de8fd3dff4d208dc94586"
+      sha256 "2c9fc51ea92f29d70402bd7fb402025cec6f2ea7adac3de9e2f1b00bd8564995"
     end
   end
 
@@ -22,13 +22,13 @@ class Gloomberb < Formula
     on_arm do
       url "https://github.com/vincelwt/gloomberb/releases/download/v#{version}/gloomberb-linux-arm64.gz",
           using: :nounzip
-      sha256 "f538285aa84872fa1fa2ad388b217152ceda4cf7f2f003b4ec3cff8bd31e5187"
+      sha256 "784b6f0c0a65fe68da9ff7d7e31d67e6cb1c67dce50631a43e1a85f4c7f0e24f"
     end
 
     on_intel do
       url "https://github.com/vincelwt/gloomberb/releases/download/v#{version}/gloomberb-linux-x64.gz",
           using: :nounzip
-      sha256 "c57a197ecc6c94fa84456093247902931379a82580e7a2e62de5d52078e3967a"
+      sha256 "e78abe6504a64430d81a88ac628e63aec0efdb7ca0a9a3171ef59ecad452f7fe"
     end
   end
 
