@@ -6,8 +6,8 @@ class Rustlens < Formula
   license "MIT"
   head "https://github.com/yashksaini-coder/Rustlens.git", branch: "main"
 
-  depends_on "openssl@3"
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
