@@ -1,15 +1,15 @@
 class RalphTui < Formula
   desc "AI agent loop orchestrator"
   homepage "https://ralph-tui.com"
-  url "https://github.com/subsy/ralph-tui/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "aa532de1fab2a8e7ebb0cf575e26fdf2a4ad5d3454459a7e7487f1912ec1dc5a"
+  url "https://github.com/subsy/ralph-tui/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "2acc8812f65a6a5fdede1c46f73671435afbadddc83bce0a6b52ed0a0a11bd9a"
   license "MIT"
   head "https://github.com/subsy/ralph-tui.git", branch: "main"
 
-  depends_on "oven-sh/bun/bun" => :build
+  depends_on "bun"
 
   def install
-    bun = Formula["oven-sh/bun/bun"].opt_bin/"bun"
+    bun = Formula["bun"].opt_bin/"bun"
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     libopentui = "libopentui.#{OS.mac? ? "dylib" : "so"}"
