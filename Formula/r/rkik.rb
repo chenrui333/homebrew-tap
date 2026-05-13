@@ -8,11 +8,11 @@ class Rkik < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a710b3df7cd33b6389846a2eafa1ae219dc8e76395b01670cc0b48ba78c71f83"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "387b358630dbbb69789a5fb1fc90e809a3a2d8c039ff91bf39d6af254de4001f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b74f23814f131d43819b889de924f234e746fa5b60afa3e486e479148ab144ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aff7bd71655970d664a0ba33fa09749918545d9496b5a749f185570c9629a2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "736268488c4901021246a23a48d3a34a48aef942efaa80ce8803222338a76c63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab0195aac4319345e64eac11263e44b78f1dc06948130c669ce46fc5ec3666b3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5ee97c53ca3363066fc613fd19ce8e8275902c8c92686c07a2a34bedc427f47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ef5a8339d73b24297ad2e2cd9a1bb80c1c437857c567925ea7ac6ea2a56019c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85b5ea41116ecfb88866c9fd83dc8782be5be5f5b6994dfb5a220d820f170203"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9f217ef0b93ef5ac87641435a70a315b30c60adc5e9d11a373619a384a519d8"
   end
 
   depends_on "rust" => :build
