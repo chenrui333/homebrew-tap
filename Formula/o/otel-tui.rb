@@ -1,8 +1,8 @@
 class OtelTui < Formula
   desc "Terminal OpenTelemetry viewer"
   homepage "https://github.com/ymtdzzz/otel-tui"
-  url "https://github.com/ymtdzzz/otel-tui/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "6ee0f6d7daba0eb053d4f863f6868c1402d25d0ef781b157afe3853c7fd0c0e8"
+  url "https://github.com/ymtdzzz/otel-tui/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "af1a7863b80edf2c697050f3620acc6d2079972be91ea4b48aef6d7ed9a1c016"
   license "Apache-2.0"
   head "https://github.com/ymtdzzz/otel-tui.git", branch: "main"
 
