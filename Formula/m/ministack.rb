@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/75/9c/517eb118852a3cc5feb3a43170c19c79b2fb1873d96b724cd379c9b49883/ministack-1.3.36.tar.gz"
-  sha256 "429de97942866a20fac9685113425d2bf74371156443b948dc532b9f3c33f6dc"
+  url "https://files.pythonhosted.org/packages/15/0e/34b2d605bf789b73ccf9f76218b048085ca53950ce879f2802dbb62f99fe/ministack-1.3.37.tar.gz"
+  sha256 "078cba9149f9338fc36dc3da252fbb4aad4fd726c44a859397a1be009c7d4c44"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
