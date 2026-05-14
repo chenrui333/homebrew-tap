@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/6c/97/dba48dbbf0b61eadd0fb91752dfcbe0ae374d48bf65d2dd3396065a928c6/cccc_pair-0.4.15.tar.gz"
-  sha256 "12348471dc7139375ff23b0ac739b61ea138466b4903415a84483eba98f40e33"
+  url "https://files.pythonhosted.org/packages/64/b5/9f2be9bed169d98b2d39f17a22c560869b041c957d5b9d9233770ee68f3c/cccc_pair-0.4.16.tar.gz"
+  sha256 "47c0a61c8f6b0a6c04dce4792bc03be6ccab098fc1f4824f5e0aecbdd647c55b"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -102,13 +102,13 @@ class Cccc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/d1/48/cc1ffab88050ba015b7248038d35974a012a904ab240a85189d136c16552/lark_oapi-1.6.2.tar.gz"
-    sha256 "d98b89cb476be433d654e92252bb33bfbaeccfe87fda14ddec4b384096162d6f"
+    url "https://files.pythonhosted.org/packages/12/aa/db027c41fdfb4f42471634cfc2a6f69d64d68f58ee555914293d60dbaceb/lark_oapi-1.6.4.tar.gz"
+    sha256 "b2aceccd1a01e55a82927ba1ee187e2eae5392cc97bc00ce0b3f08da3fb9a4ce"
   end
 
   resource "multidict" do
@@ -132,8 +132,8 @@ class Cccc < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/69/9b/f23807317a113dc36e74e75eb265a02dd1a4d9082abc3c1064acd22997c4/python_multipart-0.0.27.tar.gz"
-    sha256 "9870a6a8c5a20a5bf4f07c017bd1489006ff8836cff097b6933355ee2b49b602"
+    url "https://files.pythonhosted.org/packages/82/54/a85eb421fbdd5007bc5af39d0f4ed9fa609e0fedbfdc2adcf0b34526870e/python_multipart-0.0.28.tar.gz"
+    sha256 "8550da197eac0f7ab748961fc9509b999fa2662ea25cef857f05249f6893c0f8"
   end
 
   resource "pyyaml" do
@@ -142,8 +142,8 @@ class Cccc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/43/b8/7a707d60fea4c49094e40262cc0e2ca6c768cca21587e34d3f705afec47e/requests-2.34.0.tar.gz"
+    sha256 "7d62fe92f50eb82c529b0916bb445afa1531a566fc8f35ffdc64446e771b856a"
   end
 
   resource "requests-toolbelt" do
