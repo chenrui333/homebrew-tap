@@ -8,11 +8,11 @@ class Fresh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "632c569a8b47a5fbd02b8b940155ff083687fb125d02c04571930a2e71d460dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1724ab6f1770025b1156d25e6518ee50f4495b2bcbae0e5b5a52b339508d66a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a55875c1fa701f5da5248986d5af76038ede8c3b853063be96ddf942a9e4a45a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aabb2a742cdb3a804391fba4edd6b50f9d7d4ecb503cce9f30730be1beeeba67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1edeeddff108b711fe7c1bf98a6584b992e609cd470116d025a70ceaa50d5204"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "331f74816a5894bcb362058f4fb3582cb111aed89c0755f5c1f00b776f40e8fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa103cdf9f89283764dccd8a50582c86cec2bb93b1ee6d4611c9888f9dc1fafe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49728e5884e7f5342aa7b980a746ed7347374b92b411d899733998b862d66f0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0969f09cf78b3f31670662966472799109c965cb8558f8a907d0be036adebfd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e1a27c3d04c3bf0947a164ae4475d70726943029170e5b81290e795985f6e8e"
   end
 
   depends_on "pkgconf" => :build
