@@ -1,8 +1,8 @@
 class BaseMcpServer < Formula
   desc "MCP Server for Base Network and Coinbase API"
   homepage "https://github.com/base/base-mcp"
-  url "https://registry.npmjs.org/base-mcp/-/base-mcp-1.0.13.tgz"
-  sha256 "c99de6839f782ed003569009c342bdd7962240669d276ae7e19ca12733472cf8"
+  url "https://registry.npmjs.org/base-mcp/-/base-mcp-1.0.14.tgz"
+  sha256 "efa952069cb0f1ceb834f2bdde2d54c2f1e0f099b3c4ba7e83d54b6bd84e0b50"
   license "MIT"
 
   bottle do
