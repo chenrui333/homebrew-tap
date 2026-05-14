@@ -8,11 +8,11 @@ class Splashboard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "505dcf804ad7e365b9b60d4fca300632141fd9016807d2b58bf2a4bf01bd797b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bef6dc8282c60e660bec3b1af1b8142c67126052fa8499ef5e2b1aeac25f3b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e097e50675798544e4268ffd1f284660f8227a033d1095d76d52bcb1a66231c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4c1b1d72b7711998b59aa01fa4c2d50f43106fb2705ad9659bcc44270ac3af4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a088bd1f25e61bcacb554eb7841573534c72afff040e22a16ec1aca5c9bbf52"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37b9d977a3132e9de3f6019cab5ba837e7d1463387f300828f1076355d82362e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79318b64c1fef042ebeb5673690763eac1a09fe66ed51c92d375fdc0323d7444"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec0246661e208a94cd670bf10897b7abcc1a0284867243356a7de0b9878686fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31bbfbec984e6e96fe77324f2d23aa4421f6b691e4375a327a789c898ab9fe0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a700fbe641b5bfc200d2f1a28d02ada5e02318f6fb6599143f2ea0a8e4999091"
   end
 
   depends_on "rust" => :build
