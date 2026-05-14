@@ -1,8 +1,8 @@
 class Sflowtool < Formula
   desc "Utilities and scripts for analyzing sFlow data"
   homepage "https://inmon.com/technology/sflowTools.php"
-  url "https://github.com/sflow/sflowtool/releases/download/v6.10/sflowtool-6.10.tar.gz"
-  sha256 "fda6358fed05e5f5de6f05e837fa7cefc8fb7a0f972399d07f21fd7698795eef"
+  url "https://github.com/sflow/sflowtool/releases/download/v6.11/sflowtool-6.11.tar.gz"
+  sha256 "510ded7e1074d56abe1a702162cddf327ab0179f0f1dde27a44150a9489bfbfa"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
