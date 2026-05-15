@@ -1,8 +1,8 @@
 class Ecscope < Formula
   desc "Monitor AWS ECS resources from the terminal"
   homepage "https://tools.dhruvs.space/ecscope/"
-  url "https://github.com/dhth/ecscope/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "23192359513f5632ff25ce38a1ea97173a74278add0a295b39734e83f14f05c4"
+  url "https://github.com/dhth/ecscope/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "27d20d3c8a6ea52352e40c0384c3520d820ed0abe224148f3966ca4d5aacf3f4"
   license "MIT"
   head "https://github.com/dhth/ecscope.git", branch: "main"
 
