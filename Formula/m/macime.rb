@@ -8,10 +8,10 @@ class Macime < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b331aa700f28a225da82ebdbfe5dc8ef43363fda5e6b5ca140c2cef095fd11b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ea753726f2f7e58b319ccdfea3d3d2b0df193f6377e9124abcbf043c83f5f37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "112f02c84acfc33f23f996b4180ead3f8d3c2547859345d0385e9649862701b0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "1be59f7509f84ce0f16e2463803512d57a027521b9fc3f19dacafb7babe34bf9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8b6f068c430c90e40371471a89fd33101c89b1a9a592afdab84bae12b74f77a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb02cf7426ac0e8aeff3825c8c69b03544351afda582c15bfbafbbe5137e6a87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65f09eb157b93dc787ed3fffdef1635aa8bd27dc6a6ce4a15e5b53de232bbee1"
+    sha256 cellar: :any_skip_relocation, sequoia:       "0b359e964fd475f778c780366b4d08ef552089788db0e74e5af011f868a4f145"
   end
 
   depends_on :macos
