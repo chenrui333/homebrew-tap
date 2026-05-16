@@ -8,11 +8,11 @@ class Vulcain < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3e83d9cc7902fff2aa0379516717d5813240ff069ecc2996756643f813a9810"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a48b746fd17a8c0154d6b9a46df50c471456676831fb0b1ed2ba140b4854f60a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3cb2cfd2fe3ea2ed6485f01717befbce8a9e287269bf33ba6ac0b5efb036476"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5ba98f22da2a77f54ca38705f301b396eb340ec78cd7d30987cdb1eeab53498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0102ab3b01447490c96506a4bbd86c7f1b27271b5b0e8c5fa5214eb700c79f2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7eca5631175861c2136c426c3e40335f38d9f8641a6b67e2970d0c31f445cc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4db62ad76e403d8ed43ef301eca22b7fb8d36093e370f0356951499525c6fb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50605e16323afd50ba0daeed70202203e932a6cd7fff533408140308d6f964ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "170be72ad2b31f4f83ea9e2c7293e782b0d18898f3037b2598873af1acd6b9ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ffac89b50af55a2f7269f5be22b303eef096aeea9f73f5a09fe358a6eae4a07"
   end
 
   depends_on "go" => :build
