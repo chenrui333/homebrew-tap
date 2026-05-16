@@ -11,7 +11,7 @@ class Ghostscope < Formula
   depends_on "llvm"
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "ghostscope")
   end
 
   test do
