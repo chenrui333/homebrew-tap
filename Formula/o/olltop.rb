@@ -7,6 +7,8 @@ class Olltop < Formula
   head "https://github.com/evandhoffman/olltop.git", branch: "main"
 
   depends_on "go" => :build
+  # Linux eBPF capture planned but not yet implemented upstream
+  depends_on :macos
 
   on_linux do
     depends_on "libpcap"
