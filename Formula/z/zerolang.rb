@@ -7,6 +7,7 @@ class Zerolang < Formula
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
   def install
+    bin.mkpath
     cd "native/zero-c" do
       system ENV.cc, *Dir["src/*.c"], "-Iinclude",
              "-std=c11", "-Wall", "-Wextra", "-Wpedantic", "-Os",
