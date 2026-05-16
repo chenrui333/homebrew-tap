@@ -7,6 +7,7 @@ class EprofilerTui < Formula
   license "Apache-2.0"
   head "https://github.com/rogercoll/eprofiler-tui.git", branch: "main"
 
+  depends_on "cmake" => :build
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
