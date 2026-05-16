@@ -1,8 +1,9 @@
 class EprofilerTui < Formula
   desc "Terminal-based flamegraph viewer for OpenTelemetry eBPF profiler data"
   homepage "https://github.com/rogercoll/eprofiler-tui"
-  url "https://github.com/rogercoll/eprofiler-tui/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "dccca8aee8bd257117d58b7d3abdebfb3fcb0c8b3711498d1ab2ba451d95ebda"
+  url "https://github.com/rogercoll/eprofiler-tui.git",
+      tag:      "v0.2.0",
+      revision: "18acde399009a4de4cd8e33a4ee7fb5bbb727d96"
   license "Apache-2.0"
   head "https://github.com/rogercoll/eprofiler-tui.git", branch: "main"
 
