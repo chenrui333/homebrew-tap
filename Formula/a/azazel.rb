@@ -8,6 +8,12 @@ class Azazel < Formula
   license "GPL-2.0-only"
   head "https://github.com/beelzebub-labs/azazel.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ef4a67163637ddee7a95224eeb7afca554bca07fbc00b2316512882c926b8b55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b94dfa7cc638338ce9093f13ac3116893d56beafe3413d57be81fe092f92ae35"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
