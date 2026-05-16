@@ -7,6 +7,7 @@ class Gecit < Formula
   head "https://github.com/boratanrikulu/gecit.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on :linux
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gecit"
