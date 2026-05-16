@@ -1,0 +1,24 @@
+ebpf.md
+  s_2a0b7a01045e3b::t_19b64e692c0390 38
+  s_2a0b7a01045e3b::t_eeb2b25c12d8ba 56-57
+  s_2a0b7a01045e3b::t_70ef99c9248033 37
+  s_2a0b7a01045e3b::t_47ff4554af625e 58-59
+  s_2a0b7a01045e3b::t_c6e767f5e2d410 41
+  s_2a0b7a01045e3b::t_3f9cfb81593ee7 74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "ef55c73c33a28b6929d9be3a8d83d901d8d726da",
+  "prompts": {},
+  "sessions": {
+    "s_2a0b7a01045e3b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3e9136d3-4f82-4b1a-8613-d75cfec1349e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": null
+    }
+  }
+}
