@@ -1,7 +1,7 @@
 class Netperf < Formula
   desc "Benchmarks performance of many different types of networking"
   homepage "https://hewlettpackard.github.io/netperf/"
-  license :cannot_represent
+  license "MIT"
 
   head "https://github.com/HewlettPackard/netperf.git", branch: "master"
 
