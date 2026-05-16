@@ -6,6 +6,12 @@ class Bpftui < Formula
   license "MIT"
   head "https://github.com/viveksb007/bpftui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "097e3e053f1f675d22d091cbba91c55f2e05c8debd6723b675b39876c31c8b4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "56483c0a6a5173241144f40292959ffa751e4d837a2d35c1b0bea2efcb733763"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
