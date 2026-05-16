@@ -8,11 +8,11 @@ class Dotstate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "dddba082fc2d6da2565ade06e44ae8f8f5a3fc1896658b2d2d2a350d90041f65"
-    sha256                               arm64_sequoia: "f365a71607e6714a9ba435ae0653e12b88d37d79ec1756b46afc96eeb34ced66"
-    sha256                               arm64_sonoma:  "aa90f1d2ee03ba3e0e3942b6ab36d6aee2708e98f81842d97efa528a7dbcde74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3168c9740dc23a9aa02e0573172003535be6c82010719c9982df8f2aaa5fb2c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "354cdddde50ff0452614a37091cbe06b8cdb87e96c0a973fe184e661919813a7"
+    sha256                               arm64_tahoe:   "ee5dfb8d3de3ce125d85c68322bb540bab08ca6b9fe6d5d9a800c00c4b4e8998"
+    sha256                               arm64_sequoia: "a59dbace6238c14c4e5c8ef74a1fb3c9414c98f83482c1f7bb1b0bbb16046f41"
+    sha256                               arm64_sonoma:  "116a3bbabda36a34572381dcb0cc835e2e3853df3d8d8408a9c1fc77cb7cdb21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd55571db9efa6fd7fdd37e3a7183a97ee81386c7685760444a93e520ed12678"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "501513c9d8d33977b177e03ed70980ae2cc2a6a5843c92ca23a854726d8ef5be"
   end
 
   depends_on "pkgconf" => :build
