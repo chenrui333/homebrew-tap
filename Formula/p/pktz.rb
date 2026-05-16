@@ -17,6 +17,6 @@ class Pktz < Formula
     assert_match "pktz", shell_output("#{bin}/pktz --version")
 
     output = shell_output("#{bin}/pktz 2>&1", 1)
-    assert_match "permission", output.downcase
+    assert_match "insufficient privileges", output
   end
 end
