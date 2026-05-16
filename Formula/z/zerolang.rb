@@ -19,8 +19,8 @@ class Zerolang < Formula
     assert_match version.to_s, shell_output("#{bin}/zero --version")
 
     (testpath/"hello.0").write <<~ZERO
-      fn main() -> i32 {
-        return 0;
+      pub fun main(world: World) -> Void raises {
+          check world.out.write("hello\\n")
       }
     ZERO
     system bin/"zero", "check", testpath/"hello.0"
