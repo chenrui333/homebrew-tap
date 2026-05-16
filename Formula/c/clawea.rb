@@ -3,7 +3,7 @@ class Clawea < Formula
   homepage "https://github.com/Cladamos/clawea"
   url "https://github.com/Cladamos/clawea/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "939e15ba6bc99c42ceb280e487596f58a4c12967bdb9c8c7d4910439a7a40df4"
-  license :cannot_represent
+  license "MIT"
   head "https://github.com/Cladamos/clawea.git", branch: "main"
 
   bottle do
