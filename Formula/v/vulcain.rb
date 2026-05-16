@@ -1,8 +1,8 @@
 class Vulcain < Formula
   desc "Fast and idiomatic client-driven REST APIs"
   homepage "https://vulcain.rocks/"
-  url "https://github.com/dunglas/vulcain/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "d3d4cf10bcc43f9f8aaca5940f61d7aa3d6952cf8f2d55112fbbca4adb2a9773"
+  url "https://github.com/dunglas/vulcain/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "fa93f5d9352528ab708ffa5ec472841715622775ed66566e6a4acffe37bda3a1"
   license "AGPL-3.0-only"
   head "https://github.com/dunglas/vulcain.git", branch: "main"
 
