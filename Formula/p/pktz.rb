@@ -6,6 +6,12 @@ class Pktz < Formula
   license "MIT"
   head "https://github.com/immanuwell/pktz.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c146a2d17563bdb519825848c67e1037bcee31a90ed6f499ef3bd0b0c4e2cb26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "96366f2820617f393a52a261c1222319061c785fcc727d09b1dfb303e97aa77e"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
