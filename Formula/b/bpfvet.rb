@@ -6,6 +6,15 @@ class Bpfvet < Formula
   license "MIT"
   head "https://github.com/boratanrikulu/bpfvet.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e8332b42a4b79b3e8384d56699884d6b3b828eaa250013db084baee62c1a9d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e8332b42a4b79b3e8384d56699884d6b3b828eaa250013db084baee62c1a9d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e8332b42a4b79b3e8384d56699884d6b3b828eaa250013db084baee62c1a9d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e6c5a49ee5a96a5316f0ed61357d85a300e0b4a33f2663cf65665c7b689cddb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8227b02de01c743e5871f434e8c77555aa185200030e637da93445c375b88702"
+  end
+
   depends_on "go" => :build
 
   def install
