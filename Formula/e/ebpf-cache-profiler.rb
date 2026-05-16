@@ -19,6 +19,8 @@ class EbpfCacheProfiler < Formula
     inreplace "meson.build", /^(cache_profiler_bin = executable\('cache_profiler',)$/,
               "\\1\n  install: true,"
 
+    inreplace "meson.build", "__TARGET_ARCH_x86", "__TARGET_ARCH_arm64" if Hardware::CPU.arm?
+
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "-v"
     system "meson", "install", "-C", "build"
