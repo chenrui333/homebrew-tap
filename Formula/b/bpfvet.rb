@@ -14,6 +14,6 @@ class Bpfvet < Formula
 
   test do
     output = shell_output("#{bin}/bpfvet 2>&1", 1)
-    assert_match "usage", output.downcase
+    assert_match "requires at least 1 arg", output
   end
 end
