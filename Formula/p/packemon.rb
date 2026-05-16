@@ -1,8 +1,8 @@
 class Packemon < Formula
   desc "Terminal tool for generating and monitoring packets"
   homepage "https://github.com/ddddddO/packemon"
-  url "https://github.com/ddddddO/packemon/archive/refs/tags/v1.8.21.tar.gz"
-  sha256 "843acc971cf5191fd7d06266a582444f478372a2232e77497dc3e73be23b2b77"
+  url "https://github.com/ddddddO/packemon/archive/refs/tags/v1.8.22.tar.gz"
+  sha256 "30cbd7805566920895ec3130e40c9960081ec35a8e90bd9721b8a6a6f9e16a0e"
   license "BSD-2-Clause"
   head "https://github.com/ddddddO/packemon.git", branch: "main"
 
