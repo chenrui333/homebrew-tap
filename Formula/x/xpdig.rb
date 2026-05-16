@@ -1,8 +1,8 @@
 class Xpdig < Formula
   desc "Dig into Crossplane traces via TUI"
   homepage "https://github.com/brunoluiz/xpdig"
-  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "cf339d528910118625a79c430ea838404f746b8d9cbeb363ec6ddfa052de6d40"
+  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.24.0.tar.gz"
+  sha256 "2340fcda2bc11ed812a1cdd4ba67c1a7494470c1d3b13b9d7fbafe490302d2b4"
   license "Apache-2.0"
   head "https://github.com/brunoluiz/xpdig.git", branch: "main"
 
