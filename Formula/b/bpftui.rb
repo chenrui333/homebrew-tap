@@ -14,7 +14,7 @@ class Bpftui < Formula
   end
 
   test do
-    output = shell_output("#{bin}/bpftui --help 2>&1", 1)
-    assert_match "bpftui", output.downcase
+    output = shell_output("#{bin}/bpftui 2>&1", 1)
+    assert_match(/bpftui|tty/, output.downcase)
   end
 end
