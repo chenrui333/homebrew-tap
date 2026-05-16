@@ -37,6 +37,7 @@ brew install --cask <tool>
 - `act3`
 - `actionbook`
 - `adbtuifm`
+- `adsb-tui`
 - `agentmako`
 - `agl`
 - `ai-context`
@@ -58,6 +59,7 @@ brew install --cask <tool>
 - `aptui`
 - `apw`
 - `arduino-language-server`
+- `artui`
 - `arxiv-mcp-server`
 - `ash-ai`
 - `astro-language-server`
@@ -79,6 +81,7 @@ brew install --cask <tool>
 - `awsui`
 - `axiom-mcp-server`
 - `az-tui`
+- `azazel`
 - `azure-pipelines-language-server`
 - `b4n`
 - `backport`
@@ -100,6 +103,9 @@ brew install --cask <tool>
 - `blush`
 - `botkube`
 - `box`
+- `bpftui`
+- `bpfvet`
+- `bpfviewer`
 - `brave-search-mcp-server`
 - `brew-cleaner`
 - `brighterscript-formatter`
@@ -173,8 +179,10 @@ brew install --cask <tool>
 - `cnspec`
 - `cobib`
 - `cocainate`
+- `cockroach`
 - `code-index-mcp`
 - `code-pushup`
+- `code-review-graph`
 - `codebuff`
 - `codefmt`
 - `codemachine`
@@ -191,6 +199,7 @@ brew install --cask <tool>
 - `copilot-cli`
 - `countryfetch`
 - `cozypkg`
+- `cpg`
 - `cpx`
 - `cpx11`
 - `crates-lsp`
@@ -269,6 +278,7 @@ brew install --cask <tool>
 - `envtrace`
 - `envx`
 - `envy`
+- `eprofiler-tui`
 - `ereandel`
 - `ergo`
 - `fairyglade-ly`
@@ -304,6 +314,7 @@ brew install --cask <tool>
 - `ftdv`
 - `fuck-u-code`
 - `g1c`
+- `gecit`
 - `gemini-cli`
 - `get-port-cli`
 - `get-shit-done-cc`
@@ -323,10 +334,13 @@ brew install --cask <tool>
 - `gitid`
 - `gitlabform`
 - `gitman`
+- `gitpane`
 - `gitsnip`
+- `gitsocial`
 - `gittop`
 - `gitv`
 - `gix`
+- `gloomberb`
 - `glsl-analyzer`
 - `gnhf`
 - `go-eagle`
@@ -372,6 +386,7 @@ brew install --cask <tool>
 - `heyagent`
 - `hf`
 - `holo-cli`
+- `holo`
 - `horusec`
 - `hostctl`
 - `howto`
@@ -399,6 +414,7 @@ brew install --cask <tool>
 - `inbucket`
 - `incus-compose`
 - `infraspec`
+- `ingero`
 - `inspect-cert-chain`
 - `instagram-cli`
 - `intentrace`
@@ -460,6 +476,7 @@ brew install --cask <tool>
 - `lacquer`
 - `lazycelery`
 - `lazycli`
+- `lazyenv`
 - `lazyjira`
 - `lazykiq`
 - `lazymake`
@@ -468,6 +485,7 @@ brew install --cask <tool>
 - `lazyworktree`
 - `lemonade`
 - `leveldb-cli`
+- `lfk`
 - `librarian-mcp`
 - `lightpanda-v8`
 - `lightpanda`
@@ -483,6 +501,7 @@ brew install --cask <tool>
 - `localports`
 - `locport`
 - `logfire-mcp`
+- `logira`
 - `lola`
 - `lstags`
 - `lsv`
@@ -551,6 +570,7 @@ brew install --cask <tool>
 - `needs`
 - `nest-cli`
 - `netperf`
+- `netwatch`
 - `newsnow-mcp-server`
 - `nexus`
 - `ngtop`
@@ -560,6 +580,7 @@ brew install --cask <tool>
 - `ninjabot`
 - `nino`
 - `nkv`
+- `nless`
 - `nocc`
 - `nosy`
 - `npkill`
@@ -567,6 +588,7 @@ brew install --cask <tool>
 - `nvrs`
 - `oatmeal`
 - `octelium`
+- `octoscope`
 - `octotype`
 - `oeis-tui`
 - `offpunk`
@@ -574,6 +596,7 @@ brew install --cask <tool>
 - `oh-my-codex`
 - `ohy`
 - `olla`
+- `olltop`
 - `omni-cache`
 - `omnictl`
 - `omp-manager`
@@ -625,6 +648,7 @@ brew install --cask <tool>
 - `pixeli`
 - `pixelle`
 - `pj`
+- `pktz`
 - `plandex`
 - `play`
 - `playerctl`
@@ -654,6 +678,7 @@ brew install --cask <tool>
 - `psq`
 - `public-ollama-finder`
 - `pubmed-mcp-server`
+- `purple`
 - `pwdsafety`
 - `pygitzen`
 - `pyink`
@@ -703,8 +728,10 @@ brew install --cask <tool>
 - `run`
 - `rustfilt`
 - `rusticon`
+- `rustlens`
 - `rustnet`
 - `rustormy`
+- `sakimori`
 - `sato`
 - `satty`
 - `satview`
@@ -755,6 +782,7 @@ brew install --cask <tool>
 - `speedscope`
 - `speedtest`
 - `spiffe-spike`
+- `splashboard`
 - `splitrail`
 - `spok`
 - `spotiflac-cli`
@@ -826,6 +854,7 @@ brew install --cask <tool>
 - `tftree`
 - `thanks-stars`
 - `theattyr`
+- `threatdeck`
 - `ticker`
 - `tickrs`
 - `tiki`
@@ -839,6 +868,7 @@ brew install --cask <tool>
 - `togomak`
 - `token-cli`
 - `toml-f`
+- `toofan`
 - `tooka`
 - `toolctl`
 - `tori`
@@ -862,6 +892,7 @@ brew install --cask <tool>
 - `ugdb`
 - `ugm`
 - `unarj`
+- `unifly`
 - `unrar`
 - `unsloth`
 - `untether`
@@ -915,10 +946,12 @@ brew install --cask <tool>
 - `youtube-music-cli`
 - `yr`
 - `yt-x`
+- `ytm-player`
 - `ytsurf`
 - `go-zzz`
 - `zero`
 - `zerobrew`
+- `zerolang`
 - `zig@0.11`
 - `zig@0.12`
 - `zig@0.13`
