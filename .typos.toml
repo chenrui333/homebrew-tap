@@ -38,6 +38,7 @@ extend-exclude = [
 [type.ruby.extend-words]
 certifi = "certifi" # python package name used in ruby formulae
 fo = "fo" # for resinator.rb
+Iinclude = "Iinclude" # C compiler -I flag in zerolang.rb
 
 [type.md.extend-words]
 certifi = "certifi"
