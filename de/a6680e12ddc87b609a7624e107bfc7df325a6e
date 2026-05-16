@@ -1,0 +1,25 @@
+ebpf.md
+  s_2a0b7a01045e3b::t_2327cca581da5b 78-79
+  s_2a0b7a01045e3b::t_a123f0c00f1e56 80
+  s_2a0b7a01045e3b::t_5a739b584f445b 1-36,39-49,53-65,67-77
+  s_2a0b7a01045e3b::t_bafc39dd0b7cd4 52
+  s_2a0b7a01045e3b::t_99add0b16a7725 50-51
+  s_2a0b7a01045e3b::t_8a6e16bf4f9a23 37-38
+  s_2a0b7a01045e3b::t_bcb0a8d20ac2da 66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "dea6680e12ddc87b609a7624e107bfc7df325a6e",
+  "prompts": {},
+  "sessions": {
+    "s_2a0b7a01045e3b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3e9136d3-4f82-4b1a-8613-d75cfec1349e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
