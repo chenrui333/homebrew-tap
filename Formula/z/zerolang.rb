@@ -8,12 +8,12 @@ class Zerolang < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff8adbbfdfea7a03ba7a5308198a0e1765f1055be57990e4dd97c265e5b94a43"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9321c31899ca828c4aa02315165ca4ab731c4bd6381d4c7dcc4a5c7370b3494a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3e0bf1c053d78c2da0a9609f2a8a6da64a255283dc6f750627dc6a789a2612e"
-    sha256 cellar: :any_skip_relocation, sequoia:       "37b5778672a144a4ac1ebc16f92e7893090b71238c147edf16fe25eaa9cd9bf8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "98a6343c0d6017e915881db809754c392d47f234877ac95250d23e9865b85caf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f8bcc12689becf55eac631fe54efa2fc33309717904afca8b4b2a0605c60f3c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b5466f298363ca8a278c76a723a6feb78747f7f508246c2d86c9daa2c8f698d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62f6544019c4cfeaf792d1a4a1e47a0bf3a9baac57921bb4d7f814e0b9340bd3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d04c7de5cb1b6a9f3ae891c4d197fa30132e323aabb653d624661a12b905f1e4"
+    sha256 cellar: :any_skip_relocation, sequoia:       "d6c59c30cb310e6a19a630aba7832401295c6a6c1c40eaa31e60aee9bcebe2e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8832ba3c8bba0662f5e3b7cfce2caa498c9634c6553d7747f132a889ea1a3c18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05e344faf31a0b4146a3fde53c0f81a1c74e7f7207624f3f5e3c1ee9a5ad7a72"
   end
 
   def install
