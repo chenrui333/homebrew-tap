@@ -10,7 +10,7 @@ class UserScanner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "4f1eabc0d84ffdc1814df7ecf830fcd0d8cba67ddafbece04e4e18703e20fc63"
+    sha256 cellar: :any_skip_relocation, all: "eeaa7779488cd1402f95784903f153b2e2d7725174fdcf523e193dcf60f816a7"
   end
 
   depends_on "certifi" => :no_linkage
