@@ -1,8 +1,8 @@
 class Pitchfork < Formula
   desc "Daemons with DX"
   homepage "https://github.com/endevco/pitchfork"
-  url "https://github.com/endevco/pitchfork/archive/refs/tags/v2.10.0.tar.gz"
-  sha256 "68c6373a824ec7fe694f63e2902b2ad75eac320bebe066f9510ab33f660b08f4"
+  url "https://github.com/endevco/pitchfork/archive/refs/tags/v2.11.0.tar.gz"
+  sha256 "ba564d1cd429aff1737baa24df1c2c0ac66c1cfeff95d54eee73b6adfa81620e"
   license "MIT"
   head "https://github.com/endevco/pitchfork.git", branch: "main"
 
