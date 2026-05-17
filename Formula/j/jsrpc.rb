@@ -1,8 +1,8 @@
 class Jsrpc < Formula
   desc "远程调用(rpc)浏览器方法，免去抠代码补环境"
   homepage "https://github.com/jxhczhl/JsRpc"
-  url "https://github.com/jxhczhl/JsRpc/archive/refs/tags/v1.098.tar.gz"
-  sha256 "661d428fff00516b09c1d507bb307b9630e19f34b9740eb62daa1207b4ef4efd"
+  url "https://github.com/jxhczhl/JsRpc/archive/refs/tags/v1.099.tar.gz"
+  sha256 "da0d0b38d3cfee8af5e2378e007fdfc2fff8db22443ac6b58b24e9e4ce7edad6"
   license "GPL-3.0-or-later"
   head "https://github.com/jxhczhl/JsRpc.git", branch: "main"
 
