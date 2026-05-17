@@ -1,8 +1,8 @@
 class IamExpand < Formula
   desc "Expand IAM Actions with Wildcards"
   homepage "https://iam.cloudcopilot.io/tools/iam-expand"
-  url "https://registry.npmjs.org/@cloud-copilot/iam-expand/-/iam-expand-0.11.66.tgz"
-  sha256 "abc0a6d53081930b2eead134830e771afc7620bbfdddb9a48445a450a39d5827"
+  url "https://registry.npmjs.org/@cloud-copilot/iam-expand/-/iam-expand-0.11.67.tgz"
+  sha256 "647cd78c8a5724929bbfcc53139553fae6d0e63a9111d9a9ba5b73be7c666511"
   license "AGPL-3.0-or-later"
 
   bottle do
