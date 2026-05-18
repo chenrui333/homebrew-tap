@@ -1,8 +1,8 @@
 class YtX < Formula
   desc "Browse YouTube from the terminal"
   homepage "https://github.com/Benexl/yt-x"
-  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "6fc7ec5cde80ed6236a6864390e68d3c0abd654709928eb57dceaac2984f6e61"
+  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "74fd001e240356286feae33052c00bb67ac2355017b674e012f1bab7496108d5"
   license "MIT"
   head "https://github.com/Benexl/yt-x.git", branch: "master"
 
