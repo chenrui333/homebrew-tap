@@ -3,8 +3,8 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/0a/49/a6d5380523ddfbc1fdb43b9e163d7943dc0e289d220c321fa21c67d92397/user_scanner-1.3.6.4.tar.gz"
-  sha256 "48acd3457c126a0aaa6a7e22f9617f51025edded046f3dcddf51c92a4e2718bd"
+  url "https://files.pythonhosted.org/packages/fe/fa/03e823b9774feb844555f1b861839e7082b572464d1d1415b880dfdd60fa/user_scanner-1.3.6.5.tar.gz"
+  sha256 "03f5721df3a6dbd45d618ad7d58f74897e752ea016b70156a500da48ed24f154"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
