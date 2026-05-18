@@ -1,0 +1,20 @@
+Formula/z/zerolang.rb
+  s_833390df8ad09e::t_227b2efea169fd 20
+  s_833390df8ad09e::t_0ebf387a0c350a 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "7dd091aa349878deddeab5d4738d53528e181a8b",
+  "prompts": {},
+  "sessions": {
+    "s_833390df8ad09e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "18224f2b-c7c4-4c1e-a6da-54c8bbfa0c2d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
