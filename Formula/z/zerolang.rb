@@ -17,12 +17,8 @@ class Zerolang < Formula
   end
 
   def install
-    bin.mkpath
-    cd "native/zero-c" do
-      system ENV.cc, *Dir["src/*.c"], "-Iinclude",
-             "-std=c11", "-Wall", "-Wextra", "-Wpedantic", "-Os",
-             "-o", bin/"zero"
-    end
+    system "make", "-C", "native/zero-c", "OUT=#{bin}/zero"
+    rm bin/"zero.build"
   end
 
   test do
