@@ -3,7 +3,7 @@ class Zerolang < Formula
   homepage "https://github.com/vercel-labs/zero"
   url "https://github.com/vercel-labs/zero/archive/refs/tags/v0.1.2.tar.gz"
   sha256 "69b914820adcfadd2a7b675d429fffc5e74602ceed555082b8406feecd77d653"
-  license :cannot_represent # https://github.com/vercel-labs/zero/issues/36
+  license "Apache-2.0"
   head "https://github.com/vercel-labs/zero.git", branch: "main"
 
   bottle do
