@@ -1,8 +1,8 @@
 class Gsh < Formula
   desc "Battery-included, POSIX-compatible, generative shell"
   homepage "https://github.com/atinylittleshell/gsh"
-  url "https://github.com/atinylittleshell/gsh/archive/refs/tags/v1.10.3.tar.gz"
-  sha256 "388dc40c0efde2d1a9fcbaa438569d4d7ab2fbbda41ed00bd56c0397c4dd95d4"
+  url "https://github.com/atinylittleshell/gsh/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "f9902edd46b8232f2a4f965b608180870211ffc3f0c829ff6ee6727ee0da19c6"
   license "GPL-3.0-only"
   head "https://github.com/atinylittleshell/gsh.git", branch: "main"
 
