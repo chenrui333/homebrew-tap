@@ -1,0 +1,20 @@
+Formula/t/terraformer.rb
+  s_88c446f62097f1::t_7697905ee43add 17
+  s_88c446f62097f1::t_5698cca153abf7 1-16,18-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "b59c7d63472f9bd6dce5b11a27e7082aa89c20b9",
+  "prompts": {},
+  "sessions": {
+    "s_88c446f62097f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9ca2302-4aa7-4853-bb9e-4c96d1a60ecb",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
