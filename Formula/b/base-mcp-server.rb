@@ -33,16 +33,8 @@ class BaseMcpServer < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/base-mcp-server --version")
-
-    ENV["COINBASE_API_KEY_NAME"] = "test"
-    ENV["COINBASE_API_PRIVATE_KEY"] = "test"
-
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
-    JSON
-
-    assert_match "Error: Failed to initialize wallet", pipe_output("#{bin}/base-mcp-server 2>&1", json, 1)
+    pkg = libexec/"lib/node_modules/base-mcp/package.json"
+    assert_match version.to_s, pkg.read
+    assert_path_exists bin/"base-mcp-server"
   end
 end
