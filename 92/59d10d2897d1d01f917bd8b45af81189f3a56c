@@ -1,5 +1,53 @@
+Formula/t/threatdeck.rb
+  ai_agent 4-5,11-15
+Formula/i/ingero.rb
+  ai_agent 4-5,11-12
+Formula/u/user-scanner.rb
+  ai_agent 6-7,13
+Formula/z/zerolang.rb
+  ai_agent 6,11-16,20-25
+Formula/c/clai.rb
+  ai_agent 4-5,11-15
+Formula/c/codebuff.rb
+  ai_agent 4-5,10
+Formula/d/dominds.rb
+  ai_agent 4-5,10
+Formula/b/bearer.rb
+  ai_agent 4-5,10-14
+Formula/f/fakecloud.rb
+  ai_agent 6-7,13-17
+Formula/l/lazyworktree.rb
+  ai_agent 4-5,11-15
+Formula/n/netwatch.rb
+  ai_agent 4-5,11-15
+Formula/s/siggy.rb
+  ai_agent 4-5,11-15
+Formula/s/ssm.rb
+  ai_agent 4-5,11-15
+Formula/c/crush.rb
+  ai_agent 4-5,11-15
 Formula/y/yt-x.rb
-  ai_agent 38-39
+  ai_agent 4-5,21,38-39
+.github/workflows/tests.yml
+  ai_agent 33
+Formula/c/comchan.rb
+  ai_agent 4-5,11-15
+Formula/s/splashboard.rb
+  ai_agent 4-5,11-15
+Formula/a/aws-doctor.rb
+  ai_agent 4-5,11-15
+Formula/k/knip.rb
+  ai_agent 4-5,10-14
+.github/workflows/clean-up-closed-prs.yml
+  ai_agent 30
+Formula/p/projscan.rb
+  ai_agent 4-5,11-15
+Formula/p/purple.rb
+  ai_agent 4-5,11-15
+AGENTS.md
+  ai_agent 138-140,142
+Formula/s/semaphore.rb
+  ai_agent 4-5,11-15
 ---
 {
   "schema_version": "authorship/3.0.0",
