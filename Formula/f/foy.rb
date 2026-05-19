@@ -7,7 +7,7 @@ class Foy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "da3c3a790feffbbed6012fde61d54a5f68792fee81f48c163e3365928968e867"
+    sha256 cellar: :any_skip_relocation, all: "60f480dcac08e450942b251c6b0061945bb3ac154f35f34dea6cdd76c077b121"
   end
 
   depends_on "node"
