@@ -20,14 +20,15 @@ class Tars < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    # Remove prebuilds for non-native architectures
+    # Remove prebuilds to avoid linkage issues
     nm = libexec/"lib/node_modules/@saccolabs/tars/node_modules"
-    if Hardware::CPU.arm?
-      nm.glob("**/prebuilds/darwin-x64").each(&:rmtree)
-      nm.glob("**/prebuilds/linux-x64").each(&:rmtree)
+    if OS.linux?
+      nm.glob("**/prebuilds").each { |dir| rm_r(dir) }
     else
-      nm.glob("**/prebuilds/darwin-arm64").each(&:rmtree)
-      nm.glob("**/prebuilds/linux-arm64").each(&:rmtree)
+      native = "darwin-#{(Hardware::CPU.arch == :arm64) ? "arm64" : "x64"}"
+      nm.glob("**/prebuilds/*").each do |dir|
+        rm_r(dir) if dir.basename.to_s != native
+      end
     end
   end
 
