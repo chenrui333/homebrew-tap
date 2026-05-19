@@ -7,10 +7,7 @@ class BaseMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_sequoia: "f6a139930d9ff8da77e6d4e444e73b19e243155a6cdb5e9fc241ba70ffc6e2ff"
-    sha256                               arm64_sonoma:  "ce2fd4bbd72fb802e491f97f914799b366527b39479273c14cc196e020b0d5cc"
-    sha256                               ventura:       "59a8ebc94fb90dc794ce00634596a9424c4c43dacbaee1c4f60da02a922ae1e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a190a8a6e38c0877381eeec67d86127df517d4b2047f1a3dd1f58cf607dd0b66"
+    sha256 cellar: :any_skip_relocation, all: "34e5f91ae29f10578778b473ea5e4f1531a165f35bbaff6430093820550ce7f2"
   end
 
   depends_on "node"
