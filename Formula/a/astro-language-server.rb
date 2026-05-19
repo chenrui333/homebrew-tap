@@ -7,7 +7,7 @@ class AstroLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "6e4a8efee465b68d574427c469f24b3858f4dd02f5bb71a2ae493dcc8c033568"
+    sha256 cellar: :any_skip_relocation, all: "ce979e9227b3ef59e5fbd4c604cd844a6843ba28397cd9f650d8b387e5aa8f4c"
   end
 
   depends_on "node"
