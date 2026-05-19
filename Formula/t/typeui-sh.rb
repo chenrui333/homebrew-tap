@@ -17,7 +17,7 @@ class TypeuiSh < Formula
     system "npm", "install", *std_npm_args(prefix: false), "--include=dev"
     system "npm", "run", "build"
     system "npm", "pack"
-    system "npm", "install", *std_npm_args, "typeui.sh-#{version}.tgz"
+    system "npm", "install", *std_npm_args, Dir["*.tgz"].first
 
     bin.install_symlink libexec/"bin/typeui.sh"
   end
