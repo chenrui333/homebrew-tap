@@ -6,6 +6,15 @@ class Multica < Formula
   license :cannot_represent
   head "https://github.com/multica-ai/multica.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90f12833a1fc847375aaf8dd3b3af809eed66420d66e8f04727096fa1458b087"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90f12833a1fc847375aaf8dd3b3af809eed66420d66e8f04727096fa1458b087"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90f12833a1fc847375aaf8dd3b3af809eed66420d66e8f04727096fa1458b087"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6754aca20f1ed4747f98a447e0e9b19ffb188c23135944caa9a3876c11de136"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "def01752d5b56cfb96b9382ffb232772bc3071830debeb59ddd7817cf41310ed"
+  end
+
   depends_on "go" => :build
 
   def install
