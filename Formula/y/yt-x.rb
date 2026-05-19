@@ -18,7 +18,7 @@ class YtX < Formula
   depends_on "yt-dlp"
 
   def install
-    inreplace "yt-x", /^CLI_VERSION=.*/, %Q(CLI_VERSION="#{version}")
+    inreplace "yt-x", /^readonly CLI_VERSION=.*/, %Q(readonly CLI_VERSION="#{version}")
 
     inreplace "yt-x",
               'CLI_EXTENSIONS_DIR="$CLI_CONFIG_DIR/extensions"',
