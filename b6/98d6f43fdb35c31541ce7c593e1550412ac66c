@@ -1,0 +1,20 @@
+Formula/t/tars.rb
+  s_88c446f62097f1::t_51b0d6edfbe50b 23,25,29,31
+  s_88c446f62097f1::t_5624e1db7a030a 26,28,30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "b698d6f43fdb35c31541ce7c593e1550412ac66c",
+  "prompts": {},
+  "sessions": {
+    "s_88c446f62097f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9ca2302-4aa7-4853-bb9e-4c96d1a60ecb",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
