@@ -7,11 +7,11 @@ class Hcom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9dd94db05d9dec3869e4678f127ca2221fa73848b02f1df735e7f326815a29f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0edc67eec2dd87df0d4098eae87d20e3951aa768b616ebbd10bb3aaa324bfb42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef6871b363106472445c40d7116b9d4366c78c6a5a6b40ee674a0582357d144d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f2c0a201cab501350e762f03f89bf3cf6f6f731fb479777942c82c36fb5193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331f645829d409a33244ef6493bd7d3333bf820368c16ee2b7007d4710c558ed"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b6d5d76790559dfd08d033dd42a2e6827750cbeb9b3b9f283241435b34c2e5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc29510843060c447fa12f8509214f71124f1b984cd104acf96392c442e73c51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f53d742533b06e389d0c908a4250ee2ae7fe0b118eb1ab1ac8ab2d5b1931ac82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c5db7a2a99b6f71d291bf0bb04e0fcec7443749c3c5bdc3e9dbf62bbda26984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c89ea2e0393525218a213ab7e85d277bdce5ca28db125bb0ea9ad5e1f01a1764"
   end
 
   depends_on "rust" => :build
