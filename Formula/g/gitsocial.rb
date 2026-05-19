@@ -1,8 +1,8 @@
 class Gitsocial < Formula
   desc "Git-native cross-forge collaboration platform"
   homepage "https://github.com/gitsocial-org/gitsocial"
-  url "https://github.com/gitsocial-org/gitsocial/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "1f80ccde31e4f29b4e96e0f8ab9c6ad26937b4e32147529800d8a348e1573d27"
+  url "https://github.com/gitsocial-org/gitsocial/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "6e3aaedb070be9b1f3cc3b265a9d712fc0abc7b8f562b9c50ed31cafd8855bfd"
   license "MIT"
   head "https://github.com/gitsocial-org/gitsocial.git", branch: "main"
 
@@ -18,9 +18,7 @@ class Gitsocial < Formula
   depends_on "go" => :build
 
   def install
-    Dir.chdir("library") do
-      system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cli"
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cli/gitsocial"
 
     generate_completions_from_executable(bin/"gitsocial", "completion", shell_parameter_format: :cobra)
   end
