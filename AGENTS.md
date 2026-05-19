@@ -135,11 +135,17 @@ Commit message: `foo 1.2.3 (new formula)`
   - Reserve `std_cargo_args(path: "...")` for crates that live in a subdirectory.
   - Do NOT hand-roll standard Rust binary installs with `cargo build` + `bin.install` when `std_cargo_args` applies.
   - Do NOT manually append `--locked` or `--path` when `std_cargo_args` is used.
-- **Test block**: MUST verify actual functionality, not just `--version` or `--help`
-  - Include a version assertion as an additional check whenever a reliable version command/output exists
-  - Prefer the simple standard form: `assert_match version.to_s, shell_output("#{bin}/foo --version")`
+- **Test block**: MUST include at least TWO meaningful assertions — never a version-only test.
+  - **Minimum**: version assertion + one functional assertion (e.g. `--help` output containing expected subcommands/options)
+  - Include a version assertion whenever a reliable version command/output exists:
+    `assert_match version.to_s, shell_output("#{bin}/foo --version")`
+  - Always add a second assertion verifying actual behavior, for example:
+    - `assert_match "subcommand", shell_output("#{bin}/foo --help")` for CLIs
+    - Compile and link sample code for libraries
+    - Run a non-destructive subcommand with predictable output
   - Avoid regex-only version assertions when `version.to_s` matching is available
-  - For libraries: compile and link sample code
+  - Do NOT write tests that require interactive input, network access, or hang on CI
+  - Prefer `shell_output` over `Open3.capture2e` unless piping stdin is required
   - Use `testpath` for temporary files
   - Do NOT override `HOME` in `test do` when Homebrew already provides the isolated test home.
   - In particular, do NOT set `ENV["HOME"] = testpath` or `ENV["HOME"] = testpath.to_s` in `test do`.
