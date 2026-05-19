@@ -1,0 +1,13 @@
+Formula/c/codebuff.rb
+  ai_agent 4-5,10
+Formula/k/knip.rb
+  ai_agent 4-5,10-14
+Formula/t/terraformer.rb
+  ai_agent 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "f2a3daddc5b1f35e174553a3ccbf89dd13144a4d",
+  "prompts": {}
+}
