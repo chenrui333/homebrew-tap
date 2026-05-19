@@ -1,0 +1,19 @@
+Formula/m/multica.rb
+  s_88c446f62097f1::t_47a1cd6211e5cb 1-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "e8ec9561e8eb2fc0130c75a76f8c51d99d29a1eb",
+  "prompts": {},
+  "sessions": {
+    "s_88c446f62097f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9ca2302-4aa7-4853-bb9e-4c96d1a60ecb",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
