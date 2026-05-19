@@ -4,6 +4,7 @@ class Terraformer < Formula
   url "https://github.com/chenrui333/terraformer/archive/refs/tags/v0.13.0.tar.gz"
   sha256 "9ce9ac8ea51966cd7c016185c988372fa35be4653d4fe220724649094deaa490"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/chenrui333/terraformer.git", branch: "main"
 
   bottle do
@@ -18,6 +19,7 @@ class Terraformer < Formula
   depends_on "go" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
       -X github.com/chenrui333/terraformer/version.Version=#{version}
