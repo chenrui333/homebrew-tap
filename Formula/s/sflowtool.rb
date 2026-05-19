@@ -7,12 +7,12 @@ class Sflowtool < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ee6227c948d378416d3b2762006ed11016e22420314c13714da1d0cfb8077ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e996628de9be1c0359745b3862e53974df404da726fb6d3437bb72932a9eaae6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8d3897674046ceb64eec4d8252912a1df38cc54cb8cf5eb9299d25e29937f62"
-    sha256 cellar: :any_skip_relocation, sequoia:       "08b63e345db3417b7a65822c436dff3411a1c7830924711ae6700fb8ab7b137f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "288bb8ad8d37f39368cead88ecdaf9082d752b76e139ea17d28e27fc2d5345e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5453815350339b6c478ec586e540c2a7269c9ce47b982c2f40c1085861c4886"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ffca328767d72a0eb9e7bcea003807fc77cac0f63aed4d276ff6ebabbd6f88e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d37c83d9808b1841cf3487fe6eda6872cbe1b803e6e140410f6e39a1c363262e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0b38f77e2555159a5b27d42ba45dc97ddd8fb7ed92de790a494a5470c4f249f"
+    sha256 cellar: :any_skip_relocation, sequoia:       "a6a4c385536306e55e520bc5eafcac7c2d27c9293352a404d1af04545d47e8e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eafb68a478bfd0ea7298cee4beabf0e978642107a88e30c17eced4163c29ab52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4393557ad99f40caaed8e311f71051c3b1d8456136e5349bbb6a6ed640a61547"
   end
 
   resource "scripts" do
