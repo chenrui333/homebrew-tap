@@ -1,0 +1,20 @@
+Formula/o/opencli.rb
+  s_88c446f62097f1::t_a168d908a8d533 5
+  s_88c446f62097f1::t_4f6a13fe9f8364 1-4,6-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "4b3f66ee9b97a25a3a5373b9b2954591ac60b821",
+  "prompts": {},
+  "sessions": {
+    "s_88c446f62097f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9ca2302-4aa7-4853-bb9e-4c96d1a60ecb",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
