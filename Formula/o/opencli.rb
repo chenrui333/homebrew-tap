@@ -6,6 +6,11 @@ class Opencli < Formula
   license "Apache-2.0"
   head "https://github.com/jackwener/opencli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "b39b2efb8fe7c3932047cfaac0f8d43a211121340ac53868580d5a429cd23d4f"
+  end
+
   depends_on "node"
 
   def install
