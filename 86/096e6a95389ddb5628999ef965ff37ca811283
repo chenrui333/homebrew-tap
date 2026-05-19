@@ -1,0 +1,20 @@
+Formula/y/yt-x.rb
+  s_88c446f62097f1::t_861e867401d129 59
+  s_88c446f62097f1::t_3601b99b71757c 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "86096e6a95389ddb5628999ef965ff37ca811283",
+  "prompts": {},
+  "sessions": {
+    "s_88c446f62097f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9ca2302-4aa7-4853-bb9e-4c96d1a60ecb",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": null
+    }
+  }
+}
