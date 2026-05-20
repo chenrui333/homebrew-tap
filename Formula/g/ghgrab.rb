@@ -8,11 +8,11 @@ class Ghgrab < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc88a968000080a2b67bbc07383455251efd0ac9412fac4140492e913c7d7155"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71c6e3485b7b729973c1b7a047660b6e390053dbd3b6629072a5d4aa9458ec53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76d518edad1e5df7ed973a2804044873583afcee8e5225ac08bf7505795b2aa9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9dc2b03d8fa7d06c60fbb43ebb88368b15882a854b22bd55fbf9fd6a7cf8426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b830ffe00443549e354710bc0f89ab5e991d9e390baf7441cddaaffe48e143d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32c83ec2c63ed6b9839c42e7ff55dc63e23f3caf66890942da33a9b38cabdd9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3d4a2aa4790acebcfeceaefad154dada5fc72a33e586fa3fd7746ed87583c2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7282f4ac358f2d05afc27d81e01acd5988085212fbe1955c671ee15e4b9c2657"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a41c08fbbd13b4445e0be939f67cb598550964d84ba6f055f9d886be267bcb1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5324966d86d0be35c524f02359e2b0f966775551da278234fb9f7aecb3a9696b"
   end
 
   depends_on "rust" => :build
