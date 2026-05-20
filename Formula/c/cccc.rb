@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/c6/a2/10d811ab6d0cfd68cbc5685c68c7ad2753536931e0404fbb9a672d4371f5/cccc_pair-0.4.18.tar.gz"
-  sha256 "55cb8ed24317f4b1fea6785d3f87923c5bfae54c191ab2894f004a70fdb02469"
+  url "https://files.pythonhosted.org/packages/38/00/55872e108f016c24a5a4513a238a381919fdd4c447f1490e9dd7135687e0/cccc_pair-0.4.19.tar.gz"
+  sha256 "a2bbda976bfa50de334f8b8063f54f12f56454f91bf209990ac723b84b196372"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -177,8 +177,8 @@ class Cccc < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/c2/c9/8869df9b2a2d6c59d79220a4db37679e74f807c559ffe5265e08b227a210/watchfiles-1.1.1.tar.gz"
-    sha256 "a173cb5c16c4f40ab19cecf48a534c409f7ea983ab8fed0741304a1c0a31b3f2"
+    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
+    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
   end
 
   resource "websocket-client" do
