@@ -8,7 +8,7 @@ class Opencli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "b39b2efb8fe7c3932047cfaac0f8d43a211121340ac53868580d5a429cd23d4f"
+    sha256 cellar: :any_skip_relocation, all: "d0a0a6859b1eadb2de2e28e6b20b303e8abb3019b68ff24f9c3fa33acabea399"
   end
 
   depends_on "node"
