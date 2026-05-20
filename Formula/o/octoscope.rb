@@ -8,11 +8,11 @@ class Octoscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "574a1ef77eb1c6bc765a6e0be43649210590f709611fc1543fe4906ae6b225ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "574a1ef77eb1c6bc765a6e0be43649210590f709611fc1543fe4906ae6b225ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "574a1ef77eb1c6bc765a6e0be43649210590f709611fc1543fe4906ae6b225ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6c72f066cda061202c93c014f3150b443e9e64cd61033f2e8ee5c3b98d3347a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb61369fa73d6d3fe7d38125068eb11907932594c74e374a7773987485ff69a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a928e9ed29a364c49bb274e5a74c51d046f43f064f34e0114dbbc247f86938f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a928e9ed29a364c49bb274e5a74c51d046f43f064f34e0114dbbc247f86938f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a928e9ed29a364c49bb274e5a74c51d046f43f064f34e0114dbbc247f86938f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f36bbb3e752dd0feff5a2a2f7dabc5d38eafe6002c10a7df08437f8015eec0d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d722e2de49c14f35565e28cab31e577a114b21e9863b054772d21e3591916e3"
   end
 
   depends_on "go" => :build
