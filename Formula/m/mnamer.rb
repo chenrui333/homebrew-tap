@@ -9,7 +9,7 @@ class Mnamer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "7fb98a6d90828ffa9231527898fd102046fa0f1836042df28737780c1f6f22b9"
+    sha256 cellar: :any_skip_relocation, all: "1e7ad5c2c5f1e95dca66548bff7a9e59d98bbfd25f28276f76b96192e3b3adc6"
   end
 
   depends_on "certifi" => :no_linkage
