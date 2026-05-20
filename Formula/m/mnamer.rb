@@ -3,8 +3,8 @@ class Mnamer < Formula
 
   desc "Media file renaming and organizing tool"
   homepage "https://github.com/jkwill87/mnamer"
-  url "https://files.pythonhosted.org/packages/4b/4a/c3175784c559d700aab924a308c169375c4c703d48fdf6131de7f0f74378/mnamer-2.7.0.tar.gz"
-  sha256 "26c0c9395e86a9bf7e7db0b77981d0d93da3dd355401ebc6f9a9ba6d22c7182c"
+  url "https://files.pythonhosted.org/packages/83/3a/473c9ab4e6051a783b0a976ca182d9201132208d14895c8833043e43f9d3/mnamer-2.7.1.tar.gz"
+  sha256 "1318eb800486b8dfec387102edd110a3579fb5b7485da332426ad53651369381"
   license "MIT"
 
   bottle do
@@ -48,8 +48,8 @@ class Mnamer < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz"
-    sha256 "585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "packaging" do
@@ -73,13 +73,13 @@ class Mnamer < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-cache" do
-    url "https://files.pythonhosted.org/packages/8c/41/cca56fdb48cbca8feb68770bce70cb315de2a1f7d6bf7ca62c437ac279f0/requests_cache-1.3.1.tar.gz"
-    sha256 "784e9d07f72db4fe234830a065230c59eb446489528f271ba288c640897e47c4"
+    url "https://files.pythonhosted.org/packages/c3/ae/90a0f931c7f6b5a674b98c25ecb2593a173bcee14f0d8c148471df3d7b26/requests_cache-1.3.2.tar.gz"
+    sha256 "bdc3680931f98a1dea509d339ea6b45cea526945b47b250ce63ffd2744ee0b14"
   end
 
   resource "setuptools" do
