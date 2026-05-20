@@ -1,0 +1,19 @@
+Formula/t/terraformer.rb
+  s_424a8aa881243b::t_9d893f2ab0e3dc 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.10",
+  "base_commit_sha": "96628af56a55713aa73605d24cdc0dccb3a06345",
+  "prompts": {},
+  "sessions": {
+    "s_424a8aa881243b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e42db-8bb5-7391-a569-83ba8b925add",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
