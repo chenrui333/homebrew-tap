@@ -8,11 +8,11 @@ class ChessTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f16a7c40ce38dd4ef013a949cb2e289f3f29400d68c661cdb004db8a14d315d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e0de112298cc236244d4857452f826a5783329ae46b07854721bd7be6b62472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64781266c8491d3851948b1fe9762872861ceee3e4733dc2877fa0b4e34ac47c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "995ed72a27a517cacb8299caac2da77a3230693f47784c54511c8b2732f29114"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7fe6750e97e3dfb359beb089bec90115e304c813277e7349c05ff940e8ea3e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b73aea38b9f2d238eb57a3c7b874ee482ad55666f0638d17181e73ee34c4aae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3957d29e60309236e4fdeff64af2a8a4aeefb9861ec5efb263ebe21be646311f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e34be12842479a0cac6e07ea5c94e48a2f815220a9be174a91399b8c7e7c1a4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4c6437b6179d554a3c4769b2940468f26e04b2c3f3b260b3921df94a9ada108"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e7044d23fbf319f6ea14b7d6197ead9afce38f48dd89e543c735c1be9ccf22b"
   end
 
   depends_on "pkgconf" => :build
