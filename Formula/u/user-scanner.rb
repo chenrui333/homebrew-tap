@@ -3,8 +3,8 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/fe/fa/03e823b9774feb844555f1b861839e7082b572464d1d1415b880dfdd60fa/user_scanner-1.3.6.5.tar.gz"
-  sha256 "03f5721df3a6dbd45d618ad7d58f74897e752ea016b70156a500da48ed24f154"
+  url "https://files.pythonhosted.org/packages/85/f1/0f74f38b2ea06127082300bb996c0e9074d720350fcfcdd1ee0b76aa3123/user_scanner-1.3.6.6.tar.gz"
+  sha256 "dc7d6207e77a86d357f6bf8985fc13edcce9cb70d506bd6910a1acd3b7107e69"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
@@ -22,8 +22,8 @@ class UserScanner < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/25/ee/6caf7a40c36a1220410afe15a1cc64993a1f864871f698c0f93acb72842a/certifi-2026.4.22.tar.gz"
-    sha256 "8d455352a37b71bf76a79caa83a3d6c25afee4a385d632127b6afb3963f1c580"
+    url "https://files.pythonhosted.org/packages/f3/ce/ee2ecad540810a79593028e88299baeae54d346cc7a0d94b6199988b89b1/certifi-2026.5.20.tar.gz"
+    sha256 "69dea482ab64caa7b9f6aba1c6bf48bb6a5448d1c0f1b17ab42ad8c763a5344d"
   end
 
   resource "colorama" do
