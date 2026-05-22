@@ -1,8 +1,8 @@
 class ApifyActorsMcpServer < Formula
   desc "MCP server for Apify"
   homepage "https://docs.apify.com/platform/integrations/mcp"
-  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.10.6.tgz"
-  sha256 "0ab2b7529ce5adbf8678f243e47139ab8fa31a13794bac0a2c0bafaa7978b161"
+  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.10.8.tgz"
+  sha256 "6db729024034e0db93b83f85d61c57ed1f1cda0e574d224cc1c4bb7eb421e2c2"
   license "MIT"
 
   bottle do
@@ -13,6 +13,10 @@ class ApifyActorsMcpServer < Formula
   depends_on "node"
 
   def install
+    package_json = JSON.parse((buildpath/"package.json").read)
+    package_json.delete("devEngines")
+    (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
+
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
