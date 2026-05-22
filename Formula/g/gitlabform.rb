@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/54/6c/727d7796d767423ac02a36f7360f40ca64941616e7417d7361f87b687401/gitlabform-5.4.0.tar.gz"
-  sha256 "d96de96bd6a91bf9fd02e751672f3c799b70b74964798f8f5b905e1f3dfab3f8"
+  url "https://files.pythonhosted.org/packages/ec/20/eeb58cb650668bf6425a12a3a05f93e162fec188ad8ec15f38d49fd6004d/gitlabform-5.5.0.tar.gz"
+  sha256 "57fd69388d315058511a628016318c67a2a1740a10c3e9f697c560ec80e48c7f"
   license "MIT"
 
   bottle do
@@ -191,8 +191,8 @@ class Gitlabform < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/23/6e/beb1beec874a72f23815c1434518bfc4ed2175065173fb138c3705f658d4/yarl-1.23.0.tar.gz"
-    sha256 "53b1ea6ca88ebd4420379c330aea57e258408dd0df9af0992e5de2078dc9f5d5"
+    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
+    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
   def install
