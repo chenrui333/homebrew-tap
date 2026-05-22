@@ -1,8 +1,8 @@
 class Ingero < Formula
   desc "GPU causal observability agent using eBPF"
   homepage "https://github.com/ingero-io/ingero"
-  url "https://github.com/ingero-io/ingero/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "0982816e61e429297ccc48eec04126bbf014b1219b70d54d39ceb4c7e0a5d024"
+  url "https://github.com/ingero-io/ingero/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "297b2b1fc6f0701d48bde30b417cb25f9d29673ef2ec5ec4629d1da4990b2f09"
   license "Apache-2.0"
   head "https://github.com/ingero-io/ingero.git", branch: "main"
 
