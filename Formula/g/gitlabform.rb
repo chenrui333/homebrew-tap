@@ -9,12 +9,12 @@ class Gitlabform < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90166780e0b9675cf08878c13cf7bb2ab4dcf53ca096885a63c1a16d56518d19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67255263d1e4711c2b90e11ab530e44a4c8c0b43b9d288df6370369013083e52"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24cb86589790b7ef70e6649487c73efe58c9257580c968a84d41dbc99cf33f9d"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d1db211320960dad936b640e083723fa335e19f98833535df1fdce1958963535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "217c7022bf0a72f6896460daf5fe3c1b99678191c5a3b1a8f16b7c2229ba0538"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80c8a89e8608abc2513c0f7d27c2238c00be82e37afee935a4b0c8c2ea4fd17f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e57ad0251c0f47689c38bf14b44f7621047bc92d2cf1146d9474eddd0650965e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94b68dc4a5fdfa579cfe2e1ebd86eaa6fa8148a6d6e19498ba27f81601e09e48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11bd5c7d0b8e1b7cf440d9cde73d5c21c42374e7cfd5ff3e0c20bd9fd904b600"
+    sha256 cellar: :any_skip_relocation, sequoia:       "9eb2584b94048063c4ed3753a861cba86ec39c6905838fb0f670924e0e2973f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b4200b7718f1c231ad29231c8bf59e0d4b5ed442b7708ca068713921a1bc4d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "250342b8ee9023d4c775b660e74dec147d73f2500c1e6db1f6e61aef35ac5b69"
   end
 
   depends_on "certifi" => :no_linkage
