@@ -3,8 +3,8 @@ class Mnamer < Formula
 
   desc "Media file renaming and organizing tool"
   homepage "https://github.com/jkwill87/mnamer"
-  url "https://files.pythonhosted.org/packages/83/3a/473c9ab4e6051a783b0a976ca182d9201132208d14895c8833043e43f9d3/mnamer-2.7.1.tar.gz"
-  sha256 "1318eb800486b8dfec387102edd110a3579fb5b7485da332426ad53651369381"
+  url "https://files.pythonhosted.org/packages/19/d5/edca80dcade48bb598f329fabc239e99b4121be266295b496490d1266bce/mnamer-2.7.2.tar.gz"
+  sha256 "46926e4cc49c3163059f2dc8302d5a2eb5b687ada5393600a439a89691c6c7c4"
   license "MIT"
 
   bottle do
@@ -48,8 +48,8 @@ class Mnamer < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "packaging" do
