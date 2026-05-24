@@ -1,8 +1,8 @@
 class LibrarianMcp < Formula
   desc "MCP server that gives Claude a librarian for your Obsidian vault"
   homepage "https://github.com/ngmeyer/librarian-mcp"
-  url "https://github.com/ngmeyer/librarian-mcp/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1e93fae534c93621f0e9f298f56241f0ca5998a08f4d25a0975298daadf6ce38"
+  url "https://github.com/ngmeyer/librarian-mcp/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "0e96c702c43f90551a185ce91e0fa360942c55858d91ab2732f2f1d5268c710f"
   license "MIT"
 
   bottle do
