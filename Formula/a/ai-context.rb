@@ -2,10 +2,9 @@
 class AiContext < Formula
   desc "CLI tool to produce MD context files from many sources"
   homepage "https://github.com/Tanq16/ai-context"
-  url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.14.tar.gz"
-  sha256 "09ddbb4bc8eaf9c20ffed53dc9886057bdd5207b62e6ed9485b90369dda57ac6"
+  url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "4706f9fa1fb04ae07548627665d0d15701bac16d1a12630a3302fdfded4cdcbe"
   license "MIT"
-  revision 1
   head "https://github.com/Tanq16/ai-context.git", branch: "main"
 
   bottle do
@@ -21,7 +20,7 @@ class AiContext < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/tanq16/ai-context/cmd.AIContextVersion=#{version}"
+    ldflags = "-s -w -X github.com/tanq16/ai-context/cmd.AppVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
@@ -29,7 +28,7 @@ class AiContext < Formula
     ENV["NO_COLOR"] = "1"
 
     output = shell_output("#{bin}/ai-context https://example.com")
-    assert_match "All operations completed", output
+    assert_match "Completed all operations successfully", output
     assert_path_exists "context/web-example_com.md"
 
     assert_match version.to_s, shell_output("#{bin}/ai-context --version")
