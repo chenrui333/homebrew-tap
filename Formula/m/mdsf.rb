@@ -2,8 +2,8 @@
 class Mdsf < Formula
   desc "Format, and lint, markdown code snippets using your favorite tools"
   homepage "https://github.com/hougesen/mdsf"
-  url "https://github.com/hougesen/mdsf/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "dde37767de63cca26b3ac8f7a8aafe06545cf4248d4a011fa1f26b68d4db34fb"
+  url "https://github.com/hougesen/mdsf/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "c79a131f6e15804c99cff4c9ea0fe917e6b935e3524341255cc323973d2be7fc"
   license "MIT"
   head "https://github.com/hougesen/mdsf.git", branch: "main"
 
@@ -33,6 +33,6 @@ class Mdsf < Formula
 
     output = shell_output("#{bin}/mdsf completions bash")
     assert_match "_mdsf()", output
-    assert_match "mdsf__format)", output
+    assert_match "mdsf__subcmd__format)", output
   end
 end
