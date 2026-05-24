@@ -1,8 +1,8 @@
 class RailwayMcpServer < Formula
   desc "MCP server for Railway"
   homepage "https://github.com/railwayapp/railway-mcp-server"
-  url "https://registry.npmjs.org/@railway/mcp-server/-/mcp-server-0.1.11.tgz"
-  sha256 "e117c7c78243c38883c8a1fec30660c22ddd64b90623c2f971ed29310f2419a4"
+  url "https://registry.npmjs.org/@railway/mcp-server/-/mcp-server-0.1.12.tgz"
+  sha256 "b2289aa0762101c69683df73060d1a3d93a5a0b612fe97d24a996e7439ded790"
   license "MIT"
 
   bottle do
@@ -24,7 +24,8 @@ class RailwayMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output(bin/"railway-mcp-server", json, 0)
-    assert_match "Check Railway CLI Status", output
+    output = pipe_output("#{bin}/railway-mcp-server 2>&1", json, 1)
+    assert_match "Unauthorized", output
+    assert_match "railway login", output
   end
 end
