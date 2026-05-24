@@ -556,6 +556,7 @@ brew install --cask <tool>
 - `msgvault`
 - `mtef`
 - `mult`
+- `multica`
 - `mush`
 - `mvt`
 - `mynav`
@@ -601,6 +602,7 @@ brew install --cask <tool>
 - `omnictl`
 - `omp-manager`
 - `opamui`
+- `opencli`
 - `openharness`
 - `opensnitch-tui`
 - `openspec`
@@ -843,6 +845,7 @@ brew install --cask <tool>
 - `terradozer`
 - `terrafetch`
 - `terraform-diff`
+- `terraformer`
 - `terrap-cli`
 - `terratags`
 - `terrawiz`
