@@ -1,8 +1,8 @@
 class Vortix < Formula
   desc "Terminal UI for WireGuard and OpenVPN with real-time telemetry"
   homepage "https://github.com/Harry-kp/vortix"
-  url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "9bdfa44776d61c31d392971c7374220bd1dce59586ab46b72a2e40cf5c03b2a1"
+  url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "3f533f90c912df5a2a162192212cfc9fe414826ffee8975c9e22df66445e90f2"
   license "MIT"
   head "https://github.com/Harry-kp/vortix.git", branch: "main"
 
@@ -20,7 +20,7 @@ class Vortix < Formula
   depends_on "wireguard-tools"
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/vortix")
   end
 
   test do
