@@ -1,8 +1,8 @@
 class Floci < Formula
   desc "Open-source local AWS emulator"
   homepage "https://github.com/floci-io/floci"
-  url "https://github.com/floci-io/floci/archive/refs/tags/1.5.17.tar.gz"
-  sha256 "467baf4ea7c0368fa8e0f23fd6163304c9da40c5af9bf09fc9778d8ec76cf6de"
+  url "https://github.com/floci-io/floci/archive/refs/tags/1.5.19.tar.gz"
+  sha256 "07ed0c4efc8fdd862f38ce9ffc1c95da637ae75e6d274a782f32213608c3ef42"
   license "MIT"
   head "https://github.com/floci-io/floci.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Floci < Formula
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk"
+  depends_on "openjdk@25"
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("25")
@@ -59,10 +59,16 @@ class Floci < Formula
                 [:out, :err] => log.to_s)
 
     begin
-      20.times do
-        break if quiet_system "curl", "-fsS", "http://127.0.0.1:#{port}/_floci/health"
+      started = false
+      60.times do
+        started = quiet_system "curl", "-fsS", "http://127.0.0.1:#{port}/_floci/health"
+        break if started
 
         sleep 1
+      end
+      unless started
+        assert_path_exists log
+        flunk log.read
       end
 
       output = shell_output("curl -fsS http://127.0.0.1:#{port}/_floci/health")
