@@ -8,8 +8,8 @@ class Wild < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "f85bd8b77ed8cce31a7f3128ce3399bdb046fd4a1c32d5492356300bf3477bed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "52020f072419683889b0141657f35d629b2cbbe4f4b25beb40a30ab045de3724"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "6f1197d29a1387be69dd26241f53b1533bd91a54e0fb7895116ed738e8240b54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1c7d1e33a1c03601c918f952edeaff972b66440d05fdac608f3a5297d9901559"
   end
 
   depends_on "rust" => :build
