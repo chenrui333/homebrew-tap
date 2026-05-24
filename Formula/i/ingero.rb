@@ -8,8 +8,8 @@ class Ingero < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "887eac3526c7ac621d108af97db72a958e28d6685842945fedfa582eccda4595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2365c45dec530913b91807a3a33784490c6451208b2fbd047c75d684ec9b5321"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "1fb37bb2db06c15c3efd62b71e6ee596b72d93b09de37bdbf90e202f3d5d653e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c3d9ef1f4ab34b36c9edc20eeabccb51f290b02fabfdc2a201479aa119553de"
   end
 
   depends_on "go" => :build
