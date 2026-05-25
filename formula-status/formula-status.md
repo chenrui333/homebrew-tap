@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-05-18 10:39:30 UTC
-Total formulas: 933
+Generated: 2026-05-25 10:40:05 UTC
+Total formulas: 936
 
 ## Formulas
 
@@ -13,10 +13,12 @@ Total formulas: 933
 | unsloth | CLI for Unsloth training and studio workflows | 57650 | 4858 | 2026-03-23 | 2026-03-22 | - | ✓ | - | [link](https://github.com/unslothai/unsloth) |
 | get-shit-done-cc | Meta-prompting and context engineering system for AI coding ... | 51581 | 4333 | 2026-04-12 | 2026-04-11 | MIT | ✓ | - | [link](https://github.com/gsd-build/get-shit-done) |
 | headscale | Open source, self-hosted implementation of the Tailscale con... | 35437 | 1901 | 2026-02-16 | 2026-02-04 | BSD-3-Clause | ✓ | - | [link](https://github.com/juanfont/headscale) |
+| multica | Open-source managed agents platform for AI coding agents | 32891 | 3934 | 2026-05-25 | 2026-05-25 | - | ✓ | - | [link](https://github.com/multica-ai/multica) |
 | oh-my-claude | Teams-first multi-agent orchestration for Claude Code | 30156 | 2796 | 2026-04-20 | 2026-04-19 | MIT | ✓ | - | [link](https://github.com/Yeachan-Heo/oh-my-claudecode) |
 | nanoclaw | Personal Claude assistant with container-isolated agents | 28189 | 12663 | 2026-04-26 | - | MIT | ✓ | - | [link](https://nanoclaw.dev) |
 | openspec | AI-native system for spec-driven development | 24298 | 1600 | 2026-02-16 | 2026-01-30 | MIT | ✓ | - | [link](https://github.com/Fission-AI/OpenSpec) |
 | lightpanda | Headless browser designed for AI and automation | 23947 | 947 | 2026-03-23 | 2024-07-16 | AGPL-3.0-or-later | ✓ | - | [link](https://github.com/lightpanda-io/browser) |
+| opencli | Make any website or Electron App your CLI, AI-powered | 22572 | 2270 | 2026-05-25 | 2026-05-19 | Apache-2.0 | ✓ | - | [link](https://github.com/jackwener/opencli) |
 | crush | Glamorous AI coding agent for your favorite terminal | 20049 | 1234 | 2026-02-16 | 2026-02-13 | FSL-1.1-MIT | ✓ | - | [link](https://github.com/charmbracelet/crush) |
 | oh-my-codex | Multi-agent orchestration layer for OpenAI Codex CLI | 16978 | 1624 | 2026-04-06 | 2026-04-04 | MIT | ✓ | - | [link](https://github.com/Yeachan-Heo/oh-my-codex) |
 | plandex | AI driven development in your terminal. Designed for large, ... | 14987 | 1083 | 2025-10-03 | 2025-07-16 | MIT | ✓ | ✓ | [link](https://github.com/plandex-ai/plandex/) |
@@ -101,7 +103,7 @@ Total formulas: 933
 | apm-cli | Open-source dependency manager for AI agents | 2083 | 145 | 2026-04-27 | 2026-04-27 | MIT | ✓ | - | [link](https://github.com/microsoft/apm) |
 | ralph-tui | AI agent loop orchestrator | 2069 | 205 | 2026-02-25 | 2026-02-25 | MIT | - | - | [link](https://ralph-tui.com) |
 | markdownify | Convert HTML to Markdown | 2064 | 183 | 2025-11-16 | 2025-11-16 | MIT | ✓ | - | [link](https://github.com/matthewwithanm/python-markdownify) |
-| zerolang | Programming language for agents with explicit effects and pr... | 1987 | 125 | 2026-05-18 | 2026-05-17 | - | ✓ | - | [link](https://github.com/vercel-labs/zero) |
+| zerolang | Programming language for agents with explicit effects and pr... | 1987 | 125 | 2026-05-18 | 2026-05-17 | Apache-2.0 | ✓ | - | [link](https://github.com/vercel-labs/zero) |
 | inbucket | Disposable webmail server with SMTP, POP3, and REST interfac... | 1983 | 180 | 2026-01-21 | 2025-12-06 | MIT | ✓ | - | [link](https://inbucket.org/) |
 | ministack | Local AWS service emulator and LocalStack replacement | 1909 | 131 | 2026-04-13 | 2026-04-12 | MIT | ✓ | - | [link](https://github.com/ministackorg/ministack) |
 | grmon | Command-line monitoring for goroutines | 1904 | 56 | 2023-07-18 | 2021-10-13 | MIT | ✓ | - | [link](https://github.com/bcicen/grmon) |
@@ -829,6 +831,7 @@ Total formulas: 933
 | holo-cli | CLI for holo | 5 | 10 | 2026-01-16 | - | MIT | ✓ | - | [link](https://github.com/holo-routing/holo-cli) |
 | pmx | Manage and switch between AI agent profiles across different... | 5 | - | 2025-10-10 | - | MIT | ✓ | - | [link](https://github.com/NishantJoshi00/pmx) |
 | sls | Fuzzy CLI selector for SSH config hosts | 5 | 1 | 2026-01-25 | 2026-01-25 | MIT | ✓ | - | [link](https://github.com/JinmuGo/sls) |
+| terraformer | CLI tool to generate terraform files from existing infrastru... | 5 | 1 | 2026-05-25 | 2026-05-24 | Apache-2.0 | ✓ | - | [link](https://github.com/chenrui333/terraformer) |
 | budgetclaw | Local spend monitor for Claude Code | 4 | - | 2026-04-28 | 2026-04-28 | MIT | ✓ | - | [link](https://github.com/RoninForge/budgetclaw) |
 | ctxhist | Context-aware shell history extension for Bash and Zsh | 4 | 1 | 2025-03-30 | 2025-03-30 | MIT | ✓ | - | [link](https://github.com/nakkiy/ctxhist) |
 | nkv | Share your state between services using persisted key value ... | 4 | 1 | 2025-11-14 | 2025-10-14 | Apache-2.0 | ✓ | - | [link](https://github.com/nkval/nkv) |
