@@ -1,0 +1,20 @@
+Formula/a/ai-context.rb
+  s_1ec5a2f91781d0::t_c3aa6bbaa61764 23
+  s_1ec5a2f91781d0::t_e6ed10200ec0ea 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "6badbd139c659a6084cd619a0536751b0214ab0e",
+  "prompts": {},
+  "sessions": {
+    "s_1ec5a2f91781d0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5f49-d989-7101-b619-19a7e22bca72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
