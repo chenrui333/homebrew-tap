@@ -68,8 +68,19 @@ def command_env
   env
 end
 
+def brew_env
+  command_env.merge(
+    "HOMEBREW_NO_AUTO_UPDATE" => "1",
+    "HOMEBREW_NO_INSTALL_FROM_API" => "1",
+  )
+end
+
+def capture3(*command, env: command_env)
+  Open3.capture3(env, *command)
+end
+
 def capture!(*command, env: command_env)
-  stdout, stderr, status = Open3.capture3(env, *command)
+  stdout, stderr, status = capture3(*command, env: env)
   return stdout if status.success?
 
   odie("#{command.join(" ")} failed:\n#{stderr}")
@@ -79,24 +90,45 @@ def gh_json(*args)
   JSON.parse(capture!("gh", *args))
 end
 
-def formula_path(formula)
+def formula_path(formula, root = TAP_ROOT)
   candidates = [
-    File.join(TAP_ROOT, "Formula", formula[0], "#{formula}.rb"),
-    File.join(TAP_ROOT, "Formula", "#{formula}.rb"),
+    File.join(root, "Formula", formula[0], "#{formula}.rb"),
+    File.join(root, "Formula", "#{formula}.rb"),
   ]
   candidates.find { |candidate| File.file?(candidate) }
 end
 
-def formula_version(formula)
-  path = formula_path(formula)
+def tap_name(repo)
+  owner, name = repo.split("/", 2)
+  return repo unless owner && name
+
+  "#{owner}/#{name.delete_prefix("homebrew-")}"
+end
+
+def tap_root(repo)
+  @tap_roots ||= {}
+  return @tap_roots.fetch(repo) if @tap_roots.key?(repo)
+
+  stdout, stderr, status = capture3("brew", "--repo", tap_name(repo), env: brew_env)
+  unless status.success?
+    warn "Warning: could not locate #{tap_name(repo)} tap: #{stderr.strip}"
+    return @tap_roots[repo] = TAP_ROOT
+  end
+
+  @tap_roots[repo] = stdout.strip
+end
+
+def formula_version(formula, repo)
+  path = formula_path(formula, tap_root(repo)) || formula_path(formula)
   return nil unless path
 
-  env = {
-    "HOMEBREW_NO_AUTO_UPDATE" => "1",
-    "HOMEBREW_NO_INSTALL_FROM_API" => "1",
-  }
-  output = capture!("brew", "info", "--json=v2", "--formula", path, env: env)
-  JSON.parse(output).fetch("formulae").first.fetch("versions").fetch("stable")
+  stdout, stderr, status = capture3("brew", "info", "--json=v2", "--formula", path, env: brew_env)
+  unless status.success?
+    warn "Warning: could not determine current #{formula} version: brew info failed:\n#{stderr}"
+    return nil
+  end
+
+  JSON.parse(stdout).fetch("formulae").first.fetch("versions").fetch("stable")
 rescue StandardError => e
   warn "Warning: could not determine current #{formula} version: #{e.message}"
   nil
@@ -176,7 +208,7 @@ end
 
 closures = []
 bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
-  current_version = formula_version(formula)
+  current_version = formula_version(formula, options[:repo])
   pending_prs = []
 
   formula_prs.each do |pr|
@@ -205,7 +237,7 @@ bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
       number: pr.fetch("number"),
       formula: formula,
       version: pr.fetch(:version),
-      body: "Superseded by ##{keeper.fetch("number")}",
+      body: "Superseded by #{options[:repo]}##{keeper.fetch("number")}",
     }
   end
 end
