@@ -16,6 +16,7 @@ TAP_ROOT = File.expand_path("..", __dir__)
 
 options = {
   apply: false,
+  closed_limit: 1000,
   formulas: [],
   limit: 1000,
   repo: ENV.fetch("GH_REPO", DEFAULT_REPO),
@@ -38,6 +39,10 @@ parser = OptionParser.new do |opts|
 
   opts.on("--limit N", Integer, "Maximum open PRs to inspect (default: 1000)") do |limit|
     options[:limit] = limit
+  end
+
+  opts.on("--closed-limit N", Integer, "Maximum closed PRs to inspect as superseding updates (default: 1000)") do |limit|
+    options[:closed_limit] = limit
   end
 
   opts.on("--repo OWNER/REPO", "GitHub repository (default: #{DEFAULT_REPO})") do |repo|
@@ -148,6 +153,10 @@ def created_at(pr)
   Time.parse(pr.fetch("createdAt"))
 end
 
+def pr_sort_key(pr)
+  [created_at(pr), pr.fetch("number")]
+end
+
 def bump_pr(title)
   match = TITLE_PATTERN.match(title)
   return unless match
@@ -156,6 +165,31 @@ def bump_pr(title)
     formula: match[:formula],
     version: match[:version],
   }
+end
+
+def pr_labels(pr)
+  pr.fetch("labels").map { |label| label.fetch("name") }
+end
+
+def bump_prs(prs, formula_filter)
+  prs.each_with_object([]) do |pr, bump_prs|
+    parsed = bump_pr(pr.fetch("title"))
+    next unless parsed
+    next if formula_filter.any? && !formula_filter[parsed[:formula]]
+    next if (pr_labels(pr) & SKIP_LABELS).any?
+    next unless formula_path(parsed[:formula])
+
+    bump_prs << pr.merge(parsed)
+  end
+end
+
+def superseded_body(repo, pr)
+  body = "Superseded by #{repo}##{pr.fetch("number")}"
+  state = pr["state"]
+  if state && state != "OPEN"
+    body += pr["mergedAt"].to_s.empty? ? " (closed)" : " (merged)"
+  end
+  body
 end
 
 def ensure_superseded_label(repo)
@@ -185,29 +219,35 @@ formula_filter = {}
 options[:formulas].each do |formula|
   formula_filter[formula.sub(%r{\Achenrui333/tap/}, "")] = true
 end
-prs = gh_json(
+odie("--limit must be non-negative") if options[:limit].negative?
+odie("--closed-limit must be non-negative") if options[:closed_limit].negative?
+
+open_prs = gh_json(
   "pr", "list",
   "--repo", options[:repo],
   "--state", "open",
   "--limit", options[:limit].to_s,
-  "--json", "number,title,labels,createdAt"
+  "--json", "number,title,labels,createdAt,state,mergedAt"
 )
 
-bump_prs = []
-prs.each do |pr|
-  parsed = bump_pr(pr.fetch("title"))
-  next unless parsed
-  next if formula_filter.any? && !formula_filter[parsed[:formula]]
-
-  labels = pr.fetch("labels").map { |label| label.fetch("name") }
-  next if (labels & SKIP_LABELS).any?
-  next unless formula_path(parsed[:formula])
-
-  bump_prs << pr.merge(parsed)
+closed_prs = if options[:closed_limit].positive?
+  gh_json(
+    "pr", "list",
+    "--repo", options[:repo],
+    "--state", "closed",
+    "--limit", options[:closed_limit].to_s,
+    "--json", "number,title,labels,createdAt,state,mergedAt"
+  )
+else
+  []
 end
 
+open_bump_prs = bump_prs(open_prs, formula_filter)
+all_bump_prs = open_bump_prs + bump_prs(closed_prs, formula_filter)
+all_bump_prs_by_formula = all_bump_prs.group_by { |pr| pr.fetch(:formula) }
+
 closures = []
-bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
+open_bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
   current_version = formula_version(formula, options[:repo])
   pending_prs = []
 
@@ -224,20 +264,21 @@ bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
     end
   end
 
-  next if pending_prs.length <= 1
+  next if pending_prs.empty?
 
-  # Keep the most recently opened bump PR, even if it intentionally rolls back
-  # a bad higher-version bump.
-  keeper = pending_prs.max_by { |pr| [created_at(pr), pr.fetch("number")] }
+  # Keep the most recently opened bump PR, even if it is already merged/closed
+  # or intentionally rolls back a bad higher-version bump.
+  keeper = all_bump_prs_by_formula.fetch(formula).max_by { |pr| pr_sort_key(pr) }
 
   pending_prs.each do |pr|
     next if pr.fetch("number") == keeper.fetch("number")
+    next if (pr_sort_key(keeper) <=> pr_sort_key(pr)).negative?
 
     closures << {
       number: pr.fetch("number"),
       formula: formula,
       version: pr.fetch(:version),
-      body: "Superseded by #{options[:repo]}##{keeper.fetch("number")}",
+      body: superseded_body(options[:repo], keeper),
     }
   end
 end
