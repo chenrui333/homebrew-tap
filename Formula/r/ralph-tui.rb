@@ -6,6 +6,13 @@ class RalphTui < Formula
   license "MIT"
   head "https://github.com/subsy/ralph-tui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "994aa19f1c3932b26c2f97dbb470608b505d9c768cf0ef9774932356a6420724"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b56d2f234b037f54f59fdcf687ad670ed76a4b9167d1995af7fc0d1c495286dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9692d830d5dfd2d46afc4c71d39baa291d085be20a02f78b2abf53954df1f8a0"
+  end
+
   depends_on "bun"
 
   def install
