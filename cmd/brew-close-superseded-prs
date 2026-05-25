@@ -16,6 +16,7 @@ TAP_ROOT = File.expand_path("..", __dir__)
 
 options = {
   apply: false,
+  closed_days: 30,
   closed_limit: 1000,
   formulas: [],
   limit: 1000,
@@ -43,6 +44,10 @@ parser = OptionParser.new do |opts|
 
   opts.on("--closed-limit N", Integer, "Maximum closed PRs to inspect as superseding updates (default: 1000)") do |limit|
     options[:closed_limit] = limit
+  end
+
+  opts.on("--closed-days N", Integer, "Only inspect PRs closed in the last N days (default: 30; 0 disables closed PR history)") do |days|
+    options[:closed_days] = days
   end
 
   opts.on("--repo OWNER/REPO", "GitHub repository (default: #{DEFAULT_REPO})") do |repo|
@@ -153,6 +158,12 @@ def created_at(pr)
   Time.parse(pr.fetch("createdAt"))
 end
 
+def closed_at(pr)
+  Time.parse(pr.fetch("closedAt"))
+rescue ArgumentError, TypeError
+  nil
+end
+
 def pr_sort_key(pr)
   [created_at(pr), pr.fetch("number")]
 end
@@ -192,6 +203,13 @@ def superseded_body(repo, pr)
   body
 end
 
+def recent_closed_prs(prs, closed_since)
+  prs.select do |pr|
+    closed_at = closed_at(pr)
+    closed_at && closed_at >= closed_since
+  end
+end
+
 def ensure_superseded_label(repo)
   labels = gh_json("label", "list", "--repo", repo, "--limit", "1000", "--json", "name")
   return if labels.any? { |label| label.fetch("name") == SUPERSEDED_LABEL }
@@ -221,6 +239,7 @@ options[:formulas].each do |formula|
 end
 odie("--limit must be non-negative") if options[:limit].negative?
 odie("--closed-limit must be non-negative") if options[:closed_limit].negative?
+odie("--closed-days must be non-negative") if options[:closed_days].negative?
 
 open_prs = gh_json(
   "pr", "list",
@@ -230,14 +249,16 @@ open_prs = gh_json(
   "--json", "number,title,labels,createdAt,state,mergedAt"
 )
 
-closed_prs = if options[:closed_limit].positive?
-  gh_json(
+closed_since = Time.now.utc - (options[:closed_days] * 86_400)
+closed_prs = if options[:closed_limit].positive? && options[:closed_days].positive?
+  recent_closed_prs(gh_json(
     "pr", "list",
     "--repo", options[:repo],
     "--state", "closed",
     "--limit", options[:closed_limit].to_s,
-    "--json", "number,title,labels,createdAt,state,mergedAt"
-  )
+    "--search", "closed:>=#{closed_since.strftime("%Y-%m-%d")}",
+    "--json", "number,title,labels,createdAt,closedAt,state,mergedAt"
+  ), closed_since)
 else
   []
 end

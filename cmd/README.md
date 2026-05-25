@@ -183,6 +183,7 @@ titles.
 ```bash
 brew close-superseded-prs
 brew close-superseded-prs --formula ministack
+brew close-superseded-prs --closed-days 14
 brew close-superseded-prs --closed-limit 2000
 brew close-superseded-prs --apply
 ```
@@ -190,8 +191,9 @@ brew close-superseded-prs --apply
 ### Notes
 
 - Defaults to dry-run output.
-- Inspects open bump PRs plus recent closed bump PRs, so an older open PR can be superseded by the latest merged or closed update for the same formula.
-- Use `--closed-limit 0` to ignore closed PR history.
+- Inspects open bump PRs plus bump PRs closed in the last 30 days, so an older open PR can be superseded by the latest merged or closed update for the same formula.
+- Use `--closed-days` to tune the date window, or `--closed-days 0` to ignore closed PR history.
+- Use `--closed-limit` as a GitHub API cap for the closed PR lookup.
 - Closes PRs already covered by the version on `main` with a `Superseded by current main...` comment.
 - Keeps the most recently opened bump PR for each formula and closes older open bumps with a fully qualified PR reference.
 - Uses the `superseded` label when applying changes.
