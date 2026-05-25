@@ -10,11 +10,11 @@ class Sqlit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "fdaed22bb1199ceea191caad71a27e3a3839a127f591e339ef3f3f1cd1e98051"
-    sha256 cellar: :any, arm64_sequoia: "5b2cf50eb5c770a789602d524996ef008afa6bc2aefc622316158fbd8bb40701"
-    sha256 cellar: :any, arm64_sonoma:  "405dc13cded6af6f63d87b3810fe7d18e340158a35446046c135492aab86473a"
-    sha256               arm64_linux:   "37899c19110ed55a95c3d9bcbe99f26b79a89b1741ea65941eef7c1539a0c776"
-    sha256               x86_64_linux:  "7cda814d31860aa3518a1d947e37ce15681b9106fbd65d77a56525749de91aa2"
+    sha256 cellar: :any, arm64_tahoe:   "803eeaba6e9d0b994d9c412084512f0347522c5fafdb3753b79656fed9eed9e4"
+    sha256 cellar: :any, arm64_sequoia: "d3adf792a046f98146d7dd40015adac60cb44f875e761f56b30aa5b4501e5c54"
+    sha256 cellar: :any, arm64_sonoma:  "0202a53db920e63ecdb69ef3e9c3143f44bee73312e69d94a82dd6ba061c8a98"
+    sha256               arm64_linux:   "6dba7b0319c5287b3e9e538c1dc8fff6465126bb71504a629df82d588548ad41"
+    sha256               x86_64_linux:  "71ef90efe77b0870de4bb6e17b8e3d6773fa43bf3d9cf557d430b2f323246a0e"
   end
 
   depends_on "cmake" => :build # for pyarrow
