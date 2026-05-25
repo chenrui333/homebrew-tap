@@ -20,11 +20,11 @@ class Bun < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "6ddcc50e4aad7157d2a78302f5a0f26fa6ccc97394ac03b6101dfecc8d173909"
-    sha256                               arm64_sequoia: "3d5ce085c0f505a7b9b717ae2a49d1215b3d2fce53e99509675b899d91b27402"
-    sha256                               arm64_sonoma:  "6ba3a4b52c9b2fa5b123c95f6d9451ab6fcc31d174b5a452c5f464d929e53999"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3a17f74a94d00372d0d2b177fa5f4d2e5e51207f7baad05883bff14e370e092"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db377c3eb9307024ba39a4d004f00e76930e14c01311563e137c385ea001c8fe"
+    sha256                               arm64_tahoe:   "8d679c7ffe3198e5fe15d639a5bb67b3b5e3a880740758fd6caa8f590672ec5e"
+    sha256                               arm64_sequoia: "97870f86132a8e96142a77dc719669fde07a5e00ab6e12fd73b1c38b1fa8d5b2"
+    sha256                               arm64_sonoma:  "32442325cd6f2aab9108f1329a2c14ea9a8d8e60b8ced29bb71e82bcb2789031"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ed5f1a92d10b06278343e5717d1eefa5f94b2aafd7ca8809c6da5b08bd8dd23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe15b6efda9760b0d405cfc59bcf7f785404fe9e28532ebe9f293c0d623afe77"
   end
 
   depends_on "cmake" => :build
