@@ -8,11 +8,11 @@ class Hygg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "458622fe4d29e2deae57ebf8fc7cdfaf79f2f0f50e6871778358d0515636af6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d4ea5cd556bdf6c7812fa5c964a2e254745aebe730953d455ae0ac95d92bc3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c90ce560983e0744153961c41ddb8bc6d5ceabfb82da7789ec6a7b7b0188a648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f29d8687e1e74d04a3f314663586240ef4985622b0757fc0d973ab68165138"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "533ed3d0dba8fa72df1df234cb7d4041e87737487d2e5b9eff9074cd85c3a55e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af87b59a7290b9496b41b66e077af737439d8afce0cb14bcbfc56dcef8323f5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ebffaccf2ff84966ff81216a2c7d925843b8ba39930b0a6bc248a7e0e7b5358"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7277405951974620656d620b001858028c5b69b69808b7a675cb173bbdd4ffd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "580f088592d34ce8e265c3acfd263d554e1ca4dc97b801dce01db9126c83265c"
   end
 
   depends_on "rust" => :build
