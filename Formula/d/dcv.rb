@@ -7,11 +7,11 @@ class Dcv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd22a144b10dd1b377e9c36aba98d6af3e1dc620b350c08a2b4d965b1eb42090"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd22a144b10dd1b377e9c36aba98d6af3e1dc620b350c08a2b4d965b1eb42090"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd22a144b10dd1b377e9c36aba98d6af3e1dc620b350c08a2b4d965b1eb42090"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf342ed3efdf7c67c808700a6691e462372c0509b50ff9bd7632416f8aef15d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c91223dddde3229f5b7459594e3cde86abb36efd004c0ef3ea7f8c49ca4054e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2af545d9ffe3a8a1303c40adaf2c384d1c65a9341164949f66814902310b2e46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2af545d9ffe3a8a1303c40adaf2c384d1c65a9341164949f66814902310b2e46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2af545d9ffe3a8a1303c40adaf2c384d1c65a9341164949f66814902310b2e46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2daedc995779024078609f910e8664a9d50de3dfc1445f75c2098152c02d51a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "121d3856f6e69e51114d53e6f2b5b29f48cbe9b63099c7af727fcf94ce6582af"
   end
 
   depends_on "go" => :build
