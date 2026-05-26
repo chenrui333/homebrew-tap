@@ -14,6 +14,7 @@ class K8sql < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/k8sql --version")
-    assert_match "query", shell_output("#{bin}/k8sql --help")
+    output = shell_output("#{bin}/k8sql -q 'SELECT * FROM pods' 2>&1", 1)
+    assert_match(/kube|config|connect/i, output)
   end
 end
