@@ -20,6 +20,7 @@ class Burn < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/burn version")
-    assert_match "burn", shell_output("#{bin}/burn --help")
+    output = shell_output("#{bin}/burn analyze 2>&1", 1)
+    assert_match(/kube|config|cluster|connect/i, output)
   end
 end
