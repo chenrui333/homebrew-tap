@@ -3,8 +3,8 @@ class CodeReviewGraph < Formula
 
   desc "Persistent incremental knowledge graph for token-efficient code reviews"
   homepage "https://code-review-graph.com"
-  url "https://files.pythonhosted.org/packages/a7/44/6fd84272b108eef20f550cc934533111f7cdc57dc174d90c097fa1a907dd/code_review_graph-2.3.4.tar.gz"
-  sha256 "dd825e3ec23f390116abee15603e035d569960a63d4b243e3a42407e0d6e1162"
+  url "https://files.pythonhosted.org/packages/82/fb/6ec81765e1c65fe6734186ed3c2b1f496283ba57aedc9b981bdb5aecfba5/code_review_graph-2.3.5.tar.gz"
+  sha256 "cd7864f1f9ce6d4cd853f9c04b975c68b7db2dbe7c92e7956f0e41f30303bab3"
   license "MIT"
   head "https://github.com/tirth8205/code-review-graph.git", branch: "main"
 
@@ -68,8 +68,8 @@ class CodeReviewGraph < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/cb/42/33977afb50c23345551c973fa1d25458d946ad6937373a73acd99ae21d9b/cyclopts-4.16.0.tar.gz"
-    sha256 "6a07b8ada2fa3d7611e227a98b661523c39644a50e04c92839832d9f599f398d"
+    url "https://files.pythonhosted.org/packages/34/07/bf61d13de86d96a4c46aff00c9ca0eced44bcc8c3e16280605c1253e5720/cyclopts-4.16.1.tar.gz"
+    sha256 "8aa47bf92a5fb33abca5af05e576eecdb0d2f79893ad29238046df78370fc4a8"
   end
 
   resource "dnspython" do
