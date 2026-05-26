@@ -1,0 +1,19 @@
+Formula/k/k8sql.rb
+  s_c64022209abadf::t_18f70b05d00836 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "432021dce906f1c4b861fdbc6c129f60aaafa60c",
+  "prompts": {},
+  "sessions": {
+    "s_c64022209abadf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2157352b-a6de-474c-a62a-5bec09e1be0d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
