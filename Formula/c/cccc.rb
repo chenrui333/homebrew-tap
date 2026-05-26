@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/9a/17/e875807f22826dd737ee5cbfe28f3f1100213504e904211745e53335b7a9/cccc_pair-0.4.20.tar.gz"
-  sha256 "4e022c5a2cabdc9297c43795348fb603fb9f1630ca9c12e648fefddaf6d1a7be"
+  url "https://files.pythonhosted.org/packages/a9/cd/017e7df051791c0ccc60a10d03c4e3590e44bd1e55778f58b0cf44c3ea13/cccc_pair-0.4.21.tar.gz"
+  sha256 "6a38b56e5357a7f9d596f330684dc111431297167b60dc4c8f09b38314371be9"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -72,8 +72,8 @@ class Cccc < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/5d/45/c130091c2dfa061bbfe3150f2a5091ef1adf149f2a8d2ae769ecaf6e99a2/fastapi-0.136.1.tar.gz"
-    sha256 "7af665ad7acfa0a3baf8983d393b6b471b9da10ede59c60045f49fbc89a0fa7f"
+    url "https://files.pythonhosted.org/packages/81/2d/ff8d91d7b564d464629a0fd50a4489c97fcb836ac230bf3a7269232a9b1f/fastapi-0.136.3.tar.gz"
+    sha256 "e487fae93ad408e6f47641ee4dfe389864fd7bec92e547ea8498fc13f43e83ab"
   end
 
   resource "frozenlist" do
@@ -107,8 +107,8 @@ class Cccc < Formula
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/a1/6a/cfaa24851e05000a3bede7a3d30b834116d684d56738d08980da621e9c1a/lark_oapi-1.6.5.tar.gz"
-    sha256 "abf1fd348bd527502c70f2fe771c6fd37c2b8bbed188c9313596063864d43f59"
+    url "https://files.pythonhosted.org/packages/b7/dd/1e356ae491c0cf1b5cf2e3cc8b5fabde3f9804b38a98c9b9f3fd94473e96/lark_oapi-1.6.6-py3-none-any.whl"
+    sha256 "08f06cdaade1d6d6ac6500c1939f05121484f4007608b9de8cbf9203846f2521"
   end
 
   resource "multidict" do
@@ -157,8 +157,8 @@ class Cccc < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/08/a3/84e821cc54b4ab50ae6dbc6ac3800a651b65ec35f045cc73785380654057/starlette-1.0.1.tar.gz"
-    sha256 "512399c5f1de7fac99c88572212ded9ddeddef2fb32afa82d724000e88b38f4f"
+    url "https://files.pythonhosted.org/packages/95/66/4d20cdf39a8d6a51e663b7038e3b828ff211d3891a43a713fe7e4643f3a8/starlette-1.1.0.tar.gz"
+    sha256 "e83c7fe0ddecd8719c5b840080325aec0260acec86e9832899e377b91d65e90f"
   end
 
   resource "urllib3" do
@@ -167,8 +167,8 @@ class Cccc < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/f6/b1/8e7077a8641086aea449e1b5752a570f1b5906c64e0a33cd6d93b63a066b/uvicorn-0.47.0.tar.gz"
-    sha256 "7c9a0ea1a9414106bbab7324609c162d8fa0cdcdcb703060987269d77c7bb533"
+    url "https://files.pythonhosted.org/packages/e6/bf/f6544ba992ddb9a6077343a576f9844f7f8f06ab819aefd00206e9255f18/uvicorn-0.48.0.tar.gz"
+    sha256 "a5504207195d08c2511bf9125ede5ac4a4b71725d519e758d01dcf0bc2d31c37"
   end
 
   resource "uvloop" do
