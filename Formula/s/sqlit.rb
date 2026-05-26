@@ -3,8 +3,8 @@ class Sqlit < Formula
 
   desc "User friendly TUI for SQL databases"
   homepage "https://github.com/Maxteabag/sqlit"
-  url "https://files.pythonhosted.org/packages/7e/08/0d27283c93c4459859cb3bf6ee52b5aa2367e8e5214672e2d8cf4e722df4/sqlit_tui-1.4.1.tar.gz"
-  sha256 "87a3aa78e2a321cf8bd9984d74fbc1405e91733c1248213b5bba9e0569f5cd7a"
+  url "https://files.pythonhosted.org/packages/26/91/51dfc5fbc1e35df8017e010b677da24da7180dee79aabed5659fe3fb2866/sqlit_tui-1.5.0.tar.gz"
+  sha256 "f76a44b0e2cdb5f5d86483e6ea811961bfc1c60131086c42082c03aee03857d9"
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
