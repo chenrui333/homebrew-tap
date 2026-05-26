@@ -6,6 +6,15 @@ class Burn < Formula
   license "Apache-2.0"
   head "https://github.com/tanrikuluozlem/burn.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ec7c5e2ffda4981b5eb54c2890936a79d3956f5416766095059f34b004bdc45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ec7c5e2ffda4981b5eb54c2890936a79d3956f5416766095059f34b004bdc45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ec7c5e2ffda4981b5eb54c2890936a79d3956f5416766095059f34b004bdc45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f3f294dc8c34ee6509084773c0c5f121e42ca9b34281a4797a8b0f811e09ab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c34b261b8dcc9ee31d19acb20278acdcf1a91b1110bc40821da0750ed472b1d6"
+  end
+
   depends_on "go" => :build
 
   def install
