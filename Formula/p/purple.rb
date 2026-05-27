@@ -1,8 +1,8 @@
 class Purple < Formula
   desc "Terminal SSH config manager and cockpit for your servers"
   homepage "https://github.com/erickochen/purple"
-  url "https://github.com/erickochen/purple/archive/refs/tags/v3.18.4.tar.gz"
-  sha256 "9d702250950cc065feeb81ca880256191b635f0aae4625dc2e9803f7e0153980"
+  url "https://github.com/erickochen/purple/archive/refs/tags/v3.18.5.tar.gz"
+  sha256 "119ec904623f33c2b928a249cd5feca32b017f92365d4f3f793dbaf61fb0465c"
   license "MIT"
   head "https://github.com/erickochen/purple.git", branch: "master"
 
