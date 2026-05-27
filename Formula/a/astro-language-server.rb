@@ -1,8 +1,8 @@
 class AstroLanguageServer < Formula
   desc "Language tools for Astro"
   homepage "https://github.com/withastro/language-tools"
-  url "https://registry.npmjs.org/@astrojs/language-server/-/language-server-2.16.9.tgz"
-  sha256 "32372f8fd0a89633e1b33955d2d227ad3902108b8e7a3fca5f8d8cb2b5f124f8"
+  url "https://registry.npmjs.org/@astrojs/language-server/-/language-server-2.16.10.tgz"
+  sha256 "febbf235df43b422092a6e7b02e52fdc0febc027a74cf2f599d3461a59cf8db0"
   license "MIT"
 
   bottle do
