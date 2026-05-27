@@ -1,8 +1,8 @@
 class Hcom < Formula
   desc "Let AI agents message, watch, and spawn each other across terminals"
   homepage "https://github.com/aannoo/hcom"
-  url "https://github.com/aannoo/hcom/archive/refs/tags/v0.7.18.tar.gz"
-  sha256 "c9198bc2a5bde195d67d89d84597c8d5a2959be4dc211ecb281d7e5041cb5259"
+  url "https://github.com/aannoo/hcom/archive/refs/tags/v0.7.19.tar.gz"
+  sha256 "fe93c7dccdf2fdbf321922f1be36d47555169e9312aad58c0134e5199ae43f98"
   license "MIT"
 
   bottle do
