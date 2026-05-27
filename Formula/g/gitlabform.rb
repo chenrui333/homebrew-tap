@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/ec/20/eeb58cb650668bf6425a12a3a05f93e162fec188ad8ec15f38d49fd6004d/gitlabform-5.5.0.tar.gz"
-  sha256 "57fd69388d315058511a628016318c67a2a1740a10c3e9f697c560ec80e48c7f"
+  url "https://files.pythonhosted.org/packages/55/dd/6dff1b64ef0aa3187f0d9888eae361c9878d79a57ef2d0799b521a916c10/gitlabform-5.5.1.tar.gz"
+  sha256 "785ee89ac2ec6531ca617386cdc1bc72765aa238b09f3342720ad877e9b33c18"
   license "MIT"
 
   bottle do
@@ -81,8 +81,8 @@ class Gitlabform < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
+    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
   end
 
   resource "jinja2" do
