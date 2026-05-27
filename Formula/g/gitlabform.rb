@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/55/dd/6dff1b64ef0aa3187f0d9888eae361c9878d79a57ef2d0799b521a916c10/gitlabform-5.5.1.tar.gz"
-  sha256 "785ee89ac2ec6531ca617386cdc1bc72765aa238b09f3342720ad877e9b33c18"
+  url "https://files.pythonhosted.org/packages/a6/17/3b3586bd0d15bcab2cc27f6e8233feae364e36016b127680f23a52972a86/gitlabform-5.5.2.tar.gz"
+  sha256 "d4d074a5486ec3805a5d8fbb6bfa47b8351167664af18c1e3a143f272d5d2165"
   license "MIT"
 
   bottle do
