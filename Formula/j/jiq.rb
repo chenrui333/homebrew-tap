@@ -1,8 +1,8 @@
 class Jiq < Formula
   desc "Interactive JSON query tool with real-time output and AI assistance"
   homepage "https://github.com/bellicose100xp/jiq"
-  url "https://github.com/bellicose100xp/jiq/archive/refs/tags/v3.28.0.tar.gz"
-  sha256 "a70c39c8f49ce3495ef49a4fb324f114a49b28aa11680a9c467b9f5d2c338972"
+  url "https://github.com/bellicose100xp/jiq/archive/refs/tags/v3.28.1.tar.gz"
+  sha256 "b2de9a2c44c5dd5af376d2c50848f5a353dfb3bab55eec17cac72040e956a56f"
   license "Apache-2.0"
 
   bottle do
