@@ -10,11 +10,11 @@ class Memora < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "e6c694500319947f191cd5aaf11d7c5af068b52d8daac6d6c0a76704b65531ab"
-    sha256 cellar: :any,                 arm64_sequoia: "381e0acfa99fbc44dde94f2af142315b20ce7709880277b8541df131babf2aaa"
-    sha256 cellar: :any,                 arm64_sonoma:  "634fcd473739b96bf5c765cb0e5321de99b4ebf9ef27b2b5184b4757ea9d8178"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "913f407b91632417c46dcda765b1819238e0ceeae47c179ba64031cf18f0d0ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00599961016fcd166d99392565f262c38ad89194834bd4d34cff9942534174f6"
+    sha256 cellar: :any,                 arm64_tahoe:   "f3c6f4bce7258e4c5c7ed4f3d002a656e89f1dd0af6e9ecb8842cb40198f4a12"
+    sha256 cellar: :any,                 arm64_sequoia: "b561962d8f9569d49bd40b20162b2fc254c195564dfa73854c897d6fa9be20d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b82cc12b6d94050e02b6239b6af626baff5077e0c00eaec1f8f273772723ab8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fd4516bf11597486c949fbd5dc388180a41f4bf37a47d3590b47cb572a27d66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88580230dfa1270d9a13ab34321e33955aa9d2452adce5ef7fe6af543d27473e"
   end
 
   depends_on "pkgconf" => :build
