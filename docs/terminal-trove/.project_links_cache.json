@@ -803,5 +803,11 @@
   "https://terminaltrove.com/rura/": "https://github.com/tlipinski/rura",
   "https://terminaltrove.com/nnd/": "https://github.com/al13n321/nnd",
   "https://terminaltrove.com/wrkflw/": "https://github.com/bahdotsh/wrkflw",
-  "https://terminaltrove.com/matcha/": "https://github.com/floatpane/matcha"
+  "https://terminaltrove.com/matcha/": "https://github.com/floatpane/matcha",
+  "https://terminaltrove.com/pwndbg/": "https://github.com/pwndbg/pwndbg/",
+  "https://terminaltrove.com/quien/": "https://github.com/retlehs/quien/",
+  "https://terminaltrove.com/har-viewer/": "https://github.com/nassendelft/har-viewer",
+  "https://terminaltrove.com/hulak/": "https://github.com/xaaha/hulak",
+  "https://terminaltrove.com/kite-tui/": "https://github.com/KernelFreeze/kite-tui",
+  "https://terminaltrove.com/diffyml/": "https://github.com/szhekpisov/diffyml"
 }
