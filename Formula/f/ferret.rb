@@ -8,10 +8,11 @@ class Ferret < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72e5001d1d5846aaab5eb2e262dcebb9de1c9c9359e13bb5b811b44718a20fb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "413c66a184c2d178fd4bba09493bbbf03031ca5b31ea2b7ae1cfcd1ea2a60c0e"
-    sha256 cellar: :any_skip_relocation, ventura:       "b0a01ed4e4bd896f6b535151a44872a52f47aacfbef6abbb268cc552b1e21330"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9eb51cb886100e474062a529d3bb9b0e41d632a6c94b72c682cca1469117487"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e06ca819ec9f278e2339b85f022b00ec093a3e7d5ed25771fcb9992f8b6612d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e06ca819ec9f278e2339b85f022b00ec093a3e7d5ed25771fcb9992f8b6612d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e06ca819ec9f278e2339b85f022b00ec093a3e7d5ed25771fcb9992f8b6612d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c6c2616f6aa38fdfcf2835ffc52db1db6ba1802389d3408bc38da1e6e0bc633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98640d3f2ae14fa01a339a97c2e27ec1b0df9b73b8226c7ae9a86770377b14af"
   end
 
   depends_on "go" => :build
