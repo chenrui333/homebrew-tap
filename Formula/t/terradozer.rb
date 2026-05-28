@@ -1,8 +1,8 @@
 class Terradozer < Formula
   desc "Terraform destroy using state only with no *.tf files needed"
   homepage "https://github.com/chenrui333/terradozer"
-  url "https://github.com/chenrui333/terradozer/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "27eb57e90111a9381ac76c942d625c2a6ac36aefc0cc2697fb7af1f8272de2e6"
+  url "https://github.com/chenrui333/terradozer/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "bac9d28a3216095b9c02c7588a3a11f939a22486a64543e0a6ce71171fa98a9d"
   license "MIT"
   head "https://github.com/chenrui333/terradozer.git", branch: "main"
 
