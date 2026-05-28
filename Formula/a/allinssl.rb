@@ -8,11 +8,11 @@ class Allinssl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78f4dea295400b9a3b1061e453899aee3a0248f67ee41f6a71d37478922f68f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f4dea295400b9a3b1061e453899aee3a0248f67ee41f6a71d37478922f68f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78f4dea295400b9a3b1061e453899aee3a0248f67ee41f6a71d37478922f68f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1eef164f83e75f0632f1064065fa9a8a36206432720db784f8e1f64caf02aec1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f814da640ca6e2bfa5cddf893ef612c9870882436ecb277d68749ec32899392"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "214ff48a67ed447d3431dda17ca037c8edda96e22106c3fd9b7cdbf4672d4c96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "214ff48a67ed447d3431dda17ca037c8edda96e22106c3fd9b7cdbf4672d4c96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "214ff48a67ed447d3431dda17ca037c8edda96e22106c3fd9b7cdbf4672d4c96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "548579f3eda870699d45b9f3704c820e58aefdddacd1b10eec4b10a49fcd047c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0da245fdf6554821ec978551037d7532ded740e628646089333e4dcca9ab467"
   end
 
   depends_on "go" => :build
