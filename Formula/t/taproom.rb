@@ -8,11 +8,11 @@ class Taproom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c38aa6ffc6ba43898fe6d569496907e1abeb8c4da358417e407535ec60ebc62b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c38aa6ffc6ba43898fe6d569496907e1abeb8c4da358417e407535ec60ebc62b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c38aa6ffc6ba43898fe6d569496907e1abeb8c4da358417e407535ec60ebc62b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46a6b4b482b2cf12d129682c9db72959efd54a737c8cbbd6dd085d42f88ae8ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c43d4bb2b7ae0ac712c873505ad3e73efdd2841bb3b58d8c16e17eae32737922"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fdc7504daa8e1d690ff15f13a35832580895b5bb89475d57894376cd10c43eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fdc7504daa8e1d690ff15f13a35832580895b5bb89475d57894376cd10c43eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fdc7504daa8e1d690ff15f13a35832580895b5bb89475d57894376cd10c43eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4c5008baa8402658f32ca13bf714e78e5eb6926448dd409d4e6169b38cb5c0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab86da20e75dc377232ca90f74e5a4c91d22ef950d324ab4ee21aa36eab20767"
   end
 
   depends_on "go" => :build
