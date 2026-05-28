@@ -1,8 +1,8 @@
 class Projscan < Formula
   desc "Instant codebase insights for any repository"
   homepage "https://github.com/abhiyoheswaran1/projscan"
-  url "https://github.com/abhiyoheswaran1/projscan/archive/refs/tags/v3.0.3.tar.gz"
-  sha256 "866a4c03a977965052e4d2aadb8adad62be9e48b79a280795903dd3c7a744711"
+  url "https://github.com/abhiyoheswaran1/projscan/archive/refs/tags/v3.0.4.tar.gz"
+  sha256 "fdd88ef1d7486982ccd64487ae553d31b4fcb1b6d7f8511c1add2c49d236ddae"
   license "MIT"
   head "https://github.com/abhiyoheswaran1/projscan.git", branch: "main"
 
