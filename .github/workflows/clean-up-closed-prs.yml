@@ -34,7 +34,7 @@ jobs:
       checks: read # for `GitHub.get_workflow_run`
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@6eaeff80e7e5c43087c0e5eb5aa82120399e9c91 # main
+        uses: Homebrew/actions/setup-homebrew@521d40582eb7b2dc6c83001c590c455100248f27 # main
         with:
           core: false
           cask: false
