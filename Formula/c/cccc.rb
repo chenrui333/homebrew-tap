@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/a9/cd/017e7df051791c0ccc60a10d03c4e3590e44bd1e55778f58b0cf44c3ea13/cccc_pair-0.4.21.tar.gz"
-  sha256 "6a38b56e5357a7f9d596f330684dc111431297167b60dc4c8f09b38314371be9"
+  url "https://files.pythonhosted.org/packages/48/56/786523a21a6c56f4138c145c6fa7ac35d254cc78548c66e490f765893b6b/cccc_pair-0.4.22.tar.gz"
+  sha256 "2cbc26dbb5947699d1f23357a43f594e5b57bb1c46566de4550e3d6a7ac25a47"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -92,8 +92,8 @@ class Cccc < Formula
   end
 
   resource "httptools" do
-    url "https://files.pythonhosted.org/packages/b5/46/120a669232c7bdedb9d52d4aeae7e6c7dfe151e99dc70802e2fc7a5e1993/httptools-0.7.1.tar.gz"
-    sha256 "abd72556974f8e7c74a259655924a717a2365b236c882c3f6f8a45fe94703ac9"
+    url "https://files.pythonhosted.org/packages/43/e5/d471fcb0e14523fe1c3f4ba58ca52480e7bd70ad7109a3846bc75892f7fb/httptools-0.8.0.tar.gz"
+    sha256 "6b2a32f18d97e16e90827d7a819ffa8dbd8cc245fc4e1fa9d1095b54ef4bd999"
   end
 
   resource "httpx" do
@@ -102,13 +102,13 @@ class Cccc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/b7/dd/1e356ae491c0cf1b5cf2e3cc8b5fabde3f9804b38a98c9b9f3fd94473e96/lark_oapi-1.6.6-py3-none-any.whl"
-    sha256 "08f06cdaade1d6d6ac6500c1939f05121484f4007608b9de8cbf9203846f2521"
+    url "https://files.pythonhosted.org/packages/24/54/a3b649b83299606aa7ebfd2391663fde650e934421dfba37af171bfbf456/lark_oapi-1.6.7-py3-none-any.whl"
+    sha256 "df1d44891d266f5c063daa1d37ae6f72c7f166bdc2fb01e607088410e952b92c"
   end
 
   resource "multidict" do
@@ -157,8 +157,8 @@ class Cccc < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/95/66/4d20cdf39a8d6a51e663b7038e3b828ff211d3891a43a713fe7e4643f3a8/starlette-1.1.0.tar.gz"
-    sha256 "e83c7fe0ddecd8719c5b840080325aec0260acec86e9832899e377b91d65e90f"
+    url "https://files.pythonhosted.org/packages/c5/bf/616a066c2760f6c2b1ae3437cc28149734d069fbb46511712beae118a68c/starlette-1.2.0.tar.gz"
+    sha256 "3c5a6b23fff42492914e93890bb80cbfea72dbf37de268eec06185d62a4ca553"
   end
 
   resource "urllib3" do
