@@ -2,8 +2,8 @@
 class AiContext < Formula
   desc "CLI tool to produce MD context files from many sources"
   homepage "https://github.com/Tanq16/ai-context"
-  url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.16.0.tar.gz"
-  sha256 "4706f9fa1fb04ae07548627665d0d15701bac16d1a12630a3302fdfded4cdcbe"
+  url "https://github.com/Tanq16/ai-context/archive/refs/tags/v1.16.1.tar.gz"
+  sha256 "c52026f5ea823e5462c815b045c1c705a04288c40052dc4390af2dcb0bacbc11"
   license "MIT"
   head "https://github.com/Tanq16/ai-context.git", branch: "main"
 
@@ -26,9 +26,13 @@ class AiContext < Formula
   test do
     ENV["NO_COLOR"] = "1"
 
-    output = shell_output("#{bin}/ai-context https://example.com")
+    (testpath/"sample/README.md").write "# Homebrew test\n"
+
+    output = shell_output("#{bin}/ai-context sample")
     assert_match "Completed all operations successfully", output
-    assert_path_exists "context/web-example_com.md"
+    context_file = testpath/"context/dir-sample.md"
+    assert_path_exists context_file
+    assert_match "Homebrew test", context_file.read
 
     assert_match version.to_s, shell_output("#{bin}/ai-context --version")
   end
