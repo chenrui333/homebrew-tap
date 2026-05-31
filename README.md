@@ -116,6 +116,7 @@ brew install --cask <tool>
 - `btczee`
 - `budgetclaw`
 - `bun`
+- `burn`
 - `bytebox`
 - `c4go`
 - `captan`
@@ -443,6 +444,7 @@ brew install --cask <tool>
 - `jules`
 - `junit2html`
 - `jwt-ui`
+- `k8sql`
 - `kafka`
 - `kaluma-cli`
 - `kandc`
