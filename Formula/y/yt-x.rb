@@ -60,6 +60,6 @@ class YtX < Formula
     assert_match "yt-x v#{version}", version_output
 
     help_output = shell_output("#{bin}/yt-x --help")
-    assert_match "Browse YouTube", help_output
+    assert_match "browse YouTube", help_output
   end
 end
