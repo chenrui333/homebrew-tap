@@ -1,8 +1,8 @@
 class Dotstate < Formula
   desc "Modern and secure dotfile manager"
   homepage "https://dotstate.serkan.dev"
-  url "https://github.com/serkanyersen/dotstate/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "a19bf5f2a76aaca85a83a78ab732b40cb32c584785a6586cd373713e005c3283"
+  url "https://github.com/serkanyersen/dotstate/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "7b1fcdcd7f1317d6b25f7c71f9d7128c5a6da85aa40ca427131972f36c78de12"
   license "MIT"
   head "https://github.com/serkanyersen/dotstate.git", branch: "main"
 
