@@ -3,8 +3,8 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "6efd3314d39f54a8440e9c6e80213dbb01d2d061e9692eda213f3a546e140d2c"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "e967725ab8b20770e0368f954beff38c934cc728966cbc7aa9c19cb4c1b2990f"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
@@ -212,6 +212,9 @@ class Taskdog < Formula
   end
 
   def install
+    inreplace "packages/taskdog-ui/src/taskdog/shared/click_types/field_list.py",
+              "click.ParamType[list[str] | None]", "click.ParamType"
+
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     venv.pip_install buildpath/"packages/taskdog-core"
