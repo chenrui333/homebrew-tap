@@ -1,8 +1,8 @@
 class IamShrink < Formula
   desc "Make AWS IAM policies smaller by adding wildcards to actions"
   homepage "https://iam.cloudcopilot.io/tools/iam-shrink"
-  url "https://registry.npmjs.org/@cloud-copilot/iam-shrink/-/iam-shrink-0.1.75.tgz"
-  sha256 "e322b9010d95d05d21cd9f2e09cbdaa3f96cf26fc5508ac26ddb3a9bfdd044f0"
+  url "https://registry.npmjs.org/@cloud-copilot/iam-shrink/-/iam-shrink-0.1.76.tgz"
+  sha256 "593f3fbe8563843d530d06f999dc65a8554f5660e4c9faf084eb352376b0fc5f"
   license "AGPL-3.0-or-later"
 
   bottle do
