@@ -41,6 +41,14 @@ class YtX < Formula
               'ext_dir="$HOME/.config/$CLI_NAME/extensions"',
               "ext_dir=\"#{pkgshare}/extensions\""
 
+    inreplace "yt-x" do |s|
+      # Avoid a Bash 3.2 parse bug with here-docs inside command substitutions.
+      s.gsub! "  script=\"$(\n    cat <<EOF\n",
+              "  cat <<EOF >\"$preview_script_path\"\n"
+      s.gsub! "EOF\n  )\"\n\n  printf \"%s\" \"$script\" >\"$preview_script_path\"\n",
+              "EOF\n"
+    end
+
     libexec.install "yt-x"
     pkgshare.install "extensions"
 
