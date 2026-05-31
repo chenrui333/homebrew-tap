@@ -1,8 +1,8 @@
 class Wozz < Formula
   desc "Catch expensive Kubernetes resource changes before they merge"
   homepage "https://github.com/WozzHQ/wozz"
-  url "https://github.com/WozzHQ/wozz/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "a3898c7e393b8f1862b7f581541a7ada23f650e22bc34ae157fca18c82de9b5d"
+  url "https://github.com/WozzHQ/wozz/archive/refs/tags/v1.tar.gz"
+  sha256 "9d56f1cf994ef0e548b5c486b75a36fac7a3839ee25f37d12ef9e27f74c66723"
   license "MIT"
   head "https://github.com/WozzHQ/wozz.git", branch: "main"
 
