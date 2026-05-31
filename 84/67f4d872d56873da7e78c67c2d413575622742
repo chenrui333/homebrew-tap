@@ -1,0 +1,19 @@
+Formula/k/krr.rb
+  s_6ba3f6dcf77d10::t_a4c4d53d3abc8b 301,309
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "8467f4d872d56873da7e78c67c2d413575622742",
+  "prompts": {},
+  "sessions": {
+    "s_6ba3f6dcf77d10": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e7eca-b821-7a60-b0f0-841922244e52",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
