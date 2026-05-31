@@ -6,6 +6,11 @@ class Wozz < Formula
   license "MIT"
   head "https://github.com/WozzHQ/wozz.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "b7464da19a8b469df24e0477865c968af3234cc6ec7ba75e2eb6b42420642120"
+  end
+
   depends_on "kubectl"
 
   def install
