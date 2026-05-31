@@ -9,11 +9,11 @@ class AiContext < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30309c845c86af12d4f681dbeff4dee353feff9d5b55c0dc495611d4a6c13a64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30309c845c86af12d4f681dbeff4dee353feff9d5b55c0dc495611d4a6c13a64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30309c845c86af12d4f681dbeff4dee353feff9d5b55c0dc495611d4a6c13a64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "babc4e20239b70dda4c374610bd11067b1f532c8b3101a1cc3ddeaa66b2e6efe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c44e4da6455c8f59594decb3914ea9dd36f197369ba1e51ed8f26cbcd20191a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc2fb00b95c2cb030e30b6c77a77447b88fba06520f663b314d5d3ae1bf6edc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc2fb00b95c2cb030e30b6c77a77447b88fba06520f663b314d5d3ae1bf6edc9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc2fb00b95c2cb030e30b6c77a77447b88fba06520f663b314d5d3ae1bf6edc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc5f7df6c78fcaa3c88ffc66145bb3ae349301ca29ef5f6cacd9ae061f11e92e"
+    sha256 cellar: :any,                 x86_64_linux:  "2d5d153d9e22e7365203a74b073471a532de4bf36d2c5009ada2def5daf751e0"
   end
 
   depends_on "go" => :build
