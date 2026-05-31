@@ -1,8 +1,8 @@
 class Zerobrew < Formula
   desc "Drop-in, faster, experimental Homebrew alternative"
   homepage "https://github.com/lucasgelfond/zerobrew"
-  url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "59dc01b4eb9f1bee71f4ed9c2a7210fc45c49570e5696534ef246d99879162c1"
+  url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "e35b4f20a04866e67c553e2467f9f57e254b67ada1a2e53c74aa9fbf174f5a3d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/lucasgelfond/zerobrew.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Zerobrew < Formula
   depends_on "rust" => :build
 
   def install
-    inreplace "zb_cli/Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
+    inreplace "Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
     system "cargo", "install", *std_cargo_args(path: "zb_cli")
   end
 
