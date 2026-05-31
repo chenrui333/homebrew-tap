@@ -1,8 +1,8 @@
 class Netwatch < Formula
   desc "Real time network diagnostics in your terminal"
   homepage "https://github.com/matthart1983/netwatch"
-  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "23619a8a8e1f9c1c95d417df3a5422048f9ef7a88c2dc9768412d4debffc91b6"
+  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "b5ecd9be7cfefba235bd9e2a3e4dae911218b22d90ad642f6128d7dd5255d81c"
   license "MIT"
   head "https://github.com/matthart1983/netwatch.git", branch: "main"
 
