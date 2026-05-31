@@ -28,7 +28,7 @@ class AiContext < Formula
 
     (testpath/"sample/README.md").write "# Homebrew test\n"
 
-    output = shell_output("#{bin}/ai-context sample")
+    output = shell_output("#{bin}/ai-context ./sample")
     assert_match "Completed all operations successfully", output
     context_file = testpath/"context/dir-sample.md"
     assert_path_exists context_file
