@@ -1,8 +1,8 @@
 class Beelzebub < Formula
   desc "Secure low code honeypot framework, leveraging AI for System Virtualization"
   homepage "https://beelzebub-honeypot.com/"
-  url "https://github.com/mariocandela/beelzebub/archive/refs/tags/v3.7.2.tar.gz"
-  sha256 "49f681143a72ee4030316fe6a8f5f344e2f75c1aa89d5b3e7571a29696b033bf"
+  url "https://github.com/mariocandela/beelzebub/archive/refs/tags/v3.7.3.tar.gz"
+  sha256 "af6197b83dff1d475a8e0bc5b4d94e8e43282ea37578b7faa24a0a414cc3ddc4"
   license "GPL-3.0-only"
   head "https://github.com/mariocandela/beelzebub.git", branch: "main"
 
@@ -23,6 +23,6 @@ class Beelzebub < Formula
 
   test do
     output = shell_output("#{bin/"beelzebub"} validate 2>&1")
-    assert_match "All configurations are valid.", output
+    assert_match "0 errors, 0 warnings", output
   end
 end
