@@ -1,8 +1,8 @@
 class Msgvault < Formula
   desc "Offline email archive with fast search and analytics"
   homepage "https://msgvault.io"
-  url "https://github.com/wesm/msgvault/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "d4e97b8098ad3eaeb85b11ec157619045118d36fc14b1761921b67013d410f09"
+  url "https://github.com/wesm/msgvault/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "756a08b6d545f41ae467a5a096d29623e1e7b82cb8b92cd1f4990e4d8648dbc4"
   license "MIT"
   head "https://github.com/wesm/msgvault.git", branch: "main"
 
@@ -20,9 +20,9 @@ class Msgvault < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/wesm/msgvault/cmd/msgvault/cmd.Version=#{version}
-      -X github.com/wesm/msgvault/cmd/msgvault/cmd.Commit=homebrew
-      -X github.com/wesm/msgvault/cmd/msgvault/cmd.BuildDate=#{time.iso8601}
+      -X go.kenn.io/msgvault/cmd/msgvault/cmd.Version=#{version}
+      -X go.kenn.io/msgvault/cmd/msgvault/cmd.Commit=homebrew
+      -X go.kenn.io/msgvault/cmd/msgvault/cmd.BuildDate=#{time.iso8601}
     ]
 
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
