@@ -8,6 +8,15 @@ class Krr < Formula
   license "MIT"
   head "https://github.com/robusta-dev/krr.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "573e6adae89c75a0f3abfaa6764bf26b880f63c894d6656b294ad191c1f2cfbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c2324f7bbffa7efbf03376699ed28bc72846a09268b7b4e5c02f9e483a47d37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15789ace6f9fb917c576d16e49c1e27df3d59a00ebb885e4ddde1bfa352752e3"
+    sha256 cellar: :any,                 arm64_linux:   "5bcf76bf3f9414533ecff1973e05fa658f87ea5abc6ff7c9b60c0dd969c7507b"
+    sha256 cellar: :any,                 x86_64_linux:  "b6b1ad422ad8d786595316f6fab56c1d9f8d97b5d2ad2320a1e05caf134dfd16"
+  end
+
   depends_on "cmake" => :build # for contourpy
   depends_on "meson" => :build
   depends_on "ninja" => :build
