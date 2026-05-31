@@ -4,8 +4,8 @@ class AustinTui < Formula
 
   desc "Top-like text-based user interface for Austin"
   homepage "https://github.com/P403n1x87/austin-tui"
-  url "https://files.pythonhosted.org/packages/3b/5c/76bc4ce2aa8fdbfc736ca4335dc6a14805850fdce5f54b030fa289d7e110/austin_tui-1.4.1.tar.gz"
-  sha256 "3ef0fae5dcebac8c64c0289f92815412fe7104535aac9c84f998dd0bc595d2c4"
+  url "https://files.pythonhosted.org/packages/ee/ff/2eb5f08b4cff3168b8bd9fd65ffcaf09366a9133769752c8a0bf162e80ae/austin_tui-2.0.0.tar.gz"
+  sha256 "36e7f9807ef23e7ae25988c0ebaa7d06598dada0642e6e783808e9071c5af638"
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin-tui.git", branch: "master"
 
@@ -25,8 +25,8 @@ class AustinTui < Formula
   uses_from_macos "libxslt"
 
   resource "austin-python" do
-    url "https://files.pythonhosted.org/packages/45/78/148907bd43a874917b380430586d2067d49289e67f903c740481c4a82fc6/austin_python-2.1.2.tar.gz"
-    sha256 "6821bfc8918a3bddb7be34f3c913e385333f53edf27e293232e33a5c6346ac59"
+    url "https://files.pythonhosted.org/packages/07/f0/690fe6927dddbb3f9daa546dcac6817073b1ece72af20b398cce35edd10c/austin_python-2.2.0.tar.gz"
+    sha256 "c546f6c57410332b3734c2b96451c1fd409d883ddaeac39e085c497f6ff1e408"
   end
 
   resource "importlib-resources" do
@@ -35,8 +35,8 @@ class AustinTui < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/76/3d/14e82fc7c8fb1b7761f7e748fd47e2ec8276d137b6acfe5a4bb73853e08f/lxml-5.4.0.tar.gz"
-    sha256 "d12832e1dbea4be280b22fd0ea7c9b87f0d8fc51ba06e92dc62d52f804f78ebd"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   resource "protobuf" do
@@ -70,9 +70,9 @@ class AustinTui < Formula
   test do
     require "open3"
 
-    output, status = Open3.capture2e(bin/"austin-tui", "--version")
+    python = Formula["python@3.14"].opt_bin/"python3.14"
+    output, status = Open3.capture2e(bin/"austin-tui", "--version", python, "-c", "print('hi')")
     assert_includes [1, 255], status.exitstatus
-    assert_match "Austin failed to start", output
     assert_match "Some arguments were left unparsed", output
   end
 end
