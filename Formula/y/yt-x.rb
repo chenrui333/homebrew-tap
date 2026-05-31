@@ -1,8 +1,8 @@
 class YtX < Formula
   desc "Browse YouTube from the terminal"
   homepage "https://github.com/Benexl/yt-x"
-  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "6fc7ec5cde80ed6236a6864390e68d3c0abd654709928eb57dceaac2984f6e61"
+  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "94eeae697b59fef6f3d327be3273041ac8c83f630779a5fa0def627eefb9e5dc"
   license "MIT"
   head "https://github.com/Benexl/yt-x.git", branch: "master"
 
@@ -18,7 +18,7 @@ class YtX < Formula
   depends_on "yt-dlp"
 
   def install
-    inreplace "yt-x", /^CLI_VERSION=.*/, %Q(CLI_VERSION="#{version}")
+    inreplace "yt-x", /^readonly CLI_VERSION=.*/, %Q(readonly CLI_VERSION="#{version}")
 
     inreplace "yt-x",
               'CLI_EXTENSIONS_DIR="$CLI_CONFIG_DIR/extensions"',
@@ -56,22 +56,10 @@ class YtX < Formula
   end
 
   test do
-    require "open3"
-
-    env = {
-      "HOME"            => testpath.to_s,
-      "XDG_CACHE_HOME"  => (testpath/"cache").to_s,
-      "XDG_CONFIG_HOME" => (testpath/"config").to_s,
-    }
-
-    desktop_entry, status = Open3.capture2e(env, bin/"yt-x", "--generate-desktop-entry", stdin_data: "\n")
-    assert_predicate status, :success?
-    assert_match "[Desktop Entry]", desktop_entry
-    assert_match "Name=yt-x", desktop_entry
-    assert_match "Version=#{version}", desktop_entry
-
-    version_output, status = Open3.capture2e(env, bin/"yt-x", "--version")
-    assert_predicate status, :success?
+    version_output = shell_output("#{bin}/yt-x --version")
     assert_match "yt-x v#{version}", version_output
+
+    help_output = shell_output("#{bin}/yt-x --help")
+    assert_match "Browse YouTube", help_output
   end
 end
