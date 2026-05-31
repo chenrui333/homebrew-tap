@@ -214,6 +214,10 @@ class Taskdog < Formula
   def install
     inreplace "packages/taskdog-ui/src/taskdog/shared/click_types/field_list.py",
               "click.ParamType[list[str] | None]", "click.ParamType"
+    inreplace "packages/taskdog-ui/src/taskdog/cli/commands/fix_actual.py" do |s|
+      s.gsub! "click.ParamType[datetime | str | None]", "click.ParamType"
+      s.gsub! "click.ParamType[float | str | None]", "click.ParamType"
+    end
 
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
