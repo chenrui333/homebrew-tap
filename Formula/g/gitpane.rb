@@ -1,8 +1,8 @@
 class Gitpane < Formula
   desc "Multi repo Git workspace dashboard for the terminal"
   homepage "https://github.com/affromero/gitpane"
-  url "https://github.com/affromero/gitpane/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "a3d45ce0c5d1587e57dd01b03cc5a2d49165a2bbb2327233abd25b43707b7a5d"
+  url "https://github.com/affromero/gitpane/archive/refs/tags/v0.7.7.tar.gz"
+  sha256 "9f69c4220b9648d4c17c3f0dee52c774427536cc2687554dbb1fd5e5c4b7fafe"
   license "MIT"
   head "https://github.com/affromero/gitpane.git", branch: "main"
 
