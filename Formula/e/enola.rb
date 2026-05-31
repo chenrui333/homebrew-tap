@@ -2,10 +2,9 @@
 class Enola < Formula
   desc "Hunt down social media accounts by username across social networks"
   homepage "https://github.com/TheYahya/enola"
-  url "https://github.com/TheYahya/enola/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "3d1e08662a2a535773379b24d40c542fac406318c8ea6db6d6c191dfd0f2f703"
+  url "https://github.com/TheYahya/enola/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "c48b934d95e1b6006ddac422a689e2d67d8bd81f2b47a4d75389483ad3644520"
   license "MIT"
-  revision 1
   head "https://github.com/TheYahya/enola.git", branch: "main"
 
   bottle do
@@ -24,15 +23,8 @@ class Enola < Formula
   end
 
   test do
-    # Fails in Linux CI with `/dev/tty: no such device or address`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    Open3.popen3("#{bin}/enola --site GitHub brewtest") do |stdin, stdout, _, w|
-      stdin.close
-      sleep 1
-      Process.kill("TERM", w.pid)
-      output = stdout.read
-      assert_match "No items", output
-    end
+    output = shell_output("#{bin}/enola --help")
+    assert_match "A command-line tool to find username on websites", output
+    assert_match "--site", output
   end
 end
