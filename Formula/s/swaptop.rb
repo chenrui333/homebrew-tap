@@ -1,8 +1,9 @@
 class Swaptop < Formula
   desc "TUI for monitoring swap usage"
   homepage "https://github.com/luis-ota/swaptop"
-  url "https://github.com/luis-ota/swaptop/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "20bcd3b83e7fe29100771d4adc932cec9c8c14e1361be7c7608d70ba515af80f"
+  url "https://github.com/luis-ota/swaptop/archive/refs/tags/v1.0.6t.tar.gz"
+  version "1.0.6t"
+  sha256 "d0315222a844debbb4f11bb0d9658a1fd4f691e3169dec47bd97d76268fa9d03"
   license "MIT"
   head "https://github.com/luis-ota/swaptop.git", branch: "main"
 
