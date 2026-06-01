@@ -947,6 +947,12 @@
     "last_release": "2025-09-03",
     "stars": 105
   },
+  "github:WozzHQ/wozz": {
+    "forks": 8,
+    "last_commit": "2026-01-08",
+    "last_release": "2025-12-31",
+    "stars": 164
+  },
   "github:XENONCYBER/envy": {
     "forks": 4,
     "last_commit": "2026-03-04",
@@ -3695,6 +3701,12 @@
     "last_release": "2025-10-21",
     "stars": 277
   },
+  "github:ndenev/k8sql": {
+    "forks": 2,
+    "last_commit": "2026-03-09",
+    "last_release": "2026-01-26",
+    "stars": 41
+  },
   "github:neilpa/yajsv": {
     "forks": 13,
     "last_commit": "2023-11-21",
@@ -4259,6 +4271,12 @@
     "last_release": "2025-12-30",
     "stars": 35
   },
+  "github:robusta-dev/krr": {
+    "forks": 274,
+    "last_commit": "2026-04-30",
+    "last_release": "2025-12-31",
+    "stars": 4599
+  },
   "github:rodrigo-brito/ninjabot": {
     "forks": 197,
     "last_commit": "2026-01-01",
@@ -4793,6 +4811,12 @@
     "last_release": "2026-02-19",
     "stars": 320
   },
+  "github:tanrikuluozlem/burn": {
+    "forks": 2,
+    "last_commit": "2026-06-01",
+    "last_release": "2026-05-25",
+    "stars": 68
+  },
   "github:tarampampam/tinifier": {
     "forks": 11,
     "last_commit": "2026-01-01",
@@ -5068,6 +5092,12 @@
     "last_commit": "2026-01-16",
     "last_release": "2026-01-16",
     "stars": 47
+  },
+  "github:utkuozdemir/pv-migrate": {
+    "forks": 106,
+    "last_commit": "2026-06-01",
+    "last_release": "2026-05-31",
+    "stars": 2316
   },
   "github:utkusen/urlhunter": {
     "forks": 118,

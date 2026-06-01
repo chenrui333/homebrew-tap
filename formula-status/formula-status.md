@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-05-25 10:40:05 UTC
-Total formulas: 936
+Generated: 2026-06-01 10:49:23 UTC
+Total formulas: 941
 
 ## Formulas
 
@@ -51,6 +51,7 @@ Total formulas: 936
 | awless | Mighty CLI for AWS | 4983 | 258 | 2022-08-02 | 2018-06-21 | Apache-2.0 | ✓ | - | [link](https://github.com/wallix/awless) |
 | clawhub | Install, update, search, and publish agent skills | 4904 | 798 | 2026-03-09 | 2026-01-07 | MIT | ✓ | - | [link](https://clawhub.ai) |
 | flipt | Enterprise-ready, Git native feature management solution | 4714 | 276 | 2026-02-16 | 2026-02-08 | FCL-1.0-MIT | ✓ | - | [link](https://flipt.io/) |
+| krr | Prometheus-based Kubernetes Resource Recommendations | 4599 | 274 | 2026-04-30 | 2025-12-31 | MIT | ✓ | - | [link](https://github.com/robusta-dev/krr) |
 | percollate | CLI to turn web pages into readable PDF, EPUB, HTML, or Mark... | 4582 | 174 | 2025-08-29 | 2025-08-29 | MIT | ✓ | - | [link](https://github.com/danburzo/percollate) |
 | sish | HTTP(S)/WS(S)/TCP Tunnels to localhost using only SSH | 4528 | 330 | 2026-02-04 | 2026-02-04 | MIT | ✓ | - | [link](https://docs.ssi.sh/) |
 | gritql | Query language for searching, linting, and modifying code | 4399 | 120 | 2025-12-01 | 2025-03-26 | MIT | ✓ | - | [link](https://docs.grit.io/) |
@@ -88,6 +89,7 @@ Total formulas: 936
 | decktape | PDF exporter for HTML presentations | 2337 | 191 | 2026-01-22 | 2025-04-21 | MIT | ✓ | - | [link](https://github.com/astefanutti/decktape) |
 | mlx-vlm | Run vision language models on Apple silicon with MLX | 2337 | 303 | 2026-03-21 | 2026-03-21 | MIT | ✓ | - | [link](https://github.com/Blaizzy/mlx-vlm) |
 | cloudflare-ddns | Small, feature-rich, and robust Cloudflare DDNS updater | 2322 | 93 | 2026-02-15 | 2024-12-16 | Apache-2.0 | ✓ | - | [link](https://github.com/favonia/cloudflare-ddns) |
+| pv-migrate | CLI tool to migrate or backup/restore Kubernetes persistent ... | 2316 | 106 | 2026-06-01 | 2026-05-31 | Apache-2.0 | ✓ | - | [link](https://github.com/utkuozdemir/pv-migrate) |
 | ruler | Tool to abuse Exchange services | 2304 | 361 | 2024-06-10 | 2021-02-19 | CC-BY-NC-SA-4.0 | ✓ | - | [link](https://github.com/sensepost/ruler) |
 | checksec | Survey security mitigations used by processes | 2289 | 314 | 2026-01-01 | 2025-12-21 | BSD-3-Clause | ✓ | - | [link](https://slimm609.github.io/checksec/) |
 | botkube | CLI for botkube | 2276 | 308 | 2024-12-11 | 2024-11-13 | MIT | ✓ | - | [link](https://botkube.io/) |
@@ -101,7 +103,7 @@ Total formulas: 936
 | oracle | Ask GPT-5 Pro with custom context and files | 2086 | 199 | 2026-04-24 | 2026-03-08 | MIT | ✓ | - | [link](https://askoracle.dev) |
 | pingu | `ping` command but with pingu | 2086 | 63 | 2024-01-22 | 2023-02-09 | MIT | ✓ | ✓ | [link](https://github.com/sheepla/pingu) |
 | apm-cli | Open-source dependency manager for AI agents | 2083 | 145 | 2026-04-27 | 2026-04-27 | MIT | ✓ | - | [link](https://github.com/microsoft/apm) |
-| ralph-tui | AI agent loop orchestrator | 2069 | 205 | 2026-02-25 | 2026-02-25 | MIT | - | - | [link](https://ralph-tui.com) |
+| ralph-tui | AI agent loop orchestrator | 2069 | 205 | 2026-02-25 | 2026-02-25 | MIT | ✓ | - | [link](https://ralph-tui.com) |
 | markdownify | Convert HTML to Markdown | 2064 | 183 | 2025-11-16 | 2025-11-16 | MIT | ✓ | - | [link](https://github.com/matthewwithanm/python-markdownify) |
 | zerolang | Programming language for agents with explicit effects and pr... | 1987 | 125 | 2026-05-18 | 2026-05-17 | Apache-2.0 | ✓ | - | [link](https://github.com/vercel-labs/zero) |
 | inbucket | Disposable webmail server with SMTP, POP3, and REST interfac... | 1983 | 180 | 2026-01-21 | 2025-12-06 | MIT | ✓ | - | [link](https://inbucket.org/) |
@@ -409,6 +411,7 @@ Total formulas: 936
 | apw | CLI for Apple Passwords (also known as iCloud Keychain) | 166 | 9 | 2026-01-20 | 2025-10-16 | GPL-3.0-only | ✓ | - | [link](https://github.com/bendews/apw) |
 | kwt | Kubernetes Workstation Tools CLI | 165 | 12 | 2023-12-18 | 2023-09-25 | Apache-2.0 | ✓ | - | [link](https://github.com/carvel-dev/kwt) |
 | scrt | Secret manager for developers, sysadmins, and devops | 164 | 7 | 2024-06-28 | 2022-06-07 | Apache-2.0 | ✓ | - | [link](https://scrt.run/) |
+| wozz | Catch expensive Kubernetes resource changes before they merg... | 164 | 8 | 2026-01-08 | 2025-12-31 | MIT | ✓ | - | [link](https://github.com/WozzHQ/wozz) |
 | ccapi | Claude Code Commands Manager | 162 | 15 | 2025-10-26 | 2025-10-13 | MIT | ✓ | - | [link](https://github.com/4xian/claude-auto-api) |
 | certok | CLI to check the validity and expiration dates of SSL certif... | 162 | 15 | 2020-09-17 | 2019-11-20 | MIT | ✓ | ✓ | [link](https://github.com/genuinetools/certok) |
 | cli-mcp-server | CLI for MCP clients with secure execution and customizable s... | 162 | 33 | 2025-07-04 | - | MIT | ✓ | - | [link](https://github.com/mladensu/cli-mcp-server) |
@@ -584,6 +587,7 @@ Total formulas: 936
 | terraform-diff | Always know where you need to run Terraform plan & apply | 69 | 5 | 2025-09-18 | - | Apache-2.0 | ✓ | - | [link](https://github.com/contentful-labs/terraform-diff) |
 | travelgrunt | Package manager for Terraform providers | 69 | 3 | 2025-10-04 | 2025-10-04 | Apache-2.0 | ✓ | - | [link](https://github.com/ivanilves/travelgrunt) |
 | btczee | Bitcoin protocol implementation in Zig | 68 | 30 | 2024-10-07 | - | MIT | ✓ | - | [link](https://github.com/zig-bitcoin/btczee) |
+| burn | See what's burning your Kubernetes budget | 68 | 2 | 2026-06-01 | 2026-05-25 | Apache-2.0 | ✓ | - | [link](https://github.com/tanrikuluozlem/burn) |
 | gptop | TUI GPU monitor with support for Apple Silicon and NVIDIA GP... | 68 | 1 | 2026-03-05 | 2026-03-04 | GPL-3.0-only | ✓ | - | [link](https://github.com/evilsocket/gptop) |
 | seastar | MCP server for Swagger/OpenAPI endpoints | 68 | 1 | 2025-06-16 | - | GPL-3.0-or-later | ✓ | - | [link](https://github.com/nonscalar/Seastar) |
 | tui-banner | Cinematic ANSI banners for Rust CLI/TUI | 68 | 4 | 2025-12-24 | 2025-12-23 | Apache-2.0 | ✓ | - | [link](https://github.com/coolbeevip/tui-banner) |
@@ -664,6 +668,7 @@ Total formulas: 936
 | toolctl | Tool to control your tools | 42 | 7 | 2026-02-12 | 2026-02-07 | MIT | ✓ | - | [link](https://github.com/toolctl/toolctl) |
 | azure-pipelines-language-server | Language Server for Azure Pipelines YAML | 41 | 29 | 2026-02-07 | 2024-02-26 | MIT | ✓ | - | [link](https://github.com/microsoft/azure-pipelines-language-server) |
 | dqy | DNS query tool | 41 | 4 | 2025-09-19 | - | MIT | ✓ | - | [link](https://github.com/dandyvica/dqy) |
+| k8sql | Query Kubernetes clusters using SQL | 41 | 2 | 2026-03-09 | 2026-01-26 | BSD-3-Clause | ✓ | - | [link](https://github.com/ndenev/k8sql) |
 | kbst | Kubestack framework CLI | 41 | 7 | 2023-04-14 | - | Apache-2.0 | ✓ | - | [link](https://www.kubestack.com/) |
 | sprofile | Blazingly fast TUI application for viewing your Spotify list... | 41 | 1 | 2024-06-15 | 2024-06-15 | MIT | ✓ | - | [link](https://github.com/GoodBoyNeon/sprofile) |
 | thanks-stars | Star GitHub repositories backing your project's dependencies | 41 | 2 | 2026-03-21 | 2025-10-27 | MIT | ✓ | - | [link](https://github.com/Kenzo-Wada/thanks-stars) |
