@@ -1,8 +1,8 @@
 class Pinme < Formula
   desc "Deploy Your Frontend in a Single Command"
   homepage "https://pinme.eth.limo/"
-  url "https://registry.npmjs.org/pinme/-/pinme-2.0.8.tgz"
-  sha256 "54434d887e5b81e1080693b29e72888de1d69ef344814a9545d6b705448b88f7"
+  url "https://registry.npmjs.org/pinme/-/pinme-2.0.9.tgz"
+  sha256 "dc85e333606de7765fb21bd3ecd817305ec8ee549e28db88eb5e2883b8c86248"
   license "MIT"
 
   bottle do
