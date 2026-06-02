@@ -9,11 +9,11 @@ class ApmCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "30f8ab1842cf11a0059cd290cf4953e557245ea6c83ddaacc8624f492dfa0327"
-    sha256 cellar: :any, arm64_sequoia: "4aac5dd61f16b31ca5fec109b446d6fe6d7c11ce08d20f18ac2d5d16ba349731"
-    sha256 cellar: :any, arm64_sonoma:  "8da888994f2e77f0969926f24f77807a79dd69f4e687423651b13b2a1cfc1241"
-    sha256 cellar: :any, arm64_linux:   "c059728bed1784415a8711ff42abf13f1d9b739d3935a2723fc11f4930baea84"
-    sha256 cellar: :any, x86_64_linux:  "fd08ac32d4a9c2e2f4ea2daf5c7928e1882275fc19f7408f6f0c4dd025be34f8"
+    sha256 cellar: :any, arm64_tahoe:   "9b53d14256edeb3de8443ecc6f63246bc46f7936a9fd7a588a79f82955a635c8"
+    sha256 cellar: :any, arm64_sequoia: "7f0467ec84abdd24a371c1a8dcdc64c20faa748d2d96bcccbab453b16ed1b266"
+    sha256 cellar: :any, arm64_sonoma:  "6363ac1139b31c3d0ebd260455ee93da050416f0b3711916467e4f95c0f7b91c"
+    sha256 cellar: :any, arm64_linux:   "c4ee44d70d052be46642e0cfd9ce16a280b961113f8271e33afe7d87b8e7b92c"
+    sha256 cellar: :any, x86_64_linux:  "7e31a469049f2965152beb4c734c5c6d43928f1f526487766d0d86c89e7bbe1e"
   end
 
   depends_on "rust" => :build # for jiter
