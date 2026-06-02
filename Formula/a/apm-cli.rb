@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/42/c6/2ae168b5864e2b7d5387bcf04d5c4bb295ff700736c62852f7305432ffcb/apm_cli-0.16.0.tar.gz"
-  sha256 "35fd70a1597cc4fe36dc225882ced41ee4f4e7d607e2a665d89cae744b4bcc98"
+  url "https://files.pythonhosted.org/packages/b5/12/991ea43e72fd993e22a483a5399e2a6ffe850849512f83322eadcdb40f8f/apm_cli-0.16.1.tar.gz"
+  sha256 "9b5aad887d2893557864d525f60f8088fac91dbdad664325c89e00ee26c2e89d"
   license "MIT"
 
   bottle do
@@ -133,8 +133,8 @@ class ApmCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
+    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
   end
 
   resource "isodate" do
@@ -238,8 +238,8 @@ class ApmCli < Formula
   end
 
   resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/04/27/091e140ea834272188e63f8dd6faac1f5c687582b687197b3e0ec3c78ebf/rich_click-1.9.7.tar.gz"
-    sha256 "022997c1e30731995bdbc8ec2f82819340d42543237f033a003c7b1f843fc5dc"
+    url "https://files.pythonhosted.org/packages/f7/ea/21e4867ea0ef881ffd4c0550fc21a061435e50d6324bcd034396633cbc18/rich_click-1.9.8.tar.gz"
+    sha256 "4008f921da88b5d91646c134ec881c1500e5a6b3f093e90e8f29400e09608371"
   end
 
   resource "ruamel-yaml" do
