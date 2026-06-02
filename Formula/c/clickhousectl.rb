@@ -8,11 +8,11 @@ class Clickhousectl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95c06316da5fcd16fdb6f742e98408f0f44de69d1c0c30d364536d831fbc5a95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a3857c17113eaaf7d035511a5f31624bdc6583a0ae4d73b5997b004091f0f02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71ea720bad647424590bef86669db215530cd0baab0ab3473af27aec4b8c1330"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6db20c3e828ea35136e0dd07c90c7edeb493f3a09abeb6cad9b518e12eaae628"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4780a8a603e0d16b82621d956eb1bc023410f9aaa155e7e878dd9abe6175733c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12685ac7d31de32da0dec767e49f2c45aae2a333749172a57aa1b2bc6044a4ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "227ac708ad781afcf07cf375b55e092aec2e2e0cac3136e69812f79290021616"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d4759319608981860b595b30091eb864a11800de938e5c15aa9e3ceab5be40d"
+    sha256 cellar: :any,                 arm64_linux:   "cb87c2e65ce6d393d8f185ba05d6616f94176b2fc064bea9cb3f6eb98974f8e6"
+    sha256 cellar: :any,                 x86_64_linux:  "628ea782b80e4a1173e05b52e31622a4128c4762697153da5aa71586146be03f"
   end
 
   depends_on "rust" => :build
