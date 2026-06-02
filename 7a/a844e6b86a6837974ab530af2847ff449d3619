@@ -1,0 +1,20 @@
+Formula/t/terraformer.rb
+  s_3e8fe5f899908c::t_826de8cb8697bf 4
+  s_3e8fe5f899908c::t_7be25c3b0a888b 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "7aa844e6b86a6837974ab530af2847ff449d3619",
+  "prompts": {},
+  "sessions": {
+    "s_3e8fe5f899908c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c8cf9d27-3681-465d-91e9-49acdbe9efff",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": null
+    }
+  }
+}
