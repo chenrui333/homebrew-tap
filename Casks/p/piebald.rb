@@ -1,6 +1,6 @@
 cask "piebald" do
-  version "0.3.2"
-  sha256 "1d643ee6798ed4f29bc9b4aff3068c5fb56ceda62f08feb55738fe347bda3da7"
+  version "0.4.0"
+  sha256 "508f1fe519b06c2df6c7ddcd695215067c1dcc4f9612ae4701c6bc7ba926fc3b"
 
   url "https://github.com/Piebald-AI/piebald-issues/releases/download/v#{version}/Piebald_#{version}_universal.dmg",
       verified: "github.com/Piebald-AI/piebald-issues/"
@@ -13,7 +13,7 @@ cask "piebald" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "Piebald.app"
 
