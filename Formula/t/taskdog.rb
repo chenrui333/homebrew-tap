@@ -10,11 +10,11 @@ class Taskdog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "d6fb6e3aea82b1c6d69d4dcc03fde842e61eb33b5c8a90f0315c0d2b6396eae9"
-    sha256 cellar: :any, arm64_sequoia: "62c9092609fac707bb27cd43efd00141fba10c2138977617653504ed4a3bb382"
-    sha256 cellar: :any, arm64_sonoma:  "4ab5731528e20c4b7190b1bd39b5f2d649e1f60c15d32baa238fdd2f11be2bb5"
-    sha256 cellar: :any, arm64_linux:   "046787e03e3e4a5fd5ec4a541681ad4af52a76e0a7cba4021055af8e2f236da8"
-    sha256 cellar: :any, x86_64_linux:  "a6ed77233f51ec1c05e9438d4649da321e12b9aa089a933dff9c29be40c9273b"
+    sha256 cellar: :any, arm64_tahoe:   "723c7903573d0dcd88d9e27b7e299acbd4277c6d29d176dcb62b6ce3e429109d"
+    sha256 cellar: :any, arm64_sequoia: "93c1dc03290ecfd61c23ae4a2fa5906fe06a8671a2e3fa2f803478f55321a010"
+    sha256 cellar: :any, arm64_sonoma:  "6a58ac3866b44685b818d44518a0ec3919ab37e98370cdd3a359a32b783c612b"
+    sha256 cellar: :any, arm64_linux:   "9d60fa3ca28c9d6ed60f77d74bd2bca72a4119967a85a060d33c12f89a10fb72"
+    sha256 cellar: :any, x86_64_linux:  "fd5362ade017d3769b519c3961577023e07b34e5ffe234b87b9ea3f063a09cf9"
   end
 
   depends_on "rust" => :build
