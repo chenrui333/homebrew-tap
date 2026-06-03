@@ -8,11 +8,11 @@ class Comchan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62e578cc9a42c13abbca28692f97f29d253f14c66ede255fa8807381c7825397"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "424999fbc39012b3e64bf8127912c72a5f48ff58fe7bdf39ecee6db4a5cfc147"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d30d66e6e523d6d08b6f9905f0c880ddaafa792f17f1cd64d039cd10781b5d06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c1b711029186ff92537cbc05b0bd162972dbbb88d85b0edfe56f8ae34ce3ffd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea9579b4298181619c87128b30124cb1790335d6c8203701d38e6bc5ce56bfd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86c5a3c5ac800456f354e4be9eede408982c06768ef11715d4940e099885be9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3275d96b9d7802cc8e135b4baa335ca0a5a0b2603b7d140950de3f7620f34e37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad5859a48e5bcc02fa27a7905d5b3b1fc07d96cb8fb757f2c2af3f753efa7c93"
+    sha256 cellar: :any,                 arm64_linux:   "fa776003d4e7d7fe39e659a7333450c64d3b7ff4f1beadf93a60594e4767d91b"
+    sha256 cellar: :any,                 x86_64_linux:  "3b1acb9f29138a689c01ba59bf1092a1340ea47c2fdc3338c010d7bf0c4813bf"
   end
 
   depends_on "pkgconf" => :build
