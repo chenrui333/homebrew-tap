@@ -1,8 +1,8 @@
 class Pls < Formula
   desc "Prettier and powerful ls(1) for the pros"
   homepage "https://pls.cli.rs/"
-  url "https://github.com/pls-rs/pls/archive/refs/tags/v0.0.1-beta.11.tar.gz"
-  sha256 "d3893ed7c148a0821aa131dbe0214799a9dde8ded07243570fc41fe6bbaecfea"
+  url "https://github.com/pls-rs/pls/archive/refs/tags/v0.0.1-beta.13.tar.gz"
+  sha256 "3180496894ccff226c4f68346bd4594e6207928dbbd8fff2e9960126be14a1cc"
   license "GPL-3.0-or-later"
 
   livecheck do
