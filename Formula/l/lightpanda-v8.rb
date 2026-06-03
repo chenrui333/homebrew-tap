@@ -1,8 +1,8 @@
 class LightpandaV8 < Formula
   desc "Fork-specific V8 archive and Zig module layout for Lightpanda"
   homepage "https://github.com/lightpanda-io/zig-v8-fork"
-  url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "5e9d8824a1b4b8e882788998965c4579247398bbf647c0c3f5cfc9013a42f476"
+  url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.4.7.tar.gz"
+  sha256 "16c30c266dea67530c9345754ba121a027e0e7c2745b131c1577f6e411b4c0cd"
   license "MIT"
   head "https://github.com/lightpanda-io/zig-v8-fork.git", branch: "main"
 
