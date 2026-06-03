@@ -1,8 +1,8 @@
 class Repos < Formula
   desc "Manage multiple Git repositories with an interactive terminal UI"
   homepage "https://github.com/epilande/repos"
-  url "https://github.com/epilande/repos/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "c6a4b1c3ca301c7754d5bb552d102fb08ab7f7166ddea43cfcbfe15572717f98"
+  url "https://github.com/epilande/repos/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "30c2f524e3ec96a393d316327ab5eb0e48d160f2d782bf2a6febee9348a09d88"
   license "MIT"
   head "https://github.com/epilande/repos.git", branch: "main"
 
@@ -15,14 +15,14 @@ class Repos < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "843b646db764827796d0f32a449e31e56b493da009d11e888382249c085a1312"
   end
 
-  depends_on "chenrui333/tap/bun" => :build
+  depends_on "chenrui333/tap/bun"
   depends_on "gh"
 
   def install
-    system "bun", "install", "--frozen-lockfile"
-    system "bun", "run", "build"
+    system "bun", "install", "--frozen-lockfile", "--production"
 
-    bin.install "repos"
+    libexec.install "bin", "bun.lock", "node_modules", "package.json", "src", "tsconfig.json"
+    bin.install_symlink libexec/"bin/repos"
   end
 
   test do
