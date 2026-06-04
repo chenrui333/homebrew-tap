@@ -1,8 +1,8 @@
 class Fresh < Formula
   desc "Modern terminal-based text editor with plugin support"
   homepage "https://getfresh.dev/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.3.11.tar.gz"
-  sha256 "7255c8ae3a059abda15ad425ac8bfbd65c563a6379446ca1424f633bb5c14e20"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.3.12.tar.gz"
+  sha256 "d709a3538d098d90af754d26d7d797315b5b8b4fb820d4201686f993bc580830"
   license "GPL-2.0-only"
   head "https://github.com/sinelaw/fresh.git", branch: "master"
 
