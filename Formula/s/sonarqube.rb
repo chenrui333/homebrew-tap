@@ -1,8 +1,8 @@
 class Sonarqube < Formula
   desc "Manage code quality"
   homepage "https://www.sonarsource.com/products/sonarqube/"
-  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-26.5.0.122743.zip"
-  sha256 "670bfd6328594b5df2af7c998b0cd512ef5b0baabf68865b2f3e398d9b787ae1"
+  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-26.6.0.123539.zip"
+  sha256 "33448eb3eb3cb241152760a469cd277e054650f6a05143a6dc8e292ef71e9595"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -54,9 +54,9 @@ class Sonarqube < Formula
     end
   end
 
-  def post_install
-    (var/"run").mkpath
-    (var/"sonarqube/logs").mkpath
+  post_install_steps do
+    mkdir_p "run"
+    mkdir_p "sonarqube/logs"
   end
 
   def caveats
