@@ -3,8 +3,8 @@ class Sqlit < Formula
 
   desc "User friendly TUI for SQL databases"
   homepage "https://github.com/Maxteabag/sqlit"
-  url "https://files.pythonhosted.org/packages/26/91/51dfc5fbc1e35df8017e010b677da24da7180dee79aabed5659fe3fb2866/sqlit_tui-1.5.0.tar.gz"
-  sha256 "f76a44b0e2cdb5f5d86483e6ea811961bfc1c60131086c42082c03aee03857d9"
+  url "https://files.pythonhosted.org/packages/0a/b1/64a472a954fe38a6548d67e498169b02293d51554ea3a250718b9a753679/sqlit_tui-1.5.1.tar.gz"
+  sha256 "d836ccd37ef7197a6ccaccc69afb9e50654961c4652daf87fe8cd3a10e32466a"
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
@@ -46,8 +46,8 @@ class Sqlit < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jaraco-classes" do
@@ -106,8 +106,8 @@ class Sqlit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/d7/47/e4501f49c178ae1d9f4a75073fda4204f52647993f075a9db4d14930e0c5/platformdirs-4.10.0.tar.gz"
+    sha256 "31e761a6a0ca04faf7353ea759bdba55652be214725111e5aac52dfa29d4bef7"
   end
 
   resource "pyarrow" do
