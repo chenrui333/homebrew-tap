@@ -1,8 +1,8 @@
 class NewsnowMcpServer < Formula
   desc "MCP server for NewsNow"
   homepage "https://github.com/ourongxing/newsnow-mcp-server"
-  url "https://registry.npmjs.org/newsnow-mcp-server/-/newsnow-mcp-server-0.0.11.tgz"
-  sha256 "c0d6d7baf25f4450d1faf135ef925fe8d743b3976d382ae46644651e4a5046aa"
+  url "https://registry.npmjs.org/newsnow-mcp-server/-/newsnow-mcp-server-0.0.12.tgz"
+  sha256 "30e6c42f549447f0059ce8c3f697ddbf769a127fd2877c608133114797b715e4"
   license "MIT"
 
   bottle do
@@ -21,11 +21,12 @@ class NewsnowMcpServer < Formula
     ENV["BASE_URL"] = "https://newsnow.busiyi.world"
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"brew-test","version":"1.0.0"}}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
     JSON
 
-    output = pipe_output("#{bin}/newsnow-mcp-server 2>&1", json, 1)
-    assert_match "Server does not support completions", output
+    output = pipe_output("#{bin}/newsnow-mcp-server 2>&1", json)
+    assert_match "NewsNow", output
+    assert_match "get_hottest_latest_news", output
   end
 end
