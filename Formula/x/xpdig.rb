@@ -8,11 +8,11 @@ class Xpdig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c79881fb7a5564cdc7c15e3bac26591bd8bccd1170c872f254dcc69f721a9e78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c79881fb7a5564cdc7c15e3bac26591bd8bccd1170c872f254dcc69f721a9e78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c79881fb7a5564cdc7c15e3bac26591bd8bccd1170c872f254dcc69f721a9e78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8caeea7fc0c80dc3821813831f44ffc194fc6fbb4991008527b538a9d6e7c3ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dacbe7abaedc67c8e557de0df4c4eb31f379ac6687a51babc62de528c8d4d9c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04becdf9231e66b093c7b08a89c336a8756760b19fb6771ccc186b2a74aca8ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04becdf9231e66b093c7b08a89c336a8756760b19fb6771ccc186b2a74aca8ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04becdf9231e66b093c7b08a89c336a8756760b19fb6771ccc186b2a74aca8ee"
+    sha256 cellar: :any,                 arm64_linux:   "b4718e7a0e0d88225d4b4c156304321152d866f546f5b3e57d3ba9dce3a1da86"
+    sha256 cellar: :any,                 x86_64_linux:  "3a29b4276a9098217f5feb22b19ab2151499c67333a3024ffb4d1a7d102cdeee"
   end
 
   depends_on "go" => :build
