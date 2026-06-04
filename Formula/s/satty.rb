@@ -7,11 +7,11 @@ class Satty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2dc1f536f560fd7eb2c4f8615786be5b4f0df4d530af8189240dc19583b6ffd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c56fab3be0f8a2c51e892d71c93750c7e930af34fee10d7849b14a0df10da7f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0da269bab59fdd8732130444d1a14ac8a532a0cdf4586adc829460fb3c6fa888"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5eeda71c68578ab4f1c3333b021f7bad79c21f8ce81b02a80aeb2b8d33903f3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b589e04915e3981d992c8416aabc15566e64cabe70f5a75d1c0905d6f582498"
+    sha256               arm64_tahoe:   "d86c0636749159824e1c954aaf2996b4e3b52ffb725ec519c445d583e134ef3a"
+    sha256               arm64_sequoia: "af6ab44507d6738522574831f8c7222cd13dfe7a345a7e89f1832d54ee749253"
+    sha256               arm64_sonoma:  "9a7383647d64d8e1636a684682d68c0476f8c385a680eb8f3b3552e11406a817"
+    sha256 cellar: :any, arm64_linux:   "955eb3606c8e75a5c20b77dc011bcb61db236298ad6c4cadbe86816a90f433d2"
+    sha256 cellar: :any, x86_64_linux:  "5b20cb715eaea99a5a38c1381e8976b23149d8263ea85166dcf7cc631d0d3877"
   end
 
   depends_on "pkgconf" => :build
