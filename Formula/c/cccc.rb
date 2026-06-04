@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/a8/19/2e278f98a84315aac33b39f89550fdf2443ddccb998314c15eac58182d8f/cccc_pair-0.4.23.tar.gz"
-  sha256 "f731db13b13798972d7dadc3a560f7144e9daf250a85e182a7a20f9802434145"
+  url "https://files.pythonhosted.org/packages/96/89/c018d28d8283e3d441ff5c42d2252fddeafb5592d84ad4243cc2062998cc/cccc_pair-0.4.24.tar.gz"
+  sha256 "27e612e845f35f653752da802650ca55ab8620ecdbd99d837ef7bc4b163b692d"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -32,8 +32,8 @@ class Cccc < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/ee/ab/93ce242f899b68c51b0578c027aafa791ab3614cb9345fa5d37b5f5c8e3e/aiohttp-3.14.0.tar.gz"
+    sha256 "2882de819734c715fd1b9c11c97e09fa020d14438203d1d354d8ed1702791c9b"
   end
 
   resource "aiosignal" do
@@ -102,13 +102,13 @@ class Cccc < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/24/54/a3b649b83299606aa7ebfd2391663fde650e934421dfba37af171bfbf456/lark_oapi-1.6.7-py3-none-any.whl"
-    sha256 "df1d44891d266f5c063daa1d37ae6f72c7f166bdc2fb01e607088410e952b92c"
+    url "https://files.pythonhosted.org/packages/4a/ad/1ab04db5d549ad1a7a2cd33682b1c38dee1d65019cb24fd7a23270e6337d/lark_oapi-1.6.8-py3-none-any.whl"
+    sha256 "9b443a5d47a7d204dd42dc40896c8b75087cc35788e45c48c140806d7df7e5e8"
   end
 
   resource "multidict" do
