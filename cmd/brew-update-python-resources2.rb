@@ -13,6 +13,9 @@
 
 require "open3"
 
+# Guard: don't execute when loaded for metadata inspection (e.g. completion rebuild)
+return if ENV["HOMEBREW_COMPLETIONS_GENERATION"] || caller_locations&.any? { |l| l.path&.include?("completions") }
+
 # Show help if requested or no arguments
 if ARGV.include?("--help") || ARGV.include?("-h") || ARGV.empty?
   puts <<~HELP
