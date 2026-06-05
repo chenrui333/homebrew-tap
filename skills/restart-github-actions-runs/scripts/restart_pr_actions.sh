@@ -134,8 +134,8 @@ trap 'rm -rf "$scratch"' EXIT
 git clone --filter=blob:none --no-checkout "git@github.com:${REPO}.git" "$scratch" >/dev/null 2>&1
 cd "$scratch"
 
-name=$(git -C /opt/homebrew/Homebrew/Library/Taps/chenrui333/homebrew-tap config user.name || true)
-email=$(git -C /opt/homebrew/Homebrew/Library/Taps/chenrui333/homebrew-tap config user.email || true)
+name=$(git -C /opt/homebrew/Library/Taps/chenrui333/homebrew-tap config user.name || true)
+email=$(git -C /opt/homebrew/Library/Taps/chenrui333/homebrew-tap config user.email || true)
 [[ -n "$name" ]] && git config user.name "$name"
 [[ -n "$email" ]] && git config user.email "$email"
 
