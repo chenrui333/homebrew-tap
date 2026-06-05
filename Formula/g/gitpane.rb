@@ -8,11 +8,11 @@ class Gitpane < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01bc41617d0aaa66056ae0ad4a1f8997e7f9773eb45a5949688ebab295d3b2f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5a758e5711c26698aac10b56442643254203e04fc2189c8dd633facf3585021"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcac2a12b1c95191b8ac81a625adf464f23af537b7a641d3c45294c0307048e4"
-    sha256 cellar: :any,                 arm64_linux:   "adcbd4810f2e77c11d9cbd3d6b6cf9a80c7b1c9d06a2b2a1572e56b8a2e4a69f"
-    sha256 cellar: :any,                 x86_64_linux:  "14bfd048bb50f763943b130940088dbd718c404c32c313c4104d39054749844d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99203b46a9eb576c5e28722cb9f862abd076d21b1bb1faa3787fb97a850a35b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87f05f4f57596d310a9af0e808b38628766c55e626f629e506e682dfb931ae46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3932fdf576b6214a42ca87c59cf42b74ba9cf042c6cbcfe05afd982de9ec42af"
+    sha256 cellar: :any,                 arm64_linux:   "a42523d8f4914cb4b7a9fbecbdc96b0d901d37a8dc54addd72b6bf3b0a381dd9"
+    sha256 cellar: :any,                 x86_64_linux:  "0117781f5e457f6b2158d9d994be3022ea5e3c31139a6e472d01a38212db78da"
   end
 
   depends_on "rust" => :build
