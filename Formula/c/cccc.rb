@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/96/89/c018d28d8283e3d441ff5c42d2252fddeafb5592d84ad4243cc2062998cc/cccc_pair-0.4.24.tar.gz"
-  sha256 "27e612e845f35f653752da802650ca55ab8620ecdbd99d837ef7bc4b163b692d"
+  url "https://files.pythonhosted.org/packages/61/46/ca0047409ff52c5142e74949c8a29e9cf1a17bd5080105f5bef93199fa1c/cccc_pair-0.4.25.tar.gz"
+  sha256 "573294900e6256d8ce8e967eb40dc621fd05d8466007e8dd7fe0da3202a827ae"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -167,8 +167,8 @@ class Cccc < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/e6/bf/f6544ba992ddb9a6077343a576f9844f7f8f06ab819aefd00206e9255f18/uvicorn-0.48.0.tar.gz"
-    sha256 "a5504207195d08c2511bf9125ede5ac4a4b71725d519e758d01dcf0bc2d31c37"
+    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
+    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
   end
 
   resource "uvloop" do
