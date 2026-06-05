@@ -1,8 +1,8 @@
 class Sish < Formula
   desc "HTTP(S)/WS(S)/TCP Tunnels to localhost using only SSH"
   homepage "https://docs.ssi.sh/"
-  url "https://github.com/antoniomika/sish/archive/refs/tags/v2.22.1.tar.gz"
-  sha256 "f23def84d89d9ae0fd52dd997aaeb4311c4c36144b2435e68f8543fdc762bc3a"
+  url "https://github.com/antoniomika/sish/archive/refs/tags/v2.23.0.tar.gz"
+  sha256 "fbf741b12f3037dd1307656d1f6ff3be53643882df936c89bcf98f938c9cd29a"
   license "MIT"
   head "https://github.com/antoniomika/sish.git", branch: "main"
 
