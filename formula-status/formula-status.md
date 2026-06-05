@@ -689,7 +689,7 @@ Total formulas: 941
 | untether | Telegram bridge for AI coding agents with voice input and li... | 36 | 3 | 2026-04-20 | 2026-04-20 | MIT | ✓ | - | [link](https://github.com/littlebearapps/untether) |
 | agentmako | Local project intelligence CLI and MCP server for codebases ... | 35 | 5 | 2026-05-03 | 2026-05-01 | Apache-2.0 | ✓ | - | [link](https://github.com/drhalto/agentmako) |
 | clickup-mcp | MCP Server for ClickUp | 35 | 12 | 2026-02-13 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/hauptsacheNet/clickup-mcp) |
-| infraspec | Tool for running infrastructure tests written in pure Gherki... | 35 | 1 | 2026-02-16 | 2025-12-30 | Apache-2.0 | ✓ | - | [link](https://infraspec.sh/) |
+| infraspec | Tool for running infrastructure tests written in pure Gherki... | 35 | 1 | 2026-02-16 | 2025-12-30 | Apache-2.0 | ✓ | - | [link](https://github.com/robmorgan/infraspec) |
 | kcl | CLI for the KCL programming language | 35 | 21 | 2026-02-16 | 2025-12-12 | Apache-2.0 | ✓ | - | [link](https://github.com/kcl-lang/cli) |
 | pj | Fast project directory finder | 35 | - | 2026-02-14 | 2026-02-14 | MIT | ✓ | - | [link](https://github.com/josephschmitt/pj) |
 | screenshotone-mcp-server | MCP server for Screenshotone | 35 | 14 | 2025-06-10 | - | MIT | ✓ | - | [link](https://github.com/screenshotone/mcp) |
