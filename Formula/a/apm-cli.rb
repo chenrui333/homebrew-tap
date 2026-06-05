@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/b5/12/991ea43e72fd993e22a483a5399e2a6ffe850849512f83322eadcdb40f8f/apm_cli-0.16.1.tar.gz"
-  sha256 "9b5aad887d2893557864d525f60f8088fac91dbdad664325c89e00ee26c2e89d"
+  url "https://files.pythonhosted.org/packages/95/92/36d013084503d415adac54f1191dd68b90daa05984792db3576c376ef274/apm_cli-0.17.0.tar.gz"
+  sha256 "51c0764be3d1acc53ef45fefcae92feab04843ad65158e51079944310ebcb5a3"
   license "MIT"
 
   bottle do
@@ -28,8 +28,8 @@ class ApmCli < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/77/9a/152096d4808df8e4268befa55fba462f440f14beab85e8ad9bf990516918/aiohttp-3.13.5.tar.gz"
-    sha256 "9d98cc980ecc96be6eb4c1994ce35d28d8b1f5e5208a23b421187d1209dbb7d1"
+    url "https://files.pythonhosted.org/packages/ee/ab/93ce242f899b68c51b0578c027aafa791ab3614cb9345fa5d37b5f5c8e3e/aiohttp-3.14.0.tar.gz"
+    sha256 "2882de819734c715fd1b9c11c97e09fa020d14438203d1d354d8ed1702791c9b"
   end
 
   resource "aiosignal" do
@@ -98,8 +98,8 @@ class ApmCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/b5/fe/997687a931ab51049acce6fa1f23e8f01216374ea81374ddee763c493db5/filelock-3.29.0.tar.gz"
-    sha256 "69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"
+    url "https://files.pythonhosted.org/packages/1f/f9/f38573ed5844586db374d085911740a501ccfa373b455fc9413f09f85237/filelock-3.29.1.tar.gz"
+    sha256 "d97e6b1b9757569626c58caa07dc4beb1613f4a2938b1e8cc81afca398906c9e"
   end
 
   resource "frozenlist" do
@@ -133,8 +133,8 @@ class ApmCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/b9/28/99c51f664567218d824af024c0251650fb27e4ca066df188dab0769c5b91/idna-3.17.tar.gz"
-    sha256 "5eb0cb53bc467c12eadcf6de83163ad8527cec9416f44b9b61b19caedad2b87f"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "isodate" do
@@ -173,8 +173,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/8f/12/cfa322c5f5dd8fa21aab9a7a8e979e7a11123800f86ca8d82eb68a83d213/openai-2.38.0.tar.gz"
-    sha256 "798694c6cf74145541fda94325b6f8f72d8e1fd0262cc137c8d728177a6a4ce3"
+    url "https://files.pythonhosted.org/packages/3c/a6/5815fe2e2aca74b36c650d1bd43b69827cee568073d0d2d9b6fc5aaac80c/openai-2.41.0.tar.gz"
+    sha256 "db5c362acd6604b84f076abbefa66826ea4b46ecba2954ed866e6a149a1352c0"
   end
 
   resource "pluggy" do
