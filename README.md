@@ -463,6 +463,7 @@ brew install --cask <tool>
 - `knip`
 - `konfigo`
 - `kpt`
+- `krr`
 - `krs`
 - `kt`
 - `kube-role-gen`
@@ -683,6 +684,7 @@ brew install --cask <tool>
 - `public-ollama-finder`
 - `pubmed-mcp-server`
 - `purple`
+- `pv-migrate`
 - `pwdsafety`
 - `pygitzen`
 - `pyink`
@@ -934,6 +936,7 @@ brew install --cask <tool>
 - `wiremix`
 - `wisu`
 - `wolfpack`
+- `wozz`
 - `wpscan`
 - `wut-cli`
 - `xcpkg`
