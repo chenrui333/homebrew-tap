@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/95/92/36d013084503d415adac54f1191dd68b90daa05984792db3576c376ef274/apm_cli-0.17.0.tar.gz"
-  sha256 "51c0764be3d1acc53ef45fefcae92feab04843ad65158e51079944310ebcb5a3"
+  url "https://files.pythonhosted.org/packages/df/58/5ebe843123cdb457827c9bfc81e6a690dfa3a57047cfdf2f0ea5d3a77003/apm_cli-0.18.0.tar.gz"
+  sha256 "f18438ea488b8a33daaebbe09a370fabc422fbbdf33b98ec51d1ecb1496672dd"
   license "MIT"
 
   bottle do
