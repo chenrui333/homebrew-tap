@@ -4,8 +4,8 @@ class AustinTui < Formula
 
   desc "Top-like text-based user interface for Austin"
   homepage "https://github.com/P403n1x87/austin-tui"
-  url "https://files.pythonhosted.org/packages/ee/ff/2eb5f08b4cff3168b8bd9fd65ffcaf09366a9133769752c8a0bf162e80ae/austin_tui-2.0.0.tar.gz"
-  sha256 "36e7f9807ef23e7ae25988c0ebaa7d06598dada0642e6e783808e9071c5af638"
+  url "https://files.pythonhosted.org/packages/e6/68/f4ed76675f8dfc13f883422bdc5cf8837fc86c2affb06c447c9a074122b7/austin_tui-2.1.0.tar.gz"
+  sha256 "4e474c134852ff315f92ee456b6e1a59dfb1c4ae9cd2a42d46a25236410bff9b"
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin-tui.git", branch: "master"
 
