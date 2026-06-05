@@ -8,11 +8,11 @@ class Threatdeck < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00aea5e6d6bf8d993f312875864c65de26343991f5c47a3ebe760592e7f96f4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32b6010bb666a3151f04618092b502dacc4f2a286373cd2ce699cf2e933226f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c258d28e1e652fb1da54ac625c8a872b8e47bf8ad63f584752637ffac2e034a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "91136c818902dfe01c721ae44c97ff5863a53a79f0a59ff9487d1253da907e72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6870d631a9aa0052029ad22d2ae0905d3253dc1e6c337c7886c6ef0acc3a844a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d7e0e4d4bf0d1d1af10e9e10922985377b31bff2b77f284375b2ac5d3022003"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "250362b252a42ef89028414755ebfdebd845a9b2a65388701e34d5cadfc19c9e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f62b8b22d8efc8ce8352f3dfac0b9b92afba4f6b21d88b557d4fdb6de991eb53"
+    sha256 cellar: :any,                 arm64_linux:   "4712cb9fc34eceb53dbaf405c7990718f59f2d158f016e65711949662763bb24"
+    sha256 cellar: :any,                 x86_64_linux:  "86079c16f647821617cc31030ee414828fb5e408f70e71db84b852589b86a2a6"
   end
 
   depends_on "rust" => :build
