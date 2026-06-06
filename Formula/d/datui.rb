@@ -7,9 +7,9 @@ class Datui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "687b1f76219d2079a2cfcaabd047ca9ea6cdbf79cf8babd946821a267ba331c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d244f3af482141430ca93227aa311f82d12b94022f58b8f98251fbabd5f96989"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7e45df5a54d62c3a4c907848b4d2d2ef472d7364bb354217e4112aa5e5def2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cbbf165273b3a51a2ae2b9553c4077a2301cec790088581c926f35c1a7341440"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ad95409932cd01f778ffd014b331a365c60e257d2522fa89873f01ac8f319d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8ee9ed4c637698c4db8e45c83c25bde9c4f7d141de846918d17d8291c5bf00b"
   end
 
   depends_on "pkgconf" => :build
