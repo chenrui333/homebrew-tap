@@ -1,8 +1,8 @@
 class Opencli < Formula
   desc "Make any website or Electron App your CLI, AI-powered"
   homepage "https://github.com/jackwener/opencli"
-  url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-1.8.2.tgz"
-  sha256 "4dfcb70626b08de0f9ab286f35e5f570ccb9724396dde165f498f7c14f2b90bd"
+  url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-1.8.3.tgz"
+  sha256 "21869cfae0782ce3787625dc45541e2864e71ca9d3fe5286f9da3b016843a540"
   license "Apache-2.0"
   head "https://github.com/jackwener/opencli.git", branch: "main"
 
