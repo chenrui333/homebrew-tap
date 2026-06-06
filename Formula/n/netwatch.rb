@@ -8,11 +8,11 @@ class Netwatch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9556f94d7fb1dc0a063bd14ae3228835e91c8fa17cb3c7ef0fc1c6c30e87bf67"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4496d770c5d80ccadda0bbcc5c3bdcae24748ece774cdd8eefe1497751df7147"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d21be8d20310e8bca82a8ecae05e7308d36213a3860c5826f4b9e185b8725419"
-    sha256 cellar: :any,                 arm64_linux:   "ecce4c8518d04680de7f7efb6b49db3e98487f61269ba52acaaa3c20df35eccb"
-    sha256 cellar: :any,                 x86_64_linux:  "7442eb91f0c2713b05fd2560aed7c5d669a36c13e82377d1a303819d209b53c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0e12f957226aa52cdb8729ae8725b670a1bea24985fe218a1cbe628eb4c5ce5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92dafa7817ae9c03806cdfd5d6a264687173b789eae9cf134468644812b4fafb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ef0040072da513dc0f92767259a6d73f03c20da1234ad24b046e7ea79f25cdd"
+    sha256 cellar: :any,                 arm64_linux:   "1796de5cb7670a27dcb713e0c3d1be4e42590be030d54b953b5bc469ae3a9b27"
+    sha256 cellar: :any,                 x86_64_linux:  "8681501b0ef806501527cf3a702d0cc2d99b87c19b513aaff32cf7a7a39fb6e8"
   end
 
   depends_on "rust" => :build
