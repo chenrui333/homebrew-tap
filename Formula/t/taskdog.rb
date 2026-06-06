@@ -3,8 +3,8 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.21.1.tar.gz"
-  sha256 "58ec5ea1c50f04e9eb26df8d5599039879295448db0568299d0fb30a3514ede5"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "ff66b405e2d855872b690a976c974d4677788f28debae30d170f2e6327420f6d"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
@@ -146,6 +146,11 @@ class Taskdog < Formula
     sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
+  resource "python-multipart" do
+    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
+    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -214,7 +219,7 @@ class Taskdog < Formula
   def install
     inreplace "packages/taskdog-ui/src/taskdog/shared/click_types/field_list.py",
               "click.ParamType[list[str] | None]", "click.ParamType"
-    inreplace "packages/taskdog-ui/src/taskdog/cli/commands/fix_actual.py" do |s|
+    inreplace "packages/taskdog-ui/src/taskdog/cli/commands/fix_times.py" do |s|
       s.gsub! "click.ParamType[datetime | str | None]", "click.ParamType"
       s.gsub! "click.ParamType[float | str | None]", "click.ParamType"
     end
@@ -272,7 +277,7 @@ class Taskdog < Formula
       add_output = shell_output("#{bin}/taskdog add 'Learn Taskdog' --priority 10")
       assert_match "Added task: Learn Taskdog", add_output
 
-      table_output = shell_output("#{bin}/taskdog table --fields id,name")
+      table_output = shell_output("#{bin}/taskdog list --fields id,name")
       assert_match "Learn Taskdog", table_output
     end
   ensure
