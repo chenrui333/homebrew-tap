@@ -1,8 +1,8 @@
 class YtX < Formula
   desc "Browse YouTube from the terminal"
   homepage "https://github.com/Benexl/yt-x"
-  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "94eeae697b59fef6f3d327be3273041ac8c83f630779a5fa0def627eefb9e5dc"
+  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.8.6.tar.gz"
+  sha256 "292f4eca4d8f321cb9f98c1999cc9f154dee61d7cc7fd8aa6b11c38a0505e75c"
   license "MIT"
   head "https://github.com/Benexl/yt-x.git", branch: "master"
 
@@ -40,14 +40,6 @@ class YtX < Formula
     inreplace "yt-x",
               'ext_dir="$HOME/.config/$CLI_NAME/extensions"',
               "ext_dir=\"#{pkgshare}/extensions\""
-
-    inreplace "yt-x" do |s|
-      # Avoid a Bash 3.2 parse bug with here-docs inside command substitutions.
-      s.gsub! "  script=\"$(\n    cat <<EOF\n",
-              "  cat <<EOF >\"$preview_script_path\"\n"
-      s.gsub! "EOF\n  )\"\n\n  printf \"%s\" \"$script\" >\"$preview_script_path\"\n",
-              "EOF\n"
-    end
 
     libexec.install "yt-x"
     pkgshare.install "extensions"
