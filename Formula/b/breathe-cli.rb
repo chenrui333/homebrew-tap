@@ -8,6 +8,11 @@ class BreatheCli < Formula
   license "MIT"
   head "https://github.com/marekkowalczyk/breathe-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "cddb5235f176ccdd7e58a891e555020ded8adebc3e68c6278664325e36555a79"
+  end
+
   depends_on "python@3.13"
 
   def install
