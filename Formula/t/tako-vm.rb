@@ -8,6 +8,15 @@ class TakoVm < Formula
   license "Apache-2.0"
   head "https://github.com/las7/TakoVM.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8408d479b0b939f86dbc5314686b20b663506ecb81abb775d8e3c6567154db95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f039103ec14c81f1c726a6ca9847b9b808fd2cd273b9a36c18d68d5b015bde24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11ae3dfc6c03b73e9b2c84dce1074536ae29ad6bcd371b4196d5332704e58b04"
+    sha256 cellar: :any,                 arm64_linux:   "8aef775594c9955de46ab83e2f047c187965004a04ce86481b2dfd22031d56f2"
+    sha256 cellar: :any,                 x86_64_linux:  "15c4ab664460c57f63f7d9183971829a209fba326b0eab9e751cffcb88445392"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "libpq"
   depends_on "libyaml"
