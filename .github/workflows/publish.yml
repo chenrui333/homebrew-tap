@@ -5,6 +5,9 @@ on:
     types:
       - labeled
 
+env:
+  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
+
 jobs:
   pr-pull:
     if: |
@@ -20,8 +23,10 @@ jobs:
       packages: write
     steps:
       - name: Validate PR
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          if [[ "${{ github.event.pull_request.title }}" =~ [\$\`\;] ]]; then
+          if [[ "$PR_TITLE" =~ [\$\`\;] ]]; then
             echo "PR title contains suspicious characters"
             exit 1
           fi
