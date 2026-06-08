@@ -1,8 +1,8 @@
 class Repology < Formula
   desc "Command-line interface for Repology.org"
   homepage "https://github.com/ibara/repology"
-  url "https://github.com/ibara/repology/releases/download/v1.9.0/repology-1.9.0.tar.gz"
-  sha256 "ed07a54b380522e2c28d70a92ae41dc2a0402bcf46d92a2adf4c19ebb9773f5e"
+  url "https://github.com/ibara/repology/releases/download/v1.10.0/repology-1.10.0.tar.gz"
+  sha256 "2d918ab0525415b5a4b2920cd2814411815b58b2d94a310eba31bf5e8a954257"
   license "ISC"
   head "https://github.com/ibara/repology.git", branch: "main"
 
@@ -26,6 +26,8 @@ class Repology < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/repology --version", 1)
+    output = shell_output("#{bin}/repology --help", 1)
+    assert_match "usage:", output
+    assert_match "--search", output
   end
 end
