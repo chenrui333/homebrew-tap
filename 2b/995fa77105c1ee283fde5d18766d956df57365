@@ -1,0 +1,29 @@
+Formula/m/mnemo.rb
+  s_35154e266920a9::t_d00a35929cfad8 1,3-15,17-19
+  s_35154e266920a9::t_8d45ca9bf18561 2
+  s_fd84cb496be386::t_d818ef7817e562 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "2b995fa77105c1ee283fde5d18766d956df57365",
+  "prompts": {},
+  "sessions": {
+    "s_35154e266920a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84e97072-7d91-4eec-8060-f06525aa1963",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_fd84cb496be386": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ea582-ddfa-7d11-9d2a-e91669acd87d",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
