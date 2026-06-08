@@ -551,6 +551,12 @@
     "last_release": null,
     "stars": 33
   },
+  "github:Kodiqa-Solutions/VaultS3": {
+    "forks": 2,
+    "last_commit": "2026-06-06",
+    "last_release": "2026-06-06",
+    "stars": 33
+  },
   "github:Kohei-Wada/taskdog": {
     "forks": 2,
     "last_commit": "2026-03-16",
@@ -880,6 +886,12 @@
     "last_commit": "2025-09-07",
     "last_release": null,
     "stars": 40
+  },
+  "github:The-Open-Memory-Initiative-OMI/spdr": {
+    "forks": 0,
+    "last_commit": "2026-06-06",
+    "last_release": "2026-06-06",
+    "stars": 3
   },
   "github:TheYahya/enola": {
     "forks": 58,
@@ -1306,6 +1318,12 @@
     "last_commit": "2026-02-07",
     "last_release": "2026-02-07",
     "stars": 12
+  },
+  "github:arnica/depsguard": {
+    "forks": 12,
+    "last_commit": "2026-06-06",
+    "last_release": "2026-06-04",
+    "stars": 222
   },
   "github:arsham/blush": {
     "forks": 18,
@@ -1973,6 +1991,12 @@
     "last_release": "2026-02-16",
     "stars": 101
   },
+  "github:devenjarvis/lathe": {
+    "forks": 19,
+    "last_commit": "2026-06-07",
+    "last_release": "2026-06-07",
+    "stars": 822
+  },
   "github:devnullvoid/pvetui": {
     "forks": 16,
     "last_commit": "2026-02-16",
@@ -2422,6 +2446,12 @@
     "last_commit": "2025-12-01",
     "last_release": "2025-03-26",
     "stars": 4399
+  },
+  "github:getpaseo/paseo": {
+    "forks": 755,
+    "last_commit": "2026-06-08",
+    "last_release": "2026-06-04",
+    "stars": 8008
   },
   "github:gfazioli/octoscope": {
     "forks": 0,
@@ -3197,6 +3227,12 @@
     "last_release": "2026-02-12",
     "stars": 269
   },
+  "github:las7/TakoVM": {
+    "forks": 4,
+    "last_commit": "2026-06-07",
+    "last_release": null,
+    "stars": 42
+  },
   "github:lazynop/lazyenv": {
     "forks": 1,
     "last_commit": "2026-05-17",
@@ -3400,6 +3436,12 @@
     "last_commit": "2026-03-05",
     "last_release": "2026-03-01",
     "stars": 824
+  },
+  "github:marekkowalczyk/breathe-cli": {
+    "forks": 11,
+    "last_commit": "2026-06-07",
+    "last_release": "2026-06-02",
+    "stars": 283
   },
   "github:mariocandela/beelzebub": {
     "forks": 172,
@@ -3869,6 +3911,12 @@
     "last_release": "2025-07-30",
     "stars": 250
   },
+  "github:obeli-sk/obelisk": {
+    "forks": 19,
+    "last_commit": "2026-06-07",
+    "last_release": "2026-06-06",
+    "stars": 693
+  },
   "github:oceanbase/mcp-oceanbase": {
     "forks": 37,
     "last_commit": "2026-01-13",
@@ -4037,11 +4085,23 @@
     "last_release": "2025-06-11",
     "stars": 227
   },
+  "github:patriceckhart/zot": {
+    "forks": 16,
+    "last_commit": "2026-06-08",
+    "last_release": "2026-06-08",
+    "stars": 212
+  },
   "github:peternaame-boop/ytm-player": {
     "forks": 29,
     "last_commit": "2026-05-14",
     "last_release": "2026-05-04",
     "stars": 371
+  },
+  "github:peterpeterparker/kyushu": {
+    "forks": 3,
+    "last_commit": "2026-06-08",
+    "last_release": "2026-06-04",
+    "stars": 87
   },
   "github:phlx0/snip": {
     "forks": 1,
@@ -4390,6 +4450,12 @@
     "last_commit": "2026-03-30",
     "last_release": "2026-03-10",
     "stars": 4181
+  },
+  "github:sauravrao637/oproxy": {
+    "forks": 4,
+    "last_commit": "2026-06-07",
+    "last_release": "2026-06-06",
+    "stars": 181
   },
   "github:savedra1/clipse": {
     "forks": 47,
@@ -5332,6 +5398,12 @@
     "last_commit": "2025-09-26",
     "last_release": null,
     "stars": 231
+  },
+  "github:zaydmulani09/mnemo": {
+    "forks": 6,
+    "last_commit": "2026-06-04",
+    "last_release": null,
+    "stars": 196
   },
   "github:zed-industries/claude-agent-acp": {
     "forks": 265,

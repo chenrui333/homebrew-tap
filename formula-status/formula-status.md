@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-06-01 10:52:55 UTC
-Total formulas: 941
+Generated: 2026-06-08 10:43:15 UTC
+Total formulas: 953
 
 ## Formulas
 
@@ -34,6 +34,7 @@ Total formulas: 941
 | fission-cli | Fast and Simple Serverless Functions for Kubernetes | 8829 | 793 | 2026-02-12 | 2025-12-18 | Apache-2.0 | ✓ | ✓ | [link](https://fission.io/) |
 | copilot-cli | Copilot coding agent directly to your terminal | 8435 | 1154 | 2026-02-16 | 2026-02-14 | - | ✓ | - | [link](https://github.com/github/copilot-cli) |
 | otto | JavaScript interpreter in Go (golang) | 8434 | 599 | 2025-06-13 | 2024-11-05 | MIT | ✓ | - | [link](https://github.com/robertkrimen/otto) |
+| paseo | Control your AI coding agents from the command-line | 8008 | 755 | 2026-06-08 | 2026-06-04 | AGPL-3.0-only | ✓ | - | [link](https://github.com/getpaseo/paseo) |
 | npm-np | Better `npm publish` | 7683 | 311 | 2026-01-29 | 2026-01-29 | MIT | ✓ | - | [link](https://github.com/sindresorhus/np) |
 | fkill-cli | Fabulously kill processes. Cross-platform | 6986 | 163 | 2025-11-09 | 2025-11-09 | MIT | ✓ | - | [link](https://github.com/sindresorhus/fkill-cli) |
 | fuck-u-code | Detect legacy code mess and generate a beautiful report | 6808 | 324 | 2026-02-16 | 2026-02-16 | MIT | ✓ | - | [link](https://github.com/Done-0/fuck-u-code) |
@@ -164,7 +165,7 @@ Total formulas: 941
 | mnamer | Media file renaming and organizing tool | 1056 | 93 | 2025-11-27 | 2025-11-27 | MIT | ✓ | - | [link](https://github.com/jkwill87/mnamer) |
 | nanobrew | Fast package manager for macOS and Linux | 1036 | 13 | 2026-04-28 | 2026-04-26 | Apache-2.0 | ✓ | - | [link](https://nanobrew.trilok.ai) |
 | rshell | Remote Shell for MicroPython | 1031 | 139 | 2024-12-04 | 2024-02-13 | MIT | ✓ | - | [link](https://github.com/dhylands/rshell) |
-| omnictl | CLI for the Sidero Omni Kubernetes management platform | 1026 | 85 | 2026-02-16 | 2026-02-12 | BSL-1.1 | ✓ | - | [link](https://omni.siderolabs.com/) |
+| omnictl | CLI for the Sidero Omni Kubernetes management platform | 1026 | 85 | 2026-02-16 | 2026-02-12 | BUSL-1.1 | ✓ | - | [link](https://omni.siderolabs.com/) |
 | chess-tui | Play chess from your terminal | 987 | 59 | 2026-03-17 | 2026-02-26 | MIT | ✓ | - | [link](https://github.com/thomas-mauran/chess-tui) |
 | vet-run | Safer way to run remote scripts | 982 | 20 | 2025-08-20 | 2025-07-25 | MIT | ✓ | - | [link](https://getvet.sh/) |
 | clipse | Configurable TUI clipboard manager for Unix | 971 | 47 | 2026-04-20 | 2026-01-27 | MIT | ✓ | - | [link](https://github.com/savedra1/clipse) |
@@ -191,6 +192,7 @@ Total formulas: 941
 | go-junit-report | Convert Go test output to JUnit XML | 825 | 234 | 2024-08-20 | 2023-10-18 | MIT | ✓ | - | [link](https://github.com/jstemmer/go-junit-report) |
 | mlx-tune | Fine-tune LLMs on Apple Silicon with MLX | 824 | 51 | 2026-03-23 | 2026-03-23 | Apache-2.0 | ✓ | - | [link](https://github.com/ARahim3/mlx-tune) |
 | sidecar | Terminal UI for diffs, file trees, conversation history, and... | 824 | 61 | 2026-03-05 | 2026-03-01 | MIT | ✓ | - | [link](https://github.com/marcus/sidecar) |
+| lathe | Generate hands-on, multi-part technical tutorials on demand | 822 | 19 | 2026-06-07 | 2026-06-07 | MIT | ✓ | - | [link](https://github.com/devenjarvis/lathe) |
 | pike | Tool for determining the permissions or policy required for ... | 806 | 40 | 2026-02-13 | 2026-02-09 | Apache-2.0 | ✓ | - | [link](https://github.com/jamesWoolfenden/pike) |
 | luaformatter | Code formatter for Lua | 800 | 85 | 2023-08-25 | 2021-05-18 | Apache-2.0 | ✓ | - | [link](https://github.com/Koihik/LuaFormatter) |
 | firm | Text-based work management system for technologists | 786 | 42 | 2026-02-15 | 2026-02-06 | AGPL-3.0-only | ✓ | - | [link](https://firm.42futures.com/) |
@@ -206,6 +208,7 @@ Total formulas: 941
 | goimports-reviser | Right imports sorting & code formatting tool (goimports alte... | 710 | 77 | 2026-02-15 | 2026-02-15 | MIT | ✓ | - | [link](https://github.com/incu6us/goimports-reviser) |
 | dvm | Deno Version Manager | 697 | 39 | 2025-05-26 | 2025-02-13 | MIT | ✓ | - | [link](https://dvm.deno.dev) |
 | wiki-tui | TUI for Wikipedia | 695 | 29 | 2025-12-08 | 2025-12-08 | MIT | ✓ | - | [link](https://github.com/Builditluc/wiki-tui) |
+| obelisk | Durable and deterministic workflow engine | 693 | 19 | 2026-06-07 | 2026-06-06 | AGPL-3.0-only | ✓ | - | [link](https://github.com/obeli-sk/obelisk) |
 | hackernews-tui | TUI to browse Hacker News | 686 | 30 | 2024-10-22 | 2024-10-22 | MIT | ✓ | - | [link](https://github.com/aome510/hackernews-TUI) |
 | sdl_ttf | Library for using TrueType fonts in SDL applications | 679 | 199 | 2026-02-13 | 2025-03-31 | Zlib | ✓ | ✓ | [link](https://github.com/libsdl-org/SDL_ttf) |
 | kumo | Lightweight AWS service emulator written in Go | 670 | 29 | 2026-04-10 | 2026-04-07 | MIT | ✓ | - | [link](https://github.com/sivchari/kumo) |
@@ -335,6 +338,7 @@ Total formulas: 941
 | oxicord | Lightweight, secure Discord terminal client written in Rust | 288 | 10 | 2026-03-05 | 2026-02-23 | GPL-3.0-only | ✓ | - | [link](https://github.com/linuxmobile/oxicord) |
 | protoc-gen-lint | Lint .proto files for style violations | 287 | 16 | 2024-12-23 | 2022-11-08 | MIT | ✓ | - | [link](https://github.com/ckaznocha/protoc-gen-lint) |
 | pyink | Python formatter, forked from Black with a few different for... | 287 | 18 | 2026-01-02 | 2025-01-10 | MIT | ✓ | - | [link](https://github.com/google/pyink) |
+| breathe-cli | Paced resonance breathing in your terminal | 283 | 11 | 2026-06-07 | 2026-06-02 | MIT | ✓ | - | [link](https://github.com/marekkowalczyk/breathe-cli) |
 | oyo | Step-through diff viewer | 282 | 5 | 2026-03-01 | 2026-02-15 | MIT | ✓ | - | [link](https://github.com/ahkohd/oyo) |
 | resto | Send pretty HTTP & API requests with TUI | 282 | 13 | 2024-07-19 | 2022-01-03 | MIT | ✓ | - | [link](https://github.com/abdfnx/resto) |
 | jiq | Interactive JSON query tool with real-time output and AI ass... | 280 | 3 | 2026-02-24 | 2026-02-20 | Apache-2.0 | ✓ | - | [link](https://github.com/bellicose100xp/jiq) |
@@ -378,11 +382,13 @@ Total formulas: 941
 | kcl-kafka | Kafka swiss-army knife for producing, consuming, and adminis... | 223 | 22 | 2025-11-20 | 2025-10-17 | BSD-3-Clause | ✓ | - | [link](https://github.com/twmb/kcl) |
 | mynav | Workspace and session management TUI | 223 | 12 | 2025-09-28 | 2025-08-01 | MIT | ✓ | - | [link](https://github.com/GianlucaP106/mynav) |
 | dcv | TUI viewer for docker-compose | 222 | 2 | 2026-02-12 | 2025-09-05 | MIT | ✓ | - | [link](https://github.com/tokuhirom/dcv) |
+| depsguard | Harden your package manager configs against supply chain att... | 222 | 12 | 2026-06-06 | 2026-06-04 | MIT | ✓ | - | [link](https://github.com/arnica/depsguard) |
 | gemini-cli | CLI for Google Gemini | 222 | 17 | 2025-11-22 | 2025-11-22 | MIT | ✓ | - | [link](https://github.com/reugn/gemini-cli) |
 | hyprmoncfg | Terminal-first monitor configurator and daemon for Hyprland | 221 | 6 | 2026-04-10 | 2026-04-02 | MIT | ✓ | - | [link](https://hyprmoncfg.dev/) |
 | huber | Simplify GitHub package management | 219 | 14 | 2025-02-18 | 2025-02-15 | Apache-2.0 | ✓ | - | [link](https://innobead.github.io/huber/) |
 | strace-tui | Terminal user interface for visualizing and exploring strace... | 217 | 5 | 2026-03-08 | 2026-03-01 | - | ✓ | - | [link](https://github.com/Rodrigodd/strace-tui) |
 | dealve-tui | Terminal interface for game deal discovery | 212 | 4 | 2026-02-23 | 2026-02-23 | - | ✓ | - | [link](https://github.com/kurama/dealve-tui) |
+| zot | Lightweight coding agent harness written in Go | 212 | 16 | 2026-06-08 | 2026-06-08 | MIT | ✓ | - | [link](https://github.com/patriceckhart/zot) |
 | yosay | Tell Yeoman what to say | 208 | 40 | 2025-02-07 | 2023-10-27 | BSD-2-Clause | ✓ | - | [link](https://github.com/yeoman/yosay) |
 | markpdf | Watermark PDF files using image or text | 207 | 41 | 2024-07-17 | 2022-12-27 | Apache-2.0 | ✓ | - | [link](https://github.com/ajaxray/markpdf) |
 | ht-mcp | Pure Rust implementation of MCP server for headless terminal | 206 | 11 | 2026-02-02 | 2025-06-19 | Apache-2.0 | ✓ | - | [link](https://github.com/memextech/ht-mcp) |
@@ -394,6 +400,7 @@ Total formulas: 941
 | lazytail | Terminal-based log viewer with live filtering | 197 | 2 | 2026-03-19 | 2026-03-16 | MIT | ✓ | - | [link](https://github.com/raaymax/lazytail) |
 | envx | Powerful and secure TUI environment variable manager | 196 | 5 | 2025-09-19 | 2025-09-19 | MIT | ✓ | - | [link](https://github.com/mikeleppane/envx) |
 | hazelnut | Terminal-based automated file organizer | 196 | 9 | 2026-03-05 | 2026-02-19 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/ricardodantas/hazelnut) |
+| mnemo | Local-first AI memory layer with knowledge graph and semanti... | 196 | 6 | 2026-06-04 | - | MIT | ✓ | - | [link](https://github.com/zaydmulani09/mnemo) |
 | youtube-music-cli | Terminal user interface music player for YouTube Music | 192 | 9 | 2026-02-22 | 2026-02-22 | MIT | ✓ | - | [link](https://involvex.github.io/youtube-music-cli/) |
 | hcom | Let AI agents message, watch, and spawn each other across te... | 190 | 24 | 2026-04-06 | 2026-04-05 | MIT | ✓ | - | [link](https://github.com/aannoo/hcom) |
 | unifly | CLI/TUI for UniFi network controller management | 190 | 13 | 2026-05-06 | 2026-05-06 | Apache-2.0 | ✓ | - | [link](https://github.com/hyperb1iss/unifly) |
@@ -401,6 +408,7 @@ Total formulas: 941
 | pam | Minimal CLI tool for managing and executing SQL queries with... | 188 | 9 | 2026-03-03 | 2026-03-06 | MIT | ✓ | ✓ | [link](https://github.com/eduardofuncao/squix) |
 | arduino-language-server | Language server for Arduino development | 183 | 19 | 2026-02-06 | 2025-03-19 | AGPL-3.0-only | ✓ | - | [link](https://github.com/arduino/arduino-language-server) |
 | adbtuifm | TUI File Manager for ADB | 182 | 9 | 2022-03-16 | 2022-03-16 | MIT | ✓ | - | [link](https://github.com/darkhz/adbtuifm) |
+| oproxy | Open-source MITM proxy to intercept, inspect, and mock netwo... | 181 | 4 | 2026-06-07 | 2026-06-06 | MIT | ✓ | - | [link](https://github.com/sauravrao637/oproxy) |
 | csvi | Cross-platform terminal CSV editor | 177 | 4 | 2026-03-21 | 2026-03-21 | MIT | ✓ | - | [link](https://hymkor.github.io/csvi/) |
 | aim | Command-line download/upload tool with resume | 171 | 6 | 2026-02-15 | 2026-01-10 | MIT | ✓ | - | [link](https://github.com/mihaigalos/aim) |
 | lazyworktree | TUI for managing Git worktrees | 170 | 6 | 2026-03-09 | 2026-03-08 | Apache-2.0 | ✓ | - | [link](https://github.com/chmouel/lazyworktree) |
@@ -542,6 +550,7 @@ Total formulas: 941
 | tclint | EDA-centric utility for linting and analyzing Tcl code | 88 | 11 | 2026-02-16 | 2025-12-21 | MIT | ✓ | - | [link](https://github.com/nmoroze/tclint) |
 | yatto | Interactive VCS-based todo-list for the command-line | 88 | 5 | 2026-02-16 | 2026-02-16 | MIT | ✓ | - | [link](https://github.com/handlebargh/yatto) |
 | eprofiler-tui | Terminal-based flamegraph viewer for OpenTelemetry eBPF prof... | 87 | 3 | 2026-05-14 | 2026-04-10 | Apache-2.0 | ✓ | - | [link](https://github.com/rogercoll/eprofiler-tui) |
+| kyushu | Self-hostable Wasm sandbox for JavaScript workers | 87 | 3 | 2026-06-08 | 2026-06-04 | MIT | ✓ | - | [link](https://github.com/peterpeterparker/kyushu) |
 | octotype | TUI typing trainer inspired by monkeytype with a focus on cu... | 87 | - | 2026-02-15 | 2025-11-03 | MIT | ✓ | - | [link](https://github.com/mahlquistj/octotype) |
 | claws | Terminal UI for AWS resource management | 86 | 7 | 2026-03-07 | 2026-03-07 | Apache-2.0 | ✓ | - | [link](https://github.com/clawscli/claws) |
 | gitsnip | Download specific folders from a Git repository | 86 | 3 | 2025-04-19 | 2025-04-19 | MIT | ✓ | - | [link](https://github.com/dagimg-dot/gitsnip) |
@@ -665,6 +674,7 @@ Total formulas: 941
 | karmor | Query git repositories with SQL | 43 | 89 | 2026-02-13 | 2025-11-20 | Apache-2.0 | ✓ | - | [link](https://github.com/kubearmor/kubearmor-client) |
 | envlens | Inspect, search, and copy environment variables from the ter... | 42 | 3 | 2026-01-15 | 2025-12-08 | MIT | ✓ | - | [link](https://github.com/craigf-svg/envlens) |
 | g1c | TUI for managing Google Cloud instances, inspired by k9s and... | 42 | 1 | 2026-02-03 | 2025-06-09 | Apache-2.0 | ✓ | - | [link](https://github.com/nlamirault/g1c) |
+| tako-vm | Secure Python code execution in isolated Docker containers | 42 | 4 | 2026-06-07 | - | Apache-2.0 | ✓ | - | [link](https://github.com/las7/TakoVM) |
 | toolctl | Tool to control your tools | 42 | 7 | 2026-02-12 | 2026-02-07 | MIT | ✓ | - | [link](https://github.com/toolctl/toolctl) |
 | azure-pipelines-language-server | Language Server for Azure Pipelines YAML | 41 | 29 | 2026-02-07 | 2024-02-26 | MIT | ✓ | - | [link](https://github.com/microsoft/azure-pipelines-language-server) |
 | dqy | DNS query tool | 41 | 4 | 2025-09-19 | - | MIT | ✓ | - | [link](https://github.com/dandyvica/dqy) |
@@ -703,6 +713,7 @@ Total formulas: 941
 | lacquer | AI workflows that shine | 33 | 2 | 2025-08-22 | 2025-08-21 | Apache-2.0 | ✓ | - | [link](https://github.com/lacquerai/lacquer) |
 | mamediff | TUI editor for managing unstaged and staged Git diffs | 33 | 1 | 2025-12-22 | 2025-10-09 | MIT | ✓ | - | [link](https://github.com/sile/mamediff) |
 | mcp-server-tester | CLI-based tester for verifying that MCP servers | 33 | 3 | 2025-09-16 | 2025-09-16 | MIT | ✓ | - | [link](https://github.com/steviec/mcp-server-tester) |
+| vaults3 | Lightweight, S3-compatible object storage server with built-... | 33 | 2 | 2026-06-06 | 2026-06-06 | AGPL-3.0-only | ✓ | - | [link](https://github.com/Kodiqa-Solutions/VaultS3) |
 | xpdig | Dig into Crossplane traces via TUI | 33 | 3 | 2026-02-09 | 2026-01-04 | Apache-2.0 | ✓ | - | [link](https://github.com/brunoluiz/xpdig) |
 | ash-ai | Deploy and manage Ash AI agents | 32 | 1 | 2026-03-17 | 2026-03-14 | MIT | ✓ | - | [link](https://github.com/ash-ai-org/ash-ai) |
 | auto-favicon-mcp-server | MCP server for automatic favicon generation from PNG images ... | 32 | 6 | 2025-07-27 | - | MIT | ✓ | - | [link](https://github.com/dh1011/auto-favicon-mcp) |
@@ -844,6 +855,7 @@ Total formulas: 941
 | ccql | Claude Code Query Language | 3 | - | 2025-12-23 | 2025-12-23 | MIT | ✓ | - | [link](https://github.com/douglance/ccql) |
 | envtpl | Render Go templates on the command-line with shell environme... | 3 | 1 | 2026-02-11 | 2025-11-08 | MIT | ✓ | - | [link](https://github.com/chenrui333/envtpl) |
 | gh-unpushed | GitHub CLI extension that shows your unpushed Git commits | 3 | - | 2025-04-15 | 2025-04-15 | MIT | ✓ | - | [link](https://github.com/achoreim/gh-unpushed) |
+| spdr | Read-only DDR5 SPD decoder and semantic linter in Rust | 3 | - | 2026-06-06 | 2026-06-06 | Apache-2.0 | ✓ | - | [link](https://github.com/The-Open-Memory-Initiative-OMI/spdr) |
 | captan | Lightweight, hackable CLI tool for managing startup cap tabl... | 2 | - | 2025-08-22 | 2025-08-22 | MIT | ✓ | - | [link](https://github.com/acossta/captan) |
 | creanote | Create organized notes from the terminal | 2 | - | 2025-12-06 | 2025-10-08 | MIT | ✓ | - | [link](https://github.com/elitalpa/creanote) |
 | projscan | Instant codebase insights for any repository | 2 | - | 2026-03-12 | 2026-03-11 | MIT | ✓ | - | [link](https://github.com/abhiyoheswaran1/projscan) |
