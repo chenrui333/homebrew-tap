@@ -1,0 +1,19 @@
+Formula/b/breathe-cli.rb
+  s_35154e266920a9::t_5696a0fc36096a 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "a135a35dc71b4a6f69d0be7ea286ac2c9fa4bd99",
+  "prompts": {},
+  "sessions": {
+    "s_35154e266920a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84e97072-7d91-4eec-8060-f06525aa1963",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
