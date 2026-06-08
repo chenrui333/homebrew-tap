@@ -23,7 +23,6 @@ class MlxAudio < Formula
   depends_on "libomp"
   depends_on "libsndfile"
   depends_on "llvm@20"
-  depends_on macos: :sonoma
   depends_on :macos
   depends_on "mlx"
   depends_on "mlx-lm"
@@ -31,6 +30,10 @@ class MlxAudio < Formula
   depends_on "openblas"
   depends_on "protobuf"
   depends_on "python@3.14"
+
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   pypi_packages exclude_packages: %w[
     certifi

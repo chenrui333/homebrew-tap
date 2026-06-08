@@ -17,13 +17,16 @@ class MlxTune < Formula
 
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
-  depends_on macos: :sonoma
   depends_on :macos
   depends_on "mlx"
   depends_on "mlx-lm"
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.14"
+
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"

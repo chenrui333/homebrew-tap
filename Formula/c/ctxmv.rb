@@ -15,7 +15,10 @@ class Ctxmv < Formula
 
   depends_on xcode: ["16.0", :build]
   depends_on :macos
-  depends_on macos: :sequoia
+
+  on_macos do
+    depends_on macos: :sequoia
+  end
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"

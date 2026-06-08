@@ -15,8 +15,11 @@ class BlueutilTui < Formula
 
   depends_on "blueutil"
   depends_on :macos # blueutil is macOS-only
-  depends_on macos: :sonoma # skip ventura support for now
   depends_on "python@3.13"
+
+  on_macos do
+    depends_on macos: :sonoma # skip ventura support for now
+  end
 
   resource "linkify-it-py" do
     url "https://files.pythonhosted.org/packages/2a/ae/bb56c6828e4797ba5a4821eec7c43b8bf40f69cda4d4f5f8c8a2810ec96a/linkify-it-py-2.0.3.tar.gz"
