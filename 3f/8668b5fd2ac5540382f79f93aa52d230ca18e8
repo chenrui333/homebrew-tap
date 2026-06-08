@@ -1,0 +1,21 @@
+Formula/o/oproxy.rb
+  s_35154e266920a9::t_b53ab87c531382 14
+  s_35154e266920a9::t_f520a9d668f866 1-12,18-42
+  s_35154e266920a9::t_69b3e4b4f615be 13,15-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3f8668b5fd2ac5540382f79f93aa52d230ca18e8",
+  "prompts": {},
+  "sessions": {
+    "s_35154e266920a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84e97072-7d91-4eec-8060-f06525aa1963",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
