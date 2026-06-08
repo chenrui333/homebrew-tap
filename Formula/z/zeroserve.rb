@@ -6,6 +6,12 @@ class Zeroserve < Formula
   license "MIT"
   head "https://github.com/losfair/zeroserve.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "432e0513b258f1f7dbd5e4825c833f4c169aad6c788103f1ce9fad8f44eae31f"
+    sha256 cellar: :any, x86_64_linux: "465453360d7fda676e6676f3de6266f0e35b703b77692063854d512cf2d7d045"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "rust" => :build
