@@ -1,0 +1,22 @@
+.github/scripts/environment.js
+  s_fd84cb496be386::t_fcde4b68848048 54-55
+.github/workflows/tests.yml
+  s_fd84cb496be386::t_be5516ddd0e50f 195
+  s_fd84cb496be386::t_99c57541a64e32 34,111,116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "507dc2155adcce13807b50e963c178f01519c421",
+  "prompts": {},
+  "sessions": {
+    "s_fd84cb496be386": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ea582-ddfa-7d11-9d2a-e91669acd87d",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
