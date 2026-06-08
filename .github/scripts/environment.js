@@ -51,8 +51,8 @@ module.exports = async ({github, context, core}, formula_detect) => {
     
     // Configure Linux container
     const container = {}
-    container.image = 'ghcr.io/homebrew/ubuntu22.04:main'
-    container.options = '--user=linuxbrew'
+    container.image = 'ghcr.io/homebrew/brew:main'
+    container.options = '--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED'
     core.setOutput('container', JSON.stringify(container))
 
     // Build test-bot arguments
