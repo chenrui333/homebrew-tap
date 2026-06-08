@@ -107,6 +107,7 @@ brew install --cask <tool>
 - `bpfvet`
 - `bpfviewer`
 - `brave-search-mcp-server`
+- `breathe-cli`
 - `brew-cleaner`
 - `brighterscript-formatter`
 - `brotab`
@@ -237,6 +238,7 @@ brew install --cask <tool>
 - `defaults-rs`
 - `dela`
 - `deletor`
+- `depsguard`
 - `dg`
 - `dgen`
 - `dgop`
@@ -475,8 +477,10 @@ brew install --cask <tool>
 - `kwt`
 - `kyanos`
 - `kyma`
+- `kyushu`
 - `labcoat`
 - `lacquer`
+- `lathe`
 - `lazycelery`
 - `lazycli`
 - `lazyenv`
@@ -546,6 +550,7 @@ brew install --cask <tool>
 - `mlx-vlm`
 - `mmemoji`
 - `mnamer`
+- `mnemo`
 - `mockgen`
 - `models`
 - `molotov`
@@ -591,6 +596,7 @@ brew install --cask <tool>
 - `npm-np`
 - `nvrs`
 - `oatmeal`
+- `obelisk`
 - `octelium`
 - `octoscope`
 - `octotype`
@@ -609,6 +615,7 @@ brew install --cask <tool>
 - `openharness`
 - `opensnitch-tui`
 - `openspec`
+- `oproxy`
 - `optimizt`
 - `optivorbis`
 - `oracle`
@@ -633,6 +640,7 @@ brew install --cask <tool>
 - `paq`
 - `parm`
 - `parqv`
+- `paseo`
 - `pass-cli`
 - `passepartui`
 - `pdfsyntax`
@@ -784,6 +792,7 @@ brew install --cask <tool>
 - `soundscope`
 - `sourcerer-mcp`
 - `spacelift-intent`
+- `spdr`
 - `specfact-cli`
 - `speedscope`
 - `speedtest`
@@ -821,6 +830,7 @@ brew install --cask <tool>
 - `systeroid`
 - `tftargets`
 - `tabminal`
+- `tako-vm`
 - `tantivy-cli`
 - `taproom`
 - `tars`
@@ -910,6 +920,7 @@ brew install --cask <tool>
 - `user-scanner`
 - `usort`
 - `vapi-mcp-server`
+- `vaults3`
 - `vectorize-mcp-server`
 - `venom`
 - `vento`
@@ -960,6 +971,7 @@ brew install --cask <tool>
 - `zero`
 - `zerobrew`
 - `zerolang`
+- `zeroserve`
 - `zig@0.11`
 - `zig@0.12`
 - `zig@0.13`
@@ -970,6 +982,7 @@ brew install --cask <tool>
 - `zmate`
 - `zombie`
 - `zookeeper`
+- `zot`
 - `zsh-vi-man`
 - `zu`
 - `zuse`
