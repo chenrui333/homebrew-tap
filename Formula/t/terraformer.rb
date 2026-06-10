@@ -1,8 +1,8 @@
 class Terraformer < Formula
   desc "CLI tool to generate terraform files from existing infrastructure"
   homepage "https://github.com/chenrui333/terraformer"
-  url "https://github.com/chenrui333/terraformer/archive/refs/tags/v0.13.11.tar.gz"
-  sha256 "e8df070d4951df30c04d2f45912713823cb245ad3810e1264f0b267d9d8088a1"
+  url "https://github.com/chenrui333/terraformer/archive/refs/tags/v0.13.13.tar.gz"
+  sha256 "c8367a5d23643dee6b35884c8f559985a61ddbc9146c97035538753abd444d16"
   license "Apache-2.0"
   head "https://github.com/chenrui333/terraformer.git", branch: "main"
 
