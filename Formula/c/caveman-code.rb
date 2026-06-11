@@ -5,6 +5,15 @@ class CavemanCode < Formula
   sha256 "a755378b0e39c692285ced5201eab47c28149e8b84ce8bda4b5da058ef578baa"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "9ff0c29f770b43130dd78223847dc4556809c56080a11ac55c65d7aeea4f85c7"
+    sha256 cellar: :any, arm64_sequoia: "66c69699869b0b4ce655463a3698f909c72445792f37308b63f7892c1a944995"
+    sha256 cellar: :any, arm64_sonoma:  "66c69699869b0b4ce655463a3698f909c72445792f37308b63f7892c1a944995"
+    sha256 cellar: :any, arm64_linux:   "aa927ec1e052fc0a7a0415164606a50246372a01be731d16989884320e7b2e3f"
+    sha256 cellar: :any, x86_64_linux:  "67b966e27e86b2e4241af8cecc4b1dfc51133e8aa594699b9fe4c41cf96cc44e"
+  end
+
   depends_on "node"
 
   def install
