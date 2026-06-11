@@ -18,7 +18,7 @@ class Ftdv < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"ftdv", "completions")
   end
 

@@ -21,7 +21,7 @@ class Monitui < Formula
   depends_on :linux
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
