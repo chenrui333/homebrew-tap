@@ -8,11 +8,7 @@ class Repos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "cd72a6b26762e0d300c4799409888cf666df3669b6a11bd6bb3aed28944e529a"
-    sha256                               arm64_sequoia: "cd0bdfc60cbbb45c75bb542279afa37fe29571d52a9c8444935761494fea441c"
-    sha256                               arm64_sonoma:  "3039ced9a712e8dd951a1f32d46037c21b42729b8b8dc80460b71f74b8860e90"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13a3f86000563460da6ca371228aff627dbb23f1ff5453f05c8a9ea78a268843"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "843b646db764827796d0f32a449e31e56b493da009d11e888382249c085a1312"
+    sha256 cellar: :any_skip_relocation, all: "1a0bc5b9b9c78e25e23154baf4cd99de43b8402ea119ff1371ad8b3f61280c45"
   end
 
   depends_on "chenrui333/tap/bun"
