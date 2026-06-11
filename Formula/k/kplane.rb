@@ -6,6 +6,15 @@ class Kplane < Formula
   license "Apache-2.0"
   head "https://github.com/kplane-dev/kplane.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b602214007b740c0406f9c31aefc47854ff2696837dd9e3bf04a7ed18a896065"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b602214007b740c0406f9c31aefc47854ff2696837dd9e3bf04a7ed18a896065"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b602214007b740c0406f9c31aefc47854ff2696837dd9e3bf04a7ed18a896065"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2717f43e62aaf886b78b9110f597b23fffeaf1a45caa1cda49b0952f279fd700"
+    sha256 cellar: :any,                 x86_64_linux:  "3dbb0f226e65cf1792ac47362652ab31a780082664194e065af0d90995ac649c"
+  end
+
   depends_on "go" => :build
 
   def install
