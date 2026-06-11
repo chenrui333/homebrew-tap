@@ -2,9 +2,25 @@ name: link-checker
 
 on:
   pull_request:
+    paths:
+      - "lychee.toml"
+      - "README.md"
+      - "cmd/**"
+      - "docs/**"
+      - "claudedocs/**"
+      - "formula-status/**"
+      - ".github/workflows/link-checker.yml"
   push:
     branches:
       - main
+    paths:
+      - "lychee.toml"
+      - "README.md"
+      - "cmd/**"
+      - "docs/**"
+      - "claudedocs/**"
+      - "formula-status/**"
+      - ".github/workflows/link-checker.yml"
   schedule:
     - cron: "0 7 * * 1"
   workflow_dispatch:
