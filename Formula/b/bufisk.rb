@@ -6,6 +6,15 @@ class Bufisk < Formula
   license "Apache-2.0"
   head "https://github.com/bufbuild/bufisk.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1e25b3ff56e1eddfde2481dfc75e8e8fb859dbf500a71c2898359ae8204aecc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1e25b3ff56e1eddfde2481dfc75e8e8fb859dbf500a71c2898359ae8204aecc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1e25b3ff56e1eddfde2481dfc75e8e8fb859dbf500a71c2898359ae8204aecc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fe40d1f34a89561b977a4ab8e535ed6c8b42842d317e78f4d193bc497654f80"
+    sha256 cellar: :any,                 x86_64_linux:  "8380f66a80a8457fc54dbc7939074aba88bd1bd46cc57402c76adc99937a2357"
+  end
+
   depends_on "go" => :build
 
   def install
