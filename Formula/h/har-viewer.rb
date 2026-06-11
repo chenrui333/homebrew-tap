@@ -34,8 +34,8 @@ class HarViewer < Formula
 
     if OS.linux?
       gcc = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
-      libstdcxx_dir = Pathname.new(Utils.safe_popen_read(gcc.to_s, "-print-file-name=libstdc++.so").chomp).dirname
-      linker_opts = %W[-L#{libstdcxx_dir} -lstdc++ -rpath #{libstdcxx_dir} -lm]
+      libstdcxx = Pathname.new(Utils.safe_popen_read(gcc.to_s, "-print-file-name=libstdc++.so").chomp).realpath
+      linker_opts = %W[--no-as-needed #{libstdcxx} --as-needed -rpath #{libstdcxx.dirname} -lm]
       inreplace "app/build.gradle.kts",
                 '"/usr/lib/gcc/x86_64-linux-gnu/11/libstdc++.a", "-lm"',
                 linker_opts.map { |opt| %Q("#{opt}") }.join(", ")
