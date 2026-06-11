@@ -218,7 +218,6 @@ brew install --cask <tool>
 - `cueitup`
 - `cull`
 - `curlconverter`
-- `dart-sass`
 - `darya`
 - `datacmd`
 - `datadog-mcp-server`
@@ -691,7 +690,6 @@ brew install --cask <tool>
 - `psq`
 - `public-ollama-finder`
 - `pubmed-mcp-server`
-- `pup`
 - `purple`
 - `pv-migrate`
 - `pwdsafety`
@@ -983,7 +981,6 @@ brew install --cask <tool>
 - `zmate`
 - `zombie`
 - `zookeeper`
-- `zot`
 - `zsh-vi-man`
 - `zu`
 - `zuse`
