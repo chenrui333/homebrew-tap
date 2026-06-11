@@ -198,6 +198,16 @@ head "https://github.com/org/repo.git", branch: "main"
   Git repositories MUST specify `branch:`.
   - If local tap intake is blocked only because the current environment falsely rejects an otherwise-valid GitHub `head` URL, prefer omitting `head` in this tap rather than stalling the formula on local transport validation noise.
 
+### Batch Packaging Notes
+
+- Keep batch packaging work to one formula per PR. In a June 2026 batch, `reqlog`, `memtui`, `hulak`, `diffyml`, `kite-tui`, `quokka`, `epiq`, `har-viewer`, and `croft` each landed as separate PRs through `pr-pull`.
+- Before packaging a candidate, check both `homebrew/core` and this tap for an existing exact package. Skip exact overlaps; for example, `herdr` and `quien` already existed in `homebrew/core`.
+- Do not package upstream prebuilt Homebrew casks or portable release archives as formulae. If upstream has no clean source-build path, leave it for manual review; `pwndbg` was skipped for this reason because upstream's Homebrew distribution used prebuilt casks and the formula source path was not clean enough.
+- A branch that was already merged through `pr-pull` may be rebased onto latest `main` with the original formula commit skipped as a duplicate. Confirm the formula commit and bottle commit are on `main` before treating that as resolved.
+- For Kotlin/Native or C++ interop formulae that hardcode Linux static `libstdc++.a` paths, check every Gradle and cinterop definition file for linker options. The `har-viewer` Linux x86 fix required replacing both the app Gradle linker option and `ftxui_c.def`.
+- If Linux x86 fails against Homebrew GCC's static `libstdc++.a` with `getentropy` or other missing GLIBC symbols, prefer linking against the brewed shared `libstdc++.so` with an explicit `rpath` and runtime `depends_on "gcc"`. Kotlin/Native invokes `ld.lld` directly, so use linker flags such as `-rpath <dir>`, not compiler-driver flags such as `-Wl,-rpath,<dir>`.
+- If `ld.lld` rejects Homebrew `libstdc++.so` references with `disallowed by --no-allow-shlib-undefined`, pass `--allow-shlib-undefined` directly to the linker.
+
 ## Required Validation (All PR Types)
 
 All checks MUST pass locally before opening a PR:
@@ -388,6 +398,18 @@ For recurring maintenance work in this tap, prefer the repo-local helpers under 
   - With `--apply`, comments, labels `superseded`, and closes formula bump PRs that are covered by `main` or superseded by a more recently opened bump PR for the same formula.
 
 If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh` commands in this document instead of forcing the helper into a workflow it was not built for.
+
+## Tap Worktree Hygiene
+
+- Do not leave tap PR worktrees under Homebrew's tap discovery path, such as `$(brew --repository)/Library/Taps/<owner>/homebrew-tap.<branch>`.
+- Homebrew can treat those branch worktrees as separate taps, which can make `brew update` fail with `HOMEBREW_UPDATE_BEFORE_*` or `HOMEBREW_UPDATE_AFTER_*` update-report errors.
+- For temporary tap PR worktrees, use an out-of-discovery location such as `$(brew --prefix)/var/homebrew-tap-worktrees/<owner>-tap/<date>/...`, or move finished worktrees there with `git worktree move`.
+- After batch formula validation, uninstall only the top-level formulae installed for that session, then verify with:
+  ```sh
+  brew update
+  brew tap --verbose
+  brew autoremove --dry-run
+  ```
 
 ## Renovate And Autobump Ownership
 
