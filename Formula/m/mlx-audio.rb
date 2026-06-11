@@ -10,9 +10,9 @@ class MlxAudio < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "b34ad67cef29e86aaab075aaf426b83031847953f8a34a91541fe1f5ca8be56e"
-    sha256 arm64_sequoia: "17a498153d71bce8297793f5f78b7d4879de9fa5a85c39ae2e15a6508195ac61"
-    sha256 arm64_sonoma:  "3f908890d278278fde39b75316f0dd72ccb309a7c7f1b7c4bf8bef42c1e501b7"
+    sha256 arm64_tahoe:   "27112700df83c228314edb844849ff933037c25b284222da9c19d1cce9d5fe64"
+    sha256 arm64_sequoia: "e73aca28e68f268f28302705ed27d72c6d9db855adfeedd13a7e0c6d05e0d95b"
+    sha256 arm64_sonoma:  "3686dacc453c9d3736abbcca64ef8dfea569ca10da4eaef93dedac0590bf4928"
   end
 
   depends_on "cmake" => :build
