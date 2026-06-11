@@ -6,6 +6,15 @@ class Hulak < Formula
   license "MIT"
   head "https://github.com/xaaha/hulak.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e922c52fbaeceac7f9e11d43a233c3314addd65a192b37f03256f26c2e2d1da6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e922c52fbaeceac7f9e11d43a233c3314addd65a192b37f03256f26c2e2d1da6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e922c52fbaeceac7f9e11d43a233c3314addd65a192b37f03256f26c2e2d1da6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03534e03258046e0a6848693b71f0339534222f5018ea5e5d01fe2b5e63604c6"
+    sha256 cellar: :any,                 x86_64_linux:  "f2708dc241695d1969d5f1598f7bfa25cba2d8cb95294fe7d2ad7cea523dd17a"
+  end
+
   depends_on "go" => :build
 
   def install
