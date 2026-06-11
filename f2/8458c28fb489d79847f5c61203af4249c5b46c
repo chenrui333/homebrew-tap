@@ -1,0 +1,20 @@
+Formula/r/reqlog.rb
+  s_28c4d68f9dad45::t_9c2f13757417d6 17
+  s_28c4d68f9dad45::t_9b725cf511bf07 1-16,18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f28458c28fb489d79847f5c61203af4249c5b46c",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
