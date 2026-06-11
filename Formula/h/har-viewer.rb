@@ -9,8 +9,8 @@ class HarViewer < Formula
   depends_on "openjdk@17" => :build
 
   on_linux do
-    depends_on "gcc" => :build
     depends_on arch: :x86_64
+    depends_on "gcc"
   end
 
   resource "ftxui" do
@@ -34,10 +34,13 @@ class HarViewer < Formula
 
     if OS.linux?
       gcc = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
-      libstdcxx = Utils.safe_popen_read(gcc.to_s, "-print-file-name=libstdc++.a").chomp
-      inreplace "app/build.gradle.kts", "/usr/lib/gcc/x86_64-linux-gnu/11/libstdc++.a", libstdcxx
+      libstdcxx_dir = Pathname.new(Utils.safe_popen_read(gcc.to_s, "-print-file-name=libstdc++.so").chomp).dirname
+      linker_opts = %W[-L#{libstdcxx_dir} -lstdc++ -Wl,-rpath,#{libstdcxx_dir} -lm]
+      inreplace "app/build.gradle.kts",
+                '"/usr/lib/gcc/x86_64-linux-gnu/11/libstdc++.a", "-lm"',
+                linker_opts.map { |opt| %Q("#{opt}") }.join(", ")
       inreplace "ftxui-kt/src/nativeInterop/cinterop/ftxui_c.def",
-                "/usr/lib/gcc/x86_64-linux-gnu/11/libstdc++.a", libstdcxx
+                "/usr/lib/gcc/x86_64-linux-gnu/11/libstdc++.a -lm", linker_opts.join(" ")
     end
 
     target = if OS.mac?
