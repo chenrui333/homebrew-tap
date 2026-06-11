@@ -28,6 +28,9 @@ class HarViewer < Formula
     inreplace "app/build.gradle.kts",
               '"macosArm64" -> macosArm64()',
               %Q("macosArm64" -> macosArm64()\n        "macosX64" -> macosX64())
+    inreplace "ftxui-kt/build.gradle.kts",
+              '"macosArm64" -> macosArm64()',
+              %Q("macosArm64" -> macosArm64()\n        "macosX64" -> macosX64())
 
     if OS.linux?
       libstdcxx = Utils.safe_popen_read("gcc", "-print-file-name=libstdc++.a").chomp
