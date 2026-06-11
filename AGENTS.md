@@ -135,6 +135,15 @@ Commit message: `foo 1.2.3 (new formula)`
   - Reserve `std_cargo_args(path: "...")` for crates that live in a subdirectory.
   - Do NOT hand-roll standard Rust binary installs with `cargo build` + `bin.install` when `std_cargo_args` applies.
   - Do NOT manually append `--locked` or `--path` when `std_cargo_args` is used.
+  - Node.js formulae installed via `npm install` with `std_npm_args` MUST remove pre-built native binaries for non-native architectures after install to pass `brew audit`. Use the pattern:
+    ```ruby
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native = "#{os}_#{arch}"  # or "#{os}-#{arch}" depending on module naming
+    prebuild_dir = libexec/"lib/node_modules/<pkg>/node_modules/<native-mod>/build"
+    prebuild_dir.each_child { |dir| rm_r(dir) if dir.basename.to_s != native }
+    ```
+  - Common offenders: `koffi` (uses `os_arch` underscored), `@napi-rs/*` and `@swc/*` (use `os-arch` hyphenated), `node-pty/prebuilds` (uses `os-arch` hyphenated).
 - **Test block**: MUST include at least TWO meaningful assertions — never a version-only test.
   - **Minimum**: version assertion + one functional assertion (e.g. `--help` output containing expected subcommands/options)
   - Include a version assertion whenever a reliable version command/output exists:
