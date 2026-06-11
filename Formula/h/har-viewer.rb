@@ -5,6 +5,14 @@ class HarViewer < Formula
   sha256 "aefa9ee0d4b1747a8aeb8d96b9c68c4e03c6847422a05fb42215fc11cf43f542"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ca82534703c68041197fe7f60d80cb2c8465f53303d7a3f58fe6a30a54c45e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e4eaa9f158282bbec2ce364c9c0282ac7b962d1f06235e182bebd93900e8282"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e855ba319b55eda06e7841a63455a95c90397cb3e7d6a70d52f438dd2dfe6fe1"
+    sha256 cellar: :any,                 x86_64_linux:  "f439e54005ba1f2ef3cfc2fded5367e97f1e22a3310e3ffffa7db11160976000"
+  end
+
   depends_on "cmake" => :build
   depends_on "openjdk@17" => :build
 
