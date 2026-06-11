@@ -6,6 +6,15 @@ class Diffyml < Formula
   license "MIT"
   head "https://github.com/szhekpisov/diffyml.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c84ad471bb055da3309e8268aca9814545fb466a05673650c96eaac367dadf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c84ad471bb055da3309e8268aca9814545fb466a05673650c96eaac367dadf0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c84ad471bb055da3309e8268aca9814545fb466a05673650c96eaac367dadf0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "137a381f5efd375ac84abf434df3844d8b61809de3e6cdcd09a83cc21e158c14"
+    sha256 cellar: :any,                 x86_64_linux:  "a43d1a10974486f0dbca31cd42ed138b6278f9424294f2ee312b55929673e3cc"
+  end
+
   depends_on "go" => :build
 
   def install
