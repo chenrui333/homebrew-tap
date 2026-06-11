@@ -6,6 +6,15 @@ class Multigres < Formula
   license "Apache-2.0"
   head "https://github.com/multigres/multigres.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5f3d13f4c2c187c10202e418495029d2763794a3ec1edbeabc6d7678ffa949b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1d5cf231267eeb0128a4da7e734ea08c870915baef47cdc116f7bd5a5a3f817"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5cc9d91d2ed995708a92e982270c63f829ece02fbec72ebc09a324fccf7344d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "143d5848dd733eefdd845079a09bcdc68e44e5577627e46d0c6c9c076014261c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b813777cb5a618911bb0331442035d6f84ed9c80b3e1946f1d7c8cc11ec7dc63"
+  end
+
   depends_on "go" => :build
 
   def install
