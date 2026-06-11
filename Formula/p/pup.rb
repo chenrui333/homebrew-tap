@@ -17,9 +17,13 @@ class Pup < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3" if OS.linux?
+
+  on_linux do
+    depends_on "openssl@4"
+  end
 
   def install
+    ENV["OPENSSL_DIR"] = Formula["openssl@4"].opt_prefix
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"pup", "completions")
@@ -27,6 +31,6 @@ class Pup < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pup --version")
-    assert_match "monitors", shell_output("#{bin}/pup --help")
+    assert_match "Use pup CLI or generate code", shell_output("#{bin}/pup skills list")
   end
 end
