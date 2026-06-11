@@ -1,0 +1,20 @@
+Formula/b/bttf.rb
+  s_28c4d68f9dad45::t_5c9a5815f2f8c2 1-15,17-19
+  s_28c4d68f9dad45::t_7bda406379b3fc 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "dd63e5a1ac9747bb4c97e7b970eac17b24a4eae7",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
