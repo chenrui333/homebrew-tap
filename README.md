@@ -691,6 +691,7 @@ brew install --cask <tool>
 - `psq`
 - `public-ollama-finder`
 - `pubmed-mcp-server`
+- `pup`
 - `purple`
 - `pv-migrate`
 - `pwdsafety`
