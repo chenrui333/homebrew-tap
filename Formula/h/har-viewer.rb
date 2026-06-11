@@ -33,7 +33,8 @@ class HarViewer < Formula
               %Q("macosArm64" -> macosArm64()\n        "macosX64" -> macosX64())
 
     if OS.linux?
-      libstdcxx = Utils.safe_popen_read("gcc", "-print-file-name=libstdc++.a").chomp
+      gcc = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
+      libstdcxx = Utils.safe_popen_read(gcc.to_s, "-print-file-name=libstdc++.a").chomp
       inreplace "app/build.gradle.kts", "/usr/lib/gcc/x86_64-linux-gnu/11/libstdc++.a", libstdcxx
     end
 
