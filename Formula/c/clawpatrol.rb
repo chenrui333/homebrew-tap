@@ -6,6 +6,15 @@ class Clawpatrol < Formula
   license "MIT"
   head "https://github.com/denoland/clawpatrol.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0cec4bd23f366175948225b4fc75b0ca64dbd1d78bb28b1c3afbd771355b2c4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cec4bd23f366175948225b4fc75b0ca64dbd1d78bb28b1c3afbd771355b2c4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cec4bd23f366175948225b4fc75b0ca64dbd1d78bb28b1c3afbd771355b2c4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4da3ffe409b2a42995c38c7ec5f3a1f3993c174f84faaecbd4f336b6d820e9e7"
+    sha256 cellar: :any,                 x86_64_linux:  "cef2fc2d606da18ff01e166d45968ca4fd1ae66df6ab89bb22a1eb9ba71e2c15"
+  end
+
   depends_on "deno" => :build
   depends_on "go" => :build
 
