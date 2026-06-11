@@ -8,7 +8,7 @@ class YtX < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "58b28b4ff2e2eddcce15a598977937e3e2e518c3c0e5c533bb262e96c1fa4c98"
+    sha256 cellar: :any_skip_relocation, all: "5fc0753dbc0ad3a9cf9c93faf6135ff8c0fe27a644f10e77b3494180e0ed791c"
   end
 
   depends_on "ffmpeg"
