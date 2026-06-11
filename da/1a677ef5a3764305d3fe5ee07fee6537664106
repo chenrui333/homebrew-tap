@@ -1,0 +1,23 @@
+Formula/h/har-viewer.rb
+  s_28c4d68f9dad45::t_983c54f81840d4 9,23
+  s_28c4d68f9dad45::t_c10f180f36f6e2 1-8,10-12,19-22,24,27-65
+  s_28c4d68f9dad45::t_d8d673294772e4 14-18
+  s_28c4d68f9dad45::t_dd4d9c7e6beeae 25-26
+  s_28c4d68f9dad45::t_823bc5e9bc63b1 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "da1a677ef5a3764305d3fe5ee07fee6537664106",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
