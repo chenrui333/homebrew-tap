@@ -1,0 +1,29 @@
+Formula/z/zot.rb
+  s_b7b6cad763aacd::t_85fddb3d6848c4 3
+AGENTS.md
+  s_b7b6cad763aacd::t_85fddb3d6848c4 138-146
+Formula/c/caveman-code.rb
+  s_b7b6cad763aacd::t_768950906b74da 17-19,21-23
+  s_b7b6cad763aacd::t_809b77531625da 20,24-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "82a60e56bbf985ac274bfb8180f74aa0d09b2529",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
