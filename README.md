@@ -131,6 +131,7 @@ brew install --cask <tool>
 - `cashd`
 - `castor`
 - `catree`
+- `caveman-code`
 - `caveman-shrink`
 - `cc-enhanced`
 - `cc-filter`
@@ -194,7 +195,6 @@ brew install --cask <tool>
 - `codstts`
 - `cohctl`
 - `comchan`
-- `container-use`
 - `container2wasm`
 - `context-file-manager`
 - `context42`
@@ -209,6 +209,7 @@ brew install --cask <tool>
 - `create-mcp-use-app`
 - `critcmp`
 - `crlfmt`
+- `croft`
 - `cross-seed`
 - `crush`
 - `csvi`
@@ -243,6 +244,7 @@ brew install --cask <tool>
 - `dgop`
 - `dhv`
 - `di-tui`
+- `diffyml`
 - `discordo`
 - `distill`
 - `dnsforwarder`
@@ -280,6 +282,7 @@ brew install --cask <tool>
 - `envtrace`
 - `envx`
 - `envy`
+- `epiq`
 - `eprofiler-tui`
 - `ereandel`
 - `ergo`
@@ -372,6 +375,7 @@ brew install --cask <tool>
 - `haloy`
 - `hapi`
 - `happy`
+- `har-viewer`
 - `hardcover-tui`
 - `hasha-cli`
 - `hauler`
@@ -397,6 +401,7 @@ brew install --cask <tool>
 - `httptap`
 - `htvend`
 - `huber`
+- `hulak`
 - `humanlayer`
 - `humioctl`
 - `hygg`
@@ -456,9 +461,9 @@ brew install --cask <tool>
 - `kbst`
 - `kcl-kafka`
 - `kcl`
-- `kdash`
 - `keyhunter`
 - `khaos-cli`
+- `kite-tui`
 - `klein`
 - `klepto`
 - `knip`
@@ -538,6 +543,7 @@ brew install --cask <tool>
 - `mdsf`
 - `mdslw`
 - `memora`
+- `memtui`
 - `meteor`
 - `mfa`
 - `ministack`
@@ -700,6 +706,7 @@ brew install --cask <tool>
 - `qmassa`
 - `que`
 - `quicssh-rs`
+- `quokka`
 - `qwe`
 - `r2md`
 - `rabbitmq-message-ops`
@@ -724,6 +731,7 @@ brew install --cask <tool>
 - `repeater`
 - `repology`
 - `repos`
+- `reqlog`
 - `resinator`
 - `resto`
 - `revanced-cli`
@@ -933,7 +941,6 @@ brew install --cask <tool>
 - `viwo`
 - `vortix`
 - `vsg`
-- `vulcain`
 - `wakey`
 - `wallust`
 - `watchfiles`
