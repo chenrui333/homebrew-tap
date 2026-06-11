@@ -1,0 +1,19 @@
+Formula/n/newsnow-mcp-server.rb
+  s_28c4d68f9dad45::t_67d7dff97f0c5f 24-25,28-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "cea873cb899d229f31479cd70558f0a9e7c97253",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
