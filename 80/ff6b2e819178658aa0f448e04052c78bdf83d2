@@ -1,14 +1,20 @@
-Formula/z/zot.rb
-  h_9df9c32c3f321d 3
+Formula/c/caveman-code.rb
+  s_b7b6cad763aacd::t_4ab01cdb87aa69 14-17,19
+  s_b7b6cad763aacd::t_2b9a2e2750ec9c 13,18
 ---
 {
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.5.6",
   "base_commit_sha": "80ff6b2e819178658aa0f448e04052c78bdf83d2",
   "prompts": {},
-  "humans": {
-    "h_9df9c32c3f321d": {
-      "author": "Rui Chen <rui@chenrui.dev>"
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
     }
   }
 }
