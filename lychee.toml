@@ -38,6 +38,7 @@ exclude = [
   "^https://taskbook\\.sh/?$",
   "^https://chiselapp\\.com/user/MistressRemilia/repository/benben/?$",
   "^https://yeetfile\\.com/?$",
+  "^https://github\\.com/ingero-io/ingero/?$",
 ]
 
 cache = true
