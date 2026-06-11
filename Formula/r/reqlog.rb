@@ -6,6 +6,15 @@ class Reqlog < Formula
   license "MIT"
   head "https://github.com/SagarMaheshwary/reqlog.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73de736d9f7a2495241e5be8224ed91b8108f4da1116ef4c27acb3beafecec1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73de736d9f7a2495241e5be8224ed91b8108f4da1116ef4c27acb3beafecec1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73de736d9f7a2495241e5be8224ed91b8108f4da1116ef4c27acb3beafecec1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fc5340f1b496c46e31b0f0a7e8ed502a2710fdd17c67053cc62680cddb840d4"
+    sha256 cellar: :any,                 x86_64_linux:  "a991c6c463e2824b0c94931061504fa4b2f045c4932be4ffe16c9356e54701ed"
+  end
+
   depends_on "go" => :build
 
   def install
