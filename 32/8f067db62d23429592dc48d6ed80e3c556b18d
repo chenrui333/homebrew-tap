@@ -1,0 +1,21 @@
+Formula/r/repology.rb
+  s_28c4d68f9dad45::t_28d71c96e1cca3 30
+  s_28c4d68f9dad45::t_33ef4d6718ba41 31
+  s_28c4d68f9dad45::t_be9c1c9a5a6e14 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "328f067db62d23429592dc48d6ed80e3c556b18d",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
