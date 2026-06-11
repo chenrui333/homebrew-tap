@@ -1,6 +1,6 @@
 class ContainerUse < Formula
   desc "Dev envs for coding agents. Run multiple agents safely with your stack"
-  homepage "https://github.com/dagger/container-use"
+  homepage "https://container-use.com/introduction"
   url "https://github.com/dagger/container-use/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "951105f0b4a9bfd9f52e7bb3a2d245e800df4b8449704cd34001833ee888a02d"
   license "Apache-2.0"
