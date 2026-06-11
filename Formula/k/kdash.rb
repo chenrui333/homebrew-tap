@@ -2,7 +2,7 @@ class Kdash < Formula
   desc "Simple and fast dashboard for Kubernetes"
   homepage "https://kdash.cli.rs/"
   url "https://github.com/kdash-rs/kdash/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "a1dfc9b4e21acc353be579be0516df262a3e30eda5161ad99caa7d16381f7216"
+  sha256 "2f856914fc2612857c880a0f2f76ecf458a845874a11c6d4bf6527155f96b44e"
   license "MIT"
   head "https://github.com/kdash-rs/kdash.git", branch: "main"
 
