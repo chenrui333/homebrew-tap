@@ -7,6 +7,11 @@ class Dragoman < Formula
   sha256 "a8276e94390b3c16626660493c800943d05326fa6f61ddae0c0cf79a9f244664"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "bf055cb25987ea790ec9ca23c4d8aa7121f8ae22cbc32c6ea4ff55f14dd9a002"
+  end
+
   depends_on "python@3.13"
 
   resource "prompt-toolkit" do
