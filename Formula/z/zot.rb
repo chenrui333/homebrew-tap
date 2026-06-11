@@ -18,15 +18,12 @@ class Zot < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/zot"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zot --version")
-    assert_match "coding agent harness", shell_output("#{bin}/zot --help 2>&1")
+    assert_match "zot: no credential for anthropic", shell_output("#{bin}/zot rpc 2>&1", 1)
   end
 end
