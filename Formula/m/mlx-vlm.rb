@@ -15,6 +15,9 @@ class MlxVlm < Formula
     sha256 arm64_sonoma:  "378202cb0dbec1e225085dde0b3a98b449175b18a13f08f3cd952a9d7498a542"
   end
 
+  depends_on "cmake" => :build
+  depends_on "ninja" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
