@@ -6,6 +6,15 @@ class Diffcat < Formula
   license "MIT"
   head "https://github.com/trebaud/diffcat.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0eab51628d800d368cf48f88f5b3cb4843c401be9b11ee5944d2ebe811e826b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0eab51628d800d368cf48f88f5b3cb4843c401be9b11ee5944d2ebe811e826b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0eab51628d800d368cf48f88f5b3cb4843c401be9b11ee5944d2ebe811e826b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6db807da7cef26bb0dc36c48a28c636809dcf8034e7eca83b5d4a6abcf74c26a"
+    sha256 cellar: :any,                 x86_64_linux:  "183b234fedc3702ad79c96006b084d2b40fc063a1091296ba12cc6ac6c38d936"
+  end
+
   depends_on "go" => :build
 
   def install
