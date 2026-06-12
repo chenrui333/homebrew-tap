@@ -6,6 +6,15 @@ class Openclacky < Formula
   license "MIT"
   head "https://github.com/clacky-ai/openclacky.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97365d4c61150697ef75518bdb1270b2b6c8182d410d347569953ad2c3229bc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97365d4c61150697ef75518bdb1270b2b6c8182d410d347569953ad2c3229bc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97365d4c61150697ef75518bdb1270b2b6c8182d410d347569953ad2c3229bc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "004c10ab617d7e816402bb56b5388a5a100145b335236aa332124d5ed64ac8ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "004c10ab617d7e816402bb56b5388a5a100145b335236aa332124d5ed64ac8ca"
+  end
+
   depends_on "ruby"
 
   def install
