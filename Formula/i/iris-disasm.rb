@@ -6,6 +6,13 @@ class IrisDisasm < Formula
   license "Apache-2.0"
   head "https://github.com/mi11ione/iris.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4014a039a1b0fb840e9cf4acae954e7a7f25b7702443a4401508d4fe24a322c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09bb129101373183789d89e327c47c88e53aee0f80468060b15d6af916579a2e"
+    sha256 cellar: :any_skip_relocation, sequoia:       "d4891b9087c79ba2dae92bece35d05c756527b08cf3f30cbc4249b23e2f6063b"
+  end
+
   depends_on xcode: ["16.0", :build]
   depends_on :macos
 
