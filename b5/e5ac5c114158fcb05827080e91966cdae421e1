@@ -1,0 +1,21 @@
+Formula/n/nano-agent.rb
+  s_b7b6cad763aacd::t_5f20a8bff7c0bd 1-15,21-22
+  s_b7b6cad763aacd::t_3b6193d8c2141f 16-18
+  s_b7b6cad763aacd::t_a4a7c787a459ba 19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b5e5ac5c114158fcb05827080e91966cdae421e1",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
