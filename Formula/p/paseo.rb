@@ -31,6 +31,7 @@ class Paseo < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/paseo --version")
-    assert_match "paseo", shell_output("#{bin}/paseo --help")
+    output = shell_output("#{bin}/paseo --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
