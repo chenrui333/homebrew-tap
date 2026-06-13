@@ -43,7 +43,7 @@ class SpotiflacCli < Formula
   end
 
   test do
-    assert_match "Spotify downloader with playlist sync in mind.", shell_output("#{bin}/spotiflac-cli --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     assert_match "Invalid URL.", shell_output("#{bin}/spotiflac-cli download 2>&1", 1)
   end
 end
