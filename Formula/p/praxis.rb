@@ -6,6 +6,15 @@ class Praxis < Formula
   license "Apache-2.0"
   head "https://github.com/shirvan/praxis.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd2fda26615b99d6392c63d1baf975470a97203bfde04c9fe2ea5411c341d556"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd2fda26615b99d6392c63d1baf975470a97203bfde04c9fe2ea5411c341d556"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd2fda26615b99d6392c63d1baf975470a97203bfde04c9fe2ea5411c341d556"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3ae37311bf051f1edb80cd7d7f9aa7d50b3f23abaf0f3bba6560517830c64fd"
+    sha256 cellar: :any,                 x86_64_linux:  "8617f9f8ec867ef0e5651350d5d0ae132a794a9622b2d78e959e52a291a5cbba"
+  end
+
   depends_on "go" => :build
 
   def install
