@@ -30,6 +30,7 @@ class Praxis < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/praxis version")
-    assert_match "deploy", shell_output("#{bin}/praxis --help")
+    output = shell_output("#{bin}/praxis not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
