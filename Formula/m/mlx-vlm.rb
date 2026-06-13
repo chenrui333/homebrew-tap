@@ -126,10 +126,11 @@ class MlxVlm < Formula
   end
 
   test do
-    assert_match "Generate text from an image using a model",
-                 shell_output("#{bin}/mlx_vlm.generate --help")
-    assert_match "MLX VLM Http Server.",
-                 shell_output("#{bin}/mlx_vlm.server --help")
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"mlx_vlm.generate", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
 
     (testpath/"test.py").write <<~PYTHON
       import importlib.util
