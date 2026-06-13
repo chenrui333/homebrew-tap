@@ -25,6 +25,7 @@ class Cpx < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/cpx version")
-    assert_match "#compdef cpx", shell_output("#{bin}/cpx completion zsh")
+    output = shell_output("#{bin}/cpx not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
