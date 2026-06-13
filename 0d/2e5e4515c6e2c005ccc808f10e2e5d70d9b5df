@@ -1,0 +1,19 @@
+Formula/c/claumon.rb
+  s_b7b6cad763aacd::t_beec85fe1424db 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "0d2e5e4515c6e2c005ccc808f10e2e5d70d9b5df",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
