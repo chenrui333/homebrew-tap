@@ -23,6 +23,11 @@ class Netwatch < Formula
   end
 
   test do
-    assert_match "netwatch", shell_output("#{bin}/netwatch --help 2>&1")
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"netwatch", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "No such device or address", output
   end
 end
