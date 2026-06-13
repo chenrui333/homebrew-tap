@@ -6,6 +6,15 @@ class Redli < Formula
   license "Apache-2.0"
   head "https://github.com/IBM-Cloud/redli.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7496f1fdd5a768e5f012cb13ff33c6db37df099ace3c5986a136757f76c32390"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7496f1fdd5a768e5f012cb13ff33c6db37df099ace3c5986a136757f76c32390"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7496f1fdd5a768e5f012cb13ff33c6db37df099ace3c5986a136757f76c32390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ae7516b630687e5b756a2e0cebb3cf61b20737c6426f39d1d399e939f518a69"
+    sha256 cellar: :any,                 x86_64_linux:  "baa71dd17c8407295b9a19ef034395c396e7108e31eefb7f9f83b0845f3da111"
+  end
+
   depends_on "go" => :build
 
   def install
