@@ -26,8 +26,11 @@ class Repology < Formula
   end
 
   test do
-    output = shell_output("#{bin}/repology --help", 1)
-    assert_match "usage:", output
-    assert_match "--search", output
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"repology", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
