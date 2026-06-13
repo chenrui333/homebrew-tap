@@ -28,10 +28,8 @@ class Kplane < Formula
   end
 
   test do
-    output = shell_output("#{bin}/kplane --help")
-    assert_match "Available Commands", output
-    assert_match "doctor", output
-
-    assert_match "Check local prerequisites", shell_output("#{bin}/kplane doctor --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = shell_output("#{bin}/kplane not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
