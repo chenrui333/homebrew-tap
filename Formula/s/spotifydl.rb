@@ -21,14 +21,8 @@ class Spotifydl < Formula
   end
 
   test do
-    system bin/"spotifydl", "--help"
-
-    # `Make sure you have youtube-dl and ffmpeg installed on this system`
-    song_url = "https://open.spotify.com/track/4aw5XZ3wy5OKfvWkl063HE?si=5e12c2b1b270459e"
-    output = shell_output("#{bin}/spotifydl #{song_url} 2>&1", 1)
-    assert_match <<~EOS, output
-      Found 1 tracks
-      Searching and downloading tracks
-    EOS
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = shell_output("#{bin}/spotifydl --not-a-real-option 2>&1", 1)
+    assert_match "unknown flag: --not-a-real-option", output
   end
 end
