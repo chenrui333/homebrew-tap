@@ -22,6 +22,11 @@ class Azazel < Formula
   end
 
   test do
-    assert_match "azazel", shell_output("#{bin}/azazel --help 2>&1").downcase
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"azazel", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
