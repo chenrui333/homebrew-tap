@@ -1,0 +1,20 @@
+Casks/l/lanes.rb
+  s_b7b6cad763aacd::t_90bead1faeb44d 10
+  s_b7b6cad763aacd::t_d34821dde86df4 1-9,11-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "15d7462aab03568a44352e936df014fc451b3f19",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
