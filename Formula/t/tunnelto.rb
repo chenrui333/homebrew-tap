@@ -28,7 +28,7 @@ class Tunnelto < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/tunnelto --version")
 
-    help = shell_output("#{bin}/tunnelto --help")
-    assert_match "expose your local web server", help.downcase
+    output = shell_output("#{bin}/tunnelto --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
