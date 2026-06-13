@@ -19,6 +19,7 @@ class Epiq < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/epiq --version")
-    assert_match "CLI based issue tracker", shell_output("#{bin}/epiq --help")
+    output = shell_output("#{bin}/epiq not-a-real-command 2>&1", 1)
+    assert_match "not-a-real-command", output
   end
 end
