@@ -24,8 +24,7 @@ class Taws < Formula
   test do
     assert_match version.to_s, shell_output("#{bin/"taws"} --version")
 
-    output = shell_output("#{bin/"taws"} completion bash")
-    assert_match "taws__completion", output
-    assert_match "--profile", output
+    output = shell_output("#{bin/"taws"} not-a-real-command 2>&1", 2)
+    assert_match "unrecognized subcommand 'not-a-real-command'", output
   end
 end
