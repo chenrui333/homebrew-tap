@@ -64,7 +64,11 @@ class Mimirs < Formula
 
   test do
     assert_match "\"version\": \"#{version}\"", (libexec/"package.json").read
-    assert_match "semantic file search", shell_output("#{bin}/mimirs --help")
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"mimirs", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
 
     (testpath/"test.txt").write "hello world"
     output = shell_output("#{bin}/mimirs init #{testpath} --yes 2>&1", 1)
