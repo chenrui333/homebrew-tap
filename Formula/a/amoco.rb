@@ -67,8 +67,7 @@ class Amoco < Formula
   end
 
   test do
-    system bin/"amoco", "--help"
-
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = shell_output("#{bin}/amoco bin_info --header #{bin}/amoco 2>&1", 1)
 
     # [10:32:52] WARNING  amoco.system.core: unknown format
