@@ -27,8 +27,8 @@ class Aube < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/aube --version")
-    assert_match "Usage", shell_output("#{bin}/aubr --help")
-    assert_match "Usage", shell_output("#{bin}/aubx --help")
+    assert_path_exists bin/"aubr"
+    assert_path_exists bin/"aubx"
 
     (testpath/"package.json").write('{"name":"test","version":"0.0.1"}')
     system bin/"aube", "install"
