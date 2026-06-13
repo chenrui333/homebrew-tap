@@ -28,7 +28,12 @@ class Rtop < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/rtop --help")
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"rtop", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "rtop monitors server statistics", output
   end
 end
 
