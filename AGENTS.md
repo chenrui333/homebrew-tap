@@ -145,15 +145,23 @@ Commit message: `foo 1.2.3 (new formula)`
     ```
   - Common offenders: `koffi` (uses `os_arch` underscored), `@napi-rs/*` and `@swc/*` (use `os-arch` hyphenated), `node-pty/prebuilds` (uses `os-arch` hyphenated).
 - **Test block**: MUST include at least TWO meaningful assertions — never a version-only test.
-  - **First assertion**: ALWAYS prefer `assert_match version.to_s, shell_output("#{bin}/foo --version")` when the binary supports `--version`. Only skip when the binary genuinely has no version flag.
-  - **Second assertion**: MUST be a real functional check — do NOT just match `--help` output. Instead:
+  - **First assertion**: ALWAYS try to add a version check, preferring `assert_match version.to_s, shell_output("#{bin}/foo --version")` when the binary supports `--version`.
+  - If `--version` does not work, try realistic alternatives such as `version`, `-V`, or `-v` only when upstream documents them.
+  - If no version command exists, add a formula-local comment:
+    ```ruby
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    ```
+  - Do NOT use a regex-only version check when `version.to_s` works.
+  - **Second assertion**: MUST be a real functional check. Do NOT use `--help` as the functional test, and do NOT replace a missing functional test with a help-output assertion. Instead:
     - Run a non-destructive subcommand with predictable output (e.g. `list`, `status`, `info`)
     - For tools that need API keys: invoke with missing key and assert the error message
     - For parsers/formatters: feed a small input and assert expected output
     - For servers: assert startup error or config validation output
-    - `--help` matching is acceptable ONLY as a last resort when no subcommand produces testable output without side effects
-  - Matching `--help` alone is NOT a functional test — it only proves the binary loads, not that it works
-  - Avoid regex-only version assertions when `version.to_s` matching is available
+    - If no safe deterministic functional check exists, prefer a negative runtime test or leave a precise `FIXME` comment explaining what upstream capability is missing.
+  - Matching `--help` alone is NOT a functional test — it only proves the binary loads, not that it works.
+  - Every test should include a concrete binary invocation, preferably the real installed binary under `#{bin}`.
+  - For formulae installing multiple binaries, test the primary binary and either run or assert the existence of secondary binaries when appropriate.
+  - Avoid tests that only check files, completions, or install paths unless the formula is specifically a completion/plugin formula.
   - Do NOT write tests that require interactive input, network access, or hang on CI
   - Prefer `shell_output` over `Open3.capture2e` unless piping stdin is required
   - Use `testpath` for temporary files
@@ -161,11 +169,22 @@ Commit message: `foo 1.2.3 (new formula)`
   - In particular, do NOT set `ENV["HOME"] = testpath` or `ENV["HOME"] = testpath.to_s` in `test do`.
   - When a formula genuinely needs a custom `HOME` outside `test do` (for example during install-time completion generation), scope it to the smallest possible block with `with_env` or a command-scoped override instead of mutating global `ENV`.
   - Prefer no `HOME` override whenever possible.
+  - For TUI formulae, prefer non-interactive stdout/stderr/stdin checks. Use `pipe_output`, `shell_output(... 2>&1)`, or `Open3.capture2e` only when stdin/stderr handling is genuinely needed.
+  - For TUI tests, feed minimal stdin such as `q\n`, an empty config, a sample input file, or a known invalid input to force deterministic output.
+  - For Kubernetes, Docker, cloud, database, or daemon clients, do NOT require a real cluster, daemon, cloud account, or database. Use invalid config, missing credentials, empty kubeconfig, invalid endpoint, or missing runtime dependency and assert the expected error.
+    ```ruby
+    (testpath/"kubeconfig").write("")
+    output = shell_output("KUBECONFIG=#{testpath}/kubeconfig #{bin}/foo status 2>&1", 1)
+    assert_match "expected error", output
+    ```
 - **Completions policy**: Add shell completion support when upstream CLI supports it.
   - Use Homebrew DSL: `generate_completions_from_executable`.
   - Rust CLIs: only use `shell_parameter_format: :clap` when the binary supports Homebrew's `COMPLETE=<shell>` invocation; otherwise keep the explicit `"completion"` or `"completions"` subcommand form.
   - Go CLIs: prefer `shell_parameter_format: :cobra`.
   - Python CLIs: prefer `shell_parameter_format: :click` or `:typer` (based on upstream framework).
+  - Do NOT use completion generation as the formula's functional test.
+  - In `test do`, avoid `completion`, `completions`, or shell-completion assertions unless the formula is itself a completion/plugin formula with no normal binary behavior.
+  - For completion/plugin-only formulae, test installed completion/plugin files directly and, when possible, shell-load them in a deterministic way.
 
 ### Shell Plugin Formulae
 
@@ -181,8 +200,12 @@ Commit message: `foo 1.2.3 (new formula)`
 - Avoid static-only installs unless upstream cannot build shared libraries, or there is a clear technical reason documented in the formula.
 - If upstream lacks `install()` rules, manual installation is acceptable, but still prefer installing the shared artifact when available.
 
-- **Service block**: If the software can run as a daemon, include a `service do` block.
+- **Service block**: If the software can run as a daemon, server, agent, listener, worker, or proxy, include a `service do` block.
   - Place `service do` after `def install` and before `test do`.
+  - Verify the service command is stable, foreground-compatible where Homebrew expects it, and does not require interactive setup.
+  - Do NOT invent a broken service block if upstream lacks a usable daemon mode.
+  - Prefer `run [opt_bin/"foo", ...]`, plus `keep_alive true` only when appropriate.
+  - Add `working_dir`, `log_path`, or `error_log_path` when needed by upstream runtime behavior.
   ```ruby
 service do
   run [opt_bin/"foo", "start"]
