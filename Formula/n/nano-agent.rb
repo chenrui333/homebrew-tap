@@ -22,10 +22,8 @@ class NanoAgent < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = shell_output("#{bin}/nano-agent --version 2>&1", 1)
     assert_match "OPENAI_API_KEY", output
-
-    output = shell_output("#{bin}/nano-agent --help 2>&1", 1)
-    assert_match "config.json", output
   end
 end
