@@ -26,6 +26,10 @@ class OhMyCodex < Formula
     pkg = libexec/"lib/node_modules/oh-my-codex/package.json"
     assert_match version.to_s, shell_output("node -p \"require('#{pkg}').version\"").strip
 
-    assert_match "oh-my-codex", shell_output("#{bin}/omx --help")
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"omx", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "failed to launch codex", output
   end
 end
