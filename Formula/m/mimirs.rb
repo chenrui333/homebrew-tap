@@ -6,6 +6,15 @@ class Mimirs < Formula
   license "Apache-2.0"
   head "https://github.com/TheWinci/mimirs.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "73fcddd3e62b73dc55fbe0a21fedd237ddbf4d36d1ac76b128b390c88a1b20f8"
+    sha256 cellar: :any, arm64_sequoia: "c5327e870ec4c435df618240efaaa1a0e2e335b1162e6299ffd9a77d05e7833e"
+    sha256 cellar: :any, arm64_sonoma:  "c5327e870ec4c435df618240efaaa1a0e2e335b1162e6299ffd9a77d05e7833e"
+    sha256 cellar: :any, arm64_linux:   "62bd2ab885826c2c44e70dedb6dafecee3d7d21b1956cf1ae7be64d31928f951"
+    sha256 cellar: :any, x86_64_linux:  "dd1304ea5abf4aa2d0c558550e70263ab1a12db7c13d39047ebbc83351be3e03"
+  end
+
   depends_on "python@3.14" => :build
   depends_on "bun"
 
