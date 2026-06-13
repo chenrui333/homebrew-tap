@@ -23,6 +23,7 @@ class IrisDisasm < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/iris --version")
-    assert_match "iris", shell_output("#{bin}/iris --help")
+    output = shell_output("#{bin}/iris --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
