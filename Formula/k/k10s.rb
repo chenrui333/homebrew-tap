@@ -7,11 +7,11 @@ class K10s < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7c90dcca3fdb4124340de432633b8129021603626bdc6ef4400d07cc01b0b61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7c90dcca3fdb4124340de432633b8129021603626bdc6ef4400d07cc01b0b61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7c90dcca3fdb4124340de432633b8129021603626bdc6ef4400d07cc01b0b61"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bb358a356a326ac135f98e09f27b0bd77b692cdcfb7eec3691d09c4b326cb22"
-    sha256 cellar: :any,                 x86_64_linux:  "8a3d55c7264afc2df37a731825c0e46161d71ed4160dff0be7acacfa4a6939da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9034bcc879b9d4ee05fd510c6aa6ecf81dcb19e099390ef0672f0b806abd35af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cefc02abf02596dea137b4a9d7ff5ee80bb6b0a3435755dab10bace02aee6c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3729e15ecb0a3974f43b8e38ae75f50dbba824a9cc1ef7c2a36955e2ea6f7a45"
+    sha256 cellar: :any,                 arm64_linux:   "6a3ca11acad072cbd48c2b0bcfff21bbc8a3c2817156c6f4abcb846ab2466273"
+    sha256 cellar: :any,                 x86_64_linux:  "59b65be11cb87c23168b1a93365dd73215e6902e2226f8ec7ae7b9092480cb1b"
   end
 
   depends_on "rust" => :build
