@@ -30,7 +30,12 @@ class Fat < Formula
   end
 
   test do
-    system bin/"fat", "--help"
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"fat", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
