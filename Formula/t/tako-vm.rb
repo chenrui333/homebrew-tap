@@ -72,7 +72,8 @@ class TakoVm < Formula
   end
 
   test do
-    assert_match "Tako VM", shell_output("#{bin}/tako-vm --help")
     assert_match version.to_s, shell_output("#{bin}/tako-vm version")
+    output = shell_output("#{bin}/tako-vm --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
