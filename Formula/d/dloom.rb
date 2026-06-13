@@ -21,13 +21,10 @@ class Dloom < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/dloom version")
 
-    (testpath/"dloom.yaml").write <<~YAML
-      links:
-        - src: dotfiles/gitconfig
-          dest: ~/.gitconfig
+    (testpath/"dloom").mkpath
+    (testpath/"dloom/config.yaml").write <<~YAML
+      version: 0.0.1
     YAML
-    (testpath/"dotfiles/gitconfig").mkpath
-    output = shell_output("#{bin}/dloom setup --dry-run 2>&1", 1)
-    assert_match(/link|setup|config/i, output)
+    assert_match "Would run script: bootstrap", shell_output("#{bin}/dloom --dry-run setup bootstrap")
   end
 end
