@@ -28,7 +28,7 @@ class Klein < Formula
   end
 
   test do
-    assert_match "terminal-based text editor built in Rust", shell_output("#{bin}/klein --help")
+    assert_match version.to_s, shell_output("#{bin}/klein --version")
 
     (testpath/"test.txt").write("hello from klein\n")
 
