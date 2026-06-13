@@ -8,11 +8,12 @@ class Ecscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77b7ff6e3beae2291aee7165b32db03a3f699768d19312d9cb5271fd2190417f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b6a32bdd2a942ac85b17f14dfb7c530a2eaf41b3de68556fe4f22bbf86a900b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62a8439b85774179f22e518d6a27fcff522170fde2d06f4d534de2616507d987"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfed076bd5c1323b3387aa5eb17aa7e9f94e71e606fb247aabf5e2b16f166f97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8d795b867bd2c391d5c2a05632eaf17839b538d98c879003478829701c6ec66"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2abfcf736162a6af8482b6cbcfe1824824b77336965020cea70976d7b379797b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2792e28a7e6eb1dbe0758f7b84588fbc5137633b83276c453964570d51b9b2dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4ecbdce1e6a4191295f9720374edb9041316954c7a4afb2cf788481f9678c07"
+    sha256 cellar: :any,                 arm64_linux:   "b196923231bc5ab2553a52e9686a9fc570ebf1121276b8c3ea474a7aa6017417"
+    sha256 cellar: :any,                 x86_64_linux:  "9859bd4e71d5d43b1de74d77957ce039582ec6007098b0ccac6ea789b93dfec5"
   end
 
   depends_on "rust" => :build
