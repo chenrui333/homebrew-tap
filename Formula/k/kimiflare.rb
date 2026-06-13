@@ -32,6 +32,7 @@ class Kimiflare < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/kimiflare --version")
-    assert_match "Usage", shell_output("#{bin}/kimiflare --help")
+    output = shell_output("#{bin}/kimiflare --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
