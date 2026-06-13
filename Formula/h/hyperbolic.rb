@@ -21,9 +21,11 @@ class Hyperbolic < Formula
   end
 
   test do
-    assert_match "hyperbolic", shell_output("#{bin}/hyperbolic --help")
+    require "open3"
 
-    assert_path_exists bin/"hyperbolic"
-    assert_predicate bin/"hyperbolic", :executable?
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"hyperbolic", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
