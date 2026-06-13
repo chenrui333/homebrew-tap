@@ -9,11 +9,12 @@ class Croft < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cec77a21ba27835313cb732a8477e0285c17adfb192313ea947343463c3307c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "295601d2c1cf412768617acbdff840e537bc1f755815f1d3c0322852e51e05d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c656b81e78af2cb62ca6776995cc2c3d849054ecdce74ed220ce774029350b1"
-    sha256 cellar: :any,                 arm64_linux:   "b7d63b7a1c753caff0438b13fddb9a8c8ba9d7cd64c747d8e9ccab765809e986"
-    sha256 cellar: :any,                 x86_64_linux:  "375bddc5e80906651d86309a8db0a0e822003fa7de945eda023a507738de9c95"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0ac705ca3d7f4f3f6f7eb08fdf8f243463cf9b180ec0a264d0df5428d638617a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5efcf8eb1a17d4b97b6aa047843fe7dd61e72429d5afae4e57c56f6748a368b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "446f5877f739319662118136de9cc41433ed86007568e57c3dfd30515e844ee0"
+    sha256 cellar: :any,                 arm64_linux:   "fbb0fd15c21dcb1a78fdd1c6417c0e438ab7b803eea0bfe4b92dc2b0aeb51335"
+    sha256 cellar: :any,                 x86_64_linux:  "b93c4c39ca04bb96610a0c3d1afc9fe923ee85b08149c127e00ea5b3996f4584"
   end
 
   depends_on "rust" => :build
