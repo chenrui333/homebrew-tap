@@ -23,6 +23,7 @@ class Spdr < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/spdr --version")
-    assert_match "decode", shell_output("#{bin}/spdr --help")
+    output = shell_output("#{bin}/spdr not-a-real-command 2>&1", 2)
+    assert_match "unrecognized subcommand", output
   end
 end
