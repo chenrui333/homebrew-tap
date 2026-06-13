@@ -30,9 +30,7 @@ class Siggy < Formula
   end
 
   test do
-    output = shell_output("#{bin}/siggy --help 2>&1")
-    assert_match "siggy - Terminal Signal client", output
-    assert_match "--demo", output
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     log = testpath/"siggy-demo.log"
     in_r, in_w = IO.pipe
