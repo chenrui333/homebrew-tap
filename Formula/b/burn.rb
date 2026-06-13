@@ -8,11 +8,12 @@ class Burn < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ec7c5e2ffda4981b5eb54c2890936a79d3956f5416766095059f34b004bdc45"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ec7c5e2ffda4981b5eb54c2890936a79d3956f5416766095059f34b004bdc45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ec7c5e2ffda4981b5eb54c2890936a79d3956f5416766095059f34b004bdc45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f3f294dc8c34ee6509084773c0c5f121e42ca9b34281a4797a8b0f811e09ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c34b261b8dcc9ee31d19acb20278acdcf1a91b1110bc40821da0750ed472b1d6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4d7f70c9b22266a3d0348584839ff01693a246c8c2904ec1fdce99036f50da9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4d7f70c9b22266a3d0348584839ff01693a246c8c2904ec1fdce99036f50da9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4d7f70c9b22266a3d0348584839ff01693a246c8c2904ec1fdce99036f50da9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf4266fb3de9dc758ac1252fa84658a9c8422cdbb096a6f721b2e3a9792a4035"
+    sha256 cellar: :any,                 x86_64_linux:  "699ce263e39e42040a3de39f59fb5683db7179855c322c3586df80c305a9ff8d"
   end
 
   depends_on "go" => :build
