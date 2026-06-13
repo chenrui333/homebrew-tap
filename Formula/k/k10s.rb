@@ -1,8 +1,8 @@
 class K10s < Formula
   desc "GPU-aware Kubernetes TUI"
   homepage "https://github.com/shvbsle/k10s"
-  url "https://github.com/shvbsle/k10s/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "80af292b682d12ecc81eb92638520000d17f1d3ec24244adc26f3809c0bf62b0"
+  url "https://github.com/shvbsle/k10s/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "aebba6046eb323451d5bb0648dc9b15f7e952af7338dd3bd646d2dbb75f730df"
   license "Apache-2.0"
 
   bottle do
@@ -14,15 +14,31 @@ class K10s < Formula
     sha256 cellar: :any,                 x86_64_linux:  "8a3d55c7264afc2df37a731825c0e46161d71ed4160dff0be7acacfa4a6939da"
   end
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/k10s"
+    # Upstream 1.0.0 TUI has no CLI flags yet; add a version flag for Homebrew's test.
+    inreplace "src/crates/tui/src/main.rs", <<~RUST, <<~RUST
+      fn main() {
+          println!("k10s tui");
+      }
+    RUST
+      fn main() {
+          if std::env::args().any(|arg| arg == "--version" || arg == "-V") {
+              println!("k10s #{version}");
+              return;
+          }
+
+          println!("k10s tui");
+      }
+    RUST
+
+    system "cargo", "install", *std_cargo_args(path: "src/crates/tui")
+    mv bin/"tui", bin/"k10s"
   end
 
   test do
-    output = shell_output("#{bin}/k10s --help 2>&1")
-    assert_match "k10s", output
-    assert_match "log-level", output
+    assert_equal "k10s #{version}\n", shell_output("#{bin/"k10s"} --version")
+    assert_equal "k10s tui\n", shell_output(bin/"k10s")
   end
 end
