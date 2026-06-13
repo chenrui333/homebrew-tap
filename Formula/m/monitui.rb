@@ -25,7 +25,7 @@ class Monitui < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/monitui --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     monitor_json = testpath/"monitors.json"
     monitor_json.write <<~JSON
