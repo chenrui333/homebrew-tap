@@ -8,7 +8,8 @@ class Creanote < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2ef047f451bfa50607ea7160b4b5337dedaad17cfd09d96d4bf1cf56d3031ff3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "62fc628b796436541b6686126ab54b717d9699ef624dc93176b7a303416eb2e4"
   end
 
   depends_on "node"
