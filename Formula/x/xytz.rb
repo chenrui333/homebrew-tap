@@ -25,6 +25,8 @@ class Xytz < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin/"xytz"} --help")
+    assert_match version.to_s, shell_output("#{bin/"xytz"} --version")
+    output = shell_output("#{bin/"xytz"} --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
