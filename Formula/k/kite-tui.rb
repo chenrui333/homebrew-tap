@@ -23,6 +23,7 @@ class KiteTui < Formula
 
   test do
     assert_match "kite #{version}", shell_output("#{bin}/kite-tui --version")
-    assert_match "A terminal viewer for Kagi News", shell_output("#{bin}/kite-tui --help")
+    output = shell_output("#{bin}/kite-tui --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
