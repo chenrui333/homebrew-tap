@@ -5,6 +5,11 @@ class Agenthud < Formula
   sha256 "c854463bb7c376f1b5e789937628c65f543ceb2b046af3ef20f5fd1b50bc2820"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "7dff8ce862ea158e53b0c6335374a95b83688a0e04d747d81d1f22ffb4412ec3"
+  end
+
   depends_on "node"
 
   def install
