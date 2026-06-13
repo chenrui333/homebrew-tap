@@ -38,8 +38,10 @@ class Tabminal < Formula
   test do
     assert_match "\"version\": \"#{version}\"", (libexec/"lib/node_modules/tabminal/package.json").read
 
-    output = shell_output("#{bin}/tabminal --help")
-    assert_match "Tabminal - A modern web terminal", output
-    assert_match "--accept-terms, -y", output
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"tabminal", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "No password provided", output
   end
 end
