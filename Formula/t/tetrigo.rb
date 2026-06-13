@@ -20,6 +20,11 @@ class Tetrigo < Formula
   end
 
   test do
-    assert_match "tetris TUI written in Go", shell_output("#{bin}/tetrigo --help")
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"tetrigo", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
