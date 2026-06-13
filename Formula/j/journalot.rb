@@ -8,7 +8,8 @@ class Journalot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d18f60773187b9fc5a7f8038c32e616a9cb362998c89e593ba19a8db3b4474a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c5410f4ca6d79e264c08bdca564eb356720c52761a5fa946c2ab5ef01376ec49"
   end
 
   depends_on "bash"
