@@ -24,6 +24,7 @@ class Croft < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/croft --version")
-    assert_match "Terminal-based VS Code replica", shell_output("#{bin}/croft --help")
+    output = shell_output("#{bin}/croft --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
