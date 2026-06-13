@@ -25,6 +25,7 @@ class Mnemo < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/mnemo-cli --version")
-    assert_match "mnemo", shell_output("#{bin}/mnemo-cli --help")
+    output = shell_output("#{bin}/mnemo-cli --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
