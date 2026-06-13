@@ -7,6 +7,13 @@ class Macfan < Formula
   license "MIT"
   head "https://github.com/raminsharifi/MacFanControl.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62fbfc80828dbd474e1f63819119905519f1d3f774b9b4988e86788dcb52cc79"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58a66c59af6207a3d906cb01d9bef796a9443e88ac27807e9e1ab615ce5a157e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f219ea4da26ecb7126323a425799327565cbc590f991e9378963d3cfe77279bd"
+  end
+
   depends_on "rust" => :build
   depends_on :macos
 
