@@ -25,6 +25,7 @@ class Obelisk < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/obelisk --version")
-    assert_match "deterministic workflow", shell_output("#{bin}/obelisk --help")
+    output = shell_output("#{bin}/obelisk --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
