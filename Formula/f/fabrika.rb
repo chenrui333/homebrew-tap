@@ -27,6 +27,7 @@ class Fabrika < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/fabrika version")
-    assert_match "fabrika", shell_output("#{bin}/fabrika --help")
+    output = shell_output("#{bin}/fabrika not-a-real-command 2>&1", 1)
+    assert_match "no fabrika.toml", output
   end
 end
