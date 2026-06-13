@@ -7,6 +7,7 @@ class Riskkernel < Formula
   head "https://github.com/prashar32/riskkernel.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
 
   def install
     ldflags = %W[
@@ -14,6 +15,11 @@ class Riskkernel < Formula
       -X github.com/prashar32/riskkernel/internal/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/riskkernel"
+  end
+
+  service do
+    run [opt_bin/"riskkernel", "serve"]
+    keep_alive true
   end
 
   test do
