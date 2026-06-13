@@ -24,6 +24,7 @@ class BskyCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/bsky --version")
-    assert_match "_bsky_completions", shell_output("#{bin}/bsky completions bash")
+    output = shell_output("#{bin}/bsky not-a-real-command 2>&1", 1)
+    assert_match "not-a-real-command", output
   end
 end
