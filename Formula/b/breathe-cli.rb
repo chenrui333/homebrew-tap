@@ -21,6 +21,7 @@ class BreatheCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/breathe --version")
-    assert_match "breathe", shell_output("#{bin}/breathe --help")
+    output = shell_output("#{bin}/breathe --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
