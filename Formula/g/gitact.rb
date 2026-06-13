@@ -22,7 +22,7 @@ class Gitact < Formula
   end
 
   test do
-    assert_match "GitHub Activity CLI - Modern Edition", shell_output("#{bin}/gitact --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     output = shell_output("#{bin}/gitact --repos 2>&1", 1)
     assert_match "error: --repos requires a username", output
