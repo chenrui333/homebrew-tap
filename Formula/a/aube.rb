@@ -8,11 +8,12 @@ class Aube < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67d406512809a3a3b7826ec87a4564436d29f362d07c1dbf7cdf05a8b4d7b37c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee7ab9adddd440314f5c07d5fae12121bcd3aaea338a82def61227d1cc7f4c5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dae12d6d0792b627be436793c444605bd0b4cf343f68ae343e94806a501f1ca3"
-    sha256 cellar: :any,                 arm64_linux:   "a5c2627bd7510420565dc0331a3cc9e4cd402234db5e590baeeb3eb3e2f78dc1"
-    sha256 cellar: :any,                 x86_64_linux:  "a7fe27fd42aacd9678484533499696f3562fb677741b4179ee8c92ba073ceb93"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39124a665430951d357a78a9440fadb7eed9441429c57d97bbdf383ca8dad801"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83988ff4e0d5f311a70c4a7c53a82504bfe14921bc1ace6afa879f2453a8d13f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71851714422014eb81c9bc3c504a9d79ce8cf746c72627f8c27a52e4ffafbf8d"
+    sha256 cellar: :any,                 arm64_linux:   "359cd3d36090b8310e7f6ae533e7c2737cb967564a7e8783ae73fe4ab967d06b"
+    sha256 cellar: :any,                 x86_64_linux:  "672cf09aaac1b52d150671d55acaad1ce14c5df6e6fa394c4ae45ade9c07881d"
   end
 
   depends_on "cmake" => :build
