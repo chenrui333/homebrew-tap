@@ -145,13 +145,14 @@ Commit message: `foo 1.2.3 (new formula)`
     ```
   - Common offenders: `koffi` (uses `os_arch` underscored), `@napi-rs/*` and `@swc/*` (use `os-arch` hyphenated), `node-pty/prebuilds` (uses `os-arch` hyphenated).
 - **Test block**: MUST include at least TWO meaningful assertions — never a version-only test.
-  - **Minimum**: version assertion + one functional assertion (e.g. `--help` output containing expected subcommands/options)
-  - Include a version assertion whenever a reliable version command/output exists:
-    `assert_match version.to_s, shell_output("#{bin}/foo --version")`
-  - Always add a second assertion verifying actual behavior, for example:
-    - `assert_match "subcommand", shell_output("#{bin}/foo --help")` for CLIs
-    - Compile and link sample code for libraries
-    - Run a non-destructive subcommand with predictable output
+  - **First assertion**: ALWAYS prefer `assert_match version.to_s, shell_output("#{bin}/foo --version")` when the binary supports `--version`. Only skip when the binary genuinely has no version flag.
+  - **Second assertion**: MUST be a real functional check — do NOT just match `--help` output. Instead:
+    - Run a non-destructive subcommand with predictable output (e.g. `list`, `status`, `info`)
+    - For tools that need API keys: invoke with missing key and assert the error message
+    - For parsers/formatters: feed a small input and assert expected output
+    - For servers: assert startup error or config validation output
+    - `--help` matching is acceptable ONLY as a last resort when no subcommand produces testable output without side effects
+  - Matching `--help` alone is NOT a functional test — it only proves the binary loads, not that it works
   - Avoid regex-only version assertions when `version.to_s` matching is available
   - Do NOT write tests that require interactive input, network access, or hang on CI
   - Prefer `shell_output` over `Open3.capture2e` unless piping stdin is required
