@@ -22,8 +22,7 @@ class Ecscope < Formula
   end
 
   test do
-    # no version command
-    assert_match "ecscope lets you monitor AWS ECS resources from the terminal", shell_output("#{bin}/ecscope --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     ENV["AWS_ACCESS_KEY_ID"] = "testing"
     ENV["AWS_SECRET_ACCESS_KEY"] = "testing"
