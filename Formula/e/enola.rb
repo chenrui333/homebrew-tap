@@ -23,8 +23,11 @@ class Enola < Formula
   end
 
   test do
-    output = shell_output("#{bin}/enola --help")
-    assert_match "A command-line tool to find username on websites", output
-    assert_match "--site", output
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"enola", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
