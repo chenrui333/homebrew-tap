@@ -24,8 +24,7 @@ class Creanote < Formula
   end
 
   test do
-    help_output = shell_output("#{bin}/creanote --help")
-    assert_match "CLI tool for your notes", help_output
+    assert_match version.to_s, shell_output("#{bin}/creanote --version")
 
     (testpath/".creanote/templates").mkpath
     (testpath/".creanote/templates/note.md").write <<~TEXT
