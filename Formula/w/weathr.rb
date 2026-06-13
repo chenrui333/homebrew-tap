@@ -24,6 +24,7 @@ class Weathr < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/weathr --version")
-    assert_match "_weathr()", shell_output("#{bin}/weathr --completions bash")
+    output = shell_output("#{bin}/weathr --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
