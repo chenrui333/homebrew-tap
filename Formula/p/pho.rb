@@ -22,8 +22,11 @@ class Pho < Formula
   end
 
   test do
-    output = shell_output("#{bin}/pho --help 2>&1")
-    assert_match "pho", output
-    assert_match "pull", output.downcase
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"pho", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
