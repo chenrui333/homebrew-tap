@@ -23,6 +23,7 @@ class Depsguard < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/depsguard --version")
-    assert_match "USAGE:", shell_output("#{bin}/depsguard --help")
+    output = shell_output("#{bin}/depsguard --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
