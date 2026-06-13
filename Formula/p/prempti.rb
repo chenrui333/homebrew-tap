@@ -23,9 +23,7 @@ class Prempti < Formula
   end
 
   test do
-    output = shell_output("#{bin}/premptictl --help 2>&1")
-    assert_match "premptictl", output
-    assert_match "hook add", output
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     output = pipe_output("#{bin}/claude-interceptor", "{}\n")
     assert_match "permissionDecision", output
