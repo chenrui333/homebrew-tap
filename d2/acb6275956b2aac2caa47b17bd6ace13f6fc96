@@ -1,0 +1,19 @@
+Formula/a/agenthud.rb
+  s_6e581cdabc614d::t_18ca54653a778e 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "d2acb6275956b2aac2caa47b17bd6ace13f6fc96",
+  "prompts": {},
+  "sessions": {
+    "s_6e581cdabc614d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec289-575a-72b3-a4bb-99eed86b20ae",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
