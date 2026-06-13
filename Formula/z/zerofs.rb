@@ -24,6 +24,7 @@ class Zerofs < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zerofs --version")
-    assert_match "S3", shell_output("#{bin}/zerofs --help")
+    output = shell_output("#{bin}/zerofs --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
