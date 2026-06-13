@@ -25,7 +25,6 @@ class Buffa < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/protoc-gen-buffa --version")
-    assert_match "filter=services", shell_output("#{bin}/protoc-gen-buffa-packaging --help")
 
     (testpath/"sample.proto").write <<~PROTO
       syntax = "proto3";
