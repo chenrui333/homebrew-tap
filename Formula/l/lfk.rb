@@ -26,6 +26,7 @@ class Lfk < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/lfk --version 2>&1")
-    assert_match "#compdef lfk", shell_output("#{bin}/lfk completion zsh")
+    output = shell_output("#{bin}/lfk not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
