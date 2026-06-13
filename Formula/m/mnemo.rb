@@ -8,11 +8,12 @@ class Mnemo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27c80b5c9d139906e71cf80ff4c0372039e484867546f7f27132ee8af6cd4677"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "582ae9a2d0cb5785a5454b80fc75a01232598f9e6f7050c72f45526d8c4a0b27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f20e79e47c9e814eeda45e9a01b99bb191e9ffef0771d3c23d1f7e6980ea996"
-    sha256 cellar: :any,                 arm64_linux:   "7b1e43334efadd7c712178d914e38f45bb81168472e3c86ed93c931808e7a24b"
-    sha256 cellar: :any,                 x86_64_linux:  "cb3112833403082b619f85dff6561d22fb43b9bc02dcfbb5690761fb68046fb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8414f4a9041419761a4b129ca1e42eb448e6ce2c156d48a857b4d0e67852c48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b44ce82e196f9c4eea8962bb3bbb7b9610a9d118dbaf77ec2101ad55416be6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9caffd7aa0625c9f77d0a89c1cdf1f6a63616f4586ba6b14362cef696b2ff57a"
+    sha256 cellar: :any,                 arm64_linux:   "e36a40a168a54f0c3a3adb75025cdf9e04379dee7549e70858896d8cb5b49c72"
+    sha256 cellar: :any,                 x86_64_linux:  "101628ff6ed713e15287059d13faf004fd05208eb329bbe7330b3292cbece226"
   end
 
   depends_on "pkgconf" => :build
