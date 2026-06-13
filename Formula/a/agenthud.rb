@@ -14,6 +14,9 @@ class Agenthud < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/agenthud --version")
-    assert_match "agenthud", shell_output("#{bin}/agenthud --help")
+
+    output = shell_output("#{bin}/agenthud report --format json")
+    assert_match "format=json", output
+    assert_match '"sessions": []', output
   end
 end
