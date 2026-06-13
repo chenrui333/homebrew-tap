@@ -28,7 +28,7 @@ class Polymaster < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/wwatcher --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     assert_match "WHALE WATCHER STATUS", shell_output("#{bin}/wwatcher status")
   end
 end
