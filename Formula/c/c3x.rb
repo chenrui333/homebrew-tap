@@ -30,8 +30,7 @@ class C3x < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/c3x --version")
 
-    output = shell_output("#{bin}/c3x --help")
-    assert_match "AVAILABLE COMMANDS", output
-    assert_match "estimate", output
+    output = shell_output("#{bin}/c3x not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
