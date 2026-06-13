@@ -25,6 +25,7 @@ class Zeroserve < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zeroserve --version")
-    assert_match "zeroserve", shell_output("#{bin}/zeroserve --help")
+    output = shell_output("#{bin}/zeroserve --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
