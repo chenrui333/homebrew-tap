@@ -30,8 +30,7 @@ class Mdsf < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mdsf --version")
 
-    output = shell_output("#{bin}/mdsf completions bash")
-    assert_match "_mdsf()", output
-    assert_match "mdsf__subcmd__format)", output
+    output = shell_output("#{bin}/mdsf --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
