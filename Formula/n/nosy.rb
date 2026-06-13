@@ -30,6 +30,7 @@ class Nosy < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/nosy --version")
-    assert_match "nosy", shell_output("#{bin}/nosy completion bash")
+    output = shell_output("#{bin}/nosy --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
