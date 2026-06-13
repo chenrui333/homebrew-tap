@@ -1,0 +1,19 @@
+Formula/a/agentmeter.rb
+  s_6e581cdabc614d::t_8b348037f59122 1-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "0234e57a0116680a71b9fb9253c6ada4c11f2759",
+  "prompts": {},
+  "sessions": {
+    "s_6e581cdabc614d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec289-575a-72b3-a4bb-99eed86b20ae",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
