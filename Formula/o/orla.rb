@@ -26,6 +26,10 @@ class Orla < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/orla --version")
-    assert_match "Start orla's agent engine as a service", shell_output("#{bin}/orla serve --help")
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"orla", "serve", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
