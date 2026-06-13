@@ -1,0 +1,20 @@
+Formula/b/brotab.rb
+  s_392746f82aa1f5::t_f67047b2e4f7b6 91-92,94-96
+  s_392746f82aa1f5::t_4c5d9e4b2be80c 93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6658ac1c602913648c8c4ca13f999b56b72dab7d",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
