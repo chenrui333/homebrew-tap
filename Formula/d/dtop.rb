@@ -144,6 +144,11 @@ class Dtop < Formula
   end
 
   test do
-    assert_match "Docker", shell_output("#{bin}/dtop --help")
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"dtop", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
