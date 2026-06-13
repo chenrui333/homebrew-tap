@@ -46,15 +46,13 @@ class Jetzig < Formula
     # end
     # assert_match expected, shell_output("#{bin}/jetzig update 2>&1", 1)
 
-    # not checking output
-    shell_output("#{bin}/jetzig update 2>&1", 1)
+    output = shell_output("#{bin}/jetzig update 2>&1", 1)
+    refute_empty output
 
     # currently it is hanging
     # pipe_output("#{bin}/jetzig init", "test\nbrewtest\n")
 
     # assert_path_exists testpath/"brewtest"
     # assert_match "const jetzig", (testpath/"brewtest/build.zig").read
-
-    system bin/"jetzig", "--help"
   end
 end
