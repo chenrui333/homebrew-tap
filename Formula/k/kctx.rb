@@ -6,6 +6,15 @@ class Kctx < Formula
   license "Apache-2.0"
   head "https://github.com/lucasepe/kctx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a240a39b8132ed994366ff7cbdf3b6828afd31cf8c8b110d1272213fcd027d18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a240a39b8132ed994366ff7cbdf3b6828afd31cf8c8b110d1272213fcd027d18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a240a39b8132ed994366ff7cbdf3b6828afd31cf8c8b110d1272213fcd027d18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68592bddbd75a95fa9ecb7978aae912b65a7ab3a8f3ba69cdbbe38fd909c2721"
+    sha256 cellar: :any,                 x86_64_linux:  "9502777760cd54a45affe115295f87d8bb3a8f8ebf61648eeb0e1a3ef08414ec"
+  end
+
   depends_on "go" => :build
 
   def install
