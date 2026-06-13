@@ -14,7 +14,7 @@ class Agentmeter < Formula
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
+  pypi_packages package_name: "agent-usage", exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
@@ -116,7 +116,11 @@ class Agentmeter < Formula
     inreplace "src/agentmeter/cli.py", 'package_name="agentmeter"', 'package_name="agent-usage"'
 
     virtualenv_install_with_resources
+
+    # Expose only the main CLI; dependency scripts remain under libexec.
     bin.install_symlink libexec/"bin/agentmeter"
+
+    generate_completions_from_executable(bin/"agentmeter", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
