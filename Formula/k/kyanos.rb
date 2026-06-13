@@ -49,6 +49,7 @@ class Kyanos < Formula
 
   test do
     assert_match "Version: #{version}", shell_output("#{bin}/kyanos version 2>&1")
-    assert_match "Filter HTTP messages based on method", shell_output("#{bin}/kyanos watch http --help 2>&1")
+    output = shell_output("#{bin}/kyanos watch http --not-a-real-option 2>&1")
+    assert_match "not-a-real-option", output
   end
 end
