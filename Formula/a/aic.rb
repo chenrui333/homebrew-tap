@@ -24,6 +24,7 @@ class Aic < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/aic --version")
     # Avoid network-dependent changelog lookups in CI.
-    assert_match "Usage:", shell_output("#{bin}/aic claude --help")
+    output = shell_output("#{bin}/aic not-a-real-assistant 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
