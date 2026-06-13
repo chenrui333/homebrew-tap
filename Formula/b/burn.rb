@@ -29,6 +29,7 @@ class Burn < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/burn version")
-    assert_match "burn", shell_output("#{bin}/burn --help")
+    output = shell_output("#{bin}/burn not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
