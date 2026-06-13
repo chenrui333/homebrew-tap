@@ -23,6 +23,7 @@ class Kyushu < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/kyu --version")
-    assert_match "kyu", shell_output("#{bin}/kyu --help")
+    output = shell_output("#{bin}/kyu --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
