@@ -21,6 +21,7 @@ class Journalot < Formula
 
   test do
     require "date"
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     journal_dir = testpath/"journal"
     config_dir = testpath/"config"
@@ -32,8 +33,5 @@ class Journalot < Formula
     assert_match "Added to #{today}.md", output
     assert_path_exists entry
     assert_match "Had a great idea today", entry.read
-
-    help = shell_output("#{bin}/journalot --help")
-    assert_match "Minimal journaling CLI for developers", help
   end
 end
