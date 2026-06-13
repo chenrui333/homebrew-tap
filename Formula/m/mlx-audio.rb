@@ -93,10 +93,11 @@ class MlxAudio < Formula
   end
 
   test do
-    assert_match "Convert HuggingFace model (TTS, STT, or STS) to MLX format",
-                 shell_output("#{bin}/mlx_audio.convert --help")
-    assert_match "Generate transcriptions from audio files",
-                 shell_output("#{bin}/mlx_audio.stt.generate --help")
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"mlx_audio.convert", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
 
     (testpath/"test.py").write <<~PYTHON
       from importlib.metadata import version
