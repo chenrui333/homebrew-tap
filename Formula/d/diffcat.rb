@@ -27,6 +27,7 @@ class Diffcat < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/diffcat --version")
-    assert_match "diffcat", shell_output("#{bin}/diffcat --help")
+    output = shell_output("#{bin}/diffcat not-a-real-command 2>&1", 1)
+    assert_match "not a git repository", output
   end
 end
