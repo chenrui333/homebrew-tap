@@ -36,7 +36,7 @@ class Sig < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/sig --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     # Identity: 5W9ZHG5hsp1UzQ47ANCWG6pDiD7LqyWetZhsZjwQTYX6
     assert_match(/Identity: \w{43}/, shell_output("#{bin}/sig identity 2>&1"))
   end
