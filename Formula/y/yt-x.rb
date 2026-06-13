@@ -59,7 +59,10 @@ class YtX < Formula
     version_output = shell_output("#{bin}/yt-x --version")
     assert_match "yt-x v#{version}", version_output
 
-    help_output = shell_output("#{bin}/yt-x --help")
-    assert_match "browse YouTube", help_output
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"yt-x", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "Usage: yt-x", output
   end
 end
