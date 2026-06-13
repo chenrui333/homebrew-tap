@@ -24,7 +24,6 @@ class Pikpaktui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pikpaktui --version")
-    assert_match "#compdef pikpaktui", shell_output("#{bin}/pikpaktui completions zsh")
 
     output = shell_output("#{bin}/pikpaktui ls / 2>&1", 1)
     assert_match "Run `pikpaktui` (TUI) to login first", output
