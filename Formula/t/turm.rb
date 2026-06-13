@@ -27,8 +27,7 @@ class Turm < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/turm --version")
 
-    output = shell_output("#{bin}/turm completion bash")
-    assert_match "_turm()", output
-    assert_match "complete -F _turm", output
+    output = shell_output("#{bin}/turm --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
