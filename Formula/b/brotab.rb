@@ -88,8 +88,12 @@ class Brotab < Formula
   end
 
   test do
-    # there is no version output
-    system bin/"brotab", "--help"
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"brotab", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
 
     system bin/"brotab", "text"
   end
