@@ -253,7 +253,10 @@ class McpGsuite < Formula
   end
 
   test do
-    assert_match "--gauth-file", shell_output("#{bin}/mcp-gsuite --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = shell_output("#{bin}/mcp-gsuite 2>&1", 1)
+    assert_match "FileNotFoundError", output
+    assert_match ".accounts.json", output
 
     (testpath/"accounts.json").write <<~JSON
       {"accounts":[{"email":"test@example.com","account_type":"gmail","extra_info":"homebrew test"}]}
