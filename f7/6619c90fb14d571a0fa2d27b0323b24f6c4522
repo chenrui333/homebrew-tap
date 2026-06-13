@@ -1,0 +1,23 @@
+Formula/m/mimirs.rb
+  s_b7b6cad763aacd::t_0ac5de2d9a0953 1-3,6,8-13,36-38,41-42
+  s_b7b6cad763aacd::t_c49ad47a3a058c 4-5,7
+  s_b7b6cad763aacd::t_df21cf820d0723 14-18
+  s_b7b6cad763aacd::t_16a570bd35fed0 19-35
+  s_b7b6cad763aacd::t_62958b78f74d4e 39-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f76619c90fb14d571a0fa2d27b0323b24f6c4522",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
