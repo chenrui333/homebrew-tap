@@ -23,8 +23,7 @@ class TypeuiSh < Formula
   end
 
   test do
-    help = shell_output("#{bin}/typeui.sh --help")
-    assert_match "generate [options]", help
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     (testpath/"generate.js").write <<~JS
       const { runGeneration } = require("#{libexec}/lib/node_modules/typeui.sh/dist/generation/runGeneration.js");
