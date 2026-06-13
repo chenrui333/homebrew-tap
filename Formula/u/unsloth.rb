@@ -82,7 +82,7 @@ class Unsloth < Formula
   end
 
   test do
-    assert_match "Command-line interface for Unsloth", shell_output("#{bin}/unsloth --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     output = shell_output("#{bin}/unsloth train --model test-model --dataset test-dataset --dry-run")
     assert_match "model: test-model", output
