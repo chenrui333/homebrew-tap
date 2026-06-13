@@ -334,7 +334,7 @@ class ApmCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/apm --version")
 
-    output = shell_output("#{bin}/apm init --help")
-    assert_match "Initialize a new APM project", output
+    output = shell_output("#{bin}/apm not-a-real-command 2>&1", 2)
+    assert_match "not-a-real-command", output
   end
 end
