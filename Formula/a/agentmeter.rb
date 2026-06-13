@@ -8,6 +8,15 @@ class Agentmeter < Formula
   license "Apache-2.0"
   head "https://github.com/aussiealex/agentmeter.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08340c17d3e74546becd7b02d65ed645d4de34bde60e0365c9d216f43e921faa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08340c17d3e74546becd7b02d65ed645d4de34bde60e0365c9d216f43e921faa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08340c17d3e74546becd7b02d65ed645d4de34bde60e0365c9d216f43e921faa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "373a480c4a5908cab26ac4c589e2c62a84a4328fb590f29e0e33d336dca01961"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373a480c4a5908cab26ac4c589e2c62a84a4328fb590f29e0e33d336dca01961"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
