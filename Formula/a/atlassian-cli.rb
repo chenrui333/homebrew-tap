@@ -31,6 +31,11 @@ class AtlassianCli < Formula
   end
 
   test do
-    assert_match "Welcome to the Appfire CLI", shell_output("#{bin}/acli --help 2>&1", 254)
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"acli", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "Invalid action", output
   end
 end
