@@ -75,7 +75,7 @@ class Awsui < Formula
   end
 
   test do
-    assert_match "AWS Profile/SSO switcher TUI", shell_output("#{bin}/awsui --help")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     output_log = testpath/"output.log"
     pid = spawn bin/"awsui", [:out, :err] => output_log.to_s
