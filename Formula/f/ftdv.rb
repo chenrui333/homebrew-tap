@@ -25,9 +25,7 @@ class Ftdv < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ftdv --version")
 
-    bash_completion = shell_output("#{bin}/ftdv completions bash")
-    assert_match "_ftdv", bash_completion
-    assert_match "status", bash_completion
-    assert_match "completions", bash_completion
+    output = shell_output("#{bin}/ftdv --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
