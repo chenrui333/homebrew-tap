@@ -1,0 +1,19 @@
+Formula/c/cloctui.rb
+  s_392746f82aa1f5::t_4add10bcc6eb8f 79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "506a8b83881b2cd8928f46fc7cc151d69810c9cc",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
