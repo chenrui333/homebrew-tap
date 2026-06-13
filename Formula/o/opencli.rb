@@ -20,6 +20,7 @@ class Opencli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/opencli --version")
-    assert_match "opencli", shell_output("#{bin}/opencli --help")
+    output = shell_output("#{bin}/opencli --not-a-real-option 2>&1", 1)
+    assert_match "not-a-real-option", output
   end
 end
