@@ -23,6 +23,7 @@ class Reqlog < Formula
 
   test do
     assert_match "reqlog version #{version}", shell_output("#{bin}/reqlog --version")
-    assert_match "Search, trace, and stream logs", shell_output("#{bin}/reqlog --help 2>&1")
+    output = shell_output("#{bin}/reqlog not-a-real-command 2>&1", 1)
+    assert_match "no matching sources found", output
   end
 end
