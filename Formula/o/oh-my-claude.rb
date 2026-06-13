@@ -31,7 +31,10 @@ class OhMyClaude < Formula
     pkg = libexec/"lib/node_modules/oh-my-claude-sisyphus/package.json"
     assert_match version.to_s, shell_output("node -p \"require('#{pkg}').version\"").strip
 
-    output = shell_output("#{bin}/omc --help 2>&1")
-    assert_match "omc", output
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"omc", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "claude CLI not found", output
   end
 end
