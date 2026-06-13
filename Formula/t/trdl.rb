@@ -8,11 +8,12 @@ class Trdl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b4e91339cf237ec7e1798325264a8420a5812c3bf97218214e030ba17809e92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b4e91339cf237ec7e1798325264a8420a5812c3bf97218214e030ba17809e92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b4e91339cf237ec7e1798325264a8420a5812c3bf97218214e030ba17809e92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "731a18f82fc1f19f06904f01b01c7f27de94c9c250a0f7cb7b63d8d9f7321922"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8260834679d8a96e04cfafb3263a5052281f6d16c39a61a3a60649325eb6752"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6e68433b2b096940d23718a1228819f05b648aaeb9d062745d5f612e7419729"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6e68433b2b096940d23718a1228819f05b648aaeb9d062745d5f612e7419729"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6e68433b2b096940d23718a1228819f05b648aaeb9d062745d5f612e7419729"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "313af68648342f4a7af7146e7aea9abe440acaee078aa08ce468386b855838b6"
+    sha256 cellar: :any,                 x86_64_linux:  "13b5683fbea196ec5c970c06132bc15f3e6978034adffdae867db9dab2ad3460"
   end
 
   depends_on "go" => :build
