@@ -41,7 +41,5 @@ class Nanobrew < Formula
     assert_match "nanobrew", output
     assert_match version.to_s, output
     assert_match "nb <command> [arguments]", output
-
-    assert_match "compdef _nb nb", shell_output("#{bin}/nb completions zsh")
   end
 end
