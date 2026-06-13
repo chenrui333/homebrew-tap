@@ -23,6 +23,7 @@ class DiTui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/di-tui --version")
-    assert_match "Usage of", shell_output("#{bin}/di-tui --help 2>&1", 2)
+    output = shell_output("#{bin}/di-tui --not-a-real-flag 2>&1", 2)
+    assert_match "not-a-real-flag", output
   end
 end
