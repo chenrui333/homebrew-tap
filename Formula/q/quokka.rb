@@ -23,6 +23,6 @@ class Quokka < Formula
 
   test do
     assert_match "quokka #{version}", shell_output("#{bin}/quokka --version")
-    assert_match "short alias", shell_output("#{bin}/qk --help")
+    assert_match "quokka #{version}", shell_output("#{bin}/qk --version")
   end
 end
