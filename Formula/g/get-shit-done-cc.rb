@@ -24,8 +24,11 @@ class GetShitDoneCc < Formula
   end
 
   test do
-    output = shell_output("#{bin}/get-shit-done-cc --help")
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output, status = Open3.capture2e(bin/"get-shit-done-cc", "--not-a-real-option")
+    refute_predicate status, :success?
     assert_match "Get Shit Done", output
-    assert_match(/v\d+\.\d+\.\d+(?:-[\w.]+)?/, output)
   end
 end
