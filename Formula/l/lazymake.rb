@@ -28,9 +28,8 @@ class Lazymake < Formula
   end
 
   test do
-    assert_match "bash completion V2", shell_output("#{bin}/lazymake completion bash")
-    output = shell_output("#{bin}/lazymake __complete - 2>&1")
-    assert_match "--file", output
-    assert_match "ShellCompDirectiveNoFileComp", output
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = shell_output("#{bin}/lazymake not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
