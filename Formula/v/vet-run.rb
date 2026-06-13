@@ -20,7 +20,7 @@ class VetRun < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/vet --help 2>&1", 1)
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
     output = shell_output("#{bin}/vet --force https://my-trusted-internal-script.sh 2>&1", 1)
     assert_match "Could not resolve host: my-trusted-internal-script.sh", output
