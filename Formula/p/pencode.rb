@@ -21,8 +21,7 @@ class Pencode < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/pencode --help")
-
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     assert_match "dGVzdA==", pipe_output("#{bin}/pencode b64encode", "test")
     assert_match "test", pipe_output("#{bin}/pencode b64decode", "dGVzdA==")
   end
