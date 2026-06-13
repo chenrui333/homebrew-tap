@@ -61,7 +61,8 @@ class Ifstate < Formula
   end
 
   test do
-    assert_match "ifstatecli", shell_output("#{bin}/ifstatecli --version")
-    assert_match "usage:", shell_output("#{bin}/ifstatecli --help").downcase
+    assert_match version.to_s, shell_output("#{bin}/ifstatecli --version")
+    output = shell_output("#{bin}/ifstatecli 2>&1", 2)
+    assert_match "the following arguments are required: action", output
   end
 end
