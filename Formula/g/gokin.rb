@@ -26,6 +26,7 @@ class Gokin < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gokin version")
-    assert_match "Available Commands:", shell_output("#{bin}/gokin --help")
+    output = shell_output("#{bin}/gokin not-a-real-command 2>&1", 1)
+    assert_match "unknown command", output
   end
 end
