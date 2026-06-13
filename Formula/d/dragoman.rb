@@ -35,6 +35,7 @@ class Dragoman < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/dragoman --version")
-    assert_match "usage:", shell_output("#{bin}/dragoman --help")
+    output = shell_output("#{bin}/dragoman --not-a-real-option 2>&1", 2)
+    assert_match "not-a-real-option", output
   end
 end
