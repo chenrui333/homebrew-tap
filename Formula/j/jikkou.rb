@@ -34,7 +34,10 @@ class Jikkou < Formula
     output = shell_output("#{bin}/jikkou --version")
     assert_match "Jikkou version \"#{version}\"", output
 
-    completion = shell_output("#{bin}/jikkou generate-completion")
-    assert_match "_picocli_jikkou", completion
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"jikkou", "not-a-real-command")
+    refute_predicate status, :success?
+    assert_match "not-a-real-command", output
   end
 end
