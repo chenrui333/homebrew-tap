@@ -6,6 +6,15 @@ class Dloom < Formula
   license "MIT"
   head "https://github.com/dloomorg/dloom.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53bf96c395499f12751c641f2cc672ee6373840857bb7acd92bb7b945083792e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53bf96c395499f12751c641f2cc672ee6373840857bb7acd92bb7b945083792e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53bf96c395499f12751c641f2cc672ee6373840857bb7acd92bb7b945083792e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df8ca552b61ef1ac49cd756d489bc6944eedc881924a18a17d40a8825399b300"
+    sha256 cellar: :any,                 x86_64_linux:  "3ca8296e32f85560249c5a7ef340dcfe751ee98211d8514d13fed7cf2f5418e7"
+  end
+
   depends_on "go" => :build
 
   def install
