@@ -9,7 +9,10 @@ class Snitch < Formula
   depends_on "go" => :build
 
   def install
+    ENV["GOTOOLCHAIN"] = "local"
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}")
+    generate_completions_from_executable(bin/"snitch", shell_parameter_format: :cobra)
   end
 
   test do
