@@ -21,6 +21,8 @@ class Narr < Formula
   end
 
   test do
-    system bin/"narr", "--help"
+    assert_match version.to_s, shell_output("#{bin}/narr --version")
+    output = shell_output("#{bin}/narr --not-a-real-option 2>&1", 255)
+    assert_match "not-a-real-option", output
   end
 end
