@@ -6,6 +6,15 @@ class Fabrika < Formula
   license "FSL-1.1-MIT"
   head "https://github.com/berkaycubuk/fabrika.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bd9953da39380ee11451111433d83352141b64e39699e41f07d824ecd7dea26"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bd9953da39380ee11451111433d83352141b64e39699e41f07d824ecd7dea26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bd9953da39380ee11451111433d83352141b64e39699e41f07d824ecd7dea26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "86745dcfcc68f411d7ae0bf3fb7a59b5f6b2a61752f2fe4b67c824ea9c7f9506"
+    sha256 cellar: :any,                 x86_64_linux:  "6b41ac327eb907f6542244546fd8465dbedc24e8b03b88ad1c5b7bf7d239ee35"
+  end
+
   depends_on "go" => :build
 
   def install
