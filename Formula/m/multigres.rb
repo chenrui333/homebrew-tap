@@ -34,8 +34,13 @@ class Multigres < Formula
   end
 
   test do
-    assert_match "Manage cluster lifecycle", shell_output("#{bin}/multigres --help")
-    assert_match "PostgreSQL server instances", shell_output("#{bin}/pgctld --help")
-    assert_match "connection pooling", shell_output("#{bin}/multipooler --help")
+    require "open3"
+
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    %w[multigres pgctld multipooler].each do |cmd|
+      output, status = Open3.capture2e(bin/cmd, "--not-a-real-option")
+      refute_predicate status, :success?
+      assert_match "not-a-real-option", output
+    end
   end
 end
