@@ -264,7 +264,10 @@ class Readmeai < Formula
     #     "func_name": "_load_settings",
     #     "lineno": 276
     # }
-    output = shell_output("#{bin}/readmeai --help 2>&1")
-    assert_match "Succesfully loaded cofing", output
+    require "open3"
+
+    output, status = Open3.capture2e(bin/"readmeai", "--not-a-real-option")
+    refute_predicate status, :success?
+    assert_match "not-a-real-option", output
   end
 end
