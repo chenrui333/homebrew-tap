@@ -9,11 +9,12 @@ class Mdsf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8745e524516d482d7ca650a1e6fb2274642b70f6ac58e17c28387f4c153cc75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "969a3855e45b4db12e6a094fd3d0b40b8f79d5fe4b1a1af9ca1af6c2750cecba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9da52ddff818e6a604917fd3868c64f2edce649ffbf31c40fb4e52874387602a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f44dae06c1053f13f57d8a39f18de753197f4dec380726e5bea84f741908f3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b622aa9dd0ea72c742227f9347ea3b10f921642a7f2906f2c912e03276a972c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2b943d3b8ca93e39150ba7e686f0520f6337a21dad869ad512de1c0666551d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3de88e12b1662f2faa3c7f86894cab9e0c3078194538a05338db3991373133d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c5146d9145cfda6a55cdd2cc82337b278b79cd99aca6e85a7d2fbd10bb455ae"
+    sha256 cellar: :any,                 arm64_linux:   "ac09f997ce2db765fff7a18c33dcdc4e44ed1384894260739b8dee228cac5188"
+    sha256 cellar: :any,                 x86_64_linux:  "62aca17a2f08c8a70d2c019620ed8bca7f8f613e83f254c5448c400ea5d44056"
   end
 
   depends_on "rust" => :build
