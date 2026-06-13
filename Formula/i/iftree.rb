@@ -24,8 +24,7 @@ class Iftree < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/iftree --help")
-
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = shell_output("#{bin}/iftree 2>&1", 1)
     assert_match "iftree must be run as root to enter ns", output
   end
