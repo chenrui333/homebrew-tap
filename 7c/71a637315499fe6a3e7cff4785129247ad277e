@@ -1,0 +1,20 @@
+Formula/t/tabminal.rb
+  s_392746f82aa1f5::t_a5906cb004f10b 41-44
+  s_392746f82aa1f5::t_e02ac355fa97d1 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "7c71a637315499fe6a3e7cff4785129247ad277e",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
