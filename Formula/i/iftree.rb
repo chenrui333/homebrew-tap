@@ -13,7 +13,8 @@ class Iftree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b4d30becab1bf81672b0fb15e16ab40c82e9a19e6b4d1e493fe443d617eb48a"
+    rebuild 1
+    sha256 cellar: :any, x86_64_linux: "dd64dde18051d2e8e660655901cc6e0ab0ce2e8601362c3367dfa3f7822a6836"
   end
 
   depends_on "go" => :build
