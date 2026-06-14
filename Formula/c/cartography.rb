@@ -8,6 +8,15 @@ class Cartography < Formula
   license "Apache-2.0"
   head "https://github.com/cartography-cncf/cartography.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "89805fd76f655bc031e5b3a2a1ded738b243b1ff4a6331828488a856b4081b1a"
+    sha256 cellar: :any, arm64_sequoia: "c8c41492946dbc2276e777d47d68e7cacc1cc065bf15f0365194a88b08953046"
+    sha256 cellar: :any, arm64_sonoma:  "fd3f177d273993b68a72a5a0af94f3a105517d6e29a7442ce9721d37762443b7"
+    sha256 cellar: :any, arm64_linux:   "1b24d53779873eb9ad1cdefa606f69b5d09c5ecac751eae00f939a3e138af6ea"
+    sha256 cellar: :any, x86_64_linux:  "0a52645a2f5ee52f23671fc1a033d94fbe9f9fe0abb79da1bf87fa08f4f76764"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi"
