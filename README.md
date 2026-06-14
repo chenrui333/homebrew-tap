@@ -38,7 +38,9 @@ brew install --cask <tool>
 - `actionbook`
 - `adbtuifm`
 - `adsb-tui`
+- `agent-pd`
 - `agentcarousel`
+- `agentgraphed`
 - `agenthud`
 - `agentmako`
 - `agentmeter`
@@ -96,6 +98,7 @@ brew install --cask <tool>
 - `bearer`
 - `beelzebub`
 - `better-env`
+- `biber-inspector`
 - `bibiman`
 - `bin-fq`
 - `bitchat-tui`
@@ -135,12 +138,14 @@ brew install --cask <tool>
 - `cargo-deadlinks`
 - `cargo-dephell`
 - `cargo-readme`
+- `cartography`
 - `carton`
 - `cashd`
 - `castor`
 - `catree`
 - `caveman-code`
 - `caveman-shrink`
+- `cc-bridge`
 - `cc-enhanced`
 - `cc-filter`
 - `ccapi`
@@ -158,6 +163,7 @@ brew install --cask <tool>
 - `cf2pulumi`
 - `cgpu`
 - `chalet`
+- `chanfana`
 - `chatlog`
 - `chatuino`
 - `checksec`
@@ -206,6 +212,7 @@ brew install --cask <tool>
 - `cohctl`
 - `comchan`
 - `container2wasm`
+- `context-analyzer`
 - `context-file-manager`
 - `context42`
 - `copilot-cli`
@@ -325,6 +332,7 @@ brew install --cask <tool>
 - `flowgger`
 - `fnox`
 - `fnug`
+- `fontliberator`
 - `fortran-linter`
 - `foy`
 - `frep`
@@ -358,6 +366,7 @@ brew install --cask <tool>
 - `gitpane`
 - `gitsnip`
 - `gitsocial`
+- `gitte`
 - `gittop`
 - `gitv`
 - `gix`
@@ -387,6 +396,7 @@ brew install --cask <tool>
 - `grmon`
 - `gsh`
 - `gtts`
+- `guardian-runtime`
 - `hackernews-tui`
 - `haloy`
 - `hapi`
@@ -493,6 +503,7 @@ brew install --cask <tool>
 - `krr`
 - `krs`
 - `kt`
+- `ktx`
 - `kube-role-gen`
 - `kube2pulumi`
 - `kubedog`
@@ -535,6 +546,7 @@ brew install --cask <tool>
 - `logfire-mcp`
 - `logira`
 - `lola`
+- `loom-ai`
 - `lstags`
 - `lsv`
 - `luaformatter`
@@ -610,6 +622,7 @@ brew install --cask <tool>
 - `nest-cli`
 - `netperf`
 - `netwatch`
+- `newsjack`
 - `newsnow-mcp-server`
 - `nexus`
 - `ngtop`
@@ -624,6 +637,7 @@ brew install --cask <tool>
 - `nosy`
 - `npkill`
 - `npm-np`
+- `nucleus-container`
 - `nvrs`
 - `oatmeal`
 - `obelisk`
@@ -770,6 +784,7 @@ brew install --cask <tool>
 - `riskkernel`
 - `rkik`
 - `rovr`
+- `rs-poker`
 - `rshell`
 - `rslocal`
 - `rt`
@@ -870,6 +885,7 @@ brew install --cask <tool>
 - `tabminal`
 - `tako-vm`
 - `tantivy-cli`
+- `tapflow`
 - `taproom`
 - `tars`
 - `tascli`
@@ -977,6 +993,7 @@ brew install --cask <tool>
 - `wallust`
 - `watchfiles`
 - `weathr`
+- `webhix`
 - `wedl`
 - `weekly-git-summary`
 - `werk`
@@ -1009,7 +1026,6 @@ brew install --cask <tool>
 - `zero`
 - `zerobrew`
 - `zerofs`
-- `zerolang`
 - `zeroserve`
 - `zig@0.11`
 - `zig@0.12`
