@@ -6,6 +6,12 @@ class Kaniko < Formula
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/kaniko.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "d4b5170b15cdc813fb96a161536f0c5fc18ce67baa6dc0eca1471ea4b95dae54"
+    sha256 cellar: :any,                 x86_64_linux: "3d99723856f39b7c8d565bb900810dfa407232aeb1bd095780cc4e0beb7e389d"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
