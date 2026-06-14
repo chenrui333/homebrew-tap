@@ -12,7 +12,7 @@ class Ktx < Formula
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    native = "#{os}-#{arch}"
+    native = OS.linux? ? "#{os}-#{arch}-gnu" : "#{os}-#{arch}"
     minicore_dir = libexec/"lib/node_modules/@kaelio/ktx/node_modules/snowflake-sdk/dist/lib/minicore/binaries"
     minicore_dir.each_child { |binary| rm binary unless binary.basename.to_s.include?(native) }
 
@@ -22,7 +22,7 @@ class Ktx < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ktx --version")
 
-    output = shell_output("#{bin}/ktx --help")
-    assert_match "ktx", output
+    output = shell_output("#{bin}/ktx not-a-real-command 2>&1", 1)
+    assert_match "unknown command 'not-a-real-command'", output
   end
 end
