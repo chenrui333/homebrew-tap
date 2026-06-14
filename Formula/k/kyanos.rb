@@ -8,8 +8,8 @@ class Kyanos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "3891d9a99a02dfdbe32cc44447121dc2cee3770a6650104e0da823ea22f95ae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7034d462c2beb91ffd92afab35e5203694c6b51c38671b16fb2c3c8478f2e328"
+    sha256 cellar: :any, arm64_linux:  "bf3a85edb859e9ce84a3ccf9fb356b625199a818d922dc424b711e8ea3af9fe7"
+    sha256 cellar: :any, x86_64_linux: "0fbd9e71d529984602c0acf2a4f7b3dfa9f4d79aede70ff1234e06d36acfcc1b"
   end
 
   depends_on "go" => :build
