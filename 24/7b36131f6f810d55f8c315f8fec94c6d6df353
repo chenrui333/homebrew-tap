@@ -1,0 +1,20 @@
+Formula/f/fabrika.rb
+  s_392746f82aa1f5::t_d308a2976350ce 30
+  s_392746f82aa1f5::t_e02ac355fa97d1 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "247b36131f6f810d55f8c315f8fec94c6d6df353",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
