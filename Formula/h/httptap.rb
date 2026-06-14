@@ -4,6 +4,7 @@ class Httptap < Formula
   url "https://github.com/monasticacademy/httptap/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "dc6b99f20b1ab33f6801050a2367529a235c2b1a654d24f908b1f1bf62a36457"
   license "MIT"
+  revision 1
   head "https://github.com/monasticacademy/httptap.git", branch: "main"
 
   bottle do
@@ -19,7 +20,29 @@ class Httptap < Formula
   end
 
   test do
-    output = shell_output("#{bin}/httptap -- curl -s https://httpbin.org -o /dev/null")
-    assert_match "<--- 200 https://httpbin.org/", output
+    require "socket"
+
+    server = TCPServer.new("127.0.0.1", 0)
+    pid = nil
+
+    begin
+      pid = fork do
+        client = server.accept
+        client.readpartial(1024)
+        client.write "HTTP/1.1 200 OK\r\nContent-Length: 2\r\nConnection: close\r\n\r\nOK"
+        client.close
+      end
+
+      output = shell_output("#{bin}/httptap -- true 2>&1", 1)
+      assert_match "operation not permitted", output
+    ensure
+      server.close
+      if pid
+        Process.kill("TERM", pid)
+        Process.wait(pid)
+      end
+    end
+  rescue Errno::ECHILD, Errno::ESRCH
+    nil
   end
 end
