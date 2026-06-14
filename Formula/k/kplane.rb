@@ -8,11 +8,12 @@ class Kplane < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b602214007b740c0406f9c31aefc47854ff2696837dd9e3bf04a7ed18a896065"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b602214007b740c0406f9c31aefc47854ff2696837dd9e3bf04a7ed18a896065"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b602214007b740c0406f9c31aefc47854ff2696837dd9e3bf04a7ed18a896065"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2717f43e62aaf886b78b9110f597b23fffeaf1a45caa1cda49b0952f279fd700"
-    sha256 cellar: :any,                 x86_64_linux:  "3dbb0f226e65cf1792ac47362652ab31a780082664194e065af0d90995ac649c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "358bb8f4c142989062481f3376772c624a1e8b04307a5f172e994d96ef9ecf4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "358bb8f4c142989062481f3376772c624a1e8b04307a5f172e994d96ef9ecf4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "358bb8f4c142989062481f3376772c624a1e8b04307a5f172e994d96ef9ecf4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75675171b191d9bda32f7b6b462ba0f940c2091b5f2f0dc57cf3abd120e72a13"
+    sha256 cellar: :any,                 x86_64_linux:  "fdfbcf6ebccd7f1ca593078037011f85fe228d35490eb43c68a574b44efd950d"
   end
 
   depends_on "go" => :build
