@@ -8,11 +8,12 @@ class Repology < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "40e0427a14e48e2bfec7e671f53f567f91d84b1e5acfd2e3b239bc6f08de9219"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc0c4e5ee51d8dcefe729fbb84ba88605554af7155a00a015ddbfe44b10b06ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0afa3d03318672d208045dffa50cce6b5b16e3094ae18855017148ef25248679"
-    sha256 cellar: :any,                 arm64_linux:   "c79f6f925e9fd7fc13294c229d1ca47ba854ddd85fd84048bbdd2939e12f9611"
-    sha256 cellar: :any,                 x86_64_linux:  "648ef96556ead2a5f25e367b1e227816ce9ac1c86ba2c52a7c620816d60b60dd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9ba8af3495ffddd24ae2c40f647e5958580b31784fd380bb19c5b5d5d04d7ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f88ea89a143f35b616e6684144c4f67111d9ae5485d5dfec9f396796792908aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae18839cf52301d35e2fd49bb5ba67c28555885fbe35196fcc50d26f046c62b9"
+    sha256 cellar: :any,                 arm64_linux:   "583511181176a3306eda85e9c8063870109aaa59ccec68aa0358b2e6df812135"
+    sha256 cellar: :any,                 x86_64_linux:  "334b2c5f6029b647ea280cc0f47736a676d0710dc6bc40c8d147edca3bf2961c"
   end
 
   depends_on "ldc" => :build
