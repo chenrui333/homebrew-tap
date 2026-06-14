@@ -84,15 +84,21 @@ class FormulaCrawler:
         self.cache_file.parent.mkdir(parents=True, exist_ok=True)
         try:
             # Keep cache output deterministic for stable diffs across runs.
-            normalized_cache = {
-                cache_key: {
-                    "forks": (self.cache.get(cache_key) or {}).get("forks"),
-                    "last_commit": (self.cache.get(cache_key) or {}).get("last_commit"),
-                    "last_release": (self.cache.get(cache_key) or {}).get("last_release"),
-                    "stars": (self.cache.get(cache_key) or {}).get("stars"),
+            normalized_cache = {}
+            for cache_key in sorted(self.cache):
+                cached = self.cache.get(cache_key) or {}
+                if cache_key.startswith("npm:"):
+                    normalized_cache[cache_key] = {
+                        "repo": cached.get("repo"),
+                    }
+                    continue
+
+                normalized_cache[cache_key] = {
+                    "forks": cached.get("forks"),
+                    "last_commit": cached.get("last_commit"),
+                    "last_release": cached.get("last_release"),
+                    "stars": cached.get("stars"),
                 }
-                for cache_key in sorted(self.cache)
-            }
             with open(self.cache_file, 'w') as f:
                 json.dump(normalized_cache, f, indent=2, sort_keys=True)
                 f.write("\n")
@@ -181,6 +187,19 @@ class FormulaCrawler:
 
         return None
 
+    def repo_info_to_cache_key(self, repo_info: tuple) -> str:
+        """Convert a git repo tuple to the cache key used for stats"""
+        hosting, owner, repo = repo_info
+        return f"{hosting}:{owner}/{repo}"
+
+    def repo_info_from_cache_key(self, cache_key: str) -> Optional[tuple]:
+        """Convert a cached repo key back to a git repo tuple"""
+        if match := re.match(r'^(github|gitlab|codeberg|sourcehut):([^/]+)/(.+)$', cache_key):
+            hosting, owner, repo = match.groups()
+            return (hosting, owner, repo)
+
+        return None
+
     def infer_npm_git_repo(self, url: str) -> Optional[tuple]:
         """Infer git repo from npm package metadata for registry tarball URLs"""
         if not url:
@@ -191,6 +210,11 @@ class FormulaCrawler:
             return None
 
         package_name = unquote(match.group(1))
+        cache_key = f"npm:{package_name}"
+
+        if cached_repo := (self.cache.get(cache_key) or {}).get("repo"):
+            if repo_info := self.repo_info_from_cache_key(cached_repo):
+                return repo_info
 
         try:
             result = subprocess.run(
@@ -208,11 +232,15 @@ class FormulaCrawler:
             bugs = data.get("bugs")
             bugs_url = bugs.get("url") if isinstance(bugs, dict) else None
 
-            return self.infer_git_repo_from_links([
+            repo_info = self.infer_git_repo_from_links([
                 repo_url,
                 data.get("homepage"),
                 bugs_url,
             ])
+            if repo_info:
+                self.cache[cache_key] = {"repo": self.repo_info_to_cache_key(repo_info)}
+
+            return repo_info
         except Exception as e:
             self.log(f"Error inferring npm repo for {package_name}: {e}")
             return None

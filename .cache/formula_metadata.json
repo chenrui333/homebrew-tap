@@ -5981,6 +5981,117 @@
     "last_release": null,
     "stars": null
   },
+  "npm:@apify/actors-mcp-server": {
+    "repo": "github:apify/apify-mcp-server"
+  },
+  "npm:@clidey/dory": {
+    "repo": "github:clidey/dory"
+  },
+  "npm:@cloud-copilot/iam-convert": {
+    "repo": "github:cloud-copilot/iam-convert"
+  },
+  "npm:@cloud-copilot/iam-expand": {
+    "repo": "github:cloud-copilot/iam-expand"
+  },
+  "npm:@cloud-copilot/iam-shrink": {
+    "repo": "github:cloud-copilot/iam-shrink"
+  },
+  "npm:@code-pushup/cli": {
+    "repo": "github:code-pushup/cli"
+  },
+  "npm:@debugg-ai/debugg-ai-mcp": {
+    "repo": "github:debugg-ai/debugg-ai-mcp"
+  },
+  "npm:@deepguide-ai/dg": {
+    "repo": "github:DeepGuide-Ai/dg"
+  },
+  "npm:@google/jules": {
+    "repo": "github:google-labs-code/jules-awesome-list"
+  },
+  "npm:@iflow-ai/iflow-cli": {
+    "repo": "github:iflow-ai/iflow-cli"
+  },
+  "npm:@kaluma/cli": {
+    "repo": "github:kaluma-project/kaluma-cli"
+  },
+  "npm:@mcp-use/cli": {
+    "repo": "github:mcp-use/mcp-use"
+  },
+  "npm:@nestjs/cli": {
+    "repo": "github:nestjs/nest-cli"
+  },
+  "npm:@shopify/cli": {
+    "repo": "github:Shopify/cli"
+  },
+  "npm:@yuo-app/lin": {
+    "repo": "github:yuo-app/lin"
+  },
+  "npm:clawhub": {
+    "repo": "github:openclaw/clawhub"
+  },
+  "npm:clawra": {
+    "repo": "github:SumeLabs/clawra"
+  },
+  "npm:codebuff": {
+    "repo": "github:CodebuffAI/codebuff"
+  },
+  "npm:codemachine": {
+    "repo": "github:moazbuilds/CodeMachine-CLI"
+  },
+  "npm:cross-seed": {
+    "repo": "github:cross-seed/cross-seed"
+  },
+  "npm:curlconverter": {
+    "repo": "github:curlconverter/curlconverter"
+  },
+  "npm:eas-cli": {
+    "repo": "github:expo/eas-cli"
+  },
+  "npm:fast-xml-parser": {
+    "repo": "github:NaturalIntelligence/fast-xml-parser"
+  },
+  "npm:foy": {
+    "repo": "github:zaaack/foy"
+  },
+  "npm:graphlit-mcp-server": {
+    "repo": "github:graphlit/graphlit-mcp-server"
+  },
+  "npm:happy": {
+    "repo": "github:slopus/happy"
+  },
+  "npm:heyagent": {
+    "repo": "github:gergomiklos/heyagent"
+  },
+  "npm:knip": {
+    "repo": "github:webpro-nl/knip"
+  },
+  "npm:npkill": {
+    "repo": "github:zaldih/npkill"
+  },
+  "npm:prpm": {
+    "repo": "github:pr-pm/prpm"
+  },
+  "npm:remark-cli": {
+    "repo": "github:remarkjs/remark"
+  },
+  "npm:secco": {
+    "repo": "github:LekoArts/secco"
+  },
+  "npm:speedscope": {
+    "repo": "github:jlfwong/speedscope"
+  },
+  "npm:superclaude": {
+    "repo": "github:gwendall/superclaude"
+  },
+  "npm:testronaut": {
+    "repo": "github:mission-testronaut/testronaut-cli"
+  },
+  "npm:vibe-log-cli": {
+    "repo": "github:vibe-log/vibe-log-cli"
+  },
+  "npm:vitepress": {
+    "repo": "github:vuejs/vitepress"
+  },
   "sourcehut:lioploum/offpunk": {
     "forks": null,
     "last_commit": null,
