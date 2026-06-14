@@ -93,11 +93,8 @@ class MlxAudio < Formula
   end
 
   test do
-    require "open3"
-
-    output, status = Open3.capture2e(bin/"mlx_audio.convert", "--not-a-real-option")
-    refute_predicate status, :success?
-    assert_match "not-a-real-option", output
+    output = shell_output("#{bin}/mlx_audio.convert 2>&1", 2)
+    assert_match "the following arguments are required: --hf-path", output
 
     (testpath/"test.py").write <<~PYTHON
       from importlib.metadata import version
