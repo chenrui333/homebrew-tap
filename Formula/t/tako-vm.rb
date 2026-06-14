@@ -10,11 +10,12 @@ class TakoVm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8408d479b0b939f86dbc5314686b20b663506ecb81abb775d8e3c6567154db95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f039103ec14c81f1c726a6ca9847b9b808fd2cd273b9a36c18d68d5b015bde24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11ae3dfc6c03b73e9b2c84dce1074536ae29ad6bcd371b4196d5332704e58b04"
-    sha256 cellar: :any,                 arm64_linux:   "8aef775594c9955de46ab83e2f047c187965004a04ce86481b2dfd22031d56f2"
-    sha256 cellar: :any,                 x86_64_linux:  "15c4ab664460c57f63f7d9183971829a209fba326b0eab9e751cffcb88445392"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a719f9befec126c7f884651f73270c183f7c3fa9061da44e7a5bce5a326c0d3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d6de3e62fdad9e54e0fb737e18f67308cb77573a9b3e36c7592852dc2c88615"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b13396bab76d41f81e164760e2af6e8a5dd43f4dcb813ab1f8ee074b3d95a1e8"
+    sha256 cellar: :any,                 arm64_linux:   "c16bd904d83333e8e6d1ad5e704aa4b758a5a086e381c8ca03b9ec4331bb220f"
+    sha256 cellar: :any,                 x86_64_linux:  "d90aeb9fb5f8df11b34bcfc6d384be57d66a23e77a3786d8d46f130f6f535b07"
   end
 
   depends_on "certifi" => :no_linkage
