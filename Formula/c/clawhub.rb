@@ -1,10 +1,9 @@
 class Clawhub < Formula
   desc "Install, update, search, and publish agent skills"
   homepage "https://clawhub.ai"
-  url "https://github.com/openclaw/clawhub/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "b90210b33f0d0dea6a2283b0e19a734a2b99a5ccf4373fc8b14b0484fce7be83"
+  url "https://registry.npmjs.org/clawhub/-/clawhub-0.21.0.tgz"
+  sha256 "0bf7e64a6984d9a34df3f8d50f8510121e6fd2280e82b962fc97f250564e8168"
   license "MIT"
-  head "https://github.com/openclaw/clawhub.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -14,26 +13,13 @@ class Clawhub < Formula
   depends_on "node"
 
   def install
-    cli_dir = buildpath/"clawhub-cli"
-    cp_r buildpath/"packages/clawhub", cli_dir
-
-    Dir.glob(cli_dir/"src/**/*test.ts").each do |file|
-      rm file
-    end
-    (cli_dir/"src/semver.d.ts").write("declare module \"semver\";\n")
-
-    cd cli_dir do
-      system "npm", "install", *std_npm_args(prefix: false), "-D"
-      system "npm", "run", "build"
-      system "npm", "pack"
-      system "npm", "install", *std_npm_args, "clawhub-#{version}.tgz"
-    end
-
+    system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/clawhub --cli-version")
+    assert_path_exists bin/"clawdhub"
 
     (testpath/".clawhub").mkpath
     (testpath/".clawhub/lock.json").write <<~JSON
@@ -48,6 +34,6 @@ class Clawhub < Formula
       }
     JSON
 
-    assert_equal "peekaboo  1.2.3\n", shell_output("#{bin}/clawhub --workdir #{testpath} list")
+    assert_equal "peekaboo  1.2.3\n", shell_output("#{bin}/clawhub --workdir #{testpath} list < /dev/null")
   end
 end
