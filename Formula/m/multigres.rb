@@ -8,11 +8,12 @@ class Multigres < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5f3d13f4c2c187c10202e418495029d2763794a3ec1edbeabc6d7678ffa949b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1d5cf231267eeb0128a4da7e734ea08c870915baef47cdc116f7bd5a5a3f817"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5cc9d91d2ed995708a92e982270c63f829ece02fbec72ebc09a324fccf7344d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "143d5848dd733eefdd845079a09bcdc68e44e5577627e46d0c6c9c076014261c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b813777cb5a618911bb0331442035d6f84ed9c80b3e1946f1d7c8cc11ec7dc63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f1b2b516fc843a160ffda617cab5465f2facad2818cb4ac035c7257dde9101e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b7114ae6e95afaf0573109f233aa707dd9c8e588cd9cc54200dc9bc3e14b86a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e8c6495fc8df82022b01d1cde969f44b0e12f954f74e4bf3d7596dfcd8b131a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20667ab957c27ac2c3b7b7ceb4a016943a2f23fe4b613f523a33e2e74ceb791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa844c293438ecac4ce1841f47069eaec44d63a18a1dbb2386a6dddfb4e18bc2"
   end
 
   depends_on "go" => :build
