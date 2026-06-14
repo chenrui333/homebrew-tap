@@ -9,11 +9,12 @@ class EprofilerTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "daf5396d51a79db8aafe88c3d47518cde2545b1b18cef83f539d1da8fed0db5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd967296dc7ff099983fb5b25485930da1e408ce8443ec10f107a6130df14b57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a83692ecf92367b53e19bf5c2c1738f4286f7616c4fe986564d31578d370ae06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b60c8283e29a6944542dc3e1dde83bcee445e73e6a182dd0af2be7f3dab0a8e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf8826189ccbd249ddd5b37630477e3a919196fb83ccac0ea7eb4f3e60d02d10"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f71e4504d2578a289ca1ff63456a521641a44bd4d22bcf8d5ddbaa5b3fe29523"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16734da814a3886dead237bbbce5f4675d8079972e90aae6774011d2cf2f6485"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9f9a4bb51bd2c9a8000ecdb9b8a3ac64746da8f24f2166dabacc97bb7f0533b"
+    sha256 cellar: :any,                 arm64_linux:   "b10e5f5f37f7b17bc4a698651e86625fb823415f86db4b43bb2784167cf1c390"
+    sha256 cellar: :any,                 x86_64_linux:  "30101d483bd54b6e88f128cfa752393583a4c3dc9381d74df345a8bd47ea4b79"
   end
 
   depends_on "cmake" => :build
