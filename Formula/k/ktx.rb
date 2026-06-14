@@ -5,6 +5,15 @@ class Ktx < Formula
   sha256 "aa704e407d3f19b7cd7f7669b7be5bd69341114a583963abc2f9db034acde660"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256                               arm64_tahoe:   "eb26549ec1251f5ff8bdac880ae82b791d9c5f2866d5c1a6f2e99b499fba1ab5"
+    sha256                               arm64_sequoia: "809b1240e3dccf815d666dca58dda8821a5085f92f33f6a0c43ec5c83be018f9"
+    sha256                               arm64_sonoma:  "809b1240e3dccf815d666dca58dda8821a5085f92f33f6a0c43ec5c83be018f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b298a034cc4d7b35ec8dc47f07d901ca23797ec4e0b413b110f137e45715136"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0c97399baed045106935d1904706108bdf95366158bc1da5e158dc14fae0a53"
+  end
+
   depends_on "node"
 
   def install
