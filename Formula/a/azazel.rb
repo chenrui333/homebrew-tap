@@ -10,8 +10,9 @@ class Azazel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "ef4a67163637ddee7a95224eeb7afca554bca07fbc00b2316512882c926b8b55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b94dfa7cc638338ce9093f13ac3116893d56beafe3413d57be81fe092f92ae35"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "3618fa6aab8c9229579a14e3e4ce0cdbab9dbcab421ea27d2f4254b1d67215f6"
+    sha256 cellar: :any,                 x86_64_linux: "a3ed120cad58cf22ead005fbe858479cbcc9b953c433ca6022acfbc53664d14a"
   end
 
   depends_on "go" => :build
