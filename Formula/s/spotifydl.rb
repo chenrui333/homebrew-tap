@@ -8,10 +8,12 @@ class Spotifydl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb9e8bc1c347437c11a9df7b78e0381ecb7cc63fa52a5083dcbc53dc374ae108"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aea796d3cd70f99286c31fb92a22b68cb7544672e6748777d2553f5905bd8a35"
-    sha256 cellar: :any_skip_relocation, ventura:       "c1a5956413e050059f8120936c890f3d456e5c23f95ba6f6c621c0fc7234b92b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe5faa92f07eaa7f0067fde37868dbdba2d69035f6023f9c123de4d60b290ee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "865182b4b3b97cb5b706c0322702383f18da895baf0c378dbbb985ae236a60b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "865182b4b3b97cb5b706c0322702383f18da895baf0c378dbbb985ae236a60b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "865182b4b3b97cb5b706c0322702383f18da895baf0c378dbbb985ae236a60b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "962d46ff46bdaf6fe509773cf40b9c2bdd8dfd12c93268f05536820f37398de8"
+    sha256 cellar: :any,                 x86_64_linux:  "1fe1b25c1734ba13cd7f28cd93f0328e565f3c073d00176a12f2370a92bcf442"
   end
 
   depends_on "go" => :build
