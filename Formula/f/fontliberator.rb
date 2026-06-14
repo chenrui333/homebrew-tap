@@ -8,6 +8,11 @@ class Fontliberator < Formula
   license "GPL-2.0-only"
   head "https://github.com/robinpie/fontliberator.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "2798c25892513ee668991320594e03a1b716754748c0e7f02e9cc974471330f9"
+  end
+
   uses_from_macos "perl"
 
   def install
