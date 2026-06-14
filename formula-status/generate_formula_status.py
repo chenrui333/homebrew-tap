@@ -16,6 +16,7 @@ import json
 import re
 import subprocess
 import sys
+from urllib.parse import quote, unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import datetime
@@ -148,9 +149,9 @@ class FormulaCrawler:
 
         return metadata
 
-    def infer_git_repo(self, homepage: str, url: str) -> Optional[tuple]:
-        """Infer git repo (hosting, owner, repo) from homepage or url"""
-        for link in [homepage, url]:
+    def infer_git_repo_from_links(self, links: List[str]) -> Optional[tuple]:
+        """Infer git repo (hosting, owner, repo) from candidate links"""
+        for link in links:
             if not link:
                 continue
 
@@ -179,6 +180,46 @@ class FormulaCrawler:
                 return ("sourcehut", owner, repo)
 
         return None
+
+    def infer_npm_git_repo(self, url: str) -> Optional[tuple]:
+        """Infer git repo from npm package metadata for registry tarball URLs"""
+        if not url:
+            return None
+
+        match = re.search(r'registry\.npmjs\.org/((?:@[^/]+/)?[^/]+)/', url)
+        if not match:
+            return None
+
+        package_name = unquote(match.group(1))
+
+        try:
+            result = subprocess.run(
+                ["curl", "-sL", f"https://registry.npmjs.org/{quote(package_name, safe='')}"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+            if result.returncode != 0:
+                return None
+
+            data = json.loads(result.stdout)
+            repository = data.get("repository")
+            repo_url = repository.get("url") if isinstance(repository, dict) else repository
+            bugs = data.get("bugs")
+            bugs_url = bugs.get("url") if isinstance(bugs, dict) else None
+
+            return self.infer_git_repo_from_links([
+                repo_url,
+                data.get("homepage"),
+                bugs_url,
+            ])
+        except Exception as e:
+            self.log(f"Error inferring npm repo for {package_name}: {e}")
+            return None
+
+    def infer_git_repo(self, homepage: str, url: str) -> Optional[tuple]:
+        """Infer git repo (hosting, owner, repo) from homepage, url, or package metadata"""
+        return self.infer_git_repo_from_links([homepage, url]) or self.infer_npm_git_repo(url)
 
     def fetch_github_stats(self, owner: str, repo: str) -> GitStats:
         """Fetch GitHub stats using gh CLI"""
@@ -456,8 +497,8 @@ class FormulaCrawler:
             row = [
                 formula.name,
                 desc,
-                str(formula.git_stats.stars) if formula.git_stats.stars else "-",
-                str(formula.git_stats.forks) if formula.git_stats.forks else "-",
+                str(formula.git_stats.stars) if formula.git_stats.stars is not None else "-",
+                str(formula.git_stats.forks) if formula.git_stats.forks is not None else "-",
                 formula.git_stats.last_commit or "-",
                 formula.git_stats.last_release or "-",
                 formula.license or "-",

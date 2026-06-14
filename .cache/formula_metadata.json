@@ -293,6 +293,12 @@
     "last_release": "2026-02-16",
     "stars": 121
   },
+  "github:CodebuffAI/codebuff": {
+    "forks": 790,
+    "last_commit": "2026-06-14",
+    "last_release": null,
+    "stars": 6434
+  },
   "github:ConardLi/easy-llm-cli": {
     "forks": 207,
     "last_commit": "2026-02-05",
@@ -322,6 +328,12 @@
     "last_commit": "2025-06-20",
     "last_release": "2024-12-18",
     "stars": 28
+  },
+  "github:DeepGuide-Ai/dg": {
+    "forks": 2,
+    "last_commit": "2025-11-01",
+    "last_release": "2025-07-10",
+    "stars": 14
   },
   "github:DonIsaac/keyhunter": {
     "forks": 1,
@@ -623,6 +635,12 @@
     "last_release": null,
     "stars": 361
   },
+  "github:LekoArts/secco": {
+    "forks": 1,
+    "last_commit": "2026-06-07",
+    "last_release": "2025-10-01",
+    "stars": 33
+  },
   "github:MacroPower/kat": {
     "forks": 1,
     "last_commit": "2026-02-16",
@@ -694,6 +712,12 @@
     "last_commit": "2026-01-25",
     "last_release": "2026-01-24",
     "stars": 25
+  },
+  "github:NaturalIntelligence/fast-xml-parser": {
+    "forks": 378,
+    "last_commit": "2026-06-12",
+    "last_release": "2026-05-12",
+    "stars": 3098
   },
   "github:NishantJoshi00/pmx": {
     "forks": 0,
@@ -869,6 +893,12 @@
     "last_release": "2026-02-04",
     "stars": 260
   },
+  "github:Shopify/cli": {
+    "forks": 262,
+    "last_commit": "2026-06-14",
+    "last_release": "2026-05-27",
+    "stars": 709
+  },
   "github:SoulKyu/cpg": {
     "forks": 2,
     "last_commit": "2026-04-27",
@@ -886,6 +916,12 @@
     "last_commit": "2026-03-09",
     "last_release": "2026-03-02",
     "stars": 461
+  },
+  "github:SumeLabs/clawra": {
+    "forks": 378,
+    "last_commit": "2026-02-10",
+    "last_release": null,
+    "stars": 2325
   },
   "github:SunnyTamang/pygitzen": {
     "forks": 1,
@@ -1348,6 +1384,12 @@
     "last_commit": "2024-10-22",
     "last_release": "2024-10-22",
     "stars": 686
+  },
+  "github:apify/apify-mcp-server": {
+    "forks": 172,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-06-11",
+    "stars": 1338
   },
   "github:apify/mcp-cli": {
     "forks": 16,
@@ -1913,6 +1955,12 @@
     "last_release": "2026-03-07",
     "stars": 86
   },
+  "github:clidey/dory": {
+    "forks": 5,
+    "last_commit": "2026-06-08",
+    "last_release": "2026-02-20",
+    "stars": 152
+  },
   "github:clog-tool/clog-cli": {
     "forks": 44,
     "last_commit": "2024-08-15",
@@ -1925,11 +1973,29 @@
     "last_release": "2026-02-15",
     "stars": 85
   },
+  "github:cloud-copilot/iam-convert": {
+    "forks": 0,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-06-13",
+    "stars": 26
+  },
+  "github:cloud-copilot/iam-expand": {
+    "forks": 1,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-06-13",
+    "stars": 35
+  },
   "github:cloud-copilot/iam-lens": {
     "forks": 13,
     "last_commit": "2026-02-15",
     "last_release": "2026-02-15",
     "stars": 262
+  },
+  "github:cloud-copilot/iam-shrink": {
+    "forks": 2,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-06-13",
+    "stars": 19
   },
   "github:cloudflare/chanfana": {
     "forks": 69,
@@ -1948,6 +2014,12 @@
     "last_commit": "2024-08-07",
     "last_release": "2024-08-07",
     "stars": 20
+  },
+  "github:code-pushup/cli": {
+    "forks": 16,
+    "last_commit": "2026-05-19",
+    "last_release": "2026-05-19",
+    "stars": 344
   },
   "github:codesoap/osmar": {
     "forks": 5,
@@ -2015,11 +2087,23 @@
     "last_release": "2026-04-02",
     "stars": 221
   },
+  "github:cross-seed/cross-seed": {
+    "forks": 91,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-05-04",
+    "stars": 1474
+  },
   "github:ctoth/claudio": {
     "forks": 4,
     "last_commit": "2026-01-08",
     "last_release": null,
     "stars": 53
+  },
+  "github:curlconverter/curlconverter": {
+    "forks": 1019,
+    "last_commit": "2026-03-10",
+    "last_release": "2025-02-07",
+    "stars": 8149
   },
   "github:cyberark/summon": {
     "forks": 68,
@@ -2104,6 +2188,12 @@
     "last_commit": "2024-12-10",
     "last_release": "2021-10-13",
     "stars": 156
+  },
+  "github:debugg-ai/debugg-ai-mcp": {
+    "forks": 11,
+    "last_commit": "2026-05-29",
+    "last_release": "2026-05-27",
+    "stars": 77
   },
   "github:denoland/clawpatrol": {
     "forks": 37,
@@ -2441,6 +2531,12 @@
     "last_release": "2026-03-04",
     "stars": 68
   },
+  "github:expo/eas-cli": {
+    "forks": 211,
+    "last_commit": "2026-06-14",
+    "last_release": "2026-06-05",
+    "stars": 1305
+  },
   "github:ezpzai/cdx": {
     "forks": 1,
     "last_commit": "2026-03-20",
@@ -2615,6 +2711,12 @@
     "last_release": "2019-11-20",
     "stars": 162
   },
+  "github:gergomiklos/heyagent": {
+    "forks": 14,
+    "last_commit": "2026-05-28",
+    "last_release": null,
+    "stars": 85
+  },
   "github:getgrit/gritql": {
     "forks": 120,
     "last_commit": "2025-12-01",
@@ -2687,6 +2789,12 @@
     "last_release": "2023-12-02",
     "stars": 477
   },
+  "github:google-labs-code/jules-awesome-list": {
+    "forks": 543,
+    "last_commit": "2025-05-21",
+    "last_release": null,
+    "stars": 3073
+  },
   "github:google/addlicense": {
     "forks": 189,
     "last_commit": "2025-10-28",
@@ -2710,6 +2818,12 @@
     "last_commit": "2026-01-16",
     "last_release": "2026-01-16",
     "stars": 1187
+  },
+  "github:graphlit/graphlit-mcp-server": {
+    "forks": 52,
+    "last_commit": "2026-01-12",
+    "last_release": null,
+    "stars": 376
   },
   "github:gregl83/paq": {
     "forks": 3,
@@ -2746,6 +2860,12 @@
     "last_commit": "2024-01-26",
     "last_release": "2023-05-02",
     "stars": 1205
+  },
+  "github:gwendall/superclaude": {
+    "forks": 34,
+    "last_commit": "2025-06-25",
+    "last_release": null,
+    "stars": 325
   },
   "github:hako/oeis-tui": {
     "forks": 4,
@@ -2914,6 +3034,12 @@
     "last_commit": "2025-11-19",
     "last_release": "2025-04-21",
     "stars": 80
+  },
+  "github:iflow-ai/iflow-cli": {
+    "forks": 420,
+    "last_commit": "2026-03-20",
+    "last_release": null,
+    "stars": 5127
   },
   "github:ikanago/omekasy": {
     "forks": 5,
@@ -3107,6 +3233,12 @@
     "last_release": "2025-11-27",
     "stars": 1056
   },
+  "github:jlfwong/speedscope": {
+    "forks": 316,
+    "last_commit": "2026-05-15",
+    "last_release": "2025-12-03",
+    "stars": 6648
+  },
   "github:johnhuang316/code-index-mcp": {
     "forks": 93,
     "last_commit": "2026-01-09",
@@ -3238,6 +3370,12 @@
     "last_commit": "2026-03-21",
     "last_release": "2026-03-17",
     "stars": 1324
+  },
+  "github:kaluma-project/kaluma-cli": {
+    "forks": 10,
+    "last_commit": "2023-05-12",
+    "last_release": "2022-02-25",
+    "stars": 36
   },
   "github:kantord/headson": {
     "forks": 5,
@@ -3809,6 +3947,12 @@
     "last_release": "2025-11-14",
     "stars": 28
   },
+  "github:mission-testronaut/testronaut-cli": {
+    "forks": 1,
+    "last_commit": "2026-06-12",
+    "last_release": null,
+    "stars": 6
+  },
   "github:mitex-rs/mitex": {
     "forks": 24,
     "last_commit": "2025-12-25",
@@ -3832,6 +3976,12 @@
     "last_commit": "2026-02-06",
     "last_release": "2025-07-31",
     "stars": 121
+  },
+  "github:moazbuilds/CodeMachine-CLI": {
+    "forks": 240,
+    "last_commit": "2026-02-25",
+    "last_release": "2026-02-02",
+    "stars": 2491
   },
   "github:moltis-org/moltis": {
     "forks": 136,
@@ -3994,6 +4144,12 @@
     "last_commit": "2026-06-13",
     "last_release": "2026-06-13",
     "stars": 3
+  },
+  "github:nestjs/nest-cli": {
+    "forks": 452,
+    "last_commit": "2026-06-12",
+    "last_release": "2026-06-09",
+    "stars": 2169
   },
   "github:neur0map/glazepkg": {
     "forks": 17,
@@ -4379,6 +4535,12 @@
     "last_release": null,
     "stars": 52
   },
+  "github:pr-pm/prpm": {
+    "forks": 13,
+    "last_commit": "2026-06-01",
+    "last_release": "2026-04-24",
+    "stars": 115
+  },
   "github:pranav-cs-1/nexus": {
     "forks": 5,
     "last_commit": "2025-12-27",
@@ -4516,6 +4678,12 @@
     "last_commit": "2022-06-19",
     "last_release": "2021-05-09",
     "stars": 51
+  },
+  "github:remarkjs/remark": {
+    "forks": 375,
+    "last_commit": "2026-02-24",
+    "last_release": "2023-09-18",
+    "stars": 8905
   },
   "github:reugn/gemini-cli": {
     "forks": 17,
@@ -4966,6 +5134,12 @@
     "last_commit": "2026-01-01",
     "last_release": "2025-12-21",
     "stars": 2289
+  },
+  "github:slopus/happy": {
+    "forks": 1828,
+    "last_commit": "2026-06-10",
+    "last_release": "2026-04-27",
+    "stars": 21905
   },
   "github:snipt/snipt": {
     "forks": 3,
@@ -5531,6 +5705,12 @@
     "last_release": "2025-07-25",
     "stars": 982
   },
+  "github:vibe-log/vibe-log-cli": {
+    "forks": 21,
+    "last_commit": "2026-04-19",
+    "last_release": "2026-04-19",
+    "stars": 330
+  },
   "github:viddotech/videoalchemy": {
     "forks": 10,
     "last_commit": "2025-09-18",
@@ -5548,6 +5728,12 @@
     "last_commit": "2026-01-26",
     "last_release": "2026-01-15",
     "stars": 8
+  },
+  "github:vuejs/vitepress": {
+    "forks": 2718,
+    "last_commit": "2026-06-12",
+    "last_release": "2026-03-19",
+    "stars": 17867
   },
   "github:vybestack/llxprt-code": {
     "forks": 90,
@@ -5578,6 +5764,12 @@
     "last_commit": "2025-07-05",
     "last_release": "2023-11-06",
     "stars": 378
+  },
+  "github:webpro-nl/knip": {
+    "forks": 421,
+    "last_commit": "2026-06-09",
+    "last_release": "2026-06-06",
+    "stars": 11475
   },
   "github:wendlers/mpfshell": {
     "forks": 86,
@@ -5716,6 +5908,24 @@
     "last_commit": "2026-01-29",
     "last_release": "2026-01-28",
     "stars": 12
+  },
+  "github:yuo-app/lin": {
+    "forks": 0,
+    "last_commit": "2025-11-30",
+    "last_release": "2025-11-30",
+    "stars": 4
+  },
+  "github:zaaack/foy": {
+    "forks": 16,
+    "last_commit": "2026-05-16",
+    "last_release": null,
+    "stars": 292
+  },
+  "github:zaldih/npkill": {
+    "forks": 243,
+    "last_commit": "2026-05-28",
+    "last_release": "2024-06-08",
+    "stars": 9271
   },
   "github:zaphar/sheetsui": {
     "forks": 7,
