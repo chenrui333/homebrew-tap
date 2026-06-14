@@ -8,12 +8,12 @@ class Tickrs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b4700c2115a1bc326702cd1a29b3da0cb6cbca240d40f5f4bcdc4d2d115f6fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "427bdf1ad0b6943e59e81cf570997e2730ec533a14810bc831ed035a6f76cf1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4047694bbd804badcfe4cae9f3f1fb611769836f58669f72ddc7a079ae3f3a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d08bbc9e16bf1866bd3144acf366c53ff1b901a86cd42c2147314290d4e362f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20c4a5c5f3cb824eb9f9ff70b57a04b83cad48813b275b0887ccd98f465e6952"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3274ef1115f0d94f85ec3eb271aaa431e2b6c2726fd4e23cff37e2f15d7c6458"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26936a43b4de0b37d0421a67947c6c9c2f3f508fc12534fd4ead2215b1199db9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2ed707bb3d9bea8eea133e2bb40f1cbc23a1365bff2ddf42e0ca0ecd41e376a"
+    sha256 cellar: :any,                 arm64_linux:   "872e12568f51d4c7bed278c98ed87deeaab6790797ec632782414c73290d0e67"
+    sha256 cellar: :any,                 x86_64_linux:  "5c9bc51f6b6128b22c58ed134079557aa4cf6c26a77d8a703890e377e8084a8c"
   end
 
   depends_on "pkgconf" => :build
