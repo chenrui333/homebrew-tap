@@ -112,6 +112,7 @@ brew install --cask <tool>
 - `bpftui`
 - `bpfvet`
 - `bpfviewer`
+- `branchlet`
 - `brave-search-mcp-server`
 - `breathe-cli`
 - `brew-cleaner`
@@ -335,6 +336,7 @@ brew install --cask <tool>
 - `fontliberator`
 - `fortran-linter`
 - `foy`
+- `freeze`
 - `frep`
 - `fresh`
 - `frobtads`
@@ -483,6 +485,7 @@ brew install --cask <tool>
 - `kaluma-cli`
 - `kandc`
 - `kanha`
+- `kaniko`
 - `karmor`
 - `kat`
 - `kaydet`
@@ -592,7 +595,6 @@ brew install --cask <tool>
 - `mnamer`
 - `mnemo`
 - `mockgen`
-- `models`
 - `molotov`
 - `moltbook-tui`
 - `moltis`
@@ -801,7 +803,6 @@ brew install --cask <tool>
 - `sakimori`
 - `sato`
 - `satty`
-- `satview`
 - `saw`
 - `sbomlyze`
 - `scanify`
