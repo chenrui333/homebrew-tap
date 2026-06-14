@@ -8,7 +8,8 @@ class TypeuiSh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "c490d5daa971d84a1430a89bacf00595b5e38c9229ee691989af286230648a5d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "60df746b1c3eca8ac6fa1cc3b3179198325195d2c14e6a4d54fd7ba8f2bb5b61"
   end
 
   depends_on "node"
