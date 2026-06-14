@@ -12,7 +12,8 @@ class AtlassianCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2acc22c1e9d6940a85c31cba0e25f7674141c5d56827ff2dd08b5738e84c2dce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f3d2fc8231d8ed47b439e1540ae989ceaac1904f0259be01e995c6af272d88c0"
   end
 
   depends_on "openjdk"
