@@ -1,0 +1,20 @@
+Formula/m/minimax-mcp-server.rb
+  s_392746f82aa1f5::t_c65c3b3e134c51 12
+  s_392746f82aa1f5::t_6fb841ac18037d 1-11,13-266
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f7874dcfc0abef3a4ceedf51c0f645d572f54055",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
