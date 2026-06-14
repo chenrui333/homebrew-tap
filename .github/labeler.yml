@@ -1,0 +1,21 @@
+agents.md:
+  - changed-files:
+      - any-glob-to-any-file:
+          - AGENTS.md
+          - CLAUDE.md
+
+formula:
+  - changed-files:
+      - any-glob-to-any-file:
+          - Formula/**/*
+
+cask:
+  - changed-files:
+      - any-glob-to-any-file:
+          - Casks/**/*
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/workflows/**/*
+          - .github/labeler.yml

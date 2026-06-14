@@ -144,6 +144,24 @@ Commit message: `foo 1.2.3 (new formula)`
     prebuild_dir.each_child { |dir| rm_r(dir) if dir.basename.to_s != native }
     ```
   - Common offenders: `koffi` (uses `os_arch` underscored), `@napi-rs/*` and `@swc/*` (use `os-arch` hyphenated), `node-pty/prebuilds` (uses `os-arch` hyphenated).
+  - Bun-based formulae: when the binary has `#!/usr/bin/env bun` shebang or requires Bun runtime, use `depends_on "bun"` and write a shell wrapper:
+    ```ruby
+    (bin/"foo").write <<~SH
+      #!/bin/bash
+      exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/src/main.ts" "$@"
+    SH
+    chmod 0755, bin/"foo"
+    ```
+  - TypeScript build-from-source: when the npm package needs compilation (has `src/` + `tsconfig.json` but no `dist/`), build locally then install the packed tarball:
+    ```ruby
+    system "npm", "ci"
+    system "npm", "run", "build"
+    system "npm", "pack"
+    system "npm", "install", *std_npm_args, "pkg-#{version}.tgz"
+    bin.install_symlink libexec.glob("bin/*")
+    ```
+  - npm `--min-release-age`: packages published < 3 days ago will fail `std_npm_args` in local builds. CI will pass once the package ages past the threshold; note this in the PR body when applicable.
+  - Python formulae with Rust-based extensions (tiktoken, cryptography, hf-xet, or any maturin-built package) MUST add `depends_on "rust" => :build` so maturin can compile during pip install. Prefer using shared Homebrew deps (`depends_on "cryptography"`) over vendoring when a formula exists.
 - **Test block**: MUST include at least TWO meaningful assertions — never a version-only test.
   - **First assertion**: ALWAYS try to add a version check, preferring `assert_match version.to_s, shell_output("#{bin}/foo --version")` when the binary supports `--version`.
   - If `--version` does not work, try realistic alternatives such as `version`, `-V`, or `-v` only when upstream documents them.
@@ -172,6 +190,11 @@ Commit message: `foo 1.2.3 (new formula)`
   - For TUI formulae, prefer non-interactive stdout/stderr/stdin checks. Use `pipe_output`, `shell_output(... 2>&1)`, or `Open3.capture2e` only when stdin/stderr handling is genuinely needed.
   - For TUI tests, feed minimal stdin such as `q\n`, an empty config, a sample input file, or a known invalid input to force deterministic output.
   - For Kubernetes, Docker, cloud, database, or daemon clients, do NOT require a real cluster, daemon, cloud account, or database. Use invalid config, missing credentials, empty kubeconfig, invalid endpoint, or missing runtime dependency and assert the expected error.
+  - For GUI applications (GTK4, Electron, Qt) that hang on `--version` without a display server, use binary existence checks:
+    ```ruby
+    assert_path_exists bin/"foo"
+    assert_predicate bin/"foo", :executable?
+    ```
     ```ruby
     (testpath/"kubeconfig").write("")
     output = shell_output("KUBECONFIG=#{testpath}/kubeconfig #{bin}/foo status 2>&1", 1)
