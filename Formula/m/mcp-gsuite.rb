@@ -9,11 +9,12 @@ class McpGsuite < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "b64ea2fe7e15f00ba1a55a595e1b3054cf180467ca50ae86f4b47aa1612b9280"
-    sha256 cellar: :any,                 arm64_sequoia: "008419d43ca48dbc0f6b76928caa10c842209640f62800b1b2b0980954f24734"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ee9343f3c890d0ab09de596feada6ec29701787af6169faa8e73964279b8861"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28ab7f58cdd350e28f9576a6c3a64de74dcef118d9fcece34699f3ae9decc81e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce7e4b2564077cb874655703efe825376ab9b2a8c96b22582a5bde40a83d76d5"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "ad9e0334c192b60bdc36e208fdc5c90a9414f8d2e832e6bdeaeef4b7b242333f"
+    sha256 cellar: :any, arm64_sequoia: "47790fe3fb02485c0ab41b56125c3df6229b27dd217fd6735c434ede9e01ade2"
+    sha256 cellar: :any, arm64_sonoma:  "6ab66b0172b03ef89b105449b55f1064fca85c559a5a11658772e4720570ba17"
+    sha256 cellar: :any, arm64_linux:   "3584f354faac403bda082d1e23623b328b4236574cec20af073b467c4c4470b5"
+    sha256 cellar: :any, x86_64_linux:  "45583ceef9bfeb3424fccf2a6a77beb537e632789d79d1a0374ce6d7d9f90591"
   end
 
   depends_on "rust" => :build # for rpds-py
