@@ -655,6 +655,7 @@ brew install --cask <tool>
 - `omnictl`
 - `omp-manager`
 - `opamui`
+- `open-code-review`
 - `openclacky`
 - `opencli`
 - `openharness`
@@ -965,6 +966,7 @@ brew install --cask <tool>
 - `ugm`
 - `unarj`
 - `unifly`
+- `unisondb`
 - `unrar`
 - `unsloth`
 - `untether`
