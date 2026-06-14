@@ -5,6 +5,15 @@ class Newsjack < Formula
   sha256 "4d429c92e7d28b99835a738aeb365375ec3ded28b520166fff1f309c0a0ffe0f"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2f30e8135f82ef3ce7363c800473eaa551be855232fdbe9637dea6e425c1d81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2f30e8135f82ef3ce7363c800473eaa551be855232fdbe9637dea6e425c1d81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2f30e8135f82ef3ce7363c800473eaa551be855232fdbe9637dea6e425c1d81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49421c23bab6a878732f66ae90485d7de36ca273dc406e3b2cd84a010e53aa4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50f4a44357d8ffd136cdbd70e206a1bd5d8154f26eb21e535376d0398aa1bfd"
+  end
+
   depends_on "node"
 
   def install
