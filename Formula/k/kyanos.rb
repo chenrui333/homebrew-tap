@@ -1,8 +1,8 @@
 class Kyanos < Formula
   desc "Networking analysis tool using eBPF"
   homepage "https://kyanos.io/"
-  url "https://github.com/hengyoush/kyanos/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "832976e747eeb6c86fb0fb1e031eeb3a6d3d020dc998c214cb8a31ffac5f4b08"
+  url "https://github.com/hengyoush/kyanos/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "e772c20bde365db42b57c3344ff3257a2292b74b96acb19be20f2f8719a0f3bf"
   license "Apache-2.0"
   head "https://github.com/hengyoush/kyanos.git", branch: "main"
 
