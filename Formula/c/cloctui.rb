@@ -10,7 +10,8 @@ class Cloctui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "4312cb39429cb8732dfdcbc5988356093534a8af780d6c8b54f8c9fed882ca71"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c3017a3c7f5fe135ec6e9caedd233e20c8ce926f3cf78d7e690b0405000684ff"
   end
 
   depends_on "cloc"
