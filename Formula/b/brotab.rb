@@ -9,13 +9,13 @@ class Brotab < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d975d00f78d3888b3e4c6b164059d8c2ab271c59bb5e3c6c7472a02e565f0b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30b5b5e9eb36b3567f7b530c4a4d898202ebb9e523474192418ff28ca5c78300"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ab510984becaef3d95f2173b2acc294013fda5ec9c0107a4f391efb6d47ccb1"
-    sha256 cellar: :any_skip_relocation, sequoia:       "752d676f1799b58e515d9fefb6e11b8768991735797ffefc543e6ca85d228201"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aafb3eed31a6637781100412a13134673caaa5c20010c4c2d613f2d7ec59c07c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d21cd1cbb0e799657bd6102ce7d03e2f71fabfc1d781524c8d73e78ba3ecf29"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e18e17de15c321e01f3de150260d196e436aa047304aeb39f50f48244d687ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c09ff871a110b7823830686308278b00eca5a0060996a4b2b51b19aa5c24cc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62b4585901801781a3c29d6095c79b5f2f8633428335d9d824b974c5a777d6a7"
+    sha256 cellar: :any_skip_relocation, sequoia:       "5c17c5cd5bd7e4d7613908268d93e0131525a138966e4bea0b3e3dc91246ca2a"
+    sha256 cellar: :any,                 arm64_linux:   "13b0db7d626cebdc0c19660305e3167fcb63f2e97bac4d940df3fbe5916fbe89"
+    sha256 cellar: :any,                 x86_64_linux:  "926533f14359a702f3840c8f97a48ebc1f3eeae43ce5d890a3393efe3db1e87a"
   end
 
   depends_on "certifi" => :no_linkage
