@@ -9,6 +9,15 @@ class Fftext < Formula
   license "Apache-2.0"
   head "https://github.com/kouhxp/fftext.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "344e542c8af00b8fe90ba76fb4d99f7e5b3676fa05bf9918a67f72481de41ca5"
+    sha256 cellar: :any, arm64_sequoia: "60bbf22c6d13cb8495a1b14f64b324c72e9c56307ef3bce87bdb717c34374ce3"
+    sha256 cellar: :any, arm64_sonoma:  "21ab358db024a2f16c5326444c83d6e75d855755f2667364a03cdfdff74767df"
+    sha256 cellar: :any, arm64_linux:   "6a4fff1cd058c68aa52f5433d8411aecefec20c95beb6f304add32ecc86fa0ed"
+    sha256 cellar: :any, x86_64_linux:  "91411863ae7631ee1b5293487259d6e596952c49b2ea96c40f6526876653b7d7"
+  end
+
   depends_on "cmake" => :build
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
