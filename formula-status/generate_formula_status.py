@@ -16,6 +16,7 @@ import json
 import re
 import subprocess
 import sys
+from urllib.parse import quote, unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import datetime
@@ -53,6 +54,10 @@ class FormulaInfo:
 class FormulaCrawler:
     """Crawl formulas for metadata and git hosting stats"""
 
+    NPM_REPO_OVERRIDES: Dict[str, Optional[str]] = {
+        "@google/jules": None,
+    }
+
     def __init__(self, workers: int = 20, verbose: bool = False, refresh_cache: bool = False):
         self.workers = workers
         self.verbose = verbose
@@ -83,15 +88,21 @@ class FormulaCrawler:
         self.cache_file.parent.mkdir(parents=True, exist_ok=True)
         try:
             # Keep cache output deterministic for stable diffs across runs.
-            normalized_cache = {
-                cache_key: {
-                    "forks": (self.cache.get(cache_key) or {}).get("forks"),
-                    "last_commit": (self.cache.get(cache_key) or {}).get("last_commit"),
-                    "last_release": (self.cache.get(cache_key) or {}).get("last_release"),
-                    "stars": (self.cache.get(cache_key) or {}).get("stars"),
+            normalized_cache = {}
+            for cache_key in sorted(self.cache):
+                cached = self.cache.get(cache_key) or {}
+                if cache_key.startswith("npm:"):
+                    normalized_cache[cache_key] = {
+                        "repo": cached.get("repo"),
+                    }
+                    continue
+
+                normalized_cache[cache_key] = {
+                    "forks": cached.get("forks"),
+                    "last_commit": cached.get("last_commit"),
+                    "last_release": cached.get("last_release"),
+                    "stars": cached.get("stars"),
                 }
-                for cache_key in sorted(self.cache)
-            }
             with open(self.cache_file, 'w') as f:
                 json.dump(normalized_cache, f, indent=2, sort_keys=True)
                 f.write("\n")
@@ -148,9 +159,9 @@ class FormulaCrawler:
 
         return metadata
 
-    def infer_git_repo(self, homepage: str, url: str) -> Optional[tuple]:
-        """Infer git repo (hosting, owner, repo) from homepage or url"""
-        for link in [homepage, url]:
+    def infer_git_repo_from_links(self, links: List[str]) -> Optional[tuple]:
+        """Infer git repo (hosting, owner, repo) from candidate links"""
+        for link in links:
             if not link:
                 continue
 
@@ -179,6 +190,75 @@ class FormulaCrawler:
                 return ("sourcehut", owner, repo)
 
         return None
+
+    def repo_info_to_cache_key(self, repo_info: tuple) -> str:
+        """Convert a git repo tuple to the cache key used for stats"""
+        hosting, owner, repo = repo_info
+        return f"{hosting}:{owner}/{repo}"
+
+    def repo_info_from_cache_key(self, cache_key: str) -> Optional[tuple]:
+        """Convert a cached repo key back to a git repo tuple"""
+        if match := re.match(r'^(github|gitlab|codeberg|sourcehut):([^/]+)/(.+)$', cache_key):
+            hosting, owner, repo = match.groups()
+            return (hosting, owner, repo)
+
+        return None
+
+    def infer_npm_git_repo(self, url: str) -> Optional[tuple]:
+        """Infer git repo from npm package metadata for registry tarball URLs"""
+        if not url:
+            return None
+
+        match = re.search(r'registry\.npmjs\.org/((?:@[^/]+/)?[^/]+)/', url)
+        if not match:
+            return None
+
+        package_name = unquote(match.group(1))
+        cache_key = f"npm:{package_name}"
+
+        if package_name in self.NPM_REPO_OVERRIDES:
+            cached_repo = self.NPM_REPO_OVERRIDES[package_name]
+            self.cache[cache_key] = {"repo": cached_repo}
+            if cached_repo:
+                return self.repo_info_from_cache_key(cached_repo)
+            return None
+
+        if cached_repo := (self.cache.get(cache_key) or {}).get("repo"):
+            if repo_info := self.repo_info_from_cache_key(cached_repo):
+                return repo_info
+
+        try:
+            result = subprocess.run(
+                ["curl", "-sL", f"https://registry.npmjs.org/{quote(package_name, safe='')}"],
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+            if result.returncode != 0:
+                return None
+
+            data = json.loads(result.stdout)
+            repository = data.get("repository")
+            repo_url = repository.get("url") if isinstance(repository, dict) else repository
+            bugs = data.get("bugs")
+            bugs_url = bugs.get("url") if isinstance(bugs, dict) else None
+
+            repo_info = self.infer_git_repo_from_links([
+                repo_url,
+                data.get("homepage"),
+                bugs_url,
+            ])
+            if repo_info:
+                self.cache[cache_key] = {"repo": self.repo_info_to_cache_key(repo_info)}
+
+            return repo_info
+        except Exception as e:
+            self.log(f"Error inferring npm repo for {package_name}: {e}")
+            return None
+
+    def infer_git_repo(self, homepage: str, url: str) -> Optional[tuple]:
+        """Infer git repo (hosting, owner, repo) from homepage, url, or package metadata"""
+        return self.infer_git_repo_from_links([homepage, url]) or self.infer_npm_git_repo(url)
 
     def fetch_github_stats(self, owner: str, repo: str) -> GitStats:
         """Fetch GitHub stats using gh CLI"""
@@ -456,8 +536,8 @@ class FormulaCrawler:
             row = [
                 formula.name,
                 desc,
-                str(formula.git_stats.stars) if formula.git_stats.stars else "-",
-                str(formula.git_stats.forks) if formula.git_stats.forks else "-",
+                str(formula.git_stats.stars) if formula.git_stats.stars is not None else "-",
+                str(formula.git_stats.forks) if formula.git_stats.forks is not None else "-",
                 formula.git_stats.last_commit or "-",
                 formula.git_stats.last_release or "-",
                 formula.license or "-",
