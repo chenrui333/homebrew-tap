@@ -8,11 +8,12 @@ class Discordo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe7bb010bf96b8bbfd4032671e47e5075e81682222f46bb3536afc9156b22d80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "817741731299521939b535d2adab94f31198268737969235d8722393a07fab43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c15baddff3ce0c0fb6769c755b83825975d6255fc460bba8025f65f24d41bfba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1366d5a29699ef1cdc424af268da4b95b0435111064387be2390de128e97a96f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f482eea7ac7e5779a502b56e1671525a302b370313647579ff5ed14fa8433565"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "666008d62a081fd307ea9490f00bdf351febbff41637faa924e9a6a161a83b47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fa22e1ffddefb17c1acbde14fc9a92bace7f47fe9b9bf3c4b384f681602b74b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "222692b1aa73873cf4f83083a6f03f31d21118b8ed32aeb457b1c01a47a688c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0acfdc46aa2329d4a7bfb9d296286bc024137f7ba8f4bc6de1af3e60ae3931da"
+    sha256 cellar: :any,                 x86_64_linux:  "4f7f785d96beee578bf20cb739e43c8961ce07f9f5a5361a14295ad95ba5738a"
   end
 
   depends_on "go" => :build
