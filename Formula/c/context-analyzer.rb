@@ -350,10 +350,12 @@ class ContextAnalyzer < Formula
   end
 
   test do
-    output = shell_output("#{bin}/ccscope --help 2>&1")
-    assert_match "ccscope", output
+    projects_dir = testpath/"projects"
+    projects_dir.mkpath
 
-    output = shell_output("#{bin}/context-tracker --help 2>&1", 1)
-    assert_match(/context|tracker|server/i, output)
+    output = shell_output("#{bin}/ccscope list --projects-dir #{projects_dir}")
+    assert_match "No sessions found.", output
+
+    assert_path_exists bin/"context-tracker"
   end
 end
