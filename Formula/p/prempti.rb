@@ -8,11 +8,12 @@ class Prempti < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "782bb73506376dba7964d9b4393b23192e36bc02adfb950a36ba4482dc577edc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2eb3885d1393bf0f2007d1ea35a720afc51103abc5b8ec3bf434c09472446c4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0d8f5dfbb008ae8800cf2fff45611464594a013b3295e66b39e261fd4aaf585"
-    sha256 cellar: :any,                 arm64_linux:   "f53a47819de3b4d4b744ddb6ea632cbf8fb5d60898a1f64b1fdc6f7a457ecc39"
-    sha256 cellar: :any,                 x86_64_linux:  "a18980856acd89ebae2215b05283032e21b54ca9496a46a7b727ffeb41b07f78"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5b4fec4bc3fa9763a7df41169eb39b6f703ae1f3ad1918cedbd45f3bf27d69a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "687b07b79dd1f198052468caa79ef9b861375d0950c968376788d28e2816be9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1de0f8a12ef3d5c7929f8ada807b1f3a8a588289f214ddc172bcc11057421655"
+    sha256 cellar: :any,                 arm64_linux:   "419e0d02b4fa9f7067b47a6f7122222f83f1adf595f832d8af080ed336705fe3"
+    sha256 cellar: :any,                 x86_64_linux:  "2d76894b2c7513b6a85cba526fe8302a0c8cf1fc7e9f5d823720e6fa30b59ba9"
   end
 
   depends_on "rust" => :build
