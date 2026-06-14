@@ -38,7 +38,10 @@ brew install --cask <tool>
 - `actionbook`
 - `adbtuifm`
 - `adsb-tui`
+- `agentcarousel`
+- `agenthud`
 - `agentmako`
+- `agentmeter`
 - `agl`
 - `ai-context`
 - `aic`
@@ -115,10 +118,15 @@ brew install --cask <tool>
 - `brunette`
 - `bsky-cli`
 - `btczee`
+- `bttf`
 - `budgetclaw`
+- `buffa`
+- `bufisk`
 - `bun`
+- `bunsen`
 - `burn`
 - `bytebox`
+- `c3x`
 - `c4go`
 - `captan`
 - `carbon-now-cli`
@@ -159,9 +167,11 @@ brew install --cask <tool>
 - `claude-agent-acp`
 - `claude-code-generic-hooks`
 - `claudio`
+- `claumon`
 - `clawbands`
 - `clawea`
 - `clawhub`
+- `clawpatrol`
 - `clawra`
 - `claws`
 - `cli-mcp-server`
@@ -244,9 +254,11 @@ brew install --cask <tool>
 - `dgop`
 - `dhv`
 - `di-tui`
+- `diffcat`
 - `diffyml`
 - `discordo`
 - `distill`
+- `dloom`
 - `dnsforwarder`
 - `doit`
 - `dominds`
@@ -255,9 +267,11 @@ brew install --cask <tool>
 - `dotr`
 - `dotstate`
 - `dqy`
+- `dragoman`
 - `drft`
 - `dtop`
 - `dumper`
+- `dupehound`
 - `duster`
 - `dustoff`
 - `dvm`
@@ -286,6 +300,7 @@ brew install --cask <tool>
 - `eprofiler-tui`
 - `ereandel`
 - `ergo`
+- `fabrika`
 - `fairyglade-ly`
 - `fakecloud`
 - `faq`
@@ -295,6 +310,7 @@ brew install --cask <tool>
 - `fdir`
 - `ferret`
 - `fex`
+- `fftext`
 - `filessh`
 - `firectl`
 - `firm`
@@ -428,6 +444,7 @@ brew install --cask <tool>
 - `iozone`
 - `ip2d`
 - `ips`
+- `iris-disasm`
 - `jaggr`
 - `jarl`
 - `jelly`
@@ -450,6 +467,7 @@ brew install --cask <tool>
 - `jules`
 - `junit2html`
 - `jwt-ui`
+- `k10s`
 - `k8sql`
 - `kafka`
 - `kaluma-cli`
@@ -461,13 +479,16 @@ brew install --cask <tool>
 - `kbst`
 - `kcl-kafka`
 - `kcl`
+- `kctx`
 - `keyhunter`
 - `khaos-cli`
+- `kimiflare`
 - `kite-tui`
 - `klein`
 - `klepto`
 - `knip`
 - `konfigo`
+- `kplane`
 - `kpt`
 - `krr`
 - `krs`
@@ -518,6 +539,7 @@ brew install --cask <tool>
 - `lsv`
 - `luaformatter`
 - `lib-x`
+- `macfan`
 - `macime`
 - `magic-mcp-server`
 - `mamediff`
@@ -546,6 +568,7 @@ brew install --cask <tool>
 - `memtui`
 - `meteor`
 - `mfa`
+- `mimirs`
 - `ministack`
 - `mitex`
 - `mlbt`
@@ -570,11 +593,13 @@ brew install --cask <tool>
 - `mtef`
 - `mult`
 - `multica`
+- `multigres`
 - `mush`
 - `mvt`
 - `mynav`
 - `oceanbase-mcp-server`
 - `namespace-cli`
+- `nano-agent`
 - `nanobrew`
 - `nanoclaw`
 - `nanodbc`
@@ -616,6 +641,7 @@ brew install --cask <tool>
 - `omnictl`
 - `omp-manager`
 - `opamui`
+- `openclacky`
 - `opencli`
 - `openharness`
 - `opensnitch-tui`
@@ -655,6 +681,7 @@ brew install --cask <tool>
 - `perfops`
 - `pgdog`
 - `pgterm`
+- `pho`
 - `phpinsights`
 - `pike`
 - `pikpaktui`
@@ -683,7 +710,9 @@ brew install --cask <tool>
 - `pphack`
 - `pproftui`
 - `pr-desc-cli`
+- `praxis`
 - `precompress`
+- `prempti`
 - `process-compose`
 - `procmux`
 - `projscan`
@@ -738,6 +767,7 @@ brew install --cask <tool>
 - `rfc_reader`
 - `rgx`
 - `rip`
+- `riskkernel`
 - `rkik`
 - `rovr`
 - `rshell`
@@ -791,6 +821,7 @@ brew install --cask <tool>
 - `smassh`
 - `snip`
 - `snipt`
+- `snitch`
 - `solfmt`
 - `sonar`
 - `sonarqube-lts`
@@ -907,6 +938,7 @@ brew install --cask <tool>
 - `trieve-cli`
 - `tsuki`
 - `tui-banner`
+- `tunnelto`
 - `tuono`
 - `turm`
 - `twig`
@@ -976,6 +1008,7 @@ brew install --cask <tool>
 - `go-zzz`
 - `zero`
 - `zerobrew`
+- `zerofs`
 - `zerolang`
 - `zeroserve`
 - `zig@0.11`
