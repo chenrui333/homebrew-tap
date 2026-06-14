@@ -13,6 +13,10 @@ class BiberInspector < Formula
   end
 
   test do
-    assert_match "Biber", shell_output("#{bin}/Biber --help 2>&1", 1)
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    (testpath/"sample.bin").binwrite("biber")
+    output = shell_output("#{bin}/Biber #{testpath}/sample.bin 0 4 2>&1")
+    assert_match "00000000  62 69 62 65", output
+    assert_match "[ERROR] Not supported", output
   end
 end
