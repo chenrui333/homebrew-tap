@@ -1,3 +1,4 @@
+# spellchecker:off
 cask "exort" do
   arch arm: "arm64", intel: "x64"
 
@@ -20,3 +21,4 @@ cask "exort" do
     "~/Library/Preferences/com.exort.app.plist",
   ]
 end
+# spellchecker:on
