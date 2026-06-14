@@ -152,13 +152,12 @@ Commit message: `foo 1.2.3 (new formula)`
     SH
     chmod 0755, bin/"foo"
     ```
-  - TypeScript build-from-source: when the npm package needs compilation (has `src/` + `tsconfig.json` but no `dist/`), build locally before installing with `std_npm_args`:
+  - TypeScript/npm packages: prefer the standard Homebrew npm install path:
     ```ruby
-    system "npm", "ci"
-    system "npm", "run", "build"
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
     ```
+    Only add separate dependency-install or build steps when the source archive genuinely lacks required generated files. Keep those steps formula-specific and do not run `npm pack` manually.
   - npm `--min-release-age`: packages published < 1 day ago will fail `std_npm_args` in local builds. CI will pass once the package ages past the threshold; note this in the PR body when applicable.
   - Python formulae with Rust-based extensions (tiktoken, cryptography, hf-xet, or any maturin-built package) MUST add `depends_on "rust" => :build` so maturin can compile during pip install. Prefer using shared Homebrew deps (`depends_on "cryptography"`) over vendoring when a formula exists.
 - **Test block**: MUST include at least TWO meaningful assertions — never a version-only test.
