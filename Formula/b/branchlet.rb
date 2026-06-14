@@ -5,6 +5,11 @@ class Branchlet < Formula
   sha256 "8f536156dd532edd5b461359dc929892d85e3352b58134c49d571b6f9614261b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "df5714374af7a505b1e079bbbee448071f418b9825c4ec35725a0a94ab35fee1"
+  end
+
   depends_on "node"
 
   def install
