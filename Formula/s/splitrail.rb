@@ -4,6 +4,7 @@ class Splitrail < Formula
   url "https://github.com/Piebald-AI/splitrail/archive/refs/tags/v3.5.4.tar.gz"
   sha256 "60fadab1d38ce12248df4a16b6cb6213c11c31300a5f207c2f857c0c52295e34"
   license "MIT"
+  head "https://github.com/Piebald-AI/splitrail.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
