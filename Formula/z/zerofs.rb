@@ -25,7 +25,8 @@ class Zerofs < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zerofs --version")
-    output = shell_output("#{bin}/zerofs --not-a-real-option 2>&1", 2)
-    assert_match "not-a-real-option", output
+
+    system bin/"zerofs", "init"
+    assert_match "ZeroFS Configuration File", (testpath/"zerofs.toml").read
   end
 end
