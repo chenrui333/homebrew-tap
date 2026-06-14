@@ -356,6 +356,7 @@ class ContextAnalyzer < Formula
     output = shell_output("#{bin}/ccscope list --projects-dir #{projects_dir}")
     assert_match "No sessions found.", output
 
-    assert_path_exists bin/"context-tracker"
+    output = shell_output("#{bin}/context-tracker --invalid-option 2>&1", 2)
+    assert_match "unrecognized arguments: --invalid-option", output
   end
 end
