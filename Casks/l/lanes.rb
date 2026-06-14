@@ -8,8 +8,6 @@ cask "lanes" do
   desc "Mission control for parallel AI coding agents"
   homepage "https://lanes.sh/"
 
-  disable! date: "2026-06-14", because: :fails_gatekeeper_check
-
   depends_on macos: :ventura
 
   app "Lanes.app"
