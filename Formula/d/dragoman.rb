@@ -9,7 +9,8 @@ class Dragoman < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "bf055cb25987ea790ec9ca23c4d8aa7121f8ae22cbc32c6ea4ff55f14dd9a002"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "01880832fb19b891125611c5ab70925831fdceb44a484cbf237e2e86698732da"
   end
 
   depends_on "python@3.13"
