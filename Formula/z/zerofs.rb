@@ -4,6 +4,7 @@ class Zerofs < Formula
   url "https://github.com/Barre/ZeroFS/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "bcec5cab4b073aa55f6a2cb2b88d99074322cc8ff3aa6ce915e71f508b607b3b"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/Barre/ZeroFS.git", branch: "main"
 
   bottle do
@@ -20,6 +21,9 @@ class Zerofs < Formula
   depends_on "rust" => :build
 
   def install
+    # Upstream's jemalloc background_thread setting warns on macOS.
+    inreplace "zerofs/.cargo/config.toml", ",background_thread:true", "" if OS.mac?
+
     system "cargo", "install", *std_cargo_args(path: "zerofs")
   end
 
