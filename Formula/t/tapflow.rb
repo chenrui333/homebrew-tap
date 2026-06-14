@@ -5,6 +5,11 @@ class Tapflow < Formula
   sha256 "54789c27df85922bf4d68e3746fcf1991d503feb03a6f441bc2177bc7e245715"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "11d3dce81bc0bbbc3354f0939b45636c649dcd381d66f201b5ee6ab502f04f77"
+  end
+
   depends_on :macos
   depends_on "node"
 
