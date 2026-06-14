@@ -8,8 +8,9 @@ class Zeroserve < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "432e0513b258f1f7dbd5e4825c833f4c169aad6c788103f1ce9fad8f44eae31f"
-    sha256 cellar: :any, x86_64_linux: "465453360d7fda676e6676f3de6266f0e35b703b77692063854d512cf2d7d045"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "c78c40e87045cf3b5b9a7a431e403a5c0e49736f6a7d8b576e66a8ee8374187c"
+    sha256 cellar: :any, x86_64_linux: "68ae966d9d93d776e0865483cb75db298cdd2aab6cc0ac9ce505028af41cbfa2"
   end
 
   depends_on "cmake" => :build
