@@ -5,6 +5,11 @@ class Chanfana < Formula
   sha256 "20e03fb1a4b63500552c56fab7ade7ee636e58d947180d7e94a8c3172b639316"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "459134bfce16bb5c2eba4a0df2007b47b48f61481e4df81ed87f7e857ca477e5"
+  end
+
   depends_on "node"
 
   def install
