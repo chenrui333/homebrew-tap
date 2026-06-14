@@ -7,7 +7,8 @@ class Cgpu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "263ecf4905432f974fd3bc793802730166fb4bac086d366643d2399d336954db"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d17e0bd197b0e29d8154d2da7ab640a0b94fcc69c266bc6c728649cb13cee1d9"
   end
 
   depends_on "node"
