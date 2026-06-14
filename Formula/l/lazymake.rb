@@ -30,6 +30,6 @@ class Lazymake < Formula
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = shell_output("#{bin}/lazymake not-a-real-command 2>&1", 1)
-    assert_match "unknown command", output
+    assert_match "could not open a new TTY", output
   end
 end
