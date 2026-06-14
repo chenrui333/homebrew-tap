@@ -10,7 +10,8 @@ class Deface < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d66e93a8c35289636d22675cc515844ac0f7176a0c4d4f58463d996ffde715cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "eee1af5c455f4decf104a673a08400dcb781aee02d1c7f73a0f5306644f1a388"
   end
 
   depends_on "numpy" => :no_linkage
