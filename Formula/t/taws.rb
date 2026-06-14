@@ -7,11 +7,12 @@ class Taws < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be3e4f1a9d22b9713603282d7d057f4ec9a4b3e80185ecb0e3e0b50ab726c051"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b9007db6dbf2c4266db254cf3382a42e8e63842efa018f5dd0ff95473cd9c09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7b098bed9af832921e45a96f64fa65e8713d9735c0f380e0b1a9de77264aa80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f33aab69b78f18a6b8973edad39550f2eeb3f19f5b3d133661c08f93b198c53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "860c8b0e5d5b11c61977a9abb43e0c8baeedbb0786c67ed0e6860979693cc2b9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02cbacfbc2437ec2774e89a19a90f6cfb69ef1f1351bb7a89e5cf1d343b22c2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bb6645ed2bb56df323bf68514369b10bb0ff9e467bf5b1fe2769a02546295a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9969c280cc98e9c07e7072dc8845a3d29a866155c646f6a28b5d786caec9e94"
+    sha256 cellar: :any,                 arm64_linux:   "53916b0b86951c3397e228410acb57494ec1e671088c883be972886464fc333e"
+    sha256 cellar: :any,                 x86_64_linux:  "70237d830e349a117325d934616fc9f13cd61c6cf2bcf948451339091f84ebd7"
   end
 
   depends_on "rust" => :build
