@@ -5,6 +5,11 @@ class McpReasoner < Formula
   sha256 "cf03037abee12121e720fa38bf04983d3729c1f01af525a555aba3c21fa86084"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "f683f089ad3d88560ed01842b291ddb5e5623de023bae6bb96eaba29ad21e280"
+  end
+
   depends_on "node"
 
   def install
