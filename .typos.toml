@@ -23,6 +23,8 @@ yor = "yor"
 aks = "aks" # Azure Kubernetes Service
 Aks = "Aks"
 AKS = "AKS"
+exort = "exort"
+Exort = "Exort"
 
 [files]
 extend-exclude = [
