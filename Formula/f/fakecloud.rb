@@ -36,14 +36,16 @@ class Fakecloud < Formula
 
   test do
     port = free_port
-    fork do
-      exec bin/"fakecloud", "--addr", "127.0.0.1:#{port}"
-    end
+
+    assert_match version.to_s, shell_output("#{bin}/fakecloud --version")
+
+    pid = spawn bin/"fakecloud", "--addr", "127.0.0.1:#{port}"
     sleep 3
 
     output = shell_output("curl -s http://127.0.0.1:#{port}/_fakecloud/health 2>&1")
     assert_match "ok", output.downcase
-
-    assert_match version.to_s, shell_output("#{bin}/fakecloud --version")
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
