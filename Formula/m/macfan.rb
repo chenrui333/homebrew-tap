@@ -9,9 +9,10 @@ class Macfan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62fbfc80828dbd474e1f63819119905519f1d3f774b9b4988e86788dcb52cc79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58a66c59af6207a3d906cb01d9bef796a9443e88ac27807e9e1ab615ce5a157e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f219ea4da26ecb7126323a425799327565cbc590f991e9378963d3cfe77279bd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55a985f83666de14dedbf80016724939805e8ee7d270e3abadecf26819f03c9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2302af43f4d8d16cd921ade91e0fee938ac5c47d0d268af8059b41a3f762cc84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4c863778819ca94a13422036851cf5fc5016665777090dd813cc2de86fc9bd8"
   end
 
   depends_on "rust" => :build
