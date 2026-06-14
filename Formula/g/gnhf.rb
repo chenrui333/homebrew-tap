@@ -19,5 +19,8 @@ class Gnhf < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gnhf --version")
+
+    output = shell_output("#{bin}/gnhf --current-branch 2>&1", 1)
+    assert_match "gnhf: This command must be run inside a Git repository", output
   end
 end
