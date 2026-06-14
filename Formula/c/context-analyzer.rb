@@ -8,6 +8,15 @@ class ContextAnalyzer < Formula
   license "MIT"
   head "https://github.com/manavgup/context-analyzer.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "43da6c623c3ed121fa8bc55e83939e3d2d7c7ed2f700751c6785d0bf57de5a60"
+    sha256 cellar: :any, arm64_sequoia: "1fe057b631cd47fd5eed28bce1cdc67c2a2f400374254fbfa8e8f60407311103"
+    sha256 cellar: :any, arm64_sonoma:  "1481ba31cab58a18e4fcd81df5f54c140f0285647dc7f15f26cd56ab83df8433"
+    sha256 cellar: :any, arm64_linux:   "1d7081578cf9669d4d2ec888c29db4ee7cbd23701763797af52f415c96c8c755"
+    sha256 cellar: :any, x86_64_linux:  "062a77f21e74de18c1eff1750a719ff7576380195c9c9db22ec4488c0743ec3c"
+  end
+
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
