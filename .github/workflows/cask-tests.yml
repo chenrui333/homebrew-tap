@@ -78,6 +78,9 @@ jobs:
           elif [[ "${GITHUB_EVENT_NAME}" == "push" ]]
           then
             brew generate-cask-ci-matrix --syntax-only
+          elif jq -e '.pull_request.labels[]?.name == "CI-syntax-only"' "$GITHUB_EVENT_PATH" >/dev/null
+          then
+            brew generate-cask-ci-matrix --syntax-only
           else
             brew generate-cask-ci-matrix --url "$PULL_REQUEST_URL"
           fi
