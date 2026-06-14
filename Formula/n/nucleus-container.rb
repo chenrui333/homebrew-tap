@@ -10,11 +10,20 @@ class NucleusContainer < Formula
   depends_on :linux
 
   def install
+    if Hardware::CPU.arch == :arm64
+      # libc does not expose these x86-oriented syscall constants on Linux ARM64.
+      inreplace "src/security/seccomp.rs" do |s|
+        s.gsub! '"fchmodat2" => Some(libc::SYS_fchmodat2),', '"fchmodat2" => Some(452),'
+        s.gsub! '"mknod" => Some(libc::SYS_mknod),', '"mknod" => None,'
+      end
+    end
+
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    output = shell_output("#{bin}/nucleus --help")
-    assert_match "nucleus", output
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = shell_output("#{bin}/nucleus seccomp generate #{testpath}/missing.ndjson 2>&1", 1)
+    assert_match "Failed to open trace file", output
   end
 end
