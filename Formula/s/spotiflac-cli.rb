@@ -8,11 +8,12 @@ class SpotiflacCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a682efb063603a3a28ffc2f44949f5fdeeb85ab44d25785b9261e572e9ecbe99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a682efb063603a3a28ffc2f44949f5fdeeb85ab44d25785b9261e572e9ecbe99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a682efb063603a3a28ffc2f44949f5fdeeb85ab44d25785b9261e572e9ecbe99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "289f46ec05476ebdc340569f40d90ff2dbf172759cf173f7a76a535de6dda88e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d321bd7baec62a2e00d885221b53115226d911a6cad033a466e3d2fbc37b70"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f55c212dea5e68ba4c103e61962110d9932b6df4fc352040694f824854f2fc16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f55c212dea5e68ba4c103e61962110d9932b6df4fc352040694f824854f2fc16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f55c212dea5e68ba4c103e61962110d9932b6df4fc352040694f824854f2fc16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7643e99f9fbcac7420de8d113a31287e359223419b84e401071f064143f46619"
+    sha256 cellar: :any,                 x86_64_linux:  "51503daee66c8d978dd3cc3c576b20dfb52f2fb213caecc77254bc9ec3620ba1"
   end
 
   depends_on "go" => :build
