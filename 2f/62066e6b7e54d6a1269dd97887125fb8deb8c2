@@ -1,0 +1,14 @@
+Formula/c/container2wasm.rb
+  h_9df9c32c3f321d 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "2f62066e6b7e54d6a1269dd97887125fb8deb8c2",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
