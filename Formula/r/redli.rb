@@ -18,17 +18,14 @@ class Redli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/redli --version 2>&1")
 
-    output = shell_output("#{bin}/redli --uri redis://localhost:1 2>&1", 1)
-    assert_match(/connect|refused|dial/i, output)
+    output = shell_output("#{bin}/redli --debug --uri redis://localhost:1 2>&1", 1)
+    assert_match "connection refused", output
   end
 end
