@@ -1,4 +1,10 @@
 {
+  "codeberg:ckruse/Gitte": {
+    "forks": 14,
+    "last_commit": "2026-06-14",
+    "last_release": null,
+    "stars": 128
+  },
   "codeberg:explosion-mental/wallust": {
     "forks": 17,
     "last_commit": "2026-02-14",
@@ -586,6 +592,12 @@
     "last_commit": "2026-06-05",
     "last_release": null,
     "stars": 470
+  },
+  "github:Kaelio/ktx": {
+    "forks": 63,
+    "last_commit": "2026-06-14",
+    "last_release": "2026-06-12",
+    "stars": 1197
   },
   "github:Kenzo-Wada/thanks-stars": {
     "forks": 2,
@@ -1481,6 +1493,12 @@
     "last_release": "2026-03-14",
     "stars": 32
   },
+  "github:ashp15205/guardian-runtime": {
+    "forks": 0,
+    "last_commit": "2026-06-12",
+    "last_release": null,
+    "stars": 16
+  },
   "github:ashuhlee/starlit": {
     "forks": 1,
     "last_commit": "2026-02-09",
@@ -1822,6 +1840,12 @@
     "last_commit": "2026-03-02",
     "last_release": "2026-01-10",
     "stars": 458
+  },
+  "github:cartography-cncf/cartography": {
+    "forks": 520,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-06-03",
+    "stars": 3923
   },
   "github:carvel-dev/kwt": {
     "forks": 12,
@@ -2789,12 +2813,6 @@
     "last_release": "2023-12-02",
     "stars": 477
   },
-  "github:google-labs-code/jules-awesome-list": {
-    "forks": 543,
-    "last_commit": "2025-05-21",
-    "last_release": null,
-    "stars": 3073
-  },
   "github:google/addlicense": {
     "forks": 189,
     "last_commit": "2025-10-28",
@@ -3238,6 +3256,12 @@
     "last_commit": "2026-05-15",
     "last_release": "2025-12-03",
     "stars": 6648
+  },
+  "github:jo-duchan/tapflow": {
+    "forks": 5,
+    "last_commit": "2026-06-14",
+    "last_release": "2026-06-13",
+    "stars": 54
   },
   "github:johnhuang316/code-index-mcp": {
     "forks": 93,
@@ -3778,6 +3802,12 @@
     "last_commit": "2025-12-30",
     "last_release": null,
     "stars": 381
+  },
+  "github:manavgup/context-analyzer": {
+    "forks": 0,
+    "last_commit": "2026-06-13",
+    "last_release": "2026-06-08",
+    "stars": 3
   },
   "github:marcus/sidecar": {
     "forks": 61,
@@ -4738,6 +4768,12 @@
     "last_commit": "2025-06-13",
     "last_release": "2024-11-05",
     "stars": 8434
+  },
+  "github:robinpie/fontliberator": {
+    "forks": 3,
+    "last_commit": "2026-06-10",
+    "last_release": null,
+    "stars": 16
   },
   "github:robjtede/inspect-cert-chain": {
     "forks": 1,
@@ -6006,7 +6042,7 @@
     "repo": "github:DeepGuide-Ai/dg"
   },
   "npm:@google/jules": {
-    "repo": "github:google-labs-code/jules-awesome-list"
+    "repo": null
   },
   "npm:@iflow-ai/iflow-cli": {
     "repo": "github:iflow-ai/iflow-cli"

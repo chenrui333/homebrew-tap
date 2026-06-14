@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-06-14 14:53:30 UTC
-Total formulas: 1002
+Generated: 2026-06-14 16:19:42 UTC
+Total formulas: 1009
 
 ## Formulas
 
@@ -70,6 +70,7 @@ Total formulas: 1002
 | cerbos | Scalable, context-aware authorization service for applicatio... | 4221 | 171 | 2026-02-16 | 2026-02-04 | Apache-2.0 | ✓ | - | [link](https://www.cerbos.dev/) |
 | httptap | View HTTP/HTTPS requests made by any Linux program | 4145 | 64 | 2025-12-23 | 2025-02-26 | MIT | ✓ | - | [link](https://github.com/monasticacademy/httptap) |
 | gobgp | CLI tool for GoBGP | 3984 | 769 | 2026-02-12 | 2026-01-01 | Apache-2.0 | ✓ | - | [link](https://osrg.github.io/gobgp/) |
+| cartography | Pull infrastructure assets and relationships into a Neo4j gr... | 3923 | 520 | 2026-06-13 | 2026-06-03 | Apache-2.0 | ✓ | - | [link](https://github.com/cartography-cncf/cartography) |
 | sqlit | User friendly TUI for SQL databases | 3718 | 94 | 2026-02-02 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/Maxteabag/sqlit) |
 | wild | Fast linker for Linux | 3527 | 111 | 2026-04-26 | 2026-01-16 | - | ✓ | - | [link](https://github.com/davidlattimore/wild) |
 | ddev | Docker-based local PHP+Node.js web development environments | 3498 | 692 | 2026-02-16 | 2026-02-03 | Apache-2.0 | ✓ | - | [link](https://ddev.com/) |
@@ -82,7 +83,6 @@ Total formulas: 1002
 | browserbase-mcp-server | MCP server for AI web browser automation using Browserbase a... | 3133 | 338 | 2026-01-23 | - | Apache-2.0 | ✓ | - | [link](https://github.com/browserbase/mcp-server-browserbase) |
 | fast-xml-parser | Validate XML, Parse XML and Build XML rapidly | 3098 | 378 | 2026-06-12 | 2026-05-12 | MIT | ✓ | - | [link](https://naturalintelligence.github.io/fast-xml-parser/) |
 | ergo | Modern IRC server (daemon/ircd) written in Go | 3075 | 225 | 2026-02-16 | 2025-12-22 | MIT | ✓ | - | [link](https://github.com/ergochat/ergo) |
-| jules | Asynchronous coding agent from Google, in the terminal | 3073 | 543 | 2025-05-21 | - | - | ✓ | - | [link](https://jules.google/docs) |
 | graphjin | Build NodeJS / GO APIs in 5 minutes not weeks | 3020 | 186 | 2026-02-14 | 2026-02-14 | Apache-2.0 | ✓ | - | [link](https://graphjin.com/) |
 | git-chglog | CHANGELOG generator implemented in Go (Golang) | 2881 | 227 | 2026-01-18 | 2023-02-15 | MIT | ✓ | - | [link](https://github.com/git-chglog/git-chglog) |
 | mcp-obsidian | MCP server for interacting with Obsidian via its REST API pl... | 2853 | 358 | 2025-06-28 | - | MIT | ✓ | - | [link](https://github.com/MarkusPfundstein/mcp-obsidian) |
@@ -173,6 +173,7 @@ Total formulas: 1002
 | tparse | Tool for summarizing go test output. Pipe friendly. CI/CD fr... | 1231 | 36 | 2025-11-27 | 2025-08-24 | MIT | ✓ | - | [link](https://github.com/mfridman/tparse) |
 | hostctl | Your dev tool to manage /etc/hosts like a pro | 1205 | 53 | 2024-01-26 | 2023-05-02 | MIT | ✓ | - | [link](https://guumaster.github.io/hostctl/) |
 | tavily-mcp | MCP server for Tavily | 1202 | 182 | 2026-02-14 | - | MIT | ✓ | - | [link](https://github.com/tavily-ai/tavily-mcp) |
+| ktx | Executable context layer for data and analytics agents | 1197 | 63 | 2026-06-14 | 2026-06-12 | Apache-2.0 | ✓ | - | [link](https://github.com/Kaelio/ktx) |
 | actionbook | Browser action engine for AI agents | 1196 | 89 | 2026-02-23 | 2026-02-23 | Apache-2.0 | ✓ | - | [link](https://actionbook.dev) |
 | gowebly | Next-generation CLI tool to easily build amazing web applica... | 1187 | 46 | 2026-01-16 | 2026-01-16 | Apache-2.0 | ✓ | - | [link](https://gowebly.org/) |
 | venom | Manage and run your integration tests with efficiency | 1178 | 168 | 2026-02-06 | 2026-01-06 | Apache-2.0 | ✓ | - | [link](https://github.com/ovh/venom) |
@@ -513,6 +514,7 @@ Total formulas: 1002
 | mcpd | Declaratively manage Model Context Protocol (MCP) servers | 130 | 17 | 2026-02-13 | 2026-01-28 | MIT | ✓ | - | [link](https://mozilla-ai.github.io/mcpd/) |
 | vimalender | Vim-style terminal calendar | 130 | 3 | 2026-03-12 | 2026-03-10 | MIT | ✓ | - | [link](https://github.com/Sadoaz/vimalender) |
 | tiki | Markdown-based git-versioned documentation and issue managem... | 129 | 3 | 2026-03-30 | 2026-03-26 | Apache-2.0 | ✓ | - | [link](https://github.com/boolean-maybe/tiki) |
+| gitte | GTK4/libadwaita Git client for the GNOME desktop written in ... | 128 | 14 | 2026-06-14 | - | GPL-3.0-or-later | ✓ | - | [link](https://codeberg.org/ckruse/Gitte) |
 | lix | Dependable package manager for your Haxe projects | 127 | 25 | 2026-01-29 | - | MIT | ✓ | - | [link](https://github.com/lix-pm/lix.client) |
 | trex | Terminal app for writing, visualizing, and testing regular e... | 127 | 3 | 2025-09-30 | 2025-02-27 | MIT | ✓ | - | [link](https://github.com/samyakbardiya/trex) |
 | zigscient | Zig Language Server | 127 | 5 | 2026-02-12 | 2026-01-22 | ISC | ✓ | - | [link](https://github.com/llogick/zigscient) |
@@ -684,6 +686,7 @@ Total formulas: 1002
 | mdns-scanner | Scan networks for IPs and hostnames, including mDNS aliases | 54 | 3 | 2026-02-16 | 2026-02-03 | MIT | ✓ | - | [link](https://github.com/CramBL/mdns-scanner) |
 | rawhide | Find files using pretty C expressions | 54 | 6 | 2025-12-18 | 2023-10-13 | GPL-3.0-or-later | ✓ | - | [link](https://raf.org/rawhide/) |
 | sot | Command-line System Observation Tool | 54 | 3 | 2026-01-18 | 2026-01-18 | MIT | ✓ | - | [link](https://github.com/anistark/sot) |
+| tapflow | Self-hosted iOS and Android simulator streaming for the whol... | 54 | 5 | 2026-06-14 | 2026-06-13 | MIT | ✓ | - | [link](https://github.com/jo-duchan/tapflow) |
 | claudio | Hook-based audio plugin for Claude Code that plays contextua... | 53 | 4 | 2026-01-08 | - | - | ✓ | - | [link](https://github.com/ctoth/claudio) |
 | diffyml | Structural YAML diff tool with Kubernetes intelligence | 53 | 2 | 2026-06-08 | 2026-06-03 | MIT | ✓ | - | [link](https://github.com/szhekpisov/diffyml) |
 | qwe | File-first atomic version control system | 53 | 7 | 2025-12-14 | 2025-12-14 | MIT | ✓ | - | [link](https://mainak55512.github.io/qwe/) |
@@ -851,6 +854,8 @@ Total formulas: 1002
 | c3x | Open source cloud cost estimation for Terraform, Terragrunt,... | 16 | 0 | 2026-06-08 | 2026-04-27 | Apache-2.0 | ✓ | - | [link](https://github.com/c3xdev/c3x) |
 | cdx | Use Codex more easily, even away from your desk | 16 | 1 | 2026-03-20 | 2026-03-20 | Apache-2.0 | ✓ | - | [link](https://github.com/ezpzai/cdx) |
 | ctxmv | Migrate conversation sessions between AI coding agents | 16 | 0 | 2026-03-22 | 2026-03-22 | MIT | ✓ | - | [link](https://github.com/Ryu0118/ctxmv) |
+| fontliberator | Fully automatic font clean-room reimplementor | 16 | 3 | 2026-06-10 | - | GPL-2.0-only | ✓ | - | [link](https://github.com/robinpie/fontliberator) |
+| guardian-runtime | Zero-latency local-first runtime firewall for LLMs | 16 | 0 | 2026-06-12 | - | MIT | ✓ | - | [link](https://github.com/ashp15205/guardian-runtime) |
 | mln | Modern replacement for `ln` | 16 | 0 | 2020-03-02 | 2020-02-20 | MIT | ✓ | - | [link](https://github.com/tkmru/mln) |
 | codefmt | Markdown code block formatter | 15 | 0 | 2025-09-01 | 2025-09-01 | MIT | ✓ | - | [link](https://github.com/1nwf/codefmt) |
 | defaults-rs | Open-source interface to a user's defaults on macOS | 15 | 0 | 2025-12-21 | 2025-12-21 | MIT | ✓ | - | [link](https://github.com/machlit/defaults-rs) |
@@ -932,6 +937,7 @@ Total formulas: 1002
 | opamui | TUI for OPAM packages | 4 | 0 | 2026-01-26 | 2025-11-14 | Apache-2.0 | ✓ | - | [link](https://github.com/nlamirault/opamui) |
 | agenthud | Claude Code TUI dashboard for parallel sessions and sub-agen... | 3 | 0 | 2026-06-13 | 2026-06-13 | MIT | ✓ | - | [link](https://github.com/neochoon/agenthud) |
 | ccql | Claude Code Query Language | 3 | 0 | 2025-12-23 | 2025-12-23 | MIT | ✓ | - | [link](https://github.com/douglance/ccql) |
+| context-analyzer | Context window usage analyzer for Claude Code with MCP serve... | 3 | 0 | 2026-06-13 | 2026-06-08 | MIT | ✓ | - | [link](https://github.com/manavgup/context-analyzer) |
 | envtpl | Render Go templates on the command-line with shell environme... | 3 | 1 | 2026-02-11 | 2025-11-08 | MIT | ✓ | - | [link](https://github.com/chenrui333/envtpl) |
 | fabrika | Software factory that orchestrates CLI coding agents as a ma... | 3 | 0 | 2026-06-13 | 2026-06-11 | FSL-1.1-MIT | ✓ | - | [link](https://fabrika-ai.com) |
 | gh-unpushed | GitHub CLI extension that shows your unpushed Git commits | 3 | 0 | 2025-04-15 | 2025-04-15 | MIT | ✓ | - | [link](https://github.com/achoreim/gh-unpushed) |
@@ -976,6 +982,7 @@ Total formulas: 1002
 | iozone | File system benchmark tool | - | - | - | - | - | ✓ | ✓ | [link](https://www.iozone.org/) |
 | jocalsend | Rust terminal client for Localsend | - | - | - | - | - | ✓ | - | [link](https://git.kittencollective.com/nebkor/joecalsend) |
 | jotbird | Publish Markdown from the command-line | 0 | 0 | 2026-02-14 | 2026-02-14 | MIT | ✓ | - | [link](https://www.jotbird.com/cli) |
+| jules | Asynchronous coding agent from Google, in the terminal | - | - | - | - | - | ✓ | - | [link](https://jules.google/docs) |
 | kafka | Open-source distributed event streaming platform | - | - | - | - | Apache-2.0 | ✓ | ✓ | [link](https://kafka.apache.org/) |
 | kandc | Accelerate your Python functions with cloud GPUs | - | - | - | - | MIT | ✓ | - | [link](https://github.com/Herdora/chisel) |
 | lemonade | Your LLM Aide for Validation and Deployment | - | - | - | - | Apache-2.0 | ✓ | - | [link](https://lemonade-server.ai/) |

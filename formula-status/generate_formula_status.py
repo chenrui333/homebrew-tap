@@ -54,6 +54,10 @@ class FormulaInfo:
 class FormulaCrawler:
     """Crawl formulas for metadata and git hosting stats"""
 
+    NPM_REPO_OVERRIDES: Dict[str, Optional[str]] = {
+        "@google/jules": None,
+    }
+
     def __init__(self, workers: int = 20, verbose: bool = False, refresh_cache: bool = False):
         self.workers = workers
         self.verbose = verbose
@@ -211,6 +215,13 @@ class FormulaCrawler:
 
         package_name = unquote(match.group(1))
         cache_key = f"npm:{package_name}"
+
+        if package_name in self.NPM_REPO_OVERRIDES:
+            cached_repo = self.NPM_REPO_OVERRIDES[package_name]
+            self.cache[cache_key] = {"repo": cached_repo}
+            if cached_repo:
+                return self.repo_info_from_cache_key(cached_repo)
+            return None
 
         if cached_repo := (self.cache.get(cache_key) or {}).get("repo"):
             if repo_info := self.repo_info_from_cache_key(cached_repo):
