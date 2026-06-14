@@ -45,6 +45,10 @@ jobs:
               path: Formula/.+
               content: depends_on :macos
 
+            - label: agents.md
+              path: (AGENTS|CLAUDE)\.md
+              allow_any_match: true
+
             - label: autobump
               path: \.github/autobump\.txt
               allow_any_match: true
