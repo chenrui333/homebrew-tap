@@ -1,0 +1,19 @@
+Formula/c/codeflash.rb
+  s_392746f82aa1f5::t_6fb841ac18037d 1-32,35-47,50-57,60-62,65-77,80-82,85-92,95-102,105-132,145-147,150-172,175-177,190-217,220-222,225-232,235-247,250-252,260-277,280-292,295-307,310-347,350-356,360-367,370-372,375-377,380-387,390-399
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "11b85d51073ccb30aaf5b462903c1a5db6725f44",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
