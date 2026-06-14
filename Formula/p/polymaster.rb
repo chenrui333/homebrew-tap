@@ -9,11 +9,12 @@ class Polymaster < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8df909db810273fb46ff2e6a22adb47575ae382a60ceb304385ea48ede0c28dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "631f3027549fa9a19edf0ad8c09aac6f7e3d9187c7e0a6f908b2550d295c4acd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2635686458b9a1aaf0abb0c73873b092e4ea2d2875016d647f88afa7c97e8abc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e431d023e3887cfa6b0c81f231e0fa7959b8a052b0e3d989d4349b3841a18c53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6ba8099f84d9e4feeab5f5eba7816c609c6361d2316fec7d8efdfaf6195b60a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d15fe522adfcca5b3d03bd7944cd70122bfed8c28304d0665f1a8360b96b60fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91ad6d30b041d86bb4e243fa8f3bdea79412cac8c3418e78069e379bf449ba04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "391eb37d740aeee13ed0018f58f78ccb013de0de97d5fbcfa9c776b35d5e2fb3"
+    sha256 cellar: :any,                 arm64_linux:   "e2e8a03cda14571617944d44f5a54b7218614d350f6cbdc72b974d838ef227d7"
+    sha256 cellar: :any,                 x86_64_linux:  "0fcfbf89e5857c7823bd67e928cc65aa8d759639e4f46c75ad1be169b6d81a2d"
   end
 
   depends_on "pkgconf" => :build
