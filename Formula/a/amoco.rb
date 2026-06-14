@@ -9,8 +9,8 @@ class Amoco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "92e1836249525338e58f7c966af223c74ef7243ac763098cce5692aba40411d3"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "a716fc9d6f1a729a1b1c193fe1656e31fc4dffe8012fa24d99e921bbee40cda9"
   end
 
   depends_on "python@3.14"
