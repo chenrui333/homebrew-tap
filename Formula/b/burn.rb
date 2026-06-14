@@ -19,18 +19,16 @@ class Burn < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=HEAD
-      -X main.date=#{time.iso8601}
-    ]
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/burn"
+
+    generate_completions_from_executable(bin/"burn", "completion", shell_parameter_format: :cobra)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/burn version")
-    output = shell_output("#{bin}/burn not-a-real-command 2>&1", 1)
-    assert_match "unknown command", output
+
+    output = shell_output("#{bin}/burn analyze --ai 2>&1", 1)
+    assert_match "try setting KUBERNETES_MASTER environment variable", output
   end
 end
