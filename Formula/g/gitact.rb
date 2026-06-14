@@ -8,11 +8,12 @@ class Gitact < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6924104651be2e1f9e815e3cb8c283fa8846f9d22bbc8fd93043d34f780fed44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6924104651be2e1f9e815e3cb8c283fa8846f9d22bbc8fd93043d34f780fed44"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6924104651be2e1f9e815e3cb8c283fa8846f9d22bbc8fd93043d34f780fed44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30251ee968b867d4c9f48b0a6e36b3151bee91f9ddc7a716ea35082e4fac4381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b05f788c2383b94aefd99b278e2ac7e23ac21d1950fc4eab1c83b16f730ef5b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cddae4607e5e4357ea500187e7c55f29c939dd88a18a3b1d5140791f6a694c4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cddae4607e5e4357ea500187e7c55f29c939dd88a18a3b1d5140791f6a694c4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cddae4607e5e4357ea500187e7c55f29c939dd88a18a3b1d5140791f6a694c4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e194266497470a26d1eec2a9eee50dae2d624f3fe33bdaad7346cb044cf86a4"
+    sha256 cellar: :any,                 x86_64_linux:  "b3300e398dad43d2da06561f44714152ec7f4f3ec311121d0d40b7d980ad5f89"
   end
 
   depends_on "go" => :build
