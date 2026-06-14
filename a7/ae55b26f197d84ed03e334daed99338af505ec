@@ -1,0 +1,14 @@
+Formula/b/burn.rb
+  h_9df9c32c3f321d 30,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "a7ae55b26f197d84ed03e334daed99338af505ec",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
