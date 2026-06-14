@@ -152,12 +152,11 @@ Commit message: `foo 1.2.3 (new formula)`
     SH
     chmod 0755, bin/"foo"
     ```
-  - TypeScript build-from-source: when the npm package needs compilation (has `src/` + `tsconfig.json` but no `dist/`), build locally then install the packed tarball:
+  - TypeScript build-from-source: when the npm package needs compilation (has `src/` + `tsconfig.json` but no `dist/`), build locally before installing with `std_npm_args`:
     ```ruby
     system "npm", "ci"
     system "npm", "run", "build"
-    system "npm", "pack"
-    system "npm", "install", *std_npm_args, Dir["*.tgz"].first
+    system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
     ```
   - npm `--min-release-age`: packages published < 1 day ago will fail `std_npm_args` in local builds. CI will pass once the package ages past the threshold; note this in the PR body when applicable.
