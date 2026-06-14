@@ -1,0 +1,21 @@
+Formula/a/anchor.rb
+  s_392746f82aa1f5::t_8fcd764ad3f877 32-33
+  s_392746f82aa1f5::t_76ecb7bb2324a1 1-11,17-31,34-35
+  s_392746f82aa1f5::t_d51decf4cdd447 12-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "90158d3a61cfea9ad19ae1d527805e3e87af9770",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
