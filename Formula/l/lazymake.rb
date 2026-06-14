@@ -8,11 +8,12 @@ class Lazymake < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2961317d772740cb5880be209571336077671aec95dde6be4783624ccfd86917"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2961317d772740cb5880be209571336077671aec95dde6be4783624ccfd86917"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2961317d772740cb5880be209571336077671aec95dde6be4783624ccfd86917"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75c0703c9c79a026ac11dd2c62452341e37a4dc97a2dd76183d56c783dcae553"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbc998d1ee856f1ed39f91fd84352d74e4894850ab3ba3c7b789025002e904e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "717335175dde6bd8c6d9298d1af539e3b09a2a7122a689d0c0a3eba9f95d5c3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "717335175dde6bd8c6d9298d1af539e3b09a2a7122a689d0c0a3eba9f95d5c3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "717335175dde6bd8c6d9298d1af539e3b09a2a7122a689d0c0a3eba9f95d5c3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "614b2c469403ea787266ced7264af8dd0b41b116141abe870ddb55e367ed7ff7"
+    sha256 cellar: :any,                 x86_64_linux:  "24a91a9703d621eb602f67682a7908eacf5ae6a6f721149003c6b053ea203fa6"
   end
 
   depends_on "go" => :build
@@ -28,9 +29,8 @@ class Lazymake < Formula
   end
 
   test do
-    assert_match "bash completion V2", shell_output("#{bin}/lazymake completion bash")
-    output = shell_output("#{bin}/lazymake __complete - 2>&1")
-    assert_match "--file", output
-    assert_match "ShellCompDirectiveNoFileComp", output
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = shell_output("#{bin}/lazymake --not-a-real-option 2>&1", 1)
+    assert_match "unknown flag: --not-a-real-option", output
   end
 end

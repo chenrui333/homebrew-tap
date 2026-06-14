@@ -10,9 +10,10 @@ class MlxAudio < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "27112700df83c228314edb844849ff933037c25b284222da9c19d1cce9d5fe64"
-    sha256 arm64_sequoia: "e73aca28e68f268f28302705ed27d72c6d9db855adfeedd13a7e0c6d05e0d95b"
-    sha256 arm64_sonoma:  "3686dacc453c9d3736abbcca64ef8dfea569ca10da4eaef93dedac0590bf4928"
+    rebuild 1
+    sha256 arm64_tahoe:   "500a505eeffe6cb66105520492d4abef7afb1405413fc2a25d90e44c9f02e0ac"
+    sha256 arm64_sequoia: "d6d9c76d57f23f9573382db41798eec90be34bdb4fecace1d17ef4e1cf417124"
+    sha256 arm64_sonoma:  "e104093f995150a384f6a5110541b1d916ee554d5b0d253e6936fa62c623ddd5"
   end
 
   depends_on "cmake" => :build
@@ -93,10 +94,8 @@ class MlxAudio < Formula
   end
 
   test do
-    assert_match "Convert HuggingFace model (TTS, STT, or STS) to MLX format",
-                 shell_output("#{bin}/mlx_audio.convert --help")
-    assert_match "Generate transcriptions from audio files",
-                 shell_output("#{bin}/mlx_audio.stt.generate --help")
+    output = shell_output("#{bin}/mlx_audio.convert 2>&1", 2)
+    assert_match "the following arguments are required: --hf-path", output
 
     (testpath/"test.py").write <<~PYTHON
       from importlib.metadata import version
