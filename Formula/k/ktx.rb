@@ -9,6 +9,13 @@ class Ktx < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native = "#{os}-#{arch}"
+    minicore_dir = libexec/"lib/node_modules/@kaelio/ktx/node_modules/snowflake-sdk/dist/lib/minicore/binaries"
+    minicore_dir.each_child { |binary| rm binary unless binary.basename.to_s.include?(native) }
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
