@@ -9,7 +9,8 @@ class Httptap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "44a4dd949a12b227fedfd28f306ad32f567621ab7595d59cc4613b180b68f237"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "04223e455e65d76e78d69f0cc56f0e58f0e377234c839dac309e2f12e0749335"
+    sha256 cellar: :any,                 x86_64_linux: "2b7d2ffb3ddc70689b7ebfc33e8e5c7c03da0d41ca48be204e6f9a12ba11b400"
   end
 
   depends_on "go" => :build
