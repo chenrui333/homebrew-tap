@@ -539,6 +539,12 @@
     "last_release": null,
     "stars": 2
   },
+  "github:Jacck/mcp-reasoner": {
+    "forks": 33,
+    "last_commit": "2025-01-08",
+    "last_release": null,
+    "stars": 276
+  },
   "github:Jagalite/superseedr": {
     "forks": 15,
     "last_commit": "2026-02-16",
@@ -1295,6 +1301,12 @@
     "last_release": null,
     "stars": 56
   },
+  "github:alibaba/open-code-review": {
+    "forks": 420,
+    "last_commit": "2026-06-15",
+    "last_release": "2026-06-15",
+    "stars": 7169
+  },
   "github:allinssl/allinssl": {
     "forks": 354,
     "last_commit": "2026-01-29",
@@ -1324,6 +1336,12 @@
     "last_commit": "2025-12-18",
     "last_release": "2025-12-18",
     "stars": 21
+  },
+  "github:anchordotdev/cli": {
+    "forks": 10,
+    "last_commit": "2026-04-20",
+    "last_release": "2025-07-16",
+    "stars": 462
   },
   "github:andrewmd5/dawn": {
     "forks": 11,
@@ -1366,6 +1384,12 @@
     "last_commit": "2025-12-26",
     "last_release": "2025-04-08",
     "stars": 46
+  },
+  "github:ankur-anand/unisondb": {
+    "forks": 21,
+    "last_commit": "2026-03-29",
+    "last_release": null,
+    "stars": 415
   },
   "github:antham/gommit": {
     "forks": 5,
@@ -1516,6 +1540,12 @@
     "last_commit": "2026-01-22",
     "last_release": "2025-04-21",
     "stars": 2337
+  },
+  "github:atcol/hielo": {
+    "forks": 0,
+    "last_commit": "2026-02-21",
+    "last_release": "2025-09-26",
+    "stars": 7
   },
   "github:atinylittleshell/gsh": {
     "forks": 18,
@@ -1895,6 +1925,12 @@
     "last_release": "2019-09-20",
     "stars": 66
   },
+  "github:chainguard-dev/kaniko": {
+    "forks": 91,
+    "last_commit": "2026-06-15",
+    "last_release": "2026-05-13",
+    "stars": 926
+  },
   "github:chalet-dev/chalet": {
     "forks": 1,
     "last_commit": "2024-07-08",
@@ -1906,6 +1942,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-13",
     "stars": 20049
+  },
+  "github:charmbracelet/freeze": {
+    "forks": 98,
+    "last_commit": "2026-06-02",
+    "last_release": "2025-04-01",
+    "stars": 4679
   },
   "github:chenrui333/envtpl": {
     "forks": 1,
@@ -2044,6 +2086,12 @@
     "last_commit": "2026-05-19",
     "last_release": "2026-05-19",
     "stars": 344
+  },
+  "github:codeflash-ai/codeflash": {
+    "forks": 25,
+    "last_commit": "2026-06-15",
+    "last_release": "2026-05-30",
+    "stars": 247
   },
   "github:codesoap/osmar": {
     "forks": 5,
@@ -2561,6 +2609,12 @@
     "last_release": "2026-06-05",
     "stars": 1305
   },
+  "github:eyaltoledano/claude-task-master": {
+    "forks": 2580,
+    "last_commit": "2026-04-28",
+    "last_release": "2026-03-31",
+    "stars": 27525
+  },
   "github:ezpzai/cdx": {
     "forks": 1,
     "last_commit": "2026-03-20",
@@ -2764,6 +2818,12 @@
     "last_commit": "2026-02-16",
     "last_release": null,
     "stars": 100
+  },
+  "github:gigagrug/schema": {
+    "forks": 8,
+    "last_commit": "2026-04-10",
+    "last_release": "2025-12-24",
+    "stars": 218
   },
   "github:ginkida/gokin": {
     "forks": 4,
@@ -3929,6 +3989,12 @@
     "last_release": "2024-02-26",
     "stars": 41
   },
+  "github:mifi/editly": {
+    "forks": 368,
+    "last_commit": "2025-05-12",
+    "last_release": "2025-01-19",
+    "stars": 5435
+  },
   "github:mihaigalos/aim": {
     "forks": 6,
     "last_commit": "2026-02-15",
@@ -3964,6 +4030,12 @@
     "last_commit": "2025-03-18",
     "last_release": "2023-08-28",
     "stars": 263
+  },
+  "github:minimax-ai/minimax-mcp": {
+    "forks": 268,
+    "last_commit": "2026-05-21",
+    "last_release": null,
+    "stars": 1513
   },
   "github:ministackorg/ministack": {
     "forks": 131,
@@ -4180,6 +4252,12 @@
     "last_commit": "2026-06-12",
     "last_release": "2026-06-09",
     "stars": 2169
+  },
+  "github:neuml/paperai": {
+    "forks": 144,
+    "last_commit": "2025-07-09",
+    "last_release": "2025-07-01",
+    "stars": 1762
   },
   "github:neur0map/glazepkg": {
     "forks": 17,
@@ -4565,6 +4643,12 @@
     "last_release": null,
     "stars": 52
   },
+  "github:possibilities/claude-composer": {
+    "forks": 23,
+    "last_commit": "2025-07-31",
+    "last_release": null,
+    "stars": 676
+  },
   "github:pr-pm/prpm": {
     "forks": 13,
     "last_commit": "2026-06-01",
@@ -4654,6 +4738,12 @@
     "last_commit": "2025-12-18",
     "last_release": "2023-10-13",
     "stars": 54
+  },
+  "github:raghavpillai/branchlet": {
+    "forks": 24,
+    "last_commit": "2026-04-13",
+    "last_release": "2026-02-24",
+    "stars": 483
   },
   "github:rails/rails-new": {
     "forks": 33,
@@ -5123,6 +5213,12 @@
     "last_release": "2026-03-06",
     "stars": 6331
   },
+  "github:sirmalloc/ccstatusline": {
+    "forks": 461,
+    "last_commit": "2026-06-15",
+    "last_release": "2026-06-15",
+    "stars": 10765
+  },
   "github:sirrend/terrap-cli": {
     "forks": 0,
     "last_commit": "2023-12-05",
@@ -5422,6 +5518,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-08",
     "stars": 415
+  },
+  "github:telophasehq/tangent": {
+    "forks": 3,
+    "last_commit": "2025-12-31",
+    "last_release": "2025-11-19",
+    "stars": 61
   },
   "github:termide/termide": {
     "forks": 1,
@@ -6005,6 +6107,12 @@
     "last_release": "2025-06-19",
     "stars": 86
   },
+  "github:zilliztech/claude-context": {
+    "forks": 874,
+    "last_commit": "2026-06-08",
+    "last_release": null,
+    "stars": 11851
+  },
   "github:zippoxer/recall": {
     "forks": 12,
     "last_commit": "2026-01-14",
@@ -6118,6 +6226,9 @@
   },
   "npm:superclaude": {
     "repo": "github:gwendall/superclaude"
+  },
+  "npm:task-master-ai": {
+    "repo": "github:eyaltoledano/claude-task-master"
   },
   "npm:testronaut": {
     "repo": "github:mission-testronaut/testronaut-cli"
