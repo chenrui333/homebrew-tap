@@ -25,7 +25,7 @@ class Dotstate < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"dotstate", "completions")
+    generate_completions_from_executable(bin/"dotstate", shell_parameter_format: :clap)
   end
 
   test do
