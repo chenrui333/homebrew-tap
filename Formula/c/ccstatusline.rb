@@ -5,6 +5,11 @@ class Ccstatusline < Formula
   sha256 "93bc3dcb9e1dabccbf581cd83207fd816d69e96acf69cc5397823652a2c5a165"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "3d2c5d0a91369e8e7ef82d593c0765391fb478c147ddad8f4cba39e28027d867"
+  end
+
   depends_on "node"
 
   def install
