@@ -24,5 +24,26 @@ class Xfr < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/xfr --version")
+
+    port = free_port
+    server_log = testpath/"server.log"
+    pid = spawn bin/"xfr", "serve", "--port", port.to_s, "--ipv4", [:out, :err] => server_log.to_s
+
+    50.times do
+      break if server_log.exist? && server_log.read.include?("TCP listening")
+
+      sleep 0.1
+    end
+    assert_match "TCP listening", server_log.read
+
+    output = shell_output("#{bin}/xfr --no-tui --json --quiet --time 1s --bitrate 1M " \
+                          "--port #{port} --ipv4 127.0.0.1")
+    assert_match '"duration_ms":', output
+    assert_match '"throughput_mbps":', output
+  ensure
+    if pid
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
