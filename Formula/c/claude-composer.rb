@@ -7,6 +7,15 @@ class ClaudeComposer < Formula
   sha256 "28d47fcb686f44258eb2acbee56bc996799d8b8d457189084502f197dd0d486d"
   license "Unlicense"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256               arm64_tahoe:   "cf6aa6019f798c2c23ffad27a99cceea03e0175ecf0b966e534031379a7014bb"
+    sha256               arm64_sequoia: "8000fe403feb16181669e5f1e418ac2aaff1b8e30bee8157c54b9592d8d80b26"
+    sha256               arm64_sonoma:  "def65288849958ea56fe21a8c011c1db619dabbf4eaff5512d512a6995f1ef02"
+    sha256 cellar: :any, arm64_linux:   "64f4234ec6d327e58d36994d63f9e461926f23470908957d47c1db4bdc32aa68"
+    sha256 cellar: :any, x86_64_linux:  "393dfec1844ac2f9f9d44a3d4f202461bdb8337d027aee791dc2c05509d16c71"
+  end
+
   depends_on "node"
 
   on_macos do
