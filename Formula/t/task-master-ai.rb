@@ -5,6 +5,15 @@ class TaskMasterAi < Formula
   sha256 "5b792287ec2e61d3428bf8bf680fe6df0fecfe77554342c01ac0feebad25c5a5"
   license "MIT" # should be "LicenseRef-MIT-with-commons-clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256               arm64_tahoe:   "b73c8936832232cded1bf7b33544e1703ff2a4312f2e15830377ccb6f30777ed"
+    sha256               arm64_sequoia: "66870ece186a4d08ee4ee4bfc3791679d899a25188c621cbbc1d8cf98b5b74db"
+    sha256               arm64_sonoma:  "66870ece186a4d08ee4ee4bfc3791679d899a25188c621cbbc1d8cf98b5b74db"
+    sha256 cellar: :any, arm64_linux:   "e2cb45228de61b4df9d32b71e1ca8dadd36da910a211aba339d672f49af6b4c2"
+    sha256 cellar: :any, x86_64_linux:  "0a78cec072e91b25eba9692416665fee67a6a3b4286f1361fe7b01b4dcb81cc4"
+  end
+
   depends_on "node"
 
   on_macos do
