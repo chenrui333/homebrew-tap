@@ -7,6 +7,15 @@ class Paperai < Formula
   sha256 "e13e4d6d17bfb115daab1fc8f76e850afba35627c097c93ca8f5bb4ed354afbf"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "d0a437c00466aa72dc10f305115b837480ee9a934dec5205ca50f63412471424"
+    sha256 arm64_sequoia: "b3d1fc599f1dd8519857f2f3e5d88902f89f6913387ac03c0e83387675ceec68"
+    sha256 arm64_sonoma:  "41acc743285a2aa1fbce9029fa4f509e97b22404c5501a62b69933b9b5dd1eb2"
+    sha256 arm64_linux:   "b1fae4c9ff92e1c35c659532dc597f69495b5ff54c53211301d0a536fecc286a"
+    sha256 x86_64_linux:  "dffaeea4a5f2b3d82722111b636076eb2037cbde3ad7065e2472af62e5a61c75"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
