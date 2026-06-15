@@ -8,11 +8,11 @@ class PvMigrate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "117f0d82f5db13e6a21b6f59199c24aa5640e7d20dbb8fa3045d4c1f51d7d093"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e75c160ec46219c9a882c6b9a0dbf67359c7506ff6bdb0de3a7e99eb9f1b0c0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee737de805c743d7b1d28d04617c40ea94bc8d61ee1236918d180de0ea00d102"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3182019dbb5a08c683b0d596213c56eb225cc6632c158a0de1b2247d70706fb"
-    sha256 cellar: :any,                 x86_64_linux:  "f4ed6b6d349411194fcf239497a4d6bfd120275112ed4f2ea48db78da9ea6159"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adb5d44fdd481bd25a1f14b495b3c5b6287a7a1aa98d809748f3f0480a5aee93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25f1d203acb60aa9b32e876534fb38048b615b138ad224d0412eb29c47ab99f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d363e3bc3b694b6d5f43d226321adf0f0480b172031e0605b955c05754f93450"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f8a77597ffcb338171ed25bffa18815ab92d71b0fdbb75286f5e4d244129ea2"
+    sha256 cellar: :any,                 x86_64_linux:  "674ab2fcfe1e6e7ab516003137d114acfeb37915a96dac74d27f8e740074dfa6"
   end
 
   depends_on "go" => :build
