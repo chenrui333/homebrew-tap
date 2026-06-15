@@ -6,6 +6,15 @@ class Anchor < Formula
   license "MIT"
   head "https://github.com/anchordotdev/cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81995a95b6f3c95bf4ea5a255abaa67f8320680cf8c0756bd76be7379f2503af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81995a95b6f3c95bf4ea5a255abaa67f8320680cf8c0756bd76be7379f2503af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81995a95b6f3c95bf4ea5a255abaa67f8320680cf8c0756bd76be7379f2503af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fd16f2a11c266d17de66066bd88ebfc29f340bb638805d32c0698f1756a86a8"
+    sha256 cellar: :any,                 x86_64_linux:  "57b31049129026a952f33deb3c00d4a7ca1f0da30407f4617085612edc8e9beb"
+  end
+
   depends_on "go" => :build
 
   def install
