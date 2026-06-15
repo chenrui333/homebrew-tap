@@ -5,6 +5,15 @@ class ClaudeContextMcp < Formula
   sha256 "78c5117933539bfb2125efc7dbd9126e77552e717d88beb6c3f6b51c77e6a2e6"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256               arm64_tahoe:   "f4d2f06fd4dac42a7612ae3dc09852e932d17d3a493b89d70a9ff29f73b30f89"
+    sha256               arm64_sequoia: "1f960f485299080e69ec62b1ad59e7d173411c1d6f7e71c468d6644705178aab"
+    sha256               arm64_sonoma:  "44cfe9950bc21a4fe38c002b64137ab4e9d16102ddf91b770edbbf472d563969"
+    sha256 cellar: :any, arm64_linux:   "ba6a066de7663c95a24e84be0cdbd9220dc4675247a5198ceab6bc65f0f1d0e6"
+    sha256 cellar: :any, x86_64_linux:  "5071f0dffd40507d681200844015e2a1c9523c83eb4b9828222bddd79e18fbc2"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "python@3.14" => :build
