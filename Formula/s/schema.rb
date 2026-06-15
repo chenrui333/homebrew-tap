@@ -6,6 +6,15 @@ class Schema < Formula
   license "Apache-2.0"
   head "https://github.com/gigagrug/schema.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1607ff84f13c5c833e5acaeb81b2e63f7f1bd450ed0978e734abe4390e87686b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fe2b90b030f0b7e902a43c4b3f07eae4cc5dd2df7f0f3455104dcba990a2424"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc915d7c04d39911b763067ff20ba58d37c01201ec29fd7ff8c6f1684a56baca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f98d26cfa813dadd084c042b0d0faf9cb0332e180ebe6ed70090c03f85386ead"
+    sha256 cellar: :any,                 x86_64_linux:  "0b7dfa5d1407ba960996bec3c2ee3c896a14f8f14168118da2fc61444baf3913"
+  end
+
   depends_on "go" => :build
 
   def install
