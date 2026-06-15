@@ -8,6 +8,15 @@ class Codeflash < Formula
   license "BUSL-1.1"
   head "https://github.com/codeflash-ai/codeflash.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "24ad8c7af52f987aed0e4de918a23a1cacc3a3cc5e7c141259531af182a0e142"
+    sha256 cellar: :any, arm64_sequoia: "864137f0ef80ebc06b2e90d77e6f02a72bf5a098d0243070cc11b92a56fcb610"
+    sha256 cellar: :any, arm64_sonoma:  "d0819cebea31a1b937238eeef236141cec57ea4ed69df3ed0301f6dfa91d9569"
+    sha256 cellar: :any, arm64_linux:   "4e6866e83476cfe829d465df6d7c432a83d17eb8d67c6e19732baa953013f616"
+    sha256 cellar: :any, x86_64_linux:  "863ac09bfdac0c6ec5a989ecab1489bc3453833d2de0cf7b238d6c08e14ca7d0"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for tree-sitter
   depends_on "certifi" => :no_linkage
