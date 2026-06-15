@@ -7,6 +7,15 @@ class MinimaxMcpServer < Formula
   sha256 "73e325d564cacbfe5316ecd1920672974588ff63aeeeedb8e0cd7505f394a6ff"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256               arm64_tahoe:   "b04b58cc360147a7bf79d4360a68768c557cc565cb0d1f46154925aef6544b41"
+    sha256               arm64_sequoia: "8e7928b8773d7435298a0389d6805b92349d11e555bcbafbbb82ecc78b6f1e4d"
+    sha256               arm64_sonoma:  "badc460abae85b8b04842925cc3fea650e9c92b507ae7d1b5ac1dc476c8230d6"
+    sha256 cellar: :any, arm64_linux:   "68ce665f8d5ef8a23adf277036ed34a12eaaf12f3491c6a7752c7cddf584df3f"
+    sha256 cellar: :any, x86_64_linux:  "097c3c386f79fb9b4e8cab46db2947355694e3613ed5085d6b80f9756443ae5c"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkgconf" => :build
