@@ -331,6 +331,7 @@ brew install --cask <tool>
 - `floci`
 - `flow-editor`
 - `flowgger`
+- `fnc`
 - `fnox`
 - `fnug`
 - `fontliberator`
@@ -568,6 +569,7 @@ brew install --cask <tool>
 - `mcp-gsuite`
 - `mcp-manager`
 - `mcp-obsidian`
+- `mcp-reasoner`
 - `mcp-remote`
 - `mcp-server-airbnb`
 - `mcp-server-cloudflare`
