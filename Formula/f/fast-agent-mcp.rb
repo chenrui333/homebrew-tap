@@ -8,6 +8,15 @@ class FastAgentMcp < Formula
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "250b1a65ade3a171cbd9ee80280462d155f6980bbaf2ff7501127f60b860163b"
+    sha256 cellar: :any, arm64_sequoia: "162e6cf8097c292fd1d17fcfb5eef527ccc4bbfc367feba11c40f08aafcc5feb"
+    sha256 cellar: :any, arm64_sonoma:  "5214faaf9bd33ac304f3f96ee5bc8bc0cee57c1c2777000fdef60f5018570e86"
+    sha256 cellar: :any, arm64_linux:   "63de25742d764224df032185c4b603a8c8e589267ee37f47c3bae9ecd651e9a5"
+    sha256 cellar: :any, x86_64_linux:  "709429c55fdaec7500362a395ef565892ab15bb5e06b1fbd57bacddc4913eea0"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
