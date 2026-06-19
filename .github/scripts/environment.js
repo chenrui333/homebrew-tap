@@ -70,7 +70,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
     async function detect_platform_scope_from_formulae() {
         const formula_files = await changed_formula_files()
         if (formula_files.length === 0) {
-            return 'all'
+            return 'unknown'
         }
 
         const workspace = process.env.GITHUB_WORKSPACE || process.cwd()
@@ -79,7 +79,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
         for (const formula_file of formula_files) {
             const formula_path = path.join(workspace, formula_file)
             if (!fs.existsSync(formula_path)) {
-                return 'all'
+                return 'unknown'
             }
 
             const content = fs.readFileSync(formula_path, 'utf8')
@@ -98,6 +98,11 @@ module.exports = async ({github, context, core}, formula_detect) => {
     async function detect_platform_scope() {
         const linux_only = label_names.includes('linux-only')
         const macos_only = label_names.includes('macos-only')
+        const formula_scope = await detect_platform_scope_from_formulae()
+
+        if (formula_scope !== 'unknown') {
+            return formula_scope
+        }
 
         if (linux_only && !macos_only) {
             return 'linux'
