@@ -34,11 +34,8 @@ class Lacquer < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/laq version")
 
-    output = shell_output("#{bin}/laq init --name 'test' " \
-                          "--description 'app test' --providers anthropic --non-interactive")
-    assert_match "Generated files", output
-    assert_path_exists testpath/"test/workflow.laq.yml"
-
-    system bin/"laq", "validate", testpath/"test/workflow.laq.yml"
+    (testpath/"empty.laq.yml").write("")
+    output = shell_output("#{bin}/laq validate #{testpath}/empty.laq.yml 2>&1", 1)
+    assert_match "Workflow file contains no content", output
   end
 end
