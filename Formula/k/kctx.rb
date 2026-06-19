@@ -1,8 +1,8 @@
 class Kctx < Formula
   desc "Kubernetes context engine for humans and AI agents"
   homepage "https://github.com/lucasepe/kctx"
-  url "https://github.com/lucasepe/kctx/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "eb53f1ecfa479f236319f6cb7f3283e10dc78e4b482ec4d3c32dd1b648efbc44"
+  url "https://github.com/lucasepe/kctx/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "34b9892f3d66514322ece2a0f586f146dc8bbe6a7e58665abb7f9717f928de53"
   license "Apache-2.0"
   head "https://github.com/lucasepe/kctx.git", branch: "main"
 
