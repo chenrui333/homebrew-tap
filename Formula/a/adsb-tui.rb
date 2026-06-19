@@ -8,12 +8,11 @@ class AdsbTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c9d075646e96f5252efa553b147d72c28506bbfeb6378b54134ce00edc2d724"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2635bb3617529d36e79a01a89741bfd1cfc0604821b9a3cfa752fe3e44b7071"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b1849a07b506170620f8b062ede5dbbe582d8b61121856f7b0438f0b46c23e3"
-    sha256 cellar: :any,                 arm64_linux:   "a41c08940e96fc14d498d2618d0339986f6110f7078f05a9cb168a34ff87b749"
-    sha256 cellar: :any,                 x86_64_linux:  "35ae6230b44ddb63c39d309bbb158950e3dfcc3641451d2db912f2b6f8bf8219"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f185e2300135cfde1c11bd43e21cdf3470ffa7b504f11e002c9fecba4aad613"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "162e7baa6e4c53df84fc5b5f8466b017adb1baf32a5c988b070f8defa30d3ec4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6783413b06bf8dff98ca81955fe6fc03a990c07f12d7be1b015dc2d60c375365"
+    sha256 cellar: :any,                 arm64_linux:   "44e95854c10be27430507d73d157bd7bc122cf8406495c6fdba33fa9c1cddb92"
+    sha256 cellar: :any,                 x86_64_linux:  "cb175a34887b27524abe3cbbe19de32f6d38d389021fecb745a22c62f9a4e68f"
   end
 
   depends_on "rust" => :build
