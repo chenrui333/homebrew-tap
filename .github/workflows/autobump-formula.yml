@@ -49,9 +49,20 @@ jobs:
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump formulae
-        uses: Homebrew/actions/bump-packages@fc695c54c2032716dd4cedd007489c8e32fc8a5d
         continue-on-error: true
-        with:
-          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-          formulae: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
-          fork: false
+        env:
+          HOMEBREW_DEVELOPER: 1
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          HOMEBREW_TEST_BOT_AUTOBUMP: 1
+          INPUT_FORMULAE: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
+        run: |
+          formulae=()
+          for formula in $INPUT_FORMULAE; do
+            if [[ "$formula" == */*/* ]]; then
+              formulae+=("$formula")
+            else
+              formulae+=("chenrui333/tap/$formula")
+            fi
+          done
+
+          brew bump --full-name --no-fork --open-pr --formulae "${formulae[@]}"
