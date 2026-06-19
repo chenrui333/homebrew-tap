@@ -8,12 +8,11 @@ class Checksec < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "993131876eef90a8c62834707ecec1aabf129b1ac917226dda2dfc9368b0df80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cae962674fa2917ba5b5feb4dbb71c1874e1700713838367c8f2687c3bcef05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "404f94518d6a91da817e8fd7d50fd3b0d0822ea3697314ca0f278af9789e998d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "713cf28b0ef8b4f8b9e7dba2d6d1ba0da9bf8aef99a212e57f6b1b44cbd88c3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc18ac82fccd7281fdb7ca2ddfe9a0955fc4256c665e744db19bb0c709a1cadd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c949bfa6b9a06c2620c7b9357d2249e19632e0fb7f760a1469cf72cb6b0bea55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a11106e2db557479af0485942a08c44e08a9abe4d7a4138ac69540ae22cca0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea6052a421b6e64c3e2a061620e9b51ab64c2f715cd04c3642e25eeb70b61cb3"
+    sha256 cellar: :any,                 arm64_linux:   "0afc71c6854db0051759164e0670d8c924d263c3615bf9f4ddff6de5d5719f47"
+    sha256 cellar: :any,                 x86_64_linux:  "eb4d81e41567905b565f8fe316dd7b413e87cab91eaeae2ad4f275cee7012344"
   end
 
   depends_on "go" => :build
