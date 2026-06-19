@@ -25,7 +25,7 @@ class Kplane < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/kplane"
 
-    generate_completions_from_executable(bin/"kplane", "completion")
+    generate_completions_from_executable(bin/"kplane", shell_parameter_format: :cobra)
   end
 
   test do
