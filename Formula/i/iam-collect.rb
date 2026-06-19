@@ -5,11 +5,6 @@ class IamCollect < Formula
   sha256 "ca9e7b497246f63e7ab1cf9e360472a78ef8a7c5f3528a4b88cf1945eec67e94"
   license "AGPL-3.0-or-later"
 
-  bottle do
-    root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "9cd0188599565f7aaccfab6587220cde834939ae957064cda3a85dea88ddb669"
-  end
-
   depends_on "node"
 
   # Preserve npm's env shebangs so the JavaScript payload stays platform-independent.
