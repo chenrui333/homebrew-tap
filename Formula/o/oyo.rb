@@ -1,8 +1,8 @@
 class Oyo < Formula
   desc "Step-through diff viewer"
   homepage "https://github.com/ahkohd/oyo"
-  url "https://github.com/ahkohd/oyo/archive/refs/tags/v0.1.33.tar.gz"
-  sha256 "4e2ee2332caa5cdc360574320740d5ff0225e738f0026c3d33feca39c1af8f12"
+  url "https://github.com/ahkohd/oyo/archive/refs/tags/v0.1.35.tar.gz"
+  sha256 "fa62f3578935120fa526dd1251d5e88f5cf969b833db1217d9c3f1a65501f9ae"
   license "MIT"
   head "https://github.com/ahkohd/oyo.git", branch: "main"
 
