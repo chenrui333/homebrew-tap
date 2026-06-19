@@ -39,7 +39,9 @@ class Anchor < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/anchor"
 
-    generate_completions_from_executable(bin/"anchor", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(
+      bin/"anchor", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
+    )
   end
 
   test do
