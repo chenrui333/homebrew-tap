@@ -1,8 +1,8 @@
 class Sidecar < Formula
   desc "Terminal UI for diffs, file trees, conversation history, and tasks"
   homepage "https://github.com/marcus/sidecar"
-  url "https://github.com/marcus/sidecar/archive/refs/tags/v0.84.0.tar.gz"
-  sha256 "43b7c821d9787297e09e61e1f5d3389d3c6f2c4000c7b7b5fb991b0cbe7db198"
+  url "https://github.com/marcus/sidecar/archive/refs/tags/v0.86.0.tar.gz"
+  sha256 "6f01f217d1f425b894e798ecbc8b867d015c218d7235a7abfa8644c83b4f83f2"
   license "MIT"
   head "https://github.com/marcus/sidecar.git", branch: "main"
 
