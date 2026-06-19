@@ -36,7 +36,7 @@ class Tfjournal < Formula
     ].join(" ")
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"tfjournal"), "."
-    generate_completions_from_executable(bin/"tfjournal", "completion")
+    generate_completions_from_executable(bin/"tfjournal", shell_parameter_format: :cobra)
   end
 
   test do
