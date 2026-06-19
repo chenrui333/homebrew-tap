@@ -9,11 +9,12 @@ class Togo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96934431cbe074cd7397b6adbeb09c0e1b6c0ad2d3680c311de58fcc62f0e748"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96934431cbe074cd7397b6adbeb09c0e1b6c0ad2d3680c311de58fcc62f0e748"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96934431cbe074cd7397b6adbeb09c0e1b6c0ad2d3680c311de58fcc62f0e748"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c116fe1067f96ac31c9e70e8b1ec5a415ddc6b74743bc32dd1d5e90fa8088108"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbae20d9130231b8dc057336e81a1c70ba0bd1f8d29e1a5e90c61ea678d9ecd2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e44c7a76abc558af46fcce7101387b17cfa1a39e96a49fc81f4fee8ad0deddf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e44c7a76abc558af46fcce7101387b17cfa1a39e96a49fc81f4fee8ad0deddf6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e44c7a76abc558af46fcce7101387b17cfa1a39e96a49fc81f4fee8ad0deddf6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99cf3929e336f3a17fbc2561d2e373c67a0744b119b219034172d6091cfaa1ab"
+    sha256 cellar: :any,                 x86_64_linux:  "7c1bc186afc305b228ea832dce97c35f670f827f7adf03cafb8142539be6ab4f"
   end
 
   depends_on "go" => :build
