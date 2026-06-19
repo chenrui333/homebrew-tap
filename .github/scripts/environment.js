@@ -8,15 +8,120 @@
  * - fail-fast: Whether to stop on first failing matrix build
  * - timeout-minutes: Timeout for build jobs
  * - container: Container configuration for Linux builds
+ * - build-matrix: JSON matrix for formula build jobs
  * - test-bot-formulae-args: Arguments for brew test-bot
  */
 module.exports = async ({github, context, core}, formula_detect) => {
-    const { data: { labels: labels } } = await github.rest.pulls.get({
+    const fs = require('fs')
+    const path = require('path')
+    const is_pull_request = context.eventName === 'pull_request'
+    const labels = is_pull_request ? (await github.rest.pulls.get({
         owner: context.repo.owner,
         repo: context.repo.repo,
         pull_number: context.issue.number
-    })
+    })).data.labels : []
     const label_names = labels.map(label => label.name)
+    const linux_runner = 'ubuntu-22.04'
+    const linux_arm64_runner = 'ubuntu-22.04-arm'
+    const container = {
+        image: 'ghcr.io/homebrew/brew:main',
+        options: '--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED'
+    }
+
+    const macos_matrix = [
+        {runner: 'macos-26', cleanup: true},
+        {runner: 'macos-15', cleanup: true},
+        {runner: 'macos-14', cleanup: true},
+        {runner: 'macos-15-intel', cleanup: true}
+    ]
+    const linux_matrix = [
+        {
+            runner: linux_runner,
+            container,
+            workdir: '/github/home',
+            cleanup: false,
+            timeout: 4320
+        },
+        {
+            runner: linux_arm64_runner,
+            container,
+            workdir: '/github/home',
+            cleanup: false,
+            timeout: 4320
+        }
+    ]
+
+    async function changed_formula_files() {
+        if (!is_pull_request) {
+            return []
+        }
+
+        const files = await github.paginate(github.rest.pulls.listFiles, {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.issue.number,
+            per_page: 100
+        })
+        return files
+            .map(file => file.filename)
+            .filter(filename => /^Formula\/.*\.rb$/.test(filename))
+    }
+
+    async function detect_platform_scope_from_formulae() {
+        const formula_files = await changed_formula_files()
+        if (formula_files.length === 0) {
+            return 'all'
+        }
+
+        const workspace = process.env.GITHUB_WORKSPACE || process.cwd()
+        const scopes = new Set()
+
+        for (const formula_file of formula_files) {
+            const formula_path = path.join(workspace, formula_file)
+            if (!fs.existsSync(formula_path)) {
+                return 'all'
+            }
+
+            const content = fs.readFileSync(formula_path, 'utf8')
+            if (/^\s*depends_on\s+:linux\b/m.test(content)) {
+                scopes.add('linux')
+            } else if (/^\s*depends_on\s+:macos\b/m.test(content)) {
+                scopes.add('macos')
+            } else {
+                scopes.add('all')
+            }
+        }
+
+        return scopes.size === 1 ? [...scopes][0] : 'all'
+    }
+
+    async function detect_platform_scope() {
+        const linux_only = label_names.includes('linux-only')
+        const macos_only = label_names.includes('macos-only')
+
+        if (linux_only && !macos_only) {
+            return 'linux'
+        }
+        if (macos_only && !linux_only) {
+            return 'macos'
+        }
+        if (linux_only && macos_only) {
+            return 'all'
+        }
+
+        return detect_platform_scope_from_formulae()
+    }
+
+    function build_matrix_for_scope(scope) {
+        switch (scope) {
+        case 'linux':
+            return linux_matrix
+        case 'macos':
+            return macos_matrix
+        default:
+            return macos_matrix.concat(linux_matrix)
+        }
+    }
     
     // Check for syntax-only label
     if (label_names.includes('CI-syntax-only')) {
@@ -28,8 +133,8 @@ module.exports = async ({github, context, core}, formula_detect) => {
     }
 
     // Configure Linux runners
-    core.setOutput('linux-runner', 'ubuntu-22.04')
-    core.setOutput('linux-arm64-runner', 'ubuntu-22.04-arm')
+    core.setOutput('linux-runner', linux_runner)
+    core.setOutput('linux-arm64-runner', linux_arm64_runner)
 
     // Configure fail-fast behavior
     if (label_names.includes('CI-no-fail-fast')) {
@@ -50,10 +155,12 @@ module.exports = async ({github, context, core}, formula_detect) => {
     }
     
     // Configure Linux container
-    const container = {}
-    container.image = 'ghcr.io/homebrew/brew:main'
-    container.options = '--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED'
     core.setOutput('container', JSON.stringify(container))
+
+    // Configure build matrix
+    const platform_scope = await detect_platform_scope()
+    console.log(`Formula build matrix platform scope: ${platform_scope}`)
+    core.setOutput('build-matrix', JSON.stringify(build_matrix_for_scope(platform_scope)))
 
     // Build test-bot arguments
     const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-recursive-dependents"]
