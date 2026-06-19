@@ -8,12 +8,11 @@ class Depsguard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6e43deb5b5c8aaab5cb0090eae024d6b00d27c606df90a0f1c2d4b6819dc6c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bddb10666d3e848d795cf022243fffbd997552a8847ab2ace3d43428280c11f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6003f578b87eea7800b533258d88f8e5d50ea844d91e0d4797d52a733c18a9e0"
-    sha256 cellar: :any,                 arm64_linux:   "676b3e4257164ae07205ee56972f158f63e0e97f44617e686981a3c0a28614e4"
-    sha256 cellar: :any,                 x86_64_linux:  "cfd3fb10d29222fed893cb49a3eccb40f4f6c6ead1fe8426a18ca293ccb1530b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "969f237d1d73624ebb86ee24aa7b7688e37482c4e205cfbc1f3c6e2838c6e234"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23d89185114b0dd14a3e88487a15da7c2155bf62c3344522a87fdec558b670f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4879251696388ff1b229350042cec2c8aaa523fbca77b643830db6697f60eb1b"
+    sha256 cellar: :any,                 arm64_linux:   "2267e875717295e3c313e405e523988bd168ae02cbb404e193d385afe13fb377"
+    sha256 cellar: :any,                 x86_64_linux:  "ad53d205b2240b30c0b668efeb6665911ccf87336c976421f4a9df0b847ddcea"
   end
 
   depends_on "rust" => :build
