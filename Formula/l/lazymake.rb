@@ -25,7 +25,7 @@ class Lazymake < Formula
       -X github.com/rshelekhov/lazymake/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/lazymake"
-    generate_completions_from_executable(bin/"lazymake", "completion", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"lazymake", shell_parameter_format: :cobra)
   end
 
   test do
