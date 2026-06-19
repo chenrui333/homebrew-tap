@@ -10,11 +10,11 @@ class Artui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2dc5f4c9a645d79fffc19791851cee189e21653d2a5a667df3fb968ba21f622a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0cda4bc1ee4b3903167c2159aed93568ad5940abe659ca924cd0db08d257233f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc2bcb4104dc4bae3aed0524111dcc8c733329292c915fd116535e131a654eb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad2d09ae9636e4c83efd9474ba854ffb752efd0b4e89a1104da7d456e6c92e90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d778e48c2880b35395dba8b017c2977e510dec4778d9deda468f72f7e7d3c5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41e18e159b60e2d933c393965c49ddbed330f67e0ee8a245c0554f4dc956337d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18300e9a9a3d1d1861217635c50b98da11613eccc442f5fe4a742024f9c61b52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "423b6e7d5ce2a9d128bbffc17870eab19435545c6e08fbdb60995707f701ca03"
+    sha256 cellar: :any,                 arm64_linux:   "c999f7de5f5b32320358ae3f7e44ca123ec9dfdd63077b1f3e8ed046d040b640"
+    sha256 cellar: :any,                 x86_64_linux:  "e10686440ec086605ba00715209714b5e612cb21715b0ae525f40bbcf55ad0fe"
   end
 
   depends_on "libyaml"
