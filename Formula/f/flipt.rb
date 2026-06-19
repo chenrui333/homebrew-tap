@@ -1,8 +1,8 @@
 class Flipt < Formula
   desc "Enterprise-ready, Git native feature management solution"
   homepage "https://flipt.io/"
-  url "https://github.com/flipt-io/flipt/archive/refs/tags/v2.9.0.tar.gz"
-  sha256 "b5055c61b79c3302e4c37095aa3d2ad901a22366ca8b35f76b65142ac033a81a"
+  url "https://github.com/flipt-io/flipt/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "a3a438127686cf1c93ad59f8804dd42f9419587af4c9096929b101326172297f"
   # license "FCL-1.0-MIT" # Fair Core License, Version 1.0, MIT Future License
   head "https://github.com/flipt-io/flipt.git", branch: "v2"
 
