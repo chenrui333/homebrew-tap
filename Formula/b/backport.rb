@@ -1,8 +1,8 @@
 class Backport < Formula
   desc "CLI tool that automates the process of backporting commits"
   homepage "https://github.com/sorenlouv/backport"
-  url "https://registry.npmjs.org/backport/-/backport-12.0.0.tgz"
-  sha256 "a918fcddc49234279681a1d402e87ede7f65f7f971633dca7afcfddee1d66b06"
+  url "https://registry.npmjs.org/backport/-/backport-12.0.2.tgz"
+  sha256 "db2100a1141cfec0370898e1d379991dea59cc15f0546a620bab3d0f08388f5c"
   license "Apache-2.0"
 
   bottle do
