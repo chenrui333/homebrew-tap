@@ -1,8 +1,8 @@
 class Claws < Formula
   desc "Terminal UI for AWS resource management"
   homepage "https://github.com/clawscli/claws"
-  url "https://github.com/clawscli/claws/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "93fc3bde4409475ae48d8924dfaccff5b231d0a5cb36034b81b556b361bed1e0"
+  url "https://github.com/clawscli/claws/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "ef2d006e709f315fa09ed53a407fba6887918c1672f615d6b8fd059fd6600acd"
   license "Apache-2.0"
   head "https://github.com/clawscli/claws.git", branch: "main"
 
