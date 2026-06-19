@@ -7,7 +7,7 @@ class Clawhub < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "558542216aa91d948362cf89856c53211204b2833751ab02557c2f94ee7b18de"
+    sha256 cellar: :any_skip_relocation, all: "d6cb6a352d5137f17143dc7ec5d9d659a995a4f2ae725188f7d120772b858803"
   end
 
   depends_on "node"
