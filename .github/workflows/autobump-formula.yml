@@ -17,6 +17,9 @@ on:
 permissions:
   contents: read
 
+env:
+  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
+
 jobs:
   autobump:
     runs-on: macos-latest
@@ -51,5 +54,4 @@ jobs:
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           formulae: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
-          tap: chenrui333/tap
           fork: false

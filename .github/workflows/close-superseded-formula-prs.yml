@@ -26,6 +26,7 @@ env:
   GH_REPO: ${{ github.repository }}
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
+  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
 
 jobs:
   close-superseded-prs:

@@ -13,6 +13,9 @@ concurrency:
   group: formula-status-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
+
 jobs:
   generate-metadata:
     runs-on: macos-latest

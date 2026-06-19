@@ -5,6 +5,9 @@ on:
     types:
       - labeled
 
+env:
+  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
+
 jobs:
   cask-merge:
     if: |
