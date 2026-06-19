@@ -1,8 +1,8 @@
 class Kimiflare < Formula
   desc "Terminal coding agent powered by Kimi-K2.6 on Cloudflare Workers AI"
   homepage "https://github.com/sinameraji/kimiflare"
-  url "https://registry.npmjs.org/kimiflare/-/kimiflare-0.60.1.tgz"
-  sha256 "dca7e2572562a8250a639c50ad5ab4c76b07cc81399e96158c41452716222c39"
+  url "https://registry.npmjs.org/kimiflare/-/kimiflare-0.88.3.tgz"
+  sha256 "34f0ca3edf7a6323b9e195057a6e877ba81e62fcb9e75d1955de3d6125431a1c"
   license "MIT"
 
   bottle do
