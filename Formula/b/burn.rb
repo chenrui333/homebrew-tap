@@ -21,7 +21,7 @@ class Burn < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/burn"
 
-    generate_completions_from_executable(bin/"burn", "completion", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"burn", shell_parameter_format: :cobra)
   end
 
   test do
