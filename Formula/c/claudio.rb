@@ -19,7 +19,9 @@ class Claudio < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/claudio"
 
-    generate_completions_from_executable(bin/"claudio", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(
+      bin/"claudio", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
+    )
   end
 
   test do
