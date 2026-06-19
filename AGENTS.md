@@ -462,6 +462,13 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
 - Formula version bumps are owned by [autobump-formula.yml](.github/workflows/autobump-formula.yml). Keep Renovate from opening `Formula/**` update PRs; if Renovate proposes a formula update, close it as a duplicate of the BrewTestBot/autobump PR or update [.github/renovate.json5](.github/renovate.json5).
 - Do not add `Casks/**` to Renovate ignore rules just to mirror `Formula/**`. Renovate's current Homebrew manager does not scan casks, and leaving `Casks/**` visible preserves future native cask support. Cask bumps remain owned by [autobump-cask.yml](.github/workflows/autobump-cask.yml) unless the repo intentionally changes policy.
 
+## Workflow Maintenance
+
+- For workflows that create commits directly on `main`, such as [update-formula-list.yml](.github/workflows/update-formula-list.yml), fetch `refs/heads/main` into `refs/remotes/origin/main` before deciding whether there is anything to push. If `HEAD` is already an ancestor of `refs/remotes/origin/main`, exit cleanly. Otherwise rebase onto `refs/remotes/origin/main` and push with a normal `git push origin HEAD:main`; never force-push `main`. Treat rebase conflicts as deterministic failures with a clear log, and retry only push rejections caused by `main` moving again.
+- For platform-aware formula build matrices, inspect changed formula files before trusting coarse triage labels. Mixed platform-only and portable formula changes, or formulae containing both `depends_on :linux` and `depends_on :macos`, must use the full matrix. Use `linux-only` or `macos-only` labels only as a fallback when formula contents cannot be inspected.
+- For workflows where a dependency job intentionally runs only on pull requests, keep non-PR events explicitly allowed through skipped dependency jobs. Do not require a PR-only job to have `success` on `push`, `schedule`, or `workflow_dispatch` events.
+- When pinning a workflow container to a specific Ubuntu generation, pin the host runner to the matching `ubuntu-<version>` label instead of `ubuntu-latest`. YAML workflow container references should use Renovate-maintained digests; JS-generated dynamic container values may use Homebrew's `main` tag only when a nearby comment explains why a floating tag is intentional.
+
 ## CI Failures
 
 - Reproduce failures locally before debugging

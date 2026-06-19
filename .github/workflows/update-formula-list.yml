@@ -42,14 +42,22 @@ jobs:
       - name: Push changes back
         if: always()
         run: |
-          if git diff --quiet origin/main..HEAD; then
-            echo "No local changes to push."
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          git rev-parse --verify refs/remotes/origin/main >/dev/null
+
+          if git merge-base --is-ancestor HEAD refs/remotes/origin/main; then
+            echo "No local commit to push."
             exit 0
           fi
 
           for attempt in {1..3}; do
-            git fetch origin main
-            git rebase origin/main
+            git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+            git rev-parse --verify refs/remotes/origin/main >/dev/null
+            if ! git rebase refs/remotes/origin/main; then
+              echo "Failed to rebase generated formula list onto origin/main." >&2
+              git rebase --abort || true
+              exit 1
+            fi
 
             if git push origin HEAD:main; then
               exit 0
