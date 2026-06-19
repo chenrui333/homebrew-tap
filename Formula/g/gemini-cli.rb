@@ -1,8 +1,8 @@
 class GeminiCli < Formula
   desc "CLI for Google Gemini"
   homepage "https://github.com/reugn/gemini-cli"
-  url "https://github.com/reugn/gemini-cli/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "5ab91899025696f63a6cf18d8f3cccd757e6bedcbe49277c2f9b0d62d27bd9a9"
+  url "https://github.com/reugn/gemini-cli/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "f875af3da015efd435f36d6a23dc3699c041621879c34a8a51679db723ff1d75"
   license "MIT"
   head "https://github.com/reugn/gemini-cli.git", branch: "main"
 
@@ -25,6 +25,6 @@ class GeminiCli < Formula
     assert_match version.to_s, shell_output("#{bin}/gemini --version")
 
     output = shell_output("#{bin}/gemini test 2>&1", 1)
-    assert_match "Error: You need an auth option to use this client", output
+    assert_match "api key is required for Google AI backend", output
   end
 end
