@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/1e/d8/2ce84e30455d4ed99dbcf057296b5a053c380b3688df119211bc8a60821e/gitlabform-5.5.4.tar.gz"
-  sha256 "b47d9f8f1a2b3dc83415bd3b78b1abb352c5846896eaddd3c0597bfbed62fcd5"
+  url "https://files.pythonhosted.org/packages/ec/0a/43fab1a9fe75e340fcf616d7e66f9e604a2e2e56e5caf70b0b5c55f9cf9c/gitlabform-5.5.6.tar.gz"
+  sha256 "8b8f967f3bd869015a3afb9137f16ba96062d507d92ff853e80c7ab424056512"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class Gitlabform < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
+    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
   end
 
   resource "backoff" do
@@ -61,8 +61,8 @@ class Gitlabform < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/68/c5/36aa96205c3ecbb3d34c7c24189e4553c7ca2ebc7e1dd07432339b980272/graphql_core-3.2.8.tar.gz"
-    sha256 "015457da5d996c924ddf57a43f4e959b0b94fb695b85ed4c29446e508ed65cf3"
+    url "https://files.pythonhosted.org/packages/4d/90/f2aff026ab4aebd80eb71905106a0885f4cfde85dcf965543f45bed0d9ee/graphql_core-3.2.11.tar.gz"
+    sha256 "e7e156d10beb127cab5c89ff0da71416fc73d27c484a4757d3b2d35633774802"
   end
 
   resource "h11" do
@@ -81,8 +81,8 @@ class Gitlabform < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/1a/88/bcf9709822fe69d02c2a6a77956c98ce6ea8ca8767a9aadcedc7eb6a2390/idna-3.16.tar.gz"
-    sha256 "d7a6da03db833450fca25d2358ac9ff06cd624577a4aea3a596d5c0f77b8e03d"
+    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
+    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
   end
 
   resource "jinja2" do
@@ -141,13 +141,13 @@ class Gitlabform < Formula
   end
 
   resource "python-gitlab" do
-    url "https://files.pythonhosted.org/packages/86/00/9a9eb79cf3608f9ab172bc6311b40a7ed128cae7be42dbf2d3830d713a48/python_gitlab-8.3.0.tar.gz"
-    sha256 "2ca67cf64b8d9290fe64463cfef6e77dbde066285dd848db2eb7816d6a7e9ec9"
+    url "https://files.pythonhosted.org/packages/cc/96/c20b37e7fd86481e1bf2b1922e84b98dc5477fd9aafd30e5c5086f94d922/python_gitlab-8.4.0.tar.gz"
+    sha256 "f36f20ec3f09138f3b12089394941f4dbe5a407021bed71b70a04bbdd37b8a74"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "requests-toolbelt" do
