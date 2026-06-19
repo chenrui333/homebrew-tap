@@ -1,8 +1,8 @@
 class Cchistory < Formula
   desc "Like the shell history command but for your Claude Code sessions"
   homepage "https://github.com/eckardt/cchistory"
-  url "https://registry.npmjs.org/cchistory/-/cchistory-0.2.1.tgz"
-  sha256 "41fd78b3488e40677d48017860ae499ac788436d1fb065ff095526b133f3edb8"
+  url "https://registry.npmjs.org/cchistory/-/cchistory-0.3.0.tgz"
+  sha256 "50e69289640349d9100c16e18a1909962ba60ba14a9927efa17c96daa09f40a0"
   license "MIT"
 
   bottle do
