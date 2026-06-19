@@ -83,11 +83,15 @@ module.exports = async ({github, context, core}, formula_detect) => {
             }
 
             const content = fs.readFileSync(formula_path, 'utf8')
-            if (/^\s*depends_on\s+:linux\b/m.test(content)) {
+            const linux_only_formula = /^\s*depends_on\s+:linux\b/m.test(content)
+            const macos_only_formula = /^\s*depends_on\s+:macos\b/m.test(content)
+            if (linux_only_formula) {
                 scopes.add('linux')
-            } else if (/^\s*depends_on\s+:macos\b/m.test(content)) {
+            }
+            if (macos_only_formula) {
                 scopes.add('macos')
-            } else {
+            }
+            if (!linux_only_formula && !macos_only_formula) {
                 scopes.add('all')
             }
         }
