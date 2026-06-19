@@ -1,8 +1,8 @@
 class C3x < Formula
   desc "Open source cloud cost estimation for Terraform, Terragrunt, and CloudFormation"
   homepage "https://github.com/c3xdev/c3x"
-  url "https://github.com/c3xdev/c3x/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "07f5702eb6a984bb6ff794e257cf6c680991d2f98aa5b02776a1a119501fdaa5"
+  url "https://github.com/c3xdev/c3x/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "2f536c57a0cdc87a0130cae8c8a60c53b4bf32a93912ecef3304b35678424a66"
   license "Apache-2.0"
   head "https://github.com/c3xdev/c3x.git", branch: "main"
 
