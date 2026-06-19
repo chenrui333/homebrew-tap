@@ -1,0 +1,37 @@
+.github/workflows/process-compose-preflight.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 17
+.github/workflows/update-formula-list.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 22-24
+.github/workflows/close-superseded-formula-prs.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 29
+.github/workflows/autobump-formula.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 20-22
+.github/workflows/rebottle.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 25
+.github/workflows/clean-up-closed-prs.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 21
+.github/workflows/triage.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 11-13
+.github/workflows/autobump-cask.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 20-22
+.github/workflows/publish-cask.yml
+  s_072ec5ed2f7fba::t_a04002742ef81c 8-10
+.github/workflows/formula-status.yml
+  s_072ec5ed2f7fba::t_7ceeaf5cb9ea21 16-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "ed2a9150ac109a4949ce3ddf63189101bc5d27d8",
+  "prompts": {},
+  "sessions": {
+    "s_072ec5ed2f7fba": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019edfd5-ebd2-7fa3-8eb7-d080bfac4d15",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
