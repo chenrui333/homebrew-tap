@@ -1,8 +1,8 @@
 class Zeroserve < Formula
   desc "Zero-config, fast io_uring-based HTTPS server"
   homepage "https://github.com/losfair/zeroserve"
-  url "https://github.com/losfair/zeroserve/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "b0a911aa36fc641b6a36944c556d2af580dbfb52ad996b3dcf6a972fb5a8ff74"
+  url "https://github.com/losfair/zeroserve/archive/refs/tags/v0.2.11.tar.gz"
+  sha256 "546f7e8631cf76476082e5c6083bfb1bc1f6fabd0e47a0eeb7ca575bd0da43c4"
   license "MIT"
   head "https://github.com/losfair/zeroserve.git", branch: "main"
 
