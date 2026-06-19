@@ -11,11 +11,12 @@ class Kubedog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07ad2b5e5d25248723385f7e0a817f767a9cbbf705f4fc01edaa4e740b021ab0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2eae69e078441af400ba4982e7545ecb776ed8448084d74514d45cb7ebc98cd4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9276ada77605111dbad34a6b90672a2d5fb7162c064a182acfb567dc4a9e07f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bcd0b08840c52474f48dc99b617d264f12140cf76de6bf42aa56cbdd6e52b1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "630095ea36043d856ceb261208eaa310e7ce2e8b37b97ceb3d65fec732288c83"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e09a52131882eba1fdf3210cd5147b689925aef1939ca317b49114c02100c555"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "665fc2b35c493d06f6b3132318b367e46f0b07f07371a6a185062549d82e8092"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d53471cdc219847480ec789b6828bb93e862d9a46ce399a8f232a9684795081"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c872c05e77807551130423ce11880ef43f53c0723db3b25fe1799067dab1a277"
+    sha256 cellar: :any,                 x86_64_linux:  "f0093dfd3116a212d3b4d39027e6f21bd331104f6114f6e308b05f5f8728ebb0"
   end
 
   depends_on "go" => :build
