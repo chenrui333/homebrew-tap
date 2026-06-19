@@ -26,7 +26,7 @@ class Praxis < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/praxis"
 
-    generate_completions_from_executable(bin/"praxis", "completion")
+    generate_completions_from_executable(bin/"praxis", shell_parameter_format: :cobra)
   end
 
   test do
