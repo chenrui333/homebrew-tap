@@ -8,11 +8,12 @@ class Gitsnip < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fd3e70e13030ef490ddc878f213becaa8ef397c8fae07683174dd7c8448220b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fd3e70e13030ef490ddc878f213becaa8ef397c8fae07683174dd7c8448220b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9fd3e70e13030ef490ddc878f213becaa8ef397c8fae07683174dd7c8448220b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2cbf575ef6e7f4e406d3602f702e65bdd5d943fa07b3f010611474b7a97f081"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b7b3b188029b4233f92d5f8f51f0aced96d5a5b3fcb625cd8bc4a65e6ef297"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "87b3678fb6dd58ff5fa8283819df77af89fa61cf48021569eb03e7813c06ba4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87b3678fb6dd58ff5fa8283819df77af89fa61cf48021569eb03e7813c06ba4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87b3678fb6dd58ff5fa8283819df77af89fa61cf48021569eb03e7813c06ba4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "076df166460a02e7373c3729bb1301d75eb81984270a326b9ffcd4c6c53c7573"
+    sha256 cellar: :any,                 x86_64_linux:  "d853c4e888c32e2b744e8a4bb84f109d29b6465b2ce517e3524422b6c2cef67f"
   end
 
   depends_on "go" => :build
