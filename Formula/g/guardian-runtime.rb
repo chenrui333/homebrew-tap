@@ -3,8 +3,8 @@ class GuardianRuntime < Formula
 
   desc "Zero-latency local-first runtime firewall for LLMs"
   homepage "https://github.com/ashp15205/guardian-runtime"
-  url "https://github.com/ashp15205/guardian-runtime/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "0b8dae0dfb4cb1223b037f9dc43e44aecb9fe83e7ee6514d8a44f67071e308c2"
+  url "https://github.com/ashp15205/guardian-runtime/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "9b15ec26ca7fbc4612b49e3d3534069c05c540afe9230bcb8530e5b7fcc4fc0f"
   license "MIT"
   head "https://github.com/ashp15205/guardian-runtime.git", branch: "main"
 
