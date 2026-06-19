@@ -21,10 +21,10 @@ module.exports = async ({github, context, core}, formula_detect) => {
         pull_number: context.issue.number
     })).data.labels : []
     const label_names = labels.map(label => label.name)
-    const linux_runner = 'ubuntu-22.04'
-    const linux_arm64_runner = 'ubuntu-22.04-arm'
+    const linux_runner = 'ubuntu-24.04'
+    const linux_arm64_runner = 'ubuntu-24.04-arm'
     const container = {
-        image: 'ghcr.io/homebrew/brew:main',
+        image: 'ghcr.io/homebrew/ubuntu24.04:main',
         options: '--user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED'
     }
 
