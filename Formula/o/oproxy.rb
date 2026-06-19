@@ -8,11 +8,11 @@ class Oproxy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "467e79a5b81ab258b77b2195cd747c73fb672b6e8c54b8d563521e13b6e81222"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "275eb25eb0fd55fca027471b53e5a0cc7af7e71423446a81be4b4de3407d75eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b42e1702ea032be4ff3278e7ab9d1bd45033ab7703ce8eae7abd50158de333c"
-    sha256 cellar: :any,                 arm64_linux:   "4443c43ee021ebd102bdc221d180c224ec73d5c2a3b576f100d887782996ab94"
-    sha256 cellar: :any,                 x86_64_linux:  "bbfbd0f74e0d20c2fb4ba9a05564fe27db1282fe62619709a9b6db8018ed1b01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "df4f0f38c7cfcd2000f4ead8e4c04d27cba571053629ef45627ea37c6f78ce46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00a3a67e654b4c806e8024e96f067cc600c5b79dcbd70f96de138c8905ed5a70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba6d773c533257638acaf8ed9c4042ea0964c95e6762778f8de9713a167cc160"
+    sha256 cellar: :any,                 arm64_linux:   "e7a125f884e64b487b193b5fa0a7c15fc061e07e3327839cbf3cb9a0e2623767"
+    sha256 cellar: :any,                 x86_64_linux:  "5a6b409ccb6fe66210f0321e9dd643598f137979d682dc5d95c9c835e9e43414"
   end
 
   depends_on "node" => :build
