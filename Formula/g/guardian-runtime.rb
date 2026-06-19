@@ -10,11 +10,11 @@ class GuardianRuntime < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "9433339b3c87d92d35a4991e6ec529919873920cfed97cf420f633dc7a836202"
-    sha256 cellar: :any, arm64_sequoia: "6628fdf8938451bb3b2020b935125b7f192ea2c024b5eba3ad65d560cbe9bca8"
-    sha256 cellar: :any, arm64_sonoma:  "a3d3cab709b95e64cba8a7fbf19ba9bf1531698df88f68d2ab2e3f7333f8197d"
-    sha256 cellar: :any, arm64_linux:   "8f5aeb9744a746ba95f098028b597c448222c5765aebb9eed1d971d9b57c179e"
-    sha256 cellar: :any, x86_64_linux:  "3cbdd7006c5dcbd3bbe7ed8de8c39539d335d69825a65bb75cbea5ff421a5406"
+    sha256 cellar: :any, arm64_tahoe:   "f170771945a1337a9c6cec8ec47e972a3e8332683844678b5728b7cf456a4942"
+    sha256 cellar: :any, arm64_sequoia: "e4fd9125b368204a355b07227b9fae097efca2a7771d81b10f30ff9d56c228fb"
+    sha256 cellar: :any, arm64_sonoma:  "e09bae5ba59da513bc30cd435556d4b1371840b7ac5f11026ec637ba1d3d65a6"
+    sha256 cellar: :any, arm64_linux:   "030eaebab8889de8aa36b63f8f063afa1be9b3e275489fd16f847a1ba269c92f"
+    sha256 cellar: :any, x86_64_linux:  "42e2ff1137a44d66a7eb62fdd5c81262afd56959633a4fa11d359bccc762943f"
   end
 
   depends_on "rust" => :build
