@@ -1,8 +1,8 @@
 class Checksec < Formula
   desc "Survey security mitigations used by processes"
   homepage "https://slimm609.github.io/checksec/"
-  url "https://github.com/slimm609/checksec/archive/refs/tags/3.1.0.tar.gz"
-  sha256 "cd3112fb02577726dd6945a11d9225d508ac0d59984d772fbbda5d9cf2d2c290"
+  url "https://github.com/slimm609/checksec/archive/refs/tags/3.2.0.tar.gz"
+  sha256 "3ea46986821070ed06fef5215b2a83a9076115a865da70874e19f214db2c8d83"
   license "BSD-3-Clause"
   head "https://github.com/slimm609/checksec.git", branch: "main"
 
