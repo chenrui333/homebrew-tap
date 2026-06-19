@@ -8,11 +8,11 @@ class Needle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "108f095af6555df8bbad494de938bd8716ad896656625b866e3e14f7a3633949"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05d428bc8e832e19603918facf0ef69c22427f71b5042d17ad91f53724d9bd63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "394748d75cf7d696c7c53ee5c88113dedd9673e5b0ac6b32666b158c2dbb69be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b4f536f5aa16e1e7200e64f76e9ca9b7cb51d709e5935480e05fcbe330aaf3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe4a77b820db58b3def5d82108d7de13f44b3bc10c3eaeb9606ba1212de65a46"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3c98a11d202d2b798bd6ec98826186d998f5f223ac9689685d47658923fd158"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e01e28726eadc8f035c8774427891e442703732794b7d17f01ed159593be9e81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c899778594c4c8d780fe101e62243a2c12e731b024eeabfec397c7af05f1ccb5"
+    sha256 cellar: :any,                 arm64_linux:   "720d436fc08d7685342da92d2d6870563c17f303044ee511ee9f57682683d069"
+    sha256 cellar: :any,                 x86_64_linux:  "e6bb79a2e49ece17f020e38df2219271056c597b391b3bdd3241c67ab95aeed9"
   end
 
   depends_on "rust" => :build
