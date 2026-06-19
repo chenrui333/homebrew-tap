@@ -1,8 +1,8 @@
 class Taskbook < Formula
   desc "Tasks, boards & notes for the command-line habitat"
   homepage "https://taskbook.sh"
-  url "https://github.com/taskbook-sh/taskbook/archive/refs/tags/v1.3.4.tar.gz"
-  sha256 "6ac61632ef47ca49d40b102dda00fb482f6f7597a758eea31d9c6cef0ece48a8"
+  url "https://github.com/taskbook-sh/taskbook/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "52fa60a6743be985ff473fb494cee15ba8e374cdbbd9a471f263677737365fce"
   license "MIT"
   head "https://github.com/taskbook-sh/taskbook.git", branch: "master"
 
