@@ -20,7 +20,7 @@ class Gitsnip < Formula
   def install
     ldflags = "-s -w -X github.com/dagimg-dot/gitsnip/internal/cli.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/gitsnip"
-    generate_completions_from_executable(bin/"gitsnip", "completion", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"gitsnip", shell_parameter_format: :cobra)
   end
 
   test do
