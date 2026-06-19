@@ -8,7 +8,7 @@ class Jotbird < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "3543edca1c50bf3d7d8e84e347c602480d0226186dbf41b6599153ee075e71fa"
+    sha256 cellar: :any_skip_relocation, all: "ffd458ab444933b20241bb0e1f61758eb9e8812370a2a039a26eecb029987b56"
   end
 
   depends_on "node"
