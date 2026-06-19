@@ -8,11 +8,12 @@ class Dloom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53bf96c395499f12751c641f2cc672ee6373840857bb7acd92bb7b945083792e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53bf96c395499f12751c641f2cc672ee6373840857bb7acd92bb7b945083792e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53bf96c395499f12751c641f2cc672ee6373840857bb7acd92bb7b945083792e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "df8ca552b61ef1ac49cd756d489bc6944eedc881924a18a17d40a8825399b300"
-    sha256 cellar: :any,                 x86_64_linux:  "3ca8296e32f85560249c5a7ef340dcfe751ee98211d8514d13fed7cf2f5418e7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1386266e99b1ee7ba8a406a0788e49739950513ecbcee34a763e37826397662e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1386266e99b1ee7ba8a406a0788e49739950513ecbcee34a763e37826397662e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1386266e99b1ee7ba8a406a0788e49739950513ecbcee34a763e37826397662e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46cc6fbf528acc371e6a2db51815bb40e126284fa83f8f5a28de62f9680a9380"
+    sha256 cellar: :any,                 x86_64_linux:  "53497ae9da628a68a23590ac711fdd274abd3154cb56a9e78601a0b6efdcb28a"
   end
 
   depends_on "go" => :build
