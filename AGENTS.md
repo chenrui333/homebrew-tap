@@ -199,11 +199,11 @@ Commit message: `foo 1.2.3 (new formula)`
     ```
 - **Completions policy**: Add shell completion support when upstream CLI supports it.
   - Use Homebrew DSL: `generate_completions_from_executable`.
-  - Go/Cobra CLIs: prefer `shell_parameter_format: :cobra`, which expands to `completion <shell>` and includes PowerShell by default.
+  - Go/Cobra CLIs: use `shell_parameter_format: :cobra` when upstream supports the standard Cobra `completion <shell>` form; it includes PowerShell by default.
   - Do NOT combine an explicit `"completion"` argument with `shell_parameter_format: :cobra`; that generates `completion completion <shell>`.
   - Keep custom Go completion syntax when upstream does not expose the standard Cobra `completion <shell>` form, such as `completion --shell <shell>` or non-Cobra frameworks.
-  - Rust CLIs: only use `shell_parameter_format: :clap` when the binary supports Homebrew's `COMPLETE=<shell>` invocation; otherwise keep the explicit `"completion"`, `"completions"`, or `"--completions"` command/flag form used by upstream.
-  - Python CLIs: prefer `shell_parameter_format: :click` only when the binary supports Click's `_<PROG>_COMPLETE=<shell>_source` invocation; prefer `:typer` for Typer CLIs that expose `--show-completion <shell>`.
+  - Rust CLIs: use `shell_parameter_format: :clap` when the binary supports Homebrew's `COMPLETE=<shell>` invocation; otherwise keep the explicit `"completion"`, `"completions"`, or `"--completions"` command/flag form used by upstream.
+  - Python CLIs: use `shell_parameter_format: :click` when the binary supports Click's `_<PROG>_COMPLETE=<shell>_source` invocation; use `:typer` for Typer CLIs that expose `--show-completion <shell>`.
   - Do NOT use completion generation as the formula's functional test.
   - In `test do`, avoid `completion`, `completions`, or shell-completion assertions unless the formula is itself a completion/plugin formula with no normal binary behavior.
   - For completion/plugin-only formulae, test installed completion/plugin files directly and, when possible, shell-load them in a deterministic way.
