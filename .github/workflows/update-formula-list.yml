@@ -28,6 +28,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 0
 
       - run: brew update
 
@@ -39,4 +41,31 @@ jobs:
 
       - name: Push changes back
         if: always()
-        run: git push
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          git rev-parse --verify refs/remotes/origin/main >/dev/null
+
+          if git merge-base --is-ancestor HEAD refs/remotes/origin/main; then
+            echo "No local commit to push."
+            exit 0
+          fi
+
+          for attempt in {1..3}; do
+            git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+            git rev-parse --verify refs/remotes/origin/main >/dev/null
+            if ! git rebase refs/remotes/origin/main; then
+              echo "Failed to rebase generated formula list onto origin/main." >&2
+              git rebase --abort || true
+              exit 1
+            fi
+
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Push attempt $attempt failed; retrying after refreshing main."
+            sleep "$((attempt * 5))"
+          done
+
+          echo "Failed to push generated formula list after 3 attempts." >&2
+          exit 1
