@@ -24,7 +24,9 @@ class Kubedog < Formula
     ldflags = "-s -w -X github.com/werf/kubedog.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubedog"
 
-    generate_completions_from_executable(bin/"kubedog", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(
+      bin/"kubedog", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
+    )
   end
 
   test do
