@@ -26,7 +26,7 @@ jobs:
     if: >
       github.repository_owner == 'chenrui333' &&
       !github.event.pull_request.merged
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:723d76aa10cefa3767a07ce6451f41c8ec111c2158370528ec97a4516fb5a629
     permissions:
