@@ -29,7 +29,7 @@ class Msgvault < Formula
     system "go", "build", *std_go_args(ldflags:), "-tags", "fts5", "./cmd/msgvault"
 
     ENV["MSGVAULT_HOME"] = buildpath/".msgvault"
-    generate_completions_from_executable(bin/"msgvault", "completion")
+    generate_completions_from_executable(bin/"msgvault", shell_parameter_format: :cobra)
   end
 
   test do
