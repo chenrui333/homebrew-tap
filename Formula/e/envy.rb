@@ -8,11 +8,12 @@ class Envy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caf8b6d43837ac385c3b655df41f6a3bd41da5b4573c5f1c3d20b2df577aa076"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf8b6d43837ac385c3b655df41f6a3bd41da5b4573c5f1c3d20b2df577aa076"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caf8b6d43837ac385c3b655df41f6a3bd41da5b4573c5f1c3d20b2df577aa076"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b5da76e473d3208479bd76f40d860b62035b2643d60cb55a0c1a2cca4a4e5ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec2b6d0382b0e4aacdfdbc11d01346a7ec0a947dfc7c075db89b5509afff4206"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd17f88e01f44fe2700f24c6b15ae067fe13b89fdc6cebd8e30c74f34c8c2a18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd17f88e01f44fe2700f24c6b15ae067fe13b89fdc6cebd8e30c74f34c8c2a18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd17f88e01f44fe2700f24c6b15ae067fe13b89fdc6cebd8e30c74f34c8c2a18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "682df3b212918b1f89b6cd462aafb68c654d0da75f8fa34e52b37112600252ec"
+    sha256 cellar: :any,                 x86_64_linux:  "8e21cf089144ba1ca3b3b82585d1e1723d3085c3ab2c5109c494779cf3e8651d"
   end
 
   depends_on "go" => :build
