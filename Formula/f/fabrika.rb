@@ -1,8 +1,8 @@
 class Fabrika < Formula
   desc "Software factory that orchestrates CLI coding agents as a managed team"
   homepage "https://fabrika-ai.com"
-  url "https://github.com/berkaycubuk/fabrika/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "68e745625269ff3ed5d1b9806893432a7f0665a963d7305af07bef41b19b18bb"
+  url "https://github.com/berkaycubuk/fabrika/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "1eec3de4d3c5ce5e35c04151b49ba570f0fa1f8a9ec5457c25eaaae1c33251e1"
   license "FSL-1.1-MIT"
   head "https://github.com/berkaycubuk/fabrika.git", branch: "main"
 
