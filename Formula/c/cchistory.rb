@@ -7,10 +7,7 @@ class Cchistory < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe709de2042a37a0a5cf3143d890ffc34110bf6f397439676576b9c66dbad1de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a519db045f61817c7f6be91362608d1531e5afed52586450169cbcfa8acdb46"
-    sha256 cellar: :any_skip_relocation, ventura:       "04871830f05f13aa1ca05fe0c57809f2940eb2c9a6295753d850159fd4c952b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef49f9b12592705c36ccd727b9b7b04f6e664079736f84151461aa92207e5a43"
+    sha256 cellar: :any_skip_relocation, all: "f56fe6da285edd6b820b060cae725de6e5bfb1e85b791b787ad21981dbbf5633"
   end
 
   depends_on "node"
