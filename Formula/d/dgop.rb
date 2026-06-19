@@ -19,7 +19,9 @@ class Dgop < Formula
     ldflags = "-s -w -X main.Version=#{version} -X main.buildTime=#{time.iso8601} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dgop"
 
-    generate_completions_from_executable(bin/"dgop", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(
+      bin/"dgop", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
+    )
   end
 
   test do
