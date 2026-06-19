@@ -1,6 +1,6 @@
 cask "piebald" do
-  version "0.4.2"
-  sha256 "4fe79fd66c28386e6991a98f677f091cce0ee2a68ed92f69975356e5b184b124"
+  version "0.4.4"
+  sha256 "ced23a05e3b6a2e328da38d698578336d5d9f6f155b49909e525ca60a60bf4d2"
 
   url "https://github.com/Piebald-AI/piebald-issues/releases/download/v#{version}/Piebald_#{version}_universal.dmg",
       verified: "github.com/Piebald-AI/piebald-issues/"
