@@ -1,8 +1,8 @@
 class Agenthud < Formula
   desc "Claude Code TUI dashboard for parallel sessions and sub-agents"
   homepage "https://github.com/neochoon/agenthud"
-  url "https://registry.npmjs.org/agenthud/-/agenthud-0.18.3.tgz"
-  sha256 "c854463bb7c376f1b5e789937628c65f543ceb2b046af3ef20f5fd1b50bc2820"
+  url "https://registry.npmjs.org/agenthud/-/agenthud-0.19.0.tgz"
+  sha256 "b680199be1fc4c2fe6a602ce345d382887e2f8dfc5624314be16a543b9acf5e5"
   license "MIT"
 
   bottle do
