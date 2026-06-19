@@ -1,8 +1,8 @@
 class Needle < Formula
   desc "TUI that highlights the GitHub PRs that need you"
   homepage "https://github.com/cesarferreira/needle"
-  url "https://github.com/cesarferreira/needle/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "e9489a789dc45ef11783b451da215b932bd1f8d76da2287e9a5c536d09ae88a2"
+  url "https://github.com/cesarferreira/needle/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "21a0762ce4c77939b28c3ede0772e1eb980a4ab8869eb90da720fd969851c32a"
   license "MIT"
   head "https://github.com/cesarferreira/needle.git", branch: "main"
 
