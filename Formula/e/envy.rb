@@ -19,7 +19,7 @@ class Envy < Formula
 
   def install
     system "go", "build", *std_go_args(output: bin/"envy"), "./cmd/main.go"
-    generate_completions_from_executable(bin/"envy", "completion", shell_parameter_format: :cobra)
+    generate_completions_from_executable(bin/"envy", shell_parameter_format: :cobra)
   end
 
   test do
