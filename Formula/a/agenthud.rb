@@ -7,7 +7,7 @@ class Agenthud < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "7dff8ce862ea158e53b0c6335374a95b83688a0e04d747d81d1f22ffb4412ec3"
+    sha256 cellar: :any_skip_relocation, all: "902ccc2dd5ef7d391e0969c1f2a3f9fc01f136737c3d2919e391479a8ca6e796"
   end
 
   depends_on "node"
