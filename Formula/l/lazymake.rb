@@ -8,12 +8,12 @@ class Lazymake < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "717335175dde6bd8c6d9298d1af539e3b09a2a7122a689d0c0a3eba9f95d5c3b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "717335175dde6bd8c6d9298d1af539e3b09a2a7122a689d0c0a3eba9f95d5c3b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "717335175dde6bd8c6d9298d1af539e3b09a2a7122a689d0c0a3eba9f95d5c3b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "614b2c469403ea787266ced7264af8dd0b41b116141abe870ddb55e367ed7ff7"
-    sha256 cellar: :any,                 x86_64_linux:  "24a91a9703d621eb602f67682a7908eacf5ae6a6f721149003c6b053ea203fa6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c18e4916a65fe21f8e03b32b47efb7a8389aba87321510951cd02eeaa3ac6aa4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c18e4916a65fe21f8e03b32b47efb7a8389aba87321510951cd02eeaa3ac6aa4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c18e4916a65fe21f8e03b32b47efb7a8389aba87321510951cd02eeaa3ac6aa4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57d489b6f1abf556cdae525a8bb829035cfcf7acb1b7c1ef9dfda3b332d546ee"
+    sha256 cellar: :any,                 x86_64_linux:  "6cd35fc39ae3437643d44564311ef773ca97fe2bacaf65d93f26b08953ff9327"
   end
 
   depends_on "go" => :build
