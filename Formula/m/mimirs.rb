@@ -1,8 +1,8 @@
 class Mimirs < Formula
   desc "Local MCP server giving AI coding agents persistent, searchable codebase memory"
   homepage "https://github.com/TheWinci/mimirs"
-  url "https://github.com/TheWinci/mimirs/archive/refs/tags/v1.6.3.tar.gz"
-  sha256 "dfa7fd231223422d6fdd9d22a6f4f44c93fe2e637afa218df1e353f555a74cdd"
+  url "https://github.com/TheWinci/mimirs/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "a443929aed623ff7e90ae3a004a72c3b98ab0d1f9bc84ce7a0ce9362bc42481a"
   license "Apache-2.0"
   head "https://github.com/TheWinci/mimirs.git", branch: "main"
 
