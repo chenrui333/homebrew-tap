@@ -8,8 +8,9 @@ class Dgop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "e65c25a935653bf3c59b5b7ff216c549932af15bb20884c2b7608a787634a216"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5bf796d64972bce4bd7a7541b668979551b0f55bbc512abbddf511e3dad09707"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "53047dfabf7db803b87fd16d405d152c42f4cf70dab2fa33faded4c6e137fca6"
+    sha256 cellar: :any,                 x86_64_linux: "3d56b37f9eb22a0f77bd09cf67b81b2edc5724809c1132df8844aedc1b398e56"
   end
 
   depends_on "go" => :build
