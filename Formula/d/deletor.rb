@@ -8,11 +8,11 @@ class Deletor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baf00de08044f1219e2b35271fa7a12f01b7bfd04212d4c98464e6fc221accf7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baf00de08044f1219e2b35271fa7a12f01b7bfd04212d4c98464e6fc221accf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baf00de08044f1219e2b35271fa7a12f01b7bfd04212d4c98464e6fc221accf7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1ba77682d7a8454fd756f5dbd178640ea7398603f551143061963bb94b78439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae74714595ac50e3537f0bb9e030708f6a07265dbd83f8150fe4428d569453df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2c4d4a5844926eecae36d15b631d9792bda16c25cb819da775fc44f7bd5ec41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2c4d4a5844926eecae36d15b631d9792bda16c25cb819da775fc44f7bd5ec41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2c4d4a5844926eecae36d15b631d9792bda16c25cb819da775fc44f7bd5ec41"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5985ddf10702ea04536b08cc3000d1280a6ee27d2a3023e1fb2519fde4c8a70"
+    sha256 cellar: :any,                 x86_64_linux:  "568d933ebf7db599696edb73463502e818dc8e862da1e750cf620859083b6aa4"
   end
 
   depends_on "go" => :build
