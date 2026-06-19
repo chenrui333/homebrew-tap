@@ -1,8 +1,8 @@
 class Oproxy < Formula
   desc "Open-source MITM proxy to intercept, inspect, and mock network traffic"
   homepage "https://github.com/sauravrao637/oproxy"
-  url "https://github.com/sauravrao637/oproxy/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "0282e6ad610367f8b70d17478648a8c295591292e4c86c5160bcb538100a89de"
+  url "https://github.com/sauravrao637/oproxy/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "5233ef68b45e6b151a6d676ad04b2a12c8c075b8bf2950ba31b707789c614aa5"
   license "MIT"
   head "https://github.com/sauravrao637/oproxy.git", branch: "main"
 
