@@ -1,8 +1,8 @@
 class Gitsocial < Formula
   desc "Git-native cross-forge collaboration platform"
   homepage "https://github.com/gitsocial-org/gitsocial"
-  url "https://github.com/gitsocial-org/gitsocial/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "f276824de15629c5640b5c2446ebc1991c50631ca73e7f505d1ea3fe0a8f1ad7"
+  url "https://github.com/gitsocial-org/gitsocial/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "e978c523b9bc4fcb77eed11752e671025cc613c2b6efe4476622cb229a3ef45b"
   license "MIT"
   head "https://github.com/gitsocial-org/gitsocial.git", branch: "main"
 
