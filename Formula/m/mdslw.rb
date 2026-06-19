@@ -2,8 +2,8 @@
 class Mdslw < Formula
   desc "Prepare your markdown for easy diff'ing"
   homepage "https://github.com/razziel89/mdslw"
-  url "https://github.com/razziel89/mdslw/archive/refs/tags/0.17.1.tar.gz"
-  sha256 "4dadf34036002909b1c2e547facb88b37a3a3ac0cc102d9a924fcc0161db1637"
+  url "https://github.com/razziel89/mdslw/archive/refs/tags/0.17.2.tar.gz"
+  sha256 "e290f36a321da01f0135f37e2c98ff95e0317c1a024b074c5320ac15fe11798c"
   license "GPL-3.0-or-later"
   head "https://github.com/razziel89/mdslw.git", branch: "main"
 
