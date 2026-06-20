@@ -8,11 +8,11 @@ class Riskkernel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1a49b141fc3571cf57ec01b267f5eba9b151134b13a44fa456bfe00955de55e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1a49b141fc3571cf57ec01b267f5eba9b151134b13a44fa456bfe00955de55e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1a49b141fc3571cf57ec01b267f5eba9b151134b13a44fa456bfe00955de55e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c074ec864c56617f2cf89283e79ee60f9f787b554789187ed40224445a0164a1"
-    sha256 cellar: :any,                 x86_64_linux:  "6fea4d391cde95bab39c5d28f19769efc1fdc2ba0f0484b6b909c482f33e72a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f98acd5ae0f0dd196d99ffb40153bdb93c6934b1ca77f4ba2ad0c519e4ba770"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f98acd5ae0f0dd196d99ffb40153bdb93c6934b1ca77f4ba2ad0c519e4ba770"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f98acd5ae0f0dd196d99ffb40153bdb93c6934b1ca77f4ba2ad0c519e4ba770"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2385492de11197a561afaebe416fe50f9502ac21be939284fc012a2a11cbe06b"
+    sha256 cellar: :any,                 x86_64_linux:  "161fdf39a0a5957f4ee93545870435f25d42521d7bf401420c0086f6bc2b8a43"
   end
 
   depends_on "go" => :build
