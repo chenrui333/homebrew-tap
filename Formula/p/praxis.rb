@@ -8,12 +8,12 @@ class Praxis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e135648d8789661cf4a383ad2aff773d49557912a5dfb093950c856d147efca9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e135648d8789661cf4a383ad2aff773d49557912a5dfb093950c856d147efca9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e135648d8789661cf4a383ad2aff773d49557912a5dfb093950c856d147efca9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e8799db9ab05f2c25d521bd6859889e29f6200b0955c88f3094acecc7c96a7d"
-    sha256 cellar: :any,                 x86_64_linux:  "d47cea0cb505ee9e64a4c1b0f0a7a9a8f87044404945d81e4ce249e86a7593ad"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c9015c422311f200a456338216ef7c4b7a7592a66710b2479abdad5f2d0facf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c9015c422311f200a456338216ef7c4b7a7592a66710b2479abdad5f2d0facf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c9015c422311f200a456338216ef7c4b7a7592a66710b2479abdad5f2d0facf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8cfbff012c7ff5061925159541373365a2b4cf72aa64503ceb502d9fc7643561"
+    sha256 cellar: :any,                 x86_64_linux:  "ed0ee0c03b16d270440407fdbe4d1059130d0abeedbd98d3a1b4842895ff887d"
   end
 
   depends_on "go" => :build
