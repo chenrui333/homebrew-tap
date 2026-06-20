@@ -7,7 +7,7 @@ class SwaggerMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "4c3ac3b225af2ed5c422dedc092dbe8bdab252a3b720da6ae0d4cd87a692139b"
+    sha256 cellar: :any_skip_relocation, all: "f8abc63553a154d7b35c639ec44f3f9a22b0a5b3ec96fc112c84c381396557b1"
   end
 
   depends_on "node"
