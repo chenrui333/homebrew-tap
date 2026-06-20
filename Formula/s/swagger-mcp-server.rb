@@ -7,10 +7,7 @@ class SwaggerMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aef87fc6e1ed0fc7fe6a32f8fe0e562320456a6532a9ba6998e6914829f10f0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "148427d58b704a93315d3ef01fd37068e558b66cde7855f77e7959c1ecc210be"
-    sha256 cellar: :any_skip_relocation, ventura:       "7930cd1672b72c3cd977a2b75c8424d8fcd918664b2c48559c9c8980cbe7c67d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5d2cc0f92c78bcfe32fef19f2765134e6bbc3230b338f2865de70b7c86d2a35"
+    sha256 cellar: :any_skip_relocation, all: "4c3ac3b225af2ed5c422dedc092dbe8bdab252a3b720da6ae0d4cd87a692139b"
   end
 
   depends_on "node"
