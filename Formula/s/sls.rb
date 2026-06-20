@@ -7,11 +7,11 @@ class Sls < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64c89eb4af9917ea09d2e67176f42010f7b8c7491ae85286cb56212208c009fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64c89eb4af9917ea09d2e67176f42010f7b8c7491ae85286cb56212208c009fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64c89eb4af9917ea09d2e67176f42010f7b8c7491ae85286cb56212208c009fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6349b01f0c9abb1eda6d0e12681f05d74e971f55a26fb4e8ae7df14b980c606"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4708080f9a107597d4f04ddad4977103566a76425eafd7d77ad8a220ca8746c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12219506b2d6b7a01efbaf5b5d40065ce4a1e09aac49b938f2e36101663ce835"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12219506b2d6b7a01efbaf5b5d40065ce4a1e09aac49b938f2e36101663ce835"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12219506b2d6b7a01efbaf5b5d40065ce4a1e09aac49b938f2e36101663ce835"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "014f66e4235ed1b8ec4060db44056f4c0869359fefe92ffed99525c527bc1d0d"
+    sha256 cellar: :any,                 x86_64_linux:  "e792ab8c540da9030fa97de5f514a63600f9eb704914d8d28dc230c6f0b1f481"
   end
 
   depends_on "go" => :build
