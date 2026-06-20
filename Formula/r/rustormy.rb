@@ -8,11 +8,11 @@ class Rustormy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e70a9337ac5cb2d86ac0ba9550bffb2774c6b3945eb15cc1405c899ab75bcae0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e98c811ea79ee3d9369e18ceea64a4edb0d08b3737529dfcc7bc1b283f585b2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e49e26587834f9af40dc3261c9709e19380ee47d8cfea41be1e062d7d80af577"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dad512766273d7cab5c2d6eb676c537ac2795e592b30dbeff9805acc64b357c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfcbf9a0f00d7a946ec5b9854d4001ea13db8b981b0a5a488a43c0c46a266b06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "569362a569970253848ab33aa2bbd67de8a7b6a619b3a44c0598e2fa30c07878"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "525eb15157eaadaa64ffb1c8c78c0fc5faaa594bf5bb1df20c851675098fb084"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bfab7a7fa53fba8d8e4c592094baa407991b001eaab55a7f89ed1dd96aae121"
+    sha256 cellar: :any,                 arm64_linux:   "b81c70baf5b6e730624c7a36f2feaf92c6aabe3ee5b01ac28f63f744ded0a262"
+    sha256 cellar: :any,                 x86_64_linux:  "33b84832247e46ddc9e0b0af907bb8dc8fb6846302a5a4fd9709d2378865f708"
   end
 
   depends_on "pkgconf" => :build
