@@ -1,8 +1,8 @@
 class ViMongo < Formula
   desc "MongoDB TUI designed to simplify data visualization and quick manipulation"
   homepage "https://github.com/kopecmaciej/vi-mongo"
-  url "https://github.com/kopecmaciej/vi-mongo/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "b643324f5360ab768d0738e5f699ae75cdfb22c46cd624b69647ac33a9984acc"
+  url "https://github.com/kopecmaciej/vi-mongo/archive/refs/tags/v0.2.3.tar.gz"
+  sha256 "a6c5943802f25b75008c909c95c87175a48c40ebaab089326fb8bc72bacd0824"
   license "Apache-2.0"
   head "https://github.com/kopecmaciej/vi-mongo.git", branch: "master"
 
