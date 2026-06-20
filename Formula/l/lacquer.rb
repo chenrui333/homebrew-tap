@@ -8,10 +8,12 @@ class Lacquer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "180afbe33799e88599d1edc3c1fcdf7c01806a0a208b18552bbd115c74c1ed95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce78ac0e99e974f5d2ba670e77135346ee34585e318206feed0e091fe4f85b66"
-    sha256 cellar: :any_skip_relocation, ventura:       "cdd50fb52b46bd3fddf06e062715e943c1afa1304d2cef02c9e81fb59e310873"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bb7ef0cc47a544d4548e60a1fdf3f64ebf9acab04058f418cd68b3621730c8e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b7483350710f344afc608828a4e1ba1add340a3018f57c7da472b67c65997e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "847f273f15a1475cfd2d17d5de1be974d2462184daf643c2d68fa88b34cb9e37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b2b93a15829942c7772c0a0b3d9d76ac7feb374a399e423fe462b472c87df8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "251d32d5004cb8546cee92265ad61b1bc5f93a49250fe763b85e3ba49eaba48b"
+    sha256 cellar: :any,                 x86_64_linux:  "59bf2a8335868b7d92c2eb03c022962ba93cb37941e6c462a1e5a35f12cf663a"
   end
 
   depends_on "go" => :build
