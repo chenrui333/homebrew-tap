@@ -8,11 +8,11 @@ class Taskbook < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd8a95f898435cff98a2f632840495c6091d133d841e7805ac6e755b5e5c8174"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a486f7e68cd696d2193afb4de6e7d87ddb90b6f41d217e8c79f76c7efaba8f47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfe4dc1533af4955851934da4cc3bca7aa544a8eb9ab3041d52a0607df982588"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a94be314e4873c5bc4fbe3ee45a0f816a918e834dfc39915eb119c72edc4dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c06120f8e2fe456204b8abdade23c406d9a0574dcf66daf83d5444be2d62bc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b7710a460cbadc70658d44eab8377963519af101b33ac5bad9d464976dac517"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a676cd3afcab0c72e8d670a452bbb6330d30dc97a9a6281fa49c8840ce5a4e30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f34b8ad0b777711b1ffc425b8355a9aae29b581afee3c96a76edc0fc3ae81e9e"
+    sha256 cellar: :any,                 arm64_linux:   "8ba0f89a1b0bd2a5e96b1cf52b7659aa7c09569b85df3f14450904bb14bf7ee5"
+    sha256 cellar: :any,                 x86_64_linux:  "39a59acc83216c7a4d558c396f4e0828715e62c6526f20167bc267a01654c49a"
   end
 
   depends_on "rust" => :build
