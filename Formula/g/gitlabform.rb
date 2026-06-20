@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/98/eb/0f70973d5a00630fdcfd83d341661f66f16235fe44a2b312f715c2f02516/gitlabform-5.5.7.tar.gz"
-  sha256 "5a6e8d3d14520299489ad6d01bd4d30b5231675d16a59b6b7f5d3b1a6064ebc8"
+  url "https://files.pythonhosted.org/packages/7b/9b/f09da2a1bfe68b672656d5d00489361453f68a2d0f60aa86ee3369539252/gitlabform-6.0.0.tar.gz"
+  sha256 "8b553bab02e4e1e0fbc1df1884cfb9401d39bf93a6b48563e4f5e5858907e406"
   license "MIT"
 
   bottle do
@@ -45,14 +45,6 @@ class Gitlabform < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "ez-yaml" do
-    url "https://files.pythonhosted.org/packages/a2/72/9102232c4cfde3cc62de8e873fe11689bc357c2b18c552e7c82ca1c51e29/ez_yaml-1.2.0.tar.gz"
-    sha256 "563d6b6d096e353b673d7884d779d3ea37a20377a4acc70e18ee2dcb95deacbe"
-
-    # patch to remove toml dependency
-    patch :DATA
   end
 
   resource "gql" do
@@ -161,8 +153,8 @@ class Gitlabform < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz"
-    sha256 "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "six" do
@@ -186,8 +178,8 @@ class Gitlabform < Formula
   end
 
   resource "yamlpath" do
-    url "https://files.pythonhosted.org/packages/3a/a4/eb264493c967e5dabf310c8d5bad6f435c6830eae087f1651e51d93aa065/yamlpath-3.8.2.tar.gz"
-    sha256 "4f30cc214b5085d4b0e7756e06c3af3ae589ecde9650d2ada7e1d345ec4fda4f"
+    url "https://files.pythonhosted.org/packages/0d/3c/28fc3fb1e64c1296bc8b3082eac745209460a584e7ee1b46a6a255f2699a/yamlpath-3.9.1.tar.gz"
+    sha256 "624d69d55a9e4b7599e5e7092e6668e6406925f0e6b096965d30068bf542f542"
   end
 
   resource "yarl" do
