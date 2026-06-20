@@ -1,8 +1,8 @@
 class SwaggerMcpServer < Formula
   desc "MCP server for Swagger/OpenAPI endpoints"
   homepage "https://github.com/gulbaki/swagger-mcp-server"
-  url "https://registry.npmjs.org/swagger-mcp-server/-/swagger-mcp-server-1.0.2.tgz"
-  sha256 "0a762069c3cf1c3d943a2b2a942a9a4108a4577533d276a2870ed051dac4b9f3"
+  url "https://registry.npmjs.org/swagger-mcp-server/-/swagger-mcp-server-1.0.3.tgz"
+  sha256 "dffa5d9e6b5982251b90ee049d48fc9ef1e8aee4be2c8b389566e7aac7ede51f"
   license "MIT"
 
   bottle do
