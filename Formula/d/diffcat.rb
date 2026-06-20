@@ -1,8 +1,8 @@
 class Diffcat < Formula
   desc "TUI for visualizing git diffs"
   homepage "https://github.com/trebaud/diffcat"
-  url "https://github.com/trebaud/diffcat/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "10606e705ac9671fe03be9b3be4f875c9ab39db1a19352934903989fe9e2ecac"
+  url "https://github.com/trebaud/diffcat/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "2627d468e2ff9ba10f857daae1b735548d6be7e444dbbe6e272c24007875783f"
   license "MIT"
   head "https://github.com/trebaud/diffcat.git", branch: "main"
 
