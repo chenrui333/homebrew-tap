@@ -8,11 +8,11 @@ class Diffcat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b83bdc049179f2524dcb802aad077faeb3c99bd642b448f777efe51f7c0a593b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b83bdc049179f2524dcb802aad077faeb3c99bd642b448f777efe51f7c0a593b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b83bdc049179f2524dcb802aad077faeb3c99bd642b448f777efe51f7c0a593b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68b82ab1544ce1265716c3c5b89a53c4a8df5544a39c7072970385ca63981497"
-    sha256 cellar: :any,                 x86_64_linux:  "3b53d56d2a49ae4183d1546a4fa4be974c30484f4ab8a246347ed26b15d68c7b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4711347b071a80f63d38a51d7fe1e58e5fe7355e438ebe35aa2e5b0c2dd80b2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4711347b071a80f63d38a51d7fe1e58e5fe7355e438ebe35aa2e5b0c2dd80b2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4711347b071a80f63d38a51d7fe1e58e5fe7355e438ebe35aa2e5b0c2dd80b2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a087e7d506e7818eee20a0b93af8ed3dceb26cae59707fdeec408272337a219"
+    sha256 cellar: :any,                 x86_64_linux:  "ffbaf7254eee18758d86dc61f18bf6c7d4b0a3e25404f7d06c017cd0dedc88cc"
   end
 
   depends_on "go" => :build
