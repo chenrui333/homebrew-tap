@@ -1,8 +1,8 @@
 class Riskkernel < Formula
   desc "Deterministic cost, loop, and time budgets for AI agents with observability"
   homepage "https://github.com/prashar32/riskkernel"
-  url "https://github.com/prashar32/riskkernel/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "8ac625f8e6c95d012627cac3c041021a234e75ae4ec755dce4962222e7d28d19"
+  url "https://github.com/prashar32/riskkernel/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "af894afc5c70b1a0849b581b96ca54beb8bc0e7ab5517a788f38ab90006f9960"
   license "Apache-2.0"
   head "https://github.com/prashar32/riskkernel.git", branch: "main"
 
