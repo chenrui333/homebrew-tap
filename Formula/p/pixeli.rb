@@ -1,8 +1,8 @@
 class Pixeli < Formula
   desc "Merge images into customizable grid layouts"
   homepage "https://github.com/pakdad-mousavi/pixeli"
-  url "https://github.com/pakdad-mousavi/pixeli/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "91de06b777e62d561495a14c660b1fbfca3c4039feba291be983030db80fa490"
+  url "https://github.com/pakdad-mousavi/pixeli/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "a001c6a9780b983528417e724afd9860b8e7b4aa3786fccf71e8817d4ff36d33"
   license "MIT"
   head "https://github.com/pakdad-mousavi/pixeli.git", branch: "main"
 
