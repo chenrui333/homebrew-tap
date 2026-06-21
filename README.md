@@ -55,6 +55,7 @@ brew install --cask <tool>
 - `amoco`
 - `amp-cli`
 - `amux`
+- `anchor`
 - `anvil`
 - `aoc-cli`
 - `apify-actors-mcp-server`
@@ -156,6 +157,7 @@ brew install --cask <tool>
 - `cchistory`
 - `cclogviewer`
 - `ccql`
+- `ccstatusline`
 - `cdx`
 - `cello`
 - `cerbos`
@@ -173,6 +175,8 @@ brew install --cask <tool>
 - `clai`
 - `claude-agent-acp`
 - `claude-code-generic-hooks`
+- `claude-composer`
+- `claude-context-mcp`
 - `claudio`
 - `claumon`
 - `clawbands`
@@ -204,6 +208,7 @@ brew install --cask <tool>
 - `code-pushup`
 - `code-review-graph`
 - `codebuff`
+- `codeflash`
 - `codefmt`
 - `codemachine`
 - `codemap`
@@ -290,6 +295,7 @@ brew install --cask <tool>
 - `ec`
 - `ec2-ami-tools`
 - `ecscope`
+- `editly`
 - `eilmeldung`
 - `elastop`
 - `emoj`
@@ -310,8 +316,8 @@ brew install --cask <tool>
 - `ergo`
 - `fabrika`
 - `fairyglade-ly`
-- `fakecloud`
 - `faq`
+- `fast-agent-mcp`
 - `fast-cli`
 - `fast-xml-parser`
 - `fat`
@@ -332,7 +338,6 @@ brew install --cask <tool>
 - `flow-editor`
 - `flowgger`
 - `fnc`
-- `fnox`
 - `fnug`
 - `fontliberator`
 - `fortran-linter`
@@ -420,6 +425,7 @@ brew install --cask <tool>
 - `hexowl`
 - `heyagent`
 - `hf`
+- `hielo`
 - `holo-cli`
 - `holo`
 - `horusec`
@@ -586,6 +592,7 @@ brew install --cask <tool>
 - `meteor`
 - `mfa`
 - `mimirs`
+- `minimax-mcp-server`
 - `ministack`
 - `mitex`
 - `mlbt`
@@ -664,7 +671,6 @@ brew install --cask <tool>
 - `opencli`
 - `openharness`
 - `opensnitch-tui`
-- `openspec`
 - `oproxy`
 - `optimizt`
 - `optivorbis`
@@ -687,6 +693,7 @@ brew install --cask <tool>
 - `packemon`
 - `pal-mcp-server`
 - `pam`
+- `paperai`
 - `paq`
 - `parm`
 - `parqv`
@@ -708,7 +715,6 @@ brew install --cask <tool>
 - `pinme`
 - `pipeform`
 - `pitaya`
-- `pitchfork`
 - `pixeli`
 - `pixelle`
 - `pj`
@@ -808,6 +814,7 @@ brew install --cask <tool>
 - `saw`
 - `sbomlyze`
 - `scanify`
+- `schema`
 - `scholar`
 - `screenshotone-mcp-server`
 - `scrt`
@@ -888,11 +895,13 @@ brew install --cask <tool>
 - `tftargets`
 - `tabminal`
 - `tako-vm`
+- `tangent-cli`
 - `tantivy-cli`
 - `tapflow`
 - `taproom`
 - `tars`
 - `tascli`
+- `task-master-ai`
 - `taskbook`
 - `taskdog`
 - `taskonaut`
