@@ -1,8 +1,8 @@
 class Ticker < Formula
   desc "Terminal stock ticker with live updates and position tracking"
   homepage "https://github.com/achannarasappa/ticker"
-  url "https://github.com/achannarasappa/ticker/archive/refs/tags/v5.2.1.tar.gz"
-  sha256 "774b060941aed0773b49633bb5b009247ff8122ee7d45ddfe406940c635f6926"
+  url "https://github.com/achannarasappa/ticker/archive/refs/tags/v5.3.0.tar.gz"
+  sha256 "c11e522a309feee522cf3af22d1581a5a1ef338bb6a597fc0c1839b6f0142b42"
   license "GPL-3.0-only"
   head "https://github.com/achannarasappa/ticker.git", branch: "master"
 
