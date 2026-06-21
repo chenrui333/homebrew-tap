@@ -10,11 +10,11 @@ class FastAgentMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "551e000249d9fe1724375f550cbe90944a028edc458b191f443c251d4255805d"
-    sha256 cellar: :any, arm64_sequoia: "3cb9865318cea9f22feb6e1e2aad4d952c2f3c9171cdb996ec410c49c98bbdf7"
-    sha256 cellar: :any, arm64_sonoma:  "e877c90cbeb17c45898ebedf104c414fc6c6786e3cae4c9db3ede60cd49594f0"
-    sha256 cellar: :any, arm64_linux:   "bce99cf8e6f22dcda8513653ab4eeacdbbd33b907ee60c4a1b204a8194782b62"
-    sha256 cellar: :any, x86_64_linux:  "eb1fe478965c78a8a51cb78741d85cc5d0b86bbf2bef7845e781e2818849f641"
+    sha256 cellar: :any, arm64_tahoe:   "b3ea1c91fca12540ba3d01add134155d9fced2438cd0fa3dc8c81e42aaf5efad"
+    sha256 cellar: :any, arm64_sequoia: "4cd4f3c9ce363430f5aa57b45aefd12926cc50341a4a0ea079eb4d9a4e0fb645"
+    sha256 cellar: :any, arm64_sonoma:  "64679759a458a33537451669b14af704b823e4f51efdf36c4f69d2a54dfab2ac"
+    sha256 cellar: :any, arm64_linux:   "39003a21baf159152bff8f72854b6e7c3fef5899d8a412dae148aed9c6920148"
+    sha256 cellar: :any, x86_64_linux:  "77d03550311f556e3b7c323b5933cbec9f041fa32c2a42c49accafd661cc5896"
   end
 
   depends_on "pkgconf" => :build
