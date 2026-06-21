@@ -7,7 +7,7 @@ class IamConvert < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8dcc70d316d7d4d50a89a7c10b7ba06c59b7b691ea5307cca9150ba4abe0c182"
+    sha256 cellar: :any_skip_relocation, all: "1c0f04b4c5791ee2b28b37df8d92dd84782a0b1c2354a96d13863d105b3f42e4"
   end
 
   depends_on "node"
