@@ -1,6 +1,6 @@
 cask "guildly" do
-  version "0.1.61"
-  sha256 "4f5c9f0ca98ebb27e933a104defba223ddd7e617bbd95788ec0cd890a7bf7d09"
+  version "0.1.62"
+  sha256 "e3dc5f641f1fbbf8b9ae0ca8531caba1753082cf4ef82764aee0a9f5ec4ddd81"
 
   url "https://github.com/shoebum-goyell/guildly-releases/releases/download/v#{version}/Guildly-#{version}-arm64.dmg",
       verified: "github.com/shoebum-goyell/guildly-releases/"
