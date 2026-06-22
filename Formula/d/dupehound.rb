@@ -8,11 +8,11 @@ class Dupehound < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c265467c65432e3bd4053d0360f21f41a09f8ec8a4b7c465a208113a1cadf4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85e1a29d5295225ff19b7170602874dc9d0787b9f0fc05113a51af93f47726e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5155c50708149527405d6e6c813f381b072ed4775e301fdcaefd45ca3eecc3c"
-    sha256 cellar: :any,                 arm64_linux:   "43226a959bc4b50082f134ce346c858c4b7695216d3677122ee30c85d7342ef5"
-    sha256 cellar: :any,                 x86_64_linux:  "7d7bab7a302b0bbe15aef21d836dda514b9283f05b830e68d9704094944010a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c612449e82ac348841634418131643f0dedbb266ff0ab3688cdefb7371a7f99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48e754d560346f8bbb4ff6b3ee4d615d9f01f6656b2f8dcecccd28e37d7209c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4dc2cb46a03dfccd7d2c14b952731ecc55387b126c07c0a8ba40a5ee6d7594c"
+    sha256 cellar: :any,                 arm64_linux:   "7bb637338651047fb6d89de1acb9c3d12963aca81ca0a94f3063574563f921ad"
+    sha256 cellar: :any,                 x86_64_linux:  "1a51078cbfeadc60716537e4a4014473608013563450c478a3988ad22fbf5cfc"
   end
 
   depends_on "rust" => :build
