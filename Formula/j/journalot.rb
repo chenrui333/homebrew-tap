@@ -1,8 +1,8 @@
 class Journalot < Formula
   desc "Minimal journaling CLI for developers"
   homepage "https://github.com/jtaylortech/journalot"
-  url "https://github.com/jtaylortech/journalot/archive/refs/tags/v5.6.0.tar.gz"
-  sha256 "338d4163c13d1178f5588165db7b55a3b88a358233057c06669b3703e8469a38"
+  url "https://github.com/jtaylortech/journalot/archive/refs/tags/v5.6.2.tar.gz"
+  sha256 "ccd9bc43020bfe7f20becf94bd2edc74a4f2b77074566fab3c8b84def99c3c92"
   license "MIT"
   head "https://github.com/jtaylortech/journalot.git", branch: "main"
 
