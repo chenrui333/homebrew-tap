@@ -8,11 +8,11 @@ class Mimirs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "41b826b2b6d5b51cdb2d0b9f3f5224bad966fcf6506b27bf3a8dbf83baf383d5"
-    sha256 cellar: :any, arm64_sequoia: "f864637dc7178e8cb1689d83f96109e44ea4ab37641f7d8318eb508515a0a0a5"
-    sha256 cellar: :any, arm64_sonoma:  "f864637dc7178e8cb1689d83f96109e44ea4ab37641f7d8318eb508515a0a0a5"
-    sha256 cellar: :any, arm64_linux:   "feb0e079e24724ed0064dc589e2a535e0a7834953dc4b05f3864f3d23ec7199d"
-    sha256 cellar: :any, x86_64_linux:  "55522202145f73574a684278e476f9aaece0a3d21f462fe981aa43a6cd93c4a3"
+    sha256 cellar: :any, arm64_tahoe:   "2da23376506aef4d455a1962dfdf23946665636f60163eebdf71c3ece2eb05e7"
+    sha256 cellar: :any, arm64_sequoia: "e2486273d85089a19464bc0eff521f255f8a9cb1840a5ccc5e23f2ac104cfc07"
+    sha256 cellar: :any, arm64_sonoma:  "e2486273d85089a19464bc0eff521f255f8a9cb1840a5ccc5e23f2ac104cfc07"
+    sha256 cellar: :any, arm64_linux:   "db4ceb19c13d598ac684dabbe5d6221bb3e2b18801c05c8befb703d1aaeeefe7"
+    sha256 cellar: :any, x86_64_linux:  "b9e788b4fc4ffdf1e512109f96dfa6841bc23cf71776f7720ff8d383286c9f35"
   end
 
   depends_on "python@3.14" => :build
