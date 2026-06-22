@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-06-15 11:15:20 UTC
-Total formulas: 1023
+Generated: 2026-06-22 11:05:30 UTC
+Total formulas: 1022
 
 ## Formulas
 
@@ -394,7 +394,6 @@ Total formulas: 1023
 | xytz | Beautiful TUI YouTube downloader | 271 | 21 | 2026-02-22 | 2026-02-22 | MIT | ✓ | - | [link](https://github.com/xdagiz/xytz) |
 | xfr | Modern iperf3 alternative with a live TUI | 269 | 10 | 2026-02-15 | 2026-02-12 | MIT | ✓ | - | [link](https://github.com/lance0/xfr) |
 | countryfetch | Neofetch-like tool for fetching information about your count... | 268 | 8 | 2026-03-06 | 2025-06-04 | - | ✓ | - | [link](https://github.com/nik-rev/countryfetch) |
-| fakecloud | Free, open-source local AWS cloud emulator for integration t... | 266 | 15 | 2026-04-30 | 2026-04-29 | AGPL-3.0-or-later | ✓ | - | [link](https://fakecloud.dev/) |
 | hygg | Simplifying the way you read. Minimalistic Vim-like TUI docu... | 265 | 11 | 2026-02-11 | 2025-09-26 | AGPL-3.0-only | ✓ | - | [link](https://github.com/kruserr/hygg) |
 | loom-ai | Loop engineering for agentic software delivery | 264 | 13 | 2026-06-12 | - | Apache-2.0 | ✓ | - | [link](https://github.com/valkor-ai/loom) |
 | pysentation | TUI for displaying Python presentations | 263 | 6 | 2025-03-18 | 2023-08-28 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/mimseyedi/pysentation) |
