@@ -8,11 +8,11 @@ class Gitte < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "eca037ad2bb2a5af5646d92d3eaf04c294e86a49c0e687edfe0ecef941934adb"
-    sha256               arm64_sequoia: "f318004b2a10ccb23acbc7f987e5f9f12a99c26318911c3d0b7024a3f3655771"
-    sha256               arm64_sonoma:  "d39f950259f420aaa3656e779806f7eb8fa4dc7e397b051ff1bc111a50b50e74"
-    sha256 cellar: :any, arm64_linux:   "a4420940835b0511c2b95f5b3c911821c6e7588c2a34bbf780124df297d1f976"
-    sha256 cellar: :any, x86_64_linux:  "2ecfbe1af0b55d1c626eaf85dbedb6bad432672523ee99cb2d5ea9d1669ff6e3"
+    sha256               arm64_tahoe:   "8510fe0dbf40ee2769a34c570b43a788280d5de1edaec68607df4da5f7e9a1f9"
+    sha256               arm64_sequoia: "fed0ce908b269d3293da1eca127eb2342aaf083e59d978e0cc12103f3e0d6e7f"
+    sha256               arm64_sonoma:  "664d6ea0a4cb59cd406ac2ef4942448af511e11a74a18f142fcbfae137732ffd"
+    sha256 cellar: :any, arm64_linux:   "9c3c2ed05ce2d2ee0905b63b415a9ded0df06ab642e5be6c078c2757f9cf1ed9"
+    sha256 cellar: :any, x86_64_linux:  "56c2d47bdc9d0219ac28bcae61306c205f9a1e0bf919bf129a5f305b6e8ad238"
   end
 
   depends_on "desktop-file-utils" => :build
