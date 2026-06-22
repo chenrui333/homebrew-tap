@@ -1,8 +1,8 @@
 class FissionCli < Formula
   desc "Fast and Simple Serverless Functions for Kubernetes"
   homepage "https://fission.io/"
-  url "https://github.com/fission/fission/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "5f9e4f846544fafc53a0e0b017813e10294a681167fcac0cff7541647ad25593"
+  url "https://github.com/fission/fission/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "3e9be3fdbf7b8db8fbcf629e12260b30005a0c022f33a0d19b660ea59fc7f6bf"
   license "Apache-2.0"
   head "https://github.com/fission/fission.git", branch: "main"
 
