@@ -1,8 +1,8 @@
 class Dupehound < Formula
   desc "Fast, offline duplicate-code detector with history chart and CI gate"
   homepage "https://github.com/Rafaelpta/dupehound"
-  url "https://github.com/Rafaelpta/dupehound/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "b8915a13c7846a6da748914ea09aa32398f358bd9e07dc204a646437f29cf40b"
+  url "https://github.com/Rafaelpta/dupehound/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "246fa0af533f898ea5bd7ff403208485e52255da7d6bf166cd02cd658a86d738"
   license "MIT"
   head "https://github.com/Rafaelpta/dupehound.git", branch: "main"
 
