@@ -3,8 +3,8 @@ class TakoVm < Formula
 
   desc "Secure Python code execution in isolated Docker containers"
   homepage "https://github.com/las7/TakoVM"
-  url "https://github.com/las7/TakoVM/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "fcab9bd358ef7ec62ef9bb569728fda4782878697890a68de61ef55a971db9dd"
+  url "https://github.com/las7/TakoVM/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "7c5e1e66358a2763dd35385598d74a408a95d29f29aad3585c4e3e1814466bc8"
   license "Apache-2.0"
   head "https://github.com/las7/TakoVM.git", branch: "main"
 
