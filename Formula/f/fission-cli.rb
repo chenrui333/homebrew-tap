@@ -13,11 +13,11 @@ class FissionCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e603d7dac36ea3ee4128c85d624acb8749771fff71f4a074073716e37bac65b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75981bf84f5fe7cf09334622c281747236c2ea9baff0dd1dae0d6ef9ab26607"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "370153c4e36266b87d9387e33cb7d1417c114bc9fa19645ca80d04e151c4b2c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f077d5a46a3e6b13d223f5f154a63c54f3b7fb948a0607283d2c7283a1d1d35"
-    sha256 cellar: :any,                 x86_64_linux:  "a23b88b298e80ad1e6a5cbb16bf1ce3c3a84757b9cf97067b5712604d7f6e42c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0caf7dd2b1b7dc680b55f85ca45dc4ff5b599edca3117a86c4aa210dd98afc52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c149bb9d5030fd9c95ee4f6968bc9aea7cc8cdf021db8f618aa40f1dd3980fa1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bda1c7480019322da2ab9e19a1a9cf5fc56718e12413d3a41fc9010264d18b15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c217486f99876bded68cabd5047ef3d4668f807ea831583c99baf439ca8f219"
+    sha256 cellar: :any,                 x86_64_linux:  "fb292979d205dc272a6df83275e2f55f7c648c4f6a42d368a5c8c5c98211b0bd"
   end
 
   depends_on "go" => :build
