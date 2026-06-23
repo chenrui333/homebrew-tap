@@ -7,11 +7,11 @@ class ClaudeContextMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "f4d2f06fd4dac42a7612ae3dc09852e932d17d3a493b89d70a9ff29f73b30f89"
-    sha256               arm64_sequoia: "1f960f485299080e69ec62b1ad59e7d173411c1d6f7e71c468d6644705178aab"
-    sha256               arm64_sonoma:  "44cfe9950bc21a4fe38c002b64137ab4e9d16102ddf91b770edbbf472d563969"
-    sha256 cellar: :any, arm64_linux:   "ba6a066de7663c95a24e84be0cdbd9220dc4675247a5198ceab6bc65f0f1d0e6"
-    sha256 cellar: :any, x86_64_linux:  "5071f0dffd40507d681200844015e2a1c9523c83eb4b9828222bddd79e18fbc2"
+    sha256               arm64_tahoe:   "5554d80539d316592ce62b5762eccbb505b104b4587f8fa72398c830fa6f5c27"
+    sha256               arm64_sequoia: "8d4055c1b54d03b21bdcc20153e2e1ab5fe60f1947ad0a316e58c55c2f3e9911"
+    sha256               arm64_sonoma:  "025f0d31be40ceadfd4418860b626663ef6e2e71de5f6106046ff7220142628e"
+    sha256 cellar: :any, arm64_linux:   "0eb39cafba7a6d15582ca24262a89ccd2562956b141c54c1ca1683d55b51314f"
+    sha256 cellar: :any, x86_64_linux:  "f2b2fb5add4d311ff3632079f5055df4b93fded4791c47fbb2e54e93803043e0"
   end
 
   depends_on "cmake" => :build
