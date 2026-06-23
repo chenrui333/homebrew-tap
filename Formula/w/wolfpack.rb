@@ -7,11 +7,11 @@ class Wolfpack < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "0058ac7496a0c11f766730d222fd7708495390ff2dacc44451e57dd1c46cb1d5"
-    sha256                               arm64_sequoia: "0058ac7496a0c11f766730d222fd7708495390ff2dacc44451e57dd1c46cb1d5"
-    sha256                               arm64_sonoma:  "0058ac7496a0c11f766730d222fd7708495390ff2dacc44451e57dd1c46cb1d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "897f67033fc2d9282f18097c915bbf5ee6e36454a193493b78a026e04ca4c256"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66bc97d96fc42545be8e8a86ee9d45ac39e38631180cebdb0a358e4bc118b385"
+    sha256                               arm64_tahoe:   "177b7c5f164fb01380df377d453d33b7cf6f7978139d3656cf06751e68039d9a"
+    sha256                               arm64_sequoia: "177b7c5f164fb01380df377d453d33b7cf6f7978139d3656cf06751e68039d9a"
+    sha256                               arm64_sonoma:  "177b7c5f164fb01380df377d453d33b7cf6f7978139d3656cf06751e68039d9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b026aec666d43434122552de3f44fff4697f2395dd1595faa23348beb02f6f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b091e52e1cf28b07dc44ce1b4d848c061374a1ebeea17966bc66eab71b690cb7"
   end
 
   depends_on "node"
