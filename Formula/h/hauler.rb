@@ -1,8 +1,8 @@
 class Hauler < Formula
   desc "Airgap Swiss Army Knife"
   homepage "https://docs.hauler.dev/docs/intro"
-  url "https://github.com/hauler-dev/hauler/archive/refs/tags/v1.4.3.tar.gz"
-  sha256 "722ac64d97483716ad9c95a7f63387244db7e91096aae738739f7858c2c83cf9"
+  url "https://github.com/hauler-dev/hauler/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "88e69b09d66bb8e19837c11861659bad9d63df47960f1dc2a7585a7bda98278c"
   license "Apache-2.0"
   head "https://github.com/hauler-dev/hauler.git", branch: "main"
 
@@ -20,10 +20,10 @@ class Hauler < Formula
   def install
     ldflags = %W[
       -s -w
-      -X hauler.dev/go/hauler/internal/version.gitVersion=#{version}
-      -X hauler.dev/go/hauler/internal/version.gitCommit=#{tap.user}
-      -X hauler.dev/go/hauler/internal/version.gitTreeState=clean
-      -X hauler.dev/go/hauler/internal/version.buildDate=#{time.iso8601}
+      -X hauler.dev/go/hauler/v2/internal/version.gitVersion=#{version}
+      -X hauler.dev/go/hauler/v2/internal/version.gitCommit=#{tap.user}
+      -X hauler.dev/go/hauler/v2/internal/version.gitTreeState=clean
+      -X hauler.dev/go/hauler/v2/internal/version.buildDate=#{time.iso8601}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/hauler"
