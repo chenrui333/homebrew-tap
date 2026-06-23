@@ -7,7 +7,7 @@ class DatadogMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "ffc2df9e69d9dc0b64660693bfede66d77e5a828b80b4baab66b06fa809e96d3"
+    sha256 cellar: :any_skip_relocation, all: "9d2e07ecd87ad8c1fb5ad152aa770393132fe11de44b299829d19ef4f3d602a7"
   end
 
   depends_on "node"
