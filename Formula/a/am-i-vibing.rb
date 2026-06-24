@@ -1,8 +1,8 @@
 class AmIVibing < Formula
   desc "Detect agentic coding environments and AI editors"
   homepage "https://github.com/ascorbic/am-i-vibing"
-  url "https://registry.npmjs.org/am-i-vibing/-/am-i-vibing-0.4.0.tgz"
-  sha256 "5e59f6fd20148e9753923d787b8dc9b6623a647fcb05cccb8c40af75cfd44f5a"
+  url "https://registry.npmjs.org/am-i-vibing/-/am-i-vibing-0.5.0.tgz"
+  sha256 "04355987537ac8578954e6f70a60c39b8d00bd151c0fdb90e2c7be50a311b7bc"
   license "MIT"
 
   bottle do
