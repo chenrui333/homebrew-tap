@@ -1,8 +1,8 @@
 class Crlfmt < Formula
   desc "Formatter for CockroachDB's additions to the Go style guide"
   homepage "https://github.com/cockroachdb/crlfmt"
-  url "https://github.com/cockroachdb/crlfmt/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "7145c34ab1b569be92a46c46973fc66f55ea775960395e426031579ffb277d4f"
+  url "https://github.com/cockroachdb/crlfmt/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "819a564a01d27c2a4033327b4db129dbccea505c6623fe6735e957eef338eb8d"
   license "Apache-2.0"
   head "https://github.com/cockroachdb/crlfmt.git", branch: "master"
 
