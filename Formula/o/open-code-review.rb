@@ -1,8 +1,8 @@
 class OpenCodeReview < Formula
   desc "AI-powered code review CLI tool"
   homepage "https://github.com/alibaba/open-code-review"
-  url "https://github.com/alibaba/open-code-review/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "9bf0c298080cc73d1d8339174b8fb7e4549abad605d6f7b22ca4ce8bf572b66b"
+  url "https://github.com/alibaba/open-code-review/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "d8e1babc4fac0c9c9ff941c95c409c3ddccfabd051d8b837d1caf03c85059d38"
   license "Apache-2.0"
   head "https://github.com/alibaba/open-code-review.git", branch: "main"
 
