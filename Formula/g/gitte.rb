@@ -1,8 +1,8 @@
 class Gitte < Formula
   desc "GTK4/libadwaita Git client for the GNOME desktop written in Rust"
   homepage "https://codeberg.org/ckruse/Gitte"
-  url "https://codeberg.org/ckruse/Gitte/archive/0.8.0.tar.gz"
-  sha256 "05bceaab66afe3e7147bba78632d31c9e96d379af8d1b5150f523fe76d511250"
+  url "https://codeberg.org/ckruse/Gitte/archive/0.8.1.tar.gz"
+  sha256 "f6519e7935b75d0db51d0a426e4b6829d5852e7f83bb3fb9cc74399ad21cef86"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/ckruse/Gitte.git", branch: "main"
 
