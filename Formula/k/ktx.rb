@@ -1,8 +1,8 @@
 class Ktx < Formula
   desc "Executable context layer for data and analytics agents"
   homepage "https://github.com/Kaelio/ktx"
-  url "https://registry.npmjs.org/@kaelio/ktx/-/ktx-0.13.0.tgz"
-  sha256 "5f3bce91f20c3b8c9b13a9a8a4e10102162b61609e8e7b24ed0b88af1fde1816"
+  url "https://registry.npmjs.org/@kaelio/ktx/-/ktx-0.13.1.tgz"
+  sha256 "55d16c740dfc0be4b54c3e005ea68a004d7ec1e895191fea095328e384025515"
   license "Apache-2.0"
 
   bottle do
