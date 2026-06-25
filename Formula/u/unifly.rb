@@ -1,8 +1,8 @@
 class Unifly < Formula
   desc "CLI/TUI for UniFi network controller management"
   homepage "https://github.com/hyperb1iss/unifly"
-  url "https://github.com/hyperb1iss/unifly/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "34a5c73a548270f670b9458f07da3ba1a94f1b9c31831fd4c433d6e01d561330"
+  url "https://github.com/hyperb1iss/unifly/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "c8aef27d8efe71f3f337be7e21e7e7a54ee33b616b67b729a05b0d87904d9592"
   license "Apache-2.0"
   head "https://github.com/hyperb1iss/unifly.git", branch: "main"
 
