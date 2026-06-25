@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/5d/c9/b4bbed7a7f1524c2067d5899928edcb264869721a8b2be6bd351805766e1/ministack-1.3.66.tar.gz"
-  sha256 "fee2089d6ed6f7ea73b40f0668a4b4d113d97db430b6d86d0feca62625f0f871"
+  url "https://files.pythonhosted.org/packages/1c/f1/2e2de26847f0fa21aa101a60a408428b82f05ddb313d6162c7e0634bb289/ministack-1.3.67.tar.gz"
+  sha256 "c9e3f22489552104d95ebda16bc5003657281510167caead2d2f3a4cf67c691c"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
@@ -36,8 +36,8 @@ class Ministack < Formula
   end
 
   resource "hpack" do
-    url "https://files.pythonhosted.org/packages/2c/48/71de9ed269fdae9c8057e5a4c0aa7402e8bb16f2c6e90b3aa53327b113f8/hpack-4.1.0.tar.gz"
-    sha256 "ec5eca154f7056aa06f196a557655c5b009b382873ac8d1e66e79e87535f1dca"
+    url "https://files.pythonhosted.org/packages/26/5b/fcabf6028144a8723726318b07a32c2f3314acdff6265743cf08a344b18e/hpack-4.2.0.tar.gz"
+    sha256 "0895cfa3b5531fc65fe439c05eb65144f123bf7a394fcaa56aa423548d8e45c0"
   end
 
   resource "hypercorn" do
