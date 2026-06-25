@@ -8,11 +8,11 @@ class NanoAgent < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32cf456e1fed7107b8555aa6f47851bc856b0bc4688d2fbebb2807e1e7154fa1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d94c8b1dedbacf742b48cc940d8a4a03f72da84e9d2788d2b776e3da16e4512"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db8440999487f20db0228ae9e1bd635678e4089c0d1ba56378cd6424059dfd83"
-    sha256 cellar: :any,                 arm64_linux:   "4a52348cd22001389cf7440b604983234dffb9ff03770234627378aa2b50b1ed"
-    sha256 cellar: :any,                 x86_64_linux:  "2551bfd11e0bfc7333deb2fa8fcbe1e08e4699992e1b25c08a925a8e571367fd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00074beee2d10ad3ddf14729b9fdf7a9f6db18dda89fa16e8da077baa3bc2e02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1419a21578207d6ebf26ad1f05f3d21d045a299e9385475f2375f92c41d8d074"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7de80c25ba09711e450ab7b29aa17bcb2f330af2dff6476f7a916591130088de"
+    sha256 cellar: :any,                 arm64_linux:   "ea53f901339b336152bf63863dc4325dfe3adc055d8c46c77709dd455eac7cd3"
+    sha256 cellar: :any,                 x86_64_linux:  "7052497e5e3851def99a30dd65412418cae2ea5ad3373f44e21cd1c432669317"
   end
 
   depends_on "rust" => :build
