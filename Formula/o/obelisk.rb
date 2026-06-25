@@ -8,12 +8,11 @@ class Obelisk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6c7d5102ca45a1b4fb9a5e63372b45f391bf38c4a026efd46cc59fc448288b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b0d42206b62a615bd6c4528a65cf28192d1d6a41b5e03c16471f7f188b5062f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "128e4aa535bf237f99fb73dac397cb64ee7f071e4ba0abba962e349591dcb9dd"
-    sha256 cellar: :any,                 arm64_linux:   "3cf0f967bc52b2b45851fa27d136c37a4093105b854895217e81de08a0157362"
-    sha256 cellar: :any,                 x86_64_linux:  "654d50da27e7135462155de0ff96d4b2d8b14cfa35b6a517d266cf8496f93921"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12d8e72962d1c3eed8c53010321cf53a7d3f411f676efcd2b62a3317107c2764"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e586f62e1f41273a1d4a75c13fcd070c381fd0bb73392ecb74cf9a33c880c9dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60a5ee9cd2a5a4f3894d57ff3e3d7cb03b1e8c7bf6d666228640a864da532473"
+    sha256 cellar: :any,                 arm64_linux:   "cc788e0b2d09ee05097419ce0cee68d0fa472b346f64fecb57f2e6a21c921546"
+    sha256 cellar: :any,                 x86_64_linux:  "d9dced5570896b831214b257077f7ef8f2171f242ce3756ece53bf84be7910ce"
   end
 
   depends_on "pkgconf" => :build
