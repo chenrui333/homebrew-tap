@@ -827,5 +827,11 @@
   "https://terminaltrove.com/oyui/": "https://github.com/emilien-jegou/oyui",
   "https://terminaltrove.com/clin/": "https://github.com/reekta92/clin-rs",
   "https://terminaltrove.com/kli/": "https://github.com/bjarneo/kli",
-  "https://terminaltrove.com/gistui/": "https://github.com/akunzai/gistui"
+  "https://terminaltrove.com/gistui/": "https://github.com/akunzai/gistui",
+  "https://terminaltrove.com/herald/": "https://github.com/herald-email/herald-mail-app",
+  "https://terminaltrove.com/oh-my-reddit/": "https://github.com/renatoworks/oh-my-reddit",
+  "https://terminaltrove.com/hunk/": "https://github.com/modem-dev/hunk",
+  "https://terminaltrove.com/leaf/": "https://github.com/rivolink/leaf",
+  "https://terminaltrove.com/layerx/": "https://github.com/deveshctl/layerx",
+  "https://terminaltrove.com/swpui/": "https://github.com/beeb/swpui"
 }
