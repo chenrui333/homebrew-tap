@@ -7,11 +7,11 @@ class Newsjack < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6199fc109fa31fa9d6e924ffa1a3a6b11654912554e50875aa0035dbb848bf66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6199fc109fa31fa9d6e924ffa1a3a6b11654912554e50875aa0035dbb848bf66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6199fc109fa31fa9d6e924ffa1a3a6b11654912554e50875aa0035dbb848bf66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bd93df031e6ba173621de1b9bec8e90906216bf23be1b50785a20aef2220383"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58b09d3c4027d7a2fa5fdc74c0f2739007d10f2541cc4f2e6305eec63f6be1ab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48ce39771847af3f952d368e0a27db27fa4cdd3701e0f9d8ad9aaf8e5b435c35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48ce39771847af3f952d368e0a27db27fa4cdd3701e0f9d8ad9aaf8e5b435c35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48ce39771847af3f952d368e0a27db27fa4cdd3701e0f9d8ad9aaf8e5b435c35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "085ea23738347708989d0e932d04a95fcb11565816bda71d146c0c18fb943708"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "442573cc718a2cd175231e15baf4726bd90f0f9c381eea6715d274ed9eb5fff0"
   end
 
   depends_on "node"
