@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/31/da/a464e160bcb09676f04bea292bf5d3fced60ffc9bf700a26cac23e20d37e/cccc_pair-0.4.28.tar.gz"
-  sha256 "ad82b3d62cb36909370db00293830acad3ad416525ee3c74864d54196f78ba15"
+  url "https://files.pythonhosted.org/packages/9f/0f/a21eecebc480ae5d21f6248ae3c876e26cb27f7ff1c2e189c03562091fbe/cccc_pair-0.4.29.tar.gz"
+  sha256 "fc223743305d79707ac7691a88c459d3183cced3020a408f27a66a01cd3720a6"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -72,8 +72,8 @@ class Cccc < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/e2/29/cc5819dc24d3daa80cdaa1aec023bf8652a70dd7fd1c96b0b225c99a7690/fastapi-0.137.2.tar.gz"
-    sha256 "b9d893bebc97dcfbdcb1917e88a292d062844ea19445a5fa4f7eb28c4baea9e3"
+    url "https://files.pythonhosted.org/packages/5b/58/ff455d9fe47c60abadb34b9e05a304b1f05f5ab8000ac01565156b6f5e43/fastapi-0.138.0.tar.gz"
+    sha256 "d445a4877636ad191e7053e08c9bf98cb921a6756776848400bb773d1740c061"
   end
 
   resource "frozenlist" do
@@ -107,8 +107,8 @@ class Cccc < Formula
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/4a/ad/1ab04db5d549ad1a7a2cd33682b1c38dee1d65019cb24fd7a23270e6337d/lark_oapi-1.6.8-py3-none-any.whl"
-    sha256 "9b443a5d47a7d204dd42dc40896c8b75087cc35788e45c48c140806d7df7e5e8"
+    url "https://files.pythonhosted.org/packages/ee/b5/00982093154f92ffc2bfe8448367323a07513bd1db1e92672f9573c92ddf/lark_oapi-1.6.9-py3-none-any.whl"
+    sha256 "ebc93c09eba66e3d2d8823d9df4988370b2e0245870b3249b61cdf6d6cd1642c"
   end
 
   resource "multidict" do
