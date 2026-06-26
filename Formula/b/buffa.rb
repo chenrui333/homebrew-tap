@@ -1,8 +1,8 @@
 class Buffa < Formula
   desc "Pure-Rust Protocol Buffers implementation with editions support"
   homepage "https://github.com/anthropics/buffa"
-  url "https://github.com/anthropics/buffa/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "511c626799c4b890b44421ec5d8694924a13153c35a68eefa54bd34031a25bbd"
+  url "https://github.com/anthropics/buffa/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "eca43e42cfbd353c70e70134f5f5d801ab32f21e8afdebae94df1a93422e316b"
   license "Apache-2.0"
   head "https://github.com/anthropics/buffa.git", branch: "main"
 
