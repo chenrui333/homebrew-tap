@@ -1,8 +1,8 @@
 class Reqlog < Formula
   desc "Trace and filter requests across distributed systems"
   homepage "https://github.com/SagarMaheshwary/reqlog"
-  url "https://github.com/SagarMaheshwary/reqlog/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "14472781e7a5049c01c08b4957279c5be6196d2ae9382c50cf66add794e6c094"
+  url "https://github.com/SagarMaheshwary/reqlog/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "76b651c3b52722039751d3f9d34006597339e75f0dcf5146c4d374318b5dd83c"
   license "MIT"
   head "https://github.com/SagarMaheshwary/reqlog.git", branch: "master"
 
