@@ -8,11 +8,11 @@ class Clawpatrol < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef9da17601dc5f6a0fbf9e6bb6cb7d55d8b8fb9d6d6675507be0b4424b17e19f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef9da17601dc5f6a0fbf9e6bb6cb7d55d8b8fb9d6d6675507be0b4424b17e19f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef9da17601dc5f6a0fbf9e6bb6cb7d55d8b8fb9d6d6675507be0b4424b17e19f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d41600fa68ea2e5ea9a069f13063f6e6f322f4409e3f38ae9d30356fc883a208"
-    sha256 cellar: :any,                 x86_64_linux:  "30dba8d421caaee8b1bd28f2288ab92854c6fcf5f752a81653a120ec4c01bff9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18d21cb961d614ede9a4270ed783cab4a13e39784ef6440defeae16e6ab07253"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18d21cb961d614ede9a4270ed783cab4a13e39784ef6440defeae16e6ab07253"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18d21cb961d614ede9a4270ed783cab4a13e39784ef6440defeae16e6ab07253"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37b4d139618fabd29688acf5767afd789ca1f1a8b561db67bfcaf211ed4624be"
+    sha256 cellar: :any,                 x86_64_linux:  "c214885ef064679bdf63c7265caae84df5d07253d43d98e9b1f0f36865fc13a7"
   end
 
   depends_on "deno" => :build
