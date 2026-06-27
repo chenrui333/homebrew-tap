@@ -1,8 +1,8 @@
 class Tori < Formula
   desc "Remote Docker and host monitoring over SSH"
   homepage "https://toricli.sh/"
-  url "https://github.com/thobiasn/tori-cli/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "c432d112ac8f10c6024fb76211429ea62a961f6cb12dc722322da43d478ccb79"
+  url "https://github.com/thobiasn/tori-cli/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "760e23de7112df41cd1f8d17a2c92ac6593e320d021728627b6895080566647d"
   license "MIT"
   head "https://github.com/thobiasn/tori-cli.git", branch: "main"
 
