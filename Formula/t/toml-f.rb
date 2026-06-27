@@ -1,8 +1,8 @@
 class TomlF < Formula
   desc "TOML parser for data serialization/deserialization in Fortran"
   homepage "https://github.com/toml-f/toml-f"
-  url "https://github.com/toml-f/toml-f/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a9e546221d788416fa6ca8d8550a79d1adf983a2a67b5c9ef57ae79fb02c9df0"
+  url "https://github.com/toml-f/toml-f/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "095814952e76283a689ea957aa5bd7fc748cbe24d4ffb3a34f4f564b792dd33c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/toml-f/toml-f.git", branch: "main"
 
@@ -37,7 +37,7 @@ class TomlF < Formula
     F90
     cflags = shell_output("pkgconf --cflags toml-f").chomp.split
     libs   = shell_output("pkgconf --libs toml-f").chomp.split
-    system Formula["gcc"].opt_bin/"gfortran", "t.f90", *cflags, *libs, "-o", "test"
+    system formula_opt_bin("gcc")/"gfortran", "t.f90", *cflags, *libs, "-o", "test"
     assert_equal "ok", shell_output("./test").strip
   end
 end
