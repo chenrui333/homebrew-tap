@@ -1,8 +1,8 @@
 class Creanote < Formula
   desc "Create organized notes from the terminal"
   homepage "https://github.com/elitalpa/creanote"
-  url "https://github.com/elitalpa/creanote/archive/refs/tags/creanote@0.3.1.tar.gz"
-  sha256 "f43387af07a8d3f1922e710d35c19944714e10e14fda24f31fad1dc3f44e43d6"
+  url "https://github.com/elitalpa/creanote/archive/refs/tags/creanote@0.3.2.tar.gz"
+  sha256 "aa9280adc7a18adbe2c6f2442d6c0132334a91054a6e8482ec8acbc766fcfa25"
   license "MIT"
   head "https://github.com/elitalpa/creanote.git", branch: "main"
 
