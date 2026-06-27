@@ -1,8 +1,8 @@
 class BiberInspector < Formula
   desc "Binary inspector written in Zig"
   homepage "https://github.com/hrasityilmaz/Biber"
-  url "https://github.com/hrasityilmaz/Biber/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "f61bda38a0d903ce5b28ca5b18e32bb336d971b6a7f4b948ed0089c0c9575e70"
+  url "https://github.com/hrasityilmaz/Biber/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "e23b5de32d9c8ce277418c7bf7b71c26ab1a4b9f99ba1fb93d22943fd832bd5d"
   license "MIT"
   head "https://github.com/hrasityilmaz/Biber.git", branch: "main"
 
