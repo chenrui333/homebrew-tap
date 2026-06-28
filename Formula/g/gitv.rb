@@ -1,8 +1,8 @@
 class Gitv < Formula
   desc "Terminal-based viewer for GitHub issues"
   homepage "https://github.com/JayanAXHF/gitv"
-  url "https://github.com/JayanAXHF/gitv/archive/refs/tags/gitv-tui-v0.4.3.tar.gz"
-  sha256 "36f3eea4b2cc9cfe37278df0357172099e334092320253ddba275e22c771d971"
+  url "https://github.com/JayanAXHF/gitv/archive/refs/tags/gitv-tui-v0.4.5.tar.gz"
+  sha256 "b74b28c170060b1681ae26b0c59ee5245eba9967ff4d1e1bdd49d5303f1f07bd"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/JayanAXHF/gitv.git", branch: "main"
 
