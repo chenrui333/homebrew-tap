@@ -7,7 +7,7 @@ class Duster < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "cbd5ddf470fb2c033e0f33df09a1a4b2bd3b3653a9da0b31d69d84c545c3947c"
+    sha256 cellar: :any_skip_relocation, all: "8d36d38e4223eab3fc2c529fe87ab779c6eb8952ac5e8e119e7eb438ab20e4ab"
   end
 
   depends_on "php"
