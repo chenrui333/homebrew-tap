@@ -1,8 +1,8 @@
 class Optimizt < Formula
   desc "CLI image optimization tool"
   homepage "https://github.com/343dev/optimizt"
-  url "https://registry.npmjs.org/@343dev/optimizt/-/optimizt-12.1.1.tgz"
-  sha256 "eb7fbfe1cacbc61eecf9fa598d4e09d25448827246e00a999553da779ba4d1d2"
+  url "https://registry.npmjs.org/@343dev/optimizt/-/optimizt-13.0.0.tgz"
+  sha256 "6880d0574fa58a7601253771db919e624a68825d74714633e97fea9a36faf28d"
   license "MIT"
 
   bottle do
