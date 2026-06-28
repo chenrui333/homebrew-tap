@@ -1,8 +1,8 @@
 class AksMcp < Formula
   desc "MCP server for Azure Kubernetes Service (AKS)"
   homepage "https://github.com/Azure/aks-mcp"
-  url "https://github.com/Azure/aks-mcp/archive/refs/tags/v0.0.18.tar.gz"
-  sha256 "74fa9a3fa7f273fb61e81eea6476fcff6bb3d079fb77e785903d282e0db6d33d"
+  url "https://github.com/Azure/aks-mcp/archive/refs/tags/v0.0.19.tar.gz"
+  sha256 "5fc1ba7497cd6985a9146a85b1bd38e3bfd431518587debf3211e5d80e300928"
   license "MIT"
   head "https://github.com/Azure/aks-mcp.git", branch: "main"
 
