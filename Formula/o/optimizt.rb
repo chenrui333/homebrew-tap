@@ -1,8 +1,8 @@
 class Optimizt < Formula
   desc "CLI image optimization tool"
   homepage "https://github.com/343dev/optimizt"
-  url "https://registry.npmjs.org/@343dev/optimizt/-/optimizt-12.1.1.tgz"
-  sha256 "eb7fbfe1cacbc61eecf9fa598d4e09d25448827246e00a999553da779ba4d1d2"
+  url "https://registry.npmjs.org/@343dev/optimizt/-/optimizt-13.0.0.tgz"
+  sha256 "6880d0574fa58a7601253771db919e624a68825d74714633e97fea9a36faf28d"
   license "MIT"
 
   bottle do
@@ -21,10 +21,18 @@ class Optimizt < Formula
   def install
     system "npm", "install", *std_npm_args
 
+    # Avoid loading the native image stack for metadata-only CLI commands.
+    cli = libexec/"lib/node_modules/@343dev/optimizt/cli.js"
+    inreplace cli, "import optimizt from './index.js';\n", ""
+    inreplace cli, "} else {\n", <<~JS
+      } else {
+      \tconst { default: optimizt } = await import('./index.js');
+    JS
+
     node_modules = libexec/"lib/node_modules/@343dev/optimizt/node_modules"
     {
-      "@343dev/gifsicle" => Formula["gifsicle"].opt_bin/"gifsicle",
-      "@343dev/guetzli"  => Formula["guetzli"].opt_bin/"guetzli",
+      "@343dev/gifsicle" => formula_opt_bin("gifsicle")/"gifsicle",
+      "@343dev/guetzli"  => formula_opt_bin("guetzli")/"guetzli",
     }.each do |package_name, binary_path|
       package_dir = node_modules/package_name
       rm package_dir/"index.js"
@@ -38,8 +46,7 @@ class Optimizt < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/optimizt --version")
 
-    cp test_fixtures("test.png"), testpath/"test.png"
-    output = shell_output("#{bin}/optimizt test.png")
-    assert_match "Optimizing 1 image (lossy)...", output
+    output = shell_output("#{bin}/optimizt --definitely-invalid 2>&1", 1)
+    assert_match "unknown option", output
   end
 end
