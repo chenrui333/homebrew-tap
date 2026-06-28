@@ -1,8 +1,8 @@
 class Jonquil < Formula
   desc "JSON parser on top of TOML implementation (Fortran)"
   homepage "https://github.com/toml-f/jonquil"
-  url "https://github.com/toml-f/jonquil/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "9742a1b15fe4e7c3332f501dcedc4f9559dfa37884ca055ff5b5508ba0901749"
+  url "https://github.com/toml-f/jonquil/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "963f7f12128bc45dc3313df87dd4a3ba4b8ff20f38fdec2408b2a6391cf7aae2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/toml-f/jonquil.git", branch: "main"
 
