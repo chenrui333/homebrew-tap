@@ -7,7 +7,7 @@ class IamCollect < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "afbeead023fb470a7c67e7c8e7a221b9fb3a64848d23f40b743462a175d03d93"
+    sha256 cellar: :any_skip_relocation, all: "46bd3af9918dd6aa127f8bd9c714dc79910d7db06f0b9ca4d1531941631293a6"
   end
 
   depends_on "node"
