@@ -7,11 +7,11 @@ class Knip < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "cbbe37bb5c59f3c443739bee7e665bfeab96bba25006c7b4547d44655d2944be"
-    sha256 cellar: :any,                 arm64_sequoia: "b77ea866c7c7c987e377890f236c065a4848aafacb85bd49ef73c13f1b789990"
-    sha256 cellar: :any,                 arm64_sonoma:  "b77ea866c7c7c987e377890f236c065a4848aafacb85bd49ef73c13f1b789990"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc713966a7343570cf8beebb8f85d0d3c497f453bb66522e2ddbb1b3de215fe7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9b35221b2891f326a6b6e8c7fb0650f0d0460d4fece18ff0df6375ddf3e9958"
+    sha256 cellar: :any,                 arm64_tahoe:   "86e8510f7e1025412e0d5e385be16587c24dbb6da20e313a02952fc2458fa547"
+    sha256 cellar: :any,                 arm64_sequoia: "3209d442b2a8f317ff48eb9f7dee4cc84beb6b2241021abf7a6bb8fdddb4cebc"
+    sha256 cellar: :any,                 arm64_sonoma:  "3209d442b2a8f317ff48eb9f7dee4cc84beb6b2241021abf7a6bb8fdddb4cebc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95b9236bc003d706234b0117016b638e76c63770d7a58ac7fe8899449a82443c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "660f49fab742fe80289c89b1d48a65268dade740ea36730f3dd23bbb33138f6a"
   end
 
   depends_on "node"
