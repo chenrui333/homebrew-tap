@@ -7,11 +7,11 @@ class Agentmako < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "371c2b4cdfc5040d5f3240c50ae77003a5f891338b526c2fe932ea1d86e0f692"
-    sha256               arm64_sequoia: "ac5c9037af45c9232ebdd710fba3750c389acb97f15b70211a0c18eee1f80c8c"
-    sha256               arm64_sonoma:  "6da481dc5e32ef4305517354dab3b1a295e6cd04745243f0da0cb2f9eb7ed278"
-    sha256 cellar: :any, arm64_linux:   "32850f424b58571f59f4af2d36fe00b749ea48495e78c02b978ff77148d82f75"
-    sha256 cellar: :any, x86_64_linux:  "09c660c7272cb0fa27cdb5d6e4d0a582394d9b849e0b7d07c0a9157e94c1a428"
+    sha256               arm64_tahoe:   "9445a4100a688767e2add4f222b96f5c561b889263eb1764a7e64e518a19d24b"
+    sha256               arm64_sequoia: "df7362a8584af3ab4f022338478199f6bb3151ce21da4023133745c82ff0e42f"
+    sha256               arm64_sonoma:  "e1ef404200c4dceee3732721ceb743cbb8f5bc158b8537c9f8e7bcd2dd563216"
+    sha256 cellar: :any, arm64_linux:   "8eae2975192aac36fe08f4a549f04d348aff6cd2b8f0a5738bfa3fd5d5d8b043"
+    sha256 cellar: :any, x86_64_linux:  "f1e7c903afeb79064035e7f45588daad20a3b07364078c9ae44a87af4cbe16f4"
   end
 
   depends_on "node"
