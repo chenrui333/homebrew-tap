@@ -1,8 +1,8 @@
 class Zigfetch < Formula
   desc "Minimal neofetch/fastfetch like system information tool"
   homepage "https://github.com/utox39/zigfetch"
-  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "8568efea2ec305513124978bbaf6db82b2293e9a0f8952d0d36a786bab57f90b"
+  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.27.2.tar.gz"
+  sha256 "b60567ea9011fcafe71c0756257cda76285eb25cdefb1800e29108e93638da74"
   license "MIT"
 
   bottle do
@@ -22,22 +22,12 @@ class Zigfetch < Formula
   end
 
   def install
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case ENV.effective_arch
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    when :armv8 then "xgene1" # Closest to `-march=armv8-a`
-    else ENV.effective_arch
-    end
-
-    args = []
-    args << "-Dcpu=#{cpu}" if build.bottle?
-
-    zig = "zig"
-    system zig, "build", *args, *std_zig_args(release_mode: :fast)
+    system "zig", "build", *std_zig_args(release_mode: :fast)
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+
     with_env(
       "LANG"         => "C.UTF-8",
       "SHELL"        => "/bin/bash",
