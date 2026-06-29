@@ -1,8 +1,8 @@
 class Zigfetch < Formula
   desc "Minimal neofetch/fastfetch like system information tool"
   homepage "https://github.com/utox39/zigfetch"
-  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "8568efea2ec305513124978bbaf6db82b2293e9a0f8952d0d36a786bab57f90b"
+  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.27.2.tar.gz"
+  sha256 "b60567ea9011fcafe71c0756257cda76285eb25cdefb1800e29108e93638da74"
   license "MIT"
 
   bottle do
