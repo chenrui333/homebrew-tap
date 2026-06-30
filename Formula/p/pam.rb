@@ -1,8 +1,8 @@
 class Pam < Formula
   desc "Minimal CLI tool for managing and executing SQL queries with a TUI"
   homepage "https://github.com/eduardofuncao/squix"
-  url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.4.3-beta.tar.gz"
-  sha256 "2c7e76e1c907e2dd469445f1da6e53d6d9159ea1f16f246d9c4336413cd9b815"
+  url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.5.0-beta.tar.gz"
+  sha256 "c50ee4ae5cd9fcc260818cd95b7e320ed4e70cb6fd32addcee36516ab1b383b1"
   license "MIT"
   head "https://github.com/eduardofuncao/squix.git", branch: "main"
 
