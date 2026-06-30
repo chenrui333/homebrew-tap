@@ -1,8 +1,8 @@
 class BrighterscriptFormatter < Formula
   desc "Code formatter for BrighterScript (and BrightScript)"
   homepage "https://github.com/rokucommunity/brighterscript-formatter"
-  url "https://registry.npmjs.org/brighterscript-formatter/-/brighterscript-formatter-1.7.28.tgz"
-  sha256 "465176f0b424d86c0f28b49df0a1819ba1f979b8f341e140bc48f267698a29dc"
+  url "https://registry.npmjs.org/brighterscript-formatter/-/brighterscript-formatter-1.8.0.tgz"
+  sha256 "7077c67b84044a4c8978d645c868495ef567da857f07f763c8337c896abe0c07"
   license "MIT"
 
   bottle do
