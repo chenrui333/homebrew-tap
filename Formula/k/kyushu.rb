@@ -8,11 +8,11 @@ class Kyushu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5302af16404eaad654ac1336645321c741c05b770f13d307295bf11f3313c240"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "504329c56aca69ecc7cf9d8c804dac82e5648ac970d51a4984291ed67e3aa3fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fdcca48b4241882e0adbc9bf1fe325c6e35bd5018c7a57e4af0f161cf12dcbf"
-    sha256 cellar: :any,                 arm64_linux:   "397edfac8cd9aae77cfcdbdd20729cb170c56cdadb285f54bef70cc094a2f9b9"
-    sha256 cellar: :any,                 x86_64_linux:  "45ee5a800d1483bad9cc104a9c4354bf69f81a75892dbcedf4c67b2b3a9c47d2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2f45ffd1d1bb6521cf8ffcd3b8c05a3b828f9a95976d893aff27647532ea336"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac467aa6cd117bfba5e50d8b2d9258ac7b9218f0a4826cfadf793e6409f4faa7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51816986f712c22404a23d40b1389929e2d0a0884e81f18a397929fe5371d5c5"
+    sha256 cellar: :any,                 arm64_linux:   "da10a2087cffb3d3301eb2b97434f5dc82b39715d364b6fc2caff164d2f3c13c"
+    sha256 cellar: :any,                 x86_64_linux:  "65899efca5282f8f92b00cd557a5f9f7c83a705c54ecb181b8b08842f9faa8dd"
   end
 
   depends_on "rust" => :build
