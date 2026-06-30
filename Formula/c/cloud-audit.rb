@@ -5,8 +5,8 @@ class CloudAudit < Formula
 
   desc "Open-source AWS security scanner with IAM escalation detection"
   homepage "https://github.com/gebalamariusz/cloud-audit"
-  url "https://github.com/gebalamariusz/cloud-audit/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "353dae8afeb62ab7626f544e0d7420fee4bf59def7fbe81029842c12b4d1001e"
+  url "https://github.com/gebalamariusz/cloud-audit/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "4f6e96f1ca8ddc30ebbe5518020806f9a121ef8b6a65d22a116ec2080444a1d4"
   license "MIT"
   head "https://github.com/gebalamariusz/cloud-audit.git", branch: "main"
 
