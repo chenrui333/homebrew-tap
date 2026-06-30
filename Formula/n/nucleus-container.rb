@@ -8,8 +8,8 @@ class NucleusContainer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "f589b53e0a0242be2939c74acb74ff80df431a8e0e101c57444c3727925719b5"
-    sha256 cellar: :any, x86_64_linux: "8be57cce27cbb8714131fd38822c3dd077b27c76a1724c12849d35dc0d907f6e"
+    sha256 cellar: :any, arm64_linux:  "61109142986878b14a9a046ac2ee579a512021283410e8e0a43f17e57c64771c"
+    sha256 cellar: :any, x86_64_linux: "9e14abfc8e2e65176a0804bb933da92141bb489d77f21ed49eac5574c04cd223"
   end
 
   depends_on "rust" => :build
