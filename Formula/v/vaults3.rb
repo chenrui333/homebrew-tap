@@ -8,11 +8,11 @@ class Vaults3 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79ba1071fb8de4aa5d5dcff68344a145f1ab10ac1a47551ed2e504af7469a9e9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79ba1071fb8de4aa5d5dcff68344a145f1ab10ac1a47551ed2e504af7469a9e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79ba1071fb8de4aa5d5dcff68344a145f1ab10ac1a47551ed2e504af7469a9e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51ff791b777f1328a67bb5f13f4676ae61fe8785ed2f3e3dd0433be09bb1d9b2"
-    sha256 cellar: :any,                 x86_64_linux:  "eb6ed730a4f6f5152fe6045eb030e837bfcbba27371777f0ffaafceb6dd2d58c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e779e353a94d4515739cd40042b2834651aa6159620e60e1b1ea40eed81ca232"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e779e353a94d4515739cd40042b2834651aa6159620e60e1b1ea40eed81ca232"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e779e353a94d4515739cd40042b2834651aa6159620e60e1b1ea40eed81ca232"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d732539091ce059b490e42d727b8840e37137c8a2734af049cbcd44dda1a4e6"
+    sha256 cellar: :any,                 x86_64_linux:  "717dbad69c67a1d1c4a7b6126d5e4711490d58fc6f80f62514f7af21811a57fe"
   end
 
   depends_on "go" => :build
