@@ -12,11 +12,11 @@ class CloudAudit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "d195107049a6914111f00809e63d665be75ee502b4932bf0b0bc9ade2aff19a6"
-    sha256 cellar: :any,                 arm64_sequoia: "9a4ecafa28f1619339b5b7a0f618a6bbcf5657e5db01e8cf3c72c0d920940cc6"
-    sha256 cellar: :any,                 arm64_sonoma:  "9d1664fbe6fb7e961cf7d95380f68e782ee2e5d2ea9d65b95c703cdaf685c04b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3632030f62404bc29b74def36a5273a9a9e076e2a620c76867b69397b168115d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "484e06ce422c8f5fd770cdeca1adf09b682e68ae79530e4bd5bc7b2a79f626ed"
+    sha256 cellar: :any, arm64_tahoe:   "c0863662eda2630ca454a691d653b305342a08652dcd329d86fd7b92f3ee3f70"
+    sha256 cellar: :any, arm64_sequoia: "2179e17a037cf0e5e41d5b7cd627840fa2cd64d88eee639323f1e9f6393fea49"
+    sha256 cellar: :any, arm64_sonoma:  "6bbb80669439672a20400e1b584441788f2191ef27696c1ce4e2cd1a6fd8b624"
+    sha256 cellar: :any, arm64_linux:   "5e5758fc0ecf3ccf8ab4def9787ea82b22fc8701c03f26eb47ef496dd2496e0f"
+    sha256 cellar: :any, x86_64_linux:  "c1c248d6337bc4367db38dced7a5261ac422e580799e07588243abf0c346e230"
   end
 
   depends_on "rust" => :build # for rpds-py
