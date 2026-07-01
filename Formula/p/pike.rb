@@ -2,8 +2,8 @@
 class Pike < Formula
   desc "Tool for determining the permissions or policy required for IAC code"
   homepage "https://github.com/jamesWoolfenden/pike"
-  url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v0.3.39.tar.gz"
-  sha256 "728c17762378b5469e30637a06b1921414694199da1dc3c317c14f70061cb740"
+  url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "75fd0f1a542ef0d027e5fce78799a217e2f2f492d4b73f01c6c47198a4bbd0be"
   license "Apache-2.0"
   head "https://github.com/jamesWoolfenden/pike.git", branch: "master"
 
