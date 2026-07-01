@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/b1/1a/81904d60d4c087c45542bbdc86e846a7b01d66c3df6f5bb6ec4ed59237d2/apm_cli-0.23.0.tar.gz"
-  sha256 "18a127b233ad2c33c2beac05e5b7bc0c67d6fa152d9f93a09f02c9932af7f3eb"
+  url "https://files.pythonhosted.org/packages/7e/66/7bf05757f3cec048522382221a4245a1bb40951239564cf0a2aedc536368/apm_cli-0.23.1.tar.gz"
+  sha256 "94752c82b22fcf2a3946c1154ed39e965827a5c860e9f8b860e46801c9243404"
   license "MIT"
 
   bottle do
@@ -143,8 +143,8 @@ class ApmCli < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/66/b5/55f06bb281d92fb3cc86d14e1def2bd908bb77693183e7cb1f5a3c388b0c/jiter-0.15.0.tar.gz"
-    sha256 "4251acc80e2b7c9b7b8823456ea0fceeb0734dac2df7636d3c711b38476b5a76"
+    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
+    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
   end
 
   resource "llm" do
