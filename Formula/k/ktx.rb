@@ -7,11 +7,11 @@ class Ktx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "15282e01f30ff5babd3be83651f1221db4cc95e970dfcf54655e2d07adc477bd"
-    sha256               arm64_sequoia: "46a284bb862637fdc29e426414548e8dcf7a99e4fbfe2fc7b89406ada09e0294"
-    sha256               arm64_sonoma:  "46a284bb862637fdc29e426414548e8dcf7a99e4fbfe2fc7b89406ada09e0294"
-    sha256 cellar: :any, arm64_linux:   "7337ec9214d99fcd86a9d278a4a4fed5a008430b501a4302f82b8a7fe1834a15"
-    sha256 cellar: :any, x86_64_linux:  "603e840a209ef9423c166b930f0a7596438a08af0b9c1668dcb050bf9c74f941"
+    sha256               arm64_tahoe:   "31e86890e0c270a487cd24b5ff01eae275ede43d6aadf53248eb7e56372929f5"
+    sha256               arm64_sequoia: "2e06ca65b539794a4f246b36a63b24b7fd98f7db545b7494b36fd65cbfece559"
+    sha256               arm64_sonoma:  "2e06ca65b539794a4f246b36a63b24b7fd98f7db545b7494b36fd65cbfece559"
+    sha256 cellar: :any, arm64_linux:   "b23d8c29458018240ee9cc62a635b2f58a0f081c1ad65b92d8bec82f4fbb8973"
+    sha256 cellar: :any, x86_64_linux:  "803377c63b97c86bc9a0628ceabc39f5f9e93b02d8b8d106f9232856c882a036"
   end
 
   depends_on "node"
