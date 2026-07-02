@@ -1,8 +1,8 @@
 class PassCli < Formula
   desc "Secure CLI password manager with local encrypted storage"
   homepage "https://github.com/ari1110/pass-cli"
-  url "https://github.com/ari1110/pass-cli/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "f0ed42df77507fbad2c87f8cd2a6a3bc3084c4948e7422b80847372348c72509"
+  url "https://github.com/ari1110/pass-cli/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "b52325e56cce83eaf4fea951272037a63ac6c5fc33ad0ad18538cd383ff3f224"
   license "Apache-2.0"
   head "https://github.com/ari1110/pass-cli.git", branch: "main"
 
