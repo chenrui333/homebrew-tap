@@ -8,11 +8,11 @@ class Lazyjira < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "591e12edccc89ce9adfdf605f62b967f1412a1303aa3d71836d2f7879bcfe1a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "591e12edccc89ce9adfdf605f62b967f1412a1303aa3d71836d2f7879bcfe1a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "591e12edccc89ce9adfdf605f62b967f1412a1303aa3d71836d2f7879bcfe1a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f67c9a9abf119de03cae68dea39eebfb3418d4f878492a8389c31c98eba53375"
-    sha256 cellar: :any,                 x86_64_linux:  "73c4ea3548dface125b8109925bd343f4a65ed8f896ec5eb13d67970d1fe1678"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85f9118cc3adde3e1812d9e606ffb723e4f813e7620b83fa7cd1a43fcca56a7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85f9118cc3adde3e1812d9e606ffb723e4f813e7620b83fa7cd1a43fcca56a7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85f9118cc3adde3e1812d9e606ffb723e4f813e7620b83fa7cd1a43fcca56a7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8e3459f19fb652bf45d7d4bf58e26b7b1859bca9aa74e05345365c0846f152d"
+    sha256 cellar: :any,                 x86_64_linux:  "f5f8c8f5babe41f35c071d3649ab9181d5cf866d1207232eeb5d54997af33c05"
   end
 
   depends_on "go" => :build
