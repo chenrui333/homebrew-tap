@@ -7,11 +7,11 @@ class Castor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d25305c62dbdeb90332cf0c255aaa0d09cf3e86a22e4bdecdbb5244ebe2edce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d25305c62dbdeb90332cf0c255aaa0d09cf3e86a22e4bdecdbb5244ebe2edce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d25305c62dbdeb90332cf0c255aaa0d09cf3e86a22e4bdecdbb5244ebe2edce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46aa5b4d4e584cfeb1a00e38481e96dbc51492a58a493d6c0506f77edc19fa3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03744d5b2e1929282c397483b4b75c55bf1f3d262a1879cc656dbdf37a38b0ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2aec53bbbe1b38b7b0576490178445071a8d8a0261df245fc183b0997df36b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2aec53bbbe1b38b7b0576490178445071a8d8a0261df245fc183b0997df36b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2aec53bbbe1b38b7b0576490178445071a8d8a0261df245fc183b0997df36b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41cd345a850f11a26ee3bc91d0c3c2076f9e0eb66e8507ef3ad6ad02f849b1df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4fc4934d530578bad4b33330d7ca09926b2622be4eed5ae64d3f8ed06bbcb3e"
   end
 
   depends_on "composer" => :build
