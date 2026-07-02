@@ -1,8 +1,8 @@
 class Diffyml < Formula
   desc "Structural YAML diff tool with Kubernetes intelligence"
   homepage "https://github.com/szhekpisov/diffyml"
-  url "https://github.com/szhekpisov/diffyml/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "e0a71c1a69ab8247ade59b1265a68462f2bf415bebd1275dc0f02a4e036f73e5"
+  url "https://github.com/szhekpisov/diffyml/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "86d1746ff1dad438da46ddbaae4681ab79cf65ad6d4c4a356eb1cd3c9fb1813b"
   license "MIT"
   head "https://github.com/szhekpisov/diffyml.git", branch: "main"
 
