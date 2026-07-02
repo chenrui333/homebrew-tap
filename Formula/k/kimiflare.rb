@@ -7,11 +7,11 @@ class Kimiflare < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "12cf30814ee0ab34f967d264b8098e847376128b4fffa3a0d885d6fc140f6a23"
-    sha256 cellar: :any,                 arm64_sequoia: "48f9ae94226bfe5a5c5e82c8fdea07208ff35a0a64dfa3edffc3f39cb80adb9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "48f9ae94226bfe5a5c5e82c8fdea07208ff35a0a64dfa3edffc3f39cb80adb9a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e741ba1b30a8a685f21733ba5c22a4451f1d3d870cc35a955e2285c7a215233"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1a0d750857ec2646f3f28607ba193e0a792161ecc0cfd3a07561227223f482c"
+    sha256 cellar: :any,                 arm64_tahoe:   "1c626fea46e0756ca2eaeb93b7f41b19bf5a5c4dd9303b01d751948970a7ff06"
+    sha256 cellar: :any,                 arm64_sequoia: "12977330d58a17ab3cdc53fc3794d5f87d85c13f74a020466d66c30c9282fe02"
+    sha256 cellar: :any,                 arm64_sonoma:  "12977330d58a17ab3cdc53fc3794d5f87d85c13f74a020466d66c30c9282fe02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c9c76cd7f27a11c5bdcde0c03d04f1a46a46f2820ade65b63b3ac61e11d7154"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d00d66d850475c6c4fda6e7891789e6f24b45865a72a628645fe1012e6ad67"
   end
 
   depends_on "node"
