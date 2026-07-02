@@ -1,8 +1,8 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.79.tar.gz"
-  sha256 "7e4503657d8f2fc82ad658ddfcceaf00d604a455ad3fa72c23185c7332d6e388"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.0.94.tar.gz"
+  sha256 "361c8bb2bcb84b5b3778064fa27a2cc4eb28d77e5b6aeaef0f605f4c21673661"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
@@ -23,7 +23,7 @@ class YoutubeMusicCli < Formula
   def install
     system "npm", "install", "--include=dev", "--legacy-peer-deps",
            *std_npm_args(prefix: false, ignore_scripts: false)
-    system Formula["chenrui333/tap/bun"].opt_bin/"bun", "run", "build"
+    system formula_opt_bin("chenrui333/tap/bun")/"bun", "run", "build"
     system "npm", "install", *std_npm_args
 
     notifier_app = "lib/node_modules/@involvex/youtube-music-cli/node_modules/" \
