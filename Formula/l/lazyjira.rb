@@ -1,8 +1,8 @@
 class Lazyjira < Formula
   desc "Fast, keyboard-driven terminal UI for Jira"
   homepage "https://github.com/textfuel/lazyjira"
-  url "https://github.com/textfuel/lazyjira/archive/refs/tags/v2.19.0.tar.gz"
-  sha256 "ef0c800d4172546683f6ba0774e574a6b7235d7d56dd9c6c8edb828a92c979f4"
+  url "https://github.com/textfuel/lazyjira/archive/refs/tags/v2.19.1.tar.gz"
+  sha256 "9b45872a6c283c9695e14d8db9d7006b4b5fd8157b44c03f81c5b83dfce7d521"
   license "MIT"
   head "https://github.com/textfuel/lazyjira.git", branch: "main"
 
