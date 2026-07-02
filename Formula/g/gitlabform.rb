@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/98/eb/0f70973d5a00630fdcfd83d341661f66f16235fe44a2b312f715c2f02516/gitlabform-5.5.7.tar.gz"
-  sha256 "5a6e8d3d14520299489ad6d01bd4d30b5231675d16a59b6b7f5d3b1a6064ebc8"
+  url "https://files.pythonhosted.org/packages/20/af/93a16618eae9acfd750123d35240d48b7686b14995ec0276853073db74ab/gitlabform-6.1.0.tar.gz"
+  sha256 "dc88c7ad33049c6d365fbaa6b56ec2de8297e9e462aff3a46630e149152beb32"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class Gitlabform < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "backoff" do
@@ -45,14 +45,6 @@ class Gitlabform < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "ez-yaml" do
-    url "https://files.pythonhosted.org/packages/a2/72/9102232c4cfde3cc62de8e873fe11689bc357c2b18c552e7c82ca1c51e29/ez_yaml-1.2.0.tar.gz"
-    sha256 "563d6b6d096e353b673d7884d779d3ea37a20377a4acc70e18ee2dcb95deacbe"
-
-    # patch to remove toml dependency
-    patch :DATA
   end
 
   resource "gql" do
@@ -161,8 +153,8 @@ class Gitlabform < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz"
-    sha256 "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"
+    url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
+    sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
   end
 
   resource "six" do
@@ -186,8 +178,8 @@ class Gitlabform < Formula
   end
 
   resource "yamlpath" do
-    url "https://files.pythonhosted.org/packages/3a/a4/eb264493c967e5dabf310c8d5bad6f435c6830eae087f1651e51d93aa065/yamlpath-3.8.2.tar.gz"
-    sha256 "4f30cc214b5085d4b0e7756e06c3af3ae589ecde9650d2ada7e1d345ec4fda4f"
+    url "https://files.pythonhosted.org/packages/0d/3c/28fc3fb1e64c1296bc8b3082eac745209460a584e7ee1b46a6a255f2699a/yamlpath-3.9.1.tar.gz"
+    sha256 "624d69d55a9e4b7599e5e7092e6668e6406925f0e6b096965d30068bf542f542"
   end
 
   resource "yarl" do
@@ -213,41 +205,3 @@ class Gitlabform < Formula
     assert_match "GitLab test request failed", output
   end
 end
-
-__END__
-diff --git a/setup.py b/setup.py
-index 46e5f48..6f925be 100644
---- a/setup.py
-+++ b/setup.py
-@@ -1,17 +1,20 @@
- import setuptools
--import toml
- 
--# 
--# get the data out of the toml file
--# 
--toml_info = toml.load("../pyproject.toml")
--package_info = {**toml_info["tool"]["poetry"], **toml_info["tool"]["extra"]}
-+package_info = {
-+    "name": "ez_yaml",
-+    "version": "1.2.0",
-+    "description": "Straightforward wrapper around Ruamel Yaml",
-+    "url": "https://github.com/jeff-hykin/ez_yaml",
-+    "author": "Jeff Hykin",
-+    "author_email": "jeff.hykin@gmail.com",
-+    "license": "MIT"
-+}
- 
--# 
--# get the data out of the readme file
--# 
--with open("../README.md", "r") as file_handle:
--    long_description = file_handle.read()
-+try:
-+    with open("README.md", "r") as file_handle:
-+        long_description = file_handle.read()
-+except FileNotFoundError:
-+    long_description = package_info["description"]
- 
- # 
- # generate the project
