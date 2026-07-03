@@ -1,8 +1,8 @@
 class MdnsScanner < Formula
   desc "Scan networks for IPs and hostnames, including mDNS aliases"
   homepage "https://github.com/CramBL/mdns-scanner"
-  url "https://github.com/CramBL/mdns-scanner/archive/refs/tags/v0.27.3.tar.gz"
-  sha256 "fe1a0898ed14d5d069a7fbcd791b4c681f368cbdcba1ff2c24b3c00c9cbc7214"
+  url "https://github.com/CramBL/mdns-scanner/archive/refs/tags/v0.27.4.tar.gz"
+  sha256 "d37874d356292f533f23529dcb0af45c98b6026f6faa2a1c54507bb63279674f"
   license "MIT"
   head "https://github.com/CramBL/mdns-scanner.git", branch: "trunk"
 
