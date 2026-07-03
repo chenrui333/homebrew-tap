@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/5f/17/bcaed491ee736be0be2d7450f788219090103584da605c61a5f793b8244c/fast_agent_mcp-0.8.2.tar.gz"
-  sha256 "0234571de6c32be199d1e0b72c59debb1eabe28401b37ed4f67df18863d09ffb"
+  url "https://files.pythonhosted.org/packages/a8/9f/ba079e0d24043146ab0df4dc8caca84fca2682fef0d8beff32d714708d41/fast_agent_mcp-0.8.3.tar.gz"
+  sha256 "745e0e46d901b0d49fa4a823ec0df3699317edd2ed7662030d027fcc90e156d4"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -50,8 +50,8 @@ class FastAgentMcp < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
-    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
+    url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
+    sha256 "065665c041c42a5938ed220bdcd7230f22527fbec085e1853d2402c8a3615d9d"
   end
 
   resource "aiohttp" do
@@ -104,11 +104,6 @@ class FastAgentMcp < Formula
     sha256 "16498e7f81d1d0f5a4c0ad3f2540e65fe25691376e0a5bd367f558067113ed10"
   end
 
-  resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/a0/ec/ba18945e7d6e55a58364d9fb2e46049c1c2998b3d805f19b703f14e81057/cattrs-26.1.0.tar.gz"
-    sha256 "fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
     sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
@@ -142,11 +137,6 @@ class FastAgentMcp < Formula
   resource "docstring-parser" do
     url "https://files.pythonhosted.org/packages/e0/4d/f332313098c1de1b2d2ff91cf2674415cc7cddab2ca1b01ae29774bd5fdf/docstring_parser-0.18.0.tar.gz"
     sha256 "292510982205c12b1248696f44959db3cdd1740237a968ea1e2e7a900eeb2015"
-  end
-
-  resource "docstring-to-markdown" do
-    url "https://files.pythonhosted.org/packages/52/d8/8abe80d62c5dce1075578031bcfde07e735bcf0afe2886dd48b470162ab4/docstring_to_markdown-0.17.tar.gz"
-    sha256 "df72a112294c7492487c9da2451cae0faeee06e86008245c188c5761c9590ca3"
   end
 
   resource "email-validator" do
@@ -190,8 +180,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/16/ce/502a57fb0ec752026d24df1280b162294b22a0afb98a326084f9a979138b/google_api_core-2.30.3.tar.gz"
-    sha256 "e601a37f148585319b26db36e219df68c5d07b6382cff2d580e83404e44d641b"
+    url "https://files.pythonhosted.org/packages/c6/22/155cadf1d49272a9cf48f3168c0f3874fa13397297e611a5ea00cd093880/google_api_core-2.31.0.tar.gz"
+    sha256 "2be84ee0f584c48e6bde1b36766e23348b361fb7e55e56135fc76ce1c397f9c2"
   end
 
   resource "google-auth" do
@@ -245,18 +235,13 @@ class FastAgentMcp < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/88/27/629cfe58c582f92ded066c4a07d1a057ff617118ab7973200f770bd853cb/huggingface_hub-1.19.0.tar.gz"
-    sha256 "fd771622182d40977272a923953ee3b1b13538f9f8a7f5d78398f10af0f1c0bd"
+    url "https://files.pythonhosted.org/packages/8f/77/ce3331f40cb2d021fe9b24c46c41e72faf74493621138e5eddac12bf5e1c/huggingface_hub-1.21.0.tar.gz"
+    sha256 "a44f222cd8f2f7c2eade30b5e7a04cac984a3235fa61ea87a0a5a31db77d561f"
   end
 
   resource "idna" do
     url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
     sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
-  end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/a9/01/15bb152d77b21318514a96f43af312635eb2500c96b55398d020c93d86ea/importlib_metadata-9.0.0.tar.gz"
-    sha256 "a4f57ab599e6a2e3016d7595cfd72eb4661a5106e787a95bcc90c7105b831efc"
   end
 
   resource "jaraco-classes" do
@@ -272,16 +257,6 @@ class FastAgentMcp < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
     sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
-  end
-
-  resource "jedi" do
-    url "https://files.pythonhosted.org/packages/72/3a/79a912fbd4d8dd6fbb02bf69afd3bb72cf0c729bb3063c6f4498603db17a/jedi-0.19.2.tar.gz"
-    sha256 "4770dc3de41bde3966b02eb84fbcf557fb33cce26ad23da12c742fb50ecb11f0"
-  end
-
-  resource "jedi-language-server" do
-    url "https://files.pythonhosted.org/packages/f3/34/4a35094c680040c8dd598b1ee9153a701289351c1dcbad1a0f2d196c524b/jedi_language_server-0.41.3.tar.gz"
-    sha256 "113ec22b95fadaceefbb704b5f365384bed296b82ede59026be375ecc97a9f8a"
   end
 
   resource "jiter" do
@@ -324,11 +299,6 @@ class FastAgentMcp < Formula
     sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
   end
 
-  resource "lsprotocol" do
-    url "https://files.pythonhosted.org/packages/9d/f6/6e80484ec078d0b50699ceb1833597b792a6c695f90c645fbaf54b947e6f/lsprotocol-2023.0.1.tar.gz"
-    sha256 "cc5c15130d2403c18b734304339e51242d3018a05c4f7d0f198ad6e0cd21861d"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
     sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
@@ -359,11 +329,6 @@ class FastAgentMcp < Formula
     sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
   end
 
-  resource "multilspy" do
-    url "https://files.pythonhosted.org/packages/d8/a8/4d6ab48e624f911eb5229aa01b3524b916470c9d036a9e8cc96d6fb81673/multilspy-0.0.15.tar.gz"
-    sha256 "b27a0b7c5c5306216b31fe1df9b4a42d2797735d0a78928e0df9ef8dfbcc97c5"
-  end
-
   resource "openai" do
     url "https://files.pythonhosted.org/packages/49/f5/7c7cb955305cb41f7f3c5fd7e0e38bf6bbf2658468863d4b7b868a5cb8df/openai-2.44.0.tar.gz"
     sha256 "68a5a5ffad82b8ff7d451c437529fb64f7c3b8123aaf0c021966a882d9e3947d"
@@ -377,11 +342,6 @@ class FastAgentMcp < Formula
   resource "opentelemetry-api" do
     url "https://files.pythonhosted.org/packages/b4/1c/125e1c936c0873796771b7f04f6c93b9f1bf5d424cea90fda94a99f61da8/opentelemetry_api-1.42.1.tar.gz"
     sha256 "56c63bea9f77b62856be8c47600474acad853b2924b99b1687c4cb6297166716"
-  end
-
-  resource "opentelemetry-distro" do
-    url "https://files.pythonhosted.org/packages/c5/97/87080029d9309841dd97db34130f9410cda77162843f81d09ad257dce1ef/opentelemetry_distro-0.63b1.tar.gz"
-    sha256 "f435098abc7953f58226e8bf79e4c90bc6b32e50aa75d6fa074201db8243b577"
   end
 
   resource "opentelemetry-exporter-otlp-proto-common" do
@@ -449,19 +409,14 @@ class FastAgentMcp < Formula
     sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
-  resource "parso" do
-    url "https://files.pythonhosted.org/packages/30/4b/90c937815137d43ce71ba043cd3566221e9df6b9c805f24b5d138c9d40a7/parso-0.8.7.tar.gz"
-    sha256 "eaaac4c9fdd5e9e8852dc778d2d7405897ec510f2a298071453e5e3a07914bb1"
-  end
-
   resource "pathable" do
     url "https://files.pythonhosted.org/packages/66/f3/5a20387de9bcd0607871bfc2198ee0e15836da7baa4592ccd7f24c27c986/pathable-0.6.0.tar.gz"
     sha256 "6404b8b82aef5ff0fd478934137128b99b12212ba35afdde5525ca4f8388ea58"
   end
 
   resource "pillow" do
-    url "https://files.pythonhosted.org/packages/8c/21/c2bcdd5906101a30244eaffc1b6e6ce71a31bd0742a01eb89e660ebfac2d/pillow-12.2.0.tar.gz"
-    sha256 "a830b1a40919539d07806aa58e1b114df53ddd43213d9c8b75847eee6c0182b5"
+    url "https://files.pythonhosted.org/packages/1c/3d/bb7fca845737cf9d7dbde16ed1843984665ff2e0a518f5db43e77ec540b9/pillow-12.3.0.tar.gz"
+    sha256 "3b8182a766685eaa002637e28b4ec8d6b18819a0c71f579bf0dbaa5830297cce"
   end
 
   resource "platformdirs" do
@@ -489,11 +444,6 @@ class FastAgentMcp < Formula
     sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
   end
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
-    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
-  end
-
   resource "py-key-value-aio" do
     url "https://files.pythonhosted.org/packages/fb/e2/d689d922894a7ecde73b6daeaf9b13dab5aae06fe6aaaf7514722644d382/py_key_value_aio-0.4.5.tar.gz"
     sha256 "c6563a2c6abe5da5e20f4f9e875c2a9b425a2244a54fadbf46cf140a9eea45d7"
@@ -512,11 +462,6 @@ class FastAgentMcp < Formula
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
     sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
-  end
-
-  resource "pygls" do
-    url "https://files.pythonhosted.org/packages/86/b9/41d173dad9eaa9db9c785a85671fc3d68961f08d67706dc2e79011e10b5c/pygls-1.3.1.tar.gz"
-    sha256 "140edceefa0da0e9b3c533547c892a42a7d2fd9217ae848c330c53d266a55018"
   end
 
   resource "pygments" do
@@ -565,8 +510,8 @@ class FastAgentMcp < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do
@@ -677,11 +622,6 @@ class FastAgentMcp < Formula
   resource "yarl" do
     url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
     sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
-  end
-
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/b9/d8/eab98a517c14134c0b2eb4e2387bc5f457334293ec5d2dd3857ec2966802/zipp-4.1.0.tar.gz"
-    sha256 "4cb57381f544315db7688e976e922a2b18cdb513d21cc194eb42232ba2a3e602"
   end
 
   def install
