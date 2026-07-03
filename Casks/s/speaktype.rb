@@ -1,6 +1,6 @@
 cask "speaktype" do
-  version "1.2.1"
-  sha256 "4fdb01f99dca59bca275e6d97aec7cb3cc167e4b268ece1e7dc5643906e3b573"
+  version "1.2.2"
+  sha256 "f293c5c80b538c3981567fd37839476b7958cc05b2ec6315d31ba65b8f7176ac"
 
   url "https://github.com/karansinghgit/speaktype/releases/download/v#{version}/SpeakType-#{version}.dmg",
       verified: "github.com/karansinghgit/speaktype/"
