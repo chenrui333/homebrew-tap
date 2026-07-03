@@ -3,8 +3,8 @@ class Cccc < Formula
 
   desc "Local-first multi-agent collaboration kernel"
   homepage "https://chesterra.github.io/cccc/"
-  url "https://files.pythonhosted.org/packages/9f/0f/a21eecebc480ae5d21f6248ae3c876e26cb27f7ff1c2e189c03562091fbe/cccc_pair-0.4.29.tar.gz"
-  sha256 "fc223743305d79707ac7691a88c459d3183cced3020a408f27a66a01cd3720a6"
+  url "https://files.pythonhosted.org/packages/2a/25/39bb8d5f9c191558f65f6c85352e4c7c5486e1689d8cc8c36f198fcb3775/cccc_pair-0.4.30.tar.gz"
+  sha256 "a950ad6c008e75121e9d93f3c1b6d2b5d961ed9137db4d7e9cc7974ac346d5f1"
   license "Apache-2.0"
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
@@ -27,8 +27,8 @@ class Cccc < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic]
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/33/c6/61a2d7b7572279226bb2e7f61d7a19ca7c90da0329c93fa0d560cbf288d8/aiohappyeyeballs-2.6.2.tar.gz"
-    sha256 "e202810ee718bd01fc6ef49e8ea53d023d5cb6b581076d7925aa499fa55dbe64"
+    url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
+    sha256 "065665c041c42a5938ed220bdcd7230f22527fbec085e1853d2402c8a3615d9d"
   end
 
   resource "aiohttp" do
@@ -47,8 +47,8 @@ class Cccc < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "attrs" do
@@ -62,8 +62,8 @@ class Cccc < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "dingtalk-stream" do
@@ -72,8 +72,13 @@ class Cccc < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/5b/58/ff455d9fe47c60abadb34b9e05a304b1f05f5ab8000ac01565156b6f5e43/fastapi-0.138.0.tar.gz"
-    sha256 "d445a4877636ad191e7053e08c9bf98cb921a6756776848400bb773d1740c061"
+    url "https://files.pythonhosted.org/packages/d3/af/a5f50ccfa659ec1802cb4ca842c23f06d906a8cc9aef6016a2caeea3d4ed/fastapi-0.139.0.tar.gz"
+    sha256 "99ab7b2d92223c76d6cf10757ab3f89d45b38267fc20b2a136cf02f6beac3145"
+  end
+
+  resource "filelock" do
+    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
+    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
   end
 
   resource "frozenlist" do
@@ -107,8 +112,8 @@ class Cccc < Formula
   end
 
   resource "lark-oapi" do
-    url "https://files.pythonhosted.org/packages/ee/b5/00982093154f92ffc2bfe8448367323a07513bd1db1e92672f9573c92ddf/lark_oapi-1.6.9-py3-none-any.whl"
-    sha256 "ebc93c09eba66e3d2d8823d9df4988370b2e0245870b3249b61cdf6d6cd1642c"
+    url "https://files.pythonhosted.org/packages/45/83/67095719058122617d663eaad89e06c93bffec414b5aff45a76cb4d46ae5/lark_oapi-1.7.0-py3-none-any.whl"
+    sha256 "d38ca7be0f6b42e51d459c00cf0a8975de1e4e5752e8f59e1bbce5bda0735282"
   end
 
   resource "multidict" do
@@ -192,8 +197,8 @@ class Cccc < Formula
   end
 
   resource "wechatbot-sdk" do
-    url "https://files.pythonhosted.org/packages/42/fe/fc419ff228e64a5d02de7ad06a5b663dcef10502e10a2263ae667b7aa80b/wechatbot_sdk-0.2.1.tar.gz"
-    sha256 "7c06d252fdc35110e0ef6fdd701469c04a1436a602b1088e4d3c30f944ec01c3"
+    url "https://files.pythonhosted.org/packages/b6/75/d8f1e16df0d9de9035a63441c6e673574b97e5ae2a2329b0b818f6069911/wechatbot_sdk-0.3.0.tar.gz"
+    sha256 "65ecec0ef835391e8f7ce0035a2fc924ebf645e0d82ec9bdfd7f19bd27cccf98"
   end
 
   resource "yarl" do
