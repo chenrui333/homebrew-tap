@@ -1,8 +1,8 @@
 class Agentmako < Formula
   desc "Local project intelligence CLI and MCP server for codebases and databases"
   homepage "https://github.com/drhalto/agentmako"
-  url "https://registry.npmjs.org/agentmako/-/agentmako-0.4.3.tgz"
-  sha256 "3b1886059337803ef5d2af6a24e00b84eb0bdba6a9b440449d4bfc24a1697ac2"
+  url "https://registry.npmjs.org/agentmako/-/agentmako-0.5.0.tgz"
+  sha256 "14ec43adbf6776e8ea8c3f073e12f3cd01f9cac0731ae5e14cc303e63a9745ba"
   license "Apache-2.0"
 
   bottle do
