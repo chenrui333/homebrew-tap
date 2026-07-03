@@ -1,8 +1,8 @@
 class Epiq < Formula
   desc "Distributed terminal-native issue tracker backed by Git"
   homepage "https://github.com/ljtn/epiq"
-  url "https://registry.npmjs.org/epiq/-/epiq-0.7.8.tgz"
-  sha256 "df18715c0c8b84917e2c548d31ce3f6459e95e6a38853ba972d811c588d925f0"
+  url "https://registry.npmjs.org/epiq/-/epiq-1.1.0.tgz"
+  sha256 "ad8d5de24d50a26b79e37a06752a9f76513fa8c1d9935d28d5c522b1a4b534ce"
   license "MIT"
 
   bottle do
@@ -19,6 +19,7 @@ class Epiq < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/epiq --version")
-    assert_match "CLI based issue tracker", shell_output("#{bin}/epiq --help")
+
+    assert_match "Unknown command: not-a-real-command", shell_output("#{bin}/epiq not-a-real-command 2>&1", 1)
   end
 end
