@@ -1,8 +1,8 @@
 class Fabrika < Formula
   desc "Software factory that orchestrates CLI coding agents as a managed team"
   homepage "https://fabrika-ai.com"
-  url "https://github.com/berkaycubuk/fabrika/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "78851e03368074497954e61e0a7c84114b4e23efe3837f5c019f59ba2823de0a"
+  url "https://github.com/berkaycubuk/fabrika/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "7a7f900a6554629dfe9708a2e8074adc43e7385b77851f43d89d850ace049388"
   license "FSL-1.1-MIT"
   head "https://github.com/berkaycubuk/fabrika.git", branch: "main"
 
@@ -27,7 +27,8 @@ class Fabrika < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/fabrika version")
-    output = shell_output("#{bin}/fabrika not-a-real-command 2>&1", 1)
-    assert_match "no fabrika.toml", output
+
+    output = shell_output("#{bin}/fabrika --not-a-real-option 2>&1", 1)
+    assert_match "flag provided but not defined", output
   end
 end
