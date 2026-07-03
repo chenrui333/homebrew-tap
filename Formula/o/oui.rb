@@ -1,8 +1,8 @@
 class Oui < Formula
   desc "MAC Address CLI Toolkit"
   homepage "https://oui.is/"
-  url "https://github.com/thatmattlove/oui/archive/refs/tags/v2.0.7.tar.gz"
-  sha256 "3bb0cbb3c1bbd26b6cd7588864d60c9d82fcd3060a46eed6e5360d84c0266140"
+  url "https://github.com/thatmattlove/oui/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "6c63611297b9d24356433dcde989e4904196bad390c35e5c7846d063ec451f6b"
   license "BSD-3-Clause-Clear"
   head "https://github.com/thatmattlove/oui.git", branch: "main"
 
