@@ -7,11 +7,11 @@ class Pinme < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "ce5cc9c990995ebd43eee03723b547b0c7c31de945a9f4d619b195ea0d8f5c95"
-    sha256 cellar: :any, arm64_sequoia: "5749d6a1e7b565d0f7b4f949736723549bd937b685d2746884105263553be270"
-    sha256 cellar: :any, arm64_sonoma:  "5749d6a1e7b565d0f7b4f949736723549bd937b685d2746884105263553be270"
-    sha256 cellar: :any, arm64_linux:   "296c73aaf0a28d9945a6ab89b0b14546540646882ce713456764b3e39d6f1d73"
-    sha256 cellar: :any, x86_64_linux:  "7a8058a1369f4ba03d15581c4e09dc1de0ae75d57f78c908e610a92f8c33615a"
+    sha256 cellar: :any, arm64_tahoe:   "1c695eab7003134bc24a5076c7fb69d4ac5d4c326e7f483f6548275a304aac5c"
+    sha256 cellar: :any, arm64_sequoia: "e6167906649e6f0ebcafe78748fb95586b24c2259b43e677f92076d6a9162eb2"
+    sha256 cellar: :any, arm64_sonoma:  "e6167906649e6f0ebcafe78748fb95586b24c2259b43e677f92076d6a9162eb2"
+    sha256 cellar: :any, arm64_linux:   "f4eaaf5bd18e08341e6489f350a795a1ac50c231731b24ff94ee4aa28f3b6dab"
+    sha256 cellar: :any, x86_64_linux:  "b1e0e94aeca1325a10e0f890cfe75587a5dfb138ed334a33c0a624511843b87d"
   end
 
   depends_on "node"
