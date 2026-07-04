@@ -1,8 +1,8 @@
 class Iozone < Formula
   desc "File system benchmark tool"
   homepage "https://www.iozone.org/"
-  url "https://www.iozone.org/src/current/iozone3_494.tgz"
-  sha256 "a36d43831e2829dbc9dc3d5a5a7eb1ca733c9ecc8cbb634022a52928e9b78662"
+  url "https://www.iozone.org/src/current/iozone3_511.tgz"
+  sha256 "1aa00bc3cd627ec46ca17aa78c8fabd143d32025155c741f49392b1bdd776298"
   license :cannot_represent
 
   livecheck do
@@ -25,6 +25,15 @@ class Iozone < Formula
 
   def install
     cd "src/current" do
+      # GCC 15 no longer permits an implicit int declaration for pointer-returning functions.
+      inreplace "libasync.c", "extern long long page_size;", <<~C
+        struct cache;
+        struct cache_ent;
+        struct cache_ent *incache(struct cache *, long long, off64_t, long long);
+
+        extern long long page_size;
+      C
+
       target = OS.mac? ? "macosx" : OS.kernel_name.downcase
       system "make", "clean"
       system "make", target, "CC=#{ENV.cc}"
@@ -37,6 +46,8 @@ class Iozone < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/iozone -v")
+
     assert_match "File size set to 16384 kB",
       shell_output("#{bin}/iozone -I -s 16M")
   end
