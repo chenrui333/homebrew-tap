@@ -1,8 +1,8 @@
 class Auggie < Formula
   desc "All the power of Augment Code in your terminal"
   homepage "https://www.augmentcode.com/product/CLI"
-  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.31.0.tgz"
-  sha256 "243cd4bba832a261dba8936d49f832b343fdf36ed66462c2a6711055e89d3b3a"
+  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.32.0.tgz"
+  sha256 "8aa9420a84f0e475e87179b66f42bd61ae71c6240b43b13320f325f4c608ce3d"
   license :cannot_represent
 
   bottle do
@@ -14,6 +14,13 @@ class Auggie < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native = "#{os}-#{arch}"
+    prebuild_dir = libexec/"lib/node_modules/@augmentcode/auggie/node_modules/node-pty/prebuilds"
+    prebuild_dir.each_child { |dir| rm_r(dir) if dir.basename.to_s != native }
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
