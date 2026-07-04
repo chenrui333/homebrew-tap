@@ -8,11 +8,11 @@ class Zerofs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a13735e3b36948353a21d68fbabe1762845836f2793f1725b364ec574503b660"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a8dafeff45485960d525e10aaed064c4ce206ecc7e40c7fd5a968ef8d7ff872"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03be3e86c70a9556f4107962e26db371ac8ec805f97e858e3a0978698c40b155"
-    sha256 cellar: :any,                 arm64_linux:   "46ac2443851c2a27a29b82bf9808981f6d996ce7ebdf3a5b23e6741d2dfd0431"
-    sha256 cellar: :any,                 x86_64_linux:  "d97014e72784f7941560e4423e574bcb1f0e766e110e72018ba284388401fb7c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f47e9f7eeec69be2a8550056bcd24bd13f11e9047ada60979ebcef3bb05d2321"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "139968e5fc4454777d0da535a6b69bcc31f051da9eacbe6523e349318e821a9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a998ae3023b97237b0358bd25edd5557697b608043830040d80e012c42a54e7"
+    sha256 cellar: :any,                 arm64_linux:   "61a799d3ef46c6b0c95e39662ccfa5e0b84ea6843f907e3acc54e94c98dab441"
+    sha256 cellar: :any,                 x86_64_linux:  "568f0e1d46fddb5c10d24b73539ee66650fa6494d93be1047804bc787507da22"
   end
 
   depends_on "cmake" => :build
