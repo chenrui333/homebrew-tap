@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/a8/9f/ba079e0d24043146ab0df4dc8caca84fca2682fef0d8beff32d714708d41/fast_agent_mcp-0.8.3.tar.gz"
-  sha256 "745e0e46d901b0d49fa4a823ec0df3699317edd2ed7662030d027fcc90e156d4"
+  url "https://files.pythonhosted.org/packages/98/d4/2a7060212bfad2696e193cf44f421b91be1719fa4b0ce50b21a32551efbb/fast_agent_mcp-0.9.0.tar.gz"
+  sha256 "95462c6d72b90990572cca26726067388c8482d54fc706d6982c0c5aa32db116"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -165,8 +165,8 @@ class FastAgentMcp < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/e6/dc/be6cbe99670cd6e4ad387123647cb08e0c32975e223f82551e914c5568a6/filelock-3.29.4.tar.gz"
-    sha256 "10cdb3656fc44541cdf30652a93fb10ec6b05325620eb316bd26893e4201538a"
+    url "https://files.pythonhosted.org/packages/e3/ee/29c668c50888588c432a702f7c2e8ee8a0c9e5286028d91f170308d6b2e9/filelock-3.29.5.tar.gz"
+    sha256 "6e6034c57a00a020e767f2614a5539863f056de7e7991d6d1473aef7ff73f156"
   end
 
   resource "frozenlist" do
@@ -235,8 +235,8 @@ class FastAgentMcp < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/8f/77/ce3331f40cb2d021fe9b24c46c41e72faf74493621138e5eddac12bf5e1c/huggingface_hub-1.21.0.tar.gz"
-    sha256 "a44f222cd8f2f7c2eade30b5e7a04cac984a3235fa61ea87a0a5a31db77d561f"
+    url "https://files.pythonhosted.org/packages/77/ea/dc54b4dda5841cb3a7812a178695be776e7c15c597887c2ed892f17d015a/huggingface_hub-1.22.0.tar.gz"
+    sha256 "e2dfe5fe1ec3b87ba2709aa34555b23e3f3f6ad4d7255238e13ddb8348e6bbfa"
   end
 
   resource "idna" do
@@ -520,8 +520,8 @@ class FastAgentMcp < Formula
   end
 
   resource "rich-rst" do
-    url "https://files.pythonhosted.org/packages/0b/40/905f612e7bf105d7efefa923542e0c85b731cf29bcc1864331427dbc52b8/rich_rst-2.0.2.tar.gz"
-    sha256 "664a669801695c5a126151338f309ce3ea3e0ea081c89a4130b8a4f659911ed9"
+    url "https://files.pythonhosted.org/packages/6c/2b/d2f53dedfb4ec4d88a87e5941c9616a3d4261d36d113f86959c27f9c9619/rich_rst-2.0.3.tar.gz"
+    sha256 "ffc7d779e594ae5bce1256e1bb95f3b89bf36c6c3566671133ace0603261e76f"
   end
 
   resource "ruamel-yaml" do
@@ -590,8 +590,8 @@ class FastAgentMcp < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz"
-    sha256 "ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3"
+    url "https://files.pythonhosted.org/packages/2e/41/06cce5dbb9f77591512957710ac709e60b12e6216a2f2d0d607fd49706e8/uvicorn-0.50.0.tar.gz"
+    sha256 "0c92e1bc2259cb7faa4fcef774a5966588f2e88542744550b66799fba10b76f1"
   end
 
   resource "uvloop" do
