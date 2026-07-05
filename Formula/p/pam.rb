@@ -1,8 +1,8 @@
 class Pam < Formula
   desc "Minimal CLI tool for managing and executing SQL queries with a TUI"
   homepage "https://github.com/eduardofuncao/squix"
-  url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.5.0-beta.tar.gz"
-  sha256 "c50ee4ae5cd9fcc260818cd95b7e320ed4e70cb6fd32addcee36516ab1b383b1"
+  url "https://github.com/eduardofuncao/squix/archive/refs/tags/v0.5.1-beta.tar.gz"
+  sha256 "5aaa54beb14c090ea88a15762002573aec5e632b9c773756a1f27af272c791e2"
   license "MIT"
   head "https://github.com/eduardofuncao/squix.git", branch: "main"
 
@@ -24,11 +24,14 @@ class Pam < Formula
 
   def install
     # Upstream renamed the project from pam to squix; keep a pam shim for this tap formula name.
-    system "go", "build", *std_go_args(output: bin/"squix", ldflags: "-s -w"), "./cmd/squix"
+    ldflags = "-s -w -X main.Version=#{version}"
+    system "go", "build", *std_go_args(output: bin/"squix", ldflags:), "./cmd/squix"
     bin.install_symlink "squix" => "pam"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/squix --version")
+
     output = shell_output("#{bin}/pam list connections")
     assert_match "No connections configured", output
     assert_equal shell_output("#{bin}/squix --version").strip, shell_output("#{bin}/pam --version").strip
