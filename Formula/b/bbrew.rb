@@ -1,8 +1,8 @@
 class Bbrew < Formula
   desc "Bold Brew (bbrew) - A Homebrew TUI Manager"
   homepage "https://bold-brew.com/"
-  url "https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "ddf3d5e69da599fe6cb9660c50895b3572f31abb511d25e5d39547e9e7e95ae0"
+  url "https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "c07595b9915355e05aeb4453935ca28b2ba9705912f1dd045b93967001dafc90"
   license "MIT"
   head "https://github.com/Valkyrie00/bold-brew.git", branch: "trunk"
 
