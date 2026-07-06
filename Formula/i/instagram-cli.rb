@@ -1,8 +1,8 @@
 class InstagramCli < Formula
   desc "Unofficial CLI and terminal client for Instagram"
   homepage "https://github.com/supreme-gg-gg/instagram-cli"
-  url "https://github.com/supreme-gg-gg/instagram-cli/archive/refs/tags/ts-v1.5.0.tar.gz"
-  sha256 "8f75793417d138393e3f8c1f9f936f4aa99bee487ea1fb215585c2105641cd9d"
+  url "https://github.com/supreme-gg-gg/instagram-cli/archive/refs/tags/ts-v2.0.0.tar.gz"
+  sha256 "72e3e93c1e3e31e3d47a0e9371c0a1f375c93ebe6f22f9a7e48761dd29d42834"
   license "MIT"
   head "https://github.com/supreme-gg-gg/instagram-cli.git", branch: "main"
 
@@ -20,7 +20,7 @@ class InstagramCli < Formula
   def install
     system "npm", "ci", "--no-audit", "--no-fund"
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(ignore_scripts: false)
 
     # Remove upstream prebuilt reporter binary so audit doesn't flag non-native artifacts.
     reporter = libexec/"lib/node_modules/@i7m/instagram-cli/node_modules/instagram-private-api"
