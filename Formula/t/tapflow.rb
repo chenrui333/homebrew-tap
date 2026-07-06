@@ -1,8 +1,8 @@
 class Tapflow < Formula
   desc "Self-hosted iOS and Android simulator streaming for the whole team"
   homepage "https://github.com/jo-duchan/tapflow"
-  url "https://registry.npmjs.org/tapflow/-/tapflow-0.12.0.tgz"
-  sha256 "da60021f8ab77aaa8cc3f64854ca27a175f3680baee01a9cebbc3cdef1fd02de"
+  url "https://registry.npmjs.org/tapflow/-/tapflow-0.13.0.tgz"
+  sha256 "d1309a9040459813b230cdae8e7deccc366be7ee3180f85cfe8d63bc4901bfda"
   license "MIT"
 
   bottle do
