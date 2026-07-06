@@ -1,8 +1,8 @@
 class Hcom < Formula
   desc "Let AI agents message, watch, and spawn each other across terminals"
   homepage "https://github.com/aannoo/hcom"
-  url "https://github.com/aannoo/hcom/archive/refs/tags/v0.7.22.tar.gz"
-  sha256 "b256af1f2e9787ef7ea78d6463409e4343805243636107dd28a5dcfd2f55564f"
+  url "https://github.com/aannoo/hcom/archive/refs/tags/v0.7.23.tar.gz"
+  sha256 "e8dabe61acdd3e24d9e94941621dfa409f05bbb406bd95a290b32908e8f5204d"
   license "MIT"
 
   bottle do
@@ -22,5 +22,8 @@ class Hcom < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/hcom --version")
+
+    ENV["HCOM_DIR"] = testpath
+    assert_match "Set:    hcom config terminal kitty", shell_output("#{bin}/hcom config terminal --info")
   end
 end
