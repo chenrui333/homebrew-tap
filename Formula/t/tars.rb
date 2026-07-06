@@ -1,8 +1,8 @@
 class Tars < Formula
   desc "Local-first autonomous AI supervisor and sidekick powered by Google Gemini"
   homepage "https://github.com/agustinsacco/tars"
-  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.31.0.tgz"
-  sha256 "8475585cafc20423728364602b34e3a4c9ebac0dd8ad8858010b3a4107f73895"
+  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.39.0.tgz"
+  sha256 "500a67c6a1c8a0d2800ec3de40a65db7a73274f26a1d91a2d34e9492aae3996e"
   license "MIT"
 
   bottle do
@@ -30,9 +30,29 @@ class Tars < Formula
         rm_r(dir) if dir.basename.to_s != native
       end
     end
+
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native_clipboard = if OS.mac?
+      "clipboard-darwin-#{arch}"
+    else
+      "clipboard-linux-#{arch}-gnu"
+    end
+    nm.glob("**/@mariozechner/clipboard-*").each do |dir|
+      rm_r(dir) if dir.basename.to_s != native_clipboard
+    end
+
+    if OS.mac?
+      nm.glob("**/@mariozechner/#{native_clipboard}/clipboard.*.node").each do |native_module|
+        clipboard_module = libexec/"clipboard.node"
+        mv native_module, clipboard_module
+        native_module.make_symlink clipboard_module.relative_path_from(native_module.dirname)
+      end
+    end
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tars --version")
+
+    assert_match "No secrets stored.", shell_output("#{bin}/tars secret list")
   end
 end
