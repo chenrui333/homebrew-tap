@@ -1,8 +1,8 @@
 class Comchan < Formula
   desc "Minimal serial monitor and plotter for embedded applications"
   homepage "https://github.com/Vaishnav-Sabari-Girish/ComChan"
-  url "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "98b7319295ad1960b6ac21efb801e692cde48feddf66fba9de183df29e6197c5"
+  url "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "a8991a6276d62ad9c513253e6cdb27300c51bc78757a2aa141fe8975d0dfaea7"
   license "MIT"
   head "https://github.com/Vaishnav-Sabari-Girish/ComChan.git", branch: "main"
 
@@ -31,7 +31,7 @@ class Comchan < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/comchan --version")
 
-    shell_output("HOME=#{testpath} #{bin}/comchan --generate-config")
+    shell_output("#{bin}/comchan --generate-config")
 
     config = if OS.mac?
       testpath/"Library/Application Support/comchan/comchan.toml"
