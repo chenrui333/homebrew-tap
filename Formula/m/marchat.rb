@@ -1,8 +1,8 @@
 class Marchat < Formula
   desc "Terminal chat with WebSockets, E2E encryption, plugins, and file sharing"
   homepage "https://github.com/Cod-e-Codes/marchat"
-  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "5384c419313646a7b2721b1556fd0bb8bf83b5c509b8d902cf02ba9d85210c53"
+  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "3be0d3cc50ed93af75b52c1bc54781e6a2c47a07e108c1357df18d323e24b744"
   license "MIT"
 
   bottle do
@@ -35,7 +35,7 @@ class Marchat < Formula
     pid = spawn bin/"marchat", testpath, [:out, :err] => output_log.to_s
     sleep 1
     assert_match version.to_s, output_log.read
-    assert_match "TLS: Disabled", output_log.read
+    assert_match(/TLS:.*Disabled/m, output_log.read)
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
