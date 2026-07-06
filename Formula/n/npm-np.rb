@@ -1,8 +1,8 @@
 class NpmNp < Formula
   desc "Better `npm publish`"
   homepage "https://github.com/sindresorhus/np"
-  url "https://registry.npmjs.org/np/-/np-11.2.1.tgz"
-  sha256 "0dc5f7488f205c488a905615a51bc7a9a2697ac8abc52dc2e176f750aec907fd"
+  url "https://registry.npmjs.org/np/-/np-11.2.2.tgz"
+  sha256 "e7dd68f7102a2f67858ffe62d1bf224d128927731a5831fd558bf04852eec1d6"
   license "MIT"
 
   bottle do
@@ -29,7 +29,7 @@ class NpmNp < Formula
       linux_dir = clipboardy_fallbacks_dir/"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves.
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
     end
 
     bin.install_symlink libexec/"bin/np"
