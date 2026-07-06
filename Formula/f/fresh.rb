@@ -1,8 +1,8 @@
 class Fresh < Formula
   desc "Modern terminal-based text editor with plugin support"
   homepage "https://getfresh.dev/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.3.12.tar.gz"
-  sha256 "d709a3538d098d90af754d26d7d797315b5b8b4fb820d4201686f993bc580830"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "1f417ab81c2af9f44aff53a4e7ca31053b4a93b572fb82bf49b0c30c804c6dcf"
   license "GPL-2.0-only"
   head "https://github.com/sinelaw/fresh.git", branch: "master"
 
@@ -24,7 +24,7 @@ class Fresh < Formula
   end
 
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args(path: "crates/fresh-editor")
   end
@@ -33,7 +33,6 @@ class Fresh < Formula
     assert_match version.to_s, shell_output("#{bin}/fresh --version")
 
     env = [
-      "HOME=#{testpath}",
       "XDG_CONFIG_HOME=#{testpath}/.config",
       "XDG_DATA_HOME=#{testpath}/.local/share",
       "XDG_STATE_HOME=#{testpath}/.local/state",
@@ -45,6 +44,6 @@ class Fresh < Formula
     assert_match testpath.to_s, paths
 
     sessions = shell_output("#{env} #{bin}/fresh --no-upgrade-check --cmd session list")
-    assert_match "No active sessions.", sessions
+    assert_match "No running daemons.", sessions
   end
 end
