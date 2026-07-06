@@ -1,8 +1,8 @@
 class Lix < Formula
   desc "Dependable package manager for your Haxe projects"
   homepage "https://github.com/lix-pm/lix.client"
-  url "https://registry.npmjs.org/lix/-/lix-17.0.1.tgz"
-  sha256 "e066210b37e63b4a7374a9dacf736bfe87b49c9da0cabb00b8af17ad312fe3b0"
+  url "https://registry.npmjs.org/lix/-/lix-17.0.2.tgz"
+  sha256 "51fb313046e32b5849ac4f3bea1ed97672bffaed1eb197cb4be512d75a3b562b"
   license "MIT"
   head "https://github.com/lix-pm/lix.client.git", branch: "master"
 
@@ -19,8 +19,7 @@ class Lix < Formula
   end
 
   test do
-    # assert_match version.to_s, shell_output("#{bin}/lix --version")
-    system bin/"lix", "--version"
+    assert_match version.to_s, shell_output("#{bin}/lix --version")
 
     output = shell_output("#{bin}/lix scope create 2>&1")
     assert_match "created scope in #{testpath}", output
