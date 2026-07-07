@@ -1,8 +1,8 @@
 class Projscan < Formula
   desc "Instant codebase insights for any repository"
   homepage "https://github.com/abhiyoheswaran1/projscan"
-  url "https://github.com/abhiyoheswaran1/projscan/archive/refs/tags/v4.12.1.tar.gz"
-  sha256 "ecd23de00d0c75440b82a846197592d0104a40df778b0482a174ab1f192e1888"
+  url "https://github.com/abhiyoheswaran1/projscan/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "31a7616bbcc3c2a2d9e3da0896d0697f6c02587f73f43fc5a447afcc7c24c273"
   license "MIT"
   head "https://github.com/abhiyoheswaran1/projscan.git", branch: "main"
 
@@ -22,7 +22,7 @@ class Projscan < Formula
 
   def install
     # Use Homebrew's Node headers instead of letting node-gyp fetch them during builds.
-    ENV["npm_config_nodedir"] = Formula["node"].opt_prefix
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
     system "npm", "pkg", "delete", "scripts.prepare"
@@ -30,7 +30,7 @@ class Projscan < Formula
 
     tree_sitter_cli = buildpath/"node_modules/tree-sitter-cli/tree-sitter"
     rm tree_sitter_cli
-    ln_sf Formula["tree-sitter-cli"].opt_bin/"tree-sitter", tree_sitter_cli
+    ln_sf formula_opt_bin("tree-sitter-cli")/"tree-sitter", tree_sitter_cli
 
     system "npm", "run", "build"
     system "npm", "install", *std_npm_args
