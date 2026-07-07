@@ -1,8 +1,8 @@
 class Treekanga < Formula
   desc "Manage Git worktrees from the command-line"
   homepage "https://github.com/garrettkrohn/treekanga"
-  url "https://github.com/garrettkrohn/treekanga/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "e0d191e072afc2a77a58ee53f405cb789a99989ec77a708b66a62ce2a051bef7"
+  url "https://github.com/garrettkrohn/treekanga/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "5fcc43b088597c0db6ec7299c15f11e503cf8c035bc310d58b4f08e554971073"
   license :cannot_represent
   head "https://github.com/garrettkrohn/treekanga.git", branch: "main"
 
