@@ -1,8 +1,8 @@
 class Foy < Formula
   desc "Simple, light-weight and modern task runner for general purpose"
   homepage "https://zaaack.github.io/foy/"
-  url "https://registry.npmjs.org/foy/-/foy-1.0.2.tgz"
-  sha256 "ace7d880c34937801bc96f9725d0d051d015e39551d533293bd75b94fa83d6db"
+  url "https://registry.npmjs.org/foy/-/foy-1.0.3.tgz"
+  sha256 "7dd9edeb9bfabe1fd1501d3a4e4c7dd8cf598d83d872c7f663ddd5ad9c6330d4"
   license "MIT"
 
   bottle do
