@@ -1,8 +1,8 @@
 class Lazyjira < Formula
   desc "Fast, keyboard-driven terminal UI for Jira"
   homepage "https://github.com/textfuel/lazyjira"
-  url "https://github.com/textfuel/lazyjira/archive/refs/tags/v2.19.1.tar.gz"
-  sha256 "9b45872a6c283c9695e14d8db9d7006b4b5fd8157b44c03f81c5b83dfce7d521"
+  url "https://github.com/textfuel/lazyjira/archive/refs/tags/v2.19.2.tar.gz"
+  sha256 "c01de954213fc18bdc26b40e5a44791683abec00c56104e2f9907b258d36c34b"
   license "MIT"
   head "https://github.com/textfuel/lazyjira.git", branch: "main"
 
@@ -25,5 +25,8 @@ class Lazyjira < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/lazyjira --version")
+
+    output = shell_output("#{bin}/lazyjira auth </dev/null 2>&1", 1)
+    assert_match "host is required", output
   end
 end
