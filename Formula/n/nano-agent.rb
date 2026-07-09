@@ -1,8 +1,8 @@
 class NanoAgent < Formula
   desc "Minimal Rust shell agent with OpenAI-compatible model calls"
   homepage "https://github.com/skorotkiewicz/nano-agent"
-  url "https://github.com/skorotkiewicz/nano-agent/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "88f1bb9f3dee180807f65d10167e35eb3f0eb0e93e6189bda341e5434e601407"
+  url "https://github.com/skorotkiewicz/nano-agent/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "8a6b60d7eed90f7302bab574a963d59b836b52ca055d78a8f99d252f017b36e0"
   license "MIT"
   head "https://github.com/skorotkiewicz/nano-agent.git", branch: "main"
 
