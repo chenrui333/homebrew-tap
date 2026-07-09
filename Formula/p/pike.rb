@@ -2,8 +2,8 @@
 class Pike < Formula
   desc "Tool for determining the permissions or policy required for IAC code"
   homepage "https://github.com/jamesWoolfenden/pike"
-  url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v0.3.39.tar.gz"
-  sha256 "728c17762378b5469e30637a06b1921414694199da1dc3c317c14f70061cb740"
+  url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v1.0.7.tar.gz"
+  sha256 "af65829493b4f39b5349b9496d46bc2914a53567d9f43b70a40e57b9e9252816"
   license "Apache-2.0"
   head "https://github.com/jamesWoolfenden/pike.git", branch: "master"
 
@@ -18,8 +18,8 @@ class Pike < Formula
   depends_on "go" => :build
 
   def install
-    inreplace "src/version.go", "Version = \"9.9.9\"", "Version = \"#{version}\""
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X github.com/jameswoolfenden/pike/src.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
