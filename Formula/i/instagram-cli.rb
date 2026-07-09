@@ -1,8 +1,8 @@
 class InstagramCli < Formula
   desc "Unofficial CLI and terminal client for Instagram"
   homepage "https://github.com/supreme-gg-gg/instagram-cli"
-  url "https://github.com/supreme-gg-gg/instagram-cli/archive/refs/tags/ts-v1.5.0.tar.gz"
-  sha256 "8f75793417d138393e3f8c1f9f936f4aa99bee487ea1fb215585c2105641cd9d"
+  url "https://github.com/supreme-gg-gg/instagram-cli/archive/refs/tags/ts-v2.0.1.tar.gz"
+  sha256 "412f36b1742d45952586bcc2329678a0f80019b16b6d7d18113b94a1c618e522"
   license "MIT"
   head "https://github.com/supreme-gg-gg/instagram-cli.git", branch: "main"
 
