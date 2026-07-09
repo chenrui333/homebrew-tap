@@ -1,8 +1,8 @@
 class Cnspec < Formula
   desc "Open source, cloud-native security and policy project"
   homepage "https://github.com/mondoohq/cnspec"
-  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v13.27.4.tar.gz"
-  sha256 "da2de7490f99c70d94c8a6f96f285649a13b2d5b87a328635f73651290542ea0"
+  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v13.28.1.tar.gz"
+  sha256 "216de75c95e31c9e2a4522239676df94dfb578a5f1517ae4185c4aa67accf23d"
   license "BUSL-1.1"
   head "https://github.com/mondoohq/cnspec.git", branch: "main"
 
@@ -18,14 +18,14 @@ class Cnspec < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X go.mondoo.com/cnquery/v#{version.major}.Version=#{version}"
+    ldflags = "-s -w -X go.mondoo.com/cnspec/v#{version.major}.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./apps/cnspec"
 
     generate_completions_from_executable(bin/"cnspec", shell_parameter_format: :cobra)
   end
 
   test do
-    system bin/"cnspec", "version"
+    assert_match version.to_s, shell_output("#{bin}/cnspec version")
 
     output = shell_output("#{bin}/cnspec policy list 2>&1", 1)
     assert_match "Error: cnspec has no credentials. Log in with `cnspec login`", output
