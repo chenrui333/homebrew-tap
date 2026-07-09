@@ -1,8 +1,8 @@
 class NanoAgent < Formula
   desc "Minimal Rust shell agent with OpenAI-compatible model calls"
   homepage "https://github.com/skorotkiewicz/nano-agent"
-  url "https://github.com/skorotkiewicz/nano-agent/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "88f1bb9f3dee180807f65d10167e35eb3f0eb0e93e6189bda341e5434e601407"
+  url "https://github.com/skorotkiewicz/nano-agent/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "e0d5d62e86310c72f371ad42ec6bfb11a29b072120502902bebaa5b9935355a1"
   license "MIT"
   head "https://github.com/skorotkiewicz/nano-agent.git", branch: "main"
 
@@ -25,5 +25,8 @@ class NanoAgent < Formula
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = shell_output("#{bin}/nano-agent --version 2>&1", 1)
     assert_match "OPENAI_API_KEY", output
+
+    output = shell_output("OPENAI_API_KEY=test NANO_SANDBOX=off #{bin}/nano-agent '!! printf nano-agent-functional'")
+    assert_match "nano-agent-functional", output
   end
 end
