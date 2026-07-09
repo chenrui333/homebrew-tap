@@ -1,8 +1,8 @@
 class Gitpane < Formula
   desc "Multi repo Git workspace dashboard for the terminal"
   homepage "https://github.com/affromero/gitpane"
-  url "https://github.com/affromero/gitpane/archive/refs/tags/v0.7.15.tar.gz"
-  sha256 "2a536b3ecc872a3dfcc8a137abf7b0f9d905adf74f2a374dbcf6831d43699087"
+  url "https://github.com/affromero/gitpane/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "5999d1cf93334938b6ff961ac04ae8f8a5fc42ece31b77da48c4067fca23ac6f"
   license "MIT"
   head "https://github.com/affromero/gitpane.git", branch: "main"
 
@@ -23,7 +23,7 @@ class Gitpane < Formula
   end
 
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     system "cargo", "install", *std_cargo_args
   end
 
