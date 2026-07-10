@@ -1,8 +1,8 @@
 class Rkik < Formula
   desc "Rusty Klock Inspection Kit - Simple NTP Client"
   homepage "https://github.com/aguacero7/rkik"
-  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "3994acba76455c91ab0bc1ed14219d4446212d1cfa7011c788e79b3e09605aa4"
+  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "275c468e639ecd45f3e3051fb6df74f99ab61d76a67ad304874d111741501064"
   license "MIT"
   head "https://github.com/aguacero7/rkik.git", branch: "master"
 
@@ -22,13 +22,10 @@ class Rkik < Formula
   end
 
   test do
-    # Error querying server 'time.google.com':
-    # Input/output error: Resource temporarily unavailable (os error 35)
-    return if OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_match version.to_s, shell_output("#{bin}/rkik --version")
 
-    assert_match <<~EOS, shell_output("#{bin}/rkik --server time.google.com --verbose")
-      Stratum: 1
-      Reference ID: GOOG
-    EOS
+    ENV["RKIK_CONFIG_DIR"] = testpath
+    system bin/"rkik", "preset", "add", "test", "--", "ntp", "pool.ntp.org"
+    assert_match "test: ntp pool.ntp.org", shell_output("#{bin}/rkik preset list")
   end
 end
