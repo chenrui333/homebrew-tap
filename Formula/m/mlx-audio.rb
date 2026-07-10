@@ -3,8 +3,8 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/af/1e/f712c9f7997e5051c4da3b658f38162203bb703c750741984c8358c8b897/mlx_audio-0.4.4.tar.gz"
-  sha256 "d751e5f477517e4e7f04de5567318e2fe91b4606af5d7e4b2973603c4777814a"
+  url "https://files.pythonhosted.org/packages/29/0a/937c0c0823eb1f49332da85af178b86a94c68585ab7668cf8a3c5a3fbae0/mlx_audio-0.4.5.tar.gz"
+  sha256 "8a67066da7c06d1667e5f9cfc2cebbf872b1348a2653b19a1b3cf95697e4b658"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
@@ -47,8 +47,8 @@ class MlxAudio < Formula
   ]
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
-    sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
+    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
+    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
   end
 
   resource "miniaudio" do
@@ -62,8 +62,8 @@ class MlxAudio < Formula
   end
 
   resource "scipy" do
-    url "https://files.pythonhosted.org/packages/7a/97/5a3609c4f8d58b039179648e62dd220f89864f56f7357f5d4f45c29eb2cc/scipy-1.17.1.tar.gz"
-    sha256 "95d8e012d8cb8816c226aef832200b1d45109ed4464303e997c5b13122b297c0"
+    url "https://files.pythonhosted.org/packages/a7/25/c2700dfaf6442b4effaa91af24ebce5dc9d31bb4a69706313aae70d72cd0/scipy-1.18.0.tar.gz"
+    sha256 "67b2ad2ad54c72ca6d04975a9b2df8c3638c34ddd5b28738e94fc2b57929d378"
   end
 
   resource "sounddevice" do
@@ -74,12 +74,15 @@ class MlxAudio < Formula
   def install
     ENV["LLVMLITE_SHARED"] = "1"
 
+    # Work around upstream circular import: https://github.com/Blaizzy/mlx-audio/issues/828
+    inreplace "mlx_audio/stt/models/__init__.py", /\A.*\z/m, ""
+
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
     venv.pip_install_and_link buildpath
 
     mlx_lm_site_packages = Language::Python.site_packages(venv.root/"bin/python3")
-    pth_contents = "import site; site.addsitedir('#{Formula["mlx-lm"].opt_libexec/mlx_lm_site_packages}')\n"
+    pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("mlx-lm")/mlx_lm_site_packages}')\n"
     (venv.site_packages/"homebrew-mlx-lm.pth").write pth_contents
 
     unsupported_bins = [
