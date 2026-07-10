@@ -1,8 +1,8 @@
 class Bbrew < Formula
   desc "Bold Brew (bbrew) - A Homebrew TUI Manager"
   homepage "https://bold-brew.com/"
-  url "https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "ddf3d5e69da599fe6cb9660c50895b3572f31abb511d25e5d39547e9e7e95ae0"
+  url "https://github.com/Valkyrie00/bold-brew/archive/refs/tags/v2.3.2.tar.gz"
+  sha256 "2e22f351e9726128746a3f2f8591e9d1a2f525cbe1aca6b0af6a20f6f909faec"
   license "MIT"
   head "https://github.com/Valkyrie00/bold-brew.git", branch: "trunk"
 
@@ -23,6 +23,8 @@ class Bbrew < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/bbrew --version")
+
     (testpath/"Brewfile").write <<~EOS
       brew "wget"
     EOS
