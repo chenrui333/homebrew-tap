@@ -1,8 +1,8 @@
 class Foy < Formula
   desc "Simple, light-weight and modern task runner for general purpose"
   homepage "https://zaaack.github.io/foy/"
-  url "https://registry.npmjs.org/foy/-/foy-1.0.2.tgz"
-  sha256 "ace7d880c34937801bc96f9725d0d051d015e39551d533293bd75b94fa83d6db"
+  url "https://registry.npmjs.org/foy/-/foy-1.1.1.tgz"
+  sha256 "c1251464a20545b3185192b78c19451da436d905fa4425a2ec688218e64c0ec1"
   license "MIT"
 
   bottle do
@@ -18,6 +18,7 @@ class Foy < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     (testpath/"package.json").write <<~JSON
       {
         "name": "test",
@@ -31,12 +32,15 @@ class Foy < Formula
 
     (testpath/"Foyfile.js").write <<~JS
       import { task } from "foy"
+      import { writeFile } from "node:fs/promises"
 
       task("hello", async () => {
+        await writeFile("result.txt", "done")
         console.log('Hello, world!')
       })
     JS
 
     assert_match "Hello, world!", shell_output("#{bin}/foy hello")
+    assert_equal "done", (testpath/"result.txt").read
   end
 end
