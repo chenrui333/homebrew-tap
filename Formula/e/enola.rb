@@ -2,8 +2,8 @@
 class Enola < Formula
   desc "Hunt down social media accounts by username across social networks"
   homepage "https://github.com/TheYahya/enola"
-  url "https://github.com/TheYahya/enola/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "c48b934d95e1b6006ddac422a689e2d67d8bd81f2b47a4d75389483ad3644520"
+  url "https://github.com/TheYahya/enola/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "b5dc8aa505305ccc387ef1ced54a2f356f6c547de38dcefe03ce9533f660aafb"
   license "MIT"
   head "https://github.com/TheYahya/enola.git", branch: "main"
 
