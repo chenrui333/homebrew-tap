@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/6e/cd/58bc59e9492b8d15059d597112b62608834aa03c4ed41434c7059cc10756/ministack-1.3.70.tar.gz"
-  sha256 "22970b3648e477bf482694630e2d76b5359755b59f456eddcedd04fac39a719e"
+  url "https://files.pythonhosted.org/packages/e4/95/de963fca388f84cc1686399d61f83530b0dfca7271ce63e99d6d77bba842/ministack-1.4.1.tar.gz"
+  sha256 "bdf44882d3939d3b28ebeb186ccc38f0e1ca65dad582aff32a91c8b2b292c17d"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
@@ -88,6 +88,7 @@ class Ministack < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     port = free_port
     log = testpath/"ministack.log"
     state_dir = testpath/"state"
