@@ -1,0 +1,20 @@
+Formula/o/oh-my-codex.rb
+  s_84f9cf2cdf3e31::t_f20c1048d03932 31-32
+  s_84f9cf2cdf3e31::t_98224615ccd5c3 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "3591d59ef81ca77466289b132094928f1e193c38",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
