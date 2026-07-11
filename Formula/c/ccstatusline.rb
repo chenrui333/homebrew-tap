@@ -7,7 +7,7 @@ class Ccstatusline < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "83fad65d2379cb8e0355fb205e89d9732b62b843db28ff37c13947d8487a6a6e"
+    sha256 cellar: :any_skip_relocation, all: "742de11e016fb0027e5aa0cdf0192612b8bb0afd96cb82aff684199fa65ab930"
   end
 
   depends_on "node"
