@@ -171,18 +171,20 @@ brew check bun
 
 ## `brew close-superseded-prs`
 
-Find open formula version-bump PRs that are no longer the latest update for a
-formula, then optionally comment, label, and close them.
+Find open formula or cask version-bump PRs that are no longer the latest update
+for a package, then optionally comment, label, and close them.
 
-The command only considers PR titles in the standard formula bump format:
-`<formula> <version>`. It skips new formula/cask PRs and non-version update
-titles.
+The command only considers PR titles in the standard bump format:
+`<package> <version>`. It skips new formula/cask PRs and non-version update
+titles. Existing casks are detected from `Casks/` and compared against their
+current version in the same way as formulae.
 
 ### Usage
 
 ```bash
 brew close-superseded-prs
 brew close-superseded-prs --formula ministack
+brew close-superseded-prs --cask agent-sessions
 brew close-superseded-prs --closed-days 14
 brew close-superseded-prs --closed-limit 2000
 brew close-superseded-prs --apply
@@ -195,5 +197,5 @@ brew close-superseded-prs --apply
 - Use `--closed-days` to tune the date window, or `--closed-days 0` to ignore closed PR history.
 - Use `--closed-limit` as a GitHub API cap for the closed PR lookup.
 - Closes PRs already covered by the version on `main` with a `Superseded by current main...` comment.
-- Keeps the most recently opened bump PR for each formula and closes older open bumps with a fully qualified PR reference.
+- Keeps the most recently opened bump PR for each package and closes older open bumps with a fully qualified PR reference.
 - Uses the `superseded` label when applying changes.

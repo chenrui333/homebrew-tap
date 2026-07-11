@@ -1,4 +1,4 @@
-name: Close superseded formula PRs
+name: Close superseded package PRs
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       apply:
-        description: "Close superseded formula PRs. Disable for a dry-run."
+        description: "Close superseded formula and cask PRs. Disable for a dry-run."
         required: false
         type: boolean
         default: false
@@ -42,7 +42,7 @@ jobs:
           core: true
           cask: false
 
-      - name: Close superseded formula PRs
+      - name: Close superseded package PRs
         env:
           APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
