@@ -174,7 +174,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
     core.setOutput('build-matrix', JSON.stringify(build_matrix_for_scope(platform_scope)))
 
     // Build test-bot arguments
-    const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab", "--skip-recursive-dependents"]
+    const test_bot_formulae_args = ["--only-formulae", "--junit", "--only-json-tab"]
     test_bot_formulae_args.push('--root-url="https://ghcr.io/v2/chenrui333/tap"')
     
     if (formula_detect && formula_detect.testing_formulae) {

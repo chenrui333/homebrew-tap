@@ -138,7 +138,7 @@ jobs:
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
           else
-            brew test-bot --only-formulae --skip-recursive-dependents --root-url="https://ghcr.io/v2/chenrui333/tap"
+            brew test-bot --only-formulae --root-url="https://ghcr.io/v2/chenrui333/tap"
           fi
 
       - name: Post-build steps
