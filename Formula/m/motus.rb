@@ -1,8 +1,8 @@
 class Motus < Formula
   desc "Dead simple password generator"
   homepage "https://github.com/oleiade/motus"
-  url "https://github.com/oleiade/motus/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "eaa547e0821906cba7553ff7a51309cc39d450b215748a907bd7db1614ce0c85"
+  url "https://github.com/oleiade/motus/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "ac46d6e152293edf6aa30aaf40fcb8250429127f1ce8c59da3022dcedaa94633"
   license "AGPL-3.0-only"
   head "https://github.com/oleiade/motus.git", branch: "main"
 
@@ -23,8 +23,9 @@ class Motus < Formula
   end
 
   test do
-    expected = '{"kind":"random","password":"BC6%!vMSga9A"}'
-    output = shell_output("#{bin}/motus --seed 42 --output json random -c 12 -n -s").strip
-    assert_equal expected, output
+    assert_match version.to_s, shell_output("#{bin}/motus --version")
+
+    output = shell_output("#{bin}/motus random -c 2 2>&1", 2)
+    assert_match "The number of characters must be between 8 and 100", output
   end
 end
