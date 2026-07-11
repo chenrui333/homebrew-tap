@@ -1,8 +1,8 @@
 class Floci < Formula
   desc "Open-source local AWS emulator"
   homepage "https://github.com/floci-io/floci"
-  url "https://github.com/floci-io/floci/archive/refs/tags/1.5.26.tar.gz"
-  sha256 "4dd24f226746dcf2416dcac8b0f5ae3eb87d215eda1a9b4d20e14398e150c1be"
+  url "https://github.com/floci-io/floci/archive/refs/tags/1.5.32.tar.gz"
+  sha256 "d314a8f4cb74aee9d5403436107a8e1a9c646c1fb5a075c119e5f9a1adff8cc9"
   license "MIT"
   head "https://github.com/floci-io/floci.git", branch: "main"
 
@@ -23,7 +23,7 @@ class Floci < Formula
 
     (var/"floci/data").mkpath
 
-    system Formula["maven"].opt_bin/"mvn", "--batch-mode", "-DskipTests", "package"
+    system formula_opt_bin("maven")/"mvn", "--batch-mode", "-DskipTests", "package"
 
     libexec.install Dir["target/quarkus-app/*"]
     (bin/"floci").write <<~SH
