@@ -1,0 +1,20 @@
+Formula/f/floci.rb
+  s_84f9cf2cdf3e31::t_4336a1b97e0ce7 26
+  s_84f9cf2cdf3e31::t_ad06dde918d236 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "484b0adf40c829031983107fc1ad6e71297ddedf",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
