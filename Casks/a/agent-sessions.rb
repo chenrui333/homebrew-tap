@@ -1,6 +1,6 @@
 cask "agent-sessions" do
-  version "3.6.4"
-  sha256 "a32780803662d1d46e960f5ef01af8dae2e3a663bb07b4b327eaf0b93e37da41"
+  version "4.3.1"
+  sha256 "cfa026769b25e4388390ef810fba16361afbe88e70a38c6329ece32bd2d08921"
 
   url "https://github.com/jazzyalex/agent-sessions/releases/download/v#{version}/AgentSessions-#{version}.dmg"
   name "AgentSessions"
@@ -13,7 +13,7 @@ cask "agent-sessions" do
   end
 
   auto_updates true
-  depends_on macos: :ventura
+  depends_on macos: :sonoma
 
   app "AgentSessions.app"
 
