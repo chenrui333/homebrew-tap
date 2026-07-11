@@ -1,8 +1,8 @@
 class Reqlog < Formula
   desc "Trace and filter requests across distributed systems"
   homepage "https://github.com/SagarMaheshwary/reqlog"
-  url "https://github.com/SagarMaheshwary/reqlog/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "14472781e7a5049c01c08b4957279c5be6196d2ae9382c50cf66add794e6c094"
+  url "https://github.com/SagarMaheshwary/reqlog/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "578b075aec1253241085424f8a9f733a5e44217ba6ec4eb375dd93ec7bbd2363"
   license "MIT"
   head "https://github.com/SagarMaheshwary/reqlog.git", branch: "master"
 
@@ -24,6 +24,7 @@ class Reqlog < Formula
 
   test do
     assert_match "reqlog version #{version}", shell_output("#{bin}/reqlog --version")
+    (testpath/"logs").mkpath
     output = shell_output("#{bin}/reqlog not-a-real-command 2>&1", 1)
     assert_match "no matching sources found", output
   end
