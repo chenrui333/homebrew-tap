@@ -1,8 +1,8 @@
 class Dotr < Formula
   desc "Dotfiles manager that is as dear as a daughter"
   homepage "https://github.com/uroybd/DotR"
-  url "https://github.com/uroybd/DotR/archive/refs/tags/v1.0.7.tar.gz"
-  sha256 "fdf2fcd3ecca6a4dadf388efd202fc04885c5f32784a3dfc840b858c6f71255b"
+  url "https://github.com/uroybd/DotR/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "d19fc20f5e85ff5bc58a8f63328f8760bb1fe4ca5f52ebb9e0615c06bcfc87c6"
   license "MIT"
   head "https://github.com/uroybd/DotR.git", branch: "main"
 
@@ -19,6 +19,7 @@ class Dotr < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"dotr", "completions")
   end
 
   test do
