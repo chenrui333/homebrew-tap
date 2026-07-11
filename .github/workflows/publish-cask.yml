@@ -12,7 +12,6 @@ jobs:
   cask-merge:
     if: |
       contains(github.event.pull_request.labels.*.name, 'pr-cask-merge') &&
-      github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.user.type != 'Bot' &&
       github.event.pull_request.state == 'open' &&
       !github.event.pull_request.draft
@@ -44,5 +43,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          gh pr merge "$PR_NUMBER" --squash --delete-branch --repo "$GITHUB_REPOSITORY"
+          gh pr merge "$PR_NUMBER" --squash --delete-branch \
+            --match-head-commit "$PR_HEAD_SHA" --repo "$GITHUB_REPOSITORY"
