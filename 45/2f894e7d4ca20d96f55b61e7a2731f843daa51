@@ -1,0 +1,20 @@
+Formula/d/dotr.rb
+  s_84f9cf2cdf3e31::t_78832aac72ef50 22
+  s_84f9cf2cdf3e31::t_64ae29f0378793 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "452f894e7d4ca20d96f55b61e7a2731f843daa51",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
