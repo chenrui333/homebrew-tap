@@ -1,8 +1,8 @@
 class Clai < Formula
   desc "Command-line artificial intelligence - Your local LLM context-feeder"
   homepage "https://github.com/baalimago/clai"
-  url "https://github.com/baalimago/clai/archive/refs/tags/v1.10.10.tar.gz"
-  sha256 "ed2f607463bf679f446bcaf9db9b605b1c17fe060bf2b1da34900f31bb281fa9"
+  url "https://github.com/baalimago/clai/archive/refs/tags/v1.10.12.tar.gz"
+  sha256 "180f6dd244e71279a26d6532374ae2703a85195799f5b0323f7aae12f5506704"
   license "MIT"
   head "https://github.com/baalimago/clai.git", branch: "main"
 
@@ -18,10 +18,13 @@ class Clai < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X github.com/baalimago/clai/internal.BuildVersion=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
+    assert_match "version: #{version}", shell_output("#{bin}/clai version")
+
     output = shell_output("#{bin}/clai -h 2>&1", 1)
     assert_match "Usage of clai:", output
 
