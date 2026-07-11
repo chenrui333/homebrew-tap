@@ -1,8 +1,8 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.19.0.tgz"
-  sha256 "de56d691a8f1977371c3d19855f72564b5519361733baf41066cc0ff6c25d738"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.20.0.tgz"
+  sha256 "28927a74b4c7747bdd94e209164a066fb37780b08cc2ba4c1d1578c9ab6e0df6"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
@@ -28,7 +28,8 @@ class OhMyCodex < Formula
 
     require "open3"
 
-    output, status = Open3.capture2e(bin/"omx", "--not-a-real-option")
+    path = [formula_opt_bin("node"), "/usr/bin", "/bin"].join(File::PATH_SEPARATOR)
+    output, status = Open3.capture2e({ "PATH" => path }, bin/"omx", "--not-a-real-option")
     refute_predicate status, :success?
     assert_match "failed to launch codex", output
   end
