@@ -1,0 +1,19 @@
+Formula/n/nanobrew.rb
+  s_84f9cf2cdf3e31::t_ee0906843a4832 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "34df175b1338b463a3e5b94a5dd7ec733c5b1ba0",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
