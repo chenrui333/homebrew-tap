@@ -8,11 +8,11 @@ class Motus < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7598c46b813e3705d78fbc6c9b53ed0d97d4ee3519c51e8518a3aa65af26a6c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "234192f8f44bec41f461c85594d342c69529d10f911b4f0224832d2c8431dc04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "208ed5ebe18819c514e08f7b8a54d5dd789b64dd2801020a586caf2a99ff35e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b94fecef2102a730443f6abc46f498fdc11fdaad599b40413db7e5524402e0b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "646350e598b76a31fea15fdf4b7306b25f71e5053fe45f0d18a746fbd5274e20"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2afb4b13022fa3d23354b29781927170715dd44b8e6aa89dcf8831d4574ab5ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eeb8425e0531730fef5a132db4185171e619e26a6891453d255db351e2497573"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b05d0db6986891539519fa8d35e1e7888a9c1d44553158eb5a6472b6d925ab4"
+    sha256 cellar: :any,                 arm64_linux:   "d8b50a7934c142bd5c03a9cee43a5c41c7ed60e6561877e6c7c13679c3f0ac1b"
+    sha256 cellar: :any,                 x86_64_linux:  "df6bfc3e9751d4e2488b720488c8fdc6bee1c66c6f62a2a25af1727ed74c4218"
   end
 
   depends_on "rust" => :build
