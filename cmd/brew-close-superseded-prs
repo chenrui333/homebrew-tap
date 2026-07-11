@@ -34,8 +34,12 @@ parser = OptionParser.new do |opts|
     options[:apply] = false
   end
 
-  opts.on("--formula NAME", "Only inspect one formula (can be repeated)") do |formula|
+  opts.on("--formula NAME", "Only inspect one formula or cask (can be repeated)") do |formula|
     options[:formulas] << formula
+  end
+
+  opts.on("--cask NAME", "Only inspect one cask (can be repeated)") do |cask|
+    options[:formulas] << cask
   end
 
   opts.on("--limit N", Integer, "Maximum open PRs to inspect (default: 1000)") do |limit|
@@ -100,12 +104,17 @@ def gh_json(*args)
   JSON.parse(capture!("gh", *args))
 end
 
-def formula_path(formula, root = TAP_ROOT)
+def package_info(package, root = TAP_ROOT)
   candidates = [
-    File.join(root, "Formula", formula[0], "#{formula}.rb"),
-    File.join(root, "Formula", "#{formula}.rb"),
+    [:formula, File.join(root, "Formula", package[0], "#{package}.rb")],
+    [:formula, File.join(root, "Formula", "#{package}.rb")],
+    [:cask, File.join(root, "Casks", package[0], "#{package}.rb")],
+    [:cask, File.join(root, "Casks", "#{package}.rb")],
   ]
-  candidates.find { |candidate| File.file?(candidate) }
+  type, path = candidates.find { |_, candidate| File.file?(candidate) }
+  return unless path
+
+  { type: type, path: path }
 end
 
 def tap_name(repo)
@@ -128,19 +137,28 @@ def tap_root(repo)
   @tap_roots[repo] = stdout.strip
 end
 
-def formula_version(formula, repo)
-  path = formula_path(formula, tap_root(repo)) || formula_path(formula)
-  return nil unless path
+def package_version(package, repo)
+  info = package_info(package, tap_root(repo)) || package_info(package)
+  return unless info
 
-  stdout, stderr, status = capture3("brew", "info", "--json=v2", "--formula", path, env: brew_env)
+  type = info.fetch(:type)
+  path = info.fetch(:path)
+  type_flag = type == :formula ? "--formula" : "--cask"
+
+  stdout, stderr, status = capture3("brew", "info", "--json=v2", type_flag, path, env: brew_env)
   unless status.success?
-    warn "Warning: could not determine current #{formula} version: brew info failed:\n#{stderr}"
-    return nil
+    warn "Warning: could not determine current #{package} version: brew info failed:\n#{stderr}"
+    return
   end
 
-  JSON.parse(stdout).fetch("formulae").first.fetch("versions").fetch("stable")
+  metadata = JSON.parse(stdout)
+  if type == :formula
+    metadata.fetch("formulae").first.fetch("versions").fetch("stable")
+  else
+    metadata.fetch("casks").first.fetch("version")
+  end
 rescue StandardError => e
-  warn "Warning: could not determine current #{formula} version: #{e.message}"
+  warn "Warning: could not determine current #{package} version: #{e.message}"
   nil
 end
 
@@ -188,7 +206,7 @@ def bump_prs(prs, formula_filter)
     next unless parsed
     next if formula_filter.any? && !formula_filter[parsed[:formula]]
     next if (pr_labels(pr) & SKIP_LABELS).any?
-    next unless formula_path(parsed[:formula])
+    next unless package_info(parsed[:formula])
 
     bump_prs << pr.merge(parsed)
   end
@@ -218,7 +236,7 @@ def ensure_superseded_label(repo)
     "gh", "label", "create", SUPERSEDED_LABEL,
     "--repo", repo,
     "--color", "ededed",
-    "--description", "Closed because a newer formula update supersedes this PR"
+    "--description", "Closed because a newer package update supersedes this PR"
   )
 end
 
@@ -269,7 +287,7 @@ all_bump_prs_by_formula = all_bump_prs.group_by { |pr| pr.fetch(:formula) }
 
 closures = []
 open_bump_prs.group_by { |pr| pr.fetch(:formula) }.each do |formula, formula_prs|
-  current_version = formula_version(formula, options[:repo])
+  current_version = package_version(formula, options[:repo])
   pending_prs = []
 
   formula_prs.each do |pr|
@@ -307,7 +325,7 @@ end
 closures.uniq! { |closure| closure.fetch(:number) }
 
 if closures.empty?
-  puts "No superseded formula PRs found."
+  puts "No superseded package PRs found."
   exit
 end
 
@@ -321,7 +339,7 @@ if options[:apply]
   closures.each do |closure|
     close_pr(options[:repo], closure.fetch(:number), closure.fetch(:body))
   end
-  puts "Closed #{closures.length} superseded formula PR(s)."
+  puts "Closed #{closures.length} superseded package PR(s)."
 else
   puts "Dry-run only. Re-run with --apply to close these PRs."
 end
