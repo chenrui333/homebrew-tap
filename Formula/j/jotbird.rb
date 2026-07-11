@@ -1,8 +1,8 @@
 class Jotbird < Formula
   desc "Publish Markdown from the command-line"
   homepage "https://www.jotbird.com/cli"
-  url "https://github.com/jotbirdhq/jotbird-cli/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "755cfeca2b1820c9bf290d5b23cca678184a3e24998b8f3999b6c157be28f709"
+  url "https://github.com/jotbirdhq/jotbird-cli/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "11041b85960253f6aece2f14e9a735182d039df043d5c43415035867d3391036"
   license "MIT"
   head "https://github.com/jotbirdhq/jotbird-cli.git", branch: "main"
 
