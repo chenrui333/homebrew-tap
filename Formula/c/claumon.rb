@@ -8,11 +8,11 @@ class Claumon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c89118d7d438ea34a8c74f7b31ad186807df1316642704739a8d778b754033b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c89118d7d438ea34a8c74f7b31ad186807df1316642704739a8d778b754033b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c89118d7d438ea34a8c74f7b31ad186807df1316642704739a8d778b754033b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ffecb691adcd4603cbecc5e1f8bcf2fd60ade6039955d1e7e877979e14653f9"
-    sha256 cellar: :any,                 x86_64_linux:  "5dc64ebed8d4a99f65f777cd8512a1733eab4da0a8b970cf3805c4ce8dff865e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a69a47859d96dee6fdbb40ccc59fcb16128df43732fe15dff2a98e6b29eef7a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a69a47859d96dee6fdbb40ccc59fcb16128df43732fe15dff2a98e6b29eef7a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a69a47859d96dee6fdbb40ccc59fcb16128df43732fe15dff2a98e6b29eef7a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a36b99641bbd6e30ed28d2f5c44e21dd157451395e642586984e39faa223f3e8"
+    sha256 cellar: :any,                 x86_64_linux:  "1d51877af93022cdfbb11289ec3b245c7e6ff2336408fc6f2521052b5ee99771"
   end
 
   depends_on "go" => :build
