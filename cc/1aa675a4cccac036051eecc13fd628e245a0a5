@@ -1,0 +1,20 @@
+Formula/d/dgop.rb
+  s_84f9cf2cdf3e31::t_2bb6ccc635a429 4-5
+  s_84f9cf2cdf3e31::t_ba7c8588a911cd 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "cc1aa675a4cccac036051eecc13fd628e245a0a5",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
