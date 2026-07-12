@@ -1,0 +1,20 @@
+Formula/c/cnspec.rb
+  s_84f9cf2cdf3e31::t_d7ba25cc8342b9 28
+  s_84f9cf2cdf3e31::t_2e530b01294879 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "dae0f46ba71d9e478f10d8b7c2ed1a52513a7847",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
