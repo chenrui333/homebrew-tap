@@ -12,7 +12,6 @@ jobs:
   pr-pull:
     if: |
       contains(github.event.pull_request.labels.*.name, 'pr-pull') &&
-      github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.user.type != 'Bot' &&
       github.event.pull_request.state == 'open' &&
       !github.event.pull_request.draft
