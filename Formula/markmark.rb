@@ -5,6 +5,11 @@ class Markmark < Formula
   sha256 "3707611eb07a0f26094e8a0816f7273d24f451490c245bf68078686ba5ab7f9e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "321f720d2ffb1220d81045e808e92381586d883b8928867c8b3cc88515676a10"
+  end
+
   depends_on "node"
 
   def install
