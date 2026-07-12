@@ -8,11 +8,11 @@ class Dotr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3aa55da27653425dbfbee6738674946c2d2a8c32dc7f08ab197d27af7ed94d49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91f38e389b202241e31df75aca30795702749d9c7e622245e7663eabfbfad4cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d47a17f4948f92629c7826cb5332adcc03d647b280aaa9c5ff63ceac6274a7d2"
-    sha256 cellar: :any,                 arm64_linux:   "425d2228d36e3f82f67df6ba614ed8cfcfcf25ac926583a89e71e39e8e35ae33"
-    sha256 cellar: :any,                 x86_64_linux:  "528800d3967d7f93f7ea153ef5b586a1433af73de7d32256ed9a38f91cbb803a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fa4abb8a9ed736abb3b2ffc6c2a080db800f03622f129578cf1c2fbb37c81ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c63d3e850d42a702e335d2793af8d4e103e5f761728916687b7cf9a30017b27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a69d5f2e9c5276811d0e33a08db9e2f34182c7a14300d5d8453ec3e165bcce4"
+    sha256 cellar: :any,                 arm64_linux:   "af010ffae2759dd51be643e7488850a58e9adb4ec0caeabde62f39cf5c5b4be5"
+    sha256 cellar: :any,                 x86_64_linux:  "7376e897db62818707e69fd81d1cdd3ee2030d3edb84ff40afa3957761b5f09b"
   end
 
   depends_on "rust" => :build
