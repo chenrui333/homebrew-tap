@@ -1,8 +1,8 @@
 class Repeater < Formula
   desc "Spaced repetition for the terminal"
   homepage "https://github.com/shaankhosla/repeater"
-  url "https://github.com/shaankhosla/repeater/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "fd66bcb2c74c596b133b80b5a136adb6c1ffd241543766cfdbf404f75e110c23"
+  url "https://github.com/shaankhosla/repeater/archive/refs/tags/v0.1.10.tar.gz"
+  sha256 "2a074ff11d538fe5f35a95d4de94602c745bd610026ff2e3137072f3f77dc7b1"
   license "Apache-2.0"
   head "https://github.com/shaankhosla/repeater.git", branch: "main"
 
