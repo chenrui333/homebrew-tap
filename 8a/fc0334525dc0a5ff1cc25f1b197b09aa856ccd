@@ -1,0 +1,21 @@
+Formula/t/tdd-guard.rb
+  s_84f9cf2cdf3e31::t_7d3959a8f02f84 4-5
+  s_84f9cf2cdf3e31::t_c6d104ce11bbbd 21,52
+  s_84f9cf2cdf3e31::t_7327218e1edb91 51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "8afc0334525dc0a5ff1cc25f1b197b09aa856ccd",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
