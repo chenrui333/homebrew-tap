@@ -9,12 +9,11 @@ class Enola < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9b287caf875c04dbf6e60f0bb90f56b8268c1aa28ba9bd0af4f49a5e3772d02"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9b287caf875c04dbf6e60f0bb90f56b8268c1aa28ba9bd0af4f49a5e3772d02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9b287caf875c04dbf6e60f0bb90f56b8268c1aa28ba9bd0af4f49a5e3772d02"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fe5d630ab43e0cd089bd4159a2e5ca0143cda5e9dccad2b8d22c22e8c54395c"
-    sha256 cellar: :any,                 x86_64_linux:  "75ce5e0978dd91aff64cb4c0eec5abf10177d135720d68829287054478242844"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9be2faa0a5d1450b84c3ea660d59b9e6b24710188c56f8dd958abb855b44e7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9be2faa0a5d1450b84c3ea660d59b9e6b24710188c56f8dd958abb855b44e7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9be2faa0a5d1450b84c3ea660d59b9e6b24710188c56f8dd958abb855b44e7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "90c3694616996b0fd8744a2300e138d4e1416da7b1940cd2cec2825e813e61ec"
+    sha256 cellar: :any,                 x86_64_linux:  "b42b22a7290a93ff8431f83a827e80336057ccb31fa67e9d0b7f92fc8511d5f7"
   end
 
   depends_on "go" => :build
