@@ -1,0 +1,19 @@
+Formula/g/gitlabform.rb
+  s_84f9cf2cdf3e31::t_fb61c88bbd9fe9 6-7,26-27,156-157,181-182
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "de2b1cdb95c62c1438ce442732dd07979a58e19e",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
