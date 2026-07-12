@@ -1,0 +1,20 @@
+Formula/y/youtube-music-cli.rb
+  s_84f9cf2cdf3e31::t_094d35b9fac389 26
+  s_84f9cf2cdf3e31::t_9a4bea6d91f682 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "5d637f401544cbef00473aba5313f8b3db87d88f",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
