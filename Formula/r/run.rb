@@ -1,8 +1,8 @@
 class Run < Formula
   desc "Universal multi-language runner and smart REPL written in Rust"
   homepage "https://run.esubalew.et/"
-  url "https://github.com/Esubaalew/run/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "c4b0e68e60e8ffe643830bf3e1c6abc735d0cc5fe6ca37263eca47c6e4d0dd66"
+  url "https://github.com/Esubaalew/run/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "fcb22f803107cc7a7a5a3bcafc37e12e150d50ea6b41837577a750779774c1a2"
   license "Apache-2.0"
   head "https://github.com/Esubaalew/run.git", branch: "master"
 
