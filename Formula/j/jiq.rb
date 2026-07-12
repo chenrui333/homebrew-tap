@@ -7,11 +7,11 @@ class Jiq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c0540f616b6801c4f2ca925e46d3a6d63825bee2064a72f9c103cd059ec1739"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5777b49ec4215bb82840c18bcd1551800ce09b9f9c756bd7b12144db06b229d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6bc9c5b12730985e7d8f13d3a6fb0c1258bdca2278e8204db9387437ffe9e1b5"
-    sha256 cellar: :any,                 arm64_linux:   "78d44ad4c352938f5e5b1a0e4fdf972d1d983ed0fabf0ef6f66544e91534628e"
-    sha256 cellar: :any,                 x86_64_linux:  "eb6dcba4c99b49cf3c9ce6ada22c70566d50b456f43bcea95d2f30e5d95f7ac6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5b7e7488ec64491a5c8c0b0eb94dad935efd71d82fb6f97ded8ca7c20d39a7f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "191462a84fde3fbe3ab11726059f93e932b2737ba39916bbf8a0e75196a51ed5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "824b9c467758918446ab5a577bc113042b7f325ba515b4ff963892db4631363f"
+    sha256 cellar: :any,                 arm64_linux:   "9745d18be73c3031ff13bb0001a3f2bfdd3f3ad2cce17296c93cbc721f06f0b6"
+    sha256 cellar: :any,                 x86_64_linux:  "da53021b12e556e621be4a1a39969b2b3ae59e3622e55df8c5db335bebce93f0"
   end
 
   depends_on "rust" => :build
