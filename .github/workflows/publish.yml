@@ -5,6 +5,10 @@ on:
     types:
       - labeled
 
+concurrency:
+  group: brew-pr-pull
+  cancel-in-progress: false
+
 env:
   HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
 
