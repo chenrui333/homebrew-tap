@@ -1,0 +1,20 @@
+Formula/n/npm-np.rb
+  s_84f9cf2cdf3e31::t_8422827c0034fa 32
+  s_84f9cf2cdf3e31::t_562f89d99e6868 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "2e5a5399abe328898781c2efefb74c9f09a44c0e",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
