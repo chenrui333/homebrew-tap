@@ -1,0 +1,20 @@
+Formula/j/jonquil.rb
+  s_84f9cf2cdf3e31::t_3176d76232015d 35-49,52-57
+  s_84f9cf2cdf3e31::t_8d67c8691f34d5 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "c2f07404fdc41a048a83230e9a0cae8edb7e2f57",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
