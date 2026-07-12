@@ -8,11 +8,11 @@ class Terraformer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d2a134e13f6705794cd4a237b83f72387c9292d5c3c744d87ce9b69dd48ef87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d2a134e13f6705794cd4a237b83f72387c9292d5c3c744d87ce9b69dd48ef87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d2a134e13f6705794cd4a237b83f72387c9292d5c3c744d87ce9b69dd48ef87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecc7e7540739de29ee8087233388d38be5e1edc51fddad380fc7a36c78893f85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "482843fe8a61f63fe65c3d9d8a5a30fefdc58571632bc3d5030fc39f7f786c2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c9c021481ccbdcc0c2a044d722857f2fe039ab1a8bbd58333e54c01f21e5a0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c9c021481ccbdcc0c2a044d722857f2fe039ab1a8bbd58333e54c01f21e5a0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c9c021481ccbdcc0c2a044d722857f2fe039ab1a8bbd58333e54c01f21e5a0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8343dd55b0d0ab3127930a7b8952f653bbd9ab4043b235cd619afd008b060c28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4fa0cef85c7eecec98fe534ca9c74a6d28d31a758eb44bd45e4eb43ebbf558a"
   end
 
   depends_on "go" => :build
