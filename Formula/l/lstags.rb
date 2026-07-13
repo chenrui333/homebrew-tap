@@ -13,10 +13,12 @@ class Lstags < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48ccb35ac46890e6fef371cd9418b2ee905da36136c4b918f0bd2c8521a7f5d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28e60e1996ae2654d361d1c9f3160cbe0ad5f9c70efc5ad25147d0e21e461bb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a718b885f6a517edb165b1070423bc2d1b2e9dd456e0ef2a4cd4b2001339ca4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca330fc96a6190f9c7cb6839df270f988dca63268f39ce1e2af0248144cd8bb3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11cb7960b6a206ddbf46205cc88c24e0e8c2f5f6a3777535182ff10604c17898"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11cb7960b6a206ddbf46205cc88c24e0e8c2f5f6a3777535182ff10604c17898"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11cb7960b6a206ddbf46205cc88c24e0e8c2f5f6a3777535182ff10604c17898"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81d7981820c6e3d1ea3aa162082a1120845c15db642f900645b3c00d72c5331"
+    sha256 cellar: :any,                 x86_64_linux:  "06dd09708e66a537b5fc741f02e0f80e167adb3eef8632cd56d7352d138a4088"
   end
 
   depends_on "go" => :build
