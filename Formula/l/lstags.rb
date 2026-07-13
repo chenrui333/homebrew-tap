@@ -6,6 +6,11 @@ class Lstags < Formula
   license "Apache-2.0"
   head "https://github.com/ivanilves/lstags.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48ccb35ac46890e6fef371cd9418b2ee905da36136c4b918f0bd2c8521a7f5d2"
