@@ -8,12 +8,13 @@ class Jonquil < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f15f5d2f9389f9865ebdeac293ce6c49fb25414b42f6c9577c2603fa607be58d"
-    sha256 cellar: :any, arm64_sequoia: "0920cec77ef3fb8620b77cf16ee06d56501d9534f35e37a0e94464868783fbd3"
-    sha256 cellar: :any, arm64_sonoma:  "894e732bb0006f9a8168bf05da79a2995e1b3d9a2a7692f5e01dfada5fa6f599"
-    sha256 cellar: :any, sequoia:       "29520bd1476224ebe60a84b7dbda9d22bacbfd654186ff05eabdaeaad4b9acb9"
-    sha256 cellar: :any, arm64_linux:   "7c4129d0e32db1561cf0376c82bee19275fe4410fcf421aafdcd4fc92909e84e"
-    sha256 cellar: :any, x86_64_linux:  "2ad8fe42b63d4afdcb811260d86aad6d551c20d4d94bef0bd4ae5e2ea2c08314"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "1271d9d02dd8d3dfc2940e5c0655afea8fa60266dadf67d07223325399815b0a"
+    sha256 cellar: :any, arm64_sequoia: "b04d185443aace7dee6f8be1793e34e7809385daaa50974a6616f750a934125d"
+    sha256 cellar: :any, arm64_sonoma:  "fa49d9c2719ceaa04ea2b70780aea1037a96c1fddc948103f640556f503dae6b"
+    sha256 cellar: :any, sequoia:       "6b38a1c41c157e8bfdd3c660c382ff50299c435e1fd8cc8bcff943a63a11e8d5"
+    sha256 cellar: :any, arm64_linux:   "98cde101198ac5170c55c1eaebfcab958914a75a1aeaf49b44ae468545b855fc"
+    sha256 cellar: :any, x86_64_linux:  "637f14b10f0e7057cc27013bfb730564bc5ec3cdf8a0ed06578326e02df6a412"
   end
 
   depends_on "meson" => :build
