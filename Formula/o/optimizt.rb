@@ -7,11 +7,11 @@ class Optimizt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "c4e73326dbf149667b1f3c71915c81fe06af45dc2a6d3b5c76c5c4ad152e47fa"
-    sha256 cellar: :any,                 arm64_sequoia: "7d427c5c4e44b5e0674fd8c21ce21991c2b3c380eb5c0c308965c0828adf6bd8"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d427c5c4e44b5e0674fd8c21ce21991c2b3c380eb5c0c308965c0828adf6bd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d6ee49f8237d55234244320114f6314181afadee17afd0ff10cb9ed4a71d400"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70f5be2bb3106d9b2b945a7df97977b98e8e7bc43f821521d36fac4eabecc982"
+    sha256 cellar: :any, arm64_tahoe:   "0dcf3f33fb74290cfd79b8e70bb1d1aac8ad173f737cdc7c11dd00c9a05b1399"
+    sha256 cellar: :any, arm64_sequoia: "766bdedad44bd16da530197395e963a2bfe31f0eaf2f09c7bf9102ed213104d8"
+    sha256 cellar: :any, arm64_sonoma:  "766bdedad44bd16da530197395e963a2bfe31f0eaf2f09c7bf9102ed213104d8"
+    sha256 cellar: :any, arm64_linux:   "a13f819406a6928261b758c92a1e8891ada69d49240db9f1bd4497cf4264b72b"
+    sha256 cellar: :any, x86_64_linux:  "fd43f900be2168b129bc78de25a09f89b9dda750c576ea4ff1bbb2a213013357"
   end
 
   depends_on "gifsicle"
