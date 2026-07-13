@@ -9,8 +9,8 @@ class Swaptop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "edb9c6242d3d1997481a04c230ef93c10852d34a14ab8bee392ff18876219752"
-    sha256 cellar: :any, x86_64_linux: "2462c17911d8175138c11d1e3dc971037e18db60e7acfe2e8f7b9e150dc82415"
+    sha256 cellar: :any, arm64_linux:  "9645bb9636e0f68de04f608e431e10527d5c5258b0097a2920a16cb4dd4ba887"
+    sha256 cellar: :any, x86_64_linux: "ebc1382036ea76a68e8233cf795e489ec014f83e26720a57ee312fd3ad5a62df"
   end
 
   depends_on "pkgconf" => :build
