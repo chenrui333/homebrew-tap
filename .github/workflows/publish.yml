@@ -6,7 +6,7 @@ on:
       - labeled
 
 concurrency:
-  group: brew-pr-pull
+  group: ${{ github.event.label.name == 'pr-pull' && 'brew-pr-pull' || format('brew-pr-pull-skip-{0}', github.run_id) }}
   cancel-in-progress: false
 
 env:
@@ -15,7 +15,7 @@ env:
 jobs:
   pr-pull:
     if: |
-      contains(github.event.pull_request.labels.*.name, 'pr-pull') &&
+      github.event.label.name == 'pr-pull' &&
       github.event.pull_request.user.type != 'Bot' &&
       github.event.pull_request.state == 'open' &&
       !github.event.pull_request.draft
