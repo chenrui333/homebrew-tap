@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/bb/4f/448e5b9523648391b3cb886a1090554c54dc2ff1f5d39dd9a2f8f2784092/apm_cli-0.24.1.tar.gz"
-  sha256 "1a614e53e0098f1100acac2054b4e71a86b2ee9b2648bf53bcc76a90d66155a5"
+  url "https://files.pythonhosted.org/packages/cf/3d/90e5c8b706223753235a7c7760608183519491bd4e233d2974be550826dd/apm_cli-0.25.0.tar.gz"
+  sha256 "efa09f0275167795d71807efa6243ab9af19d048381e7c17f8ea263894d9a954"
   license "MIT"
 
   bottle do
@@ -113,8 +113,8 @@ class ApmCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/33/f6/354ae6491228b5eb40e10d89c4d13c651fe1cf7556e35ebdded50cff57ce/gitpython-3.1.50.tar.gz"
-    sha256 "80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc"
+    url "https://files.pythonhosted.org/packages/59/30/a8a0c15f9480dc91b5b7f11ebd26105e5f80898d7ff02da197fef35d8395/gitpython-3.1.51.tar.gz"
+    sha256 "22c9c94bb6b0b9f3c7157c684fece45a414cea204586b600beae6cd4570dcd6d"
   end
 
   resource "h11" do
@@ -278,8 +278,8 @@ class ApmCli < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/7d/8e/0e2fa87b197b3d0f8dd57856c07da77fa0c7130aaa894ee9d330c715f37c/sqlite_utils-4.0.tar.gz"
-    sha256 "cea711807c2bbc18829ed642ae19a23a80e853f4136c4d2a28078a6117ad9426"
+    url "https://files.pythonhosted.org/packages/aa/97/101ae34f13ba2878ed9bb53848b248f8d34473bc821cc809858929e9ba68/sqlite_utils-4.1.tar.gz"
+    sha256 "70893f5bba2330bf83d6a84bdf9cd6164a566ece377d0447f162e76e4b9ae74b"
   end
 
   resource "tabulate" do
