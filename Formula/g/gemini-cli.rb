@@ -8,10 +8,11 @@ class GeminiCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "274b02c10016a612e67c06c197c7bba4a97c666ad46aca381b79eaaeee9f5ac8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac17845ac46df5104cfad7ddac99923ccdb48d6d47dc1ac151d39e8e2cb00dfa"
-    sha256 cellar: :any_skip_relocation, ventura:       "c1cc23f755d7efce92f609791b06b64c7fe8cc2ce5f85b3f619a302aa5cce3d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edefed31e07fe2db3dea9f2760da99a97dedfdc4b8314a126cb35139780de0dc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "899e2ed2f6f0adffde1adc6ef241edd951bf845117bf42ed4f433576d871e304"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "899e2ed2f6f0adffde1adc6ef241edd951bf845117bf42ed4f433576d871e304"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "899e2ed2f6f0adffde1adc6ef241edd951bf845117bf42ed4f433576d871e304"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe6cc71c2051df1b4ec96a53e2ac481cc154d06547366ed8dd8436215982bc97"
+    sha256 cellar: :any,                 x86_64_linux:  "bb1ec8c7d0135fc7fdeaaf4abbee8c5a8f6f786f89d0d212edf554b17cfb2c69"
   end
 
   depends_on "go" => :build
