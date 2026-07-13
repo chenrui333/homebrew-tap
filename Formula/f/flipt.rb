@@ -9,11 +9,11 @@ class Flipt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1409862adf05a723d1e0e6b5ad166b29a80073f08dc2683e989f07cc696d488e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8ad8ee26184c45e91e257d49c8493b3b7f56c522609d04997ae0734afc77831"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29ca98a02ed85027cfd0a665133642d064ad4b82049245a854427ef896f94a57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "accbda97b03faefb38bdcf107949034840fbb44acb644d4afe8473173478f4d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05c586f40f585c7d1f3dc92be6672eb6f70e1cee5bd51ba9f2dbb6dc6890eade"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef81f05c2ce9eb95ab8f901f0e0230ba84ba1c48fd7f19996e1427abdc87371b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adc8a34beab551c769ff33e35fd58ece9c681ab08a142a61e7196bd9f67741c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "932161fe380d7ad1cb12865a7ff63f19ef61ab12fa4ec6aa628d4b8fdfa20a1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7386c26b4520ebf6d88ca16dd98de723c40da5efde4b6b2bee7b787445b05ae"
+    sha256 cellar: :any,                 x86_64_linux:  "bb0ac229d621054baebfc6d4fd9790bc28e034311afbbb615213563a5f4f1f10"
   end
 
   depends_on "go" => :build
