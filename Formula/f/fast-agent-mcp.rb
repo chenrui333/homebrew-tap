@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/58/0e/37d98f5c9bdf8679742cb18bbc94537832146678db9955aa62a00a5fad07/fast_agent_mcp-0.9.6.tar.gz"
-  sha256 "df03759be2870edc4e53e2a766a5bce0734c36df3ea30ac82215439fbdaf0d40"
+  url "https://files.pythonhosted.org/packages/1f/14/aea42198cd5b253e67099d17a82df3aa697b63712862997990f55045f612/fast_agent_mcp-0.9.7.tar.gz"
+  sha256 "1686f49fe78f733959fa0c009aa2848659e97dbc24bbff5a7dfa4ce3dfe3fb3c"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -75,8 +75,8 @@ class FastAgentMcp < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "attrs" do
