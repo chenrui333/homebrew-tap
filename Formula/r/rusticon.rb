@@ -1,8 +1,8 @@
 class Rusticon < Formula
   desc "Mouse driven SVG favicon editor for your terminal"
   homepage "https://github.com/ronilan/rusticon"
-  url "https://github.com/ronilan/rusticon/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "afd41b39d965d9d0fd8d2c8dc4c1e82a453ffa83c3a8c6f031c15918f790e5af"
+  url "https://github.com/ronilan/rusticon/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "937d881419f0e554ba0e4c8b57edd9dfba2ff359ad6ed7e1ec33c0faaeac514e"
   license "CC-BY-NC-ND-4.0"
   head "https://github.com/ronilan/rusticon.git", branch: "main"
 
