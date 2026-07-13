@@ -38,28 +38,17 @@ class Jonquil < Formula
 
     (testpath/"t.f90").write <<~F90
       program t
-        use jonquil
+        use jonquil_version, only : get_jonquil_version
         implicit none
 
-        class(json_value), allocatable :: data
-        type(json_object), pointer :: object
-        character(:), allocatable :: name
-        integer :: count
-
-        call json_loads(data, '{"name": "Fortran", "count": 42}')
-        object => cast_to_object(data)
-        call get_value(object, "name", name)
-        call get_value(object, "count", count)
-
-        print '(a,a)', "Name: ", name
-        print '(a,i0)', "Count: ", count
+        character(len=:), allocatable :: lib_version
+        call get_jonquil_version(string=lib_version)
+        print '(a)', lib_version
       end program t
     F90
     cflags = shell_output("pkgconf --cflags jonquil").chomp.split
     libs = shell_output("pkgconf --libs jonquil").chomp.split
     system formula_opt_bin("gcc")/"gfortran", "t.f90", *cflags, *libs, "-o", "test"
-    output = shell_output("./test")
-    assert_match "Name: Fortran", output
-    assert_match "Count: 42", output
+    assert_match version.to_s, shell_output("./test").strip
   end
 end
