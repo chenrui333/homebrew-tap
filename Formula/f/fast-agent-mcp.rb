@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/1f/14/aea42198cd5b253e67099d17a82df3aa697b63712862997990f55045f612/fast_agent_mcp-0.9.7.tar.gz"
-  sha256 "1686f49fe78f733959fa0c009aa2848659e97dbc24bbff5a7dfa4ce3dfe3fb3c"
+  url "https://files.pythonhosted.org/packages/2e/a0/3a8201f841096dcf95abb17ea2d8d1cad002d0864d789f57796037dbd30a/fast_agent_mcp-0.9.8.tar.gz"
+  sha256 "3de23ae30d0bd8cf605b33fc4a5cc793625a17e706b32e3deb8950f0c6b4916d"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -185,8 +185,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/79/b9/e370d86fea3da13ec0256df30323dd26c0cb9c8c85f0c6ec42ac9df0106b/google_auth-2.55.2.tar.gz"
-    sha256 "97ae7790ff740f2bc9db60eb864a7804f4ac19f5f02c38b3d942f2fea6e9b9ae"
+    url "https://files.pythonhosted.org/packages/58/66/b4ba60005743e01933e22b4f62313e063f7460458b7d8a358427b4930013/google_auth-2.56.0.tar.gz"
+    sha256 "f90fa030b569a92654b9d690665a073841df33d57487be53db583a9a0867a553"
   end
 
   resource "google-genai" do
