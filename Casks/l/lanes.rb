@@ -1,6 +1,6 @@
 cask "lanes" do
-  version "0.44.0"
-  sha256 "1daad0648b6292479fcdedacc5810278dc244fa599161cb6c824b54c7c488203"
+  version "0.44.1"
+  sha256 "bbf64c3bc4af25923eda6c3661c4dc53a5b0c63a29f89236aadc12591b064fc0"
 
   url "https://github.com/lanes-sh/app/releases/download/v#{version}/Lanes_#{version}_universal.dmg",
       verified: "github.com/lanes-sh/app/"
