@@ -7,7 +7,11 @@ class AstroLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d879eff4eea256a5f0b4ac6b009b5aeaf416893f8e3d1759af73714dc7804df2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89632aff75f4cd6840f2077ac09123f7ddf7b016391760c72193d24d59387241"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89632aff75f4cd6840f2077ac09123f7ddf7b016391760c72193d24d59387241"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89632aff75f4cd6840f2077ac09123f7ddf7b016391760c72193d24d59387241"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15123fd41fa9d377b69f58e91d29ff8d0fdd4cc7acabd2f19ab240e9f7c4a81d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69736c74026d0f54eba0c7c80a9aa9c3879207784df3723464b17c849d6368f4"
   end
 
   depends_on "node"
