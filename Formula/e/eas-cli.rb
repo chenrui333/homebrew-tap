@@ -1,8 +1,8 @@
 class EasCli < Formula
   desc "Fastest way to build, submit, and update iOS and Android apps"
   homepage "https://docs.expo.dev/eas/"
-  url "https://registry.npmjs.org/eas-cli/-/eas-cli-20.5.1.tgz"
-  sha256 "6d2d4dd92c2a5cfe2c288dfc12d67b40a0bd2ef5d9c3d40077f61221d3ef3fee"
+  url "https://registry.npmjs.org/eas-cli/-/eas-cli-21.0.0.tgz"
+  sha256 "c838877c0a57cb9347556f4e01084b1ea5e336bf0b74dc2f6d73929b12c3f538"
   license "MIT"
 
   bottle do
