@@ -2,8 +2,8 @@ class Termide < Formula
   desc "Cross-platform terminal-based IDE, file manager, and virtual terminal"
   homepage "https://termide.github.io"
   url "https://github.com/termide/termide.git",
-      tag:      "0.29.2",
-      revision: "657ba711c2d70f27f8a06a12a0b770c4b4b3eef9"
+      tag:      "0.29.3",
+      revision: "aad9d196e7aad5cfaf2ea2140512109bc9f2d6ad"
   license "MIT"
 
   bottle do
