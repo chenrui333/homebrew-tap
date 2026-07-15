@@ -1,8 +1,8 @@
 class Hygg < Formula
   desc "Simplifying the way you read. Minimalistic Vim-like TUI document reader"
   homepage "https://github.com/kruserr/hygg"
-  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.21.tar.gz"
-  sha256 "c0f3005bf97940881d695b7e8bde55318daf4de48c927cb4a9150d3b86ccb181"
+  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.24.tar.gz"
+  sha256 "0be91ce2ecceeaebcd40926b3c78f4867c056b93615c2a5ff01b4578d1f4b9dd"
   license "AGPL-3.0-only"
   head "https://github.com/kruserr/hygg.git", branch: "main"
 
@@ -19,7 +19,7 @@ class Hygg < Formula
   depends_on "ocrmypdf"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "hygg")
+    system "cargo", "install", *std_cargo_args(path: "packages/hygg")
   end
 
   test do
