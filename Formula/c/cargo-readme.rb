@@ -1,8 +1,8 @@
 class CargoReadme < Formula
   desc "Generate README.md from docstrings"
   homepage "https://github.com/webern/cargo-readme"
-  url "https://github.com/webern/cargo-readme/archive/refs/tags/v3.3.2.tar.gz"
-  sha256 "fa533037c28912f7ac09a06a04f3710a163a5461d7428d440ac701cbfc791312"
+  url "https://github.com/webern/cargo-readme/archive/refs/tags/v3.3.3.tar.gz"
+  sha256 "3fbede8b19d108c97a8d6ba06c96efd421e164299d3a7d386d207b4de7d5540f"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
