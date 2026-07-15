@@ -1,8 +1,8 @@
 class Hygg < Formula
   desc "Simplifying the way you read. Minimalistic Vim-like TUI document reader"
   homepage "https://github.com/kruserr/hygg"
-  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.21.tar.gz"
-  sha256 "c0f3005bf97940881d695b7e8bde55318daf4de48c927cb4a9150d3b86ccb181"
+  url "https://github.com/kruserr/hygg/archive/refs/tags/0.1.23.tar.gz"
+  sha256 "9096866eb75358c75a9d8337fa48e141ae1b3d6d4346ba9832d9dc276148d75f"
   license "AGPL-3.0-only"
   head "https://github.com/kruserr/hygg.git", branch: "main"
 
