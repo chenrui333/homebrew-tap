@@ -3,8 +3,8 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/20/af/93a16618eae9acfd750123d35240d48b7686b14995ec0276853073db74ab/gitlabform-6.1.0.tar.gz"
-  sha256 "dc88c7ad33049c6d365fbaa6b56ec2de8297e9e462aff3a46630e149152beb32"
+  url "https://files.pythonhosted.org/packages/04/1c/34be845a42f3fe1fd9cebe29ceae766dfe1561fec24db25df262937fcc47/gitlabform-6.2.0.tar.gz"
+  sha256 "0d2e44b48d1f938ffb4a60b760920797bc55c2caf51ef67a5d3c4bdefe350935"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class Gitlabform < Formula
   pypi_packages exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "backoff" do
@@ -33,8 +33,8 @@ class Gitlabform < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
+    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
   end
 
   resource "cli-ui" do
