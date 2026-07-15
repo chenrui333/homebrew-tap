@@ -10,11 +10,11 @@ class LogfireMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "105ddd7dbaa15a1b904b671e267228bc5f2fe6ec36a5bc350d81df0dc482f82d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e87b8cfa6c1daecf7c6dd48202cb318252cebeccdd79a0d8daeba865adbc0bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b1b47376474a6282b338eaebcfded469e8c418decbb5cf03aa90ab99f12c309"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4be20ec6e9db871d7feaf0e277c7f41417c2310df29e9bfb29c694f28c75d0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6c251c689bb0175c944891a7392f7d4321d7d7e1ae7126d0dc6a7192ce35733"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef10565e4c38dcea86454e017b85820a25fadd57d8a791e417048022c5af8ff2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a723ffa02f2a18137b86b581a683fa6a5cd720a165cbc433e387452e180a4f0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6b6cb6646622f9635fb43351542356b2ed3fbb62898500e42238ca6988f79c1"
+    sha256 cellar: :any,                 arm64_linux:   "5d1709ee3f9c93e1bc8550dbc467842a4e96568c7d0389a0a43773c7d149b7ec"
+    sha256 cellar: :any,                 x86_64_linux:  "1418aeb725b74a9c9ae5ff79ed739190267418295f3cb098cab4e8e4439db724"
   end
 
   depends_on "certifi" => :no_linkage
