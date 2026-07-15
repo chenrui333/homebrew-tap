@@ -1,0 +1,207 @@
+name: Renovate workflow digest automerge
+
+on:
+  pull_request_target: # zizmor: ignore[dangerous-triggers] trusted metadata gate before read-only head checkout
+    types: [opened, synchronize, reopened, labeled, unlabeled, ready_for_review]
+
+permissions: {}
+
+concurrency:
+  group: renovate-workflow-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  classify:
+    if: >-
+      github.event.pull_request.user.login == 'renovate[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      eligible: ${{ steps.policy.outputs.eligible }}
+      head-sha: ${{ steps.policy.outputs.head-sha }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - name: Check trusted Renovate digest policy
+        id: policy
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          script: |
+            const policy = require('./.github/scripts/renovate-workflow-automerge.js')
+            const { owner, repo } = context.repo
+            const pullNumber = context.payload.pull_request.number
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: pullNumber,
+            })
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number: pullNumber,
+              per_page: 100,
+            })
+            const result = policy.validatePullRequest(
+              pullRequest,
+              files,
+              `${owner}/${repo}`,
+            )
+
+            core.setOutput('eligible', result.eligible ? 'true' : 'false')
+            core.setOutput('head-sha', pullRequest.head.sha)
+            if (result.eligible) {
+              core.info(`PR #${pullNumber} is eligible at ${pullRequest.head.sha}`)
+            } else {
+              core.notice(`PR #${pullNumber} is not eligible: ${result.reason}`)
+            }
+
+  actionlint:
+    needs: classify
+    if: needs.classify.outputs.eligible == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+          ref: ${{ needs.classify.outputs.head-sha }}
+
+      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
+        with:
+          install_args: actionlint
+
+      - run: mise exec -- actionlint
+
+  merge:
+    needs: [classify, actionlint]
+    if: needs.classify.outputs.eligible == 'true' && needs.actionlint.result == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      checks: read
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - name: Wait for trusted checks and squash merge
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          EXPECTED_HEAD: ${{ needs.classify.outputs.head-sha }}
+        with:
+          script: |
+            const policy = require('./.github/scripts/renovate-workflow-automerge.js')
+            const { owner, repo } = context.repo
+            const pullNumber = context.payload.pull_request.number
+            const expectedHead = process.env.EXPECTED_HEAD
+            const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))
+
+            for (let attempt = 0; attempt < 60; attempt += 1) {
+              const { data: current } = await github.rest.pulls.get({
+                owner,
+                repo,
+                pull_number: pullNumber,
+              })
+              if (current.merged) {
+                core.info(`PR #${pullNumber} was already merged`)
+                return
+              }
+              if (current.state !== 'open' || current.head.sha !== expectedHead) {
+                core.notice(`PR #${pullNumber} changed while checks were running; leaving it untouched`)
+                return
+              }
+
+              const checkRuns = await github.paginate(
+                github.rest.checks.listForRef,
+                { owner, repo, ref: expectedHead, per_page: 100 },
+                (response) => response.data.check_runs,
+              )
+              const checkState = policy.requiredCheckState(checkRuns)
+              if (checkState.state === 'failed') {
+                core.setFailed(checkState.reason)
+                return
+              }
+              if (checkState.state === 'ready') break
+              if (attempt === 59) {
+                core.setFailed(`Timed out waiting for checks: ${checkState.reason}`)
+                return
+              }
+
+              core.info(checkState.reason)
+              await sleep(15_000)
+            }
+
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: pullNumber,
+            })
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number: pullNumber,
+              per_page: 100,
+            })
+            const result = policy.validatePullRequest(
+              pullRequest,
+              files,
+              `${owner}/${repo}`,
+            )
+            if (!result.eligible || pullRequest.head.sha !== expectedHead) {
+              core.notice(`PR #${pullNumber} is no longer eligible: ${result.reason || 'head changed'}`)
+              return
+            }
+
+            const review = await github.graphql(
+              `query($owner: String!, $repo: String!, $number: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  pullRequest(number: $number) {
+                    mergeable
+                    reviewDecision
+                  }
+                }
+              }`,
+              { owner, repo, number: pullNumber },
+            )
+            const mergeState = review.repository.pullRequest
+            if (mergeState.reviewDecision === 'CHANGES_REQUESTED') {
+              core.setFailed('A reviewer requested changes')
+              return
+            }
+            if (mergeState.mergeable === 'CONFLICTING') {
+              core.setFailed('The pull request has merge conflicts')
+              return
+            }
+
+            try {
+              const { data: merge } = await github.rest.pulls.merge({
+                owner,
+                repo,
+                pull_number: pullNumber,
+                commit_title: pullRequest.title,
+                merge_method: 'squash',
+                sha: expectedHead,
+              })
+              if (!merge.merged) core.setFailed(merge.message || 'GitHub did not merge the pull request')
+            } catch (error) {
+              const { data: latest } = await github.rest.pulls.get({
+                owner,
+                repo,
+                pull_number: pullNumber,
+              })
+              if (latest.merged) {
+                core.info(`PR #${pullNumber} was merged concurrently`)
+                return
+              }
+              throw error
+            }
