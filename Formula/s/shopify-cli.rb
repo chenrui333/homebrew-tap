@@ -7,11 +7,11 @@ class ShopifyCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "6817230d3e2e501a18d472f2f786f8583b29632110611acaf4ae3d861994cd8b"
-    sha256 cellar: :any,                 arm64_sequoia: "f77e0498390489f6552d3ddff5c2bb0af4bb1b3768a03686dd103aaab8953b8d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f77e0498390489f6552d3ddff5c2bb0af4bb1b3768a03686dd103aaab8953b8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cab4d6a2d8b1c85f9fb54be50eaeee9e63a6824f7cb73401e43cf4657e09f69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a33b0efc74ba99923e145a9a49082bcb939075d0b75cbe09c296dd99191925c"
+    sha256 cellar: :any,                 arm64_tahoe:   "abe9aa134ace8f45b0520a64da70283231f4dc3fb1d830bcc8277ee5ca15fd26"
+    sha256 cellar: :any,                 arm64_sequoia: "abe9aa134ace8f45b0520a64da70283231f4dc3fb1d830bcc8277ee5ca15fd26"
+    sha256 cellar: :any,                 arm64_sonoma:  "abe9aa134ace8f45b0520a64da70283231f4dc3fb1d830bcc8277ee5ca15fd26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7e07d126634dcd4ccd774f300a4d66b13c8fee3a9f88a825b52f939cb2281c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e4de9547699b88d25876ad722b34c05696931726fdd5a267691f9fb1a78beab"
   end
 
   depends_on "node"
