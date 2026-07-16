@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/5c/e5/5272ff68d3d51c69868d77aad282c9a1d4a02a5b1be781f4bf486bf455db/fast_agent_mcp-0.9.9.tar.gz"
-  sha256 "39d56803af2cc4b138fcc322e8a394a9974be72461306dccec5f8585e4aeae01"
+  url "https://files.pythonhosted.org/packages/ef/86/73d4e7d9db86aa9d31a34f9e8e71ea1547a8c2d3ff6ecb376ddd7d756ff5/fast_agent_mcp-0.9.10.tar.gz"
+  sha256 "68cb9d0badb71fbb4a34843f3b764ecc23444053fef002987facf6574ced7fc4"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -70,8 +70,8 @@ class FastAgentMcp < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/7b/dd/808c144d4a883fcfd12fe0d7689b1d86bbbea6666c1cc957ad19f1017c22/anthropic-0.112.0.tar.gz"
-    sha256 "e180cd91aa5b9b32e4007fe69892ab128d8a86b9f90825103b1903fbc977d0af"
+    url "https://files.pythonhosted.org/packages/66/a2/d31f14e28d49bae983a3634e38dfb4b31c50110b5e403596c5c6a20b23f8/anthropic-0.116.0.tar.gz"
+    sha256 "5fc248fbb9fe03ef686f8a774f81586bca31a043260aab88b387ea3660f4a396"
   end
 
   resource "anyio" do
@@ -255,8 +255,8 @@ class FastAgentMcp < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
-    sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
   end
 
   resource "jiter" do
@@ -305,8 +305,8 @@ class FastAgentMcp < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/27/3c/347cf965d313f5d41764e7d46bea6ffe7d9ef13b983cc429b0340962a082/mcp-1.27.2.tar.gz"
-    sha256 "8e02db104096d1c25b28e64bde29a5c32b31bc241710213e12fd4d84985bdfef"
+    url "https://files.pythonhosted.org/packages/6e/77/9450b8f251a13affb6281997d0523c4615f8a8b35d0b21ff30db3a5aac9d/mcp-1.28.1.tar.gz"
+    sha256 "d51e36a5f5644faea4f85ea649bfffa6bc6c26770d42798ad6a3de3d2ba69683"
   end
 
   resource "mdurl" do
