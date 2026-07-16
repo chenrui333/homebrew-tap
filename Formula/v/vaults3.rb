@@ -1,8 +1,8 @@
 class Vaults3 < Formula
   desc "Lightweight, S3-compatible object storage server with built-in web dashboard"
   homepage "https://github.com/Kodiqa-Solutions/VaultS3"
-  url "https://github.com/Kodiqa-Solutions/VaultS3/archive/refs/tags/v4.4.19.tar.gz"
-  sha256 "fc46aa5def72c0bb2a101adf106ea76716e3dc80049bb9dee664fe1b4bc55903"
+  url "https://github.com/Kodiqa-Solutions/VaultS3/archive/refs/tags/v4.4.20.tar.gz"
+  sha256 "c835e1e3edd3a4cfdb2d0ffc5fec0929c58804733ab8da5f9a8b6ae99aae78a8"
   license "AGPL-3.0-only"
   head "https://github.com/Kodiqa-Solutions/VaultS3.git", branch: "main"
 
