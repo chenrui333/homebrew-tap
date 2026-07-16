@@ -1,8 +1,8 @@
 class Aube < Formula
   desc "Fast Node.js package manager"
   homepage "https://github.com/endevco/aube"
-  url "https://github.com/endevco/aube/archive/refs/tags/v1.27.0.tar.gz"
-  sha256 "3e9047840affc2f1957303678410af6d5a89f4a1f361649e97cbd7206d5041f6"
+  url "https://github.com/endevco/aube/archive/refs/tags/v1.28.0.tar.gz"
+  sha256 "dbcb5235af440e877c44baf7175eabb6763465fb0cf07cfa7e993f23b7c7fa15"
   license "MIT"
   head "https://github.com/endevco/aube.git", branch: "main"
 
