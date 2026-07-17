@@ -8,11 +8,11 @@ class OhMyCodex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d08580d3761d1dbb44c62391b7910bd70fc1c1286c99720a297ac5a119f967d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d08580d3761d1dbb44c62391b7910bd70fc1c1286c99720a297ac5a119f967d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d08580d3761d1dbb44c62391b7910bd70fc1c1286c99720a297ac5a119f967d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fd794dd85cc7b02cf75771eb00131b0a627d85080d45ccf1be3733d658c6607"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fd794dd85cc7b02cf75771eb00131b0a627d85080d45ccf1be3733d658c6607"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e43a8f569a6e32c03a4f765829bf5007855ecf732547c8f13ea049ce29bbb66e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e43a8f569a6e32c03a4f765829bf5007855ecf732547c8f13ea049ce29bbb66e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e43a8f569a6e32c03a4f765829bf5007855ecf732547c8f13ea049ce29bbb66e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fc1f651b6a2b5284e31e3b774ee8c96794e02d534a0c564d4fec79b3ee025a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fc1f651b6a2b5284e31e3b774ee8c96794e02d534a0c564d4fec79b3ee025a3"
   end
 
   depends_on "node"
