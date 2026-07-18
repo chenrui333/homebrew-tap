@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/7b/19/2da0f2f533f5dc2aca578bcd65a85aff8cd48455c3d42770fa9d337f2ee4/fast_agent_mcp-0.9.13.tar.gz"
-  sha256 "597cc10f6e76c2abcc8b7f07f264485986d1d6f30502a3838299c58b1f7be35d"
+  url "https://files.pythonhosted.org/packages/9a/3d/01201e478aab1d4d02ec8f94aec680aed7d43c4602b7300f4957a010818a/fast_agent_mcp-0.9.14.tar.gz"
+  sha256 "1f9527ad417d5fbef4a26e68e47d7006ef99e80fbcf32dbba2b0412d86bca99b"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -235,8 +235,8 @@ class FastAgentMcp < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/77/ea/dc54b4dda5841cb3a7812a178695be776e7c15c597887c2ed892f17d015a/huggingface_hub-1.22.0.tar.gz"
-    sha256 "e2dfe5fe1ec3b87ba2709aa34555b23e3f3f6ad4d7255238e13ddb8348e6bbfa"
+    url "https://files.pythonhosted.org/packages/df/9b/d3bb4e7d792835daf34dd7091bbc7d7b4e0437d9388f1ea7239cce49f478/huggingface_hub-1.24.0.tar.gz"
+    sha256 "18431ff4daae0749aa9ba102fc952e314c98e1d30ebdec5319d85ca0a83e1ae5"
   end
 
   resource "idna" do
