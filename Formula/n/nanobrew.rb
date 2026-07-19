@@ -1,8 +1,8 @@
 class Nanobrew < Formula
   desc "Fast package manager for macOS and Linux"
   homepage "https://nanobrew.trilok.ai"
-  url "https://github.com/justrach/nanobrew/archive/refs/tags/v0.1.202.tar.gz"
-  sha256 "94249043a38f5a76f5e0fc69ae91f799fa49664115300b4bd29ed3d5b151f5a3"
+  url "https://github.com/justrach/nanobrew/archive/refs/tags/v0.1.203.tar.gz"
+  sha256 "106e0d09746eb56e1d97da33470d33eee180e8b8a76ad83306aaee6e99aff2f2"
   license "Apache-2.0"
   head "https://github.com/justrach/nanobrew.git", branch: "main"
 
