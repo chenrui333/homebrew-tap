@@ -8,7 +8,7 @@ class Lix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f18dfdd11ae0431185a8a242b69be65bc5801f0034274f7f70396bffeee5f44d"
+    sha256 cellar: :any_skip_relocation, all: "df5571b67eb602561818c246300b948115b05051189e248e4affd674b3341468"
   end
 
   depends_on "node"
