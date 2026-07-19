@@ -1,8 +1,8 @@
 class DoryCli < Formula
   desc "Lightweight static site generator for technical documentation"
-  homepage "https://docucod.com/"
-  url "https://registry.npmjs.org/@clidey/dory/-/dory-0.47.0.tgz"
-  sha256 "bcd5d9c9dbeb7f762fab64edc4accaa695022fb7ef22b828bd7a493aff26bfd9"
+  homepage "https://github.com/clidey/dory"
+  url "https://registry.npmjs.org/@clidey/dory/-/dory-0.49.0.tgz"
+  sha256 "935928bcb1cedb3cfc8b6dc753e726c4556a55c82afc3a6fdafd87d09456b437"
   license "MIT"
 
   bottle do
@@ -17,14 +17,10 @@ class DoryCli < Formula
   depends_on "node"
 
   def install
+    # Use the source-built JavaScript implementation instead of sass-embedded's prebuilt Dart binary.
+    inreplace "package.json", '"sass-embedded": "1.100.0"', '"sass": "1.100.0"'
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
-
-    if OS.linux?
-      (libexec/"lib/node_modules/@clidey/dory/node_modules")
-        .glob("sass-embedded-linux-musl-*")
-        .each(&:rmtree)
-    end
   end
 
   test do
