@@ -1,8 +1,8 @@
 class Multica < Formula
   desc "Open-source managed agents platform for AI coding agents"
   homepage "https://github.com/multica-ai/multica"
-  url "https://github.com/multica-ai/multica/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "54e4c7ffecdac74aeef1111dc56e5cefc22676af44bbc8dcc1d4961585f491e9"
+  url "https://github.com/multica-ai/multica/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "f8b2172055784fdf000281ea7d4d26b987d65ac3d4b072bfba953b739c1449f9"
   license :cannot_represent
   head "https://github.com/multica-ai/multica.git", branch: "main"
 
@@ -33,6 +33,6 @@ class Multica < Formula
     assert_match version.to_s, shell_output("#{bin}/multica version")
 
     system bin/"multica", "config", "set", "server_url", "https://example.com"
-    assert_match "server_url:   https://example.com", shell_output("#{bin}/multica config show")
+    assert_match(%r{^server_url:\s+https://example\.com$}, shell_output("#{bin}/multica config show"))
   end
 end
