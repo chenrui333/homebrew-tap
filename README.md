@@ -198,6 +198,7 @@ brew install --cask <tool>
 - `cloudflare-ddns`
 - `cloudlens`
 - `clox`
+- `cmake-init`
 - `cmdperf`
 - `cmdx`
 - `cnspec`
@@ -621,6 +622,7 @@ brew install --cask <tool>
 - `mvt`
 - `mynav`
 - `oceanbase-mcp-server`
+- `markmark`
 - `namespace-cli`
 - `nano-agent`
 - `nanobrew`
