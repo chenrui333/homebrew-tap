@@ -8,11 +8,11 @@ class Darya < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d9d0ba58336dac72870dfe0f126b2972f0b08a85e79e448d34204002f3851b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f60238714bc6d1eab43bf7e6ef96856402a22565a40b0c2ca798835685e0a051"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3c110460eb9e3fbdc393d26ea5f092556b7e0f37e125dab778e6742314cd9e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad9f9ea64158d3c41ea1e88ecefa2ea562f5bec3adfe0d4566cadd1ca7786a66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e95664a6400796a88ccd038a50e4df394b7ee01891279ddc1b641d95afbab7f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72621f1dc10f899d05f8a19be457300d992122475c9f87b6735813d145fc27cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01b2391f8e07ac6b13fcf82951d859c0ccfb84ebcc71b0cba23a81f486046e1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24368a249c5f76f1593b1614091a48dea7a379497e696da3826ef437ba1d16bf"
+    sha256 cellar: :any,                 arm64_linux:   "102540e7dea8723da17b0e55b12f9ac834a29279fae117dfd50d6d165c1e2433"
+    sha256 cellar: :any,                 x86_64_linux:  "4084a1665e5281722dd3e5a61c238cb45c7fa370beea8b506aed2e438f58372e"
   end
 
   depends_on "rust" => :build
