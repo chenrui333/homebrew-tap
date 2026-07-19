@@ -8,11 +8,11 @@ class Tennis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff2ec0475052743677bbd8e18aa9f294d509145160a6b9f2c37924100d12184c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1aaa62244eee7eaf30b9ac8ae7d70a0f6bdc44441d93d92e427c429a753e517f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c6743a4c5f49bb08744189e4c36f086eebe21bfd71dad0bad09438984121842"
-    sha256 cellar: :any,                 arm64_linux:   "16c86fea598c494c6be5884c57e6258f544152c635680aa31f13147445ab6049"
-    sha256 cellar: :any,                 x86_64_linux:  "b599a03268951d463ecc57493d3e3352656a25a78bd8bc2dfc614a18e3faa00a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "658628b93a7900c96635ac6f22f307e8d2691d4ff56fbee51c63faf3bf3b209c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e6cfd1ca0050d1b7509bd03b6e10b0fd7a4cdc1171ad9d1a2e128d88576a5e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7bfe055a2afe34dadf688fcbce7cce753b00a735523157c16d40e0d82acfc8f"
+    sha256 cellar: :any,                 arm64_linux:   "2da44e5e45b319a6987498a7799c720cd3601a61f82fb5c75a8f573f0a0ecd61"
+    sha256 cellar: :any,                 x86_64_linux:  "83066e22dc15695e4720a98e2ef570732545fe396f106fc0d53d10000d92d64a"
   end
 
   depends_on "rust" => :build
