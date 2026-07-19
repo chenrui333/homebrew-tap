@@ -8,11 +8,11 @@ class Splitrail < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f44965e57b6d6b3649d4238b24c41d1b905a4e268159e6cc89e64fabdca4943"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fe0e345fde9d5fcbaa0cddca7749d71da709cb6ff65d1a764d188d5bf345464"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "410dad06f1863b04f3a72def3a17d2f4f541190906efa08d2bad695c98223628"
-    sha256 cellar: :any,                 arm64_linux:   "29aa44fbc2b4883a239f80da117acec54cea7220e732e517377c7745e5a83fd7"
-    sha256 cellar: :any,                 x86_64_linux:  "134e354c38c49b557bd5512db7f4b504f061fa7c50ae6325823f0b8ef076aa8c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ceff0fae38a6332c9b22960e2783fccfb3a88ccabeafc6492904628bd6af4dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cfee6462ca1c9a3c30bcbebda2d76bbf3beabcb065a7561394d74026d927feb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a59c64e86ee5df5f42e543ff5bbff37e91a91e423022a37ca34f6446e0d36ab"
+    sha256 cellar: :any,                 arm64_linux:   "49831049bdc30db7ce41a2794b6459d3508a5a0fa37d4b20d52a169ad5e546ca"
+    sha256 cellar: :any,                 x86_64_linux:  "24eca30df6928035bb1ae5deda2fc9369212f213d47bf2a18afe2caf62e6e4f2"
   end
 
   depends_on "rust" => :build
