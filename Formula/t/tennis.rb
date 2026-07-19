@@ -1,8 +1,8 @@
 class Tennis < Formula
   desc "Print stylish CSV tables in your terminal"
   homepage "https://github.com/gurgeous/tennis"
-  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "d32f9b022ebff218e8f37880f73c2c0811c2e15d7022f21f306cf747dbb2889f"
+  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "8f6506c7c9a0a90b8fc7ae69d4b7cea8e892a36f7b8ca1daf41eca681cab0a41"
   license "MIT"
   head "https://github.com/gurgeous/tennis.git", branch: "main"
 
@@ -15,19 +15,10 @@ class Tennis < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "51c029dce4bc423aee93a58fff9091e6cf4210879f3b7f88230020cac2d4ee53"
   end
 
-  depends_on "zig" => :build
+  depends_on "rust" => :build
 
   def install
-    cpu = case Hardware.oldest_cpu
-    when :arm_vortex_tempest then "apple_m1"
-    when :armv8 then "generic"
-    else Hardware.oldest_cpu
-    end
-
-    args = []
-    args << "-Dcpu=#{cpu}" if build.bottle?
-
-    system "zig", "build", *std_zig_args, *args
+    system "cargo", "install", *std_cargo_args(path: "cli")
 
     bash_completion.install "extra/tennis.bash" => "tennis"
     zsh_completion.install "extra/_tennis"
