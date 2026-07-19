@@ -114,6 +114,7 @@ test("requires successful Spell Check and GitGuardian runs", () => {
     { conclusion: "success", name: "GitGuardian Security Checks", status: "completed" },
   ]
   assert.deepEqual(requiredCheckState(ready), { state: "ready" })
+  assert.deepEqual(requiredCheckState([undefined, ...ready]), { state: "ready" })
   assert.equal(requiredCheckState(ready.slice(0, 2)).state, "pending")
   assert.equal(
     requiredCheckState([

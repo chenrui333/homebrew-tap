@@ -121,11 +121,12 @@ jobs:
                 return
               }
 
-              const checkRuns = await github.paginate(
-                github.rest.checks.listForRef,
-                { owner, repo, ref: expectedHead, per_page: 100 },
-                (response) => response.data.check_runs,
-              )
+              const checkRuns = await github.paginate(github.rest.checks.listForRef, {
+                owner,
+                repo,
+                ref: expectedHead,
+                per_page: 100,
+              })
               const checkState = policy.requiredCheckState(checkRuns)
               if (checkState.state === 'failed') {
                 core.setFailed(checkState.reason)

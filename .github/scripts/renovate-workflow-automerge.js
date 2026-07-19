@@ -109,7 +109,7 @@ function validatePullRequest(pr, files, repository) {
 
 function requiredCheckState(checkRuns) {
   for (const name of REQUIRED_CHECKS) {
-    const matches = checkRuns.filter((check) => check.name === name)
+    const matches = checkRuns.filter((check) => check?.name === name)
     if (matches.length === 0) return { state: "pending", reason: `${name} has not reported` }
     if (matches.some((check) => check.status !== "completed")) {
       return { state: "pending", reason: `${name} is still running` }
