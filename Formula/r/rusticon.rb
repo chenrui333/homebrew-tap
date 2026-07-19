@@ -6,6 +6,21 @@ class Rusticon < Formula
   license "CC-BY-NC-ND-4.0"
   head "https://github.com/ronilan/rusticon.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases do |json, regex|
+      json.filter_map do |release|
+        next if release["draft"] || release["prerelease"]
+
+        match = release["tag_name"]&.match(regex)
+        next if match.blank? || match[1] == "0.3.0" # Private git dependency prevents a source build
+
+        match[1]
+      end
+    end
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4cd3d33a47473c572d81f48a48551755d1cbd4792b0f246a4ea965c45770d74"
