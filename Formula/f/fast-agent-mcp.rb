@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/07/09/00b598696f341dcc2cf115c03734eeb58f30e187ac3b503ae77c64f6d22a/fast_agent_mcp-0.9.16.tar.gz"
-  sha256 "ca877a36f1e1f1cb4364efeeefc2298a0ad30cae7c472c411aad63d0ab7a4315"
+  url "https://files.pythonhosted.org/packages/74/b2/1da8a3f853414701ffd725563f6e2f673761262828f4b51e37cb4a9efbb4/fast_agent_mcp-0.9.17.tar.gz"
+  sha256 "82882deac37d75b3a0e9dd2ccf3de9c9d2e78d91e882eb0e8f3727be37cdeee4"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -115,8 +115,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/ac/3c/86729ac28bfcd82d8d5967432e805e9c9f3299d07ebfa15f443ea46b11c6/cyclopts-4.21.2.tar.gz"
-    sha256 "62e31e4ffd1a1aefd6d2a74b42075a4b0e9c949431663d90190f1fa07dbc2ced"
+    url "https://files.pythonhosted.org/packages/21/32/155236695c49364b3718467038c01399b5b1e693d81d719d853a2ea40d1c/cyclopts-4.22.0.tar.gz"
+    sha256 "89a3fa10b1d2970a6690105ff2d567270734b1e743984b7c31e6d47ddc623ec0"
   end
 
   resource "deprecated" do
@@ -265,8 +265,8 @@ class FastAgentMcp < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/d4/c6/b1cac0280f8efc57626ea8804866b37099f23cae11b1485a42b213245e31/joserfc-1.7.3.tar.gz"
-    sha256 "116955c2587139dba20621fd0bd7fc9255fa960c9fe7f43c43ebef2e801dcfcf"
+    url "https://files.pythonhosted.org/packages/c7/e0/27a6a081ae25420eda6768ceae05d7022a7f2447f420588843f2a44e4298/joserfc-1.7.4.tar.gz"
+    sha256 "b3bc561672ae541b17a9237053b48a03dacddd92d68047b3ecdfb4b5714a88ed"
   end
 
   resource "json-rpc" do
@@ -340,58 +340,58 @@ class FastAgentMcp < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/b4/1c/125e1c936c0873796771b7f04f6c93b9f1bf5d424cea90fda94a99f61da8/opentelemetry_api-1.42.1.tar.gz"
-    sha256 "56c63bea9f77b62856be8c47600474acad853b2924b99b1687c4cb6297166716"
+    url "https://files.pythonhosted.org/packages/ae/cc/e4c9584181f86494df0f6bdec1a4f3280c50db44704dc2a407e994fc87bb/opentelemetry_api-1.43.0.tar.gz"
+    sha256 "107d0d03857ea8fc7c5fcbbbd83f800c281f0d560553d61c1d675fccfd1761c1"
   end
 
   resource "opentelemetry-exporter-otlp-proto-common" do
-    url "https://files.pythonhosted.org/packages/0e/9c/216acfeaedadf2e1937f4373929b20f73197c5c4a2546d4f584b7fa63813/opentelemetry_exporter_otlp_proto_common-1.42.1.tar.gz"
-    sha256 "04f1f01fb597c4249dfcd7f8b861c902c2102369d376d9d346ff38de4469a2ee"
+    url "https://files.pythonhosted.org/packages/55/c1/e8098490ab15abf116dcaf9fa89ededcb35547c7d08d4b5a62f573dc1e63/opentelemetry_exporter_otlp_proto_common-1.43.0.tar.gz"
+    sha256 "c4e32ba6d6b13bdb2b8f6764c4fd28d00192826561aa04f6d14eedfce7ac076f"
   end
 
   resource "opentelemetry-exporter-otlp-proto-http" do
-    url "https://files.pythonhosted.org/packages/77/32/826bfa1d80ecea24f47808de03cd4a0d13c17ecc07712f45123f0f61e4ac/opentelemetry_exporter_otlp_proto_http-1.42.1.tar.gz"
-    sha256 "bf142a21035d7571ac3a09cb2e5639f49886f243972883cfe777ed3bf02b734d"
+    url "https://files.pythonhosted.org/packages/fc/92/0b9f56412483a8891d4843890294796c9df8ab42417bd9bad8035d840cb3/opentelemetry_exporter_otlp_proto_http-1.43.0.tar.gz"
+    sha256 "fa8a42bb7d00ee5391f4c0b04d8e6a46c03caa437903296ab73a81dc11ba118f"
   end
 
   resource "opentelemetry-instrumentation" do
-    url "https://files.pythonhosted.org/packages/da/6d/4de72d97ff54db1ed270c7a59c9b904b917c0ac7af429c086c388b824ddb/opentelemetry_instrumentation-0.63b1.tar.gz"
-    sha256 "32368d6ae52c8de20aa790a6ad86b10a76f09956092337ae37d675773990e541"
+    url "https://files.pythonhosted.org/packages/7e/97/02fe6e1c8b1ffac42d0b429c18080edb24e0e0d18c86612edf72b5752382/opentelemetry_instrumentation-0.64b0.tar.gz"
+    sha256 "b47d528dead6271d7743114417eb67fc915bd9258111c48dbf9a4951d2efa88d"
   end
 
   resource "opentelemetry-instrumentation-anthropic" do
-    url "https://files.pythonhosted.org/packages/e5/4b/dc0dcdbe5ef108d5fa19a09c7eadae75d2735eae634bc925ba063a4753e4/opentelemetry_instrumentation_anthropic-0.61.0.tar.gz"
-    sha256 "695f2841d357047a85ed9c8d68a34d1f8bef7925af66758822bf2f5951f28238"
+    url "https://files.pythonhosted.org/packages/7a/31/d04233198d5805931e49dfa491f9780f521cb40d37811f704545037697d2/opentelemetry_instrumentation_anthropic-0.62.1.tar.gz"
+    sha256 "72864e9ee1802242bc70b911751eaee03277059846ceab4a1cc04f06b36f38ab"
   end
 
   resource "opentelemetry-instrumentation-google-genai" do
-    url "https://files.pythonhosted.org/packages/5a/ca/da1a8d598542a3bd343859efc6e6e89b74b5189887b8f7ef447267e5e9ed/opentelemetry_instrumentation_google_genai-0.7b1.tar.gz"
-    sha256 "dc81249eb8a01184e2b3e0eb207864158e7147e3307b018dc9625b23973457a5"
+    url "https://files.pythonhosted.org/packages/7c/13/a2422f9164c09406092576d878d9b23d74b0a2ed75c1a77454c3a0178eb1/opentelemetry_instrumentation_google_genai-1.0b1.tar.gz"
+    sha256 "784b3a473ed51033837114b96854b31a0f0b0fe7c81e132e58a45352eee3b102"
   end
 
   resource "opentelemetry-instrumentation-mcp" do
-    url "https://files.pythonhosted.org/packages/bd/22/ae0d1fa0c7d16bcaa2924f72989fb4f9d67f503a2918284b3b0c4499ed47/opentelemetry_instrumentation_mcp-0.61.0.tar.gz"
-    sha256 "53406c765b2eda859fd4aeb6429ddcfa0d50344098351f720567b26d39df6e43"
+    url "https://files.pythonhosted.org/packages/96/8d/faa4ae935f8a6b90ec786a08f2e5fc71bb491c513a814f0efd2e05d1cdce/opentelemetry_instrumentation_mcp-0.62.1.tar.gz"
+    sha256 "109c8ef1b5340725e93ed61f21a1a1298bffce77b22dfb5861db36044678d11f"
   end
 
   resource "opentelemetry-instrumentation-openai" do
-    url "https://files.pythonhosted.org/packages/3b/76/d37cde51008f47c5864cabb7f6a548c5284a10996bc9febd9f111a214d0c/opentelemetry_instrumentation_openai-0.61.0.tar.gz"
-    sha256 "f1bec3d5afa2430295dfd4e82f6d8a51079b220005e45d53b60de808fd7450bf"
+    url "https://files.pythonhosted.org/packages/af/1e/95b11836b677eb7f7edf8c2c48b194f9f4917162d71f187800e9818135dd/opentelemetry_instrumentation_openai-0.62.1.tar.gz"
+    sha256 "c40b1af21c0823feab264040a5ff3e0bae61bf79a45099bd7c2c1825c3e16d93"
   end
 
   resource "opentelemetry-proto" do
-    url "https://files.pythonhosted.org/packages/b4/55/63eac3e1089b768ba014091fdd2ae8a9a440c821ef5e2b786909c94c8836/opentelemetry_proto-1.42.1.tar.gz"
-    sha256 "c6a51e6b4f05ae63565f3a113217f3d2bfaec68f78c02d7a6c85f9010d1cfca6"
+    url "https://files.pythonhosted.org/packages/e0/b9/d357faefb40bda1d4799913e6af611171ff22a2dedcb93576bc92242d056/opentelemetry_proto-1.43.0.tar.gz"
+    sha256 "224778df17e1f3fafeaaa21d874236ca5f6ffc2f86e0899298ec7351aac27924"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/40/f7/b390bd9bfd703bf98a68fea1f27786c6872331fd617164a54b8a59bdc008/opentelemetry_sdk-1.42.1.tar.gz"
-    sha256 "8c834e8f8c9ba4171d4ec843d0cb8a67e4c7394d3f9e9297e582cbd9456ddbf7"
+    url "https://files.pythonhosted.org/packages/3e/eb/5041074274ac0956b03637cc039d434569112468e875eddfcc9a0674ce06/opentelemetry_sdk-1.43.0.tar.gz"
+    sha256 "d8187c81c162df9913e4003dd6485f7390d9a24fc17026ec7387b8b8218b08e9"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/93/99/4d7dd6df64795951413ce6e815f8cf1eb191daf7196ae86574589643d5f3/opentelemetry_semantic_conventions-0.63b1.tar.gz"
-    sha256 "3daf963611334b365e98a57438183eb012d3bfb40b2d931a9af613476b8701a9"
+    url "https://files.pythonhosted.org/packages/5a/30/5f26df29509eccd86b99b481ac9ffa39da49ba9577cc69071c552ae30447/opentelemetry_semantic_conventions-0.64b0.tar.gz"
+    sha256 "72f76fb2d1582d9d033dd1fcd84532e961e6ff3d90d24ba6fabc72975a83864c"
   end
 
   resource "opentelemetry-semantic-conventions-ai" do
@@ -400,8 +400,8 @@ class FastAgentMcp < Formula
   end
 
   resource "opentelemetry-util-genai" do
-    url "https://files.pythonhosted.org/packages/a2/d8/4dd2fb622d26ec45b10ef63eb87fd512f5d7467c7bd35ce390629bd6dff8/opentelemetry_util_genai-0.3b0.tar.gz"
-    sha256 "83e127789a9ad615b8ca65f05fc36955a67ce257b06142bfd46159a3b7ed73d3"
+    url "https://files.pythonhosted.org/packages/88/1f/c667b221dcb84a8fcb5e3324753e1dfb295938cb71e10c979588605bd66d/opentelemetry_util_genai-1.0b0.tar.gz"
+    sha256 "d5f2ab950d08b965f4f090c415eca6f0b02a87a0f07814534c38ff9bdb407c11"
   end
 
   resource "packaging" do
