@@ -2729,6 +2729,12 @@
     "last_release": "2025-07-08",
     "stars": 17
   },
+  "github:friendlyanon/cmake-init": {
+    "forks": 95,
+    "last_commit": "2026-04-15",
+    "last_release": null,
+    "stars": 2538
+  },
   "github:ftilde/ugdb": {
     "forks": 8,
     "last_commit": "2025-03-09",
@@ -4300,6 +4306,12 @@
     "last_commit": "2026-03-06",
     "last_release": "2025-06-04",
     "stars": 268
+  },
+  "github:nikku/markmark": {
+    "forks": 2,
+    "last_commit": "2026-07-17",
+    "last_release": "2026-07-02",
+    "stars": 21
   },
   "github:nikolaydubina/jsonl-graph": {
     "forks": 5,

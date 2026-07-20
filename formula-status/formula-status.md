@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-07-06 10:40:01 UTC
-Total formulas: 1022
+Generated: 2026-07-20 12:14:05 UTC
+Total formulas: 1024
 
 ## Formulas
 
@@ -66,7 +66,7 @@ Total formulas: 1022
 | kyanos | Networking analysis tool using eBPF | 5013 | 228 | 2026-04-27 | 2025-03-19 | Apache-2.0 | ✓ | - | [link](https://kyanos.io/) |
 | awless | Mighty CLI for AWS | 4983 | 258 | 2022-08-02 | 2018-06-21 | Apache-2.0 | ✓ | - | [link](https://github.com/wallix/awless) |
 | clawhub | Install, update, search, and publish agent skills | 4904 | 798 | 2026-03-09 | 2026-01-07 | MIT | ✓ | - | [link](https://clawhub.ai) |
-| flipt | Enterprise-ready, Git native feature management solution | 4714 | 276 | 2026-02-16 | 2026-02-08 | FCL-1.0-MIT | ✓ | - | [link](https://flipt.io/) |
+| flipt | Enterprise-ready, Git native feature management solution | 4714 | 276 | 2026-02-16 | 2026-02-08 | - | ✓ | - | [link](https://flipt.io/) |
 | freeze | Generate images of code and terminal output | 4679 | 98 | 2026-06-02 | 2025-04-01 | MIT | ✓ | - | [link](https://github.com/charmbracelet/freeze) |
 | krr | Prometheus-based Kubernetes Resource Recommendations | 4599 | 274 | 2026-04-30 | 2025-12-31 | MIT | ✓ | - | [link](https://github.com/robusta-dev/krr) |
 | percollate | CLI to turn web pages into readable PDF, EPUB, HTML, or Mark... | 4582 | 174 | 2025-08-29 | 2025-08-29 | MIT | ✓ | - | [link](https://github.com/danburzo/percollate) |
@@ -98,6 +98,7 @@ Total formulas: 1022
 | weathr | Terminal weather app with ASCII animation | 2631 | 94 | 2026-03-21 | 2026-02-23 | GPL-3.0-or-later | ✓ | - | [link](https://github.com/Veirt/weathr) |
 | bearer | SAST tool to find, filter, and prioritize code security & pr... | 2561 | 142 | 2026-02-16 | 2026-01-29 | Elastic-2.0 | ✓ | - | [link](https://docs.bearer.com/) |
 | container2wasm | Container to WASM converter | 2553 | 128 | 2026-02-12 | 2025-07-28 | Apache-2.0 | ✓ | - | [link](https://ktock.github.io/container2wasm-demo/) |
+| cmake-init | Opinionated CMake project initializer | 2538 | 95 | 2026-04-15 | - | GPL-3.0-or-later | ✓ | - | [link](https://github.com/friendlyanon/cmake-init) |
 | refurb | Tool for refurbishing and modernizing Python codebases | 2524 | 54 | 2025-09-17 | 2025-09-17 | GPL-3.0-only | ✓ | - | [link](https://github.com/dosisod/refurb) |
 | codemachine | CLI-native orchestration engine for autonomous coding workfl... | 2491 | 240 | 2026-02-25 | 2026-02-02 | Apache-2.0 | ✓ | - | [link](https://codemachine.co/) |
 | graphtage | Semantic diff utility for tree-like files such as JSON/JSON5... | 2460 | 54 | 2026-02-13 | 2024-01-08 | LGPL-3.0-or-later | ✓ | - | [link](https://github.com/trailofbits/graphtage) |
@@ -337,7 +338,7 @@ Total formulas: 1022
 | pipeform | Terraform runtime TUI | 346 | 13 | 2025-01-31 | 2025-01-29 | MPL-2.0 | ✓ | - | [link](https://github.com/magodo/pipeform) |
 | code-pushup | CLI to run all kinds of code quality measurements | 344 | 16 | 2026-05-19 | 2026-05-19 | MIT | ✓ | - | [link](https://code-pushup.dev/) |
 | rovr | Post-modern terminal file explorer | 343 | 24 | 2026-03-23 | 2026-02-01 | MIT | ✓ | - | [link](https://github.com/NSPC911/rovr) |
-| lstags | Explore Docker registries and manipulate Docker images | 340 | 26 | 2023-05-11 | 2022-04-09 | Apache-2.0 | ✓ | - | [link](https://github.com/ivanilves/lstags) |
+| lstags | Explore Docker registries and manipulate Docker images | 340 | 26 | 2023-05-11 | 2022-04-09 | Apache-2.0 | ✓ | ✓ | [link](https://github.com/ivanilves/lstags) |
 | superstarryeyes-bit | CLI/TUI logo designer with ANSI fonts, gradients, shadows, a... | 340 | 10 | 2026-02-12 | 2025-12-08 | MIT | ✓ | - | [link](https://github.com/superstarryeyes/bit) |
 | oysttyer | Command-line Twitter client | 339 | 45 | 2023-02-02 | - | - | ✓ | - | [link](https://github.com/oysttyer/oysttyer) |
 | base-mcp-server | MCP Server for Base Network and Coinbase API | 336 | 121 | 2025-06-17 | 2025-04-22 | MIT | ✓ | - | [link](https://github.com/base/base-mcp) |
@@ -487,7 +488,7 @@ Total formulas: 1022
 | spiffe-spike | Lightweight secrets store using SPIFFE as its identity contr... | 153 | 27 | 2026-02-05 | 2025-11-29 | Apache-2.0 | ✓ | - | [link](https://spike.ist/) |
 | steamfetch | Display Steam stats in the terminal | 153 | 3 | 2026-03-01 | 2026-02-13 | ISC | ✓ | - | [link](https://github.com/unhappychoice/steamfetch) |
 | clawbands | Security middleware for OpenClaw agents | 152 | 14 | 2026-02-09 | 2026-02-09 | MIT | ✓ | - | [link](https://github.com/SeyZ/clawbands) |
-| dory-cli | Lightweight static site generator for technical documentatio... | 152 | 5 | 2026-06-08 | 2026-02-20 | MIT | ✓ | - | [link](https://docucod.com/) |
+| dory-cli | Lightweight static site generator for technical documentatio... | 152 | 5 | 2026-06-08 | 2026-02-20 | MIT | ✓ | - | [link](https://github.com/clidey/dory) |
 | togomak | Declarative pipeline orchestrator | 152 | 6 | 2024-04-19 | 2024-04-06 | MPL-2.0 | ✓ | - | [link](https://togomak.srev.in/) |
 | ec | Terminal-native 3-way Git conflict resolver | 149 | 3 | 2026-03-09 | 2026-02-16 | MIT | ✓ | - | [link](https://github.com/chojs23/ec) |
 | motus | Dead simple password generator | 149 | 7 | 2026-03-05 | 2025-07-26 | AGPL-3.0-only | ✓ | - | [link](https://github.com/oleiade/motus) |
@@ -579,7 +580,7 @@ Total formulas: 1022
 | pwdsafety | CLI checking password safety | 99 | 15 | 2026-02-16 | 2025-09-15 | GPL-3.0-only | ✓ | - | [link](https://github.com/edoardottt/pwdsafety) |
 | gitpane | Multi repo Git workspace dashboard for the terminal | 98 | 0 | 2026-05-09 | 2026-05-09 | MIT | ✓ | - | [link](https://github.com/affromero/gitpane) |
 | lazymake | Terminal UI for browsing and running Makefile targets | 98 | 3 | 2026-02-20 | 2026-02-20 | MIT | ✓ | - | [link](https://lazymake.vercel.app/) |
-| rusticon | Mouse driven SVG favicon editor for your terminal | 98 | 1 | 2026-02-10 | 2025-08-26 | CC-BY-NC-ND-4.0 | ✓ | - | [link](https://github.com/ronilan/rusticon) |
+| rusticon | Mouse driven SVG favicon editor for your terminal | 98 | 1 | 2026-02-10 | 2025-08-26 | CC-BY-NC-ND-4.0 | ✓ | ✓ | [link](https://github.com/ronilan/rusticon) |
 | haloy | Manage deployments on your own infrastructure | 97 | 5 | 2026-02-16 | - | MIT | ✓ | - | [link](https://haloy.dev/) |
 | hclgrep | Syntax based grep for HCL(v2) | 97 | 7 | 2024-03-07 | - | BSD-3-Clause | ✓ | - | [link](https://github.com/magodo/hclgrep) |
 | twig | Terminal-based JSON and YAML viewer for exploring large file... | 97 | 4 | 2025-12-25 | 2025-12-25 | MIT | ✓ | - | [link](https://twig.wtf/) |
@@ -833,6 +834,7 @@ Total formulas: 1022
 | wolfpack | Mobile and desktop command center for controlling AI coding ... | 22 | 6 | 2026-04-06 | 2026-03-24 | MIT | ✓ | - | [link](https://github.com/almogdepaz/wolfpack) |
 | cohctl | CLI for Coherence clusters | 21 | 8 | 2026-02-14 | 2026-02-08 | UPL-1.0 | ✓ | - | [link](https://followtheprocess.github.io/spok/) |
 | jiggy | Minimalistic cross-platform mouse jiggler written in Rust | 21 | 0 | 2026-02-13 | 2026-02-03 | MIT | ✓ | - | [link](https://0xdeadbeef.info/) |
+| markmark | Markdown language tooling, exposed as a language server | 21 | 2 | 2026-07-17 | 2026-07-02 | MIT | ✓ | - | [link](https://github.com/nikku/markmark) |
 | opensnitch-tui | TUI for OpenSnitch | 21 | 2 | 2025-12-18 | 2025-12-18 | GPL-3.0-only | ✓ | - | [link](https://github.com/amalbansode/opensnitch-tui) |
 | pluqqy | Terminal-based context management for AI driven development | 21 | 2 | 2025-10-03 | 2025-10-03 | MIT | ✓ | - | [link](https://pluqqy.com/) |
 | tftargets | Analyze Terraform configs to find directories affected by Gi... | 21 | 1 | 2026-02-12 | 2025-10-15 | MIT | ✓ | - | [link](https://github.com/takaishi/tftargets) |
