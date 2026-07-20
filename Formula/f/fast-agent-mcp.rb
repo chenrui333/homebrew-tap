@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/ca/73/7904f1dd2a689be32e624cb9399306b09d30224f8e38fb37c957764f321f/fast_agent_mcp-0.9.15.tar.gz"
-  sha256 "72abd22417ceb1babd78f95d58b7ccfb125ff53244a2bc6acfee84b962fbfae2"
+  url "https://files.pythonhosted.org/packages/07/09/00b598696f341dcc2cf115c03734eeb58f30e187ac3b503ae77c64f6d22a/fast_agent_mcp-0.9.16.tar.gz"
+  sha256 "ca877a36f1e1f1cb4364efeeefc2298a0ad30cae7c472c411aad63d0ab7a4315"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -115,8 +115,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/ce/27/562193a26941bdf980e1b74aa4a7485d8851996ba830e1192383533458a8/cyclopts-4.21.1.tar.gz"
-    sha256 "db8464ba9cc7edaba59202937c911848469260ddafc6fa348071a8a6fb588dae"
+    url "https://files.pythonhosted.org/packages/ac/3c/86729ac28bfcd82d8d5967432e805e9c9f3299d07ebfa15f443ea46b11c6/cyclopts-4.21.2.tar.gz"
+    sha256 "62e31e4ffd1a1aefd6d2a74b42075a4b0e9c949431663d90190f1fa07dbc2ced"
   end
 
   resource "deprecated" do
@@ -165,8 +165,8 @@ class FastAgentMcp < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4a/9f/994e80905542b748eb5b9f36d71458f0aea51a7be0fcb52ad959787dc1b7/filelock-3.31.0.tar.gz"
-    sha256 "c188cbc4307c18894c5424fa73f97ea7fa127ddf62192487546da3a214d0a381"
+    url "https://files.pythonhosted.org/packages/1f/f9/f38573ed5844586db374d085911740a501ccfa373b455fc9413f09f85237/filelock-3.29.1.tar.gz"
+    sha256 "d97e6b1b9757569626c58caa07dc4beb1613f4a2938b1e8cc81afca398906c9e"
   end
 
   resource "frozenlist" do
@@ -505,8 +505,8 @@ class FastAgentMcp < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/7b/37/451aaddbf50922f34d744ad5ca919ae1fcfac112123885d9728f52a484b3/regex-2026.7.10.tar.gz"
-    sha256 "1050fedf0a8a92e843971120c2f57c3a99bea86c0dfa1d63a9fac053fe54b135"
+    url "https://files.pythonhosted.org/packages/20/98/04b13f1ddfb63158025291c02e03eb42fbb7acb51d091d541050eb4e35e8/regex-2026.7.19.tar.gz"
+    sha256 "7e77b324909c1617cbb4c668677e2c6ae13f44d7c1de0d4f15f2e3c10f3315b5"
   end
 
   resource "requests" do
