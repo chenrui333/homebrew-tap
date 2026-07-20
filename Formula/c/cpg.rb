@@ -1,8 +1,8 @@
 class Cpg < Formula
   desc "Cilium Policy Generator using Hubble relay"
   homepage "https://github.com/SoulKyu/cpg"
-  url "https://github.com/SoulKyu/cpg/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "86d72e76a193fbf4019d81d231528a4b412ad7b800f0dbda3a640c60cbd68465"
+  url "https://github.com/SoulKyu/cpg/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "2b3e40cbe274b768ab80cf820fc8f2c47346d5f8d20471a64933f717e52cb286"
   license "Apache-2.0"
   head "https://github.com/SoulKyu/cpg.git", branch: "master"
 
