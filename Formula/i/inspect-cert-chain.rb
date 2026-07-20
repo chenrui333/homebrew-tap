@@ -1,8 +1,8 @@
 class InspectCertChain < Formula
   desc "Inspect and debug TLS certificate chains (without OpenSSL)"
   homepage "https://github.com/robjtede/inspect-cert-chain"
-  url "https://github.com/robjtede/inspect-cert-chain/archive/refs/tags/v0.0.26.tar.gz"
-  sha256 "09f7e0bbf5e2beec5259f3e039a56003ce9bba55a9a08ffd079ab171299bbf70"
+  url "https://github.com/robjtede/inspect-cert-chain/archive/refs/tags/v0.0.27.tar.gz"
+  sha256 "bcee02b570e14223e0e2ba45fc93d89d2600545b7938533ed89e88eaaf9879e3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/robjtede/inspect-cert-chain.git", branch: "main"
 
