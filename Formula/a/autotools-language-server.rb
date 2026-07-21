@@ -3,8 +3,8 @@ class AutotoolsLanguageServer < Formula
 
   desc "Language tools for Autotools, support configure.ac, Makefile.am, Makefile"
   homepage "https://github.com/Freed-Wu/autotools-language-server"
-  url "https://files.pythonhosted.org/packages/54/84/5fcd5fb39c4857b9264e5b420bfa305f7a8063099e0372851dd0ec23fdf9/autotools_language_server-0.0.23.tar.gz"
-  sha256 "fab272a1e049f854541f43c486bc8f73b9bde6e483245245f9d19c5273481964"
+  url "https://files.pythonhosted.org/packages/03/94/8b6928d8bea79a97c573715e3a105152a13bf04a000ca6134c90afc3a548/autotools_language_server-0.1.1.tar.gz"
+  sha256 "f900d26e1bce034304905ec41b709415a38785e4a41ab0bbb170454ff3e0093a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -21,38 +21,13 @@ class AutotoolsLanguageServer < Formula
   depends_on "rpds-py" => :no_linkage
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/6b/5c/685e6633917e101e5dcb62b9dd76946cbb57c26e133bae9e0cd36033c0a9/attrs-25.4.0.tar.gz"
-    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/6e/00/2432bb2d445b39b5407f0a90e01b9a271475eea7caf913d7a86bcb956385/cattrs-25.3.0.tar.gz"
-    sha256 "1ac88d9e5eda10436c4517e390a4142d88638fe682c436c93db7ce4a277b884a"
-  end
-
-  resource "colorama" do
-    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
-    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
-    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
-  end
-
-  resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/74/69/f7185de793a29082a9f3c7728268ffb31cb5095131a9c139a74078e27336/jsonschema-4.25.1.tar.gz"
-    sha256 "e4a9655ce0da0c0b67a085847e00a3a51449e1157f4f75e9fb5aa545e122eb85"
-  end
-
-  resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz"
-    sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
-  end
-
-  resource "lsp-tree-sitter" do
-    url "https://files.pythonhosted.org/packages/04/38/b539693b8222ceae26ef532f229d9ca57f294ed4dcb64dc771e082eec9a7/lsp_tree_sitter-0.1.1.tar.gz"
-    sha256 "1668dd456e5669e9d6e102b2dd46952fd39d19573c19b8c985446e272d59128c"
+    url "https://files.pythonhosted.org/packages/a0/ec/ba18945e7d6e55a58364d9fb2e46049c1c2998b3d805f19b703f14e81057/cattrs-26.1.0.tar.gz"
+    sha256 "fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40"
   end
 
   resource "lsprotocol" do
@@ -60,39 +35,14 @@ class AutotoolsLanguageServer < Formula
     sha256 "e879da2b9301e82cfc3e60d805630487ac2f7ab17492f4f5ba5aaba94fe56c29"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
-  end
-
   resource "pygls" do
-    url "https://files.pythonhosted.org/packages/87/50/2bfc32f3acbc8941042919b59c9f592291127b55d7331b72e67ce7b62f08/pygls-2.0.0.tar.gz"
-    sha256 "99accd03de1ca76fe1e7e317f0968ebccf7b9955afed6e2e3e188606a20b4f07"
-  end
-
-  resource "referencing" do
-    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
-    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
-  end
-
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/48/dc/95f074d43452b3ef5d06276696ece4b3b5d696e7c9ad7173c54b1390cd70/rpds_py-0.28.0.tar.gz"
-    sha256 "abd4df20485a0983e2ca334a216249b6186d6e3c1627e106651943dbdb791aea"
-  end
-
-  resource "tree-sitter" do
-    url "https://files.pythonhosted.org/packages/66/7c/0350cfc47faadc0d3cf7d8237a4e34032b3014ddf4a12ded9933e1648b55/tree-sitter-0.25.2.tar.gz"
-    sha256 "fe43c158555da46723b28b52e058ad444195afd1db3ca7720c59a254544e9c20"
-  end
-
-  resource "tree-sitter-make" do
-    url "https://files.pythonhosted.org/packages/b6/c9/4b534b0f8be76b5a7495419e7017998ceb1cd260ca91b4bf2358f00af97e/tree_sitter_make-1.1.1.tar.gz"
-    sha256 "ef394673ab83956dffb3986526f4c059082ff2d84c87f9da18ab30030f561b4c"
+    url "https://files.pythonhosted.org/packages/da/2e/7bbe061d175c0baddde8fc9edb908a4c31ba5d9165b8c68e3439c3a9f138/pygls-2.1.1.tar.gz"
+    sha256 "1da03ba9053201bb337dcdd8d121df70feb2a91e1a0dcc74de5da79755b1a201"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install
@@ -100,15 +50,13 @@ class AutotoolsLanguageServer < Formula
   end
 
   test do
-    %w[autoconf-language-server autotools-language-server make-language-server].each do |f|
-      assert_match version.to_s, shell_output("#{bin}/#{f} --version")
-    end
+    json = <<~JSON
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"processId":null,"rootUri":null,"capabilities":{}}}
+    JSON
+    input = "Content-Length: #{json.bytesize}\r\n\r\n#{json}"
+    output = pipe_output((bin/"autotools-language-server").to_s, input, 0)
 
-    (testpath/"Makefile").write <<~EOF
-      all:
-      \t@echo "Hello, World!"
-    EOF
-
-    system bin/"make-language-server", "--check", testpath/"Makefile"
+    assert_match version.to_s, output
+    assert_match "completionProvider", output
   end
 end
