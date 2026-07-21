@@ -8,11 +8,11 @@ class HardcoverTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baecd7d47fc884111c65bc8defd08aa6e82e8dd198d517710e083649ce9c3c57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baecd7d47fc884111c65bc8defd08aa6e82e8dd198d517710e083649ce9c3c57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baecd7d47fc884111c65bc8defd08aa6e82e8dd198d517710e083649ce9c3c57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9febcb8b9c6ad176f906ea6355555f30bddb01196f0383fa0d9444c735152855"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a89bd261c81072082bb8ef849a44ede6267ab36aa7b0d06a0af9d638874a694"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8e17f15b48c743f17d738f8fe07a08f20ecd5781523c21daececf831130660a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8e17f15b48c743f17d738f8fe07a08f20ecd5781523c21daececf831130660a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8e17f15b48c743f17d738f8fe07a08f20ecd5781523c21daececf831130660a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed292e51c883af22d15d2f79c198d548025bc558afdba902d0ae5cc44ce7bfde"
+    sha256 cellar: :any,                 x86_64_linux:  "147d59994788166a2ae761c199bd52d0e1d3707f1396837a979db894dd5d165b"
   end
 
   depends_on "go" => :build
