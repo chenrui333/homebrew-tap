@@ -1,8 +1,8 @@
 class Claumon < Formula
   desc "Claude Code dashboard with live rate-limit gauges and usage forecasts"
   homepage "https://github.com/fabioconcina/claumon"
-  url "https://github.com/fabioconcina/claumon/archive/refs/tags/v0.18.1.tar.gz"
-  sha256 "af05f5fda20a8029a88bf84368ead594d4494b65b5a47944e74e3710b2d229fe"
+  url "https://github.com/fabioconcina/claumon/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "702de999de5cd7c648896ea8f75b285fa6ecd1704fa4189d45ca161ac6c28cf2"
   license "MIT"
   head "https://github.com/fabioconcina/claumon.git", branch: "main"
 
