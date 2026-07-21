@@ -1,0 +1,19 @@
+Formula/k/krr.rb
+  s_e379cd243fb260::t_dc3ca9853ac061 6-7,214-218
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "65193a955784ecd0e0964dc41699538683820874",
+  "prompts": {},
+  "sessions": {
+    "s_e379cd243fb260": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f850c-5acc-7f03-81e0-bbd65cad3805",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
