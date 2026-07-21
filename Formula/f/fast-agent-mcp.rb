@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/74/b2/1da8a3f853414701ffd725563f6e2f673761262828f4b51e37cb4a9efbb4/fast_agent_mcp-0.9.17.tar.gz"
-  sha256 "82882deac37d75b3a0e9dd2ccf3de9c9d2e78d91e882eb0e8f3727be37cdeee4"
+  url "https://files.pythonhosted.org/packages/98/4c/c9e37d2d4210b0311434b6ec4748bc6bea37ab647ec4f4e8b018d5585234/fast_agent_mcp-0.9.18.tar.gz"
+  sha256 "5275b8000a9065bd0b29f4863c19364e09aa789e2ccbf0843ce4aa95e00d1f67"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -115,8 +115,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/21/32/155236695c49364b3718467038c01399b5b1e693d81d719d853a2ea40d1c/cyclopts-4.22.0.tar.gz"
-    sha256 "89a3fa10b1d2970a6690105ff2d567270734b1e743984b7c31e6d47ddc623ec0"
+    url "https://files.pythonhosted.org/packages/3d/47/32d992e829f63aedea5b93360db23c8882c9bbbde094bcf0fff899ea8a3b/cyclopts-4.22.1.tar.gz"
+    sha256 "49cd3779da7113a96ac5c23b151aa61ac9ae1b4b1fe813594d207ca843c97892"
   end
 
   resource "deprecated" do
@@ -540,8 +540,8 @@ class FastAgentMcp < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
-    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
+    url "https://files.pythonhosted.org/packages/6c/10/a34c656829ffc1c4b22ef36d70d9ebb6b99c020e2aeb17cee5485099f028/sse_starlette-3.4.6.tar.gz"
+    sha256 "725f8a1bd6d26ae1b2c9610c0ef5065dfdd496f3988d28adcf8c4b49dc25c627"
   end
 
   resource "starlette" do
@@ -620,8 +620,8 @@ class FastAgentMcp < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz"
-    sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
+    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
+    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
   def install
