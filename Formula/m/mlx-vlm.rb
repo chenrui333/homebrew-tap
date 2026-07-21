@@ -3,8 +3,8 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/e5/2f/c21849eec32a04945cc6f242e4023a0ff52035e4da839f7d765827136c40/mlx_vlm-0.6.5.tar.gz"
-  sha256 "275a2db6be44226ae0d8492f4ecc5e5b9665744de8da1f65a96b9fe1ce3bc13d"
+  url "https://files.pythonhosted.org/packages/ce/77/4a9d4b444eda38dd33ba799fb52c51fb30fceace7b6a164e479565063eac/mlx_vlm-0.6.6.tar.gz"
+  sha256 "6556b66ab2301c4891f437c06d4e04bbe1ec166cab623e90d6a2e338e38b98d0"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
@@ -49,19 +49,9 @@ class MlxVlm < Formula
     sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
   end
 
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/13/69/33ddede1939fdd074bce5434295f38fae7136463422fe4fd3e0e89b98062/charset_normalizer-3.4.4.tar.gz"
-    sha256 "94537985111c35f28720e43603b8e7b43a6ecfb2ce1d3058bbe955b73404e21a"
-  end
-
   resource "fastapi" do
     url "https://files.pythonhosted.org/packages/cd/95/d3f0ae10836324a2eab98a52b61210ac609f08200bf4bb0dc8132d32f78a/fastapi-0.139.2.tar.gz"
     sha256 "333145a6891e9b5b3cfceb69baf817e8240cde4d4588ae5a10bf56ffacb6255e"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
   end
 
   resource "llguidance" do
@@ -89,11 +79,6 @@ class MlxVlm < Formula
     sha256 "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e"
   end
 
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
-  end
-
   resource "scipy" do
     url "https://files.pythonhosted.org/packages/a7/25/c2700dfaf6442b4effaa91af24ebce5dc9d31bb4a69706313aae70d72cd0/scipy-1.18.0.tar.gz"
     sha256 "67b2ad2ad54c72ca6d04975a9b2df8c3638c34ddd5b28738e94fc2b57929d378"
@@ -107,11 +92,6 @@ class MlxVlm < Formula
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
     sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/1e/24/a2a2ed9addd907787d7aa0355ba36a6cadf1768b934c652ea78acbd59dcd/urllib3-2.6.2.tar.gz"
-    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "uvicorn" do
