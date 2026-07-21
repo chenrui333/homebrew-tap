@@ -8,12 +8,11 @@ class Lathe < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a1346888e1991f1d9e9ece2cb6de2d81cd7fa7cc39170c9db21f833d3a39400d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1346888e1991f1d9e9ece2cb6de2d81cd7fa7cc39170c9db21f833d3a39400d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1346888e1991f1d9e9ece2cb6de2d81cd7fa7cc39170c9db21f833d3a39400d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5afda4daafe35ea7ae3f73b0f637540748ebc8935cf63adc491bd0c53fa83528"
-    sha256 cellar: :any,                 x86_64_linux:  "b46c47034915e508e3374bf3c1956a736464b9994a9818bc0462878d27041f2c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04566e25d06a7098211db9e41524dc890960fbdd71ecd7eac3e3b9075b97d9ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04566e25d06a7098211db9e41524dc890960fbdd71ecd7eac3e3b9075b97d9ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04566e25d06a7098211db9e41524dc890960fbdd71ecd7eac3e3b9075b97d9ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1008d1914ce4cd00ddafbf7d657610c5ca121706d3ec28d8e402d30c1419a7f0"
+    sha256 cellar: :any,                 x86_64_linux:  "87f6ed0530951db0abcd9b6d54571d9be00592474f155fda580a3fb6fbbc004d"
   end
 
   depends_on "go" => :build
