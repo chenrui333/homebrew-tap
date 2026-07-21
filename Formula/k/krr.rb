@@ -3,8 +3,8 @@ class Krr < Formula
 
   desc "Prometheus-based Kubernetes Resource Recommendations"
   homepage "https://github.com/robusta-dev/krr"
-  url "https://github.com/robusta-dev/krr/archive/refs/tags/v1.28.0.tar.gz"
-  sha256 "ed3b3e2fd61e6cb395deaff442600dead22732f87669a95422d878fce87224c6"
+  url "https://github.com/robusta-dev/krr/archive/refs/tags/v1.29.0.tar.gz"
+  sha256 "64f130fd455afbd793198f7c2f649863017f46263677e6811e351ce027361e5d"
   license "MIT"
   head "https://github.com/robusta-dev/krr.git", branch: "main"
 
@@ -209,6 +209,11 @@ class Krr < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
+  resource "python-json-logger" do
+    url "https://files.pythonhosted.org/packages/9e/de/d3144a0bceede957f961e975f3752760fbe390d57fbe194baf709d8f1f7b/python_json_logger-3.3.0.tar.gz"
+    sha256 "12b7e74b17775e7d565129296105bbe3910842d9d0eb083fc83a6a617aa8df84"
   end
 
   resource "pytz" do
