@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/98/4c/c9e37d2d4210b0311434b6ec4748bc6bea37ab647ec4f4e8b018d5585234/fast_agent_mcp-0.9.18.tar.gz"
-  sha256 "5275b8000a9065bd0b29f4863c19364e09aa789e2ccbf0843ce4aa95e00d1f67"
+  url "https://files.pythonhosted.org/packages/63/ea/d78b64b2d86431e1de3dc88adc1fd661de092aa8cd2420f107a51506c861/fast_agent_mcp-0.9.19.tar.gz"
+  sha256 "71844d5e81b812d9467f8a38a97336b9068d564e811dbf0abae34a90bfde3d4e"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
