@@ -3,8 +3,8 @@ class Offpunk < Formula
 
   desc "Offline-first Gemini, Web, Gopher, and RSS terminal browser"
   homepage "https://offpunk.net/"
-  url "https://git.sr.ht/~lioploum/offpunk/archive/v3.1.tar.gz"
-  sha256 "3eb9e61d6bc591326fecb8b8c02737e58e1fb061f96a9269cd085f7614f27ff1"
+  url "https://git.sr.ht/~lioploum/offpunk/archive/v3.2.tar.gz"
+  sha256 "a782030e23e37747d31f1f46fd90fe1d7cb9746235825ffda4c9b2f6f96ff442"
   license "AGPL-3.0-or-later"
   head "https://git.sr.ht/~lioploum/offpunk", branch: "master"
 
