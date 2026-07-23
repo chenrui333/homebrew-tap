@@ -8,11 +8,11 @@ class Buffa < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18835936c33b3ac5e8e468451189977c4e6f34c21dcf1d0ff6374a6292632080"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "251a180f6c88e361e5f4311f20766f0a359e4874eb72a9e5a1201dfc6f715eec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f213a2492a917c21536c81efe96335766bda1d1459c8a58302a5614a950d8140"
-    sha256 cellar: :any,                 arm64_linux:   "ee9a9b6c5ced321dcc9d16f897063c7aad0edfe7352c4efa6991d5d9913606e8"
-    sha256 cellar: :any,                 x86_64_linux:  "c839e9edac95c3e5b18b932c0824a76db7166361390b1914cf3905d618cb5cb6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c55cf1e6c6f0d03431508fa2137c03a17e98629572a6ee779c5b6198bc92af96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ba6ea3cdffd2d185bd36af253ffb4c30946ac4bcceb536a6065b229e5cc7042"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b8231f3ea94334ace97745a1c09422cfc69ed97a63bf3278d880f5574e7ca4d"
+    sha256 cellar: :any,                 arm64_linux:   "faec5fdc31a875de9ab89519eed2c871bbdeaf5026718505b399017b1016af4d"
+    sha256 cellar: :any,                 x86_64_linux:  "a6e764773de36d25067c2516b97838af422419c8372ac3c61ce7c60fc9d1d7c9"
   end
 
   depends_on "rust" => :build
