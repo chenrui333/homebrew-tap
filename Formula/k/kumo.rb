@@ -8,11 +8,11 @@ class Kumo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b02a2964b1391fbe5dc08775ff83d37196ee578018132ef5afb4a7ee013cee17"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b02a2964b1391fbe5dc08775ff83d37196ee578018132ef5afb4a7ee013cee17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b02a2964b1391fbe5dc08775ff83d37196ee578018132ef5afb4a7ee013cee17"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8faca7ee6f54a7434306c18d7ce030c5f3a77a1de2564f62e9f80c8205d28c6"
-    sha256 cellar: :any,                 x86_64_linux:  "cbefb4adcb1f0170f1068cc59550156d5897f3888dc7214df3d256fd9ae8d34c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5aa55d4780dc665e992395f7d065a1372cb0ca678414a824a17c4f908ef9deb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5aa55d4780dc665e992395f7d065a1372cb0ca678414a824a17c4f908ef9deb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5aa55d4780dc665e992395f7d065a1372cb0ca678414a824a17c4f908ef9deb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8af8cf75e9c18343ad7fabb91fb11d993b014068f485ee1378b346f574074dba"
+    sha256 cellar: :any,                 x86_64_linux:  "dbd945109e99507577cae8dfadb916674a3bfa7d81bbe0164502df2b4e9cc8e2"
   end
 
   depends_on "go" => :build
