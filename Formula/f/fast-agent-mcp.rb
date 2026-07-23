@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/37/d8/85d4238fc804e986b69f4f8f49efdde34a6c3e2acae9b82b1cb4cbc4ab4d/fast_agent_mcp-0.9.20.tar.gz"
-  sha256 "36aa207467b1312d11fc3e1242135b38fc57f26dc8f01f3e5c1f9b9dc5df50e9"
+  url "https://files.pythonhosted.org/packages/1f/73/614b21882bf541a28b4445329fd233dae130a73b765f0a63533a6790bda7/fast_agent_mcp-0.9.21.tar.gz"
+  sha256 "2a0a0b9f1101a7d89d2b4699b1d6c48d2e35477be0b3eaed267483b50a69e03b"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -180,8 +180,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/03/33/00277be1305fd68355d08197f05e22db259c0cff49a10c8590a1869ade9b/google_api_core-2.32.0.tar.gz"
-    sha256 "2b33aad226b19272458c46abfe5c5a38d9531ece0c44502129a1463ce83674ac"
+    url "https://files.pythonhosted.org/packages/87/62/8fb1fb647d2788c950d69d6a769cd9d55c918ac1fc57be2f90b7e4029787/google_api_core-2.33.0.tar.gz"
+    sha256 "3a36bcc3e319783f4c97da41f6f45ea6ffcaa55848e341de16e09cb70243c2bb"
   end
 
   resource "google-auth" do
@@ -435,8 +435,8 @@ class FastAgentMcp < Formula
   end
 
   resource "proto-plus" do
-    url "https://files.pythonhosted.org/packages/87/44/767757fd2cdd4a60d7e4440d9f7b491d6131103d313638d2c03e06c268fb/proto_plus-1.28.1.tar.gz"
-    sha256 "832e68e7fe064cf90ab153b6e5eb935b27891bb89aaeb68b115e9b702f6cb168"
+    url "https://files.pythonhosted.org/packages/73/3e/29e0d6a2c5adde6ab5772253fd16ab346324026b89a66e354689c86d0584/proto_plus-1.28.2.tar.gz"
+    sha256 "26d843eb99c1e32fdf1d20ff0faae56607f7748fe774acf9ecd5cfe6c6472501"
   end
 
   resource "protobuf" do
