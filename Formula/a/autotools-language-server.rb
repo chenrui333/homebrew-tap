@@ -9,7 +9,11 @@ class AutotoolsLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "3c5b436d9d90e163a577eb8af7dd1a55b96f6a16ec2f41d8a37298d92d0edb6d"
+    sha256 cellar: :any, arm64_tahoe:   "7422ac4073f7047e17315d24725944e649df4d7689e7173518277a6fffdcb9b7"
+    sha256 cellar: :any, arm64_sequoia: "d18c28a95845e92e002a8b4017ae5896b86d76d93b3e2e00137f4f0221624094"
+    sha256 cellar: :any, arm64_sonoma:  "16db25b1b42f690c38df13fb30f8d60db310490ac87b23bb9f984e124e29bf17"
+    sha256 cellar: :any, arm64_linux:   "36b32e1bba76b04ab48031479ff181460e37480aa6b44694b043d8f99df60386"
+    sha256 cellar: :any, x86_64_linux:  "2f98561373cd11dcfd7ebf4d248063db70f7e74f5bb553fb065eeda2c9553b5c"
   end
 
   depends_on "rust" => :build # for rpds-py
