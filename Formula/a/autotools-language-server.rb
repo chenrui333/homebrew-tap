@@ -3,8 +3,8 @@ class AutotoolsLanguageServer < Formula
 
   desc "Language tools for Autotools, support configure.ac, Makefile.am, Makefile"
   homepage "https://github.com/Freed-Wu/autotools-language-server"
-  url "https://files.pythonhosted.org/packages/03/94/8b6928d8bea79a97c573715e3a105152a13bf04a000ca6134c90afc3a548/autotools_language_server-0.1.1.tar.gz"
-  sha256 "f900d26e1bce034304905ec41b709415a38785e4a41ab0bbb170454ff3e0093a"
+  url "https://files.pythonhosted.org/packages/7a/53/171888baa8a50c96bf5dd703ffce96c4abbebf7b77890bf3b217dfe76109/autotools_language_server-0.1.2.tar.gz"
+  sha256 "c1ab9d792561912a4f1d10ff7308f494237f960523fff8eafc2bbf78da958a3b"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -26,6 +26,26 @@ class AutotoolsLanguageServer < Formula
     sha256 "fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40"
   end
 
+  resource "jq" do
+    url "https://files.pythonhosted.org/packages/95/ec/3da01457bbd3c6a2fc8fea6736c0b657ffc628e3decbfb1fafcf33dc7dbe/jq-1.12.0.tar.gz"
+    sha256 "729b2d3418c8ca7dccfaa66b9fb7a98bec28474212650d27c5c04358ce26f55c"
+  end
+
+  resource "jsonschema" do
+    url "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz"
+    sha256 "0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz"
+    sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
+  end
+
+  resource "lsp-tree-sitter" do
+    url "https://files.pythonhosted.org/packages/e8/b2/144e7ae8725c3f5e5a1e00dce520bbf765af269f7e0d6a5ec65f6908fba9/lsp_tree_sitter-0.2.9.tar.gz"
+    sha256 "6bd37cf8b67532e8cbd7eec86648f93f0549c5a3d71ac1fef52b15c27e67671a"
+  end
+
   resource "lsprotocol" do
     url "https://files.pythonhosted.org/packages/e9/26/67b84e6ec1402f0e6764ef3d2a0aaf9a79522cc1d37738f4e5bb0b21521a/lsprotocol-2025.0.0.tar.gz"
     sha256 "e879da2b9301e82cfc3e60d805630487ac2f7ab17492f4f5ba5aaba94fe56c29"
@@ -34,6 +54,26 @@ class AutotoolsLanguageServer < Formula
   resource "pygls" do
     url "https://files.pythonhosted.org/packages/da/2e/7bbe061d175c0baddde8fc9edb908a4c31ba5d9165b8c68e3439c3a9f138/pygls-2.1.1.tar.gz"
     sha256 "1da03ba9053201bb337dcdd8d121df70feb2a91e1a0dcc74de5da79755b1a201"
+  end
+
+  resource "referencing" do
+    url "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz"
+    sha256 "44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8"
+  end
+
+  resource "rpds-py" do
+    url "https://files.pythonhosted.org/packages/aa/2a/9618a122aeb2a169a28b03889a2995fe297588964333d4a7d67bdf46e147/rpds_py-2026.6.3.tar.gz"
+    sha256 "1cebd1337c242e4ec2293e541f712b2da849b29f48f0c293684b71c0632625d4"
+  end
+
+  resource "tree-sitter" do
+    url "https://files.pythonhosted.org/packages/f7/03/5600b84aff2e6c4fe80cfebb4063fe2f50299521befe5f6092ab8c082f4a/tree_sitter-0.26.0.tar.gz"
+    sha256 "b40c219edccc4564530c96f8f1556f6202b37cda964d1cbd7bd2b7e68b40a245"
+  end
+
+  resource "tree-sitter-autoconf" do
+    url "https://files.pythonhosted.org/packages/56/08/b64a9ccda46bc6a1b0feea40d4c8d7a248e9d0993da4a681f54a46f58cd5/tree_sitter_autoconf-0.0.1.tar.gz"
+    sha256 "bb4e112d94f2096b24d51b21cadca50eefd3943a2f879e96b20c616f258e6fa0"
   end
 
   resource "typing-extensions" do
