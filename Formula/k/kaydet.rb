@@ -3,8 +3,8 @@ class Kaydet < Formula
 
   desc "Queryable personal database for notes, logs, and todos"
   homepage "https://github.com/miratcan/kaydet"
-  url "https://github.com/miratcan/kaydet/archive/refs/tags/v0.38.1.tar.gz"
-  sha256 "03a16e456a5a0c237f09f5973408edd5828d899ec51cf48e6357fa0697fc88b0"
+  url "https://github.com/miratcan/kaydet/archive/refs/tags/v0.44.0.tar.gz"
+  sha256 "249e001f44cf3305e0f8bfae03b82ef4cff68179fad2caccce8f349189cb1616"
   license "MIT"
   head "https://github.com/miratcan/kaydet.git", branch: "master"
 
