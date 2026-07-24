@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/1f/73/614b21882bf541a28b4445329fd233dae130a73b765f0a63533a6790bda7/fast_agent_mcp-0.9.21.tar.gz"
-  sha256 "2a0a0b9f1101a7d89d2b4699b1d6c48d2e35477be0b3eaed267483b50a69e03b"
+  url "https://files.pythonhosted.org/packages/00/b2/b35b74bd745c407e9887ceac8be24f36eab93cd501d5ef619c0011538d98/fast_agent_mcp-0.9.22.tar.gz"
+  sha256 "f84f7a2c6e2db094d2a59be021c13282aebb4131cd5c299797f1052926c61155"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -95,8 +95,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/f4/8b/0d3945a13955303b81272f759a0331e54c5c793da455e6f5706b89d2639c/cachetools-7.1.4.tar.gz"
-    sha256 "437f55a4e0c1b01a4f3077cc470e6991d47430970e36fbcb77e2be0df4fc1cd6"
+    url "https://files.pythonhosted.org/packages/87/23/635f22bbd6478b02672432656a5f46775768e24b2715c2e8658b3d210602/cachetools-7.1.5.tar.gz"
+    sha256 "0def7134eba79e59448edaf5d2e3cc8e49978ab2fd56189c1efd19856b134ab5"
   end
 
   resource "caio" do
