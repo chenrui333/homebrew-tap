@@ -9,11 +9,11 @@ class Untether < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f49a946c5edf1fb2991895f02e5b77913faf02c9f751e866a3a7f20a8afb433b"
-    sha256 cellar: :any, arm64_sequoia: "96146c8e03762afd3aa3a6723aa5ff9934405a8d5a0bc1eb76ce0d4fbb3b5c6b"
-    sha256 cellar: :any, arm64_sonoma:  "59bed67868b8f1ef59fa7129e7643d9b3930384d0b7427a8ec1af28a0ccf60a9"
-    sha256 cellar: :any, arm64_linux:   "e1e1694f2deee2683627296f1235af12deb9dde22d8363574973b7c94bf432e1"
-    sha256 cellar: :any, x86_64_linux:  "7064019a7453315ed0529056c84571199e4d39c93dff5adc7a3dd704d1fd7f35"
+    sha256 cellar: :any, arm64_tahoe:   "ec0cfffd93b7124cae86be8f2b2032087946d2e9fa574476581f8f25eefb34a1"
+    sha256 cellar: :any, arm64_sequoia: "240cb0c94f4a53e9868e22928ef9b2dbe1df4b42be6763f0220a191192fe113c"
+    sha256 cellar: :any, arm64_sonoma:  "ce912ae013f757bd492d0d34a36382a66269f40eb21ed52b400c06a256a1995d"
+    sha256 cellar: :any, arm64_linux:   "2dda4fb137df3af9c07d55dea44e8af6787033168c24bd7623ec33d4909910e6"
+    sha256 cellar: :any, x86_64_linux:  "35b689cc38c31f4e1b0291c59895652d0ad06e8eccb23684bb43e58f759c4877"
   end
 
   depends_on "rust" => :build
