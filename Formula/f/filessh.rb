@@ -8,11 +8,11 @@ class Filessh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1fb5795064e86712fcb5eac81c528ea1697e58ee9335ca83a863bf0af535fb65"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edad008329987501448f4e49055b46cbc7e493b5125adb04683f336e096377c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4cf313479e78accbf9c5a48d5472b1f09ee62b0977f01df150e2af4d4fd906f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "030c4acd6770c1d5f60f61cca64f221dff4906b525ac3c113363527f1dffdfde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fa3dc5440b15263b56d3511887a72cb235649aa66a55dbb1ed7f442b43690be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "000fee49d1f6a5e29798cbfd81afecd12e916efec0cf35959b967505ff1b1d45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6e7073a5dac5abdf710bad66b1fb17cfe342c02ae3b7ff5dd65139160fb4952"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33bc9db3848906ea35b25b115c6c496616a2426e09694ab8937502de84b4ff1f"
+    sha256 cellar: :any,                 arm64_linux:   "259158958ac81d75138f791dd4a654adc23176d304fac9a340e25e14d9a28615"
+    sha256 cellar: :any,                 x86_64_linux:  "6e167db3587c2e95f821f5b9ec2837d2e7e295e5dd0779fef89bdd2d7e4252df"
   end
 
   depends_on "rust" => :build
