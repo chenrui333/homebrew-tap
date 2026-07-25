@@ -1,8 +1,8 @@
 class Filessh < Formula
   desc "Fast and convenient TUI file browser for remote servers"
   homepage "https://github.com/JayanAXHF/filessh"
-  url "https://github.com/JayanAXHF/filessh/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "3e26169f9968edd5005d7f2df9f7c4cf14b08c225d6766d9a51f3b6f73d42ca4"
+  url "https://github.com/JayanAXHF/filessh/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "c0f1bdc4bfd8ce5b09865da363966cf3fab6d2dfcdcc1b34d23965edfc474c61"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/JayanAXHF/filessh.git", branch: "main"
 
