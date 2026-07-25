@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/00/b2/b35b74bd745c407e9887ceac8be24f36eab93cd501d5ef619c0011538d98/fast_agent_mcp-0.9.22.tar.gz"
-  sha256 "f84f7a2c6e2db094d2a59be021c13282aebb4131cd5c299797f1052926c61155"
+  url "https://files.pythonhosted.org/packages/b8/5c/89fddb64a8af0a1cb426b5a39849956f64b7b82d1e7b40e6e056cdb55c25/fast_agent_mcp-0.9.23.tar.gz"
+  sha256 "8399ad420e144db6bc38dc8424a699f3c35096b4dbda81a2da1c4512b3e09dad"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -95,8 +95,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/87/23/635f22bbd6478b02672432656a5f46775768e24b2715c2e8658b3d210602/cachetools-7.1.5.tar.gz"
-    sha256 "0def7134eba79e59448edaf5d2e3cc8e49978ab2fd56189c1efd19856b134ab5"
+    url "https://files.pythonhosted.org/packages/55/af/861ebc2e318a5c3300e3eb63bc4d30f3d70a46d13b360093728ac0705eed/cachetools-7.1.6.tar.gz"
+    sha256 "c7a79e7f30ba9943c1cefd08cc36f006aaae086e017af9166f1d59d6170c47e1"
   end
 
   resource "caio" do
@@ -330,8 +330,8 @@ class FastAgentMcp < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/78/60/d4219875289b11d2c2f7da93c36283da224a2e55865ed865ab64e0ce9217/openai-2.45.0.tar.gz"
-    sha256 "10d34ca9c5643bce775852fddbfc172505cb1d4de1ccd101696c3ecff358765d"
+    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
+    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
   end
 
   resource "openapi-pydantic" do
@@ -565,8 +565,8 @@ class FastAgentMcp < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
-    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
+    url "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34dfd77c5026b173ed035d2a3ba31f1077590c013de2bff/tqdm-4.69.1.tar.gz"
+    sha256 "2be21080a0ce17e902c2f1baeb6a74bf551b67bbdfa4bc0109fad471d0b4cb0d"
   end
 
   resource "typer" do
