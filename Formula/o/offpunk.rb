@@ -10,11 +10,11 @@ class Offpunk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "774f83295e237fad60b5521f62d0fcddd9cb51713850c71d9ae378bb37e14fc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "facc58ffad213e0518c229e61220964f388a7f6555de0e91e761cc1335b1a445"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "381110f8c3d72ef9b92fdc8ef7975616bd06fa5217832c836a3bf21ec3f105a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cae1bbf83d568265252b58f5e298dcebf7cf582c5893b66a9e5a585cacb23e54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3da53a81237c610cecc63a47d4c8586995689b881af20ef1dcc9069e3a5051"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "202a1d0395c221333004a3df484c987b9573f915f3e35b5cc2390cf5032874bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956943ca92165358af50c8f9660749e25127d6178fb1446c3bff20387b9373fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f831acacb902f649c2ae142d1d02994b2378c9ffbacb0fd3a85fbeddd2b8f59b"
+    sha256 cellar: :any,                 arm64_linux:   "e8b886ccb19b33fa3f900453b25a7e310465d40a1d975e328fa781fd9918590c"
+    sha256 cellar: :any,                 x86_64_linux:  "cdb133e6280f8c4dd5373b9a0140b17e100c077b8b498770410fa2d3ccce5bfc"
   end
 
   depends_on "gettext" => :build
