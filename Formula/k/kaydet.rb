@@ -10,7 +10,7 @@ class Kaydet < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "af7f96e2466bef5069edb88cb643d83151b7115bf5875603fe738fb9b983251c"
+    sha256 cellar: :any_skip_relocation, all: "bdd6604fa013ce2d309eb132cf53bd083b8a481489f0530367d0060fbf461537"
   end
 
   depends_on "python@3.14"
