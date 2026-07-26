@@ -3,8 +3,8 @@ class AutotoolsLanguageServer < Formula
 
   desc "Language tools for Autotools, support configure.ac, Makefile.am, Makefile"
   homepage "https://github.com/Freed-Wu/autotools-language-server"
-  url "https://files.pythonhosted.org/packages/7a/53/171888baa8a50c96bf5dd703ffce96c4abbebf7b77890bf3b217dfe76109/autotools_language_server-0.1.2.tar.gz"
-  sha256 "c1ab9d792561912a4f1d10ff7308f494237f960523fff8eafc2bbf78da958a3b"
+  url "https://files.pythonhosted.org/packages/99/78/379b8e284a833edc4c9e01ba2fe0f74208686d77a1fdceae32325051049c/autotools_language_server-0.1.3.tar.gz"
+  sha256 "1adc7ba8627533c141533d2da974d615a2f58214527759424d1fdfb6f0953401"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -46,8 +46,8 @@ class AutotoolsLanguageServer < Formula
   end
 
   resource "lsp-tree-sitter" do
-    url "https://files.pythonhosted.org/packages/e8/b2/144e7ae8725c3f5e5a1e00dce520bbf765af269f7e0d6a5ec65f6908fba9/lsp_tree_sitter-0.2.9.tar.gz"
-    sha256 "6bd37cf8b67532e8cbd7eec86648f93f0549c5a3d71ac1fef52b15c27e67671a"
+    url "https://files.pythonhosted.org/packages/2f/29/8f7ee3b35b2e18df80d418e657e89b630c0c825226efd55e045e7bf612dd/lsp_tree_sitter-0.2.15.tar.gz"
+    sha256 "ecdfcbb5e7327df16b9d34487c32b54cd8e39d701a0a1c219df672dd68b2672f"
   end
 
   resource "lsprotocol" do
@@ -76,8 +76,8 @@ class AutotoolsLanguageServer < Formula
   end
 
   resource "tree-sitter-autoconf" do
-    url "https://files.pythonhosted.org/packages/56/08/b64a9ccda46bc6a1b0feea40d4c8d7a248e9d0993da4a681f54a46f58cd5/tree_sitter_autoconf-0.0.1.tar.gz"
-    sha256 "bb4e112d94f2096b24d51b21cadca50eefd3943a2f879e96b20c616f258e6fa0"
+    url "https://files.pythonhosted.org/packages/35/2c/56cf88c33c18ef3e73fda2358723f14529eae6dcc7be484f5d6e12731fa6/tree_sitter_autoconf-0.0.4.tar.gz"
+    sha256 "3cbf941b7673981ace4ae1d5b6800a33afa69b3419884a157968a8b211c88416"
   end
 
   resource "typing-extensions" do
