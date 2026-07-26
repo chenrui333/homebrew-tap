@@ -28,7 +28,7 @@ jobs:
       !github.event.pull_request.merged
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/homebrew/ubuntu24.04:main@sha256:42bc692f537d9374deb4f7ccff4cfe3a1e937dcfbf993156bfc634ebb4729ca5
+      image: ghcr.io/homebrew/ubuntu24.04:main@sha256:fde2a0ce6f4a8627609258ff7bb04a194c07c5ab4163d6b5d8b96b9c3136367e
     permissions:
       contents: read
       actions: write # for `gh run cancel`
