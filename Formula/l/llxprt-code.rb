@@ -1,8 +1,8 @@
 class LlxprtCode < Formula
   desc "Open-source multi-provider AI assisted CLI development tool"
   homepage "https://github.com/vybestack/llxprt-code"
-  url "https://registry.npmjs.org/@vybestack/llxprt-code/-/llxprt-code-0.9.3.tgz"
-  sha256 "fd673a16c4f9706936d8f181a7ec83347d764830237f3c842ae7e21f98bc271b"
+  url "https://registry.npmjs.org/@vybestack/llxprt-code/-/llxprt-code-0.10.0.tgz"
+  sha256 "3bcab79d93e79b0b60a2ca77891ab55d9339acc2b4c1999b929cfde3e727e52b"
   license "Apache-2.0"
 
   bottle do
