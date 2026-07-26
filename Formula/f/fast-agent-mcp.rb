@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/b8/5c/89fddb64a8af0a1cb426b5a39849956f64b7b82d1e7b40e6e056cdb55c25/fast_agent_mcp-0.9.23.tar.gz"
-  sha256 "8399ad420e144db6bc38dc8424a699f3c35096b4dbda81a2da1c4512b3e09dad"
+  url "https://files.pythonhosted.org/packages/2d/76/dbf0fefd539ee58cfdbb25731342b53d7ef64cfd0f5bfea8d5d8111b9def/fast_agent_mcp-0.9.24.tar.gz"
+  sha256 "d964ad17f13c07c39dd4b84d594b096d5e1c88b9039b24c0caa99c3f69b183e1"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -115,8 +115,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/3d/47/32d992e829f63aedea5b93360db23c8882c9bbbde094bcf0fff899ea8a3b/cyclopts-4.22.1.tar.gz"
-    sha256 "49cd3779da7113a96ac5c23b151aa61ac9ae1b4b1fe813594d207ca843c97892"
+    url "https://files.pythonhosted.org/packages/69/98/ca72a91d5c25a2ae1baf19d27b31f12288cb9d8a3168b65b3cd54d40d277/cyclopts-4.22.2.tar.gz"
+    sha256 "0721e90e7209885e78f7637cfba255c12e89206b633e35d185305e349ba20ecd"
   end
 
   resource "deprecated" do
@@ -225,8 +225,8 @@ class FastAgentMcp < Formula
   end
 
   resource "httpx-aiohttp" do
-    url "https://files.pythonhosted.org/packages/63/2c/b894861cecf030fb45675ea24aa55b5722e97c602a163d872fca66c5a6d8/httpx_aiohttp-0.1.12.tar.gz"
-    sha256 "81feec51fd82c0ecfa0e9aaf1b1a6c2591260d5e2bcbeb7eb0277a78e610df2c"
+    url "https://files.pythonhosted.org/packages/4c/87/3b2df9732a497403e5f4bbf2ec9f25427d53cec797e83070c503649863ef/httpx_aiohttp-0.2.0.tar.gz"
+    sha256 "d4796b981f04734f1d1db9b4d9326ea16bc994f126460b93b69036262cd4a9d8"
   end
 
   resource "httpx-sse" do
