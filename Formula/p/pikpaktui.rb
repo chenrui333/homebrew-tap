@@ -8,12 +8,11 @@ class Pikpaktui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a40a515e22939a3bd6b7d298394c93795ff6ab3948d6342c98e38c55ab7f528"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f45c5de73a0be88021a860da099bd45982b2369850012f06ea2caba0381dfe65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2deb48416f851de7b3677abf85f2d473ac4c0cf7025a01aa5528e2ca4af832c4"
-    sha256 cellar: :any,                 arm64_linux:   "5536e9424dc2a438848a2751a5eba9a45cf98e7e953dfdbeca0f5120101f1f58"
-    sha256 cellar: :any,                 x86_64_linux:  "4d48d42a401d7aa36d0e9db813ab06ab81130db2bb2cf6339737deb0379910cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1225239c80b6bd608bae8bd1ae3c246407722219208b95742ac0d166e7ef5e2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b62ad220053143d6aebe759dea95c54a1b78ba8b0313d1602f4b7890ca82f7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e41a78c19f6a879780973d471758bde40b3b103c8fa42786dd8448ba9d60658"
+    sha256 cellar: :any,                 arm64_linux:   "2d1be8c2bb980f02a58bb1baca5157f55fd5a457a6e02c99c2f56211f3f07d0b"
+    sha256 cellar: :any,                 x86_64_linux:  "a8c2ad25af5eb5857c5090a0889d52f39838fc91f050fe1dcf377891802bdf5f"
   end
 
   depends_on "rust" => :build
