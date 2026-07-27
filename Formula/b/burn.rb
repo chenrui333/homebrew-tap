@@ -1,8 +1,8 @@
 class Burn < Formula
   desc "See what's burning your Kubernetes budget"
   homepage "https://github.com/tanrikuluozlem/burn"
-  url "https://github.com/tanrikuluozlem/burn/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "95a8ec39ac8785f53f5bef1614d46297ecb94e166d0766b7fc79c1b01846e6c6"
+  url "https://github.com/tanrikuluozlem/burn/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "2b3139d85fbf006731be108f5477371dad09d5da9795ccbefb2ef877f3900d74"
   license "Apache-2.0"
   head "https://github.com/tanrikuluozlem/burn.git", branch: "main"
 
