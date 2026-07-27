@@ -10,12 +10,11 @@ class McpAlchemy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d2513cba9857d346e059752561c1c0318b45018b3dd91c2225afe9c8084afa7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a75b35ba735a5710f539e6d940241d1249798e42e1ff3f902c6259caca0d3306"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "996e918993439086b0806e69a26e71e1f148eee6b912a19fce8137a76f52a9b4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f76deb4cb8f3c6b6c05f72200585aaacfbd8ec8c53fbd05c215632284e26fdae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa0bef61add52c7e8378e9d4f26dcbfae49edaf58dadea6ce669efba68ec8821"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3522363e921d696babc265eb5a7cb9801c502c0f1bd1e35d8c7a00aa30522a30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66ec0c6c83cc648cf8dd6f6bd95afe73d948ad715fce1853d55ab655fc1a3363"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74a92f31ec7d75cbad2c189a58e6ec5ffe4f36182ad84858ee20279503c95020"
+    sha256 cellar: :any,                 arm64_linux:   "b0d8f27849ce93c71fec0757320b0b680435b32709872b7bdba490c2406334a7"
+    sha256 cellar: :any,                 x86_64_linux:  "ca1ae3b33d8576419edc08553a294681c99d3704cc0636d17c3079e688a76a1e"
   end
 
   depends_on "certifi" => :no_linkage
