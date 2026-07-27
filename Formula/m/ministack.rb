@@ -10,11 +10,11 @@ class Ministack < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22c6cda8b8ccb09a7c3a5eef61ccef72887f6f57103fff9f61a30f76f1fe39bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75b32626261365628979f31499f1fba10aa2eb61d251d3954e54c5c71cdd8a06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3386f93862442f30e270059ee104762d5a2aa5d8a817d0497fd74e29f30b1544"
-    sha256 cellar: :any,                 arm64_linux:   "10e7210b21f23ce9c6ac98cb784752ad76bf44198da86910a57df3239a666e70"
-    sha256 cellar: :any,                 x86_64_linux:  "f530f787f93bd88b95608fd09d8baea976802f2b3b8662ad2bbc5d808209691f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a7488f9d181145d65cab59ef97893092a267f06e8e99932d37fea7138050314"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40e74fc6b64a0bcc3b952184095dd491c182fee988751ec0a316e69e84a9e6f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f4a2d320c2a6597e990f77ec5034fd3fc4089c65664c3bfc6376f8fa64df775"
+    sha256 cellar: :any,                 arm64_linux:   "96d94360a0e2cb2c569cfbb62e67be0bf6df65100c370554885c8402796328cf"
+    sha256 cellar: :any,                 x86_64_linux:  "129f9dd2e890c7b33004aa0cb5a2c678d9ebeb7224d43842e125d2da7ed708d8"
   end
 
   depends_on "libyaml"
