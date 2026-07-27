@@ -9,11 +9,11 @@ class Pike < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "920b8594b257f0ccd8b14f00a9ab416e496355c4f34ebd55b6fb6557cc74bdb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "920b8594b257f0ccd8b14f00a9ab416e496355c4f34ebd55b6fb6557cc74bdb5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "920b8594b257f0ccd8b14f00a9ab416e496355c4f34ebd55b6fb6557cc74bdb5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2e6e6e864db4420c7615ead69f5a3f3d8bfee2ef8a943089f1b282331c2d863"
-    sha256 cellar: :any,                 x86_64_linux:  "ed2dcf1b04dc85a5a67cb296d179949e67583dbe1dbec5604a549a071d0b7cde"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "998cfebaa2f8d21aaa9fa4e9eab53980efe26f21234a8d5ca5419dc44840654f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "998cfebaa2f8d21aaa9fa4e9eab53980efe26f21234a8d5ca5419dc44840654f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "998cfebaa2f8d21aaa9fa4e9eab53980efe26f21234a8d5ca5419dc44840654f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "466686b791dd4c35424bbd19e222933ff9c5f8629c0ac9a8e6a1c73c18bf2274"
+    sha256 cellar: :any,                 x86_64_linux:  "0241dc764801a3be7548dcb7bea25a7f59d9dbc53d308380a2c21538057282fb"
   end
 
   depends_on "go" => :build
