@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/35/5d/8371a1dd452f96f554882b6eca3cfa5c749bfd8b12c25f7b6e1131abaff4/fast_agent_mcp-0.9.25.tar.gz"
-  sha256 "138c2200c4a72a3d1ae39e6d9bf0f72c4e8be9110dc833a8c465e6414f0f0b91"
+  url "https://files.pythonhosted.org/packages/fc/a7/d66bb53999778bbb7a531746d852c88088e36eb01ae151f06ffeec11640e/fast_agent_mcp-0.9.26.tar.gz"
+  sha256 "144e3b67e8ac12e10c7116c3f2ce20748131b0cd532a375e7a14d5dfb39b7ad1"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -565,8 +565,8 @@ class FastAgentMcp < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34dfd77c5026b173ed035d2a3ba31f1077590c013de2bff/tqdm-4.69.1.tar.gz"
-    sha256 "2be21080a0ce17e902c2f1baeb6a74bf551b67bbdfa4bc0109fad471d0b4cb0d"
+    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
+    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
   end
 
   resource "typer" do
