@@ -1,8 +1,8 @@
 class CloudflareDdns < Formula
   desc "Small, feature-rich, and robust Cloudflare DDNS updater"
   homepage "https://github.com/favonia/cloudflare-ddns"
-  url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.16.2.tar.gz"
-  sha256 "dbf196357e6f7aaf1d83ad5e800012f16708b405c8b0d6f131058d44a175f392"
+  url "https://github.com/favonia/cloudflare-ddns/archive/refs/tags/v1.17.0.tar.gz"
+  sha256 "dc32935120768cf31eeff12d792f093ed689ace6713933955536f67c19f150f0"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/favonia/cloudflare-ddns.git", branch: "main"
 
@@ -21,15 +21,19 @@ class CloudflareDdns < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/ddns"
   end
 
+  service do
+    run [opt_bin/"cloudflare-ddns"]
+    log_path var/"log/cloudflare-ddns.log"
+    error_log_path var/"log/cloudflare-ddns.log"
+  end
+
   test do
-    ENV["CLOUDFLARE_API_TOKEN"] = "invalid_token_for_testing"
+    ENV["CLOUDFLARE_API_TOKEN"] = "invalid token"
     ENV["DOMAINS"] = "example.org"
     ENV["UPDATE_CRON"] = "@once"
 
-    output = shell_output(bin/"cloudflare-ddns")
+    output = shell_output(bin/"cloudflare-ddns", 1)
     assert_match version.to_s, output
-    assert_match "The Cloudflare API token appears to be invalid", output
-    assert_match "Failed to check", output
-    assert_match "zone named example.org", output
+    assert_match "The API token does not follow the OAuth2 bearer token format", output
   end
 end
