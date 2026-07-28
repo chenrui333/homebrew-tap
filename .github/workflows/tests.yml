@@ -31,7 +31,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/homebrew/ubuntu24.04:main@sha256:3455b9a91601b8b1e222a560dbefcee66f8300ecd24e5fc7e0ef033a43cdab59
+      image: ghcr.io/homebrew/ubuntu24.04:main@sha256:bacec20b6068e5f867572a2489ea5f0a2f7908eaccbd7c8ac8d9b4eb77a9fd80
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     outputs:
