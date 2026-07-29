@@ -1,8 +1,8 @@
 class Gommit < Formula
   desc "Enforce git message commit consistency"
   homepage "https://github.com/antham/gommit"
-  url "https://github.com/antham/gommit/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "b4a94b0f2c1dc588df267e9f697c5b5b60b0a3668a2ef058c30e9983b8d6279d"
+  url "https://github.com/antham/gommit/archive/refs/tags/v2.13.0.tar.gz"
+  sha256 "8050eaef69f5729bd9000855859a60b7d6403db30d1e9ca7776034428ab1e873"
   license "Apache-2.0"
   head "https://github.com/antham/gommit.git", branch: "master"
 
