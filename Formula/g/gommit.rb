@@ -8,12 +8,11 @@ class Gommit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2389e93e801347a5babd68587316168dc38a6804de86839ba7755a8ab7b5d475"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2389e93e801347a5babd68587316168dc38a6804de86839ba7755a8ab7b5d475"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2389e93e801347a5babd68587316168dc38a6804de86839ba7755a8ab7b5d475"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd5395f4ed6239d6058b3329c99a82e0f1b9a727232a438873fb36882b1b3dec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "186bb9621a78231d3edb968eb8dc3e93f690b4974d83b30eaa5a0d43d64d33fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "448ce47b3e7ff507f3056f7a60855302bc39d8138e7463cb480ba550277eda9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "448ce47b3e7ff507f3056f7a60855302bc39d8138e7463cb480ba550277eda9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "448ce47b3e7ff507f3056f7a60855302bc39d8138e7463cb480ba550277eda9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b651e8e56d190f8c5d8d81aad0116fc71cdd10fcd0f5357b383bca8724610a23"
+    sha256 cellar: :any,                 x86_64_linux:  "e1c1738e17dfa463e232004480e92e8d18a514bc41c4bcac0b81b20bf4a587fa"
   end
 
   depends_on "go" => :build
