@@ -1,8 +1,8 @@
 class Mcpc < Formula
   desc "Universal CLI client for MCP"
   homepage "https://github.com/apify/mcp-cli"
-  url "https://registry.npmjs.org/@apify/mcpc/-/mcpc-0.5.0.tgz"
-  sha256 "ee1643c28ff1d3dc3945cf44679cb8d97e7d03439db7383df8f8fb5d530ad3b1"
+  url "https://registry.npmjs.org/@apify/mcpc/-/mcpc-0.5.1.tgz"
+  sha256 "12732e94654d10a99a37aa808b6fb0fb39f707a8ae479a39a66a0b1e5051d5cc"
   license "Apache-2.0"
 
   bottle do
