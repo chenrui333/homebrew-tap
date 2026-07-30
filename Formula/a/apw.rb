@@ -1,8 +1,8 @@
 class Apw < Formula
   desc "CLI for Apple Passwords (also known as iCloud Keychain)"
   homepage "https://github.com/bendews/apw"
-  url "https://github.com/bendews/apw/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "c0c3e00eb58ccd47fecf3f2fe0fd4bed9656887a3306fe9330234beb784868b9"
+  url "https://github.com/bendews/apw/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "f189a4e68a86f5ebbdfaf1b94533358f7452e5692057a348c27bf1decb7e3388"
   license "GPL-3.0-only"
   head "https://github.com/bendews/apw.git", branch: "main"
 
