@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/fc/a7/d66bb53999778bbb7a531746d852c88088e36eb01ae151f06ffeec11640e/fast_agent_mcp-0.9.26.tar.gz"
-  sha256 "144e3b67e8ac12e10c7116c3f2ce20748131b0cd532a375e7a14d5dfb39b7ad1"
+  url "https://files.pythonhosted.org/packages/68/d4/92f745b3d6473410302d0a74e8238be6ef50869c33e36f3193a7860e5342/fast_agent_mcp-0.9.27.tar.gz"
+  sha256 "9436e32a4100dab0b3ee4d62e54f80d98c14884fe8e497f43f01532d8d77dcaf"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -65,8 +65,8 @@ class FastAgentMcp < Formula
   end
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "anthropic" do
@@ -175,8 +175,8 @@ class FastAgentMcp < Formula
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/10/a1/ae4e3e5003468d6391d2c77b6fa1cd73bd5d13511d81c642d7b28ac90ed4/fsspec-2026.6.0.tar.gz"
-    sha256 "f5bac145310fe30e16e1471bd6840b2d990d609e872251d7e674241822abf01a"
+    url "https://files.pythonhosted.org/packages/00/78/f34251dadb8f3921264a1d9b8946f5e542014ee2614b285261b4e40e6775/fsspec-2026.7.0.tar.gz"
+    sha256 "c803c40f4cf860b49dea58ee3e1c33cb9c790520e233537e1340049f89b82a88"
   end
 
   resource "google-api-core" do
@@ -590,8 +590,8 @@ class FastAgentMcp < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/05/c8/2d307868453a4bca6e64fa3581d122ae0748a0869c53f159339def179c7c/uvicorn-0.52.0.tar.gz"
+    sha256 "ca8876ad6c1983f394157c168b39d52f6dd56dabf5602fa0982751cffc2293ae"
   end
 
   resource "uvloop" do
@@ -615,8 +615,8 @@ class FastAgentMcp < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/fe/a4/282c8e64300a59fc834518a54bf0afabb4ff9218b5fa76958b450459a844/wrapt-2.2.2.tar.gz"
-    sha256 "0788e321027c999bf221b667bd4a54aaefd1a36283749a860ac3eb77daed0302"
+    url "https://files.pythonhosted.org/packages/2b/b0/c1f5a970721f06b85c0cd5142e0ff8fe067708abd779b0c4f4be7d61d09f/wrapt-2.3.0.tar.gz"
+    sha256 "681a2d0eefd721998f90642762b8e75c2159ec531b20ad5e437245ea7b06a107"
   end
 
   resource "yarl" do
