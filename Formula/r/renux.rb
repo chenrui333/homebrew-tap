@@ -10,7 +10,7 @@ class Renux < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "241baa4ed5222e206abbc64e4a930469340b4ff7aa5301c127e8ced4c39b7094"
+    sha256 cellar: :any_skip_relocation, all: "65227c075c89e1227807f2964a3ac3d2e4d1312a76e513b2c6804a751f2437be"
   end
 
   depends_on "python@3.14"
