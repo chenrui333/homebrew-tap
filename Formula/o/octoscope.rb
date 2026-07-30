@@ -1,8 +1,8 @@
 class Octoscope < Formula
   desc "Terminal dashboard for your GitHub account"
   homepage "https://github.com/gfazioli/octoscope"
-  url "https://github.com/gfazioli/octoscope/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "af7f434edc658f0340012404d408bcd7b0385ce8001a567dc29368739ea5baf8"
+  url "https://github.com/gfazioli/octoscope/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "e9615bf8c11c0100c71938d674e22f0743f869c2ef2288a556d0be00c5018b74"
   license "MIT"
   head "https://github.com/gfazioli/octoscope.git", branch: "main"
 
