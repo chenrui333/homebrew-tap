@@ -1,8 +1,8 @@
 class Konfigo < Formula
   desc "Merge and transform configuration files across multiple formats"
   homepage "https://github.com/ebogdum/konfigo"
-  url "https://github.com/ebogdum/konfigo/archive/refs/tags/v2.0.2.tar.gz"
-  sha256 "4bcf852ca67d22d82f2c6a8b3119100b7dfb8e20228d4104478138aab8e6cbbd"
+  url "https://github.com/ebogdum/konfigo/archive/refs/tags/v2.0.3.tar.gz"
+  sha256 "13710001bc9010e0efabb7b4a2d608fb96a321177854d04467111ae5b277a671"
   license "MIT"
   head "https://github.com/ebogdum/konfigo.git", branch: "main"
 
