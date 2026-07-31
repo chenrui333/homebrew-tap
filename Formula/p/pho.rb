@@ -1,8 +1,8 @@
 class Pho < Formula
   desc "TUI for GitHub Pull Requests"
   homepage "https://github.com/utkarsh261/pho"
-  url "https://github.com/utkarsh261/pho/archive/refs/tags/v0.1.42.tar.gz"
-  sha256 "acccb2757afaedd2262c5beac611f7406e72db4825f8e0b5b54195c0de6bd6a9"
+  url "https://github.com/utkarsh261/pho/archive/refs/tags/v0.1.43.tar.gz"
+  sha256 "889a0d573c2c5652993c98efce3165c3e2f9b55adea12929567691934e5c2449"
   license "GPL-3.0-only"
   head "https://github.com/utkarsh261/pho.git", branch: "main"
 
