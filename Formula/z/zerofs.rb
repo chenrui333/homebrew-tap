@@ -1,8 +1,8 @@
 class Zerofs < Formula
   desc "Serve S3 buckets as POSIX filesystems over NFS, 9P, or as block devices"
   homepage "https://github.com/Barre/ZeroFS"
-  url "https://github.com/Barre/ZeroFS/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "b1b4a8ec5d23d8eb8969f2748b90a950e778cdb1c1cc44f47b122a7f0271935b"
+  url "https://github.com/Barre/ZeroFS/archive/refs/tags/v2.2.1.tar.gz"
+  sha256 "74b2a64f33f2db0ef2e60f87493c5d791aba0e63b65e64d346641a6dce4e060e"
   license "AGPL-3.0-only"
   head "https://github.com/Barre/ZeroFS.git", branch: "main"
 
