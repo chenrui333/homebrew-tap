@@ -3,8 +3,8 @@ class McpAlchemy < Formula
 
   desc "MCP server that connects to your database"
   homepage "https://github.com/runekaagaard/mcp-alchemy"
-  url "https://files.pythonhosted.org/packages/b5/58/c8cf0f53aaf1d7f149670f88cc25dce464e76027a1ab9f83f43aba160398/mcp_alchemy-2026.7.26.212710.tar.gz"
-  sha256 "e4665a9f6cc57fe68237008388dc93c412528e3ed260fdff31314d79bdc3bb82"
+  url "https://files.pythonhosted.org/packages/76/67/b884224086e4fb6bba8824a1bfbf4934486bf5321c569c363f56409ae381/mcp_alchemy-2026.8.1.2602.tar.gz"
+  sha256 "f805bd3c40615b2858d40dad5ba37afcf7f7a69df6f7f02676bac12e80183f8f"
   license "MPL-2.0"
   head "https://github.com/runekaagaard/mcp-alchemy.git", branch: "main"
 
@@ -26,8 +26,8 @@ class McpAlchemy < Formula
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py]
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "anyio" do
@@ -86,8 +86,8 @@ class McpAlchemy < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/6e/77/9450b8f251a13affb6281997d0523c4615f8a8b35d0b21ff30db3a5aac9d/mcp-1.28.1.tar.gz"
-    sha256 "d51e36a5f5644faea4f85ea649bfffa6bc6c26770d42798ad6a3de3d2ba69683"
+    url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
+    sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
   end
 
   resource "mdurl" do
@@ -136,8 +136,8 @@ class McpAlchemy < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/02/f1/a7a892f18d4d224e6b26f706531eafccc41e37594d37d304786969ee13cb/sqlalchemy-2.0.51.tar.gz"
-    sha256 "804dccd8a4a6242c4e30ad961e540e18a588f6527202f2d6791b01845d59fdc9"
+    url "https://files.pythonhosted.org/packages/50/65/9cbc9c4c3287bed2499e05033e207473504dc4df999ce49385fb1f8b058a/sqlalchemy-2.0.36.tar.gz"
+    sha256 "7f2767680b6d2398aea7082e45a774b2b0767b5c8d8ffb9c8b683088ea9b29c5"
   end
 
   resource "sse-starlette" do
@@ -156,8 +156,8 @@ class McpAlchemy < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/a2/65/b7c6c443ccc58678c91e1e973bbe2a878591538655d6e1d47f24ba1c51f3/uvicorn-0.51.0.tar.gz"
-    sha256 "f6f4b69b657c312f516dd2d268ab9ae6f254b11e4bac504f37b2ab58b24dd0b0"
+    url "https://files.pythonhosted.org/packages/05/c8/2d307868453a4bca6e64fa3581d122ae0748a0869c53f159339def179c7c/uvicorn-0.52.0.tar.gz"
+    sha256 "ca8876ad6c1983f394157c168b39d52f6dd56dabf5602fa0982751cffc2293ae"
   end
 
   def install
