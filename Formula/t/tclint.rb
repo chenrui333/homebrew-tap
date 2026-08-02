@@ -9,7 +9,7 @@ class Tclint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "843724514b4f510d8ac9ab18fa0b9922a76c5d5cde358497e9fe1bf66a6c5821"
+    sha256 cellar: :any_skip_relocation, all: "78379e6a7325a3ed38d12aa41965c5a817ce9ba46aab42eec2cba7e23f6c5fc3"
   end
 
   depends_on "python@3.14"
