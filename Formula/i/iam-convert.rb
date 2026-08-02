@@ -1,8 +1,8 @@
 class IamConvert < Formula
   desc "Convert JSON IAM Policies to other formats"
   homepage "https://iam.cloudcopilot.io/tools/iam-convert"
-  url "https://registry.npmjs.org/@cloud-copilot/iam-convert/-/iam-convert-0.1.82.tgz"
-  sha256 "1516b1fa7ce75d5b7db67cbdf7379ede430fdb5a7915d15beb5b30a1bb006149"
+  url "https://registry.npmjs.org/@cloud-copilot/iam-convert/-/iam-convert-0.1.83.tgz"
+  sha256 "3e11b30674d12f85a12d573392eed0552db51b97ffa160adbdc91ff7667864d8"
   license "AGPL-3.0-only"
 
   bottle do
