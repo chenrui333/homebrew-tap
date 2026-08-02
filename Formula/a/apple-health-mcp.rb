@@ -7,11 +7,11 @@ class AppleHealthMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "4bbf2b658446075045ce5ea0325d098fe05cfadf7c6e9114b9e5713ca21db914"
-    sha256                               arm64_sequoia: "0e873eda8b1880c56c01d9fea0f20ad4cf223995dec4f7399147517f42363678"
-    sha256                               arm64_sonoma:  "4a007a7bfbfa8e98d257a0cf09928e4f017c51a4c86a42b639614966f92aaa80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7de016c8d385b0117f3b392017e8e0e6c5351299a08f515444e4c213be2bd2db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0978431759137ec64cc75b0c5bbbaf460d084df5ae40be19f35e5d764faf8a5"
+    sha256               arm64_tahoe:   "a6433d36fd5e1ef9c33a9a592f8377b5e024a6d7bcf014ac3d9f78f4ad747674"
+    sha256               arm64_sequoia: "77201d15b11f1f712d51469dc2bc91e94e4de557acc5e66030a1fe85ec4dd30b"
+    sha256               arm64_sonoma:  "091f83308ddf830fe2f48fb2ab6f706d25564c02c32f2bee36e57cb5790c0924"
+    sha256 cellar: :any, arm64_linux:   "f90f2024837184e950cbfcd4d9d5ca30a95c4eeac77763c2140bc34619e072b9"
+    sha256 cellar: :any, x86_64_linux:  "7a4589bae7e6cd8ff9b3ceeb4cb48b4fbad5aafa835c477a2f8ac56fee95f985"
   end
 
   depends_on "node"
