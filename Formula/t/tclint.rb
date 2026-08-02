@@ -3,8 +3,8 @@ class Tclint < Formula
 
   desc "EDA-centric utility for linting and analyzing Tcl code"
   homepage "https://github.com/nmoroze/tclint"
-  url "https://files.pythonhosted.org/packages/3f/4e/9ec785aa3f9473bcbd56bb858a46749db94baee2c1df603c458bfe189b51/tclint-0.8.0.tar.gz"
-  sha256 "0a0fff0dd4610859a85c06bd347c8ffb46e9bed79cdd34662738a518acc43c0c"
+  url "https://files.pythonhosted.org/packages/85/d8/ebee2778ef596bb6038381299142923f7dbd8e021f2d5711b201a56a5c13/tclint-0.9.0.tar.gz"
+  sha256 "15517ecb8193e3fd72b657459b633853ba9a60c2124b421c95f613914b89654b"
   license "MIT"
 
   bottle do
@@ -50,8 +50,8 @@ class Tclint < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "voluptuous" do
@@ -60,8 +60,8 @@ class Tclint < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
-    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
+    url "https://files.pythonhosted.org/packages/b9/d8/eab98a517c14134c0b2eb4e2387bc5f457334293ec5d2dd3857ec2966802/zipp-4.1.0.tar.gz"
+    sha256 "4cb57381f544315db7688e976e922a2b18cdb513d21cc194eb42232ba2a3e602"
   end
 
   def install
