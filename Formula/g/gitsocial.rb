@@ -8,11 +8,11 @@ class Gitsocial < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c2a8aa53313f8763ecda59eff36c68089ab4fadce3e24dd2b7a4963f3f86844"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c2a8aa53313f8763ecda59eff36c68089ab4fadce3e24dd2b7a4963f3f86844"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c2a8aa53313f8763ecda59eff36c68089ab4fadce3e24dd2b7a4963f3f86844"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f135f1c0e376cd37059e087e50524c31a8c4d1a0a513b1f175d9f404a76ff79"
-    sha256 cellar: :any,                 x86_64_linux:  "5af87538686db2c8e67114e8add99e55f75efa62af1f5e0eaed2ac653c6d1ae3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46c0490c0edea382e1d15fe4cc76519925cd7b4e0686930b4eec60af2b4672f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46c0490c0edea382e1d15fe4cc76519925cd7b4e0686930b4eec60af2b4672f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46c0490c0edea382e1d15fe4cc76519925cd7b4e0686930b4eec60af2b4672f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddeaac72d38853cbd4a1093453d8e6941d008f64904dce972aac3957e91330fc"
+    sha256 cellar: :any,                 x86_64_linux:  "70563e9d123c10e7cc57ab0e89ddaf1876784174f4aa25432101ee0a45dca258"
   end
 
   depends_on "go" => :build
