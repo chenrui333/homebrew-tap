@@ -9,11 +9,11 @@ class Jocalsend < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5a974dbe72ad43a90ca4c77fbfe63e6a30bf5785a326ce0a570137f8e97d352"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af6663ca9b5bbc3bb90cf807a98b78f25b74e56e35d1d93087acb2425516e2a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bd69dd116b90c4533186e2b910f7a47fe62bfec67202e7a9e7a972a99a13144"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3c64a6bb876f657ac0d39a878794b25818d15f02946c1d415b1d159fc9c4e09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8bf0a1176f7367bd711052447ef894ebe289f1f4af411c32d4a27f7a14d2bef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28814256eedf5508efbacb803dd46e4fb22da88a8546b4a3add69a39c26df790"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5393bad5511b20ca74c930008c61d35a5ee98c41b196ae84ef9e4d2bd55d74fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd2efcc390f1bc325df4490b12879d288e181b809439b1dcc81816d161e10880"
+    sha256 cellar: :any,                 arm64_linux:   "3c01e1dc2bae3d86758476ee4f312f82012ce074f4da55227886a33f037510b7"
+    sha256 cellar: :any,                 x86_64_linux:  "c7da024421effcaf420064a400767641728a8486b116c6ae8d9d897f3b759aad"
   end
 
   depends_on "pkgconf" => :build
