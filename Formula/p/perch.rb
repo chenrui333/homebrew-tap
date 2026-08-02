@@ -7,11 +7,11 @@ class Perch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "045b9f89fe9817a382f38b1c4355169519d43d0c124474e5922a061737e1a6f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3895c0aa0628bb36aebc98932c628e319980289e2fff4bc8f40bd26dee5480cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b84c820a1c0b38bfbe0c2894b425eebe99548b3471f0fa9876407931d1dfe432"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c27b9a8b2060de7887ee61a68996df77c6d8966bb12780ef1e7232724e48d128"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d86019c719b1785cc52b54dfe26238c8fb80fce18df2f69afb3b5fb2f4472361"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0656c35d2cebbdd8051d24cb7ef7aef87db1e8d93146fa589acee56d25baf716"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e524dd46d9da3f5e56968907e2f2f5092605713d2cedf897639d33363160dd8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96d7bbe9b6a32da314c22b455a7fc9d337fe178123b9d1b9e7b90f429f036056"
+    sha256 cellar: :any,                 arm64_linux:   "cc989fdbac0ad838dae9a3e25112801b179cdff80ac601041720900e403414de"
+    sha256 cellar: :any,                 x86_64_linux:  "ca1f2b183095707380f09d451317aa0b66841ac48cebc97c75c75a493236f199"
   end
 
   depends_on "rust" => :build
