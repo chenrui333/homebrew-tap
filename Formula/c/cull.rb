@@ -1,8 +1,8 @@
 class Cull < Formula
   desc "Interactive TUI disk space analyzer"
   homepage "https://github.com/legostin/cull"
-  url "https://github.com/legostin/cull/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "55b03cdd488d1ace8feee2bbef46d09b695791a81f95670c2b200d38b2c9a730"
+  url "https://github.com/legostin/cull/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "3d9bcc571b40a77ce10c66c3e32b0d60c0116135abcbd7a88d4607c787d915ce"
   license "MIT"
   head "https://github.com/legostin/cull.git", branch: "main"
 
