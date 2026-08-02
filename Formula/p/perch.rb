@@ -1,10 +1,9 @@
 class Perch < Formula
   desc "Terminal social client for Mastodon and Bluesky"
   homepage "https://perch.ricardodantas.me/"
-  url "https://github.com/ricardodantas/perch/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "c4a6b6212f16c6ddd4d37d131235997da0cdb9334977fd2c45326726c158736d"
+  url "https://github.com/ricardodantas/perch/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "8e1b2d6dfbd324485996ab9b3c35b035fd0443e8d5608d447b947c53364ff48f"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
