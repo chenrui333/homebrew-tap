@@ -1,8 +1,8 @@
 class Jocalsend < Formula
   desc "Rust terminal client for Localsend"
   homepage "https://git.kittencollective.com/nebkor/joecalsend"
-  url "https://static.crates.io/crates/jocalsend/jocalsend-1.6.18033988.crate"
-  sha256 "d967acd99a7b266bdec05ec8e2a8cc1f79ebbd425cb43efc0ca2f20a7f6096d6"
+  url "https://static.crates.io/crates/jocalsend/jocalsend-1.6.180339887.crate"
+  sha256 "68d6873338af44ae4fd6437a77e46837d84fa45d771ffbb989329c15a770a8f7"
   # https://git.kittencollective.com/nebkor/joecalsend/src/branch/main/LICENSE.md
   # dual license
   # license :unfree
