@@ -1,8 +1,8 @@
 class Castor < Formula
   desc "DX-oriented task runner and command launcher built in PHP"
   homepage "https://castor.jolicode.com/"
-  url "https://github.com/jolicode/castor/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "55147f5fc167b3ee272294d0f4fdb09046bf2de420f8ef62962f63cfed2ffeb5"
+  url "https://github.com/jolicode/castor/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "e1bf8848cb01ba96d5229fd48ec6621167edf79a851c8c9ecf9e3ce82e234d0b"
   license "MIT"
 
   bottle do
@@ -15,6 +15,7 @@ class Castor < Formula
   end
 
   depends_on "composer" => :build
+  depends_on "go" => :build
   depends_on "php"
 
   def install
@@ -28,12 +29,12 @@ class Castor < Formula
     EOS
     chmod 0755, bin/"castor"
 
-    # remove non-native watcher
+    # Build the native watcher from source instead of installing upstream prebuilt binaries.
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-
-    (libexec/"tools/watcher/bin").children.each do |file|
-      rm(file) if file.basename.to_s != "watcher-#{os}-#{arch}"
+    cd libexec/"tools/watcher" do
+      rm_r "bin"
+      system "go", "build", *std_go_args(output: "bin/watcher-#{os}-#{arch}", ldflags: "-s -w"), "main.go"
     end
   end
 
