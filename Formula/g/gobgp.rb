@@ -1,8 +1,8 @@
 class Gobgp < Formula
   desc "CLI tool for GoBGP"
   homepage "https://osrg.github.io/gobgp/"
-  url "https://github.com/osrg/gobgp/archive/refs/tags/v4.7.0.tar.gz"
-  sha256 "a23224bee8062376b7bed7c6da9cf72ff518609f9e092eb1b876b976c12904c6"
+  url "https://github.com/osrg/gobgp/archive/refs/tags/v4.8.0.tar.gz"
+  sha256 "acaf0834c8b72a5d8d6c618c17c1548b129d2015333d4d65696695a2577d82f4"
   license "Apache-2.0"
   head "https://github.com/osrg/gobgp.git", branch: "master"
 
