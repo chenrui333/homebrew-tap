@@ -8,11 +8,11 @@ class Sbomlyze < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0d37372af22b77524578147e28bebdbd8fb73f4067a9d5021a4aa924f8e641f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0d37372af22b77524578147e28bebdbd8fb73f4067a9d5021a4aa924f8e641f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0d37372af22b77524578147e28bebdbd8fb73f4067a9d5021a4aa924f8e641f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "275952e2c82e202decd2ddb6089dc5aa5fe4d2fb2ec036e51a631df3efd11204"
-    sha256 cellar: :any,                 x86_64_linux:  "9cbb610d54bf414e92b474e20020998c930b2c49b600e5832cba8ffc71d799fd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "163fa3eb097f90f64c932c6b2a7f542655b16e602a241f32f20b714cf7d95c04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "163fa3eb097f90f64c932c6b2a7f542655b16e602a241f32f20b714cf7d95c04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "163fa3eb097f90f64c932c6b2a7f542655b16e602a241f32f20b714cf7d95c04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8e325e16af4925f28f956840ebe6a8d24443dc7780d39982952c38c773c9ecf"
+    sha256 cellar: :any,                 x86_64_linux:  "02a1230a6651a41c0b84b31f6c4f14fa4bf1563ff90f54acce90d2f9ab535f90"
   end
 
   depends_on "go" => :build
