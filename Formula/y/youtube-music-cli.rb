@@ -1,8 +1,8 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "334370fb7ef4eaa9cf300c390b71309cc8f85d87785f6333971382cf148f4465"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "df159a7aa35e5f816f748bd227fef35291fa3df9140df520434e20e73ce596e1"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
