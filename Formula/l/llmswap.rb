@@ -10,11 +10,11 @@ class Llmswap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "a3d78e8c8f788baac8b5d2033f15c8ff9759980e29b84e1a41e9fcea37497276"
-    sha256               arm64_sequoia: "cbef9e04a4d8dd416fa982327d884f5c034ea712d266a09f382fef1d326f2b33"
-    sha256               arm64_sonoma:  "6e63e4dd8c0707c17696efb6d2fefad1f5498ea273c4f9ebea7bc4f3bd6bddcf"
-    sha256 cellar: :any, arm64_linux:   "1dffa868e865a5b78a6cb239f79ff186417a16e49132c26d4b216e7b4cff235d"
-    sha256 cellar: :any, x86_64_linux:  "b89bfddfec77c5e629892c8b6125b64cad18d2eea80e2919afb0e2e629ce880c"
+    sha256               arm64_tahoe:   "61f353f2dccf978c4e694d573b34e97017a954f90989f2d5f358f8d312c4c39e"
+    sha256               arm64_sequoia: "6c3e639c6ddf19f29fc1146d30d7d41172322fa5a6c4d28820afbe1390e8e0ad"
+    sha256               arm64_sonoma:  "bc67bfb02b5061e39cb058672a55aa3ffebce0e58d583b22336261ab21c3ea27"
+    sha256 cellar: :any, arm64_linux:   "6025cb79f02de9df82c8d39bf03a65171e4afc9a5bd82309eba4976b7152b0f1"
+    sha256 cellar: :any, x86_64_linux:  "c0e916a1c57b2823a9a6785d321c7db2fa0b70acc35bb592898b17467e53df1e"
   end
 
   depends_on "pkgconf" => :build
