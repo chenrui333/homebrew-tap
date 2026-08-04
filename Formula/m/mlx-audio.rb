@@ -3,8 +3,8 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/e7/02/40b042713edf6f8f7714f711a2fc5191b871c4c39d79df6e7726de6a81e9/mlx_audio-0.4.6.tar.gz"
-  sha256 "9f377ba4c0927af06526ed2d03b2fa44eb158d83385da96422da17c926b8589f"
+  url "https://files.pythonhosted.org/packages/3e/b0/8d83fecf104a94fbbfa0681e67231aa763dcc740732cb4f02c2f09946b91/mlx_audio-0.4.7.tar.gz"
+  sha256 "bfd2ee61342ca58ba15b4cef20ff7910600788cb7c604c8bffd32a45a3d62c98"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
