@@ -1,8 +1,8 @@
 class Ergo < Formula
   desc "Modern IRC server (daemon/ircd) written in Go"
   homepage "https://github.com/ergochat/ergo"
-  url "https://github.com/ergochat/ergo/archive/refs/tags/v2.19.0.tar.gz"
-  sha256 "37abcccd951fb9b672efffaa90e021d5f7d8b6a300137e2d89d708986e041927"
+  url "https://github.com/ergochat/ergo/archive/refs/tags/v2.19.1.tar.gz"
+  sha256 "7b1f6fac874a75c766ccd41d068f4408ac09aa30e594233afe87e7793d93c587"
   license "MIT"
   head "https://github.com/ergochat/ergo.git", branch: "master"
 
