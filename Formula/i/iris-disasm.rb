@@ -1,8 +1,8 @@
 class IrisDisasm < Formula
   desc "ARM64/ARM64E disassembler with semantic layer validated against LLVM"
   homepage "https://github.com/mi11ione/iris"
-  url "https://github.com/mi11ione/iris/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "02217f134d73c81375e02cafdb74c2620caddf78a8b81a5ad4f2d24b8d17938b"
+  url "https://github.com/mi11ione/iris/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "af54a26338f362bcf534d661748b9cdfe73eb0cd8243ae23e6ddfabb7c843da0"
   license "Apache-2.0"
   head "https://github.com/mi11ione/iris.git", branch: "main"
 
