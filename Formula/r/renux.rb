@@ -3,8 +3,8 @@ class Renux < Formula
 
   desc "Terminal-based bulk file renamer with a TUI"
   homepage "https://github.com/andrianllmm/renux"
-  url "https://files.pythonhosted.org/packages/31/b0/a88fa22032c0ec614086dc3411026cee2cd51bf4d92074178a44e57c5098/renux-0.1.3.tar.gz"
-  sha256 "0d40976c7a770fdb40b42c6e41093dd0ac7416c605a86f2a3609c8c915d7a3e1"
+  url "https://files.pythonhosted.org/packages/7a/1a/70be24399edbf0e751c3f5025fd90e3bf087bcb083a10ef9b7bab85003c7/renux-0.3.1.tar.gz"
+  sha256 "a0df22df76f6fdff5d377d56a744f4f1b4fbf865fbf3d4f6d3e05fe7c8e89477"
   license "MIT"
   head "https://github.com/andrianllmm/renux.git", branch: "main"
 
@@ -14,6 +14,11 @@ class Renux < Formula
   end
 
   depends_on "python@3.14"
+
+  resource "hachoir" do
+    url "https://files.pythonhosted.org/packages/31/e5/3a7d611dc87aab2c088be040f5da2f6937e308044983848e648d97ef388b/hachoir-3.3.0.tar.gz"
+    sha256 "fd7679f649c17ee45ab2ba5eacddc702c667ea5200c0a1fd063d4615fa7270d2"
+  end
 
   resource "linkify-it-py" do
     url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
@@ -33,6 +38,11 @@ class Renux < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "pillow" do
+    url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
+    sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   end
 
   resource "platformdirs" do
