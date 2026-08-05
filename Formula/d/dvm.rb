@@ -1,8 +1,8 @@
 class Dvm < Formula
   desc "Deno Version Manager"
   homepage "https://dvm.deno.dev"
-  url "https://github.com/justjavac/dvm/archive/refs/tags/v1.9.3.tar.gz"
-  sha256 "ce52f153d7d11f9cec3904b2a22b7298576a76be2f93fb026f8b780e5770d2df"
+  url "https://github.com/justjavac/dvm/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "30a8d4904a19b9c6273301e954eb279af81dbf6710af45289300f794fb1f1fbf"
   license "MIT"
 
   bottle do
