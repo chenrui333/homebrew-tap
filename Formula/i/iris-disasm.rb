@@ -8,9 +8,9 @@ class IrisDisasm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a3f55f82977c44349674db7ed82941561239b4043ccdb6d6e81111ae815b688"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fc41f74dc4c73ff9f07603ae2c48d6500644ebf1c92c81f89221103c53216b0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "8507a8e408b4a277cbd200199980b598e35db989022f1232a8fcbf6f1d5de728"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3ee951d8a8af57af73ef6d612bb6f8813d59b010f596e45d204db55c2e66a20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6edd77a6d61ba7d484fa25a2d77274ddbefc80e5eb14b295f9eac380d6b23b1"
+    sha256 cellar: :any_skip_relocation, sequoia:       "2111330bc215b0e53d33493bb066b9d26628e68be553348f8e2181b68d036cf0"
   end
 
   depends_on xcode: ["16.0", :build]
