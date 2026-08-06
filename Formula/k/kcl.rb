@@ -1,8 +1,8 @@
 class Kcl < Formula
   desc "CLI for the KCL programming language"
   homepage "https://github.com/kcl-lang/cli"
-  url "https://github.com/kcl-lang/cli/archive/refs/tags/v0.12.7.tar.gz"
-  sha256 "81056fa89c0b3fda9093d73485464426a82a72e27f5f0cb5c019663c788246ba"
+  url "https://github.com/kcl-lang/cli/archive/refs/tags/v0.12.8.tar.gz"
+  sha256 "1781484d6d1667feeeadb2cb2bdb9c6baa1fde83c97c498cfbb92381fbd48d43"
   license "Apache-2.0"
   head "https://github.com/kcl-lang/cli.git", branch: "main"
 
