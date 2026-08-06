@@ -1,8 +1,8 @@
 class Hapi < Formula
   desc "Agentic coding - access coding agent anywhere"
   homepage "https://github.com/tiann/hapi"
-  url "https://registry.npmjs.org/@twsxtd/hapi/-/hapi-0.26.0.tgz"
-  sha256 "3da08185597a904ee7378897ca646e64b2a1b3b264aa06890a3cd018ee846d2b"
+  url "https://registry.npmjs.org/@twsxtd/hapi/-/hapi-0.27.0.tgz"
+  sha256 "998a1f28a1b8262faed6f4b247249bb517fed2ec1ad23dee14c3dd267b6d8a5d"
   license "MIT"
 
   bottle do
