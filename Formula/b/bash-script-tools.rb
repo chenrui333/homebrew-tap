@@ -1,8 +1,8 @@
 class BashScriptTools < Formula
   desc "Web-based bash script formatter and linter with AI-powered autofix"
   homepage "https://github.com/overflowy/bash-script-tools"
-  url "https://github.com/overflowy/bash-script-tools/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "c4a1554057dcd1e3a15edbf11d6c5ba232804082378d77cc620e05572ea7ffde"
+  url "https://github.com/overflowy/bash-script-tools/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "a98b6b136298c0035385d0a4d3e185995a844ad8b1c7ebbbd42ead33f326a3c6"
   license "MIT"
   head "https://github.com/overflowy/bash-script-tools.git", branch: "main"
 
@@ -26,12 +26,14 @@ class BashScriptTools < Formula
   test do
     port = free_port
 
-    ENV["PORT"] = port.to_s
-    ENV["GROQ_MODEL_ID"] = "openai/gpt-oss-120b"
+    config_dir = testpath/"config"
+    (config_dir/"bash-script-tools").mkpath
+    (config_dir/"bash-script-tools/config.toml").write "port = #{port}\n"
+    ENV["XDG_CONFIG_HOME"] = config_dir
 
     pid = spawn bin/"bash-script-tools"
-    sleep 1
-    output = shell_output("curl -s http://localhost:#{port}/")
+    output = shell_output("curl --retry 10 --retry-connrefused --retry-delay 1 --max-time 15 -s " \
+                          "http://localhost:#{port}/")
     assert_match "Format and lint your Bash scripts", output
   ensure
     Process.kill("TERM", pid)
