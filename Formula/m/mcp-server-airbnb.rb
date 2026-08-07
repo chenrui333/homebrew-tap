@@ -1,8 +1,8 @@
 class McpServerAirbnb < Formula
   desc "Search Airbnb using your AI Agent"
   homepage "https://www.openbnb.org/"
-  url "https://registry.npmjs.org/@openbnb/mcp-server-airbnb/-/mcp-server-airbnb-0.1.4.tgz"
-  sha256 "2d1cbfb4ac0c15b942fdcd10e2daa392268eb4f018da936557490de32b878378"
+  url "https://registry.npmjs.org/@openbnb/mcp-server-airbnb/-/mcp-server-airbnb-0.3.0.tgz"
+  sha256 "d1dbc2e10b72292d1eaad4bc1a6e8ef4119392eba9fc0df02f60e2ebc5f3a2f8"
   license "MIT"
 
   bottle do
