@@ -7,7 +7,7 @@ class McpServerAirbnb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "02042cc629412ca395d1292cfd704acc54201aba0a9515499b1e966e874b4d94"
+    sha256 cellar: :any_skip_relocation, all: "fb33f4e9f5e769b7bee2501ef9e2a95a28988788816114e2c875b98f116d794f"
   end
 
   depends_on "node"
