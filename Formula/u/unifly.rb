@@ -8,11 +8,11 @@ class Unifly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae1dc3ec88848b8e2f2927096d50b27bd2149e21b1089ca424a218133cdcf63d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "082e8f94eb6d7023fddb61a1039eec5cfebcd26329e8fe05d0c245bc26986474"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50738900480eec146339491c251aaec223d9b41a5e4836f286808660900dc116"
-    sha256 cellar: :any,                 arm64_linux:   "3950744df4746f39c8f456d1aa886654922ad7b73a85e14a97c5107120d45e81"
-    sha256 cellar: :any,                 x86_64_linux:  "832f934a651a7c5a257bdc3459ca46c10b5bcb05d95048ce93928840f8fbe269"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b80063fea09742a3d1870b08ec8ea1ebd679850418491c2bad684bb0f76bae3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4440abeaf8be528090c409ef708180635d4967eb34d7be9c191ce63492a73bdc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5540ad1d9bb3000c6a1e178a2b450639f273bf7eca5a207e846a4fddeb74f8e"
+    sha256 cellar: :any,                 arm64_linux:   "e4c578be69b270c20bf2d73dd8ff4b5c207c1f423dd99a7bfd74c98560522ac4"
+    sha256 cellar: :any,                 x86_64_linux:  "65c5dbfa8e96a8555b0681fcb8c13f4bf09669152dbd3f20dea0f0fe29efc0a5"
   end
 
   depends_on "pkgconf" => :build
