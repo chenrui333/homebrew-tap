@@ -3,8 +3,8 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/f4/63/d5e026a1fc09742ef91c192d2eb891e64fea25df35a7f649e840cdc1d0f1/apm_cli-0.27.0.tar.gz"
-  sha256 "84c8046d8c590134f84ed587212fe4a07b308fdef8c48b3c79e0b9531c0224ab"
+  url "https://files.pythonhosted.org/packages/08/c1/cdaebb383c55794358ec1c852be62f741fde84ad7a9cecfea5753be86a5e/apm_cli-0.28.0.tar.gz"
+  sha256 "f36253a1078c53707cd8c21a8106f7c7f2d1579c7b718584db61bda353f74521"
   license "MIT"
 
   bottle do
@@ -88,8 +88,8 @@ class ApmCli < Formula
   end
 
   resource "condense-json" do
-    url "https://files.pythonhosted.org/packages/94/b3/d784cbc05556192ea1e798cae96363835d649fe7420ff030190789645be1/condense_json-0.1.3.tar.gz"
-    sha256 "25fe8d434fdafd849e8d98f21a3e18f96ae2d6dbc2c17565f29e4843d039d2bc"
+    url "https://files.pythonhosted.org/packages/d1/a5/7158b674fa5b890d80faaf42dd438d1a765661cd22430ddf499759cf44e1/condense_json-1.1.tar.gz"
+    sha256 "c455b54bbbab89a69f598b09f2003a89b738df20d30e6aa341c495401ec5b349"
   end
 
   resource "distro" do
@@ -113,8 +113,8 @@ class ApmCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/ba/0d/132ed135c871b6bf91adf16a0e43797cd535b81d4973b5d09291c54fc5ee/gitpython-3.1.57.tar.gz"
-    sha256 "c493ec57c0ef6b19743798b6a5af859c71814b524e7e6f97baa2f8e658961488"
+    url "https://files.pythonhosted.org/packages/26/d6/5f358ff283325580c2003a6d953aea18cfe10ae87b46f5ebc80fa3a386dc/gitpython-3.1.58.tar.gz"
+    sha256 "621416df10ef3fd0e19fabf9172ddeed0fa704d353d04f194eec56a625a95b22"
   end
 
   resource "h11" do
@@ -148,8 +148,8 @@ class ApmCli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/02/2a/ac37d94f6ac91d501475d80a0a1d8fb6bce392f9d7b483bf87257342e0b7/llm-0.31.1.tar.gz"
-    sha256 "f99955cfd92cdf7b8dc08a795f68c688cefdbc4f9a67245988ccc1adb5c49eeb"
+    url "https://files.pythonhosted.org/packages/b7/bd/af98f3401bab026f3153de0edba65ff56e56ac7abaf34ab568cf461cd7f9/llm-0.32.tar.gz"
+    sha256 "76adad7cceddbe65e970a96ee879fc75709ce05fdfb7ca9503b66bede5933679"
   end
 
   resource "llm-github-models" do
@@ -173,8 +173,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/bb/5a/c45fa035cd72c70ebe67c6e079e3adf871492382634f69e3dff62c43597d/openai-2.52.0.tar.gz"
-    sha256 "7c736d592f81471ce1f734838390983c4d8c8aecff23dcd36e600a58e5032d9c"
+    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
+    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
   end
 
   resource "pluggy" do
@@ -270,11 +270,6 @@ class ApmCli < Formula
   resource "sqlite-fts4" do
     url "https://files.pythonhosted.org/packages/c2/6d/9dad6c3b433ab8912ace969c66abd595f8e0a2ccccdb73602b1291dbda29/sqlite-fts4-1.0.3.tar.gz"
     sha256 "78b05eeaf6680e9dbed8986bde011e9c086a06cb0c931b3cf7da94c214e8930c"
-  end
-
-  resource "sqlite-migrate" do
-    url "https://files.pythonhosted.org/packages/2c/be/cb7cfb197a864c1676cb5e7721169de4923f26fb4c25351e492cbdde8c22/sqlite_migrate-0.2.tar.gz"
-    sha256 "c6b78b5bb486b541a5c484c93a22079ad7fab8c142a26793830748586457b3c8"
   end
 
   resource "sqlite-utils" do
