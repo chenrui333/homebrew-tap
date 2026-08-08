@@ -1,8 +1,8 @@
 class Msgvault < Formula
   desc "Offline email archive with fast search and analytics"
   homepage "https://msgvault.io"
-  url "https://github.com/wesm/msgvault/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "28f608a8828005ca8eb5063e707425cff4c68118d387e69a8b4d9ed2d2be01ee"
+  url "https://github.com/wesm/msgvault/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "3c65a6132033b5dab8a1c6638f38590f84b2bb0572b22546e07e6d7f6275a39c"
   license "MIT"
   head "https://github.com/wesm/msgvault.git", branch: "main"
 
