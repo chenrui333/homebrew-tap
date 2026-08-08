@@ -3,8 +3,8 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/cc/71/737cd19fbc4adb5ffc17a15dac58bc7bfeef3898a48b97aa15eaf0cc612e/mlx_vlm-0.6.9.tar.gz"
-  sha256 "1a1e368cecc4aac64568d1b528f0935d6ab2aab6e38c34d980b0254f65fdde5c"
+  url "https://files.pythonhosted.org/packages/b1/9b/08307fbbfeaba9075b6eb94a697428b9b6e40a85f712048fb4b97f21f004/mlx_vlm-0.6.10.tar.gz"
+  sha256 "87ef8bba007c29ddc877c15e95eb20c7d90b0777951e27691c03cabb09e6ef40"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
@@ -45,8 +45,8 @@ class MlxVlm < Formula
   ]
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
-    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
+    url "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz"
+    sha256 "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
   end
 
   resource "charset-normalizer" do
