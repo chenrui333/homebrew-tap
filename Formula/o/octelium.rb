@@ -1,8 +1,8 @@
 class Octelium < Formula
   desc "Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API gateway & homelab"
   homepage "https://octelium.com/docs/octelium/latest/overview/intro"
-  url "https://github.com/octelium/octelium/archive/refs/tags/v0.38.0.tar.gz"
-  sha256 "9371cbe49964572669d57c50fa995101a5fbcd430eee06755594758c5557a248"
+  url "https://github.com/octelium/octelium/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "e12e2aee2b83114eea7882603f74790de739c34a150dd2158b554c86f252fb1a"
   license "Apache-2.0"
   head "https://github.com/octelium/octelium.git", branch: "main"
 
