@@ -8,11 +8,11 @@ class InspectCertChain < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8439a39e256ed95f6b151e5faa265338e5b5c2a5b66f5b8f7187f58b1896cc8e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db0cec3244a6cb4c2f73c7ef98f43cca02338fbbfb36c0f6ea83bd9eeb000e60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "612c1dadaf817039758bf5a10802982d5ecc63be7209720f2c347f432a71e2b6"
-    sha256 cellar: :any,                 arm64_linux:   "f36f836247bc04241b6e4d83a8ff727dbd270a7bf430c0993a395b878bf90102"
-    sha256 cellar: :any,                 x86_64_linux:  "d8545d74f2846045808efafe83107cc9f0d7425dd2092d73e8a2f83f8588d6bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "478f11d6f2bf0e2e0304a1065187f44b720cc64bfaacacc2769f00fedf217b1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e42cf6a7a947f755ef1be3aaad403c50a91ef53df402b40be90b348d9f06717"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2ba4fa39824bdfb0c93e5d7ab51337d2125e16d85ca3338ecc280ba5a368a1c"
+    sha256 cellar: :any,                 arm64_linux:   "48aecfcfdc79c66decc73b31860c94c9a37f29508b1d8295180d171df613682b"
+    sha256 cellar: :any,                 x86_64_linux:  "40baed4cd7107d15b8c7724099387859099e083eed00ff66e7ce31b5aa4b4a99"
   end
 
   depends_on "rust" => :build
