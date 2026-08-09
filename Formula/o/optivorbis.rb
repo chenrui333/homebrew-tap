@@ -1,8 +1,8 @@
 class Optivorbis < Formula
   desc "Lossless, format-preserving, two-pass optimization and repair of Vorbis data"
   homepage "https://optivorbis.github.io/OptiVorbis"
-  url "https://github.com/OptiVorbis/OptiVorbis/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "f1069b35fa24c9b73abb9a28859b84ad0accf968b8892b7a7825decc6c316cd3"
+  url "https://github.com/OptiVorbis/OptiVorbis/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "2416bf529e281040c052e40c57836385a935f2ebfd79eb6430c77cad244182d4"
   license "AGPL-3.0-only"
   head "https://github.com/OptiVorbis/OptiVorbis.git", branch: "master"
 
