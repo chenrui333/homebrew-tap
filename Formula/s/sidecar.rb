@@ -8,11 +8,11 @@ class Sidecar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "180b08e9d58aa6d4768e591e67126bd1e4f2afd60f7f7d838a559dd9242c5e1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23e6c113d2be59fbfaeefbbb1f246c1d735a13484ef879d68aeb0538154ba3d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bccbf3cd38a27836073b5332b805ed167cf870e38a43599500b659bb60d9c7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78fb99a9117989e851135919d9122785c845a1389500bc3c46db06a441c616eb"
-    sha256 cellar: :any,                 x86_64_linux:  "d0b69095d5bd8983362df03804f132a5df004ea9cc862c2348fdc7807e9b8207"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77034767b0c660ec6d78dda06b0bb0aebd048246542c33623e043b486e9faa41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35a25e39d70ba2e3fb7f5b82559d9641d950d4e9b290c31930af8f0f529f8a66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc32ccfe5403f2c5f49fbbd60ece2266e30a0fafd74ad42224e0d38a2901e167"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8d0cd89ef7a62650717a23649972a913f530513e8dbb977c2bd8bb31fbb0e58"
+    sha256 cellar: :any,                 x86_64_linux:  "33d804cbe5478babed0c74f0eb6fd85923bf7c47fe07e6fe520438dfb8d59cb2"
   end
 
   depends_on "go" => :build
