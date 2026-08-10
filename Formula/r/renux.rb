@@ -3,8 +3,8 @@ class Renux < Formula
 
   desc "Terminal-based bulk file renamer with a TUI"
   homepage "https://github.com/andrianllmm/renux"
-  url "https://files.pythonhosted.org/packages/31/b0/a88fa22032c0ec614086dc3411026cee2cd51bf4d92074178a44e57c5098/renux-0.1.3.tar.gz"
-  sha256 "0d40976c7a770fdb40b42c6e41093dd0ac7416c605a86f2a3609c8c915d7a3e1"
+  url "https://files.pythonhosted.org/packages/9c/63/b9b16591c64a0858ac1512ac4cfa32abbdf382b6e1dc616829f165dbe694/renux-0.4.1.tar.gz"
+  sha256 "29ff8ed954ddf5179aaa7643e792f43be3348c9568c2da04eef3fd966b70785b"
   license "MIT"
   head "https://github.com/andrianllmm/renux.git", branch: "main"
 
@@ -14,6 +14,16 @@ class Renux < Formula
   end
 
   depends_on "python@3.14"
+
+  resource "annotated-doc" do
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
+  end
+
+  resource "hachoir" do
+    url "https://files.pythonhosted.org/packages/31/e5/3a7d611dc87aab2c088be040f5da2f6937e308044983848e648d97ef388b/hachoir-3.3.0.tar.gz"
+    sha256 "fd7679f649c17ee45ab2ba5eacddc702c667ea5200c0a1fd063d4615fa7270d2"
+  end
 
   resource "linkify-it-py" do
     url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
@@ -33,6 +43,11 @@ class Renux < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "pillow" do
+    url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
+    sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
   end
 
   resource "platformdirs" do
@@ -55,6 +70,11 @@ class Renux < Formula
     sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
   end
 
+  resource "shellingham" do
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
+  end
+
   resource "text-unidecode" do
     url "https://files.pythonhosted.org/packages/ab/e2/e9a00f0ccb71718418230718b3d900e71a5d16e701a3dae079a21e9cd8f8/text-unidecode-1.3.tar.gz"
     sha256 "bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"
@@ -63,6 +83,11 @@ class Renux < Formula
   resource "textual" do
     url "https://files.pythonhosted.org/packages/af/83/c99c252c3fad2f7010ceb476a31af042eec71da441ffeef75bb590bc2e9e/textual-3.7.1.tar.gz"
     sha256 "a76ba0c8a6c194ef24fd5c3681ebfddca55e7127c064a014128c84fbd7f5d271"
+  end
+
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/ae/40/4a3db7990d1f62a53182aa96eaef57aeb2886a27f90a195bc66713565d31/typer-0.27.1.tar.gz"
+    sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
   resource "typing-extensions" do
