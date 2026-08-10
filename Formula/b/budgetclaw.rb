@@ -7,11 +7,11 @@ class Budgetclaw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "913885cf13621aa5f343261c8d0d8aa4900fe78ef7dd1230103787d21e3ca1ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05a183179da61e2ca29b8c9cadb534c5a7402a456f385792acc4aae18dacd13d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80745b402148dc80be6cbc816f5a256ff66d67741b73181ae1f3102218d10d11"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f7bd28711d1fd09398859082f444201a632f2d4b25da89858e7c519ff6b7b42"
-    sha256 cellar: :any,                 x86_64_linux:  "c770886bf507ee6b3a516935f249f3f7ad3bc3407f29fe0704d1546d6ee850ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a67d3d7674bbef6914992339875751d4ac0c5ab281c4e75e700cedbdd582a76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "849b920485ea5e87652579f879ba82b38b1017d3f81b678924caa3f3cfcc39fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db2dcd89f627d8b1b1b4b125131d116a2135a3a3f762b1841413f57cebae0dee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4dc9fce531dba5faee6584d97cce82b4b4c1aafae26b5f9274315a7899c763e"
+    sha256 cellar: :any,                 x86_64_linux:  "3994a2a37a7582abb169433c7356effd0033301c3d1a6296576efe2bb3bdc405"
   end
 
   depends_on "go" => :build
