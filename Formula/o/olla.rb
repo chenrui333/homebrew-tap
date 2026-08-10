@@ -1,8 +1,8 @@
 class Olla < Formula
   desc "Lightweight & fast AI inference proxy for self-hosted LLMs backends"
   homepage "https://thushan.github.io/olla/"
-  url "https://github.com/thushan/olla/archive/refs/tags/v0.0.28.tar.gz"
-  sha256 "e025ac4b55601e10d6b5f39c67f24f87d60534cc5f3a8cbf444f9be3baf069f1"
+  url "https://github.com/thushan/olla/archive/refs/tags/v0.0.29.tar.gz"
+  sha256 "9ae9d83bcb631f592fa987a14468b1a43cefb662f8259da750044d932a14a2d7"
   license "Apache-2.0"
   head "https://github.com/thushan/olla.git", branch: "master"
 
