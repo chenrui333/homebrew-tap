@@ -3,8 +3,8 @@ class Memora < Formula
 
   desc "Lightweight MCP server for semantic memory storage"
   homepage "https://github.com/agentic-mcp-tools/memora"
-  url "https://github.com/agentic-mcp-tools/memora/archive/refs/tags/v0.2.29.tar.gz"
-  sha256 "0244ac7776d133610dedad9f5f9b755913fd9be014740e0f378cd4aced806993"
+  url "https://github.com/agentic-mcp-tools/memora/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "2369a7f1bbb865c18ab6ea182a9905cea9789624c4bed1e7481eb9ce6e3aaf43"
   license "MIT"
   head "https://github.com/agentic-mcp-tools/memora.git", branch: "main"
 
