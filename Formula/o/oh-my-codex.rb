@@ -1,8 +1,8 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.20.3.tgz"
-  sha256 "b6cacff29bb350df7ef90d589db02e5f96fd7d14fe274e07939d0efb0f41baed"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.20.5.tgz"
+  sha256 "d9a984b39f0703de4273ac43951845cc35cf077cc27874d093353bdb9c3e8c50"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
@@ -17,8 +17,31 @@ class OhMyCodex < Formula
 
   depends_on "node"
 
+  on_linux do
+    depends_on "patchelf" => :build
+  end
+
   def install
     system "npm", "install", *std_npm_args
+
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/oh-my-codex/node_modules"
+    library_replacements = { "libc.so" => "libc.so.6", "libdl.so" => "libdl.so.2", "libm.so" => "libm.so.6" }
+    %w[bare-fs bare-path bare-url].each do |package|
+      prebuilds = node_modules/package/"prebuilds"
+      native = prebuilds/"#{os}-#{arch}"
+      prebuilds.each_child { |dir| rm_r(dir) if dir != native }
+
+      next unless OS.linux?
+
+      binary = native/"#{package}.bare"
+      needed = Utils.safe_popen_read("patchelf", "--print-needed", binary).lines.map(&:chomp)
+      library_replacements.each do |old, new|
+        system "patchelf", "--replace-needed", old, new, binary if needed.include?(old)
+      end
+    end
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
