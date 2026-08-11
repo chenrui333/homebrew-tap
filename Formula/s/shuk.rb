@@ -1,8 +1,8 @@
 class Shuk < Formula
   desc "Filesharing command-line application that uses Amazon S3"
   homepage "https://github.com/darko-mesaros/shuk"
-  url "https://github.com/darko-mesaros/shuk/archive/refs/tags/v0.4.8.tar.gz"
-  sha256 "9f17c0e2a77edd25f15a8de6d2cfbe45c8231db22c88e265a894442895456fd9"
+  url "https://github.com/darko-mesaros/shuk/archive/refs/tags/v0.4.9.tar.gz"
+  sha256 "da15a5c54e55c127a54f69daa36aa904ba22ca59e805d53ae5b03a172103f096"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/darko-mesaros/shuk.git", branch: "main"
 
