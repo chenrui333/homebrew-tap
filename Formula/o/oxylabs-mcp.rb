@@ -3,8 +3,8 @@ class OxylabsMcp < Formula
 
   desc "MCP server for Oxylabs"
   homepage "https://github.com/oxylabs/oxylabs-mcp"
-  url "https://files.pythonhosted.org/packages/ac/bc/8cb180a7dfde57f7e1a2472416b973e386dab7d7bcde31641439be3f809f/oxylabs_mcp-0.9.0.tar.gz"
-  sha256 "564ede39900ca10401a8c7073a479efdd66452d8651f029280c446cb8ca12e93"
+  url "https://files.pythonhosted.org/packages/e8/86/f28cfac18f352bdbd78f23cbb21d629ce6b8512583e46fc27c9d1f261a3b/oxylabs_mcp-0.9.1.tar.gz"
+  sha256 "36766a325e1d06c69852a0068742193ec2bc092f7e7289e7d9f1b14d7054e36c"
   license "MIT"
 
   bottle do
