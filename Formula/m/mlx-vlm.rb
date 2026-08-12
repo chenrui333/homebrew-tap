@@ -3,8 +3,8 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/cc/71/737cd19fbc4adb5ffc17a15dac58bc7bfeef3898a48b97aa15eaf0cc612e/mlx_vlm-0.6.9.tar.gz"
-  sha256 "1a1e368cecc4aac64568d1b528f0935d6ab2aab6e38c34d980b0254f65fdde5c"
+  url "https://files.pythonhosted.org/packages/0c/e0/05f6a5a338aa580469c68bf13c82b90a6f7c4725dc973b7ca911bd874c7d/mlx_vlm-0.6.12.tar.gz"
+  sha256 "68bc27c1482b7d1145e9ac3d9ecd352cc55c91e5492a9355c5c8b40d5d43ccb0"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
@@ -45,8 +45,8 @@ class MlxVlm < Formula
   ]
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
-    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
+    url "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz"
+    sha256 "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
   end
 
   resource "charset-normalizer" do
@@ -60,8 +60,8 @@ class MlxVlm < Formula
   end
 
   resource "llguidance" do
-    url "https://files.pythonhosted.org/packages/da/91/6bc8bb503dc259e46d253b5424385a54fe06c38a4c7a12befe69a3c2455a/llguidance-1.7.6.tar.gz"
-    sha256 "db7febbe412ed2015501904646750071d7e00e6df7f85c4b956ad4f206fd2df7"
+    url "https://files.pythonhosted.org/packages/20/27/972de1ba4c93072fce816b967972e1d18bc48b04b145b5c77b5bd1dc9662/llguidance-1.8.0.tar.gz"
+    sha256 "18d1579eabb040e65c870d50c6df19a7bef140c5260d12ad35b7f0dc446312e0"
   end
 
   resource "miniaudio" do
@@ -70,8 +70,8 @@ class MlxVlm < Formula
   end
 
   resource "mlx-audio" do
-    url "https://files.pythonhosted.org/packages/3e/b0/8d83fecf104a94fbbfa0681e67231aa763dcc740732cb4f02c2f09946b91/mlx_audio-0.4.7.tar.gz"
-    sha256 "bfd2ee61342ca58ba15b4cef20ff7910600788cb7c604c8bffd32a45a3d62c98"
+    url "https://files.pythonhosted.org/packages/16/e4/a936c9e2a94b0cf44aacd3e2513bc3ad9814f6faa0a585a841182115fd67/mlx_audio-0.4.8.tar.gz"
+    sha256 "898b999a1deb1aeaa9dad06d62b0c5973e966586ee8d79b74474b9520c9f7b18"
   end
 
   resource "pycparser" do
@@ -100,8 +100,8 @@ class MlxVlm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
-    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
+    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
   end
 
   resource "urllib3" do
