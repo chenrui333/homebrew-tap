@@ -1,6 +1,6 @@
 cask "cc-hdrm" do
-  version "1.4.9"
-  sha256 "5c2cfb69e19c84f2aab963a47fb37f0e38703ae1d1cc06cd98f46e74ded26ca3"
+  version "1.5.0"
+  sha256 "a09014a9f735f54f224cfd6100b89c19c47a971dd38ab8d32ecd84acc75319c5"
 
   url "https://github.com/rajish/cc-hdrm/releases/download/v#{version}/cc-hdrm-#{version}.dmg"
   name "cc-hdrm"
