@@ -7,7 +7,7 @@ class Epiq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "0b3a31de2ff7135d314a3de9e9a0b7b99a3eefaec385138edf000f315646158f"
+    sha256 cellar: :any_skip_relocation, all: "0bf75b14141234c738e111f16101bae27ad8d7543ddf79fecdfb1e1157033c86"
   end
 
   depends_on "node"
