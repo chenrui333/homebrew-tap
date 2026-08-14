@@ -8,11 +8,11 @@ class Multica < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4d101973bf7009ad6f9c9182e8611f608e9ea334cf8c6b2e014bfa4bb298d8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4d101973bf7009ad6f9c9182e8611f608e9ea334cf8c6b2e014bfa4bb298d8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4d101973bf7009ad6f9c9182e8611f608e9ea334cf8c6b2e014bfa4bb298d8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e496b229730d1c0995fc6956ffb6c08bc2254041e5577d026900486b7fa01d9d"
-    sha256 cellar: :any,                 x86_64_linux:  "aa1659310abbeba143cefd145201eb3a83b2828046d3ab4be429cee755a0be60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4347fa91261931f3c17bf2898224ce3f427c380e0a2419d9d06ac0bc249cae1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4347fa91261931f3c17bf2898224ce3f427c380e0a2419d9d06ac0bc249cae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4347fa91261931f3c17bf2898224ce3f427c380e0a2419d9d06ac0bc249cae1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e88041812ce78a1296f157d03fb7ad9626f347852da8d55881809fb9cb024ccf"
+    sha256 cellar: :any,                 x86_64_linux:  "c4dce04c62c13078a8ee2e4b4deb3d81ae47a8d7a1666ec7be24b3e932dcc906"
   end
 
   depends_on "go" => :build
