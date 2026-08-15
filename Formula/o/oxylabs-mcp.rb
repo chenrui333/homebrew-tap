@@ -9,11 +9,11 @@ class OxylabsMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "d8af5b144ffedd7848234881253c195087192f44aa4e8159700fa563617b3731"
-    sha256 cellar: :any, arm64_sequoia: "306221ad5438537a6c62ad6dc1f11fe5da733fd19909851e8e5ea428b842dbb5"
-    sha256 cellar: :any, arm64_sonoma:  "831abcf795575919060404870a07a051ed70f27e53bbe1b341bd72042c0b0fe8"
-    sha256 cellar: :any, arm64_linux:   "427b6dc961c2d7b22672a5711ab7673d2d65571b4c73d69343cc2027193ece73"
-    sha256 cellar: :any, x86_64_linux:  "816abf54d1ae71d369a3c72f80d5f1b9a5445ed300e9a307f442d87c2393b881"
+    sha256 cellar: :any, arm64_tahoe:   "5fb9f0f58357ac0c84ed19fe1b1651f3b678dcf552caa120ff674c01d47cbade"
+    sha256 cellar: :any, arm64_sequoia: "69c1e92baadbb0d863db33e02c5adb09291161886f36b051267d6423eff8544e"
+    sha256 cellar: :any, arm64_sonoma:  "412cf1db4b12c7a96d1ef8b287b6f0ec499b53c49bd3677d366e16765b879c3b"
+    sha256 cellar: :any, arm64_linux:   "2859dd576a8019dc3e68b41fa897dbd12b1c6aaf5621f7d62260fd36bab7509e"
+    sha256 cellar: :any, x86_64_linux:  "7a9a8aad724684a3bfae4850acfd19e0783655795c1c4dfb99a221fa6a201ae1"
   end
 
   depends_on "rust" => :build # for uv-build
