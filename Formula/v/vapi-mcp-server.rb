@@ -7,10 +7,7 @@ class VapiMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b11cee0ef3048654ea6795a711f4cf8f633eab1f0f8c8bd55936b8730537cb60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aef60a09a7388e2a117d9c1a6dd7ca75b95991eae75fc49e3616ba64bc110f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "a2683cae1adbfaaa11ce56b7cae596b4694f009493e3934ef8c6593480811cc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35c596115b1c6b9dbaa690ed23c9a7fce4cab4ad30efb083a4910c308920fc13"
+    sha256 cellar: :any_skip_relocation, all: "b499fae004902b9ee62883ccc5ef053d2888a61d0d348948be0eef4da0515d05"
   end
 
   depends_on "node"
