@@ -8,11 +8,11 @@ class Nanobrew < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "285a4abdf6d7d814d1438bbc07ac1ffd37c4b42bfaff6fa8f0d15971cf464fb2"
-    sha256 arm64_sequoia: "228bdcb2e05fe66f9dc06aee7ba2d2456bcc3f80166abc725588e0031a129850"
-    sha256 arm64_sonoma:  "3dda4668b772acd75ad1f9325b065501a1de3c14a42475fc3f024fc80e0a96a2"
-    sha256 arm64_linux:   "53040573f4fe4d8ac69c8a289bb721f7a9f969bbace4cf895b05b3746c948c45"
-    sha256 x86_64_linux:  "d01c6d45d1aa5c79400b8bc7235ba0ef8a6b50981696a97b91ba7aba45007941"
+    sha256 arm64_tahoe:   "41e88ef4400de63070795419d6f10c0a1134e973321a2f17298a2c8972ce6dd2"
+    sha256 arm64_sequoia: "6e307a4218d58d866b9d66e676dbf79e14c644604cb2bd5935cad8e2f9587134"
+    sha256 arm64_sonoma:  "f8bb75038890f9512fa9819c8ba0b857ad1a00be645fd78b28b47679263f296d"
+    sha256 arm64_linux:   "40cb6578102d88dcb01d68bd4b74574582e844aec3ff2a81e0dca584fc9de824"
+    sha256 x86_64_linux:  "2361b15b63111a99a6f4ecf5b7fd966017dfb0f28e58849c094b9a7a946b0ff4"
   end
 
   depends_on "zig" => :build
