@@ -9,11 +9,11 @@ class ArxivMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bada0c3c699e4028a3f832d08cc6e5115863aa75dc66ed66a5240ebda9cecae1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8406e6c3d28d788e9a0620be2b312acf4b2faad36d681ce5d1d9e722327b87af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7297e0bf6872baa0fbdf204b587b9de3833f6e0b41f37404fccb12b2fc33f91e"
-    sha256 cellar: :any,                 arm64_linux:   "8d598dd835c80228a1e1e2fdceb8f77fb398fe0eb89e1df85903931d41c35871"
-    sha256 cellar: :any,                 x86_64_linux:  "8b5729ba3a1ed5431c19ef6ace7d198906c55162f458beb4687ad63c2540c182"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af9fa8ce0ad75efb423be4d808a8ef5592f6d263943938e4cff1411732f27b2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1b1150986f8441d259826fe02de068b5ea1fc66d772943a865632c0c043ed8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fc8c570373e1df3bd93d2994105602747df98476a661694c55d0174644a0fec"
+    sha256 cellar: :any,                 arm64_linux:   "74f69dcee0b4ad1d89bbbf18c55a060f5d9120e7c76976b2e948e84d30c5ed43"
+    sha256 cellar: :any,                 x86_64_linux:  "4a90ec6bdfbb7755fa69bfb85e13a4a9cfa14109ec5e31af573e9be88fea6de6"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize
