@@ -8,11 +8,11 @@ class SemCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "b4764023435c94b631d979fb25a9b2019b909f1ca9be6b1807245111c438445c"
-    sha256               arm64_sequoia: "d9daad6225af110f5895911f3f454ff5cd3c8712b748960e3ea38fc329b1f9b8"
-    sha256               arm64_sonoma:  "170c3a8b847b3223a0effc7b44c4ef93d9c3c27a6b99a97962ede3022a2bc703"
-    sha256 cellar: :any, arm64_linux:   "ec6e8182e0d91ad4a200c3e8251aa221819879d957d95aab4c5ee8d8ece83d8f"
-    sha256 cellar: :any, x86_64_linux:  "e58bf6b3f9ad2d1ed72c4b0f4415f064b0b304556a84cf501fc164c432c97920"
+    sha256               arm64_tahoe:   "cf9cdf7b0806513445c48e7c26a4b139ed57f38ae17eb7e8b9e2d54cb48a31c8"
+    sha256               arm64_sequoia: "e3335ceaa4acd5716dfd2327827e5375f14708dff2b64bbe9d27bd76ee25c85b"
+    sha256               arm64_sonoma:  "cd8a3b505a546d2875d08589906f5238eb056dfa949897894b5e58dbda672ddf"
+    sha256 cellar: :any, arm64_linux:   "c94bbf3573f50fd05a73be3311c8ab7c515726fcd1609233be5bc4c3316509cf"
+    sha256 cellar: :any, x86_64_linux:  "b5e7ae92b8501bbdd6c2a210fe65aed0f9b007950cd68f91f92400e1260dd526"
   end
 
   depends_on "pkgconf" => :build
