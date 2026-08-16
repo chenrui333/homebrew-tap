@@ -1,8 +1,8 @@
 class Hulak < Formula
   desc "Lightweight file-based API client with encrypted secrets store"
   homepage "https://github.com/xaaha/hulak"
-  url "https://github.com/xaaha/hulak/archive/refs/tags/v0.3.31.tar.gz"
-  sha256 "f0e4facef1307c4c6bfb73cf249751991a04e513885384d35cfa78d82c2fd6a3"
+  url "https://github.com/xaaha/hulak/archive/refs/tags/v0.3.32.tar.gz"
+  sha256 "3fa335bdcdd981e51c1f145bbf609faa2f1243f787fa9245f845200d9fc7f4c9"
   license "MIT"
   head "https://github.com/xaaha/hulak.git", branch: "main"
 
