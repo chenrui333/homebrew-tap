@@ -1,8 +1,8 @@
 class Epiq < Formula
   desc "Distributed terminal-native issue tracker backed by Git"
   homepage "https://github.com/ljtn/epiq"
-  url "https://registry.npmjs.org/epiq/-/epiq-1.3.5.tgz"
-  sha256 "95c699398bf3521d421465e8bbe0f03f8477a419abf1cbe7c5e0ef22c4e1812b"
+  url "https://registry.npmjs.org/epiq/-/epiq-1.4.1.tgz"
+  sha256 "0920e4250f447787bd776441e337ad30804d7fa1a2ad47663c44b9082a757c5d"
   license "MIT"
 
   bottle do
