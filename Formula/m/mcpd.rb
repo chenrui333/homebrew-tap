@@ -1,8 +1,8 @@
 class Mcpd < Formula
   desc "Declaratively manage Model Context Protocol (MCP) servers"
-  homepage "https://mozilla-ai.github.io/mcpd/"
-  url "https://github.com/mozilla-ai/mcpd/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "c11f587f732b02c139953ce078a5cf05f5a91f8ac685ac741f29da24d27a8752"
+  homepage "https://github.com/mozilla-ai/mcpd"
+  url "https://github.com/mozilla-ai/mcpd/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "7191c171e423371fec0b8c2d6d638e1af1faed146d146fed4c06a1be07f2d952"
   license "MIT"
   head "https://github.com/mozilla-ai/mcpd.git", branch: "main"
 
