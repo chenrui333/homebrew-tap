@@ -7,11 +7,11 @@ class Zigfetch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "12f9191a6ba166fd6615a42aaea29a3526d8d1ae7fe7dbcc33bf571995b2effb"
-    sha256               arm64_sequoia: "c5f39ed16118b69ddc4b61e8691894269f2c0ec0d9394dc6e9c1914fcb4706bb"
-    sha256               arm64_sonoma:  "23f07780fb31fd241adfd986ad24e992824787b8d19ebd764e490fbb3af68870"
-    sha256 cellar: :any, arm64_linux:   "35f1ade344034af14a60e03a0eaf3fed4cd674e38ff0a91d58c443d1b182f18d"
-    sha256 cellar: :any, x86_64_linux:  "3c72fb9740a081c46e848decc2d3872ad98c55fece85ac12a084d490a795d0df"
+    sha256               arm64_tahoe:   "03f2dea90c04fbf085a9a0c56c52658bc4809918ac3ad88de19f4966174bc1f9"
+    sha256               arm64_sequoia: "9f26056e2fae6bdefb091d8a06def4e1a59a5875e47ccec182c19fab9c419711"
+    sha256               arm64_sonoma:  "173c57761bfeca57a7f0f401bd847bfefd3e1254f16c1c877f73b557d903171c"
+    sha256 cellar: :any, arm64_linux:   "b1da234f0df2d08e7e1bf062bf81703724b3a2074eafb538571aa2bab1b57cc6"
+    sha256 cellar: :any, x86_64_linux:  "0c79852597abec359ef7651a1ededdb8df1d6ecf762b86777e0071151537d826"
   end
 
   depends_on "pkgconf" => :build
