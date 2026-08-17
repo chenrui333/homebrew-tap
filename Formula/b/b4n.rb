@@ -1,8 +1,8 @@
 class B4n < Formula
   desc "Terminal user interface (TUI) for Kubernetes API"
   homepage "https://github.com/fioletoven/b4n"
-  url "https://github.com/fioletoven/b4n/archive/refs/tags/v0.5.5.tar.gz"
-  sha256 "8764b07ae11c0474337112b5da1387c01cb137b71d4def93b0eeee72db9af495"
+  url "https://github.com/fioletoven/b4n/archive/refs/tags/v0.5.6.tar.gz"
+  sha256 "c016fa33229c5be961d0dfe9ab23aede7404c184f59135f85f11af685c43d973"
   license "MIT"
   head "https://github.com/fioletoven/b4n.git", branch: "main"
 
