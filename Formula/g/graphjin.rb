@@ -1,8 +1,8 @@
 class Graphjin < Formula
   desc "Build NodeJS / GO APIs in 5 minutes not weeks"
   homepage "https://graphjin.com/"
-  url "https://github.com/dosco/graphjin/archive/refs/tags/v3.20.24.tar.gz"
-  sha256 "330486d853f87d123109b90d5d05f14f053df5e7bb6261351ac3e1949d1626cb"
+  url "https://github.com/dosco/graphjin/archive/refs/tags/v3.20.25.tar.gz"
+  sha256 "0da9c65a6c155f5d74a6c624d20752489a7fb084e5250571001a7f8eafa480cb"
   license "Apache-2.0"
   head "https://github.com/dosco/graphjin.git", branch: "master"
 
