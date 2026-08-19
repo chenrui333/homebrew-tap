@@ -1,8 +1,8 @@
 class Mcdu < Formula
   desc "Modern disk usage analyzer and developer cleanup tool"
   homepage "https://github.com/mikalv/mcdu"
-  url "https://github.com/mikalv/mcdu/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "d6c9ccdee5840ab23191a733f7575449760cfcc668d94961e641c1c042796e92"
+  url "https://github.com/mikalv/mcdu/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "6a6a4759a81754962d8958de64fe51eff5355188dac5b207af019cd68dcc30ca"
   license "MIT"
   head "https://github.com/mikalv/mcdu.git", branch: "main"
 
