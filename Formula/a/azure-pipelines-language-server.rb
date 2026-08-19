@@ -7,7 +7,7 @@ class AzurePipelinesLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5932148df33ca101adfe4118ccb5138c3a37337747dcfdd248a770fa4a53614f"
+    sha256 cellar: :any_skip_relocation, all: "34132217541136d3bd2fc01ba900fdb4cc519d9278f7e35e5ebba4b9468ec0df"
   end
 
   depends_on "node"
