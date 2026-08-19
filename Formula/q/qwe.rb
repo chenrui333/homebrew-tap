@@ -1,8 +1,8 @@
 class Qwe < Formula
   desc "File-first atomic version control system"
   homepage "https://mainak55512.github.io/qwe/"
-  url "https://github.com/mainak55512/qwe/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "d5637bcb59f2c7f1a1b831c95b8d9f7edde99ca1920be94623109949d60c5b3c"
+  url "https://github.com/mainak55512/qwe/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "7258f9d73bb0b580b02f3db8e09d714148a7ae041e4f231ebc27d68ffd004c04"
   license "MIT"
   head "https://github.com/mainak55512/qwe.git", branch: "main"
 
