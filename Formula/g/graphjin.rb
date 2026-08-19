@@ -8,11 +8,11 @@ class Graphjin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e58430972fca35bea8bd598bc756412a7bb48edb96bfa801c2d08e81909c613"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64e876dda4a467f50ccd4637e99c9147fa4758a1821bdae45fee387d962d9d1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d55e26cc2021e0ed0cbd32fca9ccdc2cfc4980d9053c081fa05b37fa4d03686"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "18174a26a397e8148d7b8d3f937b9da44be4ed6e9bc66a60fbf5a5d76b187d56"
-    sha256 cellar: :any,                 x86_64_linux:  "81fb90cf889dc8c9123cd3d0928c897f26c5f4f0848bcb730bbc43bb11a82ed2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24090ecdc02b87cc767b999ec63dc449b83177fcfe38e8efa9576b2669f90f98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afb824510aaad57f8a7bdc4c0117da769aec6d35ad1b8946d7c7c77924c331ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "773a5023945f1b30f9e5caea498b6b2566baca4060c5e1e00a74dcda55280aa3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e100bf52a1552c68c6c9676eed17631a2e4422fe930662c0309d166e6f071339"
+    sha256 cellar: :any,                 x86_64_linux:  "994d7fdde300bdd998495395ba2752ffcb8df426c92d2946fddb2977107eb431"
   end
 
   depends_on "go" => :build
