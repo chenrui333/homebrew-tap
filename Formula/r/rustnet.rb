@@ -8,11 +8,11 @@ class Rustnet < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "921239f121c5a421dad4a4a6bf99c530292dfb974eca3d4e1006e1b3850699a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "513be57d1e3fd4efceb2176b53b1f2756e7fe121d858a3ba8a5eef767bb4c223"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eb12abb9d842edc453dc175b74f0705aa85cdd62134e5cae501b4f3dc8a47f0"
-    sha256 cellar: :any,                 arm64_linux:   "537eacac87b945cc93e32d11d3a6f039c2b720571690b34c004c96cc454e4fce"
-    sha256 cellar: :any,                 x86_64_linux:  "cae8805ad1cf1ae8ab029d613652cea757797c30a5ea4fd4dce23ab8dbfb399f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "222ca4b57aa92d32e71dc417f4c58eacb5acbc2eea7e180c4e99b6cc86998504"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e8add3ccf2ffb91f22831efd6a125b9de2b21f56e75ce69efe09d7d42b046a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "620210d05f179f42f016a03e002425cb59f4b1a0fab16d742afd8c43daf2e9bf"
+    sha256 cellar: :any,                 arm64_linux:   "811b5e07452c0cc974dabc95b96b546640f9f63ba30e35136d541a28b392d1f3"
+    sha256 cellar: :any,                 x86_64_linux:  "453ab99c080a2480fc3af50c75a8cf105266dbc3d935116f7e33421b17d2a1f0"
   end
 
   depends_on "pkgconf" => :build
