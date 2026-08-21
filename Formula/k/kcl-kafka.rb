@@ -1,8 +1,8 @@
 class KclKafka < Formula
   desc "Kafka swiss-army knife for producing, consuming, and administration"
   homepage "https://github.com/twmb/kcl"
-  url "https://github.com/twmb/kcl/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "3c434446e39401af0825067e6b334efe5dea43fa7edeff1d7666dfe35f379bc5"
+  url "https://github.com/twmb/kcl/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "f7097158495efa8780a249408bc23a39d4315242d9ec770614f7d1d730f90877"
   license "BSD-3-Clause"
   head "https://github.com/twmb/kcl.git", branch: "master"
 
