@@ -8,11 +8,11 @@ class Ninjabot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1595a85737f1ed805d68987be2519f976f00bbc8cb4e6dcf7b45725434926cef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1595a85737f1ed805d68987be2519f976f00bbc8cb4e6dcf7b45725434926cef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1595a85737f1ed805d68987be2519f976f00bbc8cb4e6dcf7b45725434926cef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba988d57f59265ec893482776f1a60b25f0d4db4d1d3d5a9862d04c212e1994c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a66805f02726c85c7856eb214055de3d2d9fa74ea0d8ca201ad5df80d5e48c8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7cb2e5e21cad30d54df15d4216f93bc7ccc9efa7abb63ff3c5733674d0b9e156"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cb2e5e21cad30d54df15d4216f93bc7ccc9efa7abb63ff3c5733674d0b9e156"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cb2e5e21cad30d54df15d4216f93bc7ccc9efa7abb63ff3c5733674d0b9e156"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bda27b4e15a2975bf996eaa6a9e9c502808ddc717cae6cb20c835c3818a56bfb"
+    sha256 cellar: :any,                 x86_64_linux:  "8df6e885c0d8bc7b48eba154540ebd7a7a29732f131051e06bfe9b2cc6969506"
   end
 
   depends_on "go" => :build
