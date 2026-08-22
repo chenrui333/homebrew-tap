@@ -10,11 +10,11 @@ class CodeReviewGraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "2ea153070898c4fab88ce308844f74aa529c23d3dda23fd8c20e5b71cd35f5e8"
-    sha256 cellar: :any, arm64_sequoia: "597a960be5b2b564fa609676dc0ff8e923b45150cc793d677aa60f8e9dd941f6"
-    sha256 cellar: :any, arm64_sonoma:  "89b02c50178c3c08d934e9889d2de24ab1f99ea169357bb078aa2a09c98d6fc3"
-    sha256 cellar: :any, arm64_linux:   "e665bdca7aaab12664ebd851e65d53407beaffa2d7f5a3190929c6103014767a"
-    sha256 cellar: :any, x86_64_linux:  "b0efa6d5b0b72231a0d883abf407004362e5293af036028da5819a36b613684c"
+    sha256 cellar: :any, arm64_tahoe:   "412bd6d1b7067701b781e9695f8076a73264aec706acb15342db3429afd6b9c6"
+    sha256 cellar: :any, arm64_sequoia: "5fbd57f5895ba3a658a6ed8d406c7fcd7ee6ed229799bb93313f69ff2f1a7fb0"
+    sha256 cellar: :any, arm64_sonoma:  "4b1de7e618066bb5ca48bb70a2f5ee4920a44e9e40e8d6891921277c03cff147"
+    sha256 cellar: :any, arm64_linux:   "e152be7a68882f4c7dc628cc4ef6fc033dff99db0a570f64a251b8634aaea0cc"
+    sha256 cellar: :any, x86_64_linux:  "a48091d433ef009d710825142bcee3c68fd7c775eea9013f568fc61f919e246a"
   end
 
   depends_on "rust" => :build
