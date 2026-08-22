@@ -1,8 +1,8 @@
 class Hyprmoncfg < Formula
   desc "Terminal-first monitor configurator and daemon for Hyprland"
   homepage "https://hyprmoncfg.dev/"
-  url "https://github.com/crmne/hyprmoncfg/archive/refs/tags/v1.14.2.tar.gz"
-  sha256 "03980cd19c83a08fa0457f082863e40b085751b1854ef760c2cee60a0e6d8585"
+  url "https://github.com/crmne/hyprmoncfg/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "dd8fb210a64c8f42565cf44e65f4b76cbe706e1538a617f9abac6c5fc27cb74a"
   license "MIT"
   head "https://github.com/crmne/hyprmoncfg.git", branch: "main"
 
