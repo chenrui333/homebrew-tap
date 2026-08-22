@@ -6,6 +6,15 @@ class FxAgent < Formula
   license "Apache-2.0"
   head "https://github.com/vercel-labs/fx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fc62f4735409bc8ddc23a6d8f7acd14a68f99ab355fa730a92d5b4883dd497f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cb144c3990758d2e814f2b6b1a72e35b8e9b840c63972d0a54219981ffd79cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c320f5652ef66738ac2b8554349f8fca23cf6889de886df73055ccfc84898639"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e6cc8c1c4362db808f189b1023bb9004762860a9aba7ac58faa7fe63a733c34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62243ebc7dc24ccf724bd3e8cd39a00fab3bc5d1d387766496e445bb4481d722"
+  end
+
   depends_on "zig" => :build
 
   def install
