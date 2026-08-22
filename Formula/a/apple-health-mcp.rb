@@ -1,8 +1,8 @@
 class AppleHealthMcp < Formula
   desc "MCP server for Apple Health"
   homepage "https://github.com/neiltron/apple-health-mcp"
-  url "https://registry.npmjs.org/@neiltron/apple-health-mcp/-/apple-health-mcp-1.3.0.tgz"
-  sha256 "930bbfd19fdd99930693bf4705ab9b405bc2caa39eab1f64edcae1c9772648db"
+  url "https://registry.npmjs.org/@neiltron/apple-health-mcp/-/apple-health-mcp-1.4.1.tgz"
+  sha256 "1eb0cc00105954b74f4106b978668482582d571a640279137075736449c75f93"
   license "MIT"
 
   bottle do
