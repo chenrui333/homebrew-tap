@@ -1,0 +1,21 @@
+Formula/f/fx-agent.rb
+  s_8aef3bf642fb7e::t_061bd68c9ee1c5 12
+  s_8aef3bf642fb7e::t_c3c2cd03411325 1-11,13-15,17,20-21
+  s_8aef3bf642fb7e::t_640fc42c370aa6 16,18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "931c223b3d5e87ad2230c011ad8103a150bcf786",
+  "prompts": {},
+  "sessions": {
+    "s_8aef3bf642fb7e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2333dfbc-4843-4c2d-8af6-7c970123b648",
+        "model": "us.anthropic.claude-opus-4-6-v1"
+      },
+      "human_author": null
+    }
+  }
+}
