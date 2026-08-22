@@ -1,8 +1,8 @@
 class Nanodbc < Formula
   desc "Small C++ wrapper for the native C ODBC API"
   homepage "https://nanodbc.github.io/nanodbc/"
-  url "https://github.com/nanodbc/nanodbc/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "56228372042b689beccd96b0ac3476643ea85b3f57b3f23fb11ca4314e68b9a5"
+  url "https://github.com/nanodbc/nanodbc/archive/refs/tags/v2.17.0.tar.gz"
+  sha256 "a11790beeef196f0b5c4cf0a974fa34cc2b52d6b0a2273d4f5d5d44483a033ef"
   license "MIT"
 
   bottle do
