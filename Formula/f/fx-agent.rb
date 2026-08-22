@@ -1,18 +1,23 @@
 class FxAgent < Formula
   desc "Tiny, open, embeddable, native coding agent"
   homepage "https://fx.sh"
-  url "https://github.com/vercel-labs/fx/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "82d1aefaf2eac25631307227ccd36405cc0ce4cd4367685659d4fa2a0008a4d7"
+  url "https://github.com/vercel-labs/fx/archive/refs/tags/v0.0.5.tar.gz"
+  sha256 "f30e539ee943a5c70d3ba8d15f171e216798e0de368cf38eb7a90483e5eba582"
   license "Apache-2.0"
   head "https://github.com/vercel-labs/fx.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13dd11c672420def5114582ae53dfefda4b6aa72c740fe7a6fd8ee1cf944f51f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2293a70302f31cfac5d309538ab4b724381db0c242e8fb8126c24ac5d731265c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b843562ccd99ac304a0a74ad8fb10bd930854967703be8e102115e5bc3c587d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "936d3f6c67e4bc7945553fbb4dc0702bf0433ccc912dd31ff0ad0c908dbe03a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae2810ff594dd37e7216680bc168f293deda211c08b30fdf91778c8e3fdba90f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7fc62f4735409bc8ddc23a6d8f7acd14a68f99ab355fa730a92d5b4883dd497f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cb144c3990758d2e814f2b6b1a72e35b8e9b840c63972d0a54219981ffd79cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c320f5652ef66738ac2b8554349f8fca23cf6889de886df73055ccfc84898639"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e6cc8c1c4362db808f189b1023bb9004762860a9aba7ac58faa7fe63a733c34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62243ebc7dc24ccf724bd3e8cd39a00fab3bc5d1d387766496e445bb4481d722"
   end
 
   depends_on "zig" => :build
