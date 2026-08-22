@@ -1,8 +1,8 @@
 class Lfk < Formula
   desc "Lightning fast Kubernetes navigator"
   homepage "https://github.com/janosmiko/lfk"
-  url "https://github.com/janosmiko/lfk/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "9a788d709ca1eec04b3f1b107e2a2a2a577a4486d63fda5810883341d3021b62"
+  url "https://github.com/janosmiko/lfk/archive/refs/tags/v0.18.1.tar.gz"
+  sha256 "221310c13e328f98414b2b1875d7738c2e592a8b703ec559d6525f83225e38d9"
   license "Apache-2.0"
   head "https://github.com/janosmiko/lfk.git", branch: "main"
 
