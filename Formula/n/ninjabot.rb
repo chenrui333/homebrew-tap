@@ -1,8 +1,8 @@
 class Ninjabot < Formula
   desc "Fast cryptocurrency trading bot implemented in Go"
   homepage "https://rodrigo-brito.github.io/ninjabot/"
-  url "https://github.com/rodrigo-brito/ninjabot/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "e5342594f25c06a27b6d892d6b96f0c4b17bd1a1841fd19f79a57bf58984495f"
+  url "https://github.com/rodrigo-brito/ninjabot/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "f8a096dfcba99df0a1734a77a015a1a952fd16e7e3769ca65a23b4df53a80faa"
   license "MIT"
   head "https://github.com/rodrigo-brito/ninjabot.git", branch: "main"
 
