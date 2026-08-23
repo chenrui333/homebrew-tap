@@ -1,8 +1,8 @@
 class Openclacky < Formula
   desc "Token-efficient open-source AI Agent with skill system and IM integrations"
   homepage "https://github.com/clacky-ai/openclacky"
-  url "https://github.com/clacky-ai/openclacky/archive/refs/tags/v1.5.10.tar.gz"
-  sha256 "6611a5edeedf2ef0a72aafb037473929834eea2e924037eecc5ceaf360dbce1f"
+  url "https://github.com/clacky-ai/openclacky/archive/refs/tags/v1.5.11.tar.gz"
+  sha256 "224742353727085ce04eebba768e6460018d46a9de47b3322cf44bcc0fdc98fb"
   license "MIT"
   head "https://github.com/clacky-ai/openclacky.git", branch: "main"
 
