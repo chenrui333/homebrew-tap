@@ -351,7 +351,6 @@ brew install --cask <tool>
 - `fsociety`
 - `ftdv`
 - `fuck-u-code`
-- `fx-agent`
 - `g1c`
 - `gecit`
 - `gemini-cli`
