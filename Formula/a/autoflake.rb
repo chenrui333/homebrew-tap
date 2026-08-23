@@ -9,7 +9,7 @@ class Autoflake < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "0289b08fecd545e4b33c179dcd8f4767e70ba7cd89ab8ca7f2c357f27d96112d"
+    sha256 cellar: :any_skip_relocation, all: "400f55a8356b437c8a856600bdc6d6a6e9fe3a2aab60096ae7e4e1368a2cee4a"
   end
 
   depends_on "python@3.14"
