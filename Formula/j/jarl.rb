@@ -1,8 +1,8 @@
 class Jarl < Formula
   desc "Just Another R Linter"
   homepage "https://jarl.etiennebacher.com/"
-  url "https://github.com/etiennebacher/jarl/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "7b1fd11adc3924fa71f3a4202a2a4a87f1c8d62944160adedba65eb8f01d1cda"
+  url "https://github.com/etiennebacher/jarl/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "86620fcdb654d18be5f9fc62257ff577eade56cb1a6d9a3bc7d6e6857006a8a7"
   license "MIT"
   head "https://github.com/etiennebacher/jarl.git", branch: "main"
 
