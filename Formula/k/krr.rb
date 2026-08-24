@@ -10,11 +10,11 @@ class Krr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf9af591ef47ddf8e8f8148b21080dadbcfc9b4acbdc717203ac4da788058339"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3d4ee9035b822317aa31683251508619f5cfa705a50a64ea0068f7062dd069c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d670d3c9801b8b77ad5ff362d229f6e3ab133f684c284d756b1c5a6fc48b800f"
-    sha256 cellar: :any,                 arm64_linux:   "a448e829d26ab0a462a52de721c049aaa629a486b06e31681ce608743d359bce"
-    sha256 cellar: :any,                 x86_64_linux:  "66efbaf5b1a9b560e69fcfd20dd8ef855282dcc673c15d954012558335b6c636"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7d177b793db4956774c018cd4b9552ed187fb1f99e22f3ac1d1237a7c5227c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da3a5314f73dd7f9da6b5fc50b632003509e1791d50cc1f2e8ef2ec531e209fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ba96cab155016d486711a3d457365f98e67d0b595c3d3d79315582e2917b97d"
+    sha256 cellar: :any,                 arm64_linux:   "03b88e11f29ceaa3db7c556993eaf6c0f7bbc06bf3531a500b9e3d38a1ea798c"
+    sha256 cellar: :any,                 x86_64_linux:  "02e73d352ffcaa744c3932e635f472221b4eb4ce3e872e271ba32910354c50e1"
   end
 
   depends_on "cmake" => :build # for contourpy
