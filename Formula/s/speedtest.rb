@@ -1,8 +1,8 @@
 class Speedtest < Formula
   desc "Test Internet Speed using speedtest.net"
   homepage "https://tenderly.co/"
-  url "https://github.com/showwin/speedtest-go/archive/refs/tags/v1.7.10.tar.gz"
-  sha256 "70a2937d0759820fe7ee8f61b960d60c07b34c0d783ed11c0065b68fe2964aea"
+  url "https://github.com/showwin/speedtest-go/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "7ab9b4e077952682b8273e14abe9c855fb9a4fdaa712e41693d3f4eb1d44a7fb"
   license "MIT"
   head "https://github.com/showwin/speedtest-go.git", branch: "master"
 
