@@ -1,8 +1,8 @@
 class Budgetclaw < Formula
   desc "Local spend monitor for Claude Code"
   homepage "https://github.com/RoninForge/budgetclaw"
-  url "https://github.com/RoninForge/budgetclaw/archive/refs/tags/v1.7.30.tar.gz"
-  sha256 "147109412d44127969e85e92352d38ffdd73d69f8f51fc36b6a2977c33ddfddf"
+  url "https://github.com/RoninForge/budgetclaw/archive/refs/tags/v1.7.31.tar.gz"
+  sha256 "db5a88c94f706d235bbc1cd16ca1577a464a5c2f82417dc99bcb3ac7c249090a"
   license "MIT"
 
   bottle do
