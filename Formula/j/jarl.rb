@@ -8,11 +8,11 @@ class Jarl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1f71774eb20e31455fd0934700403932811991d8df403e7249a65ef3c6e0ada"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebe2afff100048ae17ba00107c12662fb85a020e5b5022e589b7b6a66b93803f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abf93122df4083f3aa02ce335ae4a85ea2bbd7972dc993451ec335eef6284f94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00d335824a9a036a91b83a1d333b82e1e086152cbca19886d882aecfc5cfded6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4824f7e015241dcc34b144454cf686672785a96109350d9080efefb2690eb058"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb1497392db33a9b72b13c7c286f46da342657bcd3efa55c6bdabf6592abe987"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "670838870836f96d02b9e3aec5aedf3321f705ffdaa626e88aa29706aa56bcb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d955d23dade0b9b9d249226636b9d6c73b33d30912520fd4edfb4255d2324b7"
+    sha256 cellar: :any,                 arm64_linux:   "49f0640442c7361b4bff50ebb21c7281a0c5ff52c97323ac759e9b1957f21dc9"
+    sha256 cellar: :any,                 x86_64_linux:  "ea68c04822c760d16e6873e48e525d15e0785f66a36e352a4e16dfaf6318b0b2"
   end
 
   depends_on "rust" => :build
