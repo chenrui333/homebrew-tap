@@ -1,8 +1,8 @@
 class Gokin < Formula
   desc "AI-powered CLI assistant for code"
   homepage "https://gokin.ginkida.dev"
-  url "https://github.com/ginkida/gokin/archive/refs/tags/v0.100.110.tar.gz"
-  sha256 "20d1eb3431620a0d0ffba59ee423fa4a2dfd2c5baf281929d80d2297a408226f"
+  url "https://github.com/ginkida/gokin/archive/refs/tags/v0.100.140.tar.gz"
+  sha256 "4274a7ef5928dd4fdbb13de73ee35ecd7539fde047f71269bfcf32009dc5c204"
   license "MIT"
   head "https://github.com/ginkida/gokin.git", branch: "main"
 
@@ -26,7 +26,6 @@ class Gokin < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gokin version")
-    output = shell_output("#{bin}/gokin not-a-real-command 2>&1", 1)
-    assert_match "unknown command", output
+    assert_match "API key not configured", shell_output("#{bin}/gokin doctor")
   end
 end
