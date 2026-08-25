@@ -8,11 +8,11 @@ class OhMyClaude < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "47728969db6409ee60e02af037ea1f325376cbd3301781c72c9eb2a511e48d9b"
-    sha256 cellar: :any, arm64_sequoia: "47728969db6409ee60e02af037ea1f325376cbd3301781c72c9eb2a511e48d9b"
-    sha256 cellar: :any, arm64_sonoma:  "47728969db6409ee60e02af037ea1f325376cbd3301781c72c9eb2a511e48d9b"
-    sha256 cellar: :any, arm64_linux:   "bf68235b85f0e1039c931c239d1de30b4a4679324cc5c2b2e7c65b6062c54afd"
-    sha256 cellar: :any, x86_64_linux:  "5a57629dafdd9953342c242a2def7f4923253bdef1bf56eaab993389ba522dc8"
+    sha256 cellar: :any, arm64_tahoe:   "cd948ce7b07c0632d214c6996a472c1e09779bef23ecd43e799b28258ddc7530"
+    sha256 cellar: :any, arm64_sequoia: "cd948ce7b07c0632d214c6996a472c1e09779bef23ecd43e799b28258ddc7530"
+    sha256 cellar: :any, arm64_sonoma:  "cd948ce7b07c0632d214c6996a472c1e09779bef23ecd43e799b28258ddc7530"
+    sha256 cellar: :any, arm64_linux:   "ae1d6c90775c4626cb924c1e2226d8e0c894151dffeddca97b533ac0d0aa931c"
+    sha256 cellar: :any, x86_64_linux:  "647a115cbae6a55660afbafdee1fe94c6c28ec2e54c4bff537edf987c8492a0d"
   end
 
   depends_on "node"
