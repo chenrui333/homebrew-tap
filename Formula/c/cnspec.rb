@@ -1,8 +1,8 @@
 class Cnspec < Formula
   desc "Open source, cloud-native security and policy project"
   homepage "https://github.com/mondoohq/cnspec"
-  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v13.35.2.tar.gz"
-  sha256 "c298dedff8120227128d15d5c4f534d26f254bc8a654e56c22972c069423cac5"
+  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v14.0.0-pre.1.tar.gz"
+  sha256 "33c49149a41cb5fd8df70888f07f2b785121a2437247f41276deac6877ce6ecc"
   license "BUSL-1.1"
   head "https://github.com/mondoohq/cnspec.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Cnspec < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X go.mondoo.com/cnspec/v#{version.major}.Version=#{version}"
+    ldflags = "-s -w -X go.mondoo.com/cnspec.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./apps/cnspec"
 
     generate_completions_from_executable(bin/"cnspec", shell_parameter_format: :cobra)
