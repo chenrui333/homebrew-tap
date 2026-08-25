@@ -8,11 +8,11 @@ class YoutubeMusicCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6c9020713c8fae2287762a708ea358787c5fc85a56224b4fdc32887df416214"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ddbec51cc6c8a51f04788854c465798fc76a2210e5949c87c1bcc5729694810"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4a8013e4678ee3bb9d4ce05922aa878b3e94f8587e3e2304ad32ab091e1a5a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddbf2e83905096ecec81dc508ef7e9cdfddfb8befdd6e21dfb372e22cee26a3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f49cb54ef14ed59741865672c929502217d3585172d2f98421dfd7419d8fa2ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d73de88565caba83cdcb3e8dabd9eba0641ae579f0682d0d3f43151bab8150ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfed22acdf274166ed368fdd2c82e7912be50c7506cadf11763e4ab9ccda7da8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e750c397d8ed4b5fa07f4683b1408a81f0a83242afb1029f14fa23278f3c1756"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eef82ef595b5ca0a0c80fa2707d14dffecc3ddf24beca3e783e3ba47457b8fbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3045ef9a933482e36cfd5b73469b8050c3fe46d2556937a8b3e710acee6fe7bc"
   end
 
   depends_on "chenrui333/tap/bun"
