@@ -1,8 +1,8 @@
 class ClickupMcp < Formula
   desc "MCP Server for ClickUp"
   homepage "https://github.com/hauptsacheNet/clickup-mcp"
-  url "https://registry.npmjs.org/@hauptsache.net/clickup-mcp/-/clickup-mcp-1.6.2.tgz"
-  sha256 "6b25b92e7323156f1a370e532e701aae11bceabce3e07ac2b21badf787b6bd8b"
+  url "https://registry.npmjs.org/@hauptsache.net/clickup-mcp/-/clickup-mcp-1.7.2.tgz"
+  sha256 "28d5cfd8efa9df96908b8250797b5748775ff5653c05685a6b2d41426004bc07"
   license "MIT"
 
   bottle do
@@ -27,6 +27,6 @@ class ClickupMcp < Formula
     JSON
 
     output = pipe_output("#{bin}/clickup-mcp 2>&1", json, 0)
-    assert_match "Error fetching user info: 401 Unauthorized", output
+    assert_match "Error fetching user info: 401", output
   end
 end
