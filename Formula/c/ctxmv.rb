@@ -1,8 +1,8 @@
 class Ctxmv < Formula
   desc "Migrate conversation sessions between AI coding agents"
   homepage "https://github.com/Ryu0118/ctxmv"
-  url "https://github.com/Ryu0118/ctxmv/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "f63b59a41da890037661ee3bf660984765a1d4e67ab7aad12a7756eb43524709"
+  url "https://github.com/Ryu0118/ctxmv/archive/refs/tags/0.6.1.tar.gz"
+  sha256 "f90927acadf409844ec0401ef4eb8aece117acb569ae979578c926e56f5d214d"
   license "MIT"
   head "https://github.com/Ryu0118/ctxmv.git", branch: "main"
 
