@@ -3,8 +3,8 @@ class Sqlit < Formula
 
   desc "User friendly TUI for SQL databases"
   homepage "https://github.com/Maxteabag/sqlit"
-  url "https://files.pythonhosted.org/packages/0a/1b/da461aa0bc0f471c41853fd07da648778a9ca3c7b31df17a237301fe558a/sqlit_tui-1.6.0.tar.gz"
-  sha256 "ffa87dac26a310091b9c7462d62d4ef2f939e5d4782ad9c2f73fb23620f5ab86"
+  url "https://files.pythonhosted.org/packages/a8/99/c62d5ef9b0e90c2ffa11b79e6326fe7cd119c6ec1cac00f548eefa4c6eb0/sqlit_tui-1.6.1.tar.gz"
+  sha256 "ec8b8c88f24f630b3f772aabaa7159594ff0f715aaf03bf1d919b2e6e61ae1b8"
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
@@ -36,8 +36,8 @@ class Sqlit < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/bd/2a/23f34ec9d04624958e137efdc394888716353190e75f25dd22c7a2c7a8aa/charset_normalizer-3.4.9.tar.gz"
-    sha256 "673611bbd43f0810bec0b0f028ddeaaa501190339cac411f347ac76917c3ae7b"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "docker" do
@@ -46,8 +46,8 @@ class Sqlit < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jaraco-classes" do
@@ -96,8 +96,8 @@ class Sqlit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/e5/98/0bf930c4f97d0266b58a89e36c015f56232c52b5d2f207215d48cca9e8f7/platformdirs-4.11.2.tar.gz"
-    sha256 "3a2ae5fca3520a01ab1be8b45613537f52ddf5b5f6f53d88233892dfbf0cd82d"
+    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
+    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
   end
 
   resource "pyarrow" do
@@ -106,8 +106,8 @@ class Sqlit < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyperclip" do
@@ -126,8 +126,8 @@ class Sqlit < Formula
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/90/76/437d71068094df0726366574cf3432a4ed754217b436eb7429415cf2d480/sqlparse-0.5.5.tar.gz"
-    sha256 "e20d4a9b0b8585fdf63b10d30066c7c94c5d7a7ec47c889a2d83a3caa93ff28e"
+    url "https://files.pythonhosted.org/packages/5f/d3/3f06a1006f2261d1342aefb3c71eed02f5d4ca5bdbecd86ebc12ad38306e/sqlparse-0.6.0.tar.gz"
+    sha256 "113c35c75365ab9cc9c7231d68c6428fb11c085fc8e9eb1ad659b7ddbf6cd2b9"
   end
 
   resource "textual" do
@@ -136,8 +136,8 @@ class Sqlit < Formula
   end
 
   resource "textual-fastdatatable" do
-    url "https://files.pythonhosted.org/packages/56/3e/6447bf2d06247229c617457f2d005fe9c3eda24d73071c324d0da1f13adc/textual_fastdatatable-0.17.1.tar.gz"
-    sha256 "401865e706b882f9d750424674a6ce782bffd42c6087221d9d87c4857680e252"
+    url "https://files.pythonhosted.org/packages/ad/a4/e3f2834ed4393afda3b66a4a8133e1b42e1269dd547d5f2064818d814273/textual_fastdatatable-0.19.0.tar.gz"
+    sha256 "c9ffa17978e68886be3462c980fece81d21a5d0d5957d9eef2e5c6dae649606f"
   end
 
   resource "tree-sitter" do
