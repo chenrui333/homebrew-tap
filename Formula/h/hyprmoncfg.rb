@@ -8,8 +8,8 @@ class Hyprmoncfg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "09064f8835a887b8f6b31330e2e8d5ab3bdaf14f60c76351041b4f3275bf657a"
-    sha256 cellar: :any,                 x86_64_linux: "76fbed7f8ab4b054ef05f8bb99c61dbb0153746aa30c0a6cf8e522b60113faaf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "f8c263dccb538796fbf94276fdebd82143cc6b67df0248b19388f3ab8f42b65b"
+    sha256 cellar: :any,                 x86_64_linux: "7c56b2aa6384c72928903575acfb9aac1fab32bd2b986c5fc9eec858260026af"
   end
 
   depends_on "go" => :build
