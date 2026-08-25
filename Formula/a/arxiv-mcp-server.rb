@@ -3,8 +3,8 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/ff/1d/db77fa705c37e5562c6d5077adff7f003bbc08862f2ca52707a3bfbb06c2/arxiv_mcp_server-0.6.3.tar.gz"
-  sha256 "3ff7e93b2454d983def7f7e48b24e7298047886347ad339494c486ea79840499"
+  url "https://files.pythonhosted.org/packages/3c/72/f0be946200235ba21c12042a0058d021d2e679ebbfaecba2afc0ac248efe/arxiv_mcp_server-0.7.2.tar.gz"
+  sha256 "024c8122112617af9eea9d913a6c46ec5cf1d6b5fbcbac43c8ba0615bfe9d65c"
   license "MIT"
 
   bottle do
@@ -64,8 +64,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
-    sha256 "49bd5feb59b0bf3cbf6ebcf4352e371c95b9da9bacd4449f8b64d0ad2c10a26e"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
@@ -99,8 +99,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/cd/63/9496c57188a2ee585e0f1db071d75089a11e98aa86eb99d9d7618fc1edce/idna-3.18.tar.gz"
-    sha256 "ffb385a7e039654cef1ab9ef32c6fafe283c0c0467bba1d9029738ce4a14a848"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "jsonschema" do
@@ -114,8 +114,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/ad/a9/970b8fa0ecc4fbf1dfaed0d89bbc1fc1421b25ec26a2038c91e872dc6c8e/lxml-6.1.2.tar.gz"
+    sha256 "1055241852f2b02068af4a625a5d32c087db193c12251928af2562ecd2239f18"
   end
 
   resource "mcp" do
@@ -149,8 +149,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "python-multipart" do
@@ -189,8 +189,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/2e/28/64ca011edf31c715b4fad359c587ea52391aaffa125065695590241ff617/uvicorn-0.52.3.tar.gz"
-    sha256 "18857b9e6579300be55c91c0a1cfd37d9a2cf0cabea33b88275f199eb73b8b58"
+    url "https://files.pythonhosted.org/packages/f2/0f/3f86e61397dd33bf2ccf28188c40db6a740658aeebbbf6e7dbc101a1f487/uvicorn-0.52.4.tar.gz"
+    sha256 "73acfee47a0b133c5de13d219492d62d8a31e935f4fe6e41a232451a15379f86"
   end
 
   resource "yarl" do
@@ -210,6 +210,7 @@ class ArxivMcpServer < Formula
     JSON
 
     output = pipe_output("#{bin}/arxiv-mcp-server --storage-path #{testpath} 2>&1", json, 0)
-    assert_match "Search for papers on arXiv with advanced filtering and query optimization.", output
+    assert_match %Q("version":"#{version}"), output
+    assert_match '"name":"search_papers"', output
   end
 end
