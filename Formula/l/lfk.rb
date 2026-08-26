@@ -8,11 +8,11 @@ class Lfk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "853c5d5b6b7a2626b5f22a1c06440d45bd8e92a9b392faa231305e69c88aa87a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "853c5d5b6b7a2626b5f22a1c06440d45bd8e92a9b392faa231305e69c88aa87a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "853c5d5b6b7a2626b5f22a1c06440d45bd8e92a9b392faa231305e69c88aa87a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b68c6510595f65a908f6e06c5537837aadaac2d6ca5f2ff113826f0504f0db6f"
-    sha256 cellar: :any,                 x86_64_linux:  "b5c4078d8eb20c9ab33f1748b26a9737fa1dc6ede3b333d4c9c7831993cf8f35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbef810dcf4a505944d165f88d050bb7bd65e911e3f153c6454638f1cb4eafcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbef810dcf4a505944d165f88d050bb7bd65e911e3f153c6454638f1cb4eafcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbef810dcf4a505944d165f88d050bb7bd65e911e3f153c6454638f1cb4eafcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38c26c02720bf556b1bc2e207bba69869d5eeeea2240a040c5ca2414b54cbdf0"
+    sha256 cellar: :any,                 x86_64_linux:  "871568be71ef2345e5c3defa86839be1a72e1e773413e92138132fa8181cf435"
   end
 
   depends_on "go" => :build
