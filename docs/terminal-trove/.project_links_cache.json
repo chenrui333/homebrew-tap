@@ -882,5 +882,11 @@
   "https://terminaltrove.com/linecast/": "https://github.com/ashuttl/linecast",
   "https://terminaltrove.com/lsoff/": "https://github.com/yutat23/lsoff",
   "https://terminaltrove.com/seednaut/": "https://github.com/Baltram/seednaut",
-  "https://terminaltrove.com/dtop-py/": "https://github.com/StakeSquid/dtop"
+  "https://terminaltrove.com/dtop-py/": "https://github.com/StakeSquid/dtop",
+  "https://terminaltrove.com/tempo/": "https://github.com/galaxy-io/tempo",
+  "https://terminaltrove.com/ffsend/": "https://github.com/timvisee/ffsend",
+  "https://terminaltrove.com/drydock/": "https://github.com/yetidevworks/drydock",
+  "https://terminaltrove.com/papr/": "https://github.com/AfrozSaqlain/Papr",
+  "https://terminaltrove.com/kudu/": "https://github.com/pythops/kudu",
+  "https://terminaltrove.com/winproc-tui/": "https://github.com/TX230/winproc-tui"
 }
