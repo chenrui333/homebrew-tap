@@ -1,8 +1,8 @@
 class Aim < Formula
   desc "Command-line download/upload tool with resume"
   homepage "https://github.com/mihaigalos/aim"
-  url "https://github.com/mihaigalos/aim/archive/refs/tags/1.8.8.tar.gz"
-  sha256 "5500e38e48e381557847d09e42dbb093e1e402eb2c2965929cbcdae69ce9ec9e"
+  url "https://github.com/mihaigalos/aim/archive/refs/tags/1.9.0.tar.gz"
+  sha256 "66b24fe3194f9538465b47c9f303e2b787e46490582e16442ef550245dbc75d6"
   license "MIT"
   head "https://github.com/mihaigalos/aim.git", branch: "main"
 
