@@ -3,8 +3,8 @@ class Sqlit < Formula
 
   desc "User friendly TUI for SQL databases"
   homepage "https://github.com/Maxteabag/sqlit"
-  url "https://files.pythonhosted.org/packages/a8/99/c62d5ef9b0e90c2ffa11b79e6326fe7cd119c6ec1cac00f548eefa4c6eb0/sqlit_tui-1.6.1.tar.gz"
-  sha256 "ec8b8c88f24f630b3f772aabaa7159594ff0f715aaf03bf1d919b2e6e61ae1b8"
+  url "https://files.pythonhosted.org/packages/07/81/aaae98b63f4b688e04d01e3087e959a1121fbc4d870d71a8fb8cb6960f14/sqlit_tui-1.6.2.tar.gz"
+  sha256 "c0c68d2402a480856e90e3f2d8ab9654adc43925d9455b71fc4a1540659c52c2"
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
@@ -71,8 +71,8 @@ class Sqlit < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
-    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
+    url "https://files.pythonhosted.org/packages/53/3e/79f35b8c31a1881893b7e62be80b2573f06e38db47c33065749293ee1b97/linkify_it_py-2.1.1.tar.gz"
+    sha256 "a78f40fee177eb912e9d2375074108378523c38d3fde5d3ee804f465b6cfbfee"
   end
 
   resource "markdown-it-py" do
@@ -96,8 +96,8 @@ class Sqlit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b8/d7/e7bfbc86e9f99ff7807e24de7703f032e9c9ba80bb355cf26e0e9bc5a75e/platformdirs-4.11.3.tar.gz"
-    sha256 "66a73d38a849810252df809a3d8bcbda8e26f6c189920e7535ad608a48dbb5ab"
+    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
+    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
   end
 
   resource "pyarrow" do
