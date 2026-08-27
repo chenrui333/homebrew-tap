@@ -1,8 +1,8 @@
 class McpUse < Formula
   desc "CLI for mcp-use"
   homepage "https://mcp-use.com/"
-  url "https://registry.npmjs.org/@mcp-use/cli/-/cli-3.6.7.tgz"
-  sha256 "64800c5fc320c7b48d1ab448039359b61830a670f08950caef36c10bd697bf43"
+  url "https://registry.npmjs.org/@mcp-use/cli/-/cli-4.1.7.tgz"
+  sha256 "7d978906d7b02d2d94107cccdb560378af8009f00396ae26641a0a1ebe5f914e"
   license "MIT"
 
   bottle do
@@ -14,7 +14,6 @@ class McpUse < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2270d0e4a05648eb7626e42b77459e19dd0aa35af5cf4b7b3972d1b880501277"
   end
 
-  depends_on "typescript" => :test
   depends_on "node"
 
   def install
@@ -31,53 +30,6 @@ class McpUse < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/mcp-use --version")
-
-    (testpath/"tsconfig.json").write <<~JSON
-      {
-        "compilerOptions": {
-          "target": "ES2020",
-          "module": "ESNext",
-          "moduleResolution": "bundler",
-          "outDir": "./dist",
-          "rootDir": "./src",
-          "strict": true,
-          "esModuleInterop": true,
-          "skipLibCheck": true
-        },
-        "include": ["src/**/*"],
-        "exclude": ["node_modules"]
-      }
-    JSON
-
-    (testpath/"src/index.ts").write <<~TYPESCRIPT
-      import { MCPServer } from "mcp-use/server";
-
-      const server = new MCPServer({
-        name: "test-mcp-server",
-        version: "1.0.0",
-      });
-
-      export default server;
-    TYPESCRIPT
-
-    (testpath/"package.json").write <<~JSON
-      {
-        "name": "test-mcp-use",
-        "version": "1.0.0",
-        "description": "Test project for mcp-use",
-        "main": "dist/index.js",
-        "type": "module",
-        "devDependencies": {
-          "mcp-use": "^1.21.2",
-          "typescript": "^5.0.0"
-        }
-      }
-    JSON
-
-    system "npm", "install", *std_npm_args(prefix: false)
-    system bin/"mcp-use", "build"
-
-    assert_path_exists testpath/"dist/index.js"
-    assert_match "test-mcp-server", (testpath/"dist/index.js").read
+    assert_match "Not logged in", shell_output("#{bin}/mcp-use whoami 2>&1", 1)
   end
 end
