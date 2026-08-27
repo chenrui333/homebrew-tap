@@ -1,8 +1,8 @@
 class B4n < Formula
   desc "Terminal user interface (TUI) for Kubernetes API"
   homepage "https://github.com/fioletoven/b4n"
-  url "https://github.com/fioletoven/b4n/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "c016fa33229c5be961d0dfe9ab23aede7404c184f59135f85f11af685c43d973"
+  url "https://github.com/fioletoven/b4n/archive/refs/tags/v0.5.7.tar.gz"
+  sha256 "4cd40d6bc08e69a880c924c290af90ad59b48211797dc8dc9daa586c362a2e90"
   license "MIT"
   head "https://github.com/fioletoven/b4n.git", branch: "main"
 
@@ -23,6 +23,6 @@ class B4n < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/b4n --version")
-    assert_match "Error: kube config file not found", shell_output("#{bin}/b4n 2>&1", 1)
+    assert_match "Error: kubeconfig file not found", shell_output("#{bin}/b4n 2>&1", 1)
   end
 end
