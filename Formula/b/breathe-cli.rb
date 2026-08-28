@@ -10,8 +10,7 @@ class BreatheCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "63b79abc27f3bd58aecb6cc66c9bdfabbd2d8ad4c1feeda2557931afcf8db151"
+    sha256 cellar: :any_skip_relocation, all: "30bc287df12e36b0714951c18f13e890c07e5be3c83a46867edbf6c7cd461b17"
   end
 
   depends_on "python@3.13"
