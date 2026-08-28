@@ -1,8 +1,8 @@
 class Happy < Formula
   desc "Mobile and Web client for Claude Code and Codex"
   homepage "https://happy.engineering"
-  url "https://registry.npmjs.org/happy/-/happy-1.2.0.tgz"
-  sha256 "183c6060a531d234da5f32c1ff000b5016c7b3c08a4f7056490cd1325a2e67f7"
+  url "https://registry.npmjs.org/happy/-/happy-1.2.2.tgz"
+  sha256 "0e34d6a7a516e541e166d4db1b4c368c9b83139ce8c5573e5ae531375cba5211"
   license "MIT"
 
   bottle do
@@ -17,8 +17,34 @@ class Happy < Formula
   depends_on "node"
   depends_on "pcre2"
 
+  on_linux do
+    depends_on "patchelf" => :build
+  end
+
   def install
     system "npm", "install", *std_npm_args
+
+    node_modules = libexec/"lib/node_modules/happy/node_modules"
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    keep = %W[sharp-#{os}-#{arch} sharp-libvips-#{os}-#{arch}]
+    node_modules.glob("@img/sharp-*").each do |dir|
+      rm_r(dir) unless keep.include?(dir.basename.to_s)
+    end
+
+    pi_tui_native = node_modules/"@earendil-works/pi-tui/native"
+    pi_tui_native.each_child { |dir| rm_r(dir) if dir.basename.to_s != os }
+    prebuilds = pi_tui_native/os/"prebuilds"
+    prebuilds.each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" } if prebuilds.exist?
+
+    if OS.linux?
+      node_modules.glob("@libsql/linux-*-musl").each { |dir| rm_r(dir) }
+      node_modules.glob("@ff-labs/fff-bin-linux-*-musl").each { |dir| rm_r(dir) }
+
+      libvips = (node_modules/"@img/sharp-libvips-#{os}-#{arch}/lib").glob("libvips-cpp.so.*").first
+      needed = Utils.safe_popen_read("patchelf", "--print-needed", libvips).lines.map(&:chomp)
+      system "patchelf", "--replace-needed", "libc.so", "libc.so.6", libvips if needed.include?("libc.so")
+    end
 
     if OS.linux?
       sandbox_runtime = libexec/"lib/node_modules/happy/node_modules/@anthropic-ai/sandbox-runtime"
