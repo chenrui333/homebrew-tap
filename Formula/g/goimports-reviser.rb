@@ -8,11 +8,11 @@ class GoimportsReviser < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8c440360621cdb997f138811a6cb95a771ce0607281a6b2913851dbde39ce58"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8c440360621cdb997f138811a6cb95a771ce0607281a6b2913851dbde39ce58"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8c440360621cdb997f138811a6cb95a771ce0607281a6b2913851dbde39ce58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdf985f6734c377f77a10b05a0f02762f7d45317af5b9b2197b58793e9c0c0bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "554562d016b50a29ff1a68413e00e1627dfe6ccad8ae34c346ed46e87b3273f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30983299949da92fb54290be9cfa59b63af26479da5f207815cab80f29243b04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30983299949da92fb54290be9cfa59b63af26479da5f207815cab80f29243b04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30983299949da92fb54290be9cfa59b63af26479da5f207815cab80f29243b04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "597bc50044b4d6f47b90dc3230a0db74c990b86eba158fe3cd1e0503ca6f0051"
+    sha256 cellar: :any,                 x86_64_linux:  "4aaba9de11aa25684ff6ec293b32e4b541416bc81babe12791413c239265006b"
   end
 
   depends_on "go" => :build
