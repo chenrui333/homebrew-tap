@@ -8,11 +8,11 @@ class Hulak < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d458a3871f1f007a6b3a47cbeeaae42920ae2d82065fd08c3c559a8c0de70830"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d458a3871f1f007a6b3a47cbeeaae42920ae2d82065fd08c3c559a8c0de70830"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d458a3871f1f007a6b3a47cbeeaae42920ae2d82065fd08c3c559a8c0de70830"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ff6bcc26a59c7a52f41d432bbf2f2ac5512e93625bc3218e3ec3f3235f00314"
-    sha256 cellar: :any,                 x86_64_linux:  "54c8b6e7379036571c90ef9d2bc2f151534038b9705bce84fa2e2cca82e4d3cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "694525c065e681201f75297b109aac24bd715d8887aa697d55d1416883f08943"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "694525c065e681201f75297b109aac24bd715d8887aa697d55d1416883f08943"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "694525c065e681201f75297b109aac24bd715d8887aa697d55d1416883f08943"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c378ee46290b30f3fe532c61dc1546a81fa4a9b694dd55690dd235bcd4c162c"
+    sha256 cellar: :any,                 x86_64_linux:  "4ef392dce98b2329f5d1a79700f469959977e78ebe4f39802cf60be73a671952"
   end
 
   depends_on "go" => :build
