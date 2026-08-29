@@ -3,8 +3,8 @@ class Sqlit < Formula
 
   desc "User friendly TUI for SQL databases"
   homepage "https://github.com/Maxteabag/sqlit"
-  url "https://files.pythonhosted.org/packages/07/81/aaae98b63f4b688e04d01e3087e959a1121fbc4d870d71a8fb8cb6960f14/sqlit_tui-1.6.2.tar.gz"
-  sha256 "c0c68d2402a480856e90e3f2d8ab9654adc43925d9455b71fc4a1540659c52c2"
+  url "https://files.pythonhosted.org/packages/83/81/6fbdd8549d5ce48b7b54c7cf24b418ba04abfeb68a3d353077aa45da0f27/sqlit_tui-1.6.3.tar.gz"
+  sha256 "af9e0ed34594f9dc7b399cac56ad6a63b884a4bae4035b21a20e861a89253c81"
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
@@ -96,8 +96,8 @@ class Sqlit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/50/bb/ebc6636e1ae41314f796ebb7215fd28febb45f9aac72f2b04cb74b5071dc/platformdirs-4.11.4.tar.gz"
-    sha256 "f3373be828247211d0febabea97e238c3dfde8a60b3c90c32756fb52cb21556d"
+    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
+    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
   end
 
   resource "pyarrow" do
