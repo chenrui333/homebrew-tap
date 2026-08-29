@@ -1,8 +1,8 @@
 class Knip < Formula
   desc "Declutter your JavaScript & TypeScript projects"
   homepage "https://knip.dev/"
-  url "https://registry.npmjs.org/knip/-/knip-6.32.3.tgz"
-  sha256 "1db176b788738965a7e852da0beb412e6282283974d2c06b42db8f9109669276"
+  url "https://registry.npmjs.org/knip/-/knip-6.33.0.tgz"
+  sha256 "09331e9633b4210ed36f556837e3073e1cd9899af1ec3f7fabd1ea3eaa8b11b9"
   license "ISC"
 
   bottle do
