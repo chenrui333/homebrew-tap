@@ -1,8 +1,8 @@
 class Tapflow < Formula
   desc "Self-hosted iOS and Android simulator streaming for the whole team"
   homepage "https://github.com/jo-duchan/tapflow"
-  url "https://registry.npmjs.org/tapflow/-/tapflow-0.19.0.tgz"
-  sha256 "21442546a823e48483fc62058ea135f1cc6612b6bdb70c418c92a21fab01a241"
+  url "https://registry.npmjs.org/tapflow/-/tapflow-0.20.0.tgz"
+  sha256 "76bd7d48b038f07828121c31860bbca8eb32de586fbc5babd7cfd5e46f7638a8"
   license "MIT"
 
   bottle do
@@ -17,8 +17,14 @@ class Tapflow < Formula
     depends_on macos: :tahoe
   end
 
+  preserve_rpath # Preserve the prebuilt nethook dylib ID without expanding its Mach-O header.
+
   def install
     system "npm", "install", *std_npm_args
+
+    dylib = libexec/"lib/node_modules/tapflow/node_modules/@tapflowio/ios-agent/bin/libtapflow-nethook.dylib"
+    MachO::Tools.change_dylib_id(dylib, "@rpath/#{dylib.basename}")
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
