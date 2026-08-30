@@ -7,7 +7,7 @@ class IamShrink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "af40ba4442b212df3b2b495ee05712aa73b9eafa83372641d2e874020eb9fc88"
+    sha256 cellar: :any_skip_relocation, all: "bd01b890ef00e53776a58cd16c8be6b29204751aa974b92e55c69058f9079bc9"
   end
 
   depends_on "node"
