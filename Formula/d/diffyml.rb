@@ -8,11 +8,11 @@ class Diffyml < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac1060bd6018fff22614b5b2625953b65992cdbcaac36c015a579f9d7109467f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac1060bd6018fff22614b5b2625953b65992cdbcaac36c015a579f9d7109467f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac1060bd6018fff22614b5b2625953b65992cdbcaac36c015a579f9d7109467f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb085f66207602d7d524063ff99e6f6918d1cf36628d818656f5ee3c9f4654cb"
-    sha256 cellar: :any,                 x86_64_linux:  "15be4d130d8c05a9821847c2321a798a1a78f92b3a3f2d4ef22a207ee55939ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4cb56c2a9c846ce386bc2a5b774a230b2340de19a375ef163c149212aa836e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cb56c2a9c846ce386bc2a5b774a230b2340de19a375ef163c149212aa836e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4cb56c2a9c846ce386bc2a5b774a230b2340de19a375ef163c149212aa836e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9160e8219a044c940923dd7fb33fe1acc6b9fc5656121444bd8fd3f3c152cb92"
+    sha256 cellar: :any,                 x86_64_linux:  "1def8388823840d41d4ce6326213043b305ab252622651e8862ea012d4e40298"
   end
 
   depends_on "go" => :build
