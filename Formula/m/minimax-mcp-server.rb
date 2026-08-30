@@ -9,11 +9,11 @@ class MinimaxMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "b04b58cc360147a7bf79d4360a68768c557cc565cb0d1f46154925aef6544b41"
-    sha256               arm64_sequoia: "8e7928b8773d7435298a0389d6805b92349d11e555bcbafbbb82ecc78b6f1e4d"
-    sha256               arm64_sonoma:  "badc460abae85b8b04842925cc3fea650e9c92b507ae7d1b5ac1dc476c8230d6"
-    sha256 cellar: :any, arm64_linux:   "68ce665f8d5ef8a23adf277036ed34a12eaaf12f3491c6a7752c7cddf584df3f"
-    sha256 cellar: :any, x86_64_linux:  "097c3c386f79fb9b4e8cab46db2947355694e3613ed5085d6b80f9756443ae5c"
+    sha256 cellar: :any, arm64_tahoe:   "3d60fdb8d852c1732e9b4f92f180a5b7b652a6f5fa1b8f401a567726441d87eb"
+    sha256 cellar: :any, arm64_sequoia: "2f92aa92d3fa1233d0511b62cb15e62bb54a47dbfafcb07b2e8395521b80dd47"
+    sha256 cellar: :any, arm64_sonoma:  "feb528b79939dc04e8610218b81a0c01b42f4c26c57b89a0822ad5af2018a9c4"
+    sha256 cellar: :any, arm64_linux:   "366174ea4a5f60347b77328b7a6272f0d0f32aa9861ce5b7660e68c981215ffe"
+    sha256 cellar: :any, x86_64_linux:  "d9f29dff4c52d29d3dc7d08b897426c2416d3de24888b82cd6d4ac90c7b50cf6"
   end
 
   depends_on "autoconf" => :build
