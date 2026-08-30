@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/fe/81/412df51d0efef5e790042cd832f455d1f94bed0aaa6ecc064bd0d85637f9/ministack-1.5.1.tar.gz"
-  sha256 "680cd2f9e749854fd51a945eba5ed7dae08a0bf6a55d5a24859977a846949f9c"
+  url "https://files.pythonhosted.org/packages/b9/87/5a2645720a6e9557429eb3e99d8b81ce2aea39cf994bf0688767f41c25d6/ministack-1.5.3.tar.gz"
+  sha256 "9a8c5ef906f4aa8a9c0fa1a5781b1fb243a429b8f3ac0b9c33460e44fee27af9"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
@@ -58,6 +58,11 @@ class Ministack < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
     sha256 "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
+  end
+
+  resource "jsonata-python" do
+    url "https://files.pythonhosted.org/packages/9d/6a/b756e10939f584b0629c301bb4aa0e79f94163ac3b0083c788b8ee78c708/jsonata_python-0.7.0.tar.gz"
+    sha256 "2cf788147a0d444cb9d7d81c58da9991607280d6a5d0f06bd2dd212a59fdcb16"
   end
 
   resource "priority" do
