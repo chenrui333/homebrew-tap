@@ -759,6 +759,7 @@ brew install --cask <tool>
 - `pyink`
 - `pyment`
 - `pysentation`
+- `ponytail`
 - `qmassa`
 - `que`
 - `quicssh-rs`
