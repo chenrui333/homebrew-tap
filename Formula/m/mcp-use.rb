@@ -7,11 +7,11 @@ class McpUse < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "57252311666b467a813ef365d206ec8cba485a8da358ca3a17ef36a9d9d7023d"
-    sha256                               arm64_sequoia: "57252311666b467a813ef365d206ec8cba485a8da358ca3a17ef36a9d9d7023d"
-    sha256                               arm64_sonoma:  "57252311666b467a813ef365d206ec8cba485a8da358ca3a17ef36a9d9d7023d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce4949e814949dc42cb3378670c45e9c5a23d00721e010ada897de102d7b5edc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2270d0e4a05648eb7626e42b77459e19dd0aa35af5cf4b7b3972d1b880501277"
+    sha256 cellar: :any,                 arm64_tahoe:   "de86f3feb6bd4df77d2c4d04821cf90af2eafb6dd8e6eb993fccf12cf6039b30"
+    sha256 cellar: :any,                 arm64_sequoia: "de86f3feb6bd4df77d2c4d04821cf90af2eafb6dd8e6eb993fccf12cf6039b30"
+    sha256 cellar: :any,                 arm64_sonoma:  "de86f3feb6bd4df77d2c4d04821cf90af2eafb6dd8e6eb993fccf12cf6039b30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "990f7cc4d8ea90d9e5f4475ef4ac3426489bff2f22dfc52007f75b766d7857c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "498addd7a93d4e1c4dc2739d6d825c6fd17315318588af4f24ab3f448b7131ea"
   end
 
   depends_on "node"
