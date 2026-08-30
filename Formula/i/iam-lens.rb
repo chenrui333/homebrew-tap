@@ -1,8 +1,8 @@
 class IamLens < Formula
   desc "Google Maps for AWS IAM"
   homepage "https://github.com/cloud-copilot/iam-lens"
-  url "https://registry.npmjs.org/@cloud-copilot/iam-lens/-/iam-lens-0.1.155.tgz"
-  sha256 "f7b55c38caf048f471192a0ea1db3622d97009ffb9bd783f5dc50d1471a54cad"
+  url "https://registry.npmjs.org/@cloud-copilot/iam-lens/-/iam-lens-0.1.156.tgz"
+  sha256 "516414854c20d6b661ff9fd51d085b023805ef8cb4a51d104478b969b26e1f5e"
   license "AGPL-3.0-or-later"
 
   bottle do
