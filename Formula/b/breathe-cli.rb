@@ -3,8 +3,8 @@ class BreatheCli < Formula
 
   desc "Paced resonance breathing in your terminal"
   homepage "https://github.com/marekkowalczyk/breathe-cli"
-  url "https://github.com/marekkowalczyk/breathe-cli/archive/refs/tags/v1.11.1.tar.gz"
-  sha256 "9f64681b4f67f7294c0f5075d81d71de76081999d7c8c1f55d550f86519fae42"
+  url "https://github.com/marekkowalczyk/breathe-cli/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "41ab1578c9c37ae06e81af4c1878d72ece1b3c23fcc57c9e5c9c65af7e4d8396"
   license "MIT"
   head "https://github.com/marekkowalczyk/breathe-cli.git", branch: "main"
 
