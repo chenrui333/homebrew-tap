@@ -8,11 +8,11 @@ class BashScriptTools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d3e54eaa75922b53e864cd320b1dc755cb16b343bbef00ec6dcfa371af0f67f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d3e54eaa75922b53e864cd320b1dc755cb16b343bbef00ec6dcfa371af0f67f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d3e54eaa75922b53e864cd320b1dc755cb16b343bbef00ec6dcfa371af0f67f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6117e4a61125189e854f66003dcf2ddbf4a49587f7644c9f46eaac24629933e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15e72fd1ef5fa4658191039ae1498b05eea9b8f2539d8b0c61fb21f52f742716"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70f68283ede9c7eaf816af21ce1a6f650388ba22ecfee18a4ab165acdf898ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70f68283ede9c7eaf816af21ce1a6f650388ba22ecfee18a4ab165acdf898ef8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70f68283ede9c7eaf816af21ce1a6f650388ba22ecfee18a4ab165acdf898ef8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e783b8631ec9d74ff7dd82ea4e56bf5583dd48c405e79190f645bc23911d04fc"
+    sha256 cellar: :any,                 x86_64_linux:  "8960ebcb228dda4b59061229a758304142eeeb6f063e8e807ac4d64b3f2b1481"
   end
 
   depends_on "go" => :build
