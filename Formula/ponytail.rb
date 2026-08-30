@@ -5,6 +5,11 @@ class Ponytail < Formula
   sha256 "7f45b3fab0b92ae5ff95c4608acda9f6ee2f0374b0122cba046289167d0cd256"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "3e53d310f76c123c4e9c717d5a6d52ee9fd43650b8e4a30f8ed378721e685e35"
+  end
+
   depends_on "node"
 
   def install
