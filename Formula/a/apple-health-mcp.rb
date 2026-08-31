@@ -1,8 +1,8 @@
 class AppleHealthMcp < Formula
   desc "MCP server for Apple Health"
   homepage "https://github.com/neiltron/apple-health-mcp"
-  url "https://registry.npmjs.org/@neiltron/apple-health-mcp/-/apple-health-mcp-1.3.0.tgz"
-  sha256 "930bbfd19fdd99930693bf4705ab9b405bc2caa39eab1f64edcae1c9772648db"
+  url "https://registry.npmjs.org/@neiltron/apple-health-mcp/-/apple-health-mcp-1.4.1.tgz"
+  sha256 "1eb0cc00105954b74f4106b978668482582d571a640279137075736449c75f93"
   license "MIT"
 
   bottle do
@@ -24,13 +24,29 @@ class AppleHealthMcp < Formula
   end
 
   test do
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
-    JSON
+    require "json"
+    require "open3"
+    require "timeout"
 
-    ENV["NODE_NO_WARNINGS"] = "1"
-    output = pipe_output("#{bin}/apple-health-mcp 2>&1", json, 1)
-    assert_empty output
+    messages = [
+      { jsonrpc: "2.0", id: 1, method: "initialize", params: {
+        protocolVersion: "2025-03-26", capabilities: {}, clientInfo: { name: "brew-test", version: "1" }
+      } },
+      { jsonrpc: "2.0", method: "notifications/initialized" },
+      { jsonrpc: "2.0", id: 2, method: "tools/list" },
+    ]
+    env = { "HEALTH_DATA_DIR" => testpath.to_s, "NODE_NO_WARNINGS" => "1" }
+    Open3.popen3(env, bin/"apple-health-mcp") do |stdin, stdout, _stderr, wait_thread|
+      begin
+        messages.each { |message| stdin.puts(JSON.generate(message)) }
+        stdin.close
+        responses = Timeout.timeout(30) { Array.new(2) { JSON.parse(stdout.gets) } }
+      ensure
+        Process.kill("INT", wait_thread.pid) if wait_thread.alive?
+      end
+      assert_predicate wait_thread.value, :success?
+      assert_equal "apple-health-mcp", responses.dig(0, "result", "serverInfo", "name")
+      assert_includes responses.dig(1, "result", "tools").map { |tool| tool["name"] }, "health_schema"
+    end
   end
 end
