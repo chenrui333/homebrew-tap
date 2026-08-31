@@ -1,12 +1,13 @@
 # Formula Metadata
 
-Generated: 2026-08-24 09:53:55 UTC
-Total formulas: 1024
+Generated: 2026-08-31 16:57:42 UTC
+Total formulas: 1025
 
 ## Formulas
 
 | Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |
 | ------- | ----------- | ----- | ----- | ----------- | ------------ | ------- | ------ | --------- | -------- |
+| ponytail | YAGNI and minimal-implementation plugin for AI coding agents | 118059 | 6429 | 2026-08-07 | 2026-08-07 | MIT | ✓ | - | [link](https://github.com/DietrichGebert/ponytail) |
 | bun | Incredibly fast JavaScript runtime, bundler, test runner, an... | 87982 | 4151 | 2026-03-09 | 2026-02-26 | - | ✓ | ✓ | [link](https://bun.com) |
 | alacritty | Cross-platform, OpenGL terminal emulator | 62443 | 3303 | 2026-01-29 | 2025-10-20 | - | ✓ | ✓ | [link](https://github.com/alacritty/alacritty) |
 | caveman-shrink | MCP proxy that compresses prose fields in tool catalogs | 57896 | 3181 | 2026-05-10 | 2026-05-10 | MIT | ✓ | - | [link](https://github.com/JuliusBrussee/caveman) |
@@ -226,7 +227,7 @@ Total formulas: 1024
 | timetrace | CLI for tracking your working time | 786 | 80 | 2024-06-28 | 2022-03-06 | Apache-2.0 | ✓ | - | [link](https://github.com/dominikbraun/timetrace) |
 | code-index-mcp | MCP server for LLMs to index, search, and analyze code repos | 778 | 93 | 2026-01-09 | 2026-01-09 | MIT | ✓ | - | [link](https://github.com/johnhuang316/code-index-mcp) |
 | buffa | Pure-Rust Protocol Buffers implementation with editions supp... | 775 | 62 | 2026-06-12 | 2026-06-11 | Apache-2.0 | ✓ | - | [link](https://github.com/anthropics/buffa) |
-| speedtest | Test Internet Speed using speedtest.net | 770 | 136 | 2025-10-15 | 2024-12-20 | MIT | ✓ | - | [link](https://tenderly.co/) |
+| speedtest | Test Internet Speed using speedtest.net | 770 | 136 | 2025-10-15 | 2024-12-20 | MIT | ✓ | - | [link](https://github.com/showwin/speedtest-go) |
 | summon | Provides on-demand secrets access for common DevOps tools | 754 | 68 | 2025-12-10 | 2025-12-10 | MIT | ✓ | - | [link](https://cyberark.github.io/summon/) |
 | chanfana | OpenAPI 3 and 3.1 schema generator and validator for Hono an... | 746 | 69 | 2026-06-02 | 2026-03-18 | MIT | ✓ | - | [link](https://github.com/cloudflare/chanfana) |
 | oatmeal | TUI to chat with large language models | 744 | 42 | 2024-06-01 | 2024-03-16 | MIT | ✓ | - | [link](https://github.com/dustinblackman/oatmeal) |
@@ -237,7 +238,7 @@ Total formulas: 1024
 | jsmin | Minify JavaScript code | 713 | 150 | 2026-03-03 | - | JSON | ✓ | ✓ | [link](https://www.crockford.com/javascript/jsmin.html) |
 | goimports-reviser | Right imports sorting & code formatting tool (goimports alte... | 710 | 77 | 2026-02-15 | 2026-02-15 | MIT | ✓ | - | [link](https://github.com/incu6us/goimports-reviser) |
 | shopify-cli | CLI which helps you build against the Shopify platform faste... | 709 | 262 | 2026-06-14 | 2026-05-27 | MIT | ✓ | - | [link](https://shopify.dev/) |
-| dvm | Deno Version Manager | 697 | 39 | 2025-05-26 | 2025-02-13 | MIT | ✓ | - | [link](https://dvm.deno.dev) |
+| dvm | Deno Version Manager | 697 | 39 | 2025-05-26 | 2025-02-13 | MIT | ✓ | - | [link](https://github.com/justjavac/dvm) |
 | wiki-tui | TUI for Wikipedia | 695 | 29 | 2025-12-08 | 2025-12-08 | MIT | ✓ | - | [link](https://github.com/Builditluc/wiki-tui) |
 | obelisk | Durable and deterministic workflow engine | 693 | 19 | 2026-06-07 | 2026-06-06 | AGPL-3.0-only | ✓ | - | [link](https://github.com/obeli-sk/obelisk) |
 | hackernews-tui | TUI to browse Hacker News | 686 | 30 | 2024-10-22 | 2024-10-22 | MIT | ✓ | - | [link](https://github.com/aome510/hackernews-TUI) |
@@ -583,7 +584,7 @@ Total formulas: 1024
 | rusticon | Mouse driven SVG favicon editor for your terminal | 98 | 1 | 2026-02-10 | 2025-08-26 | CC-BY-NC-ND-4.0 | ✓ | ✓ | [link](https://github.com/ronilan/rusticon) |
 | haloy | Manage deployments on your own infrastructure | 97 | 5 | 2026-02-16 | - | MIT | ✓ | - | [link](https://haloy.dev/) |
 | hclgrep | Syntax based grep for HCL(v2) | 97 | 7 | 2024-03-07 | - | BSD-3-Clause | ✓ | - | [link](https://github.com/magodo/hclgrep) |
-| twig | Terminal-based JSON and YAML viewer for exploring large file... | 97 | 4 | 2025-12-25 | 2025-12-25 | MIT | ✓ | - | [link](https://twig.wtf/) |
+| twig | Terminal-based JSON and YAML viewer for exploring large file... | 97 | 4 | 2025-12-25 | 2025-12-25 | MIT | ✓ | - | [link](https://github.com/workdone0/twig) |
 | jarl | Just Another R Linter | 96 | 6 | 2026-02-16 | 2026-02-05 | MIT | ✓ | - | [link](https://jarl.etiennebacher.com/) |
 | mdsf | Format, and lint, markdown code snippets using your favorite... | 96 | 3 | 2026-02-12 | 2025-12-17 | MIT | ✓ | - | [link](https://github.com/hougesen/mdsf) |
 | oceanbase-mcp-server | MCP Server for OceanBase database and its tools | 96 | 37 | 2026-01-13 | 2025-12-26 | Apache-2.0 | ✓ | - | [link](https://github.com/oceanbase/mcp-oceanbase) |
