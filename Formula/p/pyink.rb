@@ -10,7 +10,11 @@ class Pyink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5606b309b887ed38ebe58de2921d3f6553d918838068a92b62e7ab6deae95096"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad5bd15885b0fec3d7b3cacba2d548ef8b4231eea6c19ee9c315c9362b92ba37"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9880b3aa85df9d784bea9b7f5769399d1414632c2c5de0eb91e2caa97ecee5fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60e3efef30559e96b56531ab2704f716e620630f0f4cd838d1e668536b039b55"
+    sha256 cellar: :any,                 arm64_linux:   "f5a9bc21dc30f74f7bb141fd08ed415aef1e19d1904895e1e8faa6cfa05de5b5"
+    sha256 cellar: :any,                 x86_64_linux:  "80eeeab2bdf33898bb69718d4287b8a11ce1bcb794f34c5909a1c7d040217295"
   end
 
   depends_on "rust" => :build
