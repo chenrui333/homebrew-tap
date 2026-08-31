@@ -1,8 +1,8 @@
 class Obelisk < Formula
   desc "Durable and deterministic workflow engine"
   homepage "https://github.com/obeli-sk/obelisk"
-  url "https://github.com/obeli-sk/obelisk/archive/refs/tags/v0.41.4.tar.gz"
-  sha256 "b5f5e20e215cdefab597103f21a13a1db8ff86fa3089349b9dd382dc44f16ac2"
+  url "https://github.com/obeli-sk/obelisk/archive/refs/tags/v0.41.5.tar.gz"
+  sha256 "cb4c76c8e64f347722913c7c7e3b87ca15647160871a4874b80965ac2e8103dd"
   license "AGPL-3.0-only"
   head "https://github.com/obeli-sk/obelisk.git", branch: "main"
 
