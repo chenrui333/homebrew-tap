@@ -1,8 +1,8 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.20.3.tgz"
-  sha256 "b6cacff29bb350df7ef90d589db02e5f96fd7d14fe274e07939d0efb0f41baed"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.21.0.tgz"
+  sha256 "eaa3a69456ef7f01d18c688f18d0347604501ad49abdaf5df2854a301935b9f6"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
@@ -19,6 +19,15 @@ class OhMyCodex < Formula
 
   def install
     system "npm", "install", *std_npm_args
+
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native = "#{os}-#{arch}"
+    %w[bare-fs bare-path bare-url].each do |mod|
+      prebuild_dir = libexec/"lib/node_modules/oh-my-codex/node_modules/#{mod}/prebuilds"
+      prebuild_dir.each_child { |dir| rm_r(dir) if dir.basename.to_s != native }
+    end
+
     bin.install_symlink libexec.glob("bin/*")
   end
 
