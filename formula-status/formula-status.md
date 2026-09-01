@@ -1,6 +1,6 @@
 # Formula Metadata
 
-Generated: 2026-08-31 16:57:42 UTC
+Generated: 2026-09-01 14:08:54 UTC
 Total formulas: 1025
 
 ## Formulas
@@ -522,7 +522,7 @@ Total formulas: 1025
 | osmar | CLI to explore OSM data | 132 | 5 | 2025-07-21 | 2024-10-04 | MIT | ✓ | - | [link](https://github.com/codesoap/osmar) |
 | datadog-mcp-server | Community-maintained Datadog MCP server | 131 | 66 | 2026-02-14 | 2025-10-19 | Apache-2.0 | ✓ | - | [link](https://github.com/winor30/mcp-server-datadog) |
 | simdjzon | Simdjson ported to zig | 131 | 6 | 2025-11-04 | - | Apache-2.0 | ✓ | - | [link](https://github.com/travisstaloch/simdjzon) |
-| mcpd | Declaratively manage Model Context Protocol (MCP) servers | 130 | 17 | 2026-02-13 | 2026-01-28 | MIT | ✓ | - | [link](https://mozilla-ai.github.io/mcpd/) |
+| mcpd | Declaratively manage Model Context Protocol (MCP) servers | 130 | 17 | 2026-02-13 | 2026-01-28 | MIT | ✓ | - | [link](https://github.com/mozilla-ai/mcpd) |
 | vimalender | Vim-style terminal calendar | 130 | 3 | 2026-03-12 | 2026-03-10 | MIT | ✓ | - | [link](https://github.com/Sadoaz/vimalender) |
 | tiki | Markdown-based git-versioned documentation and issue managem... | 129 | 3 | 2026-03-30 | 2026-03-26 | Apache-2.0 | ✓ | - | [link](https://github.com/boolean-maybe/tiki) |
 | gitte | GTK4/libadwaita Git client for the GNOME desktop written in ... | 128 | 14 | 2026-06-14 | - | GPL-3.0-or-later | ✓ | - | [link](https://codeberg.org/ckruse/Gitte) |
