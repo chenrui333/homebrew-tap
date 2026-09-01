@@ -1,8 +1,8 @@
 class Prempti < Formula
   desc "Falco-powered policy and visibility layer for AI coding agents"
   homepage "https://github.com/falcosecurity/prempti"
-  url "https://github.com/falcosecurity/prempti/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "87671d3ee65bed1a37d0ab884f1d3db2600111263b69a76f08b683f67236cd9f"
+  url "https://github.com/falcosecurity/prempti/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "f32b7fb7a89087552cbc5b716ad72187ffccee39bfa9f0230ca3cc47af170067"
   license "Apache-2.0"
   head "https://github.com/falcosecurity/prempti.git", branch: "main"
 
