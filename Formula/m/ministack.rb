@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/59/33/42c3d65afd326551a2d11ea1ec7a2c1bee33f1c96b737930d1c8a7b6b42e/ministack-1.5.2.tar.gz"
-  sha256 "465d9da2810e91670bac3b1f0ac9edf0ff61885ccbf2d108e647333e46ed4f6d"
+  url "https://files.pythonhosted.org/packages/f9/66/27c0111b4141cc240104a55e40575830a935bda0900e74219cbe46a4364e/ministack-1.5.4.tar.gz"
+  sha256 "d75903031e3433ffddad0cd04a18d0bae68a3edd8d0ce47ca41c2c6cad1a5591"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
@@ -28,6 +28,11 @@ class Ministack < Formula
   resource "defusedxml" do
     url "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz"
     sha256 "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
+  end
+
+  resource "graphql-core" do
+    url "https://files.pythonhosted.org/packages/11/7f/671c1046fe72ba5b62be2de3979ea9e61cb3dba8f1edfb880b811f8bdf8b/graphql_core-3.2.12.tar.gz"
+    sha256 "4579094d5fc8a1a59555a9b18e51b320779d9bbc63e2302c519af0c4919d9543"
   end
 
   resource "h11" do
@@ -58,6 +63,11 @@ class Ministack < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/d3/59/322338183ecda247fb5d1763a6cbe46eff7222eaeebafd9fa65d4bf5cb11/jmespath-1.1.0.tar.gz"
     sha256 "472c87d80f36026ae83c6ddd0f1d05d4e510134ed462851fd5f754c8c3cbb88d"
+  end
+
+  resource "jsonata-python" do
+    url "https://files.pythonhosted.org/packages/9d/6a/b756e10939f584b0629c301bb4aa0e79f94163ac3b0083c788b8ee78c708/jsonata_python-0.7.0.tar.gz"
+    sha256 "2cf788147a0d444cb9d7d81c58da9991607280d6a5d0f06bd2dd212a59fdcb16"
   end
 
   resource "priority" do
