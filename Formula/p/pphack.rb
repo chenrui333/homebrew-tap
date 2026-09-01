@@ -1,8 +1,8 @@
 class Pphack < Formula
   desc "Client-Side Prototype Pollution Scanner"
   homepage "https://github.com/edoardottt/pphack"
-  url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "db0c06eef491cf689cd0d1b683ea47bf5c79dfc664413cccdccda263d7fcf5c3"
+  url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "59cc04102e900fb3cb29bc22f7ad51f888085cbe546e989294ff0b8d74a3dd33"
   license "MIT"
   head "https://github.com/edoardottt/pphack.git", branch: "main"
 
@@ -22,8 +22,9 @@ class Pphack < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/pphack -help")
-    # output = shell_output("#{bin}/pphack -u https://edoardottt.github.io/pphack-test/")
-    # assert_match "[VULN]", output
+    # FIXME: Upstream does not expose a version command; its error banner includes the version.
+    output = shell_output("#{bin}/pphack -u https://example.invalid -c 0 2>&1", 1)
+    assert_match version.to_s, output
+    assert_match "concurrency: must be positive", output
   end
 end
