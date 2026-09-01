@@ -10,11 +10,11 @@ class Cartography < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "76265057ddd1dde00d0f8f2b9a6158e37d5240d4cea8629b7d8d3e500ebc8bfb"
-    sha256 cellar: :any, arm64_sequoia: "9501bc53865b8224b3f1d3f0ba7529e21001da9eda0a7b12294e8b6eedccddfd"
-    sha256 cellar: :any, arm64_sonoma:  "d18fae5cfd92d344b2ac295193e1204b25d69126945c27dbbfadb9f0a23a8272"
-    sha256 cellar: :any, arm64_linux:   "7e6dbaa8bbdb20f23398804aee2de23fd40925f40d4457f057fe67f1d591aeb2"
-    sha256 cellar: :any, x86_64_linux:  "81b60721b0922a785c89bea2d1412eaec36ba47081d1b86635dbb560fd51e5cd"
+    sha256 cellar: :any, arm64_tahoe:   "3250ec478598720f8ff0c02b0d8dea5b9617bc430659eb4d13058c87d123b304"
+    sha256 cellar: :any, arm64_sequoia: "1f21ef03ea194d76f725eb5b09b97ed501c0e0e889c184f752a7f8e460bd062c"
+    sha256 cellar: :any, arm64_sonoma:  "80f69cefb97449dfdba3c454c7716b14ba0f2f19e726ca6f1a7fe89810d69292"
+    sha256 cellar: :any, arm64_linux:   "62f43ee15740a6e3669d67e3fca1959ddaa61bc56265d12148a077a6aae8f381"
+    sha256 cellar: :any, x86_64_linux:  "7879d4f75f7e0d9321ce3132fee8c7c2d7662cbaa327cc1e32e1e9ada909a290"
   end
 
   depends_on "pkgconf" => :build
