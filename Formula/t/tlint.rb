@@ -1,8 +1,8 @@
 class Tlint < Formula
   desc "Tighten linter for Laravel conventions"
   homepage "https://github.com/tighten/tlint"
-  url "https://github.com/tighten/tlint/archive/refs/tags/v9.6.1.tar.gz"
-  sha256 "16eb6de80ca8814e54408aceb6079411afe940d623f2ecf2e00cb38793217863"
+  url "https://github.com/tighten/tlint/archive/refs/tags/v9.7.0.tar.gz"
+  sha256 "92f5cf31a2c68575dce8640ec75542c56e5887417da1fcfaa540d23fe5128107"
   license "MIT"
   head "https://github.com/tighten/tlint.git", branch: "main"
 
