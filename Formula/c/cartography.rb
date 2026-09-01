@@ -3,8 +3,8 @@ class Cartography < Formula
 
   desc "Pull infrastructure assets and relationships into a Neo4j graph database"
   homepage "https://github.com/cartography-cncf/cartography"
-  url "https://github.com/cartography-cncf/cartography/archive/refs/tags/0.140.0.tar.gz"
-  sha256 "79e37c6710a3cbeed3272f2752179b33efd80916b620397f21ecc1dd2064e19f"
+  url "https://github.com/cartography-cncf/cartography/archive/refs/tags/0.141.0.tar.gz"
+  sha256 "f1f7d662b22c9430fb9c9d86ec55c75152283815d3e599ddd4bd18b8791d0a63"
   license "Apache-2.0"
   head "https://github.com/cartography-cncf/cartography.git", branch: "master"
 
