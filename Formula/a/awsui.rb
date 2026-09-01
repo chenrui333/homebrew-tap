@@ -10,13 +10,11 @@ class Awsui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce8bfd37d2075a2cb3b15778c3e732051227f3678d7645ee592081b23961793a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce8bfd37d2075a2cb3b15778c3e732051227f3678d7645ee592081b23961793a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce8bfd37d2075a2cb3b15778c3e732051227f3678d7645ee592081b23961793a"
-    sha256 cellar: :any_skip_relocation, sequoia:       "a9a2c7c10f285383c98fb27ab4b59611d5a381c99b8f3b03eeb97e5155113afd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "558d0d9f0b91a2c4619509047c932dd77a74a35bbd6cd116ce73551776af7437"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558d0d9f0b91a2c4619509047c932dd77a74a35bbd6cd116ce73551776af7437"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5dea235e314d32b95565c02e550410032a09cc543b601f1666d194ccbe5e5397"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7b74329373304a1105d53810c9ec3f923ebbbcf983378361a8e6499ebbea930"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7be86b3555dba9de0094dcbd2477cf76fc3fbc0ed554283c3d9060e29ff796f2"
+    sha256 cellar: :any,                 arm64_linux:   "927acea43be4d353ec5349fb9733776e2337b4b39e65c86964cb51d1fc0e707c"
+    sha256 cellar: :any,                 x86_64_linux:  "1e765644d583a28bb6d632bec268ade234b950e7e1197b368e7e2989566478fa"
   end
 
   depends_on "libyaml"
