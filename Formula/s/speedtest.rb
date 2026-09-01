@@ -8,11 +8,11 @@ class Speedtest < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "735f962be55aeb734b60f13b72fb74c841cd877c5ddf8efc007237ab20c356eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "735f962be55aeb734b60f13b72fb74c841cd877c5ddf8efc007237ab20c356eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "735f962be55aeb734b60f13b72fb74c841cd877c5ddf8efc007237ab20c356eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "400efb1e0859e443d1e987d84d6be95716daa02fb46dd7c83f27e3a500837e56"
-    sha256 cellar: :any,                 x86_64_linux:  "f524b4fa68d8df3da8484e6df49ba5dca442ee32f9b3d043dcae99a3bc15987b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a309f6398bb9cdee00e340583ec466f6ae70ace93c75c2661a41e9db2cc2fa8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a309f6398bb9cdee00e340583ec466f6ae70ace93c75c2661a41e9db2cc2fa8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a309f6398bb9cdee00e340583ec466f6ae70ace93c75c2661a41e9db2cc2fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92abd7a375abf1152655147e43c50c24becf9af39d9bb1da342cac63feb0f07b"
+    sha256 cellar: :any,                 x86_64_linux:  "f8ba22cc71bd97141c154d97d01b9a2ad2a8b0ba5e0adda9967d2aba39deacb4"
   end
 
   depends_on "go" => :build
