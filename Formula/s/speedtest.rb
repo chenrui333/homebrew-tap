@@ -1,8 +1,8 @@
 class Speedtest < Formula
   desc "Test Internet Speed using speedtest.net"
   homepage "https://github.com/showwin/speedtest-go"
-  url "https://github.com/showwin/speedtest-go/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "01c518f34eefbb6653a33538bb27daed4ef56318741b3d2d5412e9a3d81bed6e"
+  url "https://github.com/showwin/speedtest-go/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "48d01137468da9d419a3940a652803dafd8a6820abcd985b85c9d0c86b417ba3"
   license "MIT"
   head "https://github.com/showwin/speedtest-go.git", branch: "master"
 
