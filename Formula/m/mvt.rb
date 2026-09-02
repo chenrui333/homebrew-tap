@@ -3,8 +3,8 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/b2/60/34490817503381fa6e9effe0215224c74fb19770e90d05cb4bc4725cf2fa/mvt-2026.5.12.tar.gz"
-  sha256 "f7ab15a890f0acaac1a6d9cac34192fd59358d342ca865d9b204c878360440a5"
+  url "https://files.pythonhosted.org/packages/d7/eb/4d617d384cc90224e0b7746077198d49b10031d323ce90ce56a11fd2d237/mvt-2026.9.1.tar.gz"
+  sha256 "8716852ad04767fdd213b660fd67888e988000ca227d57ec2da2f9e656226b2c"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
@@ -17,6 +17,8 @@ class Mvt < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "f7b479eba603fe3af6c6121d38e9f47f806581259a655c165769da14816fdc3a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa4ac54b245108ef17b190cbcab38d27bda9f7815546676ad461b47200d9d117"
   end
+
+  depends_on "rust" => :build
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
@@ -40,23 +42,23 @@ class Mvt < Formula
   end
 
   resource "betterproto2" do
-    url "https://files.pythonhosted.org/packages/ac/02/4ae507aa18b8aa1681ea6e9f0dec08fabd610a94ade584fd9b071d286bf1/betterproto2-0.9.1.tar.gz"
-    sha256 "59d518cfbdd316e216c3d7f53448a6956432c7bd86ab9918fd8793c88c623cce"
+    url "https://files.pythonhosted.org/packages/c4/88/7249571b6d525968afbc70f4fc7774cee5cdd55ecebe084a0d49f75513cb/betterproto2-0.10.0.tar.gz"
+    sha256 "fa0bcc3b87b6fd9151cd0058c153e480830f55fddb5afe3fef92e842490be266"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
-    sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
+    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
+    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/57/75/31212c6bf2503fdf920d87fee5d7a86a2e3bcf444984126f13d8e4016804/click-8.3.2.tar.gz"
-    sha256 "14162b8b3b3550a7d479eafa77dfd3c38d9dc8951f6f69c78913a8f9a7540fd5"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
+    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
   end
 
   resource "iosbackup" do
@@ -65,8 +67,8 @@ class Mvt < Formula
   end
 
   resource "libusb1" do
-    url "https://files.pythonhosted.org/packages/a2/7f/c59ad56d1bca8fa4321d1bb77ba4687775751a4deceec14943a44da18ca0/libusb1-3.3.1.tar.gz"
-    sha256 "3951d360f2daf0e0eacf839e15d2d1d2f4f5e7830231eb3188eeffef2dd17bad"
+    url "https://files.pythonhosted.org/packages/89/35/f9d2a990d092d647b47540cd229e1d68432c0f51183484ca189612a4824c/libusb1-3.4.0.tar.gz"
+    sha256 "9cf5638506d54f21bf36550d97ea63189111a23c4d8078f630103a2052135f45"
   end
 
   resource "markdown-it-py" do
@@ -85,18 +87,18 @@ class Mvt < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz"
-    sha256 "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4"
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pyahocorasick" do
-    url "https://files.pythonhosted.org/packages/68/4b/e3bee663803e2202be984e1291084355f064dfa3a6a632e01fe496445a5c/pyahocorasick-2.2.0.tar.gz"
-    sha256 "817f302088400a1402bf2f8631fdb21cf5a2666888e0d6a7d5a3ad556212e9da"
+    url "https://files.pythonhosted.org/packages/b0/3c/dc9e31a0f004eabe2ef5d31456766555a02e2af29e159daa31266934af79/pyahocorasick-2.3.1.tar.gz"
+    sha256 "9d0f6bb522237ed7f111ed59c9e8baea7d1e75813587b6773babd43bda35db9f"
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz"
-    sha256 "697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf"
+    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
+    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
   end
 
   resource "pycryptodome" do
@@ -105,13 +107,13 @@ class Mvt < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/52/6d/fffca34caecc4a3f97bda81b2098da5e8ab7efc9a66e819074a11955d87e/pydantic_settings-2.13.1.tar.gz"
-    sha256 "b4c11847b15237fb0171e1462bf540e294affb9b86db4d9aa5c01730bdbe4025"
+    url "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz"
+    sha256 "694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "python-dateutil" do
@@ -120,8 +122,8 @@ class Mvt < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
-    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
+    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
+    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
   end
 
   resource "pyyaml" do
@@ -130,13 +132,13 @@ class Mvt < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/5f/a4/98b9c7c6428a668bf7e42ebb7c79d576a1c3c1e3ae2d47e674b468388871/requests-2.33.1.tar.gz"
-    sha256 "18817f8c57c6263968bc123d237e3b8b08ac046f5456bd1e307ee8f4250d3517"
+    url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
+    sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "rsa" do
@@ -145,8 +147,8 @@ class Mvt < Formula
   end
 
   resource "simplejson" do
-    url "https://files.pythonhosted.org/packages/41/f4/a1ac5ed32f7ed9a088d62a59d410d4c204b3b3815722e2ccfb491fa8251b/simplejson-3.20.2.tar.gz"
-    sha256 "5fe7a6ce14d1c300d80d08695b7f7e633de6cd72c80644021874d985b3393649"
+    url "https://files.pythonhosted.org/packages/0e/2a/54837395a3487c725669428d513293612a48d82b95a0642c936932e5d898/simplejson-4.1.1.tar.gz"
+    sha256 "c08eb9f7a90f77ae470e19a07472e9a79ebc0d1c2315d86a72767665bd5ba79f"
   end
 
   resource "six" do
@@ -155,13 +157,13 @@ class Mvt < Formula
   end
 
   resource "tld" do
-    url "https://files.pythonhosted.org/packages/df/a1/5723b07a70c1841a80afc9ac572fdf53488306848d844cd70519391b0d26/tld-0.13.1.tar.gz"
-    sha256 "75ec00936cbcf564f67361c41713363440b6c4ef0f0c1592b5b0fbe72c17a350"
+    url "https://files.pythonhosted.org/packages/5c/5d/76b4383ac4e5b5e254e50c09807b3e13820bed6d6c11cd540264988d6802/tld-0.13.2.tar.gz"
+    sha256 "d983fa92b9d717400742fca844e29d5e18271079c7bcfabf66d01b39b4a14345"
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/ba/19/1b9b0e29f30c6d35cb345486df41110984ea67ae69dddbc0e8a100999493/tzdata-2026.2.tar.gz"
-    sha256 "9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10"
+    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
+    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
   end
 
   resource "urllib3" do
@@ -187,10 +189,7 @@ class Mvt < Formula
     assert_match version.to_s, shell_output("#{bin}/mvt-android version")
     assert_match version.to_s, shell_output("#{bin}/mvt-ios version")
 
-    outputandroid = shell_output("#{bin}/mvt-android download-iocs")
-    outputios = shell_output("#{bin}/mvt-ios download-iocs")
-
-    assert_match "[mvt.common.updates] Downloaded indicators", outputandroid
-    assert_match "[mvt.common.updates] Downloaded indicators", outputios
+    output = shell_output("#{bin}/mvt-ios check-backup #{testpath}/missing-backup 2>&1", 2)
+    assert_match "does not exist", output
   end
 end
