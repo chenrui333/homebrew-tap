@@ -1,8 +1,8 @@
 class ClickupMcp < Formula
   desc "MCP Server for ClickUp"
   homepage "https://github.com/hauptsacheNet/clickup-mcp"
-  url "https://registry.npmjs.org/@hauptsache.net/clickup-mcp/-/clickup-mcp-1.7.2.tgz"
-  sha256 "28d5cfd8efa9df96908b8250797b5748775ff5653c05685a6b2d41426004bc07"
+  url "https://registry.npmjs.org/@hauptsache.net/clickup-mcp/-/clickup-mcp-1.8.0.tgz"
+  sha256 "154eadbb0b2d59e6883d658d228eba1e9e134491f09e55d4230d9f927209dca0"
   license "MIT"
 
   bottle do
