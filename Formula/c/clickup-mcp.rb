@@ -7,7 +7,7 @@ class ClickupMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1917a3a2b43b4726122641fc3a0d632ddb969314ae545ee3a79ea899c9e3b7c4"
+    sha256 cellar: :any_skip_relocation, all: "640d8959d19f7610542cc4fae1370c806add51d196889cbf95164541aa592038"
   end
 
   depends_on "node"
