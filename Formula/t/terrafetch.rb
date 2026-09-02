@@ -1,8 +1,8 @@
 class Terrafetch < Formula
   desc "Neofetch of Terraform. Let your IaC flex for you"
   homepage "https://github.com/RoseSecurity/terrafetch"
-  url "https://github.com/RoseSecurity/terrafetch/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "1ac690c842b0443365d24277ea9a4f2f858949aaf33faa1e88f54976f2e90b61"
+  url "https://github.com/RoseSecurity/terrafetch/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "8caca8aa1e796f6c96532b436ca50cdb8e796a4fa9575fe96a61294d26b85d58"
   license "Apache-2.0"
   head "https://github.com/RoseSecurity/terrafetch.git", branch: "main"
 
