@@ -1,8 +1,8 @@
 class Cliamp < Formula
   desc "Retro terminal music player inspired by Winamp"
   homepage "https://www.cliamp.stream"
-  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v1.63.2.tar.gz"
-  sha256 "968ff98c1e49bae8a0ce63acf5c77a9621ef70756a048e3df5e79454b82a9eef"
+  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "2c5885665dba5ed2e8dc156bce64751199a92efed7f63959c65e985759b73732"
   license "MIT"
   head "https://github.com/bjarneo/cliamp.git", branch: "main"
 
@@ -21,6 +21,7 @@ class Cliamp < Formula
   depends_on "flac"
   depends_on "libogg"
   depends_on "libvorbis"
+  depends_on "mpg123"
   depends_on "yt-dlp"
 
   on_linux do
