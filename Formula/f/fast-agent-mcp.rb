@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/ab/10/c5b56efbe3e07bf269646b0c03a245497767b316a5745b48e8d480ca1b70/fast_agent_mcp-0.10.15.tar.gz"
-  sha256 "3d539baf5678c6f7cc703d26a6cec09c5b31bbb417cf6e190a45d3089444e49d"
+  url "https://files.pythonhosted.org/packages/4a/cc/e4d3946671ba9a9cc1e240bab7cb6d9c3501fde69e16c0358c220a6d126f/fast_agent_mcp-0.10.16.tar.gz"
+  sha256 "c4140968de5120f14510a1ac1f34a24f63ce741163f4fecaec9bf422fa5942f2"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -415,8 +415,8 @@ class FastAgentMcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
-    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
+    url "https://files.pythonhosted.org/packages/8e/1d/6e762a6b060e662208951aefc5c39f6a96a272c4a10c0c1f7b6113fc3c09/platformdirs-4.11.6.tar.gz"
+    sha256 "1a4016e373f89f8ec458431fe0e0c5c4285858ac623f3e20efdfcbc0bd862941"
   end
 
   resource "prompt-toolkit" do
@@ -500,8 +500,8 @@ class FastAgentMcp < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/61/d8/9c23ec31d4973d7b41a99f45c7aa9aa65c7c4313d5c0463aafdb8fe05dd7/regex-2026.8.31.tar.gz"
-    sha256 "9350fd448a6442ae27853ab9d4b8d5a0bcb6d7774923a4fdfddd104c4458b35f"
+    url "https://files.pythonhosted.org/packages/19/c1/6b30b775c7bcc6cf6506a4d4741c2123e8d99cd50f3fe8cbd731f5fef526/regex-2026.9.3.tar.gz"
+    sha256 "aabd43208e335f4c3f0b56de3464b066dd425983a58f6eeb5738bcd7465403db"
   end
 
   resource "requests" do
