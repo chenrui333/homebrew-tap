@@ -7,11 +7,11 @@ class NpmNp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4675d7a9d434a5979ee8827db77762d3604a7bfd721da834d849a591275f3e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4675d7a9d434a5979ee8827db77762d3604a7bfd721da834d849a591275f3e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4675d7a9d434a5979ee8827db77762d3604a7bfd721da834d849a591275f3e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87e8300d16c384f9d71e75d9e8176d970525b3550147f929dca3423f2e473e3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87e8300d16c384f9d71e75d9e8176d970525b3550147f929dca3423f2e473e3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77764121b23df6ec20aa9f5f4b930aa183b902070defd05f1c63607d8cbce739"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77764121b23df6ec20aa9f5f4b930aa183b902070defd05f1c63607d8cbce739"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77764121b23df6ec20aa9f5f4b930aa183b902070defd05f1c63607d8cbce739"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "127e8493606e8124030a3a95efba087ed2c0fc77bcb4dc6d86439a69346cad8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "127e8493606e8124030a3a95efba087ed2c0fc77bcb4dc6d86439a69346cad8b"
   end
 
   depends_on "node"
