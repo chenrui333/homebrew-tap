@@ -8,11 +8,11 @@ class GhRepoMan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ed808f1a002e50f0a2156aeec52c85c58b9c88d801c0472ee8b6d902a30cd95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ed808f1a002e50f0a2156aeec52c85c58b9c88d801c0472ee8b6d902a30cd95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ed808f1a002e50f0a2156aeec52c85c58b9c88d801c0472ee8b6d902a30cd95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "22a78bb12b0115ffa1789efdcb4b54f057e97750a11bfbd35afe086a693716f8"
-    sha256 cellar: :any,                 x86_64_linux:  "909f18b1970da1ed9e00c9e767ab448d8b951e77bcc5505ec7e581ea2cf8b16c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9aabb592596ab7807de05052a430af2cabd9cd70aa17028b36b44f8b6197dd3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aabb592596ab7807de05052a430af2cabd9cd70aa17028b36b44f8b6197dd3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aabb592596ab7807de05052a430af2cabd9cd70aa17028b36b44f8b6197dd3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15ca565da4a192380b5b779cdd0c3a7a76dd73816590d589307a7dd26cb0b366"
+    sha256 cellar: :any,                 x86_64_linux:  "f41ad972282f3465dcef7fd82dc1e6b7aaee53ef838c1af4bb90ab5d24f04988"
   end
 
   depends_on "go" => :build
