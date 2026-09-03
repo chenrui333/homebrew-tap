@@ -1,8 +1,8 @@
 class NpmNp < Formula
   desc "Better `npm publish`"
   homepage "https://github.com/sindresorhus/np"
-  url "https://registry.npmjs.org/np/-/np-12.0.1.tgz"
-  sha256 "a0c5324ffbeba2bfd9e8f224c216a8542e9034ab6151863b711eb5c16c95f38d"
+  url "https://registry.npmjs.org/np/-/np-12.1.0.tgz"
+  sha256 "67ea1872dfdd9bf63bd6bfb0fb524fed7684f64b12576ac58f578e2c3e521158"
   license "MIT"
 
   bottle do
