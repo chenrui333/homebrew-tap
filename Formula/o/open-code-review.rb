@@ -8,11 +8,11 @@ class OpenCodeReview < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41289d96b693fe944af9badea1f24aeddb44da85467bb2f818272e0c9295c85c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41289d96b693fe944af9badea1f24aeddb44da85467bb2f818272e0c9295c85c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41289d96b693fe944af9badea1f24aeddb44da85467bb2f818272e0c9295c85c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af967ce9da4c5b9baeb491d497064f2ffd9131429bcecea268f99b1410f40f62"
-    sha256 cellar: :any,                 x86_64_linux:  "131d0a615cfbe136b201d904176f6b7be2ec0b5dcb44624667b13db0fcbe8d63"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c84591e882bb85adac3dd1b62667a13583e7fc2488f9d125243c0b46267ea2c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c84591e882bb85adac3dd1b62667a13583e7fc2488f9d125243c0b46267ea2c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c84591e882bb85adac3dd1b62667a13583e7fc2488f9d125243c0b46267ea2c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e16c3358f77dafea9a249cdf27b1c3cdaee0a60b1aaaf0acde7acdc9a436629a"
+    sha256 cellar: :any,                 x86_64_linux:  "ca161dd00ab355f27fb705575de04918c4bb89232fba6d8c9369d6cb82ae9fbf"
   end
 
   depends_on "go" => :build
