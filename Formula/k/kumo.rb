@@ -1,8 +1,8 @@
 class Kumo < Formula
   desc "Lightweight AWS service emulator written in Go"
   homepage "https://github.com/sivchari/kumo"
-  url "https://github.com/sivchari/kumo/archive/refs/tags/v0.28.1.tar.gz"
-  sha256 "ef44ca39129efc62df611408fcbff99e0314176588f2b82416a39603c7203922"
+  url "https://github.com/sivchari/kumo/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "53bdf4c857eb6e37330a652a6c3074ebcf739b1a1f6a7a15611867a45d812457"
   license "MIT"
   head "https://github.com/sivchari/kumo.git", branch: "main"
 
