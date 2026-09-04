@@ -1,8 +1,8 @@
 class MongodbMcpServer < Formula
   desc "MCP Server to connect to MongoDB databases and MongoDB Atlas Clusters"
   homepage "https://github.com/mongodb-js/mongodb-mcp-server"
-  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-2.1.0.tgz"
-  sha256 "c23891af5544154735fbf91a5e8a688185b9000398c0202964e4835260152407"
+  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-2.1.1.tgz"
+  sha256 "cac3f1ff1492df0188e4e4d79655b438f7a5a8a2a1f4ebaff3e7261e116c5ee6"
   license "Apache-2.0"
 
   bottle do
@@ -30,18 +30,7 @@ class MongodbMcpServer < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mongodb-mcp-server --version")
 
-    # TODO: re-enable the json-rpc test
-    # json = <<~JSON
-    #   {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-    #   {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
-    #   {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
-    # JSON
-
-    # ENV["MDB_MCP_CONNECTION_STRING"] = "mongodb://localhost:27017/myDatabase"
-    # ENV["MDB_MCP_READ_ONLY"] = "true"
-
-    # output = pipe_output("#{bin}/mongodb-mcp-server 2>&1", json, 1)
-    # assert_match "Failed to connect to MongoDB instance using the connection string", output
-    # assert_match "List all collections for a given database", output
+    output = shell_output("#{bin}/mongodb-mcp-server --httpPort 65536 2>&1", 1)
+    assert_match "Invalid httpPort: must be at most 65535", output
   end
 end
