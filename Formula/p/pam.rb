@@ -13,11 +13,11 @@ class Pam < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1edaf8a25efd8ec4e6a3c8dd16828d993054ea518dfd82194871d255327b240c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73faedc831c35bcfc09fcf545063ec7d97977a306a4102c3a99ebf66c25d53f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ed37a641e0091d99382a740f8d9fa2084c72acff9d4cd7a319e43f54826a66e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "365683317cef074846d98a0c82cd9889ef843befa69e2f09f68ffdfc242e96d8"
-    sha256 cellar: :any,                 x86_64_linux:  "edc68cbbd01f0a7d6f747e4c254054c3ed4845778ea2ad44264e17b6f1a2dba9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "052f30165039e1cbd78e25046af8e6a15adafc5cbbf47ff4ccc5fbdd40c856ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "373addaa13e29a3a75569d17624c6b842fa279a1a21466325e391be8d2a9df89"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b798f27c315f11f9579a1a039fdd7865b880bb8e84ecad4c885b7ed7d97c11a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8924686e1c990b628d3826eee7b8fa8c1594b9a3af0a4b21b4d7521de479b69"
+    sha256 cellar: :any,                 x86_64_linux:  "1f9a08a13fde481d56cdf3ac400107e71de744380e41d06ef7cb236e936a5b63"
   end
 
   depends_on "go" => :build
