@@ -8,7 +8,6 @@ class Codemark < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/codemark-cli")
