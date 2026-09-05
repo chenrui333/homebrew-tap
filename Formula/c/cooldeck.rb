@@ -6,6 +6,15 @@ class Cooldeck < Formula
   license "MIT"
   head "https://github.com/Resetnak/cooldeck.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d29853fe2ee294445b6931b4774edddbd7b6e61e7cc88dc36508d5295e714984"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d29853fe2ee294445b6931b4774edddbd7b6e61e7cc88dc36508d5295e714984"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d29853fe2ee294445b6931b4774edddbd7b6e61e7cc88dc36508d5295e714984"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27f03617683518610890204857ae888df64d420adc8b02e83611345d9f2e7ee0"
+    sha256 cellar: :any,                 x86_64_linux:  "6cc485edf1098ba6c50639d63e6b219a8089621ba886ccc028df94c1abb1eaac"
+  end
+
   depends_on "go" => :build
 
   def install
