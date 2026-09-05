@@ -6,6 +6,15 @@ class Layerx < Formula
   license "MIT"
   head "https://github.com/deveshctl/layerx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f433ed30bb02bbc094e0a452df9bf9549da66bb6ae4691aa64f3c56495009c12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f433ed30bb02bbc094e0a452df9bf9549da66bb6ae4691aa64f3c56495009c12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f433ed30bb02bbc094e0a452df9bf9549da66bb6ae4691aa64f3c56495009c12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "261470a15d62be4b495b1c511990cdab30b2e064860bf10ab240d0d2c5c47133"
+    sha256 cellar: :any,                 x86_64_linux:  "410a175e60a24755919129857e4497a6e107bc71dffde9eb39c91a93c45d523e"
+  end
+
   depends_on "go" => :build
 
   def install
