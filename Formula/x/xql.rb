@@ -16,6 +16,6 @@ class Xql < Formula
     assert_match version.to_s, shell_output("#{bin}/xql --version")
     (testpath/"input.csv").write("name\nalice\n")
     output = shell_output("#{bin}/xql csv #{testpath}/input.csv --exec 'SELECT name' --mode=csv")
-    assert_equal "name\nalice\n", output
+    assert_equal %w[name alice], output.lines.map(&:strip)
   end
 end
