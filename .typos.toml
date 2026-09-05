@@ -13,6 +13,7 @@ extend-ignore-re = [
 ]
 
 [default.extend-words]
+keyward = "keyward" # upstream project name
 Hashi = "Hashi" 
 Sur = "Sur" 
 debugg = "debugg" # for debugg-ai-mcp filename
