@@ -3,8 +3,7 @@ class Herald < Formula
   homepage "https://github.com/herald-email/herald-mail-app"
   url "https://github.com/herald-email/herald-mail-app/archive/refs/tags/v0.7.5-beta.1.tar.gz"
   sha256 "896105ba775beb7e25c317ddd1309ed1695f29372f3f9ad554714b26153488e2"
-  # Functional Source License 1.1 with Apache-2.0 future license (FSL-1.1-ALv2).
-  license :cannot_represent
+  license "FSL-1.1-ALv2"
   head "https://github.com/herald-email/herald-mail-app.git", branch: "main"
 
   livecheck do
