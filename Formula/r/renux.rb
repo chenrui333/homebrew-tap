@@ -10,7 +10,11 @@ class Renux < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "65227c075c89e1227807f2964a3ac3d2e4d1312a76e513b2c6804a751f2437be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f394c7d4816fecf13b64bbae0c0657fb511d94560d84e4079b8d583198b11fad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b27cd39c697d2240e8ebcb2272057c9d5f4fb22cada08c05b261f451e1588a9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db69e12573921dacdaece11b2084491ce07a677d94601bbc652e4a0f19beb8cc"
+    sha256 cellar: :any,                 arm64_linux:   "c16b65b4aa7b038cc0a77255813834de4257b3c77c170e5f04ea8bde2153f6b1"
+    sha256 cellar: :any,                 x86_64_linux:  "86d6c9a4a0e50569d0dc1fb80c9c45291d3730d36962766c1cbf3589589d0344"
   end
 
   depends_on "pkgconf" => :build
