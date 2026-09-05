@@ -11,11 +11,11 @@ class Mvt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4ec0d325e07cc0a4f69bc35ff4c94a60fed2448b3e8d819172f99facd168ee1a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15c5e6ee115a45f0f47227d75eb9cb9e1b60671131672b1c98a3ab4963632e15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d2500589fbc61b0d942dfc37dfbfd23c5cbf6a8a8d13293cfed80a1a31999f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7b479eba603fe3af6c6121d38e9f47f806581259a655c165769da14816fdc3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa4ac54b245108ef17b190cbcab38d27bda9f7815546676ad461b47200d9d117"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c257d0e90233ca46496b0ead3d4adfd6844eb145da4fc25f63617d0b00e8faa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5502c81404f06b19934b50bbe1dcf8a0e9b535249bd9c9c67251f63b75952302"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b04e276e1caa68a7a5210f096da9c902aa18861a8c6c131407b5dd3d571fa137"
+    sha256 cellar: :any,                 arm64_linux:   "30015a8284a84a1066f5ccee5d8e57c5a4d5ae5ffd6f147f656ee4e9773b9c79"
+    sha256 cellar: :any,                 x86_64_linux:  "adb280f7a1c4550fd8b6bc30b57c4cb8db0111ada20ed20bed75bcd65e48adc2"
   end
 
   depends_on "rust" => :build
