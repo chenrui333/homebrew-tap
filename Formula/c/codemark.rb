@@ -6,6 +6,7 @@ class Codemark < Formula
   license "MIT"
   head "https://github.com/DanielCardonaRojas/codemark.git", branch: "main"
 
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
