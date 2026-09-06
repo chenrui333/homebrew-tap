@@ -29,6 +29,7 @@ class Herald < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/herald --version")
-    assert_match "Failed to load config", shell_output("#{bin}/herald serve --config #{testpath}/missing.yaml 2>&1", 1)
+    output = shell_output("#{bin}/herald serve --config #{testpath}/missing.yaml 2>&1", 1)
+    assert_match "Failed to load config", output
   end
 end
