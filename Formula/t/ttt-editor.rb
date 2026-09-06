@@ -7,7 +7,6 @@ class TttEditor < Formula
   head "https://github.com/eugenioenko/ttt.git", branch: "main"
 
   depends_on "go" => :build
-  depends_on "git"
 
   def install
     system "go", "build", *std_go_args(output: bin/"ttt", ldflags: "-s -w -X main.version=#{version}"), "./cmd/ttt"
