@@ -6,7 +6,13 @@ class BullmqDash < Formula
   license "MIT"
   head "https://github.com/quanghuynt14/bullmq-dash.git", branch: "master"
 
+  depends_on "zig@0.15" => :build
   depends_on "bun"
+
+  resource "opentui" do
+    url "https://github.com/anomalyco/opentui/archive/refs/tags/v0.4.3.tar.gz"
+    sha256 "3a72427d6cc6c7dc1086d44037d4f4c499ebc38c2e3e67ecf998695e65c8337a"
+  end
 
   def install
     system "bun", "install", "--frozen-lockfile", "--production"
@@ -17,9 +23,22 @@ class BullmqDash < Formula
     libexec.glob("node_modules/@opentui/core-*").each do |path|
       rm_r path unless path.basename.to_s.end_with?("-#{os}-#{arch}")
     end
+    # Build the FFI library from source with room for Homebrew bottle relocation.
+    native_package = libexec/"node_modules/@opentui/core-#{os}-#{arch}"
+    resource("opentui").stage do
+      cd "packages/core/src/zig" do
+        inreplace "build.zig", "    addNativeAudioDependencies(b, lib, target, macos_sdk_path);",
+                              "    if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n" \
+                              "    addNativeAudioDependencies(b, lib, target, macos_sdk_path);"
+        system "zig", "build", "-Doptimize=ReleaseFast"
+        library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
+        rm native_package/library
+        native_package.install Dir["lib/*/#{library}"]
+      end
+    end
     (bin/"bullmq-dash").write <<~SH
       #!/bin/bash
-      exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/dist/index.js" "$@"
+      exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/dist/index.js" "$@"
     SH
     chmod 0755, bin/"bullmq-dash"
   end
