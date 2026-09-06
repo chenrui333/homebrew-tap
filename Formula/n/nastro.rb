@@ -9,8 +9,11 @@ class Nastro < Formula
   depends_on "go" => :build
   depends_on xcode: ["15.3", :build]
   depends_on :macos
-  depends_on macos: :sonoma
   depends_on "whisper-cpp"
+
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "14.4"
