@@ -8,6 +8,7 @@ on:
 concurrency:
   group: ${{ github.event.label.name == 'pr-pull' && 'brew-pr-pull' || format('brew-pr-pull-skip-{0}', github.run_id) }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   pr-pull:
