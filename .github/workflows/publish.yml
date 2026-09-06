@@ -9,9 +9,6 @@ concurrency:
   group: ${{ github.event.label.name == 'pr-pull' && 'brew-pr-pull' || format('brew-pr-pull-skip-{0}', github.run_id) }}
   cancel-in-progress: false
 
-env:
-  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
-
 jobs:
   pr-pull:
     if: |
