@@ -7,7 +7,7 @@ class Nastro < Formula
   head "https://github.com/scaccogatto/nastro.git", branch: "main"
 
   depends_on "go" => :build
-  depends_on xcode: :build
+  depends_on xcode: ["15.3", :build]
   depends_on :macos
   depends_on macos: :sonoma
   depends_on "whisper-cpp"
