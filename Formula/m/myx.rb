@@ -16,7 +16,6 @@ class Myx < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-
   end
 
   test do
