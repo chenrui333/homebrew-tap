@@ -8,6 +8,7 @@ class Rogallo < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
+  depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
   depends_on "python@3.14"
 
