@@ -6,12 +6,17 @@ class Simutil < Formula
   license "MIT"
   head "https://github.com/dungngminh/simutil.git", branch: "main"
 
-  depends_on "dart-sdk" => :build
+  depends_on "dart-sdk"
 
   def install
     system "dart", "pub", "get", "--enforce-lockfile"
-    bin.mkpath
-    system "dart", "compile", "exe", "bin/simutil.dart", "-o", bin/"simutil"
+    libexec.mkpath
+    system "dart", "compile", "aot-snapshot", "bin/simutil.dart", "-o", libexec/"simutil.aot"
+    (bin/"simutil").write <<~SH
+      #!/bin/bash
+      exec "#{formula_opt_libexec("dart-sdk")}/bin/dartaotruntime" "#{libexec}/simutil.aot" "$@"
+    SH
+    chmod 0755, bin/"simutil"
   end
 
   test do
