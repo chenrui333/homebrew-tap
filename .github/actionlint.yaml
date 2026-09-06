@@ -1,0 +1,6 @@
+paths:
+  .github/workflows/publish.yml:
+    ignore:
+      # GitHub supports this setting; actionlint 1.7.12 does not yet recognize it.
+      # Remove after https://github.com/rhysd/actionlint/issues/657 is released.
+      - '^unexpected key "queue" for "concurrency" section\.'
