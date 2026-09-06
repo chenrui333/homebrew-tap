@@ -19,6 +19,7 @@ class Diskbloom < Formula
     (testpath/"no-tty.rb").write <<~RUBY
       pid = fork do
         Process.setsid
+        $stdin.reopen(File::NULL)
         exec ARGV.fetch(0), ARGV.fetch(1)
       end
       Process.wait(pid)
