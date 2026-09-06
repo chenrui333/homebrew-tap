@@ -8,6 +8,7 @@ class Spotatui < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "portaudio"
 
   on_linux do
     depends_on "alsa-lib"
