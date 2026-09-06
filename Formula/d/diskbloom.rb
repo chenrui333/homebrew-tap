@@ -15,7 +15,16 @@ class Diskbloom < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/diskbloom --version")
     # TODO: Replace the terminal requirement check when upstream exposes a headless scan mode.
-    output = shell_output("#{bin}/diskbloom #{testpath} 2>&1", 1)
-    assert_match(/TTY|terminal/i, output)
+    # Bubble Tea opens /dev/tty when stdin is redirected; detach the child from its terminal.
+    (testpath/"no-tty.rb").write <<~RUBY
+      pid = fork do
+        Process.setsid
+        exec ARGV.fetch(0), ARGV.fetch(1)
+      end
+      Process.wait(pid)
+      exit $?.exitstatus
+    RUBY
+    output = shell_output("#{RbConfig.ruby} no-tty.rb #{bin}/diskbloom #{testpath} 2>&1", 1)
+    assert_match "error opening TTY", output
   end
 end
