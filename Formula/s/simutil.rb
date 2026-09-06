@@ -10,6 +10,7 @@ class Simutil < Formula
 
   def install
     system "dart", "pub", "get", "--enforce-lockfile"
+    bin.mkpath
     system "dart", "compile", "exe", "bin/simutil.dart", "-o", bin/"simutil"
   end
 
