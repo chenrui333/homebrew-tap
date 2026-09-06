@@ -18,7 +18,8 @@ class Nastro < Formula
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "14.4"
     system "go", "build", *std_go_args
-    system "swiftc", "-O", "-framework", "CoreAudio", "-framework", "AVFoundation",
+    system "swiftc", "-O", "-target", "#{Hardware::CPU.arch}-apple-macosx14.4",
+           "-framework", "CoreAudio", "-framework", "AVFoundation",
            "-framework", "AudioToolbox", "-framework", "AppKit", "-framework", "CoreGraphics",
            "-o", bin/"nastro-tap", "tap/main.swift"
   end
