@@ -6,9 +6,19 @@ class Noodle < Formula
   license "Apache-2.0"
   head "https://github.com/wilfredinni/noodle.git", branch: "main"
 
+  depends_on "zig" => :build
   depends_on "bun"
 
+  resource "opentui" do
+    url "https://github.com/anomalyco/opentui/archive/refs/tags/v0.5.9.tar.gz"
+    sha256 "5aaa05506cbaf3318d3977dd09f42f9864ba8ee3a86a98c1f65a020b62479e9b"
+  end
+
   def install
+    # Husky installs development Git hooks and is not a production dependency.
+    package = JSON.parse((buildpath/"package.json").read)
+    package.fetch("scripts").delete("prepare")
+    (buildpath/"package.json").write JSON.generate(package)
     system "bun", "install", "--frozen-lockfile", "--production"
     libexec.install "src", "assets", "node_modules", "package.json"
     os = OS.kernel_name.downcase
@@ -16,9 +26,23 @@ class Noodle < Formula
     libexec.glob("node_modules/@opentui/core-*").each do |path|
       rm_r path unless path.basename.to_s.end_with?("-#{os}-#{arch}")
     end
+    # Build the FFI library from source with room for Homebrew bottle relocation.
+    native_package = libexec/"node_modules/@opentui/core-#{os}-#{arch}"
+    resource("opentui").stage do
+      cd "packages/native" do
+        system "sh", "scripts/prepare-zig-deps.sh"
+        inreplace "build.zig", "    addNativeAudioDependencies(b, module, target, macos_sdk_path);",
+                              "    if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n" \
+                              "    addNativeAudioDependencies(b, module, target, macos_sdk_path);"
+        system "zig", "build", "-Doptimize=ReleaseFast"
+        library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
+        rm native_package/library
+        native_package.install Dir["lib/*/#{library}"]
+      end
+    end
     (bin/"noodle").write <<~SH
       #!/bin/bash
-      exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/src/app/cli.ts" "$@"
+      exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/src/app/cli.ts" "$@"
     SH
     chmod 0755, bin/"noodle"
   end
