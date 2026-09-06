@@ -8,7 +8,6 @@ class Gitwig < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "git"
   depends_on "libgit2"
 
   def install
