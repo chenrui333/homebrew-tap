@@ -12,6 +12,12 @@ class Streamtop < Formula
     system "cargo", "install", *std_cargo_args
   end
 
+  service do
+    run [opt_bin/"streamtop", "--agent", etc/"streamtop.toml"]
+    log_path var/"log/streamtop.log"
+    error_log_path var/"log/streamtop.log"
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/streamtop --version")
     (testpath/"empty.toml").write("streams = []\n")
