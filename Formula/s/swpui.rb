@@ -14,9 +14,10 @@ class Swpui < Formula
 
   test do
     # TODO: Upstream does not expose a version command.
-    # FIXME: Replace the terminal startup failure check when upstream adds a headless preview mode.
-    output = shell_output("#{bin}/swp </dev/null 2>&1", 1)
-    assert_match version.to_s, output
-    assert_match "Failed to initialize input reader", output
+    # FIXME: Replace the startup error check when upstream adds a headless preview mode.
+    (testpath/"swpui.log").mkpath
+    output = shell_output("DEBUG=1 #{bin}/swp 2>&1", 1)
+    assert_match "Is a directory", output
+    assert_predicate testpath/"swpui.log", :directory?
   end
 end
