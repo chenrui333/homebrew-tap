@@ -27,9 +27,10 @@ class BullmqDash < Formula
     native_package = libexec/"node_modules/@opentui/core-#{os}-#{arch}"
     resource("opentui").stage do
       cd "packages/core/src/zig" do
-        inreplace "build.zig", "    addNativeAudioDependencies(b, lib, target, macos_sdk_path);",
-                              "    if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n    " \
-                              "addNativeAudioDependencies(b, lib, target, macos_sdk_path);"
+        inreplace "build.zig", "addNativeAudioDependencies(b, lib, target, macos_sdk_path);", <<~ZIG
+          if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;
+          addNativeAudioDependencies(b, lib, target, macos_sdk_path);
+        ZIG
         system "zig", "build", "-Doptimize=ReleaseFast"
         library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
         rm native_package/library
