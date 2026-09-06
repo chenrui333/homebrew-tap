@@ -1,9 +1,9 @@
 class Kmon < Formula
-  desc "Linux Kernel Manager and Activity Monitor 🐧💻"
+  desc "Linux kernel manager and activity monitor"
   homepage "https://kmon.cli.rs/"
   url "https://github.com/orhun/kmon/archive/refs/tags/v1.7.1.tar.gz"
   sha256 "fd8e02c17089e88c2b019e116e0b7fdd9fe4285327bd795de90622aba4b79469"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   depends_on "rust" => :build
   depends_on :linux
@@ -13,6 +13,7 @@ class Kmon < Formula
   end
 
   test do
-    system bin/"gerust", "--version"
+    assert_match version.to_s, shell_output("#{bin}/kmon --version")
+    assert_match "unexpected argument", shell_output("#{bin}/kmon --invalid-option 2>&1", 2)
   end
 end
