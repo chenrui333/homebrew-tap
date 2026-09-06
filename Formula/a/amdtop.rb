@@ -8,8 +8,8 @@ class Amdtop < Formula
 
   depends_on "rust" => :build
   depends_on "pkgconf" => :build
-  depends_on :linux
   depends_on "libdrm"
+  depends_on :linux
 
   def install
     system "cargo", "install", *std_cargo_args
