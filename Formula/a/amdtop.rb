@@ -6,8 +6,8 @@ class Amdtop < Formula
   license "Apache-2.0"
   head "https://github.com/lhl/amdtop.git", branch: "main"
 
-  depends_on "rust" => :build
   depends_on "pkgconf" => :build
+  depends_on "rust" => :build
   depends_on "libdrm"
   depends_on :linux
 
