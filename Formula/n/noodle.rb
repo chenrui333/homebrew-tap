@@ -18,7 +18,7 @@ class Noodle < Formula
     # Husky installs development Git hooks and is not a production dependency.
     package = JSON.parse((buildpath/"package.json").read)
     package.fetch("scripts").delete("prepare")
-    (buildpath/"package.json").write JSON.generate(package)
+    (buildpath/"package.json").atomic_write JSON.generate(package)
     system "bun", "install", "--frozen-lockfile", "--production"
     libexec.install "src", "assets", "node_modules", "package.json"
     os = OS.kernel_name.downcase
@@ -32,8 +32,8 @@ class Noodle < Formula
       cd "packages/native" do
         system "sh", "scripts/prepare-zig-deps.sh"
         inreplace "build.zig", "    addNativeAudioDependencies(b, module, target, macos_sdk_path);",
-                              "    if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n" \
-                              "    addNativeAudioDependencies(b, module, target, macos_sdk_path);"
+                              "    if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n    " \
+                              "addNativeAudioDependencies(b, module, target, macos_sdk_path);"
         system "zig", "build", "-Doptimize=ReleaseFast"
         library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
         rm native_package/library
