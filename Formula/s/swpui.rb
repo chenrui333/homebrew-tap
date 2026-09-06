@@ -15,7 +15,7 @@ class Swpui < Formula
   test do
     # TODO: Upstream does not expose a version command.
     # FIXME: Replace the terminal startup failure check when upstream adds a headless preview mode.
-    output = shell_output("#{bin}/swpui </dev/null 2>&1", 101)
+    output = shell_output("#{bin}/swp </dev/null 2>&1", 101)
     assert_match "failed to initialize terminal", output
     assert_match "panicked", output
   end
