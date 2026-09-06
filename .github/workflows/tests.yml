@@ -122,12 +122,15 @@ jobs:
           cleanup: ${{ matrix.cleanup }}
 
       - name: Prepare Intel macOS dependencies
-        if: github.event_name == 'pull_request' && matrix.runner == 'macos-15-intel'
+        if: >-
+          github.event_name == 'pull_request' &&
+          matrix.runner == 'macos-15-intel' &&
+          contains(github.event.pull_request.labels.*.name, 'CI-source-dependencies')
         env:
           TESTING_FORMULAE: ${{ needs.tap-syntax.outputs.testing_formulae }}
           HOMEBREW_NO_INSTALL_FROM_API: 1
         run: |
-          # Build unavailable dependency bottles from source before --build-bottle.
+          # Opt in when missing dependency bottles have a practical source build.
           # The formula itself is still built, bottled and tested by test-bot below.
           if [[ -n "$TESTING_FORMULAE" ]]; then
             IFS=',' read -r -a formulae <<< "$TESTING_FORMULAE"
