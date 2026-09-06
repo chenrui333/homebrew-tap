@@ -21,6 +21,7 @@ class Noodle < Formula
     (buildpath/"package.json").atomic_write JSON.generate(package)
     system "bun", "install", "--frozen-lockfile", "--production"
     libexec.install "src", "assets", "node_modules", "package.json"
+    (libexec/".agents/skills").install ".agents/skills/noodle-use"
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : "arm64"
     libexec.glob("node_modules/@opentui/core-*").each do |path|
@@ -31,9 +32,10 @@ class Noodle < Formula
     resource("opentui").stage do
       cd "packages/native" do
         system "sh", "scripts/prepare-zig-deps.sh"
-        inreplace "build.zig", "    addNativeAudioDependencies(b, module, target, macos_sdk_path);",
-                              "    if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n    " \
-                              "addNativeAudioDependencies(b, module, target, macos_sdk_path);"
+        inreplace "build.zig", "addNativeAudioDependencies(b, module, target, macos_sdk_path);", <<~ZIG
+          if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;
+          addNativeAudioDependencies(b, module, target, macos_sdk_path);
+        ZIG
         system "zig", "build", "-Doptimize=ReleaseFast"
         library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
         rm native_package/library
