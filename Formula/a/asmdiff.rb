@@ -16,6 +16,8 @@ class Asmdiff < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/asmdiff --version")
-    assert_match "SOURCE.c required", shell_output("#{bin}/asmdiff 2>&1", 2)
+    (testpath/"test.c").write "int add(int x) { return x + 1; }\n"
+    output = shell_output("#{bin}/asmdiff test.c --cc '#{ENV.cc} -O2' --filter 'add$' --json")
+    assert_match(/"_?add"/, output)
   end
 end
