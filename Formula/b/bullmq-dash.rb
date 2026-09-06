@@ -23,6 +23,8 @@ class BullmqDash < Formula
     libexec.glob("node_modules/@opentui/core-*").each do |path|
       rm_r path unless path.basename.to_s.end_with?("-#{os}-#{arch}")
     end
+    # Homebrew Linux uses glibc; bundled musl variants cannot be linked.
+    rm libexec.glob("node_modules/@msgpackr-extract/**/*.musl.node") if OS.linux?
     # Build the FFI library from source with room for Homebrew bottle relocation.
     native_package = libexec/"node_modules/@opentui/core-#{os}-#{arch}"
     resource("opentui").stage do
