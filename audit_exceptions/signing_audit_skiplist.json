@@ -1,4 +1,5 @@
 {
+  "docker-scout-cli": "all",
   "lanes": "all",
   "proton-pass-cli": "all"
 }
