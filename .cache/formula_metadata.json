@@ -41,6 +41,12 @@
     "last_release": null,
     "stars": 9
   },
+  "codeberg:ozeye/tornado": {
+    "forks": 1,
+    "last_commit": "2026-08-10",
+    "last_release": "2026-08-05",
+    "stars": 12
+  },
   "codeberg:vitali87/croft": {
     "forks": 7,
     "last_commit": "2026-06-14",
@@ -125,11 +131,23 @@
     "last_release": "2026-03-23",
     "stars": 824
   },
+  "github:AS-FOSS/mandible": {
+    "forks": 5,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-05",
+    "stars": 170
+  },
   "github:Adarsh-codesOP/Klein": {
     "forks": 1,
     "last_commit": "2026-03-16",
     "last_release": "2026-03-16",
     "stars": 27
+  },
+  "github:AfrozSaqlain/Papr": {
+    "forks": 9,
+    "last_commit": "2026-08-13",
+    "last_release": "2026-08-11",
+    "stars": 196
   },
   "github:Aperocky/tascli": {
     "forks": 9,
@@ -184,6 +202,12 @@
     "last_commit": "2026-02-11",
     "last_release": "2026-02-11",
     "stars": 292
+  },
+  "github:Baltram/seednaut": {
+    "forks": 0,
+    "last_commit": "2026-08-15",
+    "last_release": "2026-05-19",
+    "stars": 35
   },
   "github:Barre/ZeroFS": {
     "forks": 76,
@@ -334,6 +358,12 @@
     "last_commit": "2025-06-20",
     "last_release": "2024-12-18",
     "stars": 28
+  },
+  "github:DanielCardonaRojas/codemark": {
+    "forks": 1,
+    "last_commit": "2026-08-31",
+    "last_release": "2026-08-31",
+    "stars": 123
   },
   "github:DeepGuide-Ai/dg": {
     "forks": 2,
@@ -503,6 +533,12 @@
     "last_release": "2026-03-08",
     "stars": 379
   },
+  "github:HaseebKhalid1507/Myx": {
+    "forks": 13,
+    "last_commit": "2026-08-13",
+    "last_release": "2026-08-04",
+    "stars": 215
+  },
   "github:Herdora/chisel": {
     "forks": null,
     "last_commit": null,
@@ -593,6 +629,12 @@
     "last_release": "2026-02-21",
     "stars": 447
   },
+  "github:Jorji49/streamtop": {
+    "forks": 4,
+    "last_commit": "2026-09-06",
+    "last_release": "2026-09-04",
+    "stars": 93
+  },
   "github:JuliusBrussee/caveman": {
     "forks": 3181,
     "last_commit": "2026-05-10",
@@ -653,6 +695,12 @@
     "last_release": null,
     "stars": 378
   },
+  "github:LargeModGames/spotatui": {
+    "forks": 241,
+    "last_commit": "2026-09-06",
+    "last_release": "2026-08-10",
+    "stars": 1316
+  },
   "github:Leask/Tabminal": {
     "forks": 23,
     "last_commit": "2026-04-14",
@@ -706,6 +754,12 @@
     "last_commit": "2024-08-15",
     "last_release": "2022-10-03",
     "stars": 167
+  },
+  "github:Microck/moji": {
+    "forks": 4,
+    "last_commit": "2026-08-30",
+    "last_release": "2026-08-30",
+    "stars": 246
   },
   "github:MontFerret/ferret": {
     "forks": 318,
@@ -845,6 +899,12 @@
     "last_release": "2025-04-14",
     "stars": 1519
   },
+  "github:Resetnak/cooldeck": {
+    "forks": 1,
+    "last_commit": "2026-09-04",
+    "last_release": "2026-09-04",
+    "stars": 23
+  },
   "github:Rodrigodd/strace-tui": {
     "forks": 5,
     "last_commit": "2026-03-08",
@@ -922,6 +982,12 @@
     "last_commit": "2026-06-14",
     "last_release": "2026-05-27",
     "stars": 709
+  },
+  "github:SoCkEt7/Livediff": {
+    "forks": 8,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-07-11",
+    "stars": 230
   },
   "github:SoulKyu/cpg": {
     "forks": 2,
@@ -1109,6 +1175,12 @@
     "last_release": null,
     "stars": 47
   },
+  "github:Zingzy/diskbloom": {
+    "forks": 4,
+    "last_commit": "2026-07-16",
+    "last_release": "2026-07-16",
+    "stars": 43
+  },
   "github:Zuhaitz-dev/fat": {
     "forks": 6,
     "last_commit": "2025-08-24",
@@ -1276,6 +1348,12 @@
     "last_commit": "2025-06-04",
     "last_release": "2025-05-15",
     "stars": 36
+  },
+  "github:akunzai/gistui": {
+    "forks": 0,
+    "last_commit": "2026-09-04",
+    "last_release": "2026-09-01",
+    "stars": 12
   },
   "github:alacritty/alacritty": {
     "forks": 3303,
@@ -1667,6 +1745,12 @@
     "last_release": null,
     "stars": 490
   },
+  "github:beeb/swpui": {
+    "forks": 4,
+    "last_commit": "2026-08-22",
+    "last_release": "2026-08-22",
+    "stars": 83
+  },
   "github:beelzebub-labs/azazel": {
     "forks": 10,
     "last_commit": "2026-05-11",
@@ -1726,6 +1810,12 @@
     "last_commit": "2026-03-15",
     "last_release": "2026-03-14",
     "stars": 853
+  },
+  "github:bjarneo/ku": {
+    "forks": 23,
+    "last_commit": "2026-08-03",
+    "last_release": "2026-08-03",
+    "stars": 545
   },
   "github:bketelsen/incus-compose": {
     "forks": 11,
@@ -2243,6 +2333,12 @@
     "last_release": "2024-12-11",
     "stars": 34
   },
+  "github:davep/rogallo": {
+    "forks": 0,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-06",
+    "stars": 20
+  },
   "github:davidlattimore/wild": {
     "forks": 111,
     "last_commit": "2026-04-26",
@@ -2296,6 +2392,12 @@
     "last_commit": "2026-06-07",
     "last_release": "2026-06-07",
     "stars": 822
+  },
+  "github:deveshctl/layerx": {
+    "forks": 1,
+    "last_commit": "2026-08-25",
+    "last_release": "2026-08-08",
+    "stars": 120
   },
   "github:devnullvoid/pvetui": {
     "forks": 16,
@@ -2447,6 +2549,12 @@
     "last_release": "2025-08-26",
     "stars": 3571
   },
+  "github:dungngminh/simutil": {
+    "forks": 126,
+    "last_commit": "2026-07-21",
+    "last_release": "2026-07-21",
+    "stars": 1073
+  },
   "github:dustinblackman/oatmeal": {
     "forks": 42,
     "last_commit": "2024-06-01",
@@ -2464,6 +2572,12 @@
     "last_commit": "2025-05-28",
     "last_release": "2025-01-13",
     "stars": 448
+  },
+  "github:eafer/rdrview": {
+    "forks": 40,
+    "last_commit": "2026-08-31",
+    "last_release": "2025-10-04",
+    "stars": 939
   },
   "github:ebogdum/konfigo": {
     "forks": 0,
@@ -2555,6 +2669,12 @@
     "last_release": "2026-06-12",
     "stars": 359
   },
+  "github:emilien-jegou/oyui": {
+    "forks": 7,
+    "last_commit": "2026-06-21",
+    "last_release": "2026-06-19",
+    "stars": 149
+  },
   "github:endevco/aube": {
     "forks": 18,
     "last_commit": "2026-05-01",
@@ -2591,6 +2711,12 @@
     "last_release": "2026-02-05",
     "stars": 96
   },
+  "github:eugenioenko/ttt": {
+    "forks": 14,
+    "last_commit": "2026-09-05",
+    "last_release": "2026-08-27",
+    "stars": 238
+  },
   "github:evandhoffman/olltop": {
     "forks": 0,
     "last_commit": "2026-03-23",
@@ -2608,6 +2734,18 @@
     "last_commit": "2026-03-05",
     "last_release": "2026-03-04",
     "stars": 68
+  },
+  "github:excelano/xled": {
+    "forks": 1,
+    "last_commit": "2026-09-03",
+    "last_release": "2026-09-03",
+    "stars": 14
+  },
+  "github:excelano/xql": {
+    "forks": 1,
+    "last_commit": "2026-09-03",
+    "last_release": "2026-09-03",
+    "stars": 7
   },
   "github:expo/eas-cli": {
     "forks": 211,
@@ -2771,11 +2909,23 @@
     "last_release": "2026-02-06",
     "stars": 1871
   },
+  "github:galaxy-io/tempo": {
+    "forks": 12,
+    "last_commit": "2026-09-06",
+    "last_release": "2026-05-11",
+    "stars": 115
+  },
   "github:garrettkrohn/treekanga": {
     "forks": 1,
     "last_commit": "2026-03-20",
     "last_release": "2026-01-31",
     "stars": 32
+  },
+  "github:gateway-of-last-resort/keyward": {
+    "forks": 0,
+    "last_commit": "2026-08-20",
+    "last_release": "2026-08-20",
+    "stars": 46
   },
   "github:gebalamariusz/cloud-audit": {
     "forks": 10,
@@ -3034,6 +3184,12 @@
     "last_commit": "2026-04-27",
     "last_release": "2025-03-19",
     "stars": 5013
+  },
+  "github:herald-email/herald-mail-app": {
+    "forks": 3,
+    "last_commit": "2026-07-13",
+    "last_release": null,
+    "stars": 138
   },
   "github:hivemq/mqtt-cli": {
     "forks": 51,
@@ -3479,11 +3635,29 @@
     "last_release": "2026-02-04",
     "stars": 239
   },
+  "github:kanywst/y509": {
+    "forks": 2,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-02",
+    "stars": 27
+  },
+  "github:kapilpokhrel/regexplain": {
+    "forks": 0,
+    "last_commit": "2026-08-17",
+    "last_release": "2026-06-28",
+    "stars": 95
+  },
   "github:kardwen/passepartui": {
     "forks": 3,
     "last_commit": "2025-05-07",
     "last_release": "2025-01-16",
     "stars": 122
+  },
+  "github:kbrdn1/gwm-cli": {
+    "forks": 5,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-01",
+    "stars": 132
   },
   "github:kbst/kbst": {
     "forks": 7,
@@ -3689,6 +3863,12 @@
     "last_release": "2025-08-04",
     "stars": 94
   },
+  "github:lhl/amdtop": {
+    "forks": 0,
+    "last_commit": "2026-07-23",
+    "last_release": "2026-07-23",
+    "stars": 79
+  },
   "github:libsdl-org/SDL_image": {
     "forks": 255,
     "last_commit": "2026-02-16",
@@ -3827,6 +4007,12 @@
     "last_release": "2021-12-22",
     "stars": 293
   },
+  "github:luynrs/justray": {
+    "forks": 2,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-06",
+    "stars": 33
+  },
   "github:maaslalani/pom": {
     "forks": 2,
     "last_commit": "2024-05-16",
@@ -3910,6 +4096,12 @@
     "last_commit": "2022-06-11",
     "last_release": null,
     "stars": 1815
+  },
+  "github:matheuswhite/scope-rs": {
+    "forks": 4,
+    "last_commit": "2026-08-17",
+    "last_release": "2026-07-30",
+    "stars": 65
   },
   "github:matthart1983/netwatch": {
     "forks": 67,
@@ -4012,6 +4204,12 @@
     "last_commit": "2026-02-15",
     "last_release": "2026-01-10",
     "stars": 171
+  },
+  "github:mihakrumpestar/panix": {
+    "forks": 3,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-07",
+    "stars": 73
   },
   "github:mikalv/mcdu": {
     "forks": 2,
@@ -4397,6 +4595,12 @@
     "last_release": null,
     "stars": 68
   },
+  "github:noperator/curlmin": {
+    "forks": 3,
+    "last_commit": "2025-06-14",
+    "last_release": null,
+    "stars": 53
+  },
   "github:noperator/sol": {
     "forks": 6,
     "last_commit": "2024-09-03",
@@ -4510,6 +4714,12 @@
     "last_commit": "2024-07-17",
     "last_release": "2024-07-17",
     "stars": 143
+  },
+  "github:orhun/kmon": {
+    "forks": 93,
+    "last_commit": "2026-07-31",
+    "last_release": "2024-12-15",
+    "stars": 2944
   },
   "github:orhun/systeroid": {
     "forks": 27,
@@ -4691,6 +4901,12 @@
     "last_release": "2026-02-03",
     "stars": 157
   },
+  "github:programmersd21/flow": {
+    "forks": 12,
+    "last_commit": "2026-08-28",
+    "last_release": "2026-08-28",
+    "stars": 450
+  },
   "github:pulumi/kube2pulumi": {
     "forks": 5,
     "last_commit": "2025-11-21",
@@ -4721,6 +4937,12 @@
     "last_release": "2025-02-18",
     "stars": 15
   },
+  "github:pythops/kudu": {
+    "forks": 5,
+    "last_commit": "2026-09-03",
+    "last_release": "2026-09-01",
+    "stars": 169
+  },
   "github:pythops/lobtui": {
     "forks": 4,
     "last_commit": "2025-05-16",
@@ -4732,6 +4954,12 @@
     "last_commit": "2026-02-23",
     "last_release": "2026-02-23",
     "stars": 311
+  },
+  "github:quanghuynt14/bullmq-dash": {
+    "forks": 0,
+    "last_commit": "2026-08-30",
+    "last_release": "2026-07-12",
+    "stars": 18
   },
   "github:quickwit-oss/tantivy-cli": {
     "forks": 68,
@@ -4805,6 +5033,12 @@
     "last_release": "2026-02-16",
     "stars": 29
   },
+  "github:rcieri/glab-tui": {
+    "forks": 18,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-08-23",
+    "stars": 222
+  },
   "github:rdunnington/bytebox": {
     "forks": 7,
     "last_commit": "2025-11-23",
@@ -4816,6 +5050,12 @@
     "last_commit": "2022-06-19",
     "last_release": "2021-05-09",
     "stars": 51
+  },
+  "github:reekta92/clin-rs": {
+    "forks": 14,
+    "last_commit": "2026-09-06",
+    "last_release": "2026-09-03",
+    "stars": 530
   },
   "github:remarkjs/remark": {
     "forks": 375,
@@ -4955,6 +5195,12 @@
     "last_release": "2026-02-20",
     "stars": 98
   },
+  "github:rt-rtos/asmdiff": {
+    "forks": 0,
+    "last_commit": "2026-08-22",
+    "last_release": null,
+    "stars": 10
+  },
   "github:runekaagaard/mcp-alchemy": {
     "forks": 60,
     "last_commit": "2025-08-15",
@@ -5015,6 +5261,12 @@
     "last_release": "2026-03-10",
     "stars": 4181
   },
+  "github:sassman/putzen-rs": {
+    "forks": 3,
+    "last_commit": "2026-08-14",
+    "last_release": "2026-07-15",
+    "stars": 88
+  },
   "github:sauravrao637/oproxy": {
     "forks": 4,
     "last_commit": "2026-06-07",
@@ -5026,6 +5278,12 @@
     "last_commit": "2026-04-20",
     "last_release": "2026-01-27",
     "stars": 971
+  },
+  "github:scaccogatto/nastro": {
+    "forks": 0,
+    "last_commit": "2026-08-13",
+    "last_release": "2026-08-13",
+    "stars": 29
   },
   "github:scarvalhojr/aoc-cli": {
     "forks": 23,
@@ -5501,11 +5759,23 @@
     "last_release": "2026-05-25",
     "stars": 68
   },
+  "github:tappunk/gsty": {
+    "forks": 0,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-07",
+    "stars": 12
+  },
   "github:tarampampam/tinifier": {
     "forks": 11,
     "last_commit": "2026-01-01",
     "last_release": "2025-11-02",
     "stars": 104
+  },
+  "github:tareqmy/gitwig": {
+    "forks": 0,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-09-07",
+    "stars": 83
   },
   "github:tarkah/tickrs": {
     "forks": 86,
@@ -5536,6 +5806,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-08",
     "stars": 415
+  },
+  "github:tdi/lazytilt": {
+    "forks": 1,
+    "last_commit": "2026-08-23",
+    "last_release": "2026-08-23",
+    "stars": 24
   },
   "github:telophasehq/tangent": {
     "forks": 3,
@@ -5632,6 +5908,12 @@
     "last_commit": "2025-03-21",
     "last_release": "2025-03-21",
     "stars": 528
+  },
+  "github:tinesoft/spectatui": {
+    "forks": 5,
+    "last_commit": "2026-07-29",
+    "last_release": "2026-07-10",
+    "stars": 77
   },
   "github:tinybirdco/mcp-tinybird": {
     "forks": 17,
@@ -5885,6 +6167,12 @@
     "last_release": "2026-01-15",
     "stars": 8
   },
+  "github:vncsmnl/rwx": {
+    "forks": 12,
+    "last_commit": "2026-07-24",
+    "last_release": "2026-07-24",
+    "stars": 195
+  },
   "github:vuejs/vitepress": {
     "forks": 2718,
     "last_commit": "2026-06-12",
@@ -5956,6 +6244,12 @@
     "last_commit": "2026-03-06",
     "last_release": "2026-03-04",
     "stars": 26
+  },
+  "github:wilfredinni/noodle": {
+    "forks": 6,
+    "last_commit": "2026-09-06",
+    "last_release": "2026-09-06",
+    "stars": 304
   },
   "github:will/git-vain": {
     "forks": 9,
@@ -6047,6 +6341,18 @@
     "last_release": "2023-10-27",
     "stars": 208
   },
+  "github:yetidevworks/drydock": {
+    "forks": 11,
+    "last_commit": "2026-09-03",
+    "last_release": "2026-09-03",
+    "stars": 287
+  },
+  "github:yetidevworks/reeve": {
+    "forks": 5,
+    "last_commit": "2026-09-03",
+    "last_release": "2026-09-03",
+    "stars": 84
+  },
   "github:yinzhenyu-su/weekly-git-summary": {
     "forks": 6,
     "last_commit": "2026-01-14",
@@ -6070,6 +6376,12 @@
     "last_commit": "2025-11-30",
     "last_release": "2025-11-30",
     "stars": 4
+  },
+  "github:yutat23/lsoff": {
+    "forks": 9,
+    "last_commit": "2026-09-07",
+    "last_release": "2026-08-25",
+    "stars": 242
   },
   "github:zaaack/foy": {
     "forks": 16,
