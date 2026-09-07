@@ -113,6 +113,12 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Trust the cask under test
+        if: matrix.cask
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
+        run: brew trust --cask "$CASK_UNDER_TEST"
+
       - name: Clean up CI machine
         if: runner.os == 'macOS'
         run: brew test-bot --cleanup --only-cleanup-before
