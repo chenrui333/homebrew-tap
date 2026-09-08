@@ -2,8 +2,8 @@ class Bun < Formula
   desc "Incredibly fast JavaScript runtime, bundler, test runner, and package manager"
   homepage "https://bun.com"
   url "https://github.com/oven-sh/bun.git",
-      tag:      "bun-v1.3.14",
-      revision: "0d9b296af33f2b851fcbf4df3e9ec89751734ba4"
+      tag:      "bun-v1.4.1",
+      revision: "4661e494f052c83c80dade1318e5710238340be6"
   license all_of: [
     "MIT",          # Bun itself and most dependencies
     "Apache-2.0",   # boringssl, simdutf, uSockets, and others
