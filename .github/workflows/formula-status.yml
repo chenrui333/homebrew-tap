@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@49d03f1bf5d455a413dfbdf99e6718054a4cd975 # master
+        uses: Homebrew/actions/setup-homebrew@7f791ee8209b4ed73dd5564b92fea6998e22f5c5 # master
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
