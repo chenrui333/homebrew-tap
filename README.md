@@ -52,6 +52,7 @@ brew install --cask <tool>
 - `alacritty`
 - `allinssl`
 - `am-i-vibing`
+- `amdtop`
 - `amoco`
 - `amp-cli`
 - `amux`
@@ -68,6 +69,7 @@ brew install --cask <tool>
 - `artui`
 - `arxiv-mcp-server`
 - `ash-ai`
+- `asmdiff`
 - `astro-language-server`
 - `atlassian-cli`
 - `aube`
@@ -127,6 +129,7 @@ brew install --cask <tool>
 - `budgetclaw`
 - `buffa`
 - `bufisk`
+- `bullmq-dash`
 - `bun`
 - `bunsen`
 - `burn`
@@ -190,6 +193,7 @@ brew install --cask <tool>
 - `clickhousectl`
 - `clickup-mcp`
 - `climp`
+- `clin`
 - `clipse`
 - `cloctui`
 - `clog-cli`
@@ -213,6 +217,7 @@ brew install --cask <tool>
 - `codefmt`
 - `codemachine`
 - `codemap`
+- `codemark`
 - `codespelunker`
 - `codex-viz`
 - `codstts`
@@ -273,6 +278,7 @@ brew install --cask <tool>
 - `diffcat`
 - `diffyml`
 - `discordo`
+- `diskbloom`
 - `distill`
 - `dloom`
 - `dnsforwarder`
@@ -285,6 +291,7 @@ brew install --cask <tool>
 - `dqy`
 - `dragoman`
 - `drft`
+- `drydock`
 - `dtop`
 - `dumper`
 - `dupehound`
@@ -339,6 +346,7 @@ brew install --cask <tool>
 - `flipt`
 - `floci`
 - `flow-editor`
+- `flow-network`
 - `flowgger`
 - `fnc`
 - `fnug`
@@ -365,6 +373,7 @@ brew install --cask <tool>
 - `ghgrab`
 - `gignr`
 - `giq`
+- `gistui`
 - `git-chglog`
 - `git-vain`
 - `git-x`
@@ -380,7 +389,9 @@ brew install --cask <tool>
 - `gitte`
 - `gittop`
 - `gitv`
+- `gitwig`
 - `gix`
+- `glab-tui`
 - `gloomberb`
 - `glsl-analyzer`
 - `gnhf`
@@ -406,8 +417,10 @@ brew install --cask <tool>
 - `gritql`
 - `grmon`
 - `gsh`
+- `gsty`
 - `gtts`
 - `guardian-runtime`
+- `gwm-cli`
 - `hackernews-tui`
 - `haloy`
 - `hapi`
@@ -424,6 +437,7 @@ brew install --cask <tool>
 - `headscale`
 - `helius-personal-finance-tracker`
 - `hello`
+- `herald`
 - `hexora`
 - `hexowl`
 - `heyagent`
@@ -488,6 +502,7 @@ brew install --cask <tool>
 - `judo`
 - `jules`
 - `junit2html`
+- `justray`
 - `jwt-ui`
 - `k10s`
 - `k8sql`
@@ -504,11 +519,13 @@ brew install --cask <tool>
 - `kcl`
 - `kctx`
 - `keyhunter`
+- `keyward`
 - `khaos-cli`
 - `kimiflare`
 - `kite-tui`
 - `klein`
 - `klepto`
+- `kmon`
 - `knip`
 - `konfigo`
 - `kplane`
@@ -517,10 +534,12 @@ brew install --cask <tool>
 - `krs`
 - `kt`
 - `ktx`
+- `ku`
 - `kube-role-gen`
 - `kube2pulumi`
 - `kubedog`
 - `kubeseal-convert`
+- `kudu`
 - `kumo`
 - `kure`
 - `kwt`
@@ -539,6 +558,7 @@ brew install --cask <tool>
 - `lazymake`
 - `lazynpm`
 - `lazytail`
+- `lazytilt`
 - `lazyworktree`
 - `lemonade`
 - `leveldb-cli`
@@ -548,6 +568,7 @@ brew install --cask <tool>
 - `lightpanda`
 - `lin`
 - `lintnet`
+- `livediff`
 - `lix`
 - `llmdog`
 - `llmpeg`
@@ -561,6 +582,7 @@ brew install --cask <tool>
 - `logira`
 - `lola`
 - `loom-ai`
+- `lsoff`
 - `lstags`
 - `lsv`
 - `luaformatter`
@@ -569,6 +591,7 @@ brew install --cask <tool>
 - `macime`
 - `magic-mcp-server`
 - `mamediff`
+- `mandible`
 - `marchat`
 - `markdownify`
 - `markpdf`
@@ -608,6 +631,7 @@ brew install --cask <tool>
 - `mnamer`
 - `mnemo`
 - `mockgen`
+- `moji`
 - `molotov`
 - `moltbook-tui`
 - `moltis`
@@ -624,6 +648,7 @@ brew install --cask <tool>
 - `mush`
 - `mvt`
 - `mynav`
+- `myx`
 - `oceanbase-mcp-server`
 - `markmark`
 - `namespace-cli`
@@ -632,6 +657,7 @@ brew install --cask <tool>
 - `nanoclaw`
 - `nanodbc`
 - `narr`
+- `nastro`
 - `nbcat`
 - `needle`
 - `needs`
@@ -650,6 +676,7 @@ brew install --cask <tool>
 - `nkv`
 - `nless`
 - `nocc`
+- `noodle`
 - `nosy`
 - `npkill`
 - `npm-np`
@@ -694,11 +721,14 @@ brew install --cask <tool>
 - `oxylabs-mcp`
 - `oyo`
 - `oysttyer`
+- `oyui`
 - `plutov-oq`
 - `packemon`
 - `pal-mcp-server`
 - `pam`
+- `panix`
 - `paperai`
+- `papr`
 - `paq`
 - `parm`
 - `parqv`
@@ -756,6 +786,7 @@ brew install --cask <tool>
 - `public-ollama-finder`
 - `pubmed-mcp-server`
 - `purple`
+- `putzen`
 - `pv-migrate`
 - `pwdsafety`
 - `pygitzen`
@@ -786,6 +817,7 @@ brew install --cask <tool>
 - `reeve`
 - `reformat-gherkin`
 - `refurb`
+- `regexplain`
 - `relay`
 - `remark-cli`
 - `rendy`
@@ -802,6 +834,7 @@ brew install --cask <tool>
 - `rip`
 - `riskkernel`
 - `rkik`
+- `rogallo`
 - `rovr`
 - `rs-poker`
 - `rshell`
@@ -816,6 +849,7 @@ brew install --cask <tool>
 - `rustlens`
 - `rustnet`
 - `rustormy`
+- `rwx`
 - `sakimori`
 - `sato`
 - `satty`
@@ -824,6 +858,7 @@ brew install --cask <tool>
 - `scanify`
 - `schema`
 - `scholar`
+- `scope`
 - `screenshotone-mcp-server`
 - `scrt`
 - `sdl_image`
@@ -849,6 +884,7 @@ brew install --cask <tool>
 - `siggy`
 - `silver-surfer`
 - `simdjzon`
+- `simutil`
 - `sish`
 - `sloctl`
 - `sloop`
@@ -867,12 +903,14 @@ brew install --cask <tool>
 - `spacelift-intent`
 - `spdr`
 - `specfact-cli`
+- `spectatui`
 - `speedscope`
 - `speedtest`
 - `spiffe-spike`
 - `splashboard`
 - `splitrail`
 - `spok`
+- `spotatui`
 - `spotiflac-cli`
 - `spotifydl`
 - `sprofile`
@@ -888,6 +926,7 @@ brew install --cask <tool>
 - `statoscope`
 - `steamfetch`
 - `strace-tui`
+- `streamtop`
 - `stree`
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
@@ -900,6 +939,7 @@ brew install --cask <tool>
 - `surgeon`
 - `swagger-mcp-server`
 - `swaptop`
+- `swpui`
 - `systeroid`
 - `tftargets`
 - `tabminal`
@@ -924,6 +964,7 @@ brew install --cask <tool>
 - `tdd-guard`
 - `teldrive`
 - `telert`
+- `tempo`
 - `tenderly`
 - `tennis`
 - `termdbms`
@@ -965,6 +1006,7 @@ brew install --cask <tool>
 - `tooka`
 - `toolctl`
 - `tori`
+- `tornado`
 - `tortuise`
 - `tparse`
 - `tpm`
@@ -975,6 +1017,7 @@ brew install --cask <tool>
 - `trex`
 - `trieve-cli`
 - `tsuki`
+- `ttt-editor`
 - `tui-banner`
 - `tunnelto`
 - `tuono`
@@ -1033,7 +1076,9 @@ brew install --cask <tool>
 - `xled`
 - `xmlformatter`
 - `xpdig`
+- `xql`
 - `xytz`
+- `y509`
 - `yajsv`
 - `yamcp`
 - `yatto`
