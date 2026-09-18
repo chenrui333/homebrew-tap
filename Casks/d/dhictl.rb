@@ -14,6 +14,15 @@ cask "dhictl" do
   homepage "https://github.com/docker-hardened-images/dhictl"
 
   binary "dhictl-#{os}-#{arch}", target: "dhictl"
+  binary "dhictl-#{os}-#{arch}", target: "#{HOMEBREW_PREFIX}/lib/docker/cli-plugins/docker-dhi"
+  generate_completions_from_executable "dhictl", shell_parameter_format: :cobra
 
   # No zap stanza required
+
+  caveats <<~EOS
+    dhictl is a Docker CLI plugin. For Docker to find the plugin, add "cliPluginsExtraDirs" to ~/.docker/config.json:
+      "cliPluginsExtraDirs": [
+        "#{HOMEBREW_PREFIX}/lib/docker/cli-plugins"
+      ]
+  EOS
 end
