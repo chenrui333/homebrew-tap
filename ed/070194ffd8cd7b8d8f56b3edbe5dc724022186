@@ -1,0 +1,21 @@
+.github/workflows/publish-cask.yml
+  s_d9c062dda023f0::t_9a59795b015799 46
+.github/workflows/renovate-workflow-automerge.yml
+  s_d9c062dda023f0::t_9a59795b015799 207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ed070194ffd8cd7b8d8f56b3edbe5dc724022186",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
