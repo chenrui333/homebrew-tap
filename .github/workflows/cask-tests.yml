@@ -13,6 +13,7 @@ on:
     paths:
       - "Casks/**"
       - ".github/workflows/cask-tests.yml"
+  merge_group:
   workflow_dispatch:
     inputs:
       casks:
@@ -74,7 +75,7 @@ jobs:
           then
             # shellcheck disable=SC2086 # INPUT_CASKS is a space-separated list of cask tokens
             brew generate-cask-ci-matrix ${{ github.event.inputs.skip_install && '--skip-install' }} ${{ github.event.inputs.new_cask && '--new' }} --casks $INPUT_CASKS
-          elif [[ "${GITHUB_EVENT_NAME}" == "push" ]]
+          elif [[ "${GITHUB_EVENT_NAME}" == "push" || "${GITHUB_EVENT_NAME}" == "merge_group" ]]
           then
             brew generate-cask-ci-matrix --syntax-only
           elif jq -e '.pull_request.labels[]?.name == "CI-syntax-only"' "$GITHUB_EVENT_PATH" >/dev/null
