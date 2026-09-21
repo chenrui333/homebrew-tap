@@ -80,9 +80,39 @@ jobs:
 
       - run: mise exec -- actionlint
 
+  cancel-stale-auto-merge:
+    needs: classify
+    if: >-
+      always() &&
+      github.event.pull_request.user.login == 'renovate[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (github.event.action == 'synchronize' ||
+      needs.classify.result != 'success' ||
+      needs.classify.outputs.eligible != 'true')
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Disable stale auto-merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          auto_merge_enabled=$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json autoMergeRequest --jq '.autoMergeRequest != null')
+          if [[ "$auto_merge_enabled" == "true" ]]; then
+            gh pr merge "$PR_NUMBER" --disable-auto --repo "$GITHUB_REPOSITORY"
+          else
+            echo "No auto-merge is enabled for PR #$PR_NUMBER."
+          fi
+
   merge:
-    needs: [classify, actionlint]
-    if: needs.classify.outputs.eligible == 'true' && needs.actionlint.result == 'success'
+    needs: [classify, actionlint, cancel-stale-auto-merge]
+    if: >-
+      needs.classify.outputs.eligible == 'true' &&
+      needs.actionlint.result == 'success' &&
+      (needs.cancel-stale-auto-merge.result == 'success' ||
+      needs.cancel-stale-auto-merge.result == 'skipped')
     runs-on: ubuntu-slim
     timeout-minutes: 20
     permissions:
