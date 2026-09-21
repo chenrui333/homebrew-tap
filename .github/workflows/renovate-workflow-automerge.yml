@@ -203,7 +203,20 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           EXPECTED_HEAD: ${{ needs.classify.outputs.head-sha }}
         run: |
-          gh pr merge "$PR_NUMBER" \
+          if gh pr merge "$PR_NUMBER" \
             --merge \
             --match-head-commit "$EXPECTED_HEAD" \
             --repo "$GITHUB_REPOSITORY"
+          then
+            exit 0
+          else
+            merge_status=$?
+          fi
+
+          merged="$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json merged --jq '.merged' 2>/dev/null || true)"
+          if [[ "$merged" == "true" ]]; then
+            echo "PR #$PR_NUMBER was merged concurrently."
+            exit 0
+          fi
+
+          exit "$merge_status"
