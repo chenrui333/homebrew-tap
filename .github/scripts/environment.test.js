@@ -18,7 +18,7 @@ async function runEnvironment({
   const listComments = async () => {
     apiCalls.push("issues.listComments")
     return publishedBottleHead
-      ? [{author: {login: "github-actions[bot]"}, body: `<!-- homebrew-tap: published-bottle-head ${publishedBottleHead} -->`}]
+      ? [{user: {login: "github-actions[bot]"}, body: `<!-- homebrew-tap: published-bottle-head ${publishedBottleHead} -->`}]
       : []
   }
   const github = {

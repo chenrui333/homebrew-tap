@@ -30,7 +30,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
             per_page: 100
         })
         const marker = comments
-            .filter(comment => comment.author?.login === 'github-actions[bot]')
+            .filter(comment => comment.user?.login === 'github-actions[bot]')
             .map(comment => comment.body?.match(/^<!-- homebrew-tap: published-bottle-head ([0-9a-f]{40}) -->$/))
             .filter(Boolean)
             .at(-1)
