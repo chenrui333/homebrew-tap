@@ -31,7 +31,7 @@ open_prs() {
 		--state open \
 		--limit 1000 \
 		--json number,headRefName,headRepository \
-		--jq '.[] | [.number, .headRefName, (.headRepository.full_name // "")] | @tsv'
+		--jq '.[] | [.number, .headRefName, (.headRepository.nameWithOwner // "")] | @tsv'
 }
 
 prepare_branch() {
@@ -76,7 +76,7 @@ close_stale_pr() {
 
 publish_pr() {
 	local files=("$@")
-	local changed pr_lines pr_number pr_head pr_repo current_main
+	local changed pr_lines pr_count pr_number pr_head pr_repo current_main
 
 	require_automation_branch
 	[[ -n "${GITHUB_REPOSITORY:-}" ]] || die "GITHUB_REPOSITORY is required"
@@ -103,9 +103,9 @@ publish_pr() {
 	if git diff --quiet refs/remotes/origin/main..HEAD -- "${files[@]}"; then
 		pr_lines="$(open_prs)"
 		if [[ -n "$pr_lines" ]]; then
-			mapfile -t prs <<<"$pr_lines"
-			(( ${#prs[@]} == 1 )) || die "Expected at most one open PR for $BRANCH"
-			IFS=$'\t' read -r pr_number pr_head pr_repo <<<"${prs[0]}"
+			pr_count="$(printf '%s\n' "$pr_lines" | wc -l | tr -d ' ')"
+			[[ "$pr_count" -eq 1 ]] || die "Expected at most one open PR for $BRANCH"
+			IFS=$'\t' read -r pr_number pr_head pr_repo <<<"$pr_lines"
 			[[ "$pr_head" == "$BRANCH" && "$pr_repo" == "$GITHUB_REPOSITORY" ]] || die "Open PR does not belong to $BRANCH"
 			close_stale_pr "$pr_number"
 			write_output action "closed-stale-pr"
@@ -126,9 +126,9 @@ publish_pr() {
 
 	pr_lines="$(open_prs)"
 	if [[ -n "$pr_lines" ]]; then
-		mapfile -t prs <<<"$pr_lines"
-		(( ${#prs[@]} == 1 )) || die "Expected at most one open PR for $BRANCH"
-		IFS=$'\t' read -r pr_number pr_head pr_repo <<<"${prs[0]}"
+		pr_count="$(printf '%s\n' "$pr_lines" | wc -l | tr -d ' ')"
+		[[ "$pr_count" -eq 1 ]] || die "Expected at most one open PR for $BRANCH"
+		IFS=$'\t' read -r pr_number pr_head pr_repo <<<"$pr_lines"
 		[[ "$pr_head" == "$BRANCH" && "$pr_repo" == "$GITHUB_REPOSITORY" ]] || die "Open PR does not belong to $BRANCH"
 		gh pr edit "$pr_number" \
 			--repo "$GITHUB_REPOSITORY" \
@@ -143,9 +143,9 @@ publish_pr() {
 			--title "$PR_TITLE" \
 			--body "$PR_BODY" >/dev/null
 		pr_lines="$(open_prs)"
-		mapfile -t prs <<<"$pr_lines"
-		(( ${#prs[@]} == 1 )) || die "Expected exactly one open PR after creating $BRANCH"
-		IFS=$'\t' read -r pr_number pr_head pr_repo <<<"${prs[0]}"
+		pr_count="$(printf '%s\n' "$pr_lines" | wc -l | tr -d ' ')"
+		[[ "$pr_count" -eq 1 ]] || die "Expected exactly one open PR after creating $BRANCH"
+		IFS=$'\t' read -r pr_number pr_head pr_repo <<<"$pr_lines"
 		[[ "$pr_head" == "$BRANCH" && "$pr_repo" == "$GITHUB_REPOSITORY" ]] || die "Created PR does not belong to $BRANCH"
 		changed="created-pr"
 	fi

@@ -9,6 +9,12 @@ const helper = join(__dirname, "publish-generated-pr.sh")
 const repository = "example/homebrew-tap"
 const branch = "automation/test-generated-pr"
 
+test("uses the gh GraphQL repository field for open PR validation", () => {
+  const source = readFileSync(helper, "utf8")
+  assert.match(source, /\.headRepository\.nameWithOwner/)
+  assert.doesNotMatch(source, /\.headRepository\.full_name/)
+})
+
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, { encoding: "utf8", ...options })
   assert.equal(result.status, 0, `${command} ${args.join(" ")} failed:\n${result.stderr}`)

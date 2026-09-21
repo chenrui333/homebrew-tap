@@ -27,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           fetch-depth: 0
 
       - name: Prepare automation branch
@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate formula metadata
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
           python3 formula-status/generate_formula_status.py --output formula-status/formula-status.md
 
@@ -64,7 +64,7 @@ jobs:
           BASE_SHA: ${{ steps.prepare.outputs.base_sha }}
           REMOTE_SHA: ${{ steps.prepare.outputs.remote_sha }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           PR_TITLE: 'chore: update formula metadata'
           PR_BODY: Generated automatically by the Formula Metadata workflow.
           COMMIT_MESSAGE: 'chore: update formula metadata'
