@@ -4,10 +4,34 @@ on:
   pull_request_target:
     types:
       - labeled
+      - synchronize
+      - unlabeled
 
 jobs:
+  cancel-stale-auto-merge:
+    if: github.event.action == 'synchronize' || github.event.action == 'unlabeled'
+    runs-on: ubuntu-slim
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Disable stale auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          auto_merge_enabled=$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json autoMergeRequest --jq '.autoMergeRequest != null')
+          if [[ "$auto_merge_enabled" == "true" ]]; then
+            gh pr merge "$PR_NUMBER" --disable-auto --repo "$GITHUB_REPOSITORY"
+          else
+            echo "No auto-merge is enabled for PR #$PR_NUMBER."
+          fi
+
   cask-merge:
+    needs: cancel-stale-auto-merge
     if: |
+      always() &&
+      (needs.cancel-stale-auto-merge.result == 'success' || needs.cancel-stale-auto-merge.result == 'skipped') &&
+      (github.event.action == 'labeled' || github.event.action == 'synchronize') &&
       contains(github.event.pull_request.labels.*.name, 'pr-cask-merge') &&
       github.event.pull_request.user.type != 'Bot' &&
       github.event.pull_request.state == 'open' &&
@@ -43,6 +67,7 @@ jobs:
           PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           gh pr merge "$PR_NUMBER" \
+            --auto \
             --merge \
             --match-head-commit "$PR_HEAD_SHA" \
             --repo "$GITHUB_REPOSITORY"
