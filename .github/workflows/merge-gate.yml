@@ -1,0 +1,132 @@
+name: Merge Gate
+
+on:
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+  checks: read
+  pull-requests: read
+
+jobs:
+  merge-ready:
+    name: merge-ready
+    runs-on: ubuntu-latest
+    timeout-minutes: 4320
+    steps:
+      - name: Check out event commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Determine required checks
+        id: requirements
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          script: |
+            const formulaPaths = [
+              '.github/workflows/tests.yml',
+              '.github/scripts/environment.js',
+              '.github/scripts/environment.test.js',
+            ]
+            const caskPaths = ['.github/workflows/cask-tests.yml']
+            let files = []
+            if (context.eventName === 'pull_request') {
+              files = await github.paginate(github.rest.pulls.listFiles, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                per_page: 100,
+              })
+              files = files.map(({filename}) => filename)
+            }
+            const formula = context.eventName === 'merge_group' || files.some((filename) =>
+              filename.startsWith('Formula/') || formulaPaths.includes(filename))
+            const cask = context.eventName === 'merge_group' || files.some((filename) =>
+              filename.startsWith('Casks/') || caskPaths.includes(filename))
+            const expectedChecks = [
+              ...(formula ? ['formula-conclusion'] : []),
+              ...(cask ? ['cask-conclusion'] : []),
+            ]
+            const actionlint = context.eventName === 'merge_group' ||
+              files.some((filename) => filename.startsWith('.github/workflows/'))
+            core.setOutput('expected-checks', JSON.stringify(expectedChecks))
+            core.setOutput('actionlint', actionlint ? 'true' : 'false')
+            core.info(`Expected checks: ${expectedChecks.join(', ') || 'none'}`)
+
+      - name: Set up actionlint
+        if: steps.requirements.outputs.actionlint == 'true'
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        with:
+          mise_toml: |
+            [tools]
+            actionlint = "1.7.12"
+          install_args: actionlint
+
+      - name: Validate workflow files
+        if: steps.requirements.outputs.actionlint == 'true'
+        run: mise exec -- actionlint
+
+      - name: Wait for required domain checks
+        if: steps.requirements.outputs.expected-checks != '[]'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          EXPECTED_CHECKS: ${{ steps.requirements.outputs.expected-checks }}
+          CHECK_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        with:
+          script: |
+            const expectedChecks = JSON.parse(process.env.EXPECTED_CHECKS)
+            core.info(`Polling checks for ${process.env.CHECK_SHA}`)
+            const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))
+            const checkRunOrder = (run) => [
+              Number(run.id || 0),
+              Number(run.run_attempt || 0),
+              Date.parse(run.started_at || run.created_at || 0) || 0,
+            ]
+            const newest = (checkRuns, name) => checkRuns
+              .filter((checkRun) => checkRun.name === name)
+              .sort((left, right) => {
+                const leftOrder = checkRunOrder(left)
+                const rightOrder = checkRunOrder(right)
+                for (let index = 0; index < leftOrder.length; index += 1) {
+                  if (leftOrder[index] !== rightOrder[index]) return rightOrder[index] - leftOrder[index]
+                }
+                return 0
+              })[0]
+            const state = (checkRun) => !checkRun
+              ? 'missing'
+              : checkRun.status !== 'completed'
+                ? 'pending'
+                : checkRun.conclusion === 'success' ? 'success' : 'failure'
+            const deadline = Date.now() + (4320 * 60 * 1000)
+            let result
+            while (true) {
+              const response = await github.rest.checks.listForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: process.env.CHECK_SHA,
+                per_page: 100,
+              })
+              const checks = Object.fromEntries(expectedChecks.map((name) => {
+                const checkRun = newest(response.data.check_runs, name)
+                return [name, {state: state(checkRun), id: checkRun?.id ?? null}]
+              }))
+              const states = Object.values(checks).map(({state: checkState}) => checkState)
+              result = {
+                state: states.includes('failure')
+                  ? 'failed'
+                  : states.every((checkState) => checkState === 'success') ? 'ready' : 'waiting',
+                checks,
+              }
+              if (result.state !== 'waiting') break
+              if (Date.now() >= deadline) {
+                result = {...result, state: 'failed', timedOut: true}
+                break
+              }
+              await delay(30000)
+            }
+            core.info(JSON.stringify(result.checks))
+            if (result.state !== 'ready') {
+              core.setFailed(result.timedOut ? 'Timed out waiting for required domain checks.' : 'A required domain check failed.')
+            }
