@@ -8,6 +8,11 @@ class ConanMcp < Formula
   license "MIT"
   head "https://github.com/conan-io/conan-mcp.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "067da8cc5de4ab9be1e7a53c5e5b15d10f016bf05642ae34828f8d2f20bf053d"
+  end
+
   depends_on "certifi" => :no_linkage
   depends_on "conan"
   depends_on "cryptography" => :no_linkage
