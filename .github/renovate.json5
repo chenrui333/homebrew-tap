@@ -10,7 +10,7 @@
   commitMessageSuffix: ' in {{packageFile}}',
   automerge: true,
   automergeType: 'pr',
-  automergeStrategy: 'squash',
+  automergeStrategy: 'merge-commit',
   baseBranchPatterns: [
     'main',
   ],

@@ -282,14 +282,14 @@ brew style <formula>
 
 - Any formula PR that is not labeled `CI-syntax-only` MUST go through the `pr-pull` process.
   - This includes new formulae, version bumps, revision rebuilds, and formula fixes that should produce or refresh bottles.
-  - After checks pass, wait for the test workflow to add `pr-pull`, then let the `brew pr-pull` workflow merge the PR.
-  - Do NOT manually merge these PRs with `gh pr merge`, because that bypasses BrewTestBot bottle commits and can leave `main` without a `bottle do` block.
+  - After checks pass, wait for the test workflow to add `pr-pull`, then let the publishing workflow add the bottle commit to the PR branch. Do not merge the PR before that bottle commit lands and its CI reruns; afterward, merge it through the repository's normal merge policy.
+  - Do NOT merge these PRs before bottle publication completes, because that can leave `main` without a `bottle do` block.
 - Never force-push `main` to `main`.
   - `git push --force-with-lease` is only for PR head branches that you explicitly verified are not `main`.
   - When updating `main`, use a normal `git push origin main`.
   - If local `main` and `origin/main` diverge, run `git pull --rebase origin main`, resolve conflicts locally, and then push normally.
 - Manual merges are acceptable only for PRs explicitly labeled `CI-syntax-only`, meaning CI should run syntax checks only and no bottle-producing build should occur.
-- If a new formula lands on `main` without a `bottle do` block, open a one-formula follow-up PR that only adds or increments `revision` to force a fresh bottle build, and again leave that PR for the bot-managed `pr-pull` merge path.
+- If a new formula lands on `main` without a `bottle do` block, open a one-formula follow-up PR that only adds or increments `revision` to force a fresh bottle build, and wait for its published bottle commit before merging it through the repository's normal merge policy.
 
 ## PR Triage Workflow
 
@@ -336,9 +336,9 @@ For formula patch PR triage, follow this exact sequence:
    pr="$(gh pr view --json number -q .number)"
    gh pr edit "$pr" --add-label CI-no-fail-fast
    ```
-6. For any formula PR not labeled `CI-syntax-only`, stop after the branch is green and labeled correctly, then leave merge to the bot-managed `pr-pull` workflow.
-   - Do NOT use `gh pr merge` manually for formula PRs that should produce bottles.
-   - If the goal is to regenerate missing bottles for a merged formula, open a one-formula `revision` follow-up PR and again leave merge to `pr-pull`.
+6. For any formula PR not labeled `CI-syntax-only`, stop after the branch is green and labeled correctly, then wait for `publish.yml` to add the bottle commit to the PR branch and for CI to rerun against that head before merging through the repository's normal merge policy.
+   - Do NOT merge a bottle-producing formula PR before its bottle commit lands.
+   - If the goal is to regenerate missing bottles for a merged formula, open a one-formula `revision` follow-up PR and wait for its published bottle commit before merging it through the repository's normal merge policy.
 7. If triaging many open PRs, dedupe only version-bump PRs for the same formula by keeping only the latest one.
    - Apply this only to PR titles in version-bump format (`<formula> <version>`), and skip non-version PRs such as `foo: fix ...`.
    - Prefer `brew close-superseded-prs --apply` for this cleanup when it fits; it dry-runs by default and handles both PRs already covered by `main` and older open bump PRs superseded by a more recently opened bump.
@@ -398,7 +398,7 @@ You MUST verify all items before submitting:
 - Never commit formula or cask changes directly to `main`; always use a PR branch
 - Keep diffs minimal and focused
 - Provide only essential context in PR description
-- For any formula PR not labeled `CI-syntax-only`, use the `pr-pull` merge path so BrewTestBot adds the bottle commit to `main`
+- For any formula PR not labeled `CI-syntax-only`, use the `pr-pull` path so the publishing workflow adds the bottle commit to the PR branch before final integration through the repository's normal merge policy.
 
 ### MUST NOT
 
@@ -407,7 +407,7 @@ You MUST verify all items before submitting:
 - Include large logs or verbose output in PR body
 - Add non-Homebrew usage caveats in PR body
 - Include unrelated refactors or cleanups
-- Manually merge formula PRs that are not labeled `CI-syntax-only` with `gh pr merge`
+- Do not merge bottle-producing formula PRs with `gh pr merge` before the published bottle commit lands and its CI reruns.
 
 ## PR Description Template
 
@@ -464,7 +464,7 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
 
 ## Workflow Maintenance
 
-- For workflows that create commits directly on `main`, such as [update-formula-list.yml](.github/workflows/update-formula-list.yml), fetch `refs/heads/main` into `refs/remotes/origin/main` before deciding whether there is anything to push. If `HEAD` is already an ancestor of `refs/remotes/origin/main`, exit cleanly. Otherwise rebase onto `refs/remotes/origin/main` and push with a normal `git push origin HEAD:main`; never force-push `main`. Treat rebase conflicts as deterministic failures with a clear log, and retry only push rejections caused by `main` moving again.
+- For workflows that create commits directly on `main`, such as [update-formula-cask-list.yml](.github/workflows/update-formula-cask-list.yml), fetch `refs/heads/main` into `refs/remotes/origin/main` before deciding whether there is anything to push. If `HEAD` is already an ancestor of `refs/remotes/origin/main`, exit cleanly. Otherwise rebase onto `refs/remotes/origin/main` and push with a normal `git push origin HEAD:main`; never force-push `main`. Treat rebase conflicts as deterministic failures with a clear log, and retry only push rejections caused by `main` moving again.
 - For platform-aware formula build matrices, inspect changed formula files before trusting coarse triage labels. Mixed platform-only and portable formula changes, or formulae containing both `depends_on :linux` and `depends_on :macos`, must use the full matrix. Use `linux-only` or `macos-only` labels only as a fallback when formula contents cannot be inspected.
 - For workflows where a dependency job intentionally runs only on pull requests, keep non-PR events explicitly allowed through skipped dependency jobs. Do not require a PR-only job to have `success` on `push`, `schedule`, or `workflow_dispatch` events.
 - When pinning a workflow container to a specific Ubuntu generation, pin the host runner to the matching `ubuntu-<version>` label instead of `ubuntu-latest`. YAML workflow container references should use Renovate-maintained digests; JS-generated dynamic container values may use Homebrew's `main` tag only when a nearby comment explains why a floating tag is intentional.
