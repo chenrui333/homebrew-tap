@@ -28,7 +28,7 @@ concurrency:
 jobs:
   tap-syntax:
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:a8601923205391c670e84df1601d9a5966c7e0ada5fe58deab08cd9a337a12e0
     env:
@@ -56,7 +56,7 @@ jobs:
       always() &&
       !cancelled() &&
       (github.event_name != 'pull_request' || needs.tap-syntax.result == 'success')
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: tap-syntax
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
@@ -171,7 +171,7 @@ jobs:
       success() &&
       github.event_name == 'pull_request' &&
       github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       pull-requests: write
     steps:
