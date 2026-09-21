@@ -164,6 +164,7 @@ class ConanMcp < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     python = libexec/"bin/python"
     output = shell_output("#{python} -c 'import importlib.metadata as m; print(m.version(\"conan-mcp\"))'")
     assert_equal version.to_s, output.strip
