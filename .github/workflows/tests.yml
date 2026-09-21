@@ -11,6 +11,7 @@ on:
       - main
     paths:
       - 'Formula/**'
+  merge_group:
   workflow_dispatch:
 
 env:
@@ -26,7 +27,7 @@ concurrency:
 
 jobs:
   tap-syntax:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' || github.event_name == 'merge_group'
     runs-on: ubuntu-24.04
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:797bc6f55c4c442c50994ebdc72dccd9fc92b23936835e4393ec7a8ac9f6e8b9
@@ -54,7 +55,7 @@ jobs:
     if: |
       always() &&
       !cancelled() &&
-      (github.event_name != 'pull_request' || needs.tap-syntax.result == 'success')
+      ((github.event_name != 'pull_request' && github.event_name != 'merge_group') || needs.tap-syntax.result == 'success')
     runs-on: ubuntu-slim
     needs: tap-syntax
     outputs:
@@ -97,14 +98,14 @@ jobs:
       !cancelled() &&
       (needs.tap-syntax.result == 'success' || needs.tap-syntax.result == 'skipped') &&
       (needs.set-environment.result == 'success' || needs.set-environment.result == 'skipped') &&
-      (github.event_name != 'pull_request' || needs.set-environment.outputs.syntax-only != 'true')
+      ((github.event_name != 'pull_request' && github.event_name != 'merge_group') || needs.set-environment.outputs.syntax-only != 'true')
     strategy:
       matrix:
         include: ${{ fromJson(needs.set-environment.outputs.build-matrix) }}
-      fail-fast: ${{ github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.fail-fast) || false }}
+      fail-fast: ${{ (github.event_name == 'pull_request' || github.event_name == 'merge_group') && fromJson(needs.set-environment.outputs.fail-fast) || false }}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
-    timeout-minutes: ${{ matrix.timeout || (github.event_name == 'pull_request' && fromJson(needs.set-environment.outputs.timeout-minutes) || 240) }}
+    timeout-minutes: ${{ matrix.timeout || ((github.event_name == 'pull_request' || github.event_name == 'merge_group') && fromJson(needs.set-environment.outputs.timeout-minutes) || 240) }}
     defaults:
       run:
         shell: /bin/bash -e {0}
@@ -132,8 +133,8 @@ jobs:
             export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
           fi
 
-          # Use custom args for PR events, default args otherwise
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+          # Use detected formulae for PR and merge-group events, default args otherwise
+          if [[ "${{ github.event_name }}" == "pull_request" || "${{ github.event_name }}" == "merge_group" ]]; then
             brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
           else
             brew test-bot --only-formulae --root-url="https://ghcr.io/v2/chenrui333/tap"
