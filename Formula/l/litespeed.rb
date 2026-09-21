@@ -49,9 +49,19 @@ class Litespeed < Formula
       cd "packages/native" do
         system "sh", "scripts/prepare-zig-deps.sh"
         if OS.mac?
-          inreplace "build.zig", "addNativeAudioDependencies(b, lib, target, macos_sdk_path);", <<~ZIG
+          inreplace "build.zig", <<~ZIG, <<~ZIG
+            const lib = b.addLibrary(.{
+                .name = LIB_NAME,
+                .root_module = module,
+                .linkage = .dynamic,
+            });
+          ZIG
+            const lib = b.addLibrary(.{
+                .name = LIB_NAME,
+                .root_module = module,
+                .linkage = .dynamic,
+            });
             if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;
-            addNativeAudioDependencies(b, lib, target, macos_sdk_path);
           ZIG
         end
         system "zig", "build", "-Doptimize=ReleaseFast"
