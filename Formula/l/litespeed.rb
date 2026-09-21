@@ -6,10 +6,13 @@ class Litespeed < Formula
   license "Apache-2.0"
   head "https://github.com/BerriAI/litespeed.git", branch: "main"
 
+  depends_on "zig" => :build
   depends_on "node"
 
-  # Upstream's prebuilt OpenTUI dylib lacks Mach-O header padding for relocation.
-  preserve_rpath
+  resource "opentui" do
+    url "https://github.com/anomalyco/opentui/archive/refs/tags/v0.5.11.tar.gz"
+    sha256 "5c6263fccc41d2dce7dbfde0cdf358000d44c745bbde8a44013bcfc6674c0788"
+  end
 
   def install
     ENV.prepend_path "PATH", formula_opt_bin("node")
@@ -39,6 +42,22 @@ class Litespeed < Formula
     rm buildpath/"node_modules/.bin/bunx" if (buildpath/"node_modules/.bin/bunx").exist?
 
     libexec.install "bin", "dist", "node_modules", "package.json", "LICENSE", "THIRD_PARTY_NOTICES.md"
+
+    # Rebuild OpenTUI's native library with room for Homebrew bottle relocation.
+    native_package = libexec/"node_modules/@opentui/core-#{native}"
+    resource("opentui").stage do
+      cd "packages/native" do
+        system "sh", "scripts/prepare-zig-deps.sh"
+        inreplace "build.zig", "addNativeAudioDependencies(b, lib, target, macos_sdk_path);", <<~ZIG
+          if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;
+          addNativeAudioDependencies(b, lib, target, macos_sdk_path);
+        ZIG
+        system "zig", "build", "-Doptimize=ReleaseFast"
+        library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
+        rm native_package/library
+        native_package.install Dir["lib/*/#{library}"]
+      end
+    end
 
     (bin/"litespeed").write <<~SH
       #!/bin/bash
