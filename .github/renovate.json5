@@ -26,6 +26,18 @@
   ignorePaths: [
     'Formula/**',
   ],
+  packageRules: [
+    {
+      description: 'Require manual review for GitHub Actions Ubuntu runner updates',
+      matchManagers: [
+        'github-actions',
+      ],
+      matchPackageNames: [
+        'ubuntu',
+      ],
+      enabled: false,
+    },
+  ],
   vulnerabilityAlerts: {
     enabled: true,
     labels: [
