@@ -1,7 +1,7 @@
 # Formula Metadata
 
-Generated: 2026-09-14 15:49:05 UTC
-Total formulas: 1077
+Generated: 2026-09-21 15:48:32 UTC
+Total formulas: 1079
 
 ## Formulas
 
@@ -723,6 +723,7 @@ Total formulas: 1077
 | oui | MAC Address CLI Toolkit | 57 | 5 | 2024-08-01 | 2024-08-01 | BSD-3-Clause-Clear | ✓ | - | [link](https://oui.is/) |
 | dela | Task runner | 56 | 1 | 2026-02-06 | - | MIT | ✓ | - | [link](https://github.com/aleyan/dela) |
 | enry | Faster file programming language detector | 56 | 17 | 2023-09-22 | 2023-09-22 | Apache-2.0 | ✓ | - | [link](https://github.com/go-enry/enry) |
+| license-scanner | Utility that provides an API and CLI to identify licenses an... | 56 | 8 | 2025-07-11 | 2025-06-02 | Apache-2.0 | ✓ | - | [link](https://github.com/CycloneDX/license-scanner) |
 | fnug | Nice lint runner | 55 | 0 | 2024-12-03 | 2024-11-06 | GPL-3.0-only | ✓ | - | [link](https://github.com/nickolaj-jepsen/fnug) |
 | lazycelery | High-performance TUI for Docker container management | 55 | 3 | 2025-12-15 | 2025-08-28 | MIT | ✓ | - | [link](https://github.com/fguedes90/lazycelery) |
 | rkik | Rusty Klock Inspection Kit - Simple NTP Client | 55 | 4 | 2026-02-11 | 2026-01-24 | MIT | ✓ | - | [link](https://github.com/aguacero7/rkik) |
@@ -954,6 +955,7 @@ Total formulas: 1077
 | pikpaktui | TUI and CLI client for PikPak cloud storage | 11 | 0 | 2026-03-15 | 2026-03-14 | Apache-2.0 | ✓ | - | [link](https://github.com/Bengerthelorf/pikpaktui) |
 | rum | TUI to list, search and run package.json scripts | 11 | 0 | 2026-01-26 | 2026-01-25 | MIT | ✓ | - | [link](https://github.com/thekarel/rum) |
 | asmdiff | Compare per-function assembly across compilers | 10 | 0 | 2026-08-22 | - | MIT | ✓ | - | [link](https://github.com/rt-rtos/asmdiff) |
+| conan-mcp | MCP server for the Conan package manager | 10 | 5 | 2026-02-12 | 2025-11-12 | MIT | ✓ | - | [link](https://github.com/conan-io/conan-mcp) |
 | git-x | CLI extensions for Git that simplify common workflows | 10 | 0 | 2025-12-05 | - | MIT | ✓ | - | [link](https://github.com/simeg/git-x) |
 | htvend | Accelerate your Python functions with cloud GPUs | 10 | 0 | 2026-02-10 | - | Apache-2.0 | ✓ | - | [link](https://github.com/continusec/htvend) |
 | jonquil | JSON parser on top of TOML implementation (Fortran) | 10 | 6 | 2026-02-06 | 2025-05-18 | - | ✓ | - | [link](https://github.com/toml-f/jonquil) |

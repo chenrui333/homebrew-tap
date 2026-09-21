@@ -353,6 +353,12 @@
     "last_release": "2026-01-15",
     "stars": 340
   },
+  "github:CycloneDX/license-scanner": {
+    "forks": 8,
+    "last_commit": "2025-07-11",
+    "last_release": "2025-06-02",
+    "stars": 56
+  },
   "github:DECE2183/hexowl": {
     "forks": 1,
     "last_commit": "2025-06-20",
@@ -2194,6 +2200,12 @@
     "last_commit": "2025-07-21",
     "last_release": "2024-10-04",
     "stars": 132
+  },
+  "github:conan-io/conan-mcp": {
+    "forks": 5,
+    "last_commit": "2026-02-12",
+    "last_release": "2025-11-12",
+    "stars": 10
   },
   "github:confident-ai/deepteam": {
     "forks": 211,
