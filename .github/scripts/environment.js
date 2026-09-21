@@ -2,7 +2,7 @@
  * Environment configuration script for GitHub Actions CI
  * 
  * This script reads PR labels and sets outputs for the build workflow:
- * - syntax-only: Skip expensive build steps if CI-syntax-only label is present
+ * - syntax-only: Skip expensive build steps for syntax-only or published-bottle CI
  * - linux-runner: Ubuntu runner for x86_64 Linux builds
  * - linux-arm64-runner: Ubuntu runner for ARM64 Linux builds
  * - fail-fast: Whether to stop on first failing matrix build
@@ -21,6 +21,22 @@ module.exports = async ({github, context, core}, formula_detect) => {
         pull_number: context.issue.number
     })).data.labels : []
     const label_names = labels.map(label => label.name)
+    let published_bottle_head = null
+    if (is_pull_request && label_names.includes('CI-published-bottle-commits')) {
+        const comments = await github.paginate(github.rest.issues.listComments, {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            per_page: 100
+        })
+        const marker = comments
+            .filter(comment => comment.user?.login === 'github-actions[bot]')
+            .map(comment => comment.body?.match(/^<!-- homebrew-tap: published-bottle-head ([0-9a-f]{40}) -->$/))
+            .filter(Boolean)
+            .at(-1)
+        published_bottle_head = marker?.[1] ?? null
+    }
+    const current_head = context.payload?.pull_request?.head?.sha
     const linux_runner = 'ubuntu-24.04'
     const linux_arm64_runner = 'ubuntu-24.04-arm'
     const container = {
@@ -132,12 +148,16 @@ module.exports = async ({github, context, core}, formula_detect) => {
         }
     }
     
-    // Check for syntax-only label
-    if (label_names.includes('CI-syntax-only')) {
-        console.log('CI-syntax-only label found. Skipping tests job.')
+    // Check for labels that intentionally skip expensive formula builds.
+    const syntax_only = label_names.includes('CI-syntax-only')
+    const published_bottle_commits = label_names.includes('CI-published-bottle-commits') &&
+        current_head && published_bottle_head === current_head
+    if (syntax_only || published_bottle_commits) {
+        const reason = syntax_only ? 'CI-syntax-only' : 'CI-published-bottle-commits'
+        console.log(`${reason} label found. Skipping tests job.`)
         core.setOutput('syntax-only', 'true')
     } else {
-        console.log('No CI-syntax-only label found. Running tests job.')
+        console.log('No build-skipping label found. Running tests job.')
         core.setOutput('syntax-only', 'false')
     }
 

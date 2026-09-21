@@ -5,23 +5,38 @@ const environment = require("./environment.js")
 
 const repository = "chenrui333/homebrew-tap"
 
-async function runEnvironment({formulaFile, eventName = "pull_request", formulaDetect = {}}) {
+async function runEnvironment({
+  formulaFile,
+  eventName = "pull_request",
+  formulaDetect = {},
+  labels = [],
+  headSha = "a".repeat(40),
+  publishedBottleHead = null,
+}) {
   const outputs = new Map()
   const apiCalls = []
+  const listComments = async () => {
+    apiCalls.push("issues.listComments")
+    return publishedBottleHead
+      ? [{user: {login: "github-actions[bot]"}, body: `<!-- homebrew-tap: published-bottle-head ${publishedBottleHead} -->`}]
+      : []
+  }
   const github = {
     rest: {
       pulls: {
         get: async () => {
           apiCalls.push("pulls.get")
-          return {data: {labels: []}}
+          return {data: {labels: labels.map((name) => ({name}))}}
         },
         listFiles: async () => {
           apiCalls.push("pulls.listFiles")
           return {data: [{filename: formulaFile}]}
         },
       },
+      issues: {listComments},
     },
-    paginate: async () => {
+    paginate: async (method) => {
+      if (method === listComments) return listComments()
       apiCalls.push("paginate")
       return [{filename: formulaFile}]
     },
@@ -30,6 +45,7 @@ async function runEnvironment({formulaFile, eventName = "pull_request", formulaD
     eventName,
     issue: {number: 1},
     repo: {owner: repository.split("/")[0], repo: repository.split("/")[1]},
+    payload: {pull_request: {head: {sha: headSha}}},
   }
   const core = {
     setOutput: (name, value) => outputs.set(name, value),
@@ -113,4 +129,36 @@ test("push keeps the non-PR full formula matrix behavior", async () => {
     "ubuntu-24.04",
     "ubuntu-24.04-arm",
   ])
+})
+
+test("published bottle commits make a pull request syntax-only", async () => {
+  const headSha = "a".repeat(40)
+  const {outputs, apiCalls} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    labels: ["CI-published-bottle-commits"],
+    headSha,
+    publishedBottleHead: headSha,
+  })
+
+  assert.equal(outputs.get("syntax-only"), "true")
+  assert.equal(apiCalls.includes("issues.listComments"), true)
+})
+
+test("stale published bottle commits do not skip a newer pull request head", async () => {
+  const {outputs} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    labels: ["CI-published-bottle-commits"],
+    headSha: "b".repeat(40),
+    publishedBottleHead: "a".repeat(40),
+  })
+
+  assert.equal(outputs.get("syntax-only"), "false")
+})
+
+test("ordinary pull requests still run the formula build path", async () => {
+  const {outputs} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+  })
+
+  assert.equal(outputs.get("syntax-only"), "false")
 })
