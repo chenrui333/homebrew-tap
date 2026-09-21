@@ -16,8 +16,7 @@ jobs:
       github.event.label.name == 'pr-pull' &&
       github.event.pull_request.user.type != 'Bot' &&
       github.event.pull_request.state == 'open' &&
-      !github.event.pull_request.draft &&
-      !contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
+      !github.event.pull_request.draft
     runs-on: ubuntu-latest
     env:
       PR: ${{ github.event.pull_request.number }}
@@ -63,8 +62,15 @@ jobs:
             echo "base_branch=$base_branch"
           } >> "$GITHUB_OUTPUT"
 
-          if jq -e '.labels[]?.name == "CI-published-bottle-commits"' <<< "$pr_data" >/dev/null; then
-            echo "CI-published-bottle-commits is already present; publication is a no-op."
+          published_head="$({
+            gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR/comments"
+          } | jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
+            select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
+            capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] |
+            last // empty')"
+
+          if [[ "$published_head" == "$expected_head" ]]; then
+            echo "Published bottle commit already matches the current PR head; publication is a no-op."
             echo "publish=false" >> "$GITHUB_OUTPUT"
           else
             echo "publish=true" >> "$GITHUB_OUTPUT"
@@ -206,3 +212,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh pr edit --add-label CI-published-bottle-commits "$PR" --repo "$GITHUB_REPOSITORY"
+
+      - name: Record published bottle head
+        if: steps.pr-details.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
+        run: >-
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY"
+          --body "<!-- homebrew-tap: published-bottle-head $PUBLISHED_HEAD -->"
