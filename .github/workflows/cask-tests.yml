@@ -238,7 +238,7 @@ jobs:
         if: always() && steps.snapshot.outcome == 'success' && steps.install.outcome == 'success' && runner.os == 'macOS'
 
   conclusion:
-    name: conclusion
+    name: cask-conclusion
     needs: test
     runs-on: ubuntu-latest
     if: always()

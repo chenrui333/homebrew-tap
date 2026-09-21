@@ -116,6 +116,20 @@ test("merge_group avoids PR APIs and uses the full supported formula matrix", as
   assert.match(outputs.get("test-bot-formulae-args"), /--testing-formulae=watchfiles/)
 })
 
+test("merge_group with no detected formulae is syntax-only", async () => {
+  const {outputs, apiCalls} = await runEnvironment({
+    eventName: "merge_group",
+    formulaDetect: {
+      testing_formulae: "",
+      added_formulae: "",
+      deleted_formulae: "",
+    },
+  })
+
+  assert.deepEqual(apiCalls, [])
+  assert.equal(outputs.get("syntax-only"), "true")
+})
+
 test("push keeps the non-PR full formula matrix behavior", async () => {
   const {outputs, apiCalls} = await runEnvironment({
     formulaFile: "Formula/w/watchfiles.rb",

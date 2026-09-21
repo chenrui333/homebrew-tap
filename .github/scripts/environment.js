@@ -149,11 +149,16 @@ module.exports = async ({github, context, core}, formula_detect) => {
     }
     
     // Check for labels that intentionally skip expensive formula builds.
-    const syntax_only = label_names.includes('CI-syntax-only')
+    const merge_group_without_formulae = context.eventName === 'merge_group' &&
+        ![formula_detect?.testing_formulae, formula_detect?.added_formulae, formula_detect?.deleted_formulae]
+            .some(Boolean)
+    const syntax_only = label_names.includes('CI-syntax-only') || merge_group_without_formulae
     const published_bottle_commits = label_names.includes('CI-published-bottle-commits') &&
         current_head && published_bottle_head === current_head
     if (syntax_only || published_bottle_commits) {
-        const reason = syntax_only ? 'CI-syntax-only' : 'CI-published-bottle-commits'
+        const reason = merge_group_without_formulae
+            ? 'merge_group with no detected formulae'
+            : syntax_only ? 'CI-syntax-only' : 'CI-published-bottle-commits'
         console.log(`${reason} label found. Skipping tests job.`)
         core.setOutput('syntax-only', 'true')
     } else {

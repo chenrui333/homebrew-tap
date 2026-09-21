@@ -6,11 +6,17 @@ on:
       - main
     paths:
       - 'Formula/**'
+      - '.github/workflows/tests.yml'
+      - '.github/scripts/environment.js'
+      - '.github/scripts/environment.test.js'
   pull_request:
     branches:
       - main
     paths:
       - 'Formula/**'
+      - '.github/workflows/tests.yml'
+      - '.github/scripts/environment.js'
+      - '.github/scripts/environment.test.js'
   merge_group:
   workflow_dispatch:
 
@@ -53,7 +59,11 @@ jobs:
         id: formulae-detect
 
       - name: Fetch published formula bottles
-        if: github.event_name == 'merge_group'
+        if: >-
+          github.event_name == 'merge_group' &&
+          (steps.formulae-detect.outputs.testing_formulae != '' ||
+          steps.formulae-detect.outputs.added_formulae != '' ||
+          steps.formulae-detect.outputs.deleted_formulae != '')
         env:
           FORMULAE_TO_FETCH: ${{ steps.formulae-detect.outputs.formulae_to_fetch }}
         run: >-
@@ -160,7 +170,7 @@ jobs:
           logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
 
   conclusion:
-    name: conclusion
+    name: formula-conclusion
     needs: [tap-syntax, set-environment, build-formula]
     if: always() && (github.event_name == 'pull_request' || github.event_name == 'merge_group')
     runs-on: ubuntu-slim
