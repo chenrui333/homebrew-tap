@@ -39,6 +39,17 @@ exclude = [
   "^https://chiselapp\\.com/user/MistressRemilia/repository/benben/?$",
   "^https://yeetfile\\.com/?$",
   "^https://github\\.com/ingero-io/ingero/?$",
+  # Known unavailable or persistently unreachable links in generated inventories.
+  "^https://codeberg\\.org/ncts/drft/?$",
+  "^https://github\\.com/Zuhaitz-dev/fat/?$",
+  "^https://github\\.com/ccheshirecat/flint/?$",
+  "^https://codemachine\\.co/?$",
+  "^https://ampcode\\.com/?$",
+  "^https://www\\.heyagent\\.dev/?$",
+  "^https://gowebly\\.org/?$",
+  "^https://pixelle\\.ai/?$",
+  "^https://stakesquid\\.com/?$",
+  "^https://docs\\.trieve\\.ai/getting-started/introduction/?$",
 ]
 
 cache = true
