@@ -6,6 +6,14 @@ class Litespeed < Formula
   license "Apache-2.0"
   head "https://github.com/BerriAI/litespeed.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "4568965fa3325334c9e31eaa38f6809d0785e9b758aa87378cad1db630935126"
+    sha256 cellar: :any, arm64_sequoia: "c885358456023417ccef9f4b60571bd712c3926411d220762a3d2ddcb11b45da"
+    sha256 cellar: :any, arm64_linux:   "da7ff90d54937593ddf2e614e61efecde450eda7d7b6fcf2653708ec0ca1ff9b"
+    sha256 cellar: :any, x86_64_linux:  "f9c0489139cfe2f71e91a2d4c305ee4a19d0184725b6b8f485b3f03d22cd2df4"
+  end
+
   depends_on "zig" => :build
   depends_on "node"
 
