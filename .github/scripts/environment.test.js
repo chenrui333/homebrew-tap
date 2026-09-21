@@ -5,7 +5,7 @@ const environment = require("./environment.js")
 
 const repository = "chenrui333/homebrew-tap"
 
-async function runEnvironment({formulaFile, eventName = "pull_request", formulaDetect = {}}) {
+async function runEnvironment({formulaFile, eventName = "pull_request", formulaDetect = {}, labels = []}) {
   const outputs = new Map()
   const apiCalls = []
   const github = {
@@ -13,7 +13,7 @@ async function runEnvironment({formulaFile, eventName = "pull_request", formulaD
       pulls: {
         get: async () => {
           apiCalls.push("pulls.get")
-          return {data: {labels: []}}
+          return {data: {labels: labels.map((name) => ({name}))}}
         },
         listFiles: async () => {
           apiCalls.push("pulls.listFiles")
@@ -113,4 +113,21 @@ test("push keeps the non-PR full formula matrix behavior", async () => {
     "ubuntu-24.04",
     "ubuntu-24.04-arm",
   ])
+})
+
+test("published bottle commits make a pull request syntax-only", async () => {
+  const {outputs} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    labels: ["CI-published-bottle-commits"],
+  })
+
+  assert.equal(outputs.get("syntax-only"), "true")
+})
+
+test("ordinary pull requests still run the formula build path", async () => {
+  const {outputs} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+  })
+
+  assert.equal(outputs.get("syntax-only"), "false")
 })

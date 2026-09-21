@@ -37,6 +37,7 @@ jobs:
       testing_formulae: ${{ steps.formulae-detect.outputs.testing_formulae }}
       added_formulae: ${{ steps.formulae-detect.outputs.added_formulae }}
       deleted_formulae: ${{ steps.formulae-detect.outputs.deleted_formulae }}
+      formulae_to_fetch: ${{ steps.formulae-detect.outputs.formulae_to_fetch }}
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -50,6 +51,15 @@ jobs:
 
       - run: brew test-bot --only-formulae-detect
         id: formulae-detect
+
+      - name: Fetch published formula bottles
+        if: github.event_name == 'merge_group'
+        env:
+          FORMULAE_TO_FETCH: ${{ steps.formulae-detect.outputs.formulae_to_fetch }}
+        run: >-
+          brew test-bot --only-bottles-fetch
+          --testing-formulae="$FORMULAE_TO_FETCH"
+          --root-url="https://ghcr.io/v2/chenrui333/tap"
 
   set-environment:
     if: |
@@ -148,6 +158,36 @@ jobs:
           cleanup: ${{ matrix.cleanup }}
           bottles-directory: ${{ env.BOTTLES_DIR }}
           logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
+
+  conclusion:
+    name: conclusion
+    needs: [tap-syntax, set-environment, build-formula]
+    if: always() && (github.event_name == 'pull_request' || github.event_name == 'merge_group')
+    runs-on: ubuntu-slim
+    steps:
+      - name: Verify formula CI result
+        env:
+          TAP_SYNTAX_RESULT: ${{ needs.tap-syntax.result }}
+          SET_ENVIRONMENT_RESULT: ${{ needs.set-environment.result }}
+          BUILD_FORMULA_RESULT: ${{ needs.build-formula.result }}
+          SYNTAX_ONLY: ${{ needs.set-environment.outputs.syntax-only }}
+        run: |
+          if [[ "$TAP_SYNTAX_RESULT" != "success" || "$SET_ENVIRONMENT_RESULT" != "success" ]]; then
+            echo "Formula setup failed: tap-syntax=$TAP_SYNTAX_RESULT set-environment=$SET_ENVIRONMENT_RESULT"
+            exit 1
+          fi
+
+          if [[ "$BUILD_FORMULA_RESULT" == "success" ]]; then
+            exit 0
+          fi
+
+          if [[ "$BUILD_FORMULA_RESULT" == "skipped" && "$SYNTAX_ONLY" == "true" ]]; then
+            echo "Formula build intentionally skipped for syntax-only CI."
+            exit 0
+          fi
+
+          echo "Unexpected formula build result: $BUILD_FORMULA_RESULT"
+          exit 1
 
   label-pr:
     needs: build-formula
