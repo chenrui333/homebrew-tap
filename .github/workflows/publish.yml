@@ -185,7 +185,7 @@ jobs:
         if: steps.pr-details.outputs.publish == 'true'
         uses: Homebrew/actions/git-try-push@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
           remote: origin
           branch: ${{ steps.pr-details.outputs.head_branch }}
