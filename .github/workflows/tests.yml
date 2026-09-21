@@ -19,7 +19,6 @@ env:
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
   HOMEBREW_RELOCATABLE_INSTALL_NAMES: 1
-  HOMEBREW_ARM64_TESTING: 1
 
 concurrency:
   group: "build-${{ github.ref }}"
@@ -28,7 +27,7 @@ concurrency:
 jobs:
   tap-syntax:
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:a8601923205391c670e84df1601d9a5966c7e0ada5fe58deab08cd9a337a12e0
     env:
@@ -56,7 +55,7 @@ jobs:
       always() &&
       !cancelled() &&
       (github.event_name != 'pull_request' || needs.tap-syntax.result == 'success')
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-slim
     needs: tap-syntax
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
@@ -121,22 +120,6 @@ jobs:
           bottles-directory: ${{ env.BOTTLES_DIR }}
           cleanup: ${{ matrix.cleanup }}
 
-      - name: Prepare Intel macOS dependencies
-        if: >-
-          github.event_name == 'pull_request' &&
-          matrix.runner == 'macos-15-intel' &&
-          contains(github.event.pull_request.labels.*.name, 'CI-source-dependencies')
-        env:
-          TESTING_FORMULAE: ${{ needs.tap-syntax.outputs.testing_formulae }}
-          HOMEBREW_NO_INSTALL_FROM_API: 1
-        run: |
-          # Opt in when missing dependency bottles have a practical source build.
-          # The formula itself is still built, bottled and tested by test-bot below.
-          if [[ -n "$TESTING_FORMULAE" ]]; then
-            IFS=',' read -r -a formulae <<< "$TESTING_FORMULAE"
-            brew install --formula --only-dependencies --include-test -- "${formulae[@]}"
-          fi
-
       - name: Run brew test-bot
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
@@ -171,7 +154,7 @@ jobs:
       success() &&
       github.event_name == 'pull_request' &&
       github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:

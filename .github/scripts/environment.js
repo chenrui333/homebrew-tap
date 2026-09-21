@@ -32,9 +32,7 @@ module.exports = async ({github, context, core}, formula_detect) => {
 
     const macos_matrix = [
         {runner: 'macos-26', cleanup: true},
-        {runner: 'macos-15', cleanup: true},
-        {runner: 'macos-14', cleanup: true},
-        {runner: 'macos-15-intel', cleanup: true}
+        {runner: 'macos-15', cleanup: true}
     ]
     const linux_matrix = [
         {
