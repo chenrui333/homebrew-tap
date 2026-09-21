@@ -1,0 +1,39 @@
+.github/workflows/process-compose-preflight.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 32
+.github/workflows/autobump-formula.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 29,35
+.github/workflows/close-superseded-formula-prs.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 40
+.github/workflows/cask-tests.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 53,99
+.github/workflows/autobump-cask.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 29,35
+.github/workflows/clean-up-closed-prs.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 38
+.github/workflows/triage.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 25
+.github/workflows/publish.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 35,44,57
+.github/workflows/tests.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 42,118,144
+.github/workflows/rebottle.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 65,77,103,114,136,143
+.github/workflows/formula-status.yml
+  s_d9c062dda023f0::t_94ec62cd047c29 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "64c1a3384d8b5d46a284031a93fdb91310104262",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
