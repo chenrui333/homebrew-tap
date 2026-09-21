@@ -6,6 +6,15 @@ class LicenseScanner < Formula
   license "Apache-2.0"
   head "https://github.com/CycloneDX/license-scanner.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25b0ba6109812c994a665f7374c435eddc73f22fc9911809c62943a92df6844e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b0ba6109812c994a665f7374c435eddc73f22fc9911809c62943a92df6844e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25b0ba6109812c994a665f7374c435eddc73f22fc9911809c62943a92df6844e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a3a98c4a12a15f0be41e09241a23e5ae633942144403d35ee8493e3bb52808b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2edf508388e34da6d0e59915d4713d773c8c8fea57b9730b8427e084edf2507"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
