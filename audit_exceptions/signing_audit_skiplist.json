@@ -1,5 +1,6 @@
 {
   "docker-scout-cli": "all",
+  "focus-editor": "all",
   "lanes": "all",
   "proton-pass-cli": "all"
 }
