@@ -6,14 +6,28 @@ on:
     - cron: '0 9 * * 4'
   workflow_dispatch:
 
+concurrency:
+  group: terminal-trove-weekly
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Prepare automation branch
+        id: prepare
+        env:
+          BRANCH: automation/terminal-trove-weekly
+        run: .github/scripts/publish-generated-pr.sh prepare
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
@@ -24,16 +38,15 @@ jobs:
         working-directory: ./docs/terminal-trove
         run: python3 scrape_terminal_trove.py
 
-      - name: Commit and push changes
-        run: |
-          git config --local user.name "github-actions"
-          git config --local user.email "actions@github.com"
-
-          # Check if there are changes
-          if git diff --quiet; then
-            echo "No changes detected"
-          else
-            git add docs/terminal-trove/terminal_trove_weekly.md docs/terminal-trove/.project_links_cache.json
-            git commit -m "chore: update terminal trove weekly tools list" || true
-            git push
-          fi
+      - name: Publish generated PR
+        id: publish
+        env:
+          BRANCH: automation/terminal-trove-weekly
+          BASE_SHA: ${{ steps.prepare.outputs.base_sha }}
+          REMOTE_SHA: ${{ steps.prepare.outputs.remote_sha }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          PR_TITLE: 'chore: update terminal trove weekly tools list'
+          PR_BODY: Generated automatically by the Terminal Trove Weekly Scraper workflow.
+          COMMIT_MESSAGE: 'chore: update terminal trove weekly tools list'
+        run: .github/scripts/publish-generated-pr.sh publish docs/terminal-trove/terminal_trove_weekly.md docs/terminal-trove/.project_links_cache.json
