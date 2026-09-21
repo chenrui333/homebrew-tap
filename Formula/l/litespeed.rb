@@ -8,6 +8,9 @@ class Litespeed < Formula
 
   depends_on "node"
 
+  # Upstream's prebuilt OpenTUI dylib lacks Mach-O header padding for relocation.
+  preserve_rpath
+
   def install
     ENV.prepend_path "PATH", formula_opt_bin("node")
     system "npm", "ci", "--no-audit", "--no-fund"
