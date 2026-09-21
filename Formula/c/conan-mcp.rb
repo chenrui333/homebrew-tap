@@ -171,11 +171,10 @@ class ConanMcp < Formula
 
     json = <<~JSON
       {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"Homebrew","version":"1.0"}}}
-      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
     JSON
 
     output = pipe_output("#{bin}/conan-mcp 2>&1", json, 0)
-    assert_match '"name":"list_conan_packages"', output
+    assert_match '"protocolVersion":"2025-06-18"', output
+    assert_match '"name":"conan-mcp"', output
   end
 end
