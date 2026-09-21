@@ -43,6 +43,7 @@ jobs:
           PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           gh pr merge "$PR_NUMBER" \
+            --auto \
             --merge \
             --match-head-commit "$PR_HEAD_SHA" \
             --repo "$GITHUB_REPOSITORY"

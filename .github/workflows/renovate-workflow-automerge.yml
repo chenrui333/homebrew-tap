@@ -204,6 +204,7 @@ jobs:
           EXPECTED_HEAD: ${{ needs.classify.outputs.head-sha }}
         run: |
           if gh pr merge "$PR_NUMBER" \
+            --auto \
             --merge \
             --match-head-commit "$EXPECTED_HEAD" \
             --repo "$GITHUB_REPOSITORY"
