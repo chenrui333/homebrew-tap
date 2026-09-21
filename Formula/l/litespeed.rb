@@ -49,20 +49,12 @@ class Litespeed < Formula
       cd "packages/native" do
         system "sh", "scripts/prepare-zig-deps.sh"
         if OS.mac?
-          inreplace "build.zig", <<~ZIG, <<~ZIG
-            const lib = b.addLibrary(.{
-                .name = LIB_NAME,
-                .root_module = module,
-                .linkage = .dynamic,
-            });
-          ZIG
-            const lib = b.addLibrary(.{
-                .name = LIB_NAME,
-                .root_module = module,
-                .linkage = .dynamic,
-            });
-            if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;
-          ZIG
+          old = "    });\n\n    " \
+                "if (target.result.os.tag == .linux and optimize != .Debug) lib.build_id = .sha1;"
+          new = "    });\n\n    " \
+                "if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n    " \
+                "if (target.result.os.tag == .linux and optimize != .Debug) lib.build_id = .sha1;"
+          inreplace "build.zig", old, new
         end
         system "zig", "build", "-Doptimize=ReleaseFast"
         library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
