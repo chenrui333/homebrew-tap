@@ -1,0 +1,20 @@
+Formula/c/cheznav.rb
+  s_924c595f5566bd::t_8a39f56f448d18 1-46,48-78
+  s_924c595f5566bd::t_f97e22a9837885 47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "81d38ff710269a82543ac4b546cd446e3b4fb2d7",
+  "prompts": {},
+  "sessions": {
+    "s_924c595f5566bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c72c-9dbe-7690-8ce5-2ed2819c9079",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
