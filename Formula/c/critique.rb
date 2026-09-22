@@ -61,7 +61,7 @@ class Critique < Formula
     (testpath/"sample.txt").write("before\n")
     system "git", "-C", testpath, "add", "sample.txt"
     system "git", "-C", testpath, "commit", "--quiet", "-m", "initial"
-    (testpath/"sample.txt").write("after\n")
+    (testpath/"sample.txt").open("w") { |file| file.write("after\n") }
     system "git", "-C", testpath, "add", "sample.txt"
     system "git", "-C", testpath, "commit", "--quiet", "-m", "update"
     output = shell_output("cd #{testpath} && #{bin}/critique difftool HEAD~1 HEAD")
