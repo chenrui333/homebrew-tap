@@ -1,0 +1,20 @@
+Formula/t/tfui.rb
+  s_7773126856d40f::t_6244db599a111d 18
+  s_7773126856d40f::t_c23a2dccdc1d97 1-17,19-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6bc80778f949342e45fbec7906d01bcfcb910d4c",
+  "prompts": {},
+  "sessions": {
+    "s_7773126856d40f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c99e-3a81-7953-9277-5f19ba20a829",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
