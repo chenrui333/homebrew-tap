@@ -1,0 +1,28 @@
+Casks/d/dhictl.rb
+  s_7773126856d40f::t_ca1a22fa0a81b5 23
+  s_982c42b205fc4b::t_fd472c54fbd01f 17-18,21-22,24-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c5f114c8019c4b0574aba816ca32452ba32d230b",
+  "prompts": {},
+  "sessions": {
+    "s_7773126856d40f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c99e-3a81-7953-9277-5f19ba20a829",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_982c42b205fc4b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0bd16-a695-7490-905b-cfd4ccca30c7",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
