@@ -5,6 +5,14 @@ class Critique < Formula
   sha256 "f574ae6b1b34e8e45a3d4edf292f54cb0e12198e4e1b4e6cb880f4c3f27d0104"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fac9d72d42f8e28c4bed0a010ca742fb288e25edd9efdd1b38fc5d8934c6866a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac9d72d42f8e28c4bed0a010ca742fb288e25edd9efdd1b38fc5d8934c6866a"
+    sha256 cellar: :any,                 arm64_linux:   "b4d9eb46541f74ef26320e2c98278e91654f3057a99831440f698d679d5aef36"
+    sha256 cellar: :any,                 x86_64_linux:  "35e4e2178dafb296ae99dcd65fba8dd5dbf0280ec5cb1de844ece4c52c7ed2b8"
+  end
+
   depends_on "bun"
 
   preserve_rpath
