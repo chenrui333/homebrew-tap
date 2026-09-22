@@ -1000,6 +1000,7 @@ brew install --cask <tool>
 - `tfreveal`
 - `tftarget`
 - `tftree`
+- `tfui`
 - `thanks-stars`
 - `theattyr`
 - `threatdeck`
