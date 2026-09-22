@@ -20,8 +20,7 @@ class Ffdash < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ffdash --version")
-
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = shell_output("#{bin}/ffdash check-ffmpeg")
     assert_match "ffmpeg found", output
     assert_match "ffprobe found", output
