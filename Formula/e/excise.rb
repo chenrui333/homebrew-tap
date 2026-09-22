@@ -26,7 +26,7 @@ class Excise < Formula
     (fixture/"nested/file.txt").write("fixture data\n")
     report = testpath/"report.json"
     system bin/"excise", "--format", "json", "--output", report, fixture
-    assert_predicate report, :exist?
+    assert_path_exists report
     assert_match "file.txt", report.read
   end
 end
