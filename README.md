@@ -671,6 +671,7 @@ brew install --cask <tool>
 - `narr`
 - `nastro`
 - `nbcat`
+- `ncgopher`
 - `needle`
 - `needs`
 - `nest-cli`
