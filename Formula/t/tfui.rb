@@ -6,6 +6,14 @@ class Tfui < Formula
   license "MIT"
   head "https://github.com/SayYoungMan/tfui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fe32824bcb592913837ea28f80d07b6681b857cad4cc9fb4b6231bcf25a8585"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fe32824bcb592913837ea28f80d07b6681b857cad4cc9fb4b6231bcf25a8585"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbf9da502f991f46c4d29adbf0da3c855334ac1eb6182945091ff51d84ae5004"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "249c4ce04300d25765b2bdc0ecdf6372f7f2374d0aae4819ce10cec463d0408b"
+  end
+
   depends_on "go" => :build
 
   def install
