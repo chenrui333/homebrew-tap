@@ -1,0 +1,35 @@
+Formula/m/mimirs.rb
+  s_b7b6cad763aacd::t_0ac5de2d9a0953 1-3,6,8,10-11,16-18,41-43,51-52
+  s_b7b6cad763aacd::t_df21cf820d0723 19-23
+  s_28c4d68f9dad45::t_1d34cfe17dc1af 44
+  s_b7b6cad763aacd::t_62958b78f74d4e 45
+  s_b7b6cad763aacd::t_4e08b91e3f6233 48-49
+  s_28c4d68f9dad45::t_4b85c8af9135a6 9,12-15
+  s_b7b6cad763aacd::t_ee95b9da66c4f4 46-47,50
+  s_b7b6cad763aacd::t_16a570bd35fed0 24-40
+  s_b7b6cad763aacd::t_c49ad47a3a058c 4-5,7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "20bd6db935222792d91a4f4e5ed2b08caa253bd4",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    },
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

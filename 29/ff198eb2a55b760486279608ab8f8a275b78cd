@@ -1,0 +1,36 @@
+Formula/f/fftext.rb
+  s_28c4d68f9dad45::t_c314afe664c446 248,258
+  s_28c4d68f9dad45::t_6ae35f73f704b2 13,241
+  s_28c4d68f9dad45::t_031286792d918e 22-23
+  s_b7b6cad763aacd::t_d024ca6c93ba23 1-12,17,21,209,243-247,261-262
+  s_28c4d68f9dad45::t_558967ba0806c2 25-28,249,257
+  s_28c4d68f9dad45::t_ee41d61c659bd3 250-256
+  s_28c4d68f9dad45::t_15a9b2754a4749 14-15,18,24,29-207,210-213,215-240,242
+  s_28c4d68f9dad45::t_3f4b749481a6b7 16,19
+  s_28c4d68f9dad45::t_9b417428a0c36e 20,259-260
+  s_28c4d68f9dad45::t_daa413789942a4 214
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "29ff198eb2a55b760486279608ab8f8a275b78cd",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    },
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

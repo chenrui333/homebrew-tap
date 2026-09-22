@@ -1,0 +1,14 @@
+Casks/p/proton-pass-cli.rb
+  h_9df9c32c3f321d 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fea7e856032fef58f524c33cd417379032aab604",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

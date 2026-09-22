@@ -1,0 +1,19 @@
+AGENTS.md
+  s_2d6464a099f6c5::t_b2b535bf122c51 155,159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "9e2161a20ca982767c0a05e5940011ee1147c721",
+  "prompts": {},
+  "sessions": {
+    "s_2d6464a099f6c5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec77e-4215-7ec2-a0f1-5daa678b5a9f",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

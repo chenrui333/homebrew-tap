@@ -1,0 +1,20 @@
+Formula/p/pktz.rb
+  s_2a0b7a01045e3b::t_dbcd824d3e32be 2
+  s_2a0b7a01045e3b::t_398fab38b8ceab 1,3-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "7285c723ed1f2ad372f8d2707653dcfd3bec80a8",
+  "prompts": {},
+  "sessions": {
+    "s_2a0b7a01045e3b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3e9136d3-4f82-4b1a-8613-d75cfec1349e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

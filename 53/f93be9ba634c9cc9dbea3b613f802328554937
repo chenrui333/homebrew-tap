@@ -1,0 +1,29 @@
+.github/scripts/renovate-workflow-automerge.js
+  s_84f9cf2cdf3e31::t_ae5392c00d75d6 55-57
+  s_84f9cf2cdf3e31::t_f35bfeed593b84 1-54,58-136
+.github/workflows/renovate-workflow-automerge.yml
+  s_84f9cf2cdf3e31::t_f35bfeed593b84 1-3,6-14,18,20-67,69-86,88-98,101-105,107-207
+  s_84f9cf2cdf3e31::t_5bdd50d26263a8 4,99-100,106
+  s_84f9cf2cdf3e31::t_ae5392c00d75d6 5,15-17,19,68,87
+.github/scripts/renovate-workflow-automerge.test.js
+  s_84f9cf2cdf3e31::t_f35bfeed593b84 1-62,65-67,69-73,78-125
+  s_84f9cf2cdf3e31::t_0c4c913edc63ee 63-64
+  s_84f9cf2cdf3e31::t_5bdd50d26263a8 74-77
+  s_84f9cf2cdf3e31::t_ae5392c00d75d6 68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "53f93be9ba634c9cc9dbea3b613f802328554937",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

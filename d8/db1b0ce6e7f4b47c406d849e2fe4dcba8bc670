@@ -1,0 +1,20 @@
+Formula/c/claudio.rb
+  s_84f9cf2cdf3e31::t_6861c56d47f200 4-5
+  s_84f9cf2cdf3e31::t_e4690174f3eef3 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "d8db1b0ce6e7f4b47c406d849e2fe4dcba8bc670",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

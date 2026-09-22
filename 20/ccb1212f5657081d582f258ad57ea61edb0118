@@ -1,0 +1,21 @@
+Formula/o/optimizt.rb
+  s_84f9cf2cdf3e31::t_a495c6add4ee42 4-5
+  s_84f9cf2cdf3e31::t_ba7c8588a911cd 24-31,49-50
+  s_84f9cf2cdf3e31::t_f909e61157d3bf 34-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "20ccb1212f5657081d582f258ad57ea61edb0118",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

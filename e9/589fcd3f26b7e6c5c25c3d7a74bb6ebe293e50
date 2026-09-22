@@ -1,0 +1,25 @@
+Formula/c/chanfana.rb
+  s_b7b6cad763aacd::t_9c515ffb786397 1-15,18,21-22
+  s_b7b6cad763aacd::t_de6ff2160b6699 16-17,19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "e9589fcd3f26b7e6c5c25c3d7a74bb6ebe293e50",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+Formula/e/ecscope.rb
+  ai_agent 4-5,11-15
+Formula/g/graphjin.rb
+  ai_agent 4-5,11-15
+Formula/a/aube.rb
+  ai_agent 4-5,11-15
+Formula/d/dominds.rb
+  ai_agent 4-5,10
+Formula/s/splashboard.rb
+  ai_agent 4-5,11-15
+Formula/t/threatdeck.rb
+  ai_agent 4-5,11-15
+Formula/n/netwatch.rb
+  ai_agent 4-5,11-15
+Formula/o/oh-my-codex.rb
+  ai_agent 4-5,11-15
+Formula/i/iam-convert.rb
+  ai_agent 4-5,10
+Formula/g/gokin.rb
+  ai_agent 4-5,11-15
+Formula/o/opencli.rb
+  ai_agent 1-25
+Formula/o/olltop.rb
+  ai_agent 1-33
+Formula/a/azazel.rb
+  ai_agent 1-27
+Formula/c/clai.rb
+  ai_agent 4-5,11-15
+Formula/d/datui.rb
+  ai_agent 4-5,10-12
+.github/workflows/formula-status.yml
+  ai_agent 30
+Formula/l/logira.rb
+  ai_agent 1-26
+Formula/b/base-mcp-server.rb
+  ai_agent 4-5,37-46
+.typos.toml
+  ai_agent 41
+Formula/k/knip.rb
+  ai_agent 4-5,10-14
+Formula/m/ministack.rb
+  ai_agent 6-7,13-17
+Formula/g/gofakeit.rb
+  ai_agent 4-5,11-15
+.cache/formula_metadata.json
+  ai_agent 812-817,1064-1069,1460-1465,1538-1543,1556-1567,2222-2227,2234-2239,2324-2329,2414-2419,2444-2449,2504-2509,2660-2665,2726-2731,2744-2749,2786-2791,2804-2809,3182-3187,3404-3409,3434-3445,3596-3601,4010-4015,4250-4255,4970-4975,5024-5029,5084-5089,5108-5119,5126-5131,5246-5250
+.github/workflows/triage.yml
+  ai_agent 159
+Formula/j/jiq.rb
+  ai_agent 4-5,10-14
+Formula/a/aws-doctor.rb
+  ai_agent 4-5,11-15
+Formula/s/semaphore.rb
+  ai_agent 4-5,11-15
+mise.toml
+  ai_agent 7-8
+Formula/b/bpfvet.rb
+  ai_agent 1-28
+Formula/g/gecit.rb
+  ai_agent 1-26
+Formula/t/testronaut.rb
+  ai_agent 4-5,10-14
+formula-status/formula-status.md
+  ai_agent 3-4,22,104,116,169,226,229,282,315,328,358,363,395,421,452,458,503,518,531,539,551,553,563,569,574,621,647,651-652,657,677,729,758,813,816
+Formula/i/iam-lens.rb
+  ai_agent 4-5,10
+Formula/a/av.rb
+  ai_agent 4-5,11-15
+Formula/b/bearer.rb
+  ai_agent 4-5,10-14
+Formula/c/crush.rb
+  ai_agent 4-5,11-15
+Formula/m/mcp-use.rb
+  ai_agent 4-5,10-14
+Formula/i/iam-collect.rb
+  ai_agent 4-5,10
+Formula/i/ingero.rb
+  ai_agent 1-25
+Formula/s/siggy.rb
+  ai_agent 4-5,11-15
+Formula/o/oh-my-claude.rb
+  ai_agent 4-5,11-15
+Formula/c/cohctl.rb
+  ai_agent 5-6,12-16
+.github/workflows/clean-up-closed-prs.yml
+  ai_agent 30,37
+Formula/p/packemon.rb
+  ai_agent 4-5,11-15
+Formula/g/gsh.rb
+  ai_agent 4-5,11-15
+Formula/z/zigfetch.rb
+  ai_agent 4-5,10-14
+Formula/g/gitlabform.rb
+  ai_agent 6-7,12-17,40-49,84-85,124-125,144-145,173-180
+Formula/b/brave-search-mcp-server.rb
+  ai_agent 4-5,10
+Formula/e/eas-cli.rb
+  ai_agent 4-5,10
+Formula/l/lazyjira.rb
+  ai_agent 4-5,11-15
+Formula/e/eprofiler-tui.rb
+  ai_agent 1-30
+Formula/d/dotstate.rb
+  ai_agent 4-5,11-15
+Formula/m/multica.rb
+  ai_agent 1-35
+Formula/p/purple.rb
+  ai_agent 4-5,11-15
+Formula/x/xpdig.rb
+  ai_agent 4-5,11-15
+Formula/c/clawea.rb
+  ai_agent 6
+Formula/b/bpfviewer.rb
+  ai_agent 1-27
+Formula/c/comchan.rb
+  ai_agent 4-5,11-15
+Formula/k/kdash.rb
+  ai_agent 4-5,11-15
+Formula/p/pktz.rb
+  ai_agent 1-28
+Formula/f/floci.rb
+  ai_agent 4-5,11-15
+Formula/b/bpftui.rb
+  ai_agent 1-26
+Formula/f/fairyglade-ly.rb
+  ai_agent 4-5,11-12
+README.md
+  ai_agent 40,62,84,106-108,182,185,202,281,317,337,339,343,389,417,479,488,504,573,583,591,599,651,681,731,734,785,857,871,895,949,954
+Formula/l/lfk.rb
+  ai_agent 4-5,11-15
+Formula/p/plandex.rb
+  ai_agent 3
+Formula/c/cf2pulumi.rb
+  ai_agent 5-6,12-16
+Formula/b/beelzebub.rb
+  ai_agent 4-5,11-15
+Formula/l/lazyworktree.rb
+  ai_agent 4-5,11-15
+Formula/n/namespace-cli.rb
+  ai_agent 5-6,12-16
+Formula/g/gpk.rb
+  ai_agent 4-5,11-15
+Formula/f/fakecloud.rb
+  ai_agent 6-7,13-17
+Formula/a/auggie.rb
+  ai_agent 4-5,10
+Formula/o/octoscope.rb
+  ai_agent 4-5,11-15
+Formula/z/zerolang.rb
+  ai_agent 1-35
+.github/workflows/tests.yml
+  ai_agent 33
+Formula/f/fission-cli.rb
+  ai_agent 4-5,16-20
+Formula/i/iam-shrink.rb
+  ai_agent 4-5,10
+Formula/l/lazyenv.rb
+  ai_agent 4-5,11-15
+Formula/c/cliamp.rb
+  ai_agent 4-5,11-15
+Formula/c/create-mcp-use-app.rb
+  ai_agent 4-5,10
+Formula/s/sakimori.rb
+  ai_agent 1-27
+Formula/u/user-scanner.rb
+  ai_agent 6-7,13,65-66
+Formula/n/netperf.rb
+  ai_agent 4
+Formula/p/projscan.rb
+  ai_agent 4-5,11-15
+Formula/r/raiz.rb
+  ai_agent 6-7,12-16,25-29,31-32,36-37,41-42,46-47,56-57,66-67,81-82,86-87,101-102
+Formula/j/jsrpc.rb
+  ai_agent 4-5,11-15
+Formula/v/vulcain.rb
+  ai_agent 4-5,11-15
+Formula/m/macime.rb
+  ai_agent 4-5,11-14
+Formula/s/ssm.rb
+  ai_agent 4-5,11-15
+.github/workflows/close-superseded-formula-prs.yml
+  ai_agent 39
+Formula/a/aks-mcp.rb
+  ai_agent 4-5,11-15
+Formula/p/pitchfork.rb
+  ai_agent 4-5,11-15
+Formula/g/gitsocial.rb
+  ai_agent 4-5,11-15
+Formula/f/fresh.rb
+  ai_agent 4-5,11-15
+Formula/i/iam-expand.rb
+  ai_agent 4-5,10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "9a3286db6b3a8ad1fd5f131a0a5937a35519d2c2",
+  "prompts": {}
+}

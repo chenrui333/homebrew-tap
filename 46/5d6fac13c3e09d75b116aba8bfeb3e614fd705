@@ -1,0 +1,20 @@
+Formula/d/deepteam.rb
+  s_84f9cf2cdf3e31::t_805872a3b2b5f1 21,26
+  s_84f9cf2cdf3e31::t_c1621bb932aceb 6-7,29-30,34-35,49-50,54-55,64-65,69-70,74-75,94-95,114-115,129-130,134-135,159-160,164-165,169-170,174-175,179-180,194-195,199-200,204-205,214-215,219-220,224-225,234-235,254-255,259-260,264-265,269-270,294-295,299-300,304-305,309-310,314-315
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "465d6fac13c3e09d75b116aba8bfeb3e614fd705",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

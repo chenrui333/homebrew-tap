@@ -1,0 +1,20 @@
+Formula/r/railway-mcp-server.rb
+  s_1ec5a2f91781d0::t_dec2bc154c690a 28-29
+  s_1ec5a2f91781d0::t_1555b43de8fecf 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "1423d0b1b512d8f24e3f81c407dee34d1a703587",
+  "prompts": {},
+  "sessions": {
+    "s_1ec5a2f91781d0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5f49-d989-7101-b619-19a7e22bca72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

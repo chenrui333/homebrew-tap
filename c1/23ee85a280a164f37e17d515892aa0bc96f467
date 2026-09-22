@@ -1,0 +1,20 @@
+Formula/z/ziglint.rb
+  s_84f9cf2cdf3e31::t_d3ae37efcd7b9e 16,30,35-36
+  s_84f9cf2cdf3e31::t_113a46159e5482 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "c123ee85a280a164f37e17d515892aa0bc96f467",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

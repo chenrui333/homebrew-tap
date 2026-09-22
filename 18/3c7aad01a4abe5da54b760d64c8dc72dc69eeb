@@ -1,0 +1,23 @@
+Formula/h/honeymux.rb
+  s_28c4d68f9dad45::t_ae5de90c879a50 5
+  s_28c4d68f9dad45::t_de0765c3dc4c9a 11-39,44
+  s_28c4d68f9dad45::t_2ab27c62b39f09 42
+  s_28c4d68f9dad45::t_363c373c580571 10,40
+  s_28c4d68f9dad45::t_be80e7f7198307 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "183c7aad01a4abe5da54b760d64c8dc72dc69eeb",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

@@ -1,0 +1,20 @@
+AGENTS.md
+  s_b7b6cad763aacd::t_c7d08f88e999cc 147-164
+  s_b7b6cad763aacd::t_5124c7355ffb46 198-202
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b143e849bc4e02e6f1d75c968a54b50a30fc0437",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

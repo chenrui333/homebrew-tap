@@ -1,0 +1,24 @@
+.github/labeler.yml
+  s_b7b6cad763aacd::t_8992b63aa02646 1-21
+.github/workflows/labeler.yml
+  s_b7b6cad763aacd::t_1af405e56d0bab 1-17
+AGENTS.md
+  s_b7b6cad763aacd::t_dece881a125cfe 147-164
+  s_b7b6cad763aacd::t_340051771147d7 193-197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "2f2cecf84ff015d311e9a87b54cdeb52172296c0",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

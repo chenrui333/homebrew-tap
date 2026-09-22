@@ -1,0 +1,22 @@
+Casks/c/cleanboard.rb
+  s_304659fb9abe96::t_9ce62042e9e3ed 15
+  s_304659fb9abe96::t_49021dc30b12fa 5
+Casks/g/gitcomet.rb
+  s_304659fb9abe96::t_01346c243119c4 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "93927e6825738beaf111bcfe5a5f1552fadb203f",
+  "prompts": {},
+  "sessions": {
+    "s_304659fb9abe96": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6fa-2813-7810-aaf2-11971ad47aa0",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": null
+    }
+  }
+}

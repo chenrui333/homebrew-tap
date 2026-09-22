@@ -1,0 +1,31 @@
+.github/workflows/cask-tests.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 304
+.github/workflows/close-superseded-formula-prs.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 34
+.github/workflows/link-checker.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 37
+.github/workflows/publish-cask.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 15
+.github/workflows/renovate-workflow-automerge.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 18,67,86
+.github/workflows/publish.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 20
+.github/workflows/clean-up-closed-prs.yml
+  s_d9c062dda023f0::t_9fe1c35f060b2d 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ee2a2099aff119c75615f8b836c708a97e0c336c",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

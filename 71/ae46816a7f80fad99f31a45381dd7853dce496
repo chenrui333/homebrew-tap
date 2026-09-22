@@ -1,0 +1,20 @@
+Formula/s/sflowtool.rb
+  s_88c446f62097f1::t_527cdc63c2c937 6
+  s_88c446f62097f1::t_df0a2f4db241a4 24-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "71ae46816a7f80fad99f31a45381dd7853dce496",
+  "prompts": {},
+  "sessions": {
+    "s_88c446f62097f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b9ca2302-4aa7-4853-bb9e-4c96d1a60ecb",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
