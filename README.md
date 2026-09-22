@@ -33,6 +33,7 @@ brew install --cask <tool>
 <details>
 <summary>Formula List</summary>
 
+- `a2a-handler`
 - `abc`
 - `act3`
 - `actionbook`
@@ -174,6 +175,7 @@ brew install --cask <tool>
 - `chatuino`
 - `checksec`
 - `chess-tui`
+- `cheznav`
 - `chproxy`
 - `chroncal`
 - `clai`
@@ -310,6 +312,7 @@ brew install --cask <tool>
 - `editly`
 - `eilmeldung`
 - `elastop`
+- `elio`
 - `emoj`
 - `emplace`
 - `enola`
@@ -886,6 +889,7 @@ brew install --cask <tool>
 - `sidecar`
 - `sig`
 - `siggy`
+- `sigye`
 - `silver-surfer`
 - `simdjzon`
 - `simutil`
@@ -1062,6 +1066,7 @@ brew install --cask <tool>
 - `wakey`
 - `wallust`
 - `watchfiles`
+- `watchtower`
 - `weathr`
 - `webhix`
 - `wedl`
