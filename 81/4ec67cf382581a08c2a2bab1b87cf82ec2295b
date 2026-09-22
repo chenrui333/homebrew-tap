@@ -1,0 +1,23 @@
+.github/workflows/update-formula-list.yml
+  s_072ec5ed2f7fba::t_c1d6b45fb15c0d 45-46,48,54-56
+  s_072ec5ed2f7fba::t_6ccf42ba74fd39 47,49,57-60
+AGENTS.md
+  s_072ec5ed2f7fba::t_150be1625ddbc4 465-466,468-471
+  s_072ec5ed2f7fba::t_c1d6b45fb15c0d 467
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "814ec67cf382581a08c2a2bab1b87cf82ec2295b",
+  "prompts": {},
+  "sessions": {
+    "s_072ec5ed2f7fba": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019edfd5-ebd2-7fa3-8eb7-d080bfac4d15",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

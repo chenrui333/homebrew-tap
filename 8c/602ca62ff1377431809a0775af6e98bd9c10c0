@@ -1,0 +1,20 @@
+Formula/p/paperai.rb
+  s_392746f82aa1f5::t_a913e030492d6e 10-11
+  s_392746f82aa1f5::t_eeff43fb9b6372 496-503
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "8c602ca62ff1377431809a0775af6e98bd9c10c0",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

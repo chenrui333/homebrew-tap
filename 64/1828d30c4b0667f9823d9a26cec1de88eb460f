@@ -1,0 +1,19 @@
+Formula/f/fftext.rb
+  s_b7b6cad763aacd::t_d024ca6c93ba23 1-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "641828d30c4b0667f9823d9a26cec1de88eb460f",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+Formula/p/purple.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "6418648d0b78bebf52d0aae0d317033092f93b6d",
+  "prompts": {}
+}

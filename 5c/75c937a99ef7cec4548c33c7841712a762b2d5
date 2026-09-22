@@ -1,0 +1,19 @@
+Formula/f/fftext.rb
+  s_6e581cdabc614d::t_b63369f097f3e7 26,244-256
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "5c75c937a99ef7cec4548c33c7841712a762b2d5",
+  "prompts": {},
+  "sessions": {
+    "s_6e581cdabc614d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec289-575a-72b3-a4bb-99eed86b20ae",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

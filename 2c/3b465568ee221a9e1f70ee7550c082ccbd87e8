@@ -1,0 +1,9 @@
+Formula/g/gloomberb.rb
+  ai_agent 13-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "2c3b465568ee221a9e1f70ee7550c082ccbd87e8",
+  "prompts": {}
+}

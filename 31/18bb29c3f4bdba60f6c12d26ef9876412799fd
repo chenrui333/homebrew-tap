@@ -1,0 +1,28 @@
+.github/workflows/formula-status.yml
+  s_d9c062dda023f0::t_d8a5a477167173 30,56,67
+.github/workflows/terminal-trove-scraper.yml
+  s_d9c062dda023f0::t_d8a5a477167173 25,49
+.github/workflows/update-formula-cask-list.yml
+  s_d9c062dda023f0::t_d8a5a477167173 34,57
+.github/scripts/publish-generated-pr.test.js
+  s_d9c062dda023f0::t_58b86805988c64 12-17
+.github/scripts/publish-generated-pr.sh
+  s_d9c062dda023f0::t_58b86805988c64 79
+  s_d9c062dda023f0::t_d8a5a477167173 34,106-108,129-131,146-148
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3118bb29c3f4bdba60f6c12d26ef9876412799fd",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

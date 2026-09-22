@@ -1,0 +1,14 @@
+Formula/f/fakecloud.rb
+  h_9df9c32c3f321d 39-42,47-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "baaef3fd00a6338dea7f300ad91b717dc550c19f",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

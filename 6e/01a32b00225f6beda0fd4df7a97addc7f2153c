@@ -1,0 +1,23 @@
+Formula/c/caveman-shrink.rb
+  b83f594c0598067c 1-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "6e01a32b00225f6beda0fd4df7a97addc7f2153c",
+  "prompts": {
+    "b83f594c0598067c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "62eeac4c-4e59-4728-a92d-6c6b7922528c",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Rui Chen",
+      "messages": [],
+      "total_additions": 37,
+      "total_deletions": 0,
+      "accepted_lines": 37,
+      "overriden_lines": 0
+    }
+  }
+}

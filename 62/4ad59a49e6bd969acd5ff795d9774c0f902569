@@ -1,0 +1,31 @@
+.github/workflows/tests.yml
+  s_d9c062dda023f0::t_3ac7485855e4f0 56
+  s_d9c062dda023f0::t_9e2ebb096ff3c8 40,55,57-63,162-190
+  s_d9c062dda023f0::t_235c4169ab7239 191
+.github/scripts/environment.test.js
+  s_d9c062dda023f0::t_6470b7b30dda0a 8,117-133
+  s_d9c062dda023f0::t_a2d3cb0b8b6a79 16
+.github/workflows/publish.yml
+  s_d9c062dda023f0::t_aa18114c9d09cb 25
+  s_d9c062dda023f0::t_e98cf1a69185e0 19-20,22-23,31,33,35-45,49-50,53-72,74-75,82,86,91-116,118-120,125-176,179,183-202,204-205,207-208
+  s_d9c062dda023f0::t_f1450570fb0240 51-52
+.github/scripts/environment.js
+  s_d9c062dda023f0::t_93ff7054b2bd61 5,143
+  s_d9c062dda023f0::t_6470b7b30dda0a 135-140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "624ad59a49e6bd969acd5ff795d9774c0f902569",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

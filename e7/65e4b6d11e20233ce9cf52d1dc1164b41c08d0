@@ -1,0 +1,19 @@
+Formula/s/snitch.rb
+  s_6e581cdabc614d::t_96886f05e04dc3 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "e765e4b6d11e20233ce9cf52d1dc1164b41c08d0",
+  "prompts": {},
+  "sessions": {
+    "s_6e581cdabc614d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec289-575a-72b3-a4bb-99eed86b20ae",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

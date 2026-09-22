@@ -1,0 +1,21 @@
+Formula/t/taskdog.rb
+  s_28c4d68f9dad45::t_c678383a8f9b74 222
+  s_28c4d68f9dad45::t_54ac9b94a543b9 149-153
+  s_28c4d68f9dad45::t_3bb6597f046330 280
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f1b5c7032bc83ed651b2bbb43650318c315eaae4",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

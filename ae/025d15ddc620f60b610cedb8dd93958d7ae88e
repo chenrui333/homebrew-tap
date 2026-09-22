@@ -1,0 +1,19 @@
+Formula/x/xfr.rb
+  s_043a0b5479c59a::t_ad460d5fba011d 27-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "ae025d15ddc620f60b610cedb8dd93958d7ae88e",
+  "prompts": {},
+  "sessions": {
+    "s_043a0b5479c59a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec881-0470-75d2-8579-2c046bba1bbe",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

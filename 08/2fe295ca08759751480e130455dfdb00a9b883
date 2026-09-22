@@ -1,0 +1,21 @@
+Formula/s/schema.rb
+  s_392746f82aa1f5::t_e337203a5f22da 16
+  s_392746f82aa1f5::t_3dd9718508f838 1-15,17,19-20,22-24
+  s_392746f82aa1f5::t_65f346f8e8e71a 18,21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "082fe295ca08759751480e130455dfdb00a9b883",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

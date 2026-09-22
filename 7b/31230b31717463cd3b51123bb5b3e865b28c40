@@ -1,0 +1,19 @@
+Formula/a/apm-cli.rb
+  s_84f9cf2cdf3e31::t_99412e5a7d2b7b 6-7,116-117,281-282
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "7b31230b31717463cd3b51123bb5b3e865b28c40",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+Formula/m/mlx-audio.rb
+  s_84f9cf2cdf3e31::t_0ee31ba13ad084 78
+  s_84f9cf2cdf3e31::t_525201586c660e 77,79
+  s_84f9cf2cdf3e31::t_d4f1786c8778e1 85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "58d5351cfccf959df8ee172cd0f3e2b64b744c20",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

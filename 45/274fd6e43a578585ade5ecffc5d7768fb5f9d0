@@ -1,0 +1,23 @@
+AGENTS.md
+  s_b7b6cad763aacd::t_c7d08f88e999cc 147-159,161-162,164
+  s_b7b6cad763aacd::t_be0224319436c1 198,200
+  s_b7b6cad763aacd::t_5aac95ed3d4b3f 163
+  s_b7b6cad763aacd::t_f9019165458cdb 160
+  s_b7b6cad763aacd::t_5124c7355ffb46 199,201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "45274fd6e43a578585ade5ecffc5d7768fb5f9d0",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": null
+    }
+  }
+}

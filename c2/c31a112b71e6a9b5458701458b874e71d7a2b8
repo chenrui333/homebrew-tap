@@ -1,0 +1,19 @@
+Formula/r/rustlens.rb
+  s_2938d91c415974::t_6c3dd2702dd973 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "c2c31a112b71e6a9b5458701458b874e71d7a2b8",
+  "prompts": {},
+  "sessions": {
+    "s_2938d91c415974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d0879da9-01bd-4ee0-9c32-ccaf2a798e5b",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

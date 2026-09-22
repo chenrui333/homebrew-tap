@@ -1,0 +1,20 @@
+Formula/t/tangent-cli.rb
+  s_392746f82aa1f5::t_3dd9718508f838 1-18,22-31
+  s_392746f82aa1f5::t_bbb3896ccd6460 19-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "8f607c3d37884945be2897205fb7580af5d71fe4",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

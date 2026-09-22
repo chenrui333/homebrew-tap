@@ -1,0 +1,20 @@
+Formula/f/foy.rb
+  s_84f9cf2cdf3e31::t_317684602c0ff4 21,35,38,44
+  s_84f9cf2cdf3e31::t_2039ee83cba2fd 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "d901c36684af2cc457134178c6950ba74902062e",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

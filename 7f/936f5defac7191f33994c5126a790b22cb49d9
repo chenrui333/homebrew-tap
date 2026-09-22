@@ -1,0 +1,20 @@
+Formula/a/arxiv-mcp-server.rb
+  s_1ec5a2f91781d0::t_6736e4b8429267 21-22
+  s_1ec5a2f91781d0::t_42720a88d4f6b1 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "7f936f5defac7191f33994c5126a790b22cb49d9",
+  "prompts": {},
+  "sessions": {
+    "s_1ec5a2f91781d0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5f49-d989-7101-b619-19a7e22bca72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

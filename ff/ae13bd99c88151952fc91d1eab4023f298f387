@@ -1,0 +1,9 @@
+Formula/c/cpg.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "ffae13bd99c88151952fc91d1eab4023f298f387",
+  "prompts": {}
+}

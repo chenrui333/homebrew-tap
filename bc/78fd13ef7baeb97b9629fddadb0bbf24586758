@@ -1,0 +1,39 @@
+.github/workflows/cask-tests.yml
+  s_d9c062dda023f0::t_3a416b59ee6c21 241
+.github/scripts/environment.js
+  s_d9c062dda023f0::t_3a416b59ee6c21 152-155,159-161
+.github/scripts/merge-gate.js
+  s_d9c062dda023f0::t_a413c363371227 114,124
+  s_d9c062dda023f0::t_a0bab666509015 1-57,59-60,62-113,115-123,125-142
+  s_d9c062dda023f0::t_f9da28f310c655 58,61
+.github/scripts/merge-gate.test.js
+  s_d9c062dda023f0::t_a0bab666509015 1-19,21-97,106-114,116-117,119,124-128,130
+  s_d9c062dda023f0::t_f9da28f310c655 98-105
+  s_d9c062dda023f0::t_a413c363371227 115,118,120-123,129
+  s_d9c062dda023f0::t_79465a6b29d757 20
+.github/scripts/environment.test.js
+  s_d9c062dda023f0::t_3a416b59ee6c21 119-132
+.github/workflows/tests.yml
+  s_d9c062dda023f0::t_3a416b59ee6c21 9-11,17-19,62-66,173
+.github/workflows/merge-gate.yml
+  s_d9c062dda023f0::t_a0bab666509015 1-27,57-61,65-75,77-79,129-132
+  s_d9c062dda023f0::t_18ca158093e838 62-64
+  s_d9c062dda023f0::t_06229b622cfcef 76,80
+  s_d9c062dda023f0::t_f9da28f310c655 28-56,81-128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bc78fd13ef7baeb97b9629fddadb0bbf24586758",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": null
+    }
+  }
+}

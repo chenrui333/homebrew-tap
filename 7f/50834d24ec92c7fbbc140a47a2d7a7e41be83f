@@ -1,0 +1,19 @@
+.github/workflows/link-checker.yml
+  s_3180dd1bf02009::t_c55c5cf0dd2068 5-12,16-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "7f50834d24ec92c7fbbc140a47a2d7a7e41be83f",
+  "prompts": {},
+  "sessions": {
+    "s_3180dd1bf02009": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e985f37b-4a98-4189-8f18-74e63f952514",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+Formula/z/zerofs.rb
+  s_b0678c2e6bc837::t_93c7c110956798 24
+  s_b0678c2e6bc837::t_f9ebc27b3ffef9 7,25-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f84a003335cb0bf20d375283da7cc6cf19e9a50b",
+  "prompts": {},
+  "sessions": {
+    "s_b0678c2e6bc837": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec3e4-6cb2-7102-9330-eca1ee092976",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

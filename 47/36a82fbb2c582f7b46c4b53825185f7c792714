@@ -1,0 +1,23 @@
+cmd/brew-close-superseded-prs
+  s_84f9cf2cdf3e31::t_afb693402a1833 37,41-44,107,109-112,114-117,140-142,144-148,150-151,154-159,161,209,239,290,328,342
+cmd/README.md
+  s_84f9cf2cdf3e31::t_afb693402a1833 174-175,177-180,187,200
+.github/workflows/close-superseded-formula-prs.yml
+  s_84f9cf2cdf3e31::t_afb693402a1833 1,9,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "4736a82fbb2c582f7b46c4b53825185f7c792714",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

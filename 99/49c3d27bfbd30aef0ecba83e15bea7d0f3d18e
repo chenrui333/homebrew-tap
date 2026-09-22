@@ -1,0 +1,21 @@
+Formula/e/ebpf-cache-profiler.rb
+  s_2a0b7a01045e3b::t_964718f65c0496 2
+  s_2a0b7a01045e3b::t_32e5ce73be8719 4
+  s_2a0b7a01045e3b::t_b4787dced96fa2 1,3,5-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "9949c3d27bfbd30aef0ecba83e15bea7d0f3d18e",
+  "prompts": {},
+  "sessions": {
+    "s_2a0b7a01045e3b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3e9136d3-4f82-4b1a-8613-d75cfec1349e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

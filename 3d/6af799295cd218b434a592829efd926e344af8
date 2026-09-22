@@ -1,0 +1,21 @@
+Casks/g/guildly.rb
+  s_b7b6cad763aacd::t_799b2d4a501620 5-6
+  s_b7b6cad763aacd::t_225ae493871581 1-4,7-11,13-21
+  s_b7b6cad763aacd::t_15ff936e75edeb 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3d6af799295cd218b434a592829efd926e344af8",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
