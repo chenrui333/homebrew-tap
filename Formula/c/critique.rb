@@ -25,9 +25,9 @@ class Critique < Formula
 
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     native_platform = if OS.mac?
-      /darwin-#{arch}(?:@|\/|$)/
+      %r{darwin-#{arch}(?:@|/|$)}
     else
-      /linux-#{arch}(?:-(?:gnu|glibc))?(?:@|\/|$)/
+      %r{linux-#{arch}(?:-(?:gnu|glibc))?(?:@|/|$)}
     end
     platform_arch = /(?:android|darwin|freebsd|linux(?:musl)?|netbsd|openbsd|sunos|win32)-
       (?:arm|arm64|ia32|ppc64|riscv64|s390x|x64)(?:-[a-z0-9]+)?/x
@@ -56,7 +56,7 @@ class Critique < Formula
     assert_match version.to_s, shell_output("#{bin}/critique --version")
 
     system "git", "init", "--quiet", testpath
-    output = shell_output("cd #{testpath} && #{bin}/critique web")
-    assert_match "No changes to display", output
+    output = shell_output("cd #{testpath} && #{bin}/critique")
+    assert_match "No changes to review", output
   end
 end
