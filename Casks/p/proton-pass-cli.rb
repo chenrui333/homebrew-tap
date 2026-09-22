@@ -8,8 +8,7 @@ cask "proton-pass-cli" do
          arm64_linux:  "0562625812f940bd4b7abd664b3bbcfefdeaf79d2f9b12f2d0a73be1ffc551ff",
          x86_64_linux: "5291edd21d85d222538b91341345ae3b0a1479e254d42920c2bbbd34012c6243"
 
-  url "https://proton.me/download/pass-cli/#{version}/pass-cli-#{os}-#{arch}",
-      verified: "proton.me/"
+  url "https://proton.me/download/pass-cli/#{version}/pass-cli-#{os}-#{arch}"
   name "Proton Pass CLI"
   desc "Command-line interface for Proton Pass"
   homepage "https://protonpass.github.io/pass-cli/"
