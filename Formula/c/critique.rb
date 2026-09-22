@@ -18,7 +18,7 @@ class Critique < Formula
       system "bun", "run", "build"
     end
 
-    libexec.install "cli", "node_modules", "package.json", "bun.lock"
+    libexec.install "cli", "comments-server", "node_modules", "package.json", "bun.lock"
     (bin/"critique").write <<~SH
       #!/bin/bash
       exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/cli/dist/cli.js" "$@"
