@@ -6,6 +6,14 @@ class Watchtower < Formula
   license "MIT"
   head "https://github.com/lajosdeme/watchtower.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "699fb0a502f2ad71b3fa033e50d223e5c90d531745760906d6a5603810571432"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "699fb0a502f2ad71b3fa033e50d223e5c90d531745760906d6a5603810571432"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "267c5e4ab983852b6facd5307d983756d9ac9f586130bed70e3cb1a258718885"
+    sha256 cellar: :any,                 x86_64_linux:  "885b2957039c89b8786434ca51c8230f7f969b6da5938aefba5c0bf01f2c2bd3"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
