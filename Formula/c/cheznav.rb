@@ -8,6 +8,11 @@ class Cheznav < Formula
   license "MIT"
   head "https://github.com/DJetelina/cheznav.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "b3d79783bb3e0c1c4a86552290844a03fc0513d1c3964312ca28b68e1bd4c9c4"
+  end
+
   depends_on "chezmoi"
   depends_on "python@3.14"
 
