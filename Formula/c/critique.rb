@@ -23,9 +23,12 @@ class Critique < Formula
       system "bun", "run", "build"
     end
 
-    os = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    native = "#{os}-#{arch}"
+    native_platform = if OS.mac?
+      /darwin-#{arch}(?:@|\/|$)/
+    else
+      /linux-#{arch}(?:-(?:gnu|glibc))?(?:@|\/|$)/
+    end
     platform_arch = /(?:android|darwin|freebsd|linux(?:musl)?|netbsd|openbsd|sunos|win32)-
       (?:arm|arm64|ia32|ppc64|riscv64|s390x|x64)(?:-[a-z0-9]+)?/x
     node_modules = buildpath / "node_modules"
@@ -33,7 +36,7 @@ class Critique < Formula
       next unless path.directory?
       next unless path.to_s.match?(platform_arch)
 
-      rm_r(path) unless path.to_s.include?(native)
+      rm_r(path) unless path.to_s.match?(native_platform)
     end
 
     if OS.mac?
