@@ -6,6 +6,14 @@ class Toast < Formula
   license "MIT"
   head "https://github.com/paradise-runner/toast.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47cafb3a91be4f9168a1e56e76186c1bf257fafe16db6b3fa0326319a5e58300"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9a6e3024156d519ce7f9bd94a85769712355e832a8b79e94410d767b080702d"
+    sha256 cellar: :any,                 arm64_linux:   "f10fe8cd72870f1ab93c7392a92b22f9d8dc50553a0b414405bac67f7a642056"
+    sha256 cellar: :any,                 x86_64_linux:  "90f4ac402e31ea9753b7c97b0836dd3b8302dbd8d932c7402d2077f645e17793"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
