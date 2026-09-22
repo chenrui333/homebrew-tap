@@ -1,0 +1,21 @@
+Formula/m/mlx-vlm.rb
+  s_84f9cf2cdf3e31::t_2ab3bea80362ae 145,153
+  s_84f9cf2cdf3e31::t_6b952a2e73c76e 6-7,49-50,59-60,79-80,88-92,99-100,109-110,119-120
+  s_84f9cf2cdf3e31::t_e23d7c39dc7ecd 127
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "1dfac18aab5e3cbb6e486b1fc5afc86442052dd9",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

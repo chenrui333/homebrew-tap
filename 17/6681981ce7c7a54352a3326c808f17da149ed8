@@ -1,0 +1,20 @@
+Formula/k/kimiflare.rb
+  s_392746f82aa1f5::t_fd0c485f6ab7ec 35
+  s_392746f82aa1f5::t_d2378988bc721e 36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "176681981ce7c7a54352a3326c808f17da149ed8",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

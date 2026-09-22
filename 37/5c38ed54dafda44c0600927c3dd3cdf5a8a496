@@ -1,0 +1,9 @@
+Formula/b/base-mcp-server.rb
+  ai_agent 36-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "375c38ed54dafda44c0600927c3dd3cdf5a8a496",
+  "prompts": {}
+}

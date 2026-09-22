@@ -1,0 +1,20 @@
+Formula/p/projscan.rb
+  s_84f9cf2cdf3e31::t_248def0b9d8bb3 25,33
+  s_84f9cf2cdf3e31::t_d0101814c4eed1 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "dfb7b3e8eb54a488b56f98052c102221da7b34db",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

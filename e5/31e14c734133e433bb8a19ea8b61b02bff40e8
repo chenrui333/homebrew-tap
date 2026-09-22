@@ -1,0 +1,19 @@
+Casks/m/mightygrep.rb
+  s_304659fb9abe96::t_3956a6db7cb6b4 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e531e14c734133e433bb8a19ea8b61b02bff40e8",
+  "prompts": {},
+  "sessions": {
+    "s_304659fb9abe96": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6fa-2813-7810-aaf2-11971ad47aa0",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

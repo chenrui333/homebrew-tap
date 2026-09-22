@@ -1,0 +1,23 @@
+.github/scripts/renovate-workflow-automerge.test.js
+  s_5f5521cc9f4821::t_c2f81c8692105a 117
+.github/workflows/renovate-workflow-automerge.yml
+  s_5f5521cc9f4821::t_c2f81c8692105a 124-129
+.github/scripts/renovate-workflow-automerge.js
+  s_5f5521cc9f4821::t_c2f81c8692105a 112
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "10d969361b4902c91716f4141266dbea1002ec3e",
+  "prompts": {},
+  "sessions": {
+    "s_5f5521cc9f4821": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f77bd-4e08-7f11-a305-83b19ae2eb58",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+cmd/brew-update-python-resources2.rb
+  s_a57057c06a99f7::t_04fa743e497fac 16-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "e491ca7fb9daf54bf186069a79380bd34973f739",
+  "prompts": {},
+  "sessions": {
+    "s_a57057c06a99f7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a476fadf-516a-4d55-9f6d-4ef21bb992e3",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

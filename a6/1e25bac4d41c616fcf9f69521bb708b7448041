@@ -1,0 +1,19 @@
+Formula/l/litespeed.rb
+  s_50afb5ca2f81ef::t_705271c2df0a6c 52-63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a61e25bac4d41c616fcf9f69521bb708b7448041",
+  "prompts": {},
+  "sessions": {
+    "s_50afb5ca2f81ef": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c438-b6f4-7301-9048-37dd24fc7116",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

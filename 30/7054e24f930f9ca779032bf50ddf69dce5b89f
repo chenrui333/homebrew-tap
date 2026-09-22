@@ -1,0 +1,33 @@
+.github/scripts/merge-gate.js
+  s_d9c062dda023f0::t_a0bab666509015 1-140
+.github/scripts/environment.js
+  s_d9c062dda023f0::t_3a416b59ee6c21 152-155,159-161
+.github/scripts/merge-gate.test.js
+  s_d9c062dda023f0::t_a0bab666509015 1-19,21-118
+  s_d9c062dda023f0::t_79465a6b29d757 20
+.github/scripts/environment.test.js
+  s_d9c062dda023f0::t_3a416b59ee6c21 119-132
+.github/workflows/tests.yml
+  s_d9c062dda023f0::t_3a416b59ee6c21 9-11,17-19,62-66,173
+.github/workflows/merge-gate.yml
+  s_d9c062dda023f0::t_a0bab666509015 1-40,44-64
+  s_d9c062dda023f0::t_18ca158093e838 41-43
+.github/workflows/cask-tests.yml
+  s_d9c062dda023f0::t_3a416b59ee6c21 241
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "307054e24f930f9ca779032bf50ddf69dce5b89f",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": null
+    }
+  }
+}

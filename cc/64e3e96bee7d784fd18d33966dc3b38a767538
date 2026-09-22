@@ -1,0 +1,20 @@
+Formula/m/mcp-gsuite.rb
+  s_392746f82aa1f5::t_4342935e357cc1 257-259
+  s_392746f82aa1f5::t_d2378988bc721e 256
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "cc64e3e96bee7d784fd18d33966dc3b38a767538",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

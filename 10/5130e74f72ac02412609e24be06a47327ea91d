@@ -1,0 +1,21 @@
+Formula/r/rs-poker.rb
+  s_b7b6cad763aacd::t_70b668e8fa4334 12
+  s_b7b6cad763aacd::t_fd0964a7b504d5 1-11,13-18,21-22
+  s_b7b6cad763aacd::t_7a8d1d46faf6a2 19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "105130e74f72ac02412609e24be06a47327ea91d",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

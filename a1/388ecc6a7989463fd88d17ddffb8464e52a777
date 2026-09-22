@@ -1,0 +1,21 @@
+Formula/k/k10s.rb
+  s_28c4d68f9dad45::t_babaf10ebd4865 5
+  s_28c4d68f9dad45::t_9232a737b75d0b 17
+  s_28c4d68f9dad45::t_ef40279cba488f 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "a1388ecc6a7989463fd88d17ddffb8464e52a777",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

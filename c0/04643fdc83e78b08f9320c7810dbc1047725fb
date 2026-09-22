@@ -1,0 +1,24 @@
+Formula/c/codeflash.rb
+  s_392746f82aa1f5::t_1851e4a6eb8213 424
+  s_392746f82aa1f5::t_85f2752ba9b379 11,18,22,26,33
+  s_392746f82aa1f5::t_1d6ab6bc3d7b96 426
+  s_392746f82aa1f5::t_6fb841ac18037d 1-10,12-14,16-17,34-410,431-436
+  s_392746f82aa1f5::t_ebef8be7f7b053 15,23-25,27-32,411-423,425,427-430
+  s_392746f82aa1f5::t_e0eace46f927e7 19-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "c004643fdc83e78b08f9320c7810dbc1047725fb",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

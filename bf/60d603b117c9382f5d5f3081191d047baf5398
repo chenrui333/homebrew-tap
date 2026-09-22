@@ -1,0 +1,9 @@
+Formula/l/lfk.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "bf60d603b117c9382f5d5f3081191d047baf5398",
+  "prompts": {}
+}

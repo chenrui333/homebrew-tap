@@ -1,0 +1,21 @@
+Casks/h/holaclaw.rb
+  s_b7b6cad763aacd::t_24a78be7d088f2 10
+  s_b7b6cad763aacd::t_74ad0dec307a65 1-2,4-9,11-20
+  s_b7b6cad763aacd::t_1ff4e52a6eb6e4 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1d1fe1650506e37f24a76f734636fecae1fda19a",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

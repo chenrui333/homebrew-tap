@@ -1,0 +1,21 @@
+Formula/t/task-master-ai.rb
+  s_392746f82aa1f5::t_ba6469480fb952 27-28,31-37
+  s_392746f82aa1f5::t_1bb471e7b882db 29-30,38-42
+  s_392746f82aa1f5::t_bf505a2a30b88f 1-24,43-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "0af764e9562a7a4563d16eb463b9d9cd3d43de2b",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

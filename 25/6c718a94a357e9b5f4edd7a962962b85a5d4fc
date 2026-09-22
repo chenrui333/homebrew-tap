@@ -1,0 +1,21 @@
+Formula/k/kplane.rb
+  s_28c4d68f9dad45::t_27d8fd978215a0 22-25
+  s_28c4d68f9dad45::t_b11d24504bdbba 5
+  s_28c4d68f9dad45::t_2ec768d408e2cb 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "256c718a94a357e9b5f4edd7a962962b85a5d4fc",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

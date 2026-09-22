@@ -1,0 +1,21 @@
+Casks/e/exort.rb
+  s_b7b6cad763aacd::t_a7457d552b015e 1-4,7-12,14-22
+  s_b7b6cad763aacd::t_7ce510adb03e5e 5-6
+  s_b7b6cad763aacd::t_75e878e31e4d90 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "9a6684660d5959b3e1717b28e03c2e792f344654",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

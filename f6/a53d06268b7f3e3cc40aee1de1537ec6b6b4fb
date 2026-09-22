@@ -1,0 +1,19 @@
+Formula/c/claude-context-mcp.rb
+  s_392746f82aa1f5::t_bf505a2a30b88f 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f6a53d06268b7f3e3cc40aee1de1537ec6b6b4fb",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

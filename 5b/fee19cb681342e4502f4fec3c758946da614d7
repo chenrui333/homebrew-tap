@@ -1,0 +1,20 @@
+Formula/p/pho.rb
+  s_28c4d68f9dad45::t_b3492208b69c05 5
+  s_28c4d68f9dad45::t_1cd277a1cc751b 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "5bfee19cb681342e4502f4fec3c758946da614d7",
+  "prompts": {},
+  "sessions": {
+    "s_28c4d68f9dad45": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb4c8-3ae1-7923-923e-c07208fbed72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

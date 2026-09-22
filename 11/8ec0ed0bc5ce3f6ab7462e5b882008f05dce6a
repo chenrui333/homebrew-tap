@@ -1,0 +1,19 @@
+lychee.toml
+  s_3180dd1bf02009::t_91adc94b83eb81 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "118ec0ed0bc5ce3f6ab7462e5b882008f05dce6a",
+  "prompts": {},
+  "sessions": {
+    "s_3180dd1bf02009": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e985f37b-4a98-4189-8f18-74e63f952514",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
