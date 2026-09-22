@@ -56,8 +56,11 @@ class Critique < Formula
     assert_match version.to_s, shell_output("#{bin}/critique --version")
 
     system "git", "init", "--quiet", testpath
+    system "git", "-C", testpath, "config", "user.email", "brew-test@example.com"
+    system "git", "-C", testpath, "config", "user.name", "Brew Test"
     (testpath/"sample.txt").write("before\n")
-    system "git", "add", "sample.txt"
+    system "git", "-C", testpath, "add", "sample.txt"
+    system "git", "-C", testpath, "commit", "--quiet", "-m", "initial"
     (testpath/"sample.txt").write("after\n")
     output = shell_output("cd #{testpath} && #{bin}/critique")
     assert_match "sample.txt", output
