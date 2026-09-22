@@ -15,6 +15,7 @@ class Toast < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     ENV["GOPROXY"] = "off"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "./cmd/toast"
   end
