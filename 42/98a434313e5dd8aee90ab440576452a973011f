@@ -1,0 +1,20 @@
+Formula/t/tilia.rb
+  s_2316195b58a8fc::t_236335ed230350 16-18
+  s_2316195b58a8fc::t_fa04a05a9a158e 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4298a434313e5dd8aee90ab440576452a973011f",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
