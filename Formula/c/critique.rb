@@ -8,6 +8,7 @@ class Critique < Formula
   depends_on "bun"
 
   deny_network_access!
+  preserve_rpath
 
   def fetch
     system "bun", "install", "--frozen-lockfile"
@@ -25,11 +26,13 @@ class Critique < Formula
     os = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     native = "#{os}-#{arch}"
-    platform_arch = %r{(?:android|darwin|freebsd|linux|netbsd|openbsd|sunos|win32)-(?:arm|arm64|ia32|ppc64|riscv64|s390x|x64)(?:-[a-z0-9]+)?}
+    platform_arch = /(?:android|darwin|freebsd|linux|netbsd|openbsd|sunos|win32)-
+      (?:arm|arm64|ia32|ppc64|riscv64|s390x|x64)(?:-[a-z0-9]+)?/x
     node_modules = buildpath / "node_modules"
     node_modules.glob(".bun/**/*").sort_by { |path| -path.to_s.length }.each do |path|
       next unless path.directory?
       next unless path.to_s.match?(platform_arch)
+
       rm_r(path) unless path.to_s.include?(native)
     end
 
