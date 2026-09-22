@@ -175,6 +175,7 @@ brew install --cask <tool>
 - `checksec`
 - `chess-tui`
 - `chproxy`
+- `chroncal`
 - `clai`
 - `claude-agent-acp`
 - `claude-code-generic-hooks`
@@ -223,6 +224,7 @@ brew install --cask <tool>
 - `codstts`
 - `cohctl`
 - `comchan`
+- `conan-mcp`
 - `container2wasm`
 - `context-analyzer`
 - `context-file-manager`
@@ -564,10 +566,12 @@ brew install --cask <tool>
 - `leveldb-cli`
 - `lfk`
 - `librarian-mcp`
+- `license-scanner`
 - `lightpanda-v8`
 - `lightpanda`
 - `lin`
 - `lintnet`
+- `litespeed`
 - `livediff`
 - `lix`
 - `llmdog`
