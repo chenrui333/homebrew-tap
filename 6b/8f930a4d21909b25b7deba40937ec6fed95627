@@ -1,0 +1,19 @@
+Casks/l/lanes.rb
+  s_304659fb9abe96::t_fdcb7f4ff56d1b 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6b8f930a4d21909b25b7deba40937ec6fed95627",
+  "prompts": {},
+  "sessions": {
+    "s_304659fb9abe96": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c6fa-2813-7810-aaf2-11971ad47aa0",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
