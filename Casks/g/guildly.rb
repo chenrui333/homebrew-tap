@@ -12,6 +12,8 @@ cask "guildly" do
 
   app "Guildly.app"
 
+  uninstall quit: "com.guildly.desktop"
+
   zap trash: [
     "~/Library/Application Support/Guildly",
     "~/Library/Caches/Guildly",
