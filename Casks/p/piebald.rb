@@ -1,9 +1,8 @@
 cask "piebald" do
-  version "0.6.2"
-  sha256 "022006f41d94513e59bd31e1eeedf88c17ba6a21a852af8333f2d338575684df"
+  version "0.7.0"
+  sha256 "07a566a16438e927de6e6d45c2a805423cb2404c1b0aafc1f8937b192bf77b7d"
 
-  url "https://github.com/Piebald-AI/piebald-issues/releases/download/v#{version}/Piebald_#{version}_universal.dmg",
-      verified: "github.com/Piebald-AI/piebald-issues/"
+  url "https://github.com/Piebald-AI/piebald-issues/releases/download/v#{version}/Piebald_#{version}_universal.dmg"
   name "Piebald"
   desc "Agentic AI control platform for orchestrating multiple AI agents"
   homepage "https://piebald.ai/"
