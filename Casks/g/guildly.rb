@@ -1,6 +1,6 @@
 cask "guildly" do
-  version "0.1.92"
-  sha256 "7ac3cc9b449a2e35c9f30e3fd6f54375561e046f8006271df712d24444ca3384"
+  version "0.1.94"
+  sha256 "123f37ae5829a22fa85341c727fcd85d906bac94bc13a3a5a3cf1dcbc5cc4796"
 
   url "https://github.com/shoebum-goyell/guildly-releases/releases/download/v#{version}/Guildly-#{version}-arm64.dmg"
   name "Guildly"
