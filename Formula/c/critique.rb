@@ -1,0 +1,79 @@
+class Critique < Formula
+  desc "Terminal UI for reviewing git changes"
+  homepage "https://critique.work"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.1.140.tar.gz"
+  sha256 "f574ae6b1b34e8e45a3d4edf292f54cb0e12198e4e1b4e6cb880f4c3f27d0104"
+  license "MIT"
+
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fac9d72d42f8e28c4bed0a010ca742fb288e25edd9efdd1b38fc5d8934c6866a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac9d72d42f8e28c4bed0a010ca742fb288e25edd9efdd1b38fc5d8934c6866a"
+    sha256 cellar: :any,                 arm64_linux:   "b4d9eb46541f74ef26320e2c98278e91654f3057a99831440f698d679d5aef36"
+    sha256 cellar: :any,                 x86_64_linux:  "35e4e2178dafb296ae99dcd65fba8dd5dbf0280ec5cb1de844ece4c52c7ed2b8"
+  end
+
+  depends_on "bun"
+
+  preserve_rpath
+  deny_network_access!
+
+  def fetch
+    system "bun", "install", "--frozen-lockfile"
+  end
+
+  def install
+    cd "comments-server" do
+      system "bun", "run", "build"
+    end
+
+    cd "cli" do
+      system "bun", "run", "build"
+    end
+
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native_platform = if OS.mac?
+      %r{darwin-#{arch}(?:@|/|$)}
+    else
+      %r{linux-#{arch}(?:-(?:gnu|glibc))?(?:@|/|$)}
+    end
+    platform_arch = /(?:android|darwin|freebsd|linux(?:musl)?|netbsd|openbsd|sunos|win32)-
+      (?:arm|arm64|ia32|ppc64|riscv64|s390x|x64)(?:-[a-z0-9]+)?/x
+    node_modules = buildpath / "node_modules"
+    node_modules.glob(".bun/**/*").sort_by { |path| -path.to_s.length }.each do |path|
+      next unless path.directory?
+      next unless path.to_s.match?(platform_arch)
+
+      rm_r(path) unless path.to_s.match?(native_platform)
+    end
+
+    if OS.mac?
+      node_modules.glob(".bun/**/core.darwin-*.node").each do |file|
+        MachO::Tools.change_dylib_id(file, "@rpath/libtakumi_napi_core.dylib")
+      end
+    end
+
+    libexec.install "cli", "comments-server", "node_modules", "package.json", "bun.lock"
+    (bin/"critique").write <<~SH
+      #!/bin/bash
+      exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/cli/dist/cli.js" "$@"
+    SH
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/critique --version")
+
+    system "git", "init", "--quiet", testpath
+    system "git", "-C", testpath, "config", "user.email", "brew-test@example.com"
+    system "git", "-C", testpath, "config", "user.name", "Brew Test"
+    (testpath/"sample.txt").write("before\n")
+    system "git", "-C", testpath, "add", "sample.txt"
+    system "git", "-C", testpath, "commit", "--quiet", "-m", "initial"
+    (testpath/"sample.txt").open("w") { |file| file.write("after\n") }
+    system "git", "-C", testpath, "add", "sample.txt"
+    system "git", "-C", testpath, "commit", "--quiet", "-m", "update"
+    output = shell_output("cd #{testpath} && #{bin}/critique difftool HEAD~1 HEAD")
+    assert_match "-before", output
+    assert_match "+after", output
+  end
+end
