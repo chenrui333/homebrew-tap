@@ -14,6 +14,10 @@ class Critique < Formula
   end
 
   def install
+    cd "comments-server" do
+      system "bun", "run", "build"
+    end
+
     cd "cli" do
       system "bun", "run", "build"
     end
