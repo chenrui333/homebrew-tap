@@ -13,6 +13,10 @@ class Tilia < Formula
 
   uses_from_macos "libffi"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   deny_network_access!
 
   def fetch
