@@ -1,0 +1,21 @@
+Formula/z/zigfetch.rb
+  s_84f9cf2cdf3e31::t_e2cb9192ccda95 25
+  s_84f9cf2cdf3e31::t_166c294e0debb5 4-5
+  s_84f9cf2cdf3e31::t_32f4e740bdc10b 29-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "a285e4889db66c742414a05bfa8ef3820acbc54d",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

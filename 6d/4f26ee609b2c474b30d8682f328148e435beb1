@@ -1,0 +1,9 @@
+Formula/h/holo.rb
+  ai_agent 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "6d4f26ee609b2c474b30d8682f328148e435beb1",
+  "prompts": {}
+}

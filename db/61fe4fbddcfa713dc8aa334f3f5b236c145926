@@ -1,0 +1,21 @@
+Formula/b/biber-inspector.rb
+  s_84f9cf2cdf3e31::t_1ce2dea047c908 31
+  s_84f9cf2cdf3e31::t_a105a8b71b6659 27-30
+  s_84f9cf2cdf3e31::t_ce6bc0cdd25e66 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "db61fe4fbddcfa713dc8aa334f3f5b236c145926",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

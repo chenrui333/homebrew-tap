@@ -1,0 +1,20 @@
+cmd/brew-close-superseded-prs
+  s_1ec5a2f91781d0::t_6139e01ff09673 71-81,83,101-121,125-131,211,240
+  s_1ec5a2f91781d0::t_1b2c02a5f752f8 93,95-96,122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "53c063b46ac00c2e09fbde012b7ac40235ff10d8",
+  "prompts": {},
+  "sessions": {
+    "s_1ec5a2f91781d0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5f49-d989-7101-b619-19a7e22bca72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

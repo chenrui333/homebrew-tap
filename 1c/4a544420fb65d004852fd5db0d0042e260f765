@@ -1,0 +1,20 @@
+formula-status/generate_formula_status.py
+  s_c0f4c3c98066c9::t_c67e40e525fc62 190-202,213-217,235,240-243
+  s_c0f4c3c98066c9::t_bd7daa61b1bf7e 87-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1c4a544420fb65d004852fd5db0d0042e260f765",
+  "prompts": {},
+  "sessions": {
+    "s_c0f4c3c98066c9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec731-a2bf-7453-8ca2-1cb85fc84bbe",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+Formula/t/termide.rb
+  s_84f9cf2cdf3e31::t_1bd73a14ca18cf 32-35
+  s_84f9cf2cdf3e31::t_943ee2f5198298 5-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "bb10c76ee69bf2ee656d8b4adfbf8e4a6444d173",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+Formula/p/pup.rb
+  h_9df9c32c3f321d 20-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "0b5efb16b64c92e28cd2bd28881b3cec9b1d97eb",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

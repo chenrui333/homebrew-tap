@@ -1,0 +1,19 @@
+.github/workflows/renovate-workflow-automerge.yml
+  s_d9c062dda023f0::t_a366cc262aee53 206,210-222
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3eaff458ac90cab8613521fc4c32ad3b68a7b8c9",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

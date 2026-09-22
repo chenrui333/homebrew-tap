@@ -1,0 +1,14 @@
+Formula/s/splitrail.rb
+  h_9df9c32c3f321d 25-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3a60033d93bfe5462378d0f0279bd92d924c8f66",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

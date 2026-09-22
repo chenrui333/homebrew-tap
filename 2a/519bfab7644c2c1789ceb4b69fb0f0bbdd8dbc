@@ -1,0 +1,25 @@
+Formula/d/deletor.rb
+  s_072ec5ed2f7fba::t_ffb4089bb9d7d4 5
+  h_9df9c32c3f321d 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "2a519bfab7644c2c1789ceb4b69fb0f0bbdd8dbc",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_072ec5ed2f7fba": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019edfd5-ebd2-7fa3-8eb7-d080bfac4d15",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

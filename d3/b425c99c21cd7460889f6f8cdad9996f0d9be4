@@ -1,0 +1,19 @@
+.github/workflows/cask-tests.yml
+  s_d9c062dda023f0::t_b1fbcb74717295 103,124,136,140-141,150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d3b425c99c21cd7460889f6f8cdad9996f0d9be4",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

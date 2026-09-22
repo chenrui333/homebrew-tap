@@ -1,0 +1,9 @@
+Formula/t/toofan.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "effab02f726ec5a487a1e046c68a872c59a36f3b",
+  "prompts": {}
+}

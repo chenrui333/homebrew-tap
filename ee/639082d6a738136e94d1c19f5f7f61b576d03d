@@ -1,0 +1,26 @@
+.github/workflows/renovate-workflow-automerge.yml
+  s_d9c062dda023f0::t_fbd72cb7408bce 97-98,109-112,122,126,138,144,170,187,192,197-209
+.github/workflows/publish-cask.yml
+  s_d9c062dda023f0::t_fbd72cb7408bce 45-48
+AGENTS.md
+  s_d9c062dda023f0::t_4087f96a909cf7 292,410
+  s_d9c062dda023f0::t_756e7c446d13a3 285-286,339-341,401,467
+.github/renovate.json5
+  s_d9c062dda023f0::t_fbd72cb7408bce 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ee639082d6a738136e94d1c19f5f7f61b576d03d",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

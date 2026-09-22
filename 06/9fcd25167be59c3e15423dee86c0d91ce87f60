@@ -1,0 +1,19 @@
+Formula/e/eprofiler-tui.rb
+  s_2a0b7a01045e3b::t_d5fabd7d7e383f 1-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "069fcd25167be59c3e15423dee86c0d91ce87f60",
+  "prompts": {},
+  "sessions": {
+    "s_2a0b7a01045e3b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3e9136d3-4f82-4b1a-8613-d75cfec1349e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

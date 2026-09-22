@@ -1,0 +1,21 @@
+Formula/p/pup.rb
+  s_b7b6cad763aacd::t_16db21b42a3cfe 1-8,10,12-13,15-21,23-24
+  s_b7b6cad763aacd::t_556a495a859ed4 9
+  s_b7b6cad763aacd::t_c9456478da07e5 11,14,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "d713485755ed9d54b44f76b1ee1bb58400226be5",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": null
+    }
+  }
+}

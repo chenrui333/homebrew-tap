@@ -1,0 +1,9 @@
+Formula/y/ytm-player.rb
+  ai_agent 120-156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "c3b387a8f50331a560bd3a79184ce5fbb83ebd23",
+  "prompts": {}
+}

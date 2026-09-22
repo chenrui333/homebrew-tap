@@ -1,0 +1,19 @@
+Formula/p/pv-migrate.rb
+  s_6ba3f6dcf77d10::t_934580e83302bb 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "b451a2a364e747dc504e1be60b91be323ac14560",
+  "prompts": {},
+  "sessions": {
+    "s_6ba3f6dcf77d10": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e7eca-b821-7a60-b0f0-841922244e52",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
