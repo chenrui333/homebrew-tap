@@ -1,0 +1,20 @@
+Formula/h/hygg.rb
+  s_84f9cf2cdf3e31::t_3af1d089e3ee20 22
+  s_84f9cf2cdf3e31::t_77248807eabeae 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "240a4a2201893ce3997a4f9477b468d9750c5be2",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

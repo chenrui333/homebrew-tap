@@ -1,0 +1,19 @@
+Formula/w/wozz.rb
+  s_c64022209abadf::t_f90fc9619ee567 16-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "f99507b043479a528510493fd45d37f2c803286e",
+  "prompts": {},
+  "sessions": {
+    "s_c64022209abadf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2157352b-a6de-474c-a62a-5bec09e1be0d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+Formula/m/monitui.rb
+  h_9df9c32c3f321d 24
+Formula/r/rgx.rb
+  h_9df9c32c3f321d 21
+Formula/f/ftdv.rb
+  h_9df9c32c3f321d 21
+Formula/c/comchan.rb
+  h_9df9c32c3f321d 28
+Formula/t/taws.rb
+  h_9df9c32c3f321d 20
+Formula/s/strace-tui.rb
+  h_9df9c32c3f321d 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "fc62b89c69cf05702538204b870f13351a1c2192",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

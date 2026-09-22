@@ -1,0 +1,20 @@
+Formula/p/pup.rb
+  s_b7b6cad763aacd::t_bc0b1158649ff0 20,23
+  s_b7b6cad763aacd::t_8524576d47abf4 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6f3ec7fe15ef19f12f244e12eb8e4c6b114963c5",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

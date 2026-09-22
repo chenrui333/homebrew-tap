@@ -1,0 +1,9 @@
+Formula/g/gitsocial.rb
+  ai_agent 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "f622f9f3ddec6aca930b57ab9ae012e69cf764b8",
+  "prompts": {}
+}

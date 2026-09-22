@@ -1,0 +1,20 @@
+Formula/g/golazo.rb
+  s_84f9cf2cdf3e31::t_7e77fd98572ea2 4-5
+  s_84f9cf2cdf3e31::t_dc9d7a462fa2e0 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "0e5ec1a1c06d7c346cf4b9b1434183dac8b26c88",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

@@ -1,0 +1,21 @@
+Formula/i/iozone.rb
+  s_84f9cf2cdf3e31::t_bedf5d366c6a79 4-5
+  s_84f9cf2cdf3e31::t_4db26abd62b0c4 28-36
+  s_84f9cf2cdf3e31::t_f00ad2ed419c60 49-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "5a8d80214e5c0fd03cb0b4bc21c80346e2e4ef26",
+  "prompts": {},
+  "sessions": {
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}

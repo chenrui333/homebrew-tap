@@ -1,0 +1,21 @@
+Formula/c/claude-composer.rb
+  s_392746f82aa1f5::t_d021768ce5c7b2 21,31-32
+  s_392746f82aa1f5::t_6c7941a7a89c6e 33-66
+  s_392746f82aa1f5::t_8fcd764ad3f877 22-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "91793f2ec772a5a671204e13f924d1f8abc79b76",
+  "prompts": {},
+  "sessions": {
+    "s_392746f82aa1f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec28a-209a-7680-a1b5-72ad9f5ec1ee",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

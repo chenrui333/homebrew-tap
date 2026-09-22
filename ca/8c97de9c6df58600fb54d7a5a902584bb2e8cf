@@ -1,0 +1,19 @@
+Formula/h/hardcover-tui.rb
+  s_e379cd243fb260::t_117c0d818d5e25 4-5,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ca8c97de9c6df58600fb54d7a5a902584bb2e8cf",
+  "prompts": {},
+  "sessions": {
+    "s_e379cd243fb260": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f850c-5acc-7f03-81e0-bbd65cad3805",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+Formula/g/guardian-runtime.rb
+  s_b7b6cad763aacd::t_be19a3f4dda26e 1-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "dfe815ac70386dfedc59fb0123e65fdaeb452c5c",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": null
+    }
+  }
+}

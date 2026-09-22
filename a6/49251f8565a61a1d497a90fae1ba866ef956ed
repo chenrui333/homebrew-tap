@@ -1,0 +1,23 @@
+Formula/b/bun.rb
+  s_1ec5a2f91781d0::t_1d274ac50726df 139-140,142
+  s_1ec5a2f91781d0::t_7cfaf1e69e523e 78-82
+  s_1ec5a2f91781d0::t_b5a8c89f40e64f 141
+  s_1ec5a2f91781d0::t_eae640a42ab290 136-138,143
+  s_1ec5a2f91781d0::t_78f21b274c3dcf 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "a649251f8565a61a1d497a90fae1ba866ef956ed",
+  "prompts": {},
+  "sessions": {
+    "s_1ec5a2f91781d0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5f49-d989-7101-b619-19a7e22bca72",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

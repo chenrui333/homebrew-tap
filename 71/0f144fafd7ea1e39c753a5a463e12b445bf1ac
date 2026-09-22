@@ -1,0 +1,21 @@
+Casks/c/cate.rb
+  s_b7b6cad763aacd::t_6a73e76b1808e6 1-4,7-12,15-23
+  s_b7b6cad763aacd::t_42bf9e43ce62ea 5-6,13
+  s_b7b6cad763aacd::t_9cfc0ca3c1ac92 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "710f144fafd7ea1e39c753a5a463e12b445bf1ac",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

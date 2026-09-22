@@ -1,0 +1,20 @@
+Formula/c/caveman-code.rb
+  s_b7b6cad763aacd::t_809b77531625da 20,24-25
+  s_b7b6cad763aacd::t_768950906b74da 17-19,21-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "6507ae18d2cac0109d928a90a5f3c800234f1534",
+  "prompts": {},
+  "sessions": {
+    "s_b7b6cad763aacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f8c92a5-8992-4f50-869b-aea048e3bc5c",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

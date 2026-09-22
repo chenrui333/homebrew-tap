@@ -1,0 +1,23 @@
+cmd/brew-close-superseded-prs
+  s_1ec5a2f91781d0::t_a3dc9a345916db 175,182
+  s_1ec5a2f91781d0::t_8911397b39bacc 19,44-47,170-174,176-181,183-194,222-225,230,233-242,245-248,250,267,269-270,281
+  s_1ec5a2f91781d0::t_9e0669eed7be8b 156-159,271,275
+cmd/README.md
+  s_1ec5a2f91781d0::t_df3d5567ddd3ce 186,193-194,196
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "bb162efd971d96f351a600d9f333786c627ff47c",
+  "prompts": {},
+  "sessions": {
+    "s_1ec5a2f91781d0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5f49-d989-7101-b619-19a7e22bca72",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

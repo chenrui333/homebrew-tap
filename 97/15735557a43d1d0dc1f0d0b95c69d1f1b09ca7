@@ -1,0 +1,23 @@
+.github/scripts/environment.js
+  s_d9c062dda023f0::t_082ab9d2d518c6 24-39,153-154
+.github/scripts/environment.test.js
+  s_d9c062dda023f0::t_f43a0d4b0c27ea 8-15,18-23,36,38-39,48,135-136,139-140,144-155
+.github/workflows/publish.yml
+  s_d9c062dda023f0::t_626218eb2efe48 19,65-73,215-223
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9715735557a43d1d0dc1f0d0b95c69d1f1b09ca7",
+  "prompts": {},
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

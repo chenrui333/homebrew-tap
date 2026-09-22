@@ -1,0 +1,28 @@
+Formula/r/run.rb
+  s_84f9cf2cdf3e31::t_8c7920479c03b8 4-5
+  s_16d486665a6c5f::t_06ad5e8c7d2b5a 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "3cd4aef1f0a3a213c4b976df7643da7d979b9ecf",
+  "prompts": {},
+  "sessions": {
+    "s_16d486665a6c5f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5123-233a-73f1-9474-bdf44e47a0b5",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_84f9cf2cdf3e31": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5126-892e-71e1-a6fc-8aaad682a7bb",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
