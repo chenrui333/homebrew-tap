@@ -6,8 +6,8 @@ class Ffdash < Formula
   license "MIT"
   head "https://github.com/bcherb2/ffdash.git", branch: "main"
 
-  depends_on "ffmpeg"
   depends_on "rust" => :build
+  depends_on "ffmpeg"
 
   deny_network_access!
 
