@@ -56,7 +56,11 @@ class Critique < Formula
     assert_match version.to_s, shell_output("#{bin}/critique --version")
 
     system "git", "init", "--quiet", testpath
+    (testpath/"sample.txt").write("before\n")
+    system "git", "add", "sample.txt"
+    (testpath/"sample.txt").write("after\n")
     output = shell_output("cd #{testpath} && #{bin}/critique")
-    assert_match "No changes to review", output
+    assert_match "sample.txt", output
+    assert_match "after", output
   end
 end
