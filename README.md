@@ -242,6 +242,7 @@ brew install --cask <tool>
 - `creanote`
 - `create-mcp-use-app`
 - `critcmp`
+- `critique`
 - `crlfmt`
 - `croft`
 - `cross-seed`
@@ -313,6 +314,7 @@ brew install --cask <tool>
 - `eilmeldung`
 - `elastop`
 - `elio`
+- `emeraldian`
 - `emoj`
 - `emplace`
 - `enola`
@@ -329,6 +331,7 @@ brew install --cask <tool>
 - `eprofiler-tui`
 - `ereandel`
 - `ergo`
+- `excise`
 - `fabrika`
 - `fairyglade-ly`
 - `faq`
@@ -339,6 +342,7 @@ brew install --cask <tool>
 - `fdir`
 - `ferret`
 - `fex`
+- `ffdash`
 - `fftext`
 - `filessh`
 - `firectl`
@@ -617,6 +621,7 @@ brew install --cask <tool>
 - `mcp-use`
 - `mcpc`
 - `mcpd`
+- `mcpsnoop`
 - `mdbook-linkcheck`
 - `mdns-scanner`
 - `mdsf`
@@ -1005,6 +1010,7 @@ brew install --cask <tool>
 - `tinybird-mcp-server`
 - `tlint`
 - `tmmpr`
+- `toast`
 - `tofuref`
 - `togo`
 - `togomak`
