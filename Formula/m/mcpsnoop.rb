@@ -6,6 +6,14 @@ class Mcpsnoop < Formula
   license "MIT"
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3fb2e80d3c450abac8f1c0304338c1952e3d57f62cef0e7cf6c2ad5c2f8907f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fb2e80d3c450abac8f1c0304338c1952e3d57f62cef0e7cf6c2ad5c2f8907f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e515bdfbd18bd1d8801f720eb168a0f87749afd89a511e7d07d16a595615efbf"
+    sha256 cellar: :any,                 x86_64_linux:  "16ac63af413c5d17e99d6abbedfd038e082ebe1cc259af2eacc8769b3ff2d624"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
