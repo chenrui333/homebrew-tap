@@ -1,0 +1,19 @@
+Formula/c/critique.rb
+  s_924c595f5566bd::t_aceea0f217ac6a 28,30,59-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b3dfce33a5833e9eade1fb5de290594c1bfdf91b",
+  "prompts": {},
+  "sessions": {
+    "s_924c595f5566bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c72c-9dbe-7690-8ce5-2ed2819c9079",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
