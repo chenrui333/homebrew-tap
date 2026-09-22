@@ -37,10 +37,8 @@ class Critique < Formula
     end
 
     if OS.mac?
-      node_modules.glob(".bun/**/*.node").each do |file|
-        MachO::Tools.dylibs(file).grep(%r{/libtakumi_napi_core\.dylib\z}).each do |dylib|
-          MachO::Tools.change_install_name(file, dylib, "@rpath/libtakumi_napi_core.dylib")
-        end
+      node_modules.glob(".bun/**/core.darwin-*.node").each do |file|
+        MachO::Tools.change_dylib_id(file, "@rpath/libtakumi_napi_core.dylib")
       end
     end
 
