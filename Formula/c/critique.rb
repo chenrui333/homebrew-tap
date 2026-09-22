@@ -62,8 +62,10 @@ class Critique < Formula
     system "git", "-C", testpath, "add", "sample.txt"
     system "git", "-C", testpath, "commit", "--quiet", "-m", "initial"
     (testpath/"sample.txt").write("after\n")
-    output = shell_output("cd #{testpath} && #{bin}/critique")
-    assert_match "sample.txt", output
-    assert_match "after", output
+    system "git", "-C", testpath, "add", "sample.txt"
+    system "git", "-C", testpath, "commit", "--quiet", "-m", "update"
+    output = shell_output("cd #{testpath} && #{bin}/critique difftool HEAD~1 HEAD")
+    assert_match "-before", output
+    assert_match "+after", output
   end
 end
