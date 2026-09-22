@@ -8,6 +8,8 @@ class Ncgopher < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "ncurses"
+  depends_on "sqlite"
 
   deny_network_access!
 
