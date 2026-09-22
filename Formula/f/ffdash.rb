@@ -6,6 +6,14 @@ class Ffdash < Formula
   license "MIT"
   head "https://github.com/bcherb2/ffdash.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63368018d6c60ef94a5e5507bceec8220d7168c037cece532a48fb8c142893f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1025b4e873c6f5082f7f2e8bc40bc562a1ff69b77112dfc1b7fed1975073dd94"
+    sha256 cellar: :any,                 arm64_linux:   "0d38919b6c27518858834aae45f1a794414c5bce4b80db4f7723759fecbdb528"
+    sha256 cellar: :any,                 x86_64_linux:  "6c00a2bf8d6ab100a2d4692859e2c73930780cfbc54607c6b2bc63080599c7cd"
+  end
+
   depends_on "rust" => :build
   depends_on "ffmpeg"
 
