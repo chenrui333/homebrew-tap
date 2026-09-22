@@ -7,8 +7,8 @@ class Critique < Formula
 
   depends_on "bun"
 
-  deny_network_access!
   preserve_rpath
+  deny_network_access!
 
   def fetch
     system "bun", "install", "--frozen-lockfile"
@@ -34,6 +34,14 @@ class Critique < Formula
       next unless path.to_s.match?(platform_arch)
 
       rm_r(path) unless path.to_s.include?(native)
+    end
+
+    if OS.mac?
+      node_modules.glob(".bun/**/*.node").each do |file|
+        MachO::Tools.dylibs(file).grep(%r{/libtakumi_napi_core\.dylib\z}).each do |dylib|
+          MachO::Tools.change_install_name(file, dylib, "@rpath/libtakumi_napi_core.dylib")
+        end
+      end
     end
 
     libexec.install "cli", "comments-server", "node_modules", "package.json", "bun.lock"
