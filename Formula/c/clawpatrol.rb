@@ -1,8 +1,8 @@
 class Clawpatrol < Formula
   desc "Security firewall for agents"
   homepage "https://clawpatrol.dev"
-  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.9.tar.gz"
-  sha256 "c04400d0fefa0388854e5f1d0941f481db1ba4a551ea859a00ab7cf5256d3554"
+  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.10.tar.gz"
+  sha256 "2d9fc0a7f191ce89f12153a4380d823e55f034e65ee5a5ccc225a511b7b5d020"
   license "MIT"
   head "https://github.com/denoland/clawpatrol.git", branch: "main"
 
@@ -16,7 +16,7 @@ class Clawpatrol < Formula
   end
 
   depends_on "deno" => :build
-  depends_on "go" => :build
+  depends_on "go@1.26" => :build
 
   def install
     ENV["DENO_DIR"] = buildpath/".deno"
