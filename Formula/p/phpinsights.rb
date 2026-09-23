@@ -1,8 +1,8 @@
 class Phpinsights < Formula
   desc "Instant PHP quality checks from your console"
   homepage "https://github.com/nunomaduro/phpinsights"
-  url "https://github.com/nunomaduro/phpinsights/archive/refs/tags/v2.14.2.tar.gz"
-  sha256 "a58f38633e83ac342afdc736f91dfe88ff505e1cf13e9711f0faa2189f0dadb4"
+  url "https://github.com/nunomaduro/phpinsights/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "124c9c72e664c80399d89352a0296b7dbaa41f0e96bbde07cc2fc108374c5035"
   license "MIT"
 
   bottle do
@@ -14,6 +14,9 @@ class Phpinsights < Formula
   depends_on "php"
 
   def install
+    # The upstream version constant can lag the release tag.
+    inreplace "src/Domain/Kernel.php", /public const VERSION = '[^']+';/,
+              "public const VERSION = 'v#{version}';"
     system "composer", "install", "--no-dev", "--prefer-dist"
     libexec.install Dir["*"]
 
@@ -24,8 +27,7 @@ class Phpinsights < Formula
   end
 
   test do
-    # assert_match version.to_s, shell_output("#{bin}/phpinsights --version")
-    system bin/"phpinsights", "--version"
+    assert_match version.to_s, shell_output("#{bin}/phpinsights --version")
 
     (testpath/"test.php").write <<~PHP
       <?php
