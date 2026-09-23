@@ -1,8 +1,8 @@
 class Tars < Formula
   desc "Local-first autonomous AI supervisor and sidekick powered by Google Gemini"
   homepage "https://github.com/agustinsacco/tars"
-  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.44.0.tgz"
-  sha256 "a617df66e227122e9d6bf931e432ec46f62e37ebd195a7c07b516000efd24c11"
+  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.50.2.tgz"
+  sha256 "a18f99084001016c746b1ec9aa488c098eb957f1c683a82584dd0b270daa1399"
   license "MIT"
 
   bottle do
@@ -29,6 +29,13 @@ class Tars < Formula
       nm.glob("**/prebuilds/*").each do |dir|
         rm_r(dir) if dir.basename.to_s != native
       end
+    end
+
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native_esbuild = "#{os}-#{arch}"
+    nm.glob("**/@esbuild/*").each do |package|
+      rm_r(package) if package.basename.to_s != native_esbuild
     end
 
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
