@@ -1,8 +1,8 @@
 class Tempo < Formula
   desc "Terminal client for Temporal"
   homepage "https://github.com/galaxy-io/tempo"
-  url "https://github.com/galaxy-io/tempo/archive/refs/tags/v0.1.14.tar.gz"
-  sha256 "68e2993c5ccfca49dc6302ecbfc41186ec05361ab55ea09afcec3dd7c4e159ba"
+  url "https://github.com/galaxy-io/tempo/archive/refs/tags/v0.1.15.tar.gz"
+  sha256 "1052981f2561f79cd985c661fbcd48e8b7fa2951504bec402864c875c258f566"
   license "MIT"
   head "https://github.com/galaxy-io/tempo.git", branch: "main"
 
