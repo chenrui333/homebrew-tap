@@ -1,8 +1,8 @@
 class UnusedDeps < Formula
   desc "Determine any unused dependencies in java_library rules"
   homepage "https://github.com/bazelbuild/buildtools"
-  url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v8.5.1.tar.gz"
-  sha256 "e6de6eb19a368efe1f56549c6afe9f25dbcee818161865ee703081307581ef4b"
+  url "https://github.com/bazelbuild/buildtools/archive/refs/tags/v10.1.0.tar.gz"
+  sha256 "fa0b905032d49a621679e7318875736e451895a1417d992fbbebd27f82b83c38"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "main"
 
