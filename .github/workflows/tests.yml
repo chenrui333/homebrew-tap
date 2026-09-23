@@ -36,7 +36,7 @@ jobs:
     if: github.event_name == 'pull_request' || github.event_name == 'merge_group'
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/homebrew/ubuntu24.04:main@sha256:3f90c9d1b9e02edd344cca28d415a97ee6aeafb95876c37848438ce6d6ded634
+      image: ghcr.io/homebrew/ubuntu24.04:main@sha256:481aea213129764bd4d4d69b04f58e1463a66cff6ae050cb049834aec75f1141
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
     outputs:
