@@ -1,0 +1,41 @@
+.github/workflows/formula-status.yml
+  s_2316195b58a8fc::t_696d6f87281e54 39-40
+  s_2316195b58a8fc::t_c5b42bce0130bd 41
+.github/workflows/process-compose-preflight.yml
+  s_2316195b58a8fc::t_696d6f87281e54 36-37
+  s_2316195b58a8fc::t_1fe22a1b2366e3 38
+.github/workflows/close-superseded-formula-prs.yml
+  s_2316195b58a8fc::t_696d6f87281e54 44-45
+  s_2316195b58a8fc::t_2761013b8dbb49 46
+.github/workflows/rebottle.yml
+  s_2316195b58a8fc::t_696d6f87281e54 68-70,107-108
+  s_2316195b58a8fc::t_34b1912ee34d20 109
+.github/workflows/autobump-formula.yml
+  s_2316195b58a8fc::t_985c3c92698b05 33
+  s_2316195b58a8fc::t_79cf927eb2062f 31-32
+.github/workflows/clean-up-closed-prs.yml
+  s_2316195b58a8fc::t_696d6f87281e54 42-43
+  s_2316195b58a8fc::t_4a925cabbddfcc 44
+.github/workflows/update-formula-cask-list.yml
+  s_2316195b58a8fc::t_8c1baf5432fbbb 44-45
+  s_2316195b58a8fc::t_5d9463ce84bf83 46
+.github/workflows/autobump-cask.yml
+  s_2316195b58a8fc::t_79cf927eb2062f 31-32
+  s_2316195b58a8fc::t_664728b4648f4c 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8da4cb62c06dd83e8db37c70f767972edcc565ab",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
