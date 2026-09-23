@@ -1,8 +1,8 @@
 class Purple < Formula
   desc "Terminal SSH config manager and cockpit for your servers"
   homepage "https://github.com/erickochen/purple"
-  url "https://github.com/erickochen/purple/archive/refs/tags/v3.27.0.tar.gz"
-  sha256 "8841c08f0660c198a501a48902e3a8ba2a133a1699fec28eb21b2e3e80b4b282"
+  url "https://github.com/erickochen/purple/archive/refs/tags/v3.30.0.tar.gz"
+  sha256 "3a589b01d02c771afdb2ebf63bdca0fcfba6d0f3be13892a745e617c59e860c0"
   license "MIT"
   head "https://github.com/erickochen/purple.git", branch: "master"
 
@@ -15,6 +15,7 @@ class Purple < Formula
     sha256 cellar: :any,                 x86_64_linux:  "f624e9147ba0e0d6ec545dcfbd13ba9693a4cb6a548df77c744a7a16b6f6bad2"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
@@ -25,5 +26,14 @@ class Purple < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/purple --version 2>&1")
+
+    (testpath/"ssh_config").write <<~EOS
+      Host tap-test
+        HostName 127.0.0.1
+        User nobody
+    EOS
+
+    output = shell_output("#{bin}/purple --list --config #{testpath}/ssh_config")
+    assert_match "tap-test", output
   end
 end
