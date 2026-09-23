@@ -1,8 +1,8 @@
 class Dgop < Formula
   desc "API & CLI for System & Process Monitoring"
   homepage "https://danklinux.com/"
-  url "https://github.com/AvengeMedia/dgop/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "ab97d4bd9483de47051f984ecf3f877d289c316f8a35a9c3d9e5cfaa73b7f2b9"
+  url "https://github.com/AvengeMedia/dgop/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "1ed7295052f4c368f4e07472c4645e68a75b6d5f9b4cb5cb291a335a7f0d91e6"
   license "MIT"
   head "https://github.com/AvengeMedia/dgop.git", branch: "master"
 
