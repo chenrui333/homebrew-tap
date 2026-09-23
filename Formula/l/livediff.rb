@@ -1,8 +1,8 @@
 class Livediff < Formula
   desc "Watch file differences in the terminal"
   homepage "https://github.com/SoCkEt7/Livediff"
-  url "https://github.com/SoCkEt7/Livediff/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "a813b9df67351cb4e401cdd6d483b907ad590f345a94fdd876e1c46e998df16e"
+  url "https://github.com/SoCkEt7/Livediff/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "41b3d22f646cd16beadd4ff72868f76badf561f93c9996329c30ef6a40d576d7"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/SoCkEt7/Livediff.git", branch: "main"
 
