@@ -1,8 +1,8 @@
 class Happy < Formula
   desc "Mobile and Web client for Claude Code and Codex"
   homepage "https://happy.engineering"
-  url "https://registry.npmjs.org/happy/-/happy-1.2.2.tgz"
-  sha256 "0e34d6a7a516e541e166d4db1b4c368c9b83139ce8c5573e5ae531375cba5211"
+  url "https://registry.npmjs.org/happy/-/happy-1.2.4.tgz"
+  sha256 "f14df9d335ec5b431b82e86115c44a4014f7813f144761d58ce872b7b691a53c"
   license "MIT"
 
   bottle do
