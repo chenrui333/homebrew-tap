@@ -1,8 +1,8 @@
 class Eilmeldung < Formula
   desc "Feature-rich TUI RSS reader"
   homepage "https://github.com/christo-auer/eilmeldung"
-  url "https://github.com/christo-auer/eilmeldung/archive/refs/tags/1.8.1.tar.gz"
-  sha256 "c1d1a6248ed1f5a2e1b924f2db1653d1a045de69af4ebbd0ebf1a58b0d3a8e9a"
+  url "https://github.com/christo-auer/eilmeldung/archive/refs/tags/1.8.2.tar.gz"
+  sha256 "e021711d282613a735c3db241d8157be77df92a3bf4cf500eceb9bbd27e7f898"
   license "GPL-3.0-or-later"
   head "https://github.com/christo-auer/eilmeldung.git", branch: "main"
 
