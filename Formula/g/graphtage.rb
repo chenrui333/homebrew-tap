@@ -3,8 +3,8 @@ class Graphtage < Formula
 
   desc "Semantic diff utility for tree-like files such as JSON/JSON5/XML/HTML/YAML/CSV"
   homepage "https://github.com/trailofbits/graphtage"
-  url "https://files.pythonhosted.org/packages/f3/51/46ae661912683e99f33fb4245a68e97a2fa8bc1e800ea65c983654028278/graphtage-0.3.1.tar.gz"
-  sha256 "8650d1ca566f9ab4dbbd340c159131ce611f318f41014af47eaaac801e021d3b"
+  url "https://files.pythonhosted.org/packages/46/40/ddefc7850671761c85d1e017f1ea6ce6aec063f7a5949c22bbf16a469e71/graphtage-0.5.0.tar.gz"
+  sha256 "29df3ec6fe23058da4166d2bb681e1601098e0b365dd9cea40b1957aee88fcfb"
   license "LGPL-3.0-or-later"
 
   bottle do
@@ -23,10 +23,7 @@ class Graphtage < Formula
   depends_on "python@3.14"
   depends_on "scipy"
 
-  resource "astunparse" do
-    url "https://files.pythonhosted.org/packages/f3/af/4182184d3c338792894f34a62672919db7ca008c89abee9b564dd34d8029/astunparse-1.6.3.tar.gz"
-    sha256 "5ad93a8456f0d084c3456d059fd9a92cce667963232cbf763eac3bc5b7940872"
-  end
+  pypi_packages exclude_packages: %w[numpy scipy]
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
@@ -34,18 +31,18 @@ class Graphtage < Formula
   end
 
   resource "fickling" do
-    url "https://files.pythonhosted.org/packages/df/23/0a03d2d01c004ab3f0181bbda3642c7d88226b4a25f47675ef948326504f/fickling-0.1.4.tar.gz"
-    sha256 "cb06bbb7b6a1c443eacf230ab7e212d8b4f3bb2333f307a8c94a144537018888"
+    url "https://files.pythonhosted.org/packages/d7/20/d3c2bdb9235b777763a4afc7cc3673afcd162a707ec0988ae7141a540802/fickling-0.1.12.tar.gz"
+    sha256 "83f6ccc948e21edb9ebd92795069536b47f481ce6add62598eac608b31576821"
   end
 
   resource "intervaltree" do
-    url "https://files.pythonhosted.org/packages/50/fb/396d568039d21344639db96d940d40eb62befe704ef849b27949ded5c3bb/intervaltree-3.1.0.tar.gz"
-    sha256 "902b1b88936918f9b2a19e0e5eb7ccb430ae45cde4f39ea4b36932920d33952d"
+    url "https://files.pythonhosted.org/packages/53/c3/b2afa612aa0373f3e6bb190e6de35f293b307d1537f109e3e25dbfcdf212/intervaltree-3.2.1.tar.gz"
+    sha256 "f3f7e8baeb7dd75b9f7a6d33cf3ec10025984a8e66e3016d537e52130c73cfe2"
   end
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/8d/b4/d09c00cb7bc88b17118be48f94d4b8d0ce7b572690625ca2b5477e05ce0e/json5-0.9.5.tar.gz"
-    sha256 "703cfee540790576b56a92e1c6aaa6c4b0d98971dc358ead83812aa4d06bdb96"
+    url "https://files.pythonhosted.org/packages/e4/7d/05c46a96a78147ae3bf99c2f4169ce144a70220b8d6fcd56f6ec368b8ce9/json5-0.15.0.tar.gz"
+    sha256 "7424d1f1eb1d56da6e3d70643f53619862b4ce81440bdb8ecfd6f875e5ba4a71"
   end
 
   resource "pyyaml" do
@@ -53,29 +50,19 @@ class Graphtage < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
   resource "sortedcontainers" do
     url "https://files.pythonhosted.org/packages/e8/c4/ba2f8066cceb6f23394729afe52f3bf7adec04bf9ed2c820b39e19299111/sortedcontainers-2.4.0.tar.gz"
     sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
   end
 
-  resource "stdlib-list" do
-    url "https://files.pythonhosted.org/packages/5d/09/8d5c564931ae23bef17420a6c72618463a59222ca4291a7dd88de8a0d490/stdlib_list-0.11.1.tar.gz"
-    sha256 "95ebd1d73da9333bba03ccc097f5bac05e3aa03e6822a0c0290f87e1047f1857"
+  resource "toml" do
+    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
+    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
-    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   def install
