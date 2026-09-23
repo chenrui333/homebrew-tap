@@ -1,13 +1,14 @@
 class ApifyActorsMcpServer < Formula
   desc "MCP server for Apify"
   homepage "https://docs.apify.com/platform/integrations/mcp"
-  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.15.4.tgz"
-  sha256 "69619164f13b594dcd5635fc7959f41d297473321d697b6ad6c9496d3cb9beb3"
+  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.16.0.tgz"
+  sha256 "f01633166194f961a51d7505e28c637ac64016a4baf9a9e4be10d3104c10ec07"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "c0808a5a1168493c119d8bb3ff03a31c01a4d20b20fcc611dfabb7e29946a516"
+    sha256 cellar: :any_skip_relocation, all: "4ad7bb0d08f80460c649a99f5351707a5b6466aaf0032c468d6b334f52b5f2a9"
   end
 
   depends_on "node"
