@@ -1,0 +1,19 @@
+Formula/a/apify-actors-mcp-server.rb
+  s_2316195b58a8fc::t_2a8b7e8a9f374a 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c4a8b41b7c77f0c9baf843a2154db8e3f88fd22f",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
