@@ -1,8 +1,8 @@
 class Summon < Formula
   desc "Provides on-demand secrets access for common DevOps tools"
   homepage "https://cyberark.github.io/summon/"
-  url "https://github.com/cyberark/summon/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "eab6ec15d85a82b1c849029f0ff7c2df64346cbe6dfe849dc0fa8db5f7f2265e"
+  url "https://github.com/cyberark/summon/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "0561f2523ce61cd05d1921dd9536083c2587fb68205817bfc652b627a2bc943e"
   license "MIT"
   head "https://github.com/cyberark/summon.git", branch: "main"
 
@@ -20,11 +20,11 @@ class Summon < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/cyberark/summon/pkg/summon.Tag=#{tap.user}
-      -X github.com/cyberark/summon/pkg/summon.Version=#{version}
+      -X github.com/cyberark/summon/pkg/version.Tag=#{tap.user}
+      -X github.com/cyberark/summon/pkg/version.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), "./cmd"
+    system "go", "build", "-mod=mod", *std_go_args(ldflags:), "./cmd"
   end
 
   test do
