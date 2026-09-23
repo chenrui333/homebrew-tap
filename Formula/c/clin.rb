@@ -1,8 +1,9 @@
 class Clin < Formula
   desc "Terminal note management application"
   homepage "https://github.com/reekta92/clin-rs"
-  url "https://github.com/reekta92/clin-rs/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "fd81830672741d7474c058876dec2e343fd1001bab9bed975342dc19480b66ef"
+  url "https://github.com/reekta92/clin-rs/archive/refs/tags/v0.13.0-testing.2.tar.gz"
+  version "0.13.0-testing.2"
+  sha256 "1130d0f753faf2f21a57bda578f4686fffce5694484b790398c46a4c0981ca25"
   license "GPL-3.0-only"
   head "https://github.com/reekta92/clin-rs.git", branch: "main"
 
