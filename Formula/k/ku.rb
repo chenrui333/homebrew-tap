@@ -1,8 +1,8 @@
 class Ku < Formula
   desc "Keyboard-driven Kubernetes terminal interface"
   homepage "https://github.com/bjarneo/ku"
-  url "https://github.com/bjarneo/ku/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "91711676494a37ed73d72bb375dfdecf6f382eb42cff7463ed9af6e35e152294"
+  url "https://github.com/bjarneo/ku/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "7423b2511469fd249a06f23e334fc9d85255ef8385f5aa72d619fd912ac2d0f2"
   license "MIT"
   head "https://github.com/bjarneo/ku.git", branch: "main"
 
