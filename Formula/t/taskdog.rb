@@ -3,8 +3,8 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "1fe27dff014c0a223a9d45e81f9a0d037f61039431d493d3066f1c6930c0a787"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "2ff947072e117ef7ac08ca574c4986737c8bc04fbde938e30c7a01dd2f3df349"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
@@ -269,10 +269,9 @@ class Taskdog < Formula
     assert_match "ok", shell_output("curl -fsS http://127.0.0.1:#{port}/health")
 
     with_env(
-      "XDG_CONFIG_HOME"  => config_home.to_s,
-      "XDG_DATA_HOME"    => data_home.to_s,
-      "TASKDOG_API_HOST" => "127.0.0.1",
-      "TASKDOG_API_PORT" => port.to_s,
+      "XDG_CONFIG_HOME"      => config_home.to_s,
+      "XDG_DATA_HOME"        => data_home.to_s,
+      "TASKDOG_API_BASE_URL" => "http://127.0.0.1:#{port}",
     ) do
       add_output = shell_output("#{bin}/taskdog add 'Learn Taskdog' --priority 10")
       assert_match "Added task: Learn Taskdog", add_output
