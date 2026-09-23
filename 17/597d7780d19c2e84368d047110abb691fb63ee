@@ -1,0 +1,20 @@
+Formula/k/kythe.rb
+  s_2316195b58a8fc::t_b8a3c0e9071357 43-44
+  s_2316195b58a8fc::t_342107bbc2f3cd 15,41-42,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "17597d7780d19c2e84368d047110abb691fb63ee",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

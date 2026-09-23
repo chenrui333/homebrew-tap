@@ -1,0 +1,32 @@
+Formula/k/kythe.rb
+  s_2316195b58a8fc::t_0082676cf5e20f 26
+  s_2316195b58a8fc::t_d87edea6cfd9eb 34
+  s_2316195b58a8fc::t_4ced5909a1bd44 1-8,10,17,22,39-48,59-65,67-68,71-72
+  s_2316195b58a8fc::t_9800de072ed361 66
+  s_2316195b58a8fc::t_71f791313f9c8e 14
+  s_2316195b58a8fc::t_b292603f5ecd67 28-33
+  s_2316195b58a8fc::t_b48554d8144f51 18-21,69
+  s_2316195b58a8fc::t_94d589478ea5cb 35-38
+  s_2316195b58a8fc::t_8049b39dfbe7de 13
+  s_2316195b58a8fc::t_59ba68d66713b6 23-25,27
+  s_2316195b58a8fc::t_4742fd397b9877 9,11-12,15,52-55
+  s_2316195b58a8fc::t_32cb3203c2277d 70
+  s_2316195b58a8fc::t_70ede92c3244ab 16
+  s_2316195b58a8fc::t_abef9273ba8234 49-51,56-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "67d4d2526d197f449da3481728cb6b316f45bb97",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}

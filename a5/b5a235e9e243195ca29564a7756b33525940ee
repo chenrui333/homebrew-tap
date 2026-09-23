@@ -1,0 +1,21 @@
+Formula/k/kythe.rb
+  s_2316195b58a8fc::t_6911ea7e231912 50,54
+  s_2316195b58a8fc::t_cd3b51e9afd7b7 45-46,61
+  s_2316195b58a8fc::t_8562a770529d49 47-49,51-53,55-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a5b5a235e9e243195ca29564a7756b33525940ee",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
