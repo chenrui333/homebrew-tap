@@ -1,0 +1,23 @@
+.github/workflows/publish.yml
+  s_2316195b58a8fc::t_c1a1deb780305a 174-175,178-186,189,211,217,223-232
+  s_2316195b58a8fc::t_59373e7a4e6fb0 233-235
+.github/workflows/merge-gate.yml
+  s_2316195b58a8fc::t_c1a1deb780305a 82,104,116-117,120-121,125,127-129,133-134,136,141
+  s_2316195b58a8fc::t_b5a9efe5b4a0f4 126,130-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "88d185fb0a0c4b6f8197776c08422ed9e5ce8948",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
