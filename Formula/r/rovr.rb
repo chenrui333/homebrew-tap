@@ -3,9 +3,9 @@ class Rovr < Formula
 
   desc "Post-modern terminal file explorer"
   homepage "https://github.com/NSPC911/rovr"
-  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.10.1.post1.tar.gz"
-  version "0.10.1.post1"
-  sha256 "ee1688beab8829e2407c93ea6dd17bf18d8eccc10484fff8034959b93b3d445c"
+  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.10.2.post1.tar.gz"
+  version "0.10.2.post1"
+  sha256 "a44f2d542fde0545269bd9575b65a9e1c7289f3dc8998cf3766453ae67db021b"
   license "MIT"
   head "https://github.com/NSPC911/rovr.git", branch: "main"
 
@@ -183,10 +183,11 @@ class Rovr < Formula
     assert_match version.to_s, shell_output("#{bin}/rovr --version")
 
     output = JSON.parse(shell_output("#{bin}/rovr --config-path --config-folder=#{testpath}"))
-    assert_equal %w[custom_config custom_styles logs persistent_state pinned_folders], output.keys.sort
-    assert_equal "config.toml", File.basename(output["custom_config"])
+    assert_equal %w[global_styles keys logs main_config persistent_state pinned_folders themes], output.keys.sort
+    assert_equal "config.toml", File.basename(output["main_config"])
+    assert_equal "keys.toml", File.basename(output["keys"])
     assert_equal "pins.json", File.basename(output["pinned_folders"])
-    assert_equal "style.tcss", File.basename(output["custom_styles"])
+    assert_equal "style.tcss", File.basename(output["global_styles"])
     assert_equal "state.toml", File.basename(output["persistent_state"])
   end
 end
