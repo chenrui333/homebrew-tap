@@ -3,8 +3,8 @@ class Rogallo < Formula
 
   desc "Terminal client for Gemini and other small web protocols"
   homepage "https://github.com/davep/rogallo"
-  url "https://github.com/davep/rogallo/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "458e994f1578bcd1e46b172285a0c38f0200f1d9d7614338ba28c54db3d81f83"
+  url "https://github.com/davep/rogallo/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "e1ba77f1dc4b69cc9e246af22185296ea3162cfe02f8dabc0fbe43e69682ab99"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
@@ -22,6 +22,10 @@ class Rogallo < Formula
     sha256 "423604e10179ec61af1f3a62f8c61aeaa2383040fdea67175f5c43d50e829a44"
   end
 
+  resource "finger2gemtext" do
+    url "https://files.pythonhosted.org/packages/68/e4/18cd643abb1cec703789fc315b240274d34297c887868c38e113e0d0c26c/finger2gemtext-0.1.0.tar.gz"
+    sha256 "7bbfa97852018d9b8013143540a4a216844ee0f100ae0b4f133ac6555fc74d19"
+  end
   resource "gemtext" do
     url "https://files.pythonhosted.org/packages/5d/0e/42d7dba3d43ba12565838d674fecee40db12cd15be92ac58a7309bea7218/gemtext-1.1.0.tar.gz"
     sha256 "d8e0d89994c3d462c416886280b2ff3abfbcd57e3230b8b449bc7fee3b7c3535"
@@ -133,8 +137,8 @@ class Rogallo < Formula
   end
 
   resource "wasat" do
-    url "https://files.pythonhosted.org/packages/c9/bc/428a8c8d5071df67e07912c637f25b591dac5fa006847b326de2281edfda/wasat-1.7.0.tar.gz"
-    sha256 "a3d0c21a89b60ddf9ea3838d2c7930935892703e1b7410a7b6c128b9e46f0c1a"
+    url "https://files.pythonhosted.org/packages/e0/ae/54991304bc0fc0578e1cbceed4d35c1e9174e25b79ecdb3dfd3d314ef9ed/wasat-1.9.1.tar.gz"
+    sha256 "26d7d643e93398f865fa25e064ed486d31f90ced838b2e3855a18b44ca10aa37"
   end
 
   resource "xdg-base-dirs" do
