@@ -3,8 +3,8 @@ class Raiz < Formula
 
   desc "Simply CLI Requirements management tool"
   homepage "https://github.com/daleonpz/raiz"
-  url "https://files.pythonhosted.org/packages/66/54/15ed6d97f4b7043f75541bec29fa5f94a8e6b54c2137df1c7b7d57d45627/raiz-0.2.0.tar.gz"
-  sha256 "d008c2d88227c741e2c16ae7e6188455865665d0c41cc4eeb71790b49c0e3c6f"
+  url "https://files.pythonhosted.org/packages/22/69/e08a6a07f4f1a0953b13c045dc66f2acee67f5a678af850e880b357bb32a/raiz-0.3.0.tar.gz"
+  sha256 "57d4d7536a8e7e8c44469f8c66bee47ea87b62e09259f4c0899595d884fdb3e8"
   license "Apache-2.0"
 
   bottle do
@@ -24,18 +24,13 @@ class Raiz < Formula
   pypi_packages exclude_packages: "rpds-py"
 
   resource "annotated-doc" do
-    url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
-    sha256 "fbcda96e87e9c92ad167c2e53839e57503ecfda18804ea28102353485033faa4"
+    url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
+    sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
     sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/bb/63/f9e1ea081ce35720d8b92acde70daaedace594dc93b693c869e0d5910718/click-8.3.3.tar.gz"
-    sha256 "398329ad4837b2ff7cbe1dd166a4c0f8900c3ca3a218de04466f38f6497f18a2"
   end
 
   resource "jsonpath-ng" do
@@ -64,8 +59,8 @@ class Raiz < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyyaml" do
@@ -84,8 +79,8 @@ class Raiz < Formula
   end
 
   resource "robotframework" do
-    url "https://files.pythonhosted.org/packages/19/f3/ad51daf85d95848831601851598640f951a47a9f9de88039235cf58c5bb9/robotframework-7.4.2.tar.gz"
-    sha256 "1c934e7f43600de407860cd2bd2fdc41adad4a4a785d8b46b1ed485fdc0f6c9f"
+    url "https://files.pythonhosted.org/packages/66/77/5f60e5619082d387971d111c1354f1f529d2959ee742877982002d38d53d/robotframework-7.5.tar.gz"
+    sha256 "ff6233ff752a200ece4d0a6c59f6f9f7d0e96dcff0a7a3458296b997b812482e"
   end
 
   resource "robotframework-jsonlibrary" do
@@ -99,8 +94,8 @@ class Raiz < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz"
-    sha256 "9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc"
+    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
+    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
   end
 
   def install
@@ -110,6 +105,11 @@ class Raiz < Formula
   end
 
   test do
-    assert_match "REQ-ID", shell_output("#{bin}/raiz show all")
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    output = pipe_output("#{bin}/raiz add", "A test requirement\nfunctional\nnetwork\n")
+    assert_match "REQ-001 added", output
+
+    output = shell_output("#{bin}/raiz show all")
+    assert_match "A test requirement", output
   end
 end
