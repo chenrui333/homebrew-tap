@@ -1,8 +1,8 @@
 class GoGetter < Formula
   desc "Package for downloading things from a string URL using a variety of protocols"
   homepage "https://github.com/hashicorp/go-getter"
-  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v1.8.9.tar.gz"
-  sha256 "b53f5f28ed9e255bb90c8edd03556fdaf6f8deb96fa28ad463576afd6b49ad3e"
+  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "dd1a756c5a36cc73d01a47fd9d01430756a426581b8ca42003c934a289d3b54a"
   license "MPL-2.0"
   head "https://github.com/hashicorp/go-getter.git", branch: "main"
 
@@ -24,7 +24,9 @@ class GoGetter < Formula
 
   def install
     ldflags = "-s -w -X main.GitCommit=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/go-getter"
+    cd "cmd/go-getter" do
+      system "go", "build", *std_go_args(ldflags:), "."
+    end
   end
 
   test do
