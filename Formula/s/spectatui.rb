@@ -1,8 +1,8 @@
 class Spectatui < Formula
   desc "Terminal dashboard for GitHub Spec-Kit"
   homepage "https://github.com/tinesoft/spectatui"
-  url "https://github.com/tinesoft/spectatui/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "bc0eab9e1af23bfaa14cc24a9dd73bc487636e37665947c125b2b3e0a2c2d005"
+  url "https://github.com/tinesoft/spectatui/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "73255d747dc31fc97b78d6a52750aaa7fedb4fcda85861a9b3bddc22e08986d4"
   license "MIT"
   head "https://github.com/tinesoft/spectatui.git", branch: "develop"
 
