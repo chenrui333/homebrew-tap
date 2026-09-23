@@ -211,23 +211,45 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          # GitHub's synthetic pull/<PR>/head ref can lag behind the branch ref after a push.
-          remote_git_head="$(git ls-remote origin "refs/heads/$HEAD_BRANCH" | cut -f1)"
-          if [[ "$remote_git_head" != "$PUBLISHED_HEAD" ]]; then
-            echo "::error::PR branch head does not match the published bottle commit."
-            echo "::error::Expected SHA1 $PUBLISHED_HEAD"
-            echo "::error::PR branch SHA1 $remote_git_head"
-            exit 1
-          fi
+          pr_head_verified=false
+          current_head_repo=""
+          current_head_branch=""
+          current_head_sha=""
 
-          pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
-          current_head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
-          current_head_branch="$(jq -r '.head.ref // empty' <<< "$pr_data")"
-          current_head_sha="$(jq -r '.head.sha // empty' <<< "$pr_data")"
-          if [[ "$current_head_repo" != "$GITHUB_REPOSITORY" ||
-                "$current_head_branch" != "$HEAD_BRANCH" ||
-                "$current_head_sha" != "$PUBLISHED_HEAD" ]]; then
-            echo "::error::PR head changed before published bottle commit verification."
+          for attempt in {1..12}; do
+            remote_git_head="$(git ls-remote origin "refs/heads/$HEAD_BRANCH" | cut -f1)"
+            if [[ "$remote_git_head" != "$PUBLISHED_HEAD" ]]; then
+              echo "::error::PR branch head does not match the published bottle commit."
+              echo "::error::Expected SHA1 $PUBLISHED_HEAD"
+              echo "::error::PR branch SHA1 $remote_git_head"
+              exit 1
+            fi
+
+            if pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"; then
+              current_head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
+              current_head_branch="$(jq -r '.head.ref // empty' <<< "$pr_data")"
+              current_head_sha="$(jq -r '.head.sha // empty' <<< "$pr_data")"
+
+              if [[ "$current_head_repo" != "$GITHUB_REPOSITORY" ||
+                    "$current_head_branch" != "$HEAD_BRANCH" ]]; then
+                echo "::error::PR head repository or branch changed during bottle publication."
+                echo "::error::Expected PR head $GITHUB_REPOSITORY:$HEAD_BRANCH"
+                echo "::error::Current PR head $current_head_repo:$current_head_branch"
+                exit 1
+              fi
+
+              if [[ "$current_head_sha" == "$PUBLISHED_HEAD" ]]; then
+                pr_head_verified=true
+                break
+              fi
+            fi
+
+            echo "::warning::GitHub PR head has not caught up to the published bottle commit (attempt $attempt/12)."
+            sleep 5
+          done
+
+          if [[ "$pr_head_verified" != true ]]; then
+            echo "::error::GitHub PR head did not converge to the published bottle commit."
             echo "::error::Expected PR head $GITHUB_REPOSITORY:$HEAD_BRANCH at $PUBLISHED_HEAD"
             echo "::error::Current PR head $current_head_repo:$current_head_branch at $current_head_sha"
             exit 1
