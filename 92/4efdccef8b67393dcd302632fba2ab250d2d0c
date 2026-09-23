@@ -1,0 +1,19 @@
+.github/workflows/triage.yml
+  s_9184d4f7e895a3::t_90ef73aebaf830 152-155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "924efdccef8b67393dcd302632fba2ab250d2d0c",
+  "prompts": {},
+  "sessions": {
+    "s_9184d4f7e895a3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cd23-25a7-7fd2-bd48-89df1d0b8144",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
