@@ -1,8 +1,8 @@
 class Mandible < Formula
   desc "Interactive reference for installed command-line tools"
   homepage "https://github.com/AS-FOSS/mandible"
-  url "https://github.com/AS-FOSS/mandible/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "fcb362507691bc003b3eb67170b73b78854eda03e968b67dd4bb6ad1e62a24de"
+  url "https://github.com/AS-FOSS/mandible/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "8a4cfe84c84c9f0aeff389fe78d668829c39d086052bb70e8bb232ea64296217"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/AS-FOSS/mandible.git", branch: "main"
 
