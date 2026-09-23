@@ -1,8 +1,8 @@
 class Spotatui < Formula
   desc "Terminal music player for Spotify and local media"
   homepage "https://github.com/LargeModGames/spotatui"
-  url "https://github.com/LargeModGames/spotatui/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "2fde33172d570c13c99f51037bc67b556de12c656bbe4e4e46e8ef8d01575e5d"
+  url "https://github.com/LargeModGames/spotatui/archive/refs/tags/v0.42.0.tar.gz"
+  sha256 "563aa915f4bd47c9f9647e405885ccfb97f69a0e6422e3223a030a2f77dbec59"
   license "MIT"
   head "https://github.com/LargeModGames/spotatui.git", branch: "main"
 
