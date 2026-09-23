@@ -79,6 +79,7 @@ jobs:
             const expectedChecks = JSON.parse(process.env.EXPECTED_CHECKS)
             core.info(`Polling checks for ${process.env.CHECK_SHA}`)
             const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))
+            const pollInterval = 30 * 1000
             const checkRunOrder = (run) => [
               Number(run.id || 0),
               Number(run.run_attempt || 0),
@@ -100,14 +101,44 @@ jobs:
                 ? 'pending'
                 : checkRun.conclusion === 'success' ? 'success' : 'failure'
             const deadline = Date.now() + (4320 * 60 * 1000)
+            let rateLimitRetries = 0
             let result
             while (true) {
-              const response = await github.rest.checks.listForRef({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                ref: process.env.CHECK_SHA,
-                per_page: 100,
-              })
+              let response
+              try {
+                response = await github.rest.checks.listForRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: process.env.CHECK_SHA,
+                  per_page: 100,
+                })
+              } catch (error) {
+                const retryAfter = error.response?.headers?.['retry-after']
+                const message = error.response?.data?.message?.toLowerCase() || ''
+                const rateLimited = error.status === 429 ||
+                  (error.status === 403 && (error.response?.headers?.['x-ratelimit-remaining'] === '0' ||
+                    message.includes('api rate limit exceeded') ||
+                    message.includes('secondary rate limit') || retryAfter !== undefined))
+                if (!rateLimited) throw error
+                const resetAt = Number(error.response?.headers?.['x-ratelimit-reset'] || 0) * 1000
+                const resetDelay = Math.max(0, resetAt - Date.now())
+                const retryAfterValue = Number(retryAfter)
+                const retryAfterDate = Date.parse(retryAfter)
+                const retryAfterDelay = retryAfter === undefined ? 0 :
+                  Number.isFinite(retryAfterValue)
+                    ? Math.max(0, retryAfterValue * 1000)
+                    : Number.isFinite(retryAfterDate)
+                      ? Math.max(0, retryAfterDate - Date.now())
+                      : 0
+                rateLimitRetries += 1
+                const backoff = Math.min(15 * 60 * 1000, pollInterval * (2 ** rateLimitRetries))
+                const jitter = Math.floor(Math.random() * 60 * 1000)
+                const retryDelay = Math.max(backoff, resetDelay, retryAfterDelay) + jitter
+                core.warning(`GitHub API rate limit reached; retrying in ${Math.ceil(retryDelay / 1000)} seconds.`)
+                await delay(retryDelay)
+                continue
+              }
+              rateLimitRetries = 0
               const checks = Object.fromEntries(expectedChecks.map((name) => {
                 const checkRun = newest(response.data.check_runs, name)
                 return [name, {state: state(checkRun), id: checkRun?.id ?? null}]
@@ -124,7 +155,7 @@ jobs:
                 result = {...result, state: 'failed', timedOut: true}
                 break
               }
-              await delay(30000)
+              await delay(pollInterval)
             }
             core.info(JSON.stringify(result.checks))
             if (result.state !== 'ready') {
