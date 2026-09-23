@@ -1,8 +1,8 @@
 class Soundscope < Formula
   desc "TUI app for analyzing audio data such as frequencies and loudness (LUFS)"
   homepage "https://github.com/bananaofhappiness/soundscope"
-  url "https://github.com/bananaofhappiness/soundscope/archive/refs/tags/v1.9.2.tar.gz"
-  sha256 "3e11b610a825c0088635b7da6fd78e25579a8d1ca63cf07c9bdfc5a593fefbd0"
+  url "https://github.com/bananaofhappiness/soundscope/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "41727bc30e1352caf3ce9a053e251693166ab684321fa5fda8a4588de1333435"
   license "MIT"
   head "https://github.com/bananaofhappiness/soundscope.git", branch: "master"
 
@@ -27,17 +27,9 @@ class Soundscope < Formula
   end
 
   test do
-    # Skip this part of the test on Linux because `cannot find card '0'` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_match version.to_s, shell_output("#{bin}/soundscope --version")
 
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"soundscope", testpath, [:out, :err] => output_log.to_s
-      sleep 1
-      assert_match "632.46Hz", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    # FIXME: Upstream requires a working audio input device before it starts the TUI,
+    # so a functional runtime test is not deterministic in headless CI.
   end
 end
