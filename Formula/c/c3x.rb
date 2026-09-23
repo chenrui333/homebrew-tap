@@ -1,8 +1,8 @@
 class C3x < Formula
   desc "Open source cloud cost estimation for Terraform, Terragrunt, and CloudFormation"
   homepage "https://github.com/c3xdev/c3x"
-  url "https://github.com/c3xdev/c3x/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "2f536c57a0cdc87a0130cae8c8a60c53b4bf32a93912ecef3304b35678424a66"
+  url "https://github.com/c3xdev/c3x/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "212f1edad44d16946299ef8ac3298cf628748b6a2357fcc5b047c14327cf73fa"
   license "Apache-2.0"
   head "https://github.com/c3xdev/c3x.git", branch: "main"
 
@@ -20,11 +20,11 @@ class C3x < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/c3xdev/c3x/internal/version.Version=#{version}
+      -X main.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/c3x"
 
-    generate_completions_from_executable(bin/"c3x", "completion", "--shell")
+    generate_completions_from_executable(bin/"c3x", shell_parameter_format: :cobra)
   end
 
   test do
