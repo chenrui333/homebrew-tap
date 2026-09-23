@@ -1,8 +1,8 @@
 class AzurePipelinesLanguageServer < Formula
   desc "Language Server for Azure Pipelines YAML"
   homepage "https://github.com/microsoft/azure-pipelines-language-server"
-  url "https://registry.npmjs.org/azure-pipelines-language-server/-/azure-pipelines-language-server-0.9.2.tgz"
-  sha256 "144bab396bebfa3a3da143c5f039af0b384e115c136e1a0bf8dd15c02a0c6e5c"
+  url "https://registry.npmjs.org/azure-pipelines-language-server/-/azure-pipelines-language-server-0.9.3.tgz"
+  sha256 "b1ca6bc872db0db81ce92533e4bc12be9a8345d5aa4ea1ff7f068d049c1188f1"
   license "MIT"
 
   bottle do
