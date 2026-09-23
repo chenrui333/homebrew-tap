@@ -197,9 +197,11 @@ jobs:
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
+          HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
         run: |
           set -euo pipefail
-          remote_git_head="$(git ls-remote origin "pull/$PR/head" | cut -f1)"
+          # GitHub's synthetic pull/<PR>/head ref can lag behind the branch ref after a push.
+          remote_git_head="$(git ls-remote origin "refs/heads/$HEAD_BRANCH" | cut -f1)"
           if [[ "$remote_git_head" != "$PUBLISHED_HEAD" ]]; then
             echo "::error::Pushed PR branch does not contain the published bottle commit."
             echo "::error::Expected SHA1 $PUBLISHED_HEAD"
