@@ -1,8 +1,8 @@
 class Litespeed < Formula
   desc "Local coding agent with multi-model workflows for terminal and browser"
   homepage "https://github.com/BerriAI/litespeed"
-  url "https://github.com/BerriAI/litespeed/archive/refs/tags/v0.1.21.tar.gz"
-  sha256 "2edc9f4a62a3466d4e9c466313b561ed3d43889716bfaf4101a07ff6986202ef"
+  url "https://github.com/BerriAI/litespeed/archive/refs/tags/v0.1.23.tar.gz"
+  sha256 "1a0327dec9d8c9f40fa31cc0ab467d3a0ba9f02fa3fbfe7c3f0a682200d2266f"
   license "Apache-2.0"
   head "https://github.com/BerriAI/litespeed.git", branch: "main"
 
