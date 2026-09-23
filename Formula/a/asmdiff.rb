@@ -3,8 +3,8 @@ class Asmdiff < Formula
 
   desc "Compare per-function assembly across compilers"
   homepage "https://github.com/rt-rtos/asmdiff"
-  url "https://files.pythonhosted.org/packages/8d/12/b91bac1948f7b90192a1e94366499a01a59fa048a61f5124bcecfc4c6851/asmdiff-0.3.3.tar.gz"
-  sha256 "6313ac2adb5f903d4a4e30c288d4f23095ef92575429d3e1ad3a0ac1eabc6976"
+  url "https://files.pythonhosted.org/packages/79/93/b634871bebc2db8f2fc59baf04a78356b13dab510fe8fe5c9a8aff3e0a49/asmdiff-0.4.0.tar.gz"
+  sha256 "147454fd2367fe1a827a15d3987bd56f17f897a48a3ad66e2b6108e9e32ccd85"
   license "MIT"
   head "https://github.com/rt-rtos/asmdiff.git", branch: "main"
 
