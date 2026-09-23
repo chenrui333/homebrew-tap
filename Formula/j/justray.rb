@@ -1,8 +1,8 @@
 class Justray < Formula
   desc "Terminal VPN client"
   homepage "https://github.com/luynrs/justray"
-  url "https://github.com/luynrs/justray/archive/refs/tags/v1.4.5.tar.gz"
-  sha256 "0913901f21cf1a68fea7554fdb15f3bcec80cbf43f1583e293c9d564fc880dbb"
+  url "https://github.com/luynrs/justray/archive/refs/tags/v1.6.3.tar.gz"
+  sha256 "f85a7515f8986032402074e22d705ec2d4f800aea3a56736c47f6c6c0f85ab3c"
   license "GPL-3.0-only"
   head "https://github.com/luynrs/justray.git", branch: "main"
 
@@ -15,8 +15,8 @@ class Justray < Formula
     sha256 cellar: :any,                 x86_64_linux:  "00befb2cd3b99aa59e76c7c6180559388b0e2299f3003270df4acbe46399804c"
   end
 
-  # Match upstream release CI while sing-box relies on private HTTP/2 symbols.
-  depends_on "go@1.26" => :build
+  # Match upstream release CI; sing-box relies on private HTTP/2 symbols.
+  depends_on "go" => :build
 
   def install
     ldflags = "-s -w -X github.com/luynrs/justray/internal/version.Version=#{version}"
