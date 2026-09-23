@@ -1,8 +1,8 @@
 class Vaults3 < Formula
   desc "Lightweight, S3-compatible object storage server with built-in web dashboard"
   homepage "https://github.com/Kodiqa-Solutions/VaultS3"
-  url "https://github.com/Kodiqa-Solutions/VaultS3/archive/refs/tags/v4.4.68.tar.gz"
-  sha256 "36b8764f7c68648306f0a234412429fa287680a8e3e1c1a7581d954619053733"
+  url "https://github.com/Kodiqa-Solutions/VaultS3/archive/refs/tags/v4.4.76.tar.gz"
+  sha256 "6e079ac5b1bbdac837ba2f325dbde4e831dd43739deaa36f89d484dc898565e7"
   license "AGPL-3.0-only"
   head "https://github.com/Kodiqa-Solutions/VaultS3.git", branch: "main"
 
@@ -32,6 +32,12 @@ class Vaults3 < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin/"vaults3"), "./cmd/vaults3"
     system "go", "build", *std_go_args(ldflags:, output: bin/"vaults3-cli"), "./cmd/vaults3-cli"
+  end
+
+  service do
+    run [opt_bin/"vaults3"]
+    keep_alive true
+    working_dir var/"vaults3"
   end
 
   test do
