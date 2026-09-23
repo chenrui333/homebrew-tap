@@ -149,6 +149,10 @@ jobs:
               path: Formula/.+
               patch_content: (generate_completions_from_executable|bash_completion|zsh_completion|fish_completion|pwsh_completion)
 
+            - label: missing network sandbox
+              path: Formula/.+
+              missing_content: (allow|deny)_network_access!
+
   typos:
     name: Spell Check
     if: github.event_name == 'pull_request'
