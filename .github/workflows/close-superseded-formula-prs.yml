@@ -26,7 +26,6 @@ env:
   GH_REPO: ${{ github.repository }}
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
-  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
 
 jobs:
   close-superseded-prs:
@@ -41,6 +40,9 @@ jobs:
         with:
           core: true
           cask: false
+
+      - name: Trust tap
+        run: brew trust --tap chenrui333/tap
 
       - name: Close superseded package PRs
         env:

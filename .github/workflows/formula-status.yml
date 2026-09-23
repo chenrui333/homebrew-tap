@@ -13,9 +13,6 @@ concurrency:
   group: formula-status
   cancel-in-progress: true
 
-env:
-  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
-
 jobs:
   generate-metadata:
     runs-on: macos-latest
@@ -38,6 +35,9 @@ jobs:
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+
+      - name: Trust tap
+        run: brew trust --tap chenrui333/tap
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7

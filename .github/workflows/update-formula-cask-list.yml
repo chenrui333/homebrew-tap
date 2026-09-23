@@ -20,9 +20,6 @@ concurrency:
   group: update-formulae-list
   cancel-in-progress: true
 
-env:
-  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
-
 jobs:
   update-list:
     runs-on: macos-latest
@@ -43,6 +40,9 @@ jobs:
 
       - name: Tap the repo
         run: brew tap chenrui333/tap
+
+      - name: Trust tap
+        run: brew trust --tap chenrui333/tap
 
       - name: Run update-list script
         run:  .github/scripts/update-list.sh

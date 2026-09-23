@@ -17,9 +17,6 @@ on:
 permissions:
   contents: read
 
-env:
-  HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
-
 jobs:
   autobump:
     runs-on: macos-latest
@@ -30,6 +27,9 @@ jobs:
         with:
           core: false
           cask: false
+
+      - name: Trust tap
+        run: brew trust --tap chenrui333/tap
 
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
