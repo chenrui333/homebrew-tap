@@ -6,6 +6,14 @@ class Tilia < Formula
   license "BSD-3-Clause"
   head "https://github.com/mrkkrp/tilia.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2d10e5acf4e501ca0aee8ac5b37755a3087c05a975f06d47ba7f9a0a0255083"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf1da6f7748fbdda911c86b19e3eccfa4f94aafa5f429482f4654f10423914c"
+    sha256 cellar: :any,                 arm64_linux:   "9883f0a8f6830c3f9564c07d0694046cd922741821077d3ec7fed04098dfe56a"
+    sha256 cellar: :any,                 x86_64_linux:  "6535276161d39d0092d3938cc77a32912ad960c00b3e4dac9b4aaa6f80e0602e"
+  end
+
   # Tilia consults Cabal build plans and GHC's package database at runtime.
   depends_on "cabal-install"
   depends_on "ghc"
