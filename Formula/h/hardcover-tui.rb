@@ -1,8 +1,8 @@
 class HardcoverTui < Formula
   desc "Terminal UI client for Hardcover.app"
   homepage "https://github.com/NotMugil/hardcover-tui"
-  url "https://github.com/NotMugil/hardcover-tui/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "cfcccf491963e3dbc7edf84ce67a7bc90188ca7ef6387cbe725e12910becabfe"
+  url "https://github.com/NotMugil/hardcover-tui/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "3c42ef168b4cfe70f9c51726c2e2185156c9ee1e1b909dfcaee2dbcac218102d"
   license "AGPL-3.0-only"
   head "https://github.com/NotMugil/hardcover-tui.git", branch: "main"
 
