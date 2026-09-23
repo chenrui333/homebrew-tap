@@ -1,8 +1,8 @@
 class Reeve < Formula
   desc "Local web development stack manager"
   homepage "https://github.com/yetidevworks/reeve"
-  url "https://github.com/yetidevworks/reeve/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "7a595f2419fff0756c62c60b40656a05fd39479cb800fdee4dd2c31c08a060fa"
+  url "https://github.com/yetidevworks/reeve/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "47c1d0132ef06f93bfdfd0e1b7f0feae1e2dcf0d468ecaa231c79f67e3f8cfe8"
   license "MIT"
   head "https://github.com/yetidevworks/reeve.git", branch: "main"
 
