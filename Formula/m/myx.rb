@@ -1,8 +1,8 @@
 class Myx < Formula
   desc "Terminal Spotify player"
   homepage "https://github.com/HaseebKhalid1507/Myx"
-  url "https://github.com/HaseebKhalid1507/Myx/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "50a689fa07d9a4bea909e265351a5acfe7cbd7183d055543d4c1ee7c4cb220f4"
+  url "https://github.com/HaseebKhalid1507/Myx/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "42c48a29910a44bca6eef52692a7f3774c80ceffed2c11c7a6b541b8cca645e3"
   license "MIT"
   head "https://github.com/HaseebKhalid1507/Myx.git", branch: "main"
 
