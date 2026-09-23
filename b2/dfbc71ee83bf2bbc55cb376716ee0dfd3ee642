@@ -1,0 +1,19 @@
+.github/workflows/merge-gate.yml
+  s_2316195b58a8fc::t_e5440a755126c5 82,106-126,143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b2dfbc71ee83bf2bbc55cb376716ee0dfd3ee642",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
