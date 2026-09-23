@@ -1,8 +1,8 @@
 class Tornado < Formula
   desc "SQLite explorer with Vim key bindings"
   homepage "https://codeberg.org/ozeye/tornado"
-  url "https://codeberg.org/ozeye/tornado/archive/v0.4.0.tar.gz"
-  sha256 "7b89bf8749f0404cdbd554e93508b4a103004dbf59c0a75c16162d2dd1634422"
+  url "https://codeberg.org/ozeye/tornado/archive/v0.5.0.tar.gz"
+  sha256 "9f7741f41e439bca5065ff044b188390e4039e81e55e0ace13798baff10aac27"
   license "MIT"
   head "https://codeberg.org/ozeye/tornado.git", branch: "main"
 
