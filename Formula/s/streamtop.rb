@@ -1,8 +1,8 @@
 class Streamtop < Formula
   desc "Terminal monitor for HLS, DASH and IPTV streams"
   homepage "https://github.com/Jorji49/streamtop"
-  url "https://github.com/Jorji49/streamtop/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "2208d73015aa2ea80c7d2603ca9938e5e93adaaa83e03c11757ae86b9b16337a"
+  url "https://github.com/Jorji49/streamtop/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "ddaec44657109ab228cfbc7d064331882d36281f026f6e624eb985c334167d78"
   license "MIT"
   head "https://github.com/Jorji49/streamtop.git", branch: "main"
 
