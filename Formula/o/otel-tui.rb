@@ -1,8 +1,8 @@
 class OtelTui < Formula
   desc "Terminal OpenTelemetry viewer"
   homepage "https://github.com/ymtdzzz/otel-tui"
-  url "https://github.com/ymtdzzz/otel-tui/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "90ed095b21713704d1ab8002cb7141de382f3008036466b4c5bbde3a6dfbfbb5"
+  url "https://github.com/ymtdzzz/otel-tui/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "fc8a5ab4416b9428532978cb759b31f83bc27e8617e44545c53fb41d401a3d91"
   license "Apache-2.0"
   head "https://github.com/ymtdzzz/otel-tui.git", branch: "main"
 
@@ -28,5 +28,8 @@ class OtelTui < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/otel-tui --version")
+
+    output = shell_output("#{bin}/otel-tui --invalid-flag 2>&1", 1)
+    assert_match "unknown flag: --invalid-flag", output
   end
 end
