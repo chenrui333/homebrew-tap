@@ -1,8 +1,8 @@
 class Ziglint < Formula
   desc "Linter for the Zig programming language"
   homepage "https://github.com/DonIsaac/zlint"
-  url "https://github.com/DonIsaac/zlint/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "867538996fa697d3fe797cb5b9559b37674c3d065091df373cee76c1052ff1a4"
+  url "https://github.com/DonIsaac/zlint/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "bd5975933615483f2f7cd108ce8c9143c038a614d989f0237e535d7d54c4e966"
   license "MIT"
 
   bottle do
@@ -27,12 +27,7 @@ class Ziglint < Formula
     assert_match version.to_s, shell_output("#{bin}/zlint --version")
 
     (testpath/"valid.zig").write <<~ZIG
-      const std = @import("std");
-
-      pub fn main() void {
-          const message = "Hello, world!";
-          std.debug.print("{s}\\n", .{message});
-      }
+      pub fn main() void {}
     ZIG
 
     output = shell_output("#{bin}/zlint #{testpath}/valid.zig 2>&1")
