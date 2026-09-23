@@ -1,8 +1,8 @@
 class Octelium < Formula
   desc "Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API gateway & homelab"
   homepage "https://octelium.com/docs/octelium/latest/overview/intro"
-  url "https://github.com/octelium/octelium/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "05e47cc7acfdaf99d6ac4161afeb8e0f703378b5ba46366080d7582ac4b42b62"
+  url "https://github.com/octelium/octelium/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "7fd84a0756ca255f7e2bb055fa1fa549b2284cce55ad67b56c5ebc293514d140"
   license "Apache-2.0"
   head "https://github.com/octelium/octelium.git", branch: "main"
 
@@ -41,6 +41,6 @@ class Octelium < Formula
     assert_match "Error: The Cluster domain is not set.", output
 
     output = shell_output("#{bin}/octops init example.com --bootstrap #{testpath}/bootstrap.yaml 2>&1", 1)
-    assert_match "try setting KUBERNETES_MASTER environment variable", output
+    assert_match "Please set the kubeconfig file path", output
   end
 end
