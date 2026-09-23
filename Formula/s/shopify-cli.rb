@@ -1,8 +1,8 @@
 class ShopifyCli < Formula
   desc "CLI which helps you build against the Shopify platform faster"
   homepage "https://shopify.dev/"
-  url "https://registry.npmjs.org/@shopify/cli/-/cli-4.7.1.tgz"
-  sha256 "bdf8ca63247d61428137006628178bffa60f5dd9db55c13125c252bbf3f7007c"
+  url "https://registry.npmjs.org/@shopify/cli/-/cli-4.8.0.tgz"
+  sha256 "67a7975c3a324c8cf173f3adcc49984429501f637ef51c1cb6f940a68671e388"
   license "MIT"
 
   bottle do
@@ -18,6 +18,7 @@ class ShopifyCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
+    rm_r libexec/"lib/node_modules/@shopify/cli/node_modules/clipboardy/fallbacks/linux/xsel" if OS.linux?
     bin.install_symlink libexec/"bin/shopify"
   end
 
