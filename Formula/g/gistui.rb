@@ -8,11 +8,10 @@ class Gistui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf1ef26b69eb382ad0f8f4469f0b607a748984aa4889294f017dfac5037fbb6b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69d8fd6da8786370aedd8637fa02c43f57d35622fa2eb68d5a71e146986fbd46"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a134f9202550d39a523912757197484a0976df83e7dab53dce582edaeebb274d"
-    sha256 cellar: :any,                 arm64_linux:   "f657653257304c440cb2ff18312aa3cf480e96c6fcc3460fbffd59dbc3a13d6d"
-    sha256 cellar: :any,                 x86_64_linux:  "0d344780ba08db13896c8bb9361dbdc967ab5e5c6f3962069478813809fe71f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "237b7f9fdd23d4807b94cb8384d2b0c40da377dbbc5db80da9dca0a5e5f421c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4f2b94d6e5f691c918ef1e873bbd7459dc37818aa3d4881fcbccbded0a6f92b"
+    sha256 cellar: :any,                 arm64_linux:   "bfc4c1286afc8190e5b9dc4a7350a21387925dd7f68970dcc5c6a321308ef00c"
+    sha256 cellar: :any,                 x86_64_linux:  "76ce6733896d6ae05b5a3203bdd8406f671ccffbfa8866a4e438462fe9ea861a"
   end
 
   depends_on "rust" => :build
