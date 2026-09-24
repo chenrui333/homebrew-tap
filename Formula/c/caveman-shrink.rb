@@ -1,13 +1,13 @@
 class CavemanShrink < Formula
   desc "MCP proxy that compresses prose fields in tool catalogs"
   homepage "https://github.com/JuliusBrussee/caveman"
-  url "https://registry.npmjs.org/caveman-shrink/-/caveman-shrink-0.1.0.tgz"
-  sha256 "2b40eccce35fe8ce145e6c02fe02d192235ab655cb3614244ca98188c04f87a7"
+  url "https://registry.npmjs.org/caveman-shrink/-/caveman-shrink-0.1.1.tgz"
+  sha256 "690edb8a2c7e8b78c1a4209bd5f73e85b14fdc5c2ad6943479abb3d9da30f593"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "66b7845450c239d2fd1e19447785dec35d5d9e85f7dce842589a824759c72cd5"
+    sha256 cellar: :any_skip_relocation, all: "fdc1507dd4744c8788d6045e91f79d07acf3cac528b907bc52114df74055f6b4"
   end
 
   depends_on "node"
