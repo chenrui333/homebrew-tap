@@ -1,17 +1,16 @@
 class Marchat < Formula
   desc "Terminal chat with WebSockets, E2E encryption, plugins, and file sharing"
   homepage "https://github.com/Cod-e-Codes/marchat"
-  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.3.6.tar.gz"
-  sha256 "70e8e8dcd9364587c17f5637b297a343bf7db208ffa25b65d6756ce6875411d2"
+  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.3.7.tar.gz"
+  sha256 "291a4fbde08fc1255d2e63d9e8ef4ab60fe5230040736973745231a8a7822c41"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b114524ec13a3ed74b2db2ef9994e1ce731d236108947d473e45121db6f03bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b114524ec13a3ed74b2db2ef9994e1ce731d236108947d473e45121db6f03bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b114524ec13a3ed74b2db2ef9994e1ce731d236108947d473e45121db6f03bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35a040d1239ef3c029fa055f390359d5221b297663f83464c09570fd7435aa3d"
-    sha256 cellar: :any,                 x86_64_linux:  "da6d9b2d92f32f308f8b7afc84d8d85089a16a796441b29c17fdd21b0e64c6b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d703277b737d55124063880d9e593ede4fcc966c1feb84be5354c7fb7efe3ae0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d703277b737d55124063880d9e593ede4fcc966c1feb84be5354c7fb7efe3ae0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d992523e049c1a378f4f6cd99a44f3d00465470184336d8f1d1dff706581dd7c"
+    sha256 cellar: :any,                 x86_64_linux:  "b953a13c461e212f03a486404ca081869cb8fca768035645a6236b68bf79d618"
   end
 
   depends_on "go" => :build
