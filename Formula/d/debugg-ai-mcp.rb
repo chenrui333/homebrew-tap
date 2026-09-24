@@ -2,13 +2,13 @@
 class DebuggAiMcp < Formula
   desc "MCP Server for Debugg AI"
   homepage "https://debugg.ai/"
-  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-4.2.2.tgz"
-  sha256 "3d9623ef870b6e061bd8e745da88aa90e20c833a7a0b0530e75a83d492c6c9c4"
+  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-5.0.0.tgz"
+  sha256 "e78dadc0a9824fcf8dfbfa3d95a8b6dd021c928ee8143cb55eae074ff9d5e888"
   license "Apache-2.0" # license fix PR, https://github.com/debugg-ai/debugg-ai-mcp/pull/4
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2d078f3594ceab08a386a1495b914b931a2fe0ce9568767b70eb765b9ce5497f"
+    sha256 cellar: :any_skip_relocation, all: "fabca7e408ba928e32e519b2f7c3bf195923b6d60c61f580db8976ae516eda84"
   end
 
   depends_on "node"
@@ -18,7 +18,7 @@ class DebuggAiMcp < Formula
 
     # Remove vendored prebuilt ngrok binary to avoid shipping non-native artifacts.
     ngrok_bin = libexec/"lib/node_modules/@debugg-ai/debugg-ai-mcp/node_modules/ngrok/bin/ngrok"
-    rm ngrok_bin
+    rm ngrok_bin if ngrok_bin.exist?
 
     bin.install_symlink libexec.glob("bin/*")
   end
