@@ -1,0 +1,20 @@
+Formula/g/graphtage.rb
+  s_2316195b58a8fc::t_bc0f3c53759710 20
+  s_2316195b58a8fc::t_7f2930b29d275b 6-7,33-34,38-39,43-49,57-59,67-69,73-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d682cfd3afa2dca6f813700e05b87c9f7e538996",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
