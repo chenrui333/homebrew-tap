@@ -1,0 +1,20 @@
+Formula/c/clawpatrol.rb
+  s_2316195b58a8fc::t_a0dcca03eedc09 19
+  s_2316195b58a8fc::t_c2ffddd5c3c833 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dbc28e79a083511186c17fb4d8a2b9d6d9b97674",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
