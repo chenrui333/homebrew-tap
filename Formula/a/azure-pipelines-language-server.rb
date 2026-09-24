@@ -1,13 +1,13 @@
 class AzurePipelinesLanguageServer < Formula
   desc "Language Server for Azure Pipelines YAML"
   homepage "https://github.com/microsoft/azure-pipelines-language-server"
-  url "https://registry.npmjs.org/azure-pipelines-language-server/-/azure-pipelines-language-server-0.9.2.tgz"
-  sha256 "144bab396bebfa3a3da143c5f039af0b384e115c136e1a0bf8dd15c02a0c6e5c"
+  url "https://registry.npmjs.org/azure-pipelines-language-server/-/azure-pipelines-language-server-0.9.3.tgz"
+  sha256 "b1ca6bc872db0db81ce92533e4bc12be9a8345d5aa4ea1ff7f068d049c1188f1"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "e3c39c0bd1bc42c5492189410af36879f7a4807be3d59199372bf885541c34ea"
+    sha256 cellar: :any_skip_relocation, all: "0af64885f0fb22c32b94e704dd655b37af5f714b2fe5f21650d8b8b68beee102"
   end
 
   depends_on "node"
