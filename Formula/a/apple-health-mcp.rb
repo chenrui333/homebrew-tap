@@ -1,17 +1,16 @@
 class AppleHealthMcp < Formula
   desc "MCP server for Apple Health"
   homepage "https://github.com/neiltron/apple-health-mcp"
-  url "https://registry.npmjs.org/@neiltron/apple-health-mcp/-/apple-health-mcp-1.4.1.tgz"
-  sha256 "1eb0cc00105954b74f4106b978668482582d571a640279137075736449c75f93"
+  url "https://registry.npmjs.org/@neiltron/apple-health-mcp/-/apple-health-mcp-1.4.5.tgz"
+  sha256 "f4252273cf9e03735cc03aac0eac95de0a81951aa1b43772ed77c6a815d92ec9"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1aa398473b3ee611e6ab7ed6fb619b8640109762acc6e0b789d4740a102b54b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14a4733e8a8bc5176e3f889d2c2a7c34efe56f85ddbc215bedbb90dbf70dba64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8517cd6f7300fec15656f7252aa976ec5888136bec053bd59b08c599f6204842"
-    sha256 cellar: :any,                 arm64_linux:   "ac8c068238acd90f2a0e52226d02a4924da4087a345845325f2e0246cf84f1b0"
-    sha256 cellar: :any,                 x86_64_linux:  "458002c0c18a6976226a08a0823abff8d5aadb10d8dd48deb69aa8205512e04f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7f20aafd2e52a36e132ce2c0f1c50f5a0d7461b1d425ac82de30d294e37a98a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2da6ee38e88933e5515ffcac911682ebb8c67142fa509e9d9979b386be8e94b1"
+    sha256 cellar: :any,                 arm64_linux:   "098bd7ee7ea4c8047599898e04b6d5e6757c4acf3652ff98d77906066b2616f0"
+    sha256 cellar: :any,                 x86_64_linux:  "45efea46f7e88822abf758af4ef3439dc779a85b2bd41d74f98080936cf5474e"
   end
 
   depends_on "node"
