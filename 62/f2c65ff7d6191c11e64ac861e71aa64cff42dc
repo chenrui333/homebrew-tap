@@ -1,0 +1,20 @@
+Formula/t/taskdog.rb
+  s_2316195b58a8fc::t_4c9322ff8955f8 274
+  s_2316195b58a8fc::t_62c3c8fac13982 272-273
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "62f2c65ff7d6191c11e64ac861e71aa64cff42dc",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
