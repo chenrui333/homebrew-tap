@@ -1,0 +1,20 @@
+Formula/s/soundscope.rb
+  s_2316195b58a8fc::t_1b0ed8574eda25 30,32-33
+  s_2316195b58a8fc::t_9ae7e891dc75ed 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "319bf0152900f69ac3c9867e2432c7c1fa5a4882",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
