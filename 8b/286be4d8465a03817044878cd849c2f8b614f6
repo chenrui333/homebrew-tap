@@ -1,0 +1,21 @@
+Formula/g/gecit.rb
+  s_2316195b58a8fc::t_f4bd3737208cbe 4-5
+  s_2316195b58a8fc::t_2e300b2dbf12dc 17-18,24-27
+  s_2316195b58a8fc::t_90e424b75c9a8e 22-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8b286be4d8465a03817044878cd849c2f8b614f6",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
