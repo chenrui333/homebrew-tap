@@ -1,0 +1,20 @@
+Formula/l/lazyworktree.rb
+  s_2316195b58a8fc::t_70b6ebed9ee274 38
+  s_2316195b58a8fc::t_25474b57fef876 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ccbe8036c527afdb346f5c607cf94d75db2466ca",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
