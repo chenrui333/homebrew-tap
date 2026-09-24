@@ -1,18 +1,18 @@
 class Clin < Formula
   desc "Terminal note management application"
   homepage "https://github.com/reekta92/clin-rs"
-  url "https://github.com/reekta92/clin-rs/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "fd81830672741d7474c058876dec2e343fd1001bab9bed975342dc19480b66ef"
+  url "https://github.com/reekta92/clin-rs/archive/refs/tags/v0.13.0-testing.2.tar.gz"
+  version "0.13.0-testing.2"
+  sha256 "1130d0f753faf2f21a57bda578f4686fffce5694484b790398c46a4c0981ca25"
   license "GPL-3.0-only"
   head "https://github.com/reekta92/clin-rs.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9524486199bd341cda04cf8934773a3cad04035ab1a9ecbf3cf1da422f4711bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b71999bcad9a9b2fd34e9d8a4e6e32d77e5671c6bba0ea0ed4210c2e8a6bb96c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c94c3f41444f269118a5aabb20181fecd5f90cdfa42375330988327dfcec64d3"
-    sha256 cellar: :any,                 arm64_linux:   "5e0a179b5400bf1053fdf9b33ca2da86a60ddd1eab074f3514d80c1107afff4c"
-    sha256 cellar: :any,                 x86_64_linux:  "b77d7681ab9980657bbcfc8c4dce1f95e5723894a6ab51989b72cc9236e7efa4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "899a602e2280330f60d242063a7c8bce9621a63c246d6e4975be6f48af0ffbff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "733673279df5a54cdbd50aba13dd61461d523b979d7d30d88e09f24aa54a6c51"
+    sha256 cellar: :any,                 arm64_linux:   "dcc8ec439dcb60a18f0fe6daad53b89accdb89322e4149db2589f5a4f3280786"
+    sha256 cellar: :any,                 x86_64_linux:  "c77a09f80d1086dc24916a7ef7c24310026fb85d679d763bf1333fe2171e1c0f"
   end
 
   depends_on "pkgconf" => :build
