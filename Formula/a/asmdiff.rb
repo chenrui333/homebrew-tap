@@ -10,7 +10,7 @@ class Asmdiff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5993939e3c5aecd78e7c578f3760daec596d40d8aaada58012e9d73f2f7fea69"
+    sha256 cellar: :any_skip_relocation, all: "0e49185dfe7e535e3c0c77de8be77add2ff9a00bbc3a43d8f84d9283e0a93e7c"
   end
 
   depends_on "python@3.14"
