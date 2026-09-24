@@ -1,0 +1,20 @@
+Formula/d/debugg-ai-mcp.rb
+  s_2316195b58a8fc::t_959fded0cc8767 21
+  s_2316195b58a8fc::t_7dacee34d6e53e 5-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "48a538d40393f806c237b094903ea29c34a43eab",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
