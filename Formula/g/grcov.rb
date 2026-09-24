@@ -1,19 +1,17 @@
 class Grcov < Formula
   desc "Rust tool to collect and aggregate code coverage data for multiple source files"
   homepage "https://github.com/mozilla/grcov"
-  url "https://github.com/mozilla/grcov/archive/refs/tags/v0.10.7.tar.gz"
-  sha256 "5c4a236133f6982a4ea6588f0b1a9c0cc5838be50cb533da2023344b198120df"
+  url "https://github.com/mozilla/grcov/archive/refs/tags/v0.10.8.tar.gz"
+  sha256 "f9d1b3c6ced52d47b0d5d54ecaf40c6512144ac8c1b825fe6762495dfaad74d3"
   license "MPL-2.0"
   head "https://github.com/mozilla/grcov.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "379dbda4d0f659aad832b20ca93df93fe523ae7bc4d6efec71db5afa31b4c03c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a58dc893fe2b28709bba70145b1f2117c1010c543aaf8f447cc3ce524b7bf45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf414476ef24bce119264fdc0ea9d0aa80890ffad26aee7ca5b198fab0b0d2fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15a373d42d79cdf0b494222e4c01f138cf32295b1328bfe14dc14c8155e5e269"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a7f5d5b0d11997aaf2a3774dfbc1b207d6767a9994527fd7accd4b8af9ce79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fcf909ebd81b741f3f5f90fb5eac5c17a2dd88e90ed44cc9d4bfe5d4058f0cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "967c25a6f965b75721ff17d61812e691621501748b49df98dbf8026e1cbf67d0"
+    sha256 cellar: :any,                 arm64_linux:   "026954ad2263bf708e12566baad53817854d9dfa4e4985d645fb5f382e222c38"
+    sha256 cellar: :any,                 x86_64_linux:  "a14fbf5eacc955bde7ea9b172d4b9b32161a0075389a2bae3eadd15d5a14a5e3"
   end
 
   depends_on "rust" => :build
