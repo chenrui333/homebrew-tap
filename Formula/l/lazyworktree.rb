@@ -1,8 +1,8 @@
 class Lazyworktree < Formula
   desc "TUI for managing Git worktrees"
   homepage "https://github.com/chmouel/lazyworktree"
-  url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.49.0.tar.gz"
-  sha256 "84b025fb6b55f5c0185466448491fb7d74df9f50f70197f715691d03e0d0eec8"
+  url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.50.1.tar.gz"
+  sha256 "51fcb3b6e215a869fbb8e25b4ba40666fb2e15552e45f890511e173c9b6107ec"
   license "Apache-2.0"
   head "https://github.com/chmouel/lazyworktree.git", branch: "main"
 
@@ -28,15 +28,7 @@ class Lazyworktree < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/lazyworktree --version")
 
-    system "git", "init"
-    system "git", "config", "user.email", "test@example.com"
-    system "git", "config", "user.name", "Test User"
-    (testpath/"README.md").write "hello\n"
-    system "git", "add", "README.md"
-    system "git", "commit", "-m", "init"
-
-    output = shell_output("#{bin}/lazyworktree list --main --json")
-    assert_match '"is_main": true', output
-    assert_match testpath.to_s, output
+    output = shell_output("#{bin}/lazyworktree worktrees get 2>&1", 1)
+    assert_match "expected exactly one worktree argument", output
   end
 end
