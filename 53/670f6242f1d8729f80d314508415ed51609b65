@@ -1,0 +1,20 @@
+Formula/t/tars.rb
+  s_2316195b58a8fc::t_c562213c8bab02 34-40
+  s_2316195b58a8fc::t_5d8fc2cc10aef3 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "53670f6242f1d8729f80d314508415ed51609b65",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
