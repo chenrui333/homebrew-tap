@@ -1,0 +1,20 @@
+Formula/o/octelium.rb
+  s_2316195b58a8fc::t_b83c2aea70588a 44
+  s_2316195b58a8fc::t_b5da155f13d21b 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b766ffb8c7e44a7875685b8fc2b965375791fb8e",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
