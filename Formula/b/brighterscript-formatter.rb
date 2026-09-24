@@ -1,17 +1,16 @@
 class BrighterscriptFormatter < Formula
   desc "Code formatter for BrighterScript (and BrightScript)"
   homepage "https://github.com/rokucommunity/brighterscript-formatter"
-  url "https://registry.npmjs.org/brighterscript-formatter/-/brighterscript-formatter-1.8.2.tgz"
-  sha256 "4048f6ab86de159cb104ddc7ce80444c3d363ca7f95e95fb31ed0966a509d791"
+  url "https://registry.npmjs.org/brighterscript-formatter/-/brighterscript-formatter-1.8.3.tgz"
+  sha256 "1d10fffa34e3ff21223ef0649fa263ee6e2df19b16fb2baf775f2b5e59526dad"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc97d7a241ce8b49eda1139050ab1468d031f7088800722075a551f0976a3f05"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc97d7a241ce8b49eda1139050ab1468d031f7088800722075a551f0976a3f05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc97d7a241ce8b49eda1139050ab1468d031f7088800722075a551f0976a3f05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7bbdcd0a34c6826f169a3020dbc626501df75947bc58998fce445613729c5e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7bbdcd0a34c6826f169a3020dbc626501df75947bc58998fce445613729c5e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74bd5a32861359a3ed5a40dada6ab39734574550039ed8a015e431f4064e4e67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74bd5a32861359a3ed5a40dada6ab39734574550039ed8a015e431f4064e4e67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c897638a2bb8b9f6a5fed1f00beb444d6f6fd486060dcc0fdb658a5ad9996e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c897638a2bb8b9f6a5fed1f00beb444d6f6fd486060dcc0fdb658a5ad9996e3"
   end
 
   depends_on "node"
