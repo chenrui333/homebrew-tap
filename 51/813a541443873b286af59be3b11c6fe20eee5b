@@ -1,0 +1,20 @@
+Formula/c/c3x.rb
+  s_2316195b58a8fc::t_996f26ef73b6b6 27
+  s_2316195b58a8fc::t_73c57110c4d124 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "51813a541443873b286af59be3b11c6fe20eee5b",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
