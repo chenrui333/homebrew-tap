@@ -1,8 +1,8 @@
 class GoGetter < Formula
   desc "Package for downloading things from a string URL using a variety of protocols"
   homepage "https://github.com/hashicorp/go-getter"
-  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v1.8.9.tar.gz"
-  sha256 "b53f5f28ed9e255bb90c8edd03556fdaf6f8deb96fa28ad463576afd6b49ad3e"
+  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "dd1a756c5a36cc73d01a47fd9d01430756a426581b8ca42003c934a289d3b54a"
   license "MPL-2.0"
   head "https://github.com/hashicorp/go-getter.git", branch: "main"
 
@@ -13,18 +13,19 @@ class GoGetter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d282516abda633347d3ed0aea981f70280d973487f69176c79cccb3fcd04b653"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d282516abda633347d3ed0aea981f70280d973487f69176c79cccb3fcd04b653"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d282516abda633347d3ed0aea981f70280d973487f69176c79cccb3fcd04b653"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b5da4755b36189547a3f9df24894c67ed2ac3612ab7175e0187a13a1a37dc4a"
-    sha256 cellar: :any,                 x86_64_linux:  "7292434a0a483dd9f2841890b8f83d7451103f34e2df9576229c0ecb9457818f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e294afca5e3fccd9a99562c25db98d4b341a0ef4e767e3b08ce3202d781bed7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e294afca5e3fccd9a99562c25db98d4b341a0ef4e767e3b08ce3202d781bed7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f300d9e487639a5a5fbd6db91c7029ffddb8d4a093d802bb171fdbed885eb466"
+    sha256 cellar: :any,                 x86_64_linux:  "8c82d71c03c02b59f2f50eee8eeeba0b1ad82f628ad6dac80983a931271b5848"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = "-s -w -X main.GitCommit=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/go-getter"
+    cd "cmd/go-getter" do
+      system "go", "build", *std_go_args(ldflags:), "."
+    end
   end
 
   test do
