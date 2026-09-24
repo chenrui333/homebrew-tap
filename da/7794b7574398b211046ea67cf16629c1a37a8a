@@ -1,0 +1,20 @@
+Formula/j/justray.rb
+  s_2316195b58a8fc::t_9d7a408a1bc4e7 18-19
+  s_2316195b58a8fc::t_5d434ca2f5522b 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "da7794b7574398b211046ea67cf16629c1a37a8a",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
