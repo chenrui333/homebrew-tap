@@ -1,17 +1,17 @@
 class Litespeed < Formula
   desc "Local coding agent with multi-model workflows for terminal and browser"
   homepage "https://github.com/BerriAI/litespeed"
-  url "https://github.com/BerriAI/litespeed/archive/refs/tags/v0.1.21.tar.gz"
-  sha256 "2edc9f4a62a3466d4e9c466313b561ed3d43889716bfaf4101a07ff6986202ef"
+  url "https://github.com/BerriAI/litespeed/archive/refs/tags/v0.1.23.tar.gz"
+  sha256 "1a0327dec9d8c9f40fa31cc0ab467d3a0ba9f02fa3fbfe7c3f0a682200d2266f"
   license "Apache-2.0"
   head "https://github.com/BerriAI/litespeed.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "4568965fa3325334c9e31eaa38f6809d0785e9b758aa87378cad1db630935126"
-    sha256 cellar: :any, arm64_sequoia: "c885358456023417ccef9f4b60571bd712c3926411d220762a3d2ddcb11b45da"
-    sha256 cellar: :any, arm64_linux:   "da7ff90d54937593ddf2e614e61efecde450eda7d7b6fcf2653708ec0ca1ff9b"
-    sha256 cellar: :any, x86_64_linux:  "f9c0489139cfe2f71e91a2d4c305ee4a19d0184725b6b8f485b3f03d22cd2df4"
+    sha256 cellar: :any, arm64_tahoe:   "b752045e50e6bd2c831840ecfbc2b8e65259cc84e39e152a00a6298b6b6cefaa"
+    sha256 cellar: :any, arm64_sequoia: "b059fdc289e3a465515a5ef40e4999e6f25c13875da9ab53456453c416c3beb5"
+    sha256 cellar: :any, arm64_linux:   "989ec834efc87ef27b8504d63310fdbdf6c4b2c08aeb0e8a53a95443349088bc"
+    sha256 cellar: :any, x86_64_linux:  "cc5550ff12c71d6a823f3278290ebacbd9579cdda6a2735c74428df3066545d4"
   end
 
   depends_on "zig" => :build
