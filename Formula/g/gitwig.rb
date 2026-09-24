@@ -1,18 +1,17 @@
 class Gitwig < Formula
   desc "Terminal interface for Git"
   homepage "https://github.com/tareqmy/gitwig"
-  url "https://github.com/tareqmy/gitwig/archive/refs/tags/v2.5.14.tar.gz"
-  sha256 "9eb2cd1539ddcfb4d078fadb24545d8bbf759fa02a0c7b45c883a6280d3404c4"
+  url "https://github.com/tareqmy/gitwig/archive/refs/tags/v2.6.2.tar.gz"
+  sha256 "3773bfabdb82a4bea251d35e26ad716cc5b1a0549aa3b547f9a7e7ed9ca6a073"
   license "MIT"
   head "https://github.com/tareqmy/gitwig.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96352a6748ff3406b4fc3326c227c6fe61c0c04e8d8cd36eba81f9546bfb0186"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36099f5f94e97b0e3b14ee239801b66242d14ba3426fb788dedb82a838294303"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63a12ed3909000d5312bd3a9d841fd7c7f6cacdbe8e95282b5f95716123011d8"
-    sha256 cellar: :any,                 arm64_linux:   "48ac61d5e67a22f17a7450369270ae1d216ee2d371c8d197905986ad39db63e5"
-    sha256 cellar: :any,                 x86_64_linux:  "97defb5dd0ad461259a2fa24f7dc4e7f34b6d6d6e81bee85f87530889ea46d3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e1a014324450464ad931c20279a26a0bf94bfb8bdef5b8a5b8c17fb4f370ca3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "763ce6b1f1c138d02372bcaaa258e4c4e2879e100e35a5aebaed6e544945e27a"
+    sha256 cellar: :any,                 arm64_linux:   "1144d80c0e97d28b6f7828c462c85e8e0a4e08b2658395e0257ffd02f010d4d1"
+    sha256 cellar: :any,                 x86_64_linux:  "e89f41ecfe174abc90af6cd335fae1cc269b6f06b42a99494fe89a0bdccb0e0f"
   end
 
   depends_on "pkgconf" => :build
