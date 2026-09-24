@@ -7,7 +7,7 @@ class CavemanShrink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "66b7845450c239d2fd1e19447785dec35d5d9e85f7dce842589a824759c72cd5"
+    sha256 cellar: :any_skip_relocation, all: "fdc1507dd4744c8788d6045e91f79d07acf3cac528b907bc52114df74055f6b4"
   end
 
   depends_on "node"
