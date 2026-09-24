@@ -1,22 +1,21 @@
 class Clawpatrol < Formula
   desc "Security firewall for agents"
   homepage "https://clawpatrol.dev"
-  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.9.tar.gz"
-  sha256 "c04400d0fefa0388854e5f1d0941f481db1ba4a551ea859a00ab7cf5256d3554"
+  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.10.tar.gz"
+  sha256 "2d9fc0a7f191ce89f12153a4380d823e55f034e65ee5a5ccc225a511b7b5d020"
   license "MIT"
   head "https://github.com/denoland/clawpatrol.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06c948f4645c980328cb97d26c6d57589ed591a512584f72ae0eba42e9b99f54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06c948f4645c980328cb97d26c6d57589ed591a512584f72ae0eba42e9b99f54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06c948f4645c980328cb97d26c6d57589ed591a512584f72ae0eba42e9b99f54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f808776d47a28c58535bfd3d7008215be0985d186ee7eb4460a9123ec3ef5aa"
-    sha256 cellar: :any,                 x86_64_linux:  "41941f565cfcdf389d6d25005b9e32786275208c479a7ca61dc1061d2d742d68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93832a79a3b2096cd25dac4bcc055559b80fb71dda3ab075072f15ab7a6384d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93832a79a3b2096cd25dac4bcc055559b80fb71dda3ab075072f15ab7a6384d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "728570017e65a64d5cd424de459dd00dffea1fc9804a09d4e901d774650471c9"
+    sha256 cellar: :any,                 x86_64_linux:  "24c194f1e86fcd4ba2137267ca85787c889b34407e9f8f84724fb6fd604bd7b5"
   end
 
   depends_on "deno" => :build
-  depends_on "go" => :build
+  depends_on "go@1.26" => :build
 
   def install
     ENV["DENO_DIR"] = buildpath/".deno"
