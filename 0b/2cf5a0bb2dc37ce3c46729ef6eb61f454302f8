@@ -1,0 +1,19 @@
+Formula/o/oxylabs-mcp.rb
+  s_2316195b58a8fc::t_ed4fa495b5635e 6-7,39-40,49-50,64-65,69-70,74-75,79-80,104-105,109-110,114-115,128-132,138-140,144-145,164-165,194-195,218-222,259-260,264-265,274-275,279-280,289-290,329-330,343-347,354-355,359-360,364-365
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0b2cf5a0bb2dc37ce3c46729ef6eb61f454302f8",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
