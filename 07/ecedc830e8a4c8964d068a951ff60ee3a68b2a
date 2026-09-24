@@ -1,0 +1,20 @@
+Formula/g/graphtage.rb
+  s_2316195b58a8fc::t_afc43d9b8b2843 26
+  s_2316195b58a8fc::t_7f2930b29d275b 6-7,34-35,39-40,44-45,58-60,64-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "07ecedc830e8a4c8964d068a951ff60ee3a68b2a",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
