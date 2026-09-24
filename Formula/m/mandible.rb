@@ -1,18 +1,17 @@
 class Mandible < Formula
   desc "Interactive reference for installed command-line tools"
   homepage "https://github.com/AS-FOSS/mandible"
-  url "https://github.com/AS-FOSS/mandible/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "fcb362507691bc003b3eb67170b73b78854eda03e968b67dd4bb6ad1e62a24de"
+  url "https://github.com/AS-FOSS/mandible/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "8a4cfe84c84c9f0aeff389fe78d668829c39d086052bb70e8bb232ea64296217"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/AS-FOSS/mandible.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b794d0dcc712bb8089de3550fd29e53b9b43ae73127556abeaf51a7545d1a8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a385f5404e301b6477ddf68c90d1fd7b9456321d6270d2ca34fc7af5a7cb5b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c82484711436aa0ec6f79ca04f2124c33ced863f2407840edcadf570f6018327"
-    sha256 cellar: :any,                 arm64_linux:   "9e120076b25e6ab57095e783314d3c452ea7800c2390787996a998e729669f09"
-    sha256 cellar: :any,                 x86_64_linux:  "975a08913612ae8f8801080ad134c3bfcf457f44b1c3d112541187186cb5c0e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27441b3f26071085305b5f03ce1bfedc6c1b6350aa8170bf3ac0c0825a27248d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbe7d7e2f8efb3c468409e75c24fcece56543aaa96846fa8095831569304315d"
+    sha256 cellar: :any,                 arm64_linux:   "a5f1dc5398ce94313e2b7b4880b3c16992579a45216f02dfe3d5a8d2486eb78a"
+    sha256 cellar: :any,                 x86_64_linux:  "9fe06c36a38dce9a4b82efbf1a4a6a4699dc12ce98bd584157436ac43441f731"
   end
 
   depends_on "rust" => :build
