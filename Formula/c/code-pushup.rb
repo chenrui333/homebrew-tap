@@ -1,17 +1,16 @@
 class CodePushup < Formula
   desc "CLI to run all kinds of code quality measurements"
   homepage "https://code-pushup.dev/"
-  url "https://registry.npmjs.org/@code-pushup/cli/-/cli-0.126.3.tgz"
-  sha256 "1aed714a73b2ed23d5622b3418b887b195c434b7454c72ab142cc8af2b2ddd63"
+  url "https://registry.npmjs.org/@code-pushup/cli/-/cli-0.126.4.tgz"
+  sha256 "e02716acb07b65a6d2c055b028ee63ef3712004d0255895e9ea4676d6153c012"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67fe7651b6c83f382e4590bf81d659dad241c6690f0f339bcb03605d592a2bae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67fe7651b6c83f382e4590bf81d659dad241c6690f0f339bcb03605d592a2bae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67fe7651b6c83f382e4590bf81d659dad241c6690f0f339bcb03605d592a2bae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0512c257641300d9121b4ebb83920f4b536d773b15db60c8fadb43e1204c3ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c86449c5e4585da153bcfbd837f2d0c7c5eb56b80d405e1854992a3912575e4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c28c0b0c01f8b2fd90d2103adafe87d97a5fd2a2037539f34ea1007e0638606"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c28c0b0c01f8b2fd90d2103adafe87d97a5fd2a2037539f34ea1007e0638606"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6beff4812f924b1ceb95f2b5bff32a0a04ef3e0990bcf2bf2ae90e54e1a145f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1515b2c67d62499253b9b354a36c4092f1c587e977a729385117aa3026abce94"
   end
 
   depends_on "node"
