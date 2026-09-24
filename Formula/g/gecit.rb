@@ -8,9 +8,8 @@ class Gecit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c87cbfa2add33c76d85a5f53ae539869b5665757c476eca41ef913064240caae"
-    sha256 cellar: :any,                 x86_64_linux: "2127c897c6c4ecb2e0c7a609ecfbc2c44b38eb52fd087a438ec8d5441ffa9035"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9cfda35f778fc05e3f37ba4fa03612470d8fe35c743052bff4c780dd2b3eadf6"
+    sha256 cellar: :any,                 x86_64_linux: "b7bcf94cd870d78596efbecf36bfa18872e30fa9eb946caf05c2a6a753f6c77d"
   end
 
   depends_on "go" => :build
