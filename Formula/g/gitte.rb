@@ -1,18 +1,17 @@
 class Gitte < Formula
   desc "GTK4/libadwaita Git client for the GNOME desktop written in Rust"
   homepage "https://codeberg.org/ckruse/Gitte"
-  url "https://codeberg.org/ckruse/Gitte/archive/0.9.1.tar.gz"
-  sha256 "5ae0fedc6925fd83f51387da4b170d954379eba0e85291dcfe54319dfc12111c"
+  url "https://codeberg.org/ckruse/Gitte/archive/0.10.1.tar.gz"
+  sha256 "e4e639f656de0a5cae87b5e95d18e8025c0eb21a3a182f8fb7c74803a5489cb8"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/ckruse/Gitte.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "7e1b955113b711a14c70a1a21c2f59a2291e86f8d39fe16db41227e68ab9206e"
-    sha256               arm64_sequoia: "bb5eaa9cae8711310f7a620dcfe9c63c2936b675afb72480be02133d3073c078"
-    sha256               arm64_sonoma:  "3af2abff0970abd6b6ff3208aad4aaed392553f27436161582216d9c4629e060"
-    sha256 cellar: :any, arm64_linux:   "2e93272f6edfe7685a28a54931c59045ce4592bf02909ea275b97ed26f629133"
-    sha256 cellar: :any, x86_64_linux:  "90bb68f336ab3bdebbc9671c589c21d67ad8ffa0f6faa65403622fa01b992b3e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "49f2ce590b049d3bcb522f1d6f30efc99078e15404b0d3ea17346d9aa7642c11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0359ab0bedaf26878de9da02663c586e66fd7ca00f9f232ba0eb39320cec48c2"
+    sha256 cellar: :any,                 arm64_linux:   "4dbfc7091213c28c38870eec239c31fbe7e49acfa7aef24d70af61e1a790d6b4"
+    sha256 cellar: :any,                 x86_64_linux:  "c782cc6403155716e11e64c93d222f9b9dc94ebdc66d4f6612785b3edeb4b737"
   end
 
   depends_on "desktop-file-utils" => :build
