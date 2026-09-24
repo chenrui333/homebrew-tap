@@ -7,7 +7,7 @@ class McpRemote < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d14346f42755aeab87e9df6c057deef386fcbc387a95dadeb0fe49373863c7f6"
+    sha256 cellar: :any_skip_relocation, all: "8a7e9a72f7be16025acfbf410b8fd1731c69eb4c1e416a8fb861066ad7dd25e8"
   end
 
   depends_on "node"
