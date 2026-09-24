@@ -3,17 +3,18 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.4.2.tar.gz"
-  sha256 "75f7b74769ab8ec44d2cc70298e646a0ed6c6244c2c6032ce099220c0d60d134"
+  url "https://codeberg.org/liske/ifstate/archive/2.5.0-pre1.tar.gz"
+  sha256 "cda141b195d93916c2861b90ad8ba756347fb7fe91ad3303a9210334d6e33fd8"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "3d6c0e7e9235e98c28603bbc946b044c2297fb38c342c0dc7dadd9bfeb3d7b6c"
-    sha256 cellar: :any, x86_64_linux: "2cd672f4d1670b8c3c95db5f38a64678a9ea8eea105d99a60abde820c4b0037e"
+    sha256 cellar: :any, arm64_linux:  "4ce47515219b4c0464db404c8bfba0063b20aa4dba381f1f8ff70bf15850d6dc"
+    sha256 cellar: :any, x86_64_linux: "8cf47d57e27a6b4882c0868deafa1c2aff94de9bf8c6732e5797fdbddf47e673"
   end
 
+  depends_on "rust" => :build
   depends_on "libyaml"
   depends_on :linux
   depends_on "python@3.14"
@@ -61,7 +62,8 @@ class Ifstate < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ifstatecli --version")
+    # ifstatecli omits the prerelease suffix in its version output.
+    assert_match version.major_minor_patch.to_s, shell_output("#{bin}/ifstatecli --version")
     output = shell_output("#{bin}/ifstatecli 2>&1", 2)
     assert_match "the following arguments are required: action", output
   end
