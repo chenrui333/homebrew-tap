@@ -8,11 +8,10 @@ class Gsty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85409b7617c41f72b46f938d869e1d7c50b864097af800c0a801ff1b8f172022"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de7c78fee6b58b9f3de659541bbc4f6fa10f6e2b548eb76340ac56036de03953"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e59683ec92feb4b813cb3007dcba2f8af422e101e03bf6eda22db658a01eb559"
-    sha256 cellar: :any,                 arm64_linux:   "a060f5652329130e0fa54205a56278adf4c435fa2b1c3e82a4ae17f095644cf7"
-    sha256 cellar: :any,                 x86_64_linux:  "a926849a1787310774c1d7ed0d56c79f5255d7a50a3d711f66a7fade5cc618d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73d79d8900044ecb77f6f67accbc5bb5f718170d94f139cccfe72f72f9745b60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "230f44e8e9bd9fccaab154e790802a9571198b1183520e63969b1c662a446570"
+    sha256 cellar: :any,                 arm64_linux:   "8c6f53ea5e59d02916bae1cb0baad486a352af9119badc318f1f926cefcc53b2"
+    sha256 cellar: :any,                 x86_64_linux:  "e81fc9a43d2f4d5fccc9dbf33c35f041b4f8cd73dc83c17a1ae4c9ad46948e37"
   end
 
   depends_on "rust" => :build
