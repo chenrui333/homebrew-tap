@@ -2,18 +2,17 @@
 class Cohctl < Formula
   desc "CLI for Coherence clusters"
   homepage "https://followtheprocess.github.io/spok/"
-  url "https://github.com/oracle/coherence-cli/archive/refs/tags/1.10.12.tar.gz"
-  sha256 "1d6dea81458539f77674cf35e1c90ad176b12f2a11dedffbb7013482e2240cd9"
+  url "https://github.com/oracle/coherence-cli/archive/refs/tags/1.10.13.tar.gz"
+  sha256 "f5078e1145b74f1103dcde1fd21d0d68386d23dd3c0594cf76573ab3401e9dae"
   license "UPL-1.0"
   head "https://github.com/oracle/coherence-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "297892cb77a168318c18d1fd6b5f95109877337c3c5715c058bed66ae99287bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "297892cb77a168318c18d1fd6b5f95109877337c3c5715c058bed66ae99287bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "297892cb77a168318c18d1fd6b5f95109877337c3c5715c058bed66ae99287bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "adb582661794cadc2e77e1719a7119e98ed85e112dd611f9d07d3f64c26e91cc"
-    sha256 cellar: :any,                 x86_64_linux:  "1ecdb8789e16aa3b49c2ded69485ef4eba20e2038ea6f4e3bcf7af2d94ad88be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "965aa72e463b8b78e92091a6735870ed2decd8b73401cce6b93812c9e0fb49a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "965aa72e463b8b78e92091a6735870ed2decd8b73401cce6b93812c9e0fb49a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46efc91376be8669aebe151f1d27474ee29507ab163faf2234bc3f1d4a36c367"
+    sha256 cellar: :any,                 x86_64_linux:  "8c8c6c9d3972f0ce9842e9bb02ae30013c9cc5daed97995d059083604baff49f"
   end
 
   depends_on "go" => :build
