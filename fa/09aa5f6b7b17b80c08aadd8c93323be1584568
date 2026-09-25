@@ -1,0 +1,21 @@
+Formula/s/semaphore.rb
+  s_2316195b58a8fc::t_ee208e15b23c00 40-45
+  s_2316195b58a8fc::t_995201db79a92a 35-39
+  s_2316195b58a8fc::t_55138bfbaf2a0a 46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fa09aa5f6b7b17b80c08aadd8c93323be1584568",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
