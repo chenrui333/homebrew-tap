@@ -32,6 +32,18 @@ class Semaphore < Formula
     generate_completions_from_executable(bin/"semaphore", shell_parameter_format: :cobra)
   end
 
+  service do
+    run [opt_bin/"semaphore", "server", "--config", etc/"semaphore/config.json"]
+    keep_alive true
+  end
+
+  def caveats
+    <<~EOS
+      Before starting the service, run `semaphore setup` and save the generated
+      configuration to Homebrew's `etc/semaphore/config.json` path.
+    EOS
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/semaphore version")
 
