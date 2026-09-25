@@ -1,0 +1,26 @@
+.github/workflows/formula-merge.yml
+  s_2316195b58a8fc::t_a2e4be3f6aa068 65
+  s_2316195b58a8fc::t_0bb9b7092b7d58 176
+  s_2316195b58a8fc::t_18df7f2bc80111 128-130,144-148
+  s_2316195b58a8fc::t_128d27ff5d62be 11-12,28,32-34,37-54,56,58,76,79,121-123,210-225
+  s_2316195b58a8fc::t_51f26921297077 177
+  s_2316195b58a8fc::t_eead7cb213e260 1-10,13-15,18-27,29-31,55,57,59-64,66-75,77-78,80-120,124-127,131-143,149-175,178-209,226-230,249-256
+  s_2316195b58a8fc::t_1d7d2492cc3bb0 35-36,231-248
+  s_2316195b58a8fc::t_5413dc2bee0dad 16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "25d736262c930164d8443a3b519180c1432b0226",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
