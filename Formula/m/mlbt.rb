@@ -1,18 +1,17 @@
 class Mlbt < Formula
   desc "TUI for MLB stats API"
   homepage "https://github.com/mlb-rs/mlbt"
-  url "https://github.com/mlb-rs/mlbt/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "f173bc8e27411d50c698b5470bf8698945fb94c9fe7a6dec0686c5a95f3fd002"
+  url "https://github.com/mlb-rs/mlbt/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "7467974f4db21004b837e589ed6cb1f89bf54c8df2813c84d3551def1e2779fa"
   license "MIT"
   head "https://github.com/mlb-rs/mlbt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22fdd9ffe680a0aa873c16eca8894105017d2062ab5d14d448a765a50d62dc6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30597a5267bdf84aa4ec71f8626279f5594ca149355c2baf786e077931d30896"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf81d612b5b1ac75917c41eefd490fd24fe3ab0bd5edb49884d3e806238427a0"
-    sha256 cellar: :any,                 arm64_linux:   "31e15d66718fdf046129490da981d539807199974a9e4900f6927729d606975b"
-    sha256 cellar: :any,                 x86_64_linux:  "1ac7a25e43783d98491a71b395d233d46b41a79a97339964028d2071c0940f85"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a1b5e48fb56eddd611501cbf81d894993f6b9245a96296bd5eee2eb750084e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9efab4e50b5910c16c6c09a787beaa379e48b2b9d72c5722ff3f56cb17211fad"
+    sha256 cellar: :any,                 arm64_linux:   "ce40d18e125a7cd7d35d4118b2978bdac5adaac6c47bc4f9fbe501ea8750a2e0"
+    sha256 cellar: :any,                 x86_64_linux:  "9b51364cb4d48f65516d0f76cd4823c45c3567eb02c1d06094953b018f7ec38e"
   end
 
   depends_on "rust" => :build
