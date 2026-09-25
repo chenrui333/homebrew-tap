@@ -34,6 +34,7 @@ class Unrar < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     contentpath = "directory/file.txt"
     rarpath = testpath/"archive.rar"
     data = [
