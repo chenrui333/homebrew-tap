@@ -1,0 +1,21 @@
+Formula/p/phpinsights.rb
+  s_2316195b58a8fc::t_8a793ea595e9e5 30
+  s_2316195b58a8fc::t_61e5dbac38747b 17-19
+  s_2316195b58a8fc::t_c7d75ad7db6759 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "593c74c56b21ea1a4106d41f1dfddd009957032a",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
