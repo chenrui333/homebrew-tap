@@ -1,0 +1,19 @@
+Formula/l/llxprt-code.rb
+  s_2316195b58a8fc::t_3cb79bafbb19b9 27-31,61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6789e2e839bdc97a062249ea66965dc1706066a0",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
