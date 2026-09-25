@@ -1,17 +1,16 @@
 class McpUse < Formula
   desc "CLI for mcp-use"
   homepage "https://mcp-use.com/"
-  url "https://registry.npmjs.org/@mcp-use/cli/-/cli-4.1.10.tgz"
-  sha256 "f4d5544c57d4a79fb76374fec7fad819b62872917151fa48dbe319e2aad1f868"
+  url "https://registry.npmjs.org/@mcp-use/cli/-/cli-4.1.14.tgz"
+  sha256 "c22057fa85779ff2bdfc2e48142ffabdd37aabbfee58526ddd8516884cdb7b67"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "23df980b55d2497551ce067cf0c35e5a675b836fbde54141a8a48879da006333"
-    sha256 cellar: :any,                 arm64_sequoia: "23df980b55d2497551ce067cf0c35e5a675b836fbde54141a8a48879da006333"
-    sha256 cellar: :any,                 arm64_sonoma:  "23df980b55d2497551ce067cf0c35e5a675b836fbde54141a8a48879da006333"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "868e1383575b46f0579b3d33db2d8b95451887bcea5c33ee667065fe5950279b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52273ab3555772d10cdaa8231e1a2d87e040442bbdf182fa0a2527e3d1610ce9"
+    sha256 cellar: :any,                 arm64_tahoe:   "d172158315138c4dd4eb3727bce0fa0c3fd413d8d690a1410ae766029346d94b"
+    sha256 cellar: :any,                 arm64_sequoia: "d172158315138c4dd4eb3727bce0fa0c3fd413d8d690a1410ae766029346d94b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b913126ad5627c508d18facdae584bbeb55a6bc5eec28ad1ff3586f7128a86d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d10e0fc2f944f0409e3a01e3e329250960e23b017a5185f0010c29a960c68c0e"
   end
 
   depends_on "node"
