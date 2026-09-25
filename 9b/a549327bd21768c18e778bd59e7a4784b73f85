@@ -1,0 +1,27 @@
+Formula/l/llxprt-code.rb
+  s_2316195b58a8fc::t_e326dfdd3a2787 44
+  s_2316195b58a8fc::t_b757d8477275d6 45,48
+  s_2316195b58a8fc::t_8032e26a14654c 34,41-43
+  s_2316195b58a8fc::t_4ea2b8991d5eac 35-40,46-47
+  s_2316195b58a8fc::t_b3ec8b936811c9 30,49
+  s_2316195b58a8fc::t_5314e382b646d5 32
+  s_2316195b58a8fc::t_09faaed0b08d9f 33
+  s_2316195b58a8fc::t_f163fb77aeec8b 31
+  s_2316195b58a8fc::t_98fd8583b7d2a3 4-5,22-29,50-52,58,65-71,84-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9ba549327bd21768c18e778bd59e7a4784b73f85",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
