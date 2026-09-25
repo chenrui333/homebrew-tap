@@ -3,18 +3,17 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/d4/f0/f2e58a3e1502a0949cd02e358d9de5b9fed4549f9aafe98cb819c6f7b341/ministack-1.5.8.tar.gz"
-  sha256 "615b29041e5dedd3b506a7614dbd428a1842badcfcfe62e3d8f9059682a5840d"
+  url "https://files.pythonhosted.org/packages/bf/a1/4eb68e76d9d813cd5a589154a7a178376309cbefddbe5c5344460c8a8b9f/ministack-1.5.15.tar.gz"
+  sha256 "947202b704082a8e7e955f28ff3bc34501c4754ba0213e52e375823227f469d4"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ed9c404635e9da8d31c21bf2f91fe5af3a8036f97016970c0c3b0cfa442f2a19"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8c9fd403b6d390463e8ef107e91f22f13c6f4461d5be7350d80a4e29337d696"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eb7cf21fced63289d60b2a27125d306d20b3e7a0583b1c077bbb11af70cece1"
-    sha256 cellar: :any,                 arm64_linux:   "ed1fb762dc5e5fd8a2026c3cd07cb9a07f268de901b387ce8cc773a8bbd37827"
-    sha256 cellar: :any,                 x86_64_linux:  "e02d0f04c88b08c885f2db7fe388fc33d75a6a648f22686af1ab9bd1269dd187"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "759cc5dfb860120d83808a24d88548a528481619737ae179866f56a79ac86800"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b45ec92b35a9f3899c95e6d901c54ad54776193617aa6a9b6a1296d434e1d3f7"
+    sha256 cellar: :any,                 arm64_linux:   "bd25fb3965bb4644114f0bcc1afbf285b5302ff56651db31fe6eecf2fe39a4d5"
+    sha256 cellar: :any,                 x86_64_linux:  "6dce65eddc7742cea91984a93c41705cdff0417a361f5dc87d2e3d046fa27230"
   end
 
   depends_on "libyaml"
@@ -91,8 +90,8 @@ class Ministack < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wsproto" do
