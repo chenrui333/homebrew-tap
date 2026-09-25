@@ -31,7 +31,13 @@ class Openclacky < Formula
   end
 
   test do
-    assert_match "agent", shell_output("#{bin}/clacky help")
-    assert_match "Commands", shell_output("#{bin}/openclacky help")
+    # FIXME: Upstream does not expose a version command; replace this with a CLI version check when available.
+    gem_spec = Gem::Specification.load((libexec/"specifications/openclacky-#{version}.gemspec").to_s)
+    assert_equal version.to_s, gem_spec.version.to_s
+
+    output = with_env("CLACKY_TELEMETRY" => "0") do
+      shell_output("#{bin}/clacky agent --list --path #{testpath}")
+    end
+    assert_match "No sessions found.", output
   end
 end
