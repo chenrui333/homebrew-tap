@@ -23,6 +23,8 @@ class Newsjack < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/newsjack --version")
-    assert_match "newsjack", shell_output("#{bin}/newsjack --help")
+
+    output = shell_output("NEWSJACK_AUTO_UPDATE=0 #{bin}/newsjack doctor --json")
+    assert_match '"root_ok": true', output
   end
 end
