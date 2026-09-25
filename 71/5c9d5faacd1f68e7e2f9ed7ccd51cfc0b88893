@@ -1,0 +1,271 @@
+.github/workflows/autobump-cask.yml
+  s_2316195b58a8fc::t_0aeb352ac64a28 20-22
+.github/workflows/autobump-formula.yml
+  s_2316195b58a8fc::t_f00dabba6648c8 20-22
+.github/workflows/clean-up-closed-prs.yml
+  s_2316195b58a8fc::t_45505decc905ee 21,31
+.github/workflows/close-superseded-formula-prs.yml
+  s_2316195b58a8fc::t_ae823094241871 29
+.github/workflows/formula-status.yml
+  s_2316195b58a8fc::t_e366ad7fbcc94b 16-18
+.github/workflows/merge-gate.yml
+  s_2316195b58a8fc::t_a5625c49ced2e5 105-110,127
+.github/workflows/process-compose-preflight.yml
+  s_2316195b58a8fc::t_1bdc250a692106 17
+.github/workflows/publish.yml
+  s_2316195b58a8fc::t_270107a318e5e0 176-177,202-206
+.github/workflows/rebottle.yml
+  s_2316195b58a8fc::t_8373d22accc846 25
+.github/workflows/tests.yml
+  s_2316195b58a8fc::t_aa8d3b38adf327 39
+.github/workflows/update-formula-cask-list.yml
+  s_2316195b58a8fc::t_d2f47a95420eeb 23-25
+Casks/a/agent-sessions.rb
+  s_2316195b58a8fc::t_bb8f247253d3eb 2-3
+Casks/c/cate.rb
+  s_2316195b58a8fc::t_0f19414fa763c5 4-6
+Casks/c/claude-control.rb
+  s_2316195b58a8fc::t_3d07b60f94a554 4-6
+Casks/g/gitcomet.rb
+  s_2316195b58a8fc::t_137571a20560b0 4-6
+Casks/l/lanes.rb
+  s_2316195b58a8fc::t_7befef9b1cda5a 2-3
+Casks/p/piebald.rb
+  s_2316195b58a8fc::t_6724510f8940ac 2-3
+Formula/a/apify-actors-mcp-server.rb
+  s_2316195b58a8fc::t_83352b5127b88b 4-5,10
+Formula/a/apm-cli.rb
+  s_2316195b58a8fc::t_a3d98655e76b49 6-7,12-16,46-47,96-97,111-112,121-122,126-127,131-132,141-142,146-147,166-167,171-172,181-182,236-237,306-307,321-322
+Formula/a/apple-health-mcp.rb
+  s_2316195b58a8fc::t_d7e3fea5751da1 4-5,10-14
+Formula/a/aptui.rb
+  s_2316195b58a8fc::t_ff2de5a52765dd 4-5,11-12
+Formula/a/asmdiff.rb
+  s_2316195b58a8fc::t_8f2fd823e05512 6-7,13
+Formula/a/astro-language-server.rb
+  s_2316195b58a8fc::t_61538396623040 4-5,10-14
+Formula/a/aube.rb
+  s_2316195b58a8fc::t_2e0d90bb33a4a5 4-5,11-15
+Formula/a/azure-pipelines-language-server.rb
+  s_2316195b58a8fc::t_08595018ef2ae7 4-5,10
+Formula/b/brave-search-mcp-server.rb
+  s_2316195b58a8fc::t_0ae1297c470d39 4-5,10
+Formula/b/brighterscript-formatter.rb
+  s_2316195b58a8fc::t_7e58dc4a3e742a 4-5,10-14
+Formula/b/budgetclaw.rb
+  s_2316195b58a8fc::t_73da8b247eb8f7 4-5,10-14
+Formula/b/burn.rb
+  s_2316195b58a8fc::t_9d451fe97ad5c0 4-5,11-15
+Formula/c/c3x.rb
+  s_2316195b58a8fc::t_db1dbdf8ea9dd4 4-5,11-15,23,27
+Formula/c/castor.rb
+  s_2316195b58a8fc::t_1170e1c6b2b2db 4-5,10-14
+Formula/c/caveman-shrink.rb
+  s_2316195b58a8fc::t_636f5a43379bfb 4-5,10
+Formula/c/ccstatusline.rb
+  s_2316195b58a8fc::t_b753fbd6765738 4-5,10
+Formula/c/cf2pulumi.rb
+  s_2316195b58a8fc::t_7068d72bc2595c 5-6,12-16
+Formula/c/clawpatrol.rb
+  s_2316195b58a8fc::t_d2657dbd95c7d5 4-5,11-15,19
+Formula/c/cliamp.rb
+  s_2316195b58a8fc::t_71b9d38f52a35f 4-5,11-15
+Formula/c/clickup-mcp.rb
+  s_2316195b58a8fc::t_e346d36d3a7bd3 4-5,10
+Formula/c/clin.rb
+  s_2316195b58a8fc::t_8e74c4bb6b9008 4-5,11-15
+Formula/c/cloud-audit.rb
+  s_2316195b58a8fc::t_d2f1664ccb68a5 8-9,15-19
+Formula/c/cloudflare-ddns.rb
+  s_2316195b58a8fc::t_b296c57b7f17c9 4-5,11-15
+Formula/c/code-pushup.rb
+  s_2316195b58a8fc::t_da6b9fa5354032 4-5,10-14
+Formula/c/code-review-graph.rb
+  s_2316195b58a8fc::t_14350ed5b34f2f 6-7,13-17,36-37,46-47,56-57,61-62,66-67,71-72,106-107,131-132,151-152,186-187,201-202,226-227,231-232,246-247,286-287,326-327,336-337,341-342
+Formula/c/codebuff.rb
+  s_2316195b58a8fc::t_250328c4abf43b 4-5,10
+Formula/c/codemap.rb
+  s_2316195b58a8fc::t_ca68e64c78f409 4-5,11-15
+Formula/c/codespelunker.rb
+  s_2316195b58a8fc::t_98f3e14d87841a 4-5,11-15
+Formula/c/cohctl.rb
+  s_2316195b58a8fc::t_b9fa81e7f2baa1 5-6,12-16
+Formula/c/crush.rb
+  s_2316195b58a8fc::t_a6d83607ba5624 4-5,11-15
+Formula/d/datui.rb
+  s_2316195b58a8fc::t_eb72dc82e73ad9 4-5,10-12
+Formula/d/debugg-ai-mcp.rb
+  s_2316195b58a8fc::t_8afbc758018417 5-6,11,21
+Formula/d/dgop.rb
+  s_2316195b58a8fc::t_9601c082bcf5a6 4-5,11-12
+Formula/d/dotstate.rb
+  s_2316195b58a8fc::t_7bbc34cff57192 4-5,11-15,28
+Formula/d/drydock.rb
+  s_2316195b58a8fc::t_4e69b0e59a560a 4-5,11-15
+Formula/e/eas-cli.rb
+  s_2316195b58a8fc::t_1473e5aeb9d183 4-5,10
+Formula/e/ec.rb
+  s_2316195b58a8fc::t_e666d27ab6915f 4-5,11-15
+Formula/e/epiq.rb
+  s_2316195b58a8fc::t_453906b8bf759d 4-5,10
+Formula/f/flipt.rb
+  s_2316195b58a8fc::t_e3f5e5b92fbbd7 4-5,12-16
+Formula/f/floci.rb
+  s_2316195b58a8fc::t_714072dd4d2641 4-5,11-15
+Formula/f/flow-network.rb
+  s_2316195b58a8fc::t_4540c56c10ce3a 4-5,11-15
+Formula/f/fresh.rb
+  s_2316195b58a8fc::t_a9f635a34e90ae 4-5,11-15
+Formula/g/gecit.rb
+  s_2316195b58a8fc::t_7ba8ca4553a23a 4-5,11-13
+Formula/g/gh-dash.rb
+  s_2316195b58a8fc::t_525cb623ab16f3 4-5,10-14
+Formula/g/ghgrab.rb
+  s_2316195b58a8fc::t_89965134ead7bd 4-5,11-15
+Formula/g/gistui.rb
+  s_2316195b58a8fc::t_19367f4d6d62d3 4-5,11-15
+Formula/g/gitlabform.rb
+  s_2316195b58a8fc::t_d7c198cb4416ba 6-7,12-17,26-27,36-37,56-57,76-77,111-112,116-117,121-122,126-127,136-137,176-177,186-187
+Formula/g/gitpane.rb
+  s_2316195b58a8fc::t_184c5f146e5f86 4-5,11-15
+Formula/g/gitsocial.rb
+  s_2316195b58a8fc::t_1efe63d091aba9 4-5,11-15
+Formula/g/gitte.rb
+  s_2316195b58a8fc::t_425263ab17a154 4-5,11-15
+Formula/g/gitwig.rb
+  s_2316195b58a8fc::t_3eb67857c3c724 4-5,11-15
+Formula/g/glab-tui.rb
+  s_2316195b58a8fc::t_af0cec88e0f5a3 4-5,11-15
+Formula/g/go-getter.rb
+  s_2316195b58a8fc::t_da8ac5005d71ef 4-5,16-20,27
+Formula/g/gofakeit.rb
+  s_2316195b58a8fc::t_aadbe84c1111f3 4-5,11-15
+Formula/g/gokin.rb
+  s_2316195b58a8fc::t_67fabf77365171 4-5,11-15
+Formula/g/golazo.rb
+  s_2316195b58a8fc::t_6a227f6875ce18 4-5,11-15
+Formula/g/gpk.rb
+  s_2316195b58a8fc::t_6abc0f4c5ca372 4-5,11-15
+Formula/g/graphjin.rb
+  s_2316195b58a8fc::t_8431681efc0e8c 4-5,11-15
+Formula/g/graphtage.rb
+  s_2316195b58a8fc::t_4e752a9c75d75d 6-7,12-17,26-29,37-38,42-43,47-48,56-60,66-68,72-78
+Formula/g/grcov.rb
+  s_2316195b58a8fc::t_10d14113c6bf4b 4-5,11-16
+Formula/g/gsty.rb
+  s_2316195b58a8fc::t_39e91356032156 4-5,11-15
+Formula/h/hapi.rb
+  s_2316195b58a8fc::t_27c83eb6c0e438 4-5,10-14
+Formula/h/hardcover-tui.rb
+  s_2316195b58a8fc::t_3cc17a6dfbd3e2 4-5,11-15
+Formula/h/hauler.rb
+  s_2316195b58a8fc::t_9feac841c0c0bc 4-5,11-15
+Formula/h/hyprmoncfg.rb
+  s_2316195b58a8fc::t_1adc4460b74bf7 4-5,11-12
+Formula/i/ifstate.rb
+  s_2316195b58a8fc::t_2e176a3b12470b 6-7,13-14,64
+Formula/i/inspect-cert-chain.rb
+  s_2316195b58a8fc::t_93369621d501d1 4-5,11-15
+Formula/j/jiq.rb
+  s_2316195b58a8fc::t_40a754f4b4cdeb 4-5,10-14
+Formula/j/justray.rb
+  s_2316195b58a8fc::t_9a633ccfd05dc1 4-5,11-15,18-19
+Formula/k/kcl-kafka.rb
+  s_2316195b58a8fc::t_f49f965fe8fb8d 4-5,11-15
+Formula/k/knip.rb
+  s_2316195b58a8fc::t_d0906875508e8c 4-5,10-14
+Formula/k/ku.rb
+  s_2316195b58a8fc::t_7f94ea27ff6404 4-5,11-15
+Formula/k/kumo.rb
+  s_2316195b58a8fc::t_57a1f9d0900d5b 4-5,11-15
+Formula/l/lazyworktree.rb
+  s_2316195b58a8fc::t_eb539a3e17cb24 4-5,11-15,31-40
+Formula/l/lfk.rb
+  s_2316195b58a8fc::t_8836477eaf9189 4-5,11-15
+Formula/l/litespeed.rb
+  s_2316195b58a8fc::t_1378500ea62610 4-5,11-14
+Formula/l/livediff.rb
+  s_2316195b58a8fc::t_4909b0ee1a17ba 4-5,11-15
+Formula/l/lsoff.rb
+  s_2316195b58a8fc::t_c988531ea71f2e 4-5,11-15
+Formula/m/mandible.rb
+  s_2316195b58a8fc::t_515589a79715a6 4-5,11-15
+Formula/m/marchat.rb
+  s_2316195b58a8fc::t_091767aa5924dc 4-5,10-14
+Formula/m/mcp-alchemy.rb
+  s_2316195b58a8fc::t_ca7fdfb12b7c90 6-7,13-17,34-35,44-45,53-55,58-65,69-70,89-90,98-100,104-105,109-110,114-115,144-145,149-150,154-155,159-160,170-177
+Formula/m/mcp-remote.rb
+  s_2316195b58a8fc::t_8b83f0c3065a39 4-5,10,21-22
+Formula/m/mcp-use.rb
+  s_2316195b58a8fc::t_4a1aa065d6a230 4-5,10-14
+Formula/m/mcpd.rb
+  s_2316195b58a8fc::t_24c7065e36968c 4-5,11-15
+Formula/m/ministack.rb
+  s_2316195b58a8fc::t_988858efbc0140 6-7,13-17,94-95
+Formula/m/mlbt.rb
+  s_2316195b58a8fc::t_8ffd4b3460f387 4-5,11-15
+Formula/m/mlx-audio.rb
+  s_2316195b58a8fc::t_b1e013e5d03038 6-7,13-15,58-59,73-74,78-79,103-104,108-109,148-149,173-174,178-179,183-184
+Formula/m/mlx-vlm.rb
+  s_2316195b58a8fc::t_a4c5e0fc5ca355 6-7,13-15,56-57,81-82,86-87,111-112,116-117,141-142,171-172,211-212,216-217,221-222,226-227,231-232,236-237
+Formula/m/mongodb-mcp-server.rb
+  s_2316195b58a8fc::t_1348cd9ec6b899 4-5,10-14
+Formula/m/msgvault.rb
+  s_2316195b58a8fc::t_b5dfd505a14316 4-5,11-15
+Formula/m/mult.rb
+  s_2316195b58a8fc::t_b0e46e290a6ca6 4-5,11-16,28-66
+Formula/m/multica.rb
+  s_2316195b58a8fc::t_f6b911cb9f8949 4-5,11-15
+Formula/m/mvt.rb
+  s_2316195b58a8fc::t_323d051e1ecf3d 6-7,14-18,60-61,64-66,170-171,175-181
+Formula/m/myx.rb
+  s_2316195b58a8fc::t_74ce16aaec9692 4-5,11-15
+Formula/n/namespace-cli.rb
+  s_2316195b58a8fc::t_b1590f56dbb703 5-6,12-16
+Formula/n/nest-cli.rb
+  s_2316195b58a8fc::t_ef30e0049b4875 4-5,10
+Formula/n/netwatch.rb
+  s_2316195b58a8fc::t_53ca8eb7c029d6 4-5,11-15
+Formula/n/newsjack.rb
+  s_2316195b58a8fc::t_bd767f7a3a7abc 4-5,10-14,26
+Formula/n/noodle.rb
+  s_2316195b58a8fc::t_dbbb00ee24d2bd 4-5,11-15
+Formula/n/npm-np.rb
+  s_2316195b58a8fc::t_34245af7e091d4 4-5,10-14
+Formula/n/nucleus-container.rb
+  s_2316195b58a8fc::t_8d19c2700416fe 4-5,11-12
+Formula/o/octelium.rb
+  s_2316195b58a8fc::t_22a2df25cae2a9 4-5,11-15,44
+Formula/o/octoscope.rb
+  s_2316195b58a8fc::t_28c6b4970b9311 4-5,11-15
+Formula/o/oh-my-claude.rb
+  s_2316195b58a8fc::t_7fa706caa4777d 4-5,11-15,31-32,34-38
+Formula/o/oh-my-codex.rb
+  s_2316195b58a8fc::t_7a1a85575ace6a 4-5,11-15
+Formula/o/omnictl.rb
+  s_2316195b58a8fc::t_72dcf8c8494f9d 4-5,11-15,27-28
+Formula/o/open-code-review.rb
+  s_2316195b58a8fc::t_118f5d78b2c54c 4-5,11-15
+Formula/o/openclacky.rb
+  s_2316195b58a8fc::t_92548b80c36b61 4-5,11-15,34-35
+Formula/o/oproxy.rb
+  s_2316195b58a8fc::t_0a5116c2258d19 4-5,11-15
+Formula/l/llxprt-code.rb
+  s_2316195b58a8fc::t_98fd8583b7d2a3 4-5,19,22,24-43,49,56-62,75-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "715c9d5faacd1f68e7e2f9ed7ccd51cfc0b88893",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
