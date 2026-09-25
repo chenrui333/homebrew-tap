@@ -24,8 +24,7 @@ class Omnictl < Formula
   end
 
   test do
-    # assert_match version.to_s, shell_output("#{bin}/omnictl --version")
-    system bin/"omnictl", "--version"
+    assert_match version.to_s, shell_output("#{bin}/omnictl --version")
 
     system bin/"omnictl", "config", "new"
     assert_match "Current context: default", shell_output("#{bin}/omnictl config info")
