@@ -1,0 +1,20 @@
+Formula/l/llxprt-code.rb
+  s_2316195b58a8fc::t_98fd8583b7d2a3 4-5,19,22,24-36,47-53,59,66-72,85-87
+  s_2316195b58a8fc::t_b3ec8b936811c9 37-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e604c021cdfce50465f7cad0709ce8da97610309",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
