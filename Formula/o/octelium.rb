@@ -1,18 +1,17 @@
 class Octelium < Formula
   desc "Next-gen FOSS zero-trust platform—self-hosted VPN, ZTNA, API gateway & homelab"
   homepage "https://octelium.com/docs/octelium/latest/overview/intro"
-  url "https://github.com/octelium/octelium/archive/refs/tags/v0.41.0.tar.gz"
-  sha256 "05e47cc7acfdaf99d6ac4161afeb8e0f703378b5ba46366080d7582ac4b42b62"
+  url "https://github.com/octelium/octelium/archive/refs/tags/v0.43.0.tar.gz"
+  sha256 "7fd84a0756ca255f7e2bb055fa1fa549b2284cce55ad67b56c5ebc293514d140"
   license "Apache-2.0"
   head "https://github.com/octelium/octelium.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "364631d6b55342d7184d979c231312fc9d92b0ab6731d3c645399a3a3030119b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "364631d6b55342d7184d979c231312fc9d92b0ab6731d3c645399a3a3030119b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "364631d6b55342d7184d979c231312fc9d92b0ab6731d3c645399a3a3030119b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c197576369ddf5e8c929dbbffe927664b0b024c41d2360eccb18eefc937d4c9"
-    sha256 cellar: :any,                 x86_64_linux:  "ac324ac1c686bb6afd66d49371881e41d51bf9cb43f7dc628f7b9705e07fb543"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0e69d39002411f763e0bd7b9628d9e2306ed378905ac9503e648dadbb6269e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0e69d39002411f763e0bd7b9628d9e2306ed378905ac9503e648dadbb6269e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48f01d445acb9a13747d18d5770c67e659944bd585c2780a7d9ebee6b6be594d"
+    sha256 cellar: :any,                 x86_64_linux:  "ec013c70199637136ef22541eb361aa17946a51ef8d18ed2be9ab1cf54895230"
   end
 
   depends_on "go" => :build
@@ -41,6 +40,6 @@ class Octelium < Formula
     assert_match "Error: The Cluster domain is not set.", output
 
     output = shell_output("#{bin}/octops init example.com --bootstrap #{testpath}/bootstrap.yaml 2>&1", 1)
-    assert_match "try setting KUBERNETES_MASTER environment variable", output
+    assert_match "Please set the kubeconfig file path", output
   end
 end
