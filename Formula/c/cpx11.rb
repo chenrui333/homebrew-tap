@@ -28,12 +28,11 @@ class Cpx11 < Formula
   end
 
   test do
-    (testpath/"src.txt").write("copy-me")
+    assert_match version.to_s, shell_output("#{bin}/cpx --version")
 
+    (testpath/"src.txt").write("copy-me")
     system bin/"cpx", testpath/"src.txt", testpath/"dst.txt"
     assert_path_exists testpath/"dst.txt"
     assert_equal "copy-me", (testpath/"dst.txt").read
-
-    assert_match version.to_s, shell_output("#{bin}/cpx --version")
   end
 end
