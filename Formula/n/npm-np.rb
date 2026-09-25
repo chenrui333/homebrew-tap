@@ -1,17 +1,16 @@
 class NpmNp < Formula
   desc "Better `npm publish`"
   homepage "https://github.com/sindresorhus/np"
-  url "https://registry.npmjs.org/np/-/np-12.1.0.tgz"
-  sha256 "67ea1872dfdd9bf63bd6bfb0fb524fed7684f64b12576ac58f578e2c3e521158"
+  url "https://registry.npmjs.org/np/-/np-12.1.1.tgz"
+  sha256 "d813fdf48fe61b9d44f0138db1b66479a14d408a0d03a4be4cb87d990a2eb239"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77764121b23df6ec20aa9f5f4b930aa183b902070defd05f1c63607d8cbce739"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77764121b23df6ec20aa9f5f4b930aa183b902070defd05f1c63607d8cbce739"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77764121b23df6ec20aa9f5f4b930aa183b902070defd05f1c63607d8cbce739"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "127e8493606e8124030a3a95efba087ed2c0fc77bcb4dc6d86439a69346cad8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "127e8493606e8124030a3a95efba087ed2c0fc77bcb4dc6d86439a69346cad8b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db1be72a0f0276300717a54e0ae7c3eb8441bdffd8f3abd3c62d93ea6a4f2863"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db1be72a0f0276300717a54e0ae7c3eb8441bdffd8f3abd3c62d93ea6a4f2863"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aaea81c35b63932f0ba4d24da11be688fbe7e11091ae8fbff56d4c51aee799f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aaea81c35b63932f0ba4d24da11be688fbe7e11091ae8fbff56d4c51aee799f"
   end
 
   depends_on "node"
