@@ -1,18 +1,17 @@
 class Oproxy < Formula
   desc "Open-source MITM proxy to intercept, inspect, and mock network traffic"
   homepage "https://github.com/sauravrao637/oproxy"
-  url "https://github.com/sauravrao637/oproxy/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "4adb1c55a0bd8cba01686b33036db2eccf4b3985636a5e8222d52ba74dbda042"
+  url "https://github.com/sauravrao637/oproxy/archive/refs/tags/v0.1.11.tar.gz"
+  sha256 "125fdd9b50540ceed5195d827b7b32d6293c0084bdcd1546b24129604111fcd6"
   license "MIT"
   head "https://github.com/sauravrao637/oproxy.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "468295a224d7fd5428411c5084ba08b997316499f3743a454a094eecf7ecf137"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71e41a6b9ae8877743023f7c833de5cbae693921265fbd401401db4fd0cce704"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "563a2c289e28a370eb18e7cc4e8e85030eed659dd1fdf985dab0d22b069f7962"
-    sha256 cellar: :any,                 arm64_linux:   "dd3ac4f5b0fb0255584290ddd886c614ff13391d0cf92b51111ad1771221d945"
-    sha256 cellar: :any,                 x86_64_linux:  "1b1d3434ab7f3ec4efa1be03ceaf04d8065166b8e6bb61180bae3f23fb9d5ae8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10bd87ad3323bd3e07e3464075e28c9de30b4cd850adda35b65858e8968f141d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cf3c7ffcbe965e05229b90fbc60872066addd9d9af8bfce719306c7283742f4"
+    sha256 cellar: :any,                 arm64_linux:   "e8224376079eaf7b9d8062c4d61ad285adc5799ae4b127beb243487031d14e2e"
+    sha256 cellar: :any,                 x86_64_linux:  "7841e7650fb3560c565fb1809fb73fa19ea6dd208c52c92983d57641db841eea"
   end
 
   depends_on "node" => :build
@@ -27,7 +26,14 @@ class Oproxy < Formula
     system "cargo", "install", *std_cargo_args
   end
 
+  service do
+    run [opt_bin/"oproxy"]
+    keep_alive true
+    working_dir var/"oproxy"
+  end
+
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     port = free_port
     config = testpath/"config.yaml"
     config.write <<~YAML
