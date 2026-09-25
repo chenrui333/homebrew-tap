@@ -18,10 +18,16 @@ class UnusedDeps < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"unused_deps"), "./unused_deps"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.buildVersion=#{version}", output: bin/"unused_deps"), "./unused_deps"
   end
 
   test do
-    system bin/"unused_deps", "--version"
+    assert_match version.to_s, shell_output("#{bin}/unused_deps --version")
+
+    (testpath/"bin").mkpath
+    output = with_env(PATH: (testpath/"bin").to_s) do
+      shell_output("#{bin}/unused_deps 2>&1", 2)
+    end
+    assert_match "executable file not found", output
   end
 end
