@@ -1,0 +1,24 @@
+Formula/o/oxylabs-mcp.rb
+  s_2316195b58a8fc::t_3f322ef8e4a951 376-378
+  s_2316195b58a8fc::t_c3e8345d408ba5 379
+  s_2316195b58a8fc::t_a5e0ffbae05aa0 32-34
+  s_2316195b58a8fc::t_571921210b7525 381-382
+  s_2316195b58a8fc::t_cc97d644a6b94e 31
+  s_2316195b58a8fc::t_ed4fa495b5635e 6-7,42-43,52-53,67-68,72-73,77-78,82-83,117-118,131-135,146-150,152-153,172-173,202-203,262-263,267-268,277-278,282-283,292-293,332-333,346-350,357-358,362-363,367-368
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "52512b8a8a6795495928538a5ea3f652f89b830a",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
