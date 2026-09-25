@@ -1,0 +1,20 @@
+Formula/r/raiz.rb
+  s_2316195b58a8fc::t_d3f7ea383b4d91 108-113
+  s_2316195b58a8fc::t_d36148feecc80b 6-7,27-28,62-63,82-83,97-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c7c0115eaec87eb2d7c7885d693d665f27b84422",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
