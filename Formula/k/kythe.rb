@@ -65,6 +65,26 @@ class Kythe < Formula
         CPP
         s.gsub!(old_definition, new_definition) || raise("NullClaimToken ID definition not found")
       end
+
+      # GCC cannot resolve Kythe's self-referential inline class-token address.
+      inreplace "kythe/cxx/indexer/cxx/KytheGraphObserver.h" do |s|
+        s.gsub!("return kTokenClass;", "return ClassToken();") ||
+          raise("KytheClaimToken ID invocation not found")
+        s.gsub!("return t->GetClass() == kTokenClass;", "return t->GetClass() == ClassToken();") ||
+          raise("KytheClaimToken classof invocation not found")
+
+        old_definition = <<~CPP
+          static inline const uintptr_t kTokenClass =
+                reinterpret_cast<uintptr_t>(&kTokenClass);
+        CPP
+        new_definition = <<~CPP
+          static uintptr_t ClassToken() {
+            static const char token = 0;
+            return reinterpret_cast<uintptr_t>(&token);
+          }
+        CPP
+        s.gsub!(old_definition, new_definition) || raise("KytheClaimToken ID definition not found")
+      end
     end
     # GCC cannot deduce a common type for DirectoryEntryRef and nullptr here.
     inreplace "kythe/cxx/extractor/cxx_extractor.cc" do |s|
