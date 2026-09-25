@@ -1,18 +1,17 @@
 class Noodle < Formula
   desc "Terminal REST client"
   homepage "https://github.com/wilfredinni/noodle"
-  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "16187ef194664548eb7e220209a2f1e0633e339760425eced2ee3a4d8db8c383"
+  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "96e4e9426c9caa1e53f5c2b6a1a8d2800f4defae9ba2450050f1ec6ce7c5d41e"
   license "Apache-2.0"
   head "https://github.com/wilfredinni/noodle.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f00b7caee72e2974d21b99d3872b16396a9dfafcdfc3cd0cf4e3dab45e476831"
-    sha256 cellar: :any,                 arm64_sequoia: "02162b51980710863e9bf45fb42cdbbaa06af1c8a88a39301d10a43ff1b83f31"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ea9a3521bbcfb878a7dcc2372a4c7002e6264460bc8e6c7e68f7aaacca1be0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74606765d6787251a30150029d5059cb81b9ab5c75b37ebf608dff4a6bea0b86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45fa8a5ab56ccfda260284394cd2450e06cbb468e3c4701251e17ef110cd610a"
+    sha256 cellar: :any,                 arm64_tahoe:   "752dcc3821e8d30eadf01bbdcca8f48cf3d194db739fbc29b0a1f9bf54a45a85"
+    sha256 cellar: :any,                 arm64_sequoia: "cedf949f195ae362e46da1997201a9145ddaa0407bafa57d2eeb8eaa6e665c8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d69091b0a2d5ca666823606a8aea6b19a116738704df3c16ef066549904e9a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d030a92d6cbf1e3d23445564bb0a893d8e786bd3055e549c2d2192f7c805444f"
   end
 
   depends_on "zig" => :build
