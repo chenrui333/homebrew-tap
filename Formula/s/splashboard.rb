@@ -23,5 +23,6 @@ class Splashboard < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/splashboard --version 2>&1")
+    assert_match "# splashboard", shell_output("#{bin}/splashboard init zsh")
   end
 end
