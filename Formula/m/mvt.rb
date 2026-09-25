@@ -3,19 +3,18 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/d7/eb/4d617d384cc90224e0b7746077198d49b10031d323ce90ce56a11fd2d237/mvt-2026.9.1.tar.gz"
-  sha256 "8716852ad04767fdd213b660fd67888e988000ca227d57ec2da2f9e656226b2c"
+  url "https://files.pythonhosted.org/packages/01/d5/d9a0dee0d86da4c8bfce22bc55968b99a0dc08265207b136eba1769bfd91/mvt-2026.9.7.tar.gz"
+  sha256 "d3324c546eae1ea5df1982ad2786e002cb8069512fd49944c88c2c3771d6efd8"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c257d0e90233ca46496b0ead3d4adfd6844eb145da4fc25f63617d0b00e8faa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5502c81404f06b19934b50bbe1dcf8a0e9b535249bd9c9c67251f63b75952302"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b04e276e1caa68a7a5210f096da9c902aa18861a8c6c131407b5dd3d571fa137"
-    sha256 cellar: :any,                 arm64_linux:   "30015a8284a84a1066f5ccee5d8e57c5a4d5ae5ffd6f147f656ee4e9773b9c79"
-    sha256 cellar: :any,                 x86_64_linux:  "adb280f7a1c4550fd8b6bc30b57c4cb8db0111ada20ed20bed75bcd65e48adc2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5fe2c0db5a75b461947bfea655e4186f0f1aa97ab91649a80949054bfd629a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e92fa07bcf66866e77ca14275e73d0b02254bc290d21401aa19699df64e6067"
+    sha256 cellar: :any,                 arm64_linux:   "d21aec51eef0f8a933d6c15112b525c892b53cd89871952e19e63fc72eeb0eff"
+    sha256 cellar: :any,                 x86_64_linux:  "88f1f5de2baeeb017e9aebe65f5b604c4550d414fee8a09b2c42e7e32e7090b4"
   end
 
   depends_on "rust" => :build
@@ -57,13 +56,13 @@ class Mvt < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
-  resource "iosbackup" do
-    url "https://files.pythonhosted.org/packages/db/b8/4cd52322deceb942b9e18b127d45d112c2f7a3ec7821ab528659d4f04275/iOSbackup-0.9.925.tar.gz"
-    sha256 "33545a9249e5b3faaadf1ee782fe6bdfcdb70fae0defba1acee336a65f93d1ca"
+  resource "iphone-backup-decrypt" do
+    url "https://files.pythonhosted.org/packages/6f/e7/bcdacdec21d628122ba240e7f742ab2175149e58672be63af55ff37a0f28/iphone_backup_decrypt-0.9.0.tar.gz"
+    sha256 "13b18fef3c8e3af627914f8c1a429bbc5555dfb0505239ba49efe99984cc0c96"
   end
 
   resource "libusb1" do
@@ -167,18 +166,12 @@ class Mvt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "iosbackup"
-
-    # iosbackup is incompatible with build isolation: https://github.com/avibrazil/iOSbackup/pull/32
-    resource("iosbackup").stage do
-      inreplace "setup.py", "from iOSbackup import __version__", "__version__ = '#{resource("iosbackup").version}'"
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources
 
     %w[mvt-android mvt-ios].each do |script|
       generate_completions_from_executable(bin/script, shell_parameter_format: :click)
