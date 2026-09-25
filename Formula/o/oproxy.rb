@@ -27,7 +27,14 @@ class Oproxy < Formula
     system "cargo", "install", *std_cargo_args
   end
 
+  service do
+    run [opt_bin/"oproxy"]
+    keep_alive true
+    working_dir var/"oproxy"
+  end
+
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     port = free_port
     config = testpath/"config.yaml"
     config.write <<~YAML
