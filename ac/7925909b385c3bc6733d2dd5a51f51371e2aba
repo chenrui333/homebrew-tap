@@ -1,0 +1,28 @@
+Formula/v/vaults3.rb
+  s_2316195b58a8fc::t_f889018e8aaadf 37-42
+  s_5d48a09aaeed95::t_cac96eb0bb0f72 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ac7925909b385c3bc6733d2dd5a51f51371e2aba",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_5d48a09aaeed95": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cf09-0c76-7870-9d53-954dba10f063",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
