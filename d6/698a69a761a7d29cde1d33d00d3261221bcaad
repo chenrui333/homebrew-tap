@@ -1,0 +1,20 @@
+Formula/p/phpinsights.rb
+  s_2316195b58a8fc::t_8a793ea595e9e5 27
+  s_2316195b58a8fc::t_c7d75ad7db6759 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d6698a69a761a7d29cde1d33d00d3261221bcaad",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
