@@ -1,0 +1,21 @@
+.github/workflows/autobump-cask.yml
+  s_2316195b58a8fc::t_2cba9bb08a08d6 39-49,64-66,68-75,77,79-100,102,105-108
+.github/workflows/autobump-formula.yml
+  s_2316195b58a8fc::t_beb548f3cbb449 39-49,69-71,73-80,82,84-105,107,110-113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8a98043ba0476fb58da57b51da05edd65eb29081",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
