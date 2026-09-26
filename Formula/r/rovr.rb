@@ -3,19 +3,18 @@ class Rovr < Formula
 
   desc "Post-modern terminal file explorer"
   homepage "https://github.com/NSPC911/rovr"
-  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.10.1.post1.tar.gz"
-  version "0.10.1.post1"
-  sha256 "ee1688beab8829e2407c93ea6dd17bf18d8eccc10484fff8034959b93b3d445c"
+  url "https://github.com/NSPC911/rovr/archive/refs/tags/v0.10.2.post1.tar.gz"
+  version "0.10.2.post1"
+  sha256 "a44f2d542fde0545269bd9575b65a9e1c7289f3dc8998cf3766453ae67db021b"
   license "MIT"
   head "https://github.com/NSPC911/rovr.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "fd736282957d854f52f5f07508ad14b75b72bf0c2a1933f11c5e542938d13bb9"
-    sha256 cellar: :any, arm64_sequoia: "df3084dae0dfe726182a1e3f993364e1c41d6293cda9333becaf812169a4c17b"
-    sha256 cellar: :any, arm64_sonoma:  "9fc41084b58bbea104d4afdbba068ed27d1cf522deee49b9c8be42b9063802b3"
-    sha256 cellar: :any, arm64_linux:   "b97777e5d232ba56c1043e85a2138898a13481b88bcea8ebf48988646122f0f3"
-    sha256 cellar: :any, x86_64_linux:  "08fc1aadf081ac8d0d860bb385592b54955965304cc26f0edae457a61014c9ca"
+    sha256 cellar: :any, arm64_tahoe:   "98cf0049e6d11cdf787fbc0bf91afc56bb7d1a95b76a0d3178554def3851f4fc"
+    sha256 cellar: :any, arm64_sequoia: "05e6f41143164a7d25302d3d9064a30363d4d2ec12b0535cff89b684e5bc8b1e"
+    sha256 cellar: :any, arm64_linux:   "20b784d6b1f5bdf2bdb1d3251ad55c6d6c70b135d5c85c4c5e526fecaa50b7b9"
+    sha256 cellar: :any, x86_64_linux:  "99bfa2acba2e2e10f61a5a33b560ec918566b3c564701cbe975091d61935efcb"
   end
 
   depends_on "pkgconf" => :build
@@ -183,10 +182,11 @@ class Rovr < Formula
     assert_match version.to_s, shell_output("#{bin}/rovr --version")
 
     output = JSON.parse(shell_output("#{bin}/rovr --config-path --config-folder=#{testpath}"))
-    assert_equal %w[custom_config custom_styles logs persistent_state pinned_folders], output.keys.sort
-    assert_equal "config.toml", File.basename(output["custom_config"])
+    assert_equal %w[global_styles keys logs main_config persistent_state pinned_folders themes], output.keys.sort
+    assert_equal "config.toml", File.basename(output["main_config"])
+    assert_equal "keys.toml", File.basename(output["keys"])
     assert_equal "pins.json", File.basename(output["pinned_folders"])
-    assert_equal "style.tcss", File.basename(output["custom_styles"])
+    assert_equal "style.tcss", File.basename(output["global_styles"])
     assert_equal "state.toml", File.basename(output["persistent_state"])
   end
 end
