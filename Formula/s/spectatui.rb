@@ -1,18 +1,17 @@
 class Spectatui < Formula
   desc "Terminal dashboard for GitHub Spec-Kit"
   homepage "https://github.com/tinesoft/spectatui"
-  url "https://github.com/tinesoft/spectatui/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "bc0eab9e1af23bfaa14cc24a9dd73bc487636e37665947c125b2b3e0a2c2d005"
+  url "https://github.com/tinesoft/spectatui/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "73255d747dc31fc97b78d6a52750aaa7fedb4fcda85861a9b3bddc22e08986d4"
   license "MIT"
   head "https://github.com/tinesoft/spectatui.git", branch: "develop"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1724696b4af0215445f663db199a98f83dcb9732f698e11050d24889f3ca2737"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03f2233c6287d54009b57fb4aa07a2944c3be53ae3cf082df302babfb923fac6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aaf37ffdbedc50348062c16fad099316760a49f055a22b84e2a71df05cc018d"
-    sha256 cellar: :any,                 arm64_linux:   "b82d4346d23029b1ebd95f5488d322f27d2c9414c8a8efe472b12f1f298c11c1"
-    sha256 cellar: :any,                 x86_64_linux:  "83747d59d44470d60a128aa61a4338575bfe7d87ab0c45142d2d0cfb79190388"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3ff2e325789cab483945f117c162c3e5568924eef477944e4bcf96a7ef17b14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37bcd99fa92af8ca11bbf2653b3893acf1e48cd942eb087de85663c4a03c8921"
+    sha256 cellar: :any,                 arm64_linux:   "43d0a4fca4c61f8e064e1e34354fffa8db501498932de08ce17a0f3b6ff6a35e"
+    sha256 cellar: :any,                 x86_64_linux:  "c3b8f4e7985bf2d526e6d88e246bb0b8759b3c6ed61306284c90381c53df5193"
   end
 
   depends_on "rust" => :build
