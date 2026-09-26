@@ -25,8 +25,8 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: formula-merge-${{ github.event.pull_request.head.ref || github.event.workflow_run.head_branch || github.run_id }}-${{ github.event.workflow_run.name || github.event.action || github.event_name }}
-  cancel-in-progress: true
+  group: formula-merge-${{ github.event.pull_request.head.ref || github.event.workflow_run.head_branch || github.run_id }}
+  cancel-in-progress: false
 
 jobs:
   cancel-stale-auto-merge:
@@ -196,7 +196,7 @@ jobs:
           echo "Timed out waiting for checks on the published PR head."
           exit 1
 
-      - name: Enable merge-commit auto-merge
+      - name: Merge formula PR with a merge commit
         if: steps.validate.outputs.eligible == 'true'
         env:
           EXPECTED_HEAD_SHA: ${{ steps.validate.outputs.head_sha }}
@@ -250,8 +250,20 @@ jobs:
             exit 0
           fi
 
-          gh pr merge "$PR_NUMBER" \
+          if gh pr merge "$PR_NUMBER" \
             --repo "$GITHUB_REPOSITORY" \
-            --auto \
             --merge \
-            --match-head-commit "$EXPECTED_HEAD_SHA"
+            --match-head-commit "$EXPECTED_HEAD_SHA"; then
+            exit 0
+          else
+            merge_status=$?
+          fi
+
+          merged="$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json mergedAt --jq '.mergedAt != null')"
+          if [[ "$merged" == "true" ]]; then
+            echo "PR #$PR_NUMBER was merged concurrently; treating the verified merged state as success."
+            exit 0
+          fi
+
+          echo "GitHub merge failed and PR #$PR_NUMBER is still open."
+          exit "$merge_status"
