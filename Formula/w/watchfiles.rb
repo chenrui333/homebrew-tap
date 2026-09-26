@@ -3,30 +3,34 @@ class Watchfiles < Formula
 
   desc "Simple, modern and high performance file watching and code reload in python"
   homepage "https://watchfiles.helpmanual.io/"
-  url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-  sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+  url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+  sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f2559a5937d722b43931a2078cf4fe52a8541d0b2a484851c27b1730e96cf531"
-    sha256 cellar: :any,                 arm64_sequoia: "373fefec69666aaf9ff9abb2944985848e0f7b5446cbc44b100579e575246cee"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0ea651458ac91bfaf16b7808d3c3ba5302151f8eb9b1bfd899bce2c2ea1fc1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a98ca740fb32279f60cf6d95cbab7a194ffe802d6de1d4ba607bb5e17a892426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "241a9c9a633e0a83ff45688d0aa227b1a873c74872d7e9061ba86c1b3f94c220"
+    sha256 cellar: :any, arm64_tahoe:   "518aaa0eae0ac3d02c0b7b45776c31941ffa3a0c745df3ccc2006e1f265e8304"
+    sha256 cellar: :any, arm64_sequoia: "ac6f7b0315aef110dc2caba7352337b7257e411b2118433223953dc9b6397f34"
+    sha256 cellar: :any, arm64_linux:   "5ce97cff09a218c5f2cdda69ddb0c432dec5a8e6d6158cbc9fe8a7f754076cb3"
+    sha256 cellar: :any, x86_64_linux:  "b931a835561ae757845243decc827b292c1f755ac34cf8a9c055fd95885e5c1b"
   end
 
   depends_on "rust" => :build
   depends_on "python@3.14"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz"
-    sha256 "334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
-    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install
@@ -35,5 +39,8 @@ class Watchfiles < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/watchfiles --version")
+
+    output = shell_output("#{bin}/watchfiles true #{testpath}/missing 2>&1", 1)
+    assert_match "does not exist", output
   end
 end
