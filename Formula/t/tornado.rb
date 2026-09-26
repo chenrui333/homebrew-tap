@@ -8,11 +8,10 @@ class Tornado < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d950585ac59c67169de0eaedefc94ec930ed6239e612ea28085e37415fddc25c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d950585ac59c67169de0eaedefc94ec930ed6239e612ea28085e37415fddc25c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d950585ac59c67169de0eaedefc94ec930ed6239e612ea28085e37415fddc25c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "653b0c36335bcfdcc54a468666e77ecaec3e629d34c22e1888f75bcfed8f2422"
-    sha256 cellar: :any,                 x86_64_linux:  "8f3e189262a64aefeb04c18582fd95a42ece944da36e6db0f8a055f9cc13ca7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff70b19692c7b625a051e5508f400ccdcac1ef37e8b038ba5de1c3d2b4b55328"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff70b19692c7b625a051e5508f400ccdcac1ef37e8b038ba5de1c3d2b4b55328"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "386ca1be334785f56404d60571d31e7356877d1b0c31b4b8d7bd905c24c006d7"
+    sha256 cellar: :any,                 x86_64_linux:  "74649dfe9399d668a47db65f289e3ab2e79497fd5772bae120c7af961045f86a"
   end
 
   depends_on "go" => :build
