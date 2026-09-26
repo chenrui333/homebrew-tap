@@ -1,18 +1,17 @@
 class Sonar < Formula
   desc "CLI tool for inspecting and managing localhost ports"
   homepage "https://github.com/raskrebs/sonar"
-  url "https://github.com/raskrebs/sonar/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "447230c9a9715a00dba52ddfdec489e76938c0df86470f43207be3fb85a35d61"
+  url "https://github.com/raskrebs/sonar/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "07e9f21272bd9a1123870ad7e9eb47b0ca27032f8495a163d2407a50b21271f6"
   license "MIT"
   head "https://github.com/raskrebs/sonar.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "684c9cb0545a102b092eb89a50233313b79162a652aec9ee6409c363e5ef27cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "684c9cb0545a102b092eb89a50233313b79162a652aec9ee6409c363e5ef27cf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "684c9cb0545a102b092eb89a50233313b79162a652aec9ee6409c363e5ef27cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa2eb1123fec7b81defdcd1a3d568c42800e923e18f3cad4aea3d41e31b878ff"
-    sha256 cellar: :any,                 x86_64_linux:  "74f22b90586ee0701c4f8566daf00552e288cd2bc56c078c7f92a4319b6c1ddb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78f15e4ef47c43e88cde215bd020941309f13094f7fb16d5802e99a8db2a7274"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78f15e4ef47c43e88cde215bd020941309f13094f7fb16d5802e99a8db2a7274"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e06247191e4aece2964282e147a1b4ec75b2b3d4c1e3654178bf25fc9f512e1a"
+    sha256 cellar: :any,                 x86_64_linux:  "fa21341369be30f92260f98750d29d6fbab04af0094811367abcaa5cba98265b"
   end
 
   depends_on "go" => :build
