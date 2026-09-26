@@ -9,11 +9,10 @@ class Watchfiles < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f2559a5937d722b43931a2078cf4fe52a8541d0b2a484851c27b1730e96cf531"
-    sha256 cellar: :any,                 arm64_sequoia: "373fefec69666aaf9ff9abb2944985848e0f7b5446cbc44b100579e575246cee"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0ea651458ac91bfaf16b7808d3c3ba5302151f8eb9b1bfd899bce2c2ea1fc1c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a98ca740fb32279f60cf6d95cbab7a194ffe802d6de1d4ba607bb5e17a892426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "241a9c9a633e0a83ff45688d0aa227b1a873c74872d7e9061ba86c1b3f94c220"
+    sha256 cellar: :any, arm64_tahoe:   "518aaa0eae0ac3d02c0b7b45776c31941ffa3a0c745df3ccc2006e1f265e8304"
+    sha256 cellar: :any, arm64_sequoia: "ac6f7b0315aef110dc2caba7352337b7257e411b2118433223953dc9b6397f34"
+    sha256 cellar: :any, arm64_linux:   "5ce97cff09a218c5f2cdda69ddb0c432dec5a8e6d6158cbc9fe8a7f754076cb3"
+    sha256 cellar: :any, x86_64_linux:  "b931a835561ae757845243decc827b292c1f755ac34cf8a9c055fd95885e5c1b"
   end
 
   depends_on "rust" => :build
