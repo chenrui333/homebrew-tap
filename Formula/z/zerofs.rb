@@ -1,18 +1,17 @@
 class Zerofs < Formula
   desc "Serve S3 buckets as POSIX filesystems over NFS, 9P, or as block devices"
   homepage "https://github.com/Barre/ZeroFS"
-  url "https://github.com/Barre/ZeroFS/archive/refs/tags/v2.3.2.tar.gz"
-  sha256 "9506d24b1e273a445f31b3c7f4b29dfba690d75a11bdac80a958b3f618ce2af0"
+  url "https://github.com/Barre/ZeroFS/archive/refs/tags/v2.3.5.tar.gz"
+  sha256 "50f138ed109f17b12d0cee6c7f9deb9e2c1ce38b5cfbce24ffb7353dc48a5036"
   license "AGPL-3.0-only"
   head "https://github.com/Barre/ZeroFS.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95cf5f451bccea2819893ab2f5497ecbcb72e09313afcda8b22e6276fd6c1ad6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37f68f02e412781e83bf62e806ad81799e43231b8d7385848012b7214f742d64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5aeee04e1dc1de1494be0d62bcff1f6dc8264eddd77dcce8252ae33a1ed6d602"
-    sha256 cellar: :any,                 arm64_linux:   "5eae946fe361184af139053267294d8f6ed9e72542fa0ee0ef2a43789ee5a3a1"
-    sha256 cellar: :any,                 x86_64_linux:  "70dccc891efc5f18c79009bc32096d9183ebff454378156554e36af7e050d445"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6be2bf2fd4d0e76403e0d4340dee34dbe287b4f0c4f0ef25735b41f0074fe651"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2297d591833dfcd8f78d5a81802810b156a6d95ec7cb54e513f85050a7a5b806"
+    sha256 cellar: :any,                 arm64_linux:   "f1804441bc94eca72baac7980bfcc983d2879b4b46476a549512a63c88e6dca4"
+    sha256 cellar: :any,                 x86_64_linux:  "4158873d5804c05d7b5d6029805e203be89befc5ea6ac2001bbb3ac38d3aa5c7"
   end
 
   depends_on "cmake" => :build
