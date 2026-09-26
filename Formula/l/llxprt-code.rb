@@ -7,11 +7,10 @@ class LlxprtCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "57df7f6951bd90d7d602103868f09108dbf1b1675274f4ab4e263088be752993"
-    sha256 cellar: :any,                 arm64_sequoia: "c08b11d3dc16e699d636ec5e9ed5612aae2e729af9c55927619808db5ec42955"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e0b46be156a57a2bee9a11caece1bb7fe7bf5d9145e2054a1165210489d94ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd048d0c89d375c4f18767da45035337e64035427098ced6d4746fdbcef79b46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce8a54352ac1bdf57e4ce8abc34f861214f8a7d9aff69d516cc32fb43d4348f1"
+    sha256               arm64_tahoe:   "fb1baf788e8d229dc35521f18508abddedfa075049ec92a41999356a52f18b8c"
+    sha256               arm64_sequoia: "4ad05039389ad0677ffdb765c080241cd4ebea8b00cb5c8962a61f47d8f7d4ae"
+    sha256 cellar: :any, arm64_linux:   "daab94ff51552ba356295714bbcbfcff26de60bbf7eaf772304b0245f3b46ad4"
+    sha256 cellar: :any, x86_64_linux:  "e9f87ca6039e70483c5e4523d7120b0a90ef6bdc13eb02e3d1f490c62177039b"
   end
 
   depends_on "tree-sitter-cli" => :build
