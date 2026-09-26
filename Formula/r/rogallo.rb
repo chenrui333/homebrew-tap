@@ -10,7 +10,7 @@ class Rogallo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "abecdba71fb59dbcd7e8e13df73094f094b59277a77a1e45262d1905395e1a1b"
+    sha256 cellar: :any_skip_relocation, all: "5431eab48f345b358957d30daa12837ef4e438a238162d0445833013a408fb59"
   end
 
   depends_on "rust" => :build
