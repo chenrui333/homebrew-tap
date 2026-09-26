@@ -1,18 +1,17 @@
 class Pho < Formula
   desc "TUI for GitHub Pull Requests"
   homepage "https://github.com/utkarsh261/pho"
-  url "https://github.com/utkarsh261/pho/archive/refs/tags/v0.1.43.tar.gz"
-  sha256 "889a0d573c2c5652993c98efce3165c3e2f9b55adea12929567691934e5c2449"
+  url "https://github.com/utkarsh261/pho/archive/refs/tags/v0.1.46.tar.gz"
+  sha256 "7ce2caa8033e188cb80def5c2a4fa5cef747eafdbf01bc3e279b419ae0d12bd5"
   license "GPL-3.0-only"
   head "https://github.com/utkarsh261/pho.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0360e653cc11250525db1845ff768051e036d5206634088d3d59c94b847910a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0360e653cc11250525db1845ff768051e036d5206634088d3d59c94b847910a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0360e653cc11250525db1845ff768051e036d5206634088d3d59c94b847910a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63da15691bde00fcc13247dab7fbd39b5a9469c4cc302a8709d3d6f8b43a1099"
-    sha256 cellar: :any,                 x86_64_linux:  "a0915a604ddca7bd5caab52ef3ceab6bf3f14c29573ae71cdffe61dccd7b1e54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "508d1688b767e6f5eca07f4bd7e8a69856726b2e27bf686c75fce001cfec21ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "508d1688b767e6f5eca07f4bd7e8a69856726b2e27bf686c75fce001cfec21ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14757796f3310e57c8b998f27be4f82c5607d275eaec7a384036bac6c2a6ba55"
+    sha256 cellar: :any,                 x86_64_linux:  "12b667f6b05c8b8427f78ed77f2a6c9ecca314651cef576c55ec418a0594bffa"
   end
 
   depends_on "go" => :build
