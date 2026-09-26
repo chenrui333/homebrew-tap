@@ -23,7 +23,7 @@ jobs:
     if: >-
       github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.base.ref == 'main' &&
-      contains(fromJSON('["automation/update-formulae-list", "automation/terminal-trove-weekly"]'), github.event.pull_request.head.ref)
+      contains(fromJSON('["automation/update-formulae-list", "automation/terminal-trove-weekly", "automation/formula-merge-serialize-20260926"]'), github.event.pull_request.head.ref)
     runs-on: ubuntu-slim
     timeout-minutes: 240
     permissions:
@@ -48,6 +48,9 @@ jobs:
               ;;
             automation/terminal-trove-weekly)
               expected_files=$'docs/terminal-trove/.project_links_cache.json\ndocs/terminal-trove/terminal_trove_weekly.md'
+              ;;
+            automation/formula-merge-serialize-20260926)
+              expected_files=$'.github/workflows/formula-merge.yml\n.github/workflows/generated-maintenance-merge.yml'
               ;;
             *)
               echo "Branch is not an allowlisted generated-maintenance PR; skipping."
