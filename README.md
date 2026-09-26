@@ -554,6 +554,7 @@ brew install --cask <tool>
 - `kwt`
 - `kyanos`
 - `kyma`
+- `kythe`
 - `kyushu`
 - `labcoat`
 - `lacquer`
@@ -1007,6 +1008,7 @@ brew install --cask <tool>
 - `ticker`
 - `tickrs`
 - `tiki`
+- `tilia`
 - `timetrace`
 - `tinifier`
 - `tinybird-mcp-server`
