@@ -3,18 +3,17 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/a6/bf/a7efb0d0bb291f53332a60165eff13169dc58b0a0405fb32127ddb78a7ab/user_scanner-1.5.1.1.tar.gz"
-  sha256 "7fbd6be312a74b4fdd5462e5021c92b250c218833168fd7357e7d695fa75cc08"
+  url "https://files.pythonhosted.org/packages/a5/01/c07ec5ce9ac3b461c065e5282a3ab8dab44696eebc6d4f56cfb3cd401aa7/user_scanner-1.5.2.tar.gz"
+  sha256 "433866f764dd960bf116f44ee33b841e704466d928fa0f23f230c7ab097e1d4f"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d44694563358ede162994a6d0fbcdb4fc8947a7b137a00bc81e74476d38968c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a23bd36c43af54e12ef11860888cabc96202cb74c3d411b700d73e3403ce2776"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c0052361eeb016320853f55f85093916d744a3e218e6966646ca1cb14c7eab"
-    sha256 cellar: :any,                 arm64_linux:   "b52b7495121a1dc2a2c1f4e5a6e049f233fb28c98ac2ebfc690dfcf5c9127063"
-    sha256 cellar: :any,                 x86_64_linux:  "8834415410efb05680320960c47cb9d94be187b59671d826769cfd2996c40a66"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59132dc431f2337e86b94f25674e7d1e0248452ec27641158e4087407dd7f645"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b84ae6606ea8de88ac2d0b6ad58e7de688fc4113e62f09687055d58f88115f79"
+    sha256 cellar: :any,                 arm64_linux:   "52fa51b9976e85192b015283394b0ce94a68e72ef0aa8f4c9278bc2cfa82ec4b"
+    sha256 cellar: :any,                 x86_64_linux:  "e53f3249e4fee131cdec600147bb095a1cbc48831de9d0316ab27ab028ffef8b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -22,13 +21,8 @@ class UserScanner < Formula
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
-    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
-    sha256 "741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "cffi" do
@@ -42,8 +36,8 @@ class UserScanner < Formula
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/d1/f6/347067dfacb19e44a4166d7bdb183e3a2629680beceb5e52f7cb2cc1a3b4/curl_cffi-0.16.2.tar.gz"
-    sha256 "2986a86cdcf514ab73632c2de62a01db3cc97f7ecf17798a1be16180f4474198"
+    url "https://files.pythonhosted.org/packages/82/e1/730125c43e3e331d98e17af3cb310ba526b3f1101b7635ca23d976ebfcf5/curl_cffi-0.16.3.tar.gz"
+    sha256 "d15d0c2a35f2d75bec430c28946c2a833f421c85773bdb0795182cc5c515665b"
   end
 
   resource "h11" do
@@ -77,8 +71,8 @@ class UserScanner < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "markdown-it-py" do
@@ -109,6 +103,11 @@ class UserScanner < Formula
   resource "socksio" do
     url "https://files.pythonhosted.org/packages/f8/5c/48a7d9495be3d1c651198fd99dbb6ce190e2274d0f28b9051307bdec6b85/socksio-1.0.0.tar.gz"
     sha256 "f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   def install
