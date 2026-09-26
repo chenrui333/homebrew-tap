@@ -1,0 +1,28 @@
+.github/workflows/generated-maintenance-merge.yml
+  s_2316195b58a8fc::t_63c4a5c817eb79 26,52-53
+  s_0f6d89727218f2::t_3e41491445a763 54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ac71a9109eaf39a3625cf803caa9bf5df3f77fd9",
+  "prompts": {},
+  "sessions": {
+    "s_0f6d89727218f2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ddbb-79da-7191-a59a-766822c100f6",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
