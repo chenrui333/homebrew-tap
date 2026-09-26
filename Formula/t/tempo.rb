@@ -1,18 +1,17 @@
 class Tempo < Formula
   desc "Terminal client for Temporal"
   homepage "https://github.com/galaxy-io/tempo"
-  url "https://github.com/galaxy-io/tempo/archive/refs/tags/v0.1.14.tar.gz"
-  sha256 "68e2993c5ccfca49dc6302ecbfc41186ec05361ab55ea09afcec3dd7c4e159ba"
+  url "https://github.com/galaxy-io/tempo/archive/refs/tags/v0.1.15.tar.gz"
+  sha256 "1052981f2561f79cd985c661fbcd48e8b7fa2951504bec402864c875c258f566"
   license "MIT"
   head "https://github.com/galaxy-io/tempo.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce38ff3b9102c0d87662e847918c03134303155f0ab7fb0be39793dbdea3f537"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce38ff3b9102c0d87662e847918c03134303155f0ab7fb0be39793dbdea3f537"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce38ff3b9102c0d87662e847918c03134303155f0ab7fb0be39793dbdea3f537"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d87cfd2119d7203e28c3e9baa1d0a68ef009f616a3e6b4718371a5a5a9ddf0a"
-    sha256 cellar: :any,                 x86_64_linux:  "939779d6becc2d80d6634c1f309b1311adcac575b08620535872e76efeb2dd89"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e3373b90299dd096992347ac5a000efbba4ba576af9ee05795896db8f1f2346"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e3373b90299dd096992347ac5a000efbba4ba576af9ee05795896db8f1f2346"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ba99e14fb381e3cca96fb5b52143a4050effd3e7b50051e59cf0d1bb109ab16"
+    sha256 cellar: :any,                 x86_64_linux:  "52e01bbb5b84b08908384c38fac6d59fc00e438bcbf441fa02a8fe961a1b427d"
   end
 
   depends_on "go" => :build
