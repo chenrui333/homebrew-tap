@@ -3,18 +3,17 @@ class Sqlit < Formula
 
   desc "User friendly TUI for SQL databases"
   homepage "https://github.com/Maxteabag/sqlit"
-  url "https://files.pythonhosted.org/packages/83/81/6fbdd8549d5ce48b7b54c7cf24b418ba04abfeb68a3d353077aa45da0f27/sqlit_tui-1.6.3.tar.gz"
-  sha256 "af9e0ed34594f9dc7b399cac56ad6a63b884a4bae4035b21a20e861a89253c81"
+  url "https://files.pythonhosted.org/packages/70/39/c84577fdade8a260ad1b7396ce3eba53e6404ca31df45d86c557e0978417/sqlit_tui-1.6.4.tar.gz"
+  sha256 "7f7058b062c0e868bde867047928283909abaa27eb9bb527603b83fe71bdf1d6"
   license "MIT"
   head "https://github.com/Maxteabag/sqlit.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "194bca9109e93583d1825e2aaa930aa50df96cb159cf2fcb2289e00c9e6a95e3"
-    sha256 cellar: :any, arm64_sequoia: "3bfca18f4aca82d8e8418c0e978e87ed7f2f5f9cd70fb5d4d08e6ee6bdc2f032"
-    sha256 cellar: :any, arm64_sonoma:  "66f36430ee41f0807cb41684df28a749d0993920039d6f502695172e6cd3ab37"
-    sha256 cellar: :any, arm64_linux:   "83d66f6ad88737ec2e3e789626d26f5e4c5f3569157a27e64cc418c933bacb97"
-    sha256 cellar: :any, x86_64_linux:  "472394bc8d5a9f75f3434b1ba7989728b020b16c59427c3897a5df07e2ec662c"
+    sha256 cellar: :any, arm64_tahoe:   "8d4137b5a0261c63617e5efe6f1fa5dff983afdeef2060180e823ae400052c0c"
+    sha256 cellar: :any, arm64_sequoia: "0292d1998548ad7bee6f373e6009f7f29565bad858fd21a1a6d160898b5026ea"
+    sha256 cellar: :any, arm64_linux:   "00b3b868d2de283868c5a2b13d39649c4d30b8e29fd9690cfdfd9d259fbc5760"
+    sha256 cellar: :any, x86_64_linux:  "65a416b0bc91d484100c574b70bc96a3d0e863a97e05ec2e34678f217cafb16d"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -46,8 +45,8 @@ class Sqlit < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jaraco-classes" do
@@ -71,8 +70,8 @@ class Sqlit < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/53/3e/79f35b8c31a1881893b7e62be80b2573f06e38db47c33065749293ee1b97/linkify_it_py-2.1.1.tar.gz"
-    sha256 "a78f40fee177eb912e9d2375074108378523c38d3fde5d3ee804f465b6cfbfee"
+    url "https://files.pythonhosted.org/packages/45/98/7a1a5f31fd5c7ba93e963b168e244b8e3dd705b3d2a718e3c3307583bf57/linkify_it_py-2.2.0.tar.gz"
+    sha256 "907acd2d17ac1fbb9ddb62c8957ccbd6158cac602231a15c3b0cd1e215f03cee"
   end
 
   resource "markdown-it-py" do
@@ -96,8 +95,8 @@ class Sqlit < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ea/06/cf1564dcc2e2261c8c8c6c05628dc8b418943bdae2a4e58640ceb2f770fa/platformdirs-4.11.5.tar.gz"
-    sha256 "e8b31f4f8bcbbedef91a6b57a706255e4f148d2a4e01648382a0a47342539173"
+    url "https://files.pythonhosted.org/packages/ea/dd/65804b0c2925a1c821a05502ea57517b69a073ff400d25ab9faa3a2cf012/platformdirs-4.11.12.tar.gz"
+    sha256 "e8dc1cb58f1153fd7f61db1374317770baababec2480b37b8f01c6cc25b45267"
   end
 
   resource "pyarrow" do
@@ -225,14 +224,9 @@ class Sqlit < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
-  resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
-    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
-  end
-
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   def install
