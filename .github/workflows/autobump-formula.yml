@@ -36,6 +36,17 @@ jobs:
         with:
           username: BrewTestBot
 
+      - name: Refresh tap checkout
+        run: |
+          tap_path="$(brew --repository chenrui333/tap)"
+          git -C "$tap_path" fetch --no-tags origin main
+          git -C "$tap_path" switch --force --detach origin/main
+          git -C "$tap_path" reset --hard origin/main
+          if [[ -n "$(git -C "$tap_path" status --porcelain)" ]]; then
+            echo "::error::Tap checkout is not clean after refreshing to origin/main."
+            exit 1
+          fi
+
       # - name: Set up commit signing
       #   uses: Homebrew/actions/setup-commit-signing@b2da65092292aade9599608fc29415389641b3cb
       #   with:
@@ -49,20 +60,54 @@ jobs:
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump formulae
-        continue-on-error: true
         env:
           HOMEBREW_DEVELOPER: 1
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           HOMEBREW_TEST_BOT_AUTOBUMP: 1
           INPUT_FORMULAE: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
         run: |
+          set -euo pipefail
+
+          tap_path="$(brew --repository chenrui333/tap)"
           formulae=()
-          for formula in $INPUT_FORMULAE; do
+          read -r -a formulae <<< "${INPUT_FORMULAE//$'\n'/ }"
+          if ((${#formulae[@]} == 0)); then
+            echo "::error::No formulae were selected for autobump."
+            exit 1
+          fi
+
+          failed_formulae=()
+          for formula in "${formulae[@]}"; do
             if [[ "$formula" == */*/* ]]; then
-              formulae+=("$formula")
+              qualified_formula="$formula"
             else
-              formulae+=("chenrui333/tap/$formula")
+              qualified_formula="chenrui333/tap/$formula"
             fi
+
+            echo "::group::Bump $qualified_formula"
+            # Scheduled runs can wait in the GitHub queue. Refresh before each
+            # candidate so stale formula files cannot conflict with origin/main.
+            git -C "$tap_path" fetch --no-tags origin main
+            git -C "$tap_path" switch --force --detach origin/main
+            git -C "$tap_path" reset --hard origin/main
+
+            if ! brew bump --full-name --no-fork --open-pr --formula "$qualified_formula"; then
+              failed_formulae+=("$qualified_formula")
+              echo "::warning::brew bump failed for $qualified_formula; continuing with the remaining formulae."
+            fi
+
+            # A failed bump can leave its formula modified or its branch checked
+            # out. The Actions checkout is disposable; restore it before proceeding.
+            git -C "$tap_path" switch --force --detach origin/main
+            git -C "$tap_path" reset --hard origin/main
+            if [[ -n "$(git -C "$tap_path" status --porcelain)" ]]; then
+              echo "::error::Tap checkout is not clean after bumping $qualified_formula."
+              exit 1
+            fi
+            echo "::endgroup::"
           done
 
-          brew bump --full-name --no-fork --open-pr --formulae "${formulae[@]}"
+          if ((${#failed_formulae[@]} > 0)); then
+            printf 'Failed formula bump attempts: %s\n' "${failed_formulae[*]}"
+            exit 1
+          fi

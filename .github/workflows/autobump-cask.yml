@@ -36,6 +36,17 @@ jobs:
         with:
           username: BrewTestBot
 
+      - name: Refresh tap checkout
+        run: |
+          tap_path="$(brew --repository chenrui333/tap)"
+          git -C "$tap_path" fetch --no-tags origin main
+          git -C "$tap_path" switch --force --detach origin/main
+          git -C "$tap_path" reset --hard origin/main
+          if [[ -n "$(git -C "$tap_path" status --porcelain)" ]]; then
+            echo "::error::Tap checkout is not clean after refreshing to origin/main."
+            exit 1
+          fi
+
       - name: Get list of autobump casks
         id: autobump
         run: |
@@ -44,20 +55,54 @@ jobs:
           echo "autobump_list=$autobump_list" >> "$GITHUB_OUTPUT"
 
       - name: Bump casks
-        continue-on-error: true
         env:
           HOMEBREW_DEVELOPER: 1
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           HOMEBREW_TEST_BOT_AUTOBUMP: 1
           INPUT_CASKS: ${{ github.event.inputs.casks || steps.autobump.outputs.autobump_list }}
         run: |
+          set -euo pipefail
+
+          tap_path="$(brew --repository chenrui333/tap)"
           casks=()
-          for cask in $INPUT_CASKS; do
+          read -r -a casks <<< "${INPUT_CASKS//$'\n'/ }"
+          if ((${#casks[@]} == 0)); then
+            echo "::error::No casks were selected for autobump."
+            exit 1
+          fi
+
+          failed_casks=()
+          for cask in "${casks[@]}"; do
             if [[ "$cask" == */*/* ]]; then
-              casks+=("$cask")
+              qualified_cask="$cask"
             else
-              casks+=("chenrui333/tap/$cask")
+              qualified_cask="chenrui333/tap/$cask"
             fi
+
+            echo "::group::Bump $qualified_cask"
+            # Scheduled runs can wait in the GitHub queue. Refresh before each
+            # candidate so stale cask files cannot conflict with origin/main.
+            git -C "$tap_path" fetch --no-tags origin main
+            git -C "$tap_path" switch --force --detach origin/main
+            git -C "$tap_path" reset --hard origin/main
+
+            if ! brew bump --full-name --no-fork --open-pr --cask "$qualified_cask"; then
+              failed_casks+=("$qualified_cask")
+              echo "::warning::brew bump failed for $qualified_cask; continuing with the remaining casks."
+            fi
+
+            # A failed bump can leave its cask modified or its branch checked
+            # out. The Actions checkout is disposable; restore it before proceeding.
+            git -C "$tap_path" switch --force --detach origin/main
+            git -C "$tap_path" reset --hard origin/main
+            if [[ -n "$(git -C "$tap_path" status --porcelain)" ]]; then
+              echo "::error::Tap checkout is not clean after bumping $qualified_cask."
+              exit 1
+            fi
+            echo "::endgroup::"
           done
 
-          brew bump --full-name --no-fork --open-pr --casks "${casks[@]}"
+          if ((${#failed_casks[@]} > 0)); then
+            printf 'Failed cask bump attempts: %s\n' "${failed_casks[*]}"
+            exit 1
+          fi
