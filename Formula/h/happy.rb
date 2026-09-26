@@ -7,11 +7,10 @@ class Happy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "122890d660095572b17117a0f82cf7c82f60c2374545bb616381fc66cfa3a0ce"
-    sha256               arm64_sequoia: "122890d660095572b17117a0f82cf7c82f60c2374545bb616381fc66cfa3a0ce"
-    sha256               arm64_sonoma:  "122890d660095572b17117a0f82cf7c82f60c2374545bb616381fc66cfa3a0ce"
-    sha256 cellar: :any, arm64_linux:   "8db69ea1816678a48b02110749efcd55f92ee0a23ca5ebabb6a68189dd0c48f0"
-    sha256 cellar: :any, x86_64_linux:  "94e6773a614cf8f125bbb50c5aca77379ed36dff68bc25d96772a4a19df94594"
+    sha256               arm64_tahoe:   "7fae82cd897e19dfdfe1e4b4c7d46c84c0e11ddab8686e6c594d49b6625f8c0c"
+    sha256               arm64_sequoia: "7fae82cd897e19dfdfe1e4b4c7d46c84c0e11ddab8686e6c594d49b6625f8c0c"
+    sha256 cellar: :any, arm64_linux:   "5ca4cb8320e1818e484a2a582409fe1704e1311c5bd457bfaf34cb45df231b64"
+    sha256 cellar: :any, x86_64_linux:  "626a57a2dcf2ed3a2c0c15b0876f31ae269c8ee1a467b855d618e482e8c03905"
   end
 
   depends_on "node"
