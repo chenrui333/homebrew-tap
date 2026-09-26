@@ -116,8 +116,8 @@ jobs:
             exit 0
           fi
 
-          files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" \
-            --jq '[.[][] | .filename] | unique | .[]')"
+          files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" | \
+            jq -r '[.[][] | .filename] | unique | .[]')"
           file_count="$(awk 'NF { count++ } END { print count + 0 }' <<< "$files")"
           if [[ "$file_count" -ne 1 || ! "$files" =~ ^Formula/.+\.rb$ ]]; then
             echo "PR must change exactly one formula file; skipping."
@@ -128,8 +128,8 @@ jobs:
           attempt=0
           while (( attempt < 12 )); do
             attempt=$((attempt + 1))
-            published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
-              --jq '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
+            published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" | \
+              jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
                 select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
                 capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] | last // empty')"
             [[ "$published_head" == "$head_sha" ]] && break
@@ -211,11 +211,11 @@ jobs:
           draft="$(jq -r '.draft' <<< "$pr_data")"
           base_branch="$(jq -r '.base.ref' <<< "$pr_data")"
           head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
-          files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" \
-            --jq '[.[][] | .filename] | unique | .[]')"
+          files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" | \
+            jq -r '[.[][] | .filename] | unique | .[]')"
           file_count="$(awk 'NF { count++ } END { print count + 0 }' <<< "$files")"
-          published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
-            --jq '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
+          published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" | \
+            jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
               select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
               capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] | last // empty')"
           if [[ "$state" != open || "$draft" != false || "$base_branch" != main ||
