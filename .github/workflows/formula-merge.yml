@@ -55,6 +55,7 @@ jobs:
   merge:
     needs: cancel-stale-auto-merge
     if: >-
+      !cancelled() &&
       (needs.cancel-stale-auto-merge.result == 'success' || needs.cancel-stale-auto-merge.result == 'skipped') &&
       (github.event_name != 'workflow_run' || github.event.workflow_run.event == 'pull_request')
     runs-on: ubuntu-slim
