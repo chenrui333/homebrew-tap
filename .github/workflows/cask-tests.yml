@@ -168,7 +168,7 @@ jobs:
           (!matrix.cask || steps.fetch.outcome == 'success') &&
           !matrix.skip_audit
         run: |
-          brew audit --cask --except github_repository,gitlab_repository,bitbucket_repository,forgejo_repository ${{ join(matrix.audit_args, ' ') }}${{ (matrix.cask && ' ') || ' --tap ' }}"${{ (matrix.cask && matrix.cask.path) || matrix.cask.token || matrix.tap }}"
+          brew audit --cask --except github_repository,gitlab_repository,bitbucket_repository,forgejo_repository ${{ join(matrix.audit_args, ' ') }}${{ (matrix.cask && ' ') || ' --tap ' }}"${{ (matrix.cask && format('{0}/{1}', matrix.tap, matrix.cask.token)) || matrix.tap }}"
         timeout-minutes: 30
 
       - name: Gather cask information
