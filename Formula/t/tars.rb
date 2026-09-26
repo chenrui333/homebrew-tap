@@ -1,17 +1,16 @@
 class Tars < Formula
   desc "Local-first autonomous AI supervisor and sidekick powered by Google Gemini"
   homepage "https://github.com/agustinsacco/tars"
-  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.44.0.tgz"
-  sha256 "a617df66e227122e9d6bf931e432ec46f62e37ebd195a7c07b516000efd24c11"
+  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.50.2.tgz"
+  sha256 "a18f99084001016c746b1ec9aa488c098eb957f1c683a82584dd0b270daa1399"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "bb871d63e47ab9e9f9c61238bdd9ae3fbea1549e8d0874f8134082d7e020fcfd"
-    sha256 cellar: :any,                 arm64_sequoia: "bb871d63e47ab9e9f9c61238bdd9ae3fbea1549e8d0874f8134082d7e020fcfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb871d63e47ab9e9f9c61238bdd9ae3fbea1549e8d0874f8134082d7e020fcfd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1e858e3dc2eca3474f22d775ad0f270c926b954387b800124f51d592bbef0e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e5284119b4f1bc67d48084a4e7bb4f75fdeb8a5a3efa27a76f35db954b8e9f3"
+    sha256 cellar: :any,                 arm64_tahoe:   "cccebf223fddc9f1aeca46fb120ccab505dfd5548ba451e5ec56264aab31bbe1"
+    sha256 cellar: :any,                 arm64_sequoia: "cccebf223fddc9f1aeca46fb120ccab505dfd5548ba451e5ec56264aab31bbe1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dde137d830090c59430d8fb1afce72c67c2fb6155da9506c7d8307f0c951ea80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52ffcccebaf21c5420d2128a6321e5a80a7f9daf33eae060ab767af3d3f02ab8"
   end
 
   depends_on "node"
@@ -29,6 +28,13 @@ class Tars < Formula
       nm.glob("**/prebuilds/*").each do |dir|
         rm_r(dir) if dir.basename.to_s != native
       end
+    end
+
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    native_esbuild = "#{os}-#{arch}"
+    nm.glob("**/@esbuild/*").each do |package|
+      rm_r(package) if package.basename.to_s != native_esbuild
     end
 
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
