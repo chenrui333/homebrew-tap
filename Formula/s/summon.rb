@@ -1,18 +1,17 @@
 class Summon < Formula
   desc "Provides on-demand secrets access for common DevOps tools"
   homepage "https://cyberark.github.io/summon/"
-  url "https://github.com/cyberark/summon/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "eab6ec15d85a82b1c849029f0ff7c2df64346cbe6dfe849dc0fa8db5f7f2265e"
+  url "https://github.com/cyberark/summon/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "0561f2523ce61cd05d1921dd9536083c2587fb68205817bfc652b627a2bc943e"
   license "MIT"
   head "https://github.com/cyberark/summon.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "149fb1b59f483e39dade4336e26edd2306c3ae52bec6e30e9b852cfebba10e65"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "149fb1b59f483e39dade4336e26edd2306c3ae52bec6e30e9b852cfebba10e65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "149fb1b59f483e39dade4336e26edd2306c3ae52bec6e30e9b852cfebba10e65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e9322b82e1f961ca0de3e53d1e53341bd3a049555eb08c5a5adb47cc05ba059"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ebdfb8da1566d9c9dbc9b51675189c975f6abf250d901c27174dca3e71fbe4e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31e0e7d8524a475a7f3a7147d1f1bf668fcd95fa46bbe61c58e581aec2e0c95c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31e0e7d8524a475a7f3a7147d1f1bf668fcd95fa46bbe61c58e581aec2e0c95c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d1fde29144f1aa4d7519ab30a841af1a6b5c5f419e4f90ede1403578165391d"
+    sha256 cellar: :any,                 x86_64_linux:  "12801ceae1e49501a6a2838a374a1de198980a2a25889e4b2b2a6a2d18d95f04"
   end
 
   depends_on "go" => :build
@@ -20,11 +19,11 @@ class Summon < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/cyberark/summon/pkg/summon.Tag=#{tap.user}
-      -X github.com/cyberark/summon/pkg/summon.Version=#{version}
+      -X github.com/cyberark/summon/pkg/version.Tag=#{tap.user}
+      -X github.com/cyberark/summon/pkg/version.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), "./cmd"
+    system "go", "build", "-mod=mod", *std_go_args(ldflags:), "./cmd"
   end
 
   test do
