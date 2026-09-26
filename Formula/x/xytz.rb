@@ -1,18 +1,17 @@
 class Xytz < Formula
   desc "Beautiful TUI YouTube downloader"
   homepage "https://github.com/xdagiz/xytz"
-  url "https://github.com/xdagiz/xytz/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "63bed79645469670f05b579a3812a71d39c774c02499b78e135f5cb8aafa010f"
+  url "https://github.com/xdagiz/xytz/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "2c48bd2925189660d884e290a60ec9db823ef39ee31a3fd0aecc4c3036f69ed9"
   license "MIT"
   head "https://github.com/xdagiz/xytz.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f21a2351f4940281aaa4459e1d08ec273da96fd16bb38dc553b581162268f7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f21a2351f4940281aaa4459e1d08ec273da96fd16bb38dc553b581162268f7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f21a2351f4940281aaa4459e1d08ec273da96fd16bb38dc553b581162268f7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60d5d4538dca1395a995ade574cb5d0467acd2e538c18a57d109a32ad87f3886"
-    sha256 cellar: :any,                 x86_64_linux:  "f2f17907054dc84f39a399e6db562ae75be9ba3138605d9672ba22a6bed38cca"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbc44906f8bd67f6453428fa4cc181908b407030e3f15337d425e48d439f8c3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbc44906f8bd67f6453428fa4cc181908b407030e3f15337d425e48d439f8c3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ded9d7afef6e2bf3bbdabe8cd27a86c801ceff03d827d5640c5f31b5073694f6"
+    sha256 cellar: :any,                 x86_64_linux:  "a986eddc718779dcdeab00254ec5e6a83ee93c2860f676fe3a1bfc8e58678f93"
   end
 
   depends_on "go" => :build
