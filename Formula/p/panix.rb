@@ -8,11 +8,10 @@ class Panix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e9f18fb953475e3fc11f9a14c2c8710390ee0b4628ad7bdaa2488fe2e27bdaa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e9f18fb953475e3fc11f9a14c2c8710390ee0b4628ad7bdaa2488fe2e27bdaa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e9f18fb953475e3fc11f9a14c2c8710390ee0b4628ad7bdaa2488fe2e27bdaa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3212a670f4ba16b890493509725ff1a92bee2b405b329a7cf1a49a95bb6c20f"
-    sha256 cellar: :any,                 x86_64_linux:  "d8d2d173930b97ab6f2e571bf74fc7372d3775078ee3b2922c49d473c680b04c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "976319cab17db6f666d24c91f56252c3857a2a9066e0634fae03c5168670aa87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "976319cab17db6f666d24c91f56252c3857a2a9066e0634fae03c5168670aa87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0b74b50783b7bc558edca88422b772b53970e93ffdd147eebe249d4c21a937d"
+    sha256 cellar: :any,                 x86_64_linux:  "1810d6673f2ff301af172e178809565f68216364c5e00074baf366bf26898f02"
   end
 
   depends_on "go" => :build
