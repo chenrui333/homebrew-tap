@@ -9,12 +9,10 @@ class Raiz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b974bc1e30b63cf30896424ec953f2e4753b7311063d350d4b3d6254de20ac0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4b7f223fbc4a522586869f75f3f191869cb7ebcf0aa5bab2235191ad81043dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6018e6d1a584c04c77027ace33c0085c79ae186002f1be97988a241f803a4861"
-    sha256 cellar: :any,                 arm64_linux:   "d5e721849654af97bfc81b969eede8a4aec6a5cd0c40b967184fe690750b0794"
-    sha256 cellar: :any,                 x86_64_linux:  "368abdcefeb175b19e51c3d3675321ed79c74a6b2e119415973dd6b15020b446"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ab4ff0afff6e616853d1e3b631a84ccac91540267fede3f0c08755530a83de8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aff19acc73b5df3ad62110e54baadf79de2031823346ac1605206fb5d27d333"
+    sha256 cellar: :any,                 arm64_linux:   "077f027aa0800d4f692448896155cea0a059a8f08201b3e86c27173e745b46bb"
+    sha256 cellar: :any,                 x86_64_linux:  "fc47f7551c3f60f0979707a20671f7787fdbd28d05a52bbe55ff2a3baeb1799c"
   end
 
   depends_on "libyaml"
