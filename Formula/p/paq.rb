@@ -1,8 +1,8 @@
 class Paq < Formula
   desc "Fast Hashing of File or Directory"
   homepage "https://github.com/gregl83/paq"
-  url "https://github.com/gregl83/paq/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "aeb1bdb4f2141ce981a1afba2e95cb604898b23345cf2f9b42689307220ee1a2"
+  url "https://github.com/gregl83/paq/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "cf94768ec273f08fd84348409c37d1bc6192d3e35d4090aeedd0b3c0281b65fc"
   license "MIT"
   head "https://github.com/gregl83/paq.git", branch: "main"
 
@@ -26,6 +26,6 @@ class Paq < Formula
 
     (testpath/"test/test.txt").write("Hello, Homebrew!")
     output = shell_output("#{bin}/paq ./test")
-    assert_match "eb9122ffff587d1cb9e56682d68a637e8efaa6c0cd3db5d90da542d1ce0bd2c2", output
+    assert_match "ae6457fc0cedc38b3a2dff5dc73751bd759844b4a971659019a514a38d2dd44f", output
   end
 end
