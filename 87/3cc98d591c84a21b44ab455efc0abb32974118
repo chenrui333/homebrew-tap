@@ -1,0 +1,20 @@
+.github/workflows/publish.yml
+  s_2316195b58a8fc::t_9f0358414e7146 94-98
+  s_2316195b58a8fc::t_07f0cbd96fb42e 33,81,83-90,107,109,128-136,327
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "873cc98d591c84a21b44ab455efc0abb32974118",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
