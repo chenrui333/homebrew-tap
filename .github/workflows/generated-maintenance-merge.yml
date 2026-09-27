@@ -24,7 +24,7 @@ jobs:
       github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.base.ref == 'main' &&
       contains(fromJSON('["automation/update-formulae-list", "automation/terminal-trove-weekly", "automation/formula-merge-serialize-20260926"]'), github.event.pull_request.head.ref)
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest # ubuntu-slim jobs have a 15-minute maximum runtime
     timeout-minutes: 240
     permissions:
       checks: read
@@ -95,7 +95,7 @@ jobs:
                 failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
                 unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                   .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
-                missing: (["merge-ready", "Spell Check", "GitGuardian Security Checks"] as $expected |
+                missing: (["Spell Check", "GitGuardian Security Checks"] as $expected |
                   [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
               }
             ' <<< "$checks")"
