@@ -1,17 +1,17 @@
 class Openclacky < Formula
   desc "Token-efficient open-source AI Agent with skill system and IM integrations"
   homepage "https://github.com/clacky-ai/openclacky"
-  url "https://github.com/clacky-ai/openclacky/archive/refs/tags/v1.5.15.tar.gz"
-  sha256 "4b869201c1463c6f75534927ba650a0c1040911b33a2cb9d932c9cc500746619"
+  url "https://github.com/clacky-ai/openclacky/archive/refs/tags/v1.5.16.tar.gz"
+  sha256 "4fe16692780016ad09880e91c63cfb5988029c4f1e2b8a1a70a4875d7f29e07e"
   license "MIT"
   head "https://github.com/clacky-ai/openclacky.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28450e7960d96426b2620608134301155fdf0be3b322123fc4e57c22d59efacf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28450e7960d96426b2620608134301155fdf0be3b322123fc4e57c22d59efacf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2476157146ee631ed1f4fdf43b72fd26a01e689be1168bdf78f683fd7aaa237a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2476157146ee631ed1f4fdf43b72fd26a01e689be1168bdf78f683fd7aaa237a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cab0eab70c19fce1c7c3524ea751a4ac0275f6e39bd627a1305f686f695ec6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cab0eab70c19fce1c7c3524ea751a4ac0275f6e39bd627a1305f686f695ec6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6037333341559fefe69027bce2e6979d383f0379b1c273392260917a5bd60854"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6037333341559fefe69027bce2e6979d383f0379b1c273392260917a5bd60854"
   end
 
   depends_on "ruby"
