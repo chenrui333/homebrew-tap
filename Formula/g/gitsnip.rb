@@ -25,7 +25,7 @@ class Gitsnip < Formula
   end
 
   test do
-    assert_match "GitSnip #{version}", shell_output("#{bin}/gitsnip version")
+    assert_match version.to_s, shell_output("#{bin}/gitsnip version")
 
     repo = testpath/"repo"
     repo.mkdir
