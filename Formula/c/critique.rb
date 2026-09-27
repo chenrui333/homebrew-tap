@@ -1,8 +1,8 @@
 class Critique < Formula
   desc "Terminal UI for reviewing git changes"
   homepage "https://critique.work"
-  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.2.1.tar.gz"
-  sha256 "036cf59aee8fdef1d9ffbf7df9967010dca4183c9c947194bf23d4d6fded8535"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.3.1.tar.gz"
+  sha256 "7d6fabe4d2abb03eb9de36a94607e6f6d7f111355e9da9a8823da66e6ecb422d"
   license "MIT"
 
   bottle do
