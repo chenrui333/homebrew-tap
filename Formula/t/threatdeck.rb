@@ -16,6 +16,7 @@ class Threatdeck < Formula
   end
 
   depends_on "pkgconf" => :build
+  depends_on "openssl@3"
   depends_on "rust" => :build
 
   def install
