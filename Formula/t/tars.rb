@@ -1,8 +1,8 @@
 class Tars < Formula
   desc "Local-first autonomous AI supervisor and sidekick powered by Google Gemini"
   homepage "https://github.com/agustinsacco/tars"
-  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.50.2.tgz"
-  sha256 "a18f99084001016c746b1ec9aa488c098eb957f1c683a82584dd0b270daa1399"
+  url "https://registry.npmjs.org/@saccolabs/tars/-/tars-1.51.0.tgz"
+  sha256 "359c70966abb4fc49f85236e2b3da19866cb02d916a6310fd7ddc96df5aeef20"
   license "MIT"
 
   bottle do
