@@ -1,13 +1,13 @@
 class Gnhf < Formula
   desc "Autonomous agent orchestrator for long-running coding tasks"
   homepage "https://github.com/kunchenguid/gnhf"
-  url "https://registry.npmjs.org/gnhf/-/gnhf-0.1.48.tgz"
-  sha256 "4c94c9c0318729ce3682ffd8ee49183a5ec37de69c370bd2abae26447091efb8"
+  url "https://registry.npmjs.org/gnhf/-/gnhf-0.1.50.tgz"
+  sha256 "77301729c7d0b01acc4b7a09dc9878b1f211ce60c0f259513bbed713cc37a370"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "91527151eecbef051e671afeeec7c4612d5ba2f8c2b7ae16e24c1c50ca469637"
+    sha256 cellar: :any_skip_relocation, all: "9c2899a66f0b45dddbc769da66845e430b3dcf3b237687029b5444618784ed3c"
   end
 
   depends_on "node"
