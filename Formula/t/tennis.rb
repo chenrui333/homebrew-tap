@@ -1,8 +1,8 @@
 class Tennis < Formula
   desc "Print stylish CSV tables in your terminal"
   homepage "https://github.com/gurgeous/tennis"
-  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "5106841ed91cb650f4294c9a2bc472c7fa3b43e61e41f814c1a907a0140a9375"
+  url "https://github.com/gurgeous/tennis/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "af6c59e523e12aa4eda4f8d54316e8e21e72e1711a8c91f953d8c71e9fb1e908"
   license "MIT"
   head "https://github.com/gurgeous/tennis.git", branch: "main"
 
@@ -18,7 +18,7 @@ class Tennis < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cli")
+    system "cargo", "install", *std_cargo_args
 
     bash_completion.install "extra/tennis.bash" => "tennis"
     zsh_completion.install "extra/_tennis"
