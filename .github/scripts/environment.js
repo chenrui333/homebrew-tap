@@ -15,12 +15,15 @@ module.exports = async ({github, context, core}, formula_detect) => {
     const fs = require('fs')
     const path = require('path')
     const is_pull_request = context.eventName === 'pull_request'
-    const labels = is_pull_request ? (await github.rest.pulls.get({
+    const pull_request = context.payload?.pull_request
+    const labels = is_pull_request ? (pull_request?.labels ?? (await github.rest.pulls.get({
         owner: context.repo.owner,
         repo: context.repo.repo,
         pull_number: context.issue.number
-    })).data.labels : []
+    })).data.labels) : []
     const label_names = labels.map(label => label.name)
+    const autobump_branch = pull_request?.head?.repo?.full_name === `${context.repo.owner}/${context.repo.repo}` &&
+        pull_request.head.ref?.startsWith('bump-')
     let published_bottle_head = null
     if (is_pull_request && label_names.includes('CI-published-bottle-commits')) {
         const comments = await github.paginate(github.rest.issues.listComments, {
@@ -152,12 +155,16 @@ module.exports = async ({github, context, core}, formula_detect) => {
     const merge_group_without_formulae = context.eventName === 'merge_group' &&
         ![formula_detect?.testing_formulae, formula_detect?.added_formulae, formula_detect?.deleted_formulae]
             .some(Boolean)
-    const syntax_only = label_names.includes('CI-syntax-only') || merge_group_without_formulae
+    const pull_request_without_formulae = is_pull_request &&
+        ![formula_detect?.testing_formulae, formula_detect?.added_formulae, formula_detect?.deleted_formulae]
+            .some(Boolean)
+    const syntax_only = label_names.includes('CI-syntax-only') || merge_group_without_formulae || pull_request_without_formulae
     const published_bottle_commits = label_names.includes('CI-published-bottle-commits') &&
         current_head && published_bottle_head === current_head
     if (syntax_only || published_bottle_commits) {
         const reason = merge_group_without_formulae
             ? 'merge_group with no detected formulae'
+            : pull_request_without_formulae ? 'pull_request with no detected formulae'
             : syntax_only ? 'CI-syntax-only' : 'CI-published-bottle-commits'
         console.log(`${reason} label found. Skipping tests job.`)
         core.setOutput('syntax-only', 'true')
@@ -173,6 +180,9 @@ module.exports = async ({github, context, core}, formula_detect) => {
     // Configure fail-fast behavior
     if (label_names.includes('CI-no-fail-fast')) {
         console.log('CI-no-fail-fast label found. Continuing tests despite failing matrix builds.')
+        core.setOutput('fail-fast', 'false')
+    } else if (autobump_branch) {
+        console.log('Formula autobump PR detected. Continuing tests despite failing matrix builds.')
         core.setOutput('fail-fast', 'false')
     } else {
         console.log('No CI-no-fail-fast label found. Stopping tests on first failing matrix build.')
