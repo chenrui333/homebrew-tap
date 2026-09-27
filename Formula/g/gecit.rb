@@ -1,8 +1,8 @@
 class Gecit < Formula
   desc "DPI bypass tool using fake TLS ClientHello packets"
   homepage "https://github.com/boratanrikulu/gecit"
-  url "https://github.com/boratanrikulu/gecit/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "a31ebb62041a66eb01191585be3ef3e618803c3759b5ffd5767a285eab3ca020"
+  url "https://github.com/boratanrikulu/gecit/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "f725aae8548d6e198c3eee513199128cdbc30d1bc92eea37b32f3a2fa9a4d17e"
   license "GPL-3.0-only"
   head "https://github.com/boratanrikulu/gecit.git", branch: "main"
 
