@@ -39,7 +39,8 @@ class Gitsnip < Formula
     system "git", "-C", repo, "commit", "-m", "init"
 
     output_dir = testpath/"output"
-    system bin/"gitsnip", repo.to_s, "docs/snippet", output_dir.to_s, "--method", "sparse", "--quiet"
+    system bin/"gitsnip", "file://#{repo}", "docs/snippet", "-o", output_dir.to_s,
+           "--method", "sparse", "--quiet"
 
     assert_equal "hello from gitsnip\n", (output_dir/"hello.txt").read
   end
