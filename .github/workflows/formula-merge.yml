@@ -13,7 +13,6 @@ on:
   workflow_run:
     workflows:
       - Build and Test Formulae
-      - Merge Gate
       - Triage tasks
     types:
       - completed
@@ -174,13 +173,13 @@ jobs:
             checks="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
               --json name,state,bucket,workflow 2>/dev/null || true)"
             summary="$(jq -cer '
-              map(select(.workflow != "brew formula-merge")) as $checks |
+              map(select(.workflow != "brew formula-merge" and .name != "merge-ready")) as $checks |
               {
                 pending: [$checks[] | select(.bucket == "pending") | .name],
                 failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
                 unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                   .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
-                missing: (["tap-syntax", "formula-conclusion", "merge-ready"] as $expected |
+                missing: (["tap-syntax", "formula-conclusion"] as $expected |
                   [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
               }
             ' <<< "$checks")"
@@ -251,13 +250,13 @@ jobs:
           checks="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
             --json name,bucket,workflow 2>/dev/null || true)"
           summary="$(jq -cer '
-            map(select(.workflow != "brew formula-merge")) as $checks |
+            map(select(.workflow != "brew formula-merge" and .name != "merge-ready")) as $checks |
             {
               pending: [$checks[] | select(.bucket == "pending") | .name],
               failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
               unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                 .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
-              missing: (["tap-syntax", "formula-conclusion", "merge-ready"] as $expected |
+              missing: (["tap-syntax", "formula-conclusion"] as $expected |
                 [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
             }
           ' <<< "$checks")"
@@ -266,20 +265,77 @@ jobs:
             exit 0
           fi
 
-          if gh pr merge "$PR_NUMBER" \
-            --repo "$GITHUB_REPOSITORY" \
-            --merge \
-            --match-head-commit "$EXPECTED_HEAD_SHA"; then
-            exit 0
-          else
-            merge_status=$?
-          fi
+          max_attempts=4
+          for attempt in $(seq 1 "$max_attempts"); do
+            if merge_output="$(gh pr merge "$PR_NUMBER" \
+              --repo "$GITHUB_REPOSITORY" \
+              --merge \
+              --match-head-commit "$EXPECTED_HEAD_SHA" 2>&1)"; then
+              printf '%s\n' "$merge_output"
+              exit 0
+            else
+              merge_status=$?
+            fi
 
-          merged="$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json mergedAt --jq '.mergedAt != null')"
-          if [[ "$merged" == "true" ]]; then
-            echo "PR #$PR_NUMBER was merged concurrently; treating the verified merged state as success."
-            exit 0
-          fi
+            printf '%s\n' "$merge_output" >&2
+            pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER")"
+            state="$(jq -r '.state' <<< "$pr_data")"
+            current_head="$(jq -r '.head.sha' <<< "$pr_data")"
+            labels="$(jq -r '[.labels[].name] | join("\n")' <<< "$pr_data")"
+            if [[ "$state" != "open" ]]; then
+              merged="$(jq -r '.merged_at != null' <<< "$pr_data")"
+              if [[ "$merged" == "true" ]]; then
+                echo "PR #$PR_NUMBER was merged concurrently; treating the verified merged state as success."
+                exit 0
+              fi
+              echo "PR #$PR_NUMBER is no longer open; leaving it to its current state."
+              exit 0
+            fi
 
-          echo "GitHub merge failed and PR #$PR_NUMBER is still open."
-          exit "$merge_status"
+            if [[ "$current_head" != "$EXPECTED_HEAD_SHA" ]]; then
+              echo "PR head changed during the merge retry; the current-head workflow owns it."
+              exit 0
+            fi
+
+            if ! grep -Fxq 'pr-pull' <<< "$labels" ||
+               ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels" ||
+               ! grep -Fxq 'CI-no-fail-fast' <<< "$labels" ||
+               grep -Fxq 'in progress' <<< "$labels"; then
+              echo "PR #$PR_NUMBER became ineligible during the merge retry; leaving it open."
+              exit 0
+            fi
+
+            if ! grep -Fq 'GraphQL: Base branch was modified.' <<< "$merge_output"; then
+              echo "GitHub merge failed for PR #$PR_NUMBER; not retrying this error."
+              exit "$merge_status"
+            fi
+
+            if [[ "$attempt" -eq "$max_attempts" ]]; then
+              break
+            fi
+
+            delay=$((attempt * 5 + PR_NUMBER % 7))
+            echo "Base branch changed during the merge; retrying attempt $((attempt + 1)) in ${delay}s."
+            sleep "$delay"
+
+            checks="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
+              --json name,bucket,workflow 2>/dev/null || true)"
+            summary="$(jq -cer '
+              map(select(.workflow != "brew formula-merge" and .name != "merge-ready")) as $checks |
+              {
+                pending: [$checks[] | select(.bucket == "pending") | .name],
+                failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
+                unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
+                  .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
+                missing: (["tap-syntax", "formula-conclusion"] as $expected |
+                  [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
+              }
+            ' <<< "$checks")"
+            if [[ "$(jq '(.failed | length) + (.unsupported | length) + (.pending | length) + (.missing | length)' <<< "$summary")" -gt 0 ]]; then
+              jq -r '"Checks are no longer merge-ready: " + ((.failed + .unsupported + .pending + .missing) | join(", "))' <<< "$summary"
+              exit 0
+            fi
+          done
+
+          echo "GitHub could not merge PR #$PR_NUMBER after $max_attempts attempts because the base branch kept changing."
+          exit 1
