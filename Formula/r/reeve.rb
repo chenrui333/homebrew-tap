@@ -1,17 +1,17 @@
 class Reeve < Formula
   desc "Local web development stack manager"
   homepage "https://github.com/yetidevworks/reeve"
-  url "https://github.com/yetidevworks/reeve/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "47c1d0132ef06f93bfdfd0e1b7f0feae1e2dcf0d468ecaa231c79f67e3f8cfe8"
+  url "https://github.com/yetidevworks/reeve/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "0e217718bdb3d7a1dfeb5a3e5ba3d2d7636cba03485d1b78c8173fe285a8cd28"
   license "MIT"
   head "https://github.com/yetidevworks/reeve.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06d321d5714833d201877801c7e883dccbf810b1226bf279035b424a9d099589"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ec947bd917e4b8deea687b0aa855ae94e373019b224961ec2859655adeb0fbc"
-    sha256 cellar: :any,                 arm64_linux:   "571fbf15b01903b879c70042fde8cadfee61b809963444f46a996ec47b7ee793"
-    sha256 cellar: :any,                 x86_64_linux:  "2b974c959d9b28d2dd165b0053e7cc2d28243abd8584b950ccd2f9cf8df4f417"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f4ed23aea562f684abd2c1a932d3615dfa5ba92fa6ecf028efa7f8314d8c61e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a515255aeade5a2553c31887aa558597c202207223d6e6fe8ae9a1179a1ea394"
+    sha256 cellar: :any,                 arm64_linux:   "8725ca37895ed350f9bf97f1146579568d2b84fd6ffef008af2fd66ba47085b7"
+    sha256 cellar: :any,                 x86_64_linux:  "7e68d7bb49566cfa1e9d065af5abf5f41389dd962bd08105a3f3300c00bb29ca"
   end
 
   depends_on "rust" => :build
