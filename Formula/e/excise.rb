@@ -8,10 +8,10 @@ class Excise < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "685613a26dac195e4fc682531dab530904b44c059d7ec3a4cafaefd5bb552839"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b56f4b94627e71aa894a624f15a031955eaf43b8c69d791c86fa3b3462d5c7c"
-    sha256 cellar: :any,                 arm64_linux:   "3f2ebdba34dc0ae3e3193ac298bd7bfbbb4d944f6e3fb3404dedfe4bb9b1439f"
-    sha256 cellar: :any,                 x86_64_linux:  "b8e2ca1fd539c9ef534f2b260a83967c6de68c6891969ab6fe04f4ffe7c31cf6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7b95f78a961b304f214d1adf56862e4506504ad1645b0353f8f041187a5a73c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cec5963b5f60833beb3666941bb27b842f5642416175472aaa2de17038cea4de"
+    sha256 cellar: :any,                 arm64_linux:   "379bdaf03672885186441c941ac6bae223916bb64f2d2853c78fc83e602cf906"
+    sha256 cellar: :any,                 x86_64_linux:  "c4b1b00977e73ac1ef076434f4ba828210070309a29947d2975ed9faf3a70c56"
   end
 
   depends_on "rust" => :build
