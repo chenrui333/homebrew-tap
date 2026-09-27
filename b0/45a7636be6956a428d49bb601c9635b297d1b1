@@ -1,0 +1,36 @@
+.github/scripts/environment.js
+  s_2316195b58a8fc::t_9d4585109ba1f6 18-19,23,25-36
+.github/workflows/tests.yml
+  s_2316195b58a8fc::t_9d4585109ba1f6 81-83,102,115
+.github/scripts/environment.test.js
+  s_2316195b58a8fc::t_9d4585109ba1f6 15-16,20-22,41,53,184-191,193-204
+  s_2316195b58a8fc::t_c734eea2da609a 192
+.github/workflows/formula-merge.yml
+  s_2316195b58a8fc::t_9d4585109ba1f6 20-25,72,114,246-247
+  s_2316195b58a8fc::t_c734eea2da609a 195-199
+  s_5d48a09aaeed95::t_10da0811cf7900 248-250
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b045a7636be6956a428d49bb601c9635b297d1b1",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_5d48a09aaeed95": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cf09-0c76-7870-9d53-954dba10f063",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
