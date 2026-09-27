@@ -3,18 +3,18 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/01/d5/d9a0dee0d86da4c8bfce22bc55968b99a0dc08265207b136eba1769bfd91/mvt-2026.9.7.tar.gz"
-  sha256 "d3324c546eae1ea5df1982ad2786e002cb8069512fd49944c88c2c3771d6efd8"
+  url "https://files.pythonhosted.org/packages/95/6a/d3628e68cf4ea3b18dc51ebdd742e3ccdc1af6021f12c51472ac7cc98221/mvt-2026.9.21.tar.gz"
+  sha256 "5f5b2d1ecdd0c53a9aa85ba2b9ffcbac4d24ce3cfd4c31cc9c5223ac23a24d13"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5fe2c0db5a75b461947bfea655e4186f0f1aa97ab91649a80949054bfd629a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e92fa07bcf66866e77ca14275e73d0b02254bc290d21401aa19699df64e6067"
-    sha256 cellar: :any,                 arm64_linux:   "d21aec51eef0f8a933d6c15112b525c892b53cd89871952e19e63fc72eeb0eff"
-    sha256 cellar: :any,                 x86_64_linux:  "88f1f5de2baeeb017e9aebe65f5b604c4550d414fee8a09b2c42e7e32e7090b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fe0c57f5736ad34780591d2c257715a9f0a1f8380342c8c31381b7cdba708d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f5435bf19998a4d7c5a7b53ec77558c7520f93e80e99595598a4d32763137aa"
+    sha256 cellar: :any,                 arm64_linux:   "82e9ef46d63df195d10ad260dfe7f94a7de428015b7bf1a71ff1d17564525aed"
+    sha256 cellar: :any,                 x86_64_linux:  "2c7730e98dbc76ed5e67e51e120abacde4b5e46b5f771ed3e525579a79825237"
   end
 
   depends_on "rust" => :build
@@ -61,8 +61,8 @@ class Mvt < Formula
   end
 
   resource "iphone-backup-decrypt" do
-    url "https://files.pythonhosted.org/packages/6f/e7/bcdacdec21d628122ba240e7f742ab2175149e58672be63af55ff37a0f28/iphone_backup_decrypt-0.9.0.tar.gz"
-    sha256 "13b18fef3c8e3af627914f8c1a429bbc5555dfb0505239ba49efe99984cc0c96"
+    url "https://files.pythonhosted.org/packages/01/b8/a2ec2b10d792403d36bb6661fea6357179c31ece1ed3285c442e636d6335/iphone_backup_decrypt-0.10.0.tar.gz"
+    sha256 "5f2799e58f908cce28d7929dd82231abc8acd57c25b37bce6a2d6a82e018d343"
   end
 
   resource "libusb1" do
