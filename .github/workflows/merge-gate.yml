@@ -2,6 +2,8 @@ name: Merge Gate
 
 on:
   pull_request:
+    paths:
+      - .github/workflows/**
   merge_group:
 
 permissions:
@@ -10,7 +12,29 @@ permissions:
   pull-requests: read
 
 jobs:
+  actionlint:
+    if: github.event_name == 'pull_request'
+    name: actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out event commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up actionlint
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        with:
+          mise_toml: |
+            [tools]
+            actionlint = "1.7.12"
+          install_args: actionlint
+
+      - name: Validate workflow files
+        run: mise exec -- actionlint
+
   merge-ready:
+    if: github.event_name == 'merge_group'
     name: merge-ready
     runs-on: ubuntu-latest
     timeout-minutes: 4320

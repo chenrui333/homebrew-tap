@@ -13,7 +13,6 @@ on:
   workflow_run:
     workflows:
       - Build and Test Formulae
-      - Merge Gate
       - Triage tasks
     types:
       - completed
@@ -174,13 +173,13 @@ jobs:
             checks="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
               --json name,state,bucket,workflow 2>/dev/null || true)"
             summary="$(jq -cer '
-              map(select(.workflow != "brew formula-merge")) as $checks |
+              map(select(.workflow != "brew formula-merge" and .name != "merge-ready")) as $checks |
               {
                 pending: [$checks[] | select(.bucket == "pending") | .name],
                 failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
                 unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                   .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
-                missing: (["tap-syntax", "formula-conclusion", "merge-ready"] as $expected |
+                missing: (["tap-syntax", "formula-conclusion"] as $expected |
                   [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
               }
             ' <<< "$checks")"
@@ -251,13 +250,13 @@ jobs:
           checks="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
             --json name,bucket,workflow 2>/dev/null || true)"
           summary="$(jq -cer '
-            map(select(.workflow != "brew formula-merge")) as $checks |
+            map(select(.workflow != "brew formula-merge" and .name != "merge-ready")) as $checks |
             {
               pending: [$checks[] | select(.bucket == "pending") | .name],
               failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
               unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                 .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
-              missing: (["tap-syntax", "formula-conclusion", "merge-ready"] as $expected |
+              missing: (["tap-syntax", "formula-conclusion"] as $expected |
                 [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
             }
           ' <<< "$checks")"
