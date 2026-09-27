@@ -1,8 +1,8 @@
 class Kudu < Formula
   desc "Manage QEMU virtual machines in the terminal"
   homepage "https://github.com/pythops/kudu"
-  url "https://github.com/pythops/kudu/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "d9bbb0a46dacf492029cfed4ad7e8086e41659082b603ffdab47111536d88d8c"
+  url "https://github.com/pythops/kudu/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "fa5e808018cbec10e3bfabd6f4dcac86276641bacb79c8c51868cd703b9619e7"
   license "GPL-3.0-or-later"
   head "https://github.com/pythops/kudu.git", branch: "main"
 
