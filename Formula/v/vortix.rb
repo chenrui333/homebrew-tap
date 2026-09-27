@@ -26,9 +26,7 @@ class Vortix < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/vortix --version")
 
-    config_dir = Pathname.new(ENV.fetch("HOME"))/"vortix-test-#{Process.pid}"
-    config_dir.mkpath
-    config_dir.chmod(0700)
+    config_dir = testpath/"config"
     profile_file = testpath/"demo.conf"
     profile_file.write <<~CONF
       [Interface]
