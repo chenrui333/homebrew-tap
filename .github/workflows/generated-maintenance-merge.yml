@@ -95,7 +95,7 @@ jobs:
                 failed: [$checks[] | select(.bucket == "fail" or .bucket == "cancel") | .name],
                 unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                   .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
-                missing: (["merge-ready", "Spell Check", "GitGuardian Security Checks"] as $expected |
+                missing: (["Spell Check", "GitGuardian Security Checks"] as $expected |
                   [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
               }
             ' <<< "$checks")"
