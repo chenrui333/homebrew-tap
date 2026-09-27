@@ -7,7 +7,7 @@ class Precompress < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "dd1e20af1e093b28e6c7986582287e86a9076e33667044b799f36408b4262d8d"
+    sha256 cellar: :any_skip_relocation, all: "ee7d13e2eaecfda9339707edd0f48e0de16cc9dd6a81e6fa56ad10ac54d28dd0"
   end
 
   depends_on "node"
