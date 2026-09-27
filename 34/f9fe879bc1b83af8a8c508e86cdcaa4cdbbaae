@@ -1,0 +1,55 @@
+.github/workflows/formula-merge.yml
+  s_2316195b58a8fc::t_26747c34f485c8 66
+.github/scripts/merge-gate.test.js
+  s_2316195b58a8fc::t_7323317d127bfc 2,14-22
+.github/workflows/merge-gate.yml
+  s_2316195b58a8fc::t_b8b9336aa9a683 36-38
+Formula/e/emeraldian.rb
+  s_2316195b58a8fc::t_db41b11d35368e 4-5,11-14
+Formula/g/gnhf.rb
+  s_2316195b58a8fc::t_23fa7c435352ea 4-5,10
+Formula/g/gsty.rb
+  s_2316195b58a8fc::t_44932f7566c161 4-5,11-14
+Formula/h/hyprmoncfg.rb
+  s_2316195b58a8fc::t_12b0c6fd43bf9c 4-5,11-12
+Formula/k/knip.rb
+  s_2316195b58a8fc::t_987c598db86549 4-5,10-13
+Formula/k/kudu.rb
+  s_2316195b58a8fc::t_9dd05b7615d030 4-5,11-12
+Formula/k/kyushu.rb
+  s_2316195b58a8fc::t_f3fb548535e2dd 4-5,11-14
+Formula/l/lfk.rb
+  s_2316195b58a8fc::t_2512bc2577a535 4-5,11-14
+Formula/m/mcp-use.rb
+  s_2316195b58a8fc::t_aa8e035a65358f 4-5,10-13
+Formula/m/mcpc.rb
+  s_2316195b58a8fc::t_d8e570a68871f8 4-5,10-13
+Formula/m/mlx-audio.rb
+  s_2316195b58a8fc::t_02cb0f46ca7043 6-7,13-14,72-73,102-103
+Formula/m/mlx-vlm.rb
+  s_2316195b58a8fc::t_088e7c028521a5 6-7,13-14,80-81,110-111,150-151,215-216,245-246
+Formula/n/nest-cli.rb
+  s_2316195b58a8fc::t_a40a7e41e0dc91 4-5,10
+Formula/n/noodle.rb
+  s_2316195b58a8fc::t_ed80943fff5341 4-5,11-14
+Formula/o/omnictl.rb
+  s_2316195b58a8fc::t_b3878a3e590fbd 4-5,11-14
+Formula/o/opencli.rb
+  s_2316195b58a8fc::t_4520580424e43d 4-5,11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "34f9fe879bc1b83af8a8c508e86cdcaa4cdbbaae",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
