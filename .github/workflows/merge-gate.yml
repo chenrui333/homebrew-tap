@@ -33,6 +33,9 @@ jobs:
       - name: Validate workflow files
         run: mise exec -- actionlint
 
+      - name: Test workflow guardrails
+        run: node --test .github/scripts/merge-gate.test.js
+
   merge-ready:
     if: github.event_name == 'merge_group'
     name: merge-ready
