@@ -3,8 +3,8 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/01/d5/d9a0dee0d86da4c8bfce22bc55968b99a0dc08265207b136eba1769bfd91/mvt-2026.9.7.tar.gz"
-  sha256 "d3324c546eae1ea5df1982ad2786e002cb8069512fd49944c88c2c3771d6efd8"
+  url "https://files.pythonhosted.org/packages/95/6a/d3628e68cf4ea3b18dc51ebdd742e3ccdc1af6021f12c51472ac7cc98221/mvt-2026.9.21.tar.gz"
+  sha256 "5f5b2d1ecdd0c53a9aa85ba2b9ffcbac4d24ce3cfd4c31cc9c5223ac23a24d13"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
@@ -61,8 +61,8 @@ class Mvt < Formula
   end
 
   resource "iphone-backup-decrypt" do
-    url "https://files.pythonhosted.org/packages/6f/e7/bcdacdec21d628122ba240e7f742ab2175149e58672be63af55ff37a0f28/iphone_backup_decrypt-0.9.0.tar.gz"
-    sha256 "13b18fef3c8e3af627914f8c1a429bbc5555dfb0505239ba49efe99984cc0c96"
+    url "https://files.pythonhosted.org/packages/01/b8/a2ec2b10d792403d36bb6661fea6357179c31ece1ed3285c442e636d6335/iphone_backup_decrypt-0.10.0.tar.gz"
+    sha256 "5f2799e58f908cce28d7929dd82231abc8acd57c25b37bce6a2d6a82e018d343"
   end
 
   resource "libusb1" do
