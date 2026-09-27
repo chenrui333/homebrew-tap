@@ -63,6 +63,7 @@ jobs:
         env:
           HOMEBREW_DEVELOPER: 1
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           HOMEBREW_TEST_BOT_AUTOBUMP: 1
           INPUT_FORMULAE: ${{ github.event.inputs.formulae || steps.autobump.outputs.autobump_list }}
         run: |
@@ -94,6 +95,21 @@ jobs:
             if ! brew bump --full-name --no-fork --open-pr --formula "$qualified_formula"; then
               failed_formulae+=("$qualified_formula")
               echo "::warning::brew bump failed for $qualified_formula; continuing with the remaining formulae."
+            else
+              formula_name="${formula##*/}"
+              # shellcheck disable=SC2016
+              if ! pr_number="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
+                --json number,title,headRefName | jq -r --arg formula "$formula_name" \
+                '[.[] | select(.headRefName | startswith("bump-")) |
+                  select(.title | startswith($formula + " "))] | first | .number // empty')"; then
+                echo "::warning::Could not find the open PR for $qualified_formula to set CI-no-fail-fast."
+                pr_number=""
+              fi
+              if [[ -n "$pr_number" ]]; then
+                if ! gh pr edit "$pr_number" --repo "$GITHUB_REPOSITORY" --add-label CI-no-fail-fast; then
+                  echo "::warning::Could not set CI-no-fail-fast on PR #$pr_number; formula CI will still use no-fail-fast for autobumps."
+                fi
+              fi
             fi
 
             # A failed bump can leave its formula modified or its branch checked

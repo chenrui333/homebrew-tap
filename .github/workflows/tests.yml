@@ -78,6 +78,9 @@ jobs:
       ((github.event_name != 'pull_request' && github.event_name != 'merge_group') || needs.tap-syntax.result == 'success')
     runs-on: ubuntu-slim
     needs: tap-syntax
+    permissions:
+      contents: read
+      pull-requests: read
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
       linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
@@ -109,6 +112,7 @@ jobs:
               await script({github, context, core}, formula_detect)
             } catch (error) {
               console.error(error);
+              core.setFailed(error.message)
             }
 
   build-formula:

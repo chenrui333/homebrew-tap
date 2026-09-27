@@ -4,22 +4,29 @@ on:
   pull_request_target:
     types:
       - labeled
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Open formula PR number to publish or reconcile
+        required: true
+        type: number
 
 concurrency:
-  group: ${{ github.event.label.name == 'pr-pull' && 'brew-pr-pull' || format('brew-pr-pull-skip-{0}', github.run_id) }}
+  group: ${{ (github.event_name == 'workflow_dispatch' || github.event.label.name == 'pr-pull') && 'brew-pr-pull' || format('brew-pr-pull-skip-{0}', github.run_id) }}
   cancel-in-progress: false
   queue: max
 
 jobs:
   pr-pull:
     if: |
-      github.event.label.name == 'pr-pull' &&
-      github.event.pull_request.user.type != 'Bot' &&
-      github.event.pull_request.state == 'open' &&
-      !github.event.pull_request.draft
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.label.name == 'pr-pull' &&
+       github.event.pull_request.user.type != 'Bot' &&
+       github.event.pull_request.state == 'open' &&
+       !github.event.pull_request.draft)
     runs-on: ubuntu-latest
     env:
-      PR: ${{ github.event.pull_request.number }}
+      PR: ${{ inputs.pr_number || github.event.pull_request.number }}
     permissions:
       actions: read
       contents: write
@@ -28,8 +35,9 @@ jobs:
     steps:
       - name: Validate PR
         id: pr-details
+        if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'pr-pull'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
           set -euo pipefail
           pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
@@ -40,6 +48,8 @@ jobs:
           head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
           expected_head="$(jq -r '.head.sha' <<< "$pr_data")"
           title="$(jq -r '.title' <<< "$pr_data")"
+          labels="$(jq -r '[.labels[].name] | join("\n")' <<< "$pr_data")"
+          author_type="$(jq -r '.user.type // empty' <<< "$pr_data")"
 
           if [[ "$title" =~ [\$\`\;] ]]; then
             echo "PR title contains suspicious characters"
@@ -48,9 +58,14 @@ jobs:
 
           if [[ "$state" != "open" || "$draft" != "false" || "$base_branch" != "main" ||
                 "$head_repo" != "$GITHUB_REPOSITORY" || "$head_branch" == "main" ||
-                -z "$head_branch" || -z "$expected_head" ]]; then
+                -z "$head_branch" || -z "$expected_head" || "$author_type" == "Bot" ]]; then
             echo "PR must be an open, non-draft, same-repository PR targeting main"
             echo "state=$state draft=$draft base=$base_branch head_repo=$head_repo branch=$head_branch"
+            exit 1
+          fi
+
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]] && ! grep -Fxq 'pr-pull' <<< "$labels"; then
+            echo "Refusing manual dispatch because the PR does not have the pr-pull label."
             exit 1
           fi
 
@@ -72,9 +87,35 @@ jobs:
           if [[ "$published_head" == "$expected_head" ]]; then
             echo "Published bottle commit already matches the current PR head; publication is a no-op."
             echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "published_head=$published_head" >> "$GITHUB_OUTPUT"
           else
             echo "publish=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Reconcile published bottle label
+        if: steps.pr-details.outputs.publish == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          VERIFIED_PUBLISHED_HEAD: ${{ steps.pr-details.outputs.published_head }}
+          HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
+        run: |
+          set -euo pipefail
+          pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
+          current_head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
+          current_head_branch="$(jq -r '.head.ref // empty' <<< "$pr_data")"
+          current_head_sha="$(jq -r '.head.sha // empty' <<< "$pr_data")"
+          state="$(jq -r '.state' <<< "$pr_data")"
+          draft="$(jq -r '.draft' <<< "$pr_data")"
+          base_branch="$(jq -r '.base.ref' <<< "$pr_data")"
+          if [[ "$state" != "open" || "$draft" != "false" || "$base_branch" != "main" ||
+                "$current_head_repo" != "$GITHUB_REPOSITORY" ||
+                "$current_head_branch" != "$HEAD_BRANCH" ||
+                -z "$VERIFIED_PUBLISHED_HEAD" || "$current_head_sha" != "$VERIFIED_PUBLISHED_HEAD" ]]; then
+            echo "::error::Refusing to mark bottles published because the current PR head no longer matches the verified marker."
+            exit 1
+          fi
+
+          gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label CI-published-bottle-commits
 
       - name: Set up Homebrew
         if: steps.pr-details.outputs.publish == 'true'
@@ -98,7 +139,7 @@ jobs:
         if: steps.pr-details.outputs.publish == 'true'
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
         run: |
@@ -125,7 +166,7 @@ jobs:
         if: steps.pr-details.outputs.publish == 'true'
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
@@ -147,7 +188,7 @@ jobs:
         if: steps.pr-details.outputs.publish == 'true'
         working-directory: ${{ steps.pr-pull.outputs.bottle_path }}
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
@@ -172,7 +213,7 @@ jobs:
         env:
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
           set -euo pipefail
           pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
@@ -208,7 +249,7 @@ jobs:
         env:
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
           set -euo pipefail
           pr_head_verified=false
@@ -258,13 +299,13 @@ jobs:
       - name: Mark PR with published bottle commits
         if: steps.pr-details.outputs.publish == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: gh pr edit --add-label CI-published-bottle-commits "$PR" --repo "$GITHUB_REPOSITORY"
 
       - name: Record published bottle head
         if: steps.pr-details.outputs.publish == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
         run: >-
           gh pr comment "$PR" --repo "$GITHUB_REPOSITORY"
