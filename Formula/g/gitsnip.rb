@@ -1,8 +1,8 @@
 class Gitsnip < Formula
   desc "Download specific folders from a Git repository"
   homepage "https://github.com/dagimg-dot/gitsnip"
-  url "https://github.com/dagimg-dot/gitsnip/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "d5e3c7d75b1b5145128d92cdb56abe08b623af22d96aa520e2411b18a794e4c6"
+  url "https://github.com/dagimg-dot/gitsnip/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "6e632e65536cec23be7cf4fdc90bca524d3654a9449f9897b5b8d62d7cf2edde"
   license "MIT"
   head "https://github.com/dagimg-dot/gitsnip.git", branch: "main"
 
