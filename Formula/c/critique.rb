@@ -7,10 +7,10 @@ class Critique < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a53e884f0491dbe2c2fc7f2d67e626c3980fa82d98c8f0c9c5df4f10dcdc2f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a53e884f0491dbe2c2fc7f2d67e626c3980fa82d98c8f0c9c5df4f10dcdc2f3"
-    sha256 cellar: :any,                 arm64_linux:   "7a0e142872903ad7fb304f750e437c3c7b7e2960ec47c26dfe682089f89d9acf"
-    sha256 cellar: :any,                 x86_64_linux:  "373f81b21be1ee51f8476c045bfa95eb642eb741f181a58fdf43dbd392ed07fa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5c419b956366b2709ce57199c7a61dff2ff04f05d9d439b11e734d38642539d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5c419b956366b2709ce57199c7a61dff2ff04f05d9d439b11e734d38642539d"
+    sha256 cellar: :any,                 arm64_linux:   "62c24eac5befc6b654bb781ce62a6fa9fae73583df572ac3d52477362633117b"
+    sha256 cellar: :any,                 x86_64_linux:  "9d8fa54eb1f8f20748b4b204f13e7e97678162efbc399e1e14cecd749d0b72d6"
   end
 
   depends_on "python@3.14" => :build
