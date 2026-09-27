@@ -3,16 +3,16 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/30/ac/cdfcdd0bcb7e070e3d02f901863d354bbf7b9a4bbace6babad7aace7725f/apm_cli-0.31.0.tar.gz"
-  sha256 "bb1cd2e86fc04545fc2ad4cea96660614df002b78ee1dbb8085ce5141722253d"
+  url "https://files.pythonhosted.org/packages/1f/f1/8da7ba1848916dd5eafd8d94c52c6ca235eda293b9a92b2dde145094aa22/apm_cli-0.32.0.tar.gz"
+  sha256 "761b774078975e3b028c332d8c5e43a7227baf022a96b0f0c42fc966e37f5d32"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "18c7e55d9ef354c65345d29bffdd0ada718219834920cac2b9d468be2e0da38f"
-    sha256 cellar: :any, arm64_sequoia: "4632d22414223fadca10287fa0259268693d5ed9d81bc9eaba5f14efc51cdfda"
-    sha256 cellar: :any, arm64_linux:   "0aa33fefee7136a93d481361d1bb536807fe7867ef4d614d16b25bf359ae7e04"
-    sha256 cellar: :any, x86_64_linux:  "822029057e493f7e02243f92dc96cf5c92644462369cd1b0c1d47a11168c6eff"
+    sha256 cellar: :any, arm64_tahoe:   "671e27a4ca2950ba989a290cf9aef299def64916be417bc85d6f362e8186fa98"
+    sha256 cellar: :any, arm64_sequoia: "ead0cc8963f547a4d6f370e3db246e7026bde4268a9e0d7d27cf44ba5e4633d8"
+    sha256 cellar: :any, arm64_linux:   "cc30e2e7b84ce4ecc7f76a0c7eebcbbf4eff7fe54fb7525324c6dc9d8e8996ea"
+    sha256 cellar: :any, x86_64_linux:  "f43321e05bb9afb3103499dfc10568fe6bdbdc823825a1cb6fa92662feae27f8"
   end
 
   depends_on "rust" => :build # for jiter
@@ -92,8 +92,8 @@ class ApmCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6f/38/88cd6eda96c40594a1e3da7d8b40f04bc40ace5a6aef9ac5cb407540f173/filelock-4.0.1.tar.gz"
-    sha256 "fdefc3f3e87716d855ae2b732c1cfd521dd99799ef2b4d00e8c0d4dcdc7cc94b"
+    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
+    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
   end
 
   resource "frozenlist" do
@@ -117,13 +117,13 @@ class ApmCli < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
-    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
-    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "idna" do
@@ -142,8 +142,8 @@ class ApmCli < Formula
   end
 
   resource "llm" do
-    url "https://files.pythonhosted.org/packages/b5/68/baeda27122a280940c5e9ae7291b821fa96ea23f50a00f568e9cff0c3aac/llm-0.35.tar.gz"
-    sha256 "2ee0955b2e372408813ce966f3d03ad2c7419b85a547880c53797d31d3a3fdb6"
+    url "https://files.pythonhosted.org/packages/93/5e/7d5e3c85a64b7b08d74ff6332ece77685383261575c693ed694f0f9c2e78/llm-0.36.tar.gz"
+    sha256 "e59ad30875a99be2eea0c880543b1ebfe40eea24ae55d4008eb1e12c77964626"
   end
 
   resource "llm-github-models" do
@@ -167,8 +167,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f8/9d/a00f8bca3df57716771cca5b4c0ddb5c2e03e1dd2ddfbb1607371ffb8372/openai-3.17.0.tar.gz"
-    sha256 "28910914e6ffaf622f1bbf5dfe02e221cc2b929e492dd30d06b6826939dedf92"
+    url "https://files.pythonhosted.org/packages/7c/91/2d5722388a50cc86e162779df5fbfe0afa652a6e2d5c9ee616e081a82098/openai-3.19.2.tar.gz"
+    sha256 "de185f9834ad064d965ec42bd0766731cf66bceea16a7670294a835d207019e6"
   end
 
   resource "pluggy" do
