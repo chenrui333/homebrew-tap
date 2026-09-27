@@ -1,0 +1,21 @@
+.github/workflows/formula-merge.yml
+  s_2316195b58a8fc::t_cf972f23dc4a00 66
+.github/workflows/generated-maintenance-merge.yml
+  s_2316195b58a8fc::t_9a0464eddc919b 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a817fa6eb116d302253b0d20bca8dfa748cca070",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
