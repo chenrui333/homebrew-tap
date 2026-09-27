@@ -36,6 +36,7 @@ class Bun < Formula
 
   on_linux do
     depends_on "lld@21" => :build
+    depends_on "nasm" => :build
   end
 
   # Use the official release binary only as a bootstrap compiler for
