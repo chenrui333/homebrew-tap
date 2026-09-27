@@ -1,8 +1,8 @@
 class Kyushu < Formula
   desc "Self-hostable Wasm sandbox for JavaScript workers"
   homepage "https://github.com/peterpeterparker/kyushu"
-  url "https://github.com/peterpeterparker/kyushu/archive/refs/tags/cli/v0.3.0.tar.gz"
-  sha256 "6ddc3492bb9fc5c34b2f6a6de11b16d187e5a82efa45d4df22443583d7aa06e4"
+  url "https://github.com/peterpeterparker/kyushu/archive/refs/tags/cli/v0.4.0.tar.gz"
+  sha256 "540e887554df701438b69bc861420751506ec8ef58bbe1fca0051748a92e2a71"
   license "MIT"
   head "https://github.com/peterpeterparker/kyushu.git", branch: "main"
 
