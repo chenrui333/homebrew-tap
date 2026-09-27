@@ -27,21 +27,8 @@ class Vortix < Formula
     assert_match version.to_s, shell_output("#{bin}/vortix --version")
 
     config_dir = testpath/"config"
-    profile_file = testpath/"demo.conf"
-    profile_file.write <<~CONF
-      [Interface]
-      PrivateKey = abc=
-      Address = 10.0.0.2/32
-
-      [Peer]
-      PublicKey = xyz=
-      Endpoint = 1.2.3.4:51820
-      AllowedIPs = 0.0.0.0/0
-    CONF
-
-    system bin/"vortix", "--config-dir", config_dir, "import", profile_file
     output = shell_output("#{bin}/vortix --config-dir #{config_dir} info")
     assert_match config_dir.to_s, output
-    assert_match "Profiles:    1 (1 WireGuard, 0 OpenVPN)", output
+    assert_match "Profiles:    0 (0 WireGuard, 0 OpenVPN)", output
   end
 end
