@@ -8,8 +8,8 @@ class Kudu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "6823428db46f3e9519bac5a42a8e92c50018d9301e5c6a83004666f8a4730c52"
-    sha256 cellar: :any, x86_64_linux: "e4a2923d73db42e3d77fdecfce90c222aae98f4d57910843528d05755d22a05e"
+    sha256 cellar: :any, arm64_linux:  "689e851cf8b5ed295392da23fea507358cd25fca98920e9b93e3d3ef1fc70abd"
+    sha256 cellar: :any, x86_64_linux: "737b166f1258a10a28f029e68aad86ecfd63b9a0ad22af0b6f2aa0813927da05"
   end
 
   depends_on "rust" => :build
