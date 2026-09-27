@@ -1,17 +1,17 @@
 class FlowNetwork < Formula
   desc "Real-time network throughput dashboard"
   homepage "https://github.com/programmersd21/flow"
-  url "https://github.com/programmersd21/flow/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "b6bcd7afdaa290253e33d9196fdb2349dc044c6bfe3b6e6500d0a3df7c0b13e4"
+  url "https://github.com/programmersd21/flow/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "3aae1c2f9890661e0b5b2f01b11a679ad8ff016dd78307d8a983191ffa44610c"
   license "MIT"
   head "https://github.com/programmersd21/flow.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2bae4f883108b087111e062527a4a7ae1e8ee0ad259cb5f8a0cd50ce2a0f912"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b49f48629ef7977c0b00b8862486e185a5608ceb4a2470ac7e157d9cf7a9e8c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03fc4f53b8727a940389e6bddc4c045dc5c7e9b22b5a3b4cbb03000ecb73335d"
-    sha256 cellar: :any,                 x86_64_linux:  "f245d1f80118b75f3dbafe4c9db09fbf9004324bc200b01cb8b1765cd6fc5b22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a7392693a4d3556fe7514325aa5d39f9f7475f26e33822aed6412e8878ad066"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a2930e6497778b6faadbc229c3f540bbfc6b5b6ac6121351894b781a1c0cf85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6757f9afc829aa23e5e03fbc4080b2805f0e84300821a0fc26dfe999af1d680b"
+    sha256 cellar: :any,                 x86_64_linux:  "7483a3699bc4e2d438eb6163661dd204bd474cd4b7f07a2f955b4d0c8dfdc9f5"
   end
 
   depends_on "go" => :build
