@@ -133,14 +133,6 @@ class Bun < Formula
                   "-Wno-error=deprecated-declarations",
                 EOS
     end
-    # Homebrew packages stable Rust; skip Bun's optional size-only lol-html
-    # build-std path, which requires nightly Cargo.
-    inreplace "scripts/build/deps/lolhtml.ts",
-              <<~OLD,
-                const canBuildStdImmediateAbort =
-                      cfg.darwin || cfg.freebsd || (cfg.linux && cfg.abi !== "musl" && cfg.abi !== "android");
-              OLD
-              "const canBuildStdImmediateAbort = cfg.freebsd;"
     if OS.mac? && MacOS.version >= :tahoe
       # The final macOS 26 bun-profile link is getting SIGKILL; skip the large
       # linker map there to keep the Tahoe link step lighter until upstream adjusts.
