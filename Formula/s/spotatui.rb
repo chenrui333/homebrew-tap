@@ -8,10 +8,10 @@ class Spotatui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97ff83a3722fefa560b7d3c5684c6fc9b1b65dc502897df5a5a5b7cb45ce7d34"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf22f6bed12dfaecc086720c061578f71f9cda6e6381fc41eba3d4e6eb359156"
-    sha256 cellar: :any,                 arm64_linux:   "d372f6aae0292f5101a46c669afac998de7cd2c3ffb64c3ed58e7a3f8763f800"
-    sha256 cellar: :any,                 x86_64_linux:  "f25029507e1aeca489e62dd8c4544a1e8824c31905072ba2d44c4ae3969cc41d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "696c21458e657c3bc63122546d7b8f7e4756a695c143ef8d42bcc7b6b85487c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91f9a6360f22febd8987f2f8e70593ab3aa1e34d7bf1ceedbdd871a3b075ccd5"
+    sha256 cellar: :any,                 arm64_linux:   "0d117126bd23ff93a8d4863a9b2dfc334401c00e7722d98482ddc68d076c0b38"
+    sha256 cellar: :any,                 x86_64_linux:  "7e65f6ecb00d87bd875bb1b540455bb74520530d0466525f9f8072414421bfaa"
   end
 
   depends_on "pkgconf" => :build
