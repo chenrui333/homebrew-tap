@@ -8,9 +8,8 @@ class Ctxmv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1222012331a8f4d6449606309e541413c6e49f0d544835fd7c7c19bda42fdd7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c46dfbe76bcae22141a6ba3981cc66ea789a8ccff16c24b151aa8fae5b98b8de"
-    sha256 cellar: :any_skip_relocation, sequoia:       "91911c306f99d7523b45d30d1985693c80dc2f2424f15cbab17512e79012c42d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f68a96905615c5bd089617252f108c4115aa68d5fcaa8cea3806d205ae4e5bea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d685e0ebeaa825ef30979a038c36764fbb31f922498efb2ed46b2786a015e1cf"
   end
 
   depends_on xcode: ["16.0", :build]
