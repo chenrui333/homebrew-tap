@@ -1,18 +1,19 @@
 class Critique < Formula
   desc "Terminal UI for reviewing git changes"
   homepage "https://critique.work"
-  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.1.140.tar.gz"
-  sha256 "f574ae6b1b34e8e45a3d4edf292f54cb0e12198e4e1b4e6cb880f4c3f27d0104"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.2.1.tar.gz"
+  sha256 "036cf59aee8fdef1d9ffbf7df9967010dca4183c9c947194bf23d4d6fded8535"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fac9d72d42f8e28c4bed0a010ca742fb288e25edd9efdd1b38fc5d8934c6866a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac9d72d42f8e28c4bed0a010ca742fb288e25edd9efdd1b38fc5d8934c6866a"
-    sha256 cellar: :any,                 arm64_linux:   "b4d9eb46541f74ef26320e2c98278e91654f3057a99831440f698d679d5aef36"
-    sha256 cellar: :any,                 x86_64_linux:  "35e4e2178dafb296ae99dcd65fba8dd5dbf0280ec5cb1de844ece4c52c7ed2b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a53e884f0491dbe2c2fc7f2d67e626c3980fa82d98c8f0c9c5df4f10dcdc2f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a53e884f0491dbe2c2fc7f2d67e626c3980fa82d98c8f0c9c5df4f10dcdc2f3"
+    sha256 cellar: :any,                 arm64_linux:   "7a0e142872903ad7fb304f750e437c3c7b7e2960ec47c26dfe682089f89d9acf"
+    sha256 cellar: :any,                 x86_64_linux:  "373f81b21be1ee51f8476c045bfa95eb642eb741f181a58fdf43dbd392ed07fa"
   end
 
+  depends_on "python@3.14" => :build
   depends_on "bun"
 
   preserve_rpath
@@ -45,6 +46,16 @@ class Critique < Formula
       next unless path.to_s.match?(platform_arch)
 
       rm_r(path) unless path.to_s.match?(native_platform)
+    end
+
+    node_modules.glob(".bun/**/prebuilds/**/*.node").each do |file|
+      description = Utils.safe_popen_read("file", "-b", file)
+      native_binary = if Hardware::CPU.intel?
+        description.match?(/x86[-_]64|universal binary/i)
+      else
+        description.match?(/arm64|aarch64|universal binary/i)
+      end
+      rm file unless native_binary
     end
 
     if OS.mac?
