@@ -27,16 +27,16 @@ class Vortix < Formula
     assert_match version.to_s, shell_output("#{bin}/vortix --version")
 
     config_dir = testpath/"config"
-    (config_dir/"profiles").mkpath
-    (config_dir/"config.toml").write <<~TOML
-      log_level = "info"
-    TOML
-    (config_dir/"profiles"/"demo.conf").write <<~CONF
+    config_dir.mkpath
+    config_dir.chmod(0700)
+    profile_file = testpath/"demo.conf"
+    profile_file.write <<~CONF
       [Interface]
       PrivateKey = abc
       Address = 10.0.0.2/32
     CONF
 
+    system bin/"vortix", "--config-dir", config_dir, "import", profile_file
     output = shell_output("#{bin}/vortix --config-dir #{config_dir} info")
     assert_match config_dir.to_s, output
     assert_match "Profiles:    1 (1 WireGuard, 0 OpenVPN)", output
