@@ -77,12 +77,12 @@ class Bun < Formula
 
     llvm = Formula["llvm@21"]
     ENV.prepend_path "PATH", llvm.opt_bin
-    # Bun 1.3.14's build script requires clang >=21.1.0 <21.1.99.
+    # Bun 1.4.2's build script requires clang >=21.1.0 <21.1.99.
     ENV["CC"] = llvm.opt_bin/"clang"
     ENV["CXX"] = llvm.opt_bin/"clang++"
 
     if OS.linux?
-      ENV.prepend_path "PATH", Formula["lld@21"].opt_bin
+      ENV.prepend_path "PATH", formula_opt_bin("lld@21")
       # Highway can emit evex512 ignored-attribute warnings that become errors.
       ENV.append "CXXFLAGS", "-Wno-ignored-attributes"
     end
@@ -138,7 +138,7 @@ class Bun < Formula
       # linker map there to keep the Tahoe link step lighter until upstream adjusts.
       inreplace "scripts/build/flags.ts",
                 'flag: c => ["-dead_strip", "-dead_strip_dylibs", ' \
-                "`-Wl,-map,${c.buildDir}/${bunExeName(c)}.linker-map`],",
+                "`-Wl,-map,${linkerMapPath(c)}`],",
                 'flag: ["-dead_strip", "-dead_strip_dylibs"],'
     end
     system buildpath/"bootstrap-bin/bun", "run", "build:release"
