@@ -10,10 +10,10 @@ class FastAgentMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "e7a1dd45b51e21e1885212ed08dccb09f418ce15f687a4b7ad1ce5bf9665577e"
-    sha256 cellar: :any, arm64_sequoia: "b57216595c5ec225e74198fe5821b107b50b7129dbd9f303aecd7b58791ed260"
-    sha256 cellar: :any, arm64_linux:   "7e5fed2ea2ae73a54a28006196850d4e57751e03005e09e47124165aa38655e7"
-    sha256 cellar: :any, x86_64_linux:  "f71ae0e7af1545cbd290e1c73d2f4f41ee2821022fcfdaf60e81e9af91f9d127"
+    sha256 cellar: :any, arm64_tahoe:   "6e34fd8bc6e43d5a2764f3739da6c1c3c249b494076c39953ebfa432567ba985"
+    sha256 cellar: :any, arm64_sequoia: "8c3b60704e6f5b537ae1e22a8aeddcf80a8abca583614e2f5a4e846e58202cae"
+    sha256 cellar: :any, arm64_linux:   "74596b6e2b6e2c0e3fdddfea40b56d0f7050bb1280e664c568dec40e894d22cc"
+    sha256 cellar: :any, x86_64_linux:  "41258d5b0f5af0724b4f4e0fe966e5f765494962d3c506b51474f16a20b1d411"
   end
 
   depends_on "pkgconf" => :build
