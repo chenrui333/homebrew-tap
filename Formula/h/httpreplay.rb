@@ -1,8 +1,8 @@
 class Httpreplay < Formula
   desc "Replay HTTP requests from a tape file"
   homepage "https://github.com/roy2220/httpreplay"
-  url "https://github.com/roy2220/httpreplay/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "a1a8b9e6113b3424f55936c2a7a856f7cd6843bfb432b1b36024bd6368e8afb6"
+  url "https://github.com/roy2220/httpreplay/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "700e842d053f321753ee4943642410fa918d0d5f6b55c6eea971c0992659b244"
   license "MIT"
 
   bottle do
