@@ -1,17 +1,17 @@
 class Gistui < Formula
   desc "Terminal interface for GitHub Gists"
   homepage "https://github.com/akunzai/gistui"
-  url "https://github.com/akunzai/gistui/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "c2b7f4dd4bbc731a0863124cfe4e978857cfb2241e7c3f4f86e631b6e2c5e88f"
+  url "https://github.com/akunzai/gistui/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "c1e433784f271a9fa96ae949e7bbcc0532e17d799966ed49535f8817eaae3212"
   license "MIT"
   head "https://github.com/akunzai/gistui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "237b7f9fdd23d4807b94cb8384d2b0c40da377dbbc5db80da9dca0a5e5f421c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4f2b94d6e5f691c918ef1e873bbd7459dc37818aa3d4881fcbccbded0a6f92b"
-    sha256 cellar: :any,                 arm64_linux:   "bfc4c1286afc8190e5b9dc4a7350a21387925dd7f68970dcc5c6a321308ef00c"
-    sha256 cellar: :any,                 x86_64_linux:  "76ce6733896d6ae05b5a3203bdd8406f671ccffbfa8866a4e438462fe9ea861a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1ba5921a28f17ab4dc16a4d1164d0c3cd0df0973d9de0ac8a9ecd9202419b62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45780a788537af4498412f176be9f7bb405b1129fb03f44aab805a031a7957bb"
+    sha256 cellar: :any,                 arm64_linux:   "91d766c521400b60cf9a190681953f96c46e458569179cf138a99bae973cab59"
+    sha256 cellar: :any,                 x86_64_linux:  "29218fe990450842d3ff153fa1fb1c4013135ecc4f884766e00580000b68b711"
   end
 
   depends_on "rust" => :build
