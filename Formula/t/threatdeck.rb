@@ -1,21 +1,22 @@
 class Threatdeck < Formula
   desc "Terminal based threat intelligence monitoring and alerting platform"
   homepage "https://github.com/gripebomb/threatdeck"
-  url "https://github.com/gripebomb/threatdeck/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "eca039c274ffc0c1f121d2f5f22f68d070011b2754819aa7a6ed58e50c9b5b7e"
+  url "https://github.com/gripebomb/threatdeck/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "7fafb2a934a76a3c19b839149d12f12fc5ae9becfd353306f40e3c9234d1f653"
   license "MIT"
   head "https://github.com/gripebomb/threatdeck.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d7e0e4d4bf0d1d1af10e9e10922985377b31bff2b77f284375b2ac5d3022003"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "250362b252a42ef89028414755ebfdebd845a9b2a65388701e34d5cadfc19c9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f62b8b22d8efc8ce8352f3dfac0b9b92afba4f6b21d88b557d4fdb6de991eb53"
-    sha256 cellar: :any,                 arm64_linux:   "4712cb9fc34eceb53dbaf405c7990718f59f2d158f016e65711949662763bb24"
-    sha256 cellar: :any,                 x86_64_linux:  "86079c16f647821617cc31030ee414828fb5e408f70e71db84b852589b86a2a6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3632e469c6abd66a4dd4f1c89a7aefce85021caaba009a2facb1067b460faa3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32a14fe2ed5f983b504961e7d4605b5b9bff73491ac4fadb9ac6931346bcb6af"
+    sha256 cellar: :any,                 arm64_linux:   "969346e649949c67e85bbf447cec83fe9bf03aa21b2d19c4e4686393a4ab9af7"
+    sha256 cellar: :any,                 x86_64_linux:  "f870d40dd4b6344f13cd7bf1e123f96b6d8635594c09587f5659e6eceaf38be8"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args
