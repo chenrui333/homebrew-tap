@@ -8,10 +8,10 @@ class GlabTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4ca88348ba1df89f8d1609b6d20bf7aa8806d04f6e30a6dc41aa02070d5acd3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0453032092ce8e3ec8b63b2b417613373bd1467f4b639f4939ea4cb31a4aeb98"
-    sha256 cellar: :any,                 arm64_linux:   "f277c1f8b262d985fa40f497f596c2fdd27bec4b049921de8d7b5cc9c5028bf8"
-    sha256 cellar: :any,                 x86_64_linux:  "acb835fe4b24c66b9d45ef0f4df12a5c198735526add36bb3af13cd5c000b180"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbd8013adfd8a3245751873f932f2a2dc9f010d23c3dc08e573a28959d35b573"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e6d047b323ca7da83914a890f09d52c24eef798f85989ccc56dafcfd2da8cf"
+    sha256 cellar: :any,                 arm64_linux:   "1ea468c55e0e590c80b689046a13d7478c75db9b648c7cfc9cc4cdb12718e884"
+    sha256 cellar: :any,                 x86_64_linux:  "e141fed44e9df963d9f38c64cfe19edb07e1c3b97508fd0ccc75410835f519c2"
   end
 
   depends_on "rust" => :build
