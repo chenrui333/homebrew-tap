@@ -1,8 +1,8 @@
 class Critique < Formula
   desc "Terminal UI for reviewing git changes"
   homepage "https://critique.work"
-  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.1.140.tar.gz"
-  sha256 "f574ae6b1b34e8e45a3d4edf292f54cb0e12198e4e1b4e6cb880f4c3f27d0104"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.2.1.tar.gz"
+  sha256 "036cf59aee8fdef1d9ffbf7df9967010dca4183c9c947194bf23d4d6fded8535"
   license "MIT"
 
   bottle do
@@ -13,6 +13,7 @@ class Critique < Formula
     sha256 cellar: :any,                 x86_64_linux:  "35e4e2178dafb296ae99dcd65fba8dd5dbf0280ec5cb1de844ece4c52c7ed2b8"
   end
 
+  depends_on "python@3.14" => :build
   depends_on "bun"
 
   preserve_rpath
@@ -45,6 +46,16 @@ class Critique < Formula
       next unless path.to_s.match?(platform_arch)
 
       rm_r(path) unless path.to_s.match?(native_platform)
+    end
+
+    node_modules.glob(".bun/**/prebuilds/**/*.node").each do |file|
+      description = Utils.safe_popen_read("file", "-b", file)
+      native_binary = if Hardware::CPU.intel?
+        description.match?(/x86[-_]64|universal binary/i)
+      else
+        description.match?(/arm64|aarch64|universal binary/i)
+      end
+      rm file unless native_binary
     end
 
     if OS.mac?
