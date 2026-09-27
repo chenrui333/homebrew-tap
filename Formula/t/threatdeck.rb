@@ -15,6 +15,7 @@ class Threatdeck < Formula
     sha256 cellar: :any,                 x86_64_linux:  "86079c16f647821617cc31030ee414828fb5e408f70e71db84b852589b86a2a6"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   def install
