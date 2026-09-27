@@ -1,8 +1,8 @@
 class Drydock < Formula
   desc "Dashboard for a fleet of Git repositories"
   homepage "https://github.com/yetidevworks/drydock"
-  url "https://github.com/yetidevworks/drydock/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "88183f8bc021537e256b63a05da5a9496d33d7087d5f8c71405a48857e505510"
+  url "https://github.com/yetidevworks/drydock/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "8ef6a10cffe9f5162869ffa957030e279f9c08525193168f686a25067354dd64"
   license "MIT"
   head "https://github.com/yetidevworks/drydock.git", branch: "main"
 
