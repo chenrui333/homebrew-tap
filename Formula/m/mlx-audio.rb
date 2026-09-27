@@ -3,15 +3,15 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/2e/d5/e4619fac04c1896751ae9ac1d32b06228e2bb10447e9ead4d7fbb85eef72/mlx_audio-0.5.5.tar.gz"
-  sha256 "214071620d92f05522466210fb3c59e9d43d2292d75cb9f0f18ae7cd47ed832b"
+  url "https://files.pythonhosted.org/packages/93/cb/6368465c16ee8b63025a6ce0cc65555ccd74b2f56020853875b07fedc3f1/mlx_audio-0.5.6.tar.gz"
+  sha256 "6f6fb5107bf4647dd3ed079c48ee9f0db90a443803c75bcfd2a396b392d33fdd"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "512273e2d7470d338eb0040ff8d43e3faefe999ee89c569a2bb9982185c95224"
-    sha256 cellar: :any, arm64_sequoia: "c911310b8a8121d50a34fef5c1bffaeb1e198cf8e6680eff551fc944832fbd62"
+    sha256 cellar: :any, arm64_tahoe:   "c9741ddce6260cb00828fa3d897a579153ab9cadd858593ad9b1e046d5937f33"
+    sha256 cellar: :any, arm64_sequoia: "0e82c227754561b50b7dd28aec45f719bd045f8851b5329f8f9ea0f6b2d38285"
   end
 
   depends_on "cmake" => :build
@@ -69,8 +69,8 @@ class MlxAudio < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/6f/38/88cd6eda96c40594a1e3da7d8b40f04bc40ace5a6aef9ac5cb407540f173/filelock-4.0.1.tar.gz"
-    sha256 "fdefc3f3e87716d855ae2b732c1cfd521dd99799ef2b4d00e8c0d4dcdc7cc94b"
+    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
+    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
   end
 
   resource "fsspec" do
@@ -99,8 +99,8 @@ class MlxAudio < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/fe/0f/e83fdd856da8fca26bf78d71709ebd120432a0ce535e72b9597cab1eb5bf/huggingface_hub-1.32.0.tar.gz"
-    sha256 "ed70a45498abe86039df7c2f4e5f7575de524be908d3840e8f828d5525eafd6a"
+    url "https://files.pythonhosted.org/packages/25/2a/484d112c0d8fc5f665d7b65137ac9cdb2953c982391598c3597968a12ee7/huggingface_hub-1.33.0.tar.gz"
+    sha256 "367be21a201db9523eddf8aeac7048f2602c1b308691c97640d5e72ed188007e"
   end
 
   resource "idna" do
