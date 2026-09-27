@@ -1,0 +1,25 @@
+.github/workflows/formula-merge.yml
+  s_2316195b58a8fc::t_41e3634cefa4e2 66
+.github/scripts/merge-gate.test.js
+  s_2316195b58a8fc::t_3e9191eafe7ec8 16
+  s_2316195b58a8fc::t_41e3634cefa4e2 2,14-15,17-21
+  s_2316195b58a8fc::t_6dbc899a229c6b 22
+.github/workflows/merge-gate.yml
+  s_2316195b58a8fc::t_41e3634cefa4e2 36-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "22491018054da4120851d938a6f274f8a01bbaf2",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
