@@ -1,18 +1,17 @@
 class Simutil < Formula
   desc "Manage mobile simulators and devices"
   homepage "https://github.com/dungngminh/simutil"
-  url "https://github.com/dungngminh/simutil/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "be4d65538dafde05622994b50269a8f2237724d2659b517ea9084fcc49bdeb19"
+  url "https://github.com/dungngminh/simutil/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "e36443d8f8f42aded7f92f27ff34bdca0a3b7f674aac96f43c85c3a20f525254"
   license "MIT"
   head "https://github.com/dungngminh/simutil.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "98b9b76b77bf1d010de762819346b15ddf0d2ddef780747610a440ca7e17547a"
-    sha256                               arm64_sequoia: "76ce1836e91678a9ddacf8fdac79b575104ce258309dc7e65bd4af955bbb569c"
-    sha256                               arm64_sonoma:  "7e0f957cd751f1b82bbea635e8c7aef4e27c00f648643bcf63cb2f280cddc2a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc13b56179833d1c19df39742ee9009184acb0fd8a740b9ee155846480cc45f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9836af18fa9c98cbe37e86a7cd583f76f900bb8f7a6f9d7aae0a94b97812cc43"
+    sha256                               arm64_tahoe:   "fd19530cfccdf59067976115911643badf68c993c2e0fe4e55b7361594393eac"
+    sha256                               arm64_sequoia: "64e7fca1f4c0c10392716111e7e863209bbe73c21b3d11bc0f4dbf46354b413a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2f9c18c370339c952169c026d3b247ec6b547516972a966d2adefe5a050537d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62f26b12a06478a649376ed688fa3619809ad584a95036a89a3379ee331d82ef"
   end
 
   depends_on "dart-sdk"
