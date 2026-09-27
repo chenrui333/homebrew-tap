@@ -1,8 +1,8 @@
 class GlabTui < Formula
   desc "Terminal interface for GitLab and GitHub"
   homepage "https://github.com/rcieri/glab-tui"
-  url "https://github.com/rcieri/glab-tui/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "d13a33eaa8729e127ba0eb83491a65cd1161cde89d37d9ae7273171f2d8ae7a1"
+  url "https://github.com/rcieri/glab-tui/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "da2c6d38f5d9a0b077d0483aca90be8efcd7edb0a0ce94fa6c973f1c0a5deb9e"
   license "MIT"
   head "https://github.com/rcieri/glab-tui.git", branch: "main"
 
