@@ -1,8 +1,8 @@
 class Gsty < Formula
   desc "Browse and apply Ghostty themes"
   homepage "https://github.com/tappunk/gsty"
-  url "https://github.com/tappunk/gsty/archive/refs/tags/v0.1.19.tar.gz"
-  sha256 "baa2f0a7b4e6c12c26f39c6418561039b96719a9d3f542befdc3c08f5095c11c"
+  url "https://github.com/tappunk/gsty/archive/refs/tags/v0.1.20.tar.gz"
+  sha256 "4115634c7e367fe462f166b60d470aaa72e62056c9f95a0e47f37197f6405918"
   license "MIT"
   head "https://github.com/tappunk/gsty.git", branch: "main"
 
