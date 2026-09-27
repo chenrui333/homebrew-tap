@@ -7,7 +7,7 @@ class EasCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8ac7d23d24216bb9f58fc4d7376a2f775facf9b028a5817d7858df223e1ad87e"
+    sha256 cellar: :any_skip_relocation, all: "d68669a1654e6d4c2360b0f3c4aa85abffcb8b2b1191a4cf79df61ab13b1bf0f"
   end
 
   depends_on "node"
