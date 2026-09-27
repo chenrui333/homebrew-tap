@@ -7,10 +7,10 @@ class Await < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88bf27be1571ae7d7481d21a15378d7d208a7c8341811b933d6d522755ab3083"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0645c782f9eba200ae8a826960a940712c7b97058cd1a5972126f5d596983dba"
-    sha256 cellar: :any,                 arm64_linux:   "e701617e66aa4cd20a3a1242795146f474e3a29007c205e11cc983a7148c6b33"
-    sha256 cellar: :any,                 x86_64_linux:  "f63bdfc15f7ba774a357d4b6eda43a1ed95abed88d374944c7399195284bdb6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ca32e16f8bc21602a2f400f0863eec31a5e5f954387d65e64c36f2f8e48680c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d991c3ffac54d7fe701d6455663abecf93388d85282340220e7f20bc85da00bb"
+    sha256 cellar: :any,                 arm64_linux:   "97721c1d04c6adb09b4326665f1afa57d2348e879613cbd1aa587c6bb0da5a51"
+    sha256 cellar: :any,                 x86_64_linux:  "6252292c60c845123c9c102500fb3cd4bd7a8236cc92d44577f8cee00dbf201a"
   end
 
   def install
