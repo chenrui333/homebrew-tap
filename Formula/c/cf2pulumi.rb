@@ -18,6 +18,19 @@ class Cf2pulumi < Formula
   depends_on "go" => :build
   depends_on "pulumictl" => :build
 
+  resource "cloudformation-documentation" do
+    url "https://github.com/cdklabs/awscdk-service-spec/raw/686af4fbc690a9d08c07a862941bb6d1810e330f/sources/CloudFormationDocumentation/CloudFormationDocumentation.json"
+    sha256 "623bc4f5a823f07e223786d8d95e029a95b8e69c96c6b8a08fb61422b7e8d98d"
+  end
+
+  deny_network_access!
+
+  def fetch
+    cd "provider" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -29,7 +42,14 @@ class Cf2pulumi < Formula
             "./cmd/pulumi-gen-aws-native"
     end
 
-    system "make", "generate_schema"
+    resource("cloudformation-documentation").stage do
+      (buildpath/"aws-cloudformation-docs").install "CloudFormationDocumentation.json"
+    end
+    system buildpath/"bin/pulumi-gen-aws-native",
+           "--schema-folder", "aws-cloudformation-schema",
+           "--version", version.to_s,
+           "--metadata-folder", "meta",
+           "schema"
     cd "provider" do
       system "go", "build", *std_go_args(ldflags:), "./cmd/cf2pulumi"
     end
