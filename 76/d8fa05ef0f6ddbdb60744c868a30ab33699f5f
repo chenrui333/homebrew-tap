@@ -1,0 +1,20 @@
+Formula/c/cello.rb
+  s_6e5d1e6427e031::t_35abd01dbc22ab 21-26
+  s_6e5d1e6427e031::t_ac05eea008db8a 37-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "76d8fa05ef0f6ddbdb60744c868a30ab33699f5f",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
