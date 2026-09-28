@@ -465,8 +465,8 @@ class ContextAnalyzer < Formula
   def install
     build_resources = %w[
       setuptools
-      wheel
       flit-core
+      wheel
       poetry-core
       packaging
       pathspec
