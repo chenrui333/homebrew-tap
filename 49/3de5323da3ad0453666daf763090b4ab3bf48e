@@ -1,0 +1,29 @@
+.github/workflows/merge-gate.yml
+  s_2316195b58a8fc::t_4b13ed7fa9271b 37
+.github/scripts/autobump-formula-failure.test.js
+  s_2316195b58a8fc::t_dd2df49def8829 1-30
+.github/scripts/autobump-formula-failure.js
+  s_2316195b58a8fc::t_4b13ed7fa9271b 1-9,22-37
+  s_2316195b58a8fc::t_70829006797a39 10-21
+.github/workflows/autobump-formula.yml
+  s_2316195b58a8fc::t_82bbea90f3a582 158
+  s_2316195b58a8fc::t_47281fe9266a67 20-24,91-94,102,110-115,117-121,124-125,130-155,172-185,187
+  s_2316195b58a8fc::t_bde7d78024057c 122-123,126-129
+  s_2316195b58a8fc::t_dd2df49def8829 29-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "493de5323da3ad0453666daf763090b4ab3bf48e",
+  "prompts": {},
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
