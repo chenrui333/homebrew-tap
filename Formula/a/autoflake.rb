@@ -19,6 +19,8 @@ class Autoflake < Formula
     sha256 "b24f96fafb7d2ab0ec5075b7350b3d2d2218eab42003821c06344973d3ea2f58"
   end
 
+  deny_network_access!
+
   def install
     virtualenv_install_with_resources
   end
