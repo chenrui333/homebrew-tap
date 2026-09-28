@@ -1,0 +1,23 @@
+.github/workflows/publish.yml
+  s_6e5d1e6427e031::t_d6ad4987d1733b 71,111
+AGENTS.md
+  s_6e5d1e6427e031::t_d6ad4987d1733b 285-286,291
+.github/workflows/tests.yml
+  s_6e5d1e6427e031::t_d6ad4987d1733b 256-259,269-271
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "97ebce52ab873ca74f36cc239e2ab570a48182bd",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
