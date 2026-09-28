@@ -13,11 +13,20 @@ class Clawbands < Formula
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "install", "--include=dev",
            *std_npm_args(prefix: false, ignore_scripts: false)
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    system "npm", "install", "--offline", "--include=dev",
+           *std_npm_args(prefix: false, ignore_scripts: false)
+    system "npm", "run", "build"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
@@ -26,8 +35,7 @@ class Clawbands < Formula
 
     assert_match version.to_s, shell_output("#{bin}/clawbands --version")
 
-    output = shell_output("#{bin}/clawbands stats")
-    assert_match "No activity recorded yet.", output
-    assert_path_exists testpath/".openclaw/clawbands/stats.json"
+    output = shell_output("#{bin}/clawbands disable")
+    assert_match "ClawBands is not registered in OpenClaw", output
   end
 end
