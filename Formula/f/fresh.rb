@@ -22,6 +22,12 @@ class Fresh < Formula
     depends_on "llvm" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
