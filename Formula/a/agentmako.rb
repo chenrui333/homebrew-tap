@@ -16,8 +16,16 @@ class Agentmako < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
+
+    system "npm", "install", "--offline", *std_npm_args
 
     # Build tree-sitter addons from source; upstream linux-arm64 prebuilds are x86_64.
     cd libexec/"lib/node_modules/agentmako" do
