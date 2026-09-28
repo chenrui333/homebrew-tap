@@ -24,15 +24,30 @@ class CcEnhanced < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
+    claude_home = testpath/".claude"
+    claude_home.mkpath
+    (claude_home/"openrouter_pricing_cache.json").write <<~JSON
+      {
+        "models": {},
+        "timestamp": #{Time.now.to_i}
+      }
+    JSON
+
     output_log = testpath/"output.log"
-    pid = spawn bin/"cc-enhanced", testpath, [:out, :err] => output_log.to_s
+    pid = spawn bin/"cc-enhanced", [:out, :err] => output_log.to_s
     sleep 1
-    assert_match "Updated OpenRouter pricing cache", output_log.read
+    assert_equal 1, Process.kill(0, pid)
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
