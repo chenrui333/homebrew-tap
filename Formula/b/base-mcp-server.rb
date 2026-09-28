@@ -12,8 +12,14 @@ class BaseMcpServer < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/base-mcp" => "base-mcp-server"
 
     # Remove incompatible pre-built binaries
