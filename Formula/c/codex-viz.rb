@@ -18,13 +18,21 @@ class CodexViz < Formula
 
   depends_on "node"
 
+  # The test exercises the dashboard over a loopback HTTP socket.
+  allow_network_access! :test
+
+  def fetch
+    system "npm", "install", "--include=dev",
+           *std_npm_args(prefix: false, ignore_scripts: false)
+  end
+
   def install
     ENV["NEXT_TELEMETRY_DISABLED"] = "1"
 
-    system "npm", "install", "--include=dev",
+    system "npm", "install", "--include=dev", "--offline",
            *std_npm_args(prefix: false, ignore_scripts: false)
     system "npm", "run", "build"
-    system "npm", "install", "--omit=dev",
+    system "npm", "install", "--omit=dev", "--offline",
            *std_npm_args(prefix: false, ignore_scripts: false)
 
     libexec.install Dir["*"]
@@ -39,7 +47,7 @@ class CodexViz < Formula
       #!/bin/bash
       export NEXT_TELEMETRY_DISABLED=1
       cd "#{libexec}" || exit 1
-      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/node_modules/next/dist/bin/next" start "$@"
+      exec "#{formula_opt_bin("node")}/node" "#{libexec}/node_modules/next/dist/bin/next" start "$@"
     SH
   end
 
