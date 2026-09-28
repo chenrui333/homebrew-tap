@@ -111,12 +111,18 @@ jobs:
           fi
 
           labels="$(jq -r '[.labels[].name] | join("\n")' <<< "$pr_data")"
-          for required_label in pr-pull CI-published-bottle-commits; do
-            if ! grep -Fxq "$required_label" <<< "$labels"; then
-              echo "PR is missing $required_label; skipping."
-              exit 0
-            fi
-          done
+          no_bottles=false
+          if grep -Fxq 'CI-no-bottles' <<< "$labels"; then
+            no_bottles=true
+          fi
+          if ! grep -Fxq 'pr-pull' <<< "$labels"; then
+            echo "PR is missing pr-pull; skipping."
+            exit 0
+          fi
+          if [[ "$no_bottles" != true ]] && ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels"; then
+            echo "PR is missing CI-published-bottle-commits; skipping."
+            exit 0
+          fi
 
           if grep -Fxq 'in progress' <<< "$labels"; then
             echo "PR is intentionally held with the in progress label; skipping."
@@ -132,26 +138,29 @@ jobs:
           fi
 
           published_head=""
-          attempt=0
-          while (( attempt < 12 )); do
-            attempt=$((attempt + 1))
-            published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" | \
-              jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
-                select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
-                capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] | last // empty')"
-            [[ "$published_head" == "$head_sha" ]] && break
-            sleep 5
-          done
+          if [[ "$no_bottles" != true ]]; then
+            attempt=0
+            while (( attempt < 12 )); do
+              attempt=$((attempt + 1))
+              published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" | \
+                jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
+                  select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
+                  capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] | last // empty')"
+              [[ "$published_head" == "$head_sha" ]] && break
+              sleep 5
+            done
 
-          if [[ "$published_head" != "$head_sha" ]]; then
-            echo "No published-bottle marker matches the current PR head; skipping."
-            exit 0
+            if [[ "$published_head" != "$head_sha" ]]; then
+              echo "No published-bottle marker matches the current PR head; skipping."
+              exit 0
+            fi
           fi
 
           {
             echo "eligible=true"
             echo "head_sha=$head_sha"
             echo "pr_number=$PR_NUMBER"
+            echo "no_bottles=$no_bottles"
           } >> "$GITHUB_OUTPUT"
 
       - name: Wait for successful checks on the published head
@@ -223,6 +232,10 @@ jobs:
           draft="$(jq -r '.draft' <<< "$pr_data")"
           base_branch="$(jq -r '.base.ref' <<< "$pr_data")"
           head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
+          no_bottles=false
+          if grep -Fxq 'CI-no-bottles' <<< "$labels"; then
+            no_bottles=true
+          fi
           files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" | \
             jq -r '[.[][] | .filename] | unique | .[]')"
           file_count="$(awk 'NF { count++ } END { print count + 0 }' <<< "$files")"
@@ -233,12 +246,13 @@ jobs:
           if [[ "$state" != open || "$draft" != false || "$base_branch" != main ||
                 "$head_repo" != "$GITHUB_REPOSITORY" ||
                 "$current_head" != "$EXPECTED_HEAD_SHA" ||
-                "$published_head" != "$EXPECTED_HEAD_SHA" ||
                 "$file_count" -ne 1 || ! "$files" =~ ^Formula/.+\.rb$ ]] ||
              grep -Fxq 'in progress' <<< "$labels" ||
-             ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels" ||
              ! grep -Fxq 'pr-pull' <<< "$labels" ||
-             ! grep -Fxq 'CI-no-fail-fast' <<< "$labels"; then
+             ! grep -Fxq 'CI-no-fail-fast' <<< "$labels" ||
+             { [[ "$no_bottles" != true ]] &&
+               { [[ "$published_head" != "$EXPECTED_HEAD_SHA" ]] ||
+                 ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels"; }; }; then
             echo "PR changed or became ineligible after CI; refusing to enable auto-merge."
             exit 0
           fi
@@ -299,7 +313,8 @@ jobs:
             fi
 
             if ! grep -Fxq 'pr-pull' <<< "$labels" ||
-               ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels" ||
+               { ! grep -Fxq 'CI-no-bottles' <<< "$labels" &&
+                 ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels"; } ||
                ! grep -Fxq 'CI-no-fail-fast' <<< "$labels" ||
                grep -Fxq 'in progress' <<< "$labels"; then
               echo "PR #$PR_NUMBER became ineligible during the merge retry; leaving it open."
