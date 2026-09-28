@@ -1,0 +1,21 @@
+Formula/c/cc-enhanced.rb
+  s_6e5d1e6427e031::t_b91b82b31f9230 38-40,43,46,50,53-65,71-74
+  s_6e5d1e6427e031::t_a2cae85c4d1408 51-52
+  s_6e5d1e6427e031::t_8af8061fa9b97b 66-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "15e625187c40980c54fdb562f8886ed71fe54b7a",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
