@@ -19,6 +19,12 @@ class Botkube < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -36,7 +42,8 @@ class Botkube < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/botkube version")
+    output = shell_output("HTTPS_PROXY=http://127.0.0.1:9 #{bin}/botkube version 2>&1", 1)
+    assert_match version.to_s, output
 
     output = shell_output("#{bin}/botkube config get 2>&1", 1)
     assert_match "try setting KUBERNETES_MASTER environment variable", output
