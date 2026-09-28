@@ -17,6 +17,8 @@ class BiberInspector < Formula
 
   depends_on "zig" => :build
 
+  deny_network_access!
+
   def install
     system "zig", "build", "--prefix", prefix, "-Doptimize=ReleaseSafe"
   end
