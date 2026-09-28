@@ -1,0 +1,20 @@
+Formula/b/blue.rb
+  s_6e5d1e6427e031::t_68b222e4949cfe 69
+  s_6e5d1e6427e031::t_275c8b04bc4655 70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "262e4487652293020f1eb0fffe8e16b04eb976e3",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
