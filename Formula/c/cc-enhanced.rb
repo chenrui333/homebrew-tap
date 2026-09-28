@@ -48,6 +48,7 @@ class CcEnhanced < Formula
     pid = spawn bin/"cc-enhanced", [:out, :err] => output_log.to_s
     sleep 1
     assert_equal 1, Process.kill(0, pid)
+    assert_match "Claude Code Enhanced", output_log.read
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
