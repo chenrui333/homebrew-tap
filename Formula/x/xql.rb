@@ -1,8 +1,8 @@
 class Xql < Formula
   desc "Query CSV files and SharePoint Lists with SQL"
   homepage "https://github.com/excelano/xql"
-  url "https://github.com/excelano/xql/archive/refs/tags/v1.12.2.tar.gz"
-  sha256 "c9cebb929eaafddd6f15bf005f99cc6c0400af7663679ceacfe3781b382955e4"
+  url "https://github.com/excelano/xql/archive/refs/tags/v1.12.3.tar.gz"
+  sha256 "9f9d80e53ab0d775894459ce82247ad0c36555c61ea66b5514c13dfcbcda79ea"
   license "MIT"
   head "https://github.com/excelano/xql.git", branch: "main"
 
