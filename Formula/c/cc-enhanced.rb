@@ -35,22 +35,42 @@ class CcEnhanced < Formula
   end
 
   test do
+    require "pty"
+    require "timeout"
+
     claude_home = testpath/".claude"
     claude_home.mkpath
-    (claude_home/"openrouter_pricing_cache.json").write <<~JSON
+    (claude_home/"pricing_cache.json").write <<~JSON
       {
         "models": {},
-        "timestamp": #{Time.now.to_i}
+        "last_updated": #{Time.now.to_i}
       }
     JSON
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"cc-enhanced", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_equal 1, Process.kill(0, pid)
-    assert_match "Claude Code Enhanced", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    output = +""
+    PTY.spawn({ "TERM" => "xterm-256color" }, "/bin/sh", "-c",
+              "stty cols 120 rows 40; exec #{bin}/cc-enhanced") do |r, w, pid|
+      Timeout.timeout(15) do
+        loop do
+          output << r.readpartial(4096)
+          next unless output.include?("Claude Code Enhanced")
+
+          w.write "q"
+          break
+        end
+
+        loop { output << r.readpartial(4096) }
+      rescue EOFError, Errno::EIO
+        nil
+      ensure
+        begin
+          Process.kill("TERM", pid)
+        rescue Errno::ESRCH
+          nil
+        end
+      end
+    end
+
+    assert_match "Claude Code Enhanced", output
   end
 end
