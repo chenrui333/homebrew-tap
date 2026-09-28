@@ -8,10 +8,10 @@ class Xql < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c2f4876c723af1347c66307151777945fa29267abff8f416150ac33a69d20b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c2f4876c723af1347c66307151777945fa29267abff8f416150ac33a69d20b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b783be6523508e68e4658ec1d92dab9b77028890ca2883bf3cddcf2f62749706"
-    sha256 cellar: :any,                 x86_64_linux:  "aa96a8533812fba8c79cc3e131d3bf1061fda8a212c88376681950f80a41f417"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c15f1f34d8335477a9fff6e4880187c78c057cfda87a043eafb2551310a005de"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c15f1f34d8335477a9fff6e4880187c78c057cfda87a043eafb2551310a005de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba541e2fb9b2389b66d80633596f18853cae9e806d89ea131c0907e07f7fe581"
+    sha256 cellar: :any,                 x86_64_linux:  "7f7a4dcde77c2aacd7568d4e91bf6d81c13c6986e22f500b7e618284dacf396c"
   end
 
   depends_on "go" => :build
