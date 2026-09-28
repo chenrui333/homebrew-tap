@@ -63,11 +63,16 @@ class Brunette < Formula
     sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
   end
 
+  deny_network_access!
+
   def install
     # add an empty `requirements-dev.txt` to fix `No such file or directory: 'requirements-dev.txt'`
     (buildpath/"requirements-dev.txt").write ""
 
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+    venv.pip_install resource("setuptools"), build_isolation: false
+    venv.pip_install resources.reject { |resource| resource.name == "setuptools" }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"brunette", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
