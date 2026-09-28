@@ -18,13 +18,17 @@ class CmakeInit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "34aea663849137c64d219c6059247e9bfd45030a1f9891e6918a9048f0a11903"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14"
+
+  deny_network_access!
 
   def install
     buildpath.install "package/setup.py"
     inreplace "setup.py", "../", ""
 
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
