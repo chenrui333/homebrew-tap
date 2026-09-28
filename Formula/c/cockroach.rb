@@ -17,7 +17,8 @@ class Cockroach < Formula
   depends_on "autoconf" => :build
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "go" => :build
+  # CockroachDB 19.1 vendored go-libedit references runtime.sigtramp, which Go 1.27 rejects.
+  depends_on "go@1.26" => :build
   depends_on "make" => :build
   depends_on "xz" => :build
 
@@ -101,7 +102,7 @@ class Cockroach < Formula
       end
     end
     xsys_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/golang.org/x/sys/unix")
-    go_xsys_dir = formula_opt_libexec("go")/"src/cmd/vendor/golang.org/x/sys/unix"
+    go_xsys_dir = formula_opt_libexec("go@1.26")/"src/cmd/vendor/golang.org/x/sys/unix"
     %w[amd64 arm64].each do |arch|
       cp go_xsys_dir/"zsyscall_darwin_#{arch}.s", xsys_dir/"zsyscall_darwin_#{arch}.s"
     end
