@@ -206,6 +206,8 @@ class Cccc < Formula
     sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
+  deny_network_access!
+
   def install
     virtualenv_install_with_resources
   end
