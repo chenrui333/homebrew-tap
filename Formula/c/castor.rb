@@ -17,6 +17,15 @@ class Castor < Formula
   depends_on "go" => :build
   depends_on "php"
 
+  deny_network_access!
+
+  def fetch
+    system "composer", "install", "--no-dev", "--prefer-dist", "--optimize-autoloader"
+    cd "tools/watcher" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     system "composer", "install", "--no-dev", "--prefer-dist", "--optimize-autoloader"
     libexec.install Dir["*"]
@@ -38,6 +47,8 @@ class Castor < Formula
   end
 
   test do
+    ENV["CASTOR_DISABLE_VERSION_CHECK"] = "1"
+
     assert_match version.to_s, shell_output("#{bin}/castor --version")
 
     output = shell_output("#{bin}/castor list")
