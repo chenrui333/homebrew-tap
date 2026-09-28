@@ -1,0 +1,20 @@
+Formula/a/autotools-language-server.rb
+  s_6e5d1e6427e031::t_1982b560776094 19,23-28,39-58,84-103,114-121,134-138,144-150,152-185
+  s_6e5d1e6427e031::t_b7228dfe1d97f5 186
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1ff06c8f82fa81f868693fd41b6cf8b87b0e62a0",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
