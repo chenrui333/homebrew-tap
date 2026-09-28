@@ -1,0 +1,19 @@
+Formula/c/cashd.rb
+  s_6e5d1e6427e031::t_e812d12c632071 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "083d87ce299e20214b4e546f0da1d95456d295bd",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
