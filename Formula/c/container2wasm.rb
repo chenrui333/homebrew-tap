@@ -17,6 +17,12 @@ class Container2wasm < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/ktock/container2wasm/version.Version=#{version}"
     %w[c2w c2w-net].each do |cmd|
