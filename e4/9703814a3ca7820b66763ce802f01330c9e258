@@ -1,0 +1,19 @@
+Formula/b/base-mcp-server.rb
+  s_6e5d1e6427e031::t_0d631bdc7307ef 15-20,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e49703814a3ca7820b66763ce802f01330c9e258",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
