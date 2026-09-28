@@ -23,6 +23,12 @@ class Blindfold < Formula
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -30,7 +36,8 @@ class Blindfold < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/blindfold --version")
 
-    assert_match "homebrew", shell_output("#{bin}/blindfold list")
+    output = shell_output("#{bin}/blindfold list")
+    assert_match "Unable to fetch available .gitignore templates", output
   end
 end
 
@@ -47,6 +54,18 @@ index 5d0c964..32b693e 100644
  authors = ["Eóin McMahon <eoin.mcmahon.dev@gmail.com>"]
  edition = "2018"
  description ="gitignore file generator written in rust"
+diff --git a/Cargo.lock b/Cargo.lock
+index 0c3aedf..1c1f42d 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -352,6 +352,6 @@ dependencies = [
+ [[package]]
+ name = "blindfold"
+-version = "1.1.0"
++version = "1.2.0"
+ dependencies = [
+  "async-trait",
+  "clap",
 diff --git a/src/cli.rs b/src/cli.rs
 index 8205fb4..fd54e5f 100644
 --- a/src/cli.rs
