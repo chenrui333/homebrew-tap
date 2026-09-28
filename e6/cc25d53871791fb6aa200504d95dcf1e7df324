@@ -1,0 +1,21 @@
+.github/workflows/publish.yml
+  s_6e5d1e6427e031::t_48839d94daf06b 68-73
+.github/workflows/formula-merge.yml
+  s_6e5d1e6427e031::t_48839d94daf06b 114-125,141-151,153-156,163,235-238,252-255,316-317
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e6cc25d53871791fb6aa200504d95dcf1e7df324",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
