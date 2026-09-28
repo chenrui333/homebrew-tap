@@ -1,16 +1,16 @@
 class Testronaut < Formula
   desc "Autonomous testing with OpenAI functions and browser automation"
   homepage "https://testronaut.app/"
-  url "https://registry.npmjs.org/testronaut/-/testronaut-1.9.3.tgz"
-  sha256 "ed55a6adca3892ac24315342c38e5ccd5ccc6f403774ee79cb55a23d1b441c09"
+  url "https://registry.npmjs.org/testronaut/-/testronaut-1.9.4.tgz"
+  sha256 "673005367d82194b87810a58b996a0c546f4bab9e193bb5014de7c7d679a92f8"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1313a9677dc1aa6424224bc9f23356693e1885099f8d09d4ccd350cce1a6a4ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1313a9677dc1aa6424224bc9f23356693e1885099f8d09d4ccd350cce1a6a4ec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d838ad0c5fadcb0ff66f1b8776b9616213d2a8367ac023822eb12be0bad55e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d838ad0c5fadcb0ff66f1b8776b9616213d2a8367ac023822eb12be0bad55e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "865265bd0da240b8c2a5f585e64f8405e587587a4aebd3aad76bdf879e16f502"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "865265bd0da240b8c2a5f585e64f8405e587587a4aebd3aad76bdf879e16f502"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13235191ee78dda264b6ba702acac4c1ee8dc7821b804109a671a4575fa4b608"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13235191ee78dda264b6ba702acac4c1ee8dc7821b804109a671a4575fa4b608"
   end
 
   depends_on "node"
