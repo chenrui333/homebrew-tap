@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/21/9b/94b5ad3ae4b12e61e567f66ebb19256dc71e6c3100389179c9e2ee89567c/fast_agent_mcp-0.10.36.tar.gz"
-  sha256 "163f38e7f8a6c74cc75957cdcfc5b1de416ea226ff5ee1ba9c735f4a4b6eb14d"
+  url "https://files.pythonhosted.org/packages/ac/a8/3bf1dcb430f45e00b286f62f421ef24134a16fed99e76f1665324a4b56e8/fast_agent_mcp-0.10.37.tar.gz"
+  sha256 "b0e55462987a11804acc5617cdd3ebdc67b067f51e35cfad9f39fdb333305621"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -609,8 +609,8 @@ class FastAgentMcp < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/42/a6/6375d56c44d590ef24acf0f8f5bf7ed768ff7a510b959306ec412611e90f/wrapt-2.4.1.tar.gz"
-    sha256 "fd6390aab9e8aa40c52eff3c180f098e8d9f5894b1fd4c4fd2c207067b33ed16"
+    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
+    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
   end
 
   resource "yarl" do
