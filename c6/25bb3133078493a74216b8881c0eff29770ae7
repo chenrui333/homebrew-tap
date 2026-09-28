@@ -1,0 +1,20 @@
+Formula/c/clawbands.rb
+  s_6e5d1e6427e031::t_6500a93fde6376 21-22
+  s_6e5d1e6427e031::t_6b4c41e6002a61 38-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c625bb3133078493a74216b8881c0eff29770ae7",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
