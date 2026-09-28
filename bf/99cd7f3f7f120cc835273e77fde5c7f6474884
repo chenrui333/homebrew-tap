@@ -1,0 +1,31 @@
+Formula/c/certok.rb
+  s_6e5d1e6427e031::t_6ac1cf9e73aa22 32,39-41
+Formula/c/cli-mcp-server.rb
+  s_6e5d1e6427e031::t_7cbaf6e4a0818b 125
+Formula/c/clawbands.rb
+  s_0e56e83fb35a9d::t_043be752c3abfa 16-18,22-29,38-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bf99cd7f3f7f120cc835273e77fde5c7f6474884",
+  "prompts": {},
+  "sessions": {
+    "s_0e56e83fb35a9d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e9ed-c3ce-7a41-963b-6dc33cb7d8ef",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
