@@ -13,8 +13,10 @@ class Clawra < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
