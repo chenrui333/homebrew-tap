@@ -15,12 +15,18 @@ class Bpftui < Formula
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    output = shell_output("#{bin}/bpftui 2>&1", 1)
-    assert_match(/bpftui|tty/, output.downcase)
+    output = shell_output("setsid #{bin}/bpftui </dev/null 2>&1", 1)
+    assert_match "could not open a new TTY", output
   end
 end
