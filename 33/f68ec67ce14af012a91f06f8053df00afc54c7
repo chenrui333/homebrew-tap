@@ -1,0 +1,22 @@
+Formula/a/amoco.rb
+  s_6e5d1e6427e031::t_4252d23437001c 88-92,106
+  s_6e5d1e6427e031::t_00df19c6f88216 103
+  s_6e5d1e6427e031::t_b8556fb69bc1b9 28-32,38-42,53-72,98-102,107-113
+  s_6e5d1e6427e031::t_57b42cfe37ee4a 104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "33f68ec67ce14af012a91f06f8053df00afc54c7",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
