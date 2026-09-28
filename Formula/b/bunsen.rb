@@ -17,9 +17,14 @@ class Bunsen < Formula
   depends_on "homebrew/core/bun" => :build
   depends_on :macos
 
+  deny_network_access!
+
+  def fetch
+    system "bun", "install", "--frozen-lockfile"
+  end
+
   def install
     inreplace "src/cli/index.ts", ".version('0.0.0')", ".version('#{version}')"
-    system "bun", "install", "--frozen-lockfile"
     system "bun", "run", "compile"
     bin.install "bin/bunsen"
   end
