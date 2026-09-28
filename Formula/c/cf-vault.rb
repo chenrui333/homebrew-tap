@@ -18,6 +18,12 @@ class CfVault < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -s -w -X github.com/jacobbednarz/cf-vault/cmd.Rev=#{version}"
     system "go", "build", *std_go_args(ldflags:)
@@ -28,7 +34,9 @@ class CfVault < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/cf-vault version")
 
-    (testpath/".cf-vault/config.toml").write ""
+    config_dir = testpath/".config/cf-vault"
+    config_dir.mkpath
+    (config_dir/"config.toml").write ""
     assert_match "no profiles found", shell_output("#{bin}/cf-vault list")
   end
 end
