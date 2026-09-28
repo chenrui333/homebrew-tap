@@ -24,6 +24,8 @@ class Dgen < Formula
   depends_on "libarchive"
   depends_on "sdl12-compat"
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-silent-rules
