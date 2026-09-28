@@ -23,6 +23,15 @@ class Aim < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # The test verifies folder serving over a loopback HTTP socket.
+  allow_network_access! :test
+
+  def fetch
+    # Fix the stale package version in the upstream lockfile.
+    inreplace "Cargo.lock", 'version = "1.8.8"', "version = \"#{version}\""
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
