@@ -16,6 +16,14 @@ class Actionbook < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "packages/cli" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     # Keep binary `--version` aligned with the tagged CLI release.
     inreplace "packages/cli/Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
