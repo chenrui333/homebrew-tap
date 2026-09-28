@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/19/bc/855608ac1e273c4203bf6870e6db8982643c049641535b759af0319a11f3/fast_agent_mcp-0.10.35.tar.gz"
-  sha256 "016d000ebe12f41a035f6af24aaf4dc88ad747de3060f49a3e3efd17eeb45061"
+  url "https://files.pythonhosted.org/packages/21/9b/94b5ad3ae4b12e61e567f66ebb19256dc71e6c3100389179c9e2ee89567c/fast_agent_mcp-0.10.36.tar.gz"
+  sha256 "163f38e7f8a6c74cc75957cdcfc5b1de416ea226ff5ee1ba9c735f4a4b6eb14d"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "6e34fd8bc6e43d5a2764f3739da6c1c3c249b494076c39953ebfa432567ba985"
-    sha256 cellar: :any, arm64_sequoia: "8c3b60704e6f5b537ae1e22a8aeddcf80a8abca583614e2f5a4e846e58202cae"
-    sha256 cellar: :any, arm64_linux:   "74596b6e2b6e2c0e3fdddfea40b56d0f7050bb1280e664c568dec40e894d22cc"
-    sha256 cellar: :any, x86_64_linux:  "41258d5b0f5af0724b4f4e0fe966e5f765494962d3c506b51474f16a20b1d411"
+    sha256 cellar: :any, arm64_tahoe:   "9ba09d2025c7c4c2157a11bc6427f631c96a3534db9b778f56a8c59867c5dced"
+    sha256 cellar: :any, arm64_sequoia: "919433757f21864f298a8189866f874be56afaf3320b5d3836d58ad006319451"
+    sha256 cellar: :any, arm64_linux:   "65fa738691c71d679ee78ab0ad14033f07875bd6a640fa23ff948bf0b4b55ed3"
+    sha256 cellar: :any, x86_64_linux:  "361b68eed1ab7b30e8cc93c722b5b81381b5364b0bfdbfa3976f8102e7e76715"
   end
 
   depends_on "pkgconf" => :build
@@ -409,8 +409,8 @@ class FastAgentMcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/5f/e0/7c20b5d0e0f147c40a934e8f9e9f717bd6e3e372c4d58ca5c2fcce2b1652/platformdirs-4.11.15.tar.gz"
-    sha256 "d7419e973b2b740d428200130f80c0e79304d1c71081001db911e15b26a3a6d4"
+    url "https://files.pythonhosted.org/packages/23/4d/e78afe1b449720c481884ca0a2f960f85f9ffdaa34b2d127b5427422c564/platformdirs-4.12.0.tar.gz"
+    sha256 "095be5c143382b1bee917c4f3e9987a0d8d6a582261f1d061ad0c403b7695b5b"
   end
 
   resource "prompt-toolkit" do
