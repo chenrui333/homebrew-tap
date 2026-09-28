@@ -40,16 +40,6 @@ class BrewCleaner < Formula
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"brew-cleaner", testpath, [:out, :err] => output_log.to_s
-    sleep 1
-    if OS.mac?
-      assert_empty output_log.read
-    else
-      assert_match "This script requires an interactive terminal", output_log.read
-    end
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    assert_match "This script requires an interactive terminal", shell_output(bin/"brew-cleaner")
   end
 end
