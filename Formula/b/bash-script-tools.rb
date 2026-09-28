@@ -19,6 +19,13 @@ class BashScriptTools < Formula
   depends_on "shellcheck"
   depends_on "shfmt"
 
+  # The test serves its UI over a loopback HTTP socket.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
