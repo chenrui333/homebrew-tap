@@ -1,0 +1,20 @@
+Formula/a/agentgraphed.rb
+  s_6e5d1e6427e031::t_d00178028fc783 22,26
+  s_6e5d1e6427e031::t_9f207f33ca2ae6 19-21,23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ee557e64ccf0e7d14f62600f674735b60dce4357",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
