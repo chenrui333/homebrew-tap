@@ -1,0 +1,20 @@
+Formula/b/brew-cleaner.rb
+  s_6e5d1e6427e031::t_469910da3d336e 33-34
+  s_6e5d1e6427e031::t_6a608f66197dc9 18-22,36-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "08823aaab7ac4b706a8087f611f4e0a0bc2d5772",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
