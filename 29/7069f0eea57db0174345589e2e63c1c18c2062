@@ -1,0 +1,19 @@
+Formula/c/claude-context-mcp.rb
+  s_5d48a09aaeed95::t_69dd5ebf913bd5 30-41,44,46,49-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "297069f0eea57db0174345589e2e63c1c18c2062",
+  "prompts": {},
+  "sessions": {
+    "s_5d48a09aaeed95": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cf09-0c76-7870-9d53-954dba10f063",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
