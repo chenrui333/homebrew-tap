@@ -17,6 +17,14 @@ class Agentcarousel < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "crates/agentcarousel" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/agentcarousel")
   end
