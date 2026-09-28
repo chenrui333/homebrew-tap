@@ -17,12 +17,24 @@ class C4go < Formula
 
   depends_on "go" => :build
 
+  on_linux do
+    depends_on "llvm@20"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
       -X github.com/Konstantin8105/c4go/version.GitSHA=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
+
+    bin.env_script_all_files(libexec/"bin", PATH: "#{formula_opt_bin("llvm@20")}:$PATH") if OS.linux?
   end
 
   test do
