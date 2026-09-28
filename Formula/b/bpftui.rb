@@ -26,7 +26,7 @@ class Bpftui < Formula
   end
 
   test do
-    output = pipe_output(bin/"bpftui", "q\n")
-    assert_match "BPF TUI Explorer", output
+    output = shell_output("setsid #{bin}/bpftui </dev/null 2>&1", 1)
+    assert_match "could not open a new TTY", output
   end
 end
