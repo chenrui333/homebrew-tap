@@ -17,10 +17,22 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: autobump-formula
+  cancel-in-progress: false
+
 jobs:
   autobump:
     runs-on: macos-latest
     steps:
+      - name: Check out workflow helpers
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Preserve autobump classifier
+        run: cp .github/scripts/autobump-formula-failure.js "$RUNNER_TEMP/autobump-formula-failure.js"
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
@@ -78,6 +90,10 @@ jobs:
           fi
 
           failed_formulae=()
+          skipped_formulae=()
+          successful_formulae=()
+          open_prs="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
+            --json number,title,headRefName)"
           for formula in "${formulae[@]}"; do
             if [[ "$formula" == */*/* ]]; then
               qualified_formula="$formula"
@@ -85,6 +101,7 @@ jobs:
               qualified_formula="chenrui333/tap/$formula"
             fi
 
+            formula_name="${qualified_formula##*/}"
             echo "::group::Bump $qualified_formula"
             # Scheduled runs can wait in the GitHub queue. Refresh before each
             # candidate so stale formula files cannot conflict with origin/main.
@@ -92,24 +109,55 @@ jobs:
             git -C "$tap_path" switch --force --detach origin/main
             git -C "$tap_path" reset --hard origin/main
 
-            if ! brew bump --full-name --no-fork --open-pr --formula "$qualified_formula"; then
-              failed_formulae+=("$qualified_formula")
-              echo "::warning::brew bump failed for $qualified_formula; continuing with the remaining formulae."
+            existing_pr_number="$(jq -r --arg formula "$formula_name" \
+              '[.[] | select(.headRefName | startswith("bump-" + $formula + "-"))] |
+                first | .number // empty' <<< "$open_prs")"
+            if [[ -n "$existing_pr_number" ]]; then
+              skipped_formulae+=("$qualified_formula: existing bump PR #$existing_pr_number")
+              echo "::notice::Skipping $qualified_formula because bump PR #$existing_pr_number is already open."
             else
-              formula_name="${formula##*/}"
-              # shellcheck disable=SC2016
-              if ! pr_number="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
-                --json number,title,headRefName | jq -r --arg formula "$formula_name" \
-                '[.[] | select(.headRefName | startswith("bump-")) |
-                  select(.title | startswith($formula + " "))] | first | .number // empty')"; then
-                echo "::warning::Could not find the open PR for $qualified_formula to set CI-no-fail-fast."
-                pr_number=""
-              fi
-              if [[ -n "$pr_number" ]]; then
-                if ! gh pr edit "$pr_number" --repo "$GITHUB_REPOSITORY" --add-label CI-no-fail-fast; then
-                  echo "::warning::Could not set CI-no-fail-fast on PR #$pr_number; formula CI will still use no-fail-fast for autobumps."
+              bump_log="$(mktemp)"
+              if brew bump --full-name --no-fork --open-pr --formula "$qualified_formula" >"$bump_log" 2>&1; then
+                cat "$bump_log"
+                successful_formulae+=("$qualified_formula")
+                # shellcheck disable=SC2016
+                if ! open_prs="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
+                  --json number,title,headRefName)"; then
+                  echo "::warning::Could not find the open PR for $qualified_formula to set CI-no-fail-fast."
+                  pr_number=""
+                else
+                  pr_number="$(jq -r --arg formula "$formula_name" \
+                    '[.[] | select(.headRefName | startswith("bump-" + $formula + "-"))] |
+                      first | .number // empty' <<< "$open_prs")"
+                fi
+                if [[ -n "$pr_number" ]]; then
+                  if ! gh pr edit "$pr_number" --repo "$GITHUB_REPOSITORY" --add-label CI-no-fail-fast; then
+                    echo "::warning::Could not set CI-no-fail-fast on PR #$pr_number; formula CI will still use no-fail-fast for autobumps."
+                  fi
+                fi
+              else
+                bump_status=$?
+                cat "$bump_log"
+                failure_kind="$(node "$RUNNER_TEMP/autobump-formula-failure.js" "$bump_log")"
+                if [[ "$failure_kind" == "branch-conflict" ]]; then
+                  open_prs="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
+                    --json number,title,headRefName)"
+                  existing_pr_number="$(jq -r --arg formula "$formula_name" \
+                    '[.[] | select(.headRefName | startswith("bump-" + $formula + "-"))] |
+                      first | .number // empty' <<< "$open_prs")"
+                fi
+                if [[ "$failure_kind" == "infrastructure" ]]; then
+                  failed_formulae+=("$qualified_formula (infrastructure; exit $bump_status)")
+                  echo "::error::Autobump could not complete $qualified_formula because of an infrastructure or authentication error."
+                elif [[ "$failure_kind" == "branch-conflict" && -n "$existing_pr_number" ]]; then
+                  skipped_formulae+=("$qualified_formula: existing bump PR #$existing_pr_number advanced during this run")
+                  echo "::notice::Preserving concurrently updated PR #$existing_pr_number for $qualified_formula."
+                else
+                  skipped_formulae+=("$qualified_formula: $failure_kind")
+                  echo "::warning::Skipping $qualified_formula after a candidate-specific bump failure ($failure_kind); see this group for details."
                 fi
               fi
+              rm -f "$bump_log"
             fi
 
             # A failed bump can leave its formula modified or its branch checked
@@ -123,7 +171,21 @@ jobs:
             echo "::endgroup::"
           done
 
+          {
+            echo "## Formula autobump results"
+            echo "- Bump commands completed: ${#successful_formulae[@]}"
+            echo "- Candidates skipped for an existing PR or formula-specific blocker: ${#skipped_formulae[@]}"
+            if ((${#skipped_formulae[@]} > 0)); then
+              printf '\n### Skipped candidates\n\n'
+              printf -- '- %s\n' "${skipped_formulae[@]}"
+            fi
+            if ((${#failed_formulae[@]} > 0)); then
+              printf '\n### Infrastructure failures\n\n'
+              printf -- '- %s\n' "${failed_formulae[@]}"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
           if ((${#failed_formulae[@]} > 0)); then
-            printf 'Failed formula bump attempts: %s\n' "${failed_formulae[*]}"
+            printf 'Infrastructure failures: %s\n' "${failed_formulae[*]}"
             exit 1
           fi

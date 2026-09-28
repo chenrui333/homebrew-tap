@@ -34,7 +34,7 @@ jobs:
         run: mise exec -- actionlint
 
       - name: Test workflow guardrails
-        run: node --test .github/scripts/merge-gate.test.js
+        run: node --test .github/scripts/merge-gate.test.js .github/scripts/autobump-formula-failure.test.js
 
   merge-ready:
     if: github.event_name == 'merge_group'
