@@ -26,9 +26,24 @@ class Cdx < Formula
     cause "node-pty fails to build"
   end
 
+  deny_network_access!
+
+  def prepare_package_json
+    package_json = JSON.parse((buildpath/"package.json").read)
+    package_json.delete("devDependencies")
+    (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
+  end
+
+  def fetch
+    prepare_package_json
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
+    prepare_package_json
     ENV["npm_config_build_from_source"] = "true"
-    system "npm", "install", *std_npm_args
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
+    system "npm", "install", "--offline", *std_npm_args
 
     Dir.chdir(libexec/"lib/node_modules/@ezpzai/cdx") do
       system "npm", "rebuild", "node-pty", "--build-from-source"
