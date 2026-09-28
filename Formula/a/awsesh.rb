@@ -17,6 +17,12 @@ class Awsesh < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # NOTE, the official binary should be sesh, but it would clash with https://github.com/joshmedeski/sesh
     # see discussions in https://github.com/elva-labs/awsesh/issues/34
