@@ -1,5 +1,7 @@
 Formula/c/cli-mcp-server.rb
   s_6e5d1e6427e031::t_6a7b32de37e1f5 24-118,219-220,222-250
+Formula/c/clawbands.rb
+  s_6e5d1e6427e031::t_bf124bce647f83 16,18
 ---
 {
   "schema_version": "authorship/3.0.0",
