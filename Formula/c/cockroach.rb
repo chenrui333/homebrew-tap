@@ -68,6 +68,9 @@ class Cockroach < Formula
       s.gsub! "const_reference operator*() const", "reference operator*() const"
       s.gsub! "const_pointer operator->() const", "pointer operator->() const"
     end
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/db/compaction_iteration_stats.h",
+              "#pragma once",
+              "#pragma once\n\n#include <stdint.h>"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
               "cmake_minimum_required(VERSION 3.3 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
