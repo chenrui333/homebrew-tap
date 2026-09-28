@@ -15,8 +15,7 @@ class CargoDephell < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build
-  depends_on "rustup" => :test
+  depends_on "rust" => [:build, :test]
 
   depends_on "libgit2"
   depends_on "openssl@3"
@@ -25,24 +24,22 @@ class CargoDephell < Formula
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
-    # Switch the default toolchain to nightly
-    system "rustup", "default", "nightly"
-    system "rustup", "set", "profile", "minimal"
-    system "rustup", "toolchain", "install", "nightly"
-
     (testpath/"src/main.rs").write <<~RS
       fn main() {}
     RS
@@ -53,10 +50,11 @@ class CargoDephell < Formula
       edition = "2021"
     TOML
 
-    json = shell_output("cargo dephell --manifest-path #{testpath}/Cargo.toml")
+    json = shell_output("#{bin}/cargo-dephell --manifest-path #{testpath}/Cargo.toml")
     assert_match "\"root_crates\":[\"hello_dephell\"]", json
 
-    system "cargo", "dephell", "--version"
+    # Upstream hardcodes 1.0 in the CLI metadata.
+    assert_match "cargo-dephell 1.0", shell_output("#{bin}/cargo-dephell --version")
   end
 end
 
