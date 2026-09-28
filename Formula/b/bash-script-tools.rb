@@ -19,7 +19,8 @@ class BashScriptTools < Formula
   depends_on "shellcheck"
   depends_on "shfmt"
 
-  deny_network_access!
+  # The test serves its UI over a loopback HTTP socket.
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"
