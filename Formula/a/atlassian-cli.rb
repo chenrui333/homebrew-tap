@@ -18,6 +18,8 @@ class AtlassianCli < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     cli_dir = buildpath/"acli-#{version}"
     cd cli_dir if cli_dir.directory?
@@ -25,7 +27,7 @@ class AtlassianCli < Formula
     inreplace "acli.sh" do |s|
       s.gsub! "find \"${directory}/lib\" -name 'acli-*.jar'", "find '#{share}/lib' -name 'acli-*.jar'"
       s.gsub! "java ${settings} -jar \"${cliJar}\" \"${@:1}\"",
-              "'#{Formula["openjdk"].opt_bin}/java' ${settings} -jar \"${cliJar}\" \"${@:1}\""
+              "'#{formula_opt_bin("openjdk")}/java' ${settings} -jar \"${cliJar}\" \"${@:1}\""
     end
     bin.install "acli.sh" => "acli"
     share.install "lib", "license"
