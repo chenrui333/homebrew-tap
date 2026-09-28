@@ -1,0 +1,19 @@
+Formula/b/box.rb
+  s_6e5d1e6427e031::t_5955bcf977886b 15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a8b5bee14651cfff25ddb894b4bb01d481e18105",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
