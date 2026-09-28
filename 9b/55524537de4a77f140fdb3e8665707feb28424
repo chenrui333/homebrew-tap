@@ -1,0 +1,20 @@
+Formula/b/balcony.rb
+  s_6e5d1e6427e031::t_6f3292fe16aeee 19,23-77,83-87,320-321,326-332,334-356
+  s_6e5d1e6427e031::t_b7319b7c5252ff 78-82,219-220,333
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9b55524537de4a77f140fdb3e8665707feb28424",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
