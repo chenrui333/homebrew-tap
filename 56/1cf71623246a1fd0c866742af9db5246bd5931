@@ -1,0 +1,21 @@
+Formula/a/ash-ai.rb
+  s_6e5d1e6427e031::t_d161968217f36a 18,22-25,28-29,40-41
+  s_6e5d1e6427e031::t_c9e15f74908d76 26-27,42
+  s_6e5d1e6427e031::t_e0d15a89fc9ba6 33-35,37-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "561cf71623246a1fd0c866742af9db5246bd5931",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
