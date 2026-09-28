@@ -24,6 +24,8 @@ class Dgen < Formula
   depends_on "libarchive"
   depends_on "sdl12-compat"
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-silent-rules
@@ -47,6 +49,20 @@ class Dgen < Formula
   end
 
   test do
-    assert_equal "DGen/SDL version #{version}", shell_output("#{bin}/dgen -v").chomp
+    # The GUI binary's version option hangs on headless macOS runners.
+    smd = "\0" * 0x4200
+    smd[0] = "\x01"
+    smd[8] = "\xaa"
+    smd[9] = "\xbb"
+    smd[0x2280] = "S"
+    smd[0x0280] = "E"
+    smd[0x2281] = "G"
+    smd[0x0281] = "A"
+    (testpath/"test.smd").write smd
+
+    system bin/"dgen_tobin", "test.smd", "test.bin"
+    rom = (testpath/"test.bin").read
+    assert_equal 0x4000, rom.bytesize
+    assert_equal "SEGA", rom.byteslice(0x100, 4)
   end
 end
