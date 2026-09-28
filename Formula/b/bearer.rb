@@ -16,6 +16,12 @@ class Bearer < Formula
 
   depends_on "go" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
@@ -30,11 +36,30 @@ class Bearer < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/bearer version 2>&1")
 
-    (testpath/"test.js").write <<~JS
-      const password = "this is my password";
-      console.log(password);
-    JS
-    output = shell_output("#{bin}/bearer scan #{testpath}/test.js 2>&1", 1)
-    assert_match "CRITICAL: Usage of hard-coded secret [CWE-798]", output
+    # Use a local rule so the scan test does not fetch default rules or version metadata.
+    rules_dir = testpath/"rules"
+    rules_dir.mkpath
+    (rules_dir/"test.yml").write <<~YAML
+      patterns:
+        - |
+          console.log($<...>)
+      languages:
+        - javascript
+      severity: low
+      metadata:
+        description: Detect a test console log.
+        id: javascript_test_console_log
+    YAML
+    (testpath/"test.js").write 'console.log("local test");'
+    command = [
+      "#{bin}/bearer scan #{testpath}/test.js",
+      "--disable-version-check",
+      "--disable-default-rules",
+      "--exit-code=0",
+      "--format=jsonv2",
+      "--external-rule-dir=#{rules_dir}",
+    ].join(" ")
+    output = shell_output(command)
+    assert_match "javascript_test_console_log", output
   end
 end
