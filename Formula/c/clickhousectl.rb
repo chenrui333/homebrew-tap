@@ -17,11 +17,19 @@ class Clickhousectl < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/clickhousectl")
   end
 
   test do
+    ENV["DO_NOT_TRACK"] = "1"
+
     assert_match version.to_s, shell_output("#{bin}/clickhousectl --version")
 
     output = shell_output("#{bin}/clickhousectl cloud auth status")
