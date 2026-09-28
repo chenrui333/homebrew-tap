@@ -130,6 +130,8 @@ class Artui < Formula
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
 
+  deny_network_access!
+
   def install
     virtualenv_install_with_resources
   end
