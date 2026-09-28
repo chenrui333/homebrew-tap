@@ -22,6 +22,8 @@ class Certok < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[
       -s -w
@@ -29,15 +31,15 @@ class Certok < Formula
       -X github.com/genuinetools/certok/version.GITCOMMIT=#{tap.user}
     ]
 
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/certok version")
 
     hosts_file = testpath/"hosts.txt"
-    hosts_file.write("example.com")
-    output = shell_output("#{bin}/certok #{hosts_file}")
-    assert_match "DigiCert Global G3 TLS ECC SHA384 2020 CA1  ECDSA-SHA384", output
+    hosts_file.write("127.0.0.1:1")
+    output = shell_output("#{bin}/certok #{hosts_file} 2>&1")
+    assert_match "tcp dial 127.0.0.1:1 failed", output
   end
 end
