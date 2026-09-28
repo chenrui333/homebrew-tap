@@ -26,12 +26,14 @@ class Cockroach < Formula
     depends_on "ncurses"
   end
 
+  deny_network_access!
+
   def install
     # The GNU Make that ships with macOS Mojave (v3.81 at the time of writing) has a bug
     # that causes it to loop infinitely when trying to build cockroach. Use
     # the more up-to-date make that Homebrew provides.
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
-    ENV["YACC"] = "#{Formula["bison"].opt_bin/"bison"} -y"
+    ENV.prepend_path "PATH", formula_opt_libexec("make")/"gnubin"
+    ENV["YACC"] = "#{formula_opt_bin("bison")/"bison"} -y"
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     # Current compilers emit warnings that old RocksDB promoted to hard errors.
@@ -96,7 +98,7 @@ class Cockroach < Formula
       end
     end
     xsys_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/golang.org/x/sys/unix")
-    go_xsys_dir = Formula["go"].opt_libexec/"src/cmd/vendor/golang.org/x/sys/unix"
+    go_xsys_dir = formula_opt_libexec("go")/"src/cmd/vendor/golang.org/x/sys/unix"
     %w[amd64 arm64].each do |arch|
       cp go_xsys_dir/"zsyscall_darwin_#{arch}.s", xsys_dir/"zsyscall_darwin_#{arch}.s"
     end
