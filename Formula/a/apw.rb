@@ -14,7 +14,16 @@ class Apw < Formula
   depends_on "deno" => :build
   depends_on :macos
 
+  deny_network_access!
+
+  def fetch
+    ENV["DENO_DIR"] = buildpath/".deno"
+    system "deno", "compile", "--allow-all", "--output", "apw-fetch", "src/cli.ts"
+    rm "apw-fetch"
+  end
+
   def install
+    ENV["DENO_DIR"] = buildpath/".deno"
     system "deno", "compile", "--allow-all", "--output", bin/"apw", "src/cli.ts"
   end
 
