@@ -18,6 +18,12 @@ class Anchor < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Homebrew manages updates, so disable the post-run network release check.
     inreplace "cmd/anchor/main.go",
@@ -40,9 +46,7 @@ class Anchor < Formula
 
     system "go", "build", *std_go_args(ldflags:), "./cmd/anchor"
 
-    generate_completions_from_executable(
-      bin/"anchor", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
-    )
+    generate_completions_from_executable bin/"anchor", shell_parameter_format: :cobra
   end
 
   test do
