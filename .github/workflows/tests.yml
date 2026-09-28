@@ -253,7 +253,10 @@ jobs:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
 
       - name: Label the PR with 'pr-pull'
-        if: env.skip_label == 'false' && env.has_bottle_json == 'true'
+        if: >-
+          env.skip_label == 'false' &&
+          (env.has_bottle_json == 'true' ||
+           contains(github.event.pull_request.labels.*.name, 'CI-no-bottles'))
         run: |
           if gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name' | grep -q "^pr-pull$"; then
             gh pr edit "${{ github.event.pull_request.number }}" --remove-label 'pr-pull' --repo "${{ github.repository }}"
@@ -263,7 +266,9 @@ jobs:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
 
       - name: Skip 'pr-pull' label without bottle artifacts
-        if: env.skip_label == 'false' && env.has_bottle_json != 'true'
+        if: >-
+          env.skip_label == 'false' && env.has_bottle_json != 'true' &&
+          !contains(github.event.pull_request.labels.*.name, 'CI-no-bottles')
         run: echo "No bottle JSON artifacts were produced in this run; skipping pr-pull label."
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}

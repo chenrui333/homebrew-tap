@@ -68,6 +68,7 @@ jobs:
           if grep -Fxq 'CI-no-bottles' <<< "$labels"; then
             echo "CI-no-bottles is set; skipping bottle publication."
             echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "no_bottles=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -107,7 +108,7 @@ jobs:
           fi
 
       - name: Reconcile published bottle label
-        if: steps.pr-details.outputs.publish == 'false'
+        if: steps.pr-details.outputs.publish == 'false' && steps.pr-details.outputs.no_bottles != 'true'
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           BOT_TOKEN: ${{ github.token }}

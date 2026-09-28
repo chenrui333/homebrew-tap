@@ -282,13 +282,13 @@ brew style <formula>
 
 - Any formula PR that is not labeled `CI-syntax-only` MUST go through the `pr-pull` process.
   - This includes new formulae, version bumps, revision rebuilds, and formula fixes that should produce or refresh bottles.
-  - After checks pass, wait for the test workflow to add `pr-pull`, then let the publishing workflow add the bottle commit to the PR branch. Do not merge the PR before that bottle commit lands and its CI reruns; afterward, merge it through the repository's normal merge policy.
-  - Do NOT merge these PRs before bottle publication completes, because that can leave `main` without a `bottle do` block.
+  - After checks pass, wait for the test workflow to add `pr-pull`, then let the publishing workflow add the bottle commit to the PR branch. Do not merge bottle-producing PRs before that bottle commit lands and its CI reruns; afterward, merge through the repository's normal merge policy.
+  - Formula PRs explicitly labeled `CI-no-bottles` still require `pr-pull` and all required checks on the current head, but the publishing workflow skips bottle commits and the formula-merge workflow can merge once those checks pass. Use this only when the formula already has the required bottle metadata or the change intentionally does not require a bottle refresh.
 - Never force-push `main` to `main`.
   - `git push --force-with-lease` is only for PR head branches that you explicitly verified are not `main`.
   - When updating `main`, use a normal `git push origin main`.
   - If local `main` and `origin/main` diverge, run `git pull --rebase origin main`, resolve conflicts locally, and then push normally.
-- Manual merges are acceptable only for PRs explicitly labeled `CI-syntax-only`, meaning CI should run syntax checks only and no bottle-producing build should occur.
+- Manual merges are acceptable only for PRs explicitly labeled `CI-syntax-only`, meaning CI should run syntax checks only and no bottle-producing build should occur. `CI-no-bottles` PRs merge through the automated formula-merge workflow, not manually.
 - If a new formula lands on `main` without a `bottle do` block, open a one-formula follow-up PR that only adds or increments `revision` to force a fresh bottle build, and wait for its published bottle commit before merging it through the repository's normal merge policy.
 
 ## PR Triage Workflow
