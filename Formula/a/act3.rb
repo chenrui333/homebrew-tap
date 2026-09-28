@@ -26,7 +26,6 @@ class Act3 < Formula
   end
 
   def install
-    ENV["GOPROXY"] = "off"
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
