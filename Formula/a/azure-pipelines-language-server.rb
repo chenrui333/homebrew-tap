@@ -12,8 +12,14 @@ class AzurePipelinesLanguageServer < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/azure-pipelines-language-server"
   end
 
@@ -32,7 +38,7 @@ class AzurePipelinesLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/azure-pipelines-language-server", "--stdio") do |stdin, stdout, _|
+    Open3.popen3(bin/"azure-pipelines-language-server", "--stdio") do |stdin, stdout, _|
       stdin.write "Content-Length: #{json.bytesize}\r\n\r\n#{json}"
       assert_match(/^Content-Length: \d+/i, stdout.readline)
     end
