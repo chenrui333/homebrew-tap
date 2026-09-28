@@ -15,21 +15,34 @@ class AshAi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc976ff9bfc43722b766a3fdb7bb8a65d05b618c876d7e36c11a1f26dd9694d9"
   end
 
+  depends_on "pnpm@9" => :build
   depends_on "node@24"
   depends_on "pcre2"
+
+  deny_network_access!
+
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+
+    system "pnpm", "install", "--frozen-lockfile"
+    system "pnpm", "--filter", "@ash-ai/cli", "deploy", "--prod", buildpath/"pnpm-deploy"
+    rm_r buildpath/"pnpm-deploy"
+  end
 
   def install
     platform_arch = Hardware::CPU.arm? ? "arm64" : "x64"
     platform_os = OS.mac? ? "darwin" : "linux"
-    node_path = "#{Formula["node@24"].opt_bin}:#{Formula["node@24"].opt_libexec/"bin"}:$PATH"
+    node_bin = formula_opt_bin("node@24")
+    node_libexec_bin = formula_opt_libexec("node@24")/"bin"
+    node_path = "#{node_bin}:#{node_libexec_bin}:$PATH"
 
-    ENV.prepend_path "PATH", Formula["node@24"].opt_bin
-    ENV.prepend_path "PATH", Formula["node@24"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", node_bin
+    ENV.prepend_path "PATH", node_libexec_bin
 
-    system "npx", "-y", "pnpm@9.15.0", "install", "--frozen-lockfile"
-    system "npx", "-y", "pnpm@9.15.0", "--filter", "@ash-ai/shared", "build"
-    system "npx", "-y", "pnpm@9.15.0", "--filter", "@ash-ai/cli", "build"
-    system "npx", "-y", "pnpm@9.15.0", "--filter", "@ash-ai/cli", "deploy", "--prod", libexec
+    system "pnpm", "--offline", "--filter", "@ash-ai/shared", "build"
+    system "pnpm", "--offline", "--filter", "@ash-ai/cli", "build"
+    system "pnpm", "--offline", "--filter", "@ash-ai/cli", "deploy", "--prod", libexec
 
     ripgrep_vendor = libexec/"node_modules/@anthropic-ai/claude-agent-sdk/vendor/ripgrep"
     if ripgrep_vendor.directory?
