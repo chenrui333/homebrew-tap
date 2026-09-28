@@ -15,6 +15,8 @@ class Asmdiff < Formula
 
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
     virtualenv_install_with_resources
   end
