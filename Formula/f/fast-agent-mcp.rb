@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/21/9b/94b5ad3ae4b12e61e567f66ebb19256dc71e6c3100389179c9e2ee89567c/fast_agent_mcp-0.10.36.tar.gz"
-  sha256 "163f38e7f8a6c74cc75957cdcfc5b1de416ea226ff5ee1ba9c735f4a4b6eb14d"
+  url "https://files.pythonhosted.org/packages/ac/a8/3bf1dcb430f45e00b286f62f421ef24134a16fed99e76f1665324a4b56e8/fast_agent_mcp-0.10.37.tar.gz"
+  sha256 "b0e55462987a11804acc5617cdd3ebdc67b067f51e35cfad9f39fdb333305621"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "9ba09d2025c7c4c2157a11bc6427f631c96a3534db9b778f56a8c59867c5dced"
-    sha256 cellar: :any, arm64_sequoia: "919433757f21864f298a8189866f874be56afaf3320b5d3836d58ad006319451"
-    sha256 cellar: :any, arm64_linux:   "65fa738691c71d679ee78ab0ad14033f07875bd6a640fa23ff948bf0b4b55ed3"
-    sha256 cellar: :any, x86_64_linux:  "361b68eed1ab7b30e8cc93c722b5b81381b5364b0bfdbfa3976f8102e7e76715"
+    sha256 cellar: :any, arm64_tahoe:   "ee00f24ac069d59a8cb0b6ceefd3145a1db5b6922ac6e827b8004ace82f0eb46"
+    sha256 cellar: :any, arm64_sequoia: "4f4558cd55ee145e59878ef5d6646ab04ce20297aa7edcd31da6249992616bd1"
+    sha256 cellar: :any, arm64_linux:   "af19803cd66b908fac942e71fdf3859f1ddefb4ae850ad1603458183d4930ffb"
+    sha256 cellar: :any, x86_64_linux:  "19337a612f7f7bb77aa0dae2b4decad030bb2a83f529f48cd6394f231eb9218f"
   end
 
   depends_on "pkgconf" => :build
@@ -609,8 +609,8 @@ class FastAgentMcp < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/42/a6/6375d56c44d590ef24acf0f8f5bf7ed768ff7a510b959306ec412611e90f/wrapt-2.4.1.tar.gz"
-    sha256 "fd6390aab9e8aa40c52eff3c180f098e8d9f5894b1fd4c4fd2c207067b33ed16"
+    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
+    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
   end
 
   resource "yarl" do
