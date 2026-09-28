@@ -12,21 +12,19 @@ class ClickupMcp < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    ENV["CLICKUP_API_KEY"] = "your_api_key"
-    ENV["CLICKUP_TEAM_ID"] = "your_team_id"
-
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
-    JSON
-
-    output = pipe_output("#{bin}/clickup-mcp 2>&1", json, 0)
-    assert_match "Error fetching user info: 401", output
+    output = shell_output("#{bin}/clickup-mcp 2>&1", 1)
+    assert_match "Missing Clickup API key or team ID", output
   end
 end
