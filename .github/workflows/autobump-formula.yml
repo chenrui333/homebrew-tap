@@ -30,6 +30,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Preserve autobump classifier
+        run: cp .github/scripts/autobump-formula-failure.js "$RUNNER_TEMP/autobump-formula-failure.js"
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
@@ -135,7 +138,7 @@ jobs:
               else
                 bump_status=$?
                 cat "$bump_log"
-                failure_kind="$(node "$GITHUB_WORKSPACE/.github/scripts/autobump-formula-failure.js" "$bump_log")"
+                failure_kind="$(node "$RUNNER_TEMP/autobump-formula-failure.js" "$bump_log")"
                 if [[ "$failure_kind" == "branch-conflict" ]]; then
                   open_prs="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
                     --json number,title,headRefName)"
