@@ -1,0 +1,21 @@
+Formula/b/blue.rb
+  s_6e5d1e6427e031::t_a737f09ec25318 19-68,122-130
+  s_6e5d1e6427e031::t_68b222e4949cfe 119
+  s_6e5d1e6427e031::t_275c8b04bc4655 120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6d67622e06e37588d02fe61cde36fb88713eac4e",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
