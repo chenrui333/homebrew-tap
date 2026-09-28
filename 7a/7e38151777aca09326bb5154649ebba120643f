@@ -1,0 +1,20 @@
+Formula/c/comchan.rb
+  s_6e5d1e6427e031::t_316caf5869f5fd 27-30
+  s_6e5d1e6427e031::t_4ee46e553803cf 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7a7e38151777aca09326bb5154649ebba120643f",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
