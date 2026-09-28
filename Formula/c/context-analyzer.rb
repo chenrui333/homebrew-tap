@@ -462,6 +462,12 @@ class ContextAnalyzer < Formula
 
   deny_network_access!
 
+  def fetch
+    resource("watchfiles").stage do
+      system "cargo", "fetch", "--locked"
+    end
+  end
+
   def install
     build_resources = %w[
       setuptools
