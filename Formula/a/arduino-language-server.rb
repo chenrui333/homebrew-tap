@@ -19,6 +19,12 @@ class ArduinoLanguageServer < Formula
 
   uses_from_macos "llvm"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -50,7 +56,7 @@ class ArduinoLanguageServer < Formula
     JSON
 
     input = "Content-Length: #{json.bytesize}\r\n\r\n#{json}"
-    arduino_cli_exe = Formula["arduino-cli"].opt_bin/"arduino-cli"
+    arduino_cli_exe = formula_opt_bin("arduino-cli")/"arduino-cli"
     output = pipe_output("#{bin}/arduino-language-server -cli " \
                          "#{arduino_cli_exe} -cli-config #{arduino_config} 2>&1", input, 0)
     assert_match "Initial board configuration", output
