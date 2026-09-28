@@ -1,0 +1,20 @@
+Formula/a/arduino-language-server.rb
+  s_6e5d1e6427e031::t_c7ae2cf47af0f0 59
+  s_6e5d1e6427e031::t_a1a37d0903aaf4 22-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "877d786eb19cdcf3b1aa262814e263d12d2b877f",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
