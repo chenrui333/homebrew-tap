@@ -1,8 +1,9 @@
 class Bibiman < Formula
   desc "TUI for fast and simple interacting with your BibLaTeX database"
   homepage "https://codeberg.org/lukeflo/bibiman"
-  url "https://codeberg.org/lukeflo/bibiman/archive/v0.19.5.tar.gz"
-  sha256 "c8ae4f55ce1f74da292fa98ed1d5b7a530f3c7df37a8a14f111366ca23a10efb"
+  url "https://codeberg.org/lukeflo/bibiman.git",
+      tag:      "v0.19.5",
+      revision: "c7331464f187b6389296c7dd91908c150a99f3ea"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/lukeflo/bibiman.git", branch: "main"
 
@@ -16,6 +17,12 @@ class Bibiman < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
