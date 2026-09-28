@@ -18,6 +18,12 @@ class Cello < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cli"
@@ -28,7 +34,7 @@ class Cello < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/cello version")
 
-    output = shell_output("#{bin}/cello list --project_name test --target_name test 2>&1", 1)
-    assert_match "connection refused", output
+    output = shell_output("#{bin}/cello list 2>&1", 1)
+    assert_match 'required flag(s) "project_name", "target_name" not set', output
   end
 end
