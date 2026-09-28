@@ -13,6 +13,8 @@ class Await < Formula
     sha256 cellar: :any,                 x86_64_linux:  "6252292c60c845123c9c102500fb3cd4bd7a8236cc92d44577f8cee00dbf201a"
   end
 
+  deny_network_access!
+
   def install
     system ENV.cc, "await.c", "-o", "await", "-lpthread"
     bin.install "await"
