@@ -15,6 +15,11 @@ class BrewCleaner < Formula
 
   depends_on "python@3.14"
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  end
+
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
     sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
@@ -25,21 +30,16 @@ class BrewCleaner < Formula
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resource("setuptools"), build_isolation: false
+    venv.pip_install resources.reject { |resource| resource.name == "setuptools" }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"brew-cleaner", testpath, [:out, :err] => output_log.to_s
-    sleep 1
-    if OS.mac?
-      assert_empty output_log.read
-    else
-      assert_match "This script requires an interactive terminal", output_log.read
-    end
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    assert_match "This script requires an interactive terminal", shell_output(bin/"brew-cleaner")
   end
 end
