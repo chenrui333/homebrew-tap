@@ -4,7 +4,7 @@ class ContextAnalyzer < Formula
   desc "Context window usage analyzer for Claude Code with MCP server and dashboard"
   homepage "https://github.com/manavgup/context-analyzer"
   url "https://github.com/manavgup/context-analyzer/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "8d113b32571c7f5c07ab28a0192e442e013f0ff3d4f4144b6bb843f26ea5bea9"
+  sha256 "9076bd624c3074ea8865a83fc323f5434aa81ad366af49faadf36788f35787bc"
   license "MIT"
   head "https://github.com/manavgup/context-analyzer.git", branch: "main"
 
