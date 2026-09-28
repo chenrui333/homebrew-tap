@@ -1,0 +1,19 @@
+Formula/c/clawpatrol.rb
+  s_6e5d1e6427e031::t_69ce97c03be124 20-22,27-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "127c5124a180812a2b81a0ccb8d2b0f46a641b39",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
