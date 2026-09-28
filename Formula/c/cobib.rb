@@ -141,6 +141,8 @@ class Cobib < Formula
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
+  deny_network_access!
+
   def install
     virtualenv_install_with_resources
   end
