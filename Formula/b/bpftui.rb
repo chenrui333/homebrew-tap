@@ -26,7 +26,7 @@ class Bpftui < Formula
   end
 
   test do
-    output = shell_output("#{bin}/bpftui 2>&1", 1)
-    assert_match(/bpftui|tty/, output.downcase)
+    output = pipe_output(bin/"bpftui", "q\n")
+    assert_match "BPF TUI Explorer", output
   end
 end
