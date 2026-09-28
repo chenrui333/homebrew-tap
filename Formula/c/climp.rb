@@ -21,6 +21,12 @@ class Climp < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
