@@ -16,6 +16,12 @@ class Claumon < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -35,13 +41,7 @@ class Claumon < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/claumon version")
 
-    port = free_port
-    pid = spawn bin/"claumon", "--port", port.to_s
-    sleep 2
-    output = shell_output("curl -s http://localhost:#{port}/")
-    assert_match(/claumon|dashboard/i, output)
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    output = shell_output("#{bin}/claumon diagnostics 2>&1", 2)
+    assert_match '"diagnostics" is unavailable in this build', output
   end
 end
