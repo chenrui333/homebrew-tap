@@ -18,7 +18,7 @@ class BrighterscriptFormatter < Formula
   deny_network_access!
 
   def fetch
-    system "npm", "install", *std_npm_args(prefix: false)
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
   end
 
   def install
