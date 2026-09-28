@@ -1,0 +1,21 @@
+Formula/a/aim.rb
+  s_6e5d1e6427e031::t_4ed3f957b8e56e 26-27
+  s_6e5d1e6427e031::t_fb0c93f0e03379 28-29,32-34
+  s_6e5d1e6427e031::t_1e1e938778bb50 30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a210226dddde5fc3ba2c54cb94807ec1b6df399c",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
