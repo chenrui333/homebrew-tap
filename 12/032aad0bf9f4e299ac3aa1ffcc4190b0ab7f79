@@ -1,0 +1,26 @@
+Formula/c/code-index-mcp.rb
+  s_6e5d1e6427e031::t_2da444ad37e5af 102-111
+  s_6e5d1e6427e031::t_a6a3bfeab322dd 162-171
+  s_6e5d1e6427e031::t_816dd32ce39ad7 42-51,57-69
+  s_6e5d1e6427e031::t_320f79847159e2 182-186
+  s_6e5d1e6427e031::t_f690e443266329 122-126,132-134
+  s_6e5d1e6427e031::t_379784a9383360 70,135,227-236,242-246,252-258,260-285
+  s_6e5d1e6427e031::t_9a3918106b839d 71
+  s_6e5d1e6427e031::t_c4aa9f9091f48b 136
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "12032aad0bf9f4e299ac3aa1ffcc4190b0ab7f79",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
