@@ -1,0 +1,21 @@
+Formula/a/awless.rb
+  s_6e5d1e6427e031::t_4da9713f6614b1 28-29
+  s_6e5d1e6427e031::t_9f1fdbdd5b44d8 30-32
+  s_6e5d1e6427e031::t_d9d286b8938460 33-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6579c1bdeac301a457f9b0a46643ed3bb8994e56",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
