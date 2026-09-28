@@ -15,22 +15,19 @@ class CargoDeadlinks < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "rustup" => :test
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
-    # Switch the default toolchain to nightly
-    system "rustup", "default", "nightly"
-    system "rustup", "set", "profile", "minimal"
-    system "rustup", "toolchain", "install", "nightly"
-
-    assert_match version.to_s, shell_output("cargo deadlinks --version")
+    assert_match version.to_s, shell_output("#{bin}/deadlinks --version")
 
     (testpath/"docs").mkpath
     (testpath/"docs/index.html").write <<~HTML
@@ -42,6 +39,6 @@ class CargoDeadlinks < Formula
       </html>
     HTML
 
-    system "cargo", "deadlinks", "--dir", testpath/"docs"
+    system bin/"deadlinks", testpath/"docs"
   end
 end
