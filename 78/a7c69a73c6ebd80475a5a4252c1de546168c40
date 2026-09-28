@@ -1,0 +1,25 @@
+Formula/b/blueutil-tui.rb
+  s_6e5d1e6427e031::t_a2b6993016e034 135
+  s_6e5d1e6427e031::t_ae71baad292eb9 29-42,64-73,79-88,99-108,114-118,129-134
+  s_6e5d1e6427e031::t_5be00bbb0c3e5c 155,157-158
+  s_6e5d1e6427e031::t_85849663538a32 154
+  s_6e5d1e6427e031::t_58c879b8b7b2c3 156,161
+  s_6e5d1e6427e031::t_752a2cede0a570 24-28,43,137-144
+  s_6e5d1e6427e031::t_86ed5bbefc2852 148-153,159-160,162-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "78a7c69a73c6ebd80475a5a4252c1de546168c40",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
