@@ -18,6 +18,51 @@ class Brunette < Formula
 
   depends_on "python@3.13"
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/3c/87/1ff7adcf6e03021ae58ce401565be3c9b8c739a44d14a8253d38b3754117/setuptools_scm-10.2.3.tar.gz"
+    sha256 "f179ed3e2a63cf5823e5ee9aa9ca08386219400443a0553224d72dde3f206b44"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/3e/97/792a4ef20344f9af3e16098b58b45eb5d6202259b84fc80c43bc000a5e6c/vcs_versioning-2.4.1.tar.gz"
+    sha256 "d4575de3115ec9434393c87c80ffb0eb98a16056bfe2b11ce0f3a97aff67fe0a"
+  end
+
   resource "black" do
     url "https://files.pythonhosted.org/packages/f7/60/7a9775dc1b81a572eb26836c7e77c92bf454ada00693af4b2d2f2614971a/black-21.12b0.tar.gz"
     sha256 "77b80f693a569e2e527958459634f18df9b0ba2625ba4e0c2d5da5be42e6f2b3"
@@ -69,9 +114,26 @@ class Brunette < Formula
     # add an empty `requirements-dev.txt` to fix `No such file or directory: 'requirements-dev.txt'`
     (buildpath/"requirements-dev.txt").write ""
 
+    build_resources = %w[
+      setuptools
+      flit-core
+      packaging
+      pathspec
+      pluggy
+      tomlkit
+      trove-classifiers
+      hatchling
+      vcs-versioning
+      setuptools-scm
+      hatch-vcs
+      wheel
+    ]
+
     venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install resource("setuptools"), build_isolation: false
-    venv.pip_install resources.reject { |resource| resource.name == "setuptools" }, build_isolation: false
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |resource| build_resources.include?(resource.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"brunette", shells: [:fish, :zsh], shell_parameter_format: :click)
