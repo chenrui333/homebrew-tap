@@ -20,8 +20,17 @@ class BreatheCli < Formula
 
   depends_on "python@3.13"
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+  end
+
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+    venv.pip_install resource("setuptools"), build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
