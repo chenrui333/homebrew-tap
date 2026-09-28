@@ -11,6 +11,8 @@ class Catree < Formula
     sha256 cellar: :any_skip_relocation, all: "a2f4d79d0991ad4935fdbbeac8f728e3285caa070e280c006b778f3c80caf7bb"
   end
 
+  deny_network_access!
+
   def install
     bin.install "catree"
   end
