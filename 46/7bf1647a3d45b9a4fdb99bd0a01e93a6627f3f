@@ -1,0 +1,22 @@
+Formula/a/ash-ai.rb
+  s_6e5d1e6427e031::t_e0d15a89fc9ba6 36-38,40-41
+  s_6e5d1e6427e031::t_987892b904487d 25-27
+  s_6e5d1e6427e031::t_d161968217f36a 18,22-24,28,31-32,43-44
+  s_6e5d1e6427e031::t_c9e15f74908d76 29-30,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "467bf1647a3d45b9a4fdb99bd0a01e93a6627f3f",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
