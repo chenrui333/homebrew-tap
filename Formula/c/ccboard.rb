@@ -1,8 +1,9 @@
 class Ccboard < Formula
   desc "Unified Claude Code management dashboard for TUI and web"
   homepage "https://github.com/FlorianBruniaux/ccboard"
-  url "https://github.com/FlorianBruniaux/ccboard/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "bd16b845a5695e29ddbd4f6ba02f6e4bb407844e91b2d3f3ef7c1bea1d838f10"
+  url "https://github.com/FlorianBruniaux/ccboard/archive/cff484cf1701b1eb7970329429d9831d47af3129.tar.gz"
+  version "0.25.0"
+  sha256 "ffa1198e16559754048aeb5daadbb6c2eb577c7a3eee9da74aa074e98a8b552d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/FlorianBruniaux/ccboard.git", branch: "main"
 
@@ -20,6 +21,12 @@ class Ccboard < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
