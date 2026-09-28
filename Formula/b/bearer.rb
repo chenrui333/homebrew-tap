@@ -16,7 +16,7 @@ class Bearer < Formula
 
   depends_on "go" => :build
 
-  deny_network_access!
+  allow_network_access! :test
 
   def fetch
     system "go", "mod", "download"
