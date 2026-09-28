@@ -25,6 +25,13 @@ class Awless < Formula
     sha256 "1495fb4edfc94d6ea595271b422b4a90f284850a411aef528a4fd229fa71cfc7"
   end
 
+  # The AWS SDK mock session starts a loopback HTTP server during binary initialization.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=readonly"
   end
