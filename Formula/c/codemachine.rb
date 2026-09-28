@@ -17,8 +17,14 @@ class Codemachine < Formula
   depends_on "homebrew/core/bun"
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     # These platform-specific OpenTUI artifacts are not used by the shipped CLI binary
     # and their install IDs are not relocatable in Homebrew builds.
