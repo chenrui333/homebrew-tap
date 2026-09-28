@@ -19,6 +19,12 @@ class BashScriptTools < Formula
   depends_on "shellcheck"
   depends_on "shfmt"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
