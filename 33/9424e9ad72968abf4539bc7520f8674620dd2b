@@ -1,0 +1,20 @@
+Formula/c/cargo-deadlinks.rb
+  s_6e5d1e6427e031::t_3613e9b234f4f9 18-23,30
+  s_6e5d1e6427e031::t_17a7e2259ee890 42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "339424e9ad72968abf4539bc7520f8674620dd2b",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
