@@ -3,15 +3,15 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/f2/fd/4ae6ceb9f9a3132c73e6cc44cf976baf1d27c518ebfec0ac6eeffed0fdce/mlx_vlm-0.7.3.tar.gz"
-  sha256 "8b656dc280d272c5e8b1ac03a7b72f52592eed8e98cc112e88d36bbf9cf7b82b"
+  url "https://files.pythonhosted.org/packages/70/f0/66a399de592460882ff598ca6b398fdda7aad7155a84c74cd4b5b4a42e87/mlx_vlm-0.7.4.tar.gz"
+  sha256 "a35ca38c5be3a061496cc9bb5b3ada20413ceda9317ec67ba0b0fff1c2885e04"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "9667fb8ecb78f2e689375d06ce15b8b3e24bf6f74fd10a3043a1d810e4955ea9"
-    sha256 cellar: :any, arm64_sequoia: "c73ae1c6b84872e53ba6438a10ffb12f7c7935812ce4c9877b350ade0adcd3b1"
+    sha256 cellar: :any, arm64_tahoe:   "caa2b54c3284a0e30c13878f5f8282b7d27db5fbf35f2efba4715a875f42dda3"
+    sha256 cellar: :any, arm64_sequoia: "a37c769182c4f2d748e98b94c0705acbda811948e2e1f7b7534a03ae98bbb4f1"
   end
 
   depends_on "cmake" => :build
@@ -77,8 +77,8 @@ class MlxVlm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/b8/9ba8f569df649beb7058db5eb392a5f779bdbc3b82cf3942f0be439fb99e/filelock-4.0.3.tar.gz"
-    sha256 "87296d60478e14204fd9406e79831400fef76693bae2895deec236c98e87a8aa"
+    url "https://files.pythonhosted.org/packages/95/31/fbad823d8dfc56e2ff694db0319959382bdb01f2fe40c382e34c6f672392/filelock-4.0.5.tar.gz"
+    sha256 "2b155f098c4f285fb41954a22c616c4e8a0635b78c184338ba3023c1c91a4b4d"
   end
 
   resource "fsspec" do
@@ -147,8 +147,8 @@ class MlxVlm < Formula
   end
 
   resource "mlx-audio" do
-    url "https://files.pythonhosted.org/packages/93/cb/6368465c16ee8b63025a6ce0cc65555ccd74b2f56020853875b07fedc3f1/mlx_audio-0.5.6.tar.gz"
-    sha256 "6f6fb5107bf4647dd3ed079c48ee9f0db90a443803c75bcfd2a396b392d33fdd"
+    url "https://files.pythonhosted.org/packages/de/53/b924f75faa56967b9a0b13275f58dc4bbf70b5144682517aeea750c404f7/mlx_audio-0.5.7.tar.gz"
+    sha256 "4446704bd8305b3957a6e422234118142e32b87a55d7d3e33b0fb8dbca516543"
   end
 
   resource "packaging" do
