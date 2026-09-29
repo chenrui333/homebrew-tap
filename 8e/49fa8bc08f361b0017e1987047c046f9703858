@@ -1,0 +1,22 @@
+Formula/d/deface.rb
+  s_6e5d1e6427e031::t_48ee25535323fb 27-30,57-66,77-88,90-94
+  s_6e5d1e6427e031::t_ae57c2f4d10bc5 24-25
+  s_6e5d1e6427e031::t_348c6c89cadf9c 97
+  s_6e5d1e6427e031::t_77fcdebf2b058b 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "8e49fa8bc08f361b0017e1987047c046f9703858",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
