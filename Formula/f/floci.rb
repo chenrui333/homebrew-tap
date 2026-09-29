@@ -17,12 +17,20 @@ class Floci < Formula
   depends_on "maven" => :build
   depends_on "openjdk@25"
 
+  allow_network_access! :test
+
+  def fetch
+    ENV["JAVA_HOME"] = Language::Java.java_home("25")
+
+    system formula_opt_bin("maven")/"mvn", "--batch-mode", "-DskipTests", "package"
+  end
+
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("25")
 
     (var/"floci/data").mkpath
 
-    system formula_opt_bin("maven")/"mvn", "--batch-mode", "-DskipTests", "package"
+    system formula_opt_bin("maven")/"mvn", "--batch-mode", "--offline", "-DskipTests", "package"
 
     libexec.install Dir["target/quarkus-app/*"]
     (bin/"floci").write <<~SH
