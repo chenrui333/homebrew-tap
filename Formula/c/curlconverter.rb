@@ -4,6 +4,7 @@ class Curlconverter < Formula
   url "https://registry.npmjs.org/curlconverter/-/curlconverter-4.12.0.tgz"
   sha256 "16b6edc240fc096f09d4bcedf1358c74fb2ea1fd94f18820ef429af98acb49d3"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -13,23 +14,34 @@ class Curlconverter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "935bfb5f05622835c2fd6917482c3bd4abf663d2523020ca4eb7b2f7a1fdccc1"
   end
 
+  depends_on "python@3.14" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args, "--ignore-scripts"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
-    # Remove incompatible pre-built binaries
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/curlconverter/node_modules"
-    node_modules.glob("{tree-sitter,tree-sitter-bash}/prebuilds/*")
-                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    inreplace node_modules/"tree-sitter/binding.gyp", "c++17", "c++20"
+    %w[tree-sitter tree-sitter-bash].each do |name|
+      cd node_modules/name do
+        rm_r "prebuilds"
+        system "node", formula_opt_libexec("node")/"lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+               "rebuild", "--nodedir=#{formula_opt_prefix("node")}",
+               "--python=#{formula_opt_bin("python@3.14")}/python3.14"
+      end
+    end
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/curlconverter --version")
-    output = shell_output("#{bin}/curlconverter --language python 'curl https://example.com'")
-    assert_match "response = requests.get('http://curl https://example.com')", output
+    output = shell_output("#{bin}/curlconverter --language python https://example.com")
+    assert_match "response = requests.get('https://example.com')", output
   end
 end
