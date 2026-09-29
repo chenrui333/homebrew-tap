@@ -13,7 +13,13 @@ class Fex < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e1ae8158ca1318af2056b30ac9844944f82a82a57152ff1d1201e0036e09b07"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.13" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch"
+  end
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
