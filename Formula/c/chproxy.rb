@@ -17,6 +17,12 @@ class Chproxy < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.buildTag=#{version} -X main.buildRevision=#{tap.user} -X main.buildTime=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
