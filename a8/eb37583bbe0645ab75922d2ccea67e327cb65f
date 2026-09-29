@@ -1,0 +1,21 @@
+Formula/f/fortran-linter.rb
+  s_6e5d1e6427e031::t_dee33ceaa65b38 16,19-30,32
+  s_6e5d1e6427e031::t_2b0586ab970000 31,54-63,72-76,82-94
+  s_6e5d1e6427e031::t_f9d9b55f0776a1 33-53,64-71,77-80,95-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a8eb37583bbe0645ab75922d2ccea67e327cb65f",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
