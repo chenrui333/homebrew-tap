@@ -18,8 +18,7 @@ class CodexViz < Formula
 
   depends_on "node"
 
-  # The test exercises the dashboard over a loopback HTTP socket.
-  allow_network_access! :test
+  deny_network_access!
 
   def fetch
     system "npm", "install", "--include=dev",
