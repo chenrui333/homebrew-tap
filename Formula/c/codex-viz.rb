@@ -18,16 +18,28 @@ class CodexViz < Formula
 
   depends_on "node"
 
+  # The test exercises the dashboard over a loopback HTTP socket.
+  allow_network_access! :test
+
+  def fetch
+    system "npm", "install", "--include=dev",
+           *std_npm_args(prefix: false, ignore_scripts: false)
+  end
+
   def install
     ENV["NEXT_TELEMETRY_DISABLED"] = "1"
 
-    system "npm", "install", "--include=dev",
+    system "npm", "install", "--include=dev", "--offline",
            *std_npm_args(prefix: false, ignore_scripts: false)
+    inreplace "next.config.ts",
+              "import type { NextConfig } from \"next\";\n\nconst nextConfig: NextConfig",
+              "const nextConfig"
+    mv "next.config.ts", "next.config.mjs"
     system "npm", "run", "build"
-    system "npm", "install", "--omit=dev",
+    system "npm", "install", "--omit=dev", "--offline",
            *std_npm_args(prefix: false, ignore_scripts: false)
 
-    libexec.install Dir["*"]
+    libexec.install Dir["*"], ".next"
     if OS.linux?
       # Keep only glibc Next.js binaries to avoid musl-only `libc.so` linkage.
       libexec.glob("node_modules/@next/swc-linux-*-musl").each do |swc_musl|
@@ -39,7 +51,7 @@ class CodexViz < Formula
       #!/bin/bash
       export NEXT_TELEMETRY_DISABLED=1
       cd "#{libexec}" || exit 1
-      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/node_modules/next/dist/bin/next" start "$@"
+      exec "#{formula_opt_bin("node")}/node" "#{libexec}/node_modules/next/dist/bin/next" start "$@"
     SH
   end
 
@@ -57,16 +69,15 @@ class CodexViz < Formula
         "CODEX_VIZ_CACHE_DIR" => (testpath/"cache").to_s,
       },
       bin/"codex-viz", "-H", "127.0.0.1", "-p", port.to_s,
-      out: testpath/"server.log",
-      err: testpath/"server.log"
+      [:out, :err] => (testpath/"server.log").to_s
     )
 
     sleep 8
     assert_match "Codex Viz", shell_output("curl -fsS http://127.0.0.1:#{port}")
   ensure
-    next unless pid
-
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    if pid && Process.waitpid(pid, Process::WNOHANG).nil?
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
