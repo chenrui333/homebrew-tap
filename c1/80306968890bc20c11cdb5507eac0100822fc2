@@ -1,0 +1,21 @@
+Formula/f/flow-network.rb
+  s_6e5d1e6427e031::t_74a7ef75035d90 19
+  s_6e5d1e6427e031::t_69ff326eca4b16 20-23
+  s_6e5d1e6427e031::t_5bddc4a37047f8 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c180306968890bc20c11cdb5507eac0100822fc2",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
