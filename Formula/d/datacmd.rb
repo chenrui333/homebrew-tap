@@ -19,8 +19,13 @@ class Datacmd < Formula
 
   depends_on "go" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "go", "mod", "tidy" # as it is missing `go.sum` file
+  end
+
+  def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
