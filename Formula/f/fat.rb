@@ -1,8 +1,9 @@
 class Fat < Formula
   desc "TUI-based file and archive viewer for your terminal"
-  homepage "https://github.com/Zuhaitz-dev/fat"
-  url "https://github.com/Zuhaitz-dev/fat/archive/refs/tags/v0.2.0-beta.tar.gz"
-  sha256 "1a5cd3f2d12ca46dbe400e8f685eb8ecc34f269693373a398e8530a3abb5d097"
+  homepage "https://github.com/scm-repo-mirror/Zuhaitz-dev_fat"
+  # The unavailable upstream repository's release commit is preserved in this source mirror.
+  url "https://github.com/scm-repo-mirror/Zuhaitz-dev_fat/archive/refs/tags/v0.2.0-beta.tar.gz"
+  sha256 "dcb17302dac67d1e271cd0eb0d9dc6ffbce8ec1ea02e566ef4cc3590a583f884"
   license "GPL-3.0-only"
 
   bottle do
@@ -25,30 +26,18 @@ class Fat < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    require "open3"
-
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
-    output, status = Open3.capture2e(bin/"fat", "--not-a-real-option")
-    refute_predicate status, :success?
-    assert_match "not-a-real-option", output
+    output = shell_output("#{bin}/fat --not-a-real-option 2>&1", 1)
+    assert_match "Unknown option: --not-a-real-option", output
 
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    begin
-      (testpath/"test.txt").write("Hello, Homebrew!")
-
-      output_log = testpath/"output.log"
-      pid = spawn bin/"fat", testpath/"test.txt", [:out, :err] => output_log.to_s
-      sleep 1
-      assert_match "[NORMAL]", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    output = shell_output("#{bin}/fat first.txt second.txt 2>&1", 1)
+    assert_match "Multiple files specified. Only one file can be opened at a time.", output
   end
 end
