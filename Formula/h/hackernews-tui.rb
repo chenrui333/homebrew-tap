@@ -8,11 +8,11 @@ class HackernewsTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7233abdf4bfc70f2ba133dd184b2d3dc061e81a611cf50b58369d359cd9ad82"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f800a4a46b8d9a59c13aaa403d33a53a0b0cc1129ef8bef571050d5be63a980"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21ab115de1d726922731addc9dff3644e52d85679525b24b92cb7019e5c0c886"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ba0993e3973e6092401f75581f1696e2af55659bd928304f0a58ccb12cdb38b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c07ce9c86a45a0c47b6c08b026d86e0ca3abd6321724f33c421dbbe96c64c145"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "74090564397bb88c918d09163988984f32887d206d5dc1a8419031fab8355939"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "272dc328ad6ab4c4e409f2cdd809c841acc4872040eb6e6c4a31d3bb336adc34"
+    sha256 cellar: :any,                 arm64_linux:   "56bc74faf7bdac012e14712cfcb73c32d5fa8bad3a512827d6ef286af9b4327d"
+    sha256 cellar: :any,                 x86_64_linux:  "f13f8f0f5631309125fb01b985a86969f5018beaf7ffcd8df0d575323bde65fd"
   end
 
   depends_on "rust" => :build
