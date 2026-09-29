@@ -1,8 +1,9 @@
 class Drft < Formula
   desc "Diff re/viewer, file tree"
   homepage "https://codeberg.org/nightsail/drft"
-  url "https://codeberg.org/nightsail/drft/archive/1.1.0.tar.gz"
-  sha256 "f1f67e9890d1d9e22f232dc06e96df4fcb4f570566377c3d356711083d9658be"
+  url "https://codeberg.org/nightsail/drft/archive/696ab5b76d7eb803cb467abf0b5ccfc5d984df8b73f8b0e7b408258ee2828c62.tar.gz"
+  version "1.1.0"
+  sha256 "b8af93b9a4043e61d85fd7f4d20ba6fa9f7839c82ad4da41a830da99eeb45082"
   license "BSD-3-Clause"
   head "https://codeberg.org/nightsail/drft.git", branch: "master"
 
@@ -16,6 +17,14 @@ class Drft < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    # The release lockfile requires an update with current Cargo.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
