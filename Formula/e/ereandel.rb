@@ -11,6 +11,8 @@ class Ereandel < Formula
     sha256 cellar: :any_skip_relocation, all: "3177a737673108d95391988cdddadf71c364e2d474d306f3220a51ed7e5ea922"
   end
 
+  deny_network_access!
+
   def install
     inreplace "ereandel", /^version=".*"$/, "version=\"#{version}\""
 
