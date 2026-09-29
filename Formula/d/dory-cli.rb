@@ -16,10 +16,24 @@ class DoryCli < Formula
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def prepare_package_json
     # Use the source-built JavaScript implementation instead of sass-embedded's prebuilt Dart binary.
-    inreplace "package.json", '"sass-embedded": "1.100.0"', '"sass": "1.100.0"'
-    system "npm", "install", *std_npm_args
+    package_json = JSON.parse((buildpath/"package.json").read)
+    dependencies = package_json.fetch("dependencies")
+    dependencies["sass"] = dependencies.delete("sass-embedded") if dependencies.key?("sass-embedded")
+    (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
+  end
+
+  def fetch
+    prepare_package_json
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
+  def install
+    prepare_package_json
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
