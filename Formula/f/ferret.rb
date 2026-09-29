@@ -17,21 +17,28 @@ class Ferret < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./e2e/cli.go"
   end
 
   test do
-    # seeing different behaviors with Linux CI and hosted runner
-    # use macos test is good enough
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     (testpath/"test.fql").write <<~EOS
-      LET doc = DOCUMENT("https://www.example.com")
-      RETURN doc.title
+      LET page = PARSE(`
+        <!doctype html>
+        <html>
+          <body><h1>Offline</h1></body>
+        </html>
+      `, { driver: "http" })
+      RETURN ELEMENT(page, "h1").innerText
     EOS
 
-    output = shell_output("#{bin}/ferret run #{testpath}/test.fql", 1)
-    assert_match "Example Domain", output
+    output = shell_output("#{bin}/ferret #{testpath}/test.fql")
+    assert_match "Offline", output
   end
 end
