@@ -14,11 +14,17 @@ class Grcov < Formula
     sha256 cellar: :any,                 x86_64_linux:  "a14fbf5eacc955bde7ea9b172d4b9b32161a0075389a2bae3eadd15d5a14a5e3"
   end
 
-  depends_on "rust" => :build
-  depends_on "rustup" => :test
+  depends_on "rust" => [:build, :test]
+  depends_on "llvm@22" => :test
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
@@ -26,15 +32,9 @@ class Grcov < Formula
   end
 
   test do
-    # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
-    system "rustup", "default", "beta"
-    system "rustup", "set", "profile", "minimal"
-    system "rustup", "component", "add", "llvm-tools-preview" # for `llvm-profdata`
-
     assert_match version.to_s, shell_output("#{bin}/grcov --version")
 
+    (testpath/"src").mkpath
     (testpath/"src/lib.rs").write <<~RUST
       pub fn add(a: i32, b: i32) -> i32 {
         a + b
@@ -60,19 +60,17 @@ class Grcov < Formula
       path = "src/lib.rs"
     TOML
 
-    # Enable LLVM-based coverage instrumentation
     ENV["RUSTFLAGS"] = "-C instrument-coverage"
     ENV["LLVM_PROFILE_FILE"] = "cargo-test-%p.profraw"
 
-    # build and test to generate coverage data
     system "cargo", "build"
     system "cargo", "test"
 
     system bin/"grcov", ".", "-s", ".", "-t", "lcov", "--llvm", "--branch",
+           "--llvm-path", formula_opt_bin("llvm@22"),
            "--binary-path", testpath/"target/debug/deps", "-o", "lcov.info"
-
-    # check on the coverage report
-    assert_path_exists testpath/"lcov.info"
-    assert_match "SF:", (testpath/"lcov.info").read
+    report = (testpath/"lcov.info").read
+    assert_match %r{^SF:(?:.*/)?src/lib\.rs$}, report
+    assert_match(/^DA:\d+,[1-9]\d*(?:,.*)?$/, report)
   end
 end
