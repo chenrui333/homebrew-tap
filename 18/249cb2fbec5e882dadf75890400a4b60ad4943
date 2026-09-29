@@ -1,0 +1,19 @@
+Formula/c/curlmin.rb
+  s_5d48a09aaeed95::t_987fe90f692082 21-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "18249cb2fbec5e882dadf75890400a4b60ad4943",
+  "prompts": {},
+  "sessions": {
+    "s_5d48a09aaeed95": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0cf09-0c76-7870-9d53-954dba10f063",
+        "model": "gpt-6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
