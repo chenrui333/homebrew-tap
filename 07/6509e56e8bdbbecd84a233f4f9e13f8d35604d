@@ -1,0 +1,20 @@
+Formula/f/floci.rb
+  s_6e5d1e6427e031::t_0d8318792c8a9b 21-24,26-27,33
+  s_6e5d1e6427e031::t_56f0d600fbdc5d 20,25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "076509e56e8bdbbecd84a233f4f9e13f8d35604d",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
