@@ -1,8 +1,9 @@
 class Diffyml < Formula
   desc "Structural YAML diff tool with Kubernetes intelligence"
   homepage "https://github.com/szhekpisov/diffyml"
-  url "https://github.com/szhekpisov/diffyml/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "f7edf6710518d8ee97b4570e51b7fec12d8a2eef19c459e3352982e46b168f2d"
+  url "https://github.com/szhekpisov/diffyml/archive/a41e4f69d1c39d7d36a9eb1193059ff3879f5664.tar.gz"
+  version "1.8.1"
+  sha256 "9ffac98cb4cae68e3a222410cb05a1660756a26a81e367b1b334104be9bfccff"
   license "MIT"
   head "https://github.com/szhekpisov/diffyml.git", branch: "main"
 
@@ -16,6 +17,12 @@ class Diffyml < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.buildDate=#{time.iso8601}"
