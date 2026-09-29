@@ -1,0 +1,21 @@
+Formula/g/gitlabform.rb
+  s_6e5d1e6427e031::t_48ea34a29e7602 24-88,264-286
+  s_6e5d1e6427e031::t_22aad77aca1c03 18,262-263
+  s_6e5d1e6427e031::t_ecd6f982f59949 259-260
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5c5497c98835aca16240802506ea4dc4761beefb",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
