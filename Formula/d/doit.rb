@@ -12,10 +12,14 @@ class Doit < Formula
     sha256 cellar: :any_skip_relocation, all: "eeb1cfde14737d184cad2ef8cb262940d452ca9ff62a8700da52f6031400d3e0"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
@@ -40,7 +44,7 @@ class Doit < Formula
     list_output = shell_output("#{bin}/doit list")
     assert_match "hello", list_output
 
-    assert_match "Hello World!", shell_output("#{bin}/doit")
+    assert_match "Hello World!", shell_output(bin/"doit")
     assert_equal "hello", (testpath/"hello.txt").read
   end
 end
