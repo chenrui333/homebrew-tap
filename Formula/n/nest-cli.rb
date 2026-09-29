@@ -1,13 +1,13 @@
 class NestCli < Formula
   desc "CLI tool for Nest applications"
   homepage "https://nestjs.com/"
-  url "https://registry.npmjs.org/@nestjs/cli/-/cli-12.0.7.tgz"
-  sha256 "7865ec962781996b7214f09fdff8b32d9947dd532588c2005e9c89dc659a5d91"
+  url "https://registry.npmjs.org/@nestjs/cli/-/cli-12.0.8.tgz"
+  sha256 "beff4d8e4fd8cba594e8443f46160a170b31eab6018f700b20dd99b4133473df"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1eae03f190e9d8a75581d57729f46f98ac95eb6b3440fc38c575cfc1ef116c68"
+    sha256 cellar: :any_skip_relocation, all: "ea4b1175b331be693c18b849301249167cfb0a63112eb557f63a1102d12a0722"
   end
 
   depends_on "node"
