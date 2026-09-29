@@ -1,8 +1,9 @@
 class GlabTui < Formula
   desc "Terminal interface for GitLab and GitHub"
   homepage "https://github.com/rcieri/glab-tui"
-  url "https://github.com/rcieri/glab-tui/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "da2c6d38f5d9a0b077d0483aca90be8efcd7edb0a0ce94fa6c973f1c0a5deb9e"
+  url "https://github.com/rcieri/glab-tui.git",
+      tag:      "v0.9.2",
+      revision: "bec0eb25e83c8bfd10025c2513de3d48f452661d"
   license "MIT"
   head "https://github.com/rcieri/glab-tui.git", branch: "main"
 
@@ -17,6 +18,12 @@ class GlabTui < Formula
   depends_on "rust" => :build
   depends_on "gh"
   depends_on "glab"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
