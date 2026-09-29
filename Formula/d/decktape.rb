@@ -4,6 +4,7 @@ class Decktape < Formula
   url "https://registry.npmjs.org/decktape/-/decktape-3.16.1.tgz"
   sha256 "20e4fe92c367f668d87f7a6db41d8ae306e5dde4cdba4bee61453adb98de43fa"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -16,20 +17,30 @@ class Decktape < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/decktape/node_modules"
 
-    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries
+    # Remove incompatible pre-built Bare module binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/decktape version")
+
+    output = shell_output("#{bin}/decktape --size bad file:///nonexistent #{testpath}/slides.pdf 2>&1", 1)
+    assert_match "<size> must follow the <width>x<height> notation", output
   end
 end
