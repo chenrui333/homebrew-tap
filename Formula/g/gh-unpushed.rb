@@ -13,6 +13,8 @@ class GhUnpushed < Formula
 
   depends_on "gh"
 
+  deny_network_access!
+
   def install
     libexec.install "gh-unpushed", "VERSION"
     bin.write_exec_script libexec/"gh-unpushed"
