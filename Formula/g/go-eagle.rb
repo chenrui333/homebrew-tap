@@ -17,6 +17,14 @@ class GoEagle < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "cmd/eagle" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     ldflags = "-s -w -X main.Version=#{version}"
     cd "cmd/eagle" do
@@ -27,7 +35,17 @@ class GoEagle < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/eagle --version")
 
-    system bin/"eagle", "new", "testapp"
+    layout = testpath/"layout"
+    layout.mkpath
+    (layout/"go.mod").write "module example.com/layout\n\ngo 1.22\n"
+    (layout/"README.md").write "# Test layout\n"
+    system "git", "-C", layout, "init", "--initial-branch=main"
+    system "git", "-C", layout, "config", "user.email", "test@brew.sh"
+    system "git", "-C", layout, "config", "user.name", "BrewTestBot"
+    system "git", "-C", layout, "add", "."
+    system "git", "-C", layout, "commit", "-m", "Initial commit"
+
+    system bin/"eagle", "new", "testapp", "--repo-url", layout
     assert_path_exists testpath/"testapp"
   end
 end
