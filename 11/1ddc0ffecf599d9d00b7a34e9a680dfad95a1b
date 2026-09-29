@@ -1,0 +1,19 @@
+Formula/c/claude-composer.rb
+  s_6e5d1e6427e031::t_75dfe18edda1fd 79-80,82-100,102-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "111ddc0ffecf599d9d00b7a34e9a680dfad95a1b",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
