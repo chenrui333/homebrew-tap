@@ -17,11 +17,18 @@ class Gsh < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    ENV["GOBIN"] = buildpath/"build_bin"
+    system "go", "mod", "download"
+    system "go", "install", "golang.org/x/tools/cmd/stringer@latest"
+  end
+
   def install
     tool_path = buildpath/"build_bin"
     ENV["GOBIN"] = tool_path
     ENV.prepend_path "PATH", tool_path
-    system "go", "install", "golang.org/x/tools/cmd/stringer@latest"
     system "go", "generate", "./..."
 
     ldflags = "-s -w -X main.BUILD_VERSION=#{version}"
