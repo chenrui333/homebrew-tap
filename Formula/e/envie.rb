@@ -14,16 +14,32 @@ class Envie < Formula
 
   deny_network_access!
 
+  def prepare_package_json
+    package_json = JSON.parse((buildpath/"package.json").read)
+    package_json.delete("devDependencies")
+    (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
+  end
+
   def fetch
+    prepare_package_json
     system "npm", "install", *std_npm_args(prefix: false)
   end
 
   def install
+    prepare_package_json
     system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
+    app_data = if OS.mac?
+      Pathname(Dir.home)/"Library/Application Support/envie"
+    else
+      Pathname(Dir.home)/".local/share/envie"
+    end
+    app_data.mkpath
+    (app_data/"last-version-check.txt").write Time.now.to_s
+
     assert_match "Error: No authentication token found.", shell_output("#{bin}/envie environment list 2>&1", 1)
     output = shell_output("#{bin}/envie login 2>&1", 1)
     assert_match "Login failed: Please specify which keypair to use", output
