@@ -19,9 +19,11 @@ class Distill < Formula
   depends_on "chenrui333/tap/bun" => :build
   depends_on "node"
 
+  deny_network_access!
+
   def install
-    bun = Formula["chenrui333/tap/bun"].opt_bin/"bun"
-    node = Formula["node"].opt_bin/"node"
+    bun = formula_opt_bin("chenrui333/tap/bun")/"bun"
+    node = formula_opt_bin("node")/"node"
 
     system bun, "build", "src/cli.ts", "--outfile", "distill.mjs", "--target=node"
 
