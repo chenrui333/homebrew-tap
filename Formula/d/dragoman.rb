@@ -30,6 +30,8 @@ class Dragoman < Formula
     sha256 "90e3a7ea092341c44b99562e75d09e4d5160fe7a3974c6fb842a101a95e7eed0"
   end
 
+  deny_network_access!
+
   def install
     virtualenv_install_with_resources
   end
