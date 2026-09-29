@@ -20,6 +20,13 @@ class Dnsforwarder < Formula
 
   depends_on "go" => :build
 
+  # The test starts the DNS and metrics servers, then verifies health over loopback HTTP.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
