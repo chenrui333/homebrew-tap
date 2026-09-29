@@ -14,12 +14,21 @@ class Dustoff < Formula
   depends_on "chenrui333/tap/bun" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    system "bun", "run", "build"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
     inreplace "package.json", '"version": "0.1.0"', "\"version\": \"#{version}\""
 
-    system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    system "npm", "install", "--include=dev", "--offline",
+           *std_npm_args(prefix: false, ignore_scripts: false)
     system "bun", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     bin.install_symlink libexec.glob("bin/*")
   end
