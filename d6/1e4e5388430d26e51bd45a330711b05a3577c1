@@ -1,0 +1,21 @@
+Formula/g/grcov.rb
+  s_6e5d1e6427e031::t_e722af278946d2 24-29,72
+  s_6e5d1e6427e031::t_bcc23be7941e13 37
+  s_6e5d1e6427e031::t_5713fcc0ef42dc 18,70,73-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d61e4e5388430d26e51bd45a330711b05a3577c1",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
