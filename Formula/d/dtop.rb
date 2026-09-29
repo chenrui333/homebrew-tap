@@ -2,10 +2,11 @@ class Dtop < Formula
   include Language::Python::Virtualenv
 
   desc "High-performance TUI for Docker container management"
-  homepage "https://stakesquid.com/"
+  homepage "https://github.com/StakeSquid/dtop"
   url "https://files.pythonhosted.org/packages/38/98/695c2ee5bb375a21ec072c2dc7d01f8d8e2f662b24c3791d438331702c78/dtop-2.3.5.tar.gz"
   sha256 "4fac2146484faf87b86951ef9d3ff0c13d726a9b8fe077607d84d1d195338572"
   license "MIT"
+  revision 1
   head "https://github.com/StakeSquid/dtop.git", branch: "main"
 
   bottle do
@@ -19,12 +20,14 @@ class Dtop < Formula
     sha256 cellar: :any,                 x86_64_linux:  "3be36e60f052d847f268fcdef0d46fcf00a6487c60af6caca3b99ae61d187e42"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi",
                 extra_packages:   %w[
-                  aiohttp expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
+                  aiohttp cython~=3.1.0 expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging
+                  pathspec
                   pkgconfig pluggy poetry-core setuptools setuptools-scm trove-classifiers wheel
                 ]
 
@@ -56,6 +59,11 @@ class Dtop < Formula
   resource "docker" do
     url "https://files.pythonhosted.org/packages/91/9b/4a2ea29aeba62471211598dac5d96825bb49348fa07e906ea930394a83ce/docker-7.1.0.tar.gz"
     sha256 "ad8c70e6e3f8926cb8a92619b832b4ea5299e2831c14284663184e200546fa6c"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/b4/a4/ec55945b52d0b888e2a090450a5524001bfa17c8b68348379a154badb850/cython-3.1.8.tar.gz"
+    sha256 "518475fbe633ba30c1577669f417440f41e1a23ad6b6e2dbb20703cd457f04ef"
   end
 
   resource "expandvars" do
@@ -217,7 +225,8 @@ class Dtop < Formula
 
   def install
     build_resources = %w[
-      setuptools flit-core wheel poetry-core packaging pathspec trove-classifiers setuptools-scm pluggy hatchling
+      setuptools cython flit-core wheel poetry-core packaging pathspec trove-classifiers setuptools-scm pluggy
+      hatchling
       hatch-vcs expandvars hatch-fancy-pypi-readme pkgconfig
     ]
 
