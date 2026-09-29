@@ -316,9 +316,9 @@ class Cccc < Formula
   def install
     build_resources = %w[
       setuptools
+      flit-core
       wheel
       cython
-      flit-core
       poetry-core
       packaging
       pathspec
