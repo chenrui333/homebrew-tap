@@ -1,0 +1,23 @@
+Formula/d/dqy.rb
+  s_6e5d1e6427e031::t_0a058ce1e11b10 19-20,34-35,37-42,45-54,63
+  s_6e5d1e6427e031::t_fef2d57cb624d7 21-27
+  s_6e5d1e6427e031::t_b461e2b4e94493 44,56-62
+  s_6e5d1e6427e031::t_c5e240c68f01ad 36
+  s_6e5d1e6427e031::t_9ba76fbd682e54 33,43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5a38edea51976e1fbf2ab9d3eaa56af2213074b4",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
