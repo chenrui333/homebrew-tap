@@ -1,0 +1,20 @@
+Formula/c/ccboard.rb
+  s_6e5d1e6427e031::t_dd2a9c82740143 25-30
+  s_6e5d1e6427e031::t_aa46dc979cfe71 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b5f434dde5815728d7c3266ca7978837ad8f580c",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
