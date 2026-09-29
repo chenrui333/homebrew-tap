@@ -17,6 +17,12 @@ class Gobgp < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gobgp"
 
@@ -26,6 +32,7 @@ class Gobgp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/gobgp --version")
-    assert_match "connect: connection refused", shell_output("#{bin}/gobgp neighbor 2>&1", 1)
+    assert_match(/connect: (?:connection refused|permission denied|operation not permitted)/i,
+                 shell_output("#{bin}/gobgp neighbor 2>&1", 1))
   end
 end
