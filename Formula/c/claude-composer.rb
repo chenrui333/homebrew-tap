@@ -26,10 +26,17 @@ class ClaudeComposer < Formula
     depends_on "xsel"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
     ENV["npm_config_build_from_source"] = "true"
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
 
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # remove non-native architecture pre-built binaries
@@ -51,7 +58,7 @@ class ClaudeComposer < Formula
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      terminal_notifier_app = formula_opt_prefix("terminal-notifier")/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
 
@@ -62,23 +69,39 @@ class ClaudeComposer < Formula
       linux_dir = clipboardy_fallbacks_dir/"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
     end
   end
 
   test do
     # FIXME: Upstream's version path requires a TTY and shells out to claude;
     # replace this with a version assertion when non-interactive output is available.
+    require "pty"
+    require "timeout"
 
-    if OS.mac?
-      output = shell_output("#{bin}/claude-composer cc-init --use-yolo --use-core-toolset 2>&1")
-      assert_match "Created configuration file", output
-      assert_match "Core toolset enabled", output
-      assert_path_exists testpath/".claude-composer/config.yaml"
-    else
-      output = shell_output("#{bin}/claude-composer cc-init --use-yolo --use-core-toolset 2>&1", 1)
-      assert_match "PIPED INPUT NOT SUPPORTED", output
-      assert_match "positional argument", output
+    ENV["CLAUDE_COMPOSER_CONFIG_DIR"] = (testpath/".claude-composer").to_s
+    output = +""
+    PTY.spawn(bin/"claude-composer", "cc-init", "--use-yolo", "--use-core-toolset") do |reader, _writer, pid|
+      begin
+        Timeout.timeout(10) do
+          loop do
+            output << reader.readpartial(4096)
+          rescue EOFError, Errno::EIO
+            break
+          end
+        end
+      rescue Timeout::Error
+        Process.kill("TERM", pid)
+        Process.wait(pid)
+        raise "claude-composer cc-init timed out"
+      end
+
+      _, status = Process.wait2(pid)
+      assert_equal 0, status.exitstatus
     end
+
+    assert_match "Created configuration file", output
+    assert_match "Core toolset enabled", output
+    assert_path_exists testpath/".claude-composer/config.yaml"
   end
 end
