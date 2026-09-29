@@ -23,7 +23,6 @@ class Mcpsnoop < Formula
   end
 
   def install
-    ENV["GOPROXY"] = "off"
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/mcpsnoop"
   end
 
