@@ -16,12 +16,19 @@ class CrossSeed < Formula
 
   depends_on "node@24"
 
-  def install
-    ENV.prepend_path "PATH", Formula["node@24"].opt_bin
-    ENV.prepend_path "PATH", Formula["node@24"].opt_libexec/"bin"
-    node_path = "#{Formula["node@24"].opt_bin}:#{Formula["node@24"].opt_libexec/"bin"}:$PATH"
+  deny_network_access!
 
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node@24")
+    node_path = "#{formula_opt_bin("node@24")}:#{formula_opt_libexec("node@24")/"bin"}:$PATH"
+
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
     (bin/"cross-seed").write_env_script libexec/"bin/cross-seed", PATH: node_path
   end
 
