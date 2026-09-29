@@ -37,6 +37,12 @@ class Editly < Formula
     depends_on "mesa"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
     node = Formula["node@22"]
     node_path = "#{node.opt_bin}:#{node.opt_libexec/"bin"}:$PATH"
@@ -47,7 +53,7 @@ class Editly < Formula
     ENV.append "CXXFLAGS", "-std=c++17"
     ENV.append "CPPFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR"
 
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     inreplace libexec/"lib/node_modules/editly/node_modules/gl/angle/src/common/angleutils.h",
               "#include <vector>", "#include <cstdint>\n#include <vector>"
     system "npm", "rebuild", "canvas", "gl", "--build-from-source", "--prefix", libexec/"lib/node_modules/editly"
