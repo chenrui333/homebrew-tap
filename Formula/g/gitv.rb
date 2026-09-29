@@ -17,7 +17,14 @@ class Gitv < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
+    ENV["VERGEN_GIT_DESCRIBE"] = "gitv-tui-v#{version}"
     system "cargo", "install", *std_cargo_args
 
     ENV["PREFIX"] = prefix
