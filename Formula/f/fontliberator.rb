@@ -15,6 +15,8 @@ class Fontliberator < Formula
 
   uses_from_macos "perl"
 
+  deny_network_access!
+
   def install
     bin.install "fontliberator.pl" => "fontliberator"
   end
