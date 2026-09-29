@@ -17,6 +17,12 @@ class G1c < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     inreplace "Cargo.toml", "0.1.0", version.to_s
     system "cargo", "install", *std_cargo_args
