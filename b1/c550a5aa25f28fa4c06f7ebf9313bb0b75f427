@@ -1,0 +1,26 @@
+Formula/c/conan-mcp.rb
+  s_6e5d1e6427e031::t_b4d29d2761d055 139,151-156,158-171,173-175,216-225,236-245,256-269
+  s_6e5d1e6427e031::t_532e5f9f772c9f 68,88
+  s_6e5d1e6427e031::t_db0033c59f9cdc 61-67,69-75,81-87,89-95,116-120,136,138
+  s_6e5d1e6427e031::t_d22023d7c683cc 25-29
+  s_6e5d1e6427e031::t_7092c44889477e 157,271-272,274-303
+  s_6e5d1e6427e031::t_6efb40c64c8df1 137,172
+  s_6e5d1e6427e031::t_e5247aee559dbf 140
+  s_6e5d1e6427e031::t_a77699c31017f0 270
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b1c550a5aa25f28fa4c06f7ebf9313bb0b75f427",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
