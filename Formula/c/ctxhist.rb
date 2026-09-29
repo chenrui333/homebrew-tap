@@ -14,11 +14,13 @@ class Ctxhist < Formula
   depends_on "bash"
   depends_on "fzf"
 
+  deny_network_access!
+
   def install
     pkgshare.install "ctxhist.bash", "ctxhist.plugin.zsh"
 
     (bin/"ctxhist-install").write <<~BASH
-      #!#{Formula["bash"].opt_bin}/bash
+      #!#{formula_opt_bin("bash")}/bash
       set -euo pipefail
 
       plugin_name="ctxhist"
