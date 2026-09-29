@@ -1,0 +1,21 @@
+Formula/g/gtts.rb
+  s_6e5d1e6427e031::t_ebd654dfecf79a 46
+  s_6e5d1e6427e031::t_be84ba98e31e38 57-85,87-88
+  s_6e5d1e6427e031::t_216ca74d4581bc 47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d7d0fe77ba9076b13045abf21fb6cccd4a52db32",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
