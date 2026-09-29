@@ -16,6 +16,14 @@ class Graphjin < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "cmd" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     ldflags = %W[
       -s -w
