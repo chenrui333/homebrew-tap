@@ -17,6 +17,12 @@ class Gptop < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", "--target", "host-tuple"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
