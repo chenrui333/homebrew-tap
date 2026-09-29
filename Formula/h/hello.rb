@@ -1,7 +1,7 @@
 class Hello < Formula
   desc "Program providing model for GNU coding standards and practices"
   homepage "https://www.gnu.org/software/hello/"
-  url "https://ftpmirror.gnu.org/gnu/hello/hello-2.12.3.tar.gz"
+  url "https://ftpmirror.gnu.org/hello/hello-2.12.3.tar.gz"
   sha256 "0d5f60154382fee10b114a1c34e785d8b1f492073ae2d3a6f7b147687b366aa0"
   license "GPL-3.0-or-later"
 
@@ -14,6 +14,8 @@ class Hello < Formula
     sha256                               arm64_linux:   "e737a08e027323506cb0a4937c8271479b425f25ef0675ba1f9e1bb16f5c7af6"
     sha256                               x86_64_linux:  "ccce0d2698ee0db5425be6cc8ad5b888560b0ba1b3191592351d6e092502547c"
   end
+
+  deny_network_access!
 
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
