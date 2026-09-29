@@ -18,6 +18,14 @@ class Dbee < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "src" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     cd "src" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
