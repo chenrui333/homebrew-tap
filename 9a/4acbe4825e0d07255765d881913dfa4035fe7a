@@ -1,0 +1,20 @@
+Formula/c/codeflash.rb
+  s_6e5d1e6427e031::t_30e68fc8c42558 423
+  s_6e5d1e6427e031::t_24006b6886b459 419-420
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9a4acbe4825e0d07255765d881913dfa4035fe7a",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
