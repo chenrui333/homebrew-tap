@@ -24,17 +24,53 @@ class CcEnhanced < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"cc-enhanced", testpath, [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "Updated OpenRouter pricing cache", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    require "pty"
+    require "timeout"
+
+    claude_home = testpath/".claude"
+    claude_home.mkpath
+    (claude_home/"pricing_cache.json").write <<~JSON
+      {
+        "models": {},
+        "last_updated": #{Time.now.to_i}
+      }
+    JSON
+
+    output = +""
+    PTY.spawn({ "TERM" => "xterm-256color" }, "/bin/sh", "-c",
+              "stty cols 120 rows 40; exec #{bin}/cc-enhanced") do |r, w, pid|
+      Timeout.timeout(15) do
+        loop do
+          output << r.readpartial(4096)
+          next unless output.include?("Claude Code Enhanced")
+
+          w.write "q"
+          break
+        end
+
+        loop { output << r.readpartial(4096) }
+      rescue EOFError, Errno::EIO
+        nil
+      ensure
+        begin
+          Process.kill("TERM", pid)
+        rescue Errno::ESRCH
+          nil
+        end
+      end
+    end
+
+    assert_match "Claude Code Enhanced", output
   end
 end
