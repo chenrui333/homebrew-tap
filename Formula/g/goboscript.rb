@@ -1,6 +1,6 @@
 class Goboscript < Formula
   desc "Scratch compiler"
-  homepage "https://aspizu.github.io/goboscript/"
+  homepage "https://aspiz.uk/goboscript/docs"
   url "https://github.com/aspizu/goboscript/archive/refs/tags/v3.2.1.tar.gz"
   sha256 "6c8de14efeabf33d64db7b17d81718b585a221a09db2422b72eb82eeed817664"
   license "MIT"
@@ -17,6 +17,12 @@ class Goboscript < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
