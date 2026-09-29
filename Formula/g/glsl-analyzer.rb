@@ -5,6 +5,7 @@ class GlslAnalyzer < Formula
       tag:      "v1.7.1",
       revision: "d595fb18c165f9e6c0c99a39dd457b993cfdd9aa"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -16,7 +17,18 @@ class GlslAnalyzer < Formula
 
   depends_on "zig@0.14" => :build
 
+  deny_network_access!
+
   def install
+    if OS.mac?
+      # Use Zig's bundled Darwin libraries instead of incompatible SDK stubs.
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr"
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
