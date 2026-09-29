@@ -1,0 +1,19 @@
+Formula/g/gloomberb.rb
+  s_6e5d1e6427e031::t_121680087fbb8c 44-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "409e6675e9d5e23b9911e3acab9801d0f26ceecd",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
