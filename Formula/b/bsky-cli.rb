@@ -18,6 +18,7 @@ class BskyCli < Formula
 
   def fetch
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
   end
 
   def install
