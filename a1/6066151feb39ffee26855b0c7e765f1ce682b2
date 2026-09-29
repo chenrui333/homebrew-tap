@@ -1,0 +1,25 @@
+Formula/f/fftext.rb
+  s_6e5d1e6427e031::t_3d42a2bde93428 106
+  s_6e5d1e6427e031::t_6ad1a941fa70c1 22,90-94,105,108-114,180-199,225-237,255-259,280-290,292-295,315-324,326-341,359
+  s_6e5d1e6427e031::t_a0ebce433c318a 107
+  s_6e5d1e6427e031::t_25059c39435d91 238-239
+  s_6e5d1e6427e031::t_e3044da68ca138 270-274,325
+  s_6e5d1e6427e031::t_3bcae79193224e 291,354-356
+  s_6e5d1e6427e031::t_a2575dd7da1b5a 360
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a16066151feb39ffee26855b0c7e765f1ce682b2",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
