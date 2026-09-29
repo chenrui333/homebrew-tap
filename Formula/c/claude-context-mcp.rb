@@ -27,12 +27,35 @@ class ClaudeContextMcp < Formula
     depends_on "openblas"
   end
 
+  resource "faiss" do
+    url "https://github.com/facebookresearch/faiss/archive/refs/tags/v1.7.4.tar.gz"
+    sha256 "d9a7b31bf7fd6eb32c10b7ea7ff918160eed5be04fe63bb7b4b4b5f2bbde01ad"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+    system "npm", "install", "cmake-js@7.2.1", *std_npm_args(prefix: buildpath/"cmake-js-fetch")
+  end
+
   def install
     ENV.append "CXXFLAGS", "-std=c++20"
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
 
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", "--ignore-scripts", *std_npm_args
 
     package = libexec/"lib/node_modules/@zilliz/claude-context-mcp"
+    faiss_node = package/"node_modules/faiss-node"
+    resource("faiss").stage faiss_node/"deps/faiss"
+    package_json = JSON.parse((faiss_node/"package.json").read)
+    package_json.delete("devDependencies")
+    package_json["scripts"]["install"] = "npm run build"
+    (faiss_node/"package.json").atomic_write JSON.pretty_generate(package_json)
+    cd faiss_node do
+      system "npm", "install", "--offline", "cmake-js@7.2.1", *std_npm_args(prefix: false), "--no-save"
+    end
+
     system "npm", "rebuild", "--build-from-source", "--prefix", package
 
     faiss_buildpath = package/"node_modules/faiss-node/build"
