@@ -16,9 +16,74 @@ class Balcony < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5fc96f6c7816328ed0df29d5cd0fa4f1c2600d632ea4dfacd26cd84cc93ebd7"
   end
 
-  depends_on "rust" => :build # for uv_build > maturin
+  depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "python@3.13"
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "hatch-nodejs-version" do
+    url "https://files.pythonhosted.org/packages/19/c9/1823a9e45eadd487bece8f2b3b29311edd79ba900d874885b1e9f7973a50/hatch_nodejs_version-0.4.0.tar.gz"
+    sha256 "2428ea398dd053f019d2b7ac949dd6b690ca8e826b6d433ad13c5b6c475ae91b"
+  end
+
+  resource "hatch-requirements-txt" do
+    url "https://files.pythonhosted.org/packages/7c/04/3703d3caa354fd7148a5453724de70577a6010234d1e1f3ff6b98a4d3242/hatch_requirements_txt-0.4.1.tar.gz"
+    sha256 "2c686e5758fd05bb55fa7d0c198fdd481f8d3aaa3c693260f5c0d74ce3547d20"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+  end
+
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/f1/b2/73898a92113f532fe9cecaae97f070a12ec4c786d66af377a6f81d38e208/pdm_backend-2.4.9.tar.gz"
+    sha256 "c41a852ccbf4b567b033db9b2ae78660d7a4ea49307719959ab88a01f0aabb2e"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
 
   resource "aws-jmespath-utils" do
     url "https://files.pythonhosted.org/packages/03/7d/dfbd180e7e6dac0a73ed5418175cfb60381b0b7f2bf55f6a0bd80fc005e1/aws_jmespath_utils-1.1.0.tar.gz"
@@ -151,8 +216,8 @@ class Balcony < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "paginate" do
@@ -252,12 +317,43 @@ class Balcony < Formula
 
   patch :DATA
 
+  deny_network_access!
+
   def install
     # hatch does not support a SOURCE_DATE_EPOCH before 1980.
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
 
-    virtualenv_install_with_resources
+    build_resources = %w[
+      setuptools
+      flit-core
+      poetry-core
+      packaging
+      vcs-versioning
+      pathspec
+      pluggy
+      trove-classifiers
+      hatchling
+      setuptools-scm
+      hatch-vcs
+      pdm-backend
+      hatch-requirements-txt
+      hatch-nodejs-version
+      wheel
+    ]
+
+    venv = virtualenv_create(libexec, "python3.13")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |resource| build_resources.include?(resource.name) }, build_isolation: false
+
+    inreplace "pyproject.toml" do |s|
+      s.gsub! "uv_build>=0.9.17,<0.10.0", "hatchling"
+      s.gsub! "uv_build", "hatchling.build"
+    end
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"balcony", shell_parameter_format: :typer)
   end
