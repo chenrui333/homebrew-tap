@@ -1,8 +1,9 @@
 class Chatlog < Formula
   desc "Easily use your own chat data"
   homepage "https://github.com/sjzar/chatlog"
-  url "https://github.com/sjzar/chatlog/archive/refs/tags/v0.0.31.tar.gz"
-  sha256 "e2eb72bdfcfb36bef2fe6f7c4e983db8ebf60ecb124e43de49562d711b3b9a65"
+  url "https://github.com/sjzar/chatlog/archive/a7162bca9454fa43b5950a2414670983fe180e56.tar.gz"
+  version "0.0.31"
+  sha256 "cf5e62813549121cb0c6d136dd39f947326b9fcea17f215c4610eee54184813e"
   license "Apache-2.0"
 
   bottle do
@@ -15,6 +16,12 @@ class Chatlog < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
