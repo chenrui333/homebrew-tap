@@ -17,6 +17,12 @@ class Daylight < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
@@ -24,6 +30,7 @@ class Daylight < Formula
   test do
     ENV["NO_COLOR"] = "1"
     assert_match version.to_s, shell_output("#{bin}/daylight --version")
-    assert_match "Ten day projection", shell_output(bin/"daylight")
+    assert_match "Ten day projection",
+                 shell_output("#{bin}/daylight --latitude=-33.92 --longitude=18.42 --timezone=Africa/Johannesburg")
   end
 end
