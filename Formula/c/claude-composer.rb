@@ -76,16 +76,32 @@ class ClaudeComposer < Formula
   test do
     # FIXME: Upstream's version path requires a TTY and shells out to claude;
     # replace this with a version assertion when non-interactive output is available.
+    require "pty"
+    require "timeout"
 
-    if OS.mac?
-      output = shell_output("#{bin}/claude-composer cc-init --use-yolo --use-core-toolset 2>&1")
-      assert_match "Created configuration file", output
-      assert_match "Core toolset enabled", output
-      assert_path_exists testpath/".claude-composer/config.yaml"
-    else
-      output = shell_output("#{bin}/claude-composer cc-init --use-yolo --use-core-toolset 2>&1", 1)
-      assert_match "PIPED INPUT NOT SUPPORTED", output
-      assert_match "positional argument", output
+    ENV["CLAUDE_COMPOSER_CONFIG_DIR"] = (testpath/".claude-composer").to_s
+    output = +""
+    PTY.spawn(bin/"claude-composer", "cc-init", "--use-yolo", "--use-core-toolset") do |reader, _writer, pid|
+      begin
+        Timeout.timeout(10) do
+          loop do
+            output << reader.readpartial(4096)
+          rescue EOFError, Errno::EIO
+            break
+          end
+        end
+      rescue Timeout::Error
+        Process.kill("TERM", pid)
+        Process.wait(pid)
+        raise "claude-composer cc-init timed out"
+      end
+
+      _, status = Process.wait2(pid)
+      assert_equal 0, status.exitstatus
     end
+
+    assert_match "Created configuration file", output
+    assert_match "Core toolset enabled", output
+    assert_path_exists testpath/".claude-composer/config.yaml"
   end
 end
