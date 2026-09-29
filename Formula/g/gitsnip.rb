@@ -16,6 +16,12 @@ class Gitsnip < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/dagimg-dot/gitsnip/internal/cli.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/gitsnip"
