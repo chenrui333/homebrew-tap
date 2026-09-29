@@ -4,6 +4,7 @@ class Dawn < Formula
   url "https://github.com/andrewmd5/dawn/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "7b01b89a87cdfe34e17401ec8497176abd1c65387fd7f9cb286d3c4b28b619cc"
   license "MIT"
+  revision 1
   head "https://github.com/andrewmd5/dawn.git", branch: "main"
 
   bottle do
@@ -38,10 +39,14 @@ class Dawn < Formula
     sha256 "cf6c76d588eb607b77dd6797cf65f8e88873e9f98c40085fc46070fe5626c70c"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "git", "submodule", "update", "--init", "--recursive" if build.head?
+  end
+
   def install
-    if build.head?
-      system "git", "submodule", "update", "--init", "--recursive"
-    else
+    unless build.head?
       # Upstream release tarballs omit git submodules needed for source builds.
       mkdir_p buildpath/"third-party"
       resource("cyaml").stage buildpath/"third-party/cyaml"
@@ -55,11 +60,20 @@ class Dawn < Formula
               'set(PCRE2_SUPPORT_JIT ON CACHE BOOL "" FORCE)',
               'set(PCRE2_SUPPORT_JIT OFF CACHE BOOL "" FORCE)'
 
-    mkdir "build" do
-      system "cmake", "..", "-DDAWN_VERSION=#{version}", *std_cmake_args
-      system "cmake", "--build", ".", "--target", "dawn"
-      bin.install "dawn"
-    end
+    # Background print commands must not read the controlling terminal (SIGTTIN).
+    inreplace "src/dawn_backend_posix.c", "        // Set up raw mode on tty_fd", <<~C.chomp
+      if (posix_state.tty_fd >= 0 && tcgetpgrp(posix_state.tty_fd) != getpgrp()) {
+        if (posix_state.tty_fd != STDERR_FILENO)
+          close(posix_state.tty_fd);
+        posix_state.tty_fd = -1;
+      }
+
+      // Set up raw mode on tty_fd
+    C
+
+    system "cmake", "-S", ".", "-B", "build", "-DDAWN_VERSION=#{version}", *std_cmake_args
+    system "cmake", "--build", "build", "--target", "dawn"
+    bin.install "build/dawn"
   end
 
   test do
