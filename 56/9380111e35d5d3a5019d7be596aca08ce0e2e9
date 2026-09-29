@@ -1,0 +1,25 @@
+Formula/c/context-file-manager.rb
+  s_6e5d1e6427e031::t_4358eb3c3c0013 154-163
+  s_6e5d1e6427e031::t_2e0ee7936efc9b 67,127,179-193,199-210,212-237
+  s_6e5d1e6427e031::t_a137b73275dc20 68
+  s_6e5d1e6427e031::t_7bec53643d942f 99-108,114-126
+  s_6e5d1e6427e031::t_306faa2b95c3ed 128
+  s_6e5d1e6427e031::t_6b0e57acb366de 5
+  s_6e5d1e6427e031::t_1545bfdbb920d7 39-48,54-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "569380111e35d5d3a5019d7be596aca08ce0e2e9",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
