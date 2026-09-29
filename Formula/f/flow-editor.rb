@@ -15,6 +15,12 @@ class FlowEditor < Formula
 
   depends_on "zig" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch"
+  end
+
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
