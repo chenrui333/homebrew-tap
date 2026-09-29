@@ -1,0 +1,21 @@
+Formula/f/flint-cli.rb
+  s_6e5d1e6427e031::t_68906457cc7acd 26-30,35-45,47-50,52-54
+  s_6e5d1e6427e031::t_079eec8436d82f 3-5,23-25,32-34
+  s_6e5d1e6427e031::t_1f882d56ecf1ed 55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0bdcf5d82a30f5969c5b137e7b895e34964fc6ed",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
