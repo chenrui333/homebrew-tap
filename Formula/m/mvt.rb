@@ -3,18 +3,18 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/95/6a/d3628e68cf4ea3b18dc51ebdd742e3ccdc1af6021f12c51472ac7cc98221/mvt-2026.9.21.tar.gz"
-  sha256 "5f5b2d1ecdd0c53a9aa85ba2b9ffcbac4d24ce3cfd4c31cc9c5223ac23a24d13"
+  url "https://files.pythonhosted.org/packages/5a/7a/ae259fdcf918ea17b1590fb180cbe86d5880f5da229211d970a8e5081412/mvt-2026.9.28.tar.gz"
+  sha256 "16e661bb812827868790866dc4c2cc4c159b36eb1747443acc1f834852cf1ad8"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fe0c57f5736ad34780591d2c257715a9f0a1f8380342c8c31381b7cdba708d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f5435bf19998a4d7c5a7b53ec77558c7520f93e80e99595598a4d32763137aa"
-    sha256 cellar: :any,                 arm64_linux:   "82e9ef46d63df195d10ad260dfe7f94a7de428015b7bf1a71ff1d17564525aed"
-    sha256 cellar: :any,                 x86_64_linux:  "2c7730e98dbc76ed5e67e51e120abacde4b5e46b5f771ed3e525579a79825237"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b79e4217586d10393a4c12a930f811ba0b9822c9f3084315b8cf71fae182b340"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0c0d84d3b491f18620b54e2169a4bc99dc155c11fe543c4b84a4bca139b3f7d"
+    sha256 cellar: :any,                 arm64_linux:   "a38631be60dded0325e096b6c71bee3ba87dc42f2791003883e5351db764810d"
+    sha256 cellar: :any,                 x86_64_linux:  "07cd3e32589efcbb89103c064e901cb4b6d1574aa2798ae6ced3443413b04c99"
   end
 
   depends_on "rust" => :build
@@ -29,11 +29,6 @@ class Mvt < Formula
   # PR ref: https://github.com/mvt-project/mvt/pull/706
 
   pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic"]
-
-  resource "adb-shell" do
-    url "https://files.pythonhosted.org/packages/8f/73/d246034db6f3e374dad9a35ee3f61345a6b239d4febd2a41ab69df9936fe/adb_shell-0.4.4.tar.gz"
-    sha256 "04c305f30a2ca25d5c54b3cd6ce9bb64c36e5f07967b23b3fb6aaecc851b90b6"
-  end
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -65,11 +60,6 @@ class Mvt < Formula
     sha256 "5f2799e58f908cce28d7929dd82231abc8acd57c25b37bce6a2d6a82e018d343"
   end
 
-  resource "libusb1" do
-    url "https://files.pythonhosted.org/packages/89/35/f9d2a990d092d647b47540cd229e1d68432c0f51183484ca189612a4824c/libusb1-3.4.0.tar.gz"
-    sha256 "9cf5638506d54f21bf36550d97ea63189111a23c4d8078f630103a2052135f45"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
     sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
@@ -93,11 +83,6 @@ class Mvt < Formula
   resource "pyahocorasick" do
     url "https://files.pythonhosted.org/packages/b0/3c/dc9e31a0f004eabe2ef5d31456766555a02e2af29e159daa31266934af79/pyahocorasick-2.3.1.tar.gz"
     sha256 "9d0f6bb522237ed7f111ed59c9e8baea7d1e75813587b6773babd43bda35db9f"
-  end
-
-  resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
-    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
   end
 
   resource "pycryptodome" do
@@ -138,11 +123,6 @@ class Mvt < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
-  end
-
-  resource "rsa" do
-    url "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz"
-    sha256 "e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75"
   end
 
   resource "simplejson" do
