@@ -13,8 +13,22 @@ class Cgpu < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def prepare_package_json
+    package_json = JSON.parse((buildpath/"package.json").read)
+    package_json.delete("devDependencies")
+    (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
+  end
+
+  def fetch
+    prepare_package_json
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    prepare_package_json
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
