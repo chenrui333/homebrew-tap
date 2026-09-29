@@ -1,0 +1,19 @@
+Formula/c/create-mcp-use-app.rb
+  s_6e5d1e6427e031::t_14ad13c0a71ad8 15-16,26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "04775b395485b1e1708c1cb85ecb5a6e816e8bf5",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
