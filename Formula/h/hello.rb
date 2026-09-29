@@ -15,6 +15,8 @@ class Hello < Formula
     sha256                               x86_64_linux:  "ccce0d2698ee0db5425be6cc8ad5b888560b0ba1b3191592351d6e092502547c"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
