@@ -17,11 +17,22 @@ class Clawpatrol < Formula
   depends_on "deno" => :build
   depends_on "go@1.26" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     ENV["DENO_DIR"] = buildpath/".deno"
 
     cd "dashboard" do
       system "deno", "install"
+    end
+    system "go", "mod", "download"
+  end
+
+  def install
+    ENV["DENO_DIR"] = buildpath/".deno"
+
+    cd "dashboard" do
+      system "deno", "install", "--cached-only"
       system "deno", "task", "build"
     end
 
