@@ -14,13 +14,19 @@ class BskyCli < Formula
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
-    system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    system "npm", "--offline", "run", "build"
+    system "npm", "install", "--offline", *std_npm_args
 
     bin.install_symlink libexec.glob("bin/*")
-    generate_completions_from_executable(bin/"bsky", "completions", shells: [:bash, :fish, :zsh])
+    generate_completions_from_executable(bin/"bsky", "completions")
   end
 
   test do
