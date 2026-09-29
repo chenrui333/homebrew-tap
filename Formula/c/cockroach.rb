@@ -78,6 +78,9 @@ class Cockroach < Formula
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/util/string_util.h",
               "#pragma once",
               "#pragma once\n\n#include <stdint.h>"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/include/rocksdb/utilities/checkpoint.h",
+              "#pragma once",
+              "#pragma once\n\n#include <stdint.h>"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
               "cmake_minimum_required(VERSION 3.3 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
