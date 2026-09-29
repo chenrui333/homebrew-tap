@@ -1,0 +1,21 @@
+Formula/g/gita.rb
+  s_6e5d1e6427e031::t_ec2ce3d7870331 73
+  s_6e5d1e6427e031::t_30260dc3cdb86e 28-37,43-72,76-93
+  s_6e5d1e6427e031::t_8a10cb9fb8339f 74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a2d540af6b8acbc760c3a895acb0fab3e579a294",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": null
+    }
+  }
+}
