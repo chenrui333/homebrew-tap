@@ -14,7 +14,7 @@ class Bytebox < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1bedc6509fe3e4ea255c4573503c40a85af2bc41634dc22f1f22085b84d9b8e"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
   depends_on "wabt" => :test
 
   deny_network_access!
