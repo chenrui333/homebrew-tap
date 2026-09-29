@@ -17,6 +17,12 @@ class Filessh < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["VERGEN_GIT_BRANCH"] = "main"
     ENV["VERGEN_GIT_COMMIT_TIMESTAMP"] = time.iso8601
