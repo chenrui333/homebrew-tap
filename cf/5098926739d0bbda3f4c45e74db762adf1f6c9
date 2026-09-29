@@ -1,0 +1,19 @@
+Formula/f/fast-xml-parser.rb
+  s_6e5d1e6427e031::t_ff6bcce80d477c 15-20,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "cf5098926739d0bbda3f4c45e74db762adf1f6c9",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
