@@ -19,13 +19,21 @@ class Carton < Formula
   uses_from_macos "swift" => :build
   uses_from_macos "curl"
 
+  deny_network_access!
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
-    args = if OS.mac?
-      ["--disable-sandbox"]
-    else
-      ["--static-swift-stdlib"]
+    args = []
+    if OS.linux?
+      curl_lib = formula_opt_lib("curl")
+      args = ["-Xlinker", "-L#{curl_lib}", "-Xlinker", "-rpath", "-Xlinker", curl_lib]
     end
-    system "swift", "build", *args, "-c", "release"
+    system "swift", "build", *args, *std_swift_args
     bin.install ".build/release/carton"
   end
 
