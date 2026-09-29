@@ -1,8 +1,8 @@
 class FlintCli < Formula
   desc "Lightweight tool for managing linux virtual machines"
-  homepage "https://github.com/ccheshirecat/flint"
-  url "https://github.com/ccheshirecat/flint/archive/refs/tags/v1.28.0.tar.gz"
-  sha256 "4b302cb4d72f7978747c49fb4f400c4cf838d15674738d8e042b98dc7e43fcf9"
+  homepage "https://pkg.go.dev/github.com/ccheshirecat/flint"
+  url "https://proxy.golang.org/github.com/ccheshirecat/flint/@v/v1.28.0.zip"
+  sha256 "a413ef9f53c0e611df43c09ee435a093a8a3876042f9ae8111dfe82005fa25ae"
   license "Apache-2.0"
 
   bottle do
@@ -20,15 +20,56 @@ class FlintCli < Formula
   depends_on "libvirt"
   depends_on "qemu"
 
-  def install
-    cd "web" do
-      system "npm", "install", *std_npm_args(prefix: false)
-      system "npm", "run", "build"
+  resource "inter-font" do
+    url "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2"
+    sha256 "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+  end
+
+  deny_network_access!
+
+  def fetch
+    cd "ccheshirecat/flint@v#{version}" do
+      font_dir = buildpath/"inter-font"
+      resource("inter-font").stage font_dir
+      font_path = font_dir.children.first
+      css = [400, 500, 600, 700].map do |weight|
+        <<~CSS
+          /* latin */
+          @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: #{weight};
+            font-display: swap;
+            src: url(#{font_path}) format('woff2');
+          }
+        CSS
+      end.join
+      (buildpath/"next-font-mock.js").write <<~JS
+        module.exports = {
+          "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap": #{css.dump},
+        };
+      JS
+
+      cd "web" do
+        system "npm", "install", *std_npm_args(prefix: false)
+      end
+      system "go", "mod", "download"
     end
+  end
 
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"flint")
+  def install
+    cd "ccheshirecat/flint@v#{version}" do
+      cd "web" do
+        system "npm", "install", "--offline", *std_npm_args(prefix: false)
+        with_env(NEXT_FONT_GOOGLE_MOCKED_RESPONSES: buildpath/"next-font-mock.js") do
+          system "npm", "run", "build"
+        end
+      end
 
-    generate_completions_from_executable(bin/"flint", shell_parameter_format: :cobra)
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"flint")
+
+      generate_completions_from_executable(bin/"flint", shell_parameter_format: :cobra)
+    end
   end
 
   test do
