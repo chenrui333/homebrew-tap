@@ -1,0 +1,20 @@
+Formula/g/gowebly.rb
+  s_6e5d1e6427e031::t_d993f0c56e8899 20-25
+  s_6e5d1e6427e031::t_b0997d442b07a3 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4f7a074a709abc8415b1a3e1b608b37d8ddcb91d",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
