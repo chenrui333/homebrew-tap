@@ -13,7 +13,7 @@ class FlowEditor < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5048a3c5beaed109d15d7a75d6eb3776f5a4ceab93112299df676e4def4a937f"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.15" => :build
 
   deny_network_access!
 
