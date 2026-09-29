@@ -19,8 +19,14 @@ class Tapflow < Formula
 
   preserve_rpath # Preserve the prebuilt nethook dylib ID without expanding its Mach-O header.
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     dylib = libexec/"lib/node_modules/tapflow/node_modules/@tapflowio/ios-agent/bin/libtapflow-nethook.dylib"
     MachO::Tools.change_dylib_id(dylib, "@rpath/#{dylib.basename}")
