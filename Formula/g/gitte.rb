@@ -35,8 +35,14 @@ class Gitte < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    system "meson", "setup", "builddir", *std_meson_args
+    system "meson", "setup", "builddir", "-Dcargo-home=#{ENV.fetch("CARGO_HOME")}", *std_meson_args
     system "meson", "compile", "-C", "builddir"
     system "meson", "install", "-C", "builddir"
 
