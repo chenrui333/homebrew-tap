@@ -1,17 +1,17 @@
 class Crush < Formula
   desc "Glamorous AI coding agent for your favorite terminal"
   homepage "https://github.com/charmbracelet/crush"
-  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.96.1.tar.gz"
-  sha256 "5a71fae5374ba86115344287edb45ccd8ed4c89406829d5d3fb9ef44e19900df"
+  url "https://github.com/charmbracelet/crush/archive/refs/tags/v0.97.1.tar.gz"
+  sha256 "2d008a034c3e7351937e69f4b21ac653e4e0ae2e1fb0fe11b8d37a3094c15d9e"
   # license "FSL-1.1-MIT"
   head "https://github.com/charmbracelet/crush.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4bfeccf02d0cd053d6e5b18b63ca7f1d6f785db3b4523d0e7a290977d94668f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12b0b801e23c88b17cf827bdd44238e0d8f8480f0ccb5ef86b5c67053e8e5437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "65cb3b08e514cc95cf5890afe48d40a2ccf42096c94564d05f14a13dce2505e1"
-    sha256 cellar: :any,                 x86_64_linux:  "8a86390099ee877b7774f9df4d98e4f9acb96c1142fcbd5af4928d0ce1a5d158"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95431be2b8b068acaa2c062063d19de1fb0a907a48102b14c02769cdd864b09e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ad43bbb7820913c4edee808545b16bc46266bd0ce7f5e0425cc6404de6961e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bb3b58055b1ad00e6def6cbf64f779d1dfdab61dbeabc1e7dd0f50a80a2b153"
+    sha256 cellar: :any,                 x86_64_linux:  "7fe1906c33c2a33ee1ad4cef828416a02c133a71cac5622ca9627ccdd759f928"
   end
 
   depends_on "go" => :build
