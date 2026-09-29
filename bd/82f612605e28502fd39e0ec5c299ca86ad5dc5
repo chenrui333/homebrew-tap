@@ -1,0 +1,21 @@
+Formula/f/fixjson.rb
+  s_6e5d1e6427e031::t_bb412362a650b7 18
+  s_6e5d1e6427e031::t_2c82fe658d594e 19
+  s_6e5d1e6427e031::t_4a50dee593e87f 20-23,25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bd82f612605e28502fd39e0ec5c299ca86ad5dc5",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
