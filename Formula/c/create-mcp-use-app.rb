@@ -12,6 +12,8 @@ class CreateMcpUseApp < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
@@ -21,7 +23,8 @@ class CreateMcpUseApp < Formula
     assert_match version.to_s, shell_output("#{bin}/create-mcp-use-app --version")
 
     # create a test app
-    system bin/"create-mcp-use-app", "test-app", "--no-git", "--template", "starter"
+    system bin/"create-mcp-use-app", "test-app", "--template", "starter", "--no-install", "--no-skills",
+           "--sdk-version", "1.34.0"
     assert_path_exists testpath/"test-app/package.json"
   end
 end
