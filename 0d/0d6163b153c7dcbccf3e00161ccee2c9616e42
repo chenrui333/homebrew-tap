@@ -1,0 +1,19 @@
+Formula/c/cobib.rb
+  s_6e5d1e6427e031::t_75201d14b6e1ae 44-63,99-108,114-123,154-163,184-188,199-203,207-227
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0d0d6163b153c7dcbccf3e00161ccee2c9616e42",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
