@@ -17,6 +17,12 @@ class Gecit < Formula
   depends_on "llvm" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV.prepend_path "PATH", formula_opt_bin("llvm")
     ENV.prepend_path "CPATH", formula_opt_include("libbpf")
