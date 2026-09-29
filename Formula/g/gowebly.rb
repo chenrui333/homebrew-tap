@@ -1,6 +1,6 @@
 class Gowebly < Formula
   desc "Next-generation CLI tool to easily build amazing web applications"
-  homepage "https://gowebly.org/"
+  homepage "https://github.com/gowebly/gowebly"
   url "https://github.com/gowebly/gowebly/archive/refs/tags/v3.1.1.tar.gz"
   sha256 "c7fdc2740199d1bc3bd371e527f093025be9484e61439c6a9361522569a3813f"
   license "Apache-2.0"
@@ -16,6 +16,12 @@ class Gowebly < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     inreplace "internal/variables/version.go",
