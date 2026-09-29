@@ -18,6 +18,12 @@ class Ddev < Formula
   depends_on "go" => :build
   depends_on "docker" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/ddev/ddev/pkg/versionconstants.DdevVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ddev"
