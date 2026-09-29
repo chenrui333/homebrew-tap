@@ -23,9 +23,14 @@ class Firm < Formula
     sha256 "0a3831758e6694c6c7f0e343b5b75a952e431f52ce457254770dfc99cb5402e9"
   end
 
-  def install
-    resource("tree-sitter-firm").stage buildpath/"tree-sitter-firm"
+  deny_network_access!
 
+  def fetch
+    resource("tree-sitter-firm").stage buildpath/"tree-sitter-firm"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args(path: "firm_cli")
   end
 
