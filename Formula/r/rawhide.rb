@@ -17,6 +17,8 @@ class Rawhide < Formula
     depends_on "pcre2"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}"
 
