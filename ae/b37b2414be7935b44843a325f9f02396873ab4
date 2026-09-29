@@ -1,0 +1,24 @@
+Formula/z/zmpl.rb
+  s_6e5d1e6427e031::t_30d6e8d8113a3b 10-15,31,73
+  s_6e5d1e6427e031::t_3c7ac56c01fbbd 7-9
+  s_6e5d1e6427e031::t_9a7990d7135691 16-18,28-30
+  s_6e5d1e6427e031::t_597f4927aebaf1 32-34,70-72
+  s_6e5d1e6427e031::t_4dce867aadb610 74
+  s_6e5d1e6427e031::t_7683080621ed4d 1-6,19-27,35-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "aeb37b2414be7935b44843a325f9f02396873ab4",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
