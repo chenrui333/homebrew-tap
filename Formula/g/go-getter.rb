@@ -21,6 +21,14 @@ class GoGetter < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "cmd/go-getter" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     ldflags = "-s -w -X main.GitCommit=#{version}"
     cd "cmd/go-getter" do
