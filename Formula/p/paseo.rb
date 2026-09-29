@@ -1,8 +1,8 @@
 class Paseo < Formula
   desc "Control your AI coding agents from the command-line"
   homepage "https://github.com/getpaseo/paseo"
-  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.9.2.tgz"
-  sha256 "e19f77c334b2eb00c7671897524d534dbda6b0908c8e81ac96357d8a0967799d"
+  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.10.0.tgz"
+  sha256 "216030a379ac4f6b5fed392064b328e446dce687aa3951da43d728a70212dfe9"
   license "AGPL-3.0-only"
 
   bottle do
@@ -23,6 +23,13 @@ class Paseo < Formula
     native_prebuild = "#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.arm? ? "arm64" : "x64"}"
     node_pty_prebuilds.children.each do |prebuild|
       rm_r prebuild if prebuild.basename.to_s != native_prebuild
+    end
+
+    # Homebrew Linux uses glibc; the optional musl binaries reference libc.so.
+    if OS.linux?
+      libexec.glob("lib/node_modules/@getpaseo/cli/node_modules/@msgpackr-extract/*/*.musl.node").each do |file|
+        rm file
+      end
     end
 
     bin.install_symlink libexec.glob("bin/*")
