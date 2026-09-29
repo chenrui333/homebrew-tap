@@ -15,13 +15,15 @@ class GetShitDoneCc < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
   def install
     system "npm", "run", "build:hooks"
     libexec.install Dir["*"]
     node_modules = libexec/"node_modules"
     node_modules.mkpath
     (bin/"get-shit-done-cc").write_env_script libexec/"bin/install.js",
-                                              PATH: "#{Formula["node"].opt_bin}:$PATH"
+                                              PATH: "#{formula_opt_bin("node")}:$PATH"
   end
 
   test do
