@@ -1,0 +1,20 @@
+Formula/t/tapflow.rb
+  s_6e5d1e6427e031::t_7de60211fd9167 23-27,29
+  s_6e5d1e6427e031::t_0a580ab829f925 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b44086a2e17e9e3775ae3138da4a1fc646ab9e8c",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
