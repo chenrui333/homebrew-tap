@@ -1,0 +1,20 @@
+Formula/g/gita.rb
+  s_6e5d1e6427e031::t_ec2ce3d7870331 33
+  s_6e5d1e6427e031::t_8a10cb9fb8339f 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "49e55f93ff849751e2532c0cfeef77d3e8a234fa",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
