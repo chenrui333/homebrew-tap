@@ -1,0 +1,20 @@
+Formula/f/ftdv.rb
+  s_6e5d1e6427e031::t_f423044ac601da 21-23,25-27
+  s_6e5d1e6427e031::t_b862bd75512007 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e70476802e67f3d2320c5db14fc225675885f74c",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
