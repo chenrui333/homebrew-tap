@@ -12,12 +12,18 @@ class CloudRunMcp < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     # These optional native prebuilds vary by platform and break `:all` bottles.
-    prebuilds = "lib/node_modules/@google-cloud/cloud-run-mcp/node_modules/{bare-fs,bare-os,bare-url}/prebuilds"
-    libexec.glob(prebuilds).each(&:rmtree)
+    modules = libexec/"lib/node_modules/@google-cloud/cloud-run-mcp/node_modules"
+    modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds").each(&:rmtree)
 
     bin.install_symlink libexec.glob("bin/*")
   end
