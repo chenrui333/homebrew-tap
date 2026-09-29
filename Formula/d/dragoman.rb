@@ -15,6 +15,11 @@ class Dragoman < Formula
 
   depends_on "python@3.13"
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
   resource "hatchling" do
     url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
     sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
@@ -68,7 +73,7 @@ class Dragoman < Formula
   deny_network_access!
 
   def install
-    build_resources = %w[setuptools packaging pathspec pluggy trove-classifiers hatchling poetry-core]
+    build_resources = %w[setuptools flit-core packaging pathspec pluggy trove-classifiers hatchling poetry-core]
 
     venv = virtualenv_create(libexec, "python3.13")
     build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
