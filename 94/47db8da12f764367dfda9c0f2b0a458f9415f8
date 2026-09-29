@@ -1,0 +1,20 @@
+Formula/d/dominds.rb
+  s_6e5d1e6427e031::t_98efb17f7e2834 17-22,24,29
+  s_6e5d1e6427e031::t_ac487b9e8ccc5b 15-16,23,25-27,30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9447db8da12f764367dfda9c0f2b0a458f9415f8",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
