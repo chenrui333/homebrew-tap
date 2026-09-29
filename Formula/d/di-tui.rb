@@ -1,8 +1,9 @@
 class DiTui < Formula
   desc "Simple terminal UI player for di.fm"
   homepage "https://github.com/acaloiaro/di-tui"
-  url "https://github.com/acaloiaro/di-tui/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "b083c501064ad85901a57537706256d3e83d0c3b3ef5d6990304e7f98f883310"
+  url "https://github.com/acaloiaro/di-tui/archive/1d6166e390718df19aaff28b0e15dd47a465edee.tar.gz"
+  version "1.15.0"
+  sha256 "7fbb6d97d835879a1ff310e46f252ebcc636b1f7ff9f83eb987175dffd17dec4"
   license "BSD-2-Clause"
   head "https://github.com/acaloiaro/di-tui.git", branch: "main"
 
@@ -16,6 +17,12 @@ class DiTui < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
