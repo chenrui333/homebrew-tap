@@ -1,0 +1,20 @@
+Formula/d/dtop.rb
+  s_6e5d1e6427e031::t_6aa55b2ff05ab9 26,29,61-70,76-90,121-135,141-150,171-180,186-190,206-210,216-217,219-227
+  s_6e5d1e6427e031::t_eec8950a0788bf 27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7c1ccb4e63f2f2a562d31ad31b0e7e0de3d91275",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
