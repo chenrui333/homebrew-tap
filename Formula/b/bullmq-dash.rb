@@ -23,8 +23,18 @@ class BullmqDash < Formula
     sha256 "3a72427d6cc6c7dc1086d44037d4f4c499ebc38c2e3e67ecf998695e65c8337a"
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "bun", "install", "--frozen-lockfile", "--production"
+    resource("opentui").stage do
+      cd "packages/core/src/zig" do
+        system "zig", "build", "--fetch=all"
+      end
+    end
+  end
+
+  def install
     system "bun", "build.ts"
     libexec.install "dist", "node_modules", "package.json"
     os = OS.kernel_name.downcase
