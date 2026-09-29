@@ -17,7 +17,8 @@ class Cockroach < Formula
   depends_on "autoconf" => :build
   depends_on "bison" => :build
   depends_on "cmake" => :build
-  depends_on "go" => :build
+  # CockroachDB 19.1 vendored go-libedit references runtime.sigtramp, which Go 1.27 rejects.
+  depends_on "go@1.26" => :build
   depends_on "make" => :build
   depends_on "xz" => :build
 
@@ -26,12 +27,14 @@ class Cockroach < Formula
     depends_on "ncurses"
   end
 
+  deny_network_access!
+
   def install
     # The GNU Make that ships with macOS Mojave (v3.81 at the time of writing) has a bug
     # that causes it to loop infinitely when trying to build cockroach. Use
     # the more up-to-date make that Homebrew provides.
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
-    ENV["YACC"] = "#{Formula["bison"].opt_bin/"bison"} -y"
+    ENV.prepend_path "PATH", formula_opt_libexec("make")/"gnubin"
+    ENV["YACC"] = "#{formula_opt_bin("bison")/"bison"} -y"
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
     # Current compilers emit warnings that old RocksDB promoted to hard errors.
@@ -66,6 +69,18 @@ class Cockroach < Formula
       s.gsub! "const_reference operator*() const", "reference operator*() const"
       s.gsub! "const_pointer operator->() const", "pointer operator->() const"
     end
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/db/compaction_iteration_stats.h",
+              "#pragma once",
+              "#pragma once\n\n#include <stdint.h>"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/table/data_block_hash_index.h",
+              "#pragma once",
+              "#pragma once\n\n#include <stdint.h>"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/util/string_util.h",
+              "#pragma once",
+              "#pragma once\n\n#include <stdint.h>"
+    inreplace "src/github.com/cockroachdb/cockroach/c-deps/rocksdb/include/rocksdb/utilities/checkpoint.h",
+              "#pragma once",
+              "#pragma once\n\n#include <stdint.h>"
     inreplace "src/github.com/cockroachdb/cockroach/c-deps/libroach/CMakeLists.txt",
               "cmake_minimum_required(VERSION 3.3 FATAL_ERROR)",
               "cmake_minimum_required(VERSION 3.5)"
@@ -96,7 +111,7 @@ class Cockroach < Formula
       end
     end
     xsys_dir = Pathname("src/github.com/cockroachdb/cockroach/vendor/golang.org/x/sys/unix")
-    go_xsys_dir = Formula["go"].opt_libexec/"src/cmd/vendor/golang.org/x/sys/unix"
+    go_xsys_dir = formula_opt_libexec("go@1.26")/"src/cmd/vendor/golang.org/x/sys/unix"
     %w[amd64 arm64].each do |arch|
       cp go_xsys_dir/"zsyscall_darwin_#{arch}.s", xsys_dir/"zsyscall_darwin_#{arch}.s"
     end
