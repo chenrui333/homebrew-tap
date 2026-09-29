@@ -18,8 +18,22 @@ class ClaudeAgentAcp < Formula
   depends_on "node"
   depends_on "ripgrep"
 
+  deny_network_access!
+
+  def prepare_package_json
+    package_json = JSON.parse((buildpath/"package.json").read)
+    package_json.delete("devDependencies")
+    (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
+  end
+
+  def fetch
+    prepare_package_json
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    prepare_package_json
+    system "npm", "install", "--offline", *std_npm_args
     vendor_dir = libexec/"lib/node_modules/@zed-industries/claude-agent-acp" /
                  "node_modules/@anthropic-ai/claude-agent-sdk/vendor"
 
@@ -33,7 +47,7 @@ class ClaudeAgentAcp < Formula
     ripgrep_vendor_dir = vendor_dir/"ripgrep"
     platform_dir = ripgrep_vendor_dir/ripgrep_platform
     platform_dir.mkpath
-    ln_s Formula["ripgrep"].opt_bin/"rg", platform_dir/"rg"
+    ln_s formula_opt_bin("ripgrep")/"rg", platform_dir/"rg"
     bin.install_symlink libexec/"bin/claude-agent-acp"
   end
 
