@@ -13,11 +13,21 @@ class Creanote < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    cd "packages/creanote" do
+      system "npm", "install", "--include=dev",
+             *std_npm_args(prefix: false, ignore_scripts: false)
+    end
+  end
+
   def install
     cd "packages/creanote" do
-      system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+      system "npm", "install", "--include=dev", "--offline",
+             *std_npm_args(prefix: false, ignore_scripts: false)
       system "npm", "run", "build"
-      system "npm", "install", *std_npm_args
+      system "npm", "install", "--offline", *std_npm_args
     end
 
     bin.install_symlink libexec/"bin/creanote"
