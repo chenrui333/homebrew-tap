@@ -17,6 +17,12 @@ class E2c < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/nlamirault/e2c/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/e2c"
