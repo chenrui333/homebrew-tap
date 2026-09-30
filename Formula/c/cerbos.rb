@@ -8,11 +8,10 @@ class Cerbos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c247c065f44d71a3d0c6ddc36a59db361d66c240af131b16de0f98761a12bcb1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2c09c9ec9830e8e53276b7cbd8334d806ca31a3d19ce96780e74eea38875b2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a063f8ac21e02d4211ec1d09d14802ba00a810bc04eccb4f9ac2c2748257091f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "050dacdce664d066482f6d82961c1d4f703f615f2eba4bdd8c90d8c4c45085e8"
-    sha256 cellar: :any,                 x86_64_linux:  "507876a86a18f00ef32545871ba1f7483a2be55faf628ac740e2e056584d9797"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd895c18cc22ef215bb148cec39fef516b814be7e8954628fa61de9e5a0bcaf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "907427e3b193386e53defe00201a78d00790c2bd166808ac0d932eaa495e3804"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d65662183874f44207f9b06ed02300a0c6f9f936b593346d42ba27a5465c654"
+    sha256 cellar: :any,                 x86_64_linux:  "d0b0e92fb2987ca6f6254d340bdfb2651a217e9d19cc7a22cbea423557d2404f"
   end
 
   depends_on "go" => :build
