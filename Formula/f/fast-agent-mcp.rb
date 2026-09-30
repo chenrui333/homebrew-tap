@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/ac/a8/3bf1dcb430f45e00b286f62f421ef24134a16fed99e76f1665324a4b56e8/fast_agent_mcp-0.10.37.tar.gz"
-  sha256 "b0e55462987a11804acc5617cdd3ebdc67b067f51e35cfad9f39fdb333305621"
+  url "https://files.pythonhosted.org/packages/8a/2b/4e21d1014bd17174422dd455569e0ebe43ccddcd2e7a8559a8b159d1bc82/fast_agent_mcp-0.10.39.tar.gz"
+  sha256 "4dcbc98c3a7858099a84417283072ccc7869f96187faf3f31596ac6fbe839673"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "ee00f24ac069d59a8cb0b6ceefd3145a1db5b6922ac6e827b8004ace82f0eb46"
-    sha256 cellar: :any, arm64_sequoia: "4f4558cd55ee145e59878ef5d6646ab04ce20297aa7edcd31da6249992616bd1"
-    sha256 cellar: :any, arm64_linux:   "af19803cd66b908fac942e71fdf3859f1ddefb4ae850ad1603458183d4930ffb"
-    sha256 cellar: :any, x86_64_linux:  "19337a612f7f7bb77aa0dae2b4decad030bb2a83f529f48cd6394f231eb9218f"
+    sha256 cellar: :any, arm64_tahoe:   "cc1f14eb91641f5070aefff28df77faa4033ef97717ee50307a6d26f35cee65c"
+    sha256 cellar: :any, arm64_sequoia: "e297e55c95170caaf5acb9990e043e0563b0ddbc06c844e2031465f8ef036c7d"
+    sha256 cellar: :any, arm64_linux:   "3a512b3fc109d162d9530a5cf25c8d8477a6731afc775ce71a1214a2ebc8ca03"
+    sha256 cellar: :any, x86_64_linux:  "a424a1b73573882c9d0a86484327b32c8286769d0d54ff875a63ecaaa6aedb11"
   end
 
   depends_on "cython" => :build
@@ -78,8 +78,8 @@ class FastAgentMcp < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/65/b8/f4de0e90bbd641e86a1d6b20e017442033a2c1d2f5381799f82057115bd7/anthropic-1.8.0.tar.gz"
-    sha256 "9c1783ed90f409617749a61c5ab98e20624a572626f2e0a15cea03ed8e1401e5"
+    url "https://files.pythonhosted.org/packages/18/0a/1ab3bf53a672fd9dd42d3208e335940049431b79781b2a9b324203d30c38/anthropic-1.9.0.tar.gz"
+    sha256 "da5191a0af0b853a797fc0c6b09fc5b05cb5d9da063ba80fdd03c736abe81b6c"
   end
 
   resource "anyio" do
@@ -208,8 +208,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/52/aa/8055c583f8eb69dd4544f0d6a83e22d2f01ab38bd2ce848ea599c259a2d2/google_auth-2.58.1.tar.gz"
-    sha256 "1480461d8b2347e679af758f4003700ea79a59b603c9134e18bfa95e8004ee70"
+    url "https://files.pythonhosted.org/packages/3b/0b/9b4e806ebcd29701b5193a162dd9906c4c5a16cbde8476461622d2bfa70e/google_auth-2.59.0.tar.gz"
+    sha256 "eb32f44f89f6b577947ebee5887c1db46e6b1a278889ba369a88179643f32240"
   end
 
   resource "google-genai" do
@@ -548,8 +548,8 @@ class FastAgentMcp < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/02/a5/5197bfd06417837ac079921c66fa6393f1dea3557272a263cebfef69e432/pyjwt-2.15.0.tar.gz"
-    sha256 "b11c5f9791d7bf51c2b39a81ed669f6b2dbbd669df2942f6c60167e9e3d1abe4"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "pyperclip" do
@@ -638,8 +638,8 @@ class FastAgentMcp < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
-    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
+    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
+    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
   end
 
   resource "starlette" do
