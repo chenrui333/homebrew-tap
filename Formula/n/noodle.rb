@@ -1,8 +1,8 @@
 class Noodle < Formula
   desc "Terminal REST client"
   homepage "https://github.com/wilfredinni/noodle"
-  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "17fd3d8465b37d07c7eed8769159744c4684bc46a07bb60baef77d4bb7daae56"
+  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.9.6.tar.gz"
+  sha256 "5d856c4a0ef9d9e6a38e59ec35ca2f8cc6977666e1029f73bb0b010d5e20717a"
   license "Apache-2.0"
   head "https://github.com/wilfredinni/noodle.git", branch: "main"
 
