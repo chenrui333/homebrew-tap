@@ -2,19 +2,17 @@ class EprofilerTui < Formula
   desc "Terminal-based flamegraph viewer for OpenTelemetry eBPF profiler data"
   homepage "https://github.com/rogercoll/eprofiler-tui"
   url "https://github.com/rogercoll/eprofiler-tui.git",
-      tag:      "v0.2.0",
-      revision: "18acde399009a4de4cd8e33a4ee7fb5bbb727d96"
+      tag:      "v0.3.0",
+      revision: "d4f38d9ffae421f2322b082ce6841f61f72f6248"
   license "Apache-2.0"
   head "https://github.com/rogercoll/eprofiler-tui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f71e4504d2578a289ca1ff63456a521641a44bd4d22bcf8d5ddbaa5b3fe29523"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16734da814a3886dead237bbbce5f4675d8079972e90aae6774011d2cf2f6485"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9f9a4bb51bd2c9a8000ecdb9b8a3ac64746da8f24f2166dabacc97bb7f0533b"
-    sha256 cellar: :any,                 arm64_linux:   "b10e5f5f37f7b17bc4a698651e86625fb823415f86db4b43bb2784167cf1c390"
-    sha256 cellar: :any,                 x86_64_linux:  "30101d483bd54b6e88f128cfa752393583a4c3dc9381d74df345a8bd47ea4b79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8a8b74b959537d219bb3d50ae4195905b9f75f9496298b7eb7825161f96cf55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a6865867447bd92d8061d70384a6c9c6620bf4efa675a3fc2cfa9865c51e73b"
+    sha256 cellar: :any,                 arm64_linux:   "eac450133da40c13b01a9f7ba42ef70c6f9898ac3230c8a846fdd247050a235f"
+    sha256 cellar: :any,                 x86_64_linux:  "8766372d9e0307e1f0117322a1921eeec7c1cfb31994ab0e5745783126e42385"
   end
 
   depends_on "cmake" => :build
