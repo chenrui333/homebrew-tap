@@ -10,10 +10,10 @@ class FastAgentMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "cc1f14eb91641f5070aefff28df77faa4033ef97717ee50307a6d26f35cee65c"
-    sha256 cellar: :any, arm64_sequoia: "e297e55c95170caaf5acb9990e043e0563b0ddbc06c844e2031465f8ef036c7d"
-    sha256 cellar: :any, arm64_linux:   "3a512b3fc109d162d9530a5cf25c8d8477a6731afc775ce71a1214a2ebc8ca03"
-    sha256 cellar: :any, x86_64_linux:  "a424a1b73573882c9d0a86484327b32c8286769d0d54ff875a63ecaaa6aedb11"
+    sha256 cellar: :any, arm64_tahoe:   "3c09f1337fae4780e0abdcd070e48db823cbe46959947333f79f4ca01fdf1d8f"
+    sha256 cellar: :any, arm64_sequoia: "f21e462c71b3007c7fa94ab26588cc5a99db1f97bcd3c89a74ff8ba042a9d345"
+    sha256 cellar: :any, arm64_linux:   "f822cfa3f9fe2044f22ad09eb557b18895b74f2510c3ecdb938ede12ef8c06a7"
+    sha256 cellar: :any, x86_64_linux:  "8d6abbd26ebce30bd7b01cf895adbb80292f3e2caf38850283810ccfb6e40135"
   end
 
   depends_on "cython" => :build
