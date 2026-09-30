@@ -8,10 +8,10 @@ class Openclacky < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cab0eab70c19fce1c7c3524ea751a4ac0275f6e39bd627a1305f686f695ec6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cab0eab70c19fce1c7c3524ea751a4ac0275f6e39bd627a1305f686f695ec6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6037333341559fefe69027bce2e6979d383f0379b1c273392260917a5bd60854"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6037333341559fefe69027bce2e6979d383f0379b1c273392260917a5bd60854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42f7c03c7276c5e84327914d07193c48d1b850937fdf21ccebee13ab8ca59aff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42f7c03c7276c5e84327914d07193c48d1b850937fdf21ccebee13ab8ca59aff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07d72166bd49f6bb35b58b1e941b966bdf602e137ada39b44b5c81aff03cc1d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07d72166bd49f6bb35b58b1e941b966bdf602e137ada39b44b5c81aff03cc1d1"
   end
 
   depends_on "ruby"
