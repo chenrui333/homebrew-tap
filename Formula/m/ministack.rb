@@ -3,17 +3,17 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/db/42/ed4acf0cd8998a29e07e377d5f2eca84741b609149b4b3e6228ab29d4614/ministack-1.5.17.tar.gz"
-  sha256 "d3e51eb9a7abeb0d3c1282daed342d61ec8bb063669c18f0f12ce3ae0d192059"
+  url "https://files.pythonhosted.org/packages/eb/7e/4b71bc47f4ee04d65e8d6681120b2767df57c3d1d9fa09dbe63258e3acc9/ministack-1.5.18.tar.gz"
+  sha256 "7913f68e07d20acb8b1d159e0a6443e1f98d4c218da81b72a762f76ab0315604"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "789bc69d3aa527513a7658f009901e77c5a1926c2699e709163456cb877f5e73"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69fd3d948ed2af0a0ed986648dcbf8ead706ab2346bdd8280b00898bde6afc9e"
-    sha256 cellar: :any,                 arm64_linux:   "6a9035746a050b4cd1aa1ea6103be7d355fc5fad4ea116de732abf3b31e7876a"
-    sha256 cellar: :any,                 x86_64_linux:  "241507e25c27c574c8dc81091760e7720c37ed55e17055582bacea283855cd73"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a8a027e240cb4d02862f4dd0cda3e71f97b63f0afa5c6921a6c6644e0330388"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "881e58885b340ffd443cffa1a89cb8abfe557afbb4b6630851e473f4221971a9"
+    sha256 cellar: :any,                 arm64_linux:   "2804cc33a870d81b16e89c138c1499926cdbab9b06312409e9ba4b101951ff77"
+    sha256 cellar: :any,                 x86_64_linux:  "d179068c4217a3acfb6a5cb4fb731e5a31afefa4e801699940c5f70ce2bc3614"
   end
 
   depends_on "libyaml"
