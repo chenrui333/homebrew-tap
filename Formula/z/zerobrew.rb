@@ -8,10 +8,10 @@ class Zerobrew < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cfc23f72cac8a58f02b1d6e1377bfe243570d8c257e7149da730a8e1e531db56"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "288fe093440b49e6ba173ce5b428157954d0d5f059d820829001f8aa7330bc82"
-    sha256 cellar: :any,                 arm64_linux:   "5452e387e830135bbfdf89f5f6375c1cef740e140de71be0cf15f967f5103997"
-    sha256 cellar: :any,                 x86_64_linux:  "139d34b54aab0e390fe6048c88b9a5b6f727fc5fa73a39058167409677645084"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d4673a569f26dce19be2c6cdd6907fbcd12f766a9c4fa90491d42984b7160e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc766a9bf9a3b48e1ca35c951e2fea8a5dd302a880b793e3c67e07bec86216bd"
+    sha256 cellar: :any,                 arm64_linux:   "609383a8f927cd96df5c7aee2d98f669b81096e047bcbd6bb19265ea75f28bbb"
+    sha256 cellar: :any,                 x86_64_linux:  "66f9e6b74fee847ed13f073f492cdde644419887c250e742ee351adb26f494f2"
   end
 
   depends_on "rust" => :build
