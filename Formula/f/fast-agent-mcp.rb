@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/09/df/e831a438be1fbdbd85bb3f4daf92ea4ce7440323068de1e900566bf9509e/fast_agent_mcp-0.10.40.tar.gz"
-  sha256 "a1f31c2e4205ecffe5136272f273b926d69c6423fd983ac2f88fe02d57022bd9"
+  url "https://files.pythonhosted.org/packages/8b/a8/f540e08b242bb39962d01d67da81e9ce0b0e3678213b6d0d583cfd98a658/fast_agent_mcp-0.10.41.tar.gz"
+  sha256 "23d867eba5b146463b7068db1d1a7febab0d7e035818f2b844397481dd6e12c1"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "3c09f1337fae4780e0abdcd070e48db823cbe46959947333f79f4ca01fdf1d8f"
-    sha256 cellar: :any, arm64_sequoia: "f21e462c71b3007c7fa94ab26588cc5a99db1f97bcd3c89a74ff8ba042a9d345"
-    sha256 cellar: :any, arm64_linux:   "f822cfa3f9fe2044f22ad09eb557b18895b74f2510c3ecdb938ede12ef8c06a7"
-    sha256 cellar: :any, x86_64_linux:  "8d6abbd26ebce30bd7b01cf895adbb80292f3e2caf38850283810ccfb6e40135"
+    sha256 cellar: :any, arm64_tahoe:   "0e847f73e94e2540e78c9f30cd6185d631ad2241a39d45bbe71a2245beba0aed"
+    sha256 cellar: :any, arm64_sequoia: "d20fe544432095d0e0f0360771f7abaa8501c84885e52939e87cb6bbd110c4b8"
+    sha256 cellar: :any, arm64_linux:   "55111177dad3f3828b7d53d9a2ed142a1b360b57d26b1621fd602bba9611ceaa"
+    sha256 cellar: :any, x86_64_linux:  "debff3a2367a48e2ae37ac2c05e57047ee7b1ffcf4c5ce0696167da901a5f6c0"
   end
 
   depends_on "cython" => :build
