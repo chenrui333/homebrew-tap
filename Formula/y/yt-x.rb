@@ -1,8 +1,8 @@
 class YtX < Formula
   desc "Browse YouTube from the terminal"
   homepage "https://github.com/Benexl/yt-x"
-  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "292f4eca4d8f321cb9f98c1999cc9f154dee61d7cc7fd8aa6b11c38a0505e75c"
+  url "https://github.com/Benexl/yt-x/archive/refs/tags/v0.8.7.tar.gz"
+  sha256 "9d01bc021b31b86fa23f6349127d3a6df97d911e3f68a4f4ab5be829a1818961"
   license "MIT"
   head "https://github.com/Benexl/yt-x.git", branch: "master"
 
@@ -46,11 +46,11 @@ class YtX < Formula
     pkgshare.install "extensions"
 
     path = [
-      Formula["ffmpeg"].opt_bin,
-      Formula["fzf"].opt_bin,
-      Formula["jq"].opt_bin,
-      Formula["mpv"].opt_bin,
-      Formula["yt-dlp"].opt_bin,
+      formula_opt_bin("ffmpeg"),
+      formula_opt_bin("fzf"),
+      formula_opt_bin("jq"),
+      formula_opt_bin("mpv"),
+      formula_opt_bin("yt-dlp"),
       "${PATH}",
     ].join(":")
     (bin/"yt-x").write_env_script(libexec/"yt-x", PATH: path)
