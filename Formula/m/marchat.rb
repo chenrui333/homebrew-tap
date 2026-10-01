@@ -1,8 +1,8 @@
 class Marchat < Formula
   desc "Terminal chat with WebSockets, E2E encryption, plugins, and file sharing"
   homepage "https://github.com/Cod-e-Codes/marchat"
-  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.3.7.tar.gz"
-  sha256 "291a4fbde08fc1255d2e63d9e8ef4ab60fe5230040736973745231a8a7822c41"
+  url "https://github.com/Cod-e-Codes/marchat/archive/refs/tags/v1.3.8.tar.gz"
+  sha256 "0eed729ce60d1ed31f43a0f237bfd908c4ce4396e8ab46b2a355686893edd6b4"
   license "MIT"
 
   bottle do
