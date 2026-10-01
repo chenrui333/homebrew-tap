@@ -3,17 +3,17 @@ class UserScanner < Formula
 
   desc "Check username availability across multiple popular platforms"
   homepage "https://github.com/kaifcodec/user-scanner"
-  url "https://files.pythonhosted.org/packages/a5/01/c07ec5ce9ac3b461c065e5282a3ab8dab44696eebc6d4f56cfb3cd401aa7/user_scanner-1.5.2.tar.gz"
-  sha256 "433866f764dd960bf116f44ee33b841e704466d928fa0f23f230c7ab097e1d4f"
+  url "https://files.pythonhosted.org/packages/3f/d6/1391af4c4cdeadd327b76243769a215fcc95597b2c270e3986d69442c33a/user_scanner-1.5.2.1.tar.gz"
+  sha256 "51b6590d60e87606220d05d82b4ce793676723c9cb137fb03e8758fea17ea084"
   license "MIT"
   head "https://github.com/kaifcodec/user-scanner.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59132dc431f2337e86b94f25674e7d1e0248452ec27641158e4087407dd7f645"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b84ae6606ea8de88ac2d0b6ad58e7de688fc4113e62f09687055d58f88115f79"
-    sha256 cellar: :any,                 arm64_linux:   "52fa51b9976e85192b015283394b0ce94a68e72ef0aa8f4c9278bc2cfa82ec4b"
-    sha256 cellar: :any,                 x86_64_linux:  "e53f3249e4fee131cdec600147bb095a1cbc48831de9d0316ab27ab028ffef8b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69f9b73e9ab8a6e7614628f67b5ea457743d276ee5435e0798669b27476a571d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "347bdeb7e1dfd2548ecde86175b6106502b79882603dfc085e1e48fefa606917"
+    sha256 cellar: :any,                 arm64_linux:   "d060fe09f26153775fbcd96ba19e8158f85ddd9b905a30af41cfad41a7430840"
+    sha256 cellar: :any,                 x86_64_linux:  "2a316fd54d3fa53b2b8e5619fab88c0f50c23e6e2b7a51dbb6a89069315fb80b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -23,6 +23,11 @@ class UserScanner < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
     sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
+    sha256 "741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"
   end
 
   resource "cffi" do
