@@ -1,17 +1,17 @@
 class Sidecar < Formula
   desc "Terminal UI for diffs, file trees, conversation history, and tasks"
   homepage "https://github.com/marcus/sidecar"
-  url "https://github.com/marcus/sidecar/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "061b202236ce3710c4218bb55bfb077b5301397f3330bdf0fdc0e55905471406"
+  url "https://github.com/marcus/sidecar/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "3071da151c34272bc045f675edaf3f7b15858807e7c4c4a2da43bb7d69e0958a"
   license "MIT"
   head "https://github.com/marcus/sidecar.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45f89c16d3fcbff1924f3cfb0e906131e898db3714147abe9bcf70d8a6f369ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0750315eb95131a5be333589f8ec7a3c3c5a7ef1d58e33ad1c6b1e63b20ff1e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c804d8d0619fde3c42b1909a081a45b8a728c499575f127bd79ff7b0ea3e1ed"
-    sha256 cellar: :any,                 x86_64_linux:  "3a3ab6a884598e181626ed615ac2156fb6fa27c0c28ae0caec34bafe161a0eb4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d109fe131e634c063589e4f2e609a9482eb0e580c3f028ba064f81164f57409"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "595d66036c5a99cd8f02792e7132749c0edb5c8f2dddc7bd8ec347e235673db8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "637363418aa9dfc05ab3b1299b4ffc638a90de6bff382a5028aa14cbed0d32f2"
+    sha256 cellar: :any,                 x86_64_linux:  "ffbf86a1f2cc8a4e9358e14b5bd548b1aa7194b4894a453175a29918ae466657"
   end
 
   depends_on "go" => :build
