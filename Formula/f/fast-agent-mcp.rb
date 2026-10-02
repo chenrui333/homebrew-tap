@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/8b/a8/f540e08b242bb39962d01d67da81e9ce0b0e3678213b6d0d583cfd98a658/fast_agent_mcp-0.10.41.tar.gz"
-  sha256 "23d867eba5b146463b7068db1d1a7febab0d7e035818f2b844397481dd6e12c1"
+  url "https://files.pythonhosted.org/packages/74/04/a9da55cc8fe6b8a318828ceb503710b75b9593f9f4eb074c3fe899ffc460/fast_agent_mcp-0.10.42.tar.gz"
+  sha256 "abe1d9a52aa733a6b0b0e2cc11673f085daffdc252cc931016c580d7703dbe60"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -113,8 +113,8 @@ class FastAgentMcp < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -128,8 +128,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/1b/61/efe6e31020ee4312318b702696dd7add1b0a15b205b04590f984972c3488/cyclopts-5.1.0.tar.gz"
-    sha256 "c51aa364e746285c24eaa5c3b425ead59cc8bdb71b98c11f0343baddcb0a9c80"
+    url "https://files.pythonhosted.org/packages/85/8c/7a7f5a3af1845cb6b9c28bf2a6db1bc510a6b9661109138c70ab6d8d650a/cyclopts-5.1.1.tar.gz"
+    sha256 "252fe37b01a80f10933f91c312db551e4e86ffd87bee401ab2ed091769135426"
   end
 
   resource "distro" do
@@ -208,8 +208,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/3b/0b/9b4e806ebcd29701b5193a162dd9906c4c5a16cbde8476461622d2bfa70e/google_auth-2.59.0.tar.gz"
-    sha256 "eb32f44f89f6b577947ebee5887c1db46e6b1a278889ba369a88179643f32240"
+    url "https://files.pythonhosted.org/packages/81/e3/9f752a968e487fbc10b2c2a1dd561b62489f923972911009577bb88fe7bb/google_auth-2.59.1.tar.gz"
+    sha256 "ce50fc533ac02f489a2b183a0c156672c376ecb2091b1127bc7efba2975fff27"
   end
 
   resource "google-genai" do
@@ -468,8 +468,8 @@ class FastAgentMcp < Formula
   end
 
   resource "pdm-backend" do
-    url "https://files.pythonhosted.org/packages/4e/d3/e0cd7f4922aca7ea0d9a9c0d5dfe6452e3e966ca0bf4dc962f9aa6bb2a54/pdm_backend-2.4.10.tar.gz"
-    sha256 "551b049379d4f270cba18f5bf73031cc229a4f883e085265465d326d4a636861"
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
   end
 
   resource "pdm-pep517" do
@@ -558,8 +558,8 @@ class FastAgentMcp < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-frontmatter" do
