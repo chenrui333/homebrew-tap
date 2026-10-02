@@ -8,10 +8,10 @@ class Mandible < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27441b3f26071085305b5f03ce1bfedc6c1b6350aa8170bf3ac0c0825a27248d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbe7d7e2f8efb3c468409e75c24fcece56543aaa96846fa8095831569304315d"
-    sha256 cellar: :any,                 arm64_linux:   "a5f1dc5398ce94313e2b7b4880b3c16992579a45216f02dfe3d5a8d2486eb78a"
-    sha256 cellar: :any,                 x86_64_linux:  "9fe06c36a38dce9a4b82efbf1a4a6a4699dc12ce98bd584157436ac43441f731"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "172f73c3c9180e72171585e3f8b4cd59e26ca7e96b1fb886b217f66a107d5e67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1da73a58532d20a4bb0d058aa9af544e8bcd84f4d2990f64909f77f5404eac1"
+    sha256 cellar: :any,                 arm64_linux:   "916b2568d8dea6d7a49e188604485f960dff0ced54f34cf90e0412fe784a5d5f"
+    sha256 cellar: :any,                 x86_64_linux:  "7e8d24827fadee7d91435ebde1aeb81b81490941686b8f8be63307534dfe792e"
   end
 
   depends_on "rust" => :build
