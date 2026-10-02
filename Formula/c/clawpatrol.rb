@@ -1,8 +1,8 @@
 class Clawpatrol < Formula
   desc "Security firewall for agents"
   homepage "https://clawpatrol.dev"
-  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.10.tar.gz"
-  sha256 "2d9fc0a7f191ce89f12153a4380d823e55f034e65ee5a5ccc225a511b7b5d020"
+  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.11.tar.gz"
+  sha256 "42bb1bc27dfa4c67435ab4d5ab580eb94ba1c0819a0a404cfefeb1d59e59b528"
   license "MIT"
   head "https://github.com/denoland/clawpatrol.git", branch: "main"
 
