@@ -1,8 +1,8 @@
 class Tilia < Formula
   desc "Formatter for Haskell source code"
   homepage "https://github.com/mrkkrp/tilia"
-  url "https://hackage.haskell.org/package/tilia-0.0.1.0/tilia-0.0.1.0.tar.gz"
-  sha256 "7d086c3bc6b58ad4f781070c80f37c5ae20e2a0840a08512488b538c48336957"
+  url "https://hackage.haskell.org/package/tilia-0.0.2.0/tilia-0.0.2.0.tar.gz"
+  sha256 "2f8e89f83ebcc7ad7751f28d9a614b17f1e99b512b01639a1db8e303e272dc03"
   license "BSD-3-Clause"
   head "https://github.com/mrkkrp/tilia.git", branch: "master"
 
