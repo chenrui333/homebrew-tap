@@ -1,16 +1,16 @@
 class Budgetclaw < Formula
   desc "Local spend monitor for Claude Code"
   homepage "https://github.com/RoninForge/budgetclaw"
-  url "https://github.com/RoninForge/budgetclaw/archive/refs/tags/v1.7.76.tar.gz"
-  sha256 "02491ba8118471028c853ed29f678d3bd8e8ae1d7bb2e55e8eaf5475735e7d19"
+  url "https://github.com/RoninForge/budgetclaw/archive/refs/tags/v1.7.77.tar.gz"
+  sha256 "9fb09f67b725caeec1856cb93139afb8d58f5258fbe573795b4cbe1ee9ce6e34"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b2cabc59bdb56c34c5f1c3f12b150bdd9a812f32bb1bde1db72008f0ab3251b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8d8d9aa57e83dc6af5e00a567d72ce44e99c2583fb4971c4a2bb005666f0353"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "966f1c154b9e6587f43d7d63e9f89fb40fd80117b988723b0f74d17dc02f4468"
-    sha256 cellar: :any,                 x86_64_linux:  "9f871ef720d249bc636493f215b1398ef60b7ac1d2ab94137f6771f985382035"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92073173f1442134a25fa8c7b57207512367e05447a41d1ebba340717d31f914"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e8b8c152ba70ff413ad230321f9282ac0add4a55121cab914fa3ce3ef35aae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1f36fc3baf12ac06e3eb70deea3a9e34d8d67222b55ebcf5cb4e99826951494"
+    sha256 cellar: :any,                 x86_64_linux:  "27941c80e367b24acdca7b81d517989372cc3c455e76a69b763d6f15bab13750"
   end
 
   depends_on "go" => :build
