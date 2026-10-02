@@ -1,18 +1,17 @@
 class Sish < Formula
   desc "HTTP(S)/WS(S)/TCP Tunnels to localhost using only SSH"
   homepage "https://docs.ssi.sh/"
-  url "https://github.com/antoniomika/sish/archive/refs/tags/v2.23.0.tar.gz"
-  sha256 "fbf741b12f3037dd1307656d1f6ff3be53643882df936c89bcf98f938c9cd29a"
+  url "https://github.com/antoniomika/sish/archive/refs/tags/v2.24.0.tar.gz"
+  sha256 "48cd78c11bf39a0433b3555b8fedaa3de20ac7762f1b67105c347a0968096adf"
   license "MIT"
   head "https://github.com/antoniomika/sish.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69ef1e33bd363061507b32779b52160e57df13944f621c4a84b1b4bff185a1e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69ef1e33bd363061507b32779b52160e57df13944f621c4a84b1b4bff185a1e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69ef1e33bd363061507b32779b52160e57df13944f621c4a84b1b4bff185a1e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0874b07ffdd943b1ffc77aa5922df49aaa4e9fa0f1ca5b2de6674005b96dc4af"
-    sha256 cellar: :any,                 x86_64_linux:  "e94c3ca608f263e98f5be52eaca21b9d31d3876233b2593eb18287ad2901e3f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "663dccf17a092321656802a1de591bdb1fabe7579bd9fc0f9ddb18673a0eb2be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "663dccf17a092321656802a1de591bdb1fabe7579bd9fc0f9ddb18673a0eb2be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18545ad6a825ebf3c7781c25d70713e832b915208f2be7366efd08ec68236b3c"
+    sha256 cellar: :any,                 x86_64_linux:  "d09a39ac81aeb9734295a24e5f40c073da7c7f83fc22ebc4d37ece407beb78fa"
   end
 
   depends_on "go" => :build
