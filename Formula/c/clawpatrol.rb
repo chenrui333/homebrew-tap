@@ -1,17 +1,17 @@
 class Clawpatrol < Formula
   desc "Security firewall for agents"
   homepage "https://clawpatrol.dev"
-  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.10.tar.gz"
-  sha256 "2d9fc0a7f191ce89f12153a4380d823e55f034e65ee5a5ccc225a511b7b5d020"
+  url "https://github.com/denoland/clawpatrol/archive/refs/tags/v0.5.11.tar.gz"
+  sha256 "42bb1bc27dfa4c67435ab4d5ab580eb94ba1c0819a0a404cfefeb1d59e59b528"
   license "MIT"
   head "https://github.com/denoland/clawpatrol.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93832a79a3b2096cd25dac4bcc055559b80fb71dda3ab075072f15ab7a6384d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93832a79a3b2096cd25dac4bcc055559b80fb71dda3ab075072f15ab7a6384d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "728570017e65a64d5cd424de459dd00dffea1fc9804a09d4e901d774650471c9"
-    sha256 cellar: :any,                 x86_64_linux:  "24c194f1e86fcd4ba2137267ca85787c889b34407e9f8f84724fb6fd604bd7b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16ce2e04ed340cd1563512be18ee4db269ab393b82efb4dc4e31ebc0286217f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16ce2e04ed340cd1563512be18ee4db269ab393b82efb4dc4e31ebc0286217f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb9bd019ea3bb68015988ffaaa5419b0739c35921bfd39af8526d1d72fde8787"
+    sha256 cellar: :any,                 x86_64_linux:  "c1655adc6e3c07c744a74b2d5c3f2b4a35e645a7aa9dd57cb4429e892c3f9011"
   end
 
   depends_on "deno" => :build
