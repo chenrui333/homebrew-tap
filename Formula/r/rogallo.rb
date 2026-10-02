@@ -3,8 +3,8 @@ class Rogallo < Formula
 
   desc "Terminal client for Gemini and other small web protocols"
   homepage "https://github.com/davep/rogallo"
-  url "https://github.com/davep/rogallo/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "e1ba77f1dc4b69cc9e246af22185296ea3162cfe02f8dabc0fbe43e69682ab99"
+  url "https://github.com/davep/rogallo/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "4436debca6cba92c67d4cf922b522ce709667282720bbe40a5b0211df8b1ce0f"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
@@ -15,6 +15,7 @@ class Rogallo < Formula
 
   depends_on "rust" => :build
   depends_on "cryptography" => :no_linkage
+  depends_on "libyaml"
   depends_on "python@3.14"
 
   resource "bagofstuff" do
@@ -32,8 +33,8 @@ class Rogallo < Formula
   end
 
   resource "gophermap" do
-    url "https://files.pythonhosted.org/packages/7a/88/939341e120d0baa4ac8a0578678e0d87c512e8a9c03f6f95ad3eab938139/gophermap-1.0.0.tar.gz"
-    sha256 "77149f40a8523353adbfea35305b3bb7020abcb5ee5b43bdffefa103e9904498"
+    url "https://files.pythonhosted.org/packages/72/85/9372edf76d3f19ba23da9da0ceb1512216bde502b7a5cbf08450d02e725c/gophermap-1.1.0.tar.gz"
+    sha256 "050f75d63a7bde70cd74a8acd23520584a84ed11a9426b9f701991988195d4b5"
   end
 
   resource "html2gemtext" do
@@ -82,8 +83,8 @@ class Rogallo < Formula
   end
 
   resource "port79" do
-    url "https://files.pythonhosted.org/packages/63/47/f3aeabf2c1f3cd85ae7ca00ffd71962512ceb46e09c4051d16d0d9aea01f/port79-1.0.0.tar.gz"
-    sha256 "a2e886e074c2eed5386d99ec8707758849224e3d36eb686b0a10595697f7b689"
+    url "https://files.pythonhosted.org/packages/71/00/86159a02077c71a1cfb1a95ba88fbb83c51301bad003cfabdf4ec96dc45f/port79-1.1.0.tar.gz"
+    sha256 "19580cec81dbbdae05668d6cd5f98b22ecc38f2cfa596e457b942ad5eee362cf"
   end
 
   resource "pygments" do
@@ -94,6 +95,11 @@ class Rogallo < Formula
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/e8/52/d87eba7cb129b81563019d1679026e7a112ef76855d6159d24754dbd2a51/pyperclip-1.11.0.tar.gz"
     sha256 "244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6"
+  end
+
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "rich" do
@@ -129,6 +135,11 @@ class Rogallo < Formula
   resource "types-pyperclip" do
     url "https://files.pythonhosted.org/packages/7a/ab/189f37a135df54686543ab99e8e1e6f8892efedc389beb80a72e038416e9/types_pyperclip-1.11.0.20260508.tar.gz"
     sha256 "e5dafdc929874f3f6bf495171d06cbc22483954a9ac0699ca53abbf9eadc592d"
+  end
+
+  resource "types-pyyaml" do
+    url "https://files.pythonhosted.org/packages/90/6e/abec85b9013db5b934b0280a6dd104904d84f7bcbaab2e2f3def87ac7463/types_pyyaml-6.0.12.20260906.tar.gz"
+    sha256 "f59c1cc05010b833d2d72287bbaa72610106b28d42d89a907313117faba85212"
   end
 
   resource "typing-extensions" do
