@@ -7,10 +7,10 @@ class Httpreplay < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a58bb49d570f042e12d0e760cfa94bd59950ab0fc6172af50a3e2b6225d19853"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a58bb49d570f042e12d0e760cfa94bd59950ab0fc6172af50a3e2b6225d19853"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "48e64f209572b996caa4ec9f583f458b0dede7a922baead4bed306326e3c4a1d"
-    sha256 cellar: :any,                 x86_64_linux:  "5b3b13528a171b9b064dbc9c6a1ad260a4eb3852beb6f818e86aae5ecce685b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0728bfaf07813c92e8802617e92cd32f3e580636a0d124e601e5fbb376e372e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0728bfaf07813c92e8802617e92cd32f3e580636a0d124e601e5fbb376e372e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "890aa962b32f84c27f1ad9e21624c4a9d1683e58319a810d987aa05b096f13ed"
+    sha256 cellar: :any,                 x86_64_linux:  "7f6168f823bfe6e95d43d1593f383a438ed43802e23be852d68837ac4c710239"
   end
   depends_on "go" => :build
 
