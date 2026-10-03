@@ -24,7 +24,15 @@ class Faq < Formula
     depends_on "oniguruma"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
+
     ldflags = "-s -w -X github.com/jzelinskie/faq/internal/version.Version=#{version}"
     system "go", "build", "-tags", "netgo", *std_go_args(ldflags:), "./cmd/faq"
   end
