@@ -109,6 +109,8 @@ jobs:
   merge:
     needs: [classify, actionlint, cancel-stale-auto-merge]
     if: >-
+      !cancelled() &&
+      needs.classify.result == 'success' &&
       needs.classify.outputs.eligible == 'true' &&
       needs.actionlint.result == 'success' &&
       (needs.cancel-stale-auto-merge.result == 'success' ||

@@ -124,3 +124,33 @@ test("requires successful Spell Check and GitGuardian runs", () => {
     "failed",
   )
 })
+
+test("merge runs after optional cleanup skips while retaining its trust gates", () => {
+  const fs = require("node:fs")
+  const path = require("node:path")
+  const vm = require("node:vm")
+  const workflow = fs.readFileSync(path.join(__dirname, "../workflows/renovate-workflow-automerge.yml"), "utf8")
+  const condition = workflow.match(/\n  merge:\n[\s\S]*?\n    if: >-\n([\s\S]*?)\n    runs-on:/)[1]
+    .trim().replace(/needs\.([\w-]+)/g, 'needs["$1"]')
+  const shouldRun = (cleanup, overrides = {}, cancelled = false) => {
+    const needs = {
+      classify: { result: "success", outputs: { eligible: "true" } },
+      actionlint: { result: "success" },
+      "cancel-stale-auto-merge": { result: cleanup },
+      ...overrides,
+    }
+    // Actions adds success() unless the condition includes a status function.
+    const implicitSuccess = /\b(always|cancelled|failure|success)\s*\(/.test(condition)
+      || Object.values(needs).every(({ result }) => result === "success")
+    return implicitSuccess && vm.runInNewContext(condition, { needs, cancelled: () => cancelled })
+  }
+  assert.equal(shouldRun("skipped"), true)
+  assert.equal(shouldRun("success"), true)
+  for (const result of ["failure", "cancelled"]) {
+    assert.equal(shouldRun(result), false)
+    assert.equal(shouldRun("skipped", { actionlint: { result } }), false)
+    assert.equal(shouldRun("skipped", { classify: { result, outputs: { eligible: "true" } } }), false)
+  }
+  assert.equal(shouldRun("skipped", { classify: { result: "success", outputs: { eligible: "false" } } }), false)
+  assert.equal(shouldRun("skipped", {}, true), false)
+})
