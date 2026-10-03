@@ -15,6 +15,7 @@
   "bombardier": "homebrew/core",
   "bpmnlint": "homebrew/core",
   "buffrs": "homebrew/core",
+  "bun": "homebrew/core",
   "bunster": "homebrew/core",
   "cai": "homebrew/core",
   "cargo-careful": "homebrew/core",

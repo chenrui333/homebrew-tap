@@ -131,7 +131,6 @@ brew install --cask <tool>
 - `buffa`
 - `bufisk`
 - `bullmq-dash`
-- `bun`
 - `bunsen`
 - `burn`
 - `bytebox`
