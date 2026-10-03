@@ -1,0 +1,30 @@
+Formula/g/gita.rb
+  s_6e5d1e6427e031::t_ec2ce3d7870331 89
+  s_6e5d1e6427e031::t_8a10cb9fb8339f 90
+  s_6e5d1e6427e031::t_30260dc3cdb86e 37,42,44-53,55-86,92-111
+  s_c7b0f71fa0ff85::t_e0b270f3d5b596 9,24-28,34-36,38-41,43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "720855053649265b56ef5b4d65727decc92bf9f4",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
