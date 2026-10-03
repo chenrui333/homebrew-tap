@@ -1,9 +1,10 @@
 class Codemachine < Formula
   desc "CLI-native orchestration engine for autonomous coding workflows"
-  homepage "https://codemachine.co/"
+  homepage "https://github.com/moazbuilds/CodeMachine-CLI"
   url "https://registry.npmjs.org/codemachine/-/codemachine-0.8.0.tgz"
   sha256 "13b5b78d7e33e1d6733e8dce05e5b4d41173db44465f6ca559172b517890bcdd"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -14,7 +15,7 @@ class Codemachine < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3563da1d70eaa31fe446995d1b85472e1dad3de43d7b8ee6b1910b007bca8bf"
   end
 
-  depends_on "chenrui333/tap/bun"
+  depends_on "homebrew/core/bun"
   depends_on "node"
 
   def install
