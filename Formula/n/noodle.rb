@@ -1,8 +1,8 @@
 class Noodle < Formula
   desc "Terminal REST client"
   homepage "https://github.com/wilfredinni/noodle"
-  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.9.6.tar.gz"
-  sha256 "5d856c4a0ef9d9e6a38e59ec35ca2f8cc6977666e1029f73bb0b010d5e20717a"
+  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.9.7.tar.gz"
+  sha256 "fb2f68c9b58ddbe1e7a44866a51eb8e01bf94a19d3489a68196ebaffa8ee5eef"
   license "Apache-2.0"
   head "https://github.com/wilfredinni/noodle.git", branch: "main"
 
@@ -14,7 +14,7 @@ class Noodle < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38fccf5ba01e75d789e10adf18c469c1eb48d4057374b21ae603fd5c0165338a"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
   depends_on "bun"
 
   resource "opentui" do
@@ -28,7 +28,7 @@ class Noodle < Formula
     package.fetch("scripts").delete("prepare")
     (buildpath/"package.json").atomic_write JSON.generate(package)
     system "bun", "install", "--frozen-lockfile", "--production"
-    libexec.install "src", "assets", "node_modules", "package.json"
+    libexec.install "src", "assets", "scripts", "node_modules", "package.json"
     (libexec/".agents/skills").install ".agents/skills/noodle-use"
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : "arm64"
