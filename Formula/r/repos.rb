@@ -9,7 +9,7 @@ class Repos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1a0bc5b9b9c78e25e23154baf4cd99de43b8402ea119ff1371ad8b3f61280c45"
+    sha256 cellar: :any_skip_relocation, all: "2a45d2dafc750e9b5ac46073822699e2d115cc485839b9470ea9067a7bb6515f"
   end
 
   depends_on "gh"
