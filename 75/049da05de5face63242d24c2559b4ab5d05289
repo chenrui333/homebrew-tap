@@ -1,0 +1,28 @@
+Formula/f/fnug.rb
+  s_c7b0f71fa0ff85::t_55e061d8ae32c5 9,21,23,26-37,39-42,44-47,49-52,54-57,59-62,64-67,69-72,74-77,79-82,84-87,160-167
+  s_6e5d1e6427e031::t_81e7ddada142e2 38,43,48,53,58,63,68,73,78,83,88,150-158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "75049da05de5face63242d24c2559b4ab5d05289",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
