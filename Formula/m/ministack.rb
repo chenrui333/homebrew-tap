@@ -3,8 +3,8 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/2f/8c/1d7a88d8a90a1ca078fc1a8e6f09f1bc3d5df96cfa01cc61266cd059f37e/ministack-1.5.19.tar.gz"
-  sha256 "4ed54ed757c2fe615d5362b43bede2280043d9037620160c4c7e689966268661"
+  url "https://files.pythonhosted.org/packages/44/e0/a494b7e26383a6eb4ad9b7fc5f7675c7a47f5da6adc99a71d31e376c2de2/ministack-1.5.20.tar.gz"
+  sha256 "0140791e68ed3f17b5bfa3fc2206537077ac4d2913f3feb697ba2b9a92ec3208"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
@@ -20,8 +20,8 @@ class Ministack < Formula
   depends_on "python@3.14"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e1/5f/b33913aab846bc88a2720976435adb944d1ef57b92beed829233fe1953d9/botocore-1.43.63.tar.gz"
-    sha256 "854e45247f00b0732496ea1f0c5d0cf3c31d58b48eb052c31c27ab1087dfddf1"
+    url "https://files.pythonhosted.org/packages/11/b9/10ca68d0092895d5ea60f485a61a9840d5aff9d732c66ed60da53a20b1d4/botocore-1.43.106.tar.gz"
+    sha256 "006870b3b4e40547232ad12c3bb4faec91bbbe0659aafaa3b7fa48a112c4ee97"
   end
 
   resource "defusedxml" do
