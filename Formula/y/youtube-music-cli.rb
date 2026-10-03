@@ -4,6 +4,7 @@ class YoutubeMusicCli < Formula
   url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.2.3.tar.gz"
   sha256 "3e4b0665ac01f970013a2469880e6613c7e57bd7fb92fa7fbbc2a672655c49b9"
   license "MIT"
+  revision 1
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
   bottle do
@@ -14,7 +15,7 @@ class YoutubeMusicCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23cd6c6bcb737949b95300542298cd798d546238d3ec640363d42f6d3e40706a"
   end
 
-  depends_on "chenrui333/tap/bun"
+  depends_on "homebrew/core/bun"
   depends_on "mpv"
   depends_on "node"
   depends_on "yt-dlp"
@@ -22,7 +23,7 @@ class YoutubeMusicCli < Formula
   def install
     system "npm", "install", "--include=dev", "--legacy-peer-deps",
            *std_npm_args(prefix: false, ignore_scripts: false)
-    system formula_opt_bin("chenrui333/tap/bun")/"bun", "run", "build"
+    system formula_opt_bin("homebrew/core/bun")/"bun", "run", "build"
     system "npm", "install", *std_npm_args
 
     notifier_app = "lib/node_modules/@involvex/youtube-music-cli/node_modules/" \
