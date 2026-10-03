@@ -1,8 +1,8 @@
 class Rkik < Formula
   desc "Rusty Klock Inspection Kit - Simple NTP Client"
   homepage "https://github.com/aguacero7/rkik"
-  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "fa48a3872fd8a1ee0c3bcc7c1983e706750da54a984a8920b28d5742cfe599bc"
+  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "3f5e0724d1719415b93ff9f30323034d3156fc2e573e7cb348781f086f7614d6"
   license "MIT"
   head "https://github.com/aguacero7/rkik.git", branch: "master"
 
