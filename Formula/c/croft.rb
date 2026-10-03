@@ -1,9 +1,9 @@
 class Croft < Formula
   desc "VSCode-style TUI text editor"
   homepage "https://codeberg.org/vitali87/croft"
-  url "https://codeberg.org/vitali87/croft/archive/8b6e7e0e26cded417b386a4f0cd2e1a5fb9674e0.tar.gz"
+  url "https://codeberg.org/vitali87/croft/archive/8b6e7e0e26cded417b386a4f0cd2e1a5fb9674e0.zip"
   version "0.1.347"
-  sha256 "32dd8364251158856dde56ae96925c53c8a936a00e518088187ab10d7fb12b61"
+  sha256 "0f4528150ec4b1cb285e026683718b09391025b2722add68d76664151e9eebbe"
   license "MIT"
   head "https://codeberg.org/vitali87/croft.git", branch: "main"
 
@@ -18,6 +18,12 @@ class Croft < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
