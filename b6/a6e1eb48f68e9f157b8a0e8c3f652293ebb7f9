@@ -1,0 +1,28 @@
+Formula/g/gitlabform.rb
+  s_6e5d1e6427e031::t_ecd6f982f59949 281
+  s_c7b0f71fa0ff85::t_1b4e70168756d2 6-7,18-19,23-31,43-45,48-50,53-55,68-70,73-75,83-85,88-95,109-110,124-125,129-130,184-185,243-247,275-280,299,303
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b6a6e1eb48f68e9f157b8a0e8c3f652293ebb7f9",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
