@@ -5,18 +5,29 @@ class GlslAnalyzer < Formula
       tag:      "v1.7.1",
       revision: "d595fb18c165f9e6c0c99a39dd457b993cfdd9aa"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f547b77849ff6679ad56f0a44b2bc45afc02f0d5e56b8ad89e3665e38fb0f0eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3398c52157d6efbb61293659be6a6af57cdce6dec9736ccb730dd13e2acb365c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4731449f8041328d01be3eedc5fa2953078d3a6ed9c85ca8bfe1934f4efc3249"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88df97170594fa3f5087979a77b974899ccf3d51126e44df8e7f3dad72a35e76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5851c9ac5a8bc24b3b3baf0b56cb3dfefc3b230566be35f53f8ff2d46a526036"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6df45fbe6bfc89a9fe1097ac5c12e3731539bb2557814fae429dd4c06bd90cfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa7cc7e85ea7ef6a0c35ef75b8a0d917833fbdce1cfe98c317b4ffa4dda34729"
   end
 
   depends_on "zig@0.14" => :build
 
+  deny_network_access!
+
   def install
+    if OS.mac?
+      # Use Zig's bundled Darwin libraries instead of incompatible SDK stubs.
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr"
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
