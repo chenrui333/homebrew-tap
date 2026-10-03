@@ -1,8 +1,8 @@
 class Chroncal < Formula
   desc "Terminal-first calendar, todo, and journal manager"
   homepage "https://github.com/DouglasdeMoura/chroncal"
-  url "https://github.com/DouglasdeMoura/chroncal/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "0ab97d244e992a9ba53b082a6575b0d6b000f53ff8327ed7e16437b8f08d2501"
+  url "https://github.com/DouglasdeMoura/chroncal/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "9c3445c66775fb8d54ddfb59c106b0c26265870b243bbe2a5cd3a5c8d2e464a3"
   license "MIT"
   head "https://github.com/DouglasdeMoura/chroncal.git", branch: "main"
 
