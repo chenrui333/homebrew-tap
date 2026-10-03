@@ -1,0 +1,34 @@
+Formula/c/context-file-manager.rb
+  s_6e5d1e6427e031::t_1545bfdbb920d7 50-59,65-77
+  s_6e5d1e6427e031::t_6b0e57acb366de 5
+  s_6e5d1e6427e031::t_2e0ee7936efc9b 43,78,138,143,195-209,215-226,228-255
+  s_6e5d1e6427e031::t_7bec53643d942f 110-119,125-137
+  s_6e5d1e6427e031::t_a137b73275dc20 79
+  s_6e5d1e6427e031::t_306faa2b95c3ed 144
+  s_6e5d1e6427e031::t_4358eb3c3c0013 170-179
+  s_c7b0f71fa0ff85::t_bb81bb711deaa4 9,23-28,40-42,44,139-142,259-267
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "99ecc1aeb0730bda634aed5c7b4d21daa130383a",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
