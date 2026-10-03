@@ -7,10 +7,10 @@ class Zigscient < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e66e4efcd7eae5ab3dbcd7f7f867aa24211654e4fc482855a13e0cf0d909b01d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1575e6c252d4fc087ee94bf432362d8598163ab9492fdd48412e548e6caee7c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35da05741180ea7b06c2f8f0993d685c0efb420367bb151da4cdf389c78a0fb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11436a64693466dfd27564d3f92c8761fc18d1703e3b476ef620e770c11c4217"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "02333b53179a65ac3d3c9985ff370cc0c7003e55a874501c538de6036a2515e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21f3fdaa7c4b786f1d5456f4a45d6acb0b522b179ba83089e7bfd58bccb88d0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7acaed640800a78734191adcef918b1418a22f0ec1418d8e8f1a599a30d8dec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d0c0553f6d5140c45ff13a496f595b48d8038bdfcba7a8470bb21548b76512c"
   end
 
   depends_on "zig" => :build
