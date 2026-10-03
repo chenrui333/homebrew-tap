@@ -5,6 +5,7 @@ class Distill < Formula
   version "1.4.0"
   sha256 "cb153d92ae9d0b9595383a2d11a15d4d07e72c4dcfd42a987832c1a218e4adb3"
   license "MIT"
+  revision 1
   head "https://github.com/samuelfaj/distill.git", branch: "main"
 
   livecheck do
@@ -16,13 +17,13 @@ class Distill < Formula
     sha256 cellar: :any_skip_relocation, all: "244b1f1285df1578220b9e7fbb01ac04526862c90f994803ae689661992e5806"
   end
 
-  depends_on "chenrui333/tap/bun" => :build
+  depends_on "homebrew/core/bun" => :build
   depends_on "node"
 
   deny_network_access!
 
   def install
-    bun = formula_opt_bin("chenrui333/tap/bun")/"bun"
+    bun = formula_opt_bin("homebrew/core/bun")/"bun"
     node = formula_opt_bin("node")/"node"
 
     system bun, "build", "src/cli.ts", "--outfile", "distill.mjs", "--target=node"
