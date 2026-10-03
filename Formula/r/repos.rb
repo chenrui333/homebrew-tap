@@ -4,15 +4,16 @@ class Repos < Formula
   url "https://github.com/epilande/repos/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "30c2f524e3ec96a393d316327ab5eb0e48d160f2d782bf2a6febee9348a09d88"
   license "MIT"
+  revision 1
   head "https://github.com/epilande/repos.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1a0bc5b9b9c78e25e23154baf4cd99de43b8402ea119ff1371ad8b3f61280c45"
+    sha256 cellar: :any_skip_relocation, all: "2a45d2dafc750e9b5ac46073822699e2d115cc485839b9470ea9067a7bb6515f"
   end
 
-  depends_on "chenrui333/tap/bun"
   depends_on "gh"
+  depends_on "homebrew/core/bun"
 
   def install
     system "bun", "install", "--frozen-lockfile", "--production"
