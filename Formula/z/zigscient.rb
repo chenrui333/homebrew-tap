@@ -1,8 +1,8 @@
 class Zigscient < Formula
   desc "Zig Language Server"
   homepage "https://github.com/llogick/zigscient"
-  url "https://github.com/llogick/zigscient/archive/refs/tags/0.16.1.tar.gz"
-  sha256 "e6f85df3869f8c00bb76ad84232f6186ad3ea456ff2e1b6b85adac851a2f84f9"
+  url "https://github.com/llogick/zigscient/archive/refs/tags/0.17.0.tar.gz"
+  sha256 "f55ef6954a2fca944baacecdf128c3820b4c950677c543e4a1a590c2ee8946a2"
   license "ISC"
 
   bottle do
@@ -16,24 +16,14 @@ class Zigscient < Formula
   depends_on "zig" => :build
 
   def install
-    # Fix illegal instruction errors when using bottles on older CPUs.
-    # https://github.com/Homebrew/homebrew-core/issues/92282
-    cpu = case Hardware.oldest_cpu
-    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
-    else Hardware.oldest_cpu
-    end
-
-    args = []
-    args << "-Dcpu=#{cpu}" if build.bottle?
-
-    zig = "zig"
-    system zig, "build", *args, *std_zig_args(release_mode: :safe)
+    ENV["ZIG_LIB_DIR"] = (buildpath/"lib").to_s
+    system "zig", "build", *std_zig_args(release_mode: :safe)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/zigscient --version")
 
     output = shell_output("#{bin}/zigscient env")
-    assert_match "\"config_file\":", output
+    assert_match "\"settings_file_path\":", output
   end
 end
