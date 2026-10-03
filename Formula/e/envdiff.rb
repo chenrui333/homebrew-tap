@@ -8,11 +8,10 @@ class Envdiff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93c5319dda3dbe3c6b95f3c30874657852ad95d395935834e33182dc0409217f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c5319dda3dbe3c6b95f3c30874657852ad95d395935834e33182dc0409217f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c5319dda3dbe3c6b95f3c30874657852ad95d395935834e33182dc0409217f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4798ad52db555e80ec698065eeb800f2f55cf9c447bdf39cf16b96057378c64f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eab84266bab4a6e2dea1bd0d68f1bfeb160fb3923639a583d8e09fb4da71379b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e838d0753976911ccef09be3137a33c6a01a849dfb64d5caac192c3ee7ada90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e838d0753976911ccef09be3137a33c6a01a849dfb64d5caac192c3ee7ada90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7b1fac1faf48074f321bf8dc1397f1c8d060627a19f5c46c7eeac61faede24d"
+    sha256 cellar: :any,                 x86_64_linux:  "94e9bf8119fe31b251fa054ede43ed1f0125c16b8378b7437edd5ac60d53f935"
   end
 
   depends_on "go" => :build
