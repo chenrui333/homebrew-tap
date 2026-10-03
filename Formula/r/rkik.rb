@@ -1,17 +1,17 @@
 class Rkik < Formula
   desc "Rusty Klock Inspection Kit - Simple NTP Client"
   homepage "https://github.com/aguacero7/rkik"
-  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "fa48a3872fd8a1ee0c3bcc7c1983e706750da54a984a8920b28d5742cfe599bc"
+  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "3f5e0724d1719415b93ff9f30323034d3156fc2e573e7cb348781f086f7614d6"
   license "MIT"
   head "https://github.com/aguacero7/rkik.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ac21a5731ac75413ba67e417f0f20bafa4abdafcf28c7bcf88043b9fbfa3798"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91e5cde023e05b9aeac2d29a67229faa7d0d54dcc66ec66a1f6e733b3e6f1efa"
-    sha256 cellar: :any,                 arm64_linux:   "d42e74f990016c17ca5c017f298b947ee11e6ed40c1e1fc106c063be7b1d1f33"
-    sha256 cellar: :any,                 x86_64_linux:  "2cd7180d706778b74085aeb37e637d9557bc0f1ff068154af89234760abd5ca8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92f691a8aa4f472d807a814f7ac0319e7a8bfe8c440ff541b84fc304fc82343d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0d145d0fb061c289e86266b86a3b418821f7d1e977d8d8407dfc052e97fa8d0"
+    sha256 cellar: :any,                 arm64_linux:   "b843aaf04ff05b32737b8429d391015c9aa4d79c0c2e4cbad7bdfef1bcf93812"
+    sha256 cellar: :any,                 x86_64_linux:  "21973221404728d66f0569fd1099958016779faf11c845775edf2600659ef77f"
   end
 
   depends_on "rust" => :build
