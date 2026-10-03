@@ -57,12 +57,22 @@ jobs:
             exit 1
           fi
 
-          if [[ "$state" != "open" || "$draft" != "false" || "$base_branch" != "main" ||
+          if [[ "$draft" != "false" || "$base_branch" != "main" ||
                 "$head_repo" != "$GITHUB_REPOSITORY" || "$head_branch" == "main" ||
                 -z "$head_branch" || -z "$expected_head" || "$author_type" == "Bot" ]]; then
             echo "PR must be an open, non-draft, same-repository PR targeting main"
             echo "state=$state draft=$draft base=$base_branch head_repo=$head_repo branch=$head_branch"
             exit 1
+          fi
+
+          if [[ "$state" != "open" ]]; then
+            merged="$(jq -r '.merged_at != null' <<< "$pr_data")"
+            if [[ "$state" != "closed" || "$merged" != "true" ]] ||
+               ! grep -Fxq 'CI-no-bottles' <<< "$labels"; then
+              echo "PR must be open unless a no-bottles PR has already merged."
+              exit 1
+            fi
+            echo "No-bottles PR merged while publication was queued; nothing to publish."
           fi
 
           if grep -Fxq 'CI-no-bottles' <<< "$labels"; then
