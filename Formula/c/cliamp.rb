@@ -1,17 +1,17 @@
 class Cliamp < Formula
   desc "Retro terminal music player inspired by Winamp"
   homepage "https://www.cliamp.stream"
-  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "54ffbba6983880c915d2c13c83ca1339de2d2a3c5af3bb0a176923faa9afc015"
+  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "51828895ddb5b236fa0a119c1f06102c127065bf44911849c910fe798362fec5"
   license "MIT"
   head "https://github.com/bjarneo/cliamp.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b09740a89e62152e592d693075c22302780e73fa1432bbaa4fd45a725bc63d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d7c023ca78b1670042a9bdc477114b314a0a25c21b764721a02ee89b80423ca"
-    sha256 cellar: :any,                 arm64_linux:   "87c345353674d137d36bd689acf873a79d07dd8a83dfa1705e15fedd107112ab"
-    sha256 cellar: :any,                 x86_64_linux:  "553e27764d3c281f5164db7ad659686d97b1a1cf90783a10a6d13806658a64d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3ca0cc96871f0ec5f1ba7eadec6fd43c93b095035813170e5ea391c6e7d2597"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "713d68c80dde871a161db30511d6d9d166e68028abbf5ba43a03c01d43b59565"
+    sha256 cellar: :any,                 arm64_linux:   "379598eb414e293569c2b06163c52e0d6f36e581be7edc22a274bd0262ff2e9a"
+    sha256 cellar: :any,                 x86_64_linux:  "2668b34a1531eed235d36951615705c9443b7375e870e2eba8c1c5317c01e21d"
   end
 
   depends_on "go" => :build
