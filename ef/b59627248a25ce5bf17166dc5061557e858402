@@ -1,0 +1,21 @@
+Formula/f/fairyglade-ly.rb
+  s_6e5d1e6427e031::t_1f55a6b7a55a06 5,21-25
+  s_6e5d1e6427e031::t_d0ae2ed114f6bd 29-30,33
+  s_6e5d1e6427e031::t_20d8b29868bccb 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "efb59627248a25ce5bf17166dc5061557e858402",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
