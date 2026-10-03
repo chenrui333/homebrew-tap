@@ -11,11 +11,10 @@ class Fnug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "21c9cfb42d670fea156b0d396b678ca025ee2c4edb2d39765bcc9f5c52bf9ded"
-    sha256 cellar: :any, arm64_sequoia: "3e99c0510b9a8890957d6e432ae9dd9d1be5600ac146ae463a3b2fb9a2ab75d1"
-    sha256 cellar: :any, arm64_sonoma:  "6cfb7af2ed55a6624d5e2cc3b35f7d96b37efe7a65a1e49ff4295774e8f707dd"
-    sha256               arm64_linux:   "fad6bf37d2613145c978881cbd12de01ca921eba2abbb8fe4abf131c646405c7"
-    sha256               x86_64_linux:  "118232340c8722f60bf0f3831aab08f9faf153e01d5981fefb4d82bf68656c2f"
+    sha256 cellar: :any, arm64_tahoe:   "54db87028b51426b59dd3f97ac4e1c29e83802d82842e16ba3bab2d32189ed9a"
+    sha256 cellar: :any, arm64_sequoia: "ec0b1e65c80ac5f152bea688ceb6978ac52ddd33c5657900ffe19aec9d011f71"
+    sha256               arm64_linux:   "98b0402f615f92b9c14173b3507726eff76e089af02356dc896dee021b986eb4"
+    sha256               x86_64_linux:  "5c396984f84d87abb938bea067c83f12ec2ba92651236de25d5d41f4bbee2852"
   end
 
   depends_on "maturin" => :build
