@@ -9,10 +9,10 @@ class YoutubeMusicCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cff18d53a73e364fb1cc5883851d64fb5f7c20cd15abe2dde8f8f35b0768342f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db4dd57b50dd5a07fa6c08b14e500afabfc665337929728c26fb62837ce339c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebc5c422ef1bdf61bbd9d9ad8fd3d3fa0013caf7c7ebd0277bf99498be97d30c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23cd6c6bcb737949b95300542298cd798d546238d3ec640363d42f6d3e40706a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c287ece4b3abfc94c64019362141d3c8b7445fb947664d455672b7d1eed5cef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f77616fd119588d5a1c1de70b8b1e510060fc9d31b93f774c439184e8c5f6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a9d3e8f9b45659e72d367c2016dc59345d023ce06f6575ffd6af4070b3c4160"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d77790ad022a3622e4ce27e7c715dc1a09c39bf38061e644c438323cd060bf30"
   end
 
   depends_on "homebrew/core/bun"
