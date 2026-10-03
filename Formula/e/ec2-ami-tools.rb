@@ -13,7 +13,7 @@ class Ec2AmiTools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "837527187fed043eaaab272442a2cd8eb515f4a098f3e00271652f29d12ed7b8"
+    sha256 cellar: :any_skip_relocation, all: "1fac626f8dfb68e274927f77b3515fa8ca00883d3ed3f694220dba428c0ce5fa"
   end
 
   depends_on "openjdk"
