@@ -4,6 +4,7 @@ class Dustoff < Formula
   url "https://github.com/westpoint-io/dustoff/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "800a7aefaabde74db65bd2ea8ed49e39a48bc52cae43f59ce234422f39f41b27"
   license "MIT"
+  revision 1
   head "https://github.com/westpoint-io/dustoff.git", branch: "main"
 
   bottle do
@@ -11,7 +12,7 @@ class Dustoff < Formula
     sha256 cellar: :any_skip_relocation, all: "84040b361eec671127a90625f0a1e4f34cc70a19850f48593bd4ba163ae5c623"
   end
 
-  depends_on "chenrui333/tap/bun" => :build
+  depends_on "homebrew/core/bun" => :build
   depends_on "node"
 
   deny_network_access!
