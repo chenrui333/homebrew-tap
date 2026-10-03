@@ -4,15 +4,15 @@ class Dawn < Formula
   url "https://github.com/andrewmd5/dawn/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "7b01b89a87cdfe34e17401ec8497176abd1c65387fd7f9cb286d3c4b28b619cc"
   license "MIT"
+  revision 1
   head "https://github.com/andrewmd5/dawn.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6039749249f63c460808c38d248a8bc72e2455a13e27137c760e546bfee77ffb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e188e1162d85c4e41d32732adc5274f6e9dc7f83d722827db428aeea2e595a12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a210d7778dafba5671d2471f067d30c2f41040278abd0f904879650838d8c24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa3faacb6ad8f00c6890ef5258529a50301dbd60a018e1b4e187211beae05572"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10fd5b53586c1bf7ce5fdc1e060599a447b7522ef1be0f9743d6d1f5f2d781a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3955e20ba5dfb521d6f28256e9dc1446d982352d99a1d0dfc4b83e2068d0d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96ef947cec92d4394af6eda4beda39af16f71a5bae54e713974de3fdec856cd2"
+    sha256 cellar: :any,                 arm64_linux:   "75c11f1bbd9c38c23c9852624b26462d85f6391e9a5d7117ab88522a473e11ff"
+    sha256 cellar: :any,                 x86_64_linux:  "34dd62502cb7ab6bf3fa223864954c19ba0a0e535de437848730097bd1846433"
   end
 
   depends_on "cmake" => :build
@@ -38,10 +38,14 @@ class Dawn < Formula
     sha256 "cf6c76d588eb607b77dd6797cf65f8e88873e9f98c40085fc46070fe5626c70c"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "git", "submodule", "update", "--init", "--recursive" if build.head?
+  end
+
   def install
-    if build.head?
-      system "git", "submodule", "update", "--init", "--recursive"
-    else
+    unless build.head?
       # Upstream release tarballs omit git submodules needed for source builds.
       mkdir_p buildpath/"third-party"
       resource("cyaml").stage buildpath/"third-party/cyaml"
@@ -55,11 +59,20 @@ class Dawn < Formula
               'set(PCRE2_SUPPORT_JIT ON CACHE BOOL "" FORCE)',
               'set(PCRE2_SUPPORT_JIT OFF CACHE BOOL "" FORCE)'
 
-    mkdir "build" do
-      system "cmake", "..", "-DDAWN_VERSION=#{version}", *std_cmake_args
-      system "cmake", "--build", ".", "--target", "dawn"
-      bin.install "dawn"
-    end
+    # Background print commands must not read the controlling terminal (SIGTTIN).
+    inreplace "src/dawn_backend_posix.c", "        // Set up raw mode on tty_fd", <<~C.chomp
+      if (posix_state.tty_fd >= 0 && tcgetpgrp(posix_state.tty_fd) != getpgrp()) {
+        if (posix_state.tty_fd != STDERR_FILENO)
+          close(posix_state.tty_fd);
+        posix_state.tty_fd = -1;
+      }
+
+      // Set up raw mode on tty_fd
+    C
+
+    system "cmake", "-S", ".", "-B", "build", "-DDAWN_VERSION=#{version}", *std_cmake_args
+    system "cmake", "--build", "build", "--target", "dawn"
+    bin.install "build/dawn"
   end
 
   test do
