@@ -11,11 +11,10 @@ class Dhv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac8f17881bcdc626c8735e2a950230027a390793ffeeec624ba654fa861828dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4316344367969c457f1bb0f91451d9f75dcf640dba5d0ad8c205b2366c38c027"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d29fb09d6bafdc51e050e5793e2ae7ede5de0b89da216ea31ce74f96e9905f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d5905b94f2acb0912233f50dbe05166a38c7117b1f641770756e055d8e0c2a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e34bbd0e1096cbec8683bb05bb43a8cf718ea7ab20be9c7366393bbc25ae25b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef1efa4eb366033f086dd44470ed9d8d208805c17bf16bec6c5f7deb7340376c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81b086651a5f191a22ccbfdda3a829dd7331d4bea76cf8c4031d9e6fbb3b458a"
+    sha256 cellar: :any,                 arm64_linux:   "8ec0a808d103e7fa146743abbc4dc4dbd78d98faa41626f49bef1ab53cac2020"
+    sha256 cellar: :any,                 x86_64_linux:  "c7c6ba13694b9ce03a3a298fb40fb7e80bd63231a5eaca4e94b6d80130801646"
   end
 
   depends_on "maturin" => :build # for uv-build
