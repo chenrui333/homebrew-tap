@@ -6,19 +6,21 @@ class Codeflash < Formula
   url "https://files.pythonhosted.org/packages/2d/bc/d86b03b88cf254f4581162a33c8f296092d1f1c46bd7c3478802dd8b9c23/codeflash-0.20.6.tar.gz"
   sha256 "411202748597aff5ebb3fd8bceb510da209b3253a86fe49783238113076bba55"
   license "BUSL-1.1"
+  revision 1
   head "https://github.com/codeflash-ai/codeflash.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "24ad8c7af52f987aed0e4de918a23a1cacc3a3cc5e7c141259531af182a0e142"
-    sha256 cellar: :any, arm64_sequoia: "864137f0ef80ebc06b2e90d77e6f02a72bf5a098d0243070cc11b92a56fcb610"
-    sha256 cellar: :any, arm64_sonoma:  "d0819cebea31a1b937238eeef236141cec57ea4ed69df3ed0301f6dfa91d9569"
-    sha256 cellar: :any, arm64_linux:   "4e6866e83476cfe829d465df6d7c432a83d17eb8d67c6e19732baa953013f616"
-    sha256 cellar: :any, x86_64_linux:  "863ac09bfdac0c6ec5a989ecab1489bc3453833d2de0cf7b238d6c08e14ca7d0"
+    sha256 cellar: :any, arm64_tahoe:   "743334afec6fbc8658ee22193c2eb0624a54a6f1eb38ad53ab6ab52a1bc8869d"
+    sha256 cellar: :any, arm64_sequoia: "b6cf029f5eaf8d60d6ff9957eca5d2a286889fe81fa712ba09b59111d6c08848"
+    sha256 cellar: :any, arm64_linux:   "f590da6ee396ff2967df910731e4bd7156d69c371b844761e37876cd26d0fbad"
+    sha256 cellar: :any, x86_64_linux:  "e8d81fa9ffa09e35c7d162c51f434e6d8b9a611293611e512f8994286d0c0b7d"
   end
 
+  depends_on "cmake" => :build
+  depends_on "maturin" => :build
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for tree-sitter
+  depends_on "rust" => :build # for libcst and uv-build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "lz4"
@@ -29,10 +31,12 @@ class Codeflash < Formula
   uses_from_macos "libxslt"
 
   on_linux do
+    depends_on "bzip2"
     depends_on "curl" # for libdebuginfod
     depends_on "elfutils" # for libdebuginfod
     depends_on "json-c" # for libdebuginfod
     depends_on "libunwind"
+    depends_on "xz"
 
     # TODO: Consider creating a formula for (lib)debuginfod
     resource "elfutils" do
@@ -41,7 +45,13 @@ class Codeflash < Formula
     end
   end
 
-  pypi_packages exclude_packages: %w[certifi pydantic pydantic-core]
+  pypi_packages exclude_packages: %w[certifi pydantic pydantic-core],
+                extra_packages:   %w[
+                  calver coherent-licensed cython>=3.2.4 dunamai flit-core<4 hatch-fancy-pypi-readme hatch-vcs
+                  hatchling pathspec pkgconfig poetry-core semantic-version setuptools<82.1 setuptools-rust
+                  setuptools-scm tomlkit~=0.13.0 trove-classifiers uv-build>=0.11.7,<0.12 uv-dynamic-versioning
+                  vcs-versioning wheel
+                ]
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
@@ -329,8 +339,8 @@ class Codeflash < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/51/db/03eaf4331631ef6b27d6e3c9b68c54dc6f0d63d87201fed600cc409307fd/tomlkit-0.15.0.tar.gz"
-    sha256 "7d1a9ecba3086638211b13814ea79c90dd54dd11993564376f3aa92271f5c7a3"
+    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
   end
 
   resource "tree-sitter" do
@@ -416,9 +426,131 @@ class Codeflash < Formula
     sha256 "4cb57381f544315db7688e976e922a2b18cdb513d21cc194eb42232ba2a3e602"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "coherent-licensed" do
+    url "https://files.pythonhosted.org/packages/cd/e9/63d2dcccb5496cc99d96f29a8a5f3e2c6ed0bba7fedb840862f92816ee17/coherent_licensed-0.5.2.tar.gz"
+    sha256 "d8071403ce742d3ac3592ddc4fb7057a46caffb415b928b4d52802e5f208416d"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
+    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "pkgconfig" do
+    url "https://files.pythonhosted.org/packages/52/fd/0adde075cd3bfecd557bc7d757e00e231d34d8a6edb4c8d1642759254c21/pkgconfig-1.6.0.tar.gz"
+    sha256 "4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "semantic-version" do
+    url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
+    sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+  end
+
+  resource "setuptools-rust" do
+    url "https://files.pythonhosted.org/packages/68/ba/b31781d61bf9ee3c232a1d1160db11c11cdeae1d44e06c90723b25a8279f/setuptools_rust-1.13.0.tar.gz"
+    sha256 "f2afcf4baeee689910ce49cfa8aad4e08cce72f417449bcc32891b8664fdc726"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
+  end
+
+  resource "uv-build" do
+    url "https://files.pythonhosted.org/packages/ab/90/08c5811fe8d5e32a637b648aff654ffa9b97728381d94d1103383416f3a7/uv_build-0.11.33.tar.gz"
+    sha256 "b09dcd86e4bbb31f4d85470892771e7c8786b3bd9b6519f7ce7480517b4d1381"
+  end
+
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  deny_network_access!
+
+  def fetch
+    resource("libcst").stage do
+      cd "native" do
+        system "cargo", "fetch", "--locked"
+      end
+    end
+    resource("uv-build").stage { system "cargo", "fetch", "--locked" }
+  end
+
   def install
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    venv = virtualenv_create(libexec, "python3.13")
+    ENV.prepend_path "PATH", libexec/"bin"
+    build_resources = %w[
+      setuptools flit-core poetry-core packaging calver cython wheel tomlkit pathspec pluggy
+      trove-classifiers vcs-versioning setuptools-scm hatchling hatch-vcs hatch-fancy-pypi-readme
+      semantic-version setuptools-rust coherent-licensed pkgconfig markupsafe jinja2 dunamai
+      uv-dynamic-versioning uv-build
+    ]
+    build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
     if OS.linux?
-      libelf = Formula["elfutils"].opt_lib/"libelf.so"
+      libelf = formula_opt_lib("elfutils")/"libelf.so"
       resource("elfutils").stage do
         # https://github.com/bloomberg/memray/blob/main/pyproject.toml#L96-L104
         system "./configure", "--disable-debuginfod",
@@ -429,18 +561,26 @@ class Codeflash < Formula
         system "make", "-C", "debuginfod", "install", "bin_PROGRAMS=", "libelf=#{libelf}"
         ENV.append "LDFLAGS", "-L#{libexec}/lib -Wl,-rpath,#{libexec}/lib"
       end
-
-      virtualenv_install_with_resources(without: %w[elfutils memray])
-      resource("memray").stage do
-        system libexec/"bin/python", "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
-      end
-    else
-      virtualenv_install_with_resources
     end
+
+    runtime_resources = resources.reject do |r|
+      build_resources.include?(r.name) || %w[elfutils z3-solver].include?(r.name)
+    end
+    venv.pip_install runtime_resources, build_isolation: false
+    resource("z3-solver").stage do
+      # Upstream overrides MAKEFLAGS with the host CPU count.
+      inreplace "setup.py", "str(multiprocessing.cpu_count())", "str(#{ENV.make_jobs})"
+      venv.pip_install Pathname.pwd, build_isolation: false
+    end
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/codeflash --version")
+    (testpath/"example.py").write "def greet(): return 'hello'\n"
+    output = shell_output("#{bin}/codeflash --show-config 2>&1")
+    assert_match "Codeflash Configuration", output
+    assert_match "python", output.downcase
   end
 end
 
