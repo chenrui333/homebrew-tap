@@ -165,8 +165,8 @@ Run a strict online audit with autofix enabled.
 ### Usage
 
 ```bash
-brew check chenrui333/tap/bun
-brew check bun
+brew check chenrui333/tap/hello
+brew check hello
 ```
 
 ## `brew close-superseded-prs`

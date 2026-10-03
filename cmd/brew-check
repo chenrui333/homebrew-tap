@@ -9,8 +9,8 @@ Usage: brew check <formula> [...]
 Run a strict online audit with autofix enabled.
 
 Example:
-  brew check bun
-  brew check chenrui333/tap/bun
+  brew check hello
+  brew check chenrui333/tap/hello
 EOF
 }
 
