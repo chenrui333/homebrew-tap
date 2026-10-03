@@ -9,8 +9,7 @@ class GitVain < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_sequoia: "fc88d0dcb4e3f7ae3627d0ab6aaa36c57ef4b385e57a112574f0f96384e0b909"
-    sha256 cellar: :any, arm64_sonoma:  "c142f7e8044e069f0ca793d9593e6ed87e52cecdc998072735247565acb10887"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2649a499ccc9fa22c66ec831e6413f0600198828e228d0b7fff349f5cfff7f1c"
   end
 
   depends_on "chenrui333/tap/zig@0.13" => :build
