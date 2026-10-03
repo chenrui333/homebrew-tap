@@ -3,25 +3,25 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/2f/8c/1d7a88d8a90a1ca078fc1a8e6f09f1bc3d5df96cfa01cc61266cd059f37e/ministack-1.5.19.tar.gz"
-  sha256 "4ed54ed757c2fe615d5362b43bede2280043d9037620160c4c7e689966268661"
+  url "https://files.pythonhosted.org/packages/44/e0/a494b7e26383a6eb4ad9b7fc5f7675c7a47f5da6adc99a71d31e376c2de2/ministack-1.5.20.tar.gz"
+  sha256 "0140791e68ed3f17b5bfa3fc2206537077ac4d2913f3feb697ba2b9a92ec3208"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14d501f923e0b78170831705b3057268ca568b3087b7537bdaba12b683925af1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1f64f35c006701b2c5a092557b2878196adfabe8b76b9e1ea975c0e4bf668db"
-    sha256 cellar: :any,                 arm64_linux:   "86468fb96f6e1e0f393cd58d63c0af7124dbb5199d9d669137796d2276f4f8a0"
-    sha256 cellar: :any,                 x86_64_linux:  "d3b983a74fcfdfedbee4c266e31318f17eeed33ab76ebb0542b184ba14afee41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48c7200da9de699ca2a8140d21a55ce817488fe2c2cb48bf1afa5057fb731f9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b9afd8f7f402ca263f9e0237dfd6718ac2d285ff64e8fbc9715c63519f3ecd9"
+    sha256 cellar: :any,                 arm64_linux:   "1063cb77617ff7db338f7b6d6011b9338f420dadc6d9e2c200e30bdbf821cdba"
+    sha256 cellar: :any,                 x86_64_linux:  "c217a53b0f4ba0f7b3bd3dc5ab0a35a01ef1fec25427a3485463c3fc69444010"
   end
 
   depends_on "libyaml"
   depends_on "python@3.14"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e1/5f/b33913aab846bc88a2720976435adb944d1ef57b92beed829233fe1953d9/botocore-1.43.63.tar.gz"
-    sha256 "854e45247f00b0732496ea1f0c5d0cf3c31d58b48eb052c31c27ab1087dfddf1"
+    url "https://files.pythonhosted.org/packages/11/b9/10ca68d0092895d5ea60f485a61a9840d5aff9d732c66ed60da53a20b1d4/botocore-1.43.106.tar.gz"
+    sha256 "006870b3b4e40547232ad12c3bb4faec91bbbe0659aafaa3b7fa48a112c4ee97"
   end
 
   resource "defusedxml" do
