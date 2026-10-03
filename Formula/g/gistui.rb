@@ -8,10 +8,10 @@ class Gistui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f1ba5921a28f17ab4dc16a4d1164d0c3cd0df0973d9de0ac8a9ecd9202419b62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45780a788537af4498412f176be9f7bb405b1129fb03f44aab805a031a7957bb"
-    sha256 cellar: :any,                 arm64_linux:   "91d766c521400b60cf9a190681953f96c46e458569179cf138a99bae973cab59"
-    sha256 cellar: :any,                 x86_64_linux:  "29218fe990450842d3ff153fa1fb1c4013135ecc4f884766e00580000b68b711"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50e907e684bb77b6747619efde7f138ff34e233e9be38f4491f19112e6f070f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d3a8fb242fca5269edd5dee1d3cd7b1b72d0f562cd0768a35d4dabf9b820f6e"
+    sha256 cellar: :any,                 arm64_linux:   "7d653ade175059d05448b98e6a3a1d7d08d9cfa66f5745fcfa3c1dd0e2668476"
+    sha256 cellar: :any,                 x86_64_linux:  "0d9481b5a0743d66d0fae26ef6969412be1d0bd866d49496744d66ef0430eea3"
   end
 
   depends_on "rust" => :build
