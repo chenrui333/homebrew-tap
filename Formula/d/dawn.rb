@@ -9,11 +9,10 @@ class Dawn < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6039749249f63c460808c38d248a8bc72e2455a13e27137c760e546bfee77ffb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e188e1162d85c4e41d32732adc5274f6e9dc7f83d722827db428aeea2e595a12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a210d7778dafba5671d2471f067d30c2f41040278abd0f904879650838d8c24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa3faacb6ad8f00c6890ef5258529a50301dbd60a018e1b4e187211beae05572"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10fd5b53586c1bf7ce5fdc1e060599a447b7522ef1be0f9743d6d1f5f2d781a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3955e20ba5dfb521d6f28256e9dc1446d982352d99a1d0dfc4b83e2068d0d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96ef947cec92d4394af6eda4beda39af16f71a5bae54e713974de3fdec856cd2"
+    sha256 cellar: :any,                 arm64_linux:   "75c11f1bbd9c38c23c9852624b26462d85f6391e9a5d7117ab88522a473e11ff"
+    sha256 cellar: :any,                 x86_64_linux:  "34dd62502cb7ab6bf3fa223864954c19ba0a0e535de437848730097bd1846433"
   end
 
   depends_on "cmake" => :build
