@@ -14,7 +14,7 @@ class Distill < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "244b1f1285df1578220b9e7fbb01ac04526862c90f994803ae689661992e5806"
+    sha256 cellar: :any_skip_relocation, all: "fd4c8ab38d3b85c0e9abeab4c3745b0ed29bc0e065481b9424ffe355c927c3a7"
   end
 
   depends_on "homebrew/core/bun" => :build
