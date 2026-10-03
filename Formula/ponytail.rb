@@ -7,7 +7,7 @@ class Ponytail < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "3a590a8db4a749d3060cc38855d7ba75fce7a2b9458714690aa83e63a9cb3c90"
+    sha256 cellar: :any_skip_relocation, all: "99cf938c12d8483d510ca38d03cdbde794cfa05ab4d526ccd470a399bd0ccbca"
   end
 
   depends_on "node"
