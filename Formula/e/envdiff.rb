@@ -1,18 +1,17 @@
 class Envdiff < Formula
   desc "Tool to snapshot and diff environments"
   homepage "https://github.com/GBerghoff/envdiff"
-  url "https://github.com/GBerghoff/envdiff/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "604cef7dbfa1d9639751b102c6b44a505dc8a1602de22bd18566fcbcb7a0eb20"
+  url "https://github.com/GBerghoff/envdiff/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "94c6a431511d679211489d59f6c9ca53b26a090fd599fec11c0766373ce5d55c"
   license "MIT"
   head "https://github.com/GBerghoff/envdiff.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93c5319dda3dbe3c6b95f3c30874657852ad95d395935834e33182dc0409217f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c5319dda3dbe3c6b95f3c30874657852ad95d395935834e33182dc0409217f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c5319dda3dbe3c6b95f3c30874657852ad95d395935834e33182dc0409217f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4798ad52db555e80ec698065eeb800f2f55cf9c447bdf39cf16b96057378c64f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eab84266bab4a6e2dea1bd0d68f1bfeb160fb3923639a583d8e09fb4da71379b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e838d0753976911ccef09be3137a33c6a01a849dfb64d5caac192c3ee7ada90"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e838d0753976911ccef09be3137a33c6a01a849dfb64d5caac192c3ee7ada90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7b1fac1faf48074f321bf8dc1397f1c8d060627a19f5c46c7eeac61faede24d"
+    sha256 cellar: :any,                 x86_64_linux:  "94e9bf8119fe31b251fa054ede43ed1f0125c16b8378b7437edd5ac60d53f935"
   end
 
   depends_on "go" => :build
