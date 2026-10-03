@@ -10,8 +10,10 @@ class ContextFileManager < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "25d071b6f817f19b2f9c5b515248b622cd7f8c1946020f590400431a41a9de33"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb360bb92be62435738335f3687fe4f69f593896a2cc4220e7e184826bd91a03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdf021b1112346dac67a41a0b6b0a0f79b7b98cd8721ddc6c5c316bf6c7bd57d"
+    sha256 cellar: :any,                 arm64_linux:   "0038668dbd8a9fb82a74f80652bcdcf19ce41caa0705748b4b78adb36ad5bf95"
+    sha256 cellar: :any,                 x86_64_linux:  "86ba5d20968d1a015c512a00e509275023c9b2f69642d3acb6fa6811a136b59a"
   end
 
   depends_on "certifi" => :no_linkage
