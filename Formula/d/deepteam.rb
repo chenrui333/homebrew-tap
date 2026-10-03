@@ -6,16 +6,17 @@ class Deepteam < Formula
   url "https://files.pythonhosted.org/packages/11/eb/def5b5461d6a6483a3495b489b28aa72228ff8622b6bb9ace17d2774af90/deepteam-1.0.9.tar.gz"
   sha256 "d44fb6bc34f02e4ac17cce459bcb9d1590c5589337597b609c4442578336e641"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "30776e5a46b43924983b7b15426fe5f94d18b38f3aa6cdc35eb3503ceb48c86e"
-    sha256 cellar: :any, arm64_sequoia: "1ff2b869007c8ed23e2f6bc038e6b2f81b9b145f0acf20b09a9323a22364e385"
-    sha256 cellar: :any, arm64_sonoma:  "b9c070408f2076d6dd24aa01b0dc91733b13d808dab5fb7a82797bef8a7748b2"
-    sha256 cellar: :any, arm64_linux:   "aa4a7036b67007807944ad337b063255a839af4def9e7655f9b0c8d00d4c6d01"
-    sha256 cellar: :any, x86_64_linux:  "a90699334c49b5d8bfe203b0cca83d85035a4a9feb2aba42c57e08eecaf8ca55"
+    sha256 cellar: :any, arm64_tahoe:   "9771f0014f5debfb0d929e195b072b49a8674ff9b7c6308b0afed1a4a98de9b7"
+    sha256 cellar: :any, arm64_sequoia: "b85e83cd02ee10393d49e7257e6e094dc6eb301ec84a0c502e24b4188c12a03d"
+    sha256 cellar: :any, arm64_linux:   "1b7a76a5d1c8ba09dab4527a3696b3c059156505e0bbb44036c63c4f3b1707db"
+    sha256 cellar: :any, x86_64_linux:  "e2d19f57a2123e6306ef1dc8b6f18ad1a4430b8cbcad72a47bdd0c314ee603f2"
   end
 
+  depends_on "maturin" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
   depends_on "certifi" => :no_linkage
@@ -23,7 +24,12 @@ class Deepteam < Formula
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
 
-  pypi_packages exclude_packages: %w[certifi pydantic pydantic-core]
+  pypi_packages exclude_packages: %w[certifi pydantic pydantic-core],
+                extra_packages:   %w[
+                  calver cython==3.1.1 dunamai expandvars flit-core<4 hatch-fancy-pypi-readme hatch-vcs hatchling
+                  pdm-backend pkgconfig poetry-core setuptools>=83,<83.1 setuptools-scm tomlkit~=0.13.0
+                  trove-classifiers uv-build>=0.11,<0.13 uv-dynamic-versioning vcs-versioning
+                ]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
@@ -276,8 +282,8 @@ class Deepteam < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
   end
 
   resource "shellingham" do
@@ -335,8 +341,118 @@ class Deepteam < Formula
     sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
   end
 
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/5b/d3/bb000603e46144db2e5055219bbddcf7ab3b10012fcb342695694fb88141/cython-3.1.1.tar.gz"
+    sha256 "505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397"
+  end
+
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
+    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
+  end
+
+  resource "expandvars" do
+    url "https://files.pythonhosted.org/packages/9c/64/a9d8ea289d663a44b346203a24bf798507463db1e76679eaa72ee6de1c7a/expandvars-1.1.2.tar.gz"
+    sha256 "6c5822b7b756a99a356b915dd1267f52ab8a4efaa135963bd7f4bd5d368f71d7"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
+  resource "pkgconfig" do
+    url "https://files.pythonhosted.org/packages/52/fd/0adde075cd3bfecd557bc7d757e00e231d34d8a6edb4c8d1642759254c21/pkgconfig-1.6.0.tar.gz"
+    sha256 "4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
+  end
+
+  resource "uv-build" do
+    url "https://files.pythonhosted.org/packages/85/db/4219f281f5d4ba15ae5a500a6829d6c561f239059c54dc6ee74de5c29952/uv_build-0.12.22.tar.gz"
+    sha256 "f1190311b52783aa75f60ed72fc8f9feafd95c3fcb0def408089e19563c36db2"
+  end
+
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  deny_network_access!
+
+  def fetch
+    %w[jiter uv-build].each do |name|
+      resource(name).stage { system "cargo", "fetch", "--locked" }
+    end
+  end
+
   def install
-    virtualenv_install_with_resources
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    ENV["GRPC_PYTHON_BUILD_EXT_COMPILER_JOBS"] = ENV.make_jobs.to_s
+    venv = virtualenv_create(libexec, "python3.13")
+    ENV.prepend_path "PATH", libexec/"bin"
+    build_resources = %w[
+      setuptools flit-core poetry-core packaging calver cython wheel tomlkit pathspec pluggy
+      trove-classifiers vcs-versioning setuptools-scm hatchling hatch-vcs hatch-fancy-pypi-readme
+      expandvars pdm-backend pkgconfig markupsafe jinja2 dunamai uv-dynamic-versioning uv-build
+    ]
+    build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
