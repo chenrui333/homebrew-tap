@@ -52,7 +52,13 @@ function validate(overrides = {}) {
 test("queued no-bottles publication succeeds without mutations after the PR merges", () => {
   const result = validate({state: "closed", merged_at: "2026-10-03T15:48:09Z"})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.equal(result.output, "publish=false\nno_bottles=true\n")
+  assert.equal(result.output, "publish=false\nmerged=true\n")
+})
+
+test("queued bottle publication succeeds without mutations after the PR merges", () => {
+  const result = validate({state: "closed", merged_at: "2026-10-03T19:03:05Z", labels: [{name: "pr-pull"}, {name: "CI-published-bottle-commits"}]})
+  assert.equal(result.status, 0, result.stderr + result.stdout)
+  assert.equal(result.output, "publish=false\nmerged=true\n")
 })
 
 test("open no-bottles publication remains a no-op", () => {
@@ -63,7 +69,6 @@ test("open no-bottles publication remains a no-op", () => {
 
 for (const [name, overrides] of [
   ["closed unmerged PR", {state: "closed"}],
-  ["merged PR requiring bottles", {state: "closed", merged_at: "2026-10-03T15:48:09Z", labels: [{name: "pr-pull"}]}],
   ["merged fork", {state: "closed", merged_at: "2026-10-03T15:48:09Z", head: {ref: "example", sha: "a".repeat(40), repo: {full_name: "other/tap"}}}],
   ["merged PR targeting another base", {state: "closed", merged_at: "2026-10-03T15:48:09Z", base: {ref: "other"}}],
   ["draft PR", {draft: true}],

@@ -67,12 +67,14 @@ jobs:
 
           if [[ "$state" != "open" ]]; then
             merged="$(jq -r '.merged_at != null' <<< "$pr_data")"
-            if [[ "$state" != "closed" || "$merged" != "true" ]] ||
-               ! grep -Fxq 'CI-no-bottles' <<< "$labels"; then
-              echo "PR must be open unless a no-bottles PR has already merged."
+            if [[ "$state" != "closed" || "$merged" != "true" ]]; then
+              echo "PR must be open unless it has already merged."
               exit 1
             fi
-            echo "No-bottles PR merged while publication was queued; nothing to publish."
+            echo "PR merged while publication was queued; nothing to publish."
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "merged=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
           if grep -Fxq 'CI-no-bottles' <<< "$labels"; then
@@ -118,7 +120,7 @@ jobs:
           fi
 
       - name: Reconcile published bottle label
-        if: steps.pr-details.outputs.publish == 'false' && steps.pr-details.outputs.no_bottles != 'true'
+        if: steps.pr-details.outputs.publish == 'false' && steps.pr-details.outputs.no_bottles != 'true' && steps.pr-details.outputs.merged != 'true'
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           BOT_TOKEN: ${{ github.token }}
