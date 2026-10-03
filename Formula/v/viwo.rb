@@ -4,6 +4,7 @@ class Viwo < Formula
   url "https://github.com/OverseedAI/viwo/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "1c216ceb05deb428500b89a34f2102df74c1806cf54bfefefce1b63bae1751cb"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -14,7 +15,12 @@ class Viwo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "671f2ac3a6d293c689d3a2a1a2e22578266a5f62c3e2f3432879afb28d2e3437"
   end
 
-  depends_on "chenrui333/tap/bun" => :build
+  depends_on "homebrew/core/bun" => :build
+
+  on_linux do
+    # Bun-compiled executables link ICU dynamically on Linux.
+    depends_on "icu4c@78"
+  end
 
   def install
     Dir.chdir("packages/cli") do
