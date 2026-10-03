@@ -1,8 +1,8 @@
 class Vortix < Formula
   desc "Terminal UI for WireGuard and OpenVPN with real-time telemetry"
   homepage "https://github.com/Harry-kp/vortix"
-  url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "816a4b957c843f9eb9025124f0d4a400167c4fec6fcdd2d09855b5e674e1f244"
+  url "https://github.com/Harry-kp/vortix/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "7a1b14c3c8902270eeef8ed4308d7600643ba7121cba73b9aa5b00bd8e9a35fe"
   license "MIT"
   head "https://github.com/Harry-kp/vortix.git", branch: "main"
 
