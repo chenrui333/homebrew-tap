@@ -1,0 +1,37 @@
+Formula/c/cartography.rb
+  s_6e5d1e6427e031::t_9d287ede6fdb4c 1826
+  s_6e5d1e6427e031::t_b01042eb4a8ab3 29
+  s_6e5d1e6427e031::t_6a34090dd72894 1804
+  s_6e5d1e6427e031::t_c4f9126c486997 1792-1793,1795-1797
+  s_6e5d1e6427e031::t_36112d12e1f047 21,27,35-39,45-118,1802-1803,1805-1808,1810-1824,1827-1831
+  s_6e5d1e6427e031::t_e36da96976f8fa 40-44,1809
+  s_c7b0f71fa0ff85::t_d686328d6e206f 9,31-34,1799
+  s_6e5d1e6427e031::t_62eb3dd0b8a546 1794
+  s_6e5d1e6427e031::t_51c55dd5d7377b 1790-1791
+  s_6e5d1e6427e031::t_c11a4493b35ea4 1801,1825
+  s_c7b0f71fa0ff85::t_85a1b35ee3cffe 30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d9049a307203081d0a74c4b192301a5f914d08bc",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    },
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
