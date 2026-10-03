@@ -11,13 +11,10 @@ class Dtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d08a2dc5b24af9bcc2b9fc551628246d68a2bc86f8dee1614e7c7c1fc420b938"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afcc60acb7a28815fb32558e8ed3c05f1679e5101deb602ad450f924bf744763"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4f32112598276a71efc48290090e67e7cf44602730ba3086b8f11262b6dcb12"
-    sha256 cellar: :any_skip_relocation, sequoia:       "a4ddf9c379ae89747d17573ba55ddcb8bd880e958522fc7d0639a795d1503a22"
-    sha256 cellar: :any,                 arm64_linux:   "4f8575a1fbbd8ba23ea71ceb5726004444ef19cf9edcc1b8139d2a25e37391a1"
-    sha256 cellar: :any,                 x86_64_linux:  "3be36e60f052d847f268fcdef0d46fcf00a6487c60af6caca3b99ae61d187e42"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f63f696388221bdf70e15f1dddb82efe83b101af3ae61f76de573f4e0ce0058"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1d17ac26b3bd1f2247dfe54399e8ee3948f71c9f0e968da1548f89b87a55f99"
+    sha256 cellar: :any,                 arm64_linux:   "ceadb74354133fcae17837477f84486414bb1a1c0cd8a0c2df72716c75120e7f"
+    sha256 cellar: :any,                 x86_64_linux:  "8bb99d6493d15e802ea7ea400ce44ed1d353e2cdc02deaf0b289f59655fbac88"
   end
 
   depends_on "pkgconf" => :build
