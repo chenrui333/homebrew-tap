@@ -1,0 +1,20 @@
+Formula/c/codemachine.rb
+  s_c7b0f71fa0ff85::t_3b482d9ea669a9 7,18
+  s_c7b0f71fa0ff85::t_04f50767125995 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "95c6ab37d9caebb23a7a21e2880a1fbbbe441c18",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
