@@ -1,20 +1,20 @@
 class Codemachine < Formula
   desc "CLI-native orchestration engine for autonomous coding workflows"
-  homepage "https://codemachine.co/"
+  homepage "https://github.com/moazbuilds/CodeMachine-CLI"
   url "https://registry.npmjs.org/codemachine/-/codemachine-0.8.0.tgz"
   sha256 "13b5b78d7e33e1d6733e8dce05e5b4d41173db44465f6ca559172b517890bcdd"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "adb9560f22748b73256c3fedf967eb1b28442446199ad2d5161f0581f07bd531"
-    sha256                               arm64_sequoia: "adb9560f22748b73256c3fedf967eb1b28442446199ad2d5161f0581f07bd531"
-    sha256                               arm64_sonoma:  "adb9560f22748b73256c3fedf967eb1b28442446199ad2d5161f0581f07bd531"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "299b78fca3b7450098e48db277b0fe5baef9eedff5f4ed860c705e431a73778b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3563da1d70eaa31fe446995d1b85472e1dad3de43d7b8ee6b1910b007bca8bf"
+    sha256                               arm64_tahoe:   "078eaba2c544eccbb62834be6aa5ee0624adfdfb072c6a388670b15611f41e08"
+    sha256                               arm64_sequoia: "078eaba2c544eccbb62834be6aa5ee0624adfdfb072c6a388670b15611f41e08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "122a5c8fca0f0e480a7dd409aba07881d35008ba210776b710205b190d794f7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bba1869fb27f9f7195eb3a050570b6e4a7f3e1c55697388d588c27bf504f153"
   end
 
-  depends_on "chenrui333/tap/bun"
+  depends_on "homebrew/core/bun"
   depends_on "node"
 
   def install
