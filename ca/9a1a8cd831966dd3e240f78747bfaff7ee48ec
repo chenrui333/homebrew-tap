@@ -1,0 +1,21 @@
+.github/scripts/publish-validation.test.js
+  s_c7b0f71fa0ff85::t_a1b322fe4cbeb0 55-61
+.github/workflows/publish.yml
+  s_c7b0f71fa0ff85::t_f05bb965dbf540 70-71,74-77,123
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ca9a1a8cd831966dd3e240f78747bfaff7ee48ec",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
