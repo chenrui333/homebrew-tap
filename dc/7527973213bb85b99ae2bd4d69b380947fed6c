@@ -1,0 +1,19 @@
+Formula/h/hauler.rb
+  s_c7b0f71fa0ff85::t_cc0c62445cf57e 19-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dc7527973213bb85b99ae2bd4d69b380947fed6c",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
