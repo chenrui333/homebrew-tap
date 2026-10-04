@@ -16,11 +16,18 @@ class Jaggr < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/jaggr -version 2>&1")
+    assert_match "invalid input", pipe_output("#{bin}/jaggr @count", "not-json\n", 1)
   end
 end
