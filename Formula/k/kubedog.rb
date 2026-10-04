@@ -21,13 +21,17 @@ class Kubedog < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/werf/kubedog.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubedog"
 
-    generate_completions_from_executable(
-      bin/"kubedog", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
-    )
+    generate_completions_from_executable(bin/"kubedog", shell_parameter_format: :cobra)
   end
 
   test do
