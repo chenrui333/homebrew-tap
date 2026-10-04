@@ -1,0 +1,14 @@
+Formula/m/mdsf.rb
+  h_9df9c32c3f321d 22-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "865ffe36d63e8f81ecf288b0ae63579f561339af",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
