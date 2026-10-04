@@ -8,14 +8,20 @@ class Hazelnut < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64b49dc2dc5bf8206503a6a09b6333f9e5097558d1c4d8d222aea7dd0d8dc6f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0280b18a0b81a0dc51953766d6093069d4c5183bb2fd61fc3b73ab683862f5a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a295c1c0925bfc42badb89f585e866c99222b85ea18711a0cf6004aed0246d13"
-    sha256 cellar: :any,                 arm64_linux:   "9c4eea378b047b4b2e29c44e49c96c05ce1ce0a28b00ab3eaa4ed99d007e7e67"
-    sha256 cellar: :any,                 x86_64_linux:  "e551f18d28923948c03b0fa067b0ffd1651f8672268c401d60b63f4b49da005c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4c0db1c1f6f516fa662ca88f3e095ade6c3ae7738e359b2ad23de17e8766a1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb254f6f9fb905a1efc9d1f124b85cb1a84d96ed3bbc754ea4b0c56e84ac46c2"
+    sha256 cellar: :any,                 arm64_linux:   "509d59a84683251529de6d0fcea80b48a289877369f7c0cbaa09e28c86481f4c"
+    sha256 cellar: :any,                 x86_64_linux:  "1ae589f289cde0ca55673e1a1a33d3b4a8d4ff468dd4a487d0b58c90046c6230"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
