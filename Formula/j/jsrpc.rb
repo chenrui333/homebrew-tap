@@ -17,6 +17,13 @@ class Jsrpc < Formula
 
   depends_on "go" => :build
 
+  # The only interface is an HTTP server; the test queries it over a loopback socket.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
