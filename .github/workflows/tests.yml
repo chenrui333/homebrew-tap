@@ -99,5 +99,6 @@ jobs:
         shell: bash
         run: |
           if [[ -f "$AUDIT_DIR/results.tsv" ]]; then
+            cat "$AUDIT_DIR/results.tsv"
             cat "$AUDIT_DIR/results.tsv" >> "$GITHUB_STEP_SUMMARY"
           fi
