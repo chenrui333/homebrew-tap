@@ -16,6 +16,12 @@ class Logira < Formula
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"logira"), "./cmd/logira"
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"logirad"), "./cmd/logirad"
@@ -28,5 +34,10 @@ class Logira < Formula
     output, status = Open3.capture2e(bin/"logira", "--not-a-real-option")
     refute_predicate status, :success?
     assert_match "not-a-real-option", output
+
+    ENV["LOGIRA_HOME"] = testpath/"logira"
+    assert_equal "[]\n", shell_output("#{bin}/logira runs --json")
+    assert_match "(no runs)", shell_output("#{bin}/logira runs")
+    assert_predicate testpath/"logira/runs", :directory?
   end
 end
