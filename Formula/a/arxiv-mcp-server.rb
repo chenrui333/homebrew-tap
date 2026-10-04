@@ -3,16 +3,16 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/cc/f3/3505d55996fb6c42dd67e477c16f644cf4180483638837386bda1a744802/arxiv_mcp_server-0.7.3.tar.gz"
-  sha256 "50e09a95b4f930176f6965687a5bc158e1d8cbf07bb7122c384acb3f0f445539"
+  url "https://files.pythonhosted.org/packages/64/37/f6026a41b99d85306de862d18618382a6d2831886d9ee2e6855824747c1b/arxiv_mcp_server-0.8.0.tar.gz"
+  sha256 "75243f9625df65988b21243320108e887151087c91f839a9f18b32ca86f61c18"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77069e1edf463e597bda04ffed7ea897723df6b5d2949c88a28f1c9baf8f278c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bdf2a6b9e36b0cacf63e7940c68afcabbdb7743a15b22da9a7c0a5042bb7532"
-    sha256 cellar: :any,                 arm64_linux:   "6fff6f7ef79624e22a77ad2d9995abb0b75b9ac6ed286749b3687ee668e601af"
-    sha256 cellar: :any,                 x86_64_linux:  "63654a44ddbfc489decb1e28ec5bcbcf39c7694ef2db8b917914a48cb659f7fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30a60fe21aa0c218ea2e24b8f906667173a85b7b69a223fa19bd6eb71f522761"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4ea5f6d0e58f97a66bb30c830d7b01d00a16cd55b01e3b2c0c6b6f8ef72ce56"
+    sha256 cellar: :any,                 arm64_linux:   "795580c8cd26eaf2b40afd880175f94eb512374d35dc66cb32ab6d561e15fe5f"
+    sha256 cellar: :any,                 x86_64_linux:  "85272d11ff7f1fe409243f30784b2aa272ced5855d7f7aab86da7879dff10aa7"
   end
 
   depends_on "cython" => :build
@@ -159,8 +159,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mcp" do
@@ -219,8 +219,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz"
-    sha256 "a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+    url "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz"
+    sha256 "f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"
   end
 
   resource "python-multipart" do
