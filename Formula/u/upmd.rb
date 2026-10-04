@@ -6,6 +6,14 @@ class Upmd < Formula
   license "MIT"
   head "https://github.com/rezigned/upmd.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0cdf4e713d667da03f9a6cb4b91f9db75e85db7d925a6328ed59d9601357f6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16f6b04bec61164e668592863113de277e177123e36a9db549e6a18bbbdc34cd"
+    sha256 cellar: :any,                 arm64_linux:   "3b14afe06f226f352202571b6de73bd969514a8532cdb57e152c78b2355db3cb"
+    sha256 cellar: :any,                 x86_64_linux:  "20973d88d66c32fa183748997de4fedc4447a2ffa9e3034f813159b1b19cb04d"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
