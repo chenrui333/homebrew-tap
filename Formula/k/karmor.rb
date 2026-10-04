@@ -17,13 +17,21 @@ class Karmor < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
       -X github.com/kubearmor/kubearmor-client/selfupdate.GitSummary=#{version}
       -X github.com/kubearmor/kubearmor-client/selfupdate.BuildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:)
+    # TODO: Remove http2legacy tag when upstream bumps golang.org/x/net to >= v0.55.0 for Go 1.27
+    # ref: https://github.com/grpc/grpc-go/issues/9206
+    system "go", "build", *std_go_args(ldflags:, tags: "http2legacy")
 
     generate_completions_from_executable(bin/"karmor", shell_parameter_format: :cobra)
   end
