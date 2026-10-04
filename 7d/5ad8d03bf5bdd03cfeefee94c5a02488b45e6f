@@ -1,0 +1,19 @@
+Formula/h/hapi.rb
+  s_c7b0f71fa0ff85::t_58cd059de6dd49 4-7,17-40,43-74,80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7d5ad8d03bf5bdd03cfeefee94c5a02488b45e6f",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
