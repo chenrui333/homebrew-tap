@@ -1,0 +1,14 @@
+Formula/k/kctx.rb
+  h_9df9c32c3f321d 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "863ed6f0e688749e788c7819280a83ef91cb3d6f",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
