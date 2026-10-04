@@ -27,6 +27,12 @@ jobs:
       HOMEBREW_NO_INSTALL_FROM_API: 1
       HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        with:
+          core: true
+          cask: false
+
       - name: Validate exact audit targets
         env:
           AUDIT_TARGETS: ${{ inputs.targets }}
@@ -55,13 +61,9 @@ jobs:
             fs.mkdirSync(process.env.AUDIT_DIR, {recursive: true});
             fs.writeFileSync(path.join(process.env.AUDIT_DIR, "targets.tsv"), rows.join(""));
 
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-        with:
-          core: true
-          cask: false
-
       - name: Audit exact formula sources strictly
+        env:
+          HOMEBREW_NO_INSTALL_FROM_API: 1
         shell: bash
         run: |
           set -euo pipefail
