@@ -16,11 +16,28 @@ class Localports < Formula
 
   depends_on "rust" => :build
 
+  uses_from_macos "lsof"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system bin/"localports"
+    # The sandbox exposes no listening sockets to `lsof -i`, so feed a known listener.
+    (testpath/"bin/lsof").write <<~SH
+      #!/bin/sh
+      echo "COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME"
+      echo "node 4194304 user 20u IPv4 0x1234567890 0t0 TCP *:8080 (LISTEN)"
+    SH
+    chmod 0755, testpath/"bin/lsof"
+    ENV.prepend_path "PATH", testpath/"bin"
+
+    assert_match(/8080 \(TCP\) \| 4194304 \| unknown/, shell_output(bin/"localports"))
   end
 end
