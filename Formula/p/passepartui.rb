@@ -21,6 +21,12 @@ class Passepartui < Formula
   depends_on "libgpg-error"
   depends_on "pass"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
