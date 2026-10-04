@@ -27,12 +27,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PR: ${{ inputs.pr_number || github.event.pull_request.number }}
+      PUBLISHED_HEAD_CONTEXT: homebrew-tap/published-bottle-head
     permissions:
       actions: read
       contents: write
-      issues: write
       pull-requests: write
       packages: write
+      statuses: write
     steps:
       - name: Validate PR
         id: pr-details
@@ -97,23 +98,33 @@ jobs:
             echo "base_branch=$base_branch"
           } >> "$GITHUB_OUTPUT"
 
-          published_marker="$({
-            gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR/comments"
-          } | jq -c --arg owner "$GITHUB_REPOSITORY_OWNER" '
-            [.[][] | select(.user.login == "github-actions[bot]" or .user.login == $owner) |
-              select((.body // "") | test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
-              {author: .user.login,
-               sha: (.body | capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha)}] |
-              last // {}')"
-          published_head="$(jq -r '.sha // empty' <<< "$published_marker")"
-          marker_author="$(jq -r '.author // empty' <<< "$published_marker")"
+          published_status="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/commits/$expected_head/statuses" | \
+            jq -r --arg context "$PUBLISHED_HEAD_CONTEXT" '
+              [.[][] | select(.context == $context and .creator.login == "github-actions[bot]")] |
+              first | .state == "success"')"
 
-          if [[ "$published_head" == "$expected_head" ]]; then
+          # Legacy PRs recorded the published head in a comment; reconcile migrates it to the commit status.
+          legacy_marker_author=""
+          if [[ "$published_status" != true ]]; then
+            legacy_marker="$({
+              gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR/comments"
+            } | jq -c --arg owner "$GITHUB_REPOSITORY_OWNER" '
+              [.[][] | select(.user.login == "github-actions[bot]" or .user.login == $owner) |
+                select((.body // "") | test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
+                {author: .user.login,
+                 sha: (.body | capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha)}] |
+                last // {}')"
+            if [[ "$(jq -r '.sha // empty' <<< "$legacy_marker")" == "$expected_head" ]]; then
+              legacy_marker_author="$(jq -r '.author' <<< "$legacy_marker")"
+            fi
+          fi
+
+          if [[ "$published_status" == true || -n "$legacy_marker_author" ]]; then
             echo "Published bottle commit already matches the current PR head; publication is a no-op."
             {
               echo "publish=false"
-              echo "published_head=$published_head"
-              echo "marker_author=$marker_author"
+              echo "published_head=$expected_head"
+              echo "legacy_marker_author=$legacy_marker_author"
             } >> "$GITHUB_OUTPUT"
           else
             echo "publish=true" >> "$GITHUB_OUTPUT"
@@ -125,7 +136,7 @@ jobs:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           BOT_TOKEN: ${{ github.token }}
           VERIFIED_PUBLISHED_HEAD: ${{ steps.pr-details.outputs.published_head }}
-          MARKER_AUTHOR: ${{ steps.pr-details.outputs.marker_author }}
+          LEGACY_MARKER_AUTHOR: ${{ steps.pr-details.outputs.legacy_marker_author }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
         run: |
           set -euo pipefail
@@ -140,17 +151,18 @@ jobs:
                 "$current_head_repo" != "$GITHUB_REPOSITORY" ||
                 "$current_head_branch" != "$HEAD_BRANCH" ||
                 -z "$VERIFIED_PUBLISHED_HEAD" || "$current_head_sha" != "$VERIFIED_PUBLISHED_HEAD" ]]; then
-            echo "::error::Refusing to mark bottles published because the current PR head no longer matches the verified marker."
+            echo "::error::Refusing to mark bottles published because the current PR head no longer matches the verified published head."
             exit 1
           fi
 
-          if [[ "$MARKER_AUTHOR" == "$GITHUB_REPOSITORY_OWNER" ]]; then
-            echo "Converting a verified legacy owner-authored marker to the GitHub Actions bot identity."
-            GH_TOKEN="$BOT_TOKEN" gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" \
-              --body "<!-- homebrew-tap: published-bottle-head $VERIFIED_PUBLISHED_HEAD -->"
-          elif [[ "$MARKER_AUTHOR" != "github-actions[bot]" ]]; then
-            echo "::error::Refusing an unrecognized published-bottle marker author: $MARKER_AUTHOR"
-            exit 1
+          if [[ -n "$LEGACY_MARKER_AUTHOR" ]]; then
+            if [[ "$LEGACY_MARKER_AUTHOR" != "github-actions[bot]" && "$LEGACY_MARKER_AUTHOR" != "$GITHUB_REPOSITORY_OWNER" ]]; then
+              echo "::error::Refusing an unrecognized published-bottle marker author: $LEGACY_MARKER_AUTHOR"
+              exit 1
+            fi
+            echo "Migrating the verified legacy comment marker from $LEGACY_MARKER_AUTHOR to a commit status."
+            GH_TOKEN="$BOT_TOKEN" gh api --method POST --silent "repos/$GITHUB_REPOSITORY/statuses/$VERIFIED_PUBLISHED_HEAD" \
+              -f state=success -f context="$PUBLISHED_HEAD_CONTEXT" -f description="Bottle commit published"
           fi
 
           gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label CI-published-bottle-commits
@@ -346,5 +358,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
         run: >-
-          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY"
-          --body "<!-- homebrew-tap: published-bottle-head $PUBLISHED_HEAD -->"
+          gh api --method POST --silent "repos/$GITHUB_REPOSITORY/statuses/$PUBLISHED_HEAD"
+          -f state=success -f context="$PUBLISHED_HEAD_CONTEXT" -f description="Bottle commit published"

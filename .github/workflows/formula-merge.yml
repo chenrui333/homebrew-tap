@@ -26,8 +26,8 @@ on:
 permissions:
   checks: read
   contents: write
-  issues: read
   pull-requests: write
+  statuses: read
 
 concurrency:
   group: formula-merge-${{ github.event.pull_request.head.ref || github.event.workflow_run.head_branch || github.run_id }}
@@ -72,6 +72,7 @@ jobs:
       PR_NUMBER: ${{ inputs.pr_number || github.event.pull_request.number }}
       EVENT_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.workflow_run.head_sha }}
       EVENT_HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+      PUBLISHED_HEAD_CONTEXT: homebrew-tap/published-bottle-head
     steps:
       - name: Resolve and validate formula PR
         id: validate
@@ -137,21 +138,21 @@ jobs:
             exit 0
           fi
 
-          published_head=""
           if [[ "$no_bottles" != true ]]; then
+            published=false
             attempt=0
             while (( attempt < 12 )); do
               attempt=$((attempt + 1))
-              published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" | \
-                jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
-                  select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
-                  capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] | last // empty')"
-              [[ "$published_head" == "$head_sha" ]] && break
+              published="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/commits/$head_sha/statuses" | \
+                jq -r --arg context "$PUBLISHED_HEAD_CONTEXT" '
+                  [.[][] | select(.context == $context and .creator.login == "github-actions[bot]")] |
+                  first | .state == "success"')"
+              [[ "$published" == true ]] && break
               sleep 5
             done
 
-            if [[ "$published_head" != "$head_sha" ]]; then
-              echo "No published-bottle marker matches the current PR head; skipping."
+            if [[ "$published" != true ]]; then
+              echo "No published-bottle status matches the current PR head; skipping."
               exit 0
             fi
           fi
@@ -239,10 +240,10 @@ jobs:
           files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" | \
             jq -r '[.[][] | .filename] | unique | .[]')"
           file_count="$(awk 'NF { count++ } END { print count + 0 }' <<< "$files")"
-          published_head="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" | \
-            jq -r '[.[][] | select(.user.login == "github-actions[bot]") | .body // "" |
-              select(test("^<!-- homebrew-tap: published-bottle-head [0-9a-f]{40} -->$")) |
-              capture("^<!-- homebrew-tap: published-bottle-head (?<sha>[0-9a-f]{40}) -->$").sha] | last // empty')"
+          published="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/commits/$EXPECTED_HEAD_SHA/statuses" | \
+            jq -r --arg context "$PUBLISHED_HEAD_CONTEXT" '
+              [.[][] | select(.context == $context and .creator.login == "github-actions[bot]")] |
+              first | .state == "success"')"
           if [[ "$state" != open || "$draft" != false || "$base_branch" != main ||
                 "$head_repo" != "$GITHUB_REPOSITORY" ||
                 "$current_head" != "$EXPECTED_HEAD_SHA" ||
@@ -251,7 +252,7 @@ jobs:
              ! grep -Fxq 'pr-pull' <<< "$labels" ||
              ! grep -Fxq 'CI-no-fail-fast' <<< "$labels" ||
              { [[ "$no_bottles" != true ]] &&
-               { [[ "$published_head" != "$EXPECTED_HEAD_SHA" ]] ||
+               { [[ "$published" != true ]] ||
                  ! grep -Fxq 'CI-published-bottle-commits' <<< "$labels"; }; }; then
             echo "PR changed or became ineligible after CI; refusing to enable auto-merge."
             exit 0

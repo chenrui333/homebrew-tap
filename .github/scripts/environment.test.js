@@ -11,17 +11,15 @@ async function runEnvironment({
   formulaDetect = {testing_formulae: "watchfiles", added_formulae: "", deleted_formulae: ""},
   labels = [],
   headSha = "a".repeat(40),
-  publishedBottleHead = null,
+  commitStatuses = {},
   headRef = "change-formula",
   headRepository = repository,
 }) {
   const outputs = new Map()
   const apiCalls = []
-  const listComments = async () => {
-    apiCalls.push("issues.listComments")
-    return publishedBottleHead
-      ? [{user: {login: "github-actions[bot]"}, body: `<!-- homebrew-tap: published-bottle-head ${publishedBottleHead} -->`}]
-      : []
+  const listCommitStatusesForRef = async ({ref}) => {
+    apiCalls.push("repos.listCommitStatusesForRef")
+    return commitStatuses[ref] ?? []
   }
   const github = {
     rest: {
@@ -35,10 +33,10 @@ async function runEnvironment({
           return {data: formulaFile ? [{filename: formulaFile}] : []}
         },
       },
-      issues: {listComments},
+      repos: {listCommitStatusesForRef},
     },
-    paginate: async (method) => {
-      if (method === listComments) return listComments()
+    paginate: async (method, params) => {
+      if (method === listCommitStatusesForRef) return listCommitStatusesForRef(params)
       apiCalls.push("paginate")
       return formulaFile ? [{filename: formulaFile}] : []
     },
@@ -159,28 +157,71 @@ test("push keeps the non-PR full formula matrix behavior", async () => {
   ])
 })
 
-test("published bottle commits make a pull request syntax-only", async () => {
-  const headSha = "a".repeat(40)
+function publishedStatus({state = "success", login = "github-actions[bot]", context = "homebrew-tap/published-bottle-head"} = {}) {
+  return {context, state, creator: {login}}
+}
+
+async function publishedBottleRun({headSha = "a".repeat(40), commitStatuses}) {
   const {outputs, apiCalls} = await runEnvironment({
     formulaFile: "Formula/w/watchfiles.rb",
     labels: ["CI-published-bottle-commits"],
     headSha,
-    publishedBottleHead: headSha,
+    commitStatuses,
   })
+  return {syntaxOnly: outputs.get("syntax-only"), apiCalls}
+}
 
-  assert.equal(outputs.get("syntax-only"), "true")
-  assert.equal(apiCalls.includes("issues.listComments"), true)
+test("a published-bottle status on the pull request head makes it syntax-only", async () => {
+  const headSha = "a".repeat(40)
+  const {syntaxOnly, apiCalls} = await publishedBottleRun({headSha, commitStatuses: {[headSha]: [publishedStatus()]}})
+
+  assert.equal(syntaxOnly, "true")
+  assert.equal(apiCalls.includes("repos.listCommitStatusesForRef"), true)
 })
 
-test("stale published bottle commits do not skip a newer pull request head", async () => {
-  const {outputs} = await runEnvironment({
-    formulaFile: "Formula/w/watchfiles.rb",
-    labels: ["CI-published-bottle-commits"],
+test("a published-bottle status on an older commit does not skip a newer pull request head", async () => {
+  const {syntaxOnly} = await publishedBottleRun({
     headSha: "b".repeat(40),
-    publishedBottleHead: "a".repeat(40),
+    commitStatuses: {["a".repeat(40)]: [publishedStatus()]},
+  })
+
+  assert.equal(syntaxOnly, "false")
+})
+
+for (const [name, status] of [
+  ["another creator", publishedStatus({login: "chenrui333"})],
+  ["a pending state", publishedStatus({state: "pending"})],
+  ["a failure state", publishedStatus({state: "failure"})],
+  ["another context", publishedStatus({context: "homebrew-tap/other"})],
+]) {
+  test(`a published-bottle status with ${name} does not skip the pull request head`, async () => {
+    const headSha = "a".repeat(40)
+    const {syntaxOnly} = await publishedBottleRun({headSha, commitStatuses: {[headSha]: [status]}})
+
+    assert.equal(syntaxOnly, "false")
+  })
+}
+
+test("a newer non-success bot status supersedes an older published-bottle status", async () => {
+  const headSha = "a".repeat(40)
+  const {syntaxOnly} = await publishedBottleRun({
+    headSha,
+    commitStatuses: {[headSha]: [publishedStatus({state: "error"}), publishedStatus()]},
+  })
+
+  assert.equal(syntaxOnly, "false")
+})
+
+test("a published-bottle status is ignored without the published-bottle label", async () => {
+  const headSha = "a".repeat(40)
+  const {outputs, apiCalls} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    headSha,
+    commitStatuses: {[headSha]: [publishedStatus()]},
   })
 
   assert.equal(outputs.get("syntax-only"), "false")
+  assert.equal(apiCalls.includes("repos.listCommitStatusesForRef"), false)
 })
 
 test("ordinary pull requests still run the formula build path", async () => {
