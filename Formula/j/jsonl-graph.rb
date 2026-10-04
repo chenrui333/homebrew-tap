@@ -16,11 +16,18 @@ class JsonlGraph < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace with a version assertion when available.
     (testpath/"test.jsonl").write <<~JSON
       {
         "to": "Pod:nginx-6799fc88d8-j4vv8",
@@ -37,6 +44,8 @@ class JsonlGraph < Formula
     JSON
 
     test_file = (testpath/"test.jsonl").read
-    assert_match "Pod:nginx-6799fc88d8-j4vv8", pipe_output("#{bin}/jsonl-graph", test_file)
+    output = pipe_output(bin/"jsonl-graph", test_file)
+    assert_match "Pod:nginx-6799fc88d8-j4vv8", output
+    assert_match '"ReplicaSet:nginx-6799fc88d8" -> "Pod:nginx-6799fc88d8-j4vv8"', output
   end
 end
