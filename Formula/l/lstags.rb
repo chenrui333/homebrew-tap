@@ -23,6 +23,12 @@ class Lstags < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     inreplace "version.go", "CURRENT", version.to_s
     system "go", "build", *std_go_args(ldflags: "-s -w")
@@ -31,7 +37,14 @@ class Lstags < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/lstags --version")
 
-    output = shell_output("#{bin}/lstags --dry-run ghcr.io/linuxcontainers/alpine 2>&1")
-    assert_match "FETCHED ghcr.io/linuxcontainers/alpine", output
+    (testpath/"lstags.yaml").write <<~YAML
+      lstags:
+        registries: []
+    YAML
+    output = shell_output("#{bin}/lstags -f lstags.yaml 2>&1", 1)
+    assert_match "no repos could be loaded from: lstags.yaml", output
+
+    output = shell_output("#{bin}/lstags -f lstags.yaml alpine 2>&1", 1)
+    assert_match "Load repositories from YAML or from CLI args", output
   end
 end
