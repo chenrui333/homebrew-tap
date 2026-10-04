@@ -1,0 +1,14 @@
+Formula/j/jplot.rb
+  h_9df9c32c3f321d 21-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "09f5f2487f7327631d93b8f75de3a38096755490",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
