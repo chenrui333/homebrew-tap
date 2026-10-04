@@ -6,6 +6,14 @@ class Numr < Formula
   license "MIT"
   head "https://github.com/nasedkinpv/numr.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c7c5b51fb3d45cb55df6980be7c3800b280246c00b11ae3b2b5771ad8dc1a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf227ab7ac5be288f177a205dfead6d13c8e126f52867292720870dca4f048ef"
+    sha256 cellar: :any,                 arm64_linux:   "681c459b50dad656b1b8c26155ad4b6aeb6ba408fa8cc60c0af723a6a41120dc"
+    sha256 cellar: :any,                 x86_64_linux:  "dbdcf53d587530dbe1a1d1a18d60319549544cfaa8367e30ac859ce65c2b0d27"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
