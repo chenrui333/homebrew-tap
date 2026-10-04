@@ -29,7 +29,7 @@ class ShadcnUiMcpServer < Formula
 
     assert_match version.to_s, shell_output("#{bin}/shadcn-mcp --version")
 
-    Open3.popen3(bin/"shadcn-mcp", "--mode", "stdio") do |stdin, stdout, stderr, wait_thr|
+    Open3.popen3(bin/"shadcn-mcp", "--mode", "stdio") do |stdin, stdout, stderr, wait_thread|
       errors = Thread.new { stderr.read }
       response_for = lambda do |id|
         loop do
@@ -52,8 +52,8 @@ class ShadcnUiMcpServer < Formula
         end
       ensure
         stdin.close
-        Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
-        wait_thr.value
+        Process.kill("TERM", wait_thread.pid) if wait_thread.alive?
+        wait_thread.value
       end
       assert_match "No GitHub API key provided. Rate limited to 60 requests/hour", errors.value
     end
