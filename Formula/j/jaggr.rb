@@ -8,10 +8,11 @@ class Jaggr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3dbf22d1b627f10029b65a033681152f8761d1f14627e41066ac6745dbab5d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0391e19e39995633dbe2c8de204cb41f6d562cb89dcbae83b309ae718b80f698"
-    sha256 cellar: :any_skip_relocation, ventura:       "5a3f081945d36e6094dd061b2c333386e23023dfd60f16f135155af46761cca9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e38bc778f62087c914f7123be4f8ebe2827ba3473281c066aa7db7339cb7ee9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8308d1b6e54cd996ee0229d48bbaa7d9ed6a4bfacfe183331d0081dbfa23d4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8308d1b6e54cd996ee0229d48bbaa7d9ed6a4bfacfe183331d0081dbfa23d4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6778aed748b2749c285ad578a49bff333405e54e70d5cf76f88b6e0ecf8f5e1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b370e88d551f09a8bb06e58e5b4d93640459ab5511825941425b34dc89b798f9"
   end
 
   depends_on "go" => :build
