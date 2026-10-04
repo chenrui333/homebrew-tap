@@ -1,0 +1,14 @@
+Formula/i/intentrace.rb
+  h_9df9c32c3f321d 18-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f8b20b34cd80a986400f347c49e1d2ce696f5e6",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
