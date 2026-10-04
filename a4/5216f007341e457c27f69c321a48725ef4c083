@@ -1,0 +1,14 @@
+Formula/m/mcman.rb
+  h_9df9c32c3f321d 19-21,24-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a45216f007341e457c27f69c321a48725ef4c083",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
