@@ -16,6 +16,12 @@ class KubeRoleGen < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # patch version
     inreplace "cmd/kube-role-gen/main.go", "0.0.6", version.to_s
