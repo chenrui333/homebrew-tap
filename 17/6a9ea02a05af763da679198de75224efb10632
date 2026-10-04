@@ -1,0 +1,19 @@
+Formula/m/ministack.rb
+  s_c7b0f71fa0ff85::t_21e9d97b2f41ec 6-7,22-122,203-205,212-238
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "176a9ea02a05af763da679198de75224efb10632",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
