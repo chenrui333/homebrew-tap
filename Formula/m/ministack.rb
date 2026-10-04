@@ -3,21 +3,122 @@ class Ministack < Formula
 
   desc "Local AWS service emulator and LocalStack replacement"
   homepage "https://github.com/ministackorg/ministack"
-  url "https://files.pythonhosted.org/packages/44/e0/a494b7e26383a6eb4ad9b7fc5f7675c7a47f5da6adc99a71d31e376c2de2/ministack-1.5.20.tar.gz"
-  sha256 "0140791e68ed3f17b5bfa3fc2206537077ac4d2913f3feb697ba2b9a92ec3208"
+  url "https://files.pythonhosted.org/packages/6a/7e/ec22d0ee52d315cf69d312ab6c36c115c528765a85b1da298900388be5af/ministack-1.5.21.tar.gz"
+  sha256 "1f07e45ccb0c79e9a6d8e3ab4a7676c47078469b07f8f4f6d06ca9309f289e0e"
   license "MIT"
   head "https://github.com/ministackorg/ministack.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48c7200da9de699ca2a8140d21a55ce817488fe2c2cb48bf1afa5057fb731f9d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b9afd8f7f402ca263f9e0237dfd6718ac2d285ff64e8fbc9715c63519f3ecd9"
-    sha256 cellar: :any,                 arm64_linux:   "1063cb77617ff7db338f7b6d6011b9338f420dadc6d9e2c200e30bdbf821cdba"
-    sha256 cellar: :any,                 x86_64_linux:  "c217a53b0f4ba0f7b3bd3dc5ab0a35a01ef1fec25427a3485463c3fc69444010"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a699621d010e10bb6316fa29ddf458085864003e23a7d0fc3c90152c390656f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9a8a37c43cbc2d0245b297b51ae688e71db055fb8c4851cc7619c9504bfb83f"
+    sha256 cellar: :any,                 arm64_linux:   "65da3656fd29b42036561bb59b6a1edd15f68615fba8b403b717becc148b484a"
+    sha256 cellar: :any,                 x86_64_linux:  "e8da5143323d9159816a632f33ebd51b556c38def76da6864e752569a9f32889"
   end
 
   depends_on "libyaml"
   depends_on "python@3.14"
+
+  pypi_packages extra_packages: %w[
+    setuptools>=82,<85 flit-core<4 poetry-core<3 packaging wheel>=0.46.3
+    calver cython>=3 tomlkit pathspec vcs-versioning<3 setuptools-scm>=8,<11 pluggy
+    trove-classifiers hatchling>=1.27,<2 hatch-vcs>=0.4,<0.6 pdm-backend typing-extensions
+  ]
+
+  # TODO: Remove when dateutil no longer requires setuptools-scm<8; https://github.com/dateutil/dateutil/issues/1347
+  resource "homebrew-setuptools-scm-legacy" do
+    url "https://github.com/pypa/setuptools-scm/archive/refs/tags/v7.1.0.tar.gz"
+    sha256 "38039797b773499b4faff7984cdd866b47be2b027ca4bd4d013fe84f56a3b290"
+
+    livecheck do
+      skip "Pinned to dateutil's build requirement"
+    end
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+  end
 
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/11/b9/10ca68d0092895d5ea60f485a61a9840d5aff9d732c66ed60da53a20b1d4/botocore-1.43.106.tar.gz"
@@ -99,14 +200,42 @@ class Ministack < Formula
     sha256 "b86885dcf294e15204919950f666e06ffc6c7c114ca900b060d6e16293528294"
   end
 
+  # The functional test starts the emulator and checks its health over loopback HTTP.
+  allow_network_access! :test
+
   def install
     (var/"ministack").mkpath
     (var/"ministack/state").mkpath
     (var/"ministack/s3").mkpath
 
     venv = virtualenv_create(libexec, "python3.14")
-    venv.pip_install resources
-    venv.pip_install_and_link buildpath
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV["PIP_NO_INDEX"] = "1"
+    build_resources = %w[
+      setuptools flit-core poetry-core packaging wheel typing-extensions
+      calver cython tomlkit pathspec vcs-versioning setuptools-scm pluggy trove-classifiers
+      hatchling hatch-vcs pdm-backend homebrew-setuptools-scm-legacy
+    ]
+    %w[setuptools flit-core poetry-core packaging wheel typing-extensions].each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+
+    # Dateutil and urllib3 require different setuptools-scm generations during their builds.
+    # Tag archives lack SCM metadata; supply the pinned source version for self-bootstrap.
+    with_env(SETUPTOOLS_SCM_PRETEND_VERSION: "7.1.0") do
+      venv.pip_install resource("homebrew-setuptools-scm-legacy"), build_isolation: false
+    end
+    venv.pip_install resource("six"), build_isolation: false
+    venv.pip_install resource("python-dateutil"), build_isolation: false
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "-y", "setuptools-scm"
+
+    %w[
+      calver cython tomlkit pathspec vcs-versioning setuptools-scm pluggy trove-classifiers
+      hatchling hatch-vcs pdm-backend
+    ].each { |name| venv.pip_install resource(name), build_isolation: false }
+    installed_resources = build_resources + %w[six python-dateutil]
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   service do
