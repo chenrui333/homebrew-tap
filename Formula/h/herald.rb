@@ -23,6 +23,12 @@ class Herald < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # go-sqlite3 requires cgo on every supported platform.
     ENV["CGO_ENABLED"] = "1"
