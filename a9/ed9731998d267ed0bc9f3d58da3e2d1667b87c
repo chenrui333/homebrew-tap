@@ -1,0 +1,14 @@
+Formula/j/justray.rb
+  h_9df9c32c3f321d 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a9ed9731998d267ed0bc9f3d58da3e2d1667b87c",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
