@@ -15,13 +15,14 @@ class Jsmin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93757b601416b1fce07734b4d4575e15c549a46ef8a917df70ef6da0795334d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "723a0107278c71d30ecaf8dcb17fb1705c07dd87fac13b7c137bea7e38ea02e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c77754462fa35edf5ccb67813c717fa214ee0edc811aa1ca43d985d99be58a3"
-    sha256 cellar: :any_skip_relocation, sequoia:       "815d140009a9dfcf3a51f653ad71f7355e4b4d544442a44ccd65f40f84c82389"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f18e0d4c70c99f24e52fa465c0856058d0f1be6c1a5e9befec570e97e38cd60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f22ba0914678b286970f10889ad477085c917e247ccfeaa9016bdafea2939dd6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "622cade7e3e8816a366c1c3b49527b418008f8904c39bfe730b3b707829bbb57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce516e3a5be152bc2e05cf6d516949758382d2b6aec68c059c12e80451152766"
+    sha256 cellar: :any,                 arm64_linux:   "ce3519d027676799b8948d2aa6e1fd2bd8bc021f417d4a894eaf816950a66048"
+    sha256 cellar: :any,                 x86_64_linux:  "ccac641104331ef9bde6979c6c645a78f71d71b4da943b061de9e50367cecbe5"
   end
+
+  deny_network_access!
 
   def install
     system ENV.cc, "jsmin.c", "-o", "jsmin"
@@ -29,6 +30,9 @@ class Jsmin < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace with a version assertion when available.
     assert_equal "\nvar i=0;", pipe_output(bin/"jsmin", "var i = 0; // comment")
+    assert_equal "\nvar url=\"http://example.test\";",
+                 pipe_output(bin/"jsmin", 'var url = "http://example.test";')
   end
 end
