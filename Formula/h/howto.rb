@@ -16,17 +16,20 @@ class Howto < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/howto --version")
 
-    ENV["HOWTO_AI_TOKEN"] = "test"
-    ENV["HOWTO_AI_MODEL"] = "gpt-4o"
+    assert_match "no command to run", shell_output("#{bin}/howto -run 2>&1", 1)
 
-    assert_match "401 Unauthorized", shell_output("#{bin}/howto curl example.org 2>&1", 1)
+    config_dir = OS.mac? ? testpath/"Library/Application Support" : testpath/".config"
+    history_path = config_dir/"howto/howto-history.json"
+    history_path.atomic_write(["Calculate six times seven", "printf '%s' $((6 * 7))"].to_json)
+    assert_match "\n42\n", shell_output("#{bin}/howto -run")
   end
 end
