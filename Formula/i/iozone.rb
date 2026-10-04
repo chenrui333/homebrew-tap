@@ -15,12 +15,11 @@ class Iozone < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1f53e906a4b7b9efaeb7142e2a73bb0538c39b0ee149dc6c357f710bef7aaec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b35096c90ea8ba077d22f354fc20f6e829550b482cf75c3e33853eb01c0766c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c982536f335c8e21f8c37208704c9318b8c1d742ed0da957a2d449b897aff651"
-    sha256 cellar: :any_skip_relocation, sequoia:       "6f1c4570c2f7645b423b1a41f1d386fa68ed0b037c732165c644137d458219fc"
-    sha256 cellar: :any,                 arm64_linux:   "381533bfe1153a2bcee569df1d86b17bfdfef863ae861268fc2956cec4985bc1"
-    sha256 cellar: :any,                 x86_64_linux:  "63ae4c32408a3e83f95f02491b97aa890b33b5c24adeb8112e09d533a4fe236c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7576cfc3ce7b5fe5431e30230c4437e6ad72aee947a28f64c099d6af84ee18e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "150d1651fdcd44e66db3bcce78bc9349a6967b5c697b7505e2d7b300b9f626ce"
+    sha256 cellar: :any,                 arm64_linux:   "d102bb1e64337b62611e497a3788e793ae7af710a93f241694f55ecdb7555852"
+    sha256 cellar: :any,                 x86_64_linux:  "3e25a9c059b39f6c42cdf395e4fd90508511f174f02e86bd66723c7912c5ae50"
   end
 
   deny_network_access!
