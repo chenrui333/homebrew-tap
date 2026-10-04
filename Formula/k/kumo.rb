@@ -16,6 +16,13 @@ class Kumo < Formula
 
   depends_on "go" => :build
 
+  # kumo is a local AWS emulator server; the test checks its loopback health endpoint.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     (var/"kumo").mkpath
 
