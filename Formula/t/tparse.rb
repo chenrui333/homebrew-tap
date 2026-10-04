@@ -8,13 +8,20 @@ class Tparse < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "743bc92e051a1c986aec44c6e54e3fb39c1528bba10cce742fd1ec1689756880"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bedb76dce08a7b250a24b82f38882dbe3d7364205c16576637c44a03b8ec6d5c"
-    sha256 cellar: :any_skip_relocation, ventura:       "f637c6e042945a6d29ae567bf71dd83f772d56fa6439749ecf66a288b45efa0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f77be2f1e1d99601c95ac5dc9705688b9ea1d534538d2a853c887de4dcc34264"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9ef66e8b99f27ab0a528df8d8951d54242f2d9c0e6454200ed95e5743925e03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9ef66e8b99f27ab0a528df8d8951d54242f2d9c0e6454200ed95e5743925e03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5030c1b9a20d82b1800e0da74a1d70f805828281499ba35f26f0fb64f2fed33"
+    sha256 cellar: :any,                 x86_64_linux:  "25529e554e634808d88f6a449d258e1288db6d1f9d707d66318fb2e8cbd19779"
   end
 
   depends_on "go" => [:build, :test]
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
