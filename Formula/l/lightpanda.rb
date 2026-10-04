@@ -16,7 +16,8 @@ class Lightpanda < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "zig" => :build
+  # Lightpanda 0.2.6 and boringssl-zig use the Zig 0.15 build API.
+  depends_on "zig@0.15" => :build
 
   resource "lightpanda-v8-source" do
     url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.3.3.tar.gz"
@@ -61,6 +62,10 @@ class Lightpanda < Formula
     "boringssl-zig" => {
       url:    "https://github.com/Syndica/boringssl-zig/archive/c53df00d06b02b755ad88bbf4d1202ed9687b096.tar.gz",
       sha256: "60b25deedd68d5c424682db1160d2a192376c05f85b4d98a2ad1f3536dfd4037",
+    },
+    "boringssl"     => {
+      url:    "https://github.com/google/boringssl/archive/535cc391915c37912ff9b3edb0cff9b3c5c77db0.tar.gz",
+      sha256: "a08fe8c76b70eeabf0466855710c553a3bfc9195f6a9a082b07bab8fe9085e9c",
     },
     "curl"          => {
       url:    "https://github.com/curl/curl/releases/download/curl-8_18_0/curl-8.18.0.tar.gz",
@@ -143,6 +148,8 @@ class Lightpanda < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     deps_dir = buildpath/"deps"
     deps_dir.mkpath
@@ -157,7 +164,7 @@ class Lightpanda < Formula
     ENV["ZIG_GLOBAL_CACHE_DIR"] = buildpath/"zig-global-cache"
     ENV["ZIG_LOCAL_CACHE_DIR"] = buildpath/"zig-local-cache"
 
-    zig = Formula["zig"].opt_bin/"zig"
+    zig = formula_opt_bin("zig@0.15")/"zig"
     prebuilt_v8 = deps_dir/"v8/libc_v8.a"
     snapshot_path = buildpath/"src/snapshot.bin"
 
@@ -247,6 +254,17 @@ class Lightpanda < Formula
           .paths = .{""},
       }
     ZIG
+
+    # boringssl-zig pins BoringSSL as a git dependency; use the pre-fetched copy instead.
+    boringssl_zon = buildpath/"deps/boringssl-zig/build.zig.zon"
+    boringssl_zon_content = boringssl_zon.read
+    unless boringssl_zon_content.sub!(
+      %r{\.url = "git\+https://github\.com/google/boringssl#\h+",\n\s*\.hash = "[^"]+",},
+      '.path = "../boringssl",',
+    )
+      odie "Failed to rewrite boringssl-zig dependency"
+    end
+    boringssl_zon.atomic_write boringssl_zon_content
   end
 
   test do
@@ -254,18 +272,12 @@ class Lightpanda < Formula
 
     assert_match version.to_s, shell_output("#{bin}/lightpanda version 2>&1")
 
-    port = free_port
-    pid = fork do
-      exec bin/"lightpanda", "serve", "--host", "127.0.0.1", "--port", port.to_s, "--log_level", "info"
-    end
-
-    begin
-      sleep 5
-      version_json = shell_output("curl -s http://127.0.0.1:#{port}/json/version")
-      assert_match %r{"webSocketDebuggerUrl": "ws://127\.0\.0\.1:#{port}/"}, version_json
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    json = <<~JSON
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"brew","version":"1.0.0"}}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+    JSON
+    output = pipe_output("#{bin}/lightpanda mcp 2>/dev/null", json, 0)
+    assert_match(/"name":\s*"lightpanda"/, output)
+    assert_match(/"name":\s*"goto"/, output)
   end
 end
