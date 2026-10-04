@@ -6,6 +6,12 @@ class Xdgctl < Formula
   license "BSD-2-Clause"
   head "https://github.com/mitjafelicijan/xdgctl.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "da633b9580d6f02bc06e7efcb78da328141d3304b62b12553c0ee4ba6e1b0ece"
+    sha256 cellar: :any, x86_64_linux: "2a499d5c633b489675b235724dd099d568b02441b8a4cf56dcb6e83c0730c3c9"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "glib"
   depends_on :linux
