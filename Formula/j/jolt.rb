@@ -18,6 +18,14 @@ class Jolt < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    # Fix the stale workspace crate versions in the upstream lockfile.
+    inreplace "Cargo.lock", 'version = "1.2.0-beta.2"', "version = \"#{version}\""
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
   end
