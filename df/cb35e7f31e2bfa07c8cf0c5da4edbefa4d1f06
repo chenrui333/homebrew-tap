@@ -1,0 +1,14 @@
+Formula/m/mcdu.rb
+  h_9df9c32c3f321d 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dfcb35e7f31e2bfa07c8cf0c5da4edbefa4d1f06",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
