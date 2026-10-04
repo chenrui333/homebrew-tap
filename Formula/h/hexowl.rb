@@ -17,6 +17,8 @@ class Hexowl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
@@ -26,5 +28,6 @@ class Hexowl < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/hexowl version")
     assert_match "funcs", shell_output("#{bin}/hexowl funcs")
+    assert_match "0b\e[38;5;32m101", shell_output("#{bin}/hexowl 2+3")
   end
 end
