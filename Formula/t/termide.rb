@@ -8,10 +8,10 @@ class Termide < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2ea73af3e59a240760e70bc9803b9fc08347ad34c7a8d29cb8b1e3c661973b8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91339355d82e4ddf1d35f1618e9dbcc0603c77b4d0deeb3f82ce7ed7f2c970f6"
-    sha256 cellar: :any,                 arm64_linux:   "12e590f1b7a7a8f30e64467a04c07290d9a48b00b9c8eb798acc4620107b1537"
-    sha256 cellar: :any,                 x86_64_linux:  "3d41ae961d0f1b2e19775ea873d63a82b1161303f4c7a490c0a4634ea09dd6cd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "194f3fe5b655f316f982fd958a758e59b7b683017e9e41ba10722ccbeb2f64fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99aa6e8458af21027a83405f2832f7babaeca21c0d53d1c68366e8712c245634"
+    sha256 cellar: :any,                 arm64_linux:   "12d4aeede3776271b2fe3353cde2d8057049e2738de31b005d0fc6696b359877"
+    sha256 cellar: :any,                 x86_64_linux:  "b4ce9fdcc794329656f06a1349908e22c3d5ce30d7d2713f8ec6596931f6687e"
   end
 
   depends_on "pkgconf" => :build
