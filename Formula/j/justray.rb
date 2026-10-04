@@ -17,6 +17,12 @@ class Justray < Formula
   # Match upstream release CI; sing-box relies on private HTTP/2 symbols.
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/luynrs/justray/internal/version.Version=#{version}"
     tags = "with_quic,with_utls,with_gvisor,with_grpc,with_xhttp"
