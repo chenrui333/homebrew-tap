@@ -1,17 +1,16 @@
 class Kimiflare < Formula
   desc "Terminal coding agent powered by Kimi-K2.6 on Cloudflare Workers AI"
-  homepage "https://github.com/sinameraji/kimiflare"
-  url "https://registry.npmjs.org/kimiflare/-/kimiflare-0.99.0.tgz"
-  sha256 "d8905d1a9f3c2274a28e5901b50d3625c3e0af7ce468c1fbba6a255ef0ff6d5d"
+  homepage "https://github.com/sinameraji/autopilot"
+  url "https://registry.npmjs.org/kimiflare/-/kimiflare-1.0.0.tgz"
+  sha256 "bdff615e92c826df9c3f93160ca90d2251a94527ea5fc246df570043bb6d62e8"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "c390150325efcff9f304a779980df7aa1878e84e01cdc3cd71109d6e243e3f44"
-    sha256 cellar: :any,                 arm64_sequoia: "c390150325efcff9f304a779980df7aa1878e84e01cdc3cd71109d6e243e3f44"
-    sha256 cellar: :any,                 arm64_sonoma:  "c390150325efcff9f304a779980df7aa1878e84e01cdc3cd71109d6e243e3f44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b08088f519d38cf7e939bb7e002b8f3106ad02341e20e91b2ffd7ca3c538d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a25d67b82a3cfdc40dd4eaf007896e3e2bf661a8fd0fb6849efd681835e2376d"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b5df1a11850b845a683595b69a0301e9e896ef2998d79cebcfb72444fb38e59"
+    sha256 cellar: :any,                 arm64_sequoia: "4eccd625a2fb042251ee3d2a57c06670464fdaab08af2ca0e45b93d5aa7e7f43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12900b43ab67e3c0956f1efb7965713269d95300bb2d6eef0bdb88c0c1efc7ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06c0439878f3214f2db4c0d669d866ea203269d6fb3d5d07223108b407f2978a"
   end
 
   depends_on "node"
@@ -31,7 +30,13 @@ class Kimiflare < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kimiflare --version")
+    require "json"
+
+    # This compatibility shim forwards --version to its Autopilot dependency.
+    autopilot = JSON.parse((libexec/"lib/node_modules/kimiflare/node_modules/autopilot-ai/package.json").read)
+    output = shell_output("#{bin}/kimiflare --version 2>&1")
+    assert_match autopilot.fetch("version"), output
+    assert_match "kimiflare has been renamed to autopilot", output
     output = shell_output("#{bin}/kimiflare --not-a-real-option 2>&1", 1)
     assert_match "not-a-real-option", output
   end
