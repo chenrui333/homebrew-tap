@@ -1054,6 +1054,7 @@ brew install --cask <tool>
 - `untether`
 - `unused-deps`
 - `uplift`
+- `upmd`
 - `urlhunter`
 - `urlsup`
 - `user-scanner`
