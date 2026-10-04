@@ -1,24 +1,31 @@
 class Xpdig < Formula
   desc "Dig into Crossplane traces via TUI"
   homepage "https://github.com/brunoluiz/xpdig"
-  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "491f23bcb5392921162dc95df79b40016347cb44daf46ebb4148073046d3dc84"
+  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "0ec9c51fa4b701b6c400d45a92e801ba502233c0b01193d43c7f2df3d8ff830f"
   license "Apache-2.0"
   head "https://github.com/brunoluiz/xpdig.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04becdf9231e66b093c7b08a89c336a8756760b19fb6771ccc186b2a74aca8ee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04becdf9231e66b093c7b08a89c336a8756760b19fb6771ccc186b2a74aca8ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04becdf9231e66b093c7b08a89c336a8756760b19fb6771ccc186b2a74aca8ee"
-    sha256 cellar: :any,                 arm64_linux:   "b4718e7a0e0d88225d4b4c156304321152d866f546f5b3e57d3ba9dce3a1da86"
-    sha256 cellar: :any,                 x86_64_linux:  "3a29b4276a9098217f5feb22b19ab2151499c67333a3024ffb4d1a7d102cdeee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7fba7177d35cdc336249e24886a08cb8b18dcca3bb39945e1fba27931c3dcc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7fba7177d35cdc336249e24886a08cb8b18dcca3bb39945e1fba27931c3dcc6"
+    sha256 cellar: :any,                 arm64_linux:   "aab39efe3f798e5a0856e2aadb5f28f15e82c0009cc44b7346f708b853df7347"
+    sha256 cellar: :any,                 x86_64_linux:  "e13d677dd9ca18e4a584c2e5f1f259be435ea40febd1443fe24d448cea643efb"
   end
 
   depends_on "go" => :build
   depends_on "crossplane"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
+    # TODO: Remove when kube-openapi supports Go 1.27 jsonv2: https://github.com/brunoluiz/xpdig/issues/70
+    ENV["GOEXPERIMENT"] = "nojsonv2"
     ENV["CGO_ENABLED"] = "1"
 
     # Workaround to avoid patchelf corruption when cgo is required
@@ -27,8 +34,7 @@ class Xpdig < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/xpdig"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/xpdig"
   end
 
   test do
