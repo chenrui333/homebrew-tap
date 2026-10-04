@@ -29,6 +29,12 @@ class Hielo < Formula
     depends_on "xdotool"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     inreplace "src/main.rs", <<~RUST, <<~RUST
       fn main() {
