@@ -23,6 +23,13 @@ class Jocalsend < Formula
     depends_on "openssl@3"
   end
 
+  # The only runtime path starts the LAN service (UDP multicast bind on the local address); build stays offline.
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
