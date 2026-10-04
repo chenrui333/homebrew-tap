@@ -1,8 +1,8 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.26.0.tar.gz"
-  sha256 "9e85d5150731f0f2e02a88c2f6849778498598c7d10b7443999b7356522596ea"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "02a4a9e52951300843d4fd9dcd48589d571f08268e1fd14f3e9e848dacf7321f"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
@@ -25,6 +25,14 @@ class SemCli < Formula
   end
 
   conflicts_with "parallel", because: "both install a sem executable"
+
+  deny_network_access!
+
+  def fetch
+    cd "crates" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
 
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
