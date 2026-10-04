@@ -6,6 +6,14 @@ class Abtop < Formula
   license "MIT"
   head "https://github.com/graykode/abtop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5daf3786d587727865762f00ed9636afec676c7eb42f8f1b59a02136b9ec830"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d857f3e34a2ca09e22c017bec7a449d6929c8c6643e1e9cedb99ff8cf79886b"
+    sha256 cellar: :any,                 arm64_linux:   "48a81084b501c53e09b0b3009164c24cd3bb003c5ddcb4998f9307268f7e7cf6"
+    sha256 cellar: :any,                 x86_64_linux:  "3521217f7e1515b614518623ff57ff005e6a71b6eb0fbc5e6d6d3bf30efbd795"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
