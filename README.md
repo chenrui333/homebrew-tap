@@ -35,6 +35,7 @@ brew install --cask <tool>
 
 - `a2a-handler`
 - `abc`
+- `abtop`
 - `act3`
 - `actionbook`
 - `adbtuifm`
