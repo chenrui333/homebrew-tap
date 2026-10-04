@@ -8,25 +8,29 @@ class Howto < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdc89c905937ea1c38457236b7757e00de07887a1924aa52891508f5ea36ef2a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f03d6629b6b44b2913897f0371df075da0228c87d72e1f2c7b7563872696e7c"
-    sha256 cellar: :any_skip_relocation, ventura:       "87b285f9134998f24430dfdaf584b50fde1f13ddc1fa055cfcf36b77f4df3a7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39e5e8c67011145741dae6a8a899bee7be77d61313f0b67ff7b8b4201837d317"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "447f878b9f0c18106fa994ec0607008840737a2a8007a4b37e3ee6193a31ad1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "447f878b9f0c18106fa994ec0607008840737a2a8007a4b37e3ee6193a31ad1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebcf803321b321f562a2a0739057e45844c952b4ce59f005d3915a445ddf8cfb"
+    sha256 cellar: :any,                 x86_64_linux:  "635640dbe73dd8be89e8e4a6002e1c12a9682652cbc6573339a17881a45e3c1b"
   end
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/howto --version")
 
-    ENV["HOWTO_AI_TOKEN"] = "test"
-    ENV["HOWTO_AI_MODEL"] = "gpt-4o"
+    assert_match "no command to run", shell_output("#{bin}/howto -run 2>&1", 1)
 
-    assert_match "401 Unauthorized", shell_output("#{bin}/howto curl example.org 2>&1", 1)
+    config_dir = OS.mac? ? testpath/"Library/Application Support" : testpath/".config"
+    history_path = config_dir/"howto/howto-history.json"
+    history_path.atomic_write(["Calculate six times seven", "printf '%s' $((6 * 7))"].to_json)
+    assert_match "\n42\n", shell_output("#{bin}/howto -run")
   end
 end
