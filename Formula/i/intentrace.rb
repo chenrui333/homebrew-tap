@@ -15,6 +15,12 @@ class Intentrace < Formula
   depends_on arch: :x86_64
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
