@@ -15,6 +15,12 @@ class Marchat < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -29,14 +35,14 @@ class Marchat < Formula
   test do
     ENV["MARCHAT_ADMIN_KEY"] = "your-generated-key"
     ENV["MARCHAT_USERS"] = "admin1,admin2"
+    ENV["MARCHAT_DOCTOR_NO_NETWORK"] = "1"
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"marchat", testpath, [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match version.to_s, output_log.read
-    assert_match(/TLS:.*Disabled/m, output_log.read)
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    report = JSON.parse(shell_output("#{bin}/marchat -doctor-json"))
+    assert_equal version.to_s, report["version"]
+    checks = report["checks"].to_h { |check| [check["id"], check] }
+    assert_equal "ok", checks["config_validate"]["status"]
+    assert_match "TLS not configured", checks["tls"]["message"]
+    assert_equal "ok", checks["db_ping"]["status"]
+    assert report["update"]["skipped"]
   end
 end
