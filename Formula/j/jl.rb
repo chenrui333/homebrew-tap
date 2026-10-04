@@ -32,7 +32,7 @@ class Jl < Formula
 
     ENV["JL_OPTS"] = "--no-color"
 
-    output = pipe_output("#{bin}/jl", "{\"msg\": \"It works!\"}", 0)
+    output = pipe_output(bin/"jl", "{\"msg\": \"It works!\"}", 0)
     assert_equal "It works!", output.chomp
   end
 end
