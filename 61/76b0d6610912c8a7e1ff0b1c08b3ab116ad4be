@@ -1,0 +1,14 @@
+Formula/h/httpreplay.rb
+  h_9df9c32c3f321d 17-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6176b0d6610912c8a7e1ff0b1c08b3ab116ad4be",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
