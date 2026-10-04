@@ -1,0 +1,14 @@
+Formula/l/lazynpm.rb
+  h_9df9c32c3f321d 18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1128f3927ea9d5c2f315390c327037826aea12ac",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
