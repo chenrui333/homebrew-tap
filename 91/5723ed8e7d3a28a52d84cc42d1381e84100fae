@@ -1,0 +1,19 @@
+Formula/k/kmon.rb
+  s_2e88dfb5d81479::t_9e204f46414a90 17-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "915723ed8e7d3a28a52d84cc42d1381e84100fae",
+  "prompts": {},
+  "sessions": {
+    "s_2e88dfb5d81479": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a108fe-a0e3-7cc0-9500-63b50aedce5e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
