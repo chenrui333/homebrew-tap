@@ -1,17 +1,17 @@
 class Y509 < Formula
   desc "Inspect and validate X.509 certificate chains"
   homepage "https://github.com/kanywst/y509"
-  url "https://github.com/kanywst/y509/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "cc7c29bf7f38eb05f0fad7f3f5d2089e4cda9095fe0d8755842ce14e82286e79"
+  url "https://github.com/kanywst/y509/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "0777fbb7172e73818f67ebcc4669c0a2c9cfdbeac88a357e572d8c07191e3e34"
   license "Apache-2.0"
   head "https://github.com/kanywst/y509.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b3b58b1a2430cc614f79b23c8224c1f78db8cd9cb611802ebe6a57e004f073c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b3b58b1a2430cc614f79b23c8224c1f78db8cd9cb611802ebe6a57e004f073c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc074c475e802df0665052b9f95f5573e40410bf7fd7eae7d6344975f1b3c1a9"
-    sha256 cellar: :any,                 x86_64_linux:  "3f43667bfa4aa98f81c39d22d2912a12d44b9a252cf92cfbd45fa88bd0380ea0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f783546b1a694392aea8b1afdb4a45da8b8d84a091c7a2848b3d90d08e06b84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f783546b1a694392aea8b1afdb4a45da8b8d84a091c7a2848b3d90d08e06b84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdcde95ea215f021f9e9cd72c159f7df5b753ded094a8c6ae953aa5540e75c9d"
+    sha256 cellar: :any,                 x86_64_linux:  "a798a69f92ed0c269c52677cca066f3fbdfaeed6f71ead43a6ae6a66ee29e62b"
   end
 
   depends_on "go" => :build
