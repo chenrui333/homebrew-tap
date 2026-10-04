@@ -16,9 +16,14 @@ class Proto2yaml < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/proto2yaml"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/proto2yaml"
   end
 
   test do
@@ -32,9 +37,16 @@ class Proto2yaml < Formula
         int32 age = 2;
         repeated string hobbies = 3;
       }
+      service TestService {
+        rpc GetMessage(TestMessage) returns (TestMessage);
+      }
     PROTOBUF
 
-    system bin/"proto2yaml", "yaml", "export", "--source", "test.proto", "--file", "test.yaml"
-    assert_match "packages: []", (testpath/"test.yaml").read
+    system bin/"proto2yaml", "yaml", "export", "--source", testpath, "--file", "test.yaml"
+    output = (testpath/"test.yaml").read
+    assert_match "package: test", output
+    assert_match "service: TestService", output
+    assert_match "name: GetMessage", output
+    assert_match "type: unary", output
   end
 end
