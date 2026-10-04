@@ -23,6 +23,12 @@ class Nvrs < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", "--features", "cli", *std_cargo_args
 
@@ -32,13 +38,18 @@ class Nvrs < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/nvrs --version")
 
-    cp pkgshare/"nvrs.toml", testpath
+    (testpath/"nvrs.toml").write <<~TOML
+      [__config__]
+      oldver = "oldver.json"
+      newver = "newver.json"
 
-    (testpath/"n_keyfile.toml").write <<~EOS
-      keys = ["dummy_value"]
-    EOS
+      [brewtest]
+      source = "shell"
+      shell = "echo 1.2.3"
+    TOML
 
-    output = shell_output(bin/"nvrs")
-    assert_match "comlink NONE -> 0.1.1", output
+    assert_match "brewtest NONE -> 1.2.3", shell_output(bin/"nvrs")
+    assert_match "brewtest NONE -> 1.2.3", shell_output("#{bin}/nvrs --take brewtest")
+    assert_equal "1.2.3", JSON.parse((testpath/"oldver.json").read).dig("data", "brewtest", "version")
   end
 end
