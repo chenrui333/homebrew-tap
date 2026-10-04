@@ -16,6 +16,12 @@ class InspectCertChain < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -25,8 +31,24 @@ class InspectCertChain < Formula
 
     assert_match version.to_s, shell_output("#{bin}/inspect-cert-chain --version")
 
-    output = shell_output("#{bin}/inspect-cert-chain --host example.com")
+    # Self-signed localhost certificate from upstream tests/fixtures/server.pem
+    (testpath/"server.pem").write <<~PEM
+      -----BEGIN CERTIFICATE-----
+      MIIBnDCCAUGgAwIBAgIUOA4/L9uhWvS2eC0/NL5gdeUBv3kwCgYIKoZIzj0EAwIw
+      FDESMBAGA1UEAwwJbG9jYWxob3N0MCAXDTI2MTAwMTE3MjU0OFoYDzIxMjYwOTA3
+      MTcyNTQ4WjAUMRIwEAYDVQQDDAlsb2NhbGhvc3QwWTATBgcqhkjOPQIBBggqhkjO
+      PQMBBwNCAASQNn6U+HvIESv9njiWUfOv4NVWXXqb5rQWRA+LgF7Cr0DefNIYSmDx
+      +jfR3s00qjt45D58UcUjtoqMxfNQoFHgo28wbTAdBgNVHQ4EFgQUMEMpA4/NTmVN
+      48LCAiU89/1seZUwHwYDVR0jBBgwFoAUMEMpA4/NTmVN48LCAiU89/1seZUwDwYD
+      VR0TAQH/BAUwAwEB/zAaBgNVHREEEzARgglsb2NhbGhvc3SHBH8AAAEwCgYIKoZI
+      zj0EAwIDSQAwRgIhAJ0Hh3+XT1aATksG4dY6mQV93Pu3zuGFAxnJ1wLqruhmAiEA
+      xb1L0Cw58Czoo6231F738JuRGkXporzY8bKgfmapjUA=
+      -----END CERTIFICATE-----
+    PEM
+
+    output = shell_output("#{bin}/inspect-cert-chain --file #{testpath}/server.pem")
     output = output.gsub(/\e\[[0-9;]*m/, "") # Remove ANSI color codes
-    assert_match(/Subject: CN=(\*\.)?example\.com/, output)
+    assert_match "Subject: CN=localhost", output
+    assert_match "Issuer: CN=localhost", output
   end
 end
