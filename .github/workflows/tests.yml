@@ -70,16 +70,29 @@ jobs:
         run: |
           set -euo pipefail
           tap_path="$(brew --repository chenrui333/tap)"
+          failures=0
           while IFS=$'\t' read -r formula expected_sha; do
             git -C "$tap_path" fetch origin "$expected_sha"
             git -C "$tap_path" checkout --detach "$expected_sha"
             actual_sha="$(git -C "$tap_path" rev-parse HEAD)"
             test "$actual_sha" = "$expected_sha"
             echo "Strict audit: $formula at $actual_sha"
-            brew audit --strict --online --formula "chenrui333/tap/$formula"
-            HOMEBREW_SIMULATE_MACOS_ON_LINUX=1 brew audit --strict --online --formula "chenrui333/tap/$formula"
-            printf '%s\t%s\tpassed\n' "$formula" "$actual_sha" >> "$AUDIT_DIR/results.tsv"
+            for definition in linux macos; do
+              if [[ "$definition" == macos ]]; then
+                export HOMEBREW_SIMULATE_MACOS_ON_LINUX=1
+              else
+                unset HOMEBREW_SIMULATE_MACOS_ON_LINUX
+              fi
+              if brew audit --strict --online --formula "chenrui333/tap/$formula"; then
+                result=passed
+              else
+                result=failed
+                failures=$((failures + 1))
+              fi
+              printf '%s\t%s\t%s\t%s\n' "$formula" "$actual_sha" "$definition" "$result" >> "$AUDIT_DIR/results.tsv"
+            done
           done < "$AUDIT_DIR/targets.tsv"
+          test "$failures" -eq 0
 
       - name: Summarize verified heads
         if: always()
