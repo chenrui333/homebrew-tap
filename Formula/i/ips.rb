@@ -18,6 +18,12 @@ class Ips < Formula
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/sjzar/ips/cmd/ips.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
@@ -27,7 +33,15 @@ class Ips < Formula
     assert_match version.to_s, shell_output("#{bin}/ips version")
 
     assert_match "IPS CONFIG", shell_output("#{bin}/ips config")
-    system bin/"ips", "myip"
+
+    (testpath/"geo.txt").write <<~EOS
+      # Meta: {"IPVersion":1,"Fields":["country","city"]}
+      0.0.0.0/1\tLowland,Alpha
+      128.0.0.0/1\tHighland,Beta
+    EOS
+    output = shell_output("#{bin}/ips -i #{testpath}/geo.txt --format plain --use-db-fields 8.8.8.8 200.1.1.1")
+    assert_match "Lowland", output
+    assert_match "Highland", output
   end
 end
 
