@@ -1,8 +1,8 @@
 class ShadcnUiMcpServer < Formula
   desc "MCP server for Shadcn UI v4"
   homepage "https://github.com/jpisnice/shadcn-ui-mcp-server"
-  url "https://registry.npmjs.org/@jpisnice/shadcn-ui-mcp-server/-/shadcn-ui-mcp-server-2.0.0.tgz"
-  sha256 "f8a0337d22b6c5bdcf4ed8524605509ded814ffa6620013ef3677f9b43d4f1b7"
+  url "https://registry.npmjs.org/@jpisnice/shadcn-ui-mcp-server/-/shadcn-ui-mcp-server-3.0.0.tgz"
+  sha256 "cffd5602aff8d49a26dbf711add9c46e7f89c2cd821541afcae113c73dadbf86"
   license "MIT"
 
   bottle do
@@ -12,19 +12,50 @@ class ShadcnUiMcpServer < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
-    JSON
+    require "open3"
+    require "timeout"
 
-    output = pipe_output("#{bin}/shadcn-mcp 2>&1", json, 0)
-    assert_match "No GitHub API key provided. Rate limited to 60 requests/hour", output
-    assert_match "Get the source code for a specific shadcn/ui v4 component", output
+    assert_match version.to_s, shell_output("#{bin}/shadcn-mcp --version")
+
+    Open3.popen3(bin/"shadcn-mcp", "--mode", "stdio") do |stdin, stdout, stderr, wait_thr|
+      errors = Thread.new { stderr.read }
+      response_for = lambda do |id|
+        loop do
+          response = JSON.parse(stdout.readline)
+          break response if response["id"] == id
+        end
+      end
+
+      begin
+        Timeout.timeout(30) do
+          stdin.puts JSON.generate(jsonrpc: "2.0", id: 1, method: "initialize",
+                                   params: { protocolVersion: "2025-03-26", capabilities: {},
+                                             clientInfo: { name: "homebrew", version: "1.0.0" } })
+          response = response_for.call(1)
+          assert_equal version.to_s, response.dig("result", "serverInfo", "version")
+          stdin.puts JSON.generate(jsonrpc: "2.0", method: "notifications/initialized")
+          stdin.puts JSON.generate(jsonrpc: "2.0", id: 2, method: "tools/list")
+          response = response_for.call(2)
+          assert_match "Get the source code for a specific shadcn/ui v4 component", JSON.generate(response)
+        end
+      ensure
+        stdin.close
+        Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
+        wait_thr.value
+      end
+      assert_match "No GitHub API key provided. Rate limited to 60 requests/hour", errors.value
+    end
   end
 end
