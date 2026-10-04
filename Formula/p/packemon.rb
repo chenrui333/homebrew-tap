@@ -1,8 +1,8 @@
 class Packemon < Formula
   desc "Terminal tool for generating and monitoring packets"
   homepage "https://github.com/ddddddO/packemon"
-  url "https://github.com/ddddddO/packemon/archive/refs/tags/v1.8.31.tar.gz"
-  sha256 "a111613f519585a184242133eeed13731394e7fdbe660ebc336ad5fa50195b57"
+  url "https://github.com/ddddddO/packemon/archive/refs/tags/v1.8.32.tar.gz"
+  sha256 "4f27770ba27113947c5c1de55bcba6b5c87bba497b21cd1a74cec565aabed535"
   license "BSD-2-Clause"
   head "https://github.com/ddddddO/packemon.git", branch: "main"
 
@@ -15,6 +15,12 @@ class Packemon < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.Version=#{version} -X main.Revision=brew"
