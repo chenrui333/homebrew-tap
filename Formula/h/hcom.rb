@@ -15,14 +15,25 @@ class Hcom < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/hcom --version")
-
     ENV["HCOM_DIR"] = testpath
-    assert_match "Set:    hcom config terminal kitty", shell_output("#{bin}/hcom config terminal --info")
+    # A fresh update cache prevents the detached online version check.
+    update_cache = testpath/".tmp/flags/update_check"
+    update_cache.dirname.mkpath
+    update_cache.write("")
+
+    assert_match version.to_s, shell_output("#{bin}/hcom --version")
+    assert_match "Terminal set to: tmux", shell_output("#{bin}/hcom config terminal tmux")
+    assert_match "Terminal: tmux", shell_output("#{bin}/hcom config terminal")
   end
 end
