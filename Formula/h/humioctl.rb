@@ -1,8 +1,10 @@
 class Humioctl < Formula
   desc "CLI Client for Humio - Stream Logs All Day Long"
   homepage "https://www.crowdstrike.com/platform/next-gen-siem/falcon-logscale/"
-  url "https://github.com/humio/cli/archive/refs/tags/v0.40.0.tar.gz"
-  sha256 "1c6cbf9a3ca97700b7792c4d2dc247c9af3ba9f7715fb3f87b11a49adec15447"
+  # v0.40.0 was re-tagged upstream (only `.goreleaser.yaml` changed); pin the tag commit
+  url "https://github.com/humio/cli.git",
+      tag:      "v0.40.0",
+      revision: "154b317c0293ea7776596f1c5d8553469e8442c2"
   license "Apache-2.0"
   head "https://github.com/humio/cli.git", branch: "master"
 
@@ -16,6 +18,12 @@ class Humioctl < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
