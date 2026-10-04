@@ -1,8 +1,8 @@
 class Xpdig < Formula
   desc "Dig into Crossplane traces via TUI"
   homepage "https://github.com/brunoluiz/xpdig"
-  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "491f23bcb5392921162dc95df79b40016347cb44daf46ebb4148073046d3dc84"
+  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "0ec9c51fa4b701b6c400d45a92e801ba502233c0b01193d43c7f2df3d8ff830f"
   license "Apache-2.0"
   head "https://github.com/brunoluiz/xpdig.git", branch: "main"
 
@@ -18,7 +18,15 @@ class Xpdig < Formula
   depends_on "go" => :build
   depends_on "crossplane"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
+    # TODO: Remove when kube-openapi supports Go 1.27 jsonv2: https://github.com/brunoluiz/xpdig/issues/70
+    ENV["GOEXPERIMENT"] = "nojsonv2"
     ENV["CGO_ENABLED"] = "1"
 
     # Workaround to avoid patchelf corruption when cgo is required
@@ -27,8 +35,7 @@ class Xpdig < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/xpdig"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/xpdig"
   end
 
   test do
