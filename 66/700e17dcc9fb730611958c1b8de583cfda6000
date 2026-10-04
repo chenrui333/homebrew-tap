@@ -1,0 +1,14 @@
+Formula/j/jarl.rb
+  h_9df9c32c3f321d 24-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "66700e17dcc9fb730611958c1b8de583cfda6000",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
