@@ -25,6 +25,12 @@ class Moltis < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["RUSTC_BOOTSTRAP"] = "1"
     # Avoid compiling embedded WASM tools on unsupported build targets.
@@ -34,7 +40,7 @@ class Moltis < Formula
 
     if OS.linux?
       zlib = Formula["zlib-ng-compat"]
-      ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
+      ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
       ENV["ZLIB_ROOT"] = zlib.opt_prefix.to_s
       ENV.append_path "PKG_CONFIG_PATH", zlib.opt_lib/"pkgconfig"
       ENV.append "LDFLAGS", "-L#{zlib.opt_lib}"
