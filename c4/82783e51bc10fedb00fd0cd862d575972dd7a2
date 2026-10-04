@@ -1,0 +1,19 @@
+Formula/g/grut.rb
+  s_c7b0f71fa0ff85::t_2766959ca539e5 1-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c482783e51bc10fedb00fd0cd862d575972dd7a2",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
