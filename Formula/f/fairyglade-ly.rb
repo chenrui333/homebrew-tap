@@ -1,10 +1,9 @@
 class FairygladeLy < Formula
   desc "TUI (ncurses-like) display manager for Linux and BSD"
   homepage "https://codeberg.org/fairyglade/ly"
-  url "https://github.com/fairyglade/ly/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "c0e26cdaf04415b3e66360b8d3efff3190dcfe62ee9d39bf7afcdfacaccc882a"
+  url "https://github.com/fairyglade/ly/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "b1f8f631ab5e9f44006e5f1ead1e971ad27a296e59fc0d7a79bcfe5718a8af72"
   license "WTFPL"
-  revision 1
   head "https://codeberg.org/fairyglade/ly.git", branch: "master"
 
   bottle do
@@ -14,7 +13,7 @@ class FairygladeLy < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
   depends_on "libxcb"
   depends_on :linux
   depends_on "linux-pam"
@@ -26,16 +25,25 @@ class FairygladeLy < Formula
   end
 
   def install
+    # The C translator does not inherit the executable's Homebrew search prefixes.
+    inreplace "ly-core/build.zig", "mod.addImport(name, pam.mod);", <<~ZIG
+      pam.addSystemIncludePath(.{ .cwd_relative = "#{formula_opt_prefix("linux-pam")}/include" });
+      pam.addSystemIncludePath(.{ .cwd_relative = "#{formula_opt_prefix("libxcb")}/include" });
+      mod.addImport(name, pam.mod);
+    ZIG
+
     args = %W[
       --search-prefix #{formula_opt_prefix("libxcb")}
       --search-prefix #{formula_opt_prefix("linux-pam")}
     ]
 
-    system formula_opt_bin("zig@0.16")/"zig", "build", *std_zig_args, *args
+    system "zig", "build", *std_zig_args, *args
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ly --version 2>&1")
-    # FIXME: Ly requires a Linux virtual terminal; add a functional test when upstream supports headless operation.
+    (testpath/"config.ini").write "animation = none\n"
+    output = shell_output("#{bin}/ly --validate-config #{testpath}/config.ini 2>&1")
+    assert_match "no errors detected!", output
   end
 end
