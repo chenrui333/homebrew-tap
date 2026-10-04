@@ -16,9 +16,15 @@ class Mcman < Formula
 
   depends_on "rust" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "cargo", "update", "-p", "time"
     odie "Remove time crate update line!" if version > "0.4.5"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args
   end
 
