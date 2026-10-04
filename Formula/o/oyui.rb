@@ -17,6 +17,12 @@ class Oyui < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # The 0.2.1 release retains the 0.2.0 Cargo package version.
     inreplace "crates/oyui/src/cli.rs", "version, about", "version = \"#{version}\", about"
