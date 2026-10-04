@@ -826,6 +826,7 @@ brew install --cask <tool>
 - `rang`
 - `rawhide`
 - `rbac-lookup`
+- `rdmatop`
 - `rdrview`
 - `rds-command-line-tools`
 - `readmeai`
