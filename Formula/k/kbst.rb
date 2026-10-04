@@ -18,6 +18,12 @@ class Kbst < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
@@ -28,9 +34,9 @@ class Kbst < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kbst --version")
 
-    # spellchecker:ignore-next-line
-    output = shell_output("#{bin}/kbst init aks example.com testCluster eastus testResourceGroup 2>&1", 1)
-    assert_match "author field is required", output
-    assert_match "# Welcome to Kubestack", (testpath/"kubestack-starter-aks/README.md").read
+    # Functional commands download the Kubestack catalog; cobra validates arguments before that.
+    output = shell_output("#{bin}/kbst init aks example.com 2>&1", 1)
+    assert_match "accepts 4 arg(s), received 1", output
+    refute_path_exists testpath/"kubestack-starter-aks"
   end
 end
