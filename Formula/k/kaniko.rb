@@ -15,6 +15,8 @@ class Kaniko < Formula
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
   def install
     ldflags = "-s -w -X github.com/chainguard-dev/kaniko/pkg/version.version=#{version}"
 
