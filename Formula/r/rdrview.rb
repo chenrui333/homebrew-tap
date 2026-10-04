@@ -7,11 +7,11 @@ class Rdrview < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5e0bc150df30a2bbaaf06d3537741edf22e7a635eb93aa06d36596f2adf5263"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "706e2b1bc22bb54162a804bc1cd15aadcef103d955732c1c26bbe4de39d5719e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f2049f0dc1f470b9f809c090e301c954a31dc633d6030c74556cb5aeaca4091"
-    sha256 cellar: :any,                 arm64_linux:   "d1c0f353c1c61e6267fbe974a2e604f651379c7f4b1ceb21540875677df453ba"
-    sha256 cellar: :any,                 x86_64_linux:  "fe82f7f3d4318ef2b26951c4148540633ddb5b3766c6b8733d7bff63d1d5f90d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f2402bb442b97c0d4f95f7a42871f30e3b5fd95f2145bff6fceb9909b09138b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1537e35fd05e090172104afa8fccece612dec75f4fe9582fce9ce60a75bfbdd5"
+    sha256 cellar: :any,                 arm64_linux:   "f832103e5c70d24d85b3cbd64067e3504bea71ff49b32a0e415afb4db56b52b0"
+    sha256 cellar: :any,                 x86_64_linux:  "2f03891baf51329ea94736e5ffbee97a45bd1c2ace2393c3b3c472b93295ba92"
   end
 
   depends_on "curl"
@@ -20,6 +20,8 @@ class Rdrview < Formula
   on_linux do
     depends_on "libseccomp"
   end
+
+  deny_network_access!
 
   def install
     system "make"
