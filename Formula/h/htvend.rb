@@ -16,13 +16,26 @@ class Htvend < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/htvend"
   end
 
   test do
-    output = shell_output("#{bin}/htvend build -- curl https://www.google.com 2>&1")
-    assert_match "Fetching URL: https://www.google.com/", output
-    assert_path_exists testpath/"assets.json"
+    blob = "hello"
+    sha = Digest::SHA256.hexdigest(blob)
+    (testpath/"cache"/sha).write blob
+    (testpath/"assets.json").write <<~JSON
+      {"https://example.com/hello.txt": {"Sha256": "#{sha}", "Size": #{blob.size}}}
+    JSON
+
+    output = shell_output("#{bin}/htvend export --blobs-dir cache -o out 2>&1")
+    assert_match "Verifying https://example.com/hello.txt", output
+    assert_equal blob, (testpath/"out"/sha).read
   end
 end
