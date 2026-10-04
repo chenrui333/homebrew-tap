@@ -16,6 +16,12 @@ class LeveldbCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # patch version
     inreplace "main.go", "0.3.0", version.to_s if build.stable?
@@ -23,12 +29,9 @@ class LeveldbCli < Formula
   end
 
   test do
-    output_log = testpath/"output.log"
-    pid = spawn bin/"leveldb-cli", testpath, [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "LevelDB CLI", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    output = pipe_output(bin/"leveldb-cli", "open db\nset foo bar\nget foo\nshow prefix f\nexit\n", 0)
+    assert_match "LevelDB CLI", output
+    assert_match "foo\t| bar", output
+    assert_predicate testpath/"db", :directory?
   end
 end
