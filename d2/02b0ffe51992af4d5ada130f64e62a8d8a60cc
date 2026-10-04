@@ -1,0 +1,14 @@
+Formula/p/pikpaktui.rb
+  h_9df9c32c3f321d 20-25,32-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d202b0ffe51992af4d5ada130f64e62a8d8a60cc",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
