@@ -21,6 +21,12 @@ class Kt < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildTime=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
@@ -29,7 +35,8 @@ class Kt < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kt --version")
 
-    output = shell_output("#{bin}/kt produce -topic greetings 2>&1", 1)
-    assert_match "failed to find leader for given topic", output
+    (testpath/"auth.json").write '{"mode":"Kerberos"}'
+    output = shell_output("#{bin}/kt produce -topic greetings -auth #{testpath}/auth.json 2>&1 </dev/null", 1)
+    assert_match 'failed to setup auth err=unsupport auth mode: "Kerberos"', output
   end
 end
