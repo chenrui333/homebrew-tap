@@ -1,0 +1,19 @@
+Formula/k/kaniko.rb
+  s_2e88dfb5d81479::t_c82d912a24c413 18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5fb3231258d0d3d00820c0a72f54336cd491c3c2",
+  "prompts": {},
+  "sessions": {
+    "s_2e88dfb5d81479": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a108fe-a0e3-7cc0-9500-63b50aedce5e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
