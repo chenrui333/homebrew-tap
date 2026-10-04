@@ -1,0 +1,19 @@
+.github/workflows/tests.yml
+  s_c7b0f71fa0ff85::t_f229f6b5f0aae5 73,80-93,95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b8f709f6080f88d3c223d427e7c005eae5b480fe",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
