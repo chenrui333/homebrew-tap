@@ -22,6 +22,14 @@ class Zmpl < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc0190423afa42f481d5f2668828692e301efc77060acbe6b35b9cef864b3ef4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5d4c3ed651a961794d0e2bb89a30983929a8744eab4394845c740a8d4d9f5cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56eb4c8dc260d92cf8b572f373f29d0ef5949d4adfd3aeb92ea7d8b623618fd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e0051fc9ae36388a2ef3905af0a5362f2d3cd8368ea6d5ffd34f5b9b9aac49c"
+  end
+
   head do
     url "https://github.com/jetzig-framework/zmpl.git", branch: "main"
     depends_on "zig" => [:build, :test]
