@@ -18,6 +18,13 @@ class Kube2pulumi < Formula
 
   depends_on "go" => :build
 
+  # Pulumi's PCL binder always starts a plugin host gRPC server on a loopback port.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/pulumi/kube2pulumi/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kube2pulumi"
@@ -30,22 +37,16 @@ class Kube2pulumi < Formula
 
     assert_match version.to_s, shell_output("#{bin}/kube2pulumi version")
 
-    (testpath/"test.yaml").write <<~YAML
-      apiVersion: v1
-      kind: Pod
+    # Kubernetes resources would download the pulumi-kubernetes plugin; a CRD is reported locally.
+    (testpath/"crd.yaml").write <<~YAML
+      apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
       metadata:
-        name: nginx
-        labels:
-          app: nginx
-      spec:
-        containers:
-        - name: nginx
-          image: nginx:1.14.2
-          ports:
-          - containerPort: 80
+        name: crontabs.stable.example.com
     YAML
 
-    system bin/"kube2pulumi", "go", "--directory", testpath, "--outputFile", testpath/"main.go"
+    output = shell_output("#{bin}/kube2pulumi go --directory #{testpath} --outputFile #{testpath}/main.go")
+    assert_match "custom resource definitions cannot not be converted", output
     assert_match "github.com/pulumi/pulumi/sdk/v3/go/pulumi", (testpath/"main.go").read
   end
 end
