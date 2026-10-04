@@ -1,0 +1,14 @@
+Formula/o/osintui.rb
+  h_9df9c32c3f321d 24-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "51b3b0ba8f6a60eeeeb90a1211d76e02db1d8443",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
