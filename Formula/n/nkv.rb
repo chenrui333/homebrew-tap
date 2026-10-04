@@ -17,6 +17,12 @@ class Nkv < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -26,9 +32,11 @@ class Nkv < Formula
     system bin/"nkv-client", "--version"
 
     output_log = testpath/"output.log"
-    pid = spawn bin/"nkv-server", "--level", "debug", [:out, :err] => output_log.to_s
+    pid = spawn bin/"nkv-server", "--level", "debug", "--addr", testpath/"nkv.sock", "--dir", testpath/"data",
+                [:out, :err] => output_log.to_s
     sleep 1
     assert_match "nkv_server\e[0m\e[2m:\e[0m log level is DEBUG logs will be saved to: logs", output_log.read
+    assert_path_exists testpath/"data"
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)
