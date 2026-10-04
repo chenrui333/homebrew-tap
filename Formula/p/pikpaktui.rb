@@ -17,12 +17,23 @@ class Pikpaktui < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"pikpaktui", "completions", "zsh", shells: [:zsh])
   end
 
   test do
+    # Disable the background GitHub release check (documented `update_check` setting)
+    (testpath/".config/pikpaktui/config.toml").write <<~TOML
+      update_check = "off"
+    TOML
+
     assert_match version.to_s, shell_output("#{bin}/pikpaktui --version")
 
     output = shell_output("#{bin}/pikpaktui ls / 2>&1", 1)
