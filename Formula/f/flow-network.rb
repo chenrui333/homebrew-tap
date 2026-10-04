@@ -8,10 +8,10 @@ class FlowNetwork < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a7392693a4d3556fe7514325aa5d39f9f7475f26e33822aed6412e8878ad066"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a2930e6497778b6faadbc229c3f540bbfc6b5b6ac6121351894b781a1c0cf85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6757f9afc829aa23e5e03fbc4080b2805f0e84300821a0fc26dfe999af1d680b"
-    sha256 cellar: :any,                 x86_64_linux:  "7483a3699bc4e2d438eb6163661dd204bd474cd4b7f07a2f955b4d0c8dfdc9f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2da76078c6707bdac97851b6961517cb0d8a63805365964dc3c999f1208df8b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "794751e0a50d9770bd344ae7ec0872851c1766dcf18d7817381fb8335eb6ccfe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "698f1d478e3b2a5d8bd38994e0620aca17d2a80f37b21a898bc27ffe86ccc838"
+    sha256 cellar: :any,                 x86_64_linux:  "a2f9c9874d70bf0775d35f6ce56f2f1a2ed40bd0fe521b85f89d0b1be2576390"
   end
 
   depends_on "go" => :build
