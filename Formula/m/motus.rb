@@ -17,6 +17,12 @@ class Motus < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # The clipboard feature pulls in GUI-specific X11 clipboard support on Linux.
     system "cargo", "install", *std_cargo_args(path: "crates/motus-cli"), "--no-default-features"
