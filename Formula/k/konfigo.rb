@@ -1,8 +1,10 @@
 class Konfigo < Formula
   desc "Merge and transform configuration files across multiple formats"
   homepage "https://github.com/ebogdum/konfigo"
-  url "https://github.com/ebogdum/konfigo/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "13710001bc9010e0efabb7b4a2d608fb96a321177854d04467111ae5b277a671"
+  # GitHub regenerated the v2.0.3 archive (same tag commit); pin the tag commit
+  url "https://github.com/ebogdum/konfigo.git",
+      tag:      "v2.0.3",
+      revision: "f2d0164da57f480a717c9e1e7821a9d0146bdcde"
   license "MIT"
   head "https://github.com/ebogdum/konfigo.git", branch: "main"
 
@@ -16,6 +18,12 @@ class Konfigo < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(output: bin/"konfigo"), "./cmd/konfigo"
