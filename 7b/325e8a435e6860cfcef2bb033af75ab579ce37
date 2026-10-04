@@ -1,0 +1,14 @@
+Formula/p/pls.rb
+  h_9df9c32c3f321d 28-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7b325e8a435e6860cfcef2bb033af75ab579ce37",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
