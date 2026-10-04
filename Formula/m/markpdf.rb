@@ -16,6 +16,12 @@ class Markpdf < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     inreplace "main.go", "1.0.0", version.to_s
     system "go", "build", *std_go_args(ldflags: "-s -w")
