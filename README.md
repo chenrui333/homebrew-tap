@@ -697,6 +697,7 @@ brew install --cask <tool>
 - `npkill`
 - `npm-np`
 - `nucleus-container`
+- `numr`
 - `nvrs`
 - `oatmeal`
 - `obelisk`
@@ -1095,6 +1096,7 @@ brew install --cask <tool>
 - `wpscan`
 - `wut-cli`
 - `xcpkg`
+- `xdgctl`
 - `xfr`
 - `xled`
 - `xmlformatter`
