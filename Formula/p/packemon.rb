@@ -8,10 +8,10 @@ class Packemon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef339b559cf950f4be5feed0c8e31bcd1bcdf12b4a4f0cf47150cc46814bb24d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4299297dd9ad64fe0a63ff9706190451bad36f1c8584e7a3dc91efd921e2e2fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85d38b549c9c7473f9348107778c8bef0a77d43737b35f9d9901a80f3f62ee7d"
-    sha256 cellar: :any,                 x86_64_linux:  "8abcc09ed0150e164680e70b38184be2859ca84f836771712185c9e7304e773e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f606a10c92a9317322d5c49e25a320253dbce7973ea7f2237e4f1424329f95b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "920528839ceb980dd4d9c5c283e70081937e34fa8d63a08ee241d5482857aaa7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00cdfe6bcdc06e0821ae727b4b8b2fe8ec927a591b70ac13b7e31e8ad466515c"
+    sha256 cellar: :any,                 x86_64_linux:  "c8d5583c2e4e3ef56d79ca1516bae1da5d5307db9c722e04f05cac989ee617bf"
   end
 
   depends_on "go" => :build
