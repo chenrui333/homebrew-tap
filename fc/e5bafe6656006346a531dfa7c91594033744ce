@@ -1,0 +1,14 @@
+Formula/k/konfigo.rb
+  h_9df9c32c3f321d 5,20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fce5bafe6656006346a531dfa7c91594033744ce",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
