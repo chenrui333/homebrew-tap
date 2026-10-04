@@ -20,12 +20,20 @@ class Iftree < Formula
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/iftree"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/iftree"
   end
 
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    assert_match version.to_s, shell_output("#{bin}/iftree --help")
+
     output = shell_output("#{bin}/iftree 2>&1", 1)
     assert_match "iftree must be run as root to enter ns", output
   end
