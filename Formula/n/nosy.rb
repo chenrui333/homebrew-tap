@@ -18,11 +18,19 @@ class Nosy < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
   on_linux do
-    depends_on "llvm" => :build
+    # bindgen 0.71 (via whisper-rs-sys 0.14) emits opaque structs with libclang 22+
+    # TODO: Remove when https://github.com/rust-lang/rust-bindgen/issues/3275 fix (bindgen 0.72.1) is used
+    depends_on "llvm@21" => :build
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm@21") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"nosy", "completion")
