@@ -17,6 +17,12 @@ class Hostctl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/guumaster/hostctl/cmd/hostctl/actions.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/hostctl"
