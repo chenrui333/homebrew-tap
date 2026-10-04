@@ -20,8 +20,14 @@ class Happy < Formula
     depends_on "patchelf" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     node_modules = libexec/"lib/node_modules/happy/node_modules"
     os = OS.kernel_name.downcase
