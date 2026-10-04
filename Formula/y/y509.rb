@@ -1,8 +1,8 @@
 class Y509 < Formula
   desc "Inspect and validate X.509 certificate chains"
   homepage "https://github.com/kanywst/y509"
-  url "https://github.com/kanywst/y509/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "cd00d99695e38b8595bd2a8c42a264679eb0ae0a7ba478971d4dfa89012c650a"
+  url "https://github.com/kanywst/y509/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "cc7c29bf7f38eb05f0fad7f3f5d2089e4cda9095fe0d8755842ce14e82286e79"
   license "Apache-2.0"
   head "https://github.com/kanywst/y509.git", branch: "main"
 
@@ -15,6 +15,12 @@ class Y509 < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/kanywst/y509/internal/version.Version=#{version}"
