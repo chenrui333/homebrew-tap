@@ -1122,6 +1122,7 @@ brew install --cask <tool>
 - `ziglint`
 - `zigscient`
 - `zmate`
+- `zmpl`
 - `zombie`
 - `zookeeper`
 - `zsh-vi-man`
