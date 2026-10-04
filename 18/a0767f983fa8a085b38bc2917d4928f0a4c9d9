@@ -1,0 +1,19 @@
+Formula/h/htvend.rb
+  s_20ee2ac03ef1eb::t_9ebe3f07a5d0ed 19-24,30-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "18a0767f983fa8a085b38bc2917d4928f0a4c9d9",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
