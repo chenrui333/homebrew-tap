@@ -1,274 +1,80 @@
-name: Build and Test Formulae
+name: Strict network sandbox audits
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'Formula/**'
-      - '.github/workflows/tests.yml'
-      - '.github/scripts/environment.js'
-      - '.github/scripts/environment.test.js'
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'Formula/**'
-      - '.github/workflows/tests.yml'
-      - '.github/scripts/environment.js'
-      - '.github/scripts/environment.test.js'
-  merge_group:
   workflow_dispatch:
+    inputs:
+      targets:
+        description: 'JSON array of formula and exact source SHA pairs'
+        required: true
+        type: string
 
-env:
-  HOMEBREW_DEVELOPER: 1
-  HOMEBREW_GITHUB_ACTIONS: 1
-  HOMEBREW_NO_AUTO_UPDATE: 1
-  HOMEBREW_NO_INSTALL_FROM_API: 1
-  HOMEBREW_RELOCATABLE_INSTALL_NAMES: 1
+permissions:
+  contents: read
 
 concurrency:
-  group: "build-${{ github.ref }}"
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: network-sandbox-strict-audit
+  cancel-in-progress: false
 
 jobs:
-  tap-syntax:
-    if: github.event_name == 'pull_request' || github.event_name == 'merge_group'
+  audit:
     runs-on: ubuntu-24.04
+    timeout-minutes: 60
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:af86fd4ac6eacb255eae173eee12cd1d8e139ab4b7e9aeadeb974ebdc840dc02
     env:
-      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
-    outputs:
-      testing_formulae: ${{ steps.formulae-detect.outputs.testing_formulae }}
-      added_formulae: ${{ steps.formulae-detect.outputs.added_formulae }}
-      deleted_formulae: ${{ steps.formulae-detect.outputs.deleted_formulae }}
-      formulae_to_fetch: ${{ steps.formulae-detect.outputs.formulae_to_fetch }}
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_FROM_API: 1
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
+      - name: Validate exact audit targets
+        env:
+          AUDIT_TARGETS: ${{ inputs.targets }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re
+          targets = json.loads(os.environ["AUDIT_TARGETS"])
+          if not isinstance(targets, list) or not 1 <= len(targets) <= 32:
+              raise ValueError("Provide between one and 32 formula/SHA pairs")
+          rows = []
+          for target in targets:
+              if not isinstance(target, dict) or set(target) != {"formula", "sha"}:
+                  raise ValueError("Each target must contain only formula and sha")
+              formula, sha = target["formula"], target["sha"]
+              if not isinstance(formula, str) or not re.fullmatch(r"[a-z0-9][a-z0-9+@._-]*", formula):
+                  raise ValueError("Invalid formula name")
+              if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+                  raise ValueError("Expected an exact 40-character commit SHA")
+              rows.append(f"{formula}\t{sha}\n")
+          (pathlib.Path(os.environ["RUNNER_TEMP"]) / "network-sandbox-audit-targets.tsv").write_text("".join(rows))
+          PY
+
       - name: Set up Homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           core: true
           cask: false
 
-      - run: brew test-bot --only-tap-syntax
-        continue-on-error: true # Skip due to license check issues
-
-      - run: brew test-bot --only-formulae-detect
-        id: formulae-detect
-
-      - name: Fetch published formula bottles
-        if: >-
-          github.event_name == 'merge_group' &&
-          (steps.formulae-detect.outputs.testing_formulae != '' ||
-          steps.formulae-detect.outputs.added_formulae != '' ||
-          steps.formulae-detect.outputs.deleted_formulae != '')
-        env:
-          FORMULAE_TO_FETCH: ${{ steps.formulae-detect.outputs.formulae_to_fetch }}
-        run: >-
-          brew test-bot --only-bottles-fetch
-          --testing-formulae="$FORMULAE_TO_FETCH"
-          --root-url="https://ghcr.io/v2/chenrui333/tap"
-
-  set-environment:
-    if: |
-      always() &&
-      !cancelled() &&
-      ((github.event_name != 'pull_request' && github.event_name != 'merge_group') || needs.tap-syntax.result == 'success')
-    runs-on: ubuntu-slim
-    needs: tap-syntax
-    permissions:
-      contents: read
-      pull-requests: read
-    outputs:
-      syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
-      linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
-      linux-arm64-runner: ${{ steps.check-labels.outputs.linux-arm64-runner }}
-      fail-fast: ${{ steps.check-labels.outputs.fail-fast }}
-      timeout-minutes: ${{ steps.check-labels.outputs.timeout-minutes }}
-      container: ${{ steps.check-labels.outputs.container }}
-      build-matrix: ${{ steps.check-labels.outputs.build-matrix }}
-      test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-
-      - name: Check for CI labels
-        id: check-labels
-        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
-        env:
-          SCRIPTS_PATH: .github/scripts
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const path = require('path')
-            const script = require(path.resolve(`${process.env.SCRIPTS_PATH}/environment.js`))
-            const formula_detect = {
-              testing_formulae: '${{needs.tap-syntax.outputs.testing_formulae}}',
-              added_formulae: '${{needs.tap-syntax.outputs.added_formulae}}',
-              deleted_formulae: '${{needs.tap-syntax.outputs.deleted_formulae}}'
-            }
-            try {
-              await script({github, context, core}, formula_detect)
-            } catch (error) {
-              console.error(error);
-              core.setFailed(error.message)
-            }
-
-  build-formula:
-    needs: [tap-syntax, set-environment]
-    if: |
-      always() &&
-      !cancelled() &&
-      (needs.tap-syntax.result == 'success' || needs.tap-syntax.result == 'skipped') &&
-      (needs.set-environment.result == 'success' || needs.set-environment.result == 'skipped') &&
-      ((github.event_name != 'pull_request' && github.event_name != 'merge_group') || needs.set-environment.outputs.syntax-only != 'true')
-    strategy:
-      matrix:
-        include: ${{ fromJson(needs.set-environment.outputs.build-matrix) }}
-      fail-fast: ${{ (github.event_name == 'pull_request' || github.event_name == 'merge_group') && fromJson(needs.set-environment.outputs.fail-fast) || false }}
-    runs-on: ${{matrix.runner}}
-    container: ${{matrix.container}}
-    timeout-minutes: ${{ matrix.timeout || ((github.event_name == 'pull_request' || github.event_name == 'merge_group') && fromJson(needs.set-environment.outputs.timeout-minutes) || 240) }}
-    defaults:
-      run:
-        shell: /bin/bash -e {0}
-        working-directory: ${{matrix.workdir || github.workspace}}
-    env:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-      BOTTLES_DIR: ${{matrix.workdir || github.workspace}}/bottles
-    steps:
-      - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-        with:
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-          cleanup: ${{ matrix.cleanup }}
-
-      - name: Run brew test-bot
-        id: brew-test-bot-formulae
-        working-directory: ${{ env.BOTTLES_DIR }}
+      - name: Audit exact formula sources strictly
+        shell: bash
         run: |
-          # Set Linux-specific environment variables if running on Linux
-          if [[ "$RUNNER_OS" == "Linux" ]]; then
-            export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-            export HOMEBREW_REPOSITORY=/home/linuxbrew/.linuxbrew/Homebrew
-            export HOMEBREW_CELLAR=/home/linuxbrew/.linuxbrew/Cellar
-            export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-          fi
+          set -euo pipefail
+          tap_path="$(brew --repository chenrui333/tap)"
+          while IFS=$'\t' read -r formula expected_sha; do
+            git -C "$tap_path" fetch origin "$expected_sha"
+            git -C "$tap_path" checkout --detach "$expected_sha"
+            actual_sha="$(git -C "$tap_path" rev-parse HEAD)"
+            test "$actual_sha" = "$expected_sha"
+            echo "Strict audit: $formula at $actual_sha"
+            brew audit --strict --online --formula "chenrui333/tap/$formula"
+            HOMEBREW_SIMULATE_MACOS_ON_LINUX=1 brew audit --strict --online --formula "chenrui333/tap/$formula"
+            printf '%s\t%s\tpassed\n' "$formula" "$actual_sha" >> "$RUNNER_TEMP/strict-audit-results.tsv"
+          done < "$RUNNER_TEMP/network-sandbox-audit-targets.tsv"
 
-          # Use detected formulae for PR and merge-group events, default args otherwise
-          if [[ "${{ github.event_name }}" == "pull_request" || "${{ github.event_name }}" == "merge_group" ]]; then
-            brew test-bot ${{ needs.set-environment.outputs.test-bot-formulae-args }}
-          else
-            brew test-bot --only-formulae --root-url="https://ghcr.io/v2/chenrui333/tap"
-          fi
-
-      - name: Post-build steps
+      - name: Summarize verified heads
         if: always()
-        uses: Homebrew/actions/post-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-        with:
-          runner: ${{ matrix.runner }}
-          cleanup: ${{ matrix.cleanup }}
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-          logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
-
-  conclusion:
-    name: formula-conclusion
-    needs: [tap-syntax, set-environment, build-formula]
-    if: always() && (github.event_name == 'pull_request' || github.event_name == 'merge_group')
-    runs-on: ubuntu-slim
-    steps:
-      - name: Verify formula CI result
-        env:
-          TAP_SYNTAX_RESULT: ${{ needs.tap-syntax.result }}
-          SET_ENVIRONMENT_RESULT: ${{ needs.set-environment.result }}
-          BUILD_FORMULA_RESULT: ${{ needs.build-formula.result }}
-          SYNTAX_ONLY: ${{ needs.set-environment.outputs.syntax-only }}
+        shell: bash
         run: |
-          if [[ "$TAP_SYNTAX_RESULT" != "success" || "$SET_ENVIRONMENT_RESULT" != "success" ]]; then
-            echo "Formula setup failed: tap-syntax=$TAP_SYNTAX_RESULT set-environment=$SET_ENVIRONMENT_RESULT"
-            exit 1
+          if [[ -f "$RUNNER_TEMP/strict-audit-results.tsv" ]]; then
+            cat "$RUNNER_TEMP/strict-audit-results.tsv" >> "$GITHUB_STEP_SUMMARY"
           fi
-
-          if [[ "$BUILD_FORMULA_RESULT" == "success" ]]; then
-            exit 0
-          fi
-
-          if [[ "$BUILD_FORMULA_RESULT" == "skipped" && "$SYNTAX_ONLY" == "true" ]]; then
-            echo "Formula build intentionally skipped for syntax-only CI."
-            exit 0
-          fi
-
-          echo "Unexpected formula build result: $BUILD_FORMULA_RESULT"
-          exit 1
-
-  label-pr:
-    needs: build-formula
-    if: >-
-      success() &&
-      github.event_name == 'pull_request' &&
-      github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    steps:
-      - name: Check if PR has 'in progress' label
-        id: check-label
-        run: |
-          LABELS=$(gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name')
-          if echo "$LABELS" | grep -q "^in progress$"; then
-            echo "skip_label=true" >> "$GITHUB_ENV"
-          else
-            echo "skip_label=false" >> "$GITHUB_ENV"
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-
-      - name: Check for bottle JSON artifacts
-        if: env.skip_label == 'false'
-        run: |
-          temp_dir="$(mktemp -d)"
-          trap 'rm -rf "$temp_dir"' EXIT
-
-          found=false
-          while IFS= read -r artifact_name; do
-            [ -n "$artifact_name" ] || continue
-            rm -rf "${temp_dir:?}"/*
-            gh run download "${{ github.run_id }}" \
-              --repo "${{ github.repository }}" \
-              --name "$artifact_name" \
-              --dir "$temp_dir"
-            if find "$temp_dir" -type f -name '*.bottle.json' -print -quit | grep -q .; then
-              found=true
-              break
-            fi
-          done < <(
-            gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
-              --jq '.artifacts[] | select(.name | startswith("bottles_")) | .name'
-          )
-
-          echo "has_bottle_json=$found" >> "$GITHUB_ENV"
-        env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-
-      - name: Label the PR with 'pr-pull'
-        if: >-
-          env.skip_label == 'false' &&
-          (env.has_bottle_json == 'true' ||
-           contains(github.event.pull_request.labels.*.name, 'CI-no-bottles'))
-        run: |
-          if gh pr view "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --json labels --jq '.labels[].name' | grep -q "^pr-pull$"; then
-            gh pr edit "${{ github.event.pull_request.number }}" --remove-label 'pr-pull' --repo "${{ github.repository }}"
-          fi
-          gh pr edit "${{ github.event.pull_request.number }}" --add-label 'pr-pull' --repo "${{ github.repository }}"
-        env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-
-      - name: Skip 'pr-pull' label without bottle artifacts
-        if: >-
-          env.skip_label == 'false' && env.has_bottle_json != 'true' &&
-          !contains(github.event.pull_request.labels.*.name, 'CI-no-bottles')
-        run: echo "No bottle JSON artifacts were produced in this run; skipping pr-pull label."
-        env:
-          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
