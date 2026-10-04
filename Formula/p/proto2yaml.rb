@@ -8,17 +8,23 @@ class Proto2yaml < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a30b70984aaa6897670a8b09a48b307ab5c2011618e3355935c900ee7fcb5485"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50f55c2a250a9744f85462049a791b499ec659757fb867aa7c178a7cfd4b69f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "f8921a0bb025370e83c4cb0a3a6746f2dc44f0381b523e1a5726d835b4da29b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5147735431a6ca833a57a9e7a237bd6aa721e76be37d6c364387ef05dd65e2b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ce68a96765ff7d519230f1f69c4544a810555a1aac57d562648d627932be830"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ce68a96765ff7d519230f1f69c4544a810555a1aac57d562648d627932be830"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c8a43a3c7f3d528c8f6f5959917c26f607a9f76e84d24c23e26d1175b06314"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec5584fa82322635b05c7cc83cb3e52dcd8fafc97f46a3a9a4fa0a6612b2426d"
   end
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/proto2yaml"
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/proto2yaml"
   end
 
   test do
@@ -32,9 +38,16 @@ class Proto2yaml < Formula
         int32 age = 2;
         repeated string hobbies = 3;
       }
+      service TestService {
+        rpc GetMessage(TestMessage) returns (TestMessage);
+      }
     PROTOBUF
 
-    system bin/"proto2yaml", "yaml", "export", "--source", "test.proto", "--file", "test.yaml"
-    assert_match "packages: []", (testpath/"test.yaml").read
+    system bin/"proto2yaml", "yaml", "export", "--source", testpath, "--file", "test.yaml"
+    output = (testpath/"test.yaml").read
+    assert_match "package: test", output
+    assert_match "service: TestService", output
+    assert_match "name: GetMessage", output
+    assert_match "type: unary", output
   end
 end
