@@ -17,6 +17,12 @@ class Kanha < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -24,11 +30,12 @@ class Kanha < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kanha --version")
 
-    (testpath/"test_urls.txt").write "https://httpbin.org/status/200"
+    (testpath/"plain.txt").write "https://example.com/a b?q=1\n"
+    (testpath/"encoded.txt").write "https%3A%2F%2Fexample.com%2Fa%20b%3Fq%3D1\n"
 
-    output = shell_output("#{bin}/kanha status -f #{testpath}/test_urls.txt")
-    assert_equal <<~EOS, output
-      https://httpbin.org/status/200 [200]
-    EOS
+    assert_equal "https%3A%2F%2Fexample.com%2Fa%20b%3Fq%3D1\n",
+                 shell_output("#{bin}/kanha urldencode --encode #{testpath}/plain.txt")
+    assert_equal "https://example.com/a b?q=1\n",
+                 shell_output("#{bin}/kanha urldencode --decode #{testpath}/encoded.txt")
   end
 end
