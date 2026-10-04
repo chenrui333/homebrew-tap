@@ -21,6 +21,12 @@ class MdbookLinkcheck < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -40,9 +46,19 @@ class MdbookLinkcheck < Formula
     (testpath/"src/SUMMARY.md").write <<~MARKDOWN
       # Summary
 
-      This is a test book.
+      - [Chapter 1](chapter_1.md)
+      - [Chapter 2](chapter_2.md)
     MARKDOWN
+    (testpath/"src/chapter_1.md").write "# Chapter 1\n\nSee [chapter 2](chapter_2.md).\n"
+    (testpath/"src/chapter_2.md").write "# Chapter 2\n"
 
-    system "mdbook", "build"
+    # TODO: Use `mdbook build` again when https://github.com/Michael-F-Bryan/mdbook-linkcheck/issues/96 is fixed
+    # (the backend cannot parse the RenderContext sent by mdbook 0.5).
+    system bin/"mdbook-linkcheck", "--standalone", "--colour", "never"
+
+    rm testpath/"src/chapter_2.md"
+    (testpath/"src/chapter_2.md").write "# Chapter 2\n\nSee [missing](missing.md).\n"
+    output = shell_output("#{bin}/mdbook-linkcheck --standalone --colour never 2>&1", 1)
+    assert_match "File not found: missing.md", output
   end
 end
