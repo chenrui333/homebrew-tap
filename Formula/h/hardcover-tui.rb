@@ -16,13 +16,14 @@ class HardcoverTui < Formula
 
   depends_on "go" => :build
 
-  def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
+  deny_network_access!
 
-    system "go", "build", *std_go_args(ldflags:), "./cmd/hardcover-tui"
+  def fetch
+    system "go", "mod", "download"
+  end
+
+  def install
+    system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/hardcover-tui"
   end
 
   test do
