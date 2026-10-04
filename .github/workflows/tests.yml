@@ -22,6 +22,7 @@ jobs:
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:af86fd4ac6eacb255eae173eee12cd1d8e139ab4b7e9aeadeb974ebdc840dc02
     env:
+      AUDIT_DIR: /tmp/network-sandbox-${{ github.run_id }}
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_NO_INSTALL_FROM_API: 1
       HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
@@ -51,7 +52,8 @@ jobs:
               }
               return `${formula}\t${sha}\n`;
             });
-            fs.writeFileSync(path.join(process.env.RUNNER_TEMP, "network-sandbox-audit-targets.tsv"), rows.join(""));
+            fs.mkdirSync(process.env.AUDIT_DIR, {recursive: true});
+            fs.writeFileSync(path.join(process.env.AUDIT_DIR, "targets.tsv"), rows.join(""));
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
@@ -72,13 +74,13 @@ jobs:
             echo "Strict audit: $formula at $actual_sha"
             brew audit --strict --online --formula "chenrui333/tap/$formula"
             HOMEBREW_SIMULATE_MACOS_ON_LINUX=1 brew audit --strict --online --formula "chenrui333/tap/$formula"
-            printf '%s\t%s\tpassed\n' "$formula" "$actual_sha" >> "$RUNNER_TEMP/strict-audit-results.tsv"
-          done < "$RUNNER_TEMP/network-sandbox-audit-targets.tsv"
+            printf '%s\t%s\tpassed\n' "$formula" "$actual_sha" >> "$AUDIT_DIR/results.tsv"
+          done < "$AUDIT_DIR/targets.tsv"
 
       - name: Summarize verified heads
         if: always()
         shell: bash
         run: |
-          if [[ -f "$RUNNER_TEMP/strict-audit-results.tsv" ]]; then
-            cat "$RUNNER_TEMP/strict-audit-results.tsv" >> "$GITHUB_STEP_SUMMARY"
+          if [[ -f "$AUDIT_DIR/results.tsv" ]]; then
+            cat "$AUDIT_DIR/results.tsv" >> "$GITHUB_STEP_SUMMARY"
           fi
