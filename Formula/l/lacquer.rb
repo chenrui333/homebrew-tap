@@ -18,6 +18,12 @@ class Lacquer < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -28,9 +34,7 @@ class Lacquer < Formula
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"laq"), "./cmd/laq"
 
-    generate_completions_from_executable(
-      bin/"laq", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish, :pwsh]
-    )
+    generate_completions_from_executable(bin/"laq", shell_parameter_format: :cobra)
   end
 
   test do
