@@ -8,10 +8,10 @@ class SemCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d744066f5945d6909f16a756ff1cabb849883a3a65ad24a697e1af754333eac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa8a07baceedf6195550d859032276d40c09a84bbdf764896cde20dd38743e57"
-    sha256 cellar: :any,                 arm64_linux:   "a86a3634ff809e5c0e018320f5a68a6d9a55f6a2975e552b124c0a8af80731d8"
-    sha256 cellar: :any,                 x86_64_linux:  "9dca795ba59a6fa9a748fc2c084d428d1047afec97e3dbd8511a1a7011b85381"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "765f094a327e5777d1f502dbf73500e440a160117ce0527bb0627c04e17ef3f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44e554f9350979158b3be75436bb5381692ee8ab4519e1b725a7818589870d4c"
+    sha256 cellar: :any,                 arm64_linux:   "674e05b44d7220614328151724aaad8d95ed661946037e86e1da78feb518c2a9"
+    sha256 cellar: :any,                 x86_64_linux:  "c2ba241864e6a6c5c9dc12ea85748f7017000d615bfae89384f2d514a6befe6f"
   end
 
   depends_on "pkgconf" => :build
