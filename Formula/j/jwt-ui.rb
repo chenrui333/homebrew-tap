@@ -8,11 +8,11 @@ class JwtUi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82724ff9b5253a63ea575b3774b4ed9d01e093f0e96dafeef30e3f0ddfd3fccd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16a04fd709300ed69b14391cf9752b062b2534a905e05539b033166339cab2e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19c6315347fba7ec1dbd8f1703efe36b8104361f4aa61596abf130d74386b765"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "442467f0409bae4636383f2008eafc824d25883fafe8e55f78815527653d9c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "682df4fbdefce58c74e7605e4358f20b97c1d84d2df44a0d67dc80f99198c151"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45b9f5044223640ed8fc6956fcb467d3b618541b64c8f7d62c41b20edb1df455"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73d692d4a6e4e866b8ac318eb708979831ce844d297432bdd5c1059c59a20fec"
+    sha256 cellar: :any,                 arm64_linux:   "c0e1764b3d4e39095b7c6dd59410e7275487da0243b8ab96d75edc00cf6d35e1"
+    sha256 cellar: :any,                 x86_64_linux:  "404b9c25b49dccf9d6b912e23767af2bbe6e4ed575fe2f743af50b905d2382c0"
   end
 
   depends_on "rust" => :build
