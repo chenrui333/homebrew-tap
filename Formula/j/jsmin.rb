@@ -23,12 +23,17 @@ class Jsmin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f22ba0914678b286970f10889ad477085c917e247ccfeaa9016bdafea2939dd6"
   end
 
+  deny_network_access!
+
   def install
     system ENV.cc, "jsmin.c", "-o", "jsmin"
     bin.install "jsmin"
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace with a version assertion when available.
     assert_equal "\nvar i=0;", pipe_output(bin/"jsmin", "var i = 0; // comment")
+    assert_equal "\nvar url=\"http://example.test\";",
+                 pipe_output(bin/"jsmin", 'var url = "http://example.test";')
   end
 end
