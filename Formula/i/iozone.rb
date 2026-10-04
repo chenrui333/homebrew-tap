@@ -23,6 +23,8 @@ class Iozone < Formula
     sha256 cellar: :any,                 x86_64_linux:  "63ae4c32408a3e83f95f02491b97aa890b33b5c24adeb8112e09d533a4fe236c"
   end
 
+  deny_network_access!
+
   def install
     cd "src/current" do
       # GCC 15 no longer permits an implicit int declaration for pointer-returning functions.
