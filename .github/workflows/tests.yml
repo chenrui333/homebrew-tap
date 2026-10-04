@@ -22,6 +22,8 @@ jobs:
     container:
       image: ghcr.io/homebrew/ubuntu24.04:main@sha256:af86fd4ac6eacb255eae173eee12cd1d8e139ab4b7e9aeadeb974ebdc840dc02
     env:
+      HOMEBREW_DEVELOPER: 1
+      HOMEBREW_GITHUB_ACTIONS: 1
       AUDIT_DIR: /tmp/network-sandbox-${{ github.run_id }}
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_NO_INSTALL_FROM_API: 1
