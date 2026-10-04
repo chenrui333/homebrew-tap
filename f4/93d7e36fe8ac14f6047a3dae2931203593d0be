@@ -1,0 +1,19 @@
+Formula/t/tparse.rb
+  s_c7b0f71fa0ff85::t_31c6076e40e96a 19-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f493d7e36fe8ac14f6047a3dae2931203593d0be",
+  "prompts": {},
+  "sessions": {
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
