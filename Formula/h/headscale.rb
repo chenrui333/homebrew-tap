@@ -17,22 +17,31 @@ class Headscale < Formula
 
   depends_on "go" => :build
 
-  def install
-    ldflags = %W[
-      -s -w
-      -X github.com/juanfont/headscale/hscontrol/types.Version=#{version}
-      -X github.com/juanfont/headscale/hscontrol/types.GitCommitHash=#{tap.user}
-    ]
+  deny_network_access!
 
-    system "go", "build", *std_go_args(ldflags:), "./cmd/headscale"
+  def fetch
+    system "go", "mod", "download"
+  end
+
+  def install
+    # TODO: Remove when a release includes Go 1.27-compatible go-json-experiment: https://github.com/juanfont/headscale/pull/3505
+    ENV["GOEXPERIMENT"] = "nojsonv2"
+
+    # Version comes only from module build info, which is "(devel)" for source archives.
+    inreplace "hscontrol/types/version.go", 'Version:   "dev"', "Version:   \"#{version}\""
+
+    system "go", "build", *std_go_args, "./cmd/headscale"
 
     generate_completions_from_executable(bin/"headscale", shell_parameter_format: :cobra)
   end
 
   test do
-    assert_match "headscale version", shell_output("#{bin}/headscale version")
+    ENV["HEADSCALE_DISABLE_CHECK_UPDATES"] = "true"
+    assert_match version.to_s, shell_output("#{bin}/headscale version")
 
-    output = shell_output("#{bin}/headscale configtest 2>&1", 1)
-    assert_match "Fatal config error", output
+    config = testpath/"config.yaml"
+    config.write("server_url: invalid\n")
+    output = shell_output("#{bin}/headscale --config #{config} configtest 2>&1", 1)
+    assert_match "server_url must start with https:// or http://", output
   end
 end
