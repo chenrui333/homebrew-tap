@@ -29,25 +29,29 @@ jobs:
       - name: Validate exact audit targets
         env:
           AUDIT_TARGETS: ${{ inputs.targets }}
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          import json, os, pathlib, re
-          targets = json.loads(os.environ["AUDIT_TARGETS"])
-          if not isinstance(targets, list) or not 1 <= len(targets) <= 32:
-              raise ValueError("Provide between one and 32 formula/SHA pairs")
-          rows = []
-          for target in targets:
-              if not isinstance(target, dict) or set(target) != {"formula", "sha"}:
-                  raise ValueError("Each target must contain only formula and sha")
-              formula, sha = target["formula"], target["sha"]
-              if not isinstance(formula, str) or not re.fullmatch(r"[a-z0-9][a-z0-9+@._-]*", formula):
-                  raise ValueError("Invalid formula name")
-              if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
-                  raise ValueError("Expected an exact 40-character commit SHA")
-              rows.append(f"{formula}\t{sha}\n")
-          (pathlib.Path(os.environ["RUNNER_TEMP"]) / "network-sandbox-audit-targets.tsv").write_text("".join(rows))
-          PY
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          script: |
+            const fs = require("node:fs");
+            const path = require("node:path");
+            const targets = JSON.parse(process.env.AUDIT_TARGETS);
+            if (!Array.isArray(targets) || targets.length < 1 || targets.length > 32) {
+              throw new Error("Provide between one and 32 formula/SHA pairs");
+            }
+            const rows = targets.map(target => {
+              if (!target || Array.isArray(target) || Object.keys(target).sort().join(",") !== "formula,sha") {
+                throw new Error("Each target must contain only formula and sha");
+              }
+              const {formula, sha} = target;
+              if (typeof formula !== "string" || !/^[a-z0-9][a-z0-9+@._-]*$/.test(formula)) {
+                throw new Error("Invalid formula name");
+              }
+              if (typeof sha !== "string" || !/^[0-9a-f]{40}$/.test(sha)) {
+                throw new Error("Expected an exact 40-character commit SHA");
+              }
+              return `${formula}\t${sha}\n`;
+            });
+            fs.writeFileSync(path.join(process.env.RUNNER_TEMP, "network-sandbox-audit-targets.tsv"), rows.join(""));
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
