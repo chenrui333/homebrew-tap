@@ -7,16 +7,20 @@ class HashaCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e3d36586edc7e20faa57ae7f71627555718632e4556d81f4a2289832f62693f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0a043727a78c0601b2cab4292d83af9e0ad064596b89b91081a9ca09f9e39fe"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef1add475ead8b94603a2f3a3bcf083c6515f5ab11cbb8f8ad6902779c6662cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbf90ae48025daeb02e022db90e2dd62e96807e8c12b24795cb1feb635658664"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f9d9fdd4470989198d2d8f4d268d068a315b00ac4dde507199fb17b112cc997b"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/hasha"
   end
 
