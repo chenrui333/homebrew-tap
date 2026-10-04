@@ -15,6 +15,12 @@ class Hyprmoncfg < Formula
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -26,5 +32,12 @@ class Hyprmoncfg < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/hyprmoncfg version")
+
+    # `profiles` only needs hyprctl on PATH; listing reads the local profile store.
+    (testpath/"bin/hyprctl").write "#!/bin/sh\nexit 0\n"
+    chmod 0755, testpath/"bin/hyprctl"
+    ENV.prepend_path "PATH", testpath/"bin"
+    assert_match "No saved profiles", shell_output("#{bin}/hyprmoncfg --config-dir #{testpath}/cfg profiles")
+    assert_predicate testpath/"cfg/profiles", :directory?
   end
 end
