@@ -16,6 +16,14 @@ class K10s < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    # The release lockfile still lists dependencies the stub `tui` crate no longer declares.
+    system "cargo", "update", "--workspace"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Upstream 1.0.0 TUI has no CLI flags yet; add a version flag for Homebrew's test.
     inreplace "src/crates/tui/src/main.rs", <<~RUST, <<~RUST
