@@ -17,6 +17,12 @@ class Hulak < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/xaaha/hulak/pkg/userFlags.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
@@ -25,5 +31,9 @@ class Hulak < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/hulak version")
     assert_match "Initialize a hulak project", shell_output("#{bin}/hulak help")
+
+    system bin/"hulak", "init", "classic"
+    assert_path_exists testpath/"env/global.env"
+    assert_match "env/", (testpath/".gitignore").read
   end
 end
