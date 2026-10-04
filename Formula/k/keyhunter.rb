@@ -15,6 +15,13 @@ class Keyhunter < Formula
 
   depends_on "rust" => :build
 
+  # keyhunter only scans websites over HTTP (no file input), so the test crawls a loopback server.
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", "--features", "build-binary,report", *std_cargo_args
   end
@@ -22,7 +29,32 @@ class Keyhunter < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/keyhunter --version")
 
-    output = shell_output("#{bin}/keyhunter https://example.com")
-    assert_match "Found \e[33m0\e[39m keys across \e[33m0\e[39m scripts and \e[33m2\e[39m pages", output
+    token = "ghp_#{"a1B2c3D4e5" * 3}abcdef"
+    pages = {
+      "/"       => ["text/html", '<html><body><a href="/about">About</a><script src="/app.js"></script></body>'],
+      "/about"  => ["text/html", "<html><body><p>About</p></body></html>"],
+      "/app.js" => ["application/javascript", "const token = \"#{token}\";\n"],
+    }
+
+    port = free_port
+    server = TCPServer.new("127.0.0.1", port)
+    thread = Thread.new do
+      loop do
+        client = server.accept
+        path = client.gets.to_s.split[1]
+        while (line = client.gets) && line != "\r\n"; end
+        type, body = pages.fetch(path, ["text/html", "<html></html>"])
+        client.write "HTTP/1.1 200 OK\r\nContent-Type: #{type}\r\nContent-Length: #{body.bytesize}\r\n" \
+                     "Connection: close\r\n\r\n#{body}"
+        client.close
+      end
+    end
+
+    output = shell_output("#{bin}/keyhunter --format json http://localhost:#{port}")
+    findings = output.lines.map { |line| JSON.parse(line) }
+    assert_includes findings.map { |f| [f["rule_id"], f["secret"]] }, ["github-pat", token]
+  ensure
+    thread&.kill
+    server&.close
   end
 end
