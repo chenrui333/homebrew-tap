@@ -21,6 +21,12 @@ class HoloCli < Formula
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -31,6 +37,18 @@ class HoloCli < Formula
 end
 
 __END__
+diff --git a/Cargo.lock b/Cargo.lock
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -537,7 +537,7 @@ checksum = "fbd780fe5cc30f81464441920d82ac8740e2e46b29a6fad543ddd075229ce37e"
+ 
+ [[package]]
+ name = "holo-cli"
+-version = "0.4.0"
++version = "0.5.0"
+ dependencies = [
+  "clap",
+  "derive-new",
 diff --git a/src/internal_commands.rs b/src/internal_commands.rs
 index 4ba84b7..9d404c0 100644
 --- a/src/internal_commands.rs
