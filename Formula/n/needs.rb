@@ -1,8 +1,10 @@
 class Needs < Formula
   desc "Checks if bin(s) are installed, oh and the version too"
   homepage "https://github.com/NQMVD/needs"
-  url "https://github.com/NQMVD/needs/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "0b20957fd5cfd926ec9e20bb26316322dac73f1788d59d95256cc14f69b13d1c"
+  # v0.8.0 was re-tagged upstream (no Rust source or Cargo.lock changes); pin the tag commit
+  url "https://github.com/NQMVD/needs.git",
+      tag:      "v0.8.0",
+      revision: "46b12c10c12156cead7a45aef2887a047a7877d4"
   license "GPL-3.0-or-later"
   head "https://github.com/NQMVD/needs.git", branch: "main"
 
@@ -16,6 +18,12 @@ class Needs < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
