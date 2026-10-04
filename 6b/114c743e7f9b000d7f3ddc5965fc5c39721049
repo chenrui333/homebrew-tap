@@ -1,0 +1,14 @@
+Formula/k/kumo.rb
+  h_9df9c32c3f321d 19-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6b114c743e7f9b000d7f3ddc5965fc5c39721049",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
