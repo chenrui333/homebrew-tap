@@ -18,6 +18,12 @@ class Infraspec < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/robmorgan/infraspec/internal/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/infraspec"
@@ -35,7 +41,10 @@ class Infraspec < Formula
           When I check the server status
           Then the server should be running
     EOS
-    output = shell_output("#{bin}/infraspec test.feature").gsub(/\e\[[;\d]*m/, "")
+    # The default mode starts a loopback AWS emulator; `--live` skips it and undefined steps make no AWS calls.
+    ENV["INFRASPEC_TELEMETRY_DISABLED"] = "1"
+    output = shell_output("#{bin}/infraspec --live test.feature").gsub(/\e\[[;\d]*m/, "")
     assert_match "Test your AWS infrastructure in plain English, no code required", output
+    assert_match "Undefined: 3", output
   end
 end
