@@ -534,6 +534,7 @@ brew install --cask <tool>
 - `klein`
 - `klepto`
 - `kmon`
+- `knife`
 - `knip`
 - `konfigo`
 - `kplane`
