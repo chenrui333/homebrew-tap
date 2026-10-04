@@ -1,0 +1,33 @@
+Formula/z/zmpl.rb
+  s_6e5d1e6427e031::t_3c7ac56c01fbbd 5-24
+  s_6e5d1e6427e031::t_7683080621ed4d 1-4,47,60-64
+  s_6e5d1e6427e031::t_30d6e8d8113a3b 28,30-35,48,56,65
+  s_6e5d1e6427e031::t_4dce867aadb610 66
+  s_6e5d1e6427e031::t_9a7990d7135691 36-45,49-52
+  s_6e5d1e6427e031::t_597f4927aebaf1 57-59
+  s_c7b0f71fa0ff85::t_b286d016de07ea 25-27,29,46,53-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5789aa3df9ee35f09e0bcf209ada281aa321ff95",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_c7b0f71fa0ff85": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a101b8-ed6e-7140-aa74-048f4ddf9734",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
