@@ -16,6 +16,12 @@ class Ip2d < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # version patch
     inreplace "src/main.rs", ".version(\"0.5.0\")", ".version(env!(\"CARGO_PKG_VERSION\"))"
