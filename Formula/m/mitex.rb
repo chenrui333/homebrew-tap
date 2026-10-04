@@ -29,6 +29,12 @@ class Mitex < Formula
         revision: "9eb762afa001b36205408c7615a73e5dfaa6f80a"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     (buildpath/"crates/mitex-spec-gen/assets/artifacts").install resource("artifacts")
 
