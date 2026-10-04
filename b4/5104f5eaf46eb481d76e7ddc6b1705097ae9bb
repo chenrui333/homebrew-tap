@@ -1,0 +1,14 @@
+Formula/l/leveldb-cli.rb
+  h_9df9c32c3f321d 19-24,32-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b45104f5eaf46eb481d76e7ddc6b1705097ae9bb",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
