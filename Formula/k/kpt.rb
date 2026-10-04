@@ -21,6 +21,12 @@ class Kpt < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/kptdev/kpt/run.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
