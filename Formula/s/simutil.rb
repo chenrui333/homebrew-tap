@@ -1,8 +1,8 @@
 class Simutil < Formula
   desc "Manage mobile simulators and devices"
   homepage "https://github.com/dungngminh/simutil"
-  url "https://github.com/dungngminh/simutil/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e36443d8f8f42aded7f92f27ff34bdca0a3b7f674aac96f43c85c3a20f525254"
+  url "https://github.com/dungngminh/simutil/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "110239660360c99ff31a4579fa07e2f18c538ba1e2068d8add9f9e43b1784710"
   license "MIT"
   head "https://github.com/dungngminh/simutil.git", branch: "main"
 
@@ -16,10 +16,19 @@ class Simutil < Formula
 
   depends_on "dart-sdk"
 
+  deny_network_access!
+
+  def fetch
+    with_env(PUB_CACHE: HOMEBREW_CACHE/"simutil--pub") do
+      system "dart", "pub", "get", "--enforce-lockfile"
+    end
+  end
+
   def install
-    system "dart", "pub", "get", "--enforce-lockfile"
     libexec.mkpath
-    system "dart", "compile", "aot-snapshot", "bin/simutil.dart", "-o", libexec/"simutil.aot"
+    with_env(PUB_CACHE: HOMEBREW_CACHE/"simutil--pub") do
+      system "dart", "compile", "aot-snapshot", "packages/simutil/bin/simutil.dart", "-o", libexec/"simutil.aot"
+    end
     (bin/"simutil").write <<~SH
       #!/bin/bash
       exec "#{formula_opt_libexec("dart-sdk")}/bin/dartaotruntime" "#{libexec}/simutil.aot" "$@"
@@ -29,7 +38,7 @@ class Simutil < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/simutil version")
-    output = shell_output("#{bin}/simutil invalid-command 2>&1", 255)
+    output = shell_output("#{bin}/simutil invalid-command 2>&1", 64)
     assert_match 'Could not find a command named "invalid-command"', output
   end
 end
