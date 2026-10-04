@@ -18,6 +18,12 @@ class Junit2html < Formula
   depends_on "go" => [:build, :test]
   depends_on "go-junit-report" => :test # this is from the same tap
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
