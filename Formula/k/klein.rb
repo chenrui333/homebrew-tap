@@ -23,6 +23,15 @@ class Klein < Formula
     depends_on "libxkbcommon"
   end
 
+  deny_network_access!
+
+  def fetch
+    # Fix the stale klein-ide version in the v0.6.0 lockfile (Cargo.toml is 0.6.1).
+    # TODO: Remove in the next release; fixed upstream on main.
+    inreplace "Cargo.lock", "name = \"klein-ide\"\nversion = \"0.5.0\"", "name = \"klein-ide\"\nversion = \"0.6.1\""
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
