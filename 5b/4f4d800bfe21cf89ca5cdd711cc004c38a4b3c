@@ -1,0 +1,19 @@
+Formula/h/ht-mcp.rb
+  s_2e88dfb5d81479::t_17fb4151b5012b 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5b4f4d800bfe21cf89ca5cdd711cc004c38a4b3c",
+  "prompts": {},
+  "sessions": {
+    "s_2e88dfb5d81479": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a108fe-a0e3-7cc0-9500-63b50aedce5e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
