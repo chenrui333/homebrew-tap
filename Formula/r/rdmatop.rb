@@ -7,6 +7,12 @@ class Rdmatop < Formula
   license "Apache-2.0"
   head "https://github.com/uccl-project/rdmatop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "989f63da7c27fcefa2cadcd20d3c60010cd3bcc4a1a72ebfd79f2183a062b975"
+    sha256 cellar: :any, x86_64_linux: "4ad7fe4c44ef8d4eab2b0a0d0478b40a7cb41a1bc7183e7eebc444f055943145"
+  end
+
   depends_on "rust" => :build
   depends_on :linux
 
