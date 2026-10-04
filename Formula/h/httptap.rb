@@ -16,34 +16,19 @@ class Httptap < Formula
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    require "socket"
-
-    server = TCPServer.new("127.0.0.1", 0)
-    pid = nil
-
-    begin
-      pid = fork do
-        client = server.accept
-        client.readpartial(1024)
-        client.write "HTTP/1.1 200 OK\r\nContent-Length: 2\r\nConnection: close\r\n\r\nOK"
-        client.close
-      end
-
-      output = shell_output("#{bin}/httptap -- true 2>&1", 1)
-      assert_match "operation not permitted", output
-    ensure
-      server.close
-      if pid
-        Process.kill("TERM", pid)
-        Process.wait(pid)
-      end
-    end
-  rescue Errno::ECHILD, Errno::ESRCH
-    nil
+    # Creating the user and network namespaces is not permitted in the CI container.
+    output = shell_output("#{bin}/httptap -- true 2>&1", 1)
+    assert_match "operation not permitted", output
   end
 end
