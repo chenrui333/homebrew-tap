@@ -21,6 +21,8 @@ class Rdrview < Formula
     depends_on "libseccomp"
   end
 
+  deny_network_access!
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
