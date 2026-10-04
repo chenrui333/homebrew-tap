@@ -425,6 +425,7 @@ brew install --cask <tool>
 - `grcov`
 - `gritql`
 - `grmon`
+- `grut`
 - `gsh`
 - `gsty`
 - `gtts`
