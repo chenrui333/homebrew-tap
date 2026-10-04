@@ -1,0 +1,14 @@
+Formula/o/oyo.rb
+  h_9df9c32c3f321d 22-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2f1b34a52f17e676be043058cb3512dcc09f3b41",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
