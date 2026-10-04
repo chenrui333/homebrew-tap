@@ -8,19 +8,27 @@ class JsonlGraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64bbb371ef954ef091f804f5a0e3478b3f20948f63266d5ee3a1da86e98757f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80c52de7a2d9397bf9ce7463b63e063cc7fdecf9c3031e9def510d9402d31fc7"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae3e1838f9ae00cbd3384e0a60050d4d20f9be241a393fc1c80bb7010c369ce5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b53974e89f26d6536c6ccfdc136e136245c18da34be1acc0641df1b5fcb6e3f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5adf16cd42f88f30e17a36cba7ba08b1e7f7c8cf907dfb54a4b7829ecc1e9a34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5adf16cd42f88f30e17a36cba7ba08b1e7f7c8cf907dfb54a4b7829ecc1e9a34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfa63b8e65f73d1f13dd0f8052b137ab80c148547f181114ee2f1239abc589c4"
+    sha256 cellar: :any,                 x86_64_linux:  "87f99c6a09a45ff4472e6e4885c0ccfeb296f93e144d3f926960412c040156d6"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace with a version assertion when available.
     (testpath/"test.jsonl").write <<~JSON
       {
         "to": "Pod:nginx-6799fc88d8-j4vv8",
@@ -37,6 +45,8 @@ class JsonlGraph < Formula
     JSON
 
     test_file = (testpath/"test.jsonl").read
-    assert_match "Pod:nginx-6799fc88d8-j4vv8", pipe_output("#{bin}/jsonl-graph", test_file)
+    output = pipe_output(bin/"jsonl-graph", test_file)
+    assert_match "Pod:nginx-6799fc88d8-j4vv8", output
+    assert_match '"ReplicaSet:nginx-6799fc88d8" -> "Pod:nginx-6799fc88d8-j4vv8"', output
   end
 end
