@@ -27,14 +27,21 @@ class Cliamp < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
 
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    system "go", "build", *std_go_args(ldflags: :goreleaser)
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin/"cliamp"} --version")
+    assert_match "No plugins installed.", shell_output("#{bin/"cliamp"} plugins list")
     output = shell_output("#{bin/"cliamp"} search 2>&1", 1)
     assert_match "search requires a query string", output
   end
