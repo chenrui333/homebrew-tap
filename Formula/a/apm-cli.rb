@@ -3,16 +3,16 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/1f/f1/8da7ba1848916dd5eafd8d94c52c6ca235eda293b9a92b2dde145094aa22/apm_cli-0.32.0.tar.gz"
-  sha256 "761b774078975e3b028c332d8c5e43a7227baf022a96b0f0c42fc966e37f5d32"
+  url "https://files.pythonhosted.org/packages/84/3f/e383f7c304d46656d77e5959db7d914e590c283af5b407ddf94205d02edb/apm_cli-0.33.0.tar.gz"
+  sha256 "a523805a3cc9b51f80573c1efce13982b3a5665c8ae749a51e5648575a1d6633"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "671e27a4ca2950ba989a290cf9aef299def64916be417bc85d6f362e8186fa98"
-    sha256 cellar: :any, arm64_sequoia: "ead0cc8963f547a4d6f370e3db246e7026bde4268a9e0d7d27cf44ba5e4633d8"
-    sha256 cellar: :any, arm64_linux:   "cc30e2e7b84ce4ecc7f76a0c7eebcbbf4eff7fe54fb7525324c6dc9d8e8996ea"
-    sha256 cellar: :any, x86_64_linux:  "f43321e05bb9afb3103499dfc10568fe6bdbdc823825a1cb6fa92662feae27f8"
+    sha256 cellar: :any, arm64_tahoe:   "89cceaef4f18449d39f935f40b628fe021f39ee516e6b524b9214ffed8067a8b"
+    sha256 cellar: :any, arm64_sequoia: "b7229a971f152a188732dec3f04b0828a957c95b7c9985497bb4668d15f7b876"
+    sha256 cellar: :any, arm64_linux:   "428422314d831266143a26c876ee565676b56b4b2d77cda2008e976c26e2ff24"
+    sha256 cellar: :any, x86_64_linux:  "ad49d3bf007a01cb22fb42df0a9e30e3b56b7245aea5db8733b390dbc2f37307"
   end
 
   depends_on "maturin" => :build
@@ -70,8 +70,8 @@ class ApmCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -110,8 +110,8 @@ class ApmCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/c8/d7/37691dc5063438a448b646f6f2442b4beebf16cc0e18d8cdfa7aeec60b8c/filelock-4.0.4.tar.gz"
-    sha256 "90999ed63a26ccf86b93b959ab10cf1017f422d816be454ed54cbed263e71ab5"
+    url "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz"
+    sha256 "635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22"
   end
 
   resource "flit-core" do
@@ -130,8 +130,8 @@ class ApmCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/e0/db/3ca813cbacb23ab6fe46ff38a9b5ef8e73e970c8051f2ce903aacafe0446/gitpython-3.1.62.tar.gz"
-    sha256 "1791de66309bc0c7cfca40bf8d2e3de7ca091cbf94e6051be1ad0722c61062af"
+    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
+    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
   end
 
   resource "h11" do
@@ -200,8 +200,8 @@ class ApmCli < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do
@@ -215,8 +215,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/7c/91/2d5722388a50cc86e162779df5fbfe0afa652a6e2d5c9ee616e081a82098/openai-3.19.2.tar.gz"
-    sha256 "de185f9834ad064d965ec42bd0766731cf66bceea16a7670294a835d207019e6"
+    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
+    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
   end
 
   resource "packaging" do
