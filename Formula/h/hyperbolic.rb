@@ -18,6 +18,12 @@ class Hyperbolic < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
@@ -29,5 +35,9 @@ class Hyperbolic < Formula
     output, status = Open3.capture2e(bin/"hyperbolic", "--not-a-real-option")
     refute_predicate status, :success?
     assert_match "not-a-real-option", output
+
+    assert_match "Not authenticated", shell_output("#{bin}/hyperbolic auth status")
+    assert_match "API key saved successfully", shell_output("#{bin}/hyperbolic auth set-key abcdefgh12345678")
+    assert_match "API key: abcdefgh...12345678", shell_output("#{bin}/hyperbolic auth status")
   end
 end
