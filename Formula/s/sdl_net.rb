@@ -20,8 +20,36 @@ class SdlNet < Formula
   depends_on "pkgconf" => :build
   depends_on "sdl12-compat"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-sdltest", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include "SDL_net.h"
+      #undef main
+
+      int main(void) {
+        const SDL_version *v = SDLNet_Linked_Version();
+        printf("SDL_net %d.%d.%d\\n", v->major, v->minor, v->patch);
+        if (SDLNet_Init() != 0) {
+          fprintf(stderr, "SDLNet_Init: %s\\n", SDLNet_GetError());
+          return 1;
+        }
+        IPaddress ip;
+        if (SDLNet_ResolveHost(&ip, NULL, 4242) != 0) return 1;
+        printf("%u\\n", SDLNet_Read16(&ip.port));
+        SDLNet_Quit();
+        return 0;
+      }
+    C
+
+    system ENV.cc, "test.c", "-I#{include}/SDL", "-I#{formula_opt_include("sdl12-compat")}/SDL",
+                   "-L#{lib}", "-lSDL_net", "-L#{formula_opt_lib("sdl12-compat")}", "-lSDL", "-o", "test"
+    assert_equal "SDL_net #{version}\n4242\n", shell_output("./test")
   end
 end
