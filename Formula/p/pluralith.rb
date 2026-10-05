@@ -19,7 +19,23 @@ class Pluralith < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "app" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
+    # Skip the graph-module update check on every startup: it calls the now-dead
+    # api.pluralith.com, panics (nil response) without network and writes to stdout.
+    # `pluralith install` and `pluralith update` still run it on demand.
+    inreplace "app/main.go" do |s|
+      s.gsub! "\t\"pluralith/pkg/install/components\"\n", ""
+      s.gsub! "\tcomponents.GraphModule(true)\n", ""
+    end
+
     cd "app" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
 
