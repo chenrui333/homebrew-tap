@@ -8,7 +8,8 @@ class Mush < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5539a76807ea357c72c787dea0955f7daa017b57f4da32792ae7229612381943"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "eeee965f65c3ea57a554ac9d5fb3e6d3028568d65d71ff5d16720af118bb381e"
   end
 
   depends_on "bash"
