@@ -9,13 +9,11 @@ class Molotov < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac78047b93b4368ffff8614d126207e12b05cae2169d262de3e4f9638179c404"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83c9e88f6ad2b8fa4bc7134b8de9005f5b70fd9845c0342ab3d65f838471ce74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "399579654ca180fa94bd0abe1ab0f246fd05d2b3184cc0a3d12a3189f47f19e1"
-    sha256 cellar: :any_skip_relocation, sequoia:       "68902258e9ebb3b47813cd0cb365786df03190fb9d428f356f24f4e7cd8a444a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ace3eda1df55664cefb4694459c559920c87686948f099145f593b1fe15438d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db90959a5c49c1958cfaacd0876c4804fc543f7465d831f16d2725fc7c6757bd"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb97dd6671784b67338a23176bc929180c2cac24a6a7d2c962343afac7240013"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29b7a4d045d036bc7fae2ee64260cfdf5fc8f0ba8261907d444daf6d662a9d13"
+    sha256 cellar: :any,                 arm64_linux:   "d427ef9be33b965dc222ce9a50eee51c0bd45678dcb192bb21bc53d377e012e4"
+    sha256 cellar: :any,                 x86_64_linux:  "c153c7c474fe5fbd21f150f4c8589519b4eac8667b78848c0dabdbd91867d07e"
   end
 
   depends_on "cython" => :build # for frozenlist, propcache and yarl
