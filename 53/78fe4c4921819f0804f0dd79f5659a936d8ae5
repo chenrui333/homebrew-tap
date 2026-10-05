@@ -1,0 +1,14 @@
+Formula/u/urlsup.rb
+  h_9df9c32c3f321d 19-24,32,40-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5378fe4c4921819f0804f0dd79f5659a936d8ae5",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
