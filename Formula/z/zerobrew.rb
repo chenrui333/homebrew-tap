@@ -16,6 +16,12 @@ class Zerobrew < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     inreplace "Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
     system "cargo", "install", *std_cargo_args(path: "zb_cli")
