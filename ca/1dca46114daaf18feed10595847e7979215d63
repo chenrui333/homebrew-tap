@@ -1,0 +1,14 @@
+Formula/t/tuono.rb
+  h_9df9c32c3f321d 24-31,39-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ca1dca46114daaf18feed10595847e7979215d63",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
