@@ -9,7 +9,8 @@ class McpManager < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "e1441722a7414475dafb7c1bba410dd3792ae11c8eef67749d3bea3a47496602"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0079b465028830d7195629adb652d318e267c5b796996e8fa90bc6674aeaeaa4"
   end
 
   depends_on "pydantic" => :no_linkage
