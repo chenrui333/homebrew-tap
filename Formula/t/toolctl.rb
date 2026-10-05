@@ -17,6 +17,12 @@ class Toolctl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -32,8 +38,29 @@ class Toolctl < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/toolctl --version")
 
-    assert_match "toolctl", shell_output("#{bin}/toolctl list")
-    output = shell_output("#{bin}/toolctl info 2>&1")
-    assert_match "The tool to control your tools", output
+    # Serve tool metadata from the hidden local API instead of raw.githubusercontent.com.
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "amd64"
+    (testpath/"api/meta.yaml").write <<~YAML
+      tools:
+        - toolctl
+    YAML
+    (testpath/"api/toolctl/meta.yaml").write <<~YAML
+      description: The tool to control your tools
+      homepage: https://github.com/toolctl/toolctl
+      downloadURLTemplate: https://example.com/{{.Version}}
+      versionArgs: [--version]
+    YAML
+    (testpath/"api/toolctl/#{os}-#{arch}/meta.yaml").write <<~YAML
+      version:
+        earliest: 0.1.0
+        latest: #{version}
+    YAML
+    (testpath/"config.yaml").write "LocalAPIBasePath: #{testpath}/api\n"
+
+    args = ["--local", "--config", testpath/"config.yaml"]
+    assert_match "toolctl", shell_output("#{bin}/toolctl list --all #{args.join(" ")}")
+    output = shell_output("#{bin}/toolctl info toolctl #{args.join(" ")}")
+    assert_match "toolctl v#{version}: The tool to control your tools", output
   end
 end
