@@ -8,11 +8,10 @@ class Junit2html < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2490a110ec7921ae1a420cbc1d867d07a74e615a0da0205eef21657c9a321e03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2490a110ec7921ae1a420cbc1d867d07a74e615a0da0205eef21657c9a321e03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2490a110ec7921ae1a420cbc1d867d07a74e615a0da0205eef21657c9a321e03"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d4e9fef94797ec1bdbd531267dfb32de50609bf31bbd63349bb4242916f60cf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d5d34fbdef2bb3dc63401f1d9196ab3a289f2e374eda7e9264e5b078ad5bc76"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "885b89ad42a6a91c0f8137bcca7e088de4c9928703368b4266e2611d957841a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "885b89ad42a6a91c0f8137bcca7e088de4c9928703368b4266e2611d957841a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54596acda8a2efb1c7d9b5c1005237d530fdfb8dc9453079140e3732418f0d11"
   end
 
   depends_on "go" => [:build, :test]
