@@ -8,13 +8,20 @@ class Lazyworktree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00b460a360cebf822c48ff0adf1acef23b92e25a0f928d5771074c17bea3d5a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00b460a360cebf822c48ff0adf1acef23b92e25a0f928d5771074c17bea3d5a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "10ca1a5fff9af6b61a0e7e82a72c494cdf4a6cc0def012afbcb022c0450d06b5"
-    sha256 cellar: :any,                 x86_64_linux:  "73f1bcc69746ddc17eb24c8eb8103865859ddf8ae191437f0f5645876464c574"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "087d807fea41afb622b4df5a28a2fb2a1343fc575c6996bda5768e09f4c07144"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "087d807fea41afb622b4df5a28a2fb2a1343fc575c6996bda5768e09f4c07144"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53f782a50dc652e3f4cbca87ddd2520ab383406b7be75399e681d2d2c042ce52"
+    sha256 cellar: :any,                 x86_64_linux:  "411ed37cd96fd349e2f42a25166ff4390ee6dfc56b81f40f5d6af075eb2ab704"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=homebrew -X main.builtBy=Homebrew"
