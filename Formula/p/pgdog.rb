@@ -22,6 +22,16 @@ class Pgdog < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
+  uses_from_macos "llvm" => :build # for libclang, used by `pg_query` bindgen
+
+  deny_network_access!
+
+  def fetch
+    # Upstream gitignores Cargo.lock; resolve once during fetch so the build stays offline.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
     system "cargo", "install", *std_cargo_args(path: "pgdog")
