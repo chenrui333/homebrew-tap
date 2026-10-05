@@ -1,0 +1,14 @@
+Formula/m/mtef.rb
+  h_9df9c32c3f321d 19-20,23-28,39-41,59-63,69-83,109-121,124-126,154-173,189-195,200-222
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b9aa5b66f3a7fe3d38eb63d0819a2391423aa38e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
