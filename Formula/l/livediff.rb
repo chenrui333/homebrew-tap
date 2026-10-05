@@ -8,13 +8,20 @@ class Livediff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d784f65dc2edac108f4994b4b04285e8020c787deb5186703b6590ed03b383a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d56ba68f87c7974743dab6532f9bc8eba3ae0522f4d532cb3f9905f841b578a7"
-    sha256 cellar: :any,                 arm64_linux:   "abce4209099f2d4cad6636bfb3f942525de580b75c59a0a2dba290c10d37fe15"
-    sha256 cellar: :any,                 x86_64_linux:  "50ec9aac193d1c46f24d180ab7d380bd86a7ec96ee248f25cdf56721f2a3990b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "959102ef39c60dffda52066602f4fc8e12362ca1d55c3c34cfa6c69470c96a64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e8faa97f9f79b6e3075215db75435da30e90941e5f971c5c31616b07d9f133a"
+    sha256 cellar: :any,                 arm64_linux:   "61cac08d3a3cebfd4a5a67944a4a3274968c507ed4319f8fc2fbcefd68961442"
+    sha256 cellar: :any,                 x86_64_linux:  "4c760ac9429768848635c88b980faec51e69dc52f7f8271ddb13b921c38db415"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
