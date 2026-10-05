@@ -20,6 +20,8 @@ class Sflowtool < Formula
     sha256 "45f6a0f96bdb6a1780694b9a4ef9bbd2fd719b9f7f3355c6af1427631b311d56"
   end
 
+  deny_network_access!
+
   def install
     # IPV6_HDRINCL is not available on macOS
     inreplace "src/sflowtool.c",
