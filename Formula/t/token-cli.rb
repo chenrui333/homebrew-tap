@@ -23,6 +23,12 @@ class TokenCli < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/imduffy15/token-cli/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
@@ -33,6 +39,6 @@ class TokenCli < Formula
   test do
     url = "http://localhost:8080/auth/realms/example-realm/.well-known/openid-configuration"
     output = shell_output("#{bin}/token-cli target create example-realm -t #{url} 2>&1", 1)
-    assert_match "connection refused", output
+    assert_match "dial tcp", output
   end
 end
