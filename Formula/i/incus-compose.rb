@@ -8,12 +8,11 @@ class IncusCompose < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abfec86d5ccd85bf2cecf0e32bde3fffa347968d7eb454a800412598f15fa064"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abfec86d5ccd85bf2cecf0e32bde3fffa347968d7eb454a800412598f15fa064"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abfec86d5ccd85bf2cecf0e32bde3fffa347968d7eb454a800412598f15fa064"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc66bd3445077478f156ee3319c1b2d27626e737e51e672934f81f7be4f05f35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b8b3c8acf8221f795a46028877f42c0e32fea95344a4c11f5e04b0c9ea04e6d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cd333aec8a4d9f13a53d820ee660beb337469568515a8791a38cedd40f03310"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cd333aec8a4d9f13a53d820ee660beb337469568515a8791a38cedd40f03310"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dabb45abb25674cb1aa7366fe4f9c639698c01183490aa02b6526e4f9ad5601"
+    sha256 cellar: :any,                 x86_64_linux:  "6ef1aea0713b66b06b6550aa06161cd38e25ec59ed9cb241b4421f3c4755796f"
   end
 
   depends_on "go" => :build
