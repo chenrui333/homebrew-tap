@@ -1,0 +1,19 @@
+Formula/m/minimax-mcp-server.rb
+  s_20ee2ac03ef1eb::t_6e668e9b63b909 21,23-26,28-35,57-59,72-74,82-86,97-111,137-141,162-166,187-189,192-194,197-209,257-269,297-306,332-336,342-353,355-384,388-390,392-430
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3e8c3ca867fd6049211ced07cc072db74280614d",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
