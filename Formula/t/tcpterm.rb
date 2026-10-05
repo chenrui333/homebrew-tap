@@ -21,10 +21,17 @@ class Tcpterm < Formula
     depends_on "libpcap"
   end
 
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
+
   def install
     if OS.linux?
-      ENV.append "CGO_CFLAGS", "-I#{Formula["libpcap"].opt_include}"
-      ENV.append "CGO_LDFLAGS", "-L#{Formula["libpcap"].opt_lib} -lpcap"
+      ENV.append "CGO_CFLAGS", "-I#{formula_opt_include("libpcap")}"
+      ENV.append "CGO_LDFLAGS", "-L#{formula_opt_lib("libpcap")} -lpcap"
     end
 
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
