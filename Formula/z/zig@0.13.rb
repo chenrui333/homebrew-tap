@@ -22,7 +22,6 @@ class ZigAT013 < Formula
 
   depends_on "cmake" => :build
   depends_on "llvm@18" => :build
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
   depends_on "zstd"
 
   uses_from_macos "ncurses"
@@ -30,6 +29,8 @@ class ZigAT013 < Formula
 
   # https://github.com/Homebrew/homebrew-core/issues/209483
   skip_clean "lib/zig/libc/darwin/libSystem.tbd"
+
+  deny_network_access!
 
   def install
     llvm = deps.find { |dep| dep.name.match?(/^llvm(@\d+)?$/) }
