@@ -7,17 +7,21 @@ class McpServerTester < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22969bc70ace702a9b5b127a223b2dd4d93fbed6d8e7ef0b2aacd9902a078437"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9dfd0460220b8de30dae5e7801d58232c05f21734f9f6c7ead1d295162cc114e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd95711dc97aaec04c7a314ad0c0ec8ac1ccdfbdcedb99918e29163f58161897"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41edc75d887fc1d1baa1b79a22ac1a2406740b86ff3ebb29d059458d63ff9bc3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9f3fc6333836b02e97b5437f13504b57f4065e5c6db3c2c6abc6c5a1f5f6d59e"
   end
 
   depends_on "patch-package" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
