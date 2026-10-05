@@ -1,0 +1,14 @@
+Formula/s/seamstress.rb
+  h_9df9c32c3f321d 17,20-26,28,45-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "85ed441e7633b06271e4acf31399d9252c68ff31",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
