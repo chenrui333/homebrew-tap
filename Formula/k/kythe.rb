@@ -8,10 +8,11 @@ class Kythe < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab0f07f0428e3eefdb9e7f22929099e78b88b1916f5a2bb2576ae755601a8ad5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d18c16cae88bf3c248672dc9a23ab48359d132fcf2cee86477ee0abaa6daa76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d6ffc0618471ad45afa9370f1071a959210e5f322afb1ecea88a6d9ae6a9b93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ada4fcaf885f6f4ec5864e74c6f814313039161f24714dbfd62dd3a61e9eb6f1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "968df9c530bfea27493c005ac8ba6cb09408a1311f1f8108b013f529f2fe6d2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9358b08e331a75eab838fcaf053ce27aff6646ff1abe0151fbeff57a49176ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1889462eb675f909507744fc42ea11aea295c66fa41c6b206a6983ac6f9618e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dc28329715bbdfc119de92c755c732a0b1852c70e6091084ff9a9b4bdbb4e8f"
   end
 
   depends_on "asciidoc" => :build
