@@ -19,6 +19,8 @@ class Nanobrew < Formula
 
   conflicts_with "nb", because: "both install `nb` binaries"
 
+  deny_network_access!
+
   def install
     zig = formula_opt_bin("zig")/"zig"
     system zig, "build", *std_zig_args
@@ -36,5 +38,7 @@ class Nanobrew < Formula
     assert_match "nanobrew", output
     assert_match version.to_s, output
     assert_match "nb <command> [arguments]", output
+
+    assert_match "unknown command 'not-a-real-command'", shell_output("#{bin}/nb not-a-real-command 2>&1", 1)
   end
 end
