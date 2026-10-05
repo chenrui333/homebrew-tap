@@ -1,0 +1,14 @@
+Formula/m/multigres.rb
+  h_9df9c32c3f321d 21-26,52-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d5d1f101d7e43b346037e78eb2c18d0a7ebfea78",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
