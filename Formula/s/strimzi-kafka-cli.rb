@@ -21,7 +21,10 @@ class StrimziKafkaCli < Formula
   depends_on "libyaml"
   depends_on "python@3.13"
 
-  pypi_packages exclude_packages: %w[certifi cffi cryptography pycparser]
+  pypi_packages exclude_packages: %w[certifi cffi cryptography pycparser],
+                extra_packages:   %w[
+                  cython flit-core packaging setuptools setuptools-scm vcs-versioning wheel
+                ]
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cb/31/4971872b3ed8715346231fb6eb4da8fcba65a4143c189db151ee28a2812b/charset_normalizer-3.5.0.tar.gz"
@@ -31,6 +34,16 @@ class StrimziKafkaCli < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
     sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "google-auth" do
@@ -56,6 +69,11 @@ class StrimziKafkaCli < Formula
   resource "oauthlib" do
     url "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4372da4812c50edbd1434f678c90c2733e1188edfc63/oauthlib-3.3.1.tar.gz"
     sha256 "0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
   resource "pyasn1" do
@@ -88,6 +106,16 @@ class StrimziKafkaCli < Formula
     sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -96,6 +124,11 @@ class StrimziKafkaCli < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/e4/e8/6ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392f/urllib3-1.26.20.tar.gz"
     sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
   end
 
   resource "websocket-client" do
@@ -108,8 +141,34 @@ class StrimziKafkaCli < Formula
     sha256 "35e630eca2aa50ce998b9b1a127bb26b30dfee573702782aa982f875e3f16061"
   end
 
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  deny_network_access!
+
   def install
-    venv = virtualenv_install_with_resources without: "jproperties"
+    build_resources = %w[
+      flit-core
+      packaging
+      setuptools
+      cython
+      vcs-versioning
+      setuptools-scm
+      wheel
+    ]
+
+    # Cython is only needed at build time; skip compiling Cython itself
+    ENV["NO_CYTHON_COMPILE"] = "true"
+
+    venv = virtualenv_create(libexec, "python3.13")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| (build_resources + ["jproperties"]).include?(r.name) },
+                     build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     resource("jproperties").stage do
       # `jproperties` builds with legacy `setuptools_scm` pinning that breaks
@@ -117,7 +176,7 @@ class StrimziKafkaCli < Formula
       inreplace "setup.py", "    use_scm_version=True,\n", "    version=\"2.1.1\",\n"
       inreplace "setup.py", /setup_requires=\[\n\s+"setuptools_scm ~= 3\.3"\n\s+\],\n/m, ""
 
-      venv.pip_install Pathname.pwd
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
   end
 
