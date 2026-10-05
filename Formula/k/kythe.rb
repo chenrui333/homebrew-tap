@@ -31,6 +31,9 @@ class Kythe < Formula
     depends_on "util-linux" # for libuuid
   end
 
+  # bazelisk downloads Bazel, and Bazel fetches its external repositories during the build.
+  allow_network_access! :build
+
   def install
     java_home = formula_opt_libexec("openjdk@21")
     java_home /= "openjdk.jdk/Contents/Home" if OS.mac?
