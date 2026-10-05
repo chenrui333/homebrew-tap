@@ -8,14 +8,20 @@ class Inbucket < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75ba55762825487122d7cbdd8ece14b43428e6437c67d13a69e37a5c3444a489"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ba55762825487122d7cbdd8ece14b43428e6437c67d13a69e37a5c3444a489"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75ba55762825487122d7cbdd8ece14b43428e6437c67d13a69e37a5c3444a489"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c581d14094c75dedc73704d01c77a727ef407f093eaa00cecd0f874260a79a08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dfdf74ea04c3de5da52fd41bf3863902f1d087ab411caadb66a9ead308f5fce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9baa01080d94b10393104e302a8feaeaa805b48ed157ce76ce700e52200ba221"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9baa01080d94b10393104e302a8feaeaa805b48ed157ce76ce700e52200ba221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ab5c83abe0520361a2d931b0db1a5b97f9c3a6f33a32e288d311c16e7e4bcde"
+    sha256 cellar: :any,                 x86_64_linux:  "699c8703673d3210628a7b3badf0f8a9b2d0f249cb14671f769225968111c0aa"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
