@@ -16,19 +16,33 @@ class Yamcp < Formula
 
   depends_on "node@24"
 
-  def install
-    node_path = "#{Formula["node@24"].opt_bin}:#{Formula["node@24"].opt_libexec/"bin"}:$PATH"
+  deny_network_access!
 
-    ENV.prepend_path "PATH", Formula["node@24"].opt_bin
-    ENV.prepend_path "PATH", Formula["node@24"].opt_libexec/"bin"
-
+  def fetch
+    setup_node_env
     system "npx", "-y", "pnpm@9.15.0", "install", "--frozen-lockfile"
+  end
+
+  def install
+    node_path = "#{formula_opt_bin("node@24")}:#{formula_opt_libexec("node@24")/"bin"}:$PATH"
+
+    setup_node_env
+    # npx and pnpm resolve from the caches filled by `fetch`.
+    ENV["npm_config_offline"] = "true"
     system "npx", "-y", "pnpm@9.15.0", "run", "build"
     system "npx", "-y", "pnpm@9.15.0", "prune", "--prod"
 
     libexec.install "dist", "node_modules", "package.json"
     chmod 0755, libexec/"dist/index.js"
     (bin/"yamcp").write_env_script libexec/"dist/index.js", PATH: node_path
+  end
+
+  def setup_node_env
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+    # Keep the npx package cache and pnpm store in buildpath so `install` can reuse them.
+    ENV["npm_config_cache"] = buildpath/".npm"
+    ENV["npm_config_store_dir"] = buildpath/".pnpm-store"
   end
 
   test do
