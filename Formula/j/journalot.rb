@@ -8,13 +8,16 @@ class Journalot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2511af314b4c8430ca8d290cbf5f090e98d4c75048787ee28b0cc20fc94c12e5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e0e5676f24869af9afc8c495f45e792ae48f618cbda914cbdaa82074026cba4b"
   end
 
   depends_on "bash"
 
+  deny_network_access!
+
   def install
-    inreplace "bin/journal", "#!/usr/bin/env bash", "#!#{Formula["bash"].opt_bin}/bash"
+    inreplace "bin/journal", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash"
     bin.install "bin/journal"
     bin.install_symlink bin/"journal" => "journalot"
   end
