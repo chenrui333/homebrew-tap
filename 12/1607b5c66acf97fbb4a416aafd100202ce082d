@@ -1,0 +1,19 @@
+Formula/n/nbcat.rb
+  s_20ee2ac03ef1eb::t_4d8f8d2f48ad70 24-43,100-109,115-124,140-149,170-174,185-191,193-213
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "121607b5c66acf97fbb4a416aafd100202ce082d",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
