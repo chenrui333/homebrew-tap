@@ -22,6 +22,12 @@ class Rustnet < Formula
     depends_on "libpcap"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     asset_dir = buildpath/"build-assets"
     asset_dir.mkpath
