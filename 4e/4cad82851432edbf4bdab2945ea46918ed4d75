@@ -1,0 +1,14 @@
+Formula/r/r2md.rb
+  h_9df9c32c3f321d 23-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4e4cad82851432edbf4bdab2945ea46918ed4d75",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
