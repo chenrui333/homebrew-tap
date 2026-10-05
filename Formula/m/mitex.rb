@@ -12,12 +12,11 @@ class Mitex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c704517439a8624af23b900bd93117667dcd66ac3a28ac11a34bd87794a6736b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e72f94062bd855f2f588c69fb42118b35fd69f8ec3960ae78b7763bda3e0f87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38b45ed3a0fe4fa7e55f7c2e97ad3b6c1d1480979539e543ce2922b897151473"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a92ffda1cd21a351b6bb79c28f466e19f6538887adda67fe4cc87be806e22129"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a36e12df2713e67dd4324e83083731479d58839f1b0ac417aafe923de42ec129"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a3e0a789553f80179054ad712bca89b9f1ceb5cf17e4dcd537259d8c74e85ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e578b53c5dacf0198e7e22b558efbeac3c27d53495c50984b5fd1465d4967b57"
+    sha256 cellar: :any,                 arm64_linux:   "fd18a3ca88d95da8571e621dffda051ae2364e06098bc8e011b3014a09f1c3f8"
+    sha256 cellar: :any,                 x86_64_linux:  "322b484e36f171aa2c5a1a7ef2eba2f69688def27244e9a141ef01341ceb0b65"
   end
 
   depends_on "rust" => :build
@@ -27,6 +26,12 @@ class Mitex < Formula
     url "https://github.com/mitex-rs/artifacts.git",
         tag:      "v0.2.4",
         revision: "9eb762afa001b36205408c7615a73e5dfaa6f80a"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
