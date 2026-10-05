@@ -22,12 +22,17 @@ class Noodle < Formula
     sha256 "5aaa05506cbaf3318d3977dd09f42f9864ba8ee3a86a98c1f65a020b62479e9b"
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     # Husky installs development Git hooks and is not a production dependency.
     package = JSON.parse((buildpath/"package.json").read)
     package.fetch("scripts").delete("prepare")
     (buildpath/"package.json").atomic_write JSON.generate(package)
     system "bun", "install", "--frozen-lockfile", "--production"
+  end
+
+  def install
     libexec.install "src", "assets", "scripts", "node_modules", "package.json"
     (libexec/".agents/skills").install ".agents/skills/noodle-use"
     os = OS.kernel_name.downcase
