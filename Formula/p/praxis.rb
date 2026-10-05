@@ -1,8 +1,8 @@
 class Praxis < Formula
   desc "Declarative infrastructure platform for AWS cloud resources using CUE"
   homepage "https://github.com/shirvan/praxis"
-  url "https://github.com/shirvan/praxis/archive/refs/tags/v0.1.0-alpha.1.tar.gz"
-  sha256 "2c57165ed1cce528bbfb238a472a6b882d9c65de1bedda248061aa793f4431e3"
+  url "https://github.com/shirvan/praxis/archive/refs/tags/alpha-0.2.0.tar.gz"
+  sha256 "8f50d8ad218ea7b1466106406e412d8dbca7474c0c0ad600e256f41379500a73"
   license "Apache-2.0"
   head "https://github.com/shirvan/praxis.git", branch: "main"
 
@@ -17,6 +17,12 @@ class Praxis < Formula
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
