@@ -1,0 +1,14 @@
+Formula/p/prempti.rb
+  h_9df9c32c3f321d 18-20,23-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "93ef6eb07afe23a654d53a4dee28abb63113c2fe",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
