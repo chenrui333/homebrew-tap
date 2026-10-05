@@ -17,6 +17,14 @@ class Zerofs < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "zerofs" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     # Upstream's jemalloc background_thread setting warns on macOS.
     inreplace "zerofs/.cargo/config.toml", ",background_thread:true", "" if OS.mac?
