@@ -1,0 +1,14 @@
+Formula/l/lemonade.rb
+  h_9df9c32c3f321d 18-22,26,35-39,51-55,86-90,111-125,191-210,276-285,311-315,326-330,361-365,371-382,391-424
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "508112cc1dbcf0b168ec957230c3253fb5dd1d9d",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
