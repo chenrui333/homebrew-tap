@@ -18,13 +18,24 @@ class Spotifydl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
-    output = shell_output("#{bin}/spotifydl --not-a-real-option 2>&1", 1)
-    assert_match "unknown flag: --not-a-real-option", output
+    # URL validation happens before any Spotify API authentication
+    output = shell_output("#{bin}/spotifydl not-a-url 2>&1", 1)
+    assert_match "Please enter the url copied from the spotify client", output
+
+    output = shell_output("#{bin}/spotifydl https://open.spotify.com/artist/0OdUWJ0sBjDrqHygGUXeCF 2>&1")
+    assert_match "Only Spotify Album/Playlist/Track URL's are supported", output
   end
 end
