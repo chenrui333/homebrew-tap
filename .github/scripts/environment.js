@@ -24,22 +24,21 @@ module.exports = async ({github, context, core}, formula_detect) => {
     const label_names = labels.map(label => label.name)
     const autobump_branch = pull_request?.head?.repo?.full_name === `${context.repo.owner}/${context.repo.repo}` &&
         pull_request.head.ref?.startsWith('bump-')
-    let published_bottle_head = null
-    if (is_pull_request && label_names.includes('CI-published-bottle-commits')) {
-        const comments = await github.paginate(github.rest.issues.listComments, {
+    const current_head = pull_request?.head?.sha
+    let published_bottle_commits = false
+    if (is_pull_request && current_head && label_names.includes('CI-published-bottle-commits')) {
+        const statuses = await github.paginate(github.rest.repos.listCommitStatusesForRef, {
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            ref: current_head,
             per_page: 100
         })
-        const marker = comments
-            .filter(comment => comment.user?.login === 'github-actions[bot]')
-            .map(comment => comment.body?.match(/^<!-- homebrew-tap: published-bottle-head ([0-9a-f]{40}) -->$/))
-            .filter(Boolean)
-            .at(-1)
-        published_bottle_head = marker?.[1] ?? null
+        // Statuses are newest first; only the latest bot-authored status for the context counts.
+        const marker = statuses.find(status =>
+            status.context === 'homebrew-tap/published-bottle-head' &&
+            status.creator?.login === 'github-actions[bot]')
+        published_bottle_commits = marker?.state === 'success'
     }
-    const current_head = context.payload?.pull_request?.head?.sha
     const linux_runner = 'ubuntu-24.04'
     const linux_arm64_runner = 'ubuntu-24.04-arm'
     const container = {
@@ -159,8 +158,6 @@ module.exports = async ({github, context, core}, formula_detect) => {
         ![formula_detect?.testing_formulae, formula_detect?.added_formulae, formula_detect?.deleted_formulae]
             .some(Boolean)
     const syntax_only = label_names.includes('CI-syntax-only') || merge_group_without_formulae || pull_request_without_formulae
-    const published_bottle_commits = label_names.includes('CI-published-bottle-commits') &&
-        current_head && published_bottle_head === current_head
     if (syntax_only || published_bottle_commits) {
         const reason = merge_group_without_formulae
             ? 'merge_group with no detected formulae'
