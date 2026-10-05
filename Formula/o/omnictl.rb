@@ -16,6 +16,12 @@ class Omnictl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/omnictl"
 
@@ -28,7 +34,9 @@ class Omnictl < Formula
     system bin/"omnictl", "config", "new"
     assert_match "Current context: default", shell_output("#{bin}/omnictl config info")
 
-    output = shell_output("#{bin}/omnictl cluster status test 2>&1", 1)
-    assert_match "connect: connection refused", output
+    system bin/"omnictl", "config", "add", "staging", "--url", "https://omni.example.com"
+    system bin/"omnictl", "config", "context", "staging"
+    assert_match "Current context: staging", shell_output("#{bin}/omnictl config info")
+    assert_match %r{\*\s+staging\s+https://omni\.example\.com}, shell_output("#{bin}/omnictl config contexts")
   end
 end
