@@ -17,6 +17,12 @@ class Speedtest < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
@@ -25,6 +31,9 @@ class Speedtest < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/speedtest --version 2>&1")
 
-    system bin/"speedtest"
+    # A real speed test needs speedtest.net; the predefined city table is built in
+    output = shell_output("#{bin}/speedtest --city-list")
+    assert_match "Available city labels", output
+    assert_match(/\(jp\)\s+tokyo\s+\[35\.680938, 139\.7674114\]/, output)
   end
 end
