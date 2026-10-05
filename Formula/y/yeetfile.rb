@@ -1,6 +1,6 @@
 class Yeetfile < Formula
   desc "Encrypted file sharing and vault service for web and CLI"
-  homepage "https://yeetfile.com/"
+  homepage "https://github.com/benbusby/yeetfile"
   url "https://github.com/benbusby/yeetfile/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "ab581b920bd7f52f00c5baed497f51cdaf5608c32340949587ee0769a6fa81ca"
   license "AGPL-3.0-only"
@@ -16,12 +16,27 @@ class Yeetfile < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli"
   end
 
   test do
-    output = shell_output("#{bin}/yeetfile account")
-    assert_match "You are not logged in. Use the 'login' or 'signup' commands to continue.", output
+    # Seed the server info and wordlist caches so startup skips fetching them from yeetfile.com.
+    ENV["XDG_CONFIG_HOME"] = testpath/".config"
+    config_dir = testpath/".config/yeetfile"
+    config_dir.mkpath
+    (config_dir/"yeetfile.com.json").write "{}"
+    (config_dir/"long-wordlist.json").write "[]"
+    (config_dir/"short-wordlist.json").write "[]"
+
+    assert_match "Usage: yeetfile <command> [args]", shell_output("#{bin}/yeetfile help")
+    assert_match "-- Invalid command 'not-a-command'", shell_output("#{bin}/yeetfile not-a-command 2>&1")
+    assert_match "server: https://yeetfile.com", (config_dir/"config.yml").read
   end
 end
