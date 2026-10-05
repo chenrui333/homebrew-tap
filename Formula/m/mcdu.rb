@@ -8,14 +8,20 @@ class Mcdu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab96ac8bcc03f76c10fb23ed8324fc93c0aaa0ed5d0300b6c402ff875c80ba80"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6c859916bf476fe308fe138e3d62f0436345d7109b614328705e5bf1b3e7b34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ba55b8ea1a83eeaba83e00a8431545f31f80e007c3ee12135e10d1b3669ce8d"
-    sha256 cellar: :any,                 arm64_linux:   "edbc33ef9592b1fcf8faa396636da775c66857126a1cb24e013371320663b218"
-    sha256 cellar: :any,                 x86_64_linux:  "e904a9e9dd37470f1844933ee007cc0e3914cee819b2f5163d62660a8b1b0671"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13edbdbb74b3bda00f69364656887288515d2f702bcade7d80c73bd707ffa986"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02af55b71442d22891a52cb7f31c9272707113bf1e4cc5914b50bfb9e52624cc"
+    sha256 cellar: :any,                 arm64_linux:   "c3fc2d51343db45a3ab75e98709d4ae7829929324d349f298d3fbc9f8b528464"
+    sha256 cellar: :any,                 x86_64_linux:  "7d3161d34c8d434f2700f6c7ea272bfab8e39ed629870bdafbdb3910931362a3"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/mcdu")
