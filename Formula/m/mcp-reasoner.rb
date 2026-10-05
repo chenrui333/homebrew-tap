@@ -12,12 +12,18 @@ class McpReasoner < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     (bin/"mcp-reasoner").write <<~SH
       #!/bin/bash
-      exec "#{Formula["node"].opt_bin}/node" \
+      exec "#{formula_opt_bin("node")}/node" \
         "#{libexec}/lib/node_modules/@mseep/mcp-reasoner/dist/index.js" "$@"
     SH
   end
