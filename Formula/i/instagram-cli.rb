@@ -13,10 +13,16 @@ class InstagramCli < Formula
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "ci", "--no-audit", "--no-fund"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch", ignore_scripts: false)
+  end
+
+  def install
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
 
     # Remove upstream prebuilt reporter binary so audit doesn't flag non-native artifacts.
     reporter = libexec/"lib/node_modules/@i7m/instagram-cli/node_modules/instagram-private-api"
