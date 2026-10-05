@@ -18,11 +18,17 @@ class LoomAi < Formula
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "ci"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
     system "npm", "run", "build"
     system "npm", "pack"
-    system "npm", "install", *std_npm_args, "loom-#{version}.tgz"
+    system "npm", "install", "--offline", *std_npm_args, "loom-#{version}.tgz"
     bin.install_symlink libexec.glob("bin/*")
   end
 
