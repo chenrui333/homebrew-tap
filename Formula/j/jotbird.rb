@@ -8,14 +8,17 @@ class Jotbird < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "fd238b4e71fd52278ca841c9764456aad13a53102fe067916fa1f218d249a863"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f1a765ba595ff6bf4fa74e059609b0b3a7bb0e2ff7be6cb3db711f096324abc8"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
   def install
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/jotbird"
   end
 
