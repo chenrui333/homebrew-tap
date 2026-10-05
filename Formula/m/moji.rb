@@ -8,14 +8,20 @@ class Moji < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c557f75024c030cbe33e5887979f332d11fd4a547b668649ebf1d47e98cea8dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c557f75024c030cbe33e5887979f332d11fd4a547b668649ebf1d47e98cea8dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c557f75024c030cbe33e5887979f332d11fd4a547b668649ebf1d47e98cea8dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "327f419ae820662809034661dc8bf5e6caa3bc51ccf0c076e460176969d3f1d1"
-    sha256 cellar: :any,                 x86_64_linux:  "c08782dccc8a7fdfd11b82861107076750b77a271521f9f6cd1c4ca340b56445"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5745191b102ecc045131a1578e3bc8c16f89433f8da7480eec43765a0fe3bc85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5745191b102ecc045131a1578e3bc8c16f89433f8da7480eec43765a0fe3bc85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b763d0b5695bd7843819148e4a283255582e026e2141e93845b6a63f516b0bae"
+    sha256 cellar: :any,                 x86_64_linux:  "2367c65e7f1f4857cf15207af5e08fe9a0c430b529d24615c4260f22233b5f8e"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/microck/moji/internal/app.Version=#{version}"), "./cmd/moji"
@@ -25,5 +31,10 @@ class Moji < Formula
     assert_match version.to_s, shell_output("#{bin}/moji --version")
     output = shell_output("#{bin}/moji 2>&1", 2)
     assert_match "font query is required in non-interactive mode", output
+
+    config = JSON.parse(shell_output("#{bin}/moji config show"))
+    assert_equal 15, config["SearchTimeoutSeconds"]
+    assert_includes config["DefaultFormats"], "otf"
+    assert_match "Cleared cache", shell_output("#{bin}/moji cache clear")
   end
 end
