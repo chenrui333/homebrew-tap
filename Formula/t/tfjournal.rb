@@ -20,9 +20,17 @@ class Tfjournal < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     cd "web" do
       system "npm", "install", *std_npm_args(prefix: false)
+    end
+    system "go", "mod", "download"
+  end
+
+  def install
+    cd "web" do
       system "npm", "run", "build"
     end
     rm_r buildpath/"server/dist" if (buildpath/"server/dist").exist?
