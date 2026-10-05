@@ -20,8 +20,14 @@ class IflowCli < Formula
     depends_on "terminal-notifier"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch", ignore_scripts: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
@@ -37,7 +43,7 @@ class IflowCli < Formula
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      terminal_notifier_app = formula_opt_prefix("terminal-notifier")/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
