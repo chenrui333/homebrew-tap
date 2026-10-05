@@ -7,7 +7,11 @@ class McpReasoner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f683f089ad3d88560ed01842b291ddb5e5623de023bae6bb96eaba29ad21e280"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "11afad8907219dd8dda1ee417b397c94dafd286c23bc19b79d072185f176ea4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11afad8907219dd8dda1ee417b397c94dafd286c23bc19b79d072185f176ea4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38331cde77d9b433de6c83720b86164a822f36a079e37bad0aca47219fe11700"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38331cde77d9b433de6c83720b86164a822f36a079e37bad0aca47219fe11700"
   end
 
   depends_on "node"
