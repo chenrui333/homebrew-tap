@@ -21,8 +21,14 @@ class Wiremix < Formula
     depends_on "llvm" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
   end
