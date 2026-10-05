@@ -12,11 +12,16 @@ class Jules < Formula
 
   depends_on "node"
 
-  def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+  # The npm wrapper downloads Google's closed-source jules binary at runtime.
+  allow_network_access! :test
 
-    generate_completions_from_executable(bin/"jules", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    system "npm", "install", "--offline", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
