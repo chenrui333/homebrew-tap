@@ -13,9 +13,9 @@ class Monitui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "a9ab32273f343bd5de3fb11ab4154d2a9b0f68fac9a1282459fb70d2084e23be"
-    sha256 cellar: :any, x86_64_linux: "41e4abf0f6412e4cf7196d06f541ce7117171ae913498bfaf1b8eb3cd618bd26"
+    rebuild 2
+    sha256 cellar: :any, arm64_linux:  "eb4fa1e8670712ecbe85c921a11046e55d438d78d432df2f9b50dff441af8afc"
+    sha256 cellar: :any, x86_64_linux: "71a6de43f5d92a0232b28f70e67721134c02af69ff2f4e3b467920aa0e2d979b"
   end
 
   depends_on "rust" => :build
