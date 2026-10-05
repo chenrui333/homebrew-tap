@@ -8,14 +8,20 @@ class Motus < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2afb4b13022fa3d23354b29781927170715dd44b8e6aa89dcf8831d4574ab5ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eeb8425e0531730fef5a132db4185171e619e26a6891453d255db351e2497573"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b05d0db6986891539519fa8d35e1e7888a9c1d44553158eb5a6472b6d925ab4"
-    sha256 cellar: :any,                 arm64_linux:   "d8b50a7934c142bd5c03a9cee43a5c41c7ed60e6561877e6c7c13679c3f0ac1b"
-    sha256 cellar: :any,                 x86_64_linux:  "df6bfc3e9751d4e2488b720488c8fdc6bee1c66c6f62a2a25af1727ed74c4218"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bde322c79b77cfeec2f8f86098d5b9e63cbac1d15da62a39af85ed7b8d71f270"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5abb9c7f774f05202050d685f332a184e28ea74dc97291237c79aaceee6a61f2"
+    sha256 cellar: :any,                 arm64_linux:   "2a3bbd7413587a4c88060350a0b05da9375c8f9efaa9ca603f9ae559168cc351"
+    sha256 cellar: :any,                 x86_64_linux:  "6f2dd5b492cc205ac6c270e31f80e7020732979ccf6a922622e68363bfc9828c"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     # The clipboard feature pulls in GUI-specific X11 clipboard support on Linux.
