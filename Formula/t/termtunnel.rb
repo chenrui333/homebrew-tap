@@ -18,8 +18,13 @@ class Termtunnel < Formula
   # because it vendors out the libuv source code
   conflicts_with "libuv", because: "both install `include/uv/darwin.h` file"
 
+  deny_network_access!
+
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # CMake >= 3.25 defines LINUX, enabling a mixed plain/keyword `-static` link that fails to configure
+    inreplace "CMakeLists.txt", 'target_link_libraries(termtunnel PUBLIC "-static")', ""
+    # TODO: remove once upstream raises cmake_minimum_required for CMake 4
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/termtunnel"
   end
