@@ -18,8 +18,15 @@ class Semaphore < Formula
   depends_on "go-task" => :build
   depends_on "node" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    system "task", "deps:fe"
+  end
+
   def install
-    system "task", "deps:fe", "build:fe"
+    system "task", "build:fe"
 
     ldflags = %W[
       -s -w
