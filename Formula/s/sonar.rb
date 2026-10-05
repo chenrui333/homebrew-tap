@@ -16,6 +16,16 @@ class Sonar < Formula
 
   depends_on "go" => :build
 
+  on_linux do
+    depends_on "iproute2" # port scanning shells out to `ss`
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/raskrebs/sonar/internal/selfupdate.Version=v#{version}"
 
@@ -26,15 +36,13 @@ class Sonar < Formula
   end
 
   test do
-    require "socket"
-
-    server = TCPServer.new("127.0.0.1", 0)
-    port = server.addr[1]
-
     assert_match version.to_s, shell_output("#{bin}/sonar version")
 
-    system bin/"sonar", "wait", port.to_s, "--quiet", "--timeout", "1s"
-  ensure
-    server&.close
+    output = shell_output("#{bin}/sonar init --no-daemon --service web:3000 2>&1")
+    assert_match "with 1 service", output
+    assert_match "port: 3000", (testpath/"sonar.yaml").read
+
+    output = shell_output("#{bin}/sonar init --no-daemon --service web:3000 2>&1", 1)
+    assert_match "sonar.yaml already exists", output
   end
 end
