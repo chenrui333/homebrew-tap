@@ -10,11 +10,11 @@ class Krr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7d177b793db4956774c018cd4b9552ed187fb1f99e22f3ac1d1237a7c5227c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da3a5314f73dd7f9da6b5fc50b632003509e1791d50cc1f2e8ef2ec531e209fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ba96cab155016d486711a3d457365f98e67d0b595c3d3d79315582e2917b97d"
-    sha256 cellar: :any,                 arm64_linux:   "03b88e11f29ceaa3db7c556993eaf6c0f7bbc06bf3531a500b9e3d38a1ea798c"
-    sha256 cellar: :any,                 x86_64_linux:  "02e73d352ffcaa744c3932e635f472221b4eb4ce3e872e271ba32910354c50e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8586f5140e3a98cd94bea9deb9c1b046fe5c5e13c331fa617142a26e1e3d404"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13dbb9a7c4d353674253899ac401f1803b27fc30b8b45a1c421676863664b8da"
+    sha256 cellar: :any,                 arm64_linux:   "01161c477999a1185bcbb7aa3d3e1192a91d0beeee72fd575afedf0f287068bf"
+    sha256 cellar: :any,                 x86_64_linux:  "23016c7ae85e3fc252d0322fc55e8470ec68613dcd14c7d7bad9d5952ffb1ed9"
   end
 
   depends_on "cmake" => :build # for contourpy
@@ -315,6 +315,9 @@ class Krr < Formula
     url "https://files.pythonhosted.org/packages/54/bf/5c0000c44ebc80123ecbdddba1f5dcd94a5ada602a9c225d84b5aaa55e86/zipp-3.20.2.tar.gz"
     sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
   end
+
+  # pip build isolation must fetch conflicting per-package Cython pins (pyyaml <3.0, pandas ==3.0.5).
+  allow_network_access! :build
 
   def install
     inreplace "pyproject.toml", 'python = ">=3.10,<=3.12.9"', 'python = ">=3.10,<3.13"'
