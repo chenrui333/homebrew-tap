@@ -17,6 +17,13 @@ class Podcli < Formula
 
   depends_on "go" => :build
 
+  # The test runs podcli's HTTP health check against a local loopback server.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/stefanprodan/podinfo/pkg/version.REVISION=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/podcli"
