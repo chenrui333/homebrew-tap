@@ -13,7 +13,11 @@ class Zigscient < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d0c0553f6d5140c45ff13a496f595b48d8038bdfcba7a8470bb21548b76512c"
   end
 
+  deprecate! date: "2026-10-04", because: :does_not_build
+
   depends_on "zig" => :build
+
+  deny_network_access!
 
   def install
     ENV["ZIG_LIB_DIR"] = (buildpath/"lib").to_s
