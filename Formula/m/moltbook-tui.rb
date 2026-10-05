@@ -9,11 +9,11 @@ class MoltbookTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "675aef58c095808c2b5a095d7ccafc742724c9951d6d90b4c82757068517bf32"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "259d19bd55546817539b80f5f022e2608e8634d79a562568576780ec7b03f81e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "863599e371cb359327b3098dadca5465c72b16d854e16230b2812b19c1924539"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b266a9b56ea3fdbbda7f6d937a15154b4b9a9be1c0d5e0c6ff3a641ea45dbb5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa0b43be778504094a68663399c97800f564bbd9b85d335b4c97562bec415472"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14ecdf7e5272862eadd7bd97b6a9758008d21a4d8dfebdbd94a3f54e22bcb492"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96090c4ce726cf704a4c0bb27358a15dba9d04b64854dab3a651703f7ead531b"
+    sha256 cellar: :any,                 arm64_linux:   "6f005e9c5302e41da4687eac15407ee013e3dd2683e2fbc14b39ae4dcd1ae60f"
+    sha256 cellar: :any,                 x86_64_linux:  "a644951c55051171cbc9ee26695d744416332fa74dce23e28e852bf6596cb006"
   end
 
   depends_on "rust" => :build
