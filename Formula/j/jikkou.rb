@@ -8,19 +8,23 @@ class Jikkou < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f72b841437219c5b6902db74822302534a4ca3352360d352d62b178c1aa3ded1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f72b841437219c5b6902db74822302534a4ca3352360d352d62b178c1aa3ded1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f72b841437219c5b6902db74822302534a4ca3352360d352d62b178c1aa3ded1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b26d3a9a3fff5bbdb90c81f45a5d5af4ee9301c23e58c91d7b3dd5a5d22a477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b26d3a9a3fff5bbdb90c81f45a5d5af4ee9301c23e58c91d7b3dd5a5d22a477"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2be4f91311992112de9c45f96d7f5367e0a37bdcc8c76be632ae4fc03e505350"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2be4f91311992112de9c45f96d7f5367e0a37bdcc8c76be632ae4fc03e505350"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f6c31d57b136b5ec37fdeae9699e1b8db584716155c6d7478e1bfada4b55007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f6c31d57b136b5ec37fdeae9699e1b8db584716155c6d7478e1bfada4b55007"
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk"
+  # Lombok in v1.0.0 fails under JDK 27 (javac EndPosTable ExceptionInInitializerError).
+  depends_on "openjdk@25"
+
+  # Maven/Quarkus resolves plugins and deployment artifacts during packaging; go-offline does not cover them.
+  allow_network_access! :build
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-    ENV.prepend_path "PATH", Formula["openjdk"].opt_bin
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@25")
+    ENV.prepend_path "PATH", formula_opt_bin("openjdk@25")
 
     system "mvn", "-ntp", "-B", "-pl", "cli", "-am", "package", "-DskipTests"
 
