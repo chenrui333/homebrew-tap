@@ -8,13 +8,20 @@ class Kcl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42ea4d6cb8388d328cf93a0a29258e84d1f2d323ae9312fba40f9ea10c2b399a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6582002689220af03f1345b061dc4d86c3e0c7a25ae6f81c1c62c0b29e36d39"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e47f5fc3c3166b83b1289b03df0016e86fecab0d74a0b562f2a2eaeb57aa8b57"
-    sha256 cellar: :any,                 x86_64_linux:  "f035d56b0ab800abb8db51e51613425b6f74b21c04071a2af09c1bcd99c7d024"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27d1adbbfc6c7fb06d6f1cfdab27e9f5005000382b9f9a842df2b8c9c658fda8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "629027d69aecd956b0e466dfb3fe74dedc5b060b178a5df82b7aa5401ab75c93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "382838fb5ac7b5066888837c82bd2ac3c5279747512c3a75a7dc757d67430b6f"
+    sha256 cellar: :any,                 x86_64_linux:  "e88a5cebdd3a21435799f5cd0066205d04e122b90ea4f07bc7c244c3d70aff29"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X kcl-lang.io/cli/pkg/version.version=#{version}"
