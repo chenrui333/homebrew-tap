@@ -7,16 +7,24 @@ class MongodbMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "705c43dd942aed8966a4ce6cbd17aaf6bbb9a8b3e2577b469e4e11857940f017"
-    sha256                               arm64_sequoia: "705c43dd942aed8966a4ce6cbd17aaf6bbb9a8b3e2577b469e4e11857940f017"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f571cdfa2e83515a0817db68f61cfe3ac57076c3f15f927ebab11b8491216442"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "956d651a100e483472292366aa084d66fff5210688716db8fd1653763993dd01"
+    rebuild 1
+    sha256                               arm64_tahoe:   "f54b140d8cb7bf2e5b16ae8a6653be549b94715d9484155e5619c272d01a9013"
+    sha256                               arm64_sequoia: "f54b140d8cb7bf2e5b16ae8a6653be549b94715d9484155e5619c272d01a9013"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e84faee1e984d57db47a8df0b45e21664bb1cb7e5dfc896738339ac60b47595"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "550d7310413edb542ea5411c2f8b900ea2cd19cb1dfaeeaa2191a6c31b693455"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     if OS.linux?
