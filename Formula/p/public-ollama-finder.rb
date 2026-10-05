@@ -13,11 +13,19 @@ class PublicOllamaFinder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0268a56552883e85c536bfe86cbd4cd0a1811bf3fbcff40f13fa3c08d0fa9ca1"
   end
 
+  deprecate! date: "2026-10-04", because: :repo_removed
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
@@ -28,12 +36,8 @@ class PublicOllamaFinder < Formula
     # No such device or address (os error 6)
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    (testpath/"ip-ranges.txt").write "192.168.1.0/24"
-
-    pipe_output("#{bin}/public-ollama-finder", "y", 0)
-    # IP:Port,Model Name,Model,Modified At,Size,Digest,Parent Model,Format,Family,Parameter Size,Quantization Level
-    assert_path_exists "llm_models.csv"
-    # IP:Port,Tags URL,Status Code,Location
-    assert_path_exists "ollama_endpoints.csv"
+    # Declining the legal prompt exits before any IP range is read or scanned.
+    output = pipe_output(bin/"public-ollama-finder", "n\n", 0)
+    assert_match "Access denied: Agreement required to proceed.", output
   end
 end
