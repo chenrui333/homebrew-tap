@@ -14,8 +14,15 @@ class TerraCodeCli < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args, "--ignore-scripts"
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args, "--ignore-scripts"
     bin.install_symlink libexec.glob("bin/*")
   end
 
