@@ -15,7 +15,16 @@ class Prempti < Formula
     sha256 cellar: :any,                 x86_64_linux:  "4d9f339ffb8c502a30585c288f5b3a904c61696cdeea70836011ff5e42265524"
   end
 
+  # The v0.3.0 release tag was removed upstream, so the source tarball no longer downloads.
+  deprecate! date: "2026-10-04", because: :does_not_build
+
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "tools/premptictl")
