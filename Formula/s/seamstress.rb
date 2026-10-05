@@ -14,10 +14,17 @@ class Seamstress < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "20ca9b29083bfdb0a8d5c54b9aa849ab722704b91e1d53137fc44266343d76fe"
   end
 
-  depends_on "zig" => :build
-  depends_on "busted" => :test
+  depends_on "zig@0.13" => :build
+
+  deny_network_access!
+
+  def fetch
+    configure_zig_sdk
+    system "zig", "build", "--fetch"
+  end
 
   def install
+    configure_zig_sdk
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -34,18 +41,27 @@ class Seamstress < Formula
     system "zig", "build", *args
   end
 
+  def configure_zig_sdk
+    on_macos do
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr" unless (developer_dir/"usr").exist?
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
+  end
+
   test do
     # error enabling logging! FileNotFound\nlogging disabled!
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    lua_path_1 = "#{Formula["busted"].libexec}/share/lua/5.4/?/?.lua"
-    lua_path_2 = "#{Formula["busted"].libexec}/share/lua/5.4/?.lua"
-    lua_path_3 = "#{Formula["busted"].libexec}/share/lua/5.4/?/init.lua"
-    with_env(
-      "LUA_PATH"  => "#{lua_path_1};#{lua_path_2};#{lua_path_3}",
-      "LUA_CPATH" => "#{Formula["busted"].libexec}/lib/lua/5.4/?.so",
-    ) do
-      assert_includes shell_output("#{bin}/seamstress --test"), "0 failures / 0 errors"
-    end
+    assert_match "seamstress version: #{version}", shell_output("#{bin}/seamstress --version 2>&1")
+
+    # `seamstress --test` needs busted built for Lua 5.4, but Homebrew's busted now targets Lua 5.5.
+    (testpath/"test.lua").write <<~LUA
+      print("seamstress-ok " .. _VERSION)
+      os.exit(0)
+    LUA
+    assert_match "seamstress-ok Lua 5.4", shell_output("#{bin}/seamstress test.lua 2>&1")
   end
 end
