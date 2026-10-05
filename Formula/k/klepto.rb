@@ -8,15 +8,20 @@ class Klepto < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8d45b0512d5017e49756d289cdb206fa4e722d3166454bd0d7ddaa9d91884e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8d45b0512d5017e49756d289cdb206fa4e722d3166454bd0d7ddaa9d91884e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8d45b0512d5017e49756d289cdb206fa4e722d3166454bd0d7ddaa9d91884e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4aa41945f59f4a4f27c6c5424fc7de85c47464daa7744a68364cf7dfe5c460ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3246b6aadf9342d1c46cd4bec3229072112d6faa7fbc2ec429a3fe35f171700b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d98568f1dcdaab3cb84c7d71a42d2f32a01197c953a82c952d68adb8ee63e5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d98568f1dcdaab3cb84c7d71a42d2f32a01197c953a82c952d68adb8ee63e5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0243ec6c93a49e38b89590a35a639d055819683ddccb917403f14196ffc5594a"
+    sha256 cellar: :any,                 x86_64_linux:  "9ce60f90211d0c80e91cf8e85d95c698b056cbde9a3cca10cea2adc01121fd53"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/hellofresh/klepto/cmd.version=#{version}"
