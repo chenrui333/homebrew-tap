@@ -7,7 +7,8 @@ class Jules < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "6ee4a63940fa6a94b43294a80cf3222b38d4b2ea26bb591b5b70f13e152ef87e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "999e17c92d2f799d5ee4d8697304dce234eab1ae778bcc4f3c225fb9c394ace6"
   end
 
   depends_on "node"
