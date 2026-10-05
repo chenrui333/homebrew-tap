@@ -16,6 +16,13 @@ class Msgvault < Formula
 
   depends_on "go" => :build
 
+  # CLI commands run through a local daemon that listens on a loopback HTTP port.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
