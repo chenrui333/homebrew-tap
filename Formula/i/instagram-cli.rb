@@ -8,15 +8,22 @@ class InstagramCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "acf35d6c1df08bf7b2fda6fd7eb6ada0ea95daf0112b938033a34945a034a093"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5fc85e40a435798e84c4239f8bce554081c05767b097508fe0b99464462e7dfd"
   end
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "ci", "--no-audit", "--no-fund"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch", ignore_scripts: false)
+  end
+
+  def install
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
 
     # Remove upstream prebuilt reporter binary so audit doesn't flag non-native artifacts.
     reporter = libexec/"lib/node_modules/@i7m/instagram-cli/node_modules/instagram-private-api"
