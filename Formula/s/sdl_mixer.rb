@@ -30,6 +30,8 @@ class SdlMixer < Formula
     sha256 "92f686d313f603f3b58431ec1a3a6bf29a36e5f792fb78417ac3d5d5a72b76c9"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
@@ -49,12 +51,12 @@ class SdlMixer < Formula
 
   test do
     testpath.install resource("playwave")
-    cocoa = []
-    cocoa << "-Wl,-framework,Cocoa" if OS.mac?
-    system ENV.cc, "playwave.c", *cocoa, "-I#{include}/SDL",
-                   "-I#{Formula["sdl12-compat"].opt_include}/SDL",
+    # Skip SDL_main.h so playwave keeps its own `main`: SDLmain's Cocoa event loop
+    # never starts SDL_main in a headless sandboxed test and the test hangs.
+    system ENV.cc, "playwave.c", "-D_SDL_main_h", "-I#{include}/SDL",
+                   "-I#{formula_opt_include("sdl12-compat")}/SDL",
                    "-L#{lib}", "-lSDL_mixer",
-                   "-L#{Formula["sdl12-compat"].lib}", "-lSDLmain", "-lSDL",
+                   "-L#{formula_opt_lib("sdl12-compat")}", "-lSDL",
                    "-o", "playwave"
     Utils.safe_popen_read({ "SDL_VIDEODRIVER" => "dummy", "SDL_AUDIODRIVER" => "disk" },
                           "./playwave", test_fixtures("test.wav"))
