@@ -17,16 +17,22 @@ class Teldrive < Formula
 
   depends_on "go" => :build
 
+  # upstream only publishes a mutable `latest` UI release (also used by its taskfile)
   resource "ui_assets" do
     url "https://github.com/tgdrive/teldrive-ui/releases/download/latest/teldrive-ui.zip"
-    sha256 "bf3e9c3c2541eb9c222adfe12275480591a0d20a6152b439951729649f854739"
+    sha256 "c959a5028449ac8a7eb269f8e3fe374cd01082e90df0289d49aca187109f0868"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    # generate API code from the upstream OpenAPI spec
+    system "go", "generate", "./..."
   end
 
   def install
     (buildpath/"ui/dist").install resource("ui_assets")
-
-    # generate API code
-    system "go", "generate", "./..."
 
     ldflags = %W[
       -s -w
