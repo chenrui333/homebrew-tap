@@ -16,19 +16,25 @@ class Osmar < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    ENV["OSMAR_PBF_FILE"] = "bremen-latest.osm.pbf"
+    # Querying needs a downloaded OSM extract; check the local argument and input validation instead.
+    output = shell_output("#{bin}/osmar 53.076 8.807 50 2>&1", 1)
+    assert_match "The OSMAR_PBF_FILE environment variable must be set.", output
 
-    resource "test_osm_file" do
-      url "https://download.geofabrik.de/europe/germany/bremen-latest.osm.pbf"
-      sha256 "cf9d3835cd06f8040a84bcf107a6919a03bd30d766e568525a9f63cb86275ff9"
-    end
-
-    testpath.install resource("test_osm_file")
-    assert_match "addr:city: Bremen", shell_output("#{bin}/osmar 53.076 8.807 50")
+    ENV["OSMAR_PBF_FILE"] = testpath/"missing.osm.pbf"
+    assert_match "Usage: osmar <lat> <lon> <radius_meter>", shell_output("#{bin}/osmar 53.076 2>&1", 1)
+    assert_match "Could not parse lat", shell_output("#{bin}/osmar north 8.807 50 2>&1", 1)
+    assert_match "tag without value: amenity", shell_output("#{bin}/osmar 53.076 8.807 50 amenity 2>&1", 1)
+    assert_match "Failed to query database", shell_output("#{bin}/osmar 53.076 8.807 50 2>&1", 1)
   end
 end
