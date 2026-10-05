@@ -1,22 +1,35 @@
 class Ingero < Formula
   desc "GPU causal observability agent using eBPF"
-  homepage "https://github.com/ingero-io/ingero"
-  url "https://github.com/ingero-io/ingero/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "ae14cd73e8728b1c821973ff763655e5a8800933d484a4ea2fdba136996398f0"
+  homepage "https://pkg.go.dev/github.com/ingero-io/ingero"
+  # The GitHub repository was removed; the Go module proxy still serves the v0.19.0 source
+  url "https://proxy.golang.org/github.com/ingero-io/ingero/@v/v0.19.0.zip"
+  sha256 "54c4c81dde4a2a26b7f128821af0e6ce6fe01409386187945440b6f2ede3875d"
   license "Apache-2.0"
-  head "https://github.com/ingero-io/ingero.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "1fb37bb2db06c15c3efd62b71e6ee596b72d93b09de37bdbf90e202f3d5d653e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c3d9ef1f4ab34b36c9edc20eeabccb51f290b02fabfdc2a201479aa119553de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "500c2c893dd78446af2b15fb843c4a5ff8429e28fc97b22bb7aa8d4cc50ad251"
+    sha256 cellar: :any,                 x86_64_linux: "068b62c52160a148de690c7694f4c336a197f93f0a684a2313de13f4a8c6d464"
   end
+
+  deprecate! date: "2026-10-04", because: :repo_removed
 
   depends_on "go" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    cd "ingero-io/ingero@v#{version}" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ingero"
+    cd "ingero-io/ingero@v#{version}" do
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ingero"
+    end
   end
 
   test do
