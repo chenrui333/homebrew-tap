@@ -38,6 +38,7 @@ class Kt < Formula
 
     (testpath/"auth.json").write '{"mode":"Kerberos"}'
     output = shell_output("#{bin}/kt produce -topic greetings -auth #{testpath}/auth.json 2>&1 </dev/null", 1)
+    # spellchecker:ignore-next-line
     assert_match 'failed to setup auth err=unsupport auth mode: "Kerberos"', output
   end
 end
