@@ -1,21 +1,29 @@
 class Humioctl < Formula
   desc "CLI Client for Humio - Stream Logs All Day Long"
   homepage "https://www.crowdstrike.com/platform/next-gen-siem/falcon-logscale/"
-  url "https://github.com/humio/cli/archive/refs/tags/v0.40.0.tar.gz"
-  sha256 "1c6cbf9a3ca97700b7792c4d2dc247c9af3ba9f7715fb3f87b11a49adec15447"
+  # v0.40.0 was re-tagged upstream (only `.goreleaser.yaml` changed); pin the tag commit
+  url "https://github.com/humio/cli.git",
+      tag:      "v0.40.0",
+      revision: "154b317c0293ea7776596f1c5d8553469e8442c2"
   license "Apache-2.0"
   head "https://github.com/humio/cli.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d397c65e438e086c47342e36d96c5cc7b10b7549c19e078cc4bfcee44f1c276"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d397c65e438e086c47342e36d96c5cc7b10b7549c19e078cc4bfcee44f1c276"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d397c65e438e086c47342e36d96c5cc7b10b7549c19e078cc4bfcee44f1c276"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6b40fdd3785b6282c2974bc7e2c07cd2cc757b4f50658fa296ed6fc5753d5af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1701c34f2946046cfcd78fe882ec5f272f03d4934d7586a37c111e7576e8651a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "672b695ececefe32971b13a5a9192ace9aeb85bc315ff062056fd6173e42dbc9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "672b695ececefe32971b13a5a9192ace9aeb85bc315ff062056fd6173e42dbc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88e564a1092c5806a5c8a74fbbabd616645d45e79fdda3ede950a0f264fe8a7d"
+    sha256 cellar: :any,                 x86_64_linux:  "70215572650518480ec48f5cd16162a232e735f0fa58628aa3ca097ce6b2b3e3"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
