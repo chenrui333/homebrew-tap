@@ -17,6 +17,8 @@ class YtX < Formula
   depends_on "mpv"
   depends_on "yt-dlp"
 
+  deny_network_access!
+
   def install
     inreplace "yt-x", /^readonly CLI_VERSION=.*/, %Q(readonly CLI_VERSION="#{version}")
 
