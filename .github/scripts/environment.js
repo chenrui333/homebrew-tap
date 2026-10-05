@@ -11,7 +11,17 @@
  * - build-matrix: JSON matrix for formula build jobs
  * - test-bot-formulae-args: Arguments for brew test-bot
  */
-module.exports = async ({github, context, core}, formula_detect) => {
+const PUBLISHED_LABEL = 'CI-published-bottle-commits'
+const PUBLISHED_HEAD_CONTEXT = 'homebrew-tap/published-bottle-head'
+// `brew pr-upload` commits bottles as BrewTestBot (git-user-config) with `brew bottle --merge`'s subject.
+const BOTTLE_COMMIT_EMAIL = '1589480+BrewTestBot@users.noreply.github.com'
+const BOTTLE_COMMIT_MESSAGE = /^[^\s:]+: (?:add|update) \S+ bottle\.$/
+
+module.exports = async ({github, context, core}, formula_detect, {
+    sleep = ms => new Promise(resolve => setTimeout(resolve, ms)),
+    publication_wait_ms = 3 * 60 * 1000,
+    publication_poll_ms = 10 * 1000
+} = {}) => {
     const fs = require('fs')
     const path = require('path')
     const is_pull_request = context.eventName === 'pull_request'
@@ -25,8 +35,8 @@ module.exports = async ({github, context, core}, formula_detect) => {
     const autobump_branch = pull_request?.head?.repo?.full_name === `${context.repo.owner}/${context.repo.repo}` &&
         pull_request.head.ref?.startsWith('bump-')
     const current_head = pull_request?.head?.sha
-    let published_bottle_commits = false
-    if (is_pull_request && current_head && label_names.includes('CI-published-bottle-commits')) {
+
+    async function head_has_published_status() {
         const statuses = await github.paginate(github.rest.repos.listCommitStatusesForRef, {
             owner: context.repo.owner,
             repo: context.repo.repo,
@@ -35,9 +45,44 @@ module.exports = async ({github, context, core}, formula_detect) => {
         })
         // Statuses are newest first; only the latest bot-authored status for the context counts.
         const marker = statuses.find(status =>
-            status.context === 'homebrew-tap/published-bottle-head' &&
+            status.context === PUBLISHED_HEAD_CONTEXT &&
             status.creator?.login === 'github-actions[bot]')
-        published_bottle_commits = marker?.state === 'success'
+        return marker?.state === 'success'
+    }
+
+    async function head_is_bottle_commit() {
+        const {data: commit} = await github.rest.git.getCommit({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            commit_sha: current_head
+        })
+        return BOTTLE_COMMIT_MESSAGE.test(commit.message?.trimEnd() ?? '') &&
+            commit.author?.email === BOTTLE_COMMIT_EMAIL &&
+            commit.committer?.email === BOTTLE_COMMIT_EMAIL
+    }
+
+    // publish.yml pushes the bottle commit before it labels the PR and records the head status,
+    // so the push's own run waits briefly for both instead of rebuilding a published head.
+    async function wait_for_bottle_publication() {
+        const attempts = Math.ceil(publication_wait_ms / publication_poll_ms)
+        for (let attempt = 1; attempt <= attempts; attempt++) {
+            console.log(`Waiting for bottle publication on ${current_head} (attempt ${attempt}/${attempts}).`)
+            await sleep(publication_poll_ms)
+            const {data: refreshed} = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number
+            })
+            if (refreshed.head?.sha !== current_head) {
+                console.log('Pull request head changed while waiting for bottle publication.')
+                return false
+            }
+            if (refreshed.labels.some(label => label.name === PUBLISHED_LABEL) && await head_has_published_status()) {
+                return true
+            }
+        }
+        console.log('Bottle publication was not recorded in time. Running tests job.')
+        return false
     }
     const linux_runner = 'ubuntu-24.04'
     const linux_arm64_runner = 'ubuntu-24.04-arm'
@@ -158,6 +203,11 @@ module.exports = async ({github, context, core}, formula_detect) => {
         ![formula_detect?.testing_formulae, formula_detect?.added_formulae, formula_detect?.deleted_formulae]
             .some(Boolean)
     const syntax_only = label_names.includes('CI-syntax-only') || merge_group_without_formulae || pull_request_without_formulae
+    let published_bottle_commits = false
+    if (is_pull_request && current_head && !syntax_only) {
+        published_bottle_commits = (label_names.includes(PUBLISHED_LABEL) && await head_has_published_status()) ||
+            (await head_is_bottle_commit() && await wait_for_bottle_publication())
+    }
     if (syntax_only || published_bottle_commits) {
         const reason = merge_group_without_formulae
             ? 'merge_group with no detected formulae'

@@ -5,6 +5,18 @@ const environment = require("./environment.js")
 
 const repository = "chenrui333/homebrew-tap"
 
+const bottleCommitEmail = "1589480+BrewTestBot@users.noreply.github.com"
+const authorCommit = {
+  message: "watchfiles 1.3.1",
+  author: {email: "rui@chenrui.dev"},
+  committer: {email: "rui@chenrui.dev"},
+}
+const bottleCommit = {
+  message: "watchfiles: update 1.3.1 bottle.",
+  author: {email: bottleCommitEmail},
+  committer: {email: bottleCommitEmail},
+}
+
 async function runEnvironment({
   formulaFile,
   eventName = "pull_request",
@@ -14,19 +26,32 @@ async function runEnvironment({
   commitStatuses = {},
   headRef = "change-formula",
   headRepository = repository,
+  headCommit = authorCommit,
+  publication = [],
 }) {
   const outputs = new Map()
   const apiCalls = []
+  const sleeps = []
+  // Each pulls.get advances to the next published PR state; the payload state comes first.
+  let current = {labels, commitStatuses, headSha}
   const listCommitStatusesForRef = async ({ref}) => {
     apiCalls.push("repos.listCommitStatusesForRef")
-    return commitStatuses[ref] ?? []
+    return current.commitStatuses[ref] ?? []
   }
   const github = {
     rest: {
+      git: {
+        getCommit: async ({commit_sha}) => {
+          apiCalls.push("git.getCommit")
+          assert.equal(commit_sha, headSha)
+          return {data: headCommit}
+        },
+      },
       pulls: {
         get: async () => {
           apiCalls.push("pulls.get")
-          return {data: {labels: labels.map((name) => ({name}))}}
+          if (publication.length) current = {...current, ...publication.shift()}
+          return {data: {labels: current.labels.map((name) => ({name})), head: {sha: current.headSha}}}
         },
         listFiles: async () => {
           apiCalls.push("pulls.listFiles")
@@ -51,8 +76,12 @@ async function runEnvironment({
     setOutput: (name, value) => outputs.set(name, value),
   }
 
-  await environment({github, context, core}, formulaDetect)
-  return {outputs, apiCalls}
+  await environment({github, context, core}, formulaDetect, {
+    sleep: async (ms) => { sleeps.push(ms) },
+    publication_wait_ms: 30_000,
+    publication_poll_ms: 10_000,
+  })
+  return {outputs, apiCalls, sleeps}
 }
 
 async function buildMatrix(formulaFile, eventName = "pull_request") {
@@ -222,6 +251,95 @@ test("a published-bottle status is ignored without the published-bottle label", 
 
   assert.equal(outputs.get("syntax-only"), "false")
   assert.equal(apiCalls.includes("repos.listCommitStatusesForRef"), false)
+})
+
+async function bottleHeadRun({headCommit = bottleCommit, labels = [], commitStatuses = {}, publication = []} = {}) {
+  const {outputs, apiCalls, sleeps} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    headCommit,
+    labels,
+    commitStatuses,
+    publication,
+  })
+  return {syntaxOnly: outputs.get("syntax-only"), apiCalls, sleeps}
+}
+
+const published = (headSha = "a".repeat(40)) =>
+  ({labels: ["CI-published-bottle-commits"], commitStatuses: {[headSha]: [publishedStatus()]}})
+
+test("a bottle commit head waits for publication to be recorded and then is syntax-only", async () => {
+  const {syntaxOnly, sleeps} = await bottleHeadRun({publication: [{}, published()]})
+
+  assert.equal(syntaxOnly, "true")
+  assert.deepEqual(sleeps, [10_000, 10_000])
+})
+
+test("a bottle commit head re-reads labels instead of trusting the stale event payload", async () => {
+  const headSha = "a".repeat(40)
+  const {syntaxOnly} = await bottleHeadRun({
+    commitStatuses: {[headSha]: [publishedStatus()]},
+    publication: [{labels: ["CI-published-bottle-commits"]}],
+  })
+
+  assert.equal(syntaxOnly, "true")
+})
+
+test("a bottle commit head with an existing label still waits for its own published status", async () => {
+  const {syntaxOnly, sleeps} = await bottleHeadRun({
+    labels: ["CI-published-bottle-commits"],
+    publication: [published()],
+  })
+
+  assert.equal(syntaxOnly, "true")
+  assert.deepEqual(sleeps, [10_000])
+})
+
+for (const [name, state] of [
+  ["is never recorded", {}],
+  ["is labeled without a head status", {labels: ["CI-published-bottle-commits"]}],
+  ["has a status but no label", {commitStatuses: {["a".repeat(40)]: [publishedStatus()]}}],
+  ["has a status only on another commit", published("b".repeat(40))],
+]) {
+  test(`a bottle commit head whose publication ${name} falls back to the full build after the wait`, async () => {
+    const {syntaxOnly, sleeps} = await bottleHeadRun({publication: [state]})
+
+    assert.equal(syntaxOnly, "false")
+    assert.deepEqual(sleeps, [10_000, 10_000, 10_000])
+  })
+}
+
+test("a bottle commit head stops waiting when the pull request head moves", async () => {
+  const newerHead = "b".repeat(40)
+  const {syntaxOnly, sleeps} = await bottleHeadRun({publication: [{...published(newerHead), headSha: newerHead}]})
+
+  assert.equal(syntaxOnly, "false")
+  assert.deepEqual(sleeps, [10_000])
+})
+
+for (const [name, headCommit] of [
+  ["an ordinary formula commit", authorCommit],
+  ["a bottle subject from another author", {...bottleCommit, author: {email: "rui@chenrui.dev"}}],
+  ["a bottle subject from another committer", {...bottleCommit, committer: {email: "rui@chenrui.dev"}}],
+  ["a bottle-like subject with extra text", {...bottleCommit, message: "watchfiles: update 1.3.1 bottle.\n\nCo-authored-by: someone"}],
+]) {
+  test(`${name} does not wait for bottle publication`, async () => {
+    const {syntaxOnly, apiCalls, sleeps} = await bottleHeadRun({headCommit, publication: [published()]})
+
+    assert.equal(syntaxOnly, "false")
+    assert.deepEqual(sleeps, [])
+    assert.equal(apiCalls.includes("pulls.get"), false)
+  })
+}
+
+test("a pull request already skipping builds does not inspect the head commit", async () => {
+  const {outputs, apiCalls} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    labels: ["CI-syntax-only"],
+    headCommit: bottleCommit,
+  })
+
+  assert.equal(outputs.get("syntax-only"), "true")
+  assert.deepEqual(apiCalls.filter((call) => call !== "paginate"), [])
 })
 
 test("ordinary pull requests still run the formula build path", async () => {
