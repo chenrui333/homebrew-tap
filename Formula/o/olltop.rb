@@ -21,6 +21,12 @@ class Olltop < Formula
     depends_on "libpcap"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version}"
     ENV["CGO_ENABLED"] = "1"
@@ -29,5 +35,10 @@ class Olltop < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/olltop --version")
+
+    # `--debug` opens ./olltop.log before polling Ollama; a directory there forces a local error
+    (testpath/"olltop.log").mkpath
+    output = shell_output("#{bin}/olltop --debug 2>&1", 1)
+    assert_match "failed to open log file", output
   end
 end
