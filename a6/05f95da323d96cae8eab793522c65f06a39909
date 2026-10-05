@@ -1,0 +1,14 @@
+Formula/o/oatmeal.rb
+  h_9df9c32c3f321d 21-74,76-110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a605f95da323d96cae8eab793522c65f06a39909",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
