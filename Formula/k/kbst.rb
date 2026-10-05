@@ -8,15 +8,20 @@ class Kbst < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ddc0dc7e29ac80d36302c3c0b54e3730c44662d0df82fab75355ccd4233b720"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb4631a2c7d6bfb9884b8a2c453e488e1063476e0f01726aa590aa4fd61d5fcd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61f7a83560d136c3b54fe9da6a6fd08b4a27de4e38aa5f609fbec29433b0e8bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "811aafcf9441f7f1bd339b3b738c688007e1dbe797f3416a887fb998931a0e6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4412bc09ef22a5e9df27bcc26fbcf8fba9f16094382da9c2ae29804d83df93f2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "856e79443d524a098fbea6ae09243b9ec6dd02413391438171489ab2ee42263e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8831de59cf8ec6713623cbc74cd5249cd041fe80d99877270d1868c232e2ea6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b9d56dcf3ec877112b026bb3a5003de94d0e6c75788bdb8d431ce5322a28207"
+    sha256 cellar: :any,                 x86_64_linux:  "3f87cecae988f0322f97282f54b4a5bcc6f3f625d6d9763e1cf079c9b89f9a53"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
@@ -28,9 +33,9 @@ class Kbst < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kbst --version")
 
-    # spellchecker:ignore-next-line
-    output = shell_output("#{bin}/kbst init aks example.com testCluster eastus testResourceGroup 2>&1", 1)
-    assert_match "author field is required", output
-    assert_match "# Welcome to Kubestack", (testpath/"kubestack-starter-aks/README.md").read
+    # Functional commands download the Kubestack catalog; cobra validates arguments before that.
+    output = shell_output("#{bin}/kbst init aks example.com 2>&1", 1)
+    assert_match "accepts 4 arg(s), received 1", output
+    refute_path_exists testpath/"kubestack-starter-aks"
   end
 end
