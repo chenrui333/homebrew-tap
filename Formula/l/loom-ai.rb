@@ -9,11 +9,11 @@ class LoomAi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "8cab14a03dcff7fee32672e4666dcbeef366e41608813a8c62bd61c342eef864"
-    sha256 cellar: :any,                 arm64_sequoia: "8cab14a03dcff7fee32672e4666dcbeef366e41608813a8c62bd61c342eef864"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aab0187dee69930b4a9398ce2e9c551df80aa5f820871e6e3231f1b32f80584e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "407cebca69a2cb0bc87fe35f207642df90dc0e7a6c6cd4b41e19b55cfb552033"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "e3ad1c575e367a52977c615e2e9952e921aeadce4602d1d6abab6f5bd74cbcc6"
+    sha256 cellar: :any,                 arm64_sequoia: "e3ad1c575e367a52977c615e2e9952e921aeadce4602d1d6abab6f5bd74cbcc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d75d69fb628244c6ab1c6a04e546233fa047a37263d1fe6ad182675d63ae85df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f97191c9c3f5083a46c2ebd6869c5eee802c959dfbd2c78b70ce4cd1b3980c9"
   end
 
   depends_on "node"
