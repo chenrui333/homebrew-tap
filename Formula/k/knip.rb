@@ -7,16 +7,23 @@ class Knip < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "deee1cca181ddb0a674c8fe3209d99ec2cfb01eb025255a97b71e9030384f1cf"
-    sha256 cellar: :any,                 arm64_sequoia: "deee1cca181ddb0a674c8fe3209d99ec2cfb01eb025255a97b71e9030384f1cf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0ea0d687d758c830961731d05b5fb4aa952f4d183002cb821702c46a823a694"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae1adef895b8b9052b6691a3d7def5765fd7be382e9ef2f58ef353813be8912a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d41d0974832aaaca863ea2fded1cf0fba2b7a0e107e38499efbd08b40cbbddce"
+    sha256 cellar: :any,                 arm64_sequoia: "d41d0974832aaaca863ea2fded1cf0fba2b7a0e107e38499efbd08b40cbbddce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f91cb462de37113996214e05ed1528b59a235227d22881f8aead23905d280cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23a316555723082f0ab3fc9e6a8e5b0f0a5e1c2bfb0a6f757387bb0595083a6d"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
