@@ -17,9 +17,18 @@ class Oproxy < Formula
   depends_on "node" => :build
   depends_on "rust" => :build
 
-  def install
+  # The test checks the proxy's /health endpoint over a loopback HTTP socket.
+  allow_network_access! :test
+
+  def fetch
     cd "src/design" do
       system "npm", "install", *std_npm_args(prefix: false, ignore_scripts: false)
+    end
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
+    cd "src/design" do
       system "node", "build.mjs"
     end
 
