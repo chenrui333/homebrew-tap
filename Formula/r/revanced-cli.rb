@@ -12,6 +12,8 @@ class RevancedCli < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     libexec.install "revanced-cli-#{version}-all.jar" => "revanced-cli.jar"
     bin.write_jar_script libexec/"revanced-cli.jar", "revanced-cli"
@@ -20,14 +22,12 @@ class RevancedCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/revanced-cli --version")
 
-    resource "patches_rvp" do
-      url "https://github.com/ReVanced/revanced-patches/releases/download/v6.1.0/patches-6.1.0.rvp"
-      sha256 "5ef9f18359a04c3bebd731cf6185b7171719aa64dbdfcd91e1d141371706ce92"
-    end
+    # A real patch bundle would be downloaded at test time; check the CLI's local bundle handling instead.
+    (testpath/"bad.rvp").write "not a patch bundle"
+    output = shell_output("#{bin}/revanced-cli list-patches -b -p #{testpath}/bad.rvp 2>&1", 1)
+    assert_match "zip END header not found", output
 
-    testpath.install resource("patches_rvp")
-    output = shell_output("#{bin}/revanced-cli list-patches -b -p patches-6.1.0.rvp")
-    assert_match "Index: 0", output
-    assert_match "Name: Export all activities", output
+    output = shell_output("#{bin}/revanced-cli list-patches -p #{testpath}/bad.rvp 2>&1", 2)
+    assert_match "Missing required argument(s)", output
   end
 end
