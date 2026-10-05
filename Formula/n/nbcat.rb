@@ -10,11 +10,11 @@ class Nbcat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d3f9fb8441fc8f54d44ce82b9d89cc1aff096a16ad2c57bda34ce7278e1fd1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d3f9fb8441fc8f54d44ce82b9d89cc1aff096a16ad2c57bda34ce7278e1fd1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d3f9fb8441fc8f54d44ce82b9d89cc1aff096a16ad2c57bda34ce7278e1fd1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44c74ea1b9dde51c32ff84da019b1a8f58d3f25fcdb9af1df1ec42c2f57d8d35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44c74ea1b9dde51c32ff84da019b1a8f58d3f25fcdb9af1df1ec42c2f57d8d35"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9044c243216f3194e1f2085850f22f7ced51282f0fc759b92ecf7cb2abe7c91c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9044c243216f3194e1f2085850f22f7ced51282f0fc759b92ecf7cb2abe7c91c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e7b36df0e534a9e471a3fc335e1af1ba603d5ec03d9131d5bb8e34f2433b6cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e7b36df0e534a9e471a3fc335e1af1ba603d5ec03d9131d5bb8e34f2433b6cf"
   end
 
   depends_on "pillow" => :no_linkage
