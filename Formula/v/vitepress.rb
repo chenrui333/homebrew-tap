@@ -15,8 +15,16 @@ class Vitepress < Formula
 
   depends_on "node"
 
+  # The test checks the vitepress dev server, which binds a loopback port.
+  allow_network_access! :test
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
