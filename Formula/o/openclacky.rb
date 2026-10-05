@@ -16,13 +16,26 @@ class Openclacky < Formula
 
   depends_on "ruby"
 
+  deny_network_access!
+
+  def fetch
+    # Bundler still generates executables for the `gemspec` path gem; keep them out of HOMEBREW_PREFIX.
+    ENV["GEM_HOME"] = buildpath/".bundle-gems"
+    system "bundle", "cache", "--no-install"
+    rm_r buildpath/".bundle-gems"
+  end
+
   def install
     ENV["GEM_HOME"] = libexec
 
     system "git", "init"
-    system "git", "add", "."
+    # The gemspec packages `git ls-files`; keep the fetched gem cache out of the gem.
+    system "git", "add", ".", ":!vendor/cache"
     system "gem", "build", "openclacky.gemspec"
-    system "gem", "install", "--no-document", "openclacky-#{version}.gem"
+    # Resolve runtime dependencies from the gems cached by `fetch`.
+    cd "vendor/cache" do
+      system "gem", "install", "--local", "--no-document", buildpath/"openclacky-#{version}.gem"
+    end
 
     %w[clacky openclacky clarky].each do |cmd|
       (bin/cmd).write_env_script libexec/"bin"/cmd, GEM_HOME: ENV["GEM_HOME"]
