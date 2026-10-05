@@ -8,12 +8,11 @@ class Jplot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47ba3c04f5c7da7026225ccd75d15db6121bcb9be040509b14280999c0da0f01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0854a077f93f22da91a121589bedeecdfbc21b6785fa494d20a640a22bac504"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85082e1077b3643ef45108c39c8c584615f5d6af665347838c17f31061f213eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3476ba69a353ffa6dbdf07f2d152ecde98aed08414b5b3a9735ad8d2f75de89d"
-    sha256 cellar: :any,                 x86_64_linux:  "9fd88b4c8ed443fb2b3feeec5369cb05ac59651f45fb7577a4d88a7cafeeb71a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b3f7cb3b203c610fd5617697ae6e0eee3d1a75614bfc05e8ed53af263f6d22cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d60c7f14ecf32a2017302cdc361bda949353453935ab064561cccb638ebb6b71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd0609a0abc6cd867127c5e45e9c4db79eb1a170e2c278ea74d18ba2ba545144"
+    sha256 cellar: :any,                 x86_64_linux:  "6d5f9c5b38b6381fb930260ca9e6a2c47b21281809873eefef310e1e53fa6048"
   end
 
   depends_on "go" => :build
