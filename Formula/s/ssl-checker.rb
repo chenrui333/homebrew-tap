@@ -18,6 +18,12 @@ class SslChecker < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/fabio42/ssl-checker/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
@@ -28,11 +34,23 @@ class SslChecker < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ssl-checker --version")
 
-    # failed with Linux CI, `/dev/tty: no such device or address` error
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    # Certificate checks need remote TLS endpoints; configuration handling is local
+    (testpath/"config.yaml").write <<~YAML
+      queries:
+        qa:
+          - example.com
+        prod: "#{testpath}/domains.txt"
+    YAML
+    output = shell_output("#{bin}/ssl-checker environments --config #{testpath}/config.yaml")
+    assert_match "Available environments:", output
+    assert_match "qa", output
+    assert_match "prod", output
 
-    output = shell_output("#{bin}/ssl-checker domains example.com --silent")
-    assert_match "example.com", output
-    assert_match "CN=", output
+    (testpath/"bad.yaml").write <<~YAML
+      queries:
+        qa: 42
+    YAML
+    output = shell_output("#{bin}/ssl-checker --config #{testpath}/bad.yaml 2>&1", 1)
+    assert_match "Unsupported data type in queries option", output
   end
 end
