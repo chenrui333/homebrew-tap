@@ -19,6 +19,10 @@ class MqttCli < Formula
   # Normalize toolchain to Java 25 for Homebrew's openjdk@25 runtime.
   patch :DATA
 
+  # Gradle opens a loopback UDP socket for file locking even with --offline and resolves deps at build;
+  # the test talks to a fake MQTT broker on a loopback TCP socket.
+  allow_network_access! [:build, :test]
+
   def install
     ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@25")
 
