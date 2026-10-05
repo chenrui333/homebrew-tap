@@ -28,6 +28,7 @@ class LoomAi < Formula
   def install
     system "npm", "run", "build"
     system "npm", "pack"
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args, "loom-#{version}.tgz"
     bin.install_symlink libexec.glob("bin/*")
   end
