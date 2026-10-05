@@ -8,11 +8,11 @@ class Kyma < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7758ed6765248967e7f3f43213f4a7e80093456d7c0850bfa2ee686199e9854d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7758ed6765248967e7f3f43213f4a7e80093456d7c0850bfa2ee686199e9854d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7758ed6765248967e7f3f43213f4a7e80093456d7c0850bfa2ee686199e9854d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6787dde00f22f7b187aab8ea96c994427309ee9482e153450363704d184634e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a93f884cbe38c3c67efea37948700fd26e6ef3c666585e81f8db59dadbc0a370"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2347b6ed0d16d4a3652bbc5548f6cd54357bba486f3cfbded5f512d0339cb86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2347b6ed0d16d4a3652bbc5548f6cd54357bba486f3cfbded5f512d0339cb86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d22e4b650bd58083a7eb31ecbd1a1dbe0dd05c5f826ce7ef4e329829d6d59e6"
+    sha256 cellar: :any,                 x86_64_linux:  "d48ba0a3457b82a09b43b6efc5c7735bbf2ba6d218ac9d742761b1b8a15610dd"
   end
 
   depends_on "go" => :build
