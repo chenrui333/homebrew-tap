@@ -12,6 +12,8 @@ class Ponytail < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
   def install
     libexec.install ".agents", ".claude-plugin", ".codex-plugin",
                     "hooks", "skills", "commands", "assets",
