@@ -9,11 +9,11 @@ class Jolt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "525093f44a0865b41ed2d6cf36102d6da4f83ae444f89240a9d1f2ab21874858"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7c25b17322156fd70d85dd79a412e592f04e2199a7bca6a1168b0d8f41c1f8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfc33f3eb04c5d36f398c97f28d05b4beb914aa53f0eed7cec6da9df7673240f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d03de623ccd0ba5efc9482a79ac8ec769081105047014971a55dd6db58c26e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c74805dbfa0d8ff6810654a2557f3362833b8b568b51fcfb4cc32b8bb69e56d1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7deb204777af2c3323975759c1101ccf5cea9dc51d09371c65526f65ba07f3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adb79fd2d8ed1ab27f2289f5e051cc186d3b2ac2c36d55b5e82edfa55e40d352"
+    sha256 cellar: :any,                 arm64_linux:   "4b397b95abe1b0d6740c880f5ea6ce5762b18db22506ba305a485ae363acd18e"
+    sha256 cellar: :any,                 x86_64_linux:  "3cb91a44c53da8dc88836a5d92feb6d2ca07cfdb7fe0a1c00f3c8555da2ef891"
   end
 
   depends_on "rust" => :build
