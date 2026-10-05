@@ -21,19 +21,49 @@ class Mcpc < Formula
     depends_on "libsecret"
   end
 
+  # mcpc sessions run through a bridge process that listens on a local Unix socket.
+  allow_network_access! :test
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch", ignore_scripts: false)
+  end
+
   def install
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/mcpc --version")
-    connect_output = shell_output("#{bin}/mcpc connect https://tools-list.invalid @test 2>&1")
+
+    # Minimal local stdio MCP server so the session never leaves the machine.
+    (testpath/"server.js").write <<~JS
+      const rl = require("readline").createInterface({ input: process.stdin });
+      const send = (m) => process.stdout.write(JSON.stringify(m) + "\\n");
+      rl.on("line", (line) => {
+        const msg = JSON.parse(line);
+        if (msg.id === undefined) return;
+        if (msg.method === "initialize") {
+          send({ jsonrpc: "2.0", id: msg.id, result: { protocolVersion: msg.params.protocolVersion,
+            capabilities: { tools: {} }, serverInfo: { name: "brew-demo", version: "1.0.0" } } });
+        } else if (msg.method === "tools/list") {
+          send({ jsonrpc: "2.0", id: msg.id, result: { tools: [{ name: "brew_echo",
+            description: "Echo test", inputSchema: { type: "object" } }] } });
+        } else {
+          send({ jsonrpc: "2.0", id: msg.id, result: {} });
+        }
+      });
+    JS
+    (testpath/"mcp.json").write <<~JSON
+      {"mcpServers":{"demo":{"command":"#{formula_opt_bin("node")}/node","args":["#{testpath}/server.js"]}}}
+    JSON
+
+    connect_output = shell_output("#{bin}/mcpc connect #{testpath}/mcp.json:demo @test 2>&1")
     assert_match "Session @test created", connect_output
 
-    output = shell_output("#{bin}/mcpc @test tools-list 2>&1", 1)
-    assert_match "@test", output
-    assert_match "tools-list.invalid", output
-    assert_match(/Failed to connect|Connection closed/, output)
+    assert_match "brew_echo", shell_output("#{bin}/mcpc @test tools-list 2>&1")
+  ensure
+    system bin/"mcpc", "close", "@test"
   end
 end
