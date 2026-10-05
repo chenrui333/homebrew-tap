@@ -8,13 +8,20 @@ class Mult < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ab6c845794d8ec029fc62d8ea1233097e778ee66127fded81043d28a24630364"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab6c845794d8ec029fc62d8ea1233097e778ee66127fded81043d28a24630364"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "967bd2bf3839420614bdcc6ada9d299d8b5e2fc0ad5abfc6b86d19d546efab60"
-    sha256 cellar: :any,                 x86_64_linux:  "c1f175d1b8d04afcc74d7d5e27f2b9df926b34746903c68a8556aa3e73458c0b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5487600723bd298a492a3e9c3d71012ac2b141c067f2968ff97b14d2e7b3bad1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5487600723bd298a492a3e9c3d71012ac2b141c067f2968ff97b14d2e7b3bad1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e47477e4e4f1fee73e5d5cbaf35fd0e2b9536985cb03ab81819aeeafcb8e1348"
+    sha256 cellar: :any,                 x86_64_linux:  "734c719612edaefc1263e1be46832bcc0823cc52a657aeac8ff0e1cd05961a31"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
