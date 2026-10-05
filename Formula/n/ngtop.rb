@@ -8,13 +8,19 @@ class Ngtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "877c77ad4afbd58ffd2558d52c5fa36043223d556671190e88069332215c24ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d415101bb9fa8c9f88ceae9e1d9754874a6c1d12f055bdc82d33d28d7a872e92"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee9ab1880869282a49929646c8a3356ec962a20c75f39f564e56631a17c536f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "243e99221bdb92864259fd8dc444bdda6dc413e9fe69a570e3f074917da7224c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83a978133d70c9f7d39134b578f00c95410772f5792abea61550b7f8276a83bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "880659c9c334b6c2cfcea91518861067c45929cd35f78f903d7bf6e5a31f912c"
+    sha256 cellar: :any,                 x86_64_linux:  "563c3a0a27b27355408b5647e77e9856bd48cde104e26482f1e27b8f0736ce22"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
@@ -27,5 +33,16 @@ class Ngtop < Formula
       #REQS
       0
     EOS
+
+    now = Time.now.utc.strftime("%d/%b/%Y:%H:%M:%S +0000")
+    (testpath/"access.log").write <<~LOG
+      1.2.3.4 - - [#{now}] "GET /index.html HTTP/1.1" 200 612 "-" "curl/8.0"
+      1.2.3.5 - - [#{now}] "GET /about HTTP/1.1" 200 100 "-" "curl/8.0"
+      1.2.3.5 - - [#{now}] "GET /about HTTP/1.1" 404 100 "-" "curl/8.0"
+    LOG
+    ENV["NGTOP_LOGS_PATH"] = testpath/"access.log"
+    ENV["NGTOP_DB"] = testpath/"ngtop.db"
+    assert_match(%r{/about\s+2\n/index\.html\s+1}, shell_output("#{bin}/ngtop path"))
+    assert_match(/404\s+1/, shell_output("#{bin}/ngtop status"))
   end
 end
