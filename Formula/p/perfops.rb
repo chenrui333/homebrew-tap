@@ -16,6 +16,8 @@ class Perfops < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = %W[
       -s -w
@@ -29,10 +31,9 @@ class Perfops < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/perfops --version 2>&1")
 
-    output = shell_output("#{bin}/perfops ping --from 'eastern europe' google.com")
-    assert_match "google.com ping statistics", output
-
-    output = shell_output("#{bin}/perfops list countries")
-    assert_match "Denmark", JSON.parse(output).first["name"]
+    # Measurements run on the PerfOps API; target validation happens before any client is created.
+    %w[ping traceroute mtr].each do |cmd|
+      assert_match "no target specified", shell_output("#{bin}/perfops #{cmd} 2>&1", 1)
+    end
   end
 end
