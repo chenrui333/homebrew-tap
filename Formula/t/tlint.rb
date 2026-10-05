@@ -18,8 +18,13 @@ class Tlint < Formula
   depends_on "composer" => :build
   depends_on "php"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "composer", "install", "--no-dev", "--prefer-dist"
+  end
+
+  def install
     libexec.install Dir["*"]
     (bin/"tlint").write <<~EOS
       #!/bin/bash
