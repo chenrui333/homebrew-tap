@@ -17,6 +17,12 @@ class Parm < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X parm/parmver.StringVersion=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
