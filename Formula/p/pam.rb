@@ -21,6 +21,12 @@ class Pam < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # Upstream renamed the project from pam to squix; keep a pam shim for this tap formula name.
     ldflags = "-s -w -X main.Version=#{version}"
