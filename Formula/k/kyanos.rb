@@ -8,8 +8,9 @@ class Kyanos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "bf3a85edb859e9ce84a3ccf9fb356b625199a818d922dc424b711e8ea3af9fe7"
-    sha256 cellar: :any, x86_64_linux: "0fbd9e71d529984602c0acf2a4f7b3dfa9f4d79aede70ff1234e06d36acfcc1b"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "9818ca3bd1dd925b523d0390e1b64758a6caa5afd379de620308a62377b547a9"
+    sha256 cellar: :any, x86_64_linux: "4b857fad1fd84e948961c665a042371f69113ec17b0eb8ff0195eacd297d859b"
   end
 
   depends_on "go" => :build
@@ -24,9 +25,15 @@ class Kyanos < Formula
     sha256 "1726ab89357fb41b575680e010f37f6ac1c3329c43aba63f9901fa8aea06d300"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
-    ENV.prepend_path "PATH", Formula["llvm"].opt_bin
+    ENV.prepend_path "PATH", formula_opt_bin("llvm")
 
     # Workaround to avoid patchelf corruption when cgo is required
     if OS.linux? && Hardware::CPU.arch == :arm64
@@ -36,7 +43,7 @@ class Kyanos < Formula
 
     # Upstream expects generated eBPF objects to exist before `go build`.
     resource("libbpf").stage buildpath/"libbpf"
-    system "make", "build-bpf", "CLANG=#{Formula["llvm"].opt_bin/"clang"}"
+    system "make", "build-bpf", "CLANG=#{formula_opt_bin("llvm")/"clang"}"
 
     ldflags = %W[
       -s -w
