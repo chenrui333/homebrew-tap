@@ -20,16 +20,30 @@ class Seastar < Formula
   depends_on "libgit2"
   depends_on "openssl@3"
 
+  # `seastar new` clones templates into ~/.seastar/templates at runtime; stage a pinned copy instead.
+  resource "seastar-templates", :test do
+    url "https://github.com/AI314159/seastar-templates/archive/d2294c864ba7d9ce63ed78c3b97ae010304fc508.tar.gz"
+    sha256 "e49af3c8d3de1a47ac3026f036446e33f4a9adbe361080366a4dcf5b86cf2c73"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
+    (testpath/".seastar/templates").install resource("seastar-templates")
+
     output = shell_output("#{bin}/seastar new --language c test_project 2>&1")
     assert_match "Initialized binary package 'test_project'", output
   end
