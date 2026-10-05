@@ -17,6 +17,12 @@ class RailsNew < Formula
   depends_on "rust" => :build
   depends_on "docker" => :test
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -27,6 +33,7 @@ class RailsNew < Formula
     assert_match version.to_s, shell_output("#{bin}/rails-new --version")
 
     output = shell_output("#{bin}/rails-new testapp 2>&1", 101)
-    assert_match "Cannot connect to the Docker daemon", output
+    # Docker 29+ reports "failed to connect to the docker API" instead
+    assert_match(/Cannot connect to the Docker daemon|failed to connect to the docker API/, output)
   end
 end
