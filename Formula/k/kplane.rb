@@ -8,15 +8,20 @@ class Kplane < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "932451c0de8a9b296633362af928aa96b9db24024527a2cb5c0005adde40a10e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "932451c0de8a9b296633362af928aa96b9db24024527a2cb5c0005adde40a10e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "932451c0de8a9b296633362af928aa96b9db24024527a2cb5c0005adde40a10e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "520d497f80410b889cb7f9727554dd3ba9b9529589b0d005c7e1d4dfdc297c2a"
-    sha256 cellar: :any,                 x86_64_linux:  "1a26a8e5c637bc8b1015ec7634f7dc09e96af316d7ad62acb4737cb56d6bf8a1"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48a5b9a95030b4af91975b8282a2461bdda9a48c80ca765682d38ee94552f132"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48a5b9a95030b4af91975b8282a2461bdda9a48c80ca765682d38ee94552f132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e08b0ade55115a84f6b922a4c68c56c314ed43b7bdbfab0f286e2f2504f9ec78"
+    sha256 cellar: :any,                 x86_64_linux:  "c69f76290809db413bd22850ef5cd3debd3fe0ebe74e0f712fbfd4f2996e70c6"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
