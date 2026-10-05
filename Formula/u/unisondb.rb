@@ -18,6 +18,15 @@ class Unisondb < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    # TODO: remove once upstream no longer pins cockroachdb/swiss b0f6560f979b (fails to build with Go 1.27)
+    # https://github.com/cockroachdb/swiss/commit/aa852fb3c14e2d34704a42ee989711108b6f4200
+    system "go", "get", "github.com/cockroachdb/swiss@v0.0.0-20260820225851-aa852fb3c14e"
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
