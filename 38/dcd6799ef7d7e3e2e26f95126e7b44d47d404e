@@ -1,0 +1,20 @@
+Formula/m/mcp-alchemy.rb
+  s_20ee2ac03ef1eb::t_7d68cffd2381ed 19,26-31,48-52,58-67,73-87,103-107,123-127,148-172,203-212,233-242,253-257,263-274,276-306
+  s_20ee2ac03ef1eb::t_8a89ff69cf754a 328
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "38dcd6799ef7d7e3e2e26f95126e7b44d47d404e",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
