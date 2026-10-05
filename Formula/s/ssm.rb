@@ -17,6 +17,12 @@ class Ssm < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.BuildVersion=#{version} -X main.BuildDate=#{time.iso8601} -X main.BuildSHA=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
@@ -24,5 +30,19 @@ class Ssm < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ssm --version")
+
+    # The SSH config is parsed before the TUI starts; without a TTY ssm stops there
+    ssh_config = testpath/"ssh_config"
+    ssh_config.write <<~EOS
+      Host demo
+        HostName 192.0.2.1
+        User alice
+    EOS
+    chmod 0600, ssh_config
+    output = shell_output("#{bin}/ssm --config #{ssh_config} 2>&1 </dev/null", 1)
+    assert_match "not an interactive terminal", output
+
+    output = shell_output("#{bin}/ssm --config #{testpath}/missing_config 2>&1 </dev/null", 1)
+    assert_match "missing_config: no such file or directory", output
   end
 end
