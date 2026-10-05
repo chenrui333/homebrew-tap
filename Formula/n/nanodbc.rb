@@ -7,10 +7,11 @@ class Nanodbc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "6d517823be5a9150b775d456867b112a650edce5093223056f92018e37a5fde8"
-    sha256 cellar: :any, arm64_sequoia: "83694fbf0e84417757654696b065c1dbaf50da92352e5fa1913e072adc96a05c"
-    sha256 cellar: :any, arm64_linux:   "d1a47b9f55457abc29ebfde9d06b92152cb87a632ec1aad7a950577c6ae31b1d"
-    sha256 cellar: :any, x86_64_linux:  "acb59022b77b497deabe89db78097b17e2df5883261238b8125d6004cb27acea"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f3cdd906ff05a478b9c95701cb1c6a35ee9e68cb1176da701f364e4495724eb9"
+    sha256 cellar: :any, arm64_sequoia: "dd3c42e86443a0e482469fe46dd702c5e3a160c5bbbb152fcdc17583ff63b202"
+    sha256 cellar: :any, arm64_linux:   "74e8b7351b3acb125953a23553a7eb85fe11985ff861d04fc64a2b9324636a2b"
+    sha256 cellar: :any, x86_64_linux:  "f603aca85d1bcb41e9c923b63b22697a03ec5f56495db1c5415822371ce3b6e8"
   end
 
   depends_on "cmake" => :build
