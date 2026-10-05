@@ -16,6 +16,8 @@ class Macime < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
     bin.install ".build/release/macime", ".build/release/macimed"
