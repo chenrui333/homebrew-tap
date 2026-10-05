@@ -20,6 +20,12 @@ class GoZzz < Formula
 
   conflicts_with "zzz", because: "both install `zzz` binaries"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
