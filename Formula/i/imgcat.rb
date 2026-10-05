@@ -7,10 +7,11 @@ class Imgcat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9883b173598546d481336a75f5f933b2b42602f6e557ffe0e5d98402220db1bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "371b83117237c20f7e6f1141f4124d88ad3ec487cefa4a263ae261a9a47c1fb1"
-    sha256 cellar: :any_skip_relocation, ventura:       "4d8111925cf72cee1f3931aaae913ac8f958f3d519013084620262947890d9e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de7aadac53f2e43aea7fec7da3675cb1a40e66ab2b9b468c9866a3ee983429ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12286a75b93b2f8f9fff4eb1a4bbf4ee6252f952db5669b5bb49fbfe298b6d72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ed0fda2c16df48bd9ee8fd007504f569d166a774990d9497c0d0eeaf6d0b0bb"
+    sha256 cellar: :any,                 arm64_linux:   "cea825eecc451ad92fd0cd1a0de03d39a5c4ad10db1583f66463e97171288472"
+    sha256 cellar: :any,                 x86_64_linux:  "37164d92436248422a485f91bb721a98f35f1b5495e4d5bac26709791489e5c0"
   end
 
   depends_on "pkgconf" => :build # configure detects libpng/libjpeg via pkg-config
