@@ -8,13 +8,11 @@ class Jonquil < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "1271d9d02dd8d3dfc2940e5c0655afea8fa60266dadf67d07223325399815b0a"
-    sha256 cellar: :any, arm64_sequoia: "b04d185443aace7dee6f8be1793e34e7809385daaa50974a6616f750a934125d"
-    sha256 cellar: :any, arm64_sonoma:  "fa49d9c2719ceaa04ea2b70780aea1037a96c1fddc948103f640556f503dae6b"
-    sha256 cellar: :any, sequoia:       "6b38a1c41c157e8bfdd3c660c382ff50299c435e1fd8cc8bcff943a63a11e8d5"
-    sha256 cellar: :any, arm64_linux:   "98cde101198ac5170c55c1eaebfcab958914a75a1aeaf49b44ae468545b855fc"
-    sha256 cellar: :any, x86_64_linux:  "637f14b10f0e7057cc27013bfb730564bc5ec3cdf8a0ed06578326e02df6a412"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "6865cc6c28278b8750e2f7f7fa47e4974ef0a0aa17c7f8e428777021493fc1a8"
+    sha256 cellar: :any, arm64_sequoia: "59aa512031d681e39e1393a9398470c253c4533f9c119d953a74df626755fcdf"
+    sha256 cellar: :any, arm64_linux:   "0f6156d81e2f0b3619036b4a33d4643ce440d6b235ccef99cfd746797555519d"
+    sha256 cellar: :any, x86_64_linux:  "79751b6591e63998059b30a76f970b3aae342ed2fb549abb42f7ecbe77b53bf6"
   end
 
   depends_on "meson" => :build
@@ -22,6 +20,8 @@ class Jonquil < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "chenrui333/tap/toml-f"
   depends_on "gcc" # for gfortran
+
+  deny_network_access!
 
   def install
     inreplace "meson.build", "description: 'Bringing TOML blooms to JSON land',", <<~MESON.chomp
