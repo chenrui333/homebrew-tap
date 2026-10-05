@@ -8,14 +8,20 @@ class Lazykiq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ceb62190610ec6e4bf103e5da8ad6709671b60ff1063dbad943634de2faf38d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ceb62190610ec6e4bf103e5da8ad6709671b60ff1063dbad943634de2faf38d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ceb62190610ec6e4bf103e5da8ad6709671b60ff1063dbad943634de2faf38d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "343a028696b88e532a3dc23a81f031ef32e80ff788debce60dc5f0fef8145d2d"
-    sha256 cellar: :any,                 x86_64_linux:  "8e41074fa4303519231baf23d6735cfd635a7751cd0b51cd95a9f7d8bd27958c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbcfb1cc1ce4aa639b4b27b83c6912b3d0b300d596d7786b2bb96fd92b568d15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbcfb1cc1ce4aa639b4b27b83c6912b3d0b300d596d7786b2bb96fd92b568d15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c0ab5d1ea4b2f355048775e07d67939149f9d1f94d40beb56ea2a7afc1a9bec"
+    sha256 cellar: :any,                 x86_64_linux:  "d02a8f39a844779a5928cc2d155470576639f9b31de9fa9af084deb67fe25c44"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
