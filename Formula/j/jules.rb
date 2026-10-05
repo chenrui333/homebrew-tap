@@ -7,16 +7,22 @@ class Jules < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "6ee4a63940fa6a94b43294a80cf3222b38d4b2ea26bb591b5b70f13e152ef87e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "999e17c92d2f799d5ee4d8697304dce234eab1ae778bcc4f3c225fb9c394ace6"
   end
 
   depends_on "node"
 
-  def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+  # The npm wrapper downloads Google's closed-source jules binary at runtime.
+  allow_network_access! :test
 
-    generate_completions_from_executable(bin/"jules", "completion", shells: [:bash, :zsh, :fish, :pwsh])
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    system "npm", "install", "--offline", *std_npm_args
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
