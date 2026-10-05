@@ -15,10 +15,14 @@ class Pyment < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e182f07e7bf066fea3c847171f7c69e04f5816144a18b40d724fd6d2e9b4d6ba"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.13"
 
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
