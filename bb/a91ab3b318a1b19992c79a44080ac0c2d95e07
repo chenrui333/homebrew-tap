@@ -1,0 +1,14 @@
+Formula/t/tornado.rb
+  h_9df9c32c3f321d 19-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bba91ab3b318a1b19992c79a44080ac0c2d95e07",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
