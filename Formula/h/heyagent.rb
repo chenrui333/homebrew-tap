@@ -1,6 +1,6 @@
 class Heyagent < Formula
   desc "Claude Code notifications"
-  homepage "https://www.heyagent.dev/"
+  homepage "https://github.com/gergomiklos/heyagent"
   url "https://registry.npmjs.org/heyagent/-/heyagent-2.0.0.tgz"
   sha256 "5bf3f3db28e218a835ee6b22bd22ab2b118f36324a40a4d5839c3dd7cd2b9e79"
   license "MIT"
@@ -20,8 +20,14 @@ class Heyagent < Formula
     depends_on "terminal-notifier"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove vendored pre-built binary `terminal-notifier`
@@ -33,7 +39,7 @@ class Heyagent < Formula
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      terminal_notifier_app = formula_opt_prefix("terminal-notifier")/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
