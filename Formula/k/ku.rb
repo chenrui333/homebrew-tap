@@ -8,13 +8,20 @@ class Ku < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cec6e060b135016e2a6a6fada6dedfbf098407d7b89152ba0ac7de9fcf1b55a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cec6e060b135016e2a6a6fada6dedfbf098407d7b89152ba0ac7de9fcf1b55a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99e607431a98032c7c8f4e8a85fa65f89fe202bde4a60c784fb4b7167e6c8505"
-    sha256 cellar: :any,                 x86_64_linux:  "6ff826836cd11b086087469bb154c515e3633b2a9037f9ee99b0e106220f5da1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84eb00b586ff85595ac7736e9b37a6acd3ae5c00533833985cf24fa4d477e69b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84eb00b586ff85595ac7736e9b37a6acd3ae5c00533833985cf24fa4d477e69b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "026181dd9a9dc76b6b298ff5d03c3e1b52b4a9ccbe7297d3d1e188e57cd7f3f6"
+    sha256 cellar: :any,                 x86_64_linux:  "b6de511e9ce32bf22d99de40bf8221a91a81d7000ea0872c3353d6b30f445021"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=v#{version}"
