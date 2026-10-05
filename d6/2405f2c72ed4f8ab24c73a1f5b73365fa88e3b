@@ -1,0 +1,14 @@
+Formula/p/putzen.rb
+  h_9df9c32c3f321d 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d62405f2c72ed4f8ab24c73a1f5b73365fa88e3b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
