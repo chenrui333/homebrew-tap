@@ -13,10 +13,12 @@ class Mush < Formula
 
   depends_on "bash"
 
+  deny_network_access!
+
   def install
     inreplace "bin/mush",
               "#!/usr/bin/env bash",
-              "#!#{Formula["bash"].opt_bin}/bash"
+              "#!#{formula_opt_bin("bash")}/bash"
     inreplace "bin/mush",
               'VERSION="Mush 0.1.1 (2023-11-03)"',
               'VERSION="Mush 0.2.0"'
