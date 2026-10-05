@@ -9,41 +9,27 @@ class Httptap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "04223e455e65d76e78d69f0cc56f0e58f0e377234c839dac309e2f12e0749335"
-    sha256 cellar: :any,                 x86_64_linux: "2b7d2ffb3ddc70689b7ebfc33e8e5c7c03da0d41ca48be204e6f9a12ba11b400"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "d6f42c3f268e28f8595f30d037645bca254c092dd40225e964aa716928cbfe66"
+    sha256 cellar: :any,                 x86_64_linux: "3aa86cd8bc7a381d91cfc4de29304c12d4e8b3c0374eba6f73e01cb8578f0bd5"
   end
 
   depends_on "go" => :build
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    require "socket"
-
-    server = TCPServer.new("127.0.0.1", 0)
-    pid = nil
-
-    begin
-      pid = fork do
-        client = server.accept
-        client.readpartial(1024)
-        client.write "HTTP/1.1 200 OK\r\nContent-Length: 2\r\nConnection: close\r\n\r\nOK"
-        client.close
-      end
-
-      output = shell_output("#{bin}/httptap -- true 2>&1", 1)
-      assert_match "operation not permitted", output
-    ensure
-      server.close
-      if pid
-        Process.kill("TERM", pid)
-        Process.wait(pid)
-      end
-    end
-  rescue Errno::ECHILD, Errno::ESRCH
-    nil
+    # Creating the user and network namespaces is not permitted in the CI container.
+    output = shell_output("#{bin}/httptap -- true 2>&1", 1)
+    assert_match "operation not permitted", output
   end
 end
