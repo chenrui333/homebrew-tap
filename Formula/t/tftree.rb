@@ -23,6 +23,12 @@ class Tftree < Formula
     sha256 "8212c5130521d2c8619390ddfd505fb37ca9ffd9de423c9b1bdc98f23a92c4cc"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
