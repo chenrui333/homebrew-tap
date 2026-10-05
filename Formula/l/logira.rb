@@ -8,13 +8,19 @@ class Logira < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "05128dbe67e7136d7a32eea679c7b328be5167137e0f98076ba1b55177bd1e83"
-    sha256 cellar: :any,                 x86_64_linux: "b7697287409b03f46524a31cce3def0b048eec62324d8f4d96508dff462db182"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2928b320fd7d422822a43d72f921787315b69c5a39f397495510254bc16cc927"
+    sha256 cellar: :any,                 x86_64_linux: "1f2648082c8f85d88bb1888d49d18f07e44727cf5d46f9ddfd8df08724e21c9b"
   end
 
   depends_on "go" => :build
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"logira"), "./cmd/logira"
@@ -28,5 +34,10 @@ class Logira < Formula
     output, status = Open3.capture2e(bin/"logira", "--not-a-real-option")
     refute_predicate status, :success?
     assert_match "not-a-real-option", output
+
+    ENV["LOGIRA_HOME"] = testpath/"logira"
+    assert_equal "[]\n", shell_output("#{bin}/logira runs --json")
+    assert_match "(no runs)", shell_output("#{bin}/logira runs")
+    assert_predicate testpath/"logira/runs", :directory?
   end
 end
