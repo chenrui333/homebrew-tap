@@ -17,6 +17,8 @@ class Luaformatter < Formula
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
     args = %w[
       -DBUILD_TESTS=OFF
@@ -28,6 +30,9 @@ class Luaformatter < Formula
   end
 
   test do
+    # Stop the upward `.lua-format` search before it lists sandbox-unreadable `/`.
+    (testpath/".lua-format").write "column_limit: 80\n"
+
     (testpath/"test.lua").write <<~LUA
       function test()
       print("Hello, World!")
