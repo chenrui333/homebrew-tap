@@ -15,8 +15,14 @@ class Kimiflare < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     prebuilds = libexec/"lib/node_modules/kimiflare/node_modules/isolated-vm/prebuilds"
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
