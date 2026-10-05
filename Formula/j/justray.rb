@@ -8,14 +8,21 @@ class Justray < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa45c70f683fc74b47cf2c9968ca8ef76771a689ea88b111c6e1fd7d3d3fc149"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f985cd38cb0229cf42255425d3c324b196622beba37f1cf6c4ab3fc8eccf4653"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f163fffd08145e401bd14265bacab4bf15385f3461b50344e4a1060f75546a0"
-    sha256 cellar: :any,                 x86_64_linux:  "d3485e349178e81278b02f796b123f2dc27c286178a2aa863de729873118d948"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "227438c2a77e04db864fdaee113091d5331b869802affe390c990fbc202edf59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8419389ae8211143960abfca389269b8502341c6d6d716add1ce7d01ec3b351"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92c67d86479f5554980293ba595ee98557af1ae8f14e53aab9f41e770388d77b"
+    sha256 cellar: :any,                 x86_64_linux:  "7657803ea18f79f5eb7a4e7966758eed3fdb2818def0e93d1d7f612985b6480b"
   end
 
   # Match upstream release CI; sing-box relies on private HTTP/2 symbols.
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/luynrs/justray/internal/version.Version=#{version}"
