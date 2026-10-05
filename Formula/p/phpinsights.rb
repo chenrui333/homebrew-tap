@@ -13,11 +13,16 @@ class Phpinsights < Formula
   depends_on "composer" => :build
   depends_on "php"
 
+  deny_network_access!
+
+  def fetch
+    system "composer", "install", "--no-dev", "--prefer-dist"
+  end
+
   def install
     # The upstream version constant can lag the release tag.
     inreplace "src/Domain/Kernel.php", /public const VERSION = '[^']+';/,
               "public const VERSION = 'v#{version}';"
-    system "composer", "install", "--no-dev", "--prefer-dist"
     libexec.install Dir["*"]
 
     (bin/"phpinsights").write <<~EOS
