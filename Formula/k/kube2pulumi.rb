@@ -8,15 +8,21 @@ class Kube2pulumi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc3e4e27fb63085c52248291ab48895fde62ed52008fd8e2bcaf55a6f52ee511"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc3e4e27fb63085c52248291ab48895fde62ed52008fd8e2bcaf55a6f52ee511"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc3e4e27fb63085c52248291ab48895fde62ed52008fd8e2bcaf55a6f52ee511"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f3a7d65ec9a211978cb6d5c0b75c429a531fd489765992818404df9ffe4721f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c51e99638b5f07e5184df79a98709e65d8c28c2d8ef98895d05fbadfac46718b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a86935fbcf80d553344d488cae61b93cf2e6a6a3c6fe656c1dff36a55f2ca767"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a86935fbcf80d553344d488cae61b93cf2e6a6a3c6fe656c1dff36a55f2ca767"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80bfa3d647b568f6da5cad3b1e144471ff69520d281eb2001ff799913a18a8a5"
+    sha256 cellar: :any,                 x86_64_linux:  "29704b11583cd898ebc2072946cf51ea27d0cf34ec969a1eeb178d54cb9ef934"
   end
 
   depends_on "go" => :build
+
+  # Pulumi's PCL binder always starts a plugin host gRPC server on a loopback port.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/pulumi/kube2pulumi/pkg/version.Version=#{version}"
@@ -30,22 +36,16 @@ class Kube2pulumi < Formula
 
     assert_match version.to_s, shell_output("#{bin}/kube2pulumi version")
 
-    (testpath/"test.yaml").write <<~YAML
-      apiVersion: v1
-      kind: Pod
+    # Kubernetes resources would download the pulumi-kubernetes plugin; a CRD is reported locally.
+    (testpath/"crd.yaml").write <<~YAML
+      apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
       metadata:
-        name: nginx
-        labels:
-          app: nginx
-      spec:
-        containers:
-        - name: nginx
-          image: nginx:1.14.2
-          ports:
-          - containerPort: 80
+        name: crontabs.stable.example.com
     YAML
 
-    system bin/"kube2pulumi", "go", "--directory", testpath, "--outputFile", testpath/"main.go"
+    output = shell_output("#{bin}/kube2pulumi go --directory #{testpath} --outputFile #{testpath}/main.go")
+    assert_match "custom resource definitions cannot not be converted", output
     assert_match "github.com/pulumi/pulumi/sdk/v3/go/pulumi", (testpath/"main.go").read
   end
 end
