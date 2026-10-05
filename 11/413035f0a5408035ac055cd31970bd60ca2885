@@ -1,0 +1,14 @@
+Formula/p/public-ollama-finder.rb
+  h_9df9c32c3f321d 16-17,25-30,39-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "11413035f0a5408035ac055cd31970bd60ca2885",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
