@@ -1,0 +1,14 @@
+Formula/m/mpfshell.rb
+  h_9df9c32c3f321d 21-30,36-65,71-95,101-102,104-124,128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "abb49d86ae6149d01a25c1d25351f4aba7f3f74f",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
