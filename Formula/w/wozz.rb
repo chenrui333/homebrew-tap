@@ -13,13 +13,16 @@ class Wozz < Formula
 
   depends_on "kubectl"
 
+  deny_network_access!
+
   def install
     bin.install "scripts/wozz-audit.sh" => "wozz"
   end
 
   test do
     assert_match "Kubernetes Audit", (bin/"wozz").read
-    output = shell_output("#{bin}/wozz 2>&1", 1)
-    assert_match(/kubectl|kube|namespace|cluster/i, output)
+    # Running the audit would contact a cluster and send telemetry; check local argument handling instead.
+    output = shell_output("WOZZ_NO_TELEMETRY=1 #{bin}/wozz --not-a-real-option 2>&1", 1)
+    assert_match "Unknown option: --not-a-real-option", output
   end
 end
