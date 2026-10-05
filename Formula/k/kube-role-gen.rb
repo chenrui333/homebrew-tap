@@ -8,10 +8,11 @@ class KubeRoleGen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3da3d8576c8996c80c941767a860d4d1fde2d4528fb53442bd30d17daf3a37e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7aca501644d5cf5911283aac8184bdcd3f26f2c5473835d81d2a252aec156bfb"
-    sha256 cellar: :any_skip_relocation, ventura:       "c79d037d9fb77f1dba89ccdebdac81737610c44c0963434c5a5db971e44b32da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7437e852e9ff4ec2e91f3bee74a3ce36ecf0e3d9ba85129046c6e66f998207b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e611065174260994e41ad90b00e6a0893c778c4e3d01731d3d8fd84b6c726b17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e611065174260994e41ad90b00e6a0893c778c4e3d01731d3d8fd84b6c726b17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0da35ac55bd2c9cd7fa0f2fd2167c73df30c65cb6db7e807c5bebc3f6761e44c"
+    sha256 cellar: :any,                 x86_64_linux:  "d05f35ebe961bbe7d40585c663109d00c259db4bea8f7c46272664b70b63ab78"
   end
 
   depends_on "go" => :build
