@@ -18,8 +18,15 @@ class Optimizt < Formula
   depends_on "guetzli"
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     # Avoid loading the native image stack for metadata-only CLI commands.
     cli = libexec/"lib/node_modules/@343dev/optimizt/cli.js"
