@@ -8,8 +8,9 @@ class Ibtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "d6947267f32d05ac6d69c45c5279c88fd59965715f2e93273b9711c315e74da3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bec8b9b6747309064c04f68b9c069419cbcd8bbdeba516eef0313c48e0722344"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "af499bcfdcadb107e16bc58ba071533b883a8e78d7e78324ffef5dcda76c19ec"
+    sha256 cellar: :any, x86_64_linux: "c20a1fc610fa8f5f828ff3f3355ee60187ae3646f8e84be80e462b9040605d12"
   end
 
   depends_on "rust" => :build
