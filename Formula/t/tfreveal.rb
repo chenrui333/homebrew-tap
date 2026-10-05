@@ -18,21 +18,48 @@ class Tfreveal < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
-    resource "tfplan.json" do
-      url "https://raw.githubusercontent.com/breml/tfreveal/refs/heads/master/testdata/sensitive/plan.json"
-      sha256 "56e1460d2eab4978ff3348a22718fc89c4eebc2e4af41d29efcb1cd10589dc5f"
-    end
-
     assert_match version.to_s, shell_output("#{bin}/tfreveal -v")
 
-    testpath.install resource("tfplan.json")
+    (testpath/"plan.json").write <<~JSON
+      {
+        "format_version": "1.2",
+        "terraform_version": "1.7.2",
+        "resource_changes": [
+          {
+            "address": "null_resource.cluster",
+            "mode": "managed",
+            "type": "null_resource",
+            "name": "cluster",
+            "provider_name": "registry.terraform.io/hashicorp/null",
+            "change": {
+              "actions": ["delete", "create"],
+              "before": {"id": "5350362168280616586", "triggers": {"secret": "secure"}},
+              "after": {"triggers": {"secret": "very very secure"}},
+              "after_unknown": {"id": true, "triggers": {}},
+              "before_sensitive": {"triggers": {"secret": true}},
+              "after_sensitive": {"triggers": {"secret": true}},
+              "replace_paths": [["triggers"]]
+            },
+            "action_reason": "replace_because_cannot_update"
+          }
+        ]
+      }
+    JSON
+
     output = shell_output("#{bin}/tfreveal --no-color #{testpath}/plan.json")
-    assert_match "null_resource.sensitive must be replaced", output
+    assert_match "null_resource.cluster must be replaced", output
+    assert_match '~ secret = "secure" -> "very very secure"', output
   end
 end
