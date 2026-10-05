@@ -9,10 +9,11 @@ class Lemonade < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "fbd1f39421bc20af345d9304e8f2cbbb263e26f374656b3fd1c4526cbae0a5fb"
-    sha256 cellar: :any, arm64_sequoia: "d617375a106080188119df6e551c0f1b6594d6e85b870d6b004c6c95423956f5"
-    sha256 cellar: :any, arm64_sonoma:  "ad4db4bf3e55b60bc46177fd1fa0dd480dd55b351bc915312cfbdda5a9e1b372"
-    sha256               x86_64_linux:  "5d0d4bdcb6957448e77af1ae0c2cc4e7dfe96aead06c69192966548d47646fd8"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "b4f8a0862de2a263fbf54ad6dca99f16c51cf7fec9dea3cb1b3dbd094d7d078a"
+    sha256 cellar: :any, arm64_sequoia: "1671b6aaa10e56f5d4305a5ee22671f6812724a858aed1d75e8e1fc256e90fa2"
+    sha256               arm64_linux:   "da3d7757a6e0f645b202f2ffa792959f42461c63a4679e7a936cd93b2c036a5f"
+    sha256               x86_64_linux:  "968f66142076f8dd08ba6553238f8b202034f5b0ef9afe3ff46376fdb614c9fa"
   end
 
   depends_on "cmake" => :build # for onnx
