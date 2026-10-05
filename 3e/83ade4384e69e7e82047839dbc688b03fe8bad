@@ -1,0 +1,14 @@
+Formula/m/memora.rb
+  h_9df9c32c3f321d 19,33-38,60-64,75-79,85-89,95-109,130-134,155-159,170-189,225-234,255-259,265-269,275-279,285-301,303-333,337-340,350-381
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3e83ade4384e69e7e82047839dbc688b03fe8bad",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
