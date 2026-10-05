@@ -8,15 +8,20 @@ class Multigres < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f1b2b516fc843a160ffda617cab5465f2facad2818cb4ac035c7257dde9101e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b7114ae6e95afaf0573109f233aa707dd9c8e588cd9cc54200dc9bc3e14b86a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e8c6495fc8df82022b01d1cde969f44b0e12f954f74e4bf3d7596dfcd8b131a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c20667ab957c27ac2c3b7b7ceb4a016943a2f23fe4b613f523a33e2e74ceb791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa844c293438ecac4ce1841f47069eaec44d63a18a1dbb2386a6dddfb4e18bc2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0a895fd36e08e31519c2ee1332c217993b11e5af16a98bc8600a7f68dd9e280"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32baf8de899b20a36cc192d49bf5051dbc8bab9eab75b2fa362c08cc7e915876"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "396ea84bd1e69894d91678018d9834843cb03eb5ebd4ef509318150e61ea3509"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44b1136a655a7034ef29bf35cfa9faeb269838e06cc07f03f28e714725972c1c"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "0"
@@ -42,6 +47,18 @@ class Multigres < Formula
       output, status = Open3.capture2e(bin/cmd, "--not-a-real-option")
       refute_predicate status, :success?
       assert_match "not-a-real-option", output
+    end
+
+    # testpath is too long for macOS's 104-byte limit on the generated Unix socket paths.
+    config_dir = Pathname(Dir.mktmpdir("mg", "/tmp"))
+    begin
+      output = shell_output("#{bin}/multigres cluster init --config-path #{config_dir}")
+      assert_match "Cluster configuration created successfully", output
+      config = (config_dir/"multigres.yaml").read
+      assert_match "provisioner: local", config
+      assert_match "name: zone1", config
+    ensure
+      rm_r config_dir
     end
   end
 end
