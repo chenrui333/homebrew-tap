@@ -1,0 +1,14 @@
+Formula/r/rogallo.rb
+  h_9df9c32c3f321d 19-21,26-30,36-40,45-49,60-69,100-109,115-124,160-169,190-199,220-229,240-245,247-274
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5419dd2076f01df7c7274514abf89a2e858a0e81",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
