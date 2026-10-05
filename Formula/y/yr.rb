@@ -17,6 +17,12 @@ class Yr < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/yr"
 
@@ -26,6 +32,24 @@ class Yr < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/yr --version")
 
-    assert_match "New York", shell_output("#{bin}/yr now nyc")
+    # `yr` serves unexpired forecasts from its cache in TMPDIR, skipping Nominatim and MET Norway.
+    ENV["TMPDIR"] = testpath.to_s
+    now = Time.now.utc
+    hour = Time.utc(now.year, now.month, now.day, now.hour)
+    forecast = [hour, hour + 3600].map do |time|
+      {
+        latitude: 40.7127, longitude: -74.006, location: "New York", time: time.iso8601,
+        temperature: 14.6, precipitation: 0, wind: { speed: 1.9, direction: 343.5 },
+        uvIndex: 0, symbolCode: "fair_night"
+      }
+    end
+    (testpath/"yr-nyc.json").write JSON.generate(
+      expires: (now + 86_400).iso8601, lastModified: now.iso8601,
+      coordinates: { latitude: 40.7127, longitude: -74.006 }, forecast:
+    )
+
+    output = shell_output("#{bin}/yr now nyc")
+    assert_match "New York", output
+    assert_match "Temperature: 14.6 °C", output
   end
 end
