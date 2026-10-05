@@ -8,13 +8,20 @@ class Kyushu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37a120879eff4b39fc59a94727933f1fda7f54da657902f01d95c31d51ebd171"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4fe1ccd2196146b63ac903b4ce9c45a30f9973639c11e91b9c0c6408b07b107"
-    sha256 cellar: :any,                 arm64_linux:   "b75438a6d524675359a553bbede42e98004ad04f3015f7a23648bbc9d4e247e4"
-    sha256 cellar: :any,                 x86_64_linux:  "3d17f8bc71744a3e1530d6bbdee3ab6d4bffd23bfe474161ec03900defd97af7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "775d39e1146ac25b23045d463359f4ecb623b2beee2f0eb64962b3c1d888bd58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7c264f9f27afe41427d6dd7641a264b14fb3ba577df3a4609aadec23617f2e3"
+    sha256 cellar: :any,                 arm64_linux:   "76173ea6ff968953964ac9bce548e311ac824bb8256c36cef4b0515159f3911d"
+    sha256 cellar: :any,                 x86_64_linux:  "050f4f593b984fc9addde5d880bb3ae250a8465282ff33491d093e933a7e6d62"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
