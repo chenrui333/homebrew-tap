@@ -10,9 +10,9 @@ class MlxTune < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "2275b942167533187d939ec1a4517e200c8d527efde66d9e62c5fa48c0578085"
-    sha256 cellar: :any, arm64_sequoia: "1bc28ce4e3d05945bbafabfb2388d245a9f072821636489e2900f467782f30f0"
-    sha256 cellar: :any, arm64_sonoma:  "80ed53298cac0d2608880a192a368b0c35e190d790fb815a36f6531c4c655fc4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "909ac4dad6c4ebbbed362168997bf25e16b22595a5152464aab0f45c9de37654"
+    sha256 cellar: :any, arm64_sequoia: "8ccf478e2664eaeefbb800df0e63d7bbee7bcb566981498b77f56b09954a23df"
   end
 
   depends_on "cython" => :build # for frozenlist, propcache and yarl
