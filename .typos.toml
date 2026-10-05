@@ -10,6 +10,8 @@ extend-ignore-re = [
   "(?Rm)^.*<!--\\s*spellchecker:disable-line\\s*-->$",
   "<!--\\s*spellchecker:ignore-next-line\\s*-->\\n.*",
   "(?s)<!--\\s*spellchecker:off\\s*-->.*?<!--\\s*spellchecker:on\\s*-->",
+  # Embedded PEM fixtures (base64 payloads are not prose)
+  "(?s)-----BEGIN [A-Z0-9 ]+-----.*?-----END [A-Z0-9 ]+-----",
 ]
 
 [default.extend-words]
