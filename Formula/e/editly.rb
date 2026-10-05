@@ -53,6 +53,7 @@ class Editly < Formula
     ENV.append "CXXFLAGS", "-std=c++17"
     ENV.append "CPPFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR"
 
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
     inreplace libexec/"lib/node_modules/editly/node_modules/gl/angle/src/common/angleutils.h",
               "#include <vector>", "#include <cstdint>\n#include <vector>"
