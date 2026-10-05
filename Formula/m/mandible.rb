@@ -8,13 +8,20 @@ class Mandible < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af2534abb78e492bdca37e9610524b9fcad90a884193c13ca43fa5bdadc8c8f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2578664cbea4493dda541f3ee30be3452b589af5dd143265f3681528585dd78"
-    sha256 cellar: :any,                 arm64_linux:   "f5a5a299b23aaf19f70a5d8e8a371aae3b900db695cbac21d406cef887311cf7"
-    sha256 cellar: :any,                 x86_64_linux:  "ac70776279c51647a905cfe9815f4811b0792c2ae305a721876950c8862c1a16"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db2dd90e0c4a0ed8de0e163b62cf991b7fc4364e59368c279afd10930e084878"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85f5a7fcf78a95d9f7484dea990c2f1292b77d8192b04f5cbab130e51f0cbb27"
+    sha256 cellar: :any,                 arm64_linux:   "2b7a27d87a336529bf2c5b7200c6ec168cb228690149224652e05064e06908a5"
+    sha256 cellar: :any,                 x86_64_linux:  "c41aa37be698bf523f35d2193a13b101c53cc7a5c4e8d020aa0072e0584351b9"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "mandible")
