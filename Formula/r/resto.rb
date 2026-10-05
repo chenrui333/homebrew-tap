@@ -18,7 +18,16 @@ class Resto < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
+    # Skip the post-command GitHub release check: it dereferences a nil response when offline
+    inreplace "main.go", "checker.Check(version)", "_ = checker.Check"
+
     ldflags = "-s -w -X main.version=v#{version} -X main.versionDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
@@ -27,7 +36,11 @@ class Resto < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/resto version")
-    output = shell_output("#{bin}/resto settings")
-    assert_match "Update Resto settings like enable mouse or change editor theme", output
+
+    system bin/"resto", "settings", "set", "show_update", "false"
+    system bin/"resto", "settings", "set", "theme", "monokai"
+    settings = (testpath/".resto/settings.json").read
+    assert_match(/"show_update":\s*false/, settings)
+    assert_match(/"theme":\s*"monokai"/, settings)
   end
 end
