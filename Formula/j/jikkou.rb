@@ -16,11 +16,15 @@ class Jikkou < Formula
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk"
+  # Lombok in v1.0.0 fails under JDK 27 (javac EndPosTable ExceptionInInitializerError).
+  depends_on "openjdk@25"
+
+  # Maven/Quarkus resolves plugins and deployment artifacts during packaging; go-offline does not cover them.
+  allow_network_access! :build
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-    ENV.prepend_path "PATH", Formula["openjdk"].opt_bin
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@25")
+    ENV.prepend_path "PATH", formula_opt_bin("openjdk@25")
 
     system "mvn", "-ntp", "-B", "-pl", "cli", "-am", "package", "-DskipTests"
 
