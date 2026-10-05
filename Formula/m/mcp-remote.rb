@@ -7,13 +7,20 @@ class McpRemote < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8a7e9a72f7be16025acfbf410b8fd1731c69eb4c1e416a8fb861066ad7dd25e8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7c9e90673cfadbb71fae8d6820b50d73574b54e8928737e8ff55cd733f455a85"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
