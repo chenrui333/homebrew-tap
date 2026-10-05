@@ -1,0 +1,14 @@
+Formula/r/resinator.rb
+  h_9df9c32c3f321d 17-24,27,45-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8a5e7c0c912caa5af54772da9e78aa562ba2a687",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
