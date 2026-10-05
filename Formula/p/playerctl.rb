@@ -21,6 +21,8 @@ class Playerctl < Formula
 
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = %w[
       -Dgtk-doc=false
