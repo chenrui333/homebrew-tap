@@ -16,6 +16,12 @@ class Sish < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -28,5 +34,9 @@ class Sish < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/sish --version")
+
+    # Listener addresses are validated before any SSH/HTTP listener is opened
+    output = shell_output("#{bin}/sish --ssh-address=localhost:notaport 2>&1", 1)
+    assert_match "Error parsing address", output
   end
 end
