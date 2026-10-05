@@ -13,9 +13,11 @@ class Jotbird < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
   def install
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/jotbird"
   end
 
