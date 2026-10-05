@@ -7,17 +7,23 @@ class Ktx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "4ae4c199c050c71e588b9affe26df5f1164898393c7e15c8d50ad9c8594c3225"
-    sha256               arm64_sequoia: "07d79db26bdfc9591ab5c475f6ce9f60e42a3272158c254d7919a7ccf636147e"
-    sha256               arm64_sonoma:  "07d79db26bdfc9591ab5c475f6ce9f60e42a3272158c254d7919a7ccf636147e"
-    sha256 cellar: :any, arm64_linux:   "a665cc84bac7a4581f9ff35472fab120be26b9326065e3537d7fc5f5dac148b8"
-    sha256 cellar: :any, x86_64_linux:  "422b01400bff3a6ca23034274a6bb6b09fe4aa855407cd78fb532d47c7a50788"
+    rebuild 1
+    sha256               arm64_tahoe:   "3a650c626e234ca20d3181379ce4d6f748c7f2cbdd385f3d8b165ddba64188a7"
+    sha256               arm64_sequoia: "3a650c626e234ca20d3181379ce4d6f748c7f2cbdd385f3d8b165ddba64188a7"
+    sha256 cellar: :any, arm64_linux:   "0f2e7feabba225fef198b5801a82ae251a9c9fb64fa4f69ee874943efc2e36d7"
+    sha256 cellar: :any, x86_64_linux:  "4a0294aedfd2dadfe5140e98e16ffa7594f3986844224d25216ce55151f9bdce"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
