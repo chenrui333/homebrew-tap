@@ -8,11 +8,11 @@ class Moltis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b8c56529d6991c58d0b3938be92a5f492e95526c10fdd8cbbf47ee9c20a84723"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7d44b10539dd1d02d0e75660982c5ed1797b24edf92eab7ded787378061288d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3cdb148bb90de7f90d759134a361550595ab17217881d49d3c39d30ec71b5ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b4ab12e751fbe1e66f25d44e714276c3cf054c213e64334fc6fc2d0b1ff742c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b75a699b843e6971d21ae4f5c1b70ca4daba8c6c9080e43e243f9c9027ee1045"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4de1626e91feba5642eee224e049746a87d6cdbb7eb50b05beee6f0b8962453"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "971347e3ff1b5da27aef6f4ffff3458302b762b86954421da3da80f0657cea89"
+    sha256 cellar: :any,                 arm64_linux:   "157ab473fd9169a8ab6a1ae453a0adc58dd2555511b61d531d0e7a022ee25e3e"
+    sha256 cellar: :any,                 x86_64_linux:  "cb1523725011ca3693e813bb0c8053a8247ad3d7ae3886a97a5366fa24becf75"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +25,12 @@ class Moltis < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["RUSTC_BOOTSTRAP"] = "1"
     # Avoid compiling embedded WASM tools on unsupported build targets.
@@ -34,7 +40,7 @@ class Moltis < Formula
 
     if OS.linux?
       zlib = Formula["zlib-ng-compat"]
-      ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
+      ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
       ENV["ZLIB_ROOT"] = zlib.opt_prefix.to_s
       ENV.append_path "PKG_CONFIG_PATH", zlib.opt_lib/"pkgconfig"
       ENV.append "LDFLAGS", "-L#{zlib.opt_lib}"
