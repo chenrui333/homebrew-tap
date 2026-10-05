@@ -7,13 +7,23 @@ class IamShrink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "bd01b890ef00e53776a58cd16c8be6b29204751aa974b92e55c69058f9079bc9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8750490a12effe2d26df0b23499bd91ad8be25a9095f38d19d16bbe9f708b2a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8750490a12effe2d26df0b23499bd91ad8be25a9095f38d19d16bbe9f708b2a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2214ce5bb5ce60960a6cf14c7eefd9808c566ecf871c4830478cc358322ed164"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2214ce5bb5ce60960a6cf14c7eefd9808c566ecf871c4830478cc358322ed164"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
