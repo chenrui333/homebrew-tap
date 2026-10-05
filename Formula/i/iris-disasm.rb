@@ -16,6 +16,8 @@ class IrisDisasm < Formula
   depends_on xcode: ["16.0", :build]
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
     bin.install ".build/release/iris"
