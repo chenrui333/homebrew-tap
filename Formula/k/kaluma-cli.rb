@@ -13,10 +13,22 @@ class KalumaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "feb1713936812610833366396f00a1c4ba2ba03634c3e0f121ae5079641ff6fb"
   end
 
+  depends_on "libuv" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    # Build serialport's native bindings from source against Homebrew node's headers;
+    # brewed node uses the shared libuv, so its headers come from the libuv formula.
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
+    ENV.append_path "CPATH", formula_opt_include("libuv")
+    system "npm", "install", "--offline", "--allow-scripts=@serialport/bindings",
+           *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec/"bin/kaluma"
   end
 
@@ -24,5 +36,10 @@ class KalumaCli < Formula
     assert_match version.to_s, shell_output("#{bin}/kaluma --version")
 
     system bin/"kaluma", "ports"
+
+    (testpath/"lib.js").write "module.exports = (n) => n * 2;\n"
+    (testpath/"index.js").write "console.log(require(\"./lib.js\")(21));\n"
+    system bin/"kaluma", "bundle", "./index.js", "--output", "bundle.js"
+    assert_equal "42", shell_output("#{formula_opt_bin("node")}/node bundle.js").chomp
   end
 end
