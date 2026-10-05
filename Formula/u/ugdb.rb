@@ -17,16 +17,49 @@ class Ugdb < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    # Fails in Linux CI with `Failed to get terminal attributes: Sys(ENOTTY)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    require "pty"
+    require "timeout"
 
-    assert_match version.to_s, shell_output("#{bin}/ugdb --version")
+    # ugdb calls tcgetattr on stdin before parsing CLI args, so even `--version`
+    # needs a TTY (no TTY: `Failed to get terminal attributes: Sys(ENODEV)`).
+    run_in_pty = lambda do |cmd|
+      output = +""
+      status = nil
+      Timeout.timeout(30) do
+        PTY.spawn("stty cols 120 rows 40; exec #{cmd}") do |r, _w, pid|
+          begin
+            r.each_line { |line| output << line }
+          rescue Errno::EIO
+            # PTY closed after the process exited
+          end
+          Process.wait(pid)
+          status = $CHILD_STATUS.exitstatus
+        end
+      end
+      [output, status]
+    end
 
-    assert_match "Failed to spawn gdb process (\"gdb\")", shell_output("#{bin}/ugdb 2>&1", 252)
+    # The IPC socket is `$XDG_RUNTIME_DIR/ugdb/<64 chars>`: the sandbox only allows
+    # Unix sockets under its short TMPDIR, and macOS caps socket paths at 104 bytes.
+    ENV["XDG_RUNTIME_DIR"] = ENV.fetch("TMPDIR", "/tmp")
+
+    output, status = run_in_pty.call("#{bin}/ugdb --version")
+    assert_match "ugdb #{version}", output
+    assert_equal 0, status
+
+    output, status = run_in_pty.call("#{bin}/ugdb --log_dir #{testpath} --gdb #{testpath}/missing-gdb 2>&1")
+    assert_match "Failed to spawn gdb process", output
+    assert_equal 252, status
   end
 end
