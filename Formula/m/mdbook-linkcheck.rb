@@ -7,10 +7,11 @@ class MdbookLinkcheck < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "868df859c381ad2bd641c57d04115fe3d9bb94e83860789549e5a22bbe5e3e50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58c998c81ff24783c0fbc51d97857e1a42d88fc975a2a54779edaec31ee8fac4"
-    sha256 cellar: :any_skip_relocation, ventura:       "4646eb2abc72942cc985586944a366a91c1308b40379091d0e833bc995c7e3da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c74ee710f61f9116b93b89d29651e7d58270788819198202a1cc7ebb44efd972"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9bacea62a21f3481fbf6dd5b40207292a5a05aad0c906dd3336d4cd08ed01b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea1c68d1e2591ee6b657299e18ba55f970d150044f15fe716a239c2c1279708e"
+    sha256 cellar: :any,                 arm64_linux:   "11b0847a7028f446d32007e10ca412c30f095f271fe41d46521865e78d105cfa"
+    sha256 cellar: :any,                 x86_64_linux:  "b1668a42258b571f5143c3543d75de5aa8e218f99f7c852babdb07980e378c52"
   end
 
   depends_on "pkgconf" => :build
