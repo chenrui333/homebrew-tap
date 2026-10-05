@@ -17,6 +17,12 @@ class Rip < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -24,15 +30,13 @@ class Rip < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/rip --version")
 
-    port = free_port
-    ruby = RbConfig.ruby
-    pid = spawn(
-      ruby, "-e",
-      "require 'socket'; server = TCPServer.new('127.0.0.1', #{port}); sleep 60"
-    )
+    # Kill a uniquely named local process by name filter instead of a TCP listener.
+    target = testpath/"riptarget"
+    cp "/bin/sleep", target
+    pid = spawn target.to_s, "60"
     sleep 2
 
-    output = shell_output("#{bin}/rip --port #{port} --confirm-nuke")
+    output = shell_output("#{bin}/rip --filter riptarget --confirm-nuke")
     assert_match "Killed", output
 
     Process.wait(pid)
