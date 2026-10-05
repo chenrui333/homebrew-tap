@@ -1,0 +1,14 @@
+Formula/l/lin.rb
+  h_9df9c32c3f321d 18-23,25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "094e8387eb8ffa670815b7c95129b1958f7b398e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
