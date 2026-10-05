@@ -1,7 +1,9 @@
 class SonarqubeLts < Formula
   desc "Manage code quality"
   homepage "https://www.sonarqube.org/"
-  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.8.100196.zip"
+  # binaries.sonarsource.com now returns 403 for the community 9.9 LTS zip;
+  # Maven Central hosts the identical artifact (same sha256).
+  url "https://search.maven.org/remotecontent?filepath=org/sonarsource/sonarqube/sonar-application/9.9.8.100196/sonar-application-9.9.8.100196.zip"
   sha256 "07d9100c95e5c19f1785c0e9ffc7c8973ce3069a568d2500146a5111b6e966cd"
   license "LGPL-3.0-or-later"
 
@@ -19,6 +21,8 @@ class SonarqubeLts < Formula
   deprecate! date: "2025-03-19", because: :deprecated_upstream
 
   depends_on "openjdk@17"
+
+  deny_network_access!
 
   def install
     # Delete native bin directories for other systems
@@ -41,7 +45,7 @@ class SonarqubeLts < Formula
   end
 
   test do
-    ENV["SONAR_JAVA_PATH"] = Formula["openjdk@17"].opt_bin/"java"
+    ENV["SONAR_JAVA_PATH"] = formula_opt_bin("openjdk@17")/"java"
     assert_match "SonarQube", shell_output("#{bin}/sonar status", 1)
   end
 end
