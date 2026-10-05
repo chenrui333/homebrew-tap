@@ -1,0 +1,19 @@
+Formula/s/systeroid.rb
+  s_20ee2ac03ef1eb::t_0f2a2a9621b8c0 17-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dc4f1c79b43559ff83e39429f05532eddfe7b349",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
