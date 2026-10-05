@@ -9,11 +9,11 @@ class Jocalsend < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28814256eedf5508efbacb803dd46e4fb22da88a8546b4a3add69a39c26df790"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5393bad5511b20ca74c930008c61d35a5ee98c41b196ae84ef9e4d2bd55d74fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd2efcc390f1bc325df4490b12879d288e181b809439b1dcc81816d161e10880"
-    sha256 cellar: :any,                 arm64_linux:   "3c01e1dc2bae3d86758476ee4f312f82012ce074f4da55227886a33f037510b7"
-    sha256 cellar: :any,                 x86_64_linux:  "c7da024421effcaf420064a400767641728a8486b116c6ae8d9d897f3b759aad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbe1b51a10578a7d79a041d07adf3b62549e2fbdbe30c2da8d661b9fbb85b71a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab603641aa265242375973566e6717a1acb1716865b3c27ed7b1393120bbb196"
+    sha256 cellar: :any,                 arm64_linux:   "df28d3d746bb1df5d67b22e6f7bf58b43dede7b69cff4621d3f5705207eb1769"
+    sha256 cellar: :any,                 x86_64_linux:  "38703b920bfd270c82a8028cb527ffeda80deefd03f70baa647b108e3508aff3"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +21,13 @@ class Jocalsend < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  # The only runtime path starts the LAN service (UDP multicast bind on the local address); build stays offline.
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
