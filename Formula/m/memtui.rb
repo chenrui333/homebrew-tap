@@ -8,14 +8,20 @@ class Memtui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "085b7f43352db0b595ddeb1fb18446ee2fa3a0b3025ede868ca562c995241ca4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "085b7f43352db0b595ddeb1fb18446ee2fa3a0b3025ede868ca562c995241ca4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "085b7f43352db0b595ddeb1fb18446ee2fa3a0b3025ede868ca562c995241ca4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "76955ac24dd54d376e467bddb606adf60114999f49ec1a0f03e39d700f2ea9b6"
-    sha256 cellar: :any,                 x86_64_linux:  "947c495732af1cd8ac959f0905337aff3092ff0ce284918b7101afa3545f010f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d97171bf3c6725495123220460952868b319fe71b7ee4ca3ffec9412af971798"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d97171bf3c6725495123220460952868b319fe71b7ee4ca3ffec9412af971798"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f642300e00d8390a1b78864170b82e714d91399322d459e6b1cf19946efbeb7"
+    sha256 cellar: :any,                 x86_64_linux:  "0bf64afa55d863b35eff0d7ca41361a4bf16998bd32b4cac62bf2bd14b819efc"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/memtui"
