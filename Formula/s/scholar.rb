@@ -18,16 +18,32 @@ class Scholar < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    require "open3"
-
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
-    output, status = Open3.capture2e(bin/"scholar", "--not-a-real-option")
-    refute_predicate status, :success?
-    assert_match "not-a-real-option", output
+    (testpath/"refs.bib").write <<~BIB
+      @article{einstein1905,
+        author = {Albert Einstein},
+        title = {On the Electrodynamics of Moving Bodies},
+        date = {1905}
+      }
+    BIB
+
+    assert_match "Import from refs.bib successful!", shell_output("#{bin}/scholar import refs.bib")
+    assert_path_exists testpath/"ScholarLibrary/einstein1905/entry.yaml"
+
+    output = shell_output("#{bin}/scholar export --format=ris")
+    assert_match "TI  - On the Electrodynamics of Moving Bodies", output
+    assert_match "AU  - Albert Einstein", output
   end
 end
