@@ -7,10 +7,11 @@ class Lazycli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "990118766cfd3ec37e9c44f50d1c64b5330001e19fd1309c5d287c5eb2e9eb95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43e22c022fa5c60d9e73144e4f060b433304cabdbbaa3338d1cdfd59d771bd1b"
-    sha256 cellar: :any_skip_relocation, ventura:       "a5404c8f84df2bde35819f09c52d3f8c718817c17d740fab8438b358fd91e27c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef4af19ed42b1a37cacbb1daa9c8cdad4724d61c3471751c6b45334eab93db24"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24d70a01cebfb8a71b0094990e3c5565a2b9c4ff7d6bcdb75fc4ff5b47266708"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af7004b94f866a54f2bfcfc865134d9c664017184fe5ac7dd5464fb8c3cef9f3"
+    sha256 cellar: :any,                 arm64_linux:   "9ed883c3d8a61c2630875727fd081b7db6a4ba07a68f3e044f1dae2e09611f6f"
+    sha256 cellar: :any,                 x86_64_linux:  "ed0efb981374aedb8c142b71102b336b0924556c84865bcee5afc338e66ee132"
   end
 
   depends_on "rust" => :build
