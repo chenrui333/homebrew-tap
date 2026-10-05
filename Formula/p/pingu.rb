@@ -24,6 +24,12 @@ class Pingu < Formula
   # update `golang.org/x/net`
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.appVersion=#{version} -X main.appRevision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
@@ -32,20 +38,9 @@ class Pingu < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pingu --version")
 
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    # /o/h/L/T/c/homebrew-tap (pingu) > pingu -c 1 github.com
-    # PING github.com (140.82.112.4) type `Ctrl-C` to abort
-    #  ...        .     ...   ..    ..     .........            seq=0 32bytes from 140.82.112.4: ttl=49 time=23.611ms
-
-    # ───────── github.com ping statistics ─────────
-    # PACKET STATISTICS: 1 transmitted => 1 received (0% loss)
-    # ROUND TRIP: min=23.611ms avg=23.611ms max=23.611ms stddev=0s
-    output = shell_output("#{bin}/pingu -c 1 github.com")
-    assert_match <<~EOS, output
-      ───────── github.com ping statistics ─────────
-      PACKET STATISTICS: 1 transmitted => 1 received (0% loss)
-    EOS
+    # Pinging needs a reachable host; check the argument validation that runs before the pinger is created.
+    assert_match "must requires an argument", shell_output("#{bin}/pingu 2>&1", 1)
+    assert_match "too many arguments", shell_output("#{bin}/pingu example.com example.org 2>&1", 1)
   end
 end
 
