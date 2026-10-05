@@ -12,21 +12,25 @@ class Relay < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/relay --version")
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"relay", "3000", "--server", "tunnel.example.com",
-                    "--secret", "your-secret", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "WebSocket error: getaddrinfo ENOTFOUND tunnel.example.com", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    output = shell_output("#{bin}/relay 3000 2>&1", 1)
+    assert_match "Server hostname required", output
+
+    output = shell_output("#{bin}/relay notaport --server tunnel.example.com --secret your-secret 2>&1", 1)
+    assert_match "Invalid target port: notaport", output
   end
 end
