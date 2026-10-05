@@ -23,6 +23,8 @@ class Jonquil < Formula
   depends_on "chenrui333/tap/toml-f"
   depends_on "gcc" # for gfortran
 
+  deny_network_access!
+
   def install
     inreplace "meson.build", "description: 'Bringing TOML blooms to JSON land',", <<~MESON.chomp
       description: 'Bringing TOML blooms to JSON land',
