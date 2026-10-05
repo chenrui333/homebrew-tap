@@ -17,13 +17,22 @@ class Ninjabot < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ninjabot"
   end
 
   test do
-    output_file = testpath/"btc.csv"
-    output = shell_output("#{bin}/ninjabot download -p BTCUSDT -t 1h -d 1 -o #{output_file} 2>&1", 1)
-    assert_match "Service unavailable from a restricted location", output
+    # The only subcommand downloads candles from Binance; flag validation runs before any exchange client is created.
+    output = shell_output("#{bin}/ninjabot download 2>&1", 1)
+    assert_match 'Required flags "pair, timeframe, output" not set', output
+
+    output = shell_output("#{bin}/ninjabot download -p BTCUSDT -t 1h 2>&1", 1)
+    assert_match 'Required flag "output" not set', output
   end
 end
