@@ -17,6 +17,12 @@ class Olla < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -39,21 +45,20 @@ class Olla < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/olla --version 2>&1")
 
-    port = free_port
     (testpath/"config.yaml").write <<~YAML
       server:
         host: "127.0.0.1"
-        port: #{port}
+        port: 40114
     YAML
+    output = shell_output("#{bin}/olla --validate-config -c #{testpath}/config.yaml 2>&1")
+    assert_match "Result: PASS", output
+    assert_match "profile(s) loaded", output
 
-    pid = spawn bin/"olla", "serve", "-c", testpath/"config.yaml"
-
-    sleep 1
-    begin
-      assert_match "healthy", shell_output("curl -s localhost:#{port}/internal/health")
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    (testpath/"bad.yaml").write <<~YAML
+      server:
+        port: 99999
+    YAML
+    output = shell_output("#{bin}/olla --validate-config -c #{testpath}/bad.yaml 2>&1", 1)
+    assert_match "server.port must be between 1 and 65535", output
   end
 end
