@@ -16,6 +16,14 @@ class Multica < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "server" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     cd "server" do
       ldflags = %W[
