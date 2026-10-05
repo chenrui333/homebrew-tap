@@ -9,11 +9,11 @@ class Meteor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe313c17ce5c73195ac74df7ee975da19038a155818e47a4e9ca571ee33bc112"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe313c17ce5c73195ac74df7ee975da19038a155818e47a4e9ca571ee33bc112"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe313c17ce5c73195ac74df7ee975da19038a155818e47a4e9ca571ee33bc112"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e1ae24ad8b8dcb1765f669c75f3125588229065aad179ceeb562b7cece244de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e85ff946a561abcb30ff751054f5d271edf37880b9d0af164d50e7eede3c3048"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe88d84c10af2bb8ff381ef9a5cd502ed27fbf44fd0f895ea966d3ddcc26a73b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe88d84c10af2bb8ff381ef9a5cd502ed27fbf44fd0f895ea966d3ddcc26a73b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cced4504d3d734d3c4ae629c9c5cf73cdcf038a72f13b4d4560931185f70347"
+    sha256 cellar: :any,                 x86_64_linux:  "8a75953d3bdfaf1bdc849d4802858369b070fd078add82d254239ff593dfb34b"
   end
 
   depends_on "go" => :build
