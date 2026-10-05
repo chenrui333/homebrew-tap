@@ -17,9 +17,20 @@ class Tabminal < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    ENV["npm_config_build_from_source"] = "true" if OS.linux?
-    system "npm", "install", *std_npm_args
+    if OS.linux?
+      ENV["npm_config_build_from_source"] = "true"
+      # Build node-pty against Homebrew's Node headers instead of downloading them.
+      ENV["npm_config_nodedir"] = formula_opt_prefix("node")
+    end
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     prebuilds = libexec/"lib/node_modules/tabminal/node_modules/node-pty/prebuilds"
     if OS.linux?
