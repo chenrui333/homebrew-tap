@@ -8,14 +8,20 @@ class Karmor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ce229994fc6eb29643e60837583dd727c512f67ba719bd7953d5412192e0e21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd412da63047eeee139906582b4618bcbafd2f77a6d466930fde8cc86f4c905b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1750fdc37c5cd51201e424f50269720190d2d57223e0abd6cabe3d0973d845fa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f8bc252daf892ecef0717d596ff8036e02c181457a9cc0f2bd02b8be5f5c39c"
-    sha256 cellar: :any,                 x86_64_linux:  "20b51fa77e13b4c061002e09516575fff2f9f2b58eaf33ce3521c185f2203a81"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60845f5731cad8742ac00f2ab8e4816982697a4cdcfda1176f4f8ad992cb2b93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e1b158b066c9a83fb8ee8308cb10041eba3591f34c38c1d14997cbe6cfffa58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db9d8afbca2b7315dd3e32979f0d14740eb92ff53dd5c99f12b2056c069b43b3"
+    sha256 cellar: :any,                 x86_64_linux:  "b2d5f7bd71a1555fc461441f7cf881017461668e2514e577d1485de4ba44a175"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
@@ -23,7 +29,9 @@ class Karmor < Formula
       -X github.com/kubearmor/kubearmor-client/selfupdate.GitSummary=#{version}
       -X github.com/kubearmor/kubearmor-client/selfupdate.BuildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:)
+    # TODO: Remove http2legacy tag when upstream bumps golang.org/x/net to >= v0.55.0 for Go 1.27
+    # ref: https://github.com/grpc/grpc-go/issues/9206
+    system "go", "build", *std_go_args(ldflags:, tags: "http2legacy")
 
     generate_completions_from_executable(bin/"karmor", shell_parameter_format: :cobra)
   end
