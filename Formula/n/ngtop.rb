@@ -16,6 +16,12 @@ class Ngtop < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
@@ -27,5 +33,16 @@ class Ngtop < Formula
       #REQS
       0
     EOS
+
+    now = Time.now.utc.strftime("%d/%b/%Y:%H:%M:%S +0000")
+    (testpath/"access.log").write <<~LOG
+      1.2.3.4 - - [#{now}] "GET /index.html HTTP/1.1" 200 612 "-" "curl/8.0"
+      1.2.3.5 - - [#{now}] "GET /about HTTP/1.1" 200 100 "-" "curl/8.0"
+      1.2.3.5 - - [#{now}] "GET /about HTTP/1.1" 404 100 "-" "curl/8.0"
+    LOG
+    ENV["NGTOP_LOGS_PATH"] = testpath/"access.log"
+    ENV["NGTOP_DB"] = testpath/"ngtop.db"
+    assert_match(%r{/about\s+2\n/index\.html\s+1}, shell_output("#{bin}/ngtop path"))
+    assert_match(/404\s+1/, shell_output("#{bin}/ngtop status"))
   end
 end
