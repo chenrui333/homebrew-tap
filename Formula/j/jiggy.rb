@@ -7,17 +7,23 @@ class Jiggy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b8791483088e54fbb2066d82c90f5c0b0cdd3c6723c1e254680acfc8b08073e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "139c82c1aaf26596972cbb7e144e50df1b4cebbf04d48342e1bb3bc63bd47315"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "119615ee51800dabd6c12c365ad23a36889b13c028a729383ba8d639d931313a"
-    sha256 cellar: :any,                 arm64_linux:   "774365ccc587d7ea65b5e32ae35a75fa52b3adff67d1470001e292961e91dc3f"
-    sha256 cellar: :any,                 x86_64_linux:  "730c4f094b83651e48cb723d04cf26145193aa9340536f6201e203e6859ba2c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e598bbf773daa3946707363d79ee44035348008b234e83d2335980fd26ec3b60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ac4c476b566cc6f9c9a80684b35a8606bb86617e0b8244f4deaa762b34e8829"
+    sha256 cellar: :any,                 arm64_linux:   "cb7ef8cdf3eb89911710354492a506f0705551a5c093e677f168fd99076ecfc8"
+    sha256 cellar: :any,                 x86_64_linux:  "51d9966fa07ef4ab6bf6ed26336270f2b381dead5c86f3f12ab4ab49e9a66ed0"
   end
 
   depends_on "rust" => :build
 
   on_linux do
     depends_on "xdotool"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
