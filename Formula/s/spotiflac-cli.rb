@@ -24,6 +24,12 @@ class SpotiflacCli < Formula
     sha256 "61bd2ec5590ad28c0c7f933d1e189d71fba7f596ca523e14d477e43e0e4afbb1"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     resource("spotiflac-backend").stage(buildpath/"SpotiFLAC")
 
