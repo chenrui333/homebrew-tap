@@ -1,0 +1,14 @@
+Formula/i/iam-collect.rb
+  h_9df9c32c3f321d 18-23,25,41-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "97c5766051ec992741861fdf30a68c74b8aff773",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
