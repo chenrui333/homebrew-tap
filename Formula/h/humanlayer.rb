@@ -8,11 +8,11 @@ class Humanlayer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fbb993e97b47c5f178a9a9322896ab5de7172075d6fb83520a492b2dbd9b07f2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbb993e97b47c5f178a9a9322896ab5de7172075d6fb83520a492b2dbd9b07f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbb993e97b47c5f178a9a9322896ab5de7172075d6fb83520a492b2dbd9b07f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ef6ba62fc1d6a9f287012be4cc77d70b861c276e7f8b123104b906ea4b279ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ef6ba62fc1d6a9f287012be4cc77d70b861c276e7f8b123104b906ea4b279ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a00493522120f932178361907db811ce3151fbe8e189c938cbc635eeaa8afdf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a00493522120f932178361907db811ce3151fbe8e189c938cbc635eeaa8afdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a5ec1ad0105d13485129b6351085ef444970eecd0d281f643fb12e7beab07ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a5ec1ad0105d13485129b6351085ef444970eecd0d281f643fb12e7beab07ce"
   end
 
   depends_on "node"
