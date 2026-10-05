@@ -14,10 +14,18 @@ class Zware < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c3a72d915d1a59d9fb85e678e94a13b4aa291469027297fe3d86adfc5644db2"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.13" => :build
   depends_on "wabt" => :test
 
+  deny_network_access!
+
+  def fetch
+    configure_zig_sdk
+    system "zig", "build", "--fetch"
+  end
+
   def install
+    configure_zig_sdk
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -33,6 +41,16 @@ class Zware < Formula
     args << "-Dcpu=#{cpu}" if build.bottle?
 
     system "zig", "build", *args
+  end
+
+  def configure_zig_sdk
+    on_macos do
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr" unless (developer_dir/"usr").exist?
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
   end
 
   test do
