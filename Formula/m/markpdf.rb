@@ -8,13 +8,20 @@ class Markpdf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2a4417a11d87a93e1881a8f15117cd89601a623f2ec58816b311470c570f467"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "356d4b0ea18601a782746eab7e8a5a1fa4825a94d315d581b174fcd62a6fc1b0"
-    sha256 cellar: :any_skip_relocation, ventura:       "80eddc3f07c339ef453cca45027c2df7703af26a66bc8e71f260f9a3dde72e72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd16545942e2b8950006a639a2940a6998a690a2c0c3f5b904a33121d0c59f5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd98919c2db98b846b4bd2433d6fdb6b88128d2d2de4501f4aee92f69aa3cea1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd98919c2db98b846b4bd2433d6fdb6b88128d2d2de4501f4aee92f69aa3cea1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f310545e12f881a51b6a4fcb93dfc1843c6161455eccd5cbac435f48d0f7df2"
+    sha256 cellar: :any,                 x86_64_linux:  "2eec786abcfac510a4534ee7c021fc114e4cf69735298de4f2dcabb9dae5f005"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     inreplace "main.go", "1.0.0", version.to_s
