@@ -1,6 +1,6 @@
 class TrieveCli < Formula
   desc "CLI for interacting with the Trieve API"
-  homepage "https://docs.trieve.ai/getting-started/introduction"
+  homepage "https://github.com/devflowinc/trieve"
   url "https://registry.npmjs.org/trieve-cli/-/trieve-cli-0.0.6.tgz"
   sha256 "32ea5734673d82a3f34d45539ef40b2cae7945232dfef9fdf227903171b97b43"
   license "MIT"
@@ -15,8 +15,15 @@ class TrieveCli < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
