@@ -9,12 +9,11 @@ class McpGsuite < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "ad9e0334c192b60bdc36e208fdc5c90a9414f8d2e832e6bdeaeef4b7b242333f"
-    sha256 cellar: :any, arm64_sequoia: "47790fe3fb02485c0ab41b56125c3df6229b27dd217fd6735c434ede9e01ade2"
-    sha256 cellar: :any, arm64_sonoma:  "6ab66b0172b03ef89b105449b55f1064fca85c559a5a11658772e4720570ba17"
-    sha256 cellar: :any, arm64_linux:   "3584f354faac403bda082d1e23623b328b4236574cec20af073b467c4c4470b5"
-    sha256 cellar: :any, x86_64_linux:  "45583ceef9bfeb3424fccf2a6a77beb537e632789d79d1a0374ce6d7d9f90591"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e93ec9f26db90961268fd700ba9f939965a620b16de4e5c21a8f461c4653ac0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ac4872b2d4ef145f740cdcbd51b6a3f536e9727b85046f9dc992cdc936f5b52"
+    sha256 cellar: :any,                 arm64_linux:   "fde14362f8e59b93361349b991bffaf4e576c68290a6e36850f5dc73a704d827"
+    sha256 cellar: :any,                 x86_64_linux:  "6210916409cea4633b266d536b72a52e889bf85928b82cef58751023e2754123"
   end
 
   depends_on "certifi" => :no_linkage
