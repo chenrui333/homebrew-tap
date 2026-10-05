@@ -8,11 +8,11 @@ class Lobtui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caba4a44543973f27a3f04cea2ac3e3473f9c41e7ab63e28b296e4bc2c49ce61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe6fe6a292a265be05ae8d8ee332a804b48700ce329f8c5c12c0318fa623eefb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "333ac62465a4b6a04fce5ca0bd68323152db0cd8b8c62ebdf0554b550b0deb3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2888c0f2e56f094839be9557b8fb5c351725954284e9e68c45f31fd379ad3595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32bd8855ffe067d4dd5664263c13e766ae80f374696c30cea71c665f2ce427ae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5e59515a459aab1919b4722f5686c01202af87d07be3a05715e78699ba98a0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a9d91407a4950c14efa68fb6546baa5121697cd8efae20df8d738bffa8ebbd"
+    sha256 cellar: :any,                 arm64_linux:   "b9f9bc347cf6826ac4ca45cc8bab337ab3989048e9e995ea1f7c07407af92aa6"
+    sha256 cellar: :any,                 x86_64_linux:  "48d898c0ff7eb60629d9b4a9baa0752b56c82046bb27979d50ef14e869ba51de"
   end
 
   depends_on "rust" => :build
