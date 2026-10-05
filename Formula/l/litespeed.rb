@@ -8,10 +8,11 @@ class Litespeed < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "b752045e50e6bd2c831840ecfbc2b8e65259cc84e39e152a00a6298b6b6cefaa"
-    sha256 cellar: :any, arm64_sequoia: "b059fdc289e3a465515a5ef40e4999e6f25c13875da9ab53456453c416c3beb5"
-    sha256 cellar: :any, arm64_linux:   "989ec834efc87ef27b8504d63310fdbdf6c4b2c08aeb0e8a53a95443349088bc"
-    sha256 cellar: :any, x86_64_linux:  "cc5550ff12c71d6a823f3278290ebacbd9579cdda6a2735c74428df3066545d4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "916e4847a386c7c39b7814dfdd863bda910897049adb39c377fedad54a6a405f"
+    sha256 cellar: :any, arm64_sequoia: "6ad9da4c4f96343badd1d3bbb3254a1e42640786302e8e47becd6d303caf0a1c"
+    sha256 cellar: :any, arm64_linux:   "25e43eeaa38c2c03048ba920f0cead9207b31913d5f495b34b8e6087e6b6ef42"
+    sha256 cellar: :any, x86_64_linux:  "24419972e1a6c3819f888a0d1f5fb282c3ac5ea06f53326c208f46b32f4806fb"
   end
 
   depends_on "zig@0.16" => :build
