@@ -1,8 +1,9 @@
 class Simdjzon < Formula
   desc "Simdjson ported to zig"
-  homepage "https://github.com/travisstaloch/simdjzon"
-  url "https://github.com/travisstaloch/simdjzon/archive/refs/tags/0.16.0.tar.gz"
-  sha256 "1d941456a21e2e54f4db7c7bc03d4b303a24e61adf186ecc00d49da7c25bc119"
+  homepage "https://github.com/archaistvolts/simdjson-z"
+  url "https://github.com/archaistvolts/simdjson-z.git",
+      tag:      "0.16.0",
+      revision: "3f62a2e9db86cf15f0f24b6e2cf19da532a8d76e"
   license "Apache-2.0"
 
   bottle do
@@ -12,8 +13,10 @@ class Simdjzon < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "185d0dec6442119f79ec4fdefa85cfa68f760e6ed19cfa7857760eb799164f4c"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
   depends_on arch: :arm64 # builds for arm64 only for now
+
+  deny_network_access!
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
