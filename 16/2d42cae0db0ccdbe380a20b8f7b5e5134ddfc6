@@ -1,0 +1,19 @@
+Formula/p/protoc-gen-lint.rb
+  s_20ee2ac03ef1eb::t_46e5fb2eea784a 20-21,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "162d42cae0db0ccdbe380a20b8f7b5e5134ddfc6",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
