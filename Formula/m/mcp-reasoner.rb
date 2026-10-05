@@ -23,6 +23,7 @@ class McpReasoner < Formula
   end
 
   def install
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
 
     (bin/"mcp-reasoner").write <<~SH
