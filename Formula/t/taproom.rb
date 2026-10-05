@@ -17,6 +17,12 @@ class Taproom < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # v0.6.2 predates the upstream version-file fix: https://github.com/hzqtc/taproom/commit/a26afac788a5122356bf9c07c3c3d04fabae76d3
     inreplace ".version", "v0.6.1", "v#{version}"
@@ -26,17 +32,10 @@ class Taproom < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/taproom --version")
 
-    # Skip test on Linux GitHub Actions runners due to TTY issues
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_match "--invalidate-cache", shell_output("#{bin}/taproom --help 2>&1")
 
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"taproom", [:out, :err] => output_log.to_s
-      sleep 1
-      assert_match "[1/6] Loading all Formulae...\r\n[2/6] Loading all Casks...", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    # Theme validation exits before the TUI starts loading data from formulae.brew.sh.
+    output = shell_output("#{bin}/taproom --theme bogus 2>&1", 1)
+    assert_match "Invalid theme: bogus (expected auto, light, dark)", output
   end
 end
