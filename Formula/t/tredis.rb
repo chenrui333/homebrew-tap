@@ -19,6 +19,12 @@ class Tredis < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     openssl = Formula["openssl@3"]
     ENV["OPENSSL_DIR"] = openssl.opt_prefix
