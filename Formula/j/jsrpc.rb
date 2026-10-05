@@ -8,14 +8,21 @@ class Jsrpc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d86be4e23046aac673289b2831095d2416619bd75924983328b18bcc0994882"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d86be4e23046aac673289b2831095d2416619bd75924983328b18bcc0994882"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d86be4e23046aac673289b2831095d2416619bd75924983328b18bcc0994882"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8658300093fd44222f91d3e3edaac14b056a93da90fd1048e1beeb0d404d92da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3d3be5d90f05c1f60965f49e0deaacef33651d002266e4a66cb39c978b04c2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51f84fdbb5d91d88f6dc8b272d28ac609c744542db92a908872a188f519f732f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51f84fdbb5d91d88f6dc8b272d28ac609c744542db92a908872a188f519f732f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e49b866969a13e2db7d523a558994430563b396eb3e814befbdb77410e72aab6"
+    sha256 cellar: :any,                 x86_64_linux:  "4bfacdf8cc9e7b16ab22e6de3ebe1e3cdce8492cd1d676098c1e4cca15020478"
   end
 
   depends_on "go" => :build
+
+  # The only interface is an HTTP server; the test queries it over a loopback socket.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
