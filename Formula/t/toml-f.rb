@@ -21,6 +21,8 @@ class TomlF < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "gcc" # provides gfortran
 
+  deny_network_access!
+
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
