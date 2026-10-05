@@ -7,11 +7,11 @@ class IamShrink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8750490a12effe2d26df0b23499bd91ad8be25a9095f38d19d16bbe9f708b2a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8750490a12effe2d26df0b23499bd91ad8be25a9095f38d19d16bbe9f708b2a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2214ce5bb5ce60960a6cf14c7eefd9808c566ecf871c4830478cc358322ed164"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2214ce5bb5ce60960a6cf14c7eefd9808c566ecf871c4830478cc358322ed164"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86fb6409f1a73a9e0eb93d935532b669afd2392d731c0140f2ef4611c371d5d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86fb6409f1a73a9e0eb93d935532b669afd2392d731c0140f2ef4611c371d5d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e41d8c2012294f8d8e984008a6e9dcab3e19f5f0fc43c6a5db8057a3fc6475f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e41d8c2012294f8d8e984008a6e9dcab3e19f5f0fc43c6a5db8057a3fc6475f4"
   end
 
   depends_on "node"
