@@ -9,11 +9,11 @@ class Nexus < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "684edf8f054d17ed74e075172fff6da8e5ee3e0f3a65b7478960dacf8985b303"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "697e068cdc19e969310de5497e1e39f56d7ea6ec7ae617e10e4b99c2dd2a5f97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1093efce05af232806f162f3bf19cc1f75b7b57175488b0161cc7af65777ae0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a01caddec29d265dc5b8ec7fdf5a528e96b3ad82c9dc7aeafde3ff97424a31b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b31bafd31fef1527b764109ccd8c5bfa925cb0184bf665cb53c1819022209f1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35aab69eab85456d6b1c1347d71996ab9c706424315e2a5ff71f012631c321e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce20878b84d33a82d49af8860eb8aa144d4873b61e388fc37819b163b11768f5"
+    sha256 cellar: :any,                 arm64_linux:   "62a13184032c87ccb20185adbdddb68bf950837e09de597d1eef0dd4a27c0d93"
+    sha256 cellar: :any,                 x86_64_linux:  "2ef527ed73bbc8bb68e01dfe1478548a6ba83d8ec8c76cf8c0d7e9ac7f96a08d"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +21,12 @@ class Nexus < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
