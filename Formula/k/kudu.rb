@@ -8,13 +8,20 @@ class Kudu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "68886bce9b0d60bf0bc092ebaea00dfff94877f5f0b196d221d8c5303a38912f"
-    sha256 cellar: :any, x86_64_linux: "b05cf0ba5b825252ac596cc44c570730a954778a9aad68aeb72350412d1f0d0e"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "5e55ad094bc7dec276bf3d28529c85599f72c948fe5a2bf66d99b70fe73ec319"
+    sha256 cellar: :any, x86_64_linux: "6e3252400972dc17bf01c8f13795bde7714cbe9f1bb50a23f86ee2ef2e410e94"
   end
 
   depends_on "rust" => :build
   depends_on :linux
   depends_on "qemu"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
