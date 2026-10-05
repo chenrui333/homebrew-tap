@@ -16,10 +16,16 @@ class Nastro < Formula
   depends_on "go" => :build
   depends_on xcode: ["15.3", :build]
   depends_on :macos
-  depends_on "whisper-cpp"
+  depends_on "whisper.cpp"
 
   on_macos do
     depends_on macos: :sonoma
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install
@@ -43,5 +49,12 @@ class Nastro < Formula
     output = shell_output("#{bin}/nastro transcribe 2>&1", 1)
     assert_match "usage: nastro transcribe <id|last>", output
     assert_path_exists bin/"nastro-tap"
+
+    recording = testpath/"Recordings/nastro/2026-01-02-0304-standup"
+    recording.mkpath
+    (recording/"metadata.json").write '{"duration_seconds": 65}'
+    (recording/"transcript.txt").write "hello"
+    assert_match "2026-01-02-0304-standup\t2026-01-02 03:04\tstandup\t01:05",
+                 shell_output("#{bin}/nastro records --plain")
   end
 end
