@@ -24,9 +24,15 @@ class Kyanos < Formula
     sha256 "1726ab89357fb41b575680e010f37f6ac1c3329c43aba63f9901fa8aea06d300"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
-    ENV.prepend_path "PATH", Formula["llvm"].opt_bin
+    ENV.prepend_path "PATH", formula_opt_bin("llvm")
 
     # Workaround to avoid patchelf corruption when cgo is required
     if OS.linux? && Hardware::CPU.arch == :arm64
@@ -36,7 +42,7 @@ class Kyanos < Formula
 
     # Upstream expects generated eBPF objects to exist before `go build`.
     resource("libbpf").stage buildpath/"libbpf"
-    system "make", "build-bpf", "CLANG=#{Formula["llvm"].opt_bin/"clang"}"
+    system "make", "build-bpf", "CLANG=#{formula_opt_bin("llvm")/"clang"}"
 
     ldflags = %W[
       -s -w
