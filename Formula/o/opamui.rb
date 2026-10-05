@@ -20,12 +20,22 @@ class Opamui < Formula
   depends_on "opam" => :build
   depends_on "ocaml@4"
 
-  def install
-    ENV.prepend_path "PATH", Formula["ocaml@4"].opt_bin
+  deny_network_access!
+
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("ocaml@4")
     ENV["OPAMROOT"] = buildpath/".opam"
     ENV["OPAMYES"] = "1"
 
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
+    system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts", "--download-only"
+  end
+
+  def install
+    ENV.prepend_path "PATH", formula_opt_bin("ocaml@4")
+    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMYES"] = "1"
+
     system "opam", "install", ".", "--deps-only", "--yes", "--no-depexts"
     system "opam", "exec", "--", "dune", "build", "@install"
     system "opam", "exec", "--", "dune", "install", "--prefix=#{prefix}", "--mandir=#{man}"
