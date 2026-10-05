@@ -7,18 +7,26 @@ class Markmark < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "321f720d2ffb1220d81045e808e92381586d883b8928867c8b3cc88515676a10"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ad821781b31ca222ce5c4c681fe8138bf193c013c3baf663009ac06acd22ff29"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     require "open3"
+    require "timeout"
 
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     request = {
@@ -30,7 +38,15 @@ class Markmark < Formula
 
     Open3.popen3(bin/"markmark-lsp", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{request.bytesize}\r\n\r\n#{request}"
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      response = Timeout.timeout(30) do
+        loop do
+          length = stdout.readline[/^Content-Length: (\d+)/i, 1].to_i
+          stdout.readline
+          message = JSON.parse(stdout.read(length))
+          break message if message["id"] == 1
+        end
+      end
+      assert_equal true, response.dig("result", "capabilities", "definitionProvider")
     end
   end
 end
