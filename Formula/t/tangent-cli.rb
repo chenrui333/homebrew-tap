@@ -24,6 +24,12 @@ class TangentCli < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Upstream v0.1.10 tag still reports 0.1.9 in workspace metadata.
     inreplace "Cargo.toml", 'version = "0.1.9"', "version = \"#{version}\""
