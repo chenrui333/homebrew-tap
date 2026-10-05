@@ -16,6 +16,13 @@ class OtelTui < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    ENV["GOWORK"] = "off"
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
