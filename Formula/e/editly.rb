@@ -7,11 +7,11 @@ class Editly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "2bd3efb8e321768285440ea2fd4dcb2e8c9c50342d5a74dae7d17bbf6beec628"
-    sha256               arm64_sequoia: "0bda7a4ad79134a945c975b18919cdb38e987c473ccf4119473e147b3e02f5d9"
-    sha256               arm64_sonoma:  "4423ca2c61ec7fe15d5ba4e819b4df6a5001cae6599ee6735bcad53d8bb0b243"
-    sha256 cellar: :any, arm64_linux:   "f0416d9e2819a4d8f7e76cf3c5ec4785a785f002309c3163a110bf2ef9436166"
-    sha256 cellar: :any, x86_64_linux:  "442f2e16d818149eeb98e2e37ad462ae4adee36ea7ac7ad886d58c80d67e340c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "887741a148b822ba0c9311a648d6e9b6a1969804847dbf1afcaa7f514c1c9299"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2953d6d235f3b5332909c472652f479062ec5197790fdd1ccc18cd12c9cd6797"
+    sha256 cellar: :any,                 arm64_linux:   "84a47f87a6c034eb0c8f28d6c3d5c5123b69229fe98f2b3fffb442040b6f4c57"
+    sha256 cellar: :any,                 x86_64_linux:  "2c985edc64b3352ffe0c8daf583371f2e26012c3273159ac11dd2da1362abf2c"
   end
 
   depends_on "pkgconf" => :build
@@ -53,6 +53,7 @@ class Editly < Formula
     ENV.append "CXXFLAGS", "-std=c++17"
     ENV.append "CPPFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR"
 
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
     inreplace libexec/"lib/node_modules/editly/node_modules/gl/angle/src/common/angleutils.h",
               "#include <vector>", "#include <cstdint>\n#include <vector>"
