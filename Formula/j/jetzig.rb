@@ -9,10 +9,10 @@ class Jetzig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2281363f3df8ddaa80619ec0f6e1b5dfef89bc07e7e0e4f1b86c8d0317c7e284"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d3ba1dec0d178d5d6102f30056383a14a216b32c23c7c81bed2d9a081f18cbb"
-    sha256 cellar: :any_skip_relocation, ventura:       "28158e24d44810c78b2d2459a9f083922cd4c39b643372859a81dd0b8e7caca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4651ded8b65c79b4db6057010bd5e375ed0d098b0a8d108e2a641d37e58319c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf0528dede135ae40aa96960e819e689e548590b7be5e2783315bc3db5304a3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf2ecac45cbb280174ecf47a685dc25e6405739bd7f640c8a9a4c95140f37c91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa0e73397ee468c9dc5a26121958b114ea69c634e40f82d68ed11cefba4ed8c"
   end
 
   # The pinned commit targets Zig 0.14; newer Zig rejects its dependency manifests.
