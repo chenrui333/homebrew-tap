@@ -21,6 +21,12 @@ class Trex < Formula
     depends_on "libx11"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/samyakbardiya/trex/cmd.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
