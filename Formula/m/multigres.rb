@@ -18,6 +18,12 @@ class Multigres < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "0"
 
@@ -42,6 +48,18 @@ class Multigres < Formula
       output, status = Open3.capture2e(bin/cmd, "--not-a-real-option")
       refute_predicate status, :success?
       assert_match "not-a-real-option", output
+    end
+
+    # testpath is too long for macOS's 104-byte limit on the generated Unix socket paths.
+    config_dir = Pathname(Dir.mktmpdir("mg", "/tmp"))
+    begin
+      output = shell_output("#{bin}/multigres cluster init --config-path #{config_dir}")
+      assert_match "Cluster configuration created successfully", output
+      config = (config_dir/"multigres.yaml").read
+      assert_match "provisioner: local", config
+      assert_match "name: zone1", config
+    ensure
+      rm_r config_dir
     end
   end
 end
