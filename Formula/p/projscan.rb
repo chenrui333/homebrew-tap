@@ -15,25 +15,65 @@ class Projscan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "86959b5dcff05a99ea04f025952256aab965819a7dfc82de4dea235c5e1762d0"
   end
 
+  depends_on "binaryen" => :build
   depends_on "pkgconf" => :build
   depends_on "tree-sitter-cli" => :build
   depends_on "node"
   depends_on "vips"
 
-  def install
+  # `npm run build` compiles tree-sitter-kotlin/swift wasm with tree-sitter-cli's wasi-sdk,
+  # which it would otherwise download at build time.
+  resource "wasi-sdk" do
+    on_macos do
+      on_arm do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-arm64-macos.tar.gz"
+        sha256 "9c59398106b417f8f14913380fdf0097a8cc0ff4af9eb3ce0065a859e88d49e9"
+      end
+      on_intel do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-x86_64-macos.tar.gz"
+        sha256 "87d27fa8adc68dee59bfbf2e22a6d34ef717c34d6bf1d8af2a56fc929d9ce0eb"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-arm64-linux.tar.gz"
+        sha256 "f7e243dff54d60bcc576e94d6166b69f410f2500ae4a9ceef34315be10e77971"
+      end
+      on_intel do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-x86_64-linux.tar.gz"
+        sha256 "b761e3a0721dbae9c09a0059e5fdb2bf917d1b4a8a7b430fb3b5aafb0984b2c4"
+      end
+    end
+  end
+
+  deny_network_access!
+
+  def fetch
     # Use Homebrew's Node headers instead of letting node-gyp fetch them during builds.
     ENV["npm_config_nodedir"] = formula_opt_prefix("node")
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
+    # Dev dependencies (including tree-sitter-cli's binary download) are installed into buildpath here.
     system "npm", "pkg", "delete", "scripts.prepare"
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
 
     tree_sitter_cli = buildpath/"node_modules/tree-sitter-cli/tree-sitter"
     rm tree_sitter_cli
     ln_sf formula_opt_bin("tree-sitter-cli")/"tree-sitter", tree_sitter_cli
 
+    resource("wasi-sdk").stage(buildpath/"wasi-sdk")
+    ENV["TREE_SITTER_WASI_SDK_PATH"] = buildpath/"wasi-sdk"
+    ENV["TREE_SITTER_BINARYEN_PATH"] = formula_opt_prefix("binaryen")
+    # wasi-sdk 34 (used by tree-sitter-cli 0.27) only ships wasm32-wasip* sysroots
+    inreplace "scripts/copy-wasm.mjs", "--target=wasm32-unknown-wasi", "--target=wasm32-wasip1"
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     node_modules = libexec/"lib/node_modules/projscan/node_modules"
     cd libexec/"lib/node_modules/projscan" do
