@@ -9,16 +9,22 @@ class GoZzz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0be4bd0850049f7d5607bb86bcf745a085e66431517c499e38bc937b6d4619bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0be4bd0850049f7d5607bb86bcf745a085e66431517c499e38bc937b6d4619bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0be4bd0850049f7d5607bb86bcf745a085e66431517c499e38bc937b6d4619bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6e664449e90f507a8cb80a6b2571f99b394bcc148e896c55c72230e870b5c22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4417f1e23c627959e07a1b5e817b5c8f99318afa0f4ad321f77fcc5c08705231"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32444f004850133f10cd9bcd266cd5fdd5320768e42d619c829844b16ca18b5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32444f004850133f10cd9bcd266cd5fdd5320768e42d619c829844b16ca18b5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14455e99671f1c5f651b5205308059382f23b513e2816cf67ad6662544596d63"
+    sha256 cellar: :any,                 x86_64_linux:  "e91a67eb27bafa47236baa592b4a1ac065efbd345a3b71def8a28290bc486d8e"
   end
 
   depends_on "go"
 
   conflicts_with "zzz", because: "both install `zzz` binaries"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
