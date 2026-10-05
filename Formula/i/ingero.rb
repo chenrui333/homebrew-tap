@@ -8,8 +8,9 @@ class Ingero < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "1fb37bb2db06c15c3efd62b71e6ee596b72d93b09de37bdbf90e202f3d5d653e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c3d9ef1f4ab34b36c9edc20eeabccb51f290b02fabfdc2a201479aa119553de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "500c2c893dd78446af2b15fb843c4a5ff8429e28fc97b22bb7aa8d4cc50ad251"
+    sha256 cellar: :any,                 x86_64_linux: "068b62c52160a148de690c7694f4c336a197f93f0a684a2313de13f4a8c6d464"
   end
 
   deprecate! date: "2026-10-04", because: :repo_removed
