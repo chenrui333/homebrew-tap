@@ -15,9 +15,13 @@ class Repos < Formula
   depends_on "gh"
   depends_on "homebrew/core/bun"
 
-  def install
-    system "bun", "install", "--frozen-lockfile", "--production"
+  deny_network_access!
 
+  def fetch
+    system "bun", "install", "--frozen-lockfile", "--production", "--cache-dir", buildpath/"bun-cache"
+  end
+
+  def install
     libexec.install "bin", "bun.lock", "node_modules", "package.json", "src", "tsconfig.json"
     bin.install_symlink libexec/"bin/repos"
   end
