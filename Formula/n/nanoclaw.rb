@@ -18,9 +18,14 @@ class Nanoclaw < Formula
 
   depends_on "node@24"
 
+  deny_network_access!
+
+  def fetch
+    system formula_opt_bin("node@24")/"npm", "ci"
+  end
+
   def install
-    npm = Formula["node@24"].opt_bin/"npm"
-    system npm, "ci"
+    npm = formula_opt_bin("node@24")/"npm"
     system npm, "run", "build"
     system npm, "prune", "--omit=dev"
     rm_r Dir["node_modules/@img/*linuxmusl*"]
@@ -34,7 +39,7 @@ class Nanoclaw < Formula
         exit 0
       fi
 
-      exec "#{Formula["node@24"].opt_bin}/node" "#{libexec}/dist/index.js" "$@"
+      exec "#{formula_opt_bin("node@24")}/node" "#{libexec}/dist/index.js" "$@"
     SH
     chmod 0755, bin/"nanoclaw"
   end
@@ -47,7 +52,7 @@ class Nanoclaw < Formula
     EOS
 
     output = shell_output(
-      "#{Formula["node@24"].opt_bin}/node -e \"#{node_eval}\"",
+      "#{formula_opt_bin("node@24")}/node -e \"#{node_eval}\"",
     )
     assert_match "load-ok", output
   end
