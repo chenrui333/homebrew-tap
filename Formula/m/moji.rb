@@ -17,6 +17,12 @@ class Moji < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/microck/moji/internal/app.Version=#{version}"), "./cmd/moji"
   end
@@ -25,5 +31,10 @@ class Moji < Formula
     assert_match version.to_s, shell_output("#{bin}/moji --version")
     output = shell_output("#{bin}/moji 2>&1", 2)
     assert_match "font query is required in non-interactive mode", output
+
+    config = JSON.parse(shell_output("#{bin}/moji config show"))
+    assert_equal 15, config["SearchTimeoutSeconds"]
+    assert_includes config["DefaultFormats"], "otf"
+    assert_match "Cleared cache", shell_output("#{bin}/moji cache clear")
   end
 end
