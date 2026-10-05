@@ -7,11 +7,11 @@ class KalumaCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c5e95b58fa8daf5b073befe23317279a1c0825bd753463eb4120d7df1861e7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "155f6687f50e5ccae5d2a253b18f86ec579d4371875bb9f4e6e19419dad6ba02"
-    sha256 cellar: :any,                 arm64_linux:   "08f2b75999888a336396429775a6330fde903bdc95c3fe1df2bd63672500f4d1"
-    sha256 cellar: :any,                 x86_64_linux:  "784fb43067111d22388997e14efff30426d4d9cafdd7c5ebf6cecc5ec1f3f0ec"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a21916207cd9c4c2bb51df911aba424e80a0de277aa4740a147833ac6b5e1de8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a09ffa50a10a0d58d7b16222c4a2ff379bcaf02b484fc6040a9035e05413f59b"
+    sha256 cellar: :any,                 arm64_linux:   "f8bb1afdcaf7d21f83db61cac584426c1f58bbc24f71a1b9e3d52a40492e2072"
+    sha256 cellar: :any,                 x86_64_linux:  "94931db76811485f22253f21b8045905e052a11f66261e2dbf6e13ccf94fbbfa"
   end
 
   depends_on "libuv" => :build
@@ -28,6 +28,7 @@ class KalumaCli < Formula
     # brewed node uses the shared libuv, so its headers come from the libuv formula.
     ENV["npm_config_nodedir"] = formula_opt_prefix("node")
     ENV.append_path "CPATH", formula_opt_include("libuv")
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", "--allow-scripts=@serialport/bindings",
            *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec/"bin/kaluma"
