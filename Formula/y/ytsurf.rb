@@ -24,6 +24,8 @@ class Ytsurf < Formula
   depends_on "socat"
   depends_on "yt-dlp"
 
+  deny_network_access!
+
   def install
     inreplace "ytsurf.sh", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash"
 
