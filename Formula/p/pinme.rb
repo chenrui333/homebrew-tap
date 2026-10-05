@@ -16,15 +16,22 @@ class Pinme < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     node_modules = libexec/"lib/node_modules/pinme/node_modules"
 
-    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries.
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-path`/`bare-url` binaries.
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     bin.install_symlink libexec.glob("bin/*")
@@ -32,7 +39,8 @@ class Pinme < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pinme --version")
-    assert_match "Request: GET /my_domains", shell_output("#{bin}/pinme domain 2>&1")
+    assert_match "No AppKey found", shell_output("#{bin}/pinme show-appkey")
+    assert_match "Invalid token format", shell_output("#{bin}/pinme set-appkey invalidkey 2>&1")
     assert_match "No upload history found", shell_output("#{bin}/pinme ls")
   end
 end
