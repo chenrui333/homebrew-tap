@@ -7,14 +7,22 @@ class K10s < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9034bcc879b9d4ee05fd510c6aa6ecf81dcb19e099390ef0672f0b806abd35af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cefc02abf02596dea137b4a9d7ff5ee80bb6b0a3435755dab10bace02aee6c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3729e15ecb0a3974f43b8e38ae75f50dbba824a9cc1ef7c2a36955e2ea6f7a45"
-    sha256 cellar: :any,                 arm64_linux:   "6a3ca11acad072cbd48c2b0bcfff21bbc8a3c2817156c6f4abcb846ab2466273"
-    sha256 cellar: :any,                 x86_64_linux:  "59b65be11cb87c23168b1a93365dd73215e6902e2226f8ec7ae7b9092480cb1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef9edfcd5eda678d3b37e225978a7b9935438fd3773f1dde8aa1ccbb67ac98ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51796b95013dfa985d6590a00f8b422ff7cccde6a8ebd0dd47a4e6a3042e01f0"
+    sha256 cellar: :any,                 arm64_linux:   "437dfe6badf2678b7d66990e8aed2289e60b9a2c095702d0de099888d51e57af"
+    sha256 cellar: :any,                 x86_64_linux:  "2e0fa74fa28f4e410b68edb21f21dd2fa813e2b8348d214579009a7374b4e8c5"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    # The release lockfile still lists dependencies the stub `tui` crate no longer declares.
+    system "cargo", "update", "--workspace"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     # Upstream 1.0.0 TUI has no CLI flags yet; add a version flag for Homebrew's test.
