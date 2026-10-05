@@ -1,0 +1,14 @@
+Formula/r/rovr.rb
+  h_9df9c32c3f321d 20,23,26-30,37-41,52-66,97-106,122-131,167-176,202-211,227-240,242-246,248,250-278
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ef27976c5a1409c9a1e76e66a058eb592c0a3043",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
