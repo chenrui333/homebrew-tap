@@ -8,13 +8,20 @@ class Mcpd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30c160c18498a4b8a88ca68420357cfcfbafd4583787362a17d831cef2fbf197"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30c160c18498a4b8a88ca68420357cfcfbafd4583787362a17d831cef2fbf197"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85ce034e4d85aab55aa4cf78a90007065d20a0a0769008478525466edf05d4de"
-    sha256 cellar: :any,                 x86_64_linux:  "71548ef106fc7186e74e704536e2c6e617fe2c2a6790b146187113e3917acde0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f252240a05423429184b2994cfb3f57f35c3d4c0e094913463f7cb41885df001"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f252240a05423429184b2994cfb3f57f35c3d4c0e094913463f7cb41885df001"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32a439e3bd2766700882850e4f031e82ce3fcaadcfafea91bc2673cb74ac9bdd"
+    sha256 cellar: :any,                 x86_64_linux:  "08a484354e36feb6fd8fde1edd90b6fcb03f4179b68258d649f36c56e7107688"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
