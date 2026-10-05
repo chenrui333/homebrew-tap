@@ -17,10 +17,17 @@ class TerminalMcp < Formula
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "ci"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/terminal-mcp"
 
     prebuilds = libexec/"lib/node_modules/@ellery/terminal-mcp/node_modules/node-pty/prebuilds"
