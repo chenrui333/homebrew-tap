@@ -1,0 +1,19 @@
+Formula/r/rustlens.rb
+  s_20ee2ac03ef1eb::t_194abbefadf9fc 21-26,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a8f40d9502a076c5f5476c2a080b9c135d5dd8f8",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
