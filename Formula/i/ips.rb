@@ -8,15 +8,22 @@ class Ips < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cebee234c59559a8337a9fad8938fbb847d63c5f6968961e0796046330c6bf21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b0b736eb02c3c35d01b02cd9b22bf8d3feb2b3eeb5b67e090c982a20f214a49"
-    sha256 cellar: :any_skip_relocation, ventura:       "da3286b1dba6efec63f7c90e575faa6b4e088f152ad2e6b86bba50852f502041"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f72952d27065f3958e244c636d4e4ecdd0178d7d20361ef9af17fcae721f821d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bab510d68302ab36a1e1ec231e97e0a0d564e9e7ba1777ad65eead96f1f05897"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bab510d68302ab36a1e1ec231e97e0a0d564e9e7ba1777ad65eead96f1f05897"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52f9c02d67c2ca273bed7d0427465dd28acb1b6c924a41e666cf52bd76533a5a"
+    sha256 cellar: :any,                 x86_64_linux:  "632a853914d23312998c352594b96178940ca584f062e862150c3f567ba4e942"
   end
 
   depends_on "go" => :build
 
   patch :DATA
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/sjzar/ips/cmd/ips.Version=#{version}"
@@ -27,7 +34,15 @@ class Ips < Formula
     assert_match version.to_s, shell_output("#{bin}/ips version")
 
     assert_match "IPS CONFIG", shell_output("#{bin}/ips config")
-    system bin/"ips", "myip"
+
+    (testpath/"geo.txt").write <<~EOS
+      # Meta: {"IPVersion":1,"Fields":["country","city"]}
+      0.0.0.0/1\tLowland,Alpha
+      128.0.0.0/1\tHighland,Beta
+    EOS
+    output = shell_output("#{bin}/ips -i #{testpath}/geo.txt --format plain --use-db-fields 8.8.8.8 200.1.1.1")
+    assert_match "Lowland", output
+    assert_match "Highland", output
   end
 end
 
