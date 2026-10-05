@@ -1,0 +1,19 @@
+Formula/k/kaluma-cli.rb
+  s_20ee2ac03ef1eb::t_4f9ae9d9a35603 16,19-24,26-31,39-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "be014ffd045d8bb66f6ac66631d141f312759418",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
