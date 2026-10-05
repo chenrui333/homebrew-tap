@@ -12,10 +12,14 @@ class Xmlformatter < Formula
     sha256 cellar: :any_skip_relocation, all: "634be72e8938a12f0203ad46322c4e82ed5a88d08c1efd5351d4019956b12150"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14"
 
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
