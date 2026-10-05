@@ -8,11 +8,10 @@ class Twig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7e2505aab74edb260a41adff04c765b0d913177a1d2af3ef484e893106176cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20c2b1f78d400da0b37e1f07ddece0f828e84862a3a2189d7760e752cd25f958"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1956b7c9d398e0976102b0e9af143d5ed6cda910f7aba20a63dc72eb11084997"
-    sha256 cellar: :any,                 arm64_linux:   "c92c8a8e224cf29012b05c346939c1e7e8ff309fce6b1223d38094968bcf2d75"
-    sha256 cellar: :any,                 x86_64_linux:  "2e5c55169765a44b9f1c1f1c91f2a13c8100721d2d06b4f054e7a5e742aece76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d878d3523cd135b3dc580e460a66a6aae64a5ede5e8f089a08bfd0442e72490"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2038156b36022351285d2cb9ff15958e8f9a1dd90a0a6aeec58e175fbca35243"
+    sha256 cellar: :any,                 arm64_linux:   "1aeec0050765bc91429397a98b301544d570221d5b12778c1854147ec10eb100"
+    sha256 cellar: :any,                 x86_64_linux:  "4fd884b039fd8d6d88625a2e66ed7c597600a99926660d5c973818ceced5ecdd"
   end
 
   depends_on "rust" => :build
