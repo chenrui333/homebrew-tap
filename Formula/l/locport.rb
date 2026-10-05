@@ -7,25 +7,38 @@ class Locport < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c169631562bd7c78236ed13d065f0cfbfb330aaa9ed62323c5879bda4185851a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c169631562bd7c78236ed13d065f0cfbfb330aaa9ed62323c5879bda4185851a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c169631562bd7c78236ed13d065f0cfbfb330aaa9ed62323c5879bda4185851a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25e681b10888d0ddcf590be35163067224e38b61acfcfaca8b8cce717eeb6ff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25e681b10888d0ddcf590be35163067224e38b61acfcfaca8b8cce717eeb6ff5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "528d2e69754462ebe7141e17c868ebaa8f8e77994d22e150def2294419393bb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "528d2e69754462ebe7141e17c868ebaa8f8e77994d22e150def2294419393bb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06033970d6e50f8ba5f15538dcd0a6d73205dcca981b3a99871218a936769920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06033970d6e50f8ba5f15538dcd0a6d73205dcca981b3a99871218a936769920"
   end
 
   depends_on "ruby"
+
+  # The test assigns and lists ports by probing loopback TCP sockets.
+  allow_network_access! :test
+
+  def fetch
+    # Keep Bundler's lock and path-gem binstubs out of Ruby's shared gem dir.
+    ENV["BUNDLE_PATH"] = ".bundle"
+    ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
+    ENV["BUNDLE_WITHOUT"] = "development test"
+    system "bundle", "cache", "--no-install"
+  end
 
   def install
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
     ENV["BUNDLE_WITHOUT"] = "development test"
     ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
+    # Keep Bundler's path-gem binstubs out of Ruby's shared bindir.
+    ENV["BUNDLE_SYSTEM_BINDIR"] = libexec/"bin"
     ENV["NOKOGIRI_USE_SYSTEM_LIBRARIES"] = "1"
 
-    system "bundle", "install"
+    system "bundle", "install", "--local"
     system "gem", "build", "#{name}.gemspec"
-    system "gem", "install", "#{name}-#{version}.gem"
+    system "gem", "install", "--local", "#{name}-#{version}.gem"
 
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
