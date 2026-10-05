@@ -17,6 +17,12 @@ class Regexplain < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # The release tag is 1.0.0, but Cargo.toml still declares 0.1.0.
     inreplace "src/main.rs", "author, version, about", "author, version = \"#{version}\", about"
