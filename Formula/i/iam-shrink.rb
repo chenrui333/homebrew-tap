@@ -23,6 +23,7 @@ class IamShrink < Formula
   end
 
   def install
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
