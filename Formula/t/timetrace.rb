@@ -18,6 +18,13 @@ class Timetrace < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
