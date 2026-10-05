@@ -19,8 +19,10 @@ class Jelly < Formula
   depends_on "mpv"
   depends_on "socat"
 
+  deny_network_access!
+
   def install
-    inreplace "src/jelly", "#!/usr/bin/env bash", "#!#{Formula["bash"].opt_bin}/bash"
+    inreplace "src/jelly", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash"
     inreplace "src/jelly",
               'DEFAULT_MEDIA_PLAYER=$([[ "$OSTYPE" == "darwin"* ]] && echo "iina" || echo "mpv")',
               'DEFAULT_MEDIA_PLAYER="mpv"'
