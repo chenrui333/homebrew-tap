@@ -45,6 +45,8 @@ class Netperf < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  deny_network_access!
+
   def install
     # Legacy K&R declarations fail with Clang's C23 default.
     ENV.append_to_cflags "-std=gnu17"
