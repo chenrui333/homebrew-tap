@@ -8,12 +8,11 @@ class Huber < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d7b9ed368c6f508c865f4bef32fe9cff9a439e601bd003bfbf97112711247eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d875976273831c33f0a55f10e71a1336ada738c77384da5e6df140ec3e88ebc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b8e2a02d6d3e1c00d92e2c0101149e7c1b1b5de44dca6d76b245459911af526"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81ff186d79f193423604b579fc4850370e11a93657a13abf8e1d1efcb293a7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b46cd3d6e10a446f1634246d1c7adb79f437bd9889aba2b9ad99983815635414"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b765d154c3a4bfd8c9fcf5ceb79407e4d4008f820c1cf5ee1b380e47019acbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ec31cffb06ad7039a938c68bb8f104c2dad98adfb9ee286d1d1f99b23fb6cfb"
+    sha256 cellar: :any,                 arm64_linux:   "a00537ea21250bd2332db678bf3dfac61aa6beeb8fca6e85f05b42ca4b28514d"
+    sha256 cellar: :any,                 x86_64_linux:  "6f6badc5c0c165e3e3ac86f55b4512d7c95eebb08405fe2da6cd7bc1b410ec79"
   end
 
   depends_on "cmake" => :build
