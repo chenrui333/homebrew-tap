@@ -1,0 +1,19 @@
+Formula/m/oceanbase-mcp-server.rb
+  s_20ee2ac03ef1eb::t_1b18402cfc4350 19,21-28,45-49,55-64,70-84,105-109,120-124,135-137,140-152,175-182,200-209,220-224,230-241,243-270,274-276,278,280-315
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e9cdc144affc88abd273e7c364fed38b59509086",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
