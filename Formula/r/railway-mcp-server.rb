@@ -13,8 +13,15 @@ class RailwayMcpServer < Formula
   depends_on "node"
   depends_on "railway"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
@@ -24,8 +31,9 @@ class RailwayMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/railway-mcp-server 2>&1", json, 1)
-    assert_match "Unauthorized", output
+    # The wrapper forwards to `railway mcp`, which reports the missing login without contacting Railway.
+    output = pipe_output("#{bin}/railway-mcp-server 2>&1", json, 0)
+    assert_match "Not logged in to Railway", output
     assert_match "railway login", output
   end
 end
