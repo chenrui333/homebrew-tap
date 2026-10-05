@@ -8,11 +8,11 @@ class Hielo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a2bd7cf5f86757e5981933661e74e00e523bdd2e8c788162a718e2b2e30f2ca9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "300c65ce6803562f317a3da209325bc5cf077fae87211f7fa51ed5f2616fbf8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a01f43de752ff2086e2d78d2a01afca35954bb9ca832866fceca7bb8c1239b88"
-    sha256 cellar: :any,                 arm64_linux:   "7181fd35ffa3f45cbbbc5879b351a383e7d41c088eca2afeef2f073729a64a6f"
-    sha256 cellar: :any,                 x86_64_linux:  "585405c0f1ff4f6ce4781586282306b4e76a25a63863efdf27bfd7ddc2fa0be6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e223732603f4ff9f4259b9823d80638daddc4ec95061be8c564a2bfc7d02e72b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e1950f7d5cab9c7fd41771213e7d9be366f01328798b960bf20c86df5fd8b1d"
+    sha256 cellar: :any,                 arm64_linux:   "684ab4f6bb4572d25487c261f06aba5fcdfcd1e8df508a3c726a1c380703977a"
+    sha256 cellar: :any,                 x86_64_linux:  "1d619b87c6d91b1c0648602d939aaffedf12f478615382cff032528a2b0bd41f"
   end
 
   depends_on "pkgconf" => :build
@@ -27,6 +27,12 @@ class Hielo < Formula
     depends_on "libsoup"
     depends_on "webkitgtk"
     depends_on "xdotool"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
