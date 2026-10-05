@@ -17,6 +17,12 @@ class Protodep < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -43,12 +49,9 @@ class Protodep < Formula
     EOS
 
     # default to use ssh-agent, https://github.com/stormcat24/protodep/blob/master/README.md#attention-changes-from-010
-    if OS.mac?
-      output = shell_output("#{bin}/protodep up", 255)
-      assert_match "unable to find any valid known_hosts file", output
-    else
-      output = shell_output("#{bin}/protodep up 2>&1", 2)
-      assert_match "error creating SSH agent", output
-    end
+    # without an agent socket it fails before any network access
+    ENV.delete("SSH_AUTH_SOCK")
+    output = shell_output("#{bin}/protodep up 2>&1", 2)
+    assert_match "error creating SSH agent", output
   end
 end
