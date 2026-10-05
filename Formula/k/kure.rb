@@ -8,14 +8,20 @@ class Kure < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "435986ffb19fd6aae6bb90dcd949131d1f29d1b4045ae3a3b46584bbd0aa490f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "435986ffb19fd6aae6bb90dcd949131d1f29d1b4045ae3a3b46584bbd0aa490f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "435986ffb19fd6aae6bb90dcd949131d1f29d1b4045ae3a3b46584bbd0aa490f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef79f2a234ad96affcfcd374bfcdb5db8905a8b80dd079fc2771c2df4d580e64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73247f2c2f8b605733164585b3eea475e4d5d8f9e43f729a91d78aef9dbfb7c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5395fc6b450ef40b92622466dbbf865a7731b5ce25c58b25cb1e1025f5868554"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5395fc6b450ef40b92622466dbbf865a7731b5ce25c58b25cb1e1025f5868554"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6037207cda2a57f55c5b505541cd5002f5e48d889929f4874bfa52ddf7fc3ff"
+    sha256 cellar: :any,                 x86_64_linux:  "d68aedfa94f7ff455c96eae517b4381dd4fe1e0412ed0f82ad377796685ea406"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
