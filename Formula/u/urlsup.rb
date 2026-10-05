@@ -16,6 +16,12 @@ class Urlsup < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -23,7 +29,7 @@ class Urlsup < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/urlsup --version")
 
-    # real link + fake link test
+    # URL validation needs external network; check discovery/filtering and local errors instead.
     (testpath/"test.md").write <<~MARKDOWN
       # Test
 
@@ -31,8 +37,13 @@ class Urlsup < Formula
       - [ ] Invalid link: https://invalid.invalid
     MARKDOWN
 
-    output = shell_output("#{bin}/urlsup #{testpath}/test.md", 1)
-    assert_match "ound\e[0m: \e[1m2 unique URLs", output
-    assert_match "1. client error (Connect) https://invalid.invalid", output
+    output = shell_output("#{bin}/urlsup #{testpath}/test.md --exclude-pattern google " \
+                          "--exclude-pattern 'invalid\\.invalid' --format json --no-progress")
+    report = JSON.parse(output)
+    assert_equal 1, report.dig("files", "processed")
+    assert_equal 0, report.dig("urls", "total_found")
+    assert_equal "success", report["status"]
+
+    assert_match "File not found", shell_output("#{bin}/urlsup #{testpath}/missing.md --no-progress 2>&1", 1)
   end
 end
