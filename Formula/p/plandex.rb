@@ -23,11 +23,32 @@ class Plandex < Formula
 
   depends_on "go" => :build
 
+  # plandex-shared loads this tiktoken-go encoding at startup (every command panics without it).
+  resource "o200k_base.tiktoken" do
+    url "https://openaipublic.blob.core.windows.net/encodings/o200k_base.tiktoken"
+    sha256 "446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d"
+  end
+
+  deny_network_access!
+
+  def fetch
+    cd "app/cli" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     cd "app/cli" do
-      system "go", "build", *std_go_args(ldflags: "-s -w -X plandex-cli/version.Version=#{version}")
-      generate_completions_from_executable(bin/"plandex", shell_parameter_format: :cobra)
+      system "go", "build", *std_go_args(ldflags: "-s -w -X plandex-cli/version.Version=#{version}",
+                                         output:  libexec/"plandex")
     end
+
+    # tiktoken-go reads $TIKTOKEN_CACHE_DIR/<sha1 of the encoding URL> before downloading it
+    tiktoken_cache = pkgshare/"tiktoken"
+    encoding = resource("o200k_base.tiktoken")
+    encoding.stage { tiktoken_cache.install "o200k_base.tiktoken" => Digest::SHA1.hexdigest(encoding.url) }
+    (bin/"plandex").write_env_script libexec/"plandex", TIKTOKEN_CACHE_DIR: "${TIKTOKEN_CACHE_DIR:-#{tiktoken_cache}}"
+    generate_completions_from_executable(bin/"plandex", shell_parameter_format: :cobra)
   end
 
   test do
