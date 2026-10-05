@@ -12,8 +12,14 @@ class McpServerAirbnb < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
@@ -23,7 +29,8 @@ class McpServerAirbnb < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/mcp-server-airbnb 2>&1", json, 0)
+    # Skip the startup robots.txt fetch from airbnb.com.
+    output = pipe_output("#{bin}/mcp-server-airbnb --ignore-robots-txt 2>&1", json, 0)
     assert_match version.to_s, output
     assert_match "Location to search for (city, state, etc.)", output
   end
