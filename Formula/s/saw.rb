@@ -22,6 +22,13 @@ class Saw < Formula
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
@@ -29,12 +36,18 @@ class Saw < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/saw version")
 
-    ENV["AWS_REGION"] = "us-east-1"
+    # main exits 0 even when the command returns an error
+    output = shell_output("#{bin}/saw get 2>&1")
+    assert_match "getting events requires log group argument", output
+
+    # Without a region the SDK fails request validation before sending; `groups` swallows the error
+    ENV.delete("AWS_REGION")
+    ENV.delete("AWS_DEFAULT_REGION")
+    ENV["AWS_CONFIG_FILE"] = testpath/"aws-config"
+    ENV["AWS_SHARED_CREDENTIALS_FILE"] = testpath/"aws-credentials"
     ENV["AWS_ACCESS_KEY_ID"] = "test"
     ENV["AWS_SECRET_ACCESS_KEY"] = "test"
-
-    output = shell_output("#{bin}/saw groups 2>&1")
-    assert_empty output
+    assert_empty shell_output("#{bin}/saw groups 2>&1")
   end
 end
 
