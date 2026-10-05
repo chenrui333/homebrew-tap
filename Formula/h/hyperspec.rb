@@ -19,6 +19,8 @@ class Hyperspec < Formula
     sha256 cellar: :any_skip_relocation, all: "15b43c8aa3528fe24dc660468f70249ac2938c4e81772ddd28889f15f5ff9a1d"
   end
 
+  deny_network_access!
+
   def install
     doc.install Dir["*"]
   end
