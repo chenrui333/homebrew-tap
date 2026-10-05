@@ -1,17 +1,17 @@
 class Heyagent < Formula
   desc "Claude Code notifications"
-  homepage "https://www.heyagent.dev/"
+  homepage "https://github.com/gergomiklos/heyagent"
   url "https://registry.npmjs.org/heyagent/-/heyagent-2.0.0.tgz"
   sha256 "5bf3f3db28e218a835ee6b22bd22ab2b118f36324a40a4d5839c3dd7cd2b9e79"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a89eb11619a8c5c77c1db80b8fc75083eb4b0fbddc7e002903bdba33b4f3bec9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a89eb11619a8c5c77c1db80b8fc75083eb4b0fbddc7e002903bdba33b4f3bec9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a89eb11619a8c5c77c1db80b8fc75083eb4b0fbddc7e002903bdba33b4f3bec9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7f3950bca7c2d9716b86dc8bba7606314957b6b4a7d81fe7978761b76b3bfd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7f3950bca7c2d9716b86dc8bba7606314957b6b4a7d81fe7978761b76b3bfd6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9f2d8e665fa92ef686a2591e2a3f3aac1342248e77fe04990a66f69a2fc612d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9f2d8e665fa92ef686a2591e2a3f3aac1342248e77fe04990a66f69a2fc612d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "935a41ab9d0fab3f59990157293fbb346e10f73fbe4308b4e64d74277aa13e4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "935a41ab9d0fab3f59990157293fbb346e10f73fbe4308b4e64d74277aa13e4b"
   end
 
   depends_on "node"
@@ -20,8 +20,14 @@ class Heyagent < Formula
     depends_on "terminal-notifier"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove vendored pre-built binary `terminal-notifier`
@@ -33,7 +39,7 @@ class Heyagent < Formula
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      terminal_notifier_app = formula_opt_prefix("terminal-notifier")/"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
