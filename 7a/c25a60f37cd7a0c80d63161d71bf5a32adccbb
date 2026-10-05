@@ -1,0 +1,14 @@
+Formula/r/revanced-cli.rb
+  h_9df9c32c3f321d 15-16,25-28,30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7ac25a60f37cd7a0c80d63161d71bf5a32adccbb",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
