@@ -18,7 +18,51 @@ class Obelisk < Formula
   depends_on "protobuf" => :build
   depends_on "rust" => :build
 
+  # Prebuilt V8 for the locked `v8` crate (150.4.0 with `simdutf`); its build.rs downloads this otherwise.
+  resource "rusty_v8" do
+    on_macos do
+      on_arm do
+        url "https://github.com/denoland/rusty_v8/releases/download/v150.4.0/librusty_v8_simdutf_release_aarch64-apple-darwin.a.gz"
+        sha256 "5aeffd8d5a0c1b79ac1d70af83d5b19099655fd9c645a794dc43f101f779838c"
+      end
+      on_intel do
+        url "https://github.com/denoland/rusty_v8/releases/download/v150.4.0/librusty_v8_simdutf_release_x86_64-apple-darwin.a.gz"
+        sha256 "a750271fec6b211457ed0a5cf7d2eab1924b265621a82da86ab959d6ff0823e4"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://github.com/denoland/rusty_v8/releases/download/v150.4.0/librusty_v8_simdutf_release_aarch64-unknown-linux-gnu.a.gz"
+        sha256 "539e283815a396a5796f32858b42e517b858ebaaeaaad05d03290ee8c864a527"
+      end
+      on_intel do
+        url "https://github.com/denoland/rusty_v8/releases/download/v150.4.0/librusty_v8_simdutf_release_x86_64-unknown-linux-gnu.a.gz"
+        sha256 "f48762ca10d1f1fc605a441c5ae430ec8ce1e9e80f14d78fbc42cb878c30b476"
+      end
+    end
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+
+    # The default `embed-webui` feature pulls this pinned OCI layer (crates/embedded-assets/webui-version.txt)
+    # in build.rs; prefetch it for `OBELISK_EMBED_ASSETS_DIR`.
+    repo = "getobelisk/webui"
+    layer = "32287ac00295fcf686ae917907f3613f37a2e6be080854aa7639ebf0c392478d"
+    token_url = "https://auth.docker.io/token?service=registry.docker.io&scope=repository:#{repo}:pull"
+    token = JSON.parse(Utils.safe_popen_read("curl", "-fsSL", token_url)).fetch("token")
+    webui = buildpath/"embed-assets/webui.wasm"
+    webui.dirname.mkpath
+    system "curl", "-fsSL", "-H", "Authorization: Bearer #{token}", "-o", webui,
+           "https://registry-1.docker.io/v2/#{repo}/blobs/sha256:#{layer}"
+    odie "webui.wasm checksum mismatch" if webui.sha256 != layer
+  end
+
   def install
+    ENV["RUSTY_V8_ARCHIVE"] = resource("rusty_v8").cached_download
+    ENV["OBELISK_EMBED_ASSETS_DIR"] = buildpath/"embed-assets"
     system "cargo", "install", *std_cargo_args
   end
 
