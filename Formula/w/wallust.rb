@@ -1,8 +1,10 @@
 class Wallust < Formula
   desc "Better pywal"
   homepage "https://explosion-mental.codeberg.page/wallust/"
-  url "https://codeberg.org/explosion-mental/wallust/archive/3.5.2.tar.gz"
-  sha256 "46c2592217f0de968437850b14b2e844f2af4158b70135b2b448dc426c0309a1"
+  # Codeberg regenerated the 3.5.2 archive (same tag commit); pin the tag commit
+  url "https://codeberg.org/explosion-mental/wallust.git",
+      tag:      "3.5.2",
+      revision: "b689616d630bb2e541695f101d313699464aac09"
   license "MIT"
   head "https://codeberg.org/explosion-mental/wallust.git", branch: "main"
 
@@ -17,6 +19,12 @@ class Wallust < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
 
@@ -28,13 +36,18 @@ class Wallust < Formula
   end
 
   test do
-    resource "test_image" do
-      url "https://rustfoundation.org/wp-content/uploads/2024/07/cropped-rust-lang-logo-black-300x300.png"
-      sha256 "62df7205f3fc29db0a47bbd328789d64325bd88ea62b0bcc7418589dca7337c4"
-    end
+    require "zlib"
 
-    testpath.install resource("test_image")
-    system bin/"wallust", "run", testpath/"cropped-rust-lang-logo-black-300x300.png"
-    system bin/"wallust", "--version"
+    # Generate a small RGB gradient PNG locally instead of downloading a test image.
+    rows = (0...64).map do |y|
+      "\x00".b + (0...64).map { |x| [x * 4, y * 4, (x + y) * 2].pack("C3") }.join
+    end
+    chunk = ->(type, data) { [data.bytesize].pack("N") + type + data + [Zlib.crc32(type + data)].pack("N") }
+    png = "\x89PNG\r\n\x1a\n".b + chunk.call("IHDR", [64, 64, 8, 2, 0, 0, 0].pack("N2C5")) +
+          chunk.call("IDAT", Zlib::Deflate.deflate(rows.join)) + chunk.call("IEND", "")
+    (testpath/"gradient.png").binwrite png
+
+    assert_match "Saving scheme to cache", shell_output("#{bin}/wallust run #{testpath}/gradient.png 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/wallust --version")
   end
 end
