@@ -1,16 +1,18 @@
 class Ponytail < Formula
   desc "YAGNI and minimal-implementation plugin for AI coding agents"
   homepage "https://github.com/DietrichGebert/ponytail"
-  url "https://github.com/DietrichGebert/ponytail/archive/refs/tags/v4.10.3.tar.gz"
-  sha256 "5cccfd20fe3e0b1a69f5512ff12f0200ef48c128fd20a223e83725560fee1c47"
+  url "https://github.com/DietrichGebert/ponytail/archive/refs/tags/v4.11.0.tar.gz"
+  sha256 "2e925d45381131f8036ff2a19a3560dc59383426ddbb3176d944b32b6e9b9714"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "99cf938c12d8483d510ca38d03cdbde794cfa05ab4d526ccd470a399bd0ccbca"
+    sha256 cellar: :any_skip_relocation, all: "b803817d225efc47dc4a2b908dbf32a53bbf0a3f8ca887234d5b15389e54d0f6"
   end
 
   depends_on "node"
+
+  deny_network_access!
 
   def install
     libexec.install ".agents", ".claude-plugin", ".codex-plugin",
