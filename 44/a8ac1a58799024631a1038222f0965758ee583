@@ -1,0 +1,19 @@
+Formula/m/mlx-vlm.rb
+  s_20ee2ac03ef1eb::t_a2425024a9a93e 18-19,22,40-44,56-60,86-90,101-115,181-200,246-255,276-280,291-295,311-315,321-335,339-371,376,382,384
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "44a8ac1a58799024631a1038222f0965758ee583",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
