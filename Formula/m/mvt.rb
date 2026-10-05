@@ -11,12 +11,15 @@ class Mvt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b79e4217586d10393a4c12a930f811ba0b9822c9f3084315b8cf71fae182b340"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0c0d84d3b491f18620b54e2169a4bc99dc155c11fe543c4b84a4bca139b3f7d"
-    sha256 cellar: :any,                 arm64_linux:   "a38631be60dded0325e096b6c71bee3ba87dc42f2791003883e5351db764810d"
-    sha256 cellar: :any,                 x86_64_linux:  "07cd3e32589efcbb89103c064e901cb4b6d1574aa2798ae6ced3443413b04c99"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5792e81faf9f047ed98b1f3c419d3c9bcff61a3d72419002fd1e08e02099e60b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b6c755cb547f2c7f70eba00560ad2ec0d5bbab27467c1b73fd7345af21d728"
+    sha256 cellar: :any,                 arm64_linux:   "aa2bf595ed10c0ab423a1d72ee1d8d5d7e8139b2a6fe024b201443d62255a71d"
+    sha256 cellar: :any,                 x86_64_linux:  "e133243fee53d2da2bef618c8b885ee26efefaf4922e96f0acb020cd834e3c23"
   end
 
+  depends_on "cython" => :build
+  depends_on "maturin" => :build # for uv-build
   depends_on "rust" => :build
 
   depends_on "certifi" => :no_linkage
@@ -28,7 +31,11 @@ class Mvt < Formula
   # `pydantic` is manually updated to support Python 3.14
   # PR ref: https://github.com/mvt-project/mvt/pull/706
 
-  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic"]
+  pypi_packages exclude_packages: ["certifi", "cryptography", "pydantic"],
+                extra_packages:   %w[
+                  calver flit-core hatch-vcs hatchling pathspec pluggy poetry-core setuptools setuptools-scm tomlkit
+                  trove-classifiers uv-build vcs-versioning wheel
+                ]
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -40,6 +47,11 @@ class Mvt < Formula
     sha256 "fa0bcc3b87b6fd9151cd0058c153e480830f55fddb5afe3fef92e842490be266"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
     sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
@@ -48,6 +60,21 @@ class Mvt < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
     sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "idna" do
@@ -78,6 +105,21 @@ class Mvt < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
     sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
   end
 
   resource "pyahocorasick" do
@@ -125,6 +167,16 @@ class Mvt < Formula
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
   resource "simplejson" do
     url "https://files.pythonhosted.org/packages/0e/2a/54837395a3487c725669428d513293612a48d82b95a0642c936932e5d898/simplejson-4.1.1.tar.gz"
     sha256 "c08eb9f7a90f77ae470e19a07472e9a79ebc0d1c2315d86a72767665bd5ba79f"
@@ -140,6 +192,16 @@ class Mvt < Formula
     sha256 "d983fa92b9d717400742fca844e29d5e18271079c7bcfabf66d01b39b4a14345"
   end
 
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
+  end
+
   resource "tzdata" do
     url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
     sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
@@ -150,8 +212,58 @@ class Mvt < Formula
     sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
+  resource "uv-build" do
+    url "https://files.pythonhosted.org/packages/ab/90/08c5811fe8d5e32a637b648aff654ffa9b97728381d94d1103383416f3a7/uv_build-0.11.33.tar.gz"
+    sha256 "b09dcd86e4bbb31f4d85470892771e7c8786b3bd9b6519f7ce7480517b4d1381"
+  end
+
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  deny_network_access!
+
+  def fetch
+    # maturin/PyO3 run offline `cargo metadata`, which needs crates for all targets.
+    resource("uv-build").stage { system "cargo", "fetch", "--locked" }
+  end
+
   def install
-    virtualenv_install_with_resources
+    build_resources = %w[
+      flit-core
+      packaging
+      pathspec
+      poetry-core
+      setuptools
+      calver
+      tomlkit
+      trove-classifiers
+      uv-build
+      vcs-versioning
+      setuptools-scm
+      pluggy
+      hatchling
+      hatch-vcs
+      wheel
+    ]
+
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV["CARGO_NET_OFFLINE"] = "true"
+
+    venv = virtualenv_create(libexec, "python3.14")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     %w[mvt-android mvt-ios].each do |script|
       generate_completions_from_executable(bin/script, shell_parameter_format: :click)
@@ -159,10 +271,11 @@ class Mvt < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/mvt-android version")
-    assert_match version.to_s, shell_output("#{bin}/mvt-ios version")
+    flags = %w[--disable-update-check --disable-indicator-update-check]
+    assert_match version.to_s, shell_output("#{bin}/mvt-android #{flags.join(" ")} version")
+    assert_match version.to_s, shell_output("#{bin}/mvt-ios #{flags.join(" ")} version")
 
-    output = shell_output("#{bin}/mvt-ios check-backup #{testpath}/missing-backup 2>&1", 2)
+    output = shell_output("#{bin}/mvt-ios #{flags.join(" ")} check-backup #{testpath}/missing-backup 2>&1", 2)
     assert_match "does not exist", output
   end
 end
