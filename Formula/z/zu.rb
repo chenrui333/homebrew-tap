@@ -18,13 +18,16 @@ class Zu < Formula
     depends_on "readline"
   end
 
+  # zu always starts its in-house REST server on a local TCP port at startup.
+  allow_network_access! :test
+
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
     bin.install "zu"
   end
 
   test do
-    output = pipe_output("#{bin}/zu", "help\nexit\n", 0)
+    output = pipe_output(bin/"zu", "help\nexit\n", 0)
     assert_match "Starting in-house REST server on port 1337", output
   end
 end
