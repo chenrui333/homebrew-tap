@@ -8,13 +8,20 @@ class Lfk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45d25a166d3be4287d71f2f9a5077776b5d8fab6f283b79d4ad2d9ba2f3e25c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45d25a166d3be4287d71f2f9a5077776b5d8fab6f283b79d4ad2d9ba2f3e25c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dde4d2bf75956567862d36ef8edf99dbc17c1765e24162ddf764e36c3eb80af6"
-    sha256 cellar: :any,                 x86_64_linux:  "7f7cf8ff18ce945f95e90bdec4a0d39da9cdff698d8e63d2234721594be18cb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a4d8659c16a742259f8127c4a438ec87ae71bb64b67ee182befed9fbf48245e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a4d8659c16a742259f8127c4a438ec87ae71bb64b67ee182befed9fbf48245e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b20b23573828cad7ce3038abe4c53faf4ac21a0d01f8bfcbc3517b63a8fef3cf"
+    sha256 cellar: :any,                 x86_64_linux:  "2efcea68cac31f77778f71d0b23fae5c93e0986bb59385a039341334a1fd92b2"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/janosmiko/lfk/internal/version.Version=#{version}"
