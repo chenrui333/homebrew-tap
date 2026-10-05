@@ -9,12 +9,11 @@ class Mmemoji < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9434a9620c3833daedb7c06f8ecba16d862ddd5fcf22581a24bb8e5ed7cdf0d6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfb2af02b9ffe267cb95bed81de39fcc126ea3d8d9152362a70e3160a6f3f341"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "297144345882836170e8ca2af93fdedb92483530c36d8664d9d62905591dd030"
-    sha256 cellar: :any_skip_relocation, sequoia:       "5ca3cccf300eede349dc09a83b9c997d622de31a17c65a08ea54302793b0505b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a725fb1210b5252ec0ae250b6da4883598ad81437180f4f6812153e259f49b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8082d335eef1d9c72abe9e87f079314cb787e5595f5192582f2c37b48ae148a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5aa84a22dcd8d457f970959f964291ec5693d50a9649acd2a8534b851172fee6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2429584e87a3294ec868ba6a97f4ce7c308cdd9489957187c4c275bf07a52168"
+    sha256 cellar: :any,                 arm64_linux:   "b9d2aaaa4d4d6298a69c80fca0b171e18c98305937cf8fca30eed1805f7f5b6f"
+    sha256 cellar: :any,                 x86_64_linux:  "8841418bfa0fd2424e25f4d26bbc76be8947a7fef2873a53ac974f313b2cc3cb"
   end
 
   depends_on "cython" => :build # for frozenlist, propcache and yarl
