@@ -17,10 +17,15 @@ class Starcharts < Formula
 
   depends_on "go" => :build
 
+  # The test fetches the index page from the local web server over loopback.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
-
-    system "go", "mod", "tidy"
     system "go", "build", *std_go_args(ldflags:)
   end
 
