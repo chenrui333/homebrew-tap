@@ -21,9 +21,16 @@ class Viwo < Formula
     depends_on "icu4c@78"
   end
 
+  deny_network_access!
+
+  def fetch
+    cd "packages/cli" do
+      system "bun", "install", "--frozen-lockfile", "--cache-dir", buildpath/"bun-cache"
+    end
+  end
+
   def install
     Dir.chdir("packages/cli") do
-      system "bun", "install", "--frozen-lockfile"
       system "bun", "build", "src/cli.ts", "--compile", "--outfile", "viwo"
       bin.install "viwo"
     end
@@ -31,5 +38,8 @@ class Viwo < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/viwo --version")
+
+    output = shell_output("#{bin}/viwo not-a-real-command 2>&1", 1)
+    assert_match "unknown command 'not-a-real-command'", output
   end
 end
