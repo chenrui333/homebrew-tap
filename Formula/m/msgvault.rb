@@ -8,13 +8,21 @@ class Msgvault < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "498623e6c1eca706ee9d0d7cc89a3ddcdf397f1fe5b4d7dc31e6f9518585d3b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbc3d8c89ff2f9e4b403a0394cb2158588938cd29aef1e43a01b82042401d1c3"
-    sha256 cellar: :any,                 arm64_linux:   "db365fac54a4cb98ed0bdecf9b802a39d8c60c503464d0d7c949295605ca88c2"
-    sha256 cellar: :any,                 x86_64_linux:  "94cff3ec50e2df9d65eb055b0596003336fe7c5832d904e5282d97e4be661c88"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cec9823121a86e164afc2b9bc83f9d71900617944a04b6fa392292094da3b0f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c113a546e29bf67d5865e9da3e489f75b6152b5795992c780a5aa525517c9df"
+    sha256 cellar: :any,                 arm64_linux:   "97d032d257723bd8e8ddba81a0b2ed87e28c098d56fe615aab3faed60ee1257e"
+    sha256 cellar: :any,                 x86_64_linux:  "1bbf45f55193c36dbe5e21f4515da2b0edf8b308eac476974a204cbedbb9dbd4"
   end
 
   depends_on "go" => :build
+
+  # CLI commands run through a local daemon that listens on a loopback HTTP port.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
