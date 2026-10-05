@@ -7,10 +7,11 @@ class Keyhunter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43f6cf7b7eda4355e466a7b40ea488f98d3a27091e1d5575a0a97164a73532d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c67f96a41f1ea1b2e66bff15b43e760d748a3412abd039f68db3a8d6ec0efc0e"
-    sha256 cellar: :any_skip_relocation, ventura:       "bf3badd300e0070ee50f56ab3bf04f1a74f6f2a6a6ecfc91da2ab15a37a07fee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37bf73fa0a47f5934e32745bad4890e27cc93ed662dace0220f11c52b8955625"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7dc0c659e31bb4d7388f27578586f66aeccb20b776eb56edf3d80a56484cee41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05c10a97c9da8bee0e8217b024ceea9e48c89a5dade48af4ba6567ea5c1b7298"
+    sha256 cellar: :any,                 arm64_linux:   "ec1d8c40bcf700eedec9c75ff39d5f615ced4fe48894a793fa46cbd8c3d10643"
+    sha256 cellar: :any,                 x86_64_linux:  "91c2e9a76e2faf0f2f2af028427fa89969a11196a20e928b58f4fd615931725e"
   end
 
   depends_on "rust" => :build
