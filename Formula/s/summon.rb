@@ -16,6 +16,12 @@ class Summon < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "tidy"
+  end
+
   def install
     ldflags = %W[
       -s -w
@@ -23,7 +29,7 @@ class Summon < Formula
       -X github.com/cyberark/summon/pkg/version.Version=#{version}
     ]
 
-    system "go", "build", "-mod=mod", *std_go_args(ldflags:), "./cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
   end
 
   test do
