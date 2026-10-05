@@ -8,13 +8,20 @@ class Ip2d < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80803223ecfd3e79dd9bd409a78b1e20389d9cbfadf2176564dc41837a940aab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e9870f333c24f2b5543f436ba888adca6eeea44e5b1b67b1831b30fdc8d3ad3"
-    sha256 cellar: :any_skip_relocation, ventura:       "5169ab4314f78bb44772ae4d3aa749e1bea80e44b29d104283600bde7bcdf073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19a052a5d308e058726b6cfb09bb457bfa3d55386b9441ed24f01f5d0827385e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a3a4e7767d4e0982e51332c24418ba438bffbe8656ac531a6d20209e48806fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52bdda69350d645a6d1dc41dac889a708eb93ec23075c2efa3b9a450605bc3db"
+    sha256 cellar: :any,                 arm64_linux:   "9c486097354d0e6b4541a06aec613d475387d5604c0d8157c590543a147f00d4"
+    sha256 cellar: :any,                 x86_64_linux:  "d96ac3c046a45471faabd893e19b7fe9a1366f73f2ba9fe557b046c245d72a63"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     # version patch
