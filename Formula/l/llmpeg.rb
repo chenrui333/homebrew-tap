@@ -18,13 +18,19 @@ class Llmpeg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb50ccdd29255c5928b164204194674d4c4d12aa2e270e875f15748101798aa2"
   end
 
+  deny_network_access!
+
   def install
     bin.install "llmpeg"
   end
 
   test do
-    ENV["OPENAI_API_KEY"] = "test"
+    # Without a key the script stops before calling the OpenAI or Groq APIs.
+    ENV.delete("OPENAI_API_KEY")
+    ENV.delete("GROQ_API_KEY")
     output = shell_output("#{bin}/llmpeg remove audio from example.mov 2>&1", 1)
-    assert_match "Error: No command generated or API response is empty", output
+    assert_match "No API key found", output
+
+    assert_match "Requires a prompt", shell_output("#{bin}/llmpeg 2>&1", 1)
   end
 end
