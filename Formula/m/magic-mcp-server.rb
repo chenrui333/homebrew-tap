@@ -9,10 +9,8 @@ class MagicMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcd88f6255c53e201bffbf4c52297ee0fcd361f9863d8030fb9351b46ba5b6f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c611036baa1137be3c55bade9cfbab944bff4f8fa01de172ee94d5a599d3c799"
-    sha256 cellar: :any_skip_relocation, ventura:       "1308de93868bfd41b310c9ac01a8a267e99f17ab07a0c4ba8dcc40ac22435867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fac4b5f8879f3766e46155eb071e8e7d0a7df198ca2d342f30aa85948b26a04c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "20f396076eed836a1adbeb71124b5bbc519e48d91883cac92578a9bfa5ff9bdf"
   end
 
   depends_on "node"
