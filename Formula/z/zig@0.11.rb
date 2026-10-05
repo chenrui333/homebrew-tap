@@ -21,7 +21,6 @@ class ZigAT011 < Formula
 
   depends_on "cmake" => :build
   depends_on "llvm@16" => :build
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
   depends_on "z3"
   depends_on "zstd"
 
@@ -36,11 +35,13 @@ class ZigAT011 < Formula
 
   fails_with :gcc
 
+  deny_network_access!
+
   def install
     # Make sure `llvm@16` is used.
-    ENV.prepend_path "PATH", Formula["llvm@16"].opt_bin
-    ENV["CC"] = Formula["llvm@16"].opt_bin/"clang"
-    ENV["CXX"] = Formula["llvm@16"].opt_bin/"clang++"
+    ENV.prepend_path "PATH", formula_opt_bin("llvm@16")
+    ENV["CC"] = formula_opt_bin("llvm@16")/"clang"
+    ENV["CXX"] = formula_opt_bin("llvm@16")/"clang++"
 
     # Work around duplicate symbols with Xcode 15 linker.
     # Remove on next release.
