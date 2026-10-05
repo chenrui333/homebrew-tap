@@ -17,6 +17,12 @@ class Ticker < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/achannarasappa/ticker/v5/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
@@ -27,12 +33,15 @@ class Ticker < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/ticker --version")
 
+    # Config validation runs before the symbol list and quotes are downloaded.
     (testpath/".ticker.yaml").write <<~YAML
-      watchlist:
-        - AAPL
+      lots:
+        - symbol: AAPL
+          quantity: 0
+          unit_cost: 1
     YAML
 
-    output = shell_output("#{bin}/ticker print summary --config #{testpath}/.ticker.yaml")
-    assert_equal "0.000000", JSON.parse(output)["total_value"]
+    output = shell_output("#{bin}/ticker print summary --config #{testpath}/.ticker.yaml 2>&1", 1)
+    assert_match "lot #1 for symbol 'AAPL' in group 'default' has invalid quantity", output
   end
 end
