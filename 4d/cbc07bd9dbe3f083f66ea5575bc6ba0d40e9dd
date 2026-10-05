@@ -1,0 +1,14 @@
+Formula/t/tsuki.rb
+  h_9df9c32c3f321d 16-24,26,28-49,54-61,81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4dcbc07bd9dbe3f083f66ea5575bc6ba0d40e9dd",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
