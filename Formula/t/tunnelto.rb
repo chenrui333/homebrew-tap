@@ -20,9 +20,15 @@ class Tunnelto < Formula
   depends_on "rust" => :build
   depends_on "openssl@3"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "cargo", "update", "-p", "openssl", "--precise", "0.10.68"
     system "cargo", "update", "-p", "openssl-sys", "--precise", "0.9.116"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args(path: "tunnelto")
   end
 
