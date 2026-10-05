@@ -16,7 +16,13 @@ class Pproftui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b938a312c73a373f47853c0533cf14154ddcf00f55a610e1f84b7bcffa9e809f"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
@@ -25,20 +31,31 @@ class Pproftui < Formula
   test do
     assert_match "Usage of", shell_output("#{bin}/pproftui -h 2>&1")
 
-    resource "test_profile" do
-      url "https://github.com/parca-dev/parca/raw/refs/heads/main/pkg/symbolizer/testdata/normal-cpu.stripped.pprof"
-      sha256 "6e6087cf6a592f40a669aa7f96c38a2220cf5fc4006d6f89848666a859dad39b"
-    end
+    # Generate a heap profile locally instead of downloading one.
+    (testpath/"prof.go").write <<~GO
+      package main
 
-    testpath.install resource("test_profile")
+      import (
+      	"os"
+      	"runtime/pprof"
+      )
+
+      func main() {
+      	f, _ := os.Create("heap.pprof")
+      	pprof.WriteHeapProfile(f)
+      	f.Close()
+      }
+    GO
+    system "go", "run", testpath/"prof.go"
+    assert_path_exists testpath/"heap.pprof"
 
     output_log = testpath/"output.log"
     pid = if OS.mac?
       spawn "script", "-q", File::NULL,
-            bin/"pproftui", testpath/"normal-cpu.stripped.pprof",
+            bin/"pproftui", testpath/"heap.pprof",
             [:out, :err] => output_log.to_s
     else
-      spawn "script", "-q", "-c", "#{bin}/pproftui #{testpath}/normal-cpu.stripped.pprof", File::NULL,
+      spawn "script", "-q", "-c", "#{bin}/pproftui #{testpath}/heap.pprof", File::NULL,
             [:out, :err] => output_log.to_s
     end
 
@@ -48,6 +65,7 @@ class Pproftui < Formula
 
     output = output_log.read
     assert_match "\e[?1049h", output
+    assert_match "View: alloc_objects", output
     refute_match "No such device or address", output
   rescue Errno::ESRCH
     output = output_log.exist? ? output_log.read : ""
