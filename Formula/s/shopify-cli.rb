@@ -15,9 +15,20 @@ class ShopifyCli < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     rm_r libexec/"lib/node_modules/@shopify/cli/node_modules/clipboardy/fallbacks/linux/xsel" if OS.linux?
+    # Skip the prerun npm latest-version check: upgrades go through Homebrew, and offline
+    # (sandboxed) runs crash with an unhandled `onCancel` rejection from the bundled `got`.
+    inreplace libexec/"lib/node_modules/@shopify/cli/dist/hooks/prerun.js",
+              %r{\w+\(\w+\)\|\|\w+\("@shopify/cli",\w+,\{cacheExpiryInHours:24\}\)}, "void 0"
     bin.install_symlink libexec/"bin/shopify"
   end
 
