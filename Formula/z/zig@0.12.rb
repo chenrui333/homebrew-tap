@@ -22,11 +22,12 @@ class ZigAT012 < Formula
 
   depends_on "cmake" => :build
   depends_on "llvm@17" => :build
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
   depends_on "zstd"
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  deny_network_access!
 
   def install
     # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
