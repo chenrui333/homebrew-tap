@@ -17,10 +17,21 @@ class TddGuard < Formula
   depends_on "tree-sitter-cli" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+    # Cache the PHP grammar that `install` builds @ast-grep/lang-php against.
+    cd buildpath/"npm-fetch/lib/node_modules/tdd-guard/node_modules/@ast-grep/lang-php" do
+      system "npm", "install", "tree-sitter-php@0.24.2", *std_npm_args(prefix: false), "--no-save"
+    end
+  end
+
   def install
     ENV.prepend_path "PATH", formula_opt_bin("tree-sitter-cli")
 
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
@@ -29,7 +40,7 @@ class TddGuard < Formula
       rm_r(lang_dir/"prebuilds")
       cd lang_dir do
         if lang_dir.basename.to_s == "lang-php"
-          system "npm", "install", "tree-sitter-php@0.24.2",
+          system "npm", "install", "--offline", "tree-sitter-php@0.24.2",
                  *std_npm_args(prefix: false), "--no-save"
           rm_r("node_modules/tree-sitter-cli")
           rm("node_modules/.bin/tree-sitter")
