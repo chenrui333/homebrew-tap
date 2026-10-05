@@ -1,0 +1,14 @@
+Formula/j/jetzig.rb
+  h_9df9c32c3f321d 18-49,52-53,69-71,82-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f022672fc1f45e5466b61f86548f518e86458723",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
