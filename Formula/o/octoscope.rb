@@ -16,6 +16,12 @@ class Octoscope < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "."
   end
@@ -25,5 +31,8 @@ class Octoscope < Formula
 
     output = shell_output("#{bin}/octoscope --theme invalid 2>&1", 2)
     assert_match 'unknown theme "invalid"', output
+
+    ENV["NO_COLOR"] = "1"
+    assert_match(/Available themes:.*high-contrast.*phosphor/m, shell_output("#{bin}/octoscope --theme list"))
   end
 end
