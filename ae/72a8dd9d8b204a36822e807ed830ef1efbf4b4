@@ -1,0 +1,20 @@
+Formula/h/httptap.rb
+  s_20ee2ac03ef1eb::t_787a721a6e9354 19-24
+  s_20ee2ac03ef1eb::t_20ec17eb6c0214 30-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ae72a8dd9d8b204a36822e807ed830ef1efbf4b4",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
