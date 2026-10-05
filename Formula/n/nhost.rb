@@ -1,6 +1,6 @@
 class Nhost < Formula
   desc "Developing locally with the Nhost CLI"
-  homepage "https://docs.nhost.io/platform/cli/overview#cli-overview"
+  homepage "https://github.com/nhost/nhost"
   url "https://github.com/nhost/cli/archive/refs/tags/v1.31.3.tar.gz"
   sha256 "adb9cf2e6d2fabc81687c97559f1ab62e7373947667b582f1dc5ff93bc972713"
   license "MIT"
@@ -20,6 +20,8 @@ class Nhost < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
@@ -28,8 +30,12 @@ class Nhost < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/nhost --version")
 
-    system bin/"nhost", "init"
-    assert_path_exists testpath/"nhost/config.yaml"
+    # `nhost init` downloads email templates from GitHub; `config default` writes the same local config offline.
+    assert_match "Successfully generated default configuration",
+                 shell_output("#{bin}/nhost config default 2>&1")
     assert_match "[global]", (testpath/"nhost/nhost.toml").read
+    assert_path_exists testpath/".secrets"
+    assert_match "Configuration is valid", shell_output("#{bin}/nhost config validate 2>&1")
+    assert_match "adminSecret = 'nhost-admin-secret'", shell_output("#{bin}/nhost config show")
   end
 end
