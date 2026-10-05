@@ -19,18 +19,33 @@ class RamdaCli < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/ramda"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ramda --version 2>&1", 1)
 
-    output = shell_output("curl -Ls https://bit.ly/gist-people-json | " \
-                          "#{bin}/ramda 'filter (p) -> p.city?.match /Port/ " \
+    (testpath/"people.json").write <<~JSON
+      [
+        {"name": "Dr. Araceli Lang", "city": "Yvettemouth", "mac": "9e:ea:28:41:2a:50"},
+        {"name": "Terrell Boyle", "city": "Port Reaganfort", "mac": "c5:32:09:5a:f7:15"},
+        {"name": "Jane Doe", "city": "Springfield", "mac": "00:11:22:33:44:55"},
+        {"name": "Libby Renner", "city": "Port Reneeside", "mac": "9c:63:13:31:c4:ac"}
+      ]
+    JSON
+
+    output = shell_output("#{bin}/ramda 'filter (p) -> p.city?.match /Port/ " \
                           "or p.name.match /^Dr\\./' 'map pick [\"name\", \"city\", " \
-                          "\"mac\"]' 'take 3' -o table --compact")
+                          "\"mac\"]' 'take 3' -o table --compact < #{testpath}/people.json")
     assert_equal <<~EOS, output
       ┌──────────────────┬─────────────────┬───────────────────┐
       │ name             │ city            │ mac               │
