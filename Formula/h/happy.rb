@@ -7,10 +7,11 @@ class Happy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "7fae82cd897e19dfdfe1e4b4c7d46c84c0e11ddab8686e6c594d49b6625f8c0c"
-    sha256               arm64_sequoia: "7fae82cd897e19dfdfe1e4b4c7d46c84c0e11ddab8686e6c594d49b6625f8c0c"
-    sha256 cellar: :any, arm64_linux:   "5ca4cb8320e1818e484a2a582409fe1704e1311c5bd457bfaf34cb45df231b64"
-    sha256 cellar: :any, x86_64_linux:  "626a57a2dcf2ed3a2c0c15b0876f31ae269c8ee1a467b855d618e482e8c03905"
+    rebuild 1
+    sha256               arm64_tahoe:   "5d51ec46f70863ef510c1e2de94911d5e1f587c811f68a194832c7522f796cc4"
+    sha256               arm64_sequoia: "5d51ec46f70863ef510c1e2de94911d5e1f587c811f68a194832c7522f796cc4"
+    sha256 cellar: :any, arm64_linux:   "68dcf8d42d73cfbd87e6a626e2e147eb613b20e090bd4187f7610c2e742a19b8"
+    sha256 cellar: :any, x86_64_linux:  "b28f559bd2168a6eb497298afc641ed1437dd47a55292fc33a4654fa3d6c23dc"
   end
 
   depends_on "node"
@@ -20,8 +21,14 @@ class Happy < Formula
     depends_on "patchelf" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     node_modules = libexec/"lib/node_modules/happy/node_modules"
     os = OS.kernel_name.downcase
