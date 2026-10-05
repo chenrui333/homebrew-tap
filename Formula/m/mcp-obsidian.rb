@@ -10,7 +10,11 @@ class McpObsidian < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "654d7d0ee44f1c2594abaecfff89e123ef1e920ccfdf1fd99b0ed5972f4f6afe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6793683b51f439ea815bb851191a90e09b163ceed6032795c94fa20bd3f8780e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98d8e90814a4c5651a26e7b59b967581874052421c0c62e1a26e1aee76009aa5"
+    sha256 cellar: :any,                 arm64_linux:   "e3c90f03ee581cffd279c0bc683d306ce7c6fd17b11a68b4de1c53610279a78c"
+    sha256 cellar: :any,                 x86_64_linux:  "dc5e29044e60faae1b31a309a27e8cf3e91eddf52e97ceff158b45c2901c27b0"
   end
 
   depends_on "certifi" => :no_linkage
