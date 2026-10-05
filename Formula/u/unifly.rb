@@ -22,6 +22,12 @@ class Unifly < Formula
     depends_on "dbus"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     (buildpath/".cargo/config.toml").delete if OS.linux?
     system "cargo", "install", *std_cargo_args(path: "crates/unifly")
