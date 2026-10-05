@@ -8,21 +8,35 @@ class Htvend < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d21feff68dd2bd803f7b6acd3fecbf713bf99a4aff20280c1a4407cc94c3a57"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac11524bd74e66c4c3ac2742795e76b37e8ea58d3baa3d23131234a3b9d90d9a"
-    sha256 cellar: :any_skip_relocation, ventura:       "a91edc93b5a2eebf2c8ecbef8fd06c74638013b0baf6d541cc07533f7c5d138d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66861c9e3b5a92ce82e585203fcd1aedc01ef67749daac5571d0ec2db588af81"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6097e10d51a6b2e9c94fa547b389339c5cd5479257c5bd28e36c09b29d806f46"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6097e10d51a6b2e9c94fa547b389339c5cd5479257c5bd28e36c09b29d806f46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0a5a3290c77874a52d051c19e3b2203ca89f59235083805cb92acefcd99b202"
+    sha256 cellar: :any,                 x86_64_linux:  "376205d921b807bd5ef7674233c2a923ce641364082906be74126ce5dcc12853"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/htvend"
   end
 
   test do
-    output = shell_output("#{bin}/htvend build -- curl https://www.google.com 2>&1")
-    assert_match "Fetching URL: https://www.google.com/", output
-    assert_path_exists testpath/"assets.json"
+    blob = "hello"
+    sha = Digest::SHA256.hexdigest(blob)
+    (testpath/"cache"/sha).write blob
+    (testpath/"assets.json").write <<~JSON
+      {"https://example.com/hello.txt": {"Sha256": "#{sha}", "Size": #{blob.size}}}
+    JSON
+
+    output = shell_output("#{bin}/htvend export --blobs-dir cache -o out 2>&1")
+    assert_match "Verifying https://example.com/hello.txt", output
+    assert_equal blob, (testpath/"out"/sha).read
   end
 end
