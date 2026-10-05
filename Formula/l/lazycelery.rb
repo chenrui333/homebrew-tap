@@ -8,14 +8,20 @@ class Lazycelery < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5edd804874a42a0cfff589aaaf2932543f8952a81b423adf4249fbf0b05b80a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b143851d6d13d9df60716a938559f3c940c12bd6f884ce65d85ecd43977f0310"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "197a73f993a3305e056f7dd413661142495bd2d714375d97d02022e5f5eaf9f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a01c9cf37c38bee11f8c29ec49cf18fc98869ceb62489b4990e6ef32e5821d20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc413b1dbc4a7247c1c90272a2d62058124451555ae7b9b7a3337a034344e84e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36b695847b547888bf5197ea88f8b0b758c860710b19d0edf1a2929f1d23f7f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecf16077d3d960327c33e6f1cf27eed7750d65bb6cfb8a3f7ac060e7ea59a68e"
+    sha256 cellar: :any,                 arm64_linux:   "0180beb5ca9a9690bcbea26df8bb416e892b9c4a7393656a78e0f919306aa2ae"
+    sha256 cellar: :any,                 x86_64_linux:  "122e3a27c683d5035d495e5b2af3c1c91bd96bbd1500287d228c506f4c1068c6"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
