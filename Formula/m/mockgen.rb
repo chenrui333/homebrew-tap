@@ -8,12 +8,11 @@ class Mockgen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ad1a69790b85b2f1cfa2c9c431fe15119234897422d39a47c8382cd27bcb7c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ad1a69790b85b2f1cfa2c9c431fe15119234897422d39a47c8382cd27bcb7c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ad1a69790b85b2f1cfa2c9c431fe15119234897422d39a47c8382cd27bcb7c3"
-    sha256 cellar: :any_skip_relocation, sequoia:       "0423d869544eb90c04c16659a81088eb3c5b6c00f04de4f5caedc78dabba964c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ab9ed1c02f43a6d3f2625d6b972dba5ba701a65e79d2f250a9a6cb346408e86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81707a759e11898803d4a2b64428160a096ec33914358f7602bcd805d27996d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f689904be1bb63010e007439b95a54d2bda28b17d1408c6a18e30795427b3996"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f689904be1bb63010e007439b95a54d2bda28b17d1408c6a18e30795427b3996"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ac8605d2c295b60cc547a0a02797e6bc97dfa8c658ecb8e5c3ca3ed9c4cbd1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "804c77767ff2ff00b3315e0ae71601b8a3b98cf91f26de6b8e1579a60f7bfbcd"
   end
 
   depends_on "go" => [:build, :test]
