@@ -8,12 +8,11 @@ class KiteTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7c4644fd6e7fcc0c77dadc8b20864ef6c1d72d9f9dae060415b04bf95d2083b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ebd3436075ae49ef1981f30838d175b7c19c8e18f35f4ce5b21a1826af185c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03e4dcc51c19a9f2453f46a3bdcc5bfa30a4449a7e0fbe9fc9791717a81a9776"
-    sha256 cellar: :any,                 arm64_linux:   "3355274d01b7714f0f111ea7aff88f467b8f558c070493073a25c696ccb25bd8"
-    sha256 cellar: :any,                 x86_64_linux:  "566a47e27e924a0c2cbc56d3bbc485317b188599fb4481d5f9479fa676dd0787"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4c092c213197da8aae8c14e9ce49a86647d42a7c7b7f396c970154601194519"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da46fbdaacba12158d58c03a044461cdb02260b8868e93cbcd869e6445004099"
+    sha256 cellar: :any,                 arm64_linux:   "e332725b0b68955a8516dbffa407dc3bdcf20e9af1fc6cbbe08607284d2237e3"
+    sha256 cellar: :any,                 x86_64_linux:  "c6448b1044a4a10be044bc83d148522b90ec361b1c18dcd812be68bc46ce9eea"
   end
 
   depends_on "rust" => :build
