@@ -26,9 +26,16 @@ class NightWatchCli < Formula
     cause "better-sqlite3 fails to build"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
     ENV["npm_config_build_from_source"] = "true"
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
