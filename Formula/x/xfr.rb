@@ -17,6 +17,13 @@ class Xfr < Formula
 
   depends_on "rust" => :build
 
+  # xfr is a network throughput tester; the test runs its server and client over loopback.
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"xfr", "--completions")
