@@ -28,6 +28,8 @@ class SdlTtf < Formula
     sha256 "4c2e38bb764a23bc48ae917b3abf60afa0dc67f8700e7682901bf9b03c15be5f"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     inreplace "SDL_ttf.pc.in", "@prefix@", HOMEBREW_PREFIX
@@ -35,5 +37,29 @@ class SdlTtf < Formula
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-sdltest", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <stdio.h>
+      #include "SDL_ttf.h"
+      #undef main
+
+      int main(void) {
+        const SDL_version *v = TTF_Linked_Version();
+        printf("SDL_ttf %d.%d.%d\\n", v->major, v->minor, v->patch);
+        if (TTF_Init() != 0) {
+          fprintf(stderr, "TTF_Init: %s\\n", TTF_GetError());
+          return 1;
+        }
+        if (TTF_OpenFont("missing.ttf", 12) != NULL) return 1;
+        TTF_Quit();
+        return 0;
+      }
+    C
+
+    system ENV.cc, "test.c", "-I#{include}/SDL", "-I#{formula_opt_include("sdl12-compat")}/SDL",
+                   "-L#{lib}", "-lSDL_ttf", "-L#{formula_opt_lib("sdl12-compat")}", "-lSDL", "-o", "test"
+    assert_equal "SDL_ttf #{version}\n", shell_output("./test")
   end
 end
