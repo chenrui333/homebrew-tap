@@ -19,11 +19,17 @@ class YoutubeMusicCli < Formula
   depends_on "node"
   depends_on "yt-dlp"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "install", "--include=dev", "--legacy-peer-deps",
            *std_npm_args(prefix: false, ignore_scripts: false)
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
     system formula_opt_bin("homebrew/core/bun")/"bun", "run", "build"
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
 
     notifier_app = "lib/node_modules/@involvex/youtube-music-cli/node_modules/" \
                    "node-notifier/vendor/mac.noindex/terminal-notifier.app"
