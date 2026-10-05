@@ -8,7 +8,8 @@ class Jelly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "419a2ce0682a40fc80917bd56b81e6eec948293ae4cbaaa37025abd0509164fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0f60ccd9d2c8e1a59d97875742c1f9c2029eb16a42f8799ce1b4332b219c7a4c"
   end
 
   depends_on "bash"
@@ -19,8 +20,10 @@ class Jelly < Formula
   depends_on "mpv"
   depends_on "socat"
 
+  deny_network_access!
+
   def install
-    inreplace "src/jelly", "#!/usr/bin/env bash", "#!#{Formula["bash"].opt_bin}/bash"
+    inreplace "src/jelly", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash"
     inreplace "src/jelly",
               'DEFAULT_MEDIA_PLAYER=$([[ "$OSTYPE" == "darwin"* ]] && echo "iina" || echo "mpv")',
               'DEFAULT_MEDIA_PLAYER="mpv"'
