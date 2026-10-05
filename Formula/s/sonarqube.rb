@@ -23,6 +23,8 @@ class Sonarqube < Formula
 
   preserve_rpath
 
+  deny_network_access!
+
   def install
     inreplace "conf/sonar.properties" do |s|
       # Write log/data/temp files outside of installation directory
@@ -55,8 +57,8 @@ class Sonarqube < Formula
   end
 
   post_install_steps do
-    mkdir_p "run"
-    mkdir_p "sonarqube/logs"
+    mkdir_p "run", base: :var
+    mkdir_p "sonarqube/logs", base: :var
   end
 
   def caveats
@@ -73,10 +75,6 @@ class Sonarqube < Formula
   end
 
   test do
-    port = free_port
-    ENV["SONAR_WEB_PORT"] = port.to_s
-    ENV["SONAR_EMBEDDEDDATABASE_PORT"] = free_port.to_s
-    ENV["SONAR_SEARCH_PORT"] = free_port.to_s
     ENV["SONAR_PATH_DATA"] = testpath/"data"
     ENV["SONAR_PATH_LOGS"] = testpath/"logs"
     ENV["SONAR_PATH_TEMP"] = testpath/"temp"
