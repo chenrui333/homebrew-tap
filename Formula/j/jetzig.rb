@@ -9,15 +9,48 @@ class Jetzig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2281363f3df8ddaa80619ec0f6e1b5dfef89bc07e7e0e4f1b86c8d0317c7e284"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d3ba1dec0d178d5d6102f30056383a14a216b32c23c7c81bed2d9a081f18cbb"
-    sha256 cellar: :any_skip_relocation, ventura:       "28158e24d44810c78b2d2459a9f083922cd4c39b643372859a81dd0b8e7caca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4651ded8b65c79b4db6057010bd5e375ed0d098b0a8d108e2a641d37e58319c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bf0528dede135ae40aa96960e819e689e548590b7be5e2783315bc3db5304a3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf2ecac45cbb280174ecf47a685dc25e6405739bd7f640c8a9a4c95140f37c91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa0e73397ee468c9dc5a26121958b114ea69c634e40f82d68ed11cefba4ed8c"
   end
 
-  depends_on "zig" => :build
+  # The pinned commit targets Zig 0.14; newer Zig rejects its dependency manifests.
+  depends_on "zig@0.14" => :build
+
+  deny_network_access!
+
+  def zig_env
+    return {} unless OS.mac?
+
+    # Select Zig's bundled libc stubs; SDK 26's arm64e-only stubs break Zig 0.14.
+    developer_dir = formula_opt_prefix("zig@0.14").to_s
+    { "DEVELOPER_DIR" => developer_dir, "HOMEBREW_DEVELOPER_DIR" => developer_dir }
+  end
+
+  def fetch
+    ENV["ZIG_GLOBAL_CACHE_DIR"] = buildpath/"zig-cache"
+    cd "cli" do
+      with_env(zig_env) do
+        system "zig", "build", "--fetch"
+      end
+    end
+
+    # Zig 0.14 stores nested dependencies under named hashes, but their parents look up legacy hashes.
+    cache = buildpath/"zig-cache/p"
+    ln_s "N-V-__8AAAOLAACqscul40pNN-WUdWQuGSCOYnyXgKXRxOqz",
+         cache/"1220aab1cba5e34a4d37e59475642e19208e627c9780a5d1c4eab3661994a2872ca0"
+    ln_s "N-V-__8AAHOzAQBh8wB371GN1DXTl1mKs8Rdqj0sJea0U4P7",
+         cache/"122061f30077ef518dd435d397598ab3c45daa3d2c25e6b45383fb94d0bd2c3af1af"
+    ln_s "pg-0.0.0-AAAAADndBQDCVfY3_svxhenxusCtwVHlmcdmaxWRGzIn",
+         cache/"1220c255f637fecbf185e9f1bac0adc151e599c7666b15911b3227b0cc89c993acdc"
+    ln_s "zul-0.0.0-AAAAAB1CBwAz3vYuySVkzEk2y4cPRNnm6K7OFSv3K-Vk",
+         cache/"122033def62ec92564cc4936cb870f44d9e6e8aece152bf72be564b1cac542638c76"
+  end
 
   def install
+    ENV["ZIG_GLOBAL_CACHE_DIR"] = buildpath/"zig-cache"
+
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -33,7 +66,9 @@ class Jetzig < Formula
     args << "-Dcpu=#{cpu}" if build.bottle?
 
     cd "cli" do
-      system "zig", "build", *args
+      with_env(zig_env) do
+        system "zig", "build", *args
+      end
     end
   end
 
@@ -44,10 +79,9 @@ class Jetzig < Formula
     # else
     #   "Unable to detect Jetzig project directory"
     # end
-    # assert_match expected, shell_output("#{bin}/jetzig update 2>&1", 1)
-
-    # not checking output
-    shell_output("#{bin}/jetzig update 2>&1", 1)
+    # `update` runs `zig fetch` against GitHub; extra positional arguments are rejected before that.
+    output = shell_output("#{bin}/jetzig update a b 2>&1", 1)
+    assert_match "Expected at most 1 positional argument", output
 
     # currently it is hanging
     # pipe_output("#{bin}/jetzig init", "test\nbrewtest\n")
