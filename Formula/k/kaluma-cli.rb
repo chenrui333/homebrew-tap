@@ -7,10 +7,11 @@ class KalumaCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_sequoia: "df8e03e595b0bffad6ad69420609e38d7a295e20f4e82c88860e63bd79361e90"
-    sha256                               arm64_sonoma:  "f18c74d6a37cd3f3bee2322143da287e0e69c3741366cf6a4013e29c17ba8731"
-    sha256                               ventura:       "68cdc119d79f93ebe588c9f86ea8b903069b6a1153a28b95bd5eb3d2a56a54dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feb1713936812610833366396f00a1c4ba2ba03634c3e0f121ae5079641ff6fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c5e95b58fa8daf5b073befe23317279a1c0825bd753463eb4120d7df1861e7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "155f6687f50e5ccae5d2a253b18f86ec579d4371875bb9f4e6e19419dad6ba02"
+    sha256 cellar: :any,                 arm64_linux:   "08f2b75999888a336396429775a6330fde903bdc95c3fe1df2bd63672500f4d1"
+    sha256 cellar: :any,                 x86_64_linux:  "784fb43067111d22388997e14efff30426d4d9cafdd7c5ebf6cecc5ec1f3f0ec"
   end
 
   depends_on "libuv" => :build
