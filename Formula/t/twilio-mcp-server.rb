@@ -1,6 +1,6 @@
 class TwilioMcpServer < Formula
   desc "MCP server for Twilio"
-  homepage "https://twilioalpha.com/mcp"
+  homepage "https://github.com/twilio-labs/mcp"
   url "https://registry.npmjs.org/@twilio-alpha/mcp/-/mcp-0.7.0.tgz"
   sha256 "7ff791d1023cad6372496d8aba1c49bc3ffbcf0989b9f96b3a83d2df9d6af755"
   license "MIT"
@@ -15,8 +15,15 @@ class TwilioMcpServer < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
