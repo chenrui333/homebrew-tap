@@ -1,9 +1,8 @@
 class LightpandaV8 < Formula
   desc "Fork-specific V8 archive and Zig module layout for Lightpanda"
   homepage "https://github.com/lightpanda-io/zig-v8-fork"
-  url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.4.8-slim.0.tar.gz"
-  version "0.4.8-slim.0"
-  sha256 "664feb6687c237639718f958766cf8348ce46d2f784487db17ad421aaaa8858b"
+  url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.5.9.tar.gz"
+  sha256 "fc35ad8b6a49277adf7bf5184a78c1d9136cf2fb3a12a4ec047a999c73f8d55a"
   license "MIT"
   head "https://github.com/lightpanda-io/zig-v8-fork.git", branch: "main"
 
@@ -19,25 +18,27 @@ class LightpandaV8 < Formula
 
   if OS.mac? && Hardware::CPU.arm?
     resource "libc_v8" do
-      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.3.3/libc_v8_14.0.365.4_macos_aarch64.a"
-      sha256 "c9fb1286e07447d097a704d5ff1b305172f359796e20aaf132deee2d502acca0"
+      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.5.9/libc_v8_15.5.35.13_macos_aarch64.a"
+      sha256 "dc14027e53df891399522f6089296acfdf37207afaca1e49dd05c446d3fc475f"
     end
   elsif OS.mac? && Hardware::CPU.intel?
     resource "libc_v8" do
-      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.3.3/libc_v8_14.0.365.4_macos_x86_64.a"
-      sha256 "ea2037790c93bb45e8156219fb44638bb9f10ed6cbd988b62d88d39204b40167"
+      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.5.9/libc_v8_15.5.35.13_macos_x86_64.a"
+      sha256 "d0e23a65889c000a33cfc9048f3a35f55a69c6b06d65067c775cae19068ca2a5"
     end
   elsif OS.linux? && Hardware::CPU.arm?
     resource "libc_v8" do
-      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.3.3/libc_v8_14.0.365.4_linux_aarch64.a"
-      sha256 "1427c46de6da4918597640a720e2ba725410f41dcac57626291dd025a5968f69"
+      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.5.9/libc_v8_15.5.35.13_linux_aarch64.a"
+      sha256 "30edeb56ec8374364ccbb50965fc6671f3c95addf980b367d6bd4ef9d96cde34"
     end
   else
     resource "libc_v8" do
-      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.3.3/libc_v8_14.0.365.4_linux_x86_64.a"
-      sha256 "b875439b3df025a2da510388559fe66c4454ed660bc38101c54dd55af0b5d0c7"
+      url "https://github.com/lightpanda-io/zig-v8-fork/releases/download/v0.5.9/libc_v8_15.5.35.13_linux_x86_64.a"
+      sha256 "eed0fa1a97d815e2f5000e7a29153d62e06ef92d2d80a024598701394e9322cb"
     end
   end
+
+  deny_network_access!
 
   def install
     module_root = pkgshare/"zig-v8-fork"
