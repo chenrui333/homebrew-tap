@@ -9,10 +9,8 @@ class Mpfshell < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2ff730ac0f90a37c2b0bbfe1ecaf23a32fe0673b7b211987b42414f6f3d899a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d3762b8ac057a071fd7de4e085d1bbdc442e388a4c38f47a99e9285e694cdfa"
-    sha256 cellar: :any_skip_relocation, ventura:       "7f01e3e8dfa18907bfc55eb7aad4bf5435b15dd6097e7fa947a39f2752e9a1ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9aeb1690d110bbf3cad3a4eef5b6aa237eb49e5ea6b3288344cb1ab5f01795b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a040e3e5b406d90fc71ff8730e9977087536ea172f2baee5cdb052a04a3b2d90"
   end
 
   # `telnetlib` module issue with py3.13
