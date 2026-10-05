@@ -15,8 +15,14 @@ class RalphTui < Formula
 
   depends_on "bun"
 
+  deny_network_access!
+
+  def fetch
+    system formula_opt_bin("bun")/"bun", "install", "--frozen-lockfile", "--cache-dir", buildpath/"bun-cache"
+  end
+
   def install
-    bun = Formula["bun"].opt_bin/"bun"
+    bun = formula_opt_bin("bun")/"bun"
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     libopentui = "libopentui.#{OS.mac? ? "dylib" : "so"}"
@@ -24,7 +30,6 @@ class RalphTui < Formula
     webgpu_dir = buildpath/"node_modules/bun-webgpu-#{platform}-#{arch}"
     notifier_dir = buildpath/"node_modules/node-notifier/vendor/mac.noindex"
 
-    system bun, "install", "--frozen-lockfile"
     system bun, "run", "build"
 
     mv opentui_dir/libopentui, opentui_dir/"#{libopentui}.raw"
