@@ -13,20 +13,21 @@ class YewFmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a81bf6df247204659a5e2a8c007b2a577586ab0ffdeef7ce765057db7f16b59"
   end
 
-  depends_on "rust" => :build
-  depends_on "rustup" => :test
+  depends_on "rust" => [:build, :test]
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
-    ENV.prepend_path "PATH", Formula["rustup"].bin
-    system "rustup", "default", "beta"
-    system "rustup", "set", "profile", "minimal"
-    system "rustup", "component", "add", "rustfmt"
+    # Use the `rust` formula's rustfmt; installing a rustup toolchain needs network access.
+    ENV.prepend_path "PATH", formula_opt_bin("rust")
 
     assert_match version.to_s, shell_output("#{bin}/yew-fmt --version")
 
