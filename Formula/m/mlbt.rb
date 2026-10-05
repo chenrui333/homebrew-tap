@@ -8,13 +8,20 @@ class Mlbt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a1b5e48fb56eddd611501cbf81d894993f6b9245a96296bd5eee2eb750084e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9efab4e50b5910c16c6c09a787beaa379e48b2b9d72c5722ff3f56cb17211fad"
-    sha256 cellar: :any,                 arm64_linux:   "ce40d18e125a7cd7d35d4118b2978bdac5adaac6c47bc4f9fbe501ea8750a2e0"
-    sha256 cellar: :any,                 x86_64_linux:  "9b51364cb4d48f65516d0f76cd4823c45c3567eb02c1d06094953b018f7ec38e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f6c0feffa2db8a5dcf1f823014b0c23c3424b1b3b27cff76f5937b0d24a7e47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "935f3f86f8e4a31e616d500f008385943a7b38adfd4abeb3908e6784436f6f6b"
+    sha256 cellar: :any,                 arm64_linux:   "8817a784ff393302c7abbb789ab40dac714aac903fbc448b07bffa461ac27209"
+    sha256 cellar: :any,                 x86_64_linux:  "ae4192b9daded0922f840de438d925fe1311d16d404612708284ce87615fa458"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
