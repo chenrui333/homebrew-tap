@@ -8,15 +8,21 @@ class Jjj < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d34fbc07def1562736fa942c2a18cbda5c4948108c46a999debc032a8ef5dee"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fad778bcad0971617061ae44d26bc3753bc3f0f2dec50726cc3856d3f4ee37f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c7537aed75cfd55583764fb5d657b8c3b8eb3639956f95815aae218becd3d68"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13d89021a793f271dd4fc3d0d0afdab1a006e54d940c3dea64dfffb695b0911e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff7571cbd2d99cdbd116cbf3ec9743420d6d1067be936cf360b97904b9ab6110"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8c84d0b188f85f022ae8e1e8a57abf4019bfb185e7cc8852ad424ab4e1afe49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "490e8dfe5e8908a0edd6c6973322962fa6a067fd1129586cbdc73b8645f88c2c"
+    sha256 cellar: :any,                 arm64_linux:   "40f0187341ecbd7ad9978b62ca1024228b11925d05487091a22494bb72fa4e96"
+    sha256 cellar: :any,                 x86_64_linux:  "47331e20abbf602c7993609962aa7baed59a6b822aeaae469fd8eaf8877901e6"
   end
 
   depends_on "rust" => :build
   depends_on "jj"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
