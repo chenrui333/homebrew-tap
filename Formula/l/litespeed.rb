@@ -14,7 +14,7 @@ class Litespeed < Formula
     sha256 cellar: :any, x86_64_linux:  "cc5550ff12c71d6a823f3278290ebacbd9579cdda6a2735c74428df3066545d4"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
   depends_on "node"
 
   resource "opentui" do
@@ -22,9 +22,14 @@ class Litespeed < Formula
     sha256 "5c6263fccc41d2dce7dbfde0cdf358000d44c745bbde8a44013bcfc6674c0788"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "ci", "--no-audit", "--no-fund"
+  end
+
   def install
     ENV.prepend_path "PATH", formula_opt_bin("node")
-    system "npm", "ci", "--no-audit", "--no-fund"
     system "npm", "run", "build"
     system "npm", "prune", "--omit=dev"
 
