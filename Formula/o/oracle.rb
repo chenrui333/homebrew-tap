@@ -16,7 +16,9 @@ class Oracle < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "pnpm" => :build
+  # pnpm 11+ ignores the `pnpm` field in package.json (overrides, onlyBuiltDependencies),
+  # so the frozen lockfile no longer matches.
+  depends_on "pnpm@10" => :build
   depends_on "node"
 
   on_macos do
@@ -30,8 +32,23 @@ class Oracle < Formula
     depends_on "libsecret"
   end
 
+  deny_network_access!
+
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("pnpm@10")
+    # Native modules are built from source in install, not via prebuilt downloads here.
+    system "pnpm", "fetch", "--ignore-scripts", "--store-dir", buildpath/".pnpm-store"
+    rm_r "node_modules"
+  end
+
   def install
     ENV["npm_config_build_from_source"] = "true"
+    # Build native modules against Homebrew's Node headers instead of downloading them.
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
+    # Apply to every pnpm command: `pnpm prune` has no --offline/--store-dir flags and
+    # would otherwise recreate node_modules from the registry.
+    ENV["npm_config_store_dir"] = (buildpath/".pnpm-store").to_s
+    ENV["npm_config_offline"] = "true"
 
     system "pnpm", "install", "--frozen-lockfile"
     system "pnpm", "run", "build"
@@ -43,7 +60,7 @@ class Oracle < Formula
                          "terminal-notifier.app/Contents/MacOS/terminal-notifier' )"
       inreplace "#{toasted_notifier}/notifiers/notificationcenter.js",
                 bundled_notifier,
-                "'#{Formula["terminal-notifier"].opt_bin/"terminal-notifier"}'"
+                "'#{formula_opt_bin("terminal-notifier")/"terminal-notifier"}'"
     end
     rm_r "#{toasted_notifier}/vendor"
 
