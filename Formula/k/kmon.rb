@@ -7,12 +7,19 @@ class Kmon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "3e116256290d9815fbc17a33516d11f452201c8b10d71d79ecd1dc119c7cbdfc"
-    sha256 cellar: :any, x86_64_linux: "6fc3265a0780dc4825a3b57114b1ef31c406803550d82e39fe7443918985d981"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "2cdb13be5cea90d584695ad6d67d0ed56425bcb13a8581246cc8e0e6e5847ed1"
+    sha256 cellar: :any, x86_64_linux: "f34160159b232efa3f29f7b77828e7bd1791996fa3ff28449ac33fe82ac7d2d4"
   end
 
   depends_on "rust" => :build
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
