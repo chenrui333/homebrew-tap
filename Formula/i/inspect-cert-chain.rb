@@ -8,13 +8,20 @@ class InspectCertChain < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "edfbf4e05be91cfbe12eac5793b01a53d11c60fc40a9bd00b97f5e839d765ad8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a9ad92a51b3a4ae5bca8013ff8acbedac50e00ffd56e8f36468bbe8e4edd58d"
-    sha256 cellar: :any,                 arm64_linux:   "3320d63f5e3f2451fcf99cbe9e0eb96487a946ffe302945a7d6fdfe6300cfdb8"
-    sha256 cellar: :any,                 x86_64_linux:  "7afcf0be9d02b4ee2c77428baa30d666ebd07193db88d50983905c26032b3bc3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b3a92fb21c9ff0c88376f7af7f96b7f5a09f295cbbdf0939ad1f10c4eee443c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f77bcce968e278c8265f034d35fc3426bf815614642166c1632e9c3abe6b896"
+    sha256 cellar: :any,                 arm64_linux:   "7cd65991ebceefac4107a53e0dc4c86960ac7de6085afe267f1129e2f2509a41"
+    sha256 cellar: :any,                 x86_64_linux:  "3ecd65209851a18ad314f474781f3e614a143efef919efae86cf86ce52216128"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -25,8 +32,24 @@ class InspectCertChain < Formula
 
     assert_match version.to_s, shell_output("#{bin}/inspect-cert-chain --version")
 
-    output = shell_output("#{bin}/inspect-cert-chain --host example.com")
+    # Self-signed localhost certificate from upstream tests/fixtures/server.pem
+    (testpath/"server.pem").write <<~PEM
+      -----BEGIN CERTIFICATE-----
+      MIIBnDCCAUGgAwIBAgIUOA4/L9uhWvS2eC0/NL5gdeUBv3kwCgYIKoZIzj0EAwIw
+      FDESMBAGA1UEAwwJbG9jYWxob3N0MCAXDTI2MTAwMTE3MjU0OFoYDzIxMjYwOTA3
+      MTcyNTQ4WjAUMRIwEAYDVQQDDAlsb2NhbGhvc3QwWTATBgcqhkjOPQIBBggqhkjO
+      PQMBBwNCAASQNn6U+HvIESv9njiWUfOv4NVWXXqb5rQWRA+LgF7Cr0DefNIYSmDx
+      +jfR3s00qjt45D58UcUjtoqMxfNQoFHgo28wbTAdBgNVHQ4EFgQUMEMpA4/NTmVN
+      48LCAiU89/1seZUwHwYDVR0jBBgwFoAUMEMpA4/NTmVN48LCAiU89/1seZUwDwYD
+      VR0TAQH/BAUwAwEB/zAaBgNVHREEEzARgglsb2NhbGhvc3SHBH8AAAEwCgYIKoZI
+      zj0EAwIDSQAwRgIhAJ0Hh3+XT1aATksG4dY6mQV93Pu3zuGFAxnJ1wLqruhmAiEA
+      xb1L0Cw58Czoo6231F738JuRGkXporzY8bKgfmapjUA=
+      -----END CERTIFICATE-----
+    PEM
+
+    output = shell_output("#{bin}/inspect-cert-chain --file #{testpath}/server.pem")
     output = output.gsub(/\e\[[0-9;]*m/, "") # Remove ANSI color codes
-    assert_match(/Subject: CN=(\*\.)?example\.com/, output)
+    assert_match "Subject: CN=localhost", output
+    assert_match "Issuer: CN=localhost", output
   end
 end
