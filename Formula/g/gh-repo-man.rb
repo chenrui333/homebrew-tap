@@ -1,8 +1,8 @@
 class GhRepoMan < Formula
   desc "Manage GitHub repositories interactively from the terminal"
   homepage "https://github.com/2KAbhishek/gh-repo-man"
-  url "https://github.com/2KAbhishek/gh-repo-man/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "beb52c99fb100344c81bd0ee7272b1f92e71458e4dbd1cc7e90c3f77843bbab3"
+  url "https://github.com/2KAbhishek/gh-repo-man/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "9dc00f463a52346ea95e493e34555094b295487712a0035947ad221db788d1e9"
   license "MIT"
   head "https://github.com/2KAbhishek/gh-repo-man.git", branch: "main"
 
