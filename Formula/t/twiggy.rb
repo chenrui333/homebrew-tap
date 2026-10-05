@@ -1,6 +1,6 @@
 class Twiggy < Formula
   desc "Code size profiler for Wasm"
-  homepage "https://rustwasm.github.io/twiggy/"
+  homepage "https://github.com/rustwasm/twiggy"
   url "https://github.com/rustwasm/twiggy/archive/03aa20f06cd7aacb1c890c164037f860f16fa9f0.tar.gz"
   version "0.7.0" # bug report on the tag, https://github.com/rustwasm/twiggy/issues/750
   sha256 "e46bf450066e3eac0e95d06b3249760f4425e22477a55293566389ae27273fb3"
@@ -15,6 +15,12 @@ class Twiggy < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "twiggy")
