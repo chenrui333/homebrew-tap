@@ -7,16 +7,23 @@ class Lin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd90fc4c4611b1daa835b79e725dec6f3ea83a40978b3aa873e2804d5ea54ae7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cca5e8cdf14b307f751c0d6efd10fd9b0804b5db86c10e661e35e137dd643e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "137f9bd1e9e496ce7978c11c89076957284e062a7ba96667de039af30beaa039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55161b4267fb88ee1e972743736d87d8098921df5a496c736eaf0669ee3bd304"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45dbfd73bdc843c6b29592014ab9a9fbf5f244c7cc0a91818758cbbc8e62e3ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45dbfd73bdc843c6b29592014ab9a9fbf5f244c7cc0a91818758cbbc8e62e3ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aeee7d9e7c6daffd4d8a699040486bcc9c6ab993db4866c46614631d174d83e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c24af017a7ed27705559bd1549c027f7a3ebee37e1b22982b808b6bb07801b9"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
