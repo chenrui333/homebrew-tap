@@ -15,8 +15,14 @@ class IamCollect < Formula
   # Preserve npm's env shebangs so the JavaScript payload stays platform-independent.
   skip_clean "libexec"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     # npm tarballs ship a stale generated version file; align CLI output with package.json.
     version_regexp = /IAM_COLLECT_VERSION = '[^']+';/
     inreplace libexec/"lib/node_modules/@cloud-copilot/iam-collect/dist/cjs/config/version.js",
@@ -32,6 +38,8 @@ class IamCollect < Formula
     system bin/"iam-collect", "init"
     assert_path_exists testpath/"iam-collect.jsonc"
 
+    # Skip the EC2 instance metadata provider so the credential chain fails without network access.
+    ENV["AWS_EC2_METADATA_DISABLED"] = "true"
     assert_match "Could not load credentials from any providers", shell_output("#{bin}/iam-collect download 2>&1", 1)
   end
 end
