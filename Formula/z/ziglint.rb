@@ -13,12 +13,18 @@ class Ziglint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62f8e037826afa5ea500456713fc1dc3b76d193b6af8e2f674c410aa5600a6d7"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
+
+  deny_network_access!
+
+  def fetch
+    system formula_opt_bin("zig@0.16")/"zig", "build", "--fetch"
+  end
 
   def install
     args = ["-Dversion=#{version}"]
 
-    zig = formula_opt_bin("zig")/"zig"
+    zig = formula_opt_bin("zig@0.16")/"zig"
     system zig, "build", *args, *std_zig_args(release_mode: :fast)
   end
 
