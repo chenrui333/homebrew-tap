@@ -7,10 +7,11 @@ class McpServerCloudflare < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2483fbb6b676ec7d58edb90e38823e14a10667872db078110d6035cd08497e3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea9be73e09a703827b2a7c4fda349dfcd3a727312dbf0235078d23e6bd4d0bdc"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a6e76690b194b4ee352c2c1eeeef09b203327b7fa4bd203d3ebef38dc572ffe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a8dbe78228ce18a73ba48fcb962934d636eb4f1c2987f5371c392cf7c4e498a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5970eac3661ee7f5ddff829cd99f6dfe0f50c203db4ad213fe501321c2f8b709"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5970eac3661ee7f5ddff829cd99f6dfe0f50c203db4ad213fe501321c2f8b709"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f1fa7a4b0ebe4d31adb68547c766028f41b85ae9a92c0ffe4e4bf6c9fc3da13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f1fa7a4b0ebe4d31adb68547c766028f41b85ae9a92c0ffe4e4bf6c9fc3da13"
   end
 
   depends_on "node"
