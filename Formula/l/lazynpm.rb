@@ -7,13 +7,16 @@ class Lazynpm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5cad900e82898feddd475d60b0e54653528b56a2fdea6ec9710e7c36187acea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c761c834974ca3b280a237a10dbe7d22ba8c54709dede46332e583f50e2df6dc"
-    sha256 cellar: :any_skip_relocation, ventura:       "585173f0a0c6bffd15e945d2a420da87614edaf809b1b1c59d57624f995787c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c25badce8fad153f2cfccdd1380ea0e062f97df3b66ce637e6fd5d8aa5e00f9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d062393550072bcbb8b538f29278dec51287b82d62885b9aa8342d0f90e837f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d062393550072bcbb8b538f29278dec51287b82d62885b9aa8342d0f90e837f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18f2f07ec26ff037f4b5de835ef6b857d406e47cf68b2b214fee53349c08756f"
+    sha256 cellar: :any,                 x86_64_linux:  "0ce61fea87a228227cf109f5300b300fb520b30d7629cfc4e7cffe33de4a6303"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601} -X main.buildSource=binaryRelease"
