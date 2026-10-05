@@ -22,6 +22,13 @@ class Sshmail < Formula
 
   depends_on "go" => :build
 
+  # The test registers an account by SSHing into a local hub over loopback.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     (var/"sshmail").mkpath
 
