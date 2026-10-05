@@ -9,18 +9,23 @@ class Nanoclaw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "5eed76b3f8cdf7cca0448192aef923f4c14c8bb94d3cd1273724e57ea39c4059"
-    sha256 cellar: :any,                 arm64_sequoia: "ee56c0175da9b9654fa642ddee01abf044666ba6552c825f9890978272ae6ae5"
-    sha256 cellar: :any,                 arm64_sonoma:  "3bc56d3a37c14ef206542bf2c6cb285abfbce0b71aaa948a90fe80782c1800bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dca19e1d8898a9ebc948cf2b024e217b50e761e06007d256d752d371bf0c9832"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed3e9959a2488037028f8ad7888cf8b8372644384a3dc4ac0f3e76a1510cfbca"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "3256d7e5a3be199f4071ace0e1adce6b6cacb70c808c7238bb2810695ba05e43"
+    sha256 cellar: :any, arm64_sequoia: "8d9dedb4344ede9f8ddb550e60a0d99887c5602f3c117a3ed22aee926367d2d0"
+    sha256 cellar: :any, arm64_linux:   "7a6ba762bd1ab2867fffe086af746b84ef5133c4934268b6577b33b9209a109e"
+    sha256 cellar: :any, x86_64_linux:  "2275728479821f3537e7f070f051baf821fec5c8f18edbd3cacb9634d36dc7c3"
   end
 
   depends_on "node@24"
 
+  deny_network_access!
+
+  def fetch
+    system formula_opt_bin("node@24")/"npm", "ci"
+  end
+
   def install
-    npm = Formula["node@24"].opt_bin/"npm"
-    system npm, "ci"
+    npm = formula_opt_bin("node@24")/"npm"
     system npm, "run", "build"
     system npm, "prune", "--omit=dev"
     rm_r Dir["node_modules/@img/*linuxmusl*"]
@@ -34,7 +39,7 @@ class Nanoclaw < Formula
         exit 0
       fi
 
-      exec "#{Formula["node@24"].opt_bin}/node" "#{libexec}/dist/index.js" "$@"
+      exec "#{formula_opt_bin("node@24")}/node" "#{libexec}/dist/index.js" "$@"
     SH
     chmod 0755, bin/"nanoclaw"
   end
@@ -47,7 +52,7 @@ class Nanoclaw < Formula
     EOS
 
     output = shell_output(
-      "#{Formula["node@24"].opt_bin}/node -e \"#{node_eval}\"",
+      "#{formula_opt_bin("node@24")}/node -e \"#{node_eval}\"",
     )
     assert_match "load-ok", output
   end
