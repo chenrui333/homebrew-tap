@@ -17,6 +17,8 @@ class Tinifier < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
   def install
     ldflags = "-s -w -X gh.tarampamp.am/tinifier/v5/internal/version.version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/tinifier"
