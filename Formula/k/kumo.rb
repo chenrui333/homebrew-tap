@@ -8,10 +8,11 @@ class Kumo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c1ce8d1c894fef3a2531549085a6ade1176801e666fe708721e30c59093b8207"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1ce8d1c894fef3a2531549085a6ade1176801e666fe708721e30c59093b8207"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6137d6504f32fef9e51499c408f2997a4c2626cbdc7f2629fbe370de3f6fe988"
-    sha256 cellar: :any,                 x86_64_linux:  "6da42bbb643f823f46c01995f4828a4c037f25146a713f25f1865e298cb33b83"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "679e9c1aa4889ffbc7fe56ee19f51143ce763cc62f354183a09d345879551623"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "679e9c1aa4889ffbc7fe56ee19f51143ce763cc62f354183a09d345879551623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a1b49e092ebe55143b5473ab7b6cf26504fe1472cfc418026dd53bf94fe27e5"
+    sha256 cellar: :any,                 x86_64_linux:  "a5b0ad5c3bd953c0b08a9c1aa5d754030c2a0af91c1f46eb13a0ef8de33c2a32"
   end
 
   depends_on "go" => :build
