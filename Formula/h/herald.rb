@@ -14,11 +14,11 @@ class Herald < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90760d15ddec4f001564921f0945e617ac488d62565fdc1e3308e7f836084ccd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62c58485988cf8380bb0dde7af0442c40d24d8a88c076716b8ce80e0951012ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b65feb3079822657cea2caf019297de0a2893b9a6ee959ffe5e1cde4072bfab6"
-    sha256 cellar: :any,                 arm64_linux:   "1f27d3676a794a8409062d1403466d0918d9e2f8540db716b8138449a4050cc4"
-    sha256 cellar: :any,                 x86_64_linux:  "29ef4c68a8979aa531dbf45700b13ab787c61573075573f79d36e022c034852c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01c08a2f3f7e03adf2bb51fb6dc63dc48b8d0b360632862aae2724d8f2541565"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51e46d6602bcb695cddbd1194e77bd5c54745d77b06fb24f89236d5d634cf129"
+    sha256 cellar: :any,                 arm64_linux:   "2f3b15691ec17c571736db726aae6cede37ba45935b5c8c0157a66aa3d5494af"
+    sha256 cellar: :any,                 x86_64_linux:  "b4aab0adc9f86a15047031a64b9557264f8213d556a9e56879c273c5ebf01778"
   end
 
   depends_on "go" => :build
