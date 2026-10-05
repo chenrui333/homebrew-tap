@@ -1,0 +1,19 @@
+Formula/m/mcp-obsidian.rb
+  s_20ee2ac03ef1eb::t_b94b0c61036341 22-27,39-43,54-63,69-83,104-108,119-123,129-148,179-188,199-208,214-218,224-235,237-264
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a9a0d9de5d6882e66f38207348fd214be4dd40c6",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
