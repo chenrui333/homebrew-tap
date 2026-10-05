@@ -10,13 +10,17 @@ class MlxVlm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "caa2b54c3284a0e30c13878f5f8282b7d27db5fbf35f2efba4715a875f42dda3"
-    sha256 cellar: :any, arm64_sequoia: "a37c769182c4f2d748e98b94c0705acbda811948e2e1f7b7534a03ae98bbb4f1"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "0333d1fe5980e0b94b56c0f70abc2c47c549e16a48732219746117f5ce514594"
+    sha256 cellar: :any, arm64_sequoia: "f89c81bffc0c08d310b19a548809583fc2666a30260b589068d206601d20e271"
   end
 
   depends_on "cmake" => :build
+  depends_on "cython" => :build
+  depends_on "maturin" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "pybind11" => :build # for sentencepiece
   depends_on "rust" => :build
   depends_on arch: :arm64
   depends_on "certifi" => :no_linkage
@@ -34,17 +38,11 @@ class MlxVlm < Formula
   depends_on "python@3.14"
   depends_on "scipy" => :no_linkage
 
-  pypi_packages exclude_packages: %w[
-    certifi
-    datasets
-    mlx
-    mlx-lm
-    numpy
-    opencv-python
-    pillow
-    pydantic
-    scipy
-  ]
+  pypi_packages exclude_packages: %w[certifi datasets mlx mlx-lm numpy opencv-python pillow pydantic scipy],
+                extra_packages:   %w[
+                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling pathspec pdm-backend pluggy
+                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                ]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
@@ -54,6 +52,11 @@ class MlxVlm < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
     sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+  end
+
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
   end
 
   resource "cffi" do
@@ -81,6 +84,11 @@ class MlxVlm < Formula
     sha256 "2b155f098c4f285fb41954a22c616c4e8a0635b78c184338ba3023c1c91a4b4d"
   end
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+  end
+
   resource "fsspec" do
     url "https://files.pythonhosted.org/packages/77/cd/9be253869fc42e764de7f3dedd6969af7d44ff9c3375214a3442a6f3fc08/fsspec-2026.9.0.tar.gz"
     sha256 "0f08147951c8cb31d844c3547d631053b127863b60be04cf06e121333ee0e2fe"
@@ -89,6 +97,21 @@ class MlxVlm < Formula
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "hf-xet" do
@@ -156,6 +179,26 @@ class MlxVlm < Formula
     sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
   resource "pycparser" do
     url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
     sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
@@ -201,6 +244,16 @@ class MlxVlm < Formula
     sha256 "3d2b5e824b5622038dc7b490897efe05ebbbb9e7350fc142f3ecc8789ef9bdf6"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -221,6 +274,11 @@ class MlxVlm < Formula
     sha256 "7f0f085686b9de0d0079e6f874ae053600db64c5d13049e0bbc0119926d25aac"
   end
 
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
     sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
@@ -229,6 +287,11 @@ class MlxVlm < Formula
   resource "transformers" do
     url "https://files.pythonhosted.org/packages/0e/9e/750649904a065007a838981785b2bd8d9ff26154c6c341ac67d0b7f82c68/transformers-5.17.0.tar.gz"
     sha256 "a153be279169b55b92d8000bf4af294aed684503d091cca7804da2dd8a9de000"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "typer" do
@@ -246,27 +309,84 @@ class MlxVlm < Formula
     sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   end
 
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/18/72/fba934cb3dff7a85d811820efffcd141ddd52b5a2a01637f64551373ff4d/websockets-17.1.tar.gz"
     sha256 "acfea4c20bf54384883ea33b1240fc1db4f52e190823a4e2b334bc3e8bfca96a"
   end
 
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  deny_network_access!
+
+  def fetch
+    # maturin runs `cargo metadata`, which needs crates for every target, not only the host
+    resource("hf-xet").stage { cd("hf_xet") { system "cargo", "fetch", "--locked" } }
+    resource("llguidance").stage { system "cargo", "fetch", "--locked" }
+    %w[safetensors tokenizers].each do |name|
+      resource(name).stage { cd("bindings/python") { system "cargo", "fetch", "--locked" } }
+    end
+  end
+
   def install
     # tokenizers builds a PyO3 extension through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
-    venv = virtualenv_install_with_resources(without: %w[hf-xet sentencepiece])
+
+    build_resources = %w[
+      flit-core
+      packaging
+      pathspec
+      pdm-backend
+      poetry-core
+      setuptools
+      calver
+      cffi
+      tomlkit
+      trove-classifiers
+      vcs-versioning
+      setuptools-scm
+      pluggy
+      hatchling
+      hatch-fancy-pypi-readme
+      hatch-vcs
+      wheel
+      pycparser
+    ]
+
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+
+    venv = virtualenv_create(libexec, "python3.14")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r|
+      build_resources.include?(r.name) || %w[hf-xet sentencepiece].include?(r.name)
+    }, build_isolation: false
 
     resource("sentencepiece").stage do
       # Upstream hard-codes a macOS 10.9 deployment target, but its bundled abseil requires macOS 10.13 or newer.
       inreplace "setup.py", "      cflags.append('-mmacosx-version-min=10.9')\n", ""
-      venv.pip_install Pathname.pwd
+      # The sdist already ships abseil-cpp; FetchContent_Populate would delete it and git clone it again.
+      inreplace "sentencepiece/CMakeLists.txt",
+                /^  include\(FetchContent\)\n  FetchContent_Populate\(abseil-cpp\n.*?\)\n/m, ""
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
 
     resource("hf-xet").stage do
       # aws-lc-sys requires jitterentropy to be compiled without optimization.
       ENV.O0
-      venv.pip_install Pathname.pwd
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     mlx_lm_site_packages = Language::Python.site_packages(venv.root/"bin/python3")
     pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("mlx-lm")/mlx_lm_site_packages}')\n"
