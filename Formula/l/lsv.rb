@@ -8,14 +8,20 @@ class Lsv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e9adfc5323bdd538f78950d23de6067486bbc500b4266f1174583871403f5fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "764d3314cc392d1cbfa6b14c51a486dd08fa894e15e08f3b78b7f6ac9c6632fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eaed3b9638e42218823decb8c4af6a5bdc199fecbc5c56efe56dea3553724cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efcb2243d1d2814f43674c3ea37264684ff4b94c5dfb963b163034322688f231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8273c2e4e4cf01bd77d2b8fea10f7f347663861dfcd313e7de41d13706609bf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "990e19688eea20807033d0870d916fa79c90fa6a7fbf00be6be4094e11803ece"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25184c5f02d711724f7177f1092d136db03c3e659acd6524060616f35344ec18"
+    sha256 cellar: :any,                 arm64_linux:   "2622dd224b2c00201661d76672355de1771d31cfa634ffcf3f6ae25d7bd08776"
+    sha256 cellar: :any,                 x86_64_linux:  "e0540911ceb64f5b9744e4a0898c79d34f42f7cd3ef3c54fda64636a49701da8"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
