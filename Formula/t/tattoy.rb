@@ -21,15 +21,33 @@ class Tattoy < Formula
     depends_on "libxcb"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/tattoy")
   end
 
   test do
-    # failed with Linux CI, `No such device or address (os error 6)`
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    require "pty"
+    require "timeout"
 
-    # failed to query terminal's palette
-    assert_match version.to_s, shell_output("#{bin}/tattoy --version")
+    # tattoy opens the controlling terminal before parsing CLI args, so even
+    # `--version` needs a TTY (no TTY: `os error 6`; inherited CI TTY can hang).
+    output = +""
+    Timeout.timeout(30) do
+      PTY.spawn("stty cols 120 rows 40; exec #{bin}/tattoy --version") do |r, _w, pid|
+        begin
+          r.each_line { |line| output << line }
+        rescue Errno::EIO
+          # PTY closed after the process exited
+        end
+        Process.wait(pid)
+      end
+    end
+    assert_match "tattoy #{version}", output
   end
 end
