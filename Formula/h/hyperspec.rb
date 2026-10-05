@@ -16,8 +16,11 @@ class Hyperspec < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "15b43c8aa3528fe24dc660468f70249ac2938c4e81772ddd28889f15f5ff9a1d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "445b5087ffef6bdc37a7fe436bf5192d7cd73a41c11a5e264bebfc3032160ee3"
   end
+
+  deny_network_access!
 
   def install
     doc.install Dir["*"]
