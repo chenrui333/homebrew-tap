@@ -8,13 +8,20 @@ class Lix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "df5571b67eb602561818c246300b948115b05051189e248e4affd674b3341468"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b4faf12fb01217e560792e0e4009bce523b3fd7e1fafc8af834c1298509b281a"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/lix"
   end
 
