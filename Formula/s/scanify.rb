@@ -22,6 +22,12 @@ class Scanify < Formula
     depends_on "swift"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/scanify"
