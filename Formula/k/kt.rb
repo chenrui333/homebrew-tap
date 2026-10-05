@@ -13,13 +13,20 @@ class Kt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4957a71a790eb96db793042c77f2b0b1127ff64dcd94a058293f996905f7edcb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55b222b91c09fff82bb36f76b9953074332f1e6efff6a8b0d2ece02770ea71d5"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c999627aa0c1fe8a16ad2e8e6f07b0e3fc14ea5eb92c83908c93bc481befcfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acd1732e2248a981db97691cd9b8776230da921b03f56ec2ca86ea54f6c242cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85961d3a6eb74c8dd3ffccbdcd3a373bd61ef4999fd4d7d45ef58ed9c7a169ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85961d3a6eb74c8dd3ffccbdcd3a373bd61ef4999fd4d7d45ef58ed9c7a169ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f4a2f906266bdcd7de68e52a1c2adadb40bc22e8b11f9519ae153f4bd2ac82"
+    sha256 cellar: :any,                 x86_64_linux:  "9a2193242a24600041abf0d1096d86c94f1b4c3324f8d43c484ab115315f682a"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildTime=#{time.iso8601}"
@@ -29,7 +36,9 @@ class Kt < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/kt --version")
 
-    output = shell_output("#{bin}/kt produce -topic greetings 2>&1", 1)
-    assert_match "failed to find leader for given topic", output
+    (testpath/"auth.json").write '{"mode":"Kerberos"}'
+    output = shell_output("#{bin}/kt produce -topic greetings -auth #{testpath}/auth.json 2>&1 </dev/null", 1)
+    # spellchecker:ignore-next-line
+    assert_match 'failed to setup auth err=unsupport auth mode: "Kerberos"', output
   end
 end
