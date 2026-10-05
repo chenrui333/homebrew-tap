@@ -10,7 +10,8 @@ class Markdownify < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1b5172569ac924810e064dac39b92373fff0f205a9be4befcae77add10920800"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "76ec187267029ea603460ef59b669389974443b957730bd6903afc5646def510"
   end
 
   depends_on "python@3.14"
