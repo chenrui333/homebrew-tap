@@ -119,12 +119,48 @@ jobs:
             fi
           fi
 
-          if [[ "$published_status" == true || -n "$legacy_marker_author" ]]; then
+          # A previous attempt can push bottle commits and then fail before recording the status. Recover only an
+          # exact chain of BrewTestBot bottle commits on top of a source head that passed tests on this PR branch.
+          recovered_bottle_commit=false
+          if [[ "$published_status" != true && -z "$legacy_marker_author" ]]; then
+            candidate="$expected_head"
+            bottle_commits=0
+            reached_source_head=false
+            while (( bottle_commits < 20 )); do
+              commit_data="$(gh api "repos/$GITHUB_REPOSITORY/commits/$candidate")"
+              if ! jq -e --arg email "1589480+BrewTestBot@users.noreply.github.com" '
+                  .commit.author.name == "BrewTestBot" and .commit.author.email == $email and
+                  .commit.committer.name == "BrewTestBot" and .commit.committer.email == $email and
+                  (.parents | length) == 1 and
+                  (.commit.message | test("^[^\\s:]+: (add|update) \\S+ bottle\\.$")) and
+                  (.files | length) == 1 and .files[0].status == "modified" and
+                  (.files[0].filename | test("^Formula/.+\\.rb$"))' > /dev/null <<< "$commit_data"; then
+                reached_source_head=true
+                break
+              fi
+              bottle_commits=$((bottle_commits + 1))
+              candidate="$(jq -r '.parents[0].sha' <<< "$commit_data")"
+            done
+
+            if [[ "$reached_source_head" == true ]] && (( bottle_commits > 0 )); then
+              source_tested="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/tests.yml/runs?head_sha=$candidate&event=pull_request&status=success" | \
+                jq -r --arg sha "$candidate" --arg repo "$GITHUB_REPOSITORY" --arg branch "$head_branch" '
+                  [.workflow_runs[] | select(.head_sha == $sha and .head_repository.full_name == $repo and .head_branch == $branch)] |
+                  length > 0')"
+              if [[ "$source_tested" == true ]]; then
+                echo "::warning::PR head $expected_head is $bottle_commits BrewTestBot bottle commit(s) on tested source head $candidate without a published-bottle status; reconciling."
+                recovered_bottle_commit=true
+              fi
+            fi
+          fi
+
+          if [[ "$published_status" == true || -n "$legacy_marker_author" || "$recovered_bottle_commit" == true ]]; then
             echo "Published bottle commit already matches the current PR head; publication is a no-op."
             {
               echo "publish=false"
               echo "published_head=$expected_head"
               echo "legacy_marker_author=$legacy_marker_author"
+              echo "recovered_bottle_commit=$recovered_bottle_commit"
             } >> "$GITHUB_OUTPUT"
           else
             echo "publish=true" >> "$GITHUB_OUTPUT"
@@ -138,6 +174,7 @@ jobs:
           VERIFIED_PUBLISHED_HEAD: ${{ steps.pr-details.outputs.published_head }}
           LEGACY_MARKER_AUTHOR: ${{ steps.pr-details.outputs.legacy_marker_author }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
+          RECOVERED_BOTTLE_COMMIT: ${{ steps.pr-details.outputs.recovered_bottle_commit }}
         run: |
           set -euo pipefail
           pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
@@ -147,10 +184,12 @@ jobs:
           state="$(jq -r '.state' <<< "$pr_data")"
           draft="$(jq -r '.draft' <<< "$pr_data")"
           base_branch="$(jq -r '.base.ref' <<< "$pr_data")"
+          remote_git_head="$(git ls-remote "https://github.com/$GITHUB_REPOSITORY.git" "refs/heads/$HEAD_BRANCH" | cut -f1)"
           if [[ "$state" != "open" || "$draft" != "false" || "$base_branch" != "main" ||
                 "$current_head_repo" != "$GITHUB_REPOSITORY" ||
                 "$current_head_branch" != "$HEAD_BRANCH" ||
-                -z "$VERIFIED_PUBLISHED_HEAD" || "$current_head_sha" != "$VERIFIED_PUBLISHED_HEAD" ]]; then
+                -z "$VERIFIED_PUBLISHED_HEAD" || "$current_head_sha" != "$VERIFIED_PUBLISHED_HEAD" ||
+                "$remote_git_head" != "$VERIFIED_PUBLISHED_HEAD" ]]; then
             echo "::error::Refusing to mark bottles published because the current PR head no longer matches the verified published head."
             exit 1
           fi
@@ -161,6 +200,10 @@ jobs:
               exit 1
             fi
             echo "Migrating the verified legacy comment marker from $LEGACY_MARKER_AUTHOR to a commit status."
+            GH_TOKEN="$BOT_TOKEN" gh api --method POST --silent "repos/$GITHUB_REPOSITORY/statuses/$VERIFIED_PUBLISHED_HEAD" \
+              -f state=success -f context="$PUBLISHED_HEAD_CONTEXT" -f description="Bottle commit published"
+          elif [[ "$RECOVERED_BOTTLE_COMMIT" == true ]]; then
+            echo "Recording the published-bottle status for bottle commits pushed by a previous attempt."
             GH_TOKEN="$BOT_TOKEN" gh api --method POST --silent "repos/$GITHUB_REPOSITORY/statuses/$VERIFIED_PUBLISHED_HEAD" \
               -f state=success -f context="$PUBLISHED_HEAD_CONTEXT" -f description="Bottle commit published"
           fi
@@ -298,16 +341,21 @@ jobs:
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
+          EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
           set -euo pipefail
           pr_head_verified=false
+          pr_head_observed=false
           current_head_repo=""
           current_head_branch=""
           current_head_sha=""
+          # The pulls API can lag the branch ref by minutes after a push; back off for about ten minutes.
+          delays=(5 10 20 30 60 60 60 60 60 60 60 60)
+          attempts=$(( ${#delays[@]} + 1 ))
 
-          for attempt in {1..12}; do
+          for (( attempt = 1; attempt <= attempts; attempt++ )); do
             remote_git_head="$(git ls-remote origin "refs/heads/$HEAD_BRANCH" | cut -f1)"
             if [[ "$remote_git_head" != "$PUBLISHED_HEAD" ]]; then
               echo "::error::PR branch head does not match the published bottle commit."
@@ -320,12 +368,16 @@ jobs:
               current_head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
               current_head_branch="$(jq -r '.head.ref // empty' <<< "$pr_data")"
               current_head_sha="$(jq -r '.head.sha // empty' <<< "$pr_data")"
+              state="$(jq -r '.state' <<< "$pr_data")"
+              draft="$(jq -r '.draft' <<< "$pr_data")"
+              base_branch="$(jq -r '.base.ref' <<< "$pr_data")"
 
-              if [[ "$current_head_repo" != "$GITHUB_REPOSITORY" ||
+              if [[ "$state" != "open" || "$draft" != "false" || "$base_branch" != "main" ||
+                    "$current_head_repo" != "$GITHUB_REPOSITORY" ||
                     "$current_head_branch" != "$HEAD_BRANCH" ]]; then
-                echo "::error::PR head repository or branch changed during bottle publication."
-                echo "::error::Expected PR head $GITHUB_REPOSITORY:$HEAD_BRANCH"
-                echo "::error::Current PR head $current_head_repo:$current_head_branch"
+                echo "::error::PR changed during bottle publication."
+                echo "::error::Expected open, non-draft PR $GITHUB_REPOSITORY:$HEAD_BRANCH targeting main"
+                echo "::error::Current PR $current_head_repo:$current_head_branch state=$state draft=$draft base=$base_branch"
                 exit 1
               fi
 
@@ -333,17 +385,31 @@ jobs:
                 pr_head_verified=true
                 break
               fi
+
+              # A lagging API may only report the pre-push head; anything else means the branch moved.
+              if [[ "$current_head_sha" != "$EXPECTED_HEAD" ]]; then
+                echo "::error::GitHub PR head moved to an unexpected commit during bottle publication."
+                echo "::error::Expected PR head $PUBLISHED_HEAD (or lagging $EXPECTED_HEAD)"
+                echo "::error::Current PR head $current_head_sha"
+                exit 1
+              fi
+              pr_head_observed=true
             fi
 
-            echo "::warning::GitHub PR head has not caught up to the published bottle commit (attempt $attempt/12)."
-            sleep 5
+            if (( attempt < attempts )); then
+              delay="${delays[attempt - 1]}"
+              echo "::warning::GitHub PR head has not caught up to the published bottle commit (attempt $attempt/$attempts); retrying in ${delay}s."
+              sleep "$delay"
+            fi
           done
 
           if [[ "$pr_head_verified" != true ]]; then
-            echo "::error::GitHub PR head did not converge to the published bottle commit."
-            echo "::error::Expected PR head $GITHUB_REPOSITORY:$HEAD_BRANCH at $PUBLISHED_HEAD"
-            echo "::error::Current PR head $current_head_repo:$current_head_branch at $current_head_sha"
-            exit 1
+            if [[ "$pr_head_observed" != true ]]; then
+              echo "::error::GitHub PR API never returned the PR head during bottle publication."
+              echo "::error::Expected PR head $GITHUB_REPOSITORY:$HEAD_BRANCH at $PUBLISHED_HEAD"
+              exit 1
+            fi
+            echo "::warning::GitHub PR API still reports $current_head_sha, but refs/heads/$HEAD_BRANCH is exactly the published bottle commit $PUBLISHED_HEAD; treating it as published."
           fi
 
       - name: Mark PR with published bottle commits
