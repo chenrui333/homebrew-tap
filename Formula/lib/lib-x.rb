@@ -13,6 +13,8 @@ class LibX < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa257f6754a5b2b41b3b1be169b4acdb5657fe53a8f3cb55e816591aa39e2f2"
   end
 
+  deny_network_access!
+
   def install
     bin.install "lib-x"
   end
@@ -20,8 +22,8 @@ class LibX < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/lib-x --version")
 
-    # TODO: fix test
-    # output = shell_output("#{bin}/lib-x --search tag:chess 2>&1", 1)
-    # assert_match "calibredb: command not found", output
+    output = shell_output("#{bin}/lib-x --generate-desktop-entry")
+    assert_match "Exec=#{bin}/lib-x --preferred-selector rofi", output
+    assert_path_exists testpath/".config/lib-x/lib-x.conf"
   end
 end
