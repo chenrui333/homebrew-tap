@@ -18,6 +18,12 @@ class Vortix < Formula
   depends_on "openvpn"
   depends_on "wireguard-tools"
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/vortix")
   end
