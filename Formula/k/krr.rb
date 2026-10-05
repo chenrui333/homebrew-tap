@@ -316,6 +316,9 @@ class Krr < Formula
     sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
   end
 
+  # pip build isolation must fetch conflicting per-package Cython pins (pyyaml <3.0, pandas ==3.0.5).
+  allow_network_access! :build
+
   def install
     inreplace "pyproject.toml", 'python = ">=3.10,<=3.12.9"', 'python = ">=3.10,<3.13"'
 
