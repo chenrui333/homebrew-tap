@@ -23,6 +23,9 @@ class Kafka < Formula
     sha256 "bcd6020ce1ca2c3f1a65e087057dc8c0757185ba1f169b38e0eda54b617e4225"
   end
 
+  # The test runs ZooKeeper and a Kafka broker and exchanges a message over loopback.
+  allow_network_access! :test
+
   def install
     data = var/"lib"
     inreplace "config/server.properties",
