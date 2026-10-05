@@ -8,10 +8,11 @@ class Localports < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ef1eb58fd4325733756b6285cdfce8cf5022224a97afabbeb917364aac10ae3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bd99fdf4c544ff6c59f9ad4c492a9be4a1032619ec651afaddeab1856d060a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5d6f219999e0b342c0cfa8730bce8e9b5ff8d17fbd154db2026a131d9b8edf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "976f51a110cb8d58183169be8239b1e513c757e8adecc503e73c6421b49d1838"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27deaee8dfdab1e8d025e71ec2caf9bdced92f5fa2cbcde7d26d692a33babee4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd5819a4ac6c0dc453f814589b5d95a16bf7c82d2c8586c4a0c20320e173af8e"
+    sha256 cellar: :any,                 arm64_linux:   "f2b3d83c8c56a7c39482868c779cbf41ca9525e8902f80d5bdf947447b0ff4fe"
+    sha256 cellar: :any,                 x86_64_linux:  "5871660a742315103a83dc338f221b6a86e599d9507449658433665c26591458"
   end
 
   depends_on "rust" => :build
