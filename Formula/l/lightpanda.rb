@@ -8,15 +8,16 @@ class Lightpanda < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "408058ed431697892c2cc2e4c73e6e643ac464d628de7ccc3aefcc7b53bad4b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abc1b4c70f5397c456a91bc383c374a2c96aef1b5de3d84cfdba5aa0fa782d80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ce973f58e3cb9a57241b396fc07d6250e2af55e3cedb819cb0f8e61c9f8e801"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "11441a954699e3be16a339377860acc5710821a246fe91b415378a65c875f53b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b253b711287327417b0d3206fc99dfce4433ac603d5c401483d0d486f399a3b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5e03f64f7b70fdb0287c928fe69045f1886f79d11bcc1f148128980c3d1fc862"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f57fb7aeed797014a73ee234df3872bc0d7ada6a8489b996c1af4bd0a2fd3e4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3b83c341cf02e115a44167ec6f4e12fc2f09a8dd918be478538f9aa01a41fcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42d061d006aa3045cbbd0d0b2271e868c8e44693db8ea584bedadc39abb827f1"
   end
 
   depends_on "rust" => :build
-  depends_on "zig" => :build
+  # Lightpanda 0.2.6 and boringssl-zig use the Zig 0.15 build API.
+  depends_on "zig@0.15" => :build
 
   resource "lightpanda-v8-source" do
     url "https://github.com/lightpanda-io/zig-v8-fork/archive/refs/tags/v0.3.3.tar.gz"
@@ -61,6 +62,10 @@ class Lightpanda < Formula
     "boringssl-zig" => {
       url:    "https://github.com/Syndica/boringssl-zig/archive/c53df00d06b02b755ad88bbf4d1202ed9687b096.tar.gz",
       sha256: "60b25deedd68d5c424682db1160d2a192376c05f85b4d98a2ad1f3536dfd4037",
+    },
+    "boringssl"     => {
+      url:    "https://github.com/google/boringssl/archive/535cc391915c37912ff9b3edb0cff9b3c5c77db0.tar.gz",
+      sha256: "a08fe8c76b70eeabf0466855710c553a3bfc9195f6a9a082b07bab8fe9085e9c",
     },
     "curl"          => {
       url:    "https://github.com/curl/curl/releases/download/curl-8_18_0/curl-8.18.0.tar.gz",
@@ -143,6 +148,8 @@ class Lightpanda < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     deps_dir = buildpath/"deps"
     deps_dir.mkpath
@@ -157,7 +164,7 @@ class Lightpanda < Formula
     ENV["ZIG_GLOBAL_CACHE_DIR"] = buildpath/"zig-global-cache"
     ENV["ZIG_LOCAL_CACHE_DIR"] = buildpath/"zig-local-cache"
 
-    zig = Formula["zig"].opt_bin/"zig"
+    zig = formula_opt_bin("zig@0.15")/"zig"
     prebuilt_v8 = deps_dir/"v8/libc_v8.a"
     snapshot_path = buildpath/"src/snapshot.bin"
 
@@ -247,6 +254,17 @@ class Lightpanda < Formula
           .paths = .{""},
       }
     ZIG
+
+    # boringssl-zig pins BoringSSL as a git dependency; use the pre-fetched copy instead.
+    boringssl_zon = buildpath/"deps/boringssl-zig/build.zig.zon"
+    boringssl_zon_content = boringssl_zon.read
+    unless boringssl_zon_content.sub!(
+      %r{\.url = "git\+https://github\.com/google/boringssl#\h+",\n\s*\.hash = "[^"]+",},
+      '.path = "../boringssl",',
+    )
+      odie "Failed to rewrite boringssl-zig dependency"
+    end
+    boringssl_zon.atomic_write boringssl_zon_content
   end
 
   test do
@@ -254,18 +272,12 @@ class Lightpanda < Formula
 
     assert_match version.to_s, shell_output("#{bin}/lightpanda version 2>&1")
 
-    port = free_port
-    pid = fork do
-      exec bin/"lightpanda", "serve", "--host", "127.0.0.1", "--port", port.to_s, "--log_level", "info"
-    end
-
-    begin
-      sleep 5
-      version_json = shell_output("curl -s http://127.0.0.1:#{port}/json/version")
-      assert_match %r{"webSocketDebuggerUrl": "ws://127\.0\.0\.1:#{port}/"}, version_json
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    json = <<~JSON
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"brew","version":"1.0.0"}}}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+    JSON
+    output = pipe_output("#{bin}/lightpanda mcp 2>/dev/null", json, 0)
+    assert_match(/"name":\s*"lightpanda"/, output)
+    assert_match(/"name":\s*"goto"/, output)
   end
 end
