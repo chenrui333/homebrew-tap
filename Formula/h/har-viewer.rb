@@ -26,9 +26,12 @@ class HarViewer < Formula
     sha256 "6e5c2b4e2d1afca978dcf6e597dcf489f70cc4893c70b01041c8b513e3b48e23"
   end
 
+  # Gradle opens a loopback UDP socket for file locking even with --offline and downloads the Kotlin/Native toolchain.
+  allow_network_access! :build
+
   def install
     ENV["GRADLE_USER_HOME"] = buildpath/".gradle"
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@17")
     ENV["KONAN_DATA_DIR"] = buildpath/".konan"
 
     resource("ftxui").stage buildpath/"vendor/ftxui"
@@ -41,7 +44,7 @@ class HarViewer < Formula
               %Q("macosArm64" -> macosArm64()\n        "macosX64" -> macosX64())
 
     if OS.linux?
-      gcc = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version.major}"
+      gcc = formula_opt_bin("gcc")/"gcc-#{Formula["gcc"].version.major}"
       libstdcxx = Pathname.new(Utils.safe_popen_read(gcc.to_s, "-print-file-name=libstdc++.so").chomp).realpath
       linker_opts = [
         "--allow-shlib-undefined",
