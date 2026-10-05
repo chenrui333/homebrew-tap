@@ -17,9 +17,18 @@ class Vaults3 < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
+  # vaults3 is an S3-compatible server; the test queries its loopback health endpoint.
+  allow_network_access! :test
+
+  def fetch
     cd "web" do
       system "npm", "ci"
+    end
+    system "go", "mod", "download"
+  end
+
+  def install
+    cd "web" do
       system "npm", "run", "build"
     end
     (buildpath/"internal/dashboard/dist").mkpath
