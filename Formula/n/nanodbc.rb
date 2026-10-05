@@ -23,6 +23,8 @@ class Nanodbc < Formula
     depends_on "unixodbc"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       -DNANODBC_BUILD_EXAMPLES=OFF
