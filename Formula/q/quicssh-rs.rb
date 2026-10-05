@@ -16,6 +16,12 @@ class QuicsshRs < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -23,12 +29,8 @@ class QuicsshRs < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/quicssh-rs --version")
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"quicssh-rs", "--log-level", "debug", "server", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "[server] listening on: 0.0.0.0:4433", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    # The server binds a UDP socket, so exercise the client's offline URL validation instead.
+    output = shell_output("#{bin}/quicssh-rs client ssh://127.0.0.1:4433 2>&1")
+    assert_match "URL scheme must be quic", output
   end
 end
