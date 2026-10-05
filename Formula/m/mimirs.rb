@@ -22,12 +22,17 @@ class Mimirs < Formula
     depends_on "sqlite"
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "bun", "install", "--frozen-lockfile", "--production"
+  end
+
+  def install
     libexec.install Dir["*"]
     (bin/"mimirs").write <<~SH
       #!/bin/bash
-      exec "#{Formula["bun"].opt_bin}/bun" "#{libexec}/src/main.ts" "$@"
+      exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/src/main.ts" "$@"
     SH
     chmod 0755, bin/"mimirs"
 
@@ -71,8 +76,10 @@ class Mimirs < Formula
     assert_match "not-a-real-option", output
 
     (testpath/"test.txt").write "hello world"
-    output = shell_output("#{bin}/mimirs init #{testpath} --yes 2>&1", 1)
+    # Decline indexing: it downloads an embedding model from Hugging Face.
+    output = pipe_output("#{bin}/mimirs init #{testpath} 2>&1", "n\n", 0)
     assert_match "Created .mimirs/config.json", output
     assert_path_exists testpath/".mimirs/config.json"
+    assert_match "Last indexed: never", shell_output("#{bin}/mimirs status #{testpath}")
   end
 end
