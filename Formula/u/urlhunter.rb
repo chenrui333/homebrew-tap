@@ -1,8 +1,10 @@
 class Urlhunter < Formula
   desc "Recon tool that allows searching on URLs that are exposed via shortener services"
   homepage "https://github.com/utkusen/urlhunter"
-  url "https://github.com/utkusen/urlhunter/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "ef7d6719d9a824a5614808c9408bd3dd73dda1049feaa7f65442b1c44602aa13"
+  # GitHub regenerated the v0.2.0 archive (same tag commit); pin the tag commit
+  url "https://github.com/utkusen/urlhunter.git",
+      tag:      "v0.2.0",
+      revision: "39f2051895b95f93f1dadeba2cfd235d920f945e"
   license "MIT"
   head "https://github.com/utkusen/urlhunter.git", branch: "main"
 
@@ -17,12 +19,18 @@ class Urlhunter < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    output = shell_output("#{bin}/urlhunter --keywords #{testpath}/keywords.txt --date 2024-01-01 2>&1", 2)
-    assert_match "[ERROR]: Error processing archive", output
+    output = shell_output("#{bin}/urlhunter --keywords #{testpath}/keywords.txt --date 2024-13-01 2>&1", 2)
+    assert_match "[ERROR]: Wrong date format!", output
   end
 end
