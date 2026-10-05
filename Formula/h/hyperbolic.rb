@@ -8,12 +8,11 @@ class Hyperbolic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04c76c43eeaed269a0b8715077e4a17f4a4873c7758763cff6403c96c12e6c0e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04c76c43eeaed269a0b8715077e4a17f4a4873c7758763cff6403c96c12e6c0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04c76c43eeaed269a0b8715077e4a17f4a4873c7758763cff6403c96c12e6c0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "55c9aa18c61dc4cf8af1f2524f624212ee5717303411aae53630151502999714"
-    sha256 cellar: :any,                 x86_64_linux:  "4702ccb31be0b65b33e8c14ed14ef30579f11fa8a5d15e275923bc2563b0c118"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e121ce98a8225403298bf0dc49786aa09968b3559fb4498279db276d356b5496"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e121ce98a8225403298bf0dc49786aa09968b3559fb4498279db276d356b5496"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2267e46dfe0dc7d70d8354b2bb3b63aa08446f9bf39fcd80837bcb7048ef54cc"
+    sha256 cellar: :any,                 x86_64_linux:  "ac52cfc2e0b508b01213d6cc5846e9401cda1a0398860cabe4aff7842000b163"
   end
 
   depends_on "go" => :build
