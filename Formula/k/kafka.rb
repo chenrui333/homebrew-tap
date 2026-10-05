@@ -12,7 +12,8 @@ class Kafka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "05bee9275b2103b8be024315bc912d86ed71bba4d11aa2d0419ee78a0e7e95e4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b10a6c29689a138974b5b0e347d1743f483f1fc76ce1fd234a0b663ed2eda2b0"
   end
 
   depends_on "chenrui333/tap/zookeeper"
