@@ -16,13 +16,24 @@ class LlxprtCode < Formula
   depends_on "tree-sitter-cli" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+    # Mirror the local Bun upgrade so it and the package's devDependencies are cached.
+    cd buildpath/"npm-fetch/lib/node_modules/@vybestack/llxprt-code" do
+      inreplace "package.json", '"bun": "1.3.14"', '"bun": "1.4.2"'
+      system "npm", "install", *std_npm_args(prefix: false), "bun@1.4.2"
+    end
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     app = libexec/"lib/node_modules/@vybestack/llxprt-code"
     # The pinned Bun 1.3.14 runtime crashes while loading Sharp on Linux.
     inreplace app/"package.json", '"bun": "1.3.14"', '"bun": "1.4.2"'
     cd app do
-      system "npm", "install", *std_npm_args(prefix: false), "bun@1.4.2"
+      system "npm", "install", "--offline", *std_npm_args(prefix: false), "bun@1.4.2"
     end
     inreplace app/"package.json", '"bun": "^1.4.2"', '"bun": "1.4.2"'
     nm = app/"node_modules"
