@@ -14,6 +14,12 @@ class Systeroid < Formula
   depends_on "rust" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     %w[systeroid systeroid-tui].each do |crate|
       system "cargo", "install", *std_cargo_args(path: crate)
