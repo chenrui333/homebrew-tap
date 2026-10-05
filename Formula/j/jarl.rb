@@ -8,17 +8,23 @@ class Jarl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb1497392db33a9b72b13c7c286f46da342657bcd3efa55c6bdabf6592abe987"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "670838870836f96d02b9e3aec5aedf3321f705ffdaa626e88aa29706aa56bcb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d955d23dade0b9b9d249226636b9d6c73b33d30912520fd4edfb4255d2324b7"
-    sha256 cellar: :any,                 arm64_linux:   "49f0640442c7361b4bff50ebb21c7281a0c5ff52c97323ac759e9b1957f21dc9"
-    sha256 cellar: :any,                 x86_64_linux:  "ea68c04822c760d16e6873e48e525d15e0785f66a36e352a4e16dfaf6318b0b2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9dc2b3f03b0115d336ea6bc0ceb3962f0ea0b5fecc84bd3d8ceba6a4051b61b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6467fbc93aa428f741cbe1273bcc848c15af8aaf8eca8080ab1e4fefb9bab9c5"
+    sha256 cellar: :any,                 arm64_linux:   "4bfe8fab82137b570f63b705d129e0fd0dc6c5f451fcedd76be9bbbf0e10edd1"
+    sha256 cellar: :any,                 x86_64_linux:  "2322bcf3e6a95c14ff62d4fe362996a32fff1660eb1a7629730b69f6c8602ee2"
   end
 
   depends_on "rust" => :build
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
