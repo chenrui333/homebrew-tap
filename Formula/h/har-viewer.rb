@@ -7,10 +7,10 @@ class HarViewer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ca82534703c68041197fe7f60d80cb2c8465f53303d7a3f58fe6a30a54c45e1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e4eaa9f158282bbec2ce364c9c0282ac7b962d1f06235e182bebd93900e8282"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e855ba319b55eda06e7841a63455a95c90397cb3e7d6a70d52f438dd2dfe6fe1"
-    sha256 cellar: :any,                 x86_64_linux:  "f439e54005ba1f2ef3cfc2fded5367e97f1e22a3310e3ffffa7db11160976000"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "019b4540a853538f99aa2de93f65c2ac742974db707f8fec43f225c343b316f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c89e558c42e8f3e2b8db5431556f2f3a56a07748a6f5ce2bfd1f06df0df6bcd"
+    sha256 cellar: :any,                 x86_64_linux:  "eda931adbb3a08c2b4a15f271111fddf366f6f4dd8434c225cfb04202b8c92e9"
   end
 
   depends_on "cmake" => :build
