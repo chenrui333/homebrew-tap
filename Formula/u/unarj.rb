@@ -20,10 +20,7 @@ class Unarj < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "350540b306667b67891a2b9a783b5c4fd5fb269edf7671be75c4eedd994733bc"
   end
 
-  resource "testfile" do
-    url "https://s3.amazonaws.com/ARJ/ARJ286.EXE"
-    sha256 "e7823fe46fd971fe57e34eef3105fa365ded1cc4cc8295ca3240500f95841c1f"
-  end
+  deny_network_access!
 
   def install
     system "make"
@@ -32,10 +29,13 @@ class Unarj < Formula
   end
 
   test do
-    # Ensure that you can extract arj.exe from a sample self-extracting file
-    resource("testfile").stage do
-      system bin/"unarj", "e", "ARJ286.EXE"
-      assert_path_exists Pathname.pwd/"arj.exe"
-    end
+    # Extract a stored file from a small ARJ archive (main header + one file header).
+    arj = %w[
+      YOooAB4LAQIAAAIAAGwrWgAAAAAAAAAAAAAAAAAApAEAAHRlc3QuYXJqAADX+szjAABg6ikAHgsBAgAAAAAAbCtaCQAAAAkAAAC0
+      96PUAACkAQAAaGVsbG8udHh0AAAp6W4fAABIb21lYnJldwpg6gAA
+    ].join
+    (testpath/"test.arj").binwrite arj.unpack1("m")
+    assert_match "CRC OK", shell_output("#{bin}/unarj e test.arj")
+    assert_equal "Homebrew\n", (testpath/"hello.txt").read
   end
 end
