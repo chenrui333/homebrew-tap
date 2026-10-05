@@ -16,6 +16,8 @@ class ZshViMan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "79cdaeafd91b0221355ba10b14878da7552fa6c723de7e1940bf124233dbda41"
   end
 
+  deny_network_access!
+
   def install
     pkgshare.install "zsh-vi-man.plugin.zsh", "zsh-vi-man.zsh", "lib"
 
