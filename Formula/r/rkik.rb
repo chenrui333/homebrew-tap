@@ -1,8 +1,10 @@
 class Rkik < Formula
   desc "Rusty Klock Inspection Kit - Simple NTP Client"
   homepage "https://github.com/aguacero7/rkik"
-  url "https://github.com/aguacero7/rkik/archive/refs/tags/v2.2.4.tar.gz"
-  sha256 "3f5e0724d1719415b93ff9f30323034d3156fc2e573e7cb348781f086f7614d6"
+  # Upstream re-pointed the v2.2.4 tag to a Cargo.lock-only fix, so pin the tag commit.
+  url "https://github.com/aguacero7/rkik.git",
+      tag:      "v2.2.4",
+      revision: "dc84b5266cb1c288796e4bb2dd18d6659e8e90b8"
   license "MIT"
   head "https://github.com/aguacero7/rkik.git", branch: "master"
 
@@ -15,6 +17,14 @@ class Rkik < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    # TODO: Remove when the next release prunes the unused `pkg-config` entry from Cargo.lock.
+    inreplace "Cargo.lock", /^\[\[package\]\]\nname = "pkg-config"\n.*?\n\n/m, ""
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
