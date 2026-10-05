@@ -8,14 +8,20 @@ class Lazytilt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c8577fe9b352a9c3e89399ad73e2f28ca829e87633febb135cbb50eadb4bbe9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c8577fe9b352a9c3e89399ad73e2f28ca829e87633febb135cbb50eadb4bbe9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c8577fe9b352a9c3e89399ad73e2f28ca829e87633febb135cbb50eadb4bbe9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d896747caf69a232700a63c292b0b289c8de7c4d9542ae9bf93bbdc558e599c2"
-    sha256 cellar: :any,                 x86_64_linux:  "e704c74000ffbd02da09424acd45584e92e1f964c839878fe0e66ad1bd15640a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1994921c3a1c60c3428740cc74f4be100ecb5e8a36aeef357f266d2045fa150f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1994921c3a1c60c3428740cc74f4be100ecb5e8a36aeef357f266d2045fa150f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c067b9f568f17a4dc06dbdd36c07a620daa13a79e94fdfa634d85b4b054d5e3"
+    sha256 cellar: :any,                 x86_64_linux:  "b32b1f600025b531f98defe8d397d242e54a9b0c1680935000bbca3aa00f3e4c"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
