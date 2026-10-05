@@ -25,6 +25,8 @@ class Xcpkg < Formula
   depends_on :macos
   depends_on "openssl@3"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", "c", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
