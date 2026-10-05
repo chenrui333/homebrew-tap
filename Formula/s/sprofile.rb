@@ -22,6 +22,15 @@ class Sprofile < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    # Fix the stale sprofile version in the v0.2.0 lockfile (Cargo.toml is 0.2.0).
+    # TODO: Remove in the next release.
+    inreplace "Cargo.lock", "name = \"sprofile\"\nversion = \"0.1.1\"", "name = \"sprofile\"\nversion = \"0.2.0\""
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
