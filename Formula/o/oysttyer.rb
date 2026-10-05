@@ -12,6 +12,8 @@ class Oysttyer < Formula
 
   deprecate! date: "2024-01-06", because: :repo_archived
 
+  deny_network_access!
+
   def install
     bin.install "oysttyer.pl" => "oysttyer"
   end
