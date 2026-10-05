@@ -9,11 +9,11 @@ class Labcoat < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8921d122b1b4a4722a3db0d0bf64fb0ed2202de1631227aba7326f1d8b2c2092"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8921d122b1b4a4722a3db0d0bf64fb0ed2202de1631227aba7326f1d8b2c2092"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8921d122b1b4a4722a3db0d0bf64fb0ed2202de1631227aba7326f1d8b2c2092"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a462e09c9814ece78b8874cca1e36950f20d1fb607a593dbc483866c41f549b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30fac4abe3d366f8bd93927a9cb92f40dbb12b808c6cc201a804cc8d69dba2fa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50a5967253be4b06c66558e6100b8659283d37e352fc97d95532c590d8788189"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50a5967253be4b06c66558e6100b8659283d37e352fc97d95532c590d8788189"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2766f0940104bfba5efd2324adc6a525bed9e5eb2805cb853c1ac30efdcaf79"
+    sha256 cellar: :any,                 x86_64_linux:  "073d57722a6a95a3a7f760e3cae8034bab73c3c1bc504d1d161ac648c9f548a3"
   end
 
   depends_on "go" => :build
