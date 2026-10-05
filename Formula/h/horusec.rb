@@ -8,12 +8,11 @@ class Horusec < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33c8faa9cbe98e3695d692b8b0097c919f241caac373bbd446f70fb7ef199691"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33c8faa9cbe98e3695d692b8b0097c919f241caac373bbd446f70fb7ef199691"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "33c8faa9cbe98e3695d692b8b0097c919f241caac373bbd446f70fb7ef199691"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6657e4285aa8926d741c1ee1476849c3fe99ae2771d17a80bf49300809bc230"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "095146b8bf4a70bad26f7ebe2e2df735965aebd34f349a359b25c1be4a76de28"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc88f50db6a33b2ddda1316356fbac0001e3500671a69b2d3469f66cafc716b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc88f50db6a33b2ddda1316356fbac0001e3500671a69b2d3469f66cafc716b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6ef966c846b7e6d1132b08bbd19b30a8b2334a64acfdbf79f2bb00ca02d9f5e"
+    sha256 cellar: :any,                 x86_64_linux:  "9334aef8bf1342befe88d307b43976f9972ea9a6f0cdc4e4be27b49a5cc92a89"
   end
 
   depends_on "go" => :build
