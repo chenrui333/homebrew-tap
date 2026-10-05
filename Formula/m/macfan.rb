@@ -9,14 +9,19 @@ class Macfan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55a985f83666de14dedbf80016724939805e8ee7d270e3abadecf26819f03c9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2302af43f4d8d16cd921ade91e0fee938ac5c47d0d268af8059b41a3f762cc84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4c863778819ca94a13422036851cf5fc5016665777090dd813cc2de86fc9bd8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d682fc633de95d6c929e36475be79c650c8eb397828e28569d1d1b26195263e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a98f6a8dd629fa68723cfcffed13fbf723e04e8445010ab77f8893d5445f5d6"
   end
 
   depends_on "rust" => :build
   depends_on :macos
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
