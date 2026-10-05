@@ -18,6 +18,12 @@ class RabbitmqMessageOps < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cli"
   end
@@ -25,10 +31,13 @@ class RabbitmqMessageOps < Formula
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
-    ENV["RABBITMQ_ENDPOINT"] = "http://localhost:15672"
-    ENV["RABBITMQ_HTTP_API_ENDPOINT"] = "http://custom-api-server:15672"
+    # Both errors are raised while parsing CLI input, before any broker connection is attempted
+    ENV["RABBITMQ_ENDPOINT"] = "amqp://guest:guest@localhost:5672/"
+    output = shell_output("#{bin}/rabbitmq-message-ops -q testqueue -v debug view 2>&1", 1)
+    assert_match "unsupported verbosity level", output
 
+    ENV["RABBITMQ_ENDPOINT"] = "amqp://localhost:5672/%zz"
     output = shell_output("#{bin}/rabbitmq-message-ops -q testqueue view 2>&1", 1)
-    assert_match "publisher: failed to connect to RabbitMQ", output
+    assert_match "invalid URL escape", output
   end
 end
