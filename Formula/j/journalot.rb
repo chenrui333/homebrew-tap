@@ -13,8 +13,10 @@ class Journalot < Formula
 
   depends_on "bash"
 
+  deny_network_access!
+
   def install
-    inreplace "bin/journal", "#!/usr/bin/env bash", "#!#{Formula["bash"].opt_bin}/bash"
+    inreplace "bin/journal", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash"
     bin.install "bin/journal"
     bin.install_symlink bin/"journal" => "journalot"
   end
