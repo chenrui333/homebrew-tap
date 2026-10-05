@@ -15,6 +15,13 @@ class Nocc < Formula
 
   depends_on "go" => :build
 
+  # The test compiles via nocc-server over loopback gRPC and the daemon's unix socket.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X github.com/VKCOM/nocc/internal/common.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"nocc-daemon"), "./cmd/nocc-daemon"
