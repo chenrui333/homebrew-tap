@@ -19,16 +19,25 @@ class Sudocode < Formula
   depends_on "ripgrep"
   depends_on "vips"
 
-  def install
-    node_path = "#{Formula["node@24"].opt_bin}:#{Formula["node@24"].opt_libexec/"bin"}:" \
-                "#{Formula["ripgrep"].opt_bin}:$PATH"
+  deny_network_access!
 
-    ENV.prepend_path "PATH", Formula["node@24"].opt_bin
-    ENV.prepend_path "PATH", Formula["node@24"].opt_libexec/"bin"
-    ENV["npm_config_nodedir"] = Formula["node@24"].opt_prefix
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    node_path = "#{formula_opt_bin("node@24")}:#{formula_opt_libexec("node@24")/"bin"}:" \
+                "#{formula_opt_bin("ripgrep")}:$PATH"
+
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node@24")
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
 
     # Align CLI sub-package version with meta-package version
     cli_pkg = libexec/"lib/node_modules/sudocode/node_modules/@sudocode-ai/cli/package.json"
