@@ -21,6 +21,14 @@ class Tuono < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    # Upstream does not commit Cargo.lock; resolve once during fetch so the build stays offline.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/tuono")
   end
@@ -28,7 +36,12 @@ class Tuono < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/tuono --version")
 
-    system bin/"tuono", "new", "my-app"
-    assert_path_exists testpath/"my-app/package.json"
+    # `tuono new` downloads templates from GitHub; exercise the offline Rust codegen instead.
+    assert_match "Cannot find tuono.config.ts", shell_output("#{bin}/tuono build 2>&1", 1)
+
+    (testpath/"tuono.config.ts").write "export default {}\n"
+    (testpath/"src/routes/index.tsx").write "export default function Index() { return <h1>hi</h1> }\n"
+    assert_match "Rust build successfully finished", shell_output("#{bin}/tuono build --no-js-emit")
+    assert_match "axum::Router", (testpath/".tuono/main.rs").read
   end
 end
