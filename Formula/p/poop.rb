@@ -13,9 +13,12 @@ class Poop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "19c23a696d890f4e6a523cdd27627f16e3288ce84cf3b94c3d62b34b6f53ce88"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.13" => :build
+
+  deny_network_access!
 
   def install
+    configure_zig_sdk
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -32,7 +35,20 @@ class Poop < Formula
     system "zig", "build", *args
   end
 
+  def configure_zig_sdk
+    on_macos do
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr" unless (developer_dir/"usr").exist?
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
+  end
+
   test do
     assert_match "Compares the performance of the provided commands", shell_output("#{bin}/poop --help")
+
+    output = shell_output("#{bin}/poop --not-a-real-option 2>&1", 1)
+    assert_match "unrecognized argument: '--not-a-real-option'", output
   end
 end
