@@ -15,14 +15,22 @@ class Wolfpack < Formula
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    pkg = libexec/"lib/node_modules/wolfpack-bridge/package.json"
-    output = shell_output("node -e \"console.log(require('#{pkg}').version)\"")
-    assert_match version.to_s, output
+    assert_match version.to_s, shell_output("#{bin}/wolfpack --version")
+
+    output = shell_output("#{bin}/wolfpack not-a-real-command 2>&1", 1)
+    assert_match "Unknown command: not-a-real-command", output
   end
 end
