@@ -1,21 +1,29 @@
 class Konfigo < Formula
   desc "Merge and transform configuration files across multiple formats"
   homepage "https://github.com/ebogdum/konfigo"
-  url "https://github.com/ebogdum/konfigo/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "13710001bc9010e0efabb7b4a2d608fb96a321177854d04467111ae5b277a671"
+  # GitHub regenerated the v2.0.3 archive (same tag commit); pin the tag commit
+  url "https://github.com/ebogdum/konfigo.git",
+      tag:      "v2.0.3",
+      revision: "f2d0164da57f480a717c9e1e7821a9d0146bdcde"
   license "MIT"
   head "https://github.com/ebogdum/konfigo.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e9f380619933b3ea6ad375d750bc00ee643194dd5242a8f99c9034c986db023"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e9f380619933b3ea6ad375d750bc00ee643194dd5242a8f99c9034c986db023"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e9f380619933b3ea6ad375d750bc00ee643194dd5242a8f99c9034c986db023"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68371e20332f9f16648a98cf5581fe28c0cd828eb176ec2b82bd172aaadb66b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b1958d6f5b729a19187016518bd4f9b82ea6dc5140238c30f7991bb5984279b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "371dd9919854510e3db0155040a8e8e50911a2ee1d01c7dbd1a28160efbd28f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "371dd9919854510e3db0155040a8e8e50911a2ee1d01c7dbd1a28160efbd28f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a27e1d048854b64797cf37eb734676a4f4c6bf68cfeb7b970c4d15db97d104d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e57a587a8724a601971fde826d96a0d4729a9705c6df6af0a12f130c912894"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(output: bin/"konfigo"), "./cmd/konfigo"
