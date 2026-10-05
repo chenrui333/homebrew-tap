@@ -25,17 +25,25 @@ class Rtop < Formula
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    require "open3"
-
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
-    output, status = Open3.capture2e(bin/"rtop", "--not-a-real-option")
-    refute_predicate status, :success?
-    assert_match "rtop monitors server statistics", output
+    output = shell_output("#{bin}/rtop example.com:99999 2>&1", 1)
+    assert_match "bad port: 99999", output
+
+    # Without an SSH agent, the private key is read before any connection is attempted
+    ENV.delete("SSH_AUTH_SOCK")
+    output = shell_output("#{bin}/rtop -i #{testpath}/missing_key example.com 2>&1", 1)
+    assert_match "missing_key: no such file or directory", output
   end
 end
 
