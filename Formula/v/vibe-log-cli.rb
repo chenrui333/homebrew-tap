@@ -29,10 +29,17 @@ class VibeLogCli < Formula
     build 1699
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     # Allow newer better-sqlite: https://github.com/vibe-log/vibe-log-cli/pull/11
     inreplace "package.json", '"better-sqlite3": "^11.0.0"', '"better-sqlite3": "^12.0.0"'
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
@@ -50,12 +57,13 @@ class VibeLogCli < Formula
       linux_dir = clipboardy_fallbacks_dir/"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
     end
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/vibe-log --version")
-    assert_match "Failed to send sessions", shell_output("#{bin}/vibe-log send --silent 2>&1")
+    output = shell_output("#{bin}/vibe-log send 2>&1", 1)
+    assert_match "Claude Code data not found", output
   end
 end
