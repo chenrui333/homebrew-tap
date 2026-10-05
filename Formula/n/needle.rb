@@ -8,14 +8,20 @@ class Needle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3c98a11d202d2b798bd6ec98826186d998f5f223ac9689685d47658923fd158"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e01e28726eadc8f035c8774427891e442703732794b7d17f01ed159593be9e81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c899778594c4c8d780fe101e62243a2c12e731b024eeabfec397c7af05f1ccb5"
-    sha256 cellar: :any,                 arm64_linux:   "720d436fc08d7685342da92d2d6870563c17f303044ee511ee9f57682683d069"
-    sha256 cellar: :any,                 x86_64_linux:  "e6bb79a2e49ece17f020e38df2219271056c597b391b3bdd3241c67ab95aeed9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c55ca4d0f448f8113330af198ebde8f042c46bf4e6866a3f34fc12ff3fcbb9f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21d8318be9c8cdfefd63195eb37fc2a6db8a2a504cb2ac48b3c283eca9fdd602"
+    sha256 cellar: :any,                 arm64_linux:   "2b4954b23ef9e322c318c6c1bf31e8c95331d8fab4a74f0ed170f64475daecc8"
+    sha256 cellar: :any,                 x86_64_linux:  "87a58e36e053eee5e835c4347945b15f85e33e15f4ad7850e6668cc06d2247ac"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
