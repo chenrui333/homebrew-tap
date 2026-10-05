@@ -18,6 +18,8 @@ class Unrar < Formula
     sha256 cellar: :any, x86_64_linux:  "793cec0df015e1d171eff5b563d0f3eb246629cacdfb4b8a7a594441b7b4f425"
   end
 
+  deny_network_access!
+
   def install
     inreplace "makefile", "libunrar.so", "libunrar.dylib" if OS.mac?
 
