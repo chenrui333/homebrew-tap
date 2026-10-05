@@ -7,10 +7,8 @@ class LibX < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b338dc39294385300871336801cf4688022dce9555fc7b7823dbc9ad07e1e6db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04d33e206c7dc786d97d99e2c33828d9fbca74250e79e00f165d7ac668e7cdb7"
-    sha256 cellar: :any_skip_relocation, ventura:       "c8572b7cafc3b8cb8ea3295d655e55b95d04beb3a29ba1829c9c8dd7f3adfabd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aa257f6754a5b2b41b3b1be169b4acdb5657fe53a8f3cb55e816591aa39e2f2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f99528ccd0f1c6500e9abd0e7ffb8459a07d85b50855e06e35235c8367745dec"
   end
 
   deny_network_access!
