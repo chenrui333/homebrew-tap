@@ -2,8 +2,8 @@ class Bibiman < Formula
   desc "TUI for fast and simple interacting with your BibLaTeX database"
   homepage "https://codeberg.org/lukeflo/bibiman"
   url "https://codeberg.org/lukeflo/bibiman.git",
-      tag:      "v0.19.5",
-      revision: "c7331464f187b6389296c7dd91908c150a99f3ea"
+      tag:      "v0.19.6",
+      revision: "813e87dd85f1e0a60bf5a7617dc4567408fa98b0"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/lukeflo/bibiman.git", branch: "main"
 
