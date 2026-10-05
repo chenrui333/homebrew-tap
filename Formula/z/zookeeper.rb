@@ -30,6 +30,9 @@ class Zookeeper < Formula
   depends_on "openjdk@21"
   depends_on "openssl@3"
 
+  # Maven resolves plugins and artifacts for the full-build profile during packaging; go-offline does not cover them.
+  allow_network_access! :build
+
   def default_zk_env
     <<~EOS
       [ -z "$ZOOCFGDIR" ] && export ZOOCFGDIR="#{pkgetc}"
@@ -59,7 +62,7 @@ class Zookeeper < Formula
       bin_name    = path.basename ".sh"
       (bin+bin_name).write <<~EOS
         #!/bin/bash
-        export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk@21"].opt_prefix}}"
+        export JAVA_HOME="${JAVA_HOME:-#{formula_opt_prefix("openjdk@21")}}"
         . "#{pkgetc}/defaults"
         exec "#{libexec}/bin/#{script_name}" "$@"
       EOS
