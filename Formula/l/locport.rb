@@ -16,16 +16,29 @@ class Locport < Formula
 
   depends_on "ruby"
 
+  # The test assigns and lists ports by probing loopback TCP sockets.
+  allow_network_access! :test
+
+  def fetch
+    # Keep Bundler's lock and path-gem binstubs out of Ruby's shared gem dir.
+    ENV["BUNDLE_PATH"] = ".bundle"
+    ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
+    ENV["BUNDLE_WITHOUT"] = "development test"
+    system "bundle", "cache", "--no-install"
+  end
+
   def install
     ENV["BUNDLE_FORCE_RUBY_PLATFORM"] = "1"
     ENV["BUNDLE_WITHOUT"] = "development test"
     ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
+    # Keep Bundler's path-gem binstubs out of Ruby's shared bindir.
+    ENV["BUNDLE_SYSTEM_BINDIR"] = libexec/"bin"
     ENV["NOKOGIRI_USE_SYSTEM_LIBRARIES"] = "1"
 
-    system "bundle", "install"
+    system "bundle", "install", "--local"
     system "gem", "build", "#{name}.gemspec"
-    system "gem", "install", "#{name}-#{version}.gem"
+    system "gem", "install", "--local", "#{name}-#{version}.gem"
 
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
