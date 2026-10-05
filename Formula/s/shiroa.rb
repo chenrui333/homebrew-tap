@@ -25,6 +25,12 @@ class Shiroa < Formula
         revision: "537c02e51c02973b3f82a81fab45c80a45840f71" # branch shiroa-v0.3.0
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     (buildpath/"assets/artifacts").install resource("artifacts")
 
