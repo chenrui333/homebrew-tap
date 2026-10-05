@@ -17,19 +17,27 @@ class Zmate < Formula
   depends_on "go" => :build
   depends_on "zellij"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    port = free_port
+    # The test sandbox blocks listening and dialing, so exercise the offline startup path:
+    # listen-address validation, SSH host key generation and the missing SSH agent error.
+    output = shell_output("#{bin}/zmate --listen 127.0.0.1:2222 2>&1", 1)
+    assert_match "address for remote ssh server not provided", output
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"zmate", "-l", "127.0.0.0:#{port}", [:out, :err] => output_log.to_s
-    sleep 2
-    assert_match "Skipping remote port-forwarding (local-only mode)", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    ENV.delete "SSH_AUTH_SOCK"
+    host_key = testpath/"ssh_host_ed25519_key"
+    output = shell_output("#{bin}/zmate --listen 127.0.0.1:2222 --server 127.0.0.1:2222 " \
+                          "--host-key #{host_key} 2>&1", 1)
+    assert_match "SSH agent not found: ensure SSH_AUTH_SOCK is set", output
+    assert_match "BEGIN PRIVATE KEY", host_key.read
   end
 end
