@@ -1,0 +1,14 @@
+Formula/r/rds-command-line-tools.rb
+  h_9df9c32c3f321d 19-20,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6cad15c5c8eda73ae63bc1d157c1ce6f119c5989",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
