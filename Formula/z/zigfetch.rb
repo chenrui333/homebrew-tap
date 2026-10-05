@@ -14,10 +14,16 @@ class Zigfetch < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "zig" => :build
+  depends_on "zig@0.16" => :build
 
   on_linux do
     depends_on "pciutils" # provides libpci.so and pci/pci.h
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch"
   end
 
   def install
