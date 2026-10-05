@@ -1,0 +1,14 @@
+Formula/u/user-scanner.rb
+  h_9df9c32c3f321d 23-27,33-37,58-62,73-82,118-137,153-162,168-177,183-194,196-220
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ae4c5de85b8c41568ee0a49de678bd4e83f80b48",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
