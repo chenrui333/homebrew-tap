@@ -1,0 +1,14 @@
+Formula/l/lix.rb
+  h_9df9c32c3f321d 16-21,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a95d7960f93a112257b00583f5cf368c4c9890d3",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
