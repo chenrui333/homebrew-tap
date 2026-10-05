@@ -8,10 +8,11 @@ class HoloCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "fdb665f3e9dad32608016a112491a3381e0364928e8a47a94e35c47ee0bb88a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "34938c420e237b0325c20294a54311fcbbcb456dfaef13f487040caab772676c"
-    sha256 cellar: :any,                 ventura:       "942e50ed4f3ad94b0d1902bb9b2c42d4b5969f01006a6037c18c45b992434ad9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0e939365c9e7dba2df7b15b0da9b2d2c74889db0090da1e4f955a4e455a6a9f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a76c45649b4ba640dbd1c99d12747e820833866851ec136c7da9d304c5cc24c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3cc23375991588c5252c04f95067a33cf9091a99245896578dc963b897c4cdb"
+    sha256 cellar: :any,                 arm64_linux:   "ecc0f033718bb9ed2fd859e0b3a66f4634a8d30594dd3a18f3e939cc4432bd92"
+    sha256 cellar: :any,                 x86_64_linux:  "7e21690a0619d42e473e08d9e85538f3129df860be46b7e4ea0457d1d2281542"
   end
 
   depends_on "cmake" => :build
