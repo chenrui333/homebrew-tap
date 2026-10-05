@@ -1,0 +1,19 @@
+Formula/s/strimzi-kafka-cli.rb
+  s_20ee2ac03ef1eb::t_5a9755033e1b47 24-27,39-48,74-78,109-118,129-133,144-150,152-171,179
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0282836e5a11f9a17264f9df18559663aa76a6c3",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
