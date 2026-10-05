@@ -28,6 +28,7 @@ class KalumaCli < Formula
     # brewed node uses the shared libuv, so its headers come from the libuv formula.
     ENV["npm_config_nodedir"] = formula_opt_prefix("node")
     ENV.append_path "CPATH", formula_opt_include("libuv")
+    rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", "--allow-scripts=@serialport/bindings",
            *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec/"bin/kaluma"
