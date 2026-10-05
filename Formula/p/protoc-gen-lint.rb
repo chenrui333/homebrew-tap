@@ -17,8 +17,10 @@ class ProtocGenLint < Formula
   depends_on "go" => :build
   depends_on "protobuf"
 
+  deny_network_access!
+
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", "-mod=vendor", *std_go_args(ldflags: "-s -w")
   end
 
   test do
