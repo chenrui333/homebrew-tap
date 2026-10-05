@@ -17,6 +17,14 @@ class Trdl < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "client" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
     ldflags = "-s -w -X github.com/werf/trdl/client/pkg/trdl.Version=#{version}"
     cd "client" do
