@@ -8,14 +8,20 @@ class Lathe < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04566e25d06a7098211db9e41524dc890960fbdd71ecd7eac3e3b9075b97d9ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04566e25d06a7098211db9e41524dc890960fbdd71ecd7eac3e3b9075b97d9ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04566e25d06a7098211db9e41524dc890960fbdd71ecd7eac3e3b9075b97d9ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1008d1914ce4cd00ddafbf7d657610c5ca121706d3ec28d8e402d30c1419a7f0"
-    sha256 cellar: :any,                 x86_64_linux:  "87f6ed0530951db0abcd9b6d54571d9be00592474f155fda580a3fb6fbbc004d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b61bf0176424bd26fa5dffdda3010b28247eb6c85a337d1ae008274e03112609"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b61bf0176424bd26fa5dffdda3010b28247eb6c85a337d1ae008274e03112609"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dae21ddc818f5cac58a340d1edbb8ca6d4273bad1cedc88f3f67640f6452d66"
+    sha256 cellar: :any,                 x86_64_linux:  "b8f8991e25d4fcc42d8e7ff5fbfd211cc724fbed3fe770c4866be40b4693b851"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
