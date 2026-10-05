@@ -17,18 +17,55 @@ class Termdbms < Formula
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
+    require "pty"
+    require "timeout"
+
     (testpath/"test.csv").write <<~EOS
       id,name,age
       1,Alice,30
       2,Bob,25
     EOS
 
-    output = shell_output("#{bin}/termdbms -p test.csv 2>&1", 1)
-    assert_match "ERROR: Error initializing the sqlite viewer", output
+    output = +""
+    PTY.spawn({ "TERM" => "xterm-256color" }, "/bin/sh", "-c",
+              "stty cols 120 rows 40; exec #{bin}/termdbms -p test.csv") do |r, w, pid|
+      Timeout.timeout(15) do
+        loop do
+          output << r.readpartial(4096)
+          # termenv blocks until the terminal answers its background colour query
+          w.write "\e]11;rgb:0000/0000/0000\e\\" if output.sub!("\e]11;?", "")
+          w.write "\e[1;1R" if output.sub!("\e[6n", "")
+          next unless output.include?("Alice")
+
+          w.write "q"
+          break
+        end
+
+        loop { output << r.readpartial(4096) }
+      rescue EOFError, Errno::EIO
+        nil
+      ensure
+        begin
+          Process.kill("TERM", pid)
+        rescue Errno::ESRCH
+          nil
+        end
+      end
+    end
+
+    assert_match "2 record(s) + 3 column(s)", output
+    assert_match "Alice", output
   end
 end
