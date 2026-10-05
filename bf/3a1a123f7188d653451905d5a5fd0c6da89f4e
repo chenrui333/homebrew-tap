@@ -1,0 +1,14 @@
+Formula/r/repology.rb
+  h_9df9c32c3f321d 21-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bf3a1a123f7188d653451905d5a5fd0c6da89f4e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
