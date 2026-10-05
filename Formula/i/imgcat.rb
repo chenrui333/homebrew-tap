@@ -13,10 +13,13 @@ class Imgcat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de7aadac53f2e43aea7fec7da3675cb1a40e66ab2b9b468c9866a3ee983429ad"
   end
 
+  depends_on "pkgconf" => :build # configure detects libpng/libjpeg via pkg-config
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     system "./configure", *std_configure_args
@@ -29,11 +32,15 @@ class Imgcat < Formula
     # fails on macos CI
     return if OS.mac?
 
-    resource "test_img" do
-      url "https://raw.githubusercontent.com/eddieantonio/imgcat/master/tests/img/1px_8.png"
-      sha256 "8d615bd3d56e46e7c201537d591081a98c459cd93e32cd59841c29a425a656b3"
-    end
-    testpath.install resource("test_img")
+    # 8x2 palette test image from upstream's tests/img/1px_8.png.
+    png = %w[
+      iVBORw0KGgoAAAANSUhEUgAAAAgAAAACBAMAAACXuoDeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAA
+      dTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEUDAwOAAwMDgAOAgAMDA4CAA4ADgIDAwMCAgID/AwMD/wP//wMDA///A/8D//////87
+      K5LGAAAAAWJLR0QPGLoA2QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+EEHQYMGhNlgcEAAAASSURBVAjXY2BUdk1n6Fx9
+      9j0ADCYDwSLH184AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDUtMDVUMTA6NTg6MTctMDY6MDCCWaZyAAAAJXRFWHRkYXRlOm1v
+      ZGlmeQAyMDE3LTA0LTI5VDEyOjEyOjI2LTA2OjAwZD2fjgAAAABJRU5ErkJggg==
+    ].join
+    (testpath/"1px_8.png").binwrite png.unpack1("m")
 
     assert_match "\e[40m \e[41m \e[42m \e[43m", shell_output("#{bin}/imgcat #{testpath}/1px_8.png")
   end
