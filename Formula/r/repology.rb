@@ -18,6 +18,8 @@ class Repology < Formula
 
   depends_on "ldc" => :build
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make"
