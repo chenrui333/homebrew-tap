@@ -22,6 +22,8 @@ class Lnko < Formula
     sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
   end
 
+  deny_network_access!
+
   def install
     lua = Formula["lua@5.4"]
     lua_version = lua.version.major_minor
