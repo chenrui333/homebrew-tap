@@ -8,9 +8,9 @@ class Nastro < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0519139100b2293399cac83b735da201879ffcb733604fe4b8cd7b029dc5b70f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29c496b6080952d94553cdfa7bb8b19f2525a122c3f19bea03f7f8c9769bdb60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb7aed75b856aae4481525c9a36982b4d3b397f75f6b58372b65ca8b4d93b7b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ebceeabd88294014ddce5f6580ff5cf363757a37a9a8271896f1f9d79882927f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a40165c5a7570706c449dfd7a50adf5a4a8bbc1f767579a26bfe5d5ed48fb4d7"
   end
 
   depends_on "go" => :build
