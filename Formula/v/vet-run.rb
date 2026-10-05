@@ -13,14 +13,31 @@ class VetRun < Formula
 
   depends_on "curl"
 
+  on_macos do
+    depends_on "bash"
+  end
+
+  deny_network_access!
+
   def install
+    # macOS bash 3.2 rejects the empty "${SCRIPT_ARGS[@]}" expansion under `set -u`
+    # ("SCRIPT_ARGS[@]: unbound variable") whenever no script arguments are passed.
+    inreplace "vet", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash" if OS.mac?
     bin.install "vet"
   end
 
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
-    output = shell_output("#{bin}/vet --force https://my-trusted-internal-script.sh 2>&1", 1)
-    assert_match "Could not resolve host: my-trusted-internal-script.sh", output
+    # vet downloads the URL with curl, so a local file:// URL exercises the full download, review and run flow.
+    (testpath/"hello.sh").write <<~SH
+      #!/bin/sh
+      echo "hello from vet"
+    SH
+    output = shell_output("#{bin}/vet --force file://#{testpath}/hello.sh 2>&1")
+    assert_match "hello from vet", output
+    assert_match "Script finished with exit code 0", output
+
+    assert_match "Unknown option: --not-a-real-option", shell_output("#{bin}/vet --not-a-real-option 2>&1", 1)
   end
 end
