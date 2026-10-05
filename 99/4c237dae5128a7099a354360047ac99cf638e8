@@ -1,0 +1,14 @@
+Formula/ponytail.rb
+  h_9df9c32c3f321d 15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "994c237dae5128a7099a354360047ac99cf638e8",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
