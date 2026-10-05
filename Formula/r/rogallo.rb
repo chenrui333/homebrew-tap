@@ -3,17 +3,17 @@ class Rogallo < Formula
 
   desc "Terminal client for Gemini and other small web protocols"
   homepage "https://github.com/davep/rogallo"
-  url "https://github.com/davep/rogallo/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "4436debca6cba92c67d4cf922b522ce709667282720bbe40a5b0211df8b1ce0f"
+  url "https://github.com/davep/rogallo/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "6a879edc20d49e6b75f245239ca691f76c726b82b418abc1bd780993026d2cfb"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01be9b544172c952df89da620526d8707d6f0f71eb82ebdd046a2728a8bbea3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e0326fd4b189094d982cd1c70bb6709a2dc69bbb17e68fcae1e291fa593116d"
-    sha256 cellar: :any,                 arm64_linux:   "4196095854d4236ab5afac1250196cfefa77c294be35667abdeb014ca66a92b1"
-    sha256 cellar: :any,                 x86_64_linux:  "a00cea2b463aa6b4282517f8acae77b7e77140960e8a768d75545ae4b9a3b422"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea05fa4d989b36a38439da38b5ae1e8ffefbf3dd1e97a3b9d248ea42e519c848"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70a892239ad185d39d577cb1a8b182c6c49bb91adf800415f15ce95690216d06"
+    sha256 cellar: :any,                 arm64_linux:   "83e0df9386e42f2d405582c1d6a3264b75187cd5840ad0c948dc52ef2e71b1c6"
+    sha256 cellar: :any,                 x86_64_linux:  "7c6a165d0d5be024060bb7efd33bd21441c1459d1627c85d2c30dae33cca6f61"
   end
 
   depends_on "rust" => :build
