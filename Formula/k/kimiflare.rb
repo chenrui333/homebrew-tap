@@ -7,16 +7,23 @@ class Kimiflare < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "2b5df1a11850b845a683595b69a0301e9e896ef2998d79cebcfb72444fb38e59"
-    sha256 cellar: :any,                 arm64_sequoia: "4eccd625a2fb042251ee3d2a57c06670464fdaab08af2ca0e45b93d5aa7e7f43"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12900b43ab67e3c0956f1efb7965713269d95300bb2d6eef0bdb88c0c1efc7ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06c0439878f3214f2db4c0d669d866ea203269d6fb3d5d07223108b407f2978a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "da9286dda72e9c4814cacc7e648a2bfaa2c56e2d18e1bbb5cf32daa4653e4a9c"
+    sha256 cellar: :any,                 arm64_sequoia: "da9286dda72e9c4814cacc7e648a2bfaa2c56e2d18e1bbb5cf32daa4653e4a9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9af43823852537fb4acb9f4886495ea0bb1fac61dabbb770fa8590cfb83c4d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52fdfd94db8a63105985c76d1ba0d6c231247e7af5754b1b0925fe49aec74e8e"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     prebuilds = libexec/"lib/node_modules/kimiflare/node_modules/isolated-vm/prebuilds"
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
