@@ -1,0 +1,16 @@
+.github/scripts/environment.js
+  h_9df9c32c3f321d 14-24,38-39,48,50-85,206-210
+.github/scripts/environment.test.js
+  h_9df9c32c3f321d 8-19,29-30,34-36,39,43-49,53-54,79-84,256-344
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c81ef87f6f648da1396bd050b48d92c61b5c3a11",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
