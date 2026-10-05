@@ -1,0 +1,19 @@
+Formula/k/kaydet.rb
+  s_20ee2ac03ef1eb::t_97917648fe5ffd 18-37,48-67,78-109,111-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cfc69df995d295c12b2b2d1b762361be0a85cf24",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
