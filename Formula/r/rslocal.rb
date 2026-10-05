@@ -16,18 +16,22 @@ class Rslocal < Formula
   depends_on "protobuf" => :build # for prost-build
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    # Upstream does not ship Cargo.lock; resolve once during fetch so the build stays offline.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    (testpath/".config/rslocal/config.ini").write <<~EOS
-      endpoint = "http://localhost:8422"
-      token = "rslocald_abc321"
-    EOS
-
+    # Without a config file the client fails before contacting any tunnel server.
     output = shell_output("#{bin}/rslocal http 8000 2>&1", 1)
-    assert_match "tcp connect error: Connection refused", output
+    assert_match %r{configuration file ".*/rslocal/config\.ini" not found}, output
 
     assert_match version.to_s, shell_output("#{bin}/rslocal --version")
     assert_match version.to_s, shell_output("#{bin}/rslocald --version")
