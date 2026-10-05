@@ -19,6 +19,12 @@ class SpiffeSpike < Formula
   depends_on "go" => :build
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     # cgo for sqlite dependency
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
