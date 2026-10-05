@@ -1,0 +1,14 @@
+Formula/u/unifly.rb
+  h_9df9c32c3f321d 25-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "259a5e9757510b08339ccd63eb96ccfec389fba5",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
