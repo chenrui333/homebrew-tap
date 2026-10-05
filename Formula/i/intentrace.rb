@@ -8,12 +8,19 @@ class Intentrace < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cdb5a0a8a1e464a4b764cd349b950e8c43d50bb48396bdb2ccf0f608f8fb3bb5"
+    rebuild 1
+    sha256 cellar: :any, x86_64_linux: "ab7a55e6411aa883f5db2cf5163e4e1defd5558ac1971b6ef00fdb61d9e199f7"
   end
 
   depends_on "rust" => :build
   depends_on arch: :x86_64
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
