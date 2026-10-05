@@ -7,22 +7,34 @@ class LlxprtCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "fb1baf788e8d229dc35521f18508abddedfa075049ec92a41999356a52f18b8c"
-    sha256               arm64_sequoia: "4ad05039389ad0677ffdb765c080241cd4ebea8b00cb5c8962a61f47d8f7d4ae"
-    sha256 cellar: :any, arm64_linux:   "daab94ff51552ba356295714bbcbfcff26de60bbf7eaf772304b0245f3b46ad4"
-    sha256 cellar: :any, x86_64_linux:  "e9f87ca6039e70483c5e4523d7120b0a90ef6bdc13eb02e3d1f490c62177039b"
+    rebuild 1
+    sha256               arm64_tahoe:   "344b3ac884759ac74cf8a9232e7bf5f5cae698afb40762f1efa3063e9f04b1a9"
+    sha256               arm64_sequoia: "83afb948dc16aa41dfe50afe70b594155e291524273622254f045620b39a27d6"
+    sha256 cellar: :any, arm64_linux:   "3e92e62626d683df05fc267fa314654d3bcdd072e28b1f4a65f768088e6a70ba"
+    sha256 cellar: :any, x86_64_linux:  "49e9a32314a0a972deddfff729b63087a6364db35a46dcf8dd24fcbc09c5cf29"
   end
 
   depends_on "tree-sitter-cli" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+    # Mirror the local Bun upgrade so it and the package's devDependencies are cached.
+    cd buildpath/"npm-fetch/lib/node_modules/@vybestack/llxprt-code" do
+      inreplace "package.json", '"bun": "1.3.14"', '"bun": "1.4.2"'
+      system "npm", "install", *std_npm_args(prefix: false), "bun@1.4.2"
+    end
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    system "npm", "install", "--offline", *std_npm_args
     app = libexec/"lib/node_modules/@vybestack/llxprt-code"
     # The pinned Bun 1.3.14 runtime crashes while loading Sharp on Linux.
     inreplace app/"package.json", '"bun": "1.3.14"', '"bun": "1.4.2"'
     cd app do
-      system "npm", "install", *std_npm_args(prefix: false), "bun@1.4.2"
+      system "npm", "install", "--offline", *std_npm_args(prefix: false), "bun@1.4.2"
     end
     inreplace app/"package.json", '"bun": "^1.4.2"', '"bun": "1.4.2"'
     nm = app/"node_modules"
