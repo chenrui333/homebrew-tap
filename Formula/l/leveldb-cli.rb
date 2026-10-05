@@ -8,10 +8,11 @@ class LeveldbCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29067f9be02820fd7849b6f4ff863e46d0813fc9f5b54fa33d2b0964e0c942ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fedcfe1e50ba04c8f8d83a71e9ec6a3b0214018136d73d4696f3c604770a540"
-    sha256 cellar: :any_skip_relocation, ventura:       "66dc4307ae5097d717f797b83796b1b0943db06764eee618fc078f27e5b23ddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e3e786c867f2305185246b9042aa00979467d0cba5fb3316792cde92de2011e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f2b6978bfd65a0898afff7ad1fbface6880ebcab1154b69c08deb2557bb217f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2b6978bfd65a0898afff7ad1fbface6880ebcab1154b69c08deb2557bb217f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb97b6ac6895c7f3063e3696e4e06a332af5a1ab03755a277de29e4956de3d97"
+    sha256 cellar: :any,                 x86_64_linux:  "af7613a7bd26dcb2cf1c3a60a5718f4209ec733aa756022b3c82b95068271881"
   end
 
   depends_on "go" => :build
