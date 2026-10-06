@@ -8,15 +8,20 @@ class Quokka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b83a7acaa3383145e1e3f188feb1e25a8c73c7b7d48501bf4102c5c8b516c3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9758654dd13f1c20f3f701c3c6bb3f81c05b26e773eb53f67de79f346341fc5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74b9e53e18d7e51ac5bbc450eaa2675bc3b7dff8f8e3dcee49d6360002cf1f5e"
-    sha256 cellar: :any,                 arm64_linux:   "fa81de7bc419e81aa1024743d3926a72cab5364bdb59c283724bd7388cbd4a1e"
-    sha256 cellar: :any,                 x86_64_linux:  "9877005e5acb0f7e9c7dbe52860185eea4f3443a6be0c09255731b4272dd1a85"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "328c9f2dddfbf2ef61ee51f5cac51e235d3c83fe4a869b7f6e00ecf2dfcb6997"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbcd9a5d2e0da15cfad45b1ab95ad46ea5bce328657542f4d5c78673abe858a0"
+    sha256 cellar: :any,                 arm64_linux:   "6850b808a7bee006d4b000d1c741d6b9cc4e973c20a2adb79d83fe17b2091535"
+    sha256 cellar: :any,                 x86_64_linux:  "952d244ba4c83be6ca876bbe374bcba94af88203bd74dda5d35991c9115e1dab"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/quokka-cli")
