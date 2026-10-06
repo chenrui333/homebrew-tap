@@ -8,14 +8,20 @@ class PvMigrate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "adb5d44fdd481bd25a1f14b495b3c5b6287a7a1aa98d809748f3f0480a5aee93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25f1d203acb60aa9b32e876534fb38048b615b138ad224d0412eb29c47ab99f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d363e3bc3b694b6d5f43d226321adf0f0480b172031e0605b955c05754f93450"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f8a77597ffcb338171ed25bffa18815ab92d71b0fdbb75286f5e4d244129ea2"
-    sha256 cellar: :any,                 x86_64_linux:  "674ab2fcfe1e6e7ab516003137d114acfeb37915a96dac74d27f8e740074dfa6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5eafe8090788095a38cecdf2c47a786826958ebbcffbd90c979fb5daae334098"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a666d79c55a6637cd418521a4e80ebe4cc963bda8ea2ea6f22c9b625e3c2aa1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13726e6f75326ec9e6a0c50f0e64845a370f0d7d1c150f29c4a0dbf8367743e8"
+    sha256 cellar: :any,                 x86_64_linux:  "04373239106101e81b02a4806cd7d016d9edca9c665d1cdaf3a32cab12b0d7a0"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
