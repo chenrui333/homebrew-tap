@@ -8,10 +8,11 @@ class Obelisk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a057c18bcdeb928dd8b74ca085ba618d698fa7d08ce49e7c7a69f397764a1a62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "076e016cd174af661e33e950ce766f5f041bde4ea7f8fc042fb958502352ad9b"
-    sha256 cellar: :any,                 arm64_linux:   "6e2e9f6a4a0795ba26f8614361b89fa5458ee09ce8957e63b77c904ab96e2867"
-    sha256 cellar: :any,                 x86_64_linux:  "eb3b34c37d4e90af34e9b33757da3fb255d8a83a0b31c93fa323870ed2bc3873"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "648c782ef45e69da900e097d9097a512dd73b00502c2b74ea012f2d0bf8b5164"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d4bd4d88783a29e377d40ab6e898109b9a2b3bb81c6238bbd36103bb94b0227"
+    sha256 cellar: :any,                 arm64_linux:   "04acc3ec49c267ed8bf0779c04a878da15fd34cd467ba227c285405955ba8ee7"
+    sha256 cellar: :any,                 x86_64_linux:  "b5763555e31bbe6a2f6a1c794f0b0641438bdd6aa89b359165b9a03bc0e35b18"
   end
 
   depends_on "pkgconf" => :build
