@@ -8,10 +8,11 @@ class Pluqqy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abb88c7712b7bc0df96329675a6e49c6d0c41db71b2b2ab2ac3ec2dc1fc39e7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ae2a49b7039bcc55dde1262f778cd17114ff8a93282e73b21baccd9ad954676"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52847b8663d84a1241418e6546b20cff6d5f7334d199b14110a556dc9105e2e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "982b56f56c37bde3253eaa68fbf7fac84121434cc87ae13fdaac03c168b48d5b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09faee36eba29375bf93ce28f8467490c980a9eb8bd6bda4c312e72752bf36d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09faee36eba29375bf93ce28f8467490c980a9eb8bd6bda4c312e72752bf36d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9916e08a153c61ca5b845db3447e41eaf7965546644797642782633980d20ddc"
+    sha256 cellar: :any,                 x86_64_linux:  "c8f333d84d28a648c32e5c29fcc87520d4b5c4e337d9a170cf5c0de802a2854a"
   end
 
   depends_on "go" => :build
