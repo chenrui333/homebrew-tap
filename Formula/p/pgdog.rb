@@ -13,14 +13,24 @@ class Pgdog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5d2a04b006ab3a58a3eddba4815de2a429f3402b7f9a24fdd8a3ac7ba8f6bf3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "596d623a069d26b1ca3463a549f701d3fda99448fa0af7c9e978587df74ee35a"
-    sha256 cellar: :any_skip_relocation, ventura:       "ddaf67d03b285050da4c147ce99f7179aa61be5398efaae61d784a2e522f1f4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bca9caed9f75c30693f1c1be41913851c4ed7d32d8a32480c5c4f721169e57a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63f7675eb10a52c59fc20bae7236d910af7af7845670221c92af2259ab587137"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1583f041a99922a46a322cb4530f5007a73135fe6b844e4eb9021481549d0ff"
+    sha256 cellar: :any,                 x86_64_linux:  "c51a60fec3203f027feac568cc279351d2796f06db1299e46962f399e10fbc3b"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
+
+  uses_from_macos "llvm" => :build # for libclang, used by `pg_query` bindgen
+
+  deny_network_access!
+
+  def fetch
+    # Upstream gitignores Cargo.lock; resolve once during fetch so the build stays offline.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
