@@ -1,8 +1,8 @@
 class Nastro < Formula
   desc "Record and transcribe audio locally"
   homepage "https://github.com/scaccogatto/nastro"
-  url "https://github.com/scaccogatto/nastro/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "50e4da6b32a7cfec3d1063f79578fd7cae2ce8265fcec0e9f8288c6213979b00"
+  url "https://github.com/scaccogatto/nastro/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "1d77d721a0e1b25ae37cef73414f53b08bc0c1f12870980872f05360b77e822c"
   license "MIT"
   head "https://github.com/scaccogatto/nastro.git", branch: "main"
 
