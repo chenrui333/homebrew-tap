@@ -7,16 +7,24 @@ class RemarkCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e6b3e99175230241fa58cc0c2daa684ebb83633d849fa88cf53157148faf1fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb35085f98c82c869accfa74748d89592dda1ab8f0e5e714bffffd58c4ff88ac"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec35a1e1d97ec837bb744f6a78127b320f800cbed9bca2db629c4ad1761cbf73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9f590233222ed32b89476a10b627117d6bb2ae2eb544e4d01d0508ccf69027e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6fcf25d90af84a37ac43b17605bada3c63013cc5430e3e375d30b9927d9beac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6fcf25d90af84a37ac43b17605bada3c63013cc5430e3e375d30b9927d9beac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95fec31b12e2abb5c2ef0718da18fcc542f7bb0f199fb981bde7149d9a0d1170"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95fec31b12e2abb5c2ef0718da18fcc542f7bb0f199fb981bde7149d9a0d1170"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/remark"
   end
 
