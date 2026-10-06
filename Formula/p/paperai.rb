@@ -9,23 +9,27 @@ class Paperai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "d0a437c00466aa72dc10f305115b837480ee9a934dec5205ca50f63412471424"
-    sha256 arm64_sequoia: "b3d1fc599f1dd8519857f2f3e5d88902f89f6913387ac03c0e83387675ceec68"
-    sha256 arm64_sonoma:  "41acc743285a2aa1fbce9029fa4f509e97b22404c5501a62b69933b9b5dd1eb2"
-    sha256 arm64_linux:   "b1fae4c9ff92e1c35c659532dc597f69495b5ff54c53211301d0a536fecc286a"
-    sha256 x86_64_linux:  "dffaeea4a5f2b3d82722111b636076eb2037cbde3ad7065e2472af62e5a61c75"
+    rebuild 1
+    sha256 arm64_tahoe:   "71317701804b44d4beeab39e34f1a9241bde041670d656c892dde55c7c6eded7"
+    sha256 arm64_sequoia: "ba87d6fde27497cfe385f2a67c4bbebbd2797024729d7cf0ecf26bd403c19be3"
+    sha256 arm64_linux:   "0ad83954dd49dcd5a2ad2e37b11da2b42ca469ea45a1149a677fdfd44a66c123"
+    sha256 x86_64_linux:  "29030978ea8d18d13bd2308782f0c69b63ed00df396f30b4241eed277205ec1e"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "m4" => :build
+  depends_on "maturin" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "swig" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libffi"
   depends_on "libyaml"
+  depends_on "numpy"
   depends_on "openblas"
   depends_on "pillow" => :no_linkage
   depends_on "pydantic" => :no_linkage
@@ -40,21 +44,27 @@ class Paperai < Formula
   end
 
   pypi_packages exclude_packages: %w[
-    bitsandbytes
-    certifi
-    cryptography
-    faiss-cpu
-    ggml-py
-    llama-cpp-python
-    packaging
-    pillow
-    pydantic
-    pydantic-core
-    rpds-py
-    scipy
-    sqlite-vec
-    torch
-  ]
+                  bitsandbytes
+                  certifi
+                  cryptography
+                  faiss-cpu
+                  ggml-py
+                  llama-cpp-python
+                  packaging
+                  pillow
+                  pydantic
+                  pydantic-core
+                  rpds-py
+                  scipy
+                  sqlite-vec
+                  torch
+                ],
+                extra_packages:   %w[
+                  calver coherent-licensed cython dunamai expandvars flit-core hatch-fancy-pypi-readme hatch-vcs
+                  hatchling jinja2 markupsafe meson meson-python pathspec pdm-backend pkgconfig pluggy
+                  poetry-core pyproject-metadata scikit-build-core semantic-version setuptools setuptools-rust
+                  setuptools-scm tomlkit trove-classifiers uv-dynamic-versioning wheel
+                ]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
@@ -96,6 +106,11 @@ class Paperai < Formula
     sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
   resource "cffi" do
     url "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz"
     sha256 "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
@@ -111,6 +126,16 @@ class Paperai < Formula
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
+  resource "coherent-licensed" do
+    url "https://files.pythonhosted.org/packages/cd/e9/63d2dcccb5496cc99d96f29a8a5f3e2c6ed0bba7fedb840862f92816ee17/coherent_licensed-0.5.2.tar.gz"
+    sha256 "d8071403ce742d3ac3592ddc4fb7057a46caffb415b928b4d52802e5f208416d"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/f6/de/db48b8870e766cfea809986cc50c1e986c663a9ab7bafd0ac1a2512c4a26/cython-3.2.9.tar.gz"
+    sha256 "d249c9022ab13286b17bd66f30609e800c5f95efeecb06168990c7a66cecde6c"
+  end
+
   resource "diskcache" do
     url "https://files.pythonhosted.org/packages/3f/21/1c1ffc1a039ddcc459db43cc108658f32c57d271d7289a2794e401d0fdb6/diskcache-5.6.3.tar.gz"
     sha256 "2c3a3fa2743d8535d832ec61c2054a1641f41775aa7c556758a109941e33e4fc"
@@ -119,6 +144,16 @@ class Paperai < Formula
   resource "distro" do
     url "https://files.pythonhosted.org/packages/fc/f8/98eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3/distro-1.9.0.tar.gz"
     sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
+  end
+
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
+    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
+  end
+
+  resource "expandvars" do
+    url "https://files.pythonhosted.org/packages/9c/64/a9d8ea289d663a44b346203a24bf798507463db1e76679eaa72ee6de1c7a/expandvars-1.1.2.tar.gz"
+    sha256 "6c5822b7b756a99a356b915dd1267f52ab8a4efaa135963bd7f4bd5d368f71d7"
   end
 
   resource "faiss-cpu" do
@@ -147,6 +182,11 @@ class Paperai < Formula
     sha256 "178947fc2f995b38497a74172adee64fdeb8b7ec18f2a5934d037641ba265d26"
   end
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
   resource "fonttools" do
     url "https://files.pythonhosted.org/packages/ec/ca/cf17b88a8df95691275a3d77dc0a5ad9907f328ae53acbe6795da1b2f5ed/fonttools-4.61.1.tar.gz"
     sha256 "6675329885c44657f826ef01d9e4fb33b9158e9d93c537d84ad8399539bc6f69"
@@ -165,6 +205,21 @@ class Paperai < Formula
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "hf-xet" do
@@ -207,6 +262,11 @@ class Paperai < Formula
     sha256 "49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"
   end
 
+  resource "jinja2" do
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
+  end
+
   resource "jiter" do
     url "https://files.pythonhosted.org/packages/45/9d/e0660989c1370e25848bb4c52d061c71837239738ad937e83edca174c273/jiter-0.12.0.tar.gz"
     sha256 "64dfcd7d5c168b38d3f9f8bba7fc639edb3418abcc74f22fdbe6b8938293f30b"
@@ -237,6 +297,11 @@ class Paperai < Formula
     sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
+  end
+
   resource "mcp" do
     url "https://files.pythonhosted.org/packages/d5/2d/649d80a0ecf6a1f82632ca44bec21c0461a9d9fc8934d38cb5b319f2db5e/mcp-1.25.0.tar.gz"
     sha256 "56310361ebf0364e2d438e5b45f7668cbb124e158bb358333cd06e49e83a6802"
@@ -245,6 +310,16 @@ class Paperai < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "meson" do
+    url "https://files.pythonhosted.org/packages/f9/c9/8c9983f4f3d9c4e22fd76bcf8cd053e4472aefae45fd044669b6daa34b53/meson-1.12.1.tar.gz"
+    sha256 "ab0a6ca09f8ef70c564c8241fb5a23957886a0b53fb58412b5e07eaf07dba743"
+  end
+
+  resource "meson-python" do
+    url "https://files.pythonhosted.org/packages/26/bd/fdb26366443620f1a8a4d4ec7bfa37d1fbbe7bf737b257c205bbcf95ba95/meson_python-0.18.0.tar.gz"
+    sha256 "c56a99ec9df669a40662fe46960321af6e4b14106c14db228709c1628e23848d"
   end
 
   resource "model2vec" do
@@ -272,6 +347,11 @@ class Paperai < Formula
     sha256 "419357bedde9402d23bf8f2ee372fca1985a73348debba94bddff06f19459952"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
   resource "pdf-annotate" do
     url "https://files.pythonhosted.org/packages/67/89/ae3a838ab916de7e4ec95cadd31349caeb102d01df004d7618710cded945/pdf-annotate-0.12.0.tar.gz"
     sha256 "a38b8f6aa61cf32460348f972857e46358e7b6d9858be1efbffa1035a885212b"
@@ -287,9 +367,29 @@ class Paperai < Formula
     sha256 "0dc0494a0e6561b268542b28ede2280387c2728114f117d3bb5d8e4787b93ef4"
   end
 
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
   resource "pgvector" do
     url "https://files.pythonhosted.org/packages/25/6c/6d8b4b03b958c02fa8687ec6063c49d952a189f8c91ebbe51e877dfab8f7/pgvector-0.4.2.tar.gz"
     sha256 "322cac0c1dc5d41c9ecf782bd9991b7966685dee3a00bc873631391ed949513a"
+  end
+
+  resource "pkgconfig" do
+    url "https://files.pythonhosted.org/packages/52/fd/0adde075cd3bfecd557bc7d757e00e231d34d8a6edb4c8d1642759254c21/pkgconfig-1.6.0.tar.gz"
+    sha256 "4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
   end
 
   resource "prettytable" do
@@ -325,6 +425,11 @@ class Paperai < Formula
   resource "pyjwt" do
     url "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz"
     sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
+  end
+
+  resource "pyproject-metadata" do
+    url "https://files.pythonhosted.org/packages/4f/76/1cae539918a7b1746d624c2f01560b793c22cd8c081157505bb9bbf0e34d/pyproject_metadata-0.12.1.tar.gz"
+    sha256 "8809a4df6fe08279b39a8890669506ed3158e0617855ac9aff098fcbe772ae4c"
   end
 
   resource "python-dateutil" do
@@ -372,14 +477,39 @@ class Paperai < Formula
     sha256 "07663963b67e8bd9f0b8ad15bb9163606cd27cc5a1b96235a50d8369803b96b0"
   end
 
+  resource "scikit-build-core" do
+    url "https://files.pythonhosted.org/packages/b2/1a/8c00b19c0a1e7acf890676af2efa430339d38e59fa9437f2aab8517af3f4/scikit_build_core-1.1.1.tar.gz"
+    sha256 "e347a59193c878ac56a363e57506938652a6dd8c965790cb1cbc6bc7e8d5abad"
+  end
+
   resource "scikit-learn" do
     url "https://files.pythonhosted.org/packages/0e/d4/40988bf3b8e34feec1d0e6a051446b1f66225f8529b9309becaeef62b6c4/scikit_learn-1.8.0.tar.gz"
     sha256 "9bccbb3b40e3de10351f8f5068e105d0f4083b1a65fa07b6634fbc401a6287fd"
   end
 
+  resource "semantic-version" do
+    url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
+    sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
+  end
+
   resource "sentence-transformers" do
     url "https://files.pythonhosted.org/packages/a2/a1/64e7b111e753307ffb7c5b6d039c52d4a91a47fa32a7f5bc377a49b22402/sentence_transformers-5.2.0.tar.gz"
     sha256 "acaeb38717de689f3dab45d5e5a02ebe2f75960a4764ea35fea65f58a4d3019f"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+  end
+
+  resource "setuptools-rust" do
+    url "https://files.pythonhosted.org/packages/68/ba/b31781d61bf9ee3c232a1d1160db11c11cdeae1d44e06c90723b25a8279f/setuptools_rust-1.13.0.tar.gz"
+    sha256 "f2afcf4baeee689910ce49cfa8aad4e08cce72f417449bcc32891b8664fdc726"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/7b/b1/19587742aad604f1988a8a362e660e8c3ac03adccdb71c96d86526e5eb62/setuptools_scm-9.2.2.tar.gz"
+    sha256 "1c674ab4665686a0887d7e24c03ab25f24201c213e82ea689d2f3e169ef7ef57"
   end
 
   resource "shellingham" do
@@ -447,6 +577,11 @@ class Paperai < Formula
     sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
   end
 
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
@@ -455,6 +590,11 @@ class Paperai < Formula
   resource "transformers" do
     url "https://files.pythonhosted.org/packages/dd/70/d42a739e8dfde3d92bb2fff5819cbf331fe9657323221e79415cd5eb65ee/transformers-4.57.3.tar.gz"
     sha256 "df4945029aaddd7c09eec5cad851f30662f8bd1746721b34cc031d70c65afebc"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "txtai" do
@@ -482,6 +622,11 @@ class Paperai < Formula
     sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/c3/d1/8f3c683c9561a4e6689dd3b1d345c815f10f86acd044ee1fb9a4dcd0b8c5/uvicorn-0.40.0.tar.gz"
     sha256 "839676675e87e73694518b5574fd0f24c9d97b46bea16df7b8c05ea1a51071ea"
@@ -490,6 +635,11 @@ class Paperai < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/24/30/6b0809f4510673dc723187aeaf24c7f5459922d01e2f794277a3dfb90345/wcwidth-0.2.14.tar.gz"
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   resource "yarl" do
@@ -502,39 +652,95 @@ class Paperai < Formula
     sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
+  deny_network_access!
+
+  def fetch
+    # maturin/PyO3 run offline `cargo metadata`, which needs crates for all targets.
+    resource("hf-xet").stage { cd("hf_xet") { system "cargo", "fetch", "--locked" } }
+    # The tiktoken sdist does not ship Cargo.lock, and jiter's lock lists workspace members that are not shipped.
+    %w[jiter tiktoken].each do |name|
+      resource(name).stage { system "cargo", "fetch" }
+    end
+    %w[safetensors tokenizers].each do |name|
+      resource(name).stage { cd("bindings/python") { system "cargo", "fetch", "--locked" } }
+    end
+    resource("fastuuid").stage { system "cargo", "fetch", "--locked" }
+  end
+
   def install
+    build_resources = %w[
+      flit-core
+      coherent-licensed
+      jinja2
+      pathspec
+      pdm-backend
+      poetry-core
+      dunamai
+      pkgconfig
+      pyproject-metadata
+      setuptools
+      calver
+      cython
+      markupsafe
+      meson
+      meson-python
+      semantic-version
+      setuptools-scm
+      pluggy
+      setuptools-rust
+      tomli
+      tomlkit
+      trove-classifiers
+      hatchling
+      expandvars
+      hatch-fancy-pypi-readme
+      hatch-vcs
+      scikit-build-core
+      pybind11
+      uv-dynamic-versioning
+      wheel
+    ]
+    custom_resources = %w[faiss-cpu fasttext-wheel hf-xet pdf-annotate]
+
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    # Cython is only a build tool for the extension modules; skip compiling Cython itself.
+    ENV["NO_CYTHON_COMPILE"] = "true"
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
 
-    venv = virtualenv_install_with_resources(without: %w[faiss-cpu fasttext-wheel hf-xet pdf-annotate])
+    venv = virtualenv_create(libexec, "python3.14")
+    # Without build isolation, build backends (meson-python) look up tools like `meson`/`cython` on PATH.
+    ENV.prepend_path "PATH", libexec/"bin"
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || custom_resources.include?(r.name) },
+                     build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
 
     resource("fasttext-wheel").stage do
       # fasttext-wheel 0.9.2 uses uint64_t without including cstdint.
       inreplace "src/args.cc", "#include <stdexcept>", "#include <stdexcept>\n#include <cstdint>"
 
-      venv.pip_install Pathname.pwd
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
 
     # Link the separate pytorch formula into this virtualenv.
     site_packages = Language::Python.site_packages(venv.root/"bin/python3")
-    pth_contents = "import site; site.addsitedir('#{Formula["pytorch"].opt_libexec/site_packages}')\n"
+    pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("pytorch")/site_packages}')\n"
     (venv.site_packages/"homebrew-pytorch.pth").write pth_contents
 
     resource("faiss-cpu").stage do
       # Homebrew's ccache shim is detected even when ccache is not installed.
       inreplace "cmake/default_config.cmake", "find_program(CCACHE_FOUND ccache)", "set(CCACHE_FOUND OFF)"
 
-      venv.pip_install Pathname.pwd
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
 
     resource("pdf-annotate").stage do
-      # pdf-annotate pins setuptools_scm < 4, which no longer works with current setuptools.
-      inreplace "pyproject.toml",
-                '"setuptools_scm >= 2.0.0, <4"',
-                '"setuptools_scm >= 9"'
-
       with_env(SETUPTOOLS_SCM_PRETEND_VERSION: "0.12.0") do
-        venv.pip_install Pathname.pwd
+        venv.pip_install Pathname.pwd, build_isolation: false
       end
     end
 
@@ -550,7 +756,7 @@ class Paperai < Formula
                   "sha2 = { workspace = true }"
       end
 
-      venv.pip_install Pathname.pwd
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
   end
 
