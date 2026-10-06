@@ -8,11 +8,11 @@ class Nosy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "851f4d879134f7b328afbe7f246f30a3119d714200b7c6700442bac9758790d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d8bd6955c05c589775b3ba5c45174ad24f8c07c9afa983b1aa2774c176dd0c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f77157387a27761c5d222238c7271353501d9796237276bd00afd886a10e467f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "caac0e6a9c676091ba43acaadfb871d88bcce2ecf6b9a9f9136e2ef52eac8ee2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d3f33e836c3cd66563399055246de99046fb5cbfcf034af0dcfeedfcb50c721"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19b5a5bfe7591cd1eb2dbeb317204489cee534a72d771d8712fdc46eb16a6c29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85edb5c5b81827e5cc8b7ad04a43489f2528ea9af147ec9b2087f98918fdd7e8"
+    sha256 cellar: :any,                 arm64_linux:   "6d3f8db3488573cd689ce29befc34b6373b1c2599f1fd1da1de5415c833e6f46"
+    sha256 cellar: :any,                 x86_64_linux:  "4ec799da4afcde340a26f3df97c18af72f7c6e916cc02cc7f9252ec82425fdc4"
   end
 
   depends_on "cmake" => :build
