@@ -1,17 +1,16 @@
 class Httpreplay < Formula
   desc "Replay HTTP requests from a tape file"
   homepage "https://github.com/roy2220/httpreplay"
-  url "https://github.com/roy2220/httpreplay/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "7fa02e5384b72fc285fa4ab35c47e003f0149397b3d9ec2951b1ccc24f3e7541"
+  url "https://github.com/roy2220/httpreplay/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "e28d6eaa2f56f07f3ca60c41cf783316fd0c9f1bf9778cc99c8230170c01d999"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "816a4bd977d109d99ba93fc1fe2f3fdc74dc7eabb41dcde757f6a95f1cb0a6c3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "816a4bd977d109d99ba93fc1fe2f3fdc74dc7eabb41dcde757f6a95f1cb0a6c3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b50723f1ae3e714d702618e1d633591bb754b5e53aaef26373eb1f4ae233d074"
-    sha256 cellar: :any,                 x86_64_linux:  "7714ddfd2cf73a758cf97c999217de49e18cc1d49774e66d1426d27847567af9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4db74c6520e0d6b318bbcd4919411c48bc45ce465a52106d3c6d75a0ee6c3d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4db74c6520e0d6b318bbcd4919411c48bc45ce465a52106d3c6d75a0ee6c3d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4063d0c87149810056cc4879eff03a4d84a3e6f6dbe6f431d6d2ce22a96bf8d1"
+    sha256 cellar: :any,                 x86_64_linux:  "d025e02c236aa05bcfb8106cfac1ff780a34399a4b69fc2c5f249a6e45ad8243"
   end
   depends_on "go" => :build
 
