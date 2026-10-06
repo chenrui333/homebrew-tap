@@ -10,11 +10,11 @@ class Renux < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f394c7d4816fecf13b64bbae0c0657fb511d94560d84e4079b8d583198b11fad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b27cd39c697d2240e8ebcb2272057c9d5f4fb22cada08c05b261f451e1588a9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db69e12573921dacdaece11b2084491ce07a677d94601bbc652e4a0f19beb8cc"
-    sha256 cellar: :any,                 arm64_linux:   "c16b65b4aa7b038cc0a77255813834de4257b3c77c170e5f04ea8bde2153f6b1"
-    sha256 cellar: :any,                 x86_64_linux:  "86d6c9a4a0e50569d0dc1fb80c9c45291d3730d36962766c1cbf3589589d0344"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ede75d582db54343953c7abb1aaf20bf5baf70c2c739223a3f51e8e3eb9be55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68177aca8b7280a8d818bb7c60ad2a3eb7647eaa6d9b0249adc9b80297698a0d"
+    sha256 cellar: :any,                 arm64_linux:   "9233cc45fb9f1008ef3e7824c2ac8a547dc3cc35291da672c2409287611fc3e3"
+    sha256 cellar: :any,                 x86_64_linux:  "9cb69343de5878e93c2dc7af3eec3e41517521d02b7273fdcf96a92f5ecb1a1a"
   end
 
   depends_on "pkgconf" => :build
@@ -25,14 +25,39 @@ class Renux < Formula
     depends_on "zlib-ng-compat"
   end
 
+  pypi_packages extra_packages: %w[
+    calver flit-core hatch-vcs hatchling packaging pathspec pdm-backend pluggy poetry-core setuptools setuptools-scm
+    tomlkit trove-classifiers vcs-versioning wheel
+  ]
+
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
     sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
   resource "hachoir" do
     url "https://files.pythonhosted.org/packages/31/e5/3a7d611dc87aab2c088be040f5da2f6937e308044983848e648d97ef388b/hachoir-3.3.0.tar.gz"
     sha256 "fd7679f649c17ee45ab2ba5eacddc702c667ea5200c0a1fd063d4615fa7270d2"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "linkify-it-py" do
@@ -55,6 +80,21 @@ class Renux < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
   resource "pillow" do
     url "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz"
     sha256 "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
@@ -63,6 +103,16 @@ class Renux < Formula
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
     sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
   end
 
   resource "pygments" do
@@ -80,6 +130,16 @@ class Renux < Formula
     sha256 "817e02727f2b25b40ef56f5aa2217f400c8489f79ca8f46ea2b70dd5e14558a9"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
+  end
+
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -93,6 +153,16 @@ class Renux < Formula
   resource "textual" do
     url "https://files.pythonhosted.org/packages/af/83/c99c252c3fad2f7010ceb476a31af042eec71da441ffeef75bb590bc2e9e/textual-3.7.1.tar.gz"
     sha256 "a76ba0c8a6c194ef24fd5c3681ebfddca55e7127c064a014128c84fbd7f5d271"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "typer" do
@@ -110,12 +180,47 @@ class Renux < Formula
     sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
   end
 
+  resource "vcs-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
+    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  deny_network_access!
+
   def install
     # hatch does not support a SOURCE_DATE_EPOCH before 1980.
     # Remove after https://github.com/pypa/hatch/pull/1999 is released.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    virtualenv_install_with_resources
+    build_resources = %w[
+      flit-core
+      packaging
+      pathspec
+      pdm-backend
+      poetry-core
+      setuptools
+      calver
+      tomlkit
+      trove-classifiers
+      vcs-versioning
+      setuptools-scm
+      pluggy
+      hatchling
+      hatch-vcs
+      wheel
+    ]
+
+    venv = virtualenv_create(libexec, "python3.14")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
