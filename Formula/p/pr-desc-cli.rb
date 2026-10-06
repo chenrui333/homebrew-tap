@@ -7,13 +7,21 @@ class PrDescCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "cb158fc5e9492a39515577b402cc578c6a390b54a144065ce1f4ab3860b6b7ef"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9d3431afbae5f302285b96c97ea6e6921c01fef219b547b138ecb73f0c6d6f7b"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
