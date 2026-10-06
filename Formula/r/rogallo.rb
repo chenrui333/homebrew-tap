@@ -10,10 +10,11 @@ class Rogallo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea05fa4d989b36a38439da38b5ae1e8ffefbf3dd1e97a3b9d248ea42e519c848"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70a892239ad185d39d577cb1a8b182c6c49bb91adf800415f15ce95690216d06"
-    sha256 cellar: :any,                 arm64_linux:   "83e0df9386e42f2d405582c1d6a3264b75187cd5840ad0c948dc52ef2e71b1c6"
-    sha256 cellar: :any,                 x86_64_linux:  "7c6a165d0d5be024060bb7efd33bd21441c1459d1627c85d2c30dae33cca6f61"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b741174c060fc45f8de7545a748060a82421c6b64625cf7fddb787af2dd8b238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f05b0da3a6081bf39f08c72531f96ab19e97123a0fe7b01efa16068f503a9ce7"
+    sha256 cellar: :any,                 arm64_linux:   "7ee0bf8b6f812f72fd3cc7cfdc33cdef9611fa59b32bca898aba7425c98aa7d7"
+    sha256 cellar: :any,                 x86_64_linux:  "c666a7af4a43a3c4923906c7a6042e208d991233b74eba6ab7ee4f5ada478b48"
   end
 
   depends_on "cython" => :build
