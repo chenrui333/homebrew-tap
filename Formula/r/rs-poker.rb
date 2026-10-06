@@ -8,14 +8,20 @@ class RsPoker < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd15038f0d26525789a71695a84ef0b31f350ec9c98a0b4c3c367dfcb1723987"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24e83e12fb9637a5bf44635b9eca3ea9e77749ee7e63b6034d63367b664674c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88815195ec57ae11463f3390838c74d8d3e98541641d61c80af256840dccc0f6"
-    sha256                               arm64_linux:   "c8e1b42c8bdd31eae6dbc34194358e6d68d58763ef371d4bf4c5ee55091bd928"
-    sha256                               x86_64_linux:  "2657aa43db60db02757fc5e49aaf9bdbcbfe4a63ccdfc5c7112c75d38de2f052"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9da4fd5ac9bdcf8d75f7f294c7536c57bd6f4f733a1da7f3df4dd4e6225bd41c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8d633739f5fc007d65df4ecf9e0a8f3ee5825397814a1a43491cd09ba9d0681"
+    sha256                               arm64_linux:   "f9421c60fc76e3b28a7f8bee16f332b734198f35b697db416137aecd9c72ebb7"
+    sha256                               x86_64_linux:  "a53f988a68ba980ff391232c58cf6f3f4e10427a451f9b90deed1e4e6260b448"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args, "--features", "rsp"
