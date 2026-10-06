@@ -1,0 +1,14 @@
+Formula/s/smassh.rb
+  h_9df9c32c3f321d 19-28,40-54,80-89,95-104,120-129,135-144,160-161,163-183,188-199
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4f473d38d72e54b845f17fd7ee6fdae87924e1f2",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
