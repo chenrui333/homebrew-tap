@@ -8,13 +8,20 @@ class Reeve < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f4ed23aea562f684abd2c1a932d3615dfa5ba92fa6ecf028efa7f8314d8c61e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a515255aeade5a2553c31887aa558597c202207223d6e6fe8ae9a1179a1ea394"
-    sha256 cellar: :any,                 arm64_linux:   "8725ca37895ed350f9bf97f1146579568d2b84fd6ffef008af2fd66ba47085b7"
-    sha256 cellar: :any,                 x86_64_linux:  "7e68d7bb49566cfa1e9d065af5abf5f41389dd962bd08105a3f3300c00bb29ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de53386c1b91e45a9f4c0edb01007a889bb0baf3d57a9a61496f6a859320eae1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5031583dca6cd44609597d226d0cb0c73158fa782041e570ff9657f15fe47f9"
+    sha256 cellar: :any,                 arm64_linux:   "aa0c982fc1318982219cb3c80ee03c0c3da5287a72ed074b98886787d1643ff2"
+    sha256 cellar: :any,                 x86_64_linux:  "c46e4fe4a32798ef6c907d8320fde3b1983cd59d5644ee464d7773684e52d8f7"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/reeve")
