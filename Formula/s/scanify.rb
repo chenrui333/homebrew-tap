@@ -8,12 +8,11 @@ class Scanify < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5bfe8eb147bc81b2f62b49e9c3e3c04209dd1ed7b83fceeb831d3e6f9027c5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6de84816007dbebb0ff67e894c5981dac4cb89a4dc56cab5b361db3ad4c7fe48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f8965aa1098f6081a89923ffdaa117259910d1156fae88b4583ab8035564929"
-    sha256 cellar: :any_skip_relocation, sequoia:       "2b70033de6a471a55153a7b92da07864583e1e4105720c6b7b2e1251b12e92c5"
-    sha256                               arm64_linux:   "8a0611e0384424ff1728caf6cb92f6512f049aa989d25a9e31ef0eb470523b55"
-    sha256                               x86_64_linux:  "4045f1f438d41f25008fe5565aaf39a63c09a0bccd2593b554a8b15691f91cdf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "998ee51d0c5cb5363cff2fc45abf83c8020c088314997d2cbe20e3f55649db91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4acc0e18eee66151a2b7eb3ee8b7cc3d335617ce5efe4ba9732c6b1d63e59f00"
+    sha256                               arm64_linux:   "f1c68a7854c4c235d7ac955e679516ad84cf24bcd6b5a3ffd0275fb3a4b46c3e"
+    sha256                               x86_64_linux:  "7c37380381203e945393b62c20ee346466d4b6547c67aac8539c0e06a9dbabb9"
   end
 
   on_linux do
