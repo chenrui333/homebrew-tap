@@ -12,12 +12,11 @@ class Ohy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a3c7370daae436e9e67f7728204b117da0b895fd88e5fb10537e2d3b84961869"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5581d1e4c4eb51466f278146d1c850aaa591b8e3624cd2d46cf410fe17a0aa2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43fca74fe5779dceb361ef888a1cb2d09485136305400bcbba5be78f52c6ba55"
-    sha256 cellar: :any,                 arm64_linux:   "ba3d96809980c0640413d30ad6a02d944624b33050789432a817350d2355a7ce"
-    sha256 cellar: :any,                 x86_64_linux:  "2e76a439b45ac42ab11ccf176d2e335159c908e1f1d0f72c63a28db7b8928786"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1376117bab8dbb472902a7a7089f12100fc480c5202047c5b3ff45645a129c6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "875c48bc2d14e186a7698b7813d1a76c48ed14a5461eeea4daa698dbc0ed7fe0"
+    sha256 cellar: :any,                 arm64_linux:   "741c1e2ff35e18426620bcc260b916564dce312ca702a4a15dc70a8206939ab9"
+    sha256 cellar: :any,                 x86_64_linux:  "af9accd845777253440fb4249635f70c28c2032fed030eba687be253a8c9d1f4"
   end
 
   depends_on "pkgconf" => :build
@@ -31,6 +30,14 @@ class Ohy < Formula
     depends_on "libsoup"
     depends_on "openssl@3"
     depends_on "webkitgtk"
+  end
+
+  deny_network_access!
+
+  def fetch
+    # Upstream never commits Cargo.lock; resolve once during fetch so the build stays offline.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
