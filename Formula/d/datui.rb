@@ -1,14 +1,16 @@
 class Datui < Formula
   desc "Data exploration in the terminal"
   homepage "https://derekwisong.github.io/datui/"
-  url "https://github.com/derekwisong/datui/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "82e709e755511b1c97330c77cbf6cb337914ce3c8c76a5a939cc0e2881082b79"
+  url "https://github.com/derekwisong/datui/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "47efbdc3eecbd5388a59e6a7e36ab925a95fcf2851241523d20d43f8c461eae8"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5ad253254273cc518023173336b3fcc38ad0f6df3b459895d170ee2ea6d5350"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fea4f566fdea0cd3229a50418ce5ff407ee7edfe43887ecea8286b239d0294a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2074512ef4e653092fa0c19b44b1ddd0667f0199b510ab24f6cd22a7447b213b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77cdd61a5ddedd95aaef1272b65435c60103bec584b46415a9a70f636f3569c2"
+    sha256 cellar: :any,                 arm64_linux:   "497819b26ffba6b1c4c661e4d32b876b27a4fcd744e32a75cc161329b3bdee19"
+    sha256 cellar: :any,                 x86_64_linux:  "703c1533a052f9969eae114081c4b2d184b9d1be626d569552a06f5b3605fd41"
   end
 
   depends_on "pkgconf" => :build
@@ -28,7 +30,7 @@ class Datui < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/datui --version")
 
-    output = shell_output("HOME=#{testpath} #{bin}/datui --generate-config")
-    assert_match "Configuration file written to:", output
+    output = shell_output("HOME=#{testpath} #{bin}/datui config init")
+    assert_match(/Wrote .*config\.toml/, output)
   end
 end
