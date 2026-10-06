@@ -2,21 +2,21 @@ class Pixelle < Formula
   include Language::Python::Virtualenv
 
   desc "Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM"
-  homepage "https://pixelle.ai/"
+  homepage "https://github.com/ATH-MaaS/Pixelle-MCP"
   url "https://files.pythonhosted.org/packages/cf/6a/77b094ee9f63901e6eeb9adfe3d9e659f8c83586ef3f84c80f5249138045/pixelle-0.1.16.tar.gz"
   sha256 "d40534b739bcb76cb7266530ba65824a6ca73964d7b59b5d97b0d42722fbb0ff"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ea2005982078bfdeb838526e07d5bc460d36528003b943709a01751838308442"
-    sha256 cellar: :any,                 arm64_sequoia: "666e09a36cae955a4c1c47ad1661b60d8fa7db34766fd30dc111a02bb91cac37"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c6e70b10d681fe2116d1a786db6e2b7b515d49a856cab41de222b6c9be48704"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94279600a3e0e08d8d4c533f35de4c086ea3dad1f4c583a534ccbbc42043d541"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "f85083eebad4e51162184df43dd0040f7b1056668b7e0b0ebe7e0b118f485834"
+    sha256 cellar: :any, arm64_sequoia: "76ca0e7ef85cfc6a61161cbe01b532276f4d19b22cea4bdc96742c720f5cd701"
+    sha256 cellar: :any, x86_64_linux:  "ff53d21ff0b0cb7b83397617470df3224e80136d6bb7ad34f0de04b1e9028bd4"
   end
 
-  depends_on "rust" => :build # for tiktoken
+  depends_on "maturin" => :build
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
@@ -25,7 +25,13 @@ class Pixelle < Formula
   depends_on "python@3.13"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py]
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py],
+                extra_packages:   %w[
+                  calver coherent-licensed cython dunamai expandvars flit-core flit-scm hatch-fancy-pypi-readme
+                  hatch-vcs hatchling pathspec pdm-backend pkgconfig pluggy poetry-core poetry-dynamic-versioning
+                  semantic-version setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers uv-build
+                  uv-dynamic-versioning wheel
+                ]
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/0b/03/a88171e277e8caa88a4c77808c20ebb04ba74cc4681bf1e9416c862de237/aiofiles-24.1.0.tar.gz"
@@ -112,6 +118,11 @@ class Pixelle < Formula
     sha256 "3f391e4bd8f8bf0931169baf7456cc822705f4e2a31f840d218f445b9a854201"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
   resource "chainlit" do
     url "https://files.pythonhosted.org/packages/13/67/ead4f2ef893915f421f3f5bdc1309666304ef66c5826941475994001c147/chainlit-2.9.0.tar.gz"
     sha256 "1c6ab1aa24b4ab9203d04806455eeab8ef3cf1fbbb6c71d364621ed5db268fff"
@@ -132,6 +143,11 @@ class Pixelle < Formula
     sha256 "e7b8232224eba16f4ebe410c25ced9f7875cb5f3263ffc93cc3e8da705e229c4"
   end
 
+  resource "coherent-licensed" do
+    url "https://files.pythonhosted.org/packages/cd/e9/63d2dcccb5496cc99d96f29a8a5f3e2c6ed0bba7fedb840862f92816ee17/coherent_licensed-0.5.2.tar.gz"
+    sha256 "d8071403ce742d3ac3592ddc4fb7057a46caffb415b928b4d52802e5f208416d"
+  end
+
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
@@ -145,6 +161,11 @@ class Pixelle < Formula
   resource "cyclopts" do
     url "https://files.pythonhosted.org/packages/8a/51/a67b17fac2530d22216a335bd10f48631412dd824013ea559ec236668f76/cyclopts-4.2.1.tar.gz"
     sha256 "49bb4c35644e7a9658f706ade4cf1a9958834b2dca4425e2fafecf8a0537fac7"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "dataclasses-json" do
@@ -182,6 +203,11 @@ class Pixelle < Formula
     sha256 "21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"
   end
 
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
+    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
+  end
+
   resource "email-validator" do
     url "https://files.pythonhosted.org/packages/f5/22/900cb125c76b7aaa450ce02fd727f452243f2e91a61af068b40adba60ea9/email_validator-2.3.0.tar.gz"
     sha256 "9fc05c37f2f6cf439ff414f8fc46d917929974a82244c20eb10231ba60c54426"
@@ -190,6 +216,11 @@ class Pixelle < Formula
   resource "exceptiongroup" do
     url "https://files.pythonhosted.org/packages/0b/9f/a65090624ecf468cdca03533906e7c69ed7588582240cfe7cc9e770b50eb/exceptiongroup-1.3.0.tar.gz"
     sha256 "b241f5885f560bc56a59ee63ca4c6a8bfa46ae4ad651af316d4e81817bb9fd88"
+  end
+
+  resource "expandvars" do
+    url "https://files.pythonhosted.org/packages/9c/64/a9d8ea289d663a44b346203a24bf798507463db1e76679eaa72ee6de1c7a/expandvars-1.1.2.tar.gz"
+    sha256 "6c5822b7b756a99a356b915dd1267f52ab8a4efaa135963bd7f4bd5d368f71d7"
   end
 
   resource "fastapi" do
@@ -217,6 +248,16 @@ class Pixelle < Formula
     sha256 "66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb"
   end
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "flit-scm" do
+    url "https://files.pythonhosted.org/packages/e2/99/961b062461652435b6ad9042d2ffdd75e327b36936987c2073aa784334d5/flit_scm-1.7.0.tar.gz"
+    sha256 "961bd6fb24f31bba75333c234145fff88e6de0a90fc0f7e5e7c79deca69f6bb2"
+  end
+
   resource "frozenlist" do
     url "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz"
     sha256 "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
@@ -240,6 +281,21 @@ class Pixelle < Formula
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "hf-xet" do
@@ -647,14 +703,44 @@ class Pixelle < Formula
     sha256 "6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
   resource "pathvalidate" do
     url "https://files.pythonhosted.org/packages/fa/2a/52a8da6fe965dea6192eb716b357558e103aea0a1e9a8352ad575a8406ca/pathvalidate-3.3.1.tar.gz"
     sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
   end
 
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
+  resource "pkgconfig" do
+    url "https://files.pythonhosted.org/packages/52/fd/0adde075cd3bfecd557bc7d757e00e231d34d8a6edb4c8d1642759254c21/pkgconfig-1.6.0.tar.gz"
+    sha256 "4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f"
+  end
+
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/61/33/9611380c2bdb1225fdef633e2a9610622310fed35ab11dac9620972ee088/platformdirs-4.5.0.tar.gz"
     sha256 "70ddccdd7c99fc5942e9fc25636a8b34d04c24b335100223152c2803e4063312"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "poetry-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/a9/95/467ab3657dc83faa759d5127178f71e3f2b53be3b29764c32690739d68c6/poetry_dynamic_versioning-1.10.0.tar.gz"
+    sha256 "52bf9ed57f2d60f4250a1dfe43db7b8144541df2f3ae6e712d12b43ecda71f47"
   end
 
   resource "posthog" do
@@ -777,6 +863,26 @@ class Pixelle < Formula
     sha256 "eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"
   end
 
+  resource "semantic-version" do
+    url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
+    sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+  end
+
+  resource "setuptools-rust" do
+    url "https://files.pythonhosted.org/packages/68/ba/b31781d61bf9ee3c232a1d1160db11c11cdeae1d44e06c90723b25a8279f/setuptools_rust-1.13.0.tar.gz"
+    sha256 "f2afcf4baeee689910ce49cfa8aad4e08cce72f417449bcc32891b8664fdc726"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/b9/19/7ae64b70b2429c48c3a7a4ed36f50f94687d3bfcd0ae2f152367b6410dff/setuptools_scm-8.3.1.tar.gz"
+    sha256 "3d555e92b75dacd037d32bafdf94f97af51ea29ae8c7b234cf94b7a5bd242a63"
+  end
+
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -832,6 +938,11 @@ class Pixelle < Formula
     sha256 "64be704a875d2a59753d80ee8a533c3fe183e3f06807ff7dc2232938ccb01549"
   end
 
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
@@ -840,6 +951,11 @@ class Pixelle < Formula
   resource "traceloop-sdk" do
     url "https://files.pythonhosted.org/packages/3c/b0/e77687b935fbf980b52a99984dc264f2e44cde7824a3b44f28a742611900/traceloop_sdk-0.47.5.tar.gz"
     sha256 "b592d331800b36c104316d17b1352212e3e3dbcfb37589daf2c2f3e90e84ddfe"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "typer" do
@@ -862,6 +978,16 @@ class Pixelle < Formula
     sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
+  resource "uv-build" do
+    url "https://files.pythonhosted.org/packages/ef/b0/dcd2fb2b9564f1c477abc90331571c06694a4871aba517223f5a6ab28f2b/uv_build-0.9.30.tar.gz"
+    sha256 "c68563778333a3b796c48815fa08a47c9acb53748d4d82b48d79d47aee62639d"
+  end
+
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/cb/ce/f06b84e2697fef4688ca63bdb2fdf113ca0a3be33f94488f2cadb690b0cf/uvicorn-0.38.0.tar.gz"
     sha256 "fd97093bdd120a2609fc0d3afe931d4d4ad688b6e75f0f929fde1bc36fe0e91d"
@@ -880,6 +1006,11 @@ class Pixelle < Formula
   resource "websockets" do
     url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
     sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
+  end
+
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
   resource "wrapt" do
@@ -902,8 +1033,76 @@ class Pixelle < Formula
     sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
+  deny_network_access!
+
+  def fetch
+    # maturin/PyO3 run offline `cargo metadata`, which needs crates for all targets.
+    resource("hf-xet").stage { cd("hf_xet") { system "cargo", "fetch", "--locked" } }
+    # The tiktoken sdist does not ship Cargo.lock, and the jiter and uv-build locks list
+    # workspace members that are not shipped.
+    %w[jiter tiktoken uv-build].each do |name|
+      resource(name).stage { system "cargo", "fetch" }
+    end
+    resource("tokenizers").stage { cd("bindings/python") { system "cargo", "fetch", "--locked" } }
+    %w[fastuuid watchfiles].each do |name|
+      resource(name).stage { system "cargo", "fetch", "--locked" }
+    end
+  end
+
   def install
-    virtualenv_install_with_resources
+    build_resources = %w[
+      flit-core
+      coherent-licensed
+      jinja2
+      packaging
+      pathspec
+      pdm-backend
+      poetry-core
+      dunamai
+      pkgconfig
+      poetry-dynamic-versioning
+      setuptools
+      calver
+      cython
+      markupsafe
+      semantic-version
+      setuptools-scm
+      flit-scm
+      pluggy
+      setuptools-rust
+      tomlkit
+      trove-classifiers
+      hatchling
+      expandvars
+      hatch-fancy-pypi-readme
+      hatch-vcs
+      uv-build
+      uv-dynamic-versioning
+      wheel
+    ]
+
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    # Cython is only a build tool for pyyaml and the aio-libs extensions; skip compiling Cython itself.
+    ENV["NO_CYTHON_COMPILE"] = "true"
+
+    venv = virtualenv_create(libexec, "python3.13")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+
+    # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
+    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || r.name == "hf-xet" },
+                     build_isolation: false
+    resource("hf-xet").stage do
+      # hf-xet's sdist points maturin at a python-source directory that it does not ship.
+      inreplace "pyproject.toml", 'python-source = "hf_xet/python"', 'python-source = "."'
+      venv.pip_install Pathname.pwd, build_isolation: false
+    end
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
