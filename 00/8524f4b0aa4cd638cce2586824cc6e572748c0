@@ -1,0 +1,14 @@
+Formula/s/sdl_ttf.rb
+  h_9df9c32c3f321d 31-32,41-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "008524f4b0aa4cd638cce2586824cc6e572748c0",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
