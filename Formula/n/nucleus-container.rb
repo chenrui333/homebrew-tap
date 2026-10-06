@@ -8,12 +8,19 @@ class NucleusContainer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "dc386d59b1ecf0fdcdd63f4d0fd9f599fa998d2c4ac6886498b0a5e53b6fb5c8"
-    sha256 cellar: :any, x86_64_linux: "8457ecd568800c0d146db169695d9656bed076a6acebb013a265194e6fb129a1"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "d9785aca9d327b19b5c013527f53e7c4246397005d766d19f4f7f33821a778eb"
+    sha256 cellar: :any, x86_64_linux: "e6b8e6ca5ed10aae88f3b6a232d8377751a8aeebb907f92b6a4107c8a59643b8"
   end
 
   depends_on "rust" => :build
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     if Hardware::CPU.arch == :arm64
