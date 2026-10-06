@@ -7,19 +7,26 @@ class Optimizt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "0dcf3f33fb74290cfd79b8e70bb1d1aac8ad173f737cdc7c11dd00c9a05b1399"
-    sha256 cellar: :any, arm64_sequoia: "766bdedad44bd16da530197395e963a2bfe31f0eaf2f09c7bf9102ed213104d8"
-    sha256 cellar: :any, arm64_sonoma:  "766bdedad44bd16da530197395e963a2bfe31f0eaf2f09c7bf9102ed213104d8"
-    sha256 cellar: :any, arm64_linux:   "a13f819406a6928261b758c92a1e8891ada69d49240db9f1bd4497cf4264b72b"
-    sha256 cellar: :any, x86_64_linux:  "fd43f900be2168b129bc78de25a09f89b9dda750c576ea4ff1bbb2a213013357"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "cec93adb921a7730ead8713075c5a4d6fbd37321efa8c39c06c40f6f77a53336"
+    sha256 cellar: :any, arm64_sequoia: "cec93adb921a7730ead8713075c5a4d6fbd37321efa8c39c06c40f6f77a53336"
+    sha256 cellar: :any, arm64_linux:   "4501a28918b397014b6c9c360a12bf6e1f1a96526811a6b5aa896dde494ce3c0"
+    sha256 cellar: :any, x86_64_linux:  "19b14982100e199e454dbc137ba123417e80d1a7c31edadb3983be9fbcb3061f"
   end
 
   depends_on "gifsicle"
   depends_on "guetzli"
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     # Avoid loading the native image stack for metadata-only CLI commands.
     cli = libexec/"lib/node_modules/@343dev/optimizt/cli.js"
