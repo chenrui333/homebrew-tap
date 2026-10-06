@@ -8,10 +8,11 @@ class Panix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "976319cab17db6f666d24c91f56252c3857a2a9066e0634fae03c5168670aa87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "976319cab17db6f666d24c91f56252c3857a2a9066e0634fae03c5168670aa87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0b74b50783b7bc558edca88422b772b53970e93ffdd147eebe249d4c21a937d"
-    sha256 cellar: :any,                 x86_64_linux:  "1810d6673f2ff301af172e178809565f68216364c5e00074baf366bf26898f02"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7bd30fc0a8eb004a66911c144ae5e8e0ccd0fbbdab4c6f9782198128db89db0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7bd30fc0a8eb004a66911c144ae5e8e0ccd0fbbdab4c6f9782198128db89db0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7684da1ac439f5e5b2113e952be0772b4d653c467fe807d7991f8f318c2f8cd5"
+    sha256 cellar: :any,                 x86_64_linux:  "6faf46576843b506d71c89f7708e0087152ea35dbc8e7495f75eb2a494fe5371"
   end
 
   depends_on "go" => :build
