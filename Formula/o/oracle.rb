@@ -8,15 +8,17 @@ class Oracle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5b5e1de5656e94294e6794fba935d8873333e5370987052c6b88b5fa91ce336"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8150a56e0a061ad75108e1dd9e5202078a72191e1ff4fe20eed27a77058479ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7c3f427840321ad5a4a6bd25e2535a899121cae05d5b3fa795d811f0cee00bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d4363bd711cd2f3a3b6cae8a528d7921bea077876ff582f52f92a27ec784d67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9a1fd734c422fbdcf62124ef39653823df6b71b182edc54dd09f825a0a24eba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ded9b026c0fbbd884485899d621b09e2e9fb54f8cd0b3f2e200d6f8d6dca8d47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eacaba84095126710996d297a2d01ac7cfbbad7a65d939eabb3f76e0cdc2391e"
+    sha256 cellar: :any,                 arm64_linux:   "1941e349e05f04fbfbc5f50c43b18057519fa1d09ddaa621519377e0eaae2bd0"
+    sha256 cellar: :any,                 x86_64_linux:  "dbae7313df1d6593f89daa6e96baf6836a2f08f869cf7a3975b0a7323196d418"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "pnpm" => :build
+  # pnpm 11+ ignores the `pnpm` field in package.json (overrides, onlyBuiltDependencies),
+  # so the frozen lockfile no longer matches.
+  depends_on "pnpm@10" => :build
   depends_on "node"
 
   on_macos do
@@ -30,8 +32,23 @@ class Oracle < Formula
     depends_on "libsecret"
   end
 
+  deny_network_access!
+
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("pnpm@10")
+    # Native modules are built from source in install, not via prebuilt downloads here.
+    system "pnpm", "fetch", "--ignore-scripts", "--store-dir", buildpath/".pnpm-store"
+    rm_r "node_modules"
+  end
+
   def install
     ENV["npm_config_build_from_source"] = "true"
+    # Build native modules against Homebrew's Node headers instead of downloading them.
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
+    # Apply to every pnpm command: `pnpm prune` has no --offline/--store-dir flags and
+    # would otherwise recreate node_modules from the registry.
+    ENV["npm_config_store_dir"] = (buildpath/".pnpm-store").to_s
+    ENV["npm_config_offline"] = "true"
 
     system "pnpm", "install", "--frozen-lockfile"
     system "pnpm", "run", "build"
@@ -43,7 +60,7 @@ class Oracle < Formula
                          "terminal-notifier.app/Contents/MacOS/terminal-notifier' )"
       inreplace "#{toasted_notifier}/notifiers/notificationcenter.js",
                 bundled_notifier,
-                "'#{Formula["terminal-notifier"].opt_bin/"terminal-notifier"}'"
+                "'#{formula_opt_bin("terminal-notifier")/"terminal-notifier"}'"
     end
     rm_r "#{toasted_notifier}/vendor"
 
