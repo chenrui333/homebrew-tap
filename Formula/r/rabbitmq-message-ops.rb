@@ -8,12 +8,11 @@ class RabbitmqMessageOps < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c11feae1514e3c1ef7c982653965ffc82b691644289a529a804b4e87d1823618"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c11feae1514e3c1ef7c982653965ffc82b691644289a529a804b4e87d1823618"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c11feae1514e3c1ef7c982653965ffc82b691644289a529a804b4e87d1823618"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3600a4ee6f91c5bb2b4dd9af75f3489101baf76a5e2c27fdcaf72769c924fc4a"
-    sha256 cellar: :any,                 x86_64_linux:  "78b5e05e7df3196f372231a93e3e33b7dbae19dae161cec1ab575a8b7921c5e0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91c7ca4049dd722fda8404ac4047061790a7ddc893d846c52e1ab52a92fc1f7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91c7ca4049dd722fda8404ac4047061790a7ddc893d846c52e1ab52a92fc1f7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67f77359981f8a6afb3ef7004ab5b80f7a2de19b69d61834987b84ebf4fc7779"
+    sha256 cellar: :any,                 x86_64_linux:  "fcf43e242f9982f2f180245cdddabcdec775000971be530491476c9596c4302d"
   end
 
   depends_on "go" => :build
