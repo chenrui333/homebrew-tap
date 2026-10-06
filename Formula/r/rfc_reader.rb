@@ -8,11 +8,11 @@ class RfcReader < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d9d861f1b238816578cf18b601497f644b319f941886cc5b986b45a9bbbfd89"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b7a4563f337cc1e37425548f3196954d99c6d637c7df7b2838457dbeecaecc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dce7ff303b7fe44205c380b8af6b7265a321e05fbc5c937db469b47ae961804"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4c58669d2e98377f370ee2932f3310eaf81f94f33ec3d7d535073681f9efd94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "418d48ea5f8ac1756a38671c85f96ce54e691f5a675d8515cffd6d70b782d363"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b61d6a58d95f6faa8342859b3e01d5f885fb60373199493fca2470e29e74c32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1128ea940e995e0e7472a1c95edbe4ff11d9d7b960cf40f1638b53606f8bc41"
+    sha256 cellar: :any,                 arm64_linux:   "a841ec0ed6456f7df08db6a6502029d6089f309207e1d1211621fd1c2824f59a"
+    sha256 cellar: :any,                 x86_64_linux:  "891dbef8c3b112cd64a42251af83538139785383ff2a71a28b8eeca281a4e8e6"
   end
 
   depends_on "rust" => :build
@@ -20,6 +20,12 @@ class RfcReader < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
