@@ -8,11 +8,11 @@ class Sprofile < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0a2af951bd5a4333b8e4f665e68536b081d9d20725894cdf67b61d5098dd018d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52fb26bd7a27983c97f9eca0d5be919db196ce9300987be53bb5a5a084456904"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "335ca40e7d16a733a1f765ac47fe43b410939b80cfef270b0b87a23db0919401"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d0f1de7b604cd625290c37acfe19e212752106cd5ab194668c3eee17a09e816"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d57762e867cb3893d0379e7646698fa20d331c8359c75a701dc4c8a64a9b0b37"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27c5e379d8fda0dc532baa95606a34b04d6d9c3982e86da79e7d3f90f5313726"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61d38bae7949404ac0c3860f35d78595aea660fb21e6cdcae7e644be2807391a"
+    sha256 cellar: :any,                 arm64_linux:   "8cd0cf2d2cd54b78fdc21849cb76532695ec3651516f776538c46aaaa2488824"
+    sha256 cellar: :any,                 x86_64_linux:  "4f00335720baf4f9ee97821e3f4860659b3100cde72e5118af96cd882a177610"
   end
 
   depends_on "pkgconf" => :build
