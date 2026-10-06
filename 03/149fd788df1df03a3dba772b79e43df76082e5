@@ -1,0 +1,19 @@
+Formula/p/pubmed-mcp-server.rb
+  s_20ee2ac03ef1eb::t_126b0cd93ed4e8 22,25,32,36,39,43-49,95-99,115-119,140-144,170-174,195-204,215-229,275-279,330-334,375-379,385-394,400-409,505-507,515-519,550-554,560-564,595-604,615-619,625-631,633-672
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "03149fd788df1df03a3dba772b79e43df76082e5",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
