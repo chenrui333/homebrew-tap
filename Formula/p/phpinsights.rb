@@ -7,17 +7,23 @@ class Phpinsights < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "7d2081641a9488e5e508745b1336d2694d98de56c0efed5c4148065292fa0a3b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "30281c9023dbc579c92b9ce10f3565ad5755bd0f6a142b438960f65a40b1bf23"
   end
 
   depends_on "composer" => :build
   depends_on "php"
 
+  deny_network_access!
+
+  def fetch
+    system "composer", "install", "--no-dev", "--prefer-dist"
+  end
+
   def install
     # The upstream version constant can lag the release tag.
     inreplace "src/Domain/Kernel.php", /public const VERSION = '[^']+';/,
               "public const VERSION = 'v#{version}';"
-    system "composer", "install", "--no-dev", "--prefer-dist"
     libexec.install Dir["*"]
 
     (bin/"phpinsights").write <<~EOS
