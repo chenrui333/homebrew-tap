@@ -8,12 +8,11 @@ class Pencode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b90fb59e65239d7aa7cef71a6c4a3fc0174878adc7d35b064792eeb792c07c78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b90fb59e65239d7aa7cef71a6c4a3fc0174878adc7d35b064792eeb792c07c78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b90fb59e65239d7aa7cef71a6c4a3fc0174878adc7d35b064792eeb792c07c78"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e895136f45d3c1fa9b70e1e6b8b9643b015d919dce9747b3fe79b37cce5d7832"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "398bbcbf3b0aae287f4e752c9ea07fe9cb88ea6f43595179dc632a59e232b4ae"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6b9803fe7151115456e7e216c9b46936c63d7e1f97b50e05818731506d4d822"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6b9803fe7151115456e7e216c9b46936c63d7e1f97b50e05818731506d4d822"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "182df129a5f9ee0be6024af4ecde31227549a7a957d2ed0ddb41c038189db857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69c4bf0b1e21d9d48604172caf2d7bdbfff897cd84ac887a74d7c78e0c66f122"
   end
 
   depends_on "go" => :build
