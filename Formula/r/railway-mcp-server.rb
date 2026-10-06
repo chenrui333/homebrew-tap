@@ -7,14 +7,22 @@ class RailwayMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "ebb94e058887f737d2a82709edc1e7479d61c51df2a3d44833d9b29407884495"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2684c38c496559cbf01b622b9ddfb2324a36dae682d5cbb6f727958081c67721"
   end
 
   depends_on "node"
   depends_on "railway"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
@@ -24,8 +32,9 @@ class RailwayMcpServer < Formula
       {"jsonrpc":"2.0","id":2,"method":"tools/list"}
     JSON
 
-    output = pipe_output("#{bin}/railway-mcp-server 2>&1", json, 1)
-    assert_match "Unauthorized", output
+    # The wrapper forwards to `railway mcp`, which reports the missing login without contacting Railway.
+    output = pipe_output("#{bin}/railway-mcp-server 2>&1", json, 0)
+    assert_match "Not logged in to Railway", output
     assert_match "railway login", output
   end
 end
