@@ -8,11 +8,11 @@ class Siggy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13b9ffea9ea6fd362840e17c42828df97b6d508bc7e9714f014d7bf9e4859c71"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6846724185e1d54b93c9f26ad8ca61e86318739df09213470bda01d2308fc42a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e28db2418efd6f177717294b4d99ea01b0f0262f2fa05cddb48f5018580af380"
-    sha256 cellar: :any,                 arm64_linux:   "08438e7ee3aebd990bff47b7c77bc4b5c4fc1d53fa32b6393ab9aeda975733c6"
-    sha256 cellar: :any,                 x86_64_linux:  "3a47fdcb6d8e93bb84703633bfd3b79619d2f4553871b5480e71bbaf5ea4da3d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98570bb4914df2b7c7f93c8b8cee1f85ec393a7abb4bc2bfb085950c660bc281"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f370a31d021d4bf7c883b46faaa5dea76b4b8f7fd865cb1ea7cb944f6d44b330"
+    sha256 cellar: :any,                 arm64_linux:   "27283124afb7d674cd071b85f50e3a77204d5fe7859795cc6ad2e6211d55c7e9"
+    sha256 cellar: :any,                 x86_64_linux:  "09b9421fab9f7d8ef98d7be449a949b0bf20cca9f50869957f389f575a844262"
   end
 
   depends_on "rust" => :build
@@ -23,6 +23,12 @@ class Siggy < Formula
     depends_on "dbus"
     depends_on "libxcb"
     depends_on "libxkbcommon"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
