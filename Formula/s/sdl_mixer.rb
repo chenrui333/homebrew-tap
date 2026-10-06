@@ -11,10 +11,10 @@ class SdlMixer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "275c8cb391aee2df3485a71ad6a548556d7b8b36e67990e99a17c06a92bcc68f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a8238ea96341faa72a345ae7a2fc36c2126ac6e354b995ec70a496d0e9c5778"
-    sha256 cellar: :any,                 ventura:       "7ac23ffb3ce5703d7109f60e4ceb2660b95cbad136431952682f569be7c07c11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e284106de4b98bb7ee9a54e2ded32c4c92db520c4b358fd8cbb261b86b1b891"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "7f7145d9f508cd558f7b9849bbc30fcbb5c749847ff67370fb4970319118bc79"
+    sha256 cellar: :any, arm64_sequoia: "56b406996aa0bbb69ff4ab7c6a5e120f60a4ef46569fdfbe4b78e351ace89a75"
+    sha256 cellar: :any, x86_64_linux:  "ebcd692f9e6aae84613b30b4df98551fe879a81695f8a70ef75b8d6be513dc37"
   end
 
   depends_on "pkgconf" => :build
@@ -29,6 +29,8 @@ class SdlMixer < Formula
     url "https://github.com/libsdl-org/SDL_mixer/raw/1a14d94ed4271e45435ecb5512d61792e1a42932/playwave.c"
     sha256 "92f686d313f603f3b58431ec1a3a6bf29a36e5f792fb78417ac3d5d5a72b76c9"
   end
+
+  deny_network_access!
 
   def install
     # Workaround for newer Clang
@@ -49,12 +51,12 @@ class SdlMixer < Formula
 
   test do
     testpath.install resource("playwave")
-    cocoa = []
-    cocoa << "-Wl,-framework,Cocoa" if OS.mac?
-    system ENV.cc, "playwave.c", *cocoa, "-I#{include}/SDL",
-                   "-I#{Formula["sdl12-compat"].opt_include}/SDL",
+    # Skip SDL_main.h so playwave keeps its own `main`: SDLmain's Cocoa event loop
+    # never starts SDL_main in a headless sandboxed test and the test hangs.
+    system ENV.cc, "playwave.c", "-D_SDL_main_h", "-I#{include}/SDL",
+                   "-I#{formula_opt_include("sdl12-compat")}/SDL",
                    "-L#{lib}", "-lSDL_mixer",
-                   "-L#{Formula["sdl12-compat"].lib}", "-lSDLmain", "-lSDL",
+                   "-L#{formula_opt_lib("sdl12-compat")}", "-lSDL",
                    "-o", "playwave"
     Utils.safe_popen_read({ "SDL_VIDEODRIVER" => "dummy", "SDL_AUDIODRIVER" => "disk" },
                           "./playwave", test_fixtures("test.wav"))
