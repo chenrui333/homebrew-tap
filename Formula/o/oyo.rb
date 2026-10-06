@@ -8,16 +8,22 @@ class Oyo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c15c20d1f4cbbb2bbe6f00661ee5ee75285a2283510ff727050c86b321a2d35d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "420757baa6c6e4e21ce331a16172f234b7186c2213df2eb87814dbb5edb86ff8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f7dd2cb6ba0cfef1626218355c3c245f58ee215826a2a0f8f73f2318344f6b1"
-    sha256 cellar: :any,                 arm64_linux:   "84ced7ceec5967d1827b5b75e880e08a62eb1d0584c12f16a95dad6d810c143a"
-    sha256 cellar: :any,                 x86_64_linux:  "fa222cf2e9b64d2fcb3c6b2f142b630f09cc892ad313020158db4a946e5bc044"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7e883bac64583fb1b2cac48ce4173a120509e57725d7549a366a0bd15ad1649"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5d3b790480363d0363c7c4df9b5765e5c0abf356ec15623856f09473459d07c"
+    sha256 cellar: :any,                 arm64_linux:   "3d667a08736959e01ef6b28eeb06a61042281032f68c71710947eb1c5b2f8707"
+    sha256 cellar: :any,                 x86_64_linux:  "f5009c440961858677cdd7fdec59c0d9608d5cb629f2d7491fea7eee161fb719"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/oyo")
