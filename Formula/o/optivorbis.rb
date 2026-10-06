@@ -8,11 +8,11 @@ class Optivorbis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b83ac68b5e7bc8b36e2969f456aa8cd8a0cbb0f372bac3c287398b7680d831e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d8bbcf6f57ef51774e353ccff500cdccbe259935857ada1ccbc372a94f44f6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bfd36e0ebf79a90da2774017a36749184842532b58ca294a5091c4dcd4adaa3"
-    sha256 cellar: :any,                 arm64_linux:   "c452be90714bf278d4c3e7f4ae0bbc2ccef2a718777f8f41a992645841861148"
-    sha256 cellar: :any,                 x86_64_linux:  "045c0bffd2fb05758a362082b485c8526add0409740c6fd92c064ad5081db552"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c88e7be95180e56cbff5c4be02aa629c14c66004d7310b5cc593905517abfbda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e129d67db0035e413ba4bd125b8053b6ef596354f081a17fe63b7cb6aeda651"
+    sha256 cellar: :any,                 arm64_linux:   "147198b7e415294e95b6528575852742a55587894b31a2390cab15933b7452c1"
+    sha256 cellar: :any,                 x86_64_linux:  "9f8c29417aba5d4631a4477aaece5af82f15e36cef3b813e3d014dfc1944c8db"
   end
 
   depends_on "rust" => :build
