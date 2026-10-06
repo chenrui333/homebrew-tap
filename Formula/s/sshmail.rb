@@ -13,14 +13,21 @@ class Sshmail < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16278d1139f23fe47c66550d9bc11e07ec072e99967b1f7971b97f933b33dd66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16278d1139f23fe47c66550d9bc11e07ec072e99967b1f7971b97f933b33dd66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16278d1139f23fe47c66550d9bc11e07ec072e99967b1f7971b97f933b33dd66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dcd8fe0425d61b033940c499aa8c36ee52d45d51c23cdf0a81c3549e108bc62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90a1aff371c2a472fb2303d29e3e4aaeecc6dea5e2ea4308958f762ef20f1ce5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a246577e6d6e42d14c355c9294f710db0919f9616028b76f2da92d3032ca3118"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a246577e6d6e42d14c355c9294f710db0919f9616028b76f2da92d3032ca3118"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb1a2b126a2f249f8a763d0a18d252371464cfde7fa8b99e9a5a7eb5fc48accc"
+    sha256 cellar: :any,                 x86_64_linux:  "8545af1c32633cd4e892e0dc3073891d51338d42eec835619b0508a4e6788dae"
   end
 
   depends_on "go" => :build
+
+  # The test registers an account by SSHing into a local hub over loopback.
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     (var/"sshmail").mkpath
