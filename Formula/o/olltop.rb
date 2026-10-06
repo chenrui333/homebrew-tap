@@ -8,9 +8,9 @@ class Olltop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78e0a96750b0e0136c97360c0190cc60aa839b0560975b55a6a9eb0e05599c8a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15636314195a29373037a2c82e3bccca60338f5affe09e4963931422898e2517"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22b144381bf96dd7cf1e58c1933ff831a1326c36ee6e1ae1d2b3b45c4e0030da"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b53a6c8ea92aeecadb5b8be45ec457f34ba702f10a9b6be94d134307ef838678"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22794b1d1e4ad70c9bb43159e90f2cb89aeb753b3477d486adae4aa21f71bf39"
   end
 
   depends_on "go" => :build
@@ -21,6 +21,12 @@ class Olltop < Formula
     depends_on "libpcap"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ldflags = "-s -w -X main.version=#{version}"
     ENV["CGO_ENABLED"] = "1"
@@ -29,5 +35,10 @@ class Olltop < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/olltop --version")
+
+    # `--debug` opens ./olltop.log before polling Ollama; a directory there forces a local error
+    (testpath/"olltop.log").mkpath
+    output = shell_output("#{bin}/olltop --debug 2>&1", 1)
+    assert_match "failed to open log file", output
   end
 end
