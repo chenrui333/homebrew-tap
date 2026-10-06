@@ -8,15 +8,20 @@ class Spdr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6192aec676c3ac0d2206cbb5513ce4c7058b6937bf42e2fa206ce3879a626d1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43ee87ba71da1275d3b487ff34b5b09f134e3850e5031cde567e1e431c15150b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93b422311172cae644558965e15b69019856070bffc883c19ac0c2b4427f71f5"
-    sha256 cellar: :any,                 arm64_linux:   "142320db97d93822adef559c240db86e1b4b5d2ad348eecfbcd677c49c55e6a0"
-    sha256 cellar: :any,                 x86_64_linux:  "dc18be40e00d7bd2679f6a3f36b64c325376b8104b674db63a6547d68cca14ab"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "803ecae7fe097119aacf34966ce57ae66fb01ae506aa95336e145425a6bd2e48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57f0be19f1fc0b65e9f375dbc80e2df911138e05d59c0adb9d1c9886940be4d6"
+    sha256 cellar: :any,                 arm64_linux:   "bead7709d4950b90d93edc71873976a8c932b4fc725cc46a3f6eb05ffad8f81f"
+    sha256 cellar: :any,                 x86_64_linux:  "c5661736ba619a4a09848816d544dbfabd9b69783acbac4662f839b53be4ad35"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "spdr-cli")
