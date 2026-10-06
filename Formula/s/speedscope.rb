@@ -7,25 +7,36 @@ class Speedscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a993dfa3efcf30e5a395a14f757ca0fb1fc2c81066893548dd515cab7c08b715"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e79e67d6d80e9595f87136a1e051a1114c2080686122070132e215b2bfb6d779"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/speedscope --version")
 
-    resource "test_profile" do
-      url "https://raw.githubusercontent.com/jlfwong/speedscope/refs/heads/main/sample/profiles/Chrome/116/Trace-20230603T221323.json"
-      sha256 "9d5757048341ee60b57d3c8ea5856c758ae7a10de10f3d8189eabbb58bc40205"
-    end
+    profile = testpath/"profile.speedscope.json"
+    profile.write <<~JSON
+      {"$schema":"https://www.speedscope.app/file-format-schema.json","shared":{"frames":[{"name":"main"}]},
+       "profiles":[{"type":"evented","name":"brew","unit":"none","startValue":0,"endValue":1,
+       "events":[{"type":"O","frame":0,"at":0},{"type":"C","frame":0,"at":1}]}]}
+    JSON
 
-    testpath.install resource("test_profile")
-    system bin/"speedscope", testpath/"Trace-20230603T221323.json"
+    output = shell_output("#{bin}/speedscope #{profile}")
+    js_file = output[/Creating temp file (\S+\.js)$/, 1]
+    assert_match [profile.read].pack("m0"), File.read(js_file)
   end
 end
