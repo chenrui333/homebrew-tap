@@ -8,11 +8,11 @@ class Rgx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "300cc0b5bbb35d9d51d57f052b3364c79dbb4707faeb56153a6fc663a4742bb6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cfe660962cb60d227aa000657ba2633271e2429a39694764da265d522bd5819"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e5c7f7799f6ee35d1f178677437246dfc763e64ad2947fe6e6c46e37aa410b6"
-    sha256 cellar: :any,                 arm64_linux:   "3a5d196c80ca92cade6c1afa439ee6974eddadc83c5852d09fdfa1f3d2db97bc"
-    sha256 cellar: :any,                 x86_64_linux:  "7e5b9c7614a5d0f42d604ad037f746e1169017e4e6100fa7a001f628eabd96a1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "802085b2c1dbdb729cacac013b762cf00f1276561f9c4ef30e57823d2402d24d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bdfe12347b4c448284e576ddf782fa1de5c4295200f9835577bb532b600a9ea"
+    sha256 cellar: :any,                 arm64_linux:   "68554de905d1746d6178fdd641918806e1ddebd8af5610692e3479322fd6c1ef"
+    sha256 cellar: :any,                 x86_64_linux:  "4d83fa1df0fbe44ee643d6acbc103bb88e581fcfd4886868866cc262aa285abe"
   end
 
   depends_on "rust" => :build
