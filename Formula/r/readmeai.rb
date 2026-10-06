@@ -9,12 +9,11 @@ class Readmeai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "9c13c5c99cfddcb7491de852b38f0991935190a49e935d516fa55865e2e78882"
-    sha256 cellar: :any, arm64_sequoia: "83ce29661aec7fa50e3196640dc7b4b608c04ee97adf348cbd9ab8b8becca900"
-    sha256 cellar: :any, arm64_sonoma:  "277ba68e61e2545bca613c0833b03fc32c1350c6afb07b54bf072f2bbc7b61c4"
-    sha256 cellar: :any, arm64_linux:   "e0607f808068c563370ea2219501c85ccefd847b35405b52b96d00af1e76faf6"
-    sha256 cellar: :any, x86_64_linux:  "2788f9688533124f7ea6ef0107a323ae0bc6794cff92f357bcd12946b57953ce"
+    rebuild 4
+    sha256 cellar: :any, arm64_tahoe:   "b4aedacd4cce75cb3b09aa3e4bb5dc53d0cd1eda09e9b35aea983b74c9be6cff"
+    sha256 cellar: :any, arm64_sequoia: "bb37644f171005d19c52dc3286a1295f594a3fdaa75c5532f3f186b5b5ac1b06"
+    sha256 cellar: :any, arm64_linux:   "8be8f2cdc3a5699ba1c1c9de6d93b43b3206fa55bf562515ae050a65e23e6c08"
+    sha256 cellar: :any, x86_64_linux:  "a56ffc599c6e2c941c0b20483ef347bb1b45d6208e5ac185eb1aad25bf691071"
   end
 
   depends_on "cython" => :build
