@@ -8,14 +8,20 @@ class Repeater < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "30ef0aa4c672a7a3e02f995c1fb6b82de27b404a9244eaf4049c1a565fd51c29"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e5be71f526fc7ee653451dba6021b59e3e93e7452a921b8f6381976fbfeaf05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "025e5d9a4007f61ab589c4e62e1bd410ff439d8e1415d19ed599ab3b381a744f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "47a20627f756b23a53cac9ab2393eb98eb1db7dfb6fcedffed4db52ec6d93aba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4548e5a05481f15540a66f68574b7bc3a903502edd70edf96f7d933105d138ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35a318b7509af645f280a44546a77056eeb3e4fbbeef59890921bcca04713e15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27b1a07ed329409843443e649af3559c3b01f5c3c5dc4b4c4a53000bb34f5bad"
+    sha256 cellar: :any,                 arm64_linux:   "527ebed951d04f729c3e2eb3a55eca72a4657fefd16bfb437fbd99e5d53fb0ca"
+    sha256 cellar: :any,                 x86_64_linux:  "ec3549756ffde995fa19abbd0b2f3ea5e0887867aa2e5e266f9ce2f45a104dfd"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
