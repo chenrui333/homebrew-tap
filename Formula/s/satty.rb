@@ -7,11 +7,11 @@ class Satty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "cec0c06418ca5d1c28d887c6afdf8133a4ac33c52e331c71a890dc1628d8f6b4"
-    sha256               arm64_sequoia: "22d7258df1009c6afd5140300657213eb1c97d720475e422f8abed342eb72153"
-    sha256               arm64_sonoma:  "c90c91a0fdb20952bfc8accabb5d9a11bd7f8e7fb9a34bdd649281cb06b82b2a"
-    sha256 cellar: :any, arm64_linux:   "912a738de98a4becb7a126babc23a40eda387c8376242fe7eb8446907986ccf0"
-    sha256 cellar: :any, x86_64_linux:  "f1b21c4f62889ebc6d11f7b82b65328e2ece6dc8d8d374c0a3a254c499545ae0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f00c1e523c3f9d3dd834ebb1433e69ac9f7ac810a19a330c0743d090c70f589"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167ced2fb558661dbf3a59629a4f568a59773a9449309848fc635d8485c379d0"
+    sha256 cellar: :any,                 arm64_linux:   "4ca9b66a9e7f7b36a8719f34baecb51d90c646ac3178b0d0979b40170b998839"
+    sha256 cellar: :any,                 x86_64_linux:  "75a1610fcdcaccf374eb8c51fcf82a793b1429ba9eadf98b824c807aa04823eb"
   end
 
   depends_on "pkgconf" => :build
@@ -30,6 +30,12 @@ class Satty < Formula
     depends_on "gettext"
     depends_on "graphene"
     depends_on "harfbuzz"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
