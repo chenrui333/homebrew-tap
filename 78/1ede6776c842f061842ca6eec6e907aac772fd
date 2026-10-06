@@ -1,0 +1,14 @@
+Formula/p/pinme.rb
+  h_9df9c32c3f321d 19-24,26-27,31,34,42-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "781ede6776c842f061842ca6eec6e907aac772fd",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
