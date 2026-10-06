@@ -9,11 +9,11 @@ class Rendy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e40d00ecc7a8c545da9bbf53641560aeb9482f746fdcbcd21e82be00880a8f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e40d00ecc7a8c545da9bbf53641560aeb9482f746fdcbcd21e82be00880a8f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e40d00ecc7a8c545da9bbf53641560aeb9482f746fdcbcd21e82be00880a8f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4fc8807b5c4d31f9cd860ea3ce184c11ad6bca81dfdabb490716cfbbd9a8deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e79a1c93eb783fb510af844d64ec929b04c44f9eeb17d237b7c8ad8d7555356"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7bffa2d420bf5e25203262bc2abd252e1c909a7349842862d41f4480add9876"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7bffa2d420bf5e25203262bc2abd252e1c909a7349842862d41f4480add9876"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d646e825194495e6ac9b47f934840e148fe831b521a8e440ad9cbcd2f5db86c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e6fa148d1c3055b662eb29607f8955b40472c95be14103e4995838d48bd5323"
   end
 
   depends_on "go" => :build
