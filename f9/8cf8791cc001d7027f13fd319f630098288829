@@ -1,0 +1,15 @@
+Formula/p/pgdog.rb
+  h_9df9c32c3f321d 27-34
+  h_9df9c32c3f321d 25-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f98cf8791cc001d7027f13fd319f630098288829",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
