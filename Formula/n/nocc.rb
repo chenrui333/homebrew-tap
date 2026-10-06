@@ -7,10 +7,11 @@ class Nocc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4c0ba684ab9fa0732a3b1ebbc617f32c8d69e34409cd9482420fe3b2b1d7ba0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e602fe35ba14a56b67298cd50a5a92292d751abf6bbfc61f16cd0e8e2423516e"
-    sha256 cellar: :any_skip_relocation, ventura:       "3916cdb160dad2af0f70eb2c04fbeb0e5f204d8e536f5c0ba9eece95fedb3cbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c968a34766949685e4b9251a17cba3962e98cacf029c71291da623e1cc439ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53ebb2b10953c39a5b09f7260d3bd6628be5358e7a41dbc8b05da4203de115f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dcc113305f2d789a338a1b767984e115c2111f7d984acc9334dc7a2a8c0d1db"
+    sha256 cellar: :any,                 arm64_linux:   "34afc056f54a2d63d6d2b81aee13a53bca7bc8e25907870c8e5d9cf92d9a6101"
+    sha256 cellar: :any,                 x86_64_linux:  "70db351620e81ac1f27cc4ce5f27cca906d5ab877e9d6e7984405954e8fa8d16"
   end
 
   depends_on "go" => :build
