@@ -52,8 +52,15 @@ jobs:
           core: true
           cask: false
 
+      # `brew style` installs shellcheck/shfmt/actionlint on demand; under the simulated macOS
+      # environment there are no usable bottles, so it would build ghc/pandoc from source and stall.
+      - name: Install style tools from Linux bottles
+        run: env -u HOMEBREW_SIMULATE_MACOS_ON_LINUX brew install --formula shellcheck shfmt actionlint
+        continue-on-error: true
+
       - run: brew test-bot --only-tap-syntax
         continue-on-error: true # Skip due to license check issues
+        timeout-minutes: 20
 
       - run: brew test-bot --only-formulae-detect
         id: formulae-detect
