@@ -7,16 +7,33 @@ class Secco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bda34125a9c3f566aecfaa13ae10a1fa72eca67264824baaff11cc0807246fbc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2b3e3be46610e927059dcf88fac26d3659b3587ea576a7f49c9504f16a324d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cf0abb1945ebaaa2ffa6e552db3da7cdf8e3e5cab882719b511ca9048bed2b3"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f223ba91ca5b1d7b11a6a6a475c955c1761f7b227aeaaed83f5a1a3f43370514"
+    sha256 cellar: :any, arm64_sequoia: "f223ba91ca5b1d7b11a6a6a475c955c1761f7b227aeaaed83f5a1a3f43370514"
+    sha256 cellar: :any, arm64_linux:   "59e1662973274dec5b4c7056ac7419e6531358953bcae59fb178307b783e7703"
+    sha256 cellar: :any, x86_64_linux:  "03f210e8bfd6a575830fe1b76e5c5699896e0c4c6f75941711cdf8c671c780a6"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/secco"
+
+    node_modules = libexec/"lib/node_modules/secco/node_modules"
+
+    # Remove incompatible pre-built Bare module binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
+                .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
   test do
