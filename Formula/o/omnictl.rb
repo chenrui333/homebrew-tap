@@ -8,13 +8,20 @@ class Omnictl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7f0901b22c940d4f83512b08c8b4e5cd4e4ae6a197f31ea41797986adf803bb2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34b92d5785e94462cea5b6be24a6081c65362502827e96c9ca1157490cbf63cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1cf6d7ae5f8790f0adf57a186d1a75604ada75feae4f43a8911bbefa4b67748"
-    sha256 cellar: :any,                 x86_64_linux:  "fe1ffa216cee5838b8e00d710a68a2119ce4cd6fefbc7307dbbdcbb354e6f5ac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "26c5ac6165724ce69526db6cc0bb9a069a086eb07956220fc2d2ad32944e239a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d376097fb0f2e256696d8e11de442a4fa12a542f78a17668039f4ca12c5aba13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8ae7a547cc2bd7a52d72f4fbec1f0976a1da43d29ab73d6e0eeefb3df67e6c7"
+    sha256 cellar: :any,                 x86_64_linux:  "733202fa22e443906e916083090452ce7a1a3b601f3f0d9755adeb2f3f7cbb80"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/omnictl"
@@ -28,7 +35,9 @@ class Omnictl < Formula
     system bin/"omnictl", "config", "new"
     assert_match "Current context: default", shell_output("#{bin}/omnictl config info")
 
-    output = shell_output("#{bin}/omnictl cluster status test 2>&1", 1)
-    assert_match "connect: connection refused", output
+    system bin/"omnictl", "config", "add", "staging", "--url", "https://omni.example.com"
+    system bin/"omnictl", "config", "context", "staging"
+    assert_match "Current context: staging", shell_output("#{bin}/omnictl config info")
+    assert_match %r{\*\s+staging\s+https://omni\.example\.com}, shell_output("#{bin}/omnictl config contexts")
   end
 end
