@@ -10,11 +10,11 @@ class Offpunk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "202a1d0395c221333004a3df484c987b9573f915f3e35b5cc2390cf5032874bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956943ca92165358af50c8f9660749e25127d6178fb1446c3bff20387b9373fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f831acacb902f649c2ae142d1d02994b2378c9ffbacb0fd3a85fbeddd2b8f59b"
-    sha256 cellar: :any,                 arm64_linux:   "e8b886ccb19b33fa3f900453b25a7e310465d40a1d975e328fa781fd9918590c"
-    sha256 cellar: :any,                 x86_64_linux:  "cdb133e6280f8c4dd5373b9a0140b17e100c077b8b498770410fa2d3ccce5bfc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69d7a6632e38844be7a3c3e844d08ab1e414c81739589c861a88525bc46099c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee7fef154a1174b05def2a98d094fe2157691e9ab306504131afe5785e45c3fd"
+    sha256 cellar: :any,                 arm64_linux:   "11847bf177d848ee5251783150b089009d2bb8537d28a65c22359a7ce4d2ca01"
+    sha256 cellar: :any,                 x86_64_linux:  "b17db3d336051a9a927d8c3a50b348a7a52cfbde9ae2653b869ec9d595c45057"
   end
 
   depends_on "gettext" => :build
