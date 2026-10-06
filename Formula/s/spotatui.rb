@@ -8,10 +8,11 @@ class Spotatui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "696c21458e657c3bc63122546d7b8f7e4756a695c143ef8d42bcc7b6b85487c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91f9a6360f22febd8987f2f8e70593ab3aa1e34d7bf1ceedbdd871a3b075ccd5"
-    sha256 cellar: :any,                 arm64_linux:   "0d117126bd23ff93a8d4863a9b2dfc334401c00e7722d98482ddc68d076c0b38"
-    sha256 cellar: :any,                 x86_64_linux:  "7e65f6ecb00d87bd875bb1b540455bb74520530d0466525f9f8072414421bfaa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c439e2bb8462e3ad27142d9fdf333404e33ec384094ffff61a5ecd137b11cfbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c8f21c91db1598f81a7ef1ab52e26a34523cf66db40a6f99105d3e81ec9f75b"
+    sha256 cellar: :any,                 arm64_linux:   "aaf1a162496f0ae351d764c7421a7ec4266aa21ad7a021b8905f13b36512873c"
+    sha256 cellar: :any,                 x86_64_linux:  "8f24c0706b855bd253cd5b8675a468b1f48b921aee94aa640c7301e5d0bdf8de"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +22,12 @@ class Spotatui < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
