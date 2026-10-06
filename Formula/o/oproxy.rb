@@ -8,18 +8,28 @@ class Oproxy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10bd87ad3323bd3e07e3464075e28c9de30b4cd850adda35b65858e8968f141d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cf3c7ffcbe965e05229b90fbc60872066addd9d9af8bfce719306c7283742f4"
-    sha256 cellar: :any,                 arm64_linux:   "e8224376079eaf7b9d8062c4d61ad285adc5799ae4b127beb243487031d14e2e"
-    sha256 cellar: :any,                 x86_64_linux:  "7841e7650fb3560c565fb1809fb73fa19ea6dd208c52c92983d57641db841eea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ded0fdc013fa65b4566bbfb303d27f938105bc78c8e2b0985195e6134c783f2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6db2d5a8d00dd5fb7489d1b83a9575e48cf11390b7c5d5c001d663f4151cb90"
+    sha256 cellar: :any,                 arm64_linux:   "d6318308bbba9b482a366cc8f404a32ec21566ec6f6dd88ee331baa1f82f05e6"
+    sha256 cellar: :any,                 x86_64_linux:  "92da1e6dd51184278a6a6782692875c238c449aab5e3326175a0fe64045dfc0e"
   end
 
   depends_on "node" => :build
   depends_on "rust" => :build
 
-  def install
+  # The test checks the proxy's /health endpoint over a loopback HTTP socket.
+  allow_network_access! :test
+
+  def fetch
     cd "src/design" do
       system "npm", "install", *std_npm_args(prefix: false, ignore_scripts: false)
+    end
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
+    cd "src/design" do
       system "node", "build.mjs"
     end
 
