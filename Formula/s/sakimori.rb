@@ -8,12 +8,11 @@ class Sakimori < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "28a244f717721ccecde3dd03e6b4050eb3c9c6b01d8ee4b6c157ebb1e2bbf48e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "025aa25499df87c62fee8b8e609d8d57ba3a8f27bb07d92cb7e697a4ced3f021"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4faf93938eaa216e5041f479abbfbbf84a57f761acb45ff85a70788e063fc890"
-    sha256 cellar: :any,                 arm64_linux:   "547e39a431504e0595e740fd170bd2cb6aa10f16dc937df8654e972ad9c02531"
-    sha256 cellar: :any,                 x86_64_linux:  "3c89adaca5e3746bff12bccccb55cf7cd8a18a2dced752ff73fb58a1e148643f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "35373061f7b5c06bf625653076e8049f639fa1d0fde535b84d8146dbb6e467cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69178f3c984b2e6bcf95ab5eaff7f1688fa9636e7a2a01c5e0dd90d4ad0e6569"
+    sha256 cellar: :any,                 arm64_linux:   "42969f3762c202b996bf8a5a6ca7b12124c2e0a624cbeba0def5853bc09fe566"
+    sha256 cellar: :any,                 x86_64_linux:  "d2728adae334d7061abcd98770ff729aab8fd4e7072842b576308fb4db6530c9"
   end
 
   depends_on "rust" => :build
