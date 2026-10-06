@@ -9,12 +9,16 @@ class Nino < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de9aa301536678f629bccba6d853d9ed1fc6a305aad45945bf7733d7ac59953a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f9b9327b424ddbd9244a702c3266bd9ab0cb5eeb9d9856a0974dfd976689693"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06403802565cdd70a4d8bc87ec142247ee09f684f86aaa03b9ba2c859c2ce6bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81a96a7aa34f7c0a0932a88976724164fde9aa9a9a18a123862b2d53093907d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1005af3b2d041b14a1139f9ef40d61403bf6b02c89a16ab7975d393144b11064"
+    sha256 cellar: :any,                 arm64_linux:   "6d5309e88d3c5e115c65b65b9efbbd7f089d7ed1dbfd1a45337d4de3221e02a2"
+    sha256 cellar: :any,                 x86_64_linux:  "3e389a4926ac68c8da98c4d9bbb65e3d679f4aead06946c6ffb5c055d6283660"
   end
 
   depends_on "cmake" => :build
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
