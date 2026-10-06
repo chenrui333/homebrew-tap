@@ -8,16 +8,24 @@ class OhMyClaude < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "15229398bb7d1574d127aaf9eb2661cd686de634f25e025d6be20c102c953981"
-    sha256 cellar: :any, arm64_sequoia: "15229398bb7d1574d127aaf9eb2661cd686de634f25e025d6be20c102c953981"
-    sha256 cellar: :any, arm64_linux:   "a65f2c30ec74e26c5be64d78c8b95367d4def7c048a841dad23734f9f5a09d74"
-    sha256 cellar: :any, x86_64_linux:  "e4898d29a709100c5fa3c4e15392afb58a98dc61623d716ba242f9b9ba57ea53"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "cfceaa33257c3c41b45cff23b04d2e28e049cfe7ffae04015a839250438dcd05"
+    sha256 cellar: :any, arm64_sequoia: "cfceaa33257c3c41b45cff23b04d2e28e049cfe7ffae04015a839250438dcd05"
+    sha256 cellar: :any, arm64_linux:   "e6e8d5540c566369a65a974e833dc7993d4fe323c9e23eb5610d711e7903a4b9"
+    sha256 cellar: :any, x86_64_linux:  "526ff5b76f16ea6eb95a1b7a398ec5d597c582fee0ce22bfcd213cbc4c4e5493"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove vendored prebuilt ripgrep binaries that cause Mach-O relocation failures
