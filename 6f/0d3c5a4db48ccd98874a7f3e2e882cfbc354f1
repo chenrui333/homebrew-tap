@@ -1,0 +1,14 @@
+.github/workflows/tests.yml
+  h_9df9c32c3f321d 55-60,63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6f0d3c5a4db48ccd98874a7f3e2e882cfbc354f1",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
