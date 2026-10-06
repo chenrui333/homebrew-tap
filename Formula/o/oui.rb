@@ -8,14 +8,20 @@ class Oui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9af9dfdabebef6b14d7253dc13859ced725535e3421988b0e2c95799087749d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9af9dfdabebef6b14d7253dc13859ced725535e3421988b0e2c95799087749d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9af9dfdabebef6b14d7253dc13859ced725535e3421988b0e2c95799087749d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e85a46adeb8e581829583c46eca62c8b07e8774c62f52c3df545c8ffb3f7de65"
-    sha256 cellar: :any,                 x86_64_linux:  "aad3b8a877e489f673d8e552ffab85f6269d1251675036b16243ebb8bc22ad41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21e6a8c6b7266993ce0a9ec9561f502409542f60b0172e89a84750ea6359a520"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21e6a8c6b7266993ce0a9ec9561f502409542f60b0172e89a84750ea6359a520"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "440c34a07ad91fb2cda3afdd5eb76cebec242c3d0153c8e2616cd7b74f4c9b79"
+    sha256 cellar: :any,                 x86_64_linux:  "782ddae9163864a57b4827ba46ac69309ee0004c99572cf0cb7fe2a1fd117650"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
