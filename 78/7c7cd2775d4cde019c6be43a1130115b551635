@@ -1,0 +1,14 @@
+Formula/s/sephera.rb
+  h_9df9c32c3f321d 5,18,23-35,42-44,47-49,52-54,73-74,77-84,87-89,92-94,112-119,127-136,142-148,150-173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "787c7cd2775d4cde019c6be43a1130115b551635",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
