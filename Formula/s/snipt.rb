@@ -8,11 +8,11 @@ class Snipt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "378f31ee8af8f9e145e2cfc6f57ec09dfd85563304a3e52a4ba9b1e05b80a14b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98a68b23d5df305214fb8498383b0387af19526948131c290d9bb4c6350bb691"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2761f232e421cba0ae648ea35f4bcf7fb6e1c2eb3b070d9069e0b83d7a0de31a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f543404f3592e889a65f0267629765c9cc87ab8af506ce1b00c56464a8b2cb9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b41ab2d47a5513c3ee6fbcc4bdbcf03b7ceea050eb30fd4dfac9cb90449ecad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f001f41702d9cd476f634dd59c830f56e2988ce50a27f69534bfb95bd940f25b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc3e74119ccd3aa09a6a9d5e64840a48b8ed2b288aac76cb677a09bd4170ba36"
+    sha256 cellar: :any,                 arm64_linux:   "9f8e0ae20cd0e6125ec4c3df8ea08a83b77cc089b98d29d26d5d5e289a8f6580"
+    sha256 cellar: :any,                 x86_64_linux:  "fc9d423ff8b94569bbc8c6601d8c4f49390e533f9e6d917081022d346181a0ef"
   end
 
   depends_on "pkgconf" => :build
@@ -23,6 +23,12 @@ class Snipt < Formula
     depends_on "libxi"
     depends_on "libxtst"
     depends_on "xdotool"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
