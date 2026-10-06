@@ -11,16 +11,17 @@ class Rang < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc51e87d0046034c644a86254247f57234975fa10b793d09d50af1b1995bc62c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb27d5603710a5b78a9427887243c9ecd320a928fab5cd0e1b76374ad32f5c57"
-    sha256 cellar: :any_skip_relocation, ventura:       "4c1a641de098889523d3830c61d8e1780d6674b57607806230f165d2549d8f43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "010f3396387c58cb799dc6359c134dee5955095dfad80649703658919a6b9f39"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c383da175e3075381f08ca5d80c6778962a7811f32162a8559b9a7e9c51a7922"
   end
 
   depends_on "cmake" => :build
 
+  deny_network_access!
+
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # TODO: Remove when https://github.com/agauniyal/rang/pull/141 is released
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
