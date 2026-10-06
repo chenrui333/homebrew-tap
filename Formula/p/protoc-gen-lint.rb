@@ -8,17 +8,20 @@ class ProtocGenLint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c1c9c3070713d2e8aad114c3c01d90d7edd8e73e80cf18aa8ec3b8fcb49db9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce753c635bbf69d81bfbb2489e985c69353443a2007597f6f1bcf40ecb0e6d96"
-    sha256 cellar: :any_skip_relocation, ventura:       "eeabf73dc69ea8093186a777e439454031aa62cf8dd97bbf99481d38ed2bad6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4752782faa507249042aefaddd47c28665c2857a846ae6678d390ec554759f3a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "786bdc2f45f7f4d765e3faf2358bbb4b3146684983fc314433741f3d9f3f3b63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "786bdc2f45f7f4d765e3faf2358bbb4b3146684983fc314433741f3d9f3f3b63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6237fcac530c8393fa9aec45593deb93ce6ffd2da220fac6a8c056fd4ecd2f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8334b7f14d9268b3a16e02eb176109db9aed27f465cc2ef430d7bcf78b00680"
   end
 
   depends_on "go" => :build
   depends_on "protobuf"
 
+  deny_network_access!
+
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", "-mod=vendor", *std_go_args(ldflags: "-s -w")
   end
 
   test do
