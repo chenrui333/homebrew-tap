@@ -9,12 +9,11 @@ class ReformatGherkin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b86a19115c0beb48514c929cca12b699e1dd7088202c41903716bef074ef7ce0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f99a305373ddce511f93c4b27dbf70bd9db5d094789efc2c33cd8ec22d7a57e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b179416b1392f5952c0ab4d0ed6d68438fc6e8d9ffa9f5de0553a1ae3f0083c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb570c3c0d42ccb6f4ac2fff1331441b294446d5d95913f58c714ce37bfb67c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e6fc7ca952190d890a6b4fdb12d94ad7e0ca350288226bbc2a56e4a583e895c"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ca8d2f2b0b8c68eea77bd5077573346c9aa8c4c0ef08b35d89a23ef44fd0e8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be9766280f69bba6eb0eb77a088ce9593d51b897f244d7fa042dae3b92b16ef3"
+    sha256 cellar: :any,                 arm64_linux:   "e28d8e1a0bb352adc60b7457e3369a6e32daf74955bd635656d3c1a74045f96f"
+    sha256 cellar: :any,                 x86_64_linux:  "c7363e84f2aa1863da12d49729f1bf59af19e4a60daf80e4a9f67b7227d12189"
   end
 
   depends_on "cython" => :build
