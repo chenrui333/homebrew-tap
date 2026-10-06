@@ -8,32 +8,72 @@ class Projscan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88f751168ae71c173e1e3886aeb0ae89decf3426742e7ebbd8d300886b07d5af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dbc494ca5c9a2c367241a3e627d6ae94551683f1b3a2fad9d8ce4d2a56bfb4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c010a8e97f69a91b055e34b802f64324eee0c8932db132dffd4eb3800e0c5e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25f2093fafb98329023e1da80f515c7a8c625d3ac651e60ebafc6809b7d0467c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86959b5dcff05a99ea04f025952256aab965819a7dfc82de4dea235c5e1762d0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "59c0d8fd1b0be13715b8c13dfe735b2652f19eddd6274fbb50fb234d5912f6e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d672d170fab19d4f82987ff163eb2198b2df8a2ad35fe8cdba47a87926d4de08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b73b30ef133236f165fceae7d574ba6a5c4907f408d9d0c8c7a52bbc14ba3dd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33eef6c397627b6dca5176bb95ae9d38dcb1b92136e976be63bc29ee83e70e8b"
   end
 
+  depends_on "binaryen" => :build
   depends_on "pkgconf" => :build
   depends_on "tree-sitter-cli" => :build
   depends_on "node"
   depends_on "vips"
 
-  def install
+  # `npm run build` compiles tree-sitter-kotlin/swift wasm with tree-sitter-cli's wasi-sdk,
+  # which it would otherwise download at build time.
+  resource "wasi-sdk" do
+    on_macos do
+      on_arm do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-arm64-macos.tar.gz"
+        sha256 "9c59398106b417f8f14913380fdf0097a8cc0ff4af9eb3ce0065a859e88d49e9"
+      end
+      on_intel do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-x86_64-macos.tar.gz"
+        sha256 "87d27fa8adc68dee59bfbf2e22a6d34ef717c34d6bf1d8af2a56fc929d9ce0eb"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-arm64-linux.tar.gz"
+        sha256 "f7e243dff54d60bcc576e94d6166b69f410f2500ae4a9ceef34315be10e77971"
+      end
+      on_intel do
+        url "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-34/wasi-sdk-34.0-x86_64-linux.tar.gz"
+        sha256 "b761e3a0721dbae9c09a0059e5fdb2bf917d1b4a8a7b430fb3b5aafb0984b2c4"
+      end
+    end
+  end
+
+  deny_network_access!
+
+  def fetch
     # Use Homebrew's Node headers instead of letting node-gyp fetch them during builds.
     ENV["npm_config_nodedir"] = formula_opt_prefix("node")
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
+    # Dev dependencies (including tree-sitter-cli's binary download) are installed into buildpath here.
     system "npm", "pkg", "delete", "scripts.prepare"
     system "npm", "install", "--include=dev", *std_npm_args(prefix: false, ignore_scripts: false)
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node")
 
     tree_sitter_cli = buildpath/"node_modules/tree-sitter-cli/tree-sitter"
     rm tree_sitter_cli
     ln_sf formula_opt_bin("tree-sitter-cli")/"tree-sitter", tree_sitter_cli
 
+    resource("wasi-sdk").stage(buildpath/"wasi-sdk")
+    ENV["TREE_SITTER_WASI_SDK_PATH"] = buildpath/"wasi-sdk"
+    ENV["TREE_SITTER_BINARYEN_PATH"] = formula_opt_prefix("binaryen")
+    # wasi-sdk 34 (used by tree-sitter-cli 0.27) only ships wasm32-wasip* sysroots
+    inreplace "scripts/copy-wasm.mjs", "--target=wasm32-unknown-wasi", "--target=wasm32-wasip1"
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     node_modules = libexec/"lib/node_modules/projscan/node_modules"
     cd libexec/"lib/node_modules/projscan" do
