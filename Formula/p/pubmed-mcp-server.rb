@@ -9,11 +9,11 @@ class PubmedMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "55cc631be1a749ccc49b5d4a4a9447e9120a52ec8f5e25d874cd92d2854dba8f"
-    sha256 cellar: :any,                 arm64_sequoia: "160f7e23e43c29b21c2c7d3be66f547898f11cfeeaa020174d8ed6bfe301ab5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b5ad728178805c1ff6b865d1ec6fe80cf5233b45a6199da9587474a43cee4da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6c7b3ae606fd78326bb64b46a238cf73fa92d9de556f0fe95957099ce5e0574"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c00a8fe01656b075ec4bbf8b1aa02832965e6155405422a0bcf1ba1a1aeda705"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "831dfc6c670a5ea9a470bb6a649dabe156b193f677fe20cf8afa3b6767100f9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1b00218d8483108a6739cfb6800ca95bc4ab9080b34d76b6f70d1dda17a6457"
+    sha256 cellar: :any,                 arm64_linux:   "d3024ffe62f711d2fcd55e70922994830b0183176f66bc5b70e294e2ddc98796"
+    sha256 cellar: :any,                 x86_64_linux:  "d4da9a3fcb8b581f86b6d51123ab6f99ba13332f07637c05cc2d27c74b086e27"
   end
 
   depends_on "autoconf" => :build # for patchelf
