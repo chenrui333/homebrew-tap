@@ -8,13 +8,20 @@ class QuicsshRs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa78c85e190567d925be3891c725f4ac0f6785b6241c18350ca30d31eeea214c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6993f02cdb1ad724096826baef61426943418d5bd3a98fc8eb837bc859decf88"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5d1b33bc170d4a97738e386a4ee8ead401739902f7bed07c3292206601dbd2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aee3e87ada694937fc86f8b1ea3679c25144d128bfa5fa9a929b380ab5a59c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b991cb7294451b4f8191a7389541551b0d0af90154660001be95370004971366"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b0786c5d0ff3e2bd954773dab438869d160b2a5b0fc4d1e31e9ad414fafda46"
+    sha256 cellar: :any,                 arm64_linux:   "7b8ff916413bc05b03f55ea3d748af501c81b3a64d8f327b7c73d30f3499633d"
+    sha256 cellar: :any,                 x86_64_linux:  "0c6e3af91c85ba9af43f1d255f8f8a8e91ff9ade68e0a3991654c8cdb25ea072"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -23,12 +30,8 @@ class QuicsshRs < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/quicssh-rs --version")
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"quicssh-rs", "--log-level", "debug", "server", [:out, :err] => output_log.to_s
-    sleep 1
-    assert_match "[server] listening on: 0.0.0.0:4433", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    # The server binds a UDP socket, so exercise the client's offline URL validation instead.
+    output = shell_output("#{bin}/quicssh-rs client ssh://127.0.0.1:4433 2>&1")
+    assert_match "URL scheme must be quic", output
   end
 end
