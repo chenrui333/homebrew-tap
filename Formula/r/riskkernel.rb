@@ -8,15 +8,21 @@ class Riskkernel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "496389ff26a14196a194c66cf7f6e2503cb9caf6a25249b14cfa0efc8e6cc3d1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "496389ff26a14196a194c66cf7f6e2503cb9caf6a25249b14cfa0efc8e6cc3d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "496389ff26a14196a194c66cf7f6e2503cb9caf6a25249b14cfa0efc8e6cc3d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49aec28ffb96a349f7e51d37faf1b116de90340d8b12a02366d4f6581256d1d0"
-    sha256 cellar: :any,                 x86_64_linux:  "d0db6ad73ed6e65a479c8c5d3ac816af62f1ecc4f52cae65c78a19482e707656"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3efc23b8f84e6cdcda388e6cd8005aa5d4ce7180df96e17bd0086f4a34ecc68d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3efc23b8f84e6cdcda388e6cd8005aa5d4ce7180df96e17bd0086f4a34ecc68d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5a862d819059e2796353d8e45e0e30720e5edce4ba5b301ef7a8ad95ef7ab15"
+    sha256 cellar: :any,                 x86_64_linux:  "bb2fbac2ab4823ea2b184c34c9c7a3aa12492f422da66636f636d0454b5063c9"
   end
 
   depends_on "go" => :build
   depends_on "pkgconf" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
