@@ -9,15 +9,32 @@ class Sig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30b734feb682dba0d6864312b2f33b61aeae5fc7c969465850fa66b9bd110b03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "703080275d83f4db12b74d8b07df7f9700c0193584c0e7e65e24b24c3eb9b580"
-    sha256 cellar: :any_skip_relocation, ventura:       "9857d2f204b17390441eb9241428f606c8b5ba74ee12b15b473d1cae069b1161"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "559be70f1997733c0d6b057d4d028bec37e394b1343d7ac91db1626df9d28d76"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15ead51ac8096dcd2bf875b84e94a47ae7ceb21a1e35db38029e9cbfb64761b0"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.13" => :build
+
+  deny_network_access!
+
+  def fetch
+    configure_zig_sdk
+    system "zig", "build", "--fetch"
+    # `zig build --fetch` does not descend into dependencies' own build.zig.zon files.
+    cache = Pathname(ENV.fetch("ZIG_GLOBAL_CACHE_DIR"))
+    fetched = []
+    loop do
+      urls = cache.glob("p/*/build.zig.zon").flat_map { |zon| zon.read.scan(/\.url = "([^"]+)"/).flatten }
+      urls = urls.uniq - fetched
+      break if urls.empty?
+
+      urls.each { |url| system "zig", "fetch", url }
+      fetched += urls
+    end
+  end
 
   def install
+    configure_zig_sdk
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -33,6 +50,16 @@ class Sig < Formula
     args << "-Dcpu=#{cpu}" if build.bottle?
 
     system "zig", "build", *args
+  end
+
+  def configure_zig_sdk
+    on_macos do
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr" unless (developer_dir/"usr").exist?
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
   end
 
   test do
