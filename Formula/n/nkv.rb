@@ -8,11 +8,11 @@ class Nkv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58f0495dd201b3e2e2e4ad264202a5d7a06c17ad928dd2d58165dee8b4544d52"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbca07e0293f8fc88bfd2f0f370e97355d6bb58522a5e1586d10207568c23fce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86b611d96d8b687d4b4a285ee364d9d6c7f4a8ae7734667f554a4e84a1a6644f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0175125e5b35d6aa6f51a8053825dce3a76b8b88241039823368323810f7394e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f85170088bb82162af91c606d3a40c852235f2b7ecbba3984247a074bd34324d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd461e67caf2218ca1eca1820b000a7ed21107c7a855b1f103c52bf7303447ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc068e55ed11a0ac2197e8a6d7a9c05e38d16775c8a9df182533703baabd4fc5"
+    sha256 cellar: :any,                 arm64_linux:   "622513d4e65924f328e2e96d61a73e99cc66fc498296db6cfb4d234ecebf1153"
+    sha256 cellar: :any,                 x86_64_linux:  "3f5ef341d329abfbf0a77b86c399d16a59d69f5522063cf0d4f4d8f5e2d8086f"
   end
 
   depends_on "rust" => :build
