@@ -8,13 +8,20 @@ class Otto < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40329c1f77324e3ed55aa1cb32942b7986c8467f703f9a67a73beb86aaca0a7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c375a2cc6649b621060ccc5084300ddc6be221560c2c8c587da9afee3374b9c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e1ec808f6fba0167f51955e22cc1b98b60515b42b7bbcc653a0c7d278e52bfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dfeb4f491ab3068cac5f7ff86e97e4059f4e5d80f26b45cd7273f093deecc3b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22569de3e1e4270947220cf9d39ee635a88bc87a04f887facbce1b504a0baf73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22569de3e1e4270947220cf9d39ee635a88bc87a04f887facbce1b504a0baf73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed2740b220414084f776d45374dd6cbcc9b8af7d50ab55708dae28c96a9ccccf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1365c564af66e239e2d9c31d5fb0857a9d993bb0f4abe7b5a494f64fdd242895"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./otto"
