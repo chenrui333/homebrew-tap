@@ -8,14 +8,20 @@ class Pwdsafety < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "704a29e204a3ef89a534dfcbabb794b9172196afee42471bcd6c6f5098258be9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "704a29e204a3ef89a534dfcbabb794b9172196afee42471bcd6c6f5098258be9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "704a29e204a3ef89a534dfcbabb794b9172196afee42471bcd6c6f5098258be9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e23248ca2f5ff39e154f40de309c6a1f985eb730401d372bdb93ebad3d830911"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cc85f8c575b9e4853a99e0ea07197a2cec7d1e57e0720db9060b6f2bafcb30e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef274b4818520a472214925ce3f3d438672035051eb75a6318224b3711493931"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef274b4818520a472214925ce3f3d438672035051eb75a6318224b3711493931"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "221ea1ff6f7a5b99d04360c7fb0ee2042082fb3d73edbe0f1fea1089f0737de6"
+    sha256 cellar: :any,                 x86_64_linux:  "434e62586ecedf4d7ce33eb4b59e9d7981defb2c872980316d6034b171f645ee"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pwdsafety"
