@@ -7,7 +7,8 @@ class RevancedCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "10be9e8fdb56ef526c2f66ed4d3f20e6dcf7a1caf8aa26037a01c7e4a1159a3f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7afd32c7ee5e9cbf7ad9017b055fc759cbcf2a36669d0963f57e7cd49b3b28f9"
   end
 
   depends_on "openjdk"
