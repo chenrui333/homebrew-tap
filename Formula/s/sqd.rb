@@ -8,14 +8,16 @@ class Sqd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "380d03d14f6731e7fb7eefc70f97a62b1e42829f87f83ad8d20bc318bff6e58a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "380d03d14f6731e7fb7eefc70f97a62b1e42829f87f83ad8d20bc318bff6e58a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "380d03d14f6731e7fb7eefc70f97a62b1e42829f87f83ad8d20bc318bff6e58a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75f0e618287dfebb569b4b7a740ac0151ccfb86d129265891218526b20286e7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a3094707928b2e88b247fa3ef593e84e6a05da22a7bba4ab916ce09866dcf4b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97991323c24da812f4a91a5aa43847327643f94d8fca972c3495aad5f7063854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97991323c24da812f4a91a5aa43847327643f94d8fca972c3495aad5f7063854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed74e24df2ca7f52fd3a5c6c98036b46bae19c640b5cf318939c36aa06171421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2c9bbdba25854a8813ffb1fc8e664ad179f9496d395a3c96c434e3bf9fae151"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
 
   def install
     system "go", "build", *std_go_args, "."
