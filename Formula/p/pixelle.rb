@@ -9,11 +9,10 @@ class Pixelle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "ea2005982078bfdeb838526e07d5bc460d36528003b943709a01751838308442"
-    sha256 cellar: :any,                 arm64_sequoia: "666e09a36cae955a4c1c47ad1661b60d8fa7db34766fd30dc111a02bb91cac37"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c6e70b10d681fe2116d1a786db6e2b7b515d49a856cab41de222b6c9be48704"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94279600a3e0e08d8d4c533f35de4c086ea3dad1f4c583a534ccbbc42043d541"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "f85083eebad4e51162184df43dd0040f7b1056668b7e0b0ebe7e0b118f485834"
+    sha256 cellar: :any, arm64_sequoia: "76ca0e7ef85cfc6a61161cbe01b532276f4d19b22cea4bdc96742c720f5cd701"
+    sha256 cellar: :any, x86_64_linux:  "ff53d21ff0b0cb7b83397617470df3224e80136d6bb7ad34f0de04b1e9028bd4"
   end
 
   depends_on "maturin" => :build
