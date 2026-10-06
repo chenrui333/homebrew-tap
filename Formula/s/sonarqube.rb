@@ -12,16 +12,18 @@ class Sonarqube < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "309bbde2901f97f12d845aaee6b1d71b49606e0b8095419dc97206d3587f9783"
-    sha256 cellar: :any,                 arm64_sequoia: "7ed1f5946773d0349383c1367e02f7e4122da463fd469e517a151b478c79b3d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ed1f5946773d0349383c1367e02f7e4122da463fd469e517a151b478c79b3d6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "728a9ed4e4a5570611686fc93c4e7881c67e3c4cd5017f1698d87b570e7adc61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "959f8b5c4b96ef12900ac0d658c00b4abd305d496332f9c99adc64818b210dfe"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "c8ec58f0dda1f725b0abd708fc464f0f76084a09734788dab3cf221247678893"
+    sha256 cellar: :any,                 arm64_sequoia: "c8ec58f0dda1f725b0abd708fc464f0f76084a09734788dab3cf221247678893"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2856d1a944454479c4dc2aca8bf0c1f253a3ce268cced731c492cc2efd01c90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a0a1c5055eedc16e1daae442e43bc4d445bb04cb300a1a4a74681b1f1f0863e"
   end
 
   depends_on "openjdk@21"
 
   preserve_rpath
+
+  deny_network_access!
 
   def install
     inreplace "conf/sonar.properties" do |s|
@@ -55,8 +57,8 @@ class Sonarqube < Formula
   end
 
   post_install_steps do
-    mkdir_p "run"
-    mkdir_p "sonarqube/logs"
+    mkdir_p "run", base: :var
+    mkdir_p "sonarqube/logs", base: :var
   end
 
   def caveats
@@ -73,10 +75,6 @@ class Sonarqube < Formula
   end
 
   test do
-    port = free_port
-    ENV["SONAR_WEB_PORT"] = port.to_s
-    ENV["SONAR_EMBEDDEDDATABASE_PORT"] = free_port.to_s
-    ENV["SONAR_SEARCH_PORT"] = free_port.to_s
     ENV["SONAR_PATH_DATA"] = testpath/"data"
     ENV["SONAR_PATH_LOGS"] = testpath/"logs"
     ENV["SONAR_PATH_TEMP"] = testpath/"temp"
