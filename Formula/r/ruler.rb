@@ -8,11 +8,11 @@ class Ruler < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4e91130fc2a1e9a597504c9220664e52fb89d265f9c5b28bdbffbb2def5a30c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4e91130fc2a1e9a597504c9220664e52fb89d265f9c5b28bdbffbb2def5a30c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4e91130fc2a1e9a597504c9220664e52fb89d265f9c5b28bdbffbb2def5a30c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a70495a89366734ac469f645c1e74f0ead64a947e3335fde4496aec32ac7e2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "164b8ed8a4715a9670af51b751dd297720f61e4463fc95406648647641490a1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a111706c71fb66c9b597d06bfc89848dab82318c8d8527410cf7ab999f0f298"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a111706c71fb66c9b597d06bfc89848dab82318c8d8527410cf7ab999f0f298"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de5353fadc6adf206af29106298aeabe816eedd93fbd058958560a6e3d281bab"
+    sha256 cellar: :any,                 x86_64_linux:  "711a416035e00703fb8e7a11c33fcfd5cb343346b094a975c358133f3d50ea0b"
   end
 
   depends_on "go" => :build
