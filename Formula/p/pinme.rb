@@ -7,24 +7,31 @@ class Pinme < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "1c695eab7003134bc24a5076c7fb69d4ac5d4c326e7f483f6548275a304aac5c"
-    sha256 cellar: :any, arm64_sequoia: "e6167906649e6f0ebcafe78748fb95586b24c2259b43e677f92076d6a9162eb2"
-    sha256 cellar: :any, arm64_sonoma:  "e6167906649e6f0ebcafe78748fb95586b24c2259b43e677f92076d6a9162eb2"
-    sha256 cellar: :any, arm64_linux:   "f4eaaf5bd18e08341e6489f350a795a1ac50c231731b24ff94ee4aa28f3b6dab"
-    sha256 cellar: :any, x86_64_linux:  "b1e0e94aeca1325a10e0f890cfe75587a5dfb138ed334a33c0a624511843b87d"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "543c88ff405ea3a036e0edf9fadb083f5c682d73b1e687395c09d670720dea92"
+    sha256 cellar: :any, arm64_sequoia: "543c88ff405ea3a036e0edf9fadb083f5c682d73b1e687395c09d670720dea92"
+    sha256 cellar: :any, arm64_linux:   "26a6d5d7b4bbcae186b6f31ee360e58c1ed4ce42f7a2db87b0790b87b92aeca3"
+    sha256 cellar: :any, x86_64_linux:  "e59617b541d62d0d482d8fd1d2dbb60ae015346d66b7960ea1ffeafd59a6030f"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     node_modules = libexec/"lib/node_modules/pinme/node_modules"
 
-    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-url` binaries.
+    # Remove incompatible pre-built `bare-fs`/`bare-os`/`bare-path`/`bare-url` binaries.
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
     bin.install_symlink libexec.glob("bin/*")
@@ -32,7 +39,8 @@ class Pinme < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pinme --version")
-    assert_match "Request: GET /my_domains", shell_output("#{bin}/pinme domain 2>&1")
+    assert_match "No AppKey found", shell_output("#{bin}/pinme show-appkey")
+    assert_match "Invalid token format", shell_output("#{bin}/pinme set-appkey invalidkey 2>&1")
     assert_match "No upload history found", shell_output("#{bin}/pinme ls")
   end
 end
