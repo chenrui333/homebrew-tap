@@ -10,11 +10,11 @@ class Pyink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad5bd15885b0fec3d7b3cacba2d548ef8b4231eea6c19ee9c315c9362b92ba37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9880b3aa85df9d784bea9b7f5769399d1414632c2c5de0eb91e2caa97ecee5fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "60e3efef30559e96b56531ab2704f716e620630f0f4cd838d1e668536b039b55"
-    sha256 cellar: :any,                 arm64_linux:   "f5a9bc21dc30f74f7bb141fd08ed415aef1e19d1904895e1e8faa6cfa05de5b5"
-    sha256 cellar: :any,                 x86_64_linux:  "80eeeab2bdf33898bb69718d4287b8a11ce1bcb794f34c5909a1c7d040217295"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "5411f67fe0a387a3fd1ca857f07788505578b88b19a7158e63294ca400ce62ac"
+    sha256 cellar: :any, arm64_sequoia: "20e21b4ccfc6bafa035a871875c94284a9ee3385342fb44120e47d0ccd1fd3e0"
+    sha256 cellar: :any, arm64_linux:   "8211435ef38953ee5876cc879e7128d12299b2112affecefdd9c97c2969c974b"
+    sha256 cellar: :any, x86_64_linux:  "1705ed3af76ba2d40c40c550c7038f2eb7ec630a7d343af3b50a822bb1c613a4"
   end
 
   depends_on "maturin" => :build
