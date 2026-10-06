@@ -13,10 +13,11 @@ class Pingu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "079a41615d904f1f769ce58a8b7167f668a84945c0077fe66c98539ce74af9f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91ff823d4d7b16072d9829889fcf52abc38a7b3b3da2557eeeb197dbd4c4c98e"
-    sha256 cellar: :any_skip_relocation, ventura:       "bca0a8991a92667bac794b46bfbeb58cc14df528fa820754cd4c309ce06f84c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cedbde3e8ee005e1d18811562dc39a8c73d06c649a74599ecb628bd4f956f65"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eee3b5caba14dcd374d668063d3c85ae56fd66f96bea35f87062e3fcb30e8fb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eee3b5caba14dcd374d668063d3c85ae56fd66f96bea35f87062e3fcb30e8fb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d725803108bc696342e8e2143cac7c7e737506c12b504ed39331456d188f9ca2"
+    sha256 cellar: :any,                 x86_64_linux:  "b5d791987cadd9409d6f2c089a51599313ec0c0f3bd7a0fb7386e9be784c9302"
   end
 
   depends_on "go" => :build
