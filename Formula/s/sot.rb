@@ -10,12 +10,11 @@ class Sot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "924bee8f6d9a08f55664262de88019db22f47214180fb3752607d2e94366842f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "608ccde08f0a5710d783ee12ac18860d91e78f906e781595553729b1a35a27d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0eee8214ee8a418ccad98c8089c0472f0c63510e512b281bbe0861f4122ea1b"
-    sha256 cellar: :any_skip_relocation, sequoia:       "b7e25ae5a80193263c878032ff6753a1859b561a2a9c3840dcc3325992fa0934"
-    sha256 cellar: :any,                 arm64_linux:   "b2313ddf8cd7d088fea9fdf0a6b0f3fab1b2d255d425fe852200d37a8447acf1"
-    sha256 cellar: :any,                 x86_64_linux:  "8691228d59f938d4f1012490039620195a4a79756730802ff37fc4b9d301ccc5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d72b3bac522b214d9bdde8e85d56a6aa6e71da2dc708eafbd0f5248032d87dc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6574f3983d24c892d6c0970566d8b76b809e6dfaf03d7385a405ff944c34a050"
+    sha256 cellar: :any,                 arm64_linux:   "70eb522fa9897ecb11386b6b2cad01819c4beb78f4d83564529084299f0578ad"
+    sha256 cellar: :any,                 x86_64_linux:  "36ddaf3a4a0098964fef7a313b4ecee3fb2f94b7364451ed30ca16f00d5e18f3"
   end
 
   depends_on "python@3.14"
