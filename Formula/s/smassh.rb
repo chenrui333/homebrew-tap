@@ -10,7 +10,8 @@ class Smassh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "c8430d84fd539cb9d11ff49e86780cdbfab4d01b2fde9f02775545eab474d9a7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "89b20dd1033dfcb3f3f2897088e0293b1ed33935c10f316037b80878eb831cf6"
   end
 
   depends_on "certifi" => :no_linkage
