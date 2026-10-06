@@ -8,13 +8,20 @@ class Sbomlyze < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5de8ce34652b54274da1aeed72c0b87cddb6332df08fcb72ea1da5f5f20a8d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5de8ce34652b54274da1aeed72c0b87cddb6332df08fcb72ea1da5f5f20a8d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d88202dbf25476bf614bfe0e7af2ea6e40bd8d63ef78437530293a9b209b822"
-    sha256 cellar: :any,                 x86_64_linux:  "5e3843d4d0b17188920934a4c2801977535c0465ac5f8e6b6a55bcd16c236286"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4eb803257d744e59f59c7c405fce67f0eefb501f61594dcaab423531270d93a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4eb803257d744e59f59c7c405fce67f0eefb501f61594dcaab423531270d93a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "794a2bcf1c8cb03de62baf5a7fbe87913e599fc4c30e8a806e3631cfd4d7e010"
+    sha256 cellar: :any,                 x86_64_linux:  "54fff77a8a7d321e0267ca11fd9a376793c40599396a41ae87f60a3a42d91328"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
