@@ -7,18 +7,19 @@ class Sflowtool < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ffca328767d72a0eb9e7bcea003807fc77cac0f63aed4d276ff6ebabbd6f88e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d37c83d9808b1841cf3487fe6eda6872cbe1b803e6e140410f6e39a1c363262e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0b38f77e2555159a5b27d42ba45dc97ddd8fb7ed92de790a494a5470c4f249f"
-    sha256 cellar: :any_skip_relocation, sequoia:       "a6a4c385536306e55e520bc5eafcac7c2d27c9293352a404d1af04545d47e8e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eafb68a478bfd0ea7298cee4beabf0e978642107a88e30c17eced4163c29ab52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4393557ad99f40caaed8e311f71051c3b1d8456136e5349bbb6a6ed640a61547"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea9cc76e56973cdefeff065b85d46f6b159ae5852846de74b42d83e0ebd4beae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf372a6d1b7f2ca105ced91a0a36a58100a61acadfb383fa52d625638a375801"
+    sha256 cellar: :any,                 arm64_linux:   "1f1659a224d54a5874688b41838e270db76cfe263175a718958cf95953a3bd78"
+    sha256 cellar: :any,                 x86_64_linux:  "efab8577209f54d04e9367011ecf8cbbc07c5a6c49357b90ef858badacf92206"
   end
 
   resource "scripts" do
     url "https://inmon.com/bin/sflowutils.tar.gz"
     sha256 "45f6a0f96bdb6a1780694b9a4ef9bbd2fd719b9f7f3355c6af1427631b311d56"
   end
+
+  deny_network_access!
 
   def install
     # IPV6_HDRINCL is not available on macOS
