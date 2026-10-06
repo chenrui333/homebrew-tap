@@ -7,11 +7,11 @@ class Osintui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef25b21fade83dab585835cf9d125855aef60416e44b2e05256497f815e006db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b47941171513d26b4dbb1f9138f01c7c5c2a03582a122067ee1cb9c73f898a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd41c0884965e6763babe2941eb88b1db99b654148212d47af8aa81ae1a71a72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14ab6854e6aff4a587296aa684451cdae0be05e7f139221db61abac2939e3a97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81dae5c17fd1ebc3f9cbe05c9cf021ae33ae557b93244176a7036a669b81a971"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1dd2358a7d155c2394086ebe900596c4d4d0e700b962d96281938ea4ee728bcc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2ae5aa3fa68ca31819e1aae34c9fe77a14dc93c34d99a8e3b2dec9fea153455"
+    sha256 cellar: :any,                 arm64_linux:   "207a42abf37489c49ee7bfac05c27d0e3c8ac4bd44f079df4e5e8c1a13dfb10f"
+    sha256 cellar: :any,                 x86_64_linux:  "9d2825b00ca112ede9a0056386555d29a3762489a20503ad4f9e0b5306ac6aa8"
   end
 
   depends_on "pkgconf" => :build
@@ -19,6 +19,12 @@ class Osintui < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
