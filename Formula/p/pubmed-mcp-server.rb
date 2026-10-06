@@ -9,33 +9,43 @@ class PubmedMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "55cc631be1a749ccc49b5d4a4a9447e9120a52ec8f5e25d874cd92d2854dba8f"
-    sha256 cellar: :any,                 arm64_sequoia: "160f7e23e43c29b21c2c7d3be66f547898f11cfeeaa020174d8ed6bfe301ab5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b5ad728178805c1ff6b865d1ec6fe80cf5233b45a6199da9587474a43cee4da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6c7b3ae606fd78326bb64b46a238cf73fa92d9de556f0fe95957099ce5e0574"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c00a8fe01656b075ec4bbf8b1aa02832965e6155405422a0bcf1ba1a1aeda705"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "831dfc6c670a5ea9a470bb6a649dabe156b193f677fe20cf8afa3b6767100f9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1b00218d8483108a6739cfb6800ca95bc4ab9080b34d76b6f70d1dda17a6457"
+    sha256 cellar: :any,                 arm64_linux:   "d3024ffe62f711d2fcd55e70922994830b0183176f66bc5b70e294e2ddc98796"
+    sha256 cellar: :any,                 x86_64_linux:  "d4da9a3fcb8b581f86b6d51123ab6f99ba13332f07637c05cc2d27c74b086e27"
   end
 
   depends_on "autoconf" => :build # for patchelf
   depends_on "automake" => :build # for patchelf
   depends_on "cmake" => :build # for levenshtein
+  depends_on "maturin" => :build # for uv-build
   depends_on "ninja" => :build # for levenshtein
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for pydantic
+  depends_on "rust" => :build # for uv-build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
+  depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
+  uses_from_macos "xz" # for uv-build
 
   on_linux do
-    depends_on "openblas"
+    depends_on "bzip2" # for uv-build
     depends_on "openssl@3"
   end
+
+  pypi_packages exclude_packages: %w[certifi cryptography numpy pydantic rpds-py],
+                extra_packages:   %w[
+                  calver coherent-licensed cython dunamai flit-core flit-scm hatch-fancy-pypi-readme hatch-vcs
+                  hatchling jinja2 markupsafe pathspec pdm-backend pkgconfig pluggy poetry-core scikit-build-core
+                  setuptools-scm tomlkit trove-classifiers uv-build uv-dynamic-versioning wheel
+                ]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
@@ -82,6 +92,11 @@ class PubmedMcpServer < Formula
     sha256 "e5d524d36d65703a87243a26ff08ad84f73352adbeafb1cde81e207b456aaf24"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/e7/a1/67fe25fac3c7642725500a3f6cfe5821ad557c3abb11c9d20d12c7008d3e/charset_normalizer-3.4.7.tar.gz"
     sha256 "ae89db9e5f98a11a4bf50407d4363e7b09b31e55bc117b4f7d80aab97ba009e5"
@@ -95,6 +110,11 @@ class PubmedMcpServer < Formula
   resource "cloudpickle" do
     url "https://files.pythonhosted.org/packages/27/fb/576f067976d320f5f0114a8d9fa1215425441bb35627b1993e5afd8111e5/cloudpickle-3.1.2.tar.gz"
     sha256 "7fda9eb655c9c230dab534f1983763de5835249750e85fbcef43aaa30a9a2414"
+  end
+
+  resource "coherent-licensed" do
+    url "https://files.pythonhosted.org/packages/cd/e9/63d2dcccb5496cc99d96f29a8a5f3e2c6ed0bba7fedb840862f92816ee17/coherent_licensed-0.5.2.tar.gz"
+    sha256 "d8071403ce742d3ac3592ddc4fb7057a46caffb415b928b4d52802e5f208416d"
   end
 
   resource "coloredlogs" do
@@ -115,6 +135,11 @@ class PubmedMcpServer < Formula
   resource "cyclopts" do
     url "https://files.pythonhosted.org/packages/f9/fa/eff8f1abae783bade9b5e9bafafd0040d4dbf51988f9384bfdc0326ba1fc/cyclopts-4.11.0.tar.gz"
     sha256 "1ffcb9990dbd56b90da19980d31596de9e99019980a215a5d76cf88fe452e94d"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "diskcache" do
@@ -142,6 +167,11 @@ class PubmedMcpServer < Formula
     sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
   end
 
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
+    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
+  end
+
   resource "email-validator" do
     url "https://files.pythonhosted.org/packages/f5/22/900cb125c76b7aaa450ce02fd727f452243f2e91a61af068b40adba60ea9/email_validator-2.3.0.tar.gz"
     sha256 "9fc05c37f2f6cf439ff414f8fc46d917929974a82244c20eb10231ba60c54426"
@@ -162,6 +192,16 @@ class PubmedMcpServer < Formula
     sha256 "132725cbf77b68fa3c3d165eff0cfa47e40c1479457419e6a2cfda65bd84c8d6"
   end
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "flit-scm" do
+    url "https://files.pythonhosted.org/packages/e2/99/961b062461652435b6ad9042d2ffdd75e327b36936987c2073aa784334d5/flit_scm-1.7.0.tar.gz"
+    sha256 "961bd6fb24f31bba75333c234145fff88e6de0a90fc0f7e5e7c79deca69f6bb2"
+  end
+
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
@@ -170,6 +210,21 @@ class PubmedMcpServer < Formula
   resource "habanero" do
     url "https://files.pythonhosted.org/packages/7e/79/e1463d0829f1b9d9a140ea78dda9461c13a8d9589797ab1ff5b7fffd133f/habanero-2.3.0.tar.gz"
     sha256 "871e5d088ef641b05514d44b004af512852b309bcd0d81f10545e58d54a654ab"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "httpcore" do
@@ -215,6 +270,11 @@ class PubmedMcpServer < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
     sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+  end
+
+  resource "jinja2" do
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "joserfc" do
@@ -267,6 +327,11 @@ class PubmedMcpServer < Formula
     sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
   end
 
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
+  end
+
   resource "mcp" do
     url "https://files.pythonhosted.org/packages/8b/eb/c0cfc62075dc6e1ec1c64d352ae09ac051d9334311ed226f1f425312848a/mcp-1.27.0.tar.gz"
     sha256 "d3dc35a7eec0d458c1da4976a48f982097ddaab87e278c5511d5a4a56e852b83"
@@ -285,11 +350,6 @@ class PubmedMcpServer < Formula
   resource "more-itertools" do
     url "https://files.pythonhosted.org/packages/a2/f7/139d22fef48ac78127d18e01d80cf1be40236ae489769d17f35c3d425293/more_itertools-11.0.2.tar.gz"
     sha256 "392a9e1e362cbc106a2457d37cabf9b36e5e12efd4ebff1654630e76597df804"
-  end
-
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d7/9f/b8cef5bffa569759033adda9481211426f12f53299629b410340795c2514/numpy-2.4.4.tar.gz"
-    sha256 "2d390634c5182175533585cc89f3608a4682ccb173cc9bb940b2881c8d6f8fa0"
   end
 
   resource "openapi-pydantic" do
@@ -312,14 +372,39 @@ class PubmedMcpServer < Formula
     sha256 "d81938348a1cacb525e7c75166270644782c0fb9c8cecc16be033e71427e0ef1"
   end
 
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
   resource "pathvalidate" do
     url "https://files.pythonhosted.org/packages/fa/2a/52a8da6fe965dea6192eb716b357558e103aea0a1e9a8352ad575a8406ca/pathvalidate-3.3.1.tar.gz"
     sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
   end
 
+  resource "pdm-backend" do
+    url "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/pdm_backend-2.5.0.tar.gz"
+    sha256 "7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a"
+  end
+
+  resource "pkgconfig" do
+    url "https://files.pythonhosted.org/packages/52/fd/0adde075cd3bfecd557bc7d757e00e231d34d8a6edb4c8d1642759254c21/pkgconfig-1.6.0.tar.gz"
+    sha256 "4a5a6631ce937fafac457104a40d558785a658bbdca5c49b6295bc3fd651907f"
+  end
+
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
     sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
   end
 
   resource "prometheus-client" do
@@ -417,14 +502,19 @@ class PubmedMcpServer < Formula
     sha256 "a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4"
   end
 
-  resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/20/af/3f2f423103f1113b36230496629986e0ef7e199d2aa8392452b484b38ced/rpds_py-0.30.0.tar.gz"
-    sha256 "dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84"
+  resource "scikit-build-core" do
+    url "https://files.pythonhosted.org/packages/b2/1a/8c00b19c0a1e7acf890676af2efa430339d38e59fa9437f2aab8517af3f4/scikit_build_core-1.1.1.tar.gz"
+    sha256 "e347a59193c878ac56a363e57506938652a6dd8c965790cb1cbc6bc7e8d5abad"
   end
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
     sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/7b/b1/19587742aad604f1988a8a362e660e8c3ac03adccdb71c96d86526e5eb62/setuptools_scm-9.2.2.tar.gz"
+    sha256 "1c674ab4665686a0887d7e24c03ab25f24201c213e82ea689d2f3e169ef7ef57"
   end
 
   resource "shellingham" do
@@ -457,9 +547,19 @@ class PubmedMcpServer < Formula
     sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
   end
 
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
     sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "typer" do
@@ -492,6 +592,16 @@ class PubmedMcpServer < Formula
     sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
+  resource "uv-build" do
+    url "https://files.pythonhosted.org/packages/50/60/6d96c3dd49223156b7f7b7eb4b79f94727cb529806b2c086f75d4dfb7ca6/uv_build-0.8.24.tar.gz"
+    sha256 "02e1256ac4524b06319a7fbfa30aa4959d9ef0b63076a959cce20a588448def8"
+  end
+
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
   resource "uvicorn" do
     url "https://files.pythonhosted.org/packages/1f/93/041fca8274050e40e6791f267d82e0e2e27dd165627bd640d3e0e378d877/uvicorn-0.46.0.tar.gz"
     sha256 "fb9da0926999cc6cb22dc7cd71a94a632f078e6ae47ff683c5c420750fb7413d"
@@ -502,13 +612,64 @@ class PubmedMcpServer < Formula
     sha256 "5f6261a5e56e8d5c42a4497b364ea24d94d9563e8fbd44e78ac40879c60179b5"
   end
 
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/30/21/093488dfc7cc8964ded15ab726fad40f25fd3d788fd741cc1c5a17d78ee8/zipp-3.23.1.tar.gz"
     sha256 "32120e378d32cd9714ad503c1d024619063ec28aad2248dc6672ad13edfa5110"
   end
 
+  deny_network_access!
+
+  def fetch
+    # uv-build's sdist lock file still lists workspace members that are not shipped.
+    resource("uv-build").stage { system "cargo", "fetch" }
+  end
+
   def install
-    virtualenv_install_with_resources
+    build_resources = %w[
+      flit-core
+      coherent-licensed
+      jinja2
+      packaging
+      pathspec
+      pdm-backend
+      poetry-core
+      dunamai
+      pkgconfig
+      setuptools
+      calver
+      cython
+      markupsafe
+      setuptools-scm
+      flit-scm
+      pluggy
+      tomlkit
+      trove-classifiers
+      hatchling
+      hatch-fancy-pypi-readme
+      hatch-vcs
+      scikit-build-core
+      uv-build
+      uv-dynamic-versioning
+      wheel
+    ]
+
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    # Cython is only a build tool for lupa and pyyaml; skip compiling Cython itself.
+    ENV["NO_CYTHON_COMPILE"] = "true"
+
+    venv = virtualenv_create(libexec, "python3.13")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
