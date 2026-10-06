@@ -9,10 +9,11 @@ class Rshell < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ff1cf4fefe9f79e2beb7c64f6abdd4a56e07825014d9275bc372a4a7a02e0c03"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f9698aba4b068c4991c283b6da824f5df1bdd42d35a1754b71479ac53da0f277"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14"
 
   resource "pyserial" do
@@ -25,8 +26,12 @@ class Rshell < Formula
     sha256 "e788bb983700b1a84efc2e88862b0a51af2a995d5b86bc9997546505cf7b36bc"
   end
 
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.14")
+    venv.pip_install resources, build_isolation: false
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
