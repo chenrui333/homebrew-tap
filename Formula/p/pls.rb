@@ -12,17 +12,23 @@ class Pls < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52223ceb929da82a44f6514c2907e887cf3e72d67be95fc9bc0456e03e67cc84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b7e22fa43bbb9a5207f4e244a4e138d85b188c2a02d2080f1b0182a17390b86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "778eaa72274f6bdad8e6096a5b8b1a81e0b08e4cde3729f7a2f3d28f17930153"
-    sha256 cellar: :any,                 arm64_linux:   "144ed137920cd2d66bd338a57c8fe74195d40f68dc6fc36fbc99c788cb6f9dba"
-    sha256 cellar: :any,                 x86_64_linux:  "5b6f4c1356544dc83cdf765453fd6b48d0952fae323ab3cc2bde63bda1f5aa0a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b539eb5755156852b111cc152ada9939ae967dba1ffd469e4389b6a684f9cfc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "830048fc2e986d657289d9da807e8c87f4ded58d7e639ffb83131719a8f36017"
+    sha256 cellar: :any,                 arm64_linux:   "cdd4afc5273792dc7bd38e62fa6316ba75b66d4d08606f8a3acac0873e656025"
+    sha256 cellar: :any,                 x86_64_linux:  "4360e64d78e1b7b4006476664b83d029e22eea7783246df0b9af0a91eae7af5f"
   end
 
   depends_on "rust" => :build
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
