@@ -8,13 +8,20 @@ class Octoscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "335c6cd10243bcfa0326b37f10cf02264c56aef78d94cffb4ae7b02e443b3f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "335c6cd10243bcfa0326b37f10cf02264c56aef78d94cffb4ae7b02e443b3f0a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6650d03143b52ab1e0a1ca56d87715b74551c9a5bec956a6a6f60aba7d9b06"
-    sha256 cellar: :any,                 x86_64_linux:  "84632fe9010f21b51cae8822252d6c061ee51e2bcd49cd5b4e0d6b68831e3ece"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "421bea83a188eeaf0fd137b38ece40e5653abcee63ec1944b6d610baa060327b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "421bea83a188eeaf0fd137b38ece40e5653abcee63ec1944b6d610baa060327b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc3fca4cbee000f4f170de759abb7e2ab3dbb5b6e11d725f564578b06c3838d0"
+    sha256 cellar: :any,                 x86_64_linux:  "9a4e21d3b35ae67dc209be8dfea10867d0e30c5383bf1f9fadaf283a460d72ac"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "."
@@ -25,5 +32,8 @@ class Octoscope < Formula
 
     output = shell_output("#{bin}/octoscope --theme invalid 2>&1", 2)
     assert_match 'unknown theme "invalid"', output
+
+    ENV["NO_COLOR"] = "1"
+    assert_match(/Available themes:.*high-contrast.*phosphor/m, shell_output("#{bin}/octoscope --theme list"))
   end
 end
