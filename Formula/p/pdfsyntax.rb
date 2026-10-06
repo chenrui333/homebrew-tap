@@ -9,10 +9,8 @@ class Pdfsyntax < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "283f8b572ce14b3b6547501c531d2a336835cf0a295daae53e1d323fbfc25fed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6092ef77c09f4c1740fb18a314c2eed8c4c88dce4a77c47f7a8c4eed7573d873"
-    sha256 cellar: :any_skip_relocation, ventura:       "abfcc25a9c88b73173c2b9ce0630fde6591d40889d5c1596701e168a153e7c3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04e28e8048500ad23b10b7e10c2761195785c546454d442c0981a9cb8cc20f2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "766a535e7ddcf86eb450127ce86fc8dc1aa834e7bb9ec6a2e5eab0476890a10c"
   end
 
   depends_on "python-setuptools" => :build
