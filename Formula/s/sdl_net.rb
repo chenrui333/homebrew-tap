@@ -11,10 +11,10 @@ class SdlNet < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "6290cb3a2ab8ca9379e43443250c7f323f286804eac389b5d1decca81d22c2b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff31cf3b4532d9a4de50892b2738aa788bedad8bca71e6f55f2914461d4ea184"
-    sha256 cellar: :any,                 ventura:       "f26f218b290b37b0b13d94ebe5a004c2c4f2890ae7881b57f7349c3980f098b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1acfdfa46899600bcc0ce4d57a6a74c821766155af44a3cee7bdf48e34b539f4"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "af133def1163478dfc112ba345d9aa8aaaece9dfdae449189b2def3b8070f31e"
+    sha256 cellar: :any, arm64_sequoia: "bc53800ebe64702051cbd6c7b99b139eff892a881748a56f8bc6012583a4d763"
+    sha256 cellar: :any, x86_64_linux:  "bdf3e96432362ac86d74313abe1d2299b300a38cda96ce0c8505050f02a88a62"
   end
 
   depends_on "pkgconf" => :build
