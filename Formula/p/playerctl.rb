@@ -7,10 +7,11 @@ class Playerctl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_sequoia: "3bc5b8843f47a4b9517736dc6afad3c2ed725f504ed37a9802f1a75504eeb6c1"
-    sha256 cellar: :any, arm64_sonoma:  "705566ce3324ebbb5d6e222870aa7b1ab6c89791aaebd1539c4841ba964a5344"
-    sha256 cellar: :any, ventura:       "c164e90f1fa996873ec930b036f7ba7ec60da88faf6df286b38c524765e873d6"
-    sha256               x86_64_linux:  "8a4452fde91c17b09038390f3c96d41871b9d5e27552ec27997942a49ced81a3"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "94a041393e7fa04352747da1cc7ed9b0e6823956e1824fdb05588d12cd43d33f"
+    sha256 cellar: :any, arm64_sequoia: "d7d1c3243d017d48ece8dfc6491009b51f0d2c174425db7728e24dab08a678f4"
+    sha256 cellar: :any, arm64_linux:   "941be82aca2a84f6b15a7f70da7d8772599f3c401c47ecd5a952e185787ac3bf"
+    sha256 cellar: :any, x86_64_linux:  "6c092827745c414b1d44f375dcf1f0c22c3a28b2a1227bb6cf6f1b18477640fd"
   end
 
   depends_on "gobject-introspection" => :build
@@ -20,6 +21,8 @@ class Playerctl < Formula
   depends_on "glib"
 
   patch :DATA
+
+  deny_network_access!
 
   def install
     args = %w[
