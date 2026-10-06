@@ -7,14 +7,20 @@ class Perch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0656c35d2cebbdd8051d24cb7ef7aef87db1e8d93146fa589acee56d25baf716"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e524dd46d9da3f5e56968907e2f2f5092605713d2cedf897639d33363160dd8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96d7bbe9b6a32da314c22b455a7fc9d337fe178123b9d1b9e7b90f429f036056"
-    sha256 cellar: :any,                 arm64_linux:   "cc989fdbac0ad838dae9a3e25112801b179cdff80ac601041720900e403414de"
-    sha256 cellar: :any,                 x86_64_linux:  "ca1f2b183095707380f09d451317aa0b66841ac48cebc97c75c75a493236f199"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "353129267f25edc043ce9d20c9e72f5812030d6d6051c4fe8650c50301ada380"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0823158348d6d4d4eee04b6a41f6e615fbdb74e39f63a168e48e6943062f998"
+    sha256 cellar: :any,                 arm64_linux:   "e975d95b061cfc4c17ce5121aa6fe767bb1f15edd8f71145587c5aa7fe45ffba"
+    sha256 cellar: :any,                 x86_64_linux:  "9af3646169a43dd4777d8394912ac00782539088ae29a328c63ad28f5b53c31e"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
