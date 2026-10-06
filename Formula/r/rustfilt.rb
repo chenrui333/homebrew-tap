@@ -7,10 +7,11 @@ class Rustfilt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2858be553689a70c3fecacd4247a0e95047150050e51ecc5b09950b7d63acce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d4205c1847d6595d4c0294c393d14fa36ee781c93859b6548e55f1ab397861f"
-    sha256 cellar: :any_skip_relocation, ventura:       "11a4239bb38998922d0f0ee22e1e98149eab47dcb1db0c498f923d5de641efd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afe814a3ab2b7fde4d208c567515f1b91911b792a514ab4c3ed5607bad373ece"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "663785e8216ecd4dd29beb41e32d34232a175478ce00627ca2c623816542279a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c85486d6ca5ef05989a4f32c774b48121844da996550484f29a8a321b4b6a55"
+    sha256 cellar: :any,                 arm64_linux:   "601f52f36587e0b2b42867772844ccef8f5f5e73fe74010d7a92803e31112c97"
+    sha256 cellar: :any,                 x86_64_linux:  "3bcf9081fd1dac7123141056b3b2a6cec69239b556882e92fd8cd9e7a5a43b7c"
   end
 
   depends_on "rust" => :build
