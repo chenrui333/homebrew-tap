@@ -10,7 +10,8 @@ class Snip < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5bdf0ae4b4d167055cf3c2d183553d50149c06c25860b2471a5adbd31a45be2e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d46217013518193405e3a0ac14777fd305334142d911baafd4aa666369aaa4c6"
   end
 
   depends_on "python@3.14"
