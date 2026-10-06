@@ -1,0 +1,14 @@
+AGENTS.md
+  h_9df9c32c3f321d 200,295-306
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f4e5edba8c4e1e04ed99ffdfe2511b232e3e8f28",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
