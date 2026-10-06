@@ -10,12 +10,11 @@ class Pygitzen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4db528f0e2abf5a437888f182338cf45ba10321aa0613aa96e64726f345855fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b471d7347e78a93ed82b2b5410a5ed0304a938ac7e82735cb886f77fb3469ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20002df353d5f0cbe75323e803cfa3cebf80fdcb7a4726e38b166601622eecb2"
-    sha256 cellar: :any_skip_relocation, sequoia:       "7549bd8f1251b28a60df5798034cc060d393b654cde0fe5ead7ac80276f24b28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9a1a082ca9ddf7d74a8b08df1c4f59e5a4da3a90b8dee54c9b48d78c9fb2390"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ffa9181398af7e2dbf0612c17088f7c5c5ed8e7895831da69ce00e095711811"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96603e5e32c44eda3a921ab7d7892bde2d95ea17e6b1c3a140fa06901ed17e11"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f4d24c8400a5c69366fe22fb553b36685ec2a5eb7a3feb0987c6677873bfe17"
+    sha256 cellar: :any,                 arm64_linux:   "2bd02be90546dcd914e8e0371408bce67a329ac4aa1675723c2954564ac750e0"
+    sha256 cellar: :any,                 x86_64_linux:  "55fa94c4323602054563e4848f3507d8dd489185fed923a3f473b0fb114c3d67"
   end
 
   depends_on "cython" => :build
