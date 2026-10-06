@@ -7,13 +7,21 @@ class Precompress < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "ee7d13e2eaecfda9339707edd0f48e0de16cc9dd6a81e6fa56ad10ac54d28dd0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ec9d2253503f780d9ab61e4fb0dfca256b50a4cb5c0288de8226a8a107db0722"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/precompress"
   end
 
