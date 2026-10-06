@@ -1,0 +1,14 @@
+Formula/p/plandex.rb
+  h_9df9c32c3f321d 26-39,42-43,45-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "67779d41bbe74608f7aadcc675b784b6815f05f7",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
