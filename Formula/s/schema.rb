@@ -8,14 +8,20 @@ class Schema < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1607ff84f13c5c833e5acaeb81b2e63f7f1bd450ed0978e734abe4390e87686b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fe2b90b030f0b7e902a43c4b3f07eae4cc5dd2df7f0f3455104dcba990a2424"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc915d7c04d39911b763067ff20ba58d37c01201ec29fd7ff8c6f1684a56baca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f98d26cfa813dadd084c042b0d0faf9cb0332e180ebe6ed70090c03f85386ead"
-    sha256 cellar: :any,                 x86_64_linux:  "0b7dfa5d1407ba960996bec3c2ee3c896a14f8f14168118da2fc61444baf3913"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1d3524063a98fb8b413bb12d61e3be760cdfe04a2f2d5428a4d9820f53f9f39a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ebc20234d0b1bec1542b1e06dae680776e1582475166102e3ce53ff08c4b88f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f3c18a8aafc96f9388e4738cf2b74769305c366e57c746558272afe38e3dd65"
+    sha256 cellar: :any,                 x86_64_linux:  "19b9c1e6f42dd0750007bbae399e014ceb6fa064b93589593b100dbcd0f965f6"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
