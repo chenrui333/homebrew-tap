@@ -7,10 +7,11 @@ class NpmNp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db1be72a0f0276300717a54e0ae7c3eb8441bdffd8f3abd3c62d93ea6a4f2863"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db1be72a0f0276300717a54e0ae7c3eb8441bdffd8f3abd3c62d93ea6a4f2863"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aaea81c35b63932f0ba4d24da11be688fbe7e11091ae8fbff56d4c51aee799f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aaea81c35b63932f0ba4d24da11be688fbe7e11091ae8fbff56d4c51aee799f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5abb9e5b99d78783b62d312fc9650814f51789e8e175d07bf62f6435cb60cd2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5abb9e5b99d78783b62d312fc9650814f51789e8e175d07bf62f6435cb60cd2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "108585bc53419c35ba304f226025d8f44e99bc23e00ed64c2dd4bd2922c5c834"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "108585bc53419c35ba304f226025d8f44e99bc23e00ed64c2dd4bd2922c5c834"
   end
 
   depends_on "node"
@@ -19,8 +20,15 @@ class NpmNp < Formula
     depends_on "xsel"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     clipboardy_fallbacks_dir = libexec/"lib/node_modules/np/node_modules/clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
