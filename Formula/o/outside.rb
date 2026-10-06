@@ -8,11 +8,11 @@ class Outside < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aede5b378815d3f2d1d43fabed32212aeff90e6578562d8d6515cbe1a0b351bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52c5e0f2dba46dace5f17a91c8ca1c556807bb94e234b4ce128b62a654d6bc3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d61c0acded3799a2b9e2a1807bc214b4096f120262c8831dbb0915c592a9f0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e18e691261282637c6631b341a61093a745bf25064f20d42c2286c2d123e3f2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5de99b0823671cd83808cfd9cfa67a113afc226fd221516ef85b34ea28b664a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "767c90c1ffb7d2bb054793a58aca49cdf5f527a5018a2a254247acde8a87c664"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edad8dcc4de1fab5168b99c9fddf72057e4ce19853968a381c627a03a65fcf35"
+    sha256 cellar: :any,                 arm64_linux:   "23d24580624b520f7e94f5e03bae4dc64da6e9967cf719d9064794d9726eae14"
+    sha256 cellar: :any,                 x86_64_linux:  "2e9adc2002342144ca372a340e3adee30eed3bd3bda6e6cdc84beb4da21de739"
   end
 
   depends_on "pkgconf" => :build
@@ -25,10 +25,16 @@ class Outside < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     inreplace "Cargo.toml", 'openssl = { version = "0.10", features = ["vendored"] }', 'openssl = "0.10"'
 
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
 
     system "cargo", "install", *std_cargo_args
   end
