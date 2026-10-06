@@ -8,14 +8,21 @@ class RailsNew < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afdd30e8144f0c9fe4ad4f14cf4829ad18a4ade31e82180264dca060eea09b87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "629782b738376ac5cd08464111b69a05fce2dac116ade8c49bed1a7d4a2181f5"
-    sha256 cellar: :any_skip_relocation, ventura:       "6d6082c208ac44ee3c2249b4d7124548529823a74c40657de727859d6c9d4dd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "261786e81a8927b76dbc092f8b27a30bb854e0460075ab968f7b0eac40b60a5c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06b862857ac7eef7f62a66617c704e50c121e67a1a264daf93a1e1dae3c8f849"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d8e07699ba98bd13dae6a4e4e719ad03294874deaad82ce6f6a014692aff84"
+    sha256 cellar: :any,                 arm64_linux:   "9d8bb988c0c7e13836a7d9ae28e317d858d289b2cb9720af23f65c8b32dfe452"
+    sha256 cellar: :any,                 x86_64_linux:  "09df003e255d5553b468c259204332b1246bdaf28c7453edcad6a6b05acac528"
   end
 
   depends_on "rust" => :build
   depends_on "docker" => :test
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -27,6 +34,7 @@ class RailsNew < Formula
     assert_match version.to_s, shell_output("#{bin}/rails-new --version")
 
     output = shell_output("#{bin}/rails-new testapp 2>&1", 101)
-    assert_match "Cannot connect to the Docker daemon", output
+    # Docker 29+ reports "failed to connect to the docker API" instead
+    assert_match(/Cannot connect to the Docker daemon|failed to connect to the docker API/, output)
   end
 end
