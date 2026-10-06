@@ -9,16 +9,18 @@ class Pyment < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c04dc0b9bf95d88b54b15af0070d7d473c09abe345f9c62935a73630192e785"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77b136efd1f1c5ca9701e18ca7e8fae64a31b73414242a65abc82fa382e6b39d"
-    sha256 cellar: :any_skip_relocation, ventura:       "918895af9f94f2257c49b36be68d1e4eb21035a664f894649302a7b5ff8668da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e182f07e7bf066fea3c847171f7c69e04f5816144a18b40d724fd6d2e9b4d6ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "da50f7e2933db71f2313369ee79d1dc96c053c93e4ee45d51d1fd6d0edd14b06"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.13"
 
+  deny_network_access!
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.13")
+    venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
