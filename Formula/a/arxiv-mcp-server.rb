@@ -3,8 +3,8 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/64/37/f6026a41b99d85306de862d18618382a6d2831886d9ee2e6855824747c1b/arxiv_mcp_server-0.8.0.tar.gz"
-  sha256 "75243f9625df65988b21243320108e887151087c91f839a9f18b32ca86f61c18"
+  url "https://files.pythonhosted.org/packages/3e/7f/750273a3e33548928044cfb729e99a73d904c9c205c52a55023687f8d517/arxiv_mcp_server-0.8.1.tar.gz"
+  sha256 "8d90c4e9aec3b6d7933a750dafcc62025606b7a151976321f542e3444ec1ac3b"
   license "MIT"
 
   bottle do
@@ -44,8 +44,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do
