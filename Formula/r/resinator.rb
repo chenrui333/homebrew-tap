@@ -8,15 +8,21 @@ class Resinator < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64c3c4f52fdedc47b649da2bef6e6bebe177bb97d1b44c46c2174c29d7f39af8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a396be297b964fe189f1453add63bc7676d94692cd540c6cbe9287b0ec0e7a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "619ac31e36e4e4a5dbe788e46eb4848dd761b487f5e3fcdd23522fd3bec4265b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e56b093ae3feebe468667f12e7ceaf293b05efb646c0dbd1b8b6cae81c26c7c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b9d5395643586d7972c5055d34773fd60b99e9ef55a43c4ec8257052d75d389"
   end
 
-  depends_on "zig" => :build
+  depends_on "zig@0.13" => :build
+
+  deny_network_access!
+
+  def fetch
+    configure_zig_sdk
+    system "zig", "build", "--fetch"
+  end
 
   def install
+    configure_zig_sdk
     # Fix illegal instruction errors when using bottles on older CPUs.
     # https://github.com/Homebrew/homebrew-core/issues/92282
     cpu = case Hardware.oldest_cpu
@@ -32,6 +38,16 @@ class Resinator < Formula
     args << "-Dcpu=#{cpu}" if build.bottle?
 
     system "zig", "build", *args
+  end
+
+  def configure_zig_sdk
+    on_macos do
+      developer_dir = buildpath/"CommandLineTools"
+      (developer_dir/"SDKs").mkpath
+      (developer_dir/"usr").make_symlink "#{MacOS::CLT::PKG_PATH}/usr" unless (developer_dir/"usr").exist?
+      ENV["DEVELOPER_DIR"] = developer_dir.to_s
+      ENV["HOMEBREW_DEVELOPER_DIR"] = developer_dir.to_s
+    end
   end
 
   test do
