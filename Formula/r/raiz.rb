@@ -9,10 +9,11 @@ class Raiz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ab4ff0afff6e616853d1e3b631a84ccac91540267fede3f0c08755530a83de8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aff19acc73b5df3ad62110e54baadf79de2031823346ac1605206fb5d27d333"
-    sha256 cellar: :any,                 arm64_linux:   "077f027aa0800d4f692448896155cea0a059a8f08201b3e86c27173e745b46bb"
-    sha256 cellar: :any,                 x86_64_linux:  "fc47f7551c3f60f0979707a20671f7787fdbd28d05a52bbe55ff2a3baeb1799c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0099f412941ad874eaf4097f9f4aac6ea24bdcd28f218ef37537eae57a662238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7527a2cfdb373cc66505d5f55e0bc103ba9551753b5efb57a1200e6902e9a402"
+    sha256 cellar: :any,                 arm64_linux:   "6ce4c8207eb6461b8db8274e648c1fd3359f3766a8b7f1e46edd59efac8b947d"
+    sha256 cellar: :any,                 x86_64_linux:  "d7fe5755489a7060735648ff43fb239e30ddfd43230317de9487478e813a05fb"
   end
 
   depends_on "cython" => :build
