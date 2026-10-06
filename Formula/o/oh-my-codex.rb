@@ -8,16 +8,24 @@ class OhMyCodex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "3ac3494899d63c32d8d7347a087a406055a45e5fc2e9626d620288971f27fa0a"
-    sha256 cellar: :any, arm64_sequoia: "3ac3494899d63c32d8d7347a087a406055a45e5fc2e9626d620288971f27fa0a"
-    sha256 cellar: :any, arm64_linux:   "7fba5e661662135cabc609ebaad8155e1df8e14b31e350912ffc99dd506b49e7"
-    sha256 cellar: :any, x86_64_linux:  "a55fc7d4015b86115e4bed98ee17b78a91bb381754639333329f06f78af91799"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "44369e7bdcc4e2c365b4fb016afa66794d0086bdbfe78ce5a00784fecc05fbd7"
+    sha256 cellar: :any, arm64_sequoia: "44369e7bdcc4e2c365b4fb016afa66794d0086bdbfe78ce5a00784fecc05fbd7"
+    sha256 cellar: :any, arm64_linux:   "b5a555aedb2a58a92517fcc577e4f03018fe4e69f7aa407462ece11e32f7e0a4"
+    sha256 cellar: :any, x86_64_linux:  "60b5d1eb6c1899f017fc0bd5f319421aa1ef04939cc8053ed6870c308b9bb1ea"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
