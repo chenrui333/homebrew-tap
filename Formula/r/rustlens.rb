@@ -8,11 +8,11 @@ class Rustlens < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34aed5afde476e0002b058bc5b0c45f7a93cc8b096918f09018907ffc790c0ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e143879f105d4823091ab7fa0d3745f2d996947dd7924d942005ec98c9d09cfb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62385b001a81ae3088b37a5b39d4bf977f7d37c3fdd3f8b635bdd331cd802ae4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc3b3e46876330c3561a55077296cb7ba2f0e9c6c71e2d752b2d63fac7a950ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "325cb04d59c8edfdb9788da3e8e926f516aa4d5bb7260ccef786c08e3e9c38af"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bd0554d57b05f1db756b6ccdc784a27e5eb8df8912984e05bd18080ffd22f8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca12fc64877c8f8c6604c103a8c75b846556df8b5231e8cd98c6763f453be2ed"
+    sha256 cellar: :any,                 arm64_linux:   "a9b4fd333a38d8ce6194cafe2e4d6da22c2066b0bbc1880501928485c463259c"
+    sha256 cellar: :any,                 x86_64_linux:  "27d93c26f41a4acd53dfd071043fcfcc9a8ee13f32c77a71d43a0dde2d7bd72e"
   end
 
   depends_on "rust" => :build
