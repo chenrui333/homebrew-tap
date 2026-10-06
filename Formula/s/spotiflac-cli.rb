@@ -8,12 +8,11 @@ class SpotiflacCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f55c212dea5e68ba4c103e61962110d9932b6df4fc352040694f824854f2fc16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f55c212dea5e68ba4c103e61962110d9932b6df4fc352040694f824854f2fc16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f55c212dea5e68ba4c103e61962110d9932b6df4fc352040694f824854f2fc16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7643e99f9fbcac7420de8d113a31287e359223419b84e401071f064143f46619"
-    sha256 cellar: :any,                 x86_64_linux:  "51503daee66c8d978dd3cc3c576b20dfb52f2fb213caecc77254bc9ec3620ba1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d482736f979ca01f1d5b7a428abec12e630792e6ae999edea3e49278cbdb409"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d482736f979ca01f1d5b7a428abec12e630792e6ae999edea3e49278cbdb409"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1daa27c740b8eef1131016a2de0a1f5b2ff2c3c9a77d150d15be04e72ec22775"
+    sha256 cellar: :any,                 x86_64_linux:  "4fe2367643b050febdc78ad3da328d9f90e4b9c38f9f38fe7676101924803378"
   end
 
   depends_on "go" => :build
@@ -22,6 +21,12 @@ class SpotiflacCli < Formula
   resource "spotiflac-backend" do
     url "https://github.com/afkarxyz/SpotiFLAC/archive/refs/tags/v7.0.9.tar.gz"
     sha256 "61bd2ec5590ad28c0c7f933d1e189d71fba7f596ca523e14d477e43e0e4afbb1"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install
