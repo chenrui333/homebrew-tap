@@ -8,12 +8,11 @@ class SslChecker < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5332cbf012db83f7bc932627c86eb2e0930ed0bcb15647361b53699051015568"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5332cbf012db83f7bc932627c86eb2e0930ed0bcb15647361b53699051015568"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5332cbf012db83f7bc932627c86eb2e0930ed0bcb15647361b53699051015568"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af12e04868f1d1d7b57db943e0d4b2a96bf7720cb2fa570280406b3e112be188"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8b8a3e75620b1b53f553e4b76eecc85bfec2c4051f983a5147b08b1c97ee029"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3865016b517824a6207377a76c99ce8c23f7e994de4554cfae1438eccad9bd43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3865016b517824a6207377a76c99ce8c23f7e994de4554cfae1438eccad9bd43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce376b8982e01527f16330e941fa59e02fbf667564002affe4853c06a3954a5c"
+    sha256 cellar: :any,                 x86_64_linux:  "2b6450dacf1900a930d7c2e5855cc8bc45e4ab39fcc8b7fe74991c23d998acb2"
   end
 
   depends_on "go" => :build
