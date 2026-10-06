@@ -9,12 +9,11 @@ class Pitaya < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e54053764fdc83e2747e4587bab547ddf1a2a8096e4e2fc778455ff3774d20f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2394d8865e9b86847a8a52843aa2f437ed6d06c2dc7d0949cd339ac9fb300829"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23d7ad14366e888f68b3972f699d53db83e8c204e1391ce131008ed88dd7d0dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bce69c977d57f9898b741b252252ff0eafa04f1546e60274024d5daec57d3755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "435ca161c63ecaf4889e5ac64bd1ffe8a3b1e447861cc95230ccd673af1a1f18"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "664f0a76d25b733a5edfc397848e02951a287bde6609eb6309ac38edbd8fea77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "356e566cf683110e1827b8059538a7b12e8fbe897251f7819ecc1c06202e599c"
+    sha256 cellar: :any,                 arm64_linux:   "df4d29bbd0cd3fb655bb564a8803a771da66ec4a25864c2092c134b05da8c096"
+    sha256 cellar: :any,                 x86_64_linux:  "78b4f99b4dd072d2537405874a90eb80bb029a25cefd2eec7f3b4fc8156d53bf"
   end
 
   depends_on "certifi" => :no_linkage
