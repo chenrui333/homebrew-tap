@@ -8,14 +8,20 @@ class Papr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84433f445f1c21800e0068567c678330c02df8a65e06360ed54afd589fcd6445"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed6a70a29ae73d5a74726851ba3ffce61332df0115c2a3f1052d8b1afd0025ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00eeac086ac797c58e610802a8513f2010052ba1fb321b9e8629e40c6459509c"
-    sha256 cellar: :any,                 arm64_linux:   "5e6cb0d3f9085fb9f53b32c479c6478e59d4fb77a225e1a851b77af301ce9c00"
-    sha256 cellar: :any,                 x86_64_linux:  "bfcd8d70bf483a9733dabfb5938fa5e8447c541ae44476c76775ae7652b6940a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad42b42ff54e7d8df07824df04ce5ca2aef0300fa5afe6b17092760566e3051c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3295da651dce03bed547104e83c764691b8caa6723f5ed58b893f4bb95e39fc1"
+    sha256 cellar: :any,                 arm64_linux:   "5e37c3f560766d9e5412a25c175530b289abc53cf71153b9c46147e4536ca5c9"
+    sha256 cellar: :any,                 x86_64_linux:  "29c8f7e8b5301323851ff4ff2d67434893c05f30a651ad2fbfcddb817ce41a6f"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/papr")
