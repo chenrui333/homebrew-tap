@@ -16,13 +16,20 @@ class Sheetui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5af212a73fdaa67fbfbfd8106db7c8c6dece6bd7a4b04a3c3fab22bdc8f1e5f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0436c656973e5cb875bf21ee64c281d343e0c0c42222d293218a23a03893b331"
-    sha256 cellar: :any_skip_relocation, ventura:       "ed2336de1b05022f0377cdf422b17a6a25743b42ff8044fdf829dee845143bdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59bf3dd661d329e266dfe194e3c5e0c615493e41e1aeb45e48ff91977f6ad245"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc19575c6936d09f8e1c8abb47f751ce695c5ed21d39d03e277402238d77851c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d143c41c530ee271bd8c496ccfbe2a2814e67b715c3f74a46a62322084a0c901"
+    sha256 cellar: :any,                 arm64_linux:   "239ef0535699413f648b3797d8f7b25365baf53940b122a7ace81e7f539adf89"
+    sha256 cellar: :any,                 x86_64_linux:  "5d04bc1657cf54897b8c98f78abaff04977c3e66a0802a563009604b094d8a28"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -31,11 +38,9 @@ class Sheetui < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/sheetui --version")
 
-    # No such device or address (os error 6)
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    touch testpath/"test.xlsx"
-    output = shell_output("#{bin}/sheetui test.xlsx 2>&1", 1)
-    assert_match "Zip Error: invalid Zip archive: Invalid zip header", output
+    # Opening a workbook starts the TUI, which needs a real terminal and hangs under `brew test`.
+    assert_match "--timezone-name <TIMEZONE_NAME>", shell_output("#{bin}/sheetui --help")
+    output = shell_output("#{bin}/sheetui 2>&1", 2)
+    assert_match "the following required arguments were not provided", output
   end
 end
