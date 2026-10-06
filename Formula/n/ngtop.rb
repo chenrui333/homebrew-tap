@@ -8,10 +8,11 @@ class Ngtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83a978133d70c9f7d39134b578f00c95410772f5792abea61550b7f8276a83bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "880659c9c334b6c2cfcea91518861067c45929cd35f78f903d7bf6e5a31f912c"
-    sha256 cellar: :any,                 x86_64_linux:  "563c3a0a27b27355408b5647e77e9856bd48cde104e26482f1e27b8f0736ce22"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8c2c599d6f70a32f1a65ada3452ae5cd835d845996bbaa2598e0303a258b64e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46336a70c7097ff46f57ab4b6e349a95968f680eb817112b1ffab845d929697e"
+    sha256 cellar: :any,                 arm64_linux:   "5dbde352647bbcfdd2309d9b31166edad37331b0a0de0e4b17f88a960226c7e9"
+    sha256 cellar: :any,                 x86_64_linux:  "9f555d2520b8eb0b290f38d96a42b03afdd0ffff08ab6367e5ab50992ad2ba67"
   end
 
   depends_on "go" => :build
