@@ -8,21 +8,35 @@ class Openclacky < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec76fef315170df02cc22e9bcdc86113830df6e1837f0059389dd5d832bcdece"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec76fef315170df02cc22e9bcdc86113830df6e1837f0059389dd5d832bcdece"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21342d9cb7d968cfc3f27f2cfe3a97cd7fc64aa0ea038d8028d10f677f917be8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21342d9cb7d968cfc3f27f2cfe3a97cd7fc64aa0ea038d8028d10f677f917be8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31ce4a44755a55f3e8ee5710543944808813933c03c1014448a1f1cbaa6eb42c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31ce4a44755a55f3e8ee5710543944808813933c03c1014448a1f1cbaa6eb42c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65e82c2db6dd5d5c27049c04bc10499e94f108e4b88aa9cbe07b83ffb653d377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65e82c2db6dd5d5c27049c04bc10499e94f108e4b88aa9cbe07b83ffb653d377"
   end
 
   depends_on "ruby"
+
+  deny_network_access!
+
+  def fetch
+    # Bundler still generates executables for the `gemspec` path gem; keep them out of HOMEBREW_PREFIX.
+    ENV["GEM_HOME"] = buildpath/".bundle-gems"
+    system "bundle", "cache", "--no-install"
+    rm_r buildpath/".bundle-gems"
+  end
 
   def install
     ENV["GEM_HOME"] = libexec
 
     system "git", "init"
-    system "git", "add", "."
+    # The gemspec packages `git ls-files`; keep the fetched gem cache out of the gem.
+    system "git", "add", ".", ":!vendor/cache"
     system "gem", "build", "openclacky.gemspec"
-    system "gem", "install", "--no-document", "openclacky-#{version}.gem"
+    # Resolve runtime dependencies from the gems cached by `fetch`.
+    cd "vendor/cache" do
+      system "gem", "install", "--local", "--no-document", buildpath/"openclacky-#{version}.gem"
+    end
 
     %w[clacky openclacky clarky].each do |cmd|
       (bin/cmd).write_env_script libexec/"bin"/cmd, GEM_HOME: ENV["GEM_HOME"]
