@@ -8,14 +8,20 @@ class OmniCache < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54f47cca9cc7ebbedfd15d6ea443b51b2cd941d469ef2491457148810cc9d431"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7402248acd58c4398995cf257a4f8faab56eabf924338940813ba4e50596e48c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbe865be5646715b19332b826bccc00f2d0ff429bb86f0b3e96d2faffb622016"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "175b6143ac079e3c8d38b337679f68985608217fabfc09e9d8b047ae01e6600f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d50edf628c9d7d4bc828d76c4563fa02ff410638c698eb8fb492bc354238cf3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9716d101d3720a2d2d7c4b3eebef81caae3bee940afce3962a5d83941bd68258"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "224380e6136fdc0efb4f2165c6fc6c3e66c3d4531db544c81b7ffbf0c59a1868"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76d77e4004dae7b622ba5eb64f8e69e5275bef7f266b9785e5dcbf06f2cd863c"
+    sha256 cellar: :any,                 x86_64_linux:  "e5a92db6734e7a8be22b65520611648f82695a5457a3e4905c1f9fa7a15efc7a"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
