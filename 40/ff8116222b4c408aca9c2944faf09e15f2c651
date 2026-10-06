@@ -1,0 +1,14 @@
+Formula/o/omp-manager.rb
+  h_9df9c32c3f321d 20-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "40ff8116222b4c408aca9c2944faf09e15f2c651",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
