@@ -3,8 +3,8 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/de/53/b924f75faa56967b9a0b13275f58dc4bbf70b5144682517aeea750c404f7/mlx_audio-0.5.7.tar.gz"
-  sha256 "4446704bd8305b3957a6e422234118142e32b87a55d7d3e33b0fb8dbca516543"
+  url "https://files.pythonhosted.org/packages/cd/a6/c75b328fc1059d0a3d56cf8330e9df6745dfe8c6ec38a3c6cfef2d42ad5f/mlx_audio-0.5.8.tar.gz"
+  sha256 "55a7378a4d27dddeba2d989f71f255ce70498b3f1c27928a8b1fb0baf3577d9e"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
@@ -72,8 +72,8 @@ class MlxAudio < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/95/31/fbad823d8dfc56e2ff694db0319959382bdb01f2fe40c382e34c6f672392/filelock-4.0.5.tar.gz"
-    sha256 "2b155f098c4f285fb41954a22c616c4e8a0635b78c184338ba3023c1c91a4b4d"
+    url "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz"
+    sha256 "cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c"
   end
 
   resource "flit-core" do
@@ -187,8 +187,8 @@ class MlxAudio < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/b9/5c/f403115361de25809e8f785686ec7096e30fef73be9ae35aa51da4e80abb/regex-2026.9.10.tar.gz"
-    sha256 "1e321e2c84f0e52c457f5ea5944f796d6e8e09cb99738ea98dcc1bfe402a128d"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "rich" do
@@ -237,8 +237,8 @@ class MlxAudio < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/0e/9e/750649904a065007a838981785b2bd8d9ff26154c6c341ac67d0b7f82c68/transformers-5.17.0.tar.gz"
-    sha256 "a153be279169b55b92d8000bf4af294aed684503d091cca7804da2dd8a9de000"
+    url "https://files.pythonhosted.org/packages/9e/6e/5a50ca8aff5fdd4ff21271198d2fb9e1f11bcd0ea279576199c0caa34cba/transformers-5.18.0.tar.gz"
+    sha256 "d89c206e42e841af7cd314b3d2b21c03e977d819cdb4aef65ada048769a644df"
   end
 
   resource "trove-classifiers" do
