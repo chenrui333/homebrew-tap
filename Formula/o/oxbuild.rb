@@ -7,10 +7,11 @@ class Oxbuild < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "146e170393241ab037868bb984ef28368f3727aee1847a06af27e7c58e8025ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cf8266bf18e1c4b1c7616264a3e187509745e5aeffb08871b5a0fd10cf9b0a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "2dac585c749da1d02ce0b54903089f66ef132449b05b3e894406ab34f4043b54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbad3be7020c091d992d6bcaa5230cdb9ccf1d91bd169cc10ec496ff290452f4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d21ecce8f4a355ba5afee012a49f4411a2b7468b3ce4a9cb6f7147b952b86c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "defc784bc7548660a4d77112d16f34379c945ae85198cc843434719edb8d7a8d"
+    sha256 cellar: :any,                 arm64_linux:   "571793d254200e08c1d754c03d13c767be7afdc5ec72e913dd4e2f9721fcb381"
+    sha256 cellar: :any,                 x86_64_linux:  "7cbb24857450a71ff11006a96174fe9217ab1db81b1dbf0d5ed063c49e8844ee"
   end
 
   depends_on "rust" => :build
