@@ -8,13 +8,20 @@ class Otelgen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31f047c4424b62aae83539a1c262f2219a47b2e2e11373598c69ed4244f3e0ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8222c4a33d57015f0020f399ed389596f36d4e261f89697ed45b146f0a7bdd00"
-    sha256 cellar: :any_skip_relocation, ventura:       "b5c79aed356065f10ad36c16b09271031b3ceb03f1af15d556f81e2629771327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849dfbf5ed0037775e0254686bb723613193b9e8359d66764a0fdc76385f3c73"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1167fc1393cdc18d7f7a103738889057dcf1e29d69182065ca3df8e015a6b5c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1167fc1393cdc18d7f7a103738889057dcf1e29d69182065ca3df8e015a6b5c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23ae3356c548dee758df6efd5ef0de02e24d546d75ac6c0642158c2c9f388078"
+    sha256 cellar: :any,                 x86_64_linux:  "52de4361ed53bf45b6bbe017492808c06f49866595e4f2c6e842aa5df0f1d0c8"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
