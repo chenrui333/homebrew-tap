@@ -7,7 +7,11 @@ class Relay < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "4f6e5c5a5d31928598490d37c12a32039ded3a4e34e0c7d6adddb304198526ed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60f5b740e44df8ce28785bf1d04f65d2e1ef5123234181c6477247ddceed2a10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60f5b740e44df8ce28785bf1d04f65d2e1ef5123234181c6477247ddceed2a10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af0c5aad1a7070105a89021dfe07286dcaeefe4eb8574a9debeda8ff8b2fa932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af0c5aad1a7070105a89021dfe07286dcaeefe4eb8574a9debeda8ff8b2fa932"
   end
 
   depends_on "node"
