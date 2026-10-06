@@ -8,13 +8,16 @@ class Perfops < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "219e971c9fe92f6790994e35d515df376542cfb8c4d050cd9ad41e5734c9cb30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48624f1d1a4056a5aaf603b991b65c37d48240d918c5995c1f09ed6bcb72bca3"
-    sha256 cellar: :any_skip_relocation, ventura:       "a8cfd205190823385f189246c63464723d4db317ed5795c2735e40caa921a39e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ae269f5f8101329aa2c9a4e6f481fcc41d23a6c86b60f413d14ae3e6c0fc76"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f43188798eb363de65af03976b7191a685c11cc3f70d8a5940e2a8e233b42287"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f43188798eb363de65af03976b7191a685c11cc3f70d8a5940e2a8e233b42287"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4fb40fb41ff2d162036ef11b2309ad6941f9cd704d042b6edaf831f72f3781c"
+    sha256 cellar: :any,                 x86_64_linux:  "4286c850321739ac98828c0e262b4664733912f20a9120eaf4c1a26fb34d9dd2"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
 
   def install
     ldflags = %W[
@@ -29,10 +32,9 @@ class Perfops < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/perfops --version 2>&1")
 
-    output = shell_output("#{bin}/perfops ping --from 'eastern europe' google.com")
-    assert_match "google.com ping statistics", output
-
-    output = shell_output("#{bin}/perfops list countries")
-    assert_match "Denmark", JSON.parse(output).first["name"]
+    # Measurements run on the PerfOps API; target validation happens before any client is created.
+    %w[ping traceroute mtr].each do |cmd|
+      assert_match "no target specified", shell_output("#{bin}/perfops #{cmd} 2>&1", 1)
+    end
   end
 end
