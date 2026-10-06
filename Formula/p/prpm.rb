@@ -7,13 +7,21 @@ class Prpm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "c656e314293c274b3ffbf38b442b259710fc5c3b6e74b24da3e333d03bda4652"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b2a76350416a449222c947adfed322ab72ea4ec4bfeca25d3c72168baac0452a"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
