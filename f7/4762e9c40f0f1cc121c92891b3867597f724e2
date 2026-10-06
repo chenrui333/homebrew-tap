@@ -1,0 +1,14 @@
+Formula/p/pixelle.rb
+  h_9df9c32c3f321d 5,19-20,29-35,122-126,147-151,167-171,207-211,222-226,252-261,287-301,707-711,717-726,732-746,867-886,942-946,957-961,982-991,1012-1016,1037-1052,1054-1106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f74762e9c40f0f1cc121c92891b3867597f724e2",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
