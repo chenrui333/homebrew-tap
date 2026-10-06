@@ -7,10 +7,8 @@ class Poop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58748a9375bbde162f69a55f9c920067eb3e3c825a4aa471107ba16dbd7a2f99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73116ee7298e02fe3b83bfb7b0d9c276940dd85963377e8b6c1394711ac0b952"
-    sha256 cellar: :any_skip_relocation, ventura:       "721bf504f50e7888c007dc482ca9c4ea99835685a268f675f6a6940b3fc782a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19c23a696d890f4e6a523cdd27627f16e3288ce84cf3b94c3d62b34b6f53ce88"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fed1c95224715c5421baf3eccc868c0e6986e1df2998dd3d9e26b039243c5b2c"
   end
 
   depends_on "zig@0.13" => :build
