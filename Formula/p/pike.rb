@@ -9,14 +9,20 @@ class Pike < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c26c65faab305be5fac6e76f5df540118759964c8faebb510f174e5e8cdb7842"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c26c65faab305be5fac6e76f5df540118759964c8faebb510f174e5e8cdb7842"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c26c65faab305be5fac6e76f5df540118759964c8faebb510f174e5e8cdb7842"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b3e8df2f54c499f39329d97ec9ad34555adcdf8ff40a73e77fc1a5ca0cdd1df"
-    sha256 cellar: :any,                 x86_64_linux:  "8c90a1c8e39323688a9a1b484f207ba4d077cf6f8068612cbf0b6e2519b009e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6a5e6e44045f561c1e8748460ddf971b3607e9e321602327bfe092589fe851a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6a5e6e44045f561c1e8748460ddf971b3607e9e321602327bfe092589fe851a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19639ce76470bb6c5eeea8479deec8442636ebba45e053960182b321a6004afa"
+    sha256 cellar: :any,                 x86_64_linux:  "dcacdab78e531dc7f755c87aa5835d4f67e7300cf36e02e93647f0acb5515331"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/jameswoolfenden/pike/src.Version=#{version}"
