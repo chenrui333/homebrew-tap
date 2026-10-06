@@ -8,15 +8,21 @@ class Spotifydl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "865182b4b3b97cb5b706c0322702383f18da895baf0c378dbbb985ae236a60b2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "865182b4b3b97cb5b706c0322702383f18da895baf0c378dbbb985ae236a60b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "865182b4b3b97cb5b706c0322702383f18da895baf0c378dbbb985ae236a60b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "962d46ff46bdaf6fe509773cf40b9c2bdd8dfd12c93268f05536820f37398de8"
-    sha256 cellar: :any,                 x86_64_linux:  "1fe1b25c1734ba13cd7f28cd93f0328e565f3c073d00176a12f2370a92bcf442"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cdeb9586bc5222b235abaa774aedf464e610892cfb56975f784fbfecb1bf9161"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdeb9586bc5222b235abaa774aedf464e610892cfb56975f784fbfecb1bf9161"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "910c9b7de36f962e6f3752e00fdcf528757ebd8e297ed3d2492c23168804dec6"
+    sha256 cellar: :any,                 x86_64_linux:  "cc0452eec53d5da2b6e4756d54c64b1d24bb2ab2b4399266dbd4dc72cce8a15d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
@@ -24,7 +30,11 @@ class Spotifydl < Formula
 
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
-    output = shell_output("#{bin}/spotifydl --not-a-real-option 2>&1", 1)
-    assert_match "unknown flag: --not-a-real-option", output
+    # URL validation happens before any Spotify API authentication
+    output = shell_output("#{bin}/spotifydl not-a-url 2>&1", 1)
+    assert_match "Please enter the url copied from the spotify client", output
+
+    output = shell_output("#{bin}/spotifydl https://open.spotify.com/artist/0OdUWJ0sBjDrqHygGUXeCF 2>&1")
+    assert_match "Only Spotify Album/Playlist/Track URL's are supported", output
   end
 end
