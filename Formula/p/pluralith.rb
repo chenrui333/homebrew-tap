@@ -9,17 +9,32 @@ class Pluralith < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3548dbf1f3c610fb2ce572348c50bd8a48d04dd5373caa6477d89564a6e9ad06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3548dbf1f3c610fb2ce572348c50bd8a48d04dd5373caa6477d89564a6e9ad06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3548dbf1f3c610fb2ce572348c50bd8a48d04dd5373caa6477d89564a6e9ad06"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68a7181bc9f8d5b569d17110964a9cd3f28926d0a73f62801aedd56403d07334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "015cf9b35876d0bc6ddda474e44d203899205b2ddc64764cab0fc4977cb9474d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "644b6dabf3f9f30aec07c9d3599f9528ce0326ef4abb5f6a6e426ef96776125f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "644b6dabf3f9f30aec07c9d3599f9528ce0326ef4abb5f6a6e426ef96776125f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1896d4b3b4d58123a2cf4680eb5863af79549876870bcc92f6223ead01a105a"
+    sha256 cellar: :any,                 x86_64_linux:  "3deafa1a5ab07a94898c5552070025ef18e70eb339c4cc8ce29c1bd1ec791246"
   end
 
   depends_on "go" => :build
 
+  deny_network_access!
+
+  def fetch
+    cd "app" do
+      system "go", "mod", "download"
+    end
+  end
+
   def install
+    # Skip the graph-module update check on every startup: it calls the now-dead
+    # api.pluralith.com, panics (nil response) without network and writes to stdout.
+    # `pluralith install` and `pluralith update` still run it on demand.
+    inreplace "app/main.go" do |s|
+      s.gsub! "\t\"pluralith/pkg/install/components\"\n", ""
+      s.gsub! "\tcomponents.GraphModule(true)\n", ""
+    end
+
     cd "app" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
 
