@@ -8,10 +8,11 @@ class Osmar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82271fdbb9dba11ce2370772919e7eafca51b5f4eca8ad2bc83f21848a258116"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17286bf68e44b34f3a8ada4b6c85bbd5ee0b94e2dc3572faac01fdc5abff7aa7"
-    sha256 cellar: :any_skip_relocation, ventura:       "f9d5874e9fbbbe6ad965dc9fae2f8e69f68a3e94f5d5f2d6dc24e3c7be50294c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bcf2ea4b001c224fdfb0906c0c1079951c766c0e9cff11e12f15c7ca28cc2d2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e3509549752e80819ead5b88208f63c626d4d03fde3b35a6566e66bd8c133f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e3509549752e80819ead5b88208f63c626d4d03fde3b35a6566e66bd8c133f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5bcbf36e99237e04dc13e0b730987343365dc823cd578d6ddff2a15bf4420bef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad949cc71a21dbc3aa5d35261af7351b36a55a7162f48087315d5fca8dadc491"
   end
 
   depends_on "go" => :build
