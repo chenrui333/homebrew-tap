@@ -7,7 +7,8 @@ class Speedscope < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a993dfa3efcf30e5a395a14f757ca0fb1fc2c81066893548dd515cab7c08b715"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e79e67d6d80e9595f87136a1e051a1114c2080686122070132e215b2bfb6d779"
   end
 
   depends_on "node"
