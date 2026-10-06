@@ -8,14 +8,20 @@ class Play < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dfaefe5c82199bf64d4a6a969e6ab8af565f8a4d531d911b48d57601e43b3195"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfaefe5c82199bf64d4a6a969e6ab8af565f8a4d531d911b48d57601e43b3195"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfaefe5c82199bf64d4a6a969e6ab8af565f8a4d531d911b48d57601e43b3195"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "81c940526e253fbbdce3a1d6900aedc38978e16e9ebbbf1ba3882a1dafa7b9cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf6d67230e72d706780c806ae63f640b34b6f1c7b7b2e51b4150aa17bbb3bd4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0350514e0ece56010a42611db2e804beb4e3aff2658ac6133a30873af44748da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0350514e0ece56010a42611db2e804beb4e3aff2658ac6133a30873af44748da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e30f75a9c4206212a7a5a39e5e04310883aa6d9dec96cfa6ae551940acc3a56b"
+    sha256 cellar: :any,                 x86_64_linux:  "e6915e21bd0a902764285039cbc70d90c6ffe9bdd67931f9078d01c7415d2d54"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args
