@@ -13,16 +13,23 @@ class Pingu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "079a41615d904f1f769ce58a8b7167f668a84945c0077fe66c98539ce74af9f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91ff823d4d7b16072d9829889fcf52abc38a7b3b3da2557eeeb197dbd4c4c98e"
-    sha256 cellar: :any_skip_relocation, ventura:       "bca0a8991a92667bac794b46bfbeb58cc14df528fa820754cd4c309ce06f84c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cedbde3e8ee005e1d18811562dc39a8c73d06c649a74599ecb628bd4f956f65"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eee3b5caba14dcd374d668063d3c85ae56fd66f96bea35f87062e3fcb30e8fb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eee3b5caba14dcd374d668063d3c85ae56fd66f96bea35f87062e3fcb30e8fb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d725803108bc696342e8e2143cac7c7e737506c12b504ed39331456d188f9ca2"
+    sha256 cellar: :any,                 x86_64_linux:  "b5d791987cadd9409d6f2c089a51599313ec0c0f3bd7a0fb7386e9be784c9302"
   end
 
   depends_on "go" => :build
 
   # update `golang.org/x/net`
   patch :DATA
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.appVersion=#{version} -X main.appRevision=#{tap.user}"
@@ -32,20 +39,9 @@ class Pingu < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pingu --version")
 
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    # /o/h/L/T/c/homebrew-tap (pingu) > pingu -c 1 github.com
-    # PING github.com (140.82.112.4) type `Ctrl-C` to abort
-    #  ...        .     ...   ..    ..     .........            seq=0 32bytes from 140.82.112.4: ttl=49 time=23.611ms
-
-    # ───────── github.com ping statistics ─────────
-    # PACKET STATISTICS: 1 transmitted => 1 received (0% loss)
-    # ROUND TRIP: min=23.611ms avg=23.611ms max=23.611ms stddev=0s
-    output = shell_output("#{bin}/pingu -c 1 github.com")
-    assert_match <<~EOS, output
-      ───────── github.com ping statistics ─────────
-      PACKET STATISTICS: 1 transmitted => 1 received (0% loss)
-    EOS
+    # Pinging needs a reachable host; check the argument validation that runs before the pinger is created.
+    assert_match "must requires an argument", shell_output("#{bin}/pingu 2>&1", 1)
+    assert_match "too many arguments", shell_output("#{bin}/pingu example.com example.org 2>&1", 1)
   end
 end
 
