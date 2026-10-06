@@ -7,10 +7,8 @@ class Npkill < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2497452f0965fdeee1c803f03bcdd4a1599b065779ba6c1e1aab5e22a6f571e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ebd12718903ab9a7edf3343d26c5b8cc63b9427cf98d72a787d74999d952181"
-    sha256 cellar: :any_skip_relocation, ventura:       "9ac8a4a691d45b9ac0818ae10fc49c9b76ec03789dcf428de67f304f449e1436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c8b9d6837cc44cb1c7178f964b6c1efa94fae2868fd003d545f6ebed049080"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b74601f2576035b77f0548cd9f30f4f6f74cdd3e7610c02d28ceafe75b333bce"
   end
 
   depends_on "node"
