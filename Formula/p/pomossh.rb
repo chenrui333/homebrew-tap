@@ -8,11 +8,11 @@ class Pomossh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b08152683bbe167c32dc520c1e6cdfcb3818859af41f8166e2081aa6e277223"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b08152683bbe167c32dc520c1e6cdfcb3818859af41f8166e2081aa6e277223"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b08152683bbe167c32dc520c1e6cdfcb3818859af41f8166e2081aa6e277223"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d7e5533d48d228b0eaae25cecf9c1918e50af4fba63e91bbf51ba1f8096448d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cd577ce7b3ca337e74d23ffcffe97c89571e7dbaf28052ccf72ff77cca70247"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18d7a29c45840de0c3095797a0945793d002bb995a4f0c1af201124a27ac5513"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18d7a29c45840de0c3095797a0945793d002bb995a4f0c1af201124a27ac5513"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea455835ecb98af61b9bc28c29f706716eb7d5ee110a94482a0dab8baf5897a7"
+    sha256 cellar: :any,                 x86_64_linux:  "7f79a9f5e372e3a70ecd44cde42ae794e22acf80c2c79f483a044e81320c772f"
   end
 
   depends_on "go" => :build
