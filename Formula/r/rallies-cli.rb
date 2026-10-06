@@ -9,22 +9,26 @@ class RalliesCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "1584a9c05df328a8dd2ca3f66bd7e096fcd38d6c6989a6cc8ac5e382ab5bd23b"
-    sha256 cellar: :any,                 arm64_sequoia: "16ad8be3dbf6df6da7a5dc3dcb1b8bed9f5dc37ba14778e9845cd2b4db4fb1c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "2bc0e3210261204f8a7f73955fbca1ee2065f4c832b1498be2179161d0be5a09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "277209e9015329ef4bc9bcbaa38b8bfe1bacb170a262709b10966291dd3a40b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cca0c5b5a3c301994e2bf13f0626e11f19027a7ab7109673fbe04d038b0672e3"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "0472a5ef626408ee490efbf787060665421feda3b6cda272085cb97a180cca0e"
+    sha256 cellar: :any, arm64_sequoia: "946a47604c3e5aa9d8350f54397d6407aeeb467f40a78ce5def1e03a6675b21b"
+    sha256 cellar: :any, arm64_linux:   "8705bd2d090f13ed85cbc4a1a32b71b8d89cb4b38c064d1aee0b38a06611da6b"
+    sha256 cellar: :any, x86_64_linux:  "a8ce358da063cd11c83b652688553f19222eecbcb1c99d6e599b6ae3825b0542"
   end
 
-  depends_on "rust" => :build # for pydantic-core
+  depends_on "maturin" => :build
+  depends_on "rust" => :build # for jiter and tiktoken
   depends_on "certifi" => :no_linkage
   depends_on "numpy" => :no_linkage
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages package_name:     "rallies",
-                exclude_packages: %w[certifi numpy pydantic]
+                exclude_packages: %w[certifi numpy pydantic],
+                extra_packages:   %w[
+                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core
+                  semantic-version setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers wheel
+                ]
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/c6/78/7d432127c41b50bccba979505f272c16cbcadcc33645d5fa3a738110ae75/anyio-4.11.0.tar.gz"
@@ -34,6 +38,11 @@ class RalliesCli < Formula
   resource "blessed" do
     url "https://files.pythonhosted.org/packages/33/cd/eed8b82f1fabcb817d84b24d0780b86600b5c3df7ec4f890bcbb2371b0ad/blessed-1.25.0.tar.gz"
     sha256 "606aebfea69f85915c7ca6a96eb028e0031d30feccc5688e13fd5cec8277b28d"
+  end
+
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
   end
 
   resource "charset-normalizer" do
@@ -51,9 +60,29 @@ class RalliesCli < Formula
     sha256 "bb6989e872638cd119db9a4fce284cd8e13c553886a1c044c6b8d8a160c871f8"
   end
 
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
   resource "h11" do
     url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
     sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
+  end
+
+  resource "hatch-fancy-pypi-readme" do
+    url "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz"
+    sha256 "9c58ed3dff90d51f43414ce37009ad1d5b0f08ffc9fc216998a06380f01c0045"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
   end
 
   resource "httpcore" do
@@ -96,6 +125,26 @@ class RalliesCli < Formula
     sha256 "cb1b79eef6e809f6da326a7ef6038719e35aa944c42d081807bfa1be8060f15f"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz"
+    sha256 "17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
   resource "pygments" do
     url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
@@ -126,6 +175,26 @@ class RalliesCli < Formula
     sha256 "9dc1815e2895cfb3a48317b173b9f1eac9ba5549b36a847b5cc60c3bf82ecef1"
   end
 
+  resource "semantic-version" do
+    url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
+    sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+  end
+
+  resource "setuptools-rust" do
+    url "https://files.pythonhosted.org/packages/68/ba/b31781d61bf9ee3c232a1d1160db11c11cdeae1d44e06c90723b25a8279f/setuptools_rust-1.13.0.tar.gz"
+    sha256 "f2afcf4baeee689910ce49cfa8aad4e08cce72f417449bcc32891b8664fdc726"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/b9/19/7ae64b70b2429c48c3a7a4ed36f50f94687d3bfcd0ae2f152367b6410dff/setuptools_scm-8.3.1.tar.gz"
+    sha256 "3d555e92b75dacd037d32bafdf94f97af51ea29ae8c7b234cf94b7a5bd242a63"
+  end
+
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
@@ -136,9 +205,19 @@ class RalliesCli < Formula
     sha256 "b18ba7ee2b093863978fcb14f74b3707cdc8d4d4d3836853ce7ec60772139931"
   end
 
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+  end
+
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/a8/4b/29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744d/tqdm-4.67.1.tar.gz"
     sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
+  end
+
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "urllib3" do
@@ -151,26 +230,82 @@ class RalliesCli < Formula
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
+  resource "wheel" do
+    url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
+    sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
   resource "xmod" do
     url "https://files.pythonhosted.org/packages/72/b2/e3edc608823348e628a919e1d7129e641997afadd946febdd704aecc5881/xmod-1.8.1.tar.gz"
     sha256 "38c76486b9d672c546d57d8035df0beb7f4a9b088bc3fb2de5431ae821444377"
   end
 
+  # tiktoken downloads this encoding on first use; tiktoken_ext/openai_public.py pins the same sha256.
+  resource "o200k-base" do
+    url "https://openaipublic.blob.core.windows.net/encodings/o200k_base.tiktoken"
+    version "2024-05-13"
+    sha256 "446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d"
+
+    livecheck do
+      skip "Pinned by tiktoken"
+    end
+  end
+
+  deny_network_access!
+
+  def fetch
+    # The tiktoken sdist does not ship Cargo.lock, and jiter's lock lists workspace members that are not shipped.
+    %w[jiter tiktoken].each do |name|
+      resource(name).stage { system "cargo", "fetch" }
+    end
+  end
+
   def install
-    virtualenv_install_with_resources
+    build_resources = %w[
+      flit-core
+      packaging
+      pathspec
+      poetry-core
+      setuptools
+      calver
+      semantic-version
+      setuptools-scm
+      pluggy
+      setuptools-rust
+      tomlkit
+      trove-classifiers
+      hatchling
+      hatch-fancy-pypi-readme
+      hatch-vcs
+      wheel
+    ]
+
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+
+    venv = virtualenv_create(libexec, "python3.14")
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || r.name == "o200k-base" },
+                     build_isolation: false
+    venv.pip_install buildpath, build_isolation: false
+
+    # tiktoken looks up cached encodings by the SHA-1 of their download URL.
+    encoding = resource("o200k-base")
+    encoding.stage do
+      (libexec/"tiktoken").install "o200k_base.tiktoken" => Digest::SHA1.hexdigest(encoding.url)
+    end
+    (bin/"rallies").write_env_script libexec/"bin/rallies", TIKTOKEN_CACHE_DIR: libexec/"tiktoken"
   end
 
   test do
-    require "pty"
-
-    PTY.spawn(bin/"rallies") do |r, _w, pid|
-      out = r.readpartial(1024)
-      assert_match "AI powered investment research", out
-    rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    ENV.delete("OPENAI_API_KEY")
+    # The prompt is rejected locally before any OpenAI or rallies.ai request is made.
+    output = pipe_output(bin/"rallies", "/key test-key\nHow is AAPL doing?\n", 0)
+    assert_match "AI powered investment research", output
+    assert_match "API key saved and activated.", output
+    assert_match "We need to set our OpenAI key first", output
+    assert_match "test-key", (testpath/".rallies/config.json").read
   end
 end
