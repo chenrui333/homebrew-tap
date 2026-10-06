@@ -10,10 +10,11 @@ class Rkik < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92f691a8aa4f472d807a814f7ac0319e7a8bfe8c440ff541b84fc304fc82343d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0d145d0fb061c289e86266b86a3b418821f7d1e977d8d8407dfc052e97fa8d0"
-    sha256 cellar: :any,                 arm64_linux:   "b843aaf04ff05b32737b8429d391015c9aa4d79c0c2e4cbad7bdfef1bcf93812"
-    sha256 cellar: :any,                 x86_64_linux:  "21973221404728d66f0569fd1099958016779faf11c845775edf2600659ef77f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "39af80826c2ecc7b50a5ad9fd636ca2edbc251718ad747ece0f4760f1fcc65aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38b8820ba25ac5f811ff318504033f1764392a4e39ce00c5e788f1781781e6cd"
+    sha256 cellar: :any,                 arm64_linux:   "600c47203689d76bfadb9cc053aa713ab220445763bf14b7dadd27463851a937"
+    sha256 cellar: :any,                 x86_64_linux:  "bf9c7646890fadf7f06270d20adf2a4aa1b65bcf12e153a73fb6d36c38b6c61e"
   end
 
   depends_on "rust" => :build
