@@ -10,7 +10,11 @@ class Owlex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a2b187852be0b01809ad234ae6f88c8748f340d515b6993dfa95a4693ada716b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60b95f468467d86a0e41d204b3b748526a9f71e1d7cd98fe6a7cfdf89bcaca3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f7bbc792bfa3ab4a065f786441fce14b2dc5617458cc014ea00b310f1546c50"
+    sha256 cellar: :any,                 arm64_linux:   "1fc5562586c795a8fcdc72065ce8823da041c65d3245787f1b461ed609b2d476"
+    sha256 cellar: :any,                 x86_64_linux:  "9d27f0dc22d087511da24fd4db8cf887c981b9fc01762aaadfa91ca060ccd99e"
   end
 
   depends_on "pkgconf" => :build
