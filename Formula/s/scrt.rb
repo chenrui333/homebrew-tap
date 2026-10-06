@@ -8,15 +8,20 @@ class Scrt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19f4fb4673c0c4b3b4e57ebc20e0799d5457eee94ec10bd450604f289134c7f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19f4fb4673c0c4b3b4e57ebc20e0799d5457eee94ec10bd450604f289134c7f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19f4fb4673c0c4b3b4e57ebc20e0799d5457eee94ec10bd450604f289134c7f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d1076aec4994a7b1e5bdee1f2e96061fac61b76f69bd56ccf36485086c190a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1e456d55146aa5b86ea1d15d8122391beacd136419f2c1c58395b76d2930310"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04acae702dcda0d4ca814915c4da8d19028a34543380794eee98acb7f80a53bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04acae702dcda0d4ca814915c4da8d19028a34543380794eee98acb7f80a53bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aa0b0f047be76fceb5bd4fe8502e7a0f31c3a9b74d586efb95c6e79551e56b9"
+    sha256 cellar: :any,                 x86_64_linux:  "b05fda0c3c738ec0284754a016515c1ed0e7c9981d8235171d96ed5e1a878346"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
