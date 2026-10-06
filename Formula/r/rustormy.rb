@@ -8,11 +8,11 @@ class Rustormy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "569362a569970253848ab33aa2bbd67de8a7b6a619b3a44c0598e2fa30c07878"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "525eb15157eaadaa64ffb1c8c78c0fc5faaa594bf5bb1df20c851675098fb084"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bfab7a7fa53fba8d8e4c592094baa407991b001eaab55a7f89ed1dd96aae121"
-    sha256 cellar: :any,                 arm64_linux:   "b81c70baf5b6e730624c7a36f2feaf92c6aabe3ee5b01ac28f63f744ded0a262"
-    sha256 cellar: :any,                 x86_64_linux:  "33b84832247e46ddc9e0b0af907bb8dc8fb6846302a5a4fd9709d2378865f708"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f0488831877cfb746032fc6740e9406e16d45f5ddd11d72ca3e1ca2aeec5525"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cddcf40975bc8d15fea74abf9da8dd776f9c6e93f7419638a149c2d8667aeebc"
+    sha256 cellar: :any,                 arm64_linux:   "0323866fcc1b359a5f888c9b5d89f2b951574a20e42f19bad01ef82c94f314fb"
+    sha256 cellar: :any,                 x86_64_linux:  "8c0389088d7a73dc30eb1d94a4fca91f575c42a53974e68f82935ffc8b7277fb"
   end
 
   depends_on "pkgconf" => :build
@@ -20,6 +20,12 @@ class Rustormy < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
