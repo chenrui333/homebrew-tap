@@ -8,14 +8,20 @@ class Reqlog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "46cd8d90f70e35118c5b9ef0a602668fc034342c301aa946351940b76f5b643e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46cd8d90f70e35118c5b9ef0a602668fc034342c301aa946351940b76f5b643e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46cd8d90f70e35118c5b9ef0a602668fc034342c301aa946351940b76f5b643e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dd3be72b6bc9af0acd1c99f3c7e2596f7605fb5fddd986ca5558bd10c617325"
-    sha256 cellar: :any,                 x86_64_linux:  "ab313e1300b1d96a62ff30cd57355ee2677b3d53d95943fc3a02e263576ba048"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4364e98c560977c26d2fce3288355d22da7094dae76298aaee54688b32a96136"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4364e98c560977c26d2fce3288355d22da7094dae76298aaee54688b32a96136"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e8df62791bec9428ee510a09d26560f9ef1f4b3793d0aa9dc9c6de4fad390ba"
+    sha256 cellar: :any,                 x86_64_linux:  "2e2bb24f4fba7c576267d68080ff725fa2fac92e4f3c7a45554c1486156bdc1a"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/reqlog"
