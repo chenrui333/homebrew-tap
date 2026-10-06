@@ -8,8 +8,9 @@ class Pktz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c146a2d17563bdb519825848c67e1037bcee31a90ed6f499ef3bd0b0c4e2cb26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "96366f2820617f393a52a261c1222319061c785fcc727d09b1dfb303e97aa77e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c37ac6c5230b41b7a92c18ac44258f61446f390f02e31228170c98e6872822bf"
+    sha256 cellar: :any,                 x86_64_linux: "6d649170a0868376b20bb60c4b88fdb9686ba88446f240b61e019087ce700963"
   end
 
   depends_on "go" => :build
