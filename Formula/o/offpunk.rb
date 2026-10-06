@@ -10,11 +10,11 @@ class Offpunk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "202a1d0395c221333004a3df484c987b9573f915f3e35b5cc2390cf5032874bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956943ca92165358af50c8f9660749e25127d6178fb1446c3bff20387b9373fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f831acacb902f649c2ae142d1d02994b2378c9ffbacb0fd3a85fbeddd2b8f59b"
-    sha256 cellar: :any,                 arm64_linux:   "e8b886ccb19b33fa3f900453b25a7e310465d40a1d975e328fa781fd9918590c"
-    sha256 cellar: :any,                 x86_64_linux:  "cdb133e6280f8c4dd5373b9a0140b17e100c077b8b498770410fa2d3ccce5bfc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69d7a6632e38844be7a3c3e844d08ab1e414c81739589c861a88525bc46099c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee7fef154a1174b05def2a98d094fe2157691e9ab306504131afe5785e45c3fd"
+    sha256 cellar: :any,                 arm64_linux:   "11847bf177d848ee5251783150b089009d2bb8537d28a65c22359a7ce4d2ca01"
+    sha256 cellar: :any,                 x86_64_linux:  "b17db3d336051a9a927d8c3a50b348a7a52cfbde9ae2653b869ec9d595c45057"
   end
 
   depends_on "gettext" => :build
@@ -31,6 +31,36 @@ class Offpunk < Formula
   resource "hatch-requirements-txt" do
     url "https://files.pythonhosted.org/packages/7c/04/3703d3caa354fd7148a5453724de70577a6010234d1e1f3ff6b98a4d3242/hatch_requirements_txt-0.4.1.tar.gz"
     sha256 "2c686e5758fd05bb55fa7d0c198fdd481f8d3aaa3c693260f5c0d74ce3547d20"
+  end
+
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/6b/b0/4cc743d38adbee9d57d786fa496ed1daadb17e48589b6da8fa55717a0746/hatch_vcs-0.5.0.tar.gz"
+    sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
+    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
+  end
+
+  resource "setuptools-scm" do
+    url "https://files.pythonhosted.org/packages/7b/b1/19587742aad604f1988a8a362e660e8c3ac03adccdb71c96d86526e5eb62/setuptools_scm-9.2.2.tar.gz"
+    sha256 "1c674ab4665686a0887d7e24c03ab25f24201c213e82ea689d2f3e169ef7ef57"
   end
 
   resource "beautifulsoup4" do
@@ -128,19 +158,29 @@ class Offpunk < Formula
     sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
   end
 
+  deny_network_access!
+
   def install
     build_resources = %w[
+      flit-core
       packaging
       pathspec
+      poetry-core
+      setuptools
+      calver
+      setuptools-scm
       pluggy
       trove-classifiers
       hatchling
+      hatch-vcs
       hatch-requirements-txt
     ]
 
     venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install build_resources.map { |r| resource(r) }
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }
+    build_resources.each do |name|
+      venv.pip_install resource(name), build_isolation: false
+    end
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
