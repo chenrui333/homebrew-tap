@@ -1,0 +1,14 @@
+Formula/p/percollate.rb
+  h_9df9c32c3f321d 18-23,25-26,28-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6403de91fe8557b21739d0a9ae5812ecb85ea105",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
