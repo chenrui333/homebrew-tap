@@ -9,8 +9,8 @@ class Rshell < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ff1cf4fefe9f79e2beb7c64f6abdd4a56e07825014d9275bc372a4a7a02e0c03"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "f9698aba4b068c4991c283b6da824f5df1bdd42d35a1754b71479ac53da0f277"
   end
 
   depends_on "python-setuptools" => :build
