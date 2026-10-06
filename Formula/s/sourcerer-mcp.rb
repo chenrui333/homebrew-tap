@@ -7,13 +7,19 @@ class SourcererMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd2893223213a3e90c7b12863c13602b54ef953fb32444e1795b7965f8a87ab0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75ad1ae8195a88ec24c3bedaed05288dafa648e77b4234e6c1b102c84baab3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac11afb05940d0bb2fccfa838dffaf25483b6c0f08d4c8b044d7e3301ee9846f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e081ed82ae1db7bbc149b560db286aab016278077b9bdbf97db9df852fdc810b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d08d0742ae243ed89817fe8dbd453517bca525b4e9d60f5a6081ac3500e8aa4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b4f8cacf9de65b5ea6149c3bffeea1217c9a305549d4f6ea786a203adb298fc"
+    sha256 cellar: :any,                 x86_64_linux:  "91a04ec65e331a3a79e3398eb2cfcd27a17ba0bc8e2dde421fb96deb49c71f63"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"sourcerer"), "./cmd/sourcerer"
