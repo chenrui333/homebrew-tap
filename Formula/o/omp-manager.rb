@@ -8,11 +8,11 @@ class OmpManager < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a999439e6846437c106f0df3bf39ab184af32db2c8c34d3271e750c066250c99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46688134f26fa31b6610d4b70f9061542047df205c71d33832bfecd6b58b221a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "727011f2a3a4211d2a5682778c4a43f70fd2905a23c76af11504b283219dfca5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "169759900df1a26d4b5cbcdcd773a4c93f929aa211865eb009de187e036fc394"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9494d8f856868446f0895bfecb63ebc087c667010cb2ed45b2f58b22b5f09140"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80aa4958191f3451187fa1ab274fae63c5df6b1eb72568d11abad23716a9bbf7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4688e409ac8f2c2b865bbe246cf7a950ef2ec4a33984717e7c3ebd3bd6cdb54b"
+    sha256 cellar: :any,                 arm64_linux:   "a8ed330ef2ea7d3568d10d47997161ceb7c6fa5903103ca52837c5298064dad7"
+    sha256 cellar: :any,                 x86_64_linux:  "4ea51cd85396ae5e031ad46d782579c47fe4502996cc0f17205ff369f34ebb27"
   end
 
   depends_on "rust" => :build
