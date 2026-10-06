@@ -1,17 +1,17 @@
 class Cnspec < Formula
   desc "Open source, cloud-native security and policy project"
   homepage "https://github.com/mondoohq/cnspec"
-  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v14.3.0.tar.gz"
-  sha256 "21284604e4224973e114b15aa9553675f0572571c4c4f9e945a7b4be53c91ffc"
+  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v14.3.1.tar.gz"
+  sha256 "fd76db2bac60593a254073769b8f073f933d50fd86458efa611e47d32a8a71c7"
   license "BUSL-1.1"
   head "https://github.com/mondoohq/cnspec.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4646325161726fd3d4f1f41957844d51ff8b61dcfd00dac3b70c243bb4db449"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e9ced03e6e51b5055aa0cd2cd8e1ec74ea8d1bea864797580a9f336721a4f44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfb97e61d4251d9df0337cb9932c1066929ce8a1488128e49ae1ba75ea842ba3"
-    sha256 cellar: :any,                 x86_64_linux:  "58daf7974f0a474dbf29ac62e29dbb219b5316348eef9d7f97ceb1707717eea9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89ae9bd3d387be5b73cadc4d23f4ee7430db478667f6233cf61dee7794c03fbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ed9a2bfbdeb8bf428ab447acd068d9afec3254f153ca26abbf87c2e66d3f26d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99df74bff63a7f0d71223fc788d40a9a2d9132d2c1a0a2407b96421b47465bdb"
+    sha256 cellar: :any,                 x86_64_linux:  "29607292214f5e004abbc0f6eb206f05c19ded8f3bb2265a05cbb7e2d6a915a1"
   end
 
   depends_on "go" => :build
