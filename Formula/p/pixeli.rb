@@ -8,11 +8,11 @@ class Pixeli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "7384cd81856d25d9ae49983041b0e50eee9e3739d5e0dd99a0575c361015abad"
-    sha256 cellar: :any, arm64_sequoia: "93c7e1d81ac460360dfc00d8c404ccf18db5c0c3ffd2b9913746485270e52c34"
-    sha256 cellar: :any, arm64_sonoma:  "93c7e1d81ac460360dfc00d8c404ccf18db5c0c3ffd2b9913746485270e52c34"
-    sha256 cellar: :any, arm64_linux:   "063b4a4aa5b3613735d73e40db75f034634d77cbd123e73f6024dd020b24ecfd"
-    sha256 cellar: :any, x86_64_linux:  "7f0ef367e7c41a3b530f04f2fe930b2a87226bee3cb0a6c81aa0f0dd90db44e9"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "09f83231693311b12af64e885e60825ddf65921229c549996cbeeb7a4b422cc7"
+    sha256 cellar: :any, arm64_sequoia: "09f83231693311b12af64e885e60825ddf65921229c549996cbeeb7a4b422cc7"
+    sha256 cellar: :any, arm64_linux:   "e7433532396ff6265472a73dbd3a31e4a5ea17abfeb572d2e7ac8e3a93e57ab5"
+    sha256 cellar: :any, x86_64_linux:  "ac78354fea64ce8315d75bd37aee4ac6887e0c6b067732714952c33ba8c8a35c"
   end
 
   depends_on "node"
