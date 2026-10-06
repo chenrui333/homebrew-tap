@@ -1,0 +1,14 @@
+Formula/s/sdl_image.rb
+  h_9df9c32c3f321d 37-38,55-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "43062ab4aa76268e8226004c69f1585bfad1bd5a",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
