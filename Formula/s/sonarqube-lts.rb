@@ -1,17 +1,19 @@
 class SonarqubeLts < Formula
   desc "Manage code quality"
   homepage "https://www.sonarqube.org/"
-  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.8.100196.zip"
+  # binaries.sonarsource.com now returns 403 for the community 9.9 LTS zip;
+  # Maven Central hosts the identical artifact (same sha256).
+  url "https://search.maven.org/remotecontent?filepath=org/sonarsource/sonarqube/sonar-application/9.9.8.100196/sonar-application-9.9.8.100196.zip"
   sha256 "07d9100c95e5c19f1785c0e9ffc7c8973ce3069a568d2500146a5111b6e966cd"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12fb3ed5c742093ada085bf9547cf231451b42b5bf1988dd9b46cefea896a625"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12fb3ed5c742093ada085bf9547cf231451b42b5bf1988dd9b46cefea896a625"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12fb3ed5c742093ada085bf9547cf231451b42b5bf1988dd9b46cefea896a625"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d03fdd3c53368ffdce97cddea22a35d260ff0459f3510d73f9eb9ddda850ba38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d03fdd3c53368ffdce97cddea22a35d260ff0459f3510d73f9eb9ddda850ba38"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86ae1fa4b92b0007322691fae9e40fdd9f7d5282375a138f616f6aac838e7507"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ae1fa4b92b0007322691fae9e40fdd9f7d5282375a138f616f6aac838e7507"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8ae521f49c8a3aa167c9cba03d329851eadc0acefd92c78e0d3e61621c81622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8ae521f49c8a3aa167c9cba03d329851eadc0acefd92c78e0d3e61621c81622"
   end
 
   # Upstream no longer provides a Community Build for LTA releases.
@@ -19,6 +21,8 @@ class SonarqubeLts < Formula
   deprecate! date: "2025-03-19", because: :deprecated_upstream
 
   depends_on "openjdk@17"
+
+  deny_network_access!
 
   def install
     # Delete native bin directories for other systems
@@ -41,7 +45,7 @@ class SonarqubeLts < Formula
   end
 
   test do
-    ENV["SONAR_JAVA_PATH"] = Formula["openjdk@17"].opt_bin/"java"
+    ENV["SONAR_JAVA_PATH"] = formula_opt_bin("openjdk@17")/"java"
     assert_match "SonarQube", shell_output("#{bin}/sonar status", 1)
   end
 end
