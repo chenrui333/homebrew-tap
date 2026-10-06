@@ -9,11 +9,11 @@ class SonarqubeLts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12fb3ed5c742093ada085bf9547cf231451b42b5bf1988dd9b46cefea896a625"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12fb3ed5c742093ada085bf9547cf231451b42b5bf1988dd9b46cefea896a625"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12fb3ed5c742093ada085bf9547cf231451b42b5bf1988dd9b46cefea896a625"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d03fdd3c53368ffdce97cddea22a35d260ff0459f3510d73f9eb9ddda850ba38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d03fdd3c53368ffdce97cddea22a35d260ff0459f3510d73f9eb9ddda850ba38"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86ae1fa4b92b0007322691fae9e40fdd9f7d5282375a138f616f6aac838e7507"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86ae1fa4b92b0007322691fae9e40fdd9f7d5282375a138f616f6aac838e7507"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8ae521f49c8a3aa167c9cba03d329851eadc0acefd92c78e0d3e61621c81622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8ae521f49c8a3aa167c9cba03d329851eadc0acefd92c78e0d3e61621c81622"
   end
 
   # Upstream no longer provides a Community Build for LTA releases.
