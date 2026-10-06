@@ -1,0 +1,14 @@
+Formula/s/sonar.rb
+  h_9df9c32c3f321d 19-28,41-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d84848de8c7762a61625b623d84274fc3d506f57",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
