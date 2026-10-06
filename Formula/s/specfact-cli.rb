@@ -10,11 +10,11 @@ class SpecfactCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "901f9fbd2169143b809a6a83759702696457325a535f4c418bd50ea2fbcc97ab"
-    sha256 cellar: :any, arm64_sequoia: "89e79b76f969808bb99bbb431831f70e5cb021cbb88c329dd7648b713f249604"
-    sha256 cellar: :any, arm64_sonoma:  "c56d10a8a0feed255fff11a454446c213458d82a56a0e6d1524a554aed0d1cad"
-    sha256               arm64_linux:   "7f6daa8c96568a4570ffde0f710d5786c35e99c45c1a36c0b405db02318e208d"
-    sha256               x86_64_linux:  "268de81720c8c3d6ea7670e370bad77c1702d2b544b998b9ada369978dffd79b"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "4430e63198646a567a4fa3dd10bd2d816a505416c3785b8d2d819552f5de8e32"
+    sha256 cellar: :any, arm64_sequoia: "09e896861a7f056ef8e97f687138a1d5b628bcee59b53cb3df00de4f29cfd9eb"
+    sha256               arm64_linux:   "a7715f8fe501b9bdeb999583323a04c1d804bb38d0eb26055d57c1f34fa9d662"
+    sha256               x86_64_linux:  "fcc07767571f3d5d53bd21cd055db9b7d9007ae62360f99add9a9cc28aa4ff1c"
   end
 
   depends_on "cmake" => :build # z3-solver sdist build runs cmake
