@@ -7,10 +7,11 @@ class R2md < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f72fe8677904c528ec03a7154d0e80e5ccbd22699cdb05ba22a26830e0fb28bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34e4fa8b2ee5a7081c6734620bc4af3b4789b0890329d9be65b7faa877c08620"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ffbf959861bb9a3d0309220d89bdb33614c9f6eb5c366214777b8bf313070db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28d5a6d2a5ab15b6896a92675aa8901ec23dae0698c2226073fa64f4542b76a5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d418b7515f35a0f4b6de6326ef7f1306b5dae4f13516aa6f7947d65a23df074"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16f601a70a9f680c89fbed8282e3aad690e58bd0cafa06ced7f5e88f0cb759d"
+    sha256 cellar: :any,                 arm64_linux:   "d69ee6f31b6c020ed4af651acf242070c3c96d0b37b98fe0cf28a43545de6a9a"
+    sha256 cellar: :any,                 x86_64_linux:  "104bbc428f5196d7301352823a530fb0a974b2840d9b27134f052509f764e9fd"
   end
 
   depends_on "pkgconf" => :build
@@ -18,6 +19,12 @@ class R2md < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
