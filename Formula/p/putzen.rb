@@ -8,11 +8,11 @@ class Putzen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e09bd413a62180e35dc8ebc95f1a8ef860bc72082695c1e342f7896f71ae12d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e025644553314fc54d0bf158c15aba8051923379921dcc51bdf874d05b35823"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aba66f7334fd7a3d76a85e2476bcbe1fb34610249ef538528ed09cbbf45fdfa1"
-    sha256 cellar: :any,                 arm64_linux:   "5eec8345e75e1f7cb20fac2cd6ff2e67b2ad9eff255c7f1c3412dcd507d5a04f"
-    sha256 cellar: :any,                 x86_64_linux:  "08d5147f4b1ee5ef1c902fe8189cd25d88c2b1542d0cc1e88f8fe4fc29c84761"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6f8944f23b39d05f3ace041738e4c97ee5bcb10386eed020c33292053d2de08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d36e59d74173689d954ce47408ded30a99dd7c4a2ca25c18df538a14dd6ec2e4"
+    sha256 cellar: :any,                 arm64_linux:   "10f4b2d3f10ff69c5c39d3581e68e7efb58181915c1c1134fc04bcd63876aad2"
+    sha256 cellar: :any,                 x86_64_linux:  "6109d00708ab7563480295431fba7dd91edb9725ad6b78f3ff16ee6faf8f576e"
   end
 
   depends_on "rust" => :build
