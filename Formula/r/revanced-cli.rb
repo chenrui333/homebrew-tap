@@ -7,10 +7,13 @@ class RevancedCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "10be9e8fdb56ef526c2f66ed4d3f20e6dcf7a1caf8aa26037a01c7e4a1159a3f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7afd32c7ee5e9cbf7ad9017b055fc759cbcf2a36669d0963f57e7cd49b3b28f9"
   end
 
   depends_on "openjdk"
+
+  deny_network_access!
 
   def install
     libexec.install "revanced-cli-#{version}-all.jar" => "revanced-cli.jar"
@@ -20,14 +23,12 @@ class RevancedCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/revanced-cli --version")
 
-    resource "patches_rvp" do
-      url "https://github.com/ReVanced/revanced-patches/releases/download/v6.1.0/patches-6.1.0.rvp"
-      sha256 "5ef9f18359a04c3bebd731cf6185b7171719aa64dbdfcd91e1d141371706ce92"
-    end
+    # A real patch bundle would be downloaded at test time; check the CLI's local bundle handling instead.
+    (testpath/"bad.rvp").write "not a patch bundle"
+    output = shell_output("#{bin}/revanced-cli list-patches -b -p #{testpath}/bad.rvp 2>&1", 1)
+    assert_match "zip END header not found", output
 
-    testpath.install resource("patches_rvp")
-    output = shell_output("#{bin}/revanced-cli list-patches -b -p patches-6.1.0.rvp")
-    assert_match "Index: 0", output
-    assert_match "Name: Export all activities", output
+    output = shell_output("#{bin}/revanced-cli list-patches -p #{testpath}/bad.rvp 2>&1", 2)
+    assert_match "Missing required argument(s)", output
   end
 end
