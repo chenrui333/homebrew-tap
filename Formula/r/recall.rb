@@ -8,14 +8,20 @@ class Recall < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7bc397bfe969d8309f1dc82a2810d1f4c0ba358e2d15fce21a35dc80cc3a8571"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6691d039d019781397c801a3e1765a380b68bdb8ccaebf57b98a1d2048e89d37"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "411df93c61ec4bbe89fd4fe066173099fecec583481f6a056febb7c011fe9992"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6f041fe783be84e265239b71371146d05470499879efe991e5c702662efe3a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77feaa36c751ade680d678851649b09dced402f4721fb33e10aa187ab5517979"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6a3a75ed5a6bb69ffb4fe2faa73347b7a6b8af66517e1f4a42914bad16a8dc1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab79554a452e95a9980db22581b3785c1edebf58b62ab354cc80a818bb9bb255"
+    sha256 cellar: :any,                 arm64_linux:   "352393434b563c5b33a2fb0a4b4400c562277eec443779cb67cf63532e5a51aa"
+    sha256 cellar: :any,                 x86_64_linux:  "754099c174f99397a6c6ba106b45c6244b7cd571fda6b78238e1e9900c7dc94f"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
