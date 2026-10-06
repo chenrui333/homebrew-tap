@@ -10,11 +10,11 @@ class Parqv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f7df9632e48550d38f51c687c817f3a2afc7add6e65de7ff52cbab0dca9c57a6"
-    sha256 cellar: :any, arm64_sequoia: "9477c4f179d54da37c2ee39af10af1897be5e0253215dd5a660b2f17e214c02b"
-    sha256 cellar: :any, arm64_sonoma:  "388af71fee1be190a09deb8fc25fa618d05b30d00983d784435bfb1143c7469e"
-    sha256               arm64_linux:   "223f314402c42904424117ac967f1ffebae540ecf6f0c57f5cd8bc188c5b2849"
-    sha256               x86_64_linux:  "41cb892e307a768b594bee045436c06b6203065d63720bad4ba84a96c0c776c1"
+    rebuild 1
+    sha256 arm64_tahoe:   "3b44ca39f2f03c92b6aaab72c9f8a83a1fcfc41afe723221ba124fafe23c7a1e"
+    sha256 arm64_sequoia: "5002852e4c32e1fc300fa12bc9a4bcf950002268743d9dd53409779b23c40c57"
+    sha256 arm64_linux:   "b90ed110bf0c0a8a3910487f557dc9f4fab3760add0efd30c03c4ad8d2b45965"
+    sha256 x86_64_linux:  "4560ad521c2ecd8b149fc74c60dd5cb3a9d9efe6cfab13619c8958a9ee0c975e"
   end
 
   depends_on "cmake" => :build # for pyarrow
