@@ -8,14 +8,20 @@ class Pikpaktui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ab888fce695c6f1d8785e49d8b78529166759999717e8d6e7c3d2879ef72fbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4129b84af75ecff8fa3cd1ccd2ccf0000ac5cf3a8d670ded07ad390d041cedfe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50b8780b0c97cee1cf9ab7901e4937814d854c5042fae45461f837bdfb0c28d4"
-    sha256 cellar: :any,                 arm64_linux:   "decd99d7ca1c9c8c38ea62b93e02a1cc8097489a68eaad4258f5db8cba26c15b"
-    sha256 cellar: :any,                 x86_64_linux:  "4172fc3427c03354e02253f35ac7433456b8ba34630e6dccd5360cc23bff283a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98346bf3e80f4fcdff09401e51493b3dfd36b5a5b75623cccfa9857eb9c60a89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0687198a8c9ddeb2989e98e627c3fb9564eb97503804e414b29cd477642ea2cc"
+    sha256 cellar: :any,                 arm64_linux:   "dc102eaf3346d05e0e6a6f588512db7c1651dbd9c7de8109cfbb77aea4d81fd2"
+    sha256 cellar: :any,                 x86_64_linux:  "8cd45d7145f37092653dab4a1b9070537c69e2637c8fa7d096a2caed1d6236ee"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -23,6 +29,11 @@ class Pikpaktui < Formula
   end
 
   test do
+    # Disable the background GitHub release check (documented `update_check` setting)
+    (testpath/".config/pikpaktui/config.toml").write <<~TOML
+      update_check = "off"
+    TOML
+
     assert_match version.to_s, shell_output("#{bin}/pikpaktui --version")
 
     output = shell_output("#{bin}/pikpaktui ls / 2>&1", 1)
