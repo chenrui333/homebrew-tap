@@ -8,10 +8,11 @@ class Seastar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "38e7441a8e803f03fc8f6777b288ec3340a584f3cec5967c45b0d0b3b9443c52"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec7b693ba0c7d583797a28557719a123f6c24358581c2b6dce947c85ecf57745"
-    sha256 cellar: :any,                 ventura:       "f378e209055cd7ddc37770204a6ebf35d8f3bad4dff441d53cbac5fc732d3a17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45708f62c13c30114dc8f5db9a15a692a935f5251ba593604ff973a45e731d63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b281d9ded7be77e1653d2d9a4faa1d5d2edbc647c545c14babe4edb68ed3f8c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51672d085b1351eeaa4784da71a8d73dd2e40dbb144dfd26484b0296401486d2"
+    sha256 cellar: :any,                 arm64_linux:   "4ad346b56560ac5786f8e379ddd70c5e5140420d759e90b58aa4b47da0c410e0"
+    sha256 cellar: :any,                 x86_64_linux:  "0c26f69e6263fb52fce41641aa4627e2c2ffbd9ae8f5b12540fa4034b68ff05b"
   end
 
   depends_on "pkgconf" => :build
