@@ -2,13 +2,13 @@
 class DebuggAiMcp < Formula
   desc "MCP Server for Debugg AI"
   homepage "https://debugg.ai/"
-  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-6.0.0.tgz"
-  sha256 "b9d50da1f9b1cdfcab2e2140040611e78cdc499c912ddc9c60d32524b3ba7251"
+  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-6.0.2.tgz"
+  sha256 "f635791348d2161634937605f6e9ec0f97dd98b98347ca11e970795370e8f121"
   license "Apache-2.0" # license fix PR, https://github.com/debugg-ai/debugg-ai-mcp/pull/4
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "76ffc43972851d04a22b028fcbf01d833513cfa5c6dafe93c6953477e27f9d0d"
+    sha256 cellar: :any_skip_relocation, all: "436946c62d1accaca81d1091d2cf363c44d0aa83b029fcd0a0b897509df1e757"
   end
 
   depends_on "node"
