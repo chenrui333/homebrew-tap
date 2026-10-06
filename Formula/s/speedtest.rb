@@ -8,14 +8,20 @@ class Speedtest < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a309f6398bb9cdee00e340583ec466f6ae70ace93c75c2661a41e9db2cc2fa8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a309f6398bb9cdee00e340583ec466f6ae70ace93c75c2661a41e9db2cc2fa8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a309f6398bb9cdee00e340583ec466f6ae70ace93c75c2661a41e9db2cc2fa8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92abd7a375abf1152655147e43c50c24becf9af39d9bb1da342cac63feb0f07b"
-    sha256 cellar: :any,                 x86_64_linux:  "f8ba22cc71bd97141c154d97d01b9a2ad2a8b0ba5e0adda9967d2aba39deacb4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "098f4e0ddc39ed57e76f1043f6d9aa463c7598f99214ae7b0cf8b6e56df73d42"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "098f4e0ddc39ed57e76f1043f6d9aa463c7598f99214ae7b0cf8b6e56df73d42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d56e6044e0024f26b482f41120a82a88dc959eda3ba827bf7826703ff5d65afc"
+    sha256 cellar: :any,                 x86_64_linux:  "0585df992a9d261f6f65e4fbb5f750593f2f3a5aa85ea912d6e6f6a81c9791f9"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
@@ -25,6 +31,9 @@ class Speedtest < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/speedtest --version 2>&1")
 
-    system bin/"speedtest"
+    # A real speed test needs speedtest.net; the predefined city table is built in
+    output = shell_output("#{bin}/speedtest --city-list")
+    assert_match "Available city labels", output
+    assert_match(/\(jp\)\s+tokyo\s+\[35\.680938, 139\.7674114\]/, output)
   end
 end
