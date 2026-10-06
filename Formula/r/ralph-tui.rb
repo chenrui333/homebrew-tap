@@ -8,15 +8,21 @@ class RalphTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "994aa19f1c3932b26c2f97dbb470608b505d9c768cf0ef9774932356a6420724"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b56d2f234b037f54f59fdcf687ad670ed76a4b9167d1995af7fc0d1c495286dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9692d830d5dfd2d46afc4c71d39baa291d085be20a02f78b2abf53954df1f8a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97ae222b6a69ba53e8319cab14141817db5403960f2fde3650e0a8ed1b090916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb98ff401d356579f93dd4195c15f76d5d5e35520cd499241d858f7c793b076e"
   end
 
   depends_on "bun"
 
+  deny_network_access!
+
+  def fetch
+    system formula_opt_bin("bun")/"bun", "install", "--frozen-lockfile", "--cache-dir", buildpath/"bun-cache"
+  end
+
   def install
-    bun = Formula["bun"].opt_bin/"bun"
+    bun = formula_opt_bin("bun")/"bun"
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     libopentui = "libopentui.#{OS.mac? ? "dylib" : "so"}"
@@ -24,7 +30,6 @@ class RalphTui < Formula
     webgpu_dir = buildpath/"node_modules/bun-webgpu-#{platform}-#{arch}"
     notifier_dir = buildpath/"node_modules/node-notifier/vendor/mac.noindex"
 
-    system bun, "install", "--frozen-lockfile"
     system bun, "run", "build"
 
     mv opentui_dir/libopentui, opentui_dir/"#{libopentui}.raw"
