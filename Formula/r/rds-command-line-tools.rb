@@ -7,7 +7,8 @@ class RdsCommandLineTools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "a9a0ed2c2b318ae726c73ffa999b2bb6a4db4cbbe4b74a3bda2a6f625c04bc2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ea535f6e6e7e7d334f09c70931df7f335f2f377eda5e802d079feeaef33c7930"
   end
 
   # Deprecated and replaced by AWS CLI for RDS
@@ -16,8 +17,10 @@ class RdsCommandLineTools < Formula
 
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
-    env = { JAVA_HOME: Formula["openjdk"].opt_prefix, AWS_RDS_HOME: libexec }
+    env = { JAVA_HOME: formula_opt_prefix("openjdk"), AWS_RDS_HOME: libexec }
     rm Dir["bin/*.cmd"] # Remove Windows versions
     etc.install "credential-file-path.template"
     libexec.install Dir["*"]
