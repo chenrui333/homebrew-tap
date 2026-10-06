@@ -9,13 +9,20 @@ class OpensnitchTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "4668c4fcb20dbed60b6ba77e42f3846b71831e29a6571b0c754a66a22984a4bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8246c5c6ffcd41f1ceb0a62172e1a3512b3c26302780a08f9b41b3b86ad0a105"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "94c8c965e24af22fc9f6fd9489500774661dde79d542c48e199116bbefd6ac32"
+    sha256 cellar: :any, x86_64_linux: "936a5de80749ab4dbff2af9385bd7d0e554e9cf2a9b8cef504c962f2c8961ace"
   end
 
   depends_on "protobuf" => :build
   depends_on "rust" => :build
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
