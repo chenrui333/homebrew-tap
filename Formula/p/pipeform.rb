@@ -9,14 +9,24 @@ class Pipeform < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab1b5c745a37146903953804d6971f866d72981d670854ebea3b22e8c10a0275"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3b0dad0e02d0c0d4f2f52dd2d3f17e2d7f804add14f53953170f8ce03788027"
-    sha256 cellar: :any_skip_relocation, ventura:       "98bd0d2bc6e1d95ad82b99818a4b9b70744e2fcad9a935afb4774af02a6ed410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9afcde06da06062190018c1fd0209e602d7e9954722e5e3d95dd3965259f72b4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "66a1e19a6fd7d98df503e453199eeb6dd87782e678a31ae6edc68ae8888ca5b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edec7c60e03c7282e12f3d06e0e0f5f6fab8c34a44c12bc773e60b99fa45711e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71883159fc8e87d95e5de139b6778a1aecd841d68d0fcea86f39b2a8f2a5fb84"
+    sha256 cellar: :any,                 x86_64_linux:  "089d9eff0bb80df31a3947c4e8b5e49aeb7c35c93d1fc9e92d7332d4f9e5fc8c"
   end
 
   depends_on "go" => :build
+
+  on_linux do
+    depends_on "libx11" => :build # headers for golang.design/x/clipboard (dlopens libX11 at runtime)
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
