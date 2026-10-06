@@ -12,12 +12,11 @@ class Squall < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1266c0a662efdfbb62848f30ba52134ba015869e79b89281f8028c7cbc2409ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6b8f316356138d2ca7fe4c4037ffe1061b2a3d69b81f2abab4ebba47c088b22"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95a5b58c8a78256eafa8d4189104ee8e7f0039cdcae9368a6ab7aadcf5c925bd"
-    sha256 cellar: :any_skip_relocation, sequoia:       "804ac93403e0450d57d7faf8a22267b131d5d38bbb1c6e8737bc6eef47a7f543"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6faa4f39f1390c26fe05b9bb929dc3c4b4c2f450e0c3f313da7d9f75d8c4d0a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca97098579fddabc4e0e2f453de4934f415eb63197a2e569cee18a8ebf092029"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3b044a85a37214f014dc1ca79111ab9402f550979c528f0a273a018258d0b4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01f31494bb6763b65965674d4226d32c722b75b7909627b6f6ea3e467fa0a178"
+    sha256 cellar: :any,                 arm64_linux:   "f2f44cd1f213d9b296244cd0966582821d43a59de38777acf578464e7c957ff4"
+    sha256 cellar: :any,                 x86_64_linux:  "a77a4293da9df96e520b431bf3bc079224ea2b77180af62a41bf5bffd5d03155"
   end
 
   depends_on "cython" => :build # for sqlalchemy C extensions
