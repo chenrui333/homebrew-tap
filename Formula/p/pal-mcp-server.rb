@@ -9,11 +9,11 @@ class PalMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "0ea5594c28aed277ede6a06869abdf8c8f2a978c5682c88466f9da3de23ba743"
-    sha256 cellar: :any,                 arm64_sequoia: "8a73a4303e5a6afed0456427efb147b9d8f7c66c302d25b2b74c6f30bed16207"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a2405533f522b157f8d75b6ad670bbad9cd723f958c9ab460c162250b2585cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cdcf7c798b09050cb5b4961463f6571871f1f96c055f46fb70e8845c105abd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b55108161b725ed8a8a50f1409f877377bff6c313f9aed4ad94177cf4403390"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "ec42685c201bd18111fb50ad3a94cb3e74056716943b69b66dac3c2f706319bb"
+    sha256 cellar: :any, arm64_sequoia: "3caf0ea524d736094a50208fe14acc3319771d14c9390c43b7d9f7e7018dc9ec"
+    sha256 cellar: :any, arm64_linux:   "3bfca3d161b31673ff459ffc2f2dc9c7b19ccbb5f5b7ce7b32e983fb70315144"
+    sha256 cellar: :any, x86_64_linux:  "4aac15dbe19baf88ff66e06b2c574ffb65fcb7c8e39904fc9e93222954af96ca"
   end
 
   depends_on "maturin" => :build
