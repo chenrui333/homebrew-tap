@@ -9,12 +9,11 @@ class Polymaster < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d15fe522adfcca5b3d03bd7944cd70122bfed8c28304d0665f1a8360b96b60fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91ad6d30b041d86bb4e243fa8f3bdea79412cac8c3418e78069e379bf449ba04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "391eb37d740aeee13ed0018f58f78ccb013de0de97d5fbcfa9c776b35d5e2fb3"
-    sha256 cellar: :any,                 arm64_linux:   "e2e8a03cda14571617944d44f5a54b7218614d350f6cbdc72b974d838ef227d7"
-    sha256 cellar: :any,                 x86_64_linux:  "0fcfbf89e5857c7823bd67e928cc65aa8d759639e4f46c75ad1be169b6d81a2d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "33f4eb245c555e99838aff0eca8d74abfd8fc7166119fd2cea512a99c7737d60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59b6c11521812012f5acba0ddb6dc90836a7f4bf53c34283c0ffc87f4c51a117"
+    sha256 cellar: :any,                 arm64_linux:   "a43149cd4b932ec319cac0f4afc2e96d3fe1a466cf74706be7629b90e9a10760"
+    sha256 cellar: :any,                 x86_64_linux:  "b06fe6ba7d6884ea56f1e8e1bcbe76b63207525829b5045da6ea3ff38eb288e2"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +21,12 @@ class Polymaster < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
