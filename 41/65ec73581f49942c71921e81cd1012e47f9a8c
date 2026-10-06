@@ -1,0 +1,14 @@
+Formula/o/oracle.rb
+  h_9df9c32c3f321d 19-21,35-43,46-47,49,59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4165ec73581f49942c71921e81cd1012e47f9a8c",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
