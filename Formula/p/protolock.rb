@@ -8,10 +8,11 @@ class Protolock < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebeb944c95406f31df93ac9be4b1d0dc27d1ae4bb618e5d7e0df8110af4a9219"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c931e6a053e6ef6acd093a10536cf5aafb8b5f8aeeaf1c6423112bbf41c9058"
-    sha256 cellar: :any_skip_relocation, ventura:       "fd58528c57cfa0439867846753d28539222953c8f116f1665c007d09f257e577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b67181a874b5d9d2f53fe45383180b228f44051a6c77b468aece93ca1d0ac948"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cda4cecd07454883250211e6d22754bca83f5f61eef0affd814027b01ccb42da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cda4cecd07454883250211e6d22754bca83f5f61eef0affd814027b01ccb42da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01b40eb65fabde6354e7be5f0c40446bfa90ec1eb930141d625bc34bf5e38a80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28593a5718d22358d19292568b88449824821e523e767c2cf459886773e95a69"
   end
 
   depends_on "go" => :build
