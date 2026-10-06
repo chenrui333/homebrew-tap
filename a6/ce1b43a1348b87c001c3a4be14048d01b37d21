@@ -1,0 +1,15 @@
+Formula/n/nosy.rb
+  h_9df9c32c3f321d 26-29,33
+  h_9df9c32c3f321d 21-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a6ce1b43a1348b87c001c3a4be14048d01b37d21",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
