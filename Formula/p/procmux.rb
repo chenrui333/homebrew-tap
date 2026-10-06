@@ -10,11 +10,11 @@ class Procmux < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13c4489bc3d60400a9558fc24b712246c5bbbcff0e2e3518ead85427535351b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b55972bc286463ec0074b7dc9acfee221948ee3a96f3ab977bd60969f6cc77fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdd4125376c848ad56353de30085d692a16533bc148ad65f79725d929e30e70e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0c6f64cc6f17627d0ea66318790d675bf79c36cd00e9ba923fbc55063b0a36c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffaf321615a635bac45d3b8690f3d278cb27bd37be5fffe96cb0774695627560"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0157b08828d8a0a1ddc42c327e38c42171e9b4ff227e000475dbedfd1ef91322"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9689ddb28ae55eed7d427ae9aecc9029e301e6fa8d3424becb7d50aca87252db"
+    sha256 cellar: :any,                 arm64_linux:   "3bcdc4feeae77c3e595e7e246c6e8d463d00d01ebc921f33a15cd4b8b4d16f60"
+    sha256 cellar: :any,                 x86_64_linux:  "490a94ddfdc66f43c0e54faf7a6b1b2e773708d8598fa308ac32a75e747ce101"
   end
 
   depends_on "cython" => :build
