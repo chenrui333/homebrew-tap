@@ -7,10 +7,13 @@ class Oysttyer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "7b7ba178d1f29b1d9002fd329b5c714ad26bb9d8603a33e06eca409affdc81c5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ec10ca81e04dbc02bd77f0b6f8132229123dadb21041fdda69a6be34a2472b68"
   end
 
   deprecate! date: "2024-01-06", because: :repo_archived
+
+  deny_network_access!
 
   def install
     bin.install "oysttyer.pl" => "oysttyer"
