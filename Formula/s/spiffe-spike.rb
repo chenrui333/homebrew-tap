@@ -8,16 +8,21 @@ class SpiffeSpike < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5692410c7b18eff28856aa4b2d68ff9bf082c792eb5e6642e95c8c9debc7823e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f9dae4b3b409709615b48439c41f222ff1cd9772373498b58deec0ddb4f84e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1784fd98b7888101a9c7645d3b70fb0e940902b155460d744df946fc6b6a36fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e075f7812922178ca476ccadd847d6e0bd5cc94a3504e1528295630dd118f8d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "420e6e596dcd1a2f77800cce9e3b6bc80a0b009587b27c677c95966e424b1927"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "542a9b235ea752191ed47542a25b0b1e9ec3a3c27fb48a741b39af2615e5e59a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00f89cdc0c16ea69f2bd746639fdd187554bddd1e6a497cb0ef734e3d30a8de6"
+    sha256 cellar: :any,                 arm64_linux:   "e2987758639d695b22a24d5155c16005cfc08370bccf4f028abac43df27f926d"
+    sha256 cellar: :any,                 x86_64_linux:  "8942cea5879e5345a1ebc9dde629ec7291f685547bbfa69980e4cace8a2e8742"
   end
 
   depends_on "go" => :build
   uses_from_macos "sqlite"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     # cgo for sqlite dependency
