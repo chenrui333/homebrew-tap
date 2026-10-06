@@ -7,11 +7,11 @@ class Oxicord < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "66974ad71cca8d9c5da70bdaa9ae43bc4b57a12b7b6c2820efc89ef669a9a7f3"
-    sha256                               arm64_sequoia: "6d4368d39416c225ac3038fc086f1199c0f7c66e6dbda07fcdd72f2f26a2f4d1"
-    sha256                               arm64_sonoma:  "549f6c973bca83e6788a36919063d633428f9370b1098aaeced083ce13f86b8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08bd2fc43e6e3636c1e718f80f9f69ce93be849651fb30ca27a88d2e46d9ef41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01cbba8f0581d16d1ca79357cdaa071dd9406a658d134e5f4a685d44e53a6003"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85442dfd211f657340e21fdddf94c2bdf3f0591775905a55e7e853d0f8be6ae8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d2097ebceb1f8b53d68ad89612bcd37ac97a00c194c33d530b6b7ee22e6945f"
+    sha256 cellar: :any,                 arm64_linux:   "6a3ae5a188b73f5659941ccdd9dfab28cd4b7fe8cd0ce357873f18d78d4dd327"
+    sha256 cellar: :any,                 x86_64_linux:  "3d01a4d2dfc5257a90eb6b802f12f39a4fafbb7fee946e711ee0a567787a3ebb"
   end
 
   depends_on "pkgconf" => :build
@@ -22,6 +22,12 @@ class Oxicord < Formula
 
   on_linux do
     depends_on "dbus"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
