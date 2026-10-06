@@ -7,12 +7,11 @@ class Pmx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a5aaa885f54333960315cef37d5442a0bd9b27a6030525f86770c47115125e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9c223d9e19656088dcd09bb11fb6011f7b1abb1c02a9cbcf4631c2f591c8b1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "915b603d6153219f3ad0263cae3658be864f184eb9aa34c2c6256ebb019901a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf0503974e7d4f21e59d2d66b2c70bfc4af588fc3b0644334a3fb553256a68d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77aa8af6e220095501b231113882510fbbe1dd56bac6ab2fb6ffc4f4a0bd06b3"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7053e0c7b797a94204106c30e52eb5bfc207993b08819ab3b54ec7c902b3ebeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e619c1625b759132e4aeab5d01e9686cab18ce3b8df282ee9021589f82f4f26e"
+    sha256 cellar: :any,                 arm64_linux:   "c6329d7d8907d63d7ad5a0a6827aa23cc922fbf88ef2f8ef62238e3f8efa6160"
+    sha256 cellar: :any,                 x86_64_linux:  "b6c934ecfc9633550f6f67af238fc406142f4b9936d8ffb8620c544e905c5e3b"
   end
 
   depends_on "rust" => :build
