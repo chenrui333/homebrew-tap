@@ -9,7 +9,8 @@ class Pysentation < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f69553984a691495d2fa02dc6be75c2cfa703ec817f8e47c1d8a63651ce1e418"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "6e3f2bacc92ec763d782a706e22f96cbe8831a9b07df5030b3bfa95b3dd90419"
   end
 
   depends_on "python@3.14"
