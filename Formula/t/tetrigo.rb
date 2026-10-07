@@ -7,15 +7,20 @@ class Tetrigo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4540f32e1afc80d551d8add2c2c3c3843124812d93b6c5f87f21c424b8573db8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34eaa94e6c9104a1e7beebaa37334c03d59c84332b71bfdbbb1278c80a6b28f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd4c7521fa7034204ed4de283ff0fe6547f7ef50017572792dc51d612889f5c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78745d0227d71c0d842b7be13da5d57df0deefda4be7721d67a87a57dc17cc40"
-    sha256 cellar: :any,                 x86_64_linux:  "95e2e72e3c4785222332292489b6f593b06a74d1d6ff6961093d785b7e069374"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04103e300f06fe3e92813d8017891d37c83da87c64bacda897a4192521691ab3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51c83dd61310ae4555202fd77ee58978e746a0a4635d7ce5c9e737caa4bc9504"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c066c7082e5ae3a53f05c0c1f988810133dc4ab8fb76fea328d275a4020af28"
+    sha256 cellar: :any,                 x86_64_linux:  "1a389f00a79c6ecc55e1a680580c6e3a6918e028b08952cdd6ccb9b5fd378258"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tetrigo"
