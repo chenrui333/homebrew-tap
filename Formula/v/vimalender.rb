@@ -8,11 +8,11 @@ class Vimalender < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0027549504723d09cd62f89269c602a9ead92ddc26759b218b0fe2caf346f4af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0027549504723d09cd62f89269c602a9ead92ddc26759b218b0fe2caf346f4af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0027549504723d09cd62f89269c602a9ead92ddc26759b218b0fe2caf346f4af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f2a9ea8a78e07a1dce707b5c80528efc7f5ec28f519afa01351652d7c09aca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55cc32ab758ffabee874dda60e87bcde5105120f9177abdf04f0aa0255495a0c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f90c7c937f6a8e518b0ba8016d659611f3f3f3cf78e620c92c78ab8659b5c02"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f90c7c937f6a8e518b0ba8016d659611f3f3f3cf78e620c92c78ab8659b5c02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94abe9de7d911efc7c60b90b83b5f80dcddcb20dcc109fc6a310bee10adb6f45"
+    sha256 cellar: :any,                 x86_64_linux:  "e964b100f697a041d378f0e286c188434761d4b27cddf987dfc78d6aa19a9951"
   end
 
   depends_on "go" => :build
