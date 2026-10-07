@@ -7,11 +7,11 @@ class Sudocode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "a22621f95a294b59de7fb73f50c2e413c2115f1a3ebb3d5fb5016afbf199d747"
-    sha256                               arm64_sequoia: "8ec91d984d6c583b1025c9ae2d1dc99a8a20581fd5d5b22f8465a3de2374549b"
-    sha256                               arm64_sonoma:  "43cf4e3f1e37099f8072105914544b44d5d60eea2a2e1e9fc7dbbfbdfa44e099"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c73de68e8b7ddeebf36d8a43fe831b3545059c132d81badacd08937972a75bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d01fbe40ae6c34ff902c6ecb1d39377784553a81001703f84083dff4607c8126"
+    rebuild 1
+    sha256               arm64_tahoe:   "2a022cb1a26ca7b02a0d738a6607a66577f26e5ea9028ba8793b82e2e6249d1e"
+    sha256               arm64_sequoia: "1fa25035125bf9974c043276a24bbe16be9044b87fd2d1adc1f5b12bce999df7"
+    sha256 cellar: :any, arm64_linux:   "3716a5b6be3c9804733be8099eb36a04dd6f1b23dd5edf495612c8b971fcc954"
+    sha256 cellar: :any, x86_64_linux:  "241fbfcf86b9107d1f2806c58aed9a614b9fbac6d700b3a1d9da580218cbc496"
   end
 
   depends_on "pkgconf" => :build
