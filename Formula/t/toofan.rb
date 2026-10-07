@@ -8,14 +8,20 @@ class Toofan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "999a0cfcd070eb2ec2e831de49b744ae5772f1d669ef9f6d676e6c8bcc8938d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "999a0cfcd070eb2ec2e831de49b744ae5772f1d669ef9f6d676e6c8bcc8938d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "999a0cfcd070eb2ec2e831de49b744ae5772f1d669ef9f6d676e6c8bcc8938d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a8abfd53437dff64562f27a01caaaf8e61a2001e059fcb0991b44654ada68ef"
-    sha256 cellar: :any,                 x86_64_linux:  "78975e654a1190bc6f03099f59e576752332fedd23bbc52eb67dcc73e621a7e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f17866932751a483eee57a6af68d8f913540c5d8670b11cde41e297d8a5a448"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f17866932751a483eee57a6af68d8f913540c5d8670b11cde41e297d8a5a448"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7cf4d930eb46f3cbd206cf5a933d8f798aa0f30334f277b752fa9743093a0d7"
+    sha256 cellar: :any,                 x86_64_linux:  "8bb12eeeda734af96a38f129748e9008ae9641e465d18b2aaa4d8296d456c19d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "."
