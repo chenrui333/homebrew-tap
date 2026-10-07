@@ -7,9 +7,11 @@ class TerraCodeCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "6987e9bcc735c3dec8336c9f4e54761f53072c3fbb94a7969bc478ce68a7110c"
-    sha256 cellar: :any,                 arm64_sonoma:  "044e781743eb87dae9e66a031cc8b575e8f9e51587ecf802a3265d681be27797"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d34574db455e6674da8bac5745d3d188d3658d46a8d40b50bc8638c5a266902a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "ec420693fe005c3e690119a3af3a246b1bba549f7047545227f1cb39e211f2cd"
+    sha256 cellar: :any,                 arm64_sequoia: "ec420693fe005c3e690119a3af3a246b1bba549f7047545227f1cb39e211f2cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f77d516351fb487ee5500d7c65508a6311edf0f7294fc037cf0e8506509e71a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f77d516351fb487ee5500d7c65508a6311edf0f7294fc037cf0e8506509e71a"
   end
 
   depends_on "node"
