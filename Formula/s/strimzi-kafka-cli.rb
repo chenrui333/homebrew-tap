@@ -9,11 +9,11 @@ class StrimziKafkaCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bad3f004281db1124dc7221f18910425dbd6bbcd134cd498cc0db5124b965b84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd68a395d64e0bc84fc894cfd5ed32c17d95489a6a9e494a8f2e4829867bbcab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce586d2a21483e4ca5c376ebc3fabf606ece2a9058049307bd07a056d2a0efdc"
-    sha256 cellar: :any,                 arm64_linux:   "0f1e82ea19238803d4478f43eb72235d0390dcf0b1a13628b392b958418e3d9d"
-    sha256 cellar: :any,                 x86_64_linux:  "a062b5f9303989f45a341786df5ec715dcf60fb2c480a079dffd69f2c9fb5a2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9dcd78af1ca99f9485c2495bc4a856cfd9a86f0bb195b0655a0398b229c6bc68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6b88589499bbf3b46fc461875693faff30e4763bf48efcf5ab7626911bb37e6"
+    sha256 cellar: :any,                 arm64_linux:   "79b5cb4043e4b2c38f084c03a8146ae4af10a655dd56f8caa96b93cfce065e33"
+    sha256 cellar: :any,                 x86_64_linux:  "4a37dee54cba3b50e8a5292a59ad8064c4696c50164a310a670172ed79581257"
   end
 
   depends_on "certifi" => :no_linkage
