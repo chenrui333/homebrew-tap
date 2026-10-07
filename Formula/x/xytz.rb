@@ -8,15 +8,22 @@ class Xytz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbc44906f8bd67f6453428fa4cc181908b407030e3f15337d425e48d439f8c3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbc44906f8bd67f6453428fa4cc181908b407030e3f15337d425e48d439f8c3c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ded9d7afef6e2bf3bbdabe8cd27a86c801ceff03d827d5640c5f31b5073694f6"
-    sha256 cellar: :any,                 x86_64_linux:  "a986eddc718779dcdeab00254ec5e6a83ee93c2860f676fe3a1bfc8e58678f93"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a08c926e6b7ac10b579d4125a3d6b32d2f91af0d4ae8dd53629a18e187034d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a08c926e6b7ac10b579d4125a3d6b32d2f91af0d4ae8dd53629a18e187034d6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44ca18f3105714b01a3f907f63c31d50e5416d6c26681cbc8b088a552ceccef6"
+    sha256 cellar: :any,                 x86_64_linux:  "4601de953cb5bd28193a943d11dc4e7549c3421aa07f390dcdf6d701c1c06f9a"
   end
 
   depends_on "go" => :build
   depends_on "ffmpeg"
   depends_on "yt-dlp"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X github.com/xdagiz/xytz/internal/version.Version=#{version}"
