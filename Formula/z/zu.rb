@@ -7,10 +7,11 @@ class Zu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c3336806f810982472bab484d478ecf9bf3be7f85b33aa319d9ff08b664dfc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dae952787da335395e53e48f1ff75c274239ef004fe75f84ae138a213a6759b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c3fd093c51b518dd859439cdd2a169f8c62e601f1884b3f7cf063cbcb543d921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b296954c36d52bdd1d2a0e34a1b01f5bd377616c1e4117a7899dd9e7c85ea5f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "739c32b3d7cbfe3d250f13b480db68e3834c928ac7c12e71b55a3e8352089c9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "877b47945719dd820e50b5b90a91d836967c0feb1f7f85891321f2a2a0aafcb4"
+    sha256 cellar: :any,                 arm64_linux:   "e8301b70771fd1e4f29efa216548d32250ca65d79d1a1f673b40f63cc9662761"
+    sha256 cellar: :any,                 x86_64_linux:  "d6d9530297511603d9221e8d6c83e1ad35238be0e828e4c444e283b4c1cbc537"
   end
 
   on_linux do
@@ -18,13 +19,16 @@ class Zu < Formula
     depends_on "readline"
   end
 
+  # zu always starts its in-house REST server on a local TCP port at startup.
+  allow_network_access! :test
+
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"
     bin.install "zu"
   end
 
   test do
-    output = pipe_output("#{bin}/zu", "help\nexit\n", 0)
+    output = pipe_output(bin/"zu", "help\nexit\n", 0)
     assert_match "Starting in-house REST server on port 1337", output
   end
 end
