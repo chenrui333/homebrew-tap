@@ -8,10 +8,11 @@ class Tuono < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daabc18bbac5fee80ff44d9bc600efba12c9874a880edbf9283700bf8c2af2dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c0cf10ae0c6bc09f8d4276f2e81b9537549cf4a1f68f56da5bdfec7155a4135"
-    sha256 cellar: :any_skip_relocation, ventura:       "35d5404cf73c1a07cfbf04215c0e332326035759a5157b877fc6d4176ceaeda7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49c05ae71e40f68ff2129f8606bf00edf43879c3d3764dcab0b19b611630a2d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99ef70436fe3429f8a2e4b823435d6b9a87a6152642cca0cb1862ac5d88ef965"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8a7e5ab46c11b5e34e550b477921bfeeaf32addb5e81f471e6e8874d4c01d38"
+    sha256 cellar: :any,                 arm64_linux:   "58063b0162e3a3f21e3dd10bb18aea0d3e743c97d3729a654ebbeb124321a0cb"
+    sha256 cellar: :any,                 x86_64_linux:  "fdf53ebbce1c4b87651f2903fc897c4aa0b709a358945009a5fe97c4b10de2ad"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +22,14 @@ class Tuono < Formula
     depends_on "openssl@3"
   end
 
+  deny_network_access!
+
+  def fetch
+    # Upstream does not commit Cargo.lock; resolve once during fetch so the build stays offline.
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/tuono")
   end
@@ -28,7 +37,12 @@ class Tuono < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/tuono --version")
 
-    system bin/"tuono", "new", "my-app"
-    assert_path_exists testpath/"my-app/package.json"
+    # `tuono new` downloads templates from GitHub; exercise the offline Rust codegen instead.
+    assert_match "Cannot find tuono.config.ts", shell_output("#{bin}/tuono build 2>&1", 1)
+
+    (testpath/"tuono.config.ts").write "export default {}\n"
+    (testpath/"src/routes/index.tsx").write "export default function Index() { return <h1>hi</h1> }\n"
+    assert_match "Rust build successfully finished", shell_output("#{bin}/tuono build --no-js-emit")
+    assert_match "axum::Router", (testpath/".tuono/main.rs").read
   end
 end
