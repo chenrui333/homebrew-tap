@@ -8,13 +8,20 @@ class Tempo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e3373b90299dd096992347ac5a000efbba4ba576af9ee05795896db8f1f2346"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e3373b90299dd096992347ac5a000efbba4ba576af9ee05795896db8f1f2346"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ba99e14fb381e3cca96fb5b52143a4050effd3e7b50051e59cf0d1bb109ab16"
-    sha256 cellar: :any,                 x86_64_linux:  "52e01bbb5b84b08908384c38fac6d59fc00e438bcbf441fa02a8fe961a1b427d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8671a2d09ecbb2902a990441eb4ff5ce037ec78c8b11f35d45697a5fe71738c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8671a2d09ecbb2902a990441eb4ff5ce037ec78c8b11f35d45697a5fe71738c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd56b9f1810699eba1dcac844cdc6ef4f9745dc7e12bab4cfc4ed20024f4901e"
+    sha256 cellar: :any,                 x86_64_linux:  "73d07a076d28b6faa95d01b7e236dd132afafd8dfac5855827047429b4f941a3"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/galaxy-io/tempo/internal/update.Version=#{version}"), "./cmd/tempo"
