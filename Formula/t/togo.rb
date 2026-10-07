@@ -9,15 +9,20 @@ class Togo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e44c7a76abc558af46fcce7101387b17cfa1a39e96a49fc81f4fee8ad0deddf6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e44c7a76abc558af46fcce7101387b17cfa1a39e96a49fc81f4fee8ad0deddf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e44c7a76abc558af46fcce7101387b17cfa1a39e96a49fc81f4fee8ad0deddf6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "99cf3929e336f3a17fbc2561d2e373c67a0744b119b219034172d6091cfaa1ab"
-    sha256 cellar: :any,                 x86_64_linux:  "7c1bc186afc305b228ea832dce97c35f670f827f7adf03cafb8142539be6ab4f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d2e2b06327895e175873b8d0e5dd96f5c71bc0a102835989a18c2c6ede4ef2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d2e2b06327895e175873b8d0e5dd96f5c71bc0a102835989a18c2c6ede4ef2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad5899aa8a627c33434c1d476f9022d9345bce3eaeac9d1f3adea27c3b9ae79f"
+    sha256 cellar: :any,                 x86_64_linux:  "b9376f9eb50920d5762fcf44dbfb83be68e526ed75e60ad00895ea7a8f0619ca"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
