@@ -8,27 +8,64 @@ class Termdbms < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b5f33d62003cdfebc5f04c266e7fbeea40161e65390b780e0fa543989d5dbb4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5f33d62003cdfebc5f04c266e7fbeea40161e65390b780e0fa543989d5dbb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b5f33d62003cdfebc5f04c266e7fbeea40161e65390b780e0fa543989d5dbb4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "005d382f49c1732e6e60fd4cb7354e7f11df666e43c9c1177d3e9ae62fd15228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "408994632cca6b5089dfe1dd0678897ef0cb80330c43f97c9538e80fb37d88e7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "786bb3270be0dafefdff1aae4b9c3209a8f20f38433c1d5fb0b7a08f092ede68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "786bb3270be0dafefdff1aae4b9c3209a8f20f38433c1d5fb0b7a08f092ede68"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "791922f2349870185000bfc79650a14be9a7c072c247da0f856dd91c558b9c95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "762f1038c4c3d5e32e873e6d3107cf7360c0c07d04dd056bf282d02a3daed098"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    # Pre-1.17 go.mod omits indirect deps the build needs; fetch the full module graph.
+    system "go", "mod", "download", "all"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
+    require "pty"
+    require "timeout"
+
     (testpath/"test.csv").write <<~EOS
       id,name,age
       1,Alice,30
       2,Bob,25
     EOS
 
-    output = shell_output("#{bin}/termdbms -p test.csv 2>&1", 1)
-    assert_match "ERROR: Error initializing the sqlite viewer", output
+    output = +""
+    PTY.spawn({ "TERM" => "xterm-256color" }, "/bin/sh", "-c",
+              "stty cols 120 rows 40; exec #{bin}/termdbms -p test.csv") do |r, w, pid|
+      Timeout.timeout(15) do
+        loop do
+          output << r.readpartial(4096)
+          # termenv blocks until the terminal answers its background colour query
+          w.write "\e]11;rgb:0000/0000/0000\e\\" if output.sub!("\e]11;?", "")
+          w.write "\e[1;1R" if output.sub!("\e[6n", "")
+          next unless output.include?("Alice")
+
+          w.write "q"
+          break
+        end
+
+        loop { output << r.readpartial(4096) }
+      rescue EOFError, Errno::EIO
+        nil
+      ensure
+        begin
+          Process.kill("TERM", pid)
+        rescue Errno::ESRCH
+          nil
+        end
+      end
+    end
+
+    assert_match "2 record(s) + 3 column(s)", output
+    assert_match "Alice", output
   end
 end
