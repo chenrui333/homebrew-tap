@@ -7,10 +7,11 @@ class Tattoy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1546206318764a093a577261d18e8b6dc98db28aa1326333779d067c6f9997b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "345130e7efcf3e69a645b38bd7f767535413ba4bde95df4ee7a57dd636e688d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b7179676032dd13cc7b7fd50cf225b8d255e9a3f78028056349a987f68ec36e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf2b5d9f1ee1cecb71b037c21d13f4ca56f94beb0d446f6b417abe6fce377551"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7686d44cb915d5fd415b27fbd08055f26733e6570f91be3c85eed5588ebe18cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "573f3f923452eef78393d3087aeaacdc24b632dd99976d9e7b790ef7794e9851"
+    sha256 cellar: :any,                 arm64_linux:   "a369f7865a650f7301dc5a16ab016711c9e83a37f28bf500a233342dca52b99d"
+    sha256 cellar: :any,                 x86_64_linux:  "440b1ddaab000fc7c8be47ee7821a800db4c2b4fb1fb65c0c9fbc0f4c533b7d2"
   end
 
   depends_on "pkgconf" => :build
