@@ -8,14 +8,20 @@ class Taskbook < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea194bb735dcac6709b3bd9130ab8b6bb83b3d84f9eacd80e375e696fca86ac9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f38c8dbbe82f1bde9aa5c87a9ecfe941c04c978ac7f1471dac2b3ea998e2984c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77b9ad76d815d4d5a4b26c9364a63c8947c6a4b64d37b0b87da6bdc26853007b"
-    sha256 cellar: :any,                 arm64_linux:   "bc633fdc8b378538e77c5393fd144c4b7701264d4a461828461961b415334725"
-    sha256 cellar: :any,                 x86_64_linux:  "decd6637b43b9668ae066bc6e550dd4a7acc78e05160cf2e26be1ffbdbcd0d41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d23499bc7cc0a6baab45d4bc565607654049585737cfa3cb6108d7ebd355a2ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40829a3bd9effbc88adf8af2d3c777d44cab5116ad16cd2c99d0df4721293fb1"
+    sha256 cellar: :any,                 arm64_linux:   "000bf86e80159e243f9ecda1e5d89d3ecd65e425943b49234f84b264a64808d4"
+    sha256 cellar: :any,                 x86_64_linux:  "318711639ac2ed4dc297245b43df79906123549cd3aab794dd35c018ba2b4f70"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     ENV["CARGO_TARGET_DIR"] = buildpath/"target"
