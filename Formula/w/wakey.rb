@@ -8,11 +8,11 @@ class Wakey < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "046e82b2d703b67f20b0a306961194852c2133f11bd7bc5394f8b40bda3da9f9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "046e82b2d703b67f20b0a306961194852c2133f11bd7bc5394f8b40bda3da9f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "046e82b2d703b67f20b0a306961194852c2133f11bd7bc5394f8b40bda3da9f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4bfd4fe8d5af969e2c72edf6443836ab6403a85f71a45ab88d3cb75e679f3d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f70819e29008e280810ee1121b67bcd5be9ae070860508eac3778260234ee578"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b796de79e9b3317c79d8e0bb22741b7d672816f86573bdb31f29cb2a1bfbbabe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b796de79e9b3317c79d8e0bb22741b7d672816f86573bdb31f29cb2a1bfbbabe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0adaa8ffbe87a0ab13bebb0f4e1e8f88fc9aeb95a72c97fdda8e0663367019c"
+    sha256 cellar: :any,                 x86_64_linux:  "2fab327230fa0ee44ea86dd029eb8861dcf31b6c1404a0235f767fe58d1adeed"
   end
 
   depends_on "go" => :build
