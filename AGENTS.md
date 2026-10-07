@@ -197,6 +197,7 @@ Commit message: `foo 1.2.3 (new formula)`
     ```ruby
     # FIXME: GUI binary requires a display server; replace with a runtime check when headless mode is available.
     ```
+- **Network sandbox**: every formula MUST declare `deny_network_access!` or a scoped `allow_network_access!` (for example `allow_network_access! :test`) with a one-line comment justifying why that phase needs the network.
 - **Completions policy**: Add shell completion support when upstream CLI supports it.
   - Use Homebrew DSL: `generate_completions_from_executable`.
   - Go/Cobra CLIs: use `shell_parameter_format: :cobra` when upstream supports the standard Cobra `completion <shell>` form; it includes PowerShell by default.
@@ -290,6 +291,18 @@ brew style <formula>
   - If local `main` and `origin/main` diverge, run `git pull --rebase origin main`, resolve conflicts locally, and then push normally.
 - Manual merges are acceptable only for PRs explicitly labeled `CI-syntax-only`, meaning CI should run syntax checks only and no bottle-producing build should occur. `CI-no-bottles` PRs merge through the automated formula-merge workflow, not manually.
 - If a new formula lands on `main` without a `bottle do` block, open a one-formula follow-up PR that only adds or increments `revision` to force a fresh bottle build, and wait for its published bottle commit before merging it through the repository's normal merge policy.
+
+### Publish and CI Recovery
+
+- The published-bottle head is tracked by the `homebrew-tap/published-bottle-head` commit status. Do not post marker comments or approvals to record it.
+- Never close and reopen a PR to retrigger CI: closing deletes the head branch, and restoring it means recreating the ref.
+- If an already-published head needs a non-bottle change, push a new commit and add `CI-no-bottles`; publish skips bottles and formula-merge merges once checks pass.
+- If publish stalls, re-dispatch it with `gh workflow run publish.yml -f pr_number=<N>`; it recovers existing BrewTestBot bottle commits, and on manual dispatch it tolerates bottles already uploaded to GHCR by an attempt that failed before pushing the bottle commit (`already exists!`). If `refs/pull/<N>/head` is lost, re-push the existing SHAs with `--force-with-lease`.
+- Reruns reuse the original merge commit and workflow definition. Push a new head to pick up workflow fixes from `main`.
+- `Bottles are for <formula> <N+1> but formula is <N>` means `main` bumped the formula after the branch was cut: remove `pr-pull`, rebase onto `main`, and push with lease.
+- test-bot logs install/test failures as warnings for platforms without an existing bottle, so a green job can hide them; check finished runs for `failed-bottles_*` artifacts and read the logs.
+- A `sha256`-only change fails `brew audit --git`; use a `url ... tag:, revision:` source instead.
+- tap-syntax runs `brew style`, which needs `shellcheck`, `shfmt`, and `actionlint` from Linux bottles; under simulated macOS they would build from source and stall.
 
 ## PR Triage Workflow
 
