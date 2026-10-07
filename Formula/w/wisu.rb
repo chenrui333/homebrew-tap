@@ -8,11 +8,11 @@ class Wisu < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00c84969576ce09b8b065c99e8509f1e39a732bb0c18abf871649b609a414f57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ba6ac066b50f8dc710631ca0c81b84a3aa2bc399c77a54a1ef763a48af4d46f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb73a7d2fb35a196e69a96ea06d720223705ad8dff69c5a7772724c15912a2d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "951c12ad8ef4017963afd099ac47defe60f36f0d37008ad7c29aace310bf5bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2316357db90384173dbfd8a73dc5d072fcede0a7174e75e92c8c6e6c7ff5f97"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6b5de36886d13e62c3479ad10614bf9f7afe1eac0e7b89f59817631c2cd6640"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca1d6aff37ac4e9afe2e8a7af00ca9f873ce95ab58da6b8e791b70a193d40c4"
+    sha256 cellar: :any,                 arm64_linux:   "74adbb00bd1a9058d1b62594e52401ee372bdc082bf9381cfa82cfb2577d7313"
+    sha256 cellar: :any,                 x86_64_linux:  "c27c6a96cd1638fa18a60714da1df1e5d777f160fd3a7369a0487696e9cd4763"
   end
 
   depends_on "rust" => :build
