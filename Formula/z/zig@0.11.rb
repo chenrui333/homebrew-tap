@@ -11,17 +11,15 @@ class ZigAT011 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c2c5723cf40a1eb1fcae5e36a3dc9e94bd0f5d05c03053ea6b0ba0b111171f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ca46c8d8859c107bd218eb384357f7a3dea754cd9d074ade3ec8b4c6b58e97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e12f715a53605e92778344a7085f969092236f2e689c51e8affb52a7de056758"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6aef85c5baee590578b120190602947e2a9c00e5dd8d16b5a57e84fd4f1c7c47"
+    sha256 cellar: :any,                 x86_64_linux:  "2664d428c2421327cb265b0cf476bcdef6f2a599bb5554b660d67c1edd8db8cc"
   end
 
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
   depends_on "llvm@16" => :build
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
   depends_on "z3"
   depends_on "zstd"
 
@@ -36,11 +34,13 @@ class ZigAT011 < Formula
 
   fails_with :gcc
 
+  deny_network_access!
+
   def install
     # Make sure `llvm@16` is used.
-    ENV.prepend_path "PATH", Formula["llvm@16"].opt_bin
-    ENV["CC"] = Formula["llvm@16"].opt_bin/"clang"
-    ENV["CXX"] = Formula["llvm@16"].opt_bin/"clang++"
+    ENV.prepend_path "PATH", formula_opt_bin("llvm@16")
+    ENV["CC"] = formula_opt_bin("llvm@16")/"clang"
+    ENV["CXX"] = formula_opt_bin("llvm@16")/"clang++"
 
     # Work around duplicate symbols with Xcode 15 linker.
     # Remove on next release.
