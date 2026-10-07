@@ -8,10 +8,11 @@ class Togomak < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "feb7fde8d9089d423b6a3272599008554a15a2c87301b58f605bc1cc884d1a00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "877150628d064064de0776153ec788d6c18edf4b7902f1c3ae4d5a788f66ff81"
-    sha256 cellar: :any_skip_relocation, ventura:       "930c554a4c13ec0b44d7823b7eb587b62d58e895947a82efff1bafc14fa8d554"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb558a40993ae07392ae402cd3abcee22be3140693c8d7c4362e4789eb675ec5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b6fee1df7599e30f72c94a578376c0e16428d06ca5fe7038b96afca2e4de132"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b6fee1df7599e30f72c94a578376c0e16428d06ca5fe7038b96afca2e4de132"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce988d93715e829d9a61d7013a228c9953bdc5ae31144a6091f2481a3a4eecf7"
+    sha256 cellar: :any,                 x86_64_linux:  "8028febfc9dab300f2eb6533590505fcc4fd0d4cbdbf05cabfd5d210b05e6ec0"
   end
 
   depends_on "go" => :build
