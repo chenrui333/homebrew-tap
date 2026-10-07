@@ -7,11 +7,11 @@ class VibeLogCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25df11b797ab02e0b1cebc3ff0050fd1d1c0e56adbbf4e56cbeb02981aad6639"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25df11b797ab02e0b1cebc3ff0050fd1d1c0e56adbbf4e56cbeb02981aad6639"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25df11b797ab02e0b1cebc3ff0050fd1d1c0e56adbbf4e56cbeb02981aad6639"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "759f465c7cd39ccedbfae87161f404d1f1cc7a5136eab0f9be8cac83ce1e6cdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67857b1716fa29d9cbd519710ddcdc8007675cff01933ff9789504165b87a34b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "48f7cfdac3ac6f0e59f11fa0eb23a6fd660bdc24b277e382ff482565363d8dbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48f7cfdac3ac6f0e59f11fa0eb23a6fd660bdc24b277e382ff482565363d8dbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a2c44691974330a9bfed91eea679e55ac4a9594dc1a1fc7c95acd565dcbdc09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f52306322ade37f8519672f213bdbd5cce3bbfbefba0956172fcedfc6a57523e"
   end
 
   depends_on "node"
@@ -29,10 +29,17 @@ class VibeLogCli < Formula
     build 1699
   end
 
-  def install
+  deny_network_access!
+
+  def fetch
     # Allow newer better-sqlite: https://github.com/vibe-log/vibe-log-cli/pull/11
     inreplace "package.json", '"better-sqlite3": "^11.0.0"', '"better-sqlite3": "^12.0.0"'
-    system "npm", "install", *std_npm_args
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
@@ -50,12 +57,13 @@ class VibeLogCli < Formula
       linux_dir = clipboardy_fallbacks_dir/"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
     end
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/vibe-log --version")
-    assert_match "Failed to send sessions", shell_output("#{bin}/vibe-log send --silent 2>&1")
+    output = shell_output("#{bin}/vibe-log send 2>&1", 1)
+    assert_match "Claude Code data not found", output
   end
 end
