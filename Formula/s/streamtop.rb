@@ -8,13 +8,20 @@ class Streamtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d16ce658fa134a0edde4baf4d22719aaaf953b7f87d6e242b24718af7a3ecc4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7d60f8aee5368375bcde29c91c26d8096d3dde8827468c452f9add4e026e482"
-    sha256 cellar: :any,                 arm64_linux:   "70ef3a391882dad8a82b2453828a1318928672e41b18b515831469aec2c47d5a"
-    sha256 cellar: :any,                 x86_64_linux:  "23e26c055085eae3e3d6f37a033bafb9c5a000e21d4630a2c096ea7cd7362e8f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90756bcaa60ae78a35cf08c3e6aa0216a1b9fe03e5f1e1cc150e30dd428f8f2a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7935482ed0ab3a9555bcf251927577d415b0726410d23c551d1c16e4a46357e"
+    sha256 cellar: :any,                 arm64_linux:   "1dca170ee74a61c43ee9fa5d8980d34d526b12ae33ac8f010f3f0680674d9a81"
+    sha256 cellar: :any,                 x86_64_linux:  "16d31b3090adc403d4eb7c931f7bf6b519e9500ae7129051f70e0c629931e915"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
