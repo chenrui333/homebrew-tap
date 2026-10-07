@@ -13,11 +13,11 @@ class Zookeeper < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "173366ab79f914770d14a495862721f8007dc71e427c30eb68ee0d6530f5bb33"
-    sha256 cellar: :any,                 arm64_sequoia: "bdafea7eb078c656d860bad0b469ad1232dbca1e54dbd41f1acc51a564f35d74"
-    sha256 cellar: :any,                 arm64_sonoma:  "89f3689c7d314926c258d1d7426941230237d8ad628d8ad6b924c6b521c840d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "774aec777c67e2126b9605a7e6abbb4c9d5205724ae929dec72f523cf261e55c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1527d2b4753a7f7a5b71c15aceef15c5a39f5704a2dc7bc6cc409f8ee61bc9fc"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "3843c9736f1b6fe8a0fc34b42354bc9016dcf604e7ecc3788c4aa654c1e46dda"
+    sha256 cellar: :any, arm64_sequoia: "b8bb1bcf5a1e7fb758c477c65f5b0a0113b2e79622268a1aab246057623769d9"
+    sha256 cellar: :any, arm64_linux:   "2006bc52bf17f30a488b15a176a8130be53b7c575e428a0cb4c7d9d8873c49e1"
+    sha256 cellar: :any, x86_64_linux:  "5acaf1f140c3bd588508c7019c7ab1d3386da6235af64224b86fd8b0f36b31bd"
   end
 
   depends_on "autoconf" => :build
