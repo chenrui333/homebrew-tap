@@ -7,10 +7,11 @@ class Termtunnel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "176466d11de604e1f1c9cbf8af6279eadf8048bff450deacc8230f85c77c98fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9c57e336071d8f5064e657050b02dfef217de9cb4ed2b95c9d423a9afb9a1eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "b1aefe6fe9722400f6927c6cf0c99f1d883248459e9e550d1d827a1acae3a6fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c0b0c21fb673cb4939e18b2ac07af846345b0e59b9cfe6dd66ce08bd73d3436"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e6271cc49bd07d846ce9011c682609734646f12cef0aa46b679c69f9d0e6c659"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa99e428f8f5a8d01a69812f3dc77ff146eb3758f258e88100b14c4bce3fe979"
+    sha256 cellar: :any,                 arm64_linux:   "7f7bc6726415214d5fe27f95a9b87369f6a354263a0bb9341e3a6115487ad039"
+    sha256 cellar: :any,                 x86_64_linux:  "f8669cfea29562566884ff62248b80c6e6ed91369cceffb4e039ae7a28fe6df4"
   end
 
   depends_on "cmake" => :build
