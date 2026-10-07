@@ -1,0 +1,15 @@
+Formula/u/ugdb.rb
+  h_9df9c32c3f321d 20-25
+  h_9df9c32c3f321d 31-55,57-59,61-63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e6afe7125ac5e712424d5dcabeb719bbc753142",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
