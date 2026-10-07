@@ -1,6 +1,6 @@
 class TypeuiSh < Formula
   desc "Generate design-system skill markdown files for AI providers"
-  homepage "https://www.typeui.sh"
+  homepage "https://github.com/bergside/typeui"
   url "https://github.com/bergside/typeui.sh/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "cf1e984555ad40517d61ec5e3ddd5fc6187a380f69663d0db74cb3a719664d45"
   license "MIT"
@@ -8,17 +8,24 @@ class TypeuiSh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "60df746b1c3eca8ac6fa1cc3b3179198325195d2c14e6a4d54fd7ba8f2bb5b61"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "ed7d5b5ff412baa5bfd782c0005ea110a6e07ed49c301dc7b16d00d54f2c94f5"
   end
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "install", *std_npm_args(prefix: false), "--include=dev"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
     system "npm", "run", "build"
     system "npm", "pack"
-    system "npm", "install", *std_npm_args, Dir["*.tgz"].first
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args, Dir["*.tgz"].first
 
     bin.install_symlink libexec/"bin/typeui.sh"
   end
@@ -67,7 +74,7 @@ class TypeuiSh < Formula
       });
     JS
 
-    system Formula["node"].opt_bin/"node", testpath/"generate.js"
+    system formula_opt_bin("node")/"node", testpath/"generate.js"
 
     universal = testpath/".agents/skills/design-system/SKILL.md"
     codex = testpath/".codex/skills/design-system/SKILL.md"
