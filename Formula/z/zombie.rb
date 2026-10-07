@@ -8,12 +8,11 @@ class Zombie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06cb6a9f1f433133df492c899930df0512944c1136a2f0347006d9c7801334c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "512c4d0f1f00996ae60a7baa90854d251a018cce8b712e837b19753c38eaa47e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5811a17703eb315d3dbf2ed3c9903148f30ae566b739db23aad78922bb376af6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb09a0ad698afb5c7e7a7f352e90a1970ca6059a193433b0778fc2fa7b4f3914"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cbd4ac9ed28b74d1b45f24116d79d2a8755b9c2c2bd2c7a126dc660bec045b5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d5fa167cc29a68e956cf02653892b8844e68900ad7ae227bb60c9f0be8e8fed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "831172a4d474dd722472f0b64ef03247d1bd60a93d2bb1c461e99e06acbd13d8"
+    sha256 cellar: :any,                 arm64_linux:   "4774461698af4968b9f8670ca62c85eff3028e0a23537265bd1bd79eb832271d"
+    sha256 cellar: :any,                 x86_64_linux:  "f0e814adefa7b1ab6eed0a9768cea4bc2f1f9742d047b9074024593f094a2b60"
   end
 
   depends_on "rust" => :build
