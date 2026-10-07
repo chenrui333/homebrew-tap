@@ -8,7 +8,8 @@ class Wozz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1383c1f04a233008734dfc79edc9e5ce7fd9f7ab405b65adcace72334e890f8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d8c4fa9fb35767a84c6cdb7a48f9715a98e1b449dc2bcf27b288a7694a7f05bb"
   end
 
   depends_on "kubectl"
