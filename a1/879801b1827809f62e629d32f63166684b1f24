@@ -1,0 +1,14 @@
+Formula/t/trieve-cli.rb
+  h_9df9c32c3f321d 3,18-23,25-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a1879801b1827809f62e629d32f63166684b1f24",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
