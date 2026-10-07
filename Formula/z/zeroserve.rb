@@ -8,8 +8,9 @@ class Zeroserve < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "6154ca8afeb43c4d74d6fd996cb46281c3d02c46544db802b2919fbe83278986"
-    sha256 cellar: :any, x86_64_linux: "233bfa14f37cf8c919967ad66a2ddaa6cf8ad3c5e12a0d6ec7841f94544468d7"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "5f498dd9ee4108ed4d7d726ae971fc45390a03d0e7425fcba21c3e3760c7a47f"
+    sha256 cellar: :any, x86_64_linux: "80c2b72d53749f467c031b3807af965559584af108c603c6916a63e77f1aa6d4"
   end
 
   depends_on "cmake" => :build
@@ -17,8 +18,22 @@ class Zeroserve < Formula
   depends_on "rust" => :build
   depends_on :linux
 
+  # build.rs downloads this pinned tinycc commit with curl unless ZEROSERVE_TINYCC_DIR is set.
+  resource "tinycc" do
+    url "https://github.com/losfair/tinycc/archive/afcb3aa1a59568fec8b4bb604e43686723e34c94.tar.gz"
+    sha256 "6d11f6f466d00fb112e6bc4eeb1fa96ef82d0a51c627a168d55d4e096183de0e"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
+    (buildpath/"tinycc").install resource("tinycc")
+    ENV["ZEROSERVE_TINYCC_DIR"] = buildpath/"tinycc"
 
     system "cargo", "install", *std_cargo_args
   end
