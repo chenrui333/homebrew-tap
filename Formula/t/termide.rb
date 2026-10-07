@@ -8,10 +8,11 @@ class Termide < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c45a31fc845dcdd7a6fe39a4cfdd1cd55f9aad77fdc9face3b7028f83efc37db"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f45a1113b00a4d41c8d4184c66d15082d420c52aa2f59f7e80620c5ec6c7009"
-    sha256 cellar: :any,                 arm64_linux:   "83538b0da78f2e97c49b3c5b7e6e722b49fa9620f0b0f1a3195fc4f89db87f4a"
-    sha256 cellar: :any,                 x86_64_linux:  "61bc51f37290beff5fc32633daec0c241722497bfed52315fee7d6b8dd770eb0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "848f4a882cb939ae4784d05400032ab2a22d2da93138658e0a77550d83f7cf91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed53d2a176d67e4972733c9caa82e9a83f650ad1bebdc12343d61056fba426c5"
+    sha256 cellar: :any,                 arm64_linux:   "3c7add7c2a1036ff12494fb90d4e9a46926ca930dfd469debe54eb24d0f7e8d9"
+    sha256 cellar: :any,                 x86_64_linux:  "9d49b04074066bca893cf2dae8154183940c130837eb2c01cab39224e26e9b97"
   end
 
   depends_on "pkgconf" => :build
@@ -20,6 +21,12 @@ class Termide < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
