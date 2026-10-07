@@ -8,11 +8,11 @@ class WikiTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75db1acdff9d7b7dd1210177215fafcc9d16348c59dc00ced6a8ba30d230f7c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e56f0605dc6bd9da7557d29c9aa63a5e6c1300df53251cdfc031b501ddbe396"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4e0896de4cf127d7e0ec4aa0d80c139c3e97e0d6227eefa4cc6eca18f47c8e6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a9df923fffbb3253701a3a5315a1868698228fde826d5db2d2ce14a6927636e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "717ef01f36c62909fabbc3cda15c07a319a43b0c500da83b1d3500ae048879bc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5641b6422e93fb7126a562e23a55b16fa703e6b2f0d2f1de52d44f4a9145d93b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7afa531968e6720d9265f71c5820891811b1bcc5a1ec996481d9d33392f020ba"
+    sha256 cellar: :any,                 arm64_linux:   "a43476f6b2e7b0c0f3c3eddb8e3f6ac43a935f0756af687cbcce62b468007ae4"
+    sha256 cellar: :any,                 x86_64_linux:  "7b29da06a9c45b1496cbd2832b4760aeeba7666591afa0961dc2f2112d243309"
   end
 
   depends_on "pkgconf" => :build
