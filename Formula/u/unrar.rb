@@ -12,11 +12,14 @@ class Unrar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "a6f092793575584bdc8f5cab09725d6972f88f9af5142664c9fa55dfcafb2d90"
-    sha256 cellar: :any, arm64_sequoia: "0e735b2a77c151b051e44a4646d2a7d5c06512e2b3c426835cb9b04c85b2b37a"
-    sha256 cellar: :any, arm64_linux:   "8c112d4b8d36636151e7f5dc23e7e3494e0403cdfd3493e5022315205313e3b5"
-    sha256 cellar: :any, x86_64_linux:  "793cec0df015e1d171eff5b563d0f3eb246629cacdfb4b8a7a594441b7b4f425"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "8153e694216a1d74af39d80f75cc11d93b02c8dc290e5a166ec0b77bd1603e86"
+    sha256 cellar: :any, arm64_sequoia: "38595c61e59cbd4afd5106fd9430395edc1097d093f7d9b1d1ea89af796d5312"
+    sha256 cellar: :any, arm64_linux:   "85d9b16d757bd8fdde66ccefe2385ff730a14c5a354357f3e6e30c77914f1686"
+    sha256 cellar: :any, x86_64_linux:  "889e98e1625a1817826be95feb535c9b6bd9ef83271824a568d732dc8b8ea710"
   end
+
+  deny_network_access!
 
   def install
     inreplace "makefile", "libunrar.so", "libunrar.dylib" if OS.mac?
