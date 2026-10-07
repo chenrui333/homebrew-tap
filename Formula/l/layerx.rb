@@ -1,8 +1,8 @@
 class Layerx < Formula
   desc "Inspect Docker image layers"
   homepage "https://github.com/deveshctl/layerx"
-  url "https://github.com/deveshctl/layerx/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "112bc3c115c817fee7d73cf0ea67542c2f9ce4fca4cc3edfe1500ee5a8cfde32"
+  url "https://github.com/deveshctl/layerx/archive/refs/tags/v1.6.2.tar.gz"
+  sha256 "80e91a9a6d45a3ba259472cd5b8e2be9db1f6da4be435ef910fd8de63a965427"
   license "MIT"
   head "https://github.com/deveshctl/layerx.git", branch: "main"
 
