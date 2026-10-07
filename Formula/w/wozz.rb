@@ -8,10 +8,13 @@ class Wozz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "1383c1f04a233008734dfc79edc9e5ce7fd9f7ab405b65adcace72334e890f8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "d8c4fa9fb35767a84c6cdb7a48f9715a98e1b449dc2bcf27b288a7694a7f05bb"
   end
 
   depends_on "kubectl"
+
+  deny_network_access!
 
   def install
     bin.install "scripts/wozz-audit.sh" => "wozz"
@@ -19,7 +22,8 @@ class Wozz < Formula
 
   test do
     assert_match "Kubernetes Audit", (bin/"wozz").read
-    output = shell_output("#{bin}/wozz 2>&1", 1)
-    assert_match(/kubectl|kube|namespace|cluster/i, output)
+    # Running the audit would contact a cluster and send telemetry; check local argument handling instead.
+    output = shell_output("WOZZ_NO_TELEMETRY=1 #{bin}/wozz --not-a-real-option 2>&1", 1)
+    assert_match "Unknown option: --not-a-real-option", output
   end
 end
