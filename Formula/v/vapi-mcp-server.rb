@@ -7,13 +7,21 @@ class VapiMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "b499fae004902b9ee62883ccc5ef053d2888a61d0d348948be0eef4da0515d05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "347ca9e634d4b88550cdd3fff05122c1cd9a847246b51f48f32538b3ca614d26"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/mcp-server" => "vapi-mcp-server"
   end
 
