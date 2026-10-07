@@ -9,12 +9,11 @@ class WutCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "8d793617e74b942936b454874e32455db228c75d85b3ad6b08ee175f162375a6"
-    sha256 cellar: :any, arm64_sequoia: "81fbc356eee08c046abb458385089f342ff295d168be719f87a1e1df9f2910a4"
-    sha256 cellar: :any, arm64_sonoma:  "b872d4da23c6b438d142e6f66c8212a559d301597304763d637ec41e1816397a"
-    sha256 cellar: :any, arm64_linux:   "bf62cea7441d428aff09b9d64ac9f49725515703036840cdc730c0e9626a820a"
-    sha256 cellar: :any, x86_64_linux:  "841d728a6ba62f97a9c8ba425e3946a3c9b6b3f644acc72c752af73b4e73c963"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "c6908a590d48ddd40352e510b26b14dceaa8a697e95e8e3dd2cb36e4b22d117b"
+    sha256 cellar: :any, arm64_sequoia: "a2789d4b3460c3a53b9f450eb9c53a467ac0a3e440ca907df8d0f716ecc6bcab"
+    sha256 cellar: :any, arm64_linux:   "a94a34032d170d64460195e7ccbb9e437afd41e4bc498480eb8663417dfbbe44"
+    sha256 cellar: :any, x86_64_linux:  "838b391f63577e887bdc2416218b749c6781493f988a38ad2dea7c4294588ee7"
   end
 
   depends_on "maturin" => :build
