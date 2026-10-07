@@ -8,13 +8,20 @@ class UnusedDeps < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc0cfff4fdf03628eafdfaa36a5ec17ea2a99bff7a6bd18d5fad7948927afe83"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc0cfff4fdf03628eafdfaa36a5ec17ea2a99bff7a6bd18d5fad7948927afe83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3a0c00ac3d2bde8e7ba072926497e5fe7bf7a6921e91ea926f60faf9355da13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ca7e9cf4d67fc7c9f395ca559ed6a07441be3269edd6241ab1abf749abc2baa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6ca0d4db6264d3e7ff4fe6057d4aaeb3dc338b5e38825044af1d92f1c4042b43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ca0d4db6264d3e7ff4fe6057d4aaeb3dc338b5e38825044af1d92f1c4042b43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f22cd7d2370e8e0be4c877b958f08dfcd0034a5cfaa357aba2ad8c2d0c7a3746"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c135ff705b0647fe79d67fa1ddafb172d6af0f98ed4c6284e93aeb36da6bdcb"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.buildVersion=#{version}", output: bin/"unused_deps"), "./unused_deps"
