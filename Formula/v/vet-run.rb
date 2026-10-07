@@ -7,8 +7,11 @@ class VetRun < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "af5bdf6f5be8e1addc61256c783623a41774d2292d281c074aef5df36bcce839"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4e7193d26a87d21ebdcefddae2acaa5fa99ac100c09d2cd93b925ed8b175dad5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e7193d26a87d21ebdcefddae2acaa5fa99ac100c09d2cd93b925ed8b175dad5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5a0c62b2803ff79486fbdb40c5d863fdcd3e3db82593e7cfcccd38cc49b1973"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5a0c62b2803ff79486fbdb40c5d863fdcd3e3db82593e7cfcccd38cc49b1973"
   end
 
   depends_on "curl"
