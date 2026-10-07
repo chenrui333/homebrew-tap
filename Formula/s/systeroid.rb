@@ -7,12 +7,19 @@ class Systeroid < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "c1fc7b3d0f147bcc0da379e284411462ff8a44b64258cb12fda31bca0fc54fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3aaa97eef8dcf6091f0c37aff3868b988ce15d06ebcc1fcf2b772746c8393ecc"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "87d5352bd1389941c7d41c5fda1f11ab151bc096edca97ed5e431a8bac98c494"
+    sha256 cellar: :any, x86_64_linux: "a8f4d7bf6082814793d2f4fe06f90b53985a091299c252254bbdfbdb9723074a"
   end
 
   depends_on "rust" => :build
   depends_on :linux
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     %w[systeroid systeroid-tui].each do |crate|
