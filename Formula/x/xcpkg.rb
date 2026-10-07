@@ -8,9 +8,9 @@ class Xcpkg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_sequoia: "0970a19468329f62e8190c64e89a2612a0d4ac165ce191499bb7c32bba2ae3b2"
-    sha256 cellar: :any, arm64_sonoma:  "fd0b4d32bfbb712d8cc014c886ece29477c3ec93d6d153362e4b371f24c602ae"
-    sha256 cellar: :any, ventura:       "4d5284d977d565e3404e895780d73f15bf13f4e15f95dfd8dfb476e064a1bc27"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6683a6e94a930d460d6c83df7998b5a227aab3d285c2f475f4ebf0db44a385b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c250fb02777622c6f241cd0991fe5e7acdc64388847e44bc1267c3a80996de2"
   end
 
   depends_on "cmake" => :build
