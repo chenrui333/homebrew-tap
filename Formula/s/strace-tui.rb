@@ -7,14 +7,20 @@ class StraceTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "42d841b78a6e8bd53f1b0279372a40ad26d630361656e9edd11845ef87aced63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24107ad36c6cab82b325d861b79b65f2a2ad582889a2d5bb47adb39cbe994e5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc449eaecd674cc8eb41ad61a57665d3406c1470a5b8898b695e06eaa295903d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79ef2f13f92515c967dc5bcd84e65fd01b1f51d98a5264585a5a7b805b121515"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77f61d7eab6c5743d5b2cb071359f21970abf9853b657e105abbfba26fdb0f6d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1113a1bf6e541383e1043f6151ac0e6866e13c965f2d240da5f5d41efb5d566"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72ea33dcaf5c401fe867e084af77825dd8213d347551cea5fc988de989fd5cc0"
+    sha256 cellar: :any,                 arm64_linux:   "b1fc6e6556007d7ca6dbc381f847835b4cc952b5d299180c4bf2df1e27be926c"
+    sha256 cellar: :any,                 x86_64_linux:  "5ecf02bdcc91dcce544bffcfe096c56825616fea8217e43a6958a0b3692ac54d"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
