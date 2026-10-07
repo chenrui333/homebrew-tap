@@ -7,11 +7,11 @@ class Sudocode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "a22621f95a294b59de7fb73f50c2e413c2115f1a3ebb3d5fb5016afbf199d747"
-    sha256                               arm64_sequoia: "8ec91d984d6c583b1025c9ae2d1dc99a8a20581fd5d5b22f8465a3de2374549b"
-    sha256                               arm64_sonoma:  "43cf4e3f1e37099f8072105914544b44d5d60eea2a2e1e9fc7dbbfbdfa44e099"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c73de68e8b7ddeebf36d8a43fe831b3545059c132d81badacd08937972a75bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d01fbe40ae6c34ff902c6ecb1d39377784553a81001703f84083dff4607c8126"
+    rebuild 1
+    sha256               arm64_tahoe:   "2a022cb1a26ca7b02a0d738a6607a66577f26e5ea9028ba8793b82e2e6249d1e"
+    sha256               arm64_sequoia: "1fa25035125bf9974c043276a24bbe16be9044b87fd2d1adc1f5b12bce999df7"
+    sha256 cellar: :any, arm64_linux:   "3716a5b6be3c9804733be8099eb36a04dd6f1b23dd5edf495612c8b971fcc954"
+    sha256 cellar: :any, x86_64_linux:  "241fbfcf86b9107d1f2806c58aed9a614b9fbac6d700b3a1d9da580218cbc496"
   end
 
   depends_on "pkgconf" => :build
@@ -19,16 +19,25 @@ class Sudocode < Formula
   depends_on "ripgrep"
   depends_on "vips"
 
-  def install
-    node_path = "#{Formula["node@24"].opt_bin}:#{Formula["node@24"].opt_libexec/"bin"}:" \
-                "#{Formula["ripgrep"].opt_bin}:$PATH"
+  deny_network_access!
 
-    ENV.prepend_path "PATH", Formula["node@24"].opt_bin
-    ENV.prepend_path "PATH", Formula["node@24"].opt_libexec/"bin"
-    ENV["npm_config_nodedir"] = Formula["node@24"].opt_prefix
+  def fetch
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
+    node_path = "#{formula_opt_bin("node@24")}:#{formula_opt_libexec("node@24")/"bin"}:" \
+                "#{formula_opt_bin("ripgrep")}:$PATH"
+
+    ENV.prepend_path "PATH", formula_opt_bin("node@24")
+    ENV.prepend_path "PATH", formula_opt_libexec("node@24")/"bin"
+    ENV["npm_config_nodedir"] = formula_opt_prefix("node@24")
     ENV["SHARP_FORCE_GLOBAL_LIBVIPS"] = "1"
 
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args(ignore_scripts: false)
 
     # Align CLI sub-package version with meta-package version
     cli_pkg = libexec/"lib/node_modules/sudocode/node_modules/@sudocode-ai/cli/package.json"
