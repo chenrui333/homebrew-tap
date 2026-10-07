@@ -8,11 +8,11 @@ class Starcharts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55818e8d35f6293a7dda24d9db6419d312969ecb425b2dda2c4ce56c65b20e92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cf843efcab030655670593a554916598098028a26c052e29a0652ceb19b6fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4508f5bdf7345f8734dcd1e0e313e53e17d2268be6fb82629e2dc3e53802886"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bea9f2b64bbf2a4f2e942169195a4f7307ee677e26055fe87ff9713b1d2e2d43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddc105545ef06f940fb3ce619e49cf8a42324b87b78e6b705513327284578d33"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "45b1148d5358fe8c436ab3fb061eccc73c8f9cd7d8212be4db19b430c927b9e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "165a00eccea1cd72dd434d7aecd6d29d26392949ab67a23c15ec1e6f61fe78cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80d0d951f87800f550a4442de99de625a397cb012bb8c8b42b739caff4fa637f"
+    sha256 cellar: :any,                 x86_64_linux:  "99295f49e9562292f622ebc806dbf2901e50b5f6de3c3955e9a57cca6e04e1a5"
   end
 
   depends_on "go" => :build
