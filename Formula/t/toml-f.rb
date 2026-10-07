@@ -8,18 +8,19 @@ class TomlF < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "69abd93bd7eddb644077d2fb696a771fa192e4ec93406b058207775dc53c23e5"
-    sha256 cellar: :any, arm64_sequoia: "a40f6cdaa1957bd3cfe5e52bf427963c836a8deb03862821cd030fa54fec13ba"
-    sha256 cellar: :any, arm64_sonoma:  "664293e6e0586db69082e107e56939d668a56caebc7b0da745e31bcc302ebc5e"
-    sha256 cellar: :any, sequoia:       "53724e11fe02106e1397667df674da15fcac6964d594e3455263713196415666"
-    sha256 cellar: :any, arm64_linux:   "40dfaba7dc077fa4aeb68ed7535e60c206fccb34828dc540e70c15e9f1c42dce"
-    sha256 cellar: :any, x86_64_linux:  "99bc4ec6b5674e893d0143b4586756ca9acf725144808fd752bb7cffa0e3dcdc"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "58ca098a24958785c39227aa0eb255b6e51301437f941cd100f89028fa57d2a0"
+    sha256 cellar: :any, arm64_sequoia: "729cd98bc640a5e773a141e7e34b54a45083211839de354f220533d47e623b6e"
+    sha256 cellar: :any, arm64_linux:   "3299f1bc51682039184c9b290767b6199a6f30fb91df4c0130eefabd84ad07ac"
+    sha256 cellar: :any, x86_64_linux:  "8782d903e2917ee3781f404c30479a76deb8a26877849a1dfabb00292b880416"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "gcc" # provides gfortran
+
+  deny_network_access!
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args
