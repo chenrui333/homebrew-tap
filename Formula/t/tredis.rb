@@ -8,11 +8,11 @@ class Tredis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05bf446f030331b0c7756f952729167ed66ec29066118578ef428a8acbf5caa8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e39cefe1e31fbaa00ade80656c00e3b9c15a6e10c4056e32ef9ad8962c8d5527"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f13c5fc83d25e41220858eb3911a3e6ee87e66c52d303cd45e7d7b7d71c2aded"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "427f717c3519c48904f91a196d5486bacc93f32b2167f1ec1628549178a66ab7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce66aaa530230664b63b736b7c6c248585264781b252925954906264737f4d64"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe838741552f5c6b56ec35de25640f6c7600c6097e3a53b72e897bb8030f8e4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa3ef92ab51c844f3511b9224be3ed94fb8e3da8375981165bae9b4cb3a7ebef"
+    sha256 cellar: :any,                 arm64_linux:   "829bb1cff0502ce17ca0e3d6a3a9c5c3d2b04417167f50170e8e9ffe34a9bcc5"
+    sha256 cellar: :any,                 x86_64_linux:  "ea7aa29c7366b28b83fafce606271845127b7f6e69caeadf59912903b5e0b908"
   end
 
   depends_on "pkgconf" => :build
