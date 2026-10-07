@@ -21,6 +21,8 @@ class Bibiman < Formula
   deny_network_access!
 
   def fetch
+    # TODO: Remove when the release Cargo.lock records the bibiman version (v0.19.6 still says 0.19.5)
+    inreplace "Cargo.lock", /(name = "bibiman"\nversion = )"0\.19\.5"/, "\\1\"#{version}\""
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
