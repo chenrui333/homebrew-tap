@@ -7,16 +7,24 @@ class Testronaut < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "957c6ce9082abb8c6debbb0f031ad8518bd00e39cc62dd6537243315bb28a128"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "957c6ce9082abb8c6debbb0f031ad8518bd00e39cc62dd6537243315bb28a128"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9538805eb8b8f500c9f9138cc6eed0ce24fd1826335c71b526ce4f224ed9a020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9538805eb8b8f500c9f9138cc6eed0ce24fd1826335c71b526ce4f224ed9a020"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fa910a5dc778a94de68bc976416ead3af63309bc19028cb6bf802c269bfb1298"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa910a5dc778a94de68bc976416ead3af63309bc19028cb6bf802c269bfb1298"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d54910a66cafcbd7573d932fbffd2e218ed82e0a913846ce17d3ea49dbf538e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d54910a66cafcbd7573d932fbffd2e218ed82e0a913846ce17d3ea49dbf538e8"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
