@@ -8,10 +8,11 @@ class Threatdeck < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3632e469c6abd66a4dd4f1c89a7aefce85021caaba009a2facb1067b460faa3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32a14fe2ed5f983b504961e7d4605b5b9bff73491ac4fadb9ac6931346bcb6af"
-    sha256 cellar: :any,                 arm64_linux:   "969346e649949c67e85bbf447cec83fe9bf03aa21b2d19c4e4686393a4ab9af7"
-    sha256 cellar: :any,                 x86_64_linux:  "f870d40dd4b6344f13cd7bf1e123f96b6d8635594c09587f5659e6eceaf38be8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76633be7eca530d39f77e05290606d73cdc13c86860fa9b48c6d395db71158ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5936df7869e5adddb6cd9a974c8cc6e78794ecf2d6d701e0e04b121ea6ca9be"
+    sha256 cellar: :any,                 arm64_linux:   "215ef03386971ec8fa2971e72a87875f75b5c66a700b931b786c939649c2b632"
+    sha256 cellar: :any,                 x86_64_linux:  "4f259e50c5c13e585afc5ee96aa12b4aec5e26813504b71df9f8b1ef453da304"
   end
 
   depends_on "pkgconf" => :build
