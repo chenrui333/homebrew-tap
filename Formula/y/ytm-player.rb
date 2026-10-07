@@ -10,7 +10,8 @@ class YtmPlayer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f00b9fa4ab0779fa9a3abe74613c11a7ff8f79b1cfa1e82f39e698ef155d5755"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "876de784209b0a7dbfa3efe74172231721a8f76542d19a7cc9487cbb93a9c6ee"
   end
 
   depends_on "mpv"
