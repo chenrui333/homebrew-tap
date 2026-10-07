@@ -8,14 +8,20 @@ class Toolctl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d88b5f3962506e6324dc6b383061be7a37708e4518179101a0026d29b11b6ba3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d88b5f3962506e6324dc6b383061be7a37708e4518179101a0026d29b11b6ba3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d88b5f3962506e6324dc6b383061be7a37708e4518179101a0026d29b11b6ba3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12e0f588f7f9011dc11857ca1ae2037fd64e4f10d244952dd5336844bdf8ccdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4056818afd28b562d1cf91f50c36df6b4a81b30766cea4b6334e6ac52e105c83"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e82fcd6a38390b16d37b3c4760c7f787770c667f19ba99e17277c18f27c0476b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e82fcd6a38390b16d37b3c4760c7f787770c667f19ba99e17277c18f27c0476b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6770ea8c1e3ae2f103562a8523279b36038a51c30b9a39820d67a65a5856152"
+    sha256 cellar: :any,                 x86_64_linux:  "d82ee1713adad389844efc87d3d0c9361cf0887fed2aa1346690fd21efb68306"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
@@ -32,8 +38,29 @@ class Toolctl < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/toolctl --version")
 
-    assert_match "toolctl", shell_output("#{bin}/toolctl list")
-    output = shell_output("#{bin}/toolctl info 2>&1")
-    assert_match "The tool to control your tools", output
+    # Serve tool metadata from the hidden local API instead of raw.githubusercontent.com.
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "amd64"
+    (testpath/"api/meta.yaml").write <<~YAML
+      tools:
+        - toolctl
+    YAML
+    (testpath/"api/toolctl/meta.yaml").write <<~YAML
+      description: The tool to control your tools
+      homepage: https://github.com/toolctl/toolctl
+      downloadURLTemplate: https://example.com/{{.Version}}
+      versionArgs: [--version]
+    YAML
+    (testpath/"api/toolctl/#{os}-#{arch}/meta.yaml").write <<~YAML
+      version:
+        earliest: 0.1.0
+        latest: #{version}
+    YAML
+    (testpath/"config.yaml").write "LocalAPIBasePath: #{testpath}/api\n"
+
+    args = ["--local", "--config", testpath/"config.yaml"]
+    assert_match "toolctl", shell_output("#{bin}/toolctl list --all #{args.join(" ")}")
+    output = shell_output("#{bin}/toolctl info toolctl #{args.join(" ")}")
+    assert_match "toolctl v#{version}: The tool to control your tools", output
   end
 end
