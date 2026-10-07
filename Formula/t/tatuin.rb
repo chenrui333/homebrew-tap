@@ -8,10 +8,11 @@ class Tatuin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "93646b69a031410e6e39557ca72d1afcb851391fa493f634b44fc7e860cff78d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bd838e371a42a46f88e8a0743c363da3b01e8e0845e07004a17ef842acb77a6"
-    sha256 cellar: :any,                 arm64_linux:   "ac0d8104d01519cdc4a394d6301b73b1d9298fa52665ea03b67517b08dacb6b0"
-    sha256 cellar: :any,                 x86_64_linux:  "f5e643c9a041d1885f907a40605124f37f9cd298c3643aafe6214efdc56e55bd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b327aca22091f9e65a8ee49dbec8c316e36aeb78d5c3d5b96ab9e0598378060"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14931bedfdf5094207913ef087dea4c81a7a860e316ea29043e30e58a6320b9c"
+    sha256 cellar: :any,                 arm64_linux:   "4d48e8cebd01372ad2286c33f93f62ac1600997e5e1b7e2755146156e6fde41f"
+    sha256 cellar: :any,                 x86_64_linux:  "5d585b13fecd0a3449e388843b9d7fcc27167d2645fd4878b4e60cafecb9f88d"
   end
 
   depends_on "pkgconf" => :build
@@ -19,6 +20,12 @@ class Tatuin < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
