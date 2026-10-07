@@ -1,0 +1,14 @@
+Formula/z/zmate.rb
+  h_9df9c32c3f321d 20-25,31-34,36-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ac3d455ccd7df4f94b8ec59ff0ee1b200cee4928",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
