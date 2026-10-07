@@ -8,8 +8,9 @@ class Wiremix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "a692ef57ef832b970273a9542e1301126d7a37e4bd28a9519115c57b4b85e674"
-    sha256 cellar: :any, x86_64_linux: "9e5ad32825004578de25ee5afd3ecb644784cbe91f579b5e2f493d418944ae76"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "2a5ef7aa734ca010f38fab1ebabcedfc3d9940b870f0995a5c5f5b2331120788"
+    sha256 cellar: :any, x86_64_linux: "ff751d83a19c4a5dca2bf80d5d1c8e06e93b1d64aaee06dfe6c87220069bc494"
   end
 
   depends_on "pkgconf" => :build
@@ -21,8 +22,14 @@ class Wiremix < Formula
     depends_on "llvm" => :build
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
     system "cargo", "install", *std_cargo_args
   end
