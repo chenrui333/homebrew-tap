@@ -1,0 +1,14 @@
+Formula/u/unisondb.rb
+  h_9df9c32c3f321d 21-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ab622d7498100c74dd61235d63d6ebc9b62d1e0e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
