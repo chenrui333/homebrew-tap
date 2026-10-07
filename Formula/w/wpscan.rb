@@ -8,11 +8,11 @@ class Wpscan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "e6999d56b2c7fc97ff62ac91db947b11c6f2a85226c7a2f793d69e0c6d673616"
-    sha256               arm64_sequoia: "1492f6af40f39ccfd130969a83c1df3efc905a8151adcb4214d231338855a82f"
-    sha256               arm64_sonoma:  "af29b9c8de71b5e7da73a563b4c21debf494cef15ce84822f193cd207be7c897"
-    sha256 cellar: :any, arm64_linux:   "e4a7036d80107c6e81d3a929ab1337ab9b5ec286f4510f532f9fb175728605e1"
-    sha256 cellar: :any, x86_64_linux:  "2470b1027c61de1fbb51da74c487a90e36a8303b56f5da4e58f52dda591ed47d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58cbaf1637a7ae946f096720ac22b9861090bd1d025ce03235e53d9fd02c086b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fed07dcdf3943d4e4952258fc039a402a1da43efd57b78d9f81947390f59d76"
+    sha256 cellar: :any,                 arm64_linux:   "cf237166669005b1d6f20a9b3830ef1c8ae5be5d91689e0a81b1af516ad3cd6e"
+    sha256 cellar: :any,                 x86_64_linux:  "859a32cb12f253833dfcfa240954c4743b9477af70a6cd5d2f030879fdd0ece2"
   end
 
   depends_on "ruby" # Some gems require >= ruby 2.7
