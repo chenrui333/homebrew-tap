@@ -7,13 +7,21 @@ class SwaggerMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f8abc63553a154d7b35c639ec44f3f9a22b0a5b3ec96fc112c84c381396557b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "3701be0d16d63ab9f6995a1452b4c070798816b900ccfb407a5ee70284472d9a"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
