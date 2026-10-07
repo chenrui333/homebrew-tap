@@ -9,14 +9,23 @@ class Unisondb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71b1f8cb02f87d72ad793e7b8a1f78e226657509fe6b2b6e95f01f61bcf96d36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d0da115245b27f9d47500be916d127eb99c2c4f6394cd56c5fb4cdeab30e90f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4d5943567b528e8591510aebe2e673d70e3b33a16bf5506847bc13af62615cd"
-    sha256 cellar: :any,                 arm64_linux:   "b9bfd3438be13b25f8aaa505431b797b214f0aed3e1502e674d926b43ee124ac"
-    sha256 cellar: :any,                 x86_64_linux:  "7227ab7bc3904fb3cc01722f1428119279d1a0f52461a3246e11f46cf8d7447d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5102224983d4743d26b188c656f869ac8d96d9af70f46fd67256a6b2ee150863"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c97b6f568da6b5c5496b54e92becc53ed80adaaae7fb10a18a74f723aa8af1f4"
+    sha256 cellar: :any,                 arm64_linux:   "6cd7aad72cb48e461228faeaa019572cee975740e81e1e504c9be3c305ba1179"
+    sha256 cellar: :any,                 x86_64_linux:  "ae3340596e56e4a738d7c560e6ba636065736c3c5f479cef0e40f9a24e44de79"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    # TODO: remove once upstream no longer pins cockroachdb/swiss b0f6560f979b (fails to build with Go 1.27)
+    # https://github.com/cockroachdb/swiss/commit/aa852fb3c14e2d34704a42ee989711108b6f4200
+    system "go", "get", "github.com/cockroachdb/swiss@v0.0.0-20260820225851-aa852fb3c14e"
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
