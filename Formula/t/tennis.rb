@@ -8,10 +8,11 @@ class Tennis < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60e443d1da294715121f317a1a0668841229cee740df869d2c3dfe172b0f4fa7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "678ca45fa647f03179ffb90d56c32e5055631e0c1cff6967326062f4f6261abb"
-    sha256 cellar: :any,                 arm64_linux:   "75ff1b3fe0eea751f14a347eaff18b188b398aca20d97f8222e6d40ddecc4535"
-    sha256 cellar: :any,                 x86_64_linux:  "327d88e235deafaa211e3fa6c31a985e619f8e51263fd3c9eadd89abd597a576"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "801701dcb86e42d268d958c48130500a05f5ba15d1609fc7ad572926640343f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e13dac656817005905ef93ecd21688bc7b295a91c98132632ac3241cba9ebda3"
+    sha256 cellar: :any,                 arm64_linux:   "8d262d657829a8fe00c07fd8d9edbc22d099669b283f827a1dddeb8727ccbdaa"
+    sha256 cellar: :any,                 x86_64_linux:  "769222f4aff7cdaec3cfd09e40d6373ac8aa22a18aa768418f37dc694620a16f"
   end
 
   depends_on "rust" => :build
