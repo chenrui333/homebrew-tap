@@ -1,0 +1,14 @@
+Formula/b/bibiman.rb
+  h_9df9c32c3f321d 24-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0fe8a1a01841d4a8d31fb3c45bcafcd313b6d012",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
