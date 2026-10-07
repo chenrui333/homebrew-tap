@@ -8,12 +8,11 @@ class Tunnelto < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a4265faa920380f656660d0419df796d2e2f0e430da195bf2b4d109f4b93a6e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0357db179c264c4bd202e29c75ad99ae942110a3cbebdb49a08c23fef3d28ecb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c92a0912df2fdf7a643c3d031afdc9de3ec5f31d903e0bfd4d06fa78a2924b8e"
-    sha256 cellar: :any,                 arm64_linux:   "5bf2def15babf76884d52fdf415159ad6e6284d216f0fda4c28b778b946b4906"
-    sha256 cellar: :any,                 x86_64_linux:  "18e54241f09a59a29eec061d2c687f7380c69c48d66b6d792c97fd8835ca018e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9a01859f688dc51c6f01dcb782c54164c2de26765ad860ed7d9637d4280842e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15ac13136d580b12fca01ed0494b4ca32c37b2cab255036ef506ba3b72374dde"
+    sha256 cellar: :any,                 arm64_linux:   "7fc12dd35fba83deb08bc9d8462e7f62d4971a98813f63f6c942f945558bc8bf"
+    sha256 cellar: :any,                 x86_64_linux:  "db16f38e804b535d9039021ce2782589d8166c40963e1f2da912e6991d841b84"
   end
 
   depends_on "pkgconf" => :build
