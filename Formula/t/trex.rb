@@ -8,17 +8,23 @@ class Trex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ab02fb815c86743c45a4179d7c2cca14b8aa5e938479c75fa28e1efd148214a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c05fc6b6bb3c711c05f1bfafa995058ac268f41810bd08abcbc0736f7fa49191"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9623dee3aec234208778759dd98140d325df855317de055088e67c19d23fa5ab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36bbc437ea60e8a1465b80618a6380d4089ca563e0f04ce0a2caddce82e94c4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d84c0aa3fcc31267a78dc5733735c59d660677b66af73bb916d023df533259b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7b26dfc168a82a7d3eec7e97003aa6d4ebabd1cfde52671f1ad9f4d0188c9a97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab22229061b6710c70a434ec0d6f394b3f549155f8b7e2516766d60b8c3050c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "607449ef99d6afb5bf939b95c870fba3c66f48e4f90713e771f9757c8eb15af2"
+    sha256 cellar: :any,                 x86_64_linux:  "7883d537bf5349f23efe0dc3cf1b68f33c0ef037543e6e9aaf58648b0b852919"
   end
 
   depends_on "go" => :build
 
   on_linux do
     depends_on "libx11"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
   end
 
   def install
