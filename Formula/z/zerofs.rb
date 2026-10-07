@@ -8,14 +8,23 @@ class Zerofs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6be2bf2fd4d0e76403e0d4340dee34dbe287b4f0c4f0ef25735b41f0074fe651"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2297d591833dfcd8f78d5a81802810b156a6d95ec7cb54e513f85050a7a5b806"
-    sha256 cellar: :any,                 arm64_linux:   "f1804441bc94eca72baac7980bfcc983d2879b4b46476a549512a63c88e6dca4"
-    sha256 cellar: :any,                 x86_64_linux:  "4158873d5804c05d7b5d6029805e203be89befc5ea6ac2001bbb3ac38d3aa5c7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dbc4b423ae068e5d19b82c63621ee53423125caf85ae7fadde5510adc33f7457"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14eaac751a7a9135cc01111e17c45f9a551f59b99f92330545e234a33578481b"
+    sha256 cellar: :any,                 arm64_linux:   "adc2846329f91393b77f0cd50c42640a7469f8364942605140b6b6cbeccee254"
+    sha256 cellar: :any,                 x86_64_linux:  "83a66d0623b6b46a2292a4e6016bcb0d28896bb05cc32a3fe08cfbb5b54c183a"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    cd "zerofs" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
 
   def install
     # Upstream's jemalloc background_thread setting warns on macOS.
