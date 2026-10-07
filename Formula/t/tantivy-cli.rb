@@ -7,13 +7,20 @@ class TantivyCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7a49eab533cf0cbaa0712ee283e70eb5c6556eb55df97909c25038726bc41f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f82c1be32dd5e0c45337410344e7440d38a920d45a05091176822470787aaf6"
-    sha256 cellar: :any_skip_relocation, ventura:       "cb0da84d5f28ff74db9e2f45cea7a7c3bffa4c0a8d92e724a35876a775ccdb0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fae7926e5d60beffcbb61e31607e9bdf22946e7fb38697cd944ac9fd9bb76bd3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d1ec1ff1680759264e490a569b442aa7c2c5a834ca34da6f255943bf3b6624e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c6fa3301547f162fe9b07d8ec089deeab7e584f437c478ef58524dc6d4a9228"
+    sha256 cellar: :any,                 arm64_linux:   "3ffa0875f48a8cea8d12ce0ff5fccceaf960b014bd4baaea2160728d69b775e3"
+    sha256 cellar: :any,                 x86_64_linux:  "6e48c31dad2aa0a001b5b6dd7d1ef0816e4d6e686e56e54a7547a5e0ede2f1c1"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
