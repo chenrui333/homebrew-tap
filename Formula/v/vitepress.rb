@@ -7,16 +7,25 @@ class Vitepress < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "c4c41cc91674d326a6e454b24f1c34d4c12ea38949b1aa5a7620065807b44f70"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2559ee9dbcf678db2b3c4b59e5aadae16c6b904ae2616e5eb61274af3ce3fde"
-    sha256 cellar: :any,                 ventura:       "9b41182e509e90434c33914df121b22e64ec8899c48699f3f7f87d20544c001a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "976b585e05a0022a13960b6edfcde8ae774cc3266425096a227600ec73ba32a4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "8174542905d0db8e12f6327a4c62c9e73ce759e81a5961e7be4a504572ca8175"
+    sha256 cellar: :any,                 arm64_sequoia: "8174542905d0db8e12f6327a4c62c9e73ce759e81a5961e7be4a504572ca8175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7781ff04ff551a8ebf5997d8218e165872079bb9b68ee276293a9f474e1633d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef3e24af0039222079923ec15eb507f30b96263a647a7e0b48605effb47b85d6"
   end
 
   depends_on "node"
 
+  # The test checks the vitepress dev server, which binds a loopback port.
+  allow_network_access! :test
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
