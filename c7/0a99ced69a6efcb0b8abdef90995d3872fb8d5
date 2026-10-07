@@ -1,0 +1,14 @@
+Formula/t/typeui-sh.rb
+  h_9df9c32c3f321d 3,17-19,21-24,27-28,77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c70a99ced69a6efcb0b8abdef90995d3872fb8d5",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
