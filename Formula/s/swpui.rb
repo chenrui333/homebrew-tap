@@ -8,14 +8,20 @@ class Swpui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "def27619ad739c6ec0e76522d9ada50679d416df60fc3c50ec4fa0406b20ebc1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7110318b98393c49a91493f4502d6074272e4238a8b34ea625af65d4e1ca0269"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a924ea7fcc301e3b48869c4ddebac9c80970ed305f09d373ded085f9c4feaf0f"
-    sha256 cellar: :any,                 arm64_linux:   "36b1a54d320f9411b286ce76560ea84bd0a319c797952dbbdeaaba0fe31c596b"
-    sha256 cellar: :any,                 x86_64_linux:  "fb697d3a314c77b81fe3c9e0566c8974d8cae651df571cec18ef0a0a0f0b2008"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce72d520a8eea293a41d213dd4320d4746bb4eee2bf11520b2bd6f073ae105e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16a68d5132be7c36732ab71c880107e9554ff7b6dea1d5111c9d23501cc62b42"
+    sha256 cellar: :any,                 arm64_linux:   "d397e5c6829868c0fb53197fa7a6f56669abc220e73ac452ccf5e542193d6063"
+    sha256 cellar: :any,                 x86_64_linux:  "b24a39140ec7d81ac37e689f1415378de1af25ae2336c5cdf63e27f9199371e0"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
