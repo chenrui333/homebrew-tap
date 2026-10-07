@@ -8,11 +8,11 @@ class Tinifier < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "00522c9adc1d43df8560ec334651c793d5e8cd4f0b750c84c5a53645f0d8e811"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00522c9adc1d43df8560ec334651c793d5e8cd4f0b750c84c5a53645f0d8e811"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00522c9adc1d43df8560ec334651c793d5e8cd4f0b750c84c5a53645f0d8e811"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6661f7e92b7fcb1bf4c379a5f66bbf1d199fdb5d559ed385653cd63d16f37f3e"
-    sha256 cellar: :any,                 x86_64_linux:  "725611defa1a30e1042b96f95c03eef5ab2cc80c66207a0508020763edf6a2dd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4960365c171d5c622413575569dea0dcf559dff0caf126ad6ee105205a8f6d7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4960365c171d5c622413575569dea0dcf559dff0caf126ad6ee105205a8f6d7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf3d55014f2cf079ec4c6a91278d8573564b3e4673e6d017ea45dab44239c615"
+    sha256 cellar: :any,                 x86_64_linux:  "75248b63e18889c49b5d371740520c194754a7b1d5540a5c6cceb9b7f2eacdf8"
   end
 
   depends_on "go" => :build
