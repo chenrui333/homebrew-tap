@@ -8,25 +8,31 @@ class Teldrive < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75ce7410efcaddc6a40399e7082d7b5828a7340c154d6aa4a671723e8d5668a9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ce7410efcaddc6a40399e7082d7b5828a7340c154d6aa4a671723e8d5668a9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75ce7410efcaddc6a40399e7082d7b5828a7340c154d6aa4a671723e8d5668a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5ea67998302612f175f5282801576f7362f04cf7267e3b5bad80adba1011238"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c72c7a12f77dc624da51badaf034a4b41fa370b5417685bc9bf2b8f70f6fb5f6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6041a417411badb6b21c96a6ddef563fd3ee8e8b34d7d95cfa93adbf28875337"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6041a417411badb6b21c96a6ddef563fd3ee8e8b34d7d95cfa93adbf28875337"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "598f2567170005b763e353f45b746197bb2496f3341288d7c74ef9370a2ab435"
+    sha256 cellar: :any,                 x86_64_linux:  "6c01f7cdecca18eda4e4cfb62866a981eae7515c898830d8914bbad3169e8b18"
   end
 
   depends_on "go" => :build
 
+  # upstream only publishes a mutable `latest` UI release (also used by its taskfile)
   resource "ui_assets" do
     url "https://github.com/tgdrive/teldrive-ui/releases/download/latest/teldrive-ui.zip"
-    sha256 "bf3e9c3c2541eb9c222adfe12275480591a0d20a6152b439951729649f854739"
+    sha256 "c959a5028449ac8a7eb269f8e3fe374cd01082e90df0289d49aca187109f0868"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    # generate API code from the upstream OpenAPI spec
+    system "go", "generate", "./..."
   end
 
   def install
     (buildpath/"ui/dist").install resource("ui_assets")
-
-    # generate API code
-    system "go", "generate", "./..."
 
     ldflags = %W[
       -s -w
