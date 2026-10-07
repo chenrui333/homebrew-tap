@@ -1,0 +1,14 @@
+Formula/m/mlx-vlm.rb
+  h_9df9c32c3f321d 6-7,27,69-70,79-80,84-85,149-150,159-160,174-180,229-230,294-295,324-325
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "042863398f58f2a2c2b8acf0313af24d9e6441bb",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
