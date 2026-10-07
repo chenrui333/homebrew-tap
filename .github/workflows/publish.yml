@@ -286,11 +286,16 @@ jobs:
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
+          # Manual re-dispatches repair a publish whose upload succeeded but whose bottle commit was
+          # never pushed; the same CI artifacts are re-uploaded, so an existing tag is not an error.
+          REPAIR_UPLOAD: ${{ github.event_name == 'workflow_dispatch' && '--warn-on-upload-failure' || '' }}
         run: |
           set -euo pipefail
           git -C "$REPO_PATH" fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          # shellcheck disable=SC2086 # REPAIR_UPLOAD is empty or a single flag
           brew pr-upload \
             --debug \
+            $REPAIR_UPLOAD \
             --root-url="https://ghcr.io/v2/chenrui333/tap"
 
           published_head_sha="$(git -C "$REPO_PATH" rev-parse HEAD)"
