@@ -8,8 +8,9 @@ class Ugm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "540dd4874182a8dabbb527b6905c5df00f72b08e5cdba65c6bed4c1ef2420b48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ea7b236a3817de3d1ea59a5fe44a1825ac2cc0e710601791483eb0e37e8fa91e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "e6a67e67e23e2201fcfd2970e28fb68a1a975a99ef7746124b93d4335faef962"
+    sha256 cellar: :any,                 x86_64_linux: "ac3788e4245770acd6731691f9924d9398345f0bf08f218d9f30acddc2587225"
   end
 
   depends_on "go" => :build
