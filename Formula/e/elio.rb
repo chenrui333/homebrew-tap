@@ -1,17 +1,17 @@
 class Elio < Formula
   desc "Terminal file manager with rich previews and inline images"
   homepage "https://elio-fm.github.io/docs/"
-  url "https://github.com/elio-fm/elio/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "89c8bcb656dbee17cccfd4b0e676523bc1f3ff34c63a84ab8327646ce72984c6"
+  url "https://github.com/elio-fm/elio/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "8025df57d84f3aeadd8eadeae2b293f66ad43b8b683d787a55a6ec314adf0e19"
   license "MIT"
   head "https://github.com/elio-fm/elio.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b4b8371a895812e2337ad2adc88b2821c8a0a8075d07c8c59aa90fc9f0bcee1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9214e49c614c49cbff12c0e32a731fc27023e65a4a269744a43967ef9086551"
-    sha256 cellar: :any,                 arm64_linux:   "f29c42204929d1d0a7ea8908e9de93a76ec7e1284381a89584bb03128df547ae"
-    sha256 cellar: :any,                 x86_64_linux:  "315bc142c1c38d9256d7fd4281759b6c229bc21eff9ca475a130d929e0c850f4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a95459652655acdf8421378a0682fb9e503f7547b55ff52791124e963d692cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75d1ff7499a0e907b147fef19919bbfb61c846dd87994fec49c306aa3dceb98"
+    sha256 cellar: :any,                 arm64_linux:   "5c5a2aa50c16d5806bf1fb7587306989f1f2df734d8ec09a9d741aea46928222"
+    sha256 cellar: :any,                 x86_64_linux:  "0ee1b2f84c4c1234f4e7ed03919bed7397602e554f78b82cab5c3fb40846de69"
   end
 
   depends_on "rust" => :build
