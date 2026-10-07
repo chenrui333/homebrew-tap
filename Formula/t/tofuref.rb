@@ -10,11 +10,11 @@ class Tofuref < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ebad58e4ca088ada2dade690bbf73189179a42d59cb6e23d06607fafd6934e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e27d70bd9f53a880d70a75a42bd6da0e2710f274bf69386c5c7f4b4cf19a4146"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c76904467393ec6aa6419cae7e94b1b2f001e3f09a53a764cff569b37608ea89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "272fdf0a3f2498a060f8a7cfd7c80da0b275a17f7481262733201a80883c5fa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fe91c6e87de09b7b75119548cf08ec2fed7b2b333bf246e6016120905214e51"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f4e5ab5132080f4ea64ad45f21f9b1b233a3a417a1237bc6e4ad37de4c0c27c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de5e5d16a828586697c25e75375b6813691cf683429a629b5946f0c1581a9c58"
+    sha256 cellar: :any,                 arm64_linux:   "b52534a54104e89190b560a697b7b02aa9893f329db143c8ab3852a4b8075bf1"
+    sha256 cellar: :any,                 x86_64_linux:  "2e357e0d60900e8854ff34a7cec32dc4e29d591329cb18224e8c73706161e58d"
   end
 
   depends_on "certifi" => :no_linkage
