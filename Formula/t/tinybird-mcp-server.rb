@@ -9,12 +9,11 @@ class TinybirdMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f189fb744334118d5515312eb78faa27b939cff49bcfaeeefe305342367622c8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "083280244451d86b48e345d66c6f26a561b767bb75bf4cec652cca1c95c698bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48d50028e6ecdc1d6a8ac2fe35ebded06c4b58df9003f149cb774efe4bf578d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a62eaaf04c1c864a449732c58a8d3ede4370a8a32bdb0c39697912b0ef6ed75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e35d08e32b15731d6e9760dbbdeb3670d51ce44c789883e024abfe4ea4620668"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3460fe002316069a39cbadedf451fdca59169bc684d6ee49142a0b484a893a61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "589321ad2cb21fc5db538f0a42b1e6828a731245b977e2deb0223616b350ddd4"
+    sha256 cellar: :any,                 arm64_linux:   "aaa4c515c9546a6853a9f9df7e287d424bc076c65a84390a1efc4ef5d78ea254"
+    sha256 cellar: :any,                 x86_64_linux:  "5f91f603b6715cbe816d0a9532d5ab6da3a015ad8f04c11ebb18419171171c0f"
   end
 
   depends_on "cython" => :build
