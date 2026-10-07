@@ -8,14 +8,20 @@ class Tooka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3ab7d97ac426d322da00c4968431c367d146650ca15cea221b7ed16c18e18549"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ea1bf696077338e968067bf9e70e1ab8bdd1e9ae4414ae993aeefe651b5e5e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "329c15a17ee7932676881dcbda19f55635a9c3e21d933f41e8e75ae9cb423c8f"
-    sha256 cellar: :any,                 arm64_linux:   "5dc3e125197bf9e6650339e42e000307b7d245906f841398cf6f3d30ab689b28"
-    sha256 cellar: :any,                 x86_64_linux:  "c6ab9195981d37f99aa15ff29acb65f197c025834405e05f6adf1d5bf9d1fc14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7582a42b3a611fcd79d030dd8a9cb336769ac49529029afe401110175b54d977"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d31849c6fda4e432b8ad9c5df4faced4457a8d88bbf35baab37f962af03abc14"
+    sha256 cellar: :any,                 arm64_linux:   "ccd00f0ab97e57c8fc717f887c65714ab09f22fd895a768f31d7562152180a62"
+    sha256 cellar: :any,                 x86_64_linux:  "065acd59e5c65029910e42085ead686e47effbc69c925156123cb961db9d67e6"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
