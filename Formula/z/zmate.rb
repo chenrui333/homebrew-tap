@@ -8,10 +8,11 @@ class Zmate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c174ea6995a4756db280a4cc497c0a7d313c6a95ab0095f69ae1bd93c8c41ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c174ea6995a4756db280a4cc497c0a7d313c6a95ab0095f69ae1bd93c8c41ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "886ff1082158084a43a5aee3c863f610175998717de54362550e0413ccb50f9d"
-    sha256 cellar: :any,                 x86_64_linux:  "f972c2b515c88fa7e4fa65e12e0a83b3b9d7bbba42d93d7cdb6ae0d5e46b975f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec3c938630a308d4d786cd38977f322ae6f13fe2766adb3ee97a9a0f813fa52d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec3c938630a308d4d786cd38977f322ae6f13fe2766adb3ee97a9a0f813fa52d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c2302a84d4bf935fe5ef8fe7b0081f4e87ff0d62a99053bbe2549d6ff992696"
+    sha256 cellar: :any,                 x86_64_linux:  "eee4c340481cee4d76db23c522e277a0324d48fc73fab2d834f1878f8af432a5"
   end
 
   depends_on "go" => :build
