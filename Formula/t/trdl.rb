@@ -8,14 +8,22 @@ class Trdl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff0b9047d702982d06440183d5d7226fbd46f001af975286bf7695c66afc4672"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff0b9047d702982d06440183d5d7226fbd46f001af975286bf7695c66afc4672"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff0b9047d702982d06440183d5d7226fbd46f001af975286bf7695c66afc4672"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d054a5a045297481ff239284618fee2fd0830781415ad2ab07b8377ffdc1361"
-    sha256 cellar: :any,                 x86_64_linux:  "19d292407d74ed7aa2b0d8f13e1000bd6601fc6c84dc18c79601658c0e482143"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84039a40fda531784e445efae5a5deb47469416d1bafa9083cadacab0e6a83b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84039a40fda531784e445efae5a5deb47469416d1bafa9083cadacab0e6a83b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1319e2e163067e9c005fd44d28403e14eec45c0d54eab10441b9df18889e8f62"
+    sha256 cellar: :any,                 x86_64_linux:  "26f50741568cda7bc1b4c4b59020c1013416d0fb99ea0046b0e68c2505f4000a"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    cd "client" do
+      system "go", "mod", "download"
+    end
+  end
 
   def install
     ldflags = "-s -w -X github.com/werf/trdl/client/pkg/trdl.Version=#{version}"
