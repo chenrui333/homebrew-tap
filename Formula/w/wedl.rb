@@ -9,14 +9,20 @@ class Wedl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "faf695f102a353566e90e1fe6fe936c56ffc5e6fb9a3911f4c0d3b8dfc99eb92"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "faf695f102a353566e90e1fe6fe936c56ffc5e6fb9a3911f4c0d3b8dfc99eb92"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faf695f102a353566e90e1fe6fe936c56ffc5e6fb9a3911f4c0d3b8dfc99eb92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f01930c64cca4b3bf00345d1db91a11f25bd32476312f8783a3be4bf8f92193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7635658180f05f32cf94e595657518dcefff4da1d2593c7ad490c6f76ff6f07"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f57e0f0cf0da8c2dced9b2d96e70020e544d4fa1ec997ddd8609a5bee7075c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f57e0f0cf0da8c2dced9b2d96e70020e544d4fa1ec997ddd8609a5bee7075c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d8c8bf109b6935352263e3131d55f0032e6fa447e0df8c975f3279b19e14c4b"
+    sha256 cellar: :any,                 x86_64_linux:  "0e7eaa7f18306c6b1309914bd7170f6bd791370f18d1cadf673a47659ce01b33"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
