@@ -1,0 +1,20 @@
+Formula/v/vet-run.rb
+  s_20ee2ac03ef1eb::t_b422e0172b85f9 20-21,23-25,32-41
+  s_20ee2ac03ef1eb::t_b93121d50465c7 17-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9fe5c7fd466903ef8423c02ecde82a1694dc0085",
+  "prompts": {},
+  "sessions": {
+    "s_20ee2ac03ef1eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f20e-6f07-75f0-8662-3a1b08a3a7cb",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
