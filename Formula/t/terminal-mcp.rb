@@ -8,19 +8,26 @@ class TerminalMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "00f8c25b38374ce7f722559325e808721fe99171e9ff7d52ab5ae7fe73bc8821"
-    sha256 cellar: :any,                 arm64_sequoia: "00f8c25b38374ce7f722559325e808721fe99171e9ff7d52ab5ae7fe73bc8821"
-    sha256 cellar: :any,                 arm64_sonoma:  "00f8c25b38374ce7f722559325e808721fe99171e9ff7d52ab5ae7fe73bc8821"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7afd8f72c762d2444dbbe75bfcf4a32ce43e1b587c95a513431edc4b2bf7bf67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f9b626cbd759b4e1c62bc3e77036c3e9df28f332aa0ad6c0190f7367c0077e0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "a4cb3f5417d58ceeb6d0db60f1ab89ee9046c785d9b532ca6dbfc145d7254da1"
+    sha256 cellar: :any,                 arm64_sequoia: "a4cb3f5417d58ceeb6d0db60f1ab89ee9046c785d9b532ca6dbfc145d7254da1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf6f624fb988595ef5d77a208c96ea36844a74b21a1c2a74b7a7d11d352aa33b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc11521b0e0a2310ae5b7d45a54f0178c7ac5f577acbdd2d78a01a468fb116e3"
   end
 
   depends_on "node"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "npm", "ci"
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
+  def install
     system "npm", "run", "build"
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/terminal-mcp"
 
     prebuilds = libexec/"lib/node_modules/@ellery/terminal-mcp/node_modules/node-pty/prebuilds"
