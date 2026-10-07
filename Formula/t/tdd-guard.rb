@@ -7,20 +7,31 @@ class TddGuard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "35ed9ccfea121cd1959cff01f8d4aba883958a34fc322a7f88c977d9ff7348d8"
-    sha256 cellar: :any, arm64_sequoia: "7ff2f12be5fe3f0bd9d5d677912c107a879c478971e820e6f6e52a0c45aa54e5"
-    sha256 cellar: :any, arm64_sonoma:  "6ce336723562ce84890f91d3329b30b1419ff0748bd014dd0c37025d9fc09dd5"
-    sha256 cellar: :any, arm64_linux:   "88b5f43932e3359d347b9faa4d14f33fcab6e635d0d68c2d2c0548b461532d92"
-    sha256 cellar: :any, x86_64_linux:  "8d75a7c09fd2f05e36cfd2d6efa4c6961eea9da604d97f1c51b7a9222d3a59f2"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "9d130aa7c6eb23f2e1d06f8239d417e57a6a7b35341bad441c007cad9e3cc112"
+    sha256 cellar: :any, arm64_sequoia: "5c3566e2021dfd11e1c28734ae5fd76092eb85bde08d1c25dc703bc223f3e2ff"
+    sha256 cellar: :any, arm64_linux:   "6e50d5be7141e91866ae04d92dda875d91944cad3019ebb0ab114e5685dd87c8"
+    sha256 cellar: :any, x86_64_linux:  "0f4401bab1490fe8ac413d2f64ffbe7621e293679f9179873f41bc1d10b9a841"
   end
 
   depends_on "tree-sitter-cli" => :build
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+    # Cache the PHP grammar that `install` builds @ast-grep/lang-php against.
+    cd buildpath/"npm-fetch/lib/node_modules/tdd-guard/node_modules/@ast-grep/lang-php" do
+      system "npm", "install", "tree-sitter-php@0.24.2", *std_npm_args(prefix: false), "--no-save"
+    end
+  end
+
   def install
     ENV.prepend_path "PATH", formula_opt_bin("tree-sitter-cli")
 
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
@@ -29,7 +40,7 @@ class TddGuard < Formula
       rm_r(lang_dir/"prebuilds")
       cd lang_dir do
         if lang_dir.basename.to_s == "lang-php"
-          system "npm", "install", "tree-sitter-php@0.24.2",
+          system "npm", "install", "--offline", "tree-sitter-php@0.24.2",
                  *std_npm_args(prefix: false), "--no-save"
           rm_r("node_modules/tree-sitter-cli")
           rm("node_modules/.bin/tree-sitter")
