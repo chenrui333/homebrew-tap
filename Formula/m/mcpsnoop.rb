@@ -1,8 +1,8 @@
 class Mcpsnoop < Formula
   desc "Transparent proxy debugger for MCP traffic"
   homepage "https://github.com/kerlenton/mcpsnoop"
-  url "https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "db65c3617838cd9ff1b3b99982a0dc7b10320a469c3f53467679aff9f2f0175d"
+  url "https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "d23623dc356fde86a82eb1a8b82ca0f089d2e49f25a6576d55a22bdc238c221e"
   license "MIT"
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
