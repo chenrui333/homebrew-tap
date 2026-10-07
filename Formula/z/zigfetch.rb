@@ -7,10 +7,11 @@ class Zigfetch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "6557be875932651ede8510490341f731564dd985ed3b3486560795bcf7b6317b"
-    sha256               arm64_sequoia: "60ddc8d7e0a9a47464924a9601b9df7444cae22c01ad994b65cda6d2893bd88e"
-    sha256 cellar: :any, arm64_linux:   "37ba2d565306cefbe154cc86d26e01eed51ccf72d31ceb700af071e074edf64c"
-    sha256 cellar: :any, x86_64_linux:  "ab397eaee0f1f248f2d5fbc339f6656f49796ff83b9fffb96fb5f77aa41c62bf"
+    rebuild 1
+    sha256               arm64_tahoe:   "42ec6b278768fa64d42cfbdd9b2c04dec5888e3fb38f7ed586a0e617be74ffcf"
+    sha256               arm64_sequoia: "fd83f6bad48b2eeac11e53041451916c11510cfb06e26f6b798e832082475ebb"
+    sha256 cellar: :any, arm64_linux:   "79d6629dc663b49ffc5588f8d7cac69f4f2dba113a0128546e5b57a8098e215d"
+    sha256 cellar: :any, x86_64_linux:  "1895ee88194eee2f126ed3b5ed3cce275ad47202fcd32727d41f9bfa758e6d17"
   end
 
   depends_on "pkgconf" => :build
