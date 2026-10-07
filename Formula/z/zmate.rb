@@ -8,28 +8,37 @@ class Zmate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c174ea6995a4756db280a4cc497c0a7d313c6a95ab0095f69ae1bd93c8c41ea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c174ea6995a4756db280a4cc497c0a7d313c6a95ab0095f69ae1bd93c8c41ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "886ff1082158084a43a5aee3c863f610175998717de54362550e0413ccb50f9d"
-    sha256 cellar: :any,                 x86_64_linux:  "f972c2b515c88fa7e4fa65e12e0a83b3b9d7bbba42d93d7cdb6ae0d5e46b975f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec3c938630a308d4d786cd38977f322ae6f13fe2766adb3ee97a9a0f813fa52d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec3c938630a308d4d786cd38977f322ae6f13fe2766adb3ee97a9a0f813fa52d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c2302a84d4bf935fe5ef8fe7b0081f4e87ff0d62a99053bbe2549d6ff992696"
+    sha256 cellar: :any,                 x86_64_linux:  "eee4c340481cee4d76db23c522e277a0324d48fc73fab2d834f1878f8af432a5"
   end
 
   depends_on "go" => :build
   depends_on "zellij"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    port = free_port
+    # The test sandbox blocks listening and dialing, so exercise the offline startup path:
+    # listen-address validation, SSH host key generation and the missing SSH agent error.
+    output = shell_output("#{bin}/zmate --listen 127.0.0.1:2222 2>&1", 1)
+    assert_match "address for remote ssh server not provided", output
 
-    output_log = testpath/"output.log"
-    pid = spawn bin/"zmate", "-l", "127.0.0.0:#{port}", [:out, :err] => output_log.to_s
-    sleep 2
-    assert_match "Skipping remote port-forwarding (local-only mode)", output_log.read
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    ENV.delete "SSH_AUTH_SOCK"
+    host_key = testpath/"ssh_host_ed25519_key"
+    output = shell_output("#{bin}/zmate --listen 127.0.0.1:2222 --server 127.0.0.1:2222 " \
+                          "--host-key #{host_key} 2>&1", 1)
+    assert_match "SSH agent not found: ensure SSH_AUTH_SOCK is set", output
+    assert_match "BEGIN PRIVATE KEY", host_key.read
   end
 end
