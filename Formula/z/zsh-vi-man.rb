@@ -8,13 +8,14 @@ class ZshViMan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04a3696e9d35853a9dbfb5f5bd8823eb9e8525a66044aa56c22311de91e86755"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04a3696e9d35853a9dbfb5f5bd8823eb9e8525a66044aa56c22311de91e86755"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04a3696e9d35853a9dbfb5f5bd8823eb9e8525a66044aa56c22311de91e86755"
-    sha256 cellar: :any_skip_relocation, sequoia:       "04a3696e9d35853a9dbfb5f5bd8823eb9e8525a66044aa56c22311de91e86755"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79cdaeafd91b0221355ba10b14878da7552fa6c723de7e1940bf124233dbda41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79cdaeafd91b0221355ba10b14878da7552fa6c723de7e1940bf124233dbda41"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "34c2509286c89ee523a19327436410dfee771118ee024ed1c54949db1bc66c64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34c2509286c89ee523a19327436410dfee771118ee024ed1c54949db1bc66c64"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b93075d5e4bce6b23e648fba967a67a21af311615c74d516562224121bdd7422"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b93075d5e4bce6b23e648fba967a67a21af311615c74d516562224121bdd7422"
   end
+
+  deny_network_access!
 
   def install
     pkgshare.install "zsh-vi-man.plugin.zsh", "zsh-vi-man.zsh", "lib"
