@@ -1,8 +1,8 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.21.7.tgz"
-  sha256 "37acebf3b204c9f107f62b5337d407c6dc96f927bee0a8362bae6ceaac8abbf4"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.21.8.tgz"
+  sha256 "e3fdff8c11e6bdf8a2e457248cae3e3a9e1e4179c7df38962b5c24cff3f16c78"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
