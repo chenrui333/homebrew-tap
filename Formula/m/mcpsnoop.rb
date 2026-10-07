@@ -1,17 +1,17 @@
 class Mcpsnoop < Formula
   desc "Transparent proxy debugger for MCP traffic"
   homepage "https://github.com/kerlenton/mcpsnoop"
-  url "https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.26.0.tar.gz"
-  sha256 "d23623dc356fde86a82eb1a8b82ca0f089d2e49f25a6576d55a22bdc238c221e"
+  url "https://github.com/kerlenton/mcpsnoop/archive/refs/tags/v0.26.1.tar.gz"
+  sha256 "c05e98513cbb4865e334f8986c74a39adfa4a390a43260b2940f50c877fb06d6"
   license "MIT"
   head "https://github.com/kerlenton/mcpsnoop.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f9808930780d844e3706f0eeaa10499ffaa2abe83f2b4925316e7b4170a66f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f9808930780d844e3706f0eeaa10499ffaa2abe83f2b4925316e7b4170a66f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3b46655f2042055f17c2c020167a04f3c9eef79f35d24e57805e40cb96e2976"
-    sha256 cellar: :any,                 x86_64_linux:  "dcf903381c9745c2f4b6e7e5e609c8d6f717f8fc44388396fd721f489e80a451"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9703f69590788a9295053b685380cb4072cd9cb677a405eb3f82b2d4e0016819"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9703f69590788a9295053b685380cb4072cd9cb677a405eb3f82b2d4e0016819"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5adc241db617aa398c92054482b0e3499476a63166f6556c1d2821fee42f21b4"
+    sha256 cellar: :any,                 x86_64_linux:  "7e894e923c3402e975b7ff7bebcbae48aebafd3a6ec39a83c0b30f056d993c36"
   end
 
   depends_on "go" => :build
