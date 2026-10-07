@@ -8,10 +8,11 @@ class Twiggy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a9ac9898684d5cf4d69dacae7de9330ae7405cfa84ab54b848bd1e2f51f7242"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85c5f750cd91d00d1f6149be12fa2b2535bcfeed643a7fc08912614d89a6a8b3"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f912ba5dc338111261b6a8bd1e8c863a4f0046e0a720c188f528a38d8af1bf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d6c5c43a84823d729c9b8903c87b6da2f2d4f5d138a2533d500ad2462e68849"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7823c31a5d227a113051d194f260928b001671188bc97433050adc4dcdd02d7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d28a65ee343bfb205d42cd5af7a8a61c2b9f8e0627f1ad963d7a45fc3b70cce8"
+    sha256 cellar: :any,                 arm64_linux:   "11a78aabd2c2c87cf294db11c42d31f4d427f127bcbe1a25a7016ba88df763e5"
+    sha256 cellar: :any,                 x86_64_linux:  "28aabe04455bf82e903872cfada55cdb36c608f40646736ec3c3aaf706dd28a4"
   end
 
   depends_on "rust" => :build
