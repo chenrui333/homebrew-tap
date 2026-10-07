@@ -13,12 +13,11 @@ class Unsloth < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61ea00e0507c27c2c32fbf37e03a8708d462eacc201b63388741e9d83caa0ca7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9dcc5fc8c5c862e871e2ae10c8e25bb78b8b724ffbae350216466e9ae63a82f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6134d03dcb7c1d5187754a3817617a64e14e53c7ef3e0ea42db55dde17005ed"
-    sha256 cellar: :any,                 arm64_linux:   "ba05937608394f4b9481717a2676696010ebd8aa81bc09f9d8efda0174e4748d"
-    sha256 cellar: :any,                 x86_64_linux:  "f64263510253ac5e5ca2faa497ba810053ace40aa78d005124c597106e7c3ff4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a788bc98277b3f0791811e138c4213939c8bdd0e3cef3a0baefed527a3f15c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69c77b5a226632377e924a3d8ba08db623563ebb1f5d1076f080755e99c2857b"
+    sha256 cellar: :any,                 arm64_linux:   "e65b9948345478b711ddabc36d0e1ce91ad62dfcb9a7a85440e9672b3f601c3c"
+    sha256 cellar: :any,                 x86_64_linux:  "03f16254fbb11c498e1c85c1c37839fd36a175d0e718d9509c4a8d8bf4d4b409"
   end
 
   depends_on "cython" => :build
