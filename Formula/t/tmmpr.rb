@@ -8,14 +8,20 @@ class Tmmpr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f477d4cf4f3de7b41e1229de29d942cc643c8ae4c03debbe41719244d3e9fff5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7904848bbf88f0a852d844612506da9f9005bb3342a1e28e4d26cd0399da3a31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afcf3cc25e44e65b78c0bf5833c7da66c71f429d07111f63572754f067bed77b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4209599296d84ff79b9f3f0c4dfa5e226c987dda38da78af9c221b7e4124af6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0b5804943a2b0d05577165f769912c3f61f3686b2eb50ff97e2f42ad69a74d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a82d66c10219ef80d40590681f509ebe5af1b0ed7e5a62bd72510c60677028b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d3657e7049308201e3675c81f60c7dd05e7342150241d32d40a08f376c87962"
+    sha256 cellar: :any,                 arm64_linux:   "49712496200796433b9b4b60f525f3fabb9326ce8f14cdf214f9f3264448abc3"
+    sha256 cellar: :any,                 x86_64_linux:  "a428adcff32185cc38b45e609657021e7313076579867f1afdb751cd0bb17ae3"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
