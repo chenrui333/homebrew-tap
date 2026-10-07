@@ -8,14 +8,20 @@ class Tasktimer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7423695d29ff6f93744ecd727203012371c9a4c7d2ff327b63e546abd489594b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7423695d29ff6f93744ecd727203012371c9a4c7d2ff327b63e546abd489594b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7423695d29ff6f93744ecd727203012371c9a4c7d2ff327b63e546abd489594b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32b4cbb01f332d3e56cf7b615fe0b04aaeeb699710a827c87633da99a1ed9cde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8704793ceb1dfb00610690327fc7ba65ad9536ce2ebd800b66065b8e02ad8b68"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a8e39f62e2360bb91be295c927c5ff544df571c98b2df41d4464de4a93df5a62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8e39f62e2360bb91be295c927c5ff544df571c98b2df41d4464de4a93df5a62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb4d0cb0b2a94be94ad3393dae03434800d23951b8c1de39e65196f6345dbe49"
+    sha256 cellar: :any,                 x86_64_linux:  "600158f90574c62ba2f0a131cb6a5a59fe2f9e19680faeedf71643690a388cf0"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
