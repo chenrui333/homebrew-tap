@@ -8,13 +8,20 @@ class Tfui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0fe32824bcb592913837ea28f80d07b6681b857cad4cc9fb4b6231bcf25a8585"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fe32824bcb592913837ea28f80d07b6681b857cad4cc9fb4b6231bcf25a8585"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbf9da502f991f46c4d29adbf0da3c855334ac1eb6182945091ff51d84ae5004"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "249c4ce04300d25765b2bdc0ecdf6372f7f2374d0aae4819ce10cec463d0408b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fcff87c15601e72fe6ff43ce24877bef411da37ac618d21a144012f04befb3dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcff87c15601e72fe6ff43ce24877bef411da37ac618d21a144012f04befb3dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57b1e950b888c3ee08f478ced029c028ad50f6c032df300559fba02fc99d8609"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78151a4213ebb8ea92787f4d8cbbf01d0c737533595a419f90e92528b6d9085c"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ENV["CGO_ENABLED"] = "0"
