@@ -9,15 +9,20 @@ class Tpm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "587ddd77ce3e52181fe63c360f9acf2070e0bccacbc189f9aa80836e1310ecba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "587ddd77ce3e52181fe63c360f9acf2070e0bccacbc189f9aa80836e1310ecba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "587ddd77ce3e52181fe63c360f9acf2070e0bccacbc189f9aa80836e1310ecba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d64af2cabd5947cb7c9cd2e802f72ec06d2381b7a3b1d8cd59a6f632dabe57b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f25465b1b8fa9e7f89a46bc035c8cdc8676db364eed5141ef39208078df65468"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac74255ae087fc2ed5cdd3d980068d2c5b56d6f33c2e5e3e55e70914cf4be5bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac74255ae087fc2ed5cdd3d980068d2c5b56d6f33c2e5e3e55e70914cf4be5bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd1859327a827e9b9888a009ae82b8e505a29487ae4991274d7aa293b93225c6"
+    sha256 cellar: :any,                 x86_64_linux:  "57670ee05defc14e9139b06c9cb636c9726d824e3a382e3249af0005374cbd1c"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
