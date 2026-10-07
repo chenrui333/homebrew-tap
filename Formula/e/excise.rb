@@ -1,8 +1,8 @@
 class Excise < Formula
   desc "Surgical terminal storage navigator"
   homepage "https://github.com/findyourexit/excise"
-  url "https://github.com/findyourexit/excise/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "dc87d9f03c42afdc6474c7737b72c1e19164d7aff8ce05828deecb36f10d6cf6"
+  url "https://github.com/findyourexit/excise/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "a48ea802d3f42090e9d2298fb9f8c0d438c24babfe033e0795a56a61ed4d24f6"
   license "MIT"
   head "https://github.com/findyourexit/excise.git", branch: "main"
 
