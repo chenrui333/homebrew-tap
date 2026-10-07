@@ -9,13 +9,16 @@ class TerraformDiff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a214ec7d848d7a2d2fa0f517fb8731cf3402647dd28dcbac997b5ab60e58e6cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d00c9f08b4c0739e56a64403d4f78b7b53818d701106df40e1f14df28669716"
-    sha256 cellar: :any_skip_relocation, ventura:       "719e8ffb7971d5a81615da22e25c71e63b0097affc2a0102494e653f78288b0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "913efb8bee3baa2442e4e0bf9dfe4d9a4183ee00416c6f735326e8e180c7d46d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "094d3cbcbefd7ef7c7118576ce8bb246c8c864a4fb136e7db05dada9efbec555"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "094d3cbcbefd7ef7c7118576ce8bb246c8c864a4fb136e7db05dada9efbec555"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a61c5251217a9890e807ea917440f3d9cd2da17253016f37c0c0e2cc64adfe3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4549d29ed4e20b8d8a883cc620b3276a11d48e407d90f29ffd708dd064f8ad0"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
