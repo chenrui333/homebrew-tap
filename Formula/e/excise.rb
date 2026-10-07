@@ -1,17 +1,17 @@
 class Excise < Formula
   desc "Surgical terminal storage navigator"
   homepage "https://github.com/findyourexit/excise"
-  url "https://github.com/findyourexit/excise/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "dc87d9f03c42afdc6474c7737b72c1e19164d7aff8ce05828deecb36f10d6cf6"
+  url "https://github.com/findyourexit/excise/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "a48ea802d3f42090e9d2298fb9f8c0d438c24babfe033e0795a56a61ed4d24f6"
   license "MIT"
   head "https://github.com/findyourexit/excise.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7b95f78a961b304f214d1adf56862e4506504ad1645b0353f8f041187a5a73c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cec5963b5f60833beb3666941bb27b842f5642416175472aaa2de17038cea4de"
-    sha256 cellar: :any,                 arm64_linux:   "379bdaf03672885186441c941ac6bae223916bb64f2d2853c78fc83e602cf906"
-    sha256 cellar: :any,                 x86_64_linux:  "c4b1b00977e73ac1ef076434f4ba828210070309a29947d2975ed9faf3a70c56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "62b46282305f4c2d5300a1073afa8bed7757024a660849e386c6da322f1a1f5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8a84f50f2fc3ea1838b7855c1e812cf073278f9c241a8956df6cc982eee9ecb"
+    sha256 cellar: :any,                 arm64_linux:   "e56ef78cfc13140887d898140bc5bbeeadd8ce953783527f7cfad4e21456f84b"
+    sha256 cellar: :any,                 x86_64_linux:  "0a1f3ecff42c384031595239c97118b9af4ee4eb6f0cec77341b2a774d064e86"
   end
 
   depends_on "rust" => :build
