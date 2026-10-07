@@ -9,12 +9,11 @@ class Vsg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "24b27f0298b12d00e3ffd2424f1de5b0d203a63b62e213f7235d958f69ada5cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da93cadca0fb91ea70b2f7e5f02b916bbf71c15ebda0fd70cc864d69cfee2971"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebe22656f9b068241e26660fb690688a529b71431173c25ab73abeda7d3798cc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e103031e177f5c00162ff9368ca94e83b2da2d276fe15a132192f6937b14a20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ffee7d395585493e7e5516e6518e3471e5787f068cd68b7ab394c64995d39e8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7269d335e67e49993766211b97876dd8acaf1f8305f8757292ca8adc44c64a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69eb8aef8c7de5daef34bd0d5fb9d22969afceea10e4b9fda7879075d9980874"
+    sha256 cellar: :any,                 arm64_linux:   "d1063b3ffdfc50c66dadacf5f4565c0a5154a2651cd4e922b365decd1def7b3f"
+    sha256 cellar: :any,                 x86_64_linux:  "1dc7b78aaa4ad1d178fe03dcf10b35bdf1650325d5044a9469b7afb975bff21a"
   end
 
   depends_on "cython" => :build
