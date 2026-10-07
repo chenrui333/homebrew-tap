@@ -8,13 +8,20 @@ class Twig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2d878d3523cd135b3dc580e460a66a6aae64a5ede5e8f089a08bfd0442e72490"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2038156b36022351285d2cb9ff15958e8f9a1dd90a0a6aeec58e175fbca35243"
-    sha256 cellar: :any,                 arm64_linux:   "1aeec0050765bc91429397a98b301544d570221d5b12778c1854147ec10eb100"
-    sha256 cellar: :any,                 x86_64_linux:  "4fd884b039fd8d6d88625a2e66ed7c597600a99926660d5c973818ceced5ecdd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7559b8cc9fed570ed22d13e5c04bd9b21d3bf72f99307ef881a05d5f4c66aae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfc46c3d341527ea460ff737a6b74991234167cbb6095304fbaad85d33e1af01"
+    sha256 cellar: :any,                 arm64_linux:   "a59a1bc92be495cb54fe91404ff9305ff59d328132cdca6839246de6ccbaf5f2"
+    sha256 cellar: :any,                 x86_64_linux:  "79dd1556c0d4d3f346b9e132e31f7e6f8e532813bad7cb2c3fc35a29ad56fd8a"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
