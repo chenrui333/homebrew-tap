@@ -1,21 +1,29 @@
 class Wallust < Formula
   desc "Better pywal"
   homepage "https://explosion-mental.codeberg.page/wallust/"
-  url "https://codeberg.org/explosion-mental/wallust/archive/3.5.2.tar.gz"
-  sha256 "46c2592217f0de968437850b14b2e844f2af4158b70135b2b448dc426c0309a1"
+  # Codeberg regenerated the 3.5.2 archive (same tag commit); pin the tag commit
+  url "https://codeberg.org/explosion-mental/wallust.git",
+      tag:      "3.5.2",
+      revision: "b689616d630bb2e541695f101d313699464aac09"
   license "MIT"
   head "https://codeberg.org/explosion-mental/wallust.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b276b0d7cf7117c7e322f877e7877fd921f1f5a185629e659a2cf0af7ddd012a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c4af12dad6b39a05accb551e5b45a277e1053a8b2d6f9aaf5c38cc0898af777"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8579fe4c620f6f63fca82b33a0ea96f79c200c857e6a90106c39e20bf50b1e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f05339d3809a3c682dbeb1db6bdde0ccef8a462e9c4673f025a87ab4563a0b24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7e3fa4953127c06c69a9d4b0a6ad1e43804f2b55cb480f3c3e2c1d64ab525fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd8fcd535adf8545763f6be3ec30b0184b72b320708ab98afb4a5d76a64afdef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a2f5051b4ac8d5b5a621741e2fe11e92f0c696de2a9a98a7934942808d9d93a"
+    sha256 cellar: :any,                 arm64_linux:   "a68353a55d67cd145874aa269f536abc4a727266bd6e0ffe4c44f44888d71b5d"
+    sha256 cellar: :any,                 x86_64_linux:  "3efb400ba8895ff29f322f551d85fbdfa2376b7838b3275c2526ad11ce8f40ee"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -28,13 +36,18 @@ class Wallust < Formula
   end
 
   test do
-    resource "test_image" do
-      url "https://rustfoundation.org/wp-content/uploads/2024/07/cropped-rust-lang-logo-black-300x300.png"
-      sha256 "62df7205f3fc29db0a47bbd328789d64325bd88ea62b0bcc7418589dca7337c4"
-    end
+    require "zlib"
 
-    testpath.install resource("test_image")
-    system bin/"wallust", "run", testpath/"cropped-rust-lang-logo-black-300x300.png"
-    system bin/"wallust", "--version"
+    # Generate a small RGB gradient PNG locally instead of downloading a test image.
+    rows = (0...64).map do |y|
+      "\x00".b + (0...64).map { |x| [x * 4, y * 4, (x + y) * 2].pack("C3") }.join
+    end
+    chunk = ->(type, data) { [data.bytesize].pack("N") + type + data + [Zlib.crc32(type + data)].pack("N") }
+    png = "\x89PNG\r\n\x1a\n".b + chunk.call("IHDR", [64, 64, 8, 2, 0, 0, 0].pack("N2C5")) +
+          chunk.call("IDAT", Zlib::Deflate.deflate(rows.join)) + chunk.call("IEND", "")
+    (testpath/"gradient.png").binwrite png
+
+    assert_match "Saving scheme to cache", shell_output("#{bin}/wallust run #{testpath}/gradient.png 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/wallust --version")
   end
 end
