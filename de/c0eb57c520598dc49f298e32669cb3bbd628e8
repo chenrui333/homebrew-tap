@@ -1,0 +1,14 @@
+Formula/s/swaptop.rb
+  h_9df9c32c3f321d 20-28,34-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dec0eb57c520598dc49f298e32669cb3bbd628e8",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
