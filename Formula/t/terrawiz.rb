@@ -7,13 +7,24 @@ class Terrawiz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8d3c1a6f544475ec3c46e9be482bd4f9e0f67525b27392aa0f9484be5a7c38c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9abf24aab0dc2dc0186829a47e350e8cbbc9ade02aa820abf60cd3df94f7c5bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9abf24aab0dc2dc0186829a47e350e8cbbc9ade02aa820abf60cd3df94f7c5bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38a20ccf839750390969ada4a69155df87a06ce782a7ea794a2ce5ea030dd6be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38a20ccf839750390969ada4a69155df87a06ce782a7ea794a2ce5ea030dd6be"
   end
 
   depends_on "node"
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
