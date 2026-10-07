@@ -15,7 +15,11 @@ class Ziggy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b297225c4684b1a06082f1d1eee3ae963581589b2a7e100a87090b532efc5f75"
   end
 
+  deprecate! date: "2026-10-04", because: :does_not_build
+
   depends_on "zig" => :build
+
+  deny_network_access!
 
   def install
     # Fix illegal instruction errors when using bottles on older CPUs.
