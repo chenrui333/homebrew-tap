@@ -8,11 +8,11 @@ class Tcpterm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2fe5104cf28bfb888bbd8152e29413725d3fef27d2d767752eefda8553986f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1062b12e748f181284b5b83a96078b183a062bf226d7ccc620da2cbefbceb080"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e492c4c3fadfebd031b89a88b7f74c39605380c03b8acc51ca28f2c31c2f9f00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "52e45f936852cdeeb3a8b5259048b8fa13c8d551a797936e0cff7bb12184fc04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f824744d3d602983711498ca42e24d575b153474237d376f4c238722547e0eab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2addf5000b1497b17c6e81f19b4ef1f583d06d4902f3e5874a57278073333909"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab5d51e615477686a3e626fd9ba5607419629497439893efc419b6e8150341a9"
+    sha256 cellar: :any,                 arm64_linux:   "6d406f55d20ed80eae6d4cac4e4edca783d56d2ff3c7a3711bc4b79c6678fb5d"
+    sha256 cellar: :any,                 x86_64_linux:  "0e4eebca2e9c899752fefab5646092810cf326613769c4170fdc7d24dcf282c3"
   end
 
   depends_on "go" => :build
