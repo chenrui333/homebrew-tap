@@ -2,7 +2,7 @@ class Kandc < Formula
   include Language::Python::Virtualenv
 
   desc "Accelerate your Python functions with cloud GPUs"
-  homepage "https://github.com/Herdora/chisel"
+  homepage "https://pypi.org/project/kandc/"
   url "https://files.pythonhosted.org/packages/ee/3c/cc1a24bfef5f1d36e3fb1deefc3c91ca67802bfe0ae0dec531061e65698e/kandc-0.0.28.tar.gz"
   sha256 "e8b7246ab26ff5ccda0e6a0de054d3cad4088970bc4415635ef850dc4af80228"
   license "MIT"
