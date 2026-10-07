@@ -7,27 +7,36 @@ class Superclaude < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "461ae6a3bbeb20525f06f546496dcfc7d0e4c5737b001d9d1c268aec4baabc1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86758bac262253e192c5843716bf79e29f83fd97fb7fab3906d7aedeef483246"
-    sha256 cellar: :any_skip_relocation, ventura:       "89901ed6161658d27f069a316a6e75262462888bb319663cb69093e8fcd40d08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42a5f2935764e1cad2774308673288e4888bf513391dbfdae1f46e981a466120"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c59f563a078981432e9fc369508429f7996d7a9fc1851635240d7c8266c3bfc6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c59f563a078981432e9fc369508429f7996d7a9fc1851635240d7c8266c3bfc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "260ee15e82ebad1604de89e7fa89a81a770e0cd6f030a84d25e1d14d39e9878c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "260ee15e82ebad1604de89e7fa89a81a770e0cd6f030a84d25e1d14d39e9878c"
   end
 
   depends_on "node"
 
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/superclaude --version")
 
-    output = shell_output("#{bin}/superclaude readme 2>&1", 1)
-    assert_match "System dependencies check...", output
-    assert_match "Claude Code not found", output
+    assert_match "commit", shell_output("#{bin}/superclaude help")
+
+    output = shell_output("#{bin}/superclaude --not-a-real-flag 2>&1", 1)
+    assert_match "Unknown flag: --not-a-real-flag", output
   end
 end
 
