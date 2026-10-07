@@ -9,11 +9,11 @@ class Tfreveal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0460e1888917aa7d2021b8d79b725105fee7ba556d424e158982463ec58af760"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0460e1888917aa7d2021b8d79b725105fee7ba556d424e158982463ec58af760"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0460e1888917aa7d2021b8d79b725105fee7ba556d424e158982463ec58af760"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "080757248430086dbc9d4d38c9f5377aea34406c97b0e55123d1381d7d238f71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aef6e1944355b1db145f199b35f7e783357d1c9a0c545931ad1709985fb195e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c644e9414b9ebe849e49d36e12fc1189041706969ffd6d15b65bf8ed7a6dbd88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c644e9414b9ebe849e49d36e12fc1189041706969ffd6d15b65bf8ed7a6dbd88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da34568b4d10cc67713e4c9e4eb121ffc8f994c584a251819ece82ebfcabf624"
+    sha256 cellar: :any,                 x86_64_linux:  "f4bae813c9acf738103eb6f5f513bf4027b54b52efbac437d0c12dbc60cdbb08"
   end
 
   depends_on "go" => :build
