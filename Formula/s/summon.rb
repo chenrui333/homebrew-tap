@@ -8,13 +8,20 @@ class Summon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31e0e7d8524a475a7f3a7147d1f1bf668fcd95fa46bbe61c58e581aec2e0c95c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31e0e7d8524a475a7f3a7147d1f1bf668fcd95fa46bbe61c58e581aec2e0c95c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d1fde29144f1aa4d7519ab30a841af1a6b5c5f419e4f90ede1403578165391d"
-    sha256 cellar: :any,                 x86_64_linux:  "12801ceae1e49501a6a2838a374a1de198980a2a25889e4b2b2a6a2d18d95f04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c8881f1a9dd7b25e75266849aa8f119a298fb4fbeb0b07c49b650b87247c139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c8881f1a9dd7b25e75266849aa8f119a298fb4fbeb0b07c49b650b87247c139"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c3001aef1b5fc50e52fce10b7dd589681f231f05a19adb77eacc966799e83a5"
+    sha256 cellar: :any,                 x86_64_linux:  "b7f908e46fc48f2c55ccc0acf7636298abed89b3e62476cada725a1e4be3ea3d"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "tidy"
+  end
 
   def install
     ldflags = %W[
@@ -23,7 +30,7 @@ class Summon < Formula
       -X github.com/cyberark/summon/pkg/version.Version=#{version}
     ]
 
-    system "go", "build", "-mod=mod", *std_go_args(ldflags:), "./cmd"
+    system "go", "build", *std_go_args(ldflags:), "./cmd"
   end
 
   test do
