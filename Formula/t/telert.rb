@@ -10,10 +10,11 @@ class Telert < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "85989156b52fe6bf75bf8fac0ba93f7f8a6d76efc53a3516cf2ef52a3643008a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0eeee7de5df9b90c9f5a7736d082db87c9981ffaf0c3fe3d2252f1bebe4a73af"
-    sha256 cellar: :any,                 arm64_linux:   "086a405169fb2a02929f4e61f18e4442bf6e0faa0b42ff4296d45f6febc6cbfc"
-    sha256 cellar: :any,                 x86_64_linux:  "ba8f86555bf609d90d34e6f0b252c4e263a04be513bd2baa270e8ef9a66de95c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "721d17cbc9c9709e5ad9ee6444c1c495a45e5c66cc7e34236c44d338a2d2e2c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65c8e3ebfa31c254926d5030db991ee7fb0260266bb6b766634df4e361c93ac1"
+    sha256 cellar: :any,                 arm64_linux:   "81cd5b94a6d136ada07a6e4bf31f4c11b4bd831d9ab47fd4cd9f5dee3a1215b2"
+    sha256 cellar: :any,                 x86_64_linux:  "d79baae2aaca087110db391e3480427f5d9e930c3c0ea32e80702b75d54a6f54"
   end
 
   depends_on "certifi"
