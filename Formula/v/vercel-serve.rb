@@ -7,11 +7,11 @@ class VercelServe < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "04ac578e25b1d7528c7e065e6bd896a246df1efd80da57b3f2ff38814aa31a66"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04ac578e25b1d7528c7e065e6bd896a246df1efd80da57b3f2ff38814aa31a66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04ac578e25b1d7528c7e065e6bd896a246df1efd80da57b3f2ff38814aa31a66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c13114543af749ddb37fedab1d5535a7eed43113aec3999103a855d12b7886d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c13114543af749ddb37fedab1d5535a7eed43113aec3999103a855d12b7886d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "507d43066e499058c3d65ea3c625ea485635edeab089fc1bb8aff2f1f808f0e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "507d43066e499058c3d65ea3c625ea485635edeab089fc1bb8aff2f1f808f0e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7302cbcb49a8727eff28d9c3509ed129e2bff28e51cb0e5ff2a89133ed1151b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7302cbcb49a8727eff28d9c3509ed129e2bff28e51cb0e5ff2a89133ed1151b8"
   end
 
   depends_on "node"
