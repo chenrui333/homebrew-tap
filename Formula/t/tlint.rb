@@ -8,18 +8,20 @@ class Tlint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c002f1c40f5d049d7c97090ef3abe974d450ea80730d4de4ce394bb0ba650d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e69169df5613671504dc53fadcb3a33cef3574bac983234e946b82b8c9e0351"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e69169df5613671504dc53fadcb3a33cef3574bac983234e946b82b8c9e0351"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f41d40f09dd3a7b05de6f2d5863ec7f3ba2638c2125c40bd28ceee3afc1b2410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f41d40f09dd3a7b05de6f2d5863ec7f3ba2638c2125c40bd28ceee3afc1b2410"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7d8764b51e699a2ba4c09c3a6e30d48167a0adeb2d443cb15b92a04123edfe14"
   end
 
   depends_on "composer" => :build
   depends_on "php"
 
-  def install
+  deny_network_access!
+
+  def fetch
     system "composer", "install", "--no-dev", "--prefer-dist"
+  end
+
+  def install
     libexec.install Dir["*"]
     (bin/"tlint").write <<~EOS
       #!/bin/bash
