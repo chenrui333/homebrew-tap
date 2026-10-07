@@ -10,10 +10,11 @@ class Taskdog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "a0ddf70e89fa8863734481d22a147adcdf7e900e35db40c8972811a2b9bea5d0"
-    sha256 cellar: :any, arm64_sequoia: "19342f6b84fc52caf3d00de37f1a081ab0fe01751342219480d503f6a6d43398"
-    sha256 cellar: :any, arm64_linux:   "8b2cae2803e04804aef2c31ea615317ef242bd6b16e6729c6912d1181f18dfcd"
-    sha256 cellar: :any, x86_64_linux:  "02406adaf1bb51db1be022104635573049c15db580d3f59f817f7b039a9efa67"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "e98da22473cfc05e95dc233ca9ed9765c25c8f81687c2bf23392ecd20441207f"
+    sha256 cellar: :any, arm64_sequoia: "3ccf2ac4e2feb83fdd94b1d50bce346355e87bc48fe25c3abba1a16f85507d63"
+    sha256 cellar: :any, arm64_linux:   "af47f3d6efcd9b1d46d7457e69d7cc39f4d1116b652b3518fa16c65da2a6908c"
+    sha256 cellar: :any, x86_64_linux:  "77aa13552990e6109fa48919babc2cbb3699e48c0b27e4a2f5b3eb8be8323777"
   end
 
   depends_on "cython" => :build
