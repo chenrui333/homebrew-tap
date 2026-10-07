@@ -9,21 +9,56 @@ class Swaptop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "9645bb9636e0f68de04f608e431e10527d5c5258b0097a2920a16cb4dd4ba887"
-    sha256 cellar: :any, x86_64_linux: "ebc1382036ea76a68e8233cf795e489ec014f83e26720a57ee312fd3ad5a62df"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "0388f893caae5eb8ece6cbe1f38fdfa0eceed65c41635487f242373f95ffc0fa"
+    sha256 cellar: :any, x86_64_linux: "bea38a8b321f9ff40f281f574ec8fd036f9dde8d19a0dd69cda93b192aca3e8b"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    # Fix the stale swaptop version in the v1.0.6 lockfile (Cargo.toml is 1.0.6).
+    # TODO: Remove in the next release.
+    inreplace "Cargo.lock", "name = \"swaptop\"\nversion = \"1.0.5\"", "name = \"swaptop\"\nversion = \"1.0.6\""
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
-    output = shell_output("#{bin}/swaptop --version 2>&1", 101)
-    assert_match "failed to initialize terminal", output
+    require "pty"
+
+    # Upstream has no CLI flags; drive the TUI in a PTY and quit with `q`.
+    output = +""
+    PTY.spawn({ "TERM" => "xterm-256color", "XDG_CONFIG_HOME" => testpath.to_s },
+              "/bin/sh", "-c", "stty cols 120 rows 40; exec #{bin}/swaptop") do |r, w, pid|
+      Timeout.timeout(30) do
+        loop do
+          output << r.readpartial(4096)
+          next unless output.include?(" swaptop ")
+
+          w.write "q"
+          break
+        end
+
+        loop { output << r.readpartial(4096) }
+      rescue EOFError, Errno::EIO
+        nil
+      ensure
+        begin
+          Process.kill("TERM", pid)
+        rescue Errno::ESRCH
+          nil
+        end
+      end
+    end
+
+    assert_match " swaptop ", output
   end
 end
