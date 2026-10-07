@@ -10,10 +10,11 @@ class UserScanner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69f9b73e9ab8a6e7614628f67b5ea457743d276ee5435e0798669b27476a571d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "347bdeb7e1dfd2548ecde86175b6106502b79882603dfc085e1e48fefa606917"
-    sha256 cellar: :any,                 arm64_linux:   "d060fe09f26153775fbcd96ba19e8158f85ddd9b905a30af41cfad41a7430840"
-    sha256 cellar: :any,                 x86_64_linux:  "2a316fd54d3fa53b2b8e5619fab88c0f50c23e6e2b7a51dbb6a89069315fb80b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bfae6c76676f5eb63b53143d3b09377a6c2f97bc17f7212f7eacbe2f586c6fa2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b33b7460d3dac417c48892f560c4d3592fc4344fcbce170232386d4453b0cc5"
+    sha256 cellar: :any,                 arm64_linux:   "a8678c86b7db7d0a5d4c4ca31cc23b4b8d3ee25c9f908f4bb1db152fd479dabe"
+    sha256 cellar: :any,                 x86_64_linux:  "b7f2d4aa1b4c80eaa86bcff02391f11a5dbcc4aff11de96883ca1ffdc531eaec"
   end
 
   depends_on "certifi" => :no_linkage
