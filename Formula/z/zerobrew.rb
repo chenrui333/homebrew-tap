@@ -8,13 +8,20 @@ class Zerobrew < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d4673a569f26dce19be2c6cdd6907fbcd12f766a9c4fa90491d42984b7160e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc766a9bf9a3b48e1ca35c951e2fea8a5dd302a880b793e3c67e07bec86216bd"
-    sha256 cellar: :any,                 arm64_linux:   "609383a8f927cd96df5c7aee2d98f669b81096e047bcbd6bb19265ea75f28bbb"
-    sha256 cellar: :any,                 x86_64_linux:  "66f9e6b74fee847ed13f073f492cdde644419887c250e742ee351adb26f494f2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "911f577305f282d40794403142f7b06cb75228e8bcf439392a8f5f707f6312df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ad90377da392b91c37ce58582312de9429957ab3a0f3a13cfa89417475ec33b"
+    sha256 cellar: :any,                 arm64_linux:   "f609be9dff4c0543f4e0e32db2f7a3cd467c27aa8a1649004e268131054e606f"
+    sha256 cellar: :any,                 x86_64_linux:  "b44977a56b46d3b9f9b88b5abd922be93d367a9ef0af0c6203e6956bf01d1858"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     inreplace "Cargo.toml", /^version = ".*"$/, "version = \"#{version}\""
