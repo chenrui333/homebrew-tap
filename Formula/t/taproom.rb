@@ -8,14 +8,20 @@ class Taproom < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "849f8beff4f9a66be27677667030c9f9a47c7b5b4465537a9c758f3d5f00d13c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "849f8beff4f9a66be27677667030c9f9a47c7b5b4465537a9c758f3d5f00d13c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "849f8beff4f9a66be27677667030c9f9a47c7b5b4465537a9c758f3d5f00d13c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa34ef3f17c07123bdd5bd5f00d28319692838ca47e8d9a61006be437b8054bd"
-    sha256 cellar: :any,                 x86_64_linux:  "d8beee0c51921e9171e4bf538b17414ac5e766632ddbe80ba7d4919931dd8f97"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3c6cbf766372f9971e8fc288a273cddcd096069f25d00c98b4be755e2a8e931b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c6cbf766372f9971e8fc288a273cddcd096069f25d00c98b4be755e2a8e931b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d205e4ef1d926bb8643fbc9f213f0f254c7461996df7957be6682ea20479982c"
+    sha256 cellar: :any,                 x86_64_linux:  "1c9681d79fbf1a8d8c265163909ae39f30aa62a112fba87160547c4faaf83990"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     # v0.6.2 predates the upstream version-file fix: https://github.com/hzqtc/taproom/commit/a26afac788a5122356bf9c07c3c3d04fabae76d3
@@ -26,17 +32,10 @@ class Taproom < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/taproom --version")
 
-    # Skip test on Linux GitHub Actions runners due to TTY issues
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_match "--invalidate-cache", shell_output("#{bin}/taproom --help 2>&1")
 
-    begin
-      output_log = testpath/"output.log"
-      pid = spawn bin/"taproom", [:out, :err] => output_log.to_s
-      sleep 1
-      assert_match "[1/6] Loading all Formulae...\r\n[2/6] Loading all Casks...", output_log.read
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
-    end
+    # Theme validation exits before the TUI starts loading data from formulae.brew.sh.
+    output = shell_output("#{bin}/taproom --theme bogus 2>&1", 1)
+    assert_match "Invalid theme: bogus (expected auto, light, dark)", output
   end
 end
