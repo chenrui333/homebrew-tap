@@ -8,14 +8,20 @@ class Tori < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "79d2effebb17133d3facc47bec517459b2fc53561f101ad56cee74f75fa1309f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79d2effebb17133d3facc47bec517459b2fc53561f101ad56cee74f75fa1309f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79d2effebb17133d3facc47bec517459b2fc53561f101ad56cee74f75fa1309f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71dab7f4c7bc1d97d03185ef8073aab3142e491fbbc110251270970108751b4f"
-    sha256 cellar: :any,                 x86_64_linux:  "92f7021e82e502509f3b63c61a59c40a5edaa7da1bf789c959bdb03ddf2e0399"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4da8f62daddd836a7ea133f724685c5545a707e637dadd71ecba7f63d081da04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4da8f62daddd836a7ea133f724685c5545a707e637dadd71ecba7f63d081da04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f214b7eb992725c015e8b6b42c7ca1050be641670af5be3904a20dabebd2b3c6"
+    sha256 cellar: :any,                 x86_64_linux:  "8232266178503b5b7ce152ed76766392727647a35c87d497a4795afba4753331"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     ldflags = %W[
