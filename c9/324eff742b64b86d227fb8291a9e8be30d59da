@@ -1,0 +1,14 @@
+Formula/z/zig@0.13.rb
+  h_9df9c32c3f321d 33-34,44-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c9324eff742b64b86d227fb8291a9e8be30d59da",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
