@@ -8,13 +8,20 @@ class Tornado < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff70b19692c7b625a051e5508f400ccdcac1ef37e8b038ba5de1c3d2b4b55328"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff70b19692c7b625a051e5508f400ccdcac1ef37e8b038ba5de1c3d2b4b55328"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "386ca1be334785f56404d60571d31e7356877d1b0c31b4b8d7bd905c24c006d7"
-    sha256 cellar: :any,                 x86_64_linux:  "74649dfe9399d668a47db65f289e3ab2e79497fd5772bae120c7af961045f86a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d08732acb3fee0e823c1626319c78625ef202a8494bc477a5e919cbdc7d9dfe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d08732acb3fee0e823c1626319c78625ef202a8494bc477a5e919cbdc7d9dfe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4418a75f8e8d4872b15b80785379f9d10eff04d3c575ad6f2606e1a6fa2df1a"
+    sha256 cellar: :any,                 x86_64_linux:  "c2660165074fb9141c888ad2c4d670f2c28e44ebc0cdc5f8d670ed0d22e061a3"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/tornado"
