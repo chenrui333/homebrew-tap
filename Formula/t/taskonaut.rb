@@ -7,7 +7,8 @@ class Taskonaut < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "7f6d3ca466eb54b216252e26d73b0ab5e254314c3072bed5a4230292c2ecfeb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "9423bf429f3ec54af1f0688088e37a75c7afa71ccee192cade71da8ef8a5cd21"
   end
 
   depends_on "node"
