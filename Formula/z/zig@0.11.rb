@@ -11,10 +11,9 @@ class ZigAT011 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c2c5723cf40a1eb1fcae5e36a3dc9e94bd0f5d05c03053ea6b0ba0b111171f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07ca46c8d8859c107bd218eb384357f7a3dea754cd9d074ade3ec8b4c6b58e97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e12f715a53605e92778344a7085f969092236f2e689c51e8affb52a7de056758"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6aef85c5baee590578b120190602947e2a9c00e5dd8d16b5a57e84fd4f1c7c47"
+    sha256 cellar: :any,                 x86_64_linux:  "2664d428c2421327cb265b0cf476bcdef6f2a599bb5554b660d67c1edd8db8cc"
   end
 
   keg_only :versioned_formula
