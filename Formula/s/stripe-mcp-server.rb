@@ -7,7 +7,8 @@ class StripeMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "5d6e897667757b80d65c1240527e8949771b4f1b1a733d0b6672c26e5c9e65af"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "7b28ce80ad562f9d5508153e04c850b5aa1deb91ce033b28588458e74f930e2f"
   end
 
   depends_on "node"
