@@ -8,11 +8,11 @@ class Tascli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "768dc6f8c6a83f136cd4ce64fe95eaf0ef2aa5c9492daec5108971328693606c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8efeefba6193d4eadca04cb0a94d466e1885343a3c8ba9f17b3bea9159774b17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd436f0fa4d12ddc3a2bd0aa850c295a3bf5cf46a9e798ee3ee5d96a7a458544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43112b9b2564ce77cd273a1bd0e60f54d92989bf674699efb38c5938648f3693"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0b311a7440e3fac0a5f985cddf54e45a8b929b3abca530c691c088a23877c20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e66230948176aa9f3be92219bee13f064ff2353ee56894728b310db2f6ff9aa8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e925c48f00d6a1ea3e2d3c09a8d2209f265ae3eb12642fff9846c8578277f1da"
+    sha256 cellar: :any,                 arm64_linux:   "a9081fa6d18027ab72df36673c4a39f1bada7d91dc1f9e16772b96a387d43f87"
+    sha256 cellar: :any,                 x86_64_linux:  "296c7cc141b9872195f8f5c719e0d45c909899b8351f43eb984286e3f930b5f2"
   end
 
   depends_on "rust" => :build
