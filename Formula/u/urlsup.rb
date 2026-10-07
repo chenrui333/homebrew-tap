@@ -8,13 +8,20 @@ class Urlsup < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e2d461463bc66be7fa9572c3f725aa039fa02d359de525c3d3880b89d62a410"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cada3a59279b1d55b0eda1884b682981bc791b82cf2cc26aa44f6d045dc39af"
-    sha256 cellar: :any_skip_relocation, ventura:       "a4cb16b0342319f4c070c99ea101618168d7df4d8339cc51d68e09ef44dbd977"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ed1573e79f64e4dd36f10abadafa7e40872aea240a32c34a6cdf1c8d8986c1a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e123fec88cb47f607cef84afe31e830242524dac7c80991661982fbd4a811e09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1e262b2166645f26d4b38156bce8d0214ee3f38b53a5f59c4084592f033542b"
+    sha256 cellar: :any,                 arm64_linux:   "18b4386382433af89ca0d051af6204666e2c50254b09b94af67f7a8db5af610e"
+    sha256 cellar: :any,                 x86_64_linux:  "b170bb29491b92e9f6b44a823f93078a759c018e95c4ff2c95b9969a9b404f50"
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -23,7 +30,7 @@ class Urlsup < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/urlsup --version")
 
-    # real link + fake link test
+    # URL validation needs external network; check discovery/filtering and local errors instead.
     (testpath/"test.md").write <<~MARKDOWN
       # Test
 
@@ -31,8 +38,13 @@ class Urlsup < Formula
       - [ ] Invalid link: https://invalid.invalid
     MARKDOWN
 
-    output = shell_output("#{bin}/urlsup #{testpath}/test.md", 1)
-    assert_match "ound\e[0m: \e[1m2 unique URLs", output
-    assert_match "1. client error (Connect) https://invalid.invalid", output
+    output = shell_output("#{bin}/urlsup #{testpath}/test.md --exclude-pattern google " \
+                          "--exclude-pattern 'invalid\\.invalid' --format json --no-progress")
+    report = JSON.parse(output)
+    assert_equal 1, report.dig("files", "processed")
+    assert_equal 0, report.dig("urls", "total_found")
+    assert_equal "success", report["status"]
+
+    assert_match "File not found", shell_output("#{bin}/urlsup #{testpath}/missing.md --no-progress 2>&1", 1)
   end
 end
