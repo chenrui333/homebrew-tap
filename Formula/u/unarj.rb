@@ -12,18 +12,14 @@ class Unarj < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3feceaef70cef3d3f54df2941c2b183ccf614cdf0015090d817486b352715b8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbf4dbb61c79b57ef9fd60755a62b2e6ed009ae4691bdeffed293e1b05f463fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50661363548d642668fcbd471fcffc7f4c53f908af74a29392df0254a9e70a9b"
-    sha256 cellar: :any_skip_relocation, sequoia:       "ca2fabb243c6c48585774d9d030571ba278fce7fd5a6f77e58fd9aa73933b37d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1f31155b12dba8ee64007976cf71343a59e4cbca6fa621316180bfd5110434f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "350540b306667b67891a2b9a783b5c4fd5fb269edf7671be75c4eedd994733bc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5770d2315944b894ab7f2576251d9156d203d0db757dc81bac377d20c047227b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52c3ac4e539cf7e3495b03abe3a8ae253a6712f747630a4cc46b4e939bf1e0ac"
+    sha256 cellar: :any,                 arm64_linux:   "bb673349a745e452c20359162b6531055154e7feef66c4a459a094d42c6a28b6"
+    sha256 cellar: :any,                 x86_64_linux:  "f05b012df01b649cd2e07c08df79f3764071efd7078a597bc1ef29f930470768"
   end
 
-  resource "testfile" do
-    url "https://s3.amazonaws.com/ARJ/ARJ286.EXE"
-    sha256 "e7823fe46fd971fe57e34eef3105fa365ded1cc4cc8295ca3240500f95841c1f"
-  end
+  deny_network_access!
 
   def install
     system "make"
@@ -32,10 +28,13 @@ class Unarj < Formula
   end
 
   test do
-    # Ensure that you can extract arj.exe from a sample self-extracting file
-    resource("testfile").stage do
-      system bin/"unarj", "e", "ARJ286.EXE"
-      assert_path_exists Pathname.pwd/"arj.exe"
-    end
+    # Extract a stored file from a small ARJ archive (main header + one file header).
+    arj = %w[
+      YOooAB4LAQIAAAIAAGwrWgAAAAAAAAAAAAAAAAAApAEAAHRlc3QuYXJqAADX+szjAABg6ikAHgsBAgAAAAAAbCtaCQAAAAkAAAC0
+      96PUAACkAQAAaGVsbG8udHh0AAAp6W4fAABIb21lYnJldwpg6gAA
+    ].join
+    (testpath/"test.arj").binwrite arj.unpack1("m")
+    assert_match "CRC OK", shell_output("#{bin}/unarj e test.arj")
+    assert_equal "Homebrew\n", (testpath/"hello.txt").read
   end
 end
