@@ -1,8 +1,8 @@
 class Dloom < Formula
   desc "Dotfile and configuration weaver tool"
   homepage "https://github.com/dloomorg/dloom"
-  url "https://github.com/dloomorg/dloom/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "5d01c61d102dc91b2cbe472626d1cc495f605a66684f8587d6113dd66a8bd1ee"
+  url "https://github.com/dloomorg/dloom/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "75035d1f5eb1de02a8242fc7a259099be47ac8703a654a11c9b6ce4d3131c2e5"
   license "MIT"
   head "https://github.com/dloomorg/dloom.git", branch: "main"
 
