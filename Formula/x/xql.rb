@@ -8,13 +8,20 @@ class Xql < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3407a296c02d1712ae1c870de18f7e0dca978077794843c1ef984a72122ea560"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3407a296c02d1712ae1c870de18f7e0dca978077794843c1ef984a72122ea560"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fea80ace01eb8b31546a23aa8dc83ee4b81f6d9869999ca79e7a127de7912c02"
-    sha256 cellar: :any,                 x86_64_linux:  "1948bf09c281148313186b85ff3bfe7d80979ecd5a4100d44c96469608d02d43"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3bf528ac8b424289efba9ea54bd40d9cd0170b7cdf18b7a80fce06e9240f353"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3bf528ac8b424289efba9ea54bd40d9cd0170b7cdf18b7a80fce06e9240f353"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4167f4bb4666e34bcb7a25a8c12790d2e543bffa3081931130abdfc535650663"
+    sha256 cellar: :any,                 x86_64_linux:  "11beb25a2744b3df4e4ab043074814a644f5cedfa6a69140cd3c25b14ffb95f2"
   end
 
   depends_on "go" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/xql"
