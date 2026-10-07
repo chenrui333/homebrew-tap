@@ -8,11 +8,11 @@ class StylanceCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82641aeacf729febadd40f706ffdcd1b7326c52e35e69a7538f92287c2f2ed58"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad739d9c4a081d267122e4362dc9825212ab8043c4ec24e302c90e4961c299ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abfd13a6d0c8a925e79e22844a548016b70dddbe3672787974efa3dfae635440"
-    sha256 cellar: :any,                 arm64_linux:   "ff983785da8d72898c1f845050272e49852d3c3fb8273c3f6e09488e69717423"
-    sha256 cellar: :any,                 x86_64_linux:  "ed6fede4f39fb38b4fef69dec1543b5804552ba50318c6b9fbed59a475cfdce0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "845a893bd5fbac58a7298992850af75bb369d7dff58dc17a6cc381a10e416ac6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "692f14e17ba1ca4a6131046c035750dff41d946be5fd72eb79790154a3f60365"
+    sha256 cellar: :any,                 arm64_linux:   "047c34c9a5e4f0a2f08c40ba0f74fe897c4c72b10f202956dfa5529d7fc0a9f0"
+    sha256 cellar: :any,                 x86_64_linux:  "36c597368745dfa1810e17f0ff248c95f7eb21af94dbc4fa82374e935130bf4a"
   end
 
   depends_on "rust" => :build
