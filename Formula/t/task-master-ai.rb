@@ -7,11 +7,11 @@ class TaskMasterAi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "b73c8936832232cded1bf7b33544e1703ff2a4312f2e15830377ccb6f30777ed"
-    sha256               arm64_sequoia: "66870ece186a4d08ee4ee4bfc3791679d899a25188c621cbbc1d8cf98b5b74db"
-    sha256               arm64_sonoma:  "66870ece186a4d08ee4ee4bfc3791679d899a25188c621cbbc1d8cf98b5b74db"
-    sha256 cellar: :any, arm64_linux:   "e2cb45228de61b4df9d32b71e1ca8dadd36da910a211aba339d672f49af6b4c2"
-    sha256 cellar: :any, x86_64_linux:  "0a78cec072e91b25eba9692416665fee67a6a3b4286f1361fe7b01b4dcb81cc4"
+    rebuild 1
+    sha256               arm64_tahoe:   "aa669277784e88080ceb6498a82a1e3041f8940853e07b5f1b45ea924336fd8b"
+    sha256               arm64_sequoia: "aa669277784e88080ceb6498a82a1e3041f8940853e07b5f1b45ea924336fd8b"
+    sha256 cellar: :any, arm64_linux:   "9d89b707d4dc8552e897ed7cfec5ee0782e302e8487226a3e59555e2a7e42d51"
+    sha256 cellar: :any, x86_64_linux:  "5486f2c93146d1cc62c8c38497f162b0220720df940ca576ae0d3a4de7624275"
   end
 
   depends_on "node"
@@ -20,8 +20,15 @@ class TaskMasterAi < Formula
     depends_on "pcre2"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
+  end
+
   def install
-    system "npm", "install", *std_npm_args
+    rm_r buildpath/"npm-fetch"
+    system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries
