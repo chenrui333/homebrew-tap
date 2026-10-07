@@ -7,10 +7,8 @@ class Yosay < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbc05e2a410b01019dd390c58637486229587581474b05c97608bff4cb67008d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abd933f6d90b20087d50d0d47363792c5b47a62abad51dc66c614cdcf26b2119"
-    sha256 cellar: :any_skip_relocation, ventura:       "ed3a28b6a26e97c14b0d5939029ecbcff10f7e17eecbcfd2f5d7014c19c9445d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e3f0161d8610c355b800e3e310a406a3ea49b9fd3061a5f93c6e8483611c4d0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "dc4c5568b6516662da32b8d4543c5796ff40edc568e3748c68df99ac33005a47"
   end
 
   depends_on "node"
