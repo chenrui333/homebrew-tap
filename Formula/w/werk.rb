@@ -13,15 +13,22 @@ class Werk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a8cead57b43778fd064e5a1d60a3155451119d321a9e286252522429d78f33e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2354f37a29a0bf26659a19c2336a29150faf44539156b977ca3d44a1e0dd4021"
-    sha256 cellar: :any_skip_relocation, ventura:       "c68257ade093796112508384e08f59902189b715a91968227ec2df34ef33130c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cb96a3c380ccb88c17b789b343f57f3e5331db01fe6a03b6a24d0c52bf9b652"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95cd5f5092ade035f824ab29e2200d9809a75a0fed676be07cbf1e658bda8f0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ad42c8b2256d031f58747169fef682ee96b035a586778b1b8be089f9a325d0"
+    sha256 cellar: :any,                 arm64_linux:   "ed9da3d86ee2c14fb3ae32f8f2ade43c1f68d94717bd5b04f7531c9dfcad4a1b"
+    sha256 cellar: :any,                 x86_64_linux:  "cc7e8b7613a21809327a370b47a7a961aeb64b47bde7906aacff5af43da9d56c"
   end
 
   depends_on "rust" => :build
 
   patch :DATA
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "werk-cli")
