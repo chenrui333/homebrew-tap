@@ -9,12 +9,11 @@ class TerrapCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "592781b1ba501ec1b921cb71bcd5ed5c76593a91e1ee204c90819cec5e116ff8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "592781b1ba501ec1b921cb71bcd5ed5c76593a91e1ee204c90819cec5e116ff8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "592781b1ba501ec1b921cb71bcd5ed5c76593a91e1ee204c90819cec5e116ff8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7f819a72975fb230b080740cce0ac32de6abff2c05867a0e4b928fc7023e2573"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af731c4e99096d2bc7719901124dabc4c7dc0bf65075daa2133c51a153a8cce2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0fa663423d347fac2ecb417a3558935fd07e26d17a3edc0052057d81cb1105e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0fa663423d347fac2ecb417a3558935fd07e26d17a3edc0052057d81cb1105e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e91f5069c55116330ba92b694cbe2cc5f568df59dc7b14ba6906ce64de33f33c"
+    sha256 cellar: :any,                 x86_64_linux:  "02b210522b7a3956d87168e0e43c28cb881600870485690538ef1eb2b79dc894"
   end
 
   depends_on "go" => :build
