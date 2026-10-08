@@ -1,8 +1,8 @@
 class Datui < Formula
   desc "Data exploration in the terminal"
   homepage "https://derekwisong.github.io/datui/"
-  url "https://github.com/derekwisong/datui/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "67c302f38bc1549febc302318d42866305a4fd582e775ef9c19d99794f6dac80"
+  url "https://github.com/derekwisong/datui/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "98cb55b978b4309e0b35719581366df41abaa340b2747881def34ee6d1aeecec"
   license "MIT"
 
   bottle do
