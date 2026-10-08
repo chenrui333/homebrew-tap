@@ -1,17 +1,17 @@
 class Gorae < Formula
   desc "TUI librarian for PDFs and EPUBs"
   homepage "https://github.com/Han8931/gorae"
-  url "https://github.com/Han8931/gorae/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "b61a3d7b48f483669b4000f3db4c14062e881a64664b96327a26c77d45bb8e08"
+  url "https://github.com/Han8931/gorae/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "5922ff240de97c4f8e842395b14d0a255821387684c570f818e483eec09b7406"
   license "MIT"
   head "https://github.com/Han8931/gorae.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c9f445ac456eb27921ba207fb05452235e5fc8a7db2a3b50e7f44b2afcfe663"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c9f445ac456eb27921ba207fb05452235e5fc8a7db2a3b50e7f44b2afcfe663"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c83aa8a6a20d7c2b3991c982b27f0dac4939c4cf641a2841fc53f107523aecd5"
-    sha256 cellar: :any,                 x86_64_linux:  "aa8294a8a352aff0f97a8b6676ba0422fe5b80ee9f670f1f685e8c8bf8abd12b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "355e68395d45cdc0072c7229dafcaf35a29ab47cb7c1833c9133d7891d0ac46f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "355e68395d45cdc0072c7229dafcaf35a29ab47cb7c1833c9133d7891d0ac46f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b9205634e686561589f68edafe6312ee7de623419dd2c6975469e72984a7def"
+    sha256 cellar: :any,                 x86_64_linux:  "962b44f93146e1186cd1c86776b623dec2750555e3c038d4084d30ab6e22fa8b"
   end
 
   depends_on "go" => :build
