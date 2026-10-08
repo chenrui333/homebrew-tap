@@ -2,18 +2,17 @@
 class Mdslw < Formula
   desc "Prepare your markdown for easy diff'ing"
   homepage "https://github.com/razziel89/mdslw"
-  url "https://github.com/razziel89/mdslw/archive/refs/tags/0.17.2.tar.gz"
-  sha256 "e290f36a321da01f0135f37e2c98ff95e0317c1a024b074c5320ac15fe11798c"
+  url "https://github.com/razziel89/mdslw/archive/refs/tags/0.18.0.tar.gz"
+  sha256 "4a6bb638a6632ce9a75aa6d4b02cb7c987432068e0f91b970fa9cc20392d7d36"
   license "GPL-3.0-or-later"
   head "https://github.com/razziel89/mdslw.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3fb911b46f0d916ffe04a9538af547445c600676d7d3e82b8b76de830a1324d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6484004351ef8ef1a7bf226758d5f6977ffde259f719e6e8ed2c601c1251247"
-    sha256 cellar: :any,                 arm64_linux:   "f1cbe06bde28454fd3b371e441f36e9f948d78a93709ed43bcf082c59125c43b"
-    sha256 cellar: :any,                 x86_64_linux:  "a8c63fa3a8b09a4ba63a3c5c033ca48a9ce3d855dd67416674be25955b55ed2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1217bd7f0f05654522eefa9a709fc5732cdc325dd94c6532cb257d7690371382"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5462581985f71bb4db8f8ed7c9386b51c689a9746ee0bbcc052627d3caa6ebe2"
+    sha256 cellar: :any,                 arm64_linux:   "200ac9ea9d360033da2b6ecacbe23f6caf80b40437d25f66ff1bedb959fb9c57"
+    sha256 cellar: :any,                 x86_64_linux:  "e6a8a62a5d4b550f6813c5d410f737c4bf0fbbbaaf56db2c408fc89855514b40"
   end
 
   depends_on "pkgconf" => :build
