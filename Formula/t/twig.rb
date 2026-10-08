@@ -1,8 +1,8 @@
 class Twig < Formula
   desc "Terminal-based JSON and YAML viewer for exploring large files"
   homepage "https://github.com/workdone0/twig"
-  url "https://github.com/workdone0/twig/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "1d9378a2846b4b0a128a28c2c73e0d1edc48602294bc45a5664e8ec1e51c10f3"
+  url "https://github.com/workdone0/twig/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "91284428e805ed14e8fedc80adadd258c5641cb6d0aa97e63855891cb80f9a63"
   license "MIT"
   head "https://github.com/workdone0/twig.git", branch: "master"
 
