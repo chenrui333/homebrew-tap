@@ -1,13 +1,13 @@
 class Ponytail < Formula
   desc "YAGNI and minimal-implementation plugin for AI coding agents"
   homepage "https://github.com/DietrichGebert/ponytail"
-  url "https://github.com/DietrichGebert/ponytail/archive/refs/tags/v5.0.0.tar.gz"
-  sha256 "f1ca943cac3b7a9b269fce69e4b1edea04913312814eb1ddc4876efb1feaecb8"
+  url "https://github.com/DietrichGebert/ponytail/archive/refs/tags/v5.1.0.tar.gz"
+  sha256 "274eb980c585d09021d73c06422a9dbda8230a2ccc562662b844428e83a91ad0"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "e186c2c953e4ce78bfbd85718e1cf935893a1009ac736c312acab1c71a36a2a5"
+    sha256 cellar: :any_skip_relocation, all: "68864a5ccd91af90e19110113731be803edafdc818a0cb943a61b1af894b3505"
   end
 
   depends_on "node"
