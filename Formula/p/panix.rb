@@ -1,8 +1,8 @@
 class Panix < Formula
   desc "Deploy Nix configurations across machines"
   homepage "https://github.com/mihakrumpestar/panix"
-  url "https://github.com/mihakrumpestar/panix/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "c32b471c1a837ccb5789fee895fd724784df0692f5130d8d6e29b18cc4804947"
+  url "https://github.com/mihakrumpestar/panix/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "f86a241ae66234f78eac77516957885874a87a33f7a8be430051959e74914ddc"
   license "AGPL-3.0-only"
   head "https://github.com/mihakrumpestar/panix.git", branch: "main"
 
