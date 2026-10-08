@@ -1,18 +1,17 @@
 class Twig < Formula
   desc "Terminal-based JSON and YAML viewer for exploring large files"
   homepage "https://github.com/workdone0/twig"
-  url "https://github.com/workdone0/twig/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "1d9378a2846b4b0a128a28c2c73e0d1edc48602294bc45a5664e8ec1e51c10f3"
+  url "https://github.com/workdone0/twig/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "91284428e805ed14e8fedc80adadd258c5641cb6d0aa97e63855891cb80f9a63"
   license "MIT"
   head "https://github.com/workdone0/twig.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7559b8cc9fed570ed22d13e5c04bd9b21d3bf72f99307ef881a05d5f4c66aae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfc46c3d341527ea460ff737a6b74991234167cbb6095304fbaad85d33e1af01"
-    sha256 cellar: :any,                 arm64_linux:   "a59a1bc92be495cb54fe91404ff9305ff59d328132cdca6839246de6ccbaf5f2"
-    sha256 cellar: :any,                 x86_64_linux:  "79dd1556c0d4d3f346b9e132e31f7e6f8e532813bad7cb2c3fc35a29ad56fd8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78e77011aa7495612c6788c36dce0679e944f02f6e0936398ebf2b23901f7a1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb730a49e0ae4612da46eebeb9c8d4eacaa6832411ebcbe429f961a680347276"
+    sha256 cellar: :any,                 arm64_linux:   "8d3198f8cc332160624e6a080adb37a4e1ca6a678f61183c4601a56d3312c497"
+    sha256 cellar: :any,                 x86_64_linux:  "6cd16b88807a01365366b243baba53feeb770092f81b0e8d5918f6b2528d387a"
   end
 
   depends_on "rust" => :build
