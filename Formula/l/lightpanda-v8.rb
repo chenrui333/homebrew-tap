@@ -9,10 +9,10 @@ class LightpandaV8 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c616597e505f2319636141e081c8e655b22a75724b9f7511c09cf01cb25a77d2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2ae22bdb6876f3d3d75891bd8aa2b32ee960a58c9d313bc425f861d082351d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2639ae08e98dfa16d5fdd9b19086266063a120367c0f30ef67ae861f106c64af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "568713479e878d83c294e6469371a87c88466acf5963811dfa45973408afaa92"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "134e3b73646517ce7984be6e6c408586879ad00d71a9d3b585ee7c79dc170529"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd2748d39c0cf749ef5a9e79e6ed39c47fdf92a207d7c3630c98ea707582510e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0059c2c81c700c584ee95146d55402bf59e1a938b8b5cb353527ea3ee54d7fb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44233a8d55775195a1321685cb301bb6d73916764ed8f318018cc2b0252f2c3b"
   end
 
   if OS.mac? && Hardware::CPU.arm?
