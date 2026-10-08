@@ -9,11 +9,10 @@ class Mdslw < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3fb911b46f0d916ffe04a9538af547445c600676d7d3e82b8b76de830a1324d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6484004351ef8ef1a7bf226758d5f6977ffde259f719e6e8ed2c601c1251247"
-    sha256 cellar: :any,                 arm64_linux:   "f1cbe06bde28454fd3b371e441f36e9f948d78a93709ed43bcf082c59125c43b"
-    sha256 cellar: :any,                 x86_64_linux:  "a8c63fa3a8b09a4ba63a3c5c033ca48a9ce3d855dd67416674be25955b55ed2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1217bd7f0f05654522eefa9a709fc5732cdc325dd94c6532cb257d7690371382"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5462581985f71bb4db8f8ed7c9386b51c689a9746ee0bbcc052627d3caa6ebe2"
+    sha256 cellar: :any,                 arm64_linux:   "200ac9ea9d360033da2b6ecacbe23f6caf80b40437d25f66ff1bedb959fb9c57"
+    sha256 cellar: :any,                 x86_64_linux:  "e6a8a62a5d4b550f6813c5d410f737c4bf0fbbbaaf56db2c408fc89855514b40"
   end
 
   depends_on "pkgconf" => :build
