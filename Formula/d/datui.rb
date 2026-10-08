@@ -1,16 +1,16 @@
 class Datui < Formula
   desc "Data exploration in the terminal"
   homepage "https://derekwisong.github.io/datui/"
-  url "https://github.com/derekwisong/datui/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "d13bd02c0f960551eabf7ae6fdb2edb33318d6ce0fa32006183c3424aa598eb0"
+  url "https://github.com/derekwisong/datui/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "67c302f38bc1549febc302318d42866305a4fd582e775ef9c19d99794f6dac80"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dedbccd4e2cc159a0990c65aa2bf754fcd5f56aad2eaace22e75230a43a12df2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ac7db8138cf02a42ba75d231c1258f120ea0a35a76b1cc407a8e69dc9f22225"
-    sha256 cellar: :any,                 arm64_linux:   "2d3f98055ea5668ff7028499719f2025a8f1b938bea0ca0d63b07127da3af686"
-    sha256 cellar: :any,                 x86_64_linux:  "c41f8c39aca9f61c8cfd7a35962575fec1b1aadf047ec420233179cab23c4314"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "13b1978a089ad0f98d70a298e126902dc853363298fc861d62ee9d84c7e02ddc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b8e177bdb48cb55e02fd28a663355a5e5ecf89581ef9bd557f5c94b9c76ac6c"
+    sha256 cellar: :any,                 arm64_linux:   "90d91309530f2e85291ecb807d87ab989e334748fe1562ed24d35845f2359749"
+    sha256 cellar: :any,                 x86_64_linux:  "35ab56fae0b2d92088612a31a804d4a9324f645392c86840fc098fa5e1070af6"
   end
 
   depends_on "pkgconf" => :build
