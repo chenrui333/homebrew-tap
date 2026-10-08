@@ -1,17 +1,16 @@
 class CargoReadme < Formula
   desc "Generate README.md from docstrings"
   homepage "https://github.com/webern/cargo-readme"
-  url "https://github.com/webern/cargo-readme/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "632cf4279e39657130094def56462e5eda38eb521eabbde92553ce76e9147f2b"
+  url "https://github.com/webern/cargo-readme/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "e71ebfead44907ea1573c6e4c177800808b06d6a5cbef2cd49d59a1934f9eb1f"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "443d2a7ff42bccd4afb30f78cce7d8a1793d0d86c0efe811d59101b7da8fd904"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc45cf809821fabd9cacdea0a4010914ffb0ddf2cd0af8b337e238d65d79bc67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80dce9b75d2d286862501f82658c0b040995b593317af4d4f30c4ef42e6bda45"
-    sha256 cellar: :any,                 arm64_linux:   "6525eb4ce2a0992cb0019995fb7d29f606c52888a8df00e049183a22b05b9fd1"
-    sha256 cellar: :any,                 x86_64_linux:  "0615a4dad9852fb18b39f17ebd4e9f6cab962526836d019b909f7274bd53e0fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b558c1ef3da2e6a72fb8363e606ef6fa40010b8dcdaa6c965240e2af1461738"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c9af7dbe40a4ef8396d635f46ab25979adea5ba42ef0061c2e9da10efa8fe29"
+    sha256 cellar: :any,                 arm64_linux:   "6ee3d2427bd6fc885d687ae114bad91ea412fdd5f1c81c349802390354d297fc"
+    sha256 cellar: :any,                 x86_64_linux:  "537bf435e5e58aaa726d898a952151bcf20b8f6475705a7b2e4f3ae014aba760"
   end
 
   depends_on "rust" => :build
