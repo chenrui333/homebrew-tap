@@ -3,18 +3,17 @@ class Sot < Formula
 
   desc "Command-line System Observation Tool"
   homepage "https://github.com/anistark/sot"
-  url "https://files.pythonhosted.org/packages/64/3b/57db2a5a23b4ccca5971fad2319baf84410051858ebfe76f50b021710cd7/sot-6.1.0.tar.gz"
-  sha256 "0e9020ec4c4e22d135c4ec955d294b18c562133fd1e2719b335e2a678e5bdb5c"
+  url "https://files.pythonhosted.org/packages/ef/d2/3f228a0b0644b29ea30113012f6f8b0729e119e472cd97147aba615efa20/sot-6.3.0.tar.gz"
+  sha256 "b55c428c9bd5d174aa831188f545ccd4ac8e0a8aebd6bdaac661364267a694b3"
   license "MIT"
   head "https://github.com/anistark/sot.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d72b3bac522b214d9bdde8e85d56a6aa6e71da2dc708eafbd0f5248032d87dc6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6574f3983d24c892d6c0970566d8b76b809e6dfaf03d7385a405ff944c34a050"
-    sha256 cellar: :any,                 arm64_linux:   "70eb522fa9897ecb11386b6b2cad01819c4beb78f4d83564529084299f0578ad"
-    sha256 cellar: :any,                 x86_64_linux:  "36ddaf3a4a0098964fef7a313b4ecee3fb2f94b7364451ed30ca16f00d5e18f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f505dfd6983e079b583e39ed8ce7eba193c95d279f2d63ccafac80498176a3ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5aee99f97ebb2d073a8a1f0ad1355ce7322962f29f9fcc79f98b0e47d283cd0e"
+    sha256 cellar: :any,                 arm64_linux:   "fb09cd4a01bd2c59784d0bdbf0228d7298618f5562ac6c27965ad1131a2b991e"
+    sha256 cellar: :any,                 x86_64_linux:  "e7c77f9fdf861244fd424e7e193897e93cc518e041224a26a08aa79f05a4b876"
   end
 
   depends_on "python@3.14"
@@ -35,8 +34,8 @@ class Sot < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
-    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
+    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
   end
 
   resource "hatch-vcs" do
@@ -50,8 +49,8 @@ class Sot < Formula
   end
 
   resource "linkify-it-py" do
-    url "https://files.pythonhosted.org/packages/2e/c9/06ea13676ef354f0af6169587ae292d3e2406e212876a413bf9eece4eb23/linkify_it_py-2.1.0.tar.gz"
-    sha256 "43360231720999c10e9328dc3691160e27a718e280673d444c38d7d3aaa3b98b"
+    url "https://files.pythonhosted.org/packages/45/98/7a1a5f31fd5c7ba93e963b168e244b8e3dd705b3d2a718e3c3307583bf57/linkify_it_py-2.2.0.tar.gz"
+    sha256 "907acd2d17ac1fbb9ddb62c8957ccbd6158cac602231a15c3b0cd1e215f03cee"
   end
 
   resource "markdown-it-py" do
@@ -80,8 +79,8 @@ class Sot < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/78/9b/560e4be8e26f6fd133a03630a8df0c663b9e8d61b4ade152b72005aec83b/platformdirs-4.11.0.tar.gz"
-    sha256 "0555d18370482847566ffabcaa53ad7c6c1c29f195989ae1ed634a05f76ea1e0"
+    url "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz"
+    sha256 "427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c"
   end
 
   resource "pluggy" do
@@ -105,8 +104,8 @@ class Sot < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
-    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "rich" do
@@ -144,14 +143,9 @@ class Sot < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
-  resource "uc-micro-py" do
-    url "https://files.pythonhosted.org/packages/78/67/9a363818028526e2d4579334460df777115bdec1bb77c08f9db88f6389f2/uc_micro_py-2.0.0.tar.gz"
-    sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
-  end
-
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "wheel" do
