@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/74/04/a9da55cc8fe6b8a318828ceb503710b75b9593f9f4eb074c3fe899ffc460/fast_agent_mcp-0.10.42.tar.gz"
-  sha256 "abe1d9a52aa733a6b0b0e2cc11673f085daffdc252cc931016c580d7703dbe60"
+  url "https://files.pythonhosted.org/packages/32/07/cb15b63cc42fa4663aabcc00e9b37578d870c3c3ec3c31be20d29885a73c/fast_agent_mcp-0.10.43.tar.gz"
+  sha256 "c105a274f260c4548a81e378f84a1d06e1855d77a894535e4a655f37baf12ffc"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -43,8 +43,8 @@ class FastAgentMcp < Formula
                 ]
 
   resource "a2a-sdk" do
-    url "https://files.pythonhosted.org/packages/5f/9d/a5bb9a22af70a7b66c1589568a77381ac842525bca13beb3d16803f61189/a2a_sdk-1.1.4.tar.gz"
-    sha256 "a77d7234d25e4b480626c09580c8cf4967d6beb0433ae139ac0eb15055fef128"
+    url "https://files.pythonhosted.org/packages/a8/35/55b15fd6467ed4e40860badd5fd2040dd4612f879c98a9c196f5ee4349c9/a2a_sdk-1.2.2.tar.gz"
+    sha256 "09be001a90fae9634d54041471feca1014201ec22f7107f0883309a2b4027a15"
   end
 
   resource "agent-client-protocol" do
@@ -63,8 +63,8 @@ class FastAgentMcp < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/93/2f/6a91adaa2dc26877d6ed2f54c0370c8910f019db7d77c5c6a194611e93ea/aiohttp-3.14.4.tar.gz"
+    sha256 "831fc5bd39ec2517851e348f613ddb5447a47cf4b71cb09845af7ad7ed45d8f9"
   end
 
   resource "aiosignal" do
@@ -78,8 +78,8 @@ class FastAgentMcp < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/18/0a/1ab3bf53a672fd9dd42d3208e335940049431b79781b2a9b324203d30c38/anthropic-1.9.0.tar.gz"
-    sha256 "da5191a0af0b853a797fc0c6b09fc5b05cb5d9da063ba80fdd03c736abe81b6c"
+    url "https://files.pythonhosted.org/packages/ad/12/9a6ffa397b172adb040008d934a1dfd85d0e4cefc77489416db294ffc880/anthropic-1.11.0.tar.gz"
+    sha256 "3906fabac7ad7b5b46c6186040398fc7826885c77ce34e4dd7849de16fc8d0f8"
   end
 
   resource "anyio" do
@@ -103,8 +103,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/29/2c/3f18755527b03ca9ff6be724bd5370cb777c76a87f17301377cf04a4729b/cachetools-7.2.0.tar.gz"
-    sha256 "bcac1a1b8da6909994a2957238a57b8140dab7c5c5c69a43669654fe87a33c1d"
+    url "https://files.pythonhosted.org/packages/31/44/71476a5812da1ddf2c9a3efd31ae76d01480a1cf03ed13ac28aa8f2402e4/cachetools-7.2.1.tar.gz"
+    sha256 "b1a7537025c06abf96fcc1443e496af9a3fb95e774e70e1f0af226f73f7f2dcc"
   end
 
   resource "caio" do
@@ -128,8 +128,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/85/8c/7a7f5a3af1845cb6b9c28bf2a6db1bc510a6b9661109138c70ab6d8d650a/cyclopts-5.1.1.tar.gz"
-    sha256 "252fe37b01a80f10933f91c312db551e4e86ffd87bee401ab2ed091769135426"
+    url "https://files.pythonhosted.org/packages/28/c1/3debeeb6e0eb74a51d6f8cf1f273ed7c479e3321631cbf89fb9700e65e28/cyclopts-5.2.0.tar.gz"
+    sha256 "b63c1b1beaadf3ead19214385a0f90b990f152c4107c174e1724c45dc71e9541"
   end
 
   resource "distro" do
@@ -167,19 +167,14 @@ class FastAgentMcp < Formula
     sha256 "6c5822b7b756a99a356b915dd1267f52ab8a4efaa135963bd7f4bd5d368f71d7"
   end
 
-  resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz"
-    sha256 "e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1"
-  end
-
   resource "fastmcp-slim" do
-    url "https://files.pythonhosted.org/packages/7f/78/fa6a58bfc3d2b218f591f8e8c261639dd6fc56e2d6a70be0d1c42244ffa0/fastmcp_slim-4.0.5.tar.gz"
-    sha256 "5dc5395bcacb0eb405787393298891210c821d3f66334c2695e5e435d88fe575"
+    url "https://files.pythonhosted.org/packages/02/d3/8d247edc9120c3be157315acd6df17c9790358c39ea45d0f9dfcec6a094b/fastmcp_slim-4.0.11.tar.gz"
+    sha256 "9152aac74d8837bc37576f5f3d83f17567250a9dfcd8187133c43faaaa9dd06f"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/1f/f9/f38573ed5844586db374d085911740a501ccfa373b455fc9413f09f85237/filelock-3.29.1.tar.gz"
-    sha256 "d97e6b1b9757569626c58caa07dc4beb1613f4a2938b1e8cc81afca398906c9e"
+    url "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz"
+    sha256 "cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c"
   end
 
   resource "flit-core" do
@@ -203,18 +198,18 @@ class FastAgentMcp < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/23/f7/0fb8c3618c783ad49da1aaf97f93a4bb9e4ed522135516b44d129a7f85bb/google_api_core-2.40.0.tar.gz"
-    sha256 "ebee7d1b138b5362beecec260e6e8988ac97346562c7382ccb6f0ad8435c599f"
+    url "https://files.pythonhosted.org/packages/0a/c7/5c90a4b12d68efe3a6c277c9d0336e3d1e7f64b41dfb780e35d0eefec77a/google_api_core-2.41.0.tar.gz"
+    sha256 "73e89a86baef6680934adeee6fbd0ceaf20c1393ab229b2f9b34efb23b0fdef3"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/81/e3/9f752a968e487fbc10b2c2a1dd561b62489f923972911009577bb88fe7bb/google_auth-2.59.1.tar.gz"
-    sha256 "ce50fc533ac02f489a2b183a0c156672c376ecb2091b1127bc7efba2975fff27"
+    url "https://files.pythonhosted.org/packages/c7/0b/9788e913f2202da49068c27ce821eebcf96319240a89d7bb11f206d6471f/google_auth-2.61.0.tar.gz"
+    sha256 "37f0815967322e8c32b12bf422531e8b637cafdaae0acbb9141117cfe6a96f23"
   end
 
   resource "google-genai" do
-    url "https://files.pythonhosted.org/packages/35/26/176d04f442e82d60cadc74cfaf81f01017062ce274a790455a57aec48c8f/google_genai-2.24.0.tar.gz"
-    sha256 "814b63d05dca4776c5a322699eb30c565040cf8d5fd77c38714076535fb2e019"
+    url "https://files.pythonhosted.org/packages/59/16/4af15d65cb72ebc21a99c5e64f09072e97334c05a48d4cede19c347e6ad2/google_genai-2.28.0.tar.gz"
+    sha256 "970cb2eaf1951949851c3e0a5b70265cfea8a408fb7361c7c980a84d90672bf2"
   end
 
   resource "googleapis-common-protos" do
@@ -223,8 +218,8 @@ class FastAgentMcp < Formula
   end
 
   resource "griffelib" do
-    url "https://files.pythonhosted.org/packages/27/af/018c10bc9edd42b6ef6db2e96b09542050d5253f9b195e74bc910b2d13ab/griffelib-2.3.0.tar.gz"
-    sha256 "7b0952caf5bca6afa4bb5ee8c6a2d183fe3f21b62efc5f6c7243cb2b26d2d115"
+    url "https://files.pythonhosted.org/packages/2b/27/b55f1a5278918be765fb2fd8b20966bc72bbdd3f789f031937cceea7834a/griffelib-2.3.2.tar.gz"
+    sha256 "df00c7a0dee3d86268d76788997a1859272cb1fb7b865658e043d2c0c3d52e60"
   end
 
   resource "h11" do
@@ -248,8 +243,8 @@ class FastAgentMcp < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/1b/ab/522a2ab67f27971a9d48ca666d4fca85ef7d5282d142e31fd087e27b1bbe/hf_xet-1.6.0.tar.gz"
-    sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
+    url "https://files.pythonhosted.org/packages/9e/27/06d899ea7bd721d272f84aac98bdb238de98af4cc767a69056d967d68c71/hf_xet-1.7.0.tar.gz"
+    sha256 "d406ec79053c0871817f700c2ac8c36ba0d87f9c34b7458b0f0063bb218b0466"
   end
 
   resource "httpcore" do
@@ -273,8 +268,8 @@ class FastAgentMcp < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/fe/0f/e83fdd856da8fca26bf78d71709ebd120432a0ce535e72b9597cab1eb5bf/huggingface_hub-1.32.0.tar.gz"
-    sha256 "ed70a45498abe86039df7c2f4e5f7575de524be908d3840e8f828d5525eafd6a"
+    url "https://files.pythonhosted.org/packages/25/2a/484d112c0d8fc5f665d7b65137ac9cdb2953c982391598c3597968a12ee7/huggingface_hub-1.33.0.tar.gz"
+    sha256 "367be21a201db9523eddf8aeac7048f2602c1b308691c97640d5e72ed188007e"
   end
 
   resource "idna" do
@@ -348,18 +343,18 @@ class FastAgentMcp < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
-    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/76/31/ac54fb0fdd5b37de704486e288bba4fbbb463f24cfcfedbede407b854513/mcp-2.2.0.tar.gz"
-    sha256 "2dc37ecb1974becdcebdbf7561e7c15a07dbbf20ba21ba16c3593b3038b3afbd"
+    url "https://files.pythonhosted.org/packages/9d/8d/e0d339616f4810e9051d4aba6887afab289ab1f81875fe908b606cdfd0e3/mcp-2.3.0.tar.gz"
+    sha256 "8b147a50441cf059dc88c684e0aeed3687f0aa0f39c6cde7b90330effd2b34d8"
   end
 
   resource "mcp-types" do
-    url "https://files.pythonhosted.org/packages/ae/91/762d7755d971aff8a28d75f7961656148edf27875c8026e6385aaab08ae7/mcp_types-2.2.0.tar.gz"
-    sha256 "d3ed53703ddd10d9c6399f29d322bb66f3f67ab41348ac8556ba23e07fedefad"
+    url "https://files.pythonhosted.org/packages/9e/2d/7c251e34207f6c51000312fc8839111ac45cfe02023f90b44e7f1051dd8e/mcp_types-2.3.0.tar.gz"
+    sha256 "d1e46549edb35ee19a94940fcee6d1addd7e589ab7ea92dda83f5d84781fc362"
   end
 
   resource "mdurl" do
@@ -383,63 +378,73 @@ class FastAgentMcp < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ae/8d/52cfa8ed2edbe3ec14c0e9ca4f6258a234129b0846fa7e5779d8aba3d791/openai-3.21.0.tar.gz"
-    sha256 "b3da56a0693953fa1851d554579e8904d0166f524d004048b636c548e0b7ef8f"
+    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
+    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
   end
 
   resource "openapi-pydantic" do
-    url "https://files.pythonhosted.org/packages/02/2e/58d83848dd1a79cb92ed8e63f6ba901ca282c5f09d04af9423ec26c56fd7/openapi_pydantic-0.5.1.tar.gz"
-    sha256 "ff6835af6bde7a459fb93eb93bb92b8749b754fc6e51b2f1590a19dc3005ee0d"
+    url "https://files.pythonhosted.org/packages/2b/32/0c9bd3e4e847cd6117b64dbef4cf810faa9cdbd6689323b811569cc8a1b8/openapi_pydantic-0.6.0.tar.gz"
+    sha256 "11f3ac6ad41521fc156381ec587246b0c0ecea523bd9565ed74d3e7fac9d91cd"
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/ee/8b/aa9e2d8b8dfa7c946f7dec5d1f8f6ba8eca062f43509a06bdb5ce93d26c0/opentelemetry_api-1.44.0.tar.gz"
-    sha256 "67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a"
+    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
+    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
+  end
+
+  resource "opentelemetry-exporter-http-transport" do
+    url "https://files.pythonhosted.org/packages/5e/31/cbedb10e08c3c932b80f58edf055a16bb48a500c23c617b758fb3ec18f08/opentelemetry_exporter_http_transport-0.66b0.tar.gz"
+    sha256 "2c229b6593eaa22c86d9b8a15843dc23b406dbda00fb138339189aab07923b4e"
+  end
+
+  resource "opentelemetry-exporter-otlp-common" do
+    url "https://files.pythonhosted.org/packages/68/09/01239cdfe8a414d46ed625b68b6da92666ffd16d93cc6dadf89404b4bd85/opentelemetry_exporter_otlp_common-0.66b0.tar.gz"
+    sha256 "362268ec6aa705e183776ff938539df1e8ce45bc5509d242538b1d40c26fe6a6"
   end
 
   resource "opentelemetry-exporter-otlp-proto-common" do
-    url "https://files.pythonhosted.org/packages/61/09/4d717852c1cf3f854b76c7110a5d00883bc3c99288b9b0dbcbeb9e306eb6/opentelemetry_exporter_otlp_proto_common-1.44.0.tar.gz"
-    sha256 "dc87a5a5bc58f149a56d1547e4691588fa12994cdc3bc039a694ccb3375862ac"
+    url "https://files.pythonhosted.org/packages/e5/e0/ee3823dbdc10da15b5750becc37b61194dd7c55e3b56764ecbbe446f659a/opentelemetry_exporter_otlp_proto_common-1.45.0.tar.gz"
+    sha256 "36495115a0c6a7aa946cfda9d59b6ed4e917b6ab0f75cdaf66bc1b176ec1be1f"
   end
 
   resource "opentelemetry-exporter-otlp-proto-http" do
-    url "https://files.pythonhosted.org/packages/1a/87/95e2a5aaa795b4e2260d74e16df2d5541deb2ea9de010bcd615f4dee2654/opentelemetry_exporter_otlp_proto_http-1.44.0.tar.gz"
-    sha256 "c633d7270ad6b57cd4cfbe8b0007a9e2e7c0cb50bd6c50fe2a7b245f721a09d8"
+    url "https://files.pythonhosted.org/packages/94/78/a503801c1c8f80b1d8aad0e14106a7c57f39344001652a78a683f9a9089e/opentelemetry_exporter_otlp_proto_http-1.45.0.tar.gz"
+    sha256 "2f35496d96809f946f41b8805e6b93aec6c9b71b5fd759b75b6af4c084d992ae"
   end
 
   resource "opentelemetry-instrumentation" do
-    url "https://files.pythonhosted.org/packages/13/91/3c58961cb0360cd60509064734f0be4275383c8681d73c580a40ca83ddce/opentelemetry_instrumentation-0.65b0.tar.gz"
-    sha256 "071d9d9eced9bd6460444ec3b0c77229870ed05a881c22c84fdede58e4eed09b"
+    url "https://files.pythonhosted.org/packages/a5/03/89e47ff8d52a4f83b343e6eb9ef1698ff45357216e5b6b2b21e0da5c5c7d/opentelemetry_instrumentation-0.66b1.tar.gz"
+    sha256 "e79a510f7d87c72d95e964ddb42193a0d9a75668c027d980eab032ea1322a5ce"
   end
 
   resource "opentelemetry-instrumentation-anthropic" do
-    url "https://files.pythonhosted.org/packages/16/12/4a8a051db553f840eceddb0ab0c5a1fc5c632d0013c24068aa74e7dfb3d9/opentelemetry_instrumentation_anthropic-0.62.3.tar.gz"
-    sha256 "54246ab1208aa33e1dd79d4aff1621e73ebc14cd98762798af029e1fc53c0266"
+    url "https://files.pythonhosted.org/packages/27/96/5f77258d80b0188f73b8a10580b714ef046302c7539f471ba1d157940566/opentelemetry_instrumentation_anthropic-0.62.4.tar.gz"
+    sha256 "861d893c0e20022fa5bee6134cc36c1b5bf847cf831ec0d8b78b0a8267e2a21b"
   end
 
   resource "opentelemetry-instrumentation-google-genai" do
-    url "https://files.pythonhosted.org/packages/6e/bf/fd8983789e4c689f5ac8a8f48ebdbc85b5e9babffa10fc3b58f5c65d9c9a/opentelemetry_instrumentation_google_genai-1.1b1.tar.gz"
-    sha256 "c670f7f263d59b2d45ec1ee1e9126b7e3e67f2946fa89af89c6cc3041c778b13"
+    url "https://files.pythonhosted.org/packages/fe/b6/84a6d02b38368a96664f46be3bded882835a56c2ea11c9b947e21a7d3b1d/opentelemetry_instrumentation_google_genai-1.2b0.tar.gz"
+    sha256 "6bd5e0e7fde7aa75d2f2c5b821dc960d83d5c3a0466ffef4bda5568863436004"
   end
 
   resource "opentelemetry-instrumentation-openai" do
-    url "https://files.pythonhosted.org/packages/17/91/92764e1a330cf27ed29e330c5d6df394bb0ea52374e07648b07352d5bc62/opentelemetry_instrumentation_openai-0.62.3.tar.gz"
-    sha256 "b9e1b9a1e6c48cdd436cfaa6fb9af1b393e806debbafd408f4b5232f9ec4df12"
+    url "https://files.pythonhosted.org/packages/bf/bb/bb4b39d8221a9bc1b85eba87a088703e270f49978a7d8031d0dbc28c7c3d/opentelemetry_instrumentation_openai-0.62.4.tar.gz"
+    sha256 "a2c03cf4b8c18ed5e53d4a59b3299df39858640e41b91379ca72153a3f85a716"
   end
 
   resource "opentelemetry-proto" do
-    url "https://files.pythonhosted.org/packages/64/01/40ac4ae9a149263cc52c2cee200ddd80cb6d8db1a4610abf8eabce0fe771/opentelemetry_proto-1.44.0.tar.gz"
-    sha256 "c547a79c2f8c0c515d31509154682e5921c7cfd5ca67b70e1f9266e2c3e103f3"
+    url "https://files.pythonhosted.org/packages/72/28/67c38cfb7e2bdfdd0cde7dcdd0424aed0291fbd64aa4ea3e7e913734711a/opentelemetry_proto-1.45.0.tar.gz"
+    sha256 "96ee414f24bc3f61ea8e17dc56b4348d4049d73db3eb17c6b3edf75b5b403300"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/5d/77/a6592cbc7c8d9bcc9d6757a9df45e04a7c585e3e6e7a13456da522b21109/opentelemetry_sdk-1.44.0.tar.gz"
-    sha256 "cebe7f65dc12f26ead75c6064de12fd2a9052e5060c0272d402cfa203aae123b"
+    url "https://files.pythonhosted.org/packages/a1/79/7392e21a1c8f0c61d90b223e31c7e48cb9d452e91a6b820ad24cca5f23c4/opentelemetry_sdk-1.45.1.tar.gz"
+    sha256 "63d24a6ca645019a631e6a51999c73e93adcac1196ca640b8ae78a7cc4762bf3"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/8f/73/0cbdebcb4cf545fdd328da14f5137e37d0770c3f26185e478b0d15d94f50/opentelemetry_semantic_conventions-0.65b0.tar.gz"
-    sha256 "f9b2b81e9d5b64f11bc952075e7e9c7fb0aab075c7fd1c46d597f1b919852d60"
+    url "https://files.pythonhosted.org/packages/46/e4/dbbfb2a010c4db2224a5114638acede6fe563d33cc20fb1752cebcbe6298/opentelemetry_semantic_conventions-0.66b1.tar.gz"
+    sha256 "497ca63bf383723411e8eaf60c8779e9877633c936bb641080adab59d0eb6ec8"
   end
 
   resource "opentelemetry-semantic-conventions-ai" do
@@ -488,8 +493,8 @@ class FastAgentMcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz"
-    sha256 "eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329"
+    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
+    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
   resource "pluggy" do
@@ -518,8 +523,8 @@ class FastAgentMcp < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/66/70/e908e9c5e52ef7c3a6c7902c9dfbb34c7e29c25d2f81ade3856445fd5c94/protobuf-6.33.6.tar.gz"
-    sha256 "a6768d25248312c297558af96a9f9c929e8c4cee0659cb07e780731095f38135"
+    url "https://files.pythonhosted.org/packages/d9/89/5b8517baa72f84a67b8a307ba953c91057af618bf40bf676f3c03551f8f0/protobuf-7.36.2.tar.gz"
+    sha256 "497d0463ff3316681da6c0b9e8d06cb465d61abce00b613ab42226175644d1bb"
   end
 
   resource "py-key-value-aio" do
@@ -643,8 +648,8 @@ class FastAgentMcp < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
   end
 
   resource "tenacity" do
@@ -713,23 +718,23 @@ class FastAgentMcp < Formula
   end
 
   resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/06/f0/18d39dbd1971d6d62c4629cc7fa67f74821b0dc1f5a77af43719de7936a7/uvloop-0.22.1.tar.gz"
-    sha256 "6c84bae345b9147082b17371e3dd5d42775bddce91f885499017f4607fdaf39f"
+    url "https://files.pythonhosted.org/packages/fa/42/02c739ce85fb2ee8d99212c61417da8140c6b87e9d97c430bea520d76044/uvloop-0.23.0.tar.gz"
+    sha256 "28d160f51ab4da3b187063652e643dea6831072add4adc1e6d62afbe73b6be27"
   end
 
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/cd/41/5e1a4bb12aac5f1493fa1bdc11154eca3b258ca4eba65d39c473fe19d8e9/watchfiles-1.2.0.tar.gz"
-    sha256 "c995fba777f1ea992f090f9236e9284cf7a5d1a0130dd5a3d82c598cacd76838"
+    url "https://files.pythonhosted.org/packages/b3/68/e6aa0b77d217b31f8f486ec0cdfe5e00e6e38dc0be657e7d85819b9faf0a/watchfiles-1.3.0.tar.gz"
+    sha256 "99aee4a07847c06820765fd7b1b49ceac4f3f711ccb7d104655a33231de1c207"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/dc/ac/3a943d2792c9bb368aaa8b50121c0f778460ba2d7fbdc0a0366201d9e761/wcwidth-0.9.1.tar.gz"
-    sha256 "5823209b0d43af322ce698c689380d7c15ca31fa8e6e3be8459f27031bef0af5"
+    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
+    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
   end
 
   resource "websockets" do
