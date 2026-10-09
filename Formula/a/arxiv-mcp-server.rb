@@ -3,8 +3,8 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/3e/7f/750273a3e33548928044cfb729e99a73d904c9c205c52a55023687f8d517/arxiv_mcp_server-0.8.1.tar.gz"
-  sha256 "8d90c4e9aec3b6d7933a750dafcc62025606b7a151976321f542e3444ec1ac3b"
+  url "https://files.pythonhosted.org/packages/25/b2/cace68081337171bbebee7f5406ed077666b56a224698ac11dfcb22d587b/arxiv_mcp_server-0.8.2.tar.gz"
+  sha256 "e27bb34209a1d725305b72f385a4f7abf27e404eef829e266bdf33b67b418722"
   license "MIT"
 
   bottle do
@@ -289,8 +289,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "wheel" do
