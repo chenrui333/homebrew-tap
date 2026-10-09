@@ -1,13 +1,13 @@
 class Tapflow < Formula
   desc "Self-hosted iOS and Android simulator streaming for the whole team"
   homepage "https://github.com/jo-duchan/tapflow"
-  url "https://registry.npmjs.org/tapflow/-/tapflow-0.27.0.tgz"
-  sha256 "2f934563d769b1c6e7e152569469ea26480ab132530912a23dfc55c5936defeb"
+  url "https://registry.npmjs.org/tapflow/-/tapflow-0.27.1.tgz"
+  sha256 "98a7a570b934e0f6e2026ee810fd1037e234924afbe3efc96d13b67bfba6d251"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "c1a38a35bc80c00677ce7fa9c411cb3b9704a51cc0dca7a6e770eb1e0c2e5a58"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "adf82b8e1594ff9e6bce8d1089c70a7eaec2cfed71663abbc277ad02333af92c"
   end
 
   depends_on :macos
