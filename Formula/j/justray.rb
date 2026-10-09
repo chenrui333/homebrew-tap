@@ -8,10 +8,10 @@ class Justray < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "19b64c78f7ae4d98328abfc8b065a7a8c73a2616b1c551c00441d1fca7ee2c08"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be2481c69bad2a1f0345c494fda6beee6a3855247baba3ff1262feb9d871c209"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "150eea99b770bded11b7948a028c3f8a21f0f30734461a99d12d44c1ef9b07ec"
-    sha256 cellar: :any,                 x86_64_linux:  "7194a19fa7d4bd3c0c866e7a40e1126f51ac7d124491f91025bb1195658cc3ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37b3d3615d88f43dbe5a90d60f54a13c77fddaf3aa61fe7eac39d28ebe8aa829"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6a6a5c5c688547e62e448a2748b60901f9e070a76765f0d2b17de17744fad3e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79c718d6a104b530f932a7df8e8f64ea7677a93a57c07b8d67c5baab0d4d8322"
+    sha256 cellar: :any,                 x86_64_linux:  "b8b46dd4da44b891974fdf096ab0ad7a20b682ae7d8b63bd2b298085e9d52b15"
   end
 
   # Match upstream release CI; sing-box relies on private HTTP/2 symbols.
