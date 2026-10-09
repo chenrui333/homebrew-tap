@@ -8,10 +8,10 @@ class TttEditor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f792caee7d9a1f33888009d5dacc410cf232972f103ae2fc981ee616d9501620"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f792caee7d9a1f33888009d5dacc410cf232972f103ae2fc981ee616d9501620"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4d984dd96088843bfad82c382a874ea061ef71b863ad6cc5ea7b10a0c0f8c88"
-    sha256 cellar: :any,                 x86_64_linux:  "6ba0245751d41754358bb716131868402fc1ea4bff1977d2c842dd5dce20681a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68697d0faa9dabb0ab2192acf1e1aed40af31f918080a0c048348669db0c2437"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68697d0faa9dabb0ab2192acf1e1aed40af31f918080a0c048348669db0c2437"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "295dedc298d9071df89f2ff43e3697938b371aa4954c7c6b006a063f7cb6770a"
+    sha256 cellar: :any,                 x86_64_linux:  "ec89a9256edbee87b1c2966ef9d0f29b11faf729c55791adc9b879365a948963"
   end
 
   depends_on "go" => :build
