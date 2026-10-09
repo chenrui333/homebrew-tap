@@ -9,11 +9,10 @@ class Untether < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "64d5e5980332055172701d4c343c50398f572bc8e66d75cfee2aa6cedc6a1904"
-    sha256 cellar: :any, arm64_sequoia: "b929b7f424b7ee8342882e9fc8f608b13af4ecabc440374015c9df9369034417"
-    sha256 cellar: :any, arm64_linux:   "b6fb6e849aa54b773355ac39c3876396471a8bb1a332f82d4242c2a61707c11b"
-    sha256 cellar: :any, x86_64_linux:  "0313ac3d5a37d7845f508b374da6c666b3ea4be6fd2fefffb99c940b8196db50"
+    sha256 cellar: :any, arm64_tahoe:   "2e9585a548a1bf3267b647ef3cce0056ef121b00e7f5c322bcb4404e546d0a28"
+    sha256 cellar: :any, arm64_sequoia: "5f8857d5db0bbb574437835d34c80901c2b0c28a4de50c87d17df3e83336eed2"
+    sha256 cellar: :any, arm64_linux:   "5095839fc22404102964c8f34aa8423e489ce5117db8aec708bba5577c91c6da"
+    sha256 cellar: :any, x86_64_linux:  "35463ff46780a9350696240da2472c63f9150e48425297f99e40a5a343f554d0"
   end
 
   depends_on "maturin" => :build
