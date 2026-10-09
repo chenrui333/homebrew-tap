@@ -1,0 +1,14 @@
+Formula/u/untether.rb
+  h_9df9c32c3f321d 392-399
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "58d7e1ed4b225474c3d4bd18c54ff8565d29ccd8",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
