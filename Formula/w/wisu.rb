@@ -1,18 +1,17 @@
 class Wisu < Formula
   desc "Blazingly fast, minimalist directory tree viewer"
   homepage "https://github.com/sh1zen/wisu"
-  url "https://github.com/sh1zen/wisu/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "0331ebc1663c3fcc4c58992692b6dc952d8733d1d77efac71250bb2689925edd"
+  url "https://github.com/sh1zen/wisu/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "6a81d75f160558a49d56c15549cbbe7db3d7fb43328ef5c0c881cfa868f485c7"
   license "Apache-2.0"
   head "https://github.com/sh1zen/wisu.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6b5de36886d13e62c3479ad10614bf9f7afe1eac0e7b89f59817631c2cd6640"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca1d6aff37ac4e9afe2e8a7af00ca9f873ce95ab58da6b8e791b70a193d40c4"
-    sha256 cellar: :any,                 arm64_linux:   "74adbb00bd1a9058d1b62594e52401ee372bdc082bf9381cfa82cfb2577d7313"
-    sha256 cellar: :any,                 x86_64_linux:  "c27c6a96cd1638fa18a60714da1df1e5d777f160fd3a7369a0487696e9cd4763"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e98c8dae6e83b1014bb8b9ce7748199b4cefa795a88751d3521991279ddf4cc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ab360660fc3233867a54907cff35bb7e969126763635963a085d72ee1065f4"
+    sha256 cellar: :any,                 arm64_linux:   "4d5a63237bcab9085f81520eb96c4d8afb8c00024f923cb586c0423d50a84e2a"
+    sha256 cellar: :any,                 x86_64_linux:  "4e17027bf3b99e940c64750f4fa3467af6384068b36d0d8e6ebe4d15a466f5a1"
   end
 
   depends_on "rust" => :build
