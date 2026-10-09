@@ -1,13 +1,13 @@
 class Backport < Formula
   desc "CLI tool that automates the process of backporting commits"
   homepage "https://github.com/sorenlouv/backport"
-  url "https://registry.npmjs.org/backport/-/backport-12.0.5.tgz"
-  sha256 "593633342cd442fa813a187286e5cb049a5368244bff37d0866e64046956af29"
+  url "https://registry.npmjs.org/backport/-/backport-12.1.2.tgz"
+  sha256 "9ca1fe65abb8f1efab7f3ce56d598b6d487daecdfedd5b0c6facfb4fc1cf5b64"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2980b17d4544129a464c64e89bbfd77dbc7f0d9421cd033040888a10922e89c8"
+    sha256 cellar: :any_skip_relocation, all: "7937bb3484f6857fe282bb3ffad60a980864eade79fcdc0590d4824d4f1ae7f0"
   end
 
   depends_on "node"
