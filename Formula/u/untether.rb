@@ -354,7 +354,6 @@ class Untether < Formula
   end
 
   def install
-    # html5lib's setup.py imports pkg_resources, so it is built right after the pinned setuptools.
     build_resources = %w[
       flit-core
       packaging
@@ -363,7 +362,6 @@ class Untether < Formula
       poetry-core
       pkgconfig
       setuptools
-      html5lib
       calver
       cython
       tomlkit
@@ -391,7 +389,14 @@ class Untether < Formula
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    # html5lib 1.1's setup.py imports pkg_resources (removed in setuptools 82) only for a check
+    # that is a no-op on setuptools >= 18.5.
+    resource("html5lib").stage do
+      inreplace "setup.py", "from pkg_resources import parse_version\n\nimport pkg_resources", "pkg_resources = None"
+      venv.pip_install Pathname.pwd, build_isolation: false
+    end
+    installed = build_resources + ["html5lib"]
+    venv.pip_install resources.reject { |r| installed.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
