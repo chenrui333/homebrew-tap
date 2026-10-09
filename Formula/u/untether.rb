@@ -32,9 +32,9 @@ class Untether < Formula
 
   pypi_packages exclude_packages: %w[certifi pydantic],
                 extra_packages:   %w[
-                  calver cython expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
-                  pdm-backend pkgconfig pluggy poetry-core setuptools-scm tomlkit trove-classifiers uv-build
-                  vcs-versioning wheel
+                  calver cython dunamai expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2
+                  markupsafe packaging pathspec pdm-backend pkgconfig pluggy poetry-core setuptools-scm tomlkit
+                  trove-classifiers uv-build uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "aiohappyeyeballs" do
@@ -75,6 +75,11 @@ class Untether < Formula
   resource "cython" do
     url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
     sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
+    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
   end
 
   resource "expandvars" do
@@ -142,6 +147,11 @@ class Untether < Formula
     sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
+  resource "jinja2" do
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
+  end
+
   resource "jiter" do
     url "https://files.pythonhosted.org/packages/9c/1f/8176d92e001f86505424b41664032ae26a882bc9ca41a32c803f373f9195/jiter-0.17.0.tar.gz"
     sha256 "03e432f226a453851079fb84cd17c6da9991eab723e28d716f14ae3d906e0c12"
@@ -160,6 +170,11 @@ class Untether < Formula
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
     sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
+  end
+
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do
@@ -312,6 +327,11 @@ class Untether < Formula
     sha256 "b0428317e2783252b33b513446436071f4e14bfeb38655c99877ca6550ea4aac"
   end
 
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
   resource "vcs-versioning" do
     url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
     sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
@@ -374,6 +394,10 @@ class Untether < Formula
       expandvars
       hatch-fancy-pypi-readme
       hatch-vcs
+      dunamai
+      markupsafe
+      jinja2
+      uv-dynamic-versioning
       wheel
     ]
 
