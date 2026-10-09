@@ -1,16 +1,16 @@
 class AstroLanguageServer < Formula
   desc "Language tools for Astro"
   homepage "https://github.com/withastro/language-tools"
-  url "https://registry.npmjs.org/@astrojs/language-server/-/language-server-2.17.1.tgz"
-  sha256 "748945e5aef4251ed89fa557472f7cf93204eba8cb77475cdd38f8099b2343eb"
+  url "https://registry.npmjs.org/@astrojs/language-server/-/language-server-2.17.2.tgz"
+  sha256 "8dfee20ae7ccfd0b7aaee77ce24ebb8d45d801eecef970561ef68564bba71d7b"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7ff2488dd2e10e14522a8aef904db15fa05f3b0a99bc4c4204d392209f0ef96e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ff2488dd2e10e14522a8aef904db15fa05f3b0a99bc4c4204d392209f0ef96e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "519671f36b1374ca67387144e8bd16066fc97c0d63cf674c7e56c092327519d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91ec401d18989fc890291948b921a81292c71cc8b361db150f66d1ff31d2772b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c393794a0382a2262a5c31f263c2d76e5e29af6ee4a87eaef2c75f609a2cf87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c393794a0382a2262a5c31f263c2d76e5e29af6ee4a87eaef2c75f609a2cf87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be0f7a23e30935fbef869e26b101a69c5cfbdaf63cd6c9f8e7f37ae1c97343e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "691fa52a2de858bf6249411a14be9097dc599722c819f0a3c165d65808d0de59"
   end
 
   depends_on "node"
