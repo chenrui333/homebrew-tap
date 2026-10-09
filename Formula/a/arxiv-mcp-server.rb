@@ -3,16 +3,16 @@ class ArxivMcpServer < Formula
 
   desc "MCP Server for ArXiv"
   homepage "https://github.com/blazickjp/arxiv-mcp-server"
-  url "https://files.pythonhosted.org/packages/3e/7f/750273a3e33548928044cfb729e99a73d904c9c205c52a55023687f8d517/arxiv_mcp_server-0.8.1.tar.gz"
-  sha256 "8d90c4e9aec3b6d7933a750dafcc62025606b7a151976321f542e3444ec1ac3b"
+  url "https://files.pythonhosted.org/packages/25/b2/cace68081337171bbebee7f5406ed077666b56a224698ac11dfcb22d587b/arxiv_mcp_server-0.8.2.tar.gz"
+  sha256 "e27bb34209a1d725305b72f385a4f7abf27e404eef829e266bdf33b67b418722"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b92e4f4ffb036f03207fe6d4b8966ed50068b65d2b97e91342056f4b6d32438"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f94309dc204c741d2f0f2768ff4fc73f274cad220c2eccddaf52ace4aa99dbcf"
-    sha256 cellar: :any,                 arm64_linux:   "870bc1074b79dd037f2561eaaf80cda1e44b94b3e834b5d055363434b2552a59"
-    sha256 cellar: :any,                 x86_64_linux:  "3ec2e7ecfaf7ce875a769e6198aa8be0b0bd1a254c34f1c2e2529baef3d13972"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c152b064f469388ad055adf0a65252d0a615e94586a110cf16e3f455856bb126"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc7c749d7d8ebab9038e06e67c6bedff5409753530b58f811d60a0cd3c312d7b"
+    sha256 cellar: :any,                 arm64_linux:   "9b4826011f9947018ea7fdc5ab1803c016879c3bc2aadd83595a5fbfebfb0cda"
+    sha256 cellar: :any,                 x86_64_linux:  "a47108cc744b04f214435e9a8e8bacd2a5df9545af677d61e4f2de2f3ec6c5d9"
   end
 
   depends_on "cython" => :build
@@ -289,8 +289,8 @@ class ArxivMcpServer < Formula
   end
 
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "wheel" do
