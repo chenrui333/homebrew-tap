@@ -3,16 +3,15 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.5.0-pre1.tar.gz"
-  sha256 "cda141b195d93916c2861b90ad8ba756347fb7fe91ad3303a9210334d6e33fd8"
+  url "https://codeberg.org/liske/ifstate/archive/2.5.0.tar.gz"
+  sha256 "a047abad7a5d2c3516ea31b0024dfab247358f1e57345502ee80adb1afba37ac"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "612513dfede8f4fca0482209d7e83793e4e5860aed44604180a9dcbc179e7de6"
-    sha256 cellar: :any, x86_64_linux: "d11bd329f807d1f0e4ea5aa5b4074a3d55d2df073f33e48ba4bf9245e6319dd0"
+    sha256 cellar: :any, arm64_linux:  "547925b88d406c05fdaa8ef553ff8a8609dc4d9d7b2789e53c3c8dddd13f6c65"
+    sha256 cellar: :any, x86_64_linux: "94367d5885701011cedde49fce59677cfa1ca49b9c1a5d36d6b5d1b469f112b7"
   end
 
   depends_on "cython" => :build
