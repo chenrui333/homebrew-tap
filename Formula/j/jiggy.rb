@@ -1,17 +1,16 @@
 class Jiggy < Formula
   desc "Minimalistic cross-platform mouse jiggler written in Rust"
   homepage "https://0xdeadbeef.info/"
-  url "https://github.com/0xdea/jiggy/archive/refs/tags/v1.0.8.tar.gz"
-  sha256 "2000302173edff127cf375200749640945c2efbe7148c00270aec84e652ce26d"
+  url "https://github.com/0xdea/jiggy/archive/refs/tags/v1.0.9.tar.gz"
+  sha256 "57a380ff224e9f4eeea2a0031d6b30c9cacbbf3ce7b56e99225d16d09e4d6fad"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e598bbf773daa3946707363d79ee44035348008b234e83d2335980fd26ec3b60"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ac4c476b566cc6f9c9a80684b35a8606bb86617e0b8244f4deaa762b34e8829"
-    sha256 cellar: :any,                 arm64_linux:   "cb7ef8cdf3eb89911710354492a506f0705551a5c093e677f168fd99076ecfc8"
-    sha256 cellar: :any,                 x86_64_linux:  "51d9966fa07ef4ab6bf6ed26336270f2b381dead5c86f3f12ab4ab49e9a66ed0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "41f99ed59cb7b4ad206ca3ce01058614e5c25b3a9250b844de170791821420c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dddad3c96f1982c66a4ea68d2ded579a6b1c544cc2c92f662a8ba565dd08ce1e"
+    sha256 cellar: :any,                 arm64_linux:   "fa3fb934b337fe31e19036f6216cc7f3034cb90ba08477f46fc4eeda185f5b8b"
+    sha256 cellar: :any,                 x86_64_linux:  "05b401379ef9e522aee6d07266a5d128abc8036ec13803871acd9a3450cb05e9"
   end
 
   depends_on "rust" => :build
