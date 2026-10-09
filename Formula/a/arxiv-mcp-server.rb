@@ -9,10 +9,10 @@ class ArxivMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b92e4f4ffb036f03207fe6d4b8966ed50068b65d2b97e91342056f4b6d32438"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f94309dc204c741d2f0f2768ff4fc73f274cad220c2eccddaf52ace4aa99dbcf"
-    sha256 cellar: :any,                 arm64_linux:   "870bc1074b79dd037f2561eaaf80cda1e44b94b3e834b5d055363434b2552a59"
-    sha256 cellar: :any,                 x86_64_linux:  "3ec2e7ecfaf7ce875a769e6198aa8be0b0bd1a254c34f1c2e2529baef3d13972"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c152b064f469388ad055adf0a65252d0a615e94586a110cf16e3f455856bb126"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc7c749d7d8ebab9038e06e67c6bedff5409753530b58f811d60a0cd3c312d7b"
+    sha256 cellar: :any,                 arm64_linux:   "9b4826011f9947018ea7fdc5ab1803c016879c3bc2aadd83595a5fbfebfb0cda"
+    sha256 cellar: :any,                 x86_64_linux:  "a47108cc744b04f214435e9a8e8bacd2a5df9545af677d61e4f2de2f3ec6c5d9"
   end
 
   depends_on "cython" => :build
