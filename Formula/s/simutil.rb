@@ -8,10 +8,10 @@ class Simutil < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "d95a81f590f4406c5fb81435a5925383ef8a3d89f4a5a2ecaef9dc5f8a44e247"
-    sha256                               arm64_sequoia: "901ef4ee3984ecc8ded07204a90cfa23229dd550659ba5dae02ef2aa66fc547e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e6e5df9c1af4429715c7253042f9c35d4cfafe656fcd3297fae3a812de4813a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07f032aba194aeb91dc4ab14146b145996972259cc2f79f85a474d322c463089"
+    sha256                               arm64_tahoe:   "fe6991db8040f6088265fc169bb156814e5f9ac5c2c5afdb6dd61d31731381d7"
+    sha256                               arm64_sequoia: "c4a3d1b0d2b2dcd27160b59baf92f42ed0afca05acad5a7d7f7efecd2cdf85a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1134c644ce8bfe823788c4367ffb2411b3bf4b1a43d9b4099853d796894aaf85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bface47e63b3b128d298053057477b5e4a9b20ab623f43a2190c72099882c480"
   end
 
   depends_on "dart-sdk"
