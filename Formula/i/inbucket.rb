@@ -1,8 +1,8 @@
 class Inbucket < Formula
   desc "Disposable webmail server with SMTP, POP3, and REST interfaces"
   homepage "https://inbucket.org/"
-  url "https://github.com/inbucket/inbucket/archive/refs/tags/v3.1.1.tar.gz"
-  sha256 "d985f7a9e0c739146e83c0f173c00b74e4b32c136e3019a600fe8869505bbc71"
+  url "https://github.com/inbucket/inbucket/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "40035d9430da76d614bc6f09dc9c501bb857ed7b6d991c7374b9aea24d2e66ff"
   license "MIT"
   head "https://github.com/inbucket/inbucket.git", branch: "main"
 
