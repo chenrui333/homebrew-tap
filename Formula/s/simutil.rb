@@ -1,8 +1,8 @@
 class Simutil < Formula
   desc "Manage mobile simulators and devices"
   homepage "https://github.com/dungngminh/simutil"
-  url "https://github.com/dungngminh/simutil/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "110239660360c99ff31a4579fa07e2f18c538ba1e2068d8add9f9e43b1784710"
+  url "https://github.com/dungngminh/simutil/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "7fe9b4a287f8f9827af8c68a91f4ceafb5f0758260d418cca0e628fc862c823a"
   license "MIT"
   head "https://github.com/dungngminh/simutil.git", branch: "main"
 
