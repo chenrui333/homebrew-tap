@@ -7,10 +7,10 @@ class McpUse < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "f48bf4046812cf6b109b12416f2e986f97742abb70c6fcfeeda61691362130a9"
-    sha256 cellar: :any,                 arm64_sequoia: "f48bf4046812cf6b109b12416f2e986f97742abb70c6fcfeeda61691362130a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e27d267849e5ca8210c23187690eafcefb7b403f5052e2cb504a3bcbdcfe0d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "793993d420523b29a9b079df890c5544032a23988d543d0a436f2f4026ff7962"
+    sha256 cellar: :any,                 arm64_tahoe:   "07b2ac9747fef1d63d1df9dc28623c62264256b098a196a9dda22949f9635ff2"
+    sha256 cellar: :any,                 arm64_sequoia: "07b2ac9747fef1d63d1df9dc28623c62264256b098a196a9dda22949f9635ff2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f998147283ecf2d52ed318a96212f7aa846aeca3f6f781fcf0ac9a8d6f220d64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f5a0024b8ae7fbe2e1f04fc619cb0095bf9dad29301733a5e1a47ca51ad99a5"
   end
 
   depends_on "node"
