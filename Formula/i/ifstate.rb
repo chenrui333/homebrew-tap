@@ -3,8 +3,8 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.5.0.tar.gz"
-  sha256 "a047abad7a5d2c3516ea31b0024dfab247358f1e57345502ee80adb1afba37ac"
+  url "https://codeberg.org/liske/ifstate/archive/2.5.1.tar.gz"
+  sha256 "c113e7fe66b2d905aec0a01e4a168191d44374b3d88fe998863761f11f1618d8"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
@@ -14,7 +14,6 @@ class Ifstate < Formula
     sha256 cellar: :any, x86_64_linux: "94367d5885701011cedde49fce59677cfa1ca49b9c1a5d36d6b5d1b469f112b7"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build # for uv-build
   depends_on "rust" => :build
   depends_on "libyaml"
@@ -24,8 +23,8 @@ class Ifstate < Formula
 
   pypi_packages exclude_packages: "rpds-py",
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core
-                  setuptools setuptools-scm tomlkit trove-classifiers uv-build vcs-versioning wheel
+                  calver cython flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy
+                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers uv-build vcs-versioning wheel
                 ]
 
   resource "attrs" do
@@ -36,6 +35,11 @@ class Ifstate < Formula
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "flit-core" do
@@ -153,6 +157,10 @@ class Ifstate < Formula
   end
 
   def install
+    # Fix hardcoded version string, remove in next release
+    # https://codeberg.org/routerkit/ifstate/commit/344b3b8f96b9bdba0b4c40bb394ca7d678d2228b
+    inreplace "src/libifstate/__init__.py", '__version__ = "2.5.0"', "__version__ = \"#{version}\""
+
     build_resources = %w[
       flit-core
       packaging
@@ -160,6 +168,7 @@ class Ifstate < Formula
       poetry-core
       setuptools
       calver
+      cython
       tomlkit
       trove-classifiers
       uv-build
@@ -172,10 +181,11 @@ class Ifstate < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
     ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
+    # Cython is only a build tool for the pyyaml extension; skip compiling Cython itself.
+    ENV["NO_CYTHON_COMPILE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
