@@ -1,16 +1,15 @@
 class Kudu < Formula
   desc "Manage QEMU virtual machines in the terminal"
   homepage "https://github.com/pythops/kudu"
-  url "https://github.com/pythops/kudu/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "7290a1368e8ff01e90b68aaf57233bf5c6c949f3b017b7d51f30f6dd8dab749e"
+  url "https://github.com/pythops/kudu/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "fb17469c2a8e627caeb301ca4ffb3c22e864b03b1df136f173d7f1cb317c10dc"
   license "GPL-3.0-or-later"
   head "https://github.com/pythops/kudu.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "5e55ad094bc7dec276bf3d28529c85599f72c948fe5a2bf66d99b70fe73ec319"
-    sha256 cellar: :any, x86_64_linux: "6e3252400972dc17bf01c8f13795bde7714cbe9f1bb50a23f86ee2ef2e410e94"
+    sha256 cellar: :any, arm64_linux:  "916dcb7592bc3606bf97c37cae17e5979e398e39a4f46d31a1470d632ba5bb48"
+    sha256 cellar: :any, x86_64_linux: "30df9fbf5d02c08f671fb3e80beb2050acdd2d142da66d562f41b55c8736cf48"
   end
 
   depends_on "rust" => :build
