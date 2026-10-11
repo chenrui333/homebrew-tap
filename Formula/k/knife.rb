@@ -1,8 +1,8 @@
 class Knife < Formula
   desc "Reverse engineering toolkit for PE, ELF, and Mach-O binaries"
   homepage "https://github.com/bl4ckr0ss3/knife"
-  url "https://github.com/bl4ckr0ss3/knife/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "007d24459d958cff453dd6fe78923635ac1d65e1cd1203341801e38fc0980928"
+  url "https://github.com/bl4ckr0ss3/knife/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "822e3f48a8d7986d0ae17bd47be183884ca414195ead205823d0825d826d6062"
   license "MIT"
   head "https://github.com/bl4ckr0ss3/knife.git", branch: "main"
 
