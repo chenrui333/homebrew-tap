@@ -1,16 +1,16 @@
 class ShopifyCli < Formula
   desc "CLI which helps you build against the Shopify platform faster"
   homepage "https://shopify.dev/"
-  url "https://registry.npmjs.org/@shopify/cli/-/cli-4.9.2.tgz"
-  sha256 "768f98c2189e64e338b0085c2db1156a8aaa5e2677bfb23da967ed936afd9203"
+  url "https://registry.npmjs.org/@shopify/cli/-/cli-4.9.3.tgz"
+  sha256 "afc64aba664b67164080668bad812dc0629586b4175fb2a5a8097155aa8cb187"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "cc3438226347a249a8d7556fdc47d4230e7bb3d9d7d6c92c268eecf07fcfaca2"
-    sha256 cellar: :any,                 arm64_sequoia: "cc3438226347a249a8d7556fdc47d4230e7bb3d9d7d6c92c268eecf07fcfaca2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63adc1829e950000640008ecc1e1d4a50239682ed7b4aa4c814dc1db3256f160"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c99041e5fd5cc5a6dee1da6e7ea81808e3c3d4eab063bde31ceaf923005557c"
+    sha256 cellar: :any,                 arm64_tahoe:   "f0d345c16870fdebcdb4a2aa933c8ea2a3424583eca175282decf7ba00b5a27c"
+    sha256 cellar: :any,                 arm64_sequoia: "f0d345c16870fdebcdb4a2aa933c8ea2a3424583eca175282decf7ba00b5a27c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89a98f314b428dbb4242fb6be14522dce2b5b51adf2dd2a21cb88a55f1985641"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbe19f01e0dc218576664b464e9a674948e9ac6fcb33a5426525b9019e2916dd"
   end
 
   depends_on "node"
