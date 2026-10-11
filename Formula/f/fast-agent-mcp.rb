@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/32/07/cb15b63cc42fa4663aabcc00e9b37578d870c3c3ec3c31be20d29885a73c/fast_agent_mcp-0.10.43.tar.gz"
-  sha256 "c105a274f260c4548a81e378f84a1d06e1855d77a894535e4a655f37baf12ffc"
+  url "https://files.pythonhosted.org/packages/a8/29/e2cbbc6a8cc55cccb463144d6d9efa68b9797a4c400aa72f56dc2a00ace7/fast_agent_mcp-0.10.44.tar.gz"
+  sha256 "fb5ac07bf29cda99db2998510aa7f217b745d2161f1617d9bf168ecda7bf0d6c"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -16,7 +16,6 @@ class FastAgentMcp < Formula
     sha256 cellar: :any, x86_64_linux:  "bbfabab3c845e32892d2b3e1e84cc6b945fa6d2e5a20c908b17726315a88985f"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
@@ -30,16 +29,16 @@ class FastAgentMcp < Formula
   depends_on "rpds-py" => :no_linkage
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic pydantic-core rpds-py],
                 extra_packages:   %w[
-                  coherent.licensed dunamai expandvars flit-core flit-scm hatch-fancy-pypi-readme hatch-vcs
-                  hatchling jinja2 markupsafe pathspec pdm-backend pdm-pep517 pkgconfig pluggy poetry-core
-                  setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers uv-dynamic-versioning
-                  vcs-versioning wheel
+                  coherent.licensed cython dunamai expandvars flit-core flit-scm hatch-fancy-pypi-readme
+                  hatch-vcs hatchling jinja2 markupsafe pathspec pdm-backend pdm-pep517 pkgconfig pluggy
+                  poetry-core setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers
+                  uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "a2a-sdk" do
@@ -98,8 +97,8 @@ class FastAgentMcp < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/c7/94/1009e248bbfbab11397abca7193bea6626806be9a327d399810d523a07cb/beartype-0.22.9.tar.gz"
-    sha256 "8f82b54aa723a2848a56008d18875f91c1db02c32ef6a62319a002e3e25a975f"
+    url "https://files.pythonhosted.org/packages/74/b7/6f162c0116815b45de8ac81cde5aaacfc67cce4b573fb2e194c3a8c623eb/beartype-0.23.0.tar.gz"
+    sha256 "9d915ce043a2262ee3eb110d1c1c528179f06eb4145e375a750f72ddbdf40fa3"
   end
 
   resource "cachetools" do
@@ -127,6 +126,11 @@ class FastAgentMcp < Formula
     sha256 "d8071403ce742d3ac3592ddc4fb7057a46caffb415b928b4d52802e5f208416d"
   end
 
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
   resource "cyclopts" do
     url "https://files.pythonhosted.org/packages/28/c1/3debeeb6e0eb74a51d6f8cf1f273ed7c479e3321631cbf89fb9700e65e28/cyclopts-5.2.0.tar.gz"
     sha256 "b63c1b1beaadf3ead19214385a0f90b990f152c4107c174e1724c45dc71e9541"
@@ -138,8 +142,8 @@ class FastAgentMcp < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "docstring-parser" do
@@ -198,8 +202,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/0a/c7/5c90a4b12d68efe3a6c277c9d0336e3d1e7f64b41dfb780e35d0eefec77a/google_api_core-2.41.0.tar.gz"
-    sha256 "73e89a86baef6680934adeee6fbd0ceaf20c1393ab229b2f9b34efb23b0fdef3"
+    url "https://files.pythonhosted.org/packages/ac/aa/2aa84799e6920216f8aa2866d3b43daa20f7060dcb6efc8f0449e8be0ab0/google_api_core-2.42.0.tar.gz"
+    sha256 "82cf5daa2ef1b456d4e29ff1de1a5c2995c7be3ccf4fc608184326e03390c1ee"
   end
 
   resource "google-auth" do
@@ -693,8 +697,8 @@ class FastAgentMcp < Formula
   end
 
   resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/6b/5a/92ce0b3ea5481915f55da994c2c2c5f7a3c09949afde196ee89f8ab961aa/uncalled_for-0.4.0.tar.gz"
-    sha256 "335b95bd2422332ec210d518f314a16e4c640921c39fc8bf2ad095bd3538f4af"
+    url "https://files.pythonhosted.org/packages/6c/54/4651e4c5fe84300f8e03c0390aaad41bcb9c7b81d7783542a3ee690b40ee/uncalled_for-0.4.1.tar.gz"
+    sha256 "6412b19d1b1e7d431981fee01f8b47be7802f48328a48cbe9603acee757ec553"
   end
 
   resource "uritemplate" do
@@ -783,6 +787,7 @@ class FastAgentMcp < Formula
 
     build_resources = %w[
       setuptools
+      cython
       flit-core
       wheel
       poetry-core
@@ -811,8 +816,9 @@ class FastAgentMcp < Formula
     ]
 
     ENV.prepend_path "PATH", formula_opt_bin("rust")
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
     ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
+    # Cython is only a build tool for the pyyaml and aio-libs extensions; skip compiling Cython itself.
+    ENV["NO_CYTHON_COMPILE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -820,6 +826,7 @@ class FastAgentMcp < Formula
     end
 
     uv_build_resources = {
+      "dnspython"          => "dns",
       "py-key-value-aio"   => "src/key_value",
       "python-frontmatter" => "frontmatter",
       "textual-image"      => "textual_image",
