@@ -8,11 +8,10 @@ class Inbucket < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9baa01080d94b10393104e302a8feaeaa805b48ed157ce76ce700e52200ba221"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9baa01080d94b10393104e302a8feaeaa805b48ed157ce76ce700e52200ba221"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ab5c83abe0520361a2d931b0db1a5b97f9c3a6f33a32e288d311c16e7e4bcde"
-    sha256 cellar: :any,                 x86_64_linux:  "699c8703673d3210628a7b3badf0f8a9b2d0f249cb14671f769225968111c0aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e61d534f87df02e80c6ab023cc80053b609e6d153973b300c29a4d349b31b28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e61d534f87df02e80c6ab023cc80053b609e6d153973b300c29a4d349b31b28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a27f889bf6e3321f2c2423fe232e1018da69d55983626b9ad46b42f69e5c568a"
+    sha256 cellar: :any,                 x86_64_linux:  "147ed29758b2dd3d360d97071683803771378930a04519dcd8134f6430fd9dff"
   end
 
   depends_on "go" => :build
