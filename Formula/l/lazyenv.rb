@@ -1,18 +1,17 @@
 class Lazyenv < Formula
   desc "TUI tool for managing multiple .env files in the terminal"
   homepage "https://github.com/lazynop/lazyenv"
-  url "https://github.com/lazynop/lazyenv/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e59eca8832e9dec1e5f265efb54424612732aa1f8071daec459bb752fd235a2e"
+  url "https://github.com/lazynop/lazyenv/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "268b45242814680eb541f68f7289b43ea710d35b3b20dbad5b70f1ae26fbbd56"
   license "MIT"
   head "https://github.com/lazynop/lazyenv.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c0fb623fa2975021670b94070fbf3010eb2e88314948185e93a62dc2d59524af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0fb623fa2975021670b94070fbf3010eb2e88314948185e93a62dc2d59524af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "607654f6c8dd55364ff573e934fe17f6515827549bd06066e3a77052f9cefe39"
-    sha256 cellar: :any,                 x86_64_linux:  "b7befd15d8a12ed07fda4073cc468a4b64e3270db7e9470f739deb48b3ef7341"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "571fd5c3ab9db50d030cb2e895711cb29cebaedc77a3a7a16de674e27fb07c31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "571fd5c3ab9db50d030cb2e895711cb29cebaedc77a3a7a16de674e27fb07c31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f308bb18e7b15fc27da7da24da749c63498bbe66f863c74ddb3b7e45db49ca1"
+    sha256 cellar: :any,                 x86_64_linux:  "8a3af48c132a9ed5b271f5956c07f7597d482ac9462c56cbd4a1e3d732e6a72f"
   end
 
   depends_on "go" => :build
