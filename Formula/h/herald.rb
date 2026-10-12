@@ -1,8 +1,8 @@
 class Herald < Formula
   desc "Terminal email and calendar client"
   homepage "https://github.com/herald-email/herald-mail-app"
-  url "https://github.com/herald-email/herald-mail-app/archive/refs/tags/v0.7.5-beta.1.tar.gz"
-  sha256 "896105ba775beb7e25c317ddd1309ed1695f29372f3f9ad554714b26153488e2"
+  url "https://github.com/herald-email/herald-mail-app/archive/refs/tags/v0.8.0-beta.1.tar.gz"
+  sha256 "fcbf0b3b3c438489a2f71b2b1a8378ec8068abff4017f6347f91bcb49a47b51b"
   license "FSL-1.1-ALv2"
   head "https://github.com/herald-email/herald-mail-app.git", branch: "main"
 
