@@ -1,17 +1,17 @@
 class Justray < Formula
   desc "Terminal VPN client"
   homepage "https://github.com/luynrs/justray"
-  url "https://github.com/luynrs/justray/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "6b7b1cf25fa2a8593939b6a0dae8e564722fb527d38dc3bc3b9a29db32e99104"
+  url "https://github.com/luynrs/justray/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "3037a9d62dd79e0812828fb2fa7f113569cda856d196b85cb6310dadbad9f036"
   license "GPL-3.0-only"
   head "https://github.com/luynrs/justray.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "37b3d3615d88f43dbe5a90d60f54a13c77fddaf3aa61fe7eac39d28ebe8aa829"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6a6a5c5c688547e62e448a2748b60901f9e070a76765f0d2b17de17744fad3e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "79c718d6a104b530f932a7df8e8f64ea7677a93a57c07b8d67c5baab0d4d8322"
-    sha256 cellar: :any,                 x86_64_linux:  "b8b46dd4da44b891974fdf096ab0ad7a20b682ae7d8b63bd2b298085e9d52b15"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c73be1938ea37236add21b9b3a622d1d62515a0bee37df92b112970e8f1ce7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa92c1f7531d13cceff6d2e022823c542452ed81e65a4eaa13056041989068ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3b4506941cf454f4866bc609ec81a78b2b33d10dbce68000f31f49d87d4bfa5"
+    sha256 cellar: :any,                 x86_64_linux:  "327d5fe6e329507ad559a8c9245f1cab8790079f4b28d85b3d066b23d7962a10"
   end
 
   # Match upstream release CI; sing-box relies on private HTTP/2 symbols.
