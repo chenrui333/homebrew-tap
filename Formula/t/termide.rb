@@ -2,8 +2,8 @@ class Termide < Formula
   desc "Cross-platform terminal-based IDE, file manager, and virtual terminal"
   homepage "https://termide.github.io"
   url "https://github.com/termide/termide.git",
-      tag:      "0.40.0",
-      revision: "0719f56e39f6eee4119f53fe40167c4344083fde"
+      tag:      "0.41.0",
+      revision: "f49a4c40ef6aaaff0741f7a52cefbf163dd9519b"
   license "MIT"
 
   bottle do
@@ -36,7 +36,7 @@ class Termide < Formula
     assert_match version.to_s, shell_output("#{bin}/termide --version")
 
     output = shell_output("#{bin}/termide --config #{testpath}/missing.toml --diagnostics 2>&1", 1)
-    assert_match "load: No such file or directory", output
+    assert_match "load: config file not found", output
     assert_match "One or more checks failed", output
   end
 end
