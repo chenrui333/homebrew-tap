@@ -1,17 +1,16 @@
 class Newsjack < Formula
   desc "Open-source skills that turn your agent into a full PR team"
   homepage "https://github.com/elvisun/newsjack"
-  url "https://registry.npmjs.org/newsjack/-/newsjack-0.1.19.tgz"
-  sha256 "e4e8dc36f2672b4abca9854f4e76de542192ca89edc506a2be6905289db41fd8"
+  url "https://registry.npmjs.org/newsjack/-/newsjack-0.1.20.tgz"
+  sha256 "6b73fba7fd461940e5cec031c5d924745bcf4d89409204e0ad1fc10435c8a3d9"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd998bd53edaef130d99e09164e7c9cd09a3c37555c5c1e10f9cd1440a5beeae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd998bd53edaef130d99e09164e7c9cd09a3c37555c5c1e10f9cd1440a5beeae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e508eaadf7a788d8780efa05e0c1c0c58e59df0fa2f408d6c4dcc9243a431a30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57c78438dfecf731aa1abab1bfe0ea450eb9fa8032c28c93cb2045f1e2cd9d51"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa17941a5fdf50be204813d72550009d3b6344243fe79fa9049bb64113ce5eff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa17941a5fdf50be204813d72550009d3b6344243fe79fa9049bb64113ce5eff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4764930dba3e0d7b0342bcc5b1d92109cd98092d8d3d7e0c5052cd43cb74361a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "704a9cabae989f99aeae779299f09f593d41db8c7020cba1e712e9f4e3f4c498"
   end
 
   depends_on "node"
