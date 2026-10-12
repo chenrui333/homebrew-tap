@@ -8,10 +8,10 @@ class Claumon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8902e3de61f9f013bcc22352756dbf893afc82e06c40c63c40e88529670ec93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8902e3de61f9f013bcc22352756dbf893afc82e06c40c63c40e88529670ec93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cbf11effe72de968d195feabb9353ead4c57ec4cb191ce03accca5f11e3ce1d"
-    sha256 cellar: :any,                 x86_64_linux:  "4844cc144db25c489498c57bdcf40fd3ee65e6589f610d6552318c035abb4cd4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "406de1dbc60571b5ae46850e6885dee7249760d7efd876be58957e3cacac565e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "406de1dbc60571b5ae46850e6885dee7249760d7efd876be58957e3cacac565e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "299659c233f007ce22f0949f359e48263110b352f447f481a1b51eaf8d7f1653"
+    sha256 cellar: :any,                 x86_64_linux:  "8e6cdd28cfe3c07d968f949e2ace19e42e0f88b722983b6912b456cff1880421"
   end
 
   depends_on "go" => :build
