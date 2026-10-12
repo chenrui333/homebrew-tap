@@ -1,8 +1,8 @@
 class Newsjack < Formula
   desc "Open-source skills that turn your agent into a full PR team"
   homepage "https://github.com/elvisun/newsjack"
-  url "https://registry.npmjs.org/newsjack/-/newsjack-0.1.19.tgz"
-  sha256 "e4e8dc36f2672b4abca9854f4e76de542192ca89edc506a2be6905289db41fd8"
+  url "https://registry.npmjs.org/newsjack/-/newsjack-0.1.20.tgz"
+  sha256 "6b73fba7fd461940e5cec031c5d924745bcf4d89409204e0ad1fc10435c8a3d9"
   license "Apache-2.0"
 
   bottle do
