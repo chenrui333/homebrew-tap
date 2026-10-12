@@ -1,17 +1,17 @@
 class Claumon < Formula
   desc "Claude Code dashboard with live rate-limit gauges and usage forecasts"
   homepage "https://github.com/fabioconcina/claumon"
-  url "https://github.com/fabioconcina/claumon/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "3b68915d5bcfc534620a37386ed6f3124077858591fa34d0f9908adac2436bfb"
+  url "https://github.com/fabioconcina/claumon/archive/refs/tags/v0.21.2.tar.gz"
+  sha256 "cf0a84868ced1c4773c1cf4b57d3897d529921960542f303b16c5bbb0d532608"
   license "MIT"
   head "https://github.com/fabioconcina/claumon.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a474e7cd4b350887faa6a38ddff8bcd68500d373d017ce117be155d68d56145b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a474e7cd4b350887faa6a38ddff8bcd68500d373d017ce117be155d68d56145b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eed599c8c61117e24a46a7c928beac357c5b2973066fbec85af2782da3e27d6"
-    sha256 cellar: :any,                 x86_64_linux:  "9307c5c6696f3e70c692d7677225f4fe1301d559bfee471d70179fca092a79b1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8902e3de61f9f013bcc22352756dbf893afc82e06c40c63c40e88529670ec93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8902e3de61f9f013bcc22352756dbf893afc82e06c40c63c40e88529670ec93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cbf11effe72de968d195feabb9353ead4c57ec4cb191ce03accca5f11e3ce1d"
+    sha256 cellar: :any,                 x86_64_linux:  "4844cc144db25c489498c57bdcf40fd3ee65e6589f610d6552318c035abb4cd4"
   end
 
   depends_on "go" => :build
