@@ -14,11 +14,10 @@ class Herald < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01c08a2f3f7e03adf2bb51fb6dc63dc48b8d0b360632862aae2724d8f2541565"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51e46d6602bcb695cddbd1194e77bd5c54745d77b06fb24f89236d5d634cf129"
-    sha256 cellar: :any,                 arm64_linux:   "2f3b15691ec17c571736db726aae6cede37ba45935b5c8c0157a66aa3d5494af"
-    sha256 cellar: :any,                 x86_64_linux:  "b4aab0adc9f86a15047031a64b9557264f8213d556a9e56879c273c5ebf01778"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21a54dd59de0887fc215a79a5c3c3b159e1fd30a728d096644bff90b9e2f5ff9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b09ac4345749f5c1128d877a26aeaaa27ddf5420054d3a7e77aff164e7bdb7a3"
+    sha256 cellar: :any,                 arm64_linux:   "56ecd770560abbf3bfcc1080a1f38019ac762c69884d872be9cd005cd59954e5"
+    sha256 cellar: :any,                 x86_64_linux:  "1d28c33b7b3d7c0c30b7d9dff6a12f09510be0ee6c70b502fdd920fefceeb581"
   end
 
   depends_on "go" => :build
