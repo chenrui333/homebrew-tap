@@ -1,18 +1,17 @@
 class Hulak < Formula
   desc "Lightweight file-based API client with encrypted secrets store"
   homepage "https://github.com/xaaha/hulak"
-  url "https://github.com/xaaha/hulak/archive/refs/tags/v0.3.33.tar.gz"
-  sha256 "082d5ab2d036238fa2a008b502a4b01bd8b23935c40c50fdcc2ed16918a4f840"
+  url "https://github.com/xaaha/hulak/archive/refs/tags/v0.4.00.tar.gz"
+  sha256 "21a0dca437e0843425b7e2354ba0285d3df0d274ed8e981c8958ec8f3c0580c1"
   license "MIT"
   head "https://github.com/xaaha/hulak.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9be915ae763288f3d89f139376101c0549529861a0ed116cad83b0d3e53d1f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9be915ae763288f3d89f139376101c0549529861a0ed116cad83b0d3e53d1f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "211e636c5729d82e99927a18fb0a5f2d7a3495810d5f9636a9fba8c204f6a68c"
-    sha256 cellar: :any,                 x86_64_linux:  "42513c29d3ab83e43bafdf65fd55369c2cd007a2363ca1bf00a7b4bfa05bda53"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6db9a56f7c0f5c7b64a1a52f1ea34ce8f9712914136d7dc936b80a1b53475d8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6db9a56f7c0f5c7b64a1a52f1ea34ce8f9712914136d7dc936b80a1b53475d8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a427f3d0111747d911a46dd2bd598a91804e38f5870ee7415c1fd3d7950f110"
+    sha256 cellar: :any,                 x86_64_linux:  "2c86bec5835823837f87c246bd34de94fc83c9da97d10fd4f02a26248065ec7e"
   end
 
   depends_on "go" => :build
