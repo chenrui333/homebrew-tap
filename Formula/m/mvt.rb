@@ -3,18 +3,18 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/09/53/78457dc52b1115bca5c1c68a65aeed15ce3f9cc846f684dae22118340f31/mvt-2026.10.5.tar.gz"
-  sha256 "a2875a1c681525c52fec2179b1cfd5a0e3893e869252fe7b8f7babf41d02588a"
+  url "https://files.pythonhosted.org/packages/5a/1b/646cf26c593524e11673cc0c9447b5804a06919f3c956cc768f3bc2db463/mvt-2026.10.12.tar.gz"
+  sha256 "50c3cbc0b92a3ede549f1430f2829572245b3ee3151e2d0c2acb3871182cccd9"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6b6f252865595cdc5aab2696ccc4600816b05c0ebf3e550b61b5d3278fdcdad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7052bf3fb9cd6370d3ea735aad73714aeb5940da2d416dbe0485fa2169fbfda5"
-    sha256 cellar: :any,                 arm64_linux:   "be523620d6a205a5439f46bf1f2f651d6d5b6516fcbafa6e7f70871e91a911f0"
-    sha256 cellar: :any,                 x86_64_linux:  "0d4e8d4e91a236ccc0bc1edc430dbd2a205cc6665b36186b9530605e514fedee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5486c3a002ee53cadb140e8ebdc553b3cffbac20372c09c4b56af63ced273ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c808f3ae145982b1c49641c23d7acb22f67e54fadafd5b086524f6c4d28cabdb"
+    sha256 cellar: :any,                 arm64_linux:   "a2d54c8b2a4c2f30f9b0eddeeca374d3a6464b83c81b1fe8bdbd18427f0d2766"
+    sha256 cellar: :any,                 x86_64_linux:  "8e6ac9ae2b5c94e0b1fc469631125a18fbe09913b167b79db73e6302aeb274b4"
   end
 
   depends_on "cython" => :build
@@ -127,8 +127,8 @@ class Mvt < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/34/e0/0d0bd5b1089a4bf5ef48164459289ddf02a9110ca1db854edaad25127e64/pycryptodome-3.24.0.tar.gz"
-    sha256 "9140779b40405476a799305b9ac1bcaab4ee6791dc3d38b12a9aa84ffbd6aabf"
+    url "https://files.pythonhosted.org/packages/a9/75/b8a9ba9a15b1b190d1fb21e75e921934c9bcd7e63e137f96b56ed274328c/pycryptodome-3.24.1.tar.gz"
+    sha256 "3f9e74444c0ecbec7af232a95d282c74b114d53212ce075ed17b7fd7dca32bb3"
   end
 
   resource "pydantic-settings" do
@@ -212,13 +212,13 @@ class Mvt < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/b4/65/672d5c1e7fff2a602b51758cd96c379ea80c0c20d9d10aae5139bfde9877/uv_build-0.12.23.tar.gz"
-    sha256 "b0428317e2783252b33b513446436071f4e14bfeb38655c99877ca6550ea4aac"
+    url "https://files.pythonhosted.org/packages/3e/2c/b18c631e647323c899891d8d994fbbdbe8054a18515344cb4cfd2f41c388/uv_build-0.13.0.tar.gz"
+    sha256 "bd2614f24a58dccd4865d4f86ddd91dd01fd0efab4632e033186a8423b8a3515"
   end
 
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "wheel" do
