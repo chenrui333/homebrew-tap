@@ -11,10 +11,10 @@ class Mvt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6b6f252865595cdc5aab2696ccc4600816b05c0ebf3e550b61b5d3278fdcdad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7052bf3fb9cd6370d3ea735aad73714aeb5940da2d416dbe0485fa2169fbfda5"
-    sha256 cellar: :any,                 arm64_linux:   "be523620d6a205a5439f46bf1f2f651d6d5b6516fcbafa6e7f70871e91a911f0"
-    sha256 cellar: :any,                 x86_64_linux:  "0d4e8d4e91a236ccc0bc1edc430dbd2a205cc6665b36186b9530605e514fedee"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b5486c3a002ee53cadb140e8ebdc553b3cffbac20372c09c4b56af63ced273ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c808f3ae145982b1c49641c23d7acb22f67e54fadafd5b086524f6c4d28cabdb"
+    sha256 cellar: :any,                 arm64_linux:   "a2d54c8b2a4c2f30f9b0eddeeca374d3a6464b83c81b1fe8bdbd18427f0d2766"
+    sha256 cellar: :any,                 x86_64_linux:  "8e6ac9ae2b5c94e0b1fc469631125a18fbe09913b167b79db73e6302aeb274b4"
   end
 
   depends_on "cython" => :build
