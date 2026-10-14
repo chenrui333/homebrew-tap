@@ -1,19 +1,17 @@
 class MoltbookTui < Formula
   desc "TUI client for Moltbook, the social network for AI Agents"
   homepage "https://github.com/terminaltrove/moltbook-tui"
-  url "https://github.com/terminaltrove/moltbook-tui/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "b970101d47776b976ef848424454742a047fcaf1b4fb24f4d0bc4bfdc5b954b7"
+  url "https://github.com/terminaltrove/moltbook-tui/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "56624e66f4de1232e8db1dea8d52b547ec3a8d7a583a892733abfb9e8c21bc41"
   license "MIT"
-  revision 1
   head "https://github.com/terminaltrove/moltbook-tui.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "14ecdf7e5272862eadd7bd97b6a9758008d21a4d8dfebdbd94a3f54e22bcb492"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96090c4ce726cf704a4c0bb27358a15dba9d04b64854dab3a651703f7ead531b"
-    sha256 cellar: :any,                 arm64_linux:   "6f005e9c5302e41da4687eac15407ee013e3dd2683e2fbc14b39ae4dcd1ae60f"
-    sha256 cellar: :any,                 x86_64_linux:  "a644951c55051171cbc9ee26695d744416332fa74dce23e28e852bf6596cb006"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c17e33845e3c7e6ac1b16ca1974217e66f9f8856e6ee332d17eedbae132e66d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8f242abda19447da339225119d9aabeb064f143b144600f245957ccfb2a23f6"
+    sha256 cellar: :any,                 arm64_linux:   "ecfa5023e525933697f03ab15a18684567f07194f929238193beaac7119363bf"
+    sha256 cellar: :any,                 x86_64_linux:  "dcdfa083ebc009ffc5ce923577650845e272d1716c21484e8597d8cd8c0828ac"
   end
 
   depends_on "rust" => :build
