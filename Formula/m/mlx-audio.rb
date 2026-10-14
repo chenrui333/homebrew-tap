@@ -3,8 +3,8 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/cd/a6/c75b328fc1059d0a3d56cf8330e9df6745dfe8c6ec38a3c6cfef2d42ad5f/mlx_audio-0.5.8.tar.gz"
-  sha256 "55a7378a4d27dddeba2d989f71f255ce70498b3f1c27928a8b1fb0baf3577d9e"
+  url "https://files.pythonhosted.org/packages/cc/4a/ea4746d0c14b75d835dd5164d0e8bba19598248cb29831c0c8e8b98310b9/mlx_audio-0.5.9.tar.gz"
+  sha256 "ad2862464d2d5b8ab4b9394a226d044e7022da594329427ef16ca8e93c08e6b5"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
@@ -32,7 +32,7 @@ class MlxAudio < Formula
   depends_on "numpy"
   depends_on "openblas"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "scipy" => :no_linkage
 
   on_macos do
@@ -41,8 +41,9 @@ class MlxAudio < Formula
 
   pypi_packages exclude_packages: %w[certifi fastapi mlx mlx-lm numpy protobuf scipy uvicorn],
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling pathspec pdm-backend pluggy
-                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                  calver dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe pathspec
+                  pdm-backend pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
+                  uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "annotated-doc" do
@@ -70,9 +71,14 @@ class MlxAudio < Formula
     sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
+  resource "dunamai" do
+    url "https://files.pythonhosted.org/packages/c5/62/edf5352d8ce1371129ccfe971e6de3a1ce4dc7f9bdc80390fb79856b78d4/dunamai-1.26.3.tar.gz"
+    sha256 "fe2f732186710ee5048044fdbef6c76c6afbb9ee7de4f6d00cf34256e9ec2e7f"
+  end
+
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz"
-    sha256 "cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c"
+    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
+    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
   end
 
   resource "flit-core" do
@@ -106,23 +112,23 @@ class MlxAudio < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/1b/ab/522a2ab67f27971a9d48ca666d4fca85ef7d5282d142e31fd087e27b1bbe/hf_xet-1.6.0.tar.gz"
-    sha256 "2e58454a340b3556dfa4972d5451aff4fba8dd42a236600ba1a1d2b1514f0fef"
+    url "https://files.pythonhosted.org/packages/9e/27/06d899ea7bd721d272f84aac98bdb238de98af4cc767a69056d967d68c71/hf_xet-1.7.0.tar.gz"
+    sha256 "d406ec79053c0871817f700c2ac8c36ba0d87f9c34b7458b0f0063bb218b0466"
   end
 
-  resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
-    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
+  resource "httpcore2" do
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
-  resource "httpx" do
-    url "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz"
-    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
+  resource "httpx2" do
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/25/2a/484d112c0d8fc5f665d7b65137ac9cdb2953c982391598c3597968a12ee7/huggingface_hub-1.33.0.tar.gz"
-    sha256 "367be21a201db9523eddf8aeac7048f2602c1b308691c97640d5e72ed188007e"
+    url "https://files.pythonhosted.org/packages/12/47/6858d63643e66fb4f6585c3cfd4029c0b2bc1ae21688cee9b3335f20a10d/huggingface_hub-2.2.0.tar.gz"
+    sha256 "5d1b47537394e4215cb858aa12fd493d0f7ef7f58990f5dcd24bc173107b2871"
   end
 
   resource "idna" do
@@ -130,9 +136,19 @@ class MlxAudio < Formula
     sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
+  resource "jinja2" do
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
+  end
+
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
     sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
+  end
+
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/38/9b/e422a865e1d5d57d0e509b4e0bf1c1a70a7f6382c29a5aa428df994c8bc8/markupsafe-3.0.4.tar.gz"
+    sha256 "2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6"
   end
 
   resource "mdurl" do
@@ -171,8 +187,8 @@ class MlxAudio < Formula
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
-    sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
+    url "https://files.pythonhosted.org/packages/da/a8/c5fdbeee588bb8ada9458774f43adf1bdd30bd59157055142183e769a024/pycparser-3.11.tar.gz"
+    sha256 "d875f09c3507d00e1aba0eecc6dcadc1352f30fff09dc6bff2f1c2935e97c2bc"
   end
 
   resource "pygments" do
@@ -221,8 +237,8 @@ class MlxAudio < Formula
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/18/1e/bc6587c5ab643b2e17776cace9070a2ae73549c86bffac9934a600bf3c31/tokenizers-0.23.2.tar.gz"
-    sha256 "7f0f085686b9de0d0079e6f874ae053600db64c5d13049e0bbc0119926d25aac"
+    url "https://files.pythonhosted.org/packages/e0/7c/2cabb2174e772636683008f2c5621949b645da7d303c596589e84516a184/tokenizers-0.23.3.tar.gz"
+    sha256 "cded33237c77caeef62944d32aa9a7ef42bdce2b3497e18d137e072a8c4be438"
   end
 
   resource "tomlkit" do
@@ -236,8 +252,8 @@ class MlxAudio < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/9e/6e/5a50ca8aff5fdd4ff21271198d2fb9e1f11bcd0ea279576199c0caa34cba/transformers-5.18.0.tar.gz"
-    sha256 "d89c206e42e841af7cd314b3d2b21c03e977d819cdb4aef65ada048769a644df"
+    url "https://files.pythonhosted.org/packages/65/4c/70012ed0795235fb6bd7806fafd4a1842f03e49ebbfa3bb9580e451948ce/transformers-5.19.0.tar.gz"
+    sha256 "87f38dd25e4521151b97e94520ac457f44a0ae8a8358a5b112daff6c64a822d6"
   end
 
   resource "trove-classifiers" do
@@ -245,9 +261,14 @@ class MlxAudio < Formula
     sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
+  resource "truststore" do
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
+  end
+
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
-    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
+    url "https://files.pythonhosted.org/packages/03/51/d33db42cc72ffd8c30777547b42d01f0cbf9d95a770457698d0174b3ed71/typer-0.27.3.tar.gz"
+    sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
   resource "typing-extensions" do
@@ -255,9 +276,14 @@ class MlxAudio < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
+  resource "uv-dynamic-versioning" do
+    url "https://files.pythonhosted.org/packages/6f/c8/fa500ee29af69cfeeea5ff6d6597919f1989b2e3f1a236c3006bdb21d320/uv_dynamic_versioning-0.14.1.tar.gz"
+    sha256 "8642db686ce5c50417035e7a257ac73b7e5c3a7a32c33e45bd7e36ba22eeb648"
+  end
+
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "wheel" do
@@ -299,15 +325,19 @@ class MlxAudio < Formula
       hatchling
       hatch-fancy-pypi-readme
       hatch-vcs
+      dunamai
+      markupsafe
+      jinja2
+      uv-dynamic-versioning
       wheel
       pycparser
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.15")
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.15")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.14")
+    venv = virtualenv_create(libexec, "python3.15")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
