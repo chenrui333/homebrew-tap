@@ -1,10 +1,9 @@
 class MoltbookTui < Formula
   desc "TUI client for Moltbook, the social network for AI Agents"
   homepage "https://github.com/terminaltrove/moltbook-tui"
-  url "https://github.com/terminaltrove/moltbook-tui/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "b970101d47776b976ef848424454742a047fcaf1b4fb24f4d0bc4bfdc5b954b7"
+  url "https://github.com/terminaltrove/moltbook-tui/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "56624e66f4de1232e8db1dea8d52b547ec3a8d7a583a892733abfb9e8c21bc41"
   license "MIT"
-  revision 1
   head "https://github.com/terminaltrove/moltbook-tui.git", branch: "master"
 
   bottle do
