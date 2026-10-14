@@ -1,18 +1,17 @@
 class Hauler < Formula
   desc "Airgap Swiss Army Knife"
   homepage "https://docs.hauler.dev/docs/intro"
-  url "https://github.com/hauler-dev/hauler/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "d947d36b79ab37ad505e17d7bb88a86751effcb3cb05b2d844ffefc092edeb78"
+  url "https://github.com/hauler-dev/hauler/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "7e1d8a71b4084ca43142c8a5bc421ffb94b289c13379d44185495f1b67400991"
   license "Apache-2.0"
   head "https://github.com/hauler-dev/hauler.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "caa63e63064938e9d6599952e103cf09b88add7feeb5e7fcceb1272a92d5d5a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce7558679737a02a63fc7324fa1f7a9544b5f694f547caa8bb675acac33ce048"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "677b5f6aad8a2a01df684cdb52efc936f96594b4872fb6a264783740158ace0b"
-    sha256 cellar: :any,                 x86_64_linux:  "bb2207578c6bd7d10c298470f8fe166ba6b1b086f14b25837be0855f2aa54636"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6de02b726622358b3eefb747c28f7af1b5a7dc760e8b742b5633776e3dfcf748"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "593a906b7b0321c6f321363dbbc93539a2bf6ebd4448031fddf69e8a20a3643b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c40523d51962f2cb80e827e61c649ab59d3bf54fa03fe076c38a1f8955473c01"
+    sha256 cellar: :any,                 x86_64_linux:  "7ed7f8ad2913c538f6239fd793b3f7142eebb263ab1df1997818c8c7de263501"
   end
 
   depends_on "go" => :build
