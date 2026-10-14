@@ -1,8 +1,8 @@
 class Gittop < Formula
   desc "Beautiful terminal UI for visualizing Git repository statistics"
   homepage "https://github.com/hjr265/gittop"
-  url "https://github.com/hjr265/gittop/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "5afaf1ee423bb23b7e7cbe335bdbf2bc83da848caf2eeac82284efbe80ab3b4b"
+  url "https://github.com/hjr265/gittop/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "3201fbdcbcc7599e8b74bc4d81ace139cefa30c83130e75e20a3016a17fc312b"
   license "BSD-3-Clause"
 
   bottle do
