@@ -1,17 +1,17 @@
 class Zerobrew < Formula
   desc "Drop-in, faster, experimental Homebrew alternative"
   homepage "https://github.com/lucasgelfond/zerobrew"
-  url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "6a4707445597e56eaf4010e2bfec3266c2e465e39fc13f44cb3ffdf451f844e6"
+  url "https://github.com/lucasgelfond/zerobrew/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "caf2388bd79b6ece192b117f7c08051c347eba72fd5245d6e01fb2b871af9c61"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/lucasgelfond/zerobrew.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90c7b7da54cb80136fb1ca22dfb4ccdb25fcbcdc8aba13e5f317f31dbe1c5904"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "749233640fe2b5e67e9cf711478951fef875e05c0857787c5573b5047b0a4839"
-    sha256 cellar: :any,                 arm64_linux:   "8652648693e1a06ff0fb5d93b0995f8ea938e907ab2c82dea5dd04d014c883a3"
-    sha256 cellar: :any,                 x86_64_linux:  "cfd427fa31888a6c86b50dcc37d73d3de1522616570c6e62ff6b5c0f3496fea7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f5709627e9737bbe2bb7b1a476e444c128bef3d56a9fd58058d24487bbd478a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "134348a8ed7ab5676e28314c225b240bff613483e80a9dc1d36d73b1c795be79"
+    sha256 cellar: :any,                 arm64_linux:   "a98023ca8f7aac603a82e9d8b495c00dc82a5dc74d79cc58a2338307605e97f6"
+    sha256 cellar: :any,                 x86_64_linux:  "de611e6d36ea4138b8fde7597278a026ddfc1f4add2180bd50d0446e29151159"
   end
 
   depends_on "rust" => :build
