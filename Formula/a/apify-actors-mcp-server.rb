@@ -1,8 +1,8 @@
 class ApifyActorsMcpServer < Formula
   desc "MCP server for Apify"
   homepage "https://docs.apify.com/platform/integrations/mcp"
-  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.18.0.tgz"
-  sha256 "c950da468d4ebfb928ae243ec0740f6a337423996615d7855b48eb1d3c765584"
+  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.18.2.tgz"
+  sha256 "f594e8459c87d1f498735271dcb11cb32f5745d9b044b16408421c08b19c6e89"
   license "MIT"
 
   bottle do
