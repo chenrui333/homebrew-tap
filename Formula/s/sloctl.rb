@@ -1,18 +1,17 @@
 class Sloctl < Formula
   desc "CLI for Nobl9 to manage SLOs, Projects or Alert Policies"
   homepage "https://docs.nobl9.com/sloctl-user-guide/"
-  url "https://github.com/nobl9/sloctl/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "54c9eb4e50fc46cba5678961f5c92964609e37f28db565243e7016b95adebb2c"
+  url "https://github.com/nobl9/sloctl/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "189b091190ad8295ebb5f322974325926a6cb36622696091d5df4852a8a9e366"
   license "MPL-2.0"
   head "https://github.com/nobl9/sloctl.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd1f4b45c3d812679ce03b803fbe653e40f353c17c4b8049762c4137ba670896"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd1f4b45c3d812679ce03b803fbe653e40f353c17c4b8049762c4137ba670896"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcf9815856fcbfd352bce57cc630d86bfb8125381094db4e7bd48a7fb0014500"
-    sha256 cellar: :any,                 x86_64_linux:  "3ddad89dd2a069641e8073c88e1ba6c35053f19e6e4dbd97f5319960b8e62adc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98b3cd62e9c5dbdf3e45fb7f6d391ec862e85aa1374f479e36c03f2264981eca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98b3cd62e9c5dbdf3e45fb7f6d391ec862e85aa1374f479e36c03f2264981eca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "419e46abed9f4e2b342bcf77cbef220814dd5c310a954c3ca0d767b66f1da2d0"
+    sha256 cellar: :any,                 x86_64_linux:  "e3001877847af5eea0a817fb39033d024696d66724af747b52212c6d4f47d16d"
   end
 
   depends_on "go" => :build
