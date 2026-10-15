@@ -8,10 +8,10 @@ class Mcpsnoop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9703f69590788a9295053b685380cb4072cd9cb677a405eb3f82b2d4e0016819"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9703f69590788a9295053b685380cb4072cd9cb677a405eb3f82b2d4e0016819"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5adc241db617aa398c92054482b0e3499476a63166f6556c1d2821fee42f21b4"
-    sha256 cellar: :any,                 x86_64_linux:  "7e894e923c3402e975b7ff7bebcbae48aebafd3a6ec39a83c0b30f056d993c36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1192962462dcc8fb3065284f80621399895b20e7a3cc7d46211c2cfd1848704e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1192962462dcc8fb3065284f80621399895b20e7a3cc7d46211c2cfd1848704e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e65c0a2f4350db19bde37635544d5f57d7681c6a48a09d92f9d500cb2b128d70"
+    sha256 cellar: :any,                 x86_64_linux:  "86168985fa1056be39201310278c8a1079b6441fdea7e8101e6f71f1c20392bb"
   end
 
   depends_on "go" => :build
