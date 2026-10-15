@@ -1,8 +1,8 @@
 class TttEditor < Formula
   desc "Terminal editor with LSP and Git integration"
   homepage "https://github.com/eugenioenko/ttt"
-  url "https://github.com/eugenioenko/ttt/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "42006ddbdd2721ffa555a4609e80859b2388058b7a72b09710009b6300b2a017"
+  url "https://github.com/eugenioenko/ttt/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "4f69cd910c91727083c4a54deed866404f014021a6e30dfb47aaa78e9265680f"
   license "MIT"
   head "https://github.com/eugenioenko/ttt.git", branch: "main"
 
