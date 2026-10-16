@@ -1,17 +1,16 @@
 class DoryCli < Formula
   desc "Lightweight static site generator for technical documentation"
   homepage "https://github.com/clidey/dory"
-  url "https://registry.npmjs.org/@clidey/dory/-/dory-1.0.3.tgz"
-  sha256 "69928f807c100ef4fd7c4d2d0a33c116ad76c31d749886ef63ce930d4d645f7b"
+  url "https://registry.npmjs.org/@clidey/dory/-/dory-1.0.5.tgz"
+  sha256 "e3296778ba45d95638ce5c6e406835f7fea174c98af08b7662e3dfaa75f84060"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "193bf97fd832ecc1d86dcf16bf4dcb2ccf856c051f805b9bd542fcd55449d941"
-    sha256 cellar: :any,                 arm64_sequoia: "193bf97fd832ecc1d86dcf16bf4dcb2ccf856c051f805b9bd542fcd55449d941"
-    sha256 cellar: :any,                 arm64_sonoma:  "193bf97fd832ecc1d86dcf16bf4dcb2ccf856c051f805b9bd542fcd55449d941"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36e5c1c9b0f928a215f05066fe080988f4d4f908d628f7dd00d684aaf27f41dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eaf0da183132a979d5a454e3b331f58165be553528294fab66dd9b9776f6264"
+    sha256 cellar: :any,                 arm64_tahoe:   "399e244640dc47ae2ea6d2efc5bffde63b958f69fcfba816f5b5c4b525a872f2"
+    sha256 cellar: :any,                 arm64_sequoia: "399e244640dc47ae2ea6d2efc5bffde63b958f69fcfba816f5b5c4b525a872f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3807b2ce08b4bed8a5dd7995baf5c28f6e77b444843dc73c517d540f7758b9d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d2ca6631dd2f8fdfea3d3b69cdb662be419b8dff2f0ebd2b0fa4026ab8487d"
   end
 
   depends_on "node"
