@@ -1,8 +1,8 @@
 class DoryCli < Formula
   desc "Lightweight static site generator for technical documentation"
   homepage "https://github.com/clidey/dory"
-  url "https://registry.npmjs.org/@clidey/dory/-/dory-1.0.3.tgz"
-  sha256 "69928f807c100ef4fd7c4d2d0a33c116ad76c31d749886ef63ce930d4d645f7b"
+  url "https://registry.npmjs.org/@clidey/dory/-/dory-1.0.5.tgz"
+  sha256 "e3296778ba45d95638ce5c6e406835f7fea174c98af08b7662e3dfaa75f84060"
   license "MIT"
 
   bottle do
