@@ -1,16 +1,16 @@
 class Critique < Formula
   desc "Terminal UI for reviewing git changes"
   homepage "https://critique.work"
-  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.3.1.tar.gz"
-  sha256 "7d6fabe4d2abb03eb9de36a94607e6f6d7f111355e9da9a8823da66e6ecb422d"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.4.0.tar.gz"
+  sha256 "ef297160eabb2bf1d5f62a31cba15f710ae090a356351f14eb70b969b74cee2a"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5c419b956366b2709ce57199c7a61dff2ff04f05d9d439b11e734d38642539d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5c419b956366b2709ce57199c7a61dff2ff04f05d9d439b11e734d38642539d"
-    sha256 cellar: :any,                 arm64_linux:   "62c24eac5befc6b654bb781ce62a6fa9fae73583df572ac3d52477362633117b"
-    sha256 cellar: :any,                 x86_64_linux:  "9d8fa54eb1f8f20748b4b204f13e7e97678162efbc399e1e14cecd749d0b72d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81789a82bd48a071d03a8e03447797e2487d54fe69349dfab6d2a5c173129c4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81789a82bd48a071d03a8e03447797e2487d54fe69349dfab6d2a5c173129c4c"
+    sha256 cellar: :any,                 arm64_linux:   "b925090c06fb516dd7a74f58c18e8471e8ca865e7ad247dba18f819b3625f6f8"
+    sha256 cellar: :any,                 x86_64_linux:  "923a611197ed736f3b5b258bcedf2211f326e613e7acfaa5788fa4a3ff527104"
   end
 
   depends_on "python@3.14" => :build
