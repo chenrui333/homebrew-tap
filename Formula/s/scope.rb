@@ -1,18 +1,17 @@
 class Scope < Formula
   desc "Serial monitor with scripting support"
   homepage "https://github.com/matheuswhite/scope-rs"
-  url "https://github.com/matheuswhite/scope-rs/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "38b960bc5d449a8ccd869e3a6b0b5dd35088310462d1b90a19624eb4c4b4bbf2"
+  url "https://github.com/matheuswhite/scope-rs/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "7f4b4ff43ac211c21b3bd8beda23d1a7dc5286c6b6629797490900b792bd6a03"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/matheuswhite/scope-rs.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e1efea28a26b8d18cc4275ae4196299fd274f4c02a5222231a37b1926fc6c06a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c9393c08aa0f106d8f0afbd02a56c6d615a176f3b7f8e9d5fb59cf63e19d349"
-    sha256 cellar: :any,                 arm64_linux:   "b569f9a748e3cce64ff763ff17bc7bda5ea9773222672876d22290f9338467a8"
-    sha256 cellar: :any,                 x86_64_linux:  "f26ae75e1d561a327a8ad1b018783dfdb1cf78cda383f396cfe067e644e139dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7adaf37f31ae3d69e410a6b8b266162e3a6494f939e944b42b2ecfecdd56eb7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08d9f91977e1cf002b580f06aa78754aade55f398a13ee5a288980522b3c9024"
+    sha256 cellar: :any,                 arm64_linux:   "5b34fd1f982ef3d8b963ee3ae8ce9c6fb4c4cb6f85bf82e7c20b046c086e0302"
+    sha256 cellar: :any,                 x86_64_linux:  "d26d6d9ee58d3e0980679fce1d2b6badb7f704d6e6e2e92d354fe84584b49f84"
   end
 
   depends_on "pkgconf" => :build
