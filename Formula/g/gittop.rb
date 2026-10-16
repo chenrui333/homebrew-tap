@@ -7,10 +7,10 @@ class Gittop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f6138bc85407e5b02bc9555bd051ac9d4f500c06b7bd8c3ba2cb17ef7bd87c00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6138bc85407e5b02bc9555bd051ac9d4f500c06b7bd8c3ba2cb17ef7bd87c00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e378a0bc63a7860a36148b61ab12bb8824e74577a9680b01049123d3592c999"
-    sha256 cellar: :any,                 x86_64_linux:  "cd3b1f70dc381e99268e965ce685f32568140b0ab52aeb710ce354ccf104da9a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83cbdb7cfa5cfdb5b3f9c9b1f0b36e91965bacd0c5df0b481d14bf930eb4af3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83cbdb7cfa5cfdb5b3f9c9b1f0b36e91965bacd0c5df0b481d14bf930eb4af3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0f60aa8cd315d0b1472ea472d081ccf62b021f87f2863bba0732f7b176bd598"
+    sha256 cellar: :any,                 x86_64_linux:  "037118bfe273a31ea3759a78a53e1861bcc067b7b726b6f5d74814dde359a57f"
   end
 
   depends_on "go" => :build
