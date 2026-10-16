@@ -3,8 +3,8 @@ class McpAlchemy < Formula
 
   desc "MCP server that connects to your database"
   homepage "https://github.com/runekaagaard/mcp-alchemy"
-  url "https://files.pythonhosted.org/packages/a0/92/53fd67426f3941b4e4cc48f3aaf05a98a17f697b20694b67f99bed3b73fd/mcp_alchemy-2026.10.6.103105.tar.gz"
-  sha256 "dd88345b8069356e58792ffb65545cce16384f2df9d50e72a51670ad181e95c9"
+  url "https://files.pythonhosted.org/packages/12/e5/fd79c853f023aaf775f6c353e04e9641440e0a68466dcc35128b14e57a94/mcp_alchemy-2026.10.15.202659.tar.gz"
+  sha256 "00776c867c38e56da48c9c74bdf974afa54cab4cbe7c14f9fbd145a463496e40"
   license "MPL-2.0"
   head "https://github.com/runekaagaard/mcp-alchemy.git", branch: "main"
 
@@ -56,8 +56,8 @@ class McpAlchemy < Formula
   end
 
   resource "dunamai" do
-    url "https://files.pythonhosted.org/packages/12/18/020d3b27a10450ddb11429f637404e8ea67ecf4d9fd999d4f1d553f25506/dunamai-1.26.2.tar.gz"
-    sha256 "84ea45eddf9bb4b40df7610b1b22a03137365e6257dbf9d7b72128fdccca564c"
+    url "https://files.pythonhosted.org/packages/c5/62/edf5352d8ce1371129ccfe971e6de3a1ce4dc7f9bdc80390fb79856b78d4/dunamai-1.26.3.tar.gz"
+    sha256 "fe2f732186710ee5048044fdbef6c76c6afbb9ee7de4f6d00cf34256e9ec2e7f"
   end
 
   resource "flit-core" do
@@ -126,13 +126,13 @@ class McpAlchemy < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/d4/6e/21fb8e5d579dbe21d96ea4d5034200d46d8bdf2261053b5bd041f3c2f612/mcp-2.1.1.tar.gz"
-    sha256 "50b7ba1ebbe117008ea7bdd288234043e69c20b403d6851d19661e6d431a75ef"
+    url "https://files.pythonhosted.org/packages/9d/8d/e0d339616f4810e9051d4aba6887afab289ab1f81875fe908b606cdfd0e3/mcp-2.3.0.tar.gz"
+    sha256 "8b147a50441cf059dc88c684e0aeed3687f0aa0f39c6cde7b90330effd2b34d8"
   end
 
   resource "mcp-types" do
-    url "https://files.pythonhosted.org/packages/6a/dd/1c4417dc0b722c23a1669032d5f044e41170fe5d4773b488a50fcce98c32/mcp_types-2.1.1.tar.gz"
-    sha256 "77dcbe48fba73cca71a673f2646a5f037a017b7a0a07ac89cec1113028890eda"
+    url "https://files.pythonhosted.org/packages/9e/2d/7c251e34207f6c51000312fc8839111ac45cfe02023f90b44e7f1051dd8e/mcp_types-2.3.0.tar.gz"
+    sha256 "d1e46549edb35ee19a94940fcee6d1addd7e589ab7ea92dda83f5d84781fc362"
   end
 
   resource "mdurl" do
@@ -141,8 +141,8 @@ class McpAlchemy < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz"
-    sha256 "711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7"
+    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
+    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
   end
 
   resource "packaging" do
@@ -161,8 +161,8 @@ class McpAlchemy < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "poetry-core" do
@@ -226,8 +226,8 @@ class McpAlchemy < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
-    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+    url "https://files.pythonhosted.org/packages/e9/0c/6efb252d091ecccd7d62048ae11f0ea35cd75a4fbaeea5e30f9c3bf91d10/starlette-1.8.0.tar.gz"
+    sha256 "1565dc0b35d5737a271ed1e0e04e949f4e81198799f216d2667b0a0fb9cf9522"
   end
 
   resource "tomlkit" do
@@ -241,13 +241,13 @@ class McpAlchemy < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
-    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
+    url "https://files.pythonhosted.org/packages/03/51/d33db42cc72ffd8c30777547b42d01f0cbf9d95a770457698d0174b3ed71/typer-0.27.3.tar.gz"
+    sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
   resource "uv-dynamic-versioning" do
@@ -261,8 +261,8 @@ class McpAlchemy < Formula
   end
 
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/6f/a0/6977bb418312ad30f27e522c5040604d4bbf7e40ccd5a11d333afe549354/vcs_versioning-2.5.0.tar.gz"
-    sha256 "956a796e31f80fe714d219d6d1df15a6bf247d10f6d851bf4b98279d0a42da55"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   resource "wheel" do
