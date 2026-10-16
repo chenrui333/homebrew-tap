@@ -7,10 +7,10 @@ class GhDash < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "91be6093770c0206448153325bd2d59228717319ddcfa524fe06b39178e3b062"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91be6093770c0206448153325bd2d59228717319ddcfa524fe06b39178e3b062"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a354e0ecc9a443d8f4619b7e7f071da0a7fe6254fa582e41d58ef8fbe042f64"
-    sha256 cellar: :any,                 x86_64_linux:  "5e882644c069f46fd95f08de28c49e35f41005d68956d64e38780005336928bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68cc3036016bdabf77e09ede448a1b23d1ba9d40e3d86e5812be8e1781fd463a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68cc3036016bdabf77e09ede448a1b23d1ba9d40e3d86e5812be8e1781fd463a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4b10bfa4da2f5f1286e7970302839d85cb624db3d59d35cc6d9fee5df78f1cf"
+    sha256 cellar: :any,                 x86_64_linux:  "e651aa9bd3b7e7720c42988862ee50d6c74548598584e197d4ac4f41d4edf8a6"
   end
 
   depends_on "go" => :build
