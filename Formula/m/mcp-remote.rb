@@ -1,8 +1,8 @@
 class McpRemote < Formula
   desc "Bridge stdio-only MCP clients to remote servers with auth"
   homepage "https://github.com/geelen/mcp-remote"
-  url "https://registry.npmjs.org/mcp-remote/-/mcp-remote-0.15.0.tgz"
-  sha256 "17b1af212c06c964f92220ecb45f6fd73abd3f818471d2a518f96870f43ff2f2"
+  url "https://registry.npmjs.org/mcp-remote/-/mcp-remote-0.15.1.tgz"
+  sha256 "45aa7ae3c2ad1b51383c1ddce67f6fd26efbbe6637669e8f4597abe37bb87c05"
   license "MIT"
 
   bottle do
