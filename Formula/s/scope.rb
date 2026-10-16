@@ -1,8 +1,8 @@
 class Scope < Formula
   desc "Serial monitor with scripting support"
   homepage "https://github.com/matheuswhite/scope-rs"
-  url "https://github.com/matheuswhite/scope-rs/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "38b960bc5d449a8ccd869e3a6b0b5dd35088310462d1b90a19624eb4c4b4bbf2"
+  url "https://github.com/matheuswhite/scope-rs/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "7f4b4ff43ac211c21b3bd8beda23d1a7dc5286c6b6629797490900b792bd6a03"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/matheuswhite/scope-rs.git", branch: "main"
 
