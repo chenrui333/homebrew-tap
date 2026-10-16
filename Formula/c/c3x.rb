@@ -1,10 +1,16 @@
 class C3x < Formula
   desc "Open source cloud cost estimation for Terraform, Terragrunt, and CloudFormation"
   homepage "https://github.com/c3xdev/c3x"
-  url "https://github.com/c3xdev/c3x/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "212f1edad44d16946299ef8ac3298cf628748b6a2357fcc5b047c14327cf73fa"
+  url "https://github.com/c3xdev/c3x/archive/refs/tags/v0.3.20.tar.gz"
+  sha256 "c007ccaafd3bfc5dd488d9ff5f5945a2389ed2fbe92dfd6e6be433db056a28d7"
   license "Apache-2.0"
   head "https://github.com/c3xdev/c3x.git", branch: "main"
+
+  # v1.0.3 is a retraction-only tag for Go module versions, not a release
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
