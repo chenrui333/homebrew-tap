@@ -1,8 +1,8 @@
 class MongodbMcpServer < Formula
   desc "MCP Server to connect to MongoDB databases and MongoDB Atlas Clusters"
   homepage "https://github.com/mongodb-js/mongodb-mcp-server"
-  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-3.0.5.tgz"
-  sha256 "c04dca5e910fb8b52b8565a9f47d6b11ea03537cbbf302d48e0803c0325bc58e"
+  url "https://registry.npmjs.org/mongodb-mcp-server/-/mongodb-mcp-server-3.1.0.tgz"
+  sha256 "cefa802e3bd3fe09b514ba55d813ba2ef272bd635a30cc68d36008ddc3e1f3d8"
   license "Apache-2.0"
 
   bottle do
