@@ -10,10 +10,10 @@ class McpAlchemy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d21ebf5a1de7a071de606233449449f33df2adb1ed7ce4764e8a31512baa4b31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "440e5dd161cb4040211d47482d7e031dc66925b69020345447192fbe8ca2f560"
-    sha256 cellar: :any,                 arm64_linux:   "c513857731c3c858fc6cd7094e4864a9f5880103df1fa64da27f42f6c606ccdd"
-    sha256 cellar: :any,                 x86_64_linux:  "548ab1c28643505c5f99f045990723abb36cb6b7ad728ddb4217ef77a4f2f851"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bb7f914f383754a8b84324bf5dc2140fd5c723ece7c91308fa203cb5e7151f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d08325d48cf026fb8ab600a14c183dedebaff9d1121b257022d308dd9a11599"
+    sha256 cellar: :any,                 arm64_linux:   "13cb32f97c3dd734f78bd593726a127a90403c9ff518ef2667bee6cf63600bc3"
+    sha256 cellar: :any,                 x86_64_linux:  "c6d83dcbaeb40e0f1c01fd7da80e3485cfa1d73f569d1e197ad5a9b185c061e4"
   end
 
   depends_on "cython" => :build # for sqlalchemy C extensions
