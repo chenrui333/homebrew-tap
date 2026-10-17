@@ -3,18 +3,24 @@ class Asmdiff < Formula
 
   desc "Compare per-function assembly across compilers"
   homepage "https://github.com/rt-rtos/asmdiff"
-  url "https://files.pythonhosted.org/packages/79/93/b634871bebc2db8f2fc59baf04a78356b13dab510fe8fe5c9a8aff3e0a49/asmdiff-0.4.0.tar.gz"
-  sha256 "147454fd2367fe1a827a15d3987bd56f17f897a48a3ad66e2b6108e9e32ccd85"
+  url "https://files.pythonhosted.org/packages/56/7b/11e9a432ca0153bf4f228ddc40d36b65ed0307a22a9f7848d284dea8ae6c/asmdiff-0.4.1.tar.gz"
+  sha256 "b36136dc87ef43c25e77f5486f05507b83f22d50036318217f71c7700c066200"
   license "MIT"
   head "https://github.com/rt-rtos/asmdiff.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "0e49185dfe7e535e3c0c77de8be77add2ff9a00bbc3a43d8f84d9283e0a93e7c"
+    sha256 cellar: :any_skip_relocation, all: "811a6cd0cc3ae1bc775343bf26a38d200f1f1c6ca157d8471bf91abef97dbfe5"
   end
 
   depends_on "python-setuptools" => :build
   depends_on "python@3.14"
+
+  pypi_packages exclude_packages: %w[setuptools],
+                extra_packages:   %w[
+                  calver flit-core hatchling packaging pathspec pluggy poetry-core setuptools-scm tomlkit
+                  trove-classifiers vcs-versioning
+                ]
 
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
@@ -42,8 +48,8 @@ class Asmdiff < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "poetry-core" do
@@ -52,8 +58,8 @@ class Asmdiff < Formula
   end
 
   resource "setuptools-scm" do
-    url "https://files.pythonhosted.org/packages/3c/87/1ff7adcf6e03021ae58ce401565be3c9b8c739a44d14a8253d38b3754117/setuptools_scm-10.2.3.tar.gz"
-    sha256 "f179ed3e2a63cf5823e5ee9aa9ca08386219400443a0553224d72dde3f206b44"
+    url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
+    sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
   end
 
   resource "tomlkit" do
@@ -62,13 +68,13 @@ class Asmdiff < Formula
   end
 
   resource "trove-classifiers" do
-    url "https://files.pythonhosted.org/packages/c2/e3/7ca82ee24c82d344584abd5b8637b3bd056f2900226e8d82fc22f1184b92/trove_classifiers-2026.6.1.19.tar.gz"
-    sha256 "c5132b4b61a829d11cfbd2d72e97f20a45ed6edb95e45c5efdeb5e00836b2745"
+    url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
+    sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
   resource "vcs-versioning" do
-    url "https://files.pythonhosted.org/packages/3e/97/792a4ef20344f9af3e16098b58b45eb5d6202259b84fc80c43bc000a5e6c/vcs_versioning-2.4.1.tar.gz"
-    sha256 "d4575de3115ec9434393c87c80ffb0eb98a16056bfe2b11ce0f3a97aff67fe0a"
+    url "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+    sha256 "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
   end
 
   deny_network_access!
