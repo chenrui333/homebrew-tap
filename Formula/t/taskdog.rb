@@ -3,8 +3,8 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.28.1.tar.gz"
-  sha256 "f2cdf9ffd5584761b1b1b84c9b6b9696866c8f2538ac6e291ed1dc54b7dc4766"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "80bd3ffbc91eed57a314933cb97069709226a40ef40ebfe7a62890bc9f6fbd86"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
