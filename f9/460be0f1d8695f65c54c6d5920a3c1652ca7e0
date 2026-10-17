@@ -1,0 +1,16 @@
+Formula/g/ghgrab.rb
+  h_9df9c32c3f321d 4-5,11-14
+Formula/m/mlx-vlm.rb
+  h_9df9c32c3f321d 6-7,35,38,41-45,47-48,84-85,89-90,99-100,124-125,139-140,179-180,184-185,204-205,214-215,279-280,284-285,299-300,309-310,324-325,374-375,378,423
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f9460be0f1d8695f65c54c6d5920a3c1652ca7e0",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
