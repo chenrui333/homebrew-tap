@@ -10,7 +10,7 @@ class Clox < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "984abc19ea0791e2831b62249e944fc92d08f0a02a6eb75b5a0fc1f0c9367f54"
+    sha256 cellar: :any_skip_relocation, all: "0aaaeb57982db61a04fa1d2914e722b84d5638c48eaba54b3e3c64da33c1a658"
   end
 
   depends_on "python@3.14"
