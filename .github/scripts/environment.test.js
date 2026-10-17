@@ -369,6 +369,19 @@ test("autobump pull requests from forks keep the default matrix fail-fast", asyn
   assert.equal(outputs.get("fail-fast"), "true")
 })
 
+test("CI-version-downgrade skips only the stable version audit", async () => {
+  const {outputs: labeled} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    labels: ["CI-version-downgrade"],
+  })
+  const {outputs: unlabeled} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+  })
+
+  assert.match(labeled.get("test-bot-formulae-args"), /(^| )--skip-stable-version-audit( |$)/)
+  assert.doesNotMatch(unlabeled.get("test-bot-formulae-args"), /--skip-stable-version-audit/)
+})
+
 test("pull request labels come from the event payload without a pull request API lookup", async () => {
   const {apiCalls} = await runEnvironment({
     formulaFile: "Formula/w/watchfiles.rb",

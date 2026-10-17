@@ -288,6 +288,13 @@ module.exports = async ({github, context, core}, formula_detect, {
     } else {
         console.log('No CI-skip-revision-audit label found. Not passing --skip-revision-audit to brew test-bot.')
     }
+
+    if (label_names.includes('CI-version-downgrade')) {
+        console.log('CI-version-downgrade label found. Passing --skip-stable-version-audit to brew test-bot.')
+        test_bot_formulae_args.push('--skip-stable-version-audit')
+    } else {
+        console.log('No CI-version-downgrade label found. Not passing --skip-stable-version-audit to brew test-bot.')
+    }
     
     core.setOutput('test-bot-formulae-args', test_bot_formulae_args.join(" "))
 }
