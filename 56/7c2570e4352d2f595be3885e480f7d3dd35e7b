@@ -1,0 +1,15 @@
+Formula/i/ifstate.rb
+  h_9df9c32c3f321d 26-27
+  h_9df9c32c3f321d 6-7,40-44,160-163,171,187-188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "567c2570e4352d2f595be3885e480f7d3dd35e7b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
