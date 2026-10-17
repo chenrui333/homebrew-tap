@@ -9,11 +9,10 @@ class OxylabsMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "4da0f85be21e0deed6132a0ec8fda9bb7543b4b414a741fffb6737286a49f89c"
-    sha256 cellar: :any, arm64_sequoia: "37316882334bad496e7bc2c1baaecd818af3cf6c402ffe98598c0d21a65d9672"
-    sha256 cellar: :any, arm64_linux:   "fa716bf0a555f554458af05655f72265234803eb3b9038605811bf1f913427ca"
-    sha256 cellar: :any, x86_64_linux:  "65b95a9bfdb16a2bc520608fad03ffada483de9ad109364725a99d3b2110a369"
+    sha256 cellar: :any, arm64_tahoe:   "69c410a41b90ede61fd3c6cc27df1c18662a920818ca746db49627d43904fe47"
+    sha256 cellar: :any, arm64_sequoia: "1028c055c2782ee80bc40113a7f2b3789bb7261bcd0b27680a90d66210e0dc58"
+    sha256 cellar: :any, arm64_linux:   "658c24dba6d02bd402d4f0ca81adac24304633f94c2c92b77e314892b6ff594f"
+    sha256 cellar: :any, x86_64_linux:  "5429df58392e1c9f41a0dc37f85c5f1b5cbf4846b4222201b93b2bc05578c303"
   end
 
   depends_on "maturin" => :build
