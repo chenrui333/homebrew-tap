@@ -1,0 +1,14 @@
+Formula/c/clox.rb
+  h_9df9c32c3f321d 6-7,18-37,39-40,48-57,69-70,73-75,78-80,83-85,88-90,93-95,98-100,103-105,108-115,123,127-128,130-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "423f2cfdc468911df04cab2b8b56bcc1fbe1a895",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
