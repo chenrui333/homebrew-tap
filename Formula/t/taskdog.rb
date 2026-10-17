@@ -3,21 +3,19 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "2ff947072e117ef7ac08ca574c4986737c8bc04fbde938e30c7a01dd2f3df349"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.28.1.tar.gz"
+  sha256 "f2cdf9ffd5584761b1b1b84c9b6b9696866c8f2538ac6e291ed1dc54b7dc4766"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "e98da22473cfc05e95dc233ca9ed9765c25c8f81687c2bf23392ecd20441207f"
-    sha256 cellar: :any, arm64_sequoia: "3ccf2ac4e2feb83fdd94b1d50bce346355e87bc48fe25c3abba1a16f85507d63"
-    sha256 cellar: :any, arm64_linux:   "af47f3d6efcd9b1d46d7457e69d7cc39f4d1116b652b3518fa16c65da2a6908c"
-    sha256 cellar: :any, x86_64_linux:  "77aa13552990e6109fa48919babc2cbb3699e48c0b27e4a2f5b3eb8be8323777"
+    sha256 cellar: :any, arm64_tahoe:   "1a79c05af8081755e54dc854758bc06e24e6b8d21908caef4b0e101bf169a7aa"
+    sha256 cellar: :any, arm64_sequoia: "075f2b6955bcc85612e531224fcb6b78b9b78fe8a94a8d4499c85282e29e7352"
+    sha256 cellar: :any, arm64_linux:   "687a9507d5989a6fc5d6617151406e044864a9fd3ab31ea2143ca9f3387c89c5"
+    sha256 cellar: :any, x86_64_linux:  "43a4759dd5d706c55bcc0b19a7da066c3abf2b9f48f00f061096c68558115346"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build
   depends_on "rust" => :build # for watchfiles
   depends_on "certifi" => :no_linkage
@@ -27,8 +25,8 @@ class Taskdog < Formula
 
   pypi_packages exclude_packages: %w[certifi pydantic],
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend pluggy
-                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                  calver cython flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend
+                  pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
                 ]
 
   resource "alembic" do
@@ -59,6 +57,11 @@ class Taskdog < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "fastapi" do
@@ -247,13 +250,13 @@ class Taskdog < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+    url "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
+    sha256 "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
   end
 
   resource "uc-micro-py" do
@@ -315,6 +318,7 @@ class Taskdog < Formula
       poetry-core
       setuptools
       calver
+      cython
       tomlkit
       trove-classifiers
       vcs-versioning
@@ -326,9 +330,10 @@ class Taskdog < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
     ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
+    # Cython is only a build tool for the pyyaml extension; skip compiling Cython itself.
+    ENV["NO_CYTHON_COMPILE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
