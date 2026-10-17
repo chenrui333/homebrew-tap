@@ -1,0 +1,14 @@
+Formula/j/jelly.rb
+  h_9df9c32c3f321d 4-5,27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3277cd16d408630b347d4681fc650115109ee6df",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
