@@ -3,17 +3,17 @@ class Taskdog < Formula
 
   desc "Task manager with CLI, TUI, and local REST API server"
   homepage "https://github.com/Kohei-Wada/taskdog"
-  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.28.1.tar.gz"
-  sha256 "f2cdf9ffd5584761b1b1b84c9b6b9696866c8f2538ac6e291ed1dc54b7dc4766"
+  url "https://github.com/Kohei-Wada/taskdog/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "80bd3ffbc91eed57a314933cb97069709226a40ef40ebfe7a62890bc9f6fbd86"
   license "MIT"
   head "https://github.com/Kohei-Wada/taskdog.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "1a79c05af8081755e54dc854758bc06e24e6b8d21908caef4b0e101bf169a7aa"
-    sha256 cellar: :any, arm64_sequoia: "075f2b6955bcc85612e531224fcb6b78b9b78fe8a94a8d4499c85282e29e7352"
-    sha256 cellar: :any, arm64_linux:   "687a9507d5989a6fc5d6617151406e044864a9fd3ab31ea2143ca9f3387c89c5"
-    sha256 cellar: :any, x86_64_linux:  "43a4759dd5d706c55bcc0b19a7da066c3abf2b9f48f00f061096c68558115346"
+    sha256 cellar: :any, arm64_tahoe:   "339a8a09ac484b0698126a73f7ddeb0bfb966562c8e3b47b3add7040f3d2d8ac"
+    sha256 cellar: :any, arm64_sequoia: "7d6b9d1db4f0427f3e88093a331562f25b4501280e1af01dedd673324c1825a1"
+    sha256 cellar: :any, arm64_linux:   "9d48ea484515b1634d555ec80f5fb35c6568cd42482e4cd850c6d4665a311796"
+    sha256 cellar: :any, x86_64_linux:  "1b379cd4e27397575c00f60196186cb5707984dd44fe7c2206f3868592349c00"
   end
 
   depends_on "maturin" => :build
