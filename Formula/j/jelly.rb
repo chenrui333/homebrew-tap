@@ -8,8 +8,7 @@ class Jelly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0f60ccd9d2c8e1a59d97875742c1f9c2029eb16a42f8799ce1b4332b219c7a4c"
+    sha256 cellar: :any_skip_relocation, all: "aa003d72a2b0176feb19cf28d4741f80253512d6ec99db101842b11386c9bb2f"
   end
 
   depends_on "bash"
