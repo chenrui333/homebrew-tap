@@ -1,17 +1,17 @@
 class Multica < Formula
   desc "Open-source managed agents platform for AI coding agents"
   homepage "https://github.com/multica-ai/multica"
-  url "https://github.com/multica-ai/multica/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "30ff7e8c4da5a164d59ba57e00d0b041080685cadb1217183888b80405b7482b"
+  url "https://github.com/multica-ai/multica/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "20681e8d5e085ceb6672234906ca453967cbec0d109a5b2f9342bd7308a39f34"
   license :cannot_represent
   head "https://github.com/multica-ai/multica.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c441230f6d7db6225ef4ee724beca81e456c7fa799f483547ddbd7b96d5e0faf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c441230f6d7db6225ef4ee724beca81e456c7fa799f483547ddbd7b96d5e0faf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f90c7162d38b035c7787475394f17e57bec31fb3b8dedb11904fc1915866063f"
-    sha256 cellar: :any,                 x86_64_linux:  "4393323f6ddc6e76b6448eadf3a9c143bb4d2727bcd28606498c93d291c27b9b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b59e560bfb4e1011c5de1b4b5736796db32de0d35b4ab53949eb4525d3ca4fd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b59e560bfb4e1011c5de1b4b5736796db32de0d35b4ab53949eb4525d3ca4fd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7645a91482f962fd161eb9ede2e332b06e6fda6a7393334dcb4d50174004a60"
+    sha256 cellar: :any,                 x86_64_linux:  "8dd0074eec8885de2e65d95eb0cf1d49bae4bebc393b5f14038a550ff5bb23df"
   end
 
   depends_on "go" => :build

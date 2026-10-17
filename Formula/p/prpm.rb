@@ -1,13 +1,13 @@
 class Prpm < Formula
   desc "Universal registry for AI coding tools"
   homepage "https://prpm.dev/"
-  url "https://registry.npmjs.org/prpm/-/prpm-2.1.40.tgz"
-  sha256 "9520dad096bf281a3e55bc67d9de565d0088ae3514d7d71b9307350df0226892"
+  url "https://registry.npmjs.org/prpm/-/prpm-2.1.41.tgz"
+  sha256 "6f136b2a4c3114ddfda26d6efb6b0fadf325635d33beb26b5a9fe5806f006786"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f2564d7f51eb73f35aadcd215e5d562e5d1cdbbb112806d4f75f4dca0118f368"
+    sha256 cellar: :any_skip_relocation, all: "7cbf064a83aff0bebaa6b1b3d7a5f77e77c22a16f01ef841fa42c7dc7f90dec4"
   end
 
   depends_on "node"
