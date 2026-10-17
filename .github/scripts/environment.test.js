@@ -28,6 +28,9 @@ async function runEnvironment({
   headRepository = repository,
   headCommit = authorCommit,
   publication = [],
+  mergeGroup,
+  groupCommits = [],
+  queuedLabels = {},
 }) {
   const outputs = new Map()
   const apiCalls = []
@@ -48,8 +51,11 @@ async function runEnvironment({
         },
       },
       pulls: {
-        get: async () => {
+        get: async ({pull_number}) => {
           apiCalls.push("pulls.get")
+          if (eventName === "merge_group") {
+            return {data: {labels: (queuedLabels[pull_number] ?? []).map((name) => ({name}))}}
+          }
           if (publication.length) current = {...current, ...publication.shift()}
           return {data: {labels: current.labels.map((name) => ({name})), head: {sha: current.headSha}}}
         },
@@ -58,7 +64,18 @@ async function runEnvironment({
           return {data: formulaFile ? [{filename: formulaFile}] : []}
         },
       },
-      repos: {listCommitStatusesForRef},
+      repos: {
+        listCommitStatusesForRef,
+        compareCommitsWithBasehead: async ({basehead}) => {
+          apiCalls.push("repos.compareCommitsWithBasehead")
+          const [base, head] = basehead.split("...")
+          assert.equal(head, mergeGroup.head_sha)
+          // base_sha is the previous queue entry, so that range holds only this entry's own merge.
+          if (base === mergeGroup.base_sha) return {data: {commits: groupCommits.slice(-1)}}
+          assert.equal(base, "main")
+          return {data: {commits: groupCommits}}
+        },
+      },
     },
     paginate: async (method, params) => {
       if (method === listCommitStatusesForRef) return listCommitStatusesForRef(params)
@@ -70,7 +87,10 @@ async function runEnvironment({
     eventName,
     issue: {number: 1},
     repo: {owner: repository.split("/")[0], repo: repository.split("/")[1]},
-    payload: {pull_request: {head: {sha: headSha, ref: headRef, repo: {full_name: headRepository}}, labels: labels.map((name) => ({name}))}},
+    payload: {
+      pull_request: {head: {sha: headSha, ref: headRef, repo: {full_name: headRepository}}, labels: labels.map((name) => ({name}))},
+      merge_group: mergeGroup,
+    },
   }
   const core = {
     setOutput: (name, value) => outputs.set(name, value),
@@ -124,10 +144,18 @@ test("does not generate obsolete formula macOS runners", async () => {
   assert.equal(runners.includes("macos-15-intel"), false)
 })
 
-test("merge_group avoids PR APIs and uses the full supported formula matrix", async () => {
+const queuedMergeGroup = {
+  base_ref: "refs/heads/main",
+  base_sha: "b".repeat(40),
+  head_sha: "c".repeat(40),
+  head_ref: `refs/heads/gh-readonly-queue/main/pr-12-${"b".repeat(40)}`,
+}
+
+test("merge_group skips PR file lookups and uses the full supported formula matrix", async () => {
   const {outputs, apiCalls} = await runEnvironment({
     formulaFile: "Formula/w/watchfiles.rb",
     eventName: "merge_group",
+    mergeGroup: queuedMergeGroup,
     formulaDetect: {
       testing_formulae: "watchfiles",
       added_formulae: "",
@@ -135,7 +163,7 @@ test("merge_group avoids PR APIs and uses the full supported formula matrix", as
     },
   })
 
-  assert.deepEqual(apiCalls, [])
+  assert.equal(apiCalls.some((call) => call === "pulls.listFiles" || call === "paginate"), false)
   assert.deepEqual(JSON.parse(outputs.get("build-matrix")).map(({runner}) => runner), [
     "macos-26",
     "macos-15",
@@ -148,6 +176,7 @@ test("merge_group avoids PR APIs and uses the full supported formula matrix", as
 test("merge_group with no detected formulae is syntax-only", async () => {
   const {outputs, apiCalls} = await runEnvironment({
     eventName: "merge_group",
+    mergeGroup: queuedMergeGroup,
     formulaDetect: {
       testing_formulae: "",
       added_formulae: "",
@@ -367,6 +396,40 @@ test("autobump pull requests from forks keep the default matrix fail-fast", asyn
   })
 
   assert.equal(outputs.get("fail-fast"), "true")
+})
+
+test("CI-version-downgrade skips only the stable version audit", async () => {
+  const {outputs: labeled} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    labels: ["CI-version-downgrade"],
+  })
+  const {outputs: unlabeled} = await runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+  })
+
+  assert.match(labeled.get("test-bot-formulae-args"), /(^| )--skip-stable-version-audit( |$)/)
+  assert.doesNotMatch(unlabeled.get("test-bot-formulae-args"), /--skip-stable-version-audit/)
+})
+
+test("merge_group keeps CI-version-downgrade from any PR queued ahead in the group", async () => {
+  const groupCommits = [
+    {commit: {message: "watchfiles 1.3.0"}, parents: [{}]},
+    {commit: {message: "Merge pull request #11 from chenrui333/bump-watchfiles\n\nwatchfiles 1.3.0"}, parents: [{}, {}]},
+    {commit: {message: "Merge pull request #12 from chenrui333/bump-other"}, parents: [{}, {}]},
+  ]
+  const run = (queuedLabels) => runEnvironment({
+    formulaFile: "Formula/w/watchfiles.rb",
+    eventName: "merge_group",
+    mergeGroup: queuedMergeGroup,
+    groupCommits,
+    queuedLabels,
+  })
+
+  const {outputs: downgraded} = await run({11: ["CI-version-downgrade"], 12: []})
+  const {outputs: ordinary} = await run({11: ["CI-no-fail-fast"], 12: []})
+
+  assert.match(downgraded.get("test-bot-formulae-args"), /(^| )--skip-stable-version-audit( |$)/)
+  assert.doesNotMatch(ordinary.get("test-bot-formulae-args"), /--skip-stable-version-audit/)
 })
 
 test("pull request labels come from the event payload without a pull request API lookup", async () => {

@@ -36,6 +36,41 @@ module.exports = async ({github, context, core}, formula_detect, {
         pull_request.head.ref?.startsWith('bump-')
     const current_head = pull_request?.head?.sha
 
+    // merge_group payloads carry no labels; read them from every PR queued in the group.
+    // Compare against the target branch, not base_sha (the previous queue entry), so PRs queued
+    // ahead count too, matching test-bot's formula detection against origin/<base>.
+    async function merge_group_has_label(name) {
+        const group = context.payload?.merge_group
+        if (context.eventName !== 'merge_group' || !group || merge_group_without_formulae) return false
+
+        const pull_numbers = new Set()
+        const queued = group.head_ref?.match(/\/pr-(\d+)-[0-9a-f]+$/)
+        if (queued) pull_numbers.add(Number(queued[1]))
+        const base_branch = group.base_ref.replace(/^refs\/heads\//, '')
+        const {data: comparison} = await github.rest.repos.compareCommitsWithBasehead({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            basehead: `${base_branch}...${group.head_sha}`
+        })
+        for (const commit of comparison.commits) {
+            const subject = commit.commit.message.split('\n', 1)[0]
+            const merged = commit.parents.length > 1
+                ? subject.match(/^Merge pull request #(\d+) from /)
+                : subject.match(/ \(#(\d+)\)$/)
+            if (merged) pull_numbers.add(Number(merged[1]))
+        }
+
+        for (const pull_number of pull_numbers) {
+            const {data: queued_pull} = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number
+            })
+            if (queued_pull.labels.some(label => label.name === name)) return true
+        }
+        return false
+    }
+
     async function head_has_published_status() {
         const statuses = await github.paginate(github.rest.repos.listCommitStatusesForRef, {
             owner: context.repo.owner,
@@ -287,6 +322,13 @@ module.exports = async ({github, context, core}, formula_detect, {
         test_bot_formulae_args.push('--skip-revision-audit')
     } else {
         console.log('No CI-skip-revision-audit label found. Not passing --skip-revision-audit to brew test-bot.')
+    }
+
+    if (label_names.includes('CI-version-downgrade') || await merge_group_has_label('CI-version-downgrade')) {
+        console.log('CI-version-downgrade label found. Passing --skip-stable-version-audit to brew test-bot.')
+        test_bot_formulae_args.push('--skip-stable-version-audit')
+    } else {
+        console.log('No CI-version-downgrade label found. Not passing --skip-stable-version-audit to brew test-bot.')
     }
     
     core.setOutput('test-bot-formulae-args', test_bot_formulae_args.join(" "))
