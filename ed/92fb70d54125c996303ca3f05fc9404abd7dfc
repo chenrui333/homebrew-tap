@@ -1,0 +1,14 @@
+Formula/t/taskdog.rb
+  h_9df9c32c3f321d 6-7,29-30,63-67,322,336-337
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ed92fb70d54125c996303ca3f05fc9404abd7dfc",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
