@@ -1,17 +1,17 @@
 class Teldrive < Formula
   desc "Utility to organize, manage, and sync Telegram files locally"
   homepage "https://teldrive-docs.pages.dev/"
-  url "https://github.com/tgdrive/teldrive/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "177ef332929ebaf3b787950aa9c028fc2654acf9afdc9a9b6aadd0aabc09cd69"
+  url "https://github.com/tgdrive/teldrive/archive/refs/tags/2.0.6.tar.gz"
+  sha256 "9864451015e4c059b57164ed68d48245144c161be6216f671c6f014516c9687c"
   license "MIT"
   head "https://github.com/tgdrive/teldrive.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "444562ea5c992b9cace87fd8e957418a228ea35bf644ec92a659da0bf13d3bce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "444562ea5c992b9cace87fd8e957418a228ea35bf644ec92a659da0bf13d3bce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a333a2690acbbf56bbbea733bf4c5ceeca7d706aa68b056a5edc9c27ff9b0366"
-    sha256 cellar: :any,                 x86_64_linux:  "74075f5327d15338c956de3f73c74096e5cc02fc3a8c34fb4cd58698e24551f6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4108e193fb4ff0ba5bba75289584bf16106ae57b4a5edd0dc9cd7b292477eaad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4108e193fb4ff0ba5bba75289584bf16106ae57b4a5edd0dc9cd7b292477eaad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9345d2e9eeefe4b1d628ec7a04299ca862d13a01037148e80c7d2f5c55ae78d"
+    sha256 cellar: :any,                 x86_64_linux:  "78cb37e68ce65125e1b9dfd1b020246d9cd427c4ba1a0070144d04ee12e7c66c"
   end
 
   depends_on "bun" => :build
