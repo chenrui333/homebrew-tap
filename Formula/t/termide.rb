@@ -2,16 +2,16 @@ class Termide < Formula
   desc "Cross-platform terminal-based IDE, file manager, and virtual terminal"
   homepage "https://termide.github.io"
   url "https://github.com/termide/termide.git",
-      tag:      "0.40.0",
-      revision: "0719f56e39f6eee4119f53fe40167c4344083fde"
+      tag:      "0.41.0",
+      revision: "f49a4c40ef6aaaff0741f7a52cefbf163dd9519b"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f7b93a0021f5c8b2387c1510316852c7cc70e86605847e8eb141a3e841224528"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9daa6e8eb4a77efc5642e76d4c3c0b7f57ee8da86dc7950455fc7d83539f5112"
-    sha256 cellar: :any,                 arm64_linux:   "e0e8df2a152126aed80204cf93544d11312ba347cab67f426b5c1598045e8a5e"
-    sha256 cellar: :any,                 x86_64_linux:  "619e276e0a136369d341a40822d7fccffba0f180d941e13dd23c9c89c35a7f87"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9dddcff4bd83505c1904f5d64f56434a2a92b70919788cce696bd0313ac5604"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64df15638e127f12483056db52903a93a411017c7c96cf8f3a1fdd942fb2c58b"
+    sha256 cellar: :any,                 arm64_linux:   "a312a9248d6113a3aae71a6ee26f7a4664b89d1600b27d248f34d80ff2b25975"
+    sha256 cellar: :any,                 x86_64_linux:  "7ceca7fee729889562e631288c57fa316ac9097fc51f2f0f7fc77dfc7a27ddec"
   end
 
   depends_on "pkgconf" => :build
@@ -36,7 +36,7 @@ class Termide < Formula
     assert_match version.to_s, shell_output("#{bin}/termide --version")
 
     output = shell_output("#{bin}/termide --config #{testpath}/missing.toml --diagnostics 2>&1", 1)
-    assert_match "load: No such file or directory", output
+    assert_match "load: config file not found", output
     assert_match "One or more checks failed", output
   end
 end
