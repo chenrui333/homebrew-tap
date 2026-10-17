@@ -1,8 +1,8 @@
 class Zigfetch < Formula
   desc "Minimal neofetch/fastfetch like system information tool"
   homepage "https://github.com/utox39/zigfetch"
-  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "84da4559072d3c6f37c5875b56359e37c098a8cc7972c9b0bb5d40b7761f5026"
+  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "6be9c242e4ab205d6ea8ead589b61bd15c116d58ab3024b2870b49300f220205"
   license "MIT"
 
   bottle do
@@ -15,7 +15,7 @@ class Zigfetch < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
 
   on_linux do
     depends_on "pciutils" # provides libpci.so and pci/pci.h
@@ -28,6 +28,8 @@ class Zigfetch < Formula
   end
 
   def install
+    # translate-c only links `pci` on the module, so expose its headers via Zig's native include paths
+    ENV.append_path "C_INCLUDE_PATH", formula_opt_include("pciutils") if OS.linux?
     system "zig", "build", *std_zig_args(release_mode: :fast)
   end
 
