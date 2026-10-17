@@ -1,8 +1,8 @@
 class Jelly < Formula
   desc "Explore and stream Jellyfin via CLI"
   homepage "https://github.com/AzureHound/jelly"
-  url "https://github.com/AzureHound/jelly/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "312e2ba5feec45ccf1b3b6aff89c58752271652ccc520965adf8181c752574f8"
+  url "https://github.com/AzureHound/jelly/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "9ce9157fd534a3bf178cade16a984756ad26259f8d3628d74c36d9620cf1bb30"
   license "0BSD"
   head "https://github.com/AzureHound/jelly.git", branch: "main"
 
@@ -24,9 +24,8 @@ class Jelly < Formula
 
   def install
     inreplace "src/jelly", "#!/usr/bin/env bash", "#!#{formula_opt_bin("bash")}/bash"
-    inreplace "src/jelly",
-              'DEFAULT_MEDIA_PLAYER=$([[ "$OSTYPE" == "darwin"* ]] && echo "iina" || echo "mpv")',
-              'DEFAULT_MEDIA_PLAYER="mpv"'
+    # upstream v3.5.1 tag still hardcodes VERSION="3.5.0"
+    inreplace "src/jelly", /^VERSION=".*"$/, "VERSION=\"#{version}\""
     bin.install "src/jelly" => "jelly"
   end
 
