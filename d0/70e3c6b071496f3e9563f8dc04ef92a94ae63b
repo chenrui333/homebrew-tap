@@ -1,0 +1,14 @@
+Formula/a/asmdiff.rb
+  h_9df9c32c3f321d 6-7,19-24,51-52,61-62,71-72,76-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d070e3c6b071496f3e9563f8dc04ef92a94ae63b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
