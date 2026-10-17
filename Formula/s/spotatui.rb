@@ -1,18 +1,17 @@
 class Spotatui < Formula
   desc "Terminal music player for Spotify and local media"
   homepage "https://github.com/LargeModGames/spotatui"
-  url "https://github.com/LargeModGames/spotatui/archive/refs/tags/v0.43.0.tar.gz"
-  sha256 "8429bb068dadb9d3e4206c8220a185a745379c1327efd2b71adfe595558ed4d5"
+  url "https://github.com/LargeModGames/spotatui/archive/refs/tags/v0.44.0.tar.gz"
+  sha256 "d1ad76c8a6f5938a86e8fed0994170aaeee19bc5782ea1efbea45e186e05f28b"
   license "MIT"
   head "https://github.com/LargeModGames/spotatui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c439e2bb8462e3ad27142d9fdf333404e33ec384094ffff61a5ecd137b11cfbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c8f21c91db1598f81a7ef1ab52e26a34523cf66db40a6f99105d3e81ec9f75b"
-    sha256 cellar: :any,                 arm64_linux:   "aaf1a162496f0ae351d764c7421a7ec4266aa21ad7a021b8905f13b36512873c"
-    sha256 cellar: :any,                 x86_64_linux:  "8f24c0706b855bd253cd5b8675a468b1f48b921aee94aa640c7301e5d0bdf8de"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcb7563e177457065e03c3a73e600e4f04575e2e49c424b9ae254c9fab587a76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c06d0db40967294e6926f7c2cb19b61cb51f2aed50942bce88c4fa41bf7b12e3"
+    sha256 cellar: :any,                 arm64_linux:   "be51ebae402264949a2a004cc23d6b7e84d388509f5efb9ca58be70518e41b1d"
+    sha256 cellar: :any,                 x86_64_linux:  "1acf77fefe9c9d6c6cf710a6b1751edc19e32f32f767c69b19897c076d005370"
   end
 
   depends_on "pkgconf" => :build
@@ -21,7 +20,7 @@ class Spotatui < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   deny_network_access!
