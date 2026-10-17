@@ -7,10 +7,10 @@ class Paseo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "818dc1966684aa737e9f3163fdb4c75513dd5e955cecc9de1d91259bdcb1c5a9"
-    sha256               arm64_sequoia: "818dc1966684aa737e9f3163fdb4c75513dd5e955cecc9de1d91259bdcb1c5a9"
-    sha256 cellar: :any, arm64_linux:   "07ed20b9861174887a40d033286c52e4ac6d709b0e3db66feb69398f409c43a7"
-    sha256 cellar: :any, x86_64_linux:  "918738c0a194ba5cfbad35f2651782ee04ae9cc274d160f243f77bdc140b6262"
+    sha256               arm64_tahoe:   "8cb26d6384f21b4ff864b831cc0215adeaa553d791087f517d4b897a6ba737c3"
+    sha256               arm64_sequoia: "8cb26d6384f21b4ff864b831cc0215adeaa553d791087f517d4b897a6ba737c3"
+    sha256 cellar: :any, arm64_linux:   "ee3c2cf3f7558b6c38303ed8541819ee2f014e4e66aa362084d911f2d64f95d7"
+    sha256 cellar: :any, x86_64_linux:  "d26a0ab80aa9249f9d452fcd1dc30b56c5f783855bc63b097c313ffa2911c5d9"
   end
 
   depends_on "node"
