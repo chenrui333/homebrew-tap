@@ -1,8 +1,8 @@
 class FlowNetwork < Formula
   desc "Real-time network throughput dashboard"
   homepage "https://github.com/programmersd21/flow"
-  url "https://github.com/programmersd21/flow/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "3fdb7a2ca6bcb294ec18d955fe8e9612135b89b921811628e2e3165980bdf1d7"
+  url "https://github.com/programmersd21/flow/archive/refs/tags/v0.3.5.tar.gz"
+  sha256 "f2b172c6986f26a32d1404960d392c49579d8de95c59a906e60b66852c782488"
   license "MIT"
   head "https://github.com/programmersd21/flow.git", branch: "main"
 
