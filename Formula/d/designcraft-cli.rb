@@ -6,6 +6,14 @@ class DesigncraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/designcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8004a7ede553e62cb403583f8fdb9310801e1674e5046d9c76f683c62b574656"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "187f646e47a2c579ce6f3b37445be3ef562a5508e24bf99611312ebf9d93d3db"
+    sha256 cellar: :any,                 arm64_linux:   "c0d016091497c1dc19fd8d41f82cfa963b0cd3ec29ae6b354aaff2cd175833e8"
+    sha256 cellar: :any,                 x86_64_linux:  "611b9e6e0342a979ae9882b9c9ea9c777175422b763f1e018ca43555307b1faa"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
