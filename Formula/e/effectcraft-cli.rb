@@ -6,6 +6,14 @@ class EffectcraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/effectcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f08e35d9e556881f3bb6607140911daabc31c4abb567f5f02ac7191daed9f9df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6e2d770885b67ffca6c14c514f49243bd9319bf17c53b02d723ccaee530a006"
+    sha256 cellar: :any,                 arm64_linux:   "df93ecd7e709a61fe189c7b725828c08af9f976914d66cbb9234abbd59bf5fbb"
+    sha256 cellar: :any,                 x86_64_linux:  "e98805d32e14d3c72a1f431d3743969f469217be38a3d496db1d21fbf9ff91b8"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
