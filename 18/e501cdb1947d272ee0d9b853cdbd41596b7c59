@@ -1,0 +1,18 @@
+.github/scripts/renovate-workflow-automerge.js
+  h_9df9c32c3f321d 10
+.github/scripts/renovate-workflow-automerge.test.js
+  h_9df9c32c3f321d 110,117-118,121-122
+.github/workflows/generated-maintenance-merge.yml
+  h_9df9c32c3f321d 98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "18e501cdb1947d272ee0d9b853cdbd41596b7c59",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
