@@ -6,6 +6,14 @@ class FilmcraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/filmcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "739dbd92889956959803ccb73f1d4418867f3409e220a123d6ea264e5ca0293b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2efd40a7a3baaae633df39495bb3ec8053e6e9fc833f91d85d37dd33aa7604c2"
+    sha256 cellar: :any,                 arm64_linux:   "8c4b193623f084c898cc400d052cf23628750e2d01ab1b98ecd91d9f115bcfed"
+    sha256 cellar: :any,                 x86_64_linux:  "b39603a299531fa82bd63370ca7f0c7892c5dc472d8051c65c41b0942a18799c"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
