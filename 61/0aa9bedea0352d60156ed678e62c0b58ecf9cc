@@ -1,0 +1,39 @@
+.github/scripts/environment.test.js
+  s_2316195b58a8fc::t_9d4585109ba1f6 90-93
+  h_9df9c32c3f321d 31-33,56-58,67-70,72,76-78,147,149-150,179,401-434
+  s_d9c062dda023f0::t_5fef6a0c3ed520 54,154,158,166
+  s_d9c062dda023f0::t_20ca30665214cd 151-153
+  h_9df9c32c3f321d 71,73-75,148
+.github/scripts/environment.js
+  h_9df9c32c3f321d 39,42-48,50-73,326-332
+  h_9df9c32c3f321d 40-41,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "610aa9bedea0352d60156ed678e62c0b58ecf9cc",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_2316195b58a8fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0caf4-1086-7c40-8b94-e15dbdb071e1",
+        "model": "gpt-6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
