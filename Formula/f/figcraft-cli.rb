@@ -1,17 +1,17 @@
 class FigcraftCli < Formula
   desc "Headless FigCraft design tool to inspect, export and script files, with MCP"
   homepage "https://getartcraft.com/apps/figcraft"
-  url "https://github.com/storytold/figcraft/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "130421efbf4e824f55f6b71b5119a817a9e10effae582e5d98944fe79c7e4d2b"
+  url "https://github.com/storytold/figcraft/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "2fc23b4f77dde261b186cb80dd51322f084322726a3b99c7204c0ee9fca5f69b"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/figcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d54f8dc2404de2b011ce29726fab0be0c6b4dd5eaf14f466cca3a2a73cf8f339"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1399c4ff34d28e7b1ffdf065ac212ebf2e1295d886a416f48a2d84659ec652c6"
-    sha256 cellar: :any,                 arm64_linux:   "43243cb776d557c47ae9b71d6628b78a1cd0a71d045c9e21bb09f528aaff7e53"
-    sha256 cellar: :any,                 x86_64_linux:  "00b1b930354c95c8aac4b429f04c0fdc87e801dcc12711aed6e2f78375110532"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc84f7ac789d08a5b9bb82caa1b033be8abba3a099863ed96a58800b037daad1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5479e107f7ce2211a37ad6412fd8b272e36ef2273d7229283627f4b41f52005b"
+    sha256 cellar: :any,                 arm64_linux:   "401f58348aff6886ab504934313cb6d43db9bef9331511926e4f4f3408d65a71"
+    sha256 cellar: :any,                 x86_64_linux:  "d449aa61e94fd01f8fd28d671eb3273c6ca61febc71bf9ba71cd597ff4494915"
   end
 
   depends_on "rust" => :build
