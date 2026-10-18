@@ -1,0 +1,14 @@
+Formula/l/lightcraft-cli.rb
+  h_9df9c32c3f321d 1-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8fe52c3cb1f25b8fc9543f96ff591af03cbb6329",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
