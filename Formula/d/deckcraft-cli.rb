@@ -6,6 +6,14 @@ class DeckcraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/deckcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8686045a5a8b86631a552a335d10c4a4abe88ee479833a249f46404fb9e6f0d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14a9d368039bf5e9f245e6344730f19f1ba9961c28d23e9311846af21784698b"
+    sha256 cellar: :any,                 arm64_linux:   "d31810f97c980ce8c50fc5526ff157f9bf27abf0f3700460f8b5c2824c594bc3"
+    sha256 cellar: :any,                 x86_64_linux:  "c5eba5a0f7dd435c76441fc71799216fbce703339ba76f194eb5e09c69e60685"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
