@@ -1,17 +1,17 @@
 class B4n < Formula
   desc "Terminal user interface (TUI) for Kubernetes API"
   homepage "https://github.com/fioletoven/b4n"
-  url "https://github.com/fioletoven/b4n/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "dbaac1beeca8cda7f82e1d85f089f259821c9f60099fc88f62eda0e1db0fc3bf"
+  url "https://github.com/fioletoven/b4n/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "e64b874aae85ff3759d5082339688c9a6ff3ef8326e327b0014b0eba8385a5d7"
   license "MIT"
   head "https://github.com/fioletoven/b4n.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e698a1e00467d5ba1e32f455fdb91ee2675771c89359e6d07070b04e649c412"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa4a3506b8c18f724f73f9b7a4c4e1fa8af12f4be016bfbf25d1f7d21427c93f"
-    sha256 cellar: :any,                 arm64_linux:   "e96fd33fd2308c425a42b2d028b781431b75e1f2a8b324e889e4b805d543577c"
-    sha256 cellar: :any,                 x86_64_linux:  "360357dedd78c01397c6efb6996d72efcc6966c856257cae8e20add975942eac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8d9bbc439e939ebe25a617b1cd8ee47a2d84a445b19e144e18bf1512a1b931f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bab65df630c141ba90d392c125c36b69e8f520a57b5f2ed9f69b936d05cc206"
+    sha256 cellar: :any,                 arm64_linux:   "d971af3c9e203141606f0ab30d1397a9e792769e3d9e249e4c5c738ebf57426e"
+    sha256 cellar: :any,                 x86_64_linux:  "5c655c678723cb0faf29c2465a0e9fef94a51f6169feb5443717855972a94232"
   end
 
   depends_on "rust" => :build
