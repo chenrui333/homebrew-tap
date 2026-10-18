@@ -6,6 +6,14 @@ class SoundcraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/soundcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b0dd5166109b973f279f04a04489aa782bab7bf4f7f0a7c52819abc38b817e3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2034051331eb491e2b54be656a96207fa5f5744e5c8a1ed4ccdf3fb631ba7e9f"
+    sha256 cellar: :any,                 arm64_linux:   "3278d765972166723bcfcf1b05e27ba7af11c316b886c60343f592f8cc999618"
+    sha256 cellar: :any,                 x86_64_linux:  "f46712f6469cb84339da3c5942e5d34f48d076a2d571bceb6e255913d6c24f88"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
