@@ -8,10 +8,10 @@ class OhMyCodex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "391f75c0f261e0edee08a7059e0fd8f2f10a4d72ac55a61d0ffa44f2603c5255"
-    sha256 cellar: :any, arm64_sequoia: "391f75c0f261e0edee08a7059e0fd8f2f10a4d72ac55a61d0ffa44f2603c5255"
-    sha256 cellar: :any, arm64_linux:   "4165434ccd9a52a62748a12a29665979a9781abed8fa05421d4d644e4d8f1a4d"
-    sha256 cellar: :any, x86_64_linux:  "5deafced155c97f4bdb3988cae8315dfb2bfd5e40090fa55d8b1ec0612cee397"
+    sha256 cellar: :any, arm64_tahoe:   "30ac972461e3e1c8f2afff0d0428543c63f73a15f7edbc383805a166be45f594"
+    sha256 cellar: :any, arm64_sequoia: "30ac972461e3e1c8f2afff0d0428543c63f73a15f7edbc383805a166be45f594"
+    sha256 cellar: :any, arm64_linux:   "018544baf8b9d0129bbd22001c95d54fd6d0146c16a28c7493e52b629009808b"
+    sha256 cellar: :any, x86_64_linux:  "edb16feccbd7cf1be73a7ba369553885a8efef3c8b01f5bd43cd9ede496f0e45"
   end
 
   depends_on "node"
