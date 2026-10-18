@@ -29,6 +29,7 @@ class Orla < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     require "open3"
 
     output, status = Open3.capture2e(bin/"orla", "serve", "--not-a-real-option")
