@@ -1,8 +1,8 @@
 class WordcraftCli < Formula
   desc "Headless WordCraft CLI and MCP server to convert, inspect and render documents"
   homepage "https://getartcraft.com/apps/wordcraft"
-  url "https://github.com/storytold/wordcraft/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "ee70e31d3b887c7e2c4b7d31de612ffddfb25a9359ed17d734b21a3b7f6891c0"
+  url "https://github.com/storytold/wordcraft/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "8a9f644cff41fafcd07f1fd50e85a688c6550373d4fefb3980e506ec2678435f"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/wordcraft.git", branch: "main"
 
