@@ -137,6 +137,7 @@ brew install --cask <tool>
 - `bytebox`
 - `c3x`
 - `c4go`
+- `cadcraft-cli`
 - `captan`
 - `carbon-now-cli`
 - `cargo-aoc`
@@ -268,6 +269,7 @@ brew install --cask <tool>
 - `deadbranch`
 - `dealve-tui`
 - `debugg-ai-mcp` <!-- spellchecker:disable-line -->
+- `deckcraft-cli`
 - `decktape`
 - `deepteam`
 - `deface`
@@ -275,6 +277,7 @@ brew install --cask <tool>
 - `dela`
 - `deletor`
 - `depsguard`
+- `designcraft-cli`
 - `dg`
 - `dgen`
 - `dgop`
@@ -311,6 +314,7 @@ brew install --cask <tool>
 - `ec2-ami-tools`
 - `ecscope`
 - `editly`
+- `effectcraft-cli`
 - `eilmeldung`
 - `elastop`
 - `elio`
@@ -344,7 +348,9 @@ brew install --cask <tool>
 - `fex`
 - `ffdash`
 - `fftext`
+- `figcraft-cli`
 - `filessh`
+- `filmcraft-cli`
 - `firectl`
 - `firm`
 - `fission-cli`
@@ -423,6 +429,7 @@ brew install --cask <tool>
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
+- `gridcraft-cli`
 - `gritql`
 - `grmon`
 - `grut`
@@ -577,6 +584,7 @@ brew install --cask <tool>
 - `lfk`
 - `librarian-mcp`
 - `license-scanner`
+- `lightcraft-cli`
 - `lightpanda-v8`
 - `lightpanda`
 - `lin`
@@ -917,6 +925,7 @@ brew install --cask <tool>
 - `sonarqube-lts`
 - `sonarqube`
 - `sot`
+- `soundcraft-cli`
 - `soundscope`
 - `sourcerer-mcp`
 - `spacelift-intent`
@@ -1065,6 +1074,7 @@ brew install --cask <tool>
 - `usort`
 - `vapi-mcp-server`
 - `vaults3`
+- `vectorcraft-cli`
 - `vectorize-mcp-server`
 - `venom`
 - `vento`
@@ -1092,6 +1102,7 @@ brew install --cask <tool>
 - `wiremix`
 - `wisu`
 - `wolfpack`
+- `wordcraft-cli`
 - `wozz`
 - `wpscan`
 - `wut-cli`

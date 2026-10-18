@@ -1,59 +1,57 @@
 class Teldrive < Formula
   desc "Utility to organize, manage, and sync Telegram files locally"
   homepage "https://teldrive-docs.pages.dev/"
-  url "https://github.com/tgdrive/teldrive/archive/refs/tags/1.8.3.tar.gz"
-  sha256 "731126690b81f96e241e07ae45330dffb8b4a6df6ccce153f262667a404ca4e3"
+  url "https://github.com/tgdrive/teldrive/archive/refs/tags/2.0.7.tar.gz"
+  sha256 "ef0c330f5228e8a228a8181ab8f9ea3a98575ac310e068be039e039f2e6fe32e"
   license "MIT"
   head "https://github.com/tgdrive/teldrive.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6041a417411badb6b21c96a6ddef563fd3ee8e8b34d7d95cfa93adbf28875337"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6041a417411badb6b21c96a6ddef563fd3ee8e8b34d7d95cfa93adbf28875337"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "598f2567170005b763e353f45b746197bb2496f3341288d7c74ef9370a2ab435"
-    sha256 cellar: :any,                 x86_64_linux:  "6c01f7cdecca18eda4e4cfb62866a981eae7515c898830d8914bbad3169e8b18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9561eee87a35b26a37a1fab882f8daff3ae7227aa4eadf959d6f9f41a0e067f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9561eee87a35b26a37a1fab882f8daff3ae7227aa4eadf959d6f9f41a0e067f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e1a8a9136d000fd966514f72357ae7f3f3038b685f951cd187d2038b428ab61"
+    sha256 cellar: :any,                 x86_64_linux:  "5813b51a5af893f80bc91a447683b21baccb626232297ada05f6acf7b7ac13bc"
   end
 
+  depends_on "bun" => :build
   depends_on "go" => :build
-
-  # upstream only publishes a mutable `latest` UI release (also used by its taskfile)
-  resource "ui_assets" do
-    url "https://github.com/tgdrive/teldrive-ui/releases/download/latest/teldrive-ui.zip"
-    sha256 "c959a5028449ac8a7eb269f8e3fe374cd01082e90df0289d49aca187109f0868"
-  end
 
   deny_network_access!
 
   def fetch
     system "go", "mod", "download"
-    # generate API code from the upstream OpenAPI spec
-    system "go", "generate", "./..."
+    system "bun", "install", "--frozen-lockfile", "--cwd", "ui"
   end
 
   def install
-    (buildpath/"ui/dist").install resource("ui_assets")
+    system "bun", "run", "--cwd", "ui", "build"
 
     ldflags = %W[
       -s -w
-      -X github.com/tgdrive/teldrive/internal/version.Version=#{version}
-      -X github.com/tgdrive/teldrive/internal/version.CommitSHA=#{tap.user}
+      -X main.version=#{version}
+      -X main.commit=#{tap.user}
+      -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:), "./cmd/teldrive"
 
     generate_completions_from_executable(bin/"teldrive", shell_parameter_format: :cobra)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/teldrive version 2>&1")
+    assert_match "teldrive #{version}", shell_output("#{bin}/teldrive version")
 
     (testpath/".teldrive/config.toml").write <<~TOML
-      [db]
-      data-source = "postgres://user:password@localhost/dbname"
+      [database]
+      url = "postgres://user:password@localhost/dbname"
+
+      [security]
+      signing-key = "test-signing-key-0123456789abcdef0123456789"
+      data-key = "test-data-key-0123456789abcdef0123456789abcd"
     TOML
 
     output = shell_output("#{bin}/teldrive check 2>&1", 1)
-    assert_match "Failed to connect to database", output
+    assert_match "initialize TelDrive", output
     assert_match "failed to connect to `user=user database=dbname`", output
   end
 end

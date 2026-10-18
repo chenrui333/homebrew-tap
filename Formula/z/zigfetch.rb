@@ -1,21 +1,20 @@
 class Zigfetch < Formula
   desc "Minimal neofetch/fastfetch like system information tool"
   homepage "https://github.com/utox39/zigfetch"
-  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.30.0.tar.gz"
-  sha256 "84da4559072d3c6f37c5875b56359e37c098a8cc7972c9b0bb5d40b7761f5026"
+  url "https://github.com/utox39/zigfetch/archive/refs/tags/v0.31.0.tar.gz"
+  sha256 "6be9c242e4ab205d6ea8ead589b61bd15c116d58ab3024b2870b49300f220205"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256               arm64_tahoe:   "42ec6b278768fa64d42cfbdd9b2c04dec5888e3fb38f7ed586a0e617be74ffcf"
-    sha256               arm64_sequoia: "fd83f6bad48b2eeac11e53041451916c11510cfb06e26f6b798e832082475ebb"
-    sha256 cellar: :any, arm64_linux:   "79d6629dc663b49ffc5588f8d7cac69f4f2dba113a0128546e5b57a8098e215d"
-    sha256 cellar: :any, x86_64_linux:  "1895ee88194eee2f126ed3b5ed3cce275ad47202fcd32727d41f9bfa758e6d17"
+    sha256               arm64_tahoe:   "54869c5d13e961b526303784e7f5b33cd5ba31a3d23ffdffe11293764d564c00"
+    sha256               arm64_sequoia: "ac2b5e3d15e0d245aae7e49abd116c93e96f180c28e6047373f93071e27e59a6"
+    sha256 cellar: :any, arm64_linux:   "74ae4a515dcdbdfec9ff2521c668bfa401dbe441373fec5d880723ac46c3278a"
+    sha256 cellar: :any, x86_64_linux:  "6a325bb014960880219b8ce346591340bdcf88e0316e77f16e95f08d0b26adf0"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
 
   on_linux do
     depends_on "pciutils" # provides libpci.so and pci/pci.h
@@ -28,6 +27,8 @@ class Zigfetch < Formula
   end
 
   def install
+    # translate-c only links `pci` on the module, so expose its headers via Zig's native include paths
+    ENV.append_path "C_INCLUDE_PATH", formula_opt_include("pciutils") if OS.linux?
     system "zig", "build", *std_zig_args(release_mode: :fast)
   end
 
