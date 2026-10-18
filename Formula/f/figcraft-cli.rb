@@ -6,6 +6,14 @@ class FigcraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/figcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d54f8dc2404de2b011ce29726fab0be0c6b4dd5eaf14f466cca3a2a73cf8f339"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1399c4ff34d28e7b1ffdf065ac212ebf2e1295d886a416f48a2d84659ec652c6"
+    sha256 cellar: :any,                 arm64_linux:   "43243cb776d557c47ae9b71d6628b78a1cd0a71d045c9e21bb09f528aaff7e53"
+    sha256 cellar: :any,                 x86_64_linux:  "00b1b930354c95c8aac4b429f04c0fdc87e801dcc12711aed6e2f78375110532"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
