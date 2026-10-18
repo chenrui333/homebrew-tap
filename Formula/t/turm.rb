@@ -1,18 +1,17 @@
 class Turm < Formula
   desc "TUI for the Slurm Workload Manager"
   homepage "https://github.com/kabouzeid/turm"
-  url "https://github.com/kabouzeid/turm/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "6f1404336ba91be8b16a17f35cc3d24bce29538c1120005787d6abdb41d01536"
+  url "https://github.com/kabouzeid/turm/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "5776238606645f5658df430659568534ef850add30c51e1b24dcf234f7cc2cca"
   license "MIT"
   head "https://github.com/kabouzeid/turm.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0d4359901676be47cebac861049e55151d6aabd90a996a462582b5a6c389f76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d6747d2f75330633460746ef0635d9eae4c30b327641bd9aa84abb25e57cb3b"
-    sha256 cellar: :any,                 arm64_linux:   "e96f5b4afbaf1b9f53cf47bbb9e554749dc39915fec119776d95770b5365f221"
-    sha256 cellar: :any,                 x86_64_linux:  "895297b7167601d748d4bcb38085fc27535cae940fd49ef790ed4482b8aca695"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "236cea6a582f27ca279807f2aecde17dc59b8df193cb0ec09f137e7361b4d723"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24f08a5c755e683887da32b9a8d6ae1903392ec7fc59fbcd77c9115c1c6b63b2"
+    sha256 cellar: :any,                 arm64_linux:   "2c771bfb082a5b74cf103372e531c8648c22c674ab4e3e7a684bb4d978715802"
+    sha256 cellar: :any,                 x86_64_linux:  "749b4d0928bef619ea3c74d759dd41a6788bcea89a49e87f44db7fa3f0357a1f"
   end
 
   depends_on "rust" => :build
