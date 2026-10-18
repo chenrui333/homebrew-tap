@@ -1,0 +1,14 @@
+Formula/v/vectorcraft-cli.rb
+  h_9df9c32c3f321d 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "55f3a5950082e12b9738dd4b39fea17674e5e774",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
