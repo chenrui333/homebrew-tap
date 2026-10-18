@@ -1,8 +1,8 @@
 class Chatuino < Formula
   desc "Feature-rich TUI Twitch chat client"
   homepage "https://chatuino.net"
-  url "https://github.com/julez-dev/chatuino/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "b090615c1de8a22c6415cb3210614c0c6d1ad5b99e52ed18c9faac3e13b28408"
+  url "https://github.com/julez-dev/chatuino/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "632905c879904580502d583afe69869544af790388bdf9129d4171205e8b11c8"
   license "MIT"
   head "https://github.com/julez-dev/chatuino.git", branch: "main"
 
