@@ -6,6 +6,14 @@ class GridcraftCli < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/gridcraft.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3eb0a1ba35e0f396f9ec6a929fda96a96a30ae9e1d0c0488667d2626ef81f598"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ded438f63f4872fcb84db884c64db767a5f912186144719e26501496c755074"
+    sha256 cellar: :any,                 arm64_linux:   "d76a623d7520f267645a2c99805c65bdd1d140228bcc41677e3da482138edbcc"
+    sha256 cellar: :any,                 x86_64_linux:  "69b7a2feb859891a1585388fb3cac5f8f3585607a4877641d6c996480d034dfc"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
