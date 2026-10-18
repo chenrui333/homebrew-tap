@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/eb/48/c1ffe65956daefcb8929f2eecbc2ee8bf6076c0b928eaa652073455dd265/fast_agent_mcp-0.10.45.tar.gz"
-  sha256 "45794c52ac07c9ed4acf031d2b781adaa89df72928ca32861ca96a2b828501a8"
+  url "https://files.pythonhosted.org/packages/a5/24/c7ee4fcacc578de918f8c01463b980c12be70337b2fc03b2d1cb148fe3ce/fast_agent_mcp-0.10.46.tar.gz"
+  sha256 "f111d0cff11f2f57a4ba852745b9041ecd55b4a7dc674c49c8d015bf0253f5df"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -102,8 +102,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/85/e0/27b467a38de29583a68973edbf99eeeee5b105567bdbd7d208e5b07525a7/cachetools-7.2.2.tar.gz"
-    sha256 "d521dc98d501ba9efd8d2b1663bbf88163509c0c0a090eea6dc154b421ec5410"
+    url "https://files.pythonhosted.org/packages/09/88/27fe0785c7a9aa285c753db0b4ea967adbf76128fede66379c35a4b8d054/cachetools-7.2.3.tar.gz"
+    sha256 "e6fafd06de4a5bd915ff7d247588ea497e28c9a568c62db8678d9a5f11515a9a"
   end
 
   resource "caio" do
@@ -487,8 +487,8 @@ class FastAgentMcp < Formula
   end
 
   resource "pillow" do
-    url "https://files.pythonhosted.org/packages/1c/3d/bb7fca845737cf9d7dbde16ed1843984665ff2e0a518f5db43e77ec540b9/pillow-12.3.0.tar.gz"
-    sha256 "3b8182a766685eaa002637e28b4ec8d6b18819a0c71f579bf0dbaa5830297cce"
+    url "https://files.pythonhosted.org/packages/ce/a4/9cc30690a394a8305e8be4c9036aa16d0dfddadd09079860b582f562496d/pillow-13.0.0.tar.gz"
+    sha256 "cdcd1ba258178f7356d74170c9a81ba4eab6a5d55748bc402a5a2a6fe6be3510"
   end
 
   resource "pkgconfig" do
@@ -497,8 +497,8 @@ class FastAgentMcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/da/91/4a03cfdb03314cfca262921797fff04ff4054bd86a160aed76eddf8aa12b/platformdirs-4.13.3.tar.gz"
-    sha256 "5e567f664eb087ab8521c0179cd8d1bd60857d271136567a39719e28e2d383ce"
+    url "https://files.pythonhosted.org/packages/b7/89/dfd269de936e76319cf27787d9eaaca513491f635d49b0fbe7cdb6d3bf6f/platformdirs-4.13.4.tar.gz"
+    sha256 "dd96496961684a7f42041923f842ec7494e09f5e87aded99117e1109cd40570e"
   end
 
   resource "pluggy" do
