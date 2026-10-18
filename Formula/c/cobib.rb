@@ -10,12 +10,10 @@ class Cobib < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e96c385812d839e9b5dcccb64338924703dcefb76b1005cab9d2837f12bd3d28"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46dd6e09e8d7a698578c2b2a7c6b807679c4384463d94fd04a76234b10c496ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "336967176712d905c5079b77c0cac545ce85ef9dbf10f9e7ff74777a12b08449"
-    sha256 cellar: :any_skip_relocation, sequoia:       "4fdf5f17115a9e4b16f340248d53bb16a1476ced9cce29249ae52ce64b94d07f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "138be4496385eb156ab40027495634ac81f52b8f58aad136d8aa2084a9a8e61b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a093c14c42168f1223902c17b26c911d7e9a78b2509b500079d1c1920333d55"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10935375597c61c332969aec0f2beb76b605e0a75178e4ddc0b730dbb6cdec16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce42905223ae6778ae2218f5db24efc12cdf60187d81cacaea855b0f1b236481"
+    sha256 cellar: :any,                 arm64_linux:   "bb3e83e540fe0249fbfd3f4cb0a6b3f08def4fc84d160f8ef1371857a621a013"
+    sha256 cellar: :any,                 x86_64_linux:  "d73658c0fa88c3668761402daf3dc13311889ce1d44a2cf5d28d023d1d92725a"
   end
 
   depends_on "certifi" => :no_linkage
