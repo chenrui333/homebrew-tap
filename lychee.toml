@@ -52,6 +52,7 @@ exclude = [
   "^https://docs\\.trieve\\.ai/getting-started/introduction/?$",
   "^https://better-env\\.dev/docs/?$",
   "^https://www\\.arjsoftware\\.com/files\\.htm$",
+  "^https://anchor\\.dev/?$",
 ]
 
 cache = true
