@@ -1,17 +1,17 @@
 class DesigncraftCli < Formula
   desc "Headless DesignCraft CLI and MCP server for page layout and PDF/EPUB export"
   homepage "https://getartcraft.com/apps/designcraft"
-  url "https://github.com/storytold/designcraft/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "e47b926827dd6c8db2dc7d2af7914fa270d5d5ef05896f80ecee442d9e391ea8"
+  url "https://github.com/storytold/designcraft/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "83191456fac33e18a4521aa9cdce7cd02be3d136dada0218d445085b9828969a"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/designcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8004a7ede553e62cb403583f8fdb9310801e1674e5046d9c76f683c62b574656"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "187f646e47a2c579ce6f3b37445be3ef562a5508e24bf99611312ebf9d93d3db"
-    sha256 cellar: :any,                 arm64_linux:   "c0d016091497c1dc19fd8d41f82cfa963b0cd3ec29ae6b354aaff2cd175833e8"
-    sha256 cellar: :any,                 x86_64_linux:  "611b9e6e0342a979ae9882b9c9ea9c777175422b763f1e018ca43555307b1faa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "68d2e263d0eee72bd92f446000b93ff92dd89b0ef2d296a0fcfd7a960f686fda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b96265eef3df773578426db93dabf9549a200b721d8ca6a8385ff2f4c11e1d1a"
+    sha256 cellar: :any,                 arm64_linux:   "895af0190e9bae6dc169d7054e17baf558f47b44db3ce8b378208029d369f33b"
+    sha256 cellar: :any,                 x86_64_linux:  "d1bc1d709bd8dbc8f153fec76b8676e51903a96509bec62c8626c543d7fc1dda"
   end
 
   depends_on "rust" => :build
