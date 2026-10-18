@@ -107,19 +107,19 @@ test("rejects forks, non-Renovate authors, missing labels, and blocking labels",
   )
 })
 
-test("requires successful Spell Check and GitGuardian runs", () => {
+test("requires a successful Spell Check run", () => {
   const ready = [
     { conclusion: "success", name: "Spell Check", status: "completed" },
     { conclusion: "skipped", name: "Spell Check", status: "completed" },
-    { conclusion: "success", name: "GitGuardian Security Checks", status: "completed" },
   ]
   assert.deepEqual(requiredCheckState(ready), { state: "ready" })
   assert.deepEqual(requiredCheckState([undefined, ...ready]), { state: "ready" })
-  assert.equal(requiredCheckState(ready.slice(0, 2)).state, "pending")
+  assert.equal(requiredCheckState([]).state, "pending")
+  assert.equal(requiredCheckState(ready.slice(1)).state, "pending")
   assert.equal(
     requiredCheckState([
-      ...ready.slice(0, 2),
-      { conclusion: "failure", name: "GitGuardian Security Checks", status: "completed" },
+      ...ready,
+      { conclusion: "failure", name: "Spell Check", status: "completed" },
     ]).state,
     "failed",
   )
