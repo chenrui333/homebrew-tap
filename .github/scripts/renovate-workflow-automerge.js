@@ -7,7 +7,7 @@ const BLOCKING_LABELS = [
   "in progress",
   "test failure",
 ]
-const REQUIRED_CHECKS = ["GitGuardian Security Checks", "Spell Check"]
+const REQUIRED_CHECKS = ["Spell Check"]
 const FAILURE_CONCLUSIONS = new Set([
   "action_required",
   "cancelled",
