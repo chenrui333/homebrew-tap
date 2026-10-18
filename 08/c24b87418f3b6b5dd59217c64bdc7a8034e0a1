@@ -1,0 +1,14 @@
+Formula/o/orla.rb
+  h_9df9c32c3f321d 32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "08c24b87418f3b6b5dd59217c64bdc7a8034e0a1",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
