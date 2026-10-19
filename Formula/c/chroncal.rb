@@ -8,10 +8,10 @@ class Chroncal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5799c9a9b9f8c0ec9c24bf7aca6e0db43be11edeab7578d2cc625d18ede29e77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5799c9a9b9f8c0ec9c24bf7aca6e0db43be11edeab7578d2cc625d18ede29e77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b555b3937219121b2a68d09261800e99d1e9eafe4e0d3d0a02cbcdd4bcb314c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28f4ddaf5f517d9a4b0d1bb86b1c7aeca0680bbd8b4eb42ce2d37008e96dddf9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52864d3a503ef1d3afc1e4c2897e66be16aa57a8ff233b3859864ce8e16903f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52864d3a503ef1d3afc1e4c2897e66be16aa57a8ff233b3859864ce8e16903f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60bea12a46801b0706e3bde1cdda9354aac7b4c6e1286291ea233fff06333aac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84ca483089993a9b1771e509e8ccd83d6b1248be2a6fe44d4d2c74d7772616ff"
   end
 
   depends_on "go" => :build
