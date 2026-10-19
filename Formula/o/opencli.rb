@@ -1,5 +1,5 @@
 class Opencli < Formula
-  desc "Make any website or Electron App your CLI, AI-powered"
+  desc "Make any website your CLI, AI-powered"
   homepage "https://github.com/jackwener/opencli"
   url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-2.0.0.tgz"
   sha256 "0e597ac3e408ee40878a9607a3e0dffc82c7a86bd24fbf7921b6639777ca513e"
@@ -28,7 +28,7 @@ class Opencli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/opencli --version")
-    output = shell_output("#{bin}/opencli --not-a-real-option 2>&1", 1)
-    assert_match "not-a-real-option", output
+    output = shell_output("#{bin}/opencli --not-a-real-option 2>&1", 2)
+    assert_equal "commander.unknownOption", JSON.parse(output).dig("error", "code")
   end
 end
