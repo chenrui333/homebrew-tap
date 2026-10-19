@@ -2,18 +2,17 @@
 class Pike < Formula
   desc "Tool for determining the permissions or policy required for IAC code"
   homepage "https://github.com/jamesWoolfenden/pike"
-  url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v1.0.12.tar.gz"
-  sha256 "f999c4ea3b6cbfc6e774f03571e0a09db89fc8e0e9f91bfed46127f2601450ba"
+  url "https://github.com/JamesWoolfenden/pike/archive/refs/tags/v1.0.13.tar.gz"
+  sha256 "06c493a8f3adadf030ec8d4284109a9b74d9450ca410af174bf16370f48b3a12"
   license "Apache-2.0"
   head "https://github.com/jamesWoolfenden/pike.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c6a5e6e44045f561c1e8748460ddf971b3607e9e321602327bfe092589fe851a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6a5e6e44045f561c1e8748460ddf971b3607e9e321602327bfe092589fe851a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "19639ce76470bb6c5eeea8479deec8442636ebba45e053960182b321a6004afa"
-    sha256 cellar: :any,                 x86_64_linux:  "dcacdab78e531dc7f755c87aa5835d4f67e7300cf36e02e93647f0acb5515331"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "57efdb2d07883459960626edb58786d8d45529947347cf894c67bfaabd94021b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57efdb2d07883459960626edb58786d8d45529947347cf894c67bfaabd94021b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5f6b4d7002af2493b790cfe26379f97c4650409957e25be3f56f3d84098459f"
+    sha256 cellar: :any,                 x86_64_linux:  "0305c719caf97d72883f5c6a306dcfa57de7e6cb810f49ca0e642ff915935794"
   end
 
   depends_on "go" => :build
