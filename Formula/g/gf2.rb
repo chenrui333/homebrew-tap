@@ -7,6 +7,12 @@ class Gf2 < Formula
   license "MIT"
   head "https://github.com/nakst/gf.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "f14428165a4d2a4ba7ec4ffd2bbde9408a71b2215ca910c12addac025fe2d2cf"
+    sha256 cellar: :any, x86_64_linux: "49b6b991f3ac24a803bf6cef801de843fb0fb8b9835067a487f1cc41ff2cd43e"
+  end
+
   depends_on "xorg-server" => :test
   depends_on "freetype"
   depends_on "gdb"
