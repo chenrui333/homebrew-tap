@@ -1,15 +1,14 @@
 class Opencli < Formula
-  desc "Make any website or Electron App your CLI, AI-powered"
+  desc "Make any website your CLI, AI-powered"
   homepage "https://github.com/jackwener/opencli"
-  url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-1.8.8.tgz"
-  sha256 "68fb69d6dcfbcb1f76da88278b499abe322dcca712f3b79fe01729cb63ae6d7a"
+  url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-2.0.0.tgz"
+  sha256 "0e597ac3e408ee40878a9607a3e0dffc82c7a86bd24fbf7921b6639777ca513e"
   license "Apache-2.0"
   head "https://github.com/jackwener/opencli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "94d504fa48d98fbeba669ec5e0aa2d1030c25e22871bbadc3f2c3d336251b7a5"
+    sha256 cellar: :any_skip_relocation, all: "4b64e5a3fdae95a380892ec6213c59b589220e77db0827d1a4161e545a03ff87"
   end
 
   depends_on "node"
@@ -28,7 +27,7 @@ class Opencli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/opencli --version")
-    output = shell_output("#{bin}/opencli --not-a-real-option 2>&1", 1)
-    assert_match "not-a-real-option", output
+    output = shell_output("#{bin}/opencli --not-a-real-option 2>&1", 2)
+    assert_equal "commander.unknownOption", JSON.parse(output).dig("error", "code")
   end
 end
