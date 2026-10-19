@@ -8,6 +8,7 @@ class Gdbf < Formula
 
   depends_on "cmake" => :build
   depends_on "xorg-server" => :test
+  depends_on "fontconfig"
   depends_on "freetype"
   depends_on "gdb"
   depends_on "libx11"
@@ -17,9 +18,11 @@ class Gdbf < Formula
 
   def install
     # Upstream tagged v0.8.3 without bumping the version header
-    inreplace "src/gf.hpp", /GDBF_VERSION_PATCH \d+/, "GDBF_VERSION_PATCH #{version.patch}"
+    inreplace "src/gf.hpp", /GDBF_VERSION_PATCH \d+/, "GDBF_VERSION_PATCH #{version.patch}" if build.stable?
     # Link Homebrew's libX11 rather than XQuartz's
     inreplace "CMakeLists.txt", 'set(X11_ROOT "/opt/X11")', ""
+    # Use Homebrew's fontconfig at runtime without requiring XQuartz.
+    inreplace "src/luigi.cpp", "/opt/X11/bin/", "#{formula_opt_bin("fontconfig")}/" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "gdbf"
@@ -27,7 +30,12 @@ class Gdbf < Formula
   end
 
   test do
-    assert_match "gdbf version #{version}", shell_output("#{bin}/gdbf --version", 1)
+    version_output = shell_output("#{bin}/gdbf --version", 1)
+    if build.head?
+      assert_match(/gdbf version \d+\.\d+\.\d+/, version_output)
+    else
+      assert_match version.to_s, version_output
+    end
 
     pids = []
     # Not using xvfb-run, which can leave processes running after the test
@@ -40,14 +48,16 @@ class Gdbf < Formula
 
     # gdbf forwards its arguments to GDB, which it only starts after opening its window
     marker = testpath/"gdb-ran"
-    gdbf_pid = spawn bin/"gdbf", "-ex", "shell touch #{marker}"
+    output_log = testpath/"gdbf.log"
+    gdbf_pid = spawn bin/"gdbf", "-ex", "shell touch #{marker}", [:out, :err] => output_log.to_s
     pids << gdbf_pid
     30.times do
       break if marker.exist?
 
       sleep 1
     end
-    assert_path_exists marker
+    output = output_log.read
+    assert_path_exists marker, output
 
     # gdbf shuts GDB down and exits cleanly on SIGINT
     Process.kill "INT", gdbf_pid
@@ -56,7 +66,7 @@ class Gdbf < Formula
     assert_predicate status, :success?
   ensure
     # GDB runs in its own session and outlives gdbf, so kill gdbf's children while they are still listed
-    if gdbf_pid
+    if pids&.include?(gdbf_pid)
       child_pids = if OS.mac?
         Utils.popen_read("pgrep", "-P", gdbf_pid.to_s).split
       else
@@ -69,7 +79,11 @@ class Gdbf < Formula
       end
     end
     pids&.reverse_each do |pid|
-      Process.kill "TERM", pid
+      begin
+        Process.kill "TERM", pid
+      rescue Errno::ESRCH
+        nil
+      end
       Process.wait pid
     end
   end
