@@ -381,6 +381,7 @@ brew install --cask <tool>
 - `gemini-cli`
 - `get-port-cli`
 - `get-shit-done-cc`
+- `gf2`
 - `gh-dash`
 - `gh-repo-man`
 - `gh-unpushed`
