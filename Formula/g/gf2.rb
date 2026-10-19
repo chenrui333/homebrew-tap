@@ -56,7 +56,7 @@ class Gf2 < Formula
     pids.delete gf2_pid
     assert_predicate status, :success?
   ensure
-    # GDB runs in its own session and outlives gf2, so kill gf2's children while they are still listed
+    # On failure, TERM bypasses gf2's SIGINT cleanup, so kill its GDB child before terminating gf2.
     if gf2_pid
       Dir["/proc/#{gf2_pid}/task/*/children"].flat_map { |path| File.read(path).split }.each do |pid|
         Process.kill "KILL", pid.to_i
