@@ -1,8 +1,8 @@
 class Pphack < Formula
   desc "Client-Side Prototype Pollution Scanner"
   homepage "https://github.com/edoardottt/pphack"
-  url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "59cc04102e900fb3cb29bc22f7ad51f888085cbe546e989294ff0b8d74a3dd33"
+  url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "cc4da17a45873942a00eb5f499bb8c1c3c1124c084d9eee8d6133c1ba306630d"
   license "MIT"
   head "https://github.com/edoardottt/pphack.git", branch: "main"
 
