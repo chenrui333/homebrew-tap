@@ -1,14 +1,14 @@
 class Opencli < Formula
   desc "Make any website your CLI, AI-powered"
   homepage "https://github.com/jackwener/opencli"
-  url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-2.0.0.tgz"
-  sha256 "0e597ac3e408ee40878a9607a3e0dffc82c7a86bd24fbf7921b6639777ca513e"
+  url "https://registry.npmjs.org/@jackwener/opencli/-/opencli-2.0.1.tgz"
+  sha256 "eb41ef9804efce3711a4f026c04e4fd42c922b47161d0f41388ffbc2caa87c9a"
   license "Apache-2.0"
   head "https://github.com/jackwener/opencli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "4b64e5a3fdae95a380892ec6213c59b589220e77db0827d1a4161e545a03ff87"
+    sha256 cellar: :any_skip_relocation, all: "1ba63a2b1be86acc62343549bb2840259212149b196611cdd31b6f6b03fa3359"
   end
 
   depends_on "node"
