@@ -1,17 +1,17 @@
 class Fresh < Formula
   desc "Modern terminal-based text editor with plugin support"
   homepage "https://getfresh.dev/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "76b9731fe75b3a2d3e39acc695c7fa16b74c7aff4744f6afcc5cf2c9b529ed60"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "b062b336a85bf290344fe4efb730468fd8bda6941e508bf76150a3afb6a9a2d6"
   license "GPL-2.0-only"
   head "https://github.com/sinelaw/fresh.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dcf405b08479b1b01a5ca574b6672017496933249b10fd812987a4fda0e090e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51e48ec702cc4e31de75ae43be492bfd5d30fe4c74d1c7e8043fb29ea21e2f75"
-    sha256 cellar: :any,                 arm64_linux:   "d6cd9646647599b6f7710043ccce09fe1ec816cd34aee5545154959dcc44b72a"
-    sha256 cellar: :any,                 x86_64_linux:  "ec481b54394084edfb675b13a8b2a88640ca7112d33391a370cf596425445280"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f36e8d79d94e702ff20557fadf2172faaee693e5dd7192c87e43d7e25c33f247"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d190a1262bd9d5f44cc3518aa146cdde14ba04d31a4be01ee6867c708daa8c7"
+    sha256 cellar: :any,                 arm64_linux:   "528797a02a5ccdafd3c970db35d73d960eabfe4c12ad64a890a379e35cce25de"
+    sha256 cellar: :any,                 x86_64_linux:  "f9c266e3e1f0ab24db69c2789176599aa380ec0492c851e45560ec1fbae46786"
   end
 
   depends_on "pkgconf" => :build
