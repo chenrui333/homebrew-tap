@@ -8,10 +8,10 @@ class Drydock < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1591300d0ac351f9158ce03e7676ad349a699fbd84b5305b54348a68189b251e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fed4f8a4b709c84c3afdd4955e879b69eadea32cdb5fa2226ebc5f1997638c22"
-    sha256 cellar: :any,                 arm64_linux:   "106c37ecdd957589ee037ed2e670d9d930830d8035bc340429ebf5b1cf59e222"
-    sha256 cellar: :any,                 x86_64_linux:  "1d1097168907d166de07a25bb44447f4b3576406e79efa89f9edb8a425614279"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cb434565a94be2bb8812d0f8000f02fbd9db15554657cb29b73495e3fc2e953"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6073d279e39427c021aa5e0edabbb18c6e3e89e23904a3df53f62ec727cffc8"
+    sha256 cellar: :any,                 arm64_linux:   "0e0246cf1c47175961a615b0139d9ff73d8ef051135bc0298803fe90cab9cf47"
+    sha256 cellar: :any,                 x86_64_linux:  "d58a6717202b3cb56eb01a9eec5deaa7e87ebfd008bce0ab9f6f67cbfb7c6c32"
   end
 
   depends_on "rust" => :build
