@@ -6,7 +6,10 @@ class Gdbf < Formula
   license "MIT"
   head "https://github.com/greg7mdp/gdbf.git", branch: "main"
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
+  depends_on "ctre" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "xorg-server" => :test
   depends_on "fontconfig"
   depends_on "freetype"
@@ -23,6 +26,8 @@ class Gdbf < Formula
     inreplace "CMakeLists.txt", 'set(X11_ROOT "/opt/X11")', ""
     # Use Homebrew's fontconfig at runtime without requiring XQuartz.
     inreplace "src/luigi.cpp", "/opt/X11/bin/", "#{formula_opt_bin("fontconfig")}/" if OS.mac?
+    # Use Homebrew's header-only libraries; the remaining doctest is only for upstream's tests
+    rm_r %w[deps/include/boost deps/include/ctre.hpp deps/include/nlohmann]
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build", "--target", "gdbf"
