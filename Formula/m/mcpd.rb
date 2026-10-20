@@ -8,11 +8,10 @@ class Mcpd < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f252240a05423429184b2994cfb3f57f35c3d4c0e094913463f7cb41885df001"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f252240a05423429184b2994cfb3f57f35c3d4c0e094913463f7cb41885df001"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "32a439e3bd2766700882850e4f031e82ce3fcaadcfafea91bc2673cb74ac9bdd"
-    sha256 cellar: :any,                 x86_64_linux:  "08a484354e36feb6fd8fde1edd90b6fcb03f4179b68258d649f36c56e7107688"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b4ee68c1a03fe19d66c4205e7b9ca20652c33da2c23116a336d926cb9335869"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b4ee68c1a03fe19d66c4205e7b9ca20652c33da2c23116a336d926cb9335869"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "970384833389b37b65f18370e909e7324343e7c9c84b47b1832d376ba81f6c89"
+    sha256 cellar: :any,                 x86_64_linux:  "2a3018e8038ebe6d2eb76d9573271806d60d1dd7a7eb4a614c28adc007440d0e"
   end
 
   depends_on "go" => :build
