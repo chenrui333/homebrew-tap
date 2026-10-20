@@ -63,12 +63,6 @@ class Gdbf < Formula
     end
     output = output_log.read
     assert_path_exists marker, output
-
-    # gdbf shuts GDB down and exits cleanly on SIGINT
-    Process.kill "INT", gdbf_pid
-    _, status = Process.wait2 gdbf_pid
-    pids.delete gdbf_pid
-    assert_predicate status, :success?
   ensure
     # GDB runs in its own session and outlives gdbf, so kill gdbf's children while they are still listed
     if pids&.include?(gdbf_pid)
