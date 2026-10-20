@@ -8,11 +8,10 @@ class Jarl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9dc2b3f03b0115d336ea6bc0ceb3962f0ea0b5fecc84bd3d8ceba6a4051b61b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6467fbc93aa428f741cbe1273bcc848c15af8aaf8eca8080ab1e4fefb9bab9c5"
-    sha256 cellar: :any,                 arm64_linux:   "4bfe8fab82137b570f63b705d129e0fd0dc6c5f451fcedd76be9bbbf0e10edd1"
-    sha256 cellar: :any,                 x86_64_linux:  "2322bcf3e6a95c14ff62d4fe362996a32fff1660eb1a7629730b69f6c8602ee2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73815f76f58f0ca195404e742d830447f06214b61eec267ec78994b2c5fca3aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f2c71909b10e8328ac2fb360af28330a10d65c630fc80558ab74311795bb46"
+    sha256 cellar: :any,                 arm64_linux:   "e3c8dd5e41f539cea61b2014d64bd3b2207bbb664c4613c6df7a97e574a85f2a"
+    sha256 cellar: :any,                 x86_64_linux:  "94ce3b96103eb05437b14fbcde55a5a28146feaf3dd190743982a0b4f7b46cd2"
   end
 
   depends_on "rust" => :build
