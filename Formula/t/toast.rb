@@ -1,17 +1,17 @@
 class Toast < Formula
   desc "Terminal-based text editor with integrated language servers"
   homepage "https://github.com/paradise-runner/toast"
-  url "https://github.com/paradise-runner/toast/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "c1aa313f64b6c3229d440728c7382959b97dc7f4998ef43a73f6aaf9664ee1bc"
+  url "https://github.com/paradise-runner/toast/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "d1c6b8d84836a4346d30f9c2a2a3a5135da1124aad48a280be81a2119e9b71c1"
   license "MIT"
   head "https://github.com/paradise-runner/toast.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4665a4ae5b44335e9e1f58f25046d4d9b1c48d63bee9f076991b64fe47ccd1e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b689681b816fbb993402026bdbdd8c70849fcd190fb95afbc7db62d54d4cadb8"
-    sha256 cellar: :any,                 arm64_linux:   "521caccda6100c6cf751c3978dec0ba31df1f5d9f165c0907aae1e68188b9fc6"
-    sha256 cellar: :any,                 x86_64_linux:  "eee0f4296c6a4fb02bbee3acb9acc0b11200f4294791321588f35abde46b8105"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c329f6b10c8bc8b940eb7ab6a614d6f7cffae4fb369fd55fd8b9492771a3c7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e7ff5e0b1e091d11f3209d00af72578ebb395045a06c4fa0e010e61c3d3cf8d"
+    sha256 cellar: :any,                 arm64_linux:   "cda4ff8f960a93eba97541785728b68cda5017b5d63e9dd9673771c4956db4ac"
+    sha256 cellar: :any,                 x86_64_linux:  "ebd3e27de65209de981d7d4dd124aa031dfae462c2c4665a1c96c1943049c85f"
   end
 
   depends_on "go" => :build
