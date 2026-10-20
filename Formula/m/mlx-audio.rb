@@ -3,8 +3,8 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/cc/4a/ea4746d0c14b75d835dd5164d0e8bba19598248cb29831c0c8e8b98310b9/mlx_audio-0.5.9.tar.gz"
-  sha256 "ad2862464d2d5b8ab4b9394a226d044e7022da594329427ef16ca8e93c08e6b5"
+  url "https://files.pythonhosted.org/packages/f6/37/9e25593fdb67bff1522105ab00f8b36af5fbbb45470e7180e80aa8fea1c7/mlx_audio-0.6.0.tar.gz"
+  sha256 "9b6a2cbc9b03fe0d4d14459d55744e5ac78e9ff48e339928df5c5785a2cb4ef3"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
@@ -39,7 +39,8 @@ class MlxAudio < Formula
     depends_on macos: :sonoma
   end
 
-  pypi_packages exclude_packages: %w[certifi fastapi mlx mlx-lm numpy protobuf scipy uvicorn],
+  # sentencepiece comes from mlx-lm's site-packages (added via .pth below); its bundled build clones abseil.
+  pypi_packages exclude_packages: %w[certifi fastapi mlx mlx-lm numpy protobuf scipy sentencepiece uvicorn],
                 extra_packages:   %w[
                   calver dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe pathspec
                   pdm-backend pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
@@ -77,8 +78,8 @@ class MlxAudio < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
-    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "flit-core" do
@@ -117,13 +118,13 @@ class MlxAudio < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
-    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
+    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
+    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
-    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
+    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
+    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
   end
 
   resource "huggingface-hub" do
@@ -177,8 +178,8 @@ class MlxAudio < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "poetry-core" do
@@ -242,8 +243,8 @@ class MlxAudio < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "tqdm" do
@@ -252,8 +253,8 @@ class MlxAudio < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/65/4c/70012ed0795235fb6bd7806fafd4a1842f03e49ebbfa3bb9580e451948ce/transformers-5.19.0.tar.gz"
-    sha256 "87f38dd25e4521151b97e94520ac457f44a0ae8a8358a5b112daff6c64a822d6"
+    url "https://files.pythonhosted.org/packages/32/03/2e8d6da6a582a0fdbaa7af9c0dab72dac113e6e3ea3b98d6ed67248322cc/transformers-5.20.1.tar.gz"
+    sha256 "25b30879e4c243f00630c1079171ede6d4f6bf76e68f978acd47628a640bc8a0"
   end
 
   resource "trove-classifiers" do
@@ -371,11 +372,13 @@ class MlxAudio < Formula
 
     (testpath/"test.py").write <<~PYTHON
       from importlib.metadata import version
+      import sentencepiece
       from mlx_audio.stt.generate import format_timestamp, format_vtt_timestamp
 
       assert version("mlx-audio") == "#{version}"
       assert format_timestamp(61.234) == "00:01:01,234"
       assert format_vtt_timestamp(61.234) == "00:01:01.234"
+      assert sentencepiece.SentencePieceProcessor is not None
     PYTHON
 
     system libexec/"bin/python", "test.py"
