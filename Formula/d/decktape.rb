@@ -1,17 +1,16 @@
 class Decktape < Formula
   desc "PDF exporter for HTML presentations"
   homepage "https://github.com/astefanutti/decktape"
-  url "https://registry.npmjs.org/decktape/-/decktape-3.16.1.tgz"
-  sha256 "20e4fe92c367f668d87f7a6db41d8ae306e5dde4cdba4bee61453adb98de43fa"
+  url "https://registry.npmjs.org/decktape/-/decktape-3.17.0.tgz"
+  sha256 "e3ca52be23715030dd8abd7e2744e3ef01c35f52a307ab85563d9614bc7d3234"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "e0cc62e561b6380befe42b85fbfd24781ed8ffc203c6e835a662c28b025f0c85"
-    sha256 cellar: :any, arm64_sequoia: "00d2fe01739e7c01dfda7c2e624afa588141cc9fd24f54dab256e04a5de5d863"
-    sha256 cellar: :any, arm64_linux:   "2f6369b4ce040ab93b17c1cbef95b203e15f49c3b85c7ca9a3df913949eb0933"
-    sha256 cellar: :any, x86_64_linux:  "9f45a4261c2a30686dace519813990d1340cd230af8ea3f48919bb39e9cdf1ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef9e55d0af8ed4cf9768d08c2ca28c19f6f3aea7d9ac4311ccd6872ce1cf62ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef9e55d0af8ed4cf9768d08c2ca28c19f6f3aea7d9ac4311ccd6872ce1cf62ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "656a656e89341b27f7de8d391f9a048c409e2ca59ed08fc2b6f842bceebc6cf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "656a656e89341b27f7de8d391f9a048c409e2ca59ed08fc2b6f842bceebc6cf7"
   end
 
   depends_on "node"
