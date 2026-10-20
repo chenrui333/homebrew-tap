@@ -1,16 +1,16 @@
 class Wolfpack < Formula
   desc "Mobile and desktop command center for controlling AI coding agents"
   homepage "https://github.com/almogdepaz/wolfpack"
-  url "https://registry.npmjs.org/wolfpack-bridge/-/wolfpack-bridge-1.6.25.tgz"
-  sha256 "0c6b9d32ebc02683365939002f50fb2f45fd1b3c0bd0376e8bf7a01f957e4d5e"
+  url "https://registry.npmjs.org/wolfpack-bridge/-/wolfpack-bridge-1.6.26.tgz"
+  sha256 "e003f66b1145a2f8e356e72fa35c3c8ad203e4d31ee4cbb2c597028139871e09"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "07fe95f34d795bd3a679372ae3e3903e5037c344673aa264546d2bf0c3367c77"
-    sha256                               arm64_sequoia: "07fe95f34d795bd3a679372ae3e3903e5037c344673aa264546d2bf0c3367c77"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "204d91936f05197dc7c5c2a62e5a88735ccb4b914ca7078ae9bbe22596c7efad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cda8b445a72892c1dd27ecbaadacfe00e6dd956c2662b0316b709152d0bf65b"
+    sha256                               arm64_tahoe:   "a35096e2ff47eb2b2702b5ab70e12a0434e093aa86c54869e1ed2fc45c890eb9"
+    sha256                               arm64_sequoia: "a35096e2ff47eb2b2702b5ab70e12a0434e093aa86c54869e1ed2fc45c890eb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e58731c5868b6d8d9cdf0b6bfb370984fb57be97190fa26034d37bd5cae3f751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8eff07e14118a9a77258a88176c535ba99fe52119e3cdc9cbab37287021d4b8"
   end
 
   depends_on "node"
