@@ -1,8 +1,8 @@
 class Wolfpack < Formula
   desc "Mobile and desktop command center for controlling AI coding agents"
   homepage "https://github.com/almogdepaz/wolfpack"
-  url "https://registry.npmjs.org/wolfpack-bridge/-/wolfpack-bridge-1.6.25.tgz"
-  sha256 "0c6b9d32ebc02683365939002f50fb2f45fd1b3c0bd0376e8bf7a01f957e4d5e"
+  url "https://registry.npmjs.org/wolfpack-bridge/-/wolfpack-bridge-1.6.26.tgz"
+  sha256 "e003f66b1145a2f8e356e72fa35c3c8ad203e4d31ee4cbb2c597028139871e09"
   license "MIT"
 
   bottle do
