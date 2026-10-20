@@ -1,18 +1,17 @@
 class Pphack < Formula
   desc "Client-Side Prototype Pollution Scanner"
   homepage "https://github.com/edoardottt/pphack"
-  url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "59cc04102e900fb3cb29bc22f7ad51f888085cbe546e989294ff0b8d74a3dd33"
+  url "https://github.com/edoardottt/pphack/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "cc4da17a45873942a00eb5f499bb8c1c3c1124c084d9eee8d6133c1ba306630d"
   license "MIT"
   head "https://github.com/edoardottt/pphack.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "12c959be9ac6ad74064fac7a07c8fd0d178913f378c4b57287908dda8662dd63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28ad670cee7aa48333ac2f7d95d221162f17d4cd95ede5b9b1f0c60ee7bf96ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2efb9dd8eb3771a3c22bca8e8aff5c76ca88f5eb327ccfc54a066b14c5704999"
-    sha256 cellar: :any,                 x86_64_linux:  "cf9bd1eb428fbff10eabae9b7f097e884a192c66b678c9d947f264306b908765"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f01f05e2ccbae584f50917e32ce2250095f13fbd0e3a56cd54292d00b3f2d7da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e14e3954ee72da2948234d993de731cabf15f339393cb7ac44f6d57ac76152b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c681dfeeacefc11f1fd9b75c95819f8190b233023246aace53334189f11d627"
+    sha256 cellar: :any,                 x86_64_linux:  "6e70df75ec25367d952e3b1326c5dd81e7b6b36c7ffce3f1a3b28d8e38a7fe83"
   end
 
   depends_on "go" => :build
