@@ -1,8 +1,8 @@
 class SquadsCli < Formula
   desc "Open source CLI for AI agent coordination with domain-aligned squads"
   homepage "https://github.com/agents-squads/squads-cli"
-  url "https://registry.npmjs.org/squads-cli/-/squads-cli-0.10.0.tgz"
-  sha256 "3662a45d3cdcbb58d2791b753b14d9d7d10cabae3e734316fa5dfdf1f545c9b7"
+  url "https://registry.npmjs.org/squads-cli/-/squads-cli-0.10.1.tgz"
+  sha256 "5cd3d9dd0d17440d3001e53faeecf458591a84c277372058a5739df95572705f"
   license "MIT"
 
   bottle do
