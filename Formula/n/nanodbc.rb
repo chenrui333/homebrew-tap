@@ -1,16 +1,16 @@
 class Nanodbc < Formula
   desc "Small C++ wrapper for the native C ODBC API"
   homepage "https://nanodbc.github.io/nanodbc/"
-  url "https://github.com/nanodbc/nanodbc/archive/refs/tags/v3.0.7.tar.gz"
-  sha256 "9c1b201f009cd633c81a463c3ff8ec79081921f50c56c926621262c689b77663"
+  url "https://github.com/nanodbc/nanodbc/archive/refs/tags/v3.0.8.tar.gz"
+  sha256 "bbb8ec400f0f84a7f6d61d4a4360e4c90eece6add3735e6b0b451ab90ca76f3e"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "c332df607d95e45c07bff5c865bc3a370f5c5a8a4b6479dd901ca29cab117a5d"
-    sha256 cellar: :any, arm64_sequoia: "b3efa5ae1d2e02a86ac58a3c4c3056dedeeff40c4401ee2764b03e34f9f3e6d5"
-    sha256 cellar: :any, arm64_linux:   "8277cd0977a57a6f532e13b312e7a81edd686b5e67bfca925ddd48c76f4b3ff2"
-    sha256 cellar: :any, x86_64_linux:  "3b7d3e6d6c2b31c6fac8c164ba98681cbd5f5372025a66234a334eb27db1063a"
+    sha256 cellar: :any, arm64_tahoe:   "46bb0ff28a96ff221deb572ec353ee5cf18a3b92b08e6cbd5be683a4ebdbaf6e"
+    sha256 cellar: :any, arm64_sequoia: "ba20c2b205211ea971e57d0701ebd1c70539f6bfcaec6c8b8e9b823281fc4a4d"
+    sha256 cellar: :any, arm64_linux:   "a640f7b9b96960dcfc4ff7ca64cec904661964284b09c820bcc079a71bafd93a"
+    sha256 cellar: :any, x86_64_linux:  "af4b4e7733bf8d5df904d0c0d0358bd176d3fdf7533798701490b4c8d287ae19"
   end
 
   depends_on "cmake" => :build
