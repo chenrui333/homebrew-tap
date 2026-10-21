@@ -23,7 +23,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up actionlint
-        uses: jdx/mise-action@fc42bcc7ddbf51124c30f95a877a0c5168a3bfde # v5.2.1
+        uses: jdx/mise-action@8418fedb1110381a0d3ba51a7a415d7c1b884550 # v5.2.2
         with:
           mise_toml: |
             [tools]
@@ -84,7 +84,7 @@ jobs:
 
       - name: Set up actionlint
         if: steps.requirements.outputs.actionlint == 'true'
-        uses: jdx/mise-action@fc42bcc7ddbf51124c30f95a877a0c5168a3bfde # v5.2.1
+        uses: jdx/mise-action@8418fedb1110381a0d3ba51a7a415d7c1b884550 # v5.2.2
         with:
           mise_toml: |
             [tools]
