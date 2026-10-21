@@ -7,7 +7,7 @@ class SquadsCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "6d5ddbda4fc1c7011ea3250a4424accea248678129a982a1113be9adf30a6b50"
+    sha256 cellar: :any_skip_relocation, all: "ae133d8a2e9ba5b6e0af23abfd856d2f24a3d18c334da30d829b70b20c68f73c"
   end
 
   depends_on "node"
