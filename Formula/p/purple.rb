@@ -8,11 +8,10 @@ class Purple < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8244df20c0ec7de012d7fe42fdabc36c9fc462ed637a0aef363e58cfa97c99e8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1daa109f08c17ccf6938bf84adfb3a96035f2e9a9cc2b24111161d30b8bbbd96"
-    sha256 cellar: :any,                 arm64_linux:   "ed78106df83305ce82570165c14710c4ad4135db8275c66827206c875c347965"
-    sha256 cellar: :any,                 x86_64_linux:  "ae4fb958aacb6a44f084136e47023238d30774cd6473a2d9513b06d429276722"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8bb737576da2a0d9263452d6788e2e20922c5557e374c0b90cdf598d6b40f50f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07ab2261d68f15406a7089e22edcfc4daae6a248dbcda59c480fbcd45459eff5"
+    sha256 cellar: :any,                 arm64_linux:   "37b260771b9b814653a51bc3eb146ee1b3918afda8ab2aef96b570ff59d8aeda"
+    sha256 cellar: :any,                 x86_64_linux:  "c4144320b67b646dda5245189c2ef2c850ffbf9ff38d3268ddff4cc4933f15ab"
   end
 
   depends_on "pkgconf" => :build
