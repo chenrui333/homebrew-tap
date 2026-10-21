@@ -8,10 +8,10 @@ class Teldrive < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36c7205ca4600404c608a67358f51995ec807dfdeedebd7838c2b02fd7504be6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36c7205ca4600404c608a67358f51995ec807dfdeedebd7838c2b02fd7504be6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7f74b4a315198e28210f8ce770cd1749b256d48e5da4394c186c857e1b53e8d"
-    sha256 cellar: :any,                 x86_64_linux:  "c2a4de847be38c0f54f136d2d5bf79e920bfb384e5f6fc1a813bca2bbc66dbef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05d11b4fcf22a1a45289e57aca8bb03dcca3afd334306235b974e8dd900eaf14"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05d11b4fcf22a1a45289e57aca8bb03dcca3afd334306235b974e8dd900eaf14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17b8025586f39c0fcd97d0b9503543ac0588fecbc61182b86df5055de0eb7cb5"
+    sha256 cellar: :any,                 x86_64_linux:  "fc13565f82a5cd0f2613db73f00d623a0110c1ac04f566b7e4ea803f8dfae2b2"
   end
 
   depends_on "bun" => :build
