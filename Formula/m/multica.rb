@@ -1,8 +1,8 @@
 class Multica < Formula
   desc "Open-source managed agents platform for AI coding agents"
   homepage "https://github.com/multica-ai/multica"
-  url "https://github.com/multica-ai/multica/archive/refs/tags/v0.6.4.tar.gz"
-  sha256 "2b3492beab03c4282431ca44e90575d2eef66e312325a381a2dbf74242acf294"
+  url "https://github.com/multica-ai/multica/archive/refs/tags/v0.6.5.tar.gz"
+  sha256 "7a3cda70e665adbcc2f8461e9cdc58177df93a99b4c8bb7f56d0687fe7e8b478"
   license :cannot_represent
   head "https://github.com/multica-ai/multica.git", branch: "main"
 
