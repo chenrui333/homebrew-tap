@@ -1,8 +1,8 @@
 class EffectcraftCli < Formula
   desc "Headless EffectCraft motion graphics renderer and scripting tool, with MCP"
   homepage "https://getartcraft.com/apps/effectcraft"
-  url "https://github.com/storytold/effectcraft/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "fb70627d112825cd0412d37784b55ae8b87f128abfab30b26a7759a42518015a"
+  url "https://github.com/storytold/effectcraft/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "53034e0864671d50e97f100a21a34f38f230f5ac654592156be7ec2c46d491cc"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/effectcraft.git", branch: "main"
 
