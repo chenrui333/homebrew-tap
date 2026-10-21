@@ -2,11 +2,11 @@ cask "proton-pass-cli" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "macos", linux: "linux"
 
-  version "2.5.0"
-  sha256 arm:          "8d99e78f6f2e470df7d972c981dbe6da9b2d322c093cf9d3048e54521e9ed70a",
-         intel:        "d83e13609286cc6f648d621b9920b25f44b1c757a7c26075eb958c30cc21485c",
-         arm64_linux:  "052f131d8d071d36097fea084c7e5823358ad0ad8ab41195e6348fc10ec8192c",
-         x86_64_linux: "9ce925d06407097337a01502f281d63a8bed80b7c54b96942dd665d4eb488cfd"
+  version "2.5.1"
+  sha256 arm:          "2c5834dd21bef341db70c39eaa0a353d4b9e49a8a0d4e5579c02f62ed70db3d9",
+         intel:        "fed0d6a919b8b05921c508cdd4cfe8c05a0b0cf4ccc55ed036e3b51ace6f7373",
+         arm64_linux:  "03042c8ad70b21fa1da834f2e4e74484710ab3f05754af10c5035acdf68f3c87",
+         x86_64_linux: "40e27645e0485f5f0db928b81469d1c5a7c8968a162956e940069476244c02b1"
 
   url "https://proton.me/download/pass-cli/#{version}/pass-cli-#{os}-#{arch}"
   name "Proton Pass CLI"
