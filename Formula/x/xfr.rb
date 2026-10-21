@@ -1,17 +1,17 @@
 class Xfr < Formula
   desc "Modern iperf3 alternative with a live TUI"
   homepage "https://github.com/lance0/xfr"
-  url "https://github.com/lance0/xfr/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "41884d777070ce900324c655ead124984f358699e8ba7bcafe1977515c5c0d40"
+  url "https://github.com/lance0/xfr/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "58f525cf039f405ea976b412b720a757867523755fd6c8a3e73e08fb98b35147"
   license "MIT"
   head "https://github.com/lance0/xfr.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "effe72195f9e4f34734379eee2eb536744d614624506e6f14c1d7ecc7ed0b69e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6619a2a62e981d8d95b1e13373b9f7fea6f676295c89f68ece61d24ea8bd01f"
-    sha256 cellar: :any,                 arm64_linux:   "b507d3e1484cfab35d4977c8b2bcea4db0844117a3468c970b8c0950d39818af"
-    sha256 cellar: :any,                 x86_64_linux:  "b46c112bc14c458ac3a17cf882f6ea13e163a920750a4e2b9579dd014d4f8d6c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16975a9445ddc9a3a046a394070156d619a615c642b235ac5535399e4cc69777"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cc47c275a6399fb3d9046247691f4f9a6888a8c1f98412cc6e9edb357aa1ec3"
+    sha256 cellar: :any,                 arm64_linux:   "f619dc319e850c84156747332a698b824870b48606103f650300427ee62e5e30"
+    sha256 cellar: :any,                 x86_64_linux:  "a1fed85174cc871ca6389094a4110a68da716e96dc92dad8fb5469a760189ec5"
   end
 
   depends_on "rust" => :build
