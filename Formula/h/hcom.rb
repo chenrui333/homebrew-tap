@@ -1,16 +1,16 @@
 class Hcom < Formula
   desc "Let AI agents message, watch, and spawn each other across terminals"
   homepage "https://github.com/aannoo/hcom"
-  url "https://github.com/aannoo/hcom/archive/refs/tags/v0.7.30.tar.gz"
-  sha256 "46b3210a516dbad0ca6e522b4b7c98d9909c8395e38cad30022a10e7514ea600"
+  url "https://github.com/aannoo/hcom/archive/refs/tags/v0.7.31.tar.gz"
+  sha256 "e8b37e9bc0ba24c2328f8243449f71bd0488c9c9e18b313055d9f0849a57248e"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b0944c4412a567162560e4f8fe4431e787fdbfb57e8d8cb28445257848200cc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0561a9dbfd4a2f0b64b9d43d85395f29306e654aa36020008a6f641976606b0f"
-    sha256 cellar: :any,                 arm64_linux:   "6f142075d8849548f6cb397d302acb2ea6d73ff53ef0158352e91cd6bbe0376d"
-    sha256 cellar: :any,                 x86_64_linux:  "dac5e638860dcac19d83a5a5346b65c979d9c4039a6ba9a0f2b871f0bc7206d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d361f66a1888f870a0b03943f50e328dd3b043291fb8b31506a4419591dd02d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d88a51270b8f98c71253196ec0928531213a2d974e67719bc3362266a1fe8a3"
+    sha256 cellar: :any,                 arm64_linux:   "aaf082dc72312e155d78dce6fef99d671109088b15c0110f6c2aaee23ce35dfb"
+    sha256 cellar: :any,                 x86_64_linux:  "bcfad2583cf2c8def1f2f3c3e3bc94a03dd320861d35ac5a59b4dab0f4d07fe3"
   end
 
   depends_on "rust" => :build
