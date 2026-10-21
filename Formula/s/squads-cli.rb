@@ -1,13 +1,13 @@
 class SquadsCli < Formula
   desc "Open source CLI for AI agent coordination with domain-aligned squads"
   homepage "https://github.com/agents-squads/squads-cli"
-  url "https://registry.npmjs.org/squads-cli/-/squads-cli-0.10.0.tgz"
-  sha256 "3662a45d3cdcbb58d2791b753b14d9d7d10cabae3e734316fa5dfdf1f545c9b7"
+  url "https://registry.npmjs.org/squads-cli/-/squads-cli-0.10.1.tgz"
+  sha256 "5cd3d9dd0d17440d3001e53faeecf458591a84c277372058a5739df95572705f"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "6d5ddbda4fc1c7011ea3250a4424accea248678129a982a1113be9adf30a6b50"
+    sha256 cellar: :any_skip_relocation, all: "ae133d8a2e9ba5b6e0af23abfd856d2f24a3d18c334da30d829b70b20c68f73c"
   end
 
   depends_on "node"
