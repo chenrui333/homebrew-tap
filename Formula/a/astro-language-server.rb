@@ -7,10 +7,10 @@ class AstroLanguageServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c393794a0382a2262a5c31f263c2d76e5e29af6ee4a87eaef2c75f609a2cf87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c393794a0382a2262a5c31f263c2d76e5e29af6ee4a87eaef2c75f609a2cf87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be0f7a23e30935fbef869e26b101a69c5cfbdaf63cd6c9f8e7f37ae1c97343e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "691fa52a2de858bf6249411a14be9097dc599722c819f0a3c165d65808d0de59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8376433d5e235a20f11b6efc8714e87f75788bb319196a4ae74fbc8ebbfbd01d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8376433d5e235a20f11b6efc8714e87f75788bb319196a4ae74fbc8ebbfbd01d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dab865c5ae3c6d1c6b494fcc8cc96e690e02e8f8471f016e13bddd341f16ad0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb5dd0ee8d01b7dd6d047479642bd79d36d2f752ba895df3c5ebf9c7ce62d37"
   end
 
   depends_on "node"
