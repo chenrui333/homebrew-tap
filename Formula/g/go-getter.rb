@@ -1,8 +1,8 @@
 class GoGetter < Formula
   desc "Package for downloading things from a string URL using a variety of protocols"
   homepage "https://github.com/hashicorp/go-getter"
-  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v2.2.4.tar.gz"
-  sha256 "dd1a756c5a36cc73d01a47fd9d01430756a426581b8ca42003c934a289d3b54a"
+  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v2.2.6.tar.gz"
+  sha256 "4297ef8096ab42119ed20744ee236860870a6f057fee55725c7ba91ed0fa9cb0"
   license "MPL-2.0"
   head "https://github.com/hashicorp/go-getter.git", branch: "main"
 
