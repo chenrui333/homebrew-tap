@@ -1,8 +1,8 @@
 class GoGetter < Formula
   desc "Package for downloading things from a string URL using a variety of protocols"
   homepage "https://github.com/hashicorp/go-getter"
-  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v2.2.4.tar.gz"
-  sha256 "dd1a756c5a36cc73d01a47fd9d01430756a426581b8ca42003c934a289d3b54a"
+  url "https://github.com/hashicorp/go-getter/archive/refs/tags/v2.2.6.tar.gz"
+  sha256 "4297ef8096ab42119ed20744ee236860870a6f057fee55725c7ba91ed0fa9cb0"
   license "MPL-2.0"
   head "https://github.com/hashicorp/go-getter.git", branch: "main"
 
@@ -13,10 +13,10 @@ class GoGetter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e294afca5e3fccd9a99562c25db98d4b341a0ef4e767e3b08ce3202d781bed7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e294afca5e3fccd9a99562c25db98d4b341a0ef4e767e3b08ce3202d781bed7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f300d9e487639a5a5fbd6db91c7029ffddb8d4a093d802bb171fdbed885eb466"
-    sha256 cellar: :any,                 x86_64_linux:  "8c82d71c03c02b59f2f50eee8eeeba0b1ad82f628ad6dac80983a931271b5848"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16a20cd2653106281cf6ac11bcc96e9a26b105d257727bf1d71946c05a416a18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16a20cd2653106281cf6ac11bcc96e9a26b105d257727bf1d71946c05a416a18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00df5865ebdd07738e850e586c75720ec0539bf6171b97ebdb9c2a18bbf4548e"
+    sha256 cellar: :any,                 x86_64_linux:  "bf1a51f7c46fd5ebe7c44c0514c37dc6d8c1f6544836afe498fd2f6b69e0706e"
   end
 
   depends_on "go" => :build
