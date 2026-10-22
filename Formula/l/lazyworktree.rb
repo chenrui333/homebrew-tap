@@ -1,8 +1,8 @@
 class Lazyworktree < Formula
   desc "TUI for managing Git worktrees"
   homepage "https://github.com/chmouel/lazyworktree"
-  url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.50.1.tar.gz"
-  sha256 "51fcb3b6e215a869fbb8e25b4ba40666fb2e15552e45f890511e173c9b6107ec"
+  url "https://github.com/chmouel/lazyworktree/archive/refs/tags/v1.51.0.tar.gz"
+  sha256 "ba9d182bceb68183f358fbcd6e998b41cea7b032e157312c2d280973861c31c2"
   license "Apache-2.0"
   head "https://github.com/chmouel/lazyworktree.git", branch: "main"
 
