@@ -8,11 +8,10 @@ class Keyward < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d86e95cdceef54e2127eb1c3c8f5d08b9c2553bf69e8f4b5b5eec8902261dd95"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d86e95cdceef54e2127eb1c3c8f5d08b9c2553bf69e8f4b5b5eec8902261dd95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c91d91ab72910cb540027f78e6075015d56857dedfc4448b0e09f83f96070ca"
-    sha256 cellar: :any,                 x86_64_linux:  "8721db4129b31a60fea80aed1fbff26762c4056e28d027c6eeb5f6f3f4018e68"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4076c371d91127611e9663405202e87e059c52fdd68588d2fcc32c3e14a701ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4076c371d91127611e9663405202e87e059c52fdd68588d2fcc32c3e14a701ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b40fb66689d15ffc792e664510c840c2bd59ef0f47f45f715098404dd184701"
+    sha256 cellar: :any,                 x86_64_linux:  "ed76055179b21a597bc8144dd39edd30872f1cdeb07281be80dc614232c38225"
   end
 
   depends_on "go" => :build
