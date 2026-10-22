@@ -1,8 +1,8 @@
 class Keyward < Formula
   desc "Manage SSH keys and audit SSH configuration"
   homepage "https://github.com/gateway-of-last-resort/keyward"
-  url "https://github.com/gateway-of-last-resort/keyward/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "0b726b18bfe8dc3b8c0d06ce2f833a35c7f35279b2440e70bced5acc7004c8c8"
+  url "https://github.com/gateway-of-last-resort/keyward/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "2bafd0effc9da8acbb1c08c3f5739b7894547c3e0fdf44d0ff8a1aeb487d904c"
   license "MIT"
   head "https://github.com/gateway-of-last-resort/keyward.git", branch: "main"
 
