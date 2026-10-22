@@ -8,10 +8,10 @@ class DesigncraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f0cb9c2ce540aa86da6560433c217dc969ede1d2e92ab71c0654dd2947d15b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b7cb8aba3df71de843bf007a4b9be5b0486aea73ff8cbb72b0d8dda43368aa6"
-    sha256 cellar: :any,                 arm64_linux:   "8a990551f86acbd92fd28a64fcb29d86b16a4ab67d307f42ebee59f4e55caf94"
-    sha256 cellar: :any,                 x86_64_linux:  "0c0a587c3ba9fc1472a1ecd353a40ded96f28b1f2b3cffe0dd9f45ce56dc0bc7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c44e67d1ab6a513037481d309920dd3af9784865b80807282ae15b4d612102e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a1b15b3fb4b13fe474ac15d4c44ac34980707eb25ad0e7762ff5f6b05687fc6"
+    sha256 cellar: :any,                 arm64_linux:   "8df7bb3ad828e20f97138ae7ec2c16b09c769280be503aa8f3d709c5e81cbabe"
+    sha256 cellar: :any,                 x86_64_linux:  "13dc0550ab8b0d4e6735bb14c4605b7b8d5bcf4029e21752ee9e8ec9495ff785"
   end
 
   depends_on "rust" => :build
