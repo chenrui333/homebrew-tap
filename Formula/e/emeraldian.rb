@@ -1,17 +1,17 @@
 class Emeraldian < Formula
   desc "Terminal UI for Obsidian vaults, with a graph and an assistant"
   homepage "https://github.com/iamrohithrnair/emeraldian"
-  url "https://github.com/iamrohithrnair/emeraldian/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "ae5a044dab4296c42fcf918ec970f7adabcd8ea0e0fa329f526845660599e35a"
+  url "https://github.com/iamrohithrnair/emeraldian/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "e6603dbc31f086db5ca2afcbd6c12657b9f54fbad1879ef655bfe261ddb4bfc4"
   license "GPL-3.0-or-later"
   head "https://github.com/iamrohithrnair/emeraldian.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "77b7c2e69935cc259fd5b0b429220f7e189f5c9e65172d1a3b9cdc323db8d6ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "924761ab0e626338ed25e59af431801b4705e9b0842ecc961ad98392364bbd07"
-    sha256 cellar: :any,                 arm64_linux:   "d29550f133522bd0cf65c4b160402d305948629d74e8166ce008a72a35184930"
-    sha256 cellar: :any,                 x86_64_linux:  "bb3a7711954dbb1f25c25e3d1cc08aa5f21f75680239e862bc33840a2ee35e3b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54dc82cc327c3602e407ddb7799252f5c1ea46e1e21d3af1d4965f9dfacebc6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c2d857e7b9f35550852c696969276029d67b323e89a5d3ec4974f8315388441"
+    sha256 cellar: :any,                 arm64_linux:   "4fa45770a9cd8e21ef46775da6e4f1ba0ef9fc797e952ccf07063a991d19e667"
+    sha256 cellar: :any,                 x86_64_linux:  "5120ecb3e85b32e702ef979ed054ff26da8b8315fb8d184a91315112e4f4ad2b"
   end
 
   depends_on "rust" => :build
