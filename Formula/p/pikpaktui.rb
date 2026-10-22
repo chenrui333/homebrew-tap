@@ -1,8 +1,8 @@
 class Pikpaktui < Formula
   desc "TUI and CLI client for PikPak cloud storage"
   homepage "https://github.com/Bengerthelorf/pikpaktui"
-  url "https://github.com/Bengerthelorf/pikpaktui/archive/refs/tags/v0.0.61.tar.gz"
-  sha256 "a920eb7fa69fecc3323ffdf7f88d93bdcb99ce94eaba08fcf49bee2921190b1f"
+  url "https://github.com/Bengerthelorf/pikpaktui/archive/refs/tags/v0.0.63.tar.gz"
+  sha256 "d73a3ea09d46a2c5b852b50dd3649567cbad2ed8c9332adcef115bb93dd13506"
   license "Apache-2.0"
   head "https://github.com/Bengerthelorf/pikpaktui.git", branch: "main"
 
