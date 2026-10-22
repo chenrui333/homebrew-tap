@@ -1,18 +1,17 @@
 class Clickhousectl < Formula
   desc "CLI for ClickHouse: local and cloud"
   homepage "https://github.com/ClickHouse/clickhousectl"
-  url "https://github.com/ClickHouse/clickhousectl/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "1ebb0244f8f255cfd422e67852201fae1668cd41e776a4ead3db1ae2afefcf1d"
+  url "https://github.com/ClickHouse/clickhousectl/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "a948a4fed25b905721242941730bcc04ab89cf57e6ac96a6712f247b77b6d530"
   license "Apache-2.0"
   head "https://github.com/ClickHouse/clickhousectl.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "82a2a3639973d1b4731c53762736f8d614cd01d2e251bf8837683770c655d4ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98be6c4ccde36cc213863f3cbeeb0b121cf36a206491eff92a68d4d98723606a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "384ec8ab403199902e9d2812a935d7dda2f320bb41343bd83f0cce70027effe0"
-    sha256 cellar: :any,                 arm64_linux:   "91e05ee9d4be78dca868bdf39cd57a526ffd88007f96b176d68d69128c3d69e8"
-    sha256 cellar: :any,                 x86_64_linux:  "868cfaf2b6ef06db3f6a52e6d3fb4c536583ac9be4d0b955299b00fd4d1ef4b6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3555f6e6b8e8e7657a4f57d85c2126b42e76d58de4be3993665cb79972440e15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88a9f51d982ea027765b2e49d781c0f608e2f7c4a5d1a1bef94fe8e2bd4e7a54"
+    sha256 cellar: :any,                 arm64_linux:   "ffffe496dddff4d6260d1f6d8cec36c0a233e078bd5d8b9b5259a123694042d5"
+    sha256 cellar: :any,                 x86_64_linux:  "c8371b06f989feef4c109070af0e21a761c2d79ec34efd24a6e5ec54a8437691"
   end
 
   depends_on "rust" => :build
