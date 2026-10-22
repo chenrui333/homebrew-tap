@@ -10,8 +10,8 @@ class MlxVlm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f5fded58e10eb153ae84d7dd2d0d621ab0b3d3b7faefe6f633c98969092ecfc5"
-    sha256 cellar: :any, arm64_sequoia: "5584e003107ea4ef1bf8e82823da06056d39d8262f489fc89786d78a7851f8db"
+    sha256 cellar: :any, arm64_tahoe:   "35d52e6f4db3bf20b8a67f2bb3423f316d03a92ada826a7fe9bb567254a25b68"
+    sha256 cellar: :any, arm64_sequoia: "5c031becf72c864d59fc67ab037fde4d85fdb43312e291488ed3f3f131390f93"
   end
 
   depends_on "cmake" => :build
