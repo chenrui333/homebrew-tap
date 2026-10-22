@@ -3,15 +3,15 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/3c/bf/63bcb57ce1944bb957669fc1ea8e6eee120864b0f9683af56955b497e828/mlx_vlm-0.7.9.tar.gz"
-  sha256 "a50d40663ee612a5c3ce0b9590698771d302792b72ea777539ed3ec0a3df46a4"
+  url "https://files.pythonhosted.org/packages/26/b5/86eb4a7785974ebbbb3655b1a82c0c342bd9b8e08f7ee6ccafe6f5de2fae/mlx_vlm-0.7.10.tar.gz"
+  sha256 "89adc43235194e797b6ac6795fd275e8957a5d14a1e2760ba49e3a7fedf79f96"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f5fded58e10eb153ae84d7dd2d0d621ab0b3d3b7faefe6f633c98969092ecfc5"
-    sha256 cellar: :any, arm64_sequoia: "5584e003107ea4ef1bf8e82823da06056d39d8262f489fc89786d78a7851f8db"
+    sha256 cellar: :any, arm64_tahoe:   "35d52e6f4db3bf20b8a67f2bb3423f316d03a92ada826a7fe9bb567254a25b68"
+    sha256 cellar: :any, arm64_sequoia: "5c031becf72c864d59fc67ab037fde4d85fdb43312e291488ed3f3f131390f93"
   end
 
   depends_on "cmake" => :build
@@ -81,8 +81,8 @@ class MlxVlm < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/b9/37/6e7ec4dbe12d9721902066ddb83dd9c6e7adb1cee81e094502c43024e4d1/fastapi-0.149.0.tar.gz"
-    sha256 "aba5779358d0c5233759ddcddd84fe7269d71f775fd754b653b608f770558a41"
+    url "https://files.pythonhosted.org/packages/9a/40/a212bffb9809afb9a94b250f11e0c29fd8b2589ec92e4bedd1cc7adf9938/fastapi-0.159.1.tar.gz"
+    sha256 "b45b1ec57f3aa4d2f80f09bfbcf068b46764a2ee892e56753f35bb3d9d845ce2"
   end
 
   resource "filelock" do
@@ -176,8 +176,8 @@ class MlxVlm < Formula
   end
 
   resource "mlx-audio" do
-    url "https://files.pythonhosted.org/packages/f6/37/9e25593fdb67bff1522105ab00f8b36af5fbbb45470e7180e80aa8fea1c7/mlx_audio-0.6.0.tar.gz"
-    sha256 "9b6a2cbc9b03fe0d4d14459d55744e5ac78e9ff48e339928df5c5785a2cb4ef3"
+    url "https://files.pythonhosted.org/packages/b2/5b/e7be1d322253a56f891dd41773afe21997e3c889a4b68953aa0db67efe68/mlx_audio-0.6.1.tar.gz"
+    sha256 "94259999694c707129c1f6a30cc1e164e525d0471c9311c5af88f37f20682300"
   end
 
   resource "opentelemetry-api" do
@@ -256,8 +256,8 @@ class MlxVlm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "setuptools-scm" do
@@ -296,8 +296,8 @@ class MlxVlm < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/32/03/2e8d6da6a582a0fdbaa7af9c0dab72dac113e6e3ea3b98d6ed67248322cc/transformers-5.20.1.tar.gz"
-    sha256 "25b30879e4c243f00630c1079171ede6d4f6bf76e68f978acd47628a640bc8a0"
+    url "https://files.pythonhosted.org/packages/8c/4e/3cd6f08cc84ee612d40f3cdb1649475e7c997f2d5cbd95ade8780708af62/transformers-5.20.2.tar.gz"
+    sha256 "080871e061546d720be57f5846fce426f46b44d61574907cc7404c2cba49d180"
   end
 
   resource "trove-classifiers" do
