@@ -3,16 +3,16 @@ class ApmCli < Formula
 
   desc "Open-source dependency manager for AI agents"
   homepage "https://github.com/microsoft/apm"
-  url "https://files.pythonhosted.org/packages/bb/1a/7a1714c044295c9844fe50f338fa04f302112cf9102618098c3b8b570809/apm_cli-0.34.0.tar.gz"
-  sha256 "55610c84c0b1f7eab4a8658767d1b01fe74f95261f39186f3492ccd24a155117"
+  url "https://files.pythonhosted.org/packages/8e/20/9ca9b61b362e0f1fb465931d0dd76150a5f23b98b2249663e7edbacc6c0c/apm_cli-0.35.0.tar.gz"
+  sha256 "9f1b06ee7c35485d2b65a8e974fbc7195f358e2149913a8312f17506698e1363"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "c04d493113d73560d30ecb4baf1dbc153d485b769b12d6785e74982477960fd1"
-    sha256 cellar: :any, arm64_sequoia: "909c9603af19b61d4abc008069411a2160bfd8fdcb00a72bb51103efc607ad90"
-    sha256 cellar: :any, arm64_linux:   "8758c50172f973230547417a31c8434335c217167d931c529cf2c430a9fde7b4"
-    sha256 cellar: :any, x86_64_linux:  "fe9eae77fda9ac614860d641541755690f4942a2d363572f43aeaf151a16ba72"
+    sha256 cellar: :any, arm64_tahoe:   "a6633b277392b9c5d598d06a7b54fe001f984a44520991d01a11c9237e6f5e3d"
+    sha256 cellar: :any, arm64_sequoia: "603fdfb11f761efeb409616e6919bf2d03e8ac4eb50e8b03c02665399655d52e"
+    sha256 cellar: :any, arm64_linux:   "78b5b4dafe9d4b8d5d31533c1ca040dcae2414fe69c79150b1f6b639d9302817"
+    sha256 cellar: :any, x86_64_linux:  "8eac1477e5bf6b6940ebf34b534add236836ceb5bb0bcbc30f32fa4fc4bde463"
   end
 
   depends_on "maturin" => :build
@@ -155,13 +155,13 @@ class ApmCli < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
-    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
+    url "https://files.pythonhosted.org/packages/c0/61/afa9d6b7452f9eca73f73d45324eb0bb52f098fd5e6049bf6b8263be9b4e/httpcore2-2.16.0.tar.gz"
+    sha256 "c72cd0413563b17e1cd8354677dff887466f8ec2551679759e93126534428643"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
-    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
+    url "https://files.pythonhosted.org/packages/43/73/5ca2cedf5e4e50423d1c258877865a6b62793633b561c58499f8aeb33b7e/httpx2-2.16.0.tar.gz"
+    sha256 "0d54c98128e8f2ff7fbbde0fca8c359e5f032edeaaaac443cdb7f31f685bcd7f"
   end
 
   resource "idna" do
@@ -215,8 +215,8 @@ class ApmCli < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/87/4c/609b16f2a6e9a99f27a82ce93ff75868e7cb364fe6daff50cc0c1d620772/openai-3.35.1.tar.gz"
-    sha256 "b33e6561b90586e450def8a388e7d364755325da6884fc71348be5542e043bd0"
+    url "https://files.pythonhosted.org/packages/0a/66/d4c48dc690e36b297c178636d8434050ac92df9db8a4c89d9bd451cccc95/openai-3.37.0.tar.gz"
+    sha256 "670bd6f699000d43a2073bcf94374a55bb133bfe5de0d084d47eb9bb9f6a8e5d"
   end
 
   resource "packaging" do
@@ -260,8 +260,8 @@ class ApmCli < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "python-frontmatter" do
@@ -300,8 +300,8 @@ class ApmCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "setuptools-scm" do
@@ -357,6 +357,11 @@ class ApmCli < Formula
   resource "truststore" do
     url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
     sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
+  end
+
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
   end
 
   resource "urllib3" do
