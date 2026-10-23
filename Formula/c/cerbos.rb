@@ -8,10 +8,10 @@ class Cerbos < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bd895c18cc22ef215bb148cec39fef516b814be7e8954628fa61de9e5a0bcaf0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "907427e3b193386e53defe00201a78d00790c2bd166808ac0d932eaa495e3804"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d65662183874f44207f9b06ed02300a0c6f9f936b593346d42ba27a5465c654"
-    sha256 cellar: :any,                 x86_64_linux:  "d0b0e92fb2987ca6f6254d340bdfb2651a217e9d19cc7a22cbea423557d2404f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c3304bf2508e34325dd8ca1574c3ce507e04724c2f90037c8ff4f1a496a16b20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e4df34dc78b887804003f1ebf5c849b647648ec6393ee5ee61c670821a60150"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c307d41da4c04d8f4466f7cb3d43f4b7156c5159f3299a113147e8b5311f7d6"
+    sha256 cellar: :any,                 x86_64_linux:  "51759486fa7673be731c29ce89c0a149c69a169508f9d114b881efcf67a452bd"
   end
 
   depends_on "go" => :build
