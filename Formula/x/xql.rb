@@ -1,18 +1,17 @@
 class Xql < Formula
   desc "Query CSV files and SharePoint Lists with SQL"
   homepage "https://github.com/excelano/xql"
-  url "https://github.com/excelano/xql/archive/refs/tags/v1.12.3.tar.gz"
-  sha256 "9f9d80e53ab0d775894459ce82247ad0c36555c61ea66b5514c13dfcbcda79ea"
+  url "https://github.com/excelano/xql/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "4a94efb0c1c96d69be307fd61a219861e7a2e917ebd1d124db2c81d2ea9942aa"
   license "MIT"
   head "https://github.com/excelano/xql.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3bf528ac8b424289efba9ea54bd40d9cd0170b7cdf18b7a80fce06e9240f353"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3bf528ac8b424289efba9ea54bd40d9cd0170b7cdf18b7a80fce06e9240f353"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4167f4bb4666e34bcb7a25a8c12790d2e543bffa3081931130abdfc535650663"
-    sha256 cellar: :any,                 x86_64_linux:  "11beb25a2744b3df4e4ab043074814a644f5cedfa6a69140cd3c25b14ffb95f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4c604ccf16454302caeebca968c6a1ed7468a1cb26a655df88b047a584e9c62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4c604ccf16454302caeebca968c6a1ed7468a1cb26a655df88b047a584e9c62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3062e3f07d9bdc1b1b13bf71b67d5922de6a83aea0f58d359d8479868930ad0b"
+    sha256 cellar: :any,                 x86_64_linux:  "3aeab05cd3c130688293e665cd578584c05166e5b6cfb4a66bde73d0e350ebc2"
   end
 
   depends_on "go" => :build
