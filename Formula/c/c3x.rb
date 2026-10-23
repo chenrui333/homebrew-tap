@@ -1,8 +1,8 @@
 class C3x < Formula
   desc "Open source cloud cost estimation for Terraform, Terragrunt, and CloudFormation"
   homepage "https://github.com/c3xdev/c3x"
-  url "https://github.com/c3xdev/c3x/archive/refs/tags/v0.3.20.tar.gz"
-  sha256 "c007ccaafd3bfc5dd488d9ff5f5945a2389ed2fbe92dfd6e6be433db056a28d7"
+  url "https://github.com/c3xdev/c3x/archive/refs/tags/v0.3.21.tar.gz"
+  sha256 "3915f9439af2a0a22299a456e101295f7e924426cf4472f2de9cc0055980a863"
   license "Apache-2.0"
   head "https://github.com/c3xdev/c3x.git", branch: "main"
 
@@ -14,10 +14,10 @@ class C3x < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "27c8447fe4abb3ac5f38148a1ba6b51ea4d309a876cbb8eb4f96a6b4894e0ff5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27c8447fe4abb3ac5f38148a1ba6b51ea4d309a876cbb8eb4f96a6b4894e0ff5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d6f0e33faecc1652440081ef7ef230fe0eb54c9462d3db76d5664fb65486a66"
-    sha256 cellar: :any,                 x86_64_linux:  "182216a3ea5250d49a5f5c5f82be6ba9379265e4fdceb47166bcde20e03d24ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70050744ecb7acdee2a538f922f870c4808f35eac0aa54bf8dda95b2d072490f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70050744ecb7acdee2a538f922f870c4808f35eac0aa54bf8dda95b2d072490f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d2e245abc5767c0465415c846da8bb1ee7f9b29858d09af7a0c52a0ba149552"
+    sha256 cellar: :any,                 x86_64_linux:  "a44a0538695b12f7b6ac682d57ca69506f79a2b61e3c113b081ebe02cb8b49ef"
   end
 
   depends_on "go" => :build
