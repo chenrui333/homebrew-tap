@@ -1,8 +1,8 @@
 class VectorcraftCli < Formula
   desc "Headless VectorCraft CLI and MCP server to edit, convert and inspect vector art"
   homepage "https://getartcraft.com/apps/vectorcraft"
-  url "https://github.com/storytold/vectorcraft/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "cbcdf77b6fc5baeb0f74a884861b01af5e5bfb1aec604c7883ba12f2345036eb"
+  url "https://github.com/storytold/vectorcraft/archive/refs/tags/v0.16.0.tar.gz"
+  sha256 "e8761831ceaa9681eb3348cad33ecf1349d62111b3bba8a2b7d408011ec06152"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/vectorcraft.git", branch: "main"
 
