@@ -8,10 +8,10 @@ class VectorcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "89f8fc6f879056d07479c6959d886318a14f03401ff41ed48876cf7a57313cbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83093abf4dc10ef15857682f88a742d48c83dcf247fa9b47079779de3f408dc2"
-    sha256 cellar: :any,                 arm64_linux:   "8ff8c1434916e2119bf31108309f8b45ba0f25f658be57f38ba127ed7b5569c7"
-    sha256 cellar: :any,                 x86_64_linux:  "57057273985656b894b9d0e3040caa4f14532d961fe61433fb255a58b690ee41"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76a9f74fc7346d71fe973b00658645c89817123db762f37adc13dd163bce7a4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "233f8803289bb9b8b91674203858875b1b85f73a8e4118f5d600e0bd795c60ad"
+    sha256 cellar: :any,                 arm64_linux:   "a561aef0404d1f960f0609aecd35a7a73fdea9612c0d7b95124f0a6a473f3f27"
+    sha256 cellar: :any,                 x86_64_linux:  "63f77b7fc502b090d22003b32e925f3a12c3fa9c91c92f1b03d37edfc3b80657"
   end
 
   depends_on "rust" => :build
