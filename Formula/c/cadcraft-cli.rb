@@ -1,17 +1,17 @@
 class CadcraftCli < Formula
   desc "Headless CADCraft 2D CAD tool to inspect, convert and script DXF, with MCP"
   homepage "https://getartcraft.com/apps/cadcraft"
-  url "https://github.com/storytold/cadcraft/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "37a918e9267b4885525856260f9e370dae43d2511fca830ef16d16516318cd48"
+  url "https://github.com/storytold/cadcraft/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "374177d50bd52ee38d724956f823741e8ac5f7e469fba049df3f421882820868"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/cadcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1272328db2a90fd6089f86599c4adf1f5a339aaf43da9647b59c7e6f62a5584a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b35403a3e1df08e9b4d03bbeeefb6894eb2ce5fb9d5bc94bd2bc004e17a8123d"
-    sha256 cellar: :any,                 arm64_linux:   "208af7913b872a1087ace8a21a12b0e1ce1b1676dc2910ff5988c1b1183c4906"
-    sha256 cellar: :any,                 x86_64_linux:  "bb230fa394443b8bf7a1d76871641c6da3f397617f80d9b3ed1d2b03d1077d8f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aa6904c34952860a11f6951e28462c134c92d616d648ef9c2b3b2c40bdaf1554"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00e1e9ff47ba20637fcc76219716754f668fa81f5cb7221576fdc5950cf83399"
+    sha256 cellar: :any,                 arm64_linux:   "6ff34084025d95fea958a193b485380f1cd28a8ebbaca22b23e5dac916fb6ce7"
+    sha256 cellar: :any,                 x86_64_linux:  "3c0275258a50a5ea9c71b4e61402d2ef96fc645d7a686a0c93a285d186acd2da"
   end
 
   depends_on "rust" => :build
