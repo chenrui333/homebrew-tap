@@ -1,8 +1,8 @@
 class Xled < Formula
   desc "Transform tabular data using regular expressions"
   homepage "https://github.com/excelano/xled"
-  url "https://github.com/excelano/xled/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "5ad0e96f48cc5b56afb2957698073c89af9a75438acdeac8ce6aa8e36e28779d"
+  url "https://github.com/excelano/xled/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "4fcb5425d576db9f609ceb698915e5c3d72d2d94fe6b44f381a6f9ec18d9408b"
   license "MIT"
   head "https://github.com/excelano/xled.git", branch: "main"
 
