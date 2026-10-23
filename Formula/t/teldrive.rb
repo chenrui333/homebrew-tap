@@ -1,8 +1,8 @@
 class Teldrive < Formula
   desc "Utility to organize, manage, and sync Telegram files locally"
   homepage "https://teldrive-docs.pages.dev/"
-  url "https://github.com/tgdrive/teldrive/archive/refs/tags/2.0.9.tar.gz"
-  sha256 "9b020f13031bcff7ec204e0a1a30cdbe2e382f1068439a98aed8090c8886e467"
+  url "https://github.com/tgdrive/teldrive/archive/refs/tags/2.0.11.tar.gz"
+  sha256 "972ee3015f2cdc019b49ba601ba726fc609486e8c32af95814450b7a40949cbe"
   license "MIT"
   head "https://github.com/tgdrive/teldrive.git", branch: "master"
 
