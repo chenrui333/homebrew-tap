@@ -8,10 +8,10 @@ class EffectcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9acf1ab71407771517ba92b3a5173054b17c991b16b9a617cc79a6beee616f5d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c71eba637bf477c7f32fb41973eca60d0e27fd9c36d00bb68ec61abce09b8bb9"
-    sha256 cellar: :any,                 arm64_linux:   "e3b16d45884d177c95493fcb660afd2de78fc37adc2a24a5a5e37b8b3bb6f68c"
-    sha256 cellar: :any,                 x86_64_linux:  "039a45c06efecee182c0eb5550d1fc861a531449489a92e3b095a6d21c086925"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b89006ae7ce9ca1d426ba5017283896860e31fc1713a2c828160192675a0f137"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d423166ce954f0121717ab2d144faf9b831a13fae1af6df67b92bcb9cf6abfe"
+    sha256 cellar: :any,                 arm64_linux:   "9db6ef1569d4637c566f2caef999b2919b9d9a557983670a215327c97632d704"
+    sha256 cellar: :any,                 x86_64_linux:  "f1137dbbf25a4baedefd39eb0350b7f0430be68fa92568fc768911da7a3b3834"
   end
 
   depends_on "rust" => :build
