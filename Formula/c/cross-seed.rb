@@ -1,17 +1,16 @@
 class CrossSeed < Formula
   desc "Fully-automatic cross-seeding with Torznab"
   homepage "https://www.cross-seed.org/"
-  url "https://registry.npmjs.org/cross-seed/-/cross-seed-6.13.7.tgz"
-  sha256 "cd8936f70c94ec62640d1eba5c4c32315b866efed5d3d3fc1fa22109fb5f11b9"
+  url "https://registry.npmjs.org/cross-seed/-/cross-seed-6.13.9.tgz"
+  sha256 "c5c92366735f9425bb22563c39ec703a9b79bc7f75225d92ed081e6b90a23a69"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d671cff45e03089826193932591bab201fd35e35fa77dd58d4d2491e860a47ae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e043b1b2437a4ddb817250666beb6d81327addca3174df8db42e4e64c2e4399"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6aecb6992374a3d8662490430010ae0ea8adc8ca3c61c1f4a16dadadedbfe4b2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f272c3da7d237371c0a17de092b4179ff0893ff405a61899132daa656287d713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a3de4ac69a1050f1389fccd69b6891b7232329dd84c7b7b5f88c3ef80066a72"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c4a3bd377b24e0d4f878d6e4d9e7a938ec34a2c5ef8192df7d7cd6265ac11ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6f2175695e5e0219c9ae108e6eb192f4fd7358c93dc34e0069fdf93b372693b"
+    sha256 cellar: :any,                 arm64_linux:   "269ada74682712dee60135def85add9c93d386baf002fc68ed0748da5a7cdab1"
+    sha256 cellar: :any,                 x86_64_linux:  "748f9ac55677cca2cc0762aeb1ee7b11e360db5a3cd8f828d5c8234b1e3509f7"
   end
 
   depends_on "node@24"
