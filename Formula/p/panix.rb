@@ -1,17 +1,17 @@
 class Panix < Formula
   desc "Deploy Nix configurations across machines"
   homepage "https://github.com/mihakrumpestar/panix"
-  url "https://github.com/mihakrumpestar/panix/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "f86a241ae66234f78eac77516957885874a87a33f7a8be430051959e74914ddc"
+  url "https://github.com/mihakrumpestar/panix/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "9735070d8a5bea92067df8ed20ab727ad8033b31210b7559a6c13139fedbb7c3"
   license "AGPL-3.0-only"
   head "https://github.com/mihakrumpestar/panix.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc34787649cc2f9381e989c290d4f93180af86cb2111537689fe950ad01d3675"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc34787649cc2f9381e989c290d4f93180af86cb2111537689fe950ad01d3675"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e213d755f94ba864d85e6f4b74649fb6c877b910a9663cf44d58f0a14bcfb0b6"
-    sha256 cellar: :any,                 x86_64_linux:  "26ca1e04bb4fad07804f44621e9181116cb1cf78f2a4fd9821673e284ecd4f7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6e774cfe3bda14809c68f030aa06838cf1d4907de8a70f5c79f49e4864dd9eaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e774cfe3bda14809c68f030aa06838cf1d4907de8a70f5c79f49e4864dd9eaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "276b4ec815168e67bc6861d2d8160af804b7a5a341b59158d0a25f24b5bc169d"
+    sha256 cellar: :any,                 x86_64_linux:  "a779953997ee7fc1d409f67869e286dad59950c8fc159f8251ea8c9805cc77f3"
   end
 
   depends_on "go" => :build
