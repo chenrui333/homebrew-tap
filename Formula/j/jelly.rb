@@ -1,8 +1,8 @@
 class Jelly < Formula
   desc "Explore and stream Jellyfin via CLI"
   homepage "https://github.com/AzureHound/jelly"
-  url "https://github.com/AzureHound/jelly/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "9ce9157fd534a3bf178cade16a984756ad26259f8d3628d74c36d9620cf1bb30"
+  url "https://github.com/AzureHound/jelly/archive/refs/tags/v3.5.2.tar.gz"
+  sha256 "ccf563c35b178711a3a5c4f1e16b573fd4f3e7e0bcf2a9ed375e182d1d69f1f0"
   license "0BSD"
   head "https://github.com/AzureHound/jelly.git", branch: "main"
 
