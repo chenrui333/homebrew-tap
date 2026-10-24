@@ -9,8 +9,8 @@ class Rdmatop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "989f63da7c27fcefa2cadcd20d3c60010cd3bcc4a1a72ebfd79f2183a062b975"
-    sha256 cellar: :any, x86_64_linux: "4ad7fe4c44ef8d4eab2b0a0d0478b40a7cb41a1bc7183e7eebc444f055943145"
+    sha256 cellar: :any, arm64_linux:  "2baf5f0863820774a0821c1354233015f1abc50ec51042d7f7d3060c63388d79"
+    sha256 cellar: :any, x86_64_linux: "7c19cb1db0bdbc5ff2cd1424882dd06913453a49c952a0dc0a464ca335137ea3"
   end
 
   depends_on "rust" => :build
