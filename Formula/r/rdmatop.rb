@@ -2,8 +2,8 @@ class Rdmatop < Formula
   desc "Real-time terminal monitor for RDMA network interfaces"
   homepage "https://github.com/uccl-project/rdmatop"
   # The published Cargo source package includes the release's lockfile.
-  url "https://static.crates.io/crates/rdmatop/rdmatop-0.1.32.crate"
-  sha256 "58c029e0540867e4b210f885b5e8c31585a6586456c6534fabc14d7f8aab4e67"
+  url "https://static.crates.io/crates/rdmatop/rdmatop-0.1.33.crate"
+  sha256 "7cbc1dfe0071ee05b84cf78815d0060c6e75f6a6b09f6e109d6d392ce6e9c0e0"
   license "Apache-2.0"
   head "https://github.com/uccl-project/rdmatop.git", branch: "main"
 
