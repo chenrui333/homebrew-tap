@@ -2,15 +2,15 @@ class Rdmatop < Formula
   desc "Real-time terminal monitor for RDMA network interfaces"
   homepage "https://github.com/uccl-project/rdmatop"
   # The published Cargo source package includes the release's lockfile.
-  url "https://static.crates.io/crates/rdmatop/rdmatop-0.1.32.crate"
-  sha256 "58c029e0540867e4b210f885b5e8c31585a6586456c6534fabc14d7f8aab4e67"
+  url "https://static.crates.io/crates/rdmatop/rdmatop-0.1.33.crate"
+  sha256 "7cbc1dfe0071ee05b84cf78815d0060c6e75f6a6b09f6e109d6d392ce6e9c0e0"
   license "Apache-2.0"
   head "https://github.com/uccl-project/rdmatop.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "989f63da7c27fcefa2cadcd20d3c60010cd3bcc4a1a72ebfd79f2183a062b975"
-    sha256 cellar: :any, x86_64_linux: "4ad7fe4c44ef8d4eab2b0a0d0478b40a7cb41a1bc7183e7eebc444f055943145"
+    sha256 cellar: :any, arm64_linux:  "2baf5f0863820774a0821c1354233015f1abc50ec51042d7f7d3060c63388d79"
+    sha256 cellar: :any, x86_64_linux: "7c19cb1db0bdbc5ff2cd1424882dd06913453a49c952a0dc0a464ca335137ea3"
   end
 
   depends_on "rust" => :build
