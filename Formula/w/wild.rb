@@ -1,8 +1,8 @@
 class Wild < Formula
   desc "Fast linker for Linux"
   homepage "https://github.com/davidlattimore/wild"
-  url "https://github.com/davidlattimore/wild/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "99ec83404558d4d0cbde9dd44b8c6fa2a511a2f8bb04a31f54c0929ec4491990"
+  url "https://github.com/davidlattimore/wild/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "34d0c66c70b3c4744c548b2b821180d2d578b86eb747cb4a9ed1f4b11a95b337"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/davidlattimore/wild.git", branch: "main"
 
