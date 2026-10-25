@@ -8,11 +8,10 @@ class Rustormy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6f0488831877cfb746032fc6740e9406e16d45f5ddd11d72ca3e1ca2aeec5525"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cddcf40975bc8d15fea74abf9da8dd776f9c6e93f7419638a149c2d8667aeebc"
-    sha256 cellar: :any,                 arm64_linux:   "0323866fcc1b359a5f888c9b5d89f2b951574a20e42f19bad01ef82c94f314fb"
-    sha256 cellar: :any,                 x86_64_linux:  "8c0389088d7a73dc30eb1d94a4fca91f575c42a53974e68f82935ffc8b7277fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e256e9cb44f3e90fecf9da75fcfe34bdf3d9c7547652e33bce6ef4dbab3b9edb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e99903715f1cc365a74c4b57b7f09d1a98c4aeca005558938a362625b923cc0"
+    sha256 cellar: :any,                 arm64_linux:   "9acdd0cfc55bf797024792bd2f15267c3a1de58c62b83a212f63b639bd002217"
+    sha256 cellar: :any,                 x86_64_linux:  "661ecf45abc8f12048f06e30a559c7f976650207427c2073d20fe9811b91732c"
   end
 
   depends_on "pkgconf" => :build
