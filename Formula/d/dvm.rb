@@ -7,10 +7,10 @@ class Dvm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1eac4bc432a84b6c7492e8930a2d8f7d1030d554307427426da3c89558c12f79"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c35da4967d688d5a1923e9eac7b0497b04776f77c9b59df572410fafc72739c"
-    sha256 cellar: :any,                 arm64_linux:   "babfc6fd3b76e09787366239bc69ada283d982b16cf09486366d7435110df576"
-    sha256 cellar: :any,                 x86_64_linux:  "e80b5918896ead9b650f59c2ddc1a36e4bafb49f7d1e0f618f0427807f924cab"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bbce9cd6111e1586bb52276d614bedd78b1c4dcf306f1a8e7870ec26ddf78b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cb7ea0874045da5387971e2af85881c59137aa56b0a98dbbdc8026138ebd9fa"
+    sha256 cellar: :any,                 arm64_linux:   "afc70045c168b44dad130c3b1e06d00ae364127a2ee1d21640f3b8125da85acf"
+    sha256 cellar: :any,                 x86_64_linux:  "7c28ccaee8475ab46ef80669913379fcf07ab3c7eaaa96ba62a2f9d12972eeb7"
   end
 
   depends_on "pkgconf" => :build
