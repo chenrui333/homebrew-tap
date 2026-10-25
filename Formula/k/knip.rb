@@ -1,16 +1,16 @@
 class Knip < Formula
   desc "Declutter your JavaScript & TypeScript projects"
   homepage "https://knip.dev/"
-  url "https://registry.npmjs.org/knip/-/knip-6.42.1.tgz"
-  sha256 "c340363026ddf06713902a70686686a4c0a56630fbcc004cd146e2e7f45a24af"
+  url "https://registry.npmjs.org/knip/-/knip-6.43.0.tgz"
+  sha256 "ea3cbb5ef5a30ca2ea221f84f077dea98953487d748225bbacc4c8c18ad3caf1"
   license "ISC"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "54d6ae8c0c04a45d63e1ef0e0070a88307fe423d072306e08d511f581ada7c79"
-    sha256 cellar: :any,                 arm64_sequoia: "54d6ae8c0c04a45d63e1ef0e0070a88307fe423d072306e08d511f581ada7c79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a873ec9bdafe0135d213866bcc0d81e9d20c367799286ff1e6b8ce51f7bd831"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e574e4682b1dce9fbfd0f5fd291dc439a25038e0566b5f5cc80aedfb4e74fa24"
+    sha256 cellar: :any,                 arm64_tahoe:   "e6b3c97942b9d97e30830f4ea44d8eeb8a58887568a4bb39f6b7bc34eae1cabd"
+    sha256 cellar: :any,                 arm64_sequoia: "e6b3c97942b9d97e30830f4ea44d8eeb8a58887568a4bb39f6b7bc34eae1cabd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffdf11d4b1f356f8089096368ecfb69a89b54e10871cb2f7591d103af92060e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01f16ad37c13d28ec6bf050576b3d5ad63ccca7f355eaab040aef0851b9fb836"
   end
 
   depends_on "node"
