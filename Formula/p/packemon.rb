@@ -1,17 +1,17 @@
 class Packemon < Formula
   desc "Terminal tool for generating and monitoring packets"
   homepage "https://github.com/ddddddO/packemon"
-  url "https://github.com/ddddddO/packemon/archive/refs/tags/v1.8.33.tar.gz"
-  sha256 "e36c18f8ba326fc370c40bff5ac21dfc90a712be810f40185f86147a1551a7f7"
+  url "https://github.com/ddddddO/packemon/archive/refs/tags/v1.8.34.tar.gz"
+  sha256 "9db81c0b39784293d225393f9a67cc77faf8bb6f2449f721ce365f8437f98eaa"
   license "BSD-2-Clause"
   head "https://github.com/ddddddO/packemon.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a80b050782eae49f97cab3ffc4067760a3b84ad1a2e13617087338243e8b757"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c7976273e75dae23f3c86b4a40b56993b59d25b3f85e8221267ee9cce7ae469"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1435d1f764d0474bd46198d06f1d6bb1d0d395af579f77f31de72c4563439cf"
-    sha256 cellar: :any,                 x86_64_linux:  "f762523419574f753c8c2384069b45a183d655a78969209d74e228cbd01081d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad71ec60bf7b75870e4549dafb335fdf3a5f7ef42d131e8be377e0150fa7149a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9be65febb46fc481358d150b82db34731ad6e992b5fca063932c9a705d4a5f11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f08fb8d5f417fa9a9c0f4f2c9d0926e78f8882764f7f0bed0ee9201c04c079e8"
+    sha256 cellar: :any,                 x86_64_linux:  "8c448015226a9bc7240a4ca77a6a35696087635e0ad4e3fa9e61fbfc31ae78e0"
   end
 
   depends_on "go" => :build
