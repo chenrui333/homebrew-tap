@@ -1,8 +1,8 @@
 class Dvm < Formula
   desc "Deno Version Manager"
   homepage "https://github.com/justjavac/dvm"
-  url "https://github.com/justjavac/dvm/archive/refs/tags/v1.11.6.tar.gz"
-  sha256 "a2c1ed50c4e787a8fc923861117c02387bdbde93581df24c7090ad42004e0ac0"
+  url "https://github.com/justjavac/dvm/archive/refs/tags/v1.11.7.tar.gz"
+  sha256 "c3e3954f4fb6053c9ff411bb6a76491e0505ca89ade98a7f49b314830b471300"
   license "MIT"
 
   bottle do
