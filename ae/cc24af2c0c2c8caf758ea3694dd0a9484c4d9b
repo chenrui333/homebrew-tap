@@ -1,0 +1,15 @@
+Formula/m/mlx-audio.rb
+  h_9df9c32c3f321d 42
+  h_9df9c32c3f321d 6-7,43,81-82,121-122,126-127,181-182,246-247,256-257,375,381
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aecc24af2c0c2c8caf758ea3694dd0a9484c4d9b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
