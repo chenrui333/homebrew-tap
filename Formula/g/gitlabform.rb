@@ -9,10 +9,10 @@ class Gitlabform < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fee5289014dbc632e2d511310693a59eba6d27576b7d10ba1eb144c5b6f7766c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71d76d0a228c80ee503c3e924a0602a8fde9c5aadc2e3616abbb6c1afb36d894"
-    sha256 cellar: :any,                 arm64_linux:   "e26b15a2d0e5394d1768ccd63fd8cc1e24d5990e0300904b9d3bf9ce006696b8"
-    sha256 cellar: :any,                 x86_64_linux:  "5d171990e2b0abca0f7154d8ff5b6d676bf6f4dc7e1917ddb6012b7c73f0b10a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ddbf79375b3adc7cc9ef7405b07f6b6b57a74fabfe4ce61886f5d78c5223a3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4df4804a635d9acd4d578353d90accb7a5dae08493a2fbe8a54de451a939f779"
+    sha256 cellar: :any,                 arm64_linux:   "4fe5c72ff9bc9c6d752d6ce0d79c85e0e8208e505b1b19637c16d8cf93e52978"
+    sha256 cellar: :any,                 x86_64_linux:  "b1a80c8a0a1551dc57c40c4b4784133d71564796eb864af214a006f6694f99a9"
   end
 
   depends_on "maturin" => :build
