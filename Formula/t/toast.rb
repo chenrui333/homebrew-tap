@@ -1,8 +1,8 @@
 class Toast < Formula
   desc "Terminal-based text editor with integrated language servers"
   homepage "https://github.com/paradise-runner/toast"
-  url "https://github.com/paradise-runner/toast/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "d1c6b8d84836a4346d30f9c2a2a3a5135da1124aad48a280be81a2119e9b71c1"
+  url "https://github.com/paradise-runner/toast/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "a083ca7b79b8adcb4781a0b3dc902d362b05aedfec8e99fffb4f5f6ab0461f4b"
   license "MIT"
   head "https://github.com/paradise-runner/toast.git", branch: "main"
 
