@@ -1,8 +1,8 @@
 class Ddev < Formula
   desc "Docker-based local PHP+Node.js web development environments"
   homepage "https://ddev.com/"
-  url "https://github.com/ddev/ddev/archive/refs/tags/v1.25.4.tar.gz"
-  sha256 "aa5de78b4303ffbe7d11d522ebc143de7aa47b43c308383d14509cea602a13f6"
+  url "https://github.com/ddev/ddev/archive/refs/tags/v1.25.5.tar.gz"
+  sha256 "e3814c132f8cd53cf32957242bd3bf6bba1199b65d8e16bc9d43d11d6013ec92"
   license "Apache-2.0"
   head "https://github.com/ddev/ddev.git", branch: "main"
 
@@ -36,6 +36,6 @@ class Ddev < Formula
 
     assert_match version.to_s, shell_output("#{bin}/ddev --version")
 
-    assert_match "failed to connect to the docker API", shell_output("#{bin}/ddev list 2>&1", 1)
+    assert_match "failed to connect to the docker API", shell_output("#{bin}/ddev start 2>&1", 1)
   end
 end
