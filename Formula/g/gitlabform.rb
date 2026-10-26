@@ -3,16 +3,16 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/7d/66/e9ee8fa3e42b90c0fea581f5f57e43cb216119d9476dffbd5837a20ce8a1/gitlabform-6.3.0.tar.gz"
-  sha256 "7710316c915ab37396a62f8870d2cf0b5140ec385aeb802648184397f5224c6e"
+  url "https://files.pythonhosted.org/packages/17/70/359958fc731ced96167b91cc18b15c8f0bc3e69f8642be040a75ec982071/gitlabform-6.3.1.tar.gz"
+  sha256 "0189c014455170c29c4c8c79081994dcf30218b0a870ea26f1e3a728e229e097"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fee5289014dbc632e2d511310693a59eba6d27576b7d10ba1eb144c5b6f7766c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71d76d0a228c80ee503c3e924a0602a8fde9c5aadc2e3616abbb6c1afb36d894"
-    sha256 cellar: :any,                 arm64_linux:   "e26b15a2d0e5394d1768ccd63fd8cc1e24d5990e0300904b9d3bf9ce006696b8"
-    sha256 cellar: :any,                 x86_64_linux:  "5d171990e2b0abca0f7154d8ff5b6d676bf6f4dc7e1917ddb6012b7c73f0b10a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ddbf79375b3adc7cc9ef7405b07f6b6b57a74fabfe4ce61886f5d78c5223a3e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4df4804a635d9acd4d578353d90accb7a5dae08493a2fbe8a54de451a939f779"
+    sha256 cellar: :any,                 arm64_linux:   "4fe5c72ff9bc9c6d752d6ce0d79c85e0e8208e505b1b19637c16d8cf93e52978"
+    sha256 cellar: :any,                 x86_64_linux:  "b1a80c8a0a1551dc57c40c4b4784133d71564796eb864af214a006f6694f99a9"
   end
 
   depends_on "maturin" => :build
@@ -66,8 +66,8 @@ class Gitlabform < Formula
   end
 
   resource "graphql-core" do
-    url "https://files.pythonhosted.org/packages/fa/90/dfade6d16a55abb45e41b215fcdc940e4f119a6ac7d87430d45d020b659f/graphql_core-3.3.0.tar.gz"
-    sha256 "fd3424e88af3f3211931c6ff96350f1cd9069cf0f1a31b9972899e35d39136b5"
+    url "https://files.pythonhosted.org/packages/a4/91/223fbace7c8648690d7fb77855e29bd248c9ed1e0833ed3002ab29bc1441/graphql_core-3.3.1.tar.gz"
+    sha256 "8d9b6f95fb66b58b260904cf9e191f422782620533ec8fa0c96ab941b6659a2a"
   end
 
   resource "h11" do
@@ -136,8 +136,8 @@ class Gitlabform < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "packaging" do
@@ -171,8 +171,8 @@ class Gitlabform < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "python-gitlab" do
@@ -201,8 +201,8 @@ class Gitlabform < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "setuptools-scm" do
@@ -240,6 +240,11 @@ class Gitlabform < Formula
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
+  end
+
   resource "unidecode" do
     url "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz"
     sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
@@ -251,8 +256,8 @@ class Gitlabform < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/18/db/8f80e3383a93a72317d06eb4afc89cd111d6ff30d25fd1d65150aba284be/uv_build-0.13.1.tar.gz"
-    sha256 "ae57a8f25fd5da6bfb33be95d6687db6b3e774a895b78a04dec8d5e2c77fcc95"
+    url "https://files.pythonhosted.org/packages/d3/c1/7a115ebc91b2f26155cbcea487e0fcac947dab38058e2da2503ba27412c5/uv_build-0.13.5.tar.gz"
+    sha256 "c95a3d092cb8880b37f35013f9f7339f3867bc422abed36776255f34e22bc62c"
   end
 
   resource "vcs-versioning" do
