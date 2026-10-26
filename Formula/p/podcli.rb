@@ -8,10 +8,10 @@ class Podcli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c1d2cdc5f7d288ac8a436f5696775147c29365f734810e3d5e76878ad015ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c1d2cdc5f7d288ac8a436f5696775147c29365f734810e3d5e76878ad015ee0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93b58824f8235cdb61b06697b65f1af1dcd86a9d90c9f7ba5fad9071334b543c"
-    sha256 cellar: :any,                 x86_64_linux:  "e0028a3fb300465c0508327d61dd9cf75ce7380cb55059049fb2d897b17f2839"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ec0300d709f358568e922b3c259a0c4718e92bd335ba6bda1887b21efa6c9a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ec0300d709f358568e922b3c259a0c4718e92bd335ba6bda1887b21efa6c9a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f5593456400f982319a89183fd0117d76c4c2b9dade7b4e1adbad99b25e293b"
+    sha256 cellar: :any,                 x86_64_linux:  "11eb24a0c70a9162904f4e0ca1bb0da4d2e4a1baba244c896023bf7770ee0d61"
   end
 
   depends_on "go" => :build
