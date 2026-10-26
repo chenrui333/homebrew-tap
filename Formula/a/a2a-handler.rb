@@ -10,10 +10,10 @@ class A2aHandler < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "197ad96e58cdea25d84cfe6fec043c2ca10a3efef41cc1bd40e36221770e3eb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b2278ed1f8f44810d51901053aeb7e1ecbbe7ab9e1714afea7e47f477122f54"
-    sha256 cellar: :any,                 arm64_linux:   "79984c9623823b6d4b24172779842fadbbbc23cbb158a30a749ee255d55c4964"
-    sha256 cellar: :any,                 x86_64_linux:  "e40287ac35a1c176f26f1c0f09e8c7cfc04e801768eaf7047b090aabe504c5a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e0d8dea232ef9002e8c62668cc06ad72f18ff19356f4a5b9589ff37985bc94e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a52f7cb388cf934257cf0e2f74e99aa8ec513aed9f79ba776d83dc39c23a8353"
+    sha256 cellar: :any,                 arm64_linux:   "0d84a5257f9fd2a99ce6bb8a03068147bdeea4e7b39fa1d5c6059a4d053fcea1"
+    sha256 cellar: :any,                 x86_64_linux:  "448d2e774012ff416df211272cec69b516fc7d8730427a27cd8d19e7858f42e6"
   end
 
   depends_on "cython" => :build
