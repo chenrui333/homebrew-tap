@@ -378,6 +378,7 @@ brew install --cask <tool>
 - `ftdv`
 - `fuck-u-code`
 - `g1c`
+- `gdbf`
 - `gecit`
 - `gemini-cli`
 - `get-port-cli`
