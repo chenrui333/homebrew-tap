@@ -1,15 +1,14 @@
 class InstagramCli < Formula
   desc "Unofficial CLI and terminal client for Instagram"
   homepage "https://github.com/supreme-gg-gg/instagram-cli"
-  url "https://github.com/supreme-gg-gg/instagram-cli/archive/refs/tags/ts-v2.0.0.tar.gz"
-  sha256 "72e3e93c1e3e31e3d47a0e9371c0a1f375c93ebe6f22f9a7e48761dd29d42834"
+  url "https://github.com/supreme-gg-gg/instagram-cli/archive/refs/tags/ts-v2.1.0.tar.gz"
+  sha256 "018d78532416f596aebd70fb3a95381560f28edab882192a10cfd124a8b49292"
   license "MIT"
   head "https://github.com/supreme-gg-gg/instagram-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5fc85e40a435798e84c4239f8bce554081c05767b097508fe0b99464462e7dfd"
+    sha256 cellar: :any_skip_relocation, all: "65852aad7e1d1021e830696c427b168ff60764ce2d84ea22537552ae2130e69b"
   end
 
   depends_on "node"
@@ -29,6 +28,9 @@ class InstagramCli < Formula
     reporter = libexec/"lib/node_modules/@i7m/instagram-cli/node_modules/instagram-private-api"
     reporter /= "node_modules/ts-custom-error/codeclimate-reporter"
     reporter.delete if reporter.exist?
+
+    # Remove node-notifier's vendored prebuilt binaries (x86_64-only terminal-notifier).
+    rm_r libexec/"lib/node_modules/@i7m/instagram-cli/node_modules/node-notifier/vendor"
 
     bin.install_symlink libexec/"bin/instagram-cli"
   end
