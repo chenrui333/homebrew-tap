@@ -9,10 +9,10 @@ class Cf2pulumi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fe4d30aaac78a2d0697ee095c7aed39e3027f08aeb51177192e0d35d2bce863f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e41413a23839045b3c0332062330d5b2800bcf555bb685495dce37a76b97686b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "38b85236cce98767ea524da8928a4bd9c8017be3022bf7ae10ad544213771cfb"
-    sha256 cellar: :any,                 x86_64_linux:  "e92762b49d0ce4987c2bd6ae3f0b08de827a4a7bede11737d96b6fee1d10bbb7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f34815836a1828d0159cb319947d9d78bce1758f0275289e6a45bd4b6478a067"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c90fdec51688f4712f375d5d667df30179694983348015c68fc9e68cdaf6006f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9eddeff2ab4e07f70d93ae8cff57b1a6364bcee7775513a2aa3bfc45a7c5ff1"
+    sha256 cellar: :any,                 x86_64_linux:  "2f97f0280f5665b77a19889687cfb06df9e9c60d466a51148ab6d012e1a69445"
   end
 
   depends_on "go" => :build
