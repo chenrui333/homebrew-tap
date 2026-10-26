@@ -6,6 +6,14 @@ class Gdbf < Formula
   license "MIT"
   head "https://github.com/greg7mdp/gdbf.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a63413958313112d2544cbbac6bbb58be4e2b937eed50b239174c52e10c8835b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b36a0603bf76fcc48134e5acfb5f12c37429a31587d5d6e0ecf4b65222c86988"
+    sha256 cellar: :any,                 arm64_linux:   "b86ebeac5c02a953a6d36c69440bb19910abbb6e10a2ac62e79b9bcc0084218f"
+    sha256 cellar: :any,                 x86_64_linux:  "ff868ecc1036307d5446bc298c6fbfe27ca3c9bec2e7ad6fbae27f7308304405"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "ctre" => :build
