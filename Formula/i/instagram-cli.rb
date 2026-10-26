@@ -8,8 +8,7 @@ class InstagramCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "5fc85e40a435798e84c4239f8bce554081c05767b097508fe0b99464462e7dfd"
+    sha256 cellar: :any_skip_relocation, all: "65852aad7e1d1021e830696c427b168ff60764ce2d84ea22537552ae2130e69b"
   end
 
   depends_on "node"
