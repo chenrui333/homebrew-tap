@@ -256,6 +256,7 @@ brew install --cask <tool>
 - `cull`
 - `curlconverter`
 - `curlmin`
+- `cyclonedx-yarn`
 - `darya`
 - `datacmd`
 - `datadog-mcp-server`
