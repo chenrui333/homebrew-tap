@@ -8,11 +8,10 @@ class GwmCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aff6a1cc72618d927ca181b413c4864559df2d9beecc0fe715452f22dc344b63"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0296872c68ede5f0604337e954196ed0633ad59a8f059a79bce077d5acb413c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54bbbc7d3420b5035756b76f4051957b7656aa4628b915aacf0fc8e211eeb00b"
-    sha256 cellar: :any,                 arm64_linux:   "89004f275e42c456f1d69e6b96925df0e5a52ac94d1cc24dc2b9626119860636"
-    sha256 cellar: :any,                 x86_64_linux:  "37e4988dbd2b8c01685a9b94973dabc3fd4198c56ad859abcdf53ac21e84dfe7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "615bf4b78eadf8139c0a065ba05ec48f0e32a388713c4704eb0c826e0250aba8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd950565ffe9a7d256f0b26e694c82150da417a72151698a795a38c4ae86ae06"
+    sha256 cellar: :any,                 arm64_linux:   "88944c92238009ebd7c0300ce73ea4e6f45e4d158e936ed990a0eb39d8748ee5"
+    sha256 cellar: :any,                 x86_64_linux:  "5404f64bf7295ec42876c38fe949370e6e49aa5c0aebe54c67341419287a0369"
   end
 
   depends_on "pkgconf" => :build
