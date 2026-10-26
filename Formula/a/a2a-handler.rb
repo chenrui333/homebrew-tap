@@ -3,8 +3,8 @@ class A2aHandler < Formula
 
   desc "A2A protocol client TUI and CLI"
   homepage "https://github.com/alDuncanson/Handler"
-  url "https://files.pythonhosted.org/packages/b7/f5/219d372a79cf34e1e5168add0048cfe78827f84086e5b38fa28282a208f1/a2a_handler-0.3.0.tar.gz"
-  sha256 "11dc3ec5b33c442f9e94ea343e4dbdb54470626474ed13701d4e0fbebe5b5044"
+  url "https://files.pythonhosted.org/packages/66/1e/3afc1a259921a324b43e870e5d6677335b92ff86c305714b1bd2afe2cc29/a2a_handler-0.4.0.tar.gz"
+  sha256 "85db0a77b041fe7bbd41429924cf1504944885d36db2ea9c9636622180f3fefa"
   license "GPL-3.0-or-later"
   head "https://github.com/alDuncanson/Handler.git", branch: "main"
 
@@ -103,8 +103,8 @@ class A2aHandler < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/ac/aa/2aa84799e6920216f8aa2866d3b43daa20f7060dcb6efc8f0449e8be0ab0/google_api_core-2.42.0.tar.gz"
-    sha256 "82cf5daa2ef1b456d4e29ff1de1a5c2995c7be3ccf4fc608184326e03390c1ee"
+    url "https://files.pythonhosted.org/packages/bf/1c/83011225511b8a0aeee9633d58d8e6b5d858ea5502e76117bcefb620245d/google_api_core-2.43.0.tar.gz"
+    sha256 "d67355a22d995a009b6c5ca98744ea35fbf4f9c2c006aa0588c0941d1ceb5216"
   end
 
   resource "google-auth" do
@@ -113,8 +113,8 @@ class A2aHandler < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/8d/2b/6ce81972d5c8cab9705fddce3153be63222d9e12fd96f8baba5038a744dd/googleapis_common_protos-1.75.5.tar.gz"
-    sha256 "c7a866fc34ed29a3b10af627a4b9b1dc2433313ca6e959f0ae4feb132047ed72"
+    url "https://files.pythonhosted.org/packages/62/b6/bc095b23a3e0d978e75c8c18cabe4c11f791837410670e4486f0d539bfba/googleapis_common_protos-1.76.0.tar.gz"
+    sha256 "71db0e44a1d4c2dd024ebad44ca67129cc1e2892e4861df466764749d5ef8642"
   end
 
   resource "h11" do
@@ -208,8 +208,8 @@ class A2aHandler < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "opentelemetry-api" do
@@ -313,8 +313,8 @@ class A2aHandler < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/63/40/e2c41d00a4bfea5548c31420a74c6cf149cc0e7c36b45c4c82202ce867aa/setuptools-84.2.0.tar.gz"
-    sha256 "6f445ca2ce864605f81e223f262b4c94ffcb9a4a63473bae0ed7be5aab0291da"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "setuptools-scm" do
@@ -328,13 +328,13 @@ class A2aHandler < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
-    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
+    url "https://files.pythonhosted.org/packages/71/7f/3b8ec4f27833f7b8c270a3ef960b6d435e1065439847bc0fcd1e58ae898b/sse_starlette-3.6.0.tar.gz"
+    sha256 "623151d6c20dc0eebf1b3379c27faae91fff883bac7ab6665f16f46440a88b3a"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ad/eb/4e197bf26b023abafc5e9043ec8710d7de0fcb032d0969045236d72aa0b1/starlette-1.9.0.tar.gz"
-    sha256 "3d931de246ed870e35ce605974440816ef895e592f255d1396cfdf191d4c4318"
+    url "https://files.pythonhosted.org/packages/48/bb/3d8757f21e9a53d9035c9eb039a777047139a16bfdbedfc7a58241c3d914/starlette-1.10.0.tar.gz"
+    sha256 "b8399098d4c1e3522734f7235dc79b1fc967f96cf139c81e0fa30479e0685f9b"
   end
 
   resource "textual" do
