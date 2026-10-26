@@ -6,6 +6,11 @@ class CyclonedxYarn < Formula
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-node-yarn.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "909e7cddcc541c7b68e157d9d2159f7f802448578806d4da8ecf7a518b1cbe02"
+  end
+
   depends_on "corepack" => [:build, :test] # for the yarn 4 pinned by `packageManager`
   depends_on "node"
 
