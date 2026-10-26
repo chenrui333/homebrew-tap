@@ -1,17 +1,17 @@
 class Chroncal < Formula
   desc "Terminal-first calendar, todo, and journal manager"
   homepage "https://github.com/DouglasdeMoura/chroncal"
-  url "https://github.com/DouglasdeMoura/chroncal/archive/refs/tags/v0.17.2.tar.gz"
-  sha256 "82b26f89cd4117e8280600461905b0e0dc4120c2561e5bec58594f8c1e9f59c9"
+  url "https://github.com/DouglasdeMoura/chroncal/archive/refs/tags/v0.17.3.tar.gz"
+  sha256 "a4404f30b37050811c093366c6b65a4fb7ec1510ab3bb5629a42527ff599507d"
   license "MIT"
   head "https://github.com/DouglasdeMoura/chroncal.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9fafc58445df29a5557464c7d9339316ba4ac24240f20153795db215183d49dd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fafc58445df29a5557464c7d9339316ba4ac24240f20153795db215183d49dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e82b35e38281aeb3652c87b3e24f484e97ca5f69b74e1e87cc5196694492f190"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e5238ac4f5beac8c9f6d8d7cadedd32913fd3917ee7d735ecdb6c7f4311ef3d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a75393869dcf8587af6a6b582c7eb4fa1dc11bfd0103a008fd422b03dea1feca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a75393869dcf8587af6a6b582c7eb4fa1dc11bfd0103a008fd422b03dea1feca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfb830d596490f9cb7c63c644ac0b2df24e9af4928147a8c32e7980bd718d3b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4193e3157ec4a8bac6086301a5d5866223eb3f26660ba6ba868de61e5807b4e3"
   end
 
   depends_on "go" => :build
