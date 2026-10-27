@@ -1,8 +1,8 @@
 class Emeraldian < Formula
   desc "Terminal UI for Obsidian vaults, with a graph and an assistant"
   homepage "https://github.com/iamrohithrnair/emeraldian"
-  url "https://github.com/iamrohithrnair/emeraldian/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "a7972c9b0eef89a01543cb80c00828d3b274f139751be6838496cf32c50eebe6"
+  url "https://github.com/iamrohithrnair/emeraldian/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "223f29de9eb32f88265fb4b5a8bb4004e50e095a34baaeebef198ec4bdfb0f91"
   license "GPL-3.0-or-later"
   head "https://github.com/iamrohithrnair/emeraldian.git", branch: "main"
 
