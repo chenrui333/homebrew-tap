@@ -1,17 +1,16 @@
 class Climp < Formula
   desc "CLI media player"
   homepage "https://climp.net"
-  url "https://github.com/olivier-w/climp/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "92b30ab8aff15240f1d859cc2667d380d7b58642990023875fafae2b111b91c8"
+  url "https://github.com/olivier-w/climp/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "ca9e77519fa2f71a09bd0e7d80a3ddfaed3a621a916032bc8a29932c7f257c04"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0aeb71c249c21df9aef4865f1ad21744fda67335ea685e47aedc35693997de8b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f00338c26baa5797abead1726a46846e9c1928504062dc6b1aee7cb096cf944"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0c142f344299a0d1089f2f7ef6069190ff4e2be96de84ee37f6429132ee915f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed122419b387d6f08293425f0bdef0e50539f87b6c1916f61344ac776feea8a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b55216a186ff245be2c091ce786cb0a341c91495e0afb319f5c79bd896bd61e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90cd8a170ea979ce27567fcac5ec684c7f5e44a2da9a188a8279e5d330f6bdc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c1383fd0fcda844097e19d242f7a690c8153aaedd11515cd47f01cd104ab01"
+    sha256 cellar: :any,                 x86_64_linux:  "73397ccb0f327bf462f6e11975e530a7335bd9c1769ab0a75fbc24ebc8969274"
   end
 
   depends_on "go" => :build
