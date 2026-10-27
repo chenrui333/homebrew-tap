@@ -1,8 +1,8 @@
 class Y509 < Formula
   desc "Inspect and validate X.509 certificate chains"
   homepage "https://github.com/kanywst/y509"
-  url "https://github.com/kanywst/y509/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "3b88457a691ddb8a8ef69a10a6d275e42c76a37298262a8337b785bfea6ade29"
+  url "https://github.com/kanywst/y509/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "a881e5ed6694426e0d36d8be6844c037084f270c2bc7482da1b315a9eddb7a0b"
   license "Apache-2.0"
   head "https://github.com/kanywst/y509.git", branch: "main"
 
