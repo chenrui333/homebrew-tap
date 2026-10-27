@@ -1,17 +1,17 @@
 class OhMyClaude < Formula
   desc "Teams-first multi-agent orchestration for Claude Code"
   homepage "https://github.com/Yeachan-Heo/oh-my-claudecode"
-  url "https://registry.npmjs.org/oh-my-claude-sisyphus/-/oh-my-claude-sisyphus-5.7.14.tgz"
-  sha256 "374aab17317b62c115d5bcb0fa507714fc47cbd35ca8410d3dd4f81f5bf8f45c"
+  url "https://registry.npmjs.org/oh-my-claude-sisyphus/-/oh-my-claude-sisyphus-5.7.15.tgz"
+  sha256 "e13ba85f88168b72e6ea67f000a3afae73e13da1e2656c09303c94071f255c04"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-claudecode.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "92ebda5c5e8c4f883c56c07bb990bba6ebf6b12cf06d835f9ec83d61370027a3"
-    sha256 cellar: :any, arm64_sequoia: "92ebda5c5e8c4f883c56c07bb990bba6ebf6b12cf06d835f9ec83d61370027a3"
-    sha256 cellar: :any, arm64_linux:   "670961692cd020a33e609c0c8a126a9478e8d2c43478f1f9b07302786d292dc2"
-    sha256 cellar: :any, x86_64_linux:  "43581e2a78af7eeaa9b9dfe0890f89faba131dd50daa5d491680c934621b06d0"
+    sha256 cellar: :any, arm64_tahoe:   "a07cfaaf844519d176263a17399f9d587f945e04de6d77fe5c4afa509fee690f"
+    sha256 cellar: :any, arm64_sequoia: "a07cfaaf844519d176263a17399f9d587f945e04de6d77fe5c4afa509fee690f"
+    sha256 cellar: :any, arm64_linux:   "53f19cb2f2164572e86d83d06301f50dcddfbc7d97a40a6c54ec7ce294f49b38"
+    sha256 cellar: :any, x86_64_linux:  "631a0c24aba3c56ac1c1fb01abe7516036fb67427b7a3e78c99530dfe6113764"
   end
 
   depends_on "node"
