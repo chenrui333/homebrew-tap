@@ -8,10 +8,10 @@ class Gitte < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b070af7e47131444d8be01b75b593c4cc8243486e89324d49b23700d148faeb7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfc14d2def1db476092914f85f5035cdd903f719cca6834f04217fade0f20a74"
-    sha256 cellar: :any,                 arm64_linux:   "79a6392fcd8c11842f5a8a56044cd86b671f8f66334bea29f7a1e8e98144fae1"
-    sha256 cellar: :any,                 x86_64_linux:  "11e2a7a3ec732e1988d0a5c9979d558cb669ee72f8d3f3742b35439cfa69e06c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9071f57a3b42dcaa4941367632267771374d8f76988b8a5fdd9c7c5767c29ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adb837953cf8973cb981a7614607ded067f5cff8562628d0b332f46897e10329"
+    sha256 cellar: :any,                 arm64_linux:   "002b95a81144bd35eb9da8636ad6b6a22fd43e1b8cc1ac77c8d20c332d3312ad"
+    sha256 cellar: :any,                 x86_64_linux:  "3253b34a58c906eaa8bd2be252b117ae471a22d3d4a14306bb5ae2af31879617"
   end
 
   depends_on "desktop-file-utils" => :build
