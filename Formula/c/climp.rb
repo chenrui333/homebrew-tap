@@ -1,10 +1,9 @@
 class Climp < Formula
   desc "CLI media player"
   homepage "https://climp.net"
-  url "https://github.com/olivier-w/climp/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "92b30ab8aff15240f1d859cc2667d380d7b58642990023875fafae2b111b91c8"
+  url "https://github.com/olivier-w/climp/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "ca9e77519fa2f71a09bd0e7d80a3ddfaed3a621a916032bc8a29932c7f257c04"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
