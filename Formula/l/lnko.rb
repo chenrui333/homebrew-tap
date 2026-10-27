@@ -8,11 +8,10 @@ class Lnko < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9aaebb073ac55959afac77b1205f4722e40ff0cc0ebdca03dcaab35b2ec8fd54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb4166f201dd9dc64eadb578349720aa9a5688e95c41c3d4361ca587f1a2ebdf"
-    sha256 cellar: :any,                 arm64_linux:   "4dd2a9cf00d7766ace8c81a82484947a97f1b9ccf85e48309a7db5b3247695a5"
-    sha256 cellar: :any,                 x86_64_linux:  "e71593cd849494e01e516fb32a22148f62c55149ae905e58f22e66e94d23a95c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc8c2e106d7478061d0afe8bd979ebe9a4473976e627a6c48365d08ad3100daf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61a9b02b5e84a367cd6e965efc92ba40e61e6bed67d686bd57ea3d833efce149"
+    sha256 cellar: :any,                 arm64_linux:   "b9cbe2f6769da16495a9f5424394057c824745a204f752a1cdc88e228558deb3"
+    sha256 cellar: :any,                 x86_64_linux:  "b50b62e4b793b6ff662b4f4c42e463cc7b12578bcc576c96b45a0c25f86fe736"
   end
 
   depends_on "lua@5.4"
