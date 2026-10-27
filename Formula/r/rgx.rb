@@ -1,18 +1,17 @@
 class Rgx < Formula
   desc "Terminal regex tester with real-time matching and multi-engine support"
   homepage "https://github.com/brevity1swos/rgx"
-  url "https://github.com/brevity1swos/rgx/archive/refs/tags/v0.14.2.tar.gz"
-  sha256 "0a0c8b8b0e5d7c99626e1609affd4d3a9bfbe0af5452a379f0baa4502fa5b4e3"
+  url "https://github.com/brevity1swos/rgx/archive/refs/tags/v0.14.3.tar.gz"
+  sha256 "81478b4bd593c37d1ac429c1f089f1f80ae770084f2a5636fba2b5ceaff0c3f2"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/brevity1swos/rgx.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "802085b2c1dbdb729cacac013b762cf00f1276561f9c4ef30e57823d2402d24d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bdfe12347b4c448284e576ddf782fa1de5c4295200f9835577bb532b600a9ea"
-    sha256 cellar: :any,                 arm64_linux:   "68554de905d1746d6178fdd641918806e1ddebd8af5610692e3479322fd6c1ef"
-    sha256 cellar: :any,                 x86_64_linux:  "4d83fa1df0fbe44ee643d6acbc103bb88e581fcfd4886868866cc262aa285abe"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3325146bc8344ae1d15f5e5384a191edc48b48af3b07c8f24ffdfeaa32d2731"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a139d39f73052e3a12b354f9e399d84e24eca4a702274e425e565882d1fc7e85"
+    sha256 cellar: :any,                 arm64_linux:   "e5985467c2620284b7583b1c3e1846acd281dda939bd4440d3d8df68aeaf87a7"
+    sha256 cellar: :any,                 x86_64_linux:  "6d13a7b9634df451f91da38bd195f583148f194ebcfd393ddfa110aa5d87a1fe"
   end
 
   depends_on "rust" => :build
