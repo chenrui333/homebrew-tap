@@ -1,8 +1,8 @@
 class Cnspec < Formula
   desc "Open source, cloud-native security and policy project"
   homepage "https://github.com/mondoohq/cnspec"
-  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v14.8.0.tar.gz"
-  sha256 "0f066650bea59506b2ef41bbe43eb5c41daf178def40e00d6940c0008b1c759d"
+  url "https://github.com/mondoohq/cnspec/archive/refs/tags/v14.9.0.tar.gz"
+  sha256 "4b8f54cf57f790079f96082057381331aaa9cc9a720a6d34b9d73de16feacd82"
   license "BUSL-1.1"
   head "https://github.com/mondoohq/cnspec.git", branch: "main"
 
@@ -30,9 +30,9 @@ class Cnspec < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cnspec version")
+    assert_match version.to_s, shell_output("#{bin}/cnspec --auto-update=false version")
 
-    output = shell_output("#{bin}/cnspec policy list 2>&1", 1)
+    output = shell_output("#{bin}/cnspec --auto-update=false policy list 2>&1", 1)
     assert_match "Error: cnspec has no credentials. Log in with `cnspec login`", output
   end
 end
