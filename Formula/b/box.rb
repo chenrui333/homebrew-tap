@@ -1,13 +1,13 @@
 class Box < Formula
   desc "Fast, zero config application bundler with PHARs"
   homepage "https://box-project.github.io/box/"
-  url "https://github.com/box-project/box/releases/download/4.7.0/box.phar"
-  sha256 "3d390eeaec33288098fe83f8a54c60cc575cb6be295f38ff4482b4b4f26f8d52"
+  url "https://github.com/box-project/box/releases/download/4.7.1/box.phar"
+  sha256 "aedabb38bad96a90868603f118956c3faa662b545c06be66df1b145aba703c0a"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "90106abc8ffb8aac60387b9c04057d6440ba70f1973e51f34236334a4ce92828"
+    sha256 cellar: :any_skip_relocation, all: "4d6dc226f8b16df0a69ced4fe47d4de5dcb1d03b23772e7ede12813f313464f1"
   end
 
   depends_on "php"
