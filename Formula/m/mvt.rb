@@ -3,8 +3,8 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/5a/1b/646cf26c593524e11673cc0c9447b5804a06919f3c956cc768f3bc2db463/mvt-2026.10.12.tar.gz"
-  sha256 "50c3cbc0b92a3ede549f1430f2829572245b3ee3151e2d0c2acb3871182cccd9"
+  url "https://files.pythonhosted.org/packages/51/83/648b9682bd3a6c0438b7ae045e5026e4a04387dffe89808067fc5bdc13e2/mvt-2026.10.26.tar.gz"
+  sha256 "f8f4b6cc801276cf1b7397a5bef73e9cfcda6d13df4720ca455f0623d59da03b"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
@@ -112,8 +112,8 @@ class Mvt < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "poetry-core" do
@@ -127,8 +127,8 @@ class Mvt < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/a9/75/b8a9ba9a15b1b190d1fb21e75e921934c9bcd7e63e137f96b56ed274328c/pycryptodome-3.24.1.tar.gz"
-    sha256 "3f9e74444c0ecbec7af232a95d282c74b114d53212ce075ed17b7fd7dca32bb3"
+    url "https://files.pythonhosted.org/packages/33/c7/f9374c8939560ab22db1dd9dbe215b62d20f32634aeb7f259dc03c807b44/pycryptodome-4.2.0.tar.gz"
+    sha256 "21d7fdba239d6ef863d3d08388801c683453a3bb4897c2b27f27847aad89bdf7"
   end
 
   resource "pydantic-settings" do
@@ -167,8 +167,8 @@ class Mvt < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "setuptools-scm" do
@@ -192,8 +192,8 @@ class Mvt < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "trove-classifiers" do
@@ -212,8 +212,8 @@ class Mvt < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/3e/2c/b18c631e647323c899891d8d994fbbdbe8054a18515344cb4cfd2f41c388/uv_build-0.13.0.tar.gz"
-    sha256 "bd2614f24a58dccd4865d4f86ddd91dd01fd0efab4632e033186a8423b8a3515"
+    url "https://files.pythonhosted.org/packages/d3/c1/7a115ebc91b2f26155cbcea487e0fcac947dab38058e2da2503ba27412c5/uv_build-0.13.5.tar.gz"
+    sha256 "c95a3d092cb8880b37f35013f9f7339f3867bc422abed36776255f34e22bc62c"
   end
 
   resource "vcs-versioning" do
