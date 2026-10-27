@@ -1,18 +1,17 @@
 class Wpscan < Formula
   desc "WordPress security scanner"
   homepage "https://wpscan.com"
-  url "https://github.com/wpscanteam/wpscan/archive/refs/tags/v4.1.0.tar.gz"
-  sha256 "6211c5d1f88daf84e1949cff4309e8c12212409746a1cef26e1ee9d0a5d9395f"
+  url "https://github.com/wpscanteam/wpscan/archive/refs/tags/v4.2.0.tar.gz"
+  sha256 "fa140b4ed31741da80d6e5f936a3a8c6cc87a0c6ebe093d87e1248cd7596257d"
   license :cannot_represent # Source is public, commercial use requires a paid license
   head "https://github.com/wpscanteam/wpscan.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "58cbaf1637a7ae946f096720ac22b9861090bd1d025ce03235e53d9fd02c086b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fed07dcdf3943d4e4952258fc039a402a1da43efd57b78d9f81947390f59d76"
-    sha256 cellar: :any,                 arm64_linux:   "cf237166669005b1d6f20a9b3830ef1c8ae5be5d91689e0a81b1af516ad3cd6e"
-    sha256 cellar: :any,                 x86_64_linux:  "859a32cb12f253833dfcfa240954c4743b9477af70a6cd5d2f030879fdd0ece2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "453601d02e2c871267397328abd52b71cc1a15d2fed9ba397264789b4a03580c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd9c3c284fceed5354b97eb702819d0128dfef4b96fe36b4925b99209679f9f9"
+    sha256 cellar: :any,                 arm64_linux:   "c158d524ce4a969f4a3d3d57ef0950f4036cb96a5dbcaccc7b81c324b29afeb0"
+    sha256 cellar: :any,                 x86_64_linux:  "a2de7621124398f50ebee36db7bd7751da7835aece7c77c33981be59d26d913a"
   end
 
   depends_on "ruby" # Some gems require >= ruby 2.7
