@@ -1,8 +1,8 @@
 class Numr < Formula
   desc "Natural language calculator with a terminal UI and command-line interface"
   homepage "https://github.com/nasedkinpv/numr"
-  url "https://github.com/nasedkinpv/numr/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "7b411612012eefb3992f2e76f69cdde44e2ada003ba8aebe6a9df76c23276335"
+  url "https://github.com/nasedkinpv/numr/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "64a9549457d89ece3a20f118a453f4e7f704e2a9f8668a1d4dab77496d8e6988"
   license "MIT"
   head "https://github.com/nasedkinpv/numr.git", branch: "master"
 
