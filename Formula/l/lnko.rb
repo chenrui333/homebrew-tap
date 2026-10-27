@@ -1,17 +1,17 @@
 class Lnko < Formula
   desc "Simple stow-like dotfile linker"
   homepage "https://github.com/luanvil/lnko"
-  url "https://github.com/luanvil/lnko/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "79f28ff14b6e9f897113b334e4040e4c3a2e820e4fff49de7d01077f9b20c484"
+  url "https://github.com/luanvil/lnko/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "6842ce5254761e1f350aa4b834d7cf71d210f54d036151ec42d1aedb0adcbc69"
   license "GPL-3.0-only"
   head "https://github.com/luanvil/lnko.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc8c2e106d7478061d0afe8bd979ebe9a4473976e627a6c48365d08ad3100daf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61a9b02b5e84a367cd6e965efc92ba40e61e6bed67d686bd57ea3d833efce149"
-    sha256 cellar: :any,                 arm64_linux:   "b9cbe2f6769da16495a9f5424394057c824745a204f752a1cdc88e228558deb3"
-    sha256 cellar: :any,                 x86_64_linux:  "b50b62e4b793b6ff662b4f4c42e463cc7b12578bcc576c96b45a0c25f86fe736"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "877df14e16bd298b6406e74b9f0a3532b33ffb0e9c0d3807cdc8f3a55282532f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea59c134a654c544a37abe7f335e75baedb54c0d5b495b61f8b9fa311796c455"
+    sha256 cellar: :any,                 arm64_linux:   "9c618c701337dc2d8f83741181b8f316b010ad19eaf165640f2746e218a7a82a"
+    sha256 cellar: :any,                 x86_64_linux:  "53aa67c60e44120bb4757c3e496854a344d59724cfa4a9de2c7d8747222ad35e"
   end
 
   depends_on "lua@5.4"
