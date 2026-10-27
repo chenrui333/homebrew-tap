@@ -3,8 +3,8 @@ class Rogallo < Formula
 
   desc "Terminal client for Gemini and other small web protocols"
   homepage "https://github.com/davep/rogallo"
-  url "https://github.com/davep/rogallo/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "f3e8997348ddfc05fb3ebdf3a98e9bfb7f537b1810cac972313459551365c82a"
+  url "https://github.com/davep/rogallo/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "e6161c193fb060df056a18f1b96cc7cf04008ce175a335ddf9b57227b76db730"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
@@ -228,8 +228,8 @@ class Rogallo < Formula
   end
 
   resource "wasat" do
-    url "https://files.pythonhosted.org/packages/e0/ae/54991304bc0fc0578e1cbceed4d35c1e9174e25b79ecdb3dfd3d314ef9ed/wasat-1.9.1.tar.gz"
-    sha256 "26d7d643e93398f865fa25e064ed486d31f90ced838b2e3855a18b44ca10aa37"
+    url "https://files.pythonhosted.org/packages/ee/25/b7b1d1931b01e40a5f846b204b621dcdf827f05efef845d46bbba9df98b3/wasat-1.11.0.tar.gz"
+    sha256 "b4ad60d8aad65d118bde06425f8d267fec6a83d39f40643e8525d439d7544554"
   end
 
   resource "xdg-base-dirs" do
