@@ -1,17 +1,17 @@
 class Numr < Formula
   desc "Natural language calculator with a terminal UI and command-line interface"
   homepage "https://github.com/nasedkinpv/numr"
-  url "https://github.com/nasedkinpv/numr/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "7b411612012eefb3992f2e76f69cdde44e2ada003ba8aebe6a9df76c23276335"
+  url "https://github.com/nasedkinpv/numr/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "64a9549457d89ece3a20f118a453f4e7f704e2a9f8668a1d4dab77496d8e6988"
   license "MIT"
   head "https://github.com/nasedkinpv/numr.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c7c5b51fb3d45cb55df6980be7c3800b280246c00b11ae3b2b5771ad8dc1a2e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf227ab7ac5be288f177a205dfead6d13c8e126f52867292720870dca4f048ef"
-    sha256 cellar: :any,                 arm64_linux:   "681c459b50dad656b1b8c26155ad4b6aeb6ba408fa8cc60c0af723a6a41120dc"
-    sha256 cellar: :any,                 x86_64_linux:  "dbdcf53d587530dbe1a1d1a18d60319549544cfaa8367e30ac859ce65c2b0d27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b1029d765b8af4d5780f20aaa98dd2a2a984ea3c767dfecd8a63f7a7bc7ee794"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae6dba167cea7d220d47fc8ff1a7cb6fdc371cf6bf431a4bfcaa857257d4c54f"
+    sha256 cellar: :any,                 arm64_linux:   "9c53766aa62c89959c1c836e5727c6e545b4e748ffedc4ff847f029e31a3646b"
+    sha256 cellar: :any,                 x86_64_linux:  "fd31d26d027ca448476fc7ed4a3a56c01815569a017e4b29d32b2703b2199f8f"
   end
 
   depends_on "rust" => :build
