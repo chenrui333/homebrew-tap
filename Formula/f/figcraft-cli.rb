@@ -8,10 +8,10 @@ class FigcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9995a8d852031019c2cf1ff151ac47b83490ea2def760f36661fe7a240eaae3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf141cc2bd170e206a5b9f3283bc6e729eef144109150b178ff581128c442fc7"
-    sha256 cellar: :any,                 arm64_linux:   "e76598438b43a44e7f65d06a31efd05cd89a05c3d0d92d195792f07ec2785dd7"
-    sha256 cellar: :any,                 x86_64_linux:  "a3a32a17c84dfd1346e9595d9770fbda2c729a07ce46da7d30b548463aee1262"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "444cbc7f42c67096be1487a01f9fde210be3d7a881dc4e3eb50726485b907fd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c16e683b4a3311dcbc23dd7a6c40720e31100282a7d3356bd4645d0f0ece46f"
+    sha256 cellar: :any,                 arm64_linux:   "7a287a234b03e5764cafd7e925b71b0556547278062cc6d1c53ef9d5ee1b5b9c"
+    sha256 cellar: :any,                 x86_64_linux:  "be64ca762084e8c304a0d262bf9d6be55490217aeadc83c819f256363d6cdb9b"
   end
 
   depends_on "rust" => :build
