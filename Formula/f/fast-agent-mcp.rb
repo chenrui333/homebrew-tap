@@ -10,10 +10,10 @@ class FastAgentMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "e0ab194b771a387472f43bbba45f8c27a01906f0d61c58429fe7edc581fc2a03"
-    sha256 cellar: :any, arm64_sequoia: "624d97f80685c3e5bd7fd0c3fa3b8c83a404bf268a712ce11e02c731cc241e14"
-    sha256 cellar: :any, arm64_linux:   "fccc64c42da5e014d8f5f1fb737effcf018f95aec7e129f73c1c5e4d365ec4ee"
-    sha256 cellar: :any, x86_64_linux:  "6b57bfaab6fefb82207bef962c8df134d3f4ab0fa60452d21841dbb9ff266067"
+    sha256 cellar: :any, arm64_tahoe:   "4d887d48c7d8741ec109cc18f1804a5d951522b828d29d52c4743e5911b84a7c"
+    sha256 cellar: :any, arm64_sequoia: "08173013377beccc251c2f34f5ec860eb02635a38aad715309c9aaf15fb0c97e"
+    sha256 cellar: :any, arm64_linux:   "cd498637a678ed966c25cfc6a8169eb66ad53c88c473b3ab450e5fb71da8a9eb"
+    sha256 cellar: :any, x86_64_linux:  "e621269be16eff9f3901e3b2c3d084c658562679ef554668d7321e40069d226e"
   end
 
   depends_on "maturin" => :build
