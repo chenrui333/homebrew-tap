@@ -8,10 +8,10 @@ class GridcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c442adb6c6faa9d82982ebbcff8b804ebacc9d0e8a2d78084d716aa484c4b803"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b982d09360af37d091cbcea19d72f1192c40fe392a50e6a54df594c6a1ac3637"
-    sha256 cellar: :any,                 arm64_linux:   "e1d3b3703dd04981aa985c7b4437d87e761427460e31e25153d245b0f7073aa4"
-    sha256 cellar: :any,                 x86_64_linux:  "1e7e538846b40cde1c77ebbe4f6baed3cdaea27c8f71f0850cd34676c7dbedbc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3aeca93359e14abc8969c35259877512e1182054c82ebc1d38dc1ae042200547"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6408e93d2696cead17be8c055dbb02f2ada6b3a2012bd786bca3ca008cd464f"
+    sha256 cellar: :any,                 arm64_linux:   "61238e63b78ce1f2e7bb599d417e18d887305cb3ec85cea6f1b55c73b6ee741c"
+    sha256 cellar: :any,                 x86_64_linux:  "26aae5fd91ab7323e77915855e4f37c9772799ca8ce4dc36a24ebeceaa2d8b4a"
   end
 
   depends_on "rust" => :build
