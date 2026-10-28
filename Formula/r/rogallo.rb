@@ -3,8 +3,8 @@ class Rogallo < Formula
 
   desc "Terminal client for Gemini and other small web protocols"
   homepage "https://github.com/davep/rogallo"
-  url "https://github.com/davep/rogallo/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "f3e8997348ddfc05fb3ebdf3a98e9bfb7f537b1810cac972313459551365c82a"
+  url "https://github.com/davep/rogallo/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "e6161c193fb060df056a18f1b96cc7cf04008ce175a335ddf9b57227b76db730"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
