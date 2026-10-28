@@ -8,10 +8,10 @@ class Gokin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6ed64765943ef3ecd62e0d7fb1b93c46cac9ef18cc51412a15a0a3f15b0be35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c7175d989cd22858a18946976f78803e41a6b9c9e5b214242a99c74fada218"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a17ed46355476dd1bb2c75ecb67e62f89133261787709df2e584837967c66323"
-    sha256 cellar: :any,                 x86_64_linux:  "ccd84233cfd6db93d9e400626537c78e0d2870972a7705871479240334d0bc5b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47b2fac7ed259a4f4496c3737d694e05efcd9ddca194857b0baaffe59b40796d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "878ecb83e128866afb807e5c1fe321f287593782c8fd168fc3d4fa04b25c12fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb030efc6a39b7624349a595ee37c534d5f4f48ecccb5547e2a36e4ac03c4a0e"
+    sha256 cellar: :any,                 x86_64_linux:  "9d18f494ffca5a6f8e0c061443f66b322eb7d04e410c38bcedef2b82dd3fe792"
   end
 
   depends_on "go" => :build
