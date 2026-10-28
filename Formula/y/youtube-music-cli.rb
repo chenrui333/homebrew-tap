@@ -1,17 +1,17 @@
 class YoutubeMusicCli < Formula
   desc "Terminal user interface music player for YouTube Music"
   homepage "https://involvex.github.io/youtube-music-cli/"
-  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.3.5.tar.gz"
-  sha256 "85ec42ad42c5c73e37bf5b84fb190d9cccd5a68babf7e634e78c5d22b32535e0"
+  url "https://github.com/involvex/youtube-music-cli/archive/refs/tags/v0.3.6.tar.gz"
+  sha256 "f4b35f397d2d2b79d606cbccbc4043a15c8da1e5bdc7f149c38270dff9a54902"
   license "MIT"
   head "https://github.com/involvex/youtube-music-cli.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9cf37b86c3ea1dbcf6f31521c20b70d083ea63c771091bf76c792ee54595449"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62f4908e8e886488cf742d42ea77e4b3920f5f46467523f4ce8f6b44ec23951b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba9f067d82d203a5cbb8c68c224829c88c9fb027d87735a2affd3b9423d58bcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a684d988adb18d85f8af00f5d610bdbd392b6136b942735d9a7255255bbbdbf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9d995ac5861e21821a506d4feb6b08f2497bcfebbe79ecd03597cf051a1594e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "606ebc9e3988766a6f85070126d8f8a6bd33384b1631698d5f1d284480e4d487"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bfbc77542267a4b77db367320c661e2112e1da14b8b67f53c5465f6d942b9cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d5eb27cc91aba368a3ef65029f36f4fe15e2ba779daae09b9f7538c18dafee0"
   end
 
   depends_on "homebrew/core/bun"
