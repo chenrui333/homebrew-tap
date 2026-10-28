@@ -2,18 +2,17 @@
 class Lintnet < Formula
   desc "General purpose linter for structured configuration data powered by Jsonnet"
   homepage "https://lintnet.github.io/"
-  url "https://github.com/lintnet/lintnet/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "c5286cc799333898c1fc74cc27c22a779a6679438fe669351f31236d485e312e"
+  url "https://github.com/lintnet/lintnet/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "b8f9163b21ab95ee5bbdb80a6670b9d47ded16fa30e7f9b915c7a0360ec21831"
   license "MIT"
   head "https://github.com/lintnet/lintnet.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7eb17630ee3a6b688b95d5b4fad3f83273d5a4b38240a24e9c88775712b89a3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7eb17630ee3a6b688b95d5b4fad3f83273d5a4b38240a24e9c88775712b89a3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31db902b997af356dff11aee4caf333456657e1fd32ce7f0baaa132b626bd270"
-    sha256 cellar: :any,                 x86_64_linux:  "e6b12d0bce454fb4232880651218c2359bbdd74ae3500d536d00c66f7f6bcd1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "90286e30085f6161f727bb82d7f5d5a19788899a036913819280f727c30b1f53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90286e30085f6161f727bb82d7f5d5a19788899a036913819280f727c30b1f53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cbbb3c8acbdf8a94d49ebf1b40759dfb77c1b4e002d2dc937b7e93e1a9327df"
+    sha256 cellar: :any,                 x86_64_linux:  "be1f6ed2a54dab8ddd07cf5ae9f90d9fa916045da96e6e9be0b43e9ba34cf037"
   end
 
   depends_on "go" => :build
