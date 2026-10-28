@@ -1,17 +1,17 @@
 class EffectcraftCli < Formula
   desc "Headless EffectCraft motion graphics renderer and scripting tool, with MCP"
   homepage "https://getartcraft.com/apps/effectcraft"
-  url "https://github.com/storytold/effectcraft/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "39f62b8d533428fb9a77ae403994f0c75e6e69752535a6a856fe86f7493e0bc8"
+  url "https://github.com/storytold/effectcraft/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "e269f9fd6a7094db07e4f87827c6a6d47bb01c9e7e4fe3e733539180723d285d"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/effectcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6c731477f5d7f15cfbc9aa2a052353d20c534e15f93cf360f021826e14549b57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8b2a331759efbc5e2cc854741bbc9320fe37627f76821c4381069bf35dfa599"
-    sha256 cellar: :any,                 arm64_linux:   "380f97ac1e2d8d42296b7de526d5212748e646eee6cee5ea62c869e5d90f105c"
-    sha256 cellar: :any,                 x86_64_linux:  "7a94305e3c05b565bb85c2b98a826365d21f630de8a3080338585743af1ac5c7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "455a4304cf2ccea5ba44e6198de76c10e5984879e64342e31fd8476a9272e897"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07967cf6c09ddf668b81930a4baf68e0238a33cd258fee03e3f916ef467f516d"
+    sha256 cellar: :any,                 arm64_linux:   "c1e7c4566818e9c795eba28eb903fbb9dffa9491531c1a9d8b223aa3454ec972"
+    sha256 cellar: :any,                 x86_64_linux:  "8c66885a3d7f11856e3483bcd2d7c916b8b5b289e12f435d5f2c05f75f468d1a"
   end
 
   depends_on "rust" => :build
