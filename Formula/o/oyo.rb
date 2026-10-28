@@ -8,10 +8,10 @@ class Oyo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c56b3b980236bfe56f39738291719a63b39ac35fc02af2658a5db6177a9bc646"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6ea4e7b812a5ce30a4a7f6e491040e168075f4daffd980a0a255dd18552201f"
-    sha256 cellar: :any,                 arm64_linux:   "13e462df33c7693c918589ab07cd8656bccdebecec3a1ed444a2a833cc2c1a23"
-    sha256 cellar: :any,                 x86_64_linux:  "2255d3c99c428303fd40efec7ef9f31a526384f4d4b7e870311eb63e9204987b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dc3a91f1afb44c79654960d15ea69d61e550977f8748070838f33a534d956f95"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04b24ddeb49adfbc697ad7bcc05aa5107a6233bc1d85fd6ee9ab775747845a7b"
+    sha256 cellar: :any,                 arm64_linux:   "9eb3042486a6dd84008254db9457abea792eefed82f94626cfc528024b56e9e8"
+    sha256 cellar: :any,                 x86_64_linux:  "537eaac9fe006ad8cff877cf828e2aaf5e1aa0dde33abd4880c0895da023f48e"
   end
 
   depends_on "pkgconf" => :build
