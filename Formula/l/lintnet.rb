@@ -2,8 +2,8 @@
 class Lintnet < Formula
   desc "General purpose linter for structured configuration data powered by Jsonnet"
   homepage "https://lintnet.github.io/"
-  url "https://github.com/lintnet/lintnet/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "c5286cc799333898c1fc74cc27c22a779a6679438fe669351f31236d485e312e"
+  url "https://github.com/lintnet/lintnet/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "b8f9163b21ab95ee5bbdb80a6670b9d47ded16fa30e7f9b915c7a0360ec21831"
   license "MIT"
   head "https://github.com/lintnet/lintnet.git", branch: "main"
 
