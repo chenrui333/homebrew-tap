@@ -2,11 +2,11 @@ cask "docker-scout-cli" do
   arch arm: "arm64", intel: "amd64"
   os macos: "darwin", linux: "linux"
 
-  version "1.28.0"
-  sha256 arm:          "6721778a50bb4cb336db037afea0b4dd5ea6338d8a09672b3134c610b4e2595a",
-         intel:        "e67baae5ea16ffba938f7c3394c2d3ebbbf8b0d3c4b9ad1a92fb7621e6ec72ff",
-         arm64_linux:  "aeddeca10e51be71430f49edf8b313915f4d4ab092297a6e42ddbe188dfb6caa",
-         x86_64_linux: "47917e325d7dd29f33678c7be7fc07dcbc1f424799f5397ce2cb3274c0421a72"
+  version "1.29.0"
+  sha256 arm:          "ac0eda010e3ac15c53a8beb3537d068565ab8109a4621273938038acac47e8ba",
+         intel:        "51dff93ad721b7fe174b083bf9b6579814d7297c43458ecf14c7c55cbebb2c5d",
+         arm64_linux:  "bcb16a65b7266413fea05e9dc352159485609e62a6cbd049207118b0aa7d8611",
+         x86_64_linux: "9157cdc9372b478a8cd51dd53f5e9c74a7e34056ea291c65520bf76016fa72f4"
 
   url "https://github.com/docker/scout-cli/releases/download/v#{version}/docker-scout_#{version}_#{os}_#{arch}.tar.gz"
   name "Docker Scout CLI"
