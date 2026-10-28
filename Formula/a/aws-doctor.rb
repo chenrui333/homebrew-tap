@@ -1,18 +1,17 @@
 class AwsDoctor < Formula
   desc "Audit AWS security, costs, and best practices"
   homepage "https://awsdoctor.compacompila.com/"
-  url "https://github.com/elC0mpa/aws-doctor/archive/refs/tags/v2.21.1.tar.gz"
-  sha256 "2d2707e50ee3360389eb279cb3e3a166912a6439cb974324df758c8a5416f43d"
+  url "https://github.com/elC0mpa/aws-doctor/archive/refs/tags/v2.22.1.tar.gz"
+  sha256 "d9782da46799bb6f7826e7a8ba2fa194ffbe3054dd17c6e8198cb69c89011832"
   license "MIT"
   head "https://github.com/elC0mpa/aws-doctor.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d85fd16ec0de284ba0bd27b2c86b5ab66b73c4158a70308077973acfb7a2de6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d85fd16ec0de284ba0bd27b2c86b5ab66b73c4158a70308077973acfb7a2de6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d85fd16ec0de284ba0bd27b2c86b5ab66b73c4158a70308077973acfb7a2de6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5219533dd66118dd7f40aa81aeb048bf3877646beb8a9fe179e30159d273816b"
-    sha256 cellar: :any,                 x86_64_linux:  "65017c5218cf3d66dee0e199f18f2ea49d76fefe53a421221c18fd536fdbce9e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af5e4759443dae670547b92f4d2401b7af7b8e40a5022699f7e05e7c103e7e08"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af5e4759443dae670547b92f4d2401b7af7b8e40a5022699f7e05e7c103e7e08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58820136adc6037f67ab0337db2236fd897f2ff9a24b67864e495d2bbfde1e22"
+    sha256 cellar: :any,                 x86_64_linux:  "8369a768af817d6d3de9c3100460a3ea8c853283724d56a0ab1ee173ff6f5063"
   end
 
   depends_on "go" => :build
