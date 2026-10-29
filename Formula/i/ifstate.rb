@@ -3,8 +3,8 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.5.1.tar.gz"
-  sha256 "c113e7fe66b2d905aec0a01e4a168191d44374b3d88fe998863761f11f1618d8"
+  url "https://codeberg.org/liske/ifstate/archive/2.5.2.tar.gz"
+  sha256 "f6830465f6f4ff11b4da989c2621f6ed483174f7c64b6b821fa556063ef19d16"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
@@ -157,10 +157,6 @@ class Ifstate < Formula
   end
 
   def install
-    # Fix hardcoded version string, remove in next release
-    # https://codeberg.org/routerkit/ifstate/commit/344b3b8f96b9bdba0b4c40bb394ca7d678d2228b
-    inreplace "src/libifstate/__init__.py", '__version__ = "2.5.0"', "__version__ = \"#{version}\""
-
     build_resources = %w[
       flit-core
       packaging
