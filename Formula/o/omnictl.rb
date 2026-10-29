@@ -1,17 +1,17 @@
 class Omnictl < Formula
   desc "CLI for the Sidero Omni Kubernetes management platform"
   homepage "https://omni.siderolabs.com/"
-  url "https://github.com/siderolabs/omni/archive/refs/tags/v1.12.4.tar.gz"
-  sha256 "23f0f4b5507e68e1a63e211105233e4a9fcd5787719210d6a9a4a5dac08d787d"
+  url "https://github.com/siderolabs/omni/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "76274d2bbeea9797113bc9c6d7e86d5a0c4ec24a4020ef1370834cf608e1179a"
   license "BUSL-1.1"
   head "https://github.com/siderolabs/omni.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "05580e2b177d53c50b456370121064ac1176fe637da0b7cd7102d49c8e418d93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "236b085bfdcad83edd0d0ac6158304f41d536254116b4213e71356844d37b9ff"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ab516298393184e5b67f159901530740185e6c52d6ad6d3440ac448af002d76"
-    sha256 cellar: :any,                 x86_64_linux:  "d5a548bd9fdf373a77302b458dc89edccfd060c79dbd72a68f08dd28ce47ab89"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31c548f65e0e185488424b3d646cbaacac66fbdfd1115378dafbc25aba4a82a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80143b4802ab896b3d432ee3bd493d681c4480f08362ba929165fda73e775d08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d3df02e25ed48e4c81c74ee8cc639a2741a494283ec7f6460cf94ed61fc332b"
+    sha256 cellar: :any,                 x86_64_linux:  "20999eed40a2c8efb5d62b86d246f1c90fcdf67ddc9577ea861f1d442f960057"
   end
 
   depends_on "go" => :build
