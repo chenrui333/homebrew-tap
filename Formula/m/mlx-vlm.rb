@@ -3,15 +3,15 @@ class MlxVlm < Formula
 
   desc "Run vision language models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-vlm"
-  url "https://files.pythonhosted.org/packages/26/b5/86eb4a7785974ebbbb3655b1a82c0c342bd9b8e08f7ee6ccafe6f5de2fae/mlx_vlm-0.7.10.tar.gz"
-  sha256 "89adc43235194e797b6ac6795fd275e8957a5d14a1e2760ba49e3a7fedf79f96"
+  url "https://files.pythonhosted.org/packages/9c/51/7db5c88cb6220f8c80819f0fe45807e52fe0dd59b8b098e893394a90bc88/mlx_vlm-0.7.11.tar.gz"
+  sha256 "e3a65c885d0387b47c4d26b034e6c6c02eae411bf9bdac8fc32b46f0afc0fdb4"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-vlm.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "35d52e6f4db3bf20b8a67f2bb3423f316d03a92ada826a7fe9bb567254a25b68"
-    sha256 cellar: :any, arm64_sequoia: "5c031becf72c864d59fc67ab037fde4d85fdb43312e291488ed3f3f131390f93"
+    sha256 cellar: :any, arm64_tahoe:   "681bd033abb4d62e49564c272fd30ae3999bd1d5aaf0496e0592a161bfe99fee"
+    sha256 cellar: :any, arm64_sequoia: "7d43ce84df51840bbe7c9d483c1e3d4325a53fec098be0cf45ce3010e7129c52"
   end
 
   depends_on "cmake" => :build
@@ -81,8 +81,8 @@ class MlxVlm < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/9a/40/a212bffb9809afb9a94b250f11e0c29fd8b2589ec92e4bedd1cc7adf9938/fastapi-0.159.1.tar.gz"
-    sha256 "b45b1ec57f3aa4d2f80f09bfbcf068b46764a2ee892e56753f35bb3d9d845ce2"
+    url "https://files.pythonhosted.org/packages/e9/eb/2cf8c80abf09b2800aef0a83b41066fbfda8ee5495b7a08b9d1af40f7046/fastapi-0.162.0.tar.gz"
+    sha256 "6a22c1e2e6e32e0633ee7e170f00009a29b8228b16feb219ee42f32fd8d88a8f"
   end
 
   resource "filelock" do
@@ -91,8 +91,8 @@ class MlxVlm < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
   end
 
   resource "fsspec" do
@@ -116,13 +116,13 @@ class MlxVlm < Formula
   end
 
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
-    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    url "https://files.pythonhosted.org/packages/7a/f1/e47b937226ae3b093bbd0132eb0b7ee5bfad12c2b5324afd10ae49946b05/hatchling-1.33.0.tar.gz"
+    sha256 "4c422bd4d554fcff5de5b73e9596f85e41e9f97f7e553d8f7595ecb31a627bef"
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/9e/27/06d899ea7bd721d272f84aac98bdb238de98af4cc767a69056d967d68c71/hf_xet-1.7.0.tar.gz"
-    sha256 "d406ec79053c0871817f700c2ac8c36ba0d87f9c34b7458b0f0063bb218b0466"
+    url "https://files.pythonhosted.org/packages/a3/ed/54c8ef80981b548649edda8f1302e5a42edb4e97672d742ee020c97f4856/hf_xet-1.7.1.tar.gz"
+    sha256 "89d06f4975e807eefc6f6777180f452cfb86f6c79f2a6caa6fb28809c84c6777"
   end
 
   resource "httpcore" do
@@ -136,8 +136,8 @@ class MlxVlm < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/12/47/6858d63643e66fb4f6585c3cfd4029c0b2bc1ae21688cee9b3335f20a10d/huggingface_hub-2.2.0.tar.gz"
-    sha256 "5d1b47537394e4215cb858aa12fd493d0f7ef7f58990f5dcd24bc173107b2871"
+    url "https://files.pythonhosted.org/packages/46/dd/585639d95f6a987c0bdfb9045f050f4ad67240775644ba7a4fdc5aca3a3b/huggingface_hub-2.3.0.tar.gz"
+    sha256 "0b783b37f200f1d25bef2344a997c7d410f4437fbe9d8fd965f958e75cec7aef"
   end
 
   resource "idna" do
@@ -176,8 +176,8 @@ class MlxVlm < Formula
   end
 
   resource "mlx-audio" do
-    url "https://files.pythonhosted.org/packages/b2/5b/e7be1d322253a56f891dd41773afe21997e3c889a4b68953aa0db67efe68/mlx_audio-0.6.1.tar.gz"
-    sha256 "94259999694c707129c1f6a30cc1e164e525d0471c9311c5af88f37f20682300"
+    url "https://files.pythonhosted.org/packages/e8/bb/b7948154fce2ed21c0184407ccdec85ee91f44b4d41c91a625a2877ccaf8/mlx_audio-0.6.3.tar.gz"
+    sha256 "bed9a2801a4d500fd007b046bd0209ddcbe2cb0528a648ee7891486b30909df6"
   end
 
   resource "opentelemetry-api" do
@@ -211,8 +211,8 @@ class MlxVlm < Formula
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/da/a8/c5fdbeee588bb8ada9458774f43adf1bdd30bd59157055142183e769a024/pycparser-3.11.tar.gz"
-    sha256 "d875f09c3507d00e1aba0eecc6dcadc1352f30fff09dc6bff2f1c2935e97c2bc"
+    url "https://files.pythonhosted.org/packages/cb/27/eeb9f307bf07060f3d9f9aa0fb8c15b01bdfded0a941e4b2719c7f94cacd/pycparser-3.12.tar.gz"
+    sha256 "f03387877eab82ce01bbdfd0ba7252ee55a90b1c708d5129e2ce915475cf1db6"
   end
 
   resource "pygments" do
@@ -276,8 +276,8 @@ class MlxVlm < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ad/eb/4e197bf26b023abafc5e9043ec8710d7de0fcb032d0969045236d72aa0b1/starlette-1.9.0.tar.gz"
-    sha256 "3d931de246ed870e35ce605974440816ef895e592f255d1396cfdf191d4c4318"
+    url "https://files.pythonhosted.org/packages/48/bb/3d8757f21e9a53d9035c9eb039a777047139a16bfdbedfc7a58241c3d914/starlette-1.10.0.tar.gz"
+    sha256 "b8399098d4c1e3522734f7235dc79b1fc967f96cf139c81e0fa30479e0685f9b"
   end
 
   resource "tokenizers" do
@@ -296,8 +296,8 @@ class MlxVlm < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/8c/4e/3cd6f08cc84ee612d40f3cdb1649475e7c997f2d5cbd95ade8780708af62/transformers-5.20.2.tar.gz"
-    sha256 "080871e061546d720be57f5846fce426f46b44d61574907cc7404c2cba49d180"
+    url "https://files.pythonhosted.org/packages/f6/9d/59e6232df8761e2c82d52e0bef5382e830d1cd65f02f648712ccd7675e7b/transformers-5.21.0.tar.gz"
+    sha256 "43c971a3eb9ab68dc9dfff430f8ab8a0fba09af2f68b608fd70c6245d2ddb8e7"
   end
 
   resource "trove-classifiers" do
