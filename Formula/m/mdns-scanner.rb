@@ -8,11 +8,10 @@ class MdnsScanner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8854a1094d9341f843c169f9507ef9e395cc720455ea8d585b396fd1638beb8c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bf8f20b0f1415a884058ae7a2e6a77da82e6dcb9b0d4883ef46d8ef0a46f2e6"
-    sha256 cellar: :any,                 arm64_linux:   "59c9a395ec7bfb74c6d18ba53e1853b2a4d51e16021ac0decbdf94e0e984c244"
-    sha256 cellar: :any,                 x86_64_linux:  "b971086029faaefa1979e5c58626ed494f7d667b011d391ccf4a0a5895cae2a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4c8c31df4001d72376cf67bec51ee871b6118ab0f8843881102f645f982999d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d6fab6d3d9013e5ac0b592e7535e7469a97e1a648511eccbfbe45d709ae191"
+    sha256 cellar: :any,                 arm64_linux:   "31a71249a93d9292569a668e318c307dff1d708649ff3fe18c31ea08e313108e"
+    sha256 cellar: :any,                 x86_64_linux:  "6134fb6989743b398f533ab721e26c2b227e27b040feb16d87bd300f3e8c56f3"
   end
 
   depends_on "rust" => :build
