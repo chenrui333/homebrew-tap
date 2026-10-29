@@ -3,15 +3,15 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/64/87/094d4b5fbbd8901b45f3c69290a8ecd1d5c5e72a7f9dba88549d195975b0/mlx_audio-0.6.2.tar.gz"
-  sha256 "ac43270632ce86370d17c54236e906e50ba19f0e6412b1f5e43646f3680ae8a5"
+  url "https://files.pythonhosted.org/packages/e8/bb/b7948154fce2ed21c0184407ccdec85ee91f44b4d41c91a625a2877ccaf8/mlx_audio-0.6.3.tar.gz"
+  sha256 "bed9a2801a4d500fd007b046bd0209ddcbe2cb0528a648ee7891486b30909df6"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "6145f4f593973eedaefcc619d99f41d269dcefe15091da9c968d20293641bf86"
-    sha256 cellar: :any, arm64_sequoia: "59e3b73f214b336a4f1b7be8223fc992840afb8aea454c6bcb3f8c5046fd31c3"
+    sha256 cellar: :any, arm64_tahoe:   "8e72b9fe0c54863860e46ea0a53148e0396e46d2d5dcb5362325f93d43f18c37"
+    sha256 cellar: :any, arm64_sequoia: "670a92e1e0dad9cc17038c2be042f96cdeb1c04c7a5a4addd7b9a926bbbe9d6c"
   end
 
   depends_on "cmake" => :build
@@ -83,8 +83,8 @@ class MlxAudio < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
   end
 
   resource "fsspec" do
@@ -108,13 +108,13 @@ class MlxAudio < Formula
   end
 
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
-    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    url "https://files.pythonhosted.org/packages/7a/f1/e47b937226ae3b093bbd0132eb0b7ee5bfad12c2b5324afd10ae49946b05/hatchling-1.33.0.tar.gz"
+    sha256 "4c422bd4d554fcff5de5b73e9596f85e41e9f97f7e553d8f7595ecb31a627bef"
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/9e/27/06d899ea7bd721d272f84aac98bdb238de98af4cc767a69056d967d68c71/hf_xet-1.7.0.tar.gz"
-    sha256 "d406ec79053c0871817f700c2ac8c36ba0d87f9c34b7458b0f0063bb218b0466"
+    url "https://files.pythonhosted.org/packages/a3/ed/54c8ef80981b548649edda8f1302e5a42edb4e97672d742ee020c97f4856/hf_xet-1.7.1.tar.gz"
+    sha256 "89d06f4975e807eefc6f6777180f452cfb86f6c79f2a6caa6fb28809c84c6777"
   end
 
   resource "httpcore2" do
