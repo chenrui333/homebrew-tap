@@ -745,6 +745,7 @@ brew install --cask <tool>
 - `optimizt`
 - `optivorbis`
 - `oracle`
+- `orbi-cli`
 - `orla`
 - `osintui`
 - `osmar`
@@ -1144,6 +1145,7 @@ brew install --cask <tool>
 - `ytm-player`
 - `ytsurf`
 - `go-zzz`
+- `zat`
 - `zero`
 - `zerobrew`
 - `zerofs`
