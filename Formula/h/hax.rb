@@ -6,6 +6,14 @@ class Hax < Formula
   license "MIT"
   head "https://github.com/OleksandrChekhovskyi/hax.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f79f04087ad02d355de6a0efe68f9e1f9c3f5b84d2f8066f84d051185c25dd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46ced698efd279ac9ea12948b0ab302b64c14bb6f6f74ccdc6572bab47eff009"
+    sha256 cellar: :any,                 arm64_linux:   "096850624ddc611cdde63d4d4b830247b14c7ee06e93924df9344a4526639c56"
+    sha256 cellar: :any,                 x86_64_linux:  "22aa1a4ed20c58ca993f7f9fb46112f6f73d430e54a552818cffda90f13533d6"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
