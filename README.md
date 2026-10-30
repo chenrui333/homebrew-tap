@@ -395,6 +395,7 @@ brew install --cask <tool>
 - `giq`
 - `gistui`
 - `git-chglog`
+- `git-surgeon`
 - `git-vain`
 - `git-x`
 - `gita`
