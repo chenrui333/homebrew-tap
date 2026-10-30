@@ -450,6 +450,7 @@ brew install --cask <tool>
 - `hardcover-tui`
 - `hasha-cli`
 - `hauler`
+- `hax`
 - `hazelnut`
 - `hcldump`
 - `hclgrep`
@@ -1045,6 +1046,7 @@ brew install --cask <tool>
 - `toofan`
 - `tooka`
 - `toolctl`
+- `toon`
 - `tori`
 - `tornado`
 - `tortuise`
