@@ -40,6 +40,7 @@ brew install --cask <tool>
 - `actionbook`
 - `adbtuifm`
 - `adsb-tui`
+- `agent-deck`
 - `agent-pd`
 - `agentcarousel`
 - `agentgraphed`
@@ -618,6 +619,7 @@ brew install --cask <tool>
 - `mamediff`
 - `mandible`
 - `marchat`
+- `mardi-gras`
 - `markdownify`
 - `markpdf`
 - `matcha`
@@ -645,6 +647,7 @@ brew install --cask <tool>
 - `meteor`
 - `mfa`
 - `mimirs`
+- `mindwalk`
 - `minimax-mcp-server`
 - `ministack`
 - `mitex`
@@ -702,6 +705,7 @@ brew install --cask <tool>
 - `nino`
 - `nkv`
 - `nless`
+- `no-mistakes`
 - `nocc`
 - `noodle`
 - `nosy`
@@ -907,6 +911,7 @@ brew install --cask <tool>
 - `sheetui`
 - `shiroa`
 - `shopify-cli`
+- `showboat`
 - `shuk`
 - `sidecar`
 - `sig`
@@ -992,6 +997,7 @@ brew install --cask <tool>
 - `taws`
 - `tclint`
 - `tcpterm`
+- `td-cli`
 - `tdd-guard`
 - `teldrive`
 - `telert`

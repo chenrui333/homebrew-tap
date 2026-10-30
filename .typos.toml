@@ -28,6 +28,8 @@ Aks = "Aks"
 AKS = "AKS"
 exort = "exort"
 Exort = "Exort"
+hax = "hax" # upstream project name
+Hax = "Hax" # Ruby class name
 
 [files]
 extend-exclude = [
