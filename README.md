@@ -172,6 +172,7 @@ brew install --cask <tool>
 - `cf-vault`
 - `cf2pulumi`
 - `cgpu`
+- `chainlink`
 - `chalet`
 - `chanfana`
 - `chatlog`
