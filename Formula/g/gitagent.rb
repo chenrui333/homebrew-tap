@@ -6,6 +6,11 @@ class Gitagent < Formula
   license "MIT"
   head "https://github.com/open-gitagent/gitagent.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "c8ebd151709af429cae7eba39e1f52c0a01362f086239ace43edf0909b1ba55e"
+  end
+
   depends_on "node"
 
   deny_network_access!
