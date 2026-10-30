@@ -6,6 +6,14 @@ class Mindwalk < Formula
   license "MIT"
   head "https://github.com/cosmtrek/mindwalk.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f5fa65c65ebe46be578ff151df077b014c21bc75c6bd2d2d4f513dfd3750ef8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5fa65c65ebe46be578ff151df077b014c21bc75c6bd2d2d4f513dfd3750ef8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "120d381b27432b9a6096e8687b41628ff4e836e83100d62efaa726921fd72699"
+    sha256 cellar: :any,                 x86_64_linux:  "0e5c4e371a0e20cbee90c78ef4cb467800dcdacb81c7983071e2c4593c239c40"
+  end
+
   depends_on "go" => :build
   depends_on "node" => :build
 
