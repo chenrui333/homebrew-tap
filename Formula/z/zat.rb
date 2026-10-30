@@ -6,6 +6,14 @@ class Zat < Formula
   license "GPL-3.0-only"
   head "https://github.com/bglgwyng/zat.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4a6d6f1376ddc2137edd95b6018545baa34cbcdbf1d35f02b9542bd88cc331a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "427e55164556567ccd343867f88d55f29c92ef9bd2eae903ace8e488574d357d"
+    sha256 cellar: :any,                 arm64_linux:   "65958eea58061fe43ce959d1e85945508bd30a6f875bca61879b34b9f86ebfa6"
+    sha256 cellar: :any,                 x86_64_linux:  "85faa81e512a9dd5abbd66c55089b4f29dc6a012a66af140bd7a69f49c9bff81"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
