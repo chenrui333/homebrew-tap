@@ -993,6 +993,7 @@ brew install --cask <tool>
 - `taws`
 - `tclint`
 - `tcpterm`
+- `td-cli`
 - `tdd-guard`
 - `teldrive`
 - `telert`
