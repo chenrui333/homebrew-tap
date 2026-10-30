@@ -642,6 +642,7 @@ brew install --cask <tool>
 - `mcpc`
 - `mcpd`
 - `mcpsnoop`
+- `mcptoon`
 - `mdbook-linkcheck`
 - `mdns-scanner`
 - `mdsf`
