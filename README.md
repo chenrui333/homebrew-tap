@@ -907,6 +907,7 @@ brew install --cask <tool>
 - `sheetui`
 - `shiroa`
 - `shopify-cli`
+- `showboat`
 - `shuk`
 - `sidecar`
 - `sig`
