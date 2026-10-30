@@ -6,6 +6,14 @@ class Toon < Formula
   license "MIT"
   head "https://github.com/toon-format/toon-rust.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a4a1d62c0cc5d5775fdd98c40644845fead0029c2a2b4ca7378f633cccc27e4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bbd0803983b6ed22e0927d7653cc34b1fe5142723160068c182b6c4e9915213"
+    sha256 cellar: :any,                 arm64_linux:   "566891f54b9519dc699f0f8e10b4ed70d27604c8658c679e08825fdecef0931a"
+    sha256 cellar: :any,                 x86_64_linux:  "1d6a88e553a3b47ee487a93bce4cfed67764fcc7536c9eea2c0cd94964535e71"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
