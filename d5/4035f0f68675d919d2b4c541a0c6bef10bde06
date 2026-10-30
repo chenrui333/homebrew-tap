@@ -1,0 +1,14 @@
+Formula/m/mcptoon.rb
+  h_9df9c32c3f321d 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d54035f0f68675d919d2b4c541a0c6bef10bde06",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
