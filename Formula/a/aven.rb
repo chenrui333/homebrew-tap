@@ -6,6 +6,14 @@ class Aven < Formula
   license "MIT"
   head "https://github.com/raine/aven.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ebb55bd83255caf910c0fa9028b26f6992736b79a71705e80e22c3dcd5d1591"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e16aa40cd3cb532fe7cdad0f775df85aad109fa64ba45d7cf09bb81adcc60147"
+    sha256 cellar: :any,                 arm64_linux:   "84fd1e034a401953d4461d387578b7585407d78f932bf9f501d5dfefd73fbdd7"
+    sha256 cellar: :any,                 x86_64_linux:  "794a49b830b70aa9eb7a49c7a96d2b22f21efd0d0e7c7efb6e420611f47ea5c9"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
