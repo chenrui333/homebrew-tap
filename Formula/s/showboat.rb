@@ -6,6 +6,14 @@ class Showboat < Formula
   license "Apache-2.0"
   head "https://github.com/simonw/showboat.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bdd614368915d7e07bea11c30727e041aa30b96d92999f17232db20c251ff6a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdd614368915d7e07bea11c30727e041aa30b96d92999f17232db20c251ff6a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4465b6aea8aa740a03b2939df1aa68f082255ff49fc250e9f004fc6034908530"
+    sha256 cellar: :any,                 x86_64_linux:  "f9a516e14f655de43167d4e925745c7fde8626fe3b328c08c214952a60cdb77d"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
