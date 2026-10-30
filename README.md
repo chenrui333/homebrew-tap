@@ -619,6 +619,7 @@ brew install --cask <tool>
 - `mamediff`
 - `mandible`
 - `marchat`
+- `mardi-gras`
 - `markdownify`
 - `markpdf`
 - `matcha`
