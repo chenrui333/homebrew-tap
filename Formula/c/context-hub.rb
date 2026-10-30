@@ -6,6 +6,11 @@ class ContextHub < Formula
   license "MIT"
   head "https://github.com/andrewyng/context-hub.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "12e10fbd4966a8c6d7740abc86fadad63ccebd6295c9c898037a2d5dfd9b3747"
+  end
+
   depends_on "node"
 
   deny_network_access!
