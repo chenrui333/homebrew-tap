@@ -8,10 +8,10 @@ class Emeraldian < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7839c72560585050ea2807cc465f991a943eb1ceb8f948a9906fb79a4b6cb347"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04fd431251670964c39d81c6894e876ede5f3d5473903bfd4a255de738a7bc5c"
-    sha256 cellar: :any,                 arm64_linux:   "cdfbd3b6365742bb01ea5cf438d097f84de2310b1b38c3d9d6d394bd095bf107"
-    sha256 cellar: :any,                 x86_64_linux:  "2fb18d4f70a64456e078a3ddeb5fce9f3243fbc34182cf8dd257276723149e46"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "84ba32040e658e45bd47a6706263980453f6a4ea2b2ab3bd2629446bf67bcae8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc364a682c365fb26abf481dfb8a104f4c9b7011083bd3119c2cfe0fe31a3318"
+    sha256 cellar: :any,                 arm64_linux:   "7a742b6c5cb99079888188fef2a6e0cbfb4fd5b7663387bdab0a426e41b10bd6"
+    sha256 cellar: :any,                 x86_64_linux:  "d8845ac1880f622ecad8684503d6987739a03ef80d8d78cea5c48fb50061f78a"
   end
 
   depends_on "rust" => :build
