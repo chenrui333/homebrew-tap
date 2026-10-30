@@ -647,6 +647,7 @@ brew install --cask <tool>
 - `meteor`
 - `mfa`
 - `mimirs`
+- `mindwalk`
 - `minimax-mcp-server`
 - `ministack`
 - `mitex`
