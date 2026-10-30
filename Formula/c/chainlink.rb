@@ -6,6 +6,14 @@ class Chainlink < Formula
   license "MIT"
   head "https://github.com/dollspace-gay/chainlink.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a8c52fbf75f44907be3468fc72fb49bd931d8e6a36077cfb8b825bb098e709"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfb8b1d27a3f94ffd8fa2fb71628e7e3854ddcd4d7b5c759229a21cfc556b169"
+    sha256 cellar: :any,                 arm64_linux:   "26200e007cbe9aba6d369d8d8a16b84f788e46a06b15cea894924a3587c93f62"
+    sha256 cellar: :any,                 x86_64_linux:  "f1fb775a2138451dc4a76079101c73a361e2969979e4b069ad03a4f3afbb1924"
+  end
+
   depends_on "rust" => :build
   depends_on "python@3.15"
   depends_on "uv"
