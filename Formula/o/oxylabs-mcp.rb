@@ -3,8 +3,8 @@ class OxylabsMcp < Formula
 
   desc "MCP server for Oxylabs"
   homepage "https://github.com/oxylabs/oxylabs-mcp"
-  url "https://files.pythonhosted.org/packages/81/03/b16412914158acd8e0afc0b9f1724850dc560cd62638205939d1664164aa/oxylabs_mcp-0.10.1.tar.gz"
-  sha256 "7cac0b03f19f030584c60bc9e2a14c61284667a219a287152504c3a44f23270a"
+  url "https://files.pythonhosted.org/packages/98/cc/9e9ce7aaefce1876f3848489a1e4f14e6b57e67d476bd592fdf4ab7a787b/oxylabs_mcp-0.10.2.tar.gz"
+  sha256 "20643442aae50448f1e53d3c7dffdcc588ffc3d6185d90148dd1cbacee1ecf79"
   license "MIT"
 
   bottle do
@@ -68,8 +68,8 @@ class OxylabsMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/f2/0f/e02be8857e0fc519a12337568f0bf4b0aad4f3a95d7303e9e9d9fbcca8c2/cachetools-7.2.6.tar.gz"
-    sha256 "1096513bdeed468ba505df3d123e4578a5a22c955f4a9ba3912fd71f3f95363a"
+    url "https://files.pythonhosted.org/packages/40/3a/bce69b9ecf4658dcd3599abe5122a9031386f8f94bd85c6525fca9109db7/cachetools-7.2.7.tar.gz"
+    sha256 "e2154c809ce9e1247120258c36821467597b5663d44c3255a9790785f23c2b1e"
   end
 
   resource "caio" do
@@ -323,8 +323,8 @@ class OxylabsMcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/35/e9/bf409046a91b6a9ca652e9b0ac3c39481674f6774e23e58b52315516099a/platformdirs-4.13.7.tar.gz"
-    sha256 "f7f351c027d6632c30471124e1fdb6ac0fef9ccc5cbac1b34cb333431b1fc3e1"
+    url "https://files.pythonhosted.org/packages/40/28/1c058a9143d2304b3078f8dadcbb9dc27f7d3581b5d05157c84869c4cc0d/platformdirs-4.14.0.tar.gz"
+    sha256 "83f009c1e8c5fc36869b5171755b291887bd2cade7965233cdfabd23d754720b"
   end
 
   resource "pluggy" do
