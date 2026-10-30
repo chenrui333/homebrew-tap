@@ -6,6 +6,11 @@ class CcSdd < Formula
   license "MIT"
   head "https://github.com/gotalab/cc-sdd.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "be6e411330155ef8ca4f9ed97c167067e59b069afa6aa73e239e8f6b72423146"
+  end
+
   depends_on "node"
 
   deny_network_access!
