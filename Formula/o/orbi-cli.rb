@@ -8,6 +8,11 @@ class OrbiCli < Formula
   license "AGPL-3.0-only"
   head "https://github.com/orbi-build/orbi.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "ddeb6de54ec26beeac50d3c19664b094559d2b27f2ae32ea898fa8f94bce50a6"
+  end
+
   depends_on "python-setuptools" => :build
   depends_on "gh"
   depends_on "pi-coding-agent"
