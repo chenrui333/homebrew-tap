@@ -6,6 +6,14 @@ class TdCli < Formula
   license "MIT"
   head "https://github.com/marcus/td.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0601cbdca2c553bed3471503e11f5296b1c42da8a1c77d8779f9eedc2d7a633d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0601cbdca2c553bed3471503e11f5296b1c42da8a1c77d8779f9eedc2d7a633d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27aa856ba239f028f9cda910456abf1361e4dc929c3f7ab47abb7be0f32c5e67"
+    sha256 cellar: :any,                 x86_64_linux:  "7249a23fe22722893a87f00022d7db718332c533c1f14cd8b88c158d1bb551b4"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "td", because: "both install `td` binaries"
