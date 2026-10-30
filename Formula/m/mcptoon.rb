@@ -8,6 +8,11 @@ class Mcptoon < Formula
   license "Apache-2.0"
   head "https://github.com/activeing123/mcptoon.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "eed5a35001f36585fa5c5361e9f36a75e1bc66db2a545798eb288275c3835969"
+  end
+
   depends_on "python-setuptools" => :build
   depends_on "python@3.15"
 
