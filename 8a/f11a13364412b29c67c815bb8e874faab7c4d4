@@ -1,0 +1,46 @@
+.github/workflows/clean-up-closed-prs.yml
+  h_9df9c32c3f321d 30
+.github/workflows/tests.yml
+  h_9df9c32c3f321d 39
+.typos.toml
+  h_9df9c32c3f321d 31-32
+Formula/a/agent-deck.rb
+  h_9df9c32c3f321d 1-43
+Formula/e/emeraldian.rb
+  h_9df9c32c3f321d 4-5,11-14
+Formula/g/gitpane.rb
+  h_9df9c32c3f321d 4-5,11-14
+Formula/g/glab-tui.rb
+  h_9df9c32c3f321d 5-6,12-15
+Formula/m/mandible.rb
+  h_9df9c32c3f321d 4-5,11-14
+Formula/m/mardi-gras.rb
+  h_9df9c32c3f321d 1-42
+Formula/m/mcp-use.rb
+  h_9df9c32c3f321d 4-5,10-13
+Formula/m/mindwalk.rb
+  h_9df9c32c3f321d 1-46
+Formula/n/no-mistakes.rb
+  h_9df9c32c3f321d 1-42
+Formula/s/sem-cli.rb
+  h_9df9c32c3f321d 4-5,11-14
+Formula/s/showboat.rb
+  h_9df9c32c3f321d 1-37
+Formula/t/td-cli.rb
+  h_9df9c32c3f321d 1-41
+Formula/t/ttt-editor.rb
+  h_9df9c32c3f321d 4-5,11-14
+README.md
+  h_9df9c32c3f321d 43,622,650,708,914,1000
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8af11a13364412b29c67c815bb8e874faab7c4d4",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
