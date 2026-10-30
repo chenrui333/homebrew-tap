@@ -6,6 +6,14 @@ class AgentDeck < Formula
   license "MIT"
   head "https://github.com/asheshgoplani/agent-deck.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8501df8160d06c4c765eb5ac5a184dacbae7a9a89e3ac07b75a3a3ceaeea92d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8501df8160d06c4c765eb5ac5a184dacbae7a9a89e3ac07b75a3a3ceaeea92d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c494498f34d41d099707a287ff9e3b0628ae00ba8304e06e20609a34333abb6e"
+    sha256 cellar: :any,                 x86_64_linux:  "fd5bbd38887cbe03bf97ed6d705dfaa3b439a6e639549acd1329c1e8814fe923"
+  end
+
   depends_on "go" => :build
   depends_on "tmux"
 
