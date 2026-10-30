@@ -84,6 +84,7 @@ brew install --cask <tool>
 - `autotag`
 - `autotools-language-server`
 - `av`
+- `aven`
 - `await`
 - `awk-language-server`
 - `awless`
