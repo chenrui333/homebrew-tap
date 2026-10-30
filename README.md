@@ -40,6 +40,7 @@ brew install --cask <tool>
 - `actionbook`
 - `adbtuifm`
 - `adsb-tui`
+- `agent-deck`
 - `agent-pd`
 - `agentcarousel`
 - `agentgraphed`
