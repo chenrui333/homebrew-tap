@@ -705,6 +705,7 @@ brew install --cask <tool>
 - `nino`
 - `nkv`
 - `nless`
+- `no-mistakes`
 - `nocc`
 - `noodle`
 - `nosy`
