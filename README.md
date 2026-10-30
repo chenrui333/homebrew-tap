@@ -402,6 +402,7 @@ brew install --cask <tool>
 - `git-x`
 - `gita`
 - `gitact`
+- `gitagent`
 - `gitcredits`
 - `gitid`
 - `gitlabform`
