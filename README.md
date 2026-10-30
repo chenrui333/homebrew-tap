@@ -156,6 +156,7 @@ brew install --cask <tool>
 - `cc-bridge`
 - `cc-enhanced`
 - `cc-filter`
+- `cc-sdd`
 - `ccapi`
 - `ccboard`
 - `cccc`
