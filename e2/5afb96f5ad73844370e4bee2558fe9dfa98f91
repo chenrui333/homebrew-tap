@@ -1,0 +1,14 @@
+Formula/l/lean-ctx.rb
+  h_9df9c32c3f321d 1-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e25afb96f5ad73844370e4bee2558fe9dfa98f91",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
