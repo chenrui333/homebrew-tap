@@ -6,6 +6,11 @@ class Ax < Formula
   license "MIT"
   head "https://github.com/yusukebe/ax.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "771d04d1ee5777363473fbbba1b8950c3f275edb20e655c731b5d47f3b74ab5a"
+  end
+
   depends_on "bun"
 
   deny_network_access!
