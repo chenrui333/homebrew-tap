@@ -6,6 +6,14 @@ class Trellis < Formula
   license "AGPL-3.0-only"
   head "https://github.com/mindfold-ai/Trellis.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9459535decd2db19f65a5467c4648e49abb95fbb0ea4d1738da83634d94bcc4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df4223f38109e70eb5259f91fb6472ca4afbcc8c5877237e4304fb4692f141c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d282cb6583199810ff3e7a40472209d8c5e96fc6e321cb180ce04988323faa3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab93102b5d5b69aefb0528da3a28dc4d9204efc4f715e2e2d2c11c2836d724ee"
+  end
+
   depends_on "pnpm" => :build
   depends_on "node"
 
