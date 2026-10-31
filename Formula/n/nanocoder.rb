@@ -6,6 +6,14 @@ class Nanocoder < Formula
   license "MIT"
   head "https://github.com/Nano-Collective/nanocoder.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "1ab091b5dec7275840796a9de2a8fb7430611e581e22461a506d83b9b71b07d9"
+    sha256 cellar: :any,                 arm64_sequoia: "1ab091b5dec7275840796a9de2a8fb7430611e581e22461a506d83b9b71b07d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f6fde94c65ecf757b33d937306df7836f5771690d96210483c8124865ffabac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1be935152f6993e368d128bb97ab631dc14eb7ddd20739fce6a2a352e0b14cbe"
+  end
+
   depends_on "node"
   depends_on "ripgrep"
 
