@@ -6,6 +6,11 @@ class Claudebox < Formula
   license "MIT"
   head "https://github.com/numtide/claudebox.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "b6c0c03cd364f2e928471bb2633e971fde84b13fdc8791c7e9ab07ceeef6fdc3"
+  end
+
   depends_on "bash"
   depends_on "node"
 
