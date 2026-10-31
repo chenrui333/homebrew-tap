@@ -190,6 +190,7 @@ brew install --cask <tool>
 - `claude-code-generic-hooks`
 - `claude-composer`
 - `claude-context-mcp`
+- `claudebox`
 - `claudio`
 - `claumon`
 - `clauth`
