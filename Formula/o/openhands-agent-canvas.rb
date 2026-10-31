@@ -6,6 +6,14 @@ class OpenhandsAgentCanvas < Formula
   license "MIT"
   head "https://github.com/OpenHands/OpenHands.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "5a1e7875ec761213681ecd738eaf31333e601718d22bdb77c4db47d11f2d64cf"
+    sha256 cellar: :any,                 arm64_sequoia: "5a1e7875ec761213681ecd738eaf31333e601718d22bdb77c4db47d11f2d64cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07977bcbb062db0b2d3265066890e0a1edb58cee79ce8e53dbd38075f3b15818"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0296168334ffbd5b9a8175b287ad13f4f21fea6dab373faa3c6cb25c04006f9c"
+  end
+
   depends_on "node"
   depends_on "python@3.13"
   depends_on "uv"
