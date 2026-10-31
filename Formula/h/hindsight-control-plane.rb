@@ -6,6 +6,14 @@ class HindsightControlPlane < Formula
   license all_of: ["MIT", "OFL-1.1"]
   head "https://github.com/vectorize-io/hindsight.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "c52dddd2ea224efec44275ccc23c38573ae545c94aeb4f3189d4f7b98acf1ebf"
+    sha256 cellar: :any, arm64_sequoia: "787d2a89b7e8ff105d80d9d9c07bf76b2489cabc77c89bee50b7bc5ba5ee8ef2"
+    sha256 cellar: :any, arm64_linux:   "e02ecb48cd5244fba04288612ba4ebb3c42bc27c17c2769215deb0bfde6c2ce0"
+    sha256 cellar: :any, x86_64_linux:  "b66a0484516df21300f98be0fb47f5fa1093197a7edb598085bba85b6c2d5e96"
+  end
+
   depends_on "node"
 
   resource "inter" do
