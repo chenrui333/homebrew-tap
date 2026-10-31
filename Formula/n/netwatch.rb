@@ -1,17 +1,17 @@
 class Netwatch < Formula
   desc "Real time network diagnostics in your terminal"
   homepage "https://github.com/matthart1983/netwatch"
-  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.38.0.tar.gz"
-  sha256 "f64ed60a7b5fb67679b7eb24ffedc1a20ab80546e588c8b943c06cd2e7fd0900"
+  url "https://github.com/matthart1983/netwatch/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "b3096edb78aec785f5a066c17cacc640f72bc95084418268295dbeaddfd7dfa2"
   license "MIT"
   head "https://github.com/matthart1983/netwatch.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3635d2f6ee37883a521eb005dac7898a8106f5c20ca4e988a828e7417fce7f96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "005901840c5dc86fe1a2864bdb3a43e8fff21b13cc0648b570f991300d7c78ff"
-    sha256 cellar: :any,                 arm64_linux:   "c65b6481b0d8adc48a728f7b023b8721de4bbab482b8ceac7db956f0f6845295"
-    sha256 cellar: :any,                 x86_64_linux:  "f9b58b37d1f42aadec301de9db50d4f432077df505036d6184476cf12fe091af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a0466a57dd1a25bebae6fe7fd34982a66dc6f8411c4c4d015693fdca7f1e6a94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bdf6fe43793cd1c860039f2c6b8bb99c2d75b072fce6402bd9d9b41f60f2869"
+    sha256 cellar: :any,                 arm64_linux:   "8f9f13261b1b67ccfb8b8bbbd94e932faaf44732b79e14a45f5be96d160da12e"
+    sha256 cellar: :any,                 x86_64_linux:  "9401ddc6a7a19358735609552d6cb23732fffe69a0312d6b316805bffadae3a9"
   end
 
   depends_on "rust" => :build
