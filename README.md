@@ -484,6 +484,7 @@ brew install --cask <tool>
 - `heyagent`
 - `hf`
 - `hielo`
+- `hindsight-control-plane`
 - `holo-cli`
 - `holo`
 - `horusec`
