@@ -8,6 +8,14 @@ class HermesHud < Formula
   license "MIT"
   head "https://github.com/joeynyc/hermes-hud.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "53cf91e740fb430e723f5e8aee2820d17a3ae2848e9d42722bd715b66e9a038e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ae5021d094103ceff367a5b0daef87c11c484b1bf70e1d9d33dc680df53e2f1"
+    sha256 cellar: :any,                 arm64_linux:   "1aa00167ea433f10b56fb29f598afb95cea075601976d425be0d664b99261bf7"
+    sha256 cellar: :any,                 x86_64_linux:  "3fd35d18036316f69cb9910196b6c518674a04f3e7d17481d90d32de03e44948"
+  end
+
   depends_on "cython" => :build
   depends_on "python-setuptools" => :build
   depends_on "libyaml"
