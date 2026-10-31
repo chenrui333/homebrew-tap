@@ -192,6 +192,7 @@ brew install --cask <tool>
 - `claude-context-mcp`
 - `claudio`
 - `claumon`
+- `clauth`
 - `clawbands`
 - `clawea`
 - `clawhub`
@@ -865,6 +866,7 @@ brew install --cask <tool>
 - `rdrview`
 - `rds-command-line-tools`
 - `readmeai`
+- `reasonix`
 - `recall`
 - `reeve`
 - `reformat-gherkin`
@@ -1044,6 +1046,7 @@ brew install --cask <tool>
 - `tftarget`
 - `tftree`
 - `tfui`
+- `tgrab`
 - `thanks-stars`
 - `theattyr`
 - `threatdeck`
@@ -1062,6 +1065,7 @@ brew install --cask <tool>
 - `togomak`
 - `token-cli`
 - `toml-f`
+- `tonguetyped`
 - `toofan`
 - `tooka`
 - `toolctl`
