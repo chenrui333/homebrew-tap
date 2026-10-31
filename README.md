@@ -503,6 +503,7 @@ brew install --cask <tool>
 - `iam-lens`
 - `iam-shrink`
 - `ibtop`
+- `icm`
 - `iflow-cli`
 - `ifstate`
 - `iftree`
