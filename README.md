@@ -323,6 +323,7 @@ brew install --cask <tool>
 - `easy-llm-cli`
 - `ec`
 - `ec2-ami-tools`
+- `eca`
 - `ecscope`
 - `editly`
 - `effectcraft-cli`
