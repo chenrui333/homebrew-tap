@@ -6,6 +6,14 @@ class SandboxRuntime < Formula
   license "Apache-2.0"
   head "https://github.com/anthropics/sandbox-runtime.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fae2c4872f45f0dc795bb46f7ed908f6b11db951570798da4313f5da597f149e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fae2c4872f45f0dc795bb46f7ed908f6b11db951570798da4313f5da597f149e"
+    sha256 cellar: :any,                 arm64_linux:   "d991410e3faf70c5482be8bd5fbb7ce122ef92243910970f5cb40242fd5d2a4a"
+    sha256 cellar: :any,                 x86_64_linux:  "2e5a14f66d7c2292069342bb38c23927678294b71dc862d8ef5f61a1e8c44aef"
+  end
+
   depends_on "openjdk" => :build
   depends_on "node"
   depends_on "ripgrep"
