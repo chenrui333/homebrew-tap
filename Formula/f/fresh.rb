@@ -8,10 +8,10 @@ class Fresh < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae85d6ee20fc8bbe93ce54a2556c506edd1e6e96c11c6c6c43110461dd7bd64c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9949d1bc67938bc0b39c9a493a2d1d534282aa484c7e573a8009984893d67e10"
-    sha256 cellar: :any,                 arm64_linux:   "8a6a554c630da92dc2627c6657becfbc969fdab208c97d1eed3fd0df02c7b368"
-    sha256 cellar: :any,                 x86_64_linux:  "3d36173f5739170607854da317424498a6dc15b862f814565390919d26acac00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f520aadba3900ad07c53378f2313e904baf53b67228cf8dbaacb3dd7baf22da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f8dd2b28b62932372b6625f4e74cb89e2fac7cf77653812e82a32e9b2ae1010"
+    sha256 cellar: :any,                 arm64_linux:   "8db61fe02d113f6ef7d1395e373abe6903a230d13b0665eedae1e03ee7b7e0de"
+    sha256 cellar: :any,                 x86_64_linux:  "6400b2564b55a9ac976f33470bd81a2c22443f0e50032008ef463825e4b110b8"
   end
 
   depends_on "pkgconf" => :build
