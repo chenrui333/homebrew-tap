@@ -1,8 +1,8 @@
 class Floci < Formula
   desc "Open-source local AWS emulator"
   homepage "https://github.com/floci-io/floci"
-  url "https://github.com/floci-io/floci/archive/refs/tags/2.3.0.tar.gz"
-  sha256 "a9fda0f3e07c1cf16342bb16c17363d700c1b48bdef83c5140ea6f8534fd6719"
+  url "https://github.com/floci-io/floci/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "78bef604d3e913afd4a71541615b593de65657ba958f96e96e478790ae3b0736"
   license "MIT"
   head "https://github.com/floci-io/floci.git", branch: "main"
 
