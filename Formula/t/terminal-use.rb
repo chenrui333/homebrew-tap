@@ -6,6 +6,14 @@ class TerminalUse < Formula
   license "MIT"
   head "https://github.com/flipbit03/terminal-use.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eab68acf8f66054e31ed4c418538b589104547ae81e5f1d77d87739ed6d881f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52c5f1a19097cdc5f17ea7186a5561eb3eab71f477e33013909c7a0c4b02e570"
+    sha256 cellar: :any,                 arm64_linux:   "2463a8c2e556e260ec74f52397906f2fd20adcbf3c245fb06b6448b764b356de"
+    sha256 cellar: :any,                 x86_64_linux:  "4be34e9065bf9b1b66fc602b837a807702265ebad8882ad6aee9666d1bd3ac9e"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
