@@ -6,6 +6,11 @@ class AgentSlack < Formula
   license "MIT"
   head "https://github.com/stablyai/agent-slack.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "ad9fac7ddb552949147cd6a995b876c55006468ea1262224075019f67b701e49"
+  end
+
   depends_on "bun"
 
   # Bun downloads the locked JavaScript dependencies before bundling the CLI.
