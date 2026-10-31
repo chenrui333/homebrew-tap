@@ -643,6 +643,7 @@ brew install --cask <tool>
 - `mcp-use`
 - `mcpc`
 - `mcpd`
+- `mcporter`
 - `mcpsnoop`
 - `mcptoon`
 - `mdbook-linkcheck`
@@ -776,6 +777,7 @@ brew install --cask <tool>
 - `pass-cli`
 - `passepartui`
 - `pdfsyntax`
+- `pdfvision`
 - `pencode`
 - `perch`
 - `percollate`
