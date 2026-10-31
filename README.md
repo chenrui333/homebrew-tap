@@ -693,6 +693,7 @@ brew install --cask <tool>
 - `nano-agent`
 - `nanobrew`
 - `nanoclaw`
+- `nanocoder`
 - `nanodbc`
 - `narr`
 - `nastro`
