@@ -1,0 +1,14 @@
+Formula/a/agent-slack.rb
+  h_9df9c32c3f321d 1-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "56394b5b4fc0bd6b1ca872935219e1ad82f29480",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
