@@ -893,6 +893,7 @@ brew install --cask <tool>
 - `rustormy`
 - `rwx`
 - `sakimori`
+- `sandbox-runtime`
 - `sato`
 - `satty`
 - `saw`
