@@ -6,6 +6,14 @@ class Plannotator < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/backnotprop/plannotator.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "75a6e09f352e25a78f1b99b4eebe4016a8dfbfc7a68601841ac7333a48808ae8"
+    sha256 arm64_sequoia: "1653388f47b871a446b698aa97d65f61e4b7bb690695453eaa672ffdd58a604e"
+    sha256 arm64_linux:   "57e6b80c23327e867095a690a26bcad9a62095a0b664021fc9a4677805ca52bc"
+    sha256 x86_64_linux:  "899f0acb3371a9c5d54786ad71fbfad69f70d25576fa651e81245cdd975e354b"
+  end
+
   depends_on "bun" => :build
 
   on_linux do
