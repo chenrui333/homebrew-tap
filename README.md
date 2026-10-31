@@ -50,6 +50,7 @@ brew install --cask <tool>
 - `agentmeter`
 - `agl`
 - `ai-context`
+- `ai-memory`
 - `aic`
 - `aim`
 - `aks-mcp`
@@ -246,6 +247,7 @@ brew install --cask <tool>
 - `copilot-cli`
 - `countryfetch`
 - `cozypkg`
+- `cpa-usage-keeper`
 - `cpg`
 - `cpx`
 - `cpx11`
