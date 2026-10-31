@@ -6,6 +6,14 @@ class CodexAuth < Formula
   license "MIT"
   head "https://github.com/loongphy/codex-auth.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e47cd1cb59f2ef8c83a251f0abd05f055e13f45f5a6be77f0fa1eeecba34fcaa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "646c65eda530e429c37a40bebcc492d79c9d0283ff13ee6fb96463b3fe5b174f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce6f87ad7d8f8215faf0d57642843eb4437734c57cd117ec66b6f882b940c2e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff86e3260f2fd60bd8f85dc45b443f4eee5ffa65172fce78c0f655ca6f7483e6"
+  end
+
   depends_on "zig@0.16" => :build
   depends_on "curl"
   depends_on "node"
