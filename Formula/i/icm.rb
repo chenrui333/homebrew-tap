@@ -6,6 +6,14 @@ class Icm < Formula
   license "Apache-2.0"
   head "https://github.com/rtk-ai/icm.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ce404774904cb25da0831953127b837e13f6d96781d74b13e309bebafdc54c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7894f152ef0b0c9ac4ba9f597a53206e67e525ba3c409e1dab30c8bdba5e9228"
+    sha256 cellar: :any,                 arm64_linux:   "ef43b8a082c8bb5549bc7b640391809a4fdc9603194d03d70adbbd9c4400ab57"
+    sha256 cellar: :any,                 x86_64_linux:  "27a7a747dbd75daaf1cbcb039a92fc553dcefd0c1f74820ccc35dc4f8a1a1f9b"
+  end
+
   depends_on "bun" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
