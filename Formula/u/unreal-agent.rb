@@ -6,6 +6,14 @@ class UnrealAgent < Formula
   license "MIT"
   head "https://github.com/unreallabsai/unreal-agent.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d0847162030527901b8647e16c3f071e70eb3cf4a37dbc19255d4ac20257f29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d0847162030527901b8647e16c3f071e70eb3cf4a37dbc19255d4ac20257f29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cfa820ecdd67d52f6b334764f5558b4dbf7e41e11b6ce4f8c872dc28d3399af"
+    sha256 cellar: :any,                 x86_64_linux:  "108e3cb54f84cf49d2c7d4ec5362cc31301f61c16915b8e1df56e783ea2aa53a"
+  end
+
   depends_on "go" => :build
   depends_on "bash"
 
