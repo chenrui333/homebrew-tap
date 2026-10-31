@@ -6,6 +6,14 @@ class Tgrab < Formula
   license "MIT"
   head "https://github.com/ryoppippi/tgrab.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7c37d96480e03756bd381e444c398d5c01c980c1983ddb3065ac0ade941d0f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d31c4d139af985f68de5a7118e0386ad8266549ff378775af20822d56028900"
+    sha256 cellar: :any,                 arm64_linux:   "9e5097689fab61f032df839a39dc0a7e53290a3807c090a974e1f4769c7e909c"
+    sha256 cellar: :any,                 x86_64_linux:  "2c850c67f3ac7ea52bd0b9ff39f2c142b55257b1d74d58613d5d4e3585b1dd2e"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
