@@ -8,10 +8,10 @@ class Tilia < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e302f993eafa1c310b18283f9d2f5d7c62e9fa7560de9c97c646baf912ea1c11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cea715b52ae0388e4ff8bafae26e72346b4156a8dac974a57e2b93242f8990"
-    sha256 cellar: :any,                 arm64_linux:   "9c728dd148a563620fe3011a518930592f6684cabc651e2da9b575f0ced50404"
-    sha256 cellar: :any,                 x86_64_linux:  "f576a6618c1cb62fa490f1212beb89220ac7f5a866a1864dd2ca70cfa83b7906"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b68860c64aaeec2decd8ad2748f6c020c85de05b0173e443ba1f8750eecd3fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e6eb860b764982e6ed0ae36e4b94f2d3d6246ef0d31e3a69b17e5f0aa0cc450"
+    sha256 cellar: :any,                 arm64_linux:   "776caaef6aa0b8090d1d9de1f49c3569580988137e710ee432387b89eb72c1b7"
+    sha256 cellar: :any,                 x86_64_linux:  "e4ee7ab7b07ce606cbfcd40e0736f5ed5c91b16fa5994d3401fc0208d1a42a80"
   end
 
   # Tilia consults Cabal build plans and GHC's package database at runtime.
