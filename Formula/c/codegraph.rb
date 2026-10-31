@@ -6,6 +6,14 @@ class Codegraph < Formula
   license "MIT"
   head "https://github.com/colbymchenry/codegraph.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78414cab3dc3ed767247e9779e6beae008bf96387aafae95abfca3d284651dfe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "927b61d01dfae5c1f2f0f7b459b1cacaced3318c9e787f1a3e09336a67603928"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3230bbd85bf01a80529dbe32b4d28415f172a719d662babe25c618efd7707dc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e37dbb8bc4beb8767691b09e580089edda6cc1f217659a5ed34265a5e95ba61"
+  end
+
   # Upstream blocks Node >=25 because its tree-sitter WASM grammars can crash V8.
   depends_on "node@24"
 
