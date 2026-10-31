@@ -1088,6 +1088,7 @@ brew install --cask <tool>
 - `unifly`
 - `unisondb`
 - `unrar`
+- `unreal-agent`
 - `unsloth`
 - `untether`
 - `unused-deps`
