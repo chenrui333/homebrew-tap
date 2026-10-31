@@ -186,6 +186,7 @@ brew install --cask <tool>
 - `cheznav`
 - `chproxy`
 - `chroncal`
+- `ck`
 - `clai`
 - `claude-agent-acp`
 - `claude-code-generic-hooks`
