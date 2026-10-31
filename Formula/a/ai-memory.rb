@@ -6,6 +6,14 @@ class AiMemory < Formula
   license "MIT"
   head "https://github.com/akitaonrails/ai-memory.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16959ff580594dccd236faa66ceba88bdf47f2ca0b12605558471256ed1ce5f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e4d2353ad43e3c565b5c95070d652e07aa4f4f672d4f2cd95fe935124bc72c2"
+    sha256 cellar: :any,                 arm64_linux:   "9e6067a3ffc43f74ff90c3887d4217a6642a7eddc3af068d8ba6c42720ddb2e7"
+    sha256 cellar: :any,                 x86_64_linux:  "13a0f53fc7cb49dabec399f6519bd9adb9c687ff9cde3a88b692421b4dc8b275"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
