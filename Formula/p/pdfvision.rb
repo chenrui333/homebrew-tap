@@ -1,17 +1,17 @@
 class Pdfvision < Formula
   desc "Extract text, metadata, layout, and images from PDFs for AI agents"
   homepage "https://pdfvision.dev/"
-  url "https://registry.npmjs.org/pdfvision/-/pdfvision-0.16.0.tgz"
-  sha256 "c5e13f90012cc61cbe065f92f3a932a34ed987422384a37063062bd8e3168e86"
+  url "https://registry.npmjs.org/pdfvision/-/pdfvision-0.18.0.tgz"
+  sha256 "f05b35778252ba1cf24b9998940dd2920e9da6da786ca330a070857c3b97858c"
   license "MIT"
   head "https://github.com/yamadashy/pdfvision.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "c76c6246d79584d60584496ec1e84e03f0406b4f07f81a89153fdd7d8efe22a9"
-    sha256 cellar: :any,                 arm64_sequoia: "c76c6246d79584d60584496ec1e84e03f0406b4f07f81a89153fdd7d8efe22a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc04d6457bd95522491a2bd37c7a4fe6681a175897ab7505ae9300e0b7055b2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "416fa589dbc6b622bebb71457582aa504b31e62724d62077c2aff95271a24005"
+    sha256 cellar: :any,                 arm64_tahoe:   "30498ab5708a4546f39e6e6d1b2daff63f30cefa0d3d8a1dd2c1a364bf89609a"
+    sha256 cellar: :any,                 arm64_sequoia: "30498ab5708a4546f39e6e6d1b2daff63f30cefa0d3d8a1dd2c1a364bf89609a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2566ef044868eb60bf99fab639ab3ea890bfb1ac0ae1911e117cf4d6d83498ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b91e610dde8e1538be6db7863faf9cf15f5e70afe8ec50918fd98c7ff8ebb2e5"
   end
 
   depends_on "node"
