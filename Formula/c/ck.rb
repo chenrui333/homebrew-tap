@@ -6,6 +6,14 @@ class Ck < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/BeaconBay/ck.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "eec9b2f830757fb22b17bbf6906bc01f1b08ba133925d23833d07904f6a083ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4719d81142ad6ee0a941a60dc5d1b5065c0ade452e074a5f96d12aa44c60e9d"
+    sha256 cellar: :any,                 arm64_linux:   "216f9d54a1fe52ccdb7b4c72f3d6e609992f14111e432a36f8fc2a0cc4dd8a25"
+    sha256 cellar: :any,                 x86_64_linux:  "3e8845872d6bea4ab0c79c245c0a15f66cdd4ef6eeda1e8d913a4ac9e7b5e98f"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "onnxruntime"
