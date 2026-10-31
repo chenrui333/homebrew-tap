@@ -1,0 +1,15 @@
+Formula/p/plannotator.rb
+  h_9df9c32c3f321d 1-10,15-58
+  h_9df9c32c3f321d 11-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "14d2af6ce235963d9e559eb9e52efa0f36b846fc",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
