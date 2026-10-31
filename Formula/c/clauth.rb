@@ -6,6 +6,14 @@ class Clauth < Formula
   license "MIT"
   head "https://github.com/uwuclxdy/clauth.git", branch: "mommy"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67ca9cb10df77a74a98489338864cc7887e35eafa5ba4774707aba611213253f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bddbb0d6ed46ffc4eee3bee88c63c394fa9df8842f103bb4dbb00b5f359ee8ab"
+    sha256 cellar: :any,                 arm64_linux:   "1b213fe91dc0a0b4b341ad0700a5ad318332e268ed384c0c7ef9bc8282cf2d01"
+    sha256 cellar: :any,                 x86_64_linux:  "75d74500ef839f49c6175166fd303160f136df4bda9703234584a9b3140bd28d"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
