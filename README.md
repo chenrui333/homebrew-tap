@@ -654,6 +654,7 @@ brew install --cask <tool>
 - `mdslw`
 - `memora`
 - `memtui`
+- `mercat`
 - `meteor`
 - `mfa`
 - `mimirs`
