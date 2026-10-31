@@ -1,0 +1,14 @@
+Formula/l/localgpt.rb
+  h_9df9c32c3f321d 1-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "856c8904c3b3dcfe03685033da4d5080913fadb1",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
