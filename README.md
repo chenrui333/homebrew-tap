@@ -605,6 +605,7 @@ brew install --cask <tool>
 - `lazytail`
 - `lazytilt`
 - `lazyworktree`
+- `lean-ctx`
 - `lemonade`
 - `leveldb-cli`
 - `lfk`
