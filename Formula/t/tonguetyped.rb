@@ -6,6 +6,12 @@ class Tonguetyped < Formula
   license "MIT"
   head "https://github.com/cheerfulScumbag/tonguetyped.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "1412ff1503d849fd0c952f49b6f80853cdbfa11fef4d4af8b78595ab9842becf"
+    sha256 cellar: :any, x86_64_linux: "0d86239ce866f68ff783194471d2d3ee709f938b6a827b2b5b4cc9e227c22a53"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
