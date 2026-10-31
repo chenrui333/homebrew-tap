@@ -6,6 +6,14 @@ class Pdfvision < Formula
   license "MIT"
   head "https://github.com/yamadashy/pdfvision.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "c76c6246d79584d60584496ec1e84e03f0406b4f07f81a89153fdd7d8efe22a9"
+    sha256 cellar: :any,                 arm64_sequoia: "c76c6246d79584d60584496ec1e84e03f0406b4f07f81a89153fdd7d8efe22a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc04d6457bd95522491a2bd37c7a4fe6681a175897ab7505ae9300e0b7055b2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "416fa589dbc6b622bebb71457582aa504b31e62724d62077c2aff95271a24005"
+  end
+
   depends_on "node"
 
   deny_network_access!
