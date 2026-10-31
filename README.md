@@ -42,6 +42,7 @@ brew install --cask <tool>
 - `adsb-tui`
 - `agent-deck`
 - `agent-pd`
+- `agent-slack`
 - `agentcarousel`
 - `agentgraphed`
 - `agenthud`
@@ -91,6 +92,7 @@ brew install --cask <tool>
 - `aws-doctor`
 - `awsesh`
 - `awsui`
+- `ax`
 - `axiom-mcp-server`
 - `az-tui`
 - `azazel`
@@ -236,6 +238,7 @@ brew install --cask <tool>
 - `container2wasm`
 - `context-analyzer`
 - `context-file-manager`
+- `context-hub`
 - `context42`
 - `cooldeck`
 - `copilot-cli`
@@ -802,6 +805,7 @@ brew install --cask <tool>
 - `pj`
 - `pktz`
 - `plandex`
+- `plannotator-tui`
 - `play`
 - `playerctl`
 - `pls`
