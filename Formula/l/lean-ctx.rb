@@ -6,6 +6,14 @@ class LeanCtx < Formula
   license "Apache-2.0"
   head "https://github.com/yvgude/lean-ctx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4bf972abc8ce294d2628472f61212f855e2d44747e72f06e8590b8c2da94878"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e55cbc569207ca6ae74b6d8976ab17da762b122691c618f12720fd62df968534"
+    sha256 cellar: :any,                 arm64_linux:   "280818336db01e22a470cae2847e98b02f58d520381a88c1e115cc170103fe36"
+    sha256 cellar: :any,                 x86_64_linux:  "42abf44982f25fad498f7928dbf4b746643759df3f902d0806dbedbfee2172cb"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
