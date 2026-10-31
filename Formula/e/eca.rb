@@ -1,8 +1,8 @@
 class Eca < Formula
   desc "Editor-agnostic AI pair programming assistant"
   homepage "https://eca.dev/"
-  url "https://github.com/editor-code-assistant/eca/archive/refs/tags/0.169.0.tar.gz"
-  sha256 "252c8825188e023cc79ea6c4121175b17ed37a20caa48d707c948f3330cd2cdf"
+  url "https://github.com/editor-code-assistant/eca/archive/refs/tags/141.0.tar.gz"
+  sha256 "51616163930dfd9794f8437b526d386480bb83461984f6a18f6e3f10f2640f1e"
   license "Apache-2.0"
   head "https://github.com/editor-code-assistant/eca.git", branch: "master"
 
