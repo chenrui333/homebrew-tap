@@ -6,6 +6,14 @@ class EveryCode < Formula
   license "Apache-2.0"
   head "https://github.com/just-every/code.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "daebb5b46d55af9ceb0eabb1ce2ee4413902ddd24343e8314f545926ebad01e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "966fe89bdbb4aff2ab513d5cb26a3058540952daaf1f028239f760933227cf3d"
+    sha256 cellar: :any,                 arm64_linux:   "4631c6f6d06b905659e705decef9641b017478942913ddc93e362a20b8830b7a"
+    sha256 cellar: :any,                 x86_64_linux:  "eb7971732b16e6a002884cd220b66922ca74d9d18cfd9e0e920bb03d38ddd95c"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
