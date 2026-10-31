@@ -351,6 +351,7 @@ brew install --cask <tool>
 - `eprofiler-tui`
 - `ereandel`
 - `ergo`
+- `every-code`
 - `excise`
 - `fabrika`
 - `fairyglade-ly`
@@ -1073,6 +1074,7 @@ brew install --cask <tool>
 - `togo`
 - `togomak`
 - `token-cli`
+- `tokscale`
 - `toml-f`
 - `tonguetyped`
 - `toofan`
@@ -1088,6 +1090,7 @@ brew install --cask <tool>
 - `trdl`
 - `tredis`
 - `treekanga`
+- `trellis`
 - `trex`
 - `trieve-cli`
 - `tsuki`
