@@ -6,6 +6,14 @@ class Localgpt < Formula
   license "Apache-2.0"
   head "https://github.com/localgpt-app/localgpt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76992e4e6c788b00ddef17c2a8b034203c68babfffdf0e2184e6a02583532454"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6af69fb0341e2a67d4af4768605671279a09687cccade7597a9089e8e7eea90c"
+    sha256 cellar: :any,                 arm64_linux:   "654c1bc194cce4a9db48570535e2518b02cadf5be1656b24b7f1a01e4e4e558d"
+    sha256 cellar: :any,                 x86_64_linux:  "0dff8dd5f2c20e6e5846a5eb8f70c419960123acd1e85687ad29998cd8e873d6"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "onnxruntime"
