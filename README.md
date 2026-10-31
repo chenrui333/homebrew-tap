@@ -1031,6 +1031,7 @@ brew install --cask <tool>
 - `termdbms`
 - `termide`
 - `terminal-mcp`
+- `terminal-use`
 - `termtunnel`
 - `terra-code-cli`
 - `terracove`
