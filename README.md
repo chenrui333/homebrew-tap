@@ -623,6 +623,7 @@ brew install --cask <tool>
 - `llxprt-code`
 - `lnko`
 - `lobtui`
+- `localgpt`
 - `localports`
 - `locport`
 - `logfire-mcp`
@@ -758,6 +759,7 @@ brew install --cask <tool>
 - `open-code-review`
 - `openclacky`
 - `opencli`
+- `openhands-agent-canvas`
 - `openharness`
 - `opensnitch-tui`
 - `oproxy`
@@ -816,6 +818,7 @@ brew install --cask <tool>
 - `pktz`
 - `plandex`
 - `plannotator-tui`
+- `plannotator`
 - `play`
 - `playerctl`
 - `pls`
