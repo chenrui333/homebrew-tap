@@ -234,6 +234,7 @@ brew install --cask <tool>
 - `codemap`
 - `codemark`
 - `codespelunker`
+- `codex-auth`
 - `codex-viz`
 - `codstts`
 - `cohctl`
@@ -391,6 +392,7 @@ brew install --cask <tool>
 - `fsociety`
 - `ftdv`
 - `fuck-u-code`
+- `funes`
 - `g1c`
 - `gdbf`
 - `gecit`
