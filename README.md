@@ -223,6 +223,7 @@ brew install --cask <tool>
 - `codebuff`
 - `codeflash`
 - `codefmt`
+- `codegraph`
 - `codemachine`
 - `codemap`
 - `codemark`
