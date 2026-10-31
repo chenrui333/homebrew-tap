@@ -6,6 +6,14 @@ class Eca < Formula
   license "Apache-2.0"
   head "https://github.com/editor-code-assistant/eca.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c653959e64ffc97cd16080ee6e0eec8891ff97842a2137a42442998b7d92908"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8bd811c055460b28d4d6a67660c3d47cc19b66d81f9a4245054fd8af31891971"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2030cabaa70c9b968acd7382037014ff09574eb534b453ad41dd8c19d4b700a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "179caed5acb58459c61ecc4fbfd881fcf1b97e2216c4ac6390f7d02f8952fff5"
+  end
+
   depends_on "clojure" => :build
   depends_on "openjdk"
 
