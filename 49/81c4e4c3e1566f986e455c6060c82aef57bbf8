@@ -1,0 +1,14 @@
+Formula/m/mercat.rb
+  h_9df9c32c3f321d 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4981c4e4c3e1566f986e455c6060c82aef57bbf8",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
