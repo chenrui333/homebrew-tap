@@ -784,6 +784,7 @@ brew install --cask <tool>
 - `pgterm`
 - `pho`
 - `phpinsights`
+- `pi-acp`
 - `pike`
 - `pikpaktui`
 - `pingu`
