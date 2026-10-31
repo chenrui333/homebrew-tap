@@ -1,0 +1,14 @@
+Formula/m/mcporter.rb
+  h_9df9c32c3f321d 1-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "924daae7577952d3d2a4aa46645ce0e92bd54721",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
