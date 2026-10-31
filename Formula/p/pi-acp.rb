@@ -6,6 +6,11 @@ class PiAcp < Formula
   license "MIT"
   head "https://github.com/svkozak/pi-acp.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, all: "8d518abe60b986398d8edd8600fe44d2ea092f331f2009f7a944f59a37300401"
+  end
+
   depends_on "node"
   depends_on "pi-coding-agent"
 
