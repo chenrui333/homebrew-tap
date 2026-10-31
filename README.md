@@ -465,6 +465,7 @@ brew install --cask <tool>
 - `helius-personal-finance-tracker`
 - `hello`
 - `herald`
+- `hermes-hud`
 - `hexora`
 - `hexowl`
 - `heyagent`
