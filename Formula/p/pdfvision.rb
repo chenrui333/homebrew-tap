@@ -1,8 +1,8 @@
 class Pdfvision < Formula
   desc "Extract text, metadata, layout, and images from PDFs for AI agents"
   homepage "https://pdfvision.dev/"
-  url "https://registry.npmjs.org/pdfvision/-/pdfvision-0.16.0.tgz"
-  sha256 "c5e13f90012cc61cbe065f92f3a932a34ed987422384a37063062bd8e3168e86"
+  url "https://registry.npmjs.org/pdfvision/-/pdfvision-0.18.0.tgz"
+  sha256 "f05b35778252ba1cf24b9998940dd2920e9da6da786ca330a070857c3b97858c"
   license "MIT"
   head "https://github.com/yamadashy/pdfvision.git", branch: "main"
 
