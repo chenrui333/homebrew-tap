@@ -1,0 +1,14 @@
+Formula/h/hindsight-control-plane.rb
+  h_9df9c32c3f321d 1-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "06d86fc4d3ec2cd8afb22970193d20bf6d94cbda",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
