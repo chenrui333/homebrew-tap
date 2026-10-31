@@ -6,6 +6,14 @@ class Mcporter < Formula
   license "MIT"
   head "https://github.com/openclaw/mcporter.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "1d75ef101b091d92776802208bcc2dcec2fa5745ea61289bb6be15319701e952"
+    sha256 cellar: :any,                 arm64_sequoia: "1d75ef101b091d92776802208bcc2dcec2fa5745ea61289bb6be15319701e952"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbf64a78924d7b8d7c3dae95e491373fc2bd4082c346157dc04e361f3d29f9c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57485ec9207d5db43f7e447d1804ecd5fdeb48395f51bf4670bc25cd9f3c0dc0"
+  end
+
   depends_on "node"
 
   deny_network_access!
