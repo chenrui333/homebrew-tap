@@ -6,6 +6,14 @@ class T3code < Formula
   license "MIT"
   head "https://github.com/pingdotgg/t3code.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "23ba970380be83e15955184f3ddfa4fe23dd3ca589a4172e9c118cf67c12529e"
+    sha256 cellar: :any, arm64_sequoia: "368e00eae28ea421280e2d7914c07088f42f904e2a7a9f74e346fca9a257cee1"
+    sha256 cellar: :any, arm64_linux:   "26586088ee4398e4eb8cb77c5a5dd530406cb2dd4c32d1687faa4b9e6c99b5f6"
+    sha256 cellar: :any, x86_64_linux:  "ae638b2308f24eb9f893a466358f7e7e9d932220ae9258a489562ff5958c742d"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
