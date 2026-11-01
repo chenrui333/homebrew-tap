@@ -1,17 +1,17 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.21.39.tgz"
-  sha256 "42b982cfeb5ab6c27798f52df7926f9db757d48a85ae1fa06f215dfb3c19225a"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.21.40.tgz"
+  sha256 "83e28ebc3c9685ce20f7f5e9ea4e002db016c268a30867de2307e7ff0b52f5e8"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "749f2939406efc462939bea4217d7174d7e3ceacd249e6c85367b2a5d8ad89be"
-    sha256 cellar: :any, arm64_sequoia: "749f2939406efc462939bea4217d7174d7e3ceacd249e6c85367b2a5d8ad89be"
-    sha256 cellar: :any, arm64_linux:   "2c644e92889c6a561559583df163a3a272861c2a5dce3f27e4eb57e6d2a86cf2"
-    sha256 cellar: :any, x86_64_linux:  "a263aac7211855a17d5be1a27067e26209ad9443184e367ca6447bbcd77fccd5"
+    sha256 cellar: :any, arm64_tahoe:   "b9fc52f961797edb46e768cb23b767205f5b8757ec0ae54cf8b1526af03df28f"
+    sha256 cellar: :any, arm64_sequoia: "b9fc52f961797edb46e768cb23b767205f5b8757ec0ae54cf8b1526af03df28f"
+    sha256 cellar: :any, arm64_linux:   "1c7a46867e977e3fb8745eb501a8aaa32a32c5cf39aa9b120cd1d1be301d7887"
+    sha256 cellar: :any, x86_64_linux:  "7f4a52814425a27f98e4bfdceed13463bc703f9ceeb8f433e282fc2fcf92cee9"
   end
 
   depends_on "node"
