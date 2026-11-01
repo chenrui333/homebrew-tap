@@ -6,6 +6,14 @@ class MinimaxCode < Formula
   license "MIT"
   head "https://github.com/MiniMax-AI/minimax-code.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "1bfe624b04bd7c76fa4a2ab9b5524af4a745735da47e39b3e7ae6fcc50894ea4"
+    sha256 cellar: :any, arm64_sequoia: "749070b0d4a43007a779870219abde322b0c87bebd653cd841d1f3c6a5263e80"
+    sha256 cellar: :any, arm64_linux:   "f7724773f10afa0d29c9cac319c47d30380f58f515cc720c9978a32795fd5e96"
+    sha256 cellar: :any, x86_64_linux:  "b946e4f653986517a6c166411787fcd6f0f565533fde9cf0a8a2d25006be13be"
+  end
+
   depends_on "bun" => :build
   depends_on "openjdk" => :build
   depends_on "pkgconf" => :build
