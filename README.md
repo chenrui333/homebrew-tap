@@ -944,6 +944,7 @@ brew install --cask <tool>
 - `sato`
 - `satty`
 - `saw`
+- `sbomdelta`
 - `sbomgr`
 - `sbomit`
 - `sbomlyze`
