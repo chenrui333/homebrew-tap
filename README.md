@@ -767,6 +767,7 @@ brew install --cask <tool>
 - `offpunk`
 - `oh-my-claude`
 - `oh-my-codex`
+- `oh-my-openagent`
 - `ohy`
 - `olla`
 - `olltop`
