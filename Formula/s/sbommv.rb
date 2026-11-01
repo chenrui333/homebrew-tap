@@ -6,6 +6,14 @@ class Sbommv < Formula
   license "Apache-2.0"
   head "https://github.com/interlynk-io/sbommv.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be6841f7aa253734f2d9f4e6e93d4b4d9924b302966b5be050aba7e03e0b6f21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be6841f7aa253734f2d9f4e6e93d4b4d9924b302966b5be050aba7e03e0b6f21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b49eaad399cb83d297640e84a0b8dc49f25bc8de239449abf83b52edfef3cb5a"
+    sha256 cellar: :any,                 x86_64_linux:  "fe6c83991051c512c9a17e0e633d1697a3690c91b55975617017e38625b4dc03"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
