@@ -8,10 +8,10 @@ class Gobgp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "55366576ccf2850759012d9f40361efba4ba0986daff2f3ea2137f6d0ece8bb5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b90be59f4575dc1d6418857164f094fb416ed55ad141650469412705ac95332e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ef983b29b0d115d93eaf2280cba4116acbf84ec889ef8d24833d3f0e49c4d36"
-    sha256 cellar: :any,                 x86_64_linux:  "4d6d3658cc262780e76cdda75300900dea7302a4cdc0ea7dc731ae44d23ec930"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c748e53d5c6d9a18822abeca4eed98a14b1fea428b4d0b3d424d0ff7cc777bf9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4440ad403e46ea38297f34e24f86a2bc600c7750199d12cbd9d292d775e548ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a87c87756263db34b1a3a8f873c0477a3d219965d7ebc1e370e97a05914cc50"
+    sha256 cellar: :any,                 x86_64_linux:  "2a16ad41ed8fb6db9c04e97ef40b512625b63d7ff61cce447608740fe10d4eb0"
   end
 
   depends_on "go" => :build
