@@ -6,6 +6,14 @@ class Ovis < Formula
   license "MIT"
   head "https://github.com/devswha/ovis.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d094f234437d6ce620f2309822fd879bdb5e4392c018a95d48cc460d84b4e1ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a624e27cb0108aaded9439e2a5acef69844ba37e64750aed69d966273f9b60b"
+    sha256 cellar: :any,                 arm64_linux:   "a3c7437e3be90c9a8a924f6cbe3c6e0d535b16d0b6eee9a5cf281a181ec6de4f"
+    sha256 cellar: :any,                 x86_64_linux:  "1a46386c71f552a8e72ee8023ae33ce370c0a3ac56f1799c3cd8762909b13424"
+  end
+
   depends_on "python@3.14" => :build
   depends_on "rust" => :build
   depends_on "bun"
