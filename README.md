@@ -999,6 +999,7 @@ brew install --cask <tool>
 - `sourcerer-mcp`
 - `spacelift-intent`
 - `spdr`
+- `spdx-validate`
 - `specfact-cli`
 - `spectatui`
 - `speedscope`
