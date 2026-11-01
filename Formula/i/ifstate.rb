@@ -3,15 +3,15 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.5.2.tar.gz"
-  sha256 "f6830465f6f4ff11b4da989c2621f6ed483174f7c64b6b821fa556063ef19d16"
+  url "https://codeberg.org/liske/ifstate/archive/2.5.3.tar.gz"
+  sha256 "045df466fb75acb09a514274f173dcde18301556ddce0b6cfb45b09ccc969746"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "24f0c4aee6b4ee64e2adfc236cd70684d42de063d9058e7d1438b5926370911a"
-    sha256 cellar: :any, x86_64_linux: "2b23b367f155bf789681b1b812e1b3546ca60a6084afbe62b41f6bff11f2e992"
+    sha256 cellar: :any, arm64_linux:  "7816aadb278afcf3f3937211b4da11111f97d950564d444d15e2d10772abfcf3"
+    sha256 cellar: :any, x86_64_linux: "9b7c223b07eae8e0e9f1cbc324ba909ea03536665b7f4510ea6e344bd815761e"
   end
 
   depends_on "maturin" => :build # for uv-build
