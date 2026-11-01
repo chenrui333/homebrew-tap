@@ -1,0 +1,14 @@
+Formula/b/bernstein.rb
+  h_9df9c32c3f321d 1-697
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ea4c1e0a489ea124ec64b0abf85070a553d0e953",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
