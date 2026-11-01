@@ -6,6 +6,14 @@ class Gitnexus < Formula
   license "PolyForm-Noncommercial-1.0.0"
   head "https://github.com/abhigyanpatwari/GitNexus.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "23a03f7d9d6c0aa6b880b5befe5eabf0f406f3207a3f9881b8464b02325e4b3b"
+    sha256 cellar: :any, arm64_sequoia: "cadc6dd4df424d65c3335805cdf04d49236e2c0cd12153304c2d1c7a884f8e35"
+    sha256 cellar: :any, arm64_linux:   "7a31f16514bd03e6ed73d2764749b5f4db1c47a1e2536fc3146cdf251971d89c"
+    sha256 cellar: :any, x86_64_linux:  "291eee5b0bdf8758f0a83dd2204b135a665122ddceb816dba78d7c7678277ab0"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
