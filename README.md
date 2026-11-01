@@ -416,6 +416,7 @@ brew install --cask <tool>
 - `gignr`
 - `giq`
 - `gistui`
+- `git-ai`
 - `git-chglog`
 - `git-surgeon`
 - `git-vain`
