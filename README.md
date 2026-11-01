@@ -1164,6 +1164,7 @@ brew install --cask <tool>
 - `vitepress`
 - `viwo`
 - `vortix`
+- `voxtype`
 - `vsg`
 - `wakey`
 - `wallust`
