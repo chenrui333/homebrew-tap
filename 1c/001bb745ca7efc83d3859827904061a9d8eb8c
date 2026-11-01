@@ -1,0 +1,19 @@
+Formula/s/spdx-validate.rb
+  s_1d2fbc69c0609f::t_07d029a204b47d 1-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1c001bb745ca7efc83d3859827904061a9d8eb8c",
+  "prompts": {},
+  "sessions": {
+    "s_1d2fbc69c0609f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_1d2fbc69c0609f",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
