@@ -6,6 +6,14 @@ class SpdxValidate < Formula
   license "MIT"
   head "https://github.com/github/go-spdx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "330aec4308eabe2ead6f0434e413d0a0ec5b673b9447d44ccca726b7df8459f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "330aec4308eabe2ead6f0434e413d0a0ec5b673b9447d44ccca726b7df8459f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eac69300750b433f60ea54d43f0aedf047f5bdd0c0394540072cc19ef13eb9f8"
+    sha256 cellar: :any,                 x86_64_linux:  "e4c95a3120bf1fe71cde7bb179c7ac6e3ae2e53c7f37e8865cc3bc75058bf78e"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
