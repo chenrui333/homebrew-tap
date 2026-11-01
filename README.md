@@ -772,6 +772,7 @@ brew install --cask <tool>
 - `olltop`
 - `omni-cache`
 - `omnictl`
+- `omo-ai`
 - `omp-manager`
 - `omp`
 - `opamui`
