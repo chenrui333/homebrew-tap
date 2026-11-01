@@ -6,6 +6,14 @@ class Omp < Formula
   license "MIT"
   head "https://github.com/can1357/oh-my-pi.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "465b5be5a86f59d7b5e0a364ccc2ce601137e5026d3ed78d982da8198896c570"
+    sha256 arm64_sequoia: "b38d8b26da3d6ee90c50efc4d42591b5b14f5c58cdfe1cd64e64bcc865ca9745"
+    sha256 arm64_linux:   "f1e5a309472896f5bff374f75952166d710375310c8dfadb704e0fd8066f8061"
+    sha256 x86_64_linux:  "5ab20275031d742b47cc0f41eed97efb92c95e4745c56a9ef4f4a42cca1f09a7"
+  end
+
   depends_on "bun" => :build
   depends_on "cmake" => :build
   depends_on "llvm" => :build
