@@ -6,6 +6,14 @@ class Collie < Formula
   license "MIT"
   head "https://github.com/AltanS/collie.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "778ccbddda826066d8d314bb772e82d1a80ca080ef199da688d06ba6b7f8ed28"
+    sha256 arm64_sequoia: "a758bfcb8c726dce06409d2d13d69eef6972d2bd4141f5305f59ae1b2f2eb60c"
+    sha256 arm64_linux:   "7d47c57b7d2a0d07663ca8152848e4053b0c4b30d5ee43c108ed439a2b2918ef"
+    sha256 x86_64_linux:  "e414a220a9095e818fd65d75b6e0407e03ebda81328be0ee8dd1067dc785dcfc"
+  end
+
   depends_on "typescript" => :build
   depends_on "bun"
   depends_on "herdr"
