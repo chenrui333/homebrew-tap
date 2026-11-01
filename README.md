@@ -875,6 +875,7 @@ brew install --cask <tool>
 - `pysentation`
 - `ponytail`
 - `qmassa`
+- `qmd`
 - `que`
 - `quicssh-rs`
 - `quokka`
