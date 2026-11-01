@@ -1,0 +1,19 @@
+Formula/s/sbomdelta.rb
+  s_6245717f30c4c0::t_4e1ad65a78cd7b 1-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dde25911019111796a4b8cdcc6f1e23ee9bd6215",
+  "prompts": {},
+  "sessions": {
+    "s_6245717f30c4c0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_6245717f30c4c0",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
