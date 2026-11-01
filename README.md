@@ -119,6 +119,7 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
+- `bomtique`
 - `botkube`
 - `box`
 - `bpftui`
