@@ -6,6 +6,14 @@ class Sbomit < Formula
   license "Apache-2.0"
   head "https://github.com/SBOMit/sbomit.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc7521a341b7eb80ce91b6e23e521c142f7a2c75b4e8a54b5825b7b619e51ab1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc7521a341b7eb80ce91b6e23e521c142f7a2c75b4e8a54b5825b7b619e51ab1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b411f578c15393adb94be14fd44b138fd1725bc37b8a067f866d2a0b7d476c7f"
+    sha256 cellar: :any,                 x86_64_linux:  "adf498d669f9c84557623af3d1e394f2e75d888514feb4d681322881828ec579"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
