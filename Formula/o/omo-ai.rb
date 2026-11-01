@@ -7,6 +7,14 @@ class OmoAi < Formula
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "19a215c7b972f070406ed4ca12435b21439e25d7fc8bde91db2194b0b1a50e09"
+    sha256 cellar: :any, arm64_sequoia: "cfafb3adcb6a26f57d49647b29a9f7d691f1bd35b7b25a7e63d851b0c52e4df1"
+    sha256 cellar: :any, arm64_linux:   "ba7d909e931776d4e05976c8a50c12f3599d5ca5bfe10805ab01243beae3cf2a"
+    sha256 cellar: :any, x86_64_linux:  "f1f610d90d5e9a4550ab461dd150c01924e5abf992970f0a484310413fedcfa9"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "zig@0.16" => :build
