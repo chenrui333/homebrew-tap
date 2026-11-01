@@ -3,17 +3,17 @@ class Rogallo < Formula
 
   desc "Terminal client for Gemini and other small web protocols"
   homepage "https://github.com/davep/rogallo"
-  url "https://github.com/davep/rogallo/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "f3e8997348ddfc05fb3ebdf3a98e9bfb7f537b1810cac972313459551365c82a"
+  url "https://github.com/davep/rogallo/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "e6161c193fb060df056a18f1b96cc7cf04008ce175a335ddf9b57227b76db730"
   license "GPL-3.0-or-later"
   head "https://github.com/davep/rogallo.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c67ca063b61b2250ef66e35e478b3cac2446c8b74596c097facd0e3a65b7a4a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "792f4b308a174f0bc8f372c81215050246a13c595eb198889e05fe7f78f290f2"
-    sha256 cellar: :any,                 arm64_linux:   "19a35533fd1e7479bde7abe4ee008503e4f8651cb785396565a6d9073d6975b3"
-    sha256 cellar: :any,                 x86_64_linux:  "5803fa5160900c13b2fb156f767794371b4f344714909e5ea413389ad7ac1756"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1327ac087ae9f46c7d5342b639dc8442d9a2d294f4c9b0601ce843a740e8afbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539eab14a6193bfc3b60de3aa316d3daef203a6947e6a1c1b4e87739f9778296"
+    sha256 cellar: :any,                 arm64_linux:   "f59ffc07ea10e64043c1d0d1cae5c1b5e3015c83b27c1a6b4b8244754e27a6f2"
+    sha256 cellar: :any,                 x86_64_linux:  "e6a940378101f82c405d954a457ff553b1e56c85691e8545a9f71273fa661e10"
   end
 
   depends_on "cython" => :build
@@ -228,8 +228,8 @@ class Rogallo < Formula
   end
 
   resource "wasat" do
-    url "https://files.pythonhosted.org/packages/e0/ae/54991304bc0fc0578e1cbceed4d35c1e9174e25b79ecdb3dfd3d314ef9ed/wasat-1.9.1.tar.gz"
-    sha256 "26d7d643e93398f865fa25e064ed486d31f90ced838b2e3855a18b44ca10aa37"
+    url "https://files.pythonhosted.org/packages/ee/25/b7b1d1931b01e40a5f846b204b621dcdf827f05efef845d46bbba9df98b3/wasat-1.11.0.tar.gz"
+    sha256 "b4ad60d8aad65d118bde06425f8d267fec6a83d39f40643e8525d439d7544554"
   end
 
   resource "xdg-base-dirs" do
