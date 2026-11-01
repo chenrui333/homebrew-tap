@@ -8,6 +8,14 @@ class Bernstein < Formula
   license "Apache-2.0"
   head "https://github.com/sipyourdrink-ltd/bernstein.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "73dba4410b7e2bc1bc8aa80ccaa903aa12464dabb0d0952c0401726161a27bec"
+    sha256 cellar: :any, arm64_sequoia: "769b9e6923ce1a6fbd387e925280d34ddf90659ee6319be16a87b69c8591f8d3"
+    sha256 cellar: :any, arm64_linux:   "aa6596791cbe47c0ec217c3dfc52258a1201c2ea885c7098bfe09588be08780c"
+    sha256 cellar: :any, x86_64_linux:  "687698dbd5e88af63497087de0e54e29ffdb26452ff73f1f93ddc4777bb2526c"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "node" => :build
