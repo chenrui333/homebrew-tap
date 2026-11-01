@@ -186,6 +186,7 @@ brew install --cask <tool>
 - `checksec`
 - `chess-tui`
 - `cheznav`
+- `chock`
 - `chproxy`
 - `chroncal`
 - `ck`
