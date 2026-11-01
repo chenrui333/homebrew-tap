@@ -6,6 +6,14 @@ class Ctx < Formula
   license "Apache-2.0"
   head "https://github.com/ctxrs/ctx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cd9b2ef5a5f997edd57a36ba3f755b18a2a29bf2cfadd0d837d5063d9b23843e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d33301b65fdce84c5887544242b11738986d83d0c42bf1a6a815b2fbac44d67b"
+    sha256 cellar: :any,                 arm64_linux:   "fd38011235ed2fbbdca48b1a84de119be98555e88e9df24961aa2bbb2d9a7390"
+    sha256 cellar: :any,                 x86_64_linux:  "283734170305491f8f924eedc9183ee46ff6e339ebeca30a639dc78bd918d9fc"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "onnxruntime" => :no_linkage
