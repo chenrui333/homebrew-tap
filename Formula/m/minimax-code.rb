@@ -1,8 +1,8 @@
 class MinimaxCode < Formula
   desc "Terminal coding agent with MiniMax and bring-your-own-key models"
   homepage "https://github.com/MiniMax-AI/minimax-code"
-  url "https://github.com/MiniMax-AI/minimax-code/archive/refs/tags/v0.6.5.tar.gz"
-  sha256 "b36e5d546bf1e57bc5c283cb11b5d014a75131cf8d016f97c8e9c61e8008691e"
+  url "https://github.com/MiniMax-AI/minimax-code/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "abea95f30499016b5e60d499fae15a8a56e203f2453b0d49ac960b0fb9346ea8"
   license "MIT"
   head "https://github.com/MiniMax-AI/minimax-code.git", branch: "main"
 
