@@ -6,6 +6,14 @@ class Sbomdelta < Formula
   license "Apache-2.0"
   head "https://github.com/interlynk-io/sbomdelta.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3191f899a7f8d293a55ae5b19e9d99f23d7b7b5ab5464fdbfd9ba20aedb534d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3191f899a7f8d293a55ae5b19e9d99f23d7b7b5ab5464fdbfd9ba20aedb534d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6fb67e474200b5373efbde3b705be8ed60a0948b55148a9350a39053d8edc83"
+    sha256 cellar: :any,                 x86_64_linux:  "20a7e2187fd77b287383dfc89f774ab0558742a2914c811e80fef74566ecc6df"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
