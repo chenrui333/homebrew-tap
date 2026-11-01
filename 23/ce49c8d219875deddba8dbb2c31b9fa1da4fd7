@@ -1,0 +1,14 @@
+Formula/k/kilocode-cli.rb
+  h_9df9c32c3f321d 1-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "23ce49c8d219875deddba8dbb2c31b9fa1da4fd7",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
