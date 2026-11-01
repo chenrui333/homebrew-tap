@@ -683,6 +683,7 @@ brew install --cask <tool>
 - `mfa`
 - `mimirs`
 - `mindwalk`
+- `minimax-code`
 - `minimax-mcp-server`
 - `ministack`
 - `mitex`
@@ -936,6 +937,7 @@ brew install --cask <tool>
 - `sato`
 - `satty`
 - `saw`
+- `sbomgr`
 - `sbomlyze`
 - `scanify`
 - `schema`
@@ -1195,6 +1197,7 @@ brew install --cask <tool>
 - `ytm-player`
 - `ytsurf`
 - `go-zzz`
+- `zaly`
 - `zat`
 - `zero`
 - `zerobrew`
