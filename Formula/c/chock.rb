@@ -8,6 +8,14 @@ class Chock < Formula
   license "Apache-2.0"
   head "https://github.com/LilithSemi/chock.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "978a528e2255bd85ca2c176dd2a6f4eeae334522a9590e8c959caee8263cbf3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "425f4c53b0ea32da3f16b517c3c99be5975f860c6fdd680bc13e922e3d919742"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aee5eea97763398b32d38c1b187f095690da3b4112a8b75dd302fcbfa6927a85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9df17ec22fcfef2b9a624458002ec172119ceb1623d931febde4365428578f0"
+  end
+
   depends_on "typescript" => :build
   depends_on "zig" => :build
 
