@@ -1,0 +1,14 @@
+Formula/g/git-ai.rb
+  h_9df9c32c3f321d 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "778cd777257c31724710073d62deca8f206bbe6a",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
