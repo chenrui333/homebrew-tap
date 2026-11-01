@@ -108,6 +108,7 @@ brew install --cask <tool>
 - `bbrew`
 - `bearer`
 - `beelzebub`
+- `bernstein`
 - `better-env`
 - `biber-inspector`
 - `bibiman`
