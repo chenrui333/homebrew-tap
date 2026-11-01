@@ -1,8 +1,8 @@
 class Kudu < Formula
   desc "Manage QEMU virtual machines in the terminal"
   homepage "https://github.com/pythops/kudu"
-  url "https://github.com/pythops/kudu/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "447f2e68c7ed6949e7564625570afed73f15fa2b70139e7543432c20b7a03dcf"
+  url "https://github.com/pythops/kudu/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "039147b220dd1ab40d2b07fd4a9a3589e4f667f6b5ec0c739e96544dd07fdc70"
   license "GPL-3.0-or-later"
   head "https://github.com/pythops/kudu.git", branch: "main"
 
@@ -14,7 +14,9 @@ class Kudu < Formula
 
   depends_on "rust" => :build
   depends_on :linux
+  depends_on "passt"
   depends_on "qemu"
+  depends_on "xorriso"
 
   deny_network_access!
 
@@ -23,12 +25,58 @@ class Kudu < Formula
   end
 
   def install
+    # Honor the session runtime directory outside systemd-managed login sessions.
+    # Upstream issue: https://github.com/pythops/kudu/issues/24
+    inreplace "src/lib.rs",
+              'PathBuf::from(format!("/run/user/{}/kudu", unsafe { USER_UID }))',
+              <<~RUST.strip
+                env::var_os("XDG_RUNTIME_DIR")
+                    .map(PathBuf::from)
+                    .unwrap_or_else(|| PathBuf::from(format!("/run/user/{}", unsafe { USER_UID })))
+                    .join("kudu")
+              RUST
+
     system "cargo", "install", *std_cargo_args
   end
 
   test do
+    require "pty"
+
     assert_match version.to_s, shell_output("#{bin}/kudu --version")
-    output = shell_output("#{bin}/kudu --invalid-option 2>&1", 2)
-    assert_match "unexpected argument '--invalid-option'", output
+    ENV["TERM"] = "xterm"
+    ENV["XDG_RUNTIME_DIR"] = testpath/"run"
+    output = +""
+
+    PTY.spawn("/bin/sh", "-c", "stty cols 120 rows 30; exec #{bin}/kudu") do |r, w, pid|
+      Timeout.timeout(10) do
+        begin
+          until output.include?("KVM")
+            output << r.readpartial(4096)
+            # Crossterm needs a terminal response before drawing the dashboard.
+            w.write "\e[1;1R" if output.sub!("\e[6n", "")
+          end
+        rescue EOFError, Errno::EIO
+          flunk "Kudu exited before rendering its VM dashboard: #{output}"
+        end
+        w.write "q"
+        begin
+          loop { output << r.readpartial(4096) }
+        rescue EOFError, Errno::EIO
+          nil
+        end
+        _, status = Process.wait2(pid)
+        pid = nil
+        assert_predicate status, :success?
+      end
+    ensure
+      if pid
+        Process.kill("TERM", pid)
+        Process.wait(pid)
+      end
+    end
+
+    assert_match "KVM", output
+    assert_path_exists testpath/".local/share/kudu/vms"
+    assert_path_exists testpath/"run/kudu"
   end
 end
