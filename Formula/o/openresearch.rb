@@ -6,6 +6,14 @@ class Openresearch < Formula
   license "MIT"
   head "https://github.com/alphaXiv/OpenResearch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e68668ccb11ab3b81dfc954a65199c037bfed9fa8e58cdccc7da758e05977a87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a2ff88f3cde6718e4eca5e8757633aec59483ffd88f1e2500c4f12d877ddce5"
+    sha256 cellar: :any,                 arm64_linux:   "1cdb32d9c1b35351af7a9b514acff58eb7721b4d343b086faee27f5092d5479e"
+    sha256 cellar: :any,                 x86_64_linux:  "a8dfe7f08e631f475ef6ff2caf773e1cea269b26bb8830ac999e96d8a9dac6f5"
+  end
+
   depends_on "node" => :build
   depends_on "pnpm" => :build
   depends_on "rust" => :build
