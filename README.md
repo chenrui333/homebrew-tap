@@ -104,6 +104,7 @@ brew install --cask <tool>
 - `base-mcp-server`
 - `bash-script-tools`
 - `batctl`
+- `bb-app`
 - `bbrew`
 - `bearer`
 - `beelzebub`
@@ -139,6 +140,7 @@ brew install --cask <tool>
 - `bullmq-dash`
 - `bunsen`
 - `burn`
+- `but`
 - `bytebox`
 - `c3x`
 - `c4go`
@@ -196,6 +198,7 @@ brew install --cask <tool>
 - `claudio`
 - `claumon`
 - `clauth`
+- `claw-code`
 - `clawbands`
 - `clawea`
 - `clawhub`
@@ -637,6 +640,7 @@ brew install --cask <tool>
 - `lstags`
 - `lsv`
 - `luaformatter`
+- `luvus`
 - `lib-x`
 - `macfan`
 - `macime`
