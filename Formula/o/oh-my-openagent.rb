@@ -213,6 +213,24 @@ class OhMyOpenagent < Formula
           ln_s destination.relative_path_from(installed_file.dirname), native_file
         end
       end
+
+      # Senpi's host addon has the same Mach-O ID constraint, but a different package layout.
+      pattern = "**/node_modules/@code-yeongyu/senpi-pty"
+      buildpath.glob(pattern, File::FNM_DOTMATCH).map(&:realpath).uniq.each do |pkg|
+        native_file = pkg/"native/prebuilds/darwin-#{arch}/senpi_pty.darwin-#{arch}.node"
+        relative_file = native_file.relative_path_from(buildpath.realpath)
+        odie "Native PTY resolved outside the isolated build tree" if relative_file.to_s.start_with?("../")
+        binding_version = JSON.parse((pkg/"package.json").read).fetch("version")
+        destination = libexec/"native/senpi-pty-#{binding_version}/senpi_pty.node"
+        unless destination.exist?
+          destination.dirname.mkpath
+          cp native_file, destination
+          ln_s "senpi_pty.node", destination.dirname/"libsenpi_pty.dylib"
+        end
+        rm native_file
+        installed_file = libexec/relative_file
+        ln_s destination.relative_path_from(installed_file.dirname), native_file
+      end
     end
 
     # Keep every plugin edition, bundled MCP server, schema, skill, and runtime asset.
