@@ -1,0 +1,19 @@
+Formula/b/bomtique.rb
+  s_9df70f520550bf::t_996f25ef056490 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95353788ffc8e870be1e20aba3e25c822b1363f4",
+  "prompts": {},
+  "sessions": {
+    "s_9df70f520550bf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_9df70f520550bf",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
