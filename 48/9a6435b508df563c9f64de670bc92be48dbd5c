@@ -1,0 +1,15 @@
+Formula/t/t3code.rb
+  h_9df9c32c3f321d 1-16,21-115,119-189
+  h_9df9c32c3f321d 17-20,116-118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "489a6435b508df563c9f64de670bc92be48dbd5c",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
