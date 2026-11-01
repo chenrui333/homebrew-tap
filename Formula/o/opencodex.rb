@@ -8,6 +8,14 @@ class Opencodex < Formula
   license "MIT"
   head "https://github.com/lidge-jun/opencodex.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "cd22ad0d5fc84ee4609f01a47d06e677a1187c26deef183285dfe7a9714b9a8b"
+    sha256 cellar: :any, arm64_sequoia: "b21bdf3329654c0faafecd6d779c51e83131666efd8d036019deea6b9bd1756b"
+    sha256 cellar: :any, arm64_linux:   "8a873293f4a56489df0784839f99fa3e8857eb97d9dc4fea9b42df1e725b8475"
+    sha256 cellar: :any, x86_64_linux:  "da4841fa51f9779bfd609d55109a004ffdcdc0d5c34e96285be371eb87f9f8e6"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
