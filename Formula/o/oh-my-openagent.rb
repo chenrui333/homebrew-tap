@@ -7,6 +7,14 @@ class OhMyOpenagent < Formula
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "8b0e327fb03ecf67b590b370de3ad0f53bed307d4d3d8001175a8f67346957a6"
+    sha256 cellar: :any, arm64_sequoia: "3f26399f50ca89026fa31f5bd36cf2098e6590533e57e60c5f72fae43baee8d7"
+    sha256 cellar: :any, arm64_linux:   "fe1a316c046c01dc058536a9dd73974bb2651c22c939d13f5d77fa65219a96e2"
+    sha256 cellar: :any, x86_64_linux:  "aa265140bfacd2bd2d1005208605624038bf2627f672e70186150b0d6595cd2a"
+  end
+
   depends_on "esbuild" => :build
   depends_on "rust" => :build
   depends_on "zig@0.16" => :build
