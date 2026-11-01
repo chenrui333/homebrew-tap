@@ -1,0 +1,19 @@
+Formula/s/sbomit.rb
+  s_6174ab1d4e7f2b::t_5cbf4d25103a69 1-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6361bd198675f86369d330f7788fb93de8003eb6",
+  "prompts": {},
+  "sessions": {
+    "s_6174ab1d4e7f2b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_6174ab1d4e7f2b",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
