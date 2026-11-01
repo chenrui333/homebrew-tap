@@ -1,17 +1,17 @@
 class Sish < Formula
   desc "HTTP(S)/WS(S)/TCP Tunnels to localhost using only SSH"
   homepage "https://docs.ssi.sh/"
-  url "https://github.com/antoniomika/sish/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "174b86eca84b159f601cf11ae921a104f9f7131026478f098682e131b44767ce"
+  url "https://github.com/antoniomika/sish/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "493c126c6e9681ca5fc4beb7816e3943471e9635c2e39a718c9ffd986f9ed9d7"
   license "MIT"
   head "https://github.com/antoniomika/sish.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc18cef76d102afe1c91257da7c6a869e9df09ab17382ef9195e8af0eb6326fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc18cef76d102afe1c91257da7c6a869e9df09ab17382ef9195e8af0eb6326fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "171a6b9f8d8a977760d229ffe85c7f8728127c4ceab6307f2b13fc6767a0a58c"
-    sha256 cellar: :any,                 x86_64_linux:  "20143de8d0c87cb73a101a9671df06ebb22a76f19d3e14380b4cd694980e0623"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b88fe32a01b1f740cc4638b9143534e27f136155b00d53212432c758ea6e2f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b88fe32a01b1f740cc4638b9143534e27f136155b00d53212432c758ea6e2f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2c2ceb6c7ad98e0115909093969c08972973b6e40765f2cecae9be6cd2374fa"
+    sha256 cellar: :any,                 x86_64_linux:  "aa58ec0cc37546c1df413913f98fa014ef6bd2ce8a7ebef1c2fab9b4c855c52d"
   end
 
   depends_on "go" => :build
@@ -36,7 +36,6 @@ class Sish < Formula
     assert_match version.to_s, shell_output("#{bin}/sish --version")
 
     # Listener addresses are validated before any SSH/HTTP listener is opened
-    output = shell_output("#{bin}/sish --ssh-address=localhost:notaport 2>&1", 1)
-    assert_match "Error parsing address", output
+    assert_match "notaport", shell_output("#{bin}/sish --ssh-address=localhost:notaport 2>&1", 1)
   end
 end
