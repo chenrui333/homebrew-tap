@@ -5,6 +5,14 @@ class BbApp < Formula
   sha256 "c30ee58aed3800f5503bab1a4418b4060e37989a50b150c32708fadc7536df0b"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256               arm64_tahoe:   "d1fe957294ddaf53eee60cc38aeccd7d3b8aef75b5eeff12c4de16faa8cf6555"
+    sha256               arm64_sequoia: "245d6decd345229679bebb1830a17aaa4a093a3e0535659892b908c9c3653845"
+    sha256 cellar: :any, arm64_linux:   "8c7ad75867e077dbfdae09df569cb969c40b191e73f005d64630f908e1cb9c4e"
+    sha256 cellar: :any, x86_64_linux:  "821e0750bc1588010c2218d82bb46e49c6afd1b0ecc36c3580a2a51278466d97"
+  end
+
   head do
     url "https://github.com/get-bb/bb.git", branch: "main"
     depends_on "pnpm" => :build
