@@ -6,6 +6,14 @@ class Qmd < Formula
   license "MIT"
   head "https://github.com/tobi/qmd.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "db3bbc81d1006b014680ef96801165609f45c866821614a7812db051a40fc91d"
+    sha256 cellar: :any, arm64_sequoia: "a123ef9461178caae174d6089d80908c99687b921d646307fd2aa5eb1d67c6ad"
+    sha256               arm64_linux:   "97d2be9266e8c9f9752591266ff51a16817523d7ca6bedf0f82a2828972a1801"
+    sha256               x86_64_linux:  "451975b27402f52e3ea0c09b80e8338e7f27f01f61130b8fd7fbe49929b67283"
+  end
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "ninja" => :build
