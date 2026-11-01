@@ -238,6 +238,7 @@ brew install --cask <tool>
 - `codex-viz`
 - `codstts`
 - `cohctl`
+- `collie`
 - `comchan`
 - `conan-mcp`
 - `container2wasm`
@@ -763,6 +764,7 @@ brew install --cask <tool>
 - `opencli`
 - `openhands-agent-canvas`
 - `openharness`
+- `openresearch`
 - `opensnitch-tui`
 - `oproxy`
 - `optimizt`
@@ -777,6 +779,7 @@ brew install --cask <tool>
 - `otto`
 - `oui`
 - `outside`
+- `ovis`
 - `owlex`
 - `oxbuild`
 - `oxicord`
@@ -1003,6 +1006,7 @@ brew install --cask <tool>
 - `strimzi-kafka-cli`
 - `stripe-mcp-server`
 - `stylance-cli`
+- `sub2api`
 - `sudocode`
 - `summon`
 - `superclaude`
