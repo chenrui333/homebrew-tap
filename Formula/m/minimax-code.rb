@@ -8,10 +8,10 @@ class MinimaxCode < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "1bfe624b04bd7c76fa4a2ab9b5524af4a745735da47e39b3e7ae6fcc50894ea4"
-    sha256 cellar: :any, arm64_sequoia: "749070b0d4a43007a779870219abde322b0c87bebd653cd841d1f3c6a5263e80"
-    sha256 cellar: :any, arm64_linux:   "f7724773f10afa0d29c9cac319c47d30380f58f515cc720c9978a32795fd5e96"
-    sha256 cellar: :any, x86_64_linux:  "b946e4f653986517a6c166411787fcd6f0f565533fde9cf0a8a2d25006be13be"
+    sha256 cellar: :any, arm64_tahoe:   "95864e4541dd0b506e18e382b2d73addd1c24b836ba487b0916ee32b45fc5bb6"
+    sha256 cellar: :any, arm64_sequoia: "556b792a4907021f72d100e83d36cae36a1e5188a39b2d4c4cc1b3e091d924df"
+    sha256 cellar: :any, arm64_linux:   "2624d635ac5c0b520ded7910070a0ed93ec8ec95a588567f56b7970c610a2c5a"
+    sha256 cellar: :any, x86_64_linux:  "132eab044c5ddd55bcef012389f86b632da3dbd5ce0134b842cfa8e1aeddc323"
   end
 
   depends_on "bun" => :build
