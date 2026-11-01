@@ -1,0 +1,15 @@
+Formula/g/gno.rb
+  h_9df9c32c3f321d 1-122,142-172
+  h_9df9c32c3f321d 123-141
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2abe8d8b350eb8c256ba1da0a3ddf5f219c81371",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
