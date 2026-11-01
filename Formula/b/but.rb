@@ -7,6 +7,14 @@ class But < Formula
   license :cannot_represent
   head "https://github.com/gitbutlerapp/gitbutler.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5176bbcd46b1a24897c10bcd8374476c7d50ec4fc1d1d3ec6fa0933e882a01f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68dfa538885a8eef6ddf79583b9b1e690fa04a2c4b999979b7270dc820121309"
+    sha256 cellar: :any,                 arm64_linux:   "4a58db3bbb91fa1e150b9fdc46b45fa717496081711c1ffc208a4788e8180b09"
+    sha256 cellar: :any,                 x86_64_linux:  "e844a9d14576206d017a174319773581b2b79da6e969aa867edf0fbda0336898"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
