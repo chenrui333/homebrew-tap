@@ -1,0 +1,49 @@
+class PicoclawAfjcjsbx < Formula
+  desc "Actively maintained PicoClaw fork with local and cloud AI agents"
+  homepage "https://github.com/afjcjsbx/picoclaw"
+  url "https://github.com/afjcjsbx/picoclaw/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "561d1976c3336328b46cd0912bd51eb99aeda44334d201ba8f41f66c3784c167"
+  license "MIT"
+  head "https://github.com/afjcjsbx/picoclaw.git", branch: "main"
+
+  depends_on "go" => :build
+
+  conflicts_with "picoclaw", because: "both install a picoclaw executable"
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
+  def install
+    ENV["CGO_ENABLED"] = "0"
+    ldflags = "-s -w -X github.com/sipeed/picoclaw/pkg/config.Version=#{version}"
+    system "go", "build", *std_go_args(output: bin/"picoclaw", ldflags:), "-tags=goolm,stdjson", "./cmd/picoclaw"
+    generate_completions_from_executable(bin/"picoclaw", shell_parameter_format: :cobra)
+  end
+
+  def caveats
+    <<~EOS
+      This is afjcjsbx's maintained fork, not sipeed/picoclaw.
+      Run `picoclaw onboard` to create your configuration and embedded workspace.
+      Provider credentials and local model downloads are configured at runtime.
+      This formula installs the CLI and gateway, not the separate web launcher.
+    EOS
+  end
+
+  service do
+    run [opt_bin/"picoclaw", "gateway"]
+    keep_alive true
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/picoclaw version")
+    system bin/"picoclaw", "--no-color", "onboard"
+    (testpath/".picoclaw/config.json").atomic_write "{not-json\n"
+    # Upstream status reports config parse errors without a nonzero exit.
+    output = shell_output("#{bin}/picoclaw --no-color status")
+    assert_match "Error loading config:", output
+    assert_match "invalid character", output
+  end
+end
