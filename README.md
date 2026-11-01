@@ -942,6 +942,7 @@ brew install --cask <tool>
 - `sbomgr`
 - `sbomit`
 - `sbomlyze`
+- `sbommv`
 - `scanify`
 - `schema`
 - `scholar`
