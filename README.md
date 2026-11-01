@@ -939,6 +939,7 @@ brew install --cask <tool>
 - `satty`
 - `saw`
 - `sbomgr`
+- `sbomit`
 - `sbomlyze`
 - `scanify`
 - `schema`
