@@ -1,0 +1,19 @@
+Formula/s/sbommv.rb
+  s_35625536226248::t_6f208e264394e9 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "57c002a441b8a1f801176bb51b1385b0d36b6da0",
+  "prompts": {},
+  "sessions": {
+    "s_35625536226248": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_35625536226248",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
