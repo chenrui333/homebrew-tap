@@ -6,6 +6,14 @@ class PicoclawAfjcjsbx < Formula
   license "MIT"
   head "https://github.com/afjcjsbx/picoclaw.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "135970dc3207171529ca78834bb727e44ad4a386857643acc1544be7a5c3e39d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "135970dc3207171529ca78834bb727e44ad4a386857643acc1544be7a5c3e39d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac89ccf1de7a2d4000e546a74378fa6fcd5b5e46b68c3e0aa3fc6b786c644848"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ce87acc4bd69d4af36ee17a13dac38f70ca25544aa4e5ab461f977275f9afbe"
+  end
+
   depends_on "go" => :build
 
   conflicts_with "picoclaw", because: "both install a picoclaw executable"
