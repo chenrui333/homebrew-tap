@@ -6,6 +6,14 @@ class Auv < Formula
   license all_of: ["Apache-2.0", "BSD-3-Clause"]
   head "https://github.com/moeru-ai/auv.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10e0d2d15e3e3a3ac4e48dcf4686877a414038a4ab2cd11b5e83e2e3c72f2f69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52b613e7c09864eb7793992ed8c942f357d5ad7cf3812474e5dceb0785519cf5"
+    sha256 cellar: :any,                 arm64_linux:   "6609d84a7bca069f3e7b428462454753d48a9e6b251f60f7c126182cf6e769ad"
+    sha256 cellar: :any,                 x86_64_linux:  "f6c53cbcc51a1c15309bc1c0432c313af2bebb8c03b269f7c0bd3afacd9d102f"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
