@@ -6,6 +6,14 @@ class Gno < Formula
   license "MIT"
   head "https://github.com/gmickel/gno.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "175a34367fb4f719826842d38ae3c4db1432442e583d7867d7ba0bc750354c33"
+    sha256 arm64_sequoia: "0fad5d452a07bab1528e63131cdc2878649ccf4bc749e4924f789a59c110bc40"
+    sha256 arm64_linux:   "8e9213d6c256cc66aeee74963d6d16fec4e6c4565e4101a5f915071c89d33084"
+    sha256 x86_64_linux:  "5e99a21412c7dcbd29b565349ac1297f258420ad8d0a09fbf495e6a32f44cdd1"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
