@@ -7,6 +7,14 @@ class Agentty < Formula
   license "MIT"
   head "https://github.com/agentty-org/agentty.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256               arm64_tahoe:   "8934e58246833282fb0767a3eff2b5f9958bd62e80d27199b43719f8c71dbdd2"
+    sha256               arm64_sequoia: "77e6965e41a1922744c63d0121adfc6c0319da1728540fbbcb1f94bacf3ec871"
+    sha256 cellar: :any, arm64_linux:   "d4aee01b8467ca26fcb67df77dfaa68072d8bb8fa31fdd4e17f30d5b9f859cd7"
+    sha256 cellar: :any, x86_64_linux:  "9b72cdd2654cbf21ba962349ffd62d431d7c1c68beef1904baeade519f26b92f"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
