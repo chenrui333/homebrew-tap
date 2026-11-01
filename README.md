@@ -48,6 +48,7 @@ brew install --cask <tool>
 - `agenthud`
 - `agentmako`
 - `agentmeter`
+- `agentty`
 - `agl`
 - `ai-context`
 - `ai-memory`
