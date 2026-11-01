@@ -6,6 +6,14 @@ class Sbomgr < Formula
   license "Apache-2.0"
   head "https://github.com/interlynk-io/sbomgr.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8ae6317c3fab8070c48650348da05216dc26397e895558fb61e7800bd06b3a59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ae6317c3fab8070c48650348da05216dc26397e895558fb61e7800bd06b3a59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa821ce1243504c3d76c8b7ddd5ae3d87677087724f700a5197b792414a912a1"
+    sha256 cellar: :any,                 x86_64_linux:  "5e026bd86107ab9d49fbc9f2aaaf114cb7c292ffbe543a88dd8dd8cc967df11d"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
