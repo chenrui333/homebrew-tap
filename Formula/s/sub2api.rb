@@ -6,6 +6,14 @@ class Sub2api < Formula
   license "LGPL-3.0-or-later"
   head "https://github.com/Wei-Shaw/sub2api.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d38ef455b0e94753ce3c823ebcc33705c872908d585b5b614337eea205d56a58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d38ef455b0e94753ce3c823ebcc33705c872908d585b5b614337eea205d56a58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7fd794a435a51b7522a13e5cb5b42cb2cccda21d290680efcb34731fe528409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ab397900094619347927f79e405167488d836d78cff0fa1247ef935e89bc873"
+  end
+
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pnpm" => :build
