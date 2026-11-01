@@ -444,6 +444,7 @@ brew install --cask <tool>
 - `gloomberb`
 - `glsl-analyzer`
 - `gnhf`
+- `gno`
 - `go-eagle`
 - `go-envsubst`
 - `go-getter`
