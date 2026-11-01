@@ -483,6 +483,7 @@ brew install --cask <tool>
 - `hclgrep`
 - `hclq`
 - `hcom`
+- `hdf-cli`
 - `headscale`
 - `helius-personal-finance-tracker`
 - `hello`
