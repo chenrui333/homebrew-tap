@@ -3,15 +3,15 @@ class Ifstate < Formula
 
   desc "Manage host interface settings in a declarative manner"
   homepage "https://ifstate.net"
-  url "https://codeberg.org/liske/ifstate/archive/2.5.1.tar.gz"
-  sha256 "c113e7fe66b2d905aec0a01e4a168191d44374b3d88fe998863761f11f1618d8"
+  url "https://codeberg.org/liske/ifstate/archive/2.5.2.tar.gz"
+  sha256 "f6830465f6f4ff11b4da989c2621f6ed483174f7c64b6b821fa556063ef19d16"
   license "MIT"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "c92e6c730654c4bc3e9c1eb6d81b3de49b5e19df7d16f77f49ec13df18f2313f"
-    sha256 cellar: :any, x86_64_linux: "ea479eb27863016587dbfa3e5188ba964b6ea9c9daf222ce885c565ea1679052"
+    sha256 cellar: :any, arm64_linux:  "24f0c4aee6b4ee64e2adfc236cd70684d42de063d9058e7d1438b5926370911a"
+    sha256 cellar: :any, x86_64_linux: "2b23b367f155bf789681b1b812e1b3546ca60a6084afbe62b41f6bff11f2e992"
   end
 
   depends_on "maturin" => :build # for uv-build
@@ -157,10 +157,6 @@ class Ifstate < Formula
   end
 
   def install
-    # Fix hardcoded version string, remove in next release
-    # https://codeberg.org/routerkit/ifstate/commit/344b3b8f96b9bdba0b4c40bb394ca7d678d2228b
-    inreplace "src/libifstate/__init__.py", '__version__ = "2.5.0"', "__version__ = \"#{version}\""
-
     build_resources = %w[
       flit-core
       packaging
