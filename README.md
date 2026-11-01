@@ -1118,6 +1118,7 @@ brew install --cask <tool>
 - `tsuki`
 - `ttt-editor`
 - `tui-banner`
+- `tui-test`
 - `tunnelto`
 - `tuono`
 - `turm`
