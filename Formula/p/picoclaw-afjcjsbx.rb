@@ -1,8 +1,8 @@
 class PicoclawAfjcjsbx < Formula
   desc "Actively maintained PicoClaw fork with local and cloud AI agents"
   homepage "https://github.com/afjcjsbx/picoclaw"
-  url "https://github.com/afjcjsbx/picoclaw/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "561d1976c3336328b46cd0912bd51eb99aeda44334d201ba8f41f66c3784c167"
+  url "https://github.com/afjcjsbx/picoclaw/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "d715943832c97957f1a342b771ab52d7c7391fdc8bf6ccfd93f311fa1e3d084c"
   license "MIT"
   head "https://github.com/afjcjsbx/picoclaw.git", branch: "main"
 
