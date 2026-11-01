@@ -1021,6 +1021,7 @@ brew install --cask <tool>
 - `surge`
 - `surgeon`
 - `swagger-mcp-server`
+- `swamp`
 - `swaptop`
 - `swpui`
 - `systeroid`
