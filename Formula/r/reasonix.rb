@@ -1,8 +1,8 @@
 class Reasonix < Formula
   desc "DeepSeek-native coding agent for your terminal"
   homepage "https://github.com/esengine/DeepSeek-Reasonix"
-  url "https://github.com/esengine/DeepSeek-Reasonix/archive/refs/tags/v2.56.0.tar.gz"
-  sha256 "6ddcf5f9a19a12219e64e506eaca5e2fbc3e83c1c1aee0c19d25b3b04446433f"
+  url "https://github.com/esengine/DeepSeek-Reasonix/archive/refs/tags/v2.56.1.tar.gz"
+  sha256 "fa903633970566d1e55922f21994d4dab8f3807906bf20b7da5ab1efacc15f4a"
   license "MIT"
   head "https://github.com/esengine/DeepSeek-Reasonix.git", branch: "studio"
 
@@ -14,10 +14,10 @@ class Reasonix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "238814a9b20057062dbbca4576d480ab0dda75d2f348dae56f50761b75bae41a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "238814a9b20057062dbbca4576d480ab0dda75d2f348dae56f50761b75bae41a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95ea42c29f8322ecc742de0e38f06c87e2cc20147bed9d4dcd4af47908d4745e"
-    sha256 cellar: :any,                 x86_64_linux:  "bb430d646851d5079835d7e12ec4b6e6f7546f97a346d0c919eeb05a6b656f4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d259d11fe333a183e18a12105f569ab8e2ea58ed4ce0bcbcbbff16630d659e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d259d11fe333a183e18a12105f569ab8e2ea58ed4ce0bcbcbbff16630d659e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40e4fdf7b02cabf1716da86bb5cf9e0c4dcd9165183a3f94bb7436be25450d6d"
+    sha256 cellar: :any,                 x86_64_linux:  "6cf47c19fb4793e23a069364a6620735672cc8a57739a2292133649ffd1b2bcf"
   end
 
   depends_on "go" => :build
