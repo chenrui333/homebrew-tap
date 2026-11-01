@@ -85,6 +85,7 @@ brew install --cask <tool>
 - `autoflake`
 - `autotag`
 - `autotools-language-server`
+- `auv`
 - `av`
 - `aven`
 - `await`
