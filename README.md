@@ -267,6 +267,7 @@ brew install --cask <tool>
 - `cross-seed`
 - `crush`
 - `csvi`
+- `ctx`
 - `ctxhist`
 - `ctxmv`
 - `cueimports`
@@ -762,6 +763,7 @@ brew install --cask <tool>
 - `omni-cache`
 - `omnictl`
 - `omp-manager`
+- `omp`
 - `opamui`
 - `open-code-review`
 - `openclacky`
