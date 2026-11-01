@@ -1,0 +1,15 @@
+Formula/o/oh-my-openagent.rb
+  h_9df9c32c3f321d 1-15,21-145,190-224,228-271,290-291
+  h_9df9c32c3f321d 16-20,146-189,225-227,272-289
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a59047afad6c9d47471022c763ca46b6ed691f89",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
