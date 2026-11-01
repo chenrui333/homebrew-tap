@@ -8,10 +8,10 @@ class Sish < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc18cef76d102afe1c91257da7c6a869e9df09ab17382ef9195e8af0eb6326fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc18cef76d102afe1c91257da7c6a869e9df09ab17382ef9195e8af0eb6326fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "171a6b9f8d8a977760d229ffe85c7f8728127c4ceab6307f2b13fc6767a0a58c"
-    sha256 cellar: :any,                 x86_64_linux:  "20143de8d0c87cb73a101a9671df06ebb22a76f19d3e14380b4cd694980e0623"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b88fe32a01b1f740cc4638b9143534e27f136155b00d53212432c758ea6e2f8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b88fe32a01b1f740cc4638b9143534e27f136155b00d53212432c758ea6e2f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2c2ceb6c7ad98e0115909093969c08972973b6e40765f2cecae9be6cd2374fa"
+    sha256 cellar: :any,                 x86_64_linux:  "aa58ec0cc37546c1df413913f98fa014ef6bd2ce8a7ebef1c2fab9b4c855c52d"
   end
 
   depends_on "go" => :build
