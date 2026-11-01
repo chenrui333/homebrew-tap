@@ -6,6 +6,14 @@ class Luvus < Formula
   license "Apache-2.0"
   head "https://github.com/RizRiyz/luvus.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d07c4ce4f716eb3825decd3816715d8df601bd7e49902c09f01cc1a979a3f6e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3054d5f9727b6d7dc84b40ca0029a106c19a01803276f87588ff42fc228e6609"
+    sha256 cellar: :any,                 arm64_linux:   "34a4f965bf33e223ba4df0e99fd2517a0bb925e23fc51fb18472cd41cc18b734"
+    sha256 cellar: :any,                 x86_64_linux:  "71fce1ed693f1e5df3a3372d81a76ec4bdbd676d9ade73b6351b502bf284e1fe"
+  end
+
   depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
