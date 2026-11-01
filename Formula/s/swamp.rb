@@ -8,6 +8,14 @@ class Swamp < Formula
   license "AGPL-3.0-only"
   head "https://git.swamp-club.com/swamp-club/swamp.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "7f8e09952cbd39b06e6f550eb8b47d4f2d276fc842a984129fdd098f7890d997"
+    sha256 cellar: :any,                 arm64_sequoia: "ad79ca64a9f8c329954eb4711ccd3a3ef2485dea8091d076e5b5e62f1bb80a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2396170bc630dbd4a3a9b9bc20d8ebe0dc89a829bb4dc78c99e3a157bf1f75ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "548d77c0ea73553946fa9025784c4d98022b84a4eb65b752cf8b562aaa1a225e"
+  end
+
   depends_on "node" => :build
   depends_on "deno"
 
