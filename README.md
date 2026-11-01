@@ -431,6 +431,7 @@ brew install --cask <tool>
 - `gitid`
 - `gitlabform`
 - `gitman`
+- `gitnexus`
 - `gitpane`
 - `gitsnip`
 - `gitsocial`
