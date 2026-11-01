@@ -7,6 +7,14 @@ class ClawCode < Formula
   license "MIT"
   head "https://github.com/ultraworkers/claw-code.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ec46b10a37a77ad42c4a8cf3f6a68be513eecd630f1aa09b13195e0df445ffea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77339251a46d3412999d7a7fd133a8e4c48df49d67a12f0031d040da3b857c18"
+    sha256 cellar: :any,                 arm64_linux:   "c5d86a5232bc435006fe4a794ef71e2b4a30cb77a1ad0023db16ca28f49b9157"
+    sha256 cellar: :any,                 x86_64_linux:  "2a9266c43c5d6a7af239232b7654097eab42cbb78e85ea57cd3b4dcc8c46f4c4"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
