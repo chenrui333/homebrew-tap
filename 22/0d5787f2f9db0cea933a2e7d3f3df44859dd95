@@ -1,0 +1,14 @@
+Formula/o/opencodex.rb
+  h_9df9c32c3f321d 1-83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "220d5787f2f9db0cea933a2e7d3f3df44859dd95",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
