@@ -6,6 +6,14 @@ class TuiTest < Formula
   license all_of: ["MIT", "OFL-1.1"]
   head "https://github.com/microsoft/tui-test.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f34aeb89134e217b165d28fd11a4c5f2ec93b02896b1ea59f164bbf976533d8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bac4d005d28a5daca8fc3d5f6ff40366b875dcf3b736deaaba9cf655461a544"
+    sha256 cellar: :any,                 arm64_linux:   "95d1e5b0478d881633b9859c8a9e97867094a721e7af964f87f90d802bdb8edf"
+    sha256 cellar: :any,                 x86_64_linux:  "25fbd1c2c2d42291d47c14c94e493d61d03217232c928a69f79f2a0aee9a7929"
+  end
+
   depends_on "rust" => :build
   depends_on "zig@0.16" => :build
 
