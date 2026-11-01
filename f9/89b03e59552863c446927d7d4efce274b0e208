@@ -1,0 +1,15 @@
+Formula/o/omo-ai.rb
+  h_9df9c32c3f321d 1-18,22,24-36,42-123,127,132-168,233-243,247-274,277-328,347-348
+  h_9df9c32c3f321d 19-21,23,37-41,124-126,128-131,169-232,244-246,275-276,329-346
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f989b03e59552863c446927d7d4efce274b0e208",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
