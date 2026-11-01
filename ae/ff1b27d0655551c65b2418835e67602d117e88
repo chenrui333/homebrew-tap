@@ -1,0 +1,14 @@
+Formula/s/sub2api.rb
+  h_9df9c32c3f321d 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aeff1b27d0655551c65b2418835e67602d117e88",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
