@@ -936,5 +936,11 @@
   "https://terminaltrove.com/mitos/": "https://github.com/mitos-editor/mitos",
   "https://terminaltrove.com/yq/": "https://github.com/kislyuk/yq",
   "https://terminaltrove.com/eprofiler-tui/": "https://github.com/rogercoll/eprofiler-tui",
-  "https://terminaltrove.com/edamame/": "https://github.com/mijowi/edamame"
+  "https://terminaltrove.com/edamame/": "https://github.com/mijowi/edamame",
+  "https://terminaltrove.com/sqlmux/": "https://github.com/kackerx/sqlmux/",
+  "https://terminaltrove.com/proxelar/": "https://github.com/emanuele-em/proxelar/",
+  "https://terminaltrove.com/termtastic/": "https://github.com/acelot/termtastic/",
+  "https://terminaltrove.com/spor/": "https://github.com/emprcl/spor",
+  "https://terminaltrove.com/kernwatch/": "https://github.com/matthart1983/kernwatch",
+  "https://terminaltrove.com/clavirio/": "https://github.com/alexylon/clavirio"
 }
