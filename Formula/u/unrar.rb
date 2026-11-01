@@ -1,8 +1,8 @@
 class Unrar < Formula
   desc "Extract, view, and test RAR archives"
   homepage "https://www.rarlab.com/"
-  url "https://www.rarlab.com/rar/unrarsrc-7.3.1.tar.gz"
-  sha256 "634900842a3737d9cc15bbcc71d4c74cc713437e0bca296a573424fe5f2660ab"
+  url "https://www.rarlab.com/rar/unrarsrc-7.3.2.tar.gz"
+  sha256 "f61a1160d6e2ebbda2ad353c8e82f62ab4312f97fde23c6c2c982d25e0014f99"
   license "UnRAR"
 
   livecheck do
@@ -12,11 +12,10 @@ class Unrar < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "8153e694216a1d74af39d80f75cc11d93b02c8dc290e5a166ec0b77bd1603e86"
-    sha256 cellar: :any, arm64_sequoia: "38595c61e59cbd4afd5106fd9430395edc1097d093f7d9b1d1ea89af796d5312"
-    sha256 cellar: :any, arm64_linux:   "85d9b16d757bd8fdde66ccefe2385ff730a14c5a354357f3e6e30c77914f1686"
-    sha256 cellar: :any, x86_64_linux:  "889e98e1625a1817826be95feb535c9b6bd9ef83271824a568d732dc8b8ea710"
+    sha256 cellar: :any, arm64_tahoe:   "257715d84582ef10b6b1e547a21044b03fcf6fcb5b439e95fabaaa37187ea36f"
+    sha256 cellar: :any, arm64_sequoia: "51e444b6f88714f1bcaf1cb49edcd7050d844e3ebdc4b6348892ec669b0dcefe"
+    sha256 cellar: :any, arm64_linux:   "b6de4e762117d5eae652a43dcd6622c3d47904b655a61700cffa7ca6207eff94"
+    sha256 cellar: :any, x86_64_linux:  "4dee5d9bfe9023161e85a5c4dad1440c0db30f1166b6a6e25e094a3712260c86"
   end
 
   deny_network_access!
