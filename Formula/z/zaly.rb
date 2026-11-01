@@ -16,6 +16,14 @@ class Zaly < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e1d9de2b2dd77ceecdab461a4ecc001eab93793f458026edc1e8dbbcce59069"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "032b044c9bce5df4d8e36fd348a31af737d2abf10cc25b241624c5cf819b4afc"
+    sha256 cellar: :any,                 arm64_linux:   "6a901b9666ef242e2b45a7476e28dca0ebb96bb395c9b45687c288e1247651e1"
+    sha256 cellar: :any,                 x86_64_linux:  "af793c2c9b71bbe68c0b5de104a3bd31dd216c4a771afbc9d6b67e1260b2ee66"
+  end
+
   depends_on "bun" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
