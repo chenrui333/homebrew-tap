@@ -6,6 +6,14 @@ class Openspecui < Formula
   license "MIT"
   head "https://github.com/jixoai/openspecui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "8c7ac92b03a01c41270d3b6c6d9a2b8e7af75d3259c94cd04baa9f192aabdcc6"
+    sha256 cellar: :any, arm64_sequoia: "26515b97306142b89b13c646626304630343677a36f2035a5466c8d336367c57"
+    sha256 cellar: :any, arm64_linux:   "5c4a8636dcb83604ca71840eecdd74a35bf06a5f8c38592630fb63ba5c7bdb5f"
+    sha256 cellar: :any, x86_64_linux:  "ef441703add4ce82f1ca14437ba0e03b9331cf0a503fb9652b3183ee6d48ba16"
+  end
+
   depends_on "bun" => :build
   depends_on "pkgconf" => :build
   depends_on "pnpm" => :build
