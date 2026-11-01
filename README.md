@@ -779,6 +779,7 @@ brew install --cask <tool>
 - `openharness`
 - `openresearch`
 - `opensnitch-tui`
+- `openspecui`
 - `oproxy`
 - `optimizt`
 - `optivorbis`
