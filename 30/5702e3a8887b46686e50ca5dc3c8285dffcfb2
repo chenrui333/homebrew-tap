@@ -1,0 +1,19 @@
+Formula/s/sbomgr.rb
+  s_1fbf4065af8f3a::t_5c8ec33b0c8c77 1-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "305702e3a8887b46686e50ca5dc3c8285dffcfb2",
+  "prompts": {},
+  "sessions": {
+    "s_1fbf4065af8f3a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_1fbf4065af8f3a",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
