@@ -7,7 +7,7 @@ class Tapflow < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "58b82e3479175829737f9515ec0aea8b73a9d6a4a8b12f2b4e642f25ca31a35b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "89740fcca5015e1419eb750d486b42a76b377c9eb85a2afaae4aa9ad26eaadfb"
   end
 
   depends_on :macos
