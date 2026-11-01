@@ -1,0 +1,15 @@
+Formula/m/minimax-code.rb
+  h_9df9c32c3f321d 1-93,101-121
+  h_9df9c32c3f321d 94-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "edc365f476c8d538f1d7b37fd7013013cf7a0d81",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
