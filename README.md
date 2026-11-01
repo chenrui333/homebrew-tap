@@ -1041,6 +1041,7 @@ brew install --cask <tool>
 - `swpui`
 - `systeroid`
 - `tftargets`
+- `t3code`
 - `tabminal`
 - `tako-vm`
 - `tangent-cli`
