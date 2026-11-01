@@ -770,6 +770,7 @@ brew install --cask <tool>
 - `open-code-review`
 - `openclacky`
 - `opencli`
+- `opencodex`
 - `openhands-agent-canvas`
 - `openharness`
 - `openresearch`
