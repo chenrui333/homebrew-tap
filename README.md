@@ -815,6 +815,7 @@ brew install --cask <tool>
 - `pho`
 - `phpinsights`
 - `pi-acp`
+- `picoclaw-afjcjsbx`
 - `pike`
 - `pikpaktui`
 - `pingu`
