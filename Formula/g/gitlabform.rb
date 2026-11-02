@@ -3,16 +3,16 @@ class Gitlabform < Formula
 
   desc "Specialized configuration as a code tool for GitLab"
   homepage "https://gitlabform.github.io/gitlabform/"
-  url "https://files.pythonhosted.org/packages/17/70/359958fc731ced96167b91cc18b15c8f0bc3e69f8642be040a75ec982071/gitlabform-6.3.1.tar.gz"
-  sha256 "0189c014455170c29c4c8c79081994dcf30218b0a870ea26f1e3a728e229e097"
+  url "https://files.pythonhosted.org/packages/86/a0/5f16b57d0a5e9bb6981803f0ee14dc02d0d0c3197993778b6dc251941d68/gitlabform-6.3.2.tar.gz"
+  sha256 "54f429c6875d7d4ecccd4355ef84ffc15e4aa8bcea6dc6840deda5769d2a714e"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ddbf79375b3adc7cc9ef7405b07f6b6b57a74fabfe4ce61886f5d78c5223a3e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4df4804a635d9acd4d578353d90accb7a5dae08493a2fbe8a54de451a939f779"
-    sha256 cellar: :any,                 arm64_linux:   "4fe5c72ff9bc9c6d752d6ce0d79c85e0e8208e505b1b19637c16d8cf93e52978"
-    sha256 cellar: :any,                 x86_64_linux:  "b1a80c8a0a1551dc57c40c4b4784133d71564796eb864af214a006f6694f99a9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7e8ed7f66bc63ea489f350f3b268ff635d7487df8dbfff043754d3e0891cede8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b894ec049312c323d175777acf9388155f6fde4d68a1f673e919bd211ab410b"
+    sha256 cellar: :any,                 arm64_linux:   "4a5d5c7dc08749d705933ecb9daf2b7f1f9109aeed50f80d866f0105e97d31a8"
+    sha256 cellar: :any,                 x86_64_linux:  "8dbd113d8f25b565f580d4b9e91cd2179bf082d06cbf413073f7c8cd327e457f"
   end
 
   depends_on "maturin" => :build
@@ -26,8 +26,8 @@ class Gitlabform < Formula
   ], exclude_packages: "certifi"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
-    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+    url "https://files.pythonhosted.org/packages/a1/98/7e457a3b014976887a050561955c0b76e1e7e2d6e27b78ecef2ef80518f2/anyio-4.16.0.tar.gz"
+    sha256 "59bb03251907983d1603d27c3087ddb1e93299ea2163adcdba37899a4fb12ffb"
   end
 
   resource "charset-normalizer" do
@@ -56,8 +56,8 @@ class Gitlabform < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
   end
 
   resource "gql" do
@@ -86,8 +86,8 @@ class Gitlabform < Formula
   end
 
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
-    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    url "https://files.pythonhosted.org/packages/7a/f1/e47b937226ae3b093bbd0132eb0b7ee5bfad12c2b5324afd10ae49946b05/hatchling-1.33.0.tar.gz"
+    sha256 "4c422bd4d554fcff5de5b73e9596f85e41e9f97f7e553d8f7595ecb31a627bef"
   end
 
   resource "httpcore" do
@@ -241,8 +241,8 @@ class Gitlabform < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
-    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
+    url "https://files.pythonhosted.org/packages/7a/29/6a1391d31cd00ff9e927215a224a880e1e84e826b64ba80a499e51c074d8/tzdata-2026.6.tar.gz"
+    sha256 "85d2cd9c09f81f0bb29db27759fc83af4f1e620efb814f8c5bf8b4cc4feece6d"
   end
 
   resource "unidecode" do
@@ -256,8 +256,8 @@ class Gitlabform < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/d3/c1/7a115ebc91b2f26155cbcea487e0fcac947dab38058e2da2503ba27412c5/uv_build-0.13.5.tar.gz"
-    sha256 "c95a3d092cb8880b37f35013f9f7339f3867bc422abed36776255f34e22bc62c"
+    url "https://files.pythonhosted.org/packages/8f/98/8b9e028aa5d00f4c6f48183f3a2d9d343cd3adeb21bbd6dcc24916cd1538/uv_build-0.13.6.tar.gz"
+    sha256 "8a03355d73117d136dbf6a34e20429755598a73d752dc6ae3aa5894942b6fd4b"
   end
 
   resource "vcs-versioning" do
