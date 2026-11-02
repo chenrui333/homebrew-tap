@@ -1,8 +1,8 @@
 class PlutovOq < Formula
   desc "Terminal OpenAPI Spec viewer"
   homepage "https://github.com/plutov/oq"
-  url "https://github.com/plutov/oq/archive/refs/tags/v0.0.22.tar.gz"
-  sha256 "4b4b3f294482bdd45a044c5a20f0ebf5db47c6eb7906584e927ca48f3c14ecd6"
+  url "https://github.com/plutov/oq/archive/refs/tags/v0.0.23.tar.gz"
+  sha256 "0da761bcaea118d351b0ca106e327e2131d404f571b684fa8f4240ebaed2e8bb"
   license "MIT"
   head "https://github.com/plutov/oq.git", branch: "main"
 
