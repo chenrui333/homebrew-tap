@@ -1,8 +1,8 @@
 class Codemap < Formula
   desc "Generate a brain map of a codebase for LLM context"
   homepage "https://github.com/JordanCoin/codemap"
-  url "https://github.com/JordanCoin/codemap/archive/refs/tags/v4.6.3.tar.gz"
-  sha256 "d70bf80a3eba111a2ac357eef70252a958c608b03d5c5fbb91a6ef8a8c91b21f"
+  url "https://github.com/JordanCoin/codemap/archive/refs/tags/v4.6.4.tar.gz"
+  sha256 "3f0f81359ea7c6417a665f09d5bb65c4098508b796d2f8ab61d7d0be5c12e284"
   license "MIT"
   head "https://github.com/JordanCoin/codemap.git", branch: "main"
 
