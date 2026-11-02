@@ -1,17 +1,17 @@
 class Tilia < Formula
   desc "Formatter for Haskell source code"
   homepage "https://github.com/mrkkrp/tilia"
-  url "https://hackage.haskell.org/package/tilia-0.1.3.0/tilia-0.1.3.0.tar.gz"
-  sha256 "c6515319f93d38657b6ad9eb044fb03ee84d92f58cc072eea4aa436d38d15581"
+  url "https://hackage.haskell.org/package/tilia-0.1.4.0/tilia-0.1.4.0.tar.gz"
+  sha256 "0e024104e10c1a02526eecf31f0bf1063d8df423376a0b3511ef6adc862240ae"
   license "BSD-3-Clause"
   head "https://github.com/mrkkrp/tilia.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b68860c64aaeec2decd8ad2748f6c020c85de05b0173e443ba1f8750eecd3fb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e6eb860b764982e6ed0ae36e4b94f2d3d6246ef0d31e3a69b17e5f0aa0cc450"
-    sha256 cellar: :any,                 arm64_linux:   "776caaef6aa0b8090d1d9de1f49c3569580988137e710ee432387b89eb72c1b7"
-    sha256 cellar: :any,                 x86_64_linux:  "e4ee7ab7b07ce606cbfcd40e0736f5ed5c91b16fa5994d3401fc0208d1a42a80"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d557cf49cafb929fe1cf65851e8a181a781e9aeda5eb1200ad7896d2551db62c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36fabee5570740c7f86b1607f4f89d0c17ddc4e713d9c7d536695a6c760848d8"
+    sha256 cellar: :any,                 arm64_linux:   "d3d24072ac7a74ee20979ae79999dc7ad1a5c872b7f7eed04e2c00ad49a65398"
+    sha256 cellar: :any,                 x86_64_linux:  "aefef3ec7618b158567928ecfd7c26eee209a0ebddaa58c8d551ec4344064496"
   end
 
   # Tilia consults Cabal build plans and GHC's package database at runtime.
