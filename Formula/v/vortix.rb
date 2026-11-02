@@ -8,10 +8,10 @@ class Vortix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3d4988a83ebc678a7e11b4bb5f93b13a6c929efffece1c9498f20aea9ebcb147"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fe55eb253fb192815c4f2ae8dc0cf2febec38821d0d8575e0441cea220f77e5"
-    sha256 cellar: :any,                 arm64_linux:   "055c5a45ff460aaaf2ab05e2d76e77c7410d5c4eda52190289dfc84d9257af8e"
-    sha256 cellar: :any,                 x86_64_linux:  "fc973b9125355475a9b4e01b45bbd34f2c5f7221a809f3d410b34de4bef5700b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c49825fbcbfe52b94fadc0799fc99793f33fa04b03e99ccc847af061d0e53eb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3099a5d848c67b58b68e9ecedc7cd413f2f978c37423c6ece3c4a408253450d1"
+    sha256 cellar: :any,                 arm64_linux:   "f2196387e5793df392a7e6b73868c0bc6c1cdc952ae19efcb9cfc14fd8e60811"
+    sha256 cellar: :any,                 x86_64_linux:  "fd96ee6dca0a36492ff3afa142b648f96921e32f50e83ac98f311bbe4e2306dd"
   end
 
   depends_on "rust" => :build
