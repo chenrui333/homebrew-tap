@@ -8,10 +8,10 @@ class Streamtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4b1e0d29171bcd8e0c2bff59aa0215cdadc0507b121d4ee5503a54285d4351a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c63a9051e5ecb93c71c1814321e06fe789fcd9d3b1fb667b61350293fdfa4d8f"
-    sha256 cellar: :any,                 arm64_linux:   "840cb89b6768b10a4f5ee158cb9d27318b3927b19d1461821b8b75a0ce21a192"
-    sha256 cellar: :any,                 x86_64_linux:  "dc62ffb5c796984ab20b15f2dc3543f7553672e0b78fabebd7dca7a01c512241"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03251e20aa1009c3bea7d8551cfae503e02d2f737f6f97f54f502e888406dc93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64cb273ea111a1ac9cad696dfb010320ee11e64a4c7f811275f30e25ddc49606"
+    sha256 cellar: :any,                 arm64_linux:   "75d684fa955cc3fba86df9c79079aecfb5cc381084e55199242088b39bbfd5fe"
+    sha256 cellar: :any,                 x86_64_linux:  "9c3f392879c0fcbb113a16bc1ed7ae85e550dccc7b2cafbfc2ebbcf10e36cd40"
   end
 
   depends_on "rust" => :build
