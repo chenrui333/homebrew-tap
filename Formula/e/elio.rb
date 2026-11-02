@@ -1,8 +1,8 @@
 class Elio < Formula
   desc "Terminal file manager with rich previews and inline images"
   homepage "https://elio-fm.github.io/docs/"
-  url "https://github.com/elio-fm/elio/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "7a78b104e48f94a0460333a02f5e5f3a95dad11ec21a24e2b0be69d6e1974799"
+  url "https://github.com/elio-fm/elio/archive/refs/tags/v1.15.0.tar.gz"
+  sha256 "29e7d527ccadbfb8e0d22b15569ba566a33706bc63345f96c44a6717f6ac634c"
   license "MIT"
   head "https://github.com/elio-fm/elio.git", branch: "main"
 
