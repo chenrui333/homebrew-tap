@@ -1,8 +1,8 @@
 class Critique < Formula
   desc "Terminal UI for reviewing git changes"
   homepage "https://critique.work"
-  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.4.0.tar.gz"
-  sha256 "ef297160eabb2bf1d5f62a31cba15f710ae090a356351f14eb70b969b74cee2a"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.5.0.tar.gz"
+  sha256 "6c3111d02a1818102ecc766057749221f2695ae7c712059d950b631f045ab34e"
   license "MIT"
 
   bottle do
@@ -24,10 +24,6 @@ class Critique < Formula
   end
 
   def install
-    cd "comments-server" do
-      system "bun", "run", "build"
-    end
-
     cd "cli" do
       system "bun", "run", "build"
     end
@@ -64,7 +60,7 @@ class Critique < Formula
       end
     end
 
-    libexec.install "cli", "comments-server", "node_modules", "package.json", "bun.lock"
+    libexec.install "cli", "node_modules", "package.json", "bun.lock"
     (bin/"critique").write <<~SH
       #!/bin/bash
       exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/cli/dist/cli.js" "$@"
