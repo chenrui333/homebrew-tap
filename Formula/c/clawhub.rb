@@ -1,8 +1,8 @@
 class Clawhub < Formula
   desc "Install, update, search, and publish agent skills"
   homepage "https://clawhub.ai"
-  url "https://registry.npmjs.org/clawhub/-/clawhub-0.24.1.tgz"
-  sha256 "520fd77e73a759c488076dd3edb315f8cff7fbb53874a6594e1b6b60cfc54349"
+  url "https://registry.npmjs.org/clawhub/-/clawhub-0.25.0.tgz"
+  sha256 "50499d154dc831323076c29333c60151853ca0035dcb7d062410567e141023d5"
   license "MIT"
 
   bottle do
