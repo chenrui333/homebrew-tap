@@ -1,17 +1,17 @@
 class DeckcraftCli < Formula
   desc "Headless DeckCraft to render, convert and script slide decks, with MCP server"
   homepage "https://getartcraft.com/apps/deckcraft"
-  url "https://github.com/storytold/deckcraft/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "c5e91ca9cb2b87509648e5633722a251eaf12d95dffd84ef46aec2aa858066e8"
+  url "https://github.com/storytold/deckcraft/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "6e03f2e9532c0102ec01d8be8bba556a0191ee11d5ca64412a5b48457afddfb7"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/deckcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8c16cdb4374fcd0d8b3d6d9577cbdaa54a361087e592924eaa5498bc645ff0eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7e4089aca03b129d8676737039cf1ed849e5b0fb9119df270e1e909ad91d219"
-    sha256 cellar: :any,                 arm64_linux:   "8ff2d2afe954492ef5b855046ed5e215061eb7ce994198218fbcc6d2dcb32c3b"
-    sha256 cellar: :any,                 x86_64_linux:  "3d321ce8b69b0b3b8991624ddda4b0fcf675c1725260e79542d77f345fbd64a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da431ade26eaa98ad4c699560dbdfbb294ae2208d0ffcf520c3f458ec671b048"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1a9df7847900e5feb53e509eb588c489b611bb5f676c04f906fbdf34ab62e76"
+    sha256 cellar: :any,                 arm64_linux:   "f2de8a2389ce948984f53f43d747898ae408a3e5eee6932785832494df345ee5"
+    sha256 cellar: :any,                 x86_64_linux:  "c63999301eb77ad95065973328639708decbb574a872f57acc72c009c3bbfdcc"
   end
 
   depends_on "rust" => :build
