@@ -1,8 +1,8 @@
 class But < Formula
   desc "Standalone GitButler command-line Git client"
   homepage "https://docs.gitbutler.com/cli-overview"
-  url "https://github.com/gitbutlerapp/gitbutler/archive/refs/tags/release/0.23.1.tar.gz"
-  sha256 "6f1df8504e151f4b42042ab391fb62a4172fec9bbc68591e02ff49a6d1d9e77a"
+  url "https://github.com/gitbutlerapp/gitbutler/archive/refs/tags/release/0.23.2.tar.gz"
+  sha256 "dd4ff0e6bd6271f206e886f23ab85c5589347d0d4371835269322b8967fe3aaa"
   # Functional Source License 1.1 with a future MIT grant, not current MIT.
   license :cannot_represent
   head "https://github.com/gitbutlerapp/gitbutler.git", branch: "master"
