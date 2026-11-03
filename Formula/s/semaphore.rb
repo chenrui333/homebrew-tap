@@ -1,17 +1,17 @@
 class Semaphore < Formula
   desc "Modern UI and powerful API for Ansible, Terraform/OpenTofu/Terragrunt"
   homepage "https://filebrowser.org/"
-  url "https://github.com/semaphoreui/semaphore/archive/refs/tags/v2.19.17.tar.gz"
-  sha256 "ea97554e1278b09aedfb6da36bf8dcdc874b91ea6fe6752957f3f97bded5a352"
+  url "https://github.com/semaphoreui/semaphore/archive/refs/tags/v2.19.18.tar.gz"
+  sha256 "582f2c71efd398788b22562b13577aeed8a8bfe0b39a41b11c5da404fe221def"
   license "MIT"
   head "https://github.com/semaphoreui/semaphore.git", branch: "develop"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1df6911c6059696924c677bc33146831c7ee998543519595bdc9c41ea9cff90b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e244ddebfac78e1c4b34ac07f5f4c778d0ed672fcd53663571104f36f85c9951"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b07d7161af4a7d1a5d5f15886e8f6cbcea4cb07f04c747f73eaaffc28b3076d"
-    sha256 cellar: :any,                 x86_64_linux:  "de07e0111286c83eeda237d69eead2d6b211a24fc77246242af4e4bc4fae6a59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d5bb82d25df44a2447cf3cf0dcef8daa444258d20eef276397c83e5e0a34679d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5bb82d25df44a2447cf3cf0dcef8daa444258d20eef276397c83e5e0a34679d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d15841f36de8e2af915fe0cc51cd2dbd0395b7c6df8d49bb143f76ed70489361"
+    sha256 cellar: :any,                 x86_64_linux:  "48c7f84eb8aeb9ef42b3e80cfb5b83e845cc30145023273b2a5163b9a60d2e0d"
   end
 
   depends_on "go" => :build
