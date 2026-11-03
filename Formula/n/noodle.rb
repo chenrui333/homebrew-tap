@@ -8,10 +8,10 @@ class Noodle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "59b7dc9325c2ddd49051e95eefb391d5fcc65602c376c52efdf2ca420c5ffb95"
-    sha256 cellar: :any,                 arm64_sequoia: "47ada8d9aa8294c66fefe22314c7902fa22eccc0a414046f96e50668981594bd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "783e56064da3bacaaa305a1d6471c51302cc97eac6a5350f344f8a826ef7b42c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9af79751411300fd9f3a76622be6aa6f36ca87c081cf38a9035b666b13c5700"
+    sha256 cellar: :any,                 arm64_tahoe:   "a4b8e3b66947e89b484847ae2bc77bd9ca23fd7673d465e6c212c598de2a6523"
+    sha256 cellar: :any,                 arm64_sequoia: "29872b50e937dfb7714a98253d5b8234a800e0bdfef7a42b88e18f338de43f6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d236da03c4e6513d8188de3ed561ca6fb579b431f9f4748b056c38ddd505ded2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "457999cd073583621bba168513d9c312622926880d38b86ba93ae4d91dff74c4"
   end
 
   depends_on "zig@0.16" => :build
