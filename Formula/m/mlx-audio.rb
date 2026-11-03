@@ -3,15 +3,15 @@ class MlxAudio < Formula
 
   desc "Run audio models on Apple silicon with MLX"
   homepage "https://github.com/Blaizzy/mlx-audio"
-  url "https://files.pythonhosted.org/packages/e8/bb/b7948154fce2ed21c0184407ccdec85ee91f44b4d41c91a625a2877ccaf8/mlx_audio-0.6.3.tar.gz"
-  sha256 "bed9a2801a4d500fd007b046bd0209ddcbe2cb0528a648ee7891486b30909df6"
+  url "https://files.pythonhosted.org/packages/cb/be/1b47eb8f6d8da84ea3f5a1e5257195ba11f1e90af22754fb698393dad1f9/mlx_audio-0.6.4.tar.gz"
+  sha256 "092dee1f010846cee76b164a988ad9802e45d4c79771d65d55ceb9de246fab4b"
   license "MIT"
   head "https://github.com/Blaizzy/mlx-audio.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "8e72b9fe0c54863860e46ea0a53148e0396e46d2d5dcb5362325f93d43f18c37"
-    sha256 cellar: :any, arm64_sequoia: "670a92e1e0dad9cc17038c2be042f96cdeb1c04c7a5a4addd7b9a926bbbe9d6c"
+    sha256 cellar: :any, arm64_tahoe:   "c0257ebae1c70375ce9cee8459274c1caab314e0399db9a222acd7da416686a1"
+    sha256 cellar: :any, arm64_sequoia: "6b7c9d5bd23c18905972b5889fe23c6cb2e6b1ed9687d4a54da54e1a524591e2"
   end
 
   depends_on "cmake" => :build
@@ -53,8 +53,8 @@ class MlxAudio < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
-    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+    url "https://files.pythonhosted.org/packages/a1/98/7e457a3b014976887a050561955c0b76e1e7e2d6e27b78ecef2ef80518f2/anyio-4.16.0.tar.gz"
+    sha256 "59bb03251907983d1603d27c3087ddb1e93299ea2163adcdba37899a4fb12ffb"
   end
 
   resource "calver" do
@@ -78,8 +78,8 @@ class MlxAudio < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
-    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
+    url "https://files.pythonhosted.org/packages/e0/14/73688a22e91cfcfc6837a011ffa572e2ba3c348765f7bd482d8436fa9b6f/filelock-4.2.7.tar.gz"
+    sha256 "31f6f7e3a8b6f0bd89114d30c5d5218ea1cfb63e5c4aa695b7559314a209bc7f"
   end
 
   resource "flit-core" do
@@ -113,8 +113,8 @@ class MlxAudio < Formula
   end
 
   resource "hf-xet" do
-    url "https://files.pythonhosted.org/packages/a3/ed/54c8ef80981b548649edda8f1302e5a42edb4e97672d742ee020c97f4856/hf_xet-1.7.1.tar.gz"
-    sha256 "89d06f4975e807eefc6f6777180f452cfb86f6c79f2a6caa6fb28809c84c6777"
+    url "https://files.pythonhosted.org/packages/2f/18/d91c20f815df6cc496a5d0ad8db6d274dad5c0cfcd59babfa2440a9aba44/hf_xet-1.8.0.tar.gz"
+    sha256 "10ed23b51dacf7917d64f335c25048deb470efa755e9989b218fc0531386138e"
   end
 
   resource "httpcore2" do
@@ -128,8 +128,8 @@ class MlxAudio < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/46/dd/585639d95f6a987c0bdfb9045f050f4ad67240775644ba7a4fdc5aca3a3b/huggingface_hub-2.3.0.tar.gz"
-    sha256 "0b783b37f200f1d25bef2344a997c7d410f4437fbe9d8fd965f958e75cec7aef"
+    url "https://files.pythonhosted.org/packages/b5/3b/2fcef1eabe52aec90fc8cd253cc154da1d02a446d7bbcdec59b4a51d4be7/huggingface_hub-2.4.0.tar.gz"
+    sha256 "13a6158b9e3393d9d3f248ce99074d50c2a0a1449fb9d8e2f710751e2084c188"
   end
 
   resource "idna" do
@@ -253,8 +253,8 @@ class MlxAudio < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/f6/9d/59e6232df8761e2c82d52e0bef5382e830d1cd65f02f648712ccd7675e7b/transformers-5.21.0.tar.gz"
-    sha256 "43c971a3eb9ab68dc9dfff430f8ab8a0fba09af2f68b608fd70c6245d2ddb8e7"
+    url "https://files.pythonhosted.org/packages/17/d6/a610b37bbc3450c056ea68c7f5016d06da8e787c1ac32b20ce58d18a1eb0/transformers-5.22.1.tar.gz"
+    sha256 "bed9fd76d6f43b4a1a9fc5d0c565ace7c77edbd029784f8cbcdf772cb5e924d8"
   end
 
   resource "trove-classifiers" do
