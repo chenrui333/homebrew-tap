@@ -1,17 +1,17 @@
 class SemCli < Formula
   desc "Semantic version control CLI with entity-level diffs"
   homepage "https://github.com/Ataraxy-Labs/sem"
-  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.29.0.tar.gz"
-  sha256 "cc63eedf796127dbb8d980fe83a334d6b68d0b9325683b9a003fcff93af3de50"
+  url "https://github.com/Ataraxy-Labs/sem/archive/refs/tags/v0.29.1.tar.gz"
+  sha256 "4b6ecfc6c1a94c11d1c20f0f19ed5f64c338bf8908137ca6546ad82c10732089"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/Ataraxy-Labs/sem.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3e985caf7dad0e278c74378217a4c584e6d1d3bee3a180d1091c73864227fc5c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "218e520d89cf16411f39628b64342960abb3aa5043405e2d81c9a58414358aa1"
-    sha256 cellar: :any,                 arm64_linux:   "3c9d8cd3b0a7226f344f2da43d1ddce3423274bcd654010b47f4abdcb758f565"
-    sha256 cellar: :any,                 x86_64_linux:  "9de3c795db1a5d147c3d85a89d1309c01e3a22651a66ae664e3d12705bd9cb65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b9713869d9a796d31acdccdf549d3b10e4b930789539c91ff276c56f714a0d86"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b05550965d0f1d09629eae4d005090c88c424141ffaf1d774b4a357e2414ec8"
+    sha256 cellar: :any,                 arm64_linux:   "a9f1ed0863b5e7e273cd0c96cdab9899d421594edc09068ed2a4361f9b81b220"
+    sha256 cellar: :any,                 x86_64_linux:  "37f0de05c192586e7e007d398d2b9e360bbbaa32d6e6192a6f6bae79e21fd1de"
   end
 
   depends_on "pkgconf" => :build
