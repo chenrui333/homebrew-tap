@@ -1,8 +1,8 @@
 class Papr < Formula
   desc "Terminal workspace for academic research"
   homepage "https://github.com/AfrozSaqlain/Papr"
-  url "https://github.com/AfrozSaqlain/Papr/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "e5648239d6632634bd3dfe2c504147f509f26224943d41c5272815b13e3ed81c"
+  url "https://github.com/AfrozSaqlain/Papr/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "4a08d83c6d1cc98af6fbc0594581e29f995bb8e0436b78ebacd9361be9dbd1bf"
   license "MIT"
   head "https://github.com/AfrozSaqlain/Papr.git", branch: "main"
 
@@ -25,7 +25,6 @@ class Papr < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/papr")
-    generate_completions_from_executable(bin/"papr", "completions")
   end
 
   test do
