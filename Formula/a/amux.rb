@@ -1,17 +1,16 @@
 class Amux < Formula
   desc "TUI for easily running parallel coding agents"
   homepage "https://github.com/andyrewlee/amux"
-  url "https://github.com/andyrewlee/amux/archive/refs/tags/v0.0.20.tar.gz"
-  sha256 "32a864d2b9a8b73f0bae347e35ba174e123f928358c99321d29466373b987262"
+  url "https://github.com/andyrewlee/amux/archive/refs/tags/v0.0.21.tar.gz"
+  sha256 "61508baf90d6e1ddb7c2027decc5198fbda6486ef19404bce44ef1791d56e29d"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "020ffd78c0a064b2b2b4b1607bdcfe883bb587689f4c58fe99fc548db138ee70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "020ffd78c0a064b2b2b4b1607bdcfe883bb587689f4c58fe99fc548db138ee70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "020ffd78c0a064b2b2b4b1607bdcfe883bb587689f4c58fe99fc548db138ee70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc201bf1216ab520efef4883d79be3e0bfa0f6c133d48b4944584f4dd176bb70"
-    sha256 cellar: :any,                 x86_64_linux:  "bfe077e352b22846c19500a85d20cf43f39419cfc44474b38416f6538841cf28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e0037916f9b6a3615915f47d54940957381cb66dc46cc31c762f28c4b0b803d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e0037916f9b6a3615915f47d54940957381cb66dc46cc31c762f28c4b0b803d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c31cf915f67a6c4f55aa99dc64d63f031a567c0b4d80fa7f1b49fe0a9852ff5"
+    sha256 cellar: :any,                 x86_64_linux:  "5ea7f7cdfedd34ce1f0580485c6819fd72e4b126fa39d116fcefed142a954e74"
   end
 
   depends_on "go" => :build
