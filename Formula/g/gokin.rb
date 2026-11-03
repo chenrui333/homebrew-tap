@@ -1,17 +1,17 @@
 class Gokin < Formula
   desc "AI-powered CLI assistant for code"
   homepage "https://gokin.ginkida.dev"
-  url "https://github.com/ginkida/gokin/archive/refs/tags/v0.103.0.tar.gz"
-  sha256 "ecb8ef6abe8410c3cbeeeaea26cbb1cbfa4e0419458ac32c744a70ccab3bf1a3"
+  url "https://github.com/ginkida/gokin/archive/refs/tags/v0.103.1.tar.gz"
+  sha256 "b2a8206ebbd981031fb7b4777ba147cbc075dbda75a9be3a5e0bf4d760197828"
   license "MIT"
   head "https://github.com/ginkida/gokin.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d65a30516270b87084e3525d76d7a3765c340a5c6679f0915a1fcb877d6fd383"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c8d5d415e7bcb1be9ee78773c6a85403537085eb8c88e08cb72b2d15df5915"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0cdc4907ece4bf55a9e6f1ee12300516ecea53630df04883c1d0c8e2ce9f49a"
-    sha256 cellar: :any,                 x86_64_linux:  "78af3c1c0c4ac4c5827565caf30437a835d3a19635f72b64e83e63a669a962f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b90f0edae81d749d460f490a7e9d4596759dd17689e6be245e6de8caee6d74ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d72484c6ddfc3dbe004249454943dfd0aafc8480f91fae253b2080ef68d4cdbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "38fc9921667835ad744d9dbcc1c39951434f2269461083d9fc8ed5dcf1ecfbd5"
+    sha256 cellar: :any,                 x86_64_linux:  "26cbe858b6b2fe2cf7b78be3f8a2014da0e221af6a7ddd02cd2e48d271932ad6"
   end
 
   depends_on "go" => :build
