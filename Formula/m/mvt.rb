@@ -3,8 +3,8 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/51/83/648b9682bd3a6c0438b7ae045e5026e4a04387dffe89808067fc5bdc13e2/mvt-2026.10.26.tar.gz"
-  sha256 "f8f4b6cc801276cf1b7397a5bef73e9cfcda6d13df4720ca455f0623d59da03b"
+  url "https://files.pythonhosted.org/packages/ef/da/51d49058640ae73d527b8be29e2f8e143deec9d084481b1a0b426fb1e017/mvt-2026.11.2.tar.gz"
+  sha256 "82b2fdd974402c0b8a5b9797f4e754d66d297d5184ffac2487d694e2e508ff71"
   # Adaptation of MPL-2.0
   license :cannot_represent
   head "https://github.com/mvt-project/mvt.git", branch: "main"
@@ -62,8 +62,8 @@ class Mvt < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
   end
 
   resource "hatch-vcs" do
@@ -72,8 +72,8 @@ class Mvt < Formula
   end
 
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
-    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    url "https://files.pythonhosted.org/packages/7a/f1/e47b937226ae3b093bbd0132eb0b7ee5bfad12c2b5324afd10ae49946b05/hatchling-1.33.0.tar.gz"
+    sha256 "4c422bd4d554fcff5de5b73e9596f85e41e9f97f7e553d8f7595ecb31a627bef"
   end
 
   resource "idna" do
@@ -127,8 +127,8 @@ class Mvt < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/33/c7/f9374c8939560ab22db1dd9dbe215b62d20f32634aeb7f259dc03c807b44/pycryptodome-4.2.0.tar.gz"
-    sha256 "21d7fdba239d6ef863d3d08388801c683453a3bb4897c2b27f27847aad89bdf7"
+    url "https://files.pythonhosted.org/packages/61/52/6bf92ead9cfcfc788d9f07f2f8dad4592b190d36ed3d26a5985bbf95ff5d/pycryptodome-4.3.0.tar.gz"
+    sha256 "663fc5e1c4a3562d00c3a9b265fb94ef5f68c6085d982638b83e713af5487c06"
   end
 
   resource "pydantic-settings" do
@@ -212,8 +212,8 @@ class Mvt < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/d3/c1/7a115ebc91b2f26155cbcea487e0fcac947dab38058e2da2503ba27412c5/uv_build-0.13.5.tar.gz"
-    sha256 "c95a3d092cb8880b37f35013f9f7339f3867bc422abed36776255f34e22bc62c"
+    url "https://files.pythonhosted.org/packages/8f/98/8b9e028aa5d00f4c6f48183f3a2d9d343cd3adeb21bbd6dcc24916cd1538/uv_build-0.13.6.tar.gz"
+    sha256 "8a03355d73117d136dbf6a34e20429755598a73d752dc6ae3aa5894942b6fd4b"
   end
 
   resource "vcs-versioning" do
