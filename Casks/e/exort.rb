@@ -1,9 +1,9 @@
 cask "exort" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.4.1"
-  sha256 arm:   "db5b6def5580726043bec42756b0a7de6b039d0937ac15e4e77c3998c1ea5726",
-         intel: "29ac864371f2fb0b0c112446f8c2b89aeba2e6d37f04bdc2634477aff5920d1b"
+  version "0.4.2"
+  sha256 arm:   "036173154295eda2a4720b180a217b7dbeacab76427b23101c91f59c92ecd1e8",
+         intel: "4e44e58a5ea83535b3085895a01da69e8212d4c9fab8bc682a3abdc08e696666"
 
   url "https://github.com/Razz19/Exort/releases/download/v#{version}/Exort-#{version}-mac-#{arch}.dmg"
   name "Exort"
