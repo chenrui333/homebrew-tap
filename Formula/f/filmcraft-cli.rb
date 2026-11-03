@@ -1,17 +1,17 @@
 class FilmcraftCli < Formula
   desc "Headless FilmCraft CLI and MCP server to edit, render and export video projects"
   homepage "https://getartcraft.com/apps/filmcraft"
-  url "https://github.com/storytold/filmcraft/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "eac7deaf130bd48650b20d1ab860e94605932301e2473dd786ae842a0e33521b"
+  url "https://github.com/storytold/filmcraft/archive/refs/tags/v0.17.0.tar.gz"
+  sha256 "430de17dcf3c63223064e6f23c889c6abc4a2f08f351e0c854ff518944f9b60e"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/filmcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7360c071e9cbc3da14f9ca8bc03bd3c24ef1cf2139340cee9d25bf3e67c0bd43"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ba3c0f09edd93d094c581c21a3e6c239c7c7570a002f678e2ce7e8355177e03"
-    sha256 cellar: :any,                 arm64_linux:   "0965fe9abf7988ccc8e8d3139856a5ded49c5e9274385878fc3763d10bb099ef"
-    sha256 cellar: :any,                 x86_64_linux:  "426f81279cc76c6ee04d4c582a98bf257a0a00eb6752ea9298dfd9dbd0535d00"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31dde588a8466e530cf3a9e52e81590b1ba08d06f8781c08efa07a039890856e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e23e03c262d9f920b9151e0ab4dc5a1de03e05a0c20ab81ffa0f432930ec683"
+    sha256 cellar: :any,                 arm64_linux:   "7adb32feef21fc0b1cd3ecfa5f8e7cc35395c9585cf11bdd098caa41016e8891"
+    sha256 cellar: :any,                 x86_64_linux:  "9f0fcb1a7812d20c73c1f10781e023ed80a2fe655afdaa44018b2fce74e02d7a"
   end
 
   depends_on "rust" => :build
