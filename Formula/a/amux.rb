@@ -1,8 +1,8 @@
 class Amux < Formula
   desc "TUI for easily running parallel coding agents"
   homepage "https://github.com/andyrewlee/amux"
-  url "https://github.com/andyrewlee/amux/archive/refs/tags/v0.0.20.tar.gz"
-  sha256 "32a864d2b9a8b73f0bae347e35ba174e123f928358c99321d29466373b987262"
+  url "https://github.com/andyrewlee/amux/archive/refs/tags/v0.0.21.tar.gz"
+  sha256 "61508baf90d6e1ddb7c2027decc5198fbda6486ef19404bce44ef1791d56e29d"
   license "MIT"
 
   bottle do
