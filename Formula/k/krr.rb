@@ -3,17 +3,17 @@ class Krr < Formula
 
   desc "Prometheus-based Kubernetes Resource Recommendations"
   homepage "https://github.com/robusta-dev/krr"
-  url "https://github.com/robusta-dev/krr/archive/refs/tags/v1.31.1.tar.gz"
-  sha256 "a96654b1e7e954a64f3bafbf598dc78c0691b9ab8ad9dabd3d2be9d72d0145a7"
+  url "https://github.com/robusta-dev/krr/archive/refs/tags/v1.31.2.tar.gz"
+  sha256 "39f58dac0551e00db00ec898c4d4cccefac4cb5e1a9c77997c2e9a1e64b636e1"
   license "MIT"
   head "https://github.com/robusta-dev/krr.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73faa9eeb8dcf770f57d2118dfc83c1cc3a33e23012c138bbb728f2d46b32913"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "499a303ebca73eea3c5a219efb18955585a46975462ab2b4230dd36a0e1e73e5"
-    sha256 cellar: :any,                 arm64_linux:   "abccb4413562e94592f7a3d4004a80dac7aa39ccd48f96c562142fc39665655b"
-    sha256 cellar: :any,                 x86_64_linux:  "38143afad692975fffd07bb4d9fe6b90e5622ff9ef01a87b821aa8fd6caacf60"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e58fe00e40cee83df47e343afa292c881df2bfd41763a48ec728eca56bf8bd1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc3ff745527c3c510298ee0276b114729d741672a89aa0866d12974262c0327e"
+    sha256 cellar: :any,                 arm64_linux:   "c852f37c4d559f22d07b0ed8cd1f03fa1bb1f9467df29a79b58d2b0987e75f1c"
+    sha256 cellar: :any,                 x86_64_linux:  "fd2d5866e8f8805662a900f8cc781b68a071bb10df96e4270887ad357ae9bdc9"
   end
 
   depends_on "cmake" => :build # for contourpy
