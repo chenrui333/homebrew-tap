@@ -1,0 +1,15 @@
+Formula/f/funes.rb
+  h_9df9c32c3f321d 27-28
+  h_9df9c32c3f321d 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "94bbe40f85ef9f2cd6e1e1ab7e30a6b4ae86ad0b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
