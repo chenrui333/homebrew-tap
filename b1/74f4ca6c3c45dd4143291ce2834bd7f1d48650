@@ -1,0 +1,14 @@
+Formula/b/budgetclaw.rb
+  h_9df9c32c3f321d 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b174f4ca6c3c45dd4143291ce2834bd7f1d48650",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
