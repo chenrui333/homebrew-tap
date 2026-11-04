@@ -3,8 +3,8 @@ class Krr < Formula
 
   desc "Prometheus-based Kubernetes Resource Recommendations"
   homepage "https://github.com/robusta-dev/krr"
-  url "https://github.com/robusta-dev/krr/archive/refs/tags/v1.31.1.tar.gz"
-  sha256 "a96654b1e7e954a64f3bafbf598dc78c0691b9ab8ad9dabd3d2be9d72d0145a7"
+  url "https://github.com/robusta-dev/krr/archive/refs/tags/v1.31.2.tar.gz"
+  sha256 "39f58dac0551e00db00ec898c4d4cccefac4cb5e1a9c77997c2e9a1e64b636e1"
   license "MIT"
   head "https://github.com/robusta-dev/krr.git", branch: "main"
 
