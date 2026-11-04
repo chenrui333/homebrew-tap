@@ -1,16 +1,16 @@
 class Critique < Formula
   desc "Terminal UI for reviewing git changes"
   homepage "https://critique.work"
-  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.4.0.tar.gz"
-  sha256 "ef297160eabb2bf1d5f62a31cba15f710ae090a356351f14eb70b969b74cee2a"
+  url "https://github.com/remorses/critique/archive/refs/tags/critique@0.5.0.tar.gz"
+  sha256 "6c3111d02a1818102ecc766057749221f2695ae7c712059d950b631f045ab34e"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "81789a82bd48a071d03a8e03447797e2487d54fe69349dfab6d2a5c173129c4c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81789a82bd48a071d03a8e03447797e2487d54fe69349dfab6d2a5c173129c4c"
-    sha256 cellar: :any,                 arm64_linux:   "b925090c06fb516dd7a74f58c18e8471e8ca865e7ad247dba18f819b3625f6f8"
-    sha256 cellar: :any,                 x86_64_linux:  "923a611197ed736f3b5b258bcedf2211f326e613e7acfaa5788fa4a3ff527104"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70ee68140f8c56679769f55b1a0b0a9730cc6b2ab38d03ea8181382108673a25"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70ee68140f8c56679769f55b1a0b0a9730cc6b2ab38d03ea8181382108673a25"
+    sha256 cellar: :any,                 arm64_linux:   "e8116a8fb0e87e6bb4135d3ce81868ee7737b17fa0e97d0d5f7b2a0cc6f23651"
+    sha256 cellar: :any,                 x86_64_linux:  "c42a8bd0999a51e7c7e2a3f118b94e820f34bbb4f5643ee1bd5260ac5baccf0f"
   end
 
   depends_on "python@3.14" => :build
@@ -24,10 +24,6 @@ class Critique < Formula
   end
 
   def install
-    cd "comments-server" do
-      system "bun", "run", "build"
-    end
-
     cd "cli" do
       system "bun", "run", "build"
     end
@@ -64,7 +60,7 @@ class Critique < Formula
       end
     end
 
-    libexec.install "cli", "comments-server", "node_modules", "package.json", "bun.lock"
+    libexec.install "cli", "node_modules", "package.json", "bun.lock"
     (bin/"critique").write <<~SH
       #!/bin/bash
       exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/cli/dist/cli.js" "$@"
