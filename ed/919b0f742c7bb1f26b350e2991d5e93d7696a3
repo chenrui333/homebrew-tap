@@ -1,0 +1,14 @@
+Formula/k/kudu.rb
+  h_9df9c32c3f321d 4-5,17,19,32-33,35-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ed919b0f742c7bb1f26b350e2991d5e93d7696a3",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
