@@ -8,11 +8,10 @@ class Papr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad42b42ff54e7d8df07824df04ce5ca2aef0300fa5afe6b17092760566e3051c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3295da651dce03bed547104e83c764691b8caa6723f5ed58b893f4bb95e39fc1"
-    sha256 cellar: :any,                 arm64_linux:   "5e37c3f560766d9e5412a25c175530b289abc53cf71153b9c46147e4536ca5c9"
-    sha256 cellar: :any,                 x86_64_linux:  "29c8f7e8b5301323851ff4ff2d67434893c05f30a651ad2fbfcddb817ce41a6f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e7c1aea2f072db22e099a08b65bd9411271074dcd0109e58fd47c01a7062d93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c20cf2b7bb52b4dff6b1eb761e7968c21e2c17bd7851e44a94153a94252cbd8c"
+    sha256 cellar: :any,                 arm64_linux:   "cdf3148fd54161e453417b01d2c77e01691c561373d1ff69d6aa76045ea5a780"
+    sha256 cellar: :any,                 x86_64_linux:  "99450c53f094acd4064c3b82f8e010d26ed902cf8fe3eccf6b1a4f88d86009ca"
   end
 
   depends_on "rust" => :build
