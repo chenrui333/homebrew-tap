@@ -1,17 +1,17 @@
 class Auv < Formula
   desc "Inspectable command-line computer-use automation"
   homepage "https://github.com/moeru-ai/auv"
-  url "https://github.com/moeru-ai/auv/archive/refs/tags/v0.0.42.tar.gz"
-  sha256 "bd36f44392c37fe0e388225490c05afb9fdccc587a2b58c9945713294b4e1da8"
+  url "https://github.com/moeru-ai/auv/archive/refs/tags/v0.0.43.tar.gz"
+  sha256 "8224630a6e451f3970fb1d7b363667491dab8f1eec1ae7d19ab1fe9c7b506781"
   license all_of: ["Apache-2.0", "BSD-3-Clause"]
   head "https://github.com/moeru-ai/auv.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1faf2e7aeef85817151f604b2a9c898124c39cd1291dafa44c3a4a52b709f44a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cadf5665d9d44d7894c89986dade65bd9e6a4c43d5d0c3f9c19be08da4e7398"
-    sha256 cellar: :any,                 arm64_linux:   "930ebe1c479053563d4dd613599d86452856df791dde4168adcf166f9985a53e"
-    sha256 cellar: :any,                 x86_64_linux:  "34df04b766962457a00c59330d59c355286643c4d07fe7b6249ec01d4acbfb1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e4f349bd0c795c06ddda500191c0a2079c3e7ad18aa9f470d1a5160631024aeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ea8cc2275a9739a15026fd3d2cfa447a65c76b72e5bf44c1b7aa72f8fadd7f5"
+    sha256 cellar: :any,                 arm64_linux:   "653a20e07fe83ed50c712cc2752dbec710d9c3656a7762f264742f2f22e1c729"
+    sha256 cellar: :any,                 x86_64_linux:  "8c04b674bcf5d50f1f98c9abc947e105bdd4cfaf32a28b220612fb65ab78e596"
   end
 
   depends_on "cmake" => :build
