@@ -1,8 +1,8 @@
 class Auv < Formula
   desc "Inspectable command-line computer-use automation"
   homepage "https://github.com/moeru-ai/auv"
-  url "https://github.com/moeru-ai/auv/archive/refs/tags/v0.0.40.tar.gz"
-  sha256 "f235622ca95a105fb7590892f7fd5fcf69ceb1c5d9cf6ac583b7a8aa35a0c1df"
+  url "https://github.com/moeru-ai/auv/archive/refs/tags/v0.0.42.tar.gz"
+  sha256 "bd36f44392c37fe0e388225490c05afb9fdccc587a2b58c9945713294b4e1da8"
   license all_of: ["Apache-2.0", "BSD-3-Clause"]
   head "https://github.com/moeru-ai/auv.git", branch: "main"
 
