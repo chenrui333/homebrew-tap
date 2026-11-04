@@ -488,6 +488,7 @@ If a helper does not match the job cleanly, fall back to the explicit `brew`/`gh
 - Read error messages and annotations in "Files changed" tab
 - Check complete build log in "Checks" tab if needed
 - For Linux failures, use the [Homebrew Docker container](CONTRIBUTING.md#homebrew-docker-container)
+- Use qualified `<tap>/<cask>` names for `brew cask-ci` operations. Before testing a checked-out cask, compare its source SHA-256 with the qualified cask's `ruby_source_checksum` metadata so a registered tap cannot silently select a stale recipe.
 - If stuck, comment describing what you've tried
 
 ### Restarting GitHub Actions Runs
