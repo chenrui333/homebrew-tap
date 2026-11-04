@@ -8,10 +8,10 @@ class Auv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae48a09dbaaa5736bc6ef1e424a0e949d2e40cb28d308702d19a979dc7e335e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb9ede2d68d001520e58e82d55ce43181e0fdf9b9fda9375876208c29738b303"
-    sha256 cellar: :any,                 arm64_linux:   "66e5bd906da44781f2b710c14fc1823fefabead21c59678a2f3308c52d022760"
-    sha256 cellar: :any,                 x86_64_linux:  "3f5bd06122d86dfd98f7e1a924ba185a0b776b2fad49e2ea5cad96cb23cf0dec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1faf2e7aeef85817151f604b2a9c898124c39cd1291dafa44c3a4a52b709f44a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9cadf5665d9d44d7894c89986dade65bd9e6a4c43d5d0c3f9c19be08da4e7398"
+    sha256 cellar: :any,                 arm64_linux:   "930ebe1c479053563d4dd613599d86452856df791dde4168adcf166f9985a53e"
+    sha256 cellar: :any,                 x86_64_linux:  "34df04b766962457a00c59330d59c355286643c4d07fe7b6249ec01d4acbfb1e"
   end
 
   depends_on "cmake" => :build
