@@ -1,17 +1,17 @@
 class Openspecui < Formula
   desc "Visual interface for OpenSpec spec-driven development"
   homepage "https://github.com/jixoai/openspecui"
-  url "https://github.com/jixoai/openspecui/archive/refs/tags/openspecui%4015.1.0.tar.gz"
-  sha256 "946a6f05d693003e8686c201190289b4df45eb1095498b8705b0c3f8219102db"
+  url "https://github.com/jixoai/openspecui/archive/refs/tags/openspecui%4016.0.0.tar.gz"
+  sha256 "418d3e1ec1d562c411a09ef7df3c30b5ec0fbc56d3e2530a1030eb5395611120"
   license "MIT"
   head "https://github.com/jixoai/openspecui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "8c7ac92b03a01c41270d3b6c6d9a2b8e7af75d3259c94cd04baa9f192aabdcc6"
-    sha256 cellar: :any, arm64_sequoia: "26515b97306142b89b13c646626304630343677a36f2035a5466c8d336367c57"
-    sha256 cellar: :any, arm64_linux:   "5c4a8636dcb83604ca71840eecdd74a35bf06a5f8c38592630fb63ba5c7bdb5f"
-    sha256 cellar: :any, x86_64_linux:  "ef441703add4ce82f1ca14437ba0e03b9331cf0a503fb9652b3183ee6d48ba16"
+    sha256 cellar: :any, arm64_tahoe:   "d0accee5be4e35756d5804d716b427f65439113efea5b45db99c25b552b1f4fd"
+    sha256 cellar: :any, arm64_sequoia: "53a6b7daeca126d82eab6125bcd96cf1137240799c3dfbc811768d8385cf9c67"
+    sha256 cellar: :any, arm64_linux:   "a1e89261d44592a66fa9c572c99ff7a66a9dcbf8d1d5e3718e03e7070cd78c70"
+    sha256 cellar: :any, x86_64_linux:  "c7cfaae8932f674720aee0531858047b4bb4c76d42f0bbc25c24269352dce01b"
   end
 
   depends_on "bun" => :build
