@@ -1,0 +1,16 @@
+.github/workflows/cask-tests.yml
+  h_9df9c32c3f321d 118-119,123-132,168,188-189,227-229,250-252
+AGENTS.md
+  h_9df9c32c3f321d 491
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b80f3eedf13d4bfc831319835f0e51c9a3ef7af6",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
