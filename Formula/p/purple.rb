@@ -1,17 +1,17 @@
 class Purple < Formula
   desc "Terminal SSH config manager and cockpit for your servers"
   homepage "https://github.com/erickochen/purple"
-  url "https://github.com/erickochen/purple/archive/refs/tags/v3.33.0.tar.gz"
-  sha256 "faef1b409841f2e18cecdd6f2d06c69116901113097b53ac8d24a30c594fed31"
+  url "https://github.com/erickochen/purple/archive/refs/tags/v3.34.1.tar.gz"
+  sha256 "25cb31160bca5b7898d35f935effd608540d0141c1be5da69f8586791000f6ec"
   license "MIT"
   head "https://github.com/erickochen/purple.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6cb2d6578ead35d3af26cada67c5e7da26fdfa564a73ef35d1efe018b12cc4cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44fc6d57eb27d5acacc652d9f7f519c18439770b7d5937471c3bb3ece41d8cc5"
-    sha256 cellar: :any,                 arm64_linux:   "abdb8401377d8a2345d4e8cc7a37e9bf1f50e61a2209cc2d0ffc3cdb40dbef57"
-    sha256 cellar: :any,                 x86_64_linux:  "5e86d2c32c2d9a25af79d2f70929970b656baf2ad890052e6b9a7d05cc327be6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cc5e216626d686fcd8b75aa7082b960827844f81c7d16f3aed5de04f27e3d6f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48f894d9e786dfd02f5acf716cd4f2dedf9201b7d611cb0ef0b77c567ff0b355"
+    sha256 cellar: :any,                 arm64_linux:   "7efd9dd4bd7b1aac9a4076882eb0d003100bb1255f1758b4dca9418d44d80acf"
+    sha256 cellar: :any,                 x86_64_linux:  "22951bc5b20da4104575b1942974e4456585cbd142590a3e75ec9f140b00c88f"
   end
 
   depends_on "pkgconf" => :build
