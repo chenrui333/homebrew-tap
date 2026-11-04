@@ -1,17 +1,17 @@
 class NoMistakes < Formula
   desc "Agent-driven Git push gate and validation pipeline"
   homepage "https://github.com/kunchenguid/no-mistakes"
-  url "https://github.com/kunchenguid/no-mistakes/archive/refs/tags/v1.109.0.tar.gz"
-  sha256 "b91ae3883a6c5bb994e796294214864f53ea6aa4a3de5f4b755cb5d5672adb92"
+  url "https://github.com/kunchenguid/no-mistakes/archive/refs/tags/v1.110.0.tar.gz"
+  sha256 "ebc2e11ae771cfa9964d7d502289ce4c494c522077e10dde4e46425ea967b437"
   license "MIT"
   head "https://github.com/kunchenguid/no-mistakes.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88ad712eeb38f19965b4680688f4d8205606591d56ae9eacdf827c6f1c826544"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88ad712eeb38f19965b4680688f4d8205606591d56ae9eacdf827c6f1c826544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9258a641bbd05dfff93ee75e4c02c4a7a5ea271bc3341935b388391c96febed9"
-    sha256 cellar: :any,                 x86_64_linux:  "e8497657a3a7201e0061caeb861f34e03543dfef278974cc3878f3d4ef555e1f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ca6c46f07dc06ffea289c4bb9dd6242a752e2440aff6e637f49742ad224cae0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ca6c46f07dc06ffea289c4bb9dd6242a752e2440aff6e637f49742ad224cae0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3a180a180b0f98d56d19e81eaf5d2fc7ad8a15a8c9ea0673db5beaf3813e949"
+    sha256 cellar: :any,                 x86_64_linux:  "c43bfea684b534a179f0586e1e7063d00baa9a06084ee1dae4db273158333bc2"
   end
 
   depends_on "go" => :build
