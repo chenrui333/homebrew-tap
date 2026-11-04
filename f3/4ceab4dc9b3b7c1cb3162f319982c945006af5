@@ -1,0 +1,14 @@
+Formula/o/openresearch.rb
+  h_9df9c32c3f321d 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f34ceab4dc9b3b7c1cb3162f319982c945006af5",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
