@@ -115,11 +115,21 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Trust the cask under test
+      - name: Trust and verify the cask under test
+        id: trust-cask
         if: matrix.cask
         env:
           CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
-        run: brew trust --cask "$CASK_UNDER_TEST"
+          CASK_SOURCE_PATH: ${{ matrix.cask.path }}
+        run: |
+          brew trust --cask "$CASK_UNDER_TEST"
+          cask_info="$(brew info --json=v2 --cask "$CASK_UNDER_TEST")"
+          source_checksum="$(shasum -a256 "$CASK_SOURCE_PATH")"
+          source_checksum="${source_checksum%% *}"
+          printf '%s\n' "$cask_info" | jq -e --arg checksum "$source_checksum" '
+            (.casks | length == 1) and .casks[0].ruby_source_checksum.sha256 == $checksum
+          '
+          printf '%s\n' "$cask_info" | jq '.casks[0] | {full_token, version, url, sha256, ruby_source_checksum}'
 
       - name: Clean up CI machine
         if: runner.os == 'macOS' && !matrix.stable
@@ -155,6 +165,7 @@ jobs:
         if: >
           always() &&
           contains(fromJSON('["success", "skipped"]'), steps.tap-syntax.outcome) &&
+          steps.trust-cask.outcome == 'success' &&
           matrix.cask
         run: |
           brew fetch --cask --retry --force ${{ join(matrix.fetch_args, ' ') }} "${{ matrix.cask.path }}"
@@ -174,8 +185,8 @@ jobs:
       - name: Gather cask information
         id: info
         env:
-          CASK_PATH: ${{ matrix.cask.path }}
-        run: brew cask-ci info "$CASK_PATH"
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
+        run: brew cask-ci info "$CASK_UNDER_TEST"
         if: always() && steps.fetch.outcome == 'success' && matrix.cask
 
       - name: Uninstall conflicting formulae
@@ -213,7 +224,9 @@ jobs:
         timeout-minutes: 30
 
       - name: Check for missing zap paths
-        run: brew cask-ci zap-check '${{ matrix.cask.path }}'
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
+        run: brew cask-ci zap-check "$CASK_UNDER_TEST"
         if: >
           always() &&
           steps.install.outcome == 'success' &&
@@ -234,7 +247,9 @@ jobs:
         timeout-minutes: 30
 
       - name: Compare installed and running apps and services with snapshot (macOS only)
-        run: brew cask-ci check '${{ matrix.cask.path }}'
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
+        run: brew cask-ci check "$CASK_UNDER_TEST"
         if: always() && steps.snapshot.outcome == 'success' && steps.install.outcome == 'success' && runner.os == 'macOS'
 
   conclusion:
