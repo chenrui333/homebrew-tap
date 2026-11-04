@@ -1,8 +1,9 @@
 class GitAi < Formula
   desc "Git extension for tracking AI-generated code in repositories"
   homepage "https://github.com/git-ai-project/git-ai"
-  url "https://github.com/git-ai-project/git-ai/archive/refs/tags/v1.7.5.tar.gz"
-  sha256 "2aea77871e67720ef13b75c85b746e6d5a250083d3d11835726efe183d70a7cb"
+  url "https://github.com/git-ai-project/git-ai/archive/refs/tags/v1.7.6-next-e934272.tar.gz"
+  version "1.7.6-next-e934272"
+  sha256 "9d30dcc441a7d0853965c8905c0fa73ee2bfed1a935450f60286a165dc94b909"
   license "Apache-2.0"
   head "https://github.com/git-ai-project/git-ai.git", branch: "main"
 
