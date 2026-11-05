@@ -1,13 +1,13 @@
 class EasCli < Formula
   desc "Fastest way to build, submit, and update iOS and Android apps"
   homepage "https://docs.expo.dev/eas/"
-  url "https://registry.npmjs.org/eas-cli/-/eas-cli-27.4.0.tgz"
-  sha256 "2a406460348f6e9dc4e96c2846ef09882a1887000af968a84058559d74bf9c44"
+  url "https://registry.npmjs.org/eas-cli/-/eas-cli-27.4.1.tgz"
+  sha256 "a2ab828f3607136c065198ef654a348b1d3db3010b6d18932ebcfae946e1bede"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f88503ea047bc1a52eb7f450da15c7297f157b8cedfbdca5a55cc795603f0ae4"
+    sha256 cellar: :any_skip_relocation, all: "5028e89499028c0794f195293c887d27b29d5723a5966e269287be03cb7c3954"
   end
 
   depends_on "node"
