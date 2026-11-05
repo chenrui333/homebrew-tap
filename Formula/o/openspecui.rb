@@ -8,10 +8,10 @@ class Openspecui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "d0accee5be4e35756d5804d716b427f65439113efea5b45db99c25b552b1f4fd"
-    sha256 cellar: :any, arm64_sequoia: "53a6b7daeca126d82eab6125bcd96cf1137240799c3dfbc811768d8385cf9c67"
-    sha256 cellar: :any, arm64_linux:   "a1e89261d44592a66fa9c572c99ff7a66a9dcbf8d1d5e3718e03e7070cd78c70"
-    sha256 cellar: :any, x86_64_linux:  "c7cfaae8932f674720aee0531858047b4bb4c76d42f0bbc25c24269352dce01b"
+    sha256 cellar: :any, arm64_tahoe:   "1fd7ac839f7d1735b2d0acedf6fc810f71ae94b3a6b3daaa1fc805922dfb499a"
+    sha256 cellar: :any, arm64_sequoia: "8b96839ec96eeb581e6fed10f4c3030dd9884efa0796e8378e810ca86b982a8a"
+    sha256 cellar: :any, arm64_linux:   "bcccbc973984f2e831da077a07084821c41a7a0d4c7096bc23daa08d34652a70"
+    sha256 cellar: :any, x86_64_linux:  "3e060c4b891aaca0517b0882e6652e562d47af9c00634ef44519914f30d5aade"
   end
 
   depends_on "bun" => :build
