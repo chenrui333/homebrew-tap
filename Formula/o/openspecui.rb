@@ -1,8 +1,8 @@
 class Openspecui < Formula
   desc "Visual interface for OpenSpec spec-driven development"
   homepage "https://github.com/jixoai/openspecui"
-  url "https://github.com/jixoai/openspecui/archive/refs/tags/openspecui%4016.0.0.tar.gz"
-  sha256 "418d3e1ec1d562c411a09ef7df3c30b5ec0fbc56d3e2530a1030eb5395611120"
+  url "https://github.com/jixoai/openspecui/archive/refs/tags/openspecui%4016.1.0.tar.gz"
+  sha256 "6f33d01222908ad1107d0d8c797b559e8b67090c3efd5d43476e15f37c14af2d"
   license "MIT"
   head "https://github.com/jixoai/openspecui.git", branch: "main"
 
