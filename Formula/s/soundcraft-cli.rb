@@ -8,10 +8,10 @@ class SoundcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "703f97340eedf0af62766e915ddbdab7d1e647ef119fc18b12c0d147228658ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0badc10624d2241de2b31b954c08b847c85de57969773b451f3a86806d904378"
-    sha256 cellar: :any,                 arm64_linux:   "4b1cf408878076285b3ede4a663f5523c0a9514c48b538cc2ba8a9d7026e2a39"
-    sha256 cellar: :any,                 x86_64_linux:  "9b252a026bff1ca5de81338ad4dbc91d498d3ece34a431fa5004c5124fd7a450"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1efd414e1fb72cec66cbd9e484bb8dc23c6429cde476ef587fefebfc5ee275a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cbf34c77ac3840a126adadb25a4883049431cbb950769daca2ce907c97e6eb4"
+    sha256 cellar: :any,                 arm64_linux:   "5af9261c8aebc3029c81bc1f75651e345ecaa566fa0974a3cce05b88e9a6eaa0"
+    sha256 cellar: :any,                 x86_64_linux:  "d6ccd0a94ed024ede08be83ad7743749b18a1e0edef98bc7ca09019433f29476"
   end
 
   depends_on "rust" => :build
