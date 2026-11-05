@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/39/82/16e1ea175cb450d0833ea354021635198ab6952bc78a6524a11724331c9b/fast_agent_mcp-0.10.50.tar.gz"
-  sha256 "4666523f37b083a33dcce0ad3519ed2254a5b3012a354bd0ef7b6916f9c2ca06"
+  url "https://files.pythonhosted.org/packages/0c/9e/20388957a711fd68cb60a0f3f0cd308a254e062fc01d3a04b2feb33e8710/fast_agent_mcp-0.10.51.tar.gz"
+  sha256 "29ad14cf3159e19a03122236981818ebb97c22950fb8b5b62930209857874ce0"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "564287c8e2afc6cc084afa6d87202bc5aade3b66b411c239bd3a6cbb9b2a1ef7"
-    sha256 cellar: :any, arm64_sequoia: "857886697b9ec525691d3c63dd0fa624faaa82cd8bcba8b2e4e15c8581bba0fb"
-    sha256 cellar: :any, arm64_linux:   "bf471f791e4fdad20b2829ca53c0b7043c366f702d415795e4f40807cdb8cdae"
-    sha256 cellar: :any, x86_64_linux:  "da754b60d9d658bad59ccbe35de30d2b007932188f897f9ff81f5a3b8a0e618c"
+    sha256 cellar: :any, arm64_tahoe:   "ded01821f56688b4c665114879bec22de2ce8866eb35b782b7cb31179c3df2f3"
+    sha256 cellar: :any, arm64_sequoia: "4a3c65c93cf079f83493e59302025fc54281f024103de68a071d9cbde1061be5"
+    sha256 cellar: :any, arm64_linux:   "204b59cdda4fa6cf09964b9fea0188a84486c66a1cc8258ff23ce1c42e406cae"
+    sha256 cellar: :any, x86_64_linux:  "eded017993ebb862b7efd9f2958448a515e77d6c46296737af5fa559e3fea687"
   end
 
   depends_on "maturin" => :build
@@ -92,8 +92,8 @@ class FastAgentMcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/e8/e2/2abc84667f89b31a954f7e2a421ad9d633f078714ba471ed7c37a8e8b0bb/authlib-1.9.2.tar.gz"
-    sha256 "83271024b7d3b9992f0d928abd87c5f6e89cfb5aaada294972b860aa807ddafc"
+    url "https://files.pythonhosted.org/packages/5f/0a/3c43b904329cea782f4266b256e308529b9162e1cb96e96a46bb3e547d4b/authlib-1.9.3.tar.gz"
+    sha256 "2f834630f452d2e01d787b5477cf37341b73577073bfab38f10d988782da018b"
   end
 
   resource "beartype" do
@@ -142,8 +142,8 @@ class FastAgentMcp < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/91/21/7fcd6780f61e9756aafaea760560509bb4111375daa2e23c1be7a89f33f1/dnspython-2.9.1.tar.gz"
-    sha256 "9a6d30e55f8dc63e6052597666112bff0586b95a2474a9deda03afbbf820d37a"
+    url "https://files.pythonhosted.org/packages/76/49/900383b471c645a3c397f47b3211d1fcecb3a540c98f683494cdf86b33de/dnspython-2.9.2.tar.gz"
+    sha256 "8d4d39a513e649d634004ce4d39ade2352efcea472a0247535a5c2d18a9d7ba9"
   end
 
   resource "docstring-parser" do
@@ -207,8 +207,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/f5/b9/4b2528f30114b106e3c3a7298ba38d85e682fd1f83fe7c4a5b77c7677082/google_auth-2.62.0.tar.gz"
-    sha256 "0bef0ce54bdf9ce226c5d66e4264413bd918141c31bbe49fb52eac882f513d69"
+    url "https://files.pythonhosted.org/packages/c4/38/d79ab09dcfc1e1638d887c8f65657619d3ebc454165c558ef79355971ce3/google_auth-2.62.1.tar.gz"
+    sha256 "3c8e1ce2553784ae17fd220e6f88df3281d86ab98019278f436d06dffab17a9e"
   end
 
   resource "google-genai" do
@@ -307,8 +307,8 @@ class FastAgentMcp < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/bd/15/48ff246732232d35ee234228def22b52455fcc55577f06146602399a29b0/joserfc-1.7.7.tar.gz"
-    sha256 "471d0fd12a5a0d1c0942de280f39efe6f597878315033270b504d4d006d25510"
+    url "https://files.pythonhosted.org/packages/74/31/5c3f27e82c92a7bbe1f028033ff19e0251540395c9be244c01a50de42bdb/joserfc-1.8.0.tar.gz"
+    sha256 "cbf03cb2c6db8cc5289f1ef8718842e53dba244b4c0de5fefa0c0eaee4bde8db"
   end
 
   resource "json-rpc" do
@@ -692,8 +692,8 @@ class FastAgentMcp < Formula
   end
 
   resource "uncalled-for" do
-    url "https://files.pythonhosted.org/packages/6c/54/4651e4c5fe84300f8e03c0390aaad41bcb9c7b81d7783542a3ee690b40ee/uncalled_for-0.4.1.tar.gz"
-    sha256 "6412b19d1b1e7d431981fee01f8b47be7802f48328a48cbe9603acee757ec553"
+    url "https://files.pythonhosted.org/packages/1c/3f/3367539c8c619908b8e26db13634d2265ab2ec01e86573699c529dc1982c/uncalled_for-0.4.2.tar.gz"
+    sha256 "d274d6ab5eb0751e9b71c73647dc25a07d56b293dea479e689056aa919363133"
   end
 
   resource "uritemplate" do
