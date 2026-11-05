@@ -1,8 +1,8 @@
 class DeckcraftCli < Formula
   desc "Headless DeckCraft to render, convert and script slide decks, with MCP server"
   homepage "https://getartcraft.com/apps/deckcraft"
-  url "https://github.com/storytold/deckcraft/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "0e93434f6f39aa60c363e86dbc604d80b000fe3981caf0fc375f3f7e32a70ce2"
+  url "https://github.com/storytold/deckcraft/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "8c73c88857634b8ca6119738186b2db6e85c97c0f53c249ff0db42123bf01c0b"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/deckcraft.git", branch: "main"
 
