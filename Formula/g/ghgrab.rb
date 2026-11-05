@@ -1,17 +1,17 @@
 class Ghgrab < Formula
   desc "TUI for searching and downloading files from GitHub repositories"
   homepage "https://github.com/abhixdd/ghgrab"
-  url "https://github.com/abhixdd/ghgrab/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "71b90fda5c0d605b0b10d2a3f1744828afe91f6ab3f87119a3b1ede9fa40ba76"
+  url "https://github.com/abhixdd/ghgrab/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "1efbe3553a29a2c62d71b0a1eee18937ae2beb80f9313426bfe1a152064ff5a7"
   license "MIT"
   head "https://github.com/abhixdd/ghgrab.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8db191ba4302de04e1547bbfcfd69a8831d1585e6e476c91f23da6583f8404f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "374db3063827d6cff44937aa16bab7ebce101301b57f69f8bc8f25204667e4cf"
-    sha256 cellar: :any,                 arm64_linux:   "8bbb45fbca126003d2f6fdc8a832000dda37b2fd8f291b542565613c78ad2c77"
-    sha256 cellar: :any,                 x86_64_linux:  "22ed938f10596586aece956237a3d3bc3f14eeffc7c54c46a53b4b2d8ac4159b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a96e1f4fcc1805d570d9ce631430fdc21eeec23817e18925a569dd61c3f7df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "217f5f24522fb73ed2e1fb1282e1793cafa7ab83a7df951cc9d96edd42f7975e"
+    sha256 cellar: :any,                 arm64_linux:   "2eb786f75a7ed7dd1c6d14578d1915f69e13c0d918a5bca67ecfda4be9ef7690"
+    sha256 cellar: :any,                 x86_64_linux:  "1a3d85d0840599e6d8456291d86f8202b03f33122249651a3d2de5519f2af2be"
   end
 
   depends_on "rust" => :build
