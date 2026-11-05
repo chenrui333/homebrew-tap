@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/0c/9e/20388957a711fd68cb60a0f3f0cd308a254e062fc01d3a04b2feb33e8710/fast_agent_mcp-0.10.51.tar.gz"
-  sha256 "29ad14cf3159e19a03122236981818ebb97c22950fb8b5b62930209857874ce0"
+  url "https://files.pythonhosted.org/packages/27/9d/a00098614df1284d6b8217069775c6a6646da4cf7557325f916e7a1a855b/fast_agent_mcp-0.10.52.tar.gz"
+  sha256 "e6150a1d6e5b2cbd7bbbded486cab6874bd2f02172b6dded63ac5c716b40d80b"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "ded01821f56688b4c665114879bec22de2ce8866eb35b782b7cb31179c3df2f3"
-    sha256 cellar: :any, arm64_sequoia: "4a3c65c93cf079f83493e59302025fc54281f024103de68a071d9cbde1061be5"
-    sha256 cellar: :any, arm64_linux:   "204b59cdda4fa6cf09964b9fea0188a84486c66a1cc8258ff23ce1c42e406cae"
-    sha256 cellar: :any, x86_64_linux:  "eded017993ebb862b7efd9f2958448a515e77d6c46296737af5fa559e3fea687"
+    sha256 cellar: :any, arm64_tahoe:   "e7474e0c29e4277fe2e63e1ffd0f3dcfee16d3f39a16cc2938169a50cb6ee9b7"
+    sha256 cellar: :any, arm64_sequoia: "09fac9ecf42b7faf72266b493f6f2e10963cff3e28de10b856b4f3dd614e92e0"
+    sha256 cellar: :any, arm64_linux:   "48283a38972cb9e0325ca36f72bfe6fb0d0e32e9d4f68fc83491b23026dd0f49"
+    sha256 cellar: :any, x86_64_linux:  "06c3992606d087a8e4a9b546f6d1ad7c303d39bb0974300142956a7ec9c79cce"
   end
 
   depends_on "maturin" => :build
@@ -92,8 +92,8 @@ class FastAgentMcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/5f/0a/3c43b904329cea782f4266b256e308529b9162e1cb96e96a46bb3e547d4b/authlib-1.9.3.tar.gz"
-    sha256 "2f834630f452d2e01d787b5477cf37341b73577073bfab38f10d988782da018b"
+    url "https://files.pythonhosted.org/packages/b6/1c/4ed575b9e44da3f5ea2c325f50bb3b2016312efffc2b6a62eaf46845bb52/authlib-1.9.4.tar.gz"
+    sha256 "f55a25f561f1f157ceca64da9df776f469f23715ac89ee338aa2f83dc9774e13"
   end
 
   resource "beartype" do
@@ -492,8 +492,8 @@ class FastAgentMcp < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9a/6e/886dc7c9d21e2d95aceb696f1e31271742033aeef3661f6e9c8921493592/platformdirs-4.14.3.tar.gz"
-    sha256 "021add1ab113483edbcd4694f5fbb2d688b893ea30d35e1155bb371cf4be0be8"
+    url "https://files.pythonhosted.org/packages/d7/9a/8475be631fb33ca1466915e70fd594c42a4e84b512db650eaa14f90fe75d/platformdirs-4.14.5.tar.gz"
+    sha256 "32e9921db7385aa8169bee4fe9501923e5715ba9fb7ea3b9c69b0d8e0639f7a1"
   end
 
   resource "pluggy" do
