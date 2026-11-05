@@ -1,8 +1,8 @@
 class Codemark < Formula
   desc "Structural code bookmarks"
   homepage "https://github.com/DanielCardonaRojas/codemark"
-  url "https://github.com/DanielCardonaRojas/codemark/archive/refs/tags/0.7.30.tar.gz"
-  sha256 "e7e046e563185f1e73bae5347699b57fb501855e47adbbcbb00a17e266520024"
+  url "https://github.com/DanielCardonaRojas/codemark/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "bb191ed81dad20efcd6d155b993b9046ad22439547b8df0fa486feee26c2a65e"
   license "MIT"
   head "https://github.com/DanielCardonaRojas/codemark.git", branch: "main"
 
