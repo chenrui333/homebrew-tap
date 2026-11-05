@@ -1,17 +1,17 @@
 class Mercat < Formula
   desc "Render Markdown and Mermaid diagrams in the terminal"
   homepage "https://github.com/tawago/mercat"
-  url "https://github.com/tawago/mercat/archive/refs/tags/v0.3.7.tar.gz"
-  sha256 "70432d8cbf7b8ef96c6fe7e1e054969ad4e800d9680afe67873dbc1dbcc29c59"
+  url "https://github.com/tawago/mercat/archive/refs/tags/v0.3.8.tar.gz"
+  sha256 "bca35f10da27c4e936b6d8b56b1b9d4634cf23cfb22f42886f53af4cc376d6ee"
   license "GPL-3.0-or-later"
   head "https://github.com/tawago/mercat.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b9b4b5d1e572e099d643e47b31f0eef7d82b7a0c66109786cc3996ff63f76cf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4d54f9ad501ca87ad3cb7bdb867bb26a761e1bc42da941bc64669ede16db3f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a77b99771675ca64a0e7019ae11cdf6346d65780c15d0b0596b33899bca28c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a39a9b1832d8d0d1225160f15e5972e8a660c9ca98c50a4055f1383446b3b4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d4a156b82de57fc086117d6753b493944662bd9d6aeef5a7e3fa0239c4bcd18a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44840a189325c57217ce09430293a51f4a5629a7cdc302416fc1ab0c1dfc0001"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6873a4eaf1f12e2b4914c28bae0ae55cd4951e12930587b3bfaf75edcba3cd3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3c9a19d61ad4c3aa967474766fa9faa7544ec00f9b79c68237680033e459487"
   end
 
   depends_on "zig" => :build
