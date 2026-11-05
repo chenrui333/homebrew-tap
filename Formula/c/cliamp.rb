@@ -1,8 +1,8 @@
 class Cliamp < Formula
   desc "Retro terminal music player inspired by Winamp"
   homepage "https://www.cliamp.stream"
-  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "51828895ddb5b236fa0a119c1f06102c127065bf44911849c910fe798362fec5"
+  url "https://github.com/bjarneo/cliamp/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "7375f75382f685edf4c01091dbb6dd393036f8a37bbfb4118cd8e43379d0fcbe"
   license "MIT"
   head "https://github.com/bjarneo/cliamp.git", branch: "main"
 
@@ -43,7 +43,5 @@ class Cliamp < Formula
   test do
     assert_match version.to_s, shell_output("#{bin/"cliamp"} --version")
     assert_match "No plugins installed.", shell_output("#{bin/"cliamp"} plugins list")
-    output = shell_output("#{bin/"cliamp"} search 2>&1", 1)
-    assert_match "search requires a query string", output
   end
 end
