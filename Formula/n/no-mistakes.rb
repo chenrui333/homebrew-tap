@@ -1,8 +1,8 @@
 class NoMistakes < Formula
   desc "Agent-driven Git push gate and validation pipeline"
   homepage "https://github.com/kunchenguid/no-mistakes"
-  url "https://github.com/kunchenguid/no-mistakes/archive/refs/tags/v1.110.0.tar.gz"
-  sha256 "ebc2e11ae771cfa9964d7d502289ce4c494c522077e10dde4e46425ea967b437"
+  url "https://github.com/kunchenguid/no-mistakes/archive/refs/tags/v1.111.0.tar.gz"
+  sha256 "fd20618c3b1eef3a3bcff8726be7c49c003d50fa8291a76e3f47d5eda74dcaf5"
   license "MIT"
   head "https://github.com/kunchenguid/no-mistakes.git", branch: "main"
 
