@@ -1,17 +1,17 @@
 class Nanocoder < Formula
   desc "Local-first AI coding agent for the terminal"
   homepage "https://github.com/Nano-Collective/nanocoder"
-  url "https://registry.npmjs.org/@nanocollective/nanocoder/-/nanocoder-1.31.0.tgz"
-  sha256 "92ca54f0e165ff262f6a39f0fac6b5dd774d7fb72a84f7f13adab8f7306c1b44"
+  url "https://registry.npmjs.org/@nanocollective/nanocoder/-/nanocoder-1.32.0.tgz"
+  sha256 "e7ce0a55cb42ac2c18a4b9c2d7a510e6bedca524a38301ffb35b7e82c97c7a10"
   license "MIT"
   head "https://github.com/Nano-Collective/nanocoder.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "1ab091b5dec7275840796a9de2a8fb7430611e581e22461a506d83b9b71b07d9"
-    sha256 cellar: :any,                 arm64_sequoia: "1ab091b5dec7275840796a9de2a8fb7430611e581e22461a506d83b9b71b07d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f6fde94c65ecf757b33d937306df7836f5771690d96210483c8124865ffabac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1be935152f6993e368d128bb97ab631dc14eb7ddd20739fce6a2a352e0b14cbe"
+    sha256 cellar: :any,                 arm64_tahoe:   "2c07a0df5b0eac308fbb48297b5978555280f5aae4917369d8709b5051e127de"
+    sha256 cellar: :any,                 arm64_sequoia: "2c07a0df5b0eac308fbb48297b5978555280f5aae4917369d8709b5051e127de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e20fbb8bf6d0f8caeb199c97106cdeba9d56fcaf9e70219eccbfb2e2150ee0ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f40166a50862e8f17bdd00daed85b013f745cadeee106d28de57c23daa1d0fe4"
   end
 
   depends_on "node"
