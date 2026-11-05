@@ -1,8 +1,8 @@
 class Oyo < Formula
   desc "Step-through diff viewer"
   homepage "https://github.com/ahkohd/oyo"
-  url "https://github.com/ahkohd/oyo/archive/refs/tags/v0.1.65.tar.gz"
-  sha256 "147cdb2aec6e1b13660a11883958218cfdbadec5b24f4fdd3ac83000804849dd"
+  url "https://github.com/ahkohd/oyo/archive/refs/tags/v0.1.66.tar.gz"
+  sha256 "8b238bc783e5c1503f6de991198bc59078962ce52d2ca930043393fcb795cb56"
   license "MIT"
   head "https://github.com/ahkohd/oyo.git", branch: "main"
 
@@ -17,6 +17,10 @@ class Oyo < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   deny_network_access!
 
