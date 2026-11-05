@@ -8,10 +8,10 @@ class FilmcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "31dde588a8466e530cf3a9e52e81590b1ba08d06f8781c08efa07a039890856e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e23e03c262d9f920b9151e0ab4dc5a1de03e05a0c20ab81ffa0f432930ec683"
-    sha256 cellar: :any,                 arm64_linux:   "7adb32feef21fc0b1cd3ecfa5f8e7cc35395c9585cf11bdd098caa41016e8891"
-    sha256 cellar: :any,                 x86_64_linux:  "9f0fcb1a7812d20c73c1f10781e023ed80a2fe655afdaa44018b2fce74e02d7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd2ce3741f2af13bb190dc59236d5f672c1c3a1cf648a52d4174e395f1254c3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "458ee4952473e82031ec66353c1816eefbae55a61e02d3f22a73e36e4de3a429"
+    sha256 cellar: :any,                 arm64_linux:   "8fef29825ec6dafa1f8d9e788e6c9b2f85bde8618425afa5275cec73c3d55b71"
+    sha256 cellar: :any,                 x86_64_linux:  "46c95a1bdab826cb3f7d3b0f2c993b4101c64b82178a20ebcdc7073576337b3f"
   end
 
   depends_on "rust" => :build
