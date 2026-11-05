@@ -1,8 +1,8 @@
 class Mercat < Formula
   desc "Render Markdown and Mermaid diagrams in the terminal"
   homepage "https://github.com/tawago/mercat"
-  url "https://github.com/tawago/mercat/archive/refs/tags/v0.3.7.tar.gz"
-  sha256 "70432d8cbf7b8ef96c6fe7e1e054969ad4e800d9680afe67873dbc1dbcc29c59"
+  url "https://github.com/tawago/mercat/archive/refs/tags/v0.3.8.tar.gz"
+  sha256 "bca35f10da27c4e936b6d8b56b1b9d4634cf23cfb22f42886f53af4cc376d6ee"
   license "GPL-3.0-or-later"
   head "https://github.com/tawago/mercat.git", branch: "main"
 
