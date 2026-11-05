@@ -1,17 +1,17 @@
 class Lfk < Formula
   desc "Lightning fast Kubernetes navigator"
   homepage "https://github.com/janosmiko/lfk"
-  url "https://github.com/janosmiko/lfk/archive/refs/tags/v0.19.14.tar.gz"
-  sha256 "e088972be210e018de2a612c3d16857ec79d51206d0c41cc3eaa319daba84110"
+  url "https://github.com/janosmiko/lfk/archive/refs/tags/v0.19.15.tar.gz"
+  sha256 "93eaede773da47f702e5f48fe766bd12d8bd01191617bfe6732c9d4e9593816e"
   license "Apache-2.0"
   head "https://github.com/janosmiko/lfk.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3af3bc37f14df670e0f87a3ab53b2ca23d00acbab104d823af6e767cef3dc2a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af3bc37f14df670e0f87a3ab53b2ca23d00acbab104d823af6e767cef3dc2a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f212adc67e83876a2af523e92f8fe4e279880c3985027203d4f57749e8950019"
-    sha256 cellar: :any,                 x86_64_linux:  "a3e012f2b6adb9c9bd7015b2db6b7e14bb7ed367fc936f5cfc879f4c70b646e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "267a6b44f5dd13c307c9585d5b4ec17abe25ae22a6ca198d4c30b7251237a9f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "267a6b44f5dd13c307c9585d5b4ec17abe25ae22a6ca198d4c30b7251237a9f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "164a27586663aa4d75f1cadd662c70820e8c800e3b32b1e6f4b301f5ce990068"
+    sha256 cellar: :any,                 x86_64_linux:  "234ba7605f602efc0bd992a2eb3d2d0e31d44e5b4a1da7f4f4458cbd305cf9c0"
   end
 
   depends_on "go" => :build
