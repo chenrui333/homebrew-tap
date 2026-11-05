@@ -7,10 +7,10 @@ class Wolfpack < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256                               arm64_tahoe:   "10dca37066ec6c903269fd3b274c52a43b5d579860cc140194c9f265a4f510ee"
-    sha256                               arm64_sequoia: "10dca37066ec6c903269fd3b274c52a43b5d579860cc140194c9f265a4f510ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c1411e1b883e51c0664365b56c92a0b1d942c97ad3d254347ef11c4f8a10882"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91a4f12e7be6264f1aeee12eb0903378ba19efd45379a318b2e110bc01a19303"
+    sha256                               arm64_tahoe:   "0911d6f2d43ee06967e7ce71e3b0f4bbc40dd8ac3527d000c4c5f5e3702a8113"
+    sha256                               arm64_sequoia: "0911d6f2d43ee06967e7ce71e3b0f4bbc40dd8ac3527d000c4c5f5e3702a8113"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad0ea0657b8206f78448900e0f33f9e3e647c3e2883a9bbc13339059c7aaa757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4b52cb3bff18d0e7b8dc63c4eb7ecc598041589389c28f96c2aa075cf45f30d"
   end
 
   depends_on "node"
