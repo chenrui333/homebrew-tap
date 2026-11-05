@@ -8,10 +8,10 @@ class Ghgrab < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8db191ba4302de04e1547bbfcfd69a8831d1585e6e476c91f23da6583f8404f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "374db3063827d6cff44937aa16bab7ebce101301b57f69f8bc8f25204667e4cf"
-    sha256 cellar: :any,                 arm64_linux:   "8bbb45fbca126003d2f6fdc8a832000dda37b2fd8f291b542565613c78ad2c77"
-    sha256 cellar: :any,                 x86_64_linux:  "22ed938f10596586aece956237a3d3bc3f14eeffc7c54c46a53b4b2d8ac4159b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78a96e1f4fcc1805d570d9ce631430fdc21eeec23817e18925a569dd61c3f7df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "217f5f24522fb73ed2e1fb1282e1793cafa7ab83a7df951cc9d96edd42f7975e"
+    sha256 cellar: :any,                 arm64_linux:   "2eb786f75a7ed7dd1c6d14578d1915f69e13c0d918a5bca67ecfda4be9ef7690"
+    sha256 cellar: :any,                 x86_64_linux:  "1a3d85d0840599e6d8456291d86f8202b03f33122249651a3d2de5519f2af2be"
   end
 
   depends_on "rust" => :build
