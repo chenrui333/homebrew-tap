@@ -3,8 +3,8 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/27/9d/a00098614df1284d6b8217069775c6a6646da4cf7557325f916e7a1a855b/fast_agent_mcp-0.10.52.tar.gz"
-  sha256 "e6150a1d6e5b2cbd7bbbded486cab6874bd2f02172b6dded63ac5c716b40d80b"
+  url "https://files.pythonhosted.org/packages/48/7c/21105eb9802311a9885de80849c3bba68a9c3d393eaf3099a5466a97f3c7/fast_agent_mcp-0.10.53.tar.gz"
+  sha256 "f138dc96ad7c96949285659fe036d1d075e813bb04fea90e981efbbdcc5d7b50"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
@@ -92,8 +92,8 @@ class FastAgentMcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/b6/1c/4ed575b9e44da3f5ea2c325f50bb3b2016312efffc2b6a62eaf46845bb52/authlib-1.9.4.tar.gz"
-    sha256 "f55a25f561f1f157ceca64da9df776f469f23715ac89ee338aa2f83dc9774e13"
+    url "https://files.pythonhosted.org/packages/04/96/6e7ed72bb49762a9b65d51c4cb235d793f0485cd8d6f7e9404ce955a4808/authlib-1.9.5.tar.gz"
+    sha256 "3f031d5e9b6486089e91e8f7f1b68f36275f3151c66460d650fc90d420545fd7"
   end
 
   resource "beartype" do
@@ -102,8 +102,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/93/6f/faa5e0606769105e70e0478031a8f9a6b729e329f42ce2462585c6d9aa52/cachetools-7.2.8.tar.gz"
-    sha256 "3f9b146b2160975da273e7c23ec882f3996b65df608150d52083c07de0682075"
+    url "https://files.pythonhosted.org/packages/5f/6b/6c1553e1e8f672f9423344a1915aad1537439ad3d14a3fbc1a02159cfd94/cachetools-7.3.0.tar.gz"
+    sha256 "3f63fc208410f0c3a3b37883c4903ecdacd6f0b259134e6d2e82debd5b2e01de"
   end
 
   resource "caio" do
@@ -202,8 +202,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/a4/74/307919972c4dc84598f4128a8d6ae05ac3d9e6ca73fe60a7bb93c670931c/google_api_core-2.43.2.tar.gz"
-    sha256 "5dfc5e9d52982bcc03bd6af380a893365b5fdf907dc527f63d3a372833c33329"
+    url "https://files.pythonhosted.org/packages/72/ef/63d89cb580f3a42c51db53b3d151352aa61b9c87ea8cfdd8d24ee6caa09d/google_api_core-2.44.0.tar.gz"
+    sha256 "5ab9a396965c1227d7dea4581e562b7018aa2bca96d2de0be5eb70dc9c8ab3a1"
   end
 
   resource "google-auth" do
@@ -539,6 +539,21 @@ class FastAgentMcp < Formula
   resource "pyasn1-modules" do
     url "https://files.pythonhosted.org/packages/e9/e6/78ebbb10a8c8e4b61a59249394a4a594c1a7af95593dc933a349c8d00964/pyasn1_modules-0.4.2.tar.gz"
     sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
+  end
+
+  resource "pydantic-monty" do
+    url "https://files.pythonhosted.org/packages/79/7c/58467370dd9f2db100ee2627791668f6f21a9fa150ccff9e60efc588ab8f/pydantic_monty-1.4.0.tar.gz"
+    sha256 "db1f1c779f509f7c547e580620a63ab8968cf167fd6a45a4f60b6625187a9848"
+  end
+
+  resource "pydantic-monty-client" do
+    url "https://files.pythonhosted.org/packages/25/78/0f94fe1b8b45ba5e9c8bc622117f949820a71f7e96a67a7b691fdda96e3d/pydantic_monty_client-1.4.0.tar.gz"
+    sha256 "2252ca45e3cfd241a63950fde184b2ff06ddce5b3e1c260282c0733d70590acd"
+  end
+
+  resource "pydantic-monty-runtime" do
+    url "https://files.pythonhosted.org/packages/be/e7/1567009ab17fe091caba156ea9406487520ef382543e73ac7354a4eef88a/pydantic_monty_runtime-1.4.0.tar.gz"
+    sha256 "5275beb451201bd23669a253c8be93b90cad018b449fcdd0a1ad57daeed15187"
   end
 
   resource "pydantic-settings" do
