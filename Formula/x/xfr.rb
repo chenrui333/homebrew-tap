@@ -8,10 +8,10 @@ class Xfr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6278d1d9168ee4141c1f87c9f84fe9e8f2e91db1b71e55461d50fab8b0aec0f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d85e16941e19e916c2ac2853ce705542c0de38adaa5b1f5a46183b8f745eb46"
-    sha256 cellar: :any,                 arm64_linux:   "69440fe25e5e0f5b9153a4790b152f3fb8d7d3d69ae693a4b68dbd2f500f3c3e"
-    sha256 cellar: :any,                 x86_64_linux:  "4039eaebc210a59181426afd7ac5175e51d45fe5b484312b4bcf1daa79d6836b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af08d70530eb2e90b0e20aac92095576facfaffdda8b4ae3838888b7c42b4cf7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb87fed68e6b1c1898393195df2eddecab6ac26e5aeb384f5e2f46b03a7c84be"
+    sha256 cellar: :any,                 arm64_linux:   "a6e062f1e7f954b843995aaafacc308066fcbf0bc09bf17b8fd13c211aafeda4"
+    sha256 cellar: :any,                 x86_64_linux:  "575d447f20606a256b23a0bd6ca2aef6adeaf62cfd3a7c0a79cf0c6e77a74401"
   end
 
   depends_on "rust" => :build
