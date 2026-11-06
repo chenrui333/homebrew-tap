@@ -1,8 +1,8 @@
 class Sonar < Formula
   desc "CLI tool for inspecting and managing localhost ports"
   homepage "https://github.com/raskrebs/sonar"
-  url "https://github.com/raskrebs/sonar/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "6ccf020428d797bcdded6d2f2ecc961b01ad0d38a41e54a526b6c75b33872057"
+  url "https://github.com/raskrebs/sonar/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "a2667f862f8b5850c065d02f51101b48af6b4d687cd839ffdccce1c4299cf915"
   license "MIT"
   head "https://github.com/raskrebs/sonar.git", branch: "main"
 
