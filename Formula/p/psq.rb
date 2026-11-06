@@ -1,16 +1,16 @@
 class Psq < Formula
   desc "Lightweight postgres monitor for the terminal"
   homepage "https://github.com/benjaminsanborn/psq"
-  url "https://github.com/benjaminsanborn/psq/archive/refs/tags/v1.10.1.tar.gz"
-  sha256 "07e21c21fa950341451081383dd0e04eb09bae01dac0bae2d1743bc155df27d9"
+  url "https://github.com/benjaminsanborn/psq/archive/refs/tags/v1.10.2.tar.gz"
+  sha256 "13578590f221097086ac3a3b10816f8aa8ab4cd0ecc61b47ea40183e706c6890"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cf4cbad82b6e271cf7c42f1eefcb39cb1c716b6b8da3a4d4dc56784d3f5e88ce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf4cbad82b6e271cf7c42f1eefcb39cb1c716b6b8da3a4d4dc56784d3f5e88ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d61b1a1e6b47f954f3bbe379c1b36ddb79d2f93e6f5f2ccadcc2cf1f4f2a9077"
-    sha256 cellar: :any,                 x86_64_linux:  "f9d18257765a07ffb0435a14e6b7501acbb9ccc8c4786a56b5eba6c57dc056da"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "565e4e0a8f3841c40622296136e6221d0e4ff7803568f4a6b591bfb6d4fec9ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "565e4e0a8f3841c40622296136e6221d0e4ff7803568f4a6b591bfb6d4fec9ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2abc5658ea068aa98d36fe15127c0bdb0fb7730dd303c521c84d7ee7dfdfed00"
+    sha256 cellar: :any,                 x86_64_linux:  "476432b3541e255746c82bf17b1816d477b33d680fda9cad9f8dcc5628e188aa"
   end
 
   depends_on "go" => :build
