@@ -1,8 +1,8 @@
 class Sbomit < Formula
   desc "Generates SBOMs from in-toto Witness attestations"
   homepage "https://github.com/SBOMit/sbomit"
-  url "https://github.com/SBOMit/sbomit/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "24e276e0ab57bc297e5f6022bab9b55e6540ca936aa4410dc31dae5af25d93f8"
+  url "https://github.com/SBOMit/sbomit/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "3adb3159110a5b5506ec4e4d39443227aa9276bd37c950805f0f806429d9cb31"
   license "Apache-2.0"
   head "https://github.com/SBOMit/sbomit.git", branch: "master"
 
