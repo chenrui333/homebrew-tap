@@ -1,8 +1,8 @@
 class Clickhousectl < Formula
   desc "CLI for ClickHouse: local and cloud"
   homepage "https://github.com/ClickHouse/clickhousectl"
-  url "https://github.com/ClickHouse/clickhousectl/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a948a4fed25b905721242941730bcc04ab89cf57e6ac96a6712f247b77b6d530"
+  url "https://github.com/ClickHouse/clickhousectl/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "f3d1723b662b16a4e48555261e3abd8b235678df720cde531b2ed662fedec8f2"
   license "Apache-2.0"
   head "https://github.com/ClickHouse/clickhousectl.git", branch: "main"
 
