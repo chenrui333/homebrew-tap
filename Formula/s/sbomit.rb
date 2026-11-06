@@ -8,10 +8,10 @@ class Sbomit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc7521a341b7eb80ce91b6e23e521c142f7a2c75b4e8a54b5825b7b619e51ab1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc7521a341b7eb80ce91b6e23e521c142f7a2c75b4e8a54b5825b7b619e51ab1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b411f578c15393adb94be14fd44b138fd1725bc37b8a067f866d2a0b7d476c7f"
-    sha256 cellar: :any,                 x86_64_linux:  "adf498d669f9c84557623af3d1e394f2e75d888514feb4d681322881828ec579"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc4c37e8193791532bd70ab33e9b4c44689c57d1c8b0644ba31676db665c0a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc4c37e8193791532bd70ab33e9b4c44689c57d1c8b0644ba31676db665c0a8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34f5527dd530166ec8b1751fd28c5751916aa3e2c93b94e9341f55788b54feb0"
+    sha256 cellar: :any,                 x86_64_linux:  "a39f115fc2aca1f87865a1975362984774972b8d77f208e875d9820296097aba"
   end
 
   depends_on "go" => :build
