@@ -1,17 +1,17 @@
 class SoundcraftCli < Formula
   desc "Headless SoundCraft CLI and MCP server to edit, convert and bounce audio"
   homepage "https://getartcraft.com/apps/soundcraft"
-  url "https://github.com/storytold/soundcraft/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "2b0e75e02cb3036ab885336ea8b53bd9642bbd4001cc67f1725a80fba83b817b"
+  url "https://github.com/storytold/soundcraft/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "f40cf2d16be3d707e80042748acbfed770854bdefef48840c11e82fa1e93228f"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/soundcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1efd414e1fb72cec66cbd9e484bb8dc23c6429cde476ef587fefebfc5ee275a4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cbf34c77ac3840a126adadb25a4883049431cbb950769daca2ce907c97e6eb4"
-    sha256 cellar: :any,                 arm64_linux:   "5af9261c8aebc3029c81bc1f75651e345ecaa566fa0974a3cce05b88e9a6eaa0"
-    sha256 cellar: :any,                 x86_64_linux:  "d6ccd0a94ed024ede08be83ad7743749b18a1e0edef98bc7ca09019433f29476"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7df73d8d697ca2e6f42b71411cfa7dc081818e31c40c6742d6de24087cdae8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c59d279e9de2c332d35e1b250ce1ac66c928a146f0326cd7affae1037af8060"
+    sha256 cellar: :any,                 arm64_linux:   "3e633addaddfa5341ac2e730e35dbed68d88ac5fc6dba0105889348f8535d481"
+    sha256 cellar: :any,                 x86_64_linux:  "7b94e516f946d63b5ae7a6adbbb6858951c5957c772f4a739ce3816e9b47380a"
   end
 
   depends_on "rust" => :build
