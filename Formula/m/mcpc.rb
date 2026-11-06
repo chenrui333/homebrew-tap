@@ -1,17 +1,16 @@
 class Mcpc < Formula
   desc "Universal CLI client for MCP"
   homepage "https://github.com/apify/mcp-cli"
-  url "https://registry.npmjs.org/@apify/mcpc/-/mcpc-0.7.0.tgz"
-  sha256 "f5a99edf633089474e3ca1dbd928c560eac63f1e8a5ff2d6f048b92d0cd4da8c"
+  url "https://registry.npmjs.org/@apify/mcpc/-/mcpc-0.8.0.tgz"
+  sha256 "593387a3026351ee1e529fb211740768029efcccfef6e62f9cb6d1c20b78947e"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "09dc9b571dbbd98e2cf8a03b586f94dc50b1b3dc7a2ad728125d1d2cf5f59dfb"
-    sha256 cellar: :any,                 arm64_sequoia: "09dc9b571dbbd98e2cf8a03b586f94dc50b1b3dc7a2ad728125d1d2cf5f59dfb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d264a14af6896ee3f292da7a9376b15e383ea0fe869ce4004eed4ef2512e7b2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "731e478367c9b2734207e24aaa906dbe66c8b93d7376e440864511238a740fd5"
+    sha256 cellar: :any,                 arm64_tahoe:   "94778925bfe127d01c48f8f427d2226d3a1b2aef54a3ae3621fc4bc153ad3541"
+    sha256 cellar: :any,                 arm64_sequoia: "94778925bfe127d01c48f8f427d2226d3a1b2aef54a3ae3621fc4bc153ad3541"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c76222804fd07c5c5bceee4575112b67691496db5452e0ff9f1c30c95518c811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "509cb1f21bb9448273a200f5b42b0dcc754291b21a5cdf33718c35e8615f996e"
   end
 
   depends_on "pkgconf" => :build
