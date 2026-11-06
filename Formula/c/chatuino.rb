@@ -8,10 +8,10 @@ class Chatuino < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08ad83bd20f4ba4726ad5a3e47662e38a5679e180def7845dba4669cb90274c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "467753fd88c925bc3f35c62e3644946167823c9e5eddac5f170408ef54326190"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6611bec6250e85e3903f6873b0c166d507d4f9800627d31a4008ef284529ef22"
-    sha256 cellar: :any,                 x86_64_linux:  "1dab8e630a91b8a40601566d88fa97b7c55beb743cd801bc5a901b0bdbb6eed4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a157e9b53b40bce6f765555c95ffe1cab3cc937a94e5b52f0252781522180f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1065bd7aae4adf1d55a03b10131b365e6d7cdb8b5b048583298525efb800190"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e9576637b27ea4450713fb6bccdcb806c887997f24844c258829eeb812d54df"
+    sha256 cellar: :any,                 x86_64_linux:  "73b4deddd5f183a15be9055643c9733d5d79597c41a86f0f12e53d7b99504cd0"
   end
 
   depends_on "go" => :build
