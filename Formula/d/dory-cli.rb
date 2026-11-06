@@ -1,8 +1,8 @@
 class DoryCli < Formula
   desc "Lightweight static site generator for technical documentation"
   homepage "https://github.com/clidey/dory"
-  url "https://registry.npmjs.org/@clidey/dory/-/dory-1.0.8.tgz"
-  sha256 "71712593604b0a56710a75b38d504a9187dd34f2d9564e74c7a2bd836d01998d"
+  url "https://registry.npmjs.org/@clidey/dory/-/dory-1.9.0.tgz"
+  sha256 "31be9dd5ca3bb445d4a81ee79e4522a45ecac2d599253ec64460f403705b67e2"
   license "MIT"
 
   bottle do
@@ -32,12 +32,27 @@ class DoryCli < Formula
 
   def install
     prepare_package_json
+    # Keep Vite's workspace caches out of the read-only installation.
+    # Upstream issue: https://github.com/clidey/dory/issues/163
+    inreplace "bin/dist/dory.js", <<-OLD, <<-NEW
+        symlinkSync(findDependencyDir(doryRoot), resolve(workspace, 'node_modules'), 'dir');
+    OLD
+        const dependencyDir = findDependencyDir(doryRoot);
+        const workspaceModules = resolve(workspace, 'node_modules');
+        mkdirSync(workspaceModules);
+        for (const entry of readdirSync(dependencyDir)) {
+            if (entry === '.vite' || entry === '.vite-temp') continue;
+            symlinkSync(resolve(dependencyDir, entry), resolve(workspaceModules, entry));
+        }
+    NEW
     system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    output = shell_output("#{bin}/dory build 2>&1", 1)
-    assert_match "Dory is ready to build your docs", output
+    system bin/"dory", "init"
+    assert_path_exists testpath/"dory.json"
+    assert_match "Documentation ready in", shell_output("#{bin}/dory build 2>&1")
+    assert_match "Start writing your documentation here.", (testpath/"dist/introduction/index.html").read
   end
 end
