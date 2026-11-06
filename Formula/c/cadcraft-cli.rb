@@ -1,8 +1,8 @@
 class CadcraftCli < Formula
   desc "Headless CADCraft 2D CAD tool to inspect, convert and script DXF, with MCP"
   homepage "https://getartcraft.com/apps/cadcraft"
-  url "https://github.com/storytold/cadcraft/archive/refs/tags/v0.17.1.tar.gz"
-  sha256 "c81f84ada82aee7d55d09fbf3a69c35862e89df92666bdb69a9b8b9e1df7ee46"
+  url "https://github.com/storytold/cadcraft/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "e795a6e1879ddf756fc34141539fafb5a74e654057db6492f44b8e5aa91e5dc3"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/cadcraft.git", branch: "main"
 
