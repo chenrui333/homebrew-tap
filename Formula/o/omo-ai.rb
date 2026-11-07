@@ -1,8 +1,8 @@
 class OmoAi < Formula
   desc "Standalone Oh My OpenAgent coding agent, Senpi edition"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.62.tar.gz"
-  sha256 "5cb246fefe54ece97e18f60ad08d93e3d6fa832175c098bf4497306034cee7a5"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.64.tar.gz"
+  sha256 "966b75621be50b651e8cb527e5025156537ba136fc33eb0fcd90aa4285d595cc"
   # The launcher/engine are MIT; the bundled OpenAgent plugin is SUL-1.0.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
@@ -36,10 +36,10 @@ class OmoAi < Formula
     sha256 "6f3854e067fd34abc31c1d3360a00ff65ca13df734b34dc09b23137dec5c4e86"
   end
 
-  # npm provenance maps @code-yeongyu/senpi@2026.10.27-1 to this immutable source commit.
+  # npm provenance maps @code-yeongyu/senpi@2026.11.5-1 to this immutable source commit.
   resource "senpi" do
-    url "https://github.com/code-yeongyu/senpi/archive/b594f4cfe910cba76089be153f458a3ed65a9b0f.tar.gz"
-    sha256 "d4ef0d16880183062ac2c0d631f9902cd75111cda6e5fc2800b8e59782b59783"
+    url "https://github.com/code-yeongyu/senpi/archive/c130b2d8b99ed0c3dc42a2c5b3a49959aa5ce018.tar.gz"
+    sha256 "3ee1e44a1bcb3db7b34a5e1e3de4c731d9a3d3799786cc6370f3dfa38cb4a80f"
   end
 
   resource "sandbox-helper-sources" do
