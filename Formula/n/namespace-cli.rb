@@ -2,17 +2,17 @@ class NamespaceCli < Formula
   desc "Command-line interface for the Namespaces platform"
   homepage "https://github.com/namespacelabs/foundation"
   url "https://github.com/namespacelabs/foundation.git",
-      tag:      "v0.0.592",
-      revision: "c269fcb49bc485b119891a9bcabe3e9d9cfcb6a2"
+      tag:      "v0.0.593",
+      revision: "eac2801e89e53b985cd7852d39b58ddd15cdc7d2"
   license "Apache-2.0"
   head "https://github.com/namespacelabs/foundation.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8fdfa0b03bea44cb1a26fc3d32bedf6bd2c95d1955ec27551d35cf24690b47fe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fdfa0b03bea44cb1a26fc3d32bedf6bd2c95d1955ec27551d35cf24690b47fe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3f4e1ac85fa8747b5e2d8173c1321168d163855ae202f3018248506b0d7a745"
-    sha256 cellar: :any,                 x86_64_linux:  "183f4aabd56cd23a6942facde6c7c56376d7b6628892be213a3424030e7fecd7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61b0f6e05071233780ced1a083ab744d13d05ab77c3444b6d1f210da23b9e21e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61b0f6e05071233780ced1a083ab744d13d05ab77c3444b6d1f210da23b9e21e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ccbf4c6476534e0158f27bb038a965f1d84b8bf2bddd040edef9726ab255d57"
+    sha256 cellar: :any,                 x86_64_linux:  "2126fb9062adc060814e0f71d055b01147f31527f9ee9dd3a51cd361d858655c"
   end
 
   depends_on "go" => :build
