@@ -1,8 +1,8 @@
 class Splashboard < Formula
   desc "Customizable terminal splash screen with plugin-based data sources"
   homepage "https://github.com/unhappychoice/splashboard"
-  url "https://github.com/unhappychoice/splashboard/archive/refs/tags/v2.10.2.tar.gz"
-  sha256 "31062162eddf624449e826141b2f61d1ffeea0fb6cb50384547305010bdcf9c8"
+  url "https://github.com/unhappychoice/splashboard/archive/refs/tags/v2.10.4.tar.gz"
+  sha256 "20f62e95ab57b0f07cf6778ce915a0ca081d859763db43f3344ab07333b5f225"
   license "ISC"
   head "https://github.com/unhappychoice/splashboard.git", branch: "main"
 
