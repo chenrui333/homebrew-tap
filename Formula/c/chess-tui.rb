@@ -1,17 +1,17 @@
 class ChessTui < Formula
   desc "Play chess from your terminal"
   homepage "https://github.com/thomas-mauran/chess-tui"
-  url "https://github.com/thomas-mauran/chess-tui/archive/refs/tags/2.8.0.tar.gz"
-  sha256 "29c49dbc8fd69b7dc65ddd3006123b8bf05c223629ec7f6c4110ca6992cb0d4b"
+  url "https://github.com/thomas-mauran/chess-tui/archive/refs/tags/2.8.1.tar.gz"
+  sha256 "890805d2a0426efbc3fd3141a9326e2428057dd3aabb1c822b1861a98805cd57"
   license "MIT"
   head "https://github.com/thomas-mauran/chess-tui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6882c252728e40f592f1d52603ac906ce1b18d4e771a704918abdb6604ddf51f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dea23ffc93f12467cc2de58692ab0909fb3eb23556c6c3c47cd5d3f86b09df8b"
-    sha256 cellar: :any,                 arm64_linux:   "02d1edb881f862299f164061dc5585287ff02f0a00c351b95f9723795eba871b"
-    sha256 cellar: :any,                 x86_64_linux:  "d76d39d397824af1a5b64ebe4623452ac4c378eae35fa3ca495121be66ed13f9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3f289c17bc9af6b325baa6661268acd3eb553c834ae85ca978a79d6d4a17fa0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bc1ab551060a5a9210157404cb2301d27af3817d20f45b906b6ccabda344281"
+    sha256 cellar: :any,                 arm64_linux:   "f1c18ee4922a75a455bb4108994716352c1d333c780f49ea522c5432fb29617d"
+    sha256 cellar: :any,                 x86_64_linux:  "827defd84e3a093338be2d6486c503c6eaa033c1acf7fd790f121d151f4bd75d"
   end
 
   depends_on "pkgconf" => :build
