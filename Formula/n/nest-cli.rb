@@ -1,16 +1,16 @@
 class NestCli < Formula
   desc "CLI tool for Nest applications"
   homepage "https://nestjs.com/"
-  url "https://registry.npmjs.org/@nestjs/cli/-/cli-12.0.11.tgz"
-  sha256 "5157ec83e802bbb34db91fbe5806e0302442c525c9304fdb3d9d3764470f833a"
+  url "https://registry.npmjs.org/@nestjs/cli/-/cli-12.0.12.tgz"
+  sha256 "07dd991c5b26f2995ef26e2c5fab06dd71f41820ab47a0081b51ed80ca5c7675"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9179341400e05a68bdce03ee4cc6dc1e3f3df7966432d6b4d301f49d0c5ddde"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9179341400e05a68bdce03ee4cc6dc1e3f3df7966432d6b4d301f49d0c5ddde"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a068f853ed1b76e395f493213a4e0caca01f66be90f8b015b990e59f8dcfe906"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a068f853ed1b76e395f493213a4e0caca01f66be90f8b015b990e59f8dcfe906"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f63047f7f1896066a6b1f8115988c6b5826096d416c5f46094b5aeb0e220e9c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f63047f7f1896066a6b1f8115988c6b5826096d416c5f46094b5aeb0e220e9c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8108f5356725efe690d26a9fadf439b49cc6a4e7d8a2b919f367a58043a06a3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8108f5356725efe690d26a9fadf439b49cc6a4e7d8a2b919f367a58043a06a3c"
   end
 
   depends_on "node"
