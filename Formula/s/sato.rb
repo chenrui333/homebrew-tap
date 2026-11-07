@@ -2,18 +2,17 @@
 class Sato < Formula
   desc "Tool to convert ARM or CFN into Terraform"
   homepage "https://github.com/JamesWoolfenden/sato"
-  url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.50.tar.gz"
-  sha256 "2f2a398a01e5c87bb59deb03ae6fb55691be922bfd6644a2fdf346ec4794f614"
+  url "https://github.com/JamesWoolfenden/sato/archive/refs/tags/v0.1.51.tar.gz"
+  sha256 "9567d6b213bcc23090c2f5b583271e2ca19186bdcbde89ac318fb55acff6e727"
   license "Apache-2.0"
   head "https://github.com/JamesWoolfenden/sato.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6488c04236ef1d4f2953a8f49db992ed7c960e9adc86a16de6caf7dc3b1ed34f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6488c04236ef1d4f2953a8f49db992ed7c960e9adc86a16de6caf7dc3b1ed34f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "656eab28f44d04182f043ec584689d7090a55b3b4cbb6cb78b837d016cb06671"
-    sha256 cellar: :any,                 x86_64_linux:  "02877345c21cc1846e7a9f2f217f251c8da3c653db218fac2e6d7c8fa4bcddd8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e34dd52c3ff20df5e44c760f203175d324ddc56eac5f5b02016e5d65773da21b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e34dd52c3ff20df5e44c760f203175d324ddc56eac5f5b02016e5d65773da21b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0617efcb7d0db896074b94c352c6153ccdbe6c80f28a5b4d426357557c135fc"
+    sha256 cellar: :any,                 x86_64_linux:  "06ae16050e3a6049fb1ae0255f0893f685edaf857acc942b8a9dd90ed8c5c6d8"
   end
 
   depends_on "go" => :build
