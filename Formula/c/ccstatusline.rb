@@ -1,13 +1,13 @@
 class Ccstatusline < Formula
   desc "Beautiful highly customizable statusline for Claude Code CLI"
   homepage "https://github.com/sirmalloc/ccstatusline"
-  url "https://registry.npmjs.org/ccstatusline/-/ccstatusline-2.2.33.tgz"
-  sha256 "a9c7b178f73aa1ac1ee5c49543fb3765e04dac774fd257654c00e60a92adc174"
+  url "https://registry.npmjs.org/ccstatusline/-/ccstatusline-2.2.34.tgz"
+  sha256 "4052d19f8703777e0ad354f17a31ba7466b88fcb9bf2c992965aa7e34d5fdf81"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d5e2ca8dc67730e5a0d30418edbcd5e69e08f257aa0a9318fbaf0e7aedfa0f81"
+    sha256 cellar: :any_skip_relocation, all: "9a89bee01d07e0c6477ceb129cca66b8245efb47e730074777aa05d7bd0d1b0d"
   end
 
   depends_on "node"
