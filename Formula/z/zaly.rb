@@ -1,20 +1,10 @@
 class Zaly < Formula
   desc "Hackable terminal coding agent"
   homepage "https://zaly.dev"
+  url "https://github.com/folke/zaly/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "f170ce406623d8b22d96320d6c0c7de8944d8cc95189149d291dc8f799851209"
   license "MIT"
   head "https://github.com/folke/zaly.git", branch: "main"
-  stable do
-    url "https://github.com/folke/zaly/archive/refs/tags/v0.2.0.tar.gz"
-    sha256 "18f45e022f9861bce78f05db9804a3d22c52f2aa998b8d93917a3365cea297be"
-
-    # Keep Node alive while Shiki worker requests are pending.
-    patch do
-      url "https://github.com/folke/zaly/commit/84d33964e70cfa4520d5fa3385d4a3e72323fa1b.patch?full_index=1"
-      sha256 "4c9cb05c50751c620669be582918959508fde9e9ba29bb3ef3710d1c84b0ebaa"
-      type :unofficial
-      resolves "https://github.com/folke/zaly/issues/66", "https://github.com/folke/zaly/pull/67"
-    end
-  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
