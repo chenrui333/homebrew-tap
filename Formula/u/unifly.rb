@@ -1,17 +1,17 @@
 class Unifly < Formula
   desc "CLI/TUI for UniFi network controller management"
   homepage "https://github.com/hyperb1iss/unifly"
-  url "https://github.com/hyperb1iss/unifly/archive/refs/tags/v0.12.1.tar.gz"
-  sha256 "2fa796a286be42aa81d41fee89aa481a155f5e02aa7dda1a0eb95b7a325b9b69"
+  url "https://github.com/hyperb1iss/unifly/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "cd8db5d3bad7c86baa93574f30ec42948a20b1b9991aa50795c459069e67d3c1"
   license "Apache-2.0"
   head "https://github.com/hyperb1iss/unifly.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "da9b86de06ac3c64c5e52a658c0e951225cc144a4a405e6df138e40d393f9916"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f065415f7759f9a364261758f5439299238739cb95ed594cab803c2cb2ffea48"
-    sha256 cellar: :any,                 arm64_linux:   "22f6216722f27f69ca6ebe34aa7bfbb3596f7e99c2ef83261583c247ae9f2b5c"
-    sha256 cellar: :any,                 x86_64_linux:  "516afdbacedbb35240214e02032dcdc1e387f832dbf38b0893d3c26bf635d7a3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b6dbafadcaaf39c09c242cb6f3e48d950131bbc02309d13537464b3010b00f57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "651836b319ffe400da0e874f7139b27de53a6897851e2aebeb3e4eedb6a24c24"
+    sha256 cellar: :any,                 arm64_linux:   "7e964103f4c04d1cd24f352efdeb37cc2a246d249aed7b0dfb8ea4aa6d3f84f2"
+    sha256 cellar: :any,                 x86_64_linux:  "b3db091371b04f2b130f67122718d6415634f949d8952143e1dfccefc993c1ea"
   end
 
   depends_on "pkgconf" => :build
