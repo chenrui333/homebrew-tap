@@ -8,10 +8,10 @@ class Splashboard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e8e570f7cbbce2904b79042a78b4ec9e5390f4f713b7d0897fb5005ea324d149"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ac0284ddd7237e01867397f26fafb2fc3f81973ee8dedf3d3ceb90955f1905"
-    sha256 cellar: :any,                 arm64_linux:   "834bd9404fd9a7237e63f166afe5d9549286e79ed865ec4b04c3b764ffdfc241"
-    sha256 cellar: :any,                 x86_64_linux:  "99cc7a6b4f8906c78d6a050a165d4749a28586244c4d5c437c2372c84bad8775"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86c7bc8023138e7dbebefb10a59a51d6ca03dfbbe28c54ce4fa6d26e85128c04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2333b56bbfc688ed3847bb646fb45f85f2d1f5e0e5650f674769f7a864300c5d"
+    sha256 cellar: :any,                 arm64_linux:   "de624689f9b8fed3cd76fd3affd006f91a654dedd7b577bf2ac627e1ddd56fa8"
+    sha256 cellar: :any,                 x86_64_linux:  "7775cfa4afc996e1a01ae0dc050a15339d7c1ee0b92a72082f214cc54322c259"
   end
 
   depends_on "rust" => :build
