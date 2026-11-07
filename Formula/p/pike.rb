@@ -9,10 +9,10 @@ class Pike < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0bf3afb434e7f99b899e7c0445d8f49dbed9db78262ef80b1f565a360ee8ca5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0bf3afb434e7f99b899e7c0445d8f49dbed9db78262ef80b1f565a360ee8ca5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f945ed48cca99d0394e6a2c4acfc3e6b18883682daabeb0af556167329cbb293"
-    sha256 cellar: :any,                 x86_64_linux:  "898cdea21a6eb1c1dcd2ae82ac4f09453dbc4de71c136847a1f6790698dc93f7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80c0c745438ac3b52cd91b254d5535158bc22188212439b3254519aec84b5723"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80c0c745438ac3b52cd91b254d5535158bc22188212439b3254519aec84b5723"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ba8a88b5a30143a53590825ca63033d8fd5283f62567fc00b0704605db9b84d"
+    sha256 cellar: :any,                 x86_64_linux:  "2bd12d9439f1da75bbd23cbfff8bef1a39ff14ab009dc1fb7fee8d944382c793"
   end
 
   depends_on "go" => :build
