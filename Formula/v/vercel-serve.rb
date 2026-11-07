@@ -1,8 +1,8 @@
 class VercelServe < Formula
   desc "Static file serving and directory listing"
   homepage "https://github.com/vercel/serve"
-  url "https://registry.npmjs.org/serve/-/serve-14.2.6.tgz"
-  sha256 "126b5ec79d81a85307ebd1953084526ae181c203276cf64b961a7bee31cb7b81"
+  url "https://registry.npmjs.org/serve/-/serve-14.2.7.tgz"
+  sha256 "9cc5fa69277761fafd4531a46ee5f9ec37dd0246c3419564a8c08c89fa51f63b"
   license "MIT"
 
   bottle do
@@ -31,15 +31,6 @@ class VercelServe < Formula
     rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/serve"
-
-    clipboardy_fallbacks_dir = libexec/"lib/node_modules/serve/node_modules/clipboardy/fallbacks"
-    rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
-    if OS.linux?
-      linux_dir = clipboardy_fallbacks_dir/"linux"
-      linux_dir.mkpath
-      # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
-    end
   end
 
   test do
