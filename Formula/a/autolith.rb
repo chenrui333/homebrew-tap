@@ -6,6 +6,14 @@ class Autolith < Formula
   license "ISC"
   head "https://github.com/lambda-symbolics/autolith.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "ca8057b4c58f38ba74028583218448cf0517beb4130e8c2464357ca64a516fba"
+    sha256 cellar: :any, arm64_sequoia: "f76fde5e8b40903bb33fce91dfaa9367adb8cb85735910882f454d1263303925"
+    sha256 cellar: :any, arm64_linux:   "9b6f6facafb34e77059a44d287cdca834752dad53491a7fa79141955ce36da4d"
+    sha256 cellar: :any, x86_64_linux:  "5108c262c875b9b00764b557fbb4cbec525c55fdbfa8b90dcfc2aa8b4a1ce46f"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
