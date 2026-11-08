@@ -4,6 +4,7 @@ class Rawhide < Formula
   url "https://github.com/raforg/rawhide/releases/download/v3.3/rawhide-3.3.tar.gz"
   sha256 "a51a1360ce4763838b29a548a8e49dcf47a93a922bf1df05c8b7d50ecb9ab09d"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -30,9 +31,18 @@ class Rawhide < Formula
     system "make"
     system "make", "install-bin"
     system "make", "install-man"
+    etc.install "rawhide.conf"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rh --version")
+
+    ENV.delete "RAWHIDE_CONFIG"
+    (testpath/"fixtures/skip.txt").mkpath
+    (testpath/"fixtures/keep.txt").write "match\n"
+    (testpath/"fixtures/skip.log").write "ignore\n"
+
+    assert_equal "fixtures/keep.txt\n", shell_output("#{bin}/rh -n -e 'file && f && \"*.txt\"' fixtures")
+    assert_equal "fixtures/skip.txt\n", shell_output("#{bin}/rh -n -e 'dir && d && \"*.txt\"' fixtures")
   end
 end
