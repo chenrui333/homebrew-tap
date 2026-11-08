@@ -1,18 +1,17 @@
 class Codemark < Formula
   desc "Structural code bookmarks"
   homepage "https://github.com/DanielCardonaRojas/codemark"
-  url "https://github.com/DanielCardonaRojas/codemark/archive/refs/tags/0.7.30.tar.gz"
-  sha256 "e7e046e563185f1e73bae5347699b57fb501855e47adbbcbb00a17e266520024"
+  url "https://github.com/DanielCardonaRojas/codemark/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "bb191ed81dad20efcd6d155b993b9046ad22439547b8df0fa486feee26c2a65e"
   license "MIT"
   head "https://github.com/DanielCardonaRojas/codemark.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9efb99e94de1a315ca508deed78ea27bf61d07a423f6ab70302af7111825ae22"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "543421610100400da9208c716d5f7939d4170b8e95dd9fd68c7bbfb7d51ef9e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a51dcac8bb5a15d675208a8ef24a85c948a6b49a98ef6162e18f976bae04d38f"
-    sha256 cellar: :any,                 arm64_linux:   "63c1723fe1d61239cd2d5eb271f0cf186aeec1687e31ca13e23968c9f04020b1"
-    sha256 cellar: :any,                 x86_64_linux:  "65121f2f037cb37a2b1078384737447bc14cc28aec99d431a2912ce57b2ac30c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "438b2fb3f44ee223896421ac7874cf049118605e5a73c9481922834aef5e83fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1507825e653fd98228ae03eaa7641fcc837ca28e1f05ddeadb9b9ddcd1bff15"
+    sha256 cellar: :any,                 arm64_linux:   "81451ed200772cb91bb11eb0dd150eb5fb2e1d3cfdce0222063eb528ca25f28a"
+    sha256 cellar: :any,                 x86_64_linux:  "3b7e5f6f858e1def91cd32da56b15316e757e0ca5be6b04c0174d2b6259c13f1"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +35,7 @@ class Codemark < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/codemark --version")
-    assert_match "rust", shell_output("#{bin}/codemark languages list").downcase
+    # Other grammars are installed dynamically; Dart remains bundled.
+    assert_match "dart", shell_output("#{bin}/codemark languages list").downcase
   end
 end
