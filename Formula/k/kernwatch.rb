@@ -6,6 +6,12 @@ class Kernwatch < Formula
   license "MIT"
   head "https://github.com/matthart1983/kernwatch.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "8254620aa5cbd28878fb0d1fc871ebd679b3b481c44ec082ec579d39c51e85a3"
+    sha256 cellar: :any, x86_64_linux: "526d47f7769fbf04d806c74ddd283c21aff99de3d51d0beaf5afb5f1c8ac4672"
+  end
+
   depends_on "llvm" => :build
   depends_on "rust" => :build
   depends_on :linux
