@@ -1,8 +1,8 @@
 class Omp < Formula
   desc "Terminal coding agent with multi-model support and native tools"
   homepage "https://omp.sh"
-  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v18.16.0.tar.gz"
-  sha256 "cdc22c255b651258038ac92f7b2aecbe464ecb90b8656957080cbd60872ced2a"
+  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v18.18.1.tar.gz"
+  sha256 "0a09d8f5f307d72ff4ced4fe8bd564eab024c243dd0fc72800b828bf4819cb94"
   license "MIT"
   head "https://github.com/can1357/oh-my-pi.git", branch: "main"
 
@@ -20,7 +20,7 @@ class Omp < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
-  depends_on "rust" => :build
+  depends_on "rustup" => :build
   depends_on "zig" => :build
 
   on_linux do
@@ -35,16 +35,33 @@ class Omp < Formula
   allow_network_access! :test
   deny_network_access! :build
 
+  def rust_toolchain
+    Utils.safe_popen_read(formula_opt_bin("python@3.14")/"python3.14", "-c", <<~PYTHON).strip
+      import tomllib
+      with open("rust-toolchain.toml", "rb") as config:
+          print(tomllib.load(config)["toolchain"]["channel"])
+    PYTHON
+  end
+
   def fetch
+    # Stage upstream's pinned toolchain without changing the user's rustup state.
+    ENV["RUSTUP_HOME"] = buildpath/".rustup"
+    rustup = formula_opt_bin("rustup")/"rustup"
+    toolchain = rust_toolchain
+    system rustup, "toolchain", "install", toolchain, "--profile", "minimal", "--no-self-update"
     system formula_opt_bin("bun")/"bun", "install", "--frozen-lockfile", "--ignore-scripts"
     # NAPI's cargo metadata resolves every target, including Android-only dependency records.
-    system "cargo", "fetch", "--locked"
+    system rustup, "run", toolchain, "cargo", "fetch", "--locked"
   end
 
   def install
     bun = formula_opt_bin("bun")/"bun"
-    # Upstream enables smallvec specialization; use the brewed compiler rather than rustup.
-    ENV["RUSTC_BOOTSTRAP"] = "1"
+    ENV["RUSTUP_HOME"] = buildpath/".rustup"
+    cargo = Pathname(Utils.safe_popen_read(formula_opt_bin("rustup")/"rustup",
+                                         "which", "--toolchain", rust_toolchain, "cargo").strip)
+    ENV.prepend_path "PATH", cargo.dirname
+    ENV["CARGO"] = cargo
+    ENV["RUSTC"] = cargo.dirname/"rustc"
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm")
     ENV["CARGO_NET_OFFLINE"] = "true"
     ENV["OMP_NATIVE_CARGO_PROFILE"] = "ci"
