@@ -1,0 +1,14 @@
+.github/workflows/renovate-workflow-automerge.yml
+  h_9df9c32c3f321d 10-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5645a79eb5bcc6da85af9171810be3df9d55334f",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
