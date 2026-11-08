@@ -6,6 +6,14 @@ class Edma < Formula
   license "MIT"
   head "https://github.com/chungquantin/edma.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3fe31ea4b3f99b9abcbccf9dc587f778a09c5ffe7cc6b669cd2fa8bddd89f29"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7937d22c3ad620c763aa74628ced5fe5dc6c5f09ac1c813a3163eea0a7f94d4f"
+    sha256 cellar: :any,                 arm64_linux:   "ae8df38538faca98f5dce1e3dc31d285c46a36f789b002c74dd8e420ad4ed7fb"
+    sha256 cellar: :any,                 x86_64_linux:  "eeceec5f85ef1ab636346144c064eef3203aa88cbee0010c5c1e62194da44639"
+  end
+
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
