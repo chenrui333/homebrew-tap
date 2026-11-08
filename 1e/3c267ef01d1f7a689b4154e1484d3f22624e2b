@@ -1,0 +1,20 @@
+.github/scripts/qualified-cask-merge.js
+  h_9df9c32c3f321d 1-94
+.github/scripts/qualified-cask-merge.test.js
+  h_9df9c32c3f321d 1-140
+.github/workflows/merge-gate.yml
+  h_9df9c32c3f321d 9-10,41
+.github/workflows/publish-cask.yml
+  h_9df9c32c3f321d 10-11,13-17,20-22,24,28-29,33-34,36-41,43-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1e3c267ef01d1f7a689b4154e1484d3f22624e2b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
