@@ -122,6 +122,7 @@ brew install --cask <tool>
 - `blueutil-tui`
 - `blush`
 - `bomtique`
+- `bootvine`
 - `botkube`
 - `box`
 - `bpftui`
@@ -249,6 +250,7 @@ brew install --cask <tool>
 - `cohctl`
 - `collie`
 - `comchan`
+- `comhad`
 - `conan-mcp`
 - `container2wasm`
 - `context-analyzer`
@@ -342,6 +344,7 @@ brew install --cask <tool>
 - `ecscope`
 - `edamame`
 - `editly`
+- `edma`
 - `effectcraft-cli`
 - `eilmeldung`
 - `elastop`
@@ -801,7 +804,6 @@ brew install --cask <tool>
 - `orla`
 - `osintui`
 - `osmar`
-- `otel-tui`
 - `otelgen`
 - `otto`
 - `oui`
@@ -1028,7 +1030,6 @@ brew install --cask <tool>
 - `sprofile`
 - `sqd`
 - `sqlit`
-- `sqlmux`
 - `squads-cli`
 - `squall`
 - `sshmail`
@@ -1083,7 +1084,6 @@ brew install --cask <tool>
 - `telert`
 - `tempo`
 - `tenderly`
-- `tennis`
 - `termdbms`
 - `termide`
 - `terminal-mcp`
