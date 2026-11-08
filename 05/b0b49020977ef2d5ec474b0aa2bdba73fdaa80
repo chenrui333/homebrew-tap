@@ -1,0 +1,14 @@
+Formula/e/edma.rb
+  h_9df9c32c3f321d 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "05b0b49020977ef2d5ec474b0aa2bdba73fdaa80",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
