@@ -4,6 +4,7 @@ class OtelTui < Formula
   url "https://github.com/ymtdzzz/otel-tui/archive/refs/tags/v0.7.5.tar.gz"
   sha256 "fc8a5ab4416b9428532978cb759b31f83bc27e8617e44545c53fb41d401a3d91"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ymtdzzz/otel-tui.git", branch: "main"
 
   bottle do
@@ -20,17 +21,11 @@ class OtelTui < Formula
   deny_network_access!
 
   def fetch
-    ENV["GOWORK"] = "off"
     system "go", "mod", "download"
   end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-    ENV["GOWORK"] = "off"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
 
   test do
