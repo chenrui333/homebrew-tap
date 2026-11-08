@@ -1,0 +1,15 @@
+Formula/m/matterhorn.rb
+  h_9df9c32c3f321d 10-13,15-84
+  h_9df9c32c3f321d 1-9,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c5ecbb39864b31f4d4aae04ebd928084b0c878b9",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
