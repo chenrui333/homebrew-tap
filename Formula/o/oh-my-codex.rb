@@ -8,10 +8,10 @@ class OhMyCodex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "03f4cac71b024ae649cec6b0c09c603f080a8bf2089cb024a20b83aea6f6ebbc"
-    sha256 cellar: :any, arm64_sequoia: "03f4cac71b024ae649cec6b0c09c603f080a8bf2089cb024a20b83aea6f6ebbc"
-    sha256 cellar: :any, arm64_linux:   "f3e02f30f3c47bcd31d5309d87742dea05631c03a8e8d265cd2473eabd54654a"
-    sha256 cellar: :any, x86_64_linux:  "308d4e21f50d88092b81bdd1658029debba8605805ac7bb3d1281179d1e23740"
+    sha256 cellar: :any, arm64_tahoe:   "50f7923604dca985a47290db09977226341c9ed1fb208d4fca5b203654b7f3b1"
+    sha256 cellar: :any, arm64_sequoia: "4d919edd699e91e972ceae1d0744a372cc2829fd00465cc1f5d240676c212798"
+    sha256 cellar: :any, arm64_linux:   "1f010dffd7d53944ae756a6784e241683c77f325add5356cdf840c6356f61d06"
+    sha256 cellar: :any, x86_64_linux:  "1ef783426a5e40f5a0c05aa3c57d6af6e48856a88bd200307fe4c182890cc904"
   end
 
   depends_on "rust" => :build
