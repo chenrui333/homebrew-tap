@@ -1,17 +1,17 @@
 class Aven < Formula
   desc "Local-first task manager for power users and agents"
   homepage "https://github.com/raine/aven"
-  url "https://github.com/raine/aven/archive/refs/tags/v0.1.52.tar.gz"
-  sha256 "caf6b5a3fdf6803ae10120984ee609c4c75fb90be27111005f5ecc1ce0d10480"
+  url "https://github.com/raine/aven/archive/refs/tags/v0.1.53.tar.gz"
+  sha256 "16d8bdbb1c4694b7b4d5b0faa5e02fcde8cc4f7e2494b80288c35dd37af94b6d"
   license "MIT"
   head "https://github.com/raine/aven.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "4aca3493f0b75706d3f5b96ed2710aabfe241246c4946790f696f91a6d1df65d"
-    sha256               arm64_sequoia: "61b84ef11c35248a9ab0b6799a516d0a6374b89ab5bafa0d63e9a9bf769a5c06"
-    sha256 cellar: :any, arm64_linux:   "477e5d6c8634a26fba309cd85e8fb79b2382f752f57388d724f5da63519bb6ef"
-    sha256 cellar: :any, x86_64_linux:  "d3cdacce5f20021a951fd1b3cb4d420ad9f8b19b3ee3ac48abf8d4a73f2dfae9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "470a4c70658b6493c52d0ca66400955a9a4369a6642de305c28b517e9add11fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7604ae319594f6227be652e792174635443a6665e2ac32593d8e9686172d1a01"
+    sha256 cellar: :any,                 arm64_linux:   "a4fe2a1e35064ffc3349f7e8fcdd8081f023fed800bce3e2f0e5ea7b5cc0dcff"
+    sha256 cellar: :any,                 x86_64_linux:  "c74e7209f2019e6b510dc06f067f702e2af1e95a5724c15f62d397d623914b52"
   end
 
   depends_on "cmake" => :build
