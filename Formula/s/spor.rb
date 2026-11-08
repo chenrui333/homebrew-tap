@@ -6,6 +6,14 @@ class Spor < Formula
   license "MIT"
   head "https://github.com/emprcl/spor.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8497299d9c4d8abfb68f819ac8b925fdaa5796bc228a86b36abc265e6e22ca80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8497299d9c4d8abfb68f819ac8b925fdaa5796bc228a86b36abc265e6e22ca80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9028333b50740aec118f19e488ef5022a8b530203cd0eff7722c79017144fb7"
+    sha256 cellar: :any,                 x86_64_linux:  "91493febbd78e6bb875ae4d4296e22284538250ea50e0742431ca9352dc7cdd9"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
