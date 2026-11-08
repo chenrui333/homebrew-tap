@@ -7,6 +7,11 @@ max_concurrency = 10
 # Treat 429 as valid after retries to avoid transient rate-limit failures.
 accept = [200, 204, 206, 429]
 
+# npm's HTML frontend blocks hosted CI; validate canonical package pages through its public registry.
+remap = [
+  '^https://(?:www\.)?npmjs\.com/package/((?:@[^/]+/)?[^/?#]+)$ https://registry.npmjs.org/$1',
+]
+
 # Exclude placeholder URLs used in documentation examples.
 # Temporary baseline exclusions tracked in:
 # https://github.com/chenrui333/homebrew-tap/issues/4237
