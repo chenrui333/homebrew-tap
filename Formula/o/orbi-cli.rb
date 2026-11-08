@@ -3,14 +3,14 @@ class OrbiCli < Formula
 
   desc "Run coding agents on labeled GitHub issues"
   homepage "https://orbi.build"
-  url "https://files.pythonhosted.org/packages/1f/e5/d95609b84f315aef08d2f502a884709b928975a3ca4bbf3a7ab31883a6d6/orbi_cli-0.7.30.tar.gz"
-  sha256 "044901c5697710123cc0de9789db25915e5850c233797a694638d6c2f2e96373"
+  url "https://files.pythonhosted.org/packages/7a/e4/a783d17bf83e54c4bb98aaeeed702a0f099450bb8cd3cb720f71f12cf2f4/orbi_cli-0.7.32.tar.gz"
+  sha256 "8238f349d40dc3e3237d8f472f707557f99e61b922c875ebd84cd08fe28f01aa"
   license "AGPL-3.0-only"
   head "https://github.com/orbi-build/orbi.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "b51ff78f8f43309ac4e7cc2ce9d1afe81345929c024b832fc691145c5e3d4091"
+    sha256 cellar: :any_skip_relocation, all: "af01be628e28faff75a958de9601feab9655dfaa406f0a9f3a0a92fa9c1fab92"
   end
 
   depends_on "python-setuptools" => :build
