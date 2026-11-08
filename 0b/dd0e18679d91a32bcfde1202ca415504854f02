@@ -1,0 +1,36 @@
+.github/workflows/publish-cask.yml
+  h_9df9c32c3f321d 24-25,28-30,33,37-38,40-43,45,49-50,54-55,57-62,64-70
+  s_d9c062dda023f0::t_b7f217d60673f5 26
+  h_9df9c32c3f321d 9-22,27,31,36,39,44,46-48
+.github/workflows/merge-gate.yml
+  h_9df9c32c3f321d 9-10,41
+.github/scripts/qualified-cask-merge.test.js
+  h_9df9c32c3f321d 1-19,24-26,28-31,33-41,43-142,179,189-192
+  h_9df9c32c3f321d 20-23,27,32,42,143-178,180-188
+.github/scripts/qualified-cask-merge.js
+  h_9df9c32c3f321d 1-45,62,64-112
+  h_9df9c32c3f321d 46-61,63
+.github/actionlint.yaml
+  h_9df9c32c3f321d 7-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0bdd0e18679d91a32bcfde1202ca415504854f02",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_d9c062dda023f0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c4cf-3e9a-7013-a96b-0fd45954b519",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
