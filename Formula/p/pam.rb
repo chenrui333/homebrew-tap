@@ -30,7 +30,7 @@ class Pam < Formula
 
   def install
     # Upstream renamed the project from pam to squix; keep a pam shim for this tap formula name.
-    ldflags = "-s -w -X main.Version=#{version}"
+    ldflags = "-X main.Version=#{version}"
     system "go", "build", *std_go_args(output: bin/"squix", ldflags:), "./cmd/squix"
     bin.install_symlink "squix" => "pam"
   end

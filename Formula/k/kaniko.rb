@@ -18,7 +18,7 @@ class Kaniko < Formula
   deny_network_access!
 
   def install
-    ldflags = "-s -w -X github.com/chainguard-dev/kaniko/pkg/version.version=#{version}"
+    ldflags = "-X github.com/chainguard-dev/kaniko/pkg/version.version=#{version}"
 
     %w[executor warmer].each do |cmd|
       system "go", "build", *std_go_args(ldflags:, output: bin/"kaniko-#{cmd}"), "./cmd/#{cmd}"

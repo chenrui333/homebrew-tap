@@ -24,7 +24,7 @@ class Gitcredits < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.commit=brew")
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version} -X main.commit=brew")
   end
 
   test do

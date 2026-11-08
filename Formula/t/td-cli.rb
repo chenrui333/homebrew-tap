@@ -25,7 +25,7 @@ class TdCli < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}", output: bin/"td")
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}", output: bin/"td")
     generate_completions_from_executable(bin/"td", shell_parameter_format: :cobra)
   end
 

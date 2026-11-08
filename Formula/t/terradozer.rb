@@ -24,7 +24,7 @@ class Terradozer < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/chenrui333/terradozer/internal.version=#{version}"
+    ldflags = "-X github.com/chenrui333/terradozer/internal.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

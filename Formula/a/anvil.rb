@@ -24,7 +24,7 @@ class Anvil < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.appVersion=#{version}"
+    ldflags = "-X main.appVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "."
   end
 

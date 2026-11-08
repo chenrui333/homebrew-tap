@@ -27,7 +27,7 @@ class Cocainate < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/AppleGamer22/cocainate/commands.Version=#{version}"
+    ldflags = "-X github.com/AppleGamer22/cocainate/commands.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"cocainate", shell_parameter_format: :cobra)

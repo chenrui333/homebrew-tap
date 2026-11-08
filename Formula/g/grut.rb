@@ -23,7 +23,7 @@ class Grut < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/jongio/grut/internal/config.AppVersion=#{version}"
+    ldflags = "-X github.com/jongio/grut/internal/config.AppVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"grut", shell_parameter_format: :cobra)
   end

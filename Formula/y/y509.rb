@@ -23,7 +23,7 @@ class Y509 < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/kanywst/y509/internal/version.Version=#{version}"
+    ldflags = "-X github.com/kanywst/y509/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/y509"
     generate_completions_from_executable(bin/"y509", shell_parameter_format: :cobra)
   end

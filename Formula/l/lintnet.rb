@@ -27,7 +27,7 @@ class Lintnet < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
+    ldflags = "-X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/lintnet"
 
     generate_completions_from_executable(bin/"lintnet", shell_parameter_format: :cobra)
@@ -50,7 +50,7 @@ index 01bd584..65ab375 100644
 @@ -13,6 +13,21 @@ type GlobalFlags struct {
  	Config   string
  }
- 
+
 +// normalizeArgs rewrites "completion powershell" to "completion pwsh" for Homebrew compatibility.
 +// Homebrew's generate_completions_from_executable calls "completion powershell",
 +// but urfave/cli/v3 only recognizes "pwsh", not "powershell".

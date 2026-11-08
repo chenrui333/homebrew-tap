@@ -23,7 +23,7 @@ class Moji < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/microck/moji/internal/app.Version=#{version}"), "./cmd/moji"
+    system "go", "build", *std_go_args(ldflags: "-X github.com/microck/moji/internal/app.Version=#{version}"), "./cmd/moji"
   end
 
   test do

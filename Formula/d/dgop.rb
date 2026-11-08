@@ -22,7 +22,7 @@ class Dgop < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.buildTime=#{time.iso8601} -X main.commit=#{tap.user}"
+    ldflags = "-X main.Version=#{version} -X main.buildTime=#{time.iso8601} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/dgop"
 
     generate_completions_from_executable bin/"dgop", shell_parameter_format: :cobra

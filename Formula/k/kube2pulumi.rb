@@ -25,7 +25,7 @@ class Kube2pulumi < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/pulumi/kube2pulumi/pkg/version.Version=#{version}"
+    ldflags = "-X github.com/pulumi/kube2pulumi/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kube2pulumi"
 
     generate_completions_from_executable(bin/"kube2pulumi", shell_parameter_format: :cobra)

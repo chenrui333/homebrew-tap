@@ -31,7 +31,7 @@ class Gsh < Formula
     ENV.prepend_path "PATH", tool_path
     system "go", "generate", "./..."
 
-    ldflags = "-s -w -X main.BUILD_VERSION=#{version}"
+    ldflags = "-X main.BUILD_VERSION=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"gsh"), "./cmd/gsh/main.go"
   end
 

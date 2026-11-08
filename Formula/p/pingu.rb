@@ -32,7 +32,7 @@ class Pingu < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.appVersion=#{version} -X main.appRevision=#{tap.user}"
+    ldflags = "-X main.appVersion=#{version} -X main.appRevision=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

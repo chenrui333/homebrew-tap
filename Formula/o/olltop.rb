@@ -28,7 +28,7 @@ class Olltop < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     ENV["CGO_ENABLED"] = "1"
     system "go", "build", *std_go_args(ldflags:), "./cmd/olltop"
   end

@@ -23,7 +23,7 @@ class Av < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/aviator-co/av/internal/config.Version=v#{version}"
+    ldflags = "-X github.com/aviator-co/av/internal/config.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/av"
   end
 

@@ -24,7 +24,7 @@ class Kyma < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/museslabs/kyma/cmd.version=#{version}"
+    ldflags = "-X github.com/museslabs/kyma/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

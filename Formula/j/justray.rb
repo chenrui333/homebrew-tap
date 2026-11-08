@@ -24,7 +24,7 @@ class Justray < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/luynrs/justray/internal/version.Version=#{version}"
+    ldflags = "-X github.com/luynrs/justray/internal/version.Version=#{version}"
     tags = "with_quic,with_utls,with_gvisor,with_grpc,with_xhttp"
     %w[justray justrayd].each do |name|
       system "go", "build", *std_go_args(output: bin/name, ldflags:), "-tags=#{tags}", "./cmd/#{name}"

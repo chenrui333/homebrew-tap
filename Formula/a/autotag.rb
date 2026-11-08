@@ -24,7 +24,7 @@ class Autotag < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./autotag"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./autotag"
   end
 
   test do

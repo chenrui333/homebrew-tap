@@ -31,7 +31,7 @@ class Herald < Formula
   def install
     # go-sqlite3 requires cgo on every supported platform.
     ENV["CGO_ENABLED"] = "1"
-    ldflags = "-s -w -X github.com/herald-email/herald-mail-app/internal/version.Version=#{version}"
+    ldflags = "-X github.com/herald-email/herald-mail-app/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/herald"
   end
 

@@ -25,7 +25,7 @@ class MardiGras < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}", output: bin/"mg"), "./cmd/mg"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}", output: bin/"mg"), "./cmd/mg"
   end
 
   test do

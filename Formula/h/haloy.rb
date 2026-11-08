@@ -26,7 +26,7 @@ class Haloy < Formula
 
   def install
     %w[haloy haloyadm].each do |cmd|
-      ldflags = "-s -w -X github.com/haloydev/haloy/cmd.version=#{version}"
+      ldflags = "-X github.com/haloydev/haloy/cmd.version=#{version}"
       system "go", "build", *std_go_args(ldflags:, output: bin/cmd), "./cmd/#{cmd}"
 
       generate_completions_from_executable(bin/cmd, shell_parameter_format: :cobra)

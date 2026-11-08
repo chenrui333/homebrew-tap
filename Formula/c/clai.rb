@@ -25,7 +25,7 @@ class Clai < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/baalimago/clai/internal.BuildVersion=#{version}"
+    ldflags = "-X github.com/baalimago/clai/internal.BuildVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

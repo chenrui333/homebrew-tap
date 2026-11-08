@@ -23,7 +23,7 @@ class Layerx < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"layerx", shell_parameter_format: :cobra)
   end

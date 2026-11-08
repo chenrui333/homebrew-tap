@@ -26,7 +26,7 @@ class Xytz < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/xdagiz/xytz/internal/version.Version=#{version}"
+    ldflags = "-X github.com/xdagiz/xytz/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

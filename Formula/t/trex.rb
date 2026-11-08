@@ -28,7 +28,7 @@ class Trex < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/samyakbardiya/trex/cmd.version=v#{version}"
+    ldflags = "-X github.com/samyakbardiya/trex/cmd.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

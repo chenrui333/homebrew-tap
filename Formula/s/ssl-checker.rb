@@ -24,7 +24,7 @@ class SslChecker < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/fabio42/ssl-checker/cmd.Version=#{version}"
+    ldflags = "-X github.com/fabio42/ssl-checker/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"ssl-checker", shell_parameter_format: :cobra)

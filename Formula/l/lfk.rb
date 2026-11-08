@@ -23,7 +23,7 @@ class Lfk < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/janosmiko/lfk/internal/version.Version=#{version}"
+    ldflags = "-X github.com/janosmiko/lfk/internal/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "."
 
     generate_completions_from_executable(bin/"lfk", shell_parameter_format: :cobra)

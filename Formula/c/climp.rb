@@ -27,7 +27,7 @@ class Climp < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=v#{version}"
+    ldflags = "-X main.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

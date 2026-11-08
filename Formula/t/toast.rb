@@ -24,7 +24,7 @@ class Toast < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "./cmd/toast"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), "./cmd/toast"
   end
 
   test do

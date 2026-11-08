@@ -26,7 +26,7 @@ class Ips < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/sjzar/ips/cmd/ips.Version=#{version}"
+    ldflags = "-X github.com/sjzar/ips/cmd/ips.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 

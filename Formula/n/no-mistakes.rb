@@ -23,7 +23,7 @@ class NoMistakes < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/kunchenguid/no-mistakes/internal/buildinfo.Version=v#{version}"
+    ldflags = "-X github.com/kunchenguid/no-mistakes/internal/buildinfo.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/no-mistakes"
     generate_completions_from_executable(bin/"no-mistakes", shell_parameter_format: :cobra)
   end

@@ -26,7 +26,7 @@ class PicoclawAfjcjsbx < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    ldflags = "-s -w -X github.com/sipeed/picoclaw/pkg/config.Version=#{version}"
+    ldflags = "-X github.com/sipeed/picoclaw/pkg/config.Version=#{version}"
     system "go", "build", *std_go_args(output: bin/"picoclaw", ldflags:), "-tags=goolm,stdjson", "./cmd/picoclaw"
     generate_completions_from_executable(bin/"picoclaw", shell_parameter_format: :cobra)
   end

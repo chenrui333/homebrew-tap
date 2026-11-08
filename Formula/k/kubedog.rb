@@ -27,7 +27,7 @@ class Kubedog < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/werf/kubedog.Version=#{version}"
+    ldflags = "-X github.com/werf/kubedog.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kubedog"
 
     generate_completions_from_executable(bin/"kubedog", shell_parameter_format: :cobra)

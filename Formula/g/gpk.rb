@@ -23,7 +23,7 @@ class Gpk < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     ENV["GOFLAGS"] = "-buildvcs=false"
     system "go", "build", *std_go_args(ldflags:), "./cmd/gpk"
   end

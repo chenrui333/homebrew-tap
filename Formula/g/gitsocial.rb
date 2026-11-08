@@ -23,7 +23,7 @@ class Gitsocial < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cli/gitsocial"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cli/gitsocial"
 
     generate_completions_from_executable(bin/"gitsocial", shell_parameter_format: :cobra)
   end

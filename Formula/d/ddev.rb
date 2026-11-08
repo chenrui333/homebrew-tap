@@ -24,7 +24,7 @@ class Ddev < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/ddev/ddev/pkg/versionconstants.DdevVersion=#{version}"
+    ldflags = "-X github.com/ddev/ddev/pkg/versionconstants.DdevVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/ddev"
 
     # generate_completions_from_executable(bin/"ddev", "completion", shells: [:bash, :zsh, :fish, :pwsh])

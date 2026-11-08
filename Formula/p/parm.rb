@@ -24,7 +24,7 @@ class Parm < Formula
   end
 
   def install
-    ldflags = "-s -w -X parm/parmver.StringVersion=v#{version}"
+    ldflags = "-X parm/parmver.StringVersion=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

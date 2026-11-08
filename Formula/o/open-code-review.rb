@@ -23,7 +23,7 @@ class OpenCodeReview < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.Version=v#{version}"
+    ldflags = "-X main.Version=v#{version}"
     system "go", "build", *std_go_args(output: bin/"ocr", ldflags:), "./cmd/opencodereview"
   end
 

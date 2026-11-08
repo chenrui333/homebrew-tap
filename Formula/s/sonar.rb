@@ -27,7 +27,7 @@ class Sonar < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/raskrebs/sonar/internal/selfupdate.Version=v#{version}"
+    ldflags = "-X github.com/raskrebs/sonar/internal/selfupdate.Version=v#{version}"
 
     system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin/"sonar",

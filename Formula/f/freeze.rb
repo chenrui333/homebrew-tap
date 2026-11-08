@@ -24,7 +24,7 @@ class Freeze < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.CommitSHA=brew"
+    ldflags = "-X main.Version=#{version} -X main.CommitSHA=brew"
     system "go", "build", *std_go_args(ldflags:)
   end
 

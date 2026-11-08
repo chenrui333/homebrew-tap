@@ -20,7 +20,7 @@ class Kwt < Formula
   deny_network_access!
 
   def install
-    ldflags = "-s -w -X github.com/carvel-dev/kwt/pkg/kwt/cmd.Version=#{version}"
+    ldflags = "-X github.com/carvel-dev/kwt/pkg/kwt/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/kwt"
   end
 

@@ -23,7 +23,7 @@ class Packemon < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.Revision=brew"
+    ldflags = "-X main.Version=#{version} -X main.Revision=brew"
     system "go", "build", *std_go_args(ldflags:), "./cmd/packemon"
   end
 

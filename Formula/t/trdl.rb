@@ -26,7 +26,7 @@ class Trdl < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/werf/trdl/client/pkg/trdl.Version=#{version}"
+    ldflags = "-X github.com/werf/trdl/client/pkg/trdl.Version=#{version}"
     cd "client" do
       system "go", "build", *std_go_args(ldflags:), "./cmd/trdl"
     end

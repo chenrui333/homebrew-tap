@@ -38,7 +38,7 @@ class Plandex < Formula
 
   def install
     cd "app/cli" do
-      system "go", "build", *std_go_args(ldflags: "-s -w -X plandex-cli/version.Version=#{version}",
+      system "go", "build", *std_go_args(ldflags: "-X plandex-cli/version.Version=#{version}",
                                          output:  libexec/"plandex")
     end
 

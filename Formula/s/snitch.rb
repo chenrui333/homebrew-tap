@@ -26,7 +26,7 @@ class Snitch < Formula
   def install
     ENV["GOTOOLCHAIN"] = "local"
 
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X main.VERSION=#{version}")
     generate_completions_from_executable(bin/"snitch", shell_parameter_format: :cobra)
   end
 

@@ -24,7 +24,7 @@ class Pike < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/jameswoolfenden/pike/src.Version=#{version}"
+    ldflags = "-X github.com/jameswoolfenden/pike/src.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

@@ -32,7 +32,7 @@ class Que < Formula
       ENV.append "GOFLAGS", "-buildmode=pie"
     end
 
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/que"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/que"
   end
 
   test do

@@ -24,7 +24,7 @@ class Gommit < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X gommit.appVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X gommit.appVersion=#{version}")
 
     generate_completions_from_executable(bin/"gommit", shell_parameter_format: :cobra)
   end

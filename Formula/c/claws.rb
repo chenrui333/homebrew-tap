@@ -23,7 +23,7 @@ class Claws < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"claws"), "./cmd/claws"
   end

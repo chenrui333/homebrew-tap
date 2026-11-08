@@ -27,7 +27,7 @@ class Resto < Formula
     # Skip the post-command GitHub release check: it dereferences a nil response when offline
     inreplace "main.go", "checker.Check(version)", "_ = checker.Check"
 
-    ldflags = "-s -w -X main.version=v#{version} -X main.versionDate=#{time.iso8601}"
+    ldflags = "-X main.version=v#{version} -X main.versionDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"resto", shell_parameter_format: :cobra)

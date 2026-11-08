@@ -29,7 +29,7 @@ class TokenCli < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/imduffy15/token-cli/version.Version=#{version}"
+    ldflags = "-X github.com/imduffy15/token-cli/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"token-cli", shell_parameter_format: :cobra)

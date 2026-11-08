@@ -23,7 +23,7 @@ class UnusedDeps < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.buildVersion=#{version}", output: bin/"unused_deps"), "./unused_deps"
+    system "go", "build", *std_go_args(ldflags: "-X main.buildVersion=#{version}", output: bin/"unused_deps"), "./unused_deps"
   end
 
   test do

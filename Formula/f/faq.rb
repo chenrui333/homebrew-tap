@@ -33,7 +33,7 @@ class Faq < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
-    ldflags = "-s -w -X github.com/jzelinskie/faq/internal/version.Version=#{version}"
+    ldflags = "-X github.com/jzelinskie/faq/internal/version.Version=#{version}"
     system "go", "build", "-tags", "netgo", *std_go_args(ldflags:), "./cmd/faq"
   end
 

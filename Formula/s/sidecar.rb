@@ -23,7 +23,7 @@ class Sidecar < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.Version=#{version}"
+    ldflags = "-X main.Version=#{version}"
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"sidecar"), "./cmd/sidecar"
   end

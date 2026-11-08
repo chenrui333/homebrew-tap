@@ -24,7 +24,7 @@ class Travelgrunt < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.appVersion=#{version}"), "./cmd/travelgrunt"
+    system "go", "build", *std_go_args(ldflags: "-X main.appVersion=#{version}"), "./cmd/travelgrunt"
   end
 
   test do

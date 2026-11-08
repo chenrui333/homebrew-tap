@@ -23,7 +23,7 @@ class Gix < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/ademajagon/gix/cmd.version=#{version}"
+    ldflags = "-X github.com/ademajagon/gix/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"gix", shell_parameter_format: :cobra)

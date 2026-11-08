@@ -23,7 +23,7 @@ class Golazo < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/0xjuanma/golazo/cmd.Version=#{version}"
+    ldflags = "-X github.com/0xjuanma/golazo/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

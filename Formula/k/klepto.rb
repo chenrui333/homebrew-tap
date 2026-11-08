@@ -24,7 +24,7 @@ class Klepto < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/hellofresh/klepto/cmd.version=#{version}"
+    ldflags = "-X github.com/hellofresh/klepto/cmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"klepto", shell_parameter_format: :cobra)

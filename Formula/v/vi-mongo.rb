@@ -24,7 +24,7 @@ class ViMongo < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/kopecmaciej/vi-mongo/internal/build.Version=v#{version}"
+    ldflags = "-X github.com/kopecmaciej/vi-mongo/internal/build.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

@@ -24,7 +24,7 @@ class Yr < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/yr"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/yr"
 
     generate_completions_from_executable(bin/"yr", shell_parameter_format: :cobra)
   end

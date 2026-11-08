@@ -24,7 +24,7 @@ class BetterEnv < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/HarishChandran3304/better-env/cmd.Version=#{version}"
+    ldflags = "-X github.com/HarishChandran3304/better-env/cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

@@ -22,7 +22,7 @@ class Batctl < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"batctl"), "./cmd/batctl"
   end
 

@@ -36,7 +36,7 @@ class Clawpatrol < Formula
       system "deno", "task", "build"
     end
 
-    ldflags = "-s -w -X main.buildVersion=#{version}"
+    ldflags = "-X main.buildVersion=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/clawpatrol"
 
     pkgshare.install "examples"

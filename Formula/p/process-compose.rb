@@ -23,7 +23,7 @@ class ProcessCompose < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/f1bonacc1/process-compose/src/config.Version=#{version}"
+    ldflags = "-X github.com/f1bonacc1/process-compose/src/config.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./"
 
     generate_completions_from_executable(bin/"process-compose", shell_parameter_format: :cobra)

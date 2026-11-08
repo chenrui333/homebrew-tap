@@ -34,7 +34,7 @@ class CpaUsageKeeper < Formula
     end
     # go-sqlite3 requires cgo; Homebrew enables it by default except on Linux ARM.
     ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
-    ldflags = "-s -w -X cpa-usage-keeper/internal/version.Version=v#{version}"
+    ldflags = "-X cpa-usage-keeper/internal/version.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/server"
     inreplace ".env.example", "WORK_DIR=./data", "WORK_DIR=#{var}/cpa-usage-keeper"
     etc.install ".env.example" => "cpa-usage-keeper.env"

@@ -24,7 +24,7 @@ class Nocc < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/VKCOM/nocc/internal/common.version=#{version}"
+    ldflags = "-X github.com/VKCOM/nocc/internal/common.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"nocc-daemon"), "./cmd/nocc-daemon"
     system "go", "build", *std_go_args(ldflags:, output: bin/"nocc-server"), "./cmd/nocc-server"
     system ENV.cxx, "-std=c++11", "-O3", "cmd/nocc.cpp", "-o", bin/"nocc"

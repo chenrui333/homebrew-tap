@@ -24,7 +24,7 @@ class NamespaceCli < Formula
   end
 
   def install
-    ldflags = "-s -w -X namespacelabs.dev/foundation/internal/cli/version.Tag=#{version}"
+    ldflags = "-X namespacelabs.dev/foundation/internal/cli/version.Tag=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"nsc"), "./cmd/nsc"
   end
 

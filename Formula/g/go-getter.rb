@@ -30,7 +30,7 @@ class GoGetter < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.GitCommit=#{version}"
+    ldflags = "-X main.GitCommit=#{version}"
     cd "cmd/go-getter" do
       system "go", "build", *std_go_args(ldflags:), "."
     end

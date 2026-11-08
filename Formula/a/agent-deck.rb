@@ -24,7 +24,7 @@ class AgentDeck < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/agent-deck"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/agent-deck"
     generate_completions_from_executable(bin/"agent-deck", "completion")
   end
 

@@ -23,7 +23,7 @@ class CloudflareDdns < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/ddns"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/ddns"
   end
 
   service do

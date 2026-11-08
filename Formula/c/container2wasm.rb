@@ -24,7 +24,7 @@ class Container2wasm < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/ktock/container2wasm/version.Version=#{version}"
+    ldflags = "-X github.com/ktock/container2wasm/version.Version=#{version}"
     %w[c2w c2w-net].each do |cmd|
       system "go", "build", *std_go_args(ldflags:, output: bin/cmd), "./cmd/#{cmd}"
     end

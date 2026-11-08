@@ -29,7 +29,7 @@ class AxiomMcpServer < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.Version=#{version} -X main.CommitSHA=#{tap.user} -X main.BuildTime=#{time.iso8601}"
+    ldflags = "-X main.Version=#{version} -X main.CommitSHA=#{tap.user} -X main.BuildTime=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

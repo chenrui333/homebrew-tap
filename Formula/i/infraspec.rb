@@ -25,7 +25,7 @@ class Infraspec < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/robmorgan/infraspec/internal/build.Version=#{version}"
+    ldflags = "-X github.com/robmorgan/infraspec/internal/build.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), "./cmd/infraspec"
 
     generate_completions_from_executable(bin/"infraspec", shell_parameter_format: :cobra)

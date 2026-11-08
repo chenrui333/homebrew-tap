@@ -24,7 +24,7 @@ class Chroncal < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/chroncal"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/chroncal"
   end
 
   test do

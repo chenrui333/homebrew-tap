@@ -23,7 +23,7 @@ class Keyward < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/keyward"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/keyward"
   end
 
   test do

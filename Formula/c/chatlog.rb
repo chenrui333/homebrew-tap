@@ -31,7 +31,7 @@ class Chatlog < Formula
               "if len(bi.Main.Version) > 0",
               "if len(bi.Main.Version) > 0 && Version == \"(dev)\""
 
-    ldflags = "-s -w -X github.com/sjzar/chatlog/pkg/version.Version=#{version}"
+    ldflags = "-X github.com/sjzar/chatlog/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

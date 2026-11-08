@@ -23,7 +23,7 @@ class Lazyworktree < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=homebrew -X main.builtBy=Homebrew"
+    ldflags = "-X main.version=#{version} -X main.commit=homebrew -X main.builtBy=Homebrew"
     system "go", "build", *std_go_args(ldflags:, output: bin/"lazyworktree"), "./cmd/lazyworktree"
 
     man1.install "lazyworktree.1"

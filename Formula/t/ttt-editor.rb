@@ -23,7 +23,7 @@ class TttEditor < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(output: bin/"ttt", ldflags: "-s -w -X main.version=#{version}"), "./cmd/ttt"
+    system "go", "build", *std_go_args(output: bin/"ttt", ldflags: "-X main.version=#{version}"), "./cmd/ttt"
   end
 
   test do

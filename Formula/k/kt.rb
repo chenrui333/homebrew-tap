@@ -29,7 +29,7 @@ class Kt < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.buildVersion=#{version} -X main.buildTime=#{time.iso8601}"
+    ldflags = "-X main.buildVersion=#{version} -X main.buildTime=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

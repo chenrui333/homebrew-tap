@@ -50,7 +50,7 @@ class Reasonix < Formula
       pkgshare.install "dist"
     end
 
-    system "go", "build", *std_go_args(output: libexec/"reasonix", ldflags: "-s -w -X main.version=v#{version}"),
+    system "go", "build", *std_go_args(output: libexec/"reasonix", ldflags: "-X main.version=v#{version}"),
            "./cmd/reasonix"
     (libexec/"frontend-next").install_symlink pkgshare/"dist"
     paths = %w[bash node ripgrep].map { |name| formula_opt_bin(name) }

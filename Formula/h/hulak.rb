@@ -23,7 +23,7 @@ class Hulak < Formula
   end
 
   def install
-    ldflags = "-s -w -X github.com/xaaha/hulak/pkg/userFlags.version=#{version}"
+    ldflags = "-X github.com/xaaha/hulak/pkg/userFlags.version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

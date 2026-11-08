@@ -24,7 +24,7 @@ class Tempo < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/galaxy-io/tempo/internal/update.Version=#{version}"), "./cmd/tempo"
+    system "go", "build", *std_go_args(ldflags: "-X github.com/galaxy-io/tempo/internal/update.Version=#{version}"), "./cmd/tempo"
   end
 
   test do

@@ -24,7 +24,7 @@ class Ssm < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.BuildVersion=#{version} -X main.BuildDate=#{time.iso8601} -X main.BuildSHA=#{tap.user}"
+    ldflags = "-X main.BuildVersion=#{version} -X main.BuildDate=#{time.iso8601} -X main.BuildSHA=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
   end
 

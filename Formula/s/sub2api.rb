@@ -43,7 +43,7 @@ class Sub2api < Formula
     end
     cd "backend" do
       ENV["CGO_ENABLED"] = "0"
-      ldflags = "-s -w -X main.Version=#{version} -X main.BuildType=release"
+      ldflags = "-X main.Version=#{version} -X main.BuildType=release"
       system "go", "build", *std_go_args(output: libexec/"sub2api", ldflags:), "-tags=embed", "./cmd/server"
       pkgshare.install "resources"
     end

@@ -24,7 +24,7 @@ class Tasktimer < Formula
   end
 
   def install
-    ldflags = "-s -w -X main.version=#{version}"
+    ldflags = "-X main.version=#{version}"
 
     system "go", "build", *std_go_args(ldflags:, output: bin/"tt"), "."
     generate_completions_from_executable(bin/"tt", shell_parameter_format: :cobra, shells: [:bash, :zsh, :fish])
