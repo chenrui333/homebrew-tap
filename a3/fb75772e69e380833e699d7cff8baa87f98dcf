@@ -1,0 +1,14 @@
+Formula/r/rulc.rb
+  h_9df9c32c3f321d 1-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a3fb75772e69e380833e699d7cff8baa87f98dcf",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
