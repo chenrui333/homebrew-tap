@@ -6,6 +6,14 @@ class Comhad < Formula
   license "MIT"
   head "https://github.com/Eoin-McMahon/comhad.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2c384a8f3549b73e9ad50c891ed186f1d3f53cf4b6062c2230997503aebd7bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b53647356eeca979a463c58ea0adb06be13cb9cc779df0b6d5cf2fa64de3be3"
+    sha256 cellar: :any,                 arm64_linux:   "5b074c515b6ddc5603498286720adc30138223bf1d4b935604bb64df15f0de0f"
+    sha256 cellar: :any,                 x86_64_linux:  "48abd8f2b4145015885732e7e86b4d4e8cc9496c80665427dae3d533f40a4fee"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
 
