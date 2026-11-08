@@ -1,0 +1,14 @@
+Casks/c/cleanboard.rb
+  h_9df9c32c3f321d 2-3,5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b82170c4dd32e8d10d39b4be10a29c0448ee5ebd",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
