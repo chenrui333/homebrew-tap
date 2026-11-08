@@ -25,6 +25,8 @@ options = {
 
 parser = OptionParser.new do |opts|
   opts.banner = "Usage: brew close-superseded-prs [options]"
+  opts.separator "Package versions are resolved within the target tap; other installed providers are ignored."
+  opts.separator ""
 
   opts.on("--apply", "Comment, label, and close superseded PRs") do
     options[:apply] = true
@@ -114,7 +116,7 @@ def package_info(package, root = TAP_ROOT)
   type, path = candidates.find { |_, candidate| File.file?(candidate) }
   return unless path
 
-  { type: type, path: path }
+  { type: type }
 end
 
 def tap_name(repo)
@@ -142,21 +144,22 @@ def package_version(package, repo)
   return unless info
 
   type = info.fetch(:type)
-  path = info.fetch(:path)
+  tap = tap_name(repo)
   type_flag = type == :formula ? "--formula" : "--cask"
 
-  stdout, stderr, status = capture3("brew", "info", "--json=v2", type_flag, path, env: brew_env)
+  stdout, stderr, status = capture3("brew", "info", "--json=v2", type_flag, "#{tap}/#{package}", env: brew_env)
   unless status.success?
     warn "Warning: could not determine current #{package} version: brew info failed:\n#{stderr}"
     return
   end
 
-  metadata = JSON.parse(stdout)
-  if type == :formula
-    metadata.fetch("formulae").first.fetch("versions").fetch("stable")
-  else
-    metadata.fetch("casks").first.fetch("version")
+  metadata = JSON.parse(stdout).fetch((type == :formula) ? "formulae" : "casks").first
+  unless metadata.fetch("tap")&.casecmp?(tap)
+    warn "Warning: ignoring #{package} metadata from #{metadata["tap"].inspect}; expected #{tap}"
+    return
   end
+
+  (type == :formula) ? metadata.fetch("versions").fetch("stable") : metadata.fetch("version")
 rescue StandardError => e
   warn "Warning: could not determine current #{package} version: #{e.message}"
   nil
