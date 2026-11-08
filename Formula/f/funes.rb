@@ -1,17 +1,17 @@
 class Funes < Formula
   desc "Searchable memory of past AI agent sessions, exposed over MCP"
   homepage "https://github.com/huggingface/funes"
-  url "https://github.com/huggingface/funes/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "57a6452685c501e739ee63664f17145c313ec49c2bce171c269cc7990aa38cfd"
+  url "https://github.com/huggingface/funes/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "55100de241219b66d1271764be6aa95a0caf1c2663d3d9469eaa40332cdb4682"
   license "Apache-2.0"
   head "https://github.com/huggingface/funes.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a46ca2711728fc2cb970130e0ef02dea8062f167137f90880fa824ffdda1ee1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a28621bd973b94ee5bf01c998ca1919695632fe7d23c1c0ab5bf1ccc582333ed"
-    sha256 cellar: :any,                 arm64_linux:   "ca9c789cf8cd8633852e5fa999ab627e46a98980107f28bf01ea5ea56f361082"
-    sha256 cellar: :any,                 x86_64_linux:  "855a62644eb4f9620306b6fd9df9f0b93b45ed3d1f34ab43157d7cda91096089"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fcc5c8c470a33526927edea0d9c329c1671b51d5a8e01ce8bf32cf259559616"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d03ce166cc66883f3d26a382bf7bc5dcaac5c5f86af6f483e803622287cfb1c"
+    sha256 cellar: :any,                 arm64_linux:   "b179d7bf397a9799d12eb3f75f38c6daf8ed614c057496073c16ea6b4fd351e4"
+    sha256 cellar: :any,                 x86_64_linux:  "afd27c9f01d0ee6a45bfc05af900ca579720447cb09bbe2865eb753589eb2061"
   end
 
   depends_on "cmake" => :build
