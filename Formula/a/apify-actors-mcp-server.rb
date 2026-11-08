@@ -1,13 +1,16 @@
 class ApifyActorsMcpServer < Formula
   desc "MCP server for Apify"
   homepage "https://docs.apify.com/platform/integrations/mcp"
-  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.20.2.tgz"
-  sha256 "8d2dc83f4333f1d1e5996c164f410bfe3e1ade7ebf82ee7b46f18b470f6d86fd"
+  url "https://registry.npmjs.org/@apify/actors-mcp-server/-/actors-mcp-server-0.21.1.tgz"
+  sha256 "74c39c1c4870d493d2f27c5766d98b64eec388f845109135b167118645d7c1fa"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "2efbc69a23cd4a3ffc058ca90476c1124543ae29de11cdfd1a83733ceb08fb47"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9c6a2f9657fed25c1577f5dd74cf7e8c9e788ae03ac86cde9f11d573d86a714d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c6a2f9657fed25c1577f5dd74cf7e8c9e788ae03ac86cde9f11d573d86a714d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8a2a7ec815e7f493eccdd6937a856c5125575ee67f238a35e3edfd3de97a9ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8a2a7ec815e7f493eccdd6937a856c5125575ee67f238a35e3edfd3de97a9ef"
   end
 
   depends_on "node"
