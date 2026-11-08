@@ -7,11 +7,7 @@ class VercelServe < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "507d43066e499058c3d65ea3c625ea485635edeab089fc1bb8aff2f1f808f0e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "507d43066e499058c3d65ea3c625ea485635edeab089fc1bb8aff2f1f808f0e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7302cbcb49a8727eff28d9c3509ed129e2bff28e51cb0e5ff2a89133ed1151b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7302cbcb49a8727eff28d9c3509ed129e2bff28e51cb0e5ff2a89133ed1151b8"
+    sha256 cellar: :any_skip_relocation, all: "71f14693108a2539d36e3b92be76c1f09f5c136f804487e8c7d41b6ddedfd530"
   end
 
   depends_on "node"
