@@ -6,6 +6,14 @@ class Sauva < Formula
   license all_of: ["MIT", "Unicode-3.0"]
   head "https://github.com/lusingander/sauva.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9585a507f95759afacf717ccec8deaf4be32662d6280ae5b0f608b26376698a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "934b015b7d71a0725710e6b1418f06f93c04f0dbaefb4d5e3e77aa7337e2f0d8"
+    sha256 cellar: :any,                 arm64_linux:   "ba587981b7b4d8d0c3ae66c75dc10977e8141f3e3586e5df58f9fe17d003ac32"
+    sha256 cellar: :any,                 x86_64_linux:  "0efdc9e161249305867430f0b765b49b0d933f5f99ebb3d73a056012fbe068a6"
+  end
+
   depends_on "rust" => :build
 
   on_linux do
