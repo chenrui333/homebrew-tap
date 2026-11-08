@@ -1,17 +1,13 @@
 class VercelServe < Formula
   desc "Static file serving and directory listing"
   homepage "https://github.com/vercel/serve"
-  url "https://registry.npmjs.org/serve/-/serve-14.2.6.tgz"
-  sha256 "126b5ec79d81a85307ebd1953084526ae181c203276cf64b961a7bee31cb7b81"
+  url "https://registry.npmjs.org/serve/-/serve-14.2.7.tgz"
+  sha256 "9cc5fa69277761fafd4531a46ee5f9ec37dd0246c3419564a8c08c89fa51f63b"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "507d43066e499058c3d65ea3c625ea485635edeab089fc1bb8aff2f1f808f0e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "507d43066e499058c3d65ea3c625ea485635edeab089fc1bb8aff2f1f808f0e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7302cbcb49a8727eff28d9c3509ed129e2bff28e51cb0e5ff2a89133ed1151b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7302cbcb49a8727eff28d9c3509ed129e2bff28e51cb0e5ff2a89133ed1151b8"
+    sha256 cellar: :any_skip_relocation, all: "71f14693108a2539d36e3b92be76c1f09f5c136f804487e8c7d41b6ddedfd530"
   end
 
   depends_on "node"
@@ -31,15 +27,6 @@ class VercelServe < Formula
     rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
     bin.install_symlink libexec/"bin/serve"
-
-    clipboardy_fallbacks_dir = libexec/"lib/node_modules/serve/node_modules/clipboardy/fallbacks"
-    rm_r(clipboardy_fallbacks_dir) # remove pre-built binaries
-    if OS.linux?
-      linux_dir = clipboardy_fallbacks_dir/"linux"
-      linux_dir.mkpath
-      # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (formula_opt_bin("xsel")/"xsel").relative_path_from(linux_dir), linux_dir
-    end
   end
 
   test do
