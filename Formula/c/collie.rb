@@ -1,9 +1,9 @@
 class Collie < Formula
   desc "Mobile web interface for the coding agents in your terminal"
   homepage "https://github.com/AltanS/collie"
-  url "https://github.com/AltanS/collie/archive/refs/tags/v1.25.5-edge.1.tar.gz"
-  version "1.25.5-edge.1"
-  sha256 "07026bd786a40c1df6a169930cb3c066b44edaae5a7f941810d411f7fb0dd230"
+  url "https://github.com/AltanS/collie/archive/refs/tags/v1.28.0-edge.2.tar.gz"
+  version "1.28.0-edge.2"
+  sha256 "fc0e549447c12b28701ddff505e86528bc3598d6f2d99d8286cfd4c2df631033"
   license "MIT"
   head "https://github.com/AltanS/collie.git", branch: "main"
 
@@ -39,8 +39,7 @@ class Collie < Formula
 
   def install
     system "bun", "scripts/release-version.ts", "--tag", "v#{version}", "--stamp"
-    inreplace "web/vite.config.ts", "const buildTime = new Date().toISOString();",
-              "const buildTime = new Date(0).toISOString();"
+    ENV["COLLIE_BUILD_TIME"] = "1970-01-01T00:00:00.000Z"
     tsc = formula_opt_bin("typescript")/"tsc"
     system tsc, "--noEmit"
     system tsc, "--noEmit", "-p", "tsconfig.contract.json"
