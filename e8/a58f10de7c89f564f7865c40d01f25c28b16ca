@@ -1,0 +1,376 @@
+Formula/l/lazytilt.rb
+  h_9df9c32c3f321d 27
+Formula/s/speedtest.rb
+  h_9df9c32c3f321d 27
+Formula/g/grut.rb
+  h_9df9c32c3f321d 26
+Formula/k/klepto.rb
+  h_9df9c32c3f321d 27
+Formula/g/go-eagle.rb
+  h_9df9c32c3f321d 29
+Formula/a/aic.rb
+  h_9df9c32c3f321d 27
+Formula/p/pom.rb
+  h_9df9c32c3f321d 28
+Formula/r/reqlog.rb
+  h_9df9c32c3f321d 26
+Formula/c/cmdperf.rb
+  h_9df9c32c3f321d 26
+Formula/s/silver-surfer.rb
+  h_9df9c32c3f321d 24
+Formula/s/snitch.rb
+  h_9df9c32c3f321d 29
+Formula/p/pam.rb
+  h_9df9c32c3f321d 33
+Formula/c/cloudflare-ddns.rb
+  h_9df9c32c3f321d 26
+Formula/b/bbrew.rb
+  h_9df9c32c3f321d 27
+Formula/e/envlens.rb
+  h_9df9c32c3f321d 27
+Formula/g/gommit.rb
+  h_9df9c32c3f321d 27
+Formula/t/timetrace.rb
+  h_9df9c32c3f321d 28
+Formula/c/clai.rb
+  h_9df9c32c3f321d 28
+Formula/g/gix.rb
+  h_9df9c32c3f321d 26
+Formula/c/cueimports.rb
+  h_9df9c32c3f321d 28
+Formula/v/vi-mongo.rb
+  h_9df9c32c3f321d 27
+Formula/b/burn.rb
+  h_9df9c32c3f321d 26
+Formula/p/pluqqy.rb
+  h_9df9c32c3f321d 27
+Formula/s/starcharts.rb
+  h_9df9c32c3f321d 28
+Formula/u/unused-deps.rb
+  h_9df9c32c3f321d 26
+Formula/l/lfk.rb
+  h_9df9c32c3f321d 26
+Formula/p/podcli.rb
+  h_9df9c32c3f321d 27
+Formula/n/nhost.rb
+  h_9df9c32c3f321d 28
+Formula/k/ku.rb
+  h_9df9c32c3f321d 26
+Formula/i/infraspec.rb
+  h_9df9c32c3f321d 28
+Formula/c/cc-filter.rb
+  h_9df9c32c3f321d 27
+Formula/p/packemon.rb
+  h_9df9c32c3f321d 26
+Formula/s/sqlmux.rb
+  h_9df9c32c3f321d 26
+Formula/c/clawpatrol.rb
+  h_9df9c32c3f321d 39
+Formula/d/diskbloom.rb
+  h_9df9c32c3f321d 27
+Formula/j/justray.rb
+  h_9df9c32c3f321d 27
+Formula/n/no-mistakes.rb
+  h_9df9c32c3f321d 26
+Formula/p/process-compose.rb
+  h_9df9c32c3f321d 26
+Formula/e/envtpl.rb
+  h_9df9c32c3f321d 28
+Formula/l/lazynpm.rb
+  h_9df9c32c3f321d 22
+Formula/g/git-chglog.rb
+  h_9df9c32c3f321d 28
+Formula/o/olltop.rb
+  h_9df9c32c3f321d 31
+Formula/k/keyward.rb
+  h_9df9c32c3f321d 26
+Formula/s/schema.rb
+  h_9df9c32c3f321d 27
+Formula/c/chatlog.rb
+  h_9df9c32c3f321d 34
+Formula/g/gitsnip.rb
+  h_9df9c32c3f321d 26
+Formula/a/awsesh.rb
+  h_9df9c32c3f321d 29
+Formula/t/terradozer.rb
+  h_9df9c32c3f321d 27
+Formula/p/picoclaw-afjcjsbx.rb
+  h_9df9c32c3f321d 29
+Formula/t/trdl.rb
+  h_9df9c32c3f321d 29
+Formula/c/claws.rb
+  h_9df9c32c3f321d 26
+Formula/e/e2c.rb
+  h_9df9c32c3f321d 27
+Formula/w/watchtower.rb
+  h_9df9c32c3f321d 26
+Formula/c/climp.rb
+  h_9df9c32c3f321d 30
+Formula/t/toofan.rb
+  h_9df9c32c3f321d 27
+Formula/n/nibble.rb
+  h_9df9c32c3f321d 28
+Formula/r/rbac-lookup.rb
+  h_9df9c32c3f321d 27
+Formula/p/plandex.rb
+  h_9df9c32c3f321d 41
+Formula/e/ec.rb
+  h_9df9c32c3f321d 26
+Formula/k/kure.rb
+  h_9df9c32c3f321d 27
+Formula/t/terrap-cli.rb
+  h_9df9c32c3f321d 28
+Formula/v/venom.rb
+  h_9df9c32c3f321d 28
+Formula/j/jsonl-graph.rb
+  h_9df9c32c3f321d 27
+Formula/t/ticker.rb
+  h_9df9c32c3f321d 27
+Formula/k/kcl.rb
+  h_9df9c32c3f321d 26
+Formula/c/cpa-usage-keeper.rb
+  h_9df9c32c3f321d 37
+Formula/p/pingu.rb
+  h_9df9c32c3f321d 35
+Formula/t/ttt-editor.rb
+  h_9df9c32c3f321d 26
+Formula/y/y509.rb
+  h_9df9c32c3f321d 26
+Formula/s/showboat.rb
+  h_9df9c32c3f321d 26
+Formula/t/tempo.rb
+  h_9df9c32c3f321d 27
+Formula/g/gitcredits.rb
+  h_9df9c32c3f321d 27
+Formula/c/cozypkg.rb
+  h_9df9c32c3f321d 27
+Formula/o/open-code-review.rb
+  h_9df9c32c3f321d 26
+Formula/k/kt.rb
+  h_9df9c32c3f321d 32
+Formula/s/sidecar.rb
+  h_9df9c32c3f321d 26
+Formula/k/kaniko.rb
+  h_9df9c32c3f321d 21
+Formula/p/parm.rb
+  h_9df9c32c3f321d 27
+Formula/s/sonar.rb
+  h_9df9c32c3f321d 30
+Formula/t/treekanga.rb
+  h_9df9c32c3f321d 27
+Formula/t/togomak.rb
+  h_9df9c32c3f321d 27
+Formula/s/spor.rb
+  h_9df9c32c3f321d 26
+Formula/e/enry.rb
+  h_9df9c32c3f321d 28
+Formula/c/container2wasm.rb
+  h_9df9c32c3f321d 27
+Formula/c/cooldeck.rb
+  h_9df9c32c3f321d 27
+Formula/l/lazyworktree.rb
+  h_9df9c32c3f321d 26
+Formula/h/humioctl.rb
+  h_9df9c32c3f321d 29
+Formula/c/checksec.rb
+  h_9df9c32c3f321d 35
+Formula/d/diffyml.rb
+  h_9df9c32c3f321d 28
+Formula/d/dgop.rb
+  h_9df9c32c3f321d 25
+Formula/k/kwt.rb
+  h_9df9c32c3f321d 23
+Formula/s/spotifydl.rb
+  h_9df9c32c3f321d 28
+Formula/c/cclogviewer.rb
+  h_9df9c32c3f321d 28
+Formula/c/cohctl.rb
+  h_9df9c32c3f321d 27
+Formula/w/wedl.rb
+  h_9df9c32c3f321d 28
+Formula/m/mcpsnoop.rb
+  h_9df9c32c3f321d 26
+Formula/g/gemini-cli.rb
+  h_9df9c32c3f321d 27
+Formula/e/envdiff.rb
+  h_9df9c32c3f321d 26
+Formula/k/kubedog.rb
+  h_9df9c32c3f321d 30
+Formula/s/ssl-checker.rb
+  h_9df9c32c3f321d 27
+Formula/n/namespace-cli.rb
+  h_9df9c32c3f321d 27
+Formula/k/kbst.rb
+  h_9df9c32c3f321d 27
+Formula/q/que.rb
+  h_9df9c32c3f321d 35
+Formula/x/xql.rb
+  h_9df9c32c3f321d 26
+Formula/z/zero.rb
+  h_9df9c32c3f321d 27
+Formula/c/cocainate.rb
+  h_9df9c32c3f321d 30
+Formula/k/kyma.rb
+  h_9df9c32c3f321d 27
+Formula/f/freeze.rb
+  h_9df9c32c3f321d 27
+Formula/s/sub2api.rb
+  h_9df9c32c3f321d 46
+Formula/g/gokin.rb
+  h_9df9c32c3f321d 26
+Formula/g/go-getter.rb
+  h_9df9c32c3f321d 33
+Formula/t/tfreveal.rb
+  h_9df9c32c3f321d 28
+Formula/a/agent-deck.rb
+  h_9df9c32c3f321d 27
+Formula/n/nocc.rb
+  h_9df9c32c3f321d 27
+Formula/x/xytz.rb
+  h_9df9c32c3f321d 29
+Formula/t/tparse.rb
+  h_9df9c32c3f321d 27
+Formula/h/hostctl.rb
+  h_9df9c32c3f321d 28
+Formula/k/kube2pulumi.rb
+  h_9df9c32c3f321d 28
+Formula/h/haloy.rb
+  h_9df9c32c3f321d 29
+Formula/s/ssm.rb
+  h_9df9c32c3f321d 27
+Formula/b/batctl.rb
+  h_9df9c32c3f321d 25
+Formula/i/inbucket.rb
+  h_9df9c32c3f321d 26
+Formula/t/toast.rb
+  h_9df9c32c3f321d 27
+Formula/m/meteor.rb
+  h_9df9c32c3f321d 28
+Formula/t/trex.rb
+  h_9df9c32c3f321d 31
+Formula/l/lazyenv.rb
+  h_9df9c32c3f321d 26
+Formula/a/ai-context.rb
+  h_9df9c32c3f321d 28
+Formula/t/tinifier.rb
+  h_9df9c32c3f321d 23
+Formula/t/travelgrunt.rb
+  h_9df9c32c3f321d 27
+Formula/d/ddev.rb
+  h_9df9c32c3f321d 27
+Formula/t/token-cli.rb
+  h_9df9c32c3f321d 32
+Formula/g/gitsocial.rb
+  h_9df9c32c3f321d 26
+Formula/c/cnspec.rb
+  h_9df9c32c3f321d 26
+Formula/l/layerx.rb
+  h_9df9c32c3f321d 26
+Formula/g/gitid.rb
+  h_9df9c32c3f321d 27
+Formula/m/moji.rb
+  h_9df9c32c3f321d 26
+Formula/h/herald.rb
+  h_9df9c32c3f321d 34
+Formula/o/otelgen.rb
+  h_9df9c32c3f321d 27
+Formula/c/cpg.rb
+  h_9df9c32c3f321d 26
+Formula/k/kubeseal-convert.rb
+  h_9df9c32c3f321d 27
+Formula/s/scrt.rb
+  h_9df9c32c3f321d 27
+Formula/f/faq.rb
+  h_9df9c32c3f321d 36
+Formula/c/cf-vault.rb
+  h_9df9c32c3f321d 28
+Formula/c/csvi.rb
+  h_9df9c32c3f321d 27
+Formula/f/fli.rb
+  h_9df9c32c3f321d 27
+Formula/i/ips.rb
+  h_9df9c32c3f321d 29
+Formula/g/gsh.rb
+  h_9df9c32c3f321d 34
+Formula/m/memtui.rb
+  h_9df9c32c3f321d 27
+Formula/r/reasonix.rb
+  h_9df9c32c3f321d 53
+Formula/d/daylight.rb
+  h_9df9c32c3f321d 27
+Formula/f/flow-network.rb
+  h_9df9c32c3f321d 26
+Formula/t/tenderly.rb
+  h_9df9c32c3f321d 27
+Formula/p/pike.rb
+  h_9df9c32c3f321d 27
+Formula/f/flipt.rb
+  h_9df9c32c3f321d 27
+Formula/a/anvil.rb
+  h_9df9c32c3f321d 27
+Formula/a/axiom-mcp-server.rb
+  h_9df9c32c3f321d 32
+Formula/m/mardi-gras.rb
+  h_9df9c32c3f321d 28
+Formula/l/lazyjira.rb
+  h_9df9c32c3f321d 27
+Formula/n/narr.rb
+  h_9df9c32c3f321d 27
+Formula/h/hulak.rb
+  h_9df9c32c3f321d 26
+Formula/b/bin-fq.rb
+  h_9df9c32c3f321d 27
+Formula/c/cello.rb
+  h_9df9c32c3f321d 28
+Formula/t/tornado.rb
+  h_9df9c32c3f321d 27
+Formula/g/golazo.rb
+  h_9df9c32c3f321d 26
+Formula/b/better-env.rb
+  h_9df9c32c3f321d 27
+Formula/h/hclq.rb
+  h_9df9c32c3f321d 27
+Formula/k/kpt.rb
+  h_9df9c32c3f321d 32
+Formula/p/pv-migrate.rb
+  h_9df9c32c3f321d 27
+Formula/d/dumper.rb
+  h_9df9c32c3f321d 27
+Formula/c/cmdx.rb
+  h_9df9c32c3f321d 27
+Formula/t/terratags.rb
+  h_9df9c32c3f321d 26
+Formula/r/resto.rb
+  h_9df9c32c3f321d 30
+Formula/a/av.rb
+  h_9df9c32c3f321d 26
+Formula/a/autotag.rb
+  h_9df9c32c3f321d 27
+Formula/t/td-cli.rb
+  h_9df9c32c3f321d 28
+Formula/t/tasktimer.rb
+  h_9df9c32c3f321d 27
+Formula/c/crush.rb
+  h_9df9c32c3f321d 26
+Formula/g/gpk.rb
+  h_9df9c32c3f321d 26
+Formula/c/chproxy.rb
+  h_9df9c32c3f321d 27
+Formula/c/chroncal.rb
+  h_9df9c32c3f321d 27
+Formula/y/yr.rb
+  h_9df9c32c3f321d 27
+Formula/l/lintnet.rb
+  h_9df9c32c3f321d 30,53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e8a58f10de7c89f564f7865c40d01f25c28b16ca",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
