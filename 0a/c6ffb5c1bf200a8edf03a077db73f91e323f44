@@ -1,0 +1,17 @@
+Formula/k/kudu.rb
+  h_9df9c32c3f321d 4-5,17,19,43-44,46,48-79
+  h_9df9c32c3f321d 28-38,47,80
+.typos.toml
+  h_9df9c32c3f321d 49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0ac6ffb5c1bf200a8edf03a077db73f91e323f44",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
