@@ -6,6 +6,14 @@ class Sqlmux < Formula
   license "MIT"
   head "https://github.com/kackerx/sqlmux.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e18215e0836d7b27d48a26d03c58feb12b490ce92be6bfab2fb901d68801b9c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e18215e0836d7b27d48a26d03c58feb12b490ce92be6bfab2fb901d68801b9c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "02fe115ff38e209576b87c5df7b1fe897648a32b9fd1ed1c47fcf34280f47f26"
+    sha256 cellar: :any,                 x86_64_linux:  "0c5f9f5b4961db7a5064f97eac80d28558b344f187676542cdfbfe25cd05c282"
+  end
+
   depends_on "go" => :build
 
   deny_network_access!
