@@ -1,0 +1,19 @@
+Casks/a/accomplish.rb
+  s_9a8cc51b5e1b2d::t_45fbced527855a 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "89798be1075e9e199b1b6038d8ecf540fdb0487a",
+  "prompts": {},
+  "sessions": {
+    "s_9a8cc51b5e1b2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bd52-4cb3-76e2-94c0-539c9b7cca9c",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
