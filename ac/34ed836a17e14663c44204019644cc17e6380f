@@ -1,0 +1,14 @@
+Formula/o/oh-my-codex.rb
+  h_9df9c32c3f321d 4-5,32,44-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ac34ed836a17e14663c44204019644cc17e6380f",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
