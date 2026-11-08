@@ -1,0 +1,15 @@
+Formula/c/codex-auth.rb
+  h_9df9c32c3f321d 17
+  h_9df9c32c3f321d 4-5,28-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f8d376089d3883d0baa7a232c4136bdd7810920",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
