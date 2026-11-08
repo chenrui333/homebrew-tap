@@ -1,0 +1,14 @@
+Casks/s/speaktype.rb
+  h_9df9c32c3f321d 2-3,5,15,17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "394f3a99cf7062a4bac6366d8045864ba45182b3",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
