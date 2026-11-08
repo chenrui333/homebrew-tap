@@ -46,6 +46,11 @@ extend-exclude = [
 certifi = "certifi" # python package name used in ruby formulae
 fo = "fo" # for resinator.rb
 Iinclude = "Iinclude" # C compiler -I flag in zerolang.rb
+passt = "passt" # upstream networking dependency name
+ratatui = "ratatui" # terminal UI crate
+
+[type.ruby.extend-identifiers]
+flate2 = "flate2" # compression crate
 
 [type.md.extend-words]
 certifi = "certifi"
