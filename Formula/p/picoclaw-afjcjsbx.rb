@@ -8,10 +8,10 @@ class PicoclawAfjcjsbx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7f6576234c7ed7d9b55afcc53bcf899566641ae09d80cfe3e7c841352beadef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7f6576234c7ed7d9b55afcc53bcf899566641ae09d80cfe3e7c841352beadef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c02ac9adbc2d265094e9f9339c2b2dd7a2808a2d0334f902663e90241818ca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73afef638dd05039e174dbd51ac34c1b0dc73c934c330958ef138969f8b16496"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "18bcf22c4dded812c1295d6345eab43e28ef4640e93ed3faed8d4ce668a8af83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18bcf22c4dded812c1295d6345eab43e28ef4640e93ed3faed8d4ce668a8af83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "934ccbcc8e460a893ef96c4b2323b4a93046e11c30390ddbce4d2dbdf17c9377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6de8183ed0b59eaadfee231cd1852e4b68bcdb8499a5448144fc3c7cf9ec2521"
   end
 
   depends_on "go" => :build
