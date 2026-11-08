@@ -8,10 +8,10 @@ class Clauth < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "67ca9cb10df77a74a98489338864cc7887e35eafa5ba4774707aba611213253f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bddbb0d6ed46ffc4eee3bee88c63c394fa9df8842f103bb4dbb00b5f359ee8ab"
-    sha256 cellar: :any,                 arm64_linux:   "1b213fe91dc0a0b4b341ad0700a5ad318332e268ed384c0c7ef9bc8282cf2d01"
-    sha256 cellar: :any,                 x86_64_linux:  "75d74500ef839f49c6175166fd303160f136df4bda9703234584a9b3140bd28d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "214e3aaa274fdb80b96bef5eb5423c5c5fb221da7e4e5d7ff711f504670c5149"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b6a8d4d418d1a7a9c78f6126530fbabe135bcf061fa9d5a9d096e081b62c0a8"
+    sha256 cellar: :any,                 arm64_linux:   "19938faff4b64e45e621c18dd9563848cfe99e29224bc506f60e230c1c56bd9f"
+    sha256 cellar: :any,                 x86_64_linux:  "ae01ae97730be2fe9b4d5143742fbd55bd3c7be6ef9205fd8a7236ce5f2c3b21"
   end
 
   depends_on "rust" => :build
