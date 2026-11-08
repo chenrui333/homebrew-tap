@@ -1,8 +1,8 @@
 class Rulc < Formula
   desc "REPL and terminal calculator with plotting support"
   homepage "https://github.com/imizgun/rulc"
-  url "https://github.com/imizgun/rulc/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "929c93d987baf96177503b5148b588c993179f5eb2eebdec3d136ae3e5ddcc79"
+  url "https://github.com/imizgun/rulc/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "3acb486752fee55ed8011465df7a04bdfba3822131bc9855c950119ad3d20efc"
   license "GPL-3.0-or-later"
   head "https://github.com/imizgun/rulc.git", branch: "master"
 
@@ -27,7 +27,8 @@ class Rulc < Formula
   end
 
   test do
-    assert_match version.to_s, pipe_output(bin/"rulc", "", 0)
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    assert_equal "14\n", pipe_output(bin/"rulc", "2 + 3 * 4\n", 0)
     assert_match ">> 14", shell_output("#{bin}/rulc --exec '2 + 3 * 4'")
     assert_match ">> 256", shell_output("#{bin}/rulc --exec '2 ^ 8'")
   end
