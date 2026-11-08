@@ -1,0 +1,14 @@
+Formula/t/tincan.rb
+  h_9df9c32c3f321d 1-43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "83948c52925aec251386d88d340b2f76898f83a9",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
