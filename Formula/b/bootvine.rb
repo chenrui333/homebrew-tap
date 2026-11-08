@@ -6,6 +6,12 @@ class Bootvine < Formula
   license "GPL-3.0-or-later"
   head "https://codeberg.org/wvhulle/bootvine.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_linux:  "f07c896cd131307ece1563e055ec56ac8d7818b692e77dd53d0c31aa32594fb7"
+    sha256 cellar: :any, x86_64_linux: "af48fc7ac2a69dccfa0eb117dae622feb394c6a9e438e737b654459148eddaf3"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "dbus"
