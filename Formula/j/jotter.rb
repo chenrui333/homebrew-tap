@@ -6,6 +6,14 @@ class Jotter < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/samox73/jotter.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06e3b1bfb7e27f4c3e4fe33330e4a904cda11db5abcb327631e36ca9c2722992"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d20b6ab2e8f8c5a748fb3b7c171e4d47248182aec7f8de16e0fcf6980b67f82a"
+    sha256 cellar: :any,                 arm64_linux:   "65449acb93087dcff3fc2f6504c16b68dbe0cdc95544396464b9050269e0f744"
+    sha256 cellar: :any,                 x86_64_linux:  "91935bb8950abe4aa83eeda46a89019071f73256481298b85326b407789fd05f"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
