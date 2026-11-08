@@ -1,0 +1,16 @@
+formula-status/formula-status.md
+  h_9df9c32c3f321d 250,743
+lychee.toml
+  h_9df9c32c3f321d 10-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cb83c9848021ac33dff0b965fbca7c2b8549e86c",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
