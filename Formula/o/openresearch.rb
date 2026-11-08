@@ -8,10 +8,10 @@ class Openresearch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e68668ccb11ab3b81dfc954a65199c037bfed9fa8e58cdccc7da758e05977a87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a2ff88f3cde6718e4eca5e8757633aec59483ffd88f1e2500c4f12d877ddce5"
-    sha256 cellar: :any,                 arm64_linux:   "1cdb32d9c1b35351af7a9b514acff58eb7721b4d343b086faee27f5092d5479e"
-    sha256 cellar: :any,                 x86_64_linux:  "a8dfe7f08e631f475ef6ff2caf773e1cea269b26bb8830ac999e96d8a9dac6f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "210e7656371641c36f69391cd97e1ec887e0c3c304b1b9c4ac2866328e089670"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e17bc7c316bc8d76d43bddfc80cc0446c368a391e8920d3891517b8c0576231e"
+    sha256 cellar: :any,                 arm64_linux:   "bb852af72cc4151b753a8188da9bdbe673e5a6176c7692141da9ff3db5757a26"
+    sha256 cellar: :any,                 x86_64_linux:  "cbdbecbd059f4fc0558b44bf974c78bc780dfd9512197e4246f2fa7a519ecccf"
   end
 
   depends_on "node" => :build
