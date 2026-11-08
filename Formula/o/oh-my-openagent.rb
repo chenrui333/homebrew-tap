@@ -1,8 +1,8 @@
 class OhMyOpenagent < Formula
   desc "Multi-model agent orchestration plugin and toolkit for OpenCode and Codex"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.57.tar.gz"
-  sha256 "955100009ffea37c865cff2c72a6dc4af24715eaf6d3582b31a99674c780cd00"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.64.tar.gz"
+  sha256 "966b75621be50b651e8cb527e5025156537ba136fc33eb0fcd90aa4285d595cc"
   # Sustainable Use License 1.0 permits only free, non-commercial redistribution.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
