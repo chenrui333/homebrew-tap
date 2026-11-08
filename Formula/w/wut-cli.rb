@@ -6,6 +6,7 @@ class WutCli < Formula
   url "https://files.pythonhosted.org/packages/8c/6e/88ce60111824fa74e94b2687054891c19fb75e5f951b332a198f71ffee19/wut_cli-1.0.8.tar.gz"
   sha256 "a2b812b36a4dd70798c672d536233261c9265246494769743ae25acb33a90186"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -20,12 +21,12 @@ class WutCli < Formula
   depends_on "rust" => :build # for jiter
   depends_on "certifi"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
-  pypi_packages exclude_packages: %w[pydantic pydantic-core],
+  pypi_packages exclude_packages: %w[certifi pydantic pydantic-core],
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core
-                  setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling==1.26.3 packaging pathspec pluggy
+                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
                 ]
 
   resource "anthropic" do
@@ -73,9 +74,10 @@ class WutCli < Formula
     sha256 "0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9"
   end
 
+  # Both OpenAI and Anthropic sdists require this exact build backend.
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
-    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
   end
 
   resource "httpcore" do
@@ -184,8 +186,8 @@ class WutCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "vcs-versioning" do
@@ -224,10 +226,10 @@ class WutCli < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -238,7 +240,12 @@ class WutCli < Formula
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
-    output = shell_output(bin/"wut")
-    assert_match "wut must be run inside a tmux or screen session", output
+    %w[TMUX STY OPENAI_API_KEY ANTHROPIC_API_KEY OLLAMA_MODEL].each { |key| ENV.delete(key) }
+    assert_match "wut must be run inside a tmux or screen session", shell_output(bin/"wut")
+
+    ENV["TMUX"] = "homebrew-test"
+    assert_match "Please set your OpenAI or Anthropic API key", shell_output(bin/"wut")
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
