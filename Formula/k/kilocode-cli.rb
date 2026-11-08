@@ -8,10 +8,10 @@ class KilocodeCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "529d7bffded00f10df4159ca544154d98e5a8f06a2f292fb64f989c325c53d73"
-    sha256 arm64_sequoia: "dd95bccf970a5b8caf895115f1c6b17cb97611c3a5c871d092eaef3ce085c10a"
-    sha256 arm64_linux:   "ad7c530909b20d8d72a4693b4d2d060a31bb1d0a858e6dc740d827bb86ed1128"
-    sha256 x86_64_linux:  "bd33f91ffb648b1918940337e452cf99ec69d29602cda6d40536af332eae5bc6"
+    sha256 arm64_tahoe:   "96565745936b104f341b8dffab39ab872a970a896d9af410dfc67ea2890deab4"
+    sha256 arm64_sequoia: "02beb1f40352d3f225a3592a9e52fe44811a64eefaf2cef4c70c99e1a68f2efe"
+    sha256 arm64_linux:   "2c98dd3d7b8d392d32cc7c2b06ef51db2e79f0cc0aa515314365e82885326810"
+    sha256 x86_64_linux:  "a8a4efd9aa0973e234eee10ff163643ee9de05d140a20edcbc6c2007904777c7"
   end
 
   depends_on "bun" => :build
