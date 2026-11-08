@@ -1,0 +1,14 @@
+Formula/g/gloomberb.rb
+  h_9df9c32c3f321d 3-5,7,18-19,22-24,26-28,33-40,42-74,78-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "57b780a896cd7c914c62a70927e4e37b12ce5f17",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
