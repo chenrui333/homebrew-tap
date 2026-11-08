@@ -28,5 +28,21 @@ class CargoBenchcmp < Formula
 
   test do
     assert_match version.to_s, shell_output("cargo benchcmp --version")
+
+    (testpath/"old.txt").write <<~EOS
+      test bench_a ... bench: 1,000 ns/iter (+/- 10)
+      test bench_b ... bench: 2,000 ns/iter (+/- 20)
+    EOS
+    (testpath/"new.txt").write <<~EOS
+      test bench_b ... bench: 4,000 ns/iter (+/- 40)
+      test bench_a ... bench: 500 ns/iter (+/- 5)
+    EOS
+
+    output = shell_output("cargo benchcmp --color never old.txt new.txt")
+    comparisons = output.lines.grep(/^\s*bench_/).map { |line| line.split.values_at(0, 1, 2, 3, 4, 6) }
+    assert_equal [
+      ["bench_a", "1,000", "500", "-500", "-50.00%", "2.00"],
+      ["bench_b", "2,000", "4,000", "2,000", "100.00%", "0.50"],
+    ], comparisons
   end
 end
