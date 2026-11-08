@@ -1,8 +1,8 @@
 class Moji < Formula
   desc "Find, inspect and convert fonts"
   homepage "https://github.com/Microck/moji"
-  url "https://github.com/Microck/moji/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "43989e70b8dba28180e5a9bbbc51c833d74a4ebe652a2a263b266d8eea9983f4"
+  url "https://github.com/Microck/moji/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "3b7803cbcf00048394668746a847074ce76928850199bb38fdd809042268a4c9"
   license "MIT"
   head "https://github.com/Microck/moji.git", branch: "main"
 
