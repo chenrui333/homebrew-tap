@@ -1,10 +1,15 @@
 class GitAi < Formula
   desc "Git extension for tracking AI-generated code in repositories"
   homepage "https://github.com/git-ai-project/git-ai"
-  url "https://github.com/git-ai-project/git-ai/archive/refs/tags/v1.7.5.tar.gz"
-  sha256 "2aea77871e67720ef13b75c85b746e6d5a250083d3d11835726efe183d70a7cb"
+  url "https://github.com/git-ai-project/git-ai/archive/refs/tags/v1.7.6.tar.gz"
+  sha256 "df0f2797d179117a66a6c6bd228c57458fa818fd37094cb92d11ade113cfe657"
   license "Apache-2.0"
   head "https://github.com/git-ai-project/git-ai.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
