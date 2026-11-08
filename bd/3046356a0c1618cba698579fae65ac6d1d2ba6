@@ -1,0 +1,19 @@
+Casks/w/wechat@3.8.rb
+  s_9a8cc51b5e1b2d::t_3fb714ae491652 2-3,5,11-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bd3046356a0c1618cba698579fae65ac6d1d2ba6",
+  "prompts": {},
+  "sessions": {
+    "s_9a8cc51b5e1b2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bd52-4cb3-76e2-94c0-539c9b7cca9c",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
