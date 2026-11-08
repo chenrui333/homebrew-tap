@@ -203,6 +203,7 @@ brew install --cask <tool>
 - `claudio`
 - `claumon`
 - `clauth`
+- `clavirio`
 - `claw-code`
 - `clawbands`
 - `clawea`
@@ -339,6 +340,7 @@ brew install --cask <tool>
 - `ec2-ami-tools`
 - `eca`
 - `ecscope`
+- `edamame`
 - `editly`
 - `effectcraft-cli`
 - `eilmeldung`
@@ -551,6 +553,7 @@ brew install --cask <tool>
 - `jolt`
 - `jonquil`
 - `jotbird`
+- `jotter`
 - `journalot`
 - `jplot`
 - `jsmin`
@@ -575,9 +578,11 @@ brew install --cask <tool>
 - `kcl-kafka`
 - `kcl`
 - `kctx`
+- `kernwatch`
 - `keyhunter`
 - `keyward`
 - `khaos-cli`
+- `kilocode-cli`
 - `kimiflare`
 - `kite-tui`
 - `klein`
@@ -694,6 +699,7 @@ brew install --cask <tool>
 - `minimax-mcp-server`
 - `ministack`
 - `mitex`
+- `mitos`
 - `mlbt`
 - `mln`
 - `mlx-audio`
@@ -934,6 +940,7 @@ brew install --cask <tool>
 - `rslocal`
 - `rt`
 - `rtop`
+- `rulc`
 - `ruler`
 - `rum`
 - `run`
@@ -963,6 +970,7 @@ brew install --cask <tool>
 - `sdl_mixer`
 - `sdl_net`
 - `sdl_ttf`
+- `sdrtop`
 - `seamstress`
 - `seastar`
 - `secco`
@@ -1012,12 +1020,14 @@ brew install --cask <tool>
 - `splashboard`
 - `splitrail`
 - `spok`
+- `spor`
 - `spotatui`
 - `spotiflac-cli`
 - `spotifydl`
 - `sprofile`
 - `sqd`
 - `sqlit`
+- `sqlmux`
 - `squads-cli`
 - `squall`
 - `sshmail`
@@ -1077,6 +1087,7 @@ brew install --cask <tool>
 - `termide`
 - `terminal-mcp`
 - `terminal-use`
+- `termtastic`
 - `termtunnel`
 - `terra-code-cli`
 - `terracove`
