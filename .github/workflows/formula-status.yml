@@ -21,6 +21,14 @@ jobs:
       pull-requests: write
 
     steps:
+      # Setup replaces the tap's workspace Git directory; restore checkout credentials
+      # and prepare automation/formula-metadata only after setup and trust finish.
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+
+      - name: Trust tap
+        run: brew trust --tap chenrui333/tap
+
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -32,12 +40,6 @@ jobs:
         env:
           BRANCH: automation/formula-metadata
         run: .github/scripts/publish-generated-pr.sh prepare
-
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-
-      - name: Trust tap
-        run: brew trust --tap chenrui333/tap
 
       - name: Set up Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
@@ -68,7 +70,7 @@ jobs:
           PR_TITLE: 'chore: update formula metadata'
           PR_BODY: Generated automatically by the Formula Metadata workflow.
           COMMIT_MESSAGE: 'chore: update formula metadata'
-        run: .github/scripts/publish-generated-pr.sh publish formula-status/formula-status.md .cache/
+        run: .github/scripts/publish-generated-pr.sh publish .cache/formula_metadata.json formula-status/formula-status.md
 
       - name: Summary
         run: |
