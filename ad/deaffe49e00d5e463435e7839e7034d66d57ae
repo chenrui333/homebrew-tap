@@ -1,0 +1,15 @@
+Formula/p/python-yq.rb
+  h_9df9c32c3f321d 1-14,16-139
+  h_9df9c32c3f321d 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "addeaffe49e00d5e463435e7839e7034d66d57ae",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
