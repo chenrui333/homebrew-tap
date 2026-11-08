@@ -1,8 +1,8 @@
 class Clauth < Formula
   desc "Multi-account manager and usage monitor for Claude Code"
   homepage "https://github.com/uwuclxdy/clauth"
-  url "https://github.com/uwuclxdy/clauth/archive/refs/tags/v0.18.1.tar.gz"
-  sha256 "a520cb4444279acf64b05b62b8b2b0b26f8efb82f80e9934e17047bf3301017f"
+  url "https://github.com/uwuclxdy/clauth/archive/refs/tags/v0.18.2.tar.gz"
+  sha256 "2f3efd3f27bbb714bda4eb18da92e56dfbe9088ffe00e4efbf63ab0c04f8ca99"
   license "MIT"
   head "https://github.com/uwuclxdy/clauth.git", branch: "mommy"
 
