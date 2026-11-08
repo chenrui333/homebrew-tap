@@ -6,6 +6,14 @@ class Sdrtop < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/musithang/sdrtop.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "149316426f612d121f3b0c0d3bc6d88934bb3daa54efe31b546a49f4ab0171d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e402cb96fcead6ce1087345e51b57dcda275f5235945ebfce519fb44e343f219"
+    sha256 cellar: :any,                 arm64_linux:   "a948633f3d34d0f61870dae6478f41e70cf46549b7e0877ce391b26abdb50ca8"
+    sha256 cellar: :any,                 x86_64_linux:  "e4558c42f7815d6563f0ac18ec3d050c4df381acfbdf17393b5e7eb68eee5e3f"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
