@@ -6,6 +6,14 @@ class Llamastash < Formula
   license "MIT"
   head "https://github.com/llamastash/llamastash.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "efea440ef7bb99f2fd0089d5645fe012fd31740fd4c0db3bd7ae179e76fabe0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "059dbd941cf305dedb68be5546f07ef2bf0807147f4002610b146087a997301f"
+    sha256 cellar: :any,                 arm64_linux:   "038ce0c99c47d44f0095ee5e045f69d2c51057505d8a7c408baa8efc40ab8140"
+    sha256 cellar: :any,                 x86_64_linux:  "036339ce7b5f48643060175df69420654b17453a68320cbf12ba424f77a8c17b"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "llama.cpp"
