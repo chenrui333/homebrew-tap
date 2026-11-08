@@ -1,6 +1,6 @@
 class ClaudeCodeGenericHooks < Formula
   desc "Generic hooks for Claude Code"
-  homepage "https://github.com/possibilities/claude-code-generic-hooks"
+  homepage "https://www.npmjs.com/package/claude-code-generic-hooks"
   url "https://registry.npmjs.org/claude-code-generic-hooks/-/claude-code-generic-hooks-0.1.13.tgz"
   sha256 "f0b9d95daab6c4be59fdfb6ff55ede58cd816f07e22ca0e8e8d5ae152341bec6"
   license "MIT"
