@@ -6,6 +6,14 @@ class Edamame < Formula
   license all_of: ["Apache-2.0", "OFL-1.1"]
   head "https://github.com/mijowi/edamame.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52369a8b6ce7f9e11164106e41e34b65503b17f717ebcc1e11212632f5f8a981"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1e6bf1fe97949517ba0b19cdee8e38699eb9b8bfd35f679ab1b572784534928"
+    sha256 cellar: :any,                 arm64_linux:   "0a258d4e1df2be1969b58c4354201b6b1eb915adc0d8d0a19b36656d9cf56896"
+    sha256 cellar: :any,                 x86_64_linux:  "4e2c08724f20d2900006e99f1a4f53bdd33ac91e43aaf98ac161d9bf6a889b22"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
