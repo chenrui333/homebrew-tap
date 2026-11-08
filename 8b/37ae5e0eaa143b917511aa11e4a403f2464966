@@ -1,0 +1,15 @@
+Formula/b/bootvine.rb
+  h_9df9c32c3f321d 1-45,47-52
+  h_9df9c32c3f321d 46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8b37ae5e0eaa143b917511aa11e4a403f2464966",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
