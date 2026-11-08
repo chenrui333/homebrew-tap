@@ -1,8 +1,8 @@
 class Funes < Formula
   desc "Searchable memory of past AI agent sessions, exposed over MCP"
   homepage "https://github.com/huggingface/funes"
-  url "https://github.com/huggingface/funes/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "57a6452685c501e739ee63664f17145c313ec49c2bce171c269cc7990aa38cfd"
+  url "https://github.com/huggingface/funes/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "55100de241219b66d1271764be6aa95a0caf1c2663d3d9469eaa40332cdb4682"
   license "Apache-2.0"
   head "https://github.com/huggingface/funes.git", branch: "main"
 
