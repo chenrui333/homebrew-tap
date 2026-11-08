@@ -1,0 +1,19 @@
+Formula/m/minimax-mcp-server.rb
+  s_9a8cc51b5e1b2d::t_f27fd31d3b45bc 9,28,33,84-85,380,389-392,394-395
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "54b73ee9dd9394493df6e9ab3a992f63d8b5a226",
+  "prompts": {},
+  "sessions": {
+    "s_9a8cc51b5e1b2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bd52-4cb3-76e2-94c0-539c9b7cca9c",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
