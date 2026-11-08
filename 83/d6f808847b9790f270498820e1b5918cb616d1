@@ -1,0 +1,260 @@
+Formula/s/spacelift-intent.rb
+  h_9df9c32c3f321d 27
+Formula/m/mockgen.rb
+  h_9df9c32c3f321d 28
+Formula/h/httptap.rb
+  h_9df9c32c3f321d 27
+Formula/s/saw.rb
+  h_9df9c32c3f321d 34
+Formula/t/tcpterm.rb
+  h_9df9c32c3f321d 39
+Formula/g/gecit.rb
+  h_9df9c32c3f321d 34
+Formula/k/kube-role-gen.rb
+  h_9df9c32c3f321d 30
+Formula/m/mynav.rb
+  h_9df9c32c3f321d 27
+Formula/a/adbtuifm.rb
+  h_9df9c32c3f321d 29
+Formula/o/oui.rb
+  h_9df9c32c3f321d 27
+Formula/r/rtop.rb
+  h_9df9c32c3f321d 34
+Formula/o/osmar.rb
+  h_9df9c32c3f321d 27
+Formula/g/gowebly.rb
+  h_9df9c32c3f321d 31
+Formula/i/ingero.rb
+  h_9df9c32c3f321d 31
+Formula/u/urlhunter.rb
+  h_9df9c32c3f321d 29
+Formula/p/psq.rb
+  h_9df9c32c3f321d 25
+Formula/t/tftree.rb
+  h_9df9c32c3f321d 34
+Formula/j/jplot.rb
+  h_9df9c32c3f321d 27
+Formula/p/pphack.rb
+  h_9df9c32c3f321d 26
+Formula/s/sato.rb
+  h_9df9c32c3f321d 28
+Formula/b/bash-script-tools.rb
+  h_9df9c32c3f321d 30
+Formula/g/gitman.rb
+  h_9df9c32c3f321d 26
+Formula/a/agl.rb
+  h_9df9c32c3f321d 27
+Formula/g/gh-repo-man.rb
+  h_9df9c32c3f321d 28
+Formula/r/rabbitmq-message-ops.rb
+  h_9df9c32c3f321d 27
+Formula/d/di-tui.rb
+  h_9df9c32c3f321d 28
+Formula/y/yeetfile.rb
+  h_9df9c32c3f321d 27
+Formula/p/pgterm.rb
+  h_9df9c32c3f321d 28
+Formula/b/bpfvet.rb
+  h_9df9c32c3f321d 27
+Formula/c/crlfmt.rb
+  h_9df9c32c3f321d 27
+Formula/g/giq.rb
+  h_9df9c32c3f321d 27
+Formula/l/llmdog.rb
+  h_9df9c32c3f321d 28
+Formula/p/pomo.rb
+  h_9df9c32c3f321d 27
+Formula/g/go-envsubst.rb
+  h_9df9c32c3f321d 28
+Formula/g/ghfetch.rb
+  h_9df9c32c3f321d 27
+Formula/g/grmon.rb
+  h_9df9c32c3f321d 26
+Formula/p/pluralith.rb
+  h_9df9c32c3f321d 39
+Formula/b/bpfviewer.rb
+  h_9df9c32c3f321d 27
+Formula/t/termdbms.rb
+  h_9df9c32c3f321d 28
+Formula/k/krs.rb
+  h_9df9c32c3f321d 33
+Formula/b/bufisk.rb
+  h_9df9c32c3f321d 27
+Formula/g/gignr.rb
+  h_9df9c32c3f321d 28
+Formula/u/unisondb.rb
+  h_9df9c32c3f321d 33
+Formula/l/license-scanner.rb
+  h_9df9c32c3f321d 31
+Formula/d/dnsforwarder.rb
+  h_9df9c32c3f321d 31
+Formula/o/orla.rb
+  h_9df9c32c3f321d 26
+Formula/t/tetrigo.rb
+  h_9df9c32c3f321d 26
+Formula/a/allinssl.rb
+  h_9df9c32c3f321d 27
+Formula/p/pproftui.rb
+  h_9df9c32c3f321d 28
+Formula/c/claudio.rb
+  h_9df9c32c3f321d 26
+Formula/n/ngtop.rb
+  h_9df9c32c3f321d 29
+Formula/g/gorae.rb
+  h_9df9c32c3f321d 26
+Formula/c/clawea.rb
+  h_9df9c32c3f321d 27
+Formula/t/tftarget.rb
+  h_9df9c32c3f321d 29
+Formula/f/firectl.rb
+  h_9df9c32c3f321d 24
+Formula/m/mln.rb
+  h_9df9c32c3f321d 26
+Formula/p/pipeform.rb
+  h_9df9c32c3f321d 32
+Formula/c/clipse.rb
+  h_9df9c32c3f321d 35
+Formula/c/cpx.rb
+  h_9df9c32c3f321d 28
+Formula/b/bpftui.rb
+  h_9df9c32c3f321d 25
+Formula/d/deletor.rb
+  h_9df9c32c3f321d 27
+Formula/l/labcoat.rb
+  h_9df9c32c3f321d 28
+Formula/h/hexowl.rb
+  h_9df9c32c3f321d 25
+Formula/m/matcha.rb
+  h_9df9c32c3f321d 27
+Formula/d/dbee.rb
+  h_9df9c32c3f321d 31
+Formula/a/abc.rb
+  h_9df9c32c3f321d 28
+Formula/j/junit2html.rb
+  h_9df9c32c3f321d 27
+Formula/g/gitact.rb
+  h_9df9c32c3f321d 28
+Formula/t/terraform-diff.rb
+  h_9df9c32c3f321d 24
+Formula/a/awless.rb
+  h_9df9c32c3f321d 36
+Formula/e/enola.rb
+  h_9df9c32c3f321d 28
+Formula/m/mult.rb
+  h_9df9c32c3f321d 27
+Formula/h/hclgrep.rb
+  h_9df9c32c3f321d 27
+Formula/k/kumo.rb
+  h_9df9c32c3f321d 29
+Formula/r/rum.rb
+  h_9df9c32c3f321d 27
+Formula/g/gofakeit.rb
+  h_9df9c32c3f321d 22
+Formula/y/yajsv.rb
+  h_9df9c32c3f321d 26
+Formula/h/htvend.rb
+  h_9df9c32c3f321d 27
+Formula/l/lstags.rb
+  h_9df9c32c3f321d 33
+Formula/p/pwdsafety.rb
+  h_9df9c32c3f321d 27
+Formula/s/stree.rb
+  h_9df9c32c3f321d 27
+Formula/a/act3.rb
+  h_9df9c32c3f321d 29
+Formula/d/dbin.rb
+  h_9df9c32c3f321d 30
+Formula/s/scholar.rb
+  h_9df9c32c3f321d 28
+Formula/b/beelzebub.rb
+  h_9df9c32c3f321d 26
+Formula/o/otto.rb
+  h_9df9c32c3f321d 27
+Formula/p/pktz.rb
+  h_9df9c32c3f321d 26
+Formula/p/pencode.rb
+  h_9df9c32c3f321d 23
+Formula/z/zuse.rb
+  h_9df9c32c3f321d 27
+Formula/r/ruler.rb
+  h_9df9c32c3f321d 28
+Formula/m/markpdf.rb
+  h_9df9c32c3f321d 28
+Formula/c/curlmin.rb
+  h_9df9c32c3f321d 28
+Formula/p/protodot.rb
+  h_9df9c32c3f321d 28
+Formula/c/chalet.rb
+  h_9df9c32c3f321d 29
+Formula/d/discordo.rb
+  h_9df9c32c3f321d 32
+Formula/t/togo.rb
+  h_9df9c32c3f321d 28
+Formula/s/sloop.rb
+  h_9df9c32c3f321d 27
+Formula/e/ergo.rb
+  h_9df9c32c3f321d 27
+Formula/n/ninjabot.rb
+  h_9df9c32c3f321d 26
+Formula/c/codespelunker.rb
+  h_9df9c32c3f321d 26
+Formula/t/terrafetch.rb
+  h_9df9c32c3f321d 27
+Formula/h/hcldump.rb
+  h_9df9c32c3f321d 27
+Formula/l/leveldb-cli.rb
+  h_9df9c32c3f321d 29
+Formula/p/protoc-gen-lint.rb
+  h_9df9c32c3f321d 24
+Formula/w/wakey.rb
+  h_9df9c32c3f321d 27
+Formula/f/ferret.rb
+  h_9df9c32c3f321d 27
+Formula/g/gobgp.rb
+  h_9df9c32c3f321d 26
+Formula/g/gittop.rb
+  h_9df9c32c3f321d 25
+Formula/p/protolock.rb
+  h_9df9c32c3f321d 27
+Formula/o/omnictl.rb
+  h_9df9c32c3f321d 26
+Formula/a/azazel.rb
+  h_9df9c32c3f321d 28
+Formula/t/tpm.rb
+  h_9df9c32c3f321d 28
+Formula/e/elastop.rb
+  h_9df9c32c3f321d 29
+Formula/f/froggit.rb
+  h_9df9c32c3f321d 27
+Formula/p/pho.rb
+  h_9df9c32c3f321d 26
+Formula/z/zmate.rb
+  h_9df9c32c3f321d 28
+Formula/u/ugm.rb
+  h_9df9c32c3f321d 25
+Formula/j/jsrpc.rb
+  h_9df9c32c3f321d 28
+Formula/c/cashd.rb
+  h_9df9c32c3f321d 27
+Formula/d/datacmd.rb
+  h_9df9c32c3f321d 29
+Formula/h/hyperbolic.rb
+  h_9df9c32c3f321d 27
+Formula/o/octoscope.rb
+  h_9df9c32c3f321d 26
+Formula/t/taproom.rb
+  h_9df9c32c3f321d 29
+scripts/formulae_list
+  h_9df9c32c3f321d 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "83d6f808847b9790f270498820e1b5918cb616d1",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
