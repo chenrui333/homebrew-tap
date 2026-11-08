@@ -7,7 +7,14 @@ on:
 permissions: {}
 
 concurrency:
-  group: renovate-workflow-automerge-${{ github.event.pull_request.number }}
+  # Ineligible events must not cancel each other's skipped checks.
+  group: >-
+    renovate-workflow-automerge-${{
+      github.event.pull_request.user.login == 'renovate[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      format('pr-{0}', github.event.pull_request.number) ||
+      format('skip-{0}', github.run_id)
+    }}
   cancel-in-progress: true
 
 jobs:
