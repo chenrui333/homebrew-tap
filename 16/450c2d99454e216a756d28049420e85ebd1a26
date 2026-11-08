@@ -1,0 +1,19 @@
+Casks/h/holaclaw.rb
+  s_9a8cc51b5e1b2d::t_b8791da267fac7 2,10-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "16450c2d99454e216a756d28049420e85ebd1a26",
+  "prompts": {},
+  "sessions": {
+    "s_9a8cc51b5e1b2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bd52-4cb3-76e2-94c0-539c9b7cca9c",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
