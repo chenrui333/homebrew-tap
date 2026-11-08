@@ -1,0 +1,14 @@
+Formula/c/cliamp.rb
+  h_9df9c32c3f321d 4-5,46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6f7df06654316ca07c8f543489bb146c6d095b9c",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
