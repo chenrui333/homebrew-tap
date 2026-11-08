@@ -247,7 +247,7 @@ Total formulas: 1079
 | obelisk | Durable and deterministic workflow engine | 693 | 19 | 2026-06-07 | 2026-06-06 | AGPL-3.0-only | ✓ | - | [link](https://github.com/obeli-sk/obelisk) |
 | hackernews-tui | TUI to browse Hacker News | 686 | 30 | 2024-10-22 | 2024-10-22 | MIT | ✓ | - | [link](https://github.com/aome510/hackernews-TUI) |
 | sdl_ttf | Library for using TrueType fonts in SDL applications | 679 | 199 | 2026-02-13 | 2025-03-31 | Zlib | ✓ | ✓ | [link](https://github.com/libsdl-org/SDL_ttf) |
-| claude-composer | Tool that adds small enhancements to Claude Code | 676 | 23 | 2025-07-31 | - | Unlicense | ✓ | - | [link](https://github.com/possibilities/claude-composer) |
+| claude-composer | Tool that adds small enhancements to Claude Code | 676 | 23 | 2025-07-31 | - | Unlicense | ✓ | - | [link](https://www.npmjs.com/package/claude-composer) |
 | kumo | Lightweight AWS service emulator written in Go | 670 | 29 | 2026-04-10 | 2026-04-07 | MIT | ✓ | - | [link](https://github.com/sivchari/kumo) |
 | llxprt-code | Open-source multi-provider AI assisted CLI development tool | 669 | 90 | 2026-04-27 | 2026-04-27 | Apache-2.0 | ✓ | - | [link](https://github.com/vybestack/llxprt-code) |
 | sdl_mixer | Sample multi-channel audio mixer library | 664 | 204 | 2026-02-06 | 2025-02-07 | Zlib | ✓ | ✓ | [link](https://github.com/libsdl-org/SDL_mixer) |
@@ -740,7 +740,7 @@ Total formulas: 1079
 | diffyml | Structural YAML diff tool with Kubernetes intelligence | 53 | 2 | 2026-06-08 | 2026-06-03 | MIT | ✓ | - | [link](https://github.com/szhekpisov/diffyml) |
 | qwe | File-first atomic version control system | 53 | 7 | 2025-12-14 | 2025-12-14 | MIT | ✓ | - | [link](https://mainak55512.github.io/qwe/) |
 | siggy | Terminal-based Signal messenger client with vim keybindings | 53 | 3 | 2026-03-21 | 2026-03-16 | GPL-3.0-only | ✓ | - | [link](https://github.com/johnsideserf/siggy) |
-| claude-code-generic-hooks | Generic hooks for Claude Code | 52 | 4 | 2025-08-12 | - | MIT | ✓ | - | [link](https://github.com/possibilities/claude-code-generic-hooks) |
+| claude-code-generic-hooks | Generic hooks for Claude Code | 52 | 4 | 2025-08-12 | - | MIT | ✓ | - | [link](https://www.npmjs.com/package/claude-code-generic-hooks) |
 | clickhousectl | CLI for ClickHouse: local and cloud | 52 | 2 | 2026-04-19 | 2026-04-14 | Apache-2.0 | ✓ | - | [link](https://github.com/ClickHouse/clickhousectl) |
 | terracove | Recursively test a directory tree for Terraform diffs and co... | 52 | 1 | 2023-07-18 | 2023-07-18 | MIT | ✓ | - | [link](https://github.com/ElementTech/terracove) |
 | wakey | TUI built for managing and waking your devices using Wake-on... | 52 | 2 | 2024-09-13 | 2024-09-13 | MIT | ✓ | - | [link](https://github.com/jonathanruiz/wakey) |
