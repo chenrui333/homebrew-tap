@@ -8,11 +8,10 @@ class Moji < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5745191b102ecc045131a1578e3bc8c16f89433f8da7480eec43765a0fe3bc85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5745191b102ecc045131a1578e3bc8c16f89433f8da7480eec43765a0fe3bc85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b763d0b5695bd7843819148e4a283255582e026e2141e93845b6a63f516b0bae"
-    sha256 cellar: :any,                 x86_64_linux:  "2367c65e7f1f4857cf15207af5e08fe9a0c430b529d24615c4260f22233b5f8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8b8762f74ba9a56f53c17af16f4d594f96a04cdee73f1dc1783ef586c53b21b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b8762f74ba9a56f53c17af16f4d594f96a04cdee73f1dc1783ef586c53b21b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e3dab623bdd39079f1c8e2a30e54bf7f64cb8d9a6d61a8cfa5014de3664184e"
+    sha256 cellar: :any,                 x86_64_linux:  "57fd69120d9962cd2fbe255c28b8b94dead7d5180915d036de4cff7853ee1cc9"
   end
 
   depends_on "go" => :build
