@@ -6,6 +6,8 @@ on:
       - .github/workflows/**
       - cmd/brew-close-superseded-prs
       - .github/scripts/close-superseded-prs.test.js
+      - .github/scripts/qualified-cask-merge.js
+      - .github/scripts/qualified-cask-merge.test.js
   merge_group:
 
 permissions:
@@ -36,7 +38,7 @@ jobs:
         run: mise exec -- actionlint
 
       - name: Test workflow guardrails
-        run: node --test .github/scripts/merge-gate.test.js .github/scripts/autobump-formula-failure.test.js .github/scripts/renovate-workflow-automerge.test.js .github/scripts/close-superseded-prs.test.js
+        run: node --test .github/scripts/merge-gate.test.js .github/scripts/autobump-formula-failure.test.js .github/scripts/renovate-workflow-automerge.test.js .github/scripts/close-superseded-prs.test.js .github/scripts/qualified-cask-merge.test.js
 
   merge-ready:
     if: github.event_name == 'merge_group'

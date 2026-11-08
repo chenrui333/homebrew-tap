@@ -4,3 +4,7 @@ paths:
       # GitHub supports this setting; actionlint 1.7.12 does not yet recognize it.
       # Remove after https://github.com/rhysd/actionlint/issues/657 is released.
       - '^unexpected key "queue" for "concurrency" section\.'
+  .github/workflows/publish-cask.yml:
+    ignore:
+      # The same supported queue setting has the schema gap documented above.
+      - '^unexpected key "queue" for "concurrency" section\.'
