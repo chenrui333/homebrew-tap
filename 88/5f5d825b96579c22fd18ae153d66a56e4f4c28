@@ -1,0 +1,14 @@
+Formula/c/collie.rb
+  h_9df9c32c3f321d 4-6,42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "885f5d825b96579c22fd18ae153d66a56e4f4c28",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
