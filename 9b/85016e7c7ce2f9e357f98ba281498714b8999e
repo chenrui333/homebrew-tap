@@ -1,0 +1,15 @@
+Formula/h/hindsight.rb
+  h_9df9c32c3f321d 1-1478,1483-1540,1557-1579
+  h_9df9c32c3f321d 1479-1482,1541-1556
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9b85016e7c7ce2f9e357f98ba281498714b8999e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
