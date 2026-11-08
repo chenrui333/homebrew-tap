@@ -547,6 +547,7 @@ brew install --cask <tool>
 - `jiggy`
 - `jikkou`
 - `jiq`
+- `jjfx`
 - `jjj`
 - `jl`
 - `jocalsend`
