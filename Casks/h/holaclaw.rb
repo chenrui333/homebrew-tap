@@ -1,5 +1,5 @@
 cask "holaclaw" do
-  version "1.2.0"
+  version "1.7.1"
   sha256 :no_check
 
   url "https://downloads.holaclaw.ai/releases/latest/holaclaw_universal.dmg"
@@ -7,10 +7,20 @@ cask "holaclaw" do
   desc "Personal local-first AI assistants"
   homepage "https://holaclaw.ai/"
 
-  depends_on macos: :ventura
+  livecheck do
+    url "https://downloads.holaclaw.ai/releases/latest/latest.json"
+    strategy :json do |json|
+      json["version"]
+    end
+  end
+
+  auto_updates true
   depends_on arch: :arm64
+  depends_on macos: :sonoma
 
   app "holaclaw.app"
+
+  uninstall launchctl: "dev.endor.holaclaw.vf-daemon"
 
   zap trash: [
     "~/Library/Application Support/HolaClaw",
