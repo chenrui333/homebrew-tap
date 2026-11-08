@@ -1,0 +1,14 @@
+Formula/c/claude-code-generic-hooks.rb
+  h_9df9c32c3f321d 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "90c6e6710efdc3766ad0388ffa29fe9ee4c13eff",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
