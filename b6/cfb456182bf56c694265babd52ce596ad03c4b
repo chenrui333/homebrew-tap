@@ -1,0 +1,19 @@
+Formula/p/pubmed-mcp-server.rb
+  s_9a8cc51b5e1b2d::t_dd1ef12ad3794c 9,32,44,46,51-56,132,134-139,583-584,588-589,673,676,679,683-687,692-698
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b6cfb456182bf56c694265babd52ce596ad03c4b",
+  "prompts": {},
+  "sessions": {
+    "s_9a8cc51b5e1b2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bd52-4cb3-76e2-94c0-539c9b7cca9c",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
