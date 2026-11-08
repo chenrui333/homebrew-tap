@@ -1,0 +1,14 @@
+Formula/t/tako-vm.rb
+  h_9df9c32c3f321d 9,25,164,167,184-204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2c4abc3791024b9657d438ce880ba30cdb7c5d6a",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
