@@ -24,7 +24,7 @@ class Pwdsafety < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pwdsafety"
+    system "go", "build", *std_go_args, "./cmd/pwdsafety"
   end
 
   test do

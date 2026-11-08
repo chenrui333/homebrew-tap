@@ -23,7 +23,7 @@ class Gitman < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gitman"
+    system "go", "build", *std_go_args, "./cmd/gitman"
   end
 
   test do

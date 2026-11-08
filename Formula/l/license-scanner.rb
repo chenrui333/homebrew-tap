@@ -28,7 +28,7 @@ class LicenseScanner < Formula
     inreplace "cmd/root.go", 'currentVersion = "0.0.0"', "currentVersion = \"#{version}\""
 
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

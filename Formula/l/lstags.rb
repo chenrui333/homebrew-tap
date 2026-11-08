@@ -30,7 +30,7 @@ class Lstags < Formula
 
   def install
     inreplace "version.go", "CURRENT", version.to_s
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

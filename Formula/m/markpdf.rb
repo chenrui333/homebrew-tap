@@ -25,7 +25,7 @@ class Markpdf < Formula
 
   def install
     inreplace "main.go", "1.0.0", version.to_s
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

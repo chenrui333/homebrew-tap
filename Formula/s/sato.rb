@@ -25,7 +25,7 @@ class Sato < Formula
 
   def install
     inreplace "src/version/version.go", "var Version = \"dev\"", "var Version = \"#{version}\""
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
 
     pkgshare.install "examples"
   end

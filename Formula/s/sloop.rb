@@ -24,7 +24,7 @@ class Sloop < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-installsuffix", "cgo", "./pkg/sloop"
+    system "go", "build", *std_go_args, "-installsuffix", "cgo", "./pkg/sloop"
   end
 
   test do

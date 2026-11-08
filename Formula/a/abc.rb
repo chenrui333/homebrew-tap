@@ -25,7 +25,7 @@ class Abc < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/abc"
+    system "go", "build", *std_go_args, "./cmd/abc"
   end
 
   test do

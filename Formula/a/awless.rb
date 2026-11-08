@@ -33,7 +33,7 @@ class Awless < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=readonly"
+    system "go", "build", *std_go_args, "-mod=readonly"
   end
 
   test do

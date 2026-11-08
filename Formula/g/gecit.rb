@@ -31,7 +31,7 @@ class Gecit < Formula
            "--bindings-dir", "pkg/ebpf/bpf", "pkg/ebpf/bpf/src"
     inreplace "pkg/ebpf/bpf/src/sockops.bpf.c", "struct ConnState state;", "struct ConnState state = {0};"
     system "make", "-C", "pkg/ebpf/bpf/src", "bpf-all"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gecit"
+    system "go", "build", *std_go_args, "./cmd/gecit"
   end
 
   test do

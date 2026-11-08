@@ -24,7 +24,7 @@ class SpaceliftIntent < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/spacelift-intent"
+    system "go", "build", *std_go_args, "./cmd/spacelift-intent"
   end
 
   test do

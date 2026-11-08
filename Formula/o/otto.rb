@@ -24,7 +24,7 @@ class Otto < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./otto"
+    system "go", "build", *std_go_args, "./otto"
   end
 
   test do

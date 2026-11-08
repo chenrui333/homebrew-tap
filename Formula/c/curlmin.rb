@@ -25,7 +25,7 @@ class Curlmin < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/curlmin"
+    system "go", "build", *std_go_args, "./cmd/curlmin"
 
     generate_completions_from_executable bin/"curlmin", shell_parameter_format: :cobra
   end

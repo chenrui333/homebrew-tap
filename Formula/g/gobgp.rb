@@ -23,7 +23,7 @@ class Gobgp < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gobgp"
+    system "go", "build", *std_go_args, "./cmd/gobgp"
 
     # `context deadline exceeded` error when generating completions
     # generate_completions_from_executable(bin/"gobgp", "completion", shells: [:bash, :zsh, :fish, :pwsh])

@@ -23,7 +23,7 @@ class Orla < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/orla"
+    system "go", "build", *std_go_args, "./cmd/orla"
 
     generate_completions_from_executable(bin/"orla", shell_parameter_format: :cobra)
   end

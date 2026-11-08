@@ -27,7 +27,7 @@ class KubeRoleGen < Formula
     # patch version
     inreplace "cmd/kube-role-gen/main.go", "0.0.6", version.to_s
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/kube-role-gen"
+    system "go", "build", *std_go_args, "./cmd/kube-role-gen"
   end
 
   test do

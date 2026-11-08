@@ -26,7 +26,7 @@ class Taproom < Formula
   def install
     # v0.6.2 predates the upstream version-file fix: https://github.com/hzqtc/taproom/commit/a26afac788a5122356bf9c07c3c3d04fabae76d3
     inreplace ".version", "v0.6.1", "v#{version}"
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

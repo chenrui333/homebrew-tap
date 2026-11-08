@@ -26,7 +26,7 @@ class LeveldbCli < Formula
   def install
     # patch version
     inreplace "main.go", "0.3.0", version.to_s if build.stable?
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
   end
 
   test do

@@ -28,7 +28,7 @@ class Ingero < Formula
 
   def install
     cd "ingero-io/ingero@v#{version}" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ingero"
+      system "go", "build", *std_go_args, "./cmd/ingero"
     end
   end
 

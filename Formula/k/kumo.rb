@@ -26,7 +26,7 @@ class Kumo < Formula
   def install
     (var/"kumo").mkpath
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/kumo"
+    system "go", "build", *std_go_args, "./cmd/kumo"
   end
 
   service do

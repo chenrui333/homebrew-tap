@@ -23,7 +23,7 @@ class Pphack < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pphack"
+    system "go", "build", *std_go_args, "./cmd/pphack"
   end
 
   test do

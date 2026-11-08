@@ -25,7 +25,7 @@ class Cpx < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cpx"
+    system "go", "build", *std_go_args, "./cmd/cpx"
 
     generate_completions_from_executable(bin/"cpx", shell_parameter_format: :cobra)
   end

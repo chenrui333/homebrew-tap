@@ -25,7 +25,7 @@ class Togo < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args
     generate_completions_from_executable(bin/"togo", shell_parameter_format: :cobra)
   end
 

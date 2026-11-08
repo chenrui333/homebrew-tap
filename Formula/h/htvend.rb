@@ -24,7 +24,7 @@ class Htvend < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/htvend"
+    system "go", "build", *std_go_args, "./cmd/htvend"
   end
 
   test do

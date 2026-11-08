@@ -19,7 +19,7 @@ class Gofakeit < Formula
   deny_network_access!
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gofakeit"
+    system "go", "build", *std_go_args, "./cmd/gofakeit"
   end
 
   test do

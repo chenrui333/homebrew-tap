@@ -25,7 +25,7 @@ class Enola < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/enola"
+    system "go", "build", *std_go_args, "./cmd/enola"
   end
 
   test do

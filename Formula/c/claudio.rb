@@ -23,7 +23,7 @@ class Claudio < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/claudio"
+    system "go", "build", *std_go_args, "./cmd/claudio"
 
     generate_completions_from_executable bin/"claudio", shell_parameter_format: :cobra
   end

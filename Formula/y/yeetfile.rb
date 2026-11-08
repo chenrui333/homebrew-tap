@@ -24,7 +24,7 @@ class Yeetfile < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli"
+    system "go", "build", *std_go_args, "./cli"
   end
 
   test do

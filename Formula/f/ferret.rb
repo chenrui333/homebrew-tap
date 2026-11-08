@@ -24,7 +24,7 @@ class Ferret < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./e2e/cli.go"
+    system "go", "build", *std_go_args, "./e2e/cli.go"
   end
 
   test do

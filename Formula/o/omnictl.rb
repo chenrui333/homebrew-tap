@@ -23,7 +23,7 @@ class Omnictl < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/omnictl"
+    system "go", "build", *std_go_args, "./cmd/omnictl"
 
     generate_completions_from_executable(bin/"omnictl", shell_parameter_format: :cobra)
   end

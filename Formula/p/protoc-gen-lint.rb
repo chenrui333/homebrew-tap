@@ -21,7 +21,7 @@ class ProtocGenLint < Formula
   deny_network_access!
 
   def install
-    system "go", "build", "-mod=vendor", *std_go_args(ldflags: "-s -w")
+    system "go", "build", "-mod=vendor", *std_go_args
   end
 
   test do

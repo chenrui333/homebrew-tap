@@ -25,7 +25,7 @@ class GoEnvsubst < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/envsubst"
+    system "go", "build", *std_go_args, "./cmd/envsubst"
   end
 
   test do

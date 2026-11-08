@@ -24,7 +24,7 @@ class Protolock < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/protolock"
+    system "go", "build", *std_go_args, "./cmd/protolock"
   end
 
   test do

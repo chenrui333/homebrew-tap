@@ -23,7 +23,7 @@ class Pho < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pho"
+    system "go", "build", *std_go_args, "./cmd/pho"
   end
 
   test do

@@ -24,7 +24,7 @@ class Bpfvet < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/bpfvet"
+    system "go", "build", *std_go_args, "./cmd/bpfvet"
   end
 
   test do

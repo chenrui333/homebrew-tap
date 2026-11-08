@@ -20,7 +20,7 @@ class Pencode < Formula
   deny_network_access!
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/pencode"
+    system "go", "build", *std_go_args, "./cmd/pencode"
   end
 
   test do

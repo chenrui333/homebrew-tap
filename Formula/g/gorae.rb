@@ -23,7 +23,7 @@ class Gorae < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gorae"
+    system "go", "build", *std_go_args, "./cmd/gorae"
   end
 
   test do
