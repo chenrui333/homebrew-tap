@@ -4,7 +4,7 @@ class Viwo < Formula
   url "https://github.com/OverseedAI/viwo/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "1c216ceb05deb428500b89a34f2102df74c1806cf54bfefefce1b63bae1751cb"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -19,7 +19,7 @@ class Viwo < Formula
 
   on_linux do
     # Bun-compiled executables link ICU dynamically on Linux.
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   deny_network_access!
