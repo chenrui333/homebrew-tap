@@ -1,0 +1,14 @@
+Formula/m/mitos.rb
+  h_9df9c32c3f321d 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b92d25b12ef2e30b399396929f11a9dfa362553d",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
