@@ -6,6 +6,14 @@ class Rulc < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/imizgun/rulc.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c2376066bbd9b4c18bee6ee0723ed36c3c4f68b8a8c3bcdb9e86694af20142b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afe0719022e5aae5403c02fd16d4f025dc01f8353b621e55515114057a8ca433"
+    sha256 cellar: :any,                 arm64_linux:   "c2ee53264ef72f1ffe1e7d07ea128991c9985749e3d8f4285e931ab536054616"
+    sha256 cellar: :any,                 x86_64_linux:  "5cf0e0509d1983a12535f258fa73a0e7df15f83bd8073fc695fa63bbb56e4354"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
