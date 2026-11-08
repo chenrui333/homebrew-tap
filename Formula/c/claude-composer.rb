@@ -1,8 +1,6 @@
-# NOTE, the project has graduated.
-# https://github.com/possibilities/claude-composer/blob/main/readme.md?plain=1#L4
 class ClaudeComposer < Formula
   desc "Tool that adds small enhancements to Claude Code"
-  homepage "https://github.com/possibilities/claude-composer"
+  homepage "https://www.npmjs.com/package/claude-composer"
   url "https://registry.npmjs.org/claude-composer/-/claude-composer-0.1.14.tgz"
   sha256 "28d47fcb686f44258eb2acbee56bc996799d8b8d457189084502f197dd0d486d"
   license "Unlicense"
