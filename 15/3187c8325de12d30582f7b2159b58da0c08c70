@@ -1,0 +1,14 @@
+Formula/a/ai-memory.rb
+  h_9df9c32c3f321d 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "153187c8325de12d30582f7b2159b58da0c08c70",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
