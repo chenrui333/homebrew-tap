@@ -3,17 +3,17 @@ class FastAgentMcp < Formula
 
   desc "Define, Prompt and Test MCP enabled Agents and Workflows"
   homepage "https://fast-agent.ai/"
-  url "https://files.pythonhosted.org/packages/27/9d/a00098614df1284d6b8217069775c6a6646da4cf7557325f916e7a1a855b/fast_agent_mcp-0.10.52.tar.gz"
-  sha256 "e6150a1d6e5b2cbd7bbbded486cab6874bd2f02172b6dded63ac5c716b40d80b"
+  url "https://files.pythonhosted.org/packages/48/7c/21105eb9802311a9885de80849c3bba68a9c3d393eaf3099a5466a97f3c7/fast_agent_mcp-0.10.53.tar.gz"
+  sha256 "f138dc96ad7c96949285659fe036d1d075e813bb04fea90e981efbbdcc5d7b50"
   license "Apache-2.0"
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "e7474e0c29e4277fe2e63e1ffd0f3dcfee16d3f39a16cc2938169a50cb6ee9b7"
-    sha256 cellar: :any, arm64_sequoia: "09fac9ecf42b7faf72266b493f6f2e10963cff3e28de10b856b4f3dd614e92e0"
-    sha256 cellar: :any, arm64_linux:   "48283a38972cb9e0325ca36f72bfe6fb0d0e32e9d4f68fc83491b23026dd0f49"
-    sha256 cellar: :any, x86_64_linux:  "06c3992606d087a8e4a9b546f6d1ad7c303d39bb0974300142956a7ec9c79cce"
+    sha256 cellar: :any, arm64_tahoe:   "ce7be16ae900fc1e61601bf43c7226a191ca6b6d9971dc5807de01d66fb2ff19"
+    sha256 cellar: :any, arm64_sequoia: "8297644f84b976d34147622424d77adf249cf31519adf81aab5d9644be828efd"
+    sha256 cellar: :any, arm64_linux:   "ffe00bdac89f6cc9534a2f7257f7529b64392082347a701d93e0173c4be13452"
+    sha256 cellar: :any, x86_64_linux:  "8c5e86f191e2bf5f9e47174db000dd09cb9b70a7bb86e444c874a14b06228813"
   end
 
   depends_on "maturin" => :build
@@ -24,7 +24,6 @@ class FastAgentMcp < Formula
   depends_on "cryptography" => :no_linkage
   depends_on "jpeg-turbo"
   depends_on "libyaml"
-  depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
@@ -33,11 +32,11 @@ class FastAgentMcp < Formula
     depends_on "zlib-ng-compat"
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic pydantic-core rpds-py],
+  pypi_packages exclude_packages: %w[certifi cryptography rpds-py],
                 extra_packages:   %w[
                   coherent.licensed cython dunamai expandvars flit-core flit-scm hatch-fancy-pypi-readme
-                  hatch-vcs hatchling jinja2 markupsafe pathspec pdm-backend pdm-pep517 pkgconfig pluggy
-                  poetry-core setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers
+                  hatch-vcs hatchling jeepney jinja2 markupsafe pathspec pdm-backend pdm-pep517 pkgconfig
+                  pluggy poetry-core secretstorage setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers
                   uv-dynamic-versioning vcs-versioning wheel
                 ]
 
@@ -76,6 +75,11 @@ class FastAgentMcp < Formula
     sha256 "c7e58ce09192557605d8bbd92836d7e1d520ac9580096042c0bfd197efacf1bb"
   end
 
+  resource "annotated-types" do
+    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
+  end
+
   resource "anthropic" do
     url "https://files.pythonhosted.org/packages/4e/66/4ec271f7607460005276bb09b0d1c749a9ed0cead35a488a8676f15ed6d5/anthropic-1.17.0.tar.gz"
     sha256 "dcf77a74dde89a9fd12405fca798b012725a107f7c9488454234a74e275c2163"
@@ -92,8 +96,8 @@ class FastAgentMcp < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/b6/1c/4ed575b9e44da3f5ea2c325f50bb3b2016312efffc2b6a62eaf46845bb52/authlib-1.9.4.tar.gz"
-    sha256 "f55a25f561f1f157ceca64da9df776f469f23715ac89ee338aa2f83dc9774e13"
+    url "https://files.pythonhosted.org/packages/04/96/6e7ed72bb49762a9b65d51c4cb235d793f0485cd8d6f7e9404ce955a4808/authlib-1.9.5.tar.gz"
+    sha256 "3f031d5e9b6486089e91e8f7f1b68f36275f3151c66460d650fc90d420545fd7"
   end
 
   resource "beartype" do
@@ -102,8 +106,8 @@ class FastAgentMcp < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/93/6f/faa5e0606769105e70e0478031a8f9a6b729e329f42ce2462585c6d9aa52/cachetools-7.2.8.tar.gz"
-    sha256 "3f9b146b2160975da273e7c23ec882f3996b65df608150d52083c07de0682075"
+    url "https://files.pythonhosted.org/packages/5f/6b/6c1553e1e8f672f9423344a1915aad1537439ad3d14a3fbc1a02159cfd94/cachetools-7.3.0.tar.gz"
+    sha256 "3f63fc208410f0c3a3b37883c4903ecdacd6f0b259134e6d2e82debd5b2e01de"
   end
 
   resource "caio" do
@@ -202,8 +206,8 @@ class FastAgentMcp < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/a4/74/307919972c4dc84598f4128a8d6ae05ac3d9e6ca73fe60a7bb93c670931c/google_api_core-2.43.2.tar.gz"
-    sha256 "5dfc5e9d52982bcc03bd6af380a893365b5fdf907dc527f63d3a372833c33329"
+    url "https://files.pythonhosted.org/packages/72/ef/63d89cb580f3a42c51db53b3d151352aa61b9c87ea8cfdd8d24ee6caa09d/google_api_core-2.44.0.tar.gz"
+    sha256 "5ab9a396965c1227d7dea4581e562b7018aa2bca96d2de0be5eb70dc9c8ab3a1"
   end
 
   resource "google-auth" do
@@ -294,6 +298,11 @@ class FastAgentMcp < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
     sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jinja2" do
@@ -541,6 +550,32 @@ class FastAgentMcp < Formula
     sha256 "677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6"
   end
 
+  # Upstream pins this exact version; do not inherit core's independently updated Pydantic.
+  resource "pydantic" do
+    url "https://files.pythonhosted.org/packages/7c/0b/8e10b2e693af8ec54346a14caf36221334775975a747c9ceaa3f8371d96d/pydantic-2.14.1.tar.gz"
+    sha256 "94f478203dd03404682a1ada216965651dd74b1d2d5ffd62e00e0837caab5c26"
+  end
+
+  resource "pydantic-core" do
+    url "https://files.pythonhosted.org/packages/a6/24/af4ec4be49fbc810f35b0bdcacc3d433b56bbfa469fd3bfd4ae116cd9bf1/pydantic_core-2.50.1.tar.gz"
+    sha256 "e50d7b94baac6c7d09927fa5ca5800a0c7ee5015c7fcff65beb3a1931b5a6e09"
+  end
+
+  resource "pydantic-monty" do
+    url "https://files.pythonhosted.org/packages/79/7c/58467370dd9f2db100ee2627791668f6f21a9fa150ccff9e60efc588ab8f/pydantic_monty-1.4.0.tar.gz"
+    sha256 "db1f1c779f509f7c547e580620a63ab8968cf167fd6a45a4f60b6625187a9848"
+  end
+
+  resource "pydantic-monty-client" do
+    url "https://files.pythonhosted.org/packages/25/78/0f94fe1b8b45ba5e9c8bc622117f949820a71f7e96a67a7b691fdda96e3d/pydantic_monty_client-1.4.0.tar.gz"
+    sha256 "2252ca45e3cfd241a63950fde184b2ff06ddce5b3e1c260282c0733d70590acd"
+  end
+
+  resource "pydantic-monty-runtime" do
+    url "https://files.pythonhosted.org/packages/be/e7/1567009ab17fe091caba156ea9406487520ef382543e73ac7354a4eef88a/pydantic_monty_runtime-1.4.0.tar.gz"
+    sha256 "5275beb451201bd23669a253c8be93b90cad018b449fcdd0a1ad57daeed15187"
+  end
+
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/05/ca/7817b4bf0c4b15c6a6ab8cdf4cb96c268335a8ca2f525de93b6ebe4c7d28/pydantic_settings-2.16.1.tar.gz"
     sha256 "aff602a1886338c2df3d1e958e2193a8dc33cec75b91f202e83fd98484b4b0da"
@@ -609,6 +644,12 @@ class FastAgentMcp < Formula
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
     sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
+  end
+
+  # Keyring's Linux backend must also be retained when resources are refreshed on macOS.
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   resource "semantic-version" do
@@ -691,6 +732,16 @@ class FastAgentMcp < Formula
     sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+  end
+
+  resource "typing-inspection" do
+    url "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
+    sha256 "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
+  end
+
   resource "uncalled-for" do
     url "https://files.pythonhosted.org/packages/1c/3f/3367539c8c619908b8e26db13634d2265ab2ec01e86573699c529dc1982c/uncalled_for-0.4.2.tar.gz"
     sha256 "d274d6ab5eb0751e9b71c73647dc25a07d56b293dea479e689056aa919363133"
@@ -759,7 +810,7 @@ class FastAgentMcp < Formula
   deny_network_access!
 
   def fetch
-    %w[jiter watchfiles].each do |name|
+    %w[jiter pydantic-core watchfiles].each do |name|
       resource(name).stage do
         system "cargo", "fetch", "--locked"
       end
@@ -772,12 +823,15 @@ class FastAgentMcp < Formula
       end
     end
 
-    resource("tiktoken").stage do
-      system "cargo", "fetch"
+    # Monty's sdists trim the upstream workspace but retain its full lockfile.
+    # Let Cargo reconcile that source layout before the offline build.
+    %w[pydantic-monty-client pydantic-monty-runtime tiktoken].each do |name|
+      resource(name).stage { system "cargo", "fetch" }
     end
   end
 
   def install
+    ENV["CARGO_NET_OFFLINE"] = "true"
     ENV.O0
 
     build_resources = %w[
@@ -788,11 +842,11 @@ class FastAgentMcp < Formula
       poetry-core
       packaging
       pathspec
+      vcs-versioning
+      setuptools-scm
       pluggy
       trove-classifiers
       hatchling
-      vcs-versioning
-      setuptools-scm
       hatch-vcs
       coherent-licensed
       flit-scm
@@ -820,6 +874,9 @@ class FastAgentMcp < Formula
       venv.pip_install resource(name), build_isolation: false
     end
 
+    pydantic_resources = %w[annotated-types typing-extensions typing-inspection pydantic-core pydantic]
+    pydantic_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+
     uv_build_resources = {
       "dnspython"          => "dns",
       "py-key-value-aio"   => "src/key_value",
@@ -842,14 +899,11 @@ class FastAgentMcp < Formula
     end
 
     venv.pip_install resources.reject { |r|
-      build_resources.include?(r.name) || uv_build_resources.key?(r.name) || %w[hf-xet tiktoken].include?(r.name)
+      build_resources.include?(r.name) || pydantic_resources.include?(r.name) ||
+        uv_build_resources.key?(r.name) || %w[hf-xet tiktoken].include?(r.name)
     }, build_isolation: false
 
-    resource("tiktoken").stage do
-      with_env(CARGO_NET_OFFLINE: "true") do
-        venv.pip_install Pathname.pwd, build_isolation: false
-      end
-    end
+    venv.pip_install resource("tiktoken"), build_isolation: false
 
     resource("hf-xet").stage do
       # Use native-tls since building bundled aws-lc is tricky to do indirectly within superenv.
@@ -867,5 +921,16 @@ class FastAgentMcp < Formula
     output = pipe_output("#{bin}/fast-agent scaffold --config-dir #{testpath}", "\n")
     assert_match "Scaffold completed successfully", output
     assert_path_exists testpath/"agent.py"
+
+    (testpath/"monty.py").write <<~PYTHON
+      from pydantic_monty import Monty
+
+      with Monty() as pool:
+          with pool.checkout() as session:
+              assert session.feed_run("1 + 2") == 3
+    PYTHON
+    system libexec/"bin/python", testpath/"monty.py"
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
