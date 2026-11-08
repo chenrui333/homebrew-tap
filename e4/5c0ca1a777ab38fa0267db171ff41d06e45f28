@@ -1,0 +1,20 @@
+.github/workflows/publish.yml
+  h_9df9c32c3f321d 81-87,95-96,173-227,229-307,311,322-325,434-437,443-511,527-528,537-543,560,571,647,653
+  h_9df9c32c3f321d 228
+.github/workflows/merge-gate.yml
+  h_9df9c32c3f321d 7,9,40
+.github/scripts/publish-validation.test.js
+  h_9df9c32c3f321d 9-13,15-41,43-88,90-137,139,142-150,152-206,212-228,423-610,640-820
+  h_9df9c32c3f321d 611-639
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e45c0ca1a777ab38fa0267db171ff41d06e45f28",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
