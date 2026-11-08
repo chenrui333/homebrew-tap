@@ -1,9 +1,9 @@
 class Swamp < Formula
   desc "Deterministic automation framework for AI agents"
   homepage "https://swamp-club.com"
-  url "https://git.swamp-club.com/swamp-club/swamp/archive/v20261108.025705.0-sha.f4852124.tar.gz"
-  version "20261108.025705.0-sha.f4852124"
-  sha256 "0fdfec5975524b161d11e8f05b6d9a1fd0f2143ce32c4aad5b5df069b98acf65"
+  url "https://git.swamp-club.com/swamp-club/swamp/archive/v20261108.111402.0-sha.37c27525.tar.gz"
+  version "20261108.111402.0-sha.37c27525"
+  sha256 "af697646d6d4c87b48215a7596247424ceeb6616f356b9278cac0f8bdbf25ad7"
   # Upstream also grants the additional permissions in COPYING-EXCEPTION.
   license "AGPL-3.0-only"
   head "https://git.swamp-club.com/swamp-club/swamp.git", branch: "main"
@@ -22,10 +22,12 @@ class Swamp < Formula
   deny_network_access!
 
   def fetch
+    # Keep source-mode version metadata in sync with the release tag after autobumps.
+    git_sha = version.to_s.split("-sha.").last
     inreplace "src/cli/commands/version.ts", /^export const VERSION = .*;$/,
               "export const VERSION = \"#{version}\";"
     inreplace "src/cli/commands/version.ts", /^export const GIT_SHA = .*;$/,
-              'export const GIT_SHA = "482f67ff";'
+              "export const GIT_SHA = \"#{git_sha}\";"
     ENV["DENO_DIR"] = buildpath/"deno-cache"
     system "deno", "cache", "--frozen", "main.ts"
     cd "packages/dashboard" do
