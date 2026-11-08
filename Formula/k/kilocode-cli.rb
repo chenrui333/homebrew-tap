@@ -6,6 +6,14 @@ class KilocodeCli < Formula
   license "MIT"
   head "https://github.com/Kilo-Org/kilocode.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 arm64_tahoe:   "529d7bffded00f10df4159ca544154d98e5a8f06a2f292fb64f989c325c53d73"
+    sha256 arm64_sequoia: "dd95bccf970a5b8caf895115f1c6b17cb97611c3a5c871d092eaef3ce085c10a"
+    sha256 arm64_linux:   "ad7c530909b20d8d72a4693b4d2d060a31bb1d0a858e6dc740d827bb86ed1128"
+    sha256 x86_64_linux:  "bd33f91ffb648b1918940337e452cf99ec69d29602cda6d40536af332eae5bc6"
+  end
+
   depends_on "bun" => :build
   depends_on "node" => :build
   depends_on "ripgrep"
