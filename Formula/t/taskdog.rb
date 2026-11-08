@@ -10,10 +10,10 @@ class Taskdog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "339a8a09ac484b0698126a73f7ddeb0bfb966562c8e3b47b3add7040f3d2d8ac"
-    sha256 cellar: :any, arm64_sequoia: "7d6b9d1db4f0427f3e88093a331562f25b4501280e1af01dedd673324c1825a1"
-    sha256 cellar: :any, arm64_linux:   "9d48ea484515b1634d555ec80f5fb35c6568cd42482e4cd850c6d4665a311796"
-    sha256 cellar: :any, x86_64_linux:  "1b379cd4e27397575c00f60196186cb5707984dd44fe7c2206f3868592349c00"
+    sha256 cellar: :any, arm64_tahoe:   "5699c5c9acf6b6cbdb72fd5976a2b6361c317f18165f075d9517973e43e3270f"
+    sha256 cellar: :any, arm64_sequoia: "7f5d40af5194b2ba7bb63ac984fbfa718e3562bfb5976316463243de446633a5"
+    sha256 cellar: :any, arm64_linux:   "ce80a0301689cf31bd70c4f9bda18322162e92012a08207ef3498c5f11972e5a"
+    sha256 cellar: :any, x86_64_linux:  "c5457bd311bd06c86f34d3fe3981466c5afc97be54345167031947a83fb39573"
   end
 
   depends_on "maturin" => :build
