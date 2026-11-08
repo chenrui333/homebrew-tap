@@ -6,6 +6,14 @@ class Clavirio < Formula
   license "Apache-2.0"
   head "https://github.com/alexylon/clavirio.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1237fe6b3a78998a7fb59da0210ba24d46bad7610d1a0e90c034f1abb09dd1bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e10b72a98f5fa749901bd3cb7c29c356a9cec9916408f2966f46e48dbed2c09f"
+    sha256 cellar: :any,                 arm64_linux:   "3b60f0d93c8dc5b421f1ebe9bd0e2c1dddeadbb8938b21e2f430520725648f1e"
+    sha256 cellar: :any,                 x86_64_linux:  "0b18ff81ff6d17edfa1b66910d98bed0a42ff2729fbe03020be8159e7a3cdf1b"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
