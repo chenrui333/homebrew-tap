@@ -1,20 +1,20 @@
 class CodexAuth < Formula
   desc "Switch and manage Codex accounts from the terminal"
   homepage "https://github.com/loongphy/codex-auth"
-  url "https://github.com/loongphy/codex-auth/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "d5a8b3eedb3130afe27ddb867347abf38693f23bdac39ada8dd588b42c28622b"
+  url "https://github.com/loongphy/codex-auth/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "5984a6a9cb41ce10091efdc3c146f7accec26439a7b43d209e44b1afa6c7016e"
   license "MIT"
   head "https://github.com/loongphy/codex-auth.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e47cd1cb59f2ef8c83a251f0abd05f055e13f45f5a6be77f0fa1eeecba34fcaa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "646c65eda530e429c37a40bebcc492d79c9d0283ff13ee6fb96463b3fe5b174f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce6f87ad7d8f8215faf0d57642843eb4437734c57cd117ec66b6f882b940c2e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff86e3260f2fd60bd8f85dc45b443f4eee5ffa65172fce78c0f655ca6f7483e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "706c124570886aa447b32ff5ab16a1f497f184906851f6483be786b6945c1f34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80f8547936be07b6e293752a5054b33b771e69c31cc4dc18e21902b5fce20de2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12d89eda0ead6b5e8b9b2ec2a4c02bf8a57436f4f4748039a91cb87396897dbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd96b3be7ad40cf18f78b31c2d9b91fe1270287c8cff39c3703c339a43fa3c1c"
   end
 
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
   depends_on "curl"
   depends_on "node"
 
@@ -25,6 +25,8 @@ class CodexAuth < Formula
     (bin/"codex-auth").write_env_script libexec/"bin/codex-auth",
       CODEX_AUTH_NODE_EXECUTABLE: formula_opt_bin("node")/"node",
       PATH:                       "#{formula_opt_bin("curl")}:$PATH"
+
+    generate_completions_from_executable(bin/"codex-auth", "completion")
   end
 
   test do
