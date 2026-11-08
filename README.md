@@ -349,7 +349,6 @@ brew install --cask <tool>
 - `eilmeldung`
 - `elastop`
 - `elio`
-- `emeraldian`
 - `emoj`
 - `emplace`
 - `enola`
@@ -592,7 +591,6 @@ brew install --cask <tool>
 - `klein`
 - `klepto`
 - `kmon`
-- `knife`
 - `knip`
 - `konfigo`
 - `kplane`
@@ -1165,7 +1163,6 @@ brew install --cask <tool>
 - `untether`
 - `unused-deps`
 - `uplift`
-- `upmd`
 - `urlhunter`
 - `urlsup`
 - `user-scanner`
