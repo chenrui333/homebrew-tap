@@ -1,8 +1,8 @@
 class CodexAuth < Formula
   desc "Switch and manage Codex accounts from the terminal"
   homepage "https://github.com/loongphy/codex-auth"
-  url "https://github.com/loongphy/codex-auth/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "d5a8b3eedb3130afe27ddb867347abf38693f23bdac39ada8dd588b42c28622b"
+  url "https://github.com/loongphy/codex-auth/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "5984a6a9cb41ce10091efdc3c146f7accec26439a7b43d209e44b1afa6c7016e"
   license "MIT"
   head "https://github.com/loongphy/codex-auth.git", branch: "main"
 
@@ -14,7 +14,7 @@ class CodexAuth < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff86e3260f2fd60bd8f85dc45b443f4eee5ffa65172fce78c0f655ca6f7483e6"
   end
 
-  depends_on "zig@0.16" => :build
+  depends_on "zig" => :build
   depends_on "curl"
   depends_on "node"
 
@@ -25,6 +25,8 @@ class CodexAuth < Formula
     (bin/"codex-auth").write_env_script libexec/"bin/codex-auth",
       CODEX_AUTH_NODE_EXECUTABLE: formula_opt_bin("node")/"node",
       PATH:                       "#{formula_opt_bin("curl")}:$PATH"
+
+    generate_completions_from_executable(bin/"codex-auth", "completion")
   end
 
   test do
