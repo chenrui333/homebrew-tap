@@ -6,6 +6,14 @@ class Jjfx < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/Jarvvski/jjfx.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0127b7a8d98c7c3566fdf625aef78674fb178105f1827b7e37509174cf0f4af7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4685a53da0bfe3ff718ff100332ae3f99424b11bccc6cef1dbb25c7facd30c50"
+    sha256 cellar: :any,                 arm64_linux:   "7af95664fea0f7adbb992bc2a502865032b143583185273f079aaee9dd30f798"
+    sha256 cellar: :any,                 x86_64_linux:  "bdbd79a8b01792c2d4560e12feffd5f1fcdd2b5cc38bd1a1eea30845482a56f9"
+  end
+
   depends_on "rust" => :build
   depends_on "jj"
 
