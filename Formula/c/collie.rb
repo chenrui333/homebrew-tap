@@ -1,9 +1,9 @@
 class Collie < Formula
   desc "Mobile web interface for the coding agents in your terminal"
   homepage "https://github.com/AltanS/collie"
-  url "https://github.com/AltanS/collie/archive/refs/tags/v1.28.0-edge.2.tar.gz"
-  version "1.28.0-edge.2"
-  sha256 "fc0e549447c12b28701ddff505e86528bc3598d6f2d99d8286cfd4c2df631033"
+  url "https://github.com/AltanS/collie/archive/refs/tags/v1.28.0-edge.3.tar.gz"
+  version "1.28.0-edge.3"
+  sha256 "415e6b37029d209d7257af9a6e1bdcba951a9a8c395b986f517331e299983eb6"
   license "MIT"
   head "https://github.com/AltanS/collie.git", branch: "main"
 
