@@ -1,0 +1,15 @@
+Formula/a/autolith.rb
+  h_9df9c32c3f321d 1-154,175-247
+  h_9df9c32c3f321d 155-174
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "17937659e331892754aea5ef5df70f4bcf0b9674",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
