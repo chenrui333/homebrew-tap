@@ -9,11 +9,10 @@ class OtelTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86bc452136b9eb6e9d8b6fb17ccbf4844b2af84e28041993610159bd883b0129"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "402e8f5b36e23e27c5dfd67f1f6e81aaa77e5e2145875ec3ee95ce16af1375d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "21c9c7275b18b4689f4a54e21d5f9cef808cca1d326e119cf1422f9516c13009"
-    sha256 cellar: :any,                 x86_64_linux:  "ecf887370c0eb300863cac0959d6c3f54b6b1446f94ec5bfe9fa6f5968435fd7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5c9d9ae2bb7468977dc402348ebee1b3987eb7310e64982f308806140de2e8cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5da8c282d21e9d9eb624caeffc87a66a1baa9d6171966638a03b73a8e018a4b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "640712e6d3aead633f99fdce15bdadff3a3b8b457f98a3d2986a5575b683ea04"
+    sha256 cellar: :any,                 x86_64_linux:  "3065fc17c57aca1d0e3f29e419275a62efbd73bf1cfec94caeeee67e385b4daf"
   end
 
   depends_on "go" => :build
