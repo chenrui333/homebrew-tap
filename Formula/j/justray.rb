@@ -1,8 +1,8 @@
 class Justray < Formula
   desc "Terminal VPN client"
   homepage "https://github.com/luynrs/justray"
-  url "https://github.com/luynrs/justray/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "3acdca7ad6bbf22fb460d476b624a81f0408eb63635cba2770fd03a3e06ca5b7"
+  url "https://github.com/luynrs/justray/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "5e0dfe2451bf022ed0dcacb657c39cef07bb4e7df43f1c95ae38372d71bcdf30"
   license "GPL-3.0-only"
   head "https://github.com/luynrs/justray.git", branch: "main"
 
