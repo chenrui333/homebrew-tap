@@ -13,10 +13,10 @@ class GitAi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7b76ac2582aa8cef2b2d062cc84ab02dfbc7dc11e577dd1e0b592c64b7cf13c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76a39d06c147d1544a8e5f99a955bf91bc92150e79df9ec9b5b613b4915818a0"
-    sha256 cellar: :any,                 arm64_linux:   "a1d11ecb6541dea23448588af4c6d46edf618300258e8a8f951a02260293e1d0"
-    sha256 cellar: :any,                 x86_64_linux:  "c59f77f81abbb49ab3ab0b460fcf2fa1ad59cb767716c9c3b04ae621e2a1fdcb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de8f60883547d7bf33b2e8c22f2e177897e3d4b6445bb9c110dd4a60e0d19b2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a08a1c1097f09b72579af0fdc8e344713954c96e14514bb34fbdf6d3fdecc40d"
+    sha256 cellar: :any,                 arm64_linux:   "c218d3ddcf3aa7c13998abf5763a95ecc243ac9b770664d8cd918e22cb0324bf"
+    sha256 cellar: :any,                 x86_64_linux:  "d18593d49e625cbce306010b018a34970c7f070f67613eb2f7cae087532f94fa"
   end
 
   depends_on "pkgconf" => :build
