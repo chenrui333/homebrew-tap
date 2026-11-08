@@ -1,18 +1,18 @@
 class OmoAi < Formula
   desc "Standalone Oh My OpenAgent coding agent, Senpi edition"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.62.tar.gz"
-  sha256 "5cb246fefe54ece97e18f60ad08d93e3d6fa832175c098bf4497306034cee7a5"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.64.tar.gz"
+  sha256 "966b75621be50b651e8cb527e5025156537ba136fc33eb0fcd90aa4285d595cc"
   # The launcher/engine are MIT; the bundled OpenAgent plugin is SUL-1.0.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f4b5102b9852fb98b62a31cc222feb30f1eb4c3a56d55c003d16f6f948771bf5"
-    sha256 cellar: :any, arm64_sequoia: "144a3aa5eeca8f8da66dc77cf70246d171189b490c9e67869a6aeceb04afd75d"
-    sha256 cellar: :any, arm64_linux:   "9d054361d82e46419433893704e85b66477d3a205574c9197878a2a896b5650b"
-    sha256 cellar: :any, x86_64_linux:  "7c4fcaaafa2ff47213947443a54e2bc3f9be8f76ace3be21e587e8ffcf9aac6f"
+    sha256 cellar: :any, arm64_tahoe:   "577bc6a1f2e01eca3fb1a6c9baa2c37eca863fbfa10b2f3a33a57046b86e71d7"
+    sha256 cellar: :any, arm64_sequoia: "6e7f193207d2418ab276be6f3ee4117d589e6f29edb08171cc9c72a87088cb0f"
+    sha256 cellar: :any, arm64_linux:   "a9a36dcf1d289716838d9028c8f80ea11c5a7da574bfe91b2e8495edf4ca93ac"
+    sha256 cellar: :any, x86_64_linux:  "782971f437b24369d00604a72a8defec013a13ef6c817640512de6dea92649c0"
   end
 
   depends_on "pkgconf" => :build
@@ -36,10 +36,10 @@ class OmoAi < Formula
     sha256 "6f3854e067fd34abc31c1d3360a00ff65ca13df734b34dc09b23137dec5c4e86"
   end
 
-  # npm provenance maps @code-yeongyu/senpi@2026.10.27-1 to this immutable source commit.
+  # npm provenance maps @code-yeongyu/senpi@2026.11.5-1 to this immutable source commit.
   resource "senpi" do
-    url "https://github.com/code-yeongyu/senpi/archive/b594f4cfe910cba76089be153f458a3ed65a9b0f.tar.gz"
-    sha256 "d4ef0d16880183062ac2c0d631f9902cd75111cda6e5fc2800b8e59782b59783"
+    url "https://github.com/code-yeongyu/senpi/archive/c130b2d8b99ed0c3dc42a2c5b3a49959aa5ce018.tar.gz"
+    sha256 "3ee1e44a1bcb3db7b34a5e1e3de4c731d9a3d3799786cc6370f3dfa38cb4a80f"
   end
 
   resource "sandbox-helper-sources" do
