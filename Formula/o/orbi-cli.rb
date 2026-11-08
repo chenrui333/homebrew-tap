@@ -10,7 +10,7 @@ class OrbiCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "af01be628e28faff75a958de9601feab9655dfaa406f0a9f3a0a92fa9c1fab92"
+    sha256 cellar: :any_skip_relocation, all: "60be94887dd533a549bd99743349df4253fabc33c6e08a8ef430d58726371b61"
   end
 
   depends_on "python-setuptools" => :build
