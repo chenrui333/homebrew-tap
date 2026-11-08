@@ -1,0 +1,14 @@
+Formula/r/rawhide.rb
+  h_9df9c32c3f321d 7,34,39-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b83bac33ee440093555f07c75eb910f3945fb9b4",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
