@@ -1,8 +1,8 @@
 class Sdrtop < Formula
   desc "Terminal spectrum monitor for software-defined radios"
   homepage "https://github.com/musithang/sdrtop"
-  url "https://github.com/musithang/sdrtop/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "a59fde5c9bf7da109e08dda4cb91a76221a01e08653f6bf774fac8f000931f75"
+  url "https://github.com/musithang/sdrtop/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "9b2519b85c8050d801ec33eb8d516fdaf54ec367c3d54d414127c2d1e0f2444f"
   license "GPL-3.0-or-later"
   head "https://github.com/musithang/sdrtop.git", branch: "main"
 
