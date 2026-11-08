@@ -1,17 +1,17 @@
 class Funes < Formula
   desc "Searchable memory of past AI agent sessions, exposed over MCP"
   homepage "https://github.com/huggingface/funes"
-  url "https://github.com/huggingface/funes/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "c5f5ba5487b5b2f9d8145d4dfbcc2cb955bfbc564075e1d69978b0bf5cbe2207"
+  url "https://github.com/huggingface/funes/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "57a6452685c501e739ee63664f17145c313ec49c2bce171c269cc7990aa38cfd"
   license "Apache-2.0"
   head "https://github.com/huggingface/funes.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e708c0d90f80ac033c9bb962fe1485191833392973469e990f5bf8c90aa93ea8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e629661432bb1f44e8660606bac4a5be6c63f7614b2769d30866e008e6b6937e"
-    sha256 cellar: :any,                 arm64_linux:   "c49ab8869842c83068bad8b9651764f2eeeef33f9b2b35b1cd5d47d1e8d2138b"
-    sha256 cellar: :any,                 x86_64_linux:  "45fc758d13a653ea25230e3e0abd8e88e8400cc273889b700008edd45ebd8a34"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7a46ca2711728fc2cb970130e0ef02dea8062f167137f90880fa824ffdda1ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a28621bd973b94ee5bf01c998ca1919695632fe7d23c1c0ab5bf1ccc582333ed"
+    sha256 cellar: :any,                 arm64_linux:   "ca9c789cf8cd8633852e5fa999ab627e46a98980107f28bf01ea5ea56f361082"
+    sha256 cellar: :any,                 x86_64_linux:  "855a62644eb4f9620306b6fd9df9f0b93b45ed3d1f34ab43157d7cda91096089"
   end
 
   depends_on "cmake" => :build
@@ -24,8 +24,8 @@ class Funes < Formula
 
   def fetch
     # Upstream release CI stamps the tag version over the development version.
-    inreplace "Cargo.toml", 'version = "1.9.0+dev"', "version = \"#{version}\""
-    inreplace "Cargo.lock", /(name = "funes"\nversion = )"1\.9\.0\+dev"/, "\\1\"#{version}\""
+    inreplace "Cargo.toml", /(\[package\]\nname = "funes"\nversion = )"[^"]+"/, "\\1\"#{version}\""
+    inreplace "Cargo.lock", /(name = "funes"\nversion = )"[^"]+"/, "\\1\"#{version}\""
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
