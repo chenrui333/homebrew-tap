@@ -6,6 +6,14 @@ class Mitos < Formula
   license "MPL-2.0"
   head "https://github.com/mitos-editor/mitos.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any, arm64_tahoe:   "c17f73856e9b301dca2dd1aa36204a990b88fe5ad1f92d8bf03044d88b122efa"
+    sha256 cellar: :any, arm64_sequoia: "5d2698ca30e27ba2b729e70ca074bd6c9c9c94b9549090213a5841558bdddfc2"
+    sha256 cellar: :any, arm64_linux:   "a56bdee3b5639681e38d6a7b01a95ccc93915c991f500d7fc2c15b6a4f05812c"
+    sha256 cellar: :any, x86_64_linux:  "80fa03f66f4ac627b389b5f82086544f97dfdcdfb02a5f8a85197e7d6d93cd5e"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
