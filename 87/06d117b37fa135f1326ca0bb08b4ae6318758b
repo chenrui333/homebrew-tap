@@ -1,0 +1,19 @@
+Formula/f/fast-agent-mcp.rb
+  s_6e5d1e6427e031::t_e6be92b2ce3b04 777
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8706d117b37fa135f1326ca0bb08b4ae6318758b",
+  "prompts": {},
+  "sessions": {
+    "s_6e5d1e6427e031": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0e80f-96ed-7660-9e4e-a1e651928560",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
