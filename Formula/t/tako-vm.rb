@@ -6,6 +6,7 @@ class TakoVm < Formula
   url "https://github.com/las7/TakoVM/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "9175da013d27e4f86d7f89fcb03add94b3c7dc3a9cacd8e3338c55f6603ba0ca"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/las7/TakoVM.git", branch: "main"
 
   bottle do
@@ -21,7 +22,7 @@ class TakoVm < Formula
   depends_on "libpq"
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages exclude_packages: %w[certifi pydantic],
                 extra_packages:   %w[
@@ -160,10 +161,10 @@ class TakoVm < Formula
       wheel
     ]
 
-    # Cython is only needed at build time; skip compiling Cython itself
+    # PyYAML imports Cython in the build interpreter; use its source resource without compiling Cython itself.
     ENV["NO_CYTHON_COMPILE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -180,7 +181,26 @@ class TakoVm < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tako-vm version")
-    output = shell_output("#{bin}/tako-vm --not-a-real-option 2>&1", 2)
-    assert_match "not-a-real-option", output
+
+    (testpath/"tako_vm.yaml").write <<~YAML
+      data_dir: #{testpath}/data
+      max_workers: 2
+      log_level: debug
+      job_types:
+        - name: homebrew
+          timeout: 45
+          memory_limit: 256m
+    YAML
+    assert_match "Configuration is valid!", shell_output("#{bin}/tako-vm validate tako_vm.yaml")
+
+    config = JSON.parse(shell_output("#{bin}/tako-vm --config tako_vm.yaml config --json"))
+    assert_equal "DEBUG", config.fetch("log_level")
+
+    (testpath/"invalid.yaml").write "default_timeout: 301\nmax_timeout: 300\n"
+    output = shell_output("#{bin}/tako-vm validate invalid.yaml 2>&1", 1)
+    assert_match "Validation FAILED", output
+    assert_match "default_timeout must be <= max_timeout", output
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
