@@ -123,7 +123,7 @@
   "mq": "homebrew/core",
   "mufetch": "homebrew/core",
   "multi-gitter": "homebrew/core",
-  "n8n-mcp": "homebrew-core",
+  "n8n-mcp": "homebrew/core",
   "nak": "homebrew/core",
   "nanobot": "homebrew/core",
   "netfetch": "homebrew/core",
