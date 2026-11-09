@@ -1,4 +1,4 @@
-cask "multica" do
+cask "multica-app" do
   arch arm: "arm64", intel: "x64"
 
   version "0.8.1"
