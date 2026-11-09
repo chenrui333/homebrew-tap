@@ -6,7 +6,7 @@
   "alejandra": "homebrew/core",
   "algolia": "homebrew/core",
   "api-linter": "homebrew/core",
-  "archgw": "homebrew-core",
+  "archgw": "homebrew/core",
   "asm-lsp": "homebrew/core",
   "attempt-cli": "homebrew/core",
   "aws-spiffe-workload-helper": "homebrew-core",
