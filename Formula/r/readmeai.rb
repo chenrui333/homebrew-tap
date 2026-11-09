@@ -10,11 +10,10 @@ class Readmeai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 4
-    sha256 cellar: :any, arm64_tahoe:   "b4aedacd4cce75cb3b09aa3e4bb5dc53d0cd1eda09e9b35aea983b74c9be6cff"
-    sha256 cellar: :any, arm64_sequoia: "bb37644f171005d19c52dc3286a1295f594a3fdaa75c5532f3f186b5b5ac1b06"
-    sha256 cellar: :any, arm64_linux:   "8be8f2cdc3a5699ba1c1c9de6d93b43b3206fa55bf562515ae050a65e23e6c08"
-    sha256 cellar: :any, x86_64_linux:  "a56ffc599c6e2c941c0b20483ef347bb1b45d6208e5ac185eb1aad25bf691071"
+    sha256 cellar: :any, arm64_tahoe:   "d808af4f24c28d35ae9804ac7595835c2a9f00d486e9c226cbba5cfe7c425512"
+    sha256 cellar: :any, arm64_sequoia: "ac7cfd5eabb6ac75badc6694c51e8463ec4d0b032d4632e21237559a0dd61007"
+    sha256 cellar: :any, arm64_linux:   "d1312d0f563ea14fff16010d7efbeecce252956dcaf2dddc16d9f49e23462852"
+    sha256 cellar: :any, x86_64_linux:  "037554e3c67dc9d1f29054f54ce93bd36a1435d12bd4eac245fdfa5e1f43de99"
   end
 
   depends_on "maturin" => :build
