@@ -10,10 +10,10 @@ class ApmCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "a6633b277392b9c5d598d06a7b54fe001f984a44520991d01a11c9237e6f5e3d"
-    sha256 cellar: :any, arm64_sequoia: "603fdfb11f761efeb409616e6919bf2d03e8ac4eb50e8b03c02665399655d52e"
-    sha256 cellar: :any, arm64_linux:   "78b5b4dafe9d4b8d5d31533c1ca040dcae2414fe69c79150b1f6b639d9302817"
-    sha256 cellar: :any, x86_64_linux:  "8eac1477e5bf6b6940ebf34b534add236836ceb5bb0bcbc30f32fa4fc4bde463"
+    sha256 cellar: :any, arm64_tahoe:   "f61ff89feb2639d5be8e6a2700046299cb4b8bfc50798173addac37e28124274"
+    sha256 cellar: :any, arm64_sequoia: "2a58bb964c2e9cc692deb03bbb6fcc3f2cc21557c7dd23f0e7fc80b103d3f44a"
+    sha256 cellar: :any, arm64_linux:   "30220d99e65f87f77ba2f8fbd685d7424e1c27d5b8ebde934af05be1db8956f8"
+    sha256 cellar: :any, x86_64_linux:  "b94236b607226f66f63302f49646d685b5667c9722f61fbdc9825fa4f4efc3e9"
   end
 
   depends_on "maturin" => :build
