@@ -6,26 +6,26 @@ class ContextFileManager < Formula
   url "https://files.pythonhosted.org/packages/b5/b4/cce34eddd8f6f4d2a24af1e4b84333dc67d7d4abd2ec0ce4c997bbe6cd25/context_file_manager-0.5.4.tar.gz"
   sha256 "4139b93b5420513a0b3c956511695667a72d773c80ffd405d435ad1f9f4489af"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cb360bb92be62435738335f3687fe4f69f593896a2cc4220e7e184826bd91a03"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdf021b1112346dac67a41a0b6b0a0f79b7b98cd8721ddc6c5c316bf6c7bd57d"
-    sha256 cellar: :any,                 arm64_linux:   "0038668dbd8a9fb82a74f80652bcdcf19ce41caa0705748b4b78adb36ad5bf95"
-    sha256 cellar: :any,                 x86_64_linux:  "86ba5d20968d1a015c512a00e509275023c9b2f69642d3acb6fa6811a136b59a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0de43a4e35341af3fcddf5dac1b8a65142707c0935f22b2221f24794b78e611"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0a45db7529309126795bc04b405e7e70221b4ccd16c17459b7093e1bbc23e9e"
+    sha256 cellar: :any,                 arm64_linux:   "3559998b157dfe543ba3a489075a74210bb571e1eba735ca1871428706568a45"
+    sha256 cellar: :any,                 x86_64_linux:  "9c7733c6fe3f091516192507d8d7e23f35d116a7407e91962dc0da8ec62d998a"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "context-file-manager[mcp]",
                 exclude_packages: %w[certifi cryptography pydantic rpds-py],
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core
+                  calver flit-core<4 hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core
                   setuptools setuptools-scm trove-classifiers uv-dynamic-versioning vcs-versioning wheel
                 ]
 
@@ -120,8 +120,8 @@ class ContextFileManager < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/33/54/dd2330ef4611c27ae59124820863c34e1d3edb1133c58e6375e2d938c9c5/mcp-1.21.0.tar.gz"
-    sha256 "bab0a38e8f8c48080d787233343f8d301b0e1e95846ae7dead251b2421d99855"
+    url "https://files.pythonhosted.org/packages/f7/25/4df633e7574254ada574822db2245bbee424725d1b01bccae10bf128794e/mcp-1.21.1.tar.gz"
+    sha256 "540e6ac4b12b085c43f14879fde04cbdb10148a09ea9492ff82d8c7ba651a302"
   end
 
   resource "packaging" do
@@ -238,18 +238,18 @@ class ContextFileManager < Formula
       vcs-versioning
       setuptools-scm
       pluggy
+      tomlkit
       hatchling
       hatch-vcs
       hatch-fancy-pypi-readme
       markupsafe
       jinja2
-      tomlkit
       dunamai
       uv-dynamic-versioning
       wheel
     ]
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -267,5 +267,43 @@ class ContextFileManager < Formula
     assert_match "note.md", shell_output("#{bin}/cfm --repo #{repo} list --format json")
     system bin/"cfm", "--repo", repo, "get", "note.md", testpath/"retrieved.md"
     assert_equal "Homebrew context test\n", (testpath/"retrieved.md").read
+
+    system formula_opt_libexec("python@3.14")/"bin/python", "-m", "pip", "--python", libexec/"bin/python", "check"
+
+    ENV.prepend_path "PATH", libexec/"bin"
+
+    (testpath/"test_mcp.py").write <<~PYTHON
+      import json
+      import subprocess
+
+      import anyio
+      from mcp import ClientSession, StdioServerParameters
+      from mcp.client.stdio import stdio_client
+
+      output = subprocess.run(
+          ["#{bin}/cfm", "--repo", "#{repo}", "setup-mcp"],
+          check=True, capture_output=True, text=True, timeout=30,
+      ).stdout
+      config, _ = json.JSONDecoder().raw_decode(output[output.index("{"):])
+      server = StdioServerParameters(**config["context-file-manager"])
+
+      async def check_mcp():
+          with anyio.fail_after(30):
+              # The SDK closes stdin, terminates if necessary, and reaps the child on exit.
+              async with stdio_client(server) as (reader, writer):
+                  async with ClientSession(reader, writer) as session:
+                      await session.initialize()
+                      tools = await session.list_tools()
+                      assert "cfm_list" in {tool.name for tool in tools.tools}, tools
+                      result = await session.call_tool(
+                          "cfm_list", {"format": "json", "repo_path": "#{repo}"},
+                      )
+                      assert not result.isError, result
+                      files = json.loads(result.content[0].text)
+                      assert "note.md" in files, files
+
+      anyio.run(check_mcp)
+    PYTHON
+    system libexec/"bin/python", testpath/"test_mcp.py"
   end
 end
