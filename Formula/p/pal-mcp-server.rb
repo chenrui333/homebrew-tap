@@ -491,7 +491,7 @@ class PalMcpServer < Formula
 
     # Startup uses packaged model registries and a lazy SDK client; never invoke any tool.
     Open3.popen2(env, (bin/"pal-mcp-server").to_s,
-                err: (testpath/"server.log").to_s, unsetenv_others: true) do |stdin, stdout, wait_thr|
+                err: (testpath/"server.log").to_s, unsetenv_others: true) do |stdin, stdout, wait_thread|
       Timeout.timeout(30) do
         stdin.puts JSON.generate(jsonrpc: "2.0", id: 1, method: "initialize", params: {
           protocolVersion: "2025-03-26", capabilities: {}, clientInfo: { name: "homebrew-test", version: "1.0" }
@@ -532,10 +532,10 @@ class PalMcpServer < Formula
 
         stdin.close
         assert_empty stdout.read
-        assert_predicate wait_thr.value, :success?
+        assert_predicate wait_thread.value, :success?
       end
     ensure
-      Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
+      Process.kill("TERM", wait_thread.pid) if wait_thread.alive?
     end
   end
 end
