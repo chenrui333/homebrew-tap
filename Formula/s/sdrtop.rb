@@ -8,10 +8,10 @@ class Sdrtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "149316426f612d121f3b0c0d3bc6d88934bb3daa54efe31b546a49f4ab0171d3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e402cb96fcead6ce1087345e51b57dcda275f5235945ebfce519fb44e343f219"
-    sha256 cellar: :any,                 arm64_linux:   "a948633f3d34d0f61870dae6478f41e70cf46549b7e0877ce391b26abdb50ca8"
-    sha256 cellar: :any,                 x86_64_linux:  "e4558c42f7815d6563f0ac18ec3d050c4df381acfbdf17393b5e7eb68eee5e3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0d3753fa797f8424719763cc8ac40d162880b2240ad577a952d625c0fe71c7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34a5ae1f06280c66aef6a88ff8491641a94a7b788bcd7b4c30c67b88ab16fc87"
+    sha256 cellar: :any,                 arm64_linux:   "aa088fc380667f852dca9f9ea770efe76dcba7f1ec3e5dcbe2848eeaf3460417"
+    sha256 cellar: :any,                 x86_64_linux:  "9e04936d4eceecc4c35719e1efcb0fc1c74fb7359815291deded9be210660e35"
   end
 
   depends_on "rust" => :build
