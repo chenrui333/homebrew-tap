@@ -1,0 +1,19 @@
+Formula/m/mvt.rb
+  s_677678ad7eefdc::t_1dc367cb909cfa 10,35-36,64-68,70-71,175-176,184-189,226-229,251-252,261-262,265-272,281-288
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e6a08c23ffd63b0af6821af455756c1781ab29c8",
+  "prompts": {},
+  "sessions": {
+    "s_677678ad7eefdc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c086-d7fc-7373-b7b8-6a366126d539",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
