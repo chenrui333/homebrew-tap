@@ -6,17 +6,17 @@ class McpAlchemy < Formula
   url "https://files.pythonhosted.org/packages/12/e5/fd79c853f023aaf775f6c353e04e9641440e0a68466dcc35128b14e57a94/mcp_alchemy-2026.10.15.202659.tar.gz"
   sha256 "00776c867c38e56da48c9c74bdf974afa54cab4cbe7c14f9fbd145a463496e40"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/runekaagaard/mcp-alchemy.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bb7f914f383754a8b84324bf5dc2140fd5c723ece7c91308fa203cb5e7151f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d08325d48cf026fb8ab600a14c183dedebaff9d1121b257022d308dd9a11599"
-    sha256 cellar: :any,                 arm64_linux:   "13cb32f97c3dd734f78bd593726a127a90403c9ff518ef2667bee6cf63600bc3"
-    sha256 cellar: :any,                 x86_64_linux:  "c6d83dcbaeb40e0f1c01fd7da80e3485cfa1d73f569d1e197ad5a9b185c061e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d7461bd5161c093e52adffa41ace8e007813cc3e3bc28b9815207ceebe235cf9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cec631666f9a2a27752a0428d7d02d21ddc2538ccd6315c04123ae6a16ebc30"
+    sha256 cellar: :any,                 arm64_linux:   "cb15b5cbc5b02efd58d284be7c05ff83ea7d92e91a98f5442ff1a9b540b55585"
+    sha256 cellar: :any,                 x86_64_linux:  "179d1964cf04b0521e011a02c370bb8b86ad9b2bfc60044ea8259d31a3ac20c4"
   end
 
-  depends_on "cython" => :build # for sqlalchemy C extensions
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
@@ -25,9 +25,9 @@ class McpAlchemy < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
                 extra_packages:   %w[
-                  calver dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe packaging
-                  pathspec pdm-backend pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
-                  uv-dynamic-versioning vcs-versioning wheel
+                  calver cython dunamai flit-core==3.12.0 hatch-fancy-pypi-readme hatch-vcs hatchling jinja2
+                  markupsafe packaging pathspec pdm-backend pluggy poetry-core setuptools setuptools-scm tomlkit
+                  trove-classifiers uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "annotated-doc" do
@@ -55,14 +55,21 @@ class McpAlchemy < Formula
     sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
+  # Generate SQLAlchemy's native sources with the runtime interpreter.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
   resource "dunamai" do
     url "https://files.pythonhosted.org/packages/c5/62/edf5352d8ce1371129ccfe971e6de3a1ce4dc7f9bdc80390fb79856b78d4/dunamai-1.26.3.tar.gz"
     sha256 "fe2f732186710ee5048044fdbef6c76c6afbb9ee7de4f6d00cf34256e9ec2e7f"
   end
 
+  # Packaging needs Flit >=3.12; Click/Jinja/Markdown/Truststore require <4.
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "h11" do
@@ -294,9 +301,8 @@ class McpAlchemy < Formula
       hatch-vcs
       uv-dynamic-versioning
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -311,6 +317,45 @@ class McpAlchemy < Formula
     require "open3"
 
     ENV["DB_URL"] = "sqlite:///#{testpath}/test.db"
+    python = libexec/"bin/python"
+    system python, "-c", <<~PYTHON
+      import importlib
+      import importlib.machinery
+      import json
+      import os
+      import sys
+      from pathlib import Path
+      from sqlalchemy import create_engine, inspect, select
+      from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column
+
+      modules = [
+          importlib.import_module("sqlalchemy.cyextension." + name)
+          for name in ("collections", "immutabledict", "processors", "resultproxy", "util")
+      ]
+      for module in modules:
+          assert any(module.__file__.endswith(suffix) for suffix in importlib.machinery.EXTENSION_SUFFIXES)
+          assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())
+
+      class Base(DeclarativeBase):
+          pass
+
+      class Item(Base):
+          __tablename__ = "items"
+          id: Mapped[int] = mapped_column(primary_key=True)
+          label: Mapped[str]
+          units: Mapped[int]
+
+      engine = create_engine(os.environ["DB_URL"])
+      Base.metadata.create_all(engine)
+      with Session(engine) as session:
+          session.add_all([Item(label="low", units=1), Item(label="middle", units=2), Item(label="high", units=3)])
+          session.commit()
+          rows = session.scalars(select(Item).where(Item.units >= 2).order_by(Item.units.desc())).all()
+          assert [(item.label, item.units) for item in rows] == [("high", 3), ("middle", 2)]
+      assert {column["name"] for column in inspect(engine).get_columns("items")} == {"id", "label", "units"}
+      engine.dispose()
+      print(json.dumps({"python": sys.version, "sqlalchemy_extensions": [module.__file__ for module in modules]}))
+    PYTHON
 
     initialize_request = {
       jsonrpc: "2.0",
@@ -323,7 +368,18 @@ class McpAlchemy < Formula
       },
     }.to_json
     initialized_notification = { jsonrpc: "2.0", method: "notifications/initialized", params: {} }.to_json
-    tools_request = { jsonrpc: "2.0", id: 2, method: "tools/list", params: {} }.to_json
+    query_request = {
+      jsonrpc: "2.0",
+      id:      2,
+      method:  "tools/call",
+      params:  {
+        name:      "execute_query",
+        arguments: {
+          query:  "SELECT SUM(units) AS total FROM items WHERE units >= :minimum",
+          params: { minimum: 2 },
+        },
+      },
+    }.to_json
 
     Open3.popen2e(bin/"mcp-alchemy") do |stdin, output, wait_thread|
       stdin.sync = true
@@ -345,13 +401,16 @@ class McpAlchemy < Formula
       assert_equal version.to_s, initialize_response.dig("result", "serverInfo", "version")
 
       stdin.puts initialized_notification
-      stdin.puts tools_request
-      tools_response = read_response.call
-      descriptions = tools_response.dig("result", "tools").map { |tool| tool["description"] }.join("\n")
-      assert_match "Return all table names in the database separated by comma", descriptions
+      stdin.puts query_request
+      query_response = read_response.call
+      refute query_response.dig("result", "isError")
+      query_text = query_response.dig("result", "content")
+                                 .filter_map { |content| content["text"] if content["type"] == "text" }.join("\n")
+      assert_includes query_text.lines.map(&:strip), "total: 5"
 
       stdin.close
       assert_predicate wait_thread.value, :success?
     end
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python", python, "check"
   end
 end
