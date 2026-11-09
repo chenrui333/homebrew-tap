@@ -6,6 +6,7 @@ class Readmeai < Formula
   url "https://files.pythonhosted.org/packages/42/af/d3147ac781dd52cb5db3537919389205c7c0a2f0ecc814dfb3f6b6389deb/readmeai-0.6.3.tar.gz"
   sha256 "49478953bba0c77ff2468a8a03c3c0d278c2dfc9d060d79a200d75852d9cf83d"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -16,7 +17,6 @@ class Readmeai < Formula
     sha256 cellar: :any, x86_64_linux:  "a56ffc599c6e2c941c0b20483ef347bb1b45d6208e5ac185eb1aad25bf691071"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build
   depends_on "rust" => :build # for jiter and tiktoken
   depends_on "certifi" => :no_linkage
@@ -26,9 +26,9 @@ class Readmeai < Formula
 
   pypi_packages exclude_packages: %w[certifi pydantic],
                 extra_packages:   %w[
-                  calver expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
-                  pkgconfig pluggy poetry-core semantic-version setuptools setuptools-rust setuptools-scm tomlkit
-                  trove-classifiers wheel
+                  calver cython==3.1.8 expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling==1.26.3
+                  packaging pathspec pkgconfig pluggy poetry-core semantic-version setuptools setuptools-rust
+                  setuptools-scm tomlkit trove-classifiers wheel
                 ]
 
   resource "aiohappyeyeballs" do
@@ -69,6 +69,12 @@ class Readmeai < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  # The HTTP build backends require Cython 3.1.x under the target interpreter.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/b4/a4/ec55945b52d0b888e2a090450a5524001bfa17c8b68348379a154badb850/cython-3.1.8.tar.gz"
+    sha256 "518475fbe633ba30c1577669f417440f41e1a23ad6b6e2dbb20703cd457f04ef"
   end
 
   resource "distro" do
@@ -117,8 +123,8 @@ class Readmeai < Formula
   end
 
   resource "hatchling" do
-    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
-    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
   end
 
   resource "httpcore" do
@@ -286,12 +292,6 @@ class Readmeai < Formula
     sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
   end
 
-  # version patch
-  patch do
-    url "https://github.com/eli64s/readme-ai/commit/70edf339e6379a26a4955752a1516227209c9f36.patch?full_index=1"
-    sha256 "d75a161414942db6a753fcaef22098718f5d499cf7375d169cc3228fd078df07"
-  end
-
   deny_network_access!
 
   def fetch
@@ -312,6 +312,7 @@ class Readmeai < Formula
       poetry-core
       pkgconfig
       setuptools
+      cython
       calver
       semantic-version
       setuptools-scm
@@ -326,7 +327,6 @@ class Readmeai < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
     ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
@@ -334,7 +334,12 @@ class Readmeai < Formula
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || r.name == "tiktoken" },
+                     build_isolation: false
+    # Tiktoken's original PyO3 predates Python 3.14; build its native extension against the stable ABI.
+    with_env(PIP_CONFIG_SETTINGS: "--build-option=--py-limited-api=cp39") do
+      venv.pip_install resource("tiktoken"), build_isolation: false
+    end
     venv.pip_install_and_link buildpath, build_isolation: false
 
     generate_completions_from_executable(bin/"readmeai", shells: [:fish, :zsh], shell_parameter_format: :click)
@@ -344,61 +349,64 @@ class Readmeai < Formula
     # The 0.6.3 sdist still sets `__version__ = "0.6.0.rc1"`, so `--version` does not report the formula version.
     assert_match "readmeai version", shell_output("#{bin}/readmeai --version")
 
-    # checking couple of configuration files loading
-    # {
-    #     "event": "Configuration file loaded: <path>/site-packages/readmeai/config/settings/ignore_list.toml",
-    #     "level": "info",
-    #     "logger": "readmeai.config.settings",
-    #     "timestamp": "2025-03-01T18:15:44.787964Z",
-    #     "filename": "settings.py",
-    #     "func_name": "_load_settings",
-    #     "lineno": 276
-    # }
-    # {
-    #     "event": "Configuration file loaded: <path>/site-packages/readmeai/config/settings/languages.toml",
-    #     "level": "info",
-    #     "logger": "readmeai.config.settings",
-    #     "timestamp": "2025-03-01T18:15:44.788483Z",
-    #     "filename": "settings.py",
-    #     "func_name": "_load_settings",
-    #     "lineno": 276
-    # }
-    # {
-    #     "event": "Configuration file loaded: <path>/site-packages/readmeai/config/settings/parsers.toml",
-    #     "level": "info",
-    #     "logger": "readmeai.config.settings",
-    #     "timestamp": "2025-03-01T18:15:44.788891Z",
-    #     "filename": "settings.py",
-    #     "func_name": "_load_settings",
-    #     "lineno": 276
-    # }
-    # {
-    #     "event": "Configuration file loaded: <path>/site-packages/readmeai/config/settings/prompts.toml",
-    #     "level": "info",
-    #     "logger": "readmeai.config.settings",
-    #     "timestamp": "2025-03-01T18:15:44.789627Z",
-    #     "filename": "settings.py",
-    #     "func_name": "_load_settings",
-    #     "lineno": 276
-    # }
-    # {
-    #     "event": "Configuration file loaded: <path>/site-packages/readmeai/config/settings/tool_config.toml",
-    #     "level": "info",
-    #     "logger": "readmeai.config.settings",
-    #     "timestamp": "2025-03-01T18:15:44.792497Z",
-    #     "filename": "settings.py",
-    #     "func_name": "_load_settings",
-    #     "lineno": 276
-    # }
-    # {
-    #     "event": "Configuration file loaded: <path>/site-packages/readmeai/config/settings/tooling.toml",
-    #     "level": "info",
-    #     "logger": "readmeai.config.settings",
-    #     "timestamp": "2025-03-01T18:15:44.793575Z",
-    #     "filename": "settings.py",
-    #     "func_name": "_load_settings",
-    #     "lineno": 276
-    # }
+    python = libexec/"bin/python"
+    assert_equal version.to_s,
+                 shell_output("#{python} -c 'import importlib.metadata as m; print(m.version(\"readmeai\"))'").strip
+    system python, "-c", <<~PYTHON
+      import importlib
+      import sys
+      from pathlib import Path
+      import yaml
+      import jiter
+      import tiktoken
+      from frozenlist import FrozenList
+      from yarl import URL
+
+      for name in ("yaml._yaml", "aiohttp._http_parser", "frozenlist._frozenlist",
+                   "propcache._helpers_c", "yarl._quoting_c", "jiter.jiter", "tiktoken._tiktoken"):
+          module = importlib.import_module(name)
+          assert module.__file__.endswith(".so")
+          assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())
+      assert yaml.__with_libyaml__
+      assert FrozenList is importlib.import_module("frozenlist._frozenlist").FrozenList
+      document = {"brew": [1, True, "yaml"]}
+      assert yaml.load(yaml.dump(document, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == document
+      values = FrozenList([1, 2])
+      values.append(3)
+      values.freeze()
+      assert values == [1, 2, 3]
+      try:
+          values.append(4)
+      except RuntimeError:
+          pass
+      else:
+          raise AssertionError("Frozen collection accepted mutation")
+      url = URL("https://example.invalid/a%20b?item=one&item=two")
+      assert url.path == "/a b"
+      assert url.query.getall("item") == ["one", "two"]
+      assert URL(str(url)) == url
+      assert jiter.from_json(b'{"brew": [1, true, "native"]}') == {"brew": [1, True, "native"]}
+      encoding = tiktoken.Encoding(
+          name="homebrew-byte-fixture", pat_str=r"[\\s\\S]",
+          mergeable_ranks={bytes([n]): n for n in range(256)}, special_tokens={"<|brew|>": 256},
+      )
+      text = "native 🍺"
+      assert encoding.encode(text) == list(text.encode())
+      assert encoding.decode(encoding.encode(text)) == text
+      batch = ["", text, "first\\nsecond"]
+      assert encoding.decode_batch(encoding.encode_batch(batch, num_threads=2), num_threads=2) == batch
+      assert encoding.encode_single_token(b"x") == 120
+      assert encoding.decode_single_token_bytes(120) == b"x"
+      assert encoding.encode("<|brew|>", allowed_special={"<|brew|>"}) == [256]
+      assert encoding.decode([256]) == "<|brew|>"
+      try:
+          encoding.encode("<|brew|>")
+      except ValueError:
+          pass
+      else:
+          raise AssertionError("Disallowed special token accepted")
+    PYTHON
+
     require "open3"
 
     output, status = Open3.capture2e(bin/"readmeai", "--not-a-real-option")
@@ -406,10 +414,14 @@ class Readmeai < Formula
     assert_match "not-a-real-option", output
 
     # Offline mode builds the README from the local file tree without any LLM request.
-    (testpath/"demo/main.py").write "print('hello')\n"
+    (testpath/"demo/src/main.py").write "print('hello')\n"
+    (testpath/"demo/requirements.txt").write "PyYAML==6.0.3\nrequests>=2\n"
     system bin/"readmeai", "--repository", testpath/"demo", "--api", "offline", "--output", testpath/"README.md"
     readme = (testpath/"README.md").read
     assert_match "# DEMO", readme
-    assert_match "main.py", readme
+    assert_match %r{href='[^']*/src/main\.py'>main\.py</a>}, readme
+    assert_match "**Programming Language:** Python", readme
+    assert_match "pip install -r requirements.txt", readme
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python", python, "check"
   end
 end
