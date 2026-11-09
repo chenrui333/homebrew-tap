@@ -1,18 +1,18 @@
 class OhMyOpenagent < Formula
   desc "Multi-model agent orchestration plugin and toolkit for OpenCode and Codex"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.64.tar.gz"
-  sha256 "966b75621be50b651e8cb527e5025156537ba136fc33eb0fcd90aa4285d595cc"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.65.tar.gz"
+  sha256 "248df67304ea9b4564a7115963e26b24f6198a53fb91fc8ea0d2f034475599cb"
   # Sustainable Use License 1.0 permits only free, non-commercial redistribution.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "587fb903602b6455fcf08c76c341ef9fdbf56232f5480888a31d2d2459e17e06"
-    sha256 cellar: :any, arm64_sequoia: "f9a3a34494e39342da713f75ce6e9c1f7e2914fb3312e36306ce47c316cb198a"
-    sha256 cellar: :any, arm64_linux:   "bb2331bd7ab1779afaadcbf77d71b2da86a9a0b0af3b19dc7ad639a0555421c6"
-    sha256 cellar: :any, x86_64_linux:  "e88faf15838c8d1d7a8d688b248f395eca814c64589da485a3c875af7dc7bbe2"
+    sha256 cellar: :any, arm64_tahoe:   "990c62a45b6a8204041302cbd8f82094d13457311f2e3e265243db7cab23490e"
+    sha256 cellar: :any, arm64_sequoia: "6fabc7d0d1621e98d72eb07036ea63647c68e8dca14e4a035f3124fd7f50c8d8"
+    sha256 cellar: :any, arm64_linux:   "e4d6279f277d25102f7ade9bd312c91ebbbcd64a6fe8b9ef230b32b055f3e78a"
+    sha256 cellar: :any, x86_64_linux:  "ca323cf22519b45f4b868ec1b86c768fc85fce5b0cae197a8b53656df7e229a9"
   end
 
   depends_on "esbuild" => :build
