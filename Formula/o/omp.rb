@@ -1,8 +1,8 @@
 class Omp < Formula
   desc "Terminal coding agent with multi-model support and native tools"
   homepage "https://omp.sh"
-  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v18.18.1.tar.gz"
-  sha256 "0a09d8f5f307d72ff4ced4fe8bd564eab024c243dd0fc72800b828bf4819cb94"
+  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v18.18.2.tar.gz"
+  sha256 "388aa053c0754e01e49790094fa2cc45b104ae2a735e4453fae09301a252d89d"
   license "MIT"
   head "https://github.com/can1357/oh-my-pi.git", branch: "main"
 
