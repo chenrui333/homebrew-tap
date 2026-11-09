@@ -225,7 +225,7 @@ class WutCli < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
