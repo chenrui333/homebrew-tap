@@ -1,0 +1,14 @@
+Formula/j/jules.rb
+  h_9df9c32c3f321d 14-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e38c2cb359813c50bbcaca4e59408c91eb410f2d",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
