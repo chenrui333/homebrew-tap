@@ -7,6 +7,7 @@ class ContextAnalyzer < Formula
   version "1.0.0"
   sha256 "c4ca60359c7f558125d72d8ac42036585810fee26b4e490e72848ffc46b9966b"
   license "MIT"
+  revision 1
   head "https://github.com/manavgup/context-analyzer.git", branch: "main"
 
   bottle do
@@ -18,23 +19,22 @@ class ContextAnalyzer < Formula
     sha256 cellar: :any, x86_64_linux:  "062a77f21e74de18c1eff1750a719ff7576380195c9c9db22ec4488c0743ec3c"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
   depends_on "pydantic"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages package_name:     "context-tracker",
                 extra_packages:   %w[
-                  coherent.licensed dunamai flit-core flit-scm hatch-fancy-pypi-readme hatch-vcs hatchling jinja2
-                  pathspec pdm-backend pdm-pep517 pluggy poetry-core setuptools setuptools-scm tomlkit
+                  calver coherent.licensed cython dunamai flit-core flit-scm hatch-fancy-pypi-readme hatch-vcs
+                  hatchling jinja2 pathspec pdm-backend pdm-pep517 pluggy poetry-core setuptools-scm tomlkit
                   trove-classifiers uv-dynamic-versioning vcs-versioning wheel
                 ],
-                exclude_packages: %w[certifi cryptography pydantic pydantic-core rpds-py]
+                exclude_packages: %w[certifi cryptography pydantic pydantic-core rpds-py setuptools uv-build]
 
   resource "aiofile" do
     url "https://files.pythonhosted.org/packages/48/41/2fea7e193e061ce54eacc3b7bc0e6a99e4fcff43c78cf0a76dd781ed8334/aiofile-3.11.1.tar.gz"
@@ -81,6 +81,11 @@ class ContextAnalyzer < Formula
     sha256 "16498e7f81d1d0f5a4c0ad3f2540e65fe25691376e0a5bd367f558067113ed10"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
   resource "click" do
     url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
     sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
@@ -94,6 +99,11 @@ class ContextAnalyzer < Formula
   resource "cyclopts" do
     url "https://files.pythonhosted.org/packages/9a/19/5c438b428b3dca208eb920804dc16aeb3ca1e85d6163d17e8fb0785ead19/cyclopts-4.18.0.tar.gz"
     sha256 "fb7b730f21932e0784f7e54462df0447aaa1fbf034d65b605bd8a25dce58b188"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "dnspython" do
@@ -144,6 +154,11 @@ class ContextAnalyzer < Formula
   resource "flit-scm" do
     url "https://files.pythonhosted.org/packages/e2/99/961b062461652435b6ad9042d2ffdd75e327b36936987c2073aa784334d5/flit_scm-1.7.0.tar.gz"
     sha256 "961bd6fb24f31bba75333c234145fff88e6de0a90fc0f7e5e7c79deca69f6bb2"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/3e/6e/0091f175ccd02b02bc8811bbcbcc6ac2e980be116e3b2f7a736ca322bf84/greenlet-3.5.6.tar.gz"
+    sha256 "8e67c43bdfc88d5fee6db0d3e40175b362fc95fb85f0412d233b9b203c53a575"
   end
 
   resource "griffelib" do
@@ -209,6 +224,11 @@ class ContextAnalyzer < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/36/cf/ea4ef2920830dea3f5ab2ea4da6fb67724e6dca80ee2553788c3607243d0/jaraco_functools-4.5.0.tar.gz"
     sha256 "3bb5665ea4a020cf78a7040e89154c77edadb3ca74f366479669c5999aa70b03"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jinja2" do
@@ -386,9 +406,9 @@ class ContextAnalyzer < Formula
     sha256 "cbe236ed0901d1ec8427cc6a50bf0a34353ba28ad014dc24def68bfe7f3b9e68"
   end
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
   end
 
   resource "setuptools-scm" do
@@ -461,27 +481,52 @@ class ContextAnalyzer < Formula
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  # httptools' original build requirement caps setuptools at 82.0.1.
+  resource "build-setuptools-82.0.1" do
+    self.name = "setuptools"
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+
+    livecheck do
+      skip "Build backend constrained by httptools"
+    end
+  end
+
+  # The complete workspace retains uv-build's path dependencies and default features.
+  resource "uv-build" do
+    url "https://github.com/astral-sh/uv/archive/3010295ae7ff572de459987ad70db315a62ecd61.tar.gz"
+    version "0.11.32"
+    sha256 "966974756c8fac32372b11d3137b8dc36cdef67af05b589508258c504bdf3d10"
+
+    livecheck do
+      skip "Build backend constrained by py-key-value-aio"
+    end
+  end
+
   deny_network_access!
 
   def fetch
-    resource("watchfiles").stage do
-      system "cargo", "fetch", "--locked"
+    %w[uv-build watchfiles].each do |name|
+      resource(name).stage { system "cargo", "fetch", "--locked" }
     end
   end
 
   def install
     build_resources = %w[
-      setuptools
+      build-setuptools-82.0.1
+      calver
+      cython
       flit-core
       wheel
       poetry-core
+      tomlkit
       packaging
+      vcs-versioning
+      setuptools-scm
       pathspec
       pluggy
       trove-classifiers
       hatchling
-      vcs-versioning
-      setuptools-scm
       hatch-vcs
       coherent-licensed
       flit-scm
@@ -491,43 +536,69 @@ class ContextAnalyzer < Formula
       pdm-backend
       pdm-pep517
       hatch-fancy-pypi-readme
-      tomlkit
       uv-dynamic-versioning
+      uv-build
     ]
 
     ENV.prepend_path "PATH", formula_opt_bin("rust")
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages(python3)
+    ENV["CARGO_NET_OFFLINE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
+    ENV.prepend_path "PATH", libexec/"bin"
     build_resources.each do |name|
-      venv.pip_install resource(name), build_isolation: false
-    end
-    resource("py-key-value-aio").stage do
-      inreplace "pyproject.toml" do |s|
-        s.gsub! 'requires = ["uv_build>=0.11.4,<0.12"]', 'requires = ["hatchling"]'
-        s.gsub! 'build-backend = "uv_build"', 'build-backend = "hatchling.build"'
+      if name == "uv-build"
+        resource(name).stage do
+          venv.pip_install Pathname.pwd/"crates/uv-build", build_isolation: false
+        end
+      else
+        venv.pip_install resource(name), build_isolation: false
       end
-      (Pathname.pwd/"pyproject.toml").append_lines <<~TOML
-
-        [tool.hatch.build.targets.wheel]
-        packages = ["src/key_value"]
-      TOML
-      venv.pip_install Pathname.pwd, build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || r.name == "py-key-value-aio" },
-                     build_isolation: false
+    build_names = build_resources.map { |name| resource(name).name }
+    venv.pip_install resources.reject { |r| build_names.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
     projects_dir = testpath/"projects"
-    projects_dir.mkpath
+    session = "12345678-1234-1234-1234-123456789abc"
+    transcript = projects_dir/"homebrew"/"#{session}.jsonl"
+    transcript.dirname.mkpath
+    transcript.write <<~JSONL
+      {"type":"user","message":{"content":"Summarize the local fixture."}}
+      {"type":"assistant","message":{"model":"fixture","stop_reason":"end_turn","content":[{"type":"text","text":"Local summary."}],"usage":{"input_tokens":20,"output_tokens":10,"cache_read_input_tokens":100,"cache_creation_input_tokens":0}}}
+      {"type":"assistant","message":{"model":"fixture","stop_reason":null,"content":[],"usage":{"input_tokens":999,"output_tokens":0}}}
+    JSONL
+    (projects_dir/"homebrew"/"short.jsonl").write "{}\n"
+    (projects_dir/"homebrew"/session/"subagents").mkpath
+    (projects_dir/"homebrew"/session/"subagents"/"excluded-session.jsonl").write "{}\n"
 
     output = shell_output("#{bin}/ccscope list --projects-dir #{projects_dir}")
-    assert_match "No sessions found.", output
+    assert_match session, output
+    assert_match "homebrew", output
+    refute_match "excluded-session", output
+    refute_match "short", output
+    assert_match "Context Tracker MCP Server", shell_output("#{bin}/context-tracker --help")
 
-    output = shell_output("#{bin}/context-tracker --invalid-option 2>&1", 2)
-    assert_match "unrecognized arguments: --invalid-option", output
+    (testpath/"check.py").write <<~PYTHON
+      from importlib.metadata import version
+      from pathlib import Path
+      from context_tracker.ccscope.parse_transcript import build_turn_map, parse_transcript_to_blocks
+      from context_tracker.models import ApiTurnEvent
+
+      assert version("context-tracker") == "#{version}"
+      transcript = Path(#{transcript.to_s.dump})
+      event = ApiTurnEvent(session_id="#{session}", turn_number=1, model="fixture",
+                           input_tokens=20, output_tokens=10, cache_read_input_tokens=100)
+      assert ApiTurnEvent.model_validate_json(event.to_jsonl()).cache_read_input_tokens == 100
+      blocks, churn = parse_transcript_to_blocks(transcript)
+      assert len(blocks) >= 2
+      assert churn == [{"turn": 0, "cache_read": 100, "cache_creation": 0, "input": 20, "output": 10}]
+      assert build_turn_map(transcript) == [
+          {"conv_turn": 1, "first_call": 0, "last_call": 0, "user_prompt": "Summarize the local fixture."}
+      ]
+    PYTHON
+    system libexec/"bin/python", testpath/"check.py"
   end
 end
