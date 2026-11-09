@@ -13,22 +13,21 @@ class Unsloth < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a788bc98277b3f0791811e138c4213939c8bdd0e3cef3a0baefed527a3f15c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69c77b5a226632377e924a3d8ba08db623563ebb1f5d1076f080755e99c2857b"
-    sha256 cellar: :any,                 arm64_linux:   "e65b9948345478b711ddabc36d0e1ce91ad62dfcb9a7a85440e9672b3f601c3c"
-    sha256 cellar: :any,                 x86_64_linux:  "03f16254fbb11c498e1c85c1c37839fd36a175d0e718d9509c4a8d8bf4d4b409"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c75155dede4a2a9e84ff11d9af7491a69a6fbc6188a03369306e5b37d03ba84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a74dd357ddb20abd2992c53ecbbf4320795cfe0d342626a38fbd160f8dba97d"
+    sha256 cellar: :any,                 arm64_linux:   "30f0e55780c2a5bfee937094e651c5d4e3f6c728c0326a4629b33b5bd8912cd4"
+    sha256 cellar: :any,                 x86_64_linux:  "7ae3a2a23bad39a23e299b5ddb5b79fabb25e87de51f2f88d67d7d40cf685942"
   end
 
-  depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: ["pydantic"],
                 extra_packages:   %w[
-                  calver flit-core hatchling packaging pathspec pdm-backend pluggy poetry-core setuptools
-                  setuptools-scm tomlkit trove-classifiers wheel
+                  calver cython flit-core hatchling packaging pathspec pdm-backend pluggy poetry-core
+                  setuptools setuptools-scm tomlkit trove-classifiers wheel
                 ]
 
   resource "annotated-doc" do
@@ -44,6 +43,12 @@ class Unsloth < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  # The pinned CLI rejects Python 3.15; compile its YAML backend with its own interpreter.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "flit-core" do
@@ -163,9 +168,8 @@ class Unsloth < Formula
       trove-classifiers
       hatchling
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -179,8 +183,40 @@ class Unsloth < Formula
   test do
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
 
-    output = shell_output("#{bin}/unsloth train --model test-model --dataset test-dataset --dry-run")
-    assert_match "model: test-model", output
-    assert_match "dataset: test-dataset", output
+    python = libexec/"bin/python"
+    assert_equal version.to_s,
+                 shell_output("#{python} -c \"import importlib.metadata as m; print(m.version('unsloth'))\"").strip
+
+    (testpath/"config.yaml").write <<~YAML
+      data:
+        format_type: sharegpt
+      lora:
+        target_modules: " q_proj, ,v_proj "
+    YAML
+    (testpath/"invalid.yaml").write("data:\n  format_type: invalid\n")
+    system python, "-c", <<~PYTHON
+      import json
+      import sys
+      from pathlib import Path
+      import yaml
+      import yaml._yaml
+      from pydantic import ValidationError
+      from cli.config import load_config
+
+      value = {"brew": [1, True, "yaml"]}
+      assert yaml.load(yaml.dump(value, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == value
+      config = load_config(Path("config.yaml"))
+      assert config.model_kwargs(use_lora=True, is_vision=False)["target_modules"] == ["q_proj", "v_proj"]
+      try:
+          load_config(Path("invalid.yaml"))
+      except ValidationError as error:
+          assert any(item["type"] == "literal_error" for item in error.errors())
+      else:
+          raise AssertionError("Invalid dataset format was accepted")
+      print(json.dumps({"python": sys.version, "yaml_extension": yaml._yaml.__file__}))
+    PYTHON
+    output = shell_output("#{bin}/unsloth train --config config.yaml 2>&1", 2)
+    assert_match "--model", output
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python", python, "check"
   end
 end
