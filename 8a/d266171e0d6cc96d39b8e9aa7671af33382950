@@ -1,0 +1,19 @@
+Formula/g/guardian-runtime.rb
+  s_ef12da1de60f33::t_cc930d7b5c7909 9,24,29,37-51,223,225,227-229,244-276
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8ad266171e0d6cc96d39b8e9aa7671af33382950",
+  "prompts": {},
+  "sessions": {
+    "s_ef12da1de60f33": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c11c-cd21-7a20-8a94-8016e85500ce",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
