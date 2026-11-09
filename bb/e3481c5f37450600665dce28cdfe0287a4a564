@@ -1,0 +1,14 @@
+Formula/m/mmemoji.rb
+  h_9df9c32c3f321d 64-68,230,246-249
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bbe3481c5f37450600665dce28cdfe0287a4a564",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
