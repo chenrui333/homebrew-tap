@@ -1,0 +1,15 @@
+Formula/p/pal-mcp-server.rb
+  h_9df9c32c3f321d 9,26,31-35,39-40,124-125,184-185,194-195,199-200,204-205,209-210,219-220,249-250,274-275,298-410,415,419,424-444,447-458,460-463,467-540
+  h_9df9c32c3f321d 422-423
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "28d4890c068b684aa86ce054929992f9c8b92ddc",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
