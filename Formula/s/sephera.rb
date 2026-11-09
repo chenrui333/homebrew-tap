@@ -6,6 +6,7 @@ class Sephera < Formula
   url "https://files.pythonhosted.org/packages/d4/95/51e8c5e15216c6aecfaa7243567d9dece325150ea4fb406b8d1ff91a0872/sephera-2.3.2.tar.gz"
   sha256 "9b6c0839498bc34bbe32445d192c460621e317b56d0d8e74debf4cc1acdea67e"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -22,9 +23,9 @@ class Sephera < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python-matplotlib"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
-  pypi_packages exclude_packages: %w[certifi matplotlib numpy pillow],
+  pypi_packages exclude_packages: %w[certifi cython matplotlib numpy pillow],
                 extra_packages:   %w[
                   calver flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools
                   setuptools-scm tomlkit trove-classifiers wheel
@@ -164,9 +165,12 @@ class Sephera < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
+    # The mandatory shared matplotlib runtime and Cython provider both use Python 3.15.
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.15")
+    ENV["PYYAML_FORCE_CYTHON"] = "1"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
 
-    venv = virtualenv_create(libexec, "python3.14")
+    venv = virtualenv_create(libexec, "python3.15")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -175,18 +179,70 @@ class Sephera < Formula
   end
 
   test do
-    (testpath/"app.rb").write <<~RUBY
+    project = testpath/"project"
+    project.mkpath
+    (project/"app.rb").write <<~RUBY
       # hello
       puts "hi"
     RUBY
-    (testpath/"README.md").write <<~MARKDOWN
+    (project/"README.md").write <<~MARKDOWN
       # Title
 
       text
     MARKDOWN
+    (project/"app.py").write "print('hello')\n"
 
-    output = shell_output("#{bin}/sephera loc")
-
+    test_env = {
+      "HOME"           => (testpath/"home").to_s,
+      "MPLBACKEND"     => "Agg",
+      "MPLCONFIGDIR"   => (testpath/"matplotlib").to_s,
+      "XDG_CACHE_HOME" => (testpath/"cache").to_s,
+    }
+    output = Utils.safe_popen_read(test_env, bin/"sephera", "loc", "--path", project)
     assert_match "Language(s) used: 3 language(s)", output
+    assert_match "Ruby", output
+
+    (testpath/"chart.py").write <<~PYTHON
+      import sys
+      from pathlib import Path
+
+      import certifi
+      import matplotlib
+      import numpy as np
+      import yaml
+      import yaml._yaml
+      from datalyzer.Exporter import Exporter
+      from PIL import Image, _imaging
+
+      assert matplotlib.get_backend().lower() == "agg"
+      assert yaml.__with_libyaml__
+      data = {"brew": [1, True, "yaml"]}
+      document = yaml.dump(data, Dumper=yaml.CSafeDumper)
+      assert yaml.load(document, Loader=yaml.CSafeLoader) == data
+      assert np.array_equal(np.array([[1, 2], [3, 4]]) @ np.array([2, 3]), [8, 18])
+
+      output = Path("#{testpath}/tree")
+      Exporter(str(output)).export_file_tree_chart(12, 7, 3, 2)
+      with Image.open(output.with_suffix(".png")) as image:
+          assert image.format == "PNG"
+          image.verify()
+      with Image.open(output.with_suffix(".png")) as image:
+          image.load()
+          assert image.width >= 600 and image.height >= 400
+          pixels = np.asarray(image.convert("RGB"))
+      colors = [(102, 179, 255), (153, 255, 153), (255, 204, 153), (255, 153, 153)]
+      areas = [int(np.count_nonzero(np.all(pixels == color, axis=2))) for color in colors]
+      assert areas[0] > areas[1] > areas[2] > areas[3] > 1000, areas
+
+      print(sys.executable)
+      print("Exporter", sys.modules[Exporter.__module__].__file__)
+      for module in (matplotlib, np, certifi, yaml._yaml, _imaging):
+          print(module.__name__, module.__file__)
+      print("LibYAML", yaml._yaml.get_version(), "rendered bar areas", areas)
+    PYTHON
+    with_env(test_env) do
+      system libexec/"bin/python", testpath/"chart.py"
+    end
+    system formula_opt_bin("python@3.15")/"python3.15", "-m", "pip", "--python=#{libexec}/bin/python", "check"
   end
 end
