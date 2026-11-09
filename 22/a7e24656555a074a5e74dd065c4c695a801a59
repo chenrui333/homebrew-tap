@@ -1,0 +1,19 @@
+Formula/m/oceanbase-mcp-server.rb
+  s_3bb0b6a7b7d415::t_15c4dc3e1a61ad 9,21,23,26-28,30-31,61-63,127-128,161-165,202-203,236-245,271,275-286,295-297,304-305
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "22a7e24656555a074a5e74dd065c4c695a801a59",
+  "prompts": {},
+  "sessions": {
+    "s_3bb0b6a7b7d415": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c0e2-d187-7b93-a1f4-75397af05c98",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
