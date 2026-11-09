@@ -39,7 +39,7 @@
   "darker": "homebrew/core",
   "dblab": "homebrew/core",
   "decompose": "homebrew/core",
-  "devcockpit": "homebrew-core",
+  "devcockpit": "homebrew/core",
   "diagram": "homebrew/core",
   "docker-debug": "homebrew/core",
   "dockerfilegraph": "homebrew/core",
