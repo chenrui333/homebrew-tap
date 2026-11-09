@@ -7,6 +7,7 @@ class Rovr < Formula
   version "0.10.2.post1"
   sha256 "a44f2d542fde0545269bd9575b65a9e1c7289f3dc8998cf3766453ae67db021b"
   license "MIT"
+  revision 1
   head "https://github.com/NSPC911/rovr.git", branch: "main"
 
   bottle do
@@ -22,7 +23,7 @@ class Rovr < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "pillow" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "xz" # for uv-build
 
@@ -33,22 +34,12 @@ class Rovr < Formula
   pypi_packages exclude_packages: %w[pillow],
                 extra_packages:   %w[
                   calver flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools
-                  setuptools-scm tomlkit trove-classifiers uv-build vcs-versioning wheel
+                  setuptools-scm textual-speedups tomlkit trove-classifiers uv-build==0.12.23 vcs-versioning wheel
                 ]
-
-  resource "backports-zstd" do
-    url "https://files.pythonhosted.org/packages/f4/b1/36a5182ce1d8ef9ef32bff69037bd28b389bbdb66338f8069e61da7028cb/backports_zstd-1.3.0.tar.gz"
-    sha256 "e8b2d68e2812f5c9970cabc5e21da8b409b5ed04e79b4585dbffa33e9b45ebe2"
-  end
 
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
-    sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
   end
 
   resource "fastjsonschema" do
@@ -96,9 +87,9 @@ class Rovr < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
-  resource "natsort" do
-    url "https://files.pythonhosted.org/packages/e2/a9/a0c57aee75f77794adaf35322f8b6404cbd0f89ad45c87197a937764b7d0/natsort-8.4.0.tar.gz"
-    sha256 "45312c4a0e5507593da193dedd04abb1469253b601ecaf63445ad80f0a1ea581"
+  resource "multiarchive" do
+    url "https://files.pythonhosted.org/packages/66/82/f5ec692b88de8c6d63ee782ced1c8124c1f26846062e94129d8e904ed12a/multiarchive-0.2.2.tar.gz"
+    sha256 "c20dd8b2a07b425040019909ecc6d47286e3cbbf121ab9edc3b4ee0fa236533c"
   end
 
   resource "packaging" do
@@ -116,11 +107,6 @@ class Rovr < Formula
     sha256 "b18c07212bfead624345bb8e1d6141cdcf15a39736994ea0b94035ad2b1ba177"
   end
 
-  resource "pdf2image" do
-    url "https://files.pythonhosted.org/packages/00/d8/b280f01045555dc257b8153c00dee3bc75830f91a744cd5f84ef3a0a64b1/pdf2image-1.17.0.tar.gz"
-    sha256 "eaa959bc116b420dd7ec415fcae49b98100dda3dd18cd2fdfa86d09f112f6d57"
-  end
-
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/19/56/8d4c30c8a1d07013911a8fdbd8f89440ef9f08d07a1b50ab8ca8be5a20f9/platformdirs-4.9.4.tar.gz"
     sha256 "1ec356301b7dc906d83f371c8f487070e99d3ccf9e501686456394622a01a934"
@@ -136,14 +122,9 @@ class Rovr < Formula
     sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
   end
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
-    sha256 "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
-  end
-
   resource "puremagic" do
-    url "https://files.pythonhosted.org/packages/dd/7f/9998706bc516bdd664ccf929a1da6c6e5ee06e48f723ce45aae7cf3ff36e/puremagic-1.30.tar.gz"
-    sha256 "f9ff7ac157d54e9cf3bff1addfd97233548e75e685282d84ae11e7ffee1614c9"
+    url "https://files.pythonhosted.org/packages/24/74/ce5987ab9b8aec4ced06e2723ebb604205c9eb58abdad91453da93166380/puremagic-2.2.0.tar.gz"
+    sha256 "eb4bddf07c177c4b434554b92165b67449f5a51e152b976202d6254498810eef"
   end
 
   resource "pygments" do
@@ -151,24 +132,24 @@ class Rovr < Formula
     sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
+  resource "pytrash" do
+    url "https://files.pythonhosted.org/packages/bd/29/fc6bc993281e02967da4bb989446b3db384f5582c457dc5ecf81361b011e/pytrash-0.5.0.tar.gz"
+    sha256 "7d76a18430d67b45cc1d0eb9132db1cdafa1cdb055bc858da0b696095e2a1245"
+  end
+
   resource "rarfile" do
     url "https://files.pythonhosted.org/packages/26/3f/3118a797444e7e30e784921c4bfafb6500fb288a0c84cb8c32ed15853c16/rarfile-4.2.tar.gz"
     sha256 "8e1c8e72d0845ad2b32a47ab11a719bc2e41165ec101fd4d3fe9e92aa3f469ef"
   end
 
+  resource "resvg-py" do
+    url "https://files.pythonhosted.org/packages/2a/64/a24f8f29d8bf158e01f6ccad68a1366afd922dc0f0977cbd0c0aaa7a22f2/resvg_py-0.5.0.tar.gz"
+    sha256 "6d3bf8e866b4e129524d9432a809138b2d100931d8d635bc81294002abcdfd46"
+  end
+
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b3/c6/f3b320c27991c46f43ee9d856302c70dc2d0fb2dba4842ff739d5f46b393/rich-14.3.3.tar.gz"
-    sha256 "b8daa0b9e4eef54dd8cf7c86c03713f53241884e814f4e2f5fb342fe520f639b"
-  end
-
-  resource "rich-click" do
-    url "https://files.pythonhosted.org/packages/04/27/091e140ea834272188e63f8dd6faac1f5c687582b687197b3e0ec3c78ebf/rich_click-1.9.7.tar.gz"
-    sha256 "022997c1e30731995bdbc8ec2f82819340d42543237f033a003c7b1f843fc5dc"
-  end
-
-  resource "send2trash" do
-    url "https://files.pythonhosted.org/packages/c5/f0/184b4b5f8d00f2a92cf96eec8967a3d550b52cf94362dad1100df9e48d57/send2trash-2.1.0.tar.gz"
-    sha256 "1c72b39f09457db3c05ce1d19158c2cbef4c32b8bedd02c155e49282b7ea7459"
+    url "https://files.pythonhosted.org/packages/fb/d2/8920e102050a0de7bfabeb4c4614a49248cf8d5d7a8d01885fbb24dc767a/rich-14.2.0.tar.gz"
+    sha256 "73ff50c7c0c1c77c8243079283f4edb376f0f6442433aecb8ce7e6d0b92d1fe4"
   end
 
   resource "setuptools" do
@@ -182,8 +163,8 @@ class Rovr < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/9f/38/7d169a765993efde5095c70a668bf4f5831bb7ac099e932f2783e9b71abf/textual-7.5.0.tar.gz"
-    sha256 "c730cba1e3d704e8f1ca915b6a3af01451e3bca380114baacf6abf87e9dac8b6"
+    url "https://files.pythonhosted.org/packages/00/21/39a76b01bd5eea82a04baaca7580e105d8c59450df03998345bb2cfb307b/textual-8.2.8.tar.gz"
+    sha256 "3f106a9fbc73e39dd266c9712432087de78a6d644084c7c241d6a25c3169115b"
   end
 
   resource "textual-autocomplete" do
@@ -191,9 +172,14 @@ class Rovr < Formula
     sha256 "2ba2f0d767be4480ecacb3e4b130cf07340e033c3500fc424fed9125d27a4586"
   end
 
+  resource "textual-drivers" do
+    url "https://files.pythonhosted.org/packages/b7/c5/6553fda1ab2846e9fb0fdb116b3ec58aa070a7c9d44d09db4545216654f1/textual_drivers-0.10.4.tar.gz"
+    sha256 "3b76952e679ef1cb054538e49055721befa4534207b452bdbf102d23c00d7fb0"
+  end
+
   resource "textual-image" do
-    url "https://files.pythonhosted.org/packages/1a/64/e5e49b639794f0ae426f6c19ca541af55b24a30e96df3b03e086688b8ec1/textual_image-0.8.5.tar.gz"
-    sha256 "43d4c0026a4f21fa255f41eac7b0fc1f7410a4c7bc9bf95b908bec901b0a8c3a"
+    url "https://files.pythonhosted.org/packages/10/77/b2128ced69556bfbb8e1c19d8f013e621cf12531eaba4e9b09e1cfa81e37/textual_image-0.13.2.tar.gz"
+    sha256 "8ca0cee2bfcd7734de5b16a1936da226b77b745e28830d9cf2bc202cb70e43ee"
   end
 
   resource "textual-speedups" do
@@ -217,8 +203,8 @@ class Rovr < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "uc-micro-py" do
@@ -226,14 +212,10 @@ class Rovr < Formula
     sha256 "c53691e495c8db60e16ffc4861a35469b0ba0821fe409a8a7a0a71864d33a811"
   end
 
-  resource "ujson" do
-    url "https://files.pythonhosted.org/packages/43/d9/3f17e3c5773fb4941c68d9a37a47b1a79c9649d6c56aefbed87cc409d18a/ujson-5.11.0.tar.gz"
-    sha256 "e204ae6f909f099ba6b6b942131cee359ddda2b6e4ea39c12eb8b991fe2010e0"
-  end
-
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/b4/65/672d5c1e7fff2a602b51758cd96c379ea80c0c20d9d10aae5139bfde9877/uv_build-0.12.23.tar.gz"
-    sha256 "b0428317e2783252b33b513446436071f4e14bfeb38655c99877ca6550ea4aac"
+    # The complete workspace is needed for locked, offline Cargo metadata.
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.12.23.tar.gz"
+    sha256 "662023e7453d40c2e751ddc9f0c9dc27e09f27324ca7e81249b3d15a5e5e364f"
   end
 
   resource "vcs-versioning" do
@@ -246,12 +228,26 @@ class Rovr < Formula
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  resource "uv-build-legacy" do
+    # pytrash and textual-drivers require the separate 0.11 backend family.
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.11.28.tar.gz"
+    sha256 "556c6cb42a2101c690704b08d0d3c5d596ea94e69353a820664568f0fcd62fd4"
+
+    livecheck do
+      skip "Pinned build backend for pytrash and textual-drivers"
+    end
+  end
+
   deny_network_access!
 
   def fetch
     # maturin/PyO3 run offline `cargo metadata`, which needs crates for all targets.
-    %w[textual-speedups uv-build].each do |name|
-      resource(name).stage { system "cargo", "fetch", "--locked" }
+    %w[resvg-py textual-speedups uv-build uv-build-legacy].each do |name|
+      resource(name).stage do
+        with_env(PATH: "#{formula_opt_bin("rust")}:#{ENV["PATH"]}") do
+          system formula_opt_bin("rust")/"cargo", "fetch", "--locked"
+        end
+      end
     end
   end
 
@@ -265,7 +261,6 @@ class Rovr < Formula
       calver
       tomlkit
       trove-classifiers
-      uv-build
       vcs-versioning
       setuptools-scm
       pluggy
@@ -274,27 +269,102 @@ class Rovr < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    resource("uv-build").stage do
+      venv.pip_install Pathname.pwd/"crates/uv-build", build_isolation: false
+    end
+    legacy_venv = virtualenv_create(buildpath/"uv-build-legacy", "python3.14")
+    resource("uv-build-legacy").stage do
+      legacy_venv.pip_install Pathname.pwd/"crates/uv-build", build_isolation: false
+    end
+    legacy_resources = %w[pytrash textual-drivers]
+    with_env(PYTHONPATH: "#{legacy_venv.site_packages}:#{ENV["PYTHONPATH"]}",
+             PATH:       "#{buildpath}/uv-build-legacy/bin:#{ENV["PATH"]}") do
+      legacy_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    end
+    excluded_resources = build_resources + legacy_resources + %w[uv-build uv-build-legacy]
+    venv.pip_install resources.reject { |r| excluded_resources.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/rovr --version")
+    system formula_opt_bin("python@3.14")/"python3.14",
+           "-m", "pip", "--python", libexec/"bin/python", "check"
 
-    output = JSON.parse(shell_output("#{bin}/rovr --config-path --config-folder=#{testpath}"))
-    assert_equal %w[global_styles keys logs main_config persistent_state pinned_folders themes], output.keys.sort
-    assert_equal "config.toml", File.basename(output["main_config"])
-    assert_equal "keys.toml", File.basename(output["keys"])
-    assert_equal "pins.json", File.basename(output["pinned_folders"])
-    assert_equal "style.tcss", File.basename(output["global_styles"])
-    assert_equal "state.toml", File.basename(output["persistent_state"])
+    ENV["ROVR_CONFIG_FOLDER"] = testpath/"config"
+    ENV["XDG_CONFIG_HOME"] = testpath/"xdg-config"
+    ENV["XDG_STATE_HOME"] = testpath/"xdg-state"
+    ENV["XDG_CACHE_HOME"] = testpath/"xdg-cache"
+    (testpath/"config/config.toml").write <<~TOML
+      [interface.image_viewer]
+      protocol = "Halfcell"
+      [settings]
+      drive_exclude = ["*"]
+    TOML
+    (testpath/"config/pins.json").write JSON.generate(
+      default: [{ name: "Fixture", path: (testpath/"files").to_s }], pins: [],
+    )
+    (testpath/"smoke.py").write <<~PYTHON
+      import asyncio
+      import sys
+      from pathlib import Path
+      from compression import zstd
+      from PIL import Image
+      import rovr.monkey_patches._platform
+      import rovr.monkey_patches._textual
+      from rovr.app import Application
+
+      assert sys.version_info[:2] == (3, 14)
+      assert Path(Image.core.__file__).resolve().is_relative_to(Path("#{formula_opt_prefix("pillow")}").resolve())
+      assert zstd.decompress(zstd.compress(b"Homebrew fixture")) == b"Homebrew fixture"
+
+      files = Path("files")
+      files.mkdir()
+      (files / "note.txt").write_text("Homebrew fixture\\n")
+      pixels = [(255, 0, 0), (0, 128, 255)]
+      image = Image.new("RGB", (2, 1))
+      image.putdata(pixels)
+      for name, format in [("sample.png", "PNG"), ("sample.webp", "WEBP")]:
+          image.save(files / name, format=format, lossless=True)
+          with Image.open(files / name) as decoded:
+              assert decoded.format == format
+              assert decoded.size == (2, 1)
+              assert list(decoded.convert("RGB").getdata()) == pixels
+
+      async def smoke():
+          target = (files / "sample.png").resolve()
+          app = Application(startup_path=str(target))
+          async with app.run_test(size=(120, 40)) as pilot:
+              async with asyncio.timeout(30):
+                  while not app.query(".image_preview"):
+                      await pilot.pause(0.1)
+                  assert {option.dir_entry.name for option in app.file_list.options} == {
+                      "note.txt", "sample.png", "sample.webp"
+                  }
+                  assert Path(app.file_list.highlighted_option.dir_entry.path) == target
+                  preview = app.query_one(".image_preview")
+                  assert type(preview).__name__ == "HalfcellImage"
+                  assert preview.image.size == (2, 1)
+                  assert list(preview.image.convert("RGB").getdata()) == pixels
+                  app.file_list.focus()
+                  await pilot.press("v", "insert")
+                  assert app.file_list.select_mode == "explicit"
+                  assert len(app.file_list.selected) == 1
+                  assert await app.file_list.get_selected_objects() == [str(target)]
+                  await pilot.press("insert")
+                  assert await app.file_list.get_selected_objects() == []
+
+      if __name__ == "__main__":
+          asyncio.run(smoke())
+    PYTHON
+    system libexec/"bin/python", testpath/"smoke.py"
   end
 end
