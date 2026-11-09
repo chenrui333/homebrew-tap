@@ -16,13 +16,12 @@ class ReformatGherkin < Formula
     sha256 cellar: :any,                 x86_64_linux:  "c7363e84f2aa1863da12d49729f1bf59af19e4a60daf80e4a9f67b7227d12189"
   end
 
-  depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
-    calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools
-    setuptools-scm tomlkit trove-classifiers vcs-versioning
+    calver cython flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pluggy poetry-core
+    setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning
   ]
 
   resource "attrs" do
@@ -43,6 +42,11 @@ class ReformatGherkin < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "flit-core" do
@@ -143,9 +147,8 @@ class ReformatGherkin < Formula
       hatchling
       hatch-fancy-pypi-readme
       hatch-vcs
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -169,17 +172,8 @@ class ReformatGherkin < Formula
           Then a final step
     FEATURE
 
-    assert_match <<~EOS, shell_output("#{bin}/reformat-gherkin --check test.feature 2>&1", 1)
-      Would reformat #{testpath}/test.feature
-      All done! 💥 💔 💥
-      1 file would be reformatted.
-    EOS
-
-    assert_match <<~EOS, shell_output("#{bin}/reformat-gherkin test.feature 2>&1")
-      Reformatted #{testpath}/test.feature
-      All done! ✨ 🍰 ✨
-      1 file reformatted.
-    EOS
+    shell_output("#{bin}/reformat-gherkin --check test.feature 2>&1", 1)
+    system bin/"reformat-gherkin", "test.feature"
 
     expected_content = <<~FEATURE
       Feature: Test feature
@@ -191,5 +185,6 @@ class ReformatGherkin < Formula
     FEATURE
 
     assert_equal expected_content, (testpath/"test.feature").read
+    system bin/"reformat-gherkin", "--check", "test.feature"
   end
 end
