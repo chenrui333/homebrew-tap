@@ -1,0 +1,26 @@
+Formula/c/context-file-manager.rb
+  s_9a8cc51b5e1b2d::t_78afac68c41ae7 9,22,28,241,252,270-271,273-274
+  s_9a8cc51b5e1b2d::t_8f31c6ebd8ed40 272
+  h_9df9c32c3f321d 123-124,275-307
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "016750257e3c07332175ff86826a57518cf3b4fb",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_9a8cc51b5e1b2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bd52-4cb3-76e2-94c0-539c9b7cca9c",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
