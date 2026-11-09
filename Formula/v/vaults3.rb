@@ -55,16 +55,41 @@ class Vaults3 < Formula
     config = testpath/"config.yaml"
     config.write <<~YAML
       server:
+        address: 127.0.0.1
         port: #{port}
+        shutdown_timeout_secs: 1
       storage:
         data_dir: #{testpath}/data
         metadata_dir: #{testpath}/metadata
     YAML
 
-    pid = spawn bin/"vaults3", "--config", config.to_s
-    sleep 2
-    assert_match '"status":"ok"', shell_output("curl -s http://127.0.0.1:#{port}/health || true")
+    pid = spawn bin/"vaults3", "--config", config.to_s,
+                out: (testpath/"server.log").to_s, err: [:child, :out]
+    # Retry actual readiness rather than assuming a fixed startup duration.
+    output = shell_output("curl --silent --show-error --fail --retry 10 --retry-connrefused --retry-delay 1 " \
+                          "--retry-max-time 15 --max-time 2 --noproxy 127.0.0.1 http://127.0.0.1:#{port}/health")
+    assert_equal "ok", JSON.parse(output).fetch("status")
   ensure
-    Process.kill("TERM", pid) if pid
+    if pid
+      begin
+        Process.kill "TERM", pid
+      rescue Errno::ESRCH
+        nil
+      end
+      # Reap the owned child even if graceful shutdown fails.
+      deadline = Process.clock_gettime(Process::CLOCK_MONOTONIC) + 3
+      begin
+        until Process.waitpid(pid, Process::WNOHANG)
+          if Process.clock_gettime(Process::CLOCK_MONOTONIC) >= deadline
+            Process.kill "KILL", pid
+            Process.waitpid pid
+            break
+          end
+          sleep 0.1
+        end
+      rescue Errno::ECHILD
+        nil
+      end
+    end
   end
 end
