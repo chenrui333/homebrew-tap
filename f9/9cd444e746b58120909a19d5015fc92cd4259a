@@ -1,0 +1,19 @@
+Formula/m/mcp-gsuite.rb
+  s_8b2d864705b8e9::t_09d2646a33b977 9,21,23,26,174-175,228-232,314-315,319-320,372,386-387
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f99cd444e746b58120909a19d5015fc92cd4259a",
+  "prompts": {},
+  "sessions": {
+    "s_8b2d864705b8e9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1beb7-cb85-74c2-a218-74a136897a9d",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
