@@ -10,11 +10,10 @@ class PubmedMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "831dfc6c670a5ea9a470bb6a649dabe156b193f677fe20cf8afa3b6767100f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1b00218d8483108a6739cfb6800ca95bc4ab9080b34d76b6f70d1dda17a6457"
-    sha256 cellar: :any,                 arm64_linux:   "d3024ffe62f711d2fcd55e70922994830b0183176f66bc5b70e294e2ddc98796"
-    sha256 cellar: :any,                 x86_64_linux:  "d4da9a3fcb8b581f86b6d51123ab6f99ba13332f07637c05cc2d27c74b086e27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95200e547316737ce29520e518595fee04ab0c6dc70c99662724e32a06f67bf4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbe021807f63694ba51840549487da6056a56279bfcf2ce2ea846f2eae54818f"
+    sha256 cellar: :any,                 arm64_linux:   "a615f13b5021b965fa54a8ae3e396088b4178bc2653216dffce1ddbca520ebf9"
+    sha256 cellar: :any,                 x86_64_linux:  "d6aa85effc111112aab93e3784812e9e54d3477c43e243041042491daacbaad3"
   end
 
   depends_on "autoconf" => :build # for patchelf
