@@ -12,11 +12,10 @@ class ContextAnalyzer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "43da6c623c3ed121fa8bc55e83939e3d2d7c7ed2f700751c6785d0bf57de5a60"
-    sha256 cellar: :any, arm64_sequoia: "1fe057b631cd47fd5eed28bce1cdc67c2a2f400374254fbfa8e8f60407311103"
-    sha256 cellar: :any, arm64_sonoma:  "1481ba31cab58a18e4fcd81df5f54c140f0285647dc7f15f26cd56ab83df8433"
-    sha256 cellar: :any, arm64_linux:   "1d7081578cf9669d4d2ec888c29db4ee7cbd23701763797af52f415c96c8c755"
-    sha256 cellar: :any, x86_64_linux:  "062a77f21e74de18c1eff1750a719ff7576380195c9c9db22ec4488c0743ec3c"
+    sha256 cellar: :any, arm64_tahoe:   "fc2ff3035c8ecb63653ad8a80331d3a75632b0e0c8425d8fd4bd9500afe5c3f3"
+    sha256 cellar: :any, arm64_sequoia: "7a011a843b21fed21f11c18005c1ff6d7364601ced3496818881c3b20018aace"
+    sha256 cellar: :any, arm64_linux:   "cfb6c0db69064e85fa0bdc96673b4cb5b4ff1f0fdf0d7ac5adab3bccdb2976e9"
+    sha256 cellar: :any, x86_64_linux:  "c46fcc156b338292acda70b1481dea16d1d57997038f87e2beb114a569949790"
   end
 
   depends_on "maturin" => :build
