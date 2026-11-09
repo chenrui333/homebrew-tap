@@ -10,24 +10,30 @@ class Pygitzen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96603e5e32c44eda3a921ab7d7892bde2d95ea17e6b1c3a140fa06901ed17e11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f4d24c8400a5c69366fe22fb553b36685ec2a5eb7a3feb0987c6677873bfe17"
-    sha256 cellar: :any,                 arm64_linux:   "2bd02be90546dcd914e8e0371408bce67a329ac4aa1675723c2954564ac750e0"
-    sha256 cellar: :any,                 x86_64_linux:  "55fa94c4323602054563e4848f3507d8dd489185fed923a3f473b0fb114c3d67"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d15cf7730b375a0ebddb3942183f693622868002a7b0c345b2c9a2b0784b0b48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee82cfddfa5b7ea6f2586774e9e13ffcdf1897c03b73e5a2105d93ca1edd7741"
+    sha256 cellar: :any,                 arm64_linux:   "3112e7108711f9693b48d829391d4222987750a2e8f826b3ed874c0b2cd50d45"
+    sha256 cellar: :any,                 x86_64_linux:  "e7e5445d25e274f11352b998cdbf52dd496a8342d8df4c1ab093bed7171ba089"
   end
 
-  depends_on "cython" => :build
+  depends_on "git" => :test
   depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
-    calver flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools setuptools-scm tomlkit
-    trove-classifiers wheel
+    calver cython flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools setuptools-scm
+    tomlkit trove-classifiers wheel
   ]
 
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  # Build the application's native Git service with Cython for this Python ABI.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "dulwich" do
@@ -167,9 +173,8 @@ class Pygitzen < Formula
       hatchling
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     # Keep dulwich pure Python; its Rust extensions are optional and need setuptools-rust
     ENV["PURE"] = "1"
@@ -184,5 +189,70 @@ class Pygitzen < Formula
 
   test do
     assert_match "The directory you specified is not a Git repository", shell_output("#{bin}/pygitzen 2>&1", 1)
+
+    ENV["XDG_CONFIG_HOME"] = testpath/"config"
+    ENV["GIT_CONFIG_NOSYSTEM"] = "1"
+    ENV["GIT_CONFIG_GLOBAL"] = File::NULL
+
+    (testpath/"native_service.py").write <<~PYTHON
+      import importlib.machinery
+      import subprocess
+      from pathlib import Path
+
+      import git_service_cython
+      import pygitzen.app
+
+      origin = Path(git_service_cython.__file__).resolve()
+      assert origin.is_relative_to(Path("#{libexec}").resolve()), origin
+      assert any(str(origin).endswith(s) for s in importlib.machinery.EXTENSION_SUFFIXES), origin
+      assert pygitzen.app.CYTHON_AVAILABLE
+      assert pygitzen.app.GitServiceCython is git_service_cython.GitServiceCython
+      print(f"Native Git service: {origin}")
+
+      repo = Path("repository")
+      repo.mkdir()
+
+      def git(*args):
+          return subprocess.check_output(
+              ["git", "-c", "core.hooksPath=/dev/null", "-c", "commit.gpgsign=false",
+               "-c", "user.name=Homebrew", "-c", "user.email=brew@example.com", *args],
+              cwd=repo, text=True,
+          ).strip()
+
+      git("init", "--initial-branch=main", "--template=")
+      tracked = repo / "tracked.txt"
+      tracked.write_text("first line\\n")
+      git("add", "tracked.txt")
+      git("commit", "--author=Homebrew <brew@example.com>", "-m", "First fixture commit")
+      tracked.write_text("second line\\n")
+      git("add", "tracked.txt")
+      git("commit", "--author=Homebrew <brew@example.com>", "-m", "Second fixture commit")
+      head = git("rev-parse", "HEAD")
+
+      service = git_service_cython.GitServiceCython(str(repo))
+      commits = service.list_commits("main")
+      assert [c.summary for c in commits] == ["Second fixture commit", "First fixture commit"]
+      assert all(c.author == "Homebrew <brew@example.com>" for c in commits)
+      assert service.count_commits("main") == 2
+      assert [c.summary for c in service.list_commits("main", max_count=1, skip=1)] == [
+          "First fixture commit",
+      ]
+      diff = service.get_commit_diff(head)
+      assert "-first line\\n+second line" in diff, diff
+      assert service.get_file_status() == []
+
+      (repo / "staged.txt").write_text("staged content\\n")
+      git("add", "staged.txt")
+      tracked.write_text("working tree change\\n")
+      (repo / "untracked.txt").write_text("untracked content\\n")
+      statuses = {f.path: (f.status, f.staged, f.unstaged) for f in service.get_file_status()}
+      assert statuses == {
+          "staged.txt": ("staged", True, False),
+          "tracked.txt": ("modified", False, True),
+          "untracked.txt": ("untracked", False, True),
+      }, statuses
+    PYTHON
+    system libexec/"bin/python", testpath/"native_service.py"
+    system formula_opt_libexec("python@3.14")/"bin/python", "-m", "pip", "--python", libexec/"bin/python", "check"
   end
 end
