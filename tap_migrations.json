@@ -9,7 +9,7 @@
   "archgw": "homebrew-core",
   "asm-lsp": "homebrew/core",
   "attempt-cli": "homebrew/core",
-  "aws-spiffe-workload-helper": "homebrew-core",
+  "aws-spiffe-workload-helper": "homebrew/core",
   "bacon-ls": "homebrew/core",
   "bom": "homebrew/core",
   "bombardier": "homebrew/core",
