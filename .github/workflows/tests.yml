@@ -58,6 +58,37 @@ jobs:
         run: env -u HOMEBREW_SIMULATE_MACOS_ON_LINUX brew install --formula shellcheck shfmt actionlint
         continue-on-error: true
 
+      # Keep legacy tap-wide diagnostics advisory without accepting malformed changed formulae.
+      - name: Style changed formula Ruby files
+        shell: bash
+        working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
+        env:
+          STYLE_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+          STYLE_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+        run: |
+          set -euo pipefail
+          for sha in "$STYLE_BASE_SHA" "$STYLE_HEAD_SHA"; do
+            if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "Invalid style comparison commit."
+              exit 1
+            fi
+          done
+
+          changed_file_list="$(mktemp)"
+          trap 'rm -f "$changed_file_list"' EXIT
+          git diff --name-only -z --diff-filter=ACMRT \
+            "$STYLE_BASE_SHA...$STYLE_HEAD_SHA" -- ':(glob)Formula/**/*.rb' > "$changed_file_list"
+          mapfile -d '' -t formula_files < "$changed_file_list"
+          for file in "${formula_files[@]}"; do
+            if [[ ! -f "$file" || -L "$file" ]]; then
+              echo "Changed formula is not a regular file: $file"
+              exit 1
+            fi
+          done
+          if (( ${#formula_files[@]} )); then
+            brew style "${formula_files[@]}"
+          fi
+
       - run: brew test-bot --only-tap-syntax
         continue-on-error: true # Skip due to license check issues
         timeout-minutes: 20
