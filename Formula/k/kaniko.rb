@@ -8,8 +8,8 @@ class Kaniko < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7e7006dfca6003690941cfa77e692016f8249bc19eac067a463db1ac9b64e1b4"
-    sha256 cellar: :any,                 x86_64_linux: "6dc0d7df2649e22338d9a5f4ff07974c0c6179edbee25b3e9b3775e74a527644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "b932f8a1e34e33e474af95954c04e8a3a497146992deae8999f4633cc2f68bd5"
+    sha256 cellar: :any,                 x86_64_linux: "6dd733c7135b4283600533535bc74aa58f4b85957dc018721a6a1279cfc7c978"
   end
 
   depends_on "go" => :build
