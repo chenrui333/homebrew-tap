@@ -6,6 +6,7 @@ class OceanbaseMcpServer < Formula
   url "https://files.pythonhosted.org/packages/06/a6/912795c245cf3ea1051e48fcbfdcf18e00259e5f9fb0a356ab519bb1eca9/oceanbase_mcp_server-0.1.0.tar.gz"
   sha256 "622e83b1c2d90b2a1c6d18210f9fb950b6e51438ed90699e2d9b39faecd3a50e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -17,21 +18,19 @@ class OceanbaseMcpServer < Formula
   end
 
   depends_on "certifi"
+  depends_on "cryptography"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi pydantic rpds-py],
+  pypi_packages exclude_packages: %w[
+                  annotated-types certifi cryptography pydantic rpds-py typing-extensions typing-inspection
+                ],
                 extra_packages:   %w[
-                  calver dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe packaging
-                  pathspec pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
+                  calver dunamai flit-core==3.12.0 hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe
+                  packaging pathspec pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
                   uv-dynamic-versioning vcs-versioning wheel
                 ]
-
-  resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
-  end
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/f1/b4/636b3b65173d3ce9a38ef5f0522789614e590dab6a8d505340a4efe4c567/anyio-4.10.0.tar.gz"
@@ -59,8 +58,9 @@ class OceanbaseMcpServer < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    # Click, IDNA and Jinja require Flit 3; packaging also requires Flit >= 3.12.
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "h11" do
@@ -124,8 +124,8 @@ class OceanbaseMcpServer < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/4d/19/9955e2df5384ff5dd25d38f8e88aaf89d2d3d9d39f27e7383eaf0b293836/mcp-1.12.3.tar.gz"
-    sha256 "ab2e05f5e5c13e1dc90a4a9ef23ac500a6121362a564447855ef0ab643a99fed"
+    url "https://files.pythonhosted.org/packages/ba/93/0142dc84a666daf8ad51a34268f34c12fd6fda4f3810c4be2504eecc8212/mcp-1.30.0.tar.gz"
+    sha256 "445414625fce5c295faa505bb11bacece661ab6f4028d57c935db57820b7a3e4"
   end
 
   resource "mysql-connector-python" do
@@ -156,6 +156,11 @@ class OceanbaseMcpServer < Formula
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/68/85/1ea668bbab3c50071ca613c6ab30047fb36ab0da1b92fa8f17bbc38fd36c/pydantic_settings-2.10.1.tar.gz"
     sha256 "06f0062169818d0f5524420a360d632d5857b83cffd4d42fe29597807a1614ee"
+  end
+
+  resource "pyjwt" do
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "python-dotenv" do
@@ -194,8 +199,8 @@ class OceanbaseMcpServer < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/04/57/d062573f391d062710d4088fa1369428c38d51460ab6fedff920efef932e/starlette-0.47.2.tar.gz"
-    sha256 "6ae9aa5db235e4846decc1e7b79c4f346adf41e9777aebeb49dfd09bbd7023d8"
+    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
+    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
   end
 
   resource "tomlkit" do
@@ -206,16 +211,6 @@ class OceanbaseMcpServer < Formula
   resource "trove-classifiers" do
     url "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/trove_classifiers-2026.9.21.13.tar.gz"
     sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/98/5a/da40306b885cc8c09109dc2e1abd358d5684b1425678151cdaed4731c822/typing_extensions-4.14.1.tar.gz"
-    sha256 "38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"
-  end
-
-  resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
-    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
   resource "uv-dynamic-versioning" do
@@ -236,6 +231,16 @@ class OceanbaseMcpServer < Formula
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
+  end
+
+  # Reviewed, unmerged OpenSSL 4 fix: https://github.com/mysql/mysql-connector-python/pull/108
+  resource "mysql-openssl4-patch" do
+    url "https://github.com/mysql/mysql-connector-python/commit/d7a79c80b638a34379223ae817c8d58db7ab95ab.patch?full_index=1"
+    sha256 "cb36b532758e46341fb0515790c09f0f2502c6d1914cd773429d0d6be7da1a33"
+
+    livecheck do
+      skip "Pinned compatibility patch"
+    end
   end
 
   deny_network_access!
@@ -263,11 +268,22 @@ class OceanbaseMcpServer < Formula
       wheel
     ]
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    resource("mysql-connector-python").stage do
+      # The patch also covers the separate mysqlx distribution, which is not shipped here.
+      patch_args = ["-p2", "--include=lib/mysql/connector/*", resource("mysql-openssl4-patch").cached_download]
+      with_env(GIT_CEILING_DIRECTORIES: Pathname.pwd.parent.to_s) do
+        system "git", "apply", "--check", *patch_args
+        system "git", "apply", *patch_args
+      end
+      venv.pip_install Pathname.pwd, build_isolation: false
+    end
+    excluded_resources = build_resources + %w[mysql-connector-python mysql-openssl4-patch]
+    venv.pip_install resources.reject { |r| excluded_resources.include?(r.name) },
+                     build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
@@ -276,12 +292,17 @@ class OceanbaseMcpServer < Formula
     require "open3"
     require "timeout"
 
+    %w[OB_HOST OB_PORT OB_USER OB_PASSWORD OB_DATABASE].each { |key| ENV.delete(key) }
+
+    # Upstream has no version option; startup validates configuration before entering stdio.
     output = shell_output("#{bin}/oceanbase_mcp_server 2>&1", 1)
     assert_match "Missing required database configuration", output
 
     ENV["OB_USER"] = "homebrew"
     ENV["OB_PASSWORD"] = "homebrew"
     ENV["OB_DATABASE"] = "homebrew"
+    ENV["OB_HOST"] = "oceanbase.invalid"
+    ENV["OB_PORT"] = "9"
 
     Open3.popen2(bin/"oceanbase_mcp_server") do |input, output, process|
       Timeout.timeout(30) do
