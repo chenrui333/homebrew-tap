@@ -6,6 +6,14 @@ class Ztl < Formula
   license "MIT"
   head "https://github.com/findyourexit/zonetimeline-tui.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4cc9cdb19a8970cbcef2d43e106452ec9efad69c925cca0afb75cbe36cf05127"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29db94c7fcb41221d862ed04a9dbafa7a1a461aa26a6908bf4dec74bd14d3568"
+    sha256 cellar: :any,                 arm64_linux:   "589ed5a0540385609cc417098a209066026dfc0b3219fc6d339cf21642f59a8a"
+    sha256 cellar: :any,                 x86_64_linux:  "be2f45f2b56d1bb25ae89ebae75d327530752dc253da73e6941d1c005aff9784"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
