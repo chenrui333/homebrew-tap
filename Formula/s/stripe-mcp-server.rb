@@ -1,6 +1,6 @@
 class StripeMcpServer < Formula
   desc "MCP server for Stripe"
-  homepage "https://github.com/stripe/ai/tree/main/tools/modelcontextprotocol"
+  homepage "https://docs.stripe.com/mcp"
   url "https://registry.npmjs.org/@stripe/mcp/-/mcp-0.3.4.tgz"
   sha256 "6d2915f47f8b6e6c7b536971ffe014d9c8763a6758b35e8fa695f90e25782d1d"
   license "MIT"
@@ -9,6 +9,8 @@ class StripeMcpServer < Formula
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, all: "4ec80441fb9bfacbde270560898a5cf887a54eb8797f2277e3780e225e23ada8"
   end
+
+  deprecate! date: "2026-11-09", because: :unmaintained
 
   depends_on "node"
 
