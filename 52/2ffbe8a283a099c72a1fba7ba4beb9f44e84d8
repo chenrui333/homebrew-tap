@@ -1,0 +1,25 @@
+Formula/r/rovr.rb
+  h_9df9c32c3f321d 10,26,37,90-92,126-127,135-139,145-147,150-152,166-167,175-179,181-182,216-218,231-234,245-250,272,276,280-293,299-316,318,320-324,329-353,355-358,361,364-368
+  s_78de8e0382da6c::t_692c90b7ba73a0 206-207,235-240,317,319,325-328,354,359-360,362-363
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "522ffbe8a283a099c72a1fba7ba4beb9f44e84d8",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_78de8e0382da6c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c0e0-af77-7cc1-a0ba-ce2172985ba2",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
