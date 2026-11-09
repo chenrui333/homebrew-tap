@@ -155,7 +155,7 @@
   "restish": "homebrew/core",
   "rulesync": "homebrew/core",
   "rustywind": "homebrew/core",
-  "salesforce-mcp": "homebrew-core",
+  "salesforce-mcp": "homebrew/core",
   "sarif-tools": "homebrew-core",
   "sherif": "homebrew/core",
   "shimmy": "homebrew/core",
