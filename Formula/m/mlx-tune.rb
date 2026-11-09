@@ -11,9 +11,8 @@ class MlxTune < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "909ac4dad6c4ebbbed362168997bf25e16b22595a5152464aab0f45c9de37654"
-    sha256 cellar: :any, arm64_sequoia: "8ccf478e2664eaeefbb800df0e63d7bbee7bcb566981498b77f56b09954a23df"
+    sha256 cellar: :any, arm64_tahoe:   "c9e0b2af3cfea1d41f91a3673cc6c6e59a04a8dcbdbabea1c3f84ed0041e59f6"
+    sha256 cellar: :any, arm64_sequoia: "96d5abfd34176aa23c725636d28790eb0aed6bb7f01260e04a5f522ecd86b959"
   end
 
   depends_on "cmake" => :build
