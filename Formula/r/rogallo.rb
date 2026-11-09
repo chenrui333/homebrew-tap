@@ -16,17 +16,17 @@ class Rogallo < Formula
     sha256 cellar: :any,                 x86_64_linux:  "e6a940378101f82c405d954a457ff553b1e56c85691e8545a9f71273fa661e10"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build
   depends_on "rust" => :build # for uv-build
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "python@3.14"
 
-  pypi_packages extra_packages: %w[
-    calver flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools setuptools-scm tomlkit
-    trove-classifiers uv-build vcs-versioning
-  ]
+  pypi_packages exclude_packages: "cryptography",
+                extra_packages:   %w[
+                  calver cython flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools
+                  setuptools-scm tomlkit trove-classifiers uv-build==0.12.23 vcs-versioning
+                ]
 
   resource "bagofstuff" do
     url "https://files.pythonhosted.org/packages/ff/52/020cf95233d6838920e3dfad6e4b4b1df6ce8d42646a8a094f9003356d97/bagofstuff-2.0.0.tar.gz"
@@ -36,6 +36,11 @@ class Rogallo < Formula
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "finger2gemtext" do
@@ -237,11 +242,41 @@ class Rogallo < Formula
     sha256 "950504e14d27cf3c9cb37744680a43bf0ac42efefc4ef4acf98dc736cab2bced"
   end
 
+  # Keep complete workspaces for the legacy backends' locked Cargo graphs.
+  resource "uv-build-0.8" do
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.8.24.tar.gz"
+    sha256 "33f4ad5c8fe980e35c2eb79d9d3bfbada3d1a1ef63f0aa7c8ce0d3affce79617"
+
+    livecheck do
+      skip "textual-enhanced requires uv-build <0.9"
+    end
+  end
+
+  resource "uv-build-0.9" do
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.9.28.tar.gz"
+    sha256 "99651696304efb4d2b24950763ef11b57f7ec55369b970b373a626333daf8ff5"
+
+    livecheck do
+      skip "bagofstuff requires uv-build <0.10"
+    end
+  end
+
+  resource "uv-build-0.11" do
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.11.32.tar.gz"
+    sha256 "62799114a5914728b0de55e65ae856e599fe3103eef9997b479cfc7acdd6ae67"
+
+    livecheck do
+      skip "gemtext, gophermap and port70 require uv-build <0.12"
+    end
+  end
+
   deny_network_access!
 
   def fetch
     # maturin/PyO3 run offline `cargo metadata`, which needs crates for all targets.
-    resource("uv-build").stage { system "cargo", "fetch", "--locked" }
+    %w[uv-build uv-build-0.8 uv-build-0.9 uv-build-0.11].each do |name|
+      resource(name).stage { system "cargo", "fetch", "--locked" }
+    end
   end
 
   def install
@@ -251,10 +286,10 @@ class Rogallo < Formula
       pathspec
       poetry-core
       setuptools
+      cython
       calver
       tomlkit
       trove-classifiers
-      uv-build
       vcs-versioning
       setuptools-scm
       pluggy
@@ -262,7 +297,7 @@ class Rogallo < Formula
       hatch-vcs
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
+    # Core maturin exposes its pure-Python PEP 517 provider for each supported Python.
     ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
@@ -271,11 +306,35 @@ class Rogallo < Formula
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    # These source releases require different uv-build minor series.
+    legacy_backends = {
+      "uv-build-0.8"  => %w[textual-enhanced],
+      "uv-build-0.9"  => %w[bagofstuff],
+      "uv-build-0.11" => %w[gemtext gophermap port70],
+    }
+    legacy_backends.each do |backend, packages|
+      resource(backend).stage do
+        venv.pip_install Pathname.pwd/"crates/uv-build", build_isolation: false
+      end
+      packages.each { |name| venv.pip_install resource(name), build_isolation: false }
+      system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python",
+             "uninstall", "--yes", "uv-build"
+    end
+    venv.pip_install resource("uv-build"), build_isolation: false
+    installed_resources = build_resources + legacy_backends.keys + legacy_backends.values.flatten + ["uv-build"]
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import yaml
+      import yaml._yaml
+      assert yaml.__with_libyaml__
+      data = {"protocols": ["gemini", "gopher"], "offline": True}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+    PYTHON
+
     assert_match version.to_s, shell_output("#{bin}/rogallo --version")
     assert_match "textual-dark", shell_output("#{bin}/rogallo themes")
   end
