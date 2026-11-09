@@ -9,14 +9,13 @@ class TinybirdMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3460fe002316069a39cbadedf451fdca59169bc684d6ee49142a0b484a893a61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "589321ad2cb21fc5db538f0a42b1e6828a731245b977e2deb0223616b350ddd4"
-    sha256 cellar: :any,                 arm64_linux:   "aaa4c515c9546a6853a9f9df7e287d424bc076c65a84390a1efc4ef5d78ea254"
-    sha256 cellar: :any,                 x86_64_linux:  "5f91f603b6715cbe816d0a9532d5ab6da3a015ad8f04c11ebb18419171171c0f"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db5af55704051634303b5fd0a91153c94ffa27992c598a802f20f1e14278a46c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "915e4dfaebfe52517a995516b97fcad1fcbff8444b09e4c56921eb966e48943e"
+    sha256 cellar: :any,                 arm64_linux:   "fae6bbc662f0fcacd7de35a58b0bae2d2fe6f0b598aaf8a2d51903e2da387196"
+    sha256 cellar: :any,                 x86_64_linux:  "123bbf5189fee04b689c11b402b4b5aacc3e0a81e6099c5a4f951a0f3c88f33a"
   end
 
-  depends_on "cython" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
@@ -25,9 +24,9 @@ class TinybirdMcpServer < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
                 extra_packages:   %w[
-                  calver dunamai expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe
-                  packaging pathspec pkgconfig pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
-                  uv-dynamic-versioning wheel
+                  calver cython==3.1.8 dunamai expandvars flit-core==3.12.0 hatch-fancy-pypi-readme hatch-vcs
+                  hatchling jinja2 markupsafe packaging pathspec pkgconfig pluggy poetry-core setuptools
+                  setuptools-scm tomlkit trove-classifiers uv-dynamic-versioning wheel
                 ]
 
   resource "aiohappyeyeballs" do
@@ -73,6 +72,12 @@ class TinybirdMcpServer < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  # Propcache's native backend requires Cython 3.1.x, built with the runtime interpreter.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/b4/a4/ec55945b52d0b888e2a090450a5524001bfa17c8b68348379a154badb850/cython-3.1.8.tar.gz"
+    sha256 "518475fbe633ba30c1577669f417440f41e1a23ad6b6e2dbb20703cd457f04ef"
   end
 
   resource "dunamai" do
@@ -314,9 +319,8 @@ class TinybirdMcpServer < Formula
       hatch-vcs
       uv-dynamic-versioning
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -327,17 +331,108 @@ class TinybirdMcpServer < Formula
   end
 
   test do
-    ENV["TB_API_URL"] = "https://api.us-east.tinybird.co"
-    ENV["TB_ADMIN_TOKEN"] = "tbp_admin"
+    require "json"
+    require "open3"
+    require "timeout"
 
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18"}}
-      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
-    JSON
+    python = libexec/"bin/python"
+    system python, "-c", <<~PYTHON
+      import importlib
+      import json
+      import sys
+      from pathlib import Path
+      from frozenlist import FrozenList
+      from yarl import URL
 
-    output = pipe_output("#{bin}/mcp-tinybird 2>&1", json, 0)
-    assert_match "Started MCP Tinybird", output
-    assert_match "List all Pipe Endpoints in the Tinybird Workspace", output
+      modules = [
+          importlib.import_module(name)
+          for name in ("aiohttp._http_parser", "frozenlist._frozenlist", "propcache._helpers_c", "yarl._quoting_c")
+      ]
+      for module in modules:
+          assert module.__file__.endswith(".so")
+          assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())
+      values = FrozenList([1, 2])
+      values.append(3)
+      values.freeze()
+      assert values == [1, 2, 3]
+      try:
+          values.append(4)
+      except RuntimeError:
+          pass
+      else:
+          raise AssertionError("Frozen collection accepted mutation")
+      url = URL("https://example.invalid/a%20b?item=one&item=two")
+      assert url.path == "/a b"
+      assert url.query.getall("item") == ["one", "two"]
+      assert URL(str(url)) == url
+      print(json.dumps({"python": sys.version, "native_extensions": [module.__file__ for module in modules]}))
+    PYTHON
+
+    # Only the local memo is exercised; the sandbox blocks upstream outbound logging.
+    ENV["TB_API_URL"] = "http://127.0.0.1:9"
+    ENV["TB_ADMIN_TOKEN"] = "homebrew-test"
+    insight = "Homebrew native backend round trip"
+    initialize_request = {
+      jsonrpc: "2.0",
+      id:      1,
+      method:  "initialize",
+      params:  {
+        protocolVersion: "2025-06-18",
+        capabilities:    {},
+        clientInfo:      { name: "homebrew-test", version: "1.0.0" },
+      },
+    }.to_json
+    append_request = {
+      jsonrpc: "2.0",
+      id:      2,
+      method:  "tools/call",
+      params:  { name: "append-insight", arguments: { insight: } },
+    }.to_json
+    read_request = {
+      jsonrpc: "2.0",
+      id:      3,
+      method:  "resources/read",
+      params:  { uri: "tinybird://insights" },
+    }.to_json
+
+    Open3.popen2e(bin/"mcp-tinybird") do |stdin, output, waiter|
+      Timeout.timeout(30) do
+        stdin.sync = true
+        read_response = lambda do |id|
+          loop do
+            line = output.gets
+            raise "mcp-tinybird exited before responding" unless line
+
+            begin
+              response = JSON.parse(line)
+            rescue JSON::ParserError
+              next
+            end
+            break response if response["id"] == id
+          end
+        end
+
+        stdin.puts initialize_request
+        assert_equal version.to_s, read_response.call(1).dig("result", "serverInfo", "version")
+        stdin.puts({ jsonrpc: "2.0", method: "notifications/initialized" }.to_json)
+        stdin.puts append_request
+        refute read_response.call(2).dig("result", "isError")
+        stdin.puts read_request
+        contents = read_response.call(3).dig("result", "contents")
+        memo = contents.filter_map { |content| content["text"] }.join("\n")
+        assert_includes memo.lines.map(&:chomp), "- #{insight}"
+        stdin.close
+        assert_predicate waiter.value, :success?
+      end
+    ensure
+      stdin.close unless stdin.closed?
+      begin
+        Process.kill("TERM", waiter.pid) if waiter.alive?
+      rescue Errno::ESRCH
+        nil
+      end
+      waiter.value
+    end
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python", python, "check"
   end
 end
