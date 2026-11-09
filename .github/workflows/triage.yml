@@ -156,10 +156,23 @@ jobs:
   typos:
     name: Spell Check
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
+      - name: Set up Homebrew before checking out PR content
+        uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+        with:
+          core: false
+          cask: false
+      - name: Install the Core spelling checker from its bottle
+        run: |
+          brew install --formula --force-bottle homebrew/core/typos-cli
+          # The pinned action reuses this executable, preserving its rules and annotations.
+          ln -s "$(brew --prefix homebrew/core/typos-cli)/bin/typos" "$RUNNER_TEMP/typos"
+          "$RUNNER_TEMP/typos" --version
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
