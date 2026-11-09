@@ -1,0 +1,14 @@
+Formula/v/vaults3.rb
+  h_9df9c32c3f321d 58,60,66-71,73-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "569d617db493b6ae5d65dcd519b20a4070e9cdd4",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
