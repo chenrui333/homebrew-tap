@@ -13,11 +13,10 @@ class Squall < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3b044a85a37214f014dc1ca79111ab9402f550979c528f0a273a018258d0b4c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "01f31494bb6763b65965674d4226d32c722b75b7909627b6f6ea3e467fa0a178"
-    sha256 cellar: :any,                 arm64_linux:   "f2f44cd1f213d9b296244cd0966582821d43a59de38777acf578464e7c957ff4"
-    sha256 cellar: :any,                 x86_64_linux:  "a77a4293da9df96e520b431bf3bc079224ea2b77180af62a41bf5bffd5d03155"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "349308a9c82a8138d287795ef97a351d66c0902b10d27021d53dd17fa87acd05"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c98b502df538345506857f0d913818ffdb3533675f48b61968be3ec3c1e7d15"
+    sha256 cellar: :any,                 arm64_linux:   "bda7f729514bb82360100bb8ca52ee4265d2e954f3c300dad538ee85afca582a"
+    sha256 cellar: :any,                 x86_64_linux:  "ef8f27f3fe32c97b9b607a7fcd5416f7981d5ca1915854a72211a576c47b6e97"
   end
 
   depends_on "python@3.14"
