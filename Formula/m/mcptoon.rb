@@ -3,8 +3,8 @@ class Mcptoon < Formula
 
   desc "Token-efficient MCP client and tool gateway"
   homepage "https://github.com/activeing123/mcptoon"
-  url "https://files.pythonhosted.org/packages/e0/8d/22fc973b311efbd1e62029994d195ff7835b55c4126ff0dfc216cbe1447c/mcptoon-0.8.34.tar.gz"
-  sha256 "289ad4bbe64420e217d2adc07a522a65ec927fa1cb9dad0738ece89b5733ef3b"
+  url "https://files.pythonhosted.org/packages/93/83/47b67fe45533490b3a35650b201634f13be3f21fb38a2749209ede19cf3f/mcptoon-0.8.35.tar.gz"
+  sha256 "1bd0956fc443172917c4ada87da39cdb149eb5e6707c98b4a4c8e594e0baa42d"
   license "Apache-2.0"
   head "https://github.com/activeing123/mcptoon.git", branch: "main"
 
