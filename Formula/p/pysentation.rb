@@ -138,5 +138,26 @@ class Pysentation < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pysentation --version")
+
+    (testpath/"slides.py").write <<~PYTHON
+      #pysentation{
+      #>slide
+      #-title: Homebrew export
+      #: Render [bold]formatted content[/bold] as plain text.
+      #>slide
+      #-title: Second slide
+      #: Presentation complete.
+      #pysentation}
+    PYTHON
+    system bin/"pysentation", "slides.py", "--disable", "--output", "slides.txt"
+
+    output = (testpath/"slides.txt").read
+    assert_match "Homebrew export", output
+    assert_match "Render formatted content as plain text.", output
+    assert_match "Second slide", output
+    assert_match "Presentation complete.", output
+    assert_match %r{1/2.*Second slide.*2/2}m, output
+    refute_match "[bold]", output
+    refute_match "#>slide", output
   end
 end
