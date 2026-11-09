@@ -4,6 +4,7 @@ class Hello < Formula
   url "https://ftpmirror.gnu.org/hello/hello-2.12.3.tar.gz"
   sha256 "0d5f60154382fee10b114a1c34e785d8b1f492073ae2d3a6f7b147687b366aa0"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
