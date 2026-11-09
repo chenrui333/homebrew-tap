@@ -1,0 +1,14 @@
+Formula/p/procmux.rb
+  h_9df9c32c3f321d 9,25-26,39-44,71-72,184,196-211,226
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3e4b2522f29676e6cda9a0e0be304a83c5babb9d",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
