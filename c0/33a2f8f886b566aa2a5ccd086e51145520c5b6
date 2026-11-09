@@ -1,0 +1,14 @@
+Formula/c/context-file-manager.rb
+  h_9df9c32c3f321d 123-124,230-235,278-314
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c033a2f8f886b566aa2a5ccd086e51145520c5b6",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
