@@ -1,0 +1,14 @@
+Formula/r/readmeai.rb
+  h_9df9c32c3f321d 9,29-31,74-79,126-127,315,337-342,352-395,403-404,408-411
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7cccf22c41a772bc1927309296ee22dc4a907e2a",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
