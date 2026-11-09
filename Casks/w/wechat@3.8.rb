@@ -1,22 +1,25 @@
 cask "wechat@3.8" do
-  version "3.8.8"
-  sha256 "7febd3b81d807be0beeb8ecb94cefb7240ecd38621a90e7277d1f275d4ec8780"
+  version "3.8.10.17"
+  sha256 :no_check
 
-  url "https://mksoftcdn.yesky.com/692926fe/ff100b986d8e61cf271ac95e5c3cacbe/uploadsoft/WeChatMac-3.8.8.dmg"
+  # The vendor's Sparkle feed retains this unversioned legacy download for the 3.8 series.
+  url "https://dldir1.qq.com/weixin/mac/WeChatMac_10_15.dmg"
   name "WeChat for Mac"
   name "微信 Mac 版"
   desc "Free messaging and calling application"
   homepage "https://mac.weixin.qq.com/"
 
-  # # This appcast is slower to update than the submissions we get. See:
-  # #   https://github.com/Homebrew/homebrew-cask/pull/90907#issuecomment-710107547
-  # livecheck do
-  #   url "https://dldir1.qq.com/weixin/mac/mac-release.xml"
-  #   strategy :sparkle, &:short_version
-  # end
+  livecheck do
+    url "https://dldir1.qq.com/weixin/mac/mac-release.xml"
+    strategy :sparkle do |items|
+      items.filter_map do |item|
+        item.short_version if item.short_version&.start_with?("3.8.")
+      end
+    end
+  end
 
   auto_updates true
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "WeChat.app"
 
