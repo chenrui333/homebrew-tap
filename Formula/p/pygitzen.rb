@@ -10,11 +10,11 @@ class Pygitzen < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "96603e5e32c44eda3a921ab7d7892bde2d95ea17e6b1c3a140fa06901ed17e11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f4d24c8400a5c69366fe22fb553b36685ec2a5eb7a3feb0987c6677873bfe17"
-    sha256 cellar: :any,                 arm64_linux:   "2bd02be90546dcd914e8e0371408bce67a329ac4aa1675723c2954564ac750e0"
-    sha256 cellar: :any,                 x86_64_linux:  "55fa94c4323602054563e4848f3507d8dd489185fed923a3f473b0fb114c3d67"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d15cf7730b375a0ebddb3942183f693622868002a7b0c345b2c9a2b0784b0b48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee82cfddfa5b7ea6f2586774e9e13ffcdf1897c03b73e5a2105d93ca1edd7741"
+    sha256 cellar: :any,                 arm64_linux:   "3112e7108711f9693b48d829391d4222987750a2e8f826b3ed874c0b2cd50d45"
+    sha256 cellar: :any,                 x86_64_linux:  "e7e5445d25e274f11352b998cdbf52dd496a8342d8df4c1ab093bed7171ba089"
   end
 
   depends_on "git" => :test
