@@ -1,0 +1,14 @@
+Formula/s/squall.rb
+  h_9df9c32c3f321d 11,26-27,35-39,45-49,183,195-260
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d92db24e012aa3cc7966f4aaece1868561b93a96",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
