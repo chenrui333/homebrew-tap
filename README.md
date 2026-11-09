@@ -41,7 +41,6 @@ brew install --cask <tool>
 
 - `a2a-handler`
 - `abc`
-- `abtop`
 - `act3`
 - `actionbook`
 - `adbtuifm`
@@ -334,7 +333,6 @@ brew install --cask <tool>
 - `dqy`
 - `dragoman`
 - `drft`
-- `drydock`
 - `dtop`
 - `dumper`
 - `dupehound`
@@ -660,7 +658,6 @@ brew install --cask <tool>
 - `logira`
 - `lola`
 - `loom-ai`
-- `lsoff`
 - `lstags`
 - `lsv`
 - `luaformatter`
