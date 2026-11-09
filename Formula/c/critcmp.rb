@@ -14,7 +14,7 @@ class Critcmp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5ec9cfb442a982487a8bf58b560e411e4518a836d440ac2d16f3f29db02f481"
   end
 
-  depends_on "rust" => [:build, :test]
+  depends_on "rust" => :build
 
   deny_network_access!
 
@@ -29,6 +29,30 @@ class Critcmp < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/critcmp --version")
 
-    # https://github.com/BurntSushi/critcmp?tab=readme-ov-file#usage
+    statistic = lambda do |estimate|
+      {
+        confidence_interval: { confidence_level: 0.95, lower_bound: estimate, upper_bound: estimate },
+        point_estimate:      estimate,
+        standard_error:      0,
+      }
+    end
+    { "before" => 1_000_000, "after" => 2_000_000 }.each do |name, nanoseconds|
+      benchmark = {
+        baseline:               name,
+        fullname:               "#{name}/parse/short",
+        criterion_benchmark_v1: {
+          group_id: "parse", function_id: "short", value_str: nil, throughput: nil,
+          full_id: "parse/short", directory_name: "parse_short"
+        },
+        criterion_estimates_v1: {
+          mean: statistic.call(nanoseconds), median: statistic.call(nanoseconds),
+          median_abs_dev: statistic.call(0), slope: nil, std_dev: statistic.call(0)
+        },
+      }
+      (testpath/"#{name}.json").write(JSON.generate(name: name, benchmarks: { "parse/short" => benchmark }))
+    end
+
+    assert_match "parse/short", shell_output("#{bin}/critcmp before.json after.json -t 50")
+    assert_equal "", shell_output("#{bin}/critcmp before.json after.json -t 150", 1)
   end
 end
