@@ -12,11 +12,10 @@ class Rovr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "010f80a722eff27f3aac327dcab05bab7b884520a280e490cd0081146b11f0ad"
-    sha256 cellar: :any, arm64_sequoia: "8a01ed57cf2a338b9faa3a2965736e87456e0d0ca3997633d7279da41bf5e5a9"
-    sha256 cellar: :any, arm64_linux:   "c6a559250a40d05bddd65a419b404bcea9727023012aa62b2d86c9b06fae02c1"
-    sha256 cellar: :any, x86_64_linux:  "7003f2f367a7330216a9221e083e5ea51f2be039bf5f3cc4fd5fe6ef959fc8ee"
+    sha256 cellar: :any, arm64_tahoe:   "4019bea669f623e53f5845a595e2982338a0834fb75eef326425972870f8842b"
+    sha256 cellar: :any, arm64_sequoia: "746cddf392010313ffd27825803b4e3b216d159382d6f7b87101562426bf70b5"
+    sha256 cellar: :any, arm64_linux:   "baa177eb4c1dacf7d5b63b3b42e5d659a5e62d42ce09866d23bc2479eee0199a"
+    sha256 cellar: :any, x86_64_linux:  "8f19cfad94cfee4e68663ce74bddfe0758ce23bfa94b1290d26671535ac83b68"
   end
 
   depends_on "maturin" => :build
