@@ -1,0 +1,14 @@
+Formula/o/oxylabs-mcp.rb
+  h_9df9c32c3f321d 9,32-43,48-51,115-116,460-461,494-500,513-516,518,536,538,543-545,548-557,559-560,574-592,594-602,604,610-611,620,623-631
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "48729589b3c537ef151f1d906cfd0dfadbc77a74",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
