@@ -13,11 +13,11 @@ class Unsloth < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a788bc98277b3f0791811e138c4213939c8bdd0e3cef3a0baefed527a3f15c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69c77b5a226632377e924a3d8ba08db623563ebb1f5d1076f080755e99c2857b"
-    sha256 cellar: :any,                 arm64_linux:   "e65b9948345478b711ddabc36d0e1ce91ad62dfcb9a7a85440e9672b3f601c3c"
-    sha256 cellar: :any,                 x86_64_linux:  "03f16254fbb11c498e1c85c1c37839fd36a175d0e718d9509c4a8d8bf4d4b409"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c75155dede4a2a9e84ff11d9af7491a69a6fbc6188a03369306e5b37d03ba84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a74dd357ddb20abd2992c53ecbbf4320795cfe0d342626a38fbd160f8dba97d"
+    sha256 cellar: :any,                 arm64_linux:   "30f0e55780c2a5bfee937094e651c5d4e3f6c728c0326a4629b33b5bd8912cd4"
+    sha256 cellar: :any,                 x86_64_linux:  "7ae3a2a23bad39a23e299b5ddb5b79fabb25e87de51f2f88d67d7d40cf685942"
   end
 
   depends_on "libyaml"
