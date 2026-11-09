@@ -1,0 +1,18 @@
+.github/scripts/publish-validation.test.js
+  h_9df9c32c3f321d 44-47,56,196,360,390,393,404,821-859
+.github/workflows/publish.yml
+  h_9df9c32c3f321d 342-346,563-565,585,655-659
+AGENTS.md
+  h_9df9c32c3f321d 298-300
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "871cb3b34daed43aff80a1f444dd00f27c0ec52a",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
