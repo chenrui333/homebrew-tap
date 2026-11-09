@@ -1,0 +1,14 @@
+Formula/s/swamp.rb
+  h_9df9c32c3f321d 4-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f033efd728416596872d032392cfaa1f1526841e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
