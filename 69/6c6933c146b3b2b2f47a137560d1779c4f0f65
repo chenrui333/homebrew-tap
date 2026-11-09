@@ -1,0 +1,14 @@
+skills/restart-github-actions-runs/scripts/restart_pr_actions.sh
+  h_9df9c32c3f321d 36-37,40,47-48,51-52,62,73-76,80-85,87-88,90,97-98,109,117,127-130,137-138,143,145-146,150-164,168-171,175-179,183,188-189,193-194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "696c6933c146b3b2b2f47a137560d1779c4f0f65",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
