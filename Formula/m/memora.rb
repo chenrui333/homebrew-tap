@@ -6,6 +6,7 @@ class Memora < Formula
   url "https://github.com/agentic-mcp-tools/memora/archive/refs/tags/v0.4.3.tar.gz"
   sha256 "a111da9c05107a79f6e52b104a124768f0a800225aa9e27294c68222c7623c13"
   license "MIT"
+  revision 1
   head "https://github.com/agentic-mcp-tools/memora.git", branch: "main"
 
   bottle do
@@ -33,7 +34,7 @@ class Memora < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic rpds-py],
                 extra_packages:   %w[
-                  calver dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe packaging
+                  calver dunamai flit-core<4 hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe packaging
                   pathspec pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
                   uv-dynamic-versioning vcs-versioning wheel
                 ]
@@ -84,8 +85,8 @@ class Memora < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "h11" do
@@ -159,8 +160,8 @@ class Memora < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/fc/6d/62e76bbb8144d6ed86e202b5edd8a4cb631e7c8130f3f4893c3f90262b10/mcp-1.26.0.tar.gz"
-    sha256 "db6e2ef491eecc1a0d93711a76f28dec2e05999f93afd48795da1c1137142c66"
+    url "https://files.pythonhosted.org/packages/8b/eb/c0cfc62075dc6e1ec1c64d352ae09ac051d9334311ed226f1f425312848a/mcp-1.27.0.tar.gz"
+    sha256 "d3dc35a7eec0d458c1da4976a48f982097ddaab87e278c5511d5a4a56e852b83"
   end
 
   resource "openai" do
@@ -293,6 +294,25 @@ class Memora < Formula
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  # Distinct lookup keys retain incompatible SDK roles with their canonical distribution names.
+  resource "homebrew-hatchling-openai" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
+  end
+
+  resource "homebrew-setuptools-scm-dateutil" do
+    self.name = "setuptools-scm"
+    url "https://files.pythonhosted.org/packages/98/12/2c1e579bb968759fc512391473340d0661b1a8c96a59fb7c65b02eec1321/setuptools_scm-7.1.0.tar.gz"
+    sha256 "6c508345a771aad7d56ebff0e70628bf2b0ec7573762be9960214730de278f27"
+  end
+
+  resource "homebrew-setuptools-scm-urllib3" do
+    self.name = "setuptools-scm"
+    url "https://files.pythonhosted.org/packages/7b/b1/19587742aad604f1988a8a362e660e8c3ac03adccdb71c96d86526e5eb62/setuptools_scm-9.2.2.tar.gz"
+    sha256 "1c674ab4665686a0887d7e24c03ab25f24201c213e82ea689d2f3e169ef7ef57"
+  end
+
   deny_network_access!
 
   def fetch
@@ -323,14 +343,32 @@ class Memora < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    staged_resources = %w[
+      openai python-dateutil urllib3
+      homebrew-hatchling-openai homebrew-setuptools-scm-dateutil homebrew-setuptools-scm-urllib3
+    ]
+    venv.pip_install resources.reject { |r| (build_resources + staged_resources).include?(r.name) },
+                     build_isolation: false
+
+    # std_pip_args ignores installed packages, so remove each backend before switching versions.
+    [
+      ["hatchling", "homebrew-hatchling-openai", "openai"],
+      ["setuptools-scm", "homebrew-setuptools-scm-dateutil", "python-dateutil"],
+      ["setuptools-scm", "homebrew-setuptools-scm-urllib3", "urllib3"],
+    ].each do |backend, sdk, consumer|
+      system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", backend
+      venv.pip_install resource(sdk), build_isolation: false
+      venv.pip_install resource(consumer), build_isolation: false
+      system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", backend
+      venv.pip_install resource(backend), build_isolation: false
+    end
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
@@ -339,17 +377,118 @@ class Memora < Formula
     require "open3"
     require "timeout"
 
+    # Stop the package's import-time upward search before it can read a user's .mcp.json.
+    (testpath/".mcp.json").write "{}"
+
     python = libexec/"bin/python"
-    version_output = shell_output(
-      "#{python} -c \"import importlib.metadata as m; print(m.version('memora-mcp'))\"",
-    )
-    assert_match version.to_s, version_output
+    offline_env = {
+      "PATH"                     => ENV.fetch("PATH"),
+      "HOME"                     => Dir.home,
+      "MEMORA_DB_PATH"           => (testpath/"memories.db").to_s,
+      "MEMORA_STORAGE_URI"       => "file://#{testpath}/memories.db",
+      "PYTHONNOUSERSITE"         => "1",
+      "PYDANTIC_DISABLE_PLUGINS" => "__all__",
+      "XDG_CACHE_HOME"           => (testpath/"cache").to_s,
+      "XDG_CONFIG_HOME"          => (testpath/"config").to_s,
+      "XDG_DATA_HOME"            => (testpath/"data").to_s,
+      "XDG_STATE_HOME"           => (testpath/"state").to_s,
+    }
+    # v0.4.3 supports --version on the installed CLI without starting either server.
+    output, status = Open3.capture2(offline_env, bin/"memora-server", "--version",
+                                   chdir: testpath, unsetenv_others: true)
+    assert status.success?
+    assert_match version.to_s, output
 
-    ENV["MEMORA_DB_PATH"] = testpath/"memories.db"
-    output = shell_output("#{bin}/memora-server info")
-    assert_match "\"backend_type\": \"local_sqlite\"", output
+    output, status = Open3.capture2(offline_env, bin/"memora-server", "info",
+                                   chdir: testpath, unsetenv_others: true)
+    assert status.success?
+    info = JSON.parse(output)
+    assert_equal "local_sqlite", info.fetch("backend_type")
+    assert_equal (testpath/"memories.db").to_s, info.fetch("db_path")
 
-    Open3.popen2(bin/"memora-server", "--no-graph") do |input, output, process|
+    (testpath/"offline.py").write <<~PYTHON
+      import importlib
+      import importlib.machinery
+      import io
+      import json
+      import os
+      from importlib import metadata, resources
+      from pathlib import Path
+
+      from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+      from jiter import from_json
+      from markupsafe import escape
+      from PIL import Image
+      from pydantic import BaseModel, ValidationError
+      from rpds import HashTrieMap
+
+      from memora.backends import LocalSQLiteBackend
+      from memora.graph.data import _INVALID_LIMIT, parse_graph_limit_value
+      from memora.schema import connect
+
+      for package, expected in {
+          "memora-mcp": "#{version}", "mcp": "1.27.0", "openai": "2.21.0",
+          "jiter": "0.13.0", "pluggy": "1.6.0", "vcs-versioning": "2.5.0",
+          "setuptools-scm": "10.3.4",
+      }.items():
+          assert metadata.version(package) == expected, package
+      for name in (
+          "cryptography.hazmat.bindings._rust", "pydantic_core._pydantic_core",
+          "rpds.rpds", "PIL._imaging", "jiter.jiter", "markupsafe._speedups",
+      ):
+          module = importlib.import_module(name)
+          assert any(module.__file__.endswith(s) for s in importlib.machinery.EXTENSION_SUFFIXES), name
+      assert from_json(b'{"answer":42}') == {"answer": 42}
+      assert str(escape("<owned>")) == "&lt;owned&gt;"
+      original = HashTrieMap({"answer": 41})
+      assert original.insert("answer", 42)["answer"] == 42
+      assert original["answer"] == 41
+      cipher = AESGCM(bytes(range(32)))
+      nonce = bytes(range(12))
+      ciphertext = cipher.encrypt(nonce, b"owned fixture", None)
+      assert cipher.decrypt(nonce, ciphertext, None) == b"owned fixture"
+      image_bytes = io.BytesIO()
+      Image.new("RGB", (2, 3), (12, 34, 56)).save(image_bytes, format="PNG")
+      image_bytes.seek(0)
+      with Image.open(image_bytes) as image:
+          image.load()
+          assert image.size == (2, 3) and image.getpixel((1, 2)) == (12, 34, 56)
+
+      class Fixture(BaseModel):
+          count: int
+
+      assert Fixture.model_validate({"count": "3"}).count == 3
+      try:
+          Fixture.model_validate({"count": "invalid"})
+      except ValidationError:
+          pass
+      else:
+          raise AssertionError("invalid integer accepted")
+
+      db = Path(os.environ["MEMORA_DB_PATH"])
+      connection = connect(LocalSQLiteBackend(db))
+      try:
+          assert connection.execute("SELECT count(*) FROM memories").fetchone()[0] == 0
+          connection.execute("CREATE TABLE homebrew_fixture (payload TEXT NOT NULL)")
+          payload = {"owned": [1, 2, 3]}
+          connection.execute("INSERT INTO homebrew_fixture VALUES (?)", (json.dumps(payload),))
+          assert json.loads(connection.execute("SELECT payload FROM homebrew_fixture").fetchone()[0]) == payload
+          connection.commit()
+      finally:
+          connection.close()
+      assert parse_graph_limit_value(" 42 ") == 42
+      assert parse_graph_limit_value("-1") is _INVALID_LIMIT
+      for asset in ("index.html", "_graph_limit.mjs"):
+          assert resources.files("memora.graph").joinpath(asset).is_file(), asset
+    PYTHON
+    output, status = Open3.capture2(offline_env, python, testpath/"offline.py",
+                                   chdir: testpath, unsetenv_others: true)
+    assert status.success?, output
+    system "python3.14", "-m", "pip", "--python=#{python}", "check"
+
+    # Do not start the default graph listener or invoke any registered tool.
+    Open3.popen2(offline_env, bin/"memora-server", "--transport", "stdio", "--no-graph",
+                chdir: testpath, unsetenv_others: true) do |input, output, process|
       Timeout.timeout(60) do
         read_response = lambda do
           loop do
@@ -368,11 +507,15 @@ class Memora < Formula
           protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "Homebrew", version: "1.0" }
         })
         response = read_response.call
+        assert_equal 1, response.fetch("id")
+        assert_nil response["error"]
         assert_equal "Memory MCP Server", response.dig("result", "serverInfo", "name")
 
         input.puts JSON.generate(jsonrpc: "2.0", method: "notifications/initialized", params: {})
         input.puts JSON.generate(jsonrpc: "2.0", id: 2, method: "tools/list", params: {})
         response = read_response.call
+        assert_equal 2, response.fetch("id")
+        assert_nil response["error"]
         assert_includes response.dig("result", "tools").map { |tool| tool["name"] }, "memory_create"
       end
     ensure
