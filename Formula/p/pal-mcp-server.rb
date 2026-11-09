@@ -10,11 +10,10 @@ class PalMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "ec42685c201bd18111fb50ad3a94cb3e74056716943b69b66dac3c2f706319bb"
-    sha256 cellar: :any, arm64_sequoia: "3caf0ea524d736094a50208fe14acc3319771d14c9390c43b7d9f7e7018dc9ec"
-    sha256 cellar: :any, arm64_linux:   "3bfca3d161b31673ff459ffc2f2dc9c7b19ccbb5f5b7ce7b32e983fb70315144"
-    sha256 cellar: :any, x86_64_linux:  "4aac15dbe19baf88ff66e06b2c574ffb65fcb7c8e39904fc9e93222954af96ca"
+    sha256 cellar: :any, arm64_tahoe:   "c646dd5ece912d3c831afc8885445d60a6d2575d3e7c92159b552c7aede77f38"
+    sha256 cellar: :any, arm64_sequoia: "41a4b7adddf16763244f4695d0013c2d0c147d6139664538c6c972ed32ae549c"
+    sha256 cellar: :any, arm64_linux:   "004505d012b5348281e7d2cae61a7a212c5f84ae8aa0b2b532be3d2e80371f88"
+    sha256 cellar: :any, x86_64_linux:  "4039edc778ef8aa0063145ad9b35a36525b982add378513b0ed9c34aba89be29"
   end
 
   depends_on "maturin" => :build
