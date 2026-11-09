@@ -1,0 +1,14 @@
+Formula/v/vsg.rb
+  h_9df9c32c3f321d 23,26-30,71,78,92-99,101-102,105-106,114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e0ecc601c0016120a52b711830d3230517425426",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
