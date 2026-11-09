@@ -6,23 +6,21 @@ class Molotov < Formula
   url "https://files.pythonhosted.org/packages/54/22/5820c7cad221514a04d9cdada884476e35c5972d7b84f88755094beab4fc/molotov-2.6.tar.gz"
   sha256 "0f52d260b4566709882a12710eff9b5863604f88c9bc03749cab4f9de462771a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb97dd6671784b67338a23176bc929180c2cac24a6a7d2c962343afac7240013"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29b7a4d045d036bc7fae2ee64260cfdf5fc8f0ba8261907d444daf6d662a9d13"
-    sha256 cellar: :any,                 arm64_linux:   "d427ef9be33b965dc222ce9a50eee51c0bd45678dcb192bb21bc53d377e012e4"
-    sha256 cellar: :any,                 x86_64_linux:  "c153c7c474fe5fbd21f150f4c8589519b4eac8667b78848c0dabdbd91867d07e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63a496edf955499c6874f653510702948fccbf4ca25fc511033a358c04c003cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "481828ea8663f43e7660e3bcec599a91821cee22b56e22e8e08c43d382ddc89d"
+    sha256 cellar: :any,                 arm64_linux:   "8e6dd1507a9bfd751e9a890b7586436a9b5fcc63b50fa77ead1e947551b71a1b"
+    sha256 cellar: :any,                 x86_64_linux:  "f6cb6ecc0e302e14e38619b5864cf2868fcd30e30f9b84b2c0bae5ceb7a842c2"
   end
 
-  depends_on "cython" => :build # for frozenlist, propcache and yarl
-  depends_on "python-setuptools"
   depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
-    calver expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pkgconfig pluggy
-    poetry-core setuptools-scm tomlkit trove-classifiers vcs-versioning
+    calver cython==3.1.8 expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pkgconfig
+    pluggy poetry-core setuptools==80.10.2 setuptools-scm tomlkit trove-classifiers vcs-versioning
   ]
 
   resource "aiodogstatsd" do
@@ -53,6 +51,12 @@ class Molotov < Formula
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  # propcache requires Cython 3.1; build it for the application's Python.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/b4/a4/ec55945b52d0b888e2a090450a5524001bfa17c8b68348379a154badb850/cython-3.1.8.tar.gz"
+    sha256 "518475fbe633ba30c1577669f417440f41e1a23ad6b6e2dbb20703cd457f04ef"
   end
 
   resource "dill" do
@@ -145,6 +149,12 @@ class Molotov < Formula
     sha256 "f48107a8c637e80362555f37ecf49abe20370e557cc4ab374f04ec4423c97c3d"
   end
 
+  # moloslave imports pkg_resources, removed in setuptools 81.
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/76/95/faf61eb8363f26aa7e1d762267a8d602a1b26d4f3a1e758e92cb3cb8b054/setuptools-80.10.2.tar.gz"
+    sha256 "8b0e9d10c784bf7d262c4e5ec5d4ec94127ce206e8738f29a437945fbc219b70"
+  end
+
   resource "setuptools-scm" do
     url "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/setuptools_scm-10.3.4.tar.gz"
     sha256 "a69f28bfc245608781205e912faae437c2b2165773afa4e7b979d77447a69dd2"
@@ -175,10 +185,13 @@ class Molotov < Formula
     sha256 "bebf8557577d4401ba8bd9ff33906f1376c877aa78d1fe216ad01b4d6745af71"
   end
 
-  deny_network_access!
+  # The test sends a fixed workload only to its own loopback HTTP fixture.
+  allow_network_access! :test
 
   def install
     build_resources = %w[
+      setuptools
+      cython
       calver
       flit-core
       packaging
@@ -196,8 +209,6 @@ class Molotov < Formula
       hatch-vcs
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
-
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
@@ -209,26 +220,70 @@ class Molotov < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/molotov --version")
 
-    # Offline scenarios: exercise the molotov runner without contacting a remote API
-    (testpath/"test.py").write <<~PYTHON
-      """
-      This Molotov script has 2 scenario
-      """
+    assert_match "Github-based load test", shell_output("#{bin}/moloslave --help")
+
+    (testpath/"server.py").write <<~PYTHON
       import json
+      from http.server import BaseHTTPRequestHandler
+      from socketserver import TCPServer
+      from pathlib import Path
+      from urllib.parse import parse_qs, unquote, urlsplit
 
-      from molotov import scenario
+      class Handler(BaseHTTPRequestHandler):
+          def do_POST(self):
+              url = urlsplit(self.path)
+              result = {
+                  "path": unquote(url.path),
+                  "tags": parse_qs(url.query).get("tag"),
+                  "data": json.loads(self.rfile.read(int(self.headers["Content-Length"]))),
+              }
+              with open("requests.jsonl", "a") as receipt:
+                  receipt.write(json.dumps(result) + "\\n")
+              body = json.dumps(result, ensure_ascii=False).encode()
+              self.send_response(201)
+              self.send_header("Content-Type", "application/json; charset=utf-8")
+              self.send_header("Transfer-Encoding", "chunked")
+              self.end_headers()
+              self.wfile.write(f"{len(body):x}\\r\\n".encode() + body + b"\\r\\n0\\r\\n\\r\\n")
 
-      @scenario(weight=40)
-      async def scenario_one(session):
-          assert json.loads('{"ok": true}')["ok"]
-
-      @scenario(weight=60)
-      async def scenario_two(session):
-          assert session is not None
+      # HTTPServer performs reverse DNS during bind; this fixture needs only a numeric loopback address.
+      server = TCPServer(("127.0.0.1", 0), Handler)
+      Path("port").write_text(str(server.server_address[1]))
+      server.serve_forever()
     PYTHON
 
-    # Run the test with 1 process, 2 workers, and a duration of 1 second
-    output = shell_output("#{bin}/molotov #{testpath}/test.py -p 1 -w 2 -d 1")
-    assert_match(/SUCCESSES: [1-9]\d* \| FAILURES: 0/, output)
+    server_pid = spawn libexec/"bin/python", testpath/"server.py"
+    begin
+      50.times do
+        break if (testpath/"port").exist?
+
+        sleep 0.1
+      end
+      assert_path_exists testpath/"port"
+      port = (testpath/"port").read.to_i
+      (testpath/"loadtest.py").write <<~PYTHON
+        from molotov import scenario
+        from yarl import URL
+
+        @scenario()
+        async def post_json(session):
+            url = URL("http://127.0.0.1:#{port}/café").with_query([("tag", "one"), ("tag", "two")])
+            async with session.post(url, json={"message": "héllo"}) as response:
+                assert response.status == 201
+                assert await response.json() == {
+                    "path": "/café", "tags": ["one", "two"], "data": {"message": "héllo"}
+                }
+      PYTHON
+
+      output = shell_output("#{bin}/molotov #{testpath}/loadtest.py -p 1 -w 1 -r 3")
+      assert_match "SUCCESSES: 3 | FAILURES: 0", output
+      requests = (testpath/"requests.jsonl").read.lines.map { |line| JSON.parse(line) }
+      assert_equal Array.new(3) {
+        { "path" => "/café", "tags" => ["one", "two"], "data" => { "message" => "héllo" } }
+      }, requests
+    ensure
+      Process.kill("TERM", server_pid)
+      Process.wait(server_pid)
+    end
   end
 end
