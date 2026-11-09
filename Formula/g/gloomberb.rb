@@ -5,6 +5,11 @@ class Gloomberb < Formula
   sha256 "6e76180d903dda9c12988210638c2d1f9c54b641b6566fd95ecb8684593c08d4"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 arm64_tahoe:   "d3c134102bfb584b09a4ed4dd1a75ad4232ffaa95ea6aa01cccca2b9281e394a"
