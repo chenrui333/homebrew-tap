@@ -1,0 +1,19 @@
+Formula/m/memora.rb
+  s_d8c741425f9491::t_4ede1f32c5964f 9,37,88-89,163-164,297-312,343,350-368,377-378,380-488,507-508,514-515
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f62c23ebb0123ffd43143783c5bc556b7d1377df",
+  "prompts": {},
+  "sessions": {
+    "s_d8c741425f9491": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c229-b3bc-7d82-a044-81aa7d70bda2",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
