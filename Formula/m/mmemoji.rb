@@ -9,22 +9,21 @@ class Mmemoji < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5aa84a22dcd8d457f970959f964291ec5693d50a9649acd2a8534b851172fee6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2429584e87a3294ec868ba6a97f4ce7c308cdd9489957187c4c275bf07a52168"
-    sha256 cellar: :any,                 arm64_linux:   "b9d2aaaa4d4d6298a69c80fca0b171e18c98305937cf8fca30eed1805f7f5b6f"
-    sha256 cellar: :any,                 x86_64_linux:  "8841418bfa0fd2424e25f4d26bbc76be8947a7fef2873a53ac974f313b2cc3cb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d81e608ed9996a0cf16c72b9cdad6a84d199ce2ffd7305566867cb6c3a5f345c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37b2c67718ccd3b88c05a9041d6cd993b576e3d2ca0bb92f6c0c227989bd3245"
+    sha256 cellar: :any,                 arm64_linux:   "da72e41e044af0a4f0bfd51ffb6b5822302736e37ff44cc6a113cf86466d94fe"
+    sha256 cellar: :any,                 x86_64_linux:  "b44318258d6fa09ba9f5ecbd35888a446ae28c4c1e698481d39b9a564e436b18"
   end
 
-  depends_on "cython" => :build # for frozenlist, propcache and yarl
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi",
                 extra_packages:   %w[
-                  calver expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
-                  pkgconfig pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning
-                  wheel
+                  calver cython==3.1.8 expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging
+                  pathspec pkgconfig pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
+                  vcs-versioning wheel
                 ]
 
   resource "aiohappyeyeballs" do
@@ -60,6 +59,11 @@ class Mmemoji < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/b4/a4/ec55945b52d0b888e2a090450a5524001bfa17c8b68348379a154badb850/cython-3.1.8.tar.gz"
+    sha256 "518475fbe633ba30c1577669f417440f41e1a23ad6b6e2dbb20703cd457f04ef"
   end
 
   resource "expandvars" do
@@ -223,9 +227,8 @@ class Mmemoji < Formula
       hatch-fancy-pypi-readme
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -240,7 +243,8 @@ class Mmemoji < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mmemoji --version")
 
-    output = shell_output("#{bin}/mmemoji create --no-clobber parrots/guests/hd/*.gif parrots/guests/*.gif 2>&1", 2)
-    assert_match "Invalid value", output
+    ENV["XDG_CONFIG_HOME"] = testpath/"config"
+    output = shell_output("#{bin}/mmemoji list --url missing-scheme 2>&1", 2)
+    assert_match "Malformed URL: missing-scheme", output
   end
 end
