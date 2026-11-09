@@ -6,6 +6,7 @@ class PalMcpServer < Formula
   url "https://github.com/BeehiveInnovations/pal-mcp-server/releases/download/v9.8.2/pal_mcp_server-9.8.2.tar.gz"
   sha256 "6c26eb859a918f59ab0d7121851a4d7f68173da672fe7cb8b8d4d06ee67ca208"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -22,19 +23,21 @@ class PalMcpServer < Formula
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
                 extra_packages:   %w[
-                  calver dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe packaging
-                  pathspec pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
-                  uv-dynamic-versioning wheel
+                  calver coherent-licensed docutils dunamai flit-core hatch-fancy-pypi-readme hatch-vcs hatchling
+                  id jaraco-classes jaraco-context jaraco-functools jeepney jinja2 keyring markdown-it-py
+                  markupsafe mdurl more-itertools nh3 packaging pathspec pkginfo pluggy poetry-core pygments
+                  readme-renderer requests-toolbelt rfc3986 rich secretstorage setuptools setuptools-scm tomlkit
+                  trove-classifiers twine uv-dynamic-versioning wheel
                 ]
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz"
-    sha256 "41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "attrs" do
@@ -118,8 +121,8 @@ class PalMcpServer < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jinja2" do
@@ -178,8 +181,8 @@ class PalMcpServer < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/fe/b6/6e630dff89739fcd427e3f72b3d905ce0acb85a45d4ec3e2678718a3487f/pyasn1-0.6.2.tar.gz"
-    sha256 "9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"
+    url "https://files.pythonhosted.org/packages/88/7e/3c0da41061a2021cac7cd524fd57092adbe5b515e8bf9005702e366802e2/pyasn1-0.6.5.tar.gz"
+    sha256 "6b11616a6bcf3a40e635f082bb232fa57b5e0dd7f517bd7ddd69ec3794508a47"
   end
 
   resource "pyasn1-modules" do
@@ -188,23 +191,23 @@ class PalMcpServer < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/96/a1/ae859ffac5a3338a66b74c5e29e244fd3a3cc483c89feaf9f56c39898d75/pydantic_settings-2.13.0.tar.gz"
-    sha256 "95d875514610e8595672800a5c40b073e99e4aae467fa7c8f9c263061ea2e1fe"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
-    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
-    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
+    url "https://files.pythonhosted.org/packages/82/ed/0301aeeac3e5353ef3d94b6ec08bbcabd04a72018415dcb29e588514bba8/python_dotenv-1.2.2.tar.gz"
+    sha256 "2c371a91fbd7ba082c2c1dc1f8bf89ca22564a087c2c287cd9b662adde799cf3"
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/94/01/979e98d542a70714b0cb2b6728ed0b7c46792b695e3eaec3e20711271ca3/python_multipart-0.0.22.tar.gz"
-    sha256 "7340bef99a7e0032613f56dc36027b959fd3b30a787ed62d310e951f7c3a3a58"
+    url "https://files.pythonhosted.org/packages/64/7e/9b35ad8f3d9ca680f7c87a88f19612fdd8da9796c4d3b46e560ac79dcc4a/python_multipart-0.0.31.tar.gz"
+    sha256 "fc631183bb13e56db3158a4909908dfb2e23565286744e798241e63750e5d680"
   end
 
   resource "referencing" do
@@ -213,8 +216,8 @@ class PalMcpServer < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rsa" do
@@ -243,8 +246,8 @@ class PalMcpServer < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/c4/68/79977123bb7be889ad680d79a40f339082c1978b5cfcf62c2d8d196873ac/starlette-0.52.1.tar.gz"
-    sha256 "834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"
+    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
+    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
   end
 
   resource "tenacity" do
@@ -268,8 +271,8 @@ class PalMcpServer < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "uv-dynamic-versioning" do
@@ -292,62 +295,248 @@ class PalMcpServer < Formula
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  resource "coherent-licensed" do
+    url "https://files.pythonhosted.org/packages/cd/e9/63d2dcccb5496cc99d96f29a8a5f3e2c6ed0bba7fedb840862f92816ee17/coherent_licensed-0.5.2.tar.gz"
+    sha256 "d8071403ce742d3ac3592ddc4fb7057a46caffb415b928b4d52802e5f208416d"
+  end
+
+  resource "docutils" do
+    url "https://files.pythonhosted.org/packages/39/a4/5180d9afc57e8fca05601dd652bdff19604c218814037fe90ffc7625a50a/docutils-0.23.tar.gz"
+    sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
+  end
+
+  resource "id" do
+    url "https://files.pythonhosted.org/packages/6d/04/c2156091427636080787aac190019dc64096e56a23b7364d3c1764ee3a06/id-1.6.1.tar.gz"
+    sha256 "d0732d624fb46fd4e7bc4e5152f00214450953b9e772c182c1c22964def1a069"
+  end
+
+  resource "jaraco-classes" do
+    url "https://files.pythonhosted.org/packages/06/c0/ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402/jaraco.classes-3.4.0.tar.gz"
+    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  end
+
+  resource "jaraco-context" do
+    url "https://files.pythonhosted.org/packages/af/50/4763cd07e722bb6285316d390a164bc7e479db9d90daa769f22578f698b4/jaraco_context-6.1.2.tar.gz"
+    sha256 "f1a6c9d391e661cc5b8d39861ff077a7dc24dc23833ccee564b234b81c82dfe3"
+  end
+
+  resource "jaraco-functools" do
+    url "https://files.pythonhosted.org/packages/6c/1f/c23395957d41ccf27c4e535c3d334c4051e5395b3752057ba4cbaec35c56/jaraco_functools-4.6.0.tar.gz"
+    sha256 "880c577ec9720b3a052d5bc611fb9f2269b3d87902ef42440df443b88e443280"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/43/4b/674af6ef2f97d56f0ab5153bf0bfa28ccb6c3ed4d1babf4305449668807b/keyring-25.7.0.tar.gz"
+    sha256 "fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b"
+  end
+
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "more-itertools" do
+    url "https://files.pythonhosted.org/packages/52/b8/c63995bebbb9ac9c059350e0fb8c82c2420c85aeca7d34e40aecf3df9281/more_itertools-11.2.1.tar.gz"
+    sha256 "cbf08fd0af284dc69718b9b76a8e6203df624d70209ea511e4219d350c856f63"
+  end
+
+  resource "nh3" do
+    url "https://files.pythonhosted.org/packages/18/2f/022b27146d52d24b1b353b003359134788ecbcd6fcdf6283adbd57c0fbc8/nh3-0.3.7.tar.gz"
+    sha256 "71860d01c16f4d8c72e334e0674beb2b0899dbd0bf760de18932ef4390303848"
+  end
+
+  resource "pkginfo" do
+    url "https://files.pythonhosted.org/packages/30/37/7580f0accc77d450a53ff7856fe142a89fc11467c2f22105dd06e088a5d1/pkginfo-2.0.tar.gz"
+    sha256 "f7b4f267881785582c923631a0fa7e275b0d390a5cbab54aa4ec0ecc7eddb375"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
+  end
+
+  resource "readme-renderer" do
+    url "https://files.pythonhosted.org/packages/25/d7/9309494fad74ee831d4546f69325b5519f37c6dfb2d9ba495db8c6d4f4ca/readme_renderer-46.0.tar.gz"
+    sha256 "af3e964914f6310a33ff67b72a4bdd940bed8d7c3bdecd2d14f40edf284bfe90"
+  end
+
+  resource "requests-toolbelt" do
+    url "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz"
+    sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
+  end
+
+  resource "rfc3986" do
+    url "https://files.pythonhosted.org/packages/85/40/1520d68bfa07ab5a6f065a186815fb6610c86fe957bc065754e47f7b0840/rfc3986-2.0.0.tar.gz"
+    sha256 "97aacf9dbd4bfd829baad6e6309fa6573aaf1be3f6fa735c8ab05e46cecb261c"
+  end
+
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
+  end
+
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
+  resource "twine" do
+    url "https://files.pythonhosted.org/packages/92/3c/58f808a359700f39a967dffede33efeac809262c03303fa3eec6afff8f49/twine-7.0.0.tar.gz"
+    sha256 "85cdb29c518efef867360ae4acd4b0dfd61c8654a22fca08e6f8539f05022177"
+  end
+
+  # Keep each original backend bound while preserving canonical PyPI resource names.
+  resource "build-flit-core-4.2.0" do
+    self.name = "flit-core"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
+  end
+
+  resource "build-hatchling-1.26.3" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
+  end
+
   deny_network_access!
 
   def fetch
     # jiter's sdist lock file still lists workspace members that are not shipped.
-    resource("jiter").stage { system "cargo", "fetch" }
+    %w[jiter nh3].each { |name| resource(name).stage { system "cargo", "fetch" } }
   end
 
   def install
-    build_resources = %w[
-      flit-core
-      jinja2
-      packaging
-      pathspec
-      poetry-core
-      dunamai
-      setuptools
-      calver
-      markupsafe
-      setuptools-scm
-      pluggy
-      tomlkit
-      trove-classifiers
-      hatchling
-      hatch-fancy-pypi-readme
-      hatch-vcs
-      uv-dynamic-versioning
-      wheel
-    ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
-    build_resources.each do |name|
+    # Keep the interpreter's bundled build tools out; shared runtime providers are added explicitly.
+    venv = virtualenv_create(libexec, "python3.14", system_site_packages: false)
+    build_resources = %w[
+      flit-core packaging setuptools setuptools-scm pluggy poetry-core dunamai calver tomlkit
+      trove-classifiers pathspec hatchling hatch-fancy-pypi-readme hatch-vcs markupsafe jinja2
+      uv-dynamic-versioning wheel coherent-licensed
+    ]
+    build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+
+    # more-itertools needs Flit 4; the other Flit projects retain their original <4 bounds.
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "--yes", "flit-core"
+    venv.pip_install resource("build-flit-core-4.2.0"), build_isolation: false
+    venv.pip_install resource("more-itertools"), build_isolation: false
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "--yes", "flit-core"
+    venv.pip_install resource("flit-core"), build_isolation: false
+
+    extra_build_resources = %w[
+      mdurl markdown-it-py pygments docutils jaraco-classes jaraco-functools jaraco-context jeepney
+      secretstorage keyring rfc3986 rich id pkginfo nh3 readme-renderer requests-toolbelt twine
+    ]
+    # Twine is a declared google-genai build input, not a publishing operation.
+    prerequisites = %w[anyio idna charset-normalizer urllib3 requests]
+    (extra_build_resources - %w[requests-toolbelt twine]).each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    prerequisites.each { |name| venv.pip_install resource(name), build_isolation: false }
+    %w[requests-toolbelt twine].each { |name| venv.pip_install resource(name), build_isolation: false }
+
+    installed_resources = build_resources + extra_build_resources + prerequisites + %w[more-itertools openai]
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
+
+    # OpenAI pins Hatchling exactly; remove the previous identity before installing its build role.
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "--yes", "hatchling"
+    venv.pip_install resource("build-hatchling-1.26.3"), build_isolation: false
+    venv.pip_install resource("openai"), build_isolation: false
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "--yes", "hatchling"
+    venv.pip_install resource("hatchling"), build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
+
+    # None of the build-only distributions are in PAL's installed runtime dependency closure.
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "--yes",
+           *build_resources, *extra_build_resources, "more-itertools"
   end
 
   test do
-    ENV["GEMINI_API_KEY"] = "test"
-    ENV["DISABLED_TOOLS"] = "analyze,refactor,testgen,secaudit,docgen,tracer"
-    ENV["DEFAULT_MODEL"] = "auto"
+    require "open3"
+    require "timeout"
 
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{"cursor":null}}
-    JSON
+    (testpath/"tmp").mkpath
+    env = {
+      "HOME"                    => testpath.to_s,
+      "PATH"                    => "#{libexec}/bin:/usr/bin:/bin",
+      "TMPDIR"                  => (testpath/"tmp").to_s,
+      "XDG_CONFIG_HOME"         => (testpath/"config").to_s,
+      "XDG_CACHE_HOME"          => (testpath/"cache").to_s,
+      "XDG_DATA_HOME"           => (testpath/"data").to_s,
+      "PYTHONNOUSERSITE"        => "1",
+      "PYTHONDONTWRITEBYTECODE" => "1",
+      "GEMINI_API_KEY"          => "test",
+      "DEFAULT_MODEL"           => "auto",
+      "LOG_LEVEL"               => "ERROR",
+    }
 
-    output = pipe_output("#{bin}/pal-mcp-server 2>&1", json, 0)
-    # "Your question or idea for collaborative thinking to be sent to the external model.
-    # Provide detailed context, including your goal, what you've tried, and any specific challenges.
-    # WARNING: Large inline code must NOT be shared in prompt.
-    # Provide full-path to files on disk as separate parameter."
-    assert_match "Your question or idea for collaborative thinking to be sent to the external model", output
+    Timeout.timeout(30) do
+      output, status = Open3.capture2e(
+        env, (formula_opt_bin("python@3.14")/"python3.14").to_s,
+        "-I", "-m", "pip", "--python=#{libexec}/bin/python", "check", unsetenv_others: true
+      )
+      assert_predicate status, :success?, output
+    end
+
+    # Startup uses packaged model registries and a lazy SDK client; never invoke any tool.
+    Open3.popen2(env, (bin/"pal-mcp-server").to_s,
+                err: (testpath/"server.log").to_s, unsetenv_others: true) do |stdin, stdout, wait_thr|
+      Timeout.timeout(30) do
+        stdin.puts JSON.generate(jsonrpc: "2.0", id: 1, method: "initialize", params: {
+          protocolVersion: "2025-03-26", capabilities: {}, clientInfo: { name: "homebrew-test", version: "1.0" }
+        })
+        stdin.flush
+        initialize_response = JSON.parse(stdout.readline)
+        assert_equal "2.0", initialize_response.fetch("jsonrpc")
+        assert_equal 1, initialize_response.fetch("id")
+        refute initialize_response.key?("error")
+        initialized = initialize_response.fetch("result")
+        assert_equal "2025-03-26", initialized.fetch("protocolVersion")
+        assert_equal "PAL", initialized.fetch("serverInfo").fetch("name")
+        assert_kind_of String, initialized.fetch("serverInfo").fetch("version")
+        assert_kind_of Hash, initialized.fetch("capabilities").fetch("tools")
+        assert_kind_of Hash, initialized.fetch("capabilities").fetch("prompts")
+
+        stdin.puts JSON.generate(jsonrpc: "2.0", method: "notifications/initialized", params: {})
+        stdin.puts JSON.generate(jsonrpc: "2.0", id: 2, method: "tools/list", params: {})
+        stdin.flush
+        tools_response = JSON.parse(stdout.readline)
+        assert_equal "2.0", tools_response.fetch("jsonrpc")
+        assert_equal 2, tools_response.fetch("id")
+        refute tools_response.key?("error")
+        tools = tools_response.fetch("result").fetch("tools")
+        expected_tools = %w[
+          analyze apilookup challenge chat clink codereview consensus debug docgen listmodels planner
+          precommit refactor secaudit testgen thinkdeep tracer version
+        ]
+        assert_equal expected_tools.sort, tools.map { |tool| tool.fetch("name") }.sort
+        tools.each do |tool|
+          assert_equal "object", tool.fetch("inputSchema").fetch("type")
+          assert_kind_of Hash, tool.fetch("inputSchema").fetch("properties")
+        end
+        chat = tools.find { |tool| tool.fetch("name") == "chat" }.fetch("inputSchema")
+        assert_equal "string", chat.fetch("properties").fetch("prompt").fetch("type")
+        assert_includes chat.fetch("required"), "prompt"
+        assert_includes chat.fetch("required"), "model"
+
+        stdin.close
+        assert_empty stdout.read
+        assert_predicate wait_thr.value, :success?
+      end
+    ensure
+      Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
+    end
   end
 end
