@@ -295,6 +295,9 @@ brew style <formula>
 ### Publish and CI Recovery
 
 - The published-bottle head is tracked by the `homebrew-tap/published-bottle-head` commit status. Do not post marker comments or approvals to record it.
+- For exact published-head review before merge, opt in with `CI-hold-published-head` before the publisher's pre-push admission. Source qualification and bottle upload remain unchanged; the publisher adds `in progress` only after verifying the pushed or recovered bottle head, before recording published success.
+  - Remove both `CI-hold-published-head` and `in progress` only after current-head CI, final-HEAD review, and anonymous exact bottle-byte verification pass.
+  - This is not a source-qualification or approval bypass. Ordinary PRs and `CI-no-bottles` no-ops keep their existing routes.
 - Never close and reopen a PR to retrigger CI: closing deletes the head branch, and restoring it means recreating the ref.
 - If an already-published head needs a non-bottle change, push a new commit and add `CI-no-bottles`; publish skips bottles and formula-merge merges once checks pass.
 - If publish stalls, re-dispatch it with `gh workflow run publish.yml -f pr_number=<N>`; it recovers existing BrewTestBot bottle commits, and on manual dispatch it tolerates bottles already uploaded to GHCR by an attempt that failed before pushing the bottle commit (`already exists!`). If `refs/pull/<N>/head` is lost, re-push the existing SHAs with `--force-with-lease`.

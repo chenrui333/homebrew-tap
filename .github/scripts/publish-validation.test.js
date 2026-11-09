@@ -41,7 +41,10 @@ function reply(key, fallback) {
   console.log(JSON.stringify(value))
 }
 if (args[0] === "pr" && args[1] === "edit") {
-  appendFileSync(root + "/effects", "label\\n")
+  if (args[args.indexOf("--add-label") + 1] === "in progress") {
+    if (data.reviewHoldError) { console.error("fixture hold unavailable"); process.exit(1) }
+    appendFileSync(root + "/effects", "review-hold\\n")
+  } else appendFileSync(root + "/effects", "label\\n")
 } else if (args.includes("POST")) {
   appendFileSync(root + "/effects", "status\\n")
   console.log("{}")
@@ -50,6 +53,7 @@ if (args[0] === "pr" && args[1] === "edit") {
 } else if (path.endsWith("/pulls/11999")) {
   const pr = structuredClone(data.pr)
   if (state.pushed) pr.head.sha = data.pushedSha
+  if (state.pushed && data.afterPushLabels) pr.labels = data.afterPushLabels
   reply("pr", pr)
 } else if (path.includes("/commits/") && path.endsWith("/statuses")) {
   const sha = path.split("/commits/")[1].split("/")[0]
@@ -189,6 +193,7 @@ function publicationFixture(overrides, options, execute) {
           QUALIFIED_RUN_ID: details.qualified_run_id || "",
           QUALIFIED_RUN_ATTEMPT: details.qualified_run_attempt || "",
           PUBLISHED_HEAD: outputs["pr-upload"]?.published_head_sha || "",
+          HOLD_PUBLISHED_HEAD: outputs["push-admission"]?.hold_published_head || "",
           VERIFIED_PUBLISHED_HEAD: details.published_head || "",
           LEGACY_MARKER_AUTHOR: details.legacy_marker_author || "",
           RECOVERED_BOTTLE_COMMIT: details.recovered_bottle_commit || "",
@@ -352,7 +357,7 @@ const verifyGit = `#!/bin/bash
 printf '%s\\trefs/heads/network-sandbox/example\\n' "$(cat "$PUBLISH_TEST_DIR/branch-head")"
 `
 const verifySleep = `#!/bin/bash
-echo "$1" >> "$PUBLISH_TEST_DIR/sleeps"
+exit 0
 `
 const prAt = (sha, overrides = {}) => ({
   state: "open",
@@ -368,7 +373,6 @@ function verify(prs, {branchHead = pushedSha} = {}) {
     writeFileSync(join(directory, "prs.json"), JSON.stringify(prs))
     writeFileSync(join(directory, "pr-calls"), "0")
     writeFileSync(join(directory, "branch-head"), branchHead)
-    writeFileSync(join(directory, "sleeps"), "")
     writeFileSync(join(directory, "gh"), verifyGh, {mode: 0o755})
     writeFileSync(join(directory, "git"), verifyGit, {mode: 0o755})
     writeFileSync(join(directory, "sleep"), verifySleep, {mode: 0o755})
@@ -383,10 +387,10 @@ function verify(prs, {branchHead = pushedSha} = {}) {
         PUBLISHED_HEAD: pushedSha,
         EXPECTED_HEAD: headSha,
         HEAD_BRANCH: "network-sandbox/example",
+        HOLD_PUBLISHED_HEAD: "",
       },
     })
-    const sleeps = readFileSync(join(directory, "sleeps"), "utf8").trim().split("\n").filter(Boolean).map(Number)
-    return {...result, sleeps}
+    return result
   } finally {
     rmSync(directory, {recursive: true, force: true})
   }
@@ -395,15 +399,11 @@ function verify(prs, {branchHead = pushedSha} = {}) {
 test("verification succeeds once the PR API reports the pushed bottle commit", () => {
   const result = verify([prAt(headSha), prAt(headSha), prAt(pushedSha)])
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.sleeps, [5, 10])
-  assert.doesNotMatch(result.stdout, /treating it as published/)
 })
 
-test("verification backs off for about ten minutes, then trusts an exact branch ref over a lagging PR API", () => {
+test("verification accepts a lagging API head only while the branch ref matches the bottle head", () => {
   const result = verify([prAt(headSha)])
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.ok(result.sleeps.reduce((a, b) => a + b) >= 500, `slept ${result.sleeps}`)
-  assert.match(result.stdout, /::warning::GitHub PR API still reports a{40}, but refs\/heads\/network-sandbox\/example is exactly the published bottle commit b{40}/)
 })
 
 for (const [name, prs, options] of [
@@ -818,3 +818,42 @@ for (const [name, response] of [
     assert.deepEqual(result.effects, ["pull"])
   })
 }
+
+const reviewHoldPr = {labels: [{name: "pr-pull"}, {name: "CI-hold-published-head"}]}
+
+test("opt-in review holds the pushed bottle head before recording publication success", () => {
+  const result = publish(reviewHoldPr)
+  assert.equal(result.status, 0, result.stderr + result.stdout)
+  assert.deepEqual(result.effects, ["pull", "upload", "push", "review-hold", "label", "status"])
+})
+
+test("a failed post-push review hold cannot advertise the bottle head as published", () => {
+  const result = publish(reviewHoldPr, {reviewHoldError: true})
+  assert.notEqual(result.status, 0, result.stderr + result.stdout)
+  assert.deepEqual(result.effects, ["pull", "upload", "push"])
+})
+
+test("the pre-push review requirement survives lagging labels after the push", () => {
+  const result = publish(reviewHoldPr, {afterPushLabels: [{name: "pr-pull"}]})
+  assert.equal(result.status, 0, result.stderr + result.stdout)
+  assert.deepEqual(result.effects, ["pull", "upload", "push", "review-hold", "label", "status"])
+})
+
+test("a recovered bottle head is held before its missing published status is restored", () => {
+  const result = publish(reviewHoldPr, {
+    commits: {[headSha]: bottleCommit(sourceSha), [sourceSha]: sourceCommit},
+    runs: [testedRun()],
+  })
+  assert.equal(result.status, 0, result.stderr + result.stdout)
+  assert.deepEqual(result.effects, ["review-hold", "status", "label"])
+})
+
+test("a failed recovery review hold cannot restore the published status or label", () => {
+  const result = publish(reviewHoldPr, {
+    commits: {[headSha]: bottleCommit(sourceSha), [sourceSha]: sourceCommit},
+    runs: [testedRun()],
+    reviewHoldError: true,
+  })
+  assert.notEqual(result.status, 0, result.stderr + result.stdout)
+  assert.deepEqual(result.effects, [])
+})

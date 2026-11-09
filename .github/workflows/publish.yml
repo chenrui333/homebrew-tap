@@ -339,6 +339,11 @@ jobs:
             exit 1
           fi
 
+          if jq -e 'any(.labels[]; .name == "CI-hold-published-head")' > /dev/null <<< "$pr_data"; then
+            gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label "in progress"
+            echo "Published bottle head held for final review."
+          fi
+
           if [[ -n "$LEGACY_MARKER_AUTHOR" ]]; then
             if [[ "$LEGACY_MARKER_AUTHOR" != "github-actions[bot]" && "$LEGACY_MARKER_AUTHOR" != "$GITHUB_REPOSITORY_OWNER" ]]; then
               echo "::error::Refusing an unrecognized published-bottle marker author: $LEGACY_MARKER_AUTHOR"
@@ -555,6 +560,9 @@ jobs:
             echo "::error::PR branch SHA1 $remote_git_head"
             exit 1
           fi
+          if jq -e 'any(.labels[]; .name == "CI-hold-published-head")' > /dev/null <<< "$pr_data"; then
+            echo "hold_published_head=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Push commits
         if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
@@ -574,6 +582,7 @@ jobs:
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
+          HOLD_PUBLISHED_HEAD: ${{ steps.push-admission.outputs.hold_published_head }}
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: |
           set -euo pipefail
@@ -641,6 +650,11 @@ jobs:
               exit 1
             fi
             echo "::warning::GitHub PR API still reports $current_head_sha, but refs/heads/$HEAD_BRANCH is exactly the published bottle commit $PUBLISHED_HEAD; treating it as published."
+          fi
+
+          if [[ "$HOLD_PUBLISHED_HEAD" == true ]]; then
+            gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label "in progress"
+            echo "Published bottle head held for final review."
           fi
 
       - name: Mark PR with published bottle commits
