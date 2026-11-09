@@ -10,7 +10,7 @@ class Mcptoon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "eed5a35001f36585fa5c5361e9f36a75e1bc66db2a545798eb288275c3835969"
+    sha256 cellar: :any_skip_relocation, all: "f8e9c11239a30c9f3e0f252d19e6cf8fcd1314edd570ca496471ad704bb1d066"
   end
 
   depends_on "python-setuptools" => :build
