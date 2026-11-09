@@ -8,15 +8,15 @@ class Gignr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc914213a77e3e3d2cc3e5e0499fdb982ebf8bda92558bdbd82e650ca89b0283"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc914213a77e3e3d2cc3e5e0499fdb982ebf8bda92558bdbd82e650ca89b0283"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc914213a77e3e3d2cc3e5e0499fdb982ebf8bda92558bdbd82e650ca89b0283"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "50bb7de3458c887e602e58b17d92f67e2d36d4fbac5b5d85162d3d0c234983a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "733b271f8ea3d3edf91b7903c71f3e47fbbf49d3f377ad5117c58eef746038be"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e0ac5d3eced7040299e649d0d4144e0a24108a21247be2cf6159fb109d884ace"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0ac5d3eced7040299e649d0d4144e0a24108a21247be2cf6159fb109d884ace"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "248ac3f003c3e8c59c1c250d1405e3e17a0b1a5b47f28d75b7f7b357945e3166"
+    sha256 cellar: :any,                 x86_64_linux:  "e9ee5835664ee6f239c7092bc4e57da3adfdbed93b392709af12b1dfec1f4b72"
   end
 
   depends_on "go" => :build
+  depends_on "git" => :test
 
   deny_network_access!
 
@@ -33,8 +33,16 @@ class Gignr < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gignr --version")
 
-    # failed due to github api rate limit
-    # assert_match "Created .gitignore file", shell_output("#{bin}/gignr create gh:Go tt:clion my-template")
-    # assert_match "Binaries for programs and plugins", (testpath/".gitignore").read
+    (testpath/".gitignore").write("build/\n*.log\n")
+    system bin/"gignr", "save", "homebrew-template"
+
+    system "git", "init", "--quiet", "project"
+    cd "project" do
+      system bin/"gignr", "create", "homebrew-template"
+      Pathname("build").mkpath
+      touch %w[trace.log README.md build/output.bin]
+      assert_equal "trace.log\nbuild/output.bin\n",
+                   shell_output("git check-ignore --no-index trace.log README.md build/output.bin")
+    end
   end
 end
