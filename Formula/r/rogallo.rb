@@ -10,11 +10,11 @@ class Rogallo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8350acf684483328e3c0ab9915d70c88ea43574a85b5196886685e6abca4fff8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56cfac748e88f8c168902804e62f57288269562c9ba940b1884f1c27f85174e1"
-    sha256 cellar: :any,                 arm64_linux:   "a2660f764a848d88323cc592f3b193d208634ee798b16673459f10bbb442b870"
-    sha256 cellar: :any,                 x86_64_linux:  "80160c4379120dbfd417842c62852e4ff61196ade1380e4ee5998a16c038ac5d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8e9111033d71894f81d793893524b51ccee3b9b7384c9bd6880865a51087e900"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c04565fd5837f10d279f3b80ee22126f5abfd763f5ba234f525e417fab2ae0a"
+    sha256 cellar: :any,                 arm64_linux:   "0a7c8113514a546f94fd57cb53613f955d14e302fcc26522f5aa9de178660ff6"
+    sha256 cellar: :any,                 x86_64_linux:  "814a7353475cf5f678a5eec72cc363fccd3577f924445a3ffd179286f3abe4df"
   end
 
   depends_on "maturin" => :build
@@ -299,7 +299,7 @@ class Rogallo < Formula
     ]
 
     # Core maturin exposes its pure-Python PEP 517 provider for each supported Python.
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
 
