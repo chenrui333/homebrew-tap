@@ -11,10 +11,10 @@ class GuardianRuntime < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "baf381e6d3659f444c1d00682263f9328a0c01b54b85e40767822f8d924b4fb0"
-    sha256 cellar: :any, arm64_sequoia: "1a848e76e8b993e9e62b050d94606cbdfccec5eca884dec07148b9186c47b795"
-    sha256 cellar: :any, arm64_linux:   "41a99f2b9a723566ff0d6ef537e1059b7a55641460d701e9f2dd3d9a4835f538"
-    sha256 cellar: :any, x86_64_linux:  "ee062d6b0a7fe3490239feb7ea3c8154cf5b62de722b848e75f321ba307ed05b"
+    sha256 cellar: :any, arm64_tahoe:   "1bc8f737fb8f1310bf693820ee068ca5ba8ffb10b8cb5a500f80d7565de74e9f"
+    sha256 cellar: :any, arm64_sequoia: "0635fe10d79e0086a6ee7f564693b955df102fb45a7c0c09b8c4f8153abb795e"
+    sha256 cellar: :any, arm64_linux:   "61bff12ba7c7cc66a4fc20654acf4ccd47a08e07a7ecb366679717b2d2df84a9"
+    sha256 cellar: :any, x86_64_linux:  "0afd102f943b2368e7e9d01810527efe49c8bd33508199080a5c770b70e24d6d"
   end
 
   depends_on "rust" => :build
