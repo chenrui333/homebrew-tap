@@ -164,5 +164,16 @@ class Graphtage < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/graphtage --version 2>&1")
+
+    (testpath/"before.json").write('{"answer": 1}')
+    (testpath/"equal.json").write("{\n  \"answer\": 1\n}\n")
+    (testpath/"after.json").write('{"answer": 2}')
+
+    command = "#{bin}/graphtage --no-color --no-status --condensed"
+    output = shell_output("#{command} before.json equal.json")
+    assert_equal({ "answer" => 1 }, JSON.parse(output))
+
+    output = shell_output("#{command} before.json after.json", 1)
+    assert_match(/"answer":\s*1\s*->\s*2/, output)
   end
 end
