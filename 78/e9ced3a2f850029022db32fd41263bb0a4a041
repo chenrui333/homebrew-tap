@@ -1,0 +1,25 @@
+Formula/s/sephera.rb
+  h_9df9c32c3f321d 9,26,28,168-171,173,182-184,188,193-201,203-237,239-244,246
+  s_9382644de0cee9::t_5d714659a0cd05 238,245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "78e9ced3a2f850029022db32fd41263bb0a4a041",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_9382644de0cee9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bfca-6382-76e0-b248-d33124c9ca81",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
