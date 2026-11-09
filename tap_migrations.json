@@ -67,7 +67,7 @@
   "gitlogue": "homebrew/core",
   "gitmux": "homebrew/core",
   "go-passbolt-cli": "homebrew/core",
-  "go-swag": "homebrew-core",
+  "go-swag": "homebrew/core/swag",
   "goclone": "homebrew/core",
   "gonzo": "homebrew/core",
   "goodls": "homebrew/core",
