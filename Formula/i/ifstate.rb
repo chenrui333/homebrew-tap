@@ -10,8 +10,9 @@ class Ifstate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "7816aadb278afcf3f3937211b4da11111f97d950564d444d15e2d10772abfcf3"
-    sha256 cellar: :any, x86_64_linux: "9b7c223b07eae8e0e9f1cbc324ba909ea03536665b7f4510ea6e344bd815761e"
+    rebuild 1
+    sha256 cellar: :any, arm64_linux:  "8ecbcc4210b5ea2d3bea5021788ad2aaf4e1182861e15989740848be0ad66caf"
+    sha256 cellar: :any, x86_64_linux: "3fffa5fb0a91ce933fc661ecc4e4532d4b6812b3ff3c71ee38383d04f87f4a6c"
   end
 
   depends_on "maturin" => :build # for uv-build
