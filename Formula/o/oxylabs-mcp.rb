@@ -6,13 +6,14 @@ class OxylabsMcp < Formula
   url "https://files.pythonhosted.org/packages/98/cc/9e9ce7aaefce1876f3848489a1e4f14e6b57e67d476bd592fdf4ab7a787b/oxylabs_mcp-0.10.2.tar.gz"
   sha256 "20643442aae50448f1e53d3c7dffdcc588ffc3d6185d90148dd1cbacee1ecf79"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "98ee486f06e832ca54662c45721f106a683e8ea57d659cf9d5e3861182309a16"
-    sha256 cellar: :any, arm64_sequoia: "158ade374c7f29976285618c9981a9e85ad7c5a617e1b7ef295c1bb578977da7"
-    sha256 cellar: :any, arm64_linux:   "7b65637f3ba38fbaf3d58ca279a841bd8af5768371e75a056f014ba046816882"
-    sha256 cellar: :any, x86_64_linux:  "4d9e5c0be63408ed9d5fb4aff1efd16d7c4c1e54839a02f68fb70895896f95e9"
+    sha256 cellar: :any, arm64_tahoe:   "f8d199fe127b2708eb8d724044c6ea01b9dff35d1fd425430aaa79a986bb52ef"
+    sha256 cellar: :any, arm64_sequoia: "490c52ed88e6198b46bb02d1fc6466d1ecd5f4804f080c55154841fec03da750"
+    sha256 cellar: :any, arm64_linux:   "cdf5b2521e502f5f8bd6b0baa6c2d5c80b6ff5fb1b1b3d3fdc20c14ab2061158"
+    sha256 cellar: :any, x86_64_linux:  "8a32baf57665c17b0fa5b3d59f11db59c4fe8bcd37deb8547a8be70f889d6488"
   end
 
   depends_on "maturin" => :build
@@ -28,13 +29,26 @@ class OxylabsMcp < Formula
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 
+  on_linux do
+    resource "jeepney" do
+      url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+      sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+    end
+
+    resource "secretstorage" do
+      url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+      sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+    end
+  end
+
   # FastMCP 4 requires MCP 2.x, but Oxylabs still imports MCP 1.x APIs (`mcp.server.fastmcp`).
   pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py],
                 extra_packages:   %w[
                   fastmcp==3.4.8
-                  calver coherent-licensed cython dunamai flit-core flit-scm hatch-fancy-pypi-readme hatch-vcs
-                  hatchling jinja2 markupsafe pathspec pdm-backend pdm-pep517 pluggy poetry-core setuptools
-                  setuptools-scm tomlkit trove-classifiers uv-build uv-dynamic-versioning vcs-versioning wheel
+                  calver coherent-licensed cython==3.2.9 dunamai flit-core==3.12.0 flit-scm
+                  hatch-fancy-pypi-readme hatch-vcs hatchling jinja2 markupsafe pathspec pdm-backend
+                  pdm-pep517 pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
+                  uv-build==0.11.33 uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "aiofile" do
@@ -98,8 +112,8 @@ class OxylabsMcp < Formula
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
-    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+    url "https://files.pythonhosted.org/packages/f6/de/db48b8870e766cfea809986cc50c1e986c663a9ab7bafd0ac1a2512c4a26/cython-3.2.9.tar.gz"
+    sha256 "d249c9022ab13286b17bd66f30609e800c5f95efeecb06168990c7a66cecde6c"
   end
 
   resource "dnspython" do
@@ -443,8 +457,8 @@ class OxylabsMcp < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/8f/98/8b9e028aa5d00f4c6f48183f3a2d9d343cd3adeb21bbd6dcc24916cd1538/uv_build-0.13.6.tar.gz"
-    sha256 "8a03355d73117d136dbf6a34e20429755598a73d752dc6ae3aa5894942b6fd4b"
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.11.33.tar.gz"
+    sha256 "81911281e0f2fe5307c0b85e884f47cb6ca867932fb61871d339854edf3b4dcc"
   end
 
   resource "uv-dynamic-versioning" do
@@ -477,6 +491,13 @@ class OxylabsMcp < Formula
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  # More-itertools requires Flit 4; legacy Flit consumers still require Flit 3.
+  resource "build-flit-core-4.2.0" do
+    self.name = "flit-core"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
+  end
+
   deny_network_access!
 
   def fetch
@@ -489,23 +510,22 @@ class OxylabsMcp < Formula
   def install
     build_resources = %w[
       flit-core
-      coherent-licensed
-      jinja2
       packaging
+      setuptools
+      vcs-versioning
+      setuptools-scm
+      coherent-licensed
+      markupsafe
+      jinja2
       pathspec
       pdm-backend
       pdm-pep517
       poetry-core
       dunamai
-      setuptools
       calver
       cython
-      markupsafe
       tomlkit
       trove-classifiers
-      uv-build
-      vcs-versioning
-      setuptools-scm
       flit-scm
       pluggy
       hatchling
@@ -513,19 +533,31 @@ class OxylabsMcp < Formula
       hatch-vcs
       uv-dynamic-versioning
       wheel
-    ]
+    ].map { |name| resource(name) }
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.15")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.15")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
     # Cython is only a build tool for pyyaml and lxml; skip compiling Cython itself.
     ENV["NO_CYTHON_COMPILE"] = "true"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("libyaml")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("libyaml")}"
 
     venv = virtualenv_create(libexec, "python3.15")
-    build_resources.each do |name|
-      venv.pip_install resource(name), build_isolation: false
+    venv.pip_install resource("build-flit-core-4.2.0"), build_isolation: false
+    venv.pip_install resource("more-itertools"), build_isolation: false
+    system formula_opt_bin("python@3.15")/"python3.15", "-m", "pip",
+           "--python", libexec/"bin/python", "uninstall", "-y", "flit-core"
+    build_resources.each { |r| venv.pip_install r, build_isolation: false }
+    # The PyPI uv-build sdist omits workspace crates; build its unchanged official subproject.
+    resource("uv-build").stage do
+      cd "crates/uv-build" do
+        venv.pip_install Pathname.pwd, build_isolation: false
+      end
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    installed = build_resources + %w[build-flit-core-4.2.0 more-itertools uv-build].map { |name| resource(name) }
+    venv.pip_install resources - installed, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
@@ -539,16 +571,44 @@ class OxylabsMcp < Formula
     )
     assert_equal version.to_s, version_output.strip
 
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import yaml
+      from lxml import etree
+      from lxml.html.clean import Cleaner
+
+      assert yaml.__with_libyaml__
+      assert yaml.load("value: 42", Loader=yaml.CSafeLoader) == {"value": 42}
+      document = etree.XML(b"<root><value>42</value></root>")
+      stylesheet = etree.XML(b"""
+        <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+          <xsl:template match="/"><result><xsl:value-of select="root/value"/></result></xsl:template>
+        </xsl:stylesheet>
+      """)
+      assert etree.XSLT(stylesheet)(document).getroot().text == "42"
+      assert "script" not in Cleaner().clean_html("<p>homebrew<script>bad()</script></p>")
+    PYTHON
+    system formula_opt_bin("python@3.15")/"python3.15", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
+
     # FIXME: Upstream does not expose a version command; replace the metadata check when available.
-    Open3.popen2(bin/"oxylabs-mcp") do |input, output, process|
+    server_env = {
+      "FASTMCP_CHECK_FOR_UPDATES" => "off",
+      "HOME"                      => testpath.to_s,
+      "MCP_TRANSPORT"             => "stdio",
+      "PATH"                      => "/usr/bin:/bin",
+      "PYTHON_DOTENV_DISABLED"    => "1",
+    }
+    Open3.popen2(server_env, bin/"oxylabs-mcp", unsetenv_others: true) do |input, output, process|
+      input.sync = true
       Timeout.timeout(60) do
-        read_response = lambda do
+        read_response = lambda do |id|
           loop do
             line = output.gets
             raise "oxylabs-mcp exited before responding" unless line
 
             begin
-              break JSON.parse(line)
+              response = JSON.parse(line)
+              break response if response["id"] == id
             rescue JSON::ParserError
               next
             end
@@ -557,17 +617,18 @@ class OxylabsMcp < Formula
         input.puts JSON.generate(jsonrpc: "2.0", id: 1, method: "initialize", params: {
           protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "Homebrew", version: "1.0" }
         })
-        assert_equal "oxylabs_mcp", read_response.call.dig("result", "serverInfo", "name")
+        assert_equal "oxylabs_mcp", read_response.call(1).dig("result", "serverInfo", "name")
         input.puts JSON.generate(jsonrpc: "2.0", method: "notifications/initialized", params: {})
         input.puts JSON.generate(jsonrpc: "2.0", id: 2, method: "tools/list", params: {})
-        tools = read_response.call.dig("result", "tools").map { |tool| tool["name"] }
-        assert_includes tools, "universal_scraper"
-        assert_includes tools, "generate_schema"
-        # The AI Studio key is checked before any request is sent.
-        input.puts JSON.generate(jsonrpc: "2.0", id: 3, method: "tools/call", params: {
-          name: "generate_schema", arguments: { user_prompt: "titles", app_name: "ai_scraper" }
-        })
-        assert_match "Oxylabs AI Studio API key is not provided", read_response.call.to_json
+        tools = read_response.call(2).dig("result", "tools")
+        expected_tools = %w[
+          ai_browser_agent ai_crawler ai_map ai_scraper ai_search amazon_product_scraper
+          amazon_search_scraper generate_schema google_search_scraper universal_scraper
+        ]
+        assert_equal expected_tools.sort, tools.map { |tool| tool.fetch("name") }.sort
+        assert tools.all? { |tool| tool.dig("inputSchema", "type") == "object" }
+        input.puts JSON.generate(jsonrpc: "2.0", id: 3, method: "ping", params: {})
+        assert_equal({}, read_response.call(3).fetch("result"))
       end
     ensure
       input.close unless input.closed?
