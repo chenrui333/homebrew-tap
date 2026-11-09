@@ -1,0 +1,14 @@
+Formula/m/mcp-alchemy.rb
+  h_9df9c32c3f321d 9,28-30,58-63,69,71-72,304,320-358,371-382,404-409,414
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "17c8a492ed65dfe835d4dc35d4dbff7d88ce8493",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
