@@ -78,6 +78,13 @@ jobs:
             exit 0
           fi
 
+          if grep -Fxq 'in progress' <<< "$labels"; then
+            echo "PR is intentionally held; skipping publication and reconciliation."
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "held=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           if grep -Fxq 'CI-no-bottles' <<< "$labels"; then
             echo "CI-no-bottles is set; skipping bottle publication."
             echo "publish=false" >> "$GITHUB_OUTPUT"
@@ -85,8 +92,8 @@ jobs:
             exit 0
           fi
 
-          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]] && ! grep -Fxq 'pr-pull' <<< "$labels"; then
-            echo "Refusing manual dispatch because the PR does not have the pr-pull label."
+          if ! grep -Fxq 'pr-pull' <<< "$labels"; then
+            echo "Refusing publication because the PR does not have the pr-pull label."
             exit 1
           fi
 
@@ -163,11 +170,145 @@ jobs:
               echo "recovered_bottle_commit=$recovered_bottle_commit"
             } >> "$GITHUB_OUTPUT"
           else
-            echo "publish=true" >> "$GITHUB_OUTPUT"
+            # Homebrew uses the newest tests.yml check suite, regardless of its conclusion/event.
+            # Never let an older PR success hide a newer failure, rerun, or non-PR artifact source.
+            # gh pagination alone is insufficient if an API response silently omits a page or collection.
+            delays=(5 10 20 30 60 60 60 60 60 60 60 60)
+            for (( attempt = 0; attempt <= ${#delays[@]}; attempt++ )); do
+              runs="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/workflows/tests.yml/runs?head_sha=$expected_head&per_page=100")"
+              run="$(jq -ce --arg sha "$expected_head" --arg repo "$GITHUB_REPOSITORY" --arg branch "$head_branch" '
+                if length == 0 or
+                   any(.[]; (.total_count | type) != "number" or (.workflow_runs | type) != "array")
+                then error("Incomplete workflow run response") else . end |
+                .[0].total_count as $total |
+                if any(.[]; .total_count != $total) then error("Inconsistent workflow run count") else . end |
+                [.[].workflow_runs[]] |
+                if length != $total or (map(.id) | unique | length) != $total
+                then error("Incomplete workflow run pagination") else . end |
+                if all(.[]; (.id | type == "number" and . > 0 and . == floor) and
+                  (.run_attempt | type == "number" and . > 0 and . == floor) and
+                  (.created_at | fromdateiso8601) > 0 and (.status | type) == "string" and
+                  (.head_sha | type) == "string" and (.head_branch | type) == "string" and
+                  (.head_repository.full_name | type) == "string" and (.repository.full_name | type) == "string" and
+                  (.event | type) == "string" and (.path | type) == "string")
+                then . else error("Unverifiable workflow run metadata") end |
+                sort_by(.created_at, .id) | last |
+                select(.head_sha == $sha and .head_repository.full_name == $repo and
+                  .repository.full_name == $repo and .head_branch == $branch and
+                  .event == "pull_request" and .path == ".github/workflows/tests.yml") //
+                error("Newest tests run does not match the source PR")
+              ' <<< "$runs")"
+              run_id="$(jq -er '.id | select(type == "number" and . > 0 and . == floor)' <<< "$run")"
+              run="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id")"
+              jq -e --argjson id "$run_id" --arg sha "$expected_head" --arg repo "$GITHUB_REPOSITORY" --arg branch "$head_branch" '
+                .id == $id and .head_sha == $sha and .head_repository.full_name == $repo and
+                .repository.full_name == $repo and .head_branch == $branch and
+                .event == "pull_request" and .path == ".github/workflows/tests.yml" and
+                (.run_attempt | type == "number" and . > 0 and . == floor) and
+                (.workflow_id | type == "number" and . > 0 and . == floor)
+              ' > /dev/null <<< "$run"
+              run_attempt="$(jq -r '.run_attempt' <<< "$run")"
+
+              # label-pr adds pr-pull before its job/workflow can report terminal success. Wait only
+              # for that reporting tail, never an unfinished matrix behind a stale admission label.
+              if jq -e '.status == "completed" and .conclusion == "success"' > /dev/null <<< "$run"; then
+                break
+              fi
+              jq -e '.status == "in_progress" and .conclusion == null' > /dev/null <<< "$run"
+              jobs="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs?filter=all&per_page=100")"
+              jq -e --argjson run "$run_id" --argjson attempt "$run_attempt" '
+                length > 0 and
+                all(.[]; (.total_count | type) == "number" and (.jobs | type) == "array") and
+                (.[0].total_count as $total | all(.[]; .total_count == $total) and
+                  ([.[].jobs[]] | length == $total and (map(.id) | unique | length) == $total)) and
+                ([.[].jobs[]] |
+                  all(.[]; .run_id == $run and
+                    (.run_attempt | type == "number" and . > 0 and . == floor and . <= $attempt) and
+                    (.id | type == "number" and . > 0 and . == floor) and (.name | type) == "string") and
+                  (group_by(.name) | map(max_by([.run_attempt, .id])) |
+                    all(.[]; (.status == "completed" and (.conclusion == "success" or .conclusion == "skipped")) or
+                      ((.name == "label-pr" or .name == "formula-conclusion") and .run_attempt == $attempt and
+                        (.status == "in_progress" or .status == "queued") and .conclusion == null)) and
+                    any(.[]; .name == "label-pr" and .run_attempt == $attempt and
+                      (.status == "in_progress" or .status == "queued" or (.status == "completed" and .conclusion == "success"))) and
+                    any(.[]; (.name | startswith("build-formula (")) and .conclusion == "success")))
+              ' > /dev/null <<< "$jobs"
+              if (( attempt == ${#delays[@]} )); then
+                echo "::error::Timed out waiting for label-pr to finish on the source head."
+                exit 1
+              fi
+              sleep "${delays[attempt]}"
+              pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
+              if jq -e 'any(.labels[]; .name == "in progress")' > /dev/null <<< "$pr_data"; then
+                echo "PR was held while waiting for source CI; skipping."
+                echo "publish=false" >> "$GITHUB_OUTPUT"
+                echo "held=true" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              jq -e --arg sha "$expected_head" --arg repo "$GITHUB_REPOSITORY" --arg branch "$head_branch" '
+                .state == "open" and .draft == false and .base.ref == "main" and
+                .head.sha == $sha and .head.repo.full_name == $repo and .head.ref == $branch and
+                any(.labels[]; .name == "pr-pull")
+              ' > /dev/null <<< "$pr_data"
+            done
+
+            artifacts="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100")"
+            # Artifacts are run-scoped, not attempt-scoped. Homebrew selects the newest artifact of
+            # each name, including retained successful platforms from a failed-jobs-only rerun.
+            artifacts="$(jq -ce --argjson run "$run_id" --arg sha "$expected_head" --arg branch "$head_branch" '
+              if length == 0 or
+                 any(.[]; (.total_count | type) != "number" or (.artifacts | type) != "array")
+              then error("Incomplete artifact response") else . end |
+              .[0].total_count as $total |
+              if any(.[]; .total_count != $total) then error("Inconsistent artifact count") else . end |
+              [.[].artifacts[]] |
+              if length != $total or (map(.id) | unique | length) != $total
+              then error("Incomplete artifact pagination") else . end |
+              if all(.[]; (.id | type) == "number" and (.name | type) == "string" and
+                (.created_at | fromdateiso8601) > 0 and (.expired | type) == "boolean" and
+                (.size_in_bytes | type) == "number" and .size_in_bytes > 0 and
+                .workflow_run.id == $run and .workflow_run.head_sha == $sha and .workflow_run.head_branch == $branch)
+              then . else error("Unverifiable artifact metadata") end |
+              group_by(.name) | map(
+                sort_by(.created_at) | .[-1].created_at as $newest |
+                map(select(.created_at == $newest)) |
+                if length == 1 then .[0] else error("Ambiguous newest artifact") end) |
+              if any(.[]; (.name == "bottles" or (.name | startswith("bottles_")))) and
+                all(.[] | select(.name == "bottles" or (.name | startswith("bottles_")));
+                  .expired == false and (.expires_at | fromdateiso8601) > now)
+              then . else error("Missing or expired bottle artifacts") end
+            ' <<< "$artifacts")"
+
+            # A later clean rebuild of the SAME platform supersedes its old failure artifact.
+            # Comparing artifact times alone is unsafe: post-build uploads failures before bottles
+            # in the same attempt. Require an actual attempt boundary between the two uploads.
+            attempt_starts='[]'
+            if jq -e 'any(.[]; .name | startswith("failed-bottles"))' > /dev/null <<< "$artifacts"; then
+              for (( previous_attempt = 2; previous_attempt <= run_attempt; previous_attempt++ )); do
+                attempt_data="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/attempts/$previous_attempt")"
+                started="$(jq -er --argjson run "$run_id" --argjson attempt "$previous_attempt" --arg sha "$expected_head" '
+                  select(.id == $run and .run_attempt == $attempt and .head_sha == $sha) |
+                  .run_started_at | fromdateiso8601
+                ' <<< "$attempt_data")"
+                attempt_starts="$(jq -c --argjson started "$started" '. + [$started]' <<< "$attempt_starts")"
+              done
+            fi
+            jq -e --argjson starts "$attempt_starts" '
+              . as $artifacts |
+              all(.[] | select(.name | startswith("failed-bottles")); . as $failure |
+                ($artifacts | map(select(.name == ($failure.name | sub("^failed-"; "")))) | first) as $bottle |
+                $bottle != null and any($starts[];
+                  . > ($failure.created_at | fromdateiso8601) and . <= ($bottle.created_at | fromdateiso8601)))
+            ' > /dev/null <<< "$artifacts"
+            {
+              echo "qualified_run_id=$run_id"
+              echo "qualified_run_attempt=$run_attempt"
+              echo "publish=true"
+            } >> "$GITHUB_OUTPUT"
           fi
 
       - name: Reconcile published bottle label
-        if: steps.pr-details.outputs.publish == 'false' && steps.pr-details.outputs.no_bottles != 'true' && steps.pr-details.outputs.merged != 'true'
+        if: steps.pr-details.outputs.publish == 'false' && steps.pr-details.outputs.no_bottles != 'true' && steps.pr-details.outputs.merged != 'true' && steps.pr-details.outputs.held != 'true'
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           BOT_TOKEN: ${{ github.token }}
@@ -178,6 +319,10 @@ jobs:
         run: |
           set -euo pipefail
           pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
+          if jq -e 'any(.labels[]; .name == "in progress")' > /dev/null <<< "$pr_data"; then
+            echo "PR is intentionally held; skipping reconciliation."
+            exit 0
+          fi
           current_head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
           current_head_branch="$(jq -r '.head.ref // empty' <<< "$pr_data")"
           current_head_sha="$(jq -r '.head.sha // empty' <<< "$pr_data")"
@@ -286,11 +431,84 @@ jobs:
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
+          HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
+          QUALIFIED_RUN_ID: ${{ steps.pr-details.outputs.qualified_run_id }}
+          QUALIFIED_RUN_ATTEMPT: ${{ steps.pr-details.outputs.qualified_run_attempt }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           # Manual re-dispatches repair a publish whose upload succeeded but whose bottle commit was
           # never pushed; the same CI artifacts are re-uploaded, so an existing tag is not an error.
           REPAIR_UPLOAD: ${{ github.event_name == 'workflow_dispatch' && '--warn-on-upload-failure' || '' }}
         run: |
           set -euo pipefail
+          pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
+          if jq -e 'any(.labels[]; .name == "in progress")' > /dev/null <<< "$pr_data"; then
+            echo "PR was held before upload; skipping."
+            echo "held=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          jq -e --arg sha "$EXPECTED_HEAD" --arg repo "$GITHUB_REPOSITORY" --arg branch "$HEAD_BRANCH" '
+            .state == "open" and .draft == false and .base.ref == "main" and
+            .head.sha == $sha and .head.repo.full_name == $repo and .head.ref == $branch and
+            any(.labels[]; .name == "pr-pull")
+          ' > /dev/null <<< "$pr_data"
+          remote_git_head="$(git -C "$REPO_PATH" ls-remote origin "refs/heads/$HEAD_BRANCH" | cut -f1)"
+          [[ "$remote_git_head" == "$EXPECTED_HEAD" ]]
+          # The source may have been rerun while pr-pull downloaded/prepared its artifacts. Do not
+          # upload against a different newest run/attempt, even if the earlier admission was green.
+          runs="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/workflows/tests.yml/runs?head_sha=$EXPECTED_HEAD&per_page=100")"
+          jq -e --argjson id "$QUALIFIED_RUN_ID" --argjson attempt "$QUALIFIED_RUN_ATTEMPT" \
+            --arg sha "$EXPECTED_HEAD" --arg repo "$GITHUB_REPOSITORY" --arg branch "$HEAD_BRANCH" '
+            length > 0 and all(.[]; (.total_count | type) == "number" and (.workflow_runs | type) == "array") and
+            (.[0].total_count as $total | all(.[]; .total_count == $total) and
+              ([.[].workflow_runs[]] | length == $total and (map(.id) | unique | length) == $total)) and
+            ([.[].workflow_runs[]] |
+              all(.[]; (.id | type == "number" and . > 0 and . == floor) and
+                (.created_at | fromdateiso8601) > 0) and
+              (sort_by(.created_at, .id) | last |
+                .head_sha == $sha and .head_repository.full_name == $repo and
+                .repository.full_name == $repo and .head_branch == $branch and
+                .event == "pull_request" and .path == ".github/workflows/tests.yml" and
+                .id == $id and .run_attempt == $attempt and .status == "completed" and .conclusion == "success"))
+          ' > /dev/null <<< "$runs"
+          run="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$QUALIFIED_RUN_ID")"
+          jq -e --argjson id "$QUALIFIED_RUN_ID" --argjson attempt "$QUALIFIED_RUN_ATTEMPT" \
+            --arg sha "$EXPECTED_HEAD" --arg repo "$GITHUB_REPOSITORY" --arg branch "$HEAD_BRANCH" '
+            .id == $id and .run_attempt == $attempt and .head_sha == $sha and
+            .head_repository.full_name == $repo and .repository.full_name == $repo and
+            .head_branch == $branch and .event == "pull_request" and .path == ".github/workflows/tests.yml" and
+            .status == "completed" and .conclusion == "success" and
+            (.workflow_id | type == "number" and . > 0 and . == floor)
+          ' > /dev/null <<< "$run"
+          workflow_id="$(jq -r '.workflow_id' <<< "$run")"
+          # pr-pull currently selects the last matching suite among checkSuites(first: 100), not a
+          # caller-supplied run ID. Verify its actual selector agrees, and refuse truncated suites.
+          consumer="$(gh api graphql -f owner="$GITHUB_REPOSITORY_OWNER" -f name="${GITHUB_REPOSITORY#*/}" -F pr="$PR" -f query="$(cat <<'GRAPHQL'
+            query($owner: String!, $name: String!, $pr: Int!) {
+              repository(owner: $owner, name: $name) {
+                pullRequest(number: $pr) {
+                  commits(last: 1) { nodes { commit {
+                    oid
+                    checkSuites(first: 100) {
+                      totalCount
+                      pageInfo { hasNextPage }
+                      nodes { status workflowRun { databaseId workflow { databaseId } } }
+                    }
+                  } } }
+                }
+              }
+            }
+          GRAPHQL
+          )")"
+          jq -e --arg sha "$EXPECTED_HEAD" --argjson id "$QUALIFIED_RUN_ID" --argjson workflow "$workflow_id" '
+            ((.errors // []) | length) == 0 and
+            (.data.repository.pullRequest.commits.nodes |
+              length == 1 and
+              (.[0].commit | .oid == $sha and
+                (.checkSuites | .pageInfo.hasNextPage == false and
+                  (.nodes | type) == "array" and .totalCount == (.nodes | length) and
+                  ([.nodes[] | select(.workflowRun.workflow.databaseId == $workflow)] | last |
+                    .status == "COMPLETED" and .workflowRun.databaseId == $id))))
+          ' > /dev/null <<< "$consumer"
           git -C "$REPO_PATH" fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
           # shellcheck disable=SC2086 # REPAIR_UPLOAD is empty or a single flag
           brew pr-upload \
@@ -306,7 +524,8 @@ jobs:
           echo "published_head_sha=$published_head_sha" >> "$GITHUB_OUTPUT"
 
       - name: Verify PR branch unchanged before push
-        if: steps.pr-details.outputs.publish == 'true'
+        id: push-admission
+        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true'
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
@@ -315,6 +534,13 @@ jobs:
         run: |
           set -euo pipefail
           pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
+          if jq -e 'any(.labels[]; .name == "in progress")' > /dev/null <<< "$pr_data"; then
+            echo "PR was held before push; skipping."
+            echo "held=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          jq -e '.state == "open" and .draft == false and .base.ref == "main" and
+            any(.labels[]; .name == "pr-pull")' > /dev/null <<< "$pr_data"
           current_head_repo="$(jq -r '.head.repo.full_name // empty' <<< "$pr_data")"
           current_head_branch="$(jq -r '.head.ref // empty' <<< "$pr_data")"
           current_head_sha="$(jq -r '.head.sha // empty' <<< "$pr_data")"
@@ -331,7 +557,7 @@ jobs:
           fi
 
       - name: Push commits
-        if: steps.pr-details.outputs.publish == 'true'
+        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
         uses: Homebrew/actions/git-try-push@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
@@ -342,7 +568,7 @@ jobs:
           tries: 1
 
       - name: Verify pushed bottle commit
-        if: steps.pr-details.outputs.publish == 'true'
+        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
@@ -418,13 +644,13 @@ jobs:
           fi
 
       - name: Mark PR with published bottle commits
-        if: steps.pr-details.outputs.publish == 'true'
+        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: gh pr edit --add-label CI-published-bottle-commits "$PR" --repo "$GITHUB_REPOSITORY"
 
       - name: Record published bottle head
-        if: steps.pr-details.outputs.publish == 'true'
+        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}

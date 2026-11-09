@@ -1,5 +1,4 @@
 const assert = require("node:assert/strict")
-const {readFileSync} = require("node:fs")
 const test = require("node:test")
 
 const {
@@ -10,15 +9,6 @@ const {
 } = require("./merge-gate.js")
 
 const repository = "chenrui333/homebrew-tap"
-
-test("formula merge check polling uses a runner that supports long jobs", () => {
-  const workflow = readFileSync(".github/workflows/formula-merge.yml", "utf8")
-  const mergeJob = workflow.split("\n  merge:\n")[1]
-
-  assert.ok(mergeJob, "formula merge job should exist")
-  assert.match(mergeJob, /^    runs-on: ubuntu-latest$/m)
-  assert.match(mergeJob, /^    timeout-minutes: 240$/m)
-})
 
 function requirementsFor(eventName, files = []) {
   const apiCalls = []

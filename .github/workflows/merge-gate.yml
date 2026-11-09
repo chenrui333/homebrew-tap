@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/**
+      - .github/actionlint.yaml
       - cmd/brew-close-superseded-prs
       - .github/scripts/**
   merge_group:
