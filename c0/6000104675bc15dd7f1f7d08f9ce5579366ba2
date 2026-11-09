@@ -1,0 +1,25 @@
+Formula/d/dhv.rb
+  h_9df9c32c3f321d 271-272,279-280,289-291,297-345
+  s_d8c741425f9491::t_c84d4787f89cd3 246
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c06000104675bc15dd7f1f7d08f9ce5579366ba2",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_d8c741425f9491": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c229-b3bc-7d82-a044-81aa7d70bda2",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
