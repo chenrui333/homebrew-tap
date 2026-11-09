@@ -1,17 +1,17 @@
 class Sbomlyze < Formula
   desc "SBOM diff and analysis tool for software supply-chain security"
   homepage "https://rezmoss.github.io/sbomlyze/"
-  url "https://github.com/rezmoss/sbomlyze/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "b262d01e3c2718d6964c66675725cd037b9e9b401fff855e4535813ac56a90b6"
+  url "https://github.com/rezmoss/sbomlyze/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "9240584818227b2fcda2d4443214395fb918d9dd8663d0c174757053ac8f90bd"
   license "Apache-2.0"
   head "https://github.com/rezmoss/sbomlyze.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce3e1217ea10167d6a4d4c6c5c3f9cbdfe8cbbbd328ddf0667574988c0a0a487"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce3e1217ea10167d6a4d4c6c5c3f9cbdfe8cbbbd328ddf0667574988c0a0a487"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "691b211cb19c0e39912c38611e1501cc1fc777d9596cd07bf090283d86e79a68"
-    sha256 cellar: :any,                 x86_64_linux:  "0ef56bc2236f4dc74b02f3115633c4d39bea94bea237a26755b74bcb4832fd7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6bfa7dbb1a97d3796761f4cec6b506d897061db16f7841032a8b5c55bbdd7c88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bfa7dbb1a97d3796761f4cec6b506d897061db16f7841032a8b5c55bbdd7c88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ae4c832031e8b716b7729fc1c50bc7505dd90c5fde98a286209114326d309ad"
+    sha256 cellar: :any,                 x86_64_linux:  "e166c355f8c943ebfed00e8f2a10a9a3fb1ed70359e9aaad413875e29764a25e"
   end
 
   depends_on "go" => :build
