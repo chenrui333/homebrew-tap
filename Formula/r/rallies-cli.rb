@@ -9,11 +9,11 @@ class RalliesCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any, arm64_tahoe:   "0472a5ef626408ee490efbf787060665421feda3b6cda272085cb97a180cca0e"
-    sha256 cellar: :any, arm64_sequoia: "946a47604c3e5aa9d8350f54397d6407aeeb467f40a78ce5def1e03a6675b21b"
-    sha256 cellar: :any, arm64_linux:   "8705bd2d090f13ed85cbc4a1a32b71b8d89cb4b38c064d1aee0b38a06611da6b"
-    sha256 cellar: :any, x86_64_linux:  "a8ce358da063cd11c83b652688553f19222eecbcb1c99d6e599b6ae3825b0542"
+    rebuild 4
+    sha256 cellar: :any, arm64_tahoe:   "83f7f8e80cd2b6990d4a4b9f5b1742131925e2002b770d3e1e5cc162c41829d4"
+    sha256 cellar: :any, arm64_sequoia: "dad60483c8dfe7b91bc88ead782c08d94e26be01a07fc7dd16d03fcc652a56ec"
+    sha256 cellar: :any, arm64_linux:   "931eebd8821067575b795c0d15cac43be2ce28c5b1c0f62614131d8c07e36701"
+    sha256 cellar: :any, x86_64_linux:  "b2a4decd927f6da77aebe5a6472f6d567018b953987fcce09c7bb923c2ecadc3"
   end
 
   depends_on "maturin" => :build
