@@ -10,11 +10,10 @@ class Molotov < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb97dd6671784b67338a23176bc929180c2cac24a6a7d2c962343afac7240013"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29b7a4d045d036bc7fae2ee64260cfdf5fc8f0ba8261907d444daf6d662a9d13"
-    sha256 cellar: :any,                 arm64_linux:   "d427ef9be33b965dc222ce9a50eee51c0bd45678dcb192bb21bc53d377e012e4"
-    sha256 cellar: :any,                 x86_64_linux:  "c153c7c474fe5fbd21f150f4c8589519b4eac8667b78848c0dabdbd91867d07e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "63a496edf955499c6874f653510702948fccbf4ca25fc511033a358c04c003cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "481828ea8663f43e7660e3bcec599a91821cee22b56e22e8e08c43d382ddc89d"
+    sha256 cellar: :any,                 arm64_linux:   "8e6dd1507a9bfd751e9a890b7586436a9b5fcc63b50fa77ead1e947551b71a1b"
+    sha256 cellar: :any,                 x86_64_linux:  "f6cb6ecc0e302e14e38619b5864cf2868fcd30e30f9b84b2c0bae5ceb7a842c2"
   end
 
   depends_on "python@3.14"
