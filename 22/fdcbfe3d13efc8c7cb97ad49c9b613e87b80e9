@@ -1,0 +1,19 @@
+.github/scripts/cask-change-policy.js
+  s_8f09d49cae7a2f::t_600a913212bede 1-187
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "22fdcbfe3d13efc8c7cb97ad49c9b613e87b80e9",
+  "prompts": {},
+  "sessions": {
+    "s_8f09d49cae7a2f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1be1d-758d-7011-907f-883780d94556",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
