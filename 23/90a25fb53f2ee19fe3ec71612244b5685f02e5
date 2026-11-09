@@ -1,0 +1,14 @@
+Formula/p/pubmed-mcp-server.rb
+  h_9df9c32c3f321d 9,53-55,60-67,548-555,686-687,691,702,704,709-710,713-714,716,718-722,724,730-732,739-768
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2390a25fb53f2ee19fe3ec71612244b5685f02e5",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
