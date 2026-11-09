@@ -1,8 +1,9 @@
 class Aven < Formula
   desc "Local-first task manager for power users and agents"
   homepage "https://github.com/raine/aven"
-  url "https://github.com/raine/aven/archive/refs/tags/v0.1.55.tar.gz"
-  sha256 "6c72428818a0032e16ca9c85a2645130c4581028b958d1454e541d873edc805c"
+  url "https://github.com/raine/aven/archive/refs/tags/v0.1.55-signtest.3.tar.gz"
+  version "0.1.55-signtest.3"
+  sha256 "129b58e68453cfa2786e3b136517826ea0605059f8839682c339e1bf931a2039"
   license "MIT"
   head "https://github.com/raine/aven.git", branch: "main"
 
