@@ -1,0 +1,15 @@
+Formula/l/llmswap.rb
+  h_9df9c32c3f321d 36-38,91-96,384,387,419-476
+  h_9df9c32c3f321d 360-361
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d6e3e4f645b927cced608f6ce538423af06cafc5",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
