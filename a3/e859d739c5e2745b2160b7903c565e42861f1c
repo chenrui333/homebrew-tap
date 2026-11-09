@@ -1,0 +1,19 @@
+Formula/r/raiz.rb
+  s_d0c0e05d21f456::t_c5df1933bc84b9 25-26,44-48,209,223-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a3e859d739c5e2745b2160b7903c565e42861f1c",
+  "prompts": {},
+  "sessions": {
+    "s_d0c0e05d21f456": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf15-7b49-7a00-8fe7-13dfadbbf47b",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
