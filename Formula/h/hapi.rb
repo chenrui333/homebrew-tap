@@ -8,10 +8,10 @@ class Hapi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "3071489660565a07d3f7692cd41a9d4ce356ace8f3437fe1c06fc6ab88d36efd"
-    sha256 arm64_sequoia: "98a15d7566243bc3b9fdd64a6dc0d6212554df0a2284f4c7fa468f0f75099838"
-    sha256 arm64_linux:   "ca5fab9acfb36650eb46af29a5cd65b23f21128c25bb22c3b2898d448f982e51"
-    sha256 x86_64_linux:  "b2fd6d8cbf7a52b321045827ff8a64ec16991bec21a041c6c7ff443b07128701"
+    sha256 arm64_tahoe:   "f7aa0d0c96ab85ffdb9bcb9bcc2c5d1c1abb30f4fdce89af794ee88921260447"
+    sha256 arm64_sequoia: "11c9d24be1accc26291433a26cb3fe60dc1be4121055b1683eef4400705a1931"
+    sha256 arm64_linux:   "4b3426838e13fc1bf62fab5fdd0a542d33d9278967f8181c5a261161e3106248"
+    sha256 x86_64_linux:  "021a343b35827ff35d0c5ba89be84cac421a432a3f2e4d39d84b5d69efd68dd3"
   end
 
   depends_on "bun" => :build
