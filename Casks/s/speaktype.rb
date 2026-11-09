@@ -1,8 +1,8 @@
 cask "speaktype" do
-  version "1.3.0"
-  sha256 "2aa7ec1a7e67631825e5bc045b875f49e28fb408de8b301cfbeadb3528891c2d"
+  version "2.0.0"
+  sha256 "34041fd61259669baae691255fdf1cb07ff3bf3d3ca5fec5a770ab705ca275f0"
 
-  url "https://github.com/karansinghgit/speaktype/releases/download/v#{version}/SpeakType-#{version}.dmg"
+  url "https://github.com/karansinghgit/speaktype/releases/download/v#{version}/SpeakType_#{version}_universal.dmg"
   name "SpeakType"
   desc "Open-source offline voice dictation app"
   homepage "https://tryspeaktype.com/"
@@ -12,9 +12,9 @@ cask "speaktype" do
     strategy :github_latest
   end
 
-  depends_on macos: :sonoma
+  depends_on macos: :ventura
 
-  app "speaktype.app"
+  app "SpeakType.app"
 
   zap trash: "~/Library/Preferences/com.2048labs.speaktype.plist"
 end
