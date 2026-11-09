@@ -9,20 +9,24 @@ class Vsg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a7269d335e67e49993766211b97876dd8acaf1f8305f8757292ca8adc44c64a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69eb8aef8c7de5daef34bd0d5fb9d22969afceea10e4b9fda7879075d9980874"
-    sha256 cellar: :any,                 arm64_linux:   "d1063b3ffdfc50c66dadacf5f4565c0a5154a2651cd4e922b365decd1def7b3f"
-    sha256 cellar: :any,                 x86_64_linux:  "1dc7b78aaa4ad1d178fe03dcf10b35bdf1650325d5044a9469b7afb975bff21a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c882901136902366c3be3399ba207a9b7f5f88683c83f9baea6f614df1fe59d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10b272248ce2de5ebc6e2b51de2c32659e6695fdbd5dbd6ebdc7a9ecdccb552f"
+    sha256 cellar: :any,                 arm64_linux:   "3b1e8d140766fd399097d94e603afe02b852112510b66ce05e0bbd6fa94a38c8"
+    sha256 cellar: :any,                 x86_64_linux:  "e35c796bc255450ed67cb57a1f28e0918183f3dc437f5812d1e252807a701e1c"
   end
 
-  depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
-    flit-core packaging setuptools setuptools-git-versioning wheel
+    cython flit-core packaging setuptools setuptools-git-versioning wheel
   ]
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
 
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
@@ -64,15 +68,15 @@ class Vsg < Formula
     # fix version
     inreplace "pyproject.toml", "3.30.0", version.to_s
 
+    # Build PyYAML's native extension with a backend for the application's Python.
     build_resources = %w[
       flit-core
       packaging
       setuptools
       wheel
       setuptools-git-versioning
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -85,18 +89,21 @@ class Vsg < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/vsg --version")
 
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import yaml
+      import yaml._yaml
+      assert yaml.__with_libyaml__
+      data = {"ports": ["clock", "reset"], "width": 8}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+    PYTHON
+
     (testpath/"test.vhdl").write <<~VHDL
-      entity test is
-      end entity test;
+      ENTITY   test IS
+      END ENTITY test;
     VHDL
 
-    assert_match <<~EOS, shell_output("#{bin}/vsg test.vhdl")
-      Phase 7 of 7... Reporting
-      Total Rules Checked: 889
-      Total Violations:    0
-        Error   :     0
-        Warning :     0
-    EOS
+    shell_output("#{bin}/vsg -p 1 test.vhdl", 1)
+    system bin/"vsg", "-p", "1", "--fix", "test.vhdl"
 
     expected_content = <<~VHDL
       entity test is
@@ -104,6 +111,7 @@ class Vsg < Formula
     VHDL
 
     assert_equal expected_content, (testpath/"test.vhdl").read
+    system bin/"vsg", "-p", "1", "test.vhdl"
   end
 end
 
