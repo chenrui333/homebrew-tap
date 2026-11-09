@@ -1,0 +1,18 @@
+.github/scripts/rebottle-pr.js
+  h_9df9c32c3f321d 1-167
+.github/scripts/rebottle-pr.test.js
+  h_9df9c32c3f321d 1-163
+.github/workflows/rebottle.yml
+  h_9df9c32c3f321d 3,9,11,13-15,18-19,28-31,36-37,39-40,42-44,46-53,55,57-70,72-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "63f32526f7bd0ec1128f33c30b15429fbcda8406",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
