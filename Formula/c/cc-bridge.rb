@@ -32,6 +32,18 @@ class CcBridge < Formula
   end
 
   test do
-    assert_match "cc-bridge", shell_output("#{bin}/cc-bridge --help")
+    ENV["CC_BRIDGE_HOME"] = testpath/"bridge"
+    assert_match version.to_s, shell_output("#{bin}/cc-bridge --version")
+
+    id = shell_output("#{bin}/cc-bridge send 'homebrew round-trip' --room homebrew --from brew-test").strip
+    room_file = testpath/"bridge/rooms/homebrew.jsonl"
+    messages = room_file.readlines.map { |line| JSON.parse(line) }
+    assert_equal 1, messages.length
+    assert_equal "homebrew", messages.first["room"]
+    assert_equal "brew-test", messages.first["from"]
+    assert_equal "homebrew round-trip", messages.first["msg"]
+    assert_match(/\A[0-9A-HJKMNP-TV-Z]{26}\z/, id)
+    assert_equal id, messages.first["id"]
+    assert_equal "OK: 1 valid lines\n", shell_output("#{bin}/cc-bridge validate #{room_file}")
   end
 end
