@@ -6,14 +6,14 @@ class Sephera < Formula
   url "https://files.pythonhosted.org/packages/d4/95/51e8c5e15216c6aecfaa7243567d9dece325150ea4fb406b8d1ff91a0872/sephera-2.3.2.tar.gz"
   sha256 "9b6c0839498bc34bbe32445d192c460621e317b56d0d8e74debf4cc1acdea67e"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a7d9f73086cb5eff3213a17983395876fb978f325504a8f7bd1a1227e992ec3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bfd33df3cb29310538107a9b0aa3680f59c27b82ed78e6d8264e85969239f28"
-    sha256 cellar: :any,                 arm64_linux:   "ba7e40f84ff29395b7de40ab4e2fe399d826edceef6699fe61bccd235b60f3ed"
-    sha256 cellar: :any,                 x86_64_linux:  "aacb52d156680eb49d871c66179d96c57510b13e6308d0dae9fb5ad143469fa4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b31f05f316f7f1e49243653a2d3d4eff377e04bfd9eaa943534a90ab68dcf1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f34b0db678bd2e40b6ba87e0cf6f53fc1810bd5a5e5b9232adbdf7ce4504b1eb"
+    sha256 cellar: :any,                 arm64_linux:   "1940f061b8e57ec2c381a1e970727eeb237825207b9063d3a131e3354a5f65d4"
+    sha256 cellar: :any,                 x86_64_linux:  "d10ca30f9c539a3d7ff5f484f183796570da4b56ef3e7503cfb7613b86dffdd7"
   end
 
   depends_on "cython" => :build
@@ -22,9 +22,9 @@ class Sephera < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python-matplotlib"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
-  pypi_packages exclude_packages: %w[certifi matplotlib numpy pillow],
+  pypi_packages exclude_packages: %w[certifi cython matplotlib numpy pillow],
                 extra_packages:   %w[
                   calver flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools
                   setuptools-scm tomlkit trove-classifiers wheel
@@ -164,9 +164,12 @@ class Sephera < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
+    # The mandatory shared matplotlib runtime and Cython provider both use Python 3.15.
+    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.15")
+    ENV["PYYAML_FORCE_CYTHON"] = "1"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
 
-    venv = virtualenv_create(libexec, "python3.14")
+    venv = virtualenv_create(libexec, "python3.15")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -175,18 +178,70 @@ class Sephera < Formula
   end
 
   test do
-    (testpath/"app.rb").write <<~RUBY
+    project = testpath/"project"
+    project.mkpath
+    (project/"app.rb").write <<~RUBY
       # hello
       puts "hi"
     RUBY
-    (testpath/"README.md").write <<~MARKDOWN
+    (project/"README.md").write <<~MARKDOWN
       # Title
 
       text
     MARKDOWN
+    (project/"app.py").write "print('hello')\n"
 
-    output = shell_output("#{bin}/sephera loc")
-
+    test_env = {
+      "HOME"           => (testpath/"home").to_s,
+      "MPLBACKEND"     => "Agg",
+      "MPLCONFIGDIR"   => (testpath/"matplotlib").to_s,
+      "XDG_CACHE_HOME" => (testpath/"cache").to_s,
+    }
+    output = Utils.safe_popen_read(test_env, bin/"sephera", "loc", "--path", project)
     assert_match "Language(s) used: 3 language(s)", output
+    assert_match "Ruby", output
+
+    (testpath/"chart.py").write <<~PYTHON
+      import sys
+      from pathlib import Path
+
+      import certifi
+      import matplotlib
+      import numpy as np
+      import yaml
+      import yaml._yaml
+      from datalyzer.Exporter import Exporter
+      from PIL import Image, _imaging
+
+      assert matplotlib.get_backend().lower() == "agg"
+      assert yaml.__with_libyaml__
+      data = {"brew": [1, True, "yaml"]}
+      document = yaml.dump(data, Dumper=yaml.CSafeDumper)
+      assert yaml.load(document, Loader=yaml.CSafeLoader) == data
+      assert np.array_equal(np.array([[1, 2], [3, 4]]) @ np.array([2, 3]), [8, 18])
+
+      output = Path("#{testpath}/tree")
+      Exporter(str(output)).export_file_tree_chart(12, 7, 3, 2)
+      with Image.open(output.with_suffix(".png")) as image:
+          assert image.format == "PNG"
+          image.verify()
+      with Image.open(output.with_suffix(".png")) as image:
+          image.load()
+          assert image.width >= 600 and image.height >= 400
+          pixels = np.asarray(image.convert("RGB"))
+      colors = [(102, 179, 255), (153, 255, 153), (255, 204, 153), (255, 153, 153)]
+      areas = [int(np.count_nonzero(np.all(pixels == color, axis=2))) for color in colors]
+      assert areas[0] > areas[1] > areas[2] > areas[3] > 1000, areas
+
+      print(sys.executable)
+      print("Exporter", sys.modules[Exporter.__module__].__file__)
+      for module in (matplotlib, np, certifi, yaml._yaml, _imaging):
+          print(module.__name__, module.__file__)
+      print("LibYAML", yaml._yaml.get_version(), "rendered bar areas", areas)
+    PYTHON
+    with_env(test_env) do
+      system libexec/"bin/python", testpath/"chart.py"
+    end
+    system formula_opt_bin("python@3.15")/"python3.15", "-m", "pip", "--python=#{libexec}/bin/python", "check"
   end
 end
