@@ -1,0 +1,19 @@
+Formula/g/gignr.rb
+  s_38068124ce77bb::t_aa3091f58157c6 20,37-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "62a3dbe4f08d62ec4fb7d7d78cb3c6062eff7456",
+  "prompts": {},
+  "sessions": {
+    "s_38068124ce77bb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf83-8c97-7831-a888-c331e3a5d8e0",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
