@@ -1,8 +1,8 @@
 class Grut < Formula
   desc "Terminal file explorer with Git and GitHub integration"
   homepage "https://github.com/jongio/grut"
-  url "https://github.com/jongio/grut/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "791467840f9b3740ad2097614dcc17c527c61d2b1d367ddc2ebd609c23a7a681"
+  url "https://github.com/jongio/grut/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "024a10cfcdbb02837fb0a0bf664729511dc325de29711b049f50852eb6d647d1"
   license "MIT"
   head "https://github.com/jongio/grut.git", branch: "main"
 
