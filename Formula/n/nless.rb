@@ -169,5 +169,16 @@ class Nless < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/nless --version 2>&1")
+
+    (testpath/"orders.csv").write <<~CSV
+      item,status,date
+      early,shipped,2026-01-02
+      ignored,pending,2026-06-01
+      late,shipped,2026-05-01
+    CSV
+    output = shell_output("#{bin}/nless --no-tui -d , -f 'status=^shipped$' " \
+                          "-s date=desc -o json #{testpath}/orders.csv")
+    rows = output.lines.map { |line| JSON.parse(line) }
+    assert_equal %w[late early], rows.map { |row| row.fetch("item") }
   end
 end
