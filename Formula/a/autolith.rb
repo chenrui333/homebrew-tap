@@ -8,10 +8,10 @@ class Autolith < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "bc1c71dac15befa56b5c4bbb681022d1461e043e99b1b6f867d4777f2154b29d"
-    sha256 cellar: :any, arm64_sequoia: "3d05343d3ae2542b18685297c762b7044058e47cbd32e133ffa7fedcb2bc1ce3"
-    sha256 cellar: :any, arm64_linux:   "54ab40d31ffecff00dbf97eaaca36d4ceda1ecc1c06ba71dde60d180e5b4cab9"
-    sha256 cellar: :any, x86_64_linux:  "91afbb6ec0c38fb176cee3bafc5ee6e5eb049db6df89f6404b0afcaf50e3e3a1"
+    sha256 cellar: :any, arm64_tahoe:   "bc9df9e506d601e17af13817da0f2250a0a32a3c364bac1198ee6c84714bb3e5"
+    sha256 cellar: :any, arm64_sequoia: "be7151f7f4ab7acc72d490875a0bf9e313577a72632409e66fa6c0a81f7761ae"
+    sha256 cellar: :any, arm64_linux:   "5f13fc26a50748040fe68331113cf20613751501026d00439305691cdbda2e09"
+    sha256 cellar: :any, x86_64_linux:  "96191b4c0ef782faadd9cb91d8d90c010ee1b9345ce43b5b4293362bdd4a6dac"
   end
 
   depends_on "cmake" => :build
