@@ -1,0 +1,25 @@
+Formula/g/gloomberb.rb
+  h_9df9c32c3f321d 4-5,25-26,56-57,69-75,78,82,86,88
+  s_4f300175ba2c65::t_9c2894cb78ba6b 55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "21135141be93903747b0183501a557dcd1d3b20e",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_4f300175ba2c65": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf41-f6ed-7bb2-a1a3-825b4e94be27",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
