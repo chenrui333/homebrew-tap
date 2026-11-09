@@ -1,0 +1,14 @@
+Formula/p/pyink.rb
+  h_9df9c32c3f321d 26-27,135-144,180-181,193,213,218-220,229-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "694e434b6af81b56b928af1fb6ba5070bbd07770",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
