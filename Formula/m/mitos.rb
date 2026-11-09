@@ -1,17 +1,17 @@
 class Mitos < Formula
   desc "Fast and minimal modal text editor"
   homepage "https://github.com/mitos-editor/mitos"
-  url "https://github.com/mitos-editor/mitos/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "dfed3c163cb8537989ffa594d6ca4cf5e70d4fe91295f15044c751830de2eb25"
+  url "https://github.com/mitos-editor/mitos/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "e203cf8b37fef3a2ddb4fb3154dfabb111d5ae63d1c4679eec6a056e0b1e7839"
   license "MPL-2.0"
   head "https://github.com/mitos-editor/mitos.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "c1e7b08a7901c9cac1b32d0cf187d16c07dffc44b88950b42278aaa5b72fa3f0"
-    sha256 cellar: :any, arm64_sequoia: "1f52c22079b75d20df16c5cfa1b7d26ceb84a4ec774db6fc97dc139fcf72f6d8"
-    sha256 cellar: :any, arm64_linux:   "d2c94a26274695c6446b939b003195f9d3de5f2be3e5e2f431bb6bedd345fde3"
-    sha256 cellar: :any, x86_64_linux:  "3134f3992a253e2c3e6f2c7df6b11bc8da924f47667e51066bcd71c45b8676f3"
+    sha256 cellar: :any, arm64_tahoe:   "8787cf99c376a56cf4a422bacec22c2547c8ac90f9d5b0a659750eb7ddef0aec"
+    sha256 cellar: :any, arm64_sequoia: "a4f7354eb90c2d4166e74cebd924ab15ae9ea8cd662803ab185241d984c27f42"
+    sha256 cellar: :any, arm64_linux:   "c9d185ee0d7cdb0d0650d710d386874ed91113845db985a91b224911235980e2"
+    sha256 cellar: :any, x86_64_linux:  "727e1e7104cae343fca2180d476ab8f378c6a3a7fd4f3a1f1b54bbb204df6855"
   end
 
   depends_on "pkgconf" => :build
