@@ -181,7 +181,7 @@
   "tfmv": "homebrew/core",
   "tfprovidercheck": "homebrew/core",
   "tfsort": "homebrew/core",
-  "tfstate-lookup": "homebrew-core",
+  "tfstate-lookup": "homebrew/core",
   "tgpt": "homebrew/core",
   "threatcl": "homebrew/core",
   "tml": "homebrew/core",
