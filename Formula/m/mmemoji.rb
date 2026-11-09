@@ -16,15 +16,14 @@ class Mmemoji < Formula
     sha256 cellar: :any,                 x86_64_linux:  "8841418bfa0fd2424e25f4d26bbc76be8947a7fef2873a53ac974f313b2cc3cb"
   end
 
-  depends_on "cython" => :build # for frozenlist, propcache and yarl
   depends_on "certifi" => :no_linkage
   depends_on "python@3.14"
 
   pypi_packages exclude_packages: "certifi",
                 extra_packages:   %w[
-                  calver expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
-                  pkgconfig pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning
-                  wheel
+                  calver cython==3.1.8 expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging
+                  pathspec pkgconfig pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers
+                  vcs-versioning wheel
                 ]
 
   resource "aiohappyeyeballs" do
@@ -60,6 +59,11 @@ class Mmemoji < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/3d/fa/656b739db8587d7b5dfa22e22ed02566950fbfbcdc20311993483657a5c0/click-8.3.1.tar.gz"
     sha256 "12ff4785d337a1bb490bb7e9c2b1ee5da3112e94a8622f26a6c77f5d2fc6842a"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/b4/a4/ec55945b52d0b888e2a090450a5524001bfa17c8b68348379a154badb850/cython-3.1.8.tar.gz"
+    sha256 "518475fbe633ba30c1577669f417440f41e1a23ad6b6e2dbb20703cd457f04ef"
   end
 
   resource "expandvars" do
@@ -223,9 +227,8 @@ class Mmemoji < Formula
       hatch-fancy-pypi-readme
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -240,7 +243,8 @@ class Mmemoji < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mmemoji --version")
 
-    output = shell_output("#{bin}/mmemoji create --no-clobber parrots/guests/hd/*.gif parrots/guests/*.gif 2>&1", 2)
-    assert_match "Invalid value", output
+    ENV["XDG_CONFIG_HOME"] = testpath/"config"
+    output = shell_output("#{bin}/mmemoji list --url missing-scheme 2>&1", 2)
+    assert_match "Malformed URL: missing-scheme", output
   end
 end
