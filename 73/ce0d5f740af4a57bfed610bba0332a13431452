@@ -1,0 +1,25 @@
+Formula/r/readmeai.rb
+  h_9df9c32c3f321d 9,29-31,74-79,126-127,315,337-342,352-392,395,408-409,417-418,422-425
+  s_743b1dec2b75ff::t_0dfbb2dd82bdd8 393-394,396-407
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "73ce0d5f740af4a57bfed610bba0332a13431452",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_743b1dec2b75ff": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c0ab-2437-7b62-bdbc-17175a5865e3",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
