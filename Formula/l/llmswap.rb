@@ -10,11 +10,11 @@ class Llmswap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "facf4e2ac07a3428549146aa2fbf87494e2c8377aecec5fecd19f32304f4ea3f"
-    sha256 cellar: :any, arm64_sequoia: "8e6ba1c346add70517ea7dec2e688b483c47f524867f104328cff359035c9563"
-    sha256 cellar: :any, arm64_linux:   "afbdf54bbad5fa6d88e7fc352b8d11d1c1d103a78d8586acb73913534e4ca118"
-    sha256 cellar: :any, x86_64_linux:  "cdfd5969eaec3e237c36704d085b0f623281bc5149941cad875a7c1dafa73594"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "4d8914919ea41e096acdaf358f23d336ff382c583e406440156c0ff3eaa74aa9"
+    sha256 cellar: :any, arm64_sequoia: "6daf5d2c4051a1be2b599125f5537d707da63d5a9c48e58401f7f4cb7eb4b204"
+    sha256 cellar: :any, arm64_linux:   "581e98991a2da5f8c52a18525a047a6a7841c16ccd3e703ddc5d58813e548cf7"
+    sha256 cellar: :any, x86_64_linux:  "06adb00103c545474e9036fc3a35999badc893f8308eccb04b6e2f0123c84673"
   end
 
   depends_on "maturin" => :build
