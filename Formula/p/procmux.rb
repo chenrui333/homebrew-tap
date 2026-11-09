@@ -6,24 +6,23 @@ class Procmux < Formula
   url "https://files.pythonhosted.org/packages/c1/c8/93ea9e5ffbede1999e96bb7bf6ad7d48870b8438ce55b4f3863ec9688ad8/procmux-2.0.3.tar.gz"
   sha256 "e91faee78f1411e5dd87e1dc363338e5e6307f1c144c12dad1c659b97f0c2271"
   license "MIT"
+  revision 1
   head "https://github.com/napisani/procmux.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0157b08828d8a0a1ddc42c327e38c42171e9b4ff227e000475dbedfd1ef91322"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9689ddb28ae55eed7d427ae9aecc9029e301e6fa8d3424becb7d50aca87252db"
-    sha256 cellar: :any,                 arm64_linux:   "3bcdc4feeae77c3e595e7e246c6e8d463d00d01ebc921f33a15cd4b8b4d16f60"
-    sha256 cellar: :any,                 x86_64_linux:  "490a94ddfdc66f43c0e54faf7a6b1b2e773708d8598fa308ac32a75e747ce101"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "685c37f2468c38601d95d84943edb0357884497f9488795e3b79c3dae1028f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8abdb45d2bd1be71ff1c9ca3d70bf8a19201215fc53f14a14bc53c0af004679"
+    sha256 cellar: :any,                 arm64_linux:   "878f55c78316b92cddbf4a46df3eee86e0bf403ffad8fe69883c6ab0c1c54a74"
+    sha256 cellar: :any,                 x86_64_linux:  "b3fe6c80b6636f9163b34b0689a81ffb3a4bbd4f12a47a474b96c4beace09f9e"
   end
 
-  depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
-    calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling pathspec poetry-core setuptools setuptools-scm
-    tomlkit trove-classifiers vcs-versioning wheel
+    calver cython flit-core hatch-fancy-pypi-readme hatch-vcs hatchling pathspec poetry-core setuptools
+    setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
   ]
 
   resource "attrs" do
@@ -34,6 +33,12 @@ class Procmux < Formula
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  # Compile the YAML backend with the runtime interpreter.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "flit-core" do
@@ -62,8 +67,8 @@ class Procmux < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
-    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
+    url "https://files.pythonhosted.org/packages/d7/f1/e7a6dd94a8d4a5626c03e4e99c87f241ba9e350cd9e6d75123f992427270/packaging-26.2.tar.gz"
+    sha256 "ff452ff5a3e828ce110190feff1178bb1f2ea2281fa2075aadb987c2fb221661"
   end
 
   resource "pathspec" do
@@ -175,9 +180,8 @@ class Procmux < Formula
       hatch-fancy-pypi-readme
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -188,6 +192,22 @@ class Procmux < Formula
   end
 
   test do
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    python = libexec/"bin/python"
+    assert_equal version.to_s,
+                 shell_output("#{python} -c \"import importlib.metadata as m; print(m.version('procmux'))\"").strip
+
+    system python, "-c", <<~PYTHON
+      import json
+      import sys
+      import yaml
+      import yaml._yaml
+
+      value = {"brew": [1, True, "native"]}
+      assert yaml.load(yaml.dump(value, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == value
+      print(json.dumps({"python": sys.version, "yaml_extension": yaml._yaml.__file__}))
+    PYTHON
+
     (testpath/"procmux.yaml").write <<~YAML
       signal_server:
         enable: false
@@ -202,5 +222,6 @@ class Procmux < Formula
 
     output = shell_output("#{bin}/procmux signal-stop-running 2>&1", 1)
     assert_match "Signal server is not enabled in config", output
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python", python, "check"
   end
 end
