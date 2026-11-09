@@ -1,8 +1,8 @@
 class Sbomlyze < Formula
   desc "SBOM diff and analysis tool for software supply-chain security"
   homepage "https://rezmoss.github.io/sbomlyze/"
-  url "https://github.com/rezmoss/sbomlyze/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "b262d01e3c2718d6964c66675725cd037b9e9b401fff855e4535813ac56a90b6"
+  url "https://github.com/rezmoss/sbomlyze/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "9240584818227b2fcda2d4443214395fb918d9dd8663d0c174757053ac8f90bd"
   license "Apache-2.0"
   head "https://github.com/rezmoss/sbomlyze.git", branch: "main"
 
