@@ -1,0 +1,14 @@
+Formula/t/tinybird-mcp-server.rb
+  h_9df9c32c3f321d 27-29,77-82,322,334-436
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "880733301a90e616e6e0a695b0ea986f3f84f224",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
