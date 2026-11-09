@@ -10,11 +10,10 @@ class OceanbaseMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "97dc01a28d8fb8ba242caf78d38b711b06aed1f1f2623e83702ca9f8bba41391"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f4b54b6dbb440fec1f4a8004e5d9e4df3ae2396ac75ec8d0b28504d1c0bd64f"
-    sha256 cellar: :any,                 arm64_linux:   "eed2a991a3592cbfc0c25de8fa89d13733e138bd10a17898b609133a0ca52e43"
-    sha256 cellar: :any,                 x86_64_linux:  "aa00f0fb36c4596380b564535bfc432d4459a00171758a2ed5f623ab2659c58d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f4874d6bca97e1cd4fc8cf5f8238549f207bc094cfa9261272c8c1ad3ab4e70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "049330c61f3df1f8b96c06be393a0b31a77aa3a9054ae8c917912714aa0b4242"
+    sha256 cellar: :any,                 arm64_linux:   "a15587d100b0948b398e2742fb3a07171dbe9ba9d0eee5ffcf347108e1deca45"
+    sha256 cellar: :any,                 x86_64_linux:  "c0eee5101d93c4220956e253ea0fe4108b7f2c72ec1f819eecfb49ca4c344190"
   end
 
   depends_on "certifi"
