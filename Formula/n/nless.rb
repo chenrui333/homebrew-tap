@@ -9,8 +9,8 @@ class Nless < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c1a134d7498ee51ab863adfa9b21efc16f6624c71e213befaf8a8b81a0ca3d11"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "522c560c2707a39cdefdb57dbd1c6d0eac06665f5e0a6a068d074581e22033a0"
   end
 
   depends_on "python@3.13"
