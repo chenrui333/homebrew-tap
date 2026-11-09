@@ -1,0 +1,19 @@
+tap_migrations.json
+  s_45a980e91ff2f4::t_61b331282666c7 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2f54b951965b9d252304d717c05f5b07f86fd595",
+  "prompts": {},
+  "sessions": {
+    "s_45a980e91ff2f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf44-ec61-7e10-8044-cf663c56f2d8",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
