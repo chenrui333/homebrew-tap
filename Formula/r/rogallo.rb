@@ -10,10 +10,11 @@ class Rogallo < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1327ac087ae9f46c7d5342b639dc8442d9a2d294f4c9b0601ce843a740e8afbc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "539eab14a6193bfc3b60de3aa316d3daef203a6947e6a1c1b4e87739f9778296"
-    sha256 cellar: :any,                 arm64_linux:   "f59ffc07ea10e64043c1d0d1cae5c1b5e3015c83b27c1a6b4b8244754e27a6f2"
-    sha256 cellar: :any,                 x86_64_linux:  "e6a940378101f82c405d954a457ff553b1e56c85691e8545a9f71273fa661e10"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8350acf684483328e3c0ab9915d70c88ea43574a85b5196886685e6abca4fff8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56cfac748e88f8c168902804e62f57288269562c9ba940b1884f1c27f85174e1"
+    sha256 cellar: :any,                 arm64_linux:   "a2660f764a848d88323cc592f3b193d208634ee798b16673459f10bbb442b870"
+    sha256 cellar: :any,                 x86_64_linux:  "80160c4379120dbfd417842c62852e4ff61196ade1380e4ee5998a16c038ac5d"
   end
 
   depends_on "maturin" => :build
