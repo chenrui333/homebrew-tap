@@ -1,0 +1,14 @@
+Formula/k/khaos-cli.rb
+  h_9df9c32c3f321d 28-30,68-72,253,265-268,270-344
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0ee8557c02420a0b25e7a8c0143ee12016837111",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
