@@ -11,6 +11,10 @@ class Jules < Formula
     sha256 cellar: :any_skip_relocation, all: "999e17c92d2f799d5ee4d8697304dce234eab1ae778bcc4f3c225fb9c394ace6"
   end
 
+  # The hosted service winds down on 2026-12-31; keep the CLI available for exports until then.
+  # https://jules.google/docs/changelog/#jules-turndown
+  disable! date: "2027-01-01", because: :deprecated_upstream
+
   depends_on "node"
 
   # The npm wrapper downloads Google's closed-source jules binary at runtime.
