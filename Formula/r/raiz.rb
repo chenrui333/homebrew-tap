@@ -9,22 +9,21 @@ class Raiz < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0099f412941ad874eaf4097f9f4aac6ea24bdcd28f218ef37537eae57a662238"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7527a2cfdb373cc66505d5f55e0bc103ba9551753b5efb57a1200e6902e9a402"
-    sha256 cellar: :any,                 arm64_linux:   "6ce4c8207eb6461b8db8274e648c1fd3359f3766a8b7f1e46edd59efac8b947d"
-    sha256 cellar: :any,                 x86_64_linux:  "d7fe5755489a7060735648ff43fb239e30ddfd43230317de9487478e813a05fb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a942ece0a128a3d4f76badb87e7031624fda33772bbcb711c70d9b40ca517365"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b5641aab4b4e131c42117e5e4b390288a320a1e718f7285917aad9e87e6b4f0"
+    sha256 cellar: :any,                 arm64_linux:   "9098020fbcaac64a475f5785311db8e005272260fe8cf159d93b52d1994d7ef4"
+    sha256 cellar: :any,                 x86_64_linux:  "66cc1ed88b62b3cdb4c0e62245ca8a6acfb64942e5246fdb90bb24941883ae5e"
   end
 
-  depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: "rpds-py",
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend pluggy
-                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                  calver cython flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend
+                  pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
                 ]
 
   resource "annotated-doc" do
@@ -40,6 +39,11 @@ class Raiz < Formula
   resource "calver" do
     url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "flit-core" do
@@ -202,9 +206,8 @@ class Raiz < Formula
       hatch-fancy-pypi-readme
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -217,6 +220,14 @@ class Raiz < Formula
   end
 
   test do
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import yaml
+      import yaml._yaml
+      assert yaml.__with_libyaml__
+      data = {"requirement": ["functional", "network"]}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+    PYTHON
+
     # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
     output = pipe_output("#{bin}/raiz add", "A test requirement\nfunctional\nnetwork\n")
     assert_match "REQ-001 added", output
