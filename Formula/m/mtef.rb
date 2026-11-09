@@ -10,8 +10,7 @@ class Mtef < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2271b173e0bdd878dd153bdcaa05289ec17e66a4e6b16b8391938997f900a190"
+    sha256 cellar: :any_skip_relocation, all: "b35e97f05fd5964cd334c30d6099ce459102ab38fb3aed81c023d9bfad918ff7"
   end
 
   depends_on "certifi" => :no_linkage
