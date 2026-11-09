@@ -299,7 +299,7 @@ class Rogallo < Formula
     ]
 
     # Core maturin exposes its pure-Python PEP 517 provider for each supported Python.
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
 
