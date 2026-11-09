@@ -3,17 +3,16 @@ class Vsg < Formula
 
   desc "VHDL Style Guide"
   homepage "https://github.com/jeremiah-c-leary/vhdl-style-guide"
-  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.35.0.tar.gz"
-  sha256 "243814d768d14ffa76503d63f4aa60a1c7afd3a561cbda46c0954602fcdff390"
+  url "https://github.com/jeremiah-c-leary/vhdl-style-guide/archive/refs/tags/3.36.0.tar.gz"
+  sha256 "155e2af19b2a2d27d305b9e6323a6acd75b5741ae1812ebd890ea9ca407e5f00"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c882901136902366c3be3399ba207a9b7f5f88683c83f9baea6f614df1fe59d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10b272248ce2de5ebc6e2b51de2c32659e6695fdbd5dbd6ebdc7a9ecdccb552f"
-    sha256 cellar: :any,                 arm64_linux:   "3b1e8d140766fd399097d94e603afe02b852112510b66ce05e0bbd6fa94a38c8"
-    sha256 cellar: :any,                 x86_64_linux:  "e35c796bc255450ed67cb57a1f28e0918183f3dc437f5812d1e252807a701e1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6a5420b285479900c8496f7272278541acca0f6f908bb7f33a7fc3d99f34136"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2771ad1d9880e5a431f0ccdffc2e79780ba93e96026fb40ed11e8fc4be6ec717"
+    sha256 cellar: :any,                 arm64_linux:   "e28ed0e3b6849b694048dfefaff03060e85e3a62c509497ceb43c285e381ec80"
+    sha256 cellar: :any,                 x86_64_linux:  "a4da0f61ea285d4acb9b8653c73beae09ff8a364f5427e787ef3e1d89aead23d"
   end
 
   depends_on "libyaml"
@@ -24,13 +23,13 @@ class Vsg < Formula
   ]
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
-    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+    url "https://files.pythonhosted.org/packages/99/ca/18e324972e5cac914816fdd7bb03e19a455b90039c277a538f7781b50c85/cython-3.3.1.tar.gz"
+    sha256 "e0e45989e821bef6aa9ae15c7d583ab5e055f7406c4b3624e49e06d24e90375a"
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
   end
 
   resource "packaging" do
@@ -44,13 +43,13 @@ class Vsg < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "setuptools-git-versioning" do
-    url "https://files.pythonhosted.org/packages/53/8c/d315ac297c004cf15b506eb53d6b0b29e18eadfc44fde7b9b971a41f3206/setuptools_git_versioning-3.1.0.tar.gz"
-    sha256 "612dfcf184addac9e1c2216f4f229724b2390e5bf613fb925ae80b84f2529172"
+    url "https://files.pythonhosted.org/packages/66/b4/a6d4757f1687aac56e74dc4952878c7c9dcd02a5c3256a5020b205e236e4/setuptools_git_versioning-3.2.0.tar.gz"
+    sha256 "27aa1ad0409b632ee49947ea592cc27e16fbb2a1605cc22efeb7c353fd790b31"
   end
 
   resource "wheel" do
