@@ -1,7 +1,8 @@
 const { aggregateCheckRuns, latestCheckRun } = require("./merge-gate")
+const { validateCaskChange } = require("./cask-change-policy")
 
 const REQUIRED_CHECKS = ["cask-conclusion", "Spell Check"]
-const SIDECARS = new Set([".typos.toml", "audit_exceptions/signing_audit_skiplist.json"])
+const ROUTE_REQUIRED_CHECKS = [...REQUIRED_CHECKS, "cask-route-verification"]
 
 function eligible(pr, repository, expectedHead) {
   const labels = pr.labels.map(label => label.name)
@@ -10,15 +11,10 @@ function eligible(pr, repository, expectedHead) {
     pr.user?.type === "User" && labels.includes("pr-cask-merge") && !labels.includes("in progress")
 }
 
-function caskOnly(files) {
-  return files.filter(file => /^Casks\/.+\.rb$/.test(file)).length === 1 &&
-    files.every(file => /^Casks\/.+\.rb$/.test(file) || SIDECARS.has(file))
-}
-
-function readiness(checkRuns, statuses) {
+function readiness(checkRuns, statuses, specialRoute) {
   // Triage's target event emits a skipped duplicate, not a PR spellcheck verdict.
   const requiredRuns = checkRuns.filter(check => !(check.name === "Spell Check" && check.conclusion === "skipped"))
-  const required = aggregateCheckRuns(requiredRuns, REQUIRED_CHECKS)
+  const required = aggregateCheckRuns(requiredRuns, specialRoute ? ROUTE_REQUIRED_CHECKS : REQUIRED_CHECKS)
   if (required.state === "failed") return "failed"
   let pending = required.state !== "ready"
   for (const name of new Set(checkRuns.map(check => check.name))) {
@@ -66,9 +62,9 @@ async function mergeQualifiedCask({
   const repository = `${owner}/${repo}`
   const params = { owner, repo, pull_number }
   const deadline = now() + timeoutMs
-  const changedFiles = async () => (await github.paginate(github.rest.pulls.listFiles, {
+  const changedFiles = () => github.paginate(github.rest.pulls.listFiles, {
     ...params, per_page: 100,
-  })).map(file => file.filename)
+  })
 
   let mergeRaceRetries = 0
   while (true) {
@@ -77,15 +73,16 @@ async function mergeQualifiedCask({
       core.info("Cask PR changed, is held, or is not eligible; leaving it unmerged")
       return
     }
-    if (!caskOnly(await changedFiles())) {
-      core.setFailed("Cask merge requires exactly one cask and only supported cask-maintenance sidecars")
+    const policy = await validateCaskChange({ github, owner, repo, pr, files: await changedFiles() })
+    if (!policy.eligible || policy.kind === "none") {
+      core.setFailed(`Cask merge policy rejected the PR: ${policy.reason || "exactly one cask is required"}`)
       return
     }
     const checkRuns = await github.paginate(github.rest.checks.listForRef, {
       owner, repo, ref: expectedHead, per_page: 100,
     })
     const { data: combined } = await github.rest.repos.getCombinedStatusForRef({ owner, repo, ref: expectedHead })
-    const state = readiness(checkRuns, combined.statuses)
+    const state = readiness(checkRuns, combined.statuses, policy.kind !== "update")
     if (state === "failed") {
       core.setFailed("Current-head checks failed; leaving the cask PR unmerged")
       return
@@ -101,8 +98,13 @@ async function mergeQualifiedCask({
 
     // No native auto-merge request: required checks are enforced even without branch-protection rules.
     const { data: finalPr } = await github.rest.pulls.get(params)
-    if (!eligible(finalPr, repository, expectedHead) || !caskOnly(await changedFiles())) {
+    if (!eligible(finalPr, repository, expectedHead)) {
       core.info("Cask PR changed after qualification; leaving it unmerged")
+      return
+    }
+    const finalPolicy = await validateCaskChange({ github, owner, repo, pr: finalPr, files: await changedFiles() })
+    if (!finalPolicy.eligible || finalPolicy.kind === "none") {
+      core.info("Cask PR data changed after qualification; leaving it unmerged")
       return
     }
     try {

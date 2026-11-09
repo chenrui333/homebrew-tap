@@ -85,6 +85,19 @@ jobs:
             brew generate-cask-ci-matrix --url "$PULL_REQUEST_URL"
           fi
 
+      - name: Require native verification coverage for cask renames
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        timeout-minutes: 5
+        env:
+          CASK_MATRIX: ${{ steps.generate-matrix.outputs.matrix }}
+        with:
+          script: |
+            const { validateCaskChangeMatrix } = require('./.github/scripts/cask-change-ci')
+            await validateCaskChangeMatrix({
+              github, context, core, matrix: JSON.parse(process.env.CASK_MATRIX),
+            })
+
   test:
     name: ${{ matrix.name }}
     needs: generate-matrix
@@ -131,6 +144,23 @@ jobs:
           '
           printf '%s\n' "$cask_info" | jq '.casks[0] | {full_token, version, url, sha256, ruby_source_checksum}'
 
+      # Syntax jobs check the data policy without granting additional trust.
+      # Renames require native verification in the existing trusted cask jobs;
+      # migrations resolve into official Cask even in removed-cask syntax jobs.
+      - name: Validate logical cask changes and old-name routing
+        id: cask-route
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        timeout-minutes: 5
+        env:
+          VERIFY_RENAME: ${{ matrix.cask && 'true' || 'false' }}
+        with:
+          script: |
+            const { validateCaskChangeCI } = require('./.github/scripts/cask-change-ci')
+            await validateCaskChangeCI({
+              github, context, core, verifyRename: process.env.VERIFY_RENAME === 'true',
+            })
+
       - name: Clean up CI machine
         if: runner.os == 'macOS' && !matrix.stable
         run: brew test-bot --cleanup --only-cleanup-before
@@ -166,6 +196,7 @@ jobs:
           always() &&
           contains(fromJSON('["success", "skipped"]'), steps.tap-syntax.outcome) &&
           steps.trust-cask.outcome == 'success' &&
+          contains(fromJSON('["success", "skipped"]'), steps.cask-route.outcome) &&
           matrix.cask
         run: |
           brew fetch --cask --retry --force ${{ join(matrix.fetch_args, ' ') }} "${{ matrix.cask.path }}"
@@ -254,12 +285,23 @@ jobs:
 
   conclusion:
     name: cask-conclusion
-    needs: test
+    needs: [generate-matrix, test]
     runs-on: ubuntu-latest
     if: always()
     steps:
       - name: Result
-        run: ${{ needs.test.result == 'success' }}
+        run: ${{ needs.generate-matrix.result == 'success' && needs.test.result == 'success' }}
+
+  # A new check name prevents legacy cask-conclusion successes from attesting
+  # rename/migration checks that their historical workflow never executed.
+  route-verification:
+    name: cask-route-verification
+    needs: conclusion
+    runs-on: ubuntu-slim
+    if: always() && github.event_name == 'pull_request'
+    steps:
+      - name: Require this workflow's completed cask verification
+        run: ${{ needs.conclusion.result == 'success' }}
 
   label-pr:
     needs: conclusion

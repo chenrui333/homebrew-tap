@@ -12,6 +12,12 @@ This tap is setup for several reasons:
 
 Issues and PRs are welcome! Whether you’ve found a bug, have a feature request, or want to contribute code, please feel free to open an issue or submit a pull request. Your contributions help improve this tap for everyone.
 
+Cask maintenance PRs change one cask. Token-only renames add one `cask_renames.json`
+entry; Core migrations remove one cask and add one `tap_migrations.json` entry,
+without redirecting an existing formula or alias. Both require current-head
+`cask-route-verification` for native old-name/upstream checks. Renames require full
+cask CI, not `CI-syntax-only`.
+
 ## Installation
 
 ```bash
