@@ -10,14 +10,13 @@ class KhaosCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "deabd9590d3e5f43bd77878b2789266e72cb8f0bd7439b520862a45837301b37"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e62ceca6ba143b1ecd1367704d597539a6cbf3218d1835a0893263fa820781a"
-    sha256 cellar: :any,                 arm64_linux:   "f6b3b6b04c1f8ff90aece5d619652c6ae3a7e341e686d7b82fb4b9e84fa87591"
-    sha256 cellar: :any,                 x86_64_linux:  "98d45a5d08e10f5b599f789b2c4a780c004e63cc28257cc788f856370ba54fda"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a338eb7bc0c90224deb0399b7ab123c6b7eb04d265e39124aa773dce5c845de3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3f0cf6ae976563fa831463e69b300bb0b11d49dd1b40e2a14cc89ed135a3008"
+    sha256 cellar: :any,                 arm64_linux:   "bc3e6c5978899ca05843f0b006e82c6560eceea447ea86c55119c99136486ee7"
+    sha256 cellar: :any,                 x86_64_linux:  "726f0bc0fe7f044a07d6d28b119a515b94d5ca243bef7aa4c34d3c6ace96ef34"
   end
 
-  depends_on "cython" => :build # for fastavro and pyyaml
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "librdkafka"
@@ -26,8 +25,9 @@ class KhaosCli < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography],
                 extra_packages:   %w[
-                  calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend pluggy
-                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                  calver cython==3.3.0 flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
+                  pdm-backend pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning
+                  wheel
                 ]
 
   resource "anyio" do
@@ -63,6 +63,11 @@ class KhaosCli < Formula
   resource "confluent-kafka" do
     url "https://files.pythonhosted.org/packages/b4/d0/1f5055331fa660225de6829b143e6f083913f0a96481134a91390bad62c1/confluent_kafka-2.13.0.tar.gz"
     sha256 "eff7a4391a9e6d4a33f0c05d0935b200a7463834f1f5d6e6253be318f910babd"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "faker" do
@@ -245,9 +250,8 @@ class KhaosCli < Formula
       hatch-fancy-pypi-readme
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -258,7 +262,84 @@ class KhaosCli < Formula
   end
 
   test do
+    ENV["XDG_CONFIG_HOME"] = testpath/".config"
+    ENV["XDG_CACHE_HOME"] = testpath/".cache"
+
     assert_match version.to_s, shell_output("#{bin}/khaos --version")
-    assert_match "Available Scenarios", shell_output("#{bin}/khaos list")
+    output = shell_output("#{bin}/khaos validate serialization/avro-no-registry traffic/high-throughput")
+    assert_match "serialization/avro-no-registry", output
+    assert_match "traffic/high-throughput", output
+    assert_match "All 2 scenario(s) valid!", output
+
+    (testpath/"native.py").write <<~PYTHON
+      from importlib.machinery import EXTENSION_SUFFIXES
+      from io import BytesIO
+      from pathlib import Path
+      import sys
+
+      import confluent_kafka.cimpl
+      import fastavro
+      import fastavro._read
+      import fastavro._schema
+      import fastavro._write
+      import yaml
+      import yaml._yaml
+      from khaos.scenarios.loader import get_scenario
+      from khaos.validators.scenario import validate_scenario_file
+
+      assert sys.version_info[:2] == (3, 14)
+      for module in (yaml._yaml, fastavro._read, fastavro._schema,
+                     fastavro._write, confluent_kafka.cimpl):
+          assert module.__file__.endswith(tuple(EXTENSION_SUFFIXES)), module.__file__
+      assert yaml.__with_libyaml__
+
+      config = {
+          "name": "offline-native",
+          "description": "Owned offline configuration",
+          "topics": [{
+              "name": "owned-events",
+              "partitions": 2,
+              "replication_factor": 1,
+              "producer_rate": 25,
+              "producer_config": {"acks": "all", "compression_type": "lz4"},
+          }],
+      }
+      path = Path("owned-scenario.yaml")
+      path.write_text(yaml.dump(config, Dumper=yaml.CSafeDumper))
+      assert yaml.load(path.read_text(), Loader=yaml.CSafeLoader) == config
+      result = validate_scenario_file(path)
+      assert result.valid, result.errors
+      scenario = get_scenario(str(path))
+      assert scenario.name == "offline-native"
+      topic = scenario.topics[0]
+      assert (topic.name, topic.partitions, topic.producer_rate) == ("owned-events", 2, 25)
+      assert topic.producer_config.compression_type == "lz4"
+      config["topics"][0]["partitions"] = 0
+      path.write_text(yaml.dump(config, Dumper=yaml.CSafeDumper))
+      result = validate_scenario_file(path)
+      assert not result.valid
+      assert any(error.path == "topics[0].partitions" for error in result.errors)
+
+      schema = fastavro.parse_schema({
+          "type": "record",
+          "name": "Event",
+          "fields": [
+              {"name": "id", "type": "long"},
+              {"name": "amount", "type": "double"},
+              {"name": "active", "type": "boolean"},
+              {"name": "tags", "type": {"type": "array", "items": "string"}},
+          ],
+      })
+      records = [
+          {"id": 42, "amount": 12.5, "active": True, "tags": ["native", "yaml"]},
+          {"id": 43, "amount": -0.25, "active": False, "tags": []},
+      ]
+      container = BytesIO()
+      fastavro.writer(container, schema, records)
+      assert container.getvalue().startswith(b"Obj\\x01")
+      container.seek(0)
+      assert list(fastavro.reader(container)) == records
+    PYTHON
+    system libexec/"bin/python", testpath/"native.py"
   end
 end
