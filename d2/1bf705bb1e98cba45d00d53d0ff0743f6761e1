@@ -1,0 +1,19 @@
+Formula/r/rogallo.rb
+  s_d5986155be0889::t_4d1cb1c2a23e50 25-29,41-45,230-257,277-279,289,300,309-325,330-337
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d21bf705bb1e98cba45d00d53d0ff0743f6761e1",
+  "prompts": {},
+  "sessions": {
+    "s_d5986155be0889": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf7e-e338-7f01-a8f4-24830f28f08f",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
