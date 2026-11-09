@@ -13,10 +13,10 @@ class CloudAudit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "7e1d2242e3b94ad5f0f25a6c4391c59601ad8c4fa33a8aea9443a3afd4158e62"
-    sha256 cellar: :any, arm64_sequoia: "ca2daee322e4f3cfe39506c59da8dca95c05742321ccc1da5c0fd2eb166b69b3"
-    sha256 cellar: :any, arm64_linux:   "fee673ba92a1e2ca880b29cf8ea34d9dc295c9a49329ae481b839f1b67c19d92"
-    sha256 cellar: :any, x86_64_linux:  "0014a8aac49f67d7c99b03542d3d2a0270650edd6b1dd95c7990dd883998b2ae"
+    sha256 cellar: :any, arm64_tahoe:   "842c55312d472a0c268a13e90d2d7943a6a109f3239d8c0cca80d7abdb28c48f"
+    sha256 cellar: :any, arm64_sequoia: "e6a6f9f171aefb1c62bb44b3aa82a41267e9b894decd9a9669831c36e7fcb3e5"
+    sha256 cellar: :any, arm64_linux:   "33033c904424d733091e8310e1821019a6e4e0ad3cad22eb95bbbf9be3d57e2e"
+    sha256 cellar: :any, x86_64_linux:  "24479f308930a4344ac7b70a39864d2f863750d333327def77dddd9e18bf7f87"
   end
 
   depends_on "maturin" => :build
