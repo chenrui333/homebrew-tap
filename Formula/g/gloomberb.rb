@@ -1,17 +1,16 @@
 class Gloomberb < Formula
   desc "Extensive financial terminal, in your terminal"
   homepage "https://github.com/gloom-sh/gloomberb"
-  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "ad2786328b420a6221a779b5efe7c44e87f36eda939fb8fbdd87ecc2c71d72c3"
+  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.7.tar.gz"
+  sha256 "6e76180d903dda9c12988210638c2d1f9c54b641b6566fd95ecb8684593c08d4"
   license "MIT"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "2b8712d7736b7d534e6e712fa4617815e789ee045ef63361767bb2995fd72830"
-    sha256 arm64_sequoia: "d763c604b799dcfefe6ab0f634241711f975a796bc6f16726feace3f5e1b8b98"
-    sha256 arm64_linux:   "cd6a6dd24c588d2e1abc261198f4849bfe70916501b0e21845c5780a20c0865a"
-    sha256 x86_64_linux:  "0dbcf7974d9aad19ba4d7384d614456121ff96953fd4d5d1319111243b6ceecd"
+    sha256 arm64_tahoe:   "d3c134102bfb584b09a4ed4dd1a75ad4232ffaa95ea6aa01cccca2b9281e394a"
+    sha256 arm64_sequoia: "5cc71a3697c9de4ab7e9d164ee132b9a1d092d7f8749b0c2f1be227aa9aa657a"
+    sha256 arm64_linux:   "9decf81d7d86cfa73c0f7a08fedea7e897543d143845f66f6ca1c64b0bd2d917"
+    sha256 x86_64_linux:  "88e49cc253a411be70cc3602c1320dec592531fba79f32194a03d7f0fd48183f"
   end
 
   depends_on "bun" => :build
@@ -23,8 +22,8 @@ class Gloomberb < Formula
   end
 
   resource "opentui-native" do
-    url "https://github.com/anomalyco/opentui/archive/8cb2a5ae0023d01b6fe1235c71b13d9857d17b6f.tar.gz"
-    sha256 "3ba05e89bfd5b06fd554cea02f28b26895cab6e53d6ec9bca16634c1b6d75165"
+    url "https://github.com/anomalyco/opentui/archive/0d449d4c170a703197f0321f48c7e3bd38dcbd31.tar.gz"
+    sha256 "33aab267403fc2626c0fb051341852bf080a5f2e2252d38615cd4312ecbbe28a"
   end
 
   deny_network_access!
@@ -53,7 +52,9 @@ class Gloomberb < Formula
 
     const install_dir = b.addInstallArtifact(lib, .{
       NEW
-      system formula_opt_bin("zig@0.15")/"zig", "build", "-Dtarget=#{native_target}",
+      # Match the SDK's glibc ABI; an ABI-less Linux target links musl's libc.so.
+      system formula_opt_bin("zig@0.15")/"zig", "build",
+             "-Dtarget=#{native_target}#{"-gnu.2.17" if OS.linux?}",
              "-Doptimize=ReleaseFast", "-j#{ENV.make_jobs}"
     end
     host_libraries = buildpath.glob("**/node_modules/@opentui/core-#{platform}-#{arch}/#{native_name}",
@@ -65,18 +66,25 @@ class Gloomberb < Formula
 
       rm_r pkg if pkg.exist? || pkg.symlink?
     end
+    # Resolve only the source-built host SDK library, not optional release-platform imports.
+    inreplace "scripts/build.ts", "`--target=${target}`, compileEntry,", <<~JS.chomp
+      `--target=${target}`,
+      `--define=process.platform=${JSON.stringify(process.platform)}`,
+      `--define=process.arch=${JSON.stringify(process.arch)}`,
+      '--define=process.env.OPENTUI_LIBC="glibc"', compileEntry,
+    JS
     # Use the brewed runtime instead of downloading a separate Bun executable template.
     ENV["BUN_COMPILE_EXECUTABLE_PATH"] = bun
-    system bun, "run", "build"
+    system bun, "run", "build", "--target", "#{platform}-#{arch}"
     output = "dist/gloomberb-#{platform}-#{arch}"
     system "gunzip", "#{output}.gz"
     bin.install output => "gloomberb"
+    bin.install_symlink "gloomberb" => "gloom"
   end
 
   test do
-    # FIXME: Upstream has no version command; its help header exposes the release version.
-    assert_match version.to_s, shell_output("#{bin}/gloomberb help")
+    assert_match version.to_s, shell_output("#{bin}/gloom version")
     output = shell_output("#{bin}/gloomberb ticker 2>&1", 1)
-    assert_match "Usage: gloomberb ticker <symbol>", output
+    assert_match "Usage: gloom ticker <symbol>", output
   end
 end
