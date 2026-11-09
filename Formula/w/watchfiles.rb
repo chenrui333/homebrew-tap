@@ -9,11 +9,11 @@ class Watchfiles < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "2f95f40a0fa639624ba281b4075dfbd7deaeaa99f67a26f734f1d9cb27db56c8"
-    sha256 cellar: :any, arm64_sequoia: "a225a859ee0513e2286fed73b46d78cfa4ba9448147b96b0eb7906b0739ad0c3"
-    sha256 cellar: :any, arm64_linux:   "d5f65da55b3902bf908ee1a3ba2782b6a46734a2be2adb3eb91daddb955f8bf3"
-    sha256 cellar: :any, x86_64_linux:  "b5e47c12106907565902351a5d725c873c51990be8e3ec679cab97c9ccc83a30"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "617d5697b2bb8524625078eff4905cc2d40f93d22116be2ad6de181879ac1fc2"
+    sha256 cellar: :any, arm64_sequoia: "7e80651c2d090dced7c9f858187977cf98806decbc95a1abb389a9284cf1160d"
+    sha256 cellar: :any, arm64_linux:   "2dd0267b69829ebaa51bf4bfc1426a965a6d7e45e4d39b7a0440d703392d39ea"
+    sha256 cellar: :any, x86_64_linux:  "a9976f8bf7cc7772748aac175cccd25853b95c70623c722340fe281b019677b3"
   end
 
   depends_on "maturin" => :build
