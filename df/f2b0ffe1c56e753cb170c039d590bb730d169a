@@ -1,0 +1,19 @@
+Formula/g/graphtage.rb
+  s_67570a818c44f5::t_8163a4a4787fc5 167-177
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dff2b0ffe1c56e753cb170c039d590bb730d169a",
+  "prompts": {},
+  "sessions": {
+    "s_67570a818c44f5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1be5d-8bf9-71e0-b816-0a548339d5ee",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
