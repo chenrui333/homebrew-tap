@@ -1,15 +1,15 @@
 class Kaniko < Formula
   desc "Build Container Images In Kubernetes"
   homepage "https://github.com/chainguard-dev/kaniko"
-  url "https://github.com/chainguard-dev/kaniko/archive/refs/tags/v1.25.21.tar.gz"
-  sha256 "fba78095c2d971bf91410c3dbb837727daebd806ac7bfe8d06bb6d8b9dee1d30"
+  url "https://github.com/chainguard-dev/kaniko/archive/refs/tags/v1.25.22.tar.gz"
+  sha256 "6c0a8429c3b678a1057109763d5a327c5763ade027a10d0cca60925bb191e3d3"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/kaniko.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7e7006dfca6003690941cfa77e692016f8249bc19eac067a463db1ac9b64e1b4"
-    sha256 cellar: :any,                 x86_64_linux: "6dc0d7df2649e22338d9a5f4ff07974c0c6179edbee25b3e9b3775e74a527644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "b932f8a1e34e33e474af95954c04e8a3a497146992deae8999f4633cc2f68bd5"
+    sha256 cellar: :any,                 x86_64_linux: "6dd733c7135b4283600533535bc74aa58f4b85957dc018721a6a1279cfc7c978"
   end
 
   depends_on "go" => :build
