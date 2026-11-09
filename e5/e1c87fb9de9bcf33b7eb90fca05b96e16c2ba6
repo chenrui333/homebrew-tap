@@ -1,0 +1,14 @@
+Formula/a/apm-cli.rb
+  h_9df9c32c3f321d 9,21,25,28-30,34-44,131-132,316-317,415-425,429-433,448-449,461-462,466-479,482-483,485-487,494-531
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e5e1c87fb9de9bcf33b7eb90fca05b96e16c2ba6",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
