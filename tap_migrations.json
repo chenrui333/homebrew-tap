@@ -164,7 +164,7 @@
   "slack-mcp-server": "homebrew/core",
   "snowflake-cli": "homebrew/core",
   "soft-serve": "homebrew/core",
-  "spiffe-helper": "homebrew-core",
+  "spiffe-helper": "homebrew/core",
   "sql-formatter": "homebrew/core",
   "sttr": "homebrew/core",
   "style-dictionary": "homebrew/core",
