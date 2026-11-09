@@ -137,7 +137,7 @@
   "otel-cli": "homebrew/core",
   "ov": "homebrew/core",
   "oxen": "homebrew/core",
-  "parqeye": "homebrew-core",
+  "parqeye": "homebrew/core",
   "pdfly": "homebrew/core",
   "pdtm": "homebrew/core",
   "permify": "homebrew/core",
