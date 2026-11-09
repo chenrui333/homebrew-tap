@@ -84,6 +84,7 @@ brew install --cask <tool>
 - `austin-tui`
 - `auto-favicon-mcp-server`
 - `autoflake`
+- `autolith`
 - `autotag`
 - `autotools-language-server`
 - `auv`
@@ -955,6 +956,7 @@ brew install --cask <tool>
 - `sandbox-runtime`
 - `sato`
 - `satty`
+- `sauva`
 - `saw`
 - `sbomdelta`
 - `sbomgr`
@@ -1113,6 +1115,7 @@ brew install --cask <tool>
 - `tiki`
 - `tilia`
 - `timetrace`
+- `tincan`
 - `tinifier`
 - `tinybird-mcp-server`
 - `tlint`
@@ -1242,6 +1245,7 @@ brew install --cask <tool>
 - `zombie`
 - `zookeeper`
 - `zsh-vi-man`
+- `ztl`
 - `zu`
 - `zuse`
 - `zware`
