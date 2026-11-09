@@ -9,10 +9,10 @@ class OmoAi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "577bc6a1f2e01eca3fb1a6c9baa2c37eca863fbfa10b2f3a33a57046b86e71d7"
-    sha256 cellar: :any, arm64_sequoia: "6e7f193207d2418ab276be6f3ee4117d589e6f29edb08171cc9c72a87088cb0f"
-    sha256 cellar: :any, arm64_linux:   "a9a36dcf1d289716838d9028c8f80ea11c5a7da574bfe91b2e8495edf4ca93ac"
-    sha256 cellar: :any, x86_64_linux:  "782971f437b24369d00604a72a8defec013a13ef6c817640512de6dea92649c0"
+    sha256 cellar: :any, arm64_tahoe:   "de6037a4aaf6edd960097eca6e9716b6890f0b2bae8f0be7d61ad4bba25af08e"
+    sha256 cellar: :any, arm64_sequoia: "01cd723cb884ea95d9d879cb55daf44a5b33d8cb4d178290e562313540df2c62"
+    sha256 cellar: :any, arm64_linux:   "e36161d8f65d5471410b4d91ed6da293b0cd7a97fc6f24ab8b5dc09010816a78"
+    sha256 cellar: :any, x86_64_linux:  "f6685ee0ae79d2aa49dca1d7e849143f32f8b135cb1f9d50da9455ce3f264b8a"
   end
 
   depends_on "pkgconf" => :build
