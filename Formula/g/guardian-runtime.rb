@@ -6,32 +6,47 @@ class GuardianRuntime < Formula
   url "https://github.com/ashp15205/guardian-runtime/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "9b15ec26ca7fbc4612b49e3d3534069c05c540afe9230bcb8530e5b7fcc4fc0f"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/ashp15205/guardian-runtime.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "baf381e6d3659f444c1d00682263f9328a0c01b54b85e40767822f8d924b4fb0"
-    sha256 cellar: :any, arm64_sequoia: "1a848e76e8b993e9e62b050d94606cbdfccec5eca884dec07148b9186c47b795"
-    sha256 cellar: :any, arm64_linux:   "41a99f2b9a723566ff0d6ef537e1059b7a55641460d701e9f2dd3d9a4835f538"
-    sha256 cellar: :any, x86_64_linux:  "ee062d6b0a7fe3490239feb7ea3c8154cf5b62de722b848e75f321ba307ed05b"
+    sha256 cellar: :any, arm64_tahoe:   "1bc8f737fb8f1310bf693820ee068ca5ba8ffb10b8cb5a500f80d7565de74e9f"
+    sha256 cellar: :any, arm64_sequoia: "0635fe10d79e0086a6ee7f564693b955df102fb45a7c0c09b8c4f8153abb795e"
+    sha256 cellar: :any, arm64_linux:   "61bff12ba7c7cc66a4fc20654acf4ccd47a08e07a7ecb366679717b2d2df84a9"
+    sha256 cellar: :any, x86_64_linux:  "0afd102f943b2368e7e9d01810527efe49c8bd33508199080a5c770b70e24d6d"
   end
 
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
     setuptools<82.1 flit-core<4 pdm-backend packaging pathspec pluggy trove-classifiers hatchling
     vcs-versioning setuptools-scm hatch-vcs hatch-fancy-pypi-readme wheel semantic-version setuptools-rust
-    cython
+    cython calver poetry-core tomlkit
   ], exclude_packages: %w[certifi pydantic]
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
     sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+  end
+
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  resource "poetry-core" do
+    url "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/poetry_core-2.5.0.tar.gz"
+    sha256 "81d04c9253b19d0604718268d781867c8f7b2128e5b25bbf1e84141eec6b89c4"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "flit-core" do
@@ -205,11 +220,13 @@ class GuardianRuntime < Formula
 
   def install
     ENV["CARGO_NET_OFFLINE"] = "true"
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
+    # Bootstrap source backends, including Hatchling's dynamically requested dependencies.
     build_resources = %w[
-      setuptools flit-core pdm-backend packaging pathspec pluggy trove-classifiers hatchling vcs-versioning
-      setuptools-scm hatch-vcs hatch-fancy-pypi-readme wheel semantic-version setuptools-rust cython
+      setuptools flit-core pdm-backend packaging pathspec vcs-versioning setuptools-scm pluggy calver
+      trove-classifiers poetry-core tomlkit hatchling hatch-vcs hatch-fancy-pypi-readme wheel semantic-version
+      setuptools-rust cython
     ]
     build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
     resources.reject { |r| build_resources.include?(r.name) }.each do |r|
@@ -224,5 +241,38 @@ class GuardianRuntime < Formula
     output = shell_output("#{bin}/guardian_runtime status")
     assert_match "GuardianRuntime", output
     assert_match "Status:", output
+
+    (testpath/"policy.yaml").write <<~YAML
+      name: homebrew
+      agents:
+        default:
+          cost:
+            max_input_tokens: 100
+    YAML
+    assert_match "Policy valid: homebrew (1 agent(s) configured).",
+                 shell_output("#{bin}/guardian_runtime validate policy.yaml")
+
+    (testpath/"invalid.yaml").write "interactive_mode: invalid\n"
+    assert_match "Policy invalid:", shell_output("#{bin}/guardian_runtime validate invalid.yaml 2>&1", 1)
+
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import tiktoken
+      import yaml
+      from guardian_runtime.core.policy import load_policy
+
+      policy = load_policy("policy.yaml")
+      assert policy.get_agent("default").cost.max_input_tokens == 100
+      assert yaml.__with_libyaml__
+      encoding = tiktoken.Encoding(
+          name="homebrew", pat_str=r"(?s).",
+          mergeable_ranks={bytes([i]): i for i in range(256)}, special_tokens={}
+      )
+      text = "Homebrew tokenizer"
+      tokens = encoding.encode(text)
+      assert tokens == list(text.encode())
+      assert encoding.decode(tokens) == text
+    PYTHON
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
