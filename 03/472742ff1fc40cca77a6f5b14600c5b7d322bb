@@ -1,0 +1,26 @@
+Formula/m/mlx-tune.rb
+  s_93f9d0bea41639::t_284a326d752f35 186-203
+  h_9df9c32c3f321d 9,19-23,25,28,30,32-35,40-42,44-47,53-61,88-92,99-100,108-112,118-122,133-137,153-172,183-185,204-210,217-218,226-230,252-263,276-290,301-305,311-320,336-345,361-387,390-393,412-422,425-440,446-452,455-496,498-515,519-521,523,525-536,538-558,561,564-578,582
+  h_9df9c32c3f321d 24,29,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "03472742ff1fc40cca77a6f5b14600c5b7d322bb",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_93f9d0bea41639": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf68-bb9f-7761-8355-ef83501e75e9",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
