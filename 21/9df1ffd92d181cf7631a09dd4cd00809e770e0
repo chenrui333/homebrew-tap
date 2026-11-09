@@ -1,0 +1,14 @@
+Formula/c/cc-bridge.rb
+  h_9df9c32c3f321d 35-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "219df1ffd92d181cf7631a09dd4cd00809e770e0",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
