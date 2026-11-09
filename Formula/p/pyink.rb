@@ -10,11 +10,11 @@ class Pyink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "5411f67fe0a387a3fd1ca857f07788505578b88b19a7158e63294ca400ce62ac"
-    sha256 cellar: :any, arm64_sequoia: "20e21b4ccfc6bafa035a871875c94284a9ee3385342fb44120e47d0ccd1fd3e0"
-    sha256 cellar: :any, arm64_linux:   "8211435ef38953ee5876cc879e7128d12299b2112affecefdd9c97c2969c974b"
-    sha256 cellar: :any, x86_64_linux:  "1705ed3af76ba2d40c40c550c7038f2eb7ec630a7d343af3b50a822bb1c613a4"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "466d475a46f73010bdc568d3c0ba322dd204d20b09c1460b771e33c2977f4249"
+    sha256 cellar: :any, arm64_sequoia: "1ec566cee792f7db760e52f4ba7d27cffcc5ee6b465b91a3e81b0faf7f7b3853"
+    sha256 cellar: :any, arm64_linux:   "bb2d8181b647395fd58a9ad37c42a25cb21124effecf7e9a5306d6eecb68ccc6"
+    sha256 cellar: :any, x86_64_linux:  "c479e96ffd66e8943ae958b27b06e927973e3db56e62a6b1be80807345ad7316"
   end
 
   depends_on "maturin" => :build
@@ -23,7 +23,8 @@ class Pyink < Formula
 
   pypi_packages extra_packages: %w[
     ast-serialize calver flit-core hatch-fancy-pypi-readme hatch-vcs hatchling librt mypy pluggy poetry-core
-    setuptools setuptools-scm tomlkit trove-classifiers typing-extensions vcs-versioning wheel
+    setuptools setuptools-scm tomlkit trove-classifiers types-psutil types-setuptools typing-extensions vcs-versioning
+    wheel
   ]
 
   resource "ast-serialize" do
@@ -131,6 +132,16 @@ class Pyink < Formula
     sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
+  resource "types-psutil" do
+    url "https://files.pythonhosted.org/packages/97/0a/f48b9b0ab5ba8599fd117309e345152bf82c756c72be2ff0f635780c2792/types_psutil-7.2.2.20260906.tar.gz"
+    sha256 "93abf22cf9a62b915f724e433bde702995ac274865425fd4a76d1d9b5828da1a"
+  end
+
+  resource "types-setuptools" do
+    url "https://files.pythonhosted.org/packages/4f/cd/3b2a3362a526f91c33f785a291462b2ec448ae531101c62372fc30a21f53/types_setuptools-84.0.0.20260812.tar.gz"
+    sha256 "09bedc248ebbb7a232c9419dfcdca329706e61bf2aa5743e9424d027f1d956b4"
+  end
+
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
@@ -166,6 +177,8 @@ class Pyink < Formula
       librt
       tomlkit
       trove-classifiers
+      types-psutil
+      types-setuptools
       typing-extensions
       mypy
       vcs-versioning
@@ -177,7 +190,7 @@ class Pyink < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.13")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.13")
@@ -197,18 +210,14 @@ class Pyink < Formula
       def foo():
           print( "Hello, World!" )
     PYTHON
+    original_content = (testpath/"test.py").read
 
     # Return code 0 means nothing would change.
     # Return code 1 means some files would be reformatted.
     # Return code 123 means there was an internal error
-    output = shell_output("#{bin}/pyink --check test.py 2>&1", 1)
-    assert_match "1 file would be reformatted", output
-    assert_match <<~EOS, shell_output("#{bin}/pyink test.py 2>&1")
-      reformatted test.py
-
-      All done! ✨ 🍰 ✨
-      1 file reformatted.
-    EOS
+    shell_output("#{bin}/pyink --check test.py 2>&1", 1)
+    assert_equal original_content, (testpath/"test.py").read
+    system bin/"pyink", "test.py"
 
     formatted_content = (testpath/"test.py").read
     expected_content = <<~PYTHON
@@ -217,5 +226,7 @@ class Pyink < Formula
     PYTHON
 
     assert_equal expected_content, formatted_content
+    shell_output("#{bin}/pyink --check test.py 2>&1")
+    assert_equal expected_content, (testpath/"test.py").read
   end
 end
