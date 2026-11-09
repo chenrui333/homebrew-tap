@@ -1,156 +1,84 @@
 name: Rebottle
 
-run-name: Rebuild bottles of ${{ inputs.formula }}
+run-name: Request a rebuild PR for ${{ inputs.formula }}
 
 on:
   workflow_dispatch:
     inputs:
       formula:
-        description: "Formula name to build new bottles for"
+        description: "One tap formula to rebuild through a normal revision PR"
         required: true
+        type: string
 
-concurrency: rebottle-${{ github.event.inputs.formula }}
+concurrency:
+  group: rebottle-${{ inputs.formula }}
+  cancel-in-progress: false
 
 permissions:
-  contents: write
-  pull-requests: write
-  packages: write
+  contents: read
+  pull-requests: read
 
 env:
   HOMEBREW_DEVELOPER: 1
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
   HOMEBREW_NO_INSTALL_FROM_API: 1
-  HOMEBREW_NO_BUILD_ERROR_ISSUES: 1
-  HOMEBREW_RELOCATABLE_INSTALL_NAMES: 1
 
 jobs:
-  bottle:
-    permissions:
-      contents: read
-
-    runs-on: ${{ matrix.runner }}
-    container: ${{ matrix.container || null }}
-    defaults:
-      run:
-        shell: /bin/bash -e {0}
-        working-directory: ${{ matrix.workdir || github.workspace }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - runner: macos-15
-          - runner: macos-26
-          - runner: ubuntu-latest
-            container:
-              image: ghcr.io/homebrew/brew:main
-              options: --user=linuxbrew --env=HOMEBREW_SANDBOX_LINUX_LANDLOCK=1
-            workdir: /github/home
-          - runner: ubuntu-24.04-arm
-            container:
-              image: ghcr.io/homebrew/brew:main
-              options: --user=linuxbrew --env=HOMEBREW_SANDBOX_LINUX_LANDLOCK=1
-            workdir: /github/home
-    env:
-      BOTTLES_DIR: ${{ matrix.workdir || github.workspace }}/bottles
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          persist-credentials: false
-
-      - name: Pre-test steps
-        uses: Homebrew/actions/pre-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-        with:
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-
-      - name: Trust tap
-        run: brew trust --tap chenrui333/tap
-
-      - name: Build bottles via test-bot
-        working-directory: ${{ env.BOTTLES_DIR }}
-        run: brew test-bot --only-formulae --skip-dependents --only-json-tab --skip-online-checks "$FORMULA_NAME"
-        env:
-          FORMULA_NAME: ${{ github.event.inputs.formula }}
-          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Post-build steps
-        if: always()
-        uses: Homebrew/actions/post-build@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-        with:
-          runner: ${{ matrix.runner }}
-          bottles-directory: ${{ env.BOTTLES_DIR }}
-          logs-directory: ${{ env.BOTTLES_DIR }}/logs
-
-  upload:
-    permissions:
-      # issues: write # for Homebrew/actions/post-comment # we dont do issue comment in here
-      contents: write # for Homebrew/actions/git-try-push
-      packages: write # for brew pr-upload
-      pull-requests: write
-
-    runs-on: ubuntu-latest
-    needs: bottle
-    env:
-      GH_REPO: ${{github.repository}}
-      GH_NO_UPDATE_NOTIFIER: 1
-      GH_PROMPT_DISABLED: 1
-      BOTTLE_BRANCH: ${{github.actor}}/dispatch/${{inputs.formula}}/${{github.run_id}}
-      BOTTLES_DIR: ${{ github.workspace }}/bottles
-      HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
-
+  request-rebuild:
+    # Never evaluate another ref's recipes with the publication credential.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
     steps:
       - name: Set up Homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
 
-      - name: Trust tap
-        run: brew trust --tap chenrui333/tap
-
-      - name: Download bottles from GitHub Actions
-        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+      - name: Check out the immutable dispatch source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          pattern: bottles_*
-          path: ${{ env.BOTTLES_DIR }}
-          merge-multiple: true
+          ref: ${{ github.sha }}
+          persist-credentials: false
 
-      - name: Setup git
-        id: git-user-config
-        uses: Homebrew/actions/git-user-config@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+      - name: Select one formula without interrupting an existing PR
+        id: plan
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
-          username: BrewTestBot
+          script: |
+            const { planRebottle } = require('./.github/scripts/rebottle-pr')
+            const plan = await planRebottle({ github, context })
+            if (plan.kind === 'existing') core.notice(`Existing formula work retained: ${plan.url}`)
+            return plan
 
-      - name: Checkout branch for bottle commit
-        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-        run: git checkout -b "$BOTTLE_BRANCH" origin/main # the tap is using main branch
-
-      - name: Upload bottles to GitHub Packages
-        id: upload
+      - name: Increment only the requested recipe revision
+        if: fromJson(steps.plan.outputs.result).kind == 'new'
         env:
-          HOMEBREW_GITHUB_PACKAGES_USER: chenrui333
-          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          BREWTESTBOT_NAME_EMAIL: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" # see https://github.com/actions/checkout?tab=readme-ov-file#push-a-commit-using-the-built-in-token
-          HOMEBREW_CORE_PATH: ${{steps.set-up-homebrew.outputs.repository-path}}
-        working-directory: ${{ env.BOTTLES_DIR }}
+          REBUILD_PLAN: ${{ steps.plan.outputs.result }}
         run: |
-          brew pr-upload --verbose --committer="$BREWTESTBOT_NAME_EMAIL" --root-url="https://ghcr.io/v2/chenrui333/tap" --debug
-          echo "title=$(git -C "$HOMEBREW_CORE_PATH" log -1 --format='%s' "$BOTTLE_BRANCH")" >> "$GITHUB_OUTPUT"
-          echo "head_sha=$(git -C "$HOMEBREW_CORE_PATH" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          formula_path=$(jq -er '.path' <<< "$REBUILD_PLAN")
+          formula=$(jq -er '.qualifiedFormula' <<< "$REBUILD_PLAN")
+          original_sha=$(jq -er '.sourceSha' <<< "$REBUILD_PLAN")
+          test "$(git hash-object "$formula_path")" = "$original_sha"
+          # Narrow the old tap-wide trust to the reviewed main recipe only.
+          brew trust --formula "$formula"
+          brew bump-revision --write-only "$formula"
+          test "$(git diff --name-only)" = "$formula_path"
 
-      - name: Push bottle commit
-        uses: Homebrew/actions/git-try-push@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+      - name: Publish the revision PR, not bottles
+        if: fromJson(steps.plan.outputs.result).kind == 'new'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          REBUILD_PLAN: ${{ steps.plan.outputs.result }}
         with:
-          token: ${{ github.token }}
-          directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
-          branch: ${{ env.BOTTLE_BRANCH }}
-
-      - name: Open bottle pull request
-        uses: Homebrew/actions/create-pull-request@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          head: ${{ env.BOTTLE_BRANCH }}
-          base: main
-          title: ${{ steps.upload.outputs.title }}
-          body: |
-            Created by the rebottle workflow for `${{ inputs.formula }}`.
+          # A maintainer credential permits the PR's normal CI events. The
+          # automatic GITHUB_TOKEN would suppress those follow-on workflows.
+          github-token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          script: |
+            const { readFile } = require('node:fs/promises')
+            const { publishRebottle } = require('./.github/scripts/rebottle-pr')
+            const plan = JSON.parse(process.env.REBUILD_PLAN)
+            const content = await readFile(plan.path, 'utf8')
+            const result = await publishRebottle({ github, context, plan, content })
+            await core.summary.addHeading('Rebuild request')
+              .addLink(`PR #${result.number}`, result.url)
+              .addRaw('\nSource testing, bottle publication and merge use the ordinary PR workflows.\n')
+              .write()
