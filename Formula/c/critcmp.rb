@@ -8,13 +8,14 @@ class Critcmp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c44476df526e3d81bdb9861eaa34ef46334ade6c0e8588e4d7079c2dd0a25fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43f34408ad5da29259e0010ff5e52a3231ffa9e5911ab59ad83ad98e1754e275"
-    sha256 cellar: :any_skip_relocation, ventura:       "734c260f105c3d442ea79fcf85642421697c368e35de34daa2d6e2389c91953a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5ec9cfb442a982487a8bf58b560e411e4518a836d440ac2d16f3f29db02f481"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9050343335e49032699f3d9f88758f5cc1492d185dd6c89a5db9f8f9774f94b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84dbab96c71195d0355da564eb88e29b09fb75d91581efe1c75acaebadf0c3a5"
+    sha256 cellar: :any,                 arm64_linux:   "0a77a8c34bf7b8591aec6d2afdd8deb2aaf4cf6b5be8176abee073c359c6be5b"
+    sha256 cellar: :any,                 x86_64_linux:  "0d703cdef9fac21acc1d447c0fe14a1ff696b8c857660c21eea74c924b7c8cba"
   end
 
-  depends_on "rust" => [:build, :test]
+  depends_on "rust" => :build
 
   deny_network_access!
 
@@ -29,6 +30,30 @@ class Critcmp < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/critcmp --version")
 
-    # https://github.com/BurntSushi/critcmp?tab=readme-ov-file#usage
+    statistic = lambda do |estimate|
+      {
+        confidence_interval: { confidence_level: 0.95, lower_bound: estimate, upper_bound: estimate },
+        point_estimate:      estimate,
+        standard_error:      0,
+      }
+    end
+    { "before" => 1_000_000, "after" => 2_000_000 }.each do |name, nanoseconds|
+      benchmark = {
+        baseline:               name,
+        fullname:               "#{name}/parse/short",
+        criterion_benchmark_v1: {
+          group_id: "parse", function_id: "short", value_str: nil, throughput: nil,
+          full_id: "parse/short", directory_name: "parse_short"
+        },
+        criterion_estimates_v1: {
+          mean: statistic.call(nanoseconds), median: statistic.call(nanoseconds),
+          median_abs_dev: statistic.call(0), slope: nil, std_dev: statistic.call(0)
+        },
+      }
+      (testpath/"#{name}.json").write(JSON.generate(name: name, benchmarks: { "parse/short" => benchmark }))
+    end
+
+    assert_match "parse/short", shell_output("#{bin}/critcmp before.json after.json -t 50")
+    assert_equal "", shell_output("#{bin}/critcmp before.json after.json -t 150", 1)
   end
 end
