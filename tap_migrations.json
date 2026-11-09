@@ -108,7 +108,7 @@
   "mcp-atlassian": "homebrew/core",
   "mcp-get": "homebrew/core",
   "mcp-google-sheets": "homebrew-core",
-  "mcp-grafana": "homebrew-core",
+  "mcp-grafana": "homebrew/core",
   "mcp-proxy": "homebrew/core",
   "mcp-server-chart": "homebrew/core",
   "mcphost": "homebrew/core",
