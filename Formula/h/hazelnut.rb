@@ -1,8 +1,8 @@
 class Hazelnut < Formula
   desc "Terminal-based automated file organizer"
   homepage "https://github.com/ricardodantas/hazelnut"
-  url "https://github.com/ricardodantas/hazelnut/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "4543797443d49889c4cf48e5a207bc84155da78a5f88ad133d52e908514fa092"
+  url "https://github.com/ricardodantas/hazelnut/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "a35cdda06d8051e7935b5357a7cd1c0cb7c0fcff86beaa455c82fc99534277e5"
   license "GPL-3.0-or-later"
   head "https://github.com/ricardodantas/hazelnut.git", branch: "main"
 
