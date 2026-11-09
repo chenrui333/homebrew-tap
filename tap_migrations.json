@@ -2,7 +2,7 @@
   "addons-linter": "homebrew/core",
   "aiac": "homebrew/core",
   "aiken": "homebrew/core",
-  "airtable-mcp-server": "homebrew-core",
+  "airtable-mcp-server": "homebrew/core",
   "alejandra": "homebrew/core",
   "algolia": "homebrew/core",
   "api-linter": "homebrew/core",
