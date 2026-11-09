@@ -1,0 +1,19 @@
+Formula/m/molotov.rb
+  s_bc1123b0e9cf53::t_cc3f5a38472a68 9,23-24,57-62,153-158,189-190,194-195,224,226-253,256-288
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9cc0d593b5d3ebc4ef2819722a68e0baf1b56f16",
+  "prompts": {},
+  "sessions": {
+    "s_bc1123b0e9cf53": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c060-a0cb-7e40-8047-00d1b8445f95",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
