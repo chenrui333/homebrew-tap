@@ -8,10 +8,11 @@ class Vaults3 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d851fd7445551c2d7a92fdc68b488e134894f3a6e8aa28d5d33be396e380bd98"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d851fd7445551c2d7a92fdc68b488e134894f3a6e8aa28d5d33be396e380bd98"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1be93abac70d2b8f49c75274354f7dedba6199ea45cb627f2adf06eef035846e"
-    sha256 cellar: :any,                 x86_64_linux:  "610e8502bc08f6d7902033524998b4ee46400a7d512896d5568e449538821271"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a61f3ac9d6ab39498af0bb320df8dd912430892ce2d86327585fe0103712e414"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a61f3ac9d6ab39498af0bb320df8dd912430892ce2d86327585fe0103712e414"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9579b3da6b6dba36c16b8415b57664084e3e4b3e3de0ab6342680e505aaf8b5e"
+    sha256 cellar: :any,                 x86_64_linux:  "bcc91003faef75e0fe4554fea434566f85a4f2d97c4eac7865fdb9969f9bd866"
   end
 
   depends_on "go" => :build
@@ -55,16 +56,41 @@ class Vaults3 < Formula
     config = testpath/"config.yaml"
     config.write <<~YAML
       server:
+        address: 127.0.0.1
         port: #{port}
+        shutdown_timeout_secs: 1
       storage:
         data_dir: #{testpath}/data
         metadata_dir: #{testpath}/metadata
     YAML
 
-    pid = spawn bin/"vaults3", "--config", config.to_s
-    sleep 2
-    assert_match '"status":"ok"', shell_output("curl -s http://127.0.0.1:#{port}/health || true")
+    pid = spawn bin/"vaults3", "--config", config.to_s,
+                out: (testpath/"server.log").to_s, err: [:child, :out]
+    # Retry actual readiness rather than assuming a fixed startup duration.
+    output = shell_output("curl --silent --show-error --fail --retry 10 --retry-connrefused --retry-delay 1 " \
+                          "--retry-max-time 15 --max-time 2 --noproxy 127.0.0.1 http://127.0.0.1:#{port}/health")
+    assert_equal "ok", JSON.parse(output).fetch("status")
   ensure
-    Process.kill("TERM", pid) if pid
+    if pid
+      begin
+        Process.kill "TERM", pid
+      rescue Errno::ESRCH
+        nil
+      end
+      # Reap the owned child even if graceful shutdown fails.
+      deadline = Process.clock_gettime(Process::CLOCK_MONOTONIC) + 3
+      begin
+        until Process.waitpid(pid, Process::WNOHANG)
+          if Process.clock_gettime(Process::CLOCK_MONOTONIC) >= deadline
+            Process.kill "KILL", pid
+            Process.waitpid pid
+            break
+          end
+          sleep 0.1
+        end
+      rescue Errno::ECHILD
+        nil
+      end
+    end
   end
 end
