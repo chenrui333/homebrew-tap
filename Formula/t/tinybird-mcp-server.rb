@@ -9,11 +9,11 @@ class TinybirdMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3460fe002316069a39cbadedf451fdca59169bc684d6ee49142a0b484a893a61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "589321ad2cb21fc5db538f0a42b1e6828a731245b977e2deb0223616b350ddd4"
-    sha256 cellar: :any,                 arm64_linux:   "aaa4c515c9546a6853a9f9df7e287d424bc076c65a84390a1efc4ef5d78ea254"
-    sha256 cellar: :any,                 x86_64_linux:  "5f91f603b6715cbe816d0a9532d5ab6da3a015ad8f04c11ebb18419171171c0f"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "db5af55704051634303b5fd0a91153c94ffa27992c598a802f20f1e14278a46c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "915e4dfaebfe52517a995516b97fcad1fcbff8444b09e4c56921eb966e48943e"
+    sha256 cellar: :any,                 arm64_linux:   "fae6bbc662f0fcacd7de35a58b0bae2d2fe6f0b598aaf8a2d51903e2da387196"
+    sha256 cellar: :any,                 x86_64_linux:  "123bbf5189fee04b689c11b402b4b5aacc3e0a81e6099c5a4f951a0f3c88f33a"
   end
 
   depends_on "certifi" => :no_linkage
