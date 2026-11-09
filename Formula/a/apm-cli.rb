@@ -6,6 +6,7 @@ class ApmCli < Formula
   url "https://files.pythonhosted.org/packages/8e/20/9ca9b61b362e0f1fb465931d0dd76150a5f23b98b2249663e7edbacc6c0c/apm_cli-0.35.0.tar.gz"
   sha256 "9f1b06ee7c35485d2b65a8e974fbc7195f358e2149913a8312f17506698e1363"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -17,17 +18,29 @@ class ApmCli < Formula
 
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for jiter
+  depends_on "rust" => :build # for jiter and uv-build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages extra_packages:   %w[
-                  calver cython expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec
-                  pkgconfig poetry-core setuptools-scm trove-classifiers uv-dynamic-versioning vcs-versioning wheel
+                  calver cython>=3.2,<4 expandvars flit-core>=3.12,<4 hatch-fancy-pypi-readme hatch-vcs>=0.5,<0.6
+                  hatchling==1.32.4 packaging pathspec pkgconfig poetry-core setuptools<84.1 setuptools-scm>=8,<11
+                  trove-classifiers uv-dynamic-versioning vcs-versioning<3 wheel
                 ],
                 exclude_packages: %w[certifi pydantic pydantic-core]
+
+  # Dateutil's build requires the older SCM generation, independently of the other resources.
+  resource "homebrew-setuptools-scm-legacy" do
+    self.name = "setuptools-scm"
+    url "https://files.pythonhosted.org/packages/98/12/2c1e579bb968759fc512391473340d0661b1a8c96a59fb7c65b02eec1321/setuptools_scm-7.1.0.tar.gz"
+    sha256 "6c508345a771aad7d56ebff0e70628bf2b0ec7573762be9960214730de278f27"
+
+    livecheck do
+      skip "Dateutil requires setuptools-scm <8"
+    end
+  end
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
@@ -115,8 +128,8 @@ class ApmCli < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "frozenlist" do
@@ -300,8 +313,8 @@ class ApmCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
-    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "setuptools-scm" do
@@ -399,11 +412,25 @@ class ApmCli < Formula
     sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
+  # Keep the complete locked workspace for Frontmatter's original build backend.
+  resource "uv-build-0.11" do
+    url "https://github.com/astral-sh/uv/archive/3010295ae7ff572de459987ad70db315a62ecd61.tar.gz"
+    version "0.11.32"
+    sha256 "966974756c8fac32372b11d3137b8dc36cdef67af05b589508258c504bdf3d10"
+
+    livecheck do
+      skip "Python-frontmatter requires uv-build <0.12"
+    end
+  end
+
   deny_network_access!
 
   def fetch
-    resource("jiter").stage do
-      system "cargo", "fetch", "--locked"
+    ENV.prepend_path "PATH", formula_opt_bin("rust")
+    %w[jiter uv-build-0.11].each do |name|
+      resource(name).stage do
+        system "cargo", "fetch", "--locked"
+      end
     end
   end
 
@@ -416,10 +443,10 @@ class ApmCli < Formula
       poetry-core
       packaging
       pathspec
-      pluggy
-      trove-classifiers
       vcs-versioning
       setuptools-scm
+      pluggy
+      trove-classifiers
       tomlkit
       hatchling
       hatch-vcs
@@ -431,36 +458,78 @@ class ApmCli < Formula
       uv-dynamic-versioning
       pkgconfig
       wheel
+      homebrew-setuptools-scm-legacy
+      uv-build-0.11
     ]
 
     ENV.prepend_path "PATH", formula_opt_bin("rust")
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV["CARGO_NET_OFFLINE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
-    build_resources.each do |name|
+    venv = virtualenv_create(libexec, "python3.14")
+    bootstrap_resources = %w[setuptools flit-core packaging wheel]
+    bootstrap_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    venv.pip_install resource("homebrew-setuptools-scm-legacy"), build_isolation: false
+    venv.pip_install resource("six"), build_isolation: false
+    venv.pip_install resource("python-dateutil"), build_isolation: false
+    system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "setuptools-scm"
+
+    deferred_resources = bootstrap_resources + %w[homebrew-setuptools-scm-legacy uv-build-0.11]
+    (build_resources - deferred_resources).each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    resource("python-frontmatter").stage do
-      inreplace "pyproject.toml" do |s|
-        s.gsub! 'requires = ["uv_build>=0.11.15,<0.12"]', 'requires = ["hatchling"]'
-        s.gsub! 'build-backend = "uv_build"', 'build-backend = "hatchling.build"'
-      end
-      (Pathname.pwd/"pyproject.toml").append_lines <<~TOML
-
-        [tool.hatch.build.targets.wheel]
-        packages = ["frontmatter"]
-      TOML
-      venv.pip_install Pathname.pwd, build_isolation: false
+    resource("uv-build-0.11").stage do
+      venv.pip_install Pathname.pwd/"crates/uv-build", build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || r.name == "python-frontmatter" },
-                     build_isolation: false
+    venv.pip_install resource("python-frontmatter"), build_isolation: false
+    installed_resources = build_resources + %w[six python-dateutil python-frontmatter]
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
+    # Frontmatter's native build backend is not a runtime dependency.
+    system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "uv-build"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/apm --version")
 
-    output = shell_output("#{bin}/apm not-a-real-command 2>&1", 2)
-    assert_match "not-a-real-command", output
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import jiter
+      import yaml
+
+      assert yaml.__with_libyaml__
+      data = {"name": "café", "ports": [0, 65535], "enabled": False}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+      assert jiter.from_json('{"id":9223372036854775807,"name":"café"}'.encode()) == {
+          "id": 9223372036854775807, "name": "café"
+      }
+    PYTHON
+
+    (testpath/"apm.yml").write <<~YAML
+      name: homebrew-context
+      version: 0.1.0
+      description: Offline compiler fixture
+      dependencies:
+        apm: []
+        mcp: []
+    YAML
+    instructions = testpath/".apm/instructions"
+    instructions.mkpath
+    (instructions/"build.instructions.md").write <<~MARKDOWN
+      ---
+      description: Deterministic Python fixtures
+      applyTo: "**/*.py"
+      ---
+      # Build policy
+
+      Preserve café and Unicode query results.
+    MARKDOWN
+    system bin/"apm", "compile", "--local-only", "--single-agents", "--target", "codex"
+    compiled = (testpath/"AGENTS.md").read
+    assert_match "**/*.py", compiled
+    assert_match "Preserve café and Unicode query results.", compiled
+    refute_match "applyTo:", compiled
+
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "check"
   end
 end
