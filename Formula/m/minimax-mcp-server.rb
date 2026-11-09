@@ -10,11 +10,10 @@ class MinimaxMcpServer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "d08098f09da9a12185ecc39260d2e4f44edf9a033cb7714c4768c1532ab4b48b"
-    sha256 cellar: :any, arm64_sequoia: "2e7d755145adec764324808be8ab534ac49cc4fd49447bcc05df96f72268a3d8"
-    sha256 cellar: :any, arm64_linux:   "5414d3ea02fff011dfc0a26b551ecff5bb14492aa3b1f4d4b14d127db64febca"
-    sha256 cellar: :any, x86_64_linux:  "c8ceecf2edaccc1ab5ebd5b735eee018f2a868f98745729fd9ee272a241b8054"
+    sha256 cellar: :any, arm64_tahoe:   "d455595634f175b39f1105435f90c3a3202d8a6ba067b40b890880bf492c9584"
+    sha256 cellar: :any, arm64_sequoia: "fc8a0a4708fab7bc878458d0542b80fd003f3038f70ea09b63b7c52d31964f40"
+    sha256 cellar: :any, arm64_linux:   "396da09011a691e4e47915b42b1237f014a6e05970aca543a91c4ad2184ea0f2"
+    sha256 cellar: :any, x86_64_linux:  "6f97c1a8043a774d9abe3253bc427f1aea19c8822d5d540bed5f7b7189e82c01"
   end
 
   depends_on "autoconf" => :build
