@@ -7,7 +7,8 @@ class CcBridge < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "f81e82ea342fa2bdfcedf8315dea20395ec9fb811d7f95ef501b64f5adeaef22"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "862639e591c19b767b5b6dd4078047511570ae862285a66251decccf7b65ef77"
   end
 
   depends_on "node"
