@@ -6,6 +6,14 @@ class Tincan < Formula
   license "MIT"
   head "https://github.com/bilalyazicioglu/tincan-cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21991fe10f62fcae3fabe1a77b89afd908d288b0ab2a64ed66c1d506c822638c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "020a8707c72f061fb07be8cc519894bb55dba3b8ad4e8993ed2efcf053b6e006"
+    sha256 cellar: :any,                 arm64_linux:   "cecd054e3ae1fe5e3b26e1fdadeb6be903efa561e4d2f578cefec83042a9ec00"
+    sha256 cellar: :any,                 x86_64_linux:  "d2d4faf6ec5ca6033b689495b8b2456a9291f413a8cffd7a88dcb50d16caf4d9"
+  end
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "opus"
