@@ -1,0 +1,20 @@
+.github/workflows/generated-maintenance-merge.yml
+  h_9df9c32c3f321d 26,52-54,86-97
+.github/scripts/formula-metadata-recovery.test.js
+  h_9df9c32c3f321d 1-101
+.github/workflows/formula-status.yml
+  h_9df9c32c3f321d 24-31,73
+.github/workflows/merge-gate.yml
+  h_9df9c32c3f321d 8,39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "908cdf1567eb27ca808bd4c9c6bb54c8f5584ac8",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
