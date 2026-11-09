@@ -5,7 +5,7 @@ class Ifstate < Formula
   homepage "https://ifstate.net"
   url "https://codeberg.org/liske/ifstate/archive/2.5.3.tar.gz"
   sha256 "045df466fb75acb09a514274f173dcde18301556ddce0b6cfb45b09ccc969746"
-  license "MIT"
+  license "GPL-3.0-or-later"
   head "https://codeberg.org/liske/ifstate.git", branch: "master"
 
   bottle do
@@ -177,11 +177,12 @@ class Ifstate < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
     # Cython is only a build tool for the pyyaml extension; skip compiling Cython itself.
     ENV["NO_CYTHON_COMPILE"] = "true"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -192,15 +193,53 @@ class Ifstate < Formula
   end
 
   test do
-    # ifstatecli omits the prerelease suffix in its version output.
-    assert_match version.major_minor_patch.to_s, shell_output("#{bin}/ifstatecli --version")
+    # Even --version imports netlink backends, and validate opens them before checking the schema.
+    # Exercise the installed schema and native dependencies without importing libifstate.
+    (testpath/"ifstate.yaml").write "interfaces: {}\n"
+    (testpath/"invalid.yaml").write "interfaces: {}\nbogus: true\n"
+    (testpath/"malformed.yaml").write "interfaces: [\n"
+    (testpath/"test.py").write <<~PYTHON
+      import importlib.machinery
+      import importlib.metadata
+      import json
+      import sys
+      from pathlib import Path
 
-    (testpath/"ifstate.yaml").write <<~YAML
-      interfaces: {}
-      bogus: true
-    YAML
-    output = shell_output("#{bin}/ifstatecli -c #{testpath}/ifstate.yaml validate 2>&1", 4)
-    assert_match "Config validation failed", output
-    assert_match "'bogus' was unexpected", output
+      import jsonschema
+      import rpds.rpds
+      import yaml
+      import yaml._yaml
+
+      assert sys.version_info[:2] == (3, 14)
+      distribution = importlib.metadata.distribution("ifstate")
+      assert distribution.version == "#{version}"
+      assert yaml.__with_libyaml__
+      for module in (yaml._yaml, rpds.rpds):
+          assert any(module.__file__.endswith(suffix) for suffix in importlib.machinery.EXTENSION_SUFFIXES)
+      assert Path(rpds.rpds.__file__).resolve().is_relative_to(Path("#{formula_opt_prefix("rpds-py")}").resolve())
+      original = rpds.HashTrieMap({"interfaces": {}})
+      changed = original.insert("bogus", True)
+      assert "bogus" not in original and changed["bogus"] is True
+
+      schema_path = distribution.locate_file("libifstate/schema/2/ifstate.conf.schema.json")
+      schema = json.loads(schema_path.read_text())
+      validator_type = jsonschema.validators.validator_for(schema)
+      validator_type.check_schema(schema)
+      validator = validator_type(schema, format_checker=jsonschema.FormatChecker())
+      with open("ifstate.yaml") as stream:
+          validator.validate(yaml.load(stream, Loader=yaml.CSafeLoader))
+      with open("invalid.yaml") as stream:
+          errors = list(validator.iter_errors(yaml.load(stream, Loader=yaml.CSafeLoader)))
+      assert any(error.validator == "additionalProperties" and "bogus" in error.instance for error in errors)
+      try:
+          with open("malformed.yaml") as stream:
+              yaml.load(stream, Loader=yaml.CSafeLoader)
+      except yaml.YAMLError:
+          pass
+      else:
+          raise AssertionError("Malformed YAML was accepted")
+    PYTHON
+    system libexec/"bin/python", "test.py"
+    system "python3.14", "-m", "pip", "--python", libexec/"bin/python", "check"
   end
 end
