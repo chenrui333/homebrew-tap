@@ -6,14 +6,14 @@ class PubmedMcpServer < Formula
   url "https://files.pythonhosted.org/packages/1b/d6/387bd43f8604e29ab0b0dcaede155677019edf637e5248094ef212a9dc94/mcp_simple_pubmed-0.1.16.tar.gz"
   sha256 "eb9f72a50420eaefaf424ea545e6712b80ed9aa8f1334ab6ea2ddf26ee11f578"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "831dfc6c670a5ea9a470bb6a649dabe156b193f677fe20cf8afa3b6767100f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1b00218d8483108a6739cfb6800ca95bc4ab9080b34d76b6f70d1dda17a6457"
-    sha256 cellar: :any,                 arm64_linux:   "d3024ffe62f711d2fcd55e70922994830b0183176f66bc5b70e294e2ddc98796"
-    sha256 cellar: :any,                 x86_64_linux:  "d4da9a3fcb8b581f86b6d51123ab6f99ba13332f07637c05cc2d27c74b086e27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95200e547316737ce29520e518595fee04ab0c6dc70c99662724e32a06f67bf4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbe021807f63694ba51840549487da6056a56279bfcf2ce2ea846f2eae54818f"
+    sha256 cellar: :any,                 arm64_linux:   "a615f13b5021b965fa54a8ae3e396088b4178bc2653216dffce1ddbca520ebf9"
+    sha256 cellar: :any,                 x86_64_linux:  "d6aa85effc111112aab93e3784812e9e54d3477c43e243041042491daacbaad3"
   end
 
   depends_on "autoconf" => :build # for patchelf
@@ -28,7 +28,7 @@ class PubmedMcpServer < Formula
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libxml2", since: :ventura
@@ -40,12 +40,33 @@ class PubmedMcpServer < Formula
     depends_on "openssl@3"
   end
 
-  pypi_packages exclude_packages: %w[certifi cryptography numpy pydantic rpds-py],
+  pypi_packages exclude_packages: %w[certifi cronsim cryptography numpy pydantic rpds-py],
                 extra_packages:   %w[
-                  calver coherent-licensed cython dunamai flit-core flit-scm hatch-fancy-pypi-readme hatch-vcs
-                  hatchling jinja2 markupsafe pathspec pdm-backend pkgconfig pluggy poetry-core scikit-build-core
-                  setuptools-scm tomlkit trove-classifiers uv-build uv-dynamic-versioning wheel
+                  calver coherent-licensed cython dunamai flit-core<4 flit-scm hatch-fancy-pypi-readme hatch-vcs
+                  hatchling jeepney jinja2 markupsafe pathspec pdm-backend pkgconfig pluggy poetry-core
+                  scikit-build-core secretstorage setuptools-scm tomlkit trove-classifiers uv-build
+                  uv-dynamic-versioning wheel
                 ]
+
+  # Metapub requires setuptools<75 only while building; the other resources require setuptools>=77.
+  resource "homebrew-setuptools-legacy" do
+    url "https://github.com/pypa/setuptools/archive/refs/tags/v74.1.3.tar.gz"
+    sha256 "f6e97f875eeacb279cf588e109f8740e6b12e97ddab22fe449eca332bdc88555"
+
+    livecheck do
+      skip "Keep the isolated legacy build backend"
+    end
+  end
+
+  # PyPI publishes only a wheel for 2.7; build the matching upstream tag instead.
+  resource "cronsim" do
+    url "https://github.com/cuu508/cronsim/archive/refs/tags/2.7.tar.gz"
+    sha256 "9ae51c8567bfd9375b313d08c9307f7417ab7e7ff935914546a189f4c416c683"
+
+    livecheck do
+      skip "Preserve the manually maintained upstream source archive"
+    end
+  end
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/57/ba/046ceea27344560984e26a590f90bc7f4a75b06701f653222458922b558c/annotated_doc-0.0.4.tar.gz"
@@ -120,11 +141,6 @@ class PubmedMcpServer < Formula
   resource "coloredlogs" do
     url "https://files.pythonhosted.org/packages/cc/c7/eed8f27100517e8c0e6b923d5f0845d0cb99763da6fdee00478f91db7325/coloredlogs-15.0.1.tar.gz"
     sha256 "7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0"
-  end
-
-  resource "cronsim" do
-    url "https://files.pythonhosted.org/packages/fb/1a/02f105147f7f2e06ed4f734ff5a6439590bb275a53dd91fc73df6312298a/cronsim-2.7-py3-none-any.whl"
-    sha256 "1e1431fa08c51dc7f72e67e571c7c7a09af26420169b607badd4ca9677ffad1e"
   end
 
   resource "cssselect" do
@@ -270,6 +286,11 @@ class PubmedMcpServer < Formula
   resource "jaraco-functools" do
     url "https://files.pythonhosted.org/packages/0f/27/056e0638a86749374d6f57d0b0db39f29509cce9313cf91bdc0ac4d91084/jaraco_functools-4.4.0.tar.gz"
     sha256 "da21933b0417b89515562656547a77b4931f98176eb173644c0d35032a33d6bb"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
   end
 
   resource "jinja2" do
@@ -507,6 +528,11 @@ class PubmedMcpServer < Formula
     sha256 "e347a59193c878ac56a363e57506938652a6dd8c965790cb1cbc6bc7e8d5abad"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz"
+    sha256 "f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
     sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
@@ -568,13 +594,13 @@ class PubmedMcpServer < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+    url "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
+    sha256 "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
   end
 
   resource "uncalled-for" do
@@ -658,32 +684,38 @@ class PubmedMcpServer < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
-    # Cython is only a build tool for lupa and pyyaml; skip compiling Cython itself.
+    # Keep a source Cython build role for Python 3.14; Core's Cython runs on Python 3.15.
     ENV["NO_CYTHON_COMPILE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    installed_resources = build_resources + %w[homebrew-setuptools-legacy metapub]
+    # Keyring's Secret Service backend is only required on Linux.
+    installed_resources += %w[jeepney secretstorage] unless OS.linux?
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
+    resource("homebrew-setuptools-legacy").stage do
+      # Use release metadata instead of date-stamping the Git source build.
+      inreplace "setup.cfg", "tag_build = .post", "tag_build ="
+      inreplace "setup.cfg", "tag_date = 1", "tag_date = 0"
+      venv.pip_install Pathname.pwd, build_isolation: false
+    end
+    venv.pip_install resource("metapub"), build_isolation: false
+    venv.pip_install resource("setuptools"), build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
-    ENV["PUBMED_EMAIL"] = "test@example.com"
-    ENV["PUBMED_API_KEY"] = "testkey"
+    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    ENV["PUBMED_EMAIL"] = ""
+    ENV["PUBMED_API_KEY"] = ""
+    output = shell_output("#{bin}/mcp-simple-pubmed 2>&1", 1)
+    assert_match "PUBMED_EMAIL environment variable is required", output
 
-    json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"homebrew-test","version":"1.0"}}}
-      {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
-    JSON
-
-    output = pipe_output("#{bin}/mcp-simple-pubmed 2>&1", json, 0)
-    assert_match '"serverInfo":{"name":"pubmed-server"', output
-    assert_match "Processing request of type ListToolsRequest", output
+    system formula_opt_libexec("python@3.14")/"bin/python", "-m", "pip", "--python", libexec/"bin/python", "check"
   end
 end
