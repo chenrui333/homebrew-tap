@@ -6,22 +6,22 @@ class TakoVm < Formula
   url "https://github.com/las7/TakoVM/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "9175da013d27e4f86d7f89fcb03add94b3c7dc3a9cacd8e3338c55f6603ba0ca"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/las7/TakoVM.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e305ad887e2349655a19461b57efeedcead1cedf5ba0443a9d9b89b5a4a3cdf6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2016a03fbe1cdbcecb33988f3876ee79b6efe23efa1851a6da7a69aac988ae09"
-    sha256 cellar: :any,                 arm64_linux:   "6c9f6f844e3e1f9ff09ccac6a8ff7eb5f0f940b1cabfd8f321cd05893ce6a164"
-    sha256 cellar: :any,                 x86_64_linux:  "93ede3f47773d970c99f1b4042f372da2ccd0a40c64a6adf137ccd40c70a4bbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "92715b570f962ad07aec4fdbd69062bf03f8fc0187b7188cf4f681dd5c67e7d0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9455a71673d847f910dd1435b750e228c8b8f44f7c4fe1cb90189f62929e33e"
+    sha256 cellar: :any,                 arm64_linux:   "2fe25fcfc1d7eece444b734cc1ddf3af8a93f6492ce78390a15042b36b44fb1c"
+    sha256 cellar: :any,                 x86_64_linux:  "8e797d6c1661916505bca704edcf9cad25127c314eb3f68c334080768d7f83c9"
   end
 
   depends_on "certifi" => :no_linkage
   depends_on "libpq"
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages exclude_packages: %w[certifi pydantic],
                 extra_packages:   %w[
@@ -160,10 +160,10 @@ class TakoVm < Formula
       wheel
     ]
 
-    # Cython is only needed at build time; skip compiling Cython itself
+    # PyYAML imports Cython in the build interpreter; use its source resource without compiling Cython itself.
     ENV["NO_CYTHON_COMPILE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -180,7 +180,26 @@ class TakoVm < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/tako-vm version")
-    output = shell_output("#{bin}/tako-vm --not-a-real-option 2>&1", 2)
-    assert_match "not-a-real-option", output
+
+    (testpath/"tako_vm.yaml").write <<~YAML
+      data_dir: #{testpath}/data
+      max_workers: 2
+      log_level: debug
+      job_types:
+        - name: homebrew
+          timeout: 45
+          memory_limit: 256m
+    YAML
+    assert_match "Configuration is valid!", shell_output("#{bin}/tako-vm validate tako_vm.yaml")
+
+    config = JSON.parse(shell_output("#{bin}/tako-vm --config tako_vm.yaml config --json"))
+    assert_equal "DEBUG", config.fetch("log_level")
+
+    (testpath/"invalid.yaml").write "default_timeout: 301\nmax_timeout: 300\n"
+    output = shell_output("#{bin}/tako-vm validate invalid.yaml 2>&1", 1)
+    assert_match "Validation FAILED", output
+    assert_match "default_timeout must be <= max_timeout", output
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
