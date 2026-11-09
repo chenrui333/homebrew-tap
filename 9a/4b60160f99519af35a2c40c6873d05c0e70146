@@ -1,0 +1,14 @@
+Formula/d/dhv.rb
+  h_9df9c32c3f321d 246,270-271,278-279,288-290,296-344
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9a4b60160f99519af35a2c40c6873d05c0e70146",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
