@@ -10,11 +10,10 @@ class Sephera < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2a7d9f73086cb5eff3213a17983395876fb978f325504a8f7bd1a1227e992ec3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bfd33df3cb29310538107a9b0aa3680f59c27b82ed78e6d8264e85969239f28"
-    sha256 cellar: :any,                 arm64_linux:   "ba7e40f84ff29395b7de40ab4e2fe399d826edceef6699fe61bccd235b60f3ed"
-    sha256 cellar: :any,                 x86_64_linux:  "aacb52d156680eb49d871c66179d96c57510b13e6308d0dae9fb5ad143469fa4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2b31f05f316f7f1e49243653a2d3d4eff377e04bfd9eaa943534a90ab68dcf1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f34b0db678bd2e40b6ba87e0cf6f53fc1810bd5a5e5b9232adbdf7ce4504b1eb"
+    sha256 cellar: :any,                 arm64_linux:   "1940f061b8e57ec2c381a1e970727eeb237825207b9063d3a131e3354a5f65d4"
+    sha256 cellar: :any,                 x86_64_linux:  "d10ca30f9c539a3d7ff5f484f183796570da4b56ef3e7503cfb7613b86dffdd7"
   end
 
   depends_on "cython" => :build
