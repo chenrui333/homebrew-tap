@@ -4,22 +4,21 @@ class Viwo < Formula
   url "https://github.com/OverseedAI/viwo/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "1c216ceb05deb428500b89a34f2102df74c1806cf54bfefefce1b63bae1751cb"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 arm64_tahoe:   "e1e3ad2f5472efa4eddfd272c2ffcfdd78bcf218ee56dd75b6771a35a5481038"
-    sha256 arm64_sequoia: "257f07f5951a596d9e063244ac5b3f96876c68ade8f00c0bf497d60e3ba11ec1"
-    sha256 arm64_linux:   "8e0ec661ec918d02255720f6945c67d0eac24a67c6e6751a351d2bae5aa99bab"
-    sha256 x86_64_linux:  "20c8ac5be564fb6f88b1e812c8079799f382bd79f9a01663958c2611571b2a0e"
+    sha256 arm64_tahoe:   "63151488808b2aa846cbcbb6d89ec3b45ad8133749d46213a1f798e60563a37b"
+    sha256 arm64_sequoia: "998859d93522b6a5d1f30b49e81daa19c936529f28a90b911a5d2cc568cd32df"
+    sha256 arm64_linux:   "b1ef79d2803fe559f6b68b00ba21bd1cc0e9ac91e91c7ab6648b8466c3d34db6"
+    sha256 x86_64_linux:  "ed87f9604ba0e16428b0e4acac80ea92cf9bca3da7d15cc6f4baf2a5a94f9ba0"
   end
 
   depends_on "homebrew/core/bun" => :build
 
   on_linux do
     # Bun-compiled executables link ICU dynamically on Linux.
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   deny_network_access!
