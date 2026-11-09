@@ -11,11 +11,10 @@ class Procmux < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0157b08828d8a0a1ddc42c327e38c42171e9b4ff227e000475dbedfd1ef91322"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9689ddb28ae55eed7d427ae9aecc9029e301e6fa8d3424becb7d50aca87252db"
-    sha256 cellar: :any,                 arm64_linux:   "3bcdc4feeae77c3e595e7e246c6e8d463d00d01ebc921f33a15cd4b8b4d16f60"
-    sha256 cellar: :any,                 x86_64_linux:  "490a94ddfdc66f43c0e54faf7a6b1b2e773708d8598fa308ac32a75e747ce101"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "685c37f2468c38601d95d84943edb0357884497f9488795e3b79c3dae1028f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8abdb45d2bd1be71ff1c9ca3d70bf8a19201215fc53f14a14bc53c0af004679"
+    sha256 cellar: :any,                 arm64_linux:   "878f55c78316b92cddbf4a46df3eee86e0bf403ffad8fe69883c6ab0c1c54a74"
+    sha256 cellar: :any,                 x86_64_linux:  "b3fe6c80b6636f9163b34b0689a81ffb3a4bbd4f12a47a474b96c4beace09f9e"
   end
 
   depends_on "libyaml"
