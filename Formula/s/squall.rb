@@ -8,6 +8,7 @@ class Squall < Formula
       tag:      "v0.1.8",
       revision: "b0fd9ec60a5165ebb4cc97f4f0f6e1723606a57c"
   license "MIT"
+  revision 1
   head "https://github.com/driscollis/squall.git", branch: "main"
 
   bottle do
@@ -19,12 +20,11 @@ class Squall < Formula
     sha256 cellar: :any,                 x86_64_linux:  "a77a4293da9df96e520b431bf3bc079224ea2b77180af62a41bf5bffd5d03155"
   end
 
-  depends_on "cython" => :build # for sqlalchemy C extensions
   depends_on "python@3.14"
 
   pypi_packages extra_packages: %w[
-    calver flit-core hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools setuptools-scm tomlkit
-    trove-classifiers vcs-versioning wheel
+    calver cython flit-core greenlet hatch-vcs hatchling packaging pathspec pluggy poetry-core setuptools
+    setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
   ]
 
   resource "calver" do
@@ -32,9 +32,19 @@ class Squall < Formula
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
   end
 
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  end
+
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/3e/6e/0091f175ccd02b02bc8811bbcbcc6ac2e980be116e3b2f7a736ca322bf84/greenlet-3.5.6.tar.gz"
+    sha256 "8e67c43bdfc88d5fee6db0d3e40175b362fc95fb85f0412d233b9b203c53a575"
   end
 
   resource "hatch-vcs" do
@@ -170,9 +180,8 @@ class Squall < Formula
       hatchling
       hatch-vcs
       wheel
+      cython
     ]
-
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -183,8 +192,71 @@ class Squall < Formula
   end
 
   test do
-    (testpath/"test.db").write ""
-    output = shell_output("#{bin}/squall -f #{testpath}/test.db 2>&1")
-    assert_match "IndexError: list index out of range", output
+    # FIXME: Upstream does not expose a version command.
+    assert_match "Path to a SQLite database", shell_output("#{bin}/squall --help")
+
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import asyncio
+      import importlib
+      import importlib.machinery
+      import sys
+      from argparse import Namespace
+      from pathlib import Path
+      from sqlalchemy import Integer, String, create_engine, select
+      from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column
+      from sqlalchemy.util import _has_cy
+      from squall import db_utility
+      from squall.execute_sql import ExecuteSQLPane
+      from squall.squall import SQLiteClientApp
+      from textual.widgets import DataTable, TabbedContent, TextArea
+
+      assert _has_cy.HAS_CYEXTENSION
+      for name in ("collections", "immutabledict", "processors", "resultproxy", "util"):
+          module = importlib.import_module(f"sqlalchemy.cyextension.{name}")
+          origin = Path(module.__file__).resolve()
+          assert origin.is_relative_to(Path(sys.prefix).resolve()), origin
+          assert any(str(origin).endswith(suffix) for suffix in importlib.machinery.EXTENSION_SUFFIXES), origin
+
+      class Base(DeclarativeBase):
+          pass
+
+      class Book(Base):
+          __tablename__ = "books"
+          id: Mapped[int] = mapped_column(Integer, primary_key=True)
+          title: Mapped[str] = mapped_column(String)
+
+      database = Path("test.db").resolve()
+      engine = create_engine(f"sqlite:///{database}")
+      Base.metadata.create_all(engine)
+      with Session(engine) as session:
+          session.add_all([Book(title="Bravo"), Book(title="Alpha")])
+          session.commit()
+          assert session.scalars(select(Book.title).order_by(Book.title)).all() == ["Alpha", "Bravo"]
+      engine.dispose()
+
+      assert db_utility.get_table_names(database) == ["books"]
+      columns = db_utility.get_schema(database)["books"]["Columns"]
+      assert columns["id"]["Schema"]["primary_key"] == 1
+      assert columns["title"]["Type"] == "VARCHAR"
+
+      async def consume():
+          app = SQLiteClientApp(Namespace(filepath=str(database)))
+          async with app.run_test() as pilot:
+              await pilot.pause()
+              table = app.query_one("#sqlite_table_data", DataTable)
+              assert table.row_count == 2
+              assert table.get_row_at(0) == [1, "Bravo"]
+              app.query_one("#tabbed_ui", TabbedContent).active = app.query_one(ExecuteSQLPane).id
+              app.query_one("#sql_commands", TextArea).load_text("SELECT title FROM books ORDER BY title")
+              await pilot.pause()
+              await pilot.click("#run_sql_btn")
+              await pilot.pause()
+              results = app.query_one("#sql_results_table", DataTable)
+              assert results.row_count == 2
+              assert results.get_row_at(0) == ["Alpha"]
+              assert results.get_row_at(1) == ["Bravo"]
+
+      asyncio.run(asyncio.wait_for(consume(), timeout=30))
+    PYTHON
   end
 end
