@@ -1,0 +1,19 @@
+Formula/i/ifstate.rb
+  s_7fcffee6d4a46b::t_02a78934f61df6 8,180,185,196-243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "92125cba0c436fa5228a43f4930ce6fff467ad7d",
+  "prompts": {},
+  "sessions": {
+    "s_7fcffee6d4a46b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c228-cc66-7091-8c79-0a888c0d6f9b",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
