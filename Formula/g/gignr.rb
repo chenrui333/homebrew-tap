@@ -17,6 +17,7 @@ class Gignr < Formula
   end
 
   depends_on "go" => :build
+  depends_on "git" => :test
 
   deny_network_access!
 
@@ -33,8 +34,16 @@ class Gignr < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/gignr --version")
 
-    # failed due to github api rate limit
-    # assert_match "Created .gitignore file", shell_output("#{bin}/gignr create gh:Go tt:clion my-template")
-    # assert_match "Binaries for programs and plugins", (testpath/".gitignore").read
+    (testpath/".gitignore").write("build/\n*.log\n")
+    system bin/"gignr", "save", "homebrew-template"
+
+    system "git", "init", "--quiet", "project"
+    cd "project" do
+      system bin/"gignr", "create", "homebrew-template"
+      Pathname("build").mkpath
+      touch %w[trace.log README.md build/output.bin]
+      assert_equal "trace.log\nbuild/output.bin\n",
+                   shell_output("git check-ignore --no-index trace.log README.md build/output.bin")
+    end
   end
 end
