@@ -5,7 +5,7 @@ class RalliesCli < Formula
   homepage "https://rallies.ai/"
   url "https://files.pythonhosted.org/packages/01/3b/c5e8fdcdb9380e5369057ca9ed01cf1ae713e4a5d8913f54dc3b72cee5a8/rallies-0.1.0.tar.gz"
   sha256 "5fbf2044e5d7262948fd57eb923f27061a1bf83cb432241f42a2eca85d9b828b"
-  license "GPL-3.0-or-later" # TODO: need to upstream it
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -83,6 +83,17 @@ class RalliesCli < Formula
   resource "hatchling" do
     url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
     sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+  end
+
+  # OpenAI's source distribution requires this exact build backend.
+  resource "homebrew-hatchling-openai" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
+
+    livecheck do
+      skip "Keep OpenAI's exact build backend"
+    end
   end
 
   resource "httpcore" do
@@ -280,15 +291,21 @@ class RalliesCli < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) || r.name == "o200k-base" },
-                     build_isolation: false
+    installed_resources = build_resources + %w[o200k-base openai]
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
+
+    system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "hatchling"
+    venv.pip_install resource("homebrew-hatchling-openai"), build_isolation: false
+    venv.pip_install resource("openai"), build_isolation: false
+    system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "hatchling"
+    venv.pip_install resource("hatchling"), build_isolation: false
     venv.pip_install buildpath, build_isolation: false
 
     # tiktoken looks up cached encodings by the SHA-1 of their download URL.
@@ -300,12 +317,19 @@ class RalliesCli < Formula
   end
 
   test do
+    require "json"
+
+    # FIXME: Upstream does not expose a version command; use installed release metadata.
+    output = shell_output("#{libexec}/bin/python -c \"import importlib.metadata as m; print(m.version('rallies'))\"")
+    assert_equal version.to_s, output.strip
+
     ENV.delete("OPENAI_API_KEY")
     # The prompt is rejected locally before any OpenAI or rallies.ai request is made.
-    output = pipe_output(bin/"rallies", "/key test-key\nHow is AAPL doing?\n", 0)
-    assert_match "AI powered investment research", output
-    assert_match "API key saved and activated.", output
+    output = pipe_output(bin/"rallies", "/key test-key\nlocal diagnostic\n", 0)
     assert_match "We need to set our OpenAI key first", output
-    assert_match "test-key", (testpath/".rallies/config.json").read
+    assert_equal "test-key", JSON.parse((testpath/".rallies/config.json").read).fetch("api_key")
+
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
