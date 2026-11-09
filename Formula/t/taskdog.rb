@@ -29,7 +29,7 @@ class Taskdog < Formula
                 extra_packages:   %w[
                   alembic click fastapi holidays httpx python-dateutil python-multipart rich sqlalchemy
                   textual textual-plotext uvicorn[standard] websockets
-                  calver cython flit-core hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend
+                  calver cython flit-core<4 hatch-fancy-pypi-readme hatch-vcs hatchling packaging pathspec pdm-backend
                   pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
                 ]
 
@@ -69,8 +69,8 @@ class Taskdog < Formula
   end
 
   resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
-    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
   end
 
   resource "h11" do
@@ -218,9 +218,21 @@ class Taskdog < Formula
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
+  resource "setuptools-for-httptools" do
+    self.name = "setuptools"
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
     sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
+  end
+
+  resource "setuptools-scm-for-dateutil" do
+    self.name = "setuptools-scm"
+    url "https://files.pythonhosted.org/packages/98/12/2c1e579bb968759fc512391473340d0661b1a8c96a59fb7c65b02eec1321/setuptools_scm-7.1.0.tar.gz"
+    sha256 "6c508345a771aad7d56ebff0e70628bf2b0ec7573762be9960214730de278f27"
   end
 
   resource "setuptools-scm" do
@@ -302,43 +314,46 @@ class Taskdog < Formula
   end
 
   def install
-    inreplace "packages/taskdog-ui/src/taskdog/shared/click_types/field_list.py",
-              "click.ParamType[list[str] | None]", "click.ParamType"
-    inreplace "packages/taskdog-ui/src/taskdog/cli/commands/fix_times.py" do |s|
-      s.gsub! "click.ParamType[datetime | str | None]", "click.ParamType"
-      s.gsub! "click.ParamType[float | str | None]", "click.ParamType"
-    end
-
     build_resources = %w[
       flit-core
       packaging
       pathspec
       pdm-backend
       poetry-core
-      setuptools
+      setuptools-for-httptools
       calver
       cython
       tomlkit
       trove-classifiers
       vcs-versioning
+      wheel
+      setuptools-scm-for-dateutil
+      setuptools
       setuptools-scm
       pluggy
       hatchling
       hatch-fancy-pypi-readme
       hatch-vcs
-      wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
-    # Cython is only a build tool for the pyyaml extension; skip compiling Cython itself.
-    ENV["NO_CYTHON_COMPILE"] = "true"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
 
     venv = virtualenv_create(libexec, "python3.14")
-    build_resources.each do |name|
+    # Dateutil needs setuptools-scm <8; httptools needs setuptools <=82.0.1.
+    legacy_resources = build_resources.take_while { |name| name != "setuptools" }
+    legacy_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    venv.pip_install resource("python-dateutil"), build_isolation: false
+    venv.pip_install resource("httptools"), build_isolation: false
+    # std_pip_args uses --ignore-installed, so remove old backends before replacing them.
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python",
+           "uninstall", "--yes", "setuptools", "setuptools-scm"
+    (build_resources - legacy_resources).each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+    installed_resources = build_resources + %w[python-dateutil httptools]
+    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
     venv.pip_install buildpath/"packages/taskdog-core", build_isolation: false
     venv.pip_install buildpath/"packages/taskdog-client", build_isolation: false
     venv.pip_install buildpath/"packages/taskdog-server", build_isolation: false
@@ -355,17 +370,81 @@ class Taskdog < Formula
 
   test do
     system formula_opt_libexec("python@3.14")/"bin/python", "-m", "pip", "--python", libexec/"bin/python", "check"
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import importlib.machinery
+      import importlib.metadata
+      import json
+      import sys
+      from pathlib import Path
+      from time import monotonic
+      import Cython.Plex.Scanners
+      import pydantic_core
+      from pydantic import BaseModel
+      import watchfiles._rust_notify
+      import yaml
+      import yaml._yaml
+      from taskdog.cli.commands.fix_times import ClearableDateTimeType, ClearableFloatType
+      from taskdog.shared.click_types.field_list import FieldList
+
+      for name in ("taskdog-core", "taskdog-client", "taskdog-server", "taskdog-ui"):
+          assert importlib.metadata.version(name) == "#{version}"
+      modules = (Cython.Plex.Scanners, pydantic_core._pydantic_core, watchfiles._rust_notify, yaml._yaml)
+      for module in modules:
+          assert any(module.__file__.endswith(suffix) for suffix in importlib.machinery.EXTENSION_SUFFIXES)
+      class Task(BaseModel):
+          priority: int
+      assert Task(priority="10").model_dump() == {"priority": 10}
+      data = {"tasks": ["Learn Taskdog"], "priority": 10}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+      assert FieldList(valid_fields={"id", "name"}).convert("id,name", None, None) == ["id", "name"]
+      assert ClearableDateTimeType().convert("", None, None) == "CLEAR"
+      assert ClearableFloatType().convert("1.5", None, None) == 1.5
+      watched = Path("watched").resolve()
+      watched.mkdir()
+      fixture = watched / "task.txt"
+      fixture.write_text("pending")
+      with watchfiles._rust_notify.RustNotify([str(watched)], False, False, 300, True, False) as watcher:
+          assert repr(watcher).startswith("RustNotify(Recommended(")
+          fixture.write_text("Learn Taskdog")
+          if sys.platform == "darwin":
+              # Exercise native lifecycle without requiring OS events in the macOS sandbox.
+              watcher.close()
+              assert repr(watcher) == "RustNotify(None)"
+              try:
+                  watcher.watch(100, 50, 1, None)
+              except RuntimeError as error:
+                  assert str(error) == "RustNotify watcher closed"
+              else:
+                  raise AssertionError("A closed native watcher accepted another watch")
+          else:
+              deadline = monotonic() + 5
+              observed = set()
+              while monotonic() < deadline:
+                  remaining = max(1, int((deadline - monotonic()) * 1000))
+                  changes = watcher.watch(100, 50, remaining, None)
+                  if isinstance(changes, set):
+                      observed.update(changes)
+                      if any(Path(path).resolve() == fixture for _, path in observed):
+                          break
+              assert any(Path(path).resolve() == fixture for _, path in observed), observed
+      print(json.dumps({module.__name__: module.__file__ for module in modules}))
+    PYTHON
 
     port = free_port
     config_home = testpath/"config"
     data_home = testpath/"data"
+    data_home.mkpath
     log_file = testpath/"taskdog-server.log"
 
     pid = spawn(
       {
-        "XDG_CONFIG_HOME"      => config_home.to_s,
-        "XDG_DATA_HOME"        => data_home.to_s,
-        "TASKDOG_AUTH_ENABLED" => "false",
+        "XDG_CONFIG_HOME"              => config_home.to_s,
+        "XDG_DATA_HOME"                => data_home.to_s,
+        "XDG_STATE_HOME"               => (testpath/"state").to_s,
+        "TASKDOG_AUTH_ENABLED"         => "false",
+        "TASKDOG_STORAGE_BACKEND"      => "sqlite",
+        "TASKDOG_STORAGE_DATABASE_URL" => "sqlite:///#{data_home}/tasks.db",
+        "TASKDOG_REGION_COUNTRY"       => nil,
       },
       bin/"taskdog-server", "--host", "127.0.0.1", "--port", port.to_s,
       [:out, :err] => log_file.to_s
@@ -373,29 +452,40 @@ class Taskdog < Formula
 
     server_ready = false
     10.times do
-      server_ready = quiet_system "curl", "-fsS", "http://127.0.0.1:#{port}/health"
+      server_ready = quiet_system "curl", "-fsS", "--connect-timeout", "1", "--max-time", "1",
+                                  "http://127.0.0.1:#{port}/health"
       break if server_ready
 
       sleep 1
     end
 
-    assert_match version.to_s, shell_output("#{bin}/taskdog --version")
     assert server_ready, "taskdog-server failed to start: #{log_file.read}"
-    assert_match "ok", shell_output("curl -fsS http://127.0.0.1:#{port}/health")
+    assert_equal "ok", JSON.parse(shell_output("curl -fsS --max-time 2 http://127.0.0.1:#{port}/health")).fetch("status")
 
     with_env(
       "XDG_CONFIG_HOME"      => config_home.to_s,
       "XDG_DATA_HOME"        => data_home.to_s,
       "TASKDOG_API_BASE_URL" => "http://127.0.0.1:#{port}",
+      "TASKDOG_API_KEY"      => nil,
     ) do
-      add_output = shell_output("#{bin}/taskdog add 'Learn Taskdog' --priority 10")
-      assert_match "Added task: Learn Taskdog", add_output
-
-      table_output = shell_output("#{bin}/taskdog list --fields id,name")
-      assert_match "Learn Taskdog", table_output
+      assert_match version.to_s, shell_output("#{bin}/taskdog --version")
+      assert_empty JSON.parse(shell_output("#{bin}/taskdog export --format json"))
+      system bin/"taskdog", "add", "Learn Taskdog", "--priority", "10"
+      tasks = JSON.parse(shell_output("#{bin}/taskdog export --format json --fields id,name,priority"))
+      assert_equal 1, tasks.length
+      task = tasks.fetch(0)
+      assert_equal "Learn Taskdog", task.fetch("name")
+      assert_equal 10, task.fetch("priority")
+      system bin/"taskdog", "update", task.fetch("id").to_s, "--priority", "20"
+      updated = JSON.parse(shell_output("#{bin}/taskdog export --format json --fields id,name,priority")).fetch(0)
+      assert_equal task.merge("priority" => 20), updated
+      system bin/"taskdog", "rm", task.fetch("id").to_s, "--hard"
+      assert_empty JSON.parse(shell_output("#{bin}/taskdog export --format json --all"))
     end
   ensure
-    Process.kill("TERM", pid) if pid
-    Process.wait(pid) if pid
+    if pid
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end
