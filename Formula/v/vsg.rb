@@ -9,11 +9,10 @@ class Vsg < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c882901136902366c3be3399ba207a9b7f5f88683c83f9baea6f614df1fe59d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10b272248ce2de5ebc6e2b51de2c32659e6695fdbd5dbd6ebdc7a9ecdccb552f"
-    sha256 cellar: :any,                 arm64_linux:   "3b1e8d140766fd399097d94e603afe02b852112510b66ce05e0bbd6fa94a38c8"
-    sha256 cellar: :any,                 x86_64_linux:  "e35c796bc255450ed67cb57a1f28e0918183f3dc437f5812d1e252807a701e1c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a6a5420b285479900c8496f7272278541acca0f6f908bb7f33a7fc3d99f34136"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2771ad1d9880e5a431f0ccdffc2e79780ba93e96026fb40ed11e8fc4be6ec717"
+    sha256 cellar: :any,                 arm64_linux:   "e28ed0e3b6849b694048dfefaff03060e85e3a62c509497ceb43c285e381ec80"
+    sha256 cellar: :any,                 x86_64_linux:  "a4da0f61ea285d4acb9b8653c73beae09ff8a364f5427e787ef3e1d89aead23d"
   end
 
   depends_on "libyaml"
