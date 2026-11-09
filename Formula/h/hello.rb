@@ -4,15 +4,14 @@ class Hello < Formula
   url "https://ftpmirror.gnu.org/hello/hello-2.12.3.tar.gz"
   sha256 "0d5f60154382fee10b114a1c34e785d8b1f492073ae2d3a6f7b147687b366aa0"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8442cfcdba8a8feedfcaf52dce350fda6be1488f9ce335da7b14e6c158df37e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67790351528ade5aaec9dd06a75ba9249084abbfd411ccdb77c6248647dc0a8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37476d15434fb91ded76e65afe0c6a35d8d5625ca71fe46fb1da87c90ebac215"
-    sha256 cellar: :any_skip_relocation, sequoia:       "21e0af6ebde9a23c5c276a4b53902c3da7f1de7dc1faf7bf4f1a9f4618117ded"
-    sha256                               arm64_linux:   "e737a08e027323506cb0a4937c8271479b425f25ef0675ba1f9e1bb16f5c7af6"
-    sha256                               x86_64_linux:  "ccce0d2698ee0db5425be6cc8ad5b888560b0ba1b3191592351d6e092502547c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "031627c6725d575d9c73287c57d21d6cc5d17da54275a3efe54c9ea6649e614d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4288fcf9a7709a643d049cac122417b4cde2b77c042b1a921060b6cdf253d66"
+    sha256                               arm64_linux:   "e2973d15c7281c1152ce70aa2666123857b761180de85c8e018333cedcb5f5a7"
+    sha256                               x86_64_linux:  "845e56d0496dd44cb24dbf43512b915e3e0f8e68d0b7f608c9d3c58ecd9f7f9e"
   end
 
   deny_network_access!
