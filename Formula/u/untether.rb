@@ -6,6 +6,7 @@ class Untether < Formula
   url "https://files.pythonhosted.org/packages/3c/92/f32b803247abc9858ee1ec2700b223b9d707cc415856acdc545ef282e4ce/untether-0.36.0.tar.gz"
   sha256 "e9f2663917facb95f887449c01280b5916e005fbf78423ce6e0f2ad7b747696d"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -16,10 +17,11 @@ class Untether < Formula
   end
 
   depends_on "maturin" => :build
+  depends_on "python@3.13" => :build # html5lib's unchanged setup.py still uses ast.Str
   depends_on "rust" => :build # for jiter, uv-build and watchfiles
   depends_on "certifi" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -29,11 +31,11 @@ class Untether < Formula
     depends_on "bzip2" # for uv-build
   end
 
-  pypi_packages exclude_packages: %w[certifi pydantic],
+  pypi_packages exclude_packages: %w[certifi cython flit-core hatchling pydantic setuptools uv-build],
                 extra_packages:   %w[
-                  calver cython dunamai expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling jinja2
+                  calver dunamai expandvars hatch-fancy-pypi-readme hatch-vcs jinja2
                   markupsafe packaging pathspec pdm-backend pkgconfig pluggy poetry-core setuptools-scm tomlkit
-                  trove-classifiers uv-build uv-dynamic-versioning vcs-versioning wheel
+                  trove-classifiers uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "aiohappyeyeballs" do
@@ -71,9 +73,13 @@ class Untether < Formula
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
   end
 
-  resource "cython" do
-    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
-    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
+  resource "build-cython" do
+    self.name = "cython"
+    url "https://files.pythonhosted.org/packages/f6/de/db48b8870e766cfea809986cc50c1e986c663a9ab7bafd0ac1a2512c4a26/cython-3.2.9.tar.gz"
+    sha256 "d249c9022ab13286b17bd66f30609e800c5f95efeecb06168990c7a66cecde6c"
+    livecheck do
+      skip "lxml requires Cython >=3.2.9,<3.3"
+    end
   end
 
   resource "dunamai" do
@@ -86,9 +92,13 @@ class Untether < Formula
     sha256 "6c5822b7b756a99a356b915dd1267f52ab8a4efaa135963bd7f4bd5d368f71d7"
   end
 
-  resource "flit-core" do
-    url "https://files.pythonhosted.org/packages/e7/91/add211b38c357bf1b94900b4f79c34661a92be65c0243d2b0a3393c5092d/flit_core-4.1.0.tar.gz"
-    sha256 "62e12b63ead8335b37f59fabb977c7167fe476dafb5e41785dfa8c9aff843bc6"
+  resource "build-flit-core" do
+    self.name = "flit-core"
+    url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
+    sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+    livecheck do
+      skip "Keep the source-compatible Flit 3 build backend"
+    end
   end
 
   resource "frozenlist" do
@@ -114,6 +124,9 @@ class Untether < Formula
   resource "hatchling" do
     url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
     sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+    livecheck do
+      skip "Keep the modern backend separate from OpenAI's exact build requirement"
+    end
   end
 
   resource "html5lib" do
@@ -264,6 +277,9 @@ class Untether < Formula
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
     sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    livecheck do
+      skip "Keep the modern backend separate from html5lib's legacy build SDK"
+    end
   end
 
   resource "setuptools-scm" do
@@ -321,9 +337,14 @@ class Untether < Formula
     sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
-  resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/b4/65/672d5c1e7fff2a602b51758cd96c379ea80c0c20d9d10aae5139bfde9877/uv_build-0.12.23.tar.gz"
-    sha256 "b0428317e2783252b33b513446436071f4e14bfeb38655c99877ca6550ea4aac"
+  resource "build-uv-build" do
+    self.name = "uv-build"
+    url "https://github.com/astral-sh/uv/archive/3010295ae7ff572de459987ad70db315a62ecd61.tar.gz"
+    version "0.11.32"
+    sha256 "966974756c8fac32372b11d3137b8dc36cdef67af05b589508258c504bdf3d10"
+    livecheck do
+      skip "Untether requires uv-build >=0.9.18,<0.12"
+    end
   end
 
   resource "uv-dynamic-versioning" do
@@ -361,20 +382,47 @@ class Untether < Formula
     sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
+  # Lookup keys distinguish build roles while preserving canonical source identities.
+  resource "build-hatchling-openai" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/8f/8a/cc1debe3514da292094f1c3a700e4ca25442489731ef7c0814358816bb03/hatchling-1.27.0.tar.gz"
+    sha256 "971c296d9819abb3811112fc52c7a9751c8d381898f36533bb16f9791e941fd6"
+    livecheck do
+      skip "OpenAI requires exactly Hatchling 1.27.0"
+    end
+  end
+
+  resource "build-setuptools-html5lib" do
+    self.name = "setuptools"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+    livecheck do
+      skip "Keep the isolated legacy pkg_resources build backend"
+    end
+
+    # Normalize manifest matching while retaining the original pkg_resources build API.
+    patch do
+      url "https://github.com/pypa/setuptools/commit/dd9f436a36486b4cb8a4c70a2321548b0be09b8f.patch?full_index=1"
+      sha256 "0bda8d9d5766efa18bfcf1016a5dd0c57750792522b614ca9638d950fcded55d"
+      type :backport
+      resolves "GHSA-h35f-9h28-mq5c"
+    end
+  end
+
   deny_network_access!
 
   def fetch
     # maturin/PyO3 run offline `cargo metadata`, which needs crates for all targets.
     # jiter's sdist lock file still lists workspace members that are not shipped.
     resource("jiter").stage { system "cargo", "fetch" }
-    %w[uv-build watchfiles].each do |name|
+    %w[build-uv-build watchfiles].each do |name|
       resource(name).stage { system "cargo", "fetch", "--locked" }
     end
   end
 
   def install
     build_resources = %w[
-      flit-core
+      build-flit-core
       packaging
       pathspec
       pdm-backend
@@ -382,43 +430,60 @@ class Untether < Formula
       pkgconfig
       setuptools
       calver
-      cython
+      build-cython
       tomlkit
       trove-classifiers
-      uv-build
       vcs-versioning
       setuptools-scm
       pluggy
-      hatchling
+      build-hatchling-openai
       expandvars
       hatch-fancy-pypi-readme
       hatch-vcs
       dunamai
       markupsafe
       jinja2
-      uv-dynamic-versioning
       wheel
     ]
 
     # Ensure source-built hatchling wheels use ZIP-compatible mtimes.
     ENV["SOURCE_DATE_EPOCH"] = "315532800"
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.13")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
     # Cython is only a build tool for the aio-libs extensions; skip compiling Cython itself.
     ENV["NO_CYTHON_COMPILE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
-    # html5lib 1.1's setup.py imports pkg_resources (removed in setuptools 82) only for a check
-    # that is a no-op on setuptools >= 18.5.
-    resource("html5lib").stage do
-      inreplace "setup.py", "from pkg_resources import parse_version\n\nimport pkg_resources", "pkg_resources = None"
-      venv.pip_install Pathname.pwd, build_isolation: false
+    resource("build-uv-build").stage do
+      cd "crates/uv-build" do
+        venv.pip_install Pathname.pwd, build_isolation: false
+      end
     end
-    installed = build_resources + ["html5lib"]
+
+    # Only this source-generated universal wheel crosses the build-Python boundary.
+    # The original setup.py needs both ast.Str and the legacy pkg_resources SDK.
+    legacy = virtualenv_create(buildpath/"html5lib-build", "python3.13")
+    legacy.pip_install resource("build-setuptools-html5lib"), build_isolation: false
+    wheels = buildpath/"html5lib-wheel"
+    resource("html5lib").stage do
+      system formula_opt_bin("python@3.13")/"python3.13", "-m", "pip",
+             "--python", buildpath/"html5lib-build/bin/python", "wheel", "--no-index",
+             "--no-deps", "--no-build-isolation", "--wheel-dir", wheels, "."
+    end
+    venv.pip_install wheels/"html5lib-1.1-py2.py3-none-any.whl", build_isolation: false
+
+    venv.pip_install resource("openai"), build_isolation: false
+    # Homebrew installs with --ignore-installed; remove the old SDK metadata before replacement.
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "uninstall", "--yes", "hatchling"
+    venv.pip_install resource("hatchling"), build_isolation: false
+    venv.pip_install resource("uv-dynamic-versioning"), build_isolation: false
+    installed = build_resources.map { |name| resource(name).name }
+    installed += %w[uv-build html5lib openai uv-dynamic-versioning]
     venv.pip_install resources.reject { |r| installed.include?(r.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
@@ -433,8 +498,28 @@ class Untether < Formula
       chat_id = 42
       allowed_user_ids = [42]
     TOML
-    output = shell_output("#{bin}/untether config set default_engine claude")
-    assert_match 'updated default_engine = "claude"', output
-    assert_match '"claude"', shell_output("#{bin}/untether config get default_engine")
+    system bin/"untether", "config", "set", "default_engine", "claude"
+    assert_equal "\"claude\"\n", shell_output("#{bin}/untether config get default_engine")
+    config = testpath/".untether/untether.toml"
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import tomllib
+      from pathlib import Path
+      import html5lib
+
+      document = html5lib.parse("<p>A&amp;B<b>bold</p><p>&copy;", treebuilder="lxml")
+      assert "".join(document.getroot().itertext()) == "A&Bbold©"
+      rendered = html5lib.serialize(document, tree="lxml")
+      assert "A&amp;B" in rendered
+      assert "<b>bold</b>" in rendered
+
+      data = tomllib.loads(Path(#{config.to_s.inspect}).read_text())
+      assert data["default_engine"] == "claude"
+      assert data["transports"]["telegram"]["chat_id"] == 42
+    PYTHON
+    original = config.read
+    assert_match "default_engine", shell_output("#{bin}/untether config set default_engine 123 2>&1", 2)
+    assert_equal original, config.read
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
