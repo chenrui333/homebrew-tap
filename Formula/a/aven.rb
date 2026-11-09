@@ -6,6 +6,11 @@ class Aven < Formula
   license "MIT"
   head "https://github.com/raine/aven.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a0895bfc4a6cf8843e22b7c210f0d20b898ea6e5b5bac1a4817833b0237468c"
