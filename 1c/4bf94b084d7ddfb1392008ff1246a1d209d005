@@ -1,0 +1,14 @@
+Formula/c/context-analyzer.rb
+  h_9df9c32c3f321d 10,28,33-34,37,84-88,104-108,159-163,229-233,409-411,484-505,509-510,516-518,522,524-525,540,544-545,547-548,550-555,558-559,565-575,578-602
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1c4bf94b084d7ddfb1392008ff1246a1d209d005",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
