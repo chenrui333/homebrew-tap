@@ -3,9 +3,12 @@ class SpecfactCli < Formula
 
   desc "Reverse Engineer Legacy Python into Enforceable Contracts"
   homepage "https://specfact.com/"
-  url "https://files.pythonhosted.org/packages/af/9a/9b381e4cc069b185f1f8b240e902b02b787fc997bef9263ba8771926dca3/specfact_cli-0.41.0.tar.gz"
-  sha256 "8da8d733edce39301b2178b6cffc0f8c4c4cf6affd2e6291a68bd647adc47afd"
+  # The PyPI sdist omits the bundled module required by its wheel manifest.
+  url "https://github.com/nold-ai/specfact-cli/archive/bee319e6612753fc4f5cd0ff40ddb76778549cd0.tar.gz"
+  version "0.41.0"
+  sha256 "091966aff9aef51d5dffd79a6f1a51e980fb28d688e6aa8c831869fd2e99e047"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/nold-ai/specfact-cli.git", branch: "main"
 
   bottle do
@@ -18,20 +21,23 @@ class SpecfactCli < Formula
   end
 
   depends_on "cmake" => :build # z3-solver sdist build runs cmake
-  depends_on "cython" => :build
   depends_on "gcc" => :build if OS.linux?
+  depends_on "maturin" => :build
+  depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.14"
   depends_on "rpds-py" => :no_linkage
-  depends_on "ruff" => :no_linkage
 
-  pypi_packages exclude_packages: %w[certifi cryptography pydantic rpds-py ruff],
+  pypi_packages package_name:     "specfact-cli",
+                exclude_packages: %w[certifi cryptography pydantic rpds-py],
                 extra_packages:   %w[
-                  calver coherent-licensed flit-core hatch-fancy-pypi-readme hatch-vcs hatchling pathspec pdm-backend
-                  pluggy poetry-core setuptools setuptools-scm tomlkit trove-classifiers wheel
+                  calver charset-normalizer==3.4.3 coherent-licensed cython flit-core==3.12.0
+                  hatch-fancy-pypi-readme hatch-vcs hatchling pathspec pdm-backend
+                  pluggy poetry-core ruff==0.17.4 setuptools setuptools-scm tomlkit trove-classifiers wheel
+                  z3-solver==4.15.4.0
                 ]
 
   resource "annotated-doc" do
@@ -74,9 +80,10 @@ class SpecfactCli < Formula
     sha256 "fa239e0f0ec0715ba34852ce813986dfed1e12117e209b816ab87401271cdd40"
   end
 
+  # Later releases cap setuptools below the fixed build backend used here.
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/1d/35/02daf95b9cd686320bb622eb148792655c9412dbb9b67abb5694e5910a24/charset_normalizer-3.4.5.tar.gz"
-    sha256 "95adae7b6c42a6c5b5b559b1a99149f090a57128155daeea91732c8d970d8644"
+    url "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz"
+    sha256 "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
   end
 
   resource "click" do
@@ -94,6 +101,11 @@ class SpecfactCli < Formula
     sha256 "665aed0492618d9ae61a7f17d5d32ea2a7182c04d5a39ae81b5e3e519a7869ba"
   end
 
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/99/ca/18e324972e5cac914816fdd7bb03e19a455b90039c277a538f7781b50c85/cython-3.3.1.tar.gz"
+    sha256 "e0e45989e821bef6aa9ae15c7d583ab5e055f7406c4b3624e49e06d24e90375a"
+  end
+
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
@@ -105,8 +117,8 @@ class SpecfactCli < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/df/b5/59d16470a1f0dfe8c793f9ef56fd3826093fc52b3bd96d6b9d6c26c7e27b/gitpython-3.1.46.tar.gz"
-    sha256 "400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "googleapis-common-protos" do
@@ -145,8 +157,8 @@ class SpecfactCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/6f/6d/0703ccc57f3a7233505399edb88de3cbd678da106337b9fcde432b65ed60/idna-3.11.tar.gz"
-    sha256 "795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "importlib-metadata" do
@@ -195,8 +207,8 @@ class SpecfactCli < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/3c/aa/5a646093ac218e4a329391d5a31e5092a89db7d2ef1637a90b82cd0b6f94/msal-1.35.1.tar.gz"
-    sha256 "70cac18ab80a053bff86219ba64cfe3da1f307c74b009e2da57ef040eb1b5656"
+    url "https://files.pythonhosted.org/packages/bb/85/747d28986a44b715cc51cf57aa021c8fd94e9614064261ceec77320e8b0b/msal-1.39.0.tar.gz"
+    sha256 "6ab7de335e6d7f5717e2c7e1dbf86e4dda2f6acf3c56773b78dc53ebc6395b5f"
   end
 
   resource "msal-extensions" do
@@ -215,33 +227,43 @@ class SpecfactCli < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/2c/1d/4049a9e8698361cc1a1aa03a6c59e4fa4c71e0c0f94a30f988a6876a2ae6/opentelemetry_api-1.40.0.tar.gz"
-    sha256 "159be641c0b04d11e9ecd576906462773eb97ae1b657730f0ecf64d32071569f"
+    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
+    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
+  end
+
+  resource "opentelemetry-exporter-http-transport" do
+    url "https://files.pythonhosted.org/packages/62/0c/e3ebdb4b507f66afcc905e6885a4946969bd75b45988492643356fbbdc63/opentelemetry_exporter_http_transport-0.66b1.tar.gz"
+    sha256 "443080203bf52586ce0b2ad901e8951c61833eab1aa539ae6f1f16fe9e8e7952"
+  end
+
+  resource "opentelemetry-exporter-otlp-common" do
+    url "https://files.pythonhosted.org/packages/cb/19/41de712173f43057e4532d42ece7d0c6d4210d353e5752433cb14987643f/opentelemetry_exporter_otlp_common-0.66b1.tar.gz"
+    sha256 "6b1403487a2185ac1feb45fd5546fdf8630ce71c36bcefaadf51e2130e9e23f9"
   end
 
   resource "opentelemetry-exporter-otlp-proto-common" do
-    url "https://files.pythonhosted.org/packages/51/bc/1559d46557fe6eca0b46c88d4c2676285f1f3be2e8d06bb5d15fbffc814a/opentelemetry_exporter_otlp_proto_common-1.40.0.tar.gz"
-    sha256 "1cbee86a4064790b362a86601ee7934f368b81cd4cc2f2e163902a6e7818a0fa"
+    url "https://files.pythonhosted.org/packages/c1/8e/65e85e5137991a3c493b11682151d198638a5bc1dd4b4c5f67e013c57d7c/opentelemetry_exporter_otlp_proto_common-1.45.1.tar.gz"
+    sha256 "2e4adcc3a67bcf57804fc49514f0ef64974ca7590aa3491da389852b4a0628f6"
   end
 
   resource "opentelemetry-exporter-otlp-proto-http" do
-    url "https://files.pythonhosted.org/packages/2e/fa/73d50e2c15c56be4d000c98e24221d494674b0cc95524e2a8cb3856d95a4/opentelemetry_exporter_otlp_proto_http-1.40.0.tar.gz"
-    sha256 "db48f5e0f33217588bbc00274a31517ba830da576e59503507c839b38fa0869c"
+    url "https://files.pythonhosted.org/packages/1b/17/26487707ea4caa97b17e6e4b5fa72133a53512ffa2f5cf7a49ef284b29cb/opentelemetry_exporter_otlp_proto_http-1.45.1.tar.gz"
+    sha256 "45c218405ce3fd879596924b1874bf9a8f6880206d61065c5a912c8e5c297fb7"
   end
 
   resource "opentelemetry-proto" do
-    url "https://files.pythonhosted.org/packages/4c/77/dd38991db037fdfce45849491cb61de5ab000f49824a00230afb112a4392/opentelemetry_proto-1.40.0.tar.gz"
-    sha256 "03f639ca129ba513f5819810f5b1f42bcb371391405d99c168fe6937c62febcd"
+    url "https://files.pythonhosted.org/packages/4b/7f/15f014fb195da6c2dbb6c71399b8e76824878718e94de6454038488eed28/opentelemetry_proto-1.45.1.tar.gz"
+    sha256 "79e0fb95e4616691a469439238aa9224d75779b3e108e895d1aa125ab29ca77c"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/58/fd/3c3125b20ba18ce2155ba9ea74acb0ae5d25f8cd39cfd37455601b7955cc/opentelemetry_sdk-1.40.0.tar.gz"
-    sha256 "18e9f5ec20d859d268c7cb3c5198c8d105d073714db3de50b593b8c1345a48f2"
+    url "https://files.pythonhosted.org/packages/a1/79/7392e21a1c8f0c61d90b223e31c7e48cb9d452e91a6b820ad24cca5f23c4/opentelemetry_sdk-1.45.1.tar.gz"
+    sha256 "63d24a6ca645019a631e6a51999c73e93adcac1196ca640b8ae78a7cc4762bf3"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/6d/c0/4ae7973f3c2cfd2b6e321f1675626f0dab0a97027cc7a297474c9c8f3d04/opentelemetry_semantic_conventions-0.61b0.tar.gz"
-    sha256 "072f65473c5d7c6dc0355b27d6c9d1a679d63b6d4b4b16a9773062cb7e31192a"
+    url "https://files.pythonhosted.org/packages/46/e4/dbbfb2a010c4db2224a5114638acede6fe563d33cc20fb1752cebcbe6298/opentelemetry_semantic_conventions-0.66b1.tar.gz"
+    sha256 "497ca63bf383723411e8eaf60c8779e9877633c936bb641080adab59d0eb6ec8"
   end
 
   resource "packaging" do
@@ -285,13 +307,13 @@ class SpecfactCli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz"
+    sha256 "6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f"
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/5c/5a/b46fa56bf322901eee5b0454a34343cdbdae202cd421775a8ee4e42fd519/pyjwt-2.11.0.tar.gz"
-    sha256 "35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "python-dotenv" do
@@ -315,13 +337,19 @@ class SpecfactCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz"
-    sha256 "dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"
+    url "https://files.pythonhosted.org/packages/34/64/8860370b167a9721e8956ae116825caff829224fbca0ca6e7bf8ddef8430/requests-2.33.0.tar.gz"
+    sha256 "c7ebc5e8b0f21837386ad0e1c8fe8b829fa5f544d8df3b2253bff14ef29d7652"
   end
 
   resource "rich" do
     url "https://files.pythonhosted.org/packages/1d/d6/9773d48804d085962c4f522db96f6a9ea9bd2e0480b3959a929176d92f01/rich-13.5.3.tar.gz"
     sha256 "87b43e0543149efa1253f485cd845bb7ee54df16c9617b8a893650ab84b4acb6"
+  end
+
+  # The PyPI sdist has an incomplete Cargo workspace; retain the official release workspace.
+  resource "ruff" do
+    url "https://github.com/astral-sh/ruff/archive/refs/tags/0.17.4.tar.gz"
+    sha256 "a466d837b406c888f4f76e4be808658f36846288aa87f81ac89afcf078ad386a"
   end
 
   resource "ruamel-yaml" do
@@ -330,8 +358,8 @@ class SpecfactCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/82/f3/748f4d6f65d1756b9ae577f329c951cda23fb900e4de9f70900ced962085/setuptools-82.0.0.tar.gz"
-    sha256 "22e0a2d69474c6ae4feb01951cb69d515ed23728cf96d05513d36e42b62b37cb"
+    url "https://files.pythonhosted.org/packages/73/eb/7e5f628ee2eb168fecbf8026de7856b2543d6d609cc85f086b9a91ac93d6/setuptools-84.1.0.tar.gz"
+    sha256 "23657205b63d4d31395ab917815247f694aafad28cd21316bf5fd45a51048ea0"
   end
 
   resource "setuptools-scm" do
@@ -385,8 +413,8 @@ class SpecfactCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
-    sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "watchdog" do
@@ -399,15 +427,23 @@ class SpecfactCli < Formula
     sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
-  # z3-solver 4.16.0.0 fails to build on macOS arm64 with Apple clang.
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz"
     sha256 "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322"
   end
 
+  # z3-solver 4.16.0.0 fails to build on macOS arm64 with Apple clang.
   resource "z3-solver" do
     url "https://files.pythonhosted.org/packages/8a/8e/0c8f17309549d2e5cde9a3ccefa6365437f1e7bafe71878eaf9478e47b18/z3_solver-4.15.4.0.tar.gz"
     sha256 "928c29b58c4eb62106da51c1914f6a4a55d0441f8f48a81b9da07950434a8946"
+
+    # Use upstream's modern macOS platform tags for the matching compiler target.
+    patch :p4 do
+      url "https://github.com/Z3Prover/z3/commit/18f774a17ad5de7ec1f6320acecee414ff71f751.patch?full_index=1"
+      sha256 "501542ec049aa1806c1e5b3a102c76ca82dc916edd65c322572ce029edba58d4"
+      type :backport
+      resolves "https://github.com/Z3Prover/z3/pull/11300"
+    end
   end
 
   resource "zipp" do
@@ -417,6 +453,12 @@ class SpecfactCli < Formula
 
   deny_network_access!
 
+  def fetch
+    ENV["CARGO_HOME"] = buildpath/".cargo-home"
+    ENV["RUSTUP_HOME"] = buildpath/".rustup-home"
+    resource("ruff").stage { system "cargo", "fetch", "--locked" }
+  end
+
   def install
     if OS.linux?
       gcc = Formula["gcc"]
@@ -425,21 +467,15 @@ class SpecfactCli < Formula
       ENV["CXX"] = (gcc.opt_bin/"g++-#{major}").to_s
     end
 
-    # Upstream sdist omits optional module directories referenced by force-include.
-    pyproject = buildpath/"pyproject.toml"
-    pyproject_content = pyproject.read
-    pyproject_content.gsub!(%r{^\s*"modules/backlog-core"\s*=.*\n}, "")
-    pyproject_content.gsub!(%r{^\s*"modules/bundle-mapper"\s*=.*\n}, "")
-    File.write(pyproject, pyproject_content)
-
     build_resources = %w[
+      setuptools
       flit-core
       coherent-licensed
       packaging
       pathspec
       pdm-backend
       poetry-core
-      setuptools
+      cython
       calver
       setuptools-scm
       pluggy
@@ -451,18 +487,110 @@ class SpecfactCli < Formula
       wheel
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
+    ENV["CARGO_HOME"] = buildpath/".cargo-home"
+    ENV["RUSTUP_HOME"] = buildpath/".rustup-home"
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.0" if OS.mac?
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
     venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
-    venv.pip_install_and_link buildpath, build_isolation: false
+    venv.pip_install buildpath, build_isolation: false
+    # Expose Ruff without shadowing an activated project's Python interpreter.
+    (libexec/"tools").install_symlink libexec/"bin/ruff"
+    %w[specfact specfact-cli].each do |command|
+      (bin/command).write_env_script libexec/"bin"/command, PATH: "#{libexec}/tools:$PATH"
+    end
   end
 
   test do
+    ENV["XDG_CONFIG_HOME"] = testpath/"config"
+    ENV["XDG_CACHE_HOME"] = testpath/"cache"
+    ENV["SPECFACT_TELEMETRY_OPT_IN"] = "false"
+    system libexec/"bin/python", "-m", "venv", "--without-pip", testpath/"project-venv"
+    ENV.prepend_path "PATH", testpath/"project-venv/bin"
+    ENV.prepend_path "PATH", libexec/"tools"
     assert_match version.to_s, shell_output("#{bin}/specfact --version")
-    assert_match "IDE Initialization Complete", shell_output("#{bin}/specfact init ide")
+    output = shell_output("#{bin}/specfact --skip-checks --no-interactive module show bundle-mapper")
+    assert_match "bundle-mapper", output
+    assert_match "official", output
+
+    system libexec/"bin/python", "-c", <<~PYTHON
+      from pathlib import Path
+      import sys
+      import yaml
+      import yaml._yaml
+      import z3
+      import specfact_cli
+      from pydantic import ValidationError
+      from specfact_cli.models.backlog_item import BacklogItem
+      from specfact_cli.models.plan import Story
+      from specfact_cli.registry.module_installer import verify_module_artifact
+      from specfact_cli.registry.module_packages import discover_package_metadata
+      from specfact_cli.validators.repro_checker import CheckStatus, ReproChecker
+
+      assert yaml.__with_libyaml__
+      data = {"contract": {"minimum": 1, "maximum": 3}}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+      value = z3.Int("value")
+      solver = z3.Solver()
+      solver.add(value > 0, value < 2)
+      assert solver.check() == z3.sat
+      assert solver.model()[value].as_long() == 1
+      if sys.platform == "darwin":
+          import importlib.metadata as metadata
+          import re
+          import subprocess
+          wheel = metadata.distribution("z3-solver").read_text("WHEEL")
+          tag = re.search(r"Tag: py3-none-macosx_([0-9]+)_([0-9]+)_", wheel)
+          library = Path(z3.__file__).parent / "lib/libz3.dylib"
+          load_commands = subprocess.check_output(["otool", "-l", str(library)], text=True)
+          target = re.search(r"minos ([0-9]+)[.]([0-9]+)", load_commands)
+          assert tag and target and tag.groups() == target.groups()
+          print(f"Z3 compiler target {target.group(0)} matches {tag.group(0)}")
+
+      packages = discover_package_metadata(Path(specfact_cli.__file__).parent / "modules")
+      package_dir, meta = next((p, m) for p, m in packages if m.name == "bundle-mapper")
+      assert verify_module_artifact(package_dir, meta, require_integrity=True, require_signature=True)
+      sys.path.insert(0, str(package_dir / "src"))
+      from bundle_mapper.mapper.engine import BundleMapper
+      mapper = BundleMapper(available_bundle_ids=["contracts"], config_path=Path.cwd() / "mapping.yaml")
+      item = BacklogItem(id="1", provider="github", url="https://example.invalid/1",
+                        title="Contract fixture", body_markdown="", state="open", tags=["bundle:contracts"])
+      mapping = mapper.compute_mapping(item)
+      assert mapping.primary_bundle_id == "contracts" and mapping.confidence >= 0.8
+      item.tags = ["bundle:missing"]
+      mapping = mapper.compute_mapping(item)
+      assert mapping.primary_bundle_id is None and mapping.confidence == 0.0
+      assert Story.model_validate({"key": "STORY-001", "title": "Contract", "confidence": 0.9}).confidence == 0.9
+      try:
+          Story.model_validate({"key": "STORY-001", "title": "Contract", "confidence": 2})
+      except ValidationError as error:
+          assert error.errors()[0]["type"] == "less_than_equal"
+      else:
+          raise AssertionError("Invalid confidence was accepted")
+
+      import shutil
+      assert Path(shutil.which("ruff")).resolve().is_relative_to(Path(sys.prefix))
+      Path("src").mkdir()
+      fixture = Path("src/contract.py")
+      fixture.write_text("import os\\n")
+      checker = ReproChecker(repo_path=Path.cwd(), budget=30)
+      result = checker.run_check("Project Python", "python",
+                                 ["python", "-c", "import sys; print(sys.prefix)"], skip_if_missing=False)
+      assert result.status == CheckStatus.PASSED
+      assert Path(result.output.strip()) == Path.cwd() / "project-venv"
+      command = ["ruff", "check", "--output-format=full", "src/"]
+      result = checker.run_check("Linting (ruff)", "ruff", command, skip_if_missing=False)
+      assert result.status == CheckStatus.FAILED and "F401" in result.output
+      fixture.write_text("def answer():\\n    return 42\\n")
+      result = checker.run_check("Linting (ruff)", "ruff", command, skip_if_missing=False)
+      assert result.status == CheckStatus.PASSED
+    PYTHON
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "check"
   end
 end
