@@ -1,0 +1,14 @@
+.github/workflows/triage.yml
+  h_9df9c32c3f321d 159,162-163,165-175
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6137e6962a31e44ce8aa2ff628c2b6c29284b922",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
