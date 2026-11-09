@@ -3,8 +3,8 @@ class OrbiCli < Formula
 
   desc "Run coding agents on labeled GitHub issues"
   homepage "https://orbi.build"
-  url "https://files.pythonhosted.org/packages/62/8b/cd4aa84ea3c392a391c37473c16145012e77507fd6e9a8b781c38d9d3f0b/orbi_cli-0.7.39.tar.gz"
-  sha256 "560950a8700f46cd0e8809a22f2eed9c8d5c42ec8d52a7ace5bacd29a395e6f5"
+  url "https://files.pythonhosted.org/packages/63/68/fe9c3605cf9e26ed535e408751882cb0a2e666ec1c3b4a29a3e984c10729/orbi_cli-0.7.40.tar.gz"
+  sha256 "bdc295a49534e53d172a2f544a92251efe2784df05d95732992ad527edd0ed8f"
   license "AGPL-3.0-only"
   head "https://github.com/orbi-build/orbi.git", branch: "main"
 
