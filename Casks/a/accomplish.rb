@@ -2,21 +2,18 @@ cask "accomplish" do
   arch arm: "arm64", intel: "x64"
 
   version "0.4.14"
-  sha256 arm:   "b400f979844638e135a360d87cdd652d041fe87927e03b0c9bedb1ba7ebe31a9",
-         intel: "85a09557b1ac2b652e687824b60f4a9c90d670a26eac966013af052fd6394631"
+  sha256 arm:   "c77fd16e4c302fda89fc258cc502cacdde2a8e9385de741b9041b05af2cabbe0",
+         intel: "335a75d27bdd8265aebd2ee9d93400262cad2d0eb9ba539b4c5183020d39b1a5"
 
-  url "https://downloads.accomplish.ai/downloads/#{version}/macos/Accomplish-#{version}-mac-#{arch}.dmg"
+  url "https://downloads.accomplish.ai/downloads/#{version}/macos/Accomplish-#{version}-mac-#{arch}.zip"
   name "Accomplish"
   desc "AI desktop agent that automates file management and browser tasks"
   homepage "https://www.accomplish.ai/"
 
-  livecheck do
-    url "https://www.accomplish.ai/"
-    regex(/Accomplish[._-]v?(\d+(?:\.\d+)+)[._-]mac/i)
-  end
+  deprecate! date: "2026-11-08", because: :discontinued
 
   auto_updates true
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "Accomplish.app"
 
