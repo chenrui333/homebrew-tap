@@ -6,6 +6,7 @@ class Mtef < Formula
   url "https://github.com/StacklokLabs/mcp-tef/releases/download/cli-v0.0.3/mcp_tef_cli-0.0.3.tar.gz"
   sha256 "ca7e7d771731e587f0c8160b06f21a26404cab134decd598af595c86c1fd6d8a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -15,7 +16,7 @@ class Mtef < Formula
 
   depends_on "certifi" => :no_linkage
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   pypi_packages exclude_packages: %w[certifi pydantic],
                 extra_packages:   %w[
@@ -169,13 +170,13 @@ class Mtef < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/72/94/1a15dd82efb362ac84269196e94cf00f187f7ed21c242792a923cdb1c61f/typing_extensions-4.15.0.tar.gz"
-    sha256 "0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+    url "https://files.pythonhosted.org/packages/ff/50/0195198eb1d75bab716bb0a813abea4cc394bfa17a92a189f021a34859af/typing_inspection-0.4.5.tar.gz"
+    sha256 "7f16c411e7930dc79596d42ab44672a3fe5f60eb34b781a1647e7872363120c7"
   end
 
   resource "urllib3" do
@@ -211,7 +212,7 @@ class Mtef < Formula
       hatch-vcs
     ]
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -222,7 +223,48 @@ class Mtef < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/mtef --version")
 
-    output = shell_output("#{bin}/mtef test-case create --from-file test-cases.json --set BAD 2>&1", 10)
-    assert_match "Invalid --set format", output
+    system formula_opt_libexec("python@3.14")/"bin/python", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
+
+    (testpath/"load_cases.py").write <<~PYTHON
+      import json
+      from pathlib import Path
+
+      import click
+      from mcp_tef_cli.commands.test_case import load_test_cases_from_file
+      from mcp_tef_cli.models import MCPServerConfig, TestCaseCreate
+
+      server_url = "http://127.0.0.1:8000/mcp"
+      case = {
+          "name": "brew",
+          "query": "validate locally",
+          "available_mcp_servers": [server_url],
+          "expected_mcp_server_url": server_url,
+          "expected_tool_name": "echo",
+          "expected_parameters": {"message": "hello"},
+      }
+      path = Path("test-cases.json")
+      path.write_text(json.dumps(case))
+      cases = load_test_cases_from_file(str(path))
+      assert len(cases) == 1
+      loaded = cases[0]
+      assert isinstance(loaded, TestCaseCreate)
+      assert isinstance(loaded.available_mcp_servers[0], MCPServerConfig)
+      serialized = json.loads(loaded.model_dump_json())
+      assert serialized == {
+          **case,
+          "available_mcp_servers": [{"url": server_url, "transport": "streamable-http"}],
+      }
+
+      del case["expected_tool_name"]
+      path.write_text(json.dumps(case))
+      try:
+          load_test_cases_from_file(str(path))
+      except click.BadParameter as error:
+          assert "expected_mcp_server_url and expected_tool_name must both be provided or both omitted" in str(error)
+      else:
+          raise AssertionError("Expected cross-field validation to reject a partial tool configuration")
+    PYTHON
+    system libexec/"bin/python", testpath/"load_cases.py"
   end
 end
