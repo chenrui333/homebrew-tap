@@ -1,0 +1,15 @@
+Formula/c/cloud-audit.rb
+  h_9df9c32c3f321d 11,28,40-44,91-92,101,103-111,122-126,138-139,183-184,218-219,228-229,238-239,253-254,298-299,308-309,327,329-331,335-336,340,344-347,351-352,354,358-370,378-394,396-397
+  h_9df9c32c3f321d 100,102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ed2bb0638821f2d4f89f9b86ccf576fbf55ff672",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
