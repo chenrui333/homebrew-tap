@@ -1,8 +1,8 @@
 class SoundcraftCli < Formula
   desc "Headless SoundCraft CLI and MCP server to edit, convert and bounce audio"
   homepage "https://getartcraft.com/apps/soundcraft"
-  url "https://github.com/storytold/soundcraft/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "f40cf2d16be3d707e80042748acbfed770854bdefef48840c11e82fa1e93228f"
+  url "https://github.com/storytold/soundcraft/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "3e6878dc590c125ebfaff48d702fb37fffd9c99c98df32165c1efa15ce6ed725"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/soundcraft.git", branch: "main"
 
