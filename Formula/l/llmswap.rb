@@ -10,14 +10,13 @@ class Llmswap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "facf4e2ac07a3428549146aa2fbf87494e2c8377aecec5fecd19f32304f4ea3f"
-    sha256 cellar: :any, arm64_sequoia: "8e6ba1c346add70517ea7dec2e688b483c47f524867f104328cff359035c9563"
-    sha256 cellar: :any, arm64_linux:   "afbdf54bbad5fa6d88e7fc352b8d11d1c1d103a78d8586acb73913534e4ca118"
-    sha256 cellar: :any, x86_64_linux:  "cdfd5969eaec3e237c36704d085b0f623281bc5149941cad875a7c1dafa73594"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "4d8914919ea41e096acdaf358f23d336ff382c583e406440156c0ff3eaa74aa9"
+    sha256 cellar: :any, arm64_sequoia: "6daf5d2c4051a1be2b599125f5537d707da63d5a9c48e58401f7f4cb7eb4b204"
+    sha256 cellar: :any, arm64_linux:   "581e98991a2da5f8c52a18525a047a6a7841c16ccd3e703ddc5d58813e548cf7"
+    sha256 cellar: :any, x86_64_linux:  "06adb00103c545474e9036fc3a35999badc893f8308eccb04b6e2f0123c84673"
   end
 
-  depends_on "cython" => :build
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for jiter
@@ -34,8 +33,9 @@ class Llmswap < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography numpy pydantic],
                 extra_packages:   %w[
-                  calver expandvars flit-core hatch-fancy-pypi-readme hatch-vcs hatchling pathspec pkgconfig pluggy
-                  poetry-core setuptools setuptools-scm tomlkit trove-classifiers vcs-versioning wheel
+                  calver cython==3.3.1 expandvars flit-core==3.12.0 hatch-fancy-pypi-readme hatch-vcs hatchling
+                  pathspec pkgconfig pluggy poetry-core setuptools==83.0.0 setuptools-scm tomlkit trove-classifiers
+                  vcs-versioning wheel
                 ]
 
   resource "aiofiles" do
@@ -86,6 +86,12 @@ class Llmswap < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
     sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+  end
+
+  # The current Propcache backend requires Cython >=3.2, built with the runtime interpreter.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/99/ca/18e324972e5cac914816fdd7bb03e19a455b90039c277a538f7781b50c85/cython-3.3.1.tar.gz"
+    sha256 "e0e45989e821bef6aa9ae15c7d583ab5e055f7406c4b3624e49e06d24e90375a"
   end
 
   resource "cohere" do
@@ -351,6 +357,8 @@ class Llmswap < Formula
     ENV["GRPC_PYTHON_BUILD_SYSTEM_CARES"] = "1"
     ENV["GRPC_PYTHON_BUILD_SYSTEM_OPENSSL"] = "1"
     ENV["GRPC_PYTHON_BUILD_SYSTEM_RE2"] = "1"
+    # Rust TLS must use the declared provider, not an indirect cryptography dependency.
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3").to_s
 
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
@@ -373,10 +381,10 @@ class Llmswap < Formula
       hatch-fancy-pypi-readme
       hatch-vcs
       wheel
+      cython
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages("python3.14")
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
@@ -408,5 +416,63 @@ class Llmswap < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/llmswap --version")
     assert_match "No LLM providers available", shell_output("#{bin}/llmswap costs 2>&1", 1)
+
+    python = libexec/"bin/python"
+    system python, "-c", <<~PYTHON
+      import importlib
+      import json
+      import sys
+      from io import BytesIO
+      from pathlib import Path
+      import fastavro
+      import yaml
+      from frozenlist import FrozenList
+      from yarl import URL
+
+      names = [
+          "yaml._yaml", "aiohttp._http_parser", "frozenlist._frozenlist",
+          "propcache._helpers_c", "yarl._quoting_c",
+      ] + [
+          "fastavro." + name
+          for name in ("_read", "_schema", "_write", "_validation", "_logical_readers", "_logical_writers")
+      ]
+      modules = [importlib.import_module(name) for name in names]
+      for module in modules:
+          assert module.__file__.endswith(".so")
+          assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())
+      value = {"unicode": "雪", "values": [1, True, None]}
+      assert yaml.load(yaml.dump(value, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == value
+      schema = {
+          "type": "record", "name": "NativeRecord",
+          "fields": [
+              {"name": "id", "type": "long"},
+              {"name": "name", "type": ["null", "string"]},
+              {"name": "tags", "type": {"type": "array", "items": "string"}},
+          ],
+      }
+      records = [
+          {"id": -1, "name": None, "tags": []},
+          {"id": 2**40, "name": "雪", "tags": ["a", "b"]},
+      ]
+      buffer = BytesIO()
+      fastavro.writer(buffer, schema, records)
+      buffer.seek(0)
+      assert list(fastavro.reader(buffer)) == records
+      values = FrozenList([1, 2])
+      values.append(3)
+      values.freeze()
+      assert values == [1, 2, 3]
+      try:
+          values.append(4)
+      except RuntimeError:
+          pass
+      else:
+          raise AssertionError("Frozen collection accepted mutation")
+      url = URL("https://example.invalid/a%20b?item=one&item=two")
+      assert url.path == "/a b"
+      assert url.query.getall("item") == ["one", "two"]
+      print(json.dumps({"python": sys.version, "native_extensions": [module.__file__ for module in modules]}))
+    PYTHON
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip", "--python", python, "check"
   end
 end
