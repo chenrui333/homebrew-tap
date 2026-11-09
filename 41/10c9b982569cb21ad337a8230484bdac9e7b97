@@ -1,0 +1,19 @@
+Formula/r/reformat-gherkin.rb
+  s_f2d1cc7a5253bd::t_8304b8119c108c 23-24,47-51,150,175-176,188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4110c9b982569cb21ad337a8230484bdac9e7b97",
+  "prompts": {},
+  "sessions": {
+    "s_f2d1cc7a5253bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bf71-ceb6-7810-b138-6cf1dc299c8f",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
