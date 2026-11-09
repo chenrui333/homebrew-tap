@@ -28,7 +28,7 @@
   "cf-terraforming": "homebrew/core",
   "cfnctl": "homebrew/core",
   "changelogen": "homebrew/core",
-  "chrome-devtools-mcp": "homebrew-core",
+  "chrome-devtools-mcp": "homebrew/core",
   "claude-cmd": "homebrew/core",
   "claude-code-templates": "homebrew/core",
   "claude-hooks": "homebrew/core",
