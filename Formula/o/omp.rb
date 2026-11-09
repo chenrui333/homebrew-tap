@@ -1,17 +1,17 @@
 class Omp < Formula
   desc "Terminal coding agent with multi-model support and native tools"
   homepage "https://omp.sh"
-  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v18.16.0.tar.gz"
-  sha256 "cdc22c255b651258038ac92f7b2aecbe464ecb90b8656957080cbd60872ced2a"
+  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v18.18.1.tar.gz"
+  sha256 "0a09d8f5f307d72ff4ced4fe8bd564eab024c243dd0fc72800b828bf4819cb94"
   license "MIT"
   head "https://github.com/can1357/oh-my-pi.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "dc28c121f35aaa4cada1fdaf1535d0c4453fb2ba7817bd94cebe40a60a24e76d"
-    sha256 arm64_sequoia: "a4d5b40f191d92efde6c42e23315b52e5db396573d4c10debf0cac006486c2b9"
-    sha256 arm64_linux:   "294a10a42dd9ec9f62835303457180e7533bb56cf97825d565c30f1dc727c8fc"
-    sha256 x86_64_linux:  "5365aadfe51039710dd024be4a9decfdffb8cfb1c1438944603280d5bd2bf50c"
+    sha256 arm64_tahoe:   "61f889d5e378f072c9660fcbb7c99a86167cc20de812945801d4350e7baf7bd7"
+    sha256 arm64_sequoia: "77d7edb571cecf5e004989b2c4b5e43dd61939163c6fa7347534e5b4c2de74fd"
+    sha256 arm64_linux:   "dffba220d5328de1042ea7ef02e2e3e7f114c18fd01fda0b1071e139f9b8604f"
+    sha256 x86_64_linux:  "e5c52f0aa12066b041e6ad028366933c21678ddb3f0a48f84cd30ed5cac102ee"
   end
 
   depends_on "bun" => :build
@@ -20,7 +20,7 @@ class Omp < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.14" => :build
-  depends_on "rust" => :build
+  depends_on "rustup" => :build
   depends_on "zig" => :build
 
   on_linux do
@@ -35,16 +35,33 @@ class Omp < Formula
   allow_network_access! :test
   deny_network_access! :build
 
+  def rust_toolchain
+    Utils.safe_popen_read(formula_opt_bin("python@3.14")/"python3.14", "-c", <<~PYTHON).strip
+      import tomllib
+      with open("rust-toolchain.toml", "rb") as config:
+          print(tomllib.load(config)["toolchain"]["channel"])
+    PYTHON
+  end
+
   def fetch
+    # Stage upstream's pinned toolchain without changing the user's rustup state.
+    ENV["RUSTUP_HOME"] = buildpath/".rustup"
+    rustup = formula_opt_bin("rustup")/"rustup"
+    toolchain = rust_toolchain
+    system rustup, "toolchain", "install", toolchain, "--profile", "minimal", "--no-self-update"
     system formula_opt_bin("bun")/"bun", "install", "--frozen-lockfile", "--ignore-scripts"
     # NAPI's cargo metadata resolves every target, including Android-only dependency records.
-    system "cargo", "fetch", "--locked"
+    system rustup, "run", toolchain, "cargo", "fetch", "--locked"
   end
 
   def install
     bun = formula_opt_bin("bun")/"bun"
-    # Upstream enables smallvec specialization; use the brewed compiler rather than rustup.
-    ENV["RUSTC_BOOTSTRAP"] = "1"
+    ENV["RUSTUP_HOME"] = buildpath/".rustup"
+    cargo = Pathname(Utils.safe_popen_read(formula_opt_bin("rustup")/"rustup",
+                                         "which", "--toolchain", rust_toolchain, "cargo").strip)
+    ENV.prepend_path "PATH", cargo.dirname
+    ENV["CARGO"] = cargo
+    ENV["RUSTC"] = cargo.dirname/"rustc"
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm")
     ENV["CARGO_NET_OFFLINE"] = "true"
     ENV["OMP_NATIVE_CARGO_PROFILE"] = "ci"
