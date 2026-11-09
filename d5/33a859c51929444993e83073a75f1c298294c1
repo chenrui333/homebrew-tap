@@ -1,0 +1,14 @@
+tap_migrations.json
+  h_9df9c32c3f321d 211
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d533a859c51929444993e83073a75f1c298294c1",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
