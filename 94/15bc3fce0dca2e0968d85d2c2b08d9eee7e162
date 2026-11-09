@@ -1,0 +1,29 @@
+.github/scripts/cask-change-policy.js
+  s_8f09d49cae7a2f::t_600a913212bede 1-187
+.github/workflows/cask-tests.yml
+  s_8b675c43ac55d4::t_c5d897f9f0bbac 88-100,147-163,199,288,293
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9415bc3fce0dca2e0968d85d2c2b08d9eee7e162",
+  "prompts": {},
+  "sessions": {
+    "s_8b675c43ac55d4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1be33-d7db-7500-b538-2b94eadafe36",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    },
+    "s_8f09d49cae7a2f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1be1d-758d-7011-907f-883780d94556",
+        "model": "unknown"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
