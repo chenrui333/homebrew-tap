@@ -1,0 +1,25 @@
+Formula/a/apm-cli.rb
+  h_9df9c32c3f321d 9,21,25,28-30,34-44,131-132,316-317,415-425,429-433,448-449,461-462,466-479,482-483,485-487,496-533
+  s_7980a264c6ed74::t_f32df430fc3108 489-490
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "36533a97d6bc7ae182829fc2da9f4101f4453cda",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  },
+  "sessions": {
+    "s_7980a264c6ed74": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1c168-fe4e-7ea1-ad2b-755a2a777b44",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
