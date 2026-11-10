@@ -11,10 +11,11 @@ class Dhv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef1efa4eb366033f086dd44470ed9d8d208805c17bf16bec6c5f7deb7340376c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81b086651a5f191a22ccbfdda3a829dd7331d4bea76cf8c4031d9e6fbb3b458a"
-    sha256 cellar: :any,                 arm64_linux:   "8ec0a808d103e7fa146743abbc4dc4dbd78d98faa41626f49bef1ab53cac2020"
-    sha256 cellar: :any,                 x86_64_linux:  "c7c6ba13694b9ce03a3a298fb40fb7e80bd63231a5eaca4e94b6d80130801646"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d0f87cdbafef8b5952d0293600370011bbb857cfbc8a8588afaedf47c759cde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "475743f740e1264d9a8d88ca89719e3a8c25cc520d61825e57f32d0656b1ff93"
+    sha256 cellar: :any,                 arm64_linux:   "33e566fb96d9de46273df7478541ac7dcd0cc5b32dc29764923affde64d806e0"
+    sha256 cellar: :any,                 x86_64_linux:  "e1f4f5bf4afa131347550989acc5798469c99ccc82b2f0d0eed316b2f415002b"
   end
 
   depends_on "maturin" => :build # for uv-build
@@ -243,6 +244,7 @@ class Dhv < Formula
 
   def fetch
     resource("uv-build").stage do
+      # The SDK sdist's pruned workspace needs its Cargo lock file regenerated.
       system "cargo", "fetch"
     end
   end
@@ -265,17 +267,18 @@ class Dhv < Formula
       pathspec
       calver
       trove-classifiers
-      pluggy
-      hatchling
       vcs-versioning
       setuptools-scm
+      pluggy
+      hatchling
       hatch-vcs
       poetry-core
       wheel
       uv-build
     ]
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages(python3)
+    ENV["CARGO_NET_OFFLINE"] = "true"
 
     venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
@@ -284,13 +287,62 @@ class Dhv < Formula
     ENV.prepend_path "PATH", libexec/"bin"
     venv.pip_install resources.reject { |resource| build_resources.include?(resource.name) }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
+
+    # The native build backend is not a runtime dependency.
+    system "python3.14", "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "uv-build"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/dhv --version")
 
-    output = shell_output("#{bin}/dhv --bindings")
-    assert_match "OpcodeCounts", output
-    assert_match "Quit", output
+    (testpath/"sample.py").write <<~PYTHON
+      from pathlib import Path
+      Path("execution-marker").write_text("Source must not execute")
+      def add(a, b):
+          return a + b
+    PYTHON
+    (testpath/"test_dhv.py").write <<~PYTHON
+      import asyncio
+      from argparse import Namespace
+      from pathlib import Path
+
+      from dhv.dhv import DHV
+      from dhv.widgets import Disassembly, Source
+      from dhv.widgets.disassembly import Operation
+      from tree_sitter import Language, Parser
+      import tree_sitter_python
+
+      sample = Path("sample.py")
+      tree = Parser(Language(tree_sitter_python.language())).parse(sample.read_bytes())
+      names = [
+          node.child_by_field_name("name").text
+          for node in tree.root_node.named_children
+          if node.type == "function_definition"
+      ]
+      assert names == [b"add"]
+
+      async def verify():
+          app = DHV(Namespace(source=sample, theme=None))
+          async with asyncio.timeout(30):
+              async with app.run_test() as pilot:
+                  await pilot.pause()
+                  view = app.screen.query_one(Disassembly)
+                  operations = [
+                      item
+                      for index in range(view.option_count)
+                      if isinstance(item := view.get_option_at_index(index), Operation)
+                  ]
+                  assert any(
+                      item.code.co_name == "add" and item.operation.argrepr == "+"
+                      for item in operations
+                  )
+                  assert not Path("execution-marker").exists()
+                  app.screen.query_one(Source).load_text("def invalid(:")
+                  await pilot.pause()
+                  assert view.error
+
+      asyncio.run(verify())
+    PYTHON
+    system libexec/"bin/python", testpath/"test_dhv.py"
   end
 end
