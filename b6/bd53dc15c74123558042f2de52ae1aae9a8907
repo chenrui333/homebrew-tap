@@ -1,0 +1,15 @@
+Formula/c/cccc.rb
+  h_9df9c32c3f321d 9,23,26,28,30,32,36-37,39,86-125,132-134,157-164,270-274,291-300,381-393,399-401,405-420,422-435,437-442,448-514
+  h_9df9c32c3f321d 318-322
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b6bd53dc15c74123558042f2de52ae1aae9a8907",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
