@@ -10,10 +10,10 @@ class Deepteam < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "9771f0014f5debfb0d929e195b072b49a8674ff9b7c6308b0afed1a4a98de9b7"
-    sha256 cellar: :any, arm64_sequoia: "b85e83cd02ee10393d49e7257e6e094dc6eb301ec84a0c502e24b4188c12a03d"
-    sha256 cellar: :any, arm64_linux:   "1b7a76a5d1c8ba09dab4527a3696b3c059156505e0bbb44036c63c4f3b1707db"
-    sha256 cellar: :any, x86_64_linux:  "e2d19f57a2123e6306ef1dc8b6f18ad1a4430b8cbcad72a47bdd0c314ee603f2"
+    sha256 cellar: :any, arm64_tahoe:   "9f06cc2c9707fcf5d8c0817260079d6a7e19c9e6183e9a3eca6ff45215204ff1"
+    sha256 cellar: :any, arm64_sequoia: "b309b535865f56b4c6d9826281876ae4d63d4c03ad1c396f708de012d9261fab"
+    sha256 cellar: :any, arm64_linux:   "07a39024655018d067e9e4d87f7c99118cadb29add411b0b9400ce576302c4be"
+    sha256 cellar: :any, x86_64_linux:  "e7e6e049a190e2f01bd3d4e93a4c4ed651dc5ced013a9b101cd2a1e440e4ea5c"
   end
 
   depends_on "maturin" => :build
