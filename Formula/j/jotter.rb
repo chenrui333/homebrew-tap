@@ -8,10 +8,10 @@ class Jotter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06e3b1bfb7e27f4c3e4fe33330e4a904cda11db5abcb327631e36ca9c2722992"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d20b6ab2e8f8c5a748fb3b7c171e4d47248182aec7f8de16e0fcf6980b67f82a"
-    sha256 cellar: :any,                 arm64_linux:   "65449acb93087dcff3fc2f6504c16b68dbe0cdc95544396464b9050269e0f744"
-    sha256 cellar: :any,                 x86_64_linux:  "91935bb8950abe4aa83eeda46a89019071f73256481298b85326b407789fd05f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6de31091164129cc70088b27d6dfe0174aaae168260c6ba75103113224286df8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a04720650d564ba643cdd9badf0f2cdc3476a73d3790122f62532de55c95aa6"
+    sha256 cellar: :any,                 arm64_linux:   "837a759eae8f3921bab60baa62b9610f921931f8535f7e0d006962f245f72d1e"
+    sha256 cellar: :any,                 x86_64_linux:  "66420c3f799d80d23bb458c6eb6bc1bf9bae0d1d8c129e7c6a60d71b412a835f"
   end
 
   depends_on "pkgconf" => :build
