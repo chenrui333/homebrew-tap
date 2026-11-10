@@ -11,11 +11,10 @@ class Memora < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "6da6aa1951c387e9ddcf8f65466a3fe1efe87e9fe9ae7ed6d741b62691468004"
-    sha256 cellar: :any, arm64_sequoia: "09460fef8ae4e5d1579468211a25753c8c53522dbbe1bfd03e3724eed08b5f58"
-    sha256 cellar: :any, arm64_linux:   "1b87701de41b1db04b548de8942353cabc80f84ebabaffe620156a4c04c1ccdf"
-    sha256 cellar: :any, x86_64_linux:  "48f150bfc399e937991f6bc91da5da22353b1d1f4e44292032061a4a2cc510ee"
+    sha256 cellar: :any, arm64_tahoe:   "0c0b667569f57d7be3d7bd0fe5e726c24a63979f3cd61efe99b44cc7a5336c6a"
+    sha256 cellar: :any, arm64_sequoia: "2fef2cb0ca77f805d53fd2225374018b40648f3cbbc5976ef2519b942d56c327"
+    sha256 cellar: :any, arm64_linux:   "d3e04ff4e3af7aea8c75a4e5a22bd7217923ce04875905bd1e1e70c632fd6607"
+    sha256 cellar: :any, x86_64_linux:  "4173bb8d86061592cce9a4d4c92529c66c9531cafb8da2063f6e352c4d4a8588"
   end
 
   depends_on "maturin" => :build
