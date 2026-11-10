@@ -6,7 +6,7 @@ class Codeflash < Formula
   url "https://files.pythonhosted.org/packages/2d/bc/d86b03b88cf254f4581162a33c8f296092d1f1c46bd7c3478802dd8b9c23/codeflash-0.20.6.tar.gz"
   sha256 "411202748597aff5ebb3fd8bceb510da209b3253a86fe49783238113076bba55"
   license "BUSL-1.1"
-  revision 1
+  revision 2
   head "https://github.com/codeflash-ai/codeflash.git", branch: "main"
 
   bottle do
@@ -25,7 +25,8 @@ class Codeflash < Formula
   depends_on "libyaml"
   depends_on "lz4"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  # Upstream excludes CrossHair on Python 3.15 and newer.
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -49,7 +50,7 @@ class Codeflash < Formula
                 extra_packages:   %w[
                   calver coherent-licensed cython>=3.2.4 dunamai flit-core<4 hatch-fancy-pypi-readme hatch-vcs
                   hatchling pathspec pkgconfig poetry-core semantic-version setuptools<82.1 setuptools-rust
-                  setuptools-scm tomlkit~=0.13.0 trove-classifiers uv-build>=0.11.7,<0.12 uv-dynamic-versioning
+                  setuptools-scm tomlkit~=0.13 trove-classifiers uv-build>=0.11.7,<0.12 uv-dynamic-versioning
                   vcs-versioning wheel
                 ]
 
@@ -298,9 +299,10 @@ class Codeflash < Formula
     sha256 "7e68e90b01f9eff71332b25001f85c75495fc4e3a836701876183c4bcfd0540a"
   end
 
-  resource "pyyaml-ft" do
-    url "https://files.pythonhosted.org/packages/5e/eb/5a0d575de784f9a1f94e2b1288c6886f13f34185e13117ed530f32b6f8a8/pyyaml_ft-8.0.0.tar.gz"
-    sha256 "0c947dce03954c7b5d38869ed4878b2e6ff1d44b08a0d84dc83fdad205ae39ab"
+  # LibCST requires the standard distribution on Python 3.14, not its Python 3.13 fork.
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
+    sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
   resource "readchar" do
@@ -339,8 +341,8 @@ class Codeflash < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
-    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
+    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
+    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
   end
 
   resource "tree-sitter" do
@@ -419,6 +421,14 @@ class Codeflash < Formula
 
     # Fix Apple Clang builds that reject parenthesized aggregate initialization.
     patch :DATA
+
+    # Modern macOS wheel tags must match the compiler's major.0 deployment target.
+    patch :p4 do
+      url "https://github.com/Z3Prover/z3/commit/18f774a17ad5de7ec1f6320acecee414ff71f751.patch?full_index=1"
+      sha256 "501542ec049aa1806c1e5b3a102c76ca82dc916edd65c322572ce029edba58d4"
+      type :backport
+      resolves "https://github.com/Z3Prover/z3/pull/11300"
+    end
   end
 
   resource "zipp" do
@@ -507,8 +517,8 @@ class Codeflash < Formula
   end
 
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/ab/90/08c5811fe8d5e32a637b648aff654ffa9b97728381d94d1103383416f3a7/uv_build-0.11.33.tar.gz"
-    sha256 "b09dcd86e4bbb31f4d85470892771e7c8786b3bd9b6519f7ce7480517b4d1381"
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.11.33.tar.gz"
+    sha256 "81911281e0f2fe5307c0b85e884f47cb6ca867932fb61871d339854edf3b4dcc"
   end
 
   resource "uv-dynamic-versioning" do
@@ -538,17 +548,25 @@ class Codeflash < Formula
   end
 
   def install
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV["CARGO_NET_OFFLINE"] = "true"
-    venv = virtualenv_create(libexec, "python3.13")
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.0" if OS.mac?
+    venv = virtualenv_create(libexec, "python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     build_resources = %w[
-      setuptools flit-core poetry-core packaging calver cython wheel tomlkit pathspec pluggy
-      trove-classifiers vcs-versioning setuptools-scm hatchling hatch-vcs hatch-fancy-pypi-readme
+      setuptools flit-core poetry-core packaging calver cython wheel tomlkit pathspec
+      trove-classifiers vcs-versioning setuptools-scm pluggy hatchling hatch-vcs hatch-fancy-pypi-readme
       semantic-version setuptools-rust coherent-licensed pkgconfig markupsafe jinja2 dunamai
-      uv-dynamic-versioning uv-build
+      uv-dynamic-versioning
     ]
     build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    # The PyPI uv-build sdist omits workspace crates; build its unchanged official subproject.
+    resource("uv-build").stage do
+      cd "crates/uv-build" do
+        venv.pip_install Pathname.pwd, build_isolation: false
+      end
+    end
     if OS.linux?
       libelf = formula_opt_lib("elfutils")/"libelf.so"
       resource("elfutils").stage do
@@ -564,7 +582,7 @@ class Codeflash < Formula
     end
 
     runtime_resources = resources.reject do |r|
-      build_resources.include?(r.name) || %w[elfutils z3-solver].include?(r.name)
+      build_resources.include?(r.name) || %w[elfutils uv-build z3-solver].include?(r.name)
     end
     venv.pip_install runtime_resources, build_isolation: false
     resource("z3-solver").stage do
@@ -577,10 +595,66 @@ class Codeflash < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/codeflash --version")
-    (testpath/"example.py").write "def greet(): return 'hello'\n"
-    output = shell_output("#{bin}/codeflash --show-config 2>&1")
-    assert_match "Codeflash Configuration", output
-    assert_match "python", output.downcase
+
+    ENV["PYDANTIC_DISABLE_PLUGINS"] = "__all__"
+    ENV["CODEFLASH_LSP"] = "false"
+    ENV["CODEFLASH_SUBAGENT_MODE"] = "false"
+    (testpath/"pyproject.toml").write <<~TOML
+      [tool.codeflash]
+      module-root = "src"
+      tests-root = "tests"
+      ignore-paths = ["src/generated"]
+      formatter-cmds = ["black $file"]
+      disable-telemetry = true
+    TOML
+    # The full CLI checks PyPI even for --show-config; exercise its installed APIs offline.
+    (testpath/"test.py").write <<~PYTHON
+      import sys
+      from importlib.metadata import distribution, version
+      from pathlib import Path
+      from pydantic import ValidationError
+      from codeflash.code_utils.config_parser import parse_config_file
+      from codeflash.models.function_types import FunctionToOptimize
+      import yaml
+      import z3
+
+      root = Path.cwd()
+      config, _ = parse_config_file(root / "pyproject.toml")
+      assert Path(config["module_root"]) == root / "src"
+      assert [Path(path) for path in config["ignore_paths"]] == [root / "src/generated"]
+      function = FunctionToOptimize(
+          function_name="work", file_path=str(root / "src/example.py"),
+          parents=[{"name": "Container", "type": "ClassDef"}], starting_line="7",
+      )
+      assert function.qualified_name == "Container.work"
+      assert function.starting_line == 7
+      try:
+          FunctionToOptimize(function_name="work", file_path=root / "example.py", starting_line="invalid")
+      except ValidationError as error:
+          assert error.errors()[0]["loc"] == ("starting_line",)
+      else:
+          raise AssertionError("Invalid source line was accepted")
+      assert version("codeflash") == "#{version}"
+      data = {"items": [1, 2]}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
+      value = z3.Int("value")
+      solver = z3.Solver()
+      solver.add(value > 0, value < 2)
+      assert solver.check() == z3.sat
+      assert solver.model()[value].as_long() == 1
+      if sys.platform == "darwin":
+          import re
+          import subprocess
+          wheel = distribution("z3-solver").read_text("WHEEL")
+          tag = re.search(r"Tag: py3-none-macosx_([0-9]+)_([0-9]+)_", wheel)
+          library = Path(z3.__file__).parent / "lib/libz3.dylib"
+          commands = subprocess.check_output(["otool", "-l", str(library)], text=True)
+          target = re.search(r"minos ([0-9]+)[.]([0-9]+)", commands)
+          assert tag and target and tag.groups() == target.groups()
+    PYTHON
+    system libexec/"bin/python", "test.py"
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
 
