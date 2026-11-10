@@ -6,28 +6,28 @@ class Deepteam < Formula
   url "https://files.pythonhosted.org/packages/11/eb/def5b5461d6a6483a3495b489b28aa72228ff8622b6bb9ace17d2774af90/deepteam-1.0.9.tar.gz"
   sha256 "d44fb6bc34f02e4ac17cce459bcb9d1590c5589337597b609c4442578336e641"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "9771f0014f5debfb0d929e195b072b49a8674ff9b7c6308b0afed1a4a98de9b7"
-    sha256 cellar: :any, arm64_sequoia: "b85e83cd02ee10393d49e7257e6e094dc6eb301ec84a0c502e24b4188c12a03d"
-    sha256 cellar: :any, arm64_linux:   "1b7a76a5d1c8ba09dab4527a3696b3c059156505e0bbb44036c63c4f3b1707db"
-    sha256 cellar: :any, x86_64_linux:  "e2d19f57a2123e6306ef1dc8b6f18ad1a4430b8cbcad72a47bdd0c314ee603f2"
+    sha256 cellar: :any, arm64_tahoe:   "9f06cc2c9707fcf5d8c0817260079d6a7e19c9e6183e9a3eca6ff45215204ff1"
+    sha256 cellar: :any, arm64_sequoia: "b309b535865f56b4c6d9826281876ae4d63d4c03ad1c396f708de012d9261fab"
+    sha256 cellar: :any, arm64_linux:   "07a39024655018d067e9e4d87f7c99118cadb29add411b0b9400ce576302c4be"
+    sha256 cellar: :any, x86_64_linux:  "e7e6e049a190e2f01bd3d4e93a4c4ed651dc5ced013a9b101cd2a1e440e4ea5c"
   end
 
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
-  depends_on "rust" => :build # for jiter
+  depends_on "rust" => :build # for jiter, pydantic-core and uv-build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "pydantic" => :no_linkage
   depends_on "python@3.13"
 
-  pypi_packages exclude_packages: %w[certifi pydantic pydantic-core],
+  # Core's Pydantic extension targets Python 3.14; Deepteam still requires Python <3.14.
+  pypi_packages exclude_packages: %w[certifi],
                 extra_packages:   %w[
-                  calver cython==3.1.1 dunamai expandvars flit-core<4 hatch-fancy-pypi-readme hatch-vcs hatchling
-                  pdm-backend pkgconfig poetry-core setuptools>=83,<83.1 setuptools-scm tomlkit~=0.13.0
+                  calver cython>=3.2 dunamai expandvars flit-core<4 hatch-fancy-pypi-readme hatch-vcs hatchling
+                  pdm-backend pkgconfig poetry-core setuptools>=84.1 setuptools-scm tomlkit~=0.13.0
                   trove-classifiers uv-build>=0.11,<0.13 uv-dynamic-versioning vcs-versioning
                 ]
 
@@ -37,8 +37,8 @@ class Deepteam < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz"
-    sha256 "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+    url "https://files.pythonhosted.org/packages/6c/4c/bdccd81e9ee225b69c60e7766c9a5b05364f118f4d383713b89a682d772d/aiohttp-3.14.5.tar.gz"
+    sha256 "5558a7f5a05af9ecf744af91e5baefc436f93c9333e656c27ec253f9a6bbe178"
   end
 
   resource "aiosignal" do
@@ -107,13 +107,13 @@ class Deepteam < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/a9/83/a896fc59940fc5a6e2aff3a4be1d92fa890112936803b331cae75a993c34/httpcore2-2.10.0.tar.gz"
-    sha256 "13c0cc3d1919d4f28457f60cd2c2abe04113a8af184ccf1142811beba936f9dc"
+    url "https://files.pythonhosted.org/packages/c0/61/afa9d6b7452f9eca73f73d45324eb0bb52f098fd5e6049bf6b8263be9b4e/httpcore2-2.16.0.tar.gz"
+    sha256 "c72cd0413563b17e1cd8354677dff887466f8ec2551679759e93126534428643"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/bd/3d/f9a8c07a3884f3e5b26205e8436a18b3af61c5d53192c3bea235574dbbec/httpx2-2.10.0.tar.gz"
-    sha256 "8741d7329fe2c7885fc9ceb61c8217acfb87a85f75723714b89ebf7ad7196338"
+    url "https://files.pythonhosted.org/packages/43/73/5ca2cedf5e4e50423d1c258877865a6b62793633b561c58499f8aeb33b7e/httpx2-2.16.0.tar.gz"
+    sha256 "0d54c98128e8f2ff7fbbde0fca8c359e5f032edeaaaac443cdb7f31f685bcd7f"
   end
 
   resource "idna" do
@@ -152,8 +152,8 @@ class Deepteam < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/1a/c2/c2d94cbe6ac1753f3fc980da97b3d930efe1da3af3c9f5125354436c073d/multidict-6.7.1.tar.gz"
-    sha256 "ec6652a1bee61c53a3e5776b6049172c53b6aaba34f18c9ad04f82712bac623d"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "nest-asyncio" do
@@ -167,18 +167,18 @@ class Deepteam < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/ee/8b/aa9e2d8b8dfa7c946f7dec5d1f8f6ba8eca062f43509a06bdb5ce93d26c0/opentelemetry_api-1.44.0.tar.gz"
-    sha256 "67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a"
+    url "https://files.pythonhosted.org/packages/19/14/cf3a6b6448849656e1e5f4e2101f3988dc6789724050096aba1bc5ccf592/opentelemetry_api-1.45.2.tar.gz"
+    sha256 "d7b0008e21e5fd61cbe7a7f34ca3b6905a78ab677d9bc395e299359c75cda6b4"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/5d/77/a6592cbc7c8d9bcc9d6757a9df45e04a7c585e3e6e7a13456da522b21109/opentelemetry_sdk-1.44.0.tar.gz"
-    sha256 "cebe7f65dc12f26ead75c6064de12fd2a9052e5060c0272d402cfa203aae123b"
+    url "https://files.pythonhosted.org/packages/7b/1a/74a21d4d6969fb8b432ac397e66112a8167a6deb267ea4559dbaf2fe91ef/opentelemetry_sdk-1.45.2.tar.gz"
+    sha256 "7eec4de13dd21ff3a1670dcb0e02079e692736f94d733dfdce5af461d884248d"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/8f/73/0cbdebcb4cf545fdd328da14f5137e37d0770c3f26185e478b0d15d94f50/opentelemetry_semantic_conventions-0.65b0.tar.gz"
-    sha256 "f9b2b81e9d5b64f11bc952075e7e9c7fb0aab075c7fd1c46d597f1b919852d60"
+    url "https://files.pythonhosted.org/packages/37/3f/50f95972b50e8e353f5b9342034c9cd17730f1956f009ce6a3fbbd89f9ce/opentelemetry_semantic_conventions-0.66b2.tar.gz"
+    sha256 "7da5f1a5dc4383eb66711d4d3d3e71824d9403ac1559fea021cc103c1a4c4976"
   end
 
   resource "packaging" do
@@ -209,6 +209,21 @@ class Deepteam < Formula
   resource "propcache" do
     url "https://files.pythonhosted.org/packages/ec/44/c87281c333769159c50594f22610f77398a47ccbfbbf23074e744e86f87c/propcache-0.5.2.tar.gz"
     sha256 "01c4fc7480cd0598bb4b57022df55b9ca296da7fc5a8760bd8451a7e63a7d427"
+  end
+
+  resource "annotated-types" do
+    url "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
+    sha256 "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
+  end
+
+  resource "pydantic" do
+    url "https://files.pythonhosted.org/packages/b4/fc/1203d011145c98ddce3cd2f505bb54375ef8d43223053df6bfcf3c746f46/pydantic-2.14.3.tar.gz"
+    sha256 "1054f237f4d4733e5a30e1e2333bd33a2004ab9ab1510bd053a9a31bb48e232d"
+  end
+
+  resource "pydantic-core" do
+    url "https://files.pythonhosted.org/packages/9c/0f/34f9ce4ba701dd0b815033ef94d99b56f66200e578ee6052aa3ac26f064e/pydantic_core-2.50.4.tar.gz"
+    sha256 "aead3b74b68396bf0feab5d57e050b730ded7df55853c1e048a87e00aaf033c6"
   end
 
   resource "pydantic-settings" do
@@ -282,8 +297,8 @@ class Deepteam < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
-    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "shellingham" do
@@ -321,9 +336,19 @@ class Deepteam < Formula
     sha256 "a79bef8469a79c45498e7b814ecf8d603cc7644e9acbd9e19cac0334240b18df"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+  end
+
+  resource "typing-inspection" do
+    url "https://files.pythonhosted.org/packages/ff/50/0195198eb1d75bab716bb0a813abea4cc394bfa17a92a189f021a34859af/typing_inspection-0.4.5.tar.gz"
+    sha256 "7f16c411e7930dc79596d42ab44672a3fe5f60eb34b781a1647e7872363120c7"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
-    sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+    url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
+    sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
   resource "wcwidth" do
@@ -337,13 +362,13 @@ class Deepteam < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/31/33/ebe9e3d1f86c7a0b51094c0a146392045ca1631d2664889539dec8088a33/yarl-1.24.5.tar.gz"
-    sha256 "e81b83143bee16329c23db3c1b2d82b29892fcbcb849186d2f6e98a5abe9a57f"
+    url "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz"
+    sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/5b/d3/bb000603e46144db2e5055219bbddcf7ab3b10012fcb342695694fb88141/cython-3.1.1.tar.gz"
-    sha256 "505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397"
+    url "https://files.pythonhosted.org/packages/99/ca/18e324972e5cac914816fdd7bb03e19a455b90039c277a538f7781b50c85/cython-3.3.1.tar.gz"
+    sha256 "e0e45989e821bef6aa9ae15c7d583ab5e055f7406c4b3624e49e06d24e90375a"
   end
 
   resource "dunamai" do
@@ -411,9 +436,11 @@ class Deepteam < Formula
     sha256 "0a9ebc8d4e2f3e8a22848c5258033035bec17a3012ac3fea16dbaa764489eb71"
   end
 
+  # The complete official workspace retains the native backend's locked path dependencies.
   resource "uv-build" do
-    url "https://files.pythonhosted.org/packages/85/db/4219f281f5d4ba15ae5a500a6829d6c561f239059c54dc6ee74de5c29952/uv_build-0.12.22.tar.gz"
-    sha256 "f1190311b52783aa75f60ed72fc8f9feafd95c3fcb0def408089e19563c36db2"
+    url "https://github.com/astral-sh/uv/archive/70fe1196a546e49148a73b1c592b2f74c33af80e.tar.gz"
+    version "0.12.22"
+    sha256 "baf7d3ce272083f8e8319de164d5e143687af90da6e64b9ae5789829fbfb7340"
   end
 
   resource "uv-dynamic-versioning" do
@@ -431,40 +458,171 @@ class Deepteam < Formula
     sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
   end
 
+  # Lookup keys describe build roles; distribution names retain their upstream identities.
+  resource "build-setuptools-charset" do
+    self.name = "setuptools"
+    url "https://files.pythonhosted.org/packages/34/26/f5d29e25ffdb535afef2d35cdb55b325298f96debd670da4c325e08d70f4/setuptools-83.0.0.tar.gz"
+    sha256 "025bccbbf0fa05b6192bc64ae1e7b16e001fd6d6d4d5de03c97b1c1ade523bef"
+  end
+
+  resource "build-hatchling-openai" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
+  end
+
+  resource "build-cython-grpc" do
+    self.name = "cython"
+    url "https://files.pythonhosted.org/packages/5b/d3/bb000603e46144db2e5055219bbddcf7ab3b10012fcb342695694fb88141/cython-3.1.1.tar.gz"
+    sha256 "505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397"
+  end
+
   deny_network_access!
 
   def fetch
-    %w[jiter uv-build].each do |name|
+    ENV.prepend_path "PATH", formula_opt_bin("rust")
+    %w[jiter pydantic-core uv-build].each do |name|
       resource(name).stage { system "cargo", "fetch", "--locked" }
     end
   end
 
   def install
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3")
+    ENV.prepend_path "PATH", formula_opt_bin("rust")
     ENV["CARGO_NET_OFFLINE"] = "true"
     ENV["GRPC_PYTHON_BUILD_EXT_COMPILER_JOBS"] = ENV.make_jobs.to_s
-    venv = virtualenv_create(libexec, "python3.13")
+    ENV.delete "PYTHONPATH"
+    # Keep pip's driver outside the isolated target, even after its bin directory is on PATH.
+    build_python = formula_opt_bin("python@3.13")/"python3.13"
+    venv = virtualenv_create(libexec, build_python, system_site_packages: false)
     ENV.prepend_path "PATH", libexec/"bin"
     build_resources = %w[
-      setuptools flit-core poetry-core packaging calver cython wheel tomlkit pathspec pluggy
-      trove-classifiers vcs-versioning setuptools-scm hatchling hatch-vcs hatch-fancy-pypi-readme
-      expandvars pdm-backend pkgconfig markupsafe jinja2 dunamai uv-dynamic-versioning uv-build
+      flit-core packaging wheel cython calver poetry-core pathspec pluggy trove-classifiers
+      vcs-versioning setuptools-scm hatchling hatch-vcs hatch-fancy-pypi-readme
+      expandvars pdm-backend pkgconfig markupsafe jinja2 dunamai tomlkit uv-dynamic-versioning uv-build
     ]
-    build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
-    venv.pip_install_and_link buildpath, build_isolation: false
+    # Maturin's pure Python SDK is a build input, never part of the target runtime.
+    with_env(PYTHONPATH: formula_opt_prefix("maturin")/Language::Python.site_packages("python3.13")) do
+      venv.pip_install resource("flit-core"), build_isolation: false
+      venv.pip_install resource("build-setuptools-charset"), build_isolation: false
+      %w[packaging wheel].each { |name| venv.pip_install resource(name), build_isolation: false }
+      venv.pip_install resource("charset-normalizer"), build_isolation: false
+      # Charset-normalizer requires setuptools<83.1; DeepEval's runtime uses the current release.
+      system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "setuptools"
+      venv.pip_install resource("setuptools"), build_isolation: false
+      # gRPC pins Cython 3.1.1; the aio-libs native backends require a newer generation.
+      venv.pip_install resource("build-cython-grpc"), build_isolation: false
+      venv.pip_install resource("grpcio"), build_isolation: false
+      system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "cython"
+      %w[calver poetry-core pathspec vcs-versioning setuptools-scm pluggy trove-classifiers].each do |name|
+        venv.pip_install resource(name), build_isolation: false
+      end
+      # OpenAI declares an exact backend; install it before the modern backend generation.
+      venv.pip_install resource("build-hatchling-openai"), build_isolation: false
+      venv.pip_install resource("hatch-fancy-pypi-readme"), build_isolation: false
+      venv.pip_install resource("openai"), build_isolation: false
+      system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "hatchling"
+      installed = %w[flit-core packaging wheel calver poetry-core pathspec pluggy trove-classifiers
+                     vcs-versioning setuptools-scm hatch-fancy-pypi-readme uv-build]
+      (build_resources - installed).each { |name| venv.pip_install resource(name), build_isolation: false }
+      resource("uv-build").stage do
+        venv.pip_install Pathname.pwd/"crates/uv-build", build_isolation: false
+      end
+      # The sdists have no VCS data. Use the version override declared by their original backend.
+      %w[httpcore2 httpx2].each do |name|
+        with_env(UV_DYNAMIC_VERSIONING_BYPASS: resource(name).version.to_s) do
+          venv.pip_install resource(name), build_isolation: false
+        end
+      end
+      native_resources = %w[typing-extensions annotated-types typing-inspection pydantic-core pydantic]
+      native_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+      installed_resources = (build_resources + %w[
+        build-setuptools-charset build-hatchling-openai build-cython-grpc charset-normalizer setuptools
+        openai grpcio httpcore2 httpx2
+      ] + native_resources).map { |name| resource(name) }
+      venv.pip_install resources - installed_resources, build_isolation: false
+      venv.pip_install_and_link buildpath, build_isolation: false
+      system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", "uv-build"
+    end
+    system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "check"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/deepteam --version")
+    # The version entrypoint imports DeepEval; use its supported opt-outs before any import.
+    ENV["DEEPTEAM_TELEMETRY_OPT_OUT"] = "YES"
+    ENV["DEEPEVAL_TELEMETRY_OPT_OUT"] = "1"
+    ENV["DEEPEVAL_DISABLE_DOTENV"] = "1"
+    ENV["DEEPEVAL_UPDATE_WARNING_OPT_IN"] = "0"
+    ENV["DEEPEVAL_FILE_SYSTEM"] = "READ_ONLY"
+    ENV["DEEPEVAL_HOME"] = testpath/".deepeval"
+    ENV["XDG_CONFIG_HOME"] = testpath/"config"
+    ENV["XDG_CACHE_HOME"] = testpath/"cache"
+    ENV["PYTHONNOUSERSITE"] = "1"
+    ENV.delete "PYTHONPATH"
+    ENV.delete "ERROR_REPORTING"
     ENV["PYTHONWARNINGS"] = "ignore::SyntaxWarning"
+    assert_match version.to_s, shell_output("#{bin}/deepteam --version")
 
-    (testpath/"bad.yaml").write <<~YAML
-      target:
-        purpose: noop
+    (testpath/"config.yaml").write <<~YAML
+      min_severity: high
+      include:
+        - owned.py
+      diffs_only: true
     YAML
+    build_only = %w[build-setuptools-charset build-hatchling-openai build-cython-grpc uv-build]
+                 .map { |name| resource(name) }
+    expected_versions = (resources - build_only).to_h { |r| [r.name, r.version.to_s] }
+    (testpath/"consumer.py").write <<~PYTHON
+      import importlib.machinery
+      import importlib.metadata
+      import json
+      from pathlib import Path
+      from packaging.version import Version
+      import jiter
+      import pydantic_core
+      import yaml
+      from pydantic import ValidationError
+      from pydantic_core import SchemaValidator, core_schema
+      from deepteam.code_scanner.config import load_config
+      from deepteam.code_scanner.schema import CodeChunk
 
-    output = shell_output("#{bin}/deepteam run #{testpath}/bad.yaml 2>&1", 1)
-    assert_match "OpenAI API key is not configured", output
+      expected = json.loads(#{expected_versions.to_json.inspect})
+      for name, version in expected.items():
+          assert Version(importlib.metadata.version(name)) == Version(version), name
+      assert isinstance(pydantic_core._pydantic_core.__loader__, importlib.machinery.ExtensionFileLoader)
+      assert pydantic_core.__version__ == #{resource("pydantic-core").version.to_s.inspect}
+      validator = SchemaValidator(core_schema.int_schema(gt=0))
+      assert validator.validate_json(b"7") == 7
+      try:
+          validator.validate_json(b"-1")
+      except ValidationError as error:
+          assert error.errors()[0]["type"] == "greater_than"
+      else:
+          raise AssertionError("native validator accepted a negative integer")
+
+      assert yaml.__with_libyaml__
+      config = load_config(path="config.yaml")
+      assert config.min_severity == "high" and config.include == ["owned.py"] and config.diffs_only
+      chunk = CodeChunk.model_validate_json('{"file_path":"owned.py","content":"value = 7","start_line":3}')
+      assert chunk.start_line == 3 and chunk.model_dump()["content"] == "value = 7"
+      try:
+          CodeChunk.model_validate_json('{"file_path":"owned.py","content":"value = 7","start_line":"invalid"}')
+      except ValidationError as error:
+          assert error.errors()[0]["loc"] == ("start_line",)
+      else:
+          raise AssertionError("app schema accepted an invalid line number")
+      assert jiter.from_json(b'{"owned":[1,2]}') == {"owned": [1, 2]}
+      try:
+          jiter.from_json(b'{"owned":')
+      except ValueError:
+          pass
+      else:
+          raise AssertionError("native JSON parser accepted incomplete JSON")
+      assert not Path(".deepteam/telemetry.txt").exists()
+      print("native validation and owned configuration passed")
+    PYTHON
+    assert_match "native validation and owned configuration passed",
+                 shell_output("#{libexec}/bin/python -I #{testpath}/consumer.py")
+    system formula_opt_bin("python@3.13")/"python3.13", "-m", "pip",
+           "--python=#{libexec}/bin/python", "check"
   end
 end
