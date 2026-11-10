@@ -1,17 +1,16 @@
 class Perch < Formula
   desc "Terminal social client for Mastodon and Bluesky"
   homepage "https://perch.ricardodantas.me/"
-  url "https://github.com/ricardodantas/perch/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "8e1b2d6dfbd324485996ab9b3c35b035fd0443e8d5608d447b947c53364ff48f"
+  url "https://github.com/ricardodantas/perch/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "c799e5e9ce323822560f419c7efc8d0a647528966d4105ab76c67fce4fe9356d"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "353129267f25edc043ce9d20c9e72f5812030d6d6051c4fe8650c50301ada380"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0823158348d6d4d4eee04b6a41f6e615fbdb74e39f63a168e48e6943062f998"
-    sha256 cellar: :any,                 arm64_linux:   "e975d95b061cfc4c17ce5121aa6fe767bb1f15edd8f71145587c5aa7fe45ffba"
-    sha256 cellar: :any,                 x86_64_linux:  "9af3646169a43dd4777d8394912ac00782539088ae29a328c63ad28f5b53c31e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "75bd538825641db40907115bd5f85372afec73385231d8ef7129d1dfc6cbf32a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b85afd59289906dc5593dc0c195a84d9eccbd7ff42be4ec262c8654eaf8ffc32"
+    sha256 cellar: :any,                 arm64_linux:   "ac020721d1b1236c3e5873a112369d9ccfc53e5619f087664534c5bf5ff9163c"
+    sha256 cellar: :any,                 x86_64_linux:  "5ebbc90410f718c6b81d75fb914742a78e241cc1d6846eb88c14f2ca65c439cc"
   end
 
   depends_on "rust" => :build
