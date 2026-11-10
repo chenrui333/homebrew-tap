@@ -238,8 +238,10 @@ jobs:
 
       - name: Run brew uninstall --cask --force --zap ${{ matrix.cask.token }}
         if: always() && steps.info.outcome == 'success'
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
         run: |
-          brew uninstall --cask --force --zap "${{ matrix.cask.path }}"
+          brew uninstall --cask --force --zap "$CASK_UNDER_TEST"
         timeout-minutes: 30
 
       - name: Take snapshot of installed and running apps and services (macOS only)
@@ -253,7 +255,9 @@ jobs:
           always() && steps.info.outcome == 'success' &&
           fromJSON(steps.info.outputs.macos_requirement_satisfied) &&
           !matrix.skip_install
-        run: brew install --cask "${{ matrix.cask.path }}"
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
+        run: brew install --cask "$CASK_UNDER_TEST"
         timeout-minutes: 30
 
       - name: Check for missing zap paths
@@ -269,7 +273,9 @@ jobs:
 
       - name: Run brew uninstall --cask ${{ matrix.cask.token }}
         if: always() && steps.install.outcome == 'success' && !fromJSON(steps.info.outputs.manual_installer)
-        run: brew uninstall --cask "${{ matrix.cask.token }}"
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
+        run: brew uninstall --cask "$CASK_UNDER_TEST"
         timeout-minutes: 30
 
       - name: Uninstall cask dependencies
