@@ -2,9 +2,9 @@ class Swamp < Formula
   desc "Deterministic automation framework for AI agents"
   homepage "https://swamp-club.com"
   url "https://git.swamp-club.com/swamp-club/swamp.git",
-      tag:      "v20261109.121215.0-sha.395da234",
-      revision: "395da2342a74e4ed1d1510b6346c281be13e3ac3"
-  version "20261109.121215.0-sha.395da234"
+      tag:      "v20261109.214205.0-sha.2c24fe25",
+      revision: "2c24fe25baee98c72cdb3224ca8962ba5ec91a23"
+  version "20261109.214205.0-sha.2c24fe25"
   # Upstream also grants the additional permissions in COPYING-EXCEPTION.
   license "AGPL-3.0-only"
   head "https://git.swamp-club.com/swamp-club/swamp.git", branch: "main"
