@@ -10,11 +10,10 @@ class Paperai < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 arm64_tahoe:   "71317701804b44d4beeab39e34f1a9241bde041670d656c892dde55c7c6eded7"
-    sha256 arm64_sequoia: "ba87d6fde27497cfe385f2a67c4bbebbd2797024729d7cf0ecf26bd403c19be3"
-    sha256 arm64_linux:   "0ad83954dd49dcd5a2ad2e37b11da2b42ca469ea45a1149a677fdfd44a66c123"
-    sha256 x86_64_linux:  "29030978ea8d18d13bd2308782f0c69b63ed00df396f30b4241eed277205ec1e"
+    sha256 arm64_tahoe:   "08126fe0bd5519c4a32cca7b5747bb27de216f7caae29d8702ac4dc1914ec7c0"
+    sha256 arm64_sequoia: "a1f1e07099c104871dd30b66767cc097c344eb47cda547f98d25aeb214ebc529"
+    sha256 arm64_linux:   "dc65d03192aafaee976483e7d9c976dc84c23d3b6df396add2b30b37ff289784"
+    sha256 x86_64_linux:  "852c7422e0073e8b8a08a4dce889210b93db411aab0f62e44d4a29a6e549f62f"
   end
 
   depends_on "autoconf" => :build
