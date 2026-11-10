@@ -1,18 +1,18 @@
 class But < Formula
   desc "Standalone GitButler command-line Git client"
   homepage "https://docs.gitbutler.com/cli-overview"
-  url "https://github.com/gitbutlerapp/gitbutler/archive/refs/tags/release/0.23.2.tar.gz"
-  sha256 "dd4ff0e6bd6271f206e886f23ab85c5589347d0d4371835269322b8967fe3aaa"
+  url "https://github.com/gitbutlerapp/gitbutler/archive/refs/tags/release/0.23.3.tar.gz"
+  sha256 "c49d1316e0ddfd4d2ac66e0927786145f1fbed469fb61640ac94b6703d7f251d"
   # Functional Source License 1.1 with a future MIT grant, not current MIT.
   license :cannot_represent
   head "https://github.com/gitbutlerapp/gitbutler.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0de0871877666bb228e12d42d8582758828a926d921c13d70c8f4a1b4dd0dee4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65a1a8b4e636eb9a2f55c30910f04b844c446ccbead2b269a64c140fa28a9465"
-    sha256 cellar: :any,                 arm64_linux:   "2cd013d21c84627088d35628700552b0cd97b4ce1d36aca06d68387bc0ebb73a"
-    sha256 cellar: :any,                 x86_64_linux:  "617c6d2b5b22010b728134f2d012956328c84a607291a8c3b0f8a82ffffd2008"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72b115e1fd86d6dfe772de8612e09cefa6bd66be7f19cf8a7d677184f7196607"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2df54f76ae8d0018b2cbf7c70060853a2f8197aedd7165f7d9da24ee5f1782e9"
+    sha256 cellar: :any,                 arm64_linux:   "a0f023aa499ee12479f4ed5c97e202a89738ebdf9984652b0d27a08cf52fc07d"
+    sha256 cellar: :any,                 x86_64_linux:  "612ef2c12005d1a63c2182e512f0406450cb9642b03c93aafd7cb66b37410b0f"
   end
 
   depends_on "pkgconf" => :build
