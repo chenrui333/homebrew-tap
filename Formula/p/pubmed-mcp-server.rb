@@ -6,14 +6,14 @@ class PubmedMcpServer < Formula
   url "https://files.pythonhosted.org/packages/1b/d6/387bd43f8604e29ab0b0dcaede155677019edf637e5248094ef212a9dc94/mcp_simple_pubmed-0.1.16.tar.gz"
   sha256 "eb9f72a50420eaefaf424ea545e6712b80ed9aa8f1334ab6ea2ddf26ee11f578"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95200e547316737ce29520e518595fee04ab0c6dc70c99662724e32a06f67bf4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbe021807f63694ba51840549487da6056a56279bfcf2ce2ea846f2eae54818f"
-    sha256 cellar: :any,                 arm64_linux:   "a615f13b5021b965fa54a8ae3e396088b4178bc2653216dffce1ddbca520ebf9"
-    sha256 cellar: :any,                 x86_64_linux:  "d6aa85effc111112aab93e3784812e9e54d3477c43e243041042491daacbaad3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "906dd6b6e9d2f0ad91545d7503af2620a070999de567a87498601e38435efb33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfea0ca2b62ea879f1228b323af89cca6e67084358d5c2096827dffd75c26054"
+    sha256 cellar: :any,                 arm64_linux:   "3593ffed6f21efbca3d10ef5f7e941b3fb27cf1a63c46778abfc635378258bef"
+    sha256 cellar: :any,                 x86_64_linux:  "a68e0509660787438ccaf8c63310bca7671d2ede23ffb64641e911c344cd6799"
   end
 
   depends_on "autoconf" => :build # for patchelf
@@ -50,11 +50,20 @@ class PubmedMcpServer < Formula
 
   # Metapub requires setuptools<75 only while building; the other resources require setuptools>=77.
   resource "homebrew-setuptools-legacy" do
-    url "https://github.com/pypa/setuptools/archive/refs/tags/v74.1.3.tar.gz"
-    sha256 "f6e97f875eeacb279cf588e109f8740e6b12e97ddab22fe449eca332bdc88555"
+    self.name = "setuptools"
+    url "https://files.pythonhosted.org/packages/cd/01/e30d66bbb6403b7d41ac1ac0e3c51727c5e8f3558d8f9a9efe4282e90308/setuptools-74.1.3.tar.gz"
+    sha256 "fbb126f14b0b9ffa54c4574a50ae60673bbe8ae0b1645889d10b3b14f5891d28"
 
     livecheck do
       skip "Keep the isolated legacy build backend"
+    end
+
+    # Normalize manifest exclusions on macOS without changing Metapub's backend bounds.
+    patch do
+      url "https://github.com/pypa/setuptools/commit/dd9f436a36486b4cb8a4c70a2321548b0be09b8f.patch?full_index=1"
+      sha256 "0bda8d9d5766efa18bfcf1016a5dd0c57750792522b614ca9638d950fcded55d"
+      type :backport
+      resolves "GHSA-h35f-9h28-mq5c"
     end
   end
 
@@ -536,6 +545,14 @@ class PubmedMcpServer < Formula
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
     sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+
+    # Preserve charset-normalizer's setuptools<82.1 bound with the upstream security fix.
+    patch do
+      url "https://github.com/pypa/setuptools/commit/dd9f436a36486b4cb8a4c70a2321548b0be09b8f.patch?full_index=1"
+      sha256 "0bda8d9d5766efa18bfcf1016a5dd0c57750792522b614ca9638d950fcded55d"
+      type :backport
+      resolves "GHSA-h35f-9h28-mq5c"
+    end
   end
 
   resource "setuptools-scm" do
@@ -659,7 +676,6 @@ class PubmedMcpServer < Formula
     build_resources = %w[
       flit-core
       coherent-licensed
-      jinja2
       packaging
       pathspec
       pdm-backend
@@ -667,11 +683,12 @@ class PubmedMcpServer < Formula
       dunamai
       pkgconfig
       setuptools
+      setuptools-scm
+      flit-scm
       calver
       cython
       markupsafe
-      setuptools-scm
-      flit-scm
+      jinja2
       pluggy
       tomlkit
       trove-classifiers
@@ -682,40 +699,72 @@ class PubmedMcpServer < Formula
       uv-build
       uv-dynamic-versioning
       wheel
-    ]
+    ].map { |name| resource(name) }
 
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages("python3.14")
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
     ENV.prepend_path "PATH", libexec/"bin"
     ENV["CARGO_NET_OFFLINE"] = "true"
     # Keep a source Cython build role for Python 3.14; Core's Cython runs on Python 3.15.
     ENV["NO_CYTHON_COMPILE"] = "true"
+    # Require the libyaml extension instead of silently accepting a pure-Python build.
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
 
     venv = virtualenv_create(libexec, "python3.14")
-    build_resources.each do |name|
-      venv.pip_install resource(name), build_isolation: false
+    build_resources.each do |r|
+      venv.pip_install r, build_isolation: false
     end
-    installed_resources = build_resources + %w[homebrew-setuptools-legacy metapub]
+    installed_resources = build_resources + [resource("homebrew-setuptools-legacy"), resource("metapub")]
     # Keyring's Secret Service backend is only required on Linux.
-    installed_resources += %w[jeepney secretstorage] unless OS.linux?
-    venv.pip_install resources.reject { |r| installed_resources.include?(r.name) }, build_isolation: false
-    resource("homebrew-setuptools-legacy").stage do
-      # Use release metadata instead of date-stamping the Git source build.
-      inreplace "setup.cfg", "tag_build = .post", "tag_build ="
-      inreplace "setup.cfg", "tag_date = 1", "tag_date = 0"
-      venv.pip_install Pathname.pwd, build_isolation: false
-    end
+    installed_resources += %w[jeepney secretstorage].map { |name| resource(name) } unless OS.linux?
+    venv.pip_install resources.reject { |r| installed_resources.include?(r) }, build_isolation: false
+    # std_pip_args uses --ignore-installed, so remove each same-name backend before switching.
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "-y", "setuptools"
+    venv.pip_install resource("homebrew-setuptools-legacy"), build_isolation: false
     venv.pip_install resource("metapub"), build_isolation: false
+    system "python3.14", "-m", "pip", "--python=#{libexec}/bin/python", "uninstall", "-y", "setuptools"
     venv.pip_install resource("setuptools"), build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
-    # FIXME: Upstream does not expose a version command; replace this with a version assertion when available.
+    # The missing-email guard runs before either PubMed client or any tool is constructed.
+    ENV.keys.grep(/^FASTMCP_/).each { |key| ENV.delete(key) }
+    ENV["FASTMCP_ENV_FILE"] = (testpath/"absent.env").to_s
     ENV["PUBMED_EMAIL"] = ""
     ENV["PUBMED_API_KEY"] = ""
     output = shell_output("#{bin}/mcp-simple-pubmed 2>&1", 1)
     assert_match "PUBMED_EMAIL environment variable is required", output
 
     system formula_opt_libexec("python@3.14")/"bin/python", "-m", "pip", "--python", libexec/"bin/python", "check"
+
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import brotli
+      import numpy
+      import yaml
+      from Bio.Align import PairwiseAligner
+      from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+      from Levenshtein import distance
+      from lupa import LuaRuntime
+      from lxml import etree
+      from pydantic import BaseModel
+      from rpds import HashTrieMap
+
+      assert numpy.allclose(numpy.linalg.det(numpy.array([[2., 0.], [0., 3.]])), 6.)
+      assert PairwiseAligner().score("ACGT", "ACGT") == 4.
+      assert distance("kitten", "sitting") == 3
+      assert LuaRuntime().eval("6 * 7") == 42
+      assert brotli.decompress(brotli.compress(b"homebrew")) == b"homebrew"
+      assert etree.fromstring(b"<root><value>42</value></root>").findtext("value") == "42"
+      assert yaml.load("value: 42", Loader=yaml.CSafeLoader) == {"value": 42}
+      assert HashTrieMap({"value": 42})["value"] == 42
+      cipher = AESGCM(bytes(32))
+      ciphertext = cipher.encrypt(bytes(12), b"homebrew", None)
+      assert cipher.decrypt(bytes(12), ciphertext, None) == b"homebrew"
+
+      class Payload(BaseModel):
+          value: int
+
+      assert Payload.model_validate({"value": "42"}).value == 42
+    PYTHON
   end
 end
