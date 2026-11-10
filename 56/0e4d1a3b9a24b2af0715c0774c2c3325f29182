@@ -1,0 +1,14 @@
+Formula/f/fftext.rb
+  h_9df9c32c3f321d 10,24,29-30,32,56-60,67-68,82-89,227,229-230,268-272,313,341-345,354-355,359-363,365,373-375,383,399-403,406-434,437-439
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "560e4d1a3b9a24b2af0715c0774c2c3325f29182",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
