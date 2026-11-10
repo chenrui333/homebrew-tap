@@ -8,10 +8,10 @@ class Funes < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6fcc5c8c470a33526927edea0d9c329c1671b51d5a8e01ce8bf32cf259559616"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d03ce166cc66883f3d26a382bf7bc5dcaac5c5f86af6f483e803622287cfb1c"
-    sha256 cellar: :any,                 arm64_linux:   "b179d7bf397a9799d12eb3f75f38c6daf8ed614c057496073c16ea6b4fd351e4"
-    sha256 cellar: :any,                 x86_64_linux:  "afd27c9f01d0ee6a45bfc05af900ca579720447cb09bbe2865eb753589eb2061"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70a9a27d464acc46638decfd7ceb9e2842631da5be3f9543222c0193eb039739"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a2fe95fe625261d8cab94f7817439991861f02839725ff8eda3afc2641de3a7"
+    sha256 cellar: :any,                 arm64_linux:   "78ae23a164555c99fb33eb7e5b1ea415a58597b428da318159495d71d2c01e70"
+    sha256 cellar: :any,                 x86_64_linux:  "764ddfb4d5d028d1b57c2aebcbca0149f4fc0e895096e79496c17b1347751542"
   end
 
   depends_on "cmake" => :build
