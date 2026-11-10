@@ -1,18 +1,17 @@
 class Hazelnut < Formula
   desc "Terminal-based automated file organizer"
   homepage "https://github.com/ricardodantas/hazelnut"
-  url "https://github.com/ricardodantas/hazelnut/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "4543797443d49889c4cf48e5a207bc84155da78a5f88ad133d52e908514fa092"
+  url "https://github.com/ricardodantas/hazelnut/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "a35cdda06d8051e7935b5357a7cd1c0cb7c0fcff86beaa455c82fc99534277e5"
   license "GPL-3.0-or-later"
   head "https://github.com/ricardodantas/hazelnut.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c4c0db1c1f6f516fa662ca88f3e095ade6c3ae7738e359b2ad23de17e8766a1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb254f6f9fb905a1efc9d1f124b85cb1a84d96ed3bbc754ea4b0c56e84ac46c2"
-    sha256 cellar: :any,                 arm64_linux:   "509d59a84683251529de6d0fcea80b48a289877369f7c0cbaa09e28c86481f4c"
-    sha256 cellar: :any,                 x86_64_linux:  "1ae589f289cde0ca55673e1a1a33d3b4a8d4ff468dd4a487d0b58c90046c6230"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ad99ba308d5d361e05622ceaee5407f4551ed2a3b715b8038f6be2a3bff2ac39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4096e8f4ff7b84f7d6389a33fd2d46783594853797673427451705c48860cc2"
+    sha256 cellar: :any,                 arm64_linux:   "9d03bbad513f85b2ad6d5d40eb84a0ba161c6cee69925b1bc32af7e7e06b081a"
+    sha256 cellar: :any,                 x86_64_linux:  "4fef61c2766e772a527116b261fe64387d341596e2b7e35bc25a310029652cc4"
   end
 
   depends_on "rust" => :build
