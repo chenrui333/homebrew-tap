@@ -1,0 +1,14 @@
+Casks/a/agent-sessions.rb
+  h_9df9c32c3f321d 2-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d8f0406cc75d7cbbc79b3e9a457b3f334ac9bd3b",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
