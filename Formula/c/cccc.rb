@@ -6,34 +6,36 @@ class Cccc < Formula
   url "https://files.pythonhosted.org/packages/0f/13/efb91aa70efde2c4f818240dafab1d8946629c3756cfd1089b33227d9a07/cccc_pair-0.4.35.tar.gz"
   sha256 "b99bdbc929a5b36e934162eaccadb67147c0d03bff5b66139fa115238ace233a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ChesterRa/cccc.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "0235e10d845337e21081ed592dd4a9d391ea61806ad90e5393b748bbe2e40e93"
-    sha256 cellar: :any, arm64_sequoia: "5a70c93dc9c73abca7bf23c02134da9fcc149b4837826a961fabc373405b8273"
-    sha256 cellar: :any, arm64_sonoma:  "940f29b569a5c4936ff553c2d685459d4f3a45aa30305a495cefa09d16b1d48e"
-    sha256 cellar: :any, arm64_linux:   "6832891cc8bfa0490399328f45a5c95af26e79e9bc6fd1fa00d0081153a0af29"
-    sha256 cellar: :any, x86_64_linux:  "c037aa6bf8212d8d79820640cde16896c0524c1a0a1a2f7d41f1c462c183a52e"
+    sha256 cellar: :any, arm64_tahoe:   "37af40aeb1541c10b0c76c2c6f2d330f1dc3f2702923543b1c92104f71958a42"
+    sha256 cellar: :any, arm64_sequoia: "41a8f94790ab5c44d02da0b433bbbdbef57cf2fb70c05c18038074f4b566efdd"
+    sha256 cellar: :any, arm64_linux:   "138278c0f8bf43358cdc24e9f76eaf3eb2d05fb7e7445a774837d030a20bce28"
+    sha256 cellar: :any, x86_64_linux:  "d11318cbcb7f5b9571febf25e26edba3f7f1f6f9b05abb47f60c5609b239b54c"
   end
 
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.13" => :build # Flit 2 uses ast.Str, removed in Python 3.14.
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
-  depends_on "cryptography" => :no_linkage
+  depends_on "cffi" => :no_linkage
   depends_on "libyaml"
+  depends_on "openssl@3"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
-  # socksio 1.0.0 uses legacy metadata that is unsupported by flit-core 4.
+  # httptools and propcache require exactly setuptools 82.0.1; Socksio needs a separate Flit 2 role.
   pypi_packages extra_packages:   %w[
                   calver cython expandvars flit-core==3.12.0 hatch-fancy-pypi-readme hatch-vcs hatchling packaging
                   pathspec
-                  pdm-backend pkgconfig pluggy poetry-core setuptools setuptools-scm trove-classifiers vcs-versioning
-                  wheel
+                  pdm-backend pkgconfig pluggy poetry-core pytoml setuptools==82.0.1 setuptools-scm tomlkit
+                  trove-classifiers vcs-versioning wheel
                 ],
-                exclude_packages: %w[certifi cryptography pydantic]
+                exclude_packages: %w[certifi cffi dingtalk-stream pydantic pydantic-core]
 
   resource "aiohappyeyeballs" do
     url "https://files.pythonhosted.org/packages/ce/f4/eec0465c2f67b2664688d0240b3212d5196fd89e741df67ddb81f8d35658/aiohappyeyeballs-2.7.1.tar.gz"
@@ -80,14 +82,55 @@ class Cccc < Formula
     sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
+  # The original application requires cryptography<47; retain that API with upstream security fixes.
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/47/93/ac8f3d5ff04d54bc814e961a43ae5b0b146154c89c61b47bb07557679b18/cryptography-46.0.7.tar.gz"
+    sha256 "e4cfd68c5f3e0bfdad0d38e023239b96a2fe84146481852dffbcca442c245aa5"
+  end
+
+  # GHSA-m2h6-j472-rp4c: distinguish permitted and excluded wildcard DNS constraints.
+  resource "cryptography-dns-constraints-patch" do
+    url "https://github.com/pyca/cryptography/commit/4d035a4225965edeffd312079a510ef25fcfdcb2.patch?full_index=1"
+    sha256 "58d8503bbf750c0d268c8c6ad15baddf1070892c8e2562ec3e852b5415da6cdf"
+    livecheck { skip "Pinned security backport" }
+  end
+
+  # GHSA-jwv3-5hgf-82ww: bound duplicate-issuer signature validation.
+  resource "cryptography-signature-budget-patch" do
+    url "https://github.com/pyca/cryptography/commit/4a12cf49675a184e47f912b00b04f3a629283582.patch?full_index=1"
+    sha256 "bb3274928011aaf7eaf27544fd9a6ffbf740ad39073ef92046122fafb195c3de"
+    livecheck { skip "Pinned security backport" }
+  end
+
+  # Accepted test-only prerequisites preserve the complete upstream security regression changes.
+  resource "cryptography-test-doubles-patch" do
+    url "https://github.com/pyca/cryptography/commit/595008670c6f8b01b5a1f017d66fadc3885efeb7.patch?full_index=1"
+    sha256 "f6ff62ac4e2ecf34fafdd83a56d7a38e41b4da5fa12c15177c383d2e16c6bc61"
+    livecheck { skip "Pinned test prerequisite" }
+  end
+
+  resource "cryptography-test-marks-patch" do
+    url "https://github.com/pyca/cryptography/commit/cf3fa7d89a3fbb047205a8385c411bd65c0cb3cd.patch?full_index=1"
+    sha256 "094b4e6d3b783f914ad8c703a541042290c5681af90bf841062854812096c2e2"
+    livecheck { skip "Pinned test prerequisite" }
+  end
+
+  # GHSA-g6cj-pr64-35w5: hide RSA encrypted-key decryption failures.
+  resource "cryptography-pkcs7-patch" do
+    url "https://github.com/pyca/cryptography/commit/53fccd93413a8d7f07d6d8999681f27b75cffa3f.patch?full_index=1"
+    sha256 "c8c7c5f46ad6da3702cd6014ef80ed1f2da171735ef0b2eb0c527527daad66b4"
+    livecheck { skip "Pinned security backport" }
+  end
+
   resource "cython" do
     url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
     sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "dingtalk-stream" do
-    url "https://files.pythonhosted.org/packages/4c/44/102dede3f371277598df6aa9725b82e3add068c729333c7a5dbc12764579/dingtalk_stream-0.24.3-py3-none-any.whl"
-    sha256 "2160403656985962878bf60cdf5adf41619f21067348e06f07a7c7eebf5943ad"
+    # PyPI publishes only a wheel; the matching tag contains identical Python sources.
+    url "https://github.com/open-dingtalk/dingtalk-stream-sdk-python/archive/refs/tags/v0.24.3.tar.gz"
+    sha256 "f46bcfe2cc654159927b16ec6569459bddd8f49b1e1b701248b325a51a604a70"
   end
 
   resource "expandvars" do
@@ -108,6 +151,14 @@ class Cccc < Formula
   resource "flit-core" do
     url "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz"
     sha256 "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2"
+  end
+
+  resource "homebrew-flit-core-socksio" do
+    define_singleton_method(:name) { "flit-core" }
+
+    url "https://files.pythonhosted.org/packages/bb/92/e51c58d463ebbabb7b226662655cef6d17d3b4b83f570b08f6be0fe2b1b8/flit_core-2.3.0.tar.gz"
+    sha256 "a50bcd8bf5785e3a7d95434244f30ba693e794c5204ac1ee908fc07c4acdbf80"
+    livecheck { skip "Socksio's declared legacy build backend" }
   end
 
   resource "frozenlist" do
@@ -215,6 +266,11 @@ class Cccc < Formula
     sha256 "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e"
   end
 
+  resource "pytoml" do
+    url "https://files.pythonhosted.org/packages/f4/ba/98ee2054a2d7b8bebd367d442e089489250b6dc2aee558b000e961467212/pytoml-0.1.21.tar.gz"
+    sha256 "8eecf7c8d0adcff3b375b09fe403407aa9b645c499e5ab8cac670ac4a35f61e7"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -231,8 +287,16 @@ class Cccc < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz"
+    sha256 "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+
+    # Preserve the build bounds with the accepted manifest-exclusion security fix.
+    patch do
+      url "https://github.com/pypa/setuptools/commit/dd9f436a36486b4cb8a4c70a2321548b0be09b8f.patch?full_index=1"
+      sha256 "0bda8d9d5766efa18bfcf1016a5dd0c57750792522b614ca9638d950fcded55d"
+      type :backport
+      resolves "GHSA-h35f-9h28-mq5c"
+    end
   end
 
   resource "setuptools-scm" do
@@ -248,6 +312,11 @@ class Cccc < Formula
   resource "starlette" do
     url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
     sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "trove-classifiers" do
@@ -308,49 +377,139 @@ class Cccc < Formula
   deny_network_access!
 
   def fetch
-    resource("watchfiles").stage do
-      system "cargo", "fetch", "--locked"
+    ENV.prepend_path "PATH", formula_opt_bin("rust")
+    %w[cryptography watchfiles].each do |name|
+      resource(name).stage { system "cargo", "fetch", "--locked" }
+    end
+  end
+
+  def patch_cryptography
+    %w[
+      cryptography-dns-constraints-patch cryptography-signature-budget-patch
+      cryptography-test-doubles-patch cryptography-test-marks-patch cryptography-pkcs7-patch
+    ].each do |name|
+      # Keep all SDK production and regression-test hunks, excluding only release docs and CI wrappers.
+      system "git", "apply", "--include=src/**", "--include=tests/**", resource(name).cached_download
     end
   end
 
   def install
     build_resources = %w[
-      setuptools
-      flit-core
-      wheel
-      cython
-      poetry-core
-      packaging
-      pathspec
-      calver
-      trove-classifiers
-      vcs-versioning
-      setuptools-scm
-      pluggy
-      hatchling
-      hatch-vcs
-      expandvars
-      hatch-fancy-pypi-readme
-      pdm-backend
-      pkgconfig
+      setuptools flit-core packaging wheel cython poetry-core tomlkit pathspec calver trove-classifiers
+      vcs-versioning setuptools-scm pluggy hatchling hatch-vcs expandvars hatch-fancy-pypi-readme
+      pdm-backend pkgconfig
     ]
 
     ENV.prepend_path "PATH", formula_opt_bin("rust")
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    ENV["NO_CYTHON_COMPILE"] = "true"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    venv = virtualenv_create(libexec, "python3.13")
-    build_resources.each do |name|
-      venv.pip_install resource(name), build_isolation: false
+    build_python = formula_opt_bin("python@3.14")/"python3.14"
+    venv = virtualenv_create(libexec, build_python, system_site_packages: false)
+    ENV.prepend_path "PATH", libexec/"bin"
+    build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+
+    resource("cryptography").stage do
+      patch_cryptography
+      venv.pip_install Pathname.pwd, build_isolation: false
     end
-    venv.pip_install resources.reject { |r| build_resources.include?(r.name) }, build_isolation: false
+
+    # Build Socksio's unchanged pure wheel with its declared Flit 2 backend on supported Python.
+    wheel_dir = buildpath/"socksio-wheels"
+    wheel_dir.mkpath
+    with_env(PYTHONPATH: nil) do
+      legacy_python = formula_opt_bin("python@3.13")/"python3.13"
+      legacy_venv = virtualenv_create(buildpath/"socksio-build", legacy_python, system_site_packages: false)
+      %w[setuptools pytoml homebrew-flit-core-socksio].each do |name|
+        legacy_venv.pip_install resource(name), build_isolation: false
+      end
+      resource("socksio").stage do
+        system legacy_python, "-m", "pip", "--python=#{legacy_venv.root}/bin/python", "wheel",
+               "--no-index", "--no-cache-dir", "--no-deps", "--no-build-isolation",
+               "--wheel-dir=#{wheel_dir}", "."
+      end
+    end
+    venv.pip_install wheel_dir.glob("*.whl"), build_isolation: false
+
+    venv.pip_install resources.reject { |r|
+      build_resources.include?(r.name) ||
+        %w[cryptography pytoml socksio].include?(r.name) || r.name.end_with?("-patch")
+    }, build_isolation: false
     venv.pip_install_and_link buildpath, build_isolation: false
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/cccc version")
+    assert_path_exists bin/"ccccd"
+    ENV["PYDANTIC_DISABLE_PLUGINS"] = "__all__"
 
-    output = shell_output("#{bin}/cccc active")
-    assert_match "\"ok\": true", output
-    assert_match "\"active_group_id\"", output
+    (testpath/"consumer.py").write <<~PYTHON
+      import datetime
+      from importlib.metadata import version
+      from pathlib import Path
+
+      import yaml
+      from pydantic import ValidationError
+      from cccc.contracts.v1.ipc import DaemonRequest
+      from cccc.implementation import load_selected_implementation, save_selected_implementation
+      from cryptography import x509
+      from cryptography.hazmat.primitives import hashes, serialization
+      from cryptography.hazmat.primitives.asymmetric import padding, rsa
+      from cryptography.hazmat.primitives.serialization import pkcs7
+      from cryptography.x509.oid import NameOID
+
+      request = DaemonRequest.model_validate({"op": "schema-only", "args": {"input": 7}})
+      assert request.args["input"] == 7
+      for payload, expected in [
+          ({"op": 17}, "string_type"),
+          ({"op": "schema-only", "unexpected": True}, "extra_forbidden"),
+      ]:
+          try:
+              DaemonRequest.model_validate(payload)
+          except ValidationError as error:
+              assert error.errors()[0]["type"] == expected
+          else:
+              raise AssertionError("Invalid request schema accepted")
+
+      state = Path("owned-state")
+      save_selected_implementation("rust", home=state)
+      assert load_selected_implementation(home=state) == "rust"
+      save_selected_implementation("python", home=state)
+      assert load_selected_implementation(home=state) == "python"
+      assert yaml.load(yaml.dump({"route": "offline"}, Dumper=yaml.CSafeDumper),
+                       Loader=yaml.CSafeLoader) == {"route": "offline"}
+
+      assert version("cryptography") == "46.0.7"
+      key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+      name = x509.Name([x509.NameAttribute(NameOID.COMMON_NAME, "Homebrew fixture")])
+      now = datetime.datetime(2026, 1, 1, tzinfo=datetime.timezone.utc)
+      cert = (x509.CertificateBuilder().subject_name(name).issuer_name(name)
+              .public_key(key.public_key()).serial_number(1)
+              .not_valid_before(now).not_valid_after(now + datetime.timedelta(days=1))
+              .sign(key, hashes.SHA256()))
+      message = b"owned native crypto fixture"
+      envelope = (pkcs7.PKCS7EnvelopeBuilder().set_data(message).add_recipient(cert)
+                  .encrypt(serialization.Encoding.DER, []))
+      assert pkcs7.pkcs7_decrypt_der(envelope, cert, key, []) == message
+
+      # A valid RSA-wrapped key with the wrong length must not disclose an AES key-size error.
+      key_bytes = key.key_size // 8
+      marker = b"\\x04\\x82" + key_bytes.to_bytes(2, "big")
+      assert envelope.count(marker) == 1
+      offset = envelope.index(marker) + len(marker)
+      wrong_key = key.public_key().encrypt(b"A" * 15, padding.PKCS1v15())
+      tampered = envelope[:offset] + wrong_key + envelope[offset + key_bytes:]
+      try:
+          pkcs7.pkcs7_decrypt_der(tampered, cert, key, [])
+      except ValueError as error:
+          assert str(error) == "Invalid padding bytes."
+    PYTHON
+    system libexec/"bin/python", "-I", testpath/"consumer.py"
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python=#{libexec}/bin/python", "check"
   end
 end
