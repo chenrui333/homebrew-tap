@@ -1,0 +1,15 @@
+Formula/f/fast-agent-mcp.rb
+  h_9df9c32c3f321d 9,20,39-42,663-664,812-926,930-936,944,950-965,968,970-973,976-990,994-998,1000-1001,1005-1016,1018-1030,1032-1038,1041-1044,1048,1051-1068,1070,1072-1074,1076-1097,1099-1100,1105
+  h_9df9c32c3f321d 1071,1075
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d8d305bca5c59c8bfed7b0ad4dd775ab71d64d0f",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
