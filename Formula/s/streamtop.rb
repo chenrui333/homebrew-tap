@@ -1,17 +1,17 @@
 class Streamtop < Formula
   desc "Terminal monitor for HLS, DASH and IPTV streams"
   homepage "https://github.com/Jorji49/streamtop"
-  url "https://github.com/Jorji49/streamtop/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "73098f853919714fcb508517d342b2c5122b5ef248bbd19a03205fb460c606e2"
+  url "https://github.com/Jorji49/streamtop/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "b23414140a842a67b5c36a27e9c1ddc05d1c08dc010b0be996f5be9b08c30865"
   license "MIT"
   head "https://github.com/Jorji49/streamtop.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "03251e20aa1009c3bea7d8551cfae503e02d2f737f6f97f54f502e888406dc93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64cb273ea111a1ac9cad696dfb010320ee11e64a4c7f811275f30e25ddc49606"
-    sha256 cellar: :any,                 arm64_linux:   "75d684fa955cc3fba86df9c79079aecfb5cc381084e55199242088b39bbfd5fe"
-    sha256 cellar: :any,                 x86_64_linux:  "9c3f392879c0fcbb113a16bc1ed7ae85e550dccc7b2cafbfc2ebbcf10e36cd40"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1f4133149bd4998ea55ff67e24b0642b3ace1ddb130378b68eaf7676bf7049b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "451f5ebed47fe47813adb5bad6e1499155f94f9e4233a7a6a6ee34d25090a4be"
+    sha256 cellar: :any,                 arm64_linux:   "f364abf923b0d84ec16a368346c973a8a15e17cb876fcf28f0a91ffe816f79a3"
+    sha256 cellar: :any,                 x86_64_linux:  "617e9302692a09855bfb435183ca370e62b893ac0af9f6ec88933e2db7ad8e38"
   end
 
   depends_on "rust" => :build
