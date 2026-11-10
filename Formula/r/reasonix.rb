@@ -14,10 +14,10 @@ class Reasonix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "99465cae0ba2e624fddde204030f30260040b28fc18c27d76a5b0f00f44a81df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99465cae0ba2e624fddde204030f30260040b28fc18c27d76a5b0f00f44a81df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1248f7d77c521cfd91b1f6701e77b8e43798b11b1c83176aecb058ca720f3224"
-    sha256 cellar: :any,                 x86_64_linux:  "155cabe42b8b7009dc3a3e331a4be10fee207201cfefd6810e262d54947273bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a25b13a20b24e20f1565492623e6192eb315b76d6d9529c25d01b3e6121b0097"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a25b13a20b24e20f1565492623e6192eb315b76d6d9529c25d01b3e6121b0097"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "24b9ad9a421a6fd3540c848c2e4eca32832129dae2aa1f183fb6ca955ef9a16a"
+    sha256 cellar: :any,                 x86_64_linux:  "1d959cc627f05b95e04e311a01110b98ff935daa4ea5b50b99af45934a1ef8df"
   end
 
   depends_on "go" => :build
