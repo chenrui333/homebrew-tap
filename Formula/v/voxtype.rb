@@ -1,8 +1,8 @@
 class Voxtype < Formula
   desc "Push-to-talk local voice transcription for Linux and macOS"
   homepage "https://voxtype.io/"
-  url "https://github.com/peteonrails/voxtype/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "dbde68a335ae190aec4f077e1b653f5fef3ff9dc7cddbfce1befae090eea33c9"
+  url "https://github.com/peteonrails/voxtype/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "3b5f3d05734319737eb6711cd29b561e02c90863ad47d4451fd6f8a1c5e04947"
   license "MIT"
   head "https://github.com/peteonrails/voxtype.git", branch: "dev"
 
