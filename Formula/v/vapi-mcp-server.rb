@@ -1,14 +1,13 @@
 class VapiMcpServer < Formula
   desc "MCP server for Vapi AI"
   homepage "https://github.com/vapiai/mcp-server"
-  url "https://registry.npmjs.org/@vapi-ai/mcp-server/-/mcp-server-0.0.11.tgz"
-  sha256 "90e98107d5a6315df4cda64537d30d952862c00564d2172c9dcef50e42f2baf8"
+  url "https://registry.npmjs.org/@vapi-ai/mcp-server/-/mcp-server-0.1.0.tgz"
+  sha256 "a7264d68b56daf3e56316a85248f8c86e0ccd16acb170fd7d630ec17595ca25a"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "347ca9e634d4b88550cdd3fff05122c1cd9a847246b51f48f32538b3ca614d26"
+    sha256 cellar: :any_skip_relocation, all: "d7d52616c371b70c91fab76dda7559fe15a5ef67c575aacb08285296468bb679"
   end
 
   depends_on "node"
