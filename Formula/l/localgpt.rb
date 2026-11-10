@@ -1,8 +1,8 @@
 class Localgpt < Formula
   desc "Local AI assistant with persistent memory, autonomous tasks, and semantic search"
   homepage "https://localgpt.app"
-  url "https://github.com/localgpt-app/localgpt/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "bba233af431fad60341ea61420f36f09d9ea096b9f5c054f054b28a143bef3ec"
+  url "https://github.com/localgpt-app/localgpt/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "130ffdf6b5fa418ea4c94baabdf0674bac9e00824bc3e18229582952494f60f8"
   license "Apache-2.0"
   head "https://github.com/localgpt-app/localgpt.git", branch: "main"
 
