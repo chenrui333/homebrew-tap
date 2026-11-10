@@ -1,8 +1,8 @@
 class VapiMcpServer < Formula
   desc "MCP server for Vapi AI"
   homepage "https://github.com/vapiai/mcp-server"
-  url "https://registry.npmjs.org/@vapi-ai/mcp-server/-/mcp-server-0.0.11.tgz"
-  sha256 "90e98107d5a6315df4cda64537d30d952862c00564d2172c9dcef50e42f2baf8"
+  url "https://registry.npmjs.org/@vapi-ai/mcp-server/-/mcp-server-0.1.0.tgz"
+  sha256 "a7264d68b56daf3e56316a85248f8c86e0ccd16acb170fd7d630ec17595ca25a"
   license "MIT"
 
   bottle do
