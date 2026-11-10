@@ -6,6 +6,7 @@ class FastAgentMcp < Formula
   url "https://files.pythonhosted.org/packages/48/7c/21105eb9802311a9885de80849c3bba68a9c3d393eaf3099a5466a97f3c7/fast_agent_mcp-0.10.53.tar.gz"
   sha256 "f138dc96ad7c96949285659fe036d1d075e813bb04fea90e981efbbdcc5d7b50"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/evalstate/fast-agent.git", branch: "main"
 
   bottle do
@@ -16,6 +17,7 @@ class FastAgentMcp < Formula
     sha256 cellar: :any, x86_64_linux:  "8c5e86f191e2bf5f9e47174db000dd09cb9b70a7bb86e444c874a14b06228813"
   end
 
+  depends_on "cmake" => :build
   depends_on "maturin" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
@@ -34,10 +36,10 @@ class FastAgentMcp < Formula
 
   pypi_packages exclude_packages: %w[certifi cryptography rpds-py],
                 extra_packages:   %w[
-                  coherent.licensed cython dunamai expandvars flit-core flit-scm hatch-fancy-pypi-readme
-                  hatch-vcs hatchling jeepney jinja2 markupsafe pathspec pdm-backend pdm-pep517 pkgconfig
-                  pluggy poetry-core secretstorage setuptools setuptools-rust setuptools-scm tomlkit trove-classifiers
-                  uv-dynamic-versioning vcs-versioning wheel
+                  calver coherent.licensed cython dunamai expandvars flit-core<4 flit-scm hatch-fancy-pypi-readme
+                  hatch-vcs hatchling jeepney jinja2 markupsafe pathspec pdm-backend pdm-pep517 pkgconfig pkginfo
+                  pluggy poetry-core secretstorage setuptools<84.1 setuptools-rust setuptools-scm tomlkit
+                  trove-classifiers twine uv-build>=0.11.15,<0.12 uv-dynamic-versioning vcs-versioning wheel
                 ]
 
   resource "a2a-sdk" do
@@ -658,8 +660,8 @@ class FastAgentMcp < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
-    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
+    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
+    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
   end
 
   resource "setuptools-rust" do
@@ -807,129 +809,300 @@ class FastAgentMcp < Formula
     sha256 "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
+  # These consumers require incompatible generations of the same source backend.
+  resource "build-flit-core-4.2.0" do
+    self.name = "flit-core"
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
+
+    livecheck do
+      skip "Pinned source build requirement"
+    end
+  end
+
+  resource "build-hatchling-1.26.3" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/e1/47/7ec270a9567262ae3cb32dd420d2b53bf7aee769aca1f240eae0426b5bbc/hatchling-1.26.3.tar.gz"
+    sha256 "b672a9c36a601a06c4e88a1abb1330639ee8e721e0535a37536e546a667efc7a"
+
+    livecheck do
+      skip "Pinned source build requirement"
+    end
+  end
+
+  resource "build-hatchling-1.32.4" do
+    self.name = "hatchling"
+    url "https://files.pythonhosted.org/packages/f6/97/b5312f01a8c6daf729a9d272dd442e0c546dbcc630495788786c4b567ed0/hatchling-1.32.4.tar.gz"
+    sha256 "c4468f73144c054d2aab4ef0f0378c43b9878bf07f8ffd6b79690e970d375f07"
+
+    livecheck do
+      skip "Pinned source build requirement"
+    end
+  end
+
+  resource "uv-build" do
+    url "https://github.com/astral-sh/uv/archive/refs/tags/0.11.33.tar.gz"
+    sha256 "81911281e0f2fe5307c0b85e884f47cb6ca867932fb61871d339854edf3b4dcc"
+
+    livecheck do
+      skip "Keep the complete native workspace"
+    end
+  end
+
+  # Google GenAI declares these packaging tools as source build requirements.
+  resource "twine" do
+    url "https://files.pythonhosted.org/packages/c8/a2/6df94fc5c8e2170d21d7134a565c3a8fb84f9797c1dd65a5976aaf714418/twine-6.1.0.tar.gz"
+    sha256 "be324f6272eff91d07ee93f251edf232fc647935dd585ac003539b42404a8dbd"
+  end
+
+  resource "pkginfo" do
+    url "https://files.pythonhosted.org/packages/24/03/e26bf3d6453b7fda5bd2b84029a426553bb373d6277ef6b5ac8863421f87/pkginfo-1.12.1.2.tar.gz"
+    sha256 "5cd957824ac36f140260964eba3c6be6442a8359b8c48f4adf90210f33a04b7b"
+  end
+
+  # The declared packaging SDK must be available to the Python 3.14 build interpreter.
+  resource "docutils" do
+    url "https://files.pythonhosted.org/packages/39/a4/5180d9afc57e8fca05601dd652bdff19604c218814037fe90ffc7625a50a/docutils-0.23.tar.gz"
+    sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
+  end
+
+  resource "readme-renderer" do
+    url "https://files.pythonhosted.org/packages/25/d7/9309494fad74ee831d4546f69325b5519f37c6dfb2d9ba495db8c6d4f4ca/readme_renderer-46.0.tar.gz"
+    sha256 "af3e964914f6310a33ff67b72a4bdd940bed8d7c3bdecd2d14f40edf284bfe90"
+  end
+
+  resource "requests-toolbelt" do
+    url "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz"
+    sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
+  end
+
+  resource "rfc3986" do
+    url "https://files.pythonhosted.org/packages/85/40/1520d68bfa07ab5a6f065a186815fb6610c86fe957bc065754e47f7b0840/rfc3986-2.0.0.tar.gz"
+    sha256 "97aacf9dbd4bfd829baad6e6309fa6573aaf1be3f6fa735c8ab05e46cecb261c"
+  end
+
+  resource "id" do
+    url "https://files.pythonhosted.org/packages/6d/04/c2156091427636080787aac190019dc64096e56a23b7364d3c1764ee3a06/id-1.6.1.tar.gz"
+    sha256 "d0732d624fb46fd4e7bc4e5152f00214450953b9e772c182c1c22964def1a069"
+  end
+
+  resource "nh3" do
+    url "https://files.pythonhosted.org/packages/18/2f/022b27146d52d24b1b353b003359134788ecbcd6fcdf6283adbd57c0fbc8/nh3-0.3.7.tar.gz"
+    sha256 "71860d01c16f4d8c72e334e0674beb2b0899dbd0bf760de18932ef4390303848"
+  end
+
+  # Accepted release-line prerequisite and security fixes for the pinned native core.
+  resource "pydantic-core-fields-patch" do
+    url "https://github.com/pydantic/pydantic/commit/8102e3f16712dbe3109859de1610d9308ea8027f.patch?full_index=1"
+    sha256 "d3eb5fe0a26fb36ffe57d616b1b244b630b26d9f636d9966ec0524b48c33baa5"
+
+    livecheck do
+      skip "Pinned security backport prerequisite"
+    end
+  end
+
+  resource "pydantic-core-json-patch" do
+    url "https://github.com/pydantic/pydantic/commit/2771e57c39e660471f208908c0b856fb65435165.patch?full_index=1"
+    sha256 "8debec625f8193e2e15d7e73deb328ee0e3c6794bcae61abd26b2db52387e6cc"
+
+    livecheck do
+      skip "GHSA-qpmf-fgh3-ff25 backport"
+    end
+  end
+
+  resource "pydantic-core-alias-patch" do
+    url "https://github.com/pydantic/pydantic/commit/bab058cc9d8523b7b9523e8f79c366aeca386558.patch?full_index=1"
+    sha256 "c8defdd0c44d0458bf1810fba0b71acfddb477bf83f28cec47183320c272755a"
+
+    livecheck do
+      skip "GHSA-3r8g-cqwr-jr29 backport"
+    end
+  end
+
   deny_network_access!
 
   def fetch
-    %w[jiter pydantic-core watchfiles].each do |name|
-      resource(name).stage do
-        system "cargo", "fetch", "--locked"
-      end
+    ENV.prepend_path "PATH", formula_opt_bin("rust")
+    %w[jiter nh3 uv-build watchfiles].each do |name|
+      resource(name).stage { system "cargo", "fetch", "--locked" }
     end
-
+    resource("pydantic-core").stage do
+      patch_pydantic_core
+      system "cargo", "fetch", "--locked"
+    end
     resource("hf-xet").stage do
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
       cd "hf_xet" do
         system "cargo", "fetch", "--locked"
       end
     end
 
-    # Monty's sdists trim the upstream workspace but retain its full lockfile.
-    # Let Cargo reconcile that source layout before the offline build.
+    # These sdists trim their upstream workspaces but retain the complete lockfiles.
     %w[pydantic-monty-client pydantic-monty-runtime tiktoken].each do |name|
       resource(name).stage { system "cargo", "fetch" }
     end
   end
 
+  def patch_pydantic_core
+    # Keep every native production/test hunk; wrapper-only tests and docs are not in this sdist.
+    # These resources are already fetched and verified before the fetch/build sandbox.
+    %w[fields json alias].each do |name|
+      patch_resource = resource("pydantic-core-#{name}-patch")
+      patch_args = [
+        "-p2", "--include=Cargo.lock", "--include=Cargo.toml",
+        "--include=src/validators/*", "--include=tests/validators/*", patch_resource.cached_download
+      ]
+      with_env(GIT_CEILING_DIRECTORIES: Pathname.pwd.parent.to_s) do
+        system "git", "apply", "--check", *patch_args
+        system "git", "apply", *patch_args
+      end
+    end
+  end
+
   def install
     ENV["CARGO_NET_OFFLINE"] = "true"
-    ENV.O0
-
-    build_resources = %w[
-      setuptools
-      cython
-      flit-core
-      wheel
-      poetry-core
-      packaging
-      pathspec
-      vcs-versioning
-      setuptools-scm
-      pluggy
-      trove-classifiers
-      hatchling
-      hatch-vcs
-      coherent-licensed
-      flit-scm
-      dunamai
-      expandvars
-      markupsafe
-      jinja2
-      pdm-backend
-      pdm-pep517
-      hatch-fancy-pypi-readme
-      tomlkit
-      uv-dynamic-versioning
-      pkgconfig
-      semantic-version
-      setuptools-rust
-    ]
-
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
     ENV.prepend_path "PATH", formula_opt_bin("rust")
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
-    # Cython is only a build tool for the pyyaml and aio-libs extensions; skip compiling Cython itself.
+    %w[maturin pybind11].each do |sdk|
+      ENV.append_path "PYTHONPATH", formula_opt_prefix(sdk)/Language::Python.site_packages("python3.14")
+    end
+    # Cython is a source build tool; the consumer extensions still compile normally.
     ENV["NO_CYTHON_COMPILE"] = "true"
 
-    venv = virtualenv_create(libexec, "python3.14")
-    build_resources.each do |name|
-      venv.pip_install resource(name), build_isolation: false
-    end
-
-    pydantic_resources = %w[annotated-types typing-extensions typing-inspection pydantic-core pydantic]
-    pydantic_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
-
-    uv_build_resources = {
-      "dnspython"          => "dns",
-      "py-key-value-aio"   => "src/key_value",
-      "python-frontmatter" => "frontmatter",
-      "textual-image"      => "textual_image",
-    }
-    uv_build_resources.each do |name, package|
-      resource(name).stage do
-        inreplace "pyproject.toml" do |s|
-          s.gsub!(/^requires = \["uv_build.*"\]$/, 'requires = ["hatchling"]')
-          s.gsub! 'build-backend = "uv_build"', 'build-backend = "hatchling.build"'
-        end
-        (Pathname.pwd/"pyproject.toml").append_lines <<~TOML
-
-          [tool.hatch.build.targets.wheel]
-          packages = ["#{package}"]
-        TOML
+    build_resources = %w[
+      setuptools flit-core packaging wheel calver cython pathspec poetry-core tomlkit
+      vcs-versioning setuptools-scm pluggy trove-classifiers hatchling hatch-vcs
+      coherent-licensed flit-scm dunamai expandvars markupsafe jinja2 pdm-backend
+      pdm-pep517 hatch-fancy-pypi-readme uv-dynamic-versioning pkgconfig semantic-version setuptools-rust
+    ]
+    # Keep pip's driver outside the isolated target after exposing its backend executables.
+    build_python = formula_opt_bin("python@3.14")/"python3.14"
+    venv = virtualenv_create(libexec, build_python, system_site_packages: false)
+    ENV.prepend_path "PATH", libexec/"bin"
+    build_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    resource("uv-build").stage do
+      cd "crates/uv-build" do
         venv.pip_install Pathname.pwd, build_isolation: false
       end
     end
 
-    venv.pip_install resources.reject { |r|
-      build_resources.include?(r.name) || pydantic_resources.include?(r.name) ||
-        uv_build_resources.key?(r.name) || %w[hf-xet tiktoken].include?(r.name)
-    }, build_isolation: false
-
-    venv.pip_install resource("tiktoken"), build_isolation: false
-
-    resource("hf-xet").stage do
-      # Use native-tls since building bundled aws-lc is tricky to do indirectly within superenv.
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
-
-      venv.pip_install Pathname.pwd, build_isolation: false
+    pydantic_resources = %w[annotated-types typing-extensions typing-inspection pydantic-core pydantic]
+    pydantic_resources.each do |name|
+      if name == "pydantic-core"
+        resource(name).stage do
+          patch_pydantic_core
+          venv.pip_install Pathname.pwd, build_isolation: false
+        end
+      else
+        venv.pip_install resource(name), build_isolation: false
+      end
     end
 
+    # std_pip_args ignores installed packages: explicitly remove each backend before switching.
+    [
+      ["flit-core", "build-flit-core-4.2.0", "more-itertools"],
+      ["hatchling", "build-hatchling-1.26.3", "anthropic"],
+      ["hatchling", "build-hatchling-1.32.4", "openai"],
+    ].each do |backend, sdk, consumer|
+      system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", backend
+      venv.pip_install resource(sdk), build_isolation: false
+      venv.pip_install resource(consumer), build_isolation: false
+      system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes", backend
+      venv.pip_install resource(backend), build_isolation: false
+    end
+
+    # Make the complete declared Twine/Pkginfo SDK available before building Google GenAI.
+    packaging_resources = %w[
+      nh3 docutils pygments readme-renderer charset-normalizer idna urllib3 requests requests-toolbelt
+      jeepney secretstorage jaraco-classes jaraco-functools jaraco-context keyring rfc3986
+      mdurl markdown-it-py rich id twine pkginfo
+    ]
+    packaging_resources.each { |name| venv.pip_install resource(name), build_isolation: false }
+    excluded_resources = build_resources + pydantic_resources + packaging_resources + %w[
+      uv-build more-itertools anthropic openai hf-xet tiktoken
+      pydantic-monty-client pydantic-monty-runtime
+      pydantic-core-fields-patch pydantic-core-json-patch pydantic-core-alias-patch
+    ]
+    venv.pip_install resources.reject { |r| excluded_resources.include?(r.name) }, build_isolation: false
+    venv.pip_install resource("tiktoken"), build_isolation: false
+    # Preserve Rustls/AWS-LC; its jitter-entropy C source must not be optimized.
+    %w[pydantic-monty-client pydantic-monty-runtime hf-xet].each do |name|
+      resource(name).stage do
+        ENV.O0 do
+          venv.pip_install Pathname.pwd, build_isolation: false
+        end
+      end
+    end
     venv.pip_install_and_link buildpath, build_isolation: false
+
+    # These source build tools are not runtime dependencies of the installed application.
+    system build_python, "-m", "pip", "--python=#{venv.root}/bin/python", "uninstall", "--yes",
+           "uv-build", "twine", "pkginfo", "readme-renderer", "requests-toolbelt", "rfc3986", "id", "nh3", "docutils"
   end
 
   test do
+    ENV["PYDANTIC_DISABLE_PLUGINS"] = "__all__"
     assert_match version.to_s, shell_output("#{bin}/fast-agent --version")
 
-    output = pipe_output("#{bin}/fast-agent scaffold --config-dir #{testpath}", "\n")
-    assert_match "Scaffold completed successfully", output
-    assert_path_exists testpath/"agent.py"
+    (testpath/"sample.txt").write("alpha\nbeta\n")
+    patch = <<~PATCH
+      *** Begin Patch
+      *** Update File: sample.txt
+      @@
+      -alpha
+      +ALPHA
+       beta
+      *** End Patch
+    PATCH
+    pipe_output("#{bin}/apply_patch", patch, 0)
+    assert_equal "ALPHA\nbeta\n", (testpath/"sample.txt").read
 
-    (testpath/"monty.py").write <<~PYTHON
+    (testpath/"consumer.py").write <<~PYTHON
+      from typing import Annotated
+      from typing_extensions import TypedDict
+      from pydantic import BaseModel, ConfigDict, Field, TypeAdapter, ValidationError, with_config
+      from pydantic.dataclasses import dataclass
       from pydantic_monty import Monty
+      import yaml
 
+      class Payload(BaseModel):
+          model_config = ConfigDict(extra="forbid", validate_by_name=True)
+          count: int = Field(alias="n")
+
+      assert Payload.model_validate_json('{"n": 1}').count == 1
+      try:
+          Payload.model_validate_json('{"n": 1, "count": "invalid"}')
+      except ValidationError as error:
+          assert error.errors()[0]["type"] == "extra_forbidden"
+      else:
+          raise AssertionError("JSON extra field bypassed validation")
+
+      @with_config(ConfigDict(extra="allow"))
+      class Record(TypedDict):
+          count: Annotated[int, Field(alias="n")]
+
+      assert TypeAdapter(Record).validate_json(
+          '{"n": 1, "count": "invalid", "other": 2}'
+      ) == {"count": 1, "other": 2}
+
+      @dataclass(config=ConfigDict(extra="allow"))
+      class StoredRecord:
+          count: int = Field(0, alias="n")
+
+      stored = TypeAdapter(StoredRecord).validate_python({"n": 1, "count": "invalid", "other": 2})
+      assert stored.__dict__ == {"count": 1, "other": 2}
+
+      data = {"native": True, "values": [1, 2]}
+      assert yaml.load(yaml.dump(data, Dumper=yaml.CSafeDumper), Loader=yaml.CSafeLoader) == data
       with Monty() as pool:
           with pool.checkout() as session:
               assert session.feed_run("1 + 2") == 3
     PYTHON
-    system libexec/"bin/python", testpath/"monty.py"
+    system libexec/"bin/python", testpath/"consumer.py"
     system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
            "--python", libexec/"bin/python", "check"
   end
