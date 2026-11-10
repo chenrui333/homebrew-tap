@@ -12,11 +12,10 @@ class Fftext < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "344e542c8af00b8fe90ba76fb4d99f7e5b3676fa05bf9918a67f72481de41ca5"
-    sha256 cellar: :any, arm64_sequoia: "60bbf22c6d13cb8495a1b14f64b324c72e9c56307ef3bce87bdb717c34374ce3"
-    sha256 cellar: :any, arm64_sonoma:  "21ab358db024a2f16c5326444c83d6e75d855755f2667364a03cdfdff74767df"
-    sha256 cellar: :any, arm64_linux:   "6a4fff1cd058c68aa52f5433d8411aecefec20c95beb6f304add32ecc86fa0ed"
-    sha256 cellar: :any, x86_64_linux:  "91411863ae7631ee1b5293487259d6e596952c49b2ea96c40f6526876653b7d7"
+    sha256 cellar: :any, arm64_tahoe:   "452b88ad3bf6945bf6000d4a942fb2117e56a04e34cd773084c3a3057fb1e4ca"
+    sha256 cellar: :any, arm64_sequoia: "8abf753fdc4df383a0425a688513192d3f8135cc36c195c91a7bab7e14a5039b"
+    sha256 cellar: :any, arm64_linux:   "4da34c8f44a08de9cb9042a8936c26fe7fe340d6857784784735f8b44f42bacb"
+    sha256 cellar: :any, x86_64_linux:  "e9afe0f1d35e7b19240ce91c8c44cc0f40c36949880aea900306c446c5b1715e"
   end
 
   depends_on "cmake" => :build
