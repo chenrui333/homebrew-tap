@@ -11,10 +11,10 @@ class Codeflash < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "743334afec6fbc8658ee22193c2eb0624a54a6f1eb38ad53ab6ab52a1bc8869d"
-    sha256 cellar: :any, arm64_sequoia: "b6cf029f5eaf8d60d6ff9957eca5d2a286889fe81fa712ba09b59111d6c08848"
-    sha256 cellar: :any, arm64_linux:   "f590da6ee396ff2967df910731e4bd7156d69c371b844761e37876cd26d0fbad"
-    sha256 cellar: :any, x86_64_linux:  "e8d81fa9ffa09e35c7d162c51f434e6d8b9a611293611e512f8994286d0c0b7d"
+    sha256 cellar: :any, arm64_tahoe:   "49c9b19eaf5c4447922f5593489d3ec7a53e875c417adc721681122ba41746f0"
+    sha256 cellar: :any, arm64_sequoia: "11933f90e427d866fad87c02cc7cb2ec97005668da055919310a653b939dbce0"
+    sha256 cellar: :any, arm64_linux:   "0687c3fc094864230c5c9f6acd2797987273c613ace05c8da41c554d82b23721"
+    sha256 cellar: :any, x86_64_linux:  "f242a77c4fc370f68fc451b38dc850950d3f4d59b54c128c3c82fe649ceab302"
   end
 
   depends_on "cmake" => :build
