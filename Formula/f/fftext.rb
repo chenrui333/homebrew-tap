@@ -7,6 +7,7 @@ class Fftext < Formula
   version "0.3.0"
   sha256 "c17ef0257f9c153f4eec17f02a69240afc14117cad2d076f3e23488fa22b29d5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kouhxp/fftext.git", branch: "main"
 
   bottle do
@@ -19,16 +20,17 @@ class Fftext < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "cython" => :build
   depends_on "maturin" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build # for hf-xet
   depends_on "libomp"
   depends_on "libyaml"
-  depends_on "numpy"
-  depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "numpy" => :no_linkage
+  depends_on "openssl@4"
+  depends_on "python@3.14"
 
+  uses_from_macos "perl" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
@@ -52,14 +54,19 @@ class Fftext < Formula
     sha256 "288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7"
   end
 
+  resource "calver" do
+    url "https://files.pythonhosted.org/packages/4a/96/0c57e3e228ffc54074867406b659b197678674f1f0bf600d114965289834/calver-2025.10.20.tar.gz"
+    sha256 "c98b376c2424642224d456b2f70c51402343e008c63d204634665e1a2a2835f5"
+  end
+
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/f3/ce/ee2ecad540810a79593028e88299baeae54d346cc7a0d94b6199988b89b1/certifi-2026.5.20.tar.gz"
     sha256 "69dea482ab64caa7b9f6aba1c6bf48bb6a5448d1c0f1b17ab42ad8c763a5344d"
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/19/b6/9df434a8eeba2e6628c465a1dfa31034228ef79b26f76f46278f4ef7e49d/chardet-7.4.3.tar.gz"
-    sha256 "cc1d4eb92a4ec1c2df3b490836ffa46922e599d34ce0bb75cf41fd2bf6303d56"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -73,8 +80,14 @@ class Fftext < Formula
   end
 
   resource "cssselect" do
-    url "https://files.pythonhosted.org/packages/ec/2e/cdfd8b01c37cbf4f9482eefd455853a3cf9c995029a46acd31dfaa9c1dd6/cssselect-1.4.0.tar.gz"
-    sha256 "fdaf0a1425e17dfe8c5cf66191d211b357cf7872ae8afc4c6762ddd8ac47fc92"
+    url "https://files.pythonhosted.org/packages/72/0a/c3ea9573b1dc2e151abfe88c7fe0c26d1892fe6ed02d0cdb30f0d57029d5/cssselect-1.3.0.tar.gz"
+    sha256 "57f8a99424cfab289a1b6a816a43075a4b00948c86b4dcf3ef4ee7e15f7ab0c7"
+  end
+
+  # Core Cython uses Python 3.15; build the backend for this formula's Python instead.
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/99/ca/18e324972e5cac914816fdd7bb03e19a455b90039c277a538f7781b50c85/cython-3.3.1.tar.gz"
+    sha256 "e0e45989e821bef6aa9ae15c7d583ab5e055f7406c4b3624e49e06d24e90375a"
   end
 
   resource "diskcache" do
@@ -212,9 +225,10 @@ class Fftext < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
+  # 0.8.x excludes Python 3.14; 0.9 retains the Document API and requires chardet 5/cssselect 1.3.
   resource "readability-lxml" do
-    url "https://files.pythonhosted.org/packages/55/3e/dc87d97532ddad58af786ec89c7036182e352574c1cba37bf2bf783d2b15/readability_lxml-0.8.4.1.tar.gz"
-    sha256 "9d2924f5942dd7f37fb4da353263b22a3e877ccf922d0e45e348e4177b035a53"
+    url "https://files.pythonhosted.org/packages/e9/fb/e7c40afabd660f121fca9f0993e39dc042974c80a6c04ec4b27d7fbd7323/readability_lxml-0.9.tar.gz"
+    sha256 "f7a5f88ee194ed6c5aa36d14593fbfb20c5d7bb8f3f5bc57734288d45a5abe26"
   end
 
   resource "requests" do
@@ -250,6 +264,11 @@ class Fftext < Formula
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/47/2c/0a5f6f8ee0d5589e48c7640213ed5175d52cf540a06725b628cc1a45d6ce/soupsieve-2.8.4.tar.gz"
     sha256 "e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e"
+  end
+
+  resource "tomlkit" do
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "tqdm" do
@@ -291,9 +310,8 @@ class Fftext < Formula
 
   def fetch
     resource("hf-xet").stage do
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
       cd "hf_xet" do
-        system "cargo", "fetch"
+        system "cargo", "fetch", "--locked"
       end
     end
   end
@@ -308,6 +326,8 @@ class Fftext < Formula
     ]
     if OS.mac?
       cmake_args << "-DGGML_METAL=ON"
+      # llama-common is installed outside the Python wrapper's target-specific rpath setup.
+      cmake_args << "-DCMAKE_INSTALL_RPATH=@loader_path"
     else
       cmake_args += %w[
         -DGGML_METAL=OFF
@@ -320,26 +340,32 @@ class Fftext < Formula
     build_resources = %w[
       setuptools
       flit-core
-      wheel
-      poetry-core
       packaging
+      vcs-versioning
+      setuptools-scm
+      calver
+      poetry-core
+      tomlkit
       pathspec
       pluggy
       trove-classifiers
       hatchling
       hatch-fancy-pypi-readme
-      vcs-versioning
-      setuptools-scm
       hatch-vcs
       pdm-backend
       scikit-build-core
+      wheel
+      cython
     ]
 
     ENV.prepend_path "PATH", formula_opt_bin("rust")
-    ENV.append_path "PYTHONPATH", formula_opt_libexec("cython")/Language::Python.site_packages(python3)
-    ENV.append_path "PYTHONPATH", formula_opt_lib("maturin")/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", formula_opt_prefix("maturin")/Language::Python.site_packages("python3.14")
+    ENV["CARGO_NET_OFFLINE"] = "true"
+    ENV["PYYAML_FORCE_LIBYAML"] = "1"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("libyaml")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("libyaml")}"
 
-    venv = virtualenv_create(libexec, "python3.13")
+    venv = virtualenv_create(libexec, "python3.14")
     build_resources.each do |name|
       venv.pip_install resource(name), build_isolation: false
     end
@@ -347,25 +373,22 @@ class Fftext < Formula
                      build_isolation: false
 
     resource("hf-xet").stage do
-      # Use native-tls since building bundled aws-lc is tricky to do indirectly within superenv.
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
-
-      if ENV.effective_arch == :armv8
-        # Disable sha2-asm which requires a minimum of -march=armv8-a+crypto.
-        inreplace "xet_data/Cargo.toml",
-                  'sha2 = { workspace = true, features = ["asm"] }',
-                  "sha2 = { workspace = true }"
-      end
-
-      with_env(CARGO_NET_OFFLINE: "true") do
-        venv.pip_install Pathname.pwd, build_isolation: false
+      # Keep Rustls/AWS-LC and SHA assembly intact. Only the assembler needs crypto
+      # instructions: do not raise the C/Rust CPU floor or change GGML's portable flags.
+      cflags = ENV["CFLAGS"]
+      cflags = "#{cflags} -Wa,-march=armv8-a+crypto" if OS.linux? && Hardware::CPU.arm?
+      with_env(CFLAGS: cflags) do
+        # AWS-LC's jitter entropy must not be optimized. Both settings are restored.
+        ENV.O0 do
+          venv.pip_install Pathname.pwd, build_isolation: false
+        end
       end
     end
 
     venv.pip_install_and_link buildpath, build_isolation: false
 
     if OS.linux?
-      site_packages = libexec/Language::Python.site_packages("python3.13")
+      site_packages = libexec/Language::Python.site_packages("python3.14")
       llama_libdirs = [
         site_packages/"lib",
         site_packages/"llama_cpp/lib",
@@ -381,20 +404,46 @@ class Fftext < Formula
   end
 
   test do
-    output = shell_output("#{bin}/fftext --help 2>&1")
-    assert_match "summarize", output
+    # FIXME: Upstream has no version flag; --version follows the model-loading legacy path.
+    system libexec/"bin/python", "-c", <<~PYTHON
+      import importlib.metadata as metadata
+      assert metadata.version("fftext") == "#{version}"
+    PYTHON
 
     (testpath/"input.txt").write "hello from Homebrew"
-    (testpath/"check_input.py").write <<~PYTHON
-      from main import resolve_input
+    # Importing these APIs only loads the library and sets its logger. Backend registration
+    # (and Metal device initialization) is deferred until a Llama instance is constructed.
+    system libexec/"bin/python", "-c", <<~PYTHON
+      from main import resolve_input, _extract_lang_flag
+      from llm import clip, strip_thinking
+      from readability import Document
+      from lxml import etree, html
+      from lxml.html.clean import Cleaner
+      import yaml
 
-      text, source = resolve_input("input.txt")
-      print(f"{source}: {text}")
+      assert resolve_input("input.txt") == ("hello from Homebrew", "input.txt")
+      assert resolve_input("a" * 300) == ("a" * 300, "<string>")
+      assert _extract_lang_flag(["--lang=French", "input.txt"]) == ("French", ["input.txt"])
+      assert clip("short text") == ("short text", False)
+      clipped, truncated = clip("a" * 300, budget=100)
+      assert truncated and "...[truncated]..." in clipped
+      assert strip_thinking("<think>internal</think>answer") == "answer"
+
+      article = "<html><head><title>Homebrew</title></head><body><article>" + (
+          "<p>Homebrew builds native libraries from source for local text processing.</p>" * 10
+      ) + "</article></body></html>"
+      assert "Homebrew builds" in html.fromstring(Document(article).summary()).text_content()
+      assert "script" not in Cleaner().clean_html("<p>hello<script>bad()</script></p>")
+      stylesheet = etree.XML(b'<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">'
+                             b'<xsl:template match="/"><result><xsl:value-of select="root"/></result>'
+                             b'</xsl:template></xsl:stylesheet>')
+      assert etree.XSLT(stylesheet)(etree.XML(b"<root>Homebrew</root>")).getroot().text == "Homebrew"
+      assert yaml.__with_libyaml__
+      assert yaml.load("value: 42", Loader=yaml.CSafeLoader) == {"value": 42}
     PYTHON
-    input = shell_output("#{libexec}/bin/python check_input.py")
-    assert_match "input.txt: hello from Homebrew", input
 
-    metadata = libexec/Language::Python.site_packages("python3.13")/"fftext-0.3.0.dist-info/METADATA"
-    assert_match version.to_s, metadata.read
+    assert_match "--lang needs a value", shell_output("#{bin}/fftext translate --lang 2>&1", 2)
+    system formula_opt_bin("python@3.14")/"python3.14", "-m", "pip",
+           "--python", libexec/"bin/python", "check"
   end
 end
