@@ -198,8 +198,10 @@ jobs:
           steps.trust-cask.outcome == 'success' &&
           contains(fromJSON('["success", "skipped"]'), steps.cask-route.outcome) &&
           matrix.cask
+        env:
+          CASK_UNDER_TEST: ${{ matrix.tap }}/${{ matrix.cask.token }}
         run: |
-          brew fetch --cask --retry --force ${{ join(matrix.fetch_args, ' ') }} "${{ matrix.cask.path }}"
+          brew fetch --cask --retry --force ${{ join(matrix.fetch_args, ' ') }} "$CASK_UNDER_TEST"
         timeout-minutes: 30
 
       - name: Run brew audit --cask${{ (matrix.cask && ' ') || ' --tap ' }}${{ matrix.cask.token || matrix.tap }}
