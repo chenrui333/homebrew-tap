@@ -11,10 +11,11 @@ class Dhv < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef1efa4eb366033f086dd44470ed9d8d208805c17bf16bec6c5f7deb7340376c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81b086651a5f191a22ccbfdda3a829dd7331d4bea76cf8c4031d9e6fbb3b458a"
-    sha256 cellar: :any,                 arm64_linux:   "8ec0a808d103e7fa146743abbc4dc4dbd78d98faa41626f49bef1ab53cac2020"
-    sha256 cellar: :any,                 x86_64_linux:  "c7c6ba13694b9ce03a3a298fb40fb7e80bd63231a5eaca4e94b6d80130801646"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d0f87cdbafef8b5952d0293600370011bbb857cfbc8a8588afaedf47c759cde"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "475743f740e1264d9a8d88ca89719e3a8c25cc520d61825e57f32d0656b1ff93"
+    sha256 cellar: :any,                 arm64_linux:   "33e566fb96d9de46273df7478541ac7dcd0cc5b32dc29764923affde64d806e0"
+    sha256 cellar: :any,                 x86_64_linux:  "e1f4f5bf4afa131347550989acc5798469c99ccc82b2f0d0eed316b2f415002b"
   end
 
   depends_on "maturin" => :build # for uv-build
