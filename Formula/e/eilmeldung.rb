@@ -8,10 +8,10 @@ class Eilmeldung < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e1836f96db118564a43a0a7ad5b775e5bce13df4f885dfc6d83e2059860a8f0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3c53dc0dd89ca597946eacb89c775b95372f2750b8b298eda573c85acfaf535"
-    sha256 cellar: :any,                 arm64_linux:   "344eb1a30b49fabbf32a27134258b53a5f39c8f36ebf14523199dd7a8048ca9a"
-    sha256 cellar: :any,                 x86_64_linux:  "d4779498977ab770569a0a50c9a7edaa4e9bf24c9f9b8ba8e917d6f8f46dbd03"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c08947c30dacd260e7446cfa0dd4de241f9f124a96409120047c81909c98215a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bf6365e0143f586596a623c14003d8fc43674ed3444f18ede73038d38194704"
+    sha256 cellar: :any,                 arm64_linux:   "0d2d4a164996f3aa842542b876db86166986df2535645723496dd8c787365fe9"
+    sha256 cellar: :any,                 x86_64_linux:  "81a7e34994fb35fcf07001aeaa85fa03c9dfcade5aba2fe4e30a40d06d009071"
   end
 
   depends_on "pkgconf" => :build
