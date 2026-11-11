@@ -1,16 +1,16 @@
 class Auggie < Formula
   desc "All the power of Augment Code in your terminal"
   homepage "https://www.augmentcode.com/product/CLI"
-  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.37.0.tgz"
-  sha256 "bae4f1f08934e3045db1fdc2f39704af53b18760510cb05daff9a531833aa6ee"
+  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-0.37.1.tgz"
+  sha256 "f5bd2a0bcd517b86c3eab012ddffe8afd298c5b51c6172ac8e5059e152662a0f"
   license :cannot_represent
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "341602d23f45e34b7fa1895ebcb407d45c04f03a9a000fea15921c7ca19729c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "341602d23f45e34b7fa1895ebcb407d45c04f03a9a000fea15921c7ca19729c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb2bc4c29ff99ead81ac62b2ea8cbc169e6ee11e8c83076ceb77b74f5f29eb61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f65071751427a4edb021650bfac5ce514857ce56c89a298e0e472c4593bc1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "60ad694b0046f42e7fd28f281575afa1b6253985c5694f14586e611574485505"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60ad694b0046f42e7fd28f281575afa1b6253985c5694f14586e611574485505"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81830f5713959691e5fd1c7b6561dd79c9bd5fa1ae9d106901eda6e988020a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "325b76e753b289cf7286112d2aa00167d30939a36d775cc4f8ec048aa25e65b3"
   end
 
   depends_on "node"
