@@ -1,8 +1,8 @@
 class Reasonix < Formula
   desc "DeepSeek-native coding agent for your terminal"
   homepage "https://github.com/esengine/DeepSeek-Reasonix"
-  url "https://github.com/esengine/DeepSeek-Reasonix/archive/refs/tags/v2.60.0.tar.gz"
-  sha256 "ce6745bb971567071e915b5c20545e52d9cc155dfe29ba7398d4c74cc9452acd"
+  url "https://github.com/esengine/DeepSeek-Reasonix/archive/refs/tags/v2.61.0.tar.gz"
+  sha256 "0f0a283f824ac6e7f54be791c95c9450eec58020019594dd3bd8fa9e1581f851"
   license "MIT"
   head "https://github.com/esengine/DeepSeek-Reasonix.git", branch: "studio"
 
