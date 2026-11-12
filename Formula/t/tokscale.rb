@@ -8,10 +8,10 @@ class Tokscale < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9280554b7c0445ea677d241f017df180c45697ca261db5bc9972755449979fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c028bdf99e741ad779bdc0093a20b052fa543c358e2a783fa8b2ac9865bc4c62"
-    sha256 cellar: :any,                 arm64_linux:   "e9e970eeaefce7c08d11b1e37e4809595bd371bcdc0dde12bac1b60b738fe35c"
-    sha256 cellar: :any,                 x86_64_linux:  "f5c1ee92010f5eb0a113660ef2477347dc03e5324b165fc9a3829d73091d6463"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b016d8cee6fbfec111aa28ac8ca3a8c4727b8f0cc6ad2af1b79e506317e3a5dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0448d9cd83a6aab393fc3c6dc51c9494cedbab2fa227dfbe2896488e01027978"
+    sha256 cellar: :any,                 arm64_linux:   "f2664e9a5cccfa948975c64eb1f35f32b3677dd6256e0dc6681b366ed63e88d0"
+    sha256 cellar: :any,                 x86_64_linux:  "267e40e5d93c7573279c22203453bc0aa18ebc8a8eabf62a300ec4cb913492eb"
   end
 
   depends_on "pkgconf" => :build
