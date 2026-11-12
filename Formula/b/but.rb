@@ -9,10 +9,10 @@ class But < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "72b115e1fd86d6dfe772de8612e09cefa6bd66be7f19cf8a7d677184f7196607"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2df54f76ae8d0018b2cbf7c70060853a2f8197aedd7165f7d9da24ee5f1782e9"
-    sha256 cellar: :any,                 arm64_linux:   "a0f023aa499ee12479f4ed5c97e202a89738ebdf9984652b0d27a08cf52fc07d"
-    sha256 cellar: :any,                 x86_64_linux:  "612ef2c12005d1a63c2182e512f0406450cb9642b03c93aafd7cb66b37410b0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "af462caac2d2e910b02927302764e27a34f9489f2e49492c9569789db8b13600"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65b1c422f519a626c9a9ed2ac64725d04250330ceb314a758af8d94693f7e471"
+    sha256 cellar: :any,                 arm64_linux:   "24ac8715241d3ec6121c9d10637fdd5eab0d34ff6f8e4bac0da84e833ff9be7c"
+    sha256 cellar: :any,                 x86_64_linux:  "43a175b9ea9c6e3e93508de4a655d0ea4e4fb2ff0de55aa05763330995d1d2ff"
   end
 
   depends_on "pkgconf" => :build
