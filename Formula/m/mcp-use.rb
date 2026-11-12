@@ -1,8 +1,8 @@
 class McpUse < Formula
   desc "CLI for mcp-use"
   homepage "https://mcp-use.com/"
-  url "https://registry.npmjs.org/@mcp-use/cli/-/cli-5.0.0.tgz"
-  sha256 "6618aac23f78dc7c50a6963431d811a28750376eaaf24214101fe6da16e953bf"
+  url "https://registry.npmjs.org/@mcp-use/cli/-/cli-5.1.0.tgz"
+  sha256 "78f54d016945d4ab4843cf03c1fe0ac1c78d6a592cfb4ff162a844ba719ae796"
   license "MIT"
 
   bottle do
