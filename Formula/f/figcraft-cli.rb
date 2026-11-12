@@ -1,8 +1,8 @@
 class FigcraftCli < Formula
   desc "Headless FigCraft design tool to inspect, export and script files, with MCP"
   homepage "https://getartcraft.com/apps/figcraft"
-  url "https://github.com/storytold/figcraft/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "231e350ee8ee48534ce37f9947427822522f29a781a2a3f8c81f1d5260683919"
+  url "https://github.com/storytold/figcraft/archive/refs/tags/v0.18.1.tar.gz"
+  sha256 "809f52ffc049bfc05e3a297c8794a789199d4548ada5113048e235a3bfea4efb"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/figcraft.git", branch: "main"
 
