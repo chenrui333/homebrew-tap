@@ -9,10 +9,10 @@ class Collie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "b2cdd93f4b93b3ea581481f31fdf69776d59e7adefd580cf54e983cf842b3135"
-    sha256 arm64_sequoia: "213cde3b8a001e77025df93971a3e28b06cff105575685b0dc87c69968b63827"
-    sha256 arm64_linux:   "c1b6b001c519207b53dadb14abbbb0f374d5ad983722d738a7776cfa67b206cd"
-    sha256 x86_64_linux:  "e68743f91b905b2269bd259eaa3866f1546a741fb4aefaa8794cd03af018c977"
+    sha256 arm64_tahoe:   "28e665703e96901c6332e785a1fe3f62599280d3d4126aa96be64e2cb6d2b7aa"
+    sha256 arm64_sequoia: "1711d55ecd8e2ef38226893e4035fdd39345828bc38b15bb2b78ec305a12b144"
+    sha256 arm64_linux:   "2e340ed81e8e8b786054f80bacc27cd7a9373893661ea99ded354de298c75685"
+    sha256 x86_64_linux:  "2fe562ad78e0ed2d9574e7a30275804bf0a4006db456e1c0934b321a9703fa05"
   end
 
   depends_on "typescript" => :build
