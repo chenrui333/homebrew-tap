@@ -9,10 +9,10 @@ class Agentty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "8c7ddad323d5aa119d3b6834f9ecc4bdfe6c836bc862c2a72c72ad05df8b0b4c"
-    sha256               arm64_sequoia: "b8c8839a2f04817317f86b25e6455ea3400793d0b973da18e215ddf7aed34441"
-    sha256 cellar: :any, arm64_linux:   "13bf4a219156641496a6e9890bf883cea3fc2ec0ff06fa1534add5d81174c59a"
-    sha256 cellar: :any, x86_64_linux:  "382017aabc21409acb5c1e586f4d6c6e59af5281105472bd64a0b8feae11f6e3"
+    sha256               arm64_tahoe:   "bbd3d2fee98e2b5b674d629d0a127f2e362bc20ad309ab935e62c694a9697019"
+    sha256               arm64_sequoia: "1a6fe672ec3285776e166368deff4bc673ad1d4c987f2684a7fe46b324c29095"
+    sha256 cellar: :any, arm64_linux:   "432bd79095b3841788ddd2aa0d6429c4569c055d4413290f4ab178705a4dc80a"
+    sha256 cellar: :any, x86_64_linux:  "fedbda9eeb86e4a83a2f43ce653aac63c634c79c4f103a1532e2427421dec94f"
   end
 
   depends_on "cmake" => :build
