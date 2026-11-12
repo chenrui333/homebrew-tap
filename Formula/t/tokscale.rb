@@ -1,8 +1,8 @@
 class Tokscale < Formula
   desc "CLI and TUI for AI token usage analytics"
   homepage "https://github.com/junhoyeo/tokscale"
-  url "https://github.com/junhoyeo/tokscale/archive/refs/tags/v4.21.0.tar.gz"
-  sha256 "7801e2eed61d09609601c12e0752dd700261534c16b9bdadd74b0e73ff77ed9e"
+  url "https://github.com/junhoyeo/tokscale/archive/refs/tags/v4.22.0.tar.gz"
+  sha256 "d2281968bf5cf68d394376cb9a8a320d72001e2448f7b52169f69232438bada8"
   license "MIT"
   head "https://github.com/junhoyeo/tokscale.git", branch: "main"
 
