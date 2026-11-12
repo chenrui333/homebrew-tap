@@ -13,10 +13,10 @@ class Aven < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a0895bfc4a6cf8843e22b7c210f0d20b898ea6e5b5bac1a4817833b0237468c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95287043e3bbde630834d7506ffae0422dabe6623197d55ee0a610ed3264943c"
-    sha256 cellar: :any,                 arm64_linux:   "17eb3a8155719fad92052edf68491bf11724b2783603016befc9a90d39e33ece"
-    sha256 cellar: :any,                 x86_64_linux:  "2f5d9999d7630966ad928d21a9bf9965d9937aa879683129b1464f71e28499d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "accc67c9a17f4ca0db5fe3bb78ec2d1e4551cf1891dbf41aacadb8adb6c080c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf97a2bb1c74f6cb25ab1a03ff32444fdd4e1741c8225f80d3db9fdec9a27cda"
+    sha256 cellar: :any,                 arm64_linux:   "0402e7f985be7ac4f899cd616de8f99f2aa3a67f3ebe172f23015fefa0178f03"
+    sha256 cellar: :any,                 x86_64_linux:  "8ce2b1038aa433b3b84b760467e6575958df1fb20c48c6b1cf71144efc38ab02"
   end
 
   depends_on "cmake" => :build
