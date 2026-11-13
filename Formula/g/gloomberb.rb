@@ -12,10 +12,10 @@ class Gloomberb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "814c0ed78f8c79bf70acf4e34f9300292bdce4dcea50c22e15b1917daf7559d7"
-    sha256 arm64_sequoia: "d52461fe6ea4d9df08004cf68541ba2cdf6c7c695f8784a35b1a83750034cf11"
-    sha256 arm64_linux:   "c5a05c6d62b92e10f51e915dbf7b8fc091856ed79be856547e951aef2c255407"
-    sha256 x86_64_linux:  "1c825fe72560d6244e6415303c422223e1158a92f297a4fad2b6757747a62699"
+    sha256 arm64_tahoe:   "f09d6752200df6fe17a5fa03a21ec2a67e1d092a6ecb5adf7791f5a11c360418"
+    sha256 arm64_sequoia: "95b0b163e6028a205cc435ae91e3276d1456cc991d205095fc0b883e873c8f3f"
+    sha256 arm64_linux:   "dec203cad949749f3ef1826af539c6691a867bf69dd5fc6e1362afe174de4226"
+    sha256 x86_64_linux:  "16a11fb7fed0131f841970337536c6c6812189d320e5ccf6e575719e1daa335c"
   end
 
   depends_on "bun" => :build
