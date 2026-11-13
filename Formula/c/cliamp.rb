@@ -8,10 +8,10 @@ class Cliamp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c8508dd3d0f830c549b3f51dd7c6a8647df45a33321548be169b38b879288593"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1921a4b4267aa425f7d00890c34735015ae6b18f7f10e6250500c063e6153f4a"
-    sha256 cellar: :any,                 arm64_linux:   "1c468258ec7602997539f7b3a9c190b655eb72bcba9d72807a2966f6143ac60f"
-    sha256 cellar: :any,                 x86_64_linux:  "a6ebfb0998bbd004b4384b0805fb74d29738e02af38e84cef83872f469cc2b36"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f18a60ae282d2baffe76f400bc195436d8441706973521b643cdc57f23bab717"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc59695f4c38974d0d640afb56b0c72d5dbbaa696753b45f09b7dbc8308e34cd"
+    sha256 cellar: :any,                 arm64_linux:   "9e147978591445db84356d5d143ffc139ba5c994cb4d30e718aa50f8af1fb665"
+    sha256 cellar: :any,                 x86_64_linux:  "1e5680b542901482b6c188b30c572341ff7dc3ba9e7c45c4c6fa3f600cce77fd"
   end
 
   depends_on "go" => :build
