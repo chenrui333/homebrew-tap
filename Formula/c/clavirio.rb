@@ -1,8 +1,8 @@
 class Clavirio < Formula
   desc "Terminal typing tutor with lessons and session tracking"
   homepage "https://clavir.io"
-  url "https://github.com/alexylon/clavirio/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "58e52c7d10d6622bf281183b9b39a1405e858fa0c73a77ba62bca853bd4a047d"
+  url "https://github.com/alexylon/clavirio/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "fcbc367cc2c05973b1886db518a4cf9eb0f4d81e873fb8ccba0ae342532824c5"
   license "Apache-2.0"
   head "https://github.com/alexylon/clavirio.git", branch: "main"
 
