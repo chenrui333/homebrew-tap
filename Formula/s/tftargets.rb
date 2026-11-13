@@ -1,8 +1,8 @@
 class Tftargets < Formula
   desc "Analyze Terraform configs to find directories affected by Git changes"
   homepage "https://github.com/takaishi/tftargets"
-  url "https://github.com/takaishi/tftargets/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "5f36c309a5b332326284b7bf3b919e44bcb9281e34c152fc6abe7d7aa648b918"
+  url "https://github.com/takaishi/tftargets/archive/refs/tags/v0.0.10.tar.gz"
+  sha256 "942b364fed18fe32de8fad4d5fc7d399feefab39ced60939b98cca016402fb3b"
   license "MIT"
   head "https://github.com/takaishi/tftargets.git", branch: "main"
 
