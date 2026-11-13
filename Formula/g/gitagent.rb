@@ -8,7 +8,10 @@ class Gitagent < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "c8ebd151709af429cae7eba39e1f52c0a01362f086239ace43edf0909b1ba55e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "519e713bf1dde8b18e43a99a1be305f32ddaf2d94413e6921a9eb8e5e0821819"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "519e713bf1dde8b18e43a99a1be305f32ddaf2d94413e6921a9eb8e5e0821819"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30885ce8f824c4faf89cd10859f9942fbea926d68f96bf040a49c6d6a40c4945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558b0029ec4ad5890bfebfb5d3bb671561f201c1c78c6b111cd1d6f97a89a3fd"
   end
 
   depends_on "node"
