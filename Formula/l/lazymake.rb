@@ -8,11 +8,10 @@ class Lazymake < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3e27f2016130bcd8df2989c06fe637151a79a6735ccc7cb17314e943e30b804"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3e27f2016130bcd8df2989c06fe637151a79a6735ccc7cb17314e943e30b804"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cefa5c5ea13493af858579c3c041d5d14f3840991ccac74184f1a8646cfae4ec"
-    sha256 cellar: :any,                 x86_64_linux:  "91a1933f48fe29a46ca2183c0af11586311723960da264a92996995fc923683a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f36cd496f1c8d49f3c9fc9fc2514e2acfa377bfd847baf855b066c111927893f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f36cd496f1c8d49f3c9fc9fc2514e2acfa377bfd847baf855b066c111927893f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d2e8ed4bf5521887ad814ecbf135c63b0ffb47484259ad139bfb738a6c79501"
+    sha256 cellar: :any,                 x86_64_linux:  "438e492210e18baf5301a2dc19462f26c7d5a6ba19ae00a60fbc639c686ce558"
   end
 
   depends_on "go" => :build
