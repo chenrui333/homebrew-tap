@@ -1,8 +1,8 @@
 class Gitagent < Formula
   desc "Git-native AI agent with declarative tools, skills, and plugins"
   homepage "https://github.com/open-gitagent/gitagent"
-  url "https://registry.npmjs.org/@open-gitagent/gitagent/-/gitagent-2.2.0.tgz"
-  sha256 "d054b85e74eda87bafcdc6740a175b80e731318406780f15f9466d35bb6d5af8"
+  url "https://registry.npmjs.org/@open-gitagent/gitagent/-/gitagent-3.0.0.tgz"
+  sha256 "dc48dd043d17b1dd362b876dbd3bdbee6a9e57eed1a3dfceaea75f8538bcb301"
   license "MIT"
   head "https://github.com/open-gitagent/gitagent.git", branch: "main"
 
