@@ -1,8 +1,8 @@
 class GhDash < Formula
   desc "Terminal UI for GitHub"
   homepage "https://github.com/dlvhdr/gh-dash"
-  url "https://github.com/dlvhdr/gh-dash/archive/refs/tags/v4.26.2.tar.gz"
-  sha256 "65b46a8d5eeddf170aff6f30f601df641efd2291a0fcecaff07752f6d33d1ccd"
+  url "https://github.com/dlvhdr/gh-dash/archive/refs/tags/v4.26.3.tar.gz"
+  sha256 "bed2fb9d856ba15c721d32a8c62f49aefe0ab869703e5941e447e287705c3a60"
   license "MIT"
 
   bottle do
