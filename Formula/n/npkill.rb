@@ -1,8 +1,8 @@
 class Npkill < Formula
   desc "Easily find and remove old and heavy node_modules folders"
   homepage "https://npkill.js.org"
-  url "https://registry.npmjs.org/npkill/-/npkill-0.12.2.tgz"
-  sha256 "039d6c3118667d1ae53751e45e8bd6b97c32cbbe7f7416ca4b7c9fc4c272c399"
+  url "https://registry.npmjs.org/npkill/-/npkill-1.0.0.tgz"
+  sha256 "8083e5bb475931a2558c11498ffd7e1bc306ee6073a19897eb32bf1d4433ad17"
   license "MIT"
 
   bottle do
