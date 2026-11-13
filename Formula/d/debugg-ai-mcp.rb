@@ -8,10 +8,10 @@ class DebuggAiMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9f6dc9fc1ddee4facd20b01c8e30e8875ff23ef10c20671d8fefa2cb07e31da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29d2be35efae91890920a51c9dd56e15b109f65277f4bc5c2bc347735f711dc6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d2be35efae91890920a51c9dd56e15b109f65277f4bc5c2bc347735f711dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d2be35efae91890920a51c9dd56e15b109f65277f4bc5c2bc347735f711dc6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86de664f1f959abba3ff95236804085811e6d44cca2011d3e03a9b63ebed57d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86de664f1f959abba3ff95236804085811e6d44cca2011d3e03a9b63ebed57d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd16910c58806cfc887c056cf4c06846e848aa52e068dc256a58c70be6934016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd16910c58806cfc887c056cf4c06846e848aa52e068dc256a58c70be6934016"
   end
 
   depends_on "node"
