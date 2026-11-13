@@ -1,17 +1,17 @@
 class Trdl < Formula
   desc "Deliver software updates securely from a trusted TUF repository"
   homepage "https://trdl.dev/"
-  url "https://github.com/werf/trdl/archive/refs/tags/v0.14.0.tar.gz"
-  sha256 "2863066826115abaf7417833f585ce0a760044bcf873acd2e1fb817e7c9bb023"
+  url "https://github.com/werf/trdl/archive/refs/tags/v0.14.1.tar.gz"
+  sha256 "7b54f1612db87c50de279e36b5cdc646e086fa3499aba9db2dbecc3e6faa6a39"
   license "Apache-2.0"
   head "https://github.com/werf/trdl.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fec29e0a4731e7c3cf39d317957910ffd95b1d45c2078e0a1d79ec070b950e1d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fec29e0a4731e7c3cf39d317957910ffd95b1d45c2078e0a1d79ec070b950e1d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "883ea3bc522479d96fe16f56fc1fdea759e4700022139a915a32fec7f3233b29"
-    sha256 cellar: :any,                 x86_64_linux:  "cf203e34e282a4b240cace5ebea2c1a3b68aa25265abc7de142a65a7bccd781d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d6f0d8b1a051498c3d834b62f3ec938ade7050ca86eef2df1c36ca7f68e8767"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d6f0d8b1a051498c3d834b62f3ec938ade7050ca86eef2df1c36ca7f68e8767"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ebceecaf1dd119d01e458892e3bd39c70f599c8e904eb6b3d6cc8e4cc309be2"
+    sha256 cellar: :any,                 x86_64_linux:  "82327787248871722179a8ae69eee830c272197af719eb837cf0e767f732fa7a"
   end
 
   depends_on "go" => :build
