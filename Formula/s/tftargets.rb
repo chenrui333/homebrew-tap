@@ -1,17 +1,17 @@
 class Tftargets < Formula
   desc "Analyze Terraform configs to find directories affected by Git changes"
   homepage "https://github.com/takaishi/tftargets"
-  url "https://github.com/takaishi/tftargets/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "5f36c309a5b332326284b7bf3b919e44bcb9281e34c152fc6abe7d7aa648b918"
+  url "https://github.com/takaishi/tftargets/archive/refs/tags/v0.0.10.tar.gz"
+  sha256 "942b364fed18fe32de8fad4d5fc7d399feefab39ced60939b98cca016402fb3b"
   license "MIT"
   head "https://github.com/takaishi/tftargets.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "15ad6ffb8d588984977a3b8cdb5b88d80de1b3a6c06a203d54f395c687f66f35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15ad6ffb8d588984977a3b8cdb5b88d80de1b3a6c06a203d54f395c687f66f35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dfc66991e1fcdc7b632431496960f9152d77fd7c1f78759559f57e348e56282"
-    sha256 cellar: :any,                 x86_64_linux:  "1914f86e8b307dad65bbc48f3770a41576998b26f35c2043c14d5fefa96bb433"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb332bfa87cf8384e39d91633b96945559588a780eae4f6ba91223c377932c2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb332bfa87cf8384e39d91633b96945559588a780eae4f6ba91223c377932c2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a152a49ef7ff788df7f7da3f88a5b41c46fba9a3683e43643a99e26a3817c42"
+    sha256 cellar: :any,                 x86_64_linux:  "450b8ef3e27c14b999d7505250658cd7f0947da76da6a7ae8d5721fc30e5dc0b"
   end
 
   depends_on "go" => :build
