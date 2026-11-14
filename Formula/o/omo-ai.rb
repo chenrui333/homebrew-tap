@@ -164,7 +164,7 @@ class OmoAi < Formula
     end
     # Exact gitlink source resources are already staged; no mutable git checkout is needed.
     inreplace "packages/omo-codex/plugin/scripts/materialize-shared-upstreams.mjs",
-              "await initSubmodules({ strict });", "// Pinned submodules staged by Homebrew."
+              "await initSubmodules({ strict })", "// Pinned submodules staged by Homebrew."
     inreplace "package.json", "npm --prefix packages/lsp-daemon ci && ", ""
     system bun, "run", "build:materialize-frontend"
     system bun, "run", "build:lsp-daemon"
