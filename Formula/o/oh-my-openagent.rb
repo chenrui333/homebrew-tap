@@ -98,7 +98,7 @@ class OhMyOpenagent < Formula
     end
     # Homebrew stages the exact gitlink resources above, without a mutable submodule checkout.
     inreplace "packages/omo-codex/plugin/scripts/materialize-shared-upstreams.mjs",
-              "await initSubmodules({ strict });", "// Pinned submodules staged by Homebrew."
+              "await initSubmodules({ strict })", "// Pinned submodules staged by Homebrew."
     %w[lsp-tools-mcp lsp-daemon omo-codex/plugin].each do |component|
       inreplace "package.json", "npm --prefix packages/#{component} ci && ", ""
     end
