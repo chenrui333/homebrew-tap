@@ -4,6 +4,7 @@ class ClogCli < Formula
   url "https://static.crates.io/crates/clog-cli/clog-cli-0.10.0.crate"
   sha256 "9508313c4df5a08a63a9bb8718c2d72125f9dec0cec350532d7b770083e70a71"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -15,10 +16,28 @@ class ClogCli < Formula
 
   depends_on "rust" => :build
 
+  resource "clog" do
+    url "https://static.crates.io/crates/clog/clog-0.11.0.crate"
+    sha256 "a5c9eb664936079c4a138e5fdd19ebe8b284bbaf306dac76239c1a4220f0ebf7"
+
+    # Fix the default Git grep expression for macOS's regex implementation.
+    patch do
+      url "https://github.com/clog-tool/clog-lib/commit/adf33667a024f6cf31eb18c104445342755ab56d.patch?full_index=1"
+      sha256 "01c029d75a89ca82dd887fa9c61c0728576ce56c90b0b2c26bca73f16de55b8c"
+      type :unofficial
+      resolves "https://github.com/clog-tool/clog-lib/pull/29"
+    end
+  end
+
   deny_network_access!
 
   def fetch
     system "cargo", "fetch", *std_cargo_fetch_args
+    resource("clog").stage buildpath/"clog"
+    (buildpath/"Cargo.toml").open("a") do |f|
+      f.puts "\n[patch.crates-io]\nclog = { path = \"clog\" }"
+    end
+    system "cargo", "update", "--offline", "--package", "clog"
   end
 
   def install
@@ -28,16 +47,31 @@ class ClogCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/clog --version")
 
-    # system "git", "init"
+    ENV["GIT_CONFIG_NOSYSTEM"] = "1"
+    ENV["GIT_CONFIG_GLOBAL"] = File::NULL
+    ENV["GIT_AUTHOR_DATE"] = ENV["GIT_COMMITTER_DATE"] = "2025-01-01T00:00:00Z"
+    system "git", "init", "--quiet"
+    system "git", "config", "user.name", "Homebrew Test"
+    system "git", "config", "user.email", "test@brew.sh"
+    system "git", "config", "commit.gpgsign", "false"
 
-    # (testpath/"test.txt").write "test content"
-    # system "git", "add", "test.txt"
-    # system "git", "commit", "-m", "feat: add test feature"
-    # system "git", "tag", "v0.1.0"
+    system "git", "commit", "--quiet", "--allow-empty", "-m", "feat: previously released entry"
+    system "git", "tag", "v0.1.0"
+    system "git", "commit", "--quiet", "--allow-empty", "-m", "feat: add offline changelog fixtures"
+    system "git", "commit", "--quiet", "--allow-empty", "-m", "fix: handle empty release notes"
 
-    # currently broken with `error: fatal I/O error with output file` error
-    # system bin/"clog", "--from", "v0.1.0", "--outfile", "CHANGELOG.md"
-    # assert_path_exists testpath/"CHANGELOG.md"
-    # assert_match "fix a bug", (testpath/"CHANGELOG.md").read
+    (testpath/".clog.toml").write <<~TOML
+      [clog]
+      [sections]
+      Features = ["feat"]
+      "Bug Fixes" = ["fix"]
+    TOML
+    system bin/"clog", "--from", "v0.1.0", "--outfile", "CHANGELOG.md"
+    changelog = (testpath/"CHANGELOG.md").read
+    assert_match "Features", changelog
+    assert_match "add offline changelog fixtures", changelog
+    assert_match "Bug Fixes", changelog
+    assert_match "handle empty release notes", changelog
+    refute_match "previously released entry", changelog
   end
 end
