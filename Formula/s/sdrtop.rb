@@ -1,17 +1,17 @@
 class Sdrtop < Formula
   desc "Terminal spectrum monitor for software-defined radios"
   homepage "https://github.com/musithang/sdrtop"
-  url "https://github.com/musithang/sdrtop/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "9b2519b85c8050d801ec33eb8d516fdaf54ec367c3d54d414127c2d1e0f2444f"
+  url "https://github.com/musithang/sdrtop/archive/refs/tags/v0.7.4.tar.gz"
+  sha256 "cf8dbd2163daa8c3737cba9b7915ec2991f4a1bc7a868e232c9b2036d65ec922"
   license "GPL-3.0-or-later"
   head "https://github.com/musithang/sdrtop.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f0d3753fa797f8424719763cc8ac40d162880b2240ad577a952d625c0fe71c7c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34a5ae1f06280c66aef6a88ff8491641a94a7b788bcd7b4c30c67b88ab16fc87"
-    sha256 cellar: :any,                 arm64_linux:   "aa088fc380667f852dca9f9ea770efe76dcba7f1ec3e5dcbe2848eeaf3460417"
-    sha256 cellar: :any,                 x86_64_linux:  "9e04936d4eceecc4c35719e1efcb0fc1c74fb7359815291deded9be210660e35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8213d4a05cdee9bc62a46e888f94b2a5b69153cd6421e779cdca0f38bbc16044"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7059666b00280f9dfe8c158d062c437d3e7c9612b966848f84fca0d6d7aa31db"
+    sha256 cellar: :any,                 arm64_linux:   "10647ec78d0d99632ff27bd1f65a7c2ec491e69508ac96e1667b2c222b8f47e9"
+    sha256 cellar: :any,                 x86_64_linux:  "fcbe65cf60bf91615538884b6db62b17d5a36f7cea72bf049c1e97e4dd8b29e0"
   end
 
   depends_on "rust" => :build
