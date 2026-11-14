@@ -9,10 +9,10 @@ class OhMyOpenagent < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "d4cb1cff8b9a291c45fa52ca2760c2a6b06f7429e3e48ef0abba0e3d4fb47041"
-    sha256 cellar: :any, arm64_sequoia: "8622f57483dba563f42889eb0b3235a8a83bd6dbcab173354370f4e59f4e13b7"
-    sha256 cellar: :any, arm64_linux:   "50424aa46df22b12c94925890ded40d3d7bbb4a95f6c1e942f49a1e6b3f5c366"
-    sha256 cellar: :any, x86_64_linux:  "7da487cb9f2d2c22a464bc173fefbbdc6187fe5a01d96b2e1dc151f0bc737600"
+    sha256 cellar: :any, arm64_tahoe:   "951d7f3c0cdb8c093f98000629fd8340d2b54d156cdefa17856116bda491e081"
+    sha256 cellar: :any, arm64_sequoia: "2b472bccd7129e210d52bf425c91cadf2e008782bc228fb9c796e3d4e916e7ba"
+    sha256 cellar: :any, arm64_linux:   "c0ed6438f45f2eba034ce2897ac45395bd6745a4ca83a401d092e673be8fbb62"
+    sha256 cellar: :any, x86_64_linux:  "a98f46c4f002a8379046b9cecb4a7f031fcaa49bfa2ca69511c0bb02afbf3cc8"
   end
 
   depends_on "esbuild" => :build
