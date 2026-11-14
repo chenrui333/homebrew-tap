@@ -29,7 +29,8 @@ class Npkill < Formula
     assert_match version.to_s, shell_output("#{bin}/npkill --version")
 
     (testpath/"node_modules").mkpath
-    output = shell_output("#{bin}/npkill -y --directory #{testpath} --json 2>&1", 1)
-    assert_match "Oh no! Npkill does not support this terminal (TTY is required)", output
+    output = JSON.parse(shell_output("#{bin}/npkill --directory #{testpath} --json"))
+    assert_equal 1, output.fetch("meta").fetch("resultsCount")
+    assert_equal (testpath/"node_modules").realpath.to_s, output.fetch("results").first.fetch("path")
   end
 end
