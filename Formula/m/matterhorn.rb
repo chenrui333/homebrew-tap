@@ -64,7 +64,8 @@ class Matterhorn < Formula
   end
 
   def install
-    system "cabal", "v2-install", "--offline", "--with-compiler=#{formula_opt_bin("ghc@9.12")}/ghc",
+    # Cabal's --offline rejects cached Hackage sources; Homebrew's build sandbox enforces offline access.
+    system "cabal", "v2-install", "--with-compiler=#{formula_opt_bin("ghc@9.12")}/ghc",
                     *std_cabal_v2_args(installdir: libexec), "exe:matterhorn"
     # Matterhorn discovers release data beside its executable.
     libexec.install "emoji", "syntax"
