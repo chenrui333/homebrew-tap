@@ -2,17 +2,17 @@ class Agentty < Formula
   desc "Terminal AI pair programmer written in modern C++"
   homepage "https://github.com/agentty-org/agentty"
   url "https://github.com/agentty-org/agentty.git",
-      tag:      "v0.9.54",
-      revision: "de6dae2a636d6068de7b6d25e4844d0a899cb11d"
+      tag:      "v0.9.56",
+      revision: "ef7f30d7c09b4f44ed91ee063dc1fe1b0aed3acc"
   license "MIT"
   head "https://github.com/agentty-org/agentty.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "bbd3d2fee98e2b5b674d629d0a127f2e362bc20ad309ab935e62c694a9697019"
-    sha256               arm64_sequoia: "1a6fe672ec3285776e166368deff4bc673ad1d4c987f2684a7fe46b324c29095"
-    sha256 cellar: :any, arm64_linux:   "432bd79095b3841788ddd2aa0d6429c4569c055d4413290f4ab178705a4dc80a"
-    sha256 cellar: :any, x86_64_linux:  "fedbda9eeb86e4a83a2f43ce653aac63c634c79c4f103a1532e2427421dec94f"
+    sha256               arm64_tahoe:   "7c1d225757f9123045c7e6481cec44370ee0cc1af72cba9c5c886ccb8306392e"
+    sha256               arm64_sequoia: "f003546875ff1167698479bdda634b89d6149f05493547733173159e04bcc2d5"
+    sha256 cellar: :any, arm64_linux:   "aefdc4ba3eb86559bac1bfa594bf33d09e8ee0a26222a6efcb886ccd12ba8f9d"
+    sha256 cellar: :any, x86_64_linux:  "15e01b71f48e6a94bcca0f79518a1cdb5c94c999731cd0e6f01534679bb70815"
   end
 
   depends_on "cmake" => :build
