@@ -156,6 +156,14 @@ jobs:
           VERIFY_RENAME: ${{ matrix.cask && 'true' || 'false' }}
         with:
           script: |
+            // Container actions use a different HOME from checkout; keep Git trust step-local.
+            const configCount = Number(process.env.GIT_CONFIG_COUNT || 0)
+            if (!Number.isSafeInteger(configCount) || configCount < 0) {
+              throw new Error('Invalid inherited GIT_CONFIG_COUNT')
+            }
+            process.env.GIT_CONFIG_COUNT = String(configCount + 1)
+            process.env[`GIT_CONFIG_KEY_${configCount}`] = 'safe.directory'
+            process.env[`GIT_CONFIG_VALUE_${configCount}`] = process.env.GITHUB_WORKSPACE
             const { validateCaskChangeCI } = require('./.github/scripts/cask-change-ci')
             await validateCaskChangeCI({
               github, context, core, verifyRename: process.env.VERIFY_RENAME === 'true',
