@@ -4,6 +4,7 @@ class ClogCli < Formula
   url "https://static.crates.io/crates/clog-cli/clog-cli-0.10.0.crate"
   sha256 "9508313c4df5a08a63a9bb8718c2d72125f9dec0cec350532d7b770083e70a71"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -15,10 +16,28 @@ class ClogCli < Formula
 
   depends_on "rust" => :build
 
+  resource "clog" do
+    url "https://static.crates.io/crates/clog/clog-0.11.0.crate"
+    sha256 "a5c9eb664936079c4a138e5fdd19ebe8b284bbaf306dac76239c1a4220f0ebf7"
+
+    # Fix the default Git grep expression for macOS's regex implementation.
+    patch do
+      url "https://github.com/clog-tool/clog-lib/commit/adf33667a024f6cf31eb18c104445342755ab56d.patch?full_index=1"
+      sha256 "01c029d75a89ca82dd887fa9c61c0728576ce56c90b0b2c26bca73f16de55b8c"
+      type :unofficial
+      resolves "https://github.com/clog-tool/clog-lib/pull/29"
+    end
+  end
+
   deny_network_access!
 
   def fetch
     system "cargo", "fetch", *std_cargo_fetch_args
+    resource("clog").stage buildpath/"clog"
+    (buildpath/"Cargo.toml").open("a") do |f|
+      f.puts "\n[patch.crates-io]\nclog = { path = \"clog\" }"
+    end
+    system "cargo", "update", "--offline", "--package", "clog"
   end
 
   def install
