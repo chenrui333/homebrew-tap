@@ -17,7 +17,6 @@ class Steamfetch < Formula
 
   on_linux do
     depends_on "pkgconf" => :build
-    depends_on arch: :x86_64 # steamworks 0.12.2 fails to build on Linux arm64
     depends_on "openssl@3"
   end
 
@@ -28,9 +27,11 @@ class Steamfetch < Formula
   end
 
   def install
+    ENV["CARGO_TARGET_DIR"] = buildpath/"target"
     system "cargo", "install", *std_cargo_args
 
-    steam_api = Dir["target/release/build/steamworks-sys-*/out/libsteam_api.*"].first
+    # Cargo 1.100 changed the package/hash layout of intermediate build directories.
+    steam_api = buildpath.glob("target/**/libsteam_api.#{OS.mac? ? "dylib" : "so"}").first
     raise "libsteam_api artifact not found" if steam_api.nil?
 
     (lib/"steamfetch").install steam_api
