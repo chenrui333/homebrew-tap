@@ -25,9 +25,9 @@ class Swamp < Formula
   def fetch
     # Keep source-mode version metadata in sync with the release tag after autobumps.
     git_sha = version.to_s.split("-sha.").last
-    inreplace "src/cli/commands/version.ts", /^export const VERSION = .*;$/,
+    inreplace "src/infrastructure/runtime/build_info.ts", /^export const VERSION = .*;$/,
               "export const VERSION = \"#{version}\";"
-    inreplace "src/cli/commands/version.ts", /^export const GIT_SHA = .*;$/,
+    inreplace "src/infrastructure/runtime/build_info.ts", /^export const GIT_SHA = .*;$/,
               "export const GIT_SHA = \"#{git_sha}\";"
     ENV["DENO_DIR"] = buildpath/"deno-cache"
     system "deno", "cache", "--frozen", "main.ts"
