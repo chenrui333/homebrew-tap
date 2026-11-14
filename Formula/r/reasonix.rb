@@ -35,8 +35,13 @@ class Reasonix < Formula
   allow_network_access! :test
 
   def fetch
+    require "yaml"
+
     system "go", "mod", "download"
     cd "desktop/frontend-next" do
+      # pnpm 12 reads these unchanged lockfile overrides from workspace config.
+      config = JSON.parse(Pathname("package.json").read).fetch("pnpm")
+      Pathname("pnpm-workspace.yaml").write config.to_yaml
       system "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"
     end
   end
