@@ -1,17 +1,17 @@
 class Clavirio < Formula
   desc "Terminal typing tutor with lessons and session tracking"
   homepage "https://clavir.io"
-  url "https://github.com/alexylon/clavirio/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "d673b7d6c20b3fb61b9d8037097383a7e544c021c1fd7467044eeb5da44ca5a5"
+  url "https://github.com/alexylon/clavirio/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "fcbc367cc2c05973b1886db518a4cf9eb0f4d81e873fb8ccba0ae342532824c5"
   license "Apache-2.0"
   head "https://github.com/alexylon/clavirio.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1237fe6b3a78998a7fb59da0210ba24d46bad7610d1a0e90c034f1abb09dd1bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e10b72a98f5fa749901bd3cb7c29c356a9cec9916408f2966f46e48dbed2c09f"
-    sha256 cellar: :any,                 arm64_linux:   "3b60f0d93c8dc5b421f1ebe9bd0e2c1dddeadbb8938b21e2f430520725648f1e"
-    sha256 cellar: :any,                 x86_64_linux:  "0b18ff81ff6d17edfa1b66910d98bed0a42ff2729fbe03020be8159e7a3cdf1b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a68804f4401c9741b6a6124e09a720679f10e5c4286991dc1a6e55bc06b19e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e793518a319e7e5267c1e2bf814f416eed58f10e097ecafcd3c34b10989838b"
+    sha256 cellar: :any,                 arm64_linux:   "0fa140e93d864229b65574f2bcad47030d3d8503f6d10ae6ab78875a85e92e12"
+    sha256 cellar: :any,                 x86_64_linux:  "f46dfe2f00877dbc94ed8acb866f9dc8a4f0b2e2aa4bb9082372f3bed39c58fc"
   end
 
   depends_on "rust" => :build

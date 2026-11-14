@@ -1,17 +1,17 @@
 class Tokscale < Formula
   desc "CLI and TUI for AI token usage analytics"
   homepage "https://github.com/junhoyeo/tokscale"
-  url "https://github.com/junhoyeo/tokscale/archive/refs/tags/v4.21.0.tar.gz"
-  sha256 "7801e2eed61d09609601c12e0752dd700261534c16b9bdadd74b0e73ff77ed9e"
+  url "https://github.com/junhoyeo/tokscale/archive/refs/tags/v4.22.1.tar.gz"
+  sha256 "4ffd33e1643e1c553ad6e390d3b4e5e15f4fd61269c562a407cf0b53b56e164a"
   license "MIT"
   head "https://github.com/junhoyeo/tokscale.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a9280554b7c0445ea677d241f017df180c45697ca261db5bc9972755449979fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c028bdf99e741ad779bdc0093a20b052fa543c358e2a783fa8b2ac9865bc4c62"
-    sha256 cellar: :any,                 arm64_linux:   "e9e970eeaefce7c08d11b1e37e4809595bd371bcdc0dde12bac1b60b738fe35c"
-    sha256 cellar: :any,                 x86_64_linux:  "f5c1ee92010f5eb0a113660ef2477347dc03e5324b165fc9a3829d73091d6463"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac274741c78fc9393c0eb4dbc7bcab204daf387f2bf9a95153007355bd2f730f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b849b5e86304fdd66d85d4c08cbc8dd5da3131426968f17342f18d62dde2657b"
+    sha256 cellar: :any,                 arm64_linux:   "9c050c4b90d3090fc6ae3d7accf656ae15cca1f1a9758c5f53c12397340b9020"
+    sha256 cellar: :any,                 x86_64_linux:  "5a7ceac68b230d021ef1d89a549f8d63a72257dc54e88e0b12806a5165277c2e"
   end
 
   depends_on "pkgconf" => :build

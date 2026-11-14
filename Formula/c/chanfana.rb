@@ -1,13 +1,13 @@
 class Chanfana < Formula
   desc "OpenAPI 3 and 3.1 schema generator and validator for Hono and itty-router"
   homepage "https://github.com/cloudflare/chanfana"
-  url "https://registry.npmjs.org/chanfana/-/chanfana-3.5.0.tgz"
-  sha256 "e6bc9b6a89cbdfd40c1e81e2c924601731dddcfea2efdddf0e532cb822e504d9"
+  url "https://registry.npmjs.org/chanfana/-/chanfana-3.6.0.tgz"
+  sha256 "520e45f8b54c4021b7e4d625c1675019155b1e4e33d103c45401a2d4043777e4"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "77c67af0faf34e287a8ab1dbe38343aaa137a1fae50151753b7ac4515a08073b"
+    sha256 cellar: :any_skip_relocation, all: "d70616d2019e99f0d6272b34a117639089fa2b71f2ad7ec1dfed6417b0dd2393"
   end
 
   depends_on "node"

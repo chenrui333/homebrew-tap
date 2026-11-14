@@ -1,17 +1,17 @@
 class Autolith < Formula
   desc "Live, self-modifying Common Lisp coding agent"
   homepage "https://github.com/lambda-symbolics/autolith"
-  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.31.tar.gz"
-  sha256 "20167d021d2a1f7f4393bc4b72ca356fc9e79e2ef58502eab8b0cb2e3d2f42d6"
+  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.35.tar.gz"
+  sha256 "76402ecfdf01ba88271c3cadac27a0b1fff8470686aed97715eab98b3837ac95"
   license "ISC"
   head "https://github.com/lambda-symbolics/autolith.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "89325c8b672f48055a57144c51050e56781329877ec3d0fb90ed7a8b7ae58381"
-    sha256 cellar: :any, arm64_sequoia: "c9617c4ab08e483aa66e0952538081b36e7e48a1a20c78dd1167322a23cfdc46"
-    sha256 cellar: :any, arm64_linux:   "04d0f417c1bfa618bb5903ea77962892c0fcfbef213a1101abf2a4203de57f88"
-    sha256 cellar: :any, x86_64_linux:  "fd6b57eca4609c6e4c396f1722706e90517970a63efb7dd2e46f4db0560af99f"
+    sha256 cellar: :any, arm64_tahoe:   "db2e488cb1e2a07fa82f07d9073b4837c4a5ce7ab676a66d7c64406427277724"
+    sha256 cellar: :any, arm64_sequoia: "df102a5a8172a87e2b59a374bd473925aa723196c0d554704e74e3d2307b2f9b"
+    sha256 cellar: :any, arm64_linux:   "a619348f36f5969c1aae4077545aa7897c67b7808d3f0b86599b45029bb6e194"
+    sha256 cellar: :any, x86_64_linux:  "59e5bd631aeabf64d9dd8b5bcd928f3163b32cb6e3014561183fee1f5029acd9"
   end
 
   depends_on "cmake" => :build

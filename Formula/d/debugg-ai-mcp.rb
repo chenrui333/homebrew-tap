@@ -2,13 +2,16 @@
 class DebuggAiMcp < Formula
   desc "MCP Server for Debugg AI"
   homepage "https://debugg.ai/"
-  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-6.1.3.tgz"
-  sha256 "d78ba77061ce6ae037c32e4d2f3c0c483b308b56ebaffe46aba5d3b11413337a"
+  url "https://registry.npmjs.org/@debugg-ai/debugg-ai-mcp/-/debugg-ai-mcp-6.1.6.tgz"
+  sha256 "c824940bc440aa6763544a7b839809909f282d8fd44149d7cf519808ce2dc601"
   license "Apache-2.0" # license fix PR, https://github.com/debugg-ai/debugg-ai-mcp/pull/4
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "60b0ad9cd23081d5a2d085f584bdc282fa2b8e4151275a685d4f1fbb791b92a8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86de664f1f959abba3ff95236804085811e6d44cca2011d3e03a9b63ebed57d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86de664f1f959abba3ff95236804085811e6d44cca2011d3e03a9b63ebed57d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd16910c58806cfc887c056cf4c06846e848aa52e068dc256a58c70be6934016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd16910c58806cfc887c056cf4c06846e848aa52e068dc256a58c70be6934016"
   end
 
   depends_on "node"

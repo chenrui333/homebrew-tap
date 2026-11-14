@@ -1,17 +1,17 @@
 class Hax < Formula
   desc "Minimalist, terminal-native coding agent written in C"
   homepage "https://usehax.dev"
-  url "https://github.com/OleksandrChekhovskyi/hax/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "de63efaadb9b71879b9a084a9e8aa863eb98e893b83c0a4ab8a465f97c8594e6"
+  url "https://github.com/OleksandrChekhovskyi/hax/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "46c40ee15ab7ce6e6ff08d3b0e61ac858cf7b0af91c9167d5e79897e7bc92d2e"
   license "MIT"
   head "https://github.com/OleksandrChekhovskyi/hax.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f79f04087ad02d355de6a0efe68f9e1f9c3f5b84d2f8066f84d051185c25dd8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46ced698efd279ac9ea12948b0ab302b64c14bb6f6f74ccdc6572bab47eff009"
-    sha256 cellar: :any,                 arm64_linux:   "096850624ddc611cdde63d4d4b830247b14c7ee06e93924df9344a4526639c56"
-    sha256 cellar: :any,                 x86_64_linux:  "22aa1a4ed20c58ca993f7f9fb46112f6f73d430e54a552818cffda90f13533d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8108d7ba9ed09d924ea343b8ef1f1a70b0e4eafb960a85da1d1723684e96910f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9023b0378621c33a640f7baa7b6daa3963d81c2e189bc2b3349f97af2b4c456"
+    sha256 cellar: :any,                 arm64_linux:   "cda890c665806b73fcb6a9165dc9d88352d542f8612fb8b869027abd37a682cc"
+    sha256 cellar: :any,                 x86_64_linux:  "c225bcad629e3b8dc6df11cdc35263f879f39273268c0710bc8b57f1347f1c58"
   end
 
   depends_on "meson" => :build
