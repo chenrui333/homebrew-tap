@@ -8,10 +8,10 @@ class Reeve < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "de475dff3d65a215dfc9bf6655b5dbd304c6b667c8761a1b257273b96ecb9351"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbaeb0a28c183220d7840111f75a5119e49f66b845258e9d0fe2c0cf7bc54142"
-    sha256 cellar: :any,                 arm64_linux:   "acf38da83afd6cb062f50a579a3ee916382fa5fb8b73b7e74d141f8bc997da8d"
-    sha256 cellar: :any,                 x86_64_linux:  "fe99dead8d213ec461fab050c2a0987f9ac0b681c3c746a437b5781026ed24ef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be72a21f1f5f48e3578ff6c501580a387c74f1aa97b3699b6d98fd2200ef5ab6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d32a8eb991d5b467f7bd90778955726c732d87e063cecc343e82285f0cff6054"
+    sha256 cellar: :any,                 arm64_linux:   "ffed8c9657bdb946b5aa699c28c4809ff0a54da17b2639127f93750fa7214edc"
+    sha256 cellar: :any,                 x86_64_linux:  "9234b2584f709dd45a56d7549b8f76b6111488655cbbad283f909a0c54e69ac6"
   end
 
   depends_on "rust" => :build
