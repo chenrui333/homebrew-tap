@@ -8,8 +8,8 @@ class Bootvine < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "f07c896cd131307ece1563e055ec56ac8d7818b692e77dd53d0c31aa32594fb7"
-    sha256 cellar: :any, x86_64_linux: "af48fc7ac2a69dccfa0eb117dae622feb394c6a9e438e737b654459148eddaf3"
+    sha256 cellar: :any, arm64_linux:  "f953d27f2482096699baad1b0a55e8ec38f8fc55e8d6ba1b3b754dd0213e40ab"
+    sha256 cellar: :any, x86_64_linux: "557e5b7d932bd015d721820ff76a67f70b29c7d5c370bf6c843e8090a930ace6"
   end
 
   depends_on "pkgconf" => :build
