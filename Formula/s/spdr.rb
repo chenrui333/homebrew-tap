@@ -1,8 +1,8 @@
 class Spdr < Formula
   desc "Read-only DDR5 SPD decoder and semantic linter in Rust"
   homepage "https://github.com/The-Open-Memory-Initiative-OMI/spdr"
-  url "https://github.com/The-Open-Memory-Initiative-OMI/spdr/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "f0bf7a9d80b11885ce47e7288cde33df712a22ae0d1c393cda6c4ee0a308c5f7"
+  url "https://github.com/The-Open-Memory-Initiative-OMI/spdr/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "fbe7c4a9de2aa90df21e193aa94774d488dd5ffb35d1db209c22636850e2589a"
   license "Apache-2.0"
   head "https://github.com/The-Open-Memory-Initiative-OMI/spdr.git", branch: "main"
 
