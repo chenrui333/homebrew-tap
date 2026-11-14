@@ -26,7 +26,7 @@ class CloudRunMcp < Formula
 
     # These optional native prebuilds vary by platform and break `:all` bottles.
     modules = libexec/"lib/node_modules/@google-cloud/cloud-run-mcp/node_modules"
-    modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds").each(&:rmtree)
+    modules.glob("{bare-buffer,bare-fs,bare-os,bare-path,bare-url}/prebuilds").each(&:rmtree)
 
     bin.install_symlink libexec.glob("bin/*")
   end
