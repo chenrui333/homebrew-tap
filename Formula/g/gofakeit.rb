@@ -1,17 +1,17 @@
 class Gofakeit < Formula
   desc "Random fake data generator written in go"
   homepage "https://github.com/brianvoe/gofakeit"
-  url "https://github.com/brianvoe/gofakeit/archive/refs/tags/v7.18.3.tar.gz"
-  sha256 "58a69c04b61669d533c9b9985c7636cf80f1515671e9affd3e7bfa43f490f75a"
+  url "https://github.com/brianvoe/gofakeit/archive/refs/tags/v7.18.4.tar.gz"
+  sha256 "f7252262b87dac6e4a87c79860fbaca079af1256f040c2a1e83b86a0f6888ea5"
   license "MIT"
   head "https://github.com/brianvoe/gofakeit.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fb961778323e5f53f749f861d0c0e0ac08a0c9940fc171be59709b5da4055b84"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb961778323e5f53f749f861d0c0e0ac08a0c9940fc171be59709b5da4055b84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "524b1c794384d2f92e063241e6fbd57f68b92d3bf8393bd85e66e5a602dc55e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13064282e97defccdc924b4a5fd130cde508ad3548f2b15a5073efdc028560b5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a6e1d3c33a01aade9a76843f751b0a7bd0a9246afbfe7595a798129de6f298d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a6e1d3c33a01aade9a76843f751b0a7bd0a9246afbfe7595a798129de6f298d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb6ff05fe15172604d266dada25b03bd67cde72d470077fa8fb653a5b7780603"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c3049e2e3709bb77b3a90a787a88ea907ffe8156c6aa32c0a1417739a6953ca"
   end
 
   depends_on "go" => :build
