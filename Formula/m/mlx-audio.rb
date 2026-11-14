@@ -350,7 +350,12 @@ class MlxAudio < Formula
   end
 
   test do
-    # The CLI imports initialize Metal; the file-only API needs no model or audio device.
+    output = shell_output("#{bin}/mlx_audio.convert 2>&1", 2)
+    assert_match "the following arguments are required: --hf-path", output
+    %w[stt.generate tts.generate music.generate server sts.generate].each do |command|
+      assert_predicate bin/"mlx_audio.#{command}", :executable?
+    end
+
     (testpath/"test.py").write <<~PYTHON
       import wave
       from importlib.metadata import version
@@ -360,8 +365,8 @@ class MlxAudio < Formula
 
       assert version("mlx-audio") == "#{version}"
       manifest = FileList()
-      manifest.files = ["caf" + "e\\u0301" + ".txt", "public.txt"]
-      manifest.process_template_line("global-exclude caf\\u00e9.txt")
+      manifest.files = ["private-e\\u0301.txt", "public.txt"]
+      manifest.process_template_line("global-exclude private-\\u00e9.txt")
       assert manifest.files == ["public.txt"]
       samples = np.array([-4096, 0, 8192, 16384], dtype=np.int16)
       audio_io.write("sample.wav", samples, 8000)
