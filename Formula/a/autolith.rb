@@ -74,8 +74,8 @@ class Autolith < Formula
   end
 
   resource "image-daemon" do
-    url "https://github.com/lambda-symbolics/image-daemon/archive/fa5a80c0084cf727258d1f937db41cf2ebed2072.tar.gz"
-    sha256 "e34884b51baca19fb9a839e7b77fd0087b14aaa9021c1b41da68522abd19dc69"
+    url "https://github.com/lambda-symbolics/image-daemon/archive/94fdbe5543ff5efae424380ff49430abd1fb92ce.tar.gz"
+    sha256 "fc322e6a5e263244440a03feab07169acb455e38103af5a54e572d3ea142104d"
 
     # Keep the runtime and message API's package exports idempotent.
     patch do
