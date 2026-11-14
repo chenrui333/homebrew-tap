@@ -1,17 +1,17 @@
 class Msgvault < Formula
   desc "Offline email archive with fast search and analytics"
   homepage "https://msgvault.io"
-  url "https://github.com/wesm/msgvault/archive/refs/tags/v0.23.0.tar.gz"
-  sha256 "100629f06329757b8626de34572e610eacee4e06e1c0f59c823298354944ec53"
+  url "https://github.com/wesm/msgvault/archive/refs/tags/v0.24.0.tar.gz"
+  sha256 "2f819b889e6968afd18646d78f7c3a0975d1fda51e53fc96e8d69a705b910530"
   license "MIT"
   head "https://github.com/wesm/msgvault.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "260e71ed1803b7e01172fdc1683e00c15ed22ed1729f5c6771f450741fa480f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37ef5688e374dcce4f932f50a276d4d636b8038be40345eca9498f601cea9a06"
-    sha256 cellar: :any,                 arm64_linux:   "bcae62ee90a376a25249fe9c48a54f0e861af9831ecf6620e0a6463d756fb9a4"
-    sha256 cellar: :any,                 x86_64_linux:  "6ea1f4a50ee74122cb2bc4c995bd82e62566bb95ce55875b9c3df53d41b9a46d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4fc96234dfc84da5dea3b1c6cd6c52b4ec91428584e5d9cdda26985011f83c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e5298bfea26dd7d4752d0e2d5a9536e8b7d37f1c35ad8598cee5981989ce107"
+    sha256 cellar: :any,                 arm64_linux:   "d26bd8f2e57e2b4f9dfdfabd2b4212cfc85f6183fab2fc2e18dd21ba72771530"
+    sha256 cellar: :any,                 x86_64_linux:  "d38e2e1ca28662da87cb051deea5c673f8809acc3c8ae246e069220d1f5e5f6a"
   end
 
   depends_on "go" => :build
