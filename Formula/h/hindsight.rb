@@ -35,6 +35,10 @@ class Hindsight < Formula
     depends_on "gcc" => :build
     depends_on "patchelf" => :build
     depends_on "libaio"
+
+    on_arm do
+      depends_on "python@3.13" => :build
+    end
   end
 
   resource "aiofile" do
@@ -1475,7 +1479,14 @@ class Hindsight < Formula
                     "run_cmd([\"env\", \"-u\", \"_PIP_RUNNING_IN_SUBPROCESS\", " \
                     "\"#{formula_opt_bin("python@3.14")}/python3.14\", \"-I\", \"-m\", \"pip\", " \
                     "\"--python\", sys.executable, \"install\", \"httplib2==0.22.0\"], cwd=None)"
-          with_env(PDFIUM_PLATFORM: "sourcebuild-toolchained:7191") { venv.pip_install Pathname.pwd }
+          # Portable depot_tools uses PATH's Python; GSUtil only supports Python 3.9-3.13.
+          python_path = ENV.fetch("PATH")
+          if OS.linux? && Hardware::CPU.arm?
+            python_path = "#{formula_opt_libexec("python@3.13")}/bin:#{python_path}"
+          end
+          with_env(PDFIUM_PLATFORM: "sourcebuild-toolchained:7191", PATH: python_path) do
+            venv.pip_install Pathname.pwd
+          end
         end
       elsif r.name == "claude-agent-sdk"
         r.stage do
