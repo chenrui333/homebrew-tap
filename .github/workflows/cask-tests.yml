@@ -46,7 +46,7 @@ permissions:
 jobs:
   generate-matrix:
     outputs:
-      matrix: ${{ steps.generate-matrix.outputs.matrix }}
+      matrix: ${{ steps.hosted-matrix.outputs.matrix }}
     runs-on: macos-latest
     steps:
       - name: Set up Homebrew
@@ -85,12 +85,24 @@ jobs:
             brew generate-cask-ci-matrix --url "$PULL_REQUEST_URL"
           fi
 
+      - name: Require supported hosted cask runners
+        id: hosted-matrix
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        env:
+          CASK_MATRIX: ${{ steps.generate-matrix.outputs.matrix }}
+        with:
+          script: |
+            const { hostedCaskMatrix } = require('./.github/scripts/cask-hosted-matrix')
+            const matrix = hostedCaskMatrix(JSON.parse(process.env.CASK_MATRIX))
+            core.info(JSON.stringify(matrix))
+            core.setOutput('matrix', JSON.stringify(matrix))
+
       - name: Require native verification coverage for cask renames
         if: github.event_name == 'pull_request'
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         timeout-minutes: 5
         env:
-          CASK_MATRIX: ${{ steps.generate-matrix.outputs.matrix }}
+          CASK_MATRIX: ${{ steps.hosted-matrix.outputs.matrix }}
         with:
           script: |
             const { validateCaskChangeMatrix } = require('./.github/scripts/cask-change-ci')

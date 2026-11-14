@@ -306,6 +306,7 @@ brew style <formula>
 - test-bot logs install/test failures as warnings for platforms without an existing bottle, so a green job can hide them; check finished runs for `failed-bottles_*` artifacts and read the logs.
 - A `sha256`-only change fails `brew audit --git`; use a `url ... tag:, revision:` source instead.
 - tap-syntax runs `brew style`, which needs `shellcheck`, `shfmt`, and `actionlint` from Linux bottles; under simulated macOS they would build from source and stall.
+- Cask CI uses hosted `macos-26` for syntax. Homebrew's `xcode-27` runner belongs to its private fleet, not this tap. Its native jobs may be omitted only when the generated matrix already contains equivalent requirement-compatible hosted macOS/architecture verification with the same source and audit/install policy; otherwise fail closed and report unsupported requirements. Never relabel a native macOS 27 job as macOS 26.
 
 ## PR Triage Workflow
 
