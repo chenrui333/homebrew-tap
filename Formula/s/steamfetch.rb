@@ -1,23 +1,23 @@
 class Steamfetch < Formula
   desc "Display Steam stats in the terminal"
   homepage "https://github.com/unhappychoice/steamfetch"
-  url "https://github.com/unhappychoice/steamfetch/archive/refs/tags/v0.5.7.tar.gz"
-  sha256 "cd8184c8b1c0c53b5d2d4ff99e08a0cef778de641bb75ae6fa0d8dac4178dc66"
+  url "https://github.com/unhappychoice/steamfetch/archive/refs/tags/v0.5.8.tar.gz"
+  sha256 "891fddcbd0542c628d40d68c03f2b1e9604d73de9df91d010de6a8e195088e53"
   license "ISC"
   head "https://github.com/unhappychoice/steamfetch.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "2be62096160a42b90771486884d48fb5b05b52a23dd1c06b2c07b90b8889ad66"
-    sha256 cellar: :any, arm64_sequoia: "16d26d098c19c9240c589ce96d26d2fd3b2b3eee67b0b89f4f19257e91a8dbd5"
-    sha256 cellar: :any, x86_64_linux:  "feac4f10c52cb6c6f92507e057758c3474ff08d7bc722646e7dfb7b8b34abe7e"
+    sha256 cellar: :any, arm64_tahoe:   "39168919f1dd93fa7d543e9d3b3a99b2f0db944f2f6f585323fdbb42d8f7db9b"
+    sha256 cellar: :any, arm64_sequoia: "974236551990c56188b775f066601ae5740a3df67919a5eb8d1d01a45acc8977"
+    sha256 cellar: :any, arm64_linux:   "d5c39fe2bd6274013181e63a1ea8eedd566bf05afa5882728e323dd0d3c10d9a"
+    sha256 cellar: :any, x86_64_linux:  "72a99fd3c19d4412f622fa5c0011e4ebdea06d49f18a7dcae5301e2737d18777"
   end
 
   depends_on "rust" => :build
 
   on_linux do
     depends_on "pkgconf" => :build
-    depends_on arch: :x86_64 # steamworks 0.12.2 fails to build on Linux arm64
     depends_on "openssl@3"
   end
 
@@ -28,9 +28,11 @@ class Steamfetch < Formula
   end
 
   def install
+    ENV["CARGO_TARGET_DIR"] = buildpath/"target"
     system "cargo", "install", *std_cargo_args
 
-    steam_api = Dir["target/release/build/steamworks-sys-*/out/libsteam_api.*"].first
+    # Cargo 1.100 changed the package/hash layout of intermediate build directories.
+    steam_api = buildpath.glob("target/**/libsteam_api.#{OS.mac? ? "dylib" : "so"}").first
     raise "libsteam_api artifact not found" if steam_api.nil?
 
     (lib/"steamfetch").install steam_api
