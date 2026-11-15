@@ -7,8 +7,7 @@ class Npkill < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b74601f2576035b77f0548cd9f30f4f6f74cdd3e7610c02d28ceafe75b333bce"
+    sha256 cellar: :any_skip_relocation, all: "d235ddf7e5640c7f661d4f4fd0bdcb68ffd35f112162ac6b51cc05f48cc9cb71"
   end
 
   depends_on "node"
