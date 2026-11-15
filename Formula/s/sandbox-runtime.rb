@@ -1,8 +1,8 @@
 class SandboxRuntime < Formula
   desc "OS-level filesystem and network sandboxing for arbitrary commands"
   homepage "https://github.com/anthropics/sandbox-runtime"
-  url "https://registry.npmjs.org/@anthropic-ai/sandbox-runtime/-/sandbox-runtime-0.0.82.tgz"
-  sha256 "fb9bf9502715525e5bf366cc8454c8e6c43c2506b544beb8079a1a508c398f89"
+  url "https://registry.npmjs.org/@anthropic-ai/sandbox-runtime/-/sandbox-runtime-0.0.83.tgz"
+  sha256 "1be860bd2617d21bf67585dd10f92f781b2af5f5f27299f49badf63fe9848c85"
   license "Apache-2.0"
   head "https://github.com/anthropics/sandbox-runtime.git", branch: "main"
 
