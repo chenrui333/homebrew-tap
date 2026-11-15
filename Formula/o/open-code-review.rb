@@ -1,17 +1,17 @@
 class OpenCodeReview < Formula
   desc "AI-powered code review CLI tool"
   homepage "https://github.com/alibaba/open-code-review"
-  url "https://github.com/alibaba/open-code-review/archive/refs/tags/v1.13.5.tar.gz"
-  sha256 "bc8e08333abf7bbad98330397b0fdbe070fe43370b7121d154421d55e1f9f43e"
+  url "https://github.com/alibaba/open-code-review/archive/refs/tags/v1.13.9.tar.gz"
+  sha256 "f67ea28a3ada6055435d4bdf41f2355d4df7a2a3c393d2e36d9e075e15223777"
   license "Apache-2.0"
   head "https://github.com/alibaba/open-code-review.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ce2a76a13cc18e2059e16863d5153e56fb3d4ea44df5d68cc74cb19ef9a15033"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce2a76a13cc18e2059e16863d5153e56fb3d4ea44df5d68cc74cb19ef9a15033"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1bcc9992070cb55f5283328df5536c490967dd8259eb5e8d565b8b51a42e21c"
-    sha256 cellar: :any,                 x86_64_linux:  "d9688c7ffd5946a908d42f49021e7b70f2e06dbb04455b63b0543db9ed50544b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "56f098c715267fcb4d55259839ecaa5f8ce324d6e78e2534f140e4c770bf7e73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56f098c715267fcb4d55259839ecaa5f8ce324d6e78e2534f140e4c770bf7e73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9df908c7d8d9d46dd3a4180bea0a263c3f8cef91e7e753f493d03aef05cb7ac"
+    sha256 cellar: :any,                 x86_64_linux:  "763e7e54070b9740851df008d577d8669e3c0feb1bfe106447258f760cc8f75a"
   end
 
   depends_on "go" => :build

@@ -2,19 +2,19 @@ class Swamp < Formula
   desc "Deterministic automation framework for AI agents"
   homepage "https://swamp-club.com"
   url "https://git.swamp-club.com/swamp-club/swamp.git",
-      tag:      "v20261109.214205.0-sha.2c24fe25",
-      revision: "2c24fe25baee98c72cdb3224ca8962ba5ec91a23"
-  version "20261109.214205.0-sha.2c24fe25"
+      tag:      "v20261110.214815.0-sha.dc6ae808",
+      revision: "dc6ae80891824211384e2c200aa77513547ea517"
+  version "20261110.214815.0-sha.dc6ae808"
   # Upstream also grants the additional permissions in COPYING-EXCEPTION.
   license "AGPL-3.0-only"
   head "https://git.swamp-club.com/swamp-club/swamp.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "1fae1835bfa6c7dfc3ec4d5308ba1a2ce654042452ad6efff6e98a277a065c35"
-    sha256 cellar: :any,                 arm64_sequoia: "86d07417b17672f424023200d7a9aaf53fcaa280a70123bf876cdefa66c08ca4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84f67c5a70ada6ea169cfbdbd279c4697866bba6df10cc646e1cb4ba515a4b07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ffb62eeb75427fa187e91e40a1374ed63e92d8ece1f1f4ffea0e3cd6d2a94d"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d7a337504cf13368bc2b4aee5966997db3b7c304ce5154cc4a4b485850ca70c"
+    sha256 cellar: :any,                 arm64_sequoia: "c2181af1a82c67cf47daaa5b1d5be87d5917acc85d582e870e04da58ec47766d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f39d0857b52841f0e9e58d33c4fb90fa217ada98868ba29807b62ae9f6543b70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b307632529a365ec73c015deab695073d1cd72b0104d9e4b505ca591e64ae382"
   end
 
   depends_on "node" => :build
@@ -25,9 +25,9 @@ class Swamp < Formula
   def fetch
     # Keep source-mode version metadata in sync with the release tag after autobumps.
     git_sha = version.to_s.split("-sha.").last
-    inreplace "src/cli/commands/version.ts", /^export const VERSION = .*;$/,
+    inreplace "src/infrastructure/runtime/build_info.ts", /^export const VERSION = .*;$/,
               "export const VERSION = \"#{version}\";"
-    inreplace "src/cli/commands/version.ts", /^export const GIT_SHA = .*;$/,
+    inreplace "src/infrastructure/runtime/build_info.ts", /^export const GIT_SHA = .*;$/,
               "export const GIT_SHA = \"#{git_sha}\";"
     ENV["DENO_DIR"] = buildpath/"deno-cache"
     system "deno", "cache", "--frozen", "main.ts"

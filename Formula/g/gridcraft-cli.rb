@@ -1,17 +1,17 @@
 class GridcraftCli < Formula
   desc "Headless GridCraft to inspect, convert and evaluate spreadsheets, with MCP"
   homepage "https://getartcraft.com/apps/gridcraft"
-  url "https://github.com/storytold/gridcraft/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "f705a50d96be1dcf6101fb0973b384fe40de5eff06981017136521d7ca1888a3"
+  url "https://github.com/storytold/gridcraft/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "4adb7b981de97f31c61e5be67ac7b2bcd84e2559647b5c8c39561bbcce199c5e"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/storytold/gridcraft.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4db22d38c58796094e1ecf42ccda4dadb1e52f7aff88a429472f616745127dce"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79dd5b8d0cce1e8e71ce902f0cf89520c0b4dfcd5da4e8d33005f0f372a0d343"
-    sha256 cellar: :any,                 arm64_linux:   "f02507210d82152f77040ad58a9547fe886988f0b02ae0c4895c97cce9d13925"
-    sha256 cellar: :any,                 x86_64_linux:  "6e45f6fca4585d2d960af415e825a0382d47759b4aaa4d8d3f93a46deb9a919b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5ee2b2fa62b5817abd174f309ee1f250fe9b6b84d58c844adbc1688a06227e4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b92ab8becc68edaafc97147bbe0cc56b10938e91a977c1ff0c2f48e598cc8a0"
+    sha256 cellar: :any,                 arm64_linux:   "2aa4023d9fd0f0cd0142c814e8670d8dfe804c9d9b65a3fd0cd7aa3871c50b61"
+    sha256 cellar: :any,                 x86_64_linux:  "c286d58f5fa94881ab84f63cfdc6636cb67aeacc76b2e35ea2c52c7fccc58696"
   end
 
   depends_on "rust" => :build

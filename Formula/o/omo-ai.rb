@@ -1,18 +1,18 @@
 class OmoAi < Formula
   desc "Standalone Oh My OpenAgent coding agent, Senpi edition"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.65.tar.gz"
-  sha256 "248df67304ea9b4564a7115963e26b24f6198a53fb91fc8ea0d2f034475599cb"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.70.tar.gz"
+  sha256 "f0217346c919f2a61411ff476a490d94a60ed4accb241213c405051ccff20a42"
   # The launcher/engine are MIT; the bundled OpenAgent plugin is SUL-1.0.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "de6037a4aaf6edd960097eca6e9716b6890f0b2bae8f0be7d61ad4bba25af08e"
-    sha256 cellar: :any, arm64_sequoia: "01cd723cb884ea95d9d879cb55daf44a5b33d8cb4d178290e562313540df2c62"
-    sha256 cellar: :any, arm64_linux:   "e36161d8f65d5471410b4d91ed6da293b0cd7a97fc6f24ab8b5dc09010816a78"
-    sha256 cellar: :any, x86_64_linux:  "f6685ee0ae79d2aa49dca1d7e849143f32f8b135cb1f9d50da9455ce3f264b8a"
+    sha256 cellar: :any, arm64_tahoe:   "d3be80a7e5ca7588427781a5fe6e478e6c9d230b7e8900bb09536bc7be748ca7"
+    sha256 cellar: :any, arm64_sequoia: "8f3a993e4ec6309a8e49198947f23c8ee4dd339ce19d7e02725ae8e3870c99e8"
+    sha256 cellar: :any, arm64_linux:   "bc8d5d96214bee210ec6bc155ff07dd6b02aabe9d8b874f5beebe65a060a7e14"
+    sha256 cellar: :any, x86_64_linux:  "2e8e83eda244ba2e5f0dd4bedac2be9d4564d07452b1badc4799ca317ebeca91"
   end
 
   depends_on "pkgconf" => :build
@@ -164,7 +164,7 @@ class OmoAi < Formula
     end
     # Exact gitlink source resources are already staged; no mutable git checkout is needed.
     inreplace "packages/omo-codex/plugin/scripts/materialize-shared-upstreams.mjs",
-              "await initSubmodules({ strict });", "// Pinned submodules staged by Homebrew."
+              "await initSubmodules({ strict })", "// Pinned submodules staged by Homebrew."
     inreplace "package.json", "npm --prefix packages/lsp-daemon ci && ", ""
     system bun, "run", "build:materialize-frontend"
     system bun, "run", "build:lsp-daemon"

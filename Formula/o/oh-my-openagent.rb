@@ -1,18 +1,18 @@
 class OhMyOpenagent < Formula
   desc "Multi-model agent orchestration plugin and toolkit for OpenCode and Codex"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.65.tar.gz"
-  sha256 "248df67304ea9b4564a7115963e26b24f6198a53fb91fc8ea0d2f034475599cb"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.70.tar.gz"
+  sha256 "f0217346c919f2a61411ff476a490d94a60ed4accb241213c405051ccff20a42"
   # Sustainable Use License 1.0 permits only free, non-commercial redistribution.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "990c62a45b6a8204041302cbd8f82094d13457311f2e3e265243db7cab23490e"
-    sha256 cellar: :any, arm64_sequoia: "6fabc7d0d1621e98d72eb07036ea63647c68e8dca14e4a035f3124fd7f50c8d8"
-    sha256 cellar: :any, arm64_linux:   "e4d6279f277d25102f7ade9bd312c91ebbbcd64a6fe8b9ef230b32b055f3e78a"
-    sha256 cellar: :any, x86_64_linux:  "ca323cf22519b45f4b868ec1b86c768fc85fce5b0cae197a8b53656df7e229a9"
+    sha256 cellar: :any, arm64_tahoe:   "951d7f3c0cdb8c093f98000629fd8340d2b54d156cdefa17856116bda491e081"
+    sha256 cellar: :any, arm64_sequoia: "2b472bccd7129e210d52bf425c91cadf2e008782bc228fb9c796e3d4e916e7ba"
+    sha256 cellar: :any, arm64_linux:   "c0ed6438f45f2eba034ce2897ac45395bd6745a4ca83a401d092e673be8fbb62"
+    sha256 cellar: :any, x86_64_linux:  "a98f46c4f002a8379046b9cecb4a7f031fcaa49bfa2ca69511c0bb02afbf3cc8"
   end
 
   depends_on "esbuild" => :build
@@ -98,7 +98,7 @@ class OhMyOpenagent < Formula
     end
     # Homebrew stages the exact gitlink resources above, without a mutable submodule checkout.
     inreplace "packages/omo-codex/plugin/scripts/materialize-shared-upstreams.mjs",
-              "await initSubmodules({ strict });", "// Pinned submodules staged by Homebrew."
+              "await initSubmodules({ strict })", "// Pinned submodules staged by Homebrew."
     %w[lsp-tools-mcp lsp-daemon omo-codex/plugin].each do |component|
       inreplace "package.json", "npm --prefix packages/#{component} ci && ", ""
     end

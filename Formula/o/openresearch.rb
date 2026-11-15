@@ -1,17 +1,17 @@
 class Openresearch < Formula
   desc "Local-first workspace for research agents"
   homepage "https://openresearch.sh/"
-  url "https://github.com/alphaXiv/OpenResearch/archive/refs/tags/v0.2.25.tar.gz"
-  sha256 "e0808222fab82839ee296a220c25694b68feef074bc52f2950ea53bc7a3723d3"
+  url "https://github.com/alphaXiv/OpenResearch/archive/refs/tags/v0.2.27.tar.gz"
+  sha256 "9fdfca88e25d55e33e673d54707096c063200b3cf706799f8219f558ac0bf8c1"
   license "MIT"
   head "https://github.com/alphaXiv/OpenResearch.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc97122e161e2aea8d6b2e9ef1fe20c07b5db59b90cb41679b7c85ded01d6934"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6d15168cff71154eda4994df6baf97e986432b5dd405e89427102a87ef33c77"
-    sha256 cellar: :any,                 arm64_linux:   "e06301111980d94c5089982209ca33099f63d2a1987392fb76ca20343b6744de"
-    sha256 cellar: :any,                 x86_64_linux:  "ea52def4391dcc9346502f9540900d934a75b7a80c4f3f96cc2a9000787b0f5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4653c18e868ba2b890c1464bdef8be30e3c4e1fed24b9352ac6bf5953df1fcbc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70844256ff2a3d1cb462ebdb28c719187ceca2eb2559d9134a961e1a2850ac9f"
+    sha256 cellar: :any,                 arm64_linux:   "7d561617a7993aee44ec242bd05e31f1a72d21cbc716285289b63bfba816c049"
+    sha256 cellar: :any,                 x86_64_linux:  "e266bad89b4dc1a32780108d96c4565b4f7c8dc87633dac948b2c06279f9f479"
   end
 
   depends_on "node" => :build

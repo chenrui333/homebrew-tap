@@ -1,18 +1,18 @@
 class Collie < Formula
   desc "Mobile web interface for the coding agents in your terminal"
   homepage "https://github.com/AltanS/collie"
-  url "https://github.com/AltanS/collie/archive/refs/tags/v1.28.0-edge.4.tar.gz"
-  version "1.28.0-edge.4"
-  sha256 "657f7f36542f1246f693c2a0e8846535c8ded862312bbd83c3078e775a089f89"
+  url "https://github.com/AltanS/collie/archive/refs/tags/v1.29.0-edge.2.tar.gz"
+  version "1.29.0-edge.2"
+  sha256 "f922d8071ee9d72cb460a7dd76cd4bdd67c9578432634a29f0083008a7c1a950"
   license "MIT"
   head "https://github.com/AltanS/collie.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "b2cdd93f4b93b3ea581481f31fdf69776d59e7adefd580cf54e983cf842b3135"
-    sha256 arm64_sequoia: "213cde3b8a001e77025df93971a3e28b06cff105575685b0dc87c69968b63827"
-    sha256 arm64_linux:   "c1b6b001c519207b53dadb14abbbb0f374d5ad983722d738a7776cfa67b206cd"
-    sha256 x86_64_linux:  "e68743f91b905b2269bd259eaa3866f1546a741fb4aefaa8794cd03af018c977"
+    sha256 arm64_tahoe:   "e19460595d6b4b61ae432c6d1ab365daa6b0e57a5231c2fa0408671b68783670"
+    sha256 arm64_sequoia: "cbf73aa770dfd2e0527a018b96f7d58b29767d5cff9f1828e6eb393464b037e2"
+    sha256 arm64_linux:   "0d77ed11086b794a351d3756120c50730459f226a0e90779896eaded09218259"
+    sha256 x86_64_linux:  "cf6cdfba3b846f119d8295a9727d19d84a793d6b3018b5952bc9610a6fed37df"
   end
 
   depends_on "typescript" => :build

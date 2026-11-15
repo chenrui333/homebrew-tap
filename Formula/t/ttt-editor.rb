@@ -1,17 +1,17 @@
 class TttEditor < Formula
   desc "Terminal editor with LSP and Git integration"
   homepage "https://github.com/eugenioenko/ttt"
-  url "https://github.com/eugenioenko/ttt/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "1999de35f255ef89fbf6af79326455716b1e0ef6a4c983053ad0b0415911ac57"
+  url "https://github.com/eugenioenko/ttt/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "e4bbc7e8e4e156005fd5148e3a58d741f3a180393c9dcf764d2be063f4eaf2b9"
   license "MIT"
   head "https://github.com/eugenioenko/ttt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "986538dd1790d1877b59b19e2be9d3715da3acca3d98df4cca0c13b998452dc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "986538dd1790d1877b59b19e2be9d3715da3acca3d98df4cca0c13b998452dc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b3a80f5d9738c7ac308e8f2828b572e7f987cbbff4192cd0231a20a5e3ad584"
-    sha256 cellar: :any,                 x86_64_linux:  "a0ce84dfe6d4db980425a108dfc70a6bd9995a03f5fae5ebecdf69aed4947e82"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "969065d32201f0867bf231a6e30efe84eb313a5ac743b8ac0395e183fe4e9a65"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "969065d32201f0867bf231a6e30efe84eb313a5ac743b8ac0395e183fe4e9a65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "952acfc7ce5e4f2464d5f2e911823b2caceca7b93edcd918b83864b518fe4779"
+    sha256 cellar: :any,                 x86_64_linux:  "b0a798b627e877b8526a1d24662097d302509c92bc58df436730523ba58cfaa7"
   end
 
   depends_on "go" => :build
