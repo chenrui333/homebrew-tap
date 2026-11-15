@@ -1,8 +1,8 @@
 class CpaUsageKeeper < Formula
   desc "CliProxyAPI usage tracker with SQLite storage and a web dashboard"
   homepage "https://github.com/Willxup/cpa-usage-keeper"
-  url "https://github.com/Willxup/cpa-usage-keeper/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "e8f77cb6dc93eac164bc23ea9404dec654b8ce0d1492a91311546dc3b0e2600d"
+  url "https://github.com/Willxup/cpa-usage-keeper/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "37ea9aa0411351ffe58aa03b38c64fbd9a1952dbac5336d1b945df537cd3e29d"
   license "MIT"
   head "https://github.com/Willxup/cpa-usage-keeper.git", branch: "main"
 
