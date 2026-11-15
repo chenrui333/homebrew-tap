@@ -1,8 +1,8 @@
 class Tincan < Formula
   desc "Serverless peer-to-peer voice and text chat for your terminal"
   homepage "https://tincan.rs"
-  url "https://github.com/bilalyazicioglu/tincan-cli/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "d7f548770114ced57d20917da7a147b73139013a4bc6e77c3b95f7a4b40ad550"
+  url "https://github.com/bilalyazicioglu/tincan-cli/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "65b04d123d474a157ee881ab24d54b22c874790a481366d2ba1229b9d20e90b3"
   license "MIT"
   head "https://github.com/bilalyazicioglu/tincan-cli.git", branch: "main"
 
