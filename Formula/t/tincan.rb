@@ -8,10 +8,10 @@ class Tincan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "21991fe10f62fcae3fabe1a77b89afd908d288b0ab2a64ed66c1d506c822638c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "020a8707c72f061fb07be8cc519894bb55dba3b8ad4e8993ed2efcf053b6e006"
-    sha256 cellar: :any,                 arm64_linux:   "cecd054e3ae1fe5e3b26e1fdadeb6be903efa561e4d2f578cefec83042a9ec00"
-    sha256 cellar: :any,                 x86_64_linux:  "d2d4faf6ec5ca6033b689495b8b2456a9291f413a8cffd7a88dcb50d16caf4d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b2dbbdf60e715db92a7cc7151c295a8a273033fc58b5c4ea356d73792af18242"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c180e5afd55b1185a8dcb53cab4311bdf989e3247d5410198bc9a127914ac13d"
+    sha256 cellar: :any,                 arm64_linux:   "78e50b911602f394c2e08bd39202e11abc764f2d39281dcf8529262cfb2509c0"
+    sha256 cellar: :any,                 x86_64_linux:  "132bcae8a7efb5de3be9cd1c6fdbd61fd1ac8163c8969af55ede5634ea81c78c"
   end
 
   depends_on "pkgconf" => :build
