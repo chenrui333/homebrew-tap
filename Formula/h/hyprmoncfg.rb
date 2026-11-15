@@ -1,15 +1,15 @@
 class Hyprmoncfg < Formula
   desc "Terminal-first monitor configurator and daemon for Hyprland"
   homepage "https://hyprmoncfg.dev/"
-  url "https://github.com/crmne/hyprmoncfg/archive/refs/tags/v1.28.0.tar.gz"
-  sha256 "8542c43c708fff3308cf75abf8af20ee1170ce07044da398466847d187914a7c"
+  url "https://github.com/crmne/hyprmoncfg/archive/refs/tags/v1.29.1.tar.gz"
+  sha256 "e0b3f91f5f28fb7e6d7145cbe4c2d39a58398f6e94ff52222238fc5ed90863a9"
   license "MIT"
   head "https://github.com/crmne/hyprmoncfg.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "59c5aa7195d460ab2e75fac4324b347200e371781ca5fd5f4fbae112a634a85e"
-    sha256 cellar: :any,                 x86_64_linux: "fabdb6518bb67a66970203689948e3a66c74e82177b86f755930ad4aba5ade46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "0656286185f0371eb01d14cb1f1fcd49473945e0e4d11324d9cbbdeed025c9b7"
+    sha256 cellar: :any,                 x86_64_linux: "4b8d5b707d99c33267629ed05653b4f728ad642465698e444e7363491971d121"
   end
 
   depends_on "go" => :build
