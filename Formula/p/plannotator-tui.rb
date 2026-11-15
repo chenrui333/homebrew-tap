@@ -1,8 +1,8 @@
 class PlannotatorTui < Formula
   desc "Annotate Markdown in the terminal and send feedback to coding agents"
   homepage "https://github.com/plannotator/plannotator-tui"
-  url "https://github.com/plannotator/plannotator-tui/archive/refs/tags/v0.9.11.tar.gz"
-  sha256 "e339f6b918b69d4d0806cf9538b1548953d688bb3fcd4ec7cbafa638bdcd9487"
+  url "https://github.com/plannotator/plannotator-tui/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "6508ff16d3b267ced19b5625f4e96a6df2e950ee50bb7fcac0458c785669516c"
   license "MIT"
   head "https://github.com/plannotator/plannotator-tui.git", branch: "main"
 
@@ -14,7 +14,12 @@ class PlannotatorTui < Formula
     sha256 cellar: :any,                 x86_64_linux:  "c8172263fbe9d436f66bc463899a5c393394eda1a1134bd458711503b4210d0f"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   deny_network_access!
 
