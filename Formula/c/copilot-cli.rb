@@ -1,8 +1,8 @@
 class CopilotCli < Formula
   desc "Copilot coding agent directly to your terminal"
   homepage "https://github.com/github/copilot-cli"
-  url "https://registry.npmjs.org/@github/copilot/-/copilot-0.0.354.tgz"
-  sha256 "cc61ad9201c75b0ba3442d32861ddba876cd7cd780c94fc64e5fab50c51c0bcb"
+  url "https://registry.npmjs.org/@github/copilot/-/copilot-1.0.112.tgz"
+  sha256 "ab65647d98b77e92442ce6cdbe0ab4c352742e84e1aeeaf28cad77823639e6ef"
   # license :unfree
 
   bottle do
