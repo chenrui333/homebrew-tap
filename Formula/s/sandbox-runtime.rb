@@ -34,8 +34,6 @@ class SandboxRuntime < Formula
   def prepare_package_json
     package_json = JSON.parse((buildpath/"package.json").read)
     package_json.delete("devDependencies")
-    # MXC is only used by the Windows sandbox backend.
-    package_json.fetch("optionalDependencies").delete("@microsoft/mxc-sdk")
     (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
   end
 
