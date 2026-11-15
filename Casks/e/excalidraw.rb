@@ -1,4 +1,4 @@
-cask "excalidraw-desktop" do
+cask "excalidraw" do
   url_end = on_system_conditional macos: "-arm64.dmg", linux: ".AppImage"
 
   version "1.0.11"
