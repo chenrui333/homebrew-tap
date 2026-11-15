@@ -17,21 +17,6 @@ class Matterhorn < Formula
     url "https://github.com/matterhorn-chat/matterhorn/archive/refs/tags/90000.1.2.tar.gz"
     sha256 "aaa649015f4a62f29ff86504d4165994d708c0ec852b0c0f1f3b203656c12630"
 
-    # Support the deepseq bundled with current compilers.
-    patch do
-      url "https://github.com/matterhorn-chat/matterhorn/commit/821bcdf97a6f0ad1263ff25f344ecfa25d2c21ac.patch?full_index=1"
-      sha256 "fc0bcd96a40c17673e6b1a7472dfbe1dc55f608861c86dc17ab91bcc42f4770d"
-      type :backport
-      resolves "https://github.com/matterhorn-chat/matterhorn/issues/860"
-    end
-
-    # Prerequisite for upstream's newer dependency compatibility fix.
-    patch do
-      url "https://github.com/matterhorn-chat/matterhorn/commit/8ffbeff58aa3d7c2c40cbd02943ca371966e6c61.patch?full_index=1"
-      sha256 "616b81ec686accdfcd0899bd41252e4f8113c064e62b336c37fda78dbb8c8ca7"
-      type :backport
-    end
-
     # Support newer UUID dependencies without forcing an obsolete compiler.
     patch do
       url "https://github.com/matterhorn-chat/matterhorn/commit/a4ac3d88de958891be0c89257f0575ae59d70542.patch?full_index=1"
