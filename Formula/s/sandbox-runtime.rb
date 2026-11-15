@@ -1,17 +1,17 @@
 class SandboxRuntime < Formula
   desc "OS-level filesystem and network sandboxing for arbitrary commands"
   homepage "https://github.com/anthropics/sandbox-runtime"
-  url "https://registry.npmjs.org/@anthropic-ai/sandbox-runtime/-/sandbox-runtime-0.0.81.tgz"
-  sha256 "0e0b8249062047f7b592c7995f8ec2f251f3bbebdc0402db1ee23af09983953f"
+  url "https://registry.npmjs.org/@anthropic-ai/sandbox-runtime/-/sandbox-runtime-0.0.82.tgz"
+  sha256 "fb9bf9502715525e5bf366cc8454c8e6c43c2506b544beb8079a1a508c398f89"
   license "Apache-2.0"
   head "https://github.com/anthropics/sandbox-runtime.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fae2c4872f45f0dc795bb46f7ed908f6b11db951570798da4313f5da597f149e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fae2c4872f45f0dc795bb46f7ed908f6b11db951570798da4313f5da597f149e"
-    sha256 cellar: :any,                 arm64_linux:   "d991410e3faf70c5482be8bd5fbb7ce122ef92243910970f5cb40242fd5d2a4a"
-    sha256 cellar: :any,                 x86_64_linux:  "2e5a14f66d7c2292069342bb38c23927678294b71dc862d8ef5f61a1e8c44aef"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9bf815364d30299001cdbfff53827b8da6943fe86a1b4ca7737ed4d5ff87781e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bf815364d30299001cdbfff53827b8da6943fe86a1b4ca7737ed4d5ff87781e"
+    sha256 cellar: :any,                 arm64_linux:   "25f9e07bd7e4c064d5e6133d3634d5e08d1ed044da8cedc47571c73e8fddc04f"
+    sha256 cellar: :any,                 x86_64_linux:  "3b82ba6c1d7c78472441b10d062a21a64008b5b55744c754fce3548643543bf6"
   end
 
   depends_on "openjdk" => :build
@@ -34,6 +34,8 @@ class SandboxRuntime < Formula
   def prepare_package_json
     package_json = JSON.parse((buildpath/"package.json").read)
     package_json.delete("devDependencies")
+    # MXC is only used by the Windows sandbox backend.
+    package_json.fetch("optionalDependencies").delete("@microsoft/mxc-sdk")
     (buildpath/"package.json").atomic_write(JSON.pretty_generate(package_json))
   end
 
