@@ -2,17 +2,17 @@ class GlabTui < Formula
   desc "Terminal interface for GitLab and GitHub"
   homepage "https://github.com/rcieri/glab-tui"
   url "https://github.com/rcieri/glab-tui.git",
-      tag:      "v0.9.4",
-      revision: "5fb7fceca62afe25c8064c33d280e7eb8a2a8d95"
+      tag:      "v0.9.5",
+      revision: "8b571f2608bda48816f3475fe9e37d4bfc33c11c"
   license "MIT"
   head "https://github.com/rcieri/glab-tui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b37f47d3aaae5337fdeab5e36e4ec40b4cb45eccfe56d741b579e3f8be97422e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b49b759595adcea6b03f79e55587b5a14be03e855558e36429d863097ebe014"
-    sha256 cellar: :any,                 arm64_linux:   "aa43c6b5a122bc16c67cea8283054f8e2807591c583f228a508d7b9d879a36d0"
-    sha256 cellar: :any,                 x86_64_linux:  "82b00110970023ff466d8ed8b344518aeba8cc07744cf6252360b48e93776815"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d6ad3fb1e4148fca9e773dacbee9b19f0bcd817c26786370f459dde3816af6a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6584f312e73f7a790ddc91d4c6fd7bd04f9f4bdda7bf708f4d51f8f0041b3366"
+    sha256 cellar: :any,                 arm64_linux:   "cc30c94cf428127e872cf39e3d0079db4605945e1dc63a151e0d3eb7ef37d0a5"
+    sha256 cellar: :any,                 x86_64_linux:  "f9bc899f638c4cc336f200ad8b135beb26fb98766bab9a12940d44f458519eaa"
   end
 
   depends_on "rust" => :build
