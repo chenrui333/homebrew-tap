@@ -1,17 +1,17 @@
 class Localgpt < Formula
   desc "Local AI assistant with persistent memory, autonomous tasks, and semantic search"
   homepage "https://localgpt.app"
-  url "https://github.com/localgpt-app/localgpt/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "130ffdf6b5fa418ea4c94baabdf0674bac9e00824bc3e18229582952494f60f8"
+  url "https://github.com/localgpt-app/localgpt/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "5555908f6ed7b5dde1dbf2f6e57a8b3e47d1a9eafc18a701f4508adfb381fd96"
   license "Apache-2.0"
   head "https://github.com/localgpt-app/localgpt.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "10c6d93b6951d6855a9955815903010af2ccc74605d4127ef394b80433696e96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7917755871721708d238d9b80440ebc98d14b30083b135103cd897d5f9f99330"
-    sha256 cellar: :any,                 arm64_linux:   "f658716e2d0176791be3b52058b5407c88237d45440de9e2d3952a5b5c81c86b"
-    sha256 cellar: :any,                 x86_64_linux:  "dd94724ab5cbd883add1cc42519f25b409a1928d3a8bba7125ec1355507b70f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8ca359d9b3c4f2e84fe335caf05e7a4b7dc5fe960a352d045c4e6fd8448bc58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64d7d66bc698a19dddf8390dabc75341fb8e6c48aa31431afafe4ecdd1ef2f3e"
+    sha256 cellar: :any,                 arm64_linux:   "0a60c4fd19fa72eb880683ab8ddcf649e8fb3e1d5e1ad3afdeafdf7fff9a48b2"
+    sha256 cellar: :any,                 x86_64_linux:  "88c614cd92ae2a59b72b3d62ae38bee125f5d883965895d8dee4c7b713b0d3d4"
   end
 
   depends_on "pkgconf" => :build
