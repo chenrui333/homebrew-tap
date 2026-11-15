@@ -1,8 +1,8 @@
 class Autolith < Formula
   desc "Live, self-modifying Common Lisp coding agent"
   homepage "https://github.com/lambda-symbolics/autolith"
-  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.36.tar.gz"
-  sha256 "b512cc7a959b904dae3b21e51444139aa750d72589a5b26cec1224adfa24682a"
+  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.42.tar.gz"
+  sha256 "c05e605e9492212f4d9f1e7519ec0817976a89f05770ea912f8fc87a83141a34"
   license "ISC"
   head "https://github.com/lambda-symbolics/autolith.git", branch: "master"
 
