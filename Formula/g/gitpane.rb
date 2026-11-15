@@ -1,17 +1,17 @@
 class Gitpane < Formula
   desc "Multi repo Git workspace dashboard for the terminal"
   homepage "https://github.com/affromero/gitpane"
-  url "https://github.com/affromero/gitpane/archive/refs/tags/v0.18.6.tar.gz"
-  sha256 "e5383b731a0d8b7fbfee6682889d543807701672de47c06b9107e9c7383b3fce"
+  url "https://github.com/affromero/gitpane/archive/refs/tags/v0.18.7.tar.gz"
+  sha256 "3b8eb19f1300f9533d19b2c20edba224f48373ee9f2af777718a820128888f26"
   license "MIT"
   head "https://github.com/affromero/gitpane.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f0396a746795f079045b4b5ea4e3b061acc64f1c21e7cd7cc1097d335c91361"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "395dfee76f9acb4986268ce1dec6b834e365fca52de1161ec96f8a032d752b6b"
-    sha256 cellar: :any,                 arm64_linux:   "fcc579dab03bc47faf824e6b33be7c0d208312016fe1b6e4d9f6688dca304d8e"
-    sha256 cellar: :any,                 x86_64_linux:  "469bd1374c3b216c953c4a2faa23d363d9e2343c591e9f6b2e31d7d226c96747"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9b2c67665d43fea6b6e56c9b94dce82afd37ae22110fc725c138393d911bf450"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a36df99d333b3ecde97f63dd2b170abf27a8b888b4be8ddc2ce0563c365e4ac"
+    sha256 cellar: :any,                 arm64_linux:   "10da35605cf65bf8a8ca71910f20c2eb86e6882ee26b1d582bbc743cb5db5afb"
+    sha256 cellar: :any,                 x86_64_linux:  "c3381620e31bc0e0570ecf2024fbbcba09a0cb4dc5ba94d5993304c5ecb9cc8f"
   end
 
   depends_on "rust" => :build
