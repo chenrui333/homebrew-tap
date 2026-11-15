@@ -673,6 +673,7 @@ brew install --cask <tool>
 - `markdownify`
 - `markpdf`
 - `matcha`
+- `matterhorn`
 - `mcdu`
 - `mcman`
 - `mcp-alchemy`
