@@ -1,18 +1,17 @@
 class Spdr < Formula
   desc "Read-only DDR5 SPD decoder and semantic linter in Rust"
   homepage "https://github.com/The-Open-Memory-Initiative-OMI/spdr"
-  url "https://github.com/The-Open-Memory-Initiative-OMI/spdr/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "f0bf7a9d80b11885ce47e7288cde33df712a22ae0d1c393cda6c4ee0a308c5f7"
+  url "https://github.com/The-Open-Memory-Initiative-OMI/spdr/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "fbe7c4a9de2aa90df21e193aa94774d488dd5ffb35d1db209c22636850e2589a"
   license "Apache-2.0"
   head "https://github.com/The-Open-Memory-Initiative-OMI/spdr.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "803ecae7fe097119aacf34966ce57ae66fb01ae506aa95336e145425a6bd2e48"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57f0be19f1fc0b65e9f375dbc80e2df911138e05d59c0adb9d1c9886940be4d6"
-    sha256 cellar: :any,                 arm64_linux:   "bead7709d4950b90d93edc71873976a8c932b4fc725cc46a3f6eb05ffad8f81f"
-    sha256 cellar: :any,                 x86_64_linux:  "c5661736ba619a4a09848816d544dbfabd9b69783acbac4662f839b53be4ad35"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ef0bedee8607d71f67159750296b86f0b697d6c3f154542cb64bb744fbb5dde6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e8fe14cd00dc11a18d1e205de361ce127ab2b1e932ce38b32e87f0429eea0e3"
+    sha256 cellar: :any,                 arm64_linux:   "754d51f4c778f9e47d1906d0df353d1b8c30a68e90ce725bb9379066fd53bd11"
+    sha256 cellar: :any,                 x86_64_linux:  "7e0e2a0e8562e3495109bd3d9e4967cba762f99de07e6e73cc156532b0fbe736"
   end
 
   depends_on "rust" => :build
