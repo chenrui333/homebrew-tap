@@ -1,8 +1,8 @@
 class Autolith < Formula
   desc "Live, self-modifying Common Lisp coding agent"
   homepage "https://github.com/lambda-symbolics/autolith"
-  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.42.tar.gz"
-  sha256 "c05e605e9492212f4d9f1e7519ec0817976a89f05770ea912f8fc87a83141a34"
+  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.44.tar.gz"
+  sha256 "e8041ea388294f4687ba4417d49818fb43fed5dd9975782eb24d9c55f8eff36d"
   license "ISC"
   head "https://github.com/lambda-symbolics/autolith.git", branch: "master"
 
@@ -240,6 +240,13 @@ class Autolith < Formula
           or die "could not construct $kind image";
       }
     PERL
+    library_path_env = OS.mac? ? "DYLD_FALLBACK_LIBRARY_PATH" : "LD_LIBRARY_PATH"
+    linux_helpers = if OS.linux?
+      <<~ENV_SH.chomp
+        export CL_EXEC_SANDBOX_HELPER="#{libexec}/cl-exec-sandbox-helper"
+        export CL_EXEC_SANDBOX_BWRAP="#{formula_opt_bin("bubblewrap")}/bwrap"
+      ENV_SH
+    end
     (bin/"autolith").write <<~SH
       #!/bin/bash
       set -e
@@ -251,9 +258,8 @@ class Autolith < Formula
       export AUTOLITH_FFF_LIBRARY="#{libexec}/#{shared_library("libfff_c")}"
       export AUTOLITH_DEFINGERPRINTER_LIBRARY="#{libexec}/#{shared_library("libdefingerprinter")}"
       export CL_EXEC_SANDBOX_PROCESS_GROUP_HELPER="#{libexec}/cl-exec-sandbox-process-group"
-      #{"export CL_EXEC_SANDBOX_HELPER=\"#{libexec}/cl-exec-sandbox-helper\"" if OS.linux?}
-      #{"export CL_EXEC_SANDBOX_BWRAP=\"#{formula_opt_bin("bubblewrap")}/bwrap\"" if OS.linux?}
-      export #{OS.mac? ? "DYLD_FALLBACK_LIBRARY_PATH" : "LD_LIBRARY_PATH"}="#{library_paths}"
+      #{linux_helpers}
+      export #{library_path_env}="#{library_paths}"
       state="${XDG_DATA_HOME:-$HOME/.local/share}/autolith/homebrew/#{version}"
       mkdir -p "$state/fasls"
       export ASDF_OUTPUT_TRANSLATIONS="(:output-translations (t \\"$state/fasls/\\") :ignore-inherited-configuration)"
