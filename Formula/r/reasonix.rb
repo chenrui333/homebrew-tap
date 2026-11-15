@@ -1,8 +1,8 @@
 class Reasonix < Formula
   desc "DeepSeek-native coding agent for your terminal"
   homepage "https://github.com/esengine/DeepSeek-Reasonix"
-  url "https://github.com/esengine/DeepSeek-Reasonix/archive/refs/tags/v2.60.0.tar.gz"
-  sha256 "ce6745bb971567071e915b5c20545e52d9cc155dfe29ba7398d4c74cc9452acd"
+  url "https://github.com/esengine/DeepSeek-Reasonix/archive/refs/tags/v2.61.0.tar.gz"
+  sha256 "0f0a283f824ac6e7f54be791c95c9450eec58020019594dd3bd8fa9e1581f851"
   license "MIT"
   head "https://github.com/esengine/DeepSeek-Reasonix.git", branch: "studio"
 
@@ -14,10 +14,10 @@ class Reasonix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d221ef2984d7f72b934a16bab1c9099991170027007c453edbec1a6f26e3a9c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d221ef2984d7f72b934a16bab1c9099991170027007c453edbec1a6f26e3a9c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d11b0d115eab499f0876edad3c3e4297df85cc73bb2bd1040711606a0ddab8ec"
-    sha256 cellar: :any,                 x86_64_linux:  "1ce6ade0146915a2bda40431dbffcbee1fe9bb849795381ae29aab9ed0a9642d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ae589cc25cb59ccf17e32c03e8d9c18f6724f664a1abca80c85d140835d76df7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae589cc25cb59ccf17e32c03e8d9c18f6724f664a1abca80c85d140835d76df7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1273fd927dab982b95d04567ee8c93356945e60524fe7b1b4c543618521331c"
+    sha256 cellar: :any,                 x86_64_linux:  "199636e0dc9c435ea104f02316f46c358b59a8ede1bde7a58af9faf529f3781c"
   end
 
   depends_on "go" => :build
@@ -35,8 +35,13 @@ class Reasonix < Formula
   allow_network_access! :test
 
   def fetch
+    require "yaml"
+
     system "go", "mod", "download"
     cd "desktop/frontend-next" do
+      # pnpm 12 reads these unchanged lockfile overrides from workspace config.
+      config = JSON.parse(Pathname("package.json").read).fetch("pnpm")
+      Pathname("pnpm-workspace.yaml").write config.to_yaml
       system "pnpm", "install", "--frozen-lockfile", "--ignore-scripts"
     end
   end
