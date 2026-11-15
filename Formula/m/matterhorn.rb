@@ -40,6 +40,14 @@ class Matterhorn < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71721fb0c3cd0ec34d17f3ba121e650c4d84773803f818ef0814ba6a9b9b339f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0b155426dbef3b1f320fa16b184623e7c71fa8942b495bedf7e2ebc7d09215b"
+    sha256 cellar: :any,                 arm64_linux:   "cd69e3168281eb1af74d594a4c8bec00edcb6c42c22d7ae89e50f02bf2f37f10"
+    sha256 cellar: :any,                 x86_64_linux:  "18b9ec889d78bebd1d03eb4ee8c43e83c5088f57e6491bb3403b4a0891e096bf"
+  end
+
   depends_on "cabal-install" => :build
   # Brick 2.8 requires base < 4.22, which excludes GHC 9.14.
   depends_on "ghc@9.12" => :build
