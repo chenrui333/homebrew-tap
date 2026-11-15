@@ -11,10 +11,10 @@ class Swamp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "86e4d90777efecc79423f352fbe365e7bf8168b7decf86236d8814ae9dccbc29"
-    sha256 cellar: :any,                 arm64_sequoia: "c401192dc32bbf53d47176a2851a00bf73898bb5abc647cb6ba458e9dd9bd175"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5eecf6f855561ec22f0fdb596f0ae1331c2171c1be5e1fa15caef20a053eef01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9136756b37927fe45ecb0659207aa24c1bb71211e8a3a4b3f60b2737c64ef5eb"
+    sha256 cellar: :any,                 arm64_tahoe:   "4d7a337504cf13368bc2b4aee5966997db3b7c304ce5154cc4a4b485850ca70c"
+    sha256 cellar: :any,                 arm64_sequoia: "c2181af1a82c67cf47daaa5b1d5be87d5917acc85d582e870e04da58ec47766d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f39d0857b52841f0e9e58d33c4fb90fa217ada98868ba29807b62ae9f6543b70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b307632529a365ec73c015deab695073d1cd72b0104d9e4b505ca591e64ae382"
   end
 
   depends_on "node" => :build
