@@ -14,8 +14,8 @@ class Matterhorn < Formula
   head "https://github.com/matterhorn-chat/matterhorn.git", branch: "develop", using: MatterhornGitDownloadStrategy
 
   stable do
-    url "https://github.com/matterhorn-chat/matterhorn/archive/refs/tags/90000.1.1.tar.gz"
-    sha256 "edc87cc58fa5b3bffc1e748c3d4435caf179d2f112998449466212d62d54ae2d"
+    url "https://github.com/matterhorn-chat/matterhorn/archive/refs/tags/90000.1.2.tar.gz"
+    sha256 "aaa649015f4a62f29ff86504d4165994d708c0ec852b0c0f1f3b203656c12630"
 
     # Support the deepseq bundled with current compilers.
     patch do
