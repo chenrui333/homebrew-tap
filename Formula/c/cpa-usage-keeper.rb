@@ -1,17 +1,17 @@
 class CpaUsageKeeper < Formula
   desc "CliProxyAPI usage tracker with SQLite storage and a web dashboard"
   homepage "https://github.com/Willxup/cpa-usage-keeper"
-  url "https://github.com/Willxup/cpa-usage-keeper/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "e8f77cb6dc93eac164bc23ea9404dec654b8ce0d1492a91311546dc3b0e2600d"
+  url "https://github.com/Willxup/cpa-usage-keeper/archive/refs/tags/v2.1.1.tar.gz"
+  sha256 "37ea9aa0411351ffe58aa03b38c64fbd9a1952dbac5336d1b945df537cd3e29d"
   license "MIT"
   head "https://github.com/Willxup/cpa-usage-keeper.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b261cd6e9e2c4d3191cf3c1119a84f0ac24ea1ddf8b7bc822f84915b2e82cfbe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8665d96dae3f7619413261ca4506eccde3c973bb1d33619549dcb2008553f75"
-    sha256 cellar: :any,                 arm64_linux:   "c11a710ff02791909b606615074be7467d54cb4997cd73573eab9cd6fe5bc905"
-    sha256 cellar: :any,                 x86_64_linux:  "580eb62d9033b975abc0c8787f3e47f87696296118d9e8046bd2b8f037c596ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "688da35cc5a2fc3fc50995008b1b56cb76c59e8052ecdb45f0647f4822a0fea8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baf06d58a8355a07a17447e5f9f9d342c431cb6a5aa37e0071fe336e035e80e0"
+    sha256 cellar: :any,                 arm64_linux:   "7ec758d91af494cb42eaf6b271f9d8089680d63ae2e8a183c0baaa3e5a4fff04"
+    sha256 cellar: :any,                 x86_64_linux:  "49af70d6cc88f32443767f062d12f362931855730bea7cb297ffc95673e617c5"
   end
 
   depends_on "go" => :build
