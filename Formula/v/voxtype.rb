@@ -8,10 +8,10 @@ class Voxtype < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "08682fffbfb55f59920bfd7ee50a1891e42a2a09fa17d711fd961971c30aacbf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c943ef5d446ac8eae6a7d69fdaefb4ebdd5bdcc1f5cd374916f79db148b44bd"
-    sha256 cellar: :any,                 arm64_linux:   "68f2b18406d1a778f70a96c1ca5fd1ef2c5f524c430ddcc2696854528177e2d3"
-    sha256 cellar: :any,                 x86_64_linux:  "a100a9d65ce67fbd319db839556020a7f094231e517de49c73627db51a5e4ff9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83f30eeda0287a50ad1c67bb97a31db576e6db2cba81ecd74967eefee89bb69c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8778c9e6282a9657584f3b460c94f16a76530cc668c3129a081c15f9f6c4afa2"
+    sha256 cellar: :any,                 arm64_linux:   "f27cab89f7128a19a65e1f857ebf15b4a012cbd15ca0a7313a29797b36506e78"
+    sha256 cellar: :any,                 x86_64_linux:  "8698dfc827f0808b5ad81ed556657708173395e67197b7cfb023e4624fac7d84"
   end
 
   depends_on "cmake" => :build
