@@ -1,8 +1,8 @@
 class Gloomberb < Formula
   desc "Extensive financial terminal, in your terminal"
   homepage "https://github.com/gloom-sh/gloomberb"
-  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.14.tar.gz"
-  sha256 "b48414f3c5e17ae6ac76d30fc76c916bfd1bad5a44103274cc44106ada32ef9d"
+  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.17.tar.gz"
+  sha256 "e46cf516a9ca3ada8a5929d0453ba7f765c432477c9ff0c843d35e985cc488b1"
   license "MIT"
 
   livecheck do
@@ -24,6 +24,10 @@ class Gloomberb < Formula
   on_linux do
     # Standalone executables retain the brewed Bun runtime template's ICU linkage.
     depends_on "icu4c@79"
+
+    on_intel do
+      depends_on "qemu" => :build
+    end
   end
 
   resource "opentui-native" do
@@ -46,7 +50,10 @@ class Gloomberb < Formula
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     native_name = OS.mac? ? "libopentui.dylib" : "libopentui.so"
-    native_target = "#{Hardware::CPU.arm? ? "aarch64" : "x86_64"}-#{OS.mac? ? "macos" : "linux"}"
+    native_arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    native_os = OS.mac? ? "macos" : "linux"
+    native_target = "#{native_arch}-#{native_os}"
+    zig_target = OS.linux? ? "#{native_target}-gnu.2.17" : native_target
     native_root = buildpath/"opentui-native/packages/core/src/zig"
     cd native_root do
       # Reserve Mach-O load-command space for Homebrew's install-name relocation.
@@ -59,8 +66,7 @@ class Gloomberb < Formula
       NEW
       # Match the SDK's glibc ABI; an ABI-less Linux target links musl's libc.so.
       system formula_opt_bin("zig@0.15")/"zig", "build",
-             "-Dtarget=#{native_target}#{"-gnu.2.17" if OS.linux?}",
-             "-Doptimize=ReleaseFast", "-j#{ENV.make_jobs}"
+             "-Dtarget=#{zig_target}", "-Doptimize=ReleaseFast", "-j#{ENV.make_jobs}"
     end
     host_libraries = buildpath.glob("**/node_modules/@opentui/core-#{platform}-#{arch}/#{native_name}",
                                    File::FNM_DOTMATCH)
@@ -78,8 +84,26 @@ class Gloomberb < Formula
       `--define=process.arch=${JSON.stringify(process.arch)}`,
       '--define=process.env.OPENTUI_LIBC="glibc"', compileEntry,
     JS
-    # Use the brewed runtime instead of downloading a separate Bun executable template.
+    # Use the brewed runtime instead of downloading a separate executable template.
     ENV["BUN_COMPILE_EXECUTABLE_PATH"] = bun
+    if OS.linux? && Hardware::CPU.intel?
+      # Bun treats -baseline as a download target even though brewed Bun already supports that CPU.
+      inreplace "scripts/build.ts", "const target = bunTarget(targetConfig);", 'const target = "bun-linux-x64";'
+
+      # Run the Nehalem smoke check against the brewed binary and host libraries without a container.
+      inreplace "scripts/build.ts" do |s|
+        s.gsub! "const oldCpu = await oldCpuRunner(runner, smokeDir, emulator);",
+                'const oldCpu = Bun.which("qemu-x86_64");'
+        s.gsub! <<-OLD, <<-NEW
+      runner: oldCpu,
+      runnerIsContainer: true,
+      command: CONTAINER_EMULATOR,
+        OLD
+      runner: [],
+      command: oldCpu,
+        NEW
+      end
+    end
     system bun, "run", "build", "--target", "#{platform}-#{arch}"
     output = "dist/gloomberb-#{platform}-#{arch}"
     system "gunzip", "#{output}.gz"
