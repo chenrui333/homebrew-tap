@@ -4667,6 +4667,12 @@
     "last_release": "2026-07-30",
     "stars": 65
   },
+  "github:matterhorn-chat/matterhorn": {
+    "forks": 82,
+    "last_commit": "2026-11-11",
+    "last_release": "2025-10-08",
+    "stars": 1170
+  },
   "github:matthart1983/kernwatch": {
     "forks": 4,
     "last_commit": "2026-10-31",
@@ -5230,6 +5236,12 @@
     "last_commit": "2025-10-22",
     "last_release": "2025-10-22",
     "stars": 333
+  },
+  "github:nold-ai/specfact-cli": {
+    "forks": 1,
+    "last_commit": "2026-11-16",
+    "last_release": "2026-09-06",
+    "stars": 18
   },
   "github:nonscalar/Seastar": {
     "forks": 1,
