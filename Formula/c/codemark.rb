@@ -1,17 +1,17 @@
 class Codemark < Formula
   desc "Structural code bookmarks"
   homepage "https://github.com/DanielCardonaRojas/codemark"
-  url "https://github.com/DanielCardonaRojas/codemark/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "bb191ed81dad20efcd6d155b993b9046ad22439547b8df0fa486feee26c2a65e"
+  url "https://github.com/DanielCardonaRojas/codemark/archive/refs/tags/0.9.1.tar.gz"
+  sha256 "c44e2217e22f8f4316006361ccd0c092721761807f1d88436fb901e6281248a1"
   license "MIT"
   head "https://github.com/DanielCardonaRojas/codemark.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "438b2fb3f44ee223896421ac7874cf049118605e5a73c9481922834aef5e83fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1507825e653fd98228ae03eaa7641fcc837ca28e1f05ddeadb9b9ddcd1bff15"
-    sha256 cellar: :any,                 arm64_linux:   "81451ed200772cb91bb11eb0dd150eb5fb2e1d3cfdce0222063eb528ca25f28a"
-    sha256 cellar: :any,                 x86_64_linux:  "3b7e5f6f858e1def91cd32da56b15316e757e0ca5be6b04c0174d2b6259c13f1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dd51a6f6dc4489e80cb0ab4c5f323bd3ba011226b0fff2fcdf17ac294d5892ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "721fd217ea4068699c3b0dda1368485f6b999aea033eba0ba8e370a9fda220d9"
+    sha256 cellar: :any,                 arm64_linux:   "64cf8ad4165f38236cbb53e9ece6f649d1c510689bb70a2b070da4849d44a424"
+    sha256 cellar: :any,                 x86_64_linux:  "c5a6867bd34b5fea11e543900a5e44fbdd7549d54fc6a4b948886dd017b1b3c4"
   end
 
   depends_on "cmake" => :build
