@@ -1,8 +1,8 @@
 class ClaudeContextMcp < Formula
   desc "Code search MCP for Claude Code"
   homepage "https://github.com/zilliztech/claude-context/tree/master/docs"
-  url "https://registry.npmjs.org/@zilliz/claude-context-mcp/-/claude-context-mcp-0.1.15.tgz"
-  sha256 "0ecf4f4462345737ae5edd737ee7418cd6ebd92a33f7183a49addf41139bc50b"
+  url "https://registry.npmjs.org/@zilliz/claude-context-mcp/-/claude-context-mcp-0.1.16.tgz"
+  sha256 "8decb2a585fd1c527df593f47cfd3b29f7d35ff863ed45ccbb920ff53a8a4155"
   license "MIT"
 
   bottle do
