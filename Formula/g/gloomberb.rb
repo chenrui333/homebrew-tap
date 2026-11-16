@@ -1,8 +1,8 @@
 class Gloomberb < Formula
   desc "Extensive financial terminal, in your terminal"
   homepage "https://github.com/gloom-sh/gloomberb"
-  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.14.tar.gz"
-  sha256 "b48414f3c5e17ae6ac76d30fc76c916bfd1bad5a44103274cc44106ada32ef9d"
+  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.17.tar.gz"
+  sha256 "e46cf516a9ca3ada8a5929d0453ba7f765c432477c9ff0c843d35e985cc488b1"
   license "MIT"
 
   livecheck do
