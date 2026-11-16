@@ -2,18 +2,17 @@
 class GoZzz < Formula
   desc "Hot compilation of Go programs, stress testing for Golang development"
   homepage "https://github.com/sohaha/zzz"
-  url "https://github.com/sohaha/zzz/archive/refs/tags/v1.0.51.tar.gz"
-  sha256 "445818091dcb6dfe10708d84c9ecfce5e113512368c3bce48b7bce06f55cb95b"
+  url "https://github.com/sohaha/zzz/archive/refs/tags/v1.0.52.tar.gz"
+  sha256 "437b0be178fb3bd943920e8d3ba141d086ac6ab9105cf7b91854e7107d7d1cba"
   license "Apache-2.0"
   head "https://github.com/sohaha/zzz.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32444f004850133f10cd9bcd266cd5fdd5320768e42d619c829844b16ca18b5a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32444f004850133f10cd9bcd266cd5fdd5320768e42d619c829844b16ca18b5a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "14455e99671f1c5f651b5205308059382f23b513e2816cf67ad6662544596d63"
-    sha256 cellar: :any,                 x86_64_linux:  "e91a67eb27bafa47236baa592b4a1ac065efbd345a3b71def8a28290bc486d8e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0c12f2dc7b7c845367433fed7f8e953e780b0df1efbe2ccfd80f91e1717be60e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c12f2dc7b7c845367433fed7f8e953e780b0df1efbe2ccfd80f91e1717be60e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "027efb3141942351c6b5bc6aa14b827b8e3e24a05970104c564f2808e65462db"
+    sha256 cellar: :any,                 x86_64_linux:  "2a71cfd774f1826e487d30b2aa51a74fea7d14510ad6fe5fa973b55302cc2c59"
   end
 
   depends_on "go"
