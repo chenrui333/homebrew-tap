@@ -1,8 +1,8 @@
 class Markmark < Formula
   desc "Markdown language tooling, exposed as a language server"
   homepage "https://github.com/nikku/markmark"
-  url "https://registry.npmjs.org/markmark/-/markmark-0.7.0.tgz"
-  sha256 "3707611eb07a0f26094e8a0816f7273d24f451490c245bf68078686ba5ab7f9e"
+  url "https://registry.npmjs.org/markmark/-/markmark-0.8.0.tgz"
+  sha256 "2fe3762d4c039a4cd7c5a36c16b997a8a93d223a6ed203613d37d5b9b34a5bd5"
   license "MIT"
 
   bottle do
