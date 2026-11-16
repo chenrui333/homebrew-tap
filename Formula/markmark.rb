@@ -7,8 +7,7 @@ class Markmark < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ad821781b31ca222ce5c4c681fe8138bf193c013c3baf663009ac06acd22ff29"
+    sha256 cellar: :any_skip_relocation, all: "f61a01ca37dcbf4408ba9f6f4931e3e6994b75daacbc6e7645c892f7195af9e8"
   end
 
   depends_on "node"
