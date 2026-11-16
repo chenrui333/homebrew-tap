@@ -1,14 +1,13 @@
 class Markmark < Formula
   desc "Markdown language tooling, exposed as a language server"
   homepage "https://github.com/nikku/markmark"
-  url "https://registry.npmjs.org/markmark/-/markmark-0.7.0.tgz"
-  sha256 "3707611eb07a0f26094e8a0816f7273d24f451490c245bf68078686ba5ab7f9e"
+  url "https://registry.npmjs.org/markmark/-/markmark-0.8.0.tgz"
+  sha256 "2fe3762d4c039a4cd7c5a36c16b997a8a93d223a6ed203613d37d5b9b34a5bd5"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ad821781b31ca222ce5c4c681fe8138bf193c013c3baf663009ac06acd22ff29"
+    sha256 cellar: :any_skip_relocation, all: "f61a01ca37dcbf4408ba9f6f4931e3e6994b75daacbc6e7645c892f7195af9e8"
   end
 
   depends_on "node"
