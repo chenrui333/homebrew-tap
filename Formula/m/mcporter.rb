@@ -1,17 +1,17 @@
 class Mcporter < Formula
   desc "TypeScript runtime and command-line toolkit for the Model Context Protocol"
   homepage "https://github.com/openclaw/mcporter"
-  url "https://registry.npmjs.org/mcporter/-/mcporter-0.17.0.tgz"
-  sha256 "219623e099f15783afdad24cc1de6b785a708e54054fd346839d2eff3c450a11"
+  url "https://registry.npmjs.org/mcporter/-/mcporter-0.17.1.tgz"
+  sha256 "23de7f9447c33a54ca04ce8dea80c2b96cdf9e3b4842b0ead21d61f04da48a31"
   license "MIT"
   head "https://github.com/openclaw/mcporter.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "4972b314d5135494288c84c5651c1281b826a43e2a0f28d14206c9747f45bd0e"
-    sha256 cellar: :any,                 arm64_sequoia: "4972b314d5135494288c84c5651c1281b826a43e2a0f28d14206c9747f45bd0e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9acbf85453d70f6e272d2a5cebdb4b34460d143553709bbaed059d3ccee3b341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "232324edf59436fe6321e8f1135c211310846fbf7198fbbb5c75d410f0a70107"
+    sha256 cellar: :any,                 arm64_tahoe:   "8df8f323c1b8b4d452b448b8a6a2b6cea0a774fa2a3be9b4d54e33212605a10f"
+    sha256 cellar: :any,                 arm64_sequoia: "8df8f323c1b8b4d452b448b8a6a2b6cea0a774fa2a3be9b4d54e33212605a10f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f36ccfb6b6635096b5f26953b8c9ca4aed9881ada3789c4330b5a44ec1df5b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "452f9370995acbef2a1882f52a5e89b9fd7e84501d4bb8cb5b273897c9967c53"
   end
 
   depends_on "node"
