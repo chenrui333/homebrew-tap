@@ -1,8 +1,8 @@
 class Sub2api < Formula
   desc "AI subscription API gateway with an embedded management frontend"
   homepage "https://github.com/Wei-Shaw/sub2api"
-  url "https://github.com/Wei-Shaw/sub2api/archive/refs/tags/v0.2.21.tar.gz"
-  sha256 "1b36b57e48477b104df60a63f1b1032ebae4b82ee3ba6513531586e5065fe481"
+  url "https://github.com/Wei-Shaw/sub2api/archive/refs/tags/v0.2.22.tar.gz"
+  sha256 "a459e0bc9fdc4eeaa117f88daa0432342ebda9dcece07c118a6a0900b65c83ee"
   license "LGPL-3.0-or-later"
   head "https://github.com/Wei-Shaw/sub2api.git", branch: "main"
 
