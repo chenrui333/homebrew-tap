@@ -1,10 +1,11 @@
 class TangentCli < Formula
   desc "Stream processing with real languages, not DSLs"
-  homepage "https://docs.telophasehq.com/cli/overview"
-  url "https://github.com/telophasehq/tangent/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "1bf27156e576d6cc62591bfb9f61edcfaed133166132579e4abad0d381b04210"
+  homepage "https://github.com/EthanBlackburn/tangent"
+  url "https://github.com/EthanBlackburn/tangent.git",
+      tag:      "v0.2.0",
+      revision: "c7b8f5feee9ed0fc52cab270ed08a726c6c3a4a4"
   license "MPL-2.0"
-  head "https://github.com/telophasehq/tangent.git", branch: "main"
+  head "https://github.com/EthanBlackburn/tangent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -31,9 +32,8 @@ class TangentCli < Formula
   end
 
   def install
-    # Upstream v0.1.10 tag still reports 0.1.9 in workspace metadata.
-    inreplace "Cargo.toml", 'version = "0.1.9"', "version = \"#{version}\""
-
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV.prepend_path "CMAKE_PREFIX_PATH", formula_opt_prefix("openssl@3")
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
   end
 
