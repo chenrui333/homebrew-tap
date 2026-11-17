@@ -8,10 +8,10 @@ class Splitrail < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a962cfe24fb9abfb32393cb188afa9797a22e6f8d3cb336410c0609c381981f3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "300ce3530dfef2657f4a3ce2151361ffffe54a505682a4a4ffe090bc8b25ca20"
-    sha256 cellar: :any,                 arm64_linux:   "31e9a878b84bc387c062e0a17c10f9bc8941290df1bbc76233e3ac6c675eab5a"
-    sha256 cellar: :any,                 x86_64_linux:  "7f0d14056ec7f3de9637ca745c15d610e346c93292c5ab1a89929f5ad7978c24"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4d1a9e9b09cb75e597007fc999e35e8292e48ededa650d91be8f923483525d10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32c10e04112e8e24964b44be654d9783337941ab2d20274653acab6c24ab864a"
+    sha256 cellar: :any,                 arm64_linux:   "867a95ab8532ca5939019a9923a8437cd467816fa03b01c1b1d025ec8c20f7a2"
+    sha256 cellar: :any,                 x86_64_linux:  "005bab764270b1b41376b03005b64ece957df38f1f043a47f18c4c86ab42cf58"
   end
 
   depends_on "rust" => :build
