@@ -8,10 +8,10 @@ class Toast < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54ad3c3e8faa3b01e9d212ba2c40c4e58b5ff15ad279b581746563dd8c02a955"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3229a6762689ab2b1ff7a0c332eab566eef4a66f4f2114c478b67787b01a8b9d"
-    sha256 cellar: :any,                 arm64_linux:   "f1112186b45f38d266554a495ef06cb76f2edfdd4292449d0f5fac25232d468b"
-    sha256 cellar: :any,                 x86_64_linux:  "33810edc45ba5ed73c2e926a735b2f763ddfd768f155022cd1103b822d4a3409"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a98b8c831b0c4aaae8e3a91ad8827bbd49e5630d3bb4c0a7b8b7b381ba459d17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "592464441a91b8ad9e0260d2db7313ed5629cdc1d191fe61ae0e0fe33eb1aa93"
+    sha256 cellar: :any,                 arm64_linux:   "f101c800fc06e162f22e461339a0f2ada35339d6cd416577fe685af1c950c05b"
+    sha256 cellar: :any,                 x86_64_linux:  "2b4e26819fe1107709f6782e43a0f8f38dd2e21fd5db8eef8056ee80d6c94bb0"
   end
 
   depends_on "go" => :build
