@@ -8,10 +8,10 @@ class Gpk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36024bc2367399e26b776e32489529505f69316557088daa84f42befba0e1d75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36024bc2367399e26b776e32489529505f69316557088daa84f42befba0e1d75"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "87ae2d50e84e2abc3a23cc3693bd364f81f635ce5e618b4db9a076f0cde036d7"
-    sha256 cellar: :any,                 x86_64_linux:  "a93fba1f9522d591ebf3dc37cee11a40c30d140eabd256f0ad2a280057014b07"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b228f4610fbb72e4c733c01680544cca8c7717aaf87dcbd288f0fd79552d1a4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b228f4610fbb72e4c733c01680544cca8c7717aaf87dcbd288f0fd79552d1a4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7e2f46a44f9df7ec30d3051e263e584115da3fcbc267d5cff7e0e0e4d1f8a5a"
+    sha256 cellar: :any,                 x86_64_linux:  "3f11b98dcf13168c3e3d40a119253e6d399cb7dcbee9ee17f69463162a782609"
   end
 
   depends_on "go" => :build
