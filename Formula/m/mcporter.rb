@@ -1,8 +1,8 @@
 class Mcporter < Formula
   desc "TypeScript runtime and command-line toolkit for the Model Context Protocol"
   homepage "https://github.com/openclaw/mcporter"
-  url "https://registry.npmjs.org/mcporter/-/mcporter-0.17.0.tgz"
-  sha256 "219623e099f15783afdad24cc1de6b785a708e54054fd346839d2eff3c450a11"
+  url "https://registry.npmjs.org/mcporter/-/mcporter-0.17.1.tgz"
+  sha256 "23de7f9447c33a54ca04ce8dea80c2b96cdf9e3b4842b0ead21d61f04da48a31"
   license "MIT"
   head "https://github.com/openclaw/mcporter.git", branch: "main"
 
