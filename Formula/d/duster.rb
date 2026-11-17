@@ -1,8 +1,8 @@
 class Duster < Formula
   desc "Automatic configuration for Laravel apps"
   homepage "https://github.com/tighten/duster"
-  url "https://github.com/tighten/duster/archive/refs/tags/v3.4.7.tar.gz"
-  sha256 "2b80567ed49e9caa8eb12ec35ee7ee72aaf7203ed878bbdcc05e58ba216318e5"
+  url "https://github.com/tighten/duster/archive/refs/tags/v3.4.8.tar.gz"
+  sha256 "a9c2c7b99e833688a2e1f8fde5e150119c5aaf7a54fe43ebef8fc2f8ee1b4fd4"
   license "MIT"
 
   bottle do
@@ -15,8 +15,7 @@ class Duster < Formula
   deny_network_access!
 
   def install
-    bin.install "builds/duster" => "duster"
-    bin.install "builds/duster.phar"
+    bin.install "builds/duster"
   end
 
   test do
