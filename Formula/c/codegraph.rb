@@ -1,8 +1,8 @@
 class Codegraph < Formula
   desc "Local code intelligence and knowledge graph for AI coding agents"
   homepage "https://github.com/colbymchenry/codegraph"
-  url "https://github.com/colbymchenry/codegraph/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "10bbcceaba46be5d37324e94427684a6d33dcbb592c35fbe4d387c2a14a36ff9"
+  url "https://github.com/colbymchenry/codegraph/archive/refs/tags/v1.6.3.tar.gz"
+  sha256 "368bccdb29f1e2c71e22e0492788b37b75bbf44e8f3767c70c4c6f5b25355d6e"
   license "MIT"
   head "https://github.com/colbymchenry/codegraph.git", branch: "main"
 
@@ -32,10 +32,6 @@ class Codegraph < Formula
     ENV.prepend_path "PATH", formula_opt_bin("node@24")
     npm = formula_opt_bin("node@24")/"npm"
     system npm, "ci", "--offline", *args
-
-    # Nested npm scripts otherwise select the hoisted Vite 5 rather than UI's Vite 7.
-    inreplace "ui/package.json", '"build": "vite build"',
-                                 '"build": "node node_modules/vite/bin/vite.js build"'
     system npm, "run", "build"
     system npm, "install", "--offline", *std_npm_args
     ui_link = libexec/"lib/node_modules/@colbymchenry/codegraph/node_modules/@colbymchenry/codegraph-ui"
