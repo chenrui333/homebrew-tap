@@ -1,8 +1,8 @@
 class TangentCli < Formula
   desc "Stream processing with real languages, not DSLs"
   homepage "https://docs.telophasehq.com/cli/overview"
-  url "https://github.com/telophasehq/tangent/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "1bf27156e576d6cc62591bfb9f61edcfaed133166132579e4abad0d381b04210"
+  url "https://github.com/telophasehq/tangent/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "d6c8900b221a3f403aacd7933668024cab15e56793c8006656c7d05c741c0445"
   license "MPL-2.0"
   head "https://github.com/telophasehq/tangent.git", branch: "main"
 
