@@ -1,8 +1,8 @@
 class KilocodeCli < Formula
   desc "AI coding agent with a terminal UI, local console, and sandboxed tools"
   homepage "https://kilocode.ai/cli"
-  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.28.tar.gz"
-  sha256 "e891d9150e94e0a95781b733494803884152800fa0ec8587610973fb659dab43"
+  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.30.tar.gz"
+  sha256 "5b55d627968d1d0302f9e54942e209f583588be686d8193a5c4aa00335d29459"
   license "MIT"
   head "https://github.com/Kilo-Org/kilocode.git", branch: "main"
 
