@@ -8,10 +8,10 @@ class Sigye < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3b34160a75617185e932632a19f5b9e6167fa25de6dba5a57fbc9f1cc151ed25"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f75e454e4bbeb8ecb98d3473d81ef494760a441ffdae8b2b92bd6124be929f5"
-    sha256 cellar: :any,                 arm64_linux:   "40c10fb1e7ceb69d121f2258d10ac51dccb4c2b4b250af303721105b90ea10c7"
-    sha256 cellar: :any,                 x86_64_linux:  "2d6e28ad167557e844c3fe020bf1aba380afa0779224e24f8ac6057cc615b862"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c5b34059e18178296c0a9b37b584b6c05891f1c2887b935f868c5c43dabd5c45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5e7f6262601d5285163dcd25534a8648bb4d0a6faf3d54280f6b6459b7ac18f"
+    sha256 cellar: :any,                 arm64_linux:   "a5c4237d0fc6bd17a8f4de9b9fc4a3b4af318eef35dfc1b83bc38f914b4f33e1"
+    sha256 cellar: :any,                 x86_64_linux:  "3c6f00b762827793c09d0b8e331ec5ea3d4093cb9c6c5f8fec3bee20beb2b4cb"
   end
 
   depends_on "rust" => :build
