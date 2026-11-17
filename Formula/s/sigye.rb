@@ -1,8 +1,8 @@
 class Sigye < Formula
   desc "Feature-rich terminal clock with ASCII art fonts"
   homepage "https://github.com/am2rican5/sigye"
-  url "https://github.com/am2rican5/sigye/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "8a5b440ee53d574af35eed8c85455ab5bd413052ee6fb8534d2e954b6530deac"
+  url "https://github.com/am2rican5/sigye/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "c738fdf8cf717d296b5f34296a761daf144ec799267931b1a217be2fc1a10d8d"
   license "MIT"
   head "https://github.com/am2rican5/sigye.git", branch: "main"
 
