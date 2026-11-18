@@ -1,17 +1,17 @@
 class Sub2api < Formula
   desc "AI subscription API gateway with an embedded management frontend"
   homepage "https://github.com/Wei-Shaw/sub2api"
-  url "https://github.com/Wei-Shaw/sub2api/archive/refs/tags/v0.2.22.tar.gz"
-  sha256 "a459e0bc9fdc4eeaa117f88daa0432342ebda9dcece07c118a6a0900b65c83ee"
+  url "https://github.com/Wei-Shaw/sub2api/archive/refs/tags/v0.2.23.tar.gz"
+  sha256 "f37649e6e8714b0b05211cca7b249a01b53596428740ae87c26d2ee51214af93"
   license "LGPL-3.0-or-later"
   head "https://github.com/Wei-Shaw/sub2api.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "daf07a8b5c2d81c619165a38fdd2fb0a4e765d5ea0bd014dfd5f65d0ec8c9246"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daf07a8b5c2d81c619165a38fdd2fb0a4e765d5ea0bd014dfd5f65d0ec8c9246"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27a09f8300aea8b638c03c41e34c4ece1086260fa87e22d0547603c3eadb7fa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a94df60c061f1146e7ad0d3d3abb6305919022218c9620f915ff5306dd3c60aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb2b6ba4e2929f2dbb3530f2388731c848a24075b4bf653257ae7b41e941c0cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb2b6ba4e2929f2dbb3530f2388731c848a24075b4bf653257ae7b41e941c0cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7abc72e49a40d50ffb7ba9625047fc008bb3c8bcb823af38b31ff244e0d65c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3bd733265e95380c17c8d72d916f60001543412b84aa5509b2facee8484f3af"
   end
 
   depends_on "go" => :build
