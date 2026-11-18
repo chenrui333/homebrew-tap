@@ -8,10 +8,10 @@ class Tftargets < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb332bfa87cf8384e39d91633b96945559588a780eae4f6ba91223c377932c2b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb332bfa87cf8384e39d91633b96945559588a780eae4f6ba91223c377932c2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a152a49ef7ff788df7f7da3f88a5b41c46fba9a3683e43643a99e26a3817c42"
-    sha256 cellar: :any,                 x86_64_linux:  "450b8ef3e27c14b999d7505250658cd7f0947da76da6a7ae8d5721fc30e5dc0b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "170c9eb0758f565433ef4c42dd219767394aec8065654e07fe35ef56c034a905"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "170c9eb0758f565433ef4c42dd219767394aec8065654e07fe35ef56c034a905"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ca99a2beb84b9122b5390d2382057a847a4f04337274b9eeee47dde9deaa522"
+    sha256 cellar: :any,                 x86_64_linux:  "dc4991ddbcc8905a7677a679244d702b93c202ac2bceb818898c6f160183f061"
   end
 
   depends_on "go" => :build
