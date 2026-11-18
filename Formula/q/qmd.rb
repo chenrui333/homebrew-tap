@@ -1,17 +1,17 @@
 class Qmd < Formula
   desc "Local hybrid search engine for documents and knowledge bases"
   homepage "https://github.com/tobi/qmd"
-  url "https://github.com/tobi/qmd/archive/refs/tags/v2.8.3.tar.gz"
-  sha256 "851b060ef90526be6eab55384ebefabbf0573e854875256d9db9fcd53686516f"
+  url "https://github.com/tobi/qmd/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "e4319774537584cf566ea7e4da424716013a8fb136f76a0775fa4830e8337ea1"
   license "MIT"
   head "https://github.com/tobi/qmd.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "db3bbc81d1006b014680ef96801165609f45c866821614a7812db051a40fc91d"
-    sha256 cellar: :any, arm64_sequoia: "a123ef9461178caae174d6089d80908c99687b921d646307fd2aa5eb1d67c6ad"
-    sha256               arm64_linux:   "97d2be9266e8c9f9752591266ff51a16817523d7ca6bedf0f82a2828972a1801"
-    sha256               x86_64_linux:  "451975b27402f52e3ea0c09b80e8338e7f27f01f61130b8fd7fbe49929b67283"
+    sha256 cellar: :any, arm64_tahoe:   "0037e5fa7683119d9efb7498118eecb9fc45ed7b9a5b6663f007a4a866c34897"
+    sha256 cellar: :any, arm64_sequoia: "70df3f6159b1f2611a13afeaa17505348c9947918b2a99cded0ac903729387fc"
+    sha256               arm64_linux:   "643fefef8518677df714821f77290b0e52434272b174d5af34f74776346eebd6"
+    sha256               x86_64_linux:  "94c4fc1a3855349c40e6b07c58554b3f2614eb30bc729e967cc1897f17cd49b4"
   end
 
   depends_on "cmake" => :build
