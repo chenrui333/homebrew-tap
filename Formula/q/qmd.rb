@@ -1,8 +1,8 @@
 class Qmd < Formula
   desc "Local hybrid search engine for documents and knowledge bases"
   homepage "https://github.com/tobi/qmd"
-  url "https://github.com/tobi/qmd/archive/refs/tags/v2.8.3.tar.gz"
-  sha256 "851b060ef90526be6eab55384ebefabbf0573e854875256d9db9fcd53686516f"
+  url "https://github.com/tobi/qmd/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "e4319774537584cf566ea7e4da424716013a8fb136f76a0775fa4830e8337ea1"
   license "MIT"
   head "https://github.com/tobi/qmd.git", branch: "main"
 
