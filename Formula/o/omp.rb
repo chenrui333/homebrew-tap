@@ -8,10 +8,10 @@ class Omp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "05000fcb403a1835612531184af218fc8b4d6675ff3c731c3446a65b0d3df2d3"
-    sha256 arm64_sequoia: "f8ef099477bf15e7525eea13951779de467a5198db87c6b6d2f5dc467d371d1e"
-    sha256 arm64_linux:   "34906dc2608cf7edee2b437c0ebd4831b50920a0d7e0a44265d06d45bfc37602"
-    sha256 x86_64_linux:  "12bde5c11a0a83a2a08a124cb4d92b780d6b6c08948523b388e2db7b246ea68e"
+    sha256 arm64_tahoe:   "eff6cc49c72470f88329595c874d3389b017868eda79d59c10354d2d685424f3"
+    sha256 arm64_sequoia: "4ec41c6ce44b02a812ad9739bf84e232872f4df989eaf0f1af7aed194c3a891f"
+    sha256 arm64_linux:   "3f91b4736d0079af0c9a2b7a6d2663173ad5e0c699a28c357578ee0b80c6ac14"
+    sha256 x86_64_linux:  "5a49f419556f911b368fc34198811b8045d2f2c541c3cb4dfcc244548cb153a3"
   end
 
   depends_on "bun" => :build
