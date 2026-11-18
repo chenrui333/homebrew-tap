@@ -1,16 +1,16 @@
 class Paseo < Formula
   desc "Control your AI coding agents from the command-line"
   homepage "https://github.com/getpaseo/paseo"
-  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.16.0.tgz"
-  sha256 "981aa1ff2b5d36ce36302d31a38e9b61b4a132622328ccf077993748ddd5210a"
+  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.16.1.tgz"
+  sha256 "36afd8b22926e3d892e31a99e7d53a4776339b7d0b77e57f31e9fb5967991446"
   license "AGPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "38d5f591f80480923e313bd9727a696e84dcb54d7cc22f4c90bec277904a55e7"
-    sha256               arm64_sequoia: "38d5f591f80480923e313bd9727a696e84dcb54d7cc22f4c90bec277904a55e7"
-    sha256 cellar: :any, arm64_linux:   "343bfbf9c6bae903864c805f3c5a94ed89bb0eb6eb25ab5ff4db2fd5761fbf43"
-    sha256 cellar: :any, x86_64_linux:  "e3a482344cef5c1d795dc28d32a8031aaa1feeb4cc6abb7d36f5e57686967cbc"
+    sha256               arm64_tahoe:   "1d1b47b585aa69c968d6b79dcda2c7fd6d2077165a20cacea0ce7129846ec222"
+    sha256               arm64_sequoia: "e58c900974fc000999bdf9c46e550f8d427d6cd66f1fc009ab7c28d3876f195e"
+    sha256 cellar: :any, arm64_linux:   "5e2b33629ec296639ed39e970e3c40804520289bd3e7c44f271ead963bee8de3"
+    sha256 cellar: :any, x86_64_linux:  "751cff952ec0c1615805cf2825a9f86d592d75f0aa2d99de83b74b09b26924f7"
   end
 
   depends_on "node"
