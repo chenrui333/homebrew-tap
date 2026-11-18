@@ -1,8 +1,8 @@
 class Paseo < Formula
   desc "Control your AI coding agents from the command-line"
   homepage "https://github.com/getpaseo/paseo"
-  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.16.0.tgz"
-  sha256 "981aa1ff2b5d36ce36302d31a38e9b61b4a132622328ccf077993748ddd5210a"
+  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.16.1.tgz"
+  sha256 "36afd8b22926e3d892e31a99e7d53a4776339b7d0b77e57f31e9fb5967991446"
   license "AGPL-3.0-only"
 
   bottle do
