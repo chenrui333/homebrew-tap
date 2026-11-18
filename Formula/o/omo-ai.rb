@@ -1,18 +1,18 @@
 class OmoAi < Formula
   desc "Standalone Oh My OpenAgent coding agent, Senpi edition"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.75.tar.gz"
-  sha256 "8058454a9fcae1fba92b64c2b1c7c9b254cb98f58bebfc15dee1865aebd4ec6c"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.76.tar.gz"
+  sha256 "0eab131a05548f7bd1be66335422d0396ac7a6c86f67894b234ff1a9304edcf2"
   # The launcher/engine are MIT; the bundled OpenAgent plugin is SUL-1.0.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "9b505ee6f961a712f7e65116a91edafb7da145c9b45806f546e67e873667de4e"
-    sha256 cellar: :any, arm64_sequoia: "11be3ec2168e6fcd1281f27841f808ebd73ef44b474249339fa11f3400b701e4"
-    sha256 cellar: :any, arm64_linux:   "03bd5f2b25aa85fd24c7bab9fa6cd8445cf951706e8ca1af8b0ea664c22cb0e8"
-    sha256 cellar: :any, x86_64_linux:  "0eb4230d37b7c142edbc9c610f02670ba7fbcf174d201f14696b59946c5d6a87"
+    sha256 cellar: :any, arm64_tahoe:   "e6665e576796faf2c3c399b459d6179c53710c3168d0983ee8b984f6aaa5ded2"
+    sha256 cellar: :any, arm64_sequoia: "30106e40def31d8e82862f7c7b7a2f8962f36431ec702a77484cc537bffc0ea4"
+    sha256 cellar: :any, arm64_linux:   "0ecd5acc940906009ca839c54acb9c8b9f17c6e9efcb2a051887f513c69ffe54"
+    sha256 cellar: :any, x86_64_linux:  "7ff2247dcfa2d55a839a70b0b976c52e763e9e65130f495459cf9615e4ddc3cb"
   end
 
   depends_on "pkgconf" => :build
