@@ -1,17 +1,17 @@
 class Zaly < Formula
   desc "Hackable terminal coding agent"
   homepage "https://zaly.dev"
-  url "https://github.com/folke/zaly/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "85ad9ff1ae1e532da3ecbf2d6bb3353dafac1ab4d3bcbe60bb9a35f11b77d69c"
+  url "https://github.com/folke/zaly/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "645f6b687b7d432b6d606a876786f4c67a17be147f966cbf5f4c7b8d3e35a695"
   license "MIT"
   head "https://github.com/folke/zaly.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bc40d3eacea7d5cd6cb891fefced44dd65fdf4eb4578dfff649925a0fa3e9d7f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7605029326a101117618f0f1e5cc22f47179d59f10f6e38fb435addd47ccdba0"
-    sha256 cellar: :any,                 arm64_linux:   "baa658b19c526b65f3fe250b1b1d089f518341a755b4e971a7f2179c4fae364a"
-    sha256 cellar: :any,                 x86_64_linux:  "e2a0d05abe72e471ee98d0d75cbe407469943b653c5d843f5d50dd9fed05a11e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "411d97c5a357417150dc384999f9b7c3a145062719967c533ac30f7240b13c78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "338b92cd38e295f8f77f3fe241951c22e1d620c85864164c95a7950a8035fa4a"
+    sha256 cellar: :any,                 arm64_linux:   "fa63ebdb10d37b11d8d06fed17044366529019599810db0bdd656e216174f7b6"
+    sha256 cellar: :any,                 x86_64_linux:  "42bff3526da8dd4f7a46b348d4530881e5229a621ff21e56f034787f2423baeb"
   end
 
   depends_on "bun" => :build
