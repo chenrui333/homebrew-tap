@@ -1,18 +1,17 @@
 class InspectCertChain < Formula
   desc "Inspect and debug TLS certificate chains (without OpenSSL)"
   homepage "https://github.com/robjtede/inspect-cert-chain"
-  url "https://github.com/robjtede/inspect-cert-chain/archive/refs/tags/v0.0.43.tar.gz"
-  sha256 "971e344e5180b938641b2c7c18a36ff8aae30912ef23672334ee619590cdfa91"
+  url "https://github.com/robjtede/inspect-cert-chain/archive/refs/tags/v0.0.44.tar.gz"
+  sha256 "61ea5ec7f6ed0dc26d009083b22ba9e672ca30969ffa6b457fc4cbeaabfaf5db"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/robjtede/inspect-cert-chain.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b3a92fb21c9ff0c88376f7af7f96b7f5a09f295cbbdf0939ad1f10c4eee443c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f77bcce968e278c8265f034d35fc3426bf815614642166c1632e9c3abe6b896"
-    sha256 cellar: :any,                 arm64_linux:   "7cd65991ebceefac4107a53e0dc4c86960ac7de6085afe267f1129e2f2509a41"
-    sha256 cellar: :any,                 x86_64_linux:  "3ecd65209851a18ad314f474781f3e614a143efef919efae86cf86ce52216128"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "07547ebb06a1c9278453295afc28831295c61f4f2a708fe76e31fda3758bdd04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8117453ecf2e064ae778b3d14013c543a6e864ffeb52172836d39597ab6fb46a"
+    sha256 cellar: :any,                 arm64_linux:   "d047ff04b45f3049649e81d1bff302dba6a2cf1025cd4cf3b15efab9f6c283db"
+    sha256 cellar: :any,                 x86_64_linux:  "80a6c057f600d1fc54b27eb985bca794be5d2cf70d4506d95e877b5ffa623bd7"
   end
 
   depends_on "rust" => :build
