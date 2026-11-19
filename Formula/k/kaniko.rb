@@ -1,8 +1,8 @@
 class Kaniko < Formula
   desc "Build Container Images In Kubernetes"
   homepage "https://github.com/chainguard-dev/kaniko"
-  url "https://github.com/chainguard-dev/kaniko/archive/refs/tags/v1.25.23.tar.gz"
-  sha256 "538078f9b0a8eabf4b65ee0ce0df23e882fdcc1527fd230228063b441eedf8f7"
+  url "https://github.com/chainguard-dev/kaniko/archive/refs/tags/v1.25.24.tar.gz"
+  sha256 "6ab71a06441d40bfdbc21a6bb482a6361c0e3bb7a6bec8828543bbfb15198bc3"
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/kaniko.git", branch: "main"
 
