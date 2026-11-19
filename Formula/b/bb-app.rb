@@ -1,8 +1,8 @@
 class BbApp < Formula
   desc "CLI, local server and host daemon for the bb coding-agent workspace"
   homepage "https://getbb.app"
-  url "https://registry.npmjs.org/bb-app/-/bb-app-0.49.0.tgz"
-  sha256 "7298f3cedf0efdea13d0d1b8bff38f2ff88f6dcf59c759b5618ac9346a2f537e"
+  url "https://registry.npmjs.org/bb-app/-/bb-app-0.50.1.tgz"
+  sha256 "cb20c15e6d1d5a02633ba45802a5406cb57ef8e0c7ac5cc939e0a0f430e66590"
   license "MIT"
 
   bottle do
