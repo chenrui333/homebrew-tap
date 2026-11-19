@@ -1,8 +1,8 @@
 class Jotter < Formula
   desc "Jupyter notebook TUI with Vim keys, inline plots and rendered LaTeX"
   homepage "https://samox73.github.io/jotter/"
-  url "https://github.com/samox73/jotter/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "ebe6b550bb84d59079262ba0d2e3d6e8b644c3f0576d27005676a9a293d776f9"
+  url "https://github.com/samox73/jotter/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "cd4c41d6fb7d5cbf1f6206abe4e19d94a20e5f9e1ba9ef58c5ca194af9684cb6"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/samox73/jotter.git", branch: "main"
 
