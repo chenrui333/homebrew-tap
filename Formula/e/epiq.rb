@@ -1,16 +1,16 @@
 class Epiq < Formula
   desc "Distributed terminal-native issue tracker backed by Git"
   homepage "https://github.com/ljtn/epiq"
-  url "https://registry.npmjs.org/epiq/-/epiq-1.17.1.tgz"
-  sha256 "276eaaf33ea44a245c9cc59cbd0ae30dfcf7615ab5d19762ad25697e601c59b3"
+  url "https://registry.npmjs.org/epiq/-/epiq-1.18.0.tgz"
+  sha256 "9c92fb4f34fed6639f2fa87d94b51cc6320666454c0e9af461f59f51e66dbd2c"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea8c1c60be5708a65386d67532a0f2e3c687a1c09f67eb407f122758ec3cb768"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8c1c60be5708a65386d67532a0f2e3c687a1c09f67eb407f122758ec3cb768"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "447b0171868a379ab3b4f207d0f2eab512435d34f10e38d33b3cf235ba994d1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "447b0171868a379ab3b4f207d0f2eab512435d34f10e38d33b3cf235ba994d1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9de9c2893ec2fb2aaab05c8d9a4d877d7894717fc9539c1befa00494c1830524"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f23f7d93ec4c56758481e5ee3d978284a803e704fcb9c0032cbcc7aeb9699f85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9de9c2893ec2fb2aaab05c8d9a4d877d7894717fc9539c1befa00494c1830524"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9de9c2893ec2fb2aaab05c8d9a4d877d7894717fc9539c1befa00494c1830524"
   end
 
   depends_on "node"
