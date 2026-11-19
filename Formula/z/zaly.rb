@@ -1,8 +1,8 @@
 class Zaly < Formula
   desc "Hackable terminal coding agent"
   homepage "https://zaly.dev"
-  url "https://github.com/folke/zaly/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "85ad9ff1ae1e532da3ecbf2d6bb3353dafac1ab4d3bcbe60bb9a35f11b77d69c"
+  url "https://github.com/folke/zaly/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "645f6b687b7d432b6d606a876786f4c67a17be147f966cbf5f4c7b8d3e35a695"
   license "MIT"
   head "https://github.com/folke/zaly.git", branch: "main"
 
