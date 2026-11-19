@@ -1,8 +1,8 @@
 class OmoAi < Formula
   desc "Standalone Oh My OpenAgent coding agent, Senpi edition"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.76.tar.gz"
-  sha256 "0eab131a05548f7bd1be66335422d0396ac7a6c86f67894b234ff1a9304edcf2"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.78.tar.gz"
+  sha256 "dd9251fe16b6fd1c660ec123ad69905b1da97adbe31bbf42cc48f972d6fdeea3"
   # The launcher/engine are MIT; the bundled OpenAgent plugin is SUL-1.0.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
