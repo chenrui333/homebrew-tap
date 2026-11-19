@@ -1,8 +1,8 @@
 class KilocodeCli < Formula
   desc "AI coding agent with a terminal UI, local console, and sandboxed tools"
-  homepage "https://kilocode.ai/cli"
-  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.30.tar.gz"
-  sha256 "5b55d627968d1d0302f9e54942e209f583588be686d8193a5c4aa00335d29459"
+  homepage "https://kilo.ai/cli"
+  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.32.tar.gz"
+  sha256 "2bfb7f84586997df0e72f47bb2590a8b80b8300d07420315bf4deb3299512591"
   license "MIT"
   head "https://github.com/Kilo-Org/kilocode.git", branch: "main"
 
@@ -27,6 +27,12 @@ class KilocodeCli < Formula
     depends_on "socat"
   end
 
+  # Allow package builders to use their verified host Bun: https://github.com/Kilo-Org/kilocode/pull/16539
+  patch do
+    url "https://github.com/Kilo-Org/kilocode/commit/b9bae5e0c4682970fcd2594e3c057d0eb76156f3.patch?full_index=1"
+    sha256 "2304e12011fed620f4bc9f7e3a59e510b98fd5776f74c19d8d40b8fcb0ca47e9"
+  end
+
   deny_network_access!
 
   def fetch
@@ -37,32 +43,13 @@ class KilocodeCli < Formula
   end
 
   def install
-    bun_prefix = formula_opt_prefix("bun").realpath
-    bun = bun_prefix/"bin/bun"
-    pin = JSON.parse((buildpath/"script/kilocode/bun.json").read)
-    source = JSON.parse((bun_prefix/"INSTALL_RECEIPT.json").read).fetch("source")
-    if Formula["bun"].tap.name != "homebrew/core" || source.fetch("tap") != "homebrew/core" ||
-       source.fetch("scm_revision") != pin.fetch("revision")
-      odie "Bun must be built by homebrew/core from exactly the source revision in script/kilocode/bun.json"
-    end
-    if Utils.safe_popen_read(bun, "--print", "Bun.version").strip != pin.fetch("runtime")
-      odie "Bun runtime version does not match script/kilocode/bun.json"
-    end
-    embedded_revision = Utils.safe_popen_read(bun, "--print", "Bun.revision").strip
-    odie "Bun embedded revision must be a full Git SHA" unless embedded_revision.match?(/\A[0-9a-f]{40}\z/)
-    # Bun getCommit() stamps Homebrew's GITHUB_SHA rather than its source revision in GitHub Actions:
-    # https://github.com/oven-sh/bun/blob/38afee6c84fcf48c0edb2466aa4b27d287a59c30/scripts/buildkite.ts#L119-L141
-    # Keep the manifest's source pin; only adapt the runtime guard after the exact-source checks above.
-    inreplace "packages/opencode/script/build.ts", "Bun.revision !== KiloBun.pin.revision",
-              "Bun.revision !== \"#{embedded_revision}\""
+    bun = formula_opt_bin("bun")/"bun"
     ENV["KILO_VERSION"] = version.to_s
     ENV["KILO_CHANNEL"] = "latest"
     ENV.delete "KILO_RELEASE"
     ENV["MODELS_DEV_API_JSON"] = buildpath/"models-dev-api.json"
     ENV["KILO_SKIP_BUNDLED_BWRAP"] = "1"
-    # Use the brewed Bun compiler/runtime rather than downloading an upstream Bun executable.
-    # The runtime equality guard compares against that same, checked Cellar executable's metadata.
-    inreplace "packages/opencode/script/build.ts", ": await KiloBun.stage(item)", ": process.execPath"
+    ENV["KILO_USE_HOST_BUN"] = "1"
 
     if OS.linux?
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
