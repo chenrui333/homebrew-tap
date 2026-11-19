@@ -2,19 +2,19 @@ class Swamp < Formula
   desc "Deterministic automation framework for AI agents"
   homepage "https://swamp-club.com"
   url "https://git.swamp-club.com/swamp-club/swamp.git",
-      tag:      "v20261118.034734.0-sha.dcaf9157",
-      revision: "dcaf9157f785e486964394ee4b6db336b29319a3"
-  version "20261118.034734.0-sha.dcaf9157"
+      tag:      "v20261118.201538.0-sha.67a843db",
+      revision: "67a843db685cd65e2b6bcac662e27c3b605b5c8f"
+  version "20261118.201538.0-sha.67a843db"
   # Upstream also grants the additional permissions in COPYING-EXCEPTION.
   license "AGPL-3.0-only"
   head "https://git.swamp-club.com/swamp-club/swamp.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "3569a1aa1ad623e02beff593a7629016b53c36fe7835d38abf3653af3c1fdc90"
-    sha256 cellar: :any,                 arm64_sequoia: "72d1dcf6b49f068791494f6ee95cc3d9f143fddd18c4208c734d28fac5bad33f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27f74c029a52281f38167bfd5316d0a22c5f41d40129fe911d6f8888bc22b373"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c48079d085ebbce46246ecab68b19aed7c612577586ca977846e263ba9e8a43"
+    sha256 cellar: :any,                 arm64_tahoe:   "b936705cc8a1b64d3b5efa9aa638873109b9e7476deafe94b3d39b38515b889a"
+    sha256 cellar: :any,                 arm64_sequoia: "79babc962bcd1ce0e06601a110741473c15154f209abc926f93df8f79caf5ec8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03ed168cb4822852ab3bc41d8067cf07017f1192f3acf6fdd8dbc583113c7e81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "622cf01e4a2030ad2ffe32fdf1af3dc8abfe5284a114e6118fa32645fb8a7201"
   end
 
   depends_on "node" => :build
