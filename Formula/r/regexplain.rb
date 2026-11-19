@@ -1,8 +1,8 @@
 class Regexplain < Formula
   desc "Explain and visualize regular expressions"
   homepage "https://github.com/kapilpokhrel/regexplain"
-  url "https://github.com/kapilpokhrel/regexplain/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "946bb593c24a9b1116ced80018657239377553882bb74fde96953244b9831194"
+  url "https://github.com/kapilpokhrel/regexplain/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "523b716162a6912e54473b1c7eb87e37dddaea06c80b50203281e8d5da80dbcf"
   license "MIT"
   head "https://github.com/kapilpokhrel/regexplain.git", branch: "main"
 
