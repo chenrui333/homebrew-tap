@@ -7,7 +7,7 @@ class Chanfana < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d70616d2019e99f0d6272b34a117639089fa2b71f2ad7ec1dfed6417b0dd2393"
+    sha256 cellar: :any_skip_relocation, all: "ca10ff35db69f66d570ba1d50039b81af5ebedd56ebbe03f63c15394d786cf68"
   end
 
   depends_on "node"
