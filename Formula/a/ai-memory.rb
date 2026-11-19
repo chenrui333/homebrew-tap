@@ -8,10 +8,10 @@ class AiMemory < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a5ce1ce8f6727dbcb92768ce2df41100adde61b436b737db4391eea97f4da96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e067b0937cd57906810a8868876b5a6849d24b16ea6ba3435295a5de2c92ba8"
-    sha256 cellar: :any,                 arm64_linux:   "0217f148a70f6cbbda30e290e52370d8be0cf27cf4246479430625cae2e35272"
-    sha256 cellar: :any,                 x86_64_linux:  "b7ac590cc09b38b8126fd4c6baf52810a4d878a9f995e0622100630ad206c584"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25af65a6d9df195f4c12913a22e6bf5edc56e02d062eadfd71311ac38465d897"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "890f06e1d4dae8fdf7c4b52ee107bf7010f95801a723f8f43218d8e3c5034034"
+    sha256 cellar: :any,                 arm64_linux:   "5d57e4d95d56bd7a2d212070571f5298491b5edcd3cc46378db358f5f8e0d8a7"
+    sha256 cellar: :any,                 x86_64_linux:  "57488c81b4c6e536e9fc6eed20d351df4efe24a28990bcd1251fff75b99976a2"
   end
 
   depends_on "pkgconf" => :build
