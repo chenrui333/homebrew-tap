@@ -7,10 +7,10 @@ class BbApp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "0199cf08ad9b214b0d27bc4b1a9e5f5b1dea2e351d01b0ec0bf7efddae643201"
-    sha256               arm64_sequoia: "24437e0f1a7719e820446ddf87e3d9ce9d9b56ff78837412bd0e917506eb57b8"
-    sha256 cellar: :any, arm64_linux:   "0786580ed2950ba8d5bd4cf56f064269f007bfb34d4c5143e25c6e8cb34755a2"
-    sha256 cellar: :any, x86_64_linux:  "d9b45562151ff079c342a5e2e63d2c44b3c2412e23f51fa812a940da13035dac"
+    sha256               arm64_tahoe:   "29393ba764d3e20d163dba3fb8094f84f432675f6e5838af11bf3c7656583c9f"
+    sha256               arm64_sequoia: "5a1c9209565823847fe3e0093c752edcfcfe77c6bdf1e7b2c22ce2c51d6509c4"
+    sha256 cellar: :any, arm64_linux:   "cfea17da32ad7076da7de751c23c04a6ca717e5e8a5fb8584fd91a625cb8d07f"
+    sha256 cellar: :any, x86_64_linux:  "7b6d50c62913703a5f4f24300a737d7648679e2f8ac2222fa1be9e82b9c47e06"
   end
 
   head do
