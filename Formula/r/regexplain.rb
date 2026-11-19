@@ -1,18 +1,17 @@
 class Regexplain < Formula
   desc "Explain and visualize regular expressions"
   homepage "https://github.com/kapilpokhrel/regexplain"
-  url "https://github.com/kapilpokhrel/regexplain/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "946bb593c24a9b1116ced80018657239377553882bb74fde96953244b9831194"
+  url "https://github.com/kapilpokhrel/regexplain/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "523b716162a6912e54473b1c7eb87e37dddaea06c80b50203281e8d5da80dbcf"
   license "MIT"
   head "https://github.com/kapilpokhrel/regexplain.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "882330a7c7c064a5badbfae21680b92ec4fac32676d41a5ada4477b16da1b2ca"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aa20df28878d4b72c8f3d8267070654d8273e843047faf30f6b391cefd4b352"
-    sha256 cellar: :any,                 arm64_linux:   "6a4ceae4f7568d32c056b37e606732279b16a7bbb2f391501c70668f12329eba"
-    sha256 cellar: :any,                 x86_64_linux:  "133ee7d7181bd36c26e04e932fbbe728929063d9cb35dded81798bdcadd440f3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "50647d1c31bb6e11c11d384d375bd4e4ce82ed5a7870a61d15f898210d2693e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27aaabc2d5c3acb04674843f502a9a91953df1ac9658ef4a61461470bbec6368"
+    sha256 cellar: :any,                 arm64_linux:   "822cf69d497405cd504efafb9b19f34b7ec143db7d4329b539508382ec99af67"
+    sha256 cellar: :any,                 x86_64_linux:  "fdb67f5dbe7f8a0e89489a1d2851148abfb19ea04018776cff744c13f3137789"
   end
 
   depends_on "rust" => :build
