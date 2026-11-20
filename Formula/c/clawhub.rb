@@ -1,13 +1,13 @@
 class Clawhub < Formula
   desc "Install, update, search, and publish agent skills"
   homepage "https://clawhub.ai"
-  url "https://registry.npmjs.org/clawhub/-/clawhub-0.26.0.tgz"
-  sha256 "c9af8da813a14db0e2e6b380ec859733bf966ce39c56ca0e79bad128ee40d745"
+  url "https://registry.npmjs.org/clawhub/-/clawhub-0.27.0.tgz"
+  sha256 "7fd229445ad4f23938384035b25afdb658083839b6ed205eca3074b5d67bbe79"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "769042d6ae7b3949c16fe7e35e7900b14d467bc3bee690847882f5ce220b74f6"
+    sha256 cellar: :any_skip_relocation, all: "dbae531a0f84661506576698ff7958c3c53ddef8b6ea8c0844b9e112644e8c70"
   end
 
   depends_on "node"
