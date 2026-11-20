@@ -7,10 +7,10 @@ class Testronaut < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e3a35ead329dbae7a3be53551f43d869907a92d958fde5c11dd59ffa3a4a903b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3a35ead329dbae7a3be53551f43d869907a92d958fde5c11dd59ffa3a4a903b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cbaab2eb0a2ef6bf6fd4963b4ca9ecd841bacd5d3254b7640ee98e18187a8e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cbaab2eb0a2ef6bf6fd4963b4ca9ecd841bacd5d3254b7640ee98e18187a8e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e45007b309210a5c54975884c4bda8d33d8013957ab470c427be91fee0f98684"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e45007b309210a5c54975884c4bda8d33d8013957ab470c427be91fee0f98684"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f3beb40b413b289f8153ebaf8b7b1576468d58e5c6bf0a5024fa85dc3f7f8b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f3beb40b413b289f8153ebaf8b7b1576468d58e5c6bf0a5024fa85dc3f7f8b0"
   end
 
   depends_on "node"
