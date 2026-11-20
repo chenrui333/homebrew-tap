@@ -1,17 +1,17 @@
 class Omp < Formula
   desc "Terminal coding agent with multi-model support and native tools"
   homepage "https://omp.sh"
-  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v19.0.0.tar.gz"
-  sha256 "54dbd99d4b261feb29df5ec1c7f9d310a68d17d084174b684eb1904a38d4fbfd"
+  url "https://github.com/can1357/oh-my-pi/archive/refs/tags/v19.0.1.tar.gz"
+  sha256 "f13a367840c5eee98576e923b867859498cedf47fecd1c23c48ecc5e7979fc37"
   license "MIT"
   head "https://github.com/can1357/oh-my-pi.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "8e5258311594ecf339a0543e4b54216ee928b2b7542a73a0e876664b005041a7"
-    sha256 arm64_sequoia: "c4a5e073371f2c9df67927f7bef8e8f34957fcaae85498ff7147a02ecf2202ac"
-    sha256 arm64_linux:   "721ef2e3722b482f4583638b64ae5de9f2f04d230b4037fd239af69d7ebfa4e2"
-    sha256 x86_64_linux:  "f89f4b2cb6259c709a342b1d4234e0f813a39eb3a577ac37d0939df64cbd3cd6"
+    sha256 arm64_tahoe:   "e32d4a3f4bec2d7a64464bf14059d8291b6aad6e7bc2d07fc076ef8c67f243bf"
+    sha256 arm64_sequoia: "3dd95a120637a1939831bc2995e8f23f0e6598e9f760220e5a08372f07f4042b"
+    sha256 arm64_linux:   "413b8119f09c5d430f86017b36be9fbc18085288263019ab14fe9b7e5a120f8f"
+    sha256 x86_64_linux:  "841210e34ffbc3751744d8f5294f340fd5c2553fc899ece9eb05b55ea91410d6"
   end
 
   depends_on "bun" => :build
