@@ -8,10 +8,10 @@ class Sub2api < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb2b6ba4e2929f2dbb3530f2388731c848a24075b4bf653257ae7b41e941c0cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb2b6ba4e2929f2dbb3530f2388731c848a24075b4bf653257ae7b41e941c0cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7abc72e49a40d50ffb7ba9625047fc008bb3c8bcb823af38b31ff244e0d65c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3bd733265e95380c17c8d72d916f60001543412b84aa5509b2facee8484f3af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "20b25e0473287cbe0914bcf7d3c3fe1c5a23cb6f96fa2c0ad051e85e876cc8cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20b25e0473287cbe0914bcf7d3c3fe1c5a23cb6f96fa2c0ad051e85e876cc8cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19e7bdec805de0320257e901ce9fe00bd3a3e6dec828d6f5a5490179dea80b45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e04e872033ea29aadd7bb892109dc4b721b788dc3c815703b1e8de999b0e93cc"
   end
 
   depends_on "go" => :build
