@@ -8,10 +8,10 @@ class Xled < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcf667cb5e79f53d387839bf3b7a6dbf97dd09ff344d52d8638157bb95f3a2bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9797f47c1e2a4ae1e5011435a521cfa90dd36d437f7558127706f14e8c874b7"
-    sha256 cellar: :any,                 arm64_linux:   "683559744b462a188b0f86b99ef517bb1478eb71e794b1fcaa2b8ead6088ce66"
-    sha256 cellar: :any,                 x86_64_linux:  "f10d8acfe82474064200b22395af6d699b810cc430097ec202c1e36d436edb75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3efc66527b312efd8635bab01b54d2ab3882f07556f67b85024dd4d1a824b7a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18b24b9756d2fa161754dced550135e1d6efb5fad01ac5b03eafe3c61a8de9f9"
+    sha256 cellar: :any,                 arm64_linux:   "118c34236e0a2f9072959c44b18b7b51f44efa2a57ec95d88e488f6f21a99ecc"
+    sha256 cellar: :any,                 x86_64_linux:  "f4a13aca35b740bfaf2bda9c8b1b8275dda23fc780b9453233a246d0f593ce56"
   end
 
   depends_on "rust" => :build
