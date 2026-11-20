@@ -8,10 +8,10 @@ class Edamame < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52369a8b6ce7f9e11164106e41e34b65503b17f717ebcc1e11212632f5f8a981"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1e6bf1fe97949517ba0b19cdee8e38699eb9b8bfd35f679ab1b572784534928"
-    sha256 cellar: :any,                 arm64_linux:   "0a258d4e1df2be1969b58c4354201b6b1eb915adc0d8d0a19b36656d9cf56896"
-    sha256 cellar: :any,                 x86_64_linux:  "4e2c08724f20d2900006e99f1a4f53bdd33ac91e43aaf98ac161d9bf6a889b22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3583e2f2b27519cb1fa85b17aaad9fb5a055f6aed55beba2e0d4f31dea28f578"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4131b3e989993941f658d3b29f3743d59c70c35b8b9c986a70b763ffa948132b"
+    sha256 cellar: :any,                 arm64_linux:   "5512db090347eb45c52e044311e4e2871296190fc6778de0897c8b62469afbe7"
+    sha256 cellar: :any,                 x86_64_linux:  "4d3dfac2adc973eeddfe146316eddb3efd78ee0884ad399ded91823b04e8fc66"
   end
 
   depends_on "rust" => :build
