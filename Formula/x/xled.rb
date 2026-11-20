@@ -1,17 +1,17 @@
 class Xled < Formula
   desc "Transform tabular data using regular expressions"
   homepage "https://github.com/excelano/xled"
-  url "https://github.com/excelano/xled/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "4fcb5425d576db9f609ceb698915e5c3d72d2d94fe6b44f381a6f9ec18d9408b"
+  url "https://github.com/excelano/xled/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "19298b6005dd1c2d64aeec7ebdf27272f54bb5ca4b41251f96f195665c796790"
   license "MIT"
   head "https://github.com/excelano/xled.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcf667cb5e79f53d387839bf3b7a6dbf97dd09ff344d52d8638157bb95f3a2bd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9797f47c1e2a4ae1e5011435a521cfa90dd36d437f7558127706f14e8c874b7"
-    sha256 cellar: :any,                 arm64_linux:   "683559744b462a188b0f86b99ef517bb1478eb71e794b1fcaa2b8ead6088ce66"
-    sha256 cellar: :any,                 x86_64_linux:  "f10d8acfe82474064200b22395af6d699b810cc430097ec202c1e36d436edb75"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3efc66527b312efd8635bab01b54d2ab3882f07556f67b85024dd4d1a824b7a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18b24b9756d2fa161754dced550135e1d6efb5fad01ac5b03eafe3c61a8de9f9"
+    sha256 cellar: :any,                 arm64_linux:   "118c34236e0a2f9072959c44b18b7b51f44efa2a57ec95d88e488f6f21a99ecc"
+    sha256 cellar: :any,                 x86_64_linux:  "f4a13aca35b740bfaf2bda9c8b1b8275dda23fc780b9453233a246d0f593ce56"
   end
 
   depends_on "rust" => :build
