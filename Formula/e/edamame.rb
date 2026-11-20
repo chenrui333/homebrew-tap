@@ -1,8 +1,8 @@
 class Edamame < Formula
   desc "Terminal Markdown editor that stays rendered while you edit"
   homepage "https://github.com/mijowi/edamame"
-  url "https://github.com/mijowi/edamame/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "952c8972d2b272876f2f45a5ca83dd3d686dc8bc7655270d823402ae4634f515"
+  url "https://github.com/mijowi/edamame/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "490f473431dda87857337a1e2cee744499b33deff79b2677b26588fc608916d9"
   license all_of: ["Apache-2.0", "OFL-1.1"]
   head "https://github.com/mijowi/edamame.git", branch: "main"
 
