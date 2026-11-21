@@ -1,17 +1,17 @@
 class Graphjin < Formula
   desc "Build NodeJS / GO APIs in 5 minutes not weeks"
   homepage "https://graphjin.com/"
-  url "https://github.com/dosco/graphjin/archive/refs/tags/v3.21.21.tar.gz"
-  sha256 "fff8cef1b9fb129a3e8b83db6e6b8c6f2c19eddf971a58239dcaa93edf3fa69f"
+  url "https://github.com/dosco/graphjin/archive/refs/tags/v3.21.22.tar.gz"
+  sha256 "ba7d66bd0d2dbcac24a4ab04d33350561519d88b444634c5b7c66f15832734e2"
   license "Apache-2.0"
   head "https://github.com/dosco/graphjin.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c2d7f5d6b0e1ac2d5e0b3f020d8bd272d8b4a135d8e49ca57e716e938f2abcf2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33e5e9c2c1142ad993ef310c62c1f5f0ab77356a5b6b3a0d5525f6156e6f5986"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69677f26df6ba6c63a4a43a3387a04986707c24d56051e514e0af03ec75590d0"
-    sha256 cellar: :any,                 x86_64_linux:  "dc6fd1b5d2198240247d249a2962ae64d19c3b4a6a1a1755ec14fffb7b1f24ac"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "22366f086847ff09cfbd2b37213aa293c48cb6002726b77b55b06e966ce396c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0eaf42cd0c944199df6052f54021d39639f17b62efa6a1e3284a53763d654a83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98ecd5e810249f92199511a1aa892f365bfc8d301144d9c86cf4bcafbdfc1f32"
+    sha256 cellar: :any,                 x86_64_linux:  "4fb7eb497c178025d141eb94d5054139569f8822beba07e873923b354f612ce4"
   end
 
   depends_on "go" => :build
