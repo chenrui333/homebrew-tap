@@ -7,10 +7,11 @@ class NestCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98ecb9d5aed70cda0c0d92e636c8d539a869e0af1def3add9301c5dc29ffa899"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98ecb9d5aed70cda0c0d92e636c8d539a869e0af1def3add9301c5dc29ffa899"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "de10db87758bf909070e81c1fd805897acb324fc63e20a832fbc366accd93348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de10db87758bf909070e81c1fd805897acb324fc63e20a832fbc366accd93348"
+    manifest_sha256 "619e7b47d8f005a76fbb374827dec27b1b10c00de3b5e0bb76de07909c312101"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3be7869aea5ab9201fc04bcffdd4e9942c03cf2a6f7e64e68c6eb353684a3abb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3be7869aea5ab9201fc04bcffdd4e9942c03cf2a6f7e64e68c6eb353684a3abb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51ea1fe9dbb9084c6a002592dfaa63f9002cf5ba424102f9e50411120f6d4da9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51ea1fe9dbb9084c6a002592dfaa63f9002cf5ba424102f9e50411120f6d4da9"
   end
 
   depends_on "node"
