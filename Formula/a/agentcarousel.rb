@@ -1,17 +1,17 @@
 class Agentcarousel < Formula
   desc "Unit tests for AI agents with LLM judge scoring and signed evidence"
   homepage "https://github.com/agentcarousel/agentcarousel"
-  url "https://github.com/agentcarousel/agentcarousel/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "c668a8a43b17fb1de66629ccfab53bd08a0ded1e960c25a74be10d4d4bf14da5"
+  url "https://github.com/agentcarousel/agentcarousel/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "032a6c178f6f395a92d81f0acefd26022f5a2776a3cb0020b615e5434fec7f1d"
   license "MIT"
   head "https://github.com/agentcarousel/agentcarousel.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76e36bdd4c79063d9682a17a982f349350599dcefb5ad1b552db01d90a6d65bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45b19c07fbb86cf1675be40db054d2fb9041c75656b3aea05e6ac740b7e051c7"
-    sha256 cellar: :any,                 arm64_linux:   "d393ee6e4b82a4f825bd0b0f840a235d0a6415a609774e7fb3bfdc04220150eb"
-    sha256 cellar: :any,                 x86_64_linux:  "ea28158b6e576dc2af99be4a7860987d8ea1f9a749eb898d5d2dac6ca50a95cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc3b6c14c7da20c1c0814054801c3614b534b5b7898b5f653865dcb876a42094"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42ad39d8e74faf6656c707e2d79028c8d4df90df04380dd10ce9ff27f39bbe8f"
+    sha256 cellar: :any,                 arm64_linux:   "175b7e6cfb4a15a6f6f9af4f50548c0a55a178999dd4e5aa760e66cc2d76fa2e"
+    sha256 cellar: :any,                 x86_64_linux:  "e0446ee5da1bf157cd239629cae6708bc25ecf726eb9bcea1a8d69b187d291cf"
   end
 
   depends_on "rust" => :build
