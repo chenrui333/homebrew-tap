@@ -1,8 +1,8 @@
 class Agentcarousel < Formula
   desc "Unit tests for AI agents with LLM judge scoring and signed evidence"
   homepage "https://github.com/agentcarousel/agentcarousel"
-  url "https://github.com/agentcarousel/agentcarousel/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "032a6c178f6f395a92d81f0acefd26022f5a2776a3cb0020b615e5434fec7f1d"
+  url "https://github.com/agentcarousel/agentcarousel/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "f5aaa51f3a8d1fe4e139b99945d39590a858e78b0f5fd02aafa5c385cae13007"
   license "MIT"
   head "https://github.com/agentcarousel/agentcarousel.git", branch: "main"
 
