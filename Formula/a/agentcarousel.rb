@@ -8,10 +8,10 @@ class Agentcarousel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "76e36bdd4c79063d9682a17a982f349350599dcefb5ad1b552db01d90a6d65bb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45b19c07fbb86cf1675be40db054d2fb9041c75656b3aea05e6ac740b7e051c7"
-    sha256 cellar: :any,                 arm64_linux:   "d393ee6e4b82a4f825bd0b0f840a235d0a6415a609774e7fb3bfdc04220150eb"
-    sha256 cellar: :any,                 x86_64_linux:  "ea28158b6e576dc2af99be4a7860987d8ea1f9a749eb898d5d2dac6ca50a95cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fc3b6c14c7da20c1c0814054801c3614b534b5b7898b5f653865dcb876a42094"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42ad39d8e74faf6656c707e2d79028c8d4df90df04380dd10ce9ff27f39bbe8f"
+    sha256 cellar: :any,                 arm64_linux:   "175b7e6cfb4a15a6f6f9af4f50548c0a55a178999dd4e5aa760e66cc2d76fa2e"
+    sha256 cellar: :any,                 x86_64_linux:  "e0446ee5da1bf157cd239629cae6708bc25ecf726eb9bcea1a8d69b187d291cf"
   end
 
   depends_on "rust" => :build
