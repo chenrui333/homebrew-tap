@@ -1,8 +1,8 @@
 class Gno < Formula
   desc "Local knowledge engine with hybrid search and MCP integration"
   homepage "https://gno.sh"
-  url "https://github.com/gmickel/gno/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "a072b5b5572206a059d27d5a75c81b1b4840abf008d6469de58bf2baf7e5c87f"
+  url "https://github.com/gmickel/gno/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "92d052939db768cb4f729584441347560d708dc5dc6962994b9dd26ceb4fae78"
   license "MIT"
   head "https://github.com/gmickel/gno.git", branch: "main"
 
@@ -85,9 +85,10 @@ class Gno < Formula
       (libexec/"native").install Dir["dist/vec0.{dylib,so}"]
     end
     # Resolve the locally compiled extension, not npm's native platform packages.
+    vec0 = shared_library("vec0")
     Dir["node_modules/sqlite-vec/index.{cjs,mjs}"].each do |file|
       inreplace file, /  const loadablePath = .*;/,
-                     "  const loadablePath = '#{libexec}/native/vec0.#{OS.mac? ? "dylib" : "so"}';"
+                     "  const loadablePath = '#{libexec}/native/#{vec0}';"
     end
     # Keep Sharp's interpreted @img/colour dependency when pruning replaced native platform packages.
     rm_r Dir["node_modules/sqlite-vec-*", "node_modules/@node-llama-cpp",
@@ -106,12 +107,14 @@ class Gno < Formula
     buildpath.glob("#{native_build}/**/{CMakeFiles,CMakeCache.txt,compile_commands.json,build.ninja}",
                    File::FNM_DOTMATCH).each { |path| rm_r path if path.exist? }
     rm_r "vendor/fts5-snowball"
-    platform = "#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.arm? ? "arm64" : "x64"}"
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "x64"
+    platform = "#{os}-#{arch}"
     resource("fts5-snowball-source").stage do
       system "make", "-C", "snowball", "CFLAGS=-fPIC"
       system ENV.cc, "-fPIC", "-shared", "-O3", "-I#{formula_opt_include("sqlite")}",
              "-Isnowball/include", "-Isqlite", "src/fts5stemmer.c", "snowball/libstemmer.o",
-             "-L#{formula_opt_lib("sqlite")}", "-lsqlite3", "-o", "fts5stemmer.#{OS.mac? ? "dylib" : "so"}"
+             "-L#{formula_opt_lib("sqlite")}", "-lsqlite3", "-o", shared_library("fts5stemmer")
       (buildpath/"vendor/fts5-snowball"/platform).install Dir["fts5stemmer.{dylib,so}"]
       (buildpath/"vendor/fts5-snowball").install Dir["LICENSE*", "COPYING*"]
     end
