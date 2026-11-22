@@ -14,23 +14,8 @@ class Matterhorn < Formula
   head "https://github.com/matterhorn-chat/matterhorn.git", branch: "develop", using: MatterhornGitDownloadStrategy
 
   stable do
-    url "https://github.com/matterhorn-chat/matterhorn/archive/refs/tags/90000.1.1.tar.gz"
-    sha256 "edc87cc58fa5b3bffc1e748c3d4435caf179d2f112998449466212d62d54ae2d"
-
-    # Support the deepseq bundled with current compilers.
-    patch do
-      url "https://github.com/matterhorn-chat/matterhorn/commit/821bcdf97a6f0ad1263ff25f344ecfa25d2c21ac.patch?full_index=1"
-      sha256 "fc0bcd96a40c17673e6b1a7472dfbe1dc55f608861c86dc17ab91bcc42f4770d"
-      type :backport
-      resolves "https://github.com/matterhorn-chat/matterhorn/issues/860"
-    end
-
-    # Prerequisite for upstream's newer dependency compatibility fix.
-    patch do
-      url "https://github.com/matterhorn-chat/matterhorn/commit/8ffbeff58aa3d7c2c40cbd02943ca371966e6c61.patch?full_index=1"
-      sha256 "616b81ec686accdfcd0899bd41252e4f8113c064e62b336c37fda78dbb8c8ca7"
-      type :backport
-    end
+    url "https://github.com/matterhorn-chat/matterhorn/archive/refs/tags/90000.1.2.tar.gz"
+    sha256 "aaa649015f4a62f29ff86504d4165994d708c0ec852b0c0f1f3b203656c12630"
 
     # Support newer UUID dependencies without forcing an obsolete compiler.
     patch do
@@ -42,10 +27,11 @@ class Matterhorn < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71721fb0c3cd0ec34d17f3ba121e650c4d84773803f818ef0814ba6a9b9b339f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0b155426dbef3b1f320fa16b184623e7c71fa8942b495bedf7e2ebc7d09215b"
-    sha256 cellar: :any,                 arm64_linux:   "cd69e3168281eb1af74d594a4c8bec00edcb6c42c22d7ae89e50f02bf2f37f10"
-    sha256 cellar: :any,                 x86_64_linux:  "18b9ec889d78bebd1d03eb4ee8c43e83c5088f57e6491bb3403b4a0891e096bf"
+    manifest_sha256 "873e412a9525d7e0bc9d18a993a95716d717c98f342ac5fb3abddb6b7a8937cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7c76bb07df2ae399bc086e1a0f1ceca200b4a443423787ea3cd5504177eca33f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "637459c823e4e25618eedf0cb79fcfda69ee339431122adacb5beb2fb84a78f2"
+    sha256 cellar: :any,                 arm64_linux:   "d42a6c779e9dbbce2735e0b5522a84c9997df56c7eb0537fb4dbd6a7e074c0b8"
+    sha256 cellar: :any,                 x86_64_linux:  "6c6bd3b98fd6541b342d17b4c966df33b497188f843c6a321375209c85455601"
   end
 
   depends_on "cabal-install" => :build
