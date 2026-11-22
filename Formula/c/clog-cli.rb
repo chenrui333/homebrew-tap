@@ -8,10 +8,11 @@ class ClogCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7d54471ab1623e8c3733f3809734e000687b3bde8b150a2a63e1e038067c8b87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f40006c4b88ec190e23a2631a51522d5572c7bf2929a4385a2e55f842c458e99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b56a61f5c80c9024c715b101a6e4f0d791146b0cc5e1742108d7521b55724e31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab5c928d4874973cfbc9e840b05bc1bde4a6f55b2ce76c57b714d52a5aef59c0"
+    manifest_sha256 "51d2768b8840badf6044cd62fdec740a25153047e741ce29ded38f274ddbabd5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1404b8bb3c439615ab76b409d329a3591c03afcd55ec20bc6806b3f458a2fee4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb21c8216976e6303c6693ab5d6c277df4571ed710172d4cce8759a325a50ba1"
+    sha256 cellar: :any,                 arm64_linux:   "ec042e8354faa82b45401dfecc7f311b3c5dcb2e22362d96b74036abec60f347"
+    sha256 cellar: :any,                 x86_64_linux:  "5af48aa45ccd1aa4620318e1f916e1d6e3a81f19e63553f1cbfd11718d3e1df4"
   end
 
   depends_on "rust" => :build
