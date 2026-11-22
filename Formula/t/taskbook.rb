@@ -8,11 +8,11 @@ class Taskbook < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d23499bc7cc0a6baab45d4bc565607654049585737cfa3cb6108d7ebd355a2ab"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40829a3bd9effbc88adf8af2d3c777d44cab5116ad16cd2c99d0df4721293fb1"
-    sha256 cellar: :any,                 arm64_linux:   "000bf86e80159e243f9ecda1e5d89d3ecd65e425943b49234f84b264a64808d4"
-    sha256 cellar: :any,                 x86_64_linux:  "318711639ac2ed4dc297245b43df79906123549cd3aab794dd35c018ba2b4f70"
+    manifest_sha256 "9e89a507c1a7d8c7154d98a656d5b350a480627b0485ce21e29fc7615b170f2b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0294d4d5627d5f10c98cc8cd0cfa05ddfa07c0d0ddba5498ad66455c49eb131d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f327b2a1cd356c29dc8833d223d7f17b5502cc0147e8403a42f3aa93bb9c2c5c"
+    sha256 cellar: :any,                 arm64_linux:   "fa48ea39f13b3b112c516e8cb1a16381f81846ddb6f5cc472a2da7d76067da1c"
+    sha256 cellar: :any,                 x86_64_linux:  "a50d93010fab7d0ec268c61666cc1f121d47021e9f87feed217a1a3f3b2174cd"
   end
 
   depends_on "rust" => :build
