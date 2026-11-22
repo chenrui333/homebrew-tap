@@ -8,10 +8,11 @@ class Voxtype < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c195656ca66ec7497a4346626a697644569ee22b1a9606de39b38b43bb7c951f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24dbd764b2c8718ef29e2b1e3b9b0632c6ea739654578bf78646f8ad74ec8974"
-    sha256 cellar: :any,                 arm64_linux:   "364bdeffc525e8110973012a438fbbeafa74a87d58e25f01d2d34bd42a85ac39"
-    sha256 cellar: :any,                 x86_64_linux:  "2e749415a5aee0115c394098e1ceaa72b6d1c96985fbcb90f31acc520f15946c"
+    manifest_sha256 "60ab71feba49fb92a0a8522b2489f43ccb3c4b758715e0b18e2671f3826c2ca1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a5dd7eff0c942baf5ff6b5a9e646deaa057e714139d8d31d82b9fadc80cf61c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10d92127d0745ae5fcc0d99be71847da7a184a004ab421705246f61f7c3937f6"
+    sha256 cellar: :any,                 arm64_linux:   "022501fc512b28267aba3b2993c2948c780cd623ca022eaa365cd8fae30cd179"
+    sha256 cellar: :any,                 x86_64_linux:  "14fd8001bcaf3b748ed19643dccd817de191cda89136e6c43905bce923200b51"
   end
 
   depends_on "cmake" => :build
