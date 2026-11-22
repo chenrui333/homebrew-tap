@@ -8,10 +8,11 @@ class Codegraph < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "78414cab3dc3ed767247e9779e6beae008bf96387aafae95abfca3d284651dfe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "927b61d01dfae5c1f2f0f7b459b1cacaced3318c9e787f1a3e09336a67603928"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3230bbd85bf01a80529dbe32b4d28415f172a719d662babe25c618efd7707dc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e37dbb8bc4beb8767691b09e580089edda6cc1f217659a5ed34265a5e95ba61"
+    manifest_sha256 "f02b89dfb84378296093743822783b33fc5adb2c7589094fd75e40bffee1b874"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c23ab5efd29c107509c7c01bc70d1521fcc4715128b4518d0db640e8c58dc5e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7bb45fba416086f4056268ad62e0b03933e40469fe7501df8f49698d771dad8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb57cdfb630604b8742ec121466b66ca5dc8a36905f9ce1fe7b0498bfca43387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72085b58b2e8c5eac96e04e7a4d28d48ed719a6b5c50ed9fadb3c223f870a314"
   end
 
   # Upstream blocks Node >=25 because its tree-sitter WASM grammars can crash V8.
