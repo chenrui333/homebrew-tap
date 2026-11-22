@@ -9,10 +9,11 @@ class OhMyOpenagent < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "d4fd9cff0f4b76fe9e8230f95ae9fb71a373827cfb6053dfbd08f11bb151ac68"
-    sha256 cellar: :any, arm64_sequoia: "6d2404c6e50c2ec97bad53982a3246c9161a30b8f473e9989df92f34b7e8fdc9"
-    sha256 cellar: :any, arm64_linux:   "9aad86719c5f4a9626f6fbad33d946dfeb7d29d0fa97a53418c3467dd5649647"
-    sha256 cellar: :any, x86_64_linux:  "02a2aba7e7c62ba24d7d47c057dae8d40ca72326e5254951ecf94898c2e07da4"
+    manifest_sha256 "99c54c964e577dfa3d1299c52cbc204ca25ff26ff957af2ddca44a8378653268"
+    sha256 cellar: :any, arm64_tahoe:   "24c75de6a818dbe5b993eb62b594e549da4a873dae36a8dff850046ad72a60f3"
+    sha256 cellar: :any, arm64_sequoia: "893391d8e98df424323901cdafa23fa8fc6f5ab64e3ec6401b21fd6eb2e8e6de"
+    sha256 cellar: :any, arm64_linux:   "bae5f9a04bfc363f5e4feaf9af6a4fa1ed385bf303687e875ad39123d9edba88"
+    sha256 cellar: :any, x86_64_linux:  "142d3d5e2ca18cc846b47921b01f8739557d6afa723d53d9860b45b77ab5c349"
   end
 
   depends_on "esbuild" => :build
