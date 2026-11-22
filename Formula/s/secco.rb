@@ -1,8 +1,8 @@
 class Secco < Formula
   desc "Local package testing made easy"
   homepage "https://secco.lekoarts.de/"
-  url "https://registry.npmjs.org/secco/-/secco-3.1.2.tgz"
-  sha256 "54c7b9e12cff9abc0f33405780c5f54d49e20b940456e01430ba2f336615c2bc"
+  url "https://registry.npmjs.org/secco/-/secco-4.0.1.tgz"
+  sha256 "ee35ef438aedd47207203f64e3ee89997c4b78b2a8a0e0f4ace09649c0238ce3"
   license "MIT"
 
   bottle do
@@ -32,7 +32,7 @@ class Secco < Formula
     # Remove incompatible pre-built Bare module binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules.glob("{bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
+    node_modules.glob("{bare-buffer,bare-fs,bare-os,bare-path,bare-url}/prebuilds/*")
                 .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
@@ -43,20 +43,14 @@ class Secco < Formula
       {
         "name": "test-package",
         "version": "1.0.0",
-        "description": "A test package",
-        "main": "index.js",
-        "packageManager": "node",
-        "scripts": {
-          "test": "echo \\"Error: no test specified\\" && exit 1"
-        },
-        "author": "",
-        "license": "ISC"
+        "packageManager": "npm@10.0.0"
       }
     JSON
 
-    (testpath/".seccorc").write "source.path=\"#{testpath}\""
+    system bin/"secco", "init", "--source", testpath, "--yes"
+    assert_path_exists testpath/".seccorc"
 
-    output = shell_output("#{bin}/secco test 2>&1", 1)
+    output = shell_output("#{bin}/secco --scan-once 2>&1", 1)
     assert_match "You haven't got any source dependencies in your current `package.json`", output
   end
 end
