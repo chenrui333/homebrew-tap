@@ -1,17 +1,18 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.22.10.tgz"
-  sha256 "5d0f29f0df08913c16028fc5c9aa1f2de02dcdda121b81f49a6f69b33524aa45"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.22.11.tgz"
+  sha256 "d9ddf1b56f963211bb721a441886a6d78adc040854b18b08df3f9f3809649a94"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "254f54726e6ec63cac9e32f12f806757ac060050a6120361f91f2d9c38923b98"
-    sha256 cellar: :any, arm64_sequoia: "349e0a5f92e07ba7971342ce47cd3142fdd562bac45f8ac04e28941dc8f83b65"
-    sha256 cellar: :any, arm64_linux:   "6d1a736636e785189fa0824c2a9a16353d8a962f0db817b8ee4c3b161de7d331"
-    sha256 cellar: :any, x86_64_linux:  "cee37c89e382e1bc1ab2d2fa51da15ca6f33c6ced91702ba9d3c8dd8861adb1a"
+    manifest_sha256 "9f1b9d668f69b28527126dc18fdfbf9620f84d8855f89d0c1c5f67e98d8d6eea"
+    sha256 cellar: :any, arm64_tahoe:   "85cb14b8076b9a4b4e3db06faa994d1a139158a828dda62b43e8a9ffe112d40b"
+    sha256 cellar: :any, arm64_sequoia: "76e9b25038c71be20074c107df84a5c2fe9e61a838817187c82c612f5748e1ee"
+    sha256 cellar: :any, arm64_linux:   "98f324a36b56379793cec1078972c427d27fa6df1936c618a61be0010baf23c1"
+    sha256 cellar: :any, x86_64_linux:  "73c43b40e3c511ecece7ea1954b8657ebb2bc20ddab3794f8504932e385db643"
   end
 
   depends_on "rust" => :build
@@ -20,6 +21,12 @@ class OhMyCodex < Formula
   deny_network_access!
 
   def fetch
+    # The 0.22.11 release left the workspace crates at 0.22.11-dev in Cargo.lock.
+    # https://github.com/Yeachan-Heo/oh-my-codex/pull/4109
+    if version.to_s == "0.22.11"
+      inreplace "Cargo.lock", 'version = "0.22.11-dev"', 'version = "0.22.11"'
+    end
+
     system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
     system "cargo", "fetch", *std_cargo_fetch_args
   end
