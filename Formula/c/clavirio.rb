@@ -8,10 +8,11 @@ class Clavirio < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6a68804f4401c9741b6a6124e09a720679f10e5c4286991dc1a6e55bc06b19e2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e793518a319e7e5267c1e2bf814f416eed58f10e097ecafcd3c34b10989838b"
-    sha256 cellar: :any,                 arm64_linux:   "0fa140e93d864229b65574f2bcad47030d3d8503f6d10ae6ab78875a85e92e12"
-    sha256 cellar: :any,                 x86_64_linux:  "f46dfe2f00877dbc94ed8acb866f9dc8a4f0b2e2aa4bb9082372f3bed39c58fc"
+    manifest_sha256 "4f413b02b83490e61627fb916f6998f6a93a7c02517f891f4434c5a33cd2d028"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b7fedb3ec9c2bd4b35de3a9e77f5d0981727317ee24902b3e84896c3f484d21e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee4a90b75556ee2e9b8a41908f9ffdb0d05f761438a6eb212c94ad2fd6a56fcb"
+    sha256 cellar: :any,                 arm64_linux:   "1ab309161fecb888cc3d7978ffcb64c8525d264ee63f9001f80e594832c1348c"
+    sha256 cellar: :any,                 x86_64_linux:  "817572c4881e8a81cc25e54ad8bd8ff6e02c26dbb675ed9777890e0a1ce15df1"
   end
 
   depends_on "rust" => :build
