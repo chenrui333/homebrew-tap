@@ -8,7 +8,8 @@ class PiAcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8d518abe60b986398d8edd8600fe44d2ea092f331f2009f7a944f59a37300401"
+    manifest_sha256 "5fefdb2409eaaf4664fc16688f956a9deeba3b3b4e19a1290c4ccfe5f3a7b3d9"
+    sha256 cellar: :any_skip_relocation, all: "2ec60fc981ca0311bfc9f2834313d085fbb4ab271bd663055f34c1d60a0dbf12"
   end
 
   depends_on "node"
