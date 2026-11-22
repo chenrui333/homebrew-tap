@@ -7,11 +7,11 @@ class Secco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "f223ba91ca5b1d7b11a6a6a475c955c1761f7b227aeaaed83f5a1a3f43370514"
-    sha256 cellar: :any, arm64_sequoia: "f223ba91ca5b1d7b11a6a6a475c955c1761f7b227aeaaed83f5a1a3f43370514"
-    sha256 cellar: :any, arm64_linux:   "59e1662973274dec5b4c7056ac7419e6531358953bcae59fb178307b783e7703"
-    sha256 cellar: :any, x86_64_linux:  "03f210e8bfd6a575830fe1b76e5c5699896e0c4c6f75941711cdf8c671c780a6"
+    manifest_sha256 "5ed69717fca1f27975ae95a2e423d4cf42d8016abaa4ae59f0a8fe736e572ba1"
+    sha256 cellar: :any, arm64_tahoe:   "cad25932654374f87603ed592e58c3d274f7792e0fae72896062c7034114f086"
+    sha256 cellar: :any, arm64_sequoia: "cad25932654374f87603ed592e58c3d274f7792e0fae72896062c7034114f086"
+    sha256 cellar: :any, arm64_linux:   "4c61977bfa25c1ced5c87b5e75fb79cbc119452e8449700843f3ef109c2306ec"
+    sha256 cellar: :any, x86_64_linux:  "1cd724cbaf82306f77c8d58a6bf11b495d64df28399a99f44cf26c55baf51d0a"
   end
 
   depends_on "node"
