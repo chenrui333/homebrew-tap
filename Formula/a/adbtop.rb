@@ -6,6 +6,15 @@ class Adbtop < Formula
   license "MIT"
   head "https://github.com/aabolfazl/adbtop.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "71f9420ed198d3277cc36ea2f98d9f8ed08559920d9c0574f98734277ba51fe4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1cbd00432d0c4731129a962b4d9d40709c693e7bfe9d1e4d25793a66514c15a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4ee7f25922b59c61b30ad315bbed4d41c8e4b727e3ef59922bff3caecece91b"
+    sha256 cellar: :any,                 arm64_linux:   "6aff4ee2285fc780a13b9502afd3d9d924830d52cfaede80fd99fd69e734ce77"
+    sha256 cellar: :any,                 x86_64_linux:  "cc6208f8ad32b8f9b1ce582194ed369212f25c019ee4f616ac7073ee69ac6a48"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
