@@ -1,14 +1,15 @@
 class PiAcp < Formula
   desc "Agent Client Protocol adapter for the Pi coding agent"
   homepage "https://github.com/svkozak/pi-acp"
-  url "https://registry.npmjs.org/pi-acp/-/pi-acp-0.0.34.tgz"
-  sha256 "4b3bf6bc71bed2b7f43dd7fcfa1906e464828e471740da593107e4f1608f2650"
+  url "https://registry.npmjs.org/pi-acp/-/pi-acp-0.0.35.tgz"
+  sha256 "c80baacb62975ab906a92063246eddfcfaa15d7b6bf7fe235a1ec40c8f3f709e"
   license "MIT"
   head "https://github.com/svkozak/pi-acp.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "8d518abe60b986398d8edd8600fe44d2ea092f331f2009f7a944f59a37300401"
+    manifest_sha256 "5fefdb2409eaaf4664fc16688f956a9deeba3b3b4e19a1290c4ccfe5f3a7b3d9"
+    sha256 cellar: :any_skip_relocation, all: "2ec60fc981ca0311bfc9f2834313d085fbb4ab271bd663055f34c1d60a0dbf12"
   end
 
   depends_on "node"
