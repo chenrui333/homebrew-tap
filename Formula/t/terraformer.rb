@@ -6,6 +6,11 @@ class Terraformer < Formula
   license "Apache-2.0"
   head "https://github.com/chenrui333/terraformer.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     rebuild 1
