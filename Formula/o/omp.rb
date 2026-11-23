@@ -8,11 +8,11 @@ class Omp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "7768c2aa8963933637cb49d6e6b7c3c64870a97571246c4e9a056a36f8a082c3"
-    sha256 arm64_tahoe:   "86015498cb82fb0878b76115019e9d016efde2af8a2fe742adec83488cceb795"
-    sha256 arm64_sequoia: "5ca9e100364e82644b08be2ac0f2513d66b7ebe19d47d8e2e128216bad9ddf66"
-    sha256 arm64_linux:   "61a4f26d675c43529313a4ef5ef01ddd2fea627521f7cda36f93f61852278f60"
-    sha256 x86_64_linux:  "d4fb8d6a3ad72316d00968fe207322c2475488f00f8f6c193a9838caf6da94ab"
+    manifest_sha256 "fedd2bfd68dc6cd00352666699c394c0a9afe3832523c5524cca6238d2f55d71"
+    sha256 arm64_tahoe:   "fb0158c2dde0ec5dc689e6ce1989276e9c4e5be06b9a1c81575511e054354a29"
+    sha256 arm64_sequoia: "c3012dfbb7e4072487d221ffdbc33d7a37cff455ee5388e9eb915bcbe9669792"
+    sha256 arm64_linux:   "c64fb23fd607869b650637f4326d006ec8f99c4f2f2dfd907e057c274bbf6282"
+    sha256 x86_64_linux:  "1a58dbbc80e7dc9bad93b0d4f9ed95e4de655c18aa3ee5c4b5c8a61aaf35f85d"
   end
 
   depends_on "bun" => :build
