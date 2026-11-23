@@ -1,8 +1,8 @@
 class Paseo < Formula
   desc "Control your AI coding agents from the command-line"
   homepage "https://github.com/getpaseo/paseo"
-  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.17.0.tgz"
-  sha256 "338d83ff999242b69a1953b9ae912464d6b85c2a115b819785d9c079b45bfd7d"
+  url "https://registry.npmjs.org/@getpaseo/cli/-/cli-0.17.1.tgz"
+  sha256 "4601ce31a9efbf42c4bc176dfe997ef5acb3177899a663354c45ded9392d9eb5"
   license "AGPL-3.0-only"
 
   bottle do
@@ -28,7 +28,9 @@ class Paseo < Formula
 
     # Keep only the native node-pty prebuild to avoid shipping non-native binaries.
     node_pty_prebuilds = libexec/"lib/node_modules/@getpaseo/cli/node_modules/node-pty/prebuilds"
-    native_prebuild = "#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.arm? ? "arm64" : "x64"}"
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "x64"
+    native_prebuild = "#{os}-#{arch}"
     node_pty_prebuilds.children.each do |prebuild|
       rm_r prebuild if prebuild.basename.to_s != native_prebuild
     end
