@@ -1,8 +1,8 @@
 class Noodle < Formula
   desc "Terminal REST client"
   homepage "https://github.com/wilfredinni/noodle"
-  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "e00a6cc6e01c57dc49e3c9ffa004f88daf6d77d9043674b257aa5b5c59e25c63"
+  url "https://github.com/wilfredinni/noodle/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "e0445156fafdb76deb934cbe6ab01577c57284f40c4dcb8733f721f83092ecf6"
   license "Apache-2.0"
   head "https://github.com/wilfredinni/noodle.git", branch: "main"
 
@@ -50,7 +50,7 @@ class Noodle < Formula
           addNativeAudioDependencies(b, module, target, macos_sdk_path);
         ZIG
         system "zig", "build", "-Doptimize=ReleaseFast"
-        library = "libopentui.#{OS.mac? ? "dylib" : "so"}"
+        library = shared_library("libopentui")
         rm native_package/library
         native_package.install Dir["lib/*/#{library}"]
       end
