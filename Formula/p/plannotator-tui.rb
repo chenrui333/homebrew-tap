@@ -1,18 +1,18 @@
 class PlannotatorTui < Formula
   desc "Annotate Markdown in the terminal and send feedback to coding agents"
   homepage "https://github.com/plannotator/plannotator-tui"
-  url "https://github.com/plannotator/plannotator-tui/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "6508ff16d3b267ced19b5625f4e96a6df2e950ee50bb7fcac0458c785669516c"
+  url "https://github.com/plannotator/plannotator-tui/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "5bff9d8c052e0613278949d643b61118667c67997005177bc2a2f5bae2d0abed"
   license "MIT"
   head "https://github.com/plannotator/plannotator-tui.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "65ff880f716975c7623fc3c74cbea16efbf51917245b34e7dfae8f70bd0768a2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dce2b6a83819c1147501368b0f593189449d189283ec4b6917ecbb93f458b0dc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "508a7f1d3e80beab9ee407b1c2ee8b61e4253d071ea137ed36078c52d83d669f"
-    sha256 cellar: :any,                 arm64_linux:   "27986ec3cb439e8d1d413a1cfef1e65e3fb54e5aa8cf46996031da5895056d83"
-    sha256 cellar: :any,                 x86_64_linux:  "e06b6622a3978a373bb43a6a48757cf2fb70e7c7997420bd93271d66eb06a23c"
+    manifest_sha256 "302dbb44eb46936e8abbb97b916263eeb41dba27a25fa58e45eb99eae8ea886c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8320e28d7b0fe5a3c94f37d0b89441f93c07d9048d27f01dc92950899467ac0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa28577fcacd6fcd32bc8d8d3f5b80b65a9bacd7fe35efa6be18d285eab8f658"
+    sha256 cellar: :any,                 arm64_linux:   "cff1b82b7dd82194f55cef694a5032b83405cce9a62adf4d08d45ed37701d344"
+    sha256 cellar: :any,                 x86_64_linux:  "905c66dee51871d2742dd3638ba8aafac88ffd5f6161f5a2cd441f979bda1ca6"
   end
 
   depends_on "pkgconf" => :build
