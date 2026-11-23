@@ -6,6 +6,15 @@ class LlmVisuals < Formula
   license "MIT"
   head "https://github.com/DingoOz/llm-visuals.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "ad121568571ed42d33552be5a1be91a7f8a64c400ac2a03f3ef9aa3c89944637"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ddbc2a355fee535988da08500ddd329685302afa07e4732856844ffd5474ab5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b77097bd53dffaf774acace935b3bb5b8127b871ed7bfe8375509302ab90c67c"
+    sha256 cellar: :any,                 arm64_linux:   "e57424d3d2b20c391ab84453e58cee0b36ce53be29d6d601c14820733faf49df"
+    sha256 cellar: :any,                 x86_64_linux:  "0c107d78a206de54642e5486f82ee510ca6b82ec5bcaf18ea6741c89940b6b64"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
