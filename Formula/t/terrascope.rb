@@ -8,6 +8,15 @@ class Terrascope < Formula
   license "MIT"
   head "https://github.com/a-shygun/Terrascope.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "3f6b234364e56d423e4a2376a900b0920b45e11f1149d315214b9d75776255cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "16b4cbc674a614e659b564f5536646ecddb98268eec5538777edb8e04238a989"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4848fbf1c21fceec30d7b4a117a44ceb8a27aad406954e10715133b518c152f6"
+    sha256 cellar: :any,                 arm64_linux:   "5945df34b02aa230341ce5930c4cb648d5f76b865140dc1c71ca0add9f7205b9"
+    sha256 cellar: :any,                 x86_64_linux:  "09ee7f24028966d8f71a709bf40d341b090893e14b7b563f05f495c1f088533e"
+  end
+
   depends_on "cython" => :build
   depends_on "libyaml"
   depends_on "numpy" => :no_linkage
