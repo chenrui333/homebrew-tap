@@ -43,6 +43,7 @@ brew install --cask <tool>
 - `abc`
 - `act3`
 - `actionbook`
+- `adbtop`
 - `adbtuifm`
 - `adsb-tui`
 - `agent-deck`
@@ -911,6 +912,7 @@ brew install --cask <tool>
 - `ralph-tui`
 - `ramda-cli`
 - `rang`
+- `rat-commander`
 - `rawhide`
 - `rbac-lookup`
 - `rdmatop`
