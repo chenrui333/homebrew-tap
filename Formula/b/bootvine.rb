@@ -1,15 +1,16 @@
 class Bootvine < Formula
   desc "Live tree of systemd boot and shutdown jobs on the console"
   homepage "https://codeberg.org/wvhulle/bootvine"
-  url "https://codeberg.org/wvhulle/bootvine/archive/v0.1.4.tar.gz"
-  sha256 "2d28371e38fc09e9755ac1f688abcd19fa72795a90fac28b5ceca5f6216d6575"
+  url "https://codeberg.org/wvhulle/bootvine/archive/v0.1.5.tar.gz"
+  sha256 "7f6caf1ca56bf6ea25be74197c6723da49cfa3c9af365372022371ac40bffcad"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/wvhulle/bootvine.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_linux:  "f953d27f2482096699baad1b0a55e8ec38f8fc55e8d6ba1b3b754dd0213e40ab"
-    sha256 cellar: :any, x86_64_linux: "557e5b7d932bd015d721820ff76a67f70b29c7d5c370bf6c843e8090a930ace6"
+    manifest_sha256 "362bf81dd636b8bc9cc327287603e5b027373ab34f7c4c621b4a026fd526a32f"
+    sha256 cellar: :any, arm64_linux:  "98cfcf4532cd318fd444acc4f29266ed3bd329e55eb2f56840b7888e58a57b54"
+    sha256 cellar: :any, x86_64_linux: "49e74da3bdcbd18c0e1445c8598612de54e1ef29875f7a8dcfab5af0e8976347"
   end
 
   depends_on "pkgconf" => :build
