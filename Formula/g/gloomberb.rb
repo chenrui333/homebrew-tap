@@ -1,8 +1,8 @@
 class Gloomberb < Formula
   desc "Extensive financial terminal, in your terminal"
   homepage "https://github.com/gloom-sh/gloomberb"
-  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.14.tar.gz"
-  sha256 "b48414f3c5e17ae6ac76d30fc76c916bfd1bad5a44103274cc44106ada32ef9d"
+  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.17.tar.gz"
+  sha256 "e46cf516a9ca3ada8a5929d0453ba7f765c432477c9ff0c843d35e985cc488b1"
   license "MIT"
 
   livecheck do
@@ -12,10 +12,11 @@ class Gloomberb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "955588aeb9f064618350bb55f23b62e3f64d6e31678cc3c2e992a629061fd05b"
-    sha256 arm64_sequoia: "291a8b9979d5a8609cc8b7b525621d93503a873dc290323d76b7bf7272f2a11e"
-    sha256 arm64_linux:   "15626b6139c69cecb2e4c29578f617938b7b10e151bc096ff732b7ed49f74987"
-    sha256 x86_64_linux:  "3f0af47aaf0ff5cda5f988a20ce976ce1c2c9416b153b7e862a9183ba2a0f844"
+    manifest_sha256 "2aaed2ab0b92767e6b822c457db27460e484bb2dd0706ad743c56392b588aacb"
+    sha256 arm64_tahoe:   "499519ca241f2b93e834a34d50ca6a19afc77f59f984bf0fd902d7525e60420e"
+    sha256 arm64_sequoia: "e7e1e434e03788d63a58cbb805c23ae26e1a71f1d622252ce0f545baca6c2dc6"
+    sha256 arm64_linux:   "18de290d1e39d608c7c7f8bec30a3883f4cb634db4584b13a44f55d30bcc414d"
+    sha256 x86_64_linux:  "e138e7cbb6afa234744038176e429982b82c74f58613bc846a27d149304e25cb"
   end
 
   depends_on "bun" => :build
@@ -24,6 +25,10 @@ class Gloomberb < Formula
   on_linux do
     # Standalone executables retain the brewed Bun runtime template's ICU linkage.
     depends_on "icu4c@79"
+
+    on_intel do
+      depends_on "qemu" => :build
+    end
   end
 
   resource "opentui-native" do
@@ -46,7 +51,10 @@ class Gloomberb < Formula
     platform = OS.mac? ? "darwin" : "linux"
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     native_name = OS.mac? ? "libopentui.dylib" : "libopentui.so"
-    native_target = "#{Hardware::CPU.arm? ? "aarch64" : "x86_64"}-#{OS.mac? ? "macos" : "linux"}"
+    native_arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    native_os = OS.mac? ? "macos" : "linux"
+    native_target = "#{native_arch}-#{native_os}"
+    zig_target = OS.linux? ? "#{native_target}-gnu.2.17" : native_target
     native_root = buildpath/"opentui-native/packages/core/src/zig"
     cd native_root do
       # Reserve Mach-O load-command space for Homebrew's install-name relocation.
@@ -59,8 +67,7 @@ class Gloomberb < Formula
       NEW
       # Match the SDK's glibc ABI; an ABI-less Linux target links musl's libc.so.
       system formula_opt_bin("zig@0.15")/"zig", "build",
-             "-Dtarget=#{native_target}#{"-gnu.2.17" if OS.linux?}",
-             "-Doptimize=ReleaseFast", "-j#{ENV.make_jobs}"
+             "-Dtarget=#{zig_target}", "-Doptimize=ReleaseFast", "-j#{ENV.make_jobs}"
     end
     host_libraries = buildpath.glob("**/node_modules/@opentui/core-#{platform}-#{arch}/#{native_name}",
                                    File::FNM_DOTMATCH)
@@ -78,8 +85,26 @@ class Gloomberb < Formula
       `--define=process.arch=${JSON.stringify(process.arch)}`,
       '--define=process.env.OPENTUI_LIBC="glibc"', compileEntry,
     JS
-    # Use the brewed runtime instead of downloading a separate Bun executable template.
+    # Use the brewed runtime instead of downloading a separate executable template.
     ENV["BUN_COMPILE_EXECUTABLE_PATH"] = bun
+    if OS.linux? && Hardware::CPU.intel?
+      # Bun treats -baseline as a download target even though brewed Bun already supports that CPU.
+      inreplace "scripts/build.ts", "const target = bunTarget(targetConfig);", 'const target = "bun-linux-x64";'
+
+      # Run the Nehalem smoke check against the brewed binary and host libraries without a container.
+      inreplace "scripts/build.ts" do |s|
+        s.gsub! "const oldCpu = await oldCpuRunner(runner, smokeDir, emulator);",
+                'const oldCpu = Bun.which("qemu-x86_64");'
+        s.gsub! <<-OLD, <<-NEW
+      runner: oldCpu,
+      runnerIsContainer: true,
+      command: CONTAINER_EMULATOR,
+        OLD
+      runner: [],
+      command: oldCpu,
+        NEW
+      end
+    end
     system bun, "run", "build", "--target", "#{platform}-#{arch}"
     output = "dist/gloomberb-#{platform}-#{arch}"
     system "gunzip", "#{output}.gz"
