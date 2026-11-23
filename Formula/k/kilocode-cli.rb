@@ -1,17 +1,18 @@
 class KilocodeCli < Formula
   desc "AI coding agent with a terminal UI, local console, and sandboxed tools"
-  homepage "https://kilocode.ai/cli"
-  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.30.tar.gz"
-  sha256 "5b55d627968d1d0302f9e54942e209f583588be686d8193a5c4aa00335d29459"
+  homepage "https://kilo.ai/cli"
+  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.32.tar.gz"
+  sha256 "2bfb7f84586997df0e72f47bb2590a8b80b8300d07420315bf4deb3299512591"
   license "MIT"
   head "https://github.com/Kilo-Org/kilocode.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "422f37a834e2f3a8d04d1f451513a503c9ff1ba603bd27b0ae9c329103dd2e4e"
-    sha256 arm64_sequoia: "d58425e5ef3dff0d3b62e13daa31e0a0dcec420e3d4ce35f60d9612021d3974d"
-    sha256 arm64_linux:   "2abac6c990fb84fd051547c22570aba66c10e4c41b9ddc53bf4307a212b124c1"
-    sha256 x86_64_linux:  "e7f8f6bde7754529e0bef5666b870f9f79e66bf8204cb61a377052b6c6f5f947"
+    manifest_sha256 "0dbc87191b86a249d0e9a04bb6ee73396d92ada1ead9598a9844f18cec38b20d"
+    sha256 arm64_tahoe:   "4e15b74e18502db65b0527e0c77e97addd7b4f7551771bb0513a2e39f6eb92ad"
+    sha256 arm64_sequoia: "94c71570c87de9fcb2e535f9da9cac60dd73c646886a7fe1424f890793db61ee"
+    sha256 arm64_linux:   "c61655d231ef1d98914d5aa7c8c0ad8db539be20bc000d8890662cec6a962a80"
+    sha256 x86_64_linux:  "c223a606eb89f197d4abbcba585997e21913ff0c945e3294f39de4a9e7c968ba"
   end
 
   depends_on "bun" => :build
@@ -27,6 +28,12 @@ class KilocodeCli < Formula
     depends_on "socat"
   end
 
+  # Allow package builders to use their verified host Bun: https://github.com/Kilo-Org/kilocode/pull/16539
+  patch do
+    url "https://github.com/Kilo-Org/kilocode/commit/b9bae5e0c4682970fcd2594e3c057d0eb76156f3.patch?full_index=1"
+    sha256 "2304e12011fed620f4bc9f7e3a59e510b98fd5776f74c19d8d40b8fcb0ca47e9"
+  end
+
   deny_network_access!
 
   def fetch
@@ -37,32 +44,13 @@ class KilocodeCli < Formula
   end
 
   def install
-    bun_prefix = formula_opt_prefix("bun").realpath
-    bun = bun_prefix/"bin/bun"
-    pin = JSON.parse((buildpath/"script/kilocode/bun.json").read)
-    source = JSON.parse((bun_prefix/"INSTALL_RECEIPT.json").read).fetch("source")
-    if Formula["bun"].tap.name != "homebrew/core" || source.fetch("tap") != "homebrew/core" ||
-       source.fetch("scm_revision") != pin.fetch("revision")
-      odie "Bun must be built by homebrew/core from exactly the source revision in script/kilocode/bun.json"
-    end
-    if Utils.safe_popen_read(bun, "--print", "Bun.version").strip != pin.fetch("runtime")
-      odie "Bun runtime version does not match script/kilocode/bun.json"
-    end
-    embedded_revision = Utils.safe_popen_read(bun, "--print", "Bun.revision").strip
-    odie "Bun embedded revision must be a full Git SHA" unless embedded_revision.match?(/\A[0-9a-f]{40}\z/)
-    # Bun getCommit() stamps Homebrew's GITHUB_SHA rather than its source revision in GitHub Actions:
-    # https://github.com/oven-sh/bun/blob/38afee6c84fcf48c0edb2466aa4b27d287a59c30/scripts/buildkite.ts#L119-L141
-    # Keep the manifest's source pin; only adapt the runtime guard after the exact-source checks above.
-    inreplace "packages/opencode/script/build.ts", "Bun.revision !== KiloBun.pin.revision",
-              "Bun.revision !== \"#{embedded_revision}\""
+    bun = formula_opt_bin("bun")/"bun"
     ENV["KILO_VERSION"] = version.to_s
     ENV["KILO_CHANNEL"] = "latest"
     ENV.delete "KILO_RELEASE"
     ENV["MODELS_DEV_API_JSON"] = buildpath/"models-dev-api.json"
     ENV["KILO_SKIP_BUNDLED_BWRAP"] = "1"
-    # Use the brewed Bun compiler/runtime rather than downloading an upstream Bun executable.
-    # The runtime equality guard compares against that same, checked Cellar executable's metadata.
-    inreplace "packages/opencode/script/build.ts", ": await KiloBun.stage(item)", ": process.execPath"
+    ENV["KILO_USE_HOST_BUN"] = "1"
 
     if OS.linux?
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
