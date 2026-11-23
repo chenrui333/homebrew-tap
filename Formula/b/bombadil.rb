@@ -6,6 +6,15 @@ class Bombadil < Formula
   license "MIT"
   head "https://github.com/antithesishq/bombadil.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "b497cea656bfd6bf4cf6c57e9207c1075198287d4d1d71073a93335c3e04f868"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "add47d3ff6c480d79bee3e24882a52f04192358f7996d3d7981ac6dd1802c865"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4039a7ea6ed91018bf90e7c3439e7ab15aa4f469af959043585bd32e20f21880"
+    sha256 cellar: :any,                 arm64_linux:   "30570e066d5363d06fc24fa50d69c240690ec7588f1c68e3b394685e1176f830"
+    sha256 cellar: :any,                 x86_64_linux:  "e43c022b4f8c78c965d5e067669a99309a0b8f65f8d9a80f03873fab55af8a97"
+  end
+
   depends_on "binaryen" => :build
   depends_on "pkgconf" => :build
   depends_on "rustup" => :build
