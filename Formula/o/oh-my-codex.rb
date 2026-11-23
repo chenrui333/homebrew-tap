@@ -1,18 +1,18 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.22.11.tgz"
-  sha256 "d9ddf1b56f963211bb721a441886a6d78adc040854b18b08df3f9f3809649a94"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.22.12.tgz"
+  sha256 "dee6a4f7c791bab53be26b787a033ca25a09ab89cb6f0121f40227ab534dd723"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "9f1b9d668f69b28527126dc18fdfbf9620f84d8855f89d0c1c5f67e98d8d6eea"
-    sha256 cellar: :any, arm64_tahoe:   "85cb14b8076b9a4b4e3db06faa994d1a139158a828dda62b43e8a9ffe112d40b"
-    sha256 cellar: :any, arm64_sequoia: "76e9b25038c71be20074c107df84a5c2fe9e61a838817187c82c612f5748e1ee"
-    sha256 cellar: :any, arm64_linux:   "98f324a36b56379793cec1078972c427d27fa6df1936c618a61be0010baf23c1"
-    sha256 cellar: :any, x86_64_linux:  "73c43b40e3c511ecece7ea1954b8657ebb2bc20ddab3794f8504932e385db643"
+    manifest_sha256 "1b15179bc523a5bc0ff60b797e8b44aeb705439bd802e0987b38ed272491ff51"
+    sha256 cellar: :any, arm64_tahoe:   "d641bfabee695fff7e0d1eef99e718fd1ba3ba6f3ed2aff011f28a1a78f246c9"
+    sha256 cellar: :any, arm64_sequoia: "3d3a0c15ecebbbd06b42f973b4f1152610424904399e87d80438d14fe373594d"
+    sha256 cellar: :any, arm64_linux:   "fb377f26e3403a863a802d3bdb8feab527a623d24da87c0fb89f2ef08de07d3b"
+    sha256 cellar: :any, x86_64_linux:  "2cc5d9bc9b392c37ff2761bb9ead13f338d699aa99c11f0f772fb5c570b2a1b3"
   end
 
   depends_on "rust" => :build
@@ -21,10 +21,10 @@ class OhMyCodex < Formula
   deny_network_access!
 
   def fetch
-    # The 0.22.11 release left the workspace crates at 0.22.11-dev in Cargo.lock.
+    # The 0.22.12 release still pins its workspace crates to 0.22.11-dev.
     # https://github.com/Yeachan-Heo/oh-my-codex/pull/4109
-    if version.to_s == "0.22.11"
-      inreplace "Cargo.lock", 'version = "0.22.11-dev"', 'version = "0.22.11"'
+    if version.to_s == "0.22.12"
+      inreplace "Cargo.lock", 'version = "0.22.11-dev"', 'version = "0.22.12"'
     end
 
     system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
