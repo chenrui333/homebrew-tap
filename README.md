@@ -454,6 +454,7 @@ brew install --cask <tool>
 - `glab-tui`
 - `gloomberb`
 - `glsl-analyzer`
+- `gnat`
 - `gnhf`
 - `gno`
 - `go-eagle`
@@ -648,6 +649,7 @@ brew install --cask <tool>
 - `litespeed`
 - `livediff`
 - `lix`
+- `llm-visuals`
 - `llmdog`
 - `llmpeg`
 - `llmswap`
