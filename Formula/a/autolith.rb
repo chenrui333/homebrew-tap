@@ -1,8 +1,8 @@
 class Autolith < Formula
   desc "Live, self-modifying Common Lisp coding agent"
   homepage "https://github.com/lambda-symbolics/autolith"
-  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.44.tar.gz"
-  sha256 "e8041ea388294f4687ba4417d49818fb43fed5dd9975782eb24d9c55f8eff36d"
+  url "https://github.com/lambda-symbolics/autolith/archive/refs/tags/v0.67.67.tar.gz"
+  sha256 "64e5dd81a8a19eba678b905b7ac7a62fad84c5be5968f4454fb46836e7336264"
   license "ISC"
   head "https://github.com/lambda-symbolics/autolith.git", branch: "master"
 
@@ -47,36 +47,28 @@ class Autolith < Formula
   end
 
   resource "colorlisp" do
-    url "https://github.com/lambda-symbolics/colorlisp/archive/b6fdb68ae22ab997bb818c486983129ec7ac6177.tar.gz"
-    sha256 "e13dc0848263a81790eb43702ad7ef6c0865012b7d64d25a97a3ffcaf3d220a0"
+    url "https://github.com/lambda-symbolics/colorlisp/archive/c828aeae0f1bacce0ebe920958474a03042007fc.tar.gz"
+    sha256 "5ecdb881ebbbff1d6e9519e0c5411fe7ec6441e09eb8ae5e9ff25d73f173e510"
   end
 
   resource "cl-exec-sandbox" do
-    url "https://github.com/lambda-symbolics/cl-exec-sandbox/archive/2eee22e33a4d4c6df6019e44ee7fe353454ce175.tar.gz"
-    sha256 "77e3883865840313bad276125eb2a5b86c392af47fdb9549edd39261b8fee5e2"
+    url "https://github.com/lambda-symbolics/cl-exec-sandbox/archive/5011603d22fc742df0b29aa23d865772803d3d91.tar.gz"
+    sha256 "4bbecc91670b8e7196ceb965b3c9af4cde76369564336e0dc84dd93248a37491"
   end
 
   resource "defingerprinter" do
-    url "https://github.com/chakanysystems/defingerprinter/archive/ade272f23397fc1791b5c0a9b1046407cbe39e04.tar.gz"
-    sha256 "12a001f6e02498b081c7d2023570189e4fd73d1f242149a6efb26e2a934ed8aa"
+    url "https://github.com/chakanysystems/defingerprinter/archive/20ff2c26a89ce18fad0dc8bb4fdfd97f3d98327d.tar.gz"
+    sha256 "17f1834325496e787c495c9ac186319459dbbb55b0bf474d1edacfa1b9257454"
   end
 
   resource "cl-skills" do
-    url "https://github.com/lambda-symbolics/cl-skills/archive/21a09a7b7195f6c0e1b36d843c518c5c7bee6ac0.tar.gz"
-    sha256 "bb71155afc79a028498e148de21fba8000dba2d54c9a068db417d4e6918dcab4"
-
-    # Keep the executable API's package exports idempotent.
-    patch do
-      url "https://github.com/lambda-symbolics/cl-skills/commit/48c89e7ce720fccebd776c5984b4b174f18fbd25.patch?full_index=1"
-      sha256 "c4a645283c9f21dcdcca44e7644b3de1a98e028ba214173b7b8dd89bf51eabb0"
-      type :unofficial
-      resolves "https://github.com/lambda-symbolics/cl-skills/pull/3"
-    end
+    url "https://github.com/lambda-symbolics/cl-skills/archive/cd66f1016fb6515d6170ab2e8ca9198a15855d8d.tar.gz"
+    sha256 "8126a36820f417cc107fefd067ee749d3943e94c66d2be4e03dfeedbee6df2e2"
   end
 
   resource "image-daemon" do
-    url "https://github.com/lambda-symbolics/image-daemon/archive/94fdbe5543ff5efae424380ff49430abd1fb92ce.tar.gz"
-    sha256 "fc322e6a5e263244440a03feab07169acb455e38103af5a54e572d3ea142104d"
+    url "https://github.com/lambda-symbolics/image-daemon/archive/52e48c219eb22ca7a3740cb9565ef5cf68c21b6c.tar.gz"
+    sha256 "f65167545096a10fdcaf8c1fb082edab512be26e02aeb21ee31c4e494fb1da87"
 
     # Keep the runtime and message API's package exports idempotent.
     patch do
@@ -204,6 +196,14 @@ class Autolith < Formula
       destination = pkgshare.glob(".qlot/dists/#{name}/software/*").fetch(0)
       resource(name).stage { cp_r Pathname.pwd.children, destination }
     end
+    # Declare this release's optional executable API in DEFPACKAGE so package reloads remain idempotent.
+    # Upstream: https://github.com/lambda-symbolics/cl-skills/pull/3
+    skills = pkgshare.glob(".qlot/dists/cl-skills/software/*").fetch(0)
+    executable = skills/"src/executable.lisp"
+    export_form, symbols = executable.read.match(/^\(export '\(([^()]+)\)\)\n/).to_a
+    declarations = symbols.split.map { |symbol| "   #:#{symbol}\n" }.join
+    inreplace executable, export_form, ""
+    inreplace skills/"src/package.lisp", "  (:export\n", "  (:export\n#{declarations}"
     ENV["ASDF_OUTPUT_TRANSLATIONS"] =
       "(:output-translations (t \"#{pkgshare}/fasls/\") :ignore-inherited-configuration)"
     system runtime/"bin/sbcl", "--noinform", "--no-userinit", "--no-sysinit", "--non-interactive",
