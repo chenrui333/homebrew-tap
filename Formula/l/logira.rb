@@ -1,8 +1,8 @@
 class Logira < Formula
   desc "Observe-only eBPF tool to record runtime events during AI agent runs"
   homepage "https://github.com/melonattacker/logira"
-  url "https://github.com/melonattacker/logira/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "f272f1401d4765d951c705afbdfeeaa7bb3ff36049eb6dc92e9c65266cfc7df8"
+  url "https://github.com/melonattacker/logira/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "b1970b1f21785f48a88b7180378d3ba4ba4cc12729998996d4ae3f9f6727a67a"
   license "Apache-2.0"
   head "https://github.com/melonattacker/logira.git", branch: "main"
 
