@@ -2,18 +2,18 @@ class PicoclawAfjcjsbx < Formula
   desc "Actively maintained PicoClaw fork with local and cloud AI agents"
   homepage "https://github.com/afjcjsbx/picoclaw"
   url "https://github.com/afjcjsbx/picoclaw.git",
-      tag:      "v0.5.5",
-      revision: "9881ed49da20860fed25acd189d2c922c4f17200"
+      tag:      "v0.5.6",
+      revision: "43001a01030a87d025625b147fdbc1d304ff2f55"
   license "MIT"
   head "https://github.com/afjcjsbx/picoclaw.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "1c79f4e60920888ae9ef490bdcfb50eb477c25d59b203256a97d772d7972e1d4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09524cd8df262d784ad481eaa01e80b9d2c702510cc14b5ff11a375e4309041b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09524cd8df262d784ad481eaa01e80b9d2c702510cc14b5ff11a375e4309041b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c57c9e8ff04f736476711e0e083600f64182b05ea7be63d8a10f4c70738c374e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce2602c47ce63eaba3f283442e6d918e7e7b207f7673d6e04b836c280ef2d090"
+    manifest_sha256 "02b5f8e68a03432d4581c14458e04c7efa8761f868911e24d21e11c54338c114"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d78ddb8b489b7798f41fb3abc2d802a4ba1c512e89665bdf5d3bf1b0b880156c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d78ddb8b489b7798f41fb3abc2d802a4ba1c512e89665bdf5d3bf1b0b880156c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ac57437422116bafc85d22057e5989db636f2b96de9b69ef2c03bd01ca242a72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13d217a5fb21309ea1ad3d32729fdafc6ca6de86c5d9a5966c0f68113fcc68f8"
   end
 
   depends_on "go" => :build
