@@ -2,11 +2,11 @@ cask "dhictl" do
   arch arm: "arm64", intel: "amd64"
   os macos: "darwin", linux: "linux"
 
-  version "0.0.13"
-  sha256 arm:          "1c98a642cafe700f78eb41ecb67436069cb6a4d88cd7ce763d444e2be2305fb5",
-         intel:        "5ebe190a2cfcfe1e532dfb9a8df05d8daa14d23f30ab65bfcef7d42171c7f97c",
-         arm64_linux:  "31a2deb4019b1719fe72dafc3358da0c91514a4e4e10237b146fbb87f4ebabce",
-         x86_64_linux: "50e5e5904ac24484da44070bd7607c10901b5fcbea39521abe0f5c9538c849c4"
+  version "1.0.0"
+  sha256 arm:          "03835a91322020f88f32e21b19e6062f18638a7dda79ccd8a7578acdbf250d72",
+         intel:        "9b59f59dae8300831059500a0daf5175bb3c626211c3104ab41e59bc9df99b1f",
+         arm64_linux:  "1ef2a32a1e43f4e631d9d372e27fd12f78defb8272d200ed188e542ccf12aa58",
+         x86_64_linux: "112b5ef558896097aac4f769dc52f4b8764f1ca79f9c92d48aac9eaf15896948"
 
   url "https://github.com/docker-hardened-images/dhictl/releases/download/v#{version}/dhictl-#{os}-#{arch}"
   name "dhictl"
