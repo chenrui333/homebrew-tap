@@ -8,11 +8,11 @@ class Openresearch < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "4b7e336223371ee449e862cabb94803b5d82b66b7ae46b6ef3bf15a3f58b954b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "51924f89bf99a382a99d6685599644c022f7f83d5ab57f64c92499dfb3c1ffcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31cafbf5c45a5dea442343f2666b0eb211779fd3957fd300532916698feb09ba"
-    sha256 cellar: :any,                 arm64_linux:   "b94f4dcae67c7a5216424379cd2882b24c1e4fb4a4857bd734be9fc1fbdacc72"
-    sha256 cellar: :any,                 x86_64_linux:  "4adffa2e0db3dcb4284edb15d7f423ca528b1d8a2c3d8dc92169fb8948f88680"
+    manifest_sha256 "9ab063c8993bb3a08f7fbce3ea73bafe236e78ae65ed3127955ed36d6b0a1f26"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "71025cbc12770e5f5485943bcf77b173c13840a56d3b93f7bd9c90a698b396f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "160620240b758378034014626cba303aad6a8e500cf47628360e6822362b63fc"
+    sha256 cellar: :any,                 arm64_linux:   "1fbcc8ca43e3e05e2ad9f81f4002d4045d3a5722f8427856f24f3d4ec53a5564"
+    sha256 cellar: :any,                 x86_64_linux:  "96ed7a96e0480912e046a891c53621bb3045f09d6ae7d0153bf4fdcd4bd4c352"
   end
 
   depends_on "node" => :build
