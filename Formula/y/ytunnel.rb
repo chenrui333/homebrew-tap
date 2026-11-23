@@ -6,6 +6,15 @@ class Ytunnel < Formula
   license "MIT"
   head "https://github.com/yetidevworks/ytunnel.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "b8010d5ebece7859bc0e4ab472504b83e45643be7082dc1f446af37f3a29f6eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c7f19df93fa226501b43ad760138a8f5fa4abd6f34b2b4eefdb0567abc4cc9fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6cfa54cd23d7d4f1912d4872cf199d4fede6a1312ffc9de25c73fb5f64e3815"
+    sha256 cellar: :any,                 arm64_linux:   "e2b533bf68fe5bea926e065f10097861ae6c8747b03bab9958e72e34e0ad8d46"
+    sha256 cellar: :any,                 x86_64_linux:  "294ed501c8d0730a5effdf259b5afeba892481b61e54f0fd8602cc2715d492a2"
+  end
+
   depends_on "rust" => :build
 
   deny_network_access!
