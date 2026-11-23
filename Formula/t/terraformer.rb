@@ -1,8 +1,8 @@
 class Terraformer < Formula
   desc "CLI tool to generate terraform files from existing infrastructure"
   homepage "https://github.com/chenrui333/terraformer"
-  url "https://github.com/chenrui333/terraformer/archive/refs/tags/v0.13.16.tar.gz"
-  sha256 "01e6bf0bae5b141acd0200380901563c9d89023c17e1b51338738b4dae655c4f"
+  url "https://github.com/chenrui333/terraformer/archive/refs/tags/v0.13.17.tar.gz"
+  sha256 "ca5e610581ddf258fa8a4aa5602072a903444e7a15813bec988a2b1cb82a4ed2"
   license "Apache-2.0"
   head "https://github.com/chenrui333/terraformer.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Terraformer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6965cc6cc71eae8a9135fdc4d2b6f97db7c39ecd46ace9a7b79f7f69eb2f1934"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6965cc6cc71eae8a9135fdc4d2b6f97db7c39ecd46ace9a7b79f7f69eb2f1934"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "27d8923a2347ea546fe5dd0bfff1772c5bd9a93af3671e4927ed1a8f2c22aa97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ca0c87aae1c873691e797453536fbfab1255406602867b907275d345d3b5cbd"
+    manifest_sha256 "c062f6f4729ca632df968e46c7a2bd03fcc59b77702d1dae9b832e5e4c221ca2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "269b2b172bcc86772f381735c04e2789b6b927f5b18cc6fc99d6eb997f048ab4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "269b2b172bcc86772f381735c04e2789b6b927f5b18cc6fc99d6eb997f048ab4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc205bc0892faca63d963bdca901b9bb59b75b29c26ec2f8e11296ce0cf02e10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ed678114d43fbd658be76b96811a0e6db156f74d039fdf84c7d72e7a04fbe3d"
   end
 
   depends_on "go" => :build
