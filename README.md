@@ -1108,6 +1108,7 @@ brew install --cask <tool>
 - `terraform-diff`
 - `terraformer`
 - `terrap-cli`
+- `terrascope`
 - `terratags`
 - `terrawiz`
 - `testronaut`
