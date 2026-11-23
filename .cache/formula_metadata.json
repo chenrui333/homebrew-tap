@@ -425,6 +425,12 @@
     "last_release": "2026-08-07",
     "stars": 118059
   },
+  "github:DingoOz/llm-visuals": {
+    "forks": 29,
+    "last_commit": "2026-11-22",
+    "last_release": "2026-10-24",
+    "stars": 209
+  },
   "github:DonIsaac/keyhunter": {
     "forks": 1,
     "last_commit": "2025-05-05",
@@ -490,6 +496,12 @@
     "last_commit": "2026-02-11",
     "last_release": "2026-02-11",
     "stars": 901
+  },
+  "github:EthanBlackburn/tangent": {
+    "forks": 3,
+    "last_commit": "2026-11-23",
+    "last_release": "2026-11-17",
+    "stars": 63
   },
   "github:F1bonacc1/process-compose": {
     "forks": 109,
@@ -1337,11 +1349,23 @@
     "last_release": "2022-06-08",
     "stars": 1299
   },
+  "github:a-shygun/Terrascope": {
+    "forks": 21,
+    "last_commit": "2026-10-26",
+    "last_release": "2026-10-21",
+    "stars": 452
+  },
   "github:a8m/envsubst": {
     "forks": 95,
     "last_commit": "2025-12-10",
     "last_release": "2025-02-26",
     "stars": 861
+  },
+  "github:aabolfazl/adbtop": {
+    "forks": 4,
+    "last_commit": "2026-11-14",
+    "last_release": "2026-11-02",
+    "stars": 133
   },
   "github:aannoo/hcom": {
     "forks": 24,
@@ -1714,6 +1738,12 @@
     "last_commit": "2026-11-06",
     "last_release": "2026-10-20",
     "stars": 7034
+  },
+  "github:antithesishq/bombadil": {
+    "forks": 113,
+    "last_commit": "2026-11-21",
+    "last_release": "2026-11-19",
+    "stars": 3102
   },
   "github:antoniomika/sish": {
     "forks": 330,
@@ -2771,6 +2801,12 @@
     "last_release": "2025-08-30",
     "stars": 107
   },
+  "github:dividebysandwich/rat-commander": {
+    "forks": 9,
+    "last_commit": "2026-11-14",
+    "last_release": "2026-11-14",
+    "stars": 141
+  },
   "github:djetelina/tofuref": {
     "forks": 1,
     "last_commit": "2026-03-16",
@@ -3280,6 +3316,12 @@
     "last_commit": "2026-02-16",
     "last_release": "2026-02-06",
     "stars": 1871
+  },
+  "github:galaxy-io/gnat": {
+    "forks": 3,
+    "last_commit": "2026-11-02",
+    "last_release": "2026-10-27",
+    "stars": 97
   },
   "github:galaxy-io/tempo": {
     "forks": 12,
@@ -3814,6 +3856,12 @@
     "last_commit": "2026-02-22",
     "last_release": "2026-02-22",
     "stars": 192
+  },
+  "github:iptraf-ng/iptraf-ng": {
+    "forks": 45,
+    "last_commit": "2025-01-10",
+    "last_release": "2024-11-21",
+    "stars": 362
   },
   "github:its-the-shrimp/yew-fmt": {
     "forks": 3,
@@ -6893,6 +6941,12 @@
     "last_release": "2025-10-17",
     "stars": 223
   },
+  "github:tzfm/rustel": {
+    "forks": 15,
+    "last_commit": "2026-11-23",
+    "last_release": "2026-11-17",
+    "stars": 154
+  },
   "github:uber-go/mock": {
     "forks": 164,
     "last_commit": "2025-12-17",
@@ -7264,6 +7318,12 @@
     "last_commit": "2026-09-03",
     "last_release": "2026-09-03",
     "stars": 84
+  },
+  "github:yetidevworks/ytunnel": {
+    "forks": 5,
+    "last_commit": "2026-11-13",
+    "last_release": "2026-11-13",
+    "stars": 73
   },
   "github:yinzhenyu-su/weekly-git-summary": {
     "forks": 6,
