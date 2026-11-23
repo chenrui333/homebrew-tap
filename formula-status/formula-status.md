@@ -822,7 +822,7 @@ Total formulas: 1214
 | nvrs | Fast new version checker for software releases | 62 | 4 | 2026-04-23 | 2026-04-23 | MIT | ✓ | - | [link](https://nvrs.koi.rip/) |
 | perch | Terminal social client for Mastodon and Bluesky | 62 | 0 | 2026-03-04 | 2026-02-28 | GPL-3.0-or-later | ✓ | - | [link](https://perch.ricardodantas.me/) |
 | pomossh | Terminal pomodoro timer with optional SSH mode | 62 | 2 | 2026-02-22 | 2025-03-25 | AGPL-3.0-only | ✓ | - | [link](https://github.com/sairash/pomossh) |
-| tangent-cli | Stream processing with real languages, not DSLs | 61 | 3 | 2025-12-31 | 2025-11-19 | MPL-2.0 | ✓ | - | [link](https://docs.telophasehq.com/cli/overview) |
+| tangent-cli | Stream processing with real languages, not DSLs | 61 | 3 | 2025-12-31 | 2025-11-19 | MPL-2.0 | ✓ | - | [link](https://github.com/EthanBlackburn/tangent) |
 | yamcp | Manage MCP servers and workspaces from the command-line | 61 | 10 | 2025-05-27 | 2025-05-26 | MIT | ✓ | - | [link](https://github.com/hamidra/yamcp) |
 | clox | Geeky clock for terminal enthusiasts | 60 | 2 | 2026-02-17 | 2026-02-17 | MIT | ✓ | - | [link](https://github.com/sepandhaghighi/clox) |
 | rfc_reader | RFC viewer with TUI | 60 | 1 | 2026-04-08 | 2025-12-13 | MIT | ✓ | - | [link](https://github.com/ozan2003/rfc_reader) |
