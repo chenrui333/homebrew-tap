@@ -2,18 +2,18 @@ class Agentty < Formula
   desc "Terminal AI pair programmer written in modern C++"
   homepage "https://github.com/agentty-org/agentty"
   url "https://github.com/agentty-org/agentty.git",
-      tag:      "v0.9.57",
-      revision: "125100b682ca6614727916b3832303f6589e1fbf"
+      tag:      "v0.9.62",
+      revision: "5365695bdea5d9dc98f8d22ae338f74078a062e2"
   license "MIT"
   head "https://github.com/agentty-org/agentty.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "480a9c822aaf7b2f3bf7f7e6a9a555490647f5194ca34711655f8fbf68c64faf"
-    sha256               arm64_tahoe:   "2a2ce14a3405ea9467eadca0cb4ca66db048c72988d9e601268e7e91d9ff8184"
-    sha256               arm64_sequoia: "e4d68b3e2af2748df5af1e0b2d71b383e0443607b518d959efe73b9e32a01131"
-    sha256 cellar: :any, arm64_linux:   "0043b29da9e1b28a35c38b2cec01310c7d855f5caa8ba4a25a45f7abec94ed35"
-    sha256 cellar: :any, x86_64_linux:  "fb6342e7e23bb5070642b7d7d1a952733cb1b1c12017a78bba3d3dcaa2b99a6b"
+    manifest_sha256 "818aeb6f83992e29abd7899bdd0c179d93a510635330c45528cc0ada909a335e"
+    sha256               arm64_tahoe:   "cafbdce531c1690767a0be0b41e2544cd4275211220a15849f23c16562fc2b2b"
+    sha256               arm64_sequoia: "3ee70b5b8e66ec0549737fc2831e6e015eeef63bd8bce4a55f31853777e76499"
+    sha256 cellar: :any, arm64_linux:   "cc264f64d1a888761ec42d9ad8478b871d06b1282d4c529e1f9f3e1fb06479fe"
+    sha256 cellar: :any, x86_64_linux:  "49cefb83673986dd369ec14976c92ee8fe928d55afbfc10047aa893aba188d6a"
   end
 
   depends_on "cmake" => :build
