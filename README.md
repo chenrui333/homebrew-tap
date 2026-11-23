@@ -1237,6 +1237,7 @@ brew install --cask <tool>
 - `yt-x`
 - `ytm-player`
 - `ytsurf`
+- `ytunnel`
 - `go-zzz`
 - `zaly`
 - `zat`
