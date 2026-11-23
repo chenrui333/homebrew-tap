@@ -1,18 +1,18 @@
 class Bttf < Formula
   desc "CLI tool for datetime arithmetic, parsing, formatting and more"
   homepage "https://github.com/BurntSushi/bttf"
-  url "https://github.com/BurntSushi/bttf/archive/refs/tags/0.1.4.tar.gz"
-  sha256 "21b265959403c02406137adac1012f676a25ad67d6fbf29a553b9e459c7bbc73"
+  url "https://github.com/BurntSushi/bttf/archive/refs/tags/0.2.0.tar.gz"
+  sha256 "5399df79e15ba48e94526319ec6baf4e4e9bbe983693adc4ba784294f0875e78"
   license any_of: ["Unlicense", "MIT"]
   head "https://github.com/BurntSushi/bttf.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a02626a37587fcd189be846fb28a5acf82d084adb543004c3160c0cd0ce8a2a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a4689226a8f34d9ce2375e7f852d8b36b0c0e8600d5d2117e8508505f5c66c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a88c89f22599f3db65f54223323f3f09c57ec3e4129a50bf996025c6a05e31a"
-    sha256 cellar: :any,                 arm64_linux:   "13745823617e2fbc51b286b253827cdfa628c64c52b4ffb14be4cded03607695"
-    sha256 cellar: :any,                 x86_64_linux:  "53ee8e6a09223c3e9961b8fc69cdd0caa334a4b66d9f2f26e23a2256c1506a5e"
+    manifest_sha256 "a85767458eecc1ac9ebe8121965e595705b8bfe851fc9a8c7387f6d305b69922"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "baf653687263b1095a311c9752ed34bd895a5f4eea18fbb35b130d69f95dbbd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9def42ce08eb584b6f3543749cca14edbc46fb351174b9c32add9d55e4b38f09"
+    sha256 cellar: :any,                 arm64_linux:   "f25007463a4330a60f302a29ce815f7bb7586cd5570dce014400933e607eb10f"
+    sha256 cellar: :any,                 x86_64_linux:  "7e7b8e2ab8c8e8f2a53817b9fddd99b7d72cc91ae91b5ead2ac48a0555983f6a"
   end
 
   depends_on "rust" => :build
@@ -28,7 +28,7 @@ class Bttf < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bttf --version 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/bttf --version")
     assert_equal "2026-06-11\n", shell_output("#{bin}/bttf time fmt -f '%F' 2026-06-11")
   end
 end
