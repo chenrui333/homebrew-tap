@@ -8,8 +8,9 @@ class Logira < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "eb9aeb48ada357eb0761676003081ab087306ca460009a0d4450d2d77db1473b"
-    sha256 cellar: :any,                 x86_64_linux: "45117e00a189fb89aa0d7ae8135efea7a4692f4e165bd75ff75f319efcc4c2ad"
+    manifest_sha256 "996527e573ff7b9a2fed0edd2578961df3ff75a08c2eaae88dbd3a037852f38f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "7e53fd980c9fa8abb15080ec54c76f91e0941f625917e83173a42ac7a588f342"
+    sha256 cellar: :any,                 x86_64_linux: "6762adc894aba1968c4c86b0755b32db6ae7966fda25d8b72ffae04c8aa018e2"
   end
 
   depends_on "go" => :build
