@@ -1,8 +1,8 @@
 class Bootvine < Formula
   desc "Live tree of systemd boot and shutdown jobs on the console"
   homepage "https://codeberg.org/wvhulle/bootvine"
-  url "https://codeberg.org/wvhulle/bootvine/archive/v0.1.4.tar.gz"
-  sha256 "2d28371e38fc09e9755ac1f688abcd19fa72795a90fac28b5ceca5f6216d6575"
+  url "https://codeberg.org/wvhulle/bootvine/archive/v0.1.5.tar.gz"
+  sha256 "7f6caf1ca56bf6ea25be74197c6723da49cfa3c9af365372022371ac40bffcad"
   license "GPL-3.0-or-later"
   head "https://codeberg.org/wvhulle/bootvine.git", branch: "main"
 
