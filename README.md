@@ -952,6 +952,7 @@ brew install --cask <tool>
 - `ruler`
 - `rum`
 - `run`
+- `rustel`
 - `rustfilt`
 - `rusticon`
 - `rustlens`
