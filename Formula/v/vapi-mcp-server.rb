@@ -1,13 +1,14 @@
 class VapiMcpServer < Formula
   desc "MCP server for Vapi AI"
   homepage "https://github.com/vapiai/mcp-server"
-  url "https://registry.npmjs.org/@vapi-ai/mcp-server/-/mcp-server-0.1.0.tgz"
-  sha256 "a7264d68b56daf3e56316a85248f8c86e0ccd16acb170fd7d630ec17595ca25a"
+  url "https://registry.npmjs.org/@vapi-ai/mcp-server/-/mcp-server-0.2.0.tgz"
+  sha256 "8352bc9e119e111346d469f2cb688f1cb229e9f840022cc6f82ec6b29a638224"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "d7d52616c371b70c91fab76dda7559fe15a5ef67c575aacb08285296468bb679"
+    manifest_sha256 "e54d19305699789d3c6cbb223e4404de77a96b5545e315224fcc4b1cd148cee9"
+    sha256 cellar: :any_skip_relocation, all: "1ac726526635748824359c0f86a8c71cba1853ed2826a05c2e1943409ad28789"
   end
 
   depends_on "node"
@@ -28,11 +29,18 @@ class VapiMcpServer < Formula
     ENV["VAPI_TOKEN"] = "test"
 
     json = <<~JSON
-      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26"}}
-      {"jsonrpc":"2.0","id":2,"method":"tools/list"}
+      {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"homebrew","version":"1.0.0"}}}
+      {"jsonrpc":"2.0","method":"notifications/initialized"}
+      {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
     JSON
 
     output = pipe_output("#{bin}/vapi-mcp-server 2>&1", json, 0)
-    assert_match "Lists all Vapi assistants", output
+    replies = output.lines.map { |line| JSON.parse(line) }
+    initialize_reply = replies.find { |reply| reply["id"] == 1 }
+    assert_equal version.to_s, initialize_reply.fetch("result").fetch("serverInfo").fetch("version")
+
+    tools_reply = replies.find { |reply| reply["id"] == 2 }
+    assistants = tools_reply.fetch("result").fetch("tools").find { |tool| tool["name"] == "list_assistants" }
+    assert_equal "Lists up to 10 Vapi assistants", assistants.fetch("description")
   end
 end
