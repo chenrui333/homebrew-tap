@@ -1,16 +1,16 @@
 class NucleusContainer < Formula
   desc "Lightweight OCI container runtime for NixOS"
   homepage "https://github.com/sig-id/nucleus"
-  url "https://github.com/sig-id/nucleus/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "61ffa624c8e088e698b5ce9aa4ab6f9b59314a7718819fecdbe59a1cfb54c9d3"
+  url "https://github.com/sig-id/nucleus/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "e4adb723c0843bfb2ff4536764d8c9928aea1c997389119a11ce444143574e12"
   license "Apache-2.0"
   head "https://github.com/sig-id/nucleus.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "d9785aca9d327b19b5c013527f53e7c4246397005d766d19f4f7f33821a778eb"
-    sha256 cellar: :any, x86_64_linux: "e6b8e6ca5ed10aae88f3b6a232d8377751a8aeebb907f92b6a4107c8a59643b8"
+    manifest_sha256 "9b51244b532c6f3880545f361996e579f322095e29339f4502ac8867a59cac58"
+    sha256 cellar: :any, arm64_linux:  "8a06ffe79c752d9b603088d029fd4713de776243d1fd734b861ccac2d822203f"
+    sha256 cellar: :any, x86_64_linux: "b821de03fba99fac018bb5f75d1e5a54671f04312b6758389aa89fcf224b876b"
   end
 
   depends_on "rust" => :build
@@ -23,14 +23,6 @@ class NucleusContainer < Formula
   end
 
   def install
-    if Hardware::CPU.arch == :arm64
-      # libc does not expose these x86-oriented syscall constants on Linux ARM64.
-      inreplace "src/security/seccomp.rs" do |s|
-        s.gsub! '"fchmodat2" => Some(libc::SYS_fchmodat2),', '"fchmodat2" => Some(452),'
-        s.gsub! '"mknod" => Some(libc::SYS_mknod),', '"mknod" => None,'
-      end
-    end
-
     system "cargo", "install", *std_cargo_args
   end
 
