@@ -1,8 +1,8 @@
 class NucleusContainer < Formula
   desc "Lightweight OCI container runtime for NixOS"
   homepage "https://github.com/sig-id/nucleus"
-  url "https://github.com/sig-id/nucleus/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "e4adb723c0843bfb2ff4536764d8c9928aea1c997389119a11ce444143574e12"
+  url "https://github.com/sig-id/nucleus/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "d39f6a7a6bf3e827da429e04ed43869e17e945ff5807d26b875afd4ce90d685a"
   license "Apache-2.0"
   head "https://github.com/sig-id/nucleus.git", branch: "main"
 
