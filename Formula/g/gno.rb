@@ -1,17 +1,18 @@
 class Gno < Formula
   desc "Local knowledge engine with hybrid search and MCP integration"
   homepage "https://gno.sh"
-  url "https://github.com/gmickel/gno/archive/refs/tags/v2.15.0.tar.gz"
-  sha256 "a072b5b5572206a059d27d5a75c81b1b4840abf008d6469de58bf2baf7e5c87f"
+  url "https://github.com/gmickel/gno/archive/refs/tags/v2.16.0.tar.gz"
+  sha256 "92d052939db768cb4f729584441347560d708dc5dc6962994b9dd26ceb4fae78"
   license "MIT"
   head "https://github.com/gmickel/gno.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "f02604397eb2a3edc45bc62cf95580d83dc9c8c121f39be73e4060fdd707c13d"
-    sha256 arm64_sequoia: "dea099d850243238db33e0975d3c1d810e88d75948744f9572fc8ad703f4aede"
-    sha256 arm64_linux:   "3bf7018a24cde493cc48ebdc072b2cfae03a476c8980ec97bdd0d012fc364f0c"
-    sha256 x86_64_linux:  "a7226314d25ac09b0cacb69d5b3e6adce5090cc54ab58a5b0dc90b27e157884e"
+    manifest_sha256 "6d7037ae844ddacbfb6bc1a6be48110a27b16fb71f433c87818770bc212a4c1a"
+    sha256 arm64_tahoe:   "f36cadc086889fc57dcf1a0d1abdb995b912d113f3eb2fb9d3d7154cf8ca6b48"
+    sha256 arm64_sequoia: "c7d225c18973321162188e7aba5697cd26a7dd4b7f4be7e5eb2fdbe6316b86c9"
+    sha256 arm64_linux:   "836b26b2f9d947a7915d18888af6d561f0087c1315c67dc156de12f545dfcd07"
+    sha256 x86_64_linux:  "bedff66432b0479895bda6a30a5f6812cc26b31f0ac36ed18393de80fdff9edc"
   end
 
   depends_on "cmake" => :build
@@ -85,9 +86,10 @@ class Gno < Formula
       (libexec/"native").install Dir["dist/vec0.{dylib,so}"]
     end
     # Resolve the locally compiled extension, not npm's native platform packages.
+    vec0 = shared_library("vec0")
     Dir["node_modules/sqlite-vec/index.{cjs,mjs}"].each do |file|
       inreplace file, /  const loadablePath = .*;/,
-                     "  const loadablePath = '#{libexec}/native/vec0.#{OS.mac? ? "dylib" : "so"}';"
+                     "  const loadablePath = '#{libexec}/native/#{vec0}';"
     end
     # Keep Sharp's interpreted @img/colour dependency when pruning replaced native platform packages.
     rm_r Dir["node_modules/sqlite-vec-*", "node_modules/@node-llama-cpp",
@@ -106,12 +108,14 @@ class Gno < Formula
     buildpath.glob("#{native_build}/**/{CMakeFiles,CMakeCache.txt,compile_commands.json,build.ninja}",
                    File::FNM_DOTMATCH).each { |path| rm_r path if path.exist? }
     rm_r "vendor/fts5-snowball"
-    platform = "#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.arm? ? "arm64" : "x64"}"
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "x64"
+    platform = "#{os}-#{arch}"
     resource("fts5-snowball-source").stage do
       system "make", "-C", "snowball", "CFLAGS=-fPIC"
       system ENV.cc, "-fPIC", "-shared", "-O3", "-I#{formula_opt_include("sqlite")}",
              "-Isnowball/include", "-Isqlite", "src/fts5stemmer.c", "snowball/libstemmer.o",
-             "-L#{formula_opt_lib("sqlite")}", "-lsqlite3", "-o", "fts5stemmer.#{OS.mac? ? "dylib" : "so"}"
+             "-L#{formula_opt_lib("sqlite")}", "-lsqlite3", "-o", shared_library("fts5stemmer")
       (buildpath/"vendor/fts5-snowball"/platform).install Dir["fts5stemmer.{dylib,so}"]
       (buildpath/"vendor/fts5-snowball").install Dir["LICENSE*", "COPYING*"]
     end
