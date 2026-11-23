@@ -128,6 +128,7 @@ brew install --cask <tool>
 - `blue`
 - `blueutil-tui`
 - `blush`
+- `bombadil`
 - `bomtique`
 - `bootvine`
 - `botkube`
@@ -547,6 +548,7 @@ brew install --cask <tool>
 - `iozone`
 - `ip2d`
 - `ips`
+- `iptraf-ng`
 - `iris-disasm`
 - `jaggr`
 - `jarl`
