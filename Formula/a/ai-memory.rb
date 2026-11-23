@@ -1,17 +1,18 @@
 class AiMemory < Formula
   desc "Long-term memory for AI coding agents"
   homepage "https://github.com/akitaonrails/ai-memory"
-  url "https://github.com/akitaonrails/ai-memory/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "6c0623d59837a3cf2ca3497519bd777303d2b89d3d3d1ed29f0715c8225d1fe2"
+  url "https://github.com/akitaonrails/ai-memory/archive/refs/tags/v3.5.2.tar.gz"
+  sha256 "9520af076354874f93162a7024259e745e93e77ca687ab84279c80010cd5467d"
   license "MIT"
   head "https://github.com/akitaonrails/ai-memory.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "25af65a6d9df195f4c12913a22e6bf5edc56e02d062eadfd71311ac38465d897"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "890f06e1d4dae8fdf7c4b52ee107bf7010f95801a723f8f43218d8e3c5034034"
-    sha256 cellar: :any,                 arm64_linux:   "5d57e4d95d56bd7a2d212070571f5298491b5edcd3cc46378db358f5f8e0d8a7"
-    sha256 cellar: :any,                 x86_64_linux:  "57488c81b4c6e536e9fc6eed20d351df4efe24a28990bcd1251fff75b99976a2"
+    manifest_sha256 "b6a612debe42dd8fcfc0501447fd42fa5e9543ab9010aaa8d9ffe7666019a444"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64d65c7c0c7864039df8fefef14f1ff085a19bb5046aeeac9dc908e1631a0b83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8078ecfe2f7b27e470595b9e3030350f4c69543e28191b23a0648bd3a465c3a7"
+    sha256 cellar: :any,                 arm64_linux:   "85dc88a38ec61b3033db1a6b4d52e81c8af874ed02b8c99e08ef4ea46182b5f3"
+    sha256 cellar: :any,                 x86_64_linux:  "e7326eddb0294fb371d343d3a4ef14755ed049d651ef18cfacbea862eb5fa3b2"
   end
 
   depends_on "pkgconf" => :build
