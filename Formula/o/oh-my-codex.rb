@@ -1,8 +1,8 @@
 class OhMyCodex < Formula
   desc "Multi-agent orchestration layer for OpenAI Codex CLI"
   homepage "https://github.com/Yeachan-Heo/oh-my-codex"
-  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.22.11.tgz"
-  sha256 "d9ddf1b56f963211bb721a441886a6d78adc040854b18b08df3f9f3809649a94"
+  url "https://registry.npmjs.org/oh-my-codex/-/oh-my-codex-0.22.12.tgz"
+  sha256 "dee6a4f7c791bab53be26b787a033ca25a09ab89cb6f0121f40227ab534dd723"
   license "MIT"
   head "https://github.com/Yeachan-Heo/oh-my-codex.git", branch: "main"
 
@@ -21,10 +21,10 @@ class OhMyCodex < Formula
   deny_network_access!
 
   def fetch
-    # The 0.22.11 release left the workspace crates at 0.22.11-dev in Cargo.lock.
+    # The 0.22.12 release still pins its workspace crates to 0.22.11-dev.
     # https://github.com/Yeachan-Heo/oh-my-codex/pull/4109
-    if version.to_s == "0.22.11"
-      inreplace "Cargo.lock", 'version = "0.22.11-dev"', 'version = "0.22.11"'
+    if version.to_s == "0.22.12"
+      inreplace "Cargo.lock", 'version = "0.22.11-dev"', 'version = "0.22.12"'
     end
 
     system "npm", "install", *std_npm_args(prefix: buildpath/"npm-fetch")
