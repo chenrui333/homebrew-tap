@@ -1,8 +1,8 @@
 class Openresearch < Formula
   desc "Local-first workspace for research agents"
   homepage "https://openresearch.sh/"
-  url "https://github.com/alphaXiv/OpenResearch/archive/refs/tags/v0.2.29.tar.gz"
-  sha256 "20d386bb542e6d75a39cb0b5a04c774d5e010152d2c0824d6eff58d98e092d4c"
+  url "https://github.com/alphaXiv/OpenResearch/archive/refs/tags/v0.2.30.tar.gz"
+  sha256 "23721fcf94c44a0be44a10916896942748bfbc0068a0c4f68985b455d5384c35"
   license "MIT"
   head "https://github.com/alphaXiv/OpenResearch.git", branch: "main"
 
