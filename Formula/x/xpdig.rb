@@ -1,17 +1,18 @@
 class Xpdig < Formula
   desc "Dig into Crossplane traces via TUI"
   homepage "https://github.com/brunoluiz/xpdig"
-  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "0ec9c51fa4b701b6c400d45a92e801ba502233c0b01193d43c7f2df3d8ff830f"
+  url "https://github.com/brunoluiz/xpdig/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "2a6d4562f49b4320b7fe665a8208c25ec0aaa4f4df2672d23b5ee40786d8a2db"
   license "Apache-2.0"
   head "https://github.com/brunoluiz/xpdig.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e7fba7177d35cdc336249e24886a08cb8b18dcca3bb39945e1fba27931c3dcc6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e7fba7177d35cdc336249e24886a08cb8b18dcca3bb39945e1fba27931c3dcc6"
-    sha256 cellar: :any,                 arm64_linux:   "aab39efe3f798e5a0856e2aadb5f28f15e82c0009cc44b7346f708b853df7347"
-    sha256 cellar: :any,                 x86_64_linux:  "e13d677dd9ca18e4a584c2e5f1f259be435ea40febd1443fe24d448cea643efb"
+    manifest_sha256 "8a92d195d6bb7542ee586d042bdd72a73def376ba147638c572db276ee82e9a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4002bdfcb3d66c49dda8bf3c3314379618964307bfbf90f246ab48f2896f2fdd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4002bdfcb3d66c49dda8bf3c3314379618964307bfbf90f246ab48f2896f2fdd"
+    sha256 cellar: :any,                 arm64_linux:   "308f57aef4d2040baa60efbef626c32800efaca4be6d0046b4b948236a0533e7"
+    sha256 cellar: :any,                 x86_64_linux:  "27c7b3e1a0aa5ea40d00038b642416224c68d25ab15aad96bbfddf1447731c59"
   end
 
   depends_on "go" => :build
