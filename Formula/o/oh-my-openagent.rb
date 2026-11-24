@@ -1,8 +1,8 @@
 class OhMyOpenagent < Formula
   desc "Multi-model agent orchestration plugin and toolkit for OpenCode and Codex"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.81.tar.gz"
-  sha256 "2051d7d36e998c1d58714e18e228579a60e42a5b0f309ecb023e19b4a4f3eeb7"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.83.tar.gz"
+  sha256 "5ed6f44594faf6f56e6f37325d9e6104f52038a48f67d21830cd34b513dc45a6"
   # Sustainable Use License 1.0 permits only free, non-commercial redistribution.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
@@ -114,7 +114,9 @@ class OhMyOpenagent < Formula
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     # Compile OpenTUI's real native core with Mach-O padding for Homebrew's install-name relocation.
     native_name = OS.mac? ? "libopentui.dylib" : "libopentui.so"
-    native_target = "#{Hardware::CPU.arm? ? "aarch64" : "x86_64"}-#{OS.mac? ? "macos" : "linux"}"
+    native_arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    native_os = OS.mac? ? "macos" : "linux"
+    native_target = "#{native_arch}-#{native_os}"
     cd "opentui-native/packages/native" do
       inreplace "build.zig", "if (target.result.os.tag == .linux and optimize != .Debug)",
                 "if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n    " \
