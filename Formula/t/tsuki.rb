@@ -8,7 +8,8 @@ class Tsuki < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "18b86c22fe24b07fe074fdf0d24711f2180f8a6c13fd6ebbe0a0d3c96e8c7612"
+    manifest_sha256 "4cbddab9035e039a7aac0ccd4ecb14fda04421564b14a9bb630847b1b0de336a"
+    sha256 cellar: :any_skip_relocation, all: "4d8f728039a3573a4756660367c64bb27a0e99b4188ca169817ad3fc4ca92420"
   end
 
   depends_on "rust" => [:build, :test]
