@@ -1,8 +1,8 @@
 class Rustel < Formula
   desc "Terminal live coding studio for the Strudel music pattern language"
   homepage "https://github.com/tzfm/rustel"
-  url "https://github.com/tzfm/rustel/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "c43eec341698db7d84d877d8134826eeb9becb82a4ee1b1b29287d7bc2ea7c24"
+  url "https://github.com/tzfm/rustel/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "8df2e65cd47df5bcba34993aafbaed724263259acae6d295f9abf7581b7f4274"
   license "AGPL-3.0-or-later"
   head "https://github.com/tzfm/rustel.git", branch: "main"
 
