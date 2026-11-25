@@ -8,11 +8,11 @@ class Rustel < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "2e2aad6fca1af4075b4f2a9d0030552324e2522637c5cd21e07b1a5bfc3e7717"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d9a62d38f968417e714fefb63f9a168aa03e5fec2c69d3f34b9c270282922a20"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07af403a7baaf9bf506f775d18c5c6fb9982da65d70ff12a454e0281f691e45b"
-    sha256 cellar: :any,                 arm64_linux:   "8431702d7906cbe887f25de46327df41031167819e98c024a693e865ed5085f1"
-    sha256 cellar: :any,                 x86_64_linux:  "ced91a7762c6c1c337b755c5156241816a5e21d1548bb1b7939d69ccba8f92b7"
+    manifest_sha256 "23bd940627cc1e56f45a35f75c3ed4e301b0c7e37e6fc882203f158dd7c641d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a435b1ba48976f563190ce518fcfd8b1cbc0df0449335f2e687e991f0699458c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eebe7be860e1c27be53679ae4ecb22a7da9cc62cdbd9e269c78c77b3963c9cad"
+    sha256 cellar: :any,                 arm64_linux:   "c1b69a64f240d4ca010be2372b2fb29cfb38fcf97c28848c37e077bec4ae36bb"
+    sha256 cellar: :any,                 x86_64_linux:  "243429b9f590026b57df53e78630bdcd2587716560c28ecab9ddfea564ef0ebc"
   end
 
   depends_on "pkgconf" => :build
