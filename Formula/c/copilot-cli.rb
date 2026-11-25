@@ -7,8 +7,8 @@ class CopilotCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "df36ac5dddb1ae352ba0c6fb39853a87dbc2445341a36e315fb3d9e54c57d34e"
-    sha256 cellar: :any_skip_relocation, all: "9e4d33f1053c5b32f9900bbce256f38461c6524352124eb9e49e61bd6e708c62"
+    manifest_sha256 "3139b483608638bdea800f481e8c4ba7c44f6bc233493922bfb2ab947d1931a1"
+    sha256 cellar: :any_skip_relocation, all: "54833ea7d8b42b6ddb84a83c93da35603cfb2afdf6958b8294a72c03a0fe95ae"
   end
 
   depends_on :macos # TODO: add linux support
