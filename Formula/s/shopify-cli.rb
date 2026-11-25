@@ -1,8 +1,8 @@
 class ShopifyCli < Formula
   desc "CLI which helps you build against the Shopify platform faster"
   homepage "https://shopify.dev/"
-  url "https://registry.npmjs.org/@shopify/cli/-/cli-5.0.2.tgz"
-  sha256 "5395f3988e229a83936e2de0315b91cc61e3cc5ad4e3063b5761ae794d2a52b5"
+  url "https://registry.npmjs.org/@shopify/cli/-/cli-5.1.0.tgz"
+  sha256 "cc243d8056803e700c1d9038285adcafeea37de624633a8babf0610b60f73858"
   license "MIT"
 
   bottle do
@@ -25,10 +25,6 @@ class ShopifyCli < Formula
     rm_r buildpath/"npm-fetch"
     system "npm", "install", "--offline", *std_npm_args
     rm_r libexec/"lib/node_modules/@shopify/cli/node_modules/clipboardy/fallbacks/linux/xsel" if OS.linux?
-    # Skip the prerun npm latest-version check: upgrades go through Homebrew, and offline
-    # (sandboxed) runs crash with an unhandled `onCancel` rejection from the bundled `got`.
-    inreplace libexec/"lib/node_modules/@shopify/cli/dist/hooks/prerun.js",
-              %r{\w+\(\w+\)\|\|\w+\("@shopify/cli",\w+,\{cacheExpiryInHours:24\}\)}, "void 0"
     bin.install_symlink libexec/"bin/shopify"
   end
 
