@@ -2,18 +2,18 @@ class TangentCli < Formula
   desc "Stream processing with real languages, not DSLs"
   homepage "https://github.com/EthanBlackburn/tangent"
   url "https://github.com/EthanBlackburn/tangent.git",
-      tag:      "v0.3.0",
-      revision: "b11a4440ee5c8892e1aa399903482e40e6201802"
+      tag:      "v0.3.2",
+      revision: "1659d603b1f9d5ab6073d85a3d004e3b783426d5"
   license "MPL-2.0"
   head "https://github.com/EthanBlackburn/tangent.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "6a5942ae8f3702292453656a5410c3756faf6b45a53e031dba99dfe033c701a7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f706d86fc93eff3b6116039660603da4990216adab5fe687150c9b87240204f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1645873b778ec83b254d28ecc3ef8697e039b40d9cd6258764f693b01022daf6"
-    sha256 cellar: :any,                 arm64_linux:   "f52971c17fe6f039ca1bf0f96e877953edd1c39b9551c5f58a630975c4d52b42"
-    sha256 cellar: :any,                 x86_64_linux:  "742d253c12d31346b68fc22839b0c86162560d05406c2d22b64482dc8374e5f5"
+    manifest_sha256 "24aef3ae3fd30ab1fb1df016784aa3b2dd38b34b5ff235256633405257e5abc9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "613950eecb22930cf0c6566bb261d89a676be4a6e21ca5e2536a3ab92a899095"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "149c63121a050f0d5911df704c64423bd4207e88c6f3a86669a48d7f3a4fe07d"
+    sha256 cellar: :any,                 arm64_linux:   "e36f56f0d9c9c3053bd08a40d82d69e29798168727d25883b43f87faa51c24eb"
+    sha256 cellar: :any,                 x86_64_linux:  "007f8a7df1c3fae572b0b3ad9821f74d2aa56b1cea489dec939890090c625e78"
   end
 
   depends_on "cmake" => :build # for rdkafka-sys
