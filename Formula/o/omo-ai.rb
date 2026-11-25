@@ -9,11 +9,11 @@ class OmoAi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "3e97b292fb68f4ff242929cbeb2b952d2be60171624eda1f28443796ff457607"
-    sha256 cellar: :any, arm64_tahoe:   "2ec37bbc67402d3aa74fb5f78259802aad8f43db0737084947dfdbb4e4964a34"
-    sha256 cellar: :any, arm64_sequoia: "0822007ff31797c85c921ef8129293e923f0b7bfe7b059e58ac665a2122caeae"
-    sha256 cellar: :any, arm64_linux:   "fcfb2b9d0b424e5c402af54fc7443fe7badd5403e9fd14876f58bf82c722f14b"
-    sha256 cellar: :any, x86_64_linux:  "d3ec3115c02d6ad5fa880f470985a786549da1ae32f4879658bea9018b3dab6d"
+    manifest_sha256 "57687388a400c2c5aa9180dc1543a85fdb98666fbf0ecf3c3ee2a71887e5e97c"
+    sha256 cellar: :any, arm64_tahoe:   "de9f26a457fd5fb7728d31e3b0d4de6b57befa05ad7a25e0fc759fccd282847b"
+    sha256 cellar: :any, arm64_sequoia: "a2ab6b3beab829a4de12656f46801f62c98e6eaa40cd02496231e5b32f583fa6"
+    sha256 cellar: :any, arm64_linux:   "38bfe1c17d6bca43ee4a73b2b714835b689e3697196fe6807351149904fe1725"
+    sha256 cellar: :any, x86_64_linux:  "ee9a7acdadc90a3e9f7761cc380c0d430e9ff37b9496061399e2fdcf62892909"
   end
 
   depends_on "pkgconf" => :build
