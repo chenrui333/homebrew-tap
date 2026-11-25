@@ -2,8 +2,8 @@ class TangentCli < Formula
   desc "Stream processing with real languages, not DSLs"
   homepage "https://github.com/EthanBlackburn/tangent"
   url "https://github.com/EthanBlackburn/tangent.git",
-      tag:      "v0.3.0",
-      revision: "b11a4440ee5c8892e1aa399903482e40e6201802"
+      tag:      "v0.3.2",
+      revision: "1659d603b1f9d5ab6073d85a3d004e3b783426d5"
   license "MPL-2.0"
   head "https://github.com/EthanBlackburn/tangent.git", branch: "main"
 
