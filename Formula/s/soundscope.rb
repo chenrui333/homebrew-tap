@@ -1,17 +1,18 @@
 class Soundscope < Formula
   desc "TUI app for analyzing audio data such as frequencies and loudness (LUFS)"
   homepage "https://github.com/bananaofhappiness/soundscope"
-  url "https://github.com/bananaofhappiness/soundscope/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "81c719dd319bd4c7910fc616404f9f14d33780206f743276b063e0045db0078f"
+  url "https://github.com/bananaofhappiness/soundscope/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "eb1cc8657edf20344823909179b7416ba026c8c27cf5aad2bee1b689573e6b73"
   license "MIT"
   head "https://github.com/bananaofhappiness/soundscope.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d1b086173a522a444f56407ed4606a57b65bb36479a074f70dc3d3fc7efa4f0a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c4648edfd3fb19c23a979241e9ef8618fb4d367494286077620bf480cb75441"
-    sha256 cellar: :any,                 arm64_linux:   "0d24a19263906479cc76543a48682985f7ce411d55471c913740c1d5a9a04191"
-    sha256 cellar: :any,                 x86_64_linux:  "20b59f75b29dc563f1495ed2aa223db482ad0830d127b32c2a0420ad29a68e30"
+    manifest_sha256 "de4f9b53afc24c01f9d0bfcd240d90ff94369230de6a136d977e8a4f2d2d4b79"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f51e386397b0995febf2d72346d829eee4cf16bf8b8db84bbc0c5447a2fde5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6f36bd9e338216d4313ad7e0a49c52cc1921730c1a7657a22d04e35735235a7"
+    sha256 cellar: :any,                 arm64_linux:   "9e84adb1d563c644cce24ecf8b7817a517ed5225b094ced13a2874f73eb53c8a"
+    sha256 cellar: :any,                 x86_64_linux:  "fd1c1e129573aa6122134299ea0b4074d4dde5b0c3b39192f148eded8005e49e"
   end
 
   depends_on "pkgconf" => :build
