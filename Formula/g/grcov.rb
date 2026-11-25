@@ -8,10 +8,11 @@ class Grcov < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5fcf909ebd81b741f3f5f90fb5eac5c17a2dd88e90ed44cc9d4bfe5d4058f0cd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "967c25a6f965b75721ff17d61812e691621501748b49df98dbf8026e1cbf67d0"
-    sha256 cellar: :any,                 arm64_linux:   "026954ad2263bf708e12566baad53817854d9dfa4e4985d645fb5f382e222c38"
-    sha256 cellar: :any,                 x86_64_linux:  "a14fbf5eacc955bde7ea9b172d4b9b32161a0075389a2bae3eadd15d5a14a5e3"
+    manifest_sha256 "00503a4f5f1fe802df203a1c8b00dd11372650bb7494210958c538e6e00530ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "fd9664e520b1d50c071787ce2a8211f2b32f1d9575bc0dc1d30e21f833106da8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b03a4f44d5cc6b2bcefd0eb94659156dedb629729b6e79ca36e4812bf64a097"
+    sha256 cellar: :any,                 arm64_linux:   "0adb5453c2604be17b316f51bab53175b0386abb7f508bd497e007e3c981482a"
+    sha256 cellar: :any,                 x86_64_linux:  "15543ff7117dde25d2bc149e247029a1c40ece5e0bbbd0285b3a3c31319e2622"
   end
 
   depends_on "rust" => [:build, :test]
