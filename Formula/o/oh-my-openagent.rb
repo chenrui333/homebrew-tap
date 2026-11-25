@@ -1,19 +1,19 @@
 class OhMyOpenagent < Formula
   desc "Multi-model agent orchestration plugin and toolkit for OpenCode and Codex"
   homepage "https://github.com/code-yeongyu/oh-my-openagent"
-  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.81.tar.gz"
-  sha256 "2051d7d36e998c1d58714e18e228579a60e42a5b0f309ecb023e19b4a4f3eeb7"
+  url "https://github.com/code-yeongyu/oh-my-openagent/archive/refs/tags/v5.1.83.tar.gz"
+  sha256 "5ed6f44594faf6f56e6f37325d9e6104f52038a48f67d21830cd34b513dc45a6"
   # Sustainable Use License 1.0 permits only free, non-commercial redistribution.
   license :cannot_represent
   head "https://github.com/code-yeongyu/oh-my-openagent.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "99c54c964e577dfa3d1299c52cbc204ca25ff26ff957af2ddca44a8378653268"
-    sha256 cellar: :any, arm64_tahoe:   "24c75de6a818dbe5b993eb62b594e549da4a873dae36a8dff850046ad72a60f3"
-    sha256 cellar: :any, arm64_sequoia: "893391d8e98df424323901cdafa23fa8fc6f5ab64e3ec6401b21fd6eb2e8e6de"
-    sha256 cellar: :any, arm64_linux:   "bae5f9a04bfc363f5e4feaf9af6a4fa1ed385bf303687e875ad39123d9edba88"
-    sha256 cellar: :any, x86_64_linux:  "142d3d5e2ca18cc846b47921b01f8739557d6afa723d53d9860b45b77ab5c349"
+    manifest_sha256 "feb0b3695ec12e8687e270d7519309884f6da84234db9375a7df1e482637bf9d"
+    sha256 cellar: :any, arm64_tahoe:   "e15fda82e9f31e16c063cee5466ec74b3c6565336af1ff8a93673cdbaa7a92b1"
+    sha256 cellar: :any, arm64_sequoia: "5d2125af02b2f1cf9bbc9e5abf3958e4256ae1207ccfc35a587579c6a74b8f1a"
+    sha256 cellar: :any, arm64_linux:   "d36c089aba7d72073a8e31b8b5cb9cfca8fa24093f9cc493033d71914760ec5a"
+    sha256 cellar: :any, x86_64_linux:  "cbd60c6edac537b5cb732bf2829c0dc95647c0dd55b86740b143d8b0c02b4ede"
   end
 
   depends_on "esbuild" => :build
@@ -114,7 +114,9 @@ class OhMyOpenagent < Formula
     arch = Hardware::CPU.arm? ? "arm64" : "x64"
     # Compile OpenTUI's real native core with Mach-O padding for Homebrew's install-name relocation.
     native_name = OS.mac? ? "libopentui.dylib" : "libopentui.so"
-    native_target = "#{Hardware::CPU.arm? ? "aarch64" : "x86_64"}-#{OS.mac? ? "macos" : "linux"}"
+    native_arch = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    native_os = OS.mac? ? "macos" : "linux"
+    native_target = "#{native_arch}-#{native_os}"
     cd "opentui-native/packages/native" do
       inreplace "build.zig", "if (target.result.os.tag == .linux and optimize != .Debug)",
                 "if (target.result.os.tag == .macos) lib.headerpad_max_install_names = true;\n    " \
