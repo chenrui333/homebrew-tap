@@ -11,11 +11,11 @@ class Swamp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "2bfb33a5af8ce7ba7b5aa9adc946467f9a04fa3f97c5a1d3acde4e844b877a2f"
-    sha256 cellar: :any,                 arm64_tahoe:   "384e2b9ea8c7ece40a71c9fd3e08c0cee8d6c8a8c5811d6aa252cef91d1f6544"
-    sha256 cellar: :any,                 arm64_sequoia: "29cf8b2c25db1c068f94f5cea382b2aef366de23a4f871750a858d98d65ca73c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b50aac902e461275f5a6ccef793b9f40f1fb0ec19e83101ac97a840d940ec218"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62c69e0aa1c9a50f174677f11445c0a65ca7362c15e4080151c68759c1e5b069"
+    manifest_sha256 "d10e9893dc7598fd70c781f6b0ce18fc3269881c63aa7947a9beb2aed128d14d"
+    sha256 cellar: :any,                 arm64_tahoe:   "e862e745fbdc995b9a9a0ed824239ee90459ba1f18ccb9ba48cd0e486d814421"
+    sha256 cellar: :any,                 arm64_sequoia: "05f2ee53096b12a62c656485842a31ee02e0bc5435bab321c8f51291df2cef9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c24fd68ff28f1d066091eb8f88a2dee28223c6b23971dd5f4c809ee0257574c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dc4451a4924e8a6d7dc51e94e11b46a86785fca9a7dcd04c06f26bb1250c8e1"
   end
 
   depends_on "node" => :build
