@@ -9,11 +9,11 @@ class Collie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "a00a04e781fa4d5e6b9c8809f2a61e159f624246e36373855801fa378056e34f"
-    sha256 arm64_tahoe:   "59bf8994ed85cef4a756b31518c347117c3df284f4ebcd9ccd19a2a1b52e3715"
-    sha256 arm64_sequoia: "79fdf5e9e4397567edfdca5da85f916142e1adbece0891bb4622b535badc9343"
-    sha256 arm64_linux:   "afb0d197bf65187e7d914a9ce63e7c2238ac8f1a82892b5fd9cdbd91cb57888b"
-    sha256 x86_64_linux:  "f1d61712b79ea0f09d767b3c7207aa6a4b75e5e104ec1cf4827e8fb2591b7c5d"
+    manifest_sha256 "650ac54c692f706b17ef9da309ea94ebf9e0d0541bbe465dc502cd22ffd825ba"
+    sha256 arm64_tahoe:   "706ff0352eff18d9b2f425eaaa46ab49c1d6b896ce36e6ea5aede88859111603"
+    sha256 arm64_sequoia: "b6aa0b8a132de214e3a1f91129c29a6a620d21e3c10a0c6e235b228c4bf30394"
+    sha256 arm64_linux:   "3a973d240423a76dfebf700a475e0c3be9f20e5b26dd2cd39f003d179cfe2f7c"
+    sha256 x86_64_linux:  "68418df85fea81ae5165dab83cb8ec61e5f853db94be3a295c4344593ce5a086"
   end
 
   depends_on "typescript" => :build
