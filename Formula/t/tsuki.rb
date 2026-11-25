@@ -1,14 +1,15 @@
 class Tsuki < Formula
   desc "Lua 5.4 port written in Rust (library for embedding)"
   homepage "https://github.com/ultimaweapon/tsuki"
-  url "https://github.com/ultimaweapon/tsuki/archive/refs/tags/v0.4.9.tar.gz"
-  sha256 "f6bc05782084880e8285da34534fb1def327c5720e364185a760a678dd9a2ebc"
+  url "https://github.com/ultimaweapon/tsuki/archive/refs/tags/v0.4.10.tar.gz"
+  sha256 "a4e72e9b9c9a4b274bcd97c05ca9d23e43f4cc4498c1a99de5454e9f08c49add"
   license "MIT"
   head "https://github.com/ultimaweapon/tsuki.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, all: "18b86c22fe24b07fe074fdf0d24711f2180f8a6c13fd6ebbe0a0d3c96e8c7612"
+    manifest_sha256 "4cbddab9035e039a7aac0ccd4ecb14fda04421564b14a9bb630847b1b0de336a"
+    sha256 cellar: :any_skip_relocation, all: "4d8f728039a3573a4756660367c64bb27a0e99b4188ca169817ad3fc4ca92420"
   end
 
   depends_on "rust" => [:build, :test]
