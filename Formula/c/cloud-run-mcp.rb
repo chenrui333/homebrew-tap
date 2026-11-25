@@ -7,10 +7,11 @@ class CloudRunMcp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "062426c2ad5a26113aef7f22e6a3680d48d6f8b0bf204b7b99caa067b93b96f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "062426c2ad5a26113aef7f22e6a3680d48d6f8b0bf204b7b99caa067b93b96f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3403e8e441ab07e333cd8f31a95dd29fca0fecb0c15f741818000351d9ba439a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3403e8e441ab07e333cd8f31a95dd29fca0fecb0c15f741818000351d9ba439a"
+    manifest_sha256 "daccdcd441f52493b3c1d30fb04b16983953305ab3ccea6cabe6c76d557d9454"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "32282ca4cd8f4bcf8746be7a0ed4691c5bbd40912cc2f1e8f0cbf002a871eb27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32282ca4cd8f4bcf8746be7a0ed4691c5bbd40912cc2f1e8f0cbf002a871eb27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "abf91d09a96fded69db13d31aff211d96353f5c0eccc13ce18e29c52caf7013c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abf91d09a96fded69db13d31aff211d96353f5c0eccc13ce18e29c52caf7013c"
   end
 
   depends_on "node"
