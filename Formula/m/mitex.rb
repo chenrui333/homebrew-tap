@@ -12,11 +12,11 @@ class Mitex < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a3e0a789553f80179054ad712bca89b9f1ceb5cf17e4dcd537259d8c74e85ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e578b53c5dacf0198e7e22b558efbeac3c27d53495c50984b5fd1465d4967b57"
-    sha256 cellar: :any,                 arm64_linux:   "fd18a3ca88d95da8571e621dffda051ae2364e06098bc8e011b3014a09f1c3f8"
-    sha256 cellar: :any,                 x86_64_linux:  "322b484e36f171aa2c5a1a7ef2eba2f69688def27244e9a141ef01341ceb0b65"
+    manifest_sha256 "3a19c33a0189a1a55ca44c329f93f15ad078dc6e7bcd75ff821ad84fe1275adb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5adb0288dadc98b7a5da7f4bfaf52840dd84a7c11c2fc65097afe50f9063571c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67667b07c455e75114dab635e2c2158f14a497db3c51d9532e7f4670b5391c9b"
+    sha256 cellar: :any,                 arm64_linux:   "0894a4ab3b06fcf82da0d05f57001509e4b274144915d9183329d9334d1743b9"
+    sha256 cellar: :any,                 x86_64_linux:  "8474b5ae772320c2fec6d606816b7c04d657ae8a064cd08bfdee2afef83d7dd9"
   end
 
   depends_on "rust" => :build
