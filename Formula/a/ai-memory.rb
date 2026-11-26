@@ -8,11 +8,11 @@ class AiMemory < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "a3e1d61e2edd179c1aa2606418265c1268aaadc9ffc0064be68b286cc2264541"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "383c6574e5923b471b3456269f32eb314c24d9b425b7cbe6bfcb0777c0e19e0d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edb4e35a372482a14e073194c26270b8152c5d2acca8b4cb65fb34173305c876"
-    sha256 cellar: :any,                 arm64_linux:   "ec31b0549fd6784c83f421b0e0c7cdc61ed30d286288326f8b54474843ea1499"
-    sha256 cellar: :any,                 x86_64_linux:  "f536421b14055384de6936d13c01dba92d32d65d28f721f0a385d19ff636a3b1"
+    manifest_sha256 "59fd8db3f5fa6ec3b20acae52b5a16be439a72ba80572eea5c96d57ea6e50397"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b77c4c3d4c0baec49088b759913a54c0fa9c8d9bec543d5a681c6c333a943ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df28a9d04b5d2c6c01289f0bc366b60bf573c5131b2e2467b7497bd6ebacc7e"
+    sha256 cellar: :any,                 arm64_linux:   "ee2074ff341c748509097f39ec74fc8dc5bf02a641d1d1e18955c3979318fcfd"
+    sha256 cellar: :any,                 x86_64_linux:  "917f8533ec0825978a5300074cd6cd00a220aee45bfb51340889374342d2171d"
   end
 
   depends_on "pkgconf" => :build
