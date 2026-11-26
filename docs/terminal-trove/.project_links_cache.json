@@ -960,5 +960,11 @@
   "https://terminaltrove.com/ipatool/": "https://github.com/majd/ipatool/",
   "https://terminaltrove.com/ytunnel/": "https://github.com/yetidevworks/ytunnel/",
   "https://terminaltrove.com/llm-visuals/": "https://github.com/DingoOz/llm-visuals/",
-  "https://terminaltrove.com/gnat/": "https://github.com/galaxy-io/gnat/"
+  "https://terminaltrove.com/gnat/": "https://github.com/galaxy-io/gnat/",
+  "https://terminaltrove.com/trurl/": "https://github.com/curl/trurl",
+  "https://terminaltrove.com/tokui/": "https://github.com/zdyxry/tokui",
+  "https://terminaltrove.com/rustic/": "http://github.com/rustic-rs/rustic",
+  "https://terminaltrove.com/slackdump/": "https://github.com/rusq/slackdump",
+  "https://terminaltrove.com/sipnab/": "https://github.com/NormB/sipnab",
+  "https://terminaltrove.com/rmpc/": "https://github.com/mierak/rmpc"
 }
