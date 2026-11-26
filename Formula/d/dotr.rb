@@ -1,8 +1,8 @@
 class Dotr < Formula
   desc "Dotfiles manager that is as dear as a daughter"
   homepage "https://github.com/uroybd/DotR"
-  url "https://github.com/uroybd/DotR/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "4d9dc02314f2064e13254141195e7bc4490aa26b6f0d27112875e99b2055d678"
+  url "https://github.com/uroybd/DotR/archive/refs/tags/v2.5.0.tar.gz"
+  sha256 "d9e64ea93679f996fcee458bb058fccda36e220030756abf6528a6963167b9b3"
   license "MIT"
   head "https://github.com/uroybd/DotR.git", branch: "main"
 
