@@ -1,8 +1,8 @@
 class Csvi < Formula
   desc "Cross-platform terminal CSV editor"
   homepage "https://hymkor.github.io/csvi/"
-  url "https://github.com/hymkor/csvi/archive/refs/tags/v1.23.1.tar.gz"
-  sha256 "05ddf95ca2829888c656fbc7cd7216e62d96658299891ca8dd2698ef77d48c02"
+  url "https://github.com/hymkor/csvi/archive/refs/tags/v1.25.0.tar.gz"
+  sha256 "3c127786eed17eb861173af55dba0f32b16a7bf476e15e57cc021bc2ef2e04ba"
   license "MIT"
   head "https://github.com/hymkor/csvi.git", branch: "master"
 
@@ -13,11 +13,11 @@ class Csvi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b858d0bfc779e9d0602ab6cb7ab258f009f8244c227de24a0d366c23643785fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b858d0bfc779e9d0602ab6cb7ab258f009f8244c227de24a0d366c23643785fd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b858d0bfc779e9d0602ab6cb7ab258f009f8244c227de24a0d366c23643785fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4967fa6289a84b92c5b5066d72091798aa0c594603f1cf87a55ff0ca80db4102"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1b697aa85ae83bc35c79ef0afe0b61e235a56a0a926077300399813058f2273"
+    manifest_sha256 "011d7394cb7152fd7187c34cf1d1b5ed2a87c6fadbe2731c7df43d315868d698"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "70995ad853fab6225666c0178a289b80ca46a85ea99fd888dd508faf35ec8f55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70995ad853fab6225666c0178a289b80ca46a85ea99fd888dd508faf35ec8f55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "682e7880e6cdb169cee1a93693326a7449b4c712eadfd0dd1f62b2f8b91d0790"
+    sha256 cellar: :any,                 x86_64_linux:  "4f491b7c7d7770e876922696f1beec701ddb456e1aefebc264decdcd7fd4600e"
   end
 
   depends_on "go" => :build
