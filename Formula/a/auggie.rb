@@ -1,8 +1,8 @@
 class Auggie < Formula
   desc "All the power of Augment Code in your terminal"
   homepage "https://www.augmentcode.com/product/CLI"
-  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-1.2.2.tgz"
-  sha256 "3558daa13f73611237ac9ee611bcc0b3751f4e0f2dfbcfd36028f0ccca34b5fc"
+  url "https://registry.npmjs.org/@augmentcode/auggie/-/auggie-1.2.3.tgz"
+  sha256 "72e95a56cd187e943ebc9818c6d3f374aa3e5705502d5aefaaccb5d609e1efe7"
   license :cannot_represent
 
   bottle do
