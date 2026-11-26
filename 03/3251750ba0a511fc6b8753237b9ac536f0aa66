@@ -1,0 +1,26 @@
+Formula/d/dustoff.rb
+  h_9df9c32c3f321d 15
+Formula/c/codemachine.rb
+  h_9df9c32c3f321d 17
+Formula/y/youtube-music-cli.rb
+  h_9df9c32c3f321d 18
+Formula/b/bunsen.rb
+  h_9df9c32c3f321d 17
+Formula/v/viwo.rb
+  h_9df9c32c3f321d 17
+Formula/d/distill.rb
+  h_9df9c32c3f321d 20
+Formula/r/repos.rb
+  h_9df9c32c3f321d 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "033251750ba0a511fc6b8753237b9ac536f0aa66",
+  "prompts": {},
+  "humans": {
+    "h_9df9c32c3f321d": {
+      "author": "Rui Chen <rui@chenrui.dev>"
+    }
+  }
+}
