@@ -793,7 +793,6 @@ brew install --cask <tool>
 - `omnictl`
 - `omo-ai`
 - `omp-manager`
-- `omp`
 - `opamui`
 - `open-code-review`
 - `openclacky`
@@ -1075,7 +1074,6 @@ brew install --cask <tool>
 - `tangent-cli`
 - `tantivy-cli`
 - `tapflow`
-- `taproom`
 - `tars`
 - `tascli`
 - `task-master-ai`
