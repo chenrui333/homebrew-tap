@@ -1,13 +1,13 @@
 class Mitex < Formula
   desc "Minimal TeX Equations Support"
   homepage "https://github.com/mitex-rs/mitex"
-  url "https://github.com/mitex-rs/mitex/archive/5fc83b64ab5e0b91918528ef2987037866e24086.tar.gz"
-  version "0.2.5"
-  sha256 "9cacda1201c1169b2371998a88f090cb1da50a7b10db271152e99390f44b8ce3"
+  url "https://github.com/mitex-rs/mitex/archive/refs/tags/0.2.7.tar.gz"
+  sha256 "6e63aa314adb8963a89c80bf891884d49ad4ae489a1979b5e1bb7b61a874cfd8"
   license "Apache-2.0"
 
   livecheck do
-    skip "no tagged releases"
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
@@ -21,11 +21,10 @@ class Mitex < Formula
 
   depends_on "rust" => :build
 
-  # from `.gitmodules`
+  # Supplies the default specification embedded by mitex-spec-gen at compile time.
   resource "artifacts" do
-    url "https://github.com/mitex-rs/artifacts.git",
-        tag:      "v0.2.4",
-        revision: "9eb762afa001b36205408c7615a73e5dfaa6f80a"
+    url "https://static.crates.io/crates/mitex-spec-gen/mitex-spec-gen-0.2.4.crate"
+    sha256 "a1e9ef918ec9c2a14e60ebb20275684b483d23afb5c3314127c9eb46ce74ae68"
   end
 
   deny_network_access!
@@ -35,7 +34,10 @@ class Mitex < Formula
   end
 
   def install
-    (buildpath/"crates/mitex-spec-gen/assets/artifacts").install resource("artifacts")
+    spec_dir = buildpath/"crates/mitex-spec-gen/assets/artifacts/spec"
+    resource("artifacts").stage do
+      spec_dir.install "assets/artifacts/spec/default.rkyv"
+    end
 
     system "cargo", "install", *std_cargo_args(path: "crates/mitex-cli")
 
