@@ -1,8 +1,8 @@
 class Headscale < Formula
   desc "Open source, self-hosted implementation of the Tailscale control server"
   homepage "https://github.com/juanfont/headscale"
-  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.28.0.tar.gz"
-  sha256 "cb38683998d13d2700df258a81c00add199dccb999b1dacc4491305cdaa67db3"
+  url "https://github.com/juanfont/headscale/archive/refs/tags/v0.29.8.tar.gz"
+  sha256 "77dcadd5e9f6620a20152508af38d65e61aef2c9977bdc031d76db3355e54300"
   license "BSD-3-Clause"
   head "https://github.com/juanfont/headscale.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Headscale < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9f92cb41298571861e0cdc121ae2c53dc7b78ec4a912f11f569621153720b1ac"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65a560fd2fd7e4b55d110be4dd88d7006fc3c5bdf2cadf22ae8f8db0dc8a92de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70510eeb8649d3cab6985f9262c6d7b23bec268d9424974804be2755a6a4f5a0"
-    sha256 cellar: :any,                 x86_64_linux:  "a864e67c5e519f10bf2c768465e0610c98567fce0d2da70eb6001253af770888"
+    manifest_sha256 "667f57127da6930bff375c181b3ecdd6704088f240ea31c403164d065194c89f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3a05ebc42485aaff2959eeccdd88e275e003dfbbc6b3adb841c73719aa573747"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71c2fe6797fdab91871cdda2b6c92b405a895736b354002afeeff057bd657163"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3193ab9a9577c6a534a217fe0d722ac96df296e75b3c8398db20afb2f044b9b1"
+    sha256 cellar: :any,                 x86_64_linux:  "5f8c5ed6041cd3f51dc88cec23abae3b730ef50d01eb4e174c62786bdefc8a14"
   end
 
   depends_on "go" => :build
