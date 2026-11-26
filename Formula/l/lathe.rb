@@ -1,8 +1,8 @@
 class Lathe < Formula
   desc "Generate hands-on, multi-part technical tutorials on demand"
   homepage "https://github.com/devenjarvis/lathe"
-  url "https://github.com/devenjarvis/lathe/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "989cade99ddddfaa53a97359a3c62a5695f107227874564336869cf16c2ec444"
+  url "https://github.com/devenjarvis/lathe/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "7a0b220e10009c5dca0517392d893df02c6df96fcc8f8fd261b0713a6fdea262"
   license "MIT"
   head "https://github.com/devenjarvis/lathe.git", branch: "main"
 
