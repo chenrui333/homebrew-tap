@@ -6,6 +6,11 @@ class Plannotator < Formula
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/backnotprop/plannotator.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 arm64_tahoe:   "75a6e09f352e25a78f1b99b4eebe4016a8dfbfc7a68601841ac7333a48808ae8"
