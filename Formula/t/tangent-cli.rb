@@ -9,11 +9,11 @@ class TangentCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "24aef3ae3fd30ab1fb1df016784aa3b2dd38b34b5ff235256633405257e5abc9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "613950eecb22930cf0c6566bb261d89a676be4a6e21ca5e2536a3ab92a899095"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "149c63121a050f0d5911df704c64423bd4207e88c6f3a86669a48d7f3a4fe07d"
-    sha256 cellar: :any,                 arm64_linux:   "e36f56f0d9c9c3053bd08a40d82d69e29798168727d25883b43f87faa51c24eb"
-    sha256 cellar: :any,                 x86_64_linux:  "007f8a7df1c3fae572b0b3ad9821f74d2aa56b1cea489dec939890090c625e78"
+    manifest_sha256 "7c9d7549de327f03a198972282f0894b4cd9042cf3da9cce64f6d2997398a099"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "be39a2319ba55ddf2664ed9b82c0f1ca3e511814be8824451ada93121a924a72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3385aefa8018c8a7e0be4c69644fa93bf0d5b5812d16e54f1827ce3fc1eecb3f"
+    sha256 cellar: :any,                 arm64_linux:   "36086565f3c419b3f47ae4446d2b90780c5b045d8c941b6fc420f781a0b38c78"
+    sha256 cellar: :any,                 x86_64_linux:  "2ee62842329426fe3fbb1c43a7483393bc010c1e861e3dfc233c8f4f264b7478"
   end
 
   depends_on "cmake" => :build # for rdkafka-sys
