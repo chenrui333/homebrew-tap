@@ -84,7 +84,6 @@ brew install --cask <tool>
 - `asmdiff`
 - `astro-language-server`
 - `atlassian-cli`
-- `aube`
 - `auggie`
 - `auox`
 - `austin-tui`
@@ -107,14 +106,12 @@ brew install --cask <tool>
 - `az-tui`
 - `azazel`
 - `azure-pipelines-language-server`
-- `b4n`
 - `backport`
 - `balcony`
 - `base-mcp-server`
 - `bash-script-tools`
 - `batctl`
 - `bb-app`
-- `bbrew`
 - `bearer`
 - `beelzebub`
 - `bernstein`
@@ -146,9 +143,7 @@ brew install --cask <tool>
 - `brunette`
 - `bsky-cli`
 - `btczee`
-- `bttf`
 - `budgetclaw`
-- `buffa`
 - `bufisk`
 - `bullmq-dash`
 - `bunsen`
@@ -196,7 +191,6 @@ brew install --cask <tool>
 - `chanfana`
 - `chatlog`
 - `chatuino`
-- `checksec`
 - `chess-tui`
 - `cheznav`
 - `chock`
@@ -311,8 +305,6 @@ brew install --cask <tool>
 - `defaults-rs`
 - `dela`
 - `deletor`
-- `depsguard`
-- `designcraft-cli`
 - `dg`
 - `dgen`
 - `dgop`
@@ -342,9 +334,7 @@ brew install --cask <tool>
 - `dvm`
 - `dxt`
 - `e2c`
-- `eas-cli`
 - `easy-llm-cli`
-- `ec`
 - `ec2-ami-tools`
 - `eca`
 - `ecscope`
@@ -354,7 +344,6 @@ brew install --cask <tool>
 - `effectcraft-cli`
 - `eilmeldung`
 - `elastop`
-- `elio`
 - `emoj`
 - `emplace`
 - `enola`
@@ -387,7 +376,6 @@ brew install --cask <tool>
 - `fftext`
 - `figcraft-cli`
 - `filessh`
-- `filmcraft-cli`
 - `firectl`
 - `firm`
 - `fission-cli`
@@ -434,7 +422,6 @@ brew install --cask <tool>
 - `git-surgeon`
 - `git-vain`
 - `git-x`
-- `gita`
 - `gitact`
 - `gitagent`
 - `gitcredits`
@@ -454,7 +441,6 @@ brew install --cask <tool>
 - `gloomberb`
 - `glsl-analyzer`
 - `gnat`
-- `gnhf`
 - `gno`
 - `go-eagle`
 - `go-envsubst`
@@ -469,13 +455,11 @@ brew install --cask <tool>
 - `gommit`
 - `gorae`
 - `gowebly`
-- `gpk`
 - `gptop`
 - `graphjin`
 - `graphlit-mcp-server`
 - `graphtage`
 - `grcov`
-- `gridcraft-cli`
 - `gritql`
 - `grmon`
 - `grut`
@@ -551,7 +535,6 @@ brew install --cask <tool>
 - `iptraf-ng`
 - `iris-disasm`
 - `jaggr`
-- `jarl`
 - `jelly`
 - `jetzig`
 - `jiggy`
@@ -564,7 +547,6 @@ brew install --cask <tool>
 - `jolt`
 - `jonquil`
 - `jotbird`
-- `jotter`
 - `journalot`
 - `jplot`
 - `jsmin`
@@ -574,7 +556,6 @@ brew install --cask <tool>
 - `jules`
 - `junit2html`
 - `justray`
-- `jwt-ui`
 - `k10s`
 - `k8sql`
 - `kafka`
@@ -602,7 +583,6 @@ brew install --cask <tool>
 - `knip`
 - `konfigo`
 - `kplane`
-- `kpt`
 - `krr`
 - `krs`
 - `kt`
@@ -629,7 +609,6 @@ brew install --cask <tool>
 - `lazyenv`
 - `lazyjira`
 - `lazykiq`
-- `lazymake`
 - `lazynpm`
 - `lazytail`
 - `lazytilt`
@@ -637,10 +616,8 @@ brew install --cask <tool>
 - `lean-ctx`
 - `lemonade`
 - `leveldb-cli`
-- `lfk`
 - `librarian-mcp`
 - `license-scanner`
-- `lightcraft-cli`
 - `lightpanda-v8`
 - `lightpanda`
 - `lin`
@@ -685,15 +662,12 @@ brew install --cask <tool>
 - `mcp-manager`
 - `mcp-obsidian`
 - `mcp-reasoner`
-- `mcp-remote`
 - `mcp-server-airbnb`
 - `mcp-server-cloudflare`
 - `mcp-server-tester`
 - `mcp-use`
-- `mcpc`
 - `mcpd`
 - `mcporter`
-- `mcpsnoop`
 - `mcptoon`
 - `mdbook-linkcheck`
 - `mdns-scanner`
@@ -729,7 +703,6 @@ brew install --cask <tool>
 - `motus`
 - `mpfshell`
 - `mqtt-cli`
-- `msgvault`
 - `mtef`
 - `mult`
 - `multica`
@@ -754,7 +727,6 @@ brew install --cask <tool>
 - `needs`
 - `nest-cli`
 - `netperf`
-- `netwatch`
 - `newsjack`
 - `newsnow-mcp-server`
 - `nexus`
@@ -890,7 +862,6 @@ brew install --cask <tool>
 - `pubmed-mcp-server`
 - `purple`
 - `putzen`
-- `pv-migrate`
 - `pwdsafety`
 - `pygitzen`
 - `pyink`
@@ -929,7 +900,6 @@ brew install --cask <tool>
 - `remark-cli`
 - `rendy`
 - `renux`
-- `repeater`
 - `repology`
 - `repos`
 - `reqlog`
@@ -1113,7 +1083,6 @@ brew install --cask <tool>
 - `tgrab`
 - `thanks-stars`
 - `theattyr`
-- `threatdeck`
 - `ticker`
 - `tickrs`
 - `tiki`
@@ -1176,7 +1145,6 @@ brew install --cask <tool>
 - `usort`
 - `vapi-mcp-server`
 - `vaults3`
-- `vectorcraft-cli`
 - `vectorize-mcp-server`
 - `venom`
 - `vento`
@@ -1188,7 +1156,6 @@ brew install --cask <tool>
 - `vimalender`
 - `vitepress`
 - `viwo`
-- `vortix`
 - `voxtype`
 - `vsg`
 - `wakey`
@@ -1201,17 +1168,14 @@ brew install --cask <tool>
 - `weekly-git-summary`
 - `werk`
 - `wiki-tui`
-- `wild`
 - `wiremix`
 - `wisu`
 - `wolfpack`
-- `wordcraft-cli`
 - `wozz`
 - `wpscan`
 - `wut-cli`
 - `xcpkg`
 - `xdgctl`
-- `xfr`
 - `xled`
 - `xmlformatter`
 - `xpdig`
