@@ -6,6 +6,11 @@ class AgentDeck < Formula
   license "MIT"
   head "https://github.com/asheshgoplani/agent-deck.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8501df8160d06c4c765eb5ac5a184dacbae7a9a89e3ac07b75a3a3ceaeea92d"
