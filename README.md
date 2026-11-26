@@ -260,7 +260,6 @@ brew install --cask <tool>
 - `comchan`
 - `comhad`
 - `conan-mcp`
-- `container2wasm`
 - `context-analyzer`
 - `context-file-manager`
 - `context-hub`
