@@ -1,16 +1,17 @@
 class Happy < Formula
   desc "Mobile and Web client for Claude Code and Codex"
   homepage "https://happy.engineering"
-  url "https://registry.npmjs.org/happy/-/happy-1.2.6.tgz"
-  sha256 "8c8a80b8c468bbf7368009d4ef280a0edc5b46daab859b6b8901cebb102007dd"
+  url "https://registry.npmjs.org/happy/-/happy-1.2.7.tgz"
+  sha256 "128be95a55308867001021ddf80d833e13509cede0ae37218e9c0300c93acbbd"
   license "MIT"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256               arm64_tahoe:   "ee75805f3afa4fb93ee5cef52b7bf184c569037de3dd90d5245c3dcefcd8f7ea"
-    sha256               arm64_sequoia: "ee75805f3afa4fb93ee5cef52b7bf184c569037de3dd90d5245c3dcefcd8f7ea"
-    sha256 cellar: :any, arm64_linux:   "927c975d1bca81ff9e6ba4e88055ea221210bbcdcc8115827dde750c8eecf5dc"
-    sha256 cellar: :any, x86_64_linux:  "e54b3b5fc0968d1bf17c591b52735fb99d520b3c8fbe840945726aa9496f7670"
+    manifest_sha256 "685634029a5f64ed7496ec042492acbfa64756ebe32606dbf981260bd16ed790"
+    sha256               arm64_tahoe:   "9398db22c72d6dcc7de754bda8295900b5e158f293f1ddc44da060922510bb1b"
+    sha256               arm64_sequoia: "9398db22c72d6dcc7de754bda8295900b5e158f293f1ddc44da060922510bb1b"
+    sha256 cellar: :any, arm64_linux:   "5161f579c9d9a1f0f4f0353771b316afab886d1eace4f37ce26878f9b37fdb40"
+    sha256 cellar: :any, x86_64_linux:  "13a011d7e2a80778d3708e3fb8b9a11ce08e978e54ffdc3ac539a95d4503659d"
   end
 
   depends_on "node"
