@@ -1,8 +1,8 @@
 class Toofan < Formula
   desc "Minimal, lightning-fast typing tester TUI"
   homepage "https://github.com/vyrx-dev/toofan"
-  url "https://github.com/vyrx-dev/toofan/archive/refs/tags/v2.4.2.tar.gz"
-  sha256 "a6c7db263e3b2239147c1ef66b6f15d170badb8b82605bdc2fa086cb3478b768"
+  url "https://github.com/vyrx-dev/toofan/archive/refs/tags/v2.4.3.tar.gz"
+  sha256 "058741268cb43b1fe6c3896606f8bc03fb49043e644347d8f014d3ceed8573cc"
   license "MIT"
   head "https://github.com/vyrx-dev/toofan.git", branch: "master"
 
