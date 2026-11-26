@@ -50,6 +50,13 @@ class CoreReadinessTest(unittest.TestCase):
         self.assertIn("| skip | Blocked |", report)
         self.assertIn("| default | Needs license review |", report)
 
+    def test_report_keeps_compound_license_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            recipe = Path(tmp) / "compound.rb"
+            recipe.write_text('class Compound < Formula\n  license any_of: ["MIT", "Apache-2.0"]\nend\n')
+            report = self.crawler.generate_report([self.crawler.process_formula(recipe)], self.index)
+        self.assertIn('any_of: ["MIT", "Apache-2.0"]', report)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -149,8 +149,8 @@ class FormulaCrawler:
                 metadata["homepage"] = match.group(1)
             if match := re.search(r'url\s+"([^"]+)"', content):
                 metadata["url"] = match.group(1)
-            if match := re.search(r'license\s+"([^"]+)"', content):
-                metadata["license"] = match.group(1)
+            if match := re.search(r"^  license[ \t]+(\S[^\n]*)", content, re.M):
+                metadata["license"] = match.group(1).strip().removeprefix('"').removesuffix('"')
 
             metadata["has_bottle"] = "bottle do" in content
             if match := re.search(r"^  livecheck do\n(.*?)^  end\b", content, re.M | re.S):
@@ -555,7 +555,7 @@ class FormulaCrawler:
 
         if formula.livecheck_mode == "skip":
             return "Blocked", "Verify the skip reason and whether a stable-release strategy is available"
-        if not formula.license:
+        if not formula.license or formula.license.startswith(":"):
             return "Needs license review", "Verify the upstream SPDX terms and recipe license"
         stats = formula.git_stats
         if stats.hosting == "github":
