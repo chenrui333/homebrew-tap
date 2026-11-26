@@ -487,6 +487,7 @@ brew install --cask <tool>
 - `helius-personal-finance-tracker`
 - `hello`
 - `herald`
+- `herdr-core`
 - `hermes-hud`
 - `hexora`
 - `hexowl`
