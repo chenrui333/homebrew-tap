@@ -8,11 +8,11 @@ class Rslocal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ac01b391e2266a90fce4c88e08cdceb1834462a115955e007490ccb3986d94ad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65a6ecfc0dc9a2dd6fc18c7bb020d4517ea3fd3f1d5e74f1d3027ec4f4bc6ee2"
-    sha256 cellar: :any,                 arm64_linux:   "0a39d79106c6f4580b14b55ad90a9ee02097c770d3830c5a45c7b7bf4b01e0df"
-    sha256 cellar: :any,                 x86_64_linux:  "10d7b23adcdc671f720bcc9bf1c7ee2e159506d55ec02078ad766bedd75a71ee"
+    manifest_sha256 "2c950fb5519f522924a8ffd1a9dbcf083eab28576c883ea2a21fd082e913c389"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0f1fb2b7be7995c8f3934a368f00e23772d0ed0a0374e602cc78512d1ad9ce60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e63099841076cc14a481690fb90ae16cd1bb7b8efbe54bea6de9babe12f96b59"
+    sha256 cellar: :any,                 arm64_linux:   "f4e5bc47dd96a0bea2d5dcb014543d0e6f75e80c3269ed85711f8519bb602b6d"
+    sha256 cellar: :any,                 x86_64_linux:  "6ddee6466d557567ba18e03630165017e9e91533b3b55676773ee94cb6a27105"
   end
 
   depends_on "protobuf" => :build # for prost-build
