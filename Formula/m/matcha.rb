@@ -6,6 +6,11 @@ class Matcha < Formula
   license "MIT"
   head "https://github.com/floatpane/matcha.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     rebuild 1
