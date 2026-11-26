@@ -5,6 +5,15 @@ class HerdrCore < Formula
   sha256 "f85c123cddca40e8e4fae7ea1b416fe8a022323ea956862759a9750f76154b53"
   license all_of: ["Apache-2.0", "MIT"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "97f7651b66e25c9c2a638ff00f0097ad19c9142cd65cf5b5869f4c4545c8803f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6577a4bf33619a2c7c464ca3fb9866de4569532423c746836074c83874bb23d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88aa8ca395e7a71dd29637f77027d8de73dde7894695b389097e4e38cd33c101"
+    sha256 cellar: :any,                 arm64_linux:   "8c3e09792c8f281b1885b4f5e4501cd9d695d78b95bb7adb7e9a7e0a05d0a4e1"
+    sha256 cellar: :any,                 x86_64_linux:  "28778af4a83426d9d8412fd14741b145f82069e16dff303122f1b817a575f7e1"
+  end
+
   depends_on "rust" => :build
   depends_on "zig@0.16" => :build
 
