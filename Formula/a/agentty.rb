@@ -2,8 +2,8 @@ class Agentty < Formula
   desc "Terminal AI pair programmer written in modern C++"
   homepage "https://github.com/agentty-org/agentty"
   url "https://github.com/agentty-org/agentty.git",
-      tag:      "v0.9.62",
-      revision: "5365695bdea5d9dc98f8d22ae338f74078a062e2"
+      tag:      "v0.9.63",
+      revision: "739df31b9b94c7a6cf0743ea3ef85e19b334407a"
   license "MIT"
   head "https://github.com/agentty-org/agentty.git", branch: "master"
 
