@@ -6,7 +6,8 @@ class Rang < Formula
   license "Unlicense"
 
   livecheck do
-    skip "no rencet releases"
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
