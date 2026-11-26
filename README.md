@@ -769,7 +769,6 @@ brew install --cask <tool>
 - `nless`
 - `no-mistakes`
 - `nocc`
-- `noodle`
 - `nosy`
 - `npkill`
 - `npm-np`
@@ -794,7 +793,6 @@ brew install --cask <tool>
 - `omo-ai`
 - `omp-manager`
 - `opamui`
-- `open-code-review`
 - `openclacky`
 - `opencli`
 - `opencodex`
@@ -959,7 +957,6 @@ brew install --cask <tool>
 - `rustfilt`
 - `rusticon`
 - `rustlens`
-- `rustnet`
 - `rustormy`
 - `rwx`
 - `sakimori`
@@ -988,7 +985,6 @@ brew install --cask <tool>
 - `seastar`
 - `secco`
 - `seednaut`
-- `sem-cli`
 - `semaphore`
 - `sephera`
 - `sflowtool`
@@ -1031,7 +1027,6 @@ brew install --cask <tool>
 - `speedtest`
 - `spiffe-spike`
 - `splashboard`
-- `splitrail`
 - `spok`
 - `spor`
 - `spotatui`
@@ -1248,7 +1243,6 @@ brew install --cask <tool>
 - `zig@0.12`
 - `zig@0.13`
 - `zigfetch`
-- `ziggy`
 - `ziglint`
 - `zigscient`
 - `zmate`
