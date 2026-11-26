@@ -9,6 +9,11 @@ class Cartography < Formula
   revision 2
   head "https://github.com/cartography-cncf/cartography.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any, arm64_tahoe:   "922b9c9ea3d30d6ffced91996fd362da1417a991ffeb2afa59b89607a917453b"
