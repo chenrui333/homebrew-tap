@@ -30,8 +30,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Preserve autobump classifier
-        run: cp .github/scripts/autobump-formula-failure.js "$RUNNER_TEMP/autobump-formula-failure.js"
+      - name: Preserve autobump helpers
+        run: cp .github/scripts/autobump-formula-failure.js .github/scripts/autobump-pr-number.jq "$RUNNER_TEMP/"
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -110,8 +110,7 @@ jobs:
             git -C "$tap_path" reset --hard origin/main
 
             existing_pr_number="$(jq -r --arg formula "$formula_name" \
-              '[.[] | select(.headRefName | startswith("bump-" + $formula + "-"))] |
-                first | .number // empty' <<< "$open_prs")"
+              -f "$RUNNER_TEMP/autobump-pr-number.jq" <<< "$open_prs")"
             if [[ -n "$existing_pr_number" ]]; then
               skipped_formulae+=("$qualified_formula: existing bump PR #$existing_pr_number")
               echo "::notice::Skipping $qualified_formula because bump PR #$existing_pr_number is already open."
@@ -127,8 +126,7 @@ jobs:
                   pr_number=""
                 else
                   pr_number="$(jq -r --arg formula "$formula_name" \
-                    '[.[] | select(.headRefName | startswith("bump-" + $formula + "-"))] |
-                      first | .number // empty' <<< "$open_prs")"
+                    -f "$RUNNER_TEMP/autobump-pr-number.jq" <<< "$open_prs")"
                 fi
                 if [[ -n "$pr_number" ]]; then
                   if ! gh pr edit "$pr_number" --repo "$GITHUB_REPOSITORY" --add-label CI-no-fail-fast; then
@@ -143,8 +141,7 @@ jobs:
                   open_prs="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
                     --json number,title,headRefName)"
                   existing_pr_number="$(jq -r --arg formula "$formula_name" \
-                    '[.[] | select(.headRefName | startswith("bump-" + $formula + "-"))] |
-                      first | .number // empty' <<< "$open_prs")"
+                    -f "$RUNNER_TEMP/autobump-pr-number.jq" <<< "$open_prs")"
                 fi
                 if [[ "$failure_kind" == "infrastructure" ]]; then
                   failed_formulae+=("$qualified_formula (infrastructure; exit $bump_status)")
