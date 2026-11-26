@@ -1,9 +1,10 @@
 class Codstts < Formula
   desc "Code statistics tool for analyzing project language distribution"
   homepage "https://github.com/zheng0116/codstts"
-  url "https://github.com/zheng0116/codstts/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "31e6b46b8f43a52a4b036d07b50ea7faa11f562c01582ecda6d861679ca3f3d8"
+  url "https://static.crates.io/crates/codstts/codstts-0.1.0.crate"
+  sha256 "bd9f9113cb1b8e4c40837a9a81aaf860f9598ab16875b46fa8ca3f3ec8b6130b"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -18,7 +19,6 @@ class Codstts < Formula
   deny_network_access!
 
   def fetch
-    system "cargo", "generate-lockfile"
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
