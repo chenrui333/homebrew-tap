@@ -1,18 +1,18 @@
 class Rustel < Formula
   desc "Terminal live coding studio for the Strudel music pattern language"
   homepage "https://github.com/tzfm/rustel"
-  url "https://github.com/tzfm/rustel/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "8df2e65cd47df5bcba34993aafbaed724263259acae6d295f9abf7581b7f4274"
+  url "https://github.com/tzfm/rustel/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "ca2143f28bb45b2fc80ebdde8cd622a08b8d3f6a33a033a75bddeb51efc28f57"
   license "AGPL-3.0-or-later"
   head "https://github.com/tzfm/rustel.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "23bd940627cc1e56f45a35f75c3ed4e301b0c7e37e6fc882203f158dd7c641d7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a435b1ba48976f563190ce518fcfd8b1cbc0df0449335f2e687e991f0699458c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eebe7be860e1c27be53679ae4ecb22a7da9cc62cdbd9e269c78c77b3963c9cad"
-    sha256 cellar: :any,                 arm64_linux:   "c1b69a64f240d4ca010be2372b2fb29cfb38fcf97c28848c37e077bec4ae36bb"
-    sha256 cellar: :any,                 x86_64_linux:  "243429b9f590026b57df53e78630bdcd2587716560c28ecab9ddfea564ef0ebc"
+    manifest_sha256 "f2f021fc7f08f4d1ab91879b26146a4f202ac680f53bdb044ec0225565e67d44"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5d9ef2fa5d53c08231b61773013240dd74a378b3120ca196aa812266fed996f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b1a9de2049b2593ca116ac09c6548593ef58ba5c9fbb6e95b867352d7bb358e"
+    sha256 cellar: :any,                 arm64_linux:   "3b18da88739e99044b25c615cc80e09cca5e3739a608fbb78ce631069b15364b"
+    sha256 cellar: :any,                 x86_64_linux:  "603d0425f3b176fd937a97ba034cb1eec0a435506e4ee33fad75ab0d652e1d35"
   end
 
   depends_on "pkgconf" => :build
