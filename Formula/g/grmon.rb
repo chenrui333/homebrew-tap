@@ -25,4 +25,10 @@ class Grmon < Formula
   def install
     system "go", "build", *std_go_args
   end
+
+  test do
+    # Upstream does not expose a version command.
+    output = shell_output("#{bin}/grmon -i invalid 2>&1", 2)
+    assert_match 'invalid value "invalid" for flag -i', output
+  end
 end
