@@ -8,11 +8,11 @@ class PlannotatorTui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "5f74432474bb2c6579b833d2ee9e5f84f8e7ac6c4ed3eb418af5bca8aa8d97ee"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83e607ca8617acbe73d6fc05f2e0bd8c477a1a4f511066bff4fe81878cd41cd1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc8231ec82054ce3b36e3ab187821ea7b6a19b921b7ee03fe5bf498e6f9ca9b8"
-    sha256 cellar: :any,                 arm64_linux:   "92a8e24da17d60e01374e6e7a4f0804b40e4c618a4aa930cd0827c772f6dfeb2"
-    sha256 cellar: :any,                 x86_64_linux:  "1b0a3e1807d02ae404b11fcb073bbb293da44bb87d5cd773d176354e3e80c280"
+    manifest_sha256 "90c81d3113acfda5d832b0ba6ade77f61689563e9118210dbcf1a809eb0a2d8a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0d3a0aba2756728fd3875f26cf4d70880771ae060a34120ae0f93fd21bfd3d1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c5cbff189dda34316abfa9831653ae36dd1f5b3da9e83b37c152ea7a9cf9a2"
+    sha256 cellar: :any,                 arm64_linux:   "311c54596cf248446f03d3bafb0ae33d329b2cd4608c65766127efdfd6843cee"
+    sha256 cellar: :any,                 x86_64_linux:  "e241c7081c70c198142ace5828b085627383210e8e084d4902fa881c71ff3209"
   end
 
   depends_on "pkgconf" => :build
