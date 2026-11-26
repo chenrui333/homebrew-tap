@@ -48,19 +48,19 @@ just clean
 
 ```bash
 # Generate metadata report
-python3 scripts/generate_formula_status.py
+python3 formula-status/generate_formula_status.py
 
 # Generate with verbose logging
-python3 scripts/generate_formula_status.py --verbose
+python3 formula-status/generate_formula_status.py --verbose
 
 # Refresh git stats cache (ignore cached results)
-python3 scripts/generate_formula_status.py --refresh
+python3 formula-status/generate_formula_status.py --refresh
 
 # Custom output file
-python3 scripts/generate_formula_status.py --output my-status.md
+python3 formula-status/generate_formula_status.py --output my-status.md
 
 # Control parallelism (default: 20 workers)
-python3 scripts/generate_formula_status.py --workers 10
+python3 formula-status/generate_formula_status.py --workers 10
 ```
 
 ### CI/CD Integration
@@ -71,7 +71,7 @@ The system runs automatically:
 - **Manual**: Trigger from GitHub Actions UI
   - Go to Actions → Formula Metadata → Run workflow
 
-Changes are automatically committed to the repository.
+The workflow publishes generated report and cache changes through a maintenance PR.
 
 ## Command Line Options
 
@@ -81,6 +81,7 @@ Changes are automatically committed to the repository.
 | `--refresh` | Ignore cache and refresh git stats | false |
 | `--workers` | Number of parallel workers | 20 |
 | `--verbose` / `-v` | Enable verbose logging | false |
+| `--core-index` | Read a saved Homebrew/core formula API index | Fetch current index |
 
 ## Justfile Commands
 
@@ -149,10 +150,9 @@ The generated `formula-status.md` contains a sorted table of all formulas:
 
 ### Metadata Table
 
-| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |
-|---------|-------------|-------|-------|-------------|--------------|---------|--------|-----------|----------|
-| popular-tool | An awesome CLI tool for developers | 1234 | 56 | 2024-12-10 | 2024-11-20 | MIT | ✓ | ✓ | [link](https://...) |
-| another-tool | A cool application | 567 | 23 | 2024-12-12 | - | Apache-2.0 | ✓ | - | [link](https://...) |
+The report adds a Core screen and next action to each row. It checks canonical names, aliases, and former names. A matching source URL or repository is overlap evidence; command coverage and migration still need verification. A token match without matching source evidence is a name collision, not a deletion recommendation.
+
+GitHub notability candidates meet the stars or forks screen using available data. Check live canonical metrics (including subscribers), repository age, authorship, licensing, stable-release detection and current Core CI before submission.
 
 **Table columns**:
 1. **Formula**: Formula name
@@ -163,8 +163,9 @@ The generated `formula-status.md` contains a sorted table of all formulas:
 6. **Last Release**: Last release date in YYYY-MM-DD format (or `-` if none)
 7. **License**: Software license (or `-` if not specified)
 8. **Bottle**: ✓ if pre-built binary available, `-` otherwise
-9. **Livecheck**: ✓ if version check configured, `-` otherwise
-10. **Homepage**: Link to project homepage
+9. **Livecheck**: `default`, `explicit`, or `skip` as configured by the recipe; not a live result.
+10. **Core screen / Next action**: Initial classification and verification steps.
+11. **Homepage**: Link to project homepage.
 
 **Sorting**: Formulas are sorted by stars (descending), then alphabetically by name.
 
