@@ -1,8 +1,8 @@
 class Icm < Formula
   desc "Persistent memory with hybrid search for AI agents"
   homepage "https://github.com/rtk-ai/icm"
-  url "https://github.com/rtk-ai/icm/archive/refs/tags/icm-v0.11.5.tar.gz"
-  sha256 "0ddf1ec04a21e672977255654c81d60b4da440040dca1e6269714d7226c629fe"
+  url "https://github.com/rtk-ai/icm/archive/refs/tags/icm-v0.11.6.tar.gz"
+  sha256 "23de5bf821352e88aca320657a4d9b0ee3f58d48dedf79e08ac814d8f2a364ee"
   license "Apache-2.0"
   head "https://github.com/rtk-ai/icm.git", branch: "main"
 
