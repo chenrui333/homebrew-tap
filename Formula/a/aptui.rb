@@ -8,8 +8,9 @@ class Aptui < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "b90e282a7220aed22bd13b6a8a8d39c7e8cd42018cf0e9fbf765bf72aae5b228"
-    sha256 cellar: :any,                 x86_64_linux: "8b5d571ae231852e4fcf7c11501eae2ac6bf15d05ac960edaa2930440363d9ef"
+    manifest_sha256 "5d956418bb5fc069dbd0e62f4d5e61b08e0401b5f54c3bbfee77f2de13c0835d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "b2ee36c561203253ae1126bde4e167ebe871a6b3dd697d50a2869ddd6c795d35"
+    sha256 cellar: :any,                 x86_64_linux: "1cbc9fd75906188d25304c95503f08ec594f8d6f2af428f6f6d37e032282e360"
   end
 
   depends_on "go" => :build
