@@ -8,10 +8,11 @@ class Codstts < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98935bad70aeabb8606678aab3723c35f071ea66a3c062df783a7f775cf0f63a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e4c08ffa0b7cd44ef9307dd36333f2737962efe2cca8f4d7b5d2b14a90ff5e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "f02832aeeed7f398ffc43e2487930864b41e5c9e5e4f67b80da7767dbc8efa55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "723f67509c64841ae553fa29c1a3c535247b05c1e711cad7c9150130c791d843"
+    manifest_sha256 "bf91809a7f2608131181b67d7cb17db21fd3cf444d7f6ccb020293c6b703d3d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "cc127af1940ec3fd5a4d7ddfe5989f5d3f5caa35caaeec2be087ccf6a5a53468"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3972e5ee3f51484b91763af22cd9635e8ee26c8d9fddf4a1c8e39a7d595b0a3"
+    sha256 cellar: :any,                 arm64_linux:   "09d5abbb0890f854bc7880952e9f754d9ff50ea4dbcd57adbb51cd7bc44fc0cf"
+    sha256 cellar: :any,                 x86_64_linux:  "0d41163dd7980b4ec17c22a86fd1f9dd5f64e076d64afae3633e9321448bae65"
   end
 
   depends_on "rust" => :build
