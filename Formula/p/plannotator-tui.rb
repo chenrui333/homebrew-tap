@@ -1,8 +1,8 @@
 class PlannotatorTui < Formula
   desc "Annotate Markdown in the terminal and send feedback to coding agents"
   homepage "https://github.com/plannotator/plannotator-tui"
-  url "https://github.com/plannotator/plannotator-tui/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "c1ba08081547a2b2a7732ede736deef92d6c7e237f24c90babe27f5e3ae17c57"
+  url "https://github.com/plannotator/plannotator-tui/archive/refs/tags/v0.12.1.tar.gz"
+  sha256 "060597771cca59798907eb7f30a3d29263ca1b076e9a8378a30daf35d8353e39"
   license "MIT"
   head "https://github.com/plannotator/plannotator-tui.git", branch: "main"
 
