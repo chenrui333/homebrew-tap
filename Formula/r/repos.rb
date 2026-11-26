@@ -14,7 +14,7 @@ class Repos < Formula
   end
 
   depends_on "gh"
-  depends_on "homebrew/core/bun"
+  depends_on "bun"
 
   deny_network_access!
 

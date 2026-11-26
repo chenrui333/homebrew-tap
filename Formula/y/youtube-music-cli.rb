@@ -15,7 +15,7 @@ class YoutubeMusicCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd421410e835f84dcb2c9d979c606c4e8f287d23808276f35db7e72d51b62573"
   end
 
-  depends_on "homebrew/core/bun"
+  depends_on "bun"
   depends_on "mpv"
   depends_on "node"
   depends_on "yt-dlp"

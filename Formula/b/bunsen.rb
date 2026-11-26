@@ -14,7 +14,7 @@ class Bunsen < Formula
     sha256 arm64_sonoma:  "0a64890f2cdeafba12571e5879e1e91b7df7d740b81e568a594dc9a344131789"
   end
 
-  depends_on "homebrew/core/bun" => :build
+  depends_on "bun" => :build
   depends_on :macos
 
   deny_network_access!

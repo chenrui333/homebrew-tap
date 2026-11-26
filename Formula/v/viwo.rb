@@ -14,7 +14,7 @@ class Viwo < Formula
     sha256 x86_64_linux:  "ed87f9604ba0e16428b0e4acac80ea92cf9bca3da7d15cc6f4baf2a5a94f9ba0"
   end
 
-  depends_on "homebrew/core/bun" => :build
+  depends_on "bun" => :build
 
   on_linux do
     # Bun-compiled executables link ICU dynamically on Linux.

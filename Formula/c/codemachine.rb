@@ -14,7 +14,7 @@ class Codemachine < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bba1869fb27f9f7195eb3a050570b6e4a7f3e1c55697388d588c27bf504f153"
   end
 
-  depends_on "homebrew/core/bun"
+  depends_on "bun"
   depends_on "node"
 
   deny_network_access!

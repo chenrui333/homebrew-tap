@@ -17,7 +17,7 @@ class Distill < Formula
     sha256 cellar: :any_skip_relocation, all: "fd4c8ab38d3b85c0e9abeab4c3745b0ed29bc0e065481b9424ffe355c927c3a7"
   end
 
-  depends_on "homebrew/core/bun" => :build
+  depends_on "bun" => :build
   depends_on "node"
 
   deny_network_access!

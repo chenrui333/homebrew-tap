@@ -12,7 +12,7 @@ class Dustoff < Formula
     sha256 cellar: :any_skip_relocation, all: "cfe80bb589dd471f0bae356832fa3140f2d73a43e7bade790ca107a30b2cb1a6"
   end
 
-  depends_on "homebrew/core/bun" => :build
+  depends_on "bun" => :build
   depends_on "node"
 
   deny_network_access!
