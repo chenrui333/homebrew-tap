@@ -12,8 +12,8 @@ class Rang < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c383da175e3075381f08ca5d80c6778962a7811f32162a8559b9a7e9c51a7922"
+    manifest_sha256 "cf4783a86872ba764e709bc708e2e52daa61125706c12195b7936dd715916519"
+    sha256 cellar: :any_skip_relocation, all: "59815047794065286b849216f7ce8e3bf1ae96b2fd287893d5a89b7ff55be454"
   end
 
   depends_on "cmake" => :build
