@@ -1,8 +1,8 @@
 class Matcha < Formula
   desc "Terminal email client built with Bubble Tea"
   homepage "https://matcha.email/"
-  url "https://github.com/floatpane/matcha/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "8b20f7c92e48c5a5c5c8a5e4dbd8baa5152820124382f0547d583afe294b8fe9"
+  url "https://github.com/floatpane/matcha/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "3d169ec57d4019f647af3b9991acdc512312b75dc2ba0719c65fccddbf518c84"
   license "MIT"
   head "https://github.com/floatpane/matcha.git", branch: "master"
 
@@ -22,6 +22,11 @@ class Matcha < Formula
 
   depends_on "go" => :build
 
+  on_linux do
+    depends_on "pkgconf" => :build
+    depends_on "pcsc-lite"
+  end
+
   deny_network_access!
 
   def fetch
@@ -29,6 +34,7 @@ class Matcha < Formula
   end
 
   def install
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
     system "go", "build", *std_go_args
   end
 
