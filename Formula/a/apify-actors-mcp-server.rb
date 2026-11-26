@@ -5,6 +5,14 @@ class ApifyActorsMcpServer < Formula
   sha256 "1151cfcb34ead6ef40044d3c4d0cb49841da0cbf0afbda7d77cb214c651ce2e3"
   license "MIT"
 
+  livecheck do
+    url "https://registry.npmjs.org/@apify%2Factors-mcp-server"
+    strategy :json do |json|
+      # These releases pin MCP server 2.3.1, below the node package's required ^2.4.0.
+      json.fetch("versions").keys.grep(/\A\d+\.\d+\.\d+\z/).grep_v(/\A0\.(?:21\.(?:[5-9]|1[0-2])|22\.0|23\.0)\z/)
+    end
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, all: "9ce91da9d3d44085107237c5cce97bb86e287ea1b656e524eec8674f636c6206"
