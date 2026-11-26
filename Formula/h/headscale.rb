@@ -6,6 +6,11 @@ class Headscale < Formula
   license "BSD-3-Clause"
   head "https://github.com/juanfont/headscale.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     rebuild 1
