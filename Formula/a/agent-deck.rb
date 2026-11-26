@@ -1,8 +1,8 @@
 class AgentDeck < Formula
   desc "Terminal command center for AI coding agents"
   homepage "https://github.com/asheshgoplani/agent-deck"
-  url "https://github.com/asheshgoplani/agent-deck/archive/refs/tags/v1.16.34.tar.gz"
-  sha256 "0612943eb6a6c7d1484b2a599d56647b674988805f960627607e67735a012da6"
+  url "https://github.com/asheshgoplani/agent-deck/archive/refs/tags/v1.16.40.tar.gz"
+  sha256 "31520fdfa6752a2835bbff0e965d9c1458bf523d7492d7815d6f974f40149bc0"
   license "MIT"
   head "https://github.com/asheshgoplani/agent-deck.git", branch: "main"
 
@@ -13,10 +13,11 @@ class AgentDeck < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f8501df8160d06c4c765eb5ac5a184dacbae7a9a89e3ac07b75a3a3ceaeea92d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8501df8160d06c4c765eb5ac5a184dacbae7a9a89e3ac07b75a3a3ceaeea92d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c494498f34d41d099707a287ff9e3b0628ae00ba8304e06e20609a34333abb6e"
-    sha256 cellar: :any,                 x86_64_linux:  "fd5bbd38887cbe03bf97ed6d705dfaa3b439a6e639549acd1329c1e8814fe923"
+    manifest_sha256 "38a64e369efd0b737e12b49fd20420bfe4ff3c9eb1d0dbebfb5ead2970d72fa3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2c98ebc7290411e4dfa0a7d082022bc20b101327f7384dce7887e99da42ffabc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c98ebc7290411e4dfa0a7d082022bc20b101327f7384dce7887e99da42ffabc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "610e815208e055398264b95dce07402badcadb1bbe53f114c2c4c2316daacd63"
+    sha256 cellar: :any,                 x86_64_linux:  "d32bb709e3164cb6b5ca98fbe6e0d229c752e661e56dbc0c18d963ad5bba68fd"
   end
 
   depends_on "go" => :build
