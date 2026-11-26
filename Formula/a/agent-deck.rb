@@ -1,8 +1,8 @@
 class AgentDeck < Formula
   desc "Terminal command center for AI coding agents"
   homepage "https://github.com/asheshgoplani/agent-deck"
-  url "https://github.com/asheshgoplani/agent-deck/archive/refs/tags/v1.16.34.tar.gz"
-  sha256 "0612943eb6a6c7d1484b2a599d56647b674988805f960627607e67735a012da6"
+  url "https://github.com/asheshgoplani/agent-deck/archive/refs/tags/v1.16.40.tar.gz"
+  sha256 "31520fdfa6752a2835bbff0e965d9c1458bf523d7492d7815d6f974f40149bc0"
   license "MIT"
   head "https://github.com/asheshgoplani/agent-deck.git", branch: "main"
 
