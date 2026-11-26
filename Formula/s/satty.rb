@@ -1,17 +1,17 @@
 class Satty < Formula
   desc "Modern Screenshot Annotation"
   homepage "https://github.com/gabm/Satty"
-  url "https://github.com/gabm/Satty/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "eee18b5f9eabf164da69c7e6e916c98afb78dd296d83e28bb96d9f9636a5fe36"
+  url "https://github.com/gabm/Satty/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "33ab13767010663762165f0130df9f11edf133e28e49f13bd7bc45cb02516a79"
   license "MPL-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5f00c1e523c3f9d3dd834ebb1433e69ac9f7ac810a19a330c0743d090c70f589"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167ced2fb558661dbf3a59629a4f568a59773a9449309848fc635d8485c379d0"
-    sha256 cellar: :any,                 arm64_linux:   "4ca9b66a9e7f7b36a8719f34baecb51d90c646ac3178b0d0979b40170b998839"
-    sha256 cellar: :any,                 x86_64_linux:  "75a1610fcdcaccf374eb8c51fcf82a793b1429ba9eadf98b824c807aa04823eb"
+    manifest_sha256 "f0ffc5b3ed0557d4b9aeb0a371e4a79c03cf0450277d44764e0a3eefb6de71e8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d2754b9b86bc4f359bd9acb902630db5d031cb2ad82de3017a5a2600587c9e64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a58631d16eac3cdc270de13a17dd32e0dd3df43284027bfb45972b201e4c65be"
+    sha256 cellar: :any,                 arm64_linux:   "303a4f60e58d84f1fbd2e5f4d5e34bceaec8b5cb8bceec05282605b3bbe8ff66"
+    sha256 cellar: :any,                 x86_64_linux:  "5e1ad1816fbcc4d17b562ad0df12ecca6f48db50a1d02794657e332f614db281"
   end
 
   depends_on "pkgconf" => :build
