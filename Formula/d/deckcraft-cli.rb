@@ -8,10 +8,11 @@ class DeckcraftCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "83c986a8e1baa911eecd9751d07536f1e1eb4277fba45ef05f1b37b5370f3066"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d57653f456e78ec644996407beeb16ac694761c0ad7009b258bfddf770a2f314"
-    sha256 cellar: :any,                 arm64_linux:   "1e526e7c4df925e90923159453904d985ba56169aa21977e78858fae89a39f4d"
-    sha256 cellar: :any,                 x86_64_linux:  "a606bc5f06eaea45a3e6a3daa7601ae572639cbc32bf44e92a18c4601838c22d"
+    manifest_sha256 "23c2f24ecf135c646deb62c6bb9314c60abab4ae8cdd4535efd9cd5e9540ec7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1ccc5f6e555a09bbb064e65491bd036e9b5c78ba89ebf04e9be70c7fd914d7ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcb160fc440a952c852e302fa89be7797d780405236f7482ef375725d215e691"
+    sha256 cellar: :any,                 arm64_linux:   "48a73d1384d68769e21fc4753c68084371a6b1c4cb146b07b84cb1d7cc4c013e"
+    sha256 cellar: :any,                 x86_64_linux:  "2660e7d401dd185b975051049367632701e1a10c88ce15dbb46b8cd7ccadb0cf"
   end
 
   depends_on "rust" => :build
