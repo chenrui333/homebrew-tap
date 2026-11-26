@@ -6,6 +6,11 @@ class Quokka < Formula
   license "MIT"
   head "https://github.com/dutradotdev/quokka.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     rebuild 2
