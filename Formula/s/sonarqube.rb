@@ -6,8 +6,8 @@ class Sonarqube < Formula
   license "LGPL-3.0-or-later"
 
   livecheck do
-    url "https://www.sonarsource.com/page-data/products/sonarqube/downloads/success-download-community-edition/page-data.json"
-    regex(/sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
+    url "https://github.com/SonarSource/sonarqube"
+    strategy :github_latest
   end
 
   bottle do
