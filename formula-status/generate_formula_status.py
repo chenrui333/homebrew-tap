@@ -17,9 +17,10 @@ import re
 import subprocess
 import sys
 from urllib.parse import quote, unquote
+from urllib.request import urlopen
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -43,7 +44,7 @@ class FormulaInfo:
     url: str = ""
     license: str = ""
     has_bottle: bool = False
-    has_livecheck: bool = False
+    livecheck_mode: str = "default"
     git_stats: GitStats = None
 
     def __post_init__(self):
@@ -134,7 +135,7 @@ class FormulaCrawler:
             "url": "",
             "license": "",
             "has_bottle": False,
-            "has_livecheck": False,
+            "livecheck_mode": "default",
         }
 
         try:
@@ -148,14 +149,17 @@ class FormulaCrawler:
                 metadata["homepage"] = match.group(1)
             if match := re.search(r'url\s+"([^"]+)"', content):
                 metadata["url"] = match.group(1)
-            if match := re.search(r'license\s+"([^"]+)"', content):
-                metadata["license"] = match.group(1)
+            if match := re.search(r"^  license[ \t]+(\S[^\n]*)", content, re.M):
+                metadata["license"] = match.group(1).strip().removeprefix('"').removesuffix('"')
 
             metadata["has_bottle"] = "bottle do" in content
-            metadata["has_livecheck"] = "livecheck do" in content
+            if match := re.search(r"^  livecheck do\n(.*?)^  end\b", content, re.M | re.S):
+                metadata["livecheck_mode"] = (
+                    "skip" if re.search(r"^    skip\b", match.group(1), re.M) else "explicit"
+                )
 
         except Exception as e:
-            self.log(f"Error extracting metadata from {formula_path}: {e}")
+            raise ValueError(f"Cannot extract metadata from {formula_path}") from e
 
         return metadata
 
@@ -166,9 +170,9 @@ class FormulaCrawler:
                 continue
 
             # GitHub
-            if match := re.search(r'github\.com[/:]([^/]+)/([^/\s.]+)', link):
+            if match := re.search(r'github\.com[/:]([^/]+)/([^/\s?#]+)', link):
                 owner, repo = match.groups()
-                repo = repo.replace('.git', '')
+                repo = repo.removesuffix(".git")
                 return ("github", owner, repo)
 
             # GitLab
@@ -508,13 +512,65 @@ class FormulaCrawler:
             url=metadata["url"],
             license=metadata["license"],
             has_bottle=metadata["has_bottle"],
-            has_livecheck=metadata["has_livecheck"],
+            livecheck_mode=metadata["livecheck_mode"],
             git_stats=git_stats,
         )
 
-    def generate_report(self, formulas: List[FormulaInfo]) -> str:
+    @staticmethod
+    def load_core_index(path: Optional[Path]) -> Dict:
+        """Index current names and their alias/rename routes from the Core formula API."""
+        if path is None:
+            with urlopen("https://formulae.brew.sh/api/formula.json", timeout=30) as response:
+                formulas = json.load(response)
+        else:
+            formulas = json.loads(path.read_text())
+        if not isinstance(formulas, list) or not formulas:
+            raise ValueError("Core formula index must be a nonempty array")
+        canonical = {entry["name"]: entry for entry in formulas}
+        index = {name: (entry, "name") for name, entry in canonical.items()}
+        for name, entry in canonical.items():
+            for field, route in (("aliases", "alias"), ("oldnames", "former name")):
+                for token in entry.get(field, []):
+                    if token not in canonical and token in index and index[token][0]["name"] != name:
+                        raise ValueError(f"Ambiguous Core route for {token}")
+                    index.setdefault(token, (entry, route))
+        return index
+
+    def core_screen(self, formula: FormulaInfo, index: Dict) -> tuple[str, str]:
+        """Screen for review; never infer migration parity or submission approval."""
+        if formula.name in {"hello", "kafka", "zookeeper"}:
+            return "Preserve", "Tap test fixture or intentional variant"
+        if match := index.get(formula.name):
+            entry, route = match
+            name = entry["name"]
+            target = f"[{name}](https://formulae.brew.sh/formula/{name}) ({route})"
+            core_url = entry.get("urls", {}).get("stable", {}).get("url")
+            tap_repo = self.infer_git_repo_from_links([formula.url, formula.homepage])
+            core_repo = self.infer_git_repo_from_links([core_url, entry.get("homepage")])
+            if (core_url and formula.url == core_url) or (
+                tap_repo and core_repo and tuple(map(str.lower, tap_repo)) == tuple(map(str.lower, core_repo))
+            ):
+                return "Core overlap candidate", f"{target}; verify commands, platforms and migration"
+            return "Core name collision", f"{target}; verify canonical upstream identity before removing"
+
+        if formula.livecheck_mode == "skip":
+            return "Blocked", "Verify the skip reason and whether a stable-release strategy is available"
+        if not formula.license or formula.license.startswith(":"):
+            return "Needs license review", "Verify the upstream SPDX terms and recipe license"
+        stats = formula.git_stats
+        if stats.hosting == "github":
+            if (stats.stars or 0) >= 75 or (stats.forks or 0) >= 30:
+                return "Notability candidate", "Verify current canonical metrics, age, authorship, livecheck and Core CI"
+            return "Notability unverified", "Check current canonical stars, forks and subscribers"
+        return "Notability unverified", "Gather equivalent public adoption evidence"
+
+    @staticmethod
+    def markdown_cell(value: str) -> str:
+        return value.replace("|", r"\|").replace("\n", " ").replace("\r", " ")
+
+    def generate_report(self, formulas: List[FormulaInfo], core_index: Dict) -> str:
         """Generate Markdown report"""
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
+        timestamp = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
         # Sort by stars (descending), then name
         formulas.sort(key=lambda f: (-(f.git_stats.stars or 0), f.name))
@@ -525,14 +581,22 @@ class FormulaCrawler:
             f"Generated: {timestamp}",
             f"Total formulas: {len(formulas)}",
             "",
+            "[Homebrew acceptance policy](https://docs.brew.sh/Package-Acceptance-Policy#notability): "
+            "third-party GitHub submissions normally need 75 stars, 30 forks or 30 subscribers; "
+            "self-submissions use higher thresholds. Counts may be cached; subscribers, upstream age, "
+            "source/license suitability and CI require separate verification.",
+            "",
+            "Livecheck is the recipe configuration, not a successful livecheck execution.",
+            "",
             "## Formulas",
             "",
-            "| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Homepage |",
-            "| ------- | ----------- | ----- | ----- | ----------- | ------------ | ------- | ------ | --------- | -------- |",
+            "| Formula | Description | Stars | Forks | Last Commit | Last Release | License | Bottle | Livecheck | Core screen | Next action | Homepage |",
+            "| ------- | ----------- | ----- | ----- | ----------- | ------------ | ------- | ------ | --------- | ----------- | ----------- | -------- |",
         ]
 
         for formula in formulas:
             desc = formula.desc[:60] + "..." if len(formula.desc) > 60 else formula.desc
+            classification, action = self.core_screen(formula, core_index)
             row = [
                 formula.name,
                 desc,
@@ -542,14 +606,16 @@ class FormulaCrawler:
                 formula.git_stats.last_release or "-",
                 formula.license or "-",
                 "✓" if formula.has_bottle else "-",
-                "✓" if formula.has_livecheck else "-",
+                formula.livecheck_mode,
+                classification,
+                action,
                 f"[link]({formula.homepage})" if formula.homepage else "-",
             ]
-            lines.append("| " + " | ".join(row) + " |")
+            lines.append("| " + " | ".join(map(self.markdown_cell, row)) + " |")
 
         return "\n".join(lines) + "\n"
 
-    def run(self, output_file: Path):
+    def run(self, output_file: Path, core_index: Dict):
         """Main execution"""
         print("Formula Metadata Crawler", flush=True)
         print(f"Workers: {self.workers}", flush=True)
@@ -560,11 +626,11 @@ class FormulaCrawler:
         print(f"Found {len(formulas)} formulas", flush=True)
 
         if not formulas:
-            print("No formulas found!", flush=True)
-            return
+            raise ValueError("No formulas found; report not written")
 
         # Process formulas in parallel
         results = []
+        failures = []
         print(f"\nProcessing with {self.workers} parallel workers...", flush=True)
 
         with ThreadPoolExecutor(max_workers=self.workers) as executor:
@@ -584,12 +650,16 @@ class FormulaCrawler:
                     print(f"[{completed}/{len(formulas)}] ✓ {result.name}", flush=True)
                 except Exception as e:
                     print(f"[{completed}/{len(formulas)}] ✗ {formula_path.stem}: {e}", flush=True)
+                    failures.append(formula_path.stem)
+
+        if failures:
+            raise RuntimeError(f"Metadata extraction failed for: {', '.join(sorted(failures))}")
 
         # Save cache
         self._save_cache()
 
         # Generate report
-        report = self.generate_report(results)
+        report = self.generate_report(results, core_index)
 
         # Write output
         output_file.write_text(report)
@@ -623,6 +693,8 @@ def main():
         help="Verbose logging",
     )
 
+    parser.add_argument("--core-index", type=Path, help="Use a saved Homebrew/core formula API index")
+
     args = parser.parse_args()
 
     crawler = FormulaCrawler(
@@ -632,7 +704,7 @@ def main():
     )
 
     try:
-        crawler.run(args.output)
+        crawler.run(args.output, crawler.load_core_index(args.core_index))
     except KeyboardInterrupt:
         print("\nInterrupted", flush=True)
         sys.exit(1)
