@@ -1,8 +1,8 @@
 class Lazyenv < Formula
   desc "TUI tool for managing multiple .env files in the terminal"
   homepage "https://github.com/lazynop/lazyenv"
-  url "https://github.com/lazynop/lazyenv/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "268b45242814680eb541f68f7289b43ea710d35b3b20dbad5b70f1ae26fbbd56"
+  url "https://github.com/lazynop/lazyenv/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "7ddfa13936001d5b9b0ea483689ee8cb006269b9c2d8e0cb88bee9f60139d421"
   license "MIT"
   head "https://github.com/lazynop/lazyenv.git", branch: "main"
 
