@@ -6,6 +6,11 @@ class Csvi < Formula
   license "MIT"
   head "https://github.com/hymkor/csvi.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b858d0bfc779e9d0602ab6cb7ab258f009f8244c227de24a0d366c23643785fd"
