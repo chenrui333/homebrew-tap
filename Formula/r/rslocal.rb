@@ -1,9 +1,10 @@
 class Rslocal < Formula
   desc "Tunnel to localhost built in Rust"
   homepage "https://github.com/bonaysoft/rslocal"
-  url "https://github.com/bonaysoft/rslocal/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c2346760596a062130227e659cfa9455097f3dff3cc8ae67fe2c907b6cb14028"
+  url "https://static.crates.io/crates/rslocal/rslocal-0.1.0.crate"
+  sha256 "77b0b968939cbb94dbfbcfc227e65836883651de12221c6ed8d119e970f6a1b4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -20,8 +21,6 @@ class Rslocal < Formula
   deny_network_access!
 
   def fetch
-    # Upstream does not ship Cargo.lock; resolve once during fetch so the build stays offline.
-    system "cargo", "generate-lockfile"
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
