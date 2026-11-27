@@ -217,8 +217,61 @@ jobs:
           echo "Timed out waiting for checks on the published PR head."
           exit 1
 
-      - name: Merge formula PR with a merge commit
+      - name: Verify anonymous access to first-publish bottles
+        id: bottle-access
         if: steps.validate.outputs.eligible == 'true'
+        env:
+          EXPECTED_HEAD_SHA: ${{ steps.validate.outputs.head_sha }}
+          PR_NUMBER: ${{ steps.validate.outputs.pr_number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          files="$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/files" | jq -ec 'add | select(length == 1)')"
+          if [[ "$(jq -er '.[0].status' <<< "$files")" != added ]]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          file="$(jq -er '.[0].filename' <<< "$files")"
+          if [[ ! "$file" =~ ^Formula/([a-z0-9]/)?[a-z0-9][a-z0-9+_.-]*(@[a-z0-9][a-z0-9+_.-]*)?\.rb$ ]]; then
+            echo "::warning::Unexpected first-publish formula path; leaving the PR open."
+            exit 0
+          fi
+
+          recipe="$(gh api "repos/$GITHUB_REPOSITORY/contents/$file?ref=$EXPECTED_HEAD_SHA" --jq .content | base64 -d)"
+          root="$(awk '/^    root_url / { print $2 }' <<< "$recipe")"
+          digest="$(awk -F '"' '/^    manifest_sha256 "/ { print $2 }' <<< "$recipe")"
+          if [[ "$root" != '"https://ghcr.io/v2/chenrui333/tap"' || ! "$digest" =~ ^[a-f0-9]{64}$ ]]; then
+            echo "::warning::Missing or unsupported first-publish bottle metadata; leaving the PR open."
+            exit 0
+          fi
+
+          name="${file##*/}"
+          name="${name%.rb}"
+          package="chenrui333/tap/${name//@//}"
+          if ! token="$(curl --disable --fail --silent --show-error --max-time 20 --get \
+              --data-urlencode service=ghcr.io --data-urlencode "scope=repository:$package:pull" \
+              https://ghcr.io/token | jq -er '.token | select(type == "string" and length > 0)')"; then
+            echo "::warning::GHCR did not grant anonymous pull access to $package; leaving the PR open."
+            exit 0
+          fi
+
+          manifest="$(mktemp)"
+          trap 'rm -f "$manifest"' EXIT
+          if ! curl --disable --fail --silent --show-error --max-time 20 \
+              -H "Authorization: Bearer $token" \
+              -H 'Accept: application/vnd.oci.image.index.v1+json, application/vnd.docker.distribution.manifest.list.v2+json' \
+              -o "$manifest" "https://ghcr.io/v2/$package/manifests/sha256:$digest" ||
+             [[ "$(sha256sum "$manifest" | cut -d ' ' -f 1)" != "$digest" ]]; then
+            echo "::warning::Exact bottle manifest is not accessible anonymously for $package; leaving the PR open."
+            exit 0
+          fi
+
+          echo "available=true" >> "$GITHUB_OUTPUT"
+
+      - name: Merge formula PR with a merge commit
+        if: steps.validate.outputs.eligible == 'true' && steps.bottle-access.outputs.available == 'true'
         env:
           EXPECTED_HEAD_SHA: ${{ steps.validate.outputs.head_sha }}
           PR_NUMBER: ${{ steps.validate.outputs.pr_number }}
