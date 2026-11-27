@@ -46,6 +46,7 @@ class FormulaInfo:
     has_bottle: bool = False
     livecheck_mode: str = "default"
     git_stats: GitStats = None
+    upstream_removed: bool = False
 
     def __post_init__(self):
         if self.git_stats is None:
@@ -136,6 +137,7 @@ class FormulaCrawler:
             "license": "",
             "has_bottle": False,
             "livecheck_mode": "default",
+            "upstream_removed": False,
         }
 
         try:
@@ -153,6 +155,9 @@ class FormulaCrawler:
                 metadata["license"] = match.group(1).strip().removeprefix('"').removesuffix('"')
 
             metadata["has_bottle"] = "bottle do" in content
+            metadata["upstream_removed"] = bool(
+                re.search(r"^  (?:deprecate|disable)![^\n]*\bbecause:[ \t]*:repo_removed\b", content, re.M)
+            )
             if match := re.search(r"^  livecheck do\n(.*?)^  end\b", content, re.M | re.S):
                 metadata["livecheck_mode"] = (
                     "skip" if re.search(r"^    skip\b", match.group(1), re.M) else "explicit"
@@ -493,7 +498,7 @@ class FormulaCrawler:
 
         # Get git stats
         git_stats = GitStats()
-        if repo_info := self.infer_git_repo(metadata["homepage"], metadata["url"]):
+        if not metadata["upstream_removed"] and (repo_info := self.infer_git_repo(metadata["homepage"], metadata["url"])):
             hosting, owner, repo = repo_info
 
             if hosting == "github":
@@ -514,6 +519,7 @@ class FormulaCrawler:
             has_bottle=metadata["has_bottle"],
             livecheck_mode=metadata["livecheck_mode"],
             git_stats=git_stats,
+            upstream_removed=metadata["upstream_removed"],
         )
 
     @staticmethod
@@ -540,6 +546,8 @@ class FormulaCrawler:
         """Screen for review; never infer migration parity or submission approval."""
         if formula.name in {"hello", "kafka", "zookeeper"}:
             return "Preserve", "Tap test fixture or intentional variant"
+        if formula.upstream_removed:
+            return "Blocked", "Upstream repository was removed"
         if match := index.get(formula.name):
             entry, route = match
             name = entry["name"]
@@ -609,7 +617,7 @@ class FormulaCrawler:
                 formula.livecheck_mode,
                 classification,
                 action,
-                f"[link]({formula.homepage})" if formula.homepage else "-",
+                f"[link]({formula.homepage})" if formula.homepage and not formula.upstream_removed else "-",
             ]
             lines.append("| " + " | ".join(map(self.markdown_cell, row)) + " |")
 
