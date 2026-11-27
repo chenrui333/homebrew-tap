@@ -1,8 +1,8 @@
 class Gloomberb < Formula
   desc "Extensive financial terminal, in your terminal"
   homepage "https://github.com/gloom-sh/gloomberb"
-  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.21.tar.gz"
-  sha256 "e1c63bdecb97a78ce453393cbb8dcc6b025f86ecaf65695004326f2a5fdb86cd"
+  url "https://github.com/gloom-sh/gloomberb/archive/refs/tags/v0.20.22.tar.gz"
+  sha256 "7092f0aebb458dc0b0c07aa803b857d3ede5ced2c8ddc2ad30d641707b850f5f"
   license "MIT"
 
   livecheck do
@@ -12,11 +12,11 @@ class Gloomberb < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "3730fa3872220260474281d03369f9dd2c716e86709234f795869b5427f0a718"
-    sha256 arm64_tahoe:   "cd233d13b4e1569b118247918c4b0d8b182740e34cda923e5e0095e0eeeb304a"
-    sha256 arm64_sequoia: "f5ca2b4772dcca65e97cdc591c5ffb435b6710fb355f0b7a382845cec6f8fa82"
-    sha256 arm64_linux:   "e9dd2c891e0245ab1052094487a2853740b01b4f1af2c180043fa674b5aa3bd5"
-    sha256 x86_64_linux:  "b62d117bbcd6aae4a4cdbb1f5f3d9052d90726fb1b746ae371ee2d236c25676f"
+    manifest_sha256 "2b3acdba396c51eba317df468525767eef875c948cb1490e227118668ebd78bf"
+    sha256 arm64_tahoe:   "a689179e807bf997e6fa4101c71826072b7dab4cb4419439f84a2fd69acbdb8b"
+    sha256 arm64_sequoia: "262e698bb0f0ab669adbaba07f48719dde0370e95bb01b6377ee7c0e3422d6ae"
+    sha256 arm64_linux:   "ccc1ef60e0e8c6cfbe84b459955646424086165e0c3f8c224e4b02d9b03dffa5"
+    sha256 x86_64_linux:  "8bfa85424b0f5fcb7857a8f21416a6991af438d88f8cb66cbea2dff38663a454"
   end
 
   depends_on "bun" => :build
