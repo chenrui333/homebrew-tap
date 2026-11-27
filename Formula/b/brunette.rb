@@ -2,7 +2,7 @@ class Brunette < Formula
   include Language::Python::Virtualenv
 
   desc "Best practice Python code formatter"
-  homepage "https://github.com/ODwyerSoftware/brunette"
+  homepage "https://pypi.org/project/brunette/"
   url "https://files.pythonhosted.org/packages/33/c8/9d890d7d9ac93c8e9a66fa6e3b3f9518eec850609cc3556d28df259f3202/brunette-0.2.8.tar.gz"
   sha256 "e7d0766d3a4b0d18bf0f8830b4bc98a4af4ebcccf89c3b145fc92f9d4727d79b"
   license "Apache-2.0"
