@@ -263,8 +263,8 @@ brew install --cask <tool>
 - `cozypkg`
 - `cpa-usage-keeper`
 - `cpg`
-- `cpx`
 - `cpx11`
+- `cpx`
 - `crates-lsp`
 - `creanote`
 - `create-mcp-use-app`
@@ -445,6 +445,7 @@ brew install --cask <tool>
 - `go-envsubst`
 - `go-getter`
 - `go-junit-report`
+- `go-zzz`
 - `gobgp`
 - `goboscript`
 - `gofakeit`
@@ -616,6 +617,7 @@ brew install --cask <tool>
 - `lean-ctx`
 - `lemonade`
 - `leveldb-cli`
+- `lib-x`
 - `librarian-mcp`
 - `license-scanner`
 - `lightpanda-v8`
@@ -643,7 +645,6 @@ brew install --cask <tool>
 - `lsv`
 - `luaformatter`
 - `luvus`
-- `lib-x`
 - `macfan`
 - `macime`
 - `magic-mcp-server`
@@ -652,6 +653,7 @@ brew install --cask <tool>
 - `marchat`
 - `mardi-gras`
 - `markdownify`
+- `markmark`
 - `markpdf`
 - `matcha`
 - `matterhorn`
@@ -711,8 +713,6 @@ brew install --cask <tool>
 - `mvt`
 - `mynav`
 - `myx`
-- `oceanbase-mcp-server`
-- `markmark`
 - `namespace-cli`
 - `nano-agent`
 - `nanobrew`
@@ -748,6 +748,7 @@ brew install --cask <tool>
 - `nvrs`
 - `oatmeal`
 - `obelisk`
+- `oceanbase-mcp-server`
 - `octelium`
 - `octoscope`
 - `octotype`
@@ -792,7 +793,6 @@ brew install --cask <tool>
 - `oyo`
 - `oysttyer`
 - `oyui`
-- `plutov-oq`
 - `packemon`
 - `pal-mcp-server`
 - `pam`
@@ -835,12 +835,14 @@ brew install --cask <tool>
 - `pls`
 - `pluqqy`
 - `pluralith`
+- `plutov-oq`
 - `pmx`
 - `podcli`
 - `polymaster`
 - `pom`
 - `pomo`
 - `pomossh`
+- `ponytail`
 - `poop`
 - `pphack`
 - `pproftui`
@@ -867,7 +869,6 @@ brew install --cask <tool>
 - `pyink`
 - `pyment`
 - `pysentation`
-- `ponytail`
 - `qmassa`
 - `qmd`
 - `que`
@@ -1031,7 +1032,6 @@ brew install --cask <tool>
 - `swaptop`
 - `swpui`
 - `systeroid`
-- `tftargets`
 - `t3code`
 - `tabminal`
 - `tako-vm`
@@ -1078,6 +1078,7 @@ brew install --cask <tool>
 - `tfjournal`
 - `tfreveal`
 - `tftarget`
+- `tftargets`
 - `tftree`
 - `tfui`
 - `tgrab`
@@ -1195,7 +1196,6 @@ brew install --cask <tool>
 - `ytm-player`
 - `ytsurf`
 - `ytunnel`
-- `go-zzz`
 - `zaly`
 - `zat`
 - `zero`
@@ -1217,6 +1217,31 @@ brew install --cask <tool>
 - `zu`
 - `zuse`
 - `zware`
+
+</details>
+
+<details>
+<summary>Cask List</summary>
+
+- `accomplish`
+- `agent-sessions`
+- `cc-hdrm`
+- `claude-control`
+- `cleanboard`
+- `dhictl`
+- `docker-scout-cli`
+- `excalidraw`
+- `exort`
+- `focus-editor`
+- `guildly`
+- `holaclaw`
+- `lanes`
+- `mightygrep`
+- `multica-app`
+- `piebald`
+- `proton-pass-cli`
+- `speaktype`
+- `wechat@3.8`
 
 </details>
 <!-- FORMULAE-LIST-END -->
