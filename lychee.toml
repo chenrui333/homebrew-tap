@@ -13,16 +13,10 @@ remap = [
 ]
 
 # Exclude placeholder URLs used in documentation examples.
-# Temporary baseline exclusions tracked in:
-# https://github.com/chenrui333/homebrew-tap/issues/4237
+# Keep exceptions for known unavailable or intermittently unreachable links.
 exclude = [
   "^https://\\.\\.\\./?$",
-  "^https://alanza\\.xyz/?$",
-  "^https://git\\.calcurse\\.org/?$",
-  "^https://github\\.com/zonay/public-ollama-finder/?$",
   "^https://github\\.com/wssheldon/osintui/?$",
-  "^https://github\\.com/yeoman/emoj/?$",
-  "^https://github\\.com/ODwyerSoftware/brunette/?$",
   "^https://beelzebub-honeypot\\.com/?$",
   "^https://fnc\\.bsdbox\\.org/index/?$",
   "^https://www\\.gnu\\.org/software/hello/?$",
@@ -34,7 +28,6 @@ exclude = [
   "^https://taskbook\\.sh/?$",
   "^https://chiselapp\\.com/user/MistressRemilia/repository/benben/?$",
   "^https://yeetfile\\.com/?$",
-  "^https://github\\.com/ingero-io/ingero/?$",
   # Known unavailable or persistently unreachable links in generated inventories.
   "^https://codeberg\\.org/ncts/drft/?$",
   "^https://github\\.com/Zuhaitz-dev/fat/?$",
