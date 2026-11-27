@@ -1,0 +1,16 @@
+site_name: Homebrew tap
+repo_url: https://github.com/chenrui333/homebrew-tap
+edit_uri: edit/main/docs/
+
+exclude_docs: |
+  /terminal-trove/.project_links_cache.json
+  /terminal-trove/scrape_terminal_trove.py
+
+nav:
+  - Home: index.md
+  - Tap maintainer setup: tap-maintenance.md
+  - CLI frameworks: cli-frameworks.md
+  - TUI frameworks: tui-frameworks.md
+  - Terminal Trove:
+      - Overview: terminal-trove/README.md
+      - Weekly report: terminal-trove/terminal_trove_weekly.md
