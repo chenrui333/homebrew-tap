@@ -8,11 +8,11 @@ class Codemark < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "94f2682671df912a33d0ce84f2dab98a6635121a65c3542b1d1f81ca825b00fa"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "583c8bfad731dc37aa307fbaccb2635ed2886501d1886b2c9121cd5cdc53126d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7570ddb4ce0ed4cc0d9e5c6f0f7dbb4ff5aee8e88fe36a7bc55079fc4c975142"
-    sha256 cellar: :any,                 arm64_linux:   "a9ad95c66864652460a729f4b5015e2428b4e99f3677b63373d3a28a424ed06d"
-    sha256 cellar: :any,                 x86_64_linux:  "a43b087665e4d59d460142cd65bffbddf5f268f1e99fd48a30e2edc4fdddee54"
+    manifest_sha256 "9321e5d7d1e4a1fd4d3eaa301df3dcd722c550218e51bc75b133d7323230e932"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "753d231f004ef105328d4664d43a0666e0578d169dba2f4a543289f3ad57076b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03246b01fec0bfae668b9aff03752c58ab1b1dfc5866d8570e6db0bb13eecce5"
+    sha256 cellar: :any,                 arm64_linux:   "82f1e30dfb349c38a2149e36769400b96afb8b7ca24d360e9a9844e2619d9f36"
+    sha256 cellar: :any,                 x86_64_linux:  "c08b973a8d5fa2de46316a6da9a7f62711aa6224b066cf8f3a522b625e546f19"
   end
 
   depends_on "cmake" => :build
