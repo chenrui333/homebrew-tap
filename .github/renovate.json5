@@ -26,6 +26,20 @@
   ignorePaths: [
     'Formula/**',
   ],
+  // The native GitHub Actions manager truncates four-part Homebrew release tags.
+  customManagers: [
+    {
+      customType: 'regex',
+      managerFilePatterns: ['/^\\.github\\/workflows\\/[^/]+\\.ya?ml$/'],
+      matchStrings: [
+        'uses: (?<action>Homebrew/actions/[\\w/-]+)@(?<currentDigest>[a-f0-9]{40})[ \\t]+#[ \\t]*(?<currentValue>\\d{4}\\.\\d{2}\\.\\d{2}\\.\\d+)\\b',
+      ],
+      depNameTemplate: 'Homebrew/actions',
+      datasourceTemplate: 'github-tags',
+      versioningTemplate: 'regex:^(?<major>\\d{4})\\.(?<minor>\\d{2})\\.(?<patch>\\d{2})\\.(?<build>\\d+)$',
+      autoReplaceStringTemplate: 'uses: {{{action}}}@{{{newDigest}}} # {{{newValue}}}',
+    },
+  ],
   packageRules: [
     {
       description: 'Require manual review for GitHub Actions Ubuntu runner updates',
@@ -36,6 +50,16 @@
         'ubuntu',
       ],
       enabled: false,
+    },
+    {
+      matchManagers: ['github-actions'],
+      matchPackageNames: ['Homebrew/actions'],
+      enabled: false,
+    },
+    {
+      matchManagers: ['custom.regex'],
+      matchPackageNames: ['Homebrew/actions'],
+      automerge: false,
     },
   ],
   vulnerabilityAlerts: {
