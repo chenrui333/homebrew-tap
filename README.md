@@ -1222,8 +1222,6 @@ brew install --cask <tool>
 
 </details>
 
-The [cask status component](cask-status/) generates a separate report with versions, homepages, and lifecycle status.
-
 <details>
 <summary>Cask List</summary>
 
