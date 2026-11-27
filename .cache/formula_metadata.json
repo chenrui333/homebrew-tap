@@ -3659,6 +3659,12 @@
     "last_release": null,
     "stars": 138
   },
+  "github:herdrdev/herdr-core": {
+    "forks": 272,
+    "last_commit": "2026-11-27",
+    "last_release": null,
+    "stars": 951
+  },
   "github:hivemq/mqtt-cli": {
     "forks": 51,
     "last_commit": "2026-02-16",
@@ -6256,6 +6262,12 @@
     "last_commit": "2026-06-13",
     "last_release": "2026-06-13",
     "stars": 157
+  },
+  "github:sindresorhus/emoj": {
+    "forks": 65,
+    "last_commit": "2026-02-13",
+    "last_release": "2025-09-11",
+    "stars": 2426
   },
   "github:sindresorhus/fast-cli": {
     "forks": 125,
