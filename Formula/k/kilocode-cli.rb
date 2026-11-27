@@ -8,11 +8,11 @@ class KilocodeCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "0dbc87191b86a249d0e9a04bb6ee73396d92ada1ead9598a9844f18cec38b20d"
-    sha256 arm64_tahoe:   "4e15b74e18502db65b0527e0c77e97addd7b4f7551771bb0513a2e39f6eb92ad"
-    sha256 arm64_sequoia: "94c71570c87de9fcb2e535f9da9cac60dd73c646886a7fe1424f890793db61ee"
-    sha256 arm64_linux:   "c61655d231ef1d98914d5aa7c8c0ad8db539be20bc000d8890662cec6a962a80"
-    sha256 x86_64_linux:  "c223a606eb89f197d4abbcba585997e21913ff0c945e3294f39de4a9e7c968ba"
+    manifest_sha256 "0f7e87f8b0a8db571c8e2e89b2c10300b0a10d8af8557d39ac2c6808c1a6b521"
+    sha256 arm64_tahoe:   "0eb4724f0d189b83fbba99a3dc760a40399fbe4ee5d0cbd91b5188ffd13faf0f"
+    sha256 arm64_sequoia: "546c699c319f6749ae0a3240417a32e2e09bfc2760afd04b49b845fe1ea795b9"
+    sha256 arm64_linux:   "fc8f8a38139f91b5c8ef1cb568dc425781ebf559951967405cdaeef9df2f7459"
+    sha256 x86_64_linux:  "087f9e6a8cb3de476656927aa057912ea7f4ac5439c21857b2ab38477aed274f"
   end
 
   depends_on "bun" => :build
