@@ -1,8 +1,8 @@
 class Csvi < Formula
   desc "Cross-platform terminal CSV editor"
   homepage "https://hymkor.github.io/csvi/"
-  url "https://github.com/hymkor/csvi/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "3c127786eed17eb861173af55dba0f32b16a7bf476e15e57cc021bc2ef2e04ba"
+  url "https://github.com/hymkor/csvi/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "4604cbe29abd2467425bd386960f72dae6d67096522fbf6b0c6705c8c7cc5314"
   license "MIT"
   head "https://github.com/hymkor/csvi.git", branch: "master"
 
