@@ -1,4 +1,4 @@
-name: Update Formulae List
+name: Update Formula and Cask Lists
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - "Formula/**"
+      - "Casks/**"
+      - ".github/scripts/update-list.sh"
+      - ".github/workflows/update-formula-cask-list.yml"
   schedule:
     - cron: "0 0 * * 0"
 
@@ -35,17 +38,8 @@ jobs:
         env:
           BRANCH: automation/update-formulae-list
         run: .github/scripts/publish-generated-pr.sh prepare
-
-      - run: brew update
-
-      - name: Tap the repo
-        run: brew tap chenrui333/tap
-
-      - name: Trust tap
-        run: brew trust --tap chenrui333/tap
-
       - name: Run update-list script
-        run:  .github/scripts/update-list.sh
+        run: .github/scripts/update-list.sh
 
       - name: Publish generated PR
         id: publish
@@ -55,7 +49,7 @@ jobs:
           REMOTE_SHA: ${{ steps.prepare.outputs.remote_sha }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-          PR_TITLE: 'chore: update formulae list'
-          PR_BODY: Generated automatically by the Update Formulae List workflow.
-          COMMIT_MESSAGE: Update formulae list
+          PR_TITLE: 'chore: update formula and cask lists'
+          PR_BODY: Generated automatically by the Update Formula and Cask Lists workflow.
+          COMMIT_MESSAGE: Update formula and cask lists
         run: .github/scripts/publish-generated-pr.sh publish README.md
