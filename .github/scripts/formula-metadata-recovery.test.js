@@ -9,6 +9,10 @@ const repository = "example/homebrew-tap"
 const branch = "automation/formula-metadata"
 const head = "a".repeat(40)
 const outputs = [".cache/formula_metadata.json", "formula-status/formula-status.md"]
+const caskBranch = "automation/cask-metadata"
+const caskReport = "cask-status/cask-status.md"
+const spellCheck = { name: "Spell Check", bucket: "pass", workflow: "Spell Check" }
+const linkCheck = { name: "check", bucket: "pass", workflow: "link-checker" }
 
 // Exercise the workflow's real shell with a local gh double; never contact GitHub.
 const mergeSource = readFileSync(
@@ -23,11 +27,11 @@ function admission({ files = outputs, pr = {}, finalPr = pr, checks = null, ref 
     const state = join(root, "state.json")
     const initial = {
       state: "open", draft: false, base: { ref: "main" }, labels: [],
-      head: { ref: branch, sha: head, repo: { full_name: repository } },
+      head: { ref, sha: head, repo: { full_name: repository } },
     }
     writeFileSync(state, JSON.stringify({
       files, initial: { ...initial, ...pr }, final: { ...initial, ...finalPr },
-      checks: checks ?? [{ name: "Spell Check", bucket: "pass", workflow: "Spell Check" }],
+      checks: checks ?? [spellCheck],
       reads: 0,
     }))
     const gh = join(root, "gh")
@@ -38,7 +42,8 @@ const state = JSON.parse(fs.readFileSync(file, "utf8"))
 const args = process.argv.slice(2)
 if (args[0] === "api") {
   const endpoint = args.at(-1)
-  if (endpoint.endsWith("/files")) console.log(JSON.stringify(state.files.map(filename => ({ filename }))))
+  if (endpoint.endsWith("/files")) console.log(JSON.stringify(state.files.map(file =>
+    typeof file === "string" ? { filename: file, status: "modified" } : file)))
   else if (endpoint.endsWith("/pulls/7")) console.log(JSON.stringify(state.reads++ === 0 ? state.initial : state.final))
   else process.exit(2)
 } else if (args[0] === "pr" && args[1] === "checks") {
@@ -51,6 +56,7 @@ if (args[0] === "api") {
 fs.writeFileSync(file, JSON.stringify(state))
 `)
     chmodSync(gh, 0o755)
+    writeFileSync(join(root, "sleep"), "#!/bin/sh\nexit 42\n", { mode: 0o755 })
     const result = spawnSync("bash", ["-c", shell], {
       encoding: "utf8", timeout: 5000,
       env: {
@@ -99,3 +105,35 @@ for (const [name, options] of Object.entries({
     assert.equal(result.state.final.state, "open")
   })
 }
+
+test("cask metadata admits additions and updates to the report alone after both checks pass", () => {
+  for (const status of ["added", "modified"]) {
+    const result = admission({
+      ref: caskBranch, files: [{ filename: caskReport, status }], checks: [spellCheck, linkCheck],
+    })
+    assert.equal(result.status, 0, result.stderr)
+    assert.equal(result.state.final.state, "closed")
+  }
+})
+
+test("cask metadata refuses removals, renames, and extra files", () => {
+  for (const files of [
+    [{ filename: caskReport, status: "removed" }],
+    [{ filename: caskReport, status: "renamed", previous_filename: "README.md" }],
+    [caskReport, "README.md"],
+  ]) {
+    const result = admission({ ref: caskBranch, files, checks: [spellCheck, linkCheck] })
+    assert.equal(result.status, 0, result.stderr)
+    assert.equal(result.state.final.state, "open")
+    assert.match(result.stdout, /file set changed/)
+  }
+})
+
+test("cask metadata waits for both spell and link checks", () => {
+  for (const checks of [[spellCheck], [linkCheck]]) {
+    const result = admission({ ref: caskBranch, files: [caskReport], checks })
+    assert.equal(result.status, 42, result.stderr)
+    assert.equal(result.state.final.state, "open")
+    assert.match(result.stdout, /Waiting for checks:/)
+  }
+})
