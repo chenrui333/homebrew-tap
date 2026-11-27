@@ -8,11 +8,11 @@ class Gitwig < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "c6792b2185ab68e044ae221a2870759994b23fc72c564cb990d4622d82c251ac"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4df760df336e595ec3c8ffe9bcd02c9c45ed6b16c1f86b2c23b31440d5554e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17e66f8b0393b6744eb3b7d693836c884f9f6fa7c93db4389be2cec5f1aa00d9"
-    sha256 cellar: :any,                 arm64_linux:   "4b935dcd825a926826797d7e2c57072e5c41c3af23aa7c28eb0657ad11aa94bf"
-    sha256 cellar: :any,                 x86_64_linux:  "4872e0cfff18ac025a5ba3c0c59ba42a169e4f01e47796caf5f69aa7f9953ae0"
+    manifest_sha256 "d2b6034a65fbe786054f2cae1c1537cabcb5d736e39e60f767f0ea51c00e817d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "65744e765057f3ae73e3fb1406ce5877eef11dcd836ea4eaddc05bcc5029579d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48ba1e000d00948205d5b6b0be078b5758437792b4df0412e6d6a4c4fc738277"
+    sha256 cellar: :any,                 arm64_linux:   "d160743e20a60755f0a6661a5c35751a50583a323df3977b955e03fc5843989f"
+    sha256 cellar: :any,                 x86_64_linux:  "73300989e960b4e74e8b3394f7820b5c6d0c2ef08d1a6817bb75b8a48ee32be6"
   end
 
   depends_on "pkgconf" => :build
