@@ -8,11 +8,11 @@ class Gno < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "e8cd2def536d00c83cee9e2e7d53558233962f4126f9c75fc457dc202b59563a"
-    sha256 arm64_tahoe:   "753361cc01bb876d8fdd08ed958c5d201885f1f5411c743751ecd7ac310ee268"
-    sha256 arm64_sequoia: "c3b4a78f9d629daba8ce9dc93ffd65bf87036a909a10ebf3eeb5fb91e0ca8d08"
-    sha256 arm64_linux:   "aa12763b61a25935c6a211908505eaf327d7fce859887239ecd22d71875402ac"
-    sha256 x86_64_linux:  "df3fc36d1380bc7ce87bdd8641d104065bb7ae0d1ba66b17a837823435769094"
+    manifest_sha256 "51198b14433866e02290c3a117e30319e54db09b7f7f5c2186dd9e128e1ab0a0"
+    sha256 arm64_tahoe:   "0547721503ecf740269e477dd396bccb3786d4d9f9e89829c9d4b503cf32e060"
+    sha256 arm64_sequoia: "69c9fc4657a7cc456a7481a00fd612080c835a87e71a7bf45285b1f2d7fdd1fa"
+    sha256 arm64_linux:   "5d61299780473214558b1a61dbb0af56b324c60ae0da719afdd5c7e563121e81"
+    sha256 x86_64_linux:  "5531da3c150867aa6f074901e30eb48807fd807b4df9eb2f35620255a2e45b7e"
   end
 
   depends_on "cmake" => :build
