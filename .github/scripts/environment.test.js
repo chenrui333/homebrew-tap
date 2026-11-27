@@ -126,7 +126,7 @@ test("generates the supported macOS-only formula matrix", async () => {
 })
 
 test("generates the supported Linux-only formula matrix", async () => {
-  assert.deepEqual(await buildMatrix("Formula/w/wild.rb"), [
+  assert.deepEqual(await buildMatrix("Formula/a/amdtop.rb"), [
     "ubuntu-24.04",
     "ubuntu-24.04-arm",
   ])
@@ -136,7 +136,7 @@ test("does not generate obsolete formula macOS runners", async () => {
   const matrices = await Promise.all([
     buildMatrix("Formula/w/watchfiles.rb"),
     buildMatrix("Formula/c/ctxmv.rb"),
-    buildMatrix("Formula/w/wild.rb"),
+    buildMatrix("Formula/a/amdtop.rb"),
   ])
   const runners = matrices.flat()
 
