@@ -46,7 +46,6 @@ brew install --cask <tool>
 - `adbtop`
 - `adbtuifm`
 - `adsb-tui`
-- `agent-deck`
 - `agent-pd`
 - `agent-slack`
 - `agentcarousel`
