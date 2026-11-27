@@ -1,6 +1,6 @@
 class Emoj < Formula
   desc "Find relevant emoji from text on the command-line"
-  homepage "https://github.com/yeoman/emoj"
+  homepage "https://github.com/sindresorhus/emoj"
   url "https://registry.npmjs.org/emoj/-/emoj-4.2.0.tgz"
   sha256 "14901233fcf52543cd51bf4a6355a7ada69afdd8212a004fa90ea75b17d26383"
   license "MIT"
