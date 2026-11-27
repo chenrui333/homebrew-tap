@@ -1,8 +1,8 @@
 class Gno < Formula
   desc "Local knowledge engine with hybrid search and MCP integration"
   homepage "https://gno.sh"
-  url "https://github.com/gmickel/gno/archive/refs/tags/v2.18.0.tar.gz"
-  sha256 "a3a6a7cfb4d3b2050864673a504b3d1238be79b0b59f22765d191fede96762fa"
+  url "https://github.com/gmickel/gno/archive/refs/tags/v2.18.1.tar.gz"
+  sha256 "7f589ac7cfce1d9aedd772ac94ab0e3019b37a89154de6bf6dc63e42e50ffa91"
   license "MIT"
   head "https://github.com/gmickel/gno.git", branch: "main"
 
