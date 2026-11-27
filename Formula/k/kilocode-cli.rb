@@ -1,18 +1,18 @@
 class KilocodeCli < Formula
   desc "AI coding agent with a terminal UI, local console, and sandboxed tools"
   homepage "https://kilo.ai/cli"
-  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.36.tar.gz"
-  sha256 "ccc03bb6a4f5c503439921c35f691ebb3f2424be2984f1a7ef46f7cc9297b80e"
+  url "https://github.com/Kilo-Org/kilocode/archive/refs/tags/v7.8.40.tar.gz"
+  sha256 "dea1103ebbb9b015a22b1bb8fcb6ccd07fc51f7d06f9b4973f4590bba3795656"
   license "MIT"
   head "https://github.com/Kilo-Org/kilocode.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "0f7e87f8b0a8db571c8e2e89b2c10300b0a10d8af8557d39ac2c6808c1a6b521"
-    sha256 arm64_tahoe:   "0eb4724f0d189b83fbba99a3dc760a40399fbe4ee5d0cbd91b5188ffd13faf0f"
-    sha256 arm64_sequoia: "546c699c319f6749ae0a3240417a32e2e09bfc2760afd04b49b845fe1ea795b9"
-    sha256 arm64_linux:   "fc8f8a38139f91b5c8ef1cb568dc425781ebf559951967405cdaeef9df2f7459"
-    sha256 x86_64_linux:  "087f9e6a8cb3de476656927aa057912ea7f4ac5439c21857b2ab38477aed274f"
+    manifest_sha256 "386e1779a5dd7430ca30aa20f507f120ad0e0742a4e8ff97b27215d8546e82b8"
+    sha256 arm64_tahoe:   "902d7ecd0ea39df40207d0e87853a3f8ce7e9b2ce4fda6dbeb0c721f8d926b0e"
+    sha256 arm64_sequoia: "a748e831db0149ee7d98b65d522e1336c541a90407cf9b8519329efe1de93ca0"
+    sha256 arm64_linux:   "c8027d08ee53cc47a07f85665a00426e2766bc4d709a16d7652aec57e48493ac"
+    sha256 x86_64_linux:  "fa30e2f90ffc1018b2de1e77e237a1fed85ed7f02dff05f1b514e285e165963a"
   end
 
   depends_on "bun" => :build
