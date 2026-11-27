@@ -23,7 +23,7 @@ jobs:
     if: >-
       github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.base.ref == 'main' &&
-      contains(fromJSON('["automation/update-formulae-list", "automation/terminal-trove-weekly", "automation/formula-metadata", "automation/formula-merge-serialize-20260926"]'), github.event.pull_request.head.ref)
+      contains(fromJSON('["automation/update-formulae-list", "automation/terminal-trove-weekly", "automation/formula-metadata", "automation/cask-metadata", "automation/formula-merge-serialize-20260926"]'), github.event.pull_request.head.ref)
     runs-on: ubuntu-latest # ubuntu-slim jobs have a 15-minute maximum runtime
     timeout-minutes: 240
     permissions:
@@ -51,6 +51,9 @@ jobs:
               ;;
             automation/formula-metadata)
               expected_files=$'.cache/formula_metadata.json\nformula-status/formula-status.md'
+              ;;
+            automation/cask-metadata)
+              expected_files='cask-status/cask-status.md'
               ;;
             automation/formula-merge-serialize-20260926)
               expected_files=$'.github/workflows/formula-merge.yml\n.github/workflows/generated-maintenance-merge.yml'
@@ -91,6 +94,9 @@ jobs:
               if $branch == "automation/formula-metadata" then
                 ($changed | length) > 0 and
                 all($changed[]; . as $file | $allowed | index($file) != null)
+              elif $branch == "automation/cask-metadata" then
+                $changed == $allowed and
+                all(.[]; (.status == "added" or .status == "modified") and .previous_filename == null)
               else
                 $changed == $allowed
               end
@@ -100,7 +106,7 @@ jobs:
             fi
 
             checks="$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json name,bucket,workflow 2>/dev/null || true)"
-            summary="$(jq -c '
+            summary="$(jq -c --arg branch "$HEAD_REF" '
               . as $all |
               [$all[] | select(.workflow != "Merge generated maintenance PRs")] as $checks |
               {
@@ -109,7 +115,10 @@ jobs:
                 unsupported: [$checks[] | select(.bucket != "pass" and .bucket != "skipping" and
                   .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
                 missing: (["Spell Check"] as $expected |
-                  [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name])
+                  [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name] +
+                  (if $branch == "automation/cask-metadata" and
+                      ([$checks[] | select(.workflow == "link-checker" and .name == "check" and .bucket == "pass")] | length == 0)
+                   then ["link-checker / check"] else [] end))
               }
             ' <<< "$checks")"
 
