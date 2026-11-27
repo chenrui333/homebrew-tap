@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 
-# 1. Get only the short formula names (strip chenrui333/tap/).
-FORMULAE="$(
-	brew tap-info chenrui333/tap --json |
-		jq -r '.[0].formula_names[]' |
-		sed 's|^chenrui333/tap/||'
-)"
+set -euo pipefail
 
-# 2. Build the lines we want to insert, including bullet points
-FORMATTED_FORMULAE="$(
-	echo "$FORMULAE" | awk '
-    $0 == "debugg-ai-mcp" { printf("- `%s` <!-- spellchecker:disable-line -->\n", $0); next }
-    { printf("- `%s`\n", $0) }
-  '
-)"
+recipe_list() {
+	LC_ALL=C git ls-files -- "$1" | awk -F/ '
+    /\.rb$/ {
+      name = $NF
+      sub(/\.rb$/, "", name)
+      suffix = name == "debugg-ai-mcp" ? " <!-- spellchecker:disable-line -->" : ""
+      printf("- `%s`%s\n", name, suffix)
+    }
+  ' | LC_ALL=C sort
+}
+
+FORMATTED_FORMULAE="$(recipe_list Formula)"
+FORMATTED_CASKS="$(recipe_list Casks)"
 
 cat <<EOF >.tmp-formulae-list
 <!-- FORMULAE-LIST-START -->
@@ -21,6 +22,13 @@ cat <<EOF >.tmp-formulae-list
 <summary>Formula List</summary>
 
 ${FORMATTED_FORMULAE}
+
+</details>
+
+<details>
+<summary>Cask List</summary>
+
+${FORMATTED_CASKS}
 
 </details>
 <!-- FORMULAE-LIST-END -->
@@ -33,10 +41,3 @@ sed -i.bak '/<!-- FORMULAE-LIST-START -->/,/<!-- FORMULAE-LIST-END -->/ {
 }' README.md
 
 rm -f README.md.bak .tmp-formulae-list
-
-if ! git diff --exit-code README.md; then
-	git config user.name "github-actions"
-	git config user.email "actions@github.com"
-	git add README.md
-	git commit -m "Update formulae list"
-fi
