@@ -57,6 +57,24 @@ class CoreReadinessTest(unittest.TestCase):
             report = self.crawler.generate_report([self.crawler.process_formula(recipe)], self.index)
         self.assertIn('any_of: ["MIT", "Apache-2.0"]', report)
 
+    def test_removed_upstream_stays_in_report_without_dead_homepage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            recipe = Path(tmp) / "removed.rb"
+            recipe.write_text(
+                'class Removed < Formula\n'
+                '  homepage "https://example.invalid/removed"\n'
+                '  deprecate! date: "2026-10-04", because: :repo_removed\n'
+                'end\n'
+            )
+            formulas = [
+                self.crawler.process_formula(recipe),
+                FormulaInfo("active", homepage="https://example.invalid/active"),
+            ]
+        report = self.crawler.generate_report(formulas, self.index)
+        self.assertRegex(report, r"\| removed \|[^\n]+\| Blocked \| Upstream repository was removed \| - \|")
+        self.assertNotIn("https://example.invalid/removed", report)
+        self.assertIn("[link](https://example.invalid/active)", report)
+
 
 if __name__ == "__main__":
     unittest.main()
