@@ -18,6 +18,8 @@ without redirecting an existing formula or alias. Both require current-head
 `cask-route-verification` for native old-name/upstream checks. Renames require full
 cask CI, not `CI-syntax-only`.
 
+Maintainers: see [tap setup and bottle publishing](docs/tap-maintenance.md).
+
 ## Installation
 
 ```bash
