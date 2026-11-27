@@ -9,11 +9,11 @@ class Agentty < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "635b47f187d1e41d87dd9115f3ee8b22d1cf4b3075184a37f1cba7a06a35ea74"
-    sha256               arm64_tahoe:   "2e04b6c7a4cca62b474c401c1ac99e5c1f8f7bf79a05ef0a5168e38bc43cc1f8"
-    sha256               arm64_sequoia: "e7e6d807486883f8aee0ad09c0a50d5d937aaa965e7a7871bbda3490103953a3"
-    sha256 cellar: :any, arm64_linux:   "1c688980cf4b0e492a793e5f93889e7038545f888c76c0cba25e17f3b926f02a"
-    sha256 cellar: :any, x86_64_linux:  "31dfc31b44268f3eb281f03b785694a3b220d7f1c394d06a5d65cf0fa7b13b6e"
+    manifest_sha256 "87f52254ebf128496f961fd546d9c6d7a587200e8faae424e0786679ea9553f8"
+    sha256               arm64_tahoe:   "2abb143726c81276a92e6c721d0c52fc3cad1aaeab5a304d02dfcbec96cc7208"
+    sha256               arm64_sequoia: "663395d12a3a911ffe54a6d8517301a36deddf554c2ed36bc3ffa70774a92f6b"
+    sha256 cellar: :any, arm64_linux:   "f33fb2e7dd1587d5194c7629d0e0f0d1fa504bd17b03c460bd542b47c2ff0f95"
+    sha256 cellar: :any, x86_64_linux:  "95f58c2b2e097f4b50e1c099a87bcb4ff8e28a23d485d184049b4fb7cd3e7341"
   end
 
   depends_on "cmake" => :build
