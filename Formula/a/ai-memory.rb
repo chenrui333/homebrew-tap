@@ -1,8 +1,8 @@
 class AiMemory < Formula
   desc "Long-term memory for AI coding agents"
   homepage "https://github.com/akitaonrails/ai-memory"
-  url "https://github.com/akitaonrails/ai-memory/archive/refs/tags/v3.6.3.tar.gz"
-  sha256 "f7b973a38ca0ced48ff15ce65c960a84c7d2d8dbe8ccb2ccac63ccf5d6134545"
+  url "https://github.com/akitaonrails/ai-memory/archive/refs/tags/v3.6.4.tar.gz"
+  sha256 "0385edb22f1c8fd742591d659302ca6c443f95baa3033ef8da8f5229e6bf21a1"
   license "MIT"
   head "https://github.com/akitaonrails/ai-memory.git", branch: "main"
 
