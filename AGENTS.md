@@ -174,6 +174,7 @@ Commit message: `foo 1.2.3 (new formula)`
     - For parsers/formatters: feed a small input and assert expected output
     - For servers: assert startup error or config validation output
     - If no safe deterministic functional check exists, prefer a negative runtime test or leave a precise `FIXME` comment explaining what upstream capability is missing.
+    - For a negative-path test, require the expected exit status and diagnostic. If a crash could satisfy the diagnostic, also assert that the output has no panic or crash marker.
   - Matching `--help` alone is NOT a functional test — it only proves the binary loads, not that it works.
   - Every test should include a concrete binary invocation, preferably the real installed binary under `#{bin}`.
   - For formulae installing multiple binaries, test the primary binary and either run or assert the existence of secondary binaries when appropriate.
@@ -393,6 +394,7 @@ You MUST verify all items before submitting:
 - [ ] No existing [open PRs](https://github.com/Homebrew/homebrew-core/pulls) for same change
 - [ ] Built locally with `HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source`
 - [ ] Tests pass with `brew test`
+- [ ] New formula tests assert its version when available and exercise concrete behavior, not help or completion output
 - [ ] Linkage passes with `brew linkage --test`
 - [ ] Audit passes with `brew audit --strict` (or `--new` for new formulae)
 - [ ] Style passes with `brew style`
