@@ -29,6 +29,12 @@ class Memtui < Formula
 
   test do
     assert_match "memtui version #{version}", shell_output("#{bin}/memtui -version")
-    assert_match "Memcached server address", shell_output("#{bin}/memtui -h 2>&1")
+
+    ENV["XDG_CONFIG_HOME"] = testpath
+    (testpath/"memtui").mkpath
+    (testpath/"memtui/config.yaml").write "connection: [\n"
+    output = shell_output("#{bin}/memtui 2>&1", 1)
+    assert_match "failed to parse config file", output
+    refute_match "panic:", output
   end
 end
