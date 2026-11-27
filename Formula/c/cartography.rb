@@ -15,10 +15,11 @@ class Cartography < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any, arm64_tahoe:   "922b9c9ea3d30d6ffced91996fd362da1417a991ffeb2afa59b89607a917453b"
-    sha256 cellar: :any, arm64_sequoia: "69d2c72b0ad95fa1ed67682a61e3423f92d7049218dd1db653660c1dc0c38bcb"
-    sha256 cellar: :any, arm64_linux:   "3c7ec021d1833aa885a5c845721e1aa1eed7ac1c02f30f71ff415d11226ff654"
-    sha256 cellar: :any, x86_64_linux:  "adaf1301030f7ca0e666c356fa136966be0a0894d219007708bba9dbdac89384"
+    manifest_sha256 "a1be00ac746bf3788537b8c0999651be34e0b4d791d85986585a2c741786767f"
+    sha256 cellar: :any, arm64_tahoe:   "099d91a9c8fa3f50349eaa025adbc0359dc4a6d2a864eae19716c19ed99d2252"
+    sha256 cellar: :any, arm64_sequoia: "64a4823fcb182f5c7dd7944ded24182f61096d4a17098b117b1156d752dcaf96"
+    sha256 cellar: :any, arm64_linux:   "9edeee0a09087c935a807bc7b86ff98815f49513aa70996bfa6d61b617d32046"
+    sha256 cellar: :any, x86_64_linux:  "6f252e9c9d6be0f8e61a8c844947926a15bd8ddd2c41e694afd9131dbe882fa0"
   end
 
   depends_on "maturin" => :build
