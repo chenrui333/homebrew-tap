@@ -1,8 +1,8 @@
 class Tparse < Formula
   desc "Tool for summarizing go test output. Pipe friendly. CI/CD friendly"
   homepage "https://github.com/mfridman/tparse"
-  url "https://github.com/mfridman/tparse/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "11e779379e6605202aa1751b2de3e36179ad63c38c478748e8c4e4693845c1b5"
+  url "https://github.com/mfridman/tparse/archive/refs/tags/v0.20.0.tar.gz"
+  sha256 "f4755207b178523096a592ff2b67d3142467938676d87d5b0f6a03d83e7be71b"
   license "MIT"
   head "https://github.com/mfridman/tparse.git", branch: "main"
 
