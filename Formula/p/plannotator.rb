@@ -13,10 +13,11 @@ class Plannotator < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 arm64_tahoe:   "75a6e09f352e25a78f1b99b4eebe4016a8dfbfc7a68601841ac7333a48808ae8"
-    sha256 arm64_sequoia: "1653388f47b871a446b698aa97d65f61e4b7bb690695453eaa672ffdd58a604e"
-    sha256 arm64_linux:   "57e6b80c23327e867095a690a26bcad9a62095a0b664021fc9a4677805ca52bc"
-    sha256 x86_64_linux:  "899f0acb3371a9c5d54786ad71fbfad69f70d25576fa651e81245cdd975e354b"
+    manifest_sha256 "876d24ef3dbbfda68faff7e730668238e3b23856663cfa8645b2f5292fb9cda2"
+    sha256 arm64_tahoe:   "cf8abccb32e6a9217278a28a51fa0fb7369df1f1bc894b7a9d205c56a082eaad"
+    sha256 arm64_sequoia: "16170782e990241f6859cb96a9168735966b08882dbb8a2a212148684d8fca89"
+    sha256 arm64_linux:   "e42a40b525a40eea4258288e8878b5a50fdf448b8f5af5864cf7da2396782abf"
+    sha256 x86_64_linux:  "d0de40122f83d04e0e8cabc469fdef262e4b1ea4ba29b727bf04549b9da47704"
   end
 
   depends_on "bun" => :build
