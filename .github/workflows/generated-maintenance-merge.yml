@@ -94,6 +94,11 @@ jobs:
               if $branch == "automation/formula-metadata" then
                 ($changed | length) > 0 and
                 all($changed[]; . as $file | $allowed | index($file) != null)
+              elif $branch == "automation/terminal-trove-weekly" then
+                ($changed | index("docs/terminal-trove/terminal_trove_weekly.md")) != null and
+                all(.[];
+                  (.filename as $file | $allowed | index($file) != null) and
+                  (.status == "added" or .status == "modified") and .previous_filename == null)
               elif $branch == "automation/cask-metadata" then
                 $changed == $allowed and
                 all(.[]; (.status == "added" or .status == "modified") and .previous_filename == null)
@@ -116,7 +121,7 @@ jobs:
                   .bucket != "pending" and .bucket != "fail" and .bucket != "cancel") | .name],
                 missing: (["Spell Check"] as $expected |
                   [$expected[] as $name | select([$checks[] | select(.name == $name and .bucket == "pass")] | length == 0) | $name] +
-                  (if $branch == "automation/cask-metadata" and
+                  (if ($branch == "automation/cask-metadata" or $branch == "automation/terminal-trove-weekly") and
                       ([$checks[] | select(.workflow == "link-checker" and .name == "check" and .bucket == "pass")] | length == 0)
                    then ["link-checker / check"] else [] end))
               }
