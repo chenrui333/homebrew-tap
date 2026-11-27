@@ -137,3 +137,23 @@ test("cask metadata waits for both spell and link checks", () => {
     assert.match(result.stdout, /Waiting for checks:/)
   }
 })
+
+test("Terminal Trove admits a changed report with or without a cache update", () => {
+  const ref = "automation/terminal-trove-weekly"
+  const report = "docs/terminal-trove/terminal_trove_weekly.md"
+  const cache = "docs/terminal-trove/.project_links_cache.json"
+  for (const files of [[report], [report, cache]]) {
+    const result = admission({ ref, files, checks: [spellCheck, linkCheck] })
+    assert.equal(result.status, 0, result.stderr)
+    assert.equal(result.state.final.state, "closed")
+  }
+  for (const files of [[cache], [report, "README.md"], [{ filename: report, status: "removed" }]]) {
+    const result = admission({ ref, files, checks: [spellCheck, linkCheck] })
+    assert.equal(result.status, 0, result.stderr)
+    assert.equal(result.state.final.state, "open")
+  }
+  const unchecked = admission({ ref, files: [report], checks: [spellCheck] })
+  assert.equal(unchecked.status, 42, unchecked.stderr)
+  assert.equal(unchecked.state.final.state, "open")
+  assert.match(unchecked.stdout, /link-checker \/ check/)
+})
