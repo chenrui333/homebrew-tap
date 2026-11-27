@@ -1,8 +1,8 @@
 class Herald < Formula
   desc "Terminal email and calendar client"
   homepage "https://github.com/herald-email/herald-mail-app"
-  url "https://github.com/herald-email/herald-mail-app/archive/refs/tags/v0.11.0-beta.1.tar.gz"
-  sha256 "552f9197868b72dc9062fec8ea5c6d30bb0508e6ca8d4a4364002eca1d4d871d"
+  url "https://github.com/herald-email/herald-mail-app/archive/refs/tags/v0.12.0-beta.1.tar.gz"
+  sha256 "264f12ce9fb0b7852b033fd15714ace3219ae88900057a02171c4552944d4f7f"
   license "FSL-1.1-ALv2"
   head "https://github.com/herald-email/herald-mail-app.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Herald < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "601ee7c47af8e6d0cead6578edb38aadefcf7422404cea7fe95a5e86ad53908b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2cb59a731cf8747fae4559ccb1cf5e86df2591504a6e74a0b95e42d946be6081"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2e80235bf89dc286826b9975f3c7959525a38816a1cd9fa33199bf5253a6df0"
-    sha256 cellar: :any,                 arm64_linux:   "1e6062aff392ab608fd94f3a0247bb0be999471c625de1e3bcac5f19a34fa539"
-    sha256 cellar: :any,                 x86_64_linux:  "e0650f04daa9cddc23225b7a88c9b7088941186919e77e74cd61b4f430aa5612"
+    manifest_sha256 "4e0c46d517673a04060a05855a698c139ee32b9ee2d4c41e13a1f4f2079cad4a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "23bc854fff87d07b0b7d0e3fe1997c44b5fe41b06f3c38249b17923dd6859114"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddc4d983b83dc9080278af561aa425997a3d7473bfd37e958264d664d9e46a34"
+    sha256 cellar: :any,                 arm64_linux:   "b182ff748ef79909bfa77ebdac6334f38d2f854cc1ec2f0897af474f1ab63970"
+    sha256 cellar: :any,                 x86_64_linux:  "77b5dbcf22d615337ff1c7f6c198f30a5b2408f1a8a117a02b8ef6b10f740821"
   end
 
   depends_on "go" => :build
