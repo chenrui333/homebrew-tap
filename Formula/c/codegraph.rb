@@ -1,18 +1,18 @@
 class Codegraph < Formula
   desc "Local code intelligence and knowledge graph for AI coding agents"
   homepage "https://github.com/colbymchenry/codegraph"
-  url "https://github.com/colbymchenry/codegraph/archive/refs/tags/v1.6.4.tar.gz"
-  sha256 "cb3de7b69eb6fad0562e29e5dbb132457d27349f3dfb7e715d01db28ecf834e2"
+  url "https://github.com/colbymchenry/codegraph/archive/refs/tags/v1.6.5.tar.gz"
+  sha256 "970c5106b48630d5250ffaebcf348350142ebd25074eb52b928e0c883c71187e"
   license "MIT"
   head "https://github.com/colbymchenry/codegraph.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "eed436eba256216f439ac62a9a185bcd73f4ab8784b7d442c0cc63311ac38f80"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "219eb9f36628a6b01ca4e9d7974f830602e9cc9a3b9b8310b82229c8a24fa340"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0730d2d23907329446a60253f1a6c8f7b9985f0aa94fe0742f16d03202c074e9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "183bf0c87041a8dfb79f13a26bd26f0d052dafe7128de5a18395fd1dd8b681fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aafc1f812d6c8e700bb4e04c7e86a47be1b3894df6b2bee7d794888488d29d9"
+    manifest_sha256 "d4ab24d7ee2c8fba92e7f798f7e35b21302995c4a21b4616fd71a9ba424fdf70"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "751a43b738c1b7d242f4de05806acd2518a021e7a5c106453410d85a6fc71e9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77291abab43b72b928017bfd56d461a8d6959a82a584b1b470107fee62638ad0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bb8e626e580b56becbb99fc33ff7ce81065f02135ce76742ff9f4bc686210bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6616def51a82b5b79016dba6c93035553a562aaebebc59b6a3a9f3c2a8f1156"
   end
 
   # Upstream blocks Node >=25 because its tree-sitter WASM grammars can crash V8.
