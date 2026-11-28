@@ -1,8 +1,8 @@
 class Codegraph < Formula
   desc "Local code intelligence and knowledge graph for AI coding agents"
   homepage "https://github.com/colbymchenry/codegraph"
-  url "https://github.com/colbymchenry/codegraph/archive/refs/tags/v1.6.4.tar.gz"
-  sha256 "cb3de7b69eb6fad0562e29e5dbb132457d27349f3dfb7e715d01db28ecf834e2"
+  url "https://github.com/colbymchenry/codegraph/archive/refs/tags/v1.6.5.tar.gz"
+  sha256 "970c5106b48630d5250ffaebcf348350142ebd25074eb52b928e0c883c71187e"
   license "MIT"
   head "https://github.com/colbymchenry/codegraph.git", branch: "main"
 
