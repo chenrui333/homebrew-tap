@@ -1,8 +1,8 @@
 class Plannotator < Formula
   desc "Browser-based plan annotation and code review for coding agents"
   homepage "https://plannotator.ai"
-  url "https://github.com/backnotprop/plannotator/archive/refs/tags/v0.29.6.tar.gz"
-  sha256 "052dd1eb6dca17ba646da2383c6607eb0bc16aee655f8694ee620b3a9c796b50"
+  url "https://github.com/backnotprop/plannotator/archive/refs/tags/v0.29.7.tar.gz"
+  sha256 "2e102bdd9ba883328d2bf22e6a51ffbbd6eebea15f50cb19d5c557d1594c6b8b"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/backnotprop/plannotator.git", branch: "main"
 
