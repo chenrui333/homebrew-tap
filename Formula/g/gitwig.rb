@@ -1,8 +1,8 @@
 class Gitwig < Formula
   desc "Terminal interface for Git"
   homepage "https://github.com/tareqmy/gitwig"
-  url "https://github.com/tareqmy/gitwig/archive/refs/tags/v2.8.1.tar.gz"
-  sha256 "ea3122deeaeeb314233f6bee247de3b61a927e13e3b91b6f5f712fd7c5c99e98"
+  url "https://github.com/tareqmy/gitwig/archive/refs/tags/v2.8.2.tar.gz"
+  sha256 "8caf7db365702f6b5602b0ef92b9a97d9bc8ae77e01c3760db5d62d39beeddec"
   license "MIT"
   head "https://github.com/tareqmy/gitwig.git", branch: "master"
 
