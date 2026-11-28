@@ -3,8 +3,8 @@ class Opencodex < Formula
   homepage "https://github.com/lidge-jun/opencodex"
   # The compatibility manifest hashes Git-tracked source files.
   url "https://github.com/lidge-jun/opencodex.git",
-      tag:      "v2.95.0",
-      revision: "9df4f6a56483ffe62526e29c7d9c6eeed3e742f4"
+      tag:      "v2.100.11",
+      revision: "5c350d013261e84fd1b2d965c5b08976a8b7da24"
   license "MIT"
   head "https://github.com/lidge-jun/opencodex.git", branch: "main"
 
@@ -40,6 +40,7 @@ class Opencodex < Formula
 
   def install
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s if OS.linux?
+    system "bun", "scripts/release-version-sources.ts", "sync", version.to_s unless build.head?
     system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
     resource("keyring").stage do
       # The library archive omits Cargo.lock; generate one before the locked source build.
@@ -56,8 +57,9 @@ class Opencodex < Formula
       target.install native => "wreq-js.node"
     end
     platform = "#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.arm? ? "arm64" : "x64"}"
-    system "cargo", "install", *std_cargo_args(path: "native/remote-workspace-helper", root: libexec/"helper")
-    (buildpath/"native-bin/#{platform}").install libexec/"helper/bin/opencodex-remote-workspace-helper"
+    helper = buildpath/"helper"
+    system "cargo", "install", *std_cargo_args(path: "native/remote-workspace-helper", root: helper)
+    (buildpath/"native-bin/#{platform}").install helper/"bin/opencodex-remote-workspace-helper"
     cd "gui" do
       system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
       system "bun", "run", "build"
@@ -71,14 +73,13 @@ class Opencodex < Formula
     rm_r (libexec/"node_modules/@oven").glob("bun-*")
     rm_r (libexec/"node_modules/.bun").glob("@oven+bun-*")
     (libexec/"node_modules/@napi-rs").glob("keyring-*").each { |path| rm_r path }
-    %w[ocx opencodex].each do |name|
-      (bin/name).write <<~SH
-        #!/bin/bash
-        export NAPI_RS_NATIVE_LIBRARY_PATH="#{opt_libexec}/native/keyring.node"
-        exec "#{formula_opt_bin("bun")}/bun" "#{libexec}/src/cli/index.ts" "$@"
-      SH
-      chmod 0755, bin/name
-    end
+    (bin/"ocx").write <<~SH
+      #!/bin/bash
+      export NAPI_RS_NATIVE_LIBRARY_PATH="#{opt_libexec}/native/keyring.node"
+      exec "#{formula_opt_bin("bun")}/bun" "#{opt_libexec}/src/cli/index.ts" "$@"
+    SH
+    chmod 0755, bin/"ocx"
+    bin.install_symlink bin/"ocx" => "opencodex"
   end
 
   def caveats
