@@ -1,9 +1,11 @@
 const assert = require("node:assert/strict")
 const {spawnSync} = require("node:child_process")
-const {mkdtempSync, readFileSync, rmSync, writeFileSync} = require("node:fs")
+const {createHash} = require("node:crypto")
+const {mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync} = require("node:fs")
 const {tmpdir} = require("node:os")
 const {join} = require("node:path")
 const test = require("node:test")
+const {gzipSync} = require("node:zlib")
 
 const repository = "chenrui333/homebrew-tap"
 // Point at an old workflow snapshot to demonstrate the behavior regressions before the repair.
@@ -100,7 +102,11 @@ if (command === "pr-upload") {
   state.uploaded = true
   writeFileSync(root + "/state.json", JSON.stringify(state))
   appendFileSync(root + "/effects", "upload\\n")
-} else if (command === "pr-pull") appendFileSync(root + "/effects", "pull\\n")
+} else if (command === "pr-pull") {
+  appendFileSync(root + "/effects", "pull\\n")
+  const data = JSON.parse(readFileSync(root + "/fixture.json"))
+  if (!data.omitBottlePath) appendFileSync(process.env.GITHUB_OUTPUT, "bottle_path=" + root + "/pr-pull-11999-retained\\n")
+}
 else process.exit(99)
 `
 const fakeSleep = `#!/bin/bash
@@ -140,6 +146,22 @@ function consumerResponse({sha = "a".repeat(40), runId = 42, workflowId = 123, s
   }}]}}}}}
 }
 
+const bottleTag = "arm64_sonoma"
+const bottleName = tag => `hello--2.12.2.${tag}.bottle.tar.gz`
+const bottleBytes = gzipSync(Buffer.alloc(1024))
+const otherBottleBytes = gzipSync(Buffer.alloc(1536))
+const digest = bytes => createHash("sha256").update(bytes).digest("hex")
+const bottleMetadata = (tag, name, bytes) => JSON.stringify({
+  [`${repository}/hello`]: {
+    formula: {path: "Formula/hello.rb", pkg_version: "2.12.2"},
+    bottle: {
+      root_url: "https://ghcr.io/v2/chenrui333/tap",
+      rebuild: 0,
+      tags: {[tag]: {local_filename: name, sha256: digest(bytes), cellar: ":any_skip_relocation"}},
+    },
+  },
+})
+
 function publicationFixture(overrides, options, execute) {
   const directory = mkdtempSync(join(tmpdir(), "publish-validation-"))
   try {
@@ -158,6 +180,19 @@ function publicationFixture(overrides, options, execute) {
       responses: {}, consumer: consumerResponse(), pushedSha: "b".repeat(40),
       ...options,
     }
+    const bottlePath = join(directory, "pr-pull-11999-retained")
+    if (!options.missingBottleDirectory) {
+      mkdirSync(bottlePath)
+      const files = {
+        [`hello--2.12.2.${bottleTag}.bottle.json`]: bottleMetadata(bottleTag, bottleName(bottleTag), bottleBytes),
+        [bottleName(bottleTag)]: bottleBytes,
+        ...options.bottleFiles,
+      }
+      for (const [name, bytes] of Object.entries(files)) {
+        if (bytes !== null) writeFileSync(join(bottlePath, name), bytes)
+      }
+      if (options.bottleSymlink) symlinkSync(join(directory, "fixture.json"), join(bottlePath, bottleName(bottleTag)))
+    }
     writeFileSync(join(directory, "fixture.json"), JSON.stringify(data))
     writeFileSync(join(directory, "state.json"), JSON.stringify({calls: {}}))
     for (const file of ["calls", "effects", "sleeps"]) writeFileSync(join(directory, file), "")
@@ -165,6 +200,7 @@ function publicationFixture(overrides, options, execute) {
       writeFileSync(join(directory, file), source, {mode: 0o755})
     }
     const outputs = {}
+    let subjects = []
     const run = (name) => {
       const definition = stepDefinition(name)
       const condition = definition.match(/^        if: (.*)$/m)?.[1]
@@ -177,9 +213,20 @@ function publicationFixture(overrides, options, execute) {
       }
       const output = join(directory, "output")
       writeFileSync(output, "")
+      if (definition.includes("uses: actions/attest@")) {
+        const input = definition.match(/subject-checksums: \$\{\{ steps\.([\w-]+)\.outputs\.([\w-]+) \}\}/)
+        assert.ok(input, "signer must consume the qualification output")
+        subjects = readFileSync(outputs[input[1]][input[2]], "utf8").trim().split("\n")
+        if (options.attestError) return {status: 1, stdout: "", stderr: "fixture signer unavailable"}
+        writeFileSync(join(directory, "effects"), "attest\n", {flag: "a"})
+        return {status: 0, stdout: "", stderr: ""}
+      }
       const details = outputs["pr-details"] || {}
       const result = spawnSync("bash", ["-e", "-c", stepScript(name) || "git push"], {
         encoding: "utf8",
+        timeout: 5000,
+        cwd: definition.includes("working-directory: ${{ steps.pr-pull.outputs.bottle_path }}")
+          ? outputs["pr-pull"].bottle_path : directory,
         env: {
           ...process.env,
           PATH: `${directory}:${process.env.PATH}`,
@@ -188,6 +235,7 @@ function publicationFixture(overrides, options, execute) {
           GITHUB_REPOSITORY: repository, GITHUB_REPOSITORY_OWNER: "chenrui333",
           GITHUB_EVENT_NAME: options.eventName || "pull_request_target",
           GITHUB_OUTPUT: output, PR: "11999", REPO_PATH: directory,
+          RUNNER_TEMP: directory, BOTTLE_PATH: outputs["pr-pull"]?.bottle_path || "",
           EXPECTED_HEAD: details.expected_head || data.pr.head.sha,
           HEAD_BRANCH: details.head_branch || data.pr.head.ref,
           QUALIFIED_RUN_ID: details.qualified_run_id || "",
@@ -208,7 +256,7 @@ function publicationFixture(overrides, options, execute) {
     }
     const result = execute(run)
     const lines = file => readFileSync(join(directory, file), "utf8").trim().split("\n").filter(Boolean)
-    return {...result, outputs, effects: lines("effects"), calls: lines("calls"), sleeps: lines("sleeps").map(Number)}
+    return {...result, outputs, subjects, effects: lines("effects"), calls: lines("calls"), sleeps: lines("sleeps").map(Number)}
   } finally {
     rmSync(directory, {recursive: true, force: true})
   }
@@ -220,7 +268,8 @@ function validate(overrides = {}, options = {}) {
 function publish(overrides = {}, options = {}) {
   return publicationFixture(overrides, options, run => {
     let result
-    for (const name of ["Validate PR", "Reconcile published bottle label", "Pull bottles", "Upload bottles",
+    for (const name of ["Validate PR", "Reconcile published bottle label", "Pull bottles",
+      "Qualify retained bottles before publication", "Generate build provenance", "Upload bottles",
       "Verify PR branch unchanged before push", "Push commits", "Verify pushed bottle commit",
       "Mark PR with published bottle commits", "Record published bottle head"]) {
       const next = run(name)
@@ -434,7 +483,64 @@ const bottleSourcePr = (overrides = {}) => ({
 test("a qualified current source head reaches upload, push, label and status publication", () => {
   const result = publish(bottlePr)
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
+  assert.deepEqual(result.subjects, [`${digest(bottleBytes)}  ${bottleName(bottleTag)}`])
+})
+
+test("provenance includes only metadata-backed retained bottles, including identical platform inputs for :all", () => {
+  const tag = "sonoma"
+  const result = publish(bottlePr, {bottleFiles: {
+    [`hello--2.12.2.${tag}.bottle.json`]: bottleMetadata(tag, bottleName(tag), bottleBytes),
+    [bottleName(tag)]: bottleBytes,
+    [bottleName("all")]: otherBottleBytes,
+    "unrelated.tar.gz": otherBottleBytes,
+  }})
+  assert.equal(result.status, 0, result.stderr)
+  assert.deepEqual(result.subjects, [bottleTag, tag].map(tag => `${digest(bottleBytes)}  ${bottleName(tag)}`))
+})
+
+test("provenance follows the ordered metadata merge for a superseded formula tag", () => {
+  const newerName = bottleName(bottleTag).replace(".bottle.", ".bottle.1.")
+  const result = publish(bottlePr, {bottleFiles: {
+    "hello--2.12.2.zz.bottle.json": bottleMetadata(bottleTag, newerName, otherBottleBytes),
+    [newerName]: otherBottleBytes,
+  }})
+  assert.equal(result.status, 0, result.stderr)
+  assert.deepEqual(result.subjects, [`${digest(otherBottleBytes)}  ${newerName}`])
+})
+
+test("a retained native universal bottle is an exact provenance subject", () => {
+  const result = publish(bottlePr, {bottleFiles: {
+    [`hello--2.12.2.${bottleTag}.bottle.json`]: null,
+    "hello--2.12.2.all.bottle.json": bottleMetadata("all", bottleName("all"), otherBottleBytes),
+    [bottleName("all")]: otherBottleBytes,
+  }})
+  assert.equal(result.status, 0, result.stderr)
+  assert.deepEqual(result.subjects, [`${digest(otherBottleBytes)}  ${bottleName("all")}`])
+})
+
+for (const [name, options] of [
+  ["a tampered bottle", {bottleFiles: {[bottleName(bottleTag)]: otherBottleBytes}}],
+  ["a missing bottle", {bottleFiles: {[bottleName(bottleTag)]: null}}],
+  ["a missing bottle directory", {missingBottleDirectory: true}],
+  ["a missing bottle path output", {omitBottlePath: true}],
+  ["a symlinked bottle", {bottleFiles: {[bottleName(bottleTag)]: null}, bottleSymlink: true}],
+  ["a traversal in bottle metadata", {bottleFiles: {
+    [`hello--2.12.2.${bottleTag}.bottle.json`]: bottleMetadata(bottleTag, `../${bottleName(bottleTag)}`, bottleBytes),
+  }}],
+]) {
+  test(`${name} blocks attestation and upload`, () => {
+    const result = publish(bottlePr, options)
+    assert.notEqual(result.status, 0)
+    assert.deepEqual(result.subjects, [])
+    assert.deepEqual(result.effects, ["pull"])
+  })
+}
+
+test("an attestation failure blocks upload", () => {
+  const result = publish(bottlePr, {attestError: true})
+  assert.notEqual(result.status, 0)
+  assert.deepEqual(result.effects, ["pull"])
 })
 
 for (const conclusion of ["failure", "cancelled", "timed_out", "neutral", "skipped"]) {
@@ -530,7 +636,7 @@ test("complete paginated source and bottle responses qualify the newest matching
     "artifacts:42": [[{total_count: 2, artifacts: [bottleArtifact()]}, {total_count: 2, artifacts: [otherBottle]}]],
   }})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 const rerun = (attempt = 2) => sourceRun({
@@ -549,7 +655,7 @@ test("a clean later rerun supersedes only its platform's older failed-bottles ar
       bottleArtifact({id: 104, name: "bottles_macos-15"})],
   })
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 test("a third label-only attempt preserves the second attempt's clean rebuild recovery", () => {
@@ -558,7 +664,7 @@ test("a third label-only attempt preserves the second attempt's clean rebuild re
     artifacts: [failedArtifact(), rebuiltBottle],
   })
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 for (const [name, artifacts] of [
@@ -593,7 +699,7 @@ test("fresh pr-pull waits for label-pr terminal reporting, then revalidates and 
     "run:42": [reportingRun, reportingRun, sourceRun()],
   }})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 test("a queued formula conclusion can finish after label admission before publication", () => {
@@ -605,7 +711,7 @@ test("a queued formula conclusion can finish after label admission before public
     "run:42": [reportingRun, reportingRun, sourceRun()],
   }})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 test("an in-progress label-only rerun inherits successful builds without inheriting the old label failure", () => {
@@ -622,7 +728,7 @@ test("an in-progress label-only rerun inherits successful builds without inherit
     "run:42": [active, complete],
   }})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 test("a newer failed rebuild cannot inherit an earlier successful matrix result", () => {
@@ -692,12 +798,13 @@ for (const eventName of ["pull_request_target", "workflow_dispatch"]) {
   })
 }
 
-test("a hold added after validation prevents bottle upload and all later mutations", () => {
+test("a hold added after validation prevents attestation, upload and all later mutations", () => {
   const result = publish(bottlePr, {responses: {
     pr: [bottleSourcePr(), bottleSourcePr({labels: [{name: "pr-pull"}, {name: "in progress"}]})],
   }})
   assert.equal(result.status, 0, result.stderr + result.stdout)
   assert.deepEqual(result.effects, ["pull"])
+  assert.deepEqual(result.subjects, [])
 })
 
 test("a hold added after upload prevents push, publication labels and published-head status", () => {
@@ -705,7 +812,7 @@ test("a hold added after upload prevents push, publication labels and published-
     pr: [bottleSourcePr(), bottleSourcePr(), bottleSourcePr({labels: [{name: "pr-pull"}, {name: "in progress"}]})],
   }})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload"])
 })
 
 for (const [name, changed] of [
@@ -720,7 +827,7 @@ for (const [name, changed] of [
       const prs = phase === "before upload" ? [bottleSourcePr(), changed] : [bottleSourcePr(), bottleSourcePr(), changed]
       const result = publish(bottlePr, {responses: {pr: prs}})
       assert.notEqual(result.status, 0, result.stderr + result.stdout)
-      assert.deepEqual(result.effects, phase === "before upload" ? ["pull"] : ["pull", "upload"])
+      assert.deepEqual(result.effects, phase === "before upload" ? ["pull"] : ["pull", "attest", "upload"])
     })
   }
 }
@@ -790,7 +897,7 @@ test("a later clean rebuild can recover an expired failure artifact without trus
     artifacts: [failedArtifact({expired: true, expires_at: "2026-01-01T00:00:00Z"}), rebuiltBottle],
   })
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "label", "status"])
 })
 
 for (const [name, response] of [
@@ -824,19 +931,19 @@ const reviewHoldPr = {labels: [{name: "pr-pull"}, {name: "CI-hold-published-head
 test("opt-in review holds the pushed bottle head before recording publication success", () => {
   const result = publish(reviewHoldPr)
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "review-hold", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "review-hold", "label", "status"])
 })
 
 test("a failed post-push review hold cannot advertise the bottle head as published", () => {
   const result = publish(reviewHoldPr, {reviewHoldError: true})
   assert.notEqual(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push"])
 })
 
 test("the pre-push review requirement survives lagging labels after the push", () => {
   const result = publish(reviewHoldPr, {afterPushLabels: [{name: "pr-pull"}]})
   assert.equal(result.status, 0, result.stderr + result.stdout)
-  assert.deepEqual(result.effects, ["pull", "upload", "push", "review-hold", "label", "status"])
+  assert.deepEqual(result.effects, ["pull", "attest", "upload", "push", "review-hold", "label", "status"])
 })
 
 test("a recovered bottle head is held before its missing published status is restored", () => {

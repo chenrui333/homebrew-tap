@@ -19,11 +19,12 @@ concurrency:
 jobs:
   pr-pull:
     if: |
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.label.name == 'pr-pull' &&
-       github.event.pull_request.user.type != 'Bot' &&
-       github.event.pull_request.state == 'open' &&
-       !github.event.pull_request.draft)
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event.label.name == 'pr-pull' &&
+        github.event.pull_request.user.type != 'Bot' &&
+        github.event.pull_request.state == 'open' &&
+        !github.event.pull_request.draft))
     runs-on: ubuntu-latest
     env:
       PR: ${{ inputs.pr_number || github.event.pull_request.number }}
@@ -34,6 +35,8 @@ jobs:
       pull-requests: write
       packages: write
       statuses: write
+      attestations: write
+      id-token: write
     steps:
       - name: Validate PR
         id: pr-details
@@ -412,6 +415,7 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
           HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
           HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          HOMEBREW_TEMP: ${{ runner.temp }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
         run: |
           brew pr-pull \
@@ -426,29 +430,22 @@ jobs:
             --retain-bottle-dir \
             "$PR"
 
-      - name: Upload bottles
-        id: pr-upload
+      - name: Qualify retained bottles before publication
+        id: upload-admission
         if: steps.pr-details.outputs.publish == 'true'
-        working-directory: ${{ steps.pr-pull.outputs.bottle_path }}
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
-          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          BOTTLE_PATH: ${{ steps.pr-pull.outputs.bottle_path }}
           REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
           HEAD_BRANCH: ${{ steps.pr-details.outputs.head_branch }}
           QUALIFIED_RUN_ID: ${{ steps.pr-details.outputs.qualified_run_id }}
           QUALIFIED_RUN_ATTEMPT: ${{ steps.pr-details.outputs.qualified_run_attempt }}
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-          # Manual re-dispatches repair a publish whose upload succeeded but whose bottle commit was
-          # never pushed; the same CI artifacts are re-uploaded, so an existing tag is not an error.
-          REPAIR_UPLOAD: ${{ github.event_name == 'workflow_dispatch' && '--warn-on-upload-failure' || '' }}
         run: |
           set -euo pipefail
           pr_data="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR")"
           if jq -e 'any(.labels[]; .name == "in progress")' > /dev/null <<< "$pr_data"; then
             echo "PR was held before upload; skipping."
-            echo "held=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           jq -e --arg sha "$EXPECTED_HEAD" --arg repo "$GITHUB_REPOSITORY" --arg branch "$HEAD_BRANCH" '
@@ -514,7 +511,60 @@ jobs:
                   ([.nodes[] | select(.workflowRun.workflow.databaseId == $workflow)] | last |
                     .status == "COMPLETED" and .workflowRun.databaseId == $id))))
           ' > /dev/null <<< "$consumer"
+          if [[ "$(dirname -- "$BOTTLE_PATH")" != "$RUNNER_TEMP" ||
+                "$(basename -- "$BOTTLE_PATH")" != pr-pull-"$PR"-* ||
+                ! -d "$BOTTLE_PATH" || -L "$BOTTLE_PATH" ]]; then
+            echo "::error::Missing or unexpected retained bottle directory."
+            exit 1
+          fi
+          cd -- "$BOTTLE_PATH"
+          shopt -s nullglob
+          LC_ALL=C
+          metadata=(./*.bottle.json)
+          (( ${#metadata[@]} > 0 ))
+          for file in "${metadata[@]}"; do
+            [[ -f "$file" && ! -L "$file" ]]
+          done
+          # Match pr-upload's ordered metadata merge. A later :all conversion only copies identical bytes.
+          # Verify their bytes before handing the exact subject names and digests to the signer.
+          checksums="$(mktemp "$RUNNER_TEMP/bottle-subjects.XXXXXXXX")"
+          jq -ser '
+            (reduce .[] as $incoming ({}; . * $incoming)) | .[].bottle.tags[] |
+            if (.local_filename | test("\\A[A-Za-z0-9_+@.-]+--[A-Za-z0-9_+@.-]+\\.bottle(\\.[0-9]+)?\\.tar\\.gz\\z")) and
+               (.sha256 | test("\\A[0-9a-f]{64}\\z"))
+            then "\(.sha256)  \(.local_filename)"
+            else error("Invalid retained bottle metadata")
+            end
+          ' "${metadata[@]}" | sort -u > "$checksums"
+          [[ -s "$checksums" ]]
+          while read -r _ file; do
+            [[ -f "$file" && ! -L "$file" ]]
+          done < "$checksums"
+          sha256sum --check --strict --status "$checksums"
           git -C "$REPO_PATH" fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          echo "checksums=$checksums" >> "$GITHUB_OUTPUT"
+
+      - name: Generate build provenance
+        if: steps.upload-admission.outputs.checksums != ''
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-checksums: ${{ steps.upload-admission.outputs.checksums }}
+
+      - name: Upload bottles
+        id: pr-upload
+        if: steps.upload-admission.outputs.checksums != ''
+        working-directory: ${{ steps.pr-pull.outputs.bottle_path }}
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
+          EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
+          # Manual re-dispatches repair a publish whose upload succeeded but whose bottle commit was
+          # never pushed; the same CI artifacts are re-uploaded, so an existing tag is not an error.
+          REPAIR_UPLOAD: ${{ github.event_name == 'workflow_dispatch' && '--warn-on-upload-failure' || '' }}
+        run: |
+          set -euo pipefail
           # shellcheck disable=SC2086 # REPAIR_UPLOAD is empty or a single flag
           brew pr-upload \
             --debug \
@@ -530,7 +580,7 @@ jobs:
 
       - name: Verify PR branch unchanged before push
         id: push-admission
-        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true'
+        if: steps.pr-upload.outputs.published_head_sha != ''
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           EXPECTED_HEAD: ${{ steps.pr-details.outputs.expected_head }}
@@ -565,7 +615,7 @@ jobs:
           fi
 
       - name: Push commits
-        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
+        if: steps.pr-upload.outputs.published_head_sha != '' && steps.push-admission.outputs.held != 'true'
         uses: Homebrew/actions/git-try-push@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
         with:
           token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
@@ -576,7 +626,7 @@ jobs:
           tries: 1
 
       - name: Verify pushed bottle commit
-        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
+        if: steps.pr-upload.outputs.published_head_sha != '' && steps.push-admission.outputs.held != 'true'
         working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
         env:
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
@@ -658,13 +708,13 @@ jobs:
           fi
 
       - name: Mark PR with published bottle commits
-        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
+        if: steps.pr-upload.outputs.published_head_sha != '' && steps.push-admission.outputs.held != 'true'
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
         run: gh pr edit --add-label CI-published-bottle-commits "$PR" --repo "$GITHUB_REPOSITORY"
 
       - name: Record published bottle head
-        if: steps.pr-details.outputs.publish == 'true' && steps.pr-upload.outputs.held != 'true' && steps.push-admission.outputs.held != 'true'
+        if: steps.pr-upload.outputs.published_head_sha != '' && steps.push-admission.outputs.held != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PUBLISHED_HEAD: ${{ steps.pr-upload.outputs.published_head_sha }}
