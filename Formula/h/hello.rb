@@ -8,10 +8,11 @@ class Hello < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "031627c6725d575d9c73287c57d21d6cc5d17da54275a3efe54c9ea6649e614d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4288fcf9a7709a643d049cac122417b4cde2b77c042b1a921060b6cdf253d66"
-    sha256                               arm64_linux:   "e2973d15c7281c1152ce70aa2666123857b761180de85c8e018333cedcb5f5a7"
-    sha256                               x86_64_linux:  "845e56d0496dd44cb24dbf43512b915e3e0f8e68d0b7f608c9d3c58ecd9f7f9e"
+    manifest_sha256 "56b173274f325e6770d7707250cf4755edbc03b885c7a3fa57e1e04ee0a2f504"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "434b4f02d224c8bcaeca3f9fbb3df0d9bc5ec47056f8fbf834907581f21a489b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2f15e7b19ad6ebd39d44453d6da94b203723335a11a710430395ade7dd8a5c3"
+    sha256                               arm64_linux:   "cb5a554863588337c87dc4c7846a2332504e7a3537a89b595554c0f0767bb32f"
+    sha256                               x86_64_linux:  "dc2d8efc6e2f412a7f695c3f5815d369c2ab017b08e9b45bfb9daa6cd2d520b1"
   end
 
   deny_network_access!
