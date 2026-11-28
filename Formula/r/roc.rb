@@ -29,9 +29,11 @@ class Roc < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/roc --version")
 
-    system bin/"roc", "--init", "--yes", "--state", "state.json", "--provider", "none"
+    system bin/"roc", "--init", "--yes", "--state", "state.json", "--provider", "none", "--binary", "goose"
+    assert_path_exists testpath/"state.json"
     state = JSON.parse(shell_output("#{bin}/roc --show-state --state state.json"))
     assert_equal 1, state.fetch("version")
     assert_equal "none", state.dig("config", "ai", "provider")
+    assert_equal "goose", state.dig("config", "agent", "binary")
   end
 end
