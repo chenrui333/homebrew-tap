@@ -12,6 +12,7 @@ class Xerj < Formula
     regex(/^v?(\d+(?:\.\d+)+(?:-rc\.\d+)?)$/i)
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@4"
 
