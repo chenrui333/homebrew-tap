@@ -1,18 +1,18 @@
 class Siggy < Formula
   desc "Terminal-based Signal messenger client with vim keybindings"
   homepage "https://github.com/johnsideserf/siggy"
-  url "https://github.com/johnsideserf/siggy/archive/refs/tags/v1.15.0.tar.gz"
-  sha256 "5896074797a34b9b62580077f8a0cf0bb78cafb6e0c2c3977ecf2f063a41bda2"
+  url "https://github.com/johnsideserf/siggy/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "65f8ad94f569d478fca079984a792799e644c86a228576f0febf889220e14b55"
   license "GPL-3.0-only"
   head "https://github.com/johnsideserf/siggy.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "98570bb4914df2b7c7f93c8b8cee1f85ec393a7abb4bc2bfb085950c660bc281"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f370a31d021d4bf7c883b46faaa5dea76b4b8f7fd865cb1ea7cb944f6d44b330"
-    sha256 cellar: :any,                 arm64_linux:   "27283124afb7d674cd071b85f50e3a77204d5fe7859795cc6ad2e6211d55c7e9"
-    sha256 cellar: :any,                 x86_64_linux:  "09b9421fab9f7d8ef98d7be449a949b0bf20cca9f50869957f389f575a844262"
+    manifest_sha256 "b18e9d25e30e90fc5e9faad19e1930e00699480f6d6bacc94d9a42639da55ba3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "615ef1cbec9546b1151520207d8fe8ee8ec445ad401bd6b4234d583d6f901d8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f19be4a7148dca9477ac90175a0fa4230e35a80efe6dffc59da734fe4ef7eec"
+    sha256 cellar: :any,                 arm64_linux:   "45a592a8981ae5635ce1aaa39cdd1f494f897dff0752776fc3af945f61a183f6"
+    sha256 cellar: :any,                 x86_64_linux:  "3bea23349bd2677269920e89f35f9a433470abc804a6f83549e9e2b76a31f412"
   end
 
   depends_on "rust" => :build
