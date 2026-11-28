@@ -56,7 +56,9 @@ class Opencodex < Formula
       target.glob("*.node").each { |path| rm path }
       target.install native => "wreq-js.node"
     end
-    platform = "#{OS.mac? ? "darwin" : "linux"}-#{Hardware::CPU.arm? ? "arm64" : "x64"}"
+    os = OS.mac? ? "darwin" : "linux"
+    arch = Hardware::CPU.arm? ? "arm64" : "x64"
+    platform = "#{os}-#{arch}"
     helper = buildpath/"helper"
     system "cargo", "install", *std_cargo_args(path: "native/remote-workspace-helper", root: helper)
     (buildpath/"native-bin/#{platform}").install helper/"bin/opencodex-remote-workspace-helper"
