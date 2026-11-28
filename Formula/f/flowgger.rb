@@ -1,9 +1,10 @@
 class Flowgger < Formula
   desc "Fast data collector in Rust"
   homepage "https://github.com/awslabs/flowgger"
-  url "https://github.com/awslabs/flowgger/archive/refs/tags/0.3.2.tar.gz"
-  sha256 "2531d9c6c828091ad17fce54b9f7e0ff8b8417beaf02e06c89757a2adb898999"
+  url "https://static.crates.io/crates/flowgger/flowgger-0.3.2.crate"
+  sha256 "1632216db85102f900fdcffca6cac777b298dd0ce1d890a0646309dd411bda75"
   license "ISC"
+  revision 1
   head "https://github.com/awslabs/flowgger.git", branch: "master"
 
   bottle do
@@ -16,18 +17,24 @@ class Flowgger < Formula
 
   depends_on "capnp" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 
   def fetch
-    system "cargo", "generate-lockfile"
+    # The published lockfile predates OpenSSL 4; update only the bindings.
+    system "cargo", "update", "--package", "openssl", "--precise", "0.10.82"
+
+    # TODO: Remove once the published lockfile includes the Redis inference fix.
+    # https://github.com/redis-rs/redis-rs/pull/2072
+    system "cargo", "update", "--package", "redis", "--precise", "0.21.8" unless build.head?
+
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
@@ -39,8 +46,8 @@ class Flowgger < Formula
     assert_match version.to_s, shell_output("#{bin}/flowgger --version")
 
     [
-      formula_opt_lib("openssl@3")/shared_library("libcrypto"),
-      formula_opt_lib("openssl@3")/shared_library("libssl"),
+      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
+      formula_opt_lib("openssl@4")/shared_library("libssl"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"flowgger", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
