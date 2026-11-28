@@ -10,7 +10,8 @@ class Kido < Formula
   depends_on arch: :arm64
 
   on_macos do
-    depends_on macos: :sequoia
+    # The VMM uses the vmnet network APIs introduced in the macOS 26 SDK.
+    depends_on macos: :tahoe
   end
 
   on_linux do
