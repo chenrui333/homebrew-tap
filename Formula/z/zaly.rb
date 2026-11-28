@@ -8,10 +8,11 @@ class Zaly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "411d97c5a357417150dc384999f9b7c3a145062719967c533ac30f7240b13c78"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "338b92cd38e295f8f77f3fe241951c22e1d620c85864164c95a7950a8035fa4a"
-    sha256 cellar: :any,                 arm64_linux:   "fa63ebdb10d37b11d8d06fed17044366529019599810db0bdd656e216174f7b6"
-    sha256 cellar: :any,                 x86_64_linux:  "42bff3526da8dd4f7a46b348d4530881e5229a621ff21e56f034787f2423baeb"
+    manifest_sha256 "1517a78809ce695178266899717c93212629f87b29ae193584f4c4583eca17d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e5d6d3efc5fbf466b8f3c8c3d17161095214e8feb135b12a6c96a18690a031ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65d311212d6c6d859a83e71c0a3d674a216b2d8bd6fb318965a31d91d4947041"
+    sha256 cellar: :any,                 arm64_linux:   "fb2eca3e31727039f8d2afdba7179ce47034e85fcb0880a9da3c9c9b7f33aaf9"
+    sha256 cellar: :any,                 x86_64_linux:  "b424bd0139c251a07cd255a30265140dc93358475877584c7fe25c4d89f0693b"
   end
 
   depends_on "bun" => :build
