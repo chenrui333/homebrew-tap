@@ -15,9 +15,19 @@ class Pgdog < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "icu4c@79" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
-  uses_from_macos "llvm" => :build # for libclang, used by `pg_query` bindgen
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
+  uses_from_macos "llvm" => :build # for libclang, used by bindgen
+  uses_from_macos "perl" => :build
+
+  on_linux do
+    depends_on "readline" => :build
+    depends_on "zlib-ng-compat" => :build
+  end
 
   deny_network_access!
 
@@ -27,6 +37,27 @@ class Pgdog < Formula
 
   def install
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
+    if OS.linux?
+      # Use Homebrew's toolchain instead of the upstream Linux image's clang and mold.
+      inreplace ".cargo/config.toml", <<~OLD, <<~NEW
+        [target.x86_64-unknown-linux-gnu]
+        linker = "/usr/bin/clang"
+        rustflags = ["-C", "link-arg=--ld-path=/usr/bin/mold"]
+
+        [target.aarch64-unknown-linux-gnu]
+        linker = "/usr/bin/clang"
+        rustflags = [
+            "-C",
+            "link-arg=--ld-path=/usr/bin/mold",
+            "-C",
+            "target-feature=+lse",
+        ]
+      OLD
+        [target.aarch64-unknown-linux-gnu]
+        rustflags = ["-C", "target-feature=+lse"]
+      NEW
+    end
+
     system "cargo", "install", *std_cargo_args(path: "pgdog")
   end
 
