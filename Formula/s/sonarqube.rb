@@ -48,6 +48,8 @@ class Sonarqube < Formula
     (libexec/"elasticsearch/lib/platform").glob("*").each do |dir|
       rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
     end
+    # SonarQube invokes the Java launcher directly, not the standalone native wrapper.
+    rm libexec/"elasticsearch/lib/tools/server-launcher/server-launcher"
 
     if OS.mac?
       libexec.glob("elasticsearch/lib/platform/darwin-*/libvec.dylib").each do |dylib|
