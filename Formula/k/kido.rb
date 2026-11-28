@@ -1,0 +1,65 @@
+class Kido < Formula
+  desc "Run macOS command-line tools in small Darwin virtual machines"
+  homepage "https://kido.sh/"
+  url "https://github.com/kido-sh/kido/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "311b55c85d64f29506b8d1bae24b2620ca1211d8ef9941cb47e86ce4235c1991"
+  license "Apache-2.0"
+  head "https://github.com/kido-sh/kido.git", branch: "main"
+
+  depends_on "go" => :build
+  depends_on arch: :arm64
+
+  on_macos do
+    depends_on macos: :sequoia
+  end
+
+  on_linux do
+    depends_on "rust" => :build
+    depends_on "vulkan-headers" => :build
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+    system "cargo", "fetch", *std_cargo_fetch_args, "--manifest-path", "vmm-linux/Cargo.toml" if OS.linux?
+  end
+
+  def install
+    if OS.mac?
+      # The upstream sign target applies the Virtualization.framework entitlement.
+      system "make", "sign", "VERSION=#{version}"
+      (libexec/"kido").install "bin/kido-vmm"
+    else
+      system "make", "bin/kido", "bin/kido-agent", "VERSION=#{version}"
+      # Build the VMM for Homebrew's native GNU/Linux target rather than upstream's portable musl target.
+      system "cargo", "install", *std_cargo_args(path: "vmm-linux", root: buildpath/"vmm-install")
+      system "make", "-C", "vmm-linux/kido-probe"
+      (libexec/"kido").install "vmm-install/bin/kido-vmm", "vmm-linux/kido-probe/kido-probe"
+    end
+
+    bin.install "bin/kido"
+    (libexec/"kido").install "bin/kido-agent"
+    generate_completions_from_executable(bin/"kido", "completion")
+  end
+
+  def caveats
+    <<~EOS
+      Run `kido setup` to download the guest image before starting a VM.
+      On Linux, the native backend requires access to /dev/kvm.
+    EOS
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/kido --version")
+
+    ENV["KIDO_HOME"] = testpath/"kido"
+    assert_match(/REPOSITORY\s+TAG\s+IMAGE ID/, shell_output("#{bin}/kido images"))
+    assert_path_exists libexec/"kido/kido-agent"
+    assert_path_exists libexec/"kido/kido-vmm"
+    if OS.mac?
+      output = shell_output("codesign --display --entitlements - #{libexec}/kido/kido-vmm 2>/dev/null")
+      assert_match "com.apple.security.virtualization", output
+    end
+  end
+end
