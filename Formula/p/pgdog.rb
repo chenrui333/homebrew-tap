@@ -1,15 +1,10 @@
 class Pgdog < Formula
   desc "Automatic sharding for PostgreSQL"
   homepage "https://pgdog.dev/"
-  url "https://github.com/levkk/pgdog/archive/7e63ac492be1784db772ac1180a3f70c207e9b40.tar.gz"
-  version "0.1.0"
-  sha256 "153a0d5089b0e3deb123aa248802bc0b0c6a0d29710befc5bb8a5306269094eb"
+  url "https://github.com/pgdogdev/pgdog/archive/refs/tags/v0.1.66.tar.gz"
+  sha256 "c91a93af3ac49233bca54d62cc0b4b9cf6a8dad46fd314126a56eb38cf3fb600"
   license "AGPL-3.0-only"
-  head "https://github.com/levkk/pgdog.git", branch: "main"
-
-  livecheck do
-    skip "no tagged releases"
-  end
+  head "https://github.com/pgdogdev/pgdog.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
@@ -27,8 +22,6 @@ class Pgdog < Formula
   deny_network_access!
 
   def fetch
-    # Upstream gitignores Cargo.lock; resolve once during fetch so the build stays offline.
-    system "cargo", "generate-lockfile"
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
@@ -38,6 +31,8 @@ class Pgdog < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/pgdog --version")
+
     sql = "CREATE TABLE test_table (id SERIAL PRIMARY KEY, name TEXT);"
     output = shell_output("#{bin}/pgdog fingerprint --query \"#{sql}\"")
     assert_match "eab97bf582f0c0c9 [16913686169960628425]", output
