@@ -590,7 +590,6 @@ brew install --cask <tool>
 - `krs`
 - `kt`
 - `ktx`
-- `ku`
 - `kube-role-gen`
 - `kube2pulumi`
 - `kubedog`
