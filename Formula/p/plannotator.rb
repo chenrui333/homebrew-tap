@@ -1,8 +1,8 @@
 class Plannotator < Formula
   desc "Browser-based plan annotation and code review for coding agents"
   homepage "https://plannotator.ai"
-  url "https://github.com/backnotprop/plannotator/archive/refs/tags/v0.29.6.tar.gz"
-  sha256 "052dd1eb6dca17ba646da2383c6607eb0bc16aee655f8694ee620b3a9c796b50"
+  url "https://github.com/backnotprop/plannotator/archive/refs/tags/v0.29.7.tar.gz"
+  sha256 "2e102bdd9ba883328d2bf22e6a51ffbbd6eebea15f50cb19d5c557d1594c6b8b"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/backnotprop/plannotator.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Plannotator < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "f6d5595dd6a48fc173ac3e178a618016bf5826e61f7d02dd63efc0d81dc3251f"
-    sha256 arm64_tahoe:   "41113e83190402995dc4e5caa3dd2723177cdf398f4f76d81f58874c9db74fa2"
-    sha256 arm64_sequoia: "94ef057f38978acc5a5a1a32f6c5d2cea6774a1b3e762b337cb4c55e465a1408"
-    sha256 arm64_linux:   "3cb4b1b74bef9baa018e943a5c73984d719ee3ac75fe367b951552016e3a4dac"
-    sha256 x86_64_linux:  "caab269527d59d2a05c9dd45c283ad4c7310b32f9ab8e7c2418acba70db5792d"
+    manifest_sha256 "6f258807291e26ab69f3d66911e23ca15ec27120c06eb7c61cb259d297875ee3"
+    sha256 arm64_tahoe:   "619abb4bf57b18f4ed12d71eb2f729e2fec8286b2538e07de144fba092eb6b8c"
+    sha256 arm64_sequoia: "4548b2001c44e83ee6714d5441d54434abced798e84b88a409bb6250b2457ffc"
+    sha256 arm64_linux:   "8a78da2cdb755621c179e26e83abc80ad0ee9bc4e7a1a791b577b630e223737b"
+    sha256 x86_64_linux:  "44520b5ae644f8244716879aa24c7c8643a11ff0656669e8741955ddce527200"
   end
 
   depends_on "bun" => :build
