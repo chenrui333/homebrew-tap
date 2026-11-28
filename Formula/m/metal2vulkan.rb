@@ -6,6 +6,15 @@ class Metal2vulkan < Formula
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/steelbrain/metal2vulkan.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "7c4011e28a4b79e8fc788d625548f3d91816b2fb6c6fdea6742061aa9d5873b7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e2f7caec34f1aa9002e03c45a9a0994a114b27ea76bab6012fefe2bd262c7fb4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48222bfed76f3c744a8c3b9bb59b904cfdaaa69a9f1752906e187d51ddfdad26"
+    sha256 cellar: :any,                 arm64_linux:   "8c3e0935d71a158db81dbda141f1ec14f1e4ea54cd704ce6bfc969f5a9d9899f"
+    sha256 cellar: :any,                 x86_64_linux:  "fc6f100b1ff6b3d8f9d7e79ebc1a0dd400dd15d89061b87c70651051e6c596f3"
+  end
+
   depends_on "rust" => :build
   depends_on "spirv-tools" => :test
 
