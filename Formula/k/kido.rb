@@ -6,6 +6,13 @@ class Kido < Formula
   license "Apache-2.0"
   head "https://github.com/kido-sh/kido.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "301c1d089c231e2b3e4dc51ea77bc4561cc1a826f8110176b6b309c00e45724b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "79d0ce0fc6622b0d2cf2cde1ac25acc4d38beeb9a4175066ef9c5b3c9cfcff33"
+    sha256 cellar: :any,                 arm64_linux: "966d1e8dc12832301d473d2be7111b3f161d50d342ac9e89c2b02c6044ebbca5"
+  end
+
   depends_on "go" => :build
   depends_on arch: :arm64
 
