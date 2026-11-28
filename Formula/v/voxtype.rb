@@ -1,18 +1,18 @@
 class Voxtype < Formula
   desc "Push-to-talk local voice transcription for Linux and macOS"
   homepage "https://voxtype.io/"
-  url "https://github.com/peteonrails/voxtype/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "ce3f99db8b716e8eed27bccdafb6441f051dd1d49885019c21ab2a9f144b5d2c"
+  url "https://github.com/peteonrails/voxtype/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "c98cd433872e30de57c3b48756ec1177404f07ebd7f65a4bd9116d7310240841"
   license "MIT"
   head "https://github.com/peteonrails/voxtype.git", branch: "dev"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "60ab71feba49fb92a0a8522b2489f43ccb3c4b758715e0b18e2671f3826c2ca1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a5dd7eff0c942baf5ff6b5a9e646deaa057e714139d8d31d82b9fadc80cf61c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10d92127d0745ae5fcc0d99be71847da7a184a004ab421705246f61f7c3937f6"
-    sha256 cellar: :any,                 arm64_linux:   "022501fc512b28267aba3b2993c2948c780cd623ca022eaa365cd8fae30cd179"
-    sha256 cellar: :any,                 x86_64_linux:  "14fd8001bcaf3b748ed19643dccd817de191cda89136e6c43905bce923200b51"
+    manifest_sha256 "38d205e7bd4a2f74ad3b32d4b45a91b4a37fd070d58fc261d7d0fe7759a4ff56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "704989185f7753c9237348a8bf746c5ebf929d04af0739fc861bfda1fea6e001"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60680af966a117ffb5f8b035401e23753b26067d0025975ca73a8735106419a6"
+    sha256 cellar: :any,                 arm64_linux:   "3e1c71a6c6b5068efca84cfc474d35fb9ccc82def4778f82eaafea0701d9ce8c"
+    sha256 cellar: :any,                 x86_64_linux:  "b99780207a83b72e9056a20db8b82a17b2dca5c7eea7c620ea2a984542dbe9cc"
   end
 
   depends_on "cmake" => :build
