@@ -6,6 +6,15 @@ class Roc < Formula
   license "Apache-2.0"
   head "https://github.com/andreimerlescu/roc.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/chenrui333/tap"
+    manifest_sha256 "aeec622802b26517ba02bffcf63f54cae913bd0ed4808f4d19bc23c635d41f84"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "819fb77da95235e8c532bae6dceafdf37301a755611ca2d186c48e5dbed4f270"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48cd89f1446abfaf4eff483186478cf9266a721f8c346a5786896321ff3db532"
+    sha256 cellar: :any,                 arm64_linux:   "d222f39044bcc1316ba54e688e9bcc1421994eb5143b97f6c49ddfd222ca7df0"
+    sha256 cellar: :any,                 x86_64_linux:  "f5cc0ba0679cf00b5760918e04bc5d88032b3c680b4b3a540a57f90c65c2db81"
+  end
+
   depends_on "rust" => :build
   depends_on "docker"
 
