@@ -1,18 +1,18 @@
 class Gno < Formula
   desc "Local knowledge engine with hybrid search and MCP integration"
   homepage "https://gno.sh"
-  url "https://github.com/gmickel/gno/archive/refs/tags/v2.18.1.tar.gz"
-  sha256 "7f589ac7cfce1d9aedd772ac94ab0e3019b37a89154de6bf6dc63e42e50ffa91"
+  url "https://github.com/gmickel/gno/archive/refs/tags/v2.19.0.tar.gz"
+  sha256 "383a39419d02a29534dcaa4016b43ecf36857e2fcb9e852fa3c4c416a3b855b6"
   license "MIT"
   head "https://github.com/gmickel/gno.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    manifest_sha256 "51198b14433866e02290c3a117e30319e54db09b7f7f5c2186dd9e128e1ab0a0"
-    sha256 arm64_tahoe:   "0547721503ecf740269e477dd396bccb3786d4d9f9e89829c9d4b503cf32e060"
-    sha256 arm64_sequoia: "69c9fc4657a7cc456a7481a00fd612080c835a87e71a7bf45285b1f2d7fdd1fa"
-    sha256 arm64_linux:   "5d61299780473214558b1a61dbb0af56b324c60ae0da719afdd5c7e563121e81"
-    sha256 x86_64_linux:  "5531da3c150867aa6f074901e30eb48807fd807b4df9eb2f35620255a2e45b7e"
+    manifest_sha256 "73c4cccf0cf1cd90da8c2a93c1372e3693d6f40f9963c004664e3efd07fe41b6"
+    sha256 arm64_tahoe:   "b4841da8b4f6e7fd8e49eb0ab266f39a17baad1d18bbff8863c2d65086e363e9"
+    sha256 arm64_sequoia: "c197a4f07457b5f6d7f099e4839b26af4f05ad125420fde82973d29c45e22524"
+    sha256 arm64_linux:   "1ec89e63d6c3d73568645f5a7cdb3aada31c8307f2f9cbad454534233e5aed34"
+    sha256 x86_64_linux:  "8979a2644b7cfba43bc98582fa4358e8fcd06d562f474b4ed7043ae3a8863eb8"
   end
 
   depends_on "cmake" => :build
