@@ -1,17 +1,18 @@
 class FlowNetwork < Formula
   desc "Real-time network throughput dashboard"
   homepage "https://github.com/programmersd21/flow"
-  url "https://github.com/programmersd21/flow/archive/refs/tags/v0.3.5.tar.gz"
-  sha256 "f2b172c6986f26a32d1404960d392c49579d8de95c59a906e60b66852c782488"
+  url "https://github.com/programmersd21/flow/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "cb477f30483749c8333385bcbd87e6525a7ce80a89c4a91c2e24ac2eec107e46"
   license "MIT"
   head "https://github.com/programmersd21/flow.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/chenrui333/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "a26bf42d88d2082348e6ee743d5c3ba6a0af0a7b2eb275865af4bb55bb584eba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd8c2136c4200ad5c62e24b48f68069e2ce1c636502d7bfa28b70544f2caffd8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ca0ae708ff655347dc95001f012063979fe77efa0283eb9149452cc543a79ee"
-    sha256 cellar: :any,                 x86_64_linux:  "f58aa5f3e698c9d9e42156d9ed5534928352f782d7473fcca7c361aab097a5e3"
+    manifest_sha256 "401c3dba2125a9667b6bab79ad4e96d3389879b12dc9692a65f19e72d2c757c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0b87ad051aa46e32faee88bd2bb2900870388a586b9fc33d68e7bb92c3d41846"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "848a867733caa613b36817b2dea9e4442ebb05f04f9aa82f92a155e1eae25a99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c38ad1a53cb09388a6b345126539fe85895976186dc51957e4cd110120aafd65"
+    sha256 cellar: :any,                 x86_64_linux:  "a87de1a5b8f0f44f2a80b960ee8082a6c4d1249ddbbb53269db786aa19d55dc5"
   end
 
   depends_on "go" => :build
