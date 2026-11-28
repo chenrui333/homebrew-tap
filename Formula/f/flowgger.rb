@@ -24,6 +24,11 @@ class Flowgger < Formula
   def fetch
     # The published lockfile predates OpenSSL 4; update only the bindings.
     system "cargo", "update", "--package", "openssl", "--precise", "0.10.82"
+
+    # TODO: Remove once the published lockfile includes the Redis inference fix.
+    # https://github.com/redis-rs/redis-rs/pull/2072
+    system "cargo", "update", "--package", "redis", "--precise", "0.21.8" unless build.head?
+
     system "cargo", "fetch", *std_cargo_fetch_args
   end
 
